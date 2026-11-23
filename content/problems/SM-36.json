@@ -1,0 +1,738 @@
+[
+ {
+  "id": "SM-01-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 0,
+  "minutes": 8,
+  "theme": "箱の左右に分かれる分子の数え上げとボルツマンのエントロピー",
+  "topic": "箱の左右に分かれる分子の数え上げとボルツマンのエントロピー",
+  "statement": {
+   "tex": "箱を仮想的に左右半分に分け，$N$ 個の気体分子がそれぞれ独立に左右どちらかに等確率でいるとする．左に $n$ 個いる配置の数（微視的状態の数）は $W(n) = {}_N\\mathrm{C}_n$ である．ボルツマンはエントロピーを $S = k_B\\ln W$（$k_B$：ボルツマン定数）と定義した．\n\\begin{enumerate}\n\\item $N = 4$ のとき，左右に2個ずつ分かれる配置の数 $W(2)$ を求めよ．\n\\item $N = 100$ のとき，全分子が左半分に集まる確率を求めよ．\n\\item はじめ左半分に閉じ込めた $N$ 個の分子を，仕切りを外して箱全体に広げる．1分子のとれる位置の数が2倍になるとして，エントロピーの増加 $\\Delta S$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $W(2) = 6$ \\quad (2) $\\approx 7.9\\times10^{-31}$ \\quad (3) $\\Delta S = Nk_B\\ln 2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $W(2) = {}_4\\mathrm{C}_2 = \\boldsymbol{6}$．配置の総数は $2^4 = 16$ なので，半々になる確率は $6/16$ で最も大きい．\n\n(2) 各分子が左にいる確率は $\\frac{1}{2}$ なので $\\left(\\frac{1}{2}\\right)^{100} \\approx \\boldsymbol{7.9\\times10^{-31}}$．宇宙の年齢を秒で数えても $10^{18}$ 程度なので，実際にはまず起こらない．\n\n(3) 各分子の位置の数が2倍になるので，全体の状態数は $2^N$ 倍になる：\n\\[ \\Delta S = k_B\\ln(2^N W) - k_B\\ln W = \\boldsymbol{Nk_B\\ln 2}. \\]\n1モルなら $N k_B = R$ で $\\Delta S = R\\ln 2$．これは熱力学で計算した自由膨張のエントロピー変化と一致する．\n\n「エントロピー＝状態の数の対数」とみると，エントロピー増大は「起こりやすい（状態数の多い）配置に移る」ことだとわかる．次はエネルギーが決まった系で状態数を数え，そこから温度を定義する．"
+   }
+  ],
+  "idea": {
+   "tex": "エントロピーは状態数の対数 $S = k_B\\ln W$．分子数が多いと，偏った配置の確率は事実上ゼロになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) W(2)：6\n(2) 確率：≈7.9e-31\n(3) ΔS：N k_B ln 2"
+  },
+  "methods": [],
+  "tags": [
+   "ボルツマンのエントロピー",
+   "状態数",
+   "自由膨張"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 0,
+  "minutes": 10,
+  "theme": "エネルギー量子を分け合う2つの固体（アインシュタイン模型）",
+  "topic": "エネルギー量子を分け合う2つの固体（アインシュタイン模型）",
+  "statement": {
+   "tex": "固体を「振動子の集まり」とみなし，各振動子はエネルギーを $\\epsilon$ を単位とする量子でしかもてないとする．$N$ 個の振動子に $q$ 個の量子を配る方法の数（重複組合せ）は\n\\[ W(N, q) = {}_{q+N-1}\\mathrm{C}_{q} \\]\nである．固体 A，B がそれぞれ振動子を3個もち，接触して合計6個の量子をやりとりする．すべての配り方は等しい確率で現れるとする．\n\\begin{enumerate}\n\\item $W(3, 2)$ を求めよ．\n\\item A が $q_A$ 個，B が $6 - q_A$ 個もつ配り方の数は $W(3, q_A)\\,W(3, 6-q_A)$ である．これを最大にする $q_A$ を求めよ．\n\\item 全体の配り方の数は $W(6, 6)$ である．$q_A$ が (2) の値になる確率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $6$ \\quad (2) $q_A = 3$ \\quad (3) $\\frac{50}{231}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $W(3,2) = {}_4\\mathrm{C}_2 = \\boldsymbol{6}$．\n\n(2) $q_A = 0,1,\\dots,6$ に対して $W(3,q_A)W(3,6-q_A)$ は\n\\[ 28,\\ 63,\\ 90,\\ 100,\\ 90,\\ 63,\\ 28 \\]\nとなり，最大は $\\boldsymbol{q_A = 3}$（$10\\times10 = 100$）．\n\n(3) $W(6,6) = {}_{11}\\mathrm{C}_6 = 462$．確率は $\\dfrac{100}{462} = \\boldsymbol{\\dfrac{50}{231}} \\approx 0.216$．\n\n振動子が3個ずつでは「均等に分ける」確率は2割ほどにすぎないが，振動子が $10^{23}$ 個もあると，配り方の数は均等付近で鋭くとがり，事実上それ以外は起こらない．これが熱平衡である．状態数が最大になる条件を書くと $\\dfrac{d\\ln W_A}{dE_A} = \\dfrac{d\\ln W_B}{dE_B}$ となり，この量が両者で等しい「温度」$1/(k_BT)$ を定義する．次はこの定義から温度を計算する．"
+   }
+  ],
+  "idea": {
+   "tex": "エネルギーを分け合う配り方の数が最大になる分配が熱平衡．その条件から温度が定義される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) W：6\n(2) q_A：3\n(3) 確率：50/231"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル分布",
+   "アインシュタイン模型",
+   "熱平衡",
+   "状態数"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 0,
+  "minutes": 10,
+  "theme": "状態数の体積・エネルギー依存性から温度と圧力を出す",
+  "topic": "状態数の体積・エネルギー依存性から温度と圧力を出す",
+  "statement": {
+   "tex": "孤立した気体のエネルギーが $E$，体積が $V$ のとき，とりうる微視的状態の数が\n\\[ W = A\\,V^N E^{3N/2} \\]\n（$A$ は定数，$N$ は分子数）であるとする．ボルツマンのエントロピーを $S=k_B\\ln W$ とし，温度 $T$ と圧力 $P$ を\n\\[ \\frac{1}{T}=\\frac{\\partial S}{\\partial E}\\ (\\text{$V$ を一定にして $E$ で微分}),\\qquad \\frac{P}{T}=\\frac{\\partial S}{\\partial V}\\ (\\text{$E$ を一定にして $V$ で微分}) \\]\nで定める．\n\\begin{enumerate}\n\\item エネルギー $E$ を $N,\\,T$ で表せ．\n\\item 圧力 $P$ を $N,\\,V,\\,T$ で表せ．\n\\item 光速に近い速さで飛ぶ粒子の気体では $W = A'\\,V^N E^{3N}$ となる．このときのエネルギー $E$ を $N,\\,T$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E=\\dfrac{3}{2}Nk_BT$ \\quad (2) $P=\\dfrac{Nk_BT}{V}$ \\quad (3) $E=3Nk_BT$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$S=k_B\\ln A+Nk_B\\ln V+\\dfrac{3N}{2}k_B\\ln E$ である．$\\ln$ の微分 $(\\ln x)'=1/x$ を使う．\n\n(1) $\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{3Nk_B}{2E}$ より $\\boldsymbol{E=\\dfrac{3}{2}Nk_BT}$．単原子分子の理想気体の内部エネルギーそのものである．\n\n(2) $\\dfrac{P}{T}=\\dfrac{\\partial S}{\\partial V}=\\dfrac{Nk_B}{V}$ より $\\boldsymbol{P=\\dfrac{Nk_BT}{V}}$．理想気体の状態方程式が「状態の数え上げ」だけから出てきた．\n\n(3) $S=k_B\\ln A'+Nk_B\\ln V+3Nk_B\\ln E$ より $\\dfrac{1}{T}=\\dfrac{3Nk_B}{E}$，すなわち $\\boldsymbol{E=3Nk_BT}$．圧力は (2) と同じ $P=Nk_BT/V$ なので，この気体では $PV=E/3$ となる（光の圧力と同じ関係）．\n\n状態数が $E$ の何乗で増えるかが温度とエネルギーの関係を決めている．次は，この $W$ そのものを位相空間の体積として計算する方法（ミクロカノニカル分布）を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "$S=k_B\\ln W$ を $E$ で微分すると $1/T$，$V$ で微分すると $P/T$ が出る．$W\\propto E^{\\alpha}$ なら $E=\\alpha k_BT$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) E：3/2 N k_B T\n(2) P：N k_B T/V\n(3) E：3 N k_B T"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "エントロピー",
+   "温度の定義",
+   "状態方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 1,
+  "minutes": 12,
+  "theme": "2準位系のエントロピーと温度",
+  "topic": "2準位系のエントロピーと温度",
+  "statement": {
+   "tex": "エネルギー $0$ と $\\varepsilon\\ (>0)$ の2準位をもつ独立な粒子 $N$ 個からなる孤立系がある．全エネルギーは $E=M\\varepsilon$（$M$ は励起した粒子の数）である．$N,\\,M,\\,N-M$ はいずれも十分大きく，スターリングの公式 $\\ln n!\\simeq n\\ln n-n$ が使えるとする．\n\\begin{enumerate}\n\\item 系のエントロピー $S$ を $N,\\,M$ で表せ．\n\\item $1/T=\\partial S/\\partial E$ により温度 $T$ を $N,\\,M,\\,\\varepsilon$ で表せ．\n\\item (2) を $M$ について解き，エネルギー $E$ を $T$ の関数として表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S=k_B\\left[N\\ln N-M\\ln M-(N-M)\\ln(N-M)\\right]$ (2) $T=\\dfrac{\\varepsilon}{k_B\\ln\\frac{N-M}{M}}$ (3) $E=\\dfrac{N\\varepsilon}{e^{\\varepsilon/k_BT}+1}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $M$ 個の励起粒子の選び方は $W=\\dfrac{N!}{M!\\,(N-M)!}$ 通りである．$S=k_B\\ln W$ にスターリングの公式を使うと（$-n$ の項は打ち消し合う）\n\\[ \\boldsymbol{S=k_B\\left[N\\ln N-M\\ln M-(N-M)\\ln(N-M)\\right]}. \\]\n\n(2) $E=M\\varepsilon$ より $\\dfrac{\\partial S}{\\partial E}=\\dfrac{1}{\\varepsilon}\\dfrac{\\partial S}{\\partial M}=\\dfrac{k_B}{\\varepsilon}\\ln\\dfrac{N-M}{M}$．よって\n\\[ \\boldsymbol{T=\\dfrac{\\varepsilon}{k_B\\ln\\frac{N-M}{M}}}. \\]\n$M>N/2$ では対数が負になり $T<0$（負温度）となる．エネルギーの上限がある系に特有の現象である．\n\n(3) $\\dfrac{N-M}{M}=e^{\\varepsilon/k_BT}$ を解いて $M=\\dfrac{N}{e^{\\varepsilon/k_BT}+1}$，したがって\n\\[ \\boldsymbol{E=\\dfrac{N\\varepsilon}{e^{\\varepsilon/k_BT}+1}}. \\]\nこれはカノニカル分布で1粒子の励起確率を求めた結果と一致する（アンサンブルの等価性）．"
+   }
+  ],
+  "idea": {
+   "tex": "状態数を数えて $S=k_B\\ln W$ とし，$1/T=\\partial S/\\partial E$ で温度を定義する．上限のあるエネルギー準位では負温度が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) S：k_B (N ln N - M ln M - (N-M) ln(N-M))\n(2) T：epsilon/(k_B ln((N-M)/M))\n(3) E：N epsilon/(e^(epsilon/(k_B T))+1)"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "2準位系",
+   "エントロピー",
+   "負温度"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 1,
+  "minutes": 15,
+  "theme": "古典調和振動子系の位相空間体積とエントロピー",
+  "topic": "古典調和振動子系の位相空間体積とエントロピー",
+  "statement": {
+   "tex": "区別できる $N$ 個の1次元古典調和振動子（質量 $m$，角振動数 $\\omega$）からなる孤立系\n\\[ H=\\sum_{i=1}^{N}\\left(\\frac{p_i^2}{2m}+\\frac{1}{2}m\\omega^2x_i^2\\right) \\]\nを考える．エネルギーが $E$ 以下の状態数を，位相空間の体積を $h^N=(2\\pi\\hbar)^N$ で割って $\\Gamma(E)$ とする．$2N$ 次元の半径 $R$ の球の体積が $\\pi^NR^{2N}/N!$ であることを使ってよい．\n\\begin{enumerate}\n\\item $N!\\,\\Gamma(E)$ を求めよ．\n\\item スターリングの公式 $\\ln N!\\simeq N\\ln N-N$ を用い，エントロピー $S=k_B\\ln\\Gamma$ を求めよ．\n\\item 温度 $T$ を定め，エネルギー $E$ を $T$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N!\\,\\Gamma(E)=\\left(\\dfrac{E}{\\hbar\\omega}\\right)^N$ \\quad (2) $S=\\left(\\ln\\dfrac{E}{N\\hbar\\omega}+1\\right)Nk_B$ \\quad (3) $E=Nk_BT$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u_i=p_i/\\sqrt{2m}$，$v_i=\\sqrt{m/2}\\,\\omega x_i$ と変数変換すると，$H\\le E$ は $\\sum(u_i^2+v_i^2)\\le E$，すなわち $2N$ 次元の半径 $\\sqrt{E}$ の球になる．ヤコビアンは $dp_i\\,dx_i=\\dfrac{2}{\\omega}du_i\\,dv_i$ なので，位相空間の体積は $\\left(\\dfrac{2}{\\omega}\\right)^N\\dfrac{\\pi^NE^N}{N!}$．$h^N=(2\\pi\\hbar)^N$ で割って\n\\[ \\boldsymbol{\\Gamma(E)=\\frac{1}{N!}\\left(\\frac{E}{\\hbar\\omega}\\right)^N}. \\]\n振動子は位置で区別できるので，同種粒子の $1/N!$ は付けない（ここの $1/N!$ は球の体積から来たもの）．\n\n(2) $\\ln\\Gamma=N\\ln\\dfrac{E}{\\hbar\\omega}-N\\ln N+N$ より $\\boldsymbol{S=Nk_B\\left(\\ln\\dfrac{E}{N\\hbar\\omega}+1\\right)}$．示量的になっている．\n\n(3) $\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{Nk_B}{E}$ より $\\boldsymbol{E=Nk_BT}$．1振動子あたり $k_BT$（運動・位置エネルギーに $\\frac{1}{2}k_BT$ ずつ）で，エネルギー等分配則と一致する．量子力学的に数えると（アインシュタイン模型），$k_BT\\gg\\hbar\\omega$ でこの結果に戻る．"
+   }
+  ],
+  "idea": {
+   "tex": "変数変換で楕円体を球に直すと位相空間の体積が求まり，$\\Gamma\\propto E^N$ から $E=Nk_BT$ が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) N! Γ：(E/(hbar omega))^N\n(2) S：N k_B (ln(E/(N hbar omega)) + 1)\n(3) E：N k_B T"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "位相空間",
+   "調和振動子",
+   "等分配則"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 1,
+  "minutes": 15,
+  "theme": "混合のエントロピーとギブスのパラドックス",
+  "topic": "混合のエントロピーとギブスのパラドックス",
+  "statement": {
+   "tex": "単原子分子の理想気体（$N$ 個，体積 $V$，温度 $T$）のエントロピーはザックール＝テトロードの式\n\\[ S=Nk_B\\left[\\ln\\frac{V}{N\\lambda^3}+\\frac{5}{2}\\right],\\qquad \\lambda=\\frac{2\\pi\\hbar}{\\sqrt{2\\pi mk_BT}} \\]\nで与えられる（同種粒子の入れかえを $1/N!$ で割って数えた結果）．断熱壁の容器が仕切りで体積 $V$ の2室に分けられ，各室に同じ温度 $T$ の気体が $N$ 個ずつ入っている．仕切りを取り除き，十分時間がたった後のエントロピー変化 $\\Delta S$ を考える．\n\\begin{enumerate}\n\\item 2室の気体が異なる種類（A と B）のときの $\\Delta S$ を求めよ．\n\\item 2室の気体が同じ種類のときの $\\Delta S$ を求めよ．\n\\item $1/N!$ を付けずに数えると $S'=Nk_B\\left[\\ln\\dfrac{V}{\\lambda^3}+\\dfrac{3}{2}\\right]$ となる．これを使うと同じ種類の気体の場合の $\\Delta S$ はいくらになるか．\n\\item 異なる種類の気体で，一方の室（体積 $V$）に A が $N$ 個，他方の室（体積 $2V$）に B が $2N$ 個入っていた場合の $\\Delta S$ を求めよ（温度・圧力は等しい）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta S=2Nk_B\\ln2$ \\quad (2) $\\Delta S=0$ \\quad (3) $\\Delta S=2Nk_B\\ln2$ \\quad (4) $\\Delta S=Nk_B\\ln3+2Nk_B\\ln\\dfrac{3}{2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "温度は変わらないので $\\lambda$ は一定である．\n\n(1) A，B はそれぞれ体積 $V$ から $2V$ に広がる．各成分の $\\ln V$ の項だけが変わり，$\\boldsymbol{\\Delta S=2\\times Nk_B\\ln2=2Nk_B\\ln2}$．\n\n(2) 混合後は $2N$ 個が体積 $2V$ にある．$S_{\\rm 後}=2Nk_B\\left[\\ln\\dfrac{2V}{2N\\lambda^3}+\\dfrac{5}{2}\\right]=2S_{\\rm 前,1室}$ なので $\\boldsymbol{\\Delta S=0}$．仕切りを戻せば元に戻る可逆な操作だから当然である．\n\n(3) $S'_{\\rm 後}=2Nk_B\\left[\\ln\\dfrac{2V}{\\lambda^3}+\\dfrac{3}{2}\\right]$，$S'_{\\rm 前}=2Nk_B\\left[\\ln\\dfrac{V}{\\lambda^3}+\\dfrac{3}{2}\\right]$ より $\\boldsymbol{\\Delta S=2Nk_B\\ln2}$．同じ気体でもエントロピーが増えてしまう（ギブスのパラドックス）．$S'$ は示量的でない（$N,V$ を2倍にしても2倍にならない）ことが原因で，$1/N!$ がこれを解消する．\n\n(4) 圧力・温度が等しいので混合後の体積は $3V$．A は $V\\to3V$，B は $2V\\to3V$ に広がり\n\\[ \\boldsymbol{\\Delta S=Nk_B\\ln3+2Nk_B\\ln\\frac{3}{2}}. \\]\nモル分率 $x_A=1/3$，$x_B=2/3$ を使えば $\\Delta S=-3Nk_B(x_A\\ln x_A+x_B\\ln x_B)$ という混合エントロピーの一般形になっている．"
+   }
+  ],
+  "idea": {
+   "tex": "温度一定の混合では各成分の占める体積の変化だけが効く．同種粒子を区別しない $1/N!$ がギブスのパラドックスを解消する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ΔS：2 N k_B ln 2\n(2) ΔS：0\n(3) ΔS：2 N k_B ln 2\n(4) ΔS：N k_B ln 3 + 2 N k_B ln(3/2)"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "混合エントロピー",
+   "ギブスのパラドックス",
+   "ザックール＝テトロード"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 2,
+  "minutes": 20,
+  "theme": "古典理想気体とザックール＝テトロードの式",
+  "topic": "古典理想気体とザックール＝テトロードの式",
+  "statement": {
+   "tex": "体積 $V$ の容器に入った質量 $m$ の単原子分子 $N$ 個の古典理想気体を考える．エネルギーが $E$ 以下の状態数は，位相空間の体積を $N!\\,h^{3N}$ で割って\n\\[ \\Omega(E)=\\frac{V^N}{N!\\,h^{3N}}\\,\\frac{(2\\pi mE)^{3N/2}}{\\Gamma\\!\\left(\\frac{3N}{2}+1\\right)} \\]\nで与えられる．$N\\gg1$ とし，エントロピーを $S=k_B\\ln\\Omega$ とする（$\\ln\\Gamma(x+1)\\simeq x\\ln x-x$）．\n\\begin{enumerate}\n\\item $S$ を $N,\\,V,\\,E$ の関数として求めよ．\n\\item $1/T=\\partial S/\\partial E$ から $E$ を $T$ で表せ．\n\\item $P/T=\\partial S/\\partial V$ から圧力 $P$ を求めよ．\n\\item 化学ポテンシャル $\\mu=-T\\,\\partial S/\\partial N$ を $T,\\,V,\\,N$ の関数として求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S=Nk_B\\left[\\ln\\left(\\dfrac{V}{N}\\left(\\dfrac{4\\pi mE}{3Nh^2}\\right)^{3/2}\\right)+\\dfrac{5}{2}\\right]$ (2) $E=\\dfrac{3}{2}Nk_BT$ (3) $P=\\dfrac{Nk_BT}{V}$ (4) $\\mu=-k_BT\\ln\\left(\\dfrac{V}{N}\\left(\\dfrac{2\\pi mk_BT}{h^2}\\right)^{3/2}\\right)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln N!\\simeq N\\ln N-N$，$\\ln\\Gamma\\!\\left(\\frac{3N}{2}+1\\right)\\simeq\\frac{3N}{2}\\ln\\frac{3N}{2}-\\frac{3N}{2}$ を使うと\n\\[ \\frac{S}{k_B}=N\\ln V-N\\ln N+N+\\frac{3N}{2}\\ln\\frac{2\\pi mE}{h^2}-\\frac{3N}{2}\\ln\\frac{3N}{2}+\\frac{3N}{2} \\]\nとなり，まとめて\n\\[ \\boldsymbol{S=Nk_B\\left[\\ln\\left(\\frac{V}{N}\\left(\\frac{4\\pi mE}{3Nh^2}\\right)^{3/2}\\right)+\\frac{5}{2}\\right]} \\]\n（ザックール＝テトロードの式）．$N!$ で割ったことで $S$ は示量的になっている．\n\n(2) $\\dfrac{1}{T}=\\dfrac{3Nk_B}{2E}$ より $\\boldsymbol{E=\\dfrac{3}{2}Nk_BT}$．\n\n(3) $\\dfrac{P}{T}=\\dfrac{Nk_B}{V}$ より $\\boldsymbol{P=\\dfrac{Nk_BT}{V}}$．\n\n(4) $S$ を $N$ で微分すると，$\\ln$ の中の $N^{-5/2}$ から $-\\frac{5}{2}k_B$ が出て定数項 $\\frac{5}{2}k_B$ と打ち消し合い，$\\dfrac{\\partial S}{\\partial N}=k_B\\ln\\left[\\dfrac{V}{N}\\left(\\dfrac{4\\pi mE}{3Nh^2}\\right)^{3/2}\\right]$．$E/N=\\frac{3}{2}k_BT$ を代入して\n\\[ \\boldsymbol{\\mu=-k_BT\\ln\\left(\\frac{V}{N}\\left(\\frac{2\\pi mk_BT}{h^2}\\right)^{3/2}\\right)}. \\]\n熱的ド・ブロイ波長 $\\lambda_T=h/\\sqrt{2\\pi mk_BT}$ を使えば $\\mu=k_BT\\ln(n\\lambda_T^3)$ で，古典近似が成り立つ $n\\lambda_T^3\\ll1$ では $\\mu<0$ である．"
+   }
+  ],
+  "idea": {
+   "tex": "位相空間の体積から $S(E,V,N)$ を作れば，$T,\\,P,\\,\\mu$ はすべてその偏微分で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) S：N k_B (ln(V/N (4 pi m E/(3 N h^2))^(3/2)) + 5/2)\n(2) E：3/2 N k_B T\n(3) P：N k_B T/V\n(4) μ：-k_B T ln(V/N (2 pi m k_B T/h^2)^(3/2))"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "理想気体",
+   "ザックール＝テトロード",
+   "化学ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 2,
+  "minutes": 20,
+  "theme": "1次元ゴム弾性模型（エントロピー弾性）",
+  "topic": "1次元ゴム弾性模型（エントロピー弾性）",
+  "statement": {
+   "tex": "長さ $a$ の線分 $N$ 個がつながった1次元の鎖を考える．各線分は $x$ 軸の正の向きか負の向きのどちらかを向き，向きによるエネルギーの差はない．鎖の両端の距離を $x=(n_+-n_-)a$（$n_\\pm$ は正・負を向く線分の数，$n_++n_-=N$）とする．$N\\gg1$ とし，スターリングの公式を使ってよい．\n\\begin{enumerate}\n\\item $|x|\\ll Na$ のとき，エントロピーは $S(x)\\simeq S(0)-Ax^2$ と書ける．$A$ を求めよ．\n\\item 温度 $T$ で端の距離を $x$ に保つのに必要な張力 $f$ を，$f=-T\\,\\partial S/\\partial x$ から厳密に（$|x|\\ll Na$ を仮定せずに）求めよ．\n\\item 張力 $f$ を一定に保つとき，端の距離 $x$ を $f,\\,T$ の関数として求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A=\\dfrac{k_B}{2Na^2}$ (2) $f=\\dfrac{k_BT}{2a}\\ln\\dfrac{Na+x}{Na-x}$ (3) $x=Na\\tanh\\dfrac{fa}{k_BT}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n_\\pm=\\dfrac{N\\pm x/a}{2}$ で，状態数は $W=\\dfrac{N!}{n_+!\\,n_-!}$．\n\\[ \\frac{S}{k_B}=N\\ln N-n_+\\ln n_+-n_-\\ln n_- \\]\nを $\\delta=x/(Na)$ で展開すると $\\dfrac{S}{k_B}=N\\ln2-\\dfrac{N}{2}\\left[(1+\\delta)\\ln(1+\\delta)+(1-\\delta)\\ln(1-\\delta)\\right]\\simeq N\\ln2-\\dfrac{N\\delta^2}{2}$．よって $S(x)\\simeq S(0)-\\dfrac{k_Bx^2}{2Na^2}$，すなわち $\\boldsymbol{A=\\dfrac{k_B}{2Na^2}}$．\n\n(2) エネルギーは $x$ によらないので，自由エネルギー $F=-TS$ から $f=\\partial F/\\partial x=-T\\,\\partial S/\\partial x$．$\\partial n_\\pm/\\partial x=\\pm\\frac{1}{2a}$ より\n\\[ \\frac{\\partial S}{\\partial x}=\\frac{k_B}{2a}\\left(-\\ln n_++\\ln n_-\\right)=-\\frac{k_B}{2a}\\ln\\frac{Na+x}{Na-x}, \\]\n\\[ \\boldsymbol{f=\\frac{k_BT}{2a}\\ln\\frac{Na+x}{Na-x}}. \\]\n$x$ が小さければ $f\\simeq\\dfrac{k_BT}{Na^2}x$ で，フックの法則の「ばね定数」が $T$ に比例する（エントロピー弾性）．\n\n(3) (2) を $x$ について解くと $\\dfrac{Na+x}{Na-x}=e^{2fa/k_BT}$ より\n\\[ \\boldsymbol{x=Na\\tanh\\frac{fa}{k_BT}}. \\]\n一定の張力の下で温めると $x$ は小さくなる．ゴムを温めると縮む現象の統計力学的な説明である．"
+   }
+  ],
+  "idea": {
+   "tex": "エネルギーが変わらなくても，配置の数（エントロピー）が減る向きに力が生じる．張力は $-T\\,\\partial S/\\partial x$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) A：k_B/(2 N a^2)\n(2) f：k_B T/(2a) ln((N a + x)/(N a - x))\n(3) x：N a tanh(f a/(k_B T))"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "ゴム弾性",
+   "エントロピー弾性",
+   "スターリングの公式"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 2,
+  "minutes": 20,
+  "theme": "超相対論的理想気体のミクロカノニカル分布",
+  "topic": "超相対論的理想気体のミクロカノニカル分布",
+  "statement": {
+   "tex": "体積 $V$ の容器に，エネルギーが $\\varepsilon=c|\\boldsymbol{p}|$ で与えられる超相対論的な同種粒子 $N$ 個が入った孤立系を考える．全エネルギーが $E$ 以下の状態数は\n\\[ \\Gamma(E)=\\frac{V^N}{N!\\,h^{3N}}\\times\\left(\\sum_{i=1}^N|\\boldsymbol{p}_i|\\le\\frac{E}{c}\\ \\text{を満たす $3N$ 次元運動量空間の体積}\\right) \\]\nであり，この体積は $\\dfrac{(8\\pi)^N}{(3N)!}\\left(\\dfrac{E}{c}\\right)^{3N}$ である（$N=1$ で $\\frac{4}{3}\\pi(E/c)^3$ になることを確かめよ）．$N\\gg1$ とし，スターリングの公式 $\\ln n!\\simeq n\\ln n-n$ を用いる．\n\\begin{enumerate}\n\\item エントロピー $S=k_B\\ln\\Gamma$ を $N,\\,V,\\,E$ で表せ．\n\\item エネルギー $E$ を温度 $T$ で表せ．\n\\item 圧力 $P$ を求め，$PV$ を $E$ で表せ．\n\\item 断熱可逆変化で $PV^\\gamma$ が一定になる $\\gamma$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S=Nk_B\\left[\\ln\\dfrac{8\\pi VE^3}{27N^4h^3c^3}+4\\right]$ \\quad (2) $E=3Nk_BT$ \\quad (3) $P=\\dfrac{Nk_BT}{V}$，$PV=\\dfrac{E}{3}$ \\quad (4) $\\gamma=\\dfrac{4}{3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$N=1$ では $\\dfrac{8\\pi}{3!}(E/c)^3=\\dfrac{4\\pi}{3}(E/c)^3$ で確かに球の体積になる．\n\n(1) $\\ln\\Gamma=N\\ln V+N\\ln8\\pi+3N\\ln\\dfrac{E}{hc}-(N\\ln N-N)-(3N\\ln3N-3N)$\n\\[ =N\\left[\\ln\\frac{8\\pi VE^3}{N\\cdot27N^3h^3c^3}+4\\right]. \\]\nよって $\\boldsymbol{S=Nk_B\\left[\\ln\\dfrac{8\\pi VE^3}{27N^4h^3c^3}+4\\right]}$．$V/N$ と $E/N$ の関数なので示量的である．\n\n(2) $\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{3Nk_B}{E}$ より $\\boldsymbol{E=3Nk_BT}$（非相対論の $\\frac{3}{2}Nk_BT$ の2倍）．\n\n(3) $\\dfrac{P}{T}=\\dfrac{\\partial S}{\\partial V}=\\dfrac{Nk_B}{V}$ より $\\boldsymbol{P=\\dfrac{Nk_BT}{V}}$，(2) と合わせて $\\boldsymbol{PV=\\dfrac{E}{3}}$．光子気体と同じ関係である（ただし光子と違い粒子数は保存している）．\n\n(4) $S$ 一定，$N$ 一定では $VE^3$ が一定．$E=3PV$ を代入すると $V\\cdot P^3V^3=P^3V^4$ が一定，すなわち $PV^{4/3}$ が一定で $\\boldsymbol{\\gamma=\\dfrac{4}{3}}$．$C_V=3Nk_B$，$C_P=4Nk_B$ の比とも一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\Gamma\\propto V^NE^{3N}$ の形から，エネルギーと温度・圧力の関係がすべて読み取れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) S：N k_B (ln(8 pi V E^3/(27 N^4 h^3 c^3)) + 4)\n(2) E：3 N k_B T\n(3) P：N k_B T/V ; PV：E/3\n(4) γ：4/3"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "超相対論的気体",
+   "断熱指数",
+   "エントロピー"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 3,
+  "minutes": 25,
+  "theme": "フレンケル欠陥の熱平衡濃度",
+  "topic": "フレンケル欠陥の熱平衡濃度",
+  "statement": {
+   "tex": "$N$ 個の原子が格子点を占める結晶に，原子が入りうる格子間位置が $N_i$ 個ある．格子点の原子が格子間位置に移ると（フレンケル欠陥），空孔と格子間原子が1組でき，エネルギーが $\\varepsilon$ だけ増える．欠陥が $n$ 組ある状態を考え，$1\\ll n\\ll N,\\,N_i$ とする．\n\\begin{enumerate}\n\\item 欠陥が $n$ 組ある状態の数 $W(n)$ を書け．\n\\item ミクロカノニカル分布で温度 $T$ を定め，$n$ を $N,\\,N_i,\\,\\varepsilon,\\,T$ で表せ．\n\\item $N_i=N$，$\\varepsilon=1.0\\,\\mathrm{eV}$，$T=1000\\,\\mathrm{K}$ のとき $n/N$ を求めよ（$k_B=8.617\\times10^{-5}\\,\\mathrm{eV/K}$）．\n\\item 欠陥による熱容量 $C=d(n\\varepsilon)/dT$ を (2) の結果から求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $W(n)=\\dfrac{N!}{n!\\,(N-n)!}\\cdot\\dfrac{N_i!}{n!\\,(N_i-n)!}$ (2) $n=\\sqrt{NN_i}\\,e^{-\\varepsilon/2k_BT}$ (3) $n/N\\approx3.0\\times10^{-3}$ (4) $C=\\dfrac{\\sqrt{NN_i}\\,\\varepsilon^2}{2k_BT^2}e^{-\\varepsilon/2k_BT}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 空孔になる格子点の選び方と，格子間原子が入る位置の選び方は独立なので\n\\[ \\boldsymbol{W(n)=\\frac{N!}{n!\\,(N-n)!}\\cdot\\frac{N_i!}{n!\\,(N_i-n)!}}. \\]\n\n(2) $S=k_B\\ln W$，$E=n\\varepsilon$ として $\\dfrac{1}{T}=\\dfrac{1}{\\varepsilon}\\dfrac{\\partial S}{\\partial n}$．スターリングの公式から\n\\[ \\frac{\\partial S}{\\partial n}=k_B\\ln\\frac{(N-n)(N_i-n)}{n^2}=\\frac{\\varepsilon}{T}. \\]\n$n\\ll N,\\,N_i$ なら $n^2\\simeq NN_i\\,e^{-\\varepsilon/k_BT}$，よって\n\\[ \\boldsymbol{n=\\sqrt{NN_i}\\,e^{-\\varepsilon/2k_BT}}. \\]\n指数に $1/2$ が付くのは，欠陥1組ごとに独立な組合せの因子が2つあるからである（ショットキー欠陥なら $n=Ne^{-\\varepsilon/k_BT}$）．\n\n(3) $\\dfrac{\\varepsilon}{2k_BT}=\\dfrac{1.0}{2\\times8.617\\times10^{-5}\\times1000}=5.80$ より $\\boldsymbol{n/N=e^{-5.80}\\approx3.0\\times10^{-3}}$．\n\n(4) $\\dfrac{dn}{dT}=n\\cdot\\dfrac{\\varepsilon}{2k_BT^2}$ より\n\\[ \\boldsymbol{C=\\frac{\\sqrt{NN_i}\\,\\varepsilon^2}{2k_BT^2}e^{-\\varepsilon/2k_BT}}. \\]\n低温で指数関数的に小さくなる（ショットキー型の熱容量の低温側）．"
+   }
+  ],
+  "idea": {
+   "tex": "独立な組合せの因子が2つあると $W\\propto(\\cdot)^{2}$ になり，平衡濃度の活性化エネルギーが $\\varepsilon/2$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述：W(n) = [N!/(n!(N-n)!)]·[N_i!/(n!(N_i-n)!)]\n(2) n：sqrt(N N_i) e^(-epsilon/(2 k_B T))\n(3) n/N：≈3.0e-3\n(4) C：sqrt(N N_i) epsilon^2/(2 k_B T^2) e^(-epsilon/(2 k_B T))"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "格子欠陥",
+   "フレンケル欠陥",
+   "活性化エネルギー"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 3,
+  "minutes": 20,
+  "theme": "スケーリングによる一般化された等分配則",
+  "topic": "スケーリングによる一般化された等分配則",
+  "statement": {
+   "tex": "区別できる $N$ 個の粒子が，それぞれ1次元のポテンシャル $a|x|^s$（$a>0$，$s>0$）に閉じ込められた孤立系\n\\[ H=\\sum_{i=1}^N\\left(\\frac{p_i^2}{2m}+a|x_i|^s\\right) \\]\nを考える．エネルギーが $E$ 以下の位相空間の体積を $\\Gamma(E)$ とする．\n\\begin{enumerate}\n\\item 変数を $p_i=E^{1/2}p_i'$，$x_i=E^{1/s}x_i'$ と変換することにより，$\\Gamma(E)\\propto E^{\\alpha}$ となる．$\\alpha$ を求めよ．\n\\item $S=k_B\\ln\\Gamma$ として，エネルギー $E$ を温度 $T$ で表せ．\n\\item 1粒子の位置エネルギーの平均 $\\langle a|x_1|^s\\rangle$ を $T$ で表せ．\n\\item $s\\to\\infty$（幅一定の箱）としたときの熱容量 $C$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\left(\\dfrac{1}{2}+\\dfrac{1}{s}\\right)N$ \\quad (2) $E=\\left(\\dfrac{1}{2}+\\dfrac{1}{s}\\right)Nk_BT$ \\quad (3) $\\dfrac{k_BT}{s}$ \\quad (4) $C=\\dfrac{1}{2}Nk_B$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 変換で $H(p,x)=E\\,H(p',x')/E$ となる：$\\dfrac{p_i^2}{2m}=E\\dfrac{p_i'^2}{2m}$，$a|x_i|^s=E\\,a|x_i'|^s$．よって $H\\le E$ は $H(p',x')\\le1$ に移り，体積要素は $dp_i\\,dx_i=E^{1/2+1/s}dp_i'\\,dx_i'$．したがって\n\\[ \\Gamma(E)=E^{N(1/2+1/s)}\\,\\Gamma(1),\\qquad \\boldsymbol{\\alpha=N\\left(\\frac{1}{2}+\\frac{1}{s}\\right)}. \\]\n\n(2) $\\dfrac{1}{T}=k_B\\dfrac{\\alpha}{E}$ より $\\boldsymbol{E=N\\left(\\dfrac{1}{2}+\\dfrac{1}{s}\\right)k_BT}$．\n\n(3) 運動量だけをスケールすると ($x$ は固定)，運動エネルギー部分 $K$ の体積が $K^{N/2}$ に比例することから運動エネルギーの平均は $\\frac{N}{2}k_BT$ になる（(1)(2) で $s$ の項を落としたのと同じ議論）．あるいは一般化された等分配則（ビリアル定理）$\\left\\langle x_i\\dfrac{\\partial H}{\\partial x_i}\\right\\rangle=k_BT$ を使うと $x\\,\\partial_x(a|x|^s)=s\\,a|x|^s$ より\n\\[ \\boldsymbol{\\langle a|x_1|^s\\rangle=\\frac{k_BT}{s}}. \\]\n実際，全エネルギー $\\frac{N}{2}k_BT+N\\frac{k_BT}{s}$ は (2) と一致する．$s=2$（調和振動子）なら $\\frac{1}{2}k_BT$ で通常の等分配則に戻る．\n\n(4) $s\\to\\infty$ で位置エネルギーの寄与は消え $E=\\frac{1}{2}Nk_BT$，$\\boldsymbol{C=\\dfrac{1}{2}Nk_B}$（1次元の自由粒子）．"
+   }
+  ],
+  "idea": {
+   "tex": "ハミルトニアンの各項が変数の同次関数なら，位相空間体積のスケーリングだけで $E(T)$ が決まり，等分配則が一般化される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) α：N (1/2 + 1/s)\n(2) E：N (1/2 + 1/s) k_B T\n(3) k_B T/s\n(4) C：N k_B/2"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "等分配則",
+   "ビリアル定理",
+   "スケーリング"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 3,
+  "minutes": 25,
+  "theme": "熱接触した2つの系のエネルギー分配とゆらぎ",
+  "topic": "熱接触した2つの系のエネルギー分配とゆらぎ",
+  "statement": {
+   "tex": "エネルギー $0$ と $\\varepsilon$ の2準位をもつ独立な粒子からなる系 1（$N_1$ 個）と系 2（$N_2$ 個）が熱接触し，全体は孤立している．励起した粒子の総数 $M$（全エネルギー $M\\varepsilon$）は一定で，系 1 の励起数が $M_1$ である確率は等重率の原理から\n\\[ P(M_1)\\propto\\binom{N_1}{M_1}\\binom{N_2}{M-M_1} \\]\nとなる．$N=N_1+N_2$ とし，$N_1,\\,N_2,\\,M,\\,N-M$ はすべて十分大きいとする．\n\\begin{enumerate}\n\\item 最も確からしい $M_1$ の値 $M_1^*$ を求めよ．\n\\item $\\ln P$ を $M_1^*$ のまわりで2次まで展開し，$M_1$ の分散 $\\sigma^2$ を求めよ．\n\\item $N_1=N_2=1.0\\times10^{20}$，$M=N/4$ のとき，相対ゆらぎ $\\sigma/M_1^*$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $M_1^*=\\dfrac{N_1M}{N}$ \\quad (2) $\\sigma^2=\\dfrac{N_1N_2M(N-M)}{N^3}$ \\quad (3) $\\dfrac{\\sigma}{M_1^*}\\approx1.2\\times10^{-10}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\dfrac{d}{dn}\\ln n!\\simeq\\ln n$ を使う．\n\n(1) $\\dfrac{d\\ln P}{dM_1}=-\\ln M_1+\\ln(N_1-M_1)+\\ln(M-M_1)-\\ln(N_2-M+M_1)=0$ より\n\\[ \\frac{N_1-M_1}{M_1}=\\frac{N_2-M_2}{M_2}\\quad(M_2=M-M_1). \\]\n励起の割合が等しくなる（2準位系で $T$ は励起の割合だけで決まるので，これは温度が等しいという条件）．$\\boldsymbol{M_1^*=\\dfrac{N_1M}{N}}$．\n\n(2) $p=M/N$ とおくと $M_1^*=pN_1$，$M_2^*=pN_2$ で\n\\[ \\frac{d^2\\ln P}{dM_1^2}=-\\frac{1}{M_1}-\\frac{1}{N_1-M_1}-\\frac{1}{M_2}-\\frac{1}{N_2-M_2}=-\\frac{1}{p(1-p)}\\left(\\frac{1}{N_1}+\\frac{1}{N_2}\\right). \\]\n$P\\propto\\exp[-(M_1-M_1^*)^2/2\\sigma^2]$ と比べて\n\\[ \\boldsymbol{\\sigma^2=p(1-p)\\frac{N_1N_2}{N}=\\frac{N_1N_2M(N-M)}{N^3}}. \\]\n\n(3) $p=1/4$，$N_1=N_2$ より $\\dfrac{\\sigma}{M_1^*}=\\sqrt{\\dfrac{1-p}{2pN_1}}=\\sqrt{\\dfrac{0.75}{0.5\\times10^{20}}}\\approx\\boldsymbol{1.2\\times10^{-10}}$．巨視的な系ではエネルギーの分配は事実上確定しており，これが熱平衡が「決まった状態」に見える理由である．"
+   }
+  ],
+  "idea": {
+   "tex": "複合系の状態数の積を最大にすると温度の一致が出て，その周りのガウス幅が $\\sqrt{N}$ 程度のゆらぎを与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) M_1^*：N_1 M/N\n(2) σ^2：N_1 N_2 M (N - M)/N^3\n(3) σ/M_1^*：≈1.2e-10"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "熱接触",
+   "ゆらぎ",
+   "等重率の原理"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 4,
+  "minutes": 30,
+  "theme": "有限の熱浴とカノニカル分布の導出",
+  "topic": "有限の熱浴とカノニカル分布の導出",
+  "statement": {
+   "tex": "孤立系が，注目する系 S と熱浴 B からなり，全エネルギーは $E$ に固定されている．S は1次元の古典調和振動子で，そのエネルギー状態密度は定数である．B は単原子分子 $N_B$ 個の古典理想気体で，エネルギー状態密度は $g_B(E_B)\\propto E_B^{3N_B/2-1}$ である．S と B の相互作用は弱く，全系はミクロカノニカル分布にあるとする．\n\\begin{enumerate}\n\\item S のエネルギーが $\\epsilon$（$0\\le\\epsilon\\le E$）である確率密度は $P(\\epsilon)\\propto(E-\\epsilon)^{a}$ の形になる．$a$ を求めよ．\n\\item S のエネルギーの平均 $\\langle\\epsilon\\rangle$ を求めよ．\n\\item 相対ゆらぎの2乗 $\\dfrac{\\langle\\epsilon^2\\rangle-\\langle\\epsilon\\rangle^2}{\\langle\\epsilon\\rangle^2}$ を求めよ．\n\\item $E=\\frac{3}{2}N_Bk_BT$ として $T$ を固定し $N_B\\to\\infty$ とするとき，規格化された $P(\\epsilon)$ の極限を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a=\\dfrac{3N_B}{2}-1$ (2) $\\langle\\epsilon\\rangle=\\dfrac{2E}{3N_B+2}$ (3) $\\dfrac{3N_B}{3N_B+4}$ (4) $P(\\epsilon)=\\dfrac{1}{k_BT}e^{-\\epsilon/k_BT}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 全系の等確率の原理から，S がエネルギー $\\epsilon$ をもつ確率は (S の状態密度)$\\times$(B の状態密度) に比例する．S の状態密度は定数なので $P(\\epsilon)\\propto g_B(E-\\epsilon)\\propto(E-\\epsilon)^{3N_B/2-1}$，すなわち $\\boldsymbol{a=\\dfrac{3N_B}{2}-1}$．\n\n(2) $u=\\epsilon/E$ とおくと $P\\propto(1-u)^a$ はベータ分布 $\\mathrm{B}(1,a+1)$ である．$\\displaystyle\\int_0^1u^k(1-u)^a\\,du=\\frac{k!\\,a!}{(a+k+1)!}$ より $\\langle u\\rangle=\\dfrac{1}{a+2}$，\n\\[ \\boldsymbol{\\langle\\epsilon\\rangle=\\frac{E}{a+2}=\\frac{2E}{3N_B+2}}. \\]\n\n(3) $\\langle u^2\\rangle=\\dfrac{2}{(a+2)(a+3)}$ より\n\\[ \\frac{\\langle u^2\\rangle-\\langle u\\rangle^2}{\\langle u\\rangle^2}=\\frac{2(a+2)}{a+3}-1=\\frac{a+1}{a+3}=\\boldsymbol{\\frac{3N_B}{3N_B+4}}. \\]\nカノニカル分布（指数分布）ではこの値は $1$ で，有限の熱浴ではゆらぎがわずかに小さい．\n\n(4) $\\left(1-\\dfrac{\\epsilon}{E}\\right)^{3N_B/2-1}=\\left(1-\\dfrac{2\\epsilon}{3N_Bk_BT}\\right)^{3N_B/2-1}\\to e^{-\\epsilon/k_BT}$．規格化して\n\\[ \\boldsymbol{P(\\epsilon)=\\frac{1}{k_BT}e^{-\\epsilon/k_BT}}. \\]\n大きな熱浴と接した系がカノニカル分布に従うことを，状態密度から直接示したことになる．(2)(3) もこの極限で $k_BT$ と $1$ に近づく．"
+   }
+  ],
+  "idea": {
+   "tex": "注目系の分布は熱浴の状態密度 $g_B(E-\\epsilon)$ そのもの．熱浴が大きい極限で $e^{-\\epsilon/k_BT}$ になり，有限の熱浴では補正が残る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) a：3 N_B/2 - 1\n(2) ⟨ε⟩：2E/(3 N_B + 2)\n(3) 3 N_B/(3 N_B + 4)\n(4) P：e^(-epsilon/(k_B T))/(k_B T)"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "カノニカル分布の導出",
+   "熱浴",
+   "ベータ分布",
+   "ゆらぎ"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 4,
+  "minutes": 35,
+  "theme": "重力系の負の熱容量とアンサンブルの非等価性",
+  "topic": "重力系の負の熱容量とアンサンブルの非等価性",
+  "statement": {
+   "tex": "重力のように引力が長距離にはたらく系では，ミクロカノニカル分布で熱容量が負になりうる．\n\\begin{enumerate}\n\\item 質量 $m$ の質点1個が，ポテンシャル $-\\alpha/r$（$\\alpha>0$）の中を3次元運動する．エネルギー $E<0$ をもつ状態の位相空間体積を $h^3$ で割った $\\Gamma(E)$ を求めよ．運動は $r\\le\\alpha/|E|$ に限られ，容器の壁はそれより十分遠いとする．積分 $\\int_0^1u^{1/2}(1-u)^{3/2}du=\\dfrac{\\pi}{16}$ を用いてよい．\n\\item $S=k_B\\ln\\Gamma$ として，温度 $T$ を $E$ で表し，熱容量 $C=dE/dT$ を求めよ．\n\\item 重力で束縛された $N$ 個の星からなる星団が平衡にあるとき，ビリアル定理は $2\\langle K\\rangle+\\langle U\\rangle=0$（$K$ は運動エネルギー，$U$ は位置エネルギー）を与える．$\\langle K\\rangle=\\frac{3}{2}Nk_BT$ として，星団の熱容量 $C=dE/dT$ を求めよ．\n\\item 熱容量が負の系は，カノニカル分布（熱浴と接触した系）では実現できない．その理由を，カノニカル分布でのエネルギーゆらぎの公式 $\\langle(\\Delta E)^2\\rangle=k_BT^2C$ を用いて説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Gamma(E)=\\dfrac{\\pi^3(2m)^{3/2}\\alpha^3}{3h^3(-E)^{3/2}}$ \\quad (2) $T=-\\dfrac{2E}{3k_B}$，$C=-\\dfrac{3}{2}k_B$ \\quad (3) $C=-\\dfrac{3}{2}Nk_B$ \\quad (4) 左辺 $\\ge0$ なのでカノニカル分布では $C\\ge0$ が必ず成り立つ（記述）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位置 $r$ で $E$ 以下になる運動量は $|\\boldsymbol{p}|\\le\\sqrt{2m(E+\\alpha/r)}$ の球．よって\n\\[ \\Gamma=\\frac{1}{h^3}\\int_0^{r_0}4\\pi r^2\\,\\frac{4\\pi}{3}\\left[2m\\left(\\frac{\\alpha}{r}-|E|\\right)\\right]^{3/2}dr,\\qquad r_0=\\frac{\\alpha}{|E|}. \\]\n$r=r_0u$ とおくと $r^2(\\alpha/r-|E|)^{3/2}dr=r_0^3|E|^{3/2}u^{1/2}(1-u)^{3/2}du=\\alpha^3|E|^{-3/2}u^{1/2}(1-u)^{3/2}du$ となり，\n\\[ \\boldsymbol{\\Gamma(E)=\\frac{16\\pi^2}{3}\\cdot\\frac{\\pi}{16}\\cdot\\frac{(2m)^{3/2}\\alpha^3}{h^3(-E)^{3/2}}=\\frac{\\pi^3(2m)^{3/2}\\alpha^3}{3h^3(-E)^{3/2}}}. \\]\nエネルギーを下げる（$E\\to-\\infty$）ほど軌道が小さくなり，状態数が減る．\n\n(2) $S=-\\dfrac{3}{2}k_B\\ln(-E)+\\text{const}$ より $\\dfrac{1}{T}=\\dfrac{dS}{dE}=\\dfrac{3k_B}{2(-E)}$，すなわち $\\boldsymbol{T=-\\dfrac{2E}{3k_B}}$．$E=-\\frac{3}{2}k_BT$ なので $\\boldsymbol{C=-\\dfrac{3}{2}k_B}$．エネルギーを失うほど温度が上がる．\n\n(3) $E=K+U=-K=-\\dfrac{3}{2}Nk_BT$ より $\\boldsymbol{C=-\\dfrac{3}{2}Nk_B}$．星団や恒星はエネルギーを放射で失うと収縮して熱くなる．\n\n(4) カノニカル分布では $\\langle(\\Delta E)^2\\rangle=k_BT^2C$ で，左辺は分散なので非負．よって熱浴と平衡にある系では必ず $C\\ge0$．負の熱容量の系を熱浴に接触させると，熱浴より少し熱いときにエネルギーを熱浴に渡すとさらに熱くなり，平衡に落ち着かない（逆も同様）．そのため $S(E)$ が下に凸な領域はカノニカル分布では飛ばされ，ミクロカノニカル分布とカノニカル分布が等価でなくなる．長距離力では系の示量性が破れるのが根本的な原因である．"
+   }
+  ],
+  "idea": {
+   "tex": "引力の系では，エネルギーを下げるほど位相空間が狭くなり速さはかえって増すため，$dS/dE$ の振る舞いから負の熱容量が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Γ：pi^3 (2m)^(3/2) alpha^3/(3 h^3 (-E)^(3/2))\n(2) T：-2E/(3 k_B) ; C：-3 k_B/2\n(3) C：-3 N k_B/2\n(4) 記述：カノニカル分布では ⟨(ΔE)^2⟩=k_B T^2 C≧0 なので C<0 の状態は実現しない（熱浴と接すると不安定）"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "負の熱容量",
+   "ビリアル定理",
+   "アンサンブルの等価性"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-01-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-36",
+  "level": 4,
+  "minutes": 35,
+  "theme": "剛体棒の1次元気体（トンクス気体）の厳密解",
+  "topic": "剛体棒の1次元気体（トンクス気体）の厳密解",
+  "statement": {
+   "tex": "長さ $L$ の線分上に，長さ $a$ の剛体棒 $N$ 個（質量 $m$，同種粒子）が並び，互いに重なれない（それ以外の相互作用はない）．全エネルギーは運動エネルギーだけで $E$ である．各棒の左端の座標を $x_1<x_2<\\dots<x_N$ とすると，配置は $0\\le x_1$，$x_{j+1}\\ge x_j+a$，$x_N\\le L-a$ を満たす．\n\\begin{enumerate}\n\\item 同種粒子の入れかえを除いた配置空間の体積 $Q=\\int_{x_1<\\dots<x_N}dx_1\\cdots dx_N$ について，$N!\\,Q$ を求めよ（$y_j=x_j-(j-1)a$ と変換せよ）．\n\\item エネルギーが $E$ 以下の状態数は $\\Gamma(E)=Q\\cdot\\dfrac{(2\\pi mE)^{N/2}}{(N/2)!\\,h^N}$ である．$S=k_B\\ln\\Gamma$ から温度 $T$ と圧力（1次元なので力）$P=T\\,\\partial S/\\partial L$ を求め，状態方程式を $P$ について解け．\n\\item 等温圧縮率 $\\kappa=-\\dfrac{1}{L}\\left(\\dfrac{\\partial L}{\\partial P}\\right)_T$ を $N,\\,L,\\,a,\\,T$ で表せ．\n\\item $N\\gg1$ のとき，隣り合う棒のすきま $g$（左の棒の右端から右の棒の左端まで）の確率密度 $p(g)$ を $P,\\,T$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N!\\,Q=(L-Na)^N$ \\quad (2) $P=\\dfrac{Nk_BT}{L-Na}$ \\quad (3) $\\kappa=\\dfrac{(L-Na)^2}{Nk_BTL}$ \\quad (4) $p(g)=\\dfrac{P}{k_BT}e^{-Pg/k_BT}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $y_j=x_j-(j-1)a$ とすると条件は $0\\le y_1\\le y_2\\le\\dots\\le y_N\\le L-Na$．長さ $L-Na$ の区間に順序付きで $N$ 点を置く体積で，$\\boldsymbol{Q=\\dfrac{(L-Na)^N}{N!}}$．棒の長さの分だけ「自由に動ける長さ」が減る．\n\n(2) $S=k_B\\left[N\\ln(L-Na)+\\dfrac{N}{2}\\ln E\\right]+\\text{const}$．$\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{Nk_B}{2E}$ より $E=\\frac{1}{2}Nk_BT$．$\\dfrac{P}{T}=\\dfrac{\\partial S}{\\partial L}=\\dfrac{Nk_B}{L-Na}$ より\n\\[ \\boldsymbol{P=\\frac{Nk_BT}{L-Na}}. \\]\nファン・デル・ワールスの排除体積 $b$ が厳密に $Na$ となる（引力項はない）．1次元の短距離相互作用系なので，相転移は起こらない．\n\n(3) $L=Na+\\dfrac{Nk_BT}{P}$ より $\\left(\\dfrac{\\partial L}{\\partial P}\\right)_T=-\\dfrac{Nk_BT}{P^2}$，\n\\[ \\boldsymbol{\\kappa=\\frac{Nk_BT}{LP^2}=\\frac{(L-Na)^2}{Nk_BTL}}. \\]\n密に詰まる $L\\to Na$ で $\\kappa\\to0$（圧縮できない）．\n\n(4) $y$ で見ると，$N+1$ 個のすきま（両端の壁との間を含む）の和が $L'=L-Na$ で，その分配は単体上で一様である．1つのすきまの周辺分布は $p(g)=\\dfrac{N}{L'}\\left(1-\\dfrac{g}{L'}\\right)^{N-1}$ で，$N\\gg1$ では $\\dfrac{N}{L'}e^{-Ng/L'}$．(2) より $N/L'=P/k_BT$ なので\n\\[ \\boldsymbol{p(g)=\\frac{P}{k_BT}e^{-Pg/k_BT}}. \\]\nすきまを $g$ だけ広げるには外力に抗して仕事 $Pg$ が必要で，そのボルツマン因子が現れている（定圧アンサンブルの見方）．"
+   }
+  ],
+  "idea": {
+   "tex": "排除体積は変数変換 $y_j=x_j-(j-1)a$ で取り除け，配置体積が $(L-Na)^N/N!$ と厳密に求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) N! Q：(L - N a)^N\n(2) P：N k_B T/(L - N a)\n(3) κ：(L - N a)^2/(N k_B T L)\n(4) p(g)：P/(k_B T) e^(-P g/(k_B T))"
+  },
+  "methods": [],
+  "tags": [
+   "ミクロカノニカル",
+   "剛体棒気体",
+   "排除体積",
+   "厳密解",
+   "状態方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

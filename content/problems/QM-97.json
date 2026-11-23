@@ -1,0 +1,742 @@
+[
+ {
+  "id": "QM-10-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 0,
+  "minutes": 10,
+  "theme": "量子ビットの測定確率とアダマール変換",
+  "topic": "量子ビットの測定確率とアダマール変換",
+  "statement": {
+   "tex": "量子ビット（キュービット）の状態は2成分の複素ベクトル $|\\psi\\rangle=\\begin{pmatrix}a\\\\ b\\end{pmatrix}=a|0\\rangle+b|1\\rangle$（$|a|^2+|b|^2=1$）で表され，測定すると確率 $|a|^2$ で $0$，$|b|^2$ で $1$ が出る．また $Z=\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}$ の期待値は $\\langle Z\\rangle=|a|^2-|b|^2$ である．\n状態を $|\\psi\\rangle=\\cos\\dfrac\\theta2|0\\rangle+\\sin\\dfrac\\theta2|1\\rangle$ とし，$\\theta=\\dfrac\\pi3$ とする．\n\\begin{enumerate}\n\\item $0$ が出る確率を求めよ．\n\\item $\\langle Z\\rangle$ を求めよ．\n\\item 測定の前に行列 $H=\\dfrac{1}{\\sqrt2}\\begin{pmatrix}1&1\\\\1&-1\\end{pmatrix}$（アダマールゲート）を作用させてから測定すると，$0$ が出る確率はいくらか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac34$\n(2) $\\dfrac12$\n(3) $\\dfrac{2+\\sqrt3}{4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\cos^2(\\pi/6)=\\boldsymbol{3/4}$．\n\n$\\langle Z\\rangle=\\cos^2(\\theta/2)-\\sin^2(\\theta/2)=\\cos\\theta=\\boldsymbol{1/2}$．\n\n$H|\\psi\\rangle$ の第1成分は $\\dfrac{1}{\\sqrt2}\\left(\\cos\\frac\\theta2+\\sin\\frac\\theta2\\right)$ なので\n\\[P(0)=\\frac12\\left(1+2\\sin\\frac\\theta2\\cos\\frac\\theta2\\right)=\\frac{1+\\sin\\theta}{2}=\\boldsymbol{\\frac{2+\\sqrt3}{4}}\\approx0.93.\\]\n同じ状態でも，測る「向き」を変えると結果の確率が変わる．$H$ を作用させてから測ることは，$X=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$ の固有状態の基底で測ることに等しい．\n\n次は，状態をブロッホ球上の点（向き $\\theta$）として表し，測定を球面上の軸への射影として理解するとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "測定確率は振幅の絶対値の2乗．ゲートを先にかけると測定の基底が変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 3/4\n(2) 1/2\n(3) (2+sqrt(3))/4"
+  },
+  "methods": [],
+  "tags": [
+   "量子ビット",
+   "測定",
+   "アダマールゲート",
+   "期待値"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ベル状態の相関",
+  "topic": "ベル状態の相関",
+  "statement": {
+   "tex": "2個の量子ビット A, B の状態は4成分のベクトル $c_{00}|00\\rangle+c_{01}|01\\rangle+c_{10}|10\\rangle+c_{11}|11\\rangle$ で表され（$|01\\rangle$ は「A が $0$，B が $1$」），両方を測定して結果 $(i,j)$ を得る確率は $|c_{ij}|^2$ である．\nベル状態 $|\\Phi^+\\rangle=\\dfrac{1}{\\sqrt2}(|00\\rangle+|11\\rangle)$ を考える．\n\\begin{enumerate}\n\\item A, B をともに $\\{|0\\rangle,|1\\rangle\\}$ で測定するとき，A と B の結果が一致する確率を求めよ．\n\\item $|+\\rangle=\\frac{1}{\\sqrt2}(|0\\rangle+|1\\rangle)$，$|-\\rangle=\\frac{1}{\\sqrt2}(|0\\rangle-|1\\rangle)$ とすると $|\\Phi^+\\rangle=\\frac{1}{\\sqrt2}(|{+}{+}\\rangle+|{-}{-}\\rangle)$ と書ける．A, B をともに $\\{|+\\rangle,|-\\rangle\\}$ で測定するとき，結果が一致する確率を求めよ．\n\\item A は $\\{|0\\rangle,|1\\rangle\\}$ で，B は $\\{\\cos\\varphi|0\\rangle+\\sin\\varphi|1\\rangle,\\ -\\sin\\varphi|0\\rangle+\\cos\\varphi|1\\rangle\\}$（前者を結果「0」，後者を「1」とよぶ）で測定する．$\\varphi=\\pi/8$ のとき結果が一致する確率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1$\n(2) $1$\n(3) $\\dfrac{2+\\sqrt2}{4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$c_{00}=c_{11}=1/\\sqrt2$，$c_{01}=c_{10}=0$ なので一致する確率は $\\frac12+\\frac12=\\boldsymbol1$．\n\n$|{+}{+}\\rangle,|{-}{-}\\rangle$ の係数だけが $1/\\sqrt2$ なので，こちらも一致する確率は $\\boldsymbol1$．一方の測定結果だけ見ると完全にランダム（確率 $1/2$）なのに，どちらの基底で測っても相手と必ず一致する．古典的な「あらかじめ決まった答え」では説明しにくい相関で，これをエンタングルメント（量子もつれ）という．\n\nA が $0$ を得ると B は $|0\\rangle$ になり，B が「0」を出す確率は $\\cos^2\\varphi$．A が $1$ なら B は $|1\\rangle$ で「1」の確率は $\\cos^2\\varphi$．よって一致確率は\n\\[\\frac12\\cos^2\\varphi+\\frac12\\cos^2\\varphi=\\cos^2\\frac\\pi8=\\boldsymbol{\\frac{2+\\sqrt2}{4}}\\approx0.85.\\]\n\n次は，測定の向きを変えたときの相関の強さが古典論の限界を超えること（ベルの不等式，CHSH 不等式）を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "ベル状態はどの共通の基底で測っても完全に相関し，測定方向の角度差だけで一致確率が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1\n(2) 1\n(3) (2+sqrt(2))/4"
+  },
+  "methods": [],
+  "tags": [
+   "エンタングルメント",
+   "ベル状態",
+   "測定",
+   "相関"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 0,
+  "minutes": 10,
+  "theme": "BB84 量子鍵配送と盗聴の検出",
+  "topic": "BB84 量子鍵配送と盗聴の検出",
+  "statement": {
+   "tex": "量子鍵配送 BB84 では，送信者アリスが各ビットについて「Z 基底（$|0\\rangle,|1\\rangle$）」か「X 基底（$|+\\rangle,|-\\rangle$）」を等確率でランダムに選んで量子ビットを送る．受信者ボブも独立に基底をランダムに選んで測定し，あとで基底だけを公開して一致したビットを鍵として残す．基底が一致すれば結果は必ず正しく，異なる基底で測ると結果は等確率でランダムになる．\n\\begin{enumerate}\n\\item 送ったビットのうち鍵として残る割合を求めよ．\n\\item 盗聴者イブがすべての量子ビットを途中で横取りし，ランダムな基底で測って，その結果どおりの状態を作り直してボブへ送るとする．鍵として残ったビットのうち，アリスとボブで値が食い違う割合（誤り率）を求めよ．\n\\item イブが全体の割合 $f$ のビットだけ (2) の盗聴をするとき，誤り率が $5\\%$ と観測された．$f$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac12$\n(2) $\\dfrac14$\n(3) $f=\\dfrac15$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "ボブの基底がアリスと一致する確率は $\\boldsymbol{1/2}$．\n\n鍵に残るビットではアリスとボブの基底は同じ．イブの基底が同じ（確率 $1/2$）なら乱さずに送り直すので誤りなし．違う（確率 $1/2$）と，イブが送り直した状態はボブの基底でランダムな結果を与え，確率 $1/2$ で誤る．誤り率は $\\frac12\\times\\frac12=\\boldsymbol{1/4}$．\n\n誤り率は $f/4=0.05$ より $f=\\boldsymbol{1/5}$．未知の量子状態は「測ると壊れ，コピーもできない（量子複製不可能定理）」ので，盗聴は必ず誤り率として痕跡を残す．アリスとボブは鍵の一部を公開して誤り率を見積もり，盗聴を検出できる．\n\n次は，誤り率がどこまでなら安全な鍵を蒸留できるか（約 $11\\%$）という情報理論的な解析を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "異なる基底での測定は結果をランダム化するので，盗聴は必ず一定の誤り率を生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1/2\n(2) 1/4\n(3) f：1/5"
+  },
+  "methods": [],
+  "tags": [
+   "量子暗号",
+   "BB84",
+   "量子鍵配送",
+   "複製不可能定理"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 1,
+  "minutes": 12,
+  "theme": "密度行列とブロッホベクトル：純粋度とエントロピー",
+  "topic": "密度行列とブロッホベクトル：純粋度とエントロピー",
+  "statement": {
+   "tex": "1量子ビットの密度行列は $\\rho=\\dfrac12(I+\\boldsymbol r\\cdot\\boldsymbol\\sigma)$（$\\boldsymbol r$ はブロッホベクトル，$|\\boldsymbol r|=r\\le1$，$\\boldsymbol\\sigma$ はパウリ行列）と書ける．\n\\begin{enumerate}\n\\item $\\rho$ の固有値を $r$ で表せ．\n\\item 純粋度 $\\mathrm{Tr}\\,\\rho^2$ を $r$ で表せ．\n\\item $\\boldsymbol r=(0.36,\\ 0,\\ 0.48)$ のとき，フォン・ノイマン・エントロピー $S=-\\mathrm{Tr}\\,\\rho\\log_2\\rho$（単位はビット）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left\\{\\dfrac{1+r}{2},\\ \\dfrac{1-r}{2}\\right\\}$\n(2) $\\dfrac{1+r^2}{2}$\n(3) $S\\approx 0.722$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\boldsymbol r\\cdot\\boldsymbol\\sigma$ の固有値は $\\pm r$（$(\\boldsymbol r\\cdot\\boldsymbol\\sigma)^2=r^2I$ かつトレースが $0$）．よって $\\rho$ の固有値は $\\boldsymbol{(1\\pm r)/2}$．\n\n$\\mathrm{Tr}\\rho^2=\\left(\\frac{1+r}{2}\\right)^2+\\left(\\frac{1-r}{2}\\right)^2=\\boldsymbol{\\frac{1+r^2}{2}}$．$r=1$（球面上）が純粋状態，$r=0$（中心）が完全混合状態 $\\mathrm{Tr}\\rho^2=1/2$．\n\n$r=\\sqrt{0.36^2+0.48^2}=0.6$ なので固有値 $0.8,\\ 0.2$．\n\\[S=-0.8\\log_20.8-0.2\\log_20.2\\approx\\boldsymbol{0.722}\\ \\text{ビット}.\\]\nエントロピーは $r$ だけで決まり，ブロッホベクトルの向きにはよらない（ユニタリ変換で不変）．"
+   }
+  ],
+  "idea": {
+   "tex": "混合の度合いはブロッホベクトルの長さだけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) {(1+r)/2, (1-r)/2}\n(2) (1+r^2)/2\n(3) S [bit]：≈0.722"
+  },
+  "methods": [],
+  "tags": [
+   "密度行列",
+   "ブロッホ球",
+   "純粋度",
+   "フォン・ノイマン・エントロピー"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 1,
+  "minutes": 12,
+  "theme": "部分トレースとエンタングルメント・エントロピー",
+  "topic": "部分トレースとエンタングルメント・エントロピー",
+  "statement": {
+   "tex": "2量子ビットの純粋状態 $|\\psi\\rangle_{AB}$ に対し，A の約密度行列 $\\rho_A=\\mathrm{Tr}_B|\\psi\\rangle\\langle\\psi|$ のフォン・ノイマン・エントロピー $S(\\rho_A)=-\\mathrm{Tr}\\rho_A\\log_2\\rho_A$ をエンタングルメント・エントロピーという．\n\\begin{enumerate}\n\\item $|\\psi\\rangle=\\cos\\alpha|00\\rangle+\\sin\\alpha|11\\rangle$ に対し，$\\rho_A$ の固有値を求めよ．\n\\item (1) で $\\alpha=\\pi/8$ のとき，エンタングルメント・エントロピーを求めよ．\n\\item $|\\psi\\rangle=\\dfrac{1}{\\sqrt3}(|00\\rangle+|01\\rangle+|10\\rangle)$ に対し，$\\rho_A$ の固有値のうち大きい方を求め，エンタングルメント・エントロピーを数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\{\\cos^2\\alpha,\\ \\sin^2\\alpha\\}$\n(2) $S\\approx 0.601$\n(3) 固有値 $\\dfrac12+\\dfrac{\\sqrt5}{6}$，$S\\approx 0.550$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\rho_A=\\cos^2\\alpha|0\\rangle\\langle0|+\\sin^2\\alpha|1\\rangle\\langle1|$ なので固有値は $\\boldsymbol{\\cos^2\\alpha,\\ \\sin^2\\alpha}$（シュミット係数の2乗）．\n\n$\\cos^2(\\pi/8)=(2+\\sqrt2)/4\\approx0.854$．$S=-0.854\\log_20.854-0.146\\log_20.146\\approx\\boldsymbol{0.601}$ ビット．\n\n係数を行列 $C=\\dfrac{1}{\\sqrt3}\\begin{pmatrix}1&1\\\\1&0\\end{pmatrix}$（$C_{ij}=c_{ij}$）と並べると $\\rho_A=CC^\\dagger=\\dfrac13\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$．固有値は $\\lambda^2-\\lambda+\\frac19=0$ より\n\\[\\lambda_\\pm=\\frac12\\pm\\frac{\\sqrt5}{6},\\qquad\\lambda_+\\approx0.873.\\]\n$S=-\\lambda_+\\log_2\\lambda_+-\\lambda_-\\log_2\\lambda_-\\approx\\boldsymbol{0.550}$ ビット．見かけ上3項の重ね合わせでも，エンタングルメントは最大値 $1$ の約半分にすぎない．"
+   }
+  ],
+  "idea": {
+   "tex": "係数を行列 $C$ に並べると $\\rho_A=CC^\\dagger$．その固有値（シュミット係数の2乗）がエンタングルメントを決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) {cos(α)^2, sin(α)^2}\n(2) S [bit]：≈0.601\n(3) 固有値：1/2+sqrt(5)/6 ; S [bit]：≈0.550"
+  },
+  "methods": [],
+  "tags": [
+   "エンタングルメント",
+   "部分トレース",
+   "シュミット分解",
+   "エンタングルメント・エントロピー"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 1,
+  "minutes": 12,
+  "theme": "ドイチュ＝ジョサのアルゴリズム",
+  "topic": "ドイチュ＝ジョサのアルゴリズム",
+  "statement": {
+   "tex": "$n$ ビット入力の関数 $f:\\{0,1\\}^n\\to\\{0,1\\}$ を考える．ドイチュ＝ジョサのアルゴリズムでは，$n$ 量子ビットを $|0\\cdots0\\rangle$ から始め，(i) 全ビットにアダマール変換 $H^{\\otimes n}$，(ii) オラクル $|x\\rangle\\mapsto(-1)^{f(x)}|x\\rangle$，(iii) 再び $H^{\\otimes n}$ をかけて測定する．$H^{\\otimes n}|x\\rangle=2^{-n/2}\\sum_y(-1)^{x\\cdot y}|y\\rangle$ を用いる．\n\\begin{enumerate}\n\\item 測定で $|0\\cdots0\\rangle$ が得られる確率 $P_0$ を，$f(x)=1$ となる入力 $x$ の個数 $k$ と $n$ で表せ．\n\\item $f$ が定数関数のときと，均衡関数（$k=2^{n-1}$）のときの $P_0$ をそれぞれ求めよ．\n\\item $n=3$，$k=2$ のとき $P_0$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P_0=\\left(1-\\dfrac{2k}{2^n}\\right)^2$\n(2) 定数：$1$，均衡：$0$\n(3) $\\dfrac14$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(i) の後 $2^{-n/2}\\sum_x|x\\rangle$，(ii) で $2^{-n/2}\\sum_x(-1)^{f(x)}|x\\rangle$．(iii) の後の $|0\\cdots0\\rangle$ の振幅は $x\\cdot0=0$ より\n\\[\\frac{1}{2^n}\\sum_x(-1)^{f(x)}=\\frac{(2^n-k)-k}{2^n},\\qquad P_0=\\boldsymbol{\\left(1-\\frac{2k}{2^n}\\right)^2}.\\]\n\n定数関数（$k=0$ または $2^n$）で $P_0=\\boldsymbol1$，均衡関数で $P_0=\\boldsymbol0$．1回のオラクル呼び出しで確実に判別できる（古典の決定的アルゴリズムでは最悪 $2^{n-1}+1$ 回必要）．\n\n$n=3,k=2$ では $(1-4/8)^2=\\boldsymbol{1/4}$．定数でも均衡でもない関数ではこの判定は意味を持たない．"
+   }
+  ],
+  "idea": {
+   "tex": "重ね合わせで全入力を一度に評価し，位相 $(-1)^{f(x)}$ の総和を干渉で読み出す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (1-2k/2^n)^2\n(2) 定数：1 ; 均衡：0\n(3) 1/4"
+  },
+  "methods": [],
+  "tags": [
+   "量子アルゴリズム",
+   "ドイチュ＝ジョサ",
+   "アダマール変換",
+   "干渉"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 2,
+  "minutes": 15,
+  "theme": "雑音のあるエンタングル対による量子テレポーテーション",
+  "topic": "雑音のあるエンタングル対による量子テレポーテーション",
+  "statement": {
+   "tex": "アリスとボブがヴェルナー状態 $\\rho_W=p|\\Phi^+\\rangle\\langle\\Phi^+|+(1-p)\\dfrac{I}{4}$（$0\\le p\\le1$，$|\\Phi^+\\rangle=\\frac{1}{\\sqrt2}(|00\\rangle+|11\\rangle)$）を共有し，これを使って標準的なテレポーテーションのプロトコルで未知の1量子ビット状態を送る．\n\\begin{enumerate}\n\\item 共有状態のエンタングルメント忠実度 $F_e=\\langle\\Phi^+|\\rho_W|\\Phi^+\\rangle$ を $p$ で表せ．\n\\item テレポーテーションの平均忠実度（入力状態についてブロッホ球上で平均）は $F=\\dfrac{2F_e+1}{3}$ で与えられる．$F$ を $p$ で表せ．\n\\item 古典通信だけで（状態を測ってその結果を送り，ボブが作り直す）達成できる平均忠実度の上限は $2/3$ である．$F$ がこれを上回る $p$ の範囲を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F_e=\\dfrac{1+3p}{4}$\n(2) $F=\\dfrac{1+p}{2}$\n(3) $p>\\dfrac13$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\langle\\Phi^+|I|\\Phi^+\\rangle=1$ より $F_e=p+\\dfrac{1-p}{4}=\\boldsymbol{\\dfrac{1+3p}{4}}$．\n\n$F=\\dfrac{1}{3}\\left(\\dfrac{1+3p}{2}+1\\right)=\\boldsymbol{\\dfrac{1+p}{2}}$．$p=1$ で完全なテレポーテーション $F=1$，$p=0$（相関なし）で $F=1/2$（ボブがでたらめな状態を用意するのと同じ）．\n\n$(1+p)/2>2/3$ より $\\boldsymbol{p>1/3}$．ちょうど $p>1/3$ はヴェルナー状態がエンタングルしている条件（部分転置の判定）と一致し，「古典限界を超えるテレポーテーションにはエンタングルメントが必要」ということを表している．"
+   }
+  ],
+  "idea": {
+   "tex": "テレポーテーションの忠実度は共有状態の $|\\Phi^+\\rangle$ との重なりで決まり，古典限界 $2/3$ を超えるにはエンタングルメントが必要．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (1+3p)/4\n(2) (1+p)/2\n(3) p>1/3"
+  },
+  "methods": [],
+  "tags": [
+   "量子テレポーテーション",
+   "ヴェルナー状態",
+   "忠実度",
+   "エンタングルメント"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 2,
+  "minutes": 18,
+  "theme": "CHSH 不等式の量子的破れ",
+  "topic": "CHSH 不等式の量子的破れ",
+  "statement": {
+   "tex": "2量子ビットの一重項 $|\\Psi^-\\rangle=\\dfrac{1}{\\sqrt2}(|01\\rangle-|10\\rangle)$ を A, B に分け，それぞれ $xz$ 面内で $z$ 軸から角度 $a$，$b$ 傾いた方向のスピン $\\sigma_a=\\cos a\\,\\sigma_z+\\sin a\\,\\sigma_x$，$\\sigma_b$ を測る（結果は $\\pm1$）．\n\\begin{enumerate}\n\\item 相関関数 $E(a,b)=\\langle\\Psi^-|\\sigma_a\\otimes\\sigma_b|\\Psi^-\\rangle$ を求めよ．\n\\item CHSH 量 $S=|E(a,b)-E(a,b')+E(a',b)+E(a',b')|$ を $a=0$，$a'=\\pi/2$，$b=\\pi/4$，$b'=3\\pi/4$ について求めよ（局所実在論では $S\\le2$）．\n\\item 状態がヴェルナー状態 $p|\\Psi^-\\rangle\\langle\\Psi^-|+(1-p)I/4$ に劣化したとき，(2) と同じ測定で CHSH 不等式が破れる $p$ の範囲を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E(a,b)=-\\cos(a-b)$\n(2) $S=2\\sqrt2$\n(3) $p>\\dfrac{1}{\\sqrt2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "一重項は回転不変で，どの方向でも $\\sigma_{\\boldsymbol a}\\otimes\\sigma_{\\boldsymbol a}$ の期待値が $-1$．一般に $\\langle\\Psi^-|(\\boldsymbol a\\cdot\\boldsymbol\\sigma)\\otimes(\\boldsymbol b\\cdot\\boldsymbol\\sigma)|\\Psi^-\\rangle=-\\boldsymbol a\\cdot\\boldsymbol b$ なので $E(a,b)=\\boldsymbol{-\\cos(a-b)}$．\n\n$E(0,\\pi/4)=-\\frac{1}{\\sqrt2}$，$E(0,3\\pi/4)=+\\frac{1}{\\sqrt2}$，$E(\\pi/2,\\pi/4)=-\\frac{1}{\\sqrt2}$，$E(\\pi/2,3\\pi/4)=-\\frac{1}{\\sqrt2}$．\n\\[S=\\left|-\\tfrac{1}{\\sqrt2}-\\tfrac{1}{\\sqrt2}-\\tfrac{1}{\\sqrt2}-\\tfrac{1}{\\sqrt2}\\right|=\\boldsymbol{2\\sqrt2}.\\]\nこれは量子力学で達成できる最大値（チレルソン限界）である．\n\n$I/4$ の部分は $\\mathrm{Tr}(\\sigma_a\\otimes\\sigma_b)/4=0$ を与えるので相関はすべて $p$ 倍され $S=2\\sqrt2\\,p$．$S>2$ より $\\boldsymbol{p>1/\\sqrt2}\\approx0.707$．$1/3<p\\le1/\\sqrt2$ のヴェルナー状態はエンタングルしているが，この測定では CHSH 不等式を破らない（エンタングルメントと非局所性は同じではない）．"
+   }
+  ],
+  "idea": {
+   "tex": "一重項の相関は $-\\boldsymbol a\\cdot\\boldsymbol b$．測定方向を $45^\\circ$ ずつずらすと $S=2\\sqrt2$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -cos(a-b)\n(2) 2 sqrt(2)\n(3) p>1/sqrt(2)"
+  },
+  "methods": [],
+  "tags": [
+   "ベルの不等式",
+   "CHSH",
+   "非局所性",
+   "一重項",
+   "チレルソン限界"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 2,
+  "minutes": 15,
+  "theme": "振幅減衰チャネルと量子ビットの緩和",
+  "topic": "振幅減衰チャネルと量子ビットの緩和",
+  "statement": {
+   "tex": "量子ビットのエネルギー緩和は，クラウス演算子\n\\[K_0=\\begin{pmatrix}1&0\\\\0&\\sqrt{1-\\gamma}\\end{pmatrix},\\qquad K_1=\\begin{pmatrix}0&\\sqrt\\gamma\\\\0&0\\end{pmatrix}\\]\nによる量子チャネル $\\rho\\mapsto K_0\\rho K_0^\\dagger+K_1\\rho K_1^\\dagger$ で表される（振幅減衰チャネル，$0\\le\\gamma\\le1$）．\n\\begin{enumerate}\n\\item 入力 $|1\\rangle$ に対して，出力で $|1\\rangle$ に見いだす確率を求めよ．\n\\item 入力 $|+\\rangle=\\frac{1}{\\sqrt2}(|0\\rangle+|1\\rangle)$ に対して，出力の忠実度 $F=\\langle+|\\rho_{\\mathrm{out}}|+\\rangle$ を $\\gamma$ で表せ．\n\\item $\\gamma=1-e^{-t/T_1}$ とする．$t=T_1$ のときの (2) の忠実度を数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1-\\gamma$\n(2) $F=\\dfrac{1+\\sqrt{1-\\gamma}}{2}$\n(3) $F\\approx 0.803$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$K_0|1\\rangle=\\sqrt{1-\\gamma}|1\\rangle$，$K_1|1\\rangle=\\sqrt\\gamma|0\\rangle$ なので出力は $(1-\\gamma)|1\\rangle\\langle1|+\\gamma|0\\rangle\\langle0|$．確率は $\\boldsymbol{1-\\gamma}$．\n\n$\\rho_{\\mathrm{in}}=\\frac12\\begin{pmatrix}1&1\\\\1&1\\end{pmatrix}$ に対し\n\\[\\rho_{\\mathrm{out}}=\\frac12\\begin{pmatrix}1+\\gamma&\\sqrt{1-\\gamma}\\\\ \\sqrt{1-\\gamma}&1-\\gamma\\end{pmatrix}.\\]\n$F=\\frac12(\\rho_{00}+\\rho_{11}+2\\rho_{01})=\\boldsymbol{\\dfrac{1+\\sqrt{1-\\gamma}}{2}}$．\n\n$\\sqrt{1-\\gamma}=e^{-t/2T_1}$ なので $F=(1+e^{-1/2})/2\\approx\\boldsymbol{0.803}$．非対角成分（コヒーレンス）は $e^{-t/2T_1}$ で減衰し，占有数は $e^{-t/T_1}$ で減衰する．これが純粋な緩和だけのときの $T_2=2T_1$ の関係である．"
+   }
+  ],
+  "idea": {
+   "tex": "クラウス演算子で密度行列の各成分の変化を追う．コヒーレンスは占有数の半分の速さで減衰する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1-γ\n(2) (1+sqrt(1-γ))/2\n(3) ≈0.803"
+  },
+  "methods": [],
+  "tags": [
+   "量子チャネル",
+   "クラウス演算子",
+   "振幅減衰",
+   "デコヒーレンス",
+   "T1",
+   "T2"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 3,
+  "minutes": 18,
+  "theme": "グローバーの探索アルゴリズム",
+  "topic": "グローバーの探索アルゴリズム",
+  "statement": {
+   "tex": "$N$ 個の候補の中に印のついた要素が1個だけある．グローバーのアルゴリズムでは，一様な重ね合わせ $|s\\rangle$ から出発し，オラクル（印の要素の符号を反転）と拡散演算子 $2|s\\rangle\\langle s|-I$ の組（グローバー反復）を $k$ 回作用させる．状態は印の要素 $|w\\rangle$ と $|s\\rangle$ が張る2次元平面内で回転する．\n\\begin{enumerate}\n\\item $\\sin\\theta=1/\\sqrt N$ で $\\theta$ を定めると，$k$ 回後に $|w\\rangle$ を見いだす確率は $\\sin^2((2k+1)\\theta)$ となる．$N=4$ で $k=1$ のときの成功確率を求めよ．\n\\item $N=16$ のとき，$k=1$ の成功確率を求めよ．\n\\item $N=16$ のとき，成功確率を最大にする $k$ とそのときの成功確率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1$\n(2) $\\dfrac{121}{256}$\n(3) $k=3$，$P\\approx 0.961$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "各グローバー反復は「$|w\\rangle$ に直交する方向についての反射」と「$|s\\rangle$ についての反射」の積で，2次元平面内の角度 $2\\theta$ の回転である．初期状態は $|w\\rangle^\\perp$ から角度 $\\theta$ にあるので，$k$ 回後の角度は $(2k+1)\\theta$．\n\n$N=4$ では $\\theta=\\pi/6$，$3\\theta=\\pi/2$ で成功確率 $\\boldsymbol1$（1回で確実に見つかる）．\n\n$N=16$ では $\\sin\\theta=1/4$．$\\sin3\\theta=3\\sin\\theta-4\\sin^3\\theta=\\frac34-\\frac1{16}=\\frac{11}{16}$ より $\\boldsymbol{121/256}\\approx0.473$．\n\n$(2k+1)\\theta\\approx\\pi/2$ となる $k\\approx\\frac{\\pi}{4\\theta}-\\frac12\\approx2.61$ なので候補は $k=2,3$．$\\sin^25\\theta\\approx0.908$，$\\sin^27\\theta\\approx0.961$ より $\\boldsymbol{k=3}$，$P\\approx\\boldsymbol{0.961}$．$k=4$ では $0.58$ に下がる（回しすぎ）．一般に $k\\approx\\frac\\pi4\\sqrt N$ 回で古典の $O(N)$ に対して2次の加速となる．"
+   }
+  ],
+  "idea": {
+   "tex": "グローバー反復は2次元平面内の角度 $2\\theta$ の回転．$\\pi/2$ に最も近づく回数で止める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1\n(2) 121/256\n(3) k：3 ; 成功確率：≈0.961"
+  },
+  "methods": [],
+  "tags": [
+   "量子アルゴリズム",
+   "グローバー探索",
+   "振幅増幅"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 3,
+  "minutes": 18,
+  "theme": "3量子ビット・ビット反転符号",
+  "topic": "3量子ビット・ビット反転符号",
+  "statement": {
+   "tex": "論理量子ビット $a|0\\rangle+b|1\\rangle$ を $a|000\\rangle+b|111\\rangle$ と3量子ビットに符号化する．各物理量子ビットは独立に確率 $p$ でビット反転（$X$）誤りを受ける．シンドローム測定（$Z_1Z_2$，$Z_2Z_3$ の測定）で多数決的に誤りを訂正する．\n\\begin{enumerate}\n\\item 訂正後に論理誤りが残る確率 $p_L$ を $p$ で表せ．\n\\item $p=0.1$ のとき $p_L$ を求めよ．\n\\item 各物理量子ビットをさらに同じ符号で符号化する（2段の連接符号，計9量子ビット）と，論理誤り率は $p_L$ の式にもう一度 $p_L$ を代入したものになる．$p=0.1$ でこの値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_L=3p^2-2p^3$\n(2) $p_L\\approx 0.028$\n(3) $\\approx 2.31\\times10^{-3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "シンドローム $Z_1Z_2,Z_2Z_3$ は誤りの位置だけを教え，$a,b$ の情報を壊さない．誤りが1個以下なら正しく訂正でき，2個以上だと多数決が逆転して論理誤りになる．\n\\[p_L=3p^2(1-p)+p^3=\\boldsymbol{3p^2-2p^3}.\\]\n\n$p=0.1$：$p_L=0.03-0.002=\\boldsymbol{0.028}$．\n\n$p_L^{(2)}=3(0.028)^2-2(0.028)^3\\approx\\boldsymbol{2.31\\times10^{-3}}$．$p_L<p\\iff3p-2p^2<1\\iff p<1/2$ なので，物理誤り率がしきい値 $1/2$ 未満なら段数を増やすごとに誤りは2重指数的に減る（しきい値定理の原型）．ただしこの符号は位相反転 $Z$ 誤りを訂正できないので，両方を訂正するにはショアの9量子ビット符号などが必要である．"
+   }
+  ],
+  "idea": {
+   "tex": "符号距離3なら誤り1個まで訂正でき，論理誤り率は $O(p^2)$ になる．連接で誤りは2重指数的に減る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 3p^2-2p^3\n(2) ≈0.028\n(3) ≈2.31e-3"
+  },
+  "methods": [],
+  "tags": [
+   "量子誤り訂正",
+   "ビット反転符号",
+   "シンドローム",
+   "しきい値定理"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 3,
+  "minutes": 20,
+  "theme": "ヴェルナー状態の分離可能性：部分転置判定と共起",
+  "topic": "ヴェルナー状態の分離可能性：部分転置判定と共起",
+  "statement": {
+   "tex": "ヴェルナー状態 $\\rho=p|\\Psi^-\\rangle\\langle\\Psi^-|+(1-p)\\dfrac I4$（$|\\Psi^-\\rangle=\\frac{1}{\\sqrt2}(|01\\rangle-|10\\rangle)$，$0\\le p\\le1$）を考える．2量子ビット状態がエンタングルしていることと，部分転置 $\\rho^{T_B}$（B の添字だけを転置）が負の固有値を持つことは同値である（ペレス＝ホロデツキ判定）．\n\\begin{enumerate}\n\\item $\\rho^{T_B}$ の固有値を（重複を含めて）求めよ．\n\\item $\\rho$ がエンタングルしている $p$ の範囲を求めよ．\n\\item ウーターズの共起（concurrence）は $C=\\max(0,\\lambda_1-\\lambda_2-\\lambda_3-\\lambda_4)$（$\\lambda_i$ は $\\rho\\tilde\\rho$，$\\tilde\\rho=(\\sigma_y\\otimes\\sigma_y)\\rho^*(\\sigma_y\\otimes\\sigma_y)$ の固有値の平方根を降順に並べたもの）で与えられる．このヴェルナー状態では $\\tilde\\rho=\\rho$ である．$p=1/2$ のときの $C$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{1+p}{4}$（3重），$\\dfrac{1-3p}{4}$\n(2) $\\dfrac13<p\\le1$\n(3) $C=\\dfrac14$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "基底 $|00\\rangle,|01\\rangle,|10\\rangle,|11\\rangle$ で $|\\Psi^-\\rangle\\langle\\Psi^-|$ の成分は $\\rho_{01,01}=\\rho_{10,10}=\\frac12$，$\\rho_{01,10}=\\rho_{10,01}=-\\frac12$．部分転置で非対角成分 $|0 1\\rangle\\langle1 0|$ は $|00\\rangle\\langle11|$ に移るので\n\\[(|\\Psi^-\\rangle\\langle\\Psi^-|)^{T_B}=\\frac12\\begin{pmatrix}0&0&0&-1\\\\0&1&0&0\\\\0&0&1&0\\\\-1&0&0&0\\end{pmatrix}.\\]\n固有値は $\\frac12,\\frac12,\\frac12,-\\frac12$．よって $\\rho^{T_B}$ の固有値は $p\\cdot\\frac12+\\frac{1-p}{4}=\\boldsymbol{\\frac{1+p}{4}}$（3重）と $-\\frac p2+\\frac{1-p}4=\\boldsymbol{\\frac{1-3p}{4}}$．\n\n負になる条件 $1-3p<0$ より $\\boldsymbol{1/3<p\\le1}$．\n\n$\\tilde\\rho=\\rho$ なので $\\rho\\tilde\\rho=\\rho^2$，$\\lambda_i$ は $\\rho$ の固有値 $\\frac{1+3p}{4},\\frac{1-p}{4},\\frac{1-p}{4},\\frac{1-p}{4}$ そのもの．\n\\[C=\\max\\left(0,\\frac{1+3p}{4}-\\frac{3(1-p)}{4}\\right)=\\max\\left(0,\\frac{3p-1}{2}\\right).\\]\n$p=1/2$ で $C=\\boldsymbol{1/4}$．$C>0$ の条件も $p>1/3$ で，部分転置判定と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "部分転置は一重項の非対角成分を $|00\\rangle,|11\\rangle$ 間に移し，負の固有値 $-p/2$ を生む．混ぜる雑音がそれを上回ると分離可能になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (1+p)/4 ; (1-3p)/4\n(2) 1/3<p<=1\n(3) 1/4"
+  },
+  "methods": [],
+  "tags": [
+   "エンタングルメント",
+   "ヴェルナー状態",
+   "部分転置",
+   "PPT判定",
+   "共起"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 4,
+  "minutes": 30,
+  "theme": "非直交状態の識別：ヘルストローム測定と曖昧さのない識別",
+  "topic": "非直交状態の識別：ヘルストローム測定と曖昧さのない識別",
+  "statement": {
+   "tex": "2つの純粋状態 $|\\psi_0\\rangle=|0\\rangle$，$|\\psi_1\\rangle=\\cos\\theta|0\\rangle+\\sin\\theta|1\\rangle$（$0<\\theta<\\pi/2$）のどちらかが等確率で与えられる．\n\\begin{enumerate}\n\\item 一般に，事前確率 $q_0,q_1$ の状態 $\\rho_0,\\rho_1$ を識別するときの最小誤り確率は $P_e=\\dfrac12\\left(1-\\|q_0\\rho_0-q_1\\rho_1\\|_1\\right)$（$\\|A\\|_1$ は $A$ の固有値の絶対値の和）である．$\\Gamma=\\frac12(\\rho_0-\\rho_1)$ の固有値を求めて $P_e$ を $\\theta$ で表せ．\n\\item 誤りは決して犯さないが，「わからない」という結果を許す測定（曖昧さのない識別）を考える．その最小の「わからない」確率は $|\\langle\\psi_0|\\psi_1\\rangle|$ である．これを $\\theta$ で表せ．\n\\item $\\theta=\\pi/4$ のとき，(1) の $P_e$ と (2) の失敗確率をそれぞれ数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P_e=\\dfrac{1-\\sin\\theta}{2}$\n(2) $\\cos\\theta$\n(3) $P_e\\approx 0.146$，失敗確率 $\\approx 0.707$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\rho_0-\\rho_1$ はトレース $0$ の $2\\times2$ エルミート行列なので固有値は $\\pm\\mu$．\n\\[\\rho_0-\\rho_1=\\begin{pmatrix}1-\\cos^2\\theta&-\\sin\\theta\\cos\\theta\\\\-\\sin\\theta\\cos\\theta&-\\sin^2\\theta\\end{pmatrix}=\\sin\\theta\\begin{pmatrix}\\sin\\theta&-\\cos\\theta\\\\-\\cos\\theta&-\\sin\\theta\\end{pmatrix}\\]\nで，括弧内の行列の固有値は $\\pm1$．よって $\\Gamma$ の固有値は $\\pm\\frac12\\sin\\theta$，$\\|\\Gamma\\|_1=\\sin\\theta$．\n\\[P_e=\\boldsymbol{\\frac{1-\\sin\\theta}{2}}=\\frac12\\left(1-\\sqrt{1-|\\langle\\psi_0|\\psi_1\\rangle|^2}\\right).\\]\n最適測定は $\\Gamma$ の固有ベクトルへの射影で，2状態の中間の向きから $45^\\circ$ ずつ開いた正規直交基底になる．\n\n失敗確率は $|\\langle\\psi_0|\\psi_1\\rangle|=\\boldsymbol{\\cos\\theta}$（イワノビッチ＝ディークス＝ペレス限界）．\n\n$\\theta=\\pi/4$ で $P_e=(1-1/\\sqrt2)/2\\approx\\boldsymbol{0.146}$，失敗確率 $1/\\sqrt2\\approx\\boldsymbol{0.707}$．「たまに間違えるが常に答える」戦略と「間違えないがしばしば答えられない」戦略のトレードオフである．非直交状態を完全には識別できないことが，B92 など量子暗号の安全性の基礎となっている．"
+   }
+  ],
+  "idea": {
+   "tex": "最小誤り確率は $\\rho_0-\\rho_1$ のトレースノルムで決まる．誤りゼロを要求すると失敗確率は重なりの大きさになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (1-sin(θ))/2\n(2) cos(θ)\n(3) P_e：≈0.146 ; 失敗確率：≈0.707"
+  },
+  "methods": [],
+  "tags": [
+   "量子状態識別",
+   "ヘルストローム測定",
+   "トレース距離",
+   "曖昧さのない識別"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 4,
+  "minutes": 30,
+  "theme": "量子計測：標準量子限界とハイゼンベルク限界",
+  "topic": "量子計測：標準量子限界とハイゼンベルク限界",
+  "statement": {
+   "tex": "位相 $\\phi$ を推定する．1量子ビットを $|+\\rangle$ に用意し，ユニタリ $|0\\rangle\\mapsto|0\\rangle,\\ |1\\rangle\\mapsto e^{i\\phi}|1\\rangle$ を作用させてから $\\{|+\\rangle,|-\\rangle\\}$ で測定すると，結果 $+$ の確率は $P_+(\\phi)=\\cos^2(\\phi/2)$ となる．\n2値の結果の確率 $P_\\pm(\\phi)$ から求まる古典フィッシャー情報は $F(\\phi)=\\displaystyle\\sum_\\pm\\frac{(\\partial_\\phi P_\\pm)^2}{P_\\pm}$ で，独立な $\\nu$ 回の測定に対する推定誤差はクラメール＝ラオ限界 $\\Delta\\phi\\ge1/\\sqrt{\\nu F}$ を満たす．\n\\begin{enumerate}\n\\item 1量子ビットの測定のフィッシャー情報 $F$ を求めよ（$0<\\phi<\\pi$）．\n\\item 独立な $N$ 量子ビットを同時に用いて1回ずつ測るとき（$\\nu=N$），$\\Delta\\phi$ の下限を求めよ．\n\\item $N$ 量子ビットの GHZ 状態 $\\frac{1}{\\sqrt2}(|0\\cdots0\\rangle+|1\\cdots1\\rangle)$ を用いると位相は $N\\phi$ となり，適切なパリティ測定で結果の確率が $\\cos^2(N\\phi/2)$, $\\sin^2(N\\phi/2)$ となる．この1回の測定に対する $\\Delta\\phi$ の下限を求めよ．\n\\item $N=100$ のとき，(2) と (3) の下限の比 $\\Delta\\phi_{(2)}/\\Delta\\phi_{(3)}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F=1$\n(2) $\\Delta\\phi_{\\min}=\\dfrac{1}{\\sqrt N}$\n(3) $\\Delta\\phi_{\\min}=\\dfrac{1}{N}$\n(4) $10$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$P_+=\\cos^2\\frac\\phi2$，$P_-=\\sin^2\\frac\\phi2$，$\\partial_\\phi P_\\pm=\\mp\\frac12\\sin\\phi$．\n\\[F=\\frac{\\frac14\\sin^2\\phi}{\\cos^2\\frac\\phi2}+\\frac{\\frac14\\sin^2\\phi}{\\sin^2\\frac\\phi2}=\\sin^2\\frac\\phi2+\\cos^2\\frac\\phi2=\\boldsymbol1.\\]\n（$\\phi$ によらない．これは状態 $|\\psi_\\phi\\rangle$ の量子フィッシャー情報 $4(\\langle\\partial\\psi|\\partial\\psi\\rangle-|\\langle\\psi|\\partial\\psi\\rangle|^2)=1$ と等しく，この測定は最適である．）\n\n独立な $N$ 個ではフィッシャー情報が加法的で $NF=N$，$\\Delta\\phi\\ge\\boldsymbol{1/\\sqrt N}$（標準量子限界，ショット雑音限界）．\n\nGHZ 状態では $\\phi\\to N\\phi$ なので $\\partial_\\phi$ が $N$ 倍され，$F=N^2$．1回の測定で $\\Delta\\phi\\ge\\boldsymbol{1/N}$（ハイゼンベルク限界）．\n\n比は $\\sqrt N=\\boldsymbol{10}$．同じ資源量でエンタングルメントにより $\\sqrt N$ 倍の精度向上が得られる．ただし $N\\phi$ は $2\\pi/N$ ごとに一周するので位相の曖昧さが生じ，また GHZ 状態は1量子ビットの位相緩和でも全体のコヒーレンスを失う（$N$ 倍速く劣化する）ため，実際の利得は雑音との競合で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "独立な $N$ 個ではフィッシャー情報が $N$ に比例，GHZ 状態では位相が $N$ 倍速く回るので $N^2$ に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1\n(2) 1/sqrt(N)\n(3) 1/N\n(4) 10"
+  },
+  "methods": [],
+  "tags": [
+   "量子計測",
+   "フィッシャー情報",
+   "クラメール＝ラオ限界",
+   "GHZ状態",
+   "ハイゼンベルク限界"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 4,
+  "minutes": 30,
+  "theme": "位相緩和したベル状態の量子相互情報量と条件付きエントロピー",
+  "topic": "位相緩和したベル状態の量子相互情報量と条件付きエントロピー",
+  "statement": {
+   "tex": "ベル状態 $|\\Phi^+\\rangle=\\frac{1}{\\sqrt2}(|00\\rangle+|11\\rangle)$ の B 側の量子ビットだけが位相緩和チャネル $\\rho\\mapsto\\frac{1+\\lambda}{2}\\rho+\\frac{1-\\lambda}{2}Z\\rho Z$（$0\\le\\lambda\\le1$，$Z=\\mathrm{diag}(1,-1)$）を通る．エントロピーはすべて $\\log_2$ で測る（単位はビット）．$h(x)=-x\\log_2x-(1-x)\\log_2(1-x)$ とする．\n\\begin{enumerate}\n\\item 出力の2量子ビット状態 $\\rho_{AB}$ の固有値を求めよ．\n\\item 量子相互情報量 $I(A{:}B)=S(\\rho_A)+S(\\rho_B)-S(\\rho_{AB})$ を $\\lambda$ で表せ．\n\\item 条件付きエントロピー $S(A|B)=S(\\rho_{AB})-S(\\rho_B)$ が負になる（古典的にはありえない）$\\lambda$ の範囲を求めよ．\n\\item $\\lambda=1/2$ のとき $I(A{:}B)$ を数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left\\{\\dfrac{1+\\lambda}{2},\\ \\dfrac{1-\\lambda}{2},\\ 0,\\ 0\\right\\}$\n(2) $I=2+\\dfrac{1+\\lambda}{2}\\log_2\\dfrac{1+\\lambda}{2}+\\dfrac{1-\\lambda}{2}\\log_2\\dfrac{1-\\lambda}{2}$\n(3) $0<\\lambda\\le1$\n(4) $I\\approx 1.189$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$Z$ は $|1\\rangle$ の符号を変えるので $(I\\otimes Z)|\\Phi^+\\rangle=|\\Phi^-\\rangle$．したがって\n\\[\\rho_{AB}=\\frac{1+\\lambda}{2}|\\Phi^+\\rangle\\langle\\Phi^+|+\\frac{1-\\lambda}{2}|\\Phi^-\\rangle\\langle\\Phi^-|\\]\nで，固有値は $\\boldsymbol{\\frac{1+\\lambda}2,\\frac{1-\\lambda}2,0,0}$．行列で書けば対角成分 $\\frac12$ はそのままで，コヒーレンス $|00\\rangle\\langle11|$ が $\\lambda$ 倍される．\n\n約密度行列は $\\rho_A=\\rho_B=I/2$ のまま（局所的な操作で相手側は変わらない）なので $S(\\rho_A)=S(\\rho_B)=1$．$S(\\rho_{AB})=h\\left(\\frac{1+\\lambda}{2}\\right)$．\n\\[I(A{:}B)=\\boldsymbol{2-h\\left(\\frac{1+\\lambda}{2}\\right)}.\\]\n$\\lambda=1$（純粋なベル状態）で $2$ ビット（古典相関の上限 $1$ ビットの2倍），$\\lambda=0$（完全な位相緩和，$\\frac12(|00\\rangle\\langle00|+|11\\rangle\\langle11|)$）で $1$ ビット（古典相関のみ）．\n\n$S(A|B)=h\\left(\\frac{1+\\lambda}{2}\\right)-1$．$h\\le1$ で等号は $\\lambda=0$ のみなので，$\\boldsymbol{0<\\lambda\\le1}$ で負．負の条件付きエントロピーはエンタングルメントの証拠で，$-S(A|B)$ はコヒーレント情報として量子状態マージングや量子通信路容量の文脈で操作的な意味を持つ．\n\n$\\lambda=1/2$：$h(3/4)\\approx0.811$，$I\\approx\\boldsymbol{1.189}$ ビット．"
+   }
+  ],
+  "idea": {
+   "tex": "位相緩和はコヒーレンスだけを減らし，局所状態は変えない．全体のエントロピーの増加が相互情報量の減少になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) {(1+λ)/2, (1-λ)/2, 0, 0}\n(2) 2+((1+λ)/2) ln((1+λ)/2)/ln(2)+((1-λ)/2) ln((1-λ)/2)/ln(2)\n(3) 0<λ<=1\n(4) ≈1.189"
+  },
+  "methods": [],
+  "tags": [
+   "量子相互情報量",
+   "条件付きエントロピー",
+   "位相緩和",
+   "コヒーレント情報",
+   "エンタングルメント"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

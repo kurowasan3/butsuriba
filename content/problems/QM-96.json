@@ -1,0 +1,737 @@
+[
+ {
+  "id": "QM-09-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ボーア＝ゾンマーフェルトの量子化条件と調和振動子",
+  "topic": "ボーア＝ゾンマーフェルトの量子化条件と調和振動子",
+  "statement": {
+   "tex": "古典力学では，粒子の状態は位置 $x$ と運動量 $p$ の組 $(x,p)$ で表され，これを平面上の点とみなしたものを位相空間という．エネルギー $E$ が一定の運動では，点 $(x,p)$ は位相空間内の閉曲線を1周する．\n量子力学の近似（WKB 近似）によると，許されるエネルギーは「この閉曲線が囲む面積 $A$ が $A=2\\pi\\hbar\\left(n+\\dfrac{1}{2}\\right)$（$n=0,1,2,\\dots$）を満たすもの」で与えられる（$\\hbar$ はプランク定数を $2\\pi$ で割った定数）．\n\n質量 $m$，角振動数 $\\omega$ の調和振動子 $E=\\dfrac{p^2}{2m}+\\dfrac{1}{2}m\\omega^2x^2$ を考える．\n\\begin{enumerate}\n\\item エネルギー $E$ の軌道は位相空間で楕円になる．$x$ 方向の半径 $x_0$ と $p$ 方向の半径 $p_0$ を求めよ．\n\\item 楕円の面積 $A=\\pi x_0p_0$ を $E,\\omega$ で表せ．\n\\item 量子化条件から，許されるエネルギー $E_n$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x_0=\\sqrt{\\dfrac{2E}{m\\omega^2}}$，$p_0=\\sqrt{2mE}$\n(2) $A=\\dfrac{2\\pi E}{\\omega}$\n(3) $E_n=\\hbar\\omega\\left(n+\\dfrac{1}{2}\\right)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$p=0$ のとき $E=\\frac12m\\omega^2x^2$ より $x_0=\\boldsymbol{\\sqrt{2E/(m\\omega^2)}}$，$x=0$ のとき $E=p^2/2m$ より $p_0=\\boldsymbol{\\sqrt{2mE}}$．軌道は $\\dfrac{x^2}{x_0^2}+\\dfrac{p^2}{p_0^2}=1$ の楕円である．\n\n面積は\n\\[A=\\pi x_0p_0=\\pi\\sqrt{\\frac{2E}{m\\omega^2}\\cdot 2mE}=\\boldsymbol{\\frac{2\\pi E}{\\omega}}.\\]\n\n$2\\pi E/\\omega=2\\pi\\hbar(n+\\frac12)$ より $E_n=\\boldsymbol{\\hbar\\omega(n+\\tfrac12)}$．これはシュレーディンガー方程式を厳密に解いた結果と完全に一致する（調和振動子では WKB 近似が厳密になる特別な例）．\n\n次は，壁や非対称なポテンシャルがあるとき $1/2$ の部分がどう変わるか（接続公式）を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "位相空間の軌道が囲む面積をプランク定数の単位で数えると，エネルギー準位が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) x_0：sqrt(2E/(m omega^2)) ; p_0：sqrt(2 m E)\n(2) 2 pi E/omega\n(3) hbar omega (n+1/2)"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "ボーア＝ゾンマーフェルト",
+   "位相空間",
+   "調和振動子"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 0,
+  "minutes": 10,
+  "theme": "長方形障壁のトンネル確率（WKB の指数因子）",
+  "topic": "長方形障壁のトンネル確率（WKB の指数因子）",
+  "statement": {
+   "tex": "量子力学では，粒子は自分のエネルギー $E$ より高いポテンシャル $V_0$ の壁（障壁）をすり抜けることがある（トンネル効果）．障壁が厚いとき，すり抜ける確率は近似的に\n\\[T\\approx \\exp(-2\\kappa a),\\qquad \\kappa=\\frac{\\sqrt{2m(V_0-E)}}{\\hbar}\\]\nで与えられる（$a$ は障壁の厚さ，$m$ は粒子の質量）．\n電子（$m=9.11\\times10^{-31}\\,\\mathrm{kg}$）が，$V_0-E=1.00\\,\\mathrm{eV}$ の障壁に当たる．$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$1\\,\\mathrm{eV}=1.602\\times10^{-19}\\,\\mathrm{J}$ とする．\n\\begin{enumerate}\n\\item $\\kappa$ を $\\mathrm{m^{-1}}$ 単位で求めよ．\n\\item 厚さ $a=0.50\\,\\mathrm{nm}$ のときの $T$ を求めよ．\n\\item 厚さを2倍の $1.0\\,\\mathrm{nm}$ にすると $T$ はいくらになるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\kappa\\approx 5.12\\times10^{9}\\,\\mathrm{m^{-1}}$\n(2) $T\\approx 5.97\\times10^{-3}$\n(3) $T\\approx 3.56\\times10^{-5}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$V_0-E=1.602\\times10^{-19}\\,\\mathrm{J}$ なので\n\\[\\kappa=\\frac{\\sqrt{2\\times 9.11\\times10^{-31}\\times1.602\\times10^{-19}}}{1.055\\times10^{-34}}\\approx\\boldsymbol{5.12\\times10^{9}\\,\\mathrm{m^{-1}}}.\\]\n\n$2\\kappa a=2\\times5.12\\times10^{9}\\times0.50\\times10^{-9}\\approx5.12$ なので $T\\approx e^{-5.12}\\approx\\boldsymbol{5.97\\times10^{-3}}$．\n\n厚さを2倍にすると指数も2倍になるので $T\\approx(5.97\\times10^{-3})^2\\approx\\boldsymbol{3.56\\times10^{-5}}$．厚さを2倍にしただけで確率は約 $1/170$ になる．この指数関数的な敏感さを使ったのが走査型トンネル顕微鏡（STM）で，探針と表面の距離のわずかな変化を電流の大きな変化として読み取る．\n\n次は，$V(x)$ が場所によって変わる障壁で $2\\kappa a$ を $\\displaystyle 2\\int\\kappa(x)\\,dx$ に置き換える WKB 近似の一般形を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "トンネル確率は障壁の厚さと $\\sqrt{V_0-E}$ の積に対して指数関数的に小さくなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) κ [m^-1]：≈5.12e9\n(2) ≈5.97e-3\n(3) ≈3.56e-5"
+  },
+  "methods": [],
+  "tags": [
+   "トンネル効果",
+   "WKB近似",
+   "STM"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ゆっくり広がる箱と断熱定理",
+  "topic": "ゆっくり広がる箱と断熱定理",
+  "statement": {
+   "tex": "幅 $L$ の箱（無限に深い井戸型ポテンシャル）に閉じ込められた質量 $m$ の粒子のエネルギーは $E_n=\\dfrac{n^2\\pi^2\\hbar^2}{2mL^2}$（$n=1,2,\\dots$）である．\n量子力学の断熱定理によると，箱の壁を十分ゆっくり動かせば，粒子ははじめの番号 $n$ の状態にとどまり続ける．\n\nはじめ粒子は幅 $L$ の箱の基底状態（$n=1$）にある．片方の壁をゆっくり動かして，幅を $2L$ まで広げる．\n\\begin{enumerate}\n\\item 広げた後のエネルギーは，はじめのエネルギーの何倍か．\n\\item この間に粒子が壁に対してした仕事 $W$ を $m,L,\\hbar$ で表せ．\n\\item 幅が $L$ のとき，粒子が壁を押す力 $f=-\\dfrac{dE_1}{dL}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{1}{4}$\n(2) $W=\\dfrac{3\\pi^2\\hbar^2}{8mL^2}$\n(3) $f=\\dfrac{\\pi^2\\hbar^2}{mL^3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "番号 $n=1$ のまま幅が2倍になるので，$E_1\\propto1/L^2$ より $\\boldsymbol{1/4}$ 倍．\n\n粒子のエネルギーの減少分が壁にした仕事になる：\n\\[W=\\frac{\\pi^2\\hbar^2}{2mL^2}-\\frac{\\pi^2\\hbar^2}{2m(2L)^2}=\\boldsymbol{\\frac{3\\pi^2\\hbar^2}{8mL^2}}.\\]\n\n$f=-\\dfrac{d}{dL}\\dfrac{\\pi^2\\hbar^2}{2mL^2}=\\boldsymbol{\\dfrac{\\pi^2\\hbar^2}{mL^3}}$．これは $f=2E_1/L$ とも書け，気体の圧力と同じく「エネルギー密度に比例する圧力」になっている．ゆっくり膨張する気体が冷えるのと同じしくみ（断熱膨張）が，1個の量子でも起こる．\n\n次は，古典力学の断熱不変量（作用変数 $\\oint p\\,dx$）が量子数と対応していることを学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "ゆっくりした変化では量子数が保たれる（断熱定理）．エネルギーの減少分が外部への仕事になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1/4\n(2) 3 pi^2 hbar^2/(8 m L^2)\n(3) pi^2 hbar^2/(m L^3)"
+  },
+  "methods": [],
+  "tags": [
+   "断熱定理",
+   "井戸型ポテンシャル",
+   "断熱膨張"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 1,
+  "minutes": 12,
+  "theme": "V字型ポテンシャル $F|x|$ の WKB 準位",
+  "topic": "V字型ポテンシャル $F|x|$ の WKB 準位",
+  "statement": {
+   "tex": "質量 $m$ の粒子が1次元ポテンシャル $V(x)=F|x|$（$F>0$）の中にある．WKB 近似の量子化条件\n\\[\\oint p\\,dx=2\\int_{x_1}^{x_2}\\sqrt{2m(E-V(x))}\\,dx=2\\pi\\hbar\\left(n+\\frac12\\right)\\]\n（$x_1,x_2$ は古典的転回点）を用いる．\n\\begin{enumerate}\n\\item エネルギー準位 $E_n$ を求めよ．\n\\item WKB 近似での $E_1/E_0$ を求めよ．\n\\item 基底エネルギーを $E_0=c\\left(\\dfrac{\\hbar^2F^2}{2m}\\right)^{1/3}$ と書いたときの係数 $c$ を数値で求めよ（厳密解は $c=1.019$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_n=\\left(\\dfrac{3\\pi\\hbar F(n+\\frac12)}{4\\sqrt{2m}}\\right)^{2/3}$\n(2) $3^{2/3}$\n(3) $c\\approx 1.115$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "転回点は $x=\\pm E/F$．対称性から\n\\[\\oint p\\,dx=4\\int_0^{E/F}\\sqrt{2m(E-Fx)}\\,dx=4\\sqrt{2m}\\cdot\\frac{2}{3}\\frac{E^{3/2}}{F}=\\frac{8\\sqrt{2m}}{3F}E^{3/2}.\\]\nこれを $2\\pi\\hbar(n+\\frac12)$ と等置して\n\\[E_n=\\boldsymbol{\\left(\\frac{3\\pi\\hbar F(n+\\frac12)}{4\\sqrt{2m}}\\right)^{2/3}}.\\]\n\n$E_n\\propto(n+\\frac12)^{2/3}$ より $E_1/E_0=(3/2\\cdot2)^{2/3}=\\boldsymbol{3^{2/3}}\\approx2.08$．\n\n$n=0$ で $E_0^{3/2}=\\dfrac{3\\pi}{8}\\dfrac{\\hbar F}{\\sqrt{2m}}$，すなわち $E_0=(3\\pi/8)^{2/3}(\\hbar^2F^2/2m)^{1/3}$，$c=(3\\pi/8)^{2/3}\\approx\\boldsymbol{1.115}$．厳密値 $1.019$（エアリー関数の導関数の零点）との差は約 $9\\%$ で，WKB 近似は低い準位ほど精度が落ちるが，$n$ が大きいと急速に正確になる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\oint p\\,dx$ を計算するとエネルギーのべき $E^{3/2}$ が出るので，$E_n\\propto(n+\\frac12)^{2/3}$ となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (3 pi hbar F (n+1/2)/(4 sqrt(2m)))^(2/3)\n(2) 3^(2/3)\n(3) c：≈1.115"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "量子化条件",
+   "線形ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 1,
+  "minutes": 12,
+  "theme": "電界放出（ファウラー＝ノルドハイム）のトンネル指数",
+  "topic": "電界放出（ファウラー＝ノルドハイム）のトンネル指数",
+  "statement": {
+   "tex": "金属表面（$x=0$）の外側に一様な電場（強さ $F$）をかけると，伝導電子（質量 $m$，電荷 $-q$）が感じるポテンシャル障壁は，フェルミ準位から測って $V(x)-E=W-qFx$（$x>0$，$W$ は仕事関数）の三角形になる．WKB 近似の透過率 $T\\approx\\exp\\left(-\\dfrac{2}{\\hbar}\\displaystyle\\int\\sqrt{2m(V-E)}\\,dx\\right)$ を用いる．\n\\begin{enumerate}\n\\item 指数 $G$（$T\\approx e^{-G}$）を $m,W,q,F,\\hbar$ で表せ．\n\\item $W=4.5\\,\\mathrm{eV}$，$F=3.0\\times10^{9}\\,\\mathrm{V/m}$ のとき $T$ を求めよ．$m=9.11\\times10^{-31}\\,\\mathrm{kg}$，$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$q=1.602\\times10^{-19}\\,\\mathrm{C}$．\n\\item 電場を2倍にすると $T$ はいくらになるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $G=\\dfrac{4\\sqrt{2m}W^{3/2}}{3\\hbar qF}$\n(2) $T\\approx 3.7\\times10^{-10}$\n(3) $T\\approx 1.9\\times10^{-5}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "障壁の幅は $0<x<W/(qF)$．\n\\[G=\\frac{2}{\\hbar}\\int_0^{W/qF}\\sqrt{2m(W-qFx)}\\,dx=\\frac{2\\sqrt{2m}}{\\hbar}\\cdot\\frac{2}{3}\\frac{W^{3/2}}{qF}=\\boldsymbol{\\frac{4\\sqrt{2m}\\,W^{3/2}}{3\\hbar qF}}.\\]\n\n数値を入れると $G\\approx21.7$，$T\\approx e^{-21.7}\\approx\\boldsymbol{3.7\\times10^{-10}}$．\n\n$G\\propto1/F$ なので電場2倍で $G\\approx10.9$，$T\\approx\\boldsymbol{1.9\\times10^{-5}}$．電流は $\\exp(-\\text{定数}/F)$ の形で電場に極めて敏感に依存する（ファウラー＝ノルドハイムの式）．$\\ln(I/F^2)$ を $1/F$ に対してプロットすると直線になることが実験的な判定法である．"
+   }
+  ],
+  "idea": {
+   "tex": "三角障壁では $\\int\\sqrt{V-E}\\,dx\\propto W^{3/2}/F$ となり，透過率は $\\exp(-\\text{定数}/F)$ で電場に敏感に依存する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 4 sqrt(2m) W^(3/2)/(3 hbar q F)\n(2) ≈3.7e-10\n(3) ≈1.9e-5"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "トンネル効果",
+   "電界放出",
+   "ファウラー＝ノルドハイム"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 1,
+  "minutes": 12,
+  "theme": "調和振動子の振動数変化：突然近似と断熱近似",
+  "topic": "調和振動子の振動数変化：突然近似と断熱近似",
+  "statement": {
+   "tex": "質量 $m$ の調和振動子が，角振動数 $\\omega_1$ の基底状態 $\\psi_0(x)=\\left(\\dfrac{m\\omega_1}{\\pi\\hbar}\\right)^{1/4}e^{-m\\omega_1x^2/2\\hbar}$ にある．角振動数を $\\omega_1$ から $\\omega_2$ に変える．\n\\begin{enumerate}\n\\item 十分ゆっくり変えた場合（断熱変化），変化後のエネルギーを求めよ．\n\\item 瞬間的に変えた場合（突然近似），変化後に新しいハミルトニアンの基底状態に見いだす確率 $P_0$ を求めよ．必要なら $\\displaystyle\\int_{-\\infty}^{\\infty}e^{-ax^2}dx=\\sqrt{\\pi/a}$ を用いよ．\n\\item (2) の場合のエネルギー期待値 $\\langle H_2\\rangle$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\hbar\\omega_2}{2}$\n(2) $P_0=\\dfrac{2\\sqrt{\\omega_1\\omega_2}}{\\omega_1+\\omega_2}$\n(3) $\\langle H_2\\rangle=\\dfrac{\\hbar(\\omega_1^2+\\omega_2^2)}{4\\omega_1}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "断熱定理により量子数 $n=0$ が保たれるので，エネルギーは $\\boldsymbol{\\hbar\\omega_2/2}$．エネルギーと振動数の比 $E/\\omega$（作用変数）が断熱不変量になっている．\n\n突然近似では波動関数は変わらない．新しい基底状態 $\\phi_0$ との重なりは\n\\[\\langle\\phi_0|\\psi_0\\rangle=\\frac{(m^2\\omega_1\\omega_2)^{1/4}}{\\sqrt{\\pi\\hbar}}\\int e^{-m(\\omega_1+\\omega_2)x^2/2\\hbar}dx=\\frac{(\\omega_1\\omega_2)^{1/4}\\sqrt2}{\\sqrt{\\omega_1+\\omega_2}},\\]\nよって $P_0=\\boldsymbol{\\dfrac{2\\sqrt{\\omega_1\\omega_2}}{\\omega_1+\\omega_2}}$（$\\omega_1=\\omega_2$ で $1$）．\n\n$\\psi_0$ では $\\langle p^2\\rangle/2m=\\hbar\\omega_1/4$，$\\langle x^2\\rangle=\\hbar/(2m\\omega_1)$．したがって\n\\[\\langle H_2\\rangle=\\frac{\\hbar\\omega_1}{4}+\\frac12m\\omega_2^2\\frac{\\hbar}{2m\\omega_1}=\\boldsymbol{\\frac{\\hbar(\\omega_1^2+\\omega_2^2)}{4\\omega_1}}\\ge\\frac{\\hbar\\omega_2}{2}.\\]\n突然の変化では断熱変化よりも多くのエネルギーが注入される（相加相乗平均で等号は $\\omega_1=\\omega_2$）．"
+   }
+  ],
+  "idea": {
+   "tex": "ゆっくりなら量子数が保存，急なら波動関数が保存．二つの極限を比べる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) hbar omega_2/2\n(2) 2 sqrt(omega_1 omega_2)/(omega_1+omega_2)\n(3) hbar (omega_1^2+omega_2^2)/(4 omega_1)"
+  },
+  "methods": [],
+  "tags": [
+   "断熱近似",
+   "突然近似",
+   "調和振動子",
+   "断熱不変量"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 2,
+  "minutes": 20,
+  "theme": "放物型障壁のトンネル効果と熱活性化とのクロスオーバー温度",
+  "topic": "放物型障壁のトンネル効果と熱活性化とのクロスオーバー温度",
+  "statement": {
+   "tex": "質量 $m$ の粒子が，放物型のポテンシャル障壁\n\\[V(x)=V_0-\\frac12m\\omega^2x^2\\]\nにエネルギー $E\\,(<V_0)$ で入射する．WKB 近似では透過率は $T\\approx\\exp\\left(-2\\int\\kappa\\,dx\\right)$，$\\kappa(x)=\\sqrt{2m(V(x)-E)}/\\hbar$ で与えられる（積分は $V>E$ の領域）．\n\\begin{enumerate}\n\\item 古典的な転回点 $\\pm x_t$（$x_t>0$）を求めよ．\n\\item WKB 近似の透過率 $T(E)$ を求めよ．\n\\item 放物型障壁では透過率が $T(E)=\\left[1+\\exp\\left(\\dfrac{2\\pi(V_0-E)}{\\hbar\\omega}\\right)\\right]^{-1}$ と厳密に求まる（ケンブルの公式）．$E=V_0$ での透過率を求めよ．\n\\item 温度 $T_{\\mathrm K}$ で熱平衡にある粒子が障壁を越える割合は $\\int T(E)e^{-E/(k_BT_{\\mathrm K})}dE$ に比例する．(2) の $T(E)$ を使うと，ある温度 $T_c$ より上では障壁の頂上付近を越える熱活性化が，下では低いエネルギーからのトンネル効果が主になる．$T_c$ を求め，$\\omega=2.0\\times10^{13}\\,\\mathrm{s^{-1}}$ のときの値を求めよ（$\\hbar=1.05\\times10^{-34}\\,\\mathrm{J\\,s}$，$k_B=1.38\\times10^{-23}\\,\\mathrm{J/K}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x_t=\\sqrt{\\dfrac{2(V_0-E)}{m\\omega^2}}$ \\quad (2) $T(E)\\approx\\exp\\left(-\\dfrac{2\\pi(V_0-E)}{\\hbar\\omega}\\right)$ \\quad (3) $\\dfrac12$ \\quad (4) $T_c=\\dfrac{\\hbar\\omega}{2\\pi k_B}$，$T_c\\approx24\\,\\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V(x_t)=E$ より $\\tfrac12m\\omega^2x_t^2=V_0-E$，$\\boldsymbol{x_t=\\sqrt{2(V_0-E)/(m\\omega^2)}}$．\n\n(2) $V-E=\\tfrac12m\\omega^2(x_t^2-x^2)$ なので\n\\[\\int_{-x_t}^{x_t}\\kappa\\,dx=\\frac{m\\omega}{\\hbar}\\int_{-x_t}^{x_t}\\sqrt{x_t^2-x^2}\\,dx=\\frac{m\\omega}{\\hbar}\\cdot\\frac{\\pi x_t^2}{2}=\\frac{\\pi(V_0-E)}{\\hbar\\omega}.\\]\n（半円の面積を使った．）よって\n\\[\\boldsymbol{T(E)\\approx\\exp\\left(-\\frac{2\\pi(V_0-E)}{\\hbar\\omega}\\right)}.\\]\n障壁が「低く広い」ほど（$\\omega$ が小さいほど）透過しにくい．\n\n(3) $E=V_0$ では指数が $0$ で，$T=\\boldsymbol{1/2}$．古典的にはちょうど頂上に止まる境目だが，量子力学では半分が透過し半分が反射する．$V_0-E\\gg\\hbar\\omega$ ではケンブルの公式は (2) の WKB の結果に一致し，$E>V_0$ でも $1$ より小さい（障壁の上での反射）．\n\n(4) 被積分関数は $\\exp\\left[E\\left(\\dfrac{2\\pi}{\\hbar\\omega}-\\dfrac{1}{k_BT_{\\mathrm K}}\\right)\\right]$ に比例する．高温で括弧の中が正なら，被積分関数は $E$ とともに増え，上端 $E\\approx V_0$ の寄与（熱活性化で頂上付近まで上がってから越える）が支配する．低温で括弧の中が負なら $E$ の小さい側（低いエネルギーからのトンネル）が支配する．境目は\n\\[\\boldsymbol{T_c=\\frac{\\hbar\\omega}{2\\pi k_B}}=\\frac{1.05\\times10^{-34}\\times2.0\\times10^{13}}{2\\pi\\times1.38\\times10^{-23}}\\,\\mathrm K\\approx\\boldsymbol{24\\,\\mathrm K}.\\]\n化学反応や拡散の速さは $T_c$ より上ではアレニウス則 $e^{-V_0/k_BT}$ に従い，下では温度にほとんどよらない値に落ち着く．$T_c$ は障壁の頂上の曲率だけで決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "放物型障壁の WKB 指数は半円の面積から $2\\pi(V_0-E)/\\hbar\\omega$ になり，ボルツマン因子 $e^{-E/k_BT}$ と比べると熱活性化とトンネルの境の温度 $\\hbar\\omega/(2\\pi k_B)$ が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(2(V_0-E)/(m omega^2))\n(2) exp(-2pi(V_0-E)/(hbar omega))\n(3) 1/2\n(4) T_c：hbar omega/(2pi k_B) ; T_c [K]：≈24"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "トンネル効果",
+   "放物型障壁",
+   "ケンブルの公式",
+   "熱活性化",
+   "クロスオーバー温度"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 2,
+  "minutes": 18,
+  "theme": "α崩壊のガモフ因子とガイガー＝ヌッタル則",
+  "topic": "α崩壊のガモフ因子とガイガー＝ヌッタル則",
+  "statement": {
+   "tex": "α粒子（質量 $m$，電荷 $2q$）が原子番号 $Z$ の娘核（電荷 $Zq$）のクーロン障壁 $V(r)=\\dfrac{2Zkq^2}{r}$（$r>R$，$k=1/4\\pi\\varepsilon_0$）を運動エネルギー $E$ でトンネルする．透過率を $T\\approx e^{-G}$，\n\\[G=\\frac{2}{\\hbar}\\int_R^{b}\\sqrt{2m\\left(\\frac{2Zkq^2}{r}-E\\right)}\\,dr,\\qquad b=\\frac{2Zkq^2}{E}\\]\nとする．\n\\begin{enumerate}\n\\item 核半径 $R$ が $b$ に比べて十分小さいとして $R\\to0$ とおき，$G$ を α粒子の速さ $v=\\sqrt{2E/m}$ を用いて表せ．必要なら $\\displaystyle\\int_0^1\\sqrt{\\frac1u-1}\\,du=\\frac{\\pi}{2}$ を用いよ．\n\\item $Z=82$ で $E=5.0\\,\\mathrm{MeV}$ のときの $G$ を求めよ．$m=6.64\\times10^{-27}\\,\\mathrm{kg}$，$k=8.988\\times10^{9}\\,\\mathrm{N\\,m^2/C^2}$，$q=1.602\\times10^{-19}\\,\\mathrm{C}$，$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$．\n\\item (1) の近似で，$E$ が $5.0\\,\\mathrm{MeV}$ から $6.0\\,\\mathrm{MeV}$ に増えると半減期は何分の1になるか．その比の常用対数 $\\log_{10}(\\tau_5/\\tau_6)$ で答えよ（崩壊率は透過率に比例するとする）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $G=\\dfrac{4\\pi Zkq^2}{\\hbar v}$\n(2) $G\\approx 145$\n(3) $\\log_{10}(\\tau_5/\\tau_6)\\approx 5.49$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$r=bu$ とおくと $\\dfrac{2Zkq^2}{r}-E=E\\left(\\dfrac1u-1\\right)$ だから\n\\[G=\\frac{2}{\\hbar}\\sqrt{2mE}\\,b\\int_0^1\\sqrt{\\frac1u-1}\\,du=\\frac{\\pi b\\sqrt{2mE}}{\\hbar}=\\frac{\\pi\\cdot2Zkq^2}{\\hbar}\\sqrt{\\frac{2m}{E}}=\\boldsymbol{\\frac{4\\pi Zkq^2}{\\hbar v}}.\\]\n\n$E=5.0\\,\\mathrm{MeV}$ で $v=\\sqrt{2E/m}=1.55\\times10^{7}\\,\\mathrm{m/s}$，$kq^2=2.31\\times10^{-28}\\,\\mathrm{J\\,m}$ より $G\\approx\\boldsymbol{145}$．\n\n$G\\propto E^{-1/2}$ なので $E=6.0\\,\\mathrm{MeV}$ では $G\\approx145\\times\\sqrt{5/6}\\approx132.4$．$\\tau\\propto e^{G}$ より\n\\[\\log_{10}\\frac{\\tau_5}{\\tau_6}=\\frac{G_5-G_6}{\\ln10}\\approx\\boldsymbol{5.49}.\\]\nエネルギーが2割変わるだけで寿命は約30万倍変わる．$\\log\\tau$ が $Z/\\sqrt E$ に比例するというガイガー＝ヌッタル則の起源である．"
+   }
+  ],
+  "idea": {
+   "tex": "クーロン障壁のトンネル指数は $R\\to0$ で $2\\pi\\times2Zkq^2/(\\hbar v)$ となり，寿命の対数が $1/\\sqrt E$ に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 4 pi Z k q^2/(hbar v)\n(2) ≈145\n(3) ≈5.49"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "トンネル効果",
+   "α崩壊",
+   "ガモフ因子",
+   "ガイガー＝ヌッタル則"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 2,
+  "minutes": 15,
+  "theme": "スピン 1/2 のベリー位相と立体角",
+  "topic": "スピン 1/2 のベリー位相と立体角",
+  "statement": {
+   "tex": "スピン $1/2$ が磁場の向き $\\boldsymbol{n}=(\\sin\\theta\\cos\\varphi,\\ \\sin\\theta\\sin\\varphi,\\ \\cos\\theta)$ に平行な状態は\n\\[|n_+\\rangle=\\begin{pmatrix}\\cos(\\theta/2)\\\\ e^{i\\varphi}\\sin(\\theta/2)\\end{pmatrix}\\]\nである．磁場の大きさを一定に保ったまま，向きを $\\theta$ 一定のまま $\\varphi$ を $0$ から $2\\pi$ までゆっくり1周させる．このとき状態が得るベリー位相は $\\gamma=i\\displaystyle\\oint\\langle n_+|\\partial_\\varphi n_+\\rangle\\,d\\varphi$ で与えられる．\n\\begin{enumerate}\n\\item $\\gamma_+$ を $\\theta$ で表せ．\n\\item 磁場の向きが単位球面上で囲む立体角 $\\Omega_s$ を $\\theta$ で表し，$\\gamma_+=-\\lambda\\Omega_s$ となる係数 $\\lambda$ を求めよ．\n\\item 磁場と反平行な状態 $|n_-\\rangle=\\begin{pmatrix}-\\sin(\\theta/2)\\\\ e^{i\\varphi}\\cos(\\theta/2)\\end{pmatrix}$ のベリー位相を $\\gamma_-$ とする．平行・反平行の重ね合わせを干渉させたときに観測される位相差 $\\gamma_+-\\gamma_-$ を $\\theta=\\pi/3$ について求めよ（$2\\pi$ の整数倍の不定性は除いて，$-2\\pi$ より大きく $0$ 以下の値で答えよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\gamma_+=-\\pi(1-\\cos\\theta)$\n(2) $\\Omega_s=2\\pi(1-\\cos\\theta)$，$\\lambda=\\dfrac{1}{2}$\n(3) $-\\pi$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\partial_\\varphi|n_+\\rangle=(0,\\ ie^{i\\varphi}\\sin(\\theta/2))^{T}$ より $\\langle n_+|\\partial_\\varphi n_+\\rangle=i\\sin^2(\\theta/2)$．よって\n\\[\\gamma_+=i\\cdot2\\pi\\cdot i\\sin^2\\frac{\\theta}{2}=-2\\pi\\sin^2\\frac\\theta2=\\boldsymbol{-\\pi(1-\\cos\\theta)}.\\]\n\n半頂角 $\\theta$ の円錐が切り取る立体角は $\\Omega_s=\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^\\theta\\sin\\theta'\\,d\\theta'd\\varphi=\\boldsymbol{2\\pi(1-\\cos\\theta)}$．したがって $\\gamma_+=-\\Omega_s/2$，$\\lambda=\\boldsymbol{1/2}$（スピン $s$ の $m$ 状態では一般に $-m\\Omega_s$）．\n\n同様に $\\langle n_-|\\partial_\\varphi n_-\\rangle=i\\cos^2(\\theta/2)$ から $\\gamma_-=-2\\pi\\cos^2(\\theta/2)=-\\pi(1+\\cos\\theta)\\equiv+\\pi(1-\\cos\\theta)\\pmod{2\\pi}$．位相差は $\\gamma_+-\\gamma_-\\equiv-\\Omega_s$．$\\theta=\\pi/3$ では $\\Omega_s=\\pi$ なので $\\boldsymbol{-\\pi}$．中性子干渉計やNMRでこの幾何学的位相が実測されている．"
+   }
+  ],
+  "idea": {
+   "tex": "ベリー位相は経路が囲む立体角に比例する幾何学的量で，スピン $1/2$ では $-\\Omega_s/2$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -pi (1-cos(theta))\n(2) Ω_s：2 pi (1-cos(theta)) ; λ：1/2\n(3) -pi"
+  },
+  "methods": [],
+  "tags": [
+   "ベリー位相",
+   "断熱定理",
+   "スピン",
+   "立体角"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 3,
+  "minutes": 20,
+  "theme": "対称二重井戸のトンネル分裂",
+  "topic": "対称二重井戸のトンネル分裂",
+  "statement": {
+   "tex": "質量 $m$ の粒子が二重井戸ポテンシャル $V(x)=\\lambda(x^2-a^2)^2$（$\\lambda>0$）の中にある．障壁が高いとき，各井戸の基底状態は左右の井戸の間のトンネルにより2準位に分裂し，その分裂幅は WKB 近似で\n\\[\\Delta E=\\frac{\\hbar\\omega}{\\pi}\\exp\\left(-\\frac1\\hbar\\int_{-a}^{a}|p(x)|\\,dx\\right)\\]\nで与えられる．ここで $\\omega$ は井戸の底での微小振動の角振動数，$|p(x)|$ は障壁下での運動量の大きさで，ここでは $|p(x)|\\approx\\sqrt{2mV(x)}$ と近似してよい．\n\\begin{enumerate}\n\\item $\\omega$ を求めよ．\n\\item $\\displaystyle\\int_{-a}^{a}\\sqrt{2mV(x)}\\,dx$ を求めよ．\n\\item 粒子をはじめ左の井戸に局在させたとき，右の井戸へ移って左に戻るまでの時間（トンネル振動の周期）$\\tau=\\dfrac{2\\pi\\hbar}{\\Delta E}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega=2a\\sqrt{\\dfrac{2\\lambda}{m}}$\n(2) $\\dfrac{4a^3\\sqrt{2m\\lambda}}{3}$\n(3) $\\tau=\\dfrac{\\pi^2}{a}\\sqrt{\\dfrac{m}{2\\lambda}}\\exp\\left(\\dfrac{4a^3\\sqrt{2m\\lambda}}{3\\hbar}\\right)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$V''(x)=\\lambda(12x^2-4a^2)$ より $V''(a)=8\\lambda a^2$．$m\\omega^2=8\\lambda a^2$ から $\\omega=\\boldsymbol{2a\\sqrt{2\\lambda/m}}$．\n\n$\\sqrt{2mV}=\\sqrt{2m\\lambda}\\,(a^2-x^2)$（$|x|<a$）なので\n\\[\\int_{-a}^{a}\\sqrt{2m\\lambda}(a^2-x^2)\\,dx=\\boldsymbol{\\frac{4a^3\\sqrt{2m\\lambda}}{3}}.\\]\n\n$\\Delta E=\\dfrac{2a\\hbar}{\\pi}\\sqrt{\\dfrac{2\\lambda}{m}}\\exp\\left(-\\dfrac{4a^3\\sqrt{2m\\lambda}}{3\\hbar}\\right)$ だから\n\\[\\tau=\\frac{2\\pi\\hbar}{\\Delta E}=\\boldsymbol{\\frac{\\pi^2}{a}\\sqrt{\\frac{m}{2\\lambda}}\\exp\\left(\\frac{4a^3\\sqrt{2m\\lambda}}{3\\hbar}\\right)}.\\]\n左右に局在した状態は偶・奇の固有状態の重ね合わせ $(\\psi_+\\pm\\psi_-)/\\sqrt2$ で，相対位相が $\\Delta E\\,t/\\hbar$ で回るため周期 $2\\pi\\hbar/\\Delta E$ で左右を行き来する（アンモニア分子の反転振動など）．障壁の作用 $S_0$ に対して $\\tau\\propto e^{S_0/\\hbar}$ と指数的に長い．"
+   }
+  ],
+  "idea": {
+   "tex": "分裂幅は「井戸の振動数 × 障壁下の作用の指数」．局在状態は偶奇状態の重ね合わせでトンネル振動する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2 a sqrt(2 λ/m)\n(2) 4 a^3 sqrt(2 m λ)/3\n(3) (pi^2/a) sqrt(m/(2λ)) exp(4 a^3 sqrt(2 m λ)/(3 hbar))"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "二重井戸",
+   "トンネル分裂",
+   "インスタントン"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 3,
+  "minutes": 18,
+  "theme": "べき型ポテンシャルの WKB スケーリング則",
+  "topic": "べき型ポテンシャルの WKB スケーリング則",
+  "statement": {
+   "tex": "質量 $m$ の粒子が $V(x)=A|x|^\\nu$（$A>0,\\ \\nu>0$）の中にある．WKB 量子化条件 $\\displaystyle\\oint p\\,dx=2\\pi\\hbar\\left(n+\\frac12\\right)$ を用いる．\n\\begin{enumerate}\n\\item $E_n\\propto\\left(n+\\dfrac12\\right)^{s}$ となる指数 $s$ を $\\nu$ で表せ．\n\\item $\\nu=4$ のとき，WKB 近似での $E_1/E_0$ を求めよ．\n\\item $\\nu=4$，$\\hbar=m=A=1$ の単位で $E_0$ を数値で求めよ．$\\displaystyle\\int_0^1\\sqrt{1-u^4}\\,du\\approx0.8740$ を用いよ（数値解は $0.668$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $s=\\dfrac{2\\nu}{\\nu+2}$\n(2) $3^{4/3}$\n(3) $E_0\\approx 0.546$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "転回点 $x_0=(E/A)^{1/\\nu}$．$x=x_0u$ とおくと\n\\[\\oint p\\,dx=4\\sqrt{2mE}\\,x_0\\int_0^1\\sqrt{1-u^\\nu}\\,du\\propto E^{1/2+1/\\nu}.\\]\nこれが $n+\\frac12$ に比例するので $E_n\\propto(n+\\frac12)^{s}$，$s=\\boldsymbol{\\dfrac{2\\nu}{\\nu+2}}$．$\\nu=2$ で $s=1$（調和振動子），$\\nu\\to\\infty$ で $s\\to2$（無限井戸の $n^2$），$\\nu=1$ で $2/3$ と整合する．\n\n$\\nu=4$ では $s=4/3$，$E_1/E_0=(3/2\\cdot2)^{4/3}=\\boldsymbol{3^{4/3}}\\approx4.33$（数値解は $3.58$）．\n\n$\\hbar=m=A=1$ で $4\\sqrt2E^{3/4}J=2\\pi(n+\\frac12)$（$J=0.8740$）より\n\\[E_0=\\left(\\frac{\\pi}{4\\sqrt2J}\\right)^{4/3}\\approx\\boldsymbol{0.546}.\\]\n数値解 $0.668$ と約 $18\\%$ ずれる．低い準位では WKB の精度は良くないが，$E_n$ の $n$ 依存性（スケーリング）は正しく捉える．"
+   }
+  ],
+  "idea": {
+   "tex": "変数変換で $\\oint p\\,dx\\propto E^{1/2+1/\\nu}$ を出せば，準位のスケーリングが積分を計算せずに決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2 ν/(ν+2)\n(2) 3^(4/3)\n(3) ≈0.546"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "スケーリング",
+   "非調和振動子"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 3,
+  "minutes": 18,
+  "theme": "ランダウ＝ツェナー遷移と断熱条件",
+  "topic": "ランダウ＝ツェナー遷移と断熱条件",
+  "statement": {
+   "tex": "2準位系のハミルトニアンが，基底 $\\{|1\\rangle,|2\\rangle\\}$ で\n\\[H(t)=\\begin{pmatrix}\\alpha t/2 & \\Delta\\\\ \\Delta & -\\alpha t/2\\end{pmatrix}\\qquad(\\alpha>0,\\ \\Delta>0)\\]\nと時間変化する．$t=-\\infty$ で系は $|2\\rangle$（このとき下の準位）にある．$t=+\\infty$ で $|2\\rangle$ に残る確率（非断熱遷移の確率）はランダウ＝ツェナー公式 $P=\\exp\\left(-\\dfrac{2\\pi\\Delta^2}{\\hbar\\alpha}\\right)$ で与えられる．\n\\begin{enumerate}\n\\item 瞬間的な固有値（断熱準位）を $E_\\pm(t)$（$E_-=-E_+$）とする．$E_+(t)$ と，2準位の間隔の最小値を求めよ．\n\\item $t=+\\infty$ で系が断熱的な基底状態（下の準位）にいる確率を求めよ．\n\\item $\\Delta=1.0\\times10^{-5}\\,\\mathrm{eV}$ のとき，断熱的な基底状態にとどまる確率を $99\\%$ 以上にするための掃引速度 $\\alpha$ の上限を $\\mathrm{eV/s}$ 単位で求めよ．$\\hbar=6.58\\times10^{-16}\\,\\mathrm{eV\\,s}$．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_+=\\sqrt{\\dfrac{\\alpha^2t^2}{4}+\\Delta^2}$，最小間隔 $2\\Delta$\n(2) $1-\\exp\\left(-\\dfrac{2\\pi\\Delta^2}{\\hbar\\alpha}\\right)$\n(3) $\\alpha\\approx 2.07\\times10^{5}\\,\\mathrm{eV/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "固有値は $\\det(H-E)=0$ より $E_\\pm=\\boldsymbol{\\pm\\sqrt{\\alpha^2t^2/4+\\Delta^2}}$．最小は $t=0$ で間隔 $\\boldsymbol{2\\Delta}$（回避交差）．\n\n$t=-\\infty$ の下の準位は $|2\\rangle$，$t=+\\infty$ の下の準位は $|1\\rangle$ である（対角成分の符号が入れ替わる）．$|2\\rangle$ に残るとは上の準位に飛び移ることを意味するので，断熱的基底状態にいる確率は $\\boldsymbol{1-e^{-2\\pi\\Delta^2/\\hbar\\alpha}}$．\n\n$P\\le0.01$ より $\\dfrac{2\\pi\\Delta^2}{\\hbar\\alpha}\\ge\\ln100$，\n\\[\\alpha\\le\\frac{2\\pi\\Delta^2}{\\hbar\\ln100}=\\frac{2\\pi\\times(1.0\\times10^{-5})^2}{6.58\\times10^{-16}\\times4.605}\\approx\\boldsymbol{2.07\\times10^{5}\\,\\mathrm{eV/s}}.\\]\n断熱条件は「ギャップ $2\\Delta$ を通過する時間 $2\\Delta/\\alpha$ が $\\hbar/\\Delta$ より十分長い」すなわち $\\Delta^2\\gg\\hbar\\alpha$ と言い換えられる．量子アニーリングの実行時間の目安もこの考え方で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "断熱的にとどまれるかは $\\Delta^2/(\\hbar\\alpha)$ で決まり，非断熱遷移の確率はその指数関数で与えられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) E_+：sqrt(α^2 t^2/4+Δ^2) ; 最小間隔：2Δ\n(2) 1-exp(-2 pi Δ^2/(hbar α))\n(3) α [eV/s]：≈2.07e5"
+  },
+  "methods": [],
+  "tags": [
+   "断熱定理",
+   "ランダウ＝ツェナー",
+   "回避交差",
+   "量子アニーリング"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 4,
+  "minutes": 30,
+  "theme": "回転磁場中のスピン：厳密解と断熱極限・ベリー位相",
+  "topic": "回転磁場中のスピン：厳密解と断熱極限・ベリー位相",
+  "statement": {
+   "tex": "スピン $1/2$ のハミルトニアンが\n\\[H(t)=\\frac{\\hbar\\omega_1}{2}\\,\\boldsymbol{n}(t)\\cdot\\boldsymbol{\\sigma},\\qquad \\boldsymbol{n}(t)=(\\sin\\theta\\cos\\omega t,\\ \\sin\\theta\\sin\\omega t,\\ \\cos\\theta)\\]\nで与えられる（$\\omega_1>0$，$\\boldsymbol\\sigma$ はパウリ行列）．$t=0$ で状態は $\\boldsymbol{n}(0)$ 方向を向いたスピン（$\\boldsymbol n(0)\\cdot\\boldsymbol\\sigma$ の固有値 $+1$ の状態）にある．\n$U(t)=e^{-i\\omega t\\sigma_z/2}$ を用いて $H(t)=U(t)H(0)U(t)^\\dagger$ と書けることを使い，$|\\psi(t)\\rangle=U(t)|\\psi'(t)\\rangle$ で回転系に移る．\n\\begin{enumerate}\n\\item 回転系のハミルトニアン $H'$ は時間に依存しない．$H'=\\dfrac{\\hbar\\Omega}{2}\\,\\boldsymbol m\\cdot\\boldsymbol\\sigma$（$\\boldsymbol m$ は単位ベクトル）と書いたときの $\\Omega$ を求めよ．\n\\item 時刻 $t$ で，瞬間的な固有状態のうち反平行の状態（$\\boldsymbol n(t)\\cdot\\boldsymbol\\sigma$ の固有値 $-1$）に見いだす確率の最大値 $P_{\\max}$ を求めよ．\n\\item $\\omega\\ll\\omega_1$ の断熱極限で，1周期 $T=2\\pi/\\omega$ 後の状態は $|\\psi(T)\\rangle\\approx e^{i\\phi}|\\psi(0)\\rangle$ となる．$\\phi$ から動的位相 $-\\omega_1T/2$ を引いた幾何学的位相 $\\gamma$ を求めよ（$-2\\pi<\\gamma\\le0$ の範囲で，$\\omega/\\omega_1\\to0$ の極限で答えよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Omega=\\sqrt{\\omega_1^2-2\\omega_1\\omega\\cos\\theta+\\omega^2}$\n(2) $P_{\\max}=\\dfrac{\\omega^2\\sin^2\\theta}{\\omega_1^2-2\\omega_1\\omega\\cos\\theta+\\omega^2}$\n(3) $\\gamma=-\\pi(1-\\cos\\theta)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$i\\hbar\\partial_t(U\\psi')=HU\\psi'$ より $i\\hbar\\partial_t\\psi'=(U^\\dagger HU-i\\hbar U^\\dagger\\dot U)\\psi'=\\left(H(0)-\\dfrac{\\hbar\\omega}{2}\\sigma_z\\right)\\psi'$．よって\n\\[H'=\\frac\\hbar2\\bigl(\\omega_1\\sin\\theta\\,\\sigma_x+(\\omega_1\\cos\\theta-\\omega)\\sigma_z\\bigr),\\quad \\Omega=\\boldsymbol{\\sqrt{\\omega_1^2-2\\omega_1\\omega\\cos\\theta+\\omega^2}}.\\]\n\n瞬間的固有状態は $|n_\\pm(t)\\rangle=U(t)|n_\\pm(0)\\rangle$ なので $\\langle n_-(t)|\\psi(t)\\rangle=\\langle n_-(0)|\\psi'(t)\\rangle$．$\\psi'$ は軸 $\\boldsymbol m$ のまわりの角速度 $\\Omega$ の歳差運動で，$\\boldsymbol n_0$ と $\\boldsymbol m$ のなす角を $\\beta$ とすると反転確率は $\\sin^2\\beta\\,\\sin^2(\\Omega t/2)$（ラビ振動）．$\\sin\\beta=|\\boldsymbol n_0\\times\\boldsymbol m|=\\omega\\sin\\theta/\\Omega$ より\n\\[P_{\\max}=\\boldsymbol{\\frac{\\omega^2\\sin^2\\theta}{\\omega_1^2-2\\omega_1\\omega\\cos\\theta+\\omega^2}}\\approx\\left(\\frac{\\omega}{\\omega_1}\\right)^2\\sin^2\\theta.\\]\n$\\omega\\ll\\omega_1$ で遷移が抑えられることが断熱定理そのものである．\n\n断熱極限では $\\boldsymbol m\\to\\boldsymbol n_0$ で $\\psi'(t)\\approx e^{-i\\Omega t/2}|n_+(0)\\rangle$．$U(T)=e^{-i\\pi\\sigma_z}=-1$ だから $\\phi=\\pi-\\Omega T/2$．$\\Omega\\approx\\omega_1-\\omega\\cos\\theta$ を使うと\n\\[\\phi\\approx-\\frac{\\omega_1T}{2}+\\pi\\cos\\theta+\\pi,\\qquad \\gamma=\\pi(1+\\cos\\theta)\\equiv\\boldsymbol{-\\pi(1-\\cos\\theta)}\\pmod{2\\pi}.\\]\nこれは立体角 $\\Omega_s=2\\pi(1-\\cos\\theta)$ の $-1/2$ 倍，すなわちベリー位相そのものである．エネルギー $\\hbar\\Omega/2$ の $\\omega$ に比例する補正が，1周期（$\\propto1/\\omega$）で有限の位相として残るのが幾何学的位相の正体である．"
+   }
+  ],
+  "idea": {
+   "tex": "回転系に移ると時間に依存しない問題になる．$\\Omega$ の $\\omega$ の1次の補正が1周期で幾何学的位相を生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(omega_1^2-2 omega_1 omega cos(theta)+omega^2)\n(2) omega^2 sin(theta)^2/(omega_1^2-2 omega_1 omega cos(theta)+omega^2)\n(3) -pi (1-cos(theta))"
+  },
+  "methods": [],
+  "tags": [
+   "断熱定理",
+   "ベリー位相",
+   "回転系",
+   "ラビ振動",
+   "スピン"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 4,
+  "minutes": 30,
+  "theme": "水素原子の WKB 量子化とランガー補正",
+  "topic": "水素原子の WKB 量子化とランガー補正",
+  "statement": {
+   "tex": "引力ポテンシャル $V(r)=-k/r$ 中の質量 $m$ の粒子の束縛状態（$E<0$）を，動径方向の WKB 量子化\n\\[\\int_{r_1}^{r_2}\\sqrt{2m\\left(E+\\frac kr\\right)-\\frac{M^2}{r^2}}\\,dr=\\pi\\hbar\\left(n_r+\\frac12\\right)\\qquad(n_r=0,1,2,\\dots)\\]\nで扱う．$M^2$ は遠心力項の係数で，ランガー補正では $M^2=\\hbar^2(l+\\frac12)^2$ とおく．必要なら $\\alpha,\\beta,\\gamma>0$ に対して\n\\[\\int_{r_1}^{r_2}\\sqrt{-\\alpha+\\frac{2\\beta}{r}-\\frac{\\gamma}{r^2}}\\,dr=\\pi\\left(\\frac{\\beta}{\\sqrt\\alpha}-\\sqrt\\gamma\\right)\\]\n（$r_1,r_2$ は被積分関数の根号の中が $0$ になる点）を用いよ．\n\\begin{enumerate}\n\\item 左辺の積分を $k,m,E,M$ で表せ．\n\\item ランガー補正を用いたときのエネルギー準位を $n_r,l$ で表せ．\n\\item ランガー補正を使わず $M^2=\\hbar^2l(l+1)$ とした場合，$n_r=0,\\ l=1$ の準位は (2) の値の何倍になるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\pi\\left(k\\sqrt{\\dfrac{m}{-2E}}-M\\right)$\n(2) $E=-\\dfrac{mk^2}{2\\hbar^2(n_r+l+1)^2}$\n(3) $\\dfrac{4}{\\left(\\frac12+\\sqrt2\\right)^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\alpha=-2mE$，$\\beta=mk$，$\\gamma=M^2$ とおけば公式より\n\\[\\int=\\boldsymbol{\\pi\\left(k\\sqrt{\\frac{m}{-2E}}-M\\right)}.\\]\n\n$M=\\hbar(l+\\frac12)$ として量子化条件に入れると $k\\sqrt{m/(-2E)}=\\hbar(n_r+l+1)$，すなわち\n\\[E=\\boldsymbol{-\\frac{mk^2}{2\\hbar^2(n_r+l+1)^2}}.\\]\n$n=n_r+l+1$ を主量子数とすればボーアの公式と厳密に一致する．\n\nランガー補正なしでは $k\\sqrt{m/(-2E)}=\\hbar(n_r+\\frac12+\\sqrt{l(l+1)})$．$n_r=0,l=1$ では $E\\propto1/(\\frac12+\\sqrt2)^2$，厳密値は $\\propto1/2^2$ なので比は\n\\[\\boldsymbol{\\frac{4}{(\\frac12+\\sqrt2)^2}}\\approx1.092\\]\nで約 $9\\%$ ずれる．3次元の動径方程式を1次元とみなすとき $r=0$ 近傍で WKB 近似が破綻するのを，$l(l+1)\\to(l+\\frac12)^2$ で補うのがランガー補正である（変数 $r=e^{x}$ で $(-\\infty,\\infty)$ の問題に写すと自然に出てくる）．"
+   }
+  ],
+  "idea": {
+   "tex": "動径 WKB では遠心力項を $(l+\\frac12)^2\\hbar^2$ に置き換えると，クーロン問題で厳密な準位が再現される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) pi*(k sqrt(m/(-2E)) - M)\n(2) -m k^2/(2 hbar^2 (n_r+l+1)^2)\n(3) 4/(1/2+sqrt(2))^2"
+  },
+  "methods": [],
+  "tags": [
+   "WKB近似",
+   "水素原子",
+   "ランガー補正",
+   "動径方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-09-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-96",
+  "level": 4,
+  "minutes": 25,
+  "theme": "ボルン＝オッペンハイマー近似：軽い粒子が作る有効ポテンシャル",
+  "topic": "ボルン＝オッペンハイマー近似：軽い粒子が作る有効ポテンシャル",
+  "statement": {
+   "tex": "1次元で，質量 $m$ の軽い粒子が位置 $0$ と $X$ にある2枚の壁の間（幅 $X$ の無限井戸）に閉じ込められている．壁 $X$ は質量 $M$（$M\\gg m$）の重い物体で，ばね定数 $K$ のばねにより原点に向かって引かれている（自然長 $0$，ばねのポテンシャル $\\frac12KX^2$）．\n軽い粒子は重い壁の運動に断熱的に追随して常に基底状態にあるとする（ボルン＝オッペンハイマー近似）．\n\\begin{enumerate}\n\\item 重い壁が感じる有効ポテンシャル $U(X)$ を最小にする $X_0$ を求めよ．\n\\item 平衡点 $X_0$ のまわりの壁の微小振動の角振動数 $\\Omega$ を求めよ．\n\\item 近似の妥当性は「壁の振動のエネルギー量子 $\\hbar\\Omega$」が「軽い粒子の励起エネルギー $E_2-E_1$（$X=X_0$）」より十分小さいことで判定される．比 $\\hbar\\Omega/(E_2-E_1)$ を $m,M$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $X_0=\\left(\\dfrac{\\pi^2\\hbar^2}{mK}\\right)^{1/4}$\n(2) $\\Omega=2\\sqrt{\\dfrac{K}{M}}$\n(3) $\\dfrac{4}{3\\pi}\\sqrt{\\dfrac{m}{M}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "軽い粒子の基底エネルギーが重い壁へのポテンシャルとして加わる：\n\\[U(X)=\\frac{\\pi^2\\hbar^2}{2mX^2}+\\frac12KX^2.\\]\n$U'(X)=-\\dfrac{\\pi^2\\hbar^2}{mX^3}+KX=0$ より $X_0=\\boldsymbol{(\\pi^2\\hbar^2/mK)^{1/4}}$．\n\n$U''(X_0)=\\dfrac{3\\pi^2\\hbar^2}{mX_0^4}+K=3K+K=4K$．よって $\\Omega=\\sqrt{4K/M}=\\boldsymbol{2\\sqrt{K/M}}$．\n\n$X_0^2=\\pi\\hbar/\\sqrt{mK}$ より $E_2-E_1=\\dfrac{3\\pi^2\\hbar^2}{2mX_0^2}=\\dfrac{3\\pi\\hbar}{2}\\sqrt{\\dfrac Km}$．したがって\n\\[\\frac{\\hbar\\Omega}{E_2-E_1}=\\frac{2\\sqrt{K/M}}{(3\\pi/2)\\sqrt{K/m}}=\\boldsymbol{\\frac{4}{3\\pi}\\sqrt{\\frac mM}}.\\]\n質量比の平方根が小さいほど近似が良い．分子では電子と原子核の質量比 $\\sqrt{m_e/M}\\sim10^{-2}$ がまさにこの小さなパラメータで，電子エネルギー ≫ 振動エネルギー（≫ 回転エネルギー）という階層の起源になっている．"
+   }
+  ],
+  "idea": {
+   "tex": "速い自由度の固有エネルギーが遅い自由度の有効ポテンシャルになる．近似の良さは質量比の平方根で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (pi^2 hbar^2/(m K))^(1/4)\n(2) 2 sqrt(K/M)\n(3) 4 sqrt(m/M)/(3 pi)"
+  },
+  "methods": [],
+  "tags": [
+   "ボルン＝オッペンハイマー近似",
+   "断熱近似",
+   "有効ポテンシャル",
+   "分子振動"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

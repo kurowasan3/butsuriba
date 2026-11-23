@@ -7,10 +7,24 @@ const katex = require(path.join(__dirname, '..', 'vendor', 'katex.min.js'));
 const dir = process.argv[2] ? path.resolve(process.argv[2]) : path.join(__dirname, '..', 'data');
 const unesc = (s) => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 let total = 0, bad = [];
-for (const f of fs.readdirSync(dir).filter((f) => f.startsWith('f-'))) {
-  const data = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+// 問題の本文（f-*.json）と、解法カード（techniques.json）の文章
+const sources = fs.readdirSync(dir).filter((f) => f.startsWith('f-')).map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+if (fs.existsSync(path.join(dir, 'techniques.json'))) {
+  const td = JSON.parse(fs.readFileSync(path.join(dir, 'techniques.json'), 'utf8'));
+  sources.push(Object.fromEntries(td.techniques.map((t) => ['解法:' + t.id, { name: t.name, summary: t.summary, essence: t.essence, when: t.when, cue: t.cue }])));
+}
+for (const data of sources) {
   for (const [id, b] of Object.entries(data)) {
+    // 選択式の選択肢（ch）：1つ1つが TeX の数式そのもの
+    for (const opts of Array.isArray(b.ch) ? b.ch : []) {
+      for (const t of opts || []) {
+        total++;
+        try { katex.renderToString(t, { throwOnError: true, displayMode: true, strict: false }); }
+        catch (e) { bad.push([id, 'ch', e.message.replace(/^KaTeX parse error: /, '').slice(0, 120), t.slice(0, 100)]); }
+      }
+    }
     for (const [k, html] of Object.entries(b)) {
+      if (k === 'ch' || k === 'fg' || typeof html !== 'string') continue;   // 選択肢・問題の図（式の文字列）は別
       // 表示数式 \[...\] と 行内 $...$ を取り出す（\text{} の中の $ を考慮）
       const segs = [];
       let s = html.replace(/\\\[([\s\S]*?)\\\]/g, (_, m) => { segs.push([m, true]); return ' '; });

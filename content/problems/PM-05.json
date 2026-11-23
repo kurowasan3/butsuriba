@@ -1,0 +1,737 @@
+[
+ {
+  "id": "PM-05-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 0,
+  "minutes": 10,
+  "theme": "矩形波のフーリエ級数とライプニッツの級数",
+  "topic": "矩形波のフーリエ級数とライプニッツの級数",
+  "statement": {
+   "tex": "周期 $2\\pi$ の関数 $f(t)$ が $-\\pi<t<0$ で $f=-1$，$0<t<\\pi$ で $f=1$ であるとする（矩形波）．$f$ は奇関数なので\n\\[ f(t)=\\sum_{n=1}^{\\infty}b_n\\sin nt,\\qquad b_n=\\frac{1}{\\pi}\\int_{-\\pi}^{\\pi}f(t)\\sin nt\\,dt \\]\nと展開できる（フーリエ級数）．\n\\begin{enumerate}\n\\item $b_1,\\ b_2,\\ b_3$ を求めよ．\n\\item 一般の $b_n$ を求めたうえで，展開式に $t=\\dfrac{\\pi}{2}$ を代入し，$1-\\dfrac13+\\dfrac15-\\dfrac17+\\cdots$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $(b_1,b_2,b_3)=\\left(\\dfrac{4}{\\pi},\\ 0,\\ \\dfrac{4}{3\\pi}\\right)$ (2) $\\dfrac{\\pi}{4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$f(t)\\sin nt$ は偶関数なので $b_n=\\dfrac{2}{\\pi}\\displaystyle\\int_0^\\pi\\sin nt\\,dt=\\dfrac{2}{\\pi}\\cdot\\dfrac{1-\\cos n\\pi}{n}=\\dfrac{2(1-(-1)^n)}{n\\pi}$．\n$n$ が奇数なら $\\dfrac{4}{n\\pi}$，偶数なら $0$．よって $\\boldsymbol{b_1=4/\\pi,\\ b_2=0,\\ b_3=4/(3\\pi)}$．\n\n\\[ f(t)=\\frac{4}{\\pi}\\left(\\sin t+\\frac{\\sin3t}{3}+\\frac{\\sin5t}{5}+\\cdots\\right). \\]\n$t=\\pi/2$ では $f=1$，$\\sin\\dfrac{(2m+1)\\pi}{2}=(-1)^m$ なので $1=\\dfrac{4}{\\pi}\\left(1-\\dfrac13+\\dfrac15-\\cdots\\right)$．したがって\n\\[ 1-\\frac13+\\frac15-\\frac17+\\cdots=\\boldsymbol{\\frac{\\pi}{4}}. \\]\n矩形波は奇数倍音だけを含み，その振幅は $1/n$ で小さくなる．\n\n次は，各項のエネルギーの和が関数の2乗平均に等しいというパーセバルの等式や，周期のない関数のフーリエ変換へ進むとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "フーリエ係数は $\\sin nt$ との「重なり」の積分で求まる．展開式に特別な $t$ を代入すると無限級数の和が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (4/pi, 0, 4/(3pi))\n(2) pi/4"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ級数",
+   "矩形波",
+   "無限級数"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 0,
+  "minutes": 10,
+  "theme": "デルタ関数の性質と点状の質量",
+  "topic": "デルタ関数の性質と点状の質量",
+  "statement": {
+   "tex": "幅 $\\varepsilon$，高さ $1/\\varepsilon$ の長方形の関数 $\\delta_\\varepsilon(x)$（$-\\varepsilon/2<x<\\varepsilon/2$ で $1/\\varepsilon$，それ以外で $0$）の $\\varepsilon\\to0$ の極限を $\\delta(x)$ と書き，デルタ関数という．面積は常に $1$ なので，なめらかな関数 $f$ に対して\n\\[ \\int_{-\\infty}^{\\infty}\\delta(x-a)f(x)\\,dx=f(a) \\]\nが成り立つ．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_{-\\infty}^{\\infty}\\delta(x-2)\\,x^3\\,dx$ を求めよ．\n\\item $\\displaystyle\\int_{-\\infty}^{\\infty}\\delta(2x)\\,dx$ を，$\\delta_\\varepsilon(2x)$ のグラフの形から考えて求めよ．\n\\item 長さ $L$，質量 $M$ の一様な棒（$0\\le x\\le L$）の位置 $x=b$（$0<b<L$）に質量 $m$ の小球を付けた．線密度は $\\lambda(x)=\\dfrac{M}{L}+m\\,\\delta(x-b)$ と書ける．重心の位置 $x_G=\\dfrac{\\int_0^L x\\lambda\\,dx}{\\int_0^L\\lambda\\,dx}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $8$ (2) $\\dfrac{1}{2}$ (3) $x_G=\\dfrac{ML+2mb}{2(M+m)}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "公式で $a=2$，$f=x^3$ として $2^3=\\boldsymbol{8}$．\n\n$\\delta_\\varepsilon(2x)$ は $-\\varepsilon/4<x<\\varepsilon/4$ で $1/\\varepsilon$ の長方形で，幅が半分になる．面積は $\\dfrac{\\varepsilon}{2}\\cdot\\dfrac1\\varepsilon=\\dfrac12$ なので $\\displaystyle\\int\\delta(2x)\\,dx=\\boldsymbol{\\frac12}$．一般に $\\delta(cx)=\\delta(x)/|c|$ である．\n\n$\\displaystyle\\int_0^L\\lambda\\,dx=M+m$，$\\displaystyle\\int_0^Lx\\lambda\\,dx=\\frac{M}{L}\\cdot\\frac{L^2}{2}+mb$．よって\n\\[ x_G=\\boldsymbol{\\frac{ML+2mb}{2(M+m)}}. \\]\nこれは「棒の重心 $L/2$ と小球の位置 $b$ の質量による加重平均」に一致する．デルタ関数を使うと，点状の質量や点電荷を連続分布と同じ積分で扱える．\n\n次は，デルタ関数のフーリエ変換や，点源に対する応答（グリーン関数）へ進むとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "デルタ関数は面積 $1$ の鋭いピークの極限で，積分すると1点の値を取り出す．点状の量を密度として表すのに使う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 8\n(2) 1/2\n(3) x_G：(M L+2m b)/(2(M+m))"
+  },
+  "methods": [],
+  "tags": [
+   "デルタ関数",
+   "重心",
+   "線密度"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 0,
+  "minutes": 10,
+  "theme": "4点の離散フーリエ変換とパーセバルの等式",
+  "topic": "4点の離散フーリエ変換とパーセバルの等式",
+  "statement": {
+   "tex": "4個のデータ $x_0,x_1,x_2,x_3$ に対し，離散フーリエ変換を\n\\[ X_k=\\sum_{n=0}^{3}x_n\\,(-i)^{nk}\\qquad(k=0,1,2,3) \\]\nで定める（$-i=e^{-2\\pi i/4}$ は複素数平面上で $1$ を $-90^\\circ$ 回転させる数）．$X_k$ はデータに含まれる「$k$ 回振動する成分」の大きさを表す．データを $(x_0,x_1,x_2,x_3)=(1,\\,2,\\,0,\\,-1)$ とする．\n\\begin{enumerate}\n\\item $X_0$ と $X_2$ を求めよ．\n\\item $X_1$ を求めよ．\n\\item $\\displaystyle\\frac14\\sum_{k=0}^{3}|X_k|^2$ を求め，$\\displaystyle\\sum_{n=0}^{3}x_n^2$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $X_0=2$，$X_2=0$ (2) $X_1=1-3i$ (3) $6$（$\\sum x_n^2=6$ と等しい）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$k=0$ では $(-i)^0=1$ なので $X_0=1+2+0-1=\\boldsymbol{2}$（データの和）．$k=2$ では $(-i)^{2n}=(-1)^n$ なので $X_2=1-2+0+1=\\boldsymbol{0}$．\n\n$k=1$ では $(-i)^0=1$，$(-i)^1=-i$，$(-i)^2=-1$，$(-i)^3=i$ なので\n\\[ X_1=1+2(-i)+0\\cdot(-1)+(-1)\\cdot i=\\boldsymbol{1-3i}. \\]\n同様に $X_3=1+2i+0-1\\cdot(-i)=1+3i$ で，$X_3$ は $X_1$ の共役複素数になる（実数データの性質）．\n\n$|X_0|^2=4$，$|X_1|^2=|X_3|^2=1+9=10$，$|X_2|^2=0$ なので $\\dfrac14(4+10+0+10)=\\boldsymbol{6}$．一方 $1^2+2^2+0^2+(-1)^2=6$ で一致する．これがパーセバルの等式で，「データの全エネルギーは各周波数成分のエネルギーの和に等しい」ことを表す．\n\n次は，データ数 $N\\to\\infty$ の極限であるフーリエ級数・フーリエ変換と，それを高速に計算する FFT を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "離散フーリエ変換は複素数の回転を使ってデータを周波数成分に分ける．パーセバルの等式はエネルギーが成分ごとに分配されることを表す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) X_0：2 ; X_2：0\n(2) 1-3i\n(3) 6"
+  },
+  "methods": [],
+  "tags": [
+   "離散フーリエ変換",
+   "パーセバルの等式",
+   "複素数"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 1,
+  "minutes": 10,
+  "theme": "ガウス関数のフーリエ変換と不確定性",
+  "topic": "ガウス関数のフーリエ変換と不確定性",
+  "statement": {
+   "tex": "フーリエ変換を $\\tilde f(k)=\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$ と定める．\n\\begin{enumerate}\n\\item $f(x)=e^{-x^2/(2\\sigma^2)}$ のフーリエ変換 $\\tilde f(k)$ を求めよ．\n\\item 波動関数 $\\psi(x)\\propto e^{-x^2/(4\\sigma^2)}$ では位置の標準偏差が $\\sigma$ である．運動量の標準偏差 $\\sigma_p$ を求めよ．\n\\item デルタ関数の公式 $\\delta(g(x))=\\sum_i\\dfrac{\\delta(x-x_i)}{|g'(x_i)|}$（$x_i$ は $g$ の零点）を用いて $\\displaystyle\\int_{-\\infty}^{\\infty}\\delta(x^2-a^2)\\,e^{-x}dx$（$a>0$）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tilde f(k)=\\sqrt{2\\pi}\\sigma e^{-\\sigma^2k^2/2}$ (2) $\\sigma_p=\\frac{\\hbar}{2\\sigma}$ (3) $\\frac{\\cosh(a)}{a}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "指数を平方完成：$-\\dfrac{x^2}{2\\sigma^2}-ikx=-\\dfrac{(x+ik\\sigma^2)^2}{2\\sigma^2}-\\dfrac{\\sigma^2k^2}{2}$．ガウス積分 $\\sqrt{2\\pi}\\sigma$ を掛けて $\\boldsymbol{\\tilde f=\\sqrt{2\\pi}\\,\\sigma e^{-\\sigma^2k^2/2}}$．ガウス関数はフーリエ変換してもガウス関数で，幅は逆数になる．\n\n$\\psi$ のフーリエ変換は $(1)$ で $\\sigma\\to\\sqrt2\\sigma$ として $e^{-\\sigma^2k^2}$．$|\\tilde\\psi|^2\\propto e^{-2\\sigma^2k^2}$ なので $\\sigma_k=\\dfrac{1}{2\\sigma}$，$p=\\hbar k$ より $\\boldsymbol{\\sigma_p=\\dfrac{\\hbar}{2\\sigma}}$．$\\sigma_x\\sigma_p=\\hbar/2$ で不確定性関係の等号が成り立つ．\n\n零点 $x=\\pm a$ で $|g'|=2a$．よって $\\dfrac{e^{-a}+e^{a}}{2a}=\\boldsymbol{\\dfrac{\\cosh a}{a}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス関数はフーリエ変換で形が変わらず幅が逆数になる．これが最小不確定状態である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(2pi) sigma exp(-sigma^2 k^2/2)\n(2) hbar/(2sigma)\n(3) cosh(a)/a"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "ガウス積分",
+   "不確定性関係",
+   "デルタ関数"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 1,
+  "minutes": 12,
+  "theme": "減衰振動のフーリエ変換とローレンツ型スペクトル",
+  "topic": "減衰振動のフーリエ変換とローレンツ型スペクトル",
+  "statement": {
+   "tex": "$\\gamma>0$ とし，時刻 $t=0$ に励起されて減衰する振動\n\\[ f(t)=\\begin{cases}0 & (t<0)\\\\ e^{-\\gamma t}e^{-i\\omega_0t} & (t>0)\\end{cases} \\]\nを考える．フーリエ変換を $F(\\omega)=\\displaystyle\\int_{-\\infty}^{\\infty}f(t)\\,e^{i\\omega t}\\,dt$ と定める．\n\\begin{enumerate}\n\\item $F(\\omega)$ を求めよ．\n\\item パワースペクトル $|F(\\omega)|^2$ を求めよ．\n\\item $|F(\\omega)|^2$ の半値全幅 $\\Delta\\omega$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F(\\omega)=\\frac{1}{\\gamma-i(\\omega-\\omega_0)}$ (2) $|F|^2=\\frac{1}{(\\omega-\\omega_0)^2+\\gamma^2}$ (3) $\\Delta\\omega=2\\gamma$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "\\[ F(\\omega)=\\int_0^\\infty e^{-[\\gamma-i(\\omega-\\omega_0)]t}dt=\\boldsymbol{\\frac{1}{\\gamma-i(\\omega-\\omega_0)}}. \\]\n$\\gamma>0$ なので上限で $0$ に収束する．\n\n絶対値の2乗は $\\boldsymbol{|F|^2=\\dfrac{1}{(\\omega-\\omega_0)^2+\\gamma^2}}$ で，これをローレンツ型という．\n\n最大値 $1/\\gamma^2$ の半分になるのは $(\\omega-\\omega_0)^2=\\gamma^2$，すなわち $\\omega=\\omega_0\\pm\\gamma$．よって $\\boldsymbol{\\Delta\\omega=2\\gamma}$．エネルギー $|f|^2\\propto e^{-2\\gamma t}$ の寿命 $\\tau=1/(2\\gamma)$ を使うと $\\Delta\\omega\\,\\tau=1$ であり，原子のスペクトル線の自然幅と寿命の関係（時間とエネルギーの不確定性）を表す．"
+   }
+  ],
+  "idea": {
+   "tex": "指数関数的に減衰する振動のスペクトルはローレンツ型で，その幅は減衰率の2倍になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1/(gamma-i(omega-omega_0))\n(2) 1/((omega-omega_0)^2+gamma^2)\n(3) 2gamma"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "ローレンツ型",
+   "自然幅",
+   "スペクトル"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 1,
+  "minutes": 15,
+  "theme": "矩形関数の畳み込みとプランシュレルの定理",
+  "topic": "矩形関数の畳み込みとプランシュレルの定理",
+  "statement": {
+   "tex": "$a>0$ とし，$h(x)=1\\ (|x|<a/2)$，$h(x)=0\\ (|x|>a/2)$ とする．フーリエ変換を $H(k)=\\displaystyle\\int_{-\\infty}^{\\infty}h(x)e^{-ikx}dx$，畳み込みを $(f*g)(x)=\\displaystyle\\int_{-\\infty}^{\\infty}f(x')g(x-x')\\,dx'$ と定める．\n\\begin{enumerate}\n\\item $H(k)$ を求めよ．\n\\item $|x|<a$ で $(h*h)(x)$ を求めよ．（畳み込み定理より，そのフーリエ変換は $H(k)^2$ になる．）\n\\item プランシュレルの定理 $\\displaystyle\\int|h|^2dx=\\frac{1}{2\\pi}\\int|H|^2dk$ を用いて $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{\\sin^2u}{u^2}\\,du$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H(k)=\\frac{2\\sin\\frac{ka}{2}}{k}$ (2) $a-|x|$ (3) $\\pi$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "\\[ H(k)=\\int_{-a/2}^{a/2}e^{-ikx}dx=\\frac{e^{ika/2}-e^{-ika/2}}{ik}=\\boldsymbol{\\frac{2\\sin(ka/2)}{k}}. \\]\n\n$(h*h)(x)$ は区間 $(-a/2,a/2)$ と，それを $x$ だけずらした区間の重なりの長さである．重なりは $|x|<a$ で $\\boldsymbol{a-|x|}$，それ以外で $0$（三角形関数）．したがって三角形関数のフーリエ変換は $4\\sin^2(ka/2)/k^2$ である．\n\n左辺は $\\int|h|^2dx=a$．右辺で $u=ka/2$ とおくと $dk=2du/a$ なので\n\\[ \\frac{1}{2\\pi}\\int\\frac{4\\sin^2(ka/2)}{k^2}dk=\\frac{1}{2\\pi}\\int\\frac{4\\sin^2u}{4u^2/a^2}\\frac{2}{a}du=\\frac{a}{\\pi}\\int\\frac{\\sin^2u}{u^2}du. \\]\nこれが $a$ に等しいので $\\boldsymbol{\\displaystyle\\int\\frac{\\sin^2u}{u^2}du=\\pi}$．単スリットの回折強度 $\\propto\\sin^2u/u^2$ の全強度の計算に現れる積分である．"
+   }
+  ],
+  "idea": {
+   "tex": "畳み込みはフーリエ空間で積になる．プランシュレルの定理を使うと，直接計算しにくい積分を簡単な関数の積分に置き換えられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2sin(k a/2)/k\n(2) a-abs(x)\n(3) pi"
+  },
+  "methods": [],
+  "tags": [
+   "畳み込み定理",
+   "プランシュレルの定理",
+   "矩形関数",
+   "単スリット"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 15,
+  "theme": "フーリエ級数とパーセバルの等式",
+  "topic": "フーリエ級数とパーセバルの等式",
+  "statement": {
+   "tex": "$-\\pi<x<\\pi$ で $f(x)=|x|$ とし，周期 $2\\pi$ で拡張する．$f(x)=\\dfrac{a_0}{2}+\\displaystyle\\sum_{n\\ge1}a_n\\cos nx$ と展開する．\n\\begin{enumerate}\n\\item $n$ が奇数のときの $a_n$ を求めよ（$a_0=\\pi$，偶数の $n\\ge2$ では $a_n=0$）．\n\\item $x=0$ を代入して $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{(2n-1)^2}$ を求めよ．\n\\item パーセバルの等式 $\\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f^2dx=\\frac{a_0^2}{2}+\\sum a_n^2$ から $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{(2n-1)^4}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a_n=-\\frac{4}{\\pi n^2}$ (2) $\\frac{\\pi^2}{8}$ (3) $\\frac{\\pi^4}{96}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$a_n=\\dfrac{2}{\\pi}\\displaystyle\\int_0^\\pi x\\cos nx\\,dx=\\dfrac{2}{\\pi n^2}\\{(-1)^n-1\\}$．奇数 $n$ で $\\boldsymbol{a_n=-\\dfrac{4}{\\pi n^2}}$．\n\n$0=\\dfrac\\pi2-\\dfrac4\\pi\\sum_{\\rm odd}\\dfrac1{n^2}$ より $\\boldsymbol{\\sum\\dfrac{1}{(2n-1)^2}=\\dfrac{\\pi^2}{8}}$．\n\n左辺 $=\\dfrac{2}{\\pi}\\cdot\\dfrac{\\pi^3}{3}=\\dfrac{2\\pi^2}{3}$．右辺 $=\\dfrac{\\pi^2}{2}+\\dfrac{16}{\\pi^2}\\sum_{\\rm odd}\\dfrac1{n^4}$．よって $\\boldsymbol{\\sum\\dfrac{1}{(2n-1)^4}=\\dfrac{\\pi^4}{96}}$．（ここから $\\zeta(4)=\\frac{16}{15}\\cdot\\frac{\\pi^4}{96}=\\frac{\\pi^4}{90}$ も得られ，黒体放射のシュテファン＝ボルツマン定数に現れる．）"
+   }
+  ],
+  "idea": {
+   "tex": "フーリエ係数を特定の点で評価したり，2乗の和（パーセバル）をとったりすると，級数の和が求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -4/(pi n^2)\n(2) pi^2/8\n(3) pi^4/96"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ級数",
+   "パーセバルの等式",
+   "ゼータ関数"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 15,
+  "theme": "デルタ関数の性質と1次元グリーン関数",
+  "topic": "デルタ関数の性質と1次元グリーン関数",
+  "statement": {
+   "tex": "デルタ関数とグリーン関数について答えよ．\n\\begin{enumerate}\n\\item 任意の滑らかな試験関数で積分することにより，$x\\,\\delta'(x)=c\\,\\delta(x)$ となる定数 $c$ を求めよ．\n\\item $\\kappa>0$ とする．$\\left(\\dfrac{d^2}{dx^2}-\\kappa^2\\right)G(x)=\\delta(x)$ を満たし，$|x|\\to\\infty$ で $0$ になる $G(x)$ を求め，$x>0$ での式を答えよ．\n\\item 3次元で $\\nabla^2\\dfrac1r=c'\\,\\delta^3(\\boldsymbol{r})$ となる定数 $c'$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c=-1$ (2) $x>0$ で $G=-\\frac{e^{-\\kappa x}}{2\\kappa}$（全体では $-\\frac{e^{-\\kappa|x|}}{2\\kappa}$） (3) $c'=-4\\pi$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "部分積分で $\\displaystyle\\int f(x)\\,x\\,\\delta'(x)\\,dx=-\\int(xf)'\\delta\\,dx=-(f(0)+0)=-f(0)$．よって $\\boldsymbol{c=-1}$．\n\n$x\\neq0$ では $G=Ae^{-\\kappa|x|}$．$x=0$ で $G$ は連続，$G'$ は $1$ だけ跳ぶ：$G'(+0)-G'(-0)=-2\\kappa A=1$．よって $\\boldsymbol{G=-\\dfrac{e^{-\\kappa|x|}}{2\\kappa}}$．これは遮蔽されたクーロン相互作用（湯川型）の1次元版である．\n\n$\\nabla\\cdot(\\boldsymbol{r}/r^3)=4\\pi\\delta^3$ と $\\nabla(1/r)=-\\boldsymbol{r}/r^3$ より $\\boldsymbol{c'=-4\\pi}$．点電荷のポアソン方程式 $\\nabla^2\\phi=-\\rho/\\varepsilon_0$ と整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "デルタ関数を含む等式は試験関数で積分して確かめる．グリーン関数は「微分の跳び」の条件で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -1\n(2) -exp(-kappa x)/(2kappa)\n(3) -4pi"
+  },
+  "methods": [],
+  "tags": [
+   "デルタ関数",
+   "グリーン関数",
+   "部分積分"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 15,
+  "theme": "関数を引数にもつデルタ関数とローレンツ不変な測度",
+  "topic": "関数を引数にもつデルタ関数とローレンツ不変な測度",
+  "statement": {
+   "tex": "$g(x)$ の単純な零点を $x_i$ とすると $\\delta(g(x))=\\displaystyle\\sum_i\\frac{\\delta(x-x_i)}{|g'(x_i)|}$ である．$a>0$ とする．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_{-\\infty}^{\\infty}\\delta(x^2-a^2)\\,x^2\\,dx$ を求めよ．\n\\item $\\displaystyle\\int_{1/2}^{\\infty}\\delta(\\sin\\pi x)\\,e^{-x}\\,dx$ を求めよ．\n\\item 相対論で $E=\\sqrt{p^2+m^2}>0$ とする（$c=1$）．$\\theta$ を階段関数として $\\displaystyle\\int_{-\\infty}^{\\infty}\\delta(p_0^{\\,2}-E^2)\\,\\theta(p_0)\\,dp_0$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a$ (2) $\\frac{1}{\\pi(e-1)}$ (3) $\\frac{1}{2E}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$g=x^2-a^2$ の零点は $x=\\pm a$ で $|g'|=2a$．よって $\\delta(x^2-a^2)=\\dfrac{\\delta(x-a)+\\delta(x+a)}{2a}$ で，積分は $\\dfrac{a^2+a^2}{2a}=\\boldsymbol{a}$．\n\n$\\sin\\pi x$ の零点は整数 $x=n$ で，積分範囲内は $n=1,2,\\ldots$．$|g'(n)|=|\\pi\\cos\\pi n|=\\pi$ なので\n\\[ \\frac1\\pi\\sum_{n=1}^\\infty e^{-n}=\\frac1\\pi\\cdot\\frac{e^{-1}}{1-e^{-1}}=\\boldsymbol{\\frac{1}{\\pi(e-1)}}. \\]\n\n$p_0^2-E^2$ の零点は $p_0=\\pm E$ で，$\\theta(p_0)$ により $p_0=E$ だけが残る．$|g'(E)|=2E$ なので積分は $\\boldsymbol{\\dfrac{1}{2E}}$．したがって $d^4p\\,\\delta(p^2-m^2)\\theta(p_0)=\\dfrac{d^3p}{2E}$ であり，左辺がローレンツ不変なので $d^3p/2E$ は不変な位相空間の測度になる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\delta(g(x))$ は $g$ の零点ごとのデルタ関数の和で，重みは $1/|g'|$．相対論的な位相空間の測度 $d^3p/2E$ はこの公式から出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) a\n(2) 1/(pi(e-1))\n(3) 1/(2E)"
+  },
+  "methods": [],
+  "tags": [
+   "デルタ関数",
+   "変数変換",
+   "ローレンツ不変",
+   "位相空間"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 25,
+  "theme": "湯川ポテンシャルのフーリエ変換とボルン近似",
+  "topic": "湯川ポテンシャルのフーリエ変換とボルン近似",
+  "statement": {
+   "tex": "3次元フーリエ変換を $\\tilde f(\\boldsymbol{q})=\\displaystyle\\int f(r)\\,e^{-i\\boldsymbol{q}\\cdot\\boldsymbol{r}}d^3r$ と定め，$q=|\\boldsymbol{q}|$，$\\mu>0$ とする．\n\\begin{enumerate}\n\\item 球対称関数では $\\tilde f=\\dfrac{4\\pi}{q}\\displaystyle\\int_0^\\infty rf(r)\\sin(qr)\\,dr$ となる．$f=\\dfrac{e^{-\\mu r}}{r}$ のフーリエ変換を求めよ．\n\\item 質量 $m$ の粒子がポテンシャル $V(r)=V_0\\dfrac{e^{-\\mu r}}{r}$ で散乱される．第1ボルン近似の散乱振幅 $f=-\\dfrac{m}{2\\pi\\hbar^2}\\tilde V(\\boldsymbol{q})$ を求めよ．\n\\item $f=e^{-\\mu r}$ のフーリエ変換を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{4\\pi}{q^2+\\mu^2}$ (2) $-\\frac{2mV_0}{\\hbar^2(q^2+\\mu^2)}$ (3) $\\frac{8\\pi\\mu}{(q^2+\\mu^2)^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\displaystyle\\int_0^\\infty e^{-\\mu r}\\sin qr\\,dr=\\frac{q}{q^2+\\mu^2}$ より $\\boldsymbol{\\tilde f=\\dfrac{4\\pi}{q^2+\\mu^2}}$．$\\mu\\to0$ でクーロンの $4\\pi/q^2$ になる．\n\n$\\boldsymbol{f=-\\dfrac{2mV_0}{\\hbar^2(q^2+\\mu^2)}}$．$\\mu\\to0$，$q=2k\\sin(\\theta/2)$ とすると $|f|^2$ はラザフォードの公式を再現する．\n\n$\\displaystyle\\int_0^\\infty re^{-\\mu r}\\sin qr\\,dr=-\\frac{\\partial}{\\partial\\mu}\\frac{q}{q^2+\\mu^2}=\\frac{2\\mu q}{(q^2+\\mu^2)^2}$ より $\\boldsymbol{\\tilde f=\\dfrac{8\\pi\\mu}{(q^2+\\mu^2)^2}}$（水素原子 $1s$ の電子密度の形状因子に現れる）．"
+   }
+  ],
+  "idea": {
+   "tex": "球対称関数の3次元フーリエ変換は角度積分を先に済ませて1次元積分にでき，パラメータ微分で関連する積分も得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 4pi/(q^2+mu^2)\n(2) -2m V_0/(hbar^2 (q^2+mu^2))\n(3) 8pi mu/(q^2+mu^2)^2"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "湯川ポテンシャル",
+   "ボルン近似",
+   "散乱"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 20,
+  "theme": "階段関数のフーリエ変換とソホツキー＝プレメリの公式",
+  "topic": "階段関数のフーリエ変換とソホツキー＝プレメリの公式",
+  "statement": {
+   "tex": "関数 $f(t)$ のフーリエ変換を $\\tilde f(\\omega)=\\int_{-\\infty}^{\\infty}f(t)e^{-i\\omega t}\\,dt$ と定義する．階段関数 $\\theta(t)$（$t>0$ で $1$，$t<0$ で $0$）はそのままでは積分が収束しないので，$\\varepsilon>0$ として $f_\\varepsilon(t)=\\theta(t)e^{-\\varepsilon t}$ を考え，最後に $\\varepsilon\\to+0$ とする．\n\\begin{enumerate}\n\\item $\\tilde f_\\varepsilon(\\omega)$ の実部 $R_\\varepsilon(\\omega)$ と虚部 $I_\\varepsilon(\\omega)$ を求めよ．\n\\item $\\int_{-\\infty}^{\\infty}R_\\varepsilon(\\omega)\\,d\\omega$ を求めよ．この結果と $R_\\varepsilon$ の形から，$\\varepsilon\\to+0$ で $R_\\varepsilon(\\omega)$ は何に近づくか．\n\\item (2) の結果から，実軸上のなめらかで十分速く減衰する関数 $g(x)$ に対して\n\\[\\lim_{\\varepsilon\\to+0}\\int_{-\\infty}^{\\infty}\\frac{g(x)}{x-i\\varepsilon}\\,dx=\\mathrm{P}\\!\\int_{-\\infty}^{\\infty}\\frac{g(x)}{x}\\,dx+i\\pi g(0)\\]\nが成り立つ（$\\mathrm{P}$ はコーシーの主値）．$a>0$，$b$ を実定数として $g(x)=\\dfrac{1}{(x-b)^2+a^2}$ のとき，左辺の極限の虚部を求めよ．\n\\item 同じ $g(x)$ について，主値積分 $\\mathrm{P}\\!\\int_{-\\infty}^{\\infty}\\dfrac{g(x)}{x}\\,dx$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R_\\varepsilon=\\dfrac{\\varepsilon}{\\varepsilon^2+\\omega^2}$，$I_\\varepsilon=-\\dfrac{\\omega}{\\varepsilon^2+\\omega^2}$ \\quad (2) $\\pi$（$R_\\varepsilon\\to\\pi\\delta(\\omega)$） \\quad (3) $\\dfrac{\\pi}{a^2+b^2}$ \\quad (4) $\\dfrac{\\pi b}{(a^2+b^2)a}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 積分は収束して\n\\[\\tilde f_\\varepsilon(\\omega)=\\int_0^\\infty e^{-(\\varepsilon+i\\omega)t}\\,dt=\\frac{1}{\\varepsilon+i\\omega}=\\frac{\\varepsilon-i\\omega}{\\varepsilon^2+\\omega^2}.\\]\nよって $\\boldsymbol{R_\\varepsilon=\\dfrac{\\varepsilon}{\\varepsilon^2+\\omega^2}}$，$\\boldsymbol{I_\\varepsilon=-\\dfrac{\\omega}{\\varepsilon^2+\\omega^2}}$．\n\n(2) $\\omega=\\varepsilon u$ と置くと\n\\[\\int_{-\\infty}^{\\infty}\\frac{\\varepsilon}{\\varepsilon^2+\\omega^2}\\,d\\omega=\\int_{-\\infty}^{\\infty}\\frac{du}{1+u^2}=\\boldsymbol{\\pi}.\\]\n$R_\\varepsilon$ は幅 $\\varepsilon$，高さ $1/\\varepsilon$ のローレンツ型で，面積は $\\varepsilon$ によらず $\\pi$．したがって $\\varepsilon\\to+0$ で $\\boldsymbol{R_\\varepsilon(\\omega)\\to\\pi\\delta(\\omega)}$．一方 $I_\\varepsilon$ は $|\\omega|\\gg\\varepsilon$ では $-1/\\omega$ に一致し，原点近くは奇関数として打ち消し合うので $-\\mathrm{P}(1/\\omega)$ に近づく．まとめると\n\\[\\tilde\\theta(\\omega)=\\pi\\delta(\\omega)-i\\,\\mathrm{P}\\frac{1}{\\omega}.\\]\n変数を $x=-\\omega$ と書き直すと $\\dfrac{1}{x-i\\varepsilon}=\\dfrac{x}{x^2+\\varepsilon^2}+i\\dfrac{\\varepsilon}{x^2+\\varepsilon^2}\\to\\mathrm{P}\\dfrac1x+i\\pi\\delta(x)$ であり，これが (3) の式（ソホツキー＝プレメリの公式）である．\n\n(3) 虚部は $\\pi g(0)=\\boldsymbol{\\dfrac{\\pi}{a^2+b^2}}$．\n\n(4) $\\varepsilon>0$ のまま左辺を留数定理で計算する．上半平面で閉じると，極は $x=i\\varepsilon$ と $x=b+ia$ の2つ．\n\\[\\int_{-\\infty}^{\\infty}\\frac{g(x)}{x-i\\varepsilon}\\,dx=2\\pi i\\left[g(i\\varepsilon)+\\frac{1}{2ia\\,(b+ia-i\\varepsilon)}\\right]\\xrightarrow{\\varepsilon\\to+0}\\frac{2\\pi i}{a^2+b^2}+\\frac{\\pi}{a(b+ia)}.\\]\n第2項は $\\dfrac{\\pi(b-ia)}{a(a^2+b^2)}=\\dfrac{\\pi b}{a(a^2+b^2)}-\\dfrac{i\\pi}{a^2+b^2}$ なので，全体は\n\\[\\frac{\\pi b}{a(a^2+b^2)}+\\frac{i\\pi}{a^2+b^2}.\\]\n虚部が (3) と一致することが確かめられ，実部が主値積分を与える：\n\\[\\mathrm{P}\\!\\int_{-\\infty}^{\\infty}\\frac{g(x)}{x}\\,dx=\\boldsymbol{\\frac{\\pi b}{(a^2+b^2)a}}.\\]\n$b=0$ なら $g$ は偶関数で主値は $0$ になり，符号も $b$ の符号と一致する．\n\nこの公式は，時間発展の $\\int_0^\\infty e^{i(\\omega-\\omega_0)t-\\varepsilon t}dt$ から遷移率（$\\delta$ 関数の部分）とエネルギーのずれ（主値の部分）を同時に読み取るときや，遅延グリーン関数の分散関係で繰り返し使われる．"
+   }
+  ],
+  "idea": {
+   "tex": "階段関数に $e^{-\\varepsilon t}$ を掛けて変換すると $1/(\\varepsilon+i\\omega)$ になり，その実部（ローレンツ型）は $\\pi\\delta$ に，虚部は主値 $-\\mathrm P(1/\\omega)$ に近づく．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Re：epsilon/(epsilon^2+omega^2) ; Im：-omega/(epsilon^2+omega^2)\n(2) pi\n(3) pi/(a^2+b^2)\n(4) pi b/((a^2+b^2)a)"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "デルタ関数",
+   "主値",
+   "ソホツキー＝プレメリの公式",
+   "留数定理"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 25,
+  "theme": "拡散方程式の基本解と鏡像法：吸収壁での生存確率",
+  "topic": "拡散方程式の基本解と鏡像法：吸収壁での生存確率",
+  "statement": {
+   "tex": "拡散方程式 $\\dfrac{\\partial u}{\\partial t}=D\\dfrac{\\partial^2u}{\\partial x^2}$ を考える．フーリエ変換 $\\tilde u(k,t)=\\displaystyle\\int u\\,e^{-ikx}dx$ を用いてよい．\n\\begin{enumerate}\n\\item 全直線上で初期条件 $u(x,0)=\\delta(x)$ に対する解（基本解）$K(x,t)$ を求めよ．\n\\item 半直線 $x>0$ で，吸収壁の境界条件 $u(0,t)=0$ と初期条件 $u(x,0)=\\delta(x-x_0)$（$x_0>0$）を満たす解を $K$ を用いて表した式を，$x,\\,x_0,\\,D,\\,t$ で書け．\n\\item (2) の粒子がまだ吸収されていない確率（生存確率）$S(t)=\\displaystyle\\int_0^\\infty u\\,dx$ の，$t\\gg x_0^{\\,2}/D$ での主要項を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $K=\\frac{1}{\\sqrt{4\\pi Dt}}e^{-\\frac{x^2}{4Dt}}$ (2) $u=\\frac{1}{\\sqrt{4\\pi Dt}}\\left(e^{-\\frac{(x-x_0)^2}{4Dt}}-e^{-\\frac{(x+x_0)^2}{4Dt}}\\right)$ (3) $S\\approx\\frac{x_0}{\\sqrt{\\pi Dt}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "フーリエ変換すると $\\partial_t\\tilde u=-Dk^2\\tilde u$，初期値 $\\tilde u(k,0)=1$ なので $\\tilde u=e^{-Dk^2t}$．ガウス積分で逆変換して\n\\[ \\boldsymbol{K(x,t)=\\frac{1}{\\sqrt{4\\pi Dt}}\\exp\\!\\left(-\\frac{x^2}{4Dt}\\right)}. \\]\n分散は $\\langle x^2\\rangle=2Dt$ で，拡散距離は $\\sqrt t$ に比例する．\n\n$x=-x_0$ に符号を逆にした「鏡像」の源を置くと，$x=0$ で2つの寄与が打ち消し合い境界条件を満たす．$x>0$ の初期条件は変わらないので，解の一意性より\n\\[ \\boldsymbol{u=\\frac{1}{\\sqrt{4\\pi Dt}}\\left(e^{-(x-x_0)^2/4Dt}-e^{-(x+x_0)^2/4Dt}\\right)}. \\]\n\n$S(t)=\\displaystyle\\int_0^\\infty u\\,dx=\\int_{-x_0}^{x_0}K(y,t)\\,dy=\\mathrm{erf}\\!\\left(\\frac{x_0}{2\\sqrt{Dt}}\\right)$．$t\\gg x_0^2/D$ では $\\mathrm{erf}(z)\\approx\\dfrac{2z}{\\sqrt\\pi}$ なので $\\boldsymbol{S\\approx\\dfrac{x_0}{\\sqrt{\\pi Dt}}}$．ランダムウォーカーは1次元では必ず原点に戻る（$S\\to0$）が，その減衰は $t^{-1/2}$ と遅く，平均吸収時間は発散する．"
+   }
+  ],
+  "idea": {
+   "tex": "拡散方程式はフーリエ変換で解けて基本解はガウス関数になる．境界条件は鏡像の源で満たし，生存確率は $t^{-1/2}$ で減衰する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) exp(-x^2/(4D t))/sqrt(4pi D t)\n(2) (exp(-(x-x_0)^2/(4D t))-exp(-(x+x_0)^2/(4D t)))/sqrt(4pi D t)\n(3) x_0/sqrt(pi D t)"
+  },
+  "methods": [],
+  "tags": [
+   "拡散方程式",
+   "基本解",
+   "鏡像法",
+   "初到達時間",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 4,
+  "minutes": 35,
+  "theme": "ポアソン和公式とテータ関数",
+  "topic": "ポアソン和公式とテータ関数",
+  "statement": {
+   "tex": "ポアソン和公式 $\\displaystyle\\sum_{n=-\\infty}^{\\infty}f(n)=\\sum_{m=-\\infty}^{\\infty}\\tilde f(2\\pi m)$（$\\tilde f(k)=\\int f(x)e^{-ikx}dx$）を使う．$a>0$ とする．\n\\begin{enumerate}\n\\item $\\displaystyle\\sum_n\\delta(x-n)=\\sum_m e^{2\\pi imx}$ を用いてポアソン和公式を導け．\n\\item $f(x)=e^{-ax^2}$ に適用して $\\displaystyle\\sum_{n}e^{-an^2}=\\sqrt{\\frac{\\pi}{a}}\\sum_m e^{-\\pi^2m^2/a}$ を示し，$a$ が小さいときの $\\displaystyle\\sum_n e^{-an^2}$ を $m=0,\\pm1$ の項まで残した式で表せ．\n\\item $\\displaystyle\\sum_n e^{-an^2}$ を $\\sqrt{\\pi/a}$ で近似したときの相対誤差を，$a=1$ について求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 周期的デルタ関数のフーリエ級数を $f$ と積分する． (2) $\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\frac{\\pi^2}{a}}\\right)$ (3) $2e^{-\\pi^2}\\approx 1.03\\times 10^{-4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "周期1のくし形関数 $\\sum_n\\delta(x-n)$ をフーリエ級数に展開すると係数はすべて $1$ で，$\\sum_me^{2\\pi imx}$．両辺に $f(x)$ を掛けて積分すると $\\sum_nf(n)=\\sum_m\\int f(x)e^{2\\pi imx}dx=\\sum_m\\tilde f(-2\\pi m)$．$m\\to-m$ として公式を得る．\n\n$\\tilde f(k)=\\sqrt{\\pi/a}\\,e^{-k^2/4a}$ なので $\\tilde f(2\\pi m)=\\sqrt{\\pi/a}\\,e^{-\\pi^2m^2/a}$．$a$ が小さいと $m\\neq0$ の項は急速に小さく，\n\\[\\sum_ne^{-an^2}\\approx\\boldsymbol{\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\pi^2/a}\\right)}.\\]\n左辺の和は $a\\to0$ でゆっくりしか収束しないが，右辺は1項でほぼ正確である．\n\n相対誤差は $2e^{-\\pi^2/a}$ で，$a=1$ でも $\\boldsymbol{2e^{-\\pi^2}\\approx1.03\\times10^{-4}}$．（直接和 $1.7726\\ldots$ と $\\sqrt\\pi=1.7725\\ldots$ の比較で確認できる．）統計力学では，リング上の粒子や回転子の分配関数を高温で古典近似に置き換えると，誤差が指数関数的に小さいことを意味する．"
+   }
+  ],
+  "idea": {
+   "tex": "和を積分に置き換える近似の誤差は，ポアソン和公式の $m\\neq0$ の項で正確に表され，滑らかな関数では指数関数的に小さい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述：Σδ(x-n)=Σe^{2πimx} に f を掛けて積分する\n(2) sqrt(pi/a)(1+2exp(-pi^2/a))\n(3) ≈1.03e-4 (5%)"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン和公式",
+   "テータ関数",
+   "くし形関数",
+   "分配関数",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 4,
+  "minutes": 35,
+  "theme": "ギブス現象：不連続点でのフーリエ級数の行き過ぎ",
+  "topic": "ギブス現象：不連続点でのフーリエ級数の行き過ぎ",
+  "statement": {
+   "tex": "周期 $2\\pi$ の矩形波 $f(t)=\\mathrm{sgn}(\\sin t)$（$0<t<\\pi$ で $1$，$-\\pi<t<0$ で $-1$）のフーリエ級数の部分和を\n\\[ S_N(t)=\\frac4\\pi\\sum_{m=1}^{N}\\frac{\\sin(2m-1)t}{2m-1} \\]\nとする．不連続点 $t=0$ の近くで $S_N$ は $1$ を超えて振動し，$N\\to\\infty$ でもその行き過ぎは消えない．\n\\begin{enumerate}\n\\item $S_N'(t)$ を和を使わない形で表せ．\n\\item $t>0$ で $S_N(t)$ が最初に極大になる $t$ を求めよ．\n\\item (2) の極大値の $N\\to\\infty$ での極限を求めよ．$\\displaystyle\\int_0^\\pi\\frac{\\sin u}{u}du\\approx1.8519$ を用いてよい．\n\\item 行き過ぎの量（(3) の値 $-1$）は，不連続点での跳び $2$ の何割か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_N'=\\frac{2\\sin 2Nt}{\\pi\\sin t}$ (2) $t=\\frac{\\pi}{2N}$ (3) $\\frac{2}{\\pi}\\int_0^\\pi\\frac{\\sin u}{u}du\\approx1.179$ (4) $\\approx 0.0895$（約9%）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$S_N'=\\dfrac4\\pi\\displaystyle\\sum_{m=1}^N\\cos(2m-1)t$．$2\\sin t\\cos(2m-1)t=\\sin 2mt-\\sin(2m-2)t$ を足し合わせると望遠鏡和で $\\sin2Nt$ が残るので $\\displaystyle\\sum_{m=1}^N\\cos(2m-1)t=\\frac{\\sin2Nt}{2\\sin t}$．よって\n\\[ \\boldsymbol{S_N'(t)=\\frac{2\\sin2Nt}{\\pi\\sin t}}. \\]\n\n$S_N'=0$ となる最初の正の $t$ は $2Nt=\\pi$，すなわち $\\boldsymbol{t=\\dfrac{\\pi}{2N}}$ で，その前後で $S_N'$ は正から負に変わるので極大．\n\n$S_N(0)=0$ より\n\\[ S_N\\!\\left(\\frac{\\pi}{2N}\\right)=\\int_0^{\\pi/2N}\\frac{2\\sin2Nt}{\\pi\\sin t}dt. \\]\n$N\\to\\infty$ では積分範囲で $\\sin t\\approx t$ なので，$u=2Nt$ として $\\dfrac2\\pi\\displaystyle\\int_0^\\pi\\frac{\\sin u}{u}du=\\frac2\\pi\\times1.8519\\approx\\boldsymbol{1.179}$．\n\n行き過ぎ $0.179$ は跳び $2$ の $\\boldsymbol{\\approx0.0895}$，すなわち約 $9\\%$ である．項数を増やすと極大の位置 $\\pi/2N$ は不連続点に近づくが高さは一定のまま残る．これは各点収束するが一様収束しないことの表れで，信号処理では窓関数（シグマ因子など）で抑える．"
+   }
+  ],
+  "idea": {
+   "tex": "部分和の導関数はディリクレ核で閉じた形になる．不連続点近くの拡大スケール $t\\sim1/N$ で見ると，行き過ぎは $N$ によらない普遍的な値 $\\frac2\\pi\\mathrm{Si}(\\pi)-1$ に収束する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2sin(2N t)/(pi sin(t))\n(2) pi/(2N)\n(3) ≈1.179\n(4) ≈0.0895 (5%)"
+  },
+  "methods": [],
+  "tags": [
+   "ギブス現象",
+   "フーリエ級数",
+   "ディリクレ核",
+   "一様収束",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 4,
+  "minutes": 30,
+  "theme": "標本化定理とエイリアシング",
+  "topic": "標本化定理とエイリアシング",
+  "statement": {
+   "tex": "関数 $f(x)$ のフーリエ変換 $F(k)=\\displaystyle\\int f(x)e^{-ikx}dx$ が $|k|>K$ で $0$ である（帯域制限されている）とする．$f$ を間隔 $\\Delta$ の点 $x_n=n\\Delta$（$n$ は整数）で標本化する．\n\\begin{enumerate}\n\\item くし形関数 $\\displaystyle\\sum_n\\delta(x-n\\Delta)=\\frac1\\Delta\\sum_m e^{2\\pi imx/\\Delta}$ を用いると，$f_s(x)=\\displaystyle\\sum_nf(n\\Delta)\\delta(x-n\\Delta)$ のフーリエ変換は $F$ を周期 $2\\pi/\\Delta$ で並べたものになる．並べたものが重ならず $F$ を復元できる最大の $\\Delta$ を求めよ．\n\\item (1) の条件のもとで，$f(x)$ を標本値 $f(n\\Delta)$ で表す式（シャノンの補間公式）を導け．\n\\item $\\Delta=1$ で，標本値が $f(0)=1$，$f(n)=0\\ (n\\neq0)$ のとき，(2) の公式で復元した $f(1/2)$ を求めよ．\n\\item 周波数 $13\\,\\mathrm{Hz}$ の正弦波を毎秒 $10$ 回標本化すると，標本値は何 $\\mathrm{Hz}$ 以下の正弦波と区別できないか（最も低い周波数を答えよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta=\\frac{\\pi}{K}$ (2) $f(x)=\\sum_nf(n\\Delta)\\frac{\\sin[\\pi(x-n\\Delta)/\\Delta]}{\\pi(x-n\\Delta)/\\Delta}$ (3) $\\frac{2}{\\pi}$ (4) $3\\,\\mathrm{Hz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$f_s=f\\times\\sum_n\\delta(x-n\\Delta)=\\dfrac1\\Delta\\sum_mf(x)e^{2\\pi imx/\\Delta}$ のフーリエ変換は $\\dfrac1\\Delta\\sum_mF(k-2\\pi m/\\Delta)$．$F$ の幅は $2K$ なので，重ならない条件は $2\\pi/\\Delta\\ge2K$．最大の間隔は $\\boldsymbol{\\Delta=\\pi/K}$（ナイキスト間隔）．\n\n重ならなければ $F(k)=\\Delta\\,F_s(k)\\,\\chi(k)$（$\\chi$ は $|k|<\\pi/\\Delta$ で $1$ の矩形関数）．積の逆変換は畳み込みで，$\\chi$ の逆変換は $\\dfrac{\\sin(\\pi x/\\Delta)}{\\pi x}$ なので\n\\[ \\boldsymbol{f(x)=\\sum_nf(n\\Delta)\\,\\frac{\\sin[\\pi(x-n\\Delta)/\\Delta]}{\\pi(x-n\\Delta)/\\Delta}}. \\]\n各項の sinc 関数は自分の標本点で $1$，他の標本点で $0$ になる．\n\n$f(x)=\\dfrac{\\sin\\pi x}{\\pi x}$ なので $f(1/2)=\\dfrac{1}{\\pi/2}=\\boldsymbol{\\dfrac2\\pi}$．\n\n$\\sin(2\\pi\\cdot13t)$ を $t=n/10$ で標本化すると $\\sin(2\\pi\\cdot13n/10)=\\sin(2\\pi\\cdot3n/10+2\\pi n)=\\sin(2\\pi\\cdot3n/10)$．よって $\\boldsymbol{3\\,\\mathrm{Hz}}$ の正弦波と区別できない（エイリアシング）．ナイキスト周波数 $5\\,\\mathrm{Hz}$ を超える成分は折り返されて低周波に化ける．音声の CD が $20\\,\\mathrm{kHz}$ の可聴域に対して $44.1\\,\\mathrm{kHz}$ で標本化するのはこのためである．"
+   }
+  ],
+  "idea": {
+   "tex": "標本化はフーリエ空間でスペクトルを周期的に複製する．複製が重ならなければ sinc 関数で完全に復元でき，重なると高周波が低周波に折り返す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) pi/K\n(2) 記述：f(x)=Σ f(nΔ) sin[π(x-nΔ)/Δ]/[π(x-nΔ)/Δ]\n(3) 2/pi\n(4) 周波数 [Hz]：3"
+  },
+  "methods": [],
+  "tags": [
+   "標本化定理",
+   "ナイキスト",
+   "エイリアシング",
+   "くし形関数",
+   "sinc関数"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

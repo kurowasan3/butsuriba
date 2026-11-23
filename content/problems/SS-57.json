@@ -1,0 +1,738 @@
+[
+ {
+  "id": "SS-05-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ドナーを加えたシリコンの電気伝導率",
+  "topic": "ドナーを加えたシリコンの電気伝導率",
+  "statement": {
+   "tex": "半導体中の電子密度 $n$ と正孔密度 $p$ の積は，不純物の量によらず $np=n_i^2$（$n_i$ は真性キャリア密度）を満たす．シリコンでは室温で $n_i=1.0\\times10^{16}\\,\\mathrm{m^{-3}}$ である．これにドナーを $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$ 加え，すべてイオン化して $n=N_D$ になったとする．電気伝導率は $\\sigma=q(n\\mu_e+p\\mu_h)$ で，$q=1.602\\times10^{-19}\\,\\mathrm{C}$，移動度は $\\mu_e=0.14\\,\\mathrm{m^2/(V\\,s)}$，$\\mu_h=0.045\\,\\mathrm{m^2/(V\\,s)}$ とする．\n\\begin{enumerate}\n\\item 正孔密度 $p$ を求めよ．\n\\item 電気伝導率 $\\sigma$ を求めよ．\n\\item 不純物のない真性シリコン（$n=p=n_i$）の伝導率の何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=1.0\\times10^{10}\\,\\mathrm{m^{-3}}$ (2) $\\sigma\\approx2.2\\times10^{2}\\,\\mathrm{S/m}$ (3) $\\approx7.6\\times10^{5}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p=n_i^2/N_D=10^{32}/10^{22}=\\boldsymbol{1.0\\times10^{10}\\,\\mathrm{m^{-3}}}$．ドナーで電子が増えた分，正孔は大きく減る．\n\n(2) $p\\mu_h$ は無視できて $\\sigma\\approx qN_D\\mu_e=1.602\\times10^{-19}\\times10^{22}\\times0.14\\approx\\boldsymbol{2.2\\times10^2\\,\\mathrm{S/m}}$．\n\n(3) $\\sigma_i=qn_i(\\mu_e+\\mu_h)=2.96\\times10^{-4}\\,\\mathrm{S/m}$．比は $\\dfrac{224}{2.96\\times10^{-4}}\\approx\\boldsymbol{7.6\\times10^5}$ 倍．\n\nシリコン原子数百万個に1個程度（$10^{22}$ は Si の原子密度 $5\\times10^{28}$ の $2\\times10^{-7}$）の不純物で，伝導率が数十万倍になる．これが半導体の「ドーピング」の威力である．次は，ドーピングでフェルミ準位がどう動くか，p 型と n 型を接合した pn 接合を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "$np=n_i^2$（質量作用の法則）により，多数キャリアを増やすと少数キャリアは減る．伝導率は多数キャリアで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) p [m^-3]：≈1.0e10\n(2) σ [S/m]：≈2.24e2\n(3) ≈7.6e5"
+  },
+  "methods": [],
+  "tags": [
+   "ドーピング",
+   "質量作用の法則",
+   "電気伝導率",
+   "移動度"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 0,
+  "minutes": 8,
+  "theme": "バンドギャップと光吸収・キャリア数",
+  "topic": "バンドギャップと光吸収・キャリア数",
+  "statement": {
+   "tex": "半導体は，バンドギャップ $E_g$ 以上のエネルギーをもつ光子を吸収して電子を価電子帯から伝導帯へ上げる．光子のエネルギー $E$ と波長 $\\lambda$ は $\\lambda=hc/E$，$hc=1240\\,\\mathrm{eV\\,nm}$ の関係にある．また，熱によって生じる真性キャリア密度は $n_i\\propto\\exp\\left(-\\dfrac{E_g}{2k_BT}\\right)$ である（比例係数は物質によらず同じとする）．\n\\begin{enumerate}\n\\item シリコン（$E_g=1.12\\,\\mathrm{eV}$）が吸収できる光の最大の波長を $\\mathrm{nm}$ で求めよ．\n\\item $k_BT=0.0259\\,\\mathrm{eV}$（室温）で，ゲルマニウム（$E_g=0.66\\,\\mathrm{eV}$）の $n_i$ はシリコンの何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda\\approx1.11\\times10^{3}\\,\\mathrm{nm}$ (2) $\\approx7.2\\times10^{3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\lambda_{\\max}=\\dfrac{1240}{1.12}\\approx\\boldsymbol{1.11\\times10^3\\,\\mathrm{nm}}$（近赤外）．これより波長の短い光（可視光全体）を吸収できるので，シリコンは太陽電池やカメラの撮像素子に使われる．\n\n(2) 比は $\\exp\\left(\\dfrac{1.12-0.66}{2\\times0.0259}\\right)=e^{8.88}\\approx\\boldsymbol{7.2\\times10^3}$ 倍．\n\nギャップがわずか $0.46\\,\\mathrm{eV}$ 違うだけで，キャリアの数は数千倍も違う．指数関数の効き方を実感してほしい．次は，伝導帯・価電子帯の状態密度から $n_i$ の比例係数（有効状態密度）を計算する方法を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "光吸収の境目は $E_g=hc/\\lambda$，熱で生じるキャリアはボルツマン因子 $e^{-E_g/2k_BT}$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) λ [nm]：≈1.11e3 (1%)\n(2) ≈7.2e3"
+  },
+  "methods": [],
+  "tags": [
+   "バンドギャップ",
+   "光吸収",
+   "真性キャリア密度"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 0,
+  "minutes": 10,
+  "theme": "分散関係の曲がり具合と有効質量",
+  "topic": "分散関係の曲がり具合と有効質量",
+  "statement": {
+   "tex": "結晶中の電子のエネルギー $E$ は波数 $k$ の関数 $E(k)$ になる（分散関係）．ある1次元結晶では\n\\[ E(k)=-2t\\cos(ka) \\]\nである（$t>0$ はエネルギーの定数，$a$ は原子の間隔）．自由な電子では $E=\\dfrac{\\hbar^2k^2}{2m}$ なので $m=\\hbar^2\\Big/\\dfrac{d^2E}{dk^2}$ である．これにならい，結晶中の電子の\\textbf{有効質量}を\n\\[ m^*=\\hbar^2\\Big/\\frac{d^2E}{dk^2} \\]\nで定義する（$\\hbar$ はプランク定数を $2\\pi$ で割った定数）．\n\\begin{enumerate}\n\\item バンドの底 $k=0$ での有効質量を $\\hbar,t,a$ で表せ．\n\\item バンドの頂上 $k=\\pi/a$ での有効質量を $\\hbar,t,a$ で表せ．\n\\item $t=1.0\\,\\mathrm{eV}=1.602\\times10^{-19}\\,\\mathrm{J}$，$a=0.30\\,\\mathrm{nm}$ のとき，(1) の有効質量は電子の質量 $m_e=9.109\\times10^{-31}\\,\\mathrm{kg}$ の何倍か．$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$ とする．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\hbar^2}{2ta^2}$ (2) $-\\dfrac{\\hbar^2}{2ta^2}$ (3) $\\approx 0.42$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dE}{dk}=2ta\\sin(ka)$，$\\dfrac{d^2E}{dk^2}=2ta^2\\cos(ka)$．$k=0$ では $2ta^2$ なので $\\boldsymbol{m^*=\\dfrac{\\hbar^2}{2ta^2}}$．\n\n(2) $k=\\pi/a$ では $\\cos\\pi=-1$ より $\\dfrac{d^2E}{dk^2}=-2ta^2$，$\\boldsymbol{m^*=-\\dfrac{\\hbar^2}{2ta^2}}$．有効質量が負になる．電場で押すと逆向きに加速されるということで，満ちかけたバンドの頂上付近の「電子の抜け穴」は正の質量・正の電荷をもつ粒子（正孔）としてふるまう．\n\n(3) $\\dfrac{m^*}{m_e}=\\dfrac{(1.055\\times10^{-34})^2}{2\\times1.602\\times10^{-19}\\times(0.30\\times10^{-9})^2\\times9.109\\times10^{-31}}\\approx\\boldsymbol{0.42}$．\n\n原子間の「飛び移りやすさ」$t$ が大きいほどバンドの幅 $4t$ が広く，有効質量は小さい（電子が動きやすい）．次は，有効質量を使って半導体中の電子と正孔の数を数える方法を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "有効質量は分散関係の2階微分（曲率）の逆数．バンドの頂上では負になり，これが正孔の考え方につながる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) hbar^2/(2 t a^2)\n(2) -hbar^2/(2 t a^2)\n(3) ≈0.42"
+  },
+  "methods": [],
+  "tags": [
+   "有効質量",
+   "分散関係",
+   "強束縛模型",
+   "正孔"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 1,
+  "minutes": 15,
+  "theme": "真性キャリア密度と真性フェルミ準位",
+  "topic": "真性キャリア密度と真性フェルミ準位",
+  "statement": {
+   "tex": "バンドギャップ $E_g=E_c-E_v$ の真性半導体を考える．伝導帯と価電子帯の有効状態密度を $N_c,N_v$ とし，非縮退（ボルツマン近似）とする．電子密度は $n=N_ce^{-(E_c-\\mu)/k_BT}$，正孔密度は $p=N_ve^{-(\\mu-E_v)/k_BT}$ である．\n\\begin{enumerate}\n\\item 真性キャリア密度 $n_i$ を $N_c,N_v,E_g,k_B,T$ で表せ．\n\\item 真性フェルミ準位 $\\mu_i$ を求めよ．ただし $N_c/N_v=(m_e/m_h)^{3/2}$ である（$m_e,m_h$ は電子と正孔の有効質量）．\n\\item Si について $N_c=2.8\\times10^{25}\\,\\mathrm{m^{-3}}$，$N_v=1.04\\times10^{25}\\,\\mathrm{m^{-3}}$，$E_g=1.12\\,\\mathrm{eV}$ として，$T=300\\,\\mathrm{K}$ での $n_i$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n_i=\\sqrt{N_cN_v}\\,e^{-E_g/(2k_BT)}$ (2) $\\mu_i=\\dfrac{E_c+E_v}{2}+\\dfrac{3}{4}k_BT\\ln\\dfrac{m_h}{m_e}$ (3) $n_i\\approx 6.7\\times10^{15}\\,\\mathrm{m^{-3}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $np=N_cN_ve^{-E_g/k_BT}$ は $\\mu$ によらない（質量作用の法則）．真性なら $n=p=n_i$ なので $\\boldsymbol{n_i=\\sqrt{N_cN_v}\\,e^{-E_g/(2k_BT)}}$．\n\n(2) $n=p$ より $N_ce^{-(E_c-\\mu)/k_BT}=N_ve^{-(\\mu-E_v)/k_BT}$．\n\\[\n\\mu_i=\\frac{E_c+E_v}{2}+\\frac{k_BT}{2}\\ln\\frac{N_v}{N_c}=\\boldsymbol{\\frac{E_c+E_v}{2}+\\frac{3}{4}k_BT\\ln\\frac{m_h}{m_e}}\n\\]\n正孔の方が重ければ，ギャップの中央より少し上にずれる．\n\n(3) $k_BT=0.02585\\,\\mathrm{eV}$，$E_g/(2k_BT)=21.66$，$\\sqrt{N_cN_v}=1.71\\times10^{25}\\,\\mathrm{m^{-3}}$．$n_i\\approx1.71\\times10^{25}\\times3.9\\times10^{-10}\\approx\\boldsymbol{6.7\\times10^{15}\\,\\mathrm{m^{-3}}}$．（実測値約 $1\\times10^{16}\\,\\mathrm{m^{-3}}$ と桁で合う．）"
+   }
+  ],
+  "idea": {
+   "tex": "$np$ は化学ポテンシャルによらない（質量作用の法則）．真性なら $n=p$ から $n_i$ と $\\mu_i$ が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(N_c N_v) exp(-E_g/(2k_B T))\n(2) (E_c+E_v)/2+(3/4)k_B T ln(m_h/m_e)\n(3) n_i [m^-3]：≈6.7e15"
+  },
+  "methods": [],
+  "tags": [
+   "真性半導体",
+   "キャリア密度",
+   "質量作用の法則"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 1,
+  "minutes": 12,
+  "theme": "pn 接合ダイオードの電流電圧特性（ショックレーの式）",
+  "topic": "pn 接合ダイオードの電流電圧特性（ショックレーの式）",
+  "statement": {
+   "tex": "理想的な pn 接合ダイオードの電流は，順方向電圧 $V$ に対してショックレーの式\n\\[ I=I_s\\left[\\exp\\left(\\frac{eV}{k_BT}\\right)-1\\right] \\]\nで与えられる．$I_s=1.0\\times10^{-14}\\,\\mathrm{A}$，$T=300\\,\\mathrm{K}$ とし，$k_BT/e=25.86\\,\\mathrm{mV}$ を用いよ．\n\\begin{enumerate}\n\\item 電流 $I=1.0\\,\\mathrm{mA}$ を流すのに必要な電圧 $V$ を求めよ．\n\\item 順方向で電流を10倍にするには，電圧を何 $\\mathrm{mV}$ 増やせばよいか．\n\\item $I=1.0\\,\\mathrm{mA}$ での微分抵抗 $r=dV/dI$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V\\approx 0.655\\,\\mathrm{V}$ (2) $\\approx 59.5\\,\\mathrm{mV}$ (3) $r\\approx 25.9\\,\\mathrm{\\Omega}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V=\\dfrac{k_BT}{e}\\ln\\left(\\dfrac{I}{I_s}+1\\right)=0.02586\\times\\ln(10^{11})\\approx\\boldsymbol{0.655\\,\\mathrm{V}}$．\n\n(2) $I\\gg I_s$ では $I\\approx I_se^{eV/k_BT}$．電流を10倍にする電圧の増分は $\\Delta V=\\dfrac{k_BT}{e}\\ln10\\approx\\boldsymbol{59.5\\,\\mathrm{mV}}$（室温で「1桁あたり約 60 mV」）．\n\n(3) $\\dfrac{dI}{dV}=\\dfrac{e}{k_BT}I_se^{eV/k_BT}\\approx\\dfrac{eI}{k_BT}$ より $r=\\dfrac{k_BT}{eI}=\\dfrac{25.86\\times10^{-3}}{1.0\\times10^{-3}}\\approx\\boldsymbol{25.9\\,\\mathrm{\\Omega}}$．微分抵抗は電流に反比例する．\n\n指数関数の因子 $e^{eV/k_BT}$ は，接合の障壁を越えて少数キャリアとして注入される電子（正孔）の数がボルツマン因子で増えることに由来する．"
+   }
+  ],
+  "idea": {
+   "tex": "ダイオード電流は障壁を越えるキャリアのボルツマン因子で決まり，電圧が $k_BT/e$ 増えるごとに $e$ 倍になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) V [V]：≈0.655\n(2) ΔV [mV]：≈59.5\n(3) r [Ω]：≈25.9"
+  },
+  "methods": [],
+  "tags": [
+   "pn接合",
+   "ダイオード",
+   "ショックレーの式",
+   "微分抵抗"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 1,
+  "minutes": 15,
+  "theme": "伝導帯の有効状態密度と非縮退近似",
+  "topic": "伝導帯の有効状態密度と非縮退近似",
+  "statement": {
+   "tex": "有効質量 $m_n$ の電子の伝導帯（下端 $E_c$）の状態密度（スピンを含む，単位体積あたり）は\n\\[ D(E)=\\frac{1}{2\\pi^2}\\left(\\frac{2m_n}{\\hbar^2}\\right)^{3/2}\\sqrt{E-E_c}\\qquad(E>E_c) \\]\nである．フェルミ準位 $E_F$ が $E_c$ より $k_BT$ に比べて十分下にあるとき，フェルミ分布はボルツマン分布 $e^{-(E-E_F)/k_BT}$ で近似できる．\n\\begin{enumerate}\n\\item 電子密度が $n=N_c\\exp\\left(-\\dfrac{E_c-E_F}{k_BT}\\right)$ と書けることを示し，有効状態密度 $N_c$ を $m_n,k_B,T,\\hbar$ で表せ．$\\int_0^\\infty\\sqrt{x}\\,e^{-x}dx=\\sqrt{\\pi}/2$ を用いてよい．\n\\item GaAs（$m_n=0.067m_e$）の $T=300\\,\\mathrm{K}$ での $N_c$ を求めよ．$m_e=9.109\\times10^{-31}\\,\\mathrm{kg}$，$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$k_B=1.381\\times10^{-23}\\,\\mathrm{J/K}$．\n\\item この GaAs で $E_c-E_F=0.10\\,\\mathrm{eV}$ のときの電子密度を求めよ（$k_BT=0.02586\\,\\mathrm{eV}$）．\n\\item ドナー密度 $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$ がすべてイオン化して $n=N_D$ となるとき，$E_c-E_F$ を $\\mathrm{eV}$ で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N_c=2\\left(\\dfrac{m_nk_BT}{2\\pi\\hbar^2}\\right)^{3/2}$ (2) $N_c\\approx4.4\\times10^{23}\\,\\mathrm{m^{-3}}$ (3) $n\\approx9.1\\times10^{21}\\,\\mathrm{m^{-3}}$ (4) $\\approx0.098\\,\\mathrm{eV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=(E-E_c)/k_BT$ とおくと\n\\[ n=\\int_{E_c}^\\infty D(E)e^{-(E-E_F)/k_BT}dE=\\frac{1}{2\\pi^2}\\left(\\frac{2m_nk_BT}{\\hbar^2}\\right)^{3/2}e^{-(E_c-E_F)/k_BT}\\int_0^\\infty\\sqrt{x}e^{-x}dx \\]\n$\\int=\\sqrt\\pi/2$ を使って整理すると\n\\[ \\boldsymbol{N_c=\\frac{1}{4\\pi^{3/2}}\\left(\\frac{2m_nk_BT}{\\hbar^2}\\right)^{3/2}=2\\left(\\frac{m_nk_BT}{2\\pi\\hbar^2}\\right)^{3/2}} \\]\n（$=2(2\\pi m_nk_BT/h^2)^{3/2}$ とも書ける）．伝導帯全体が，$E_c$ に $N_c$ 個の準位があるかのようにふるまう．\n\n(2) $N_c=2\\left(\\dfrac{0.067\\times9.109\\times10^{-31}\\times1.381\\times10^{-23}\\times300}{2\\pi\\times(1.055\\times10^{-34})^2}\\right)^{3/2}\\approx\\boldsymbol{4.4\\times10^{23}\\,\\mathrm{m^{-3}}}$．（Si では $m_n$ が大きく $N_c\\approx2.8\\times10^{25}\\,\\mathrm{m^{-3}}$．）\n\n(3) $n=4.35\\times10^{23}\\times e^{-0.10/0.02586}\\approx\\boldsymbol{9.1\\times10^{21}\\,\\mathrm{m^{-3}}}$．\n\n(4) $E_c-E_F=k_BT\\ln(N_c/N_D)=0.02586\\times\\ln43.5\\approx\\boldsymbol{0.098\\,\\mathrm{eV}}$．GaAs は $N_c$ が小さいので，$N_D$ が $10^{23}\\,\\mathrm{m^{-3}}$ を超えると $E_F$ が $E_c$ に近づき，非縮退近似が使えなくなる（縮退半導体）．"
+   }
+  ],
+  "idea": {
+   "tex": "ボルツマン近似のもとで状態密度×分布を積分すると，伝導帯は $E_c$ にある $N_c$ 個の準位と同じになる．$N_c\\propto(m_nT)^{3/2}$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2 (m_n k_B T/(2 pi hbar^2))^(3/2)\n(2) N_c [m^-3]：≈4.4e23\n(3) n [m^-3]：≈9.1e21\n(4) E_c-E_F [eV]：≈0.098"
+  },
+  "methods": [],
+  "tags": [
+   "有効状態密度",
+   "非縮退近似",
+   "キャリア密度",
+   "GaAs"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 15,
+  "theme": "n 型半導体のキャリア密度とフェルミ準位",
+  "topic": "n 型半導体のキャリア密度とフェルミ準位",
+  "statement": {
+   "tex": "Si（$T=300\\,\\mathrm{K}$，$n_i=1.0\\times10^{16}\\,\\mathrm{m^{-3}}$，$N_c=2.8\\times10^{25}\\,\\mathrm{m^{-3}}$）にドナーを $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$ 添加した．ドナーはすべてイオン化しているとする．\n\\begin{enumerate}\n\\item 電子密度 $n$ と正孔密度 $p$ を求めよ．\n\\item 伝導帯の底からはかったフェルミ準位の深さ $E_c-\\mu$ を eV 単位で求めよ．\n\\item 電子の移動度を $\\mu_n=0.14\\,\\mathrm{m^2/(V\\,s)}$ として，電気伝導率を求めよ（正孔の寄与は無視する）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n\\approx 1.0\\times10^{22}\\,\\mathrm{m^{-3}}$，$p\\approx 1.0\\times10^{10}\\,\\mathrm{m^{-3}}$ (2) $E_c-\\mu\\approx 0.205\\,\\mathrm{eV}$ (3) $\\sigma\\approx 224\\,\\mathrm{S/m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $N_D\\gg n_i$ なので $n\\approx N_D=\\boldsymbol{1.0\\times10^{22}\\,\\mathrm{m^{-3}}}$．質量作用の法則 $np=n_i^2$ から $p=n_i^2/N_D=\\boldsymbol{1.0\\times10^{10}\\,\\mathrm{m^{-3}}}$．少数キャリアは多数キャリアの $10^{-12}$ 倍しかない．\n\n(2) $n=N_ce^{-(E_c-\\mu)/k_BT}$ より\n\\[\nE_c-\\mu=k_BT\\ln\\frac{N_c}{N_D}=0.02585\\times\\ln(2800)\\approx\\boldsymbol{0.205\\,\\mathrm{eV}}\n\\]\n$k_BT$ よりずっと深いので，非縮退の近似は正しい．\n\n(3) $\\sigma=ne\\mu_n=1.0\\times10^{22}\\times1.602\\times10^{-19}\\times0.14\\approx\\boldsymbol{224\\,\\mathrm{S/m}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "多数キャリアはドナー密度，少数キャリアは $n_i^2/N_D$．フェルミ準位は $n=N_ce^{-(E_c-\\mu)/k_BT}$ を逆に解く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) n [m^-3]：≈1.0e22 ; p [m^-3]：≈1.0e10\n(2) E_c-μ [eV]：≈0.205\n(3) σ [S/m]：≈224"
+  },
+  "methods": [],
+  "tags": [
+   "n型半導体",
+   "ドナー",
+   "フェルミ準位",
+   "電気伝導率"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 15,
+  "theme": "水素原子模型による浅いドナー準位",
+  "topic": "水素原子模型による浅いドナー準位",
+  "statement": {
+   "tex": "Si 中のドナー（例えば P）の余分な電子は，比誘電率 $\\varepsilon_r=11.7$ の媒質中で，有効質量 $m^*=0.26m_e$ をもって正のイオンに束縛されると考える（水素原子模型）．水素原子のイオン化エネルギーを $13.6\\,\\mathrm{eV}$，ボーア半径を $a_0=0.0529\\,\\mathrm{nm}$ とする．\n\\begin{enumerate}\n\\item ドナーの束縛エネルギー $E_d$ を meV 単位で求めよ．\n\\item ドナー電子の有効ボーア半径 $a_d$ を求めよ．\n\\item モットの判定条件 $n_c^{1/3}a_d\\approx0.26$ を用いて，金属＝絶縁体転移が起こるドナー密度 $n_c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_d\\approx 25.8\\,\\mathrm{meV}$ (2) $a_d\\approx 2.38\\,\\mathrm{nm}$ (3) $n_c\\approx 1.3\\times10^{24}\\,\\mathrm{m^{-3}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "水素原子の式で $e^2\\to e^2/\\varepsilon_r$，$m_e\\to m^*$ と置きかえる．\n\n(1) $E_d=13.6\\,\\mathrm{eV}\\times\\dfrac{m^*/m_e}{\\varepsilon_r^2}=13.6\\times\\dfrac{0.26}{136.9}\\approx\\boldsymbol{25.8\\,\\mathrm{meV}}$．室温の $k_BT\\approx26\\,\\mathrm{meV}$ と同程度なので，室温ではほぼすべてイオン化する．\n\n(2) $a_d=a_0\\varepsilon_r\\dfrac{m_e}{m^*}=0.0529\\times\\dfrac{11.7}{0.26}\\approx\\boldsymbol{2.38\\,\\mathrm{nm}}$．格子定数（$0.543\\,\\mathrm{nm}$）の数倍に広がっているので，連続体として扱う近似がおおむね正当化される．\n\n(3) $n_c=(0.26/a_d)^3=(0.26/2.38\\times10^{-9})^3\\approx\\boldsymbol{1.3\\times10^{24}\\,\\mathrm{m^{-3}}}$．これを超えるとドナーの波動関数が重なり，不純物バンドが金属的になる．"
+   }
+  ],
+  "idea": {
+   "tex": "誘電体と有効質量で「縮んだ」水素原子：エネルギーは $(m^*/m)/\\varepsilon_r^2$ 倍，半径は $\\varepsilon_r(m/m^*)$ 倍．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) E_d [meV]：≈25.8\n(2) a_d [nm]：≈2.38\n(3) n_c [m^-3]：≈1.3e24"
+  },
+  "methods": [],
+  "tags": [
+   "ドナー準位",
+   "水素原子模型",
+   "有効質量",
+   "モット転移"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "MOS キャパシタの強反転としきい値電圧",
+  "topic": "MOS キャパシタの強反転としきい値電圧",
+  "statement": {
+   "tex": "p 型 Si（アクセプター密度 $N_A=1.0\\times10^{23}\\,\\mathrm{m^{-3}}$，真性キャリア密度 $n_i=1.0\\times10^{16}\\,\\mathrm{m^{-3}}$，比誘電率 11.7）の上に，厚さ $10\\,\\mathrm{nm}$ の $\\mathrm{SiO_2}$（比誘電率 3.9）と金属電極を重ねた MOS 構造を考える．$T=300\\,\\mathrm{K}$（$k_BT/e=25.86\\,\\mathrm{mV}$），$\\varepsilon_0=8.854\\times10^{-12}\\,\\mathrm{F/m}$，$e=1.602\\times10^{-19}\\,\\mathrm{C}$ とし，仕事関数差や酸化膜中の電荷は無視する（フラットバンド電圧 0）．\n\\begin{enumerate}\n\\item バルクのフェルミ準位と真性準位の差を電位で表した $\\phi_F=(E_i-E_F)/e$ を求めよ．\n\\item 表面の電子密度がバルクの正孔密度に等しくなる「強反転」の条件は，表面のバンドの曲がり $\\phi_s=2\\phi_F$ である．このときの空乏層の幅 $W_{\\max}$ を空乏近似で求めよ．\n\\item 単位面積あたりの空乏層電荷の大きさ $Q_d$ を求めよ．\n\\item しきい値電圧 $V_T=2\\phi_F+Q_d/C_{ox}$（$C_{ox}$ は単位面積あたりの酸化膜容量）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\phi_F\\approx0.417\\,\\mathrm{V}$ (2) $W_{\\max}\\approx1.04\\times10^{-7}\\,\\mathrm{m}$ (3) $Q_d\\approx1.66\\times10^{-3}\\,\\mathrm{C/m^2}$ (4) $V_T\\approx1.32\\,\\mathrm{V}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p=N_A=n_ie^{(E_i-E_F)/k_BT}$ より $\\phi_F=\\dfrac{k_BT}{e}\\ln\\dfrac{N_A}{n_i}=0.02586\\times\\ln10^7\\approx\\boldsymbol{0.417\\,\\mathrm{V}}$．\n\n(2) 空乏層（電荷密度 $-eN_A$）でポアソン方程式を解くと，バンドの曲がりは $\\phi_s=\\dfrac{eN_AW^2}{2\\varepsilon_s}$．$\\phi_s=2\\phi_F$ とおいて\n\\[ W_{\\max}=\\sqrt{\\frac{2\\varepsilon_s(2\\phi_F)}{eN_A}}=\\sqrt{\\frac{2\\times11.7\\times8.854\\times10^{-12}\\times0.834}{1.602\\times10^{-19}\\times10^{23}}}\\approx\\boldsymbol{1.04\\times10^{-7}\\,\\mathrm{m}} \\]\nこれ以上ゲート電圧を上げても，増えた電荷は表面の反転層の電子が受け持つので空乏層は広がらない．\n\n(3) $Q_d=eN_AW_{\\max}\\approx\\boldsymbol{1.66\\times10^{-3}\\,\\mathrm{C/m^2}}$．\n\n(4) $C_{ox}=\\dfrac{3.9\\times8.854\\times10^{-12}}{10\\times10^{-9}}=3.45\\times10^{-3}\\,\\mathrm{F/m^2}$．ゲート電圧は，酸化膜にかかる電圧 $Q_d/C_{ox}=0.482\\,\\mathrm{V}$ と半導体内のバンドの曲がり $2\\phi_F$ の和なので $V_T=0.834+0.482\\approx\\boldsymbol{1.32\\,\\mathrm{V}}$．\n\n$V_G>V_T$ では反転層の電子が増え，これを電流の通り道（チャネル）として使うのが MOSFET である．"
+   }
+  ],
+  "idea": {
+   "tex": "強反転の目安は表面のバンドの曲がりがバルクのフェルミ準位のずれの2倍になること．ゲート電圧は酸化膜の電圧降下と半導体の曲がりの和．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) φ_F [V]：≈0.417\n(2) W_max [m]：≈1.04e-7\n(3) Q_d [C/m^2]：≈1.66e-3\n(4) V_T [V]：≈1.32"
+  },
+  "methods": [],
+  "tags": [
+   "MOS構造",
+   "強反転",
+   "空乏層",
+   "しきい値電圧",
+   "MOSFET"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "階段型 pn 接合の空乏層",
+  "topic": "階段型 pn 接合の空乏層",
+  "statement": {
+   "tex": "Si の階段型 pn 接合（$T=300\\,\\mathrm{K}$）で，p 側のアクセプター密度 $N_A=1.0\\times10^{23}\\,\\mathrm{m^{-3}}$，n 側のドナー密度 $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$，$n_i=1.0\\times10^{16}\\,\\mathrm{m^{-3}}$，比誘電率 $\\varepsilon_r=11.7$ とする．外部電圧はかけない．空乏近似を用いよ．\n\\begin{enumerate}\n\\item 拡散電位（内蔵電位）$V_{bi}$ を求めよ．\n\\item 空乏層の全幅 $W$ を求めよ．\n\\item 接合面での電場の大きさ（最大値）を求めよ．\n\\item 単位面積あたりの空乏層容量を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V_{bi}\\approx 0.774\\,\\mathrm{V}$ (2) $W\\approx 3.3\\times10^{-7}\\,\\mathrm{m}$ (3) $E_{\\max}\\approx 4.7\\times10^{6}\\,\\mathrm{V/m}$ (4) $\\approx 3.1\\times10^{-4}\\,\\mathrm{F/m^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 熱平衡でフェルミ準位がそろうことから\n\\[\neV_{bi}=k_BT\\ln\\frac{N_AN_D}{n_i^2}=0.02585\\times\\ln(10^{13})\\,\\mathrm{eV}\n\\]\n$\\boldsymbol{V_{bi}\\approx0.774\\,\\mathrm{V}}$．\n\n(2) 空乏層の幅を n 側 $x_n$，p 側 $x_p$ とすると，電荷中性 $N_Dx_n=N_Ax_p$ とポアソン方程式から\n\\[\nW=\\sqrt{\\frac{2\\varepsilon_r\\varepsilon_0V_{bi}}{e}\\left(\\frac{1}{N_A}+\\frac{1}{N_D}\\right)}=\\sqrt{\\frac{2\\times1.036\\times10^{-10}\\times0.774}{1.602\\times10^{-19}}\\times1.1\\times10^{-22}}\\approx\\boldsymbol{3.3\\times10^{-7}\\,\\mathrm{m}}\n\\]\n空乏層はほとんど低濃度の n 側に広がる（$x_n=WN_A/(N_A+N_D)\\approx3.0\\times10^{-7}\\,\\mathrm{m}$）．\n\n(3) 電場は接合面で最大で，$E_{\\max}=eN_Dx_n/(\\varepsilon_r\\varepsilon_0)\\approx\\boldsymbol{4.7\\times10^6\\,\\mathrm{V/m}}$．（三角形の電場分布の面積が $V_{bi}$ なので $E_{\\max}=2V_{bi}/W$ でもよい．）\n\n(4) $C=\\varepsilon_r\\varepsilon_0/W=1.036\\times10^{-10}/3.32\\times10^{-7}\\approx\\boldsymbol{3.1\\times10^{-4}\\,\\mathrm{F/m^2}}$．逆バイアス $V$ をかけると $V_{bi}\\to V_{bi}+V$ となり，$1/C^2$ が $V$ に比例する（$C$–$V$ 測定で $N_D$ がわかる）．"
+   }
+  ],
+  "idea": {
+   "tex": "拡散電位は両側のフェルミ準位の差．空乏層は電荷中性とポアソン方程式で決まり，低濃度側に広がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) V_bi [V]：≈0.774\n(2) W [m]：≈3.3e-7\n(3) E_max [V/m]：≈4.7e6\n(4) C [F/m^2]：≈3.1e-4"
+  },
+  "methods": [],
+  "tags": [
+   "pn接合",
+   "空乏層",
+   "拡散電位",
+   "接合容量"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "量子井戸のサブバンドと2次元電子系の状態密度",
+  "topic": "量子井戸のサブバンドと2次元電子系の状態密度",
+  "statement": {
+   "tex": "GaAs（電子の有効質量 $m_n=0.067m_e$）を厚さ $L=10\\,\\mathrm{nm}$ の量子井戸とし，$z$ 方向は無限に高い障壁で閉じ込められているとする．電子は $xy$ 面内では自由に動く．$m_e=9.109\\times10^{-31}\\,\\mathrm{kg}$，$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$．\n\\begin{enumerate}\n\\item 最低サブバンドの底のエネルギー $E_1$（井戸の底から測る）を $\\mathrm{meV}$ で求めよ．\n\\item 第2サブバンドとの間隔 $E_2-E_1$ を $\\mathrm{meV}$ で求めよ．\n\\item 1つのサブバンドの状態密度（単位面積・単位エネルギーあたり，スピンの2重縮退を含む）はエネルギーによらない定数になる．これを $m_n,\\hbar$ で表せ．\n\\item 面密度 $n_s=5.0\\times10^{15}\\,\\mathrm{m^{-2}}$ の電子が絶対零度で詰まっているとき，$E_F-E_1$ を $\\mathrm{meV}$ で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_1\\approx56\\,\\mathrm{meV}$ (2) $\\approx168\\,\\mathrm{meV}$ (3) $\\dfrac{m_n}{\\pi\\hbar^2}$ (4) $\\approx17.9\\,\\mathrm{meV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 無限井戸の準位 $E_j=\\dfrac{\\pi^2\\hbar^2j^2}{2m_nL^2}$ より\n\\[ E_1=\\frac{\\pi^2(1.055\\times10^{-34})^2}{2\\times0.067\\times9.109\\times10^{-31}\\times(10^{-8})^2}=9.0\\times10^{-21}\\,\\mathrm{J}\\approx\\boldsymbol{56\\,\\mathrm{meV}} \\]\n\n(2) $E_2-E_1=3E_1\\approx\\boldsymbol{168\\,\\mathrm{meV}}$．\n\n(3) サブバンド $j$ のエネルギーは $E=E_j+\\dfrac{\\hbar^2(k_x^2+k_y^2)}{2m_n}$．面積 $A$ あたりの $k$ 空間の状態数は $\\dfrac{A}{(2\\pi)^2}\\pi k^2\\times2$（スピン）$=\\dfrac{Ak^2}{2\\pi}=\\dfrac{Am_n(E-E_j)}{\\pi\\hbar^2}$．$E$ で微分して $A$ で割ると\n\\[ \\boldsymbol{D_{2D}=\\frac{m_n}{\\pi\\hbar^2}} \\]\nで一定である．全体の状態密度はサブバンドごとの階段状になる．\n\n(4) $n_s=D_{2D}(E_F-E_1)$ より $E_F-E_1=\\dfrac{\\pi\\hbar^2n_s}{m_n}=2.86\\times10^{-21}\\,\\mathrm{J}\\approx\\boldsymbol{17.9\\,\\mathrm{meV}}$．これは $E_2-E_1$ よりずっと小さいので，電子は最低サブバンドだけを占める．室温の $k_BT\\approx26\\,\\mathrm{meV}$ よりも $E_2-E_1$ が大きいので，室温でも $z$ 方向の運動は凍結した2次元電子系とみなせる．"
+   }
+  ],
+  "idea": {
+   "tex": "閉じ込め方向は離散準位（サブバンド），面内は自由運動．2次元では状態密度がエネルギーによらず $m/(\\pi\\hbar^2)$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) E_1 [meV]：≈56\n(2) E_2-E_1 [meV]：≈168\n(3) m_n/(pi hbar^2)\n(4) E_F-E_1 [meV]：≈17.9"
+  },
+  "methods": [],
+  "tags": [
+   "量子井戸",
+   "サブバンド",
+   "2次元電子系",
+   "状態密度"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "少数キャリアの拡散長とアインシュタインの関係",
+  "topic": "少数キャリアの拡散長とアインシュタインの関係",
+  "statement": {
+   "tex": "n 型 Si の試料（$x>0$）の表面 $x=0$ から正孔を注入し，表面での過剰正孔密度を $\\Delta p(0)=1.0\\times10^{20}\\,\\mathrm{m^{-3}}$ に保つ．正孔の移動度は $\\mu_p=0.045\\,\\mathrm{m^2/(V\\,s)}$，寿命は $\\tau_p=1.0\\,\\mathrm{\\mu s}$，$T=300\\,\\mathrm{K}$（$k_BT/e=25.86\\,\\mathrm{mV}$），$e=1.602\\times10^{-19}\\,\\mathrm{C}$ とする．電場はなく，定常状態で過剰正孔密度 $\\Delta p(x)$ は\n\\[ D_p\\frac{d^2\\Delta p}{dx^2}-\\frac{\\Delta p}{\\tau_p}=0 \\]\nに従う．\n\\begin{enumerate}\n\\item アインシュタインの関係を用いて拡散係数 $D_p$ を求めよ．\n\\item 試料が十分厚いとき，$\\Delta p(x)$ が $1/e$ に減る距離（拡散長）$L_p$ を求めよ．\n\\item (2) のとき，$x=0$ での正孔の拡散電流密度の大きさを求めよ．\n\\item 試料の厚さが $W$ で，$x=W$ にオーム性電極があり $\\Delta p(W)=0$ となる場合，$x=W$ に到達する拡散電流と $x=0$ での拡散電流の比を $W,L_p$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $D_p\\approx1.16\\times10^{-3}\\,\\mathrm{m^2/s}$ (2) $L_p\\approx3.4\\times10^{-5}\\,\\mathrm{m}$ (3) $\\approx5.5\\times10^{2}\\,\\mathrm{A/m^2}$ (4) $\\dfrac{1}{\\cosh(W/L_p)}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $D_p=\\mu_p\\dfrac{k_BT}{e}=0.045\\times0.02586\\approx\\boldsymbol{1.16\\times10^{-3}\\,\\mathrm{m^2/s}}$．\n\n(2) 一般解は $e^{\\pm x/L_p}$，$L_p=\\sqrt{D_p\\tau_p}$．$x\\to\\infty$ で有限なので $\\Delta p=\\Delta p(0)e^{-x/L_p}$．$L_p=\\sqrt{1.16\\times10^{-3}\\times10^{-6}}\\approx\\boldsymbol{3.4\\times10^{-5}\\,\\mathrm{m}}$（$34\\,\\mathrm{\\mu m}$）．\n\n(3) $J=-eD_p\\dfrac{d\\Delta p}{dx}\\Big|_0=\\dfrac{eD_p\\Delta p(0)}{L_p}=\\dfrac{1.602\\times10^{-19}\\times1.16\\times10^{-3}\\times10^{20}}{3.41\\times10^{-5}}\\approx\\boldsymbol{5.5\\times10^2\\,\\mathrm{A/m^2}}$．\n\n(4) 境界条件 $\\Delta p(W)=0$ を満たす解は $\\Delta p(x)=\\Delta p(0)\\dfrac{\\sinh((W-x)/L_p)}{\\sinh(W/L_p)}$．拡散電流は $-eD_p\\Delta p'$ に比例し，$\\Delta p'(x)\\propto-\\cosh((W-x)/L_p)$ なので\n\\[ \\frac{J(W)}{J(0)}=\\boldsymbol{\\frac{1}{\\cosh(W/L_p)}} \\]\n途中で再結合して失われる分だけ1より小さい．バイポーラトランジスタのベース輸送効率がこれで，$W\\ll L_p$ なら $1-W^2/(2L_p^2)$ と1に近い．"
+   }
+  ],
+  "idea": {
+   "tex": "少数キャリアは拡散しながら寿命 $\\tau$ で再結合し，拡散長 $\\sqrt{D\\tau}$ 程度しか進めない．拡散係数は移動度とアインシュタインの関係で結ばれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) D_p [m^2/s]：≈1.16e-3\n(2) L_p [m]：≈3.4e-5\n(3) J [A/m^2]：≈5.5e2\n(4) 1/cosh(W/L_p)"
+  },
+  "methods": [],
+  "tags": [
+   "少数キャリア",
+   "拡散長",
+   "アインシュタインの関係",
+   "再結合",
+   "ベース輸送効率"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 4,
+  "minutes": 35,
+  "theme": "不純物半導体のキャリア密度の温度変化（凍結領域と真性領域）",
+  "topic": "不純物半導体のキャリア密度の温度変化（凍結領域と真性領域）",
+  "statement": {
+   "tex": "n 型 Si（ドナー密度 $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$，ドナー準位の深さ $E_d=E_c-E_D=45\\,\\mathrm{meV}$）の電子密度 $n$ の温度変化を調べる．ドナー準位はスピンで2重に縮退しており，電子がドナーに束縛されている確率は $1/\\left[1+\\frac{1}{2}e^{(E_D-\\mu)/k_BT}\\right]$ である．伝導帯の有効状態密度は $N_c(T)=N_c(300\\,\\mathrm{K})(T/300\\,\\mathrm{K})^{3/2}$，$N_c(300\\,\\mathrm{K})=2.8\\times10^{25}\\,\\mathrm{m^{-3}}$ とする．\n\\begin{enumerate}\n\\item 低温でイオン化したドナーがわずかな場合（$n\\ll N_D$，正孔は無視）に，$n$ を $N_c,N_D,E_d,k_B,T$ で表せ．\n\\item $T=30\\,\\mathrm{K}$ での $n$ を求めよ．\n\\item 高温側では真性キャリアが効いてくる．$N_v(300\\,\\mathrm{K})=1.04\\times10^{25}\\,\\mathrm{m^{-3}}$（$N_v\\propto T^{3/2}$），$E_g=1.12\\,\\mathrm{eV}$（温度によらない）として，$n_i(T)=N_D$ となる温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n=\\sqrt{\\dfrac{N_cN_D}{2}}\\,e^{-E_d/(2k_BT)}$ (2) $n\\approx 1.1\\times10^{19}\\,\\mathrm{m^{-3}}$ (3) $T\\approx 740\\,\\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) イオン化したドナーの数は $N_D^+=N_D/\\left[1+2e^{(\\mu-E_D)/k_BT}\\right]$．電荷中性 $n=N_D^+$ と $n=N_ce^{-(E_c-\\mu)/k_BT}$ から $e^{\\mu/k_BT}$ を消すと\n\\[\nn=\\frac{N_D}{1+\\frac{2n}{N_c}e^{E_d/k_BT}}\n\\]\n$n\\ll N_D$ では分母の第2項が支配的で $n^2\\approx\\frac{N_cN_D}{2}e^{-E_d/k_BT}$．$\\boldsymbol{n=\\sqrt{N_cN_D/2}\\,e^{-E_d/(2k_BT)}}$．活性化エネルギーは $E_d$ の半分になる．\n\n(2) $N_c(30\\,\\mathrm{K})=2.8\\times10^{25}\\times(0.1)^{3/2}=8.85\\times10^{23}\\,\\mathrm{m^{-3}}$．$k_BT=2.585\\,\\mathrm{meV}$，$E_d/(2k_BT)=8.70$．\n\\[\nn=\\sqrt{\\frac{8.85\\times10^{23}\\times10^{22}}{2}}\\,e^{-8.70}\\approx\\boldsymbol{1.1\\times10^{19}\\,\\mathrm{m^{-3}}}\n\\]\n$n/N_D\\approx1.1\\times10^{-3}$ で仮定 $n\\ll N_D$ を満たす（(1) の式を厳密に解いても $1.10\\times10^{19}$）．\n\n(3) $n_i(T)=\\sqrt{N_cN_v}(300)\\,(T/300)^{3/2}e^{-E_g/(2k_BT)}=N_D$ を数値的に解くと $\\boldsymbol{T\\approx740\\,\\mathrm{K}}$．30 K 付近の凍結領域と 740 K 付近の真性領域の間（およそ 100〜500 K）で $n\\approx N_D$ の飽和領域になり，素子はこの範囲で使われる．"
+   }
+  ],
+  "idea": {
+   "tex": "電荷中性とドナーの占有確率から $n$ を決める．低温では $n\\propto e^{-E_d/(2k_BT)}$（凍結），高温では $n_i\\propto e^{-E_g/(2k_BT)}$ が $N_D$ を超える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(N_c N_D/2) exp(-E_d/(2k_B T))\n(2) n [m^-3]：≈1.1e19\n(3) T [K]：≈740"
+  },
+  "methods": [],
+  "tags": [
+   "不純物半導体",
+   "凍結領域",
+   "真性領域",
+   "電荷中性"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 4,
+  "minutes": 35,
+  "theme": "k·p 摂動の2バンド模型と有効質量・非放物線性",
+  "topic": "k·p 摂動の2バンド模型と有効質量・非放物線性",
+  "statement": {
+   "tex": "直接遷移型半導体の $\\Gamma$ 点近くで，伝導帯と価電子帯の2つの状態だけを考える（2バンド模型）．波数 $k$ の状態のエネルギーは，行列\n\\[ H(k)=\\frac{\\hbar^2k^2}{2m}+\\begin{pmatrix}E_g&\\hbar kP/m\\\\ \\hbar kP/m&0\\end{pmatrix} \\]\nの固有値で与えられる（$m$ は電子の質量，$E_g$ はバンドギャップ，$P$ は2つのバンド間の運動量行列要素で実数とする）．\n\\begin{enumerate}\n\\item $H(k)$ の2つの固有値を求めよ．\n\\item $k$ が小さいとき伝導帯は $E\\approx E_g+\\dfrac{\\hbar^2k^2}{2m_c}$ となる．$m_c$ を $m,P,E_g$ で表せ．\n\\item $E_P=2P^2/m=23\\,\\mathrm{eV}$，$E_g=1.52\\,\\mathrm{eV}$（GaAs）のとき，$m_c/m$ を求めよ．\n\\item 対角の $\\hbar^2k^2/(2m)$ を無視すると，伝導帯の底から測ったエネルギー $\\varepsilon$ は $\\varepsilon\\left(1+\\dfrac{\\varepsilon}{E_g}\\right)=\\dfrac{\\hbar^2k^2}{2m_c}$ を満たす．群速度 $v=\\dfrac{1}{\\hbar}\\dfrac{d\\varepsilon}{dk}$ を用いて $\\hbar k=m(\\varepsilon)v$ で定義される「速度の有効質量」$m(\\varepsilon)$ を $m_c,\\varepsilon,E_g$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left\\{\\dfrac{\\hbar^2k^2}{2m}+\\dfrac{E_g}{2}+\\sqrt{\\dfrac{E_g^2}{4}+\\dfrac{\\hbar^2k^2P^2}{m^2}},\\ \\dfrac{\\hbar^2k^2}{2m}+\\dfrac{E_g}{2}-\\sqrt{\\dfrac{E_g^2}{4}+\\dfrac{\\hbar^2k^2P^2}{m^2}}\\right\\}$ (2) $m_c=\\dfrac{m}{1+\\frac{2P^2}{mE_g}}$ (3) $\\approx0.062$ (4) $\\left(1+\\dfrac{2\\varepsilon}{E_g}\\right)m_c$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $2\\times2$ 行列 $\\begin{pmatrix}E_g&x\\\\x&0\\end{pmatrix}$ の固有値は $\\lambda^2-E_g\\lambda-x^2=0$ より $\\dfrac{E_g}{2}\\pm\\sqrt{\\dfrac{E_g^2}{4}+x^2}$．$x=\\hbar kP/m$ として\n\\[ \\boldsymbol{E_\\pm(k)=\\frac{\\hbar^2k^2}{2m}+\\frac{E_g}{2}\\pm\\sqrt{\\frac{E_g^2}{4}+\\frac{\\hbar^2k^2P^2}{m^2}}} \\]\n\n(2) $x\\ll E_g$ で $\\sqrt{E_g^2/4+x^2}\\approx E_g/2+x^2/E_g$．伝導帯は\n\\[ E_+\\approx E_g+\\frac{\\hbar^2k^2}{2m}+\\frac{\\hbar^2k^2P^2}{m^2E_g}=E_g+\\frac{\\hbar^2k^2}{2m}\\left(1+\\frac{2P^2}{mE_g}\\right) \\]\nよって $\\boldsymbol{m_c=\\dfrac{m}{1+2P^2/(mE_g)}}=\\dfrac{m}{1+E_P/E_g}$．価電子帯は同じだけ下に曲がり（軽い正孔），ギャップが小さいほど有効質量が小さいことがわかる．\n\n(3) $m_c/m=1/(1+23/1.52)\\approx\\boldsymbol{0.062}$．実測値 0.067 に近い．\n\n(4) 対角項を無視すると固有値方程式は $E(E-E_g)=x^2$．$\\varepsilon=E-E_g$ とおくと $\\varepsilon(\\varepsilon+E_g)=\\hbar^2k^2P^2/m^2$，すなわち $\\varepsilon(1+\\varepsilon/E_g)=\\hbar^2k^2/(2m_c)$（$1/m_c=2P^2/(m^2E_g)$）．両辺を $k$ で微分して\n\\[ \\left(1+\\frac{2\\varepsilon}{E_g}\\right)\\frac{d\\varepsilon}{dk}=\\frac{\\hbar^2k}{m_c}\\quad\\Rightarrow\\quad v=\\frac{\\hbar k}{m_c(1+2\\varepsilon/E_g)} \\]\nよって $\\boldsymbol{m(\\varepsilon)=m_c\\left(1+\\dfrac{2\\varepsilon}{E_g}\\right)}$．エネルギーが高い電子ほど重くなる（バンドの非放物線性，ケイン模型）．ホットエレクトロンの輸送や狭ギャップ半導体（InSb など）で重要になる．"
+   }
+  ],
+  "idea": {
+   "tex": "バンド間の結合（$k\\cdot p$ 項）を2次摂動で取り込むと，有効質量は $m/(1+E_P/E_g)$ でギャップに比例して小さくなる．厳密な固有値からは非放物線性も出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) {hbar^2 k^2/(2m) + E_g/2 + sqrt(E_g^2/4 + hbar^2 k^2 P^2/m^2), hbar^2 k^2/(2m) + E_g/2 - sqrt(E_g^2/4 + hbar^2 k^2 P^2/m^2)}\n(2) m/(1 + 2P^2/(m E_g))\n(3) ≈0.062\n(4) m_c (1 + 2ε/E_g)"
+  },
+  "methods": [],
+  "tags": [
+   "k·p摂動",
+   "2バンド模型",
+   "有効質量",
+   "非放物線性",
+   "ケイン模型"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 4,
+  "minutes": 35,
+  "theme": "ショットキー接合の熱電子放出とリチャードソン定数",
+  "topic": "ショットキー接合の熱電子放出とリチャードソン定数",
+  "statement": {
+   "tex": "金属と n 型半導体のショットキー接合で，半導体側の電子が障壁を越えて金属側へ流れる電流を考える．半導体中の電子は有効質量 $m_n$ をもち，運動エネルギー $p^2/(2m_n)$，伝導帯下端 $E_c$ の上でボルツマン分布 $f=\\exp[-(E_c+p^2/(2m_n)-E_F)/k_BT]$ に従うとする．障壁の頂上はフェルミ準位より $q\\phi_B$ だけ上にある（$q$ は電気素量）．障壁に垂直な方向を $x$ とし，$x$ 方向の運動エネルギーで障壁の頂上を越えられる電子はすべて金属に入るとする．電流密度は\n\\[ J=q\\int\\frac{2\\,d^3p}{(2\\pi\\hbar)^3}\\,\\frac{p_x}{m_n}f \\]\n（積分は障壁を越えられる $p_x>0$ の範囲）で与えられる．\n\\begin{enumerate}\n\\item $J=A^*T^2\\exp\\left(-\\dfrac{q\\phi_B}{k_BT}\\right)$ の形になることを示し，リチャードソン定数 $A^*$ を $q,m_n,k_B,\\hbar$ で表せ．\n\\item $m_n=m_e$ のとき $A^*\\approx1.20\\times10^6\\,\\mathrm{A/(m^2K^2)}$ である．$\\phi_B=0.70\\,\\mathrm{V}$，$T=300\\,\\mathrm{K}$（$k_BT/q=25.86\\,\\mathrm{mV}$）での飽和電流密度 $J_s=A^*T^2e^{-q\\phi_B/k_BT}$ を求めよ．\n\\item 順方向電圧 $V$ では半導体側の障壁が $qV$ 下がり，$J=J_s(e^{qV/k_BT}-1)$ となる．$J=1.0\\times10^4\\,\\mathrm{A/m^2}$ を流すのに必要な $V$ を求めよ．\n\\item 同じ試料で $T=350\\,\\mathrm{K}$ での $J_s$ は $300\\,\\mathrm{K}$ の何倍か．$k_B/q=8.617\\times10^{-5}\\,\\mathrm{V/K}$．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A^*=\\dfrac{qm_nk_B^2}{2\\pi^2\\hbar^3}$ (2) $J_s\\approx0.19\\,\\mathrm{A/m^2}$ (3) $V\\approx0.281\\,\\mathrm{V}$ (4) $\\approx65$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p_y,p_z$ の積分は $\\int e^{-(p_y^2+p_z^2)/2m_nk_BT}dp_ydp_z=2\\pi m_nk_BT$．$p_x$ は障壁を越える最小値 $p_0$（$E_c+p_0^2/2m_n=E_F+q\\phi_B$）から積分して\n\\[ \\int_{p_0}^\\infty\\frac{p_x}{m_n}e^{-p_x^2/2m_nk_BT}dp_x=k_BT\\,e^{-p_0^2/2m_nk_BT} \\]\n指数をまとめると $e^{-(E_c-E_F)/k_BT}e^{-p_0^2/2m_nk_BT}=e^{-q\\phi_B/k_BT}$ なので\n\\[ J=\\frac{2q}{(2\\pi\\hbar)^3}\\,2\\pi m_nk_BT\\cdot k_BT\\,e^{-q\\phi_B/k_BT}=\\frac{qm_nk_B^2}{2\\pi^2\\hbar^3}T^2e^{-q\\phi_B/k_BT} \\]\nよって $\\boldsymbol{A^*=\\dfrac{qm_nk_B^2}{2\\pi^2\\hbar^3}}=\\dfrac{4\\pi qm_nk_B^2}{h^3}$．半導体内部の電子密度の詳細（$E_F$ の位置）によらず，障壁の高さ $\\phi_B$ だけで決まるのが特徴．\n\n(2) $J_s=1.20\\times10^6\\times300^2\\times e^{-0.70/0.02586}\\approx\\boldsymbol{0.19\\,\\mathrm{A/m^2}}$．\n\n(3) 金属側から半導体側への電流（障壁 $q\\phi_B$ のまま）が $J_s$ で，これを差し引いて $J=J_s(e^{qV/k_BT}-1)$．$V=\\dfrac{k_BT}{q}\\ln\\left(\\dfrac{J}{J_s}+1\\right)=0.02586\\ln(5.3\\times10^4)\\approx\\boldsymbol{0.281\\,\\mathrm{V}}$．同じ電流の pn 接合より順方向電圧が小さい（ショットキーダイオードの利点）．\n\n(4) $\\dfrac{J_s(350)}{J_s(300)}=\\left(\\dfrac{350}{300}\\right)^2\\exp\\left[\\dfrac{0.70}{8.617\\times10^{-5}}\\left(\\dfrac{1}{300}-\\dfrac{1}{350}\\right)\\right]\\approx\\boldsymbol{65}$．逆に，$\\ln(J_s/T^2)$ を $1/T$ に対してプロットした傾き $-q\\phi_B/k_B$ から障壁の高さが求まる（リチャードソンプロット）．"
+   }
+  ],
+  "idea": {
+   "tex": "障壁を越える $x$ 方向の運動量をもつ電子の流束をボルツマン分布で積分すると $A^*T^2e^{-q\\phi_B/k_BT}$．障壁の高さだけが指数に入る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) q m_n k_B^2/(2 pi^2 hbar^3)\n(2) J_s [A/m^2]：≈0.19\n(3) V [V]：≈0.281\n(4) ≈65"
+  },
+  "methods": [],
+  "tags": [
+   "ショットキー接合",
+   "熱電子放出",
+   "リチャードソン定数",
+   "整流"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

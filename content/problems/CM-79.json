@@ -1,0 +1,740 @@
+[
+ {
+  "id": "CM-02-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 0,
+  "minutes": 10,
+  "theme": "細い棒を伝わる縦波の速さと固有振動",
+  "topic": "細い棒を伝わる縦波の速さと固有振動",
+  "statement": {
+   "tex": "細い棒（ヤング率 $E$，密度 $\\rho$）の軸に沿って $x$ 軸をとり，位置 $x$ の断面の変位を $u(x,t)$ とする．棒の微小部分の運動方程式から\n\\[ \\rho\\frac{\\partial^2u}{\\partial t^2}=E\\frac{\\partial^2u}{\\partial x^2} \\]\nが成り立つ（$\\dfrac{\\partial^2u}{\\partial t^2}$ は $x$ を定数とみなして $t$ で2回微分したもの，$\\dfrac{\\partial^2u}{\\partial x^2}$ はその逆である）．\n\\begin{enumerate}\n\\item $u=A\\sin\\{k(x-vt)\\}$（$A,\\ k,\\ v$ は正の定数）がこの式を満たすための $v$ を $E,\\ \\rho$ で表せ．これは $x$ の正の向きに速さ $v$ で進む波である．\n\\item 鋼（$E=2.0\\times10^{11}\\,\\mathrm{Pa}$，$\\rho=7.9\\times10^{3}\\,\\mathrm{kg/m^3}$）の棒での $v$ を求めよ．\n\\item この鋼の棒の長さが $1.0\\,\\mathrm{m}$ で両端が自由端のとき，縦振動の基本振動数 $f_1$ を求めよ（両端が腹になる）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=\\sqrt{\\dfrac{E}{\\rho}}$ (2) $v\\approx5.0\\times10^{3}\\,\\mathrm{m/s}$ (3) $f_1\\approx2.5\\times10^{3}\\,\\mathrm{Hz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\dfrac{\\partial^2u}{\\partial t^2}=-Ak^2v^2\\sin\\{k(x-vt)\\}$，$\\dfrac{\\partial^2u}{\\partial x^2}=-Ak^2\\sin\\{k(x-vt)\\}$．代入すると $\\rho v^2=E$ なので\n\\[ \\boldsymbol{v=\\sqrt{\\frac{E}{\\rho}}}. \\]\n\n数値を入れて $v=\\sqrt{2.0\\times10^{11}/7.9\\times10^{3}}\\approx\\boldsymbol{5.0\\times10^{3}\\,\\mathrm{m/s}}$．空気中の音速の約15倍である．\n\n両端が腹の基本振動では，棒の長さが半波長：$\\lambda=2L=2.0\\,\\mathrm{m}$．よって\n\\[ f_1=\\frac{v}{2L}\\approx\\boldsymbol{2.5\\times10^{3}\\,\\mathrm{Hz}}. \\]\n棒の中央をつまんで端をたたくと，この高さの音が鳴る．\n\n太い物体の中では横に広がれないため縦波はもう少し速く，さらにずれ（横波）も伝わる．次は3次元の弾性体を伝わるP波・S波を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "棒の縦波の波動方程式から $v=\\sqrt{E/\\rho}$．「硬さ／重さ」の平方根が波の速さを決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) v：sqrt(E/rho)\n(2) v [m/s]：≈5.03e3\n(3) f_1 [Hz]：≈2.52e3"
+  },
+  "methods": [],
+  "tags": [
+   "縦波",
+   "波動方程式",
+   "ヤング率",
+   "固有振動"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 0,
+  "minutes": 10,
+  "theme": "P波とS波の速さの比と震源距離",
+  "topic": "P波とS波の速さの比と震源距離",
+  "statement": {
+   "tex": "地中を伝わる地震波には，縦波（P波）と横波（S波）があり，その速さは\n\\[ v_P=\\sqrt{\\frac{\\lambda+2\\mu}{\\rho}},\\qquad v_S=\\sqrt{\\frac{\\mu}{\\rho}} \\]\nで与えられる．$\\lambda,\\ \\mu$ は岩石の硬さを表す正の定数（ラメ定数），$\\rho$ は密度である．多くの岩石では近似的に $\\lambda=\\mu$ が成り立つ．\n\\begin{enumerate}\n\\item $\\lambda=\\mu$ のとき，$v_P/v_S$ を求めよ．\n\\item $\\lambda=\\mu$，$v_S=3.0\\,\\mathrm{km/s}$ のとき $v_P$ を求めよ．\n\\item (2) の地盤で，ある観測点でP波が届いてからS波が届くまでの時間（初期微動継続時間）が $10\\,\\mathrm{s}$ だった．震源までの距離 $D$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_P/v_S=\\sqrt3$ (2) $v_P=3\\sqrt3\\approx5.2\\,\\mathrm{km/s}$ (3) $D\\approx71\\,\\mathrm{km}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\lambda=\\mu$ を代入すると $v_P=\\sqrt{3\\mu/\\rho}$ なので\n\\[ \\frac{v_P}{v_S}=\\boldsymbol{\\sqrt3}. \\]\n縦波は横波より必ず速い（$\\lambda+2\\mu>\\mu$）．\n\n$v_P=\\sqrt3\\times3.0\\approx\\boldsymbol{5.2\\,\\mathrm{km/s}}$．\n\n到着時刻の差は $\\dfrac{D}{v_S}-\\dfrac{D}{v_P}=10\\,\\mathrm{s}$．よって\n\\[ D=\\frac{10\\,v_Pv_S}{v_P-v_S}=\\frac{10\\times5.196\\times3.0}{2.196}\\approx\\boldsymbol{71\\,\\mathrm{km}}. \\]\n（大森公式 $D\\approx kT$ の比例定数 $k=v_Pv_S/(v_P-v_S)\\approx7\\,\\mathrm{km/s}$ がこれである．）\n\nP波は圧縮と伸張（体積変化），S波はずれ（形の変化）を伝える．次は，弾性体の運動方程式（ナビエの方程式）から2種類の波が出てくることを学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "縦波は $\\lambda+2\\mu$，横波は $\\mu$ で決まり，$\\lambda=\\mu$ なら速さの比は $\\sqrt3$．到着時刻の差から距離がわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) v_P/v_S：sqrt(3)\n(2) v_P [km/s]：≈5.20\n(3) D [km]：≈71.0"
+  },
+  "methods": [],
+  "tags": [
+   "P波",
+   "S波",
+   "地震波",
+   "ラメ定数"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 0,
+  "minutes": 8,
+  "theme": "棒を伝わるねじり波と縦波の速さ",
+  "topic": "棒を伝わるねじり波と縦波の速さ",
+  "statement": {
+   "tex": "細い棒を伝わる波には，棒を伸び縮みさせる縦波と，棒をねじるねじり波がある．それぞれの速さは\n\\[ v_L=\\sqrt{\\frac{E}{\\rho}},\\qquad v_T=\\sqrt{\\frac{G}{\\rho}} \\]\nで与えられる．ここで $E$ はヤング率，$G$ は剛性率（ずれ弾性率），$\\rho$ は密度で，等方的な物質では $G=\\dfrac{E}{2(1+\\nu)}$（$\\nu$ はポアソン比）が成り立つ．鋼では $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，$\\rho=7.8\\times10^{3}\\,\\mathrm{kg/m^3}$，$\\nu=0.30$ とする．\n\\begin{enumerate}\n\\item 鋼の棒を伝わる縦波の速さ $v_L$ を求めよ．\n\\item ねじり波の速さ $v_T$ を求めよ．\n\\item 長さ $1.0\\,\\mathrm{m}$ の鋼の棒の一端をハンマーで斜めにたたき，縦波とねじり波を同時に発生させた．他端に2つの波が届く時刻の差 $\\Delta t$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_L\\approx5.1\\times10^{3}\\,\\mathrm{m/s}$ (2) $v_T\\approx3.1\\times10^{3}\\,\\mathrm{m/s}$ (3) $\\Delta t\\approx1.2\\times10^{-4}\\,\\mathrm{s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "\\[ v_L=\\sqrt{\\frac{2.0\\times10^{11}}{7.8\\times10^{3}}}\\approx\\boldsymbol{5.1\\times10^{3}\\,\\mathrm{m/s}}. \\]\n\n剛性率は $G=\\dfrac{2.0\\times10^{11}}{2\\times1.30}\\approx7.7\\times10^{10}\\,\\mathrm{Pa}$ なので\n\\[ v_T=\\sqrt{\\frac{G}{\\rho}}=\\frac{v_L}{\\sqrt{2(1+\\nu)}}=\\frac{5064}{\\sqrt{2.6}}\\approx\\boldsymbol{3.1\\times10^{3}\\,\\mathrm{m/s}}. \\]\n\n到着時刻の差は\n\\[ \\Delta t=\\frac{1.0}{3140}-\\frac{1.0}{5064}\\approx3.18\\times10^{-4}-1.97\\times10^{-4}\\approx\\boldsymbol{1.2\\times10^{-4}\\,\\mathrm{s}}. \\]\nねじり波の速さは $v_L/\\sqrt{2(1+\\nu)}$ で，ふつうの金属では縦波の約 $6$ 割になる．2種類の波の到着時刻の差から距離を知る考え方は，地震の初期微動継続時間と同じである．次は，3次元の弾性体を伝わる縦波（P波）と横波（S波）をナビエの方程式から導くとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "縦波はヤング率，ねじり波は剛性率で速さが決まる．$v_T/v_L=1/\\sqrt{2(1+\\nu)}$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) v_L [m/s]：≈5.06e3\n(2) v_T [m/s]：≈3.14e3\n(3) Δt [s]：≈1.21e-4"
+  },
+  "methods": [],
+  "tags": [
+   "ねじり波",
+   "縦波",
+   "剛性率",
+   "波の速さ"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 1,
+  "minutes": 12,
+  "theme": "ナビエの方程式から縦波と横波を導く",
+  "topic": "ナビエの方程式から縦波と横波を導く",
+  "statement": {
+   "tex": "等方弾性体（密度 $\\rho$，ラメ定数 $\\lambda,\\ \\mu$）の変位 $\\boldsymbol{u}$ は，ナビエの方程式\n\\[ \\rho\\frac{\\partial^2\\boldsymbol{u}}{\\partial t^2}=(\\lambda+\\mu)\\nabla(\\nabla\\cdot\\boldsymbol{u})+\\mu\\nabla^2\\boldsymbol{u} \\]\nに従う．$x$ 方向に進む平面波 $\\boldsymbol{u}=\\boldsymbol{A}\\,e^{i(kx-\\omega t)}$（$\\boldsymbol{A}$ は定ベクトル）を考える．\n\\begin{enumerate}\n\\item $\\boldsymbol{A}$ が $x$ 方向（縦波）のときの位相速度 $v_P=\\omega/k$ を求めよ．\n\\item $\\boldsymbol{A}$ が $y$ 方向（横波）のときの位相速度 $v_S$ を求めよ．\n\\item ポアソン比 $\\nu=\\dfrac{\\lambda}{2(\\lambda+\\mu)}$ を用いて $v_P/v_S$ を $\\nu$ だけで表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_P=\\sqrt{\\dfrac{\\lambda+2\\mu}{\\rho}}$ (2) $v_S=\\sqrt{\\dfrac{\\mu}{\\rho}}$ (3) $\\dfrac{v_P}{v_S}=\\sqrt{\\dfrac{2(1-\\nu)}{1-2\\nu}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\nabla\\to ik\\boldsymbol{e}_x$ と置きかえられるので，$\\nabla\\cdot\\boldsymbol{u}=ikA_x e^{i(kx-\\omega t)}$，$\\nabla(\\nabla\\cdot\\boldsymbol{u})=-k^2A_x\\boldsymbol{e}_x e^{i(kx-\\omega t)}$，$\\nabla^2\\boldsymbol{u}=-k^2\\boldsymbol{u}$．代入して\n\\[ \\rho\\omega^2\\boldsymbol{A}=(\\lambda+\\mu)k^2A_x\\boldsymbol{e}_x+\\mu k^2\\boldsymbol{A}. \\]\n\n縦波 $\\boldsymbol{A}=A\\boldsymbol{e}_x$ では $\\rho\\omega^2=(\\lambda+2\\mu)k^2$ で $\\boldsymbol{v_P=\\sqrt{(\\lambda+2\\mu)/\\rho}}$．\n\n横波 $\\boldsymbol{A}=A\\boldsymbol{e}_y$ では $A_x=0$ なので $\\rho\\omega^2=\\mu k^2$，$\\boldsymbol{v_S=\\sqrt{\\mu/\\rho}}$．横波は体積変化を伴わない（$\\nabla\\cdot\\boldsymbol{u}=0$）ので $\\lambda$ によらない．\n\n$\\nu$ の式を $\\lambda$ について解くと $\\lambda=\\dfrac{2\\mu\\nu}{1-2\\nu}$．よって\n\\[ \\frac{v_P^2}{v_S^2}=\\frac{\\lambda+2\\mu}{\\mu}=\\frac{2\\nu}{1-2\\nu}+2=\\frac{2(1-\\nu)}{1-2\\nu},\\qquad \\boldsymbol{\\frac{v_P}{v_S}=\\sqrt{\\frac{2(1-\\nu)}{1-2\\nu}}}. \\]\n$\\nu=1/4$ で $\\sqrt3$，$\\nu\\to1/2$ で発散する．$0\\le\\nu<1/2$ では常に $v_P/v_S\\ge\\sqrt2$．"
+   }
+  ],
+  "idea": {
+   "tex": "平面波では $\\nabla\\to ik$．縦成分は $\\lambda+2\\mu$，横成分は $\\mu$ の「硬さ」を感じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) v_P：sqrt((lambda+2mu)/rho)\n(2) v_S：sqrt(mu/rho)\n(3) v_P/v_S：sqrt(2(1-nu)/(1-2nu))"
+  },
+  "methods": [],
+  "tags": [
+   "ナビエの方程式",
+   "P波",
+   "S波",
+   "ポアソン比"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 1,
+  "minutes": 12,
+  "theme": "同じ棒どうしの衝突と応力波（接触時間）",
+  "topic": "同じ棒どうしの衝突と応力波（接触時間）",
+  "statement": {
+   "tex": "同じ材質（密度 $\\rho$，ヤング率 $E$，縦波の速さ $c=\\sqrt{E/\\rho}$）で同じ長さ $L$ の2本の細い棒が，同じ直線上にある．静止した棒Bに，棒Aが速さ $v_0$ で正面衝突する．棒の中を進む縦波では，応力 $\\sigma$ と媒質の粒子速度 $v$ の大きさの間に $\\sigma=\\rho cv$ の関係がある．\n\\begin{enumerate}\n\\item 衝突直後，接触面の速さと，両方の棒に生じる圧縮応力の大きさ $\\sigma$ を求めよ．\n\\item 接触が続く時間 $\\tau$ を求めよ．\n\\item 鋼（$\\rho=7.8\\times10^{3}\\,\\mathrm{kg/m^3}$，$E=2.0\\times10^{11}\\,\\mathrm{Pa}$），$L=0.20\\,\\mathrm{m}$，$v_0=5.0\\,\\mathrm{m/s}$ のとき，$\\sigma$ と $\\tau$ を求めよ．\n\\item 衝突後の棒A，Bの速さを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 接触面の速さ $\\dfrac{v_0}{2}$，$\\sigma=\\dfrac{\\rho cv_0}{2}$ (2) $\\tau=\\dfrac{2L}{c}$ (3) $\\sigma\\approx9.9\\times10^{7}\\,\\mathrm{Pa}$，$\\tau\\approx7.9\\times10^{-5}\\,\\mathrm{s}$ (4) A：$0$，B：$v_0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "対称性から接触面は $v_0/2$ で動く．棒Bでは静止状態から粒子速度 $v_0/2$，棒Aでは $v_0$ から $v_0/2$ へと，どちらも速度が $v_0/2$ だけ変わる圧縮波が接触面から逆向きに進む．よって\n\\[ \\text{接触面の速さ}=\\boldsymbol{\\frac{v_0}{2}},\\qquad \\boldsymbol{\\sigma=\\frac{\\rho cv_0}{2}}. \\]\n\n圧縮波は時間 $L/c$ で各棒の自由端に達し，自由端（応力 $0$）で引張波として反射して粒子速度をさらに $v_0/2$ 変える．反射波が接触面に戻る時刻 $2L/c$ に，Aは静止，Bは $v_0$ となり，接触面の応力が $0$ になって離れる：$\\boldsymbol{\\tau=2L/c}$．\n\n$c=\\sqrt{2.0\\times10^{11}/7.8\\times10^{3}}\\approx5.06\\times10^{3}\\,\\mathrm{m/s}$ より\n\\[ \\sigma=\\frac{7.8\\times10^{3}\\times5064\\times5.0}{2}\\approx\\boldsymbol{9.9\\times10^{7}\\,\\mathrm{Pa}},\\qquad \\tau=\\frac{0.40}{5064}\\approx\\boldsymbol{7.9\\times10^{-5}\\,\\mathrm{s}}. \\]\n\n衝突後は $\\boldsymbol{A:0}$，$\\boldsymbol{B:v_0}$．同じ棒どうしでは運動量も運動エネルギーもそっくり移り（弾性衝突），棒の内部には振動が残らない．これは材料の高速変形試験に使うホプキンソン棒の原理である．"
+   }
+  ],
+  "idea": {
+   "tex": "応力波は $\\sigma=\\rho cv$ で粒子速度と結びつく．自由端で反射して戻る往復時間 $2L/c$ が接触時間．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 接触面の速さ：v_0/2 ; σ：ρ c v_0/2\n(2) τ：2L/c\n(3) σ [Pa]：≈9.87e7 ; τ [s]：≈7.9e-5\n(4) A：0 ; B：v_0"
+  },
+  "methods": [],
+  "tags": [
+   "応力波",
+   "衝突",
+   "ホプキンソン棒",
+   "機械インピーダンス"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 1,
+  "minutes": 12,
+  "theme": "弾性平面波のエネルギー密度とエネルギー流",
+  "topic": "弾性平面波のエネルギー密度とエネルギー流",
+  "statement": {
+   "tex": "密度 $\\rho$ の等方弾性体中を，縦波の平面波 $u_x=A\\cos(kx-\\omega t)$ が $x$ 方向に進む．縦波の速さは $c=\\sqrt{M/\\rho}$（$M=\\lambda+2\\mu$），$\\omega=ck$ である．このひずみに対する応力は $\\sigma_{xx}=M\\,\\partial u_x/\\partial x$，ひずみエネルギー密度は $\\tfrac12M(\\partial u_x/\\partial x)^2$ である．\n\\begin{enumerate}\n\\item 運動エネルギー密度の時間平均 $\\langle K\\rangle$ を求めよ．\n\\item ひずみエネルギー密度の時間平均 $\\langle U\\rangle$ を $\\rho,\\ \\omega,\\ A$ で表せ．\n\\item 単位面積を単位時間に通過するエネルギー（強度）$I=\\langle-\\sigma_{xx}\\,\\partial u_x/\\partial t\\rangle$ を求めよ．\n\\item $\\rho=2.7\\times10^{3}\\,\\mathrm{kg/m^3}$，$c=6.4\\times10^{3}\\,\\mathrm{m/s}$ のアルミニウム中を，振動数 $1.0\\,\\mathrm{MHz}$，振幅 $1.0\\,\\mathrm{nm}$ の超音波が進むときの $I$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle K\\rangle=\\dfrac{\\rho\\omega^2A^2}{4}$ (2) $\\langle U\\rangle=\\dfrac{\\rho\\omega^2A^2}{4}$ (3) $I=\\dfrac{\\rho c\\omega^2A^2}{2}$ (4) $I\\approx3.4\\times10^{2}\\,\\mathrm{W/m^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\partial u_x/\\partial t=A\\omega\\sin(kx-\\omega t)$，$\\langle\\sin^2\\rangle=1/2$ より\n\\[ \\langle K\\rangle=\\frac{\\rho}{2}A^2\\omega^2\\cdot\\frac12=\\boldsymbol{\\frac{\\rho\\omega^2A^2}{4}}. \\]\n\n$\\partial u_x/\\partial x=-Ak\\sin(kx-\\omega t)$ なので $\\langle U\\rangle=\\tfrac14MA^2k^2$．$Mk^2=\\rho c^2k^2=\\rho\\omega^2$ より $\\boldsymbol{\\langle U\\rangle=\\rho\\omega^2A^2/4}$ で，運動エネルギーと等しい（等分配）．\n\n\\[ -\\sigma_{xx}\\frac{\\partial u_x}{\\partial t}=MAk\\sin\\cdot A\\omega\\sin=MA^2k\\omega\\sin^2(kx-\\omega t), \\]\n平均して $I=\\tfrac12MA^2k\\omega=\\boldsymbol{\\tfrac12\\rho c\\omega^2A^2}$．これは全エネルギー密度 $\\tfrac12\\rho\\omega^2A^2$ に波の速さ $c$ をかけたものになっている．\n\n数値は\n\\[ I=\\frac12\\times2.7\\times10^{3}\\times6.4\\times10^{3}\\times(2\\pi\\times10^{6})^2\\times(1.0\\times10^{-9})^2\\approx\\boldsymbol{3.4\\times10^{2}\\,\\mathrm{W/m^2}}. \\]\n振幅がわずか $1\\,\\mathrm{nm}$ でも，固体の音響インピーダンス $\\rho c$ が大きいため強度はかなり大きい．"
+   }
+  ],
+  "idea": {
+   "tex": "弾性波でも運動エネルギーとひずみエネルギーは平均で等しく，強度＝エネルギー密度×波速 $=\\tfrac12\\rho c\\omega^2A^2$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ⟨K⟩：ρ omega^2 A^2/4\n(2) ⟨U⟩：ρ omega^2 A^2/4\n(3) I：ρ c omega^2 A^2/2\n(4) I [W/m^2]：≈341"
+  },
+  "methods": [],
+  "tags": [
+   "エネルギー流",
+   "弾性波",
+   "強度",
+   "音響インピーダンス"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 2,
+  "minutes": 15,
+  "theme": "棒の接合部での縦波の反射と透過（機械インピーダンス）",
+  "topic": "棒の接合部での縦波の反射と透過（機械インピーダンス）",
+  "statement": {
+   "tex": "$x<0$ に棒1（ヤング率 $E_1$，密度 $\\rho_1$，断面積 $A_1$），$x>0$ に棒2（$E_2,\\ \\rho_2,\\ A_2$）がつながっている．棒1から角振動数 $\\omega$ の縦波 $u_I=U e^{i(k_1x-\\omega t)}$ が入射し，反射波 $u_R=RUe^{i(-k_1x-\\omega t)}$ と透過波 $u_T=TUe^{i(k_2x-\\omega t)}$ が生じる．各棒の機械インピーダンスを $Z_j=A_j\\sqrt{E_j\\rho_j}$（$j=1,2$）とする．\n\\begin{enumerate}\n\\item 接合部での変位の連続と力 $EA\\,\\partial u/\\partial x$ の連続から，変位の反射係数 $R$ と透過係数 $T$ を $Z_1,\\ Z_2$ で表せ．\n\\item 断面積の等しい鋼（$E=2.0\\times10^{11}\\,\\mathrm{Pa}$，$\\rho=7.9\\times10^{3}\\,\\mathrm{kg/m^3}$）からアルミニウム（$E=7.0\\times10^{10}\\,\\mathrm{Pa}$，$\\rho=2.7\\times10^{3}\\,\\mathrm{kg/m^3}$）へ波が入るとき，エネルギー透過率 $\\dfrac{Z_2}{Z_1}|T|^2$ を求めよ．\n\\item 同じ材料で断面積だけが $A_1$ から $A_2$ に変わるとき，$R$ を $A_1,\\ A_2$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R=\\dfrac{Z_1-Z_2}{Z_1+Z_2}$，$T=\\dfrac{2Z_1}{Z_1+Z_2}$ (2) $\\approx0.76$ (3) $R=\\dfrac{A_1-A_2}{A_1+A_2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$x=0$ で変位の連続：$1+R=T$．力の連続：$E_1A_1ik_1(1-R)=E_2A_2ik_2T$．$k_j=\\omega/v_j=\\omega\\sqrt{\\rho_j/E_j}$ より $E_jA_jk_j=\\omega A_j\\sqrt{E_j\\rho_j}=\\omega Z_j$．よって $Z_1(1-R)=Z_2(1+R)$ で\n\\[ \\boldsymbol{R=\\frac{Z_1-Z_2}{Z_1+Z_2}},\\qquad \\boldsymbol{T=\\frac{2Z_1}{Z_1+Z_2}}. \\]\n\nエネルギー流は $\\tfrac12Z\\omega^2|u|^2$ に比例するので，透過率は $\\dfrac{Z_2}{Z_1}T^2=\\dfrac{4Z_1Z_2}{(Z_1+Z_2)^2}$．断面積が等しいので $Z\\propto\\sqrt{E\\rho}$：\n\\[ \\sqrt{E_1\\rho_1}=3.97\\times10^{7},\\quad \\sqrt{E_2\\rho_2}=1.37\\times10^{7}\\ (\\mathrm{kg\\,m^{-2}s^{-1}}). \\]\n透過率は $\\dfrac{4\\times3.97\\times1.37}{(5.35)^2}\\approx\\boldsymbol{0.76}$．残り約 $24\\%$ が反射される（反射率 $R^2$ と足して $1$ になる）．\n\n同じ材料なら $Z\\propto A$ なので $\\boldsymbol{R=\\dfrac{A_1-A_2}{A_1+A_2}}$．波にとって「断面積の変化」も「材質の変化」と同じくインピーダンスの不連続である．$A_2\\to0$（自由端）で $R=1$，$A_2\\to\\infty$（固定端）で $R=-1$ となり，弦の反射と同じ形になる．"
+   }
+  ],
+  "idea": {
+   "tex": "境界条件（変位と力の連続）から，反射・透過はインピーダンス $Z=A\\sqrt{E\\rho}$ の比だけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) R：(Z_1-Z_2)/(Z_1+Z_2) ; T：2Z_1/(Z_1+Z_2)\n(2) ≈0.764\n(3) R：(A_1-A_2)/(A_1+A_2)"
+  },
+  "methods": [],
+  "tags": [
+   "縦波",
+   "反射",
+   "透過",
+   "インピーダンス"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 2,
+  "minutes": 18,
+  "theme": "板を伝わるSH波の導波モードと分散",
+  "topic": "板を伝わるSH波の導波モードと分散",
+  "statement": {
+   "tex": "厚さ $h$ の弾性板（$0\\le z\\le h$，横波の速さ $v_S$）の両面は自由表面である．板面に平行で伝搬方向 $x$ に垂直な変位 $u_y(x,z,t)$ だけをもつ波（SH波）は\n\\[ \\frac{\\partial^2u_y}{\\partial t^2}=v_S^2\\left(\\frac{\\partial^2u_y}{\\partial x^2}+\\frac{\\partial^2u_y}{\\partial z^2}\\right) \\]\nに従い，自由表面の条件は $z=0,\\ h$ で $\\partial u_y/\\partial z=0$ である．\n\\begin{enumerate}\n\\item $u_y=f(z)e^{i(kx-\\omega t)}$ とおき，$n$ 番目のモード（$n=0,1,2,\\dots$）の $f(z)$ と分散関係 $\\omega(k)$ を求めよ．\n\\item $n\\ge1$ のモードが伝わることのできる最小の角振動数（カットオフ角振動数）$\\omega_n$ を求めよ．\n\\item 位相速度 $v_p=\\omega/k$ と群速度 $v_g=d\\omega/dk$ の積を求めよ．\n\\item $n=1$ のモードで群速度が $v_S/2$ になる角振動数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f=\\cos\\dfrac{n\\pi z}{h}$，$\\omega=v_S\\sqrt{k^2+\\left(\\dfrac{n\\pi}{h}\\right)^2}$ (2) $\\omega_n=\\dfrac{n\\pi v_S}{h}$ (3) $v_pv_g=v_S^2$ (4) $\\omega=\\dfrac{2\\pi v_S}{\\sqrt3\\,h}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "代入すると $f''=-\\left(\\dfrac{\\omega^2}{v_S^2}-k^2\\right)f$．$f'(0)=f'(h)=0$ を満たす解は $f=\\cos(n\\pi z/h)$ で，$\\dfrac{\\omega^2}{v_S^2}-k^2=\\left(\\dfrac{n\\pi}{h}\\right)^2$．よって\n\\[ \\boldsymbol{f=\\cos\\frac{n\\pi z}{h}},\\qquad \\boldsymbol{\\omega=v_S\\sqrt{k^2+\\left(\\frac{n\\pi}{h}\\right)^2}}. \\]\n$n=0$ は板全体が一様にずれる分散のないモード（$\\omega=v_Sk$）である．\n\n$k$ が実数であるためには $\\omega\\ge n\\pi v_S/h$．カットオフは $\\boldsymbol{\\omega_n=n\\pi v_S/h}$（$k=0$ で，板の厚さ方向の定在波）．\n\n$\\omega^2=v_S^2(k^2+\\kappa_n^2)$ を微分して $\\omega\\,d\\omega=v_S^2k\\,dk$，すなわち $v_g=v_S^2k/\\omega$．よって $\\boldsymbol{v_pv_g=v_S^2}$．位相速度は $v_S$ より速く，群速度（エネルギーの速さ）は $v_S$ より遅い．波は板の中を斜めにジグザグに進み，その $x$ 成分が群速度である．\n\n$v_g=v_S^2k/\\omega=v_S/2$ より $k=\\omega/(2v_S)$．分散関係に入れると $\\omega^2=\\omega^2/4+v_S^2\\pi^2/h^2$，\n\\[ \\boldsymbol{\\omega=\\frac{2\\pi v_S}{\\sqrt3\\,h}}=\\frac{2}{\\sqrt3}\\omega_1. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "厚さ方向の定在波 $\\cos(n\\pi z/h)$ が横方向の波数に「質量」を与え，導波路特有の分散 $\\omega^2=v_S^2(k^2+\\kappa_n^2)$ とカットオフが生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) f：cos(n pi z/h) ; ω：v_S sqrt(k^2+(n pi/h)^2)\n(2) ω_n：n pi v_S/h\n(3) v_S^2\n(4) ω：2pi v_S/(sqrt(3) h)"
+  },
+  "methods": [],
+  "tags": [
+   "SH波",
+   "導波路",
+   "分散関係",
+   "群速度"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 2,
+  "minutes": 18,
+  "theme": "立方晶結晶中の弾性波と異方性",
+  "topic": "立方晶結晶中の弾性波と異方性",
+  "statement": {
+   "tex": "立方晶の結晶（弾性定数 $c_{11},\\ c_{12},\\ c_{44}$，密度 $\\rho$）を，単位ベクトル $\\boldsymbol{n}$ の方向に進む平面波 $\\boldsymbol{u}=\\boldsymbol{U}e^{i(k\\boldsymbol{n}\\cdot\\boldsymbol{r}-\\omega t)}$ を考える．運動方程式は固有値問題 $\\rho v^2U_i=\\Gamma_{ik}U_k$（$v=\\omega/k$）となり，クリストッフェル行列は\n\\[ \\Gamma_{11}=c_{11}n_1^2+c_{44}(n_2^2+n_3^2),\\quad \\Gamma_{12}=(c_{12}+c_{44})n_1n_2 \\]\nおよびその添字を巡回させたもので与えられる．\n\\begin{enumerate}\n\\item $[100]$ 方向に進む縦波と横波の速さを求めよ．\n\\item $[110]$ 方向に進む3つの波の速さを求めよ．\n\\item どの方向でも速さが同じになる（弾性的に等方的になる）ための条件を，$c_{44}$ を $c_{11},\\ c_{12}$ で表す形で答えよ．\n\\item 銅（$c_{11}=168\\,\\mathrm{GPa}$，$c_{12}=121\\,\\mathrm{GPa}$，$c_{44}=75.4\\,\\mathrm{GPa}$）について，異方性係数 $A=\\dfrac{2c_{44}}{c_{11}-c_{12}}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 縦波 $\\sqrt{\\dfrac{c_{11}}{\\rho}}$，横波 $\\sqrt{\\dfrac{c_{44}}{\\rho}}$ (2) $\\sqrt{\\dfrac{c_{11}+c_{12}+2c_{44}}{2\\rho}}$，$\\sqrt{\\dfrac{c_{44}}{\\rho}}$，$\\sqrt{\\dfrac{c_{11}-c_{12}}{2\\rho}}$ (3) $c_{44}=\\dfrac{c_{11}-c_{12}}{2}$ (4) $A\\approx3.2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\boldsymbol{n}=(1,0,0)$ では $\\Gamma=\\mathrm{diag}(c_{11},c_{44},c_{44})$．縦波（$\\boldsymbol{U}\\parallel x$）は $\\boldsymbol{\\sqrt{c_{11}/\\rho}}$，横波（2つ縮退）は $\\boldsymbol{\\sqrt{c_{44}/\\rho}}$．\n\n$\\boldsymbol{n}=(1,1,0)/\\sqrt2$ では\n\\[ \\Gamma=\\begin{pmatrix}\\tfrac{c_{11}+c_{44}}{2}&\\tfrac{c_{12}+c_{44}}{2}&0\\\\ \\tfrac{c_{12}+c_{44}}{2}&\\tfrac{c_{11}+c_{44}}{2}&0\\\\0&0&c_{44}\\end{pmatrix}. \\]\n固有ベクトル $(1,1,0)$（縦波）の固有値は $\\tfrac12(c_{11}+c_{12}+2c_{44})$，$(1,-1,0)$（横波）は $\\tfrac12(c_{11}-c_{12})$，$(0,0,1)$（横波）は $c_{44}$．よって速さは\n\\[ \\boldsymbol{\\sqrt{\\frac{c_{11}+c_{12}+2c_{44}}{2\\rho}}},\\qquad \\boldsymbol{\\sqrt{\\frac{c_{44}}{\\rho}}},\\qquad \\boldsymbol{\\sqrt{\\frac{c_{11}-c_{12}}{2\\rho}}}. \\]\n$[110]$ 方向では2つの横波の縮退が解ける．\n\n等方的なら，2種類の横波の速さが一致しなければならないので $\\boldsymbol{c_{44}=\\dfrac{c_{11}-c_{12}}{2}}$．このとき縦波も $\\tfrac12(c_{11}+c_{12}+2c_{44})=c_{11}$ となり一致する．等方弾性体では $c_{11}=\\lambda+2\\mu$，$c_{12}=\\lambda$，$c_{44}=\\mu$ である．\n\n$A=\\dfrac{2\\times75.4}{168-121}\\approx\\boldsymbol{3.2}$．銅はかなり異方的で，$[110]$ 方向に $(1,\\bar1,0)$ 偏りの横波は $[100]$ の横波より $\\sqrt{A}\\approx1.8$ 倍も遅い．"
+   }
+  ],
+  "idea": {
+   "tex": "クリストッフェル行列の固有値問題．$[110]$ で横波の縮退が解け，等方性の条件は $2c_{44}=c_{11}-c_{12}$（ツェナーの異方性係数 $A=1$）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 縦波：sqrt(c_11/ρ) ; 横波：sqrt(c_44/ρ)\n(2) {sqrt((c_11+c_12+2c_44)/(2ρ)), sqrt(c_44/ρ), sqrt((c_11-c_12)/(2ρ))}\n(3) c_44：(c_11-c_12)/2\n(4) A：≈3.21"
+  },
+  "methods": [],
+  "tags": [
+   "結晶の弾性",
+   "クリストッフェル方程式",
+   "異方性",
+   "立方晶"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 3,
+  "minutes": 30,
+  "theme": "レイリー波の速さ（ポアソン固体）",
+  "topic": "レイリー波の速さ（ポアソン固体）",
+  "statement": {
+   "tex": "半無限の等方弾性体 $z\\ge0$（P波の速さ $v_P$，S波の速さ $v_S$，ラメ定数 $\\lambda,\\ \\mu$，密度 $\\rho$）の表面 $z=0$ は自由表面である．$xz$ 面内の変位を，スカラーポテンシャル $\\varphi$ とベクトルポテンシャルの $y$ 成分 $\\psi$ を用いて\n\\[ u_x=\\frac{\\partial\\varphi}{\\partial x}-\\frac{\\partial\\psi}{\\partial z},\\qquad u_z=\\frac{\\partial\\varphi}{\\partial z}+\\frac{\\partial\\psi}{\\partial x} \\]\nと書くと，$\\varphi$ は速さ $v_P$，$\\psi$ は速さ $v_S$ の波動方程式に従う．表面に沿って位相速度 $c=\\omega/k$ で進み，深さとともに減衰する波\n\\[ \\varphi=Ae^{-qz}e^{i(kx-\\omega t)},\\qquad \\psi=Be^{-sz}e^{i(kx-\\omega t)}\\qquad(q>0,\\ s>0) \\]\nを考える．\n\\begin{enumerate}\n\\item $q,\\ s$ を $k,\\ c,\\ v_P,\\ v_S$ で表せ．これから $c<v_S$ でなければならないことを述べよ．\n\\item 自由表面の条件 $\\sigma_{zz}=\\lambda\\nabla\\cdot\\boldsymbol{u}+2\\mu\\,\\partial u_z/\\partial z=0$，$\\sigma_{xz}=\\mu(\\partial u_x/\\partial z+\\partial u_z/\\partial x)=0$ から，$A,\\ B$ が $0$ でない解をもつ条件として\n\\[ \\left(2-\\frac{c^2}{v_S^2}\\right)^2=4\\sqrt{1-\\frac{c^2}{v_P^2}}\\sqrt{1-\\frac{c^2}{v_S^2}} \\]\nを導け（レイリー方程式）．\n\\item ポアソン固体 $v_P^2=3v_S^2$ の場合に $c/v_S$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $q=k\\sqrt{1-\\dfrac{c^2}{v_P^2}}$，$s=k\\sqrt{1-\\dfrac{c^2}{v_S^2}}$ (2) 記述 (3) $\\dfrac{c}{v_S}=\\sqrt{2-\\dfrac{2}{\\sqrt3}}\\approx0.919$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\varphi$ を波動方程式 $\\nabla^2\\varphi=\\dfrac{1}{v_P^2}\\ddot\\varphi$ に入れると $q^2-k^2=-\\omega^2/v_P^2$，$\\psi$ も同様で\n\\[ \\boldsymbol{q=k\\sqrt{1-\\frac{c^2}{v_P^2}}},\\qquad \\boldsymbol{s=k\\sqrt{1-\\frac{c^2}{v_S^2}}}. \\]\n両方が正の実数（深さとともに減衰）であるには $c<v_S\\,(<v_P)$ が必要．表面波は体積波のどちらよりも遅い．\n\n$\\sigma_{xz}$：$\\partial u_x/\\partial z+\\partial u_z/\\partial x=2\\varphi_{xz}+\\psi_{xx}-\\psi_{zz}$ に代入して $-2ikqA-(k^2+s^2)B=0$．\n\n$\\sigma_{zz}$：$\\nabla\\cdot\\boldsymbol{u}=\\nabla^2\\varphi=-(\\omega^2/v_P^2)\\varphi$，$\\lambda=\\rho v_P^2-2\\mu$ を使うと\n\\[ \\lambda\\nabla^2\\varphi+2\\mu(\\varphi_{zz}+\\psi_{xz})=\\left[-\\rho\\omega^2+2\\mu k^2\\right]\\varphi+2\\mu\\psi_{xz}, \\]\n$\\rho\\omega^2=\\mu(k^2-s^2)$ より係数は $\\mu(k^2+s^2)A-2i\\mu ksB=0$．\n\n2式が $A,B\\neq0$ の解をもつ条件（係数行列式 $=0$）は $(k^2+s^2)^2=4k^2qs$．$k^4$ で割って $(k^2+s^2)/k^2=2-c^2/v_S^2$ を使うと\n\\[ \\boldsymbol{\\left(2-\\frac{c^2}{v_S^2}\\right)^2=4\\sqrt{1-\\frac{c^2}{v_P^2}}\\sqrt{1-\\frac{c^2}{v_S^2}}}. \\]\n\n$x=c^2/v_S^2$ とおき，$v_P^2=3v_S^2$ として両辺を2乗すると $(2-x)^4=16(1-x/3)(1-x)$．展開して整理すると\n\\[ \\frac{x(x-4)(3x^2-12x+8)}{3}=0. \\]\n根は $x=0,\\ 4,\\ 2\\pm\\dfrac{2}{\\sqrt3}$．$0<x<1$ を満たすのは $x=2-\\dfrac{2}{\\sqrt3}\\approx0.845$ だけ（$x=0$ は波がない自明解，他は $c>v_S$ で (1) に反するか，2乗で紛れ込んだ根）．よって\n\\[ \\boldsymbol{\\frac{c}{v_S}=\\sqrt{2-\\frac{2}{\\sqrt3}}\\approx0.919}. \\]\nレイリー波は分散がなく（$c$ が $k$ によらない），地表を伝わる地震の揺れの主役になる．"
+   }
+  ],
+  "idea": {
+   "tex": "減衰するP型・S型ポテンシャルを重ね，表面の2つの応力条件の行列式からレイリー方程式．$v_P^2=3v_S^2$ では3次式に因数分解でき，$c\\approx0.919v_S$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) q：k sqrt(1-c^2/v_P^2) ; s：k sqrt(1-c^2/v_S^2)\n(2) 記述：σ_xz と σ_zz の条件 → (k^2+s^2)^2 = 4k^2 q s\n(3) c/v_S：sqrt(2-2/sqrt(3))"
+  },
+  "methods": [],
+  "tags": [
+   "レイリー波",
+   "表面波",
+   "自由表面",
+   "弾性波"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 3,
+  "minutes": 20,
+  "theme": "SH波の境界での反射・透過と臨界角",
+  "topic": "SH波の境界での反射・透過と臨界角",
+  "statement": {
+   "tex": "平面 $z=0$ を境に，$z<0$ に媒質1（密度 $\\rho_1$，S波速度 $\\beta_1$），$z>0$ に媒質2（$\\rho_2$，$\\beta_2$）が固着している．媒質1から，境界面の法線と角 $\\theta_1$ をなす向きに SH 波（変位が境界面に平行で入射面に垂直な $y$ 方向の横波）が入射する．透過波の角を $\\theta_2$ とする．境界条件は変位 $u_y$ とせん断応力 $\\sigma_{zy}=\\mu\\,\\partial u_y/\\partial z$（$\\mu=\\rho\\beta^2$）の連続である．\n\\begin{enumerate}\n\\item 変位の反射係数 $R$ を $\\rho_1,\\ \\beta_1,\\ \\theta_1,\\ \\rho_2,\\ \\beta_2,\\ \\theta_2$ で表せ．\n\\item $\\rho_1=2.5\\times10^{3}\\,\\mathrm{kg/m^3}$，$\\beta_1=2.0\\,\\mathrm{km/s}$，$\\rho_2=3.0\\times10^{3}\\,\\mathrm{kg/m^3}$，$\\beta_2=4.0\\,\\mathrm{km/s}$ のとき，全反射が起こる臨界角 $\\theta_c$ を求めよ．\n\\item (2) の媒質で，垂直入射のときの $R$ を求めよ．\n\\item (2) の媒質で，$\\theta_1=20^\\circ$ のときの $R$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R=\\dfrac{\\rho_1\\beta_1\\cos\\theta_1-\\rho_2\\beta_2\\cos\\theta_2}{\\rho_1\\beta_1\\cos\\theta_1+\\rho_2\\beta_2\\cos\\theta_2}$ (2) $\\theta_c=30^\\circ$ (3) $R=-\\dfrac{7}{17}$ (4) $R\\approx-0.30$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "入射波・反射波・透過波を\n\\[ u_y=e^{i(px-\\omega t)}\\left(e^{i\\omega\\eta_1z}+Re^{-i\\omega\\eta_1z}\\right)\\ (z<0),\\qquad u_y=Te^{i(px-\\omega t)}e^{i\\omega\\eta_2z}\\ (z>0) \\]\nとおく．$p=\\sin\\theta_1/\\beta_1=\\sin\\theta_2/\\beta_2$（スネルの法則），$\\eta_j=\\cos\\theta_j/\\beta_j$．変位の連続から $1+R=T$，応力の連続から $\\mu_1\\eta_1(1-R)=\\mu_2\\eta_2T$．$\\mu_j\\eta_j=\\rho_j\\beta_j\\cos\\theta_j$ より\n\\[ \\boldsymbol{R=\\frac{\\rho_1\\beta_1\\cos\\theta_1-\\rho_2\\beta_2\\cos\\theta_2}{\\rho_1\\beta_1\\cos\\theta_1+\\rho_2\\beta_2\\cos\\theta_2}},\\qquad T=\\frac{2\\rho_1\\beta_1\\cos\\theta_1}{\\rho_1\\beta_1\\cos\\theta_1+\\rho_2\\beta_2\\cos\\theta_2}. \\]\n\n$\\sin\\theta_2=(\\beta_2/\\beta_1)\\sin\\theta_1=1$ となる角が臨界角：$\\sin\\theta_c=\\beta_1/\\beta_2=1/2$，$\\boldsymbol{\\theta_c=30^\\circ}$．それより大きい入射角では $\\cos\\theta_2$ が純虚数になり $|R|=1$（全反射，透過側はエバネッセント波）．\n\n垂直入射では $\\rho_1\\beta_1=5.0\\times10^{6}$，$\\rho_2\\beta_2=1.2\\times10^{7}$（単位 $\\mathrm{kg/(m^2\\,s)}$）で\n\\[ R=\\frac{5-12}{5+12}=\\boldsymbol{-\\frac{7}{17}}\\approx-0.41. \\]\n負号は，固い媒質との境界で変位の位相が反転することを表す．\n\n$\\theta_1=20^\\circ$ では $\\sin\\theta_2=2\\sin20^\\circ\\approx0.684$，$\\theta_2\\approx43.2^\\circ$，$\\cos\\theta_2\\approx0.729$．\n\\[ R=\\frac{5\\cos20^\\circ-12\\times0.729}{5\\cos20^\\circ+12\\times0.729}=\\frac{4.70-8.75}{4.70+8.75}\\approx\\boldsymbol{-0.30}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "SH波は他の波に変換されないので，反射係数はインピーダンス $\\rho\\beta\\cos\\theta$ の比だけで決まる．速い媒質へ入射すると臨界角を超えて全反射する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) R：(ρ_1 β_1 cos(θ_1)-ρ_2 β_2 cos(θ_2))/(ρ_1 β_1 cos(θ_1)+ρ_2 β_2 cos(θ_2))\n(2) θ_c [°]：30\n(3) R：-7/17\n(4) R：≈-0.301"
+  },
+  "methods": [],
+  "tags": [
+   "SH波",
+   "反射係数",
+   "スネルの法則",
+   "全反射",
+   "臨界角"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 3,
+  "minutes": 22,
+  "theme": "棒の縦波の分散：横方向の慣性によるレイリー補正",
+  "topic": "棒の縦波の分散：横方向の慣性によるレイリー補正",
+  "statement": {
+   "tex": "半径 $a$ の円形断面をもつ細い棒（密度 $\\rho$，ヤング率 $E$，ポアソン比 $\\nu$）を，軸方向変位 $u(z,t)$ の縦波が伝わる．初等理論では位相速度は $c_0=\\sqrt{E/\\rho}$ で一定だが，棒が伸びると横に $u_r=-\\nu r\\,\\partial u/\\partial z$ だけ縮むため，その横方向の運動エネルギーが加わる．\n\\begin{enumerate}\n\\item 単位長さあたりの横方向運動エネルギーを $\\alpha\\left(\\dfrac{\\partial^2u}{\\partial z\\partial t}\\right)^2$ と書くとき，$\\alpha$ を求めよ．\n\\item 単位長さあたりのラグランジアン\n\\[ \\mathcal{L}=\\frac{\\rho\\pi a^2}{2}\\left(\\frac{\\partial u}{\\partial t}\\right)^2+\\alpha\\left(\\frac{\\partial^2u}{\\partial z\\partial t}\\right)^2-\\frac{E\\pi a^2}{2}\\left(\\frac{\\partial u}{\\partial z}\\right)^2 \\]\nから得られる運動方程式に $u\\propto e^{i(kz-\\omega t)}$ を代入して，$\\omega^2$ を $k$ の関数として求めよ．\n\\item $ka\\ll1$ のとき，位相速度の相対補正 $(c-c_0)/c_0$ を $(ka)^2$ の1次まで求めよ．\n\\item 半径 $1.0\\,\\mathrm{cm}$ の鋼の棒（$\\nu=0.30$）で，波長 $10\\,\\mathrm{cm}$ の縦波の位相速度の相対補正 $(c-c_0)/c_0$ を数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\dfrac{\\pi\\rho\\nu^2a^4}{4}$ (2) $\\omega^2=\\dfrac{Ek^2}{\\rho\\left(1+\\nu^2a^2k^2/2\\right)}$ (3) $\\dfrac{c-c_0}{c_0}=-\\dfrac{\\nu^2a^2k^2}{4}$ (4) $\\dfrac{c-c_0}{c_0}\\approx-8.9\\times10^{-3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "横方向の速度は $\\partial u_r/\\partial t=-\\nu r\\,\\partial^2u/\\partial z\\partial t$．断面で積分して\n\\[ \\int_0^a\\frac{\\rho}{2}\\nu^2r^2\\left(\\frac{\\partial^2u}{\\partial z\\partial t}\\right)^2 2\\pi r\\,dr=\\frac{\\pi\\rho\\nu^2a^4}{4}\\left(\\frac{\\partial^2u}{\\partial z\\partial t}\\right)^2,\\qquad \\boldsymbol{\\alpha=\\frac{\\pi\\rho\\nu^2a^4}{4}}. \\]\n\nオイラー＝ラグランジュ方程式は\n\\[ \\rho\\pi a^2\\ddot u-2\\alpha\\frac{\\partial^4u}{\\partial z^2\\partial t^2}-E\\pi a^2\\frac{\\partial^2u}{\\partial z^2}=0. \\]\n平面波を代入すると $-\\rho\\pi a^2\\omega^2-2\\alpha k^2\\omega^2+E\\pi a^2k^2=0$，すなわち\n\\[ \\boldsymbol{\\omega^2=\\frac{Ek^2}{\\rho\\left(1+\\nu^2a^2k^2/2\\right)}}. \\]\n\n$c=\\omega/k=c_0(1+\\nu^2a^2k^2/2)^{-1/2}\\approx c_0(1-\\nu^2a^2k^2/4)$ なので $\\boldsymbol{(c-c_0)/c_0=-\\nu^2a^2k^2/4}$．波長が短いほど遅くなる（正常分散）．これをレイリー補正という．\n\n$k=2\\pi/0.10\\approx62.8\\,\\mathrm{m^{-1}}$，$ka\\approx0.628$ で\n\\[ \\frac{\\nu^2(ka)^2}{4}=\\frac{0.09\\times0.395}{4}\\approx8.9\\times10^{-3}, \\]\nすなわち $\\boldsymbol{(c-c_0)/c_0\\approx-8.9\\times10^{-3}}$（約 $0.89\\%$ 遅くなる）．波長が棒の太さに近づくと補正は大きくなり，さらに短波長ではポッホハマーの厳密な分散関係が必要になる．"
+   }
+  ],
+  "idea": {
+   "tex": "ポアソン効果による横方向の運動が慣性を増やし，短波長ほど縦波を遅くする（レイリー補正）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) α：pi ρ ν^2 a^4/4\n(2) ω^2：E k^2/(ρ(1+ν^2 a^2 k^2/2))\n(3) -ν^2 a^2 k^2/4\n(4) (c-c_0)/c_0：≈-8.9e-3"
+  },
+  "methods": [],
+  "tags": [
+   "縦波",
+   "分散",
+   "ポアソン比",
+   "レイリー補正",
+   "ラグランジアン"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 4,
+  "minutes": 35,
+  "theme": "表層を伝わるラブ波の分散関係とカットオフ",
+  "topic": "表層を伝わるラブ波の分散関係とカットオフ",
+  "statement": {
+   "tex": "厚さ $H$ の表層（$0\\le z\\le H$，剛性率 $\\mu_1$，S波の速さ $v_1$）が半無限の基盤（$z>H$，剛性率 $\\mu_2$，S波の速さ $v_2$，$v_2>v_1$）の上にのっている．$z=0$ は自由表面である．$y$ 方向の変位 $u_y$ だけをもち，$x$ 方向に位相速度 $c=\\omega/k$ で進む波（ラブ波）\n\\[ u_y=\\begin{cases} A\\cos(pz)\\,e^{i(kx-\\omega t)} & (0\\le z\\le H)\\\\ Be^{-s(z-H)}e^{i(kx-\\omega t)} & (z>H)\\end{cases} \\]\nを考える（$p>0$，$s>0$）．各層で $u_y$ はそれぞれのS波の速さの波動方程式に従う．\n\\begin{enumerate}\n\\item $p,\\ s$ を $k,\\ c,\\ v_1,\\ v_2$ で表せ．これより $c$ のとりうる範囲を答えよ．\n\\item $z=0$ の自由表面条件が満たされていることを確かめ，$z=H$ で変位とせん断応力 $\\mu\\,\\partial u_y/\\partial z$ が連続である条件から分散関係を導け．\n\\item $n$ 番目のモード（$n=0,1,2,\\dots$，$n=0$ が基本モード）のカットオフ角振動数 $\\omega_n$（$c\\to v_2$ となる角振動数）を求めよ．\n\\item $H=30\\,\\mathrm{km}$，$v_1=3.5\\,\\mathrm{km/s}$，$v_2=4.5\\,\\mathrm{km/s}$ のとき，$n=1$ のモードが存在できる最長の周期 $T_1=2\\pi/\\omega_1$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=k\\sqrt{\\dfrac{c^2}{v_1^2}-1}$，$s=k\\sqrt{1-\\dfrac{c^2}{v_2^2}}$，$v_1<c<v_2$ (2) $\\tan(pH)=\\dfrac{\\mu_2s}{\\mu_1p}$ (3) $\\omega_n=\\dfrac{n\\pi v_1v_2}{H\\sqrt{v_2^2-v_1^2}}$ (4) $T_1\\approx10.8\\,\\mathrm{s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "表層で $-p^2-k^2=-\\omega^2/v_1^2$，基盤で $s^2-k^2=-\\omega^2/v_2^2$．よって\n\\[ \\boldsymbol{p=k\\sqrt{\\frac{c^2}{v_1^2}-1}},\\qquad \\boldsymbol{s=k\\sqrt{1-\\frac{c^2}{v_2^2}}}. \\]\n$p$ が実数（表層内で振動）で $s>0$（基盤内で減衰）であるには $\\boldsymbol{v_1<c<v_2}$．表層が基盤より「遅い」ときだけ波が表層に閉じ込められる（光ファイバーの全反射と同じ）．\n\n$z=0$ で $\\partial u_y/\\partial z=-Ap\\sin0=0$ なので自由表面条件は自動的に満たされる．$z=H$ での連続条件は\n\\[ A\\cos pH=B,\\qquad -\\mu_1pA\\sin pH=-\\mu_2sB. \\]\n$B$ を消去して\n\\[ \\boldsymbol{\\tan(pH)=\\frac{\\mu_2s}{\\mu_1p}}. \\]\n右辺は正なので，$pH$ は $(n\\pi,\\ n\\pi+\\pi/2)$ の区間に1つずつ解をもち，これが第 $n$ モードである．\n\n$c\\to v_2$ で $s\\to0$，右辺 $\\to0$ なので $pH\\to n\\pi$．このとき $k=\\omega/v_2$，$p=\\dfrac{\\omega}{v_2}\\sqrt{\\dfrac{v_2^2}{v_1^2}-1}=\\dfrac{\\omega\\sqrt{v_2^2-v_1^2}}{v_1v_2}$．$pH=n\\pi$ より\n\\[ \\boldsymbol{\\omega_n=\\frac{n\\pi v_1v_2}{H\\sqrt{v_2^2-v_1^2}}}. \\]\n$\\omega<\\omega_n$ では第 $n$ モードは基盤へ漏れてしまい存在できない．基本モード $n=0$ にはカットオフがない．低周波（長波長）では波が深く基盤まで感じて $c\\to v_2$，高周波では表層に閉じ込められて $c\\to v_1$ となる．\n\n$T_1=\\dfrac{2\\pi}{\\omega_1}=\\dfrac{2H\\sqrt{v_2^2-v_1^2}}{v_1v_2}=\\dfrac{60\\times\\sqrt{20.25-12.25}}{3.5\\times4.5}\\,\\mathrm{s}\\approx\\boldsymbol{10.8\\,\\mathrm{s}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "遅い表層に閉じ込められたSH波．表層では定在波，基盤では指数減衰で，境界条件から $\\tan pH=\\mu_2s/(\\mu_1p)$．$c\\to v_2$ の極限がカットオフ $pH=n\\pi$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) p：k sqrt(c^2/v_1^2-1) ; s：k sqrt(1-c^2/v_2^2) ; 範囲：v_1<c<v_2\n(2) 記述：tan(pH) = μ_2 s/(μ_1 p)\n(3) ω_n：n pi v_1 v_2/(H sqrt(v_2^2-v_1^2))\n(4) T_1 [s]：≈10.8"
+  },
+  "methods": [],
+  "tags": [
+   "ラブ波",
+   "表面波",
+   "分散関係",
+   "カットオフ"
+  ],
+  "provenance": {
+   "created": "2026-10-31"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 4,
+  "minutes": 35,
+  "theme": "弾性球の半径方向固有振動（呼吸モード）",
+  "topic": "弾性球の半径方向固有振動（呼吸モード）",
+  "statement": {
+   "tex": "半径 $a$ の一様な等方弾性球（ラメ定数 $\\lambda,\\ \\mu$，密度 $\\rho$，P波速度 $\\alpha=\\sqrt{(\\lambda+2\\mu)/\\rho}$）の，球対称な固有振動を考える．変位は半径方向のみで $u_r=\\dfrac{\\partial\\Phi}{\\partial r}e^{-i\\omega t}$ と書け，ポテンシャルは $\\nabla^2\\Phi+k^2\\Phi=0$（$k=\\omega/\\alpha$）を満たす．球の中心で正則な解は $\\Phi=\\dfrac{\\sin kr}{r}$ である．半径方向の応力は\n\\[ \\sigma_{rr}=(\\lambda+2\\mu)\\frac{\\partial u_r}{\\partial r}+2\\lambda\\frac{u_r}{r} \\]\nで，表面 $r=a$ は自由（$\\sigma_{rr}=0$）である．\n\\begin{enumerate}\n\\item $u_r(r)$（時間因子を除く）を求めよ．\n\\item $x=ka$ とおくとき，振動数方程式が $x\\cot x=F(x)$ の形に書けることを示し，$F(x)$ を求めよ．\n\\item $\\lambda=\\mu$（ポアソン固体）のとき，最も低い正の解 $x_1$ を数値的に求めよ．\n\\item 半径 $1.0\\,\\mathrm{cm}$，$\\alpha=6.0\\,\\mathrm{km/s}$ のポアソン固体の球について，基本呼吸モードの振動数 $f$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u_r=\\dfrac{kr\\cos kr-\\sin kr}{r^2}$ (2) $F(x)=1-\\dfrac{(\\lambda+2\\mu)x^2}{4\\mu}$ (3) $x_1\\approx2.56$ (4) $f\\approx2.4\\times10^{5}\\,\\mathrm{Hz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "\\[ u_r=\\frac{d}{dr}\\frac{\\sin kr}{r}=\\boldsymbol{\\frac{kr\\cos kr-\\sin kr}{r^2}}. \\]\n\n$u_r'=-\\dfrac{k^2\\sin kr}{r}-\\dfrac{2(kr\\cos kr-\\sin kr)}{r^3}$ を用いて $r=a$ で $\\sigma_{rr}$ を計算し，$a^3$ をかけて $x=ka$ で書くと\n\\[ a^3\\sigma_{rr}=-(\\lambda+2\\mu)x^2\\sin x-4\\mu x\\cos x+4\\mu\\sin x \\]\n（$\\lambda$ を含む $\\cos$ の項は $(\\lambda+2\\mu)\\cdot(-2)+2\\lambda=-4\\mu$ にまとまる）．これを $0$ とおいて $4\\mu\\sin x$ で割ると\n\\[ x\\cot x=\\boldsymbol{1-\\frac{(\\lambda+2\\mu)x^2}{4\\mu}}=1-\\frac{\\alpha^2}{4\\beta^2}x^2\\quad(\\beta=\\sqrt{\\mu/\\rho}). \\]\n\n$\\lambda=\\mu$ では $x\\cot x=1-\\tfrac34x^2$．$g(x)=x\\cot x-1+\\tfrac34x^2$ は $x=2.5$ で $+0.34$，$x=2.6$ で $-0.25$ と符号を変え，二分法などで\n\\[ \\boldsymbol{x_1\\approx2.56} \\]\n（$x\\to0$ の自明な根を除く）．$\\mu\\to0$ の極限（表面で圧力が $0$ の液体球）では右辺が $-\\infty$ になり，根は $x=\\pi$ に近づく．剛性があると，$\\alpha/a$ を単位とした振動数は $\\pi$ より小さくなる．\n\n\\[ f=\\frac{\\omega}{2\\pi}=\\frac{x_1\\alpha}{2\\pi a}=\\frac{2.563\\times6.0\\times10^{3}}{2\\pi\\times0.010}\\approx\\boldsymbol{2.4\\times10^{5}\\,\\mathrm{Hz}}. \\]\n同じ考え方を地球に当てはめたものが地球自由振動の ${}_0S_0$ モード（周期約20分）である．"
+   }
+  ],
+  "idea": {
+   "tex": "ポテンシャル $\\sin kr/r$ から変位をつくり，自由表面条件を課すと超越方程式 $x\\cot x=1-(\\alpha/2\\beta)^2x^2$ が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) u_r：(k r cos(k r)-sin(k r))/r^2\n(2) F(x)：1-(λ+2μ)x^2/(4μ)\n(3) x_1：≈2.563\n(4) f [Hz]：≈2.45e5"
+  },
+  "methods": [],
+  "tags": [
+   "球の固有振動",
+   "呼吸モード",
+   "自由振動",
+   "超越方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 4,
+  "minutes": 35,
+  "theme": "P波の自由表面での反射とモード変換",
+  "topic": "P波の自由表面での反射とモード変換",
+  "statement": {
+   "tex": "半無限弾性体 $z>0$（$z$ は下向き，P波速度 $\\alpha$，S波速度 $\\beta$，$\\kappa=\\alpha/\\beta$）の自由表面 $z=0$ に，下から入射角 $\\theta$ で P 波が入射する．反射波として，角 $\\theta$ の P 波と，角 $\\varphi$ の SV 波が生じる．変位を $\\boldsymbol{u}=\\nabla\\Phi+\\nabla\\times(0,\\Psi,0)$ と書き，\n\\[ \\Phi=e^{i\\omega(px-\\eta_\\alpha z-t)}+R\\,e^{i\\omega(px+\\eta_\\alpha z-t)},\\qquad \\Psi=S\\,e^{i\\omega(px+\\eta_\\beta z-t)} \\]\nとおく（$p$ は水平スローネス，$\\eta_\\alpha=\\cos\\theta/\\alpha$，$\\eta_\\beta=\\cos\\varphi/\\beta$）．自由表面の条件は $\\sigma_{zz}=\\sigma_{xz}=0$ である．\n\\begin{enumerate}\n\\item $\\sin\\varphi$ を $\\theta,\\ \\kappa$ で表せ．\n\\item 境界条件を解いて，P波の反射係数が\n\\[ R=\\frac{\\sin2\\theta\\sin2\\varphi-\\kappa^2\\cos^22\\varphi}{\\sin2\\theta\\sin2\\varphi+\\kappa^2\\cos^22\\varphi} \\]\nとなることを示せ．\n\\item $\\kappa=\\sqrt3$（ポアソン固体）のとき，垂直入射 $\\theta=0$ と $\\theta=45^\\circ$ での $R$ を求めよ．\n\\item $\\kappa=\\sqrt3$ のとき，$R=0$（入射P波が完全にSV波に変換される）となる入射角を2つ求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sin\\varphi=\\dfrac{\\sin\\theta}{\\kappa}$ (2) 証明 (3) $\\theta=0$：$R=-1$，$\\theta=45^\\circ$：$R\\approx-0.28$ (4) $\\theta=60^\\circ$，$\\theta\\approx77.2^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "境界面に沿った位相がそろう条件 $p=\\sin\\theta/\\alpha=\\sin\\varphi/\\beta$ から $\\boldsymbol{\\sin\\varphi=\\sin\\theta/\\kappa}$．S波は遅いので $\\varphi<\\theta$．\n\n$u_x=\\Phi_x-\\Psi_z$，$u_z=\\Phi_z+\\Psi_x$．$\\sigma_{zz}=\\lambda\\nabla^2\\Phi+2\\mu\\,\\partial_zu_z$，$\\sigma_{xz}=\\mu(\\partial_zu_x+\\partial_xu_z)$ に代入し，$\\nabla^2\\Phi=-\\omega^2\\Phi/\\alpha^2$，$\\lambda=\\rho(\\alpha^2-2\\beta^2)$，$\\mu=\\rho\\beta^2$ を使うと，$z=0$ で（共通因子 $-\\rho\\omega^2e^{i\\omega(px-t)}$ を除いて）\n\\[ (1-2\\beta^2p^2)(1+R)+2\\beta^2p\\eta_\\beta S=0,\\qquad 2\\beta^2p\\eta_\\alpha(R-1)-(1-2\\beta^2p^2)S=0. \\]\n第2式から $S=\\dfrac{2\\beta^2p\\eta_\\alpha(R-1)}{1-2\\beta^2p^2}$ を第1式に代入すると\n\\[ R=\\frac{4\\beta^4p^2\\eta_\\alpha\\eta_\\beta-(1-2\\beta^2p^2)^2}{4\\beta^4p^2\\eta_\\alpha\\eta_\\beta+(1-2\\beta^2p^2)^2}. \\]\n$\\beta p=\\sin\\varphi$ より $1-2\\beta^2p^2=\\cos2\\varphi$．また $\\beta^2p^2=\\sin\\varphi\\cdot\\beta\\sin\\theta/\\alpha$ なので\n\\[ 4\\beta^4p^2\\eta_\\alpha\\eta_\\beta=4\\beta^2p^2\\cdot\\frac{\\beta\\cos\\theta\\cos\\varphi}{\\alpha}=\\frac{4\\sin\\theta\\cos\\theta\\sin\\varphi\\cos\\varphi}{\\kappa^2}=\\frac{\\sin2\\theta\\sin2\\varphi}{\\kappa^2}. \\]\n分母分子に $\\kappa^2$ をかければ与式を得る．\n\n$\\theta=0$ では $\\varphi=0$，$\\sin2\\theta=0$ で $\\boldsymbol{R=-1}$（S波は生じない）．$\\theta=45^\\circ$ では $\\sin\\varphi=1/\\sqrt6$，$\\sin2\\varphi=2\\sin\\varphi\\cos\\varphi=\\sqrt5/3\\approx0.745$，$\\cos2\\varphi=1-2/6=2/3$．\n\\[ R=\\frac{0.745-3\\times4/9}{0.745+3\\times4/9}=\\frac{0.745-1.333}{0.745+1.333}\\approx\\boldsymbol{-0.28}. \\]\n\n$R=0$ の条件は $\\sin2\\theta\\sin2\\varphi=3\\cos^22\\varphi$．$\\theta=60^\\circ$ では $\\sin\\varphi=1/2$，$\\varphi=30^\\circ$ で，左辺 $=\\tfrac{\\sqrt3}{2}\\cdot\\tfrac{\\sqrt3}{2}=\\tfrac34$，右辺 $=3\\cdot\\tfrac14=\\tfrac34$ と厳密に成り立つ．数値的に調べると，もう1つ $\\theta\\approx77.2^\\circ$ にも根がある．よって $\\boldsymbol{\\theta=60^\\circ}$ と $\\boldsymbol{\\theta\\approx77.2^\\circ}$．これらの角で入射したP波は，反射後すべてSV波になる（モード変換）．地震記象で，P波が地表で反射した $PP$ 相が特定の震央距離で弱くなる理由の1つである．"
+   }
+  ],
+  "idea": {
+   "tex": "自由表面ではP波とSV波が結合する．スネルの法則 $\\sin\\varphi=\\sin\\theta/\\kappa$ のもとで2つの境界条件を解くと反射係数が得られ，特定の角で完全なモード変換が起こる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sin φ：sin(θ)/κ\n(2) 記述：2つの境界条件から S を消去し，βp=sin φ，αp=sin θ を使って整理する\n(3) θ=0：-1 ; θ=45°：≈-0.283\n(4) 小さい方 [°]：60 ; 大きい方 [°]：≈77.2"
+  },
+  "methods": [],
+  "tags": [
+   "P波",
+   "SV波",
+   "モード変換",
+   "自由表面",
+   "反射係数"
+  ],
+  "provenance": {
+   "created": "2026-11-03"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]
