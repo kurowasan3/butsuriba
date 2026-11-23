@@ -1,0 +1,740 @@
+[
+ {
+  "id": "BP-06-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ロジスティック成長と半飽和までの時間",
+  "topic": "ロジスティック成長と半飽和までの時間",
+  "statement": {
+   "tex": "細菌の数 $N(t)$ が，資源の限界による飽和を含むロジスティック方程式\n\\[ \\frac{dN}{dt}=rN\\left(1-\\frac{N}{K}\\right) \\]\nに従う（$r$ は増殖率，$K$ は環境収容力）．初期値 $N(0)=N_0\\ (0<N_0<K)$ に対する解は\n\\[ N(t)=\\frac{K}{1+\\left(\\frac{K}{N_0}-1\\right)e^{-rt}} \\]\nである．\n\\begin{enumerate}\n\\item $N$ が $K/2$ に達する時刻 $t_{1/2}$ を $r,\\,K,\\,N_0$ で表せ．\n\\item 増え方 $dN/dt$ が最大になるときの $N$ を求めよ．\n\\item $r=0.70\\,\\mathrm{h^{-1}}$，$N_0=K/101$ のとき $t_{1/2}$ を求めよ（$\\ln10=2.303$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t_{1/2}=\\dfrac1r\\ln\\left(\\dfrac{K}{N_0}-1\\right)$ (2) $N=\\dfrac K2$ (3) $\\approx6.6\\,\\mathrm{h}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $N=K/2$ では分母が $2$ なので $\\left(\\dfrac{K}{N_0}-1\\right)e^{-rt}=1$．よって $\\boldsymbol{t_{1/2}=\\dfrac1r\\ln\\left(\\dfrac K{N_0}-1\\right)}$．\n\n(2) $dN/dt=rN-\\dfrac{r}{K}N^2$ は $N$ の2次関数で，$N=\\boldsymbol{K/2}$ で最大値 $rK/4$ をとる．$N(t)$ のグラフはここで変曲点をもつ S 字形になる．\n\n(3) $K/N_0-1=100$ より $t_{1/2}=\\dfrac{\\ln100}{0.70}=\\dfrac{4.605}{0.70}\\approx\\boldsymbol{6.6\\,\\mathrm h}$．初めは指数関数的に増え（倍加時間 $\\ln2/r\\approx1.0\\,\\mathrm h$），$K$ に近づくと増え方が鈍る．次は，このような非線形の方程式で固定点の安定性や分岐を調べる．"
+   }
+  ],
+  "idea": {
+   "tex": "個体数が少ないうちは指数増殖，多くなると飽和する．増殖の速さは $N=K/2$ で最大．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) t_{1/2}：1/r ln(K/N_0-1)\n(2) N：K/2\n(3) t_{1/2} [h]：≈6.58"
+  },
+  "methods": [],
+  "tags": [
+   "ロジスティック方程式",
+   "個体群成長",
+   "環境収容力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 0,
+  "minutes": 10,
+  "theme": "一定量の漁獲とサドルノード分岐",
+  "topic": "一定量の漁獲とサドルノード分岐",
+  "statement": {
+   "tex": "魚の個体数 $x$ がロジスティック成長しながら，毎年一定量 $h$ ずつ漁獲されるとする：\n\\[ \\frac{dx}{dt}=rx\\left(1-\\frac xK\\right)-h\\qquad(r,\\,K,\\,h>0). \\]\n$dx/dt=0$ となる $x$ を固定点という．固定点の近くで，$x$ が少し大きいとき $dx/dt<0$，少し小さいとき $dx/dt>0$ なら，ずれは戻されるので安定である．\n\\begin{enumerate}\n\\item 固定点が存在する $h$ の上限 $h_c$ を求めよ．\n\\item $h<h_c$ のとき固定点は2つある．大きいほうの固定点 $x_+$ を求めよ．\n\\item $r=0.50\\,/$年，$K=1000$ 匹，$h=60$ 匹/年 のとき，2つの固定点 $x_+,\\,x_-$（$x_+>x_-$）の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h_c=\\dfrac{rK}{4}$ (2) $x_+=\\dfrac K2\\left(1+\\sqrt{1-\\dfrac{4h}{rK}}\\right)$ (3) $x_+\\approx861$，$x_-\\approx139$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $rx(1-x/K)$ の最大値は $x=K/2$ での $rK/4$．$h$ がこれを超えると常に $dx/dt<0$ で個体群は絶滅する．$\\boldsymbol{h_c=rK/4}$．\n\n(2) $\\dfrac rKx^2-rx+h=0$ を解いて $x_\\pm=\\dfrac K2\\left(1\\pm\\sqrt{1-\\dfrac{4h}{rK}}\\right)$．$dx/dt$ は上に凸の放物線から $h$ を引いたもので，$x_-<x<x_+$ で正，$x>x_+$ で負．よって $\\boldsymbol{x_+}$ は安定，$x_-$ は不安定である．\n\n(3) $\\dfrac{4h}{rK}=\\dfrac{240}{500}=0.48$，$\\sqrt{0.52}=0.721$．$x_+=500\\times1.721\\approx\\boldsymbol{861}$，$x_-=500\\times0.279\\approx\\boldsymbol{139}$．個体数が $139$ 匹を下回ると，漁獲量を変えなくても絶滅に向かう．\n\n$h$ を増やしていくと $h=h_c$ で安定点と不安定点がぶつかって消える（サドルノード分岐）．消える直前まで安定点は存在するので，個体数だけを見ていても崩壊を予見しにくい．次は，2変数の系での分岐（ホップ分岐）や振動を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "固定点の存在と安定性は $dx/dt$ のグラフの符号で決まる．パラメータを変えると安定点と不安定点が合体して消えるサドルノード分岐が起こる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) h_c：r K/4\n(2) x_+：K/2 (1+sqrt(1-4h/(r K)))\n(3) x_+：≈861 ; x_-：≈139"
+  },
+  "methods": [],
+  "tags": [
+   "サドルノード分岐",
+   "ロジスティック方程式",
+   "漁獲",
+   "固定点の安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 0,
+  "minutes": 10,
+  "theme": "アリー効果による双安定と絶滅の閾値",
+  "topic": "アリー効果による双安定と絶滅の閾値",
+  "statement": {
+   "tex": "個体数が少なすぎると繁殖相手が見つからず増えられない（アリー効果）．これを\n\\[ \\frac{dx}{dt}=f(x)=rx\\left(\\frac xA-1\\right)\\left(1-\\frac xK\\right)\\qquad(0<A<K,\\ r>0) \\]\nで表す．固定点 $x^*$（$f(x^*)=0$）の近くで $x=x^*+u$ とおくと，$u$ が小さいとき $\\dfrac{du}{dt}\\simeq f'(x^*)\\,u$ となる．よって $f'(x^*)<0$ なら安定，$f'(x^*)>0$ なら不安定である．\n\\begin{enumerate}\n\\item $x\\ge0$ の固定点をすべて求めよ．\n\\item 安定な固定点をすべて答えよ．\n\\item $x=K$ の近くでのずれは $u\\propto e^{-\\lambda t}$ と減衰する．$\\lambda$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=0,\\ A,\\ K$ (2) $0,\\ K$ (3) $\\lambda=\\dfrac{r(K-A)}{A}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f(x)=0$ より $\\boldsymbol{x=0,\\ A,\\ K}$．\n\n(2) $f(x)$ の符号を調べると，$0<x<A$ で $f<0$，$A<x<K$ で $f>0$，$x>K$ で $f<0$．したがって $0$ と $K$ は両側から引き寄せる安定点，$A$ は不安定点．安定な固定点は $\\boldsymbol{0,\\ K}$ である（双安定）．$A$ は「これを下回ると絶滅する」閾値になる．\n\n(3) $f(x)=rx\\left(\\dfrac xA-1\\right)\\left(1-\\dfrac xK\\right)$ を $x=K$ で微分すると，第3因子だけが $0$ になるので\n\\[ f'(K)=rK\\left(\\frac KA-1\\right)\\left(-\\frac1K\\right)=-\\frac{r(K-A)}{A}. \\]\nよって $\\boldsymbol{\\lambda=\\dfrac{r(K-A)}{A}}$．このような双安定な成長を空間に広げると，生息域の境界が一定の速さで進む（または後退する）進行波が現れる．"
+   }
+  ],
+  "idea": {
+   "tex": "3次の成長関数では，間の固定点が安定な2状態を分ける閾値になる．固定点での傾き $f'(x^*)$ の符号が安定性を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) {0, A, K}\n(2) {0, K}\n(3) λ：r(K-A)/A"
+  },
+  "methods": [],
+  "tags": [
+   "アリー効果",
+   "双安定",
+   "線形安定性",
+   "閾値"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 1,
+  "minutes": 15,
+  "theme": "競争系ロトカ＝ヴォルテラ方程式と共存の安定性",
+  "topic": "競争系ロトカ＝ヴォルテラ方程式と共存の安定性",
+  "statement": {
+   "tex": "同じ資源を奪い合う2種の個体数（無次元化したもの）$x,\\,y$ が\n\\[ \\dot x=x(1-x-ay),\\qquad \\dot y=\\rho\\,y(1-y-bx) \\]\nに従う（$a,\\,b,\\,\\rho>0$ は定数で，$a<1,\\ b<1$ とする）．\n\\begin{enumerate}\n\\item $x>0,\\ y>0$ の固定点（共存状態）$(x_s,\\,y_s)$ を求めよ．\n\\item 共存状態での線形化行列の行列式を $\\rho,\\,x_s,\\,y_s,\\,a,\\,b$ で表せ．\n\\item $a=0.5$，$b=0.8$，$\\rho=1$ のとき，共存状態での線形化行列の固有値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left(\\dfrac{1-a}{1-ab},\\ \\dfrac{1-b}{1-ab}\\right)$ (2) $\\rho x_sy_s(1-ab)$ (3) $-1,\\ -\\dfrac16$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x+ay=1$，$bx+y=1$ を解いて $\\boldsymbol{x_s=\\dfrac{1-a}{1-ab},\\ y_s=\\dfrac{1-b}{1-ab}}$．\n\n(2) 共存状態では $1-x_s-ay_s=0$ などが成り立つので，線形化行列は\n\\[ J=\\begin{pmatrix}-x_s&-ax_s\\\\-\\rho by_s&-\\rho y_s\\end{pmatrix}. \\]\n$\\det J=\\boldsymbol{\\rho x_sy_s(1-ab)}$，$\\mathrm{tr}\\,J=-x_s-\\rho y_s<0$．$a,b<1$ なら $\\det J>0$ で共存状態は安定である（種内競争が種間競争より強ければ共存）．逆に $a,b>1$ なら共存点は鞍点になり，初期条件しだいでどちらかが勝つ（競争排除）．\n\n(3) $x_s=\\dfrac{0.5}{0.6}=\\dfrac56$，$y_s=\\dfrac{0.2}{0.6}=\\dfrac13$．$\\mathrm{tr}\\,J=-\\dfrac76$，$\\det J=\\dfrac56\\cdot\\dfrac13\\cdot0.6=\\dfrac16$．固有方程式 $\\lambda^2+\\dfrac76\\lambda+\\dfrac16=0$ すなわち $6\\lambda^2+7\\lambda+1=0$ を解いて $\\boldsymbol{\\lambda=-1,\\ -1/6}$（安定結節点）．"
+   }
+  ],
+  "idea": {
+   "tex": "2変数系の固定点の安定性は線形化行列のトレースと行列式で決まる．種内競争が強い（$ab<1$）と共存が安定になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ((1-a)/(1-a b), (1-b)/(1-a b))\n(2) ρ x_s y_s (1-a b)\n(3) {-1, -1/6}"
+  },
+  "methods": [],
+  "tags": [
+   "ロトカ＝ヴォルテラ",
+   "競争系",
+   "線形安定性",
+   "共存"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ブリュッセレーターのホップ分岐と化学振動",
+  "topic": "ブリュッセレーターのホップ分岐と化学振動",
+  "statement": {
+   "tex": "自己触媒反応を含む化学反応系のモデル（ブリュッセレーター）\n\\[ \\dot x=a-(b+1)x+x^2y,\\qquad \\dot y=bx-x^2y\\qquad(a,\\,b>0) \\]\nを考える．$x,\\,y$ は中間体の濃度（無次元）である．\n\\begin{enumerate}\n\\item 固定点 $(x^*,\\,y^*)$ を求めよ．\n\\item 固定点での線形化行列のトレースと行列式を求めよ．固定点が不安定になる $b$ の臨界値 $b_c$ を求めよ．\n\\item $b=b_c$ では線形化行列の固有値が純虚数 $\\pm i\\omega$ になる．分岐直後に生まれる振動の周期 $T=2\\pi/\\omega$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $(a,\\ b/a)$ (2) $\\mathrm{tr}=b-1-a^2$，$\\det=a^2$，$b_c=1+a^2$ (3) $T=\\dfrac{2\\pi}{a}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 2式の和から $a-x=0$，よって $x^*=a$，$y^*=b/a$．すなわち $\\boldsymbol{(a,\\ b/a)}$．\n\n(2) 偏微分を計算して固定点で評価すると\n\\[ J=\\begin{pmatrix}-(b+1)+2x^*y^*&x^{*2}\\\\ b-2x^*y^*&-x^{*2}\\end{pmatrix}=\\begin{pmatrix}b-1&a^2\\\\-b&-a^2\\end{pmatrix}. \\]\n$\\boldsymbol{\\mathrm{tr}\\,J=b-1-a^2}$，$\\boldsymbol{\\det J=a^2}>0$．行列式が正なので，トレースの符号が変わるところで安定性が変わる：$\\boldsymbol{b_c=1+a^2}$．$b>b_c$ で固定点は不安定な渦状点になる．\n\n(3) 固有方程式 $\\lambda^2-\\mathrm{tr}\\,J\\,\\lambda+\\det J=0$ で $\\mathrm{tr}\\,J=0$ なら $\\lambda=\\pm ia$．よって $\\omega=a$，$\\boldsymbol{T=2\\pi/a}$．固定点が不安定になると軌道は遠くへ逃げずに閉じた軌道（リミットサイクル）に引き込まれ，濃度が自律的に振動する（ベロウソフ＝ジャボチンスキー反応のような化学振動）．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\det J>0$ のまま $\\mathrm{tr}\\,J$ が負から正に変わると，複素共役の固有値が虚軸を横切ってホップ分岐が起こり，振動数は $\\sqrt{\\det J}$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (a, b/a)\n(2) tr：b-1-a^2 ; det：a^2 ; b_c：1+a^2\n(3) T：2pi/a"
+  },
+  "methods": [],
+  "tags": [
+   "ブリュッセレーター",
+   "ホップ分岐",
+   "化学振動",
+   "リミットサイクル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 1,
+  "minutes": 15,
+  "theme": "フィッツフュー＝南雲モデルの興奮性と自励振動",
+  "topic": "フィッツフュー＝南雲モデルの興奮性と自励振動",
+  "statement": {
+   "tex": "神経や心筋の興奮を単純化したフィッツフュー＝南雲モデル\n\\[ \\dot v=v-\\frac{v^3}{3}-w,\\qquad \\dot w=\\varepsilon(v+a)\\qquad(\\varepsilon>0,\\ a>0) \\]\nを考える．$v$ は膜電位に相当する速い変数，$w$ は回復を表す遅い変数で，$\\varepsilon\\ll1$ とする．\n\\begin{enumerate}\n\\item 固定点 $(v^*,\\,w^*)$ を求めよ．\n\\item 固定点での線形化行列のトレースと行列式を求めよ．\n\\item 固定点が安定であるための $a$ の条件は $a>a_c$ である．$a_c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left(-a,\\ \\dfrac{a^3}{3}-a\\right)$ (2) $\\mathrm{tr}=1-a^2$，$\\det=\\varepsilon$ (3) $a_c=1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot w=0$ より $v^*=-a$．$\\dot v=0$ より $w^*=v^*-v^{*3}/3=\\boldsymbol{-a+a^3/3}$．\n\n(2) $J=\\begin{pmatrix}1-v^{*2}&-1\\\\ \\varepsilon&0\\end{pmatrix}$ なので $\\boldsymbol{\\mathrm{tr}\\,J=1-a^2}$，$\\boldsymbol{\\det J=\\varepsilon}$．\n\n(3) $\\det J>0$ だから，安定 $\\Leftrightarrow$ $\\mathrm{tr}\\,J<0$ $\\Leftrightarrow$ $a>1$．$\\boldsymbol{a_c=1}$．\n\n$a>1$ の固定点は $v$ のヌルクライン（3次曲線 $w=v-v^3/3$）の左の安定な枝にある．小さな刺激なら戻るだけだが，$v$ を閾値（中央の枝）を越えて押すと，$v$ が右の枝へ速く跳び，ゆっくり回復してから戻る大きな軌道（活動電位のような興奮）を描く．これが興奮性である．$a<1$ では固定点が中央の枝に移って不安定になり，跳びと回復を繰り返す自励振動（緩和振動，心臓のペースメーカーに相当）が起こる．"
+   }
+  ],
+  "idea": {
+   "tex": "3次ヌルクラインと遅い回復変数の組み合わせで，固定点の位置しだいで興奮性（$a>1$）と自励振動（$a<1$）が切り替わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (-a, a^3/3-a)\n(2) tr：1-a^2 ; det：ε\n(3) a_c：1"
+  },
+  "methods": [],
+  "tags": [
+   "フィッツフュー＝南雲",
+   "興奮性",
+   "緩和振動",
+   "ヌルクライン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 2,
+  "minutes": 20,
+  "theme": "チューリング不安定性の条件と臨界波数",
+  "topic": "チューリング不安定性の条件と臨界波数",
+  "statement": {
+   "tex": "2種の物質の濃度のずれ $u,\\,v$（一様定常状態からのずれ）が1次元で\n\\[ \\partial_tu=u-v+\\partial_x^2u,\\qquad \\partial_tv=3u-2v+d\\,\\partial_x^2v \\]\nに従う（線形化した反応拡散方程式，$d>0$ は拡散係数の比）．$u$ は自分自身と $v$ を増やす活性化因子，$v$ は $u$ を減らす抑制因子である．\n\\begin{enumerate}\n\\item 拡散がないとき（空間一様なずれ），定常状態は安定であることを確かめ，線形化行列の行列式を答えよ．\n\\item $u,v\\propto e^{ikx+\\sigma t}$ とおくと，$\\sigma$ は行列 $\\begin{pmatrix}1-k^2&-1\\\\3&-2-dk^2\\end{pmatrix}$ の固有値である．ある $k\\ne0$ で $\\sigma>0$ となる（チューリング不安定）ための $d$ の下限 $d_c$ を求めよ．\n\\item $d=d_c$ で最初に不安定になる波数の2乗 $k_c^2$ と，そのパターンの波長 $2\\pi/k_c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\det=1$ (2) $d_c=4+2\\sqrt3$ (3) $k_c^2=\\dfrac{\\sqrt3-1}{2}$，波長 $\\approx10.4$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $J=\\begin{pmatrix}1&-1\\\\3&-2\\end{pmatrix}$ で $\\mathrm{tr}\\,J=-1<0$，$\\boldsymbol{\\det J=1}>0$．よって一様な摂動に対しては安定である．\n\n(2) 行列のトレースは $-1-(1+d)k^2<0$ なので，不安定になるのは行列式\n\\[ h(q)=(1-q)(-2-dq)+3=dq^2-(d-2)q+1\\qquad(q=k^2) \\]\nが負になるときである．$q>0$ で最小値をとるには $d>2$ が必要で，最小値は $q=\\dfrac{d-2}{2d}$ での $1-\\dfrac{(d-2)^2}{4d}$．これが負になる条件は $d^2-8d+4>0$，すなわち $d>4+2\\sqrt3$．$\\boldsymbol{d_c=4+2\\sqrt3}\\approx7.46$．抑制因子が活性化因子より十分速く拡散すること（短距離の活性化と長距離の抑制）が必要である．\n\n(3) $k_c^2=\\dfrac{d_c-2}{2d_c}=\\dfrac{2+2\\sqrt3}{2(4+2\\sqrt3)}=\\boldsymbol{\\dfrac{\\sqrt3-1}{2}}\\approx0.366$（一般に $k_c^2=\\sqrt{\\det J/d_c}$）．波長は $2\\pi/\\sqrt{0.366}\\approx\\boldsymbol{10.4}$（$u$ の拡散長を単位とする）．拡散は普通は一様化に働くが，拡散の速さの違いが一様状態を不安定化し，決まった波長の縞や斑点が自発的に生まれる．"
+   }
+  ],
+  "idea": {
+   "tex": "反応だけでは安定でも，抑制因子の拡散が十分速いと $\\det(J-k^2D)$ が有限の $k$ で負になり，特定の波長のパターンが成長する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) det：1\n(2) d_c：4+2sqrt(3)\n(3) k_c^2：(sqrt(3)-1)/2 ; 波長：≈10.4"
+  },
+  "methods": [],
+  "tags": [
+   "チューリング不安定性",
+   "反応拡散方程式",
+   "パターン形成",
+   "分散関係"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 2,
+  "minutes": 20,
+  "theme": "遅れのあるロジスティック方程式と個体数の振動",
+  "topic": "遅れのあるロジスティック方程式と個体数の振動",
+  "statement": {
+   "tex": "個体の成熟に時間がかかるため，増殖の抑制が時間 $\\tau$ だけ遅れて効くとする（ハッチンソン方程式）：\n\\[ \\frac{dN}{dt}=rN(t)\\left(1-\\frac{N(t-\\tau)}{K}\\right)\\qquad(r,\\,\\tau>0). \\]\n平衡点 $N=K$ のまわりで $N=K(1+u)$ と線形化すると $\\dot u(t)=-r\\,u(t-\\tau)$ となる．$u\\propto e^{\\lambda t}$ とおくと特性方程式 $\\lambda=-re^{-\\lambda\\tau}$ を得る．\n\\begin{enumerate}\n\\item 特性方程式が負の実数解をもち，ずれが振動せずに減衰する $r\\tau$ の範囲は $r\\tau\\le c_1$ である．$c_1$ を求めよ．\n\\item 平衡点が安定性を失う（$\\lambda=i\\omega$ が解になる）$r\\tau$ の値 $c_2$ を求めよ．\n\\item (2) の分岐点で生まれる振動の周期を $\\tau$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c_1=\\dfrac1e$ (2) $c_2=\\dfrac{\\pi}{2}$ (3) $4\\tau$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\lambda=-x/\\tau$（$x>0$）とおくと $x=r\\tau\\,e^{x}$，すなわち $xe^{-x}=r\\tau$．$xe^{-x}$ の最大値は $x=1$ での $1/e$ なので，実数解があるのは $r\\tau\\le\\boldsymbol{1/e}$ のとき．遅れがこれより大きいと減衰振動になる．\n\n(2) $\\lambda=i\\omega$ を代入：$i\\omega=-r(\\cos\\omega\\tau-i\\sin\\omega\\tau)$．実部より $\\cos\\omega\\tau=0$，虚部より $\\omega=r\\sin\\omega\\tau$．最小の正の解は $\\omega\\tau=\\pi/2$，$\\omega=r$．したがって $r\\tau=\\boldsymbol{\\pi/2}$．$r\\tau>\\pi/2$ では平衡点が不安定になり，個体数は持続的に振動する（ホップ分岐）．\n\n(3) $T=2\\pi/\\omega=2\\pi\\tau/(\\pi/2)=\\boldsymbol{4\\tau}$．周期は遅れ時間の4倍で，増殖率によらない．負のフィードバックに遅れがあると振動が起こるという一般的な機構で，昆虫の個体数の周期変動や，遺伝子発現の振動（転写・翻訳の遅れ）にも現れる．"
+   }
+  ],
+  "idea": {
+   "tex": "負のフィードバックの遅れが $r\\tau=\\pi/2$ を超えるとホップ分岐で振動が生じ，周期は約 $4\\tau$．遅延微分方程式の特性方程式は超越方程式になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) c_1：1/e\n(2) c_2：pi/2\n(3) 4τ"
+  },
+  "methods": [],
+  "tags": [
+   "遅延微分方程式",
+   "ハッチンソン方程式",
+   "ホップ分岐",
+   "個体群振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 2,
+  "minutes": 20,
+  "theme": "正の自己制御による双安定とヒステリシス",
+  "topic": "正の自己制御による双安定とヒステリシス",
+  "statement": {
+   "tex": "タンパク質が自分自身の遺伝子を協同的に活性化する．無次元化した濃度 $x$ が\n\\[ \\dot x=s+\\frac{x^2}{1+x^2}-rx \\]\nに従う（$s\\ge0$ は外部からの誘導，$r>0$ は分解率）．\n\\begin{enumerate}\n\\item $s=0$ のとき，$x>0$ の固定点が存在する $r$ の上限 $r_c$ を求めよ．\n\\item $s=0$，$r=2/5$ のとき，固定点をすべて求め，安定な固定点を答えよ．\n\\item $r=2/5$ のまま $s$ を $0$ から増やすと，ある値 $s_c$ で低い状態が消え，$x$ は高い状態へ跳び移る．$s_c$ を数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $r_c=\\dfrac12$ (2) 固定点 $0,\\ \\dfrac12,\\ 2$；安定なのは $0,\\ 2$ (3) $s_c\\approx0.042$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x>0$ の固定点は $\\dfrac{x}{1+x^2}=r$ の解．左辺の最大値は $x=1$ での $1/2$ なので $\\boldsymbol{r_c=1/2}$．\n\n(2) $x=0$ と，$\\dfrac{x}{1+x^2}=\\dfrac25$ すなわち $2x^2-5x+2=0$ の解 $x=1/2,\\,2$．$\\dot x=x\\left(\\dfrac{x}{1+x^2}-r\\right)$ の符号を調べると，$0<x<1/2$ と $x>2$ で負，$1/2<x<2$ で正．よって $\\boldsymbol{0}$ と $\\boldsymbol{2}$ が安定，$1/2$ は不安定（閾値）．\n\n(3) 低い安定点と中間の不安定点が合体する（サドルノード分岐）条件は，$g(x)=\\dfrac{x^2}{1+x^2}$ として\n\\[ s+g(x)=rx,\\qquad g'(x)=\\frac{2x}{(1+x^2)^2}=r. \\]\n$g'(x)=0.4$ の小さい方の解は $x\\approx0.220$ で，$s_c=rx-g(x)\\approx0.0879-0.0461\\approx\\boldsymbol{0.042}$．\n\n$s>s_c$ で高い状態（$x\\approx2$ 以上）へ跳ぶ．その後 $s$ を $0$ に戻しても高い状態は $s=0$ でも安定に存在するので，$x$ は高いまま戻らない（ヒステリシス）．一時的な信号を「記憶」として保持する細胞の運命決定のモデルである．"
+   }
+  ],
+  "idea": {
+   "tex": "正のフィードバックと協同性で双安定になり，サドルノード分岐の対がヒステリシス（不可逆な切り替え）を生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) r_c：1/2\n(2) 固定点：{0, 1/2, 2} ; 安定：{0, 2}\n(3) s_c：≈0.0418"
+  },
+  "methods": [],
+  "tags": [
+   "正のフィードバック",
+   "双安定",
+   "サドルノード分岐",
+   "ヒステリシス"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ローゼンツワイク＝マッカーサー模型と富栄養化の逆説",
+  "topic": "ローゼンツワイク＝マッカーサー模型と富栄養化の逆説",
+  "statement": {
+   "tex": "被食者 $x$ と捕食者 $y$（無次元化）が，捕食の飽和（ホリングII型）を含む方程式\n\\[ \\dot x=x\\left(1-\\frac xK\\right)-\\frac{xy}{1+x},\\qquad \\dot y=\\frac{\\beta xy}{1+x}-\\delta y \\]\nに従う（$K$ は被食者の環境収容力，$\\beta>\\delta>0$）．\n\\begin{enumerate}\n\\item $x>0,\\ y>0$ の固定点 $(x_s,\\,y_s)$ を求めよ（$x_s<K$ とする）．\n\\item 固定点での線形化行列の $(1,1)$ 成分は $\\dfrac{x_s}{1+x_s}\\left(1-\\dfrac{1+2x_s}{K}\\right)$ となる（他の対角成分は $0$）．固定点が不安定になる $K$ の臨界値 $K_H$ を $x_s$ で表せ．\n\\item $\\beta=2$，$\\delta=1$ のとき $K_H$ を求めよ．\n\\item (3) の条件で $K=K_H$ のとき，分岐で生まれる振動の周期を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x_s=\\dfrac{\\delta}{\\beta-\\delta}$，$y_s=\\left(1-\\dfrac{x_s}{K}\\right)(1+x_s)$ (2) $K_H=1+2x_s$ (3) $K_H=3$ (4) $2\\sqrt{3}\\pi$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot y=0$ より $\\dfrac{\\beta x}{1+x}=\\delta$，$\\boldsymbol{x_s=\\dfrac{\\delta}{\\beta-\\delta}}$．$\\dot x=0$ より $\\boldsymbol{y_s=\\left(1-\\dfrac{x_s}{K}\\right)(1+x_s)}$．\n\n(2) $J_{11}=1-\\dfrac{2x}{K}-\\dfrac{y}{(1+x)^2}$ に $y_s$ を入れると与式になる．$J_{22}=\\dfrac{\\beta x_s}{1+x_s}-\\delta=0$，$J_{12}=-\\dfrac{x_s}{1+x_s}<0$，$J_{21}=\\dfrac{\\beta y_s}{(1+x_s)^2}>0$ なので $\\det J=-J_{12}J_{21}>0$．安定性は $\\mathrm{tr}\\,J=J_{11}$ の符号で決まり，$\\boldsymbol{K_H=1+2x_s}$ を超えると不安定（ホップ分岐）．\n\n(3) $x_s=1$ なので $\\boldsymbol{K_H=3}$．\n\n(4) $y_s=\\left(1-\\dfrac13\\right)\\times2=\\dfrac43$．$\\det J=\\dfrac{x_s}{1+x_s}\\cdot\\dfrac{\\beta y_s}{(1+x_s)^2}=\\dfrac12\\cdot\\dfrac{8/3}{4}=\\dfrac13$．$\\omega=\\sqrt{\\det J}=1/\\sqrt3$，周期 $\\boldsymbol{2\\pi\\sqrt3}\\approx10.9$．\n\n被食者の餌を増やして $K$ を大きくしても捕食者の平衡値 $x_s$ は変わらず，むしろ $K>K_H$ で平衡が不安定化して大振幅の振動が生じ，個体数が絶滅しかねないほど小さくなる．これを富栄養化の逆説（paradox of enrichment）という．なお，捕食の飽和がない元のロトカ＝ヴォルテラ方程式では中立的な周期軌道しかなく，構造的に不安定である．"
+   }
+  ],
+  "idea": {
+   "tex": "捕食の飽和があると，環境収容力の増加で固定点が右下がりの被食者ヌルクラインの左側（正の傾き側）へ入り，ホップ分岐でリミットサイクルが生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) x_s：δ/(β-δ) ; y_s：(1-x_s/K)(1+x_s)\n(2) K_H：1+2x_s\n(3) K_H：3\n(4) 周期：2sqrt(3) pi"
+  },
+  "methods": [],
+  "tags": [
+   "ローゼンツワイク＝マッカーサー",
+   "捕食者被食者",
+   "ホップ分岐",
+   "富栄養化の逆説"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 3,
+  "minutes": 25,
+  "theme": "リプレッシレーターの振動条件",
+  "topic": "リプレッシレーターの振動条件",
+  "statement": {
+   "tex": "3つの遺伝子が環状に抑制し合う合成回路（リプレッシレーター）を，タンパク質濃度だけのモデルで考える：\n\\[ \\dot x_i=\\frac{\\alpha}{1+x_{i-1}^n}-x_i\\qquad(i=1,2,3,\\ x_0\\equiv x_3). \\]\n対称な固定点 $x_i=x^*$（$x^*(1+x^{*n})=\\alpha$）のまわりで線形化し，$f(x)=\\alpha/(1+x^n)$，$c=-f'(x^*)>0$ とする．\n\\begin{enumerate}\n\\item 線形化行列の固有値は $\\lambda=-1-c\\,\\zeta$（$\\zeta^3=1$）である．複素固有値の実部を $c$ で表せ．\n\\item 固定点が不安定になって振動が始まる条件は $c>c_*$ である．$c_*$ を求めよ．また $c=\\dfrac{nx^{*n}}{1+x^{*n}}$ を使い，振動が可能になるための $n$ の条件を $n>n_*$ の形で答えよ．\n\\item $n=3$ のとき，振動が始まる $\\alpha$ の臨界値を求めよ．\n\\item 分岐点で生まれる振動の周期を求めよ（時間の単位はタンパク質の寿命）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-1+\\dfrac c2$ (2) $c_*=2$，$n_*=2$ (3) $\\alpha_c=3\\cdot2^{1/3}\\approx3.78$ (4) $\\dfrac{2\\pi}{\\sqrt3}\\approx3.63$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 線形化行列は $-I+f'(x^*)P$（$P$ は巡回置換行列）で，$P$ の固有値は $1$ の3乗根 $\\zeta=1,\\,e^{\\pm2\\pi i/3}$．$\\lambda=-1-c\\zeta$ で，$\\zeta=e^{\\pm2\\pi i/3}=-\\dfrac12\\pm\\dfrac{\\sqrt3}{2}i$ に対し\n\\[ \\lambda=-1+\\frac c2\\mp\\frac{\\sqrt3}{2}c\\,i. \\]\n実部は $\\boldsymbol{-1+c/2}$．（$\\zeta=1$ の固有値 $-1-c$ は常に負．）\n\n(2) 実部が正になるのは $\\boldsymbol{c_*=2}$ を超えるとき．$c=\\dfrac{nx^{*n}}{1+x^{*n}}<n$ なので，$n>2$ が必要：$\\boldsymbol{n_*=2}$．抑制が十分に協同的でないと3段の環では振動しない．\n\n(3) $n=3$ で $\\dfrac{3x^3}{1+x^3}=2$ より $x^{*3}=2$，$x^*=2^{1/3}$．$\\alpha_c=x^*(1+x^{*3})=\\boldsymbol{3\\cdot2^{1/3}}\\approx3.78$．\n\n(4) 分岐点で虚部は $\\dfrac{\\sqrt3}{2}\\times2=\\sqrt3$．周期 $\\boldsymbol{2\\pi/\\sqrt3}\\approx3.63$．奇数個の抑制の環は全体として遅れのある負のフィードバックになり，振動を生む．mRNA の段階を含めると（段数が増えると）振動に必要な協同性は下がる．"
+   }
+  ],
+  "idea": {
+   "tex": "巡回対称な系の線形化は1の累乗根で対角化できる．奇数段の抑制環は $\\zeta=e^{\\pm2\\pi i/3}$ のモードがホップ不安定になり，3段では $|f'|>2$（$n>2$）が必要．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -1+c/2\n(2) c_*：2 ; n_*：2\n(3) α_c：3*2^(1/3)\n(4) 周期：2pi/sqrt(3)"
+  },
+  "methods": [],
+  "tags": [
+   "リプレッシレーター",
+   "合成遺伝子回路",
+   "ホップ分岐",
+   "巡回行列",
+   "生体リズム"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 3,
+  "minutes": 25,
+  "theme": "概日リズムの光による引き込み：位相応答曲線の写像",
+  "topic": "概日リズムの光による引き込み：位相応答曲線の写像",
+  "statement": {
+   "tex": "暗闇の中では周期 $T_0=25\\,\\mathrm h$ で自由継続する概日時計に，周期 $T=24\\,\\mathrm h$ で毎日1回，短い光パルスを与える．時計の位相を「時間」の単位で $\\varphi\\ (0\\le\\varphi<T_0)$ と書く．位相 $\\varphi$ で光を受けると，位相が $\\Delta(\\varphi)=-A\\sin\\dfrac{2\\pi\\varphi}{T_0}$ だけずれる（$\\Delta>0$ は前進，$A>0$）．次のパルスまでに位相は $T$ 進むので，$n$ 回目のパルス直前の位相 $\\varphi_n$ は\n\\[ \\varphi_{n+1}=\\varphi_n+\\Delta(\\varphi_n)+T\\pmod{T_0} \\]\nに従う．位相が毎回同じになる（$\\varphi_{n+1}=\\varphi_n$）ことを引き込みという．\n\\begin{enumerate}\n\\item 引き込みが可能な $A$ の最小値を求めよ．\n\\item $A=2\\,\\mathrm h$ のとき，引き込みの固定点は2つある．固定点 $\\varphi^*$ の安定条件 $|1+\\Delta'(\\varphi^*)|<1$ を使って，安定な固定点の位相を求めよ．\n\\item $A$ が大きすぎると，安定だった固定点で $1+\\Delta'(\\varphi^*)<-1$ となり引き込みが崩れる（周期倍分岐）．引き込みが安定に保たれる $A$ の上限を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1\\,\\mathrm{h}$ (2) $\\varphi^*\\approx22.9\\,\\mathrm{h}$ (3) $\\approx8.0\\,\\mathrm{h}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 固定点の条件は $\\Delta(\\varphi^*)+T=T_0$（法 $T_0$），すなわち $\\Delta(\\varphi^*)=T_0-T=1\\,\\mathrm h$．毎日1時間ずつ前進させて周期の差を埋める必要がある．$\\Delta$ の最大値は $A$ なので $A\\ge\\boldsymbol{1\\,\\mathrm h}$．\n\n(2) $\\sin\\dfrac{2\\pi\\varphi^*}{T_0}=-\\dfrac12$ より $\\dfrac{2\\pi\\varphi^*}{T_0}=\\dfrac{7\\pi}{6}$ または $\\dfrac{11\\pi}{6}$．$\\Delta'(\\varphi)=-\\dfrac{2\\pi A}{T_0}\\cos\\dfrac{2\\pi\\varphi}{T_0}$．$\\dfrac{7\\pi}{6}$ では $\\cos<0$ で $\\Delta'>0$，$1+\\Delta'>1$ なので不安定．$\\dfrac{11\\pi}{6}$ では $\\Delta'=-\\dfrac{4\\pi}{25}\\cdot\\dfrac{\\sqrt3}{2}\\approx-0.435$，$1+\\Delta'\\approx0.565$ で安定．よって\n\\[ \\boldsymbol{\\varphi^*=\\frac{11}{12}T_0\\approx22.9\\,\\mathrm h}. \\]\n主観的な「夜明け前」に光を受けて位相が前進する状態に落ち着く．\n\n(3) 安定な固定点では $\\cos\\dfrac{2\\pi\\varphi^*}{T_0}=+\\sqrt{1-(1/A)^2}$（$A$ は時間単位）なので $\\Delta'(\\varphi^*)=-\\dfrac{2\\pi}{T_0}\\sqrt{A^2-1}$．$1+\\Delta'>-1$ より $\\sqrt{A^2-1}<\\dfrac{T_0}{\\pi}$，\n\\[ A<\\sqrt{1+\\left(\\frac{T_0}{\\pi}\\right)^2}\\approx\\boldsymbol{8.0\\,\\mathrm h}. \\]\n強すぎる刺激では位相が行き過ぎて交互にずれる（振動的な不安定化）．"
+   }
+  ],
+  "idea": {
+   "tex": "周期的な刺激は位相応答曲線を使った1次元写像に帰着する．引き込みには周期差を補う大きさの位相応答が必要で，安定性は写像の傾き $1+\\Delta'$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) A [h]：1\n(2) φ* [h]：≈22.9\n(3) A [h]：≈8.0"
+  },
+  "methods": [],
+  "tags": [
+   "概日リズム",
+   "位相応答曲線",
+   "引き込み",
+   "円周写像",
+   "同期"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 4,
+  "minutes": 35,
+  "theme": "シュナーケンベルグ模型のチューリングパターン",
+  "topic": "シュナーケンベルグ模型のチューリングパターン",
+  "statement": {
+   "tex": "反応拡散系（シュナーケンベルグ模型）\n\\[ \\partial_tu=a-u+u^2v+\\nabla^2u,\\qquad \\partial_tv=b-u^2v+d\\,\\nabla^2v\\qquad(a,\\,b>0,\\ d>0) \\]\nを考える．$u$ は自己触媒的に増える活性化因子，$v$ は $u$ に消費される基質である．\n\\begin{enumerate}\n\\item 一様な定常状態 $(u^*,\\,v^*)$ を求めよ．\n\\item 定常状態での反応部分の線形化行列 $J$ の行列式を $a,\\,b$ で表せ．\n\\item $a=0.1$，$b=0.9$ のとき，一様な摂動に対しては安定であることを確かめ，チューリング不安定が起こる拡散係数比の臨界値 $d_c$ を求めよ．（チューリング不安定の条件は $\\mathrm{tr}\\,J<0$，$\\det J>0$ のもとで $d\\,J_{11}+J_{22}>2\\sqrt{d\\det J}$．）\n\\item $d=d_c$ で最初に成長するモードの波長 $2\\pi/k_c$ を求めよ（$k_c^2=\\sqrt{\\det J/d_c}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left(a+b,\\ \\dfrac{b}{(a+b)^2}\\right)$ (2) $(a+b)^2$ (3) $d_c=\\dfrac{35+15\\sqrt5}{8}\\approx8.57$ (4) $\\approx10.7$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 2式を足すと $a+b-u=0$，$u^*=a+b$．第2式から $v^*=\\dfrac{b}{u^{*2}}$．よって $\\boldsymbol{\\left(a+b,\\ \\dfrac{b}{(a+b)^2}\\right)}$．\n\n(2) $J=\\begin{pmatrix}-1+2u^*v^*&u^{*2}\\\\-2u^*v^*&-u^{*2}\\end{pmatrix}=\\begin{pmatrix}\\frac{b-a}{a+b}&(a+b)^2\\\\-\\frac{2b}{a+b}&-(a+b)^2\\end{pmatrix}$．\n\\[ \\det J=-(b-a)(a+b)+2b(a+b)=\\boldsymbol{(a+b)^2}>0. \\]\n\n(3) $a=0.1,\\,b=0.9$ で $J=\\begin{pmatrix}0.8&1\\\\-1.8&-1\\end{pmatrix}$，$\\mathrm{tr}\\,J=-0.2<0$，$\\det J=1$ なので一様摂動に対して安定．条件 $0.8d-1>2\\sqrt d$ を $s=\\sqrt d$ で書くと $0.8s^2-2s-1>0$，$s>\\dfrac{2+\\sqrt{7.2}}{1.6}=\\dfrac{5+3\\sqrt5}{4}$．\n\\[ \\boldsymbol{d_c=\\left(\\frac{5+3\\sqrt5}{4}\\right)^2=\\frac{35+15\\sqrt5}{8}}\\approx8.57. \\]\n導出：$\\det(J-k^2D)=dk^4-(dJ_{11}+J_{22})k^2+\\det J$ が $k^2$ の2次式で，その最小値が負になる条件が上の不等式である．\n\n(4) $k_c^2=\\sqrt{1/d_c}=\\dfrac{4}{5+3\\sqrt5}=\\dfrac{3\\sqrt5-5}{5}\\approx0.342$．波長 $2\\pi/k_c\\approx\\boldsymbol{10.7}$．\n\n$J_{11}>0$（$u$ の自己触媒），$J_{22}<0$ という符号の組み合わせが活性化因子・抑制（基質枯渇）因子系をつくり，基質の拡散が速いと斑点状のパターンが生まれる．$d$ を $d_c$ より大きくすると不安定な波数帯が広がり，非線形項によって振幅が飽和した定常パターンになる．"
+   }
+  ],
+  "idea": {
+   "tex": "一様状態の線形化行列の符号構造と拡散係数比から，$\\det(J-k^2D)<0$ となる波数帯の出現条件と臨界波長が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (a+b, b/(a+b)^2)\n(2) (a+b)^2\n(3) d_c：(35+15sqrt(5))/8\n(4) 波長：≈10.7"
+  },
+  "methods": [],
+  "tags": [
+   "チューリングパターン",
+   "シュナーケンベルグ模型",
+   "反応拡散方程式",
+   "線形安定性解析"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 4,
+  "minutes": 35,
+  "theme": "スチュアート＝ランダウ振動子の位相縮約と同期",
+  "topic": "スチュアート＝ランダウ振動子の位相縮約と同期",
+  "statement": {
+   "tex": "ホップ分岐直後の振動を記述するスチュアート＝ランダウ方程式\n\\[ \\dot z=(1+i\\omega)z-(1+i\\beta)|z|^2z\\qquad(z=x+iy=re^{i\\theta},\\ \\omega,\\beta\\text{ は実数}) \\]\nを考える．極座標では $\\dot r=r-r^3$，$\\dot\\theta=\\omega-\\beta r^2$ となる．\n\\begin{enumerate}\n\\item リミットサイクル上の角振動数 $\\Omega$ を求めよ．\n\\item リミットサイクルの近くの任意の点に，一様に $\\dot\\phi=\\Omega$ で進む位相 $\\phi(r,\\theta)$ を割り当てたい．$\\phi=\\theta-c\\ln r$ の形でこれが成り立つように $c$ を定めよ．\n\\item 位相感受関数 $Z_x(\\theta)=\\left.\\dfrac{\\partial\\phi}{\\partial x}\\right|_{r=1}$（$x$ 方向の微小な摂動に対する位相の応答）を求めよ．\n\\item 2つの同じ振動子を弱く結合する：$\\dot z_j=(\\cdots)+K(z_k-z_j)$（$\\{j,k\\}=\\{1,2\\}$，$0<K\\ll1$）．位相縮約により $\\dot\\phi_1=\\Omega+K\\,H(\\phi_2-\\phi_1)$ と書ける．$H(\\psi)$ を求めよ．（$y$ 方向の位相感受関数は $Z_y=\\cos\\theta-\\beta\\sin\\theta$．）また，位相差 $\\psi=\\phi_2-\\phi_1$ の同相状態 $\\psi=0$ への緩和率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Omega=\\omega-\\beta$ (2) $c=\\beta$ (3) $Z_x=-\\sin\\theta-\\beta\\cos\\theta$ (4) $H(\\psi)=\\sin\\psi-\\beta\\cos\\psi+\\beta$，緩和率 $2K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) リミットサイクルは $r=1$（$\\dot r=0$ かつ安定）で，$\\Omega=\\boldsymbol{\\omega-\\beta}$．$\\beta$ は振幅と振動数の結合（非等時性）を表す．\n\n(2) $\\dot\\phi=\\dot\\theta-c\\dot r/r=\\omega-\\beta r^2-c(1-r^2)$．これが $r$ によらず $\\Omega$ になるには $\\boldsymbol{c=\\beta}$．等位相線は $\\theta=\\phi+\\beta\\ln r$ のらせんになる．\n\n(3) $\\theta=\\arctan(y/x)$，$\\ln r=\\frac12\\ln(x^2+y^2)$ より，$r=1$ で $\\partial_x\\theta=-\\sin\\theta$，$\\partial_x\\ln r=\\cos\\theta$．\n\\[ \\boldsymbol{Z_x=-\\sin\\theta-\\beta\\cos\\theta}. \\]\n\n(4) 振動子1への摂動は $K(\\cos\\theta_2-\\cos\\theta_1)$（$x$ 方向），$K(\\sin\\theta_2-\\sin\\theta_1)$（$y$ 方向）．位相の変化率は\n\\[ K\\left[(-\\sin\\theta_1-\\beta\\cos\\theta_1)(\\cos\\theta_2-\\cos\\theta_1)+(\\cos\\theta_1-\\beta\\sin\\theta_1)(\\sin\\theta_2-\\sin\\theta_1)\\right]=K\\left[\\sin\\psi-\\beta\\cos\\psi+\\beta\\right]. \\]\n（1周期の平均をとるまでもなく，$\\psi=\\theta_2-\\theta_1$ だけの関数になる．）よって $\\boldsymbol{H(\\psi)=\\sin\\psi-\\beta\\cos\\psi+\\beta}$．\n\n位相差は $\\dot\\psi=K[H(-\\psi)-H(\\psi)]=-2K\\sin\\psi$．$\\psi=0$ の近くで $\\dot\\psi\\simeq-2K\\psi$，緩和率は $\\boldsymbol{2K}$ で，同相同期が安定．$H$ の偶関数部分 $\\beta(1-\\cos\\psi)$ は同期状態の振動数をずらす効果（逆相状態 $\\psi=\\pi$ では $\\Omega+2K\\beta$）をもつ．多数の振動子に拡張したものが蔵本モデルである．"
+   }
+  ],
+  "idea": {
+   "tex": "リミットサイクルの近傍に等位相線を定義すれば，弱い摂動の効果は位相感受関数との内積だけで書ける（位相縮約）．結合関数 $H$ の奇関数部分が同期の安定性を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Ω：ω-β\n(2) c：β\n(3) Z_x：-sin(θ)-β cos(θ)\n(4) H：sin(ψ)-β cos(ψ)+β ; 緩和率：2K"
+  },
+  "methods": [],
+  "tags": [
+   "位相縮約",
+   "スチュアート＝ランダウ方程式",
+   "位相感受関数",
+   "同期",
+   "リミットサイクル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-06-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-110",
+  "level": 4,
+  "minutes": 40,
+  "theme": "反応拡散進行波：押される前線と引っ張られる前線",
+  "topic": "反応拡散進行波：押される前線と引っ張られる前線",
+  "statement": {
+   "tex": "個体数密度 $u(x,t)$（$0\\le u\\le1$）が\n\\[ \\partial_tu=D\\,\\partial_x^2u+ru(1-u)(u+\\alpha)\\qquad(D,\\,r>0) \\]\nに従う．$\\alpha>0$ では低密度でも増殖する（単安定）が，$\\alpha$ が小さいと低密度での増殖が弱い（弱いアリー効果）．$u=1$ の領域が $u=0$ の領域へ速さ $c$ で侵入する進行波 $u=U(z)$，$z=x-ct$ を考える．\n\\begin{enumerate}\n\\item 前線の先端（$u\\ll1$）で方程式を線形化して得られる速さの下限（線形拡がり速度）$c_{\\mathrm{lin}}$ を求めよ．（$U\\propto e^{-qz}$ とおき，$c(q)$ の最小値をとる．）\n\\item 厳密解 $U(z)=\\dfrac{1}{1+e^{\\kappa z}}$ を仮定し，$\\kappa>0$ と $c$ を求めよ．（$U'=-\\kappa U(1-U)$ を使うとよい．）\n\\item 局在した初期分布から出発すると，(2) の厳密解が選ばれる（押される前線）のは，その先端の減衰 $e^{-\\kappa z}$ が線形速度を与える減衰率 $q^*=\\sqrt{r\\alpha/D}$ より速いとき，すなわち $\\kappa>q^*$ のときである．そうでなければ前線は速さ $c_{\\mathrm{lin}}$ で進む（引っ張られる前線）．押される前線になる $\\alpha$ の範囲を $\\alpha<\\alpha_c$ の形で答えよ．\n\\item $\\alpha=-a$（$0<a<1/2$）とすると強いアリー効果（双安定）になる．このとき $u=1$ が侵入する前線の速さは (2) の式で与えられる．$D=1$，$r=2$，$a=0.3$ のときの速さを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c_{\\mathrm{lin}}=2\\sqrt{Dr\\alpha}$ (2) $\\kappa=\\sqrt{\\dfrac{r}{2D}}$，$c=\\sqrt{\\dfrac{Dr}{2}}(1+2\\alpha)$ (3) $\\alpha_c=\\dfrac12$ (4) $0.4$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 線形化すると $\\partial_tu=D\\partial_x^2u+r\\alpha u$．$U\\propto e^{-qz}$ を代入して $cq=Dq^2+r\\alpha$，$c(q)=Dq+\\dfrac{r\\alpha}{q}$．最小値は $q^*=\\sqrt{r\\alpha/D}$ で $\\boldsymbol{c_{\\mathrm{lin}}=2\\sqrt{Dr\\alpha}}$（フィッシャー＝KPP 型の速度）．\n\n(2) 進行波は $DU''+cU'+rU(1-U)(U+\\alpha)=0$ を満たす．$U'=-\\kappa U(1-U)$，$U''=\\kappa^2U(1-U)(1-2U)$ を代入して $U(1-U)$ で割ると\n\\[ D\\kappa^2(1-2U)-c\\kappa+r(U+\\alpha)=0. \\]\n$U$ の係数：$-2D\\kappa^2+r=0$ より $\\boldsymbol{\\kappa=\\sqrt{r/(2D)}}$．定数項：$D\\kappa^2-c\\kappa+r\\alpha=0$ より\n\\[ \\boldsymbol{c=\\frac{r/2+r\\alpha}{\\kappa}=\\sqrt{\\frac{Dr}{2}}(1+2\\alpha)}. \\]\n\n(3) $\\kappa>q^*$ $\\Leftrightarrow$ $\\dfrac{r}{2D}>\\dfrac{r\\alpha}{D}$ $\\Leftrightarrow$ $\\alpha<\\boldsymbol{1/2}$．このとき前線の速さは $\\sqrt{Dr/2}(1+2\\alpha)\\ \\ (\\ge c_{\\mathrm{lin}})$ で，先端の線形成長ではなく前線の内部（高密度域）の非線形増殖が侵入を押し進める．$\\alpha>1/2$ では先端の線形成長が速さを決め，$c=c_{\\mathrm{lin}}$ になる．$\\alpha=1/2$ で両者の速さはともに $\\sqrt{2Dr}$ に一致し，連続に移り変わる．\n\n(4) $c=\\sqrt{\\dfrac{Dr}{2}}(1-2a)=1\\times0.4=\\boldsymbol{0.4}$．双安定系の前線はつねに押される前線で，$a>1/2$ では $c<0$ となり $u=1$ の領域が後退する（絶滅の波）．引っ張られる前線は先端の少数個体のゆらぎに敏感，押される前線は鈍感であり，遺伝的多様性の保たれ方などの違いとして現れる．"
+   }
+  ],
+  "idea": {
+   "tex": "前線の速さは，先端の線形成長で決まる（引っ張られる前線）か，非線形の内部が押す（押される前線）かのどちらか．厳密な tanh 型解の減衰率と線形速度の減衰率を比べて判定する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) c_lin：2sqrt(D r α)\n(2) κ：sqrt(r/(2D)) ; c：sqrt(D r/2)(1+2α)\n(3) α_c：1/2\n(4) c：0.4"
+  },
+  "methods": [],
+  "tags": [
+   "反応拡散方程式",
+   "進行波",
+   "押される前線",
+   "引っ張られる前線",
+   "アリー効果"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

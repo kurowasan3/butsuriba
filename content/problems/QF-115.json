@@ -1,0 +1,745 @@
+[
+ {
+  "id": "QF-04-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ガウス核の合成：時間刻みをつなぐ積分",
+  "topic": "ガウス核の合成：時間刻みをつなぐ積分",
+  "statement": {
+   "tex": "経路積分では，短い時間ごとの「核」を積分でつないでいく．以下，正の定数 $c$ に対して $\\displaystyle\\int_{-\\infty}^{\\infty}e^{-cy^2}dy=\\sqrt{\\frac{\\pi}{c}}$ を用いてよい．\n\\begin{enumerate}\n\\item 正の定数 $\\alpha,\\beta$ に対して\n\\[\\int_{-\\infty}^{\\infty}e^{-\\alpha(x-y)^2-\\beta(y-z)^2}\\,dy=C\\,e^{-\\gamma(x-z)^2}\\]\nとなる．$C$ と $\\gamma$ を $\\alpha,\\beta$ で表せ．\n\\item 時間 $\\tau$ の核を $K_\\tau(x,y)=\\dfrac{1}{\\sqrt{4\\pi D\\tau}}e^{-(x-y)^2/(4D\\tau)}$（$D$ は正の定数）とする．$\\displaystyle\\int_{-\\infty}^{\\infty}K_\\tau(x,y)K_\\tau(y,z)\\,dy=A\\,e^{-B(x-z)^2}$ の $A$，$B$ を $D,\\tau$ で表せ．\n\\item 同じ核を $N$ 個つないだ（中間点について $N-1$ 回積分した）結果を $A_Ne^{-B_N(x-z)^2}$ と書く．$B_N$ を $N,D,\\tau$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $C=\\sqrt{\\frac{\\pi}{\\alpha+\\beta}}$，$\\gamma=\\frac{\\alpha\\beta}{\\alpha+\\beta}$\n(2) $A=\\frac{1}{\\sqrt{8\\pi D\\tau}}$，$B=\\frac{1}{8D\\tau}$\n(3) $B_N=\\frac{1}{4ND\\tau}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 指数の $y$ についての部分を平方完成する．\n\\[-\\alpha(x-y)^2-\\beta(y-z)^2=-(\\alpha+\\beta)\\left(y-\\frac{\\alpha x+\\beta z}{\\alpha+\\beta}\\right)^2+\\frac{(\\alpha x+\\beta z)^2}{\\alpha+\\beta}-\\alpha x^2-\\beta z^2.\\]\n最後の2項をまとめると $-\\frac{\\alpha\\beta}{\\alpha+\\beta}(x-z)^2$ になる．$y$ の積分はガウス積分で $\\sqrt{\\pi/(\\alpha+\\beta)}$ だから\n\\[\\boldsymbol{C=\\sqrt{\\frac{\\pi}{\\alpha+\\beta}}},\\qquad \\boldsymbol{\\gamma=\\frac{\\alpha\\beta}{\\alpha+\\beta}}.\\]\n\n(2) $\\alpha=\\beta=\\frac{1}{4D\\tau}$ とおく．$\\gamma=\\frac{\\alpha}{2}=\\boldsymbol{\\frac{1}{8D\\tau}}=B$．前因子は\n\\[A=\\frac{1}{4\\pi D\\tau}\\sqrt{\\frac{\\pi}{2\\alpha}}=\\frac{\\sqrt{2\\pi D\\tau}}{4\\pi D\\tau}=\\boldsymbol{\\frac{1}{\\sqrt{8\\pi D\\tau}}}.\\]\nこれは $K_{2\\tau}(x,z)$ そのものである．\n\n(3) 同様に $K_\\tau$ を $N$ 個つなぐと $K_{N\\tau}$ になる（帰納法：$K_{n\\tau}$ と $K_\\tau$ の合成は (1) で $\\alpha=\\frac{1}{4nD\\tau}$，$\\beta=\\frac{1}{4D\\tau}$ として $\\gamma=\\frac{1}{4(n+1)D\\tau}$）．よって $\\boldsymbol{B_N=\\frac{1}{4ND\\tau}}$．\n\n時間を細かく刻んで中間点をすべて積分することが経路積分の定義そのものであり，ここでは「短い時間の核を合成しても同じ形の核に戻る」ことが確かめられた．$D=\\hbar/(2m)$ とおいたこの核は，虚時間での自由粒子の伝播関数（拡散の核）である．次は実時間に戻して，ガウス積分が振動積分になる場合を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス積分を平方完成で実行すると，短い時間の核の合成がまた同じ形の核になる．これが時間を刻む経路積分の基本操作である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) C：sqrt(pi/(α+β)) ; γ：α β/(α+β)\n(2) A：1/sqrt(8 pi D τ) ; B：1/(8 D τ)\n(3) 1/(4 N D τ)"
+  },
+  "methods": [],
+  "tags": [
+   "経路積分",
+   "ガウス積分",
+   "時間スライス",
+   "拡散"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 0,
+  "minutes": 10,
+  "theme": "停留作用の経路と位相のずれの大きさ",
+  "topic": "停留作用の経路と位相のずれの大きさ",
+  "statement": {
+   "tex": "質量 $m$ の自由粒子が時刻 $0$ に位置 $x_a$，時刻 $2\\tau$ に位置 $x_b$ にあるとする．ファインマンの経路積分では，すべての経路が $e^{iS/\\hbar}$ の重み（$S$ は経路の作用，$\\hbar$ はプランク定数を $2\\pi$ で割ったもの）で寄与する．ここでは中間の時刻 $\\tau$ での位置を $x$ とし，2本の線分をつないだ（各区間で等速の）経路だけを考える．このとき作用（運動エネルギー×時間の和）は\n\\[S(x)=\\frac{m}{2\\tau}\\left[(x-x_a)^2+(x_b-x)^2\\right]\\]\nである．\n\\begin{enumerate}\n\\item $S(x)$ を最小にする $x$ を求めよ．\n\\item $S$ の最小値 $S_0$ を求めよ．\n\\item $x$ を (1) の値から $\\delta$ だけずらすと $S=S_0+\\frac{m}{\\tau}\\delta^2$ となる．位相 $S/\\hbar$ のずれがちょうど $\\pi$ になる $\\delta$ を $m,\\tau,\\hbar$ で表せ．また，電子（$m=9.1\\times10^{-31}\\,\\mathrm{kg}$）で $\\tau=1.0\\times10^{-15}\\,\\mathrm{s}$，$\\hbar=1.05\\times10^{-34}\\,\\mathrm{J\\,s}$ のときの値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=\\frac{x_a+x_b}{2}$\n(2) $S_0=\\frac{m(x_b-x_a)^2}{4\\tau}$\n(3) $\\delta=\\sqrt{\\frac{\\pi\\hbar\\tau}{m}}$，$\\delta\\approx6.0\\times10^{-10}\\,\\mathrm{m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\frac{dS}{dx}=\\frac{m}{\\tau}\\left[(x-x_a)-(x_b-x)\\right]=0$ より $\\boldsymbol{x=\\frac{x_a+x_b}{2}}$．等速直線運動（古典的な経路）である．\n\n(2) 代入すると各区間で $(x_b-x_a)^2/4$ となり，\n\\[S_0=\\frac{m}{2\\tau}\\cdot2\\cdot\\frac{(x_b-x_a)^2}{4}=\\boldsymbol{\\frac{m(x_b-x_a)^2}{4\\tau}}.\\]\n全時間 $T=2\\tau$ を使えば $S_0=\\frac{m(x_b-x_a)^2}{2T}$ で，自由粒子の古典作用に一致する．\n\n(3) $\\frac{m}{\\tau}\\delta^2/\\hbar=\\pi$ より $\\boldsymbol{\\delta=\\sqrt{\\frac{\\pi\\hbar\\tau}{m}}}$．数値は\n\\[\\delta=\\sqrt{\\frac{3.14\\times1.05\\times10^{-34}\\times1.0\\times10^{-15}}{9.1\\times10^{-31}}}\\approx\\boldsymbol{6.0\\times10^{-10}\\,\\mathrm{m}}.\\]\n原子の大きさ程度の範囲の経路が同じくらいの位相で寄与し，量子的なゆらぎが重要になる．一方，$m=1\\,\\mathrm{g}$，$\\tau=1\\,\\mathrm{s}$ なら $\\delta\\sim6\\times10^{-16}\\,\\mathrm{m}$ しかなく，古典経路からわずかに外れた経路の寄与は位相が激しく変わって打ち消し合う．こうして $\\hbar\\to0$ で停留作用の原理（古典力学）が現れる．次は，中間点を無数に増やしたときの伝播関数の計算を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "経路積分では作用が停留する経路のまわり，位相のずれが $\\pi$ 程度までの範囲の経路が強め合う．その幅 $\\sqrt{\\hbar\\tau/m}$ が量子ゆらぎの大きさである．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (x_a+x_b)/2\n(2) m (x_b-x_a)^2/(4τ)\n(3) δ：sqrt(pi hbar τ/m) ; δ [m]：≈6.0e-10"
+  },
+  "methods": [],
+  "tags": [
+   "経路積分",
+   "停留位相",
+   "古典極限"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ウィック回転と虚時間の減衰から基底エネルギーを読む",
+  "topic": "ウィック回転と虚時間の減衰から基底エネルギーを読む",
+  "statement": {
+   "tex": "量子力学で，ハミルトニアン $H$ の固有値を $E_0<E_1<E_2<\\cdots$，固有関数を $\\psi_n(x)$ とすると，経路積分で計算される量\n\\[G(t)=\\langle x|e^{-iHt/\\hbar}|x\\rangle=\\sum_n|\\psi_n(x)|^2e^{-iE_nt/\\hbar}\\]\nの各項は振動するだけで，$t$ が大きくなっても減衰しない．そこで時間を虚数 $t=-i\\tau$（$\\tau$ は正の実数）に置き換える（ウィック回転）．\n\\begin{enumerate}\n\\item $t=-i\\tau$ のとき，因子 $e^{-iE_nt/\\hbar}$ を $E_n,\\tau,\\hbar$ で表せ．\n\\item $\\tau$ が十分大きいと，$G(-i\\tau)$ は基底状態 $n=0$ の項だけで近似できる．$\\tau_1<\\tau_2$ での値の比 $r=G(-i\\tau_1)/G(-i\\tau_2)$ から $E_0$ を求める式を $r,\\tau_1,\\tau_2,\\hbar$ で書け．\n\\item $\\tau_2-\\tau_1=2.0\\times10^{-15}\\,\\mathrm{s}$，$r=20.1$ のとき，$E_0$ を $\\mathrm{eV}$ 単位で求めよ．$\\hbar=1.05\\times10^{-34}\\,\\mathrm{J\\,s}$，$1\\,\\mathrm{eV}=1.60\\times10^{-19}\\,\\mathrm{J}$ とする．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $e^{-E_n\\tau/\\hbar}$\n(2) $E_0=\\frac{\\hbar\\ln r}{\\tau_2-\\tau_1}$\n(3) $E_0\\approx0.98\\,\\mathrm{eV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $-iE_n(-i\\tau)/\\hbar=-E_n\\tau/\\hbar$ より $\\boldsymbol{e^{-E_n\\tau/\\hbar}}$．振動が指数関数的な減衰に変わり，エネルギーの高い状態ほど速く減衰する．\n\n(2) $G(-i\\tau)\\approx|\\psi_0(x)|^2e^{-E_0\\tau/\\hbar}$ だから $r=e^{E_0(\\tau_2-\\tau_1)/\\hbar}$．よって\n\\[\\boldsymbol{E_0=\\frac{\\hbar\\ln r}{\\tau_2-\\tau_1}}.\\]\n\n(3) $\\ln20.1=3.00$ より\n\\[E_0=\\frac{1.05\\times10^{-34}\\times3.00}{2.0\\times10^{-15}}\\,\\mathrm{J}=1.58\\times10^{-19}\\,\\mathrm{J}\\approx\\boldsymbol{0.98\\,\\mathrm{eV}}.\\]\n\n虚時間の経路積分では重み $e^{iS/\\hbar}$ が実数の $e^{-S_E/\\hbar}$（$S_E$ はユークリッド作用）になり，数値計算（格子QCDなど）ができる．大きな虚時間での減衰率から基底状態や粒子の質量を読み取るのはその標準的な方法である．次は，虚時間の経路積分と統計力学の分配関数の関係を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "$t=-i\\tau$ のウィック回転で振動因子が減衰因子 $e^{-E_n\\tau/\\hbar}$ になり，長い虚時間では最低エネルギーの状態だけが残る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) e^(-E_n τ/hbar)\n(2) hbar ln(r)/(τ_2-τ_1)\n(3) E_0 [eV]：≈0.98"
+  },
+  "methods": [],
+  "tags": [
+   "ウィック回転",
+   "虚時間",
+   "ユークリッド化",
+   "基底状態"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 1,
+  "minutes": 15,
+  "theme": "調和振動子のユークリッド2点関数とエネルギー差",
+  "topic": "調和振動子のユークリッド2点関数とエネルギー差",
+  "statement": {
+   "tex": "質量 $m$，角振動数 $\\omega$ の調和振動子のユークリッド作用を\n\\[S_E=\\int d\\tau\\left[\\frac m2\\left(\\frac{dx}{d\\tau}\\right)^2+\\frac{m\\omega^2}{2}x^2\\right]\\]\nとする．重み $e^{-S_E/\\hbar}$ の経路積分で定義される2点関数 $G(\\tau)=\\langle x(\\tau)x(0)\\rangle$ は\n\\[m\\left(-\\frac{d^2}{d\\tau^2}+\\omega^2\\right)G(\\tau)=\\hbar\\,\\delta(\\tau),\\qquad G(\\tau)\\to0\\ (|\\tau|\\to\\infty)\\]\nを満たす．\n\\begin{enumerate}\n\\item $G(\\tau)=\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{dk}{2\\pi}\\tilde G(k)e^{ik\\tau}$ とおくとき，$\\tilde G(k)$ を求めよ．\n\\item $G(\\tau)$ を求めよ（$\\tau$ の正負どちらでも成り立つ形で）．\n\\item 演算子形式では $\\tau>0$ で $G(\\tau)=\\sum_n|\\langle n|x|0\\rangle|^2e^{-(E_n-E_0)\\tau/\\hbar}$ である．(2) と比べて，$E_1-E_0$ と $|\\langle1|x|0\\rangle|^2$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tilde G(k)=\\frac{\\hbar}{m(k^2+\\omega^2)}$\n(2) $G(\\tau)=\\frac{\\hbar}{2m\\omega}e^{-\\omega|\\tau|}$\n(3) $E_1-E_0=\\hbar\\omega$，$|\\langle1|x|0\\rangle|^2=\\frac{\\hbar}{2m\\omega}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\delta(\\tau)=\\int\\frac{dk}{2\\pi}e^{ik\\tau}$ で，$-d^2/d\\tau^2\\to k^2$ だから $m(k^2+\\omega^2)\\tilde G=\\hbar$，$\\boldsymbol{\\tilde G(k)=\\frac{\\hbar}{m(k^2+\\omega^2)}}$．\n\n(2) $\\tau>0$ では上半平面で閉じ，極 $k=i\\omega$ の留数をとる．\n\\[G(\\tau)=\\frac{\\hbar}{m}\\cdot2\\pi i\\cdot\\frac{1}{2\\pi}\\cdot\\frac{e^{-\\omega\\tau}}{2i\\omega}=\\frac{\\hbar}{2m\\omega}e^{-\\omega\\tau}.\\]\n$\\tau<0$ も同様（下半平面）で，$\\boldsymbol{G(\\tau)=\\frac{\\hbar}{2m\\omega}e^{-\\omega|\\tau|}}$．$\\tau=0$ で微分が $-\\hbar/m$ だけ跳び，$\\delta$ 関数を再現する．\n\n(3) $\\tau>0$ の $G$ は指数関数1つだけなので，$x$ が基底状態とつなぐ状態は第1励起状態だけで\n\\[\\boldsymbol{E_1-E_0=\\hbar\\omega},\\qquad \\boldsymbol{|\\langle1|x|0\\rangle|^2=\\frac{\\hbar}{2m\\omega}}.\\]\n演算子 $x=\\sqrt{\\hbar/(2m\\omega)}(a+a^\\dagger)$ からの結果と一致する．$\\tau=0$ の値 $\\langle x^2\\rangle=\\hbar/(2m\\omega)$ は零点ゆらぎである．"
+   }
+  ],
+  "idea": {
+   "tex": "ユークリッド2点関数はガウス型作用の演算子の逆（グリーン関数）で，その減衰率が励起エネルギー，係数が行列要素を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) hbar/(m (k^2+ω^2))\n(2) hbar/(2 m ω) e^(-ω abs(τ))\n(3) エネルギー差：hbar ω ; 行列要素の2乗：hbar/(2 m ω)"
+  },
+  "methods": [],
+  "tags": [
+   "経路積分",
+   "ユークリッド化",
+   "2点関数",
+   "グリーン関数",
+   "調和振動子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 1,
+  "minutes": 15,
+  "theme": "グラスマン積分と行列式・2点関数",
+  "topic": "グラスマン積分と行列式・2点関数",
+  "statement": {
+   "tex": "グラスマン数 $\\theta_i,\\bar\\theta_i$ は互いに反可換（$\\theta_i\\theta_j=-\\theta_j\\theta_i$，$\\theta_i\\bar\\theta_j=-\\bar\\theta_j\\theta_i$ など．特に $\\theta_i^2=\\bar\\theta_i^2=0$）である．積分を\n\\[\\int d\\theta\\,1=0,\\qquad \\int d\\theta\\,\\theta=1\\]\nで定義し，$d\\theta$ どうし，$d\\theta$ とグラスマン数も反可換とする．重積分は内側（右）から行う：$\\int d\\bar\\theta\\,d\\theta\\,f=\\int d\\bar\\theta\\left(\\int d\\theta\\,f\\right)$．$a,b,c,d$ は普通の数とする．\n\\begin{enumerate}\n\\item $Z_1=\\displaystyle\\int d\\bar\\theta\\,d\\theta\\,e^{-\\bar\\theta a\\theta}$ を求めよ．\n\\item $M=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ に対し，$Z_2=\\displaystyle\\int d\\bar\\theta_1d\\theta_1d\\bar\\theta_2d\\theta_2\\,\\exp\\Bigl(-\\sum_{i,j=1}^2\\bar\\theta_iM_{ij}\\theta_j\\Bigr)$ を求めよ．\n\\item 同じ重みでの平均 $\\langle\\theta_1\\bar\\theta_2\\rangle=\\dfrac{1}{Z_2}\\displaystyle\\int d\\bar\\theta_1d\\theta_1d\\bar\\theta_2d\\theta_2\\,\\theta_1\\bar\\theta_2\\exp\\Bigl(-\\sum\\bar\\theta_iM_{ij}\\theta_j\\Bigr)$ を $a,b,c,d$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Z_1=a$\n(2) $Z_2=ad-bc$\n(3) $\\langle\\theta_1\\bar\\theta_2\\rangle=-\\frac{b}{ad-bc}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(\\bar\\theta\\theta)^2=0$ なので $e^{-\\bar\\theta a\\theta}=1-a\\bar\\theta\\theta$．$\\int d\\theta\\,\\bar\\theta\\theta=-\\int d\\theta\\,\\theta\\bar\\theta=-\\bar\\theta$，$\\int d\\bar\\theta(-\\bar\\theta)=-1$ より $\\int d\\bar\\theta d\\theta\\,\\bar\\theta\\theta=-1$．よって $Z_1=(-a)(-1)=\\boldsymbol{a}$．\n普通の数のガウス積分が $1/a$ に比例するのと逆に，グラスマン積分は $a$ に比例する．\n\n(2) $X_{ij}=\\bar\\theta_i\\theta_j$ は偶（互いに可換）である．4つのグラスマン数をすべて含む項だけが積分で残り，それは指数関数の2次の項\n\\[\\frac12\\Bigl(\\sum M_{ij}X_{ij}\\Bigr)^2\\ni M_{11}M_{22}X_{11}X_{22}+M_{12}M_{21}X_{12}X_{21}.\\]\n$X_{12}X_{21}=\\bar\\theta_1\\theta_2\\bar\\theta_2\\theta_1=-X_{11}X_{22}$（$\\theta_1$ を左へ2回，$\\theta_2\\bar\\theta_2$ を入れ替えて1回）．$\\int X_{11}X_{22}=(-1)(-1)=1$ だから\n\\[Z_2=\\boldsymbol{ad-bc}=\\det M.\\]\n\n(3) 源 $\\bar\\eta,\\eta$ を入れて平方完成すれば一般に $\\langle\\theta_i\\bar\\theta_j\\rangle=(M^{-1})_{ij}$ となる．直接計算でも，$\\theta_1\\bar\\theta_2$ を掛けると残りの $\\bar\\theta_1,\\theta_2$ を含む1次の項 $-b\\bar\\theta_1\\theta_2$ だけが効き，$\\int\\theta_1\\bar\\theta_2(-b\\bar\\theta_1\\theta_2)=-b$ となる．よって\n\\[\\langle\\theta_1\\bar\\theta_2\\rangle=\\boldsymbol{-\\frac{b}{ad-bc}}=(M^{-1})_{12}.\\]\n\nディラック場の経路積分 $\\int\\mathcal D\\bar\\psi\\mathcal D\\psi\\,e^{i\\int\\bar\\psi(i\\gamma^\\mu\\partial_\\mu-m)\\psi}$ はこの無限次元版で，結果は行列式 $\\det(i\\gamma^\\mu\\partial_\\mu-m)$，2点関数はその逆（ファインマン伝播関数）になる．"
+   }
+  ],
+  "idea": {
+   "tex": "グラスマン数のガウス積分は $\\det M$ を与え（ボソンの $1/\\det M$ と逆），2点関数は $M^{-1}$ になる．フェルミオンの経路積分の基本である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) a\n(2) a d - b c\n(3) -b/(a d - b c)"
+  },
+  "methods": [],
+  "tags": [
+   "グラスマン積分",
+   "フェルミオン",
+   "行列式",
+   "経路積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 1,
+  "minutes": 15,
+  "theme": "一様な力の場の伝播関数：古典作用と前因子",
+  "topic": "一様な力の場の伝播関数：古典作用と前因子",
+  "statement": {
+   "tex": "質量 $m$ の粒子が一様な力 $F$ を受けて1次元を運動する．ラグランジアンは $L=\\frac m2\\dot x^2+Fx$ である．時刻 $0$ に $x_a$，時刻 $T$ に $x_b$ を通る古典解に沿った作用を $S_{\\mathrm{cl}}(x_b,x_a)$ とする．ラグランジアンが $x,\\dot x$ の2次以下なので，伝播関数は厳密に\n\\[K(x_b,T;x_a,0)=\\sqrt{\\frac{1}{2\\pi i\\hbar}\\left(-\\frac{\\partial^2S_{\\mathrm{cl}}}{\\partial x_a\\partial x_b}\\right)}\\;e^{iS_{\\mathrm{cl}}/\\hbar}\\]\nで与えられる．\n\\begin{enumerate}\n\\item $S_{\\mathrm{cl}}$ を $m,F,T,x_a,x_b$ で表せ．\n\\item $\\dfrac{\\partial^2S_{\\mathrm{cl}}}{\\partial x_a\\partial x_b}$ を求めよ．\n\\item $\\dfrac{\\partial S_{\\mathrm{cl}}}{\\partial x_b}$ を求め，それが古典解の終時刻の運動量 $m\\dot x(T)$ に一致することを確かめよ（答えは $\\partial S_{\\mathrm{cl}}/\\partial x_b$ の式）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_{\\mathrm{cl}}=\\frac{m(x_b-x_a)^2}{2T}+\\frac{FT(x_a+x_b)}{2}-\\frac{F^2T^3}{24m}$\n(2) $-\\frac{m}{T}$\n(3) $\\frac{m(x_b-x_a)}{T}+\\frac{FT}{2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 古典解は $x(t)=x_a+v_0t+\\frac{F}{2m}t^2$，$x(T)=x_b$ より $v_0=\\frac{x_b-x_a}{T}-\\frac{FT}{2m}$．$\\dot x=v_0+\\frac Fmt$ を使って $\\int_0^T\\left(\\frac m2\\dot x^2+Fx\\right)dt$ を計算し整理すると\n\\[\\boldsymbol{S_{\\mathrm{cl}}=\\frac{m(x_b-x_a)^2}{2T}+\\frac{FT(x_a+x_b)}{2}-\\frac{F^2T^3}{24m}}.\\]\n第1項は自由粒子，第2項は始点と終点のポテンシャルの平均×時間，第3項は放物運動による補正である．\n\n(2) $x_ax_b$ の項は第1項の $-mx_ax_b/T$ だけなので $\\boldsymbol{-\\frac mT}$．前因子は自由粒子と同じ $\\sqrt{m/(2\\pi i\\hbar T)}$ になる．\n\n(3) $\\frac{\\partial S_{\\mathrm{cl}}}{\\partial x_b}=\\boldsymbol{\\frac{m(x_b-x_a)}{T}+\\frac{FT}{2}}$．一方 $m\\dot x(T)=m v_0+FT=\\frac{m(x_b-x_a)}{T}+\\frac{FT}{2}$ で一致する．ハミルトン＝ヤコビ理論の $\\partial S/\\partial x_b=p_b$ である．\n\n2次のラグランジアンでは，経路を $x=x_{\\mathrm{cl}}+y$（$y(0)=y(T)=0$）と分けると作用が $S_{\\mathrm{cl}}+S[y]$ に分離し，$y$ の積分は $F$ にも端点にもよらない．だから前因子は自由粒子と同じになり，位相だけが $S_{\\mathrm{cl}}$ で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "2次のラグランジアンでは経路積分が「古典作用の位相×ゆらぎの前因子」に厳密に分かれ，前因子は $\\partial^2S_{\\mathrm{cl}}/\\partial x_a\\partial x_b$（ファン・ヴレック行列式）で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) m (x_b-x_a)^2/(2T) + F T (x_a+x_b)/2 - F^2 T^3/(24 m)\n(2) -m/T\n(3) m (x_b-x_a)/T + F T/2"
+  },
+  "methods": [],
+  "tags": [
+   "経路積分",
+   "伝播関数",
+   "古典作用",
+   "ファン・ヴレック行列式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 2,
+  "minutes": 20,
+  "theme": "松原振動数の積による調和振動子の分配関数",
+  "topic": "松原振動数の積による調和振動子の分配関数",
+  "statement": {
+   "tex": "質量 $m$，角振動数 $\\omega$ の調和振動子の分配関数は，虚時間の経路積分\n\\[Z=\\mathrm{Tr}\\,e^{-\\beta H}=\\int_{x(0)=x(\\beta\\hbar)}\\mathcal Dx\\,e^{-S_E/\\hbar},\\qquad S_E=\\int_0^{\\beta\\hbar}d\\tau\\left[\\frac m2\\dot x^2+\\frac{m\\omega^2}{2}x^2\\right]\\]\nで表せる（$\\beta=1/(k_BT)$）．周期的な経路を $x(\\tau)=\\sum_{n=-\\infty}^{\\infty}c_ne^{i\\omega_n\\tau}$ と展開する．\n\\begin{enumerate}\n\\item 周期条件から許される $\\omega_n$ を求めよ．\n\\item 各モードのガウス積分を実行して適切に規格化すると，$n=0$ のモードから古典統計の $Z_{\\mathrm{cl}}=\\dfrac{1}{\\beta\\hbar\\omega}$ が，$n\\ge1$ のモードから $\\prod_{n=1}^\\infty\\dfrac{\\omega_n^2}{\\omega_n^2+\\omega^2}$ が掛かる．公式 $\\prod_{n=1}^\\infty\\left(1+\\dfrac{X^2}{n^2\\pi^2}\\right)=\\dfrac{\\sinh X}{X}$ を用いて $Z$ を求めよ．\n\\item 高温で $Z=\\dfrac{1}{\\beta\\hbar\\omega}\\left[1+c\\,(\\beta\\hbar\\omega)^2+\\cdots\\right]$ と展開したときの $c$ を求めよ．\n\\item 低温極限 $T\\to0$ で自由エネルギー $-k_BT\\ln Z$ が近づく値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega_n=\\frac{2\\pi n}{\\beta\\hbar}$\n(2) $Z=\\frac{1}{2\\sinh(\\beta\\hbar\\omega/2)}$\n(3) $c=-\\frac{1}{24}$\n(4) $\\frac{\\hbar\\omega}{2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $e^{i\\omega_n\\beta\\hbar}=1$ より $\\boldsymbol{\\omega_n=\\frac{2\\pi n}{\\beta\\hbar}}$（ボソンの松原振動数）．\n\n(2) $S_E=\\frac{m\\beta\\hbar}{2}\\sum_n(\\omega_n^2+\\omega^2)|c_n|^2$ と対角化され，各モードのガウス積分が $(\\omega_n^2+\\omega^2)^{-1}$ を与える（$\\pm n$ で1組）．$X=\\beta\\hbar\\omega/2$ とおくと $\\omega^2/\\omega_n^2=X^2/(n^2\\pi^2)$ だから\n\\[Z=\\frac{1}{2X}\\cdot\\frac{X}{\\sinh X}=\\boldsymbol{\\frac{1}{2\\sinh(\\beta\\hbar\\omega/2)}}.\\]\nこれは $\\sum_ne^{-\\beta\\hbar\\omega(n+1/2)}$ と一致する．\n\n(3) $\\frac{X}{\\sinh X}=1-\\frac{X^2}{6}+\\cdots$ で $X^2=(\\beta\\hbar\\omega)^2/4$ より $\\boldsymbol{c=-\\frac{1}{24}}$．$n\\ne0$ のモード（量子ゆらぎ）が古典統計からのずれを与える．\n\n(4) $T\\to0$ で $Z\\approx e^{-\\beta\\hbar\\omega/2}$，$-k_BT\\ln Z\\to\\boldsymbol{\\frac{\\hbar\\omega}{2}}$（零点エネルギー）．\n\n虚時間方向が長さ $\\beta\\hbar$ の円周になり，有限温度の場の理論では各運動量モードに同じ操作を行う．"
+   }
+  ],
+  "idea": {
+   "tex": "有限温度は虚時間の周期 $\\beta\\hbar$ に対応し，周期境界条件で離散化された松原振動数のモード積が分配関数を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2 pi n/(β hbar)\n(2) 1/(2 sinh(β hbar ω/2))\n(3) -1/24\n(4) hbar ω/2"
+  },
+  "methods": [],
+  "tags": [
+   "経路積分",
+   "松原振動数",
+   "分配関数",
+   "有限温度",
+   "ユークリッド化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 2,
+  "minutes": 18,
+  "theme": "有限次元のファデーエフ＝ポポフ法とゲージ軌道の体積",
+  "topic": "有限次元のファデーエフ＝ポポフ法とゲージ軌道の体積",
+  "statement": {
+   "tex": "2次元の積分 $I=\\displaystyle\\int d^2x\\,e^{-S(r)}$（$r=\\sqrt{x_1^2+x_2^2}$）は回転\n\\[x^\\theta=(x_1\\cos\\theta-x_2\\sin\\theta,\\ x_1\\sin\\theta+x_2\\cos\\theta)\\]\nで不変である（ゲージ対称性の模型）．「ゲージ条件」$G(x)=x_2=0$ を課すため，恒等式\n\\[1=\\frac1n\\int_0^{2\\pi}d\\theta\\,\\Delta(x^\\theta)\\,\\delta\\bigl(G(x^\\theta)\\bigr),\\qquad \\Delta(x^\\theta)=\\left|\\frac{\\partial G(x^{\\theta})}{\\partial\\theta}\\right|\\]\nを使う．ここで $n$ は，1つの点の回転軌道 $\\{x^\\theta\\}$ のうちゲージ条件を満たす点の数である．\n\\begin{enumerate}\n\\item ゲージ条件上の点 $(x_1,0)$ での $\\Delta$（ファデーエフ＝ポポフ行列式）を求めよ．\n\\item $n$ を求めよ（$x\\ne0$）．\n\\item 恒等式を $I$ に挿入し，回転不変性を使うと $I=\\dfrac{2\\pi}{n}\\displaystyle\\int_{-\\infty}^{\\infty}dx_1\\,\\Delta\\,e^{-S(|x_1|)}$ となる．$S=ar^4$（$a>0$）のとき $I$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta=|x_1|$\n(2) $n=2$\n(3) $I=\\frac{\\pi}{2}\\sqrt{\\frac{\\pi}{a}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $G(x^\\theta)=x_1\\sin\\theta+x_2\\cos\\theta$ で，点 $(x_1,0)$ では $\\partial_\\theta G=x_1\\cos\\theta$．$\\theta=0$ で $\\boldsymbol{\\Delta=|x_1|}$．極座標のヤコビアン $r$ がゲージ固定の結果として現れる．\n\n(2) $x_2^\\theta=0$ となる $\\theta$ は $x$ を $x_1$ 軸の正の側に回す角とそれに $\\pi$ を加えた角の2つで $\\boldsymbol{n=2}$．1つの軌道がゲージ条件と複数回交わることを（非可換ゲージ理論では）グリボフの複製という．\n\n(3) 挿入後，$x\\to x^{-\\theta}$ と変数変換すると被積分関数が $\\theta$ によらなくなり，$\\int d\\theta=2\\pi$（ゲージ軌道の体積）がくくり出される．\n\\[I=\\frac{2\\pi}{2}\\int_{-\\infty}^\\infty|x_1|e^{-ax_1^4}dx_1=2\\pi\\int_0^\\infty x e^{-ax^4}dx=2\\pi\\cdot\\frac14\\sqrt{\\frac\\pi a}=\\boldsymbol{\\frac\\pi2\\sqrt{\\frac\\pi a}}.\\]\n極座標で直接計算した $2\\pi\\int_0^\\infty re^{-ar^4}dr$ と一致する．\n\nゲージ理論では $\\theta$ が各時空点のゲージ関数 $\\alpha(x)$ に，$\\Delta$ が演算子の行列式 $\\det(\\partial^\\mu D_\\mu)$ になり，それをゴースト場の経路積分で表す．$2\\pi$ に当たるゲージ群の体積は規格化で落とす．"
+   }
+  ],
+  "idea": {
+   "tex": "ゲージ条件のデルタ関数とそのヤコビアン（FP 行列式）を挿入すると，ゲージ方向の積分が体積として分離し，残りの積分は条件面上だけで行える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) abs(x_1)\n(2) 2\n(3) (pi/2) sqrt(pi/a)"
+  },
+  "methods": [],
+  "tags": [
+   "ファデーエフ＝ポポフ",
+   "ゲージ固定",
+   "グリボフ",
+   "経路積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 2,
+  "minutes": 18,
+  "theme": "鞍点展開と1ループ補正：0次元の二重井戸",
+  "topic": "鞍点展開と1ループ補正：0次元の二重井戸",
+  "statement": {
+   "tex": "0次元の「場の理論」$Z=\\displaystyle\\int_{-\\infty}^{\\infty}d\\phi\\,e^{-S(\\phi)/\\hbar}$，$S(\\phi)=-\\dfrac{\\mu^2}{2}\\phi^2+\\dfrac{\\lambda}{4}\\phi^4$（$\\mu,\\lambda>0$）を考える．$\\hbar\\to0$ では作用の極小のまわりで $S\\approx S(\\phi_c)+\\frac12S''(\\phi_c)(\\phi-\\phi_c)^2$ と近似してガウス積分すればよい（鞍点法）．\n\\begin{enumerate}\n\\item 正の側の極小点 $\\phi_c$ と $S(\\phi_c)$ を求めよ．\n\\item $S''(\\phi_c)$ を求めよ．\n\\item 2つの極小からの寄与を足して，$W=-\\hbar\\ln Z$ を $\\hbar$ の1次まで求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\phi_c=\\frac{\\mu}{\\sqrt\\lambda}$，$S(\\phi_c)=-\\frac{\\mu^4}{4\\lambda}$\n(2) $S''(\\phi_c)=2\\mu^2$\n(3) $W\\approx-\\frac{\\mu^4}{4\\lambda}+\\frac{\\hbar}{2}\\ln\\frac{\\mu^2}{\\pi\\hbar}-\\hbar\\ln2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $S'=-\\mu^2\\phi+\\lambda\\phi^3=0$ より $\\boldsymbol{\\phi_c=\\mu/\\sqrt\\lambda}$，$S(\\phi_c)=-\\frac{\\mu^4}{2\\lambda}+\\frac{\\mu^4}{4\\lambda}=\\boldsymbol{-\\frac{\\mu^4}{4\\lambda}}$．\n\n(2) $S''=-\\mu^2+3\\lambda\\phi_c^2=\\boldsymbol{2\\mu^2}$．\n\n(3) 各極小の寄与は $e^{-S(\\phi_c)/\\hbar}\\sqrt{2\\pi\\hbar/S''}=e^{\\mu^4/(4\\lambda\\hbar)}\\sqrt{\\pi\\hbar/\\mu^2}$．2倍して対数をとり\n\\[\\boldsymbol{W\\approx-\\frac{\\mu^4}{4\\lambda}+\\frac\\hbar2\\ln\\frac{\\mu^2}{\\pi\\hbar}-\\hbar\\ln2}.\\]\n$\\mu=\\lambda=1$，$\\hbar=0.01$ の数値積分では $W=-0.23971$，この式は $-0.23963$ で，差は $O(\\hbar^2)$ である．\n\n$\\hbar$ の0次が古典作用（ツリー），1次が $\\frac\\hbar2\\ln S''$（場の理論では $\\frac\\hbar2\\mathrm{Tr}\\ln$，1ループ）である．つまり $\\hbar$ の展開はループ展開であり，結合 $\\lambda$ の展開ではない（第1項は $1/\\lambda$ に比例し，摂動論では得られない）．$-\\hbar\\ln2$ は2つの縮退した真空の数え上げの寄与である．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\hbar$ についての鞍点展開がループ展開であり，1ループの補正はゆらぎの演算子（ここでは $S''$）の対数で与えられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) φ_c：μ/sqrt(λ) ; S：-μ^4/(4λ)\n(2) 2 μ^2\n(3) -μ^4/(4λ) + (hbar/2) ln(μ^2/(pi hbar)) - hbar ln(2)"
+  },
+  "methods": [],
+  "tags": [
+   "鞍点法",
+   "ループ展開",
+   "有効作用",
+   "経路積分",
+   "0次元の場の理論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 3,
+  "minutes": 25,
+  "theme": "二重井戸のインスタントンとトンネル分裂",
+  "topic": "二重井戸のインスタントンとトンネル分裂",
+  "statement": {
+   "tex": "質量 $m$ の粒子がポテンシャル\n\\[V(x)=\\frac{m\\omega^2}{8a^2}\\left(x^2-a^2\\right)^2\\]\nの中にある（極小 $x=\\pm a$ で $V''(\\pm a)=m\\omega^2$）．ユークリッド経路積分 $\\langle x_f|e^{-HT/\\hbar}|x_i\\rangle=\\int\\mathcal Dx\\,e^{-S_E/\\hbar}$，$S_E=\\int d\\tau\\left[\\frac m2\\dot x^2+V(x)\\right]$ を $\\hbar\\to0$ で評価する．\n\\begin{enumerate}\n\\item ユークリッド運動方程式 $m\\ddot x=V'(x)$ の解で，$\\tau\\to-\\infty$ で $-a$，$\\tau\\to+\\infty$ で $+a$，$x(0)=0$ となるもの（インスタントン）を求めよ．\n\\item インスタントンの作用 $S_0$ を求めよ．\n\\item インスタントンと反インスタントンが互いに離れて並ぶ配位を足し上げる（希薄気体近似）と，$n$ 個並んだ配位の寄与は $C e^{-\\omega T/2}\\dfrac{(KTe^{-S_0/\\hbar})^n}{n!}$（$K$ は定数）で，$\\langle -a|e^{-HT/\\hbar}|-a\\rangle$ には $n$ が偶数，$\\langle a|e^{-HT/\\hbar}|-a\\rangle$ には奇数のものが寄与する．これから最低の2準位のエネルギー差 $\\Delta E$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x(\\tau)=a\\tanh\\frac{\\omega\\tau}{2}$\n(2) $S_0=\\frac{2}{3}m\\omega a^2$\n(3) $\\Delta E=2\\hbar Ke^{-S_0/\\hbar}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ユークリッド運動方程式はポテンシャル $-V$ 中の運動で，「エネルギー」$\\frac m2\\dot x^2-V=0$（無限の過去に山頂 $-a$ に静止）が保存する．$\\dot x=\\sqrt{2V/m}=\\frac{\\omega}{2a}(a^2-x^2)$ を積分して\n\\[\\boldsymbol{x(\\tau)=a\\tanh\\frac{\\omega\\tau}{2}}.\\]\n幅 $\\sim1/\\omega$ の時間で井戸を移る．\n\n(2) $\\frac m2\\dot x^2=V$ より $S_0=\\int m\\dot x^2d\\tau=\\int_{-a}^a\\sqrt{2mV}\\,dx=\\frac{m\\omega}{2a}\\int_{-a}^a(a^2-x^2)dx=\\frac{m\\omega}{2a}\\cdot\\frac{4a^3}{3}=\\boldsymbol{\\frac23m\\omega a^2}$．WKB のトンネル指数と同じ積分である．\n\n(3) 偶数・奇数の和はそれぞれ\n\\[\\langle\\mp a|e^{-HT/\\hbar}|-a\\rangle\\approx Ce^{-\\omega T/2}\\cdot\\frac12\\left(e^{KTe^{-S_0/\\hbar}}\\pm e^{-KTe^{-S_0/\\hbar}}\\right)\\]\n（上の符号が $\\langle -a|$）．$\\sum_ne^{-E_nT/\\hbar}\\langle\\cdot|n\\rangle\\langle n|\\cdot\\rangle$ と比べると，最低の2準位は\n\\[E_\\pm=\\frac{\\hbar\\omega}{2}\\mp\\hbar Ke^{-S_0/\\hbar}\\]\nで，対称状態（$-$ の側）が低い．よって $\\boldsymbol{\\Delta E=2\\hbar Ke^{-S_0/\\hbar}}$．$K$ はインスタントンのまわりのゆらぎの行列式の比から決まり（時間並進の零モードから $\\sqrt{S_0/\\hbar}$ に比例する因子が出る），$\\omega$ 程度の大きさである．分裂は $\\hbar$ について非摂動的（$e^{-1/\\hbar}$）で，摂動論のどの次数にも現れない．"
+   }
+  ],
+  "idea": {
+   "tex": "虚時間では粒子が逆さのポテンシャルを転がり，井戸の間をつなぐ古典解（インスタントン）の作用がトンネル分裂の指数 $e^{-S_0/\\hbar}$ を決める．多インスタントンの和が指数関数になってエネルギー差を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) a tanh(ω τ/2)\n(2) 2 m ω a^2/3\n(3) 2 hbar K e^(-S_0/hbar)"
+  },
+  "methods": [],
+  "tags": [
+   "インスタントン",
+   "トンネル効果",
+   "経路積分",
+   "ユークリッド化",
+   "二重井戸"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 3,
+  "minutes": 25,
+  "theme": "円環上の粒子：巻きつき数の和とアハラノフ＝ボーム位相",
+  "topic": "円環上の粒子：巻きつき数の和とアハラノフ＝ボーム位相",
+  "statement": {
+   "tex": "半径 $R$ の円周上を運動する質量 $m$ の粒子（角度 $\\varphi$）を考える．円の中心を貫く磁束により，ラグランジアンは\n\\[L=\\frac{mR^2}{2}\\dot\\varphi^2+\\frac{\\hbar\\theta}{2\\pi}\\dot\\varphi\\qquad(\\theta\\ \\text{は定数})\\]\nとなる．第2項は全微分なので運動方程式を変えない．\n\\begin{enumerate}\n\\item 時刻 $0$ に $\\varphi_a$，時刻 $T$ に $\\varphi_b+2\\pi w$（$w$ は整数，巻きつき数）に至る古典経路の作用 $S_w$ を求めよ．\n\\item 分配関数を虚時間の経路積分で書くと\n\\[Z=\\mathrm{Tr}\\,e^{-\\beta H}=\\int_0^{2\\pi}d\\varphi\\sum_{w=-\\infty}^\\infty\\sqrt{\\frac{mR^2}{2\\pi\\hbar^2\\beta}}\\exp\\left[-\\frac{mR^2(2\\pi w)^2}{2\\hbar^2\\beta}+i\\theta w\\right]\\]\nとなる．ポアソンの和公式 $\\sum_we^{-\\pi Aw^2+2\\pi ibw}=A^{-1/2}\\sum_ne^{-\\pi(n-b)^2/A}$ を用いて $Z=\\sum_ne^{-\\beta E_n}$ の形にし，$E_n$ を整数 $n$ を用いて表せ．\n\\item $0<\\theta<2\\pi$ のうち，基底状態が2重に縮退する $\\theta$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_w=\\frac{mR^2(\\varphi_b-\\varphi_a+2\\pi w)^2}{2T}+\\frac{\\hbar\\theta(\\varphi_b-\\varphi_a+2\\pi w)}{2\\pi}$\n(2) $E_n=\\frac{\\hbar^2}{2mR^2}\\left(n-\\frac{\\theta}{2\\pi}\\right)^2$\n(3) $\\theta=\\pi$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 古典経路は等角速度 $\\dot\\varphi=(\\varphi_b-\\varphi_a+2\\pi w)/T$．運動エネルギー項と全微分項を積分して\n\\[\\boldsymbol{S_w=\\frac{mR^2(\\varphi_b-\\varphi_a+2\\pi w)^2}{2T}+\\frac{\\hbar\\theta(\\varphi_b-\\varphi_a+2\\pi w)}{2\\pi}}.\\]\n第2項は運動方程式に効かないが，巻きつき数ごとに位相 $e^{i\\theta w}$ を与える（アハラノフ＝ボーム効果）．全微分項はユークリッド化しても $i$ が残る（位相的な項）．\n\n(2) $\\pi A=\\frac{2\\pi^2mR^2}{\\hbar^2\\beta}$，すなわち $A=\\frac{2\\pi mR^2}{\\hbar^2\\beta}$，$b=\\frac{\\theta}{2\\pi}$．前因子は $2\\pi\\sqrt{\\frac{mR^2}{2\\pi\\hbar^2\\beta}}A^{-1/2}=1$ となり\n\\[Z=\\sum_n\\exp\\left[-\\frac{\\beta\\hbar^2}{2mR^2}\\left(n-\\frac\\theta{2\\pi}\\right)^2\\right],\\qquad \\boldsymbol{E_n=\\frac{\\hbar^2}{2mR^2}\\left(n-\\frac\\theta{2\\pi}\\right)^2}.\\]\nハミルトニアン形式でも $p_\\varphi=\\hbar n$，$H=(p_\\varphi-\\hbar\\theta/2\\pi)^2/(2mR^2)$ から同じ結果が出る．巻きつき数の和（経路積分）と角運動量の和（演算子形式）がポアソン和で入れ替わる．\n\n(3) 最低準位は $\\theta<\\pi$ で $n=0$，$\\theta>\\pi$ で $n=1$ で，$\\boldsymbol{\\theta=\\pi}$ で $E_0=E_1=\\frac{\\hbar^2}{8mR^2}$ と縮退する．スペクトルは $\\theta\\to\\theta+2\\pi$ で不変で，$\\theta$ は角度変数である（QCD の $\\theta$ 真空の模型）．"
+   }
+  ],
+  "idea": {
+   "tex": "多重連結な空間では経路を巻きつき数で分類でき，全微分項（位相的な項）は運動方程式を変えなくても巻きつき数ごとの位相としてスペクトルを変える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) m R^2 (φ_b-φ_a+2 pi w)^2/(2T) + hbar θ (φ_b-φ_a+2 pi w)/(2 pi)\n(2) hbar^2 (n-θ/(2 pi))^2/(2 m R^2)\n(3) pi"
+  },
+  "methods": [],
+  "tags": [
+   "経路積分",
+   "巻きつき数",
+   "アハラノフ＝ボーム効果",
+   "ポアソンの和公式",
+   "θ真空"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 3,
+  "minutes": 22,
+  "theme": "フェルミオン振動子：反周期境界条件とウィッテン指数",
+  "topic": "フェルミオン振動子：反周期境界条件とウィッテン指数",
+  "statement": {
+   "tex": "フェルミオン振動子 $H=\\hbar\\omega\\left(b^\\dagger b-\\frac12\\right)$（$\\{b,b^\\dagger\\}=1$，$b^2=0$）を考える．状態は $|0\\rangle$ と $|1\\rangle=b^\\dagger|0\\rangle$ の2つである．$\\beta=1/(k_BT)$ とする．\n\\begin{enumerate}\n\\item 分配関数 $Z_F=\\mathrm{Tr}\\,e^{-\\beta H}$ を求めよ．\n\\item $Z_F$ をグラスマン数の経路積分で表すと，経路 $\\psi(\\tau)$ は反周期境界条件 $\\psi(\\tau+\\beta\\hbar)=-\\psi(\\tau)$ を満たす．$\\psi(\\tau)=\\sum_n\\psi_ne^{-i\\omega_n\\tau}$ と展開したときの $\\omega_n$ を整数 $n$ で表せ．（このとき $Z_F\\propto\\prod_{n\\ge0}(\\omega_n^2+\\omega^2)$ で，$\\prod_{n\\ge0}\\left(1+\\frac{4X^2}{(2n+1)^2\\pi^2}\\right)=\\cosh X$ から (1) が再現される．）\n\\item $(-1)^F$（$|0\\rangle$ に $+1$，$|1\\rangle$ に $-1$）を挿入した $\\mathrm{Tr}\\left[(-1)^Fe^{-\\beta H}\\right]$ を求めよ．これは周期境界条件の経路積分に対応する．\n\\item 同じ $\\omega$ のボソン振動子の分配関数 $Z_B=\\dfrac{1}{2\\sinh(\\beta\\hbar\\omega/2)}$ と (3) の積を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Z_F=2\\cosh\\frac{\\beta\\hbar\\omega}{2}$\n(2) $\\omega_n=\\frac{(2n+1)\\pi}{\\beta\\hbar}$\n(3) $2\\sinh\\frac{\\beta\\hbar\\omega}{2}$\n(4) $1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E=\\mp\\hbar\\omega/2$ の2状態で $Z_F=e^{\\beta\\hbar\\omega/2}+e^{-\\beta\\hbar\\omega/2}=\\boldsymbol{2\\cosh\\frac{\\beta\\hbar\\omega}{2}}$．\n\n(2) $e^{-i\\omega_n\\beta\\hbar}=-1$ より $\\boldsymbol{\\omega_n=\\frac{(2n+1)\\pi}{\\beta\\hbar}}$（フェルミオンの松原振動数）．グラスマン積分は $\\det(\\hbar\\partial_\\tau+\\hbar\\omega)\\propto\\prod_n(-i\\omega_n+\\omega)$ を与え，$\\pm$ を組にして $\\prod_{n\\ge0}(\\omega_n^2+\\omega^2)$．与えられた公式で $X=\\beta\\hbar\\omega/2$ とすれば $\\cosh X$ に比例し，$\\omega\\to0$ で $\\mathrm{Tr}\\,1=2$ になるよう規格化すれば (1) に一致する．トレースが反周期境界条件になるのは，グラスマン数のコヒーレント状態でトレースをとると $\\langle-\\bar\\psi|$ が現れるためである．\n\n(3) $(-1)^F$ で $|1\\rangle$ の符号が変わり $e^{\\beta\\hbar\\omega/2}-e^{-\\beta\\hbar\\omega/2}=\\boldsymbol{2\\sinh\\frac{\\beta\\hbar\\omega}{2}}$．このとき経路は周期的で，$n=0$ の零モードが $\\omega$ に比例する因子を与える．\n\n(4) $Z_B\\cdot2\\sinh\\frac{\\beta\\hbar\\omega}{2}=\\boldsymbol{1}$．ボソンとフェルミオンを組にした超対称な振動子では，零点エネルギー $\\pm\\hbar\\omega/2$ が打ち消し，励起状態はボソン的・フェルミオン的な状態が対になって $(-1)^F$ の和で消える．残る $1$ はエネルギー0の基底状態の数（ウィッテン指数）で，温度によらない．"
+   }
+  ],
+  "idea": {
+   "tex": "フェルミオンの経路積分ではトレースが反周期境界条件を与え，松原振動数が半奇数になる．$(-1)^F$ を入れると周期的になり，ボソンとの積は温度によらない指数になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2 cosh(β hbar ω/2)\n(2) (2n+1) pi/(β hbar)\n(3) 2 sinh(β hbar ω/2)\n(4) 1"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミオンの行列式",
+   "グラスマン積分",
+   "松原振動数",
+   "反周期境界条件",
+   "ウィッテン指数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 4,
+  "minutes": 35,
+  "theme": "コールマン＝ワインバーグの1ループ有効ポテンシャル",
+  "topic": "コールマン＝ワインバーグの1ループ有効ポテンシャル",
+  "statement": {
+   "tex": "$\\hbar=c=1$ とし，4次元の実スカラー場 $\\phi$ の古典ポテンシャルを $V_0(\\phi)=\\frac12m^2\\phi^2+\\frac{\\lambda}{4!}\\phi^4$ とする．一様な背景場 $\\phi$ のまわりのゆらぎを1ループで積分すると，有効ポテンシャルへの補正は（ユークリッド運動量 $k_E$ で）\n\\[V_1(\\phi)=\\frac12\\int\\frac{d^4k_E}{(2\\pi)^4}\\ln\\left(k_E^2+M^2(\\phi)\\right),\\qquad M^2(\\phi)=V_0''(\\phi)=m^2+\\frac{\\lambda}{2}\\phi^2\\]\nとなる．\n\\begin{enumerate}\n\\item $d^4k_E=2\\pi^2k^3dk$（$k=|k_E|$）を用い，$k<\\Lambda$ で積分を切って $\\dfrac{\\partial V_1}{\\partial(M^2)}$ を $\\Lambda,M^2$ で表せ．\n\\item $\\Lambda\\gg M$ として (1) を $M^2$ で積分したとき，$M^4\\ln M^2$ の項の係数を求めよ．（$\\Lambda$ に依存する項は真空エネルギー・質量・結合定数のくりこみで吸収される．）\n\\item $m=0$ とし，くりこみ条件 $\\left.\\dfrac{d^4V}{d\\phi^4}\\right|_{\\phi=\\mu}=\\lambda$ を課すと，\n\\[V(\\phi)=\\frac{\\lambda}{4!}\\phi^4+\\frac{\\lambda^2\\phi^4}{256\\pi^2}\\left(\\ln\\frac{\\phi^2}{\\mu^2}+c\\right)\\]\nとなる．定数 $c$ を求めよ．\n\\item (3) の $V$ が $\\phi=\\langle\\phi\\rangle\\ne0$ で停留するとき，$\\ln\\dfrac{\\langle\\phi\\rangle^2}{\\mu^2}$ を $\\lambda$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{\\partial V_1}{\\partial(M^2)}=\\frac{1}{32\\pi^2}\\left[\\Lambda^2-M^2\\ln\\left(1+\\frac{\\Lambda^2}{M^2}\\right)\\right]$\n(2) $\\frac{1}{64\\pi^2}$\n(3) $c=-\\frac{25}{6}$\n(4) $\\ln\\frac{\\langle\\phi\\rangle^2}{\\mu^2}=\\frac{11}{3}-\\frac{32\\pi^2}{3\\lambda}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 対数を $M^2$ で微分すると伝播関数になる．\n\\[\\frac{\\partial V_1}{\\partial(M^2)}=\\frac12\\cdot\\frac{2\\pi^2}{(2\\pi)^4}\\int_0^\\Lambda\\frac{k^3dk}{k^2+M^2}=\\frac{1}{16\\pi^2}\\cdot\\frac12\\left[\\Lambda^2-M^2\\ln\\frac{\\Lambda^2+M^2}{M^2}\\right]=\\boldsymbol{\\frac{1}{32\\pi^2}\\left[\\Lambda^2-M^2\\ln\\left(1+\\frac{\\Lambda^2}{M^2}\\right)\\right]}.\\]\n\n(2) $\\Lambda\\gg M$ で $\\frac{1}{32\\pi^2}\\left[\\Lambda^2-M^2\\ln\\Lambda^2+M^2\\ln M^2\\right]$．$\\int M^2\\ln M^2\\,d(M^2)=\\frac{M^4}{2}\\ln M^2-\\frac{M^4}{4}$ より係数は $\\boldsymbol{\\frac{1}{64\\pi^2}}$．$\\Lambda^2M^2$ と $M^4\\ln\\Lambda^2$ はそれぞれ $\\phi^2$，$\\phi^4$ に比例するので（$\\phi$ によらない項とともに）くりこみで吸収できる．結果を $\\overline{\\mathrm{MS}}$ で書けば $V_1=\\frac{M^4}{64\\pi^2}\\left(\\ln\\frac{M^2}{\\mu^2}-\\frac32\\right)$ である．\n\n(3) $m=0$ で $M^4/(64\\pi^2)=\\lambda^2\\phi^4/(256\\pi^2)$．$f(\\phi)=\\phi^4\\ln(\\phi^2/\\mu^2)$ の4階微分は $24\\ln(\\phi^2/\\mu^2)+100$ なので\n\\[\\left.\\frac{d^4V}{d\\phi^4}\\right|_\\mu=\\lambda+\\frac{\\lambda^2}{256\\pi^2}(100+24c)=\\lambda\\quad\\Rightarrow\\quad\\boldsymbol{c=-\\frac{25}{6}}.\\]\n\n(4) $A=\\lambda/24$，$B=\\lambda^2/(256\\pi^2)$，$\\ell=\\ln(\\phi^2/\\mu^2)$ とすると $V'=\\phi^3\\left[4A+4B(\\ell+c)+2B\\right]=0$ より $\\ell=-c-\\frac12-\\frac AB$．\n\\[\\boldsymbol{\\ln\\frac{\\langle\\phi\\rangle^2}{\\mu^2}=\\frac{11}{3}-\\frac{32\\pi^2}{3\\lambda}}.\\]\n$\\lambda\\ll1$ では右辺が大きな負の数で，$\\lambda\\ln(\\langle\\phi\\rangle^2/\\mu^2)=O(1)$ となる．つまり1ループの項がツリーの項と同程度になる領域で極小が現れ，摂動論の信頼性の外にある（くりこみ群で改良すると純粋な $\\phi^4$ 理論ではこの極小は消える）．ゲージ場と結合した場合（スカラー QED）には $e^4\\gg\\lambda^2$ の範囲で信頼できる極小が生じ，量子補正による対称性の破れ（コールマン＝ワインバーグ機構）となる．"
+   }
+  ],
+  "idea": {
+   "tex": "1ループ有効ポテンシャルは背景場に依存する質量 $M^2(\\phi)$ のゆらぎの $\\frac12\\mathrm{Tr}\\ln$ で，くりこみ後は $\\frac{M^4}{64\\pi^2}\\ln M^2$ が残る．質量ゼロの理論では対数が対称性の破れを起こしうるが，その極小が摂動論で信頼できるかを確かめる必要がある．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (Λ^2 - M^2 ln(1+Λ^2/M^2))/(32 pi^2)\n(2) 1/(64 pi^2)\n(3) -25/6\n(4) 11/3 - 32 pi^2/(3λ)"
+  },
+  "methods": [],
+  "tags": [
+   "有効ポテンシャル",
+   "コールマン＝ワインバーグ",
+   "1ループ",
+   "くりこみ条件",
+   "自発的対称性の破れ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 4,
+  "minutes": 30,
+  "theme": "ファデーエフ＝ポポフ法とゲージ固定した光子の伝播関数",
+  "topic": "ファデーエフ＝ポポフ法とゲージ固定した光子の伝播関数",
+  "statement": {
+   "tex": "$\\hbar=c=1$，計量 $(+,-,-,-)$ とする．自由電磁場 $\\mathcal L=-\\frac14F_{\\mu\\nu}F^{\\mu\\nu}$ の経路積分 $\\int\\mathcal DA\\,e^{iS}$ はゲージ変換 $A_\\mu\\to A_\\mu+\\partial_\\mu\\alpha$ の方向に積分が発散する．ファデーエフ＝ポポフの恒等式 $1=\\int\\mathcal D\\alpha\\,\\delta(\\partial^\\mu A^\\alpha_\\mu-\\omega)\\det(\\partial^2)$ を挿入し，さらに任意関数 $\\omega(x)$ を重み $\\exp\\left(-i\\int d^4x\\frac{\\omega^2}{2\\xi}\\right)$ で積分すると，作用に $\\mathcal L_{\\mathrm{gf}}=-\\frac{1}{2\\xi}(\\partial_\\mu A^\\mu)^2$ が加わる．\n\\begin{enumerate}\n\\item 運動量空間で作用の2次形式は $\\frac12\\tilde A_\\mu(-k)\\left[-k^2g^{\\mu\\nu}+\\left(1-\\frac1\\xi\\right)k^\\mu k^\\nu\\right]\\tilde A_\\nu(k)$ となる．伝播関数（括弧内の行列の逆に $i$ を掛けたもの）を $D_{\\mu\\nu}(k)=\\dfrac{-i}{k^2}\\left[g_{\\mu\\nu}+c\\,\\dfrac{k_\\mu k_\\nu}{k^2}\\right]$ と書くとき，$c$ を $\\xi$ で表せ．\n\\item $k^\\mu D_{\\mu\\nu}=-if\\,k_\\nu/k^2$ と書いたときの $f$ を求めよ．\n\\item QED では $\\det(\\partial^2)$ が $A$ によらないのでゴーストは結合しない．しかし有限温度の分配関数ではゴーストも数える必要があり，$A_\\mu$ の4成分は $[\\det(-\\partial^2)]^{-4/2}$，複素ゴースト $c,\\bar c$（反可換）は $[\\det(-\\partial^2)]^{+1}$ を与える．実スカラー場1つの分配関数を $Z_s=[\\det(-\\partial^2)]^{-1/2}$ とするとき，光子の分配関数は $Z_\\gamma=Z_s^{\\,n}$ と書ける．$n$ を求めよ．\n\\item 非可換ゲージ理論では FP 行列式 $\\det(\\partial^\\mu D_\\mu)$（$D_\\mu$ は共変微分）が $A$ に依存する．このときゴースト場が摂動論でどのような役割を果たすか，簡潔に述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c=\\xi-1$\n(2) $f=\\xi$\n(3) $n=2$\n(4) 記述（下記）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $O^{\\mu\\nu}=-k^2g^{\\mu\\nu}+(1-\\frac1\\xi)k^\\mu k^\\nu$ の逆を $X_{\\nu\\rho}=\\frac{1}{k^2}\\left(a\\,g_{\\nu\\rho}+b\\frac{k_\\nu k_\\rho}{k^2}\\right)$ とおく．$O^{\\mu\\nu}X_{\\nu\\rho}=-a\\delta^\\mu_\\rho+\\frac{k^\\mu k_\\rho}{k^2}\\left[-b+(1-\\tfrac1\\xi)(a+b)\\right]$ が $\\delta^\\mu_\\rho$ になる条件は $a=-1$，$-\\frac b\\xi=1-\\frac1\\xi$，すなわち $b=1-\\xi$．よって\n\\[D_{\\mu\\nu}=iX_{\\mu\\nu}=\\frac{-i}{k^2}\\left[g_{\\mu\\nu}-(1-\\xi)\\frac{k_\\mu k_\\nu}{k^2}\\right],\\qquad\\boldsymbol{c=\\xi-1}.\\]\n$\\xi=1$ がファインマン・ゲージ，$\\xi=0$ がランダウ・ゲージである．$\\xi\\to\\infty$（ゲージ固定なし）では逆が存在しない．\n\n(2) $k^\\mu D_{\\mu\\nu}=\\frac{-i}{k^2}\\left[k_\\nu-(1-\\xi)k_\\nu\\right]=-i\\xi\\frac{k_\\nu}{k^2}$ で $\\boldsymbol{f=\\xi}$．縦波部分だけが $\\xi$ に依存し，保存カレント（$k^\\mu J_\\mu=0$）につながる物理量には効かない（ゲージ不変性）．\n\n(3) $Z_\\gamma=[\\det(-\\partial^2)]^{-2+1}=[\\det(-\\partial^2)]^{-1}=Z_s^2$ で $\\boldsymbol{n=2}$．ゴースト（反可換で行列式のべきが逆）が非物理的な時間成分・縦成分の2つ分を打ち消し，横波2偏極が残る．黒体放射のエネルギー密度が実スカラー場の2倍になることに対応する．\n\n(4) $D_\\mu c=\\partial_\\mu c+g[A_\\mu,c]$ を通してゴースト $\\bar c,c$ がゲージ場と結合し，ゴースト–ゲージ場の頂点ができる．ゴーストは反可換なスカラーで，閉じたゴーストのループには $-1$ が付く．これがゲージ場のループに含まれる非物理的な偏極（時間成分・縦成分）の寄与を打ち消し，ユニタリティとゲージ不変性を保つ．ゴーストは外線には現れない．"
+   }
+  ],
+  "idea": {
+   "tex": "ゲージ方向の発散を FP 法で取り除くと，ゲージ固定項で縦波部分が可逆になり，$\\xi$ に依存する伝播関数が得られる．行列式はゴーストで表され，非物理的自由度を打ち消す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ξ-1\n(2) ξ\n(3) 2\n(4) 記述：ゴーストは共変微分を通してゲージ場と結合し，反可換なのでループに -1 が付き，非物理的偏極の寄与を打ち消す"
+  },
+  "methods": [],
+  "tags": [
+   "ファデーエフ＝ポポフ",
+   "ゲージ固定",
+   "光子の伝播関数",
+   "ゴースト",
+   "経路積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-04-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-115",
+  "level": 4,
+  "minutes": 35,
+  "theme": "偽の真空の崩壊：バウンス解と薄い壁の近似",
+  "topic": "偽の真空の崩壊：バウンス解と薄い壁の近似",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 質量 $m$ の粒子がポテンシャル $V(x)=\\frac12m\\omega^2x^2-\\frac g3x^3$（$g>0$）の中で $x=0$ の近くにいる．この状態は $x>0$ の側へトンネルして崩壊し，崩壊率は $\\Gamma\\propto e^{-S_B/\\hbar}$ となる．$S_B$ はバウンス（ユークリッド時間で $x=0$ を出発し，転回点 $x_t>0$ で折り返して戻る解）の作用である．$V(x_t)=0$ となる $x_t$ を求めよ．\n\\item $S_B=2\\displaystyle\\int_0^{x_t}\\sqrt{2mV(x)}\\,dx$ を求めよ．\n\\item 4次元の場の理論で，偽の真空と真の真空のエネルギー密度差を $\\varepsilon$，両者を隔てる壁の張力（単位面積あたりの作用）を $\\sigma$ とする．半径 $R$ の真の真空の泡（ユークリッド4次元の球）の作用は薄い壁の近似で\n\\[S(R)=2\\pi^2R^3\\sigma-\\frac{\\pi^2}{2}\\varepsilon R^4\\]\nとなる．$S(R)$ が停留する半径 $R_c$ と，そのときの作用 $S_B$ を求めよ．\n\\item バウンスのまわりのゆらぎには固有値が負のモードがちょうど1つある．これがエネルギーに虚部を与え，$\\Gamma=-\\frac{2}{\\hbar}\\mathrm{Im}\\,E$ として崩壊率が得られる理由を簡潔に説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x_t=\\frac{3m\\omega^2}{2g}$\n(2) $S_B=\\frac{6m^3\\omega^5}{5g^2}$\n(3) $R_c=\\frac{3\\sigma}{\\varepsilon}$，$S_B=\\frac{27\\pi^2\\sigma^4}{2\\varepsilon^3}$\n(4) 記述（下記）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V=x^2\\left(\\frac12m\\omega^2-\\frac g3x\\right)=0$ より $\\boldsymbol{x_t=\\frac{3m\\omega^2}{2g}}$．\n\n(2) $\\sqrt{2mV}=\\sqrt{2m}\\,x\\sqrt{\\frac{m\\omega^2}{2}-\\frac{gx}{3}}$．$u=1-x/x_t$ とおくと $\\frac{m\\omega^2}{2}-\\frac{gx}{3}=\\frac{m\\omega^2}{2}u$ で\n\\[S_B=2\\sqrt{2m}\\sqrt{\\frac{m\\omega^2}{2}}\\,x_t^2\\int_0^1(1-u)\\sqrt u\\,du=2m\\omega\\,x_t^2\\cdot\\frac{4}{15}=\\boldsymbol{\\frac{6m^3\\omega^5}{5g^2}}.\\]\n$g\\to0$ で $S_B\\to\\infty$ となり，崩壊率は結合定数 $g^2$ について非摂動的（$e^{-1/g^2}$）である．\n\n(3) $S'(R)=6\\pi^2R^2\\sigma-2\\pi^2\\varepsilon R^3=0$ より $\\boldsymbol{R_c=\\frac{3\\sigma}{\\varepsilon}}$．代入すると\n\\[S_B=2\\pi^2\\sigma\\frac{27\\sigma^3}{\\varepsilon^3}-\\frac{\\pi^2}{2}\\varepsilon\\frac{81\\sigma^4}{\\varepsilon^4}=\\boldsymbol{\\frac{27\\pi^2\\sigma^4}{2\\varepsilon^3}}.\\]\n停留点は $S(R)$ の極大で，泡の半径方向の変化がちょうど負のモードに当たる．薄い壁の近似は $\\varepsilon$ が小さく $R_c$ が壁の厚さより十分大きいときに正しい（コールマン）．\n\n(4) 偽の真空のエネルギーは $Z=\\langle0|e^{-HT/\\hbar}|0\\rangle\\approx e^{-E_0T/\\hbar}$ から読む．バウンスのまわりでゆらぎをガウス積分すると，負の固有値のモードの積分は収束しないので，積分路を複素平面に解析接続して定義する．すると $(\\det)^{-1/2}$ の負の固有値から因子 $i$ が出て（鞍点を半分だけ通るので $\\frac12$ も付く），バウンスの寄与が $Z$ に純虚数の補正を与える．希薄気体で指数化すると $E_0$ に虚部が生じ，$|\\psi|^2\\propto e^{-2|\\mathrm{Im}E|t/\\hbar}$ より $\\Gamma=-\\frac2\\hbar\\mathrm{Im}\\,E$ が崩壊率になる．"
+   }
+  ],
+  "idea": {
+   "tex": "崩壊率はユークリッド解（バウンス）の作用で指数的に決まり，ゆらぎの唯一の負のモードがエネルギーの虚部を生む．場の理論では泡の表面張力と体積エネルギーの釣り合いが臨界半径を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 3 m ω^2/(2 g)\n(2) 6 m^3 ω^5/(5 g^2)\n(3) R_c：3σ/ε ; S_B：27 pi^2 σ^4/(2 ε^3)\n(4) 記述：負のモードの積分を解析接続すると i（と 1/2）が出て E に虚部，|ψ|^2∝e^{-2|Im E|t/ħ}"
+  },
+  "methods": [],
+  "tags": [
+   "バウンス解",
+   "真空崩壊",
+   "トンネル効果",
+   "薄い壁の近似",
+   "ユークリッド化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

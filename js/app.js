@@ -2220,7 +2220,7 @@ function weakestField() {
 }
 const SUBJ_SHORT = { '物理数学': '物数', '力学': '力学', '振動・波動': '波動', '解析力学': '解析', '連続体力学': '連続体', '電磁気学': '電磁気',
   '特殊相対論': '特相', '熱力学': '熱', '統計力学': '統計', '量子力学': '量子', '実験学': '実験', '固体物理学': '固体', '原子核物理学': '原子核',
-  '相対論的量子力学': '相量', '素粒子物理学': '素粒子', '一般相対論': '一般相', '宇宙物理学': '宇宙', '融合': '融合' };
+  '相対論的量子力学': '相量', '生物物理学': '生物', '場の量子論': '場の量', '素粒子物理学': '素粒子', '一般相対論': '一般相', '宇宙物理学': '宇宙', '融合': '融合' };
 // 得意度 → タイルの色（苦手＝赤系、得意＝緑系、データ不足＝無地）
 function strengthStyle(sc) {
   if (sc == null) return '';
@@ -2249,7 +2249,7 @@ function strengthHTML() {
   const judged = fs.filter(x => x.score != null).sort((a, b) => b.score - a.score);
   const good = judged.filter(x => x.score >= 0.6).slice(0, 3);
   const weak = judged.filter(x => x.score < 0.5).slice(-3).reverse();
-  const radar = radarSVG(subs.map(s => ({ label: s.name, ...strength(s.fields.map(f => f.key)) })));
+  const radar = radarSVG(subs.map(s => ({ label: SUBJ_SHORT[s.name] || s.name, ...strength(s.fields.map(f => f.key)) })));
   const name = (x) => `${esc(SUBJ_SHORT[x.f.subject] || x.f.subject)}・${esc(x.f.name)}`;
   return `
     <h2>得意・苦手</h2>
@@ -2443,7 +2443,7 @@ function renderSettings() {
   const newCount = state.log.filter(l => l.t > since).length;
   view.innerHTML = `
     <div class="fade-in">
-      <div class="kicker">ぶつりば v0.5（エンジン v${VERSION}）</div>
+      <div class="kicker">ぶつりば v0.6（エンジン v${VERSION}）</div>
       <h1>設定</h1>
       ${sync ? '<h2>アカウントと同期</h2><div class="panel" id="acct"></div>' : ''}
       <h2>解答の形式</h2>

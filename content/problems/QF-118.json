@@ -1,0 +1,745 @@
+[
+ {
+  "id": "QF-07-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 0,
+  "minutes": 10,
+  "theme": "局所的な位相変換と共変微分（U(1) ゲージ変換）",
+  "topic": "局所的な位相変換と共変微分（U(1) ゲージ変換）",
+  "statement": {
+   "tex": "平面上の荷電粒子（電荷 $q$）の波動関数 $\\psi(x,y)$ の位相を場所ごとに変える変換 $\\psi\\to\\psi'=e^{i\\alpha(x,y)}\\psi$ を考える（$\\alpha$ は実関数）．微分 $\\partial_x\\psi$ は $\\psi$ と同じようには変換しないので，ベクトルポテンシャル $(A_x,A_y)$ を使った「共変微分」$D_j=\\partial_j-iqA_j$（$j=x,y$）を考え，$A_j\\to A_j'=A_j+\\delta A_j$ と同時に変えて $D_j'\\psi'=e^{i\\alpha}D_j\\psi$ となるようにする．ここで $\\alpha=bxy$（$b$ は定数）とする．\n\\begin{enumerate}\n\\item $D_j'\\psi'=e^{i\\alpha}D_j\\psi$ となるための $(\\delta A_x,\\ \\delta A_y)$ を求めよ．\n\\item 磁場 $B=\\partial_xA_y-\\partial_yA_x$ の変化 $B'-B$ を求めよ．\n\\item 原点から点 $(L,L)$ まで任意の経路に沿った線積分 $\\displaystyle\\int(\\delta A_x\\,dx+\\delta A_y\\,dy)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left(\\frac{by}{q},\\ \\frac{bx}{q}\\right)$\n(2) $0$\n(3) $\\frac{bL^2}{q}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_x(e^{i\\alpha}\\psi)=e^{i\\alpha}(\\partial_x\\psi+i(\\partial_x\\alpha)\\psi)$．\n\\[D_x'\\psi'=e^{i\\alpha}\\left[\\partial_x\\psi+i(\\partial_x\\alpha)\\psi-iq(A_x+\\delta A_x)\\psi\\right]\\]\nが $e^{i\\alpha}(\\partial_x-iqA_x)\\psi$ に等しいためには $\\delta A_x=\\dfrac{\\partial_x\\alpha}{q}$．$y$ も同様で $\\delta A_j=\\dfrac{1}{q}\\partial_j\\alpha$．$\\alpha=bxy$ では $\\boldsymbol{(\\delta A_x,\\delta A_y)=\\left(\\dfrac{by}{q},\\ \\dfrac{bx}{q}\\right)}$．\n\n(2) $\\partial_x\\delta A_y-\\partial_y\\delta A_x=\\dfrac bq-\\dfrac bq=\\boldsymbol{0}$．磁場（場の強さ）はゲージ変換で変わらない．\n\n(3) $\\delta A_j=\\frac1q\\partial_j\\alpha$ は勾配なので，線積分は経路によらず $\\dfrac{\\alpha(L,L)-\\alpha(0,0)}{q}=\\boldsymbol{\\dfrac{bL^2}{q}}$．閉じた経路では $0$ になり，アハラノフ＝ボーム位相 $q\\oint\\boldsymbol A\\cdot d\\boldsymbol l$ もゲージ不変である．\n\n「場所ごとの位相の自由度」を要求すると電磁場が必然的に現れる，というのがゲージ原理である．次は，位相の代わりに行列（SU(2) など）で変換する非可換ゲージ理論を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "局所的な位相変換のもとで微分を共変にするには $A_j\\to A_j+\\frac1q\\partial_j\\alpha$ と変える必要があり，場の強さはこの変換で不変である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (b y/q, b x/q)\n(2) 0\n(3) b L^2/q"
+  },
+  "methods": [],
+  "tags": [
+   "ゲージ変換",
+   "共変微分",
+   "ゲージ原理",
+   "ベクトルポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 0,
+  "minutes": 10,
+  "theme": "メキシカンハット型ポテンシャルの谷と2つの振動モード",
+  "topic": "メキシカンハット型ポテンシャルの谷と2つの振動モード",
+  "statement": {
+   "tex": "平面上の位置 $(x,y)$ に対するポテンシャル\n\\[V(x,y)=-a(x^2+y^2)+c(x^2+y^2)^2\\qquad(a>0,\\ c>0)\\]\nを考える．$r=\\sqrt{x^2+y^2}$ とすると $V=-ar^2+cr^4$ で，原点のまわりの回転に対して対称な「メキシカンハット（ソンブレロ）」の形をしている．\n\\begin{enumerate}\n\\item $V$ を最小にする $r$ の値 $r_0$ を求めよ．\n\\item 谷の底 $r=r_0$ での動径方向の曲率 $\\left.\\dfrac{d^2V}{dr^2}\\right|_{r=r_0}$ を $a$ で表せ．\n\\item 質量 $M$ の小球がこのポテンシャル中で谷の底の近くを運動する．動径方向の微小振動の角振動数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $r_0=\\sqrt{\\frac{a}{2c}}$\n(2) $4a$\n(3) $2\\sqrt{\\frac{a}{M}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dV}{dr}=-2ar+4cr^3=0$ より $r^2=\\dfrac{a}{2c}$，$\\boldsymbol{r_0=\\sqrt{\\dfrac{a}{2c}}}$．原点 $r=0$ は極大（不安定）である．\n\n(2) $\\dfrac{d^2V}{dr^2}=-2a+12cr^2$ に $r_0^2=\\dfrac{a}{2c}$ を入れて $-2a+6a=\\boldsymbol{4a}$．\n\n(3) $r=r_0+\\rho$ で $V\\approx V(r_0)+\\frac12(4a)\\rho^2$．ばね定数 $4a$ の単振動なので $\\omega=\\sqrt{4a/M}=\\boldsymbol{2\\sqrt{a/M}}$．\n\n一方，谷に沿った（角度方向の）動きでは $V$ が変わらないので復元力がなく，振動数は $0$ である．ポテンシャルは回転対称なのに，最低エネルギーの状態は谷のどこか1点を選ぶので対称性が破れる（自発的対称性の破れ）．場の理論では動径方向のゆらぎが質量をもつ粒子（ヒッグス粒子），谷に沿ったゆらぎが質量ゼロの粒子（南部＝ゴールドストーン粒子）になる．"
+   }
+  ],
+  "idea": {
+   "tex": "対称なポテンシャルの最小点が対称性を破り，谷に垂直な方向は有限の振動数，谷に沿った方向は振動数ゼロのモードになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(a/(2c))\n(2) 4a\n(3) 2sqrt(a/M)"
+  },
+  "methods": [],
+  "tags": [
+   "メキシカンハット",
+   "自発的対称性の破れ",
+   "南部＝ゴールドストーン粒子",
+   "ヒッグス粒子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 0,
+  "minutes": 12,
+  "theme": "パウリ行列の交換関係と SU(2) 変換による回転",
+  "topic": "パウリ行列の交換関係と SU(2) 変換による回転",
+  "statement": {
+   "tex": "パウリ行列\n\\[\\sigma_1=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix},\\quad\\sigma_2=\\begin{pmatrix}0&-i\\\\i&0\\end{pmatrix},\\quad\\sigma_3=\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\]\nは非可換ゲージ理論 SU(2) の基本となる行列である．\n\\begin{enumerate}\n\\item 交換子 $[\\sigma_1,\\sigma_2]=\\sigma_1\\sigma_2-\\sigma_2\\sigma_1=k\\,\\sigma_3$ となる数 $k$ を求めよ．\n\\item $U=\\begin{pmatrix}e^{i\\theta/2}&0\\\\0&e^{-i\\theta/2}\\end{pmatrix}$ とする（$U^\\dagger$ は $U$ の複素共役の転置）．$U\\sigma_1U^\\dagger=p\\,\\sigma_1+r\\,\\sigma_2$ となる $(p,\\ r)$ を $\\theta$ で表せ．\n\\item $\\mathrm{tr}\\left[(U\\sigma_1U^\\dagger)^2\\right]$（$\\mathrm{tr}$ は対角成分の和）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $k=2i$\n(2) $(p,\\ r)=(\\cos\\theta,\\ -\\sin\\theta)$\n(3) $2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma_1\\sigma_2=\\begin{pmatrix}i&0\\\\0&-i\\end{pmatrix}=i\\sigma_3$，$\\sigma_2\\sigma_1=-i\\sigma_3$ より $[\\sigma_1,\\sigma_2]=2i\\sigma_3$，$\\boldsymbol{k=2i}$．数と違って行列は掛ける順序で結果が変わる（非可換）．\n\n(2) $U^\\dagger=\\begin{pmatrix}e^{-i\\theta/2}&0\\\\0&e^{i\\theta/2}\\end{pmatrix}$．\n\\[U\\sigma_1U^\\dagger=\\begin{pmatrix}0&e^{i\\theta}\\\\e^{-i\\theta}&0\\end{pmatrix}=\\cos\\theta\\,\\sigma_1-\\sin\\theta\\,\\sigma_2\\]\n（$\\cos\\theta\\,\\sigma_1-\\sin\\theta\\,\\sigma_2$ の右上成分は $\\cos\\theta+i\\sin\\theta$）．$\\boldsymbol{(p,r)=(\\cos\\theta,\\ -\\sin\\theta)}$．$(\\sigma_1,\\sigma_2)$ の組が角度 $\\theta$ だけ回転している．\n\n(3) $(U\\sigma_1U^\\dagger)^2=U\\sigma_1^2U^\\dagger=UU^\\dagger=I$ なので $\\mathrm{tr}=\\boldsymbol2$．変換しても変わらない（不変量）．\n\nSU(2) ゲージ理論ではゲージ場 $A_\\mu=A_\\mu^a\\frac{\\sigma_a}{2}$ や場の強さが $U(\\cdots)U^\\dagger$ と変換し，$\\mathrm{tr}(F^2)$ のような量がゲージ不変なラグランジアンになる．次は，交換子が場の強さに現れることでゲージ場どうしが相互作用することを学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "パウリ行列は非可換で，$U(\\cdot)U^\\dagger$ の変換は3次元ベクトルの回転として働き，トレースは不変に保たれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2i\n(2) (cos(θ), -sin(θ))\n(3) 2"
+  },
+  "methods": [],
+  "tags": [
+   "パウリ行列",
+   "交換関係",
+   "SU(2)",
+   "非可換ゲージ理論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 1,
+  "minutes": 15,
+  "theme": "対称性の破れのパターンと南部＝ゴールドストーン粒子の数",
+  "topic": "対称性の破れのパターンと南部＝ゴールドストーン粒子の数",
+  "statement": {
+   "tex": "連続的な大域的対称性の群 $G$ が真空で部分群 $H$ に自発的に破れると，質量ゼロの南部＝ゴールドストーン（NG）粒子が（相対論的な理論では）$\\dim G-\\dim H$ 個現れる（$\\dim$ は生成子の数．$\\dim\\mathrm{SU}(n)=n^2-1$，$\\dim\\mathrm{U}(n)=n^2$）．\n\\begin{enumerate}\n\\item 2種類の質量ゼロのクォーク（u, d）の QCD のカイラル対称性 $\\mathrm{SU}(2)_L\\times\\mathrm{SU}(2)_R$ がクォーク凝縮で $\\mathrm{SU}(2)_V$ に破れる．NG 粒子の数を求めよ．\n\\item 3種類（u, d, s）の場合 $\\mathrm{SU}(3)_L\\times\\mathrm{SU}(3)_R\\to\\mathrm{SU}(3)_V$ の NG 粒子の数を求めよ．\n\\item $N$ 成分の複素スカラー場が $\\mathrm{U}(N)$ で変換し，真空期待値 $(0,\\ldots,0,v)$ をもつと $\\mathrm{U}(N-1)$ が残る．NG 粒子の数を $N$ で表せ．\n\\item ゲージ対称性 $\\mathrm{SU}(5)$ が随伴表現のヒッグス場によって $\\mathrm{SU}(3)\\times\\mathrm{SU}(2)\\times\\mathrm{U}(1)$ に破れる（大統一理論）．質量を得るゲージ粒子の数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3$\n(2) $8$\n(3) $2N-1$\n(4) $12$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dim G=3+3=6$，$\\dim H=3$．NG 粒子は $\\boldsymbol3$ 個（$\\pi^+,\\pi^0,\\pi^-$）．実際のパイ中間子はクォーク質量による対称性の小さな破れで軽い質量をもつ（擬 NG 粒子）．\n\n(2) $8+8-8=\\boldsymbol8$（$\\pi$ 3つ，$K$ 4つ，$\\eta$）．\n\n(3) $N^2-(N-1)^2=\\boldsymbol{2N-1}$．$2N$ 個の実成分のうち，動径方向の1つ（質量をもつ）を除くすべてが NG 粒子である．$N=2$ なら3つで，標準模型のヒッグス2重項の4実成分のうち3つにあたる．\n\n(4) ゲージ対称性が破れると NG 粒子はゲージ粒子に吸収され（ヒッグス機構），破れた生成子の数だけゲージ粒子が質量を得る．$24-(8+3+1)=\\boldsymbol{12}$（陽子崩壊を媒介する $X,Y$ ボソン）．"
+   }
+  ],
+  "idea": {
+   "tex": "NG 粒子の数は破れた生成子の数 $\\dim G-\\dim H$ で，ゲージ対称性ならそれだけのゲージ粒子が質量を得る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 3\n(2) 8\n(3) 2N-1\n(4) 12"
+  },
+  "methods": [],
+  "tags": [
+   "南部＝ゴールドストーン定理",
+   "自発的対称性の破れ",
+   "カイラル対称性",
+   "ヒッグス機構"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 1,
+  "minutes": 18,
+  "theme": "SU(2) 随伴ヒッグス場によるゲージ対称性の破れ（ジョージ＝グラショウ模型）",
+  "topic": "SU(2) 随伴ヒッグス場によるゲージ対称性の破れ（ジョージ＝グラショウ模型）",
+  "statement": {
+   "tex": "SU(2) ゲージ場 $A^a_\\mu$（$a=1,2,3$，結合定数 $g$）と，随伴表現（3成分の実ベクトル）のスカラー場 $\\phi^a$ の理論\n\\[\\mathcal L=-\\frac14F^a_{\\mu\\nu}F^{a\\mu\\nu}+\\frac12(D_\\mu\\phi)^a(D^\\mu\\phi)^a-\\frac{\\lambda}{4}(\\phi^a\\phi^a-v^2)^2,\\qquad(D_\\mu\\phi)^a=\\partial_\\mu\\phi^a+g\\epsilon^{abc}A^b_\\mu\\phi^c\\]\nを考える．真空として $\\phi=(0,0,v)$ を選ぶ．\n\\begin{enumerate}\n\\item $\\frac12(D_\\mu\\phi)^a(D^\\mu\\phi)^a$ に真空期待値を入れて，$A^1,\\ A^2$ の質量を $g,\\ v$ で表せ．\n\\item 質量ゼロのまま残るゲージ場の数を求めよ．\n\\item $\\phi^3=v+h$ とおいたときの $h$ の質量 $m_h$ を $\\lambda,\\ v$ で表せ．\n\\item NG 粒子がゲージ場に吸収された後に残る物理的なスカラー粒子の数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $gv$\n(2) $1$\n(3) $m_h=\\sqrt{2\\lambda}v$\n(4) $1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\phi^c=v\\delta^{c3}$ で $(D_\\mu\\phi)^a=gv\\epsilon^{ab3}A^b_\\mu$：$a=1$ で $gvA^2_\\mu$，$a=2$ で $-gvA^1_\\mu$，$a=3$ で $0$．\n\\[\\frac12(D\\phi)^2=\\frac12g^2v^2\\left(A^1_\\mu A^{1\\mu}+A^2_\\mu A^{2\\mu}\\right)\\]\nなので $A^1,A^2$ の質量はともに $\\boldsymbol{gv}$．\n\n(2) $A^3$ は真空を動かさない回転（3軸まわり）に対応し，質量ゼロのまま残る．$\\boldsymbol1$ 個．SU(2) が U(1) に破れ，$A^3$ が「光子」，$W^\\pm=(A^1\\mp iA^2)/\\sqrt2$ が電荷 $\\pm g$ の重いゲージ粒子になる．\n\n(3) $\\phi^a\\phi^a-v^2=2vh+h^2$ より $V\\approx\\frac\\lambda4(2vh)^2=\\lambda v^2h^2=\\frac12m_h^2h^2$，$\\boldsymbol{m_h=\\sqrt{2\\lambda}\\,v}$．\n\n(4) 3成分のうち $\\phi^1,\\phi^2$（破れた2生成子に対応する NG 方向）は $A^1,A^2$ の縦波成分になる．残るのは $h$ の $\\boldsymbol1$ 個．この模型は 't Hooft＝ポリヤコフの磁気単極子解をもつことで知られる．"
+   }
+  ],
+  "idea": {
+   "tex": "随伴ヒッグスの真空期待値は，それを動かす2つの生成子のゲージ場だけに質量 $gv$ を与え，真空を保つ方向の U(1) が残る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) g v\n(2) 1\n(3) sqrt(2λ) v\n(4) 1"
+  },
+  "methods": [],
+  "tags": [
+   "ヒッグス機構",
+   "SU(2)",
+   "随伴表現",
+   "ジョージ＝グラショウ模型",
+   "ゲージ粒子の質量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ワード恒等式と真空偏極の横波性：光子の質量はなぜゼロか",
+  "topic": "ワード恒等式と真空偏極の横波性：光子の質量はなぜゼロか",
+  "statement": {
+   "tex": "光子の自己エネルギー（真空偏極）$i\\Pi^{\\mu\\nu}(k)$ は，ローレンツ共変性から $\\Pi^{\\mu\\nu}=A(k^2)g^{\\mu\\nu}+B(k^2)k^\\mu k^\\nu$ と書ける．ゲージ不変性から導かれるワード恒等式は $k_\\mu\\Pi^{\\mu\\nu}=0$ を要求する．このとき $\\Pi^{\\mu\\nu}=(k^2g^{\\mu\\nu}-k^\\mu k^\\nu)\\Pi(k^2)$ と書け，自己エネルギーを足し上げた光子の伝播関数（$k^\\mu k^\\nu$ の項を除く）は $\\dfrac{-ig_{\\mu\\nu}}{k^2\\left(1-\\Pi(k^2)\\right)}$ となる．\n\\begin{enumerate}\n\\item ワード恒等式から $A$ を $B,\\ k^2$ で表せ．\n\\item $\\Pi(k^2)$ が $k^2=0$ で正則で $\\Pi(k^2)=c_0+c_1k^2+\\cdots$ のとき，伝播関数の極の位置（$k^2$ の値）と留数（$\\dfrac{-ig_{\\mu\\nu}}{k^2}$ に対する係数）を求めよ．\n\\item 2次元の質量ゼロ QED（シュウィンガー模型，結合定数 $q$）では $\\Pi(k^2)=\\dfrac{q^2}{\\pi k^2}$ と厳密に求まる．光子の質量を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A=-k^2B$\n(2) 極 $k^2=0$，留数 $\\frac{1}{1-c_0}$\n(3) $\\frac{q}{\\sqrt{\\pi}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $k_\\mu\\Pi^{\\mu\\nu}=(A+Bk^2)k^\\nu=0$ より $\\boldsymbol{A=-k^2B}$．すると $\\Pi^{\\mu\\nu}=-B(k^2g^{\\mu\\nu}-k^\\mu k^\\nu)$ で $\\Pi=-B$．\n\n(2) 分母 $k^2(1-c_0-c_1k^2-\\cdots)$ は $k^2=0$ でゼロ．極は $\\boldsymbol{k^2=0}$ のままで，留数は $\\boldsymbol{\\dfrac{1}{1-c_0}}$（$=Z_3$，電荷のくりこみ $e^2\\to Z_3e^2$ にあたる）．$\\Pi^{\\mu\\nu}$ が $k^2$ に比例する因子をもつので，$g^{\\mu\\nu}$ に比例する定数（質量項）が生じない．\n\n(3) $k^2\\left(1-\\dfrac{q^2}{\\pi k^2}\\right)=k^2-\\dfrac{q^2}{\\pi}=0$ より $m^2=\\dfrac{q^2}{\\pi}$，$m=\\boldsymbol{\\dfrac{q}{\\sqrt\\pi}}$．$\\Pi(k^2)$ が $k^2=0$ に極をもつ（質量ゼロの粒子が中間状態に現れる）とゲージ不変性を保ったまま光子が質量を得る．これはヒッグス機構の本質（NG 粒子の極が吸収される）と同じ構造である．"
+   }
+  ],
+  "idea": {
+   "tex": "ワード恒等式により真空偏極は横波で $k^2$ の因子をもつので光子の極は $k^2=0$ に留まる．$\\Pi$ が $1/k^2$ の極をもつときだけ質量が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -k^2 B\n(2) 極：0 ; 留数：1/(1-c_0)\n(3) q/sqrt(pi)"
+  },
+  "methods": [],
+  "tags": [
+   "ワード恒等式",
+   "真空偏極",
+   "ゲージ不変性",
+   "シュウィンガー模型"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 2,
+  "minutes": 20,
+  "theme": "複素スカラー場の極座標分解とヒッグス粒子の NG 粒子対への崩壊",
+  "topic": "複素スカラー場の極座標分解とヒッグス粒子の NG 粒子対への崩壊",
+  "statement": {
+   "tex": "自然単位系で，大域的 U(1) 対称性をもつ複素スカラー場の理論\n\\[\\mathcal L=\\partial_\\mu\\phi^*\\partial^\\mu\\phi+\\mu^2|\\phi|^2-\\lambda|\\phi|^4\\qquad(\\mu^2>0,\\ \\lambda>0)\\]\nを考え，$\\phi=\\dfrac{1}{\\sqrt2}(v+h)e^{i\\theta/v}$（$h,\\ \\theta$ は実場）と書く．\n\\begin{enumerate}\n\\item ポテンシャルを最小にする $v$ と，$h$ の質量の2乗 $m_h^2$ を $\\mu,\\ \\lambda$ で表せ．\n\\item 運動項を展開すると $\\theta$ は微分でしか現れない．$h(\\partial_\\mu\\theta)(\\partial^\\mu\\theta)$ の項の係数を求めよ．\n\\item 崩壊 $h\\to\\theta\\theta$ の幅 $\\Gamma$ を $m_h,\\ v$ で表せ．2体崩壊の幅は（終状態が同種粒子で質量ゼロのとき）$\\Gamma=\\dfrac{1}{2}\\cdot\\dfrac{|\\mathcal M|^2}{16\\pi m_h}$ である．\n\\item $\\Gamma/m_h$ を $\\lambda$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=\\frac{\\mu}{\\sqrt{\\lambda}}$，$m_h^2=2\\mu^2$\n(2) $\\frac{1}{v}$\n(3) $\\Gamma=\\frac{m_h^3}{32\\pi v^2}$\n(4) $\\frac{\\lambda}{16\\pi}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $|\\phi|^2=\\frac12(v+h)^2$，$V=-\\frac{\\mu^2}{2}\\rho^2+\\frac\\lambda4\\rho^4$（$\\rho=v+h$）．$V'(v)=0$ より $\\boldsymbol{v=\\mu/\\sqrt\\lambda}$．$m_h^2=V''(v)=-\\mu^2+3\\lambda v^2=\\boldsymbol{2\\mu^2}$．\n\n(2) $\\partial_\\mu\\phi=\\frac{1}{\\sqrt2}e^{i\\theta/v}\\left[\\partial_\\mu h+i\\frac{v+h}{v}\\partial_\\mu\\theta\\right]$ より\n\\[|\\partial\\phi|^2=\\frac12(\\partial h)^2+\\frac12\\left(1+\\frac hv\\right)^2(\\partial\\theta)^2.\\]\n$h(\\partial\\theta)^2$ の係数は $\\boldsymbol{\\dfrac1v}$．$\\theta$ は定数のずれ $\\theta\\to\\theta+c$（U(1) 変換）で不変なので微分結合しかもたず，低エネルギーで相互作用が弱くなる（NG 粒子の低エネルギー定理）．\n\n(3) 出ていく $\\theta$ の運動量を $p_1,p_2$ とすると，$\\partial_\\mu\\theta\\partial^\\mu\\theta$ から2通りの縮約で $\\mathcal M=\\frac1v\\cdot2\\cdot(ip_1)\\cdot(ip_2)=-\\frac{2p_1\\cdot p_2}{v}$．$m_h^2=(p_1+p_2)^2=2p_1\\cdot p_2$ より $|\\mathcal M|=\\dfrac{m_h^2}{v}$．\n\\[\\Gamma=\\frac12\\cdot\\frac{m_h^4/v^2}{16\\pi m_h}=\\boldsymbol{\\frac{m_h^3}{32\\pi v^2}}.\\]\n\n(4) $\\dfrac{\\Gamma}{m_h}=\\dfrac{m_h^2}{32\\pi v^2}=\\dfrac{2\\lambda v^2}{32\\pi v^2}=\\boldsymbol{\\dfrac{\\lambda}{16\\pi}}$．$\\lambda$ が小さいと $h$ は細い共鳴になる．直交座標 $\\phi=(v+h+i\\pi)/\\sqrt2$ で計算すると $h\\pi\\pi$ 結合は $\\lambda v$ の非微分結合だが，オンシェルの振幅は同じ値になる．"
+   }
+  ],
+  "idea": {
+   "tex": "極座標で書くと NG 粒子は微分結合だけをもち，ヒッグス粒子の崩壊振幅は $m_h^2/v$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) v：μ/sqrt(λ) ; m_h^2：2μ^2\n(2) 1/v\n(3) m_h^3/(32pi v^2)\n(4) λ/(16pi)"
+  },
+  "methods": [],
+  "tags": [
+   "南部＝ゴールドストーン粒子",
+   "ヒッグス粒子",
+   "崩壊幅",
+   "自発的対称性の破れ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 2,
+  "minutes": 22,
+  "theme": "可換ヒッグス模型の R_ξ ゲージ：ゴールドストーン粒子とゴーストの質量",
+  "topic": "可換ヒッグス模型の R_ξ ゲージ：ゴールドストーン粒子とゴーストの質量",
+  "statement": {
+   "tex": "U(1) ゲージ場 $A_\\mu$ と複素スカラー場 $\\phi$ の理論 $\\mathcal L=-\\frac14F_{\\mu\\nu}F^{\\mu\\nu}+|D_\\mu\\phi|^2-V(|\\phi|)$，$D_\\mu=\\partial_\\mu+iqA_\\mu$ で，真空期待値のまわりに $\\phi=\\dfrac{1}{\\sqrt2}(v+h+i\\pi)$ と展開する（$h,\\ \\pi$ は実場）．ゲージ固定項として\n\\[\\mathcal L_{\\mathrm{gf}}=-\\frac{1}{2\\xi}\\left(\\partial_\\mu A^\\mu-\\xi m_A\\pi\\right)^2\\qquad(m_A=qv)\\]\nを加える（$R_\\xi$ ゲージ）．ゲージ変換は $A_\\mu\\to A_\\mu+\\partial_\\mu\\alpha$，$\\phi\\to e^{-iq\\alpha}\\phi$ である．\n\\begin{enumerate}\n\\item $|D_\\mu\\phi|^2$ に現れる $A^\\mu\\partial_\\mu\\pi$ の項の係数を $q,\\ v$ で表せ．\n\\item $\\mathcal L_{\\mathrm{gf}}$ によりこの混合項は消える（全微分を除いて）．そのとき $\\pi$（ゴールドストーン粒子）が得る質量の2乗を $\\xi,\\ q,\\ v$ で表せ．\n\\item ファデーフ＝ポポフのゴースト $c$ のラグランジアンは $\\bar c\\,\\dfrac{\\delta G}{\\delta\\alpha}c$（$G=\\partial_\\mu A^\\mu-\\xi m_A\\pi$）で与えられる．$h=0$ でのゴーストの質量の2乗を求めよ．\n\\item 場の成分を「$A_\\mu$ の4成分 $+\\ h,\\ \\pi$ の2つ $-$ ゴースト2つ（$c,\\ \\bar c$）」と数えたときの物理的自由度の数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $qv$\n(2) $\\xi q^2v^2$\n(3) $\\xi q^2v^2$\n(4) $4$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $D_\\mu\\phi=\\frac{1}{\\sqrt2}\\left[\\partial_\\mu h+i\\partial_\\mu\\pi+iqA_\\mu(v+h+i\\pi)\\right]$ より\n\\[|D\\phi|^2=\\frac12(\\partial h-qA\\pi)^2+\\frac12\\left(\\partial\\pi+qA(v+h)\\right)^2\\ni\\frac12q^2v^2A^2+\\boldsymbol{qv}\\,A^\\mu\\partial_\\mu\\pi.\\]\n\n(2) $\\mathcal L_{\\mathrm{gf}}=-\\frac1{2\\xi}(\\partial A)^2+m_A\\pi\\partial_\\mu A^\\mu-\\frac{\\xi}{2}m_A^2\\pi^2$．$m_A\\pi\\partial_\\mu A^\\mu=-m_AA^\\mu\\partial_\\mu\\pi+(\\text{全微分})$ が (1) の混合項を消す．残る $-\\frac\\xi2m_A^2\\pi^2$ から，$\\pi$ の質量の2乗は $\\boldsymbol{\\xi q^2v^2}$．\n\n(3) $\\delta\\pi=-q\\alpha(v+h)$ なので $\\dfrac{\\delta G}{\\delta\\alpha}=\\partial^2+\\xi m_Aq(v+h)$．$\\mathcal L_{\\mathrm{gh}}=\\bar c\\left[-\\partial^2-\\xi m_A^2\\left(1+\\frac hv\\right)\\right]c$（符号は慣習に合わせる）より，質量の2乗は $\\boldsymbol{\\xi q^2v^2}$．\n\n(4) $4+2-2=\\boldsymbol4$．質量をもつベクトル粒子（3偏極）$+\\ h$ の4つで，破れる前の「質量ゼロの光子（2偏極）$+$ 複素スカラー（2）」の4つと一致する．$\\pi$，ゴースト，$A_\\mu$ の縦成分 $k^\\mu k^\\nu$ 部分はどれも $k^2=\\xi m_A^2$ に極をもち，物理的振幅では互いに打ち消し合う．$\\xi\\to\\infty$ がユニタリーゲージ，$\\xi=1$ が計算の楽な 't Hooft＝ファインマンゲージである．"
+   }
+  ],
+  "idea": {
+   "tex": "$R_\\xi$ ゲージ固定はゲージ場とゴールドストーン粒子の混合を消し，ゴールドストーン粒子とゴーストに同じ非物理的質量 $\\xi m_A^2$ を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) q v\n(2) ξ q^2 v^2\n(3) ξ q^2 v^2\n(4) 4"
+  },
+  "methods": [],
+  "tags": [
+   "Rξゲージ",
+   "ゲージ固定",
+   "ファデーフ＝ポポフゴースト",
+   "ヒッグス機構",
+   "自由度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 2,
+  "minutes": 18,
+  "theme": "非可換ゲージ場の自己相互作用：一定のポテンシャルが作る場の強さ",
+  "topic": "非可換ゲージ場の自己相互作用：一定のポテンシャルが作る場の強さ",
+  "statement": {
+   "tex": "SU(2) ゲージ場の静的な配位を考える．空間の添字 $i,j\\in\\{x,y,z\\}$，内部の添字 $a,b,c\\in\\{1,2,3\\}$ について，場の強さと共変微分は\n\\[F^a_{ij}=\\partial_iA^a_j-\\partial_jA^a_i+g\\epsilon^{abc}A^b_iA^c_j,\\qquad(D_iF_{ij})^a=\\partial_iF^a_{ij}+g\\epsilon^{abc}A^b_iF^c_{ij}\\]\nであり，磁場のエネルギー密度は $u=\\dfrac12\\displaystyle\\sum_a\\sum_{i<j}(F^a_{ij})^2$ である．いま，空間的に一定の配位\n\\[A^1_x=c_1,\\qquad A^2_y=c_2\\qquad(\\text{他の成分はすべて }0)\\]\nを考える（$c_1,\\ c_2$ は定数）．\n\\begin{enumerate}\n\\item ゼロでない場の強さの成分 $F^3_{xy}$ を求めよ．\n\\item エネルギー密度 $u$ を求めよ．\n\\item ソースのないヤン＝ミルズ方程式は $\\displaystyle\\sum_i(D_iF_{ij})^a=0$ である．$j=y$，$a=2$ の成分 $\\displaystyle\\sum_i(D_iF_{iy})^2$ を計算せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F^3_{xy}=gc_1c_2$\n(2) $u=\\frac{g^2c_1^2c_2^2}{2}$\n(3) $-g^2c_1^2c_2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 微分の項は $0$．$F^3_{xy}=g\\epsilon^{3bc}A^b_xA^c_y=g\\epsilon^{312}c_1c_2=\\boldsymbol{gc_1c_2}$．他の $F^a_{ij}$ は $0$．電磁気（U(1)）なら一定のポテンシャルは場を作らないが，非可換では交換子の項 $g[A_i,A_j]$ が場の強さを作る．\n\n(2) $u=\\frac12(F^3_{xy})^2=\\boldsymbol{\\dfrac{g^2c_1^2c_2^2}{2}}$．これはラグランジアンの4次の項 $-\\frac{g^2}{4}(\\epsilon^{abc}A^bA^c)^2$ の寄与そのもので，ゲージ場が自分自身と相互作用することを表す．ゲージ変換で $A\\to UAU^\\dagger+\\cdots$ としても $F\\neq0$ なので，この配位は純粋ゲージ（真空）ではない．\n\n(3) $i=x$ の項だけが残る（$F_{yy}=0$）．$(D_xF_{xy})^2=g\\epsilon^{2bc}A^b_xF^c_{xy}=g\\epsilon^{213}c_1\\cdot gc_1c_2=\\boldsymbol{-g^2c_1^2c_2}$．\nゼロでないので，この配位はソースなしの運動方程式の解ではない．非可換ゲージ場は自分自身が「色電荷」をもち，自分の作る場のソースになっている（グルーオンの自己結合）．この性質が漸近的自由と閉じ込めの起源である．"
+   }
+  ],
+  "idea": {
+   "tex": "非可換ゲージ理論では場の強さに交換子の項があり，一定のポテンシャルでも場とエネルギーが生じ，ゲージ場自身がソースとして働く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) g c_1 c_2\n(2) g^2 c_1^2 c_2^2/2\n(3) -g^2 c_1^2 c_2"
+  },
+  "methods": [],
+  "tags": [
+   "ヤン＝ミルズ理論",
+   "非可換ゲージ場",
+   "自己相互作用",
+   "場の強さ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ファデーフ＝ポポフ・ゴーストと物理的自由度：グルーオン気体の自由エネルギー",
+  "topic": "ファデーフ＝ポポフ・ゴーストと物理的自由度：グルーオン気体の自由エネルギー",
+  "statement": {
+   "tex": "ユークリッド化した経路積分で，質量ゼロの実スカラー場1成分のガウス積分は $\\displaystyle\\int\\mathcal D\\phi\\,e^{-\\frac12\\int\\phi(-\\partial^2)\\phi}\\propto\\left[\\det(-\\partial^2)\\right]^{-1/2}$ を与える．グラスマン数の場（ゴースト）$c,\\ \\bar c$ の積分は $\\displaystyle\\int\\mathcal D\\bar c\\mathcal Dc\\,e^{-\\int\\bar c(-\\partial^2)c}\\propto\\det(-\\partial^2)$ を与える．$d$ 次元時空の自由なゲージ場をファインマンゲージで扱うと，作用は $A_\\mu$ の各成分について上のスカラー場と同じ形になり，さらにファデーフ＝ポポフ・ゴースト $c,\\ \\bar c$ が1組加わる．\n\\begin{enumerate}\n\\item $d=4$ で $A_\\mu$ の積分が与える $\\det(-\\partial^2)$ のべきを求めよ．\n\\item ゴーストを加えた全体の $\\det(-\\partial^2)$ のべきを $d$ で表せ．\n\\item (2) を「実スカラー場 $n$ 成分ぶん」とみなしたときの $n$（物理的偏極の数）を $d$ で表せ．\n\\item 温度 $T$ の質量ゼロの実スカラー場1成分の自由エネルギー密度は $-\\dfrac{\\pi^2T^4}{90}$ である（$\\hbar=c=k_B=1$，$d=4$）．相互作用を無視した SU(3) のグルーオン気体の自由エネルギー密度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-2$\n(2) $-\\frac{d-2}{2}$\n(3) $d-2$\n(4) $-\\frac{8\\pi^2T^4}{45}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 4成分それぞれが $\\det^{-1/2}$ を与えるので $\\det^{-2}$，べきは $\\boldsymbol{-2}$．\n\n(2) ゴーストは $\\det^{+1}$ を与える（グラスマン積分はガウス積分の逆べき）．全体で $-\\dfrac d2+1=\\boldsymbol{-\\dfrac{d-2}{2}}$．\n\n(3) 実スカラー $n$ 成分は $\\det^{-n/2}$ なので $\\boldsymbol{n=d-2}$．$d=4$ で2つの横波偏極．ゴーストは時間成分と縦成分という2つの非物理的自由度を打ち消す「負の自由度」として働く．\n\n(4) SU(3) のグルーオンは $8$ 色 $\\times$ $2$ 偏極 $=16$ 自由度．\n\\[f=16\\times\\left(-\\frac{\\pi^2T^4}{90}\\right)=\\boldsymbol{-\\frac{8\\pi^2T^4}{45}}.\\]\nゴーストを入れずに $A_\\mu$ の4成分を数えると2倍の誤った値になる．非可換ゲージ理論ではゴーストがゲージ場と結合する（頂点 $\\propto gf^{abc}$）ため，ループ計算でもゴーストが必要で，ゴーストのループには $-1$ がつく．これをまとめた対称性が BRST 対称性である．"
+   }
+  ],
+  "idea": {
+   "tex": "ゴーストは $\\det^{+1}$ を与えて $A_\\mu$ の非物理的な2成分を打ち消し，物理的自由度 $d-2$ を残す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -2\n(2) -(d-2)/2\n(3) d-2\n(4) -8pi^2 T^4/45"
+  },
+  "methods": [],
+  "tags": [
+   "ファデーフ＝ポポフゴースト",
+   "経路積分",
+   "ゲージ固定",
+   "物理的自由度",
+   "BRST"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 3,
+  "minutes": 25,
+  "theme": "SU(3) を基本表現のヒッグス場で SU(2) に破る：ゲージ粒子の質量スペクトル",
+  "topic": "SU(3) を基本表現のヒッグス場で SU(2) に破る：ゲージ粒子の質量スペクトル",
+  "statement": {
+   "tex": "SU(3) ゲージ場 $A^a_\\mu$（$a=1,\\ldots,8$，結合定数 $g$）と基本表現の複素スカラー場 $\\phi$（3成分）の理論で，$D_\\mu\\phi=(\\partial_\\mu-igA^a_\\mu T^a)\\phi$，$T^a=\\lambda_a/2$（$\\lambda_a$ はゲルマン行列）とする．真空期待値 $\\langle\\phi\\rangle=(0,0,v/\\sqrt2)^T$ を入れると，$|D_\\mu\\phi|^2$ から質量項 $\\frac12M^2_{ab}A^a_\\mu A^{b\\mu}$，\n\\[M^2_{ab}=g^2\\langle\\phi\\rangle^\\dagger\\{T^a,T^b\\}\\langle\\phi\\rangle\\]\nが得られる．ゲルマン行列のうち $\\lambda_1,\\lambda_2,\\lambda_3$ は左上の $2\\times2$ ブロックだけをもち，$\\lambda_4,\\ldots,\\lambda_7$ は3行目または3列目に非対角成分 $1$ または $\\pm i$ をもち，$\\lambda_8=\\dfrac{1}{\\sqrt3}\\mathrm{diag}(1,1,-2)$ である．\n\\begin{enumerate}\n\\item 質量を得るゲージ粒子の数と，ヒッグス機構の後に残る物理的なスカラー粒子の数を求めよ．\n\\item $A^4,\\ldots,A^7$ の質量を $g,\\ v$ で表せ．\n\\item $A^8$ の質量を $g,\\ v$ で表せ．\n\\item 比 $m_8/m_4$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $5$，$1$\n(2) $\\frac{gv}{2}$\n(3) $\\frac{gv}{\\sqrt{3}}$\n(4) $\\frac{2}{\\sqrt{3}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\lambda_{1,2,3}\\langle\\phi\\rangle=0$ なので SU(2) が残る．破れた生成子は $8-3=\\boldsymbol5$ 個（$T^4,\\ldots,T^8$）．$\\phi$ の実成分 $6$ のうち $5$ が吸収され，残る物理的スカラーは $\\boldsymbol1$ 個．\n\n(2) $\\langle\\phi\\rangle=\\frac{v}{\\sqrt2}e_3$（$e_3$ は第3成分だけが $1$ の単位ベクトル）とすると $M^2_{ab}=\\frac{g^2v^2}{2}\\left(\\{T^a,T^b\\}\\right)_{33}$．$T^4e_3=\\frac12e_1$，$T^5e_3=-\\frac{i}{2}e_1$ より $(T^4T^4)_{33}=(T^5T^5)_{33}=\\frac14$，$M^2_{44}=M^2_{55}=\\frac{g^2v^2}{2}\\cdot2\\cdot\\frac14=\\dfrac{g^2v^2}{4}$．$T^6,T^7$ も同様．非対角成分は，例えば $(T^4T^5)_{33}=-\\frac i4$，$(T^5T^4)_{33}=\\frac i4$ で反交換子では打ち消し合う．よって $m_{4\\sim7}=\\boldsymbol{\\dfrac{gv}{2}}$．\n\n(3) $(T^8)_{33}=\\frac{1}{2\\sqrt3}(-2)=-\\frac{1}{\\sqrt3}$，$(T^8T^8)_{33}=\\frac13$．$M^2_{88}=\\dfrac{g^2v^2}{3}$，$m_8=\\boldsymbol{\\dfrac{gv}{\\sqrt3}}$．$M^2_{8a}$（$a=4,\\ldots,7$）は $0$ で混合しない．\n\n(4) $\\dfrac{m_8}{m_4}=\\dfrac{1/\\sqrt3}{1/2}=\\boldsymbol{\\dfrac{2}{\\sqrt3}}$．電弱理論で $m_Z/m_W=1/\\cos\\theta_W$ が決まるのと同様に，ゲージ群の構造と真空期待値の表現だけで質量比が決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "質量行列は $g^2\\langle\\phi\\rangle^\\dagger\\{T^a,T^b\\}\\langle\\phi\\rangle$ で，真空を動かす生成子の数だけ質量が生じ，その比は群構造で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 5 ; 1\n(2) g v/2\n(3) g v/sqrt(3)\n(4) 2/sqrt(3)"
+  },
+  "methods": [],
+  "tags": [
+   "ヒッグス機構",
+   "SU(3)",
+   "ゲルマン行列",
+   "質量行列",
+   "ゲージ粒子の質量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 3,
+  "minutes": 25,
+  "theme": "アーベル・ヒッグス模型の渦糸：磁束の量子化と BPS 条件",
+  "topic": "アーベル・ヒッグス模型の渦糸：磁束の量子化と BPS 条件",
+  "statement": {
+   "tex": "$\\hbar=c=1$ とする．U(1) ゲージ場と複素スカラー場の理論\n\\[\\mathcal L=-\\frac14F_{\\mu\\nu}F^{\\mu\\nu}+|D_\\mu\\phi|^2-\\frac{\\lambda}{2}\\left(|\\phi|^2-\\frac{v^2}{2}\\right)^2\\]\nの静的な渦糸解を考える．空間部分の共変微分を $\\boldsymbol D\\phi=(\\nabla-iq\\boldsymbol A)\\phi$ とする（$q$ は場 $\\phi$ の電荷）．$z$ 軸のまわりの円柱座標 $(r,\\theta,z)$ で，$r\\to\\infty$ では $\\phi\\to\\dfrac{v}{\\sqrt2}e^{in\\theta}$（$n$ は整数）となり，エネルギーが有限であるためには $\\boldsymbol D\\phi\\to0$ でなければならない．\n\\begin{enumerate}\n\\item $r\\to\\infty$ でのベクトルポテンシャルの $\\theta$ 成分 $A_\\theta$ を $n,\\ q,\\ r$ で表せ．\n\\item 渦糸を貫く磁束 $\\Phi=\\oint\\boldsymbol A\\cdot d\\boldsymbol l$（大きな円に沿う）を $n,\\ q$ で表せ．\n\\item 超伝導体ではクーパー対の電荷が $q=2e$（$e$ は電気素量）である．$\\hbar$ を戻して $n=1$ の磁束を $\\mathrm{Wb}$ 単位で求めよ．$h=6.626\\times10^{-34}\\,\\mathrm{J\\,s}$，$e=1.602\\times10^{-19}\\,\\mathrm{C}$ とする．\n\\item ヒッグス粒子の質量 $m_h$ とゲージ粒子の質量 $m_A$ が等しくなる（BPS 条件）$\\lambda$ を $q$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A_\\theta=\\frac{n}{qr}$\n(2) $\\Phi=\\frac{2\\pi n}{q}$\n(3) $\\approx2.07\\times10^{-15}$\n(4) $\\lambda=q^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\theta$ 方向の成分は $\\dfrac1r\\partial_\\theta\\phi-iqA_\\theta\\phi=\\left(\\dfrac{in}{r}-iqA_\\theta\\right)\\phi=0$ より $\\boldsymbol{A_\\theta=\\dfrac{n}{qr}}$．$\\boldsymbol A$ は遠方で純粋ゲージ（$\\boldsymbol A=\\frac1q\\nabla(n\\theta)$）である．\n\n(2) $\\Phi=2\\pi r\\cdot\\dfrac{n}{qr}=\\boldsymbol{\\dfrac{2\\pi n}{q}}$．$\\phi$ が一価であるために $n$ は整数で，磁束は量子化される（位相の巻き付き数）．\n\n(3) $\\hbar$ を戻すと $\\Phi=\\dfrac{2\\pi\\hbar n}{q}=\\dfrac{nh}{q}$．$\\dfrac{h}{2e}=\\dfrac{6.626\\times10^{-34}}{3.204\\times10^{-19}}\\approx\\boldsymbol{2.07\\times10^{-15}}\\,\\mathrm{Wb}$（磁束量子）．第2種超伝導体中の磁束はこの単位で量子化された渦糸（アブリコソフ渦）として入る．\n\n(4) $\\phi=\\frac{v+h}{\\sqrt2}$ で $|D\\phi|^2\\ni\\frac12q^2v^2A^2$ より $m_A=qv$．$|\\phi|^2-\\frac{v^2}{2}=vh+\\frac{h^2}{2}$ より $V\\approx\\frac\\lambda2v^2h^2$，$m_h=\\sqrt\\lambda\\,v$．$m_h=m_A$ は $\\boldsymbol{\\lambda=q^2}$．このとき（ギンツブルグ＝ランダウ・パラメータ $\\kappa=1/\\sqrt2$）渦糸のエネルギーは下限 $\\pi v^2|n|$ に一致し，渦糸どうしの力がゼロになる．$\\lambda<q^2$ で第1種，$\\lambda>q^2$ で第2種超伝導体に対応する．"
+   }
+  ],
+  "idea": {
+   "tex": "遠方で共変微分がゼロになる条件からベクトルポテンシャルが純粋ゲージとなり，位相の巻き付き数が磁束を量子化する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) n/(q r)\n(2) 2pi n/q\n(3) ≈2.07e-15\n(4) q^2"
+  },
+  "methods": [],
+  "tags": [
+   "渦糸",
+   "磁束の量子化",
+   "アーベル・ヒッグス模型",
+   "超伝導",
+   "BPS"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 4,
+  "minutes": 30,
+  "theme": "量子異常による中性パイ中間子の2光子崩壊と色の数",
+  "topic": "量子異常による中性パイ中間子の2光子崩壊と色の数",
+  "statement": {
+   "tex": "自然単位系を用いる．軸性カレントの量子異常（アドラー＝ベル＝ジャッキウ異常）により，中性パイ中間子 $\\pi^0$ と光子の有効相互作用\n\\[\\mathcal L=\\frac{G}{4}\\pi^0F_{\\mu\\nu}\\tilde F^{\\mu\\nu},\\qquad\\tilde F^{\\mu\\nu}=\\frac12\\epsilon^{\\mu\\nu\\rho\\sigma}F_{\\rho\\sigma},\\qquad G=\\frac{\\alpha N_c\\left(Q_u^2-Q_d^2\\right)}{\\pi f_\\pi}\\]\nが生じる（$N_c$ はクォークの色の数，$Q_u=\\frac23$，$Q_d=-\\frac13$，$f_\\pi$ はパイ中間子崩壊定数）．崩壊 $\\pi^0\\to\\gamma(k_1)\\gamma(k_2)$ の振幅は $\\mathcal M=G\\epsilon^{\\mu\\nu\\rho\\sigma}k_{1\\mu}\\varepsilon^*_{1\\nu}k_{2\\rho}\\varepsilon^*_{2\\sigma}$ で，偏極の和は $\\displaystyle\\sum_{\\mathrm{pol}}|\\epsilon^{\\mu\\nu\\rho\\sigma}k_{1\\mu}\\varepsilon^*_{1\\nu}k_{2\\rho}\\varepsilon^*_{2\\sigma}|^2=2(k_1\\cdot k_2)^2$ である．\n\\begin{enumerate}\n\\item $N_c(Q_u^2-Q_d^2)$ を $N_c$ で表せ．\n\\item 崩壊幅は $\\Gamma=\\dfrac12\\cdot\\dfrac{1}{16\\pi m}\\sum|\\mathcal M|^2$（$\\frac12$ は同種粒子の因子，$m$ は $\\pi^0$ の質量）である．$\\Gamma$ を $G,\\ m$ で表せ．\n\\item $N_c=3$，$\\alpha=1/137.04$，$m=134.98\\,\\mathrm{MeV}$，$f_\\pi=92.1\\,\\mathrm{MeV}$ として $\\Gamma$ を $\\mathrm{eV}$ 単位で求めよ．\n\\item 色がない（$N_c=1$）と仮定した場合の $\\Gamma$ を $\\mathrm{eV}$ 単位で求めよ（実験値は約 $7.8\\,\\mathrm{eV}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{N_c}{3}$\n(2) $\\Gamma=\\frac{G^2m^3}{64\\pi}$\n(3) $\\approx7.78$\n(4) $\\approx0.864$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Q_u^2-Q_d^2=\\frac49-\\frac19=\\frac13$ より $\\boldsymbol{\\dfrac{N_c}{3}}$．$N_c=3$ でちょうど $1$．\n\n(2) $k_1\\cdot k_2=\\frac12(k_1+k_2)^2=\\frac{m^2}{2}$ なので $\\sum|\\mathcal M|^2=2G^2\\cdot\\frac{m^4}{4}=\\frac{G^2m^4}{2}$．\n\\[\\Gamma=\\frac12\\cdot\\frac{1}{16\\pi m}\\cdot\\frac{G^2m^4}{2}=\\boldsymbol{\\frac{G^2m^3}{64\\pi}}.\\]\n\n(3) $N_c=3$ で $G=\\dfrac{\\alpha}{\\pi f_\\pi}$，$\\Gamma=\\dfrac{\\alpha^2m^3}{64\\pi^3f_\\pi^2}$．\n\\[\\Gamma=\\frac{(1/137.04)^2\\times(134.98)^3}{64\\pi^3\\times(92.1)^2}\\,\\mathrm{MeV}=7.78\\times10^{-6}\\,\\mathrm{MeV}\\approx\\boldsymbol{7.78}\\,\\mathrm{eV}.\\]\n寿命は $\\hbar/\\Gamma\\approx8.5\\times10^{-17}\\,\\mathrm{s}$ で，実験値とよく一致する．\n\n(4) 幅は $N_c^2$ に比例するので $7.78/9\\approx\\boldsymbol{0.864}\\,\\mathrm{eV}$．実験と9倍ずれる．$\\pi^0\\to\\gamma\\gamma$ はクォークが3色あることの古典的な証拠である．\n\n異常は1ループの三角形図（$\\langle AVV\\rangle$）から生じ，高次の補正を受けない（アドラー＝バーディーンの定理）．そのため低エネルギーのパイ中間子の崩壊で，高エネルギーのクォークの自由度（色と電荷）を正確に数えられる（'t Hooft の異常整合性）．"
+   }
+  ],
+  "idea": {
+   "tex": "ABJ 異常が与える $\\pi^0F\\tilde F$ 結合は $N_c\\sum Q^2$ に比例し，崩壊幅は色の数の2乗を測る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) N_c/3\n(2) G^2 m^3/(64pi)\n(3) ≈7.78\n(4) ≈0.864"
+  },
+  "methods": [],
+  "tags": [
+   "量子異常",
+   "ABJ異常",
+   "中性パイ中間子",
+   "色の数",
+   "崩壊幅"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 4,
+  "minutes": 35,
+  "theme": "コールマン＝ワインバーグ機構：放射補正による対称性の破れ",
+  "topic": "コールマン＝ワインバーグ機構：放射補正による対称性の破れ",
+  "statement": {
+   "tex": "質量項のない（古典的にスケール不変な）スカラー QED を考える．複素スカラー場の大きさを実場 $\\phi$（$|\\Phi|^2=\\phi^2/2$）で表すと，ゲージ粒子の質量は $m_V^2(\\phi)=q^2\\phi^2$（$q$ はゲージ結合定数）となる．$\\lambda\\sim q^4$ としてスカラー粒子のループを無視すると，1ループの有効ポテンシャルは\n\\[V(\\phi)=\\frac{\\lambda}{4!}\\phi^4+\\frac{3q^4}{64\\pi^2}\\phi^4\\left(\\ln\\frac{\\phi^2}{M^2}-\\frac{25}{6}\\right)\\]\nである（$\\lambda$ はくりこみ点 $\\phi=M$ で定義した結合）．$B=\\dfrac{3q^4}{64\\pi^2}$ とおく．\n\\begin{enumerate}\n\\item $V$ の最小点を $\\phi=v\\neq0$ とし，くりこみ点を $M=v$ に選ぶ．最小条件 $V'(v)=0$ から $\\lambda$ を $q$ で表せ．\n\\item (1) を代入すると $V=B\\phi^4\\left(\\ln\\dfrac{\\phi^2}{v^2}-\\dfrac12\\right)$ となる．スカラー粒子の質量の2乗 $m_S^2=V''(v)$ を $q,\\ v$ で表せ．\n\\item 比 $\\dfrac{m_S^2}{m_V^2}$ を $\\alpha=\\dfrac{q^2}{4\\pi}$ で表せ．\n\\item $\\alpha=1/137$ のとき $m_S/m_V$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=\\frac{33q^4}{8\\pi^2}$\n(2) $m_S^2=\\frac{3q^4v^2}{8\\pi^2}$\n(3) $\\frac{3\\alpha}{2\\pi}$\n(4) $\\approx0.059$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $M=v$ で $\\dfrac{d}{d\\phi}\\left[B\\phi^4\\left(\\ln\\frac{\\phi^2}{v^2}-\\frac{25}{6}\\right)\\right]_{\\phi=v}=B\\left(-\\frac{50}{3}+2\\right)v^3=-\\frac{44}{3}Bv^3$．\n\\[\\frac{\\lambda v^3}{6}-\\frac{44}{3}Bv^3=0,\\qquad\\lambda=88B=\\boldsymbol{\\frac{33q^4}{8\\pi^2}}.\\]\n$\\lambda$ は $q^4$ の大きさで，仮定 $\\lambda\\sim q^4$ と整合する（スカラーのループは $\\lambda^2\\sim q^8$ で無視できる）．\n\n(2) $\\frac{88}{24}=\\frac{11}{3}$，$\\frac{11}{3}-\\frac{25}{6}=-\\frac12$ より与えられた形になる．$f=B\\phi^4\\left(2\\ln\\frac\\phi v-\\frac12\\right)$ を微分すると $f'=8B\\phi^3\\ln\\frac{\\phi}{v}$，$f''=B\\phi^2\\left(24\\ln\\frac\\phi v+8\\right)$．\n\\[m_S^2=8Bv^2=\\boldsymbol{\\frac{3q^4v^2}{8\\pi^2}}.\\]\n\n(3) $\\dfrac{m_S^2}{m_V^2}=\\dfrac{3q^4v^2/8\\pi^2}{q^2v^2}=\\dfrac{3q^2}{8\\pi^2}=\\boldsymbol{\\dfrac{3\\alpha}{2\\pi}}$．\n\n(4) $\\sqrt{\\dfrac{3}{2\\pi\\times137}}\\approx\\boldsymbol{0.059}$．\n\n古典的には質量スケールのない理論で，量子補正（対数）がスケール $v$ を生み出して対称性を破る（次元転移）．無次元の結合 $\\lambda$ がスケール $v$ に置き換わり，予言として $m_S\\ll m_V$ という質量比が得られる．"
+   }
+  ],
+  "idea": {
+   "tex": "質量ゼロの理論でも1ループの対数補正が有効ポテンシャルに最小点を作り，スカラー質量はゲージ質量の $\\sqrt{3\\alpha/2\\pi}$ 倍と予言される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 33q^4/(8pi^2)\n(2) 3q^4 v^2/(8pi^2)\n(3) 3α/(2pi)\n(4) ≈0.059"
+  },
+  "methods": [],
+  "tags": [
+   "コールマン＝ワインバーグ機構",
+   "有効ポテンシャル",
+   "次元転移",
+   "スカラーQED",
+   "自発的対称性の破れ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-07-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 4,
+  "minutes": 30,
+  "theme": "カイラル有効理論とゲルマン＝オークス＝レナー関係",
+  "topic": "カイラル有効理論とゲルマン＝オークス＝レナー関係",
+  "statement": {
+   "tex": "2種類のクォーク（u, d）の QCD のカイラル対称性が自発的に破れたときの低エネルギー有効理論は，$2\\times2$ のユニタリー行列 $U=\\exp\\left(\\dfrac{i\\pi^a\\tau^a}{f}\\right)$（$\\tau^a$ はパウリ行列，$\\pi^a$ はパイ中間子の場，$f$ は崩壊定数）を用いて\n\\[\\mathcal L=\\frac{f^2}{4}\\mathrm{tr}\\left(\\partial_\\mu U\\partial^\\mu U^\\dagger\\right)+\\frac{f^2B}{2}\\mathrm{tr}\\left[\\mathcal M(U+U^\\dagger)\\right],\\qquad\\mathcal M=\\mathrm{diag}(m_u,m_d)\\]\nで与えられる（$B>0$ は定数）．$(\\pi^a\\tau^a)^2=\\pi^a\\pi^a\\,I$ を用いてよい．\n\\begin{enumerate}\n\\item $\\pi^a$ の2次まで展開して，パイ中間子の質量の2乗 $m_\\pi^2$ を $B,\\ m_u,\\ m_d$ で表せ（運動項が $\\frac12\\partial\\pi^a\\partial\\pi^a$ と正規化されることを確かめよ）．\n\\item 真空のエネルギー密度 $E_{\\mathrm{vac}}=-\\mathcal L|_{U=I}$ を用いて，クォーク凝縮を $\\langle\\bar uu\\rangle=\\dfrac{\\partial E_{\\mathrm{vac}}}{\\partial m_u}$ で定める．$\\langle\\bar uu\\rangle$ を $f,\\ B$ で表せ．\n\\item (1)(2) から $m_\\pi^2f^2=-(m_u+m_d)\\langle\\bar uu\\rangle$（GMOR 関係）が成り立つ．$m_\\pi=135.0\\,\\mathrm{MeV}$，$f=92.1\\,\\mathrm{MeV}$，$m_u+m_d=6.8\\,\\mathrm{MeV}$ として $|\\langle\\bar uu\\rangle|^{1/3}$ を $\\mathrm{MeV}$ 単位で求めよ．\n\\item s クォークを含めた3種類の理論では $m_K^2=B(\\hat m+m_s)$（$\\hat m=\\frac{m_u+m_d}{2}$），$m_\\pi^2=2B\\hat m$ となる．$m_K=495.6\\,\\mathrm{MeV}$ として $m_s/\\hat m$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $m_\\pi^2=B(m_u+m_d)$\n(2) $\\langle\\bar uu\\rangle=-f^2B$\n(3) $\\approx283$\n(4) $\\approx26.0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_\\mu U\\approx\\frac{i}{f}\\partial_\\mu\\pi^a\\tau^a$ より運動項は $\\frac{f^2}{4}\\cdot\\frac{1}{f^2}\\mathrm{tr}(\\tau^a\\tau^b)\\partial\\pi^a\\partial\\pi^b=\\frac12\\partial\\pi^a\\partial\\pi^a$（$\\mathrm{tr}(\\tau^a\\tau^b)=2\\delta^{ab}$）．$U+U^\\dagger=2\\cos\\frac{\\pi\\cdot\\tau}{f}=2\\left(1-\\frac{\\pi^a\\pi^a}{2f^2}+\\cdots\\right)I$ より\n\\[\\frac{f^2B}{2}\\cdot2(m_u+m_d)\\left(1-\\frac{\\pi^a\\pi^a}{2f^2}\\right)=\\text{定数}-\\frac12B(m_u+m_d)\\pi^a\\pi^a.\\]\n$\\boldsymbol{m_\\pi^2=B(m_u+m_d)}$．クォーク質量がゼロなら $\\pi$ は厳密な NG 粒子である．\n\n(2) $U=I$ で $\\mathcal L=f^2B(m_u+m_d)$，$E_{\\mathrm{vac}}=-f^2B(m_u+m_d)$．$\\boldsymbol{\\langle\\bar uu\\rangle=-f^2B}$．\n\n(3) $m_\\pi^2f^2=B(m_u+m_d)f^2=-(m_u+m_d)\\langle\\bar uu\\rangle$．\n\\[|\\langle\\bar uu\\rangle|=\\frac{(135.0)^2(92.1)^2}{6.8}=2.27\\times10^7\\,\\mathrm{MeV^3},\\qquad|\\langle\\bar uu\\rangle|^{1/3}\\approx\\boldsymbol{283}\\,\\mathrm{MeV}.\\]\n真空がクォーク凝縮をもつことがカイラル対称性の破れの秩序変数である．$m_\\pi^2\\propto m_q$（質量の2乗がクォーク質量に比例）は NG 粒子に特有の性質である．\n\n(4) $\\dfrac{m_K^2}{m_\\pi^2}=\\dfrac{\\hat m+m_s}{2\\hat m}$ より $\\dfrac{m_s}{\\hat m}=\\dfrac{2m_K^2}{m_\\pi^2}-1=2\\times13.48-1\\approx\\boldsymbol{26.0}$（格子 QCD の値 $\\approx27$ とよく合う）．"
+   }
+  ],
+  "idea": {
+   "tex": "NG 粒子の質量の2乗は明示的な破れ（クォーク質量）に比例し，比例係数は真空の凝縮 $\\langle\\bar qq\\rangle/f^2$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) B(m_u+m_d)\n(2) -f^2 B\n(3) ≈283\n(4) ≈26.0"
+  },
+  "methods": [],
+  "tags": [
+   "カイラル対称性",
+   "ゲルマン＝オークス＝レナー関係",
+   "クォーク凝縮",
+   "擬南部＝ゴールドストーン粒子",
+   "カイラル摂動論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

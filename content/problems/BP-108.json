@@ -1,0 +1,746 @@
+[
+ {
+  "id": "BP-04-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ボルツマン分布から導くネルンストの式",
+  "topic": "ボルツマン分布から導くネルンストの式",
+  "statement": {
+   "tex": "細胞膜をはさんで，膜の内側の電位が外側より $V$ だけ高いとする（$V=\\phi_{\\mathrm{in}}-\\phi_{\\mathrm{out}}$）．膜を通れるイオン（電荷 $zq$，$q$ は素電荷）が熱平衡にあれば，その濃度はボルツマン分布にしたがい，\n\\[ \\frac{c_i}{c_o}=\\exp\\left(-\\frac{zqV}{k_BT}\\right) \\]\nとなる（電位エネルギー $zq\\phi$ が高い側ほど濃度が小さい）．体温 $T=310\\,\\mathrm{K}$ で $k_BT/q=26.7\\,\\mathrm{mV}$ とする．\n\\begin{enumerate}\n\\item 上の式を $V$ について解け（この $V$ を平衡電位という）．\n\\item カリウムイオン K$^+$（$z=1$）の濃度が外側 $5.0\\,\\mathrm{mM}$，内側 $140\\,\\mathrm{mM}$ のとき，平衡電位 $E_K$ を $\\mathrm{mV}$ 単位で求めよ．\n\\item カルシウムイオン Ca$^{2+}$（$z=2$）の濃度が外側 $2.0\\,\\mathrm{mM}$，内側 $1.0\\times10^{-4}\\,\\mathrm{mM}$ のとき，平衡電位 $E_{Ca}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V=\\dfrac{k_BT}{zq}\\ln\\dfrac{c_o}{c_i}$　(2) $E_K\\approx-89.0\\,\\mathrm{mV}$　(3) $E_{Ca}\\approx132\\,\\mathrm{mV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 両辺の対数をとると $\\ln\\dfrac{c_i}{c_o}=-\\dfrac{zqV}{k_BT}$ より\n\\[ \\boldsymbol{V=\\frac{k_BT}{zq}\\ln\\frac{c_o}{c_i}}\\quad\\text{（ネルンストの式）}. \\]\n\n(2) $E_K=26.7\\times\\ln\\dfrac{5.0}{140}=26.7\\times(-3.33)\\approx\\boldsymbol{-89.0\\,\\mathrm{mV}}$．内側に多い正イオンを内側にとどめるには，内側を負にする必要がある．\n\n(3) $E_{Ca}=\\dfrac{26.7}{2}\\ln\\dfrac{2.0}{1.0\\times10^{-4}}=13.36\\times9.90\\approx\\boldsymbol{132\\,\\mathrm{mV}}$．価数が2なので同じ濃度比でも電位は半分で済むが，濃度比が $2\\times10^4$ と非常に大きいため大きな正の値になる．\n\n実際の静止膜電位（約 $-70\\,\\mathrm{mV}$）は，複数のイオンの平衡電位を，膜の通しやすさ（透過性）で重みづけした値になる．次はこれを表すゴールドマン＝ホジキン＝カッツの式を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "熱平衡では電気的なエネルギーとエントロピー（濃度差）がつりあう．膜電位 $\\sim$ $(k_BT/q)\\times\\ln$(濃度比)．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) V：k_B T/(z q) ln(c_o/c_i)\n(2) E_K [mV]：≈-89.0\n(3) E_Ca [mV]：≈132"
+  },
+  "methods": [],
+  "tags": [
+   "ネルンストの式",
+   "平衡電位",
+   "ボルツマン分布",
+   "イオン濃度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 0,
+  "minutes": 10,
+  "theme": "膜のキャパシタンスと膜電位をつくるイオンの数",
+  "topic": "膜のキャパシタンスと膜電位をつくるイオンの数",
+  "statement": {
+   "tex": "細胞膜は厚さ数 nm の脂質の層で，両側の水溶液を極板とするコンデンサーとみなせる．面積あたりの電気容量は $c_m=1.0\\,\\mathrm{\\mu F/cm^2}$ である．半径 $10\\,\\mathrm{\\mu m}$ の球形の細胞を考える．電気素量は $q=1.6\\times10^{-19}\\,\\mathrm{C}$，アボガドロ定数は $6.0\\times10^{23}\\,\\mathrm{mol^{-1}}$，真空の誘電率は $\\varepsilon_0=8.85\\times10^{-12}\\,\\mathrm{F/m}$ とする．\n\\begin{enumerate}\n\\item 細胞膜全体の電気容量 $C$ を $\\mathrm{pF}$ 単位で求めよ．\n\\item 膜電位を $100\\,\\mathrm{mV}$ 変えるのに膜の片側へ移す必要がある1価イオンの数 $n$ を求めよ．また，細胞内の K$^+$ 濃度を $140\\,\\mathrm{mM}$ として，細胞内の K$^+$ の総数に対する $n$ の割合を求めよ．\n\\item 膜を比誘電率 $2.0$ の平行板コンデンサーとみなすとき，その厚さ $d$ を $\\mathrm{nm}$ 単位で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $C\\approx12.6\\,\\mathrm{pF}$　(2) $n\\approx7.9\\times10^6$，割合 $\\approx2.2\\times10^{-5}$　(3) $d\\approx1.8\\,\\mathrm{nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 表面積 $4\\pi(10\\times10^{-6})^2=1.26\\times10^{-9}\\,\\mathrm{m^2}$，$c_m=1.0\\times10^{-2}\\,\\mathrm{F/m^2}$ なので $C=1.26\\times10^{-11}\\,\\mathrm{F}\\approx\\boldsymbol{12.6\\,\\mathrm{pF}}$．\n\n(2) $Q=CV=1.26\\times10^{-12}\\,\\mathrm{C}$，$n=Q/q\\approx\\boldsymbol{7.9\\times10^6}$．体積は $\\frac43\\pi(10^{-5})^3=4.19\\times10^{-15}\\,\\mathrm{m^3}=4.19\\times10^{-12}\\,\\mathrm{L}$ で，K$^+$ の数は $0.140\\times4.19\\times10^{-12}\\times6.0\\times10^{23}=3.5\\times10^{11}$．割合は $\\boldsymbol{2.2\\times10^{-5}}$．\n\n膜電位をつくるのに必要なイオンは全体のごく一部であり，膜電位が変わっても細胞内のイオン濃度はほとんど変わらない．\n\n(3) $c_m=\\varepsilon_0\\varepsilon_r/d$ より $d=\\dfrac{8.85\\times10^{-12}\\times2.0}{1.0\\times10^{-2}}=1.8\\times10^{-9}\\,\\mathrm{m}=\\boldsymbol{1.8\\,\\mathrm{nm}}$．脂質の炭化水素の層の厚さと同程度である．\n\n次は，膜にイオンを通す孔（チャネル）による抵抗を加えた RC 回路として膜を扱うとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "膜は薄いコンデンサー．膜電位の変化に必要な電荷はわずかで，濃度はほぼ変わらない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) C [pF]：≈12.6\n(2) n：≈7.9e6 ; 割合：≈2.2e-5\n(3) d [nm]：≈1.8"
+  },
+  "methods": [],
+  "tags": [
+   "膜のキャパシタンス",
+   "コンデンサー",
+   "膜電位",
+   "イオンの数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 0,
+  "minutes": 10,
+  "theme": "電位依存性イオンチャネルの2状態ボルツマン分布とゲート電荷",
+  "topic": "電位依存性イオンチャネルの2状態ボルツマン分布とゲート電荷",
+  "statement": {
+   "tex": "イオンチャネルは，イオンを通す「開」状態と通さない「閉」状態をとる．膜電位 $V$ のもとで，開状態と閉状態の確率の比が\n\\[ \\frac{P_o}{P_c}=\\exp\\left[\\frac{zq(V-V_{1/2})}{k_BT}\\right]\\qquad(P_o+P_c=1) \\]\nで与えられるとする．$zq$ は開閉のときに膜を横切って動く電荷（ゲート電荷），$V_{1/2}$ は定数である．$k_BT/q=25\\,\\mathrm{mV}$ とする．\n\\begin{enumerate}\n\\item $P_o$ を $V$ の関数として書き，$z=4$，$V=V_{1/2}+10\\,\\mathrm{mV}$ のときの $P_o$ を求めよ．\n\\item $V=V_{1/2}$ における傾き $dP_o/dV$ を，$z=4$ について $\\mathrm{mV^{-1}}$ 単位で求めよ．\n\\item あるチャネルでは，$P_o$ が $0.10$ から $0.90$ に変わる間の電位の変化が $11\\,\\mathrm{mV}$ であった．$z$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P_o=\\dfrac{1}{1+e^{-zq(V-V_{1/2})/k_BT}}$，$P_o\\approx0.832$　(2) $\\dfrac{dP_o}{dV}=0.04\\,\\mathrm{mV^{-1}}$　(3) $z\\approx10$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $P_o=\\dfrac{P_o/P_c}{1+P_o/P_c}$ より $\\boldsymbol{P_o=\\dfrac{1}{1+e^{-zq(V-V_{1/2})/k_BT}}}$．$zq(V-V_{1/2})/k_BT=4\\times10/25=1.6$ で $P_o=1/(1+e^{-1.6})\\approx\\boldsymbol{0.832}$．\n\n(2) $u=zq(V-V_{1/2})/k_BT$ として $\\dfrac{dP_o}{dV}=\\dfrac{zq}{k_BT}P_o(1-P_o)$．$V=V_{1/2}$ では $P_o=1/2$ なので $\\dfrac{zq}{4k_BT}=\\dfrac{4}{100\\,\\mathrm{mV}}=\\boldsymbol{0.04\\,\\mathrm{mV^{-1}}}$．\n\n(3) $P_o=0.10$ では $P_o/P_c=1/9$，$0.90$ では $9$．指数の差は $\\ln81=2\\ln9$ なので\n\\[ \\frac{zq\\times11\\,\\mathrm{mV}}{k_BT}=2\\ln9,\\qquad z=\\frac{2\\ln9\\times25}{11}\\approx\\boldsymbol{10}. \\]\n多くの電荷が動くほど，チャネルは電位にスイッチのように鋭く反応する．神経の Na$^+$ チャネルや K$^+$ チャネルでは $z\\approx10$ 程度が測られている．\n\n次は，多数のチャネルの開閉の時間変化を表すホジキン＝ハクスリー模型を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "2状態のボルツマン分布はフェルミ分布と同じ形．電位への感度はゲート電荷 $zq$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) P_o：≈0.832\n(2) [mV^-1]：0.04\n(3) z：≈10"
+  },
+  "methods": [],
+  "tags": [
+   "イオンチャネル",
+   "ボルツマン分布",
+   "ゲート電荷",
+   "2状態模型"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 1,
+  "minutes": 15,
+  "theme": "並列コンダクタンス模型による静止膜電位と活動電位の頂点",
+  "topic": "並列コンダクタンス模型による静止膜電位と活動電位の頂点",
+  "statement": {
+   "tex": "膜を，K$^+$，Na$^+$，Cl$^-$ の各チャネルを表す「コンダクタンス $g_i$ と起電力 $E_i$（そのイオンの平衡電位）の直列」の3本を並列につないだ回路とみなす．イオン $i$ が膜を外向きに流れる電流は $I_i=g_i(V-E_i)$ である．\n$E_K=-90\\,\\mathrm{mV}$，$E_{Na}=+60\\,\\mathrm{mV}$，$E_{Cl}=-70\\,\\mathrm{mV}$，$g_K=1.0$，$g_{Na}=0.05$，$g_{Cl}=0.40$（単位 $\\mathrm{mS/cm^2}$）とする．\n\\begin{enumerate}\n\\item 全電流が $0$ になる膜電位（静止膜電位）$V_r$ を $g_i,\\,E_i$ で表し，数値を求めよ．\n\\item 静止状態で流れる K$^+$ 電流と Na$^+$ 電流を $\\mathrm{\\mu A/cm^2}$ 単位で求めよ（外向きを正）．\n\\item 興奮時に $g_{Na}$ だけが $20\\,\\mathrm{mS/cm^2}$ に増えたとき，全電流が $0$ になる膜電位を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V_r=\\dfrac{g_KE_K+g_{Na}E_{Na}+g_{Cl}E_{Cl}}{g_K+g_{Na}+g_{Cl}}\\approx-79.3\\,\\mathrm{mV}$　(2) $I_K\\approx10.7\\,\\mathrm{\\mu A/cm^2}$，$I_{Na}\\approx-6.97\\,\\mathrm{\\mu A/cm^2}$　(3) $\\approx50.6\\,\\mathrm{mV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sum_ig_i(V_r-E_i)=0$ より\n\\[ \\boldsymbol{V_r=\\frac{g_KE_K+g_{Na}E_{Na}+g_{Cl}E_{Cl}}{g_K+g_{Na}+g_{Cl}}}=\\frac{-90+3-28}{1.45}\\approx\\boldsymbol{-79.3\\,\\mathrm{mV}}. \\]\n静止膜電位は平衡電位をコンダクタンスで重みづけした平均で，最も通しやすい K$^+$ の $E_K$ に近い．\n\n(2) $I_K=1.0\\times(-79.3+90)\\approx\\boldsymbol{10.7\\,\\mathrm{\\mu A/cm^2}}$（外向き），$I_{Na}=0.05\\times(-79.3-60)\\approx\\boldsymbol{-6.97\\,\\mathrm{\\mu A/cm^2}}$（内向き）．残りは Cl$^-$ 電流 $-3.7\\,\\mathrm{\\mu A/cm^2}$ で，合計 $0$．\n\n全電流は $0$ でも各イオンは流れ続けているので，そのままでは濃度差が少しずつ失われる．これを補うのが ATP を使うナトリウム－カリウムポンプである（静止状態は平衡ではなく非平衡定常状態）．\n\n(3) $\\dfrac{-90+1200-28}{21.4}\\approx\\boldsymbol{50.6\\,\\mathrm{mV}}$．Na$^+$ のコンダクタンスが支配的になると膜電位は $E_{Na}$ に近づく．これが活動電位の頂点（オーバーシュート）である．"
+   }
+  ],
+  "idea": {
+   "tex": "膜電位はコンダクタンスで重みづけした平衡電位の平均．どのチャネルが開いているかで $E_K$ 寄りにも $E_{Na}$ 寄りにもなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) V_r [mV]：≈-79.3\n(2) I_K [μA/cm^2]：≈10.7 ; I_Na [μA/cm^2]：≈-6.97\n(3) [mV]：≈50.6"
+  },
+  "methods": [],
+  "tags": [
+   "静止膜電位",
+   "並列コンダクタンス模型",
+   "平衡電位",
+   "活動電位",
+   "非平衡定常状態"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 1,
+  "minutes": 15,
+  "theme": "膜の RC 回路：時定数と入力抵抗",
+  "topic": "膜の RC 回路：時定数と入力抵抗",
+  "statement": {
+   "tex": "球形の細胞（半径 $a$）の膜を，面積あたりの抵抗 $r_m$（単位 $\\Omega\\,\\mathrm{cm^2}$）と面積あたりの容量 $c_m$ の並列回路とみなす．細胞内に微小電極で一定の電流 $I_0$ を時刻 $0$ から注入する．膜電位の静止値からの変化を $V(t)$ とする（$V(0)=0$）．\n\\begin{enumerate}\n\\item $V(t)$ を求め，時定数 $\\tau$ が細胞の大きさによらず $r_m,\\,c_m$ だけで決まることを示せ．\n\\item $r_m=1.0\\times10^4\\,\\Omega\\,\\mathrm{cm^2}$，$c_m=1.0\\,\\mathrm{\\mu F/cm^2}$，$a=10\\,\\mathrm{\\mu m}$ のとき，$\\tau$ と入力抵抗 $R_{\\mathrm{in}}$ を求めよ．\n\\item (2) の細胞に $I_0=50\\,\\mathrm{pA}$ を注入したときの最終的な $V$ と，$V$ がその $90\\%$ に達するまでの時間を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V(t)=\\dfrac{I_0r_m}{4\\pi a^2}\\left(1-e^{-t/r_mc_m}\\right)$，$\\tau=r_mc_m$　(2) $\\tau=10\\,\\mathrm{ms}$，$R_{\\mathrm{in}}\\approx8.0\\times10^8\\,\\mathrm{\\Omega}$　(3) $V\\approx39.8\\,\\mathrm{mV}$，時間 $\\approx23.0\\,\\mathrm{ms}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 膜の面積 $A=4\\pi a^2$ で，全抵抗 $R=r_m/A$，全容量 $C=c_mA$．$C\\dot V=I_0-V/R$ を解いて\n\\[ \\boldsymbol{V(t)=\\frac{I_0r_m}{4\\pi a^2}\\left(1-e^{-t/\\tau}\\right)},\\qquad\\boldsymbol{\\tau=RC=r_mc_m}. \\]\n面積が約分されるので，$\\tau$ は膜の性質だけで決まる．\n\n(2) $\\tau=10^4\\times10^{-6}\\,\\mathrm{s}=\\boldsymbol{10\\,\\mathrm{ms}}$．$A=4\\pi(10^{-3}\\,\\mathrm{cm})^2=1.26\\times10^{-5}\\,\\mathrm{cm^2}$ で $R_{\\mathrm{in}}=r_m/A\\approx\\boldsymbol{8.0\\times10^8\\,\\mathrm{\\Omega}}$．\n\n(3) $V_\\infty=I_0R_{\\mathrm{in}}=50\\times10^{-12}\\times7.96\\times10^8\\approx\\boldsymbol{39.8\\,\\mathrm{mV}}$．$1-e^{-t/\\tau}=0.9$ より $t=\\tau\\ln10\\approx\\boldsymbol{23.0\\,\\mathrm{ms}}$．小さな細胞は入力抵抗が大きく，数十 pA の電流（チャネル十数個ぶん）で大きく電位が変わる．"
+   }
+  ],
+  "idea": {
+   "tex": "膜は RC 並列回路．時定数は面積あたりの量の積 $r_mc_m$ で，入力抵抗は面積に反比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) V(t)：I_0 r_m/(4 pi a^2) (1 - e^(-t/(r_m c_m))) ; τ：r_m c_m\n(2) τ [ms]：≈10 ; R_in [Ω]：≈8.0e8\n(3) V [mV]：≈39.8 ; 時間 [ms]：≈23.0"
+  },
+  "methods": [],
+  "tags": [
+   "RC回路",
+   "膜の時定数",
+   "入力抵抗",
+   "膜のキャパシタンス"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ケーブル方程式の定常解と長さ定数",
+  "topic": "ケーブル方程式の定常解と長さ定数",
+  "statement": {
+   "tex": "半径 $a$ の細長い樹状突起を，内部の抵抗率 $\\rho_i$（単位 $\\Omega\\,\\mathrm{cm}$）の円柱と，面積あたりの抵抗 $r_m$（単位 $\\Omega\\,\\mathrm{cm^2}$）の膜でできたケーブルとみなす．外液の抵抗は無視する．定常状態で，膜電位の静止値からのずれ $V(x)$ を考える．\n\\begin{enumerate}\n\\item 長さあたりの内部抵抗 $r_i$ と長さあたりの膜のコンダクタンス $g_m$ を書き，電流の保存から $\\lambda^2\\dfrac{d^2V}{dx^2}=V$ が成り立つことを示して，長さ定数 $\\lambda$ を $a,\\,\\rho_i,\\,r_m$ で表せ．\n\\item 半無限のケーブルの端 $x=0$ に一定電圧 $V_0$ を加えた．$a=0.50\\,\\mathrm{\\mu m}$，$\\rho_i=100\\,\\Omega\\,\\mathrm{cm}$，$r_m=2.0\\times10^4\\,\\Omega\\,\\mathrm{cm^2}$ のとき，$\\lambda$ と，$V$ が $V_0$ の $10\\%$ に減衰する距離を求めよ．\n\\item (2) のケーブルの入力抵抗 $R_\\infty=V_0/I_0$（$I_0$ は $x=0$ で流し込む電流）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=\\sqrt{\\dfrac{ar_m}{2\\rho_i}}$　(2) $\\lambda\\approx707\\,\\mathrm{\\mu m}$，距離 $\\approx1.63\\,\\mathrm{mm}$　(3) $R_\\infty\\approx9.0\\times10^8\\,\\mathrm{\\Omega}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $r_i=\\dfrac{\\rho_i}{\\pi a^2}$，$g_m=\\dfrac{2\\pi a}{r_m}$．軸方向の電流 $I=-\\dfrac{1}{r_i}\\dfrac{dV}{dx}$ は，膜から漏れる分だけ減る：$\\dfrac{dI}{dx}=-g_mV$．よって $\\dfrac{1}{r_ig_m}\\dfrac{d^2V}{dx^2}=V$ で\n\\[ \\lambda^2=\\frac{1}{r_ig_m}=\\frac{ar_m}{2\\rho_i},\\qquad\\boldsymbol{\\lambda=\\sqrt{\\frac{ar_m}{2\\rho_i}}}. \\]\n\n(2) $\\lambda=\\sqrt{\\dfrac{5.0\\times10^{-5}\\times2.0\\times10^4}{200}}=0.0707\\,\\mathrm{cm}\\approx\\boldsymbol{707\\,\\mathrm{\\mu m}}$．解は $V=V_0e^{-x/\\lambda}$ なので，$10\\%$ になるのは $x=\\lambda\\ln10\\approx\\boldsymbol{1.63\\,\\mathrm{mm}}$．\n\n(3) $I_0=-\\dfrac{1}{r_i}V'(0)=\\dfrac{V_0}{r_i\\lambda}$ より $R_\\infty=r_i\\lambda=\\dfrac{\\rho_i\\lambda}{\\pi a^2}=\\dfrac{100\\times0.0707}{\\pi(5.0\\times10^{-5})^2}\\approx\\boldsymbol{9.0\\times10^8\\,\\Omega}$．\n\n$\\lambda\\propto\\sqrt a$ なので，細い突起ほど信号は近くで減衰する．遠くまで信号を送るには，太くする（イカの巨大軸索）か，膜の抵抗を上げる（髄鞘）しかない．"
+   }
+  ],
+  "idea": {
+   "tex": "内部抵抗に沿った電圧降下と膜からの漏れのつりあいで，電位は長さ定数 $\\lambda=\\sqrt{ar_m/2\\rho_i}$ で指数関数的に減衰する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) λ：sqrt(a r_m/(2 rho_i))\n(2) λ [μm]：≈707 ; 距離 [mm]：≈1.63\n(3) R_∞ [Ω]：≈9.0e8"
+  },
+  "methods": [],
+  "tags": [
+   "ケーブル方程式",
+   "長さ定数",
+   "樹状突起",
+   "入力抵抗"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ホジキン＝ハクスリー模型の K⁺ ゲート：電位固定下のコンダクタンスの立ち上がり",
+  "topic": "ホジキン＝ハクスリー模型の K⁺ ゲート：電位固定下のコンダクタンスの立ち上がり",
+  "statement": {
+   "tex": "ホジキン＝ハクスリー模型では，K$^+$ のコンダクタンスは $g_K=\\bar g_Kn^4$ と書ける．ゲート変数 $n\\ (0\\le n\\le1)$ は\n\\[ \\frac{dn}{dt}=\\alpha_n(1-n)-\\beta_nn \\]\nにしたがい，速度定数 $\\alpha_n,\\,\\beta_n$ は膜電位だけで決まる．時刻 $0$ に膜電位を急に変えて一定に保つ（電位固定）．変えた後の電位では $\\alpha_n=0.50\\,\\mathrm{ms^{-1}}$，$\\beta_n=0.10\\,\\mathrm{ms^{-1}}$，変える前の値は $n_0=0.30$ である．\n\\begin{enumerate}\n\\item $n(t)$ を求め，定常値 $n_\\infty$ と時定数 $\\tau_n$ を $\\alpha_n,\\,\\beta_n$ で表せ．数値も求めよ．\n\\item $g_K/\\bar g_K$ の初期値と最終値を求めよ．\n\\item $g_K$ が初期値と最終値の差の半分ではなく，最終値の半分 $g_K=\\bar g_Kn_\\infty^4/2$ に達する時刻を求めよ．\n\\item $n_0=0$ の場合，$t\\to0$ で $g_K\\propto t^p$ となる．$p$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n_\\infty=\\dfrac{\\alpha_n}{\\alpha_n+\\beta_n}\\approx0.833$，$\\tau_n=\\dfrac{1}{\\alpha_n+\\beta_n}\\approx1.67\\,\\mathrm{ms}$　(2) 初期値 $0.0081$，最終値 $\\approx0.482$　(3) $t\\approx2.32\\,\\mathrm{ms}$　(4) $p=4$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot n=-(\\alpha_n+\\beta_n)\\left(n-\\dfrac{\\alpha_n}{\\alpha_n+\\beta_n}\\right)$ なので\n\\[ n(t)=n_\\infty-(n_\\infty-n_0)e^{-t/\\tau_n},\\quad\\boldsymbol{n_\\infty=\\frac{\\alpha_n}{\\alpha_n+\\beta_n}\\approx0.833},\\quad\\boldsymbol{\\tau_n=\\frac{1}{\\alpha_n+\\beta_n}\\approx1.67\\,\\mathrm{ms}}. \\]\n$n$ は「独立な4つのゲートのそれぞれが開いている確率」と解釈され，4つ全部が開いたときだけ K$^+$ が通る．\n\n(2) 初期値 $0.30^4=\\boldsymbol{0.0081}$，最終値 $0.833^4\\approx\\boldsymbol{0.482}$．\n\n(3) $n(t)=n_\\infty2^{-1/4}=0.7007$ となる時刻．$e^{-t/\\tau_n}=\\dfrac{0.833-0.7007}{0.833-0.30}=0.249$ より $t=1.67\\times1.390\\approx\\boldsymbol{2.32\\,\\mathrm{ms}}$．\n\n(4) $n_0=0$ では $n(t)\\simeq\\alpha_nt$（$t\\ll\\tau_n$）なので $g_K\\simeq\\bar g_K(\\alpha_nt)^4$，$\\boldsymbol{p=4}$．立ち上がりが $t^4$ に比例して遅れる（S 字形になる）ことが，ホジキンとハクスリーが4乗を選んだ理由であった．"
+   }
+  ],
+  "idea": {
+   "tex": "ゲート変数は1次の緩和だが，コンダクタンスはその4乗なので立ち上がりが S 字形になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) n_∞：≈0.833 ; τ_n [ms]：≈1.67\n(2) 初期値：≈0.0081 ; 最終値：≈0.482\n(3) t [ms]：≈2.32\n(4) p：4"
+  },
+  "methods": [],
+  "tags": [
+   "ホジキン＝ハクスリー模型",
+   "ゲート変数",
+   "電位固定",
+   "K+コンダクタンス"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ヘルフリッヒの曲げエネルギー：球形小胞と膜チューブの引き出し",
+  "topic": "ヘルフリッヒの曲げエネルギー：球形小胞と膜チューブの引き出し",
+  "statement": {
+   "tex": "脂質膜の弾性エネルギーは，主曲率 $c_1,\\,c_2$ を用いて面積あたり\n\\[ f=\\frac{\\kappa}{2}(c_1+c_2)^2+\\kappa_Gc_1c_2+\\sigma \\]\nと書ける（ヘルフリッヒ模型，自発曲率は $0$ とする）．$\\kappa$ は曲げ弾性率，$\\kappa_G$ はガウス曲げ弾性率，$\\sigma$ は膜の張力である．\n\\begin{enumerate}\n\\item 半径 $R$ の球形の小胞の曲げエネルギー（$\\sigma$ の項を除く）を求めよ．また，$\\kappa=20k_BT$ のとき $\\kappa_G$ の項を除いた値は $k_BT$ の何倍か．\n\\item 張力 $\\sigma$ の大きな膜から，光ピンセットで細いチューブ（半径 $r$，長さ $L$ の円柱）を力 $f_t$ で引き出す．円柱の主曲率は $1/r$ と $0$ である．チューブ部分のエネルギーから引く力の仕事を除いた量 $\\mathcal{F}=2\\pi rL\\left(\\dfrac{\\kappa}{2r^2}+\\sigma\\right)-f_tL$ を $r$ について最小化し，平衡半径 $r$ と，$L$ が変わらずつりあうための力 $f_t$ を求めよ．\n\\item $\\kappa=82\\,\\mathrm{pN\\,nm}$，$\\sigma=0.010\\,\\mathrm{pN/nm}$ のとき，$r$ と $f_t$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $8\\pi\\kappa+4\\pi\\kappa_G$，$160\\pi\\approx503$ 倍　(2) $r=\\sqrt{\\dfrac{\\kappa}{2\\sigma}}$，$f_t=2\\pi\\sqrt{2\\kappa\\sigma}$　(3) $r\\approx64.0\\,\\mathrm{nm}$，$f_t\\approx8.05\\,\\mathrm{pN}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 球では $c_1=c_2=1/R$ なので，面積 $4\\pi R^2$ をかけて\n\\[ \\left[\\frac\\kappa2\\cdot\\frac{4}{R^2}+\\frac{\\kappa_G}{R^2}\\right]4\\pi R^2=\\boldsymbol{8\\pi\\kappa+4\\pi\\kappa_G}. \\]\n半径によらない（曲げエネルギーはスケール不変）．$\\kappa_G$ の項はガウス＝ボネの定理により形の位相だけで決まる．$8\\pi\\times20=\\boldsymbol{160\\pi\\approx503}$ 倍の $k_BT$．\n\n(2) $\\mathcal{F}=L\\left(\\dfrac{\\pi\\kappa}{r}+2\\pi\\sigma r-f_t\\right)$．$r$ で微分して $-\\dfrac{\\pi\\kappa}{r^2}+2\\pi\\sigma=0$ より $\\boldsymbol{r=\\sqrt{\\kappa/2\\sigma}}$．$L$ について $\\partial\\mathcal{F}/\\partial L=0$ より\n\\[ f_t=\\frac{\\pi\\kappa}{r}+2\\pi\\sigma r=\\boldsymbol{2\\pi\\sqrt{2\\kappa\\sigma}}. \\]\n曲げ（細いほど損）と張力（太いほど損）の競合で半径が決まる．\n\n(3) $r=\\sqrt{82/0.020}\\approx\\boldsymbol{64.0\\,\\mathrm{nm}}$，$f_t=2\\pi\\sqrt{2\\times82\\times0.010}=2\\pi\\times1.281\\approx\\boldsymbol{8.05\\,\\mathrm{pN}}$．逆に $f_t$ と $\\sigma$ を測れば $\\kappa=f_t^2/(8\\pi^2\\sigma)$ が求まり，これは膜の曲げ弾性率の標準的な測定法である．"
+   }
+  ],
+  "idea": {
+   "tex": "曲げエネルギーは曲率の2乗×面積で，球ではスケール不変．チューブでは曲げと張力の競合で半径と力が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 8 pi kappa + 4 pi kappa_G ; 倍：≈503\n(2) r：sqrt(kappa/(2 sigma)) ; f_t：2 pi sqrt(2 kappa sigma)\n(3) r [nm]：≈64.0 ; f_t [pN]：≈8.05"
+  },
+  "methods": [],
+  "tags": [
+   "ヘルフリッヒ模型",
+   "曲げ弾性",
+   "小胞",
+   "膜チューブ",
+   "ガウス＝ボネの定理"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 2,
+  "minutes": 25,
+  "theme": "一定電場近似によるゴールドマン＝ホジキン＝カッツの式",
+  "topic": "一定電場近似によるゴールドマン＝ホジキン＝カッツの式",
+  "statement": {
+   "tex": "厚さ $d$ の膜の中（$0<x<d$，$x=0$ が内側）を，電荷 $zq$ のイオンが拡散係数 $D$ で動く．膜の内外の電位差を $V=\\phi(0)-\\phi(d)$ とし，膜内の電場は一様（$\\phi$ は $x$ の1次関数）と仮定する．外向きの粒子流束密度はネルンスト＝プランクの式\n\\[ J=-D\\left(\\frac{dc}{dx}+\\frac{zq}{k_BT}c\\frac{d\\phi}{dx}\\right) \\]\nで与えられ，定常状態で $J$ は $x$ によらない．膜の両端の濃度を $c(0)=c_i$，$c(d)=c_o$ とし，$u=zqV/k_BT$，$P=D/d$ とおく．\n\\begin{enumerate}\n\\item $J$ を $P,\\,u,\\,c_i,\\,c_o$ で表せ．\n\\item 1種類のイオンだけのとき，$J=0$ となる $V$ がネルンストの式に一致することを示せ（答えは $V$ の式）．\n\\item K$^+$，Na$^+$，Cl$^-$ が透過性 $P_K:P_{Na}:P_{Cl}=1:0.04:0.45$ で通るとき，電流の総和が $0$ になる膜電位を求めよ．濃度（mM）は K$^+$：外 5，内 140，Na$^+$：外 145，内 15，Cl$^-$：外 110，内 10，$k_BT/q=26.7\\,\\mathrm{mV}$ とする．\n\\item K$^+$ だけを考え，$c_i/c_o=28$ とする．$u=+2$ と $u=-2$ のときの流束の比 $J(u{=}2)/J(u{=}{-2})$ を求めよ（整流性）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $J=\\dfrac{Pu\\left(c_i-c_oe^{-u}\\right)}{1-e^{-u}}$　(2) $V=\\dfrac{k_BT}{zq}\\ln\\dfrac{c_o}{c_i}$　(3) $\\approx-67.3\\,\\mathrm{mV}$　(4) $\\approx9.99$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d\\phi/dx=-V/d$ なので $\\dfrac{dc}{dx}-\\dfrac{u}{d}c=-\\dfrac JD$．一般解は $c=\\dfrac{Jd}{Du}+Ke^{ux/d}$．境界条件 $c(0)=c_i$，$c(d)=c_o$ から $K=\\dfrac{c_o-c_i}{e^u-1}$，\n\\[ \\frac{Jd}{Du}=c_i-K=\\frac{c_ie^u-c_o}{e^u-1},\\qquad\\boldsymbol{J=\\frac{Pu\\left(c_i-c_oe^{-u}\\right)}{1-e^{-u}}}. \\]\n\n(2) $J=0$ なら $c_i=c_oe^{-u}$，すなわち $\\boldsymbol{V=\\dfrac{k_BT}{zq}\\ln\\dfrac{c_o}{c_i}}$ でネルンストの式になる．\n\n(3) 電流は $zqJ$ で，1価のイオンの $u$ は $\\pm qV/k_BT$．正イオンの電流と負イオンの電流の和を $0$ とおくと，共通因子が約分されて（ゴールドマン＝ホジキン＝カッツの式）\n\\[ V=\\frac{k_BT}{q}\\ln\\frac{P_K[\\mathrm{K}]_o+P_{Na}[\\mathrm{Na}]_o+P_{Cl}[\\mathrm{Cl}]_i}{P_K[\\mathrm{K}]_i+P_{Na}[\\mathrm{Na}]_i+P_{Cl}[\\mathrm{Cl}]_o}=26.7\\ln\\frac{5+5.8+4.5}{140+0.6+49.5}\\approx\\boldsymbol{-67.3\\,\\mathrm{mV}}. \\]\n負イオンの Cl$^-$ は内外が入れ替わって入る．\n\n(4) $c_o=1$，$c_i=28$ として $J(2)\\propto\\dfrac{2(28-e^{-2})}{1-e^{-2}}=64.45$，$J(-2)\\propto\\dfrac{-2(28-e^{2})}{1-e^{2}}=6.45$．比は $\\approx\\boldsymbol{9.99}$．チャネルの構造に整流機構がなくても，内外の濃度が非対称なだけで電流－電圧曲線は直線にならない（ゴールドマン整流）．"
+   }
+  ],
+  "idea": {
+   "tex": "一定電場では1階の線形微分方程式を解くだけで流束が出る．零電流条件は1種類ならネルンスト，複数なら透過性で重みづけしたGHKの式になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) J：P u (c_i - c_o e^(-u))/(1 - e^(-u))\n(2) V：k_B T/(z q) ln(c_o/c_i)\n(3) [mV]：≈-67.3\n(4) ≈9.99"
+  },
+  "methods": [],
+  "tags": [
+   "ゴールドマン＝ホジキン＝カッツの式",
+   "ネルンスト＝プランクの式",
+   "一定電場近似",
+   "静止膜電位",
+   "整流"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 3,
+  "minutes": 30,
+  "theme": "フィッツフュー＝南雲模型のホップ分岐と反復発火の始まり",
+  "topic": "フィッツフュー＝南雲模型のホップ分岐と反復発火の始まり",
+  "statement": {
+   "tex": "神経の興奮を簡単化したフィッツフュー＝南雲模型\n\\[ \\dot v=v-\\frac{v^3}{3}-w+I,\\qquad\\dot w=\\varepsilon(v+a-bw) \\]\nを考える．$v$ は膜電位，$w$ は回復変数，$I$ は注入電流である．$a=0.7$，$b=0.8$，$\\varepsilon=0.08$ とする（このとき固定点はただ1つ）．\n\\begin{enumerate}\n\\item 固定点 $(v_0,w_0)$ でのヤコビ行列のトレース $\\mathrm{tr}$ と行列式 $\\det$ を $v_0$ で表せ（$a,\\,b,\\,\\varepsilon$ は文字のまま）．\n\\item 固定点が安定性を失うホップ分岐の条件（$\\mathrm{tr}=0$，$\\det>0$）から，そのときの $v_0^2$ を求めよ．\n\\item 静止状態（$v_0<0$）から $I$ を増やしたとき，ホップ分岐が起こる $I_c$ を数値で求めよ．\n\\item 分岐点での振動の周期 $2\\pi/\\sqrt{\\det}$ を数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathrm{tr}=1-v_0^2-\\varepsilon b$，$\\det=\\varepsilon\\left(1-b+bv_0^2\\right)$　(2) $v_0^2=1-\\varepsilon b$　(3) $I_c\\approx0.331$　(4) 周期 $\\approx22.8$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ヤコビ行列は $\\begin{pmatrix}1-v_0^2&-1\\\\ \\varepsilon&-\\varepsilon b\\end{pmatrix}$．\n\\[ \\boldsymbol{\\mathrm{tr}=1-v_0^2-\\varepsilon b},\\qquad\\boldsymbol{\\det=-\\varepsilon b(1-v_0^2)+\\varepsilon=\\varepsilon\\left(1-b+bv_0^2\\right)}. \\]\n\n(2) $\\mathrm{tr}=0$ より $\\boldsymbol{v_0^2=1-\\varepsilon b}=0.936$．このとき $\\det=\\varepsilon(1-\\varepsilon b^2)=0.0759>0$ なので固有値は純虚数 $\\pm i\\sqrt{\\det}$ となり，ホップ分岐が起こる．\n\n(3) $v_0=-\\sqrt{0.936}=-0.9675$．$w$ の零勾配線から $w_0=(v_0+a)/b=-0.3343$．$v$ の零勾配線から\n\\[ I_c=w_0-v_0+\\frac{v_0^3}{3}=-0.3343+0.9675-0.3019\\approx\\boldsymbol{0.331}. \\]\n$I<I_c$ では固定点は安定（静止），$I>I_c$ で不安定になりリミットサイクル（反復発火）が生じる．\n\n(4) $\\sqrt{\\det}=\\sqrt{0.08\\times0.9488}=0.2755$，周期 $2\\pi/0.2755\\approx\\boldsymbol{22.8}$．\n\n$\\varepsilon\\ll1$ のため，分岐点を越えると振幅は急に大きくなり（カナード爆発），振動は速い跳躍と遅い回復を繰り返す緩和振動になる．"
+   }
+  ],
+  "idea": {
+   "tex": "固定点の線形安定性はトレースと行列式で決まる．トレースの符号が変わる点がホップ分岐で，静止状態から反復発火への移り変わりを表す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) tr：1 - v_0^2 - epsilon b ; det：epsilon (1 - b + b v_0^2)\n(2) v_0^2：1 - epsilon b\n(3) I_c：≈0.331\n(4) 周期：≈22.8"
+  },
+  "methods": [],
+  "tags": [
+   "フィッツフュー＝南雲模型",
+   "ホップ分岐",
+   "リミットサイクル",
+   "線形安定性",
+   "興奮性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 3,
+  "minutes": 30,
+  "theme": "受動ケーブルのグリーン関数と電位のピークの伝わり方",
+  "topic": "受動ケーブルのグリーン関数と電位のピークの伝わり方",
+  "statement": {
+   "tex": "受動的な（チャネルが開閉しない）樹状突起の膜電位 $V(x,t)$ は，ケーブル方程式\n\\[ \\tau\\frac{\\partial V}{\\partial t}=\\lambda^2\\frac{\\partial^2V}{\\partial x^2}-V \\]\nにしたがう（$\\tau$：膜の時定数，$\\lambda$：長さ定数）．無限に長いケーブルの $x=0$ に，時刻 $0$ に瞬間的に電荷を注入する．\n\\begin{enumerate}\n\\item $V=e^{-t/\\tau}u(x,t)$ とおくと $u$ が拡散方程式 $\\partial_tu=D\\partial_x^2u$ にしたがうことを示し，$D$ を求めよ．\n\\item 解は $V(x,t)\\propto t^{-1/2}\\exp\\left(-\\dfrac{x^2\\tau}{4\\lambda^2t}-\\dfrac t\\tau\\right)$ である．位置 $x$ で電位が最大になる時刻 $t_p$ を求めよ．\n\\item $x=\\lambda$ のとき $t_p/\\tau$ を求めよ．\n\\item $x\\gg\\lambda$ でピークの伝わる見かけの速さ $dx/dt_p$ を求め，$\\lambda=1.0\\,\\mathrm{mm}$，$\\tau=10\\,\\mathrm{ms}$ のときの値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $D=\\dfrac{\\lambda^2}{\\tau}$　(2) $t_p=\\dfrac{\\tau}{4}\\left(\\sqrt{1+\\dfrac{4x^2}{\\lambda^2}}-1\\right)$　(3) $\\dfrac{\\sqrt5-1}{4}$　(4) $\\dfrac{2\\lambda}{\\tau}$，$0.2\\,\\mathrm{m/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 代入すると $\\tau(-u/\\tau+\\partial_tu)e^{-t/\\tau}=\\lambda^2\\partial_x^2u\\,e^{-t/\\tau}-ue^{-t/\\tau}$ で $-u$ が打ち消し合い，$\\partial_tu=\\dfrac{\\lambda^2}{\\tau}\\partial_x^2u$．$\\boldsymbol{D=\\lambda^2/\\tau}$．膜からの漏れは全体にかかる指数関数の減衰因子になる．\n\n(2) $\\ln V=-\\frac12\\ln t-\\dfrac{x^2\\tau}{4\\lambda^2t}-\\dfrac t\\tau$ を $t$ で微分して $0$ とおくと\n\\[ -\\frac{1}{2t}+\\frac{x^2\\tau}{4\\lambda^2t^2}-\\frac1\\tau=0\\quad\\Longrightarrow\\quad\\frac{t^2}{\\tau}+\\frac t2-\\frac{x^2\\tau}{4\\lambda^2}=0. \\]\n正の解は $\\boldsymbol{t_p=\\dfrac{\\tau}{4}\\left(\\sqrt{1+\\dfrac{4x^2}{\\lambda^2}}-1\\right)}$．\n\n(3) $x=\\lambda$ で $t_p/\\tau=\\boldsymbol{(\\sqrt5-1)/4}\\approx0.309$．\n\n(4) $x\\gg\\lambda$ で $t_p\\simeq\\dfrac{\\tau x}{2\\lambda}$ なので $\\boldsymbol{dx/dt_p=2\\lambda/\\tau}$．数値は $2\\times1.0\\times10^{-3}/10^{-2}=\\boldsymbol{0.2\\,\\mathrm{m/s}}$．\n\nただし振幅は $e^{-x/\\lambda}$ 程度で急に減るので，受動的な伝搬は長さ定数程度までしか役に立たない．軸索では活動電位が自らを再生しながら伝わる（能動的な伝搬）．"
+   }
+  ],
+  "idea": {
+   "tex": "漏れの項は指数関数の因子で取り除け，残りは拡散方程式．ピークの到達時刻は遠方で距離に比例し，見かけの速さ $2\\lambda/\\tau$ で伝わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) D：lambda^2/tau\n(2) t_p：tau/4 (sqrt(1 + 4 x^2/lambda^2) - 1)\n(3) (sqrt(5) - 1)/4\n(4) 2 lambda/tau ; [m/s]：0.2"
+  },
+  "methods": [],
+  "tags": [
+   "ケーブル方程式",
+   "グリーン関数",
+   "拡散方程式",
+   "樹状突起",
+   "受動伝搬"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 3,
+  "minutes": 25,
+  "theme": "非定常ノイズ解析による単一チャネル電流とチャネル数の推定",
+  "topic": "非定常ノイズ解析による単一チャネル電流とチャネル数の推定",
+  "statement": {
+   "tex": "同じ性質のイオンチャネルが $N$ 個ある膜で，電位固定のもとで電流を記録する．各チャネルは独立に，確率 $P(t)$ で開いて電流 $i$ を流し，閉じていれば電流を流さない．同じ刺激を何度も繰り返し，各時刻での電流の平均 $I$ と分散 $\\sigma^2$ を求める．\n\\begin{enumerate}\n\\item $I$ と $\\sigma^2$ を $N,\\,i,\\,P$ で表し，$P$ を消去して $\\sigma^2$ を $I$ の関数として書け．\n\\item 測定で，$I=200\\,\\mathrm{pA}$ のとき $\\sigma^2=320\\,\\mathrm{pA^2}$，$I=600\\,\\mathrm{pA}$ のとき $\\sigma^2=480\\,\\mathrm{pA^2}$ であった．$i$ と $N$ を求めよ．\n\\item 平均電流の最大値が $800\\,\\mathrm{pA}$ であったとき，開確率の最大値を求めよ．また，このときの駆動力（膜電位と逆転電位の差）が $100\\,\\mathrm{mV}$ であったとして，単一チャネルのコンダクタンスを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $I=NiP$，$\\sigma^2=Ni^2P(1-P)$，$\\sigma^2=iI-\\dfrac{I^2}{N}$　(2) $i=2.0\\,\\mathrm{pA}$，$N=500$　(3) $P_{\\max}=0.8$，コンダクタンス $20\\,\\mathrm{pS}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 開いているチャネル数は二項分布 $B(N,P)$ にしたがうので，平均 $NP$，分散 $NP(1-P)$．電流はその $i$ 倍なので $\\boldsymbol{I=NiP}$，$\\boldsymbol{\\sigma^2=Ni^2P(1-P)}$．$P=I/(Ni)$ を代入して\n\\[ \\boldsymbol{\\sigma^2=iI-\\frac{I^2}{N}}. \\]\n平均と分散の関係は放物線で，その傾きと曲率から $i$ と $N$ がわかる．\n\n(2) $200i-\\dfrac{4.0\\times10^4}{N}=320$，$600i-\\dfrac{3.6\\times10^5}{N}=480$．第1式を3倍して第2式を引くと $\\dfrac{2.4\\times10^5}{N}=480$ で $\\boldsymbol{N=500}$．$i=\\dfrac{320+80}{200}=\\boldsymbol{2.0\\,\\mathrm{pA}}$．\n\n(3) $P_{\\max}=\\dfrac{800}{500\\times2.0}=\\boldsymbol{0.8}$．コンダクタンス $=\\dfrac{2.0\\,\\mathrm{pA}}{100\\,\\mathrm{mV}}=\\boldsymbol{20\\,\\mathrm{pS}}$．\n\n1つ1つのチャネルを直接見なくても，多数のチャネルの電流の「ゆらぎ」から単一チャネルの性質が引き出せる（パッチクランプ以前に用いられた方法）．"
+   }
+  ],
+  "idea": {
+   "tex": "独立なチャネルの和は二項分布．平均と分散の放物線関係 $\\sigma^2=iI-I^2/N$ から単一チャネル電流とチャネル数が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) I：N i P ; σ^2：i I - I^2/N\n(2) i [pA]：2.0 ; N：500\n(3) P_max：0.8 ; [pS]：20"
+  },
+  "methods": [],
+  "tags": [
+   "イオンチャネル",
+   "ノイズ解析",
+   "二項分布",
+   "単一チャネル電流",
+   "ゆらぎ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 4,
+  "minutes": 40,
+  "theme": "脂質膜の熱ゆらぎのスペクトルと余剰面積・張力の関係",
+  "topic": "脂質膜の熱ゆらぎのスペクトルと余剰面積・張力の関係",
+  "statement": {
+   "tex": "ほぼ平らな膜（一辺 $L$ の正方形，周期境界条件）の高さを $h(x,y)$ とし，弾性エネルギーを\n\\[ \\mathcal{H}=\\int d^2r\\left[\\frac\\kappa2(\\nabla^2h)^2+\\frac\\sigma2(\\nabla h)^2\\right] \\]\nとする．$h=\\sum_{\\boldsymbol{q}}h_{\\boldsymbol{q}}e^{i\\boldsymbol{q}\\cdot\\boldsymbol{r}}$（$\\boldsymbol{q}=\\frac{2\\pi}{L}(m,n)$）と展開する．温度 $T$ の熱平衡を考える．\n\\begin{enumerate}\n\\item $\\mathcal{H}=\\dfrac{L^2}{2}\\sum_{\\boldsymbol{q}}(\\kappa q^4+\\sigma q^2)|h_{\\boldsymbol{q}}|^2$ と等分配則から，$\\langle|h_{\\boldsymbol{q}}|^2\\rangle$ を求めよ．\n\\item $\\sigma=0$ とし，和を積分 $\\sum_{\\boldsymbol{q}}\\to\\dfrac{L^2}{(2\\pi)^2}\\int d^2q$（$q\\ge q_0=2\\pi/L$）で置き換えて，高さのゆらぎ $\\langle h^2\\rangle$ を求めよ．$\\kappa=20k_BT$，$L=10\\,\\mathrm{\\mu m}$ のときの $\\sqrt{\\langle h^2\\rangle}$ を求めよ．\n\\item 膜の実際の面積と投影面積 $L^2$ の差の割合（余剰面積）$\\alpha=\\dfrac{1}{2L^2}\\displaystyle\\int\\langle(\\nabla h)^2\\rangle d^2r$ を，$q_0\\le q\\le q_c$ の範囲で求めよ．$\\sigma=0$，$q_c=\\pi/a$（$a=5.0\\,\\mathrm{nm}$）として数値も求めよ．\n\\item 張力をかけてゆらぎをならし，$\\alpha$ を (3) の値の半分にしたい．$\\kappa q_0^2\\ll\\sigma\\ll\\kappa q_c^2$ として必要な $\\sigma$ を求めよ（$k_BT=4.1\\,\\mathrm{pN\\,nm}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle|h_{\\boldsymbol{q}}|^2\\rangle=\\dfrac{k_BT}{L^2(\\kappa q^4+\\sigma q^2)}$　(2) $\\langle h^2\\rangle=\\dfrac{k_BTL^2}{16\\pi^3\\kappa}$，$\\approx100\\,\\mathrm{nm}$　(3) $\\alpha=\\dfrac{k_BT}{8\\pi\\kappa}\\ln\\dfrac{\\kappa q_c^2+\\sigma}{\\kappa q_0^2+\\sigma}$，$\\approx0.0275$　(4) $\\sigma\\approx0.0324\\,\\mathrm{pN/nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 各モード（$h_{\\boldsymbol{q}}$ の実部と虚部，$\\pm\\boldsymbol{q}$ の組）に $k_BT/2$ ずつ配分されるので，\n\\[ \\boldsymbol{\\langle|h_{\\boldsymbol{q}}|^2\\rangle=\\frac{k_BT}{L^2(\\kappa q^4+\\sigma q^2)}}. \\]\n\n(2) $\\langle h^2\\rangle=\\sum_{\\boldsymbol{q}}\\langle|h_{\\boldsymbol{q}}|^2\\rangle=\\dfrac{1}{(2\\pi)^2}\\displaystyle\\int_{q_0}^\\infty\\frac{2\\pi q\\,dq\\,k_BT}{\\kappa q^4}=\\frac{k_BT}{4\\pi\\kappa q_0^2}=\\boldsymbol{\\frac{k_BTL^2}{16\\pi^3\\kappa}}$．\n数値は $\\dfrac{(10^4\\,\\mathrm{nm})^2}{16\\pi^3\\times20}=1.0\\times10^4\\,\\mathrm{nm^2}$ で，$\\sqrt{\\langle h^2\\rangle}\\approx\\boldsymbol{100\\,\\mathrm{nm}}$．張力のない膜は $L$ に比例する大きなゆらぎを示す（これを顕微鏡で観察して $\\kappa$ を求める方法がフリッカー分光である）．\n\n(3) $\\alpha=\\dfrac12\\sum_{\\boldsymbol{q}}q^2\\langle|h_{\\boldsymbol{q}}|^2\\rangle=\\dfrac{k_BT}{4\\pi}\\displaystyle\\int_{q_0}^{q_c}\\frac{q\\,dq}{\\kappa q^2+\\sigma}$ より\n\\[ \\boldsymbol{\\alpha=\\frac{k_BT}{8\\pi\\kappa}\\ln\\frac{\\kappa q_c^2+\\sigma}{\\kappa q_0^2+\\sigma}}. \\]\n$\\sigma=0$ では $\\alpha=\\dfrac{k_BT}{4\\pi\\kappa}\\ln\\dfrac{q_c}{q_0}=\\dfrac{1}{80\\pi}\\ln\\dfrac{L}{2a}=\\dfrac{\\ln1000}{80\\pi}\\approx\\boldsymbol{0.0275}$．\n\n(4) 条件のもとで $\\alpha\\simeq\\dfrac{k_BT}{8\\pi\\kappa}\\ln\\dfrac{\\kappa q_c^2}{\\sigma}$．これが $\\dfrac{k_BT}{8\\pi\\kappa}\\cdot\\ln1000$ になればよいので $\\sigma=\\kappa q_c^2/1000$．$\\kappa=82\\,\\mathrm{pN\\,nm}$，$q_c^2=0.395\\,\\mathrm{nm^{-2}}$ より $\\sigma\\approx\\boldsymbol{0.0324\\,\\mathrm{pN/nm}}$．\n\n逆に書くと $\\sigma\\propto\\exp(-8\\pi\\kappa\\alpha/k_BT)$ で，ゆらぎを引き伸ばす低張力の領域では，張力は余剰面積に対して指数関数的に増える（エントロピー的な弾性，ヘルフリッヒ＝セルブスの関係）．"
+   }
+  ],
+  "idea": {
+   "tex": "各フーリエモードに等分配則を使う．曲げが支配する長波長のゆらぎは大きく，張力は余剰面積を対数的にしか減らさない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) k_B T/(L^2 (kappa q^4 + sigma q^2))\n(2) ⟨h^2⟩：k_B T L^2/(16 pi^3 kappa) ; [nm]：≈100\n(3) α：k_B T/(8 pi kappa) ln((kappa q_c^2 + sigma)/(kappa q_0^2 + sigma)) ; ≈0.0275\n(4) σ [pN/nm]：≈0.0324"
+  },
+  "methods": [],
+  "tags": [
+   "ヘルフリッヒ模型",
+   "膜のゆらぎ",
+   "等分配則",
+   "余剰面積",
+   "エントロピー弾性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 4,
+  "minutes": 40,
+  "theme": "双安定な反応拡散方程式の進行波と神経の伝導速度",
+  "topic": "双安定な反応拡散方程式の進行波と神経の伝導速度",
+  "statement": {
+   "tex": "軸索に沿った膜電位（静止状態を $0$，興奮状態を $1$ に規格化）を，興奮性を3次の項で表した方程式\n\\[ \\frac{\\partial V}{\\partial t}=D\\frac{\\partial^2V}{\\partial x^2}+\\frac{1}{\\tau}V(1-V)(V-a)\\qquad(0<a<1) \\]\nで表す（南雲型の方程式）．$V=0,\\,1$ はどちらも安定で，$V=a$ がしきい値である．興奮した領域（左側，$V=1$）が静止した領域（右側，$V=0$）へ速さ $c$ で進む進行波 $V=\\Phi(\\xi)$，$\\xi=x-ct$ を探す．\n\\begin{enumerate}\n\\item $\\Phi$ がしたがう常微分方程式を書け（答えは記述）．\n\\item $\\Phi=\\dfrac{1}{1+e^{k\\xi}}$（$k>0$）とおくと，$\\Phi'=-k\\Phi(1-\\Phi)$，$\\Phi''=k^2\\Phi(1-\\Phi)(1-2\\Phi)$ である．(1) に代入して $k$ と $c$ を求めよ．\n\\item ケーブル理論より $D=\\lambda^2/\\tau$ とすると，$c$ を $\\lambda,\\,\\tau,\\,a$ で表せ．$\\lambda=5.0\\,\\mathrm{mm}$，$\\tau=1.0\\,\\mathrm{ms}$，$a=0.10$ のときの $c$ を求めよ．\n\\item 長さ定数は軸索の半径 $R$ の平方根に比例する．$R$ を4倍にすると $c$ は何倍になるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $D\\Phi''+c\\Phi'+\\dfrac1\\tau\\Phi(1-\\Phi)(\\Phi-a)=0$　(2) $k=\\dfrac{1}{\\sqrt{2D\\tau}}$，$c=(1-2a)\\sqrt{\\dfrac{D}{2\\tau}}$　(3) $c=\\dfrac{(1-2a)\\lambda}{\\sqrt2\\tau}$，$\\approx2.83\\,\\mathrm{m/s}$　(4) $2$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_t=-c\\,d/d\\xi$ なので $\\boldsymbol{D\\Phi''+c\\Phi'+\\dfrac1\\tau\\Phi(1-\\Phi)(\\Phi-a)=0}$．\n\n(2) 代入して共通因子 $\\Phi(1-\\Phi)$ で割ると\n\\[ Dk^2(1-2\\Phi)-ck+\\frac{\\Phi-a}{\\tau}=0. \\]\nこれが任意の $\\Phi$ で成り立つには，$\\Phi$ の係数：$-2Dk^2+\\dfrac1\\tau=0$，定数項：$Dk^2-ck-\\dfrac a\\tau=0$．よって\n\\[ \\boldsymbol{k=\\frac{1}{\\sqrt{2D\\tau}}},\\qquad c=\\frac{1}{k}\\left(\\frac{1}{2\\tau}-\\frac{a}{\\tau}\\right)=\\boldsymbol{(1-2a)\\sqrt{\\frac{D}{2\\tau}}}. \\]\n$a<1/2$ なら $c>0$ で興奮が広がり，$a>1/2$ なら逆に後退する．フィッシャー波（不安定な状態への侵入）と違い，双安定な系では速さが一意に決まる．\n\n(3) $c=(1-2a)\\dfrac{\\lambda}{\\sqrt2\\tau}$．数値は $0.80\\times\\dfrac{5.0\\times10^{-3}}{1.414\\times10^{-3}}\\approx\\boldsymbol{2.83\\,\\mathrm{m/s}}$．\n\n(4) $c\\propto\\lambda\\propto\\sqrt R$ なので $\\boldsymbol{2}$ 倍．髄鞘のない軸索では速さは半径の平方根でしか増えないため，イカは直径約 $0.5\\,\\mathrm{mm}$ の巨大軸索をもつ．脊椎動物は髄鞘で膜の容量を下げ，跳躍伝導で速さを稼いでいる．"
+   }
+  ],
+  "idea": {
+   "tex": "双安定な反応拡散方程式はロジスティック型の厳密な進行波解をもつ．次元解析だけでも $c\\sim\\sqrt{D/\\tau}\\sim\\lambda/\\tau$ がわかり，伝導速度は軸索の半径の平方根に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述：D Φ'' + c Φ' + (1/τ) Φ(1−Φ)(Φ−a) = 0\n(2) k：1/sqrt(2 D tau) ; c：(1 - 2a) sqrt(D/(2 tau))\n(3) c：(1 - 2a) lambda/(sqrt(2) tau) ; [m/s]：≈2.83\n(4) 2"
+  },
+  "methods": [],
+  "tags": [
+   "反応拡散方程式",
+   "進行波",
+   "南雲方程式",
+   "伝導速度",
+   "双安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-04-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-108",
+  "level": 4,
+  "minutes": 40,
+  "theme": "ホジキン＝ハクスリー膜の線形化：現象論的インダクタンスと共鳴",
+  "topic": "ホジキン＝ハクスリー膜の線形化：現象論的インダクタンスと共鳴",
+  "statement": {
+   "tex": "電位固定しない膜（面積あたり）の K$^+$ 電流と漏れ電流だけを考える．\n\\[ I=C\\frac{dV}{dt}+g_L(V-E_L)+g_Kn^4(V-E_K),\\qquad\\tau_n\\frac{dn}{dt}=n_\\infty(V)-n \\]\n（$g_K$ は K$^+$ の最大コンダクタンス，$\\tau_n$ は一定とみなす）．静止点 $V_0$，$n_0=n_\\infty(V_0)$ のまわりで小さな正弦波の電流を加え，$\\delta V,\\,\\delta n\\propto e^{i\\omega t}$ とする．$n_\\infty'=dn_\\infty/dV|_{V_0}$ とする．\n\\begin{enumerate}\n\\item K$^+$ 電流の変化 $\\delta I_K$ を $\\delta V$ と $\\delta n$ で表し，$\\delta n$ を消去して K$^+$ 電流の部分のアドミタンス $Y_K=\\delta I_K/\\delta V$ を求めよ．$G=4g_Kn_0^3(V_0-E_K)n_\\infty'$ を用いてよい．\n\\item $Y_K$ のうち $\\omega$ に依存する部分が，抵抗 $R_n$ とインダクタンス $L_n$ の直列回路のアドミタンス $1/(R_n+i\\omega L_n)$ と同じ形であることを示し，$R_n,\\,L_n$ を $G,\\,\\tau_n$ で表せ．\n\\item 容量 $C$ と $L_n$ の共鳴角周波数 $\\omega_0=1/\\sqrt{L_nC}$ を $G,\\,\\tau_n,\\,C$ で表せ．\n\\item $g_K=36\\,\\mathrm{mS/cm^2}$，$n_0=0.32$，$V_0-E_K=12\\,\\mathrm{mV}$，$n_\\infty'=0.010\\,\\mathrm{mV^{-1}}$，$\\tau_n=5.0\\,\\mathrm{ms}$，$C=1.0\\,\\mathrm{\\mu F/cm^2}$ のとき，$G$（$\\mathrm{mS/cm^2}$），$L_n$（$\\mathrm{H\\,cm^2}$），共鳴周波数 $\\omega_0/2\\pi$（Hz）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Y_K=g_Kn_0^4+\\dfrac{G}{1+i\\omega\\tau_n}$　(2) $R_n=\\dfrac1G$，$L_n=\\dfrac{\\tau_n}{G}$　(3) $\\omega_0=\\sqrt{\\dfrac{G}{\\tau_nC}}$　(4) $G\\approx0.566\\,\\mathrm{mS/cm^2}$，$L_n\\approx8.83\\,\\mathrm{H\\,cm^2}$，$\\approx53.6\\,\\mathrm{Hz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\delta I_K=g_Kn_0^4\\,\\delta V+4g_Kn_0^3(V_0-E_K)\\,\\delta n$．$i\\omega\\tau_n\\delta n=n_\\infty'\\delta V-\\delta n$ より $\\delta n=\\dfrac{n_\\infty'\\delta V}{1+i\\omega\\tau_n}$．よって\n\\[ \\boldsymbol{Y_K=g_Kn_0^4+\\frac{G}{1+i\\omega\\tau_n}}. \\]\n\n(2) $\\dfrac{G}{1+i\\omega\\tau_n}=\\dfrac{1}{1/G+i\\omega\\tau_n/G}$ なので $\\boldsymbol{R_n=1/G}$，$\\boldsymbol{L_n=\\tau_n/G}$．ゲートの開閉の遅れが，電流が電圧に遅れて追いつくインダクタンスのようにふるまう（$G>0$，すなわち脱分極で K$^+$ チャネルが開いて電位を戻す向きのとき）．\n\n(3) $\\boldsymbol{\\omega_0=\\sqrt{G/(\\tau_nC)}}$．\n\n(4) $G=4\\times36\\times0.32^3\\times12\\times0.010\\approx\\boldsymbol{0.566\\,\\mathrm{mS/cm^2}}$．$L_n=\\dfrac{5.0\\times10^{-3}\\,\\mathrm{s}}{0.566\\times10^{-3}\\,\\mathrm{S/cm^2}}\\approx\\boldsymbol{8.83\\,\\mathrm{H\\,cm^2}}$．$\\omega_0=\\sqrt{\\dfrac{0.566\\times10^{-3}}{5.0\\times10^{-3}\\times1.0\\times10^{-6}}}=337\\,\\mathrm{rad/s}$，$\\omega_0/2\\pi\\approx\\boldsymbol{53.6\\,\\mathrm{Hz}}$．\n\nイカの巨大軸索のインピーダンス測定では実際に誘導性の成分と数十〜百 Hz の共鳴（減衰振動，閾値下振動）が観測されており（コールの「インダクタンス」），それがイオンチャネルのゲートの動力学で説明できることがこの線形化からわかる．"
+   }
+  ],
+  "idea": {
+   "tex": "遅れて応答する負帰還（ゲート変数）は，線形化すると $RL$ 直列回路と等価になる．膜容量と組んで共鳴を生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Y_K：g_K n_0^4 + G/(1 + i omega tau_n)\n(2) R_n：1/G ; L_n：tau_n/G\n(3) ω_0：sqrt(G/(tau_n C))\n(4) G [mS/cm^2]：≈0.566 ; L_n [H cm^2]：≈8.83 ; [Hz]：≈53.6"
+  },
+  "methods": [],
+  "tags": [
+   "ホジキン＝ハクスリー模型",
+   "線形化",
+   "インピーダンス",
+   "インダクタンス",
+   "共鳴"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

@@ -1,0 +1,746 @@
+[
+ {
+  "id": "QF-06-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 0,
+  "minutes": 10,
+  "theme": "自然単位系での次元勘定とくりこみ可能性",
+  "topic": "自然単位系での次元勘定とくりこみ可能性",
+  "statement": {
+   "tex": "自然単位系（$\\hbar=c=1$）では，長さと時間は質量の逆数の次元をもち，すべての量の次元を「質量の何乗か」（質量次元）で表せる．$[X]$ で $X$ の質量次元を表すと，$[\\partial_\\mu]=1$，$[d^dx]=-d$ である（$d$ は時空の次元）．作用 $S=\\int d^dx\\,\\mathcal L$ は無次元なので $[\\mathcal L]=d$ となる．\n\n1成分の実スカラー場 $\\phi$ のラグランジアン密度\n\\[\\mathcal L=\\frac12\\partial_\\mu\\phi\\,\\partial^\\mu\\phi-\\frac{g}{n!}\\phi^n\\]\nを考える（$n\\geq3$ は整数，$g$ は結合定数）．$[g]<0$ の相互作用は「くりこみ不可能」，$[g]\\geq0$ なら「くりこみ可能」である．\n\\begin{enumerate}\n\\item 運動項から $[\\phi]$ を $d$ で表せ．\n\\item $[g]$ を $d,\\ n$ で表せ．\n\\item $d=4$ での $\\phi^6$ 相互作用（$n=6$）について $[g]$ を求めよ．\n\\item $\\phi^3$ 相互作用（$n=3$）の結合定数が無次元になる時空の次元 $d$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $[\\phi]=\\frac{d-2}{2}$\n(2) $[g]=d-\\frac{n(d-2)}{2}$\n(3) $-2$\n(4) $d=6$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $[\\partial_\\mu\\phi\\,\\partial^\\mu\\phi]=2+2[\\phi]=d$ より $\\boldsymbol{[\\phi]=\\dfrac{d-2}{2}}$．\n\n(2) $[g]+n[\\phi]=d$ より\n\\[[g]=\\boldsymbol{d-\\frac{n(d-2)}{2}}.\\]\n\n(3) $d=4$，$n=6$ で $[g]=4-6=\\boldsymbol{-2}$．くりこみ不可能で，$g\\sim1/M^2$ と書くと，エネルギー $E$ での効果は $(E/M)^2$ の大きさになる．\n\n(4) $n=3$ で $[g]=d-\\dfrac{3(d-2)}{2}=\\dfrac{6-d}{2}=0$ より $\\boldsymbol{d=6}$．\n\n$d=4$ では $\\phi^4$ の結合が無次元（$[g]=4-4=0$）で，これがくりこみ可能な相互作用の典型である．次は，ファインマン図の発散の強さを同じ次元勘定（べき勘定）で見積もる方法を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "作用が無次元という条件から場と結合定数の質量次元が決まり，結合定数の次元の符号がくりこみ可能性を判定する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (d-2)/2\n(2) d-n(d-2)/2\n(3) -2\n(4) 6"
+  },
+  "methods": [],
+  "tags": [
+   "自然単位系",
+   "次元解析",
+   "くりこみ可能性",
+   "べき勘定"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 0,
+  "minutes": 12,
+  "theme": "カットオフで切った対数発散積分と差の有限性",
+  "topic": "カットオフで切った対数発散積分と差の有限性",
+  "statement": {
+   "tex": "場の量子論のループ計算には\n\\[I(\\Lambda;m)=\\int_0^\\Lambda\\frac{k^3}{(k^2+m^2)^2}\\,dk\\qquad(m>0)\\]\nのような積分が現れる（$k$ は運動量の大きさ，$\\Lambda$ は積分の上限＝カットオフ）．$\\Lambda\\to\\infty$ で $I$ は発散する．\n\\begin{enumerate}\n\\item $u=k^2$ と置換して $I(\\Lambda;m)$ を求めよ．\n\\item $\\Lambda\\gg m$ では $I\\approx\\ln\\dfrac{\\Lambda}{m}+C$ となる．定数 $C$ を求めよ．\n\\item 質量の異なる2つの積分の差の極限 $\\displaystyle\\lim_{\\Lambda\\to\\infty}\\bigl[I(\\Lambda;m_1)-I(\\Lambda;m_2)\\bigr]$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{1}{2}\\left(\\ln\\frac{\\Lambda^2+m^2}{m^2}+\\frac{m^2}{\\Lambda^2+m^2}-1\\right)$\n(2) $C=-\\frac{1}{2}$\n(3) $\\ln\\frac{m_2}{m_1}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $du=2k\\,dk$ より $k^3dk=\\dfrac12u\\,du$．\n\\[I=\\frac12\\int_0^{\\Lambda^2}\\frac{u}{(u+m^2)^2}du=\\frac12\\int_0^{\\Lambda^2}\\left[\\frac{1}{u+m^2}-\\frac{m^2}{(u+m^2)^2}\\right]du=\\boldsymbol{\\frac12\\left(\\ln\\frac{\\Lambda^2+m^2}{m^2}+\\frac{m^2}{\\Lambda^2+m^2}-1\\right)}.\\]\n\n(2) $\\Lambda\\gg m$ で $\\ln\\dfrac{\\Lambda^2+m^2}{m^2}\\approx2\\ln\\dfrac{\\Lambda}{m}$，$\\dfrac{m^2}{\\Lambda^2+m^2}\\to0$ なので $I\\approx\\ln\\dfrac\\Lambda m-\\dfrac12$，$\\boldsymbol{C=-\\dfrac12}$．$\\Lambda$ に対して対数でしか増えないので「対数発散」という．\n\n(3) 差では $\\ln\\Lambda$ が打ち消し，\n\\[I(\\Lambda;m_1)-I(\\Lambda;m_2)\\to\\ln\\frac{\\Lambda}{m_1}-\\ln\\frac{\\Lambda}{m_2}=\\boldsymbol{\\ln\\frac{m_2}{m_1}}.\\]\n\n発散は $\\Lambda$ に依存する定数の部分だけにあり，異なる条件どうしの差（物理的に測れる量）は有限になる．発散する定数を「結合定数の測定値」に吸収してしまうのが，くりこみの基本的な考え方である．次は，カットオフの代わりに時空の次元をずらす次元正則化を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "対数発散は $\\Lambda$ によらない定数の差を残さず，異なる質量・運動量での差は有限．発散を測定値に吸収するのがくりこみである．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (1/2)(ln((Λ^2+m^2)/m^2)+m^2/(Λ^2+m^2)-1)\n(2) -1/2\n(3) ln(m_2/m_1)"
+  },
+  "methods": [],
+  "tags": [
+   "ループ積分",
+   "カットオフ",
+   "対数発散",
+   "くりこみの考え方"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 0,
+  "minutes": 12,
+  "theme": "1次元イジング鎖の間引き（デシメーション）とくりこみ群の流れ",
+  "topic": "1次元イジング鎖の間引き（デシメーション）とくりこみ群の流れ",
+  "statement": {
+   "tex": "スピン $s_i=\\pm1$ が1列に並び，隣り合う組ごとにボルツマン因子 $e^{Ks_is_{i+1}}$（$K=J/k_BT>0$）がかかる1次元イジング模型を考える．1つおきのスピン（$s_2,s_4,\\ldots$）について和をとって消すと，残ったスピンだけの同じ形の模型になる：\n\\[\\sum_{s_2=\\pm1}e^{Ks_2(s_1+s_3)}=A\\,e^{K's_1s_3}\\]\n（$A$ は $s_1,s_3$ によらない定数）．格子間隔は2倍になる．この操作をくりこみ群変換という．\n\\begin{enumerate}\n\\item $s_1=s_3$ の場合と $s_1=-s_3$ の場合の比をとり，$K'$ を $K$ で表せ．\n\\item 元の模型では，距離 $r$ だけ離れたスピンの相関は $\\langle s_0s_r\\rangle=(\\tanh K)^r=e^{-r/\\xi}$ である（$\\xi$ は格子間隔を単位とする相関長）．$\\xi$ を $K$ で表し，$K=1$ での値を求めよ．\n\\item (1) の結果は $\\tanh K'=(\\tanh K)^2$ と書き直せる．$t=\\tanh K$（$0\\leq t\\leq1$）の写像 $t\\to t^2$ の固定点をすべて求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $K'=\\frac{1}{2}\\ln\\cosh 2K$\n(2) $\\xi=-\\frac{1}{\\ln\\tanh K}$，$K=1$ で $\\xi\\approx3.67$\n(3) $t=0,\\ 1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $s_1=s_3$ のとき左辺は $e^{2K}+e^{-2K}=2\\cosh2K=Ae^{K'}$，$s_1=-s_3$ のとき $2=Ae^{-K'}$．比をとって $e^{2K'}=\\cosh2K$，\n\\[\\boldsymbol{K'=\\frac12\\ln\\cosh2K}.\\]\n\n(2) $(\\tanh K)^r=e^{r\\ln\\tanh K}$ より $\\boldsymbol{\\xi=-\\dfrac{1}{\\ln\\tanh K}}$．$K=1$ で $\\tanh1=0.7616$，$\\xi=1/0.2723\\approx\\boldsymbol{3.67}$．\n\n変換後は格子間隔が2倍なので，同じ物理的長さを新しい単位で測ると $\\xi'=\\xi/2$ になるはずである．実際 $\\tanh K'=\\tanh^2K$ から $\\ln\\tanh K'=2\\ln\\tanh K$，$\\xi'=\\xi/2$ となり整合する．\n\n(3) $t^2=t$ より $\\boldsymbol{t=0,\\ 1}$．$t=0$（$K=0$，高温）は $\\xi=0$，$t=1$（$K=\\infty$，絶対零度）は $\\xi=\\infty$ の固定点である．$0<t<1$ から出発すると $t\\to t^2\\to t^4\\to\\cdots$ と $0$ に流れるので，有限温度ではつねに無秩序（1次元では相転移がない）．\n\nウィルソンのくりこみ群では，粗視化で結合定数が流れる様子と，その固定点（$\\xi=0$ か $\\infty$）を調べて臨界現象を理解する．次は，場の理論の結合定数の流れを表す $\\beta$ 関数を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "自由度を間引いて同じ形の模型に戻すと結合定数が $K\\to K'$ と流れる．固定点は相関長が $0$ か $\\infty$ の点である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (1/2)ln(cosh(2K))\n(2) ξ：-1/ln(tanh(K)) ; K=1：≈3.67\n(3) {0, 1}"
+  },
+  "methods": [],
+  "tags": [
+   "くりこみ群",
+   "デシメーション",
+   "イジング模型",
+   "固定点",
+   "相関長"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 1,
+  "minutes": 15,
+  "theme": "表面的発散次数のべき勘定（φ⁴ 理論と φ³ 理論）",
+  "topic": "表面的発散次数のべき勘定（φ⁴ 理論と φ³ 理論）",
+  "statement": {
+   "tex": "$d$ 次元の $\\phi^4$ 理論で，外線 $E$ 本，頂点 $V$ 個，内線（伝播関数）$I$ 本，ループ $L$ 個の1粒子既約なファインマン図を考える．各ループに運動量積分 $\\int d^dk$，各内線に伝播関数 $1/(k^2-m^2)$ がつくので，表面的発散次数は $D=dL-2I$ である．また $L=I-V+1$ が成り立つ．\n\\begin{enumerate}\n\\item 各頂点から4本の線が出ることから $I$ を $V,\\ E$ で表し，$D$ を $d,\\ V,\\ E$ で表せ．\n\\item $d=4$ での $D$ を $E$ で表せ．\n\\item $d=3$ での $D$ を $V,\\ E$ で表せ．\n\\item $d=6$ の $\\phi^3$ 理論（各頂点から3本の線が出る）での $D$ を $E$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $D=d+(d-4)V-\\frac{(d-2)E}{2}$\n(2) $D=4-E$\n(3) $D=3-V-\\frac{E}{2}$\n(4) $D=6-2E$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 線の端の数を数えると $4V=E+2I$，$I=\\dfrac{4V-E}{2}$．\n\\[D=d(I-V+1)-2I=(d-2)I-dV+d=\\boldsymbol{d+(d-4)V-\\frac{(d-2)E}{2}}.\\]\n\n(2) $d=4$ で $\\boldsymbol{D=4-E}$．$V$ によらないので，発散する関数は $E=2$（$D=2$，質量）と $E=4$（$D=0$，結合定数）の有限個に限られる（$E$ は偶数）．これがくりこみ可能性の意味である．\n\n(3) $d=3$ で $\\boldsymbol{D=3-V-\\dfrac E2}$．頂点を増やすと $D$ が下がるので，発散する図は有限個しかない（超くりこみ可能）．\n\n(4) $3V=E+2I$，$I=\\dfrac{3V-E}{2}$ より\n\\[D=6(I-V+1)-2I=4I-6V+6=\\boldsymbol{6-2E}.\\]\n$d=6$ の $\\phi^3$ 理論もくりこみ可能で，発散は $E\\leq3$ に限られる．一般に $D$ に $V$ がかかる係数は結合定数の質量次元の $-1$ 倍で，$d>4$ の $\\phi^4$ 理論（$[\\lambda]=4-d<0$）では $V$ とともに $D$ が増え，くりこみ不可能になる．"
+   }
+  ],
+  "idea": {
+   "tex": "線の数の関係で $I,L$ を消すと $D$ は $E$ と $V$ だけで書け，$V$ の係数（結合定数の次元）でくりこみ可能性が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) d+(d-4)V-(d-2)E/2\n(2) 4-E\n(3) 3-V-E/2\n(4) 6-2E"
+  },
+  "methods": [],
+  "tags": [
+   "表面的発散次数",
+   "べき勘定",
+   "くりこみ可能性",
+   "ファインマン図"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 1,
+  "minutes": 15,
+  "theme": "次元正則化の基本積分とガンマ関数の展開",
+  "topic": "次元正則化の基本積分とガンマ関数の展開",
+  "statement": {
+   "tex": "ユークリッド化した $d$ 次元の運動量積分について\n\\[\\int\\frac{d^d\\ell}{(2\\pi)^d}\\frac{1}{(\\ell^2+\\Delta)^n}=\\frac{1}{(4\\pi)^{d/2}}\\frac{\\Gamma\\left(n-\\frac d2\\right)}{\\Gamma(n)}\\Delta^{d/2-n}\\qquad(\\Delta>0)\\]\nが成り立つ．$d=4-\\varepsilon$ とおき，$\\varepsilon\\to0$ で展開する．$\\Gamma\\left(\\frac\\varepsilon2\\right)=\\frac2\\varepsilon-\\gamma+O(\\varepsilon)$，$\\Gamma\\left(-1+\\frac\\varepsilon2\\right)=-\\frac2\\varepsilon+\\gamma-1+O(\\varepsilon)$（$\\gamma$ はオイラー定数），$a^{\\varepsilon}=1+\\varepsilon\\ln a+O(\\varepsilon^2)$ を用いてよい．\n\\begin{enumerate}\n\\item $n=2$ の積分を $\\dfrac{A}{\\varepsilon}+B+O(\\varepsilon)$ と展開したときの $A$ と $B$ を求めよ．\n\\item $n=1$ の積分の $1/\\varepsilon$ の係数を求めよ．\n\\item カットオフで切ると $n=1$ の積分は $\\Lambda^2$ に比例して発散するが，次元正則化では (2) のように $\\Delta$ に比例する極だけが残る．$\\Delta\\to0$（質量ゼロ）での $n=1$ の積分の値は何か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A=\\frac{1}{8\\pi^2}$，$B=\\frac{\\ln(4\\pi)-\\gamma-\\ln\\Delta}{16\\pi^2}$\n(2) $-\\frac{\\Delta}{8\\pi^2}$\n(3) $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n=2$ では $\\Gamma(n)=1$，$\\Gamma(2-\\frac d2)=\\Gamma(\\frac\\varepsilon2)$．\n\\[\\frac{1}{(4\\pi)^{2-\\varepsilon/2}}\\Delta^{-\\varepsilon/2}=\\frac{1}{16\\pi^2}\\left(1+\\frac\\varepsilon2\\ln4\\pi-\\frac\\varepsilon2\\ln\\Delta+\\cdots\\right)\\]\nをかけて\n\\[\\frac{1}{16\\pi^2}\\left(\\frac2\\varepsilon-\\gamma+\\ln4\\pi-\\ln\\Delta\\right)+O(\\varepsilon),\\qquad \\boldsymbol{A=\\frac{1}{8\\pi^2}},\\quad \\boldsymbol{B=\\frac{\\ln(4\\pi)-\\gamma-\\ln\\Delta}{16\\pi^2}}.\\]\n$\\overline{\\mathrm{MS}}$ スキームでは $\\frac2\\varepsilon-\\gamma+\\ln4\\pi$ をまとめて引き去る．\n\n(2) $\\Gamma(1-\\frac d2)=\\Gamma(-1+\\frac\\varepsilon2)\\approx-\\frac2\\varepsilon$，$\\Delta^{d/2-1}\\approx\\Delta$ より極は $\\dfrac{1}{16\\pi^2}\\cdot\\left(-\\dfrac2\\varepsilon\\right)\\Delta$，係数は $\\boldsymbol{-\\dfrac{\\Delta}{8\\pi^2}}$．\n\n(3) $d<2$ で計算すると $\\Delta^{d/2-1}\\to0$（$\\Delta\\to0$）であり，それを解析接続するので値は $\\boldsymbol{0}$．スケールをもたない積分は次元正則化ではゼロになる．2次発散は「質量 $\\times$ 対数発散」の形でしか現れず，質量ゼロの理論では次元正則化が対称性（ゲージ不変性など）を保ったまま発散を処理できる．"
+   }
+  ],
+  "idea": {
+   "tex": "次元正則化では発散が $1/\\varepsilon$ の極として現れ，べき型の発散（$\\Lambda^2$）は消えて質量に比例する極だけが残る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) A：1/(8pi^2) ; B：(ln(4pi)-γ-ln(Δ))/(16pi^2)\n(2) -Δ/(8pi^2)\n(3) 0"
+  },
+  "methods": [],
+  "tags": [
+   "次元正則化",
+   "ガンマ関数",
+   "MSバー",
+   "ループ積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 1,
+  "minutes": 12,
+  "theme": "固定点でのカラン＝シマンジク方程式と異常次元",
+  "topic": "固定点でのカラン＝シマンジク方程式と異常次元",
+  "statement": {
+   "tex": "4次元の質量ゼロのスカラー場の理論が，くりこみ群の固定点（$\\beta=0$）にあるとする．くりこまれた2点関数（運動量表示）$G(p)$ はくりこみスケール $\\mu$ に依存し，カラン＝シマンジク方程式\n\\[\\left(\\mu\\frac{\\partial}{\\partial\\mu}+2\\gamma\\right)G(p)=0\\]\nを満たす（$\\gamma$ は定数の異常次元）．$G(p)$ の質量次元は $-2$ なので $G(p)=\\dfrac{1}{p^2}f\\!\\left(\\dfrac{p}{\\mu}\\right)$ と書ける（$p=|p|$）．\n\\begin{enumerate}\n\\item $f(x)\\propto x^s$ となる．$G(p)\\propto p^{k}$ の指数 $k$ を $\\gamma$ で表せ．\n\\item 4次元のフーリエ変換で $p^{-2a}$ は $|x|^{2a-4}$ に比例する．位置表示の2点関数 $\\langle\\phi(x)\\phi(0)\\rangle\\propto|x|^{-2\\Delta_\\phi}$ の $\\Delta_\\phi$（場のスケーリング次元）を $\\gamma$ で表せ．\n\\item $n$ 点関数 $G^{(n)}$ は $\\left(\\mu\\dfrac{\\partial}{\\partial\\mu}+n\\gamma\\right)G^{(n)}=0$ を満たす．位置表示の $n$ 点関数で座標をすべて $\\lambda$ 倍すると $G^{(n)}$ は $\\lambda^{\\,j}$ 倍になる．指数 $j$ を $n,\\ \\gamma$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $k=2\\gamma-2$\n(2) $\\Delta_\\phi=1+\\gamma$\n(3) $j=-n(1+\\gamma)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=p/\\mu$ とすると $\\mu\\partial_\\mu f(p/\\mu)=-xf'(x)$．$f=Cx^s$ を方程式に入れると $-s+2\\gamma=0$，$s=2\\gamma$．よって\n\\[G(p)\\propto\\frac{1}{p^2}\\left(\\frac p\\mu\\right)^{2\\gamma}\\propto p^{\\boldsymbol{2\\gamma-2}}.\\]\n\n(2) $p^{2\\gamma-2}=p^{-2a}$ で $a=1-\\gamma$．位置表示では $|x|^{2a-4}=|x|^{-2-2\\gamma}$ なので $\\boldsymbol{\\Delta_\\phi=1+\\gamma}$．自由場の次元 $1$ から異常次元 $\\gamma$ だけずれる．\n\n(3) 位置表示の $n$ 点関数の質量次元は $n\\Delta_0=n$（自由場の次元の和）で，$G^{(n)}=|x|^{-n}F(\\mu x)$ の形．$\\mu\\partial_\\mu$ と $x\\partial_x$ の関係から (1) と同様に $F\\propto(\\mu x)^{-n\\gamma}$，よって $G^{(n)}\\propto|x|^{-n(1+\\gamma)}$，$\\boldsymbol{j=-n(1+\\gamma)}$．各場が次元 $\\Delta_\\phi=1+\\gamma$ をもつスケール不変な理論になっている．\n\n臨界現象では $\\Delta_\\phi=\\frac{d-2+\\eta}{2}$ と書き，$\\eta=2\\gamma$ が臨界指数になる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\beta=0$ ではカラン＝シマンジク方程式は単純なスケーリングを与え，相関関数のべきは自由場の次元から異常次元だけずれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2γ-2\n(2) 1+γ\n(3) -n(1+γ)"
+  },
+  "methods": [],
+  "tags": [
+   "カラン＝シマンジク方程式",
+   "異常次元",
+   "スケーリング次元",
+   "くりこみ群方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 2,
+  "minutes": 20,
+  "theme": "φ⁴ 理論の1ループ β 関数とランダウ極",
+  "topic": "φ⁴ 理論の1ループ β 関数とランダウ極",
+  "statement": {
+   "tex": "$\\mathcal L=\\frac12(\\partial\\phi)^2-\\frac12m^2\\phi^2-\\frac{\\lambda}{4!}\\phi^4$ の4点関数を1ループで考える．次元正則化（$d=4-\\varepsilon$）と最小引き算（MS）を用いる．1ループの図は $s,\\ t,\\ u$ の3つのチャンネルにあり，各チャンネルの図の発散部分は（対称因子 $\\frac12$ を含めて）$\\dfrac{i\\lambda^2}{16\\pi^2\\varepsilon}$ である．4点の対向項の頂点を $-i\\delta_\\lambda$ とし，裸の結合は $\\lambda_0=\\mu^{\\varepsilon}(\\lambda+\\delta_\\lambda)$ と書ける（$\\mu$ はくりこみスケール．1ループでは場のくりこみは不要）．\n\\begin{enumerate}\n\\item 発散を打ち消す $\\delta_\\lambda$ を $\\lambda,\\ \\varepsilon$ で表せ．\n\\item $\\lambda_0$ が $\\mu$ によらないことから $\\beta(\\lambda)=\\mu\\dfrac{d\\lambda}{d\\mu}$ を $\\lambda^2$ の次数まで求め，$\\varepsilon\\to0$ での値を答えよ．\n\\item $\\mu=\\mu_0$ で $\\lambda=\\lambda_0$ として (2) を解き，$\\lambda(\\mu)$ を求めよ（ここでの $\\lambda_0$ は $\\mu_0$ でのくりこまれた結合を表す）．\n\\item (3) の $\\lambda(\\mu)$ が発散する $\\mu$（ランダウ極）を $\\mu_L$ とする．$\\lambda_0=1$ のとき $\\log_{10}(\\mu_L/\\mu_0)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\delta_\\lambda=\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}$\n(2) $\\beta=\\frac{3\\lambda^2}{16\\pi^2}$\n(3) $\\lambda(\\mu)=\\frac{\\lambda_0}{1-\\frac{3\\lambda_0}{16\\pi^2}\\ln\\frac{\\mu}{\\mu_0}}$\n(4) $\\approx22.9$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 3チャンネルの発散の和は $\\dfrac{3i\\lambda^2}{16\\pi^2\\varepsilon}$．これを $-i\\delta_\\lambda$ で打ち消すので\n\\[\\boldsymbol{\\delta_\\lambda=\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}}.\\]\n\n(2) $\\ln\\lambda_0=\\varepsilon\\ln\\mu+\\ln\\left(\\lambda+\\dfrac{3\\lambda^2}{16\\pi^2\\varepsilon}\\right)$ を $\\ln\\mu$ で微分して $0$ とおく：\n\\[0=\\varepsilon\\left(\\lambda+\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}\\right)+\\beta\\left(1+\\frac{6\\lambda}{16\\pi^2\\varepsilon}\\right).\\]\n$\\lambda^2$ の次数まで $\\beta=-\\varepsilon\\lambda+\\dfrac{3\\lambda^2}{16\\pi^2}$．$\\varepsilon\\to0$ で $\\boldsymbol{\\beta=\\dfrac{3\\lambda^2}{16\\pi^2}}$．\n\n(3) $\\dfrac{d\\lambda}{\\lambda^2}=\\dfrac{3}{16\\pi^2}d\\ln\\mu$ を積分して $\\dfrac1{\\lambda_0}-\\dfrac1\\lambda=\\dfrac{3}{16\\pi^2}\\ln\\dfrac{\\mu}{\\mu_0}$，\n\\[\\boldsymbol{\\lambda(\\mu)=\\frac{\\lambda_0}{1-\\dfrac{3\\lambda_0}{16\\pi^2}\\ln\\dfrac{\\mu}{\\mu_0}}}.\\]\n\n(4) 分母 $=0$ より $\\ln\\dfrac{\\mu_L}{\\mu_0}=\\dfrac{16\\pi^2}{3\\lambda_0}=52.64$，$\\log_{10}\\dfrac{\\mu_L}{\\mu_0}=\\dfrac{52.64}{2.303}\\approx\\boldsymbol{22.9}$．\n\n$\\beta>0$ なので結合は高エネルギーで強くなる．ランダウ極は1ループの近似を極端に外挿した結果で，実際には $\\lambda$ が大きくなると摂動論は使えない．4次元の $\\phi^4$ 理論は連続極限で自由場になる（自明性）と考えられており，有限のカットオフをもつ有効理論として理解される．"
+   }
+  ],
+  "idea": {
+   "tex": "対向項の $1/\\varepsilon$ の極と $\\lambda_0=\\mu^\\varepsilon(\\lambda+\\delta_\\lambda)$ の $\\mu$ 非依存性から β 関数が出る．$\\beta>0$ なら高エネルギーで結合が増大する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 3λ^2/(16pi^2 ε)\n(2) 3λ^2/(16pi^2)\n(3) λ_0/(1-3λ_0 ln(μ/μ_0)/(16pi^2))\n(4) ≈22.9"
+  },
+  "methods": [],
+  "tags": [
+   "β関数",
+   "対向項",
+   "MSスキーム",
+   "ランダウ極",
+   "phi4理論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 2,
+  "minutes": 20,
+  "theme": "QED の β 関数：ワード恒等式と光子の場のくりこみ",
+  "topic": "QED の β 関数：ワード恒等式と光子の場のくりこみ",
+  "statement": {
+   "tex": "QED を次元正則化（$d=4-\\varepsilon$）と MS スキームでくりこむ．頂点・電子の場・光子の場のくりこみ定数を $Z_1,\\ Z_2,\\ Z_3$ とすると，裸の電荷は\n\\[e_0=\\mu^{\\varepsilon/2}Z_1Z_2^{-1}Z_3^{-1/2}\\,e\\]\nである．ワード＝高橋恒等式により $Z_1=Z_2$ が成り立つ．電荷 $e$ のディラック粒子1種類の真空偏極から $Z_3=1-\\dfrac{e^2}{6\\pi^2\\varepsilon}$ が得られる．\n\\begin{enumerate}\n\\item $\\beta(e)=\\mu\\dfrac{de}{d\\mu}$ を $e^3$ の次数まで求め，$\\varepsilon\\to0$ での値を答えよ．\n\\item 微細構造定数 $\\alpha=\\dfrac{e^2}{4\\pi}$ について $\\mu\\dfrac{d\\alpha}{d\\mu}$ を $\\alpha$ で表せ．\n\\item 荷電粒子がディラック粒子でなく電荷 $e$ の複素スカラー粒子のときは $Z_3=1-\\dfrac{e^2}{24\\pi^2\\varepsilon}$ となる．このときの $\\beta(e)$（$\\varepsilon\\to0$）を求めよ．\n\\item (2) を積分すると $\\dfrac{1}{\\alpha(\\mu)}=\\dfrac{1}{\\alpha(\\mu_0)}-\\dfrac{2}{3\\pi}\\ln\\dfrac{\\mu}{\\mu_0}$ となる．$\\mu_0=0.511\\,\\mathrm{MeV}$ で $1/\\alpha=137.04$ とし，電子だけが寄与するとして $\\mu=91.19\\,\\mathrm{GeV}$ での $1/\\alpha$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta(e)=\\frac{e^3}{12\\pi^2}$\n(2) $\\frac{2\\alpha^2}{3\\pi}$\n(3) $\\beta(e)=\\frac{e^3}{48\\pi^2}$\n(4) $\\approx134.5$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Z_1=Z_2$ より $e_0=\\mu^{\\varepsilon/2}Z_3^{-1/2}e$．$\\ln e_0=\\dfrac\\varepsilon2\\ln\\mu+\\ln e+\\dfrac{e^2}{12\\pi^2\\varepsilon}+\\cdots$ を $\\ln\\mu$ で微分して\n\\[0=\\frac\\varepsilon2+\\frac{\\beta}{e}+\\frac{e\\beta}{6\\pi^2\\varepsilon},\\qquad \\beta=-\\frac{\\varepsilon e}{2}\\left(1+\\frac{e^2}{6\\pi^2\\varepsilon}\\right)^{-1}\\approx-\\frac{\\varepsilon e}{2}+\\frac{e^3}{12\\pi^2}.\\]\n$\\varepsilon\\to0$ で $\\boldsymbol{\\beta(e)=\\dfrac{e^3}{12\\pi^2}}$．電荷のくりこみは光子の場のくりこみ $Z_3$ だけで決まり，どの荷電粒子にも共通（電荷の普遍性）である．\n\n(2) $\\mu\\dfrac{d\\alpha}{d\\mu}=\\dfrac{2e}{4\\pi}\\beta=\\dfrac{e^4}{24\\pi^3}=\\boldsymbol{\\dfrac{2\\alpha^2}{3\\pi}}$．\n\n(3) (1) の計算で $Z_3$ の係数 $\\dfrac{1}{6\\pi^2}$ が $\\dfrac{1}{24\\pi^2}$ に変わるだけである．一般に $Z_3=1-\\dfrac{ce^2}{\\varepsilon}$ なら $\\beta=\\dfrac{c}{2}e^3$ なので $\\boldsymbol{\\beta=\\dfrac{e^3}{48\\pi^2}}$（ディラック粒子の $\\frac14$）．\n\n(4) $\\ln\\dfrac{91.19\\times10^3}{0.511}=12.09$，$\\dfrac{2}{3\\pi}\\times12.09=2.566$．$1/\\alpha=137.04-2.57\\approx\\boldsymbol{134.5}$．\n\n実際にはミューオン・タウ・クォークも寄与し $1/\\alpha(m_Z)\\approx128$ になる．$\\beta>0$ は真空偏極による電荷の遮蔽を表す．"
+   }
+  ],
+  "idea": {
+   "tex": "ワード恒等式 $Z_1=Z_2$ により電荷のくりこみは $Z_3$ だけで決まり，真空偏極の極から β 関数が読み取れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) e^3/(12pi^2)\n(2) 2α^2/(3pi)\n(3) e^3/(48pi^2)\n(4) ≈134.5"
+  },
+  "methods": [],
+  "tags": [
+   "QED",
+   "β関数",
+   "ワード恒等式",
+   "真空偏極",
+   "走る結合定数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 2,
+  "minutes": 18,
+  "theme": "くりこみスキームの変更と β 関数の普遍係数",
+  "topic": "くりこみスキームの変更と β 関数の普遍係数",
+  "statement": {
+   "tex": "1つの結合定数 $\\lambda$ の β 関数が\n\\[\\beta(\\lambda)=\\mu\\frac{d\\lambda}{d\\mu}=b\\lambda^2+c\\lambda^3+d\\lambda^4+\\cdots\\]\nであるとする．別のくりこみスキームの結合 $\\lambda'$ は，一般に $\\lambda'=\\lambda+a\\lambda^2+a_2\\lambda^3+\\cdots$（$a,\\ a_2$ は定数）と関係する．\n\\begin{enumerate}\n\\item 逆に解いて $\\lambda=\\lambda'-a\\lambda'^2+k\\lambda'^3+\\cdots$ と書くとき，$k$ を $a,\\ a_2$ で表せ．\n\\item $\\beta'(\\lambda')=\\mu\\dfrac{d\\lambda'}{d\\mu}=b'\\lambda'^2+c'\\lambda'^3+d'\\lambda'^4+\\cdots$ の $b',\\ c'$ を求めよ．\n\\item $d'$ を $a,\\ a_2,\\ b,\\ c,\\ d$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $k=2a^2-a_2$\n(2) $(b',\\ c')=(b,\\ c)$\n(3) $d'=d+a_2b-a^2b-ac$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\lambda=\\lambda'-a\\lambda'^2+k\\lambda'^3$ を $\\lambda+a\\lambda^2+a_2\\lambda^3$ に代入すると，$\\lambda'^3$ の係数は $k-2a^2+a_2$．これが $0$ なので $\\boldsymbol{k=2a^2-a_2}$．\n\n(2) $\\beta'=\\dfrac{d\\lambda'}{d\\lambda}\\beta=(1+2a\\lambda+3a_2\\lambda^2)(b\\lambda^2+c\\lambda^3+d\\lambda^4)$\n\\[=b\\lambda^2+(c+2ab)\\lambda^3+(d+2ac+3a_2b)\\lambda^4.\\]\n$\\lambda^2=\\lambda'^2-2a\\lambda'^3+(5a^2-2a_2)\\lambda'^4$，$\\lambda^3=\\lambda'^3-3a\\lambda'^4$ を代入すると，$\\lambda'^3$ の係数は $c+2ab-2ab=c$．よって $\\boldsymbol{b'=b,\\ c'=c}$．\n\n(3) $\\lambda'^4$ の係数を集めると\n\\[d'=b(5a^2-2a_2)-3a(c+2ab)+d+2ac+3a_2b=\\boldsymbol{d+a_2b-a^2b-ac}.\\]\n\n結合定数が1つの理論では，β 関数の最初の2つの係数（1ループと2ループ）はスキームによらない普遍的な量で，3ループ以上はスキームに依存する．QCD の $\\beta_0,\\ \\beta_1$ が物理的な意味をもつのはこのためである．"
+   }
+  ],
+  "idea": {
+   "tex": "結合定数の再定義 $\\lambda'=\\lambda+a\\lambda^2+\\cdots$ のもとで β 関数の最初の2係数は不変，3番目以降はスキームに依存する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2a^2-a_2\n(2) (b, c)\n(3) d+a_2 b-a^2 b-a c"
+  },
+  "methods": [],
+  "tags": [
+   "β関数",
+   "くりこみスキーム",
+   "スキーム依存性",
+   "普遍係数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 3,
+  "minutes": 25,
+  "theme": "QED の真空偏極：ユーリング項と高運動量での実効結合",
+  "topic": "QED の真空偏極：ユーリング項と高運動量での実効結合",
+  "statement": {
+   "tex": "QED の1ループの真空偏極で，くりこみ後の関数は\n\\[\\hat\\Pi_2(q^2)=-\\frac{2\\alpha}{\\pi}\\int_0^1dx\\,x(1-x)\\ln\\frac{m^2}{m^2-x(1-x)q^2}\\]\nである（$m$ は電子の質量，$\\alpha$ は微細構造定数）．光子の伝播関数は $\\dfrac{1}{q^2(1-\\hat\\Pi_2(q^2))}$ に比例し，静的な電荷どうしのポテンシャルは運動量表示で $\\tilde V(\\boldsymbol q)=-\\dfrac{e^2}{|\\boldsymbol q|^2\\left(1-\\hat\\Pi_2(-|\\boldsymbol q|^2)\\right)}$（$e^2=4\\pi\\alpha$，引力の場合）となる．$\\displaystyle\\int_0^1x(1-x)\\ln x\\,dx=-\\frac{5}{36}$ を用いてよい．\n\\begin{enumerate}\n\\item $|\\boldsymbol q|\\ll m$ で $\\hat\\Pi_2(-|\\boldsymbol q|^2)\\approx\\kappa\\,\\alpha\\dfrac{|\\boldsymbol q|^2}{m^2}$ と書くとき，$\\kappa$ を求めよ．\n\\item (1) による $\\alpha$ の最低次の補正を位置表示に直すと $\\delta V(\\boldsymbol r)=-C\\dfrac{\\alpha^2}{m^2}\\delta^3(\\boldsymbol r)$ となる（定数のフーリエ変換が $\\delta^3(\\boldsymbol r)$）．$C$ を求めよ．\n\\item $Q^2=-q^2\\gg m^2$ では $\\dfrac{\\alpha}{1-\\hat\\Pi_2}\\approx\\dfrac{\\alpha}{1-\\dfrac{\\alpha}{3\\pi}\\ln\\dfrac{Q^2}{Am^2}}$ となる．定数 $A$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\kappa=\\frac{1}{15\\pi}$\n(2) $C=\\frac{4}{15}$\n(3) $A=e^{5/3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $q^2=-|\\boldsymbol q|^2$ で $\\ln\\dfrac{m^2}{m^2+x(1-x)|\\boldsymbol q|^2}\\approx-x(1-x)\\dfrac{|\\boldsymbol q|^2}{m^2}$．$\\int_0^1x^2(1-x)^2dx=\\frac1{30}$ より\n\\[\\hat\\Pi_2\\approx\\frac{2\\alpha}{\\pi}\\cdot\\frac{1}{30}\\frac{|\\boldsymbol q|^2}{m^2},\\qquad \\boldsymbol{\\kappa=\\frac{1}{15\\pi}}.\\]\n\n(2) $\\tilde V\\approx-\\dfrac{e^2}{|\\boldsymbol q|^2}(1+\\hat\\Pi_2)$ の補正は $-\\dfrac{4\\pi\\alpha}{|\\boldsymbol q|^2}\\cdot\\dfrac{\\alpha|\\boldsymbol q|^2}{15\\pi m^2}=-\\dfrac{4\\alpha^2}{15m^2}$（定数）．よって $\\boldsymbol{C=\\dfrac{4}{15}}$（ユーリング項）．水素原子では $|\\psi(0)|^2$ をもつ $s$ 状態だけが下がり，$2S_{1/2}$ では約 $-27\\,\\mathrm{MHz}$ とラムシフトの一部をなす．\n\n(3) $\\ln\\dfrac{m^2}{m^2+x(1-x)Q^2}\\approx-\\ln\\dfrac{Q^2}{m^2}-\\ln x(1-x)$．$\\int_0^1x(1-x)dx=\\frac16$，$\\int_0^1x(1-x)\\ln[x(1-x)]dx=2\\times\\left(-\\frac5{36}\\right)=-\\frac5{18}$ より\n\\[\\hat\\Pi_2\\approx\\frac{2\\alpha}{\\pi}\\left[\\frac16\\ln\\frac{Q^2}{m^2}-\\frac{5}{18}\\right]=\\frac{\\alpha}{3\\pi}\\left[\\ln\\frac{Q^2}{m^2}-\\frac53\\right]=\\frac{\\alpha}{3\\pi}\\ln\\frac{Q^2}{e^{5/3}m^2},\\qquad\\boldsymbol{A=e^{5/3}}.\\]\n対数の係数 $\\frac{\\alpha}{3\\pi}$ は β 関数 $\\mu\\frac{d\\alpha}{d\\mu}=\\frac{2\\alpha^2}{3\\pi}$ と一致し，高運動量で電荷が遮蔽から現れて大きく見える（走る結合定数）．"
+   }
+  ],
+  "idea": {
+   "tex": "真空偏極は低運動量では接触項（ユーリング項）を，高運動量では対数で増える実効結合を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1/(15pi)\n(2) 4/15\n(3) e^(5/3)"
+  },
+  "methods": [],
+  "tags": [
+   "真空偏極",
+   "ユーリング項",
+   "走る結合定数",
+   "QED",
+   "ラムシフト"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 3,
+  "minutes": 25,
+  "theme": "湯川理論の1ループくりこみ：異常次元と β 関数",
+  "topic": "湯川理論の1ループくりこみ：異常次元と β 関数",
+  "statement": {
+   "tex": "実スカラー場 $\\phi$ とディラック場 $\\psi$ の湯川相互作用 $\\mathcal L_{\\mathrm{int}}=-g\\phi\\bar\\psi\\psi$ を，$d=4-\\varepsilon$ の次元正則化と MS スキームで1ループでくりこむと\n\\[Z_\\phi=1-\\frac{g^2}{4\\pi^2\\varepsilon},\\qquad Z_\\psi=1-\\frac{g^2}{16\\pi^2\\varepsilon},\\qquad Z_g=1+\\frac{g^2}{8\\pi^2\\varepsilon}\\]\nが得られる．裸の結合は $g_0=\\mu^{\\varepsilon/2}Z_gZ_\\psi^{-1}Z_\\phi^{-1/2}g$ である．異常次元を $\\gamma_\\phi=\\dfrac12\\mu\\dfrac{d\\ln Z_\\phi}{d\\mu}$，$\\gamma_\\psi=\\dfrac12\\mu\\dfrac{d\\ln Z_\\psi}{d\\mu}$ で定義する（最低次では $\\mu\\dfrac{dg}{d\\mu}\\approx-\\dfrac{\\varepsilon}{2}g$ を用いる）．\n\\begin{enumerate}\n\\item $\\gamma_\\phi$ を $g$ で表せ．\n\\item $\\gamma_\\psi$ を $g$ で表せ．\n\\item $\\beta(g)=\\mu\\dfrac{dg}{d\\mu}$ を求めよ（$\\varepsilon\\to0$）．\n\\item 同じ結合 $g$ で $\\phi$ と結合するディラック場が $N$ 種類あると，$Z_\\phi=1-\\dfrac{Ng^2}{4\\pi^2\\varepsilon}$ に変わり，他は変わらない．このときの $\\beta(g)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\gamma_\\phi=\\frac{g^2}{8\\pi^2}$\n(2) $\\gamma_\\psi=\\frac{g^2}{32\\pi^2}$\n(3) $\\beta=\\frac{5g^3}{16\\pi^2}$\n(4) $\\beta=\\frac{(2N+3)g^3}{16\\pi^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln Z_\\phi\\approx-\\dfrac{g^2}{4\\pi^2\\varepsilon}$．$\\mu\\dfrac{d}{d\\mu}$ をとると $-\\dfrac{2g}{4\\pi^2\\varepsilon}\\cdot\\left(-\\dfrac{\\varepsilon g}{2}\\right)=\\dfrac{g^2}{4\\pi^2}$，よって $\\boldsymbol{\\gamma_\\phi=\\dfrac{g^2}{8\\pi^2}}$．$1/\\varepsilon$ と $\\varepsilon$ が打ち消して有限になる．\n\n(2) 同様に $\\boldsymbol{\\gamma_\\psi=\\dfrac12\\cdot\\dfrac{g^2}{16\\pi^2}=\\dfrac{g^2}{32\\pi^2}}$．\n\n(3) $\\ln g_0=\\dfrac\\varepsilon2\\ln\\mu+\\ln g+\\dfrac{g^2}{16\\pi^2\\varepsilon}(2+1+2)$（$Z_g$ から $2$，$Z_\\psi^{-1}$ から $1$，$Z_\\phi^{-1/2}$ から $2$）．$\\ln\\mu$ で微分して $0$：\n\\[0=\\frac\\varepsilon2+\\frac\\beta g+\\frac{10g\\beta}{16\\pi^2\\varepsilon},\\qquad\\beta\\approx-\\frac{\\varepsilon g}{2}+\\frac{5g^3}{16\\pi^2}\\to\\boldsymbol{\\frac{5g^3}{16\\pi^2}}.\\]\nこれは $\\beta=g(\\gamma_\\phi+2\\gamma_\\psi)+(\\text{頂点の寄与})=g\\left(\\frac{3g^2}{16\\pi^2}\\right)+\\frac{2g^3}{16\\pi^2}$ と分解できる．\n\n(4) $Z_\\phi^{-1/2}$ の寄与が $2N$ になるので，係数は $2+1+2N$：$\\boldsymbol{\\beta=\\dfrac{(2N+3)g^3}{16\\pi^2}}$．フェルミオンのループ（$\\phi$ の自己エネルギー）が種類数に比例して効く．"
+   }
+  ],
+  "idea": {
+   "tex": "異常次元は $Z$ の $1/\\varepsilon$ の係数に $-\\varepsilon g/2$ をかけて得られ，β 関数は頂点と場のくりこみの寄与の和になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) g^2/(8pi^2)\n(2) g^2/(32pi^2)\n(3) 5g^3/(16pi^2)\n(4) (2N+3)g^3/(16pi^2)"
+  },
+  "methods": [],
+  "tags": [
+   "湯川理論",
+   "異常次元",
+   "β関数",
+   "くりこみ定数",
+   "MSスキーム"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 3,
+  "minutes": 25,
+  "theme": "2次元デルタ関数ポテンシャルのくりこみと次元転移",
+  "topic": "2次元デルタ関数ポテンシャルのくりこみと次元転移",
+  "statement": {
+   "tex": "$\\hbar=1$ とする．2次元平面を運動する質量 $m$ の粒子のハミルトニアン $H=\\dfrac{\\boldsymbol p^2}{2m}-g\\,\\delta^2(\\boldsymbol r)$（$g>0$）の束縛状態（エネルギー $-B$，$B>0$）を考える．運動量表示の波動関数 $\\tilde\\psi(\\boldsymbol k)$ についてシュレーディンガー方程式は $\\left(\\dfrac{k^2}{2m}+B\\right)\\tilde\\psi(\\boldsymbol k)=g\\,\\psi(0)$ となり，$\\psi(0)=\\displaystyle\\int\\frac{d^2k}{(2\\pi)^2}\\tilde\\psi(\\boldsymbol k)$ である．この積分は対数発散するので，$|\\boldsymbol k|<\\Lambda$ で切る．\n\\begin{enumerate}\n\\item 束縛状態の条件から $B$ を $\\Lambda,\\ m,\\ g$ で表せ．\n\\item 物理量 $B$ を一定に保ったまま $\\Lambda$ を変えるには $g$ を $\\Lambda$ とともに変えなければならない．$\\Lambda^2\\gg2mB$ として $\\beta(g)=\\Lambda\\dfrac{dg}{d\\Lambda}$ を $m,\\ g$ で表せ．\n\\item スケール $\\mu$ での結合を $\\dfrac{1}{g(\\mu)}=\\dfrac{m}{2\\pi}\\ln\\dfrac{\\mu^2}{2mB}$ で定義すると，$\\mu$ を下げたとき $g(\\mu)$ が発散するスケールはどこか．$m,\\ B$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B=\\frac{\\Lambda^2}{2m\\left(e^{2\\pi/(mg)}-1\\right)}$\n(2) $\\beta=-\\frac{mg^2}{\\pi}$\n(3) $\\sqrt{2mB}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 方程式を $\\tilde\\psi$ について解いて積分すると，両辺の $\\psi(0)$ が約されて\n\\[1=g\\int_{|\\boldsymbol k|<\\Lambda}\\frac{d^2k}{(2\\pi)^2}\\frac{1}{k^2/2m+B}=\\frac{gm}{2\\pi}\\ln\\left(1+\\frac{\\Lambda^2}{2mB}\\right).\\]\nよって $\\boldsymbol{B=\\dfrac{\\Lambda^2}{2m\\left(e^{2\\pi/(mg)}-1\\right)}}$．$\\Lambda\\to\\infty$ で $g$ を固定すると $B\\to\\infty$ となり，理論が意味をなさない．\n\n(2) $\\dfrac1g=\\dfrac{m}{2\\pi}\\ln\\dfrac{\\Lambda^2}{2mB}$（$B$ 一定）を微分して $-\\dfrac{1}{g^2}\\Lambda\\dfrac{dg}{d\\Lambda}=\\dfrac m\\pi$，\n\\[\\boldsymbol{\\beta(g)=-\\frac{mg^2}{\\pi}}.\\]\n$\\beta<0$ なので高エネルギー（大きな $\\Lambda$）で結合は弱くなる（漸近的自由）．2次元のデルタ関数ポテンシャルでは $mg$ が無次元（$\\hbar=1$）で，古典的にスケール不変である点が4次元のゲージ理論と同じ構造をもつ．\n\n(3) $g(\\mu)\\to\\infty$ は $\\ln\\dfrac{\\mu^2}{2mB}=0$，$\\mu=\\boldsymbol{\\sqrt{2mB}}$（束縛状態の運動量スケール）．もとは無次元の結合 $g$ しかなかった理論に，くりこみによって物理的なエネルギースケール $B$ が現れる．これを次元転移といい，QCD の $\\Lambda_{\\mathrm{QCD}}$ と同じ現象である．"
+   }
+  ],
+  "idea": {
+   "tex": "対数発散する結合を物理量 $B$ で定義し直すと結合が走り（$\\beta<0$），無次元の結合からエネルギースケールが生まれる（次元転移）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Λ^2/(2m(e^(2pi/(m g))-1))\n(2) -m g^2/pi\n(3) sqrt(2m B)"
+  },
+  "methods": [],
+  "tags": [
+   "デルタ関数ポテンシャル",
+   "くりこみ",
+   "漸近的自由",
+   "次元転移",
+   "量子力学"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 4,
+  "minutes": 35,
+  "theme": "O(N) 模型のウィルソン＝フィッシャー固定点と ε 展開による臨界指数 ν",
+  "topic": "O(N) 模型のウィルソン＝フィッシャー固定点と ε 展開による臨界指数 ν",
+  "statement": {
+   "tex": "$N$ 成分の実スカラー場 $\\phi_a$（$a=1,\\ldots,N$）の理論\n\\[\\mathcal L=\\frac12\\partial_\\mu\\phi_a\\partial^\\mu\\phi_a-\\frac12m^2\\phi_a\\phi_a-\\frac{\\lambda}{4!}(\\phi_a\\phi_a)^2\\]\nを $d=4-\\varepsilon$ 次元で考える（繰り返す添字は和をとる）．頂点は $-\\dfrac{i\\lambda}{3}S_{abcd}$，$S_{abcd}=\\delta_{ab}\\delta_{cd}+\\delta_{ac}\\delta_{bd}+\\delta_{ad}\\delta_{bc}$ である．$N=1$ では $\\beta(\\lambda)=-\\varepsilon\\lambda+\\dfrac{3\\lambda^2}{16\\pi^2}$ となる．\n\\begin{enumerate}\n\\item 1ループの $s$ チャンネルの図には $\\displaystyle\\sum_{e,f}S_{abef}S_{efcd}=c\\,\\delta_{ab}\\delta_{cd}+2(\\delta_{ac}\\delta_{bd}+\\delta_{ad}\\delta_{bc})$ が現れる．$c$ を $N$ で表せ．\n\\item $s,\\ t,\\ u$ の3チャンネルの和は $(N+8)S_{abcd}$ に比例する（$N=1$ で $9S$）．これを用いて $\\beta(\\lambda)$ を求め，非自明な固定点 $\\lambda_*$ を $N,\\ \\varepsilon$ で表せ．\n\\item 質量項は $\\mu\\dfrac{dm^2}{d\\mu}=\\dfrac{(N+2)\\lambda}{48\\pi^2}m^2$ に従って走る．無次元の $r=m^2/\\mu^2$ は固定点で $\\mu\\dfrac{dr}{d\\mu}=-(2-\\gamma_*)r$（$\\gamma_*$ は $\\lambda=\\lambda_*$ での $\\frac{(N+2)\\lambda}{48\\pi^2}$）に従い，相関長は $\\xi\\propto r_0^{-\\nu}$，$\\nu=\\dfrac{1}{2-\\gamma_*}$ となる（$r_0$ は臨界点からのずれ）．$\\nu$ を $\\varepsilon$ の1次まで求めよ．\n\\item $N=1$，$\\varepsilon=1$（3次元イジング模型）での (3) の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c=N+4$\n(2) $\\beta=-\\varepsilon\\lambda+\\frac{(N+8)\\lambda^2}{48\\pi^2}$，$\\lambda_*=\\frac{48\\pi^2\\varepsilon}{N+8}$\n(3) $\\nu=\\frac{1}{2}+\\frac{(N+2)\\varepsilon}{4(N+8)}$\n(4) $\\frac{7}{12}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $S_{abef}S_{efcd}$ の9項を数える．$\\delta_{ab}\\delta_{ef}\\cdot\\delta_{ef}\\delta_{cd}=N\\delta_{ab}\\delta_{cd}$，$\\delta_{ab}\\delta_{ef}$ と $\\delta_{ec}\\delta_{fd}$ などの交差項から $\\delta_{ab}\\delta_{cd}$ が $4$ 個，残りが $\\delta_{ac}\\delta_{bd}$ と $\\delta_{ad}\\delta_{bc}$ を2個ずつ与える．$\\boldsymbol{c=N+4}$．\n\n(2) $t,\\ u$ チャンネルは添字を入れ替えたものなので，3つの和は $(N+4+2+2)S=(N+8)S$．$N=1$ で $9S$ が係数 $3$ を与えるので，一般の $N$ では $3\\times\\frac{N+8}{9}$ 倍：\n\\[\\boldsymbol{\\beta=-\\varepsilon\\lambda+\\frac{(N+8)\\lambda^2}{48\\pi^2}},\\qquad\\boldsymbol{\\lambda_*=\\frac{48\\pi^2\\varepsilon}{N+8}}.\\]\n$\\varepsilon>0$ では赤外（$\\mu\\to0$）で $\\lambda\\to\\lambda_*$ に流れ込む（ウィルソン＝フィッシャー固定点）．\n\n(3) $\\gamma_*=\\dfrac{(N+2)\\lambda_*}{48\\pi^2}=\\dfrac{(N+2)\\varepsilon}{N+8}$．\n\\[\\nu=\\frac{1}{2-\\gamma_*}=\\frac12\\left(1+\\frac{\\gamma_*}{2}+\\cdots\\right)=\\boldsymbol{\\frac12+\\frac{(N+2)\\varepsilon}{4(N+8)}}.\\]\n$r$ は赤外で $\\mu^{-(2-\\gamma_*)}$ のように増え，$r\\sim1$ となるスケール $\\mu\\sim\\xi^{-1}$ から $\\xi\\propto r_0^{-1/(2-\\gamma_*)}$ となる．\n\n(4) $\\nu=\\dfrac12+\\dfrac{3}{36}=\\boldsymbol{\\dfrac{7}{12}}\\approx0.583$．平均場の $\\frac12$ から，3次元イジング模型の値 $0.630$ に向かって改善される．$\\varepsilon^2$ 以上の項と再和法でさらに精度が上がる．"
+   }
+  ],
+  "idea": {
+   "tex": "$d=4-\\varepsilon$ では β 関数に非自明な赤外固定点ができ，そこでの質量の異常次元が臨界指数を $\\varepsilon$ の級数として与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) N+4\n(2) β：-ελ+(N+8)λ^2/(48pi^2) ; λ_*：48pi^2 ε/(N+8)\n(3) 1/2+(N+2)ε/(4(N+8))\n(4) 7/12"
+  },
+  "methods": [],
+  "tags": [
+   "ε展開",
+   "ウィルソン＝フィッシャー固定点",
+   "臨界指数",
+   "O(N)模型",
+   "くりこみ群"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 4,
+  "minutes": 30,
+  "theme": "ゲージ理論の β₀ の一般公式：漸近的自由と超対称ゲージ理論",
+  "topic": "ゲージ理論の β₀ の一般公式：漸近的自由と超対称ゲージ理論",
+  "statement": {
+   "tex": "SU($N$) ゲージ理論の1ループ β 関数を $\\beta(g)=-\\dfrac{b_0g^3}{16\\pi^2}$ と書く．$b_0$ は，質量ゼロの粒子の種類ごとの寄与の和として\n\\[b_0=\\sum(-1)^{2s}\\left[(2s)^2-\\frac13\\right]T(R)\\,\\frac{n}{2}\\]\nで与えられる（ニールセン＝ヒューズの公式）．$s$ はスピン，$T(R)$ は表現の指数（基本表現で $\\frac12$，随伴表現で $N$），$n$ は粒子と反粒子，ヘリシティを別々に数えた状態の数である（ゲージ粒子は $n=2$，ディラック粒子は $n=4$，ワイル粒子は $n=2$，複素スカラーは $n=2$，実スカラーは $n=1$）．$-\\frac13$ は反磁性（ランダウ反磁性），$(2s)^2$ はスピンによる常磁性の寄与にあたる．\n\\begin{enumerate}\n\\item 基本表現のディラック粒子（クォーク）$n_f$ 種類を含む SU(3) の $b_0$ を $n_f$ で表し，$n_f=6$ での値を求めよ．\n\\item SU(3) で漸近的自由（$b_0>0$）が成り立つ最大の $n_f$ を求めよ．\n\\item $\\mathcal N=1$ 超対称ヤン＝ミルズ理論（ゲージ粒子と，随伴表現のワイル粒子（ゲージーノ）1つ）の $b_0$ を $N$ で表せ．\n\\item $\\mathcal N=4$ 超対称ヤン＝ミルズ理論（ゲージ粒子，随伴表現のワイル粒子4つ，随伴表現の実スカラー6つ）の $b_0$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $b_0=11-\\frac{2n_f}{3}$，$n_f=6$ で $7$\n(2) $16$\n(3) $3N$\n(4) $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ゲージ粒子（$s=1$）：$\\left(4-\\frac13\\right)\\cdot3\\cdot1=11$．クォーク（$s=\\frac12$）：$-\\left(1-\\frac13\\right)\\cdot\\frac12\\cdot2=-\\frac23$ が $n_f$ 種類．\n\\[\\boldsymbol{b_0=11-\\frac{2n_f}{3}},\\qquad n_f=6\\text{ で }\\boldsymbol{7}.\\]\n一般の SU($N$) では $b_0=\\frac{11}{3}N-\\frac23n_f$．ゲージ粒子のスピンによる常磁性（反遮蔽）が反磁性に勝つことが漸近的自由の起源である．\n\n(2) $11-\\dfrac{2n_f}{3}>0$ より $n_f<16.5$，最大 $\\boldsymbol{16}$．\n\n(3) ゲージーノ：$-\\frac23\\cdot N\\cdot1=-\\frac23N$．$b_0=\\frac{11}{3}N-\\frac23N=\\boldsymbol{3N}$．\n\n(4) ワイル粒子4つで $-\\frac83N$，実スカラー6つで $6\\cdot\\left(-\\frac13\\right)\\cdot N\\cdot\\frac12=-N$．\n\\[b_0=\\frac{11}{3}N-\\frac83N-N=\\boldsymbol{0}.\\]\n$\\mathcal N=4$ 超対称ヤン＝ミルズ理論は β 関数が（全次数で）ゼロの共形場理論で，AdS/CFT 対応の主役である．"
+   }
+  ],
+  "idea": {
+   "tex": "β₀ は粒子ごとの反磁性（$-1/3$）とスピン常磁性（$(2s)^2$）の和で，ゲージ粒子の大きな常磁性が漸近的自由をもたらす．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) b_0：11-2n_f/3 ; n_f=6：7\n(2) 16\n(3) 3N\n(4) 0"
+  },
+  "methods": [],
+  "tags": [
+   "漸近的自由",
+   "β関数",
+   "QCD",
+   "超対称性",
+   "ニールセン＝ヒューズの公式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QF-06-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-117",
+  "level": 4,
+  "minutes": 35,
+  "theme": "グロス＝ヌヴー模型の大 N 極限：質量生成と次元転移",
+  "topic": "グロス＝ヌヴー模型の大 N 極限：質量生成と次元転移",
+  "statement": {
+   "tex": "2次元時空で $N$ 種類の質量ゼロのディラック場 $\\psi_i$ が4フェルミ相互作用 $\\dfrac{g^2}{2}(\\bar\\psi_i\\psi_i)^2$ をもつ（グロス＝ヌヴー模型）．補助場 $\\sigma$ を入れると $\\mathcal L=\\bar\\psi_i(i\\gamma^\\mu\\partial_\\mu-\\sigma)\\psi_i-\\dfrac{\\sigma^2}{2g^2}$ と書け，$N\\to\\infty$（$g^2N$ 一定）ではフェルミオンを積分した定数 $\\sigma$ に対する有効ポテンシャル（単位体積あたり）が\n\\[V(\\sigma)=\\frac{\\sigma^2}{2g^2}-N\\int_{|k|<\\Lambda}\\frac{d^2k}{(2\\pi)^2}\\ln(k^2+\\sigma^2)\\]\nとなる（ユークリッド運動量，カットオフ $\\Lambda$）．\n\\[\\int_{|k|<\\Lambda}\\frac{d^2k}{(2\\pi)^2}\\ln(k^2+\\sigma^2)=\\frac{1}{4\\pi}\\left[(\\Lambda^2+\\sigma^2)\\ln(\\Lambda^2+\\sigma^2)-\\sigma^2\\ln\\sigma^2-\\Lambda^2\\right]\\]\nを用いてよい．\n\\begin{enumerate}\n\\item $\\Lambda\\gg\\sigma$ として $V$ の最小条件（ギャップ方程式）を書き，$\\sigma=m\\neq0$ の解を $\\Lambda,\\ N,\\ g$ で表せ．\n\\item $m$ を一定に保つように $g$ を $\\Lambda$ とともに変えるとき，$\\beta(g)=\\Lambda\\dfrac{dg}{d\\Lambda}$ を求めよ．\n\\item (1) を用いて $g$ を消去すると，$V(\\sigma)-V(0)$ は $\\Lambda$ によらない式になる．真空のエネルギー密度の差 $V(m)-V(0)$ を $N,\\ m$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $m=\\Lambda e^{-\\pi/(Ng^2)}$\n(2) $\\beta=-\\frac{Ng^3}{2\\pi}$\n(3) $-\\frac{Nm^2}{4\\pi}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma$ に依存する部分は $\\Lambda\\gg\\sigma$ で $\\dfrac{1}{4\\pi}\\sigma^2\\left(\\ln\\dfrac{\\Lambda^2}{\\sigma^2}+1\\right)+(\\sigma\\text{ によらない項})$．\n\\[V(\\sigma)=\\frac{\\sigma^2}{2g^2}-\\frac{N\\sigma^2}{4\\pi}\\left(\\ln\\frac{\\Lambda^2}{\\sigma^2}+1\\right),\\qquad\\frac{dV}{d\\sigma}=\\sigma\\left[\\frac{1}{g^2}-\\frac{N}{2\\pi}\\ln\\frac{\\Lambda^2}{\\sigma^2}\\right]=0.\\]\n$\\sigma=m\\neq0$ では $\\dfrac1{g^2}=\\dfrac{N}{2\\pi}\\ln\\dfrac{\\Lambda^2}{m^2}$，$\\boldsymbol{m=\\Lambda e^{-\\pi/(Ng^2)}}$．摂動のどの次数にも現れない（$g^2$ について本質的特異）質量が生じ，離散的なカイラル対称性 $\\psi\\to\\gamma^5\\psi$ が自発的に破れる．\n\n(2) $\\dfrac{1}{g^2}=\\dfrac{N}{\\pi}\\ln\\dfrac{\\Lambda}{m}$ を微分して $-\\dfrac{2}{g^3}\\Lambda\\dfrac{dg}{d\\Lambda}=\\dfrac N\\pi$，\n\\[\\boldsymbol{\\beta(g)=-\\frac{Ng^3}{2\\pi}}.\\]\n2次元の4フェルミ理論は漸近的自由で，$m$ は QCD の $\\Lambda_{\\mathrm{QCD}}$ と同様に次元転移で生じるスケールである．\n\n(3) (1) の $\\frac1{g^2}$ を代入すると\n\\[V(\\sigma)-V(0)=\\frac{N\\sigma^2}{4\\pi}\\left(\\ln\\frac{\\Lambda^2}{m^2}-\\ln\\frac{\\Lambda^2}{\\sigma^2}-1\\right)=\\frac{N\\sigma^2}{4\\pi}\\left(\\ln\\frac{\\sigma^2}{m^2}-1\\right)\\]\nとなり $\\Lambda$ が消える（くりこまれた有効ポテンシャル）．$\\sigma=m$ で $\\boldsymbol{V(m)-V(0)=-\\dfrac{Nm^2}{4\\pi}}$ で，対称性の破れた真空のほうがエネルギーが低い．"
+   }
+  ],
+  "idea": {
+   "tex": "大 N の有効ポテンシャルのギャップ方程式から，結合を物理的質量で置き換えると β 関数とカットオフに依らないポテンシャルが得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Λ e^(-pi/(N g^2))\n(2) -N g^3/(2pi)\n(3) -N m^2/(4pi)"
+  },
+  "methods": [],
+  "tags": [
+   "グロス＝ヌヴー模型",
+   "大N展開",
+   "次元転移",
+   "有効ポテンシャル",
+   "漸近的自由"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

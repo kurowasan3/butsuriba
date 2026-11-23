@@ -43,8 +43,9 @@ def main():
     existing_q = set()
     data = HERE.parent / 'data'
     for f in data.glob('f-*.json'):
-        for b in json.loads(f.read_text(encoding='utf-8')).values():
-            existing_q.add(re.sub(r'\s+', '', b['q']))
+        for k, b in json.loads(f.read_text(encoding='utf-8')).items():
+            if not k.startswith('_') and isinstance(b, dict) and b.get('q'):  # _meta は飛ばす（v0.5 の data 形式）
+                existing_q.add(re.sub(r'\s+', '', b['q']))
     html, specs, rows, seen_q = {}, {}, [], {}
     for n, it in enumerate(items):
         tid = str(it.get('tid') or f'#{n + 1}')

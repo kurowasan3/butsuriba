@@ -1,0 +1,742 @@
+[
+ {
+  "id": "BP-07-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ランベルト＝ベールの法則とクロロフィル溶液の吸収",
+  "topic": "ランベルト＝ベールの法則とクロロフィル溶液の吸収",
+  "statement": {
+   "tex": "濃度 $c$ の溶液に光を通すと，光の強さは進んだ距離とともに指数関数的に減る．入射光の強さを $I_0$，厚さ $l$ の溶液を通過した光の強さを $I$ とすると，吸光度\n\\[A=\\log_{10}\\frac{I_0}{I}\\]\nは $A=\\varepsilon cl$ と表される（ランベルト＝ベールの法則．$\\varepsilon$ はモル吸光係数）．クロロフィル（植物が光を吸収する色素分子）の溶液を厚さ $l=1.0\\,\\mathrm{cm}$ の容器に入れ，波長 $663\\,\\mathrm{nm}$ の光を当てたところ，透過した光の強さは入射光の $25\\,\\%$ であった．この波長で $\\varepsilon=8.0\\times10^4\\,\\mathrm{L\\,mol^{-1}\\,cm^{-1}}$ とする．プランク定数 $h=6.63\\times10^{-34}\\,\\mathrm{J\\,s}$，光速 $3.00\\times10^8\\,\\mathrm{m/s}$ とする．\n\\begin{enumerate}\n\\item 吸光度 $A$ を求めよ．\n\\item クロロフィルの濃度 $c$ を $\\mathrm{mol/L}$ 単位で求めよ．\n\\item 入射光のパワーが $1.0\\,\\mathrm{mW}$ のとき，溶液に吸収される光子は毎秒何個か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A\\approx0.602$\n(2) $c\\approx7.5\\times10^{-6}\\,\\mathrm{mol/L}$\n(3) $\\approx2.5\\times10^{15}$ 個/s"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $I/I_0=1/4$ より $A=\\log_{10}4=\\boldsymbol{0.602}$．\n\n(2) $c=\\dfrac{A}{\\varepsilon l}=\\dfrac{0.602}{8.0\\times10^4\\times1.0}=\\boldsymbol{7.5\\times10^{-6}\\,\\mathrm{mol/L}}$．わずか数 $\\mu\\mathrm{mol/L}$ でも光の $3/4$ を吸収するほど，クロロフィルは光をよく吸う．\n\n(3) 光子1個のエネルギーは\n\\[E=\\frac{hc}{\\lambda}=\\frac{6.63\\times10^{-34}\\times3.00\\times10^8}{663\\times10^{-9}}=3.00\\times10^{-19}\\,\\mathrm{J}.\\]\n入射する光子は毎秒 $\\dfrac{1.0\\times10^{-3}}{3.00\\times10^{-19}}=3.3\\times10^{15}$ 個で，その $1-\\frac14=\\frac34$ が吸収されるから $\\boldsymbol{2.5\\times10^{15}}$ 個/s．\n\n吸光度が厚さに比例するのは，各層が同じ割合の光を吸収するため（$dI/dx=-\\kappa I$）である．次は，吸収された光のエネルギーが分子の中でどのように使われるか（蛍光・熱・エネルギー移動）を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "各層が同じ割合の光を吸収するので透過率は厚さの指数関数になり，その対数（吸光度）が濃度と厚さに比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ≈0.602\n(2) c [mol/L]：≈7.5e-6\n(3) 個/s：≈2.5e15"
+  },
+  "methods": [],
+  "tags": [
+   "ランベルト＝ベールの法則",
+   "吸光度",
+   "光子のエネルギー",
+   "クロロフィル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 0,
+  "minutes": 10,
+  "theme": "蛍光寿命・量子収率と消光（シュテルン＝フォルマーの関係）",
+  "topic": "蛍光寿命・量子収率と消光（シュテルン＝フォルマーの関係）",
+  "statement": {
+   "tex": "光を吸収して励起状態になった分子は，単位時間あたり $k_r$ の確率で光（蛍光）を出して基底状態に戻り，$k_{nr}$ の確率で光を出さずに（熱として）戻る．励起状態にある分子数 $n(t)$ は $\\dfrac{dn}{dt}=-(k_r+k_{nr})n$ に従う．$n$ が $1/e$ になる時間を蛍光寿命 $\\tau$，励起された分子のうち蛍光を出して戻るものの割合を量子収率 $\\Phi$ という．$k_r=2.0\\times10^8\\,\\mathrm{s^{-1}}$，$k_{nr}=3.0\\times10^8\\,\\mathrm{s^{-1}}$ とする．\n\\begin{enumerate}\n\\item $\\tau$ を求めよ．\n\\item 量子収率は $\\Phi=\\dfrac{k_r}{k_r+k_{nr}}$ で与えられる．$\\Phi$ を求めよ．\n\\item 溶液に消光剤（励起分子に衝突してエネルギーを奪う分子）を濃度 $[Q]=0.050\\,\\mathrm{mol/L}$ だけ加えると，戻る速さに $k_q[Q]$（$k_q=1.0\\times10^{10}\\,\\mathrm{L\\,mol^{-1}\\,s^{-1}}$）が加わる．消光剤がないときとあるときの蛍光の強さの比 $F_0/F$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tau=2.0\\,\\mathrm{ns}$\n(2) $\\Phi=0.40$\n(3) $F_0/F=2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n(t)=n(0)e^{-(k_r+k_{nr})t}$ より $\\tau=\\dfrac{1}{k_r+k_{nr}}=\\dfrac{1}{5.0\\times10^8}=\\boldsymbol{2.0\\,\\mathrm{ns}}$．\n\n(2) $\\Phi=\\dfrac{2.0}{5.0}=\\boldsymbol{0.40}$．$\\Phi=k_r\\tau$ とも書けるので，寿命の測定と量子収率の測定から $k_r$ を求められる．\n\n(3) $k_q[Q]=5.0\\times10^8\\,\\mathrm{s^{-1}}$．蛍光の強さは量子収率に比例するから\n\\[\\frac{F_0}{F}=\\frac{k_r/(k_r+k_{nr})}{k_r/(k_r+k_{nr}+k_q[Q])}=1+k_q\\tau[Q]=1+1.0\\times10^{10}\\times2.0\\times10^{-9}\\times0.050=\\boldsymbol{2}.\\]\n$F_0/F$ が $[Q]$ に比例して増えるこの関係をシュテルン＝フォルマーの式という．寿命も同じ割合（$\\tau_0/\\tau=2$）で短くなる．\n\n近くに別の色素があると，励起エネルギーが光を出さずにその色素へ移る（フェルスター共鳴エネルギー移動）．これも「新しい減衰の道」として同じ式の形で扱える．"
+   }
+  ],
+  "idea": {
+   "tex": "並列にはたらく減衰過程の速さは足し合わさる．量子収率は全体の速さのうち蛍光の速さが占める割合である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) τ [ns]：2\n(2) 0.4\n(3) 2"
+  },
+  "methods": [],
+  "tags": [
+   "蛍光寿命",
+   "量子収率",
+   "消光",
+   "シュテルン＝フォルマーの式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 0,
+  "minutes": 10,
+  "theme": "光学顕微鏡の回折限界と1分子の位置決定精度",
+  "topic": "光学顕微鏡の回折限界と1分子の位置決定精度",
+  "statement": {
+   "tex": "光学顕微鏡では，点から出た光も回折のために有限の広がりをもつ像になる．波長 $\\lambda$，対物レンズの開口数 $\\mathrm{NA}$ のとき，見分けられる2点の最小間隔はおよそ $d=\\dfrac{\\lambda}{2\\,\\mathrm{NA}}$ である（アッベの回折限界）．\n\\begin{enumerate}\n\\item 緑色蛍光タンパク質の蛍光（$\\lambda=520\\,\\mathrm{nm}$）を $\\mathrm{NA}=1.40$ の対物レンズで観察するときの $d$ を求めよ．\n\\item 1個の蛍光分子だけが光っているとき，検出された光子1個1個の位置は分子の真の位置のまわりに標準偏差 $\\sigma=100\\,\\mathrm{nm}$ でばらつく．$N$ 個の光子の位置の平均を分子の位置の推定値とすると，その標準偏差は $\\sigma/\\sqrt N$ である．$N=400$ のときの位置の精度（標準偏差）を求めよ．\n\\item 精度を $2\\,\\mathrm{nm}$ にするには，何個の光子を集めればよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $d\\approx186\\,\\mathrm{nm}$\n(2) $5\\,\\mathrm{nm}$\n(3) $2500$ 個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d=\\dfrac{520}{2\\times1.40}=\\boldsymbol{186\\,\\mathrm{nm}}$．タンパク質（数 nm）よりはるかに大きく，ふつうの蛍光顕微鏡では近接する分子を区別できない．\n\n(2) $\\dfrac{100}{\\sqrt{400}}=\\boldsymbol{5\\,\\mathrm{nm}}$．\n\n(3) $\\dfrac{100}{\\sqrt N}=2$ より $N=\\boldsymbol{2500}$．\n\n像の幅は回折で決まっていても，光っているのが1分子だけと分かっていれば，その中心は光子数の平方根に反比例する精度で決まる．分子を少しずつ順番に光らせて位置を決め，重ね合わせて像を作るのが1分子局在化顕微鏡（PALM/STORM）であり，回折限界を超える分解能（超解像）が得られる．次は，誘導放出で発光領域そのものを狭める STED 顕微鏡などを学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "回折は像の幅を決めるが，1分子の中心位置は多数の光子の平均として $\\sigma/\\sqrt N$ の精度で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) d [nm]：≈186\n(2) 精度 [nm]：5\n(3) 2500"
+  },
+  "methods": [],
+  "tags": [
+   "回折限界",
+   "超解像",
+   "1分子局在化",
+   "統計誤差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 1,
+  "minutes": 12,
+  "theme": "FRET の効率と分子間距離（R0^6 依存性）",
+  "topic": "FRET の効率と分子間距離（R0^6 依存性）",
+  "statement": {
+   "tex": "ドナー色素 D の励起状態は，近くにアクセプター色素 A がないとき速さ $1/\\tau_D$ で減衰する．距離 $r$ に A があると，双極子－双極子相互作用によるエネルギー移動（FRET）の速さ\n\\[k_T=\\frac{1}{\\tau_D}\\left(\\frac{R_0}{r}\\right)^6\\]\nが加わる（$R_0$ はフェルスター距離）．FRET 効率 $E$ を，D の励起のうち A に移るものの割合と定義する．\n\\begin{enumerate}\n\\item $E$ を $r,R_0$ で表せ．\n\\item $\\tau_D=4.0\\,\\mathrm{ns}$ のドナーに A を付けると，D の蛍光寿命が $\\tau_{DA}=1.0\\,\\mathrm{ns}$ になった．$E$ を求め，$R_0=5.4\\,\\mathrm{nm}$ として $r$ を求めよ．\n\\item $r=R_0$ のときの $dE/dr$ を $R_0$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E=\\frac{1}{1+(r/R_0)^6}$\n(2) $E=\\frac{3}{4}$，$r\\approx4.50\\,\\mathrm{nm}$\n(3) $\\frac{dE}{dr}=-\\frac{3}{2R_0}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 競合する2つの減衰のうち移動が占める割合だから\n\\[E=\\frac{k_T}{k_T+1/\\tau_D}=\\frac{(R_0/r)^6}{(R_0/r)^6+1}=\\boldsymbol{\\frac{1}{1+(r/R_0)^6}}.\\]\n$r=R_0$ で $E=1/2$ となる．これが $R_0$ の意味である．\n\n(2) A があるときの寿命は $\\tau_{DA}=1/(k_T+1/\\tau_D)$ なので $E=k_T\\tau_{DA}=1-\\dfrac{\\tau_{DA}}{\\tau_D}=\\boldsymbol{\\dfrac34}$．(1) を解いて\n\\[r=R_0\\left(\\frac1E-1\\right)^{1/6}=5.4\\times\\left(\\frac13\\right)^{1/6}=\\boldsymbol{4.50\\,\\mathrm{nm}}.\\]\n\n(3) $u=(r/R_0)^6$ とすると $\\dfrac{dE}{dr}=-\\dfrac{1}{(1+u)^2}\\cdot\\dfrac{6u}{r}$．$r=R_0$（$u=1$）で $\\boldsymbol{-\\dfrac{3}{2R_0}}$．\n\n$E$ は $r\\approx R_0$ の付近（$0.5R_0\\sim1.5R_0$）で急に変わるので，FRET は $2\\sim10\\,\\mathrm{nm}$ の距離を測る「分子のものさし」として使われる．"
+   }
+  ],
+  "idea": {
+   "tex": "FRET は新しい減衰の道として速さが足し合わさる．$r^{-6}$ 依存性のため，効率は $r\\approx R_0$ で急に変化する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1/(1+(r/R_0)^6)\n(2) E：3/4 ; r [nm]：≈4.50\n(3) -3/(2R_0)"
+  },
+  "methods": [],
+  "tags": [
+   "FRET",
+   "フェルスター距離",
+   "蛍光寿命",
+   "分子のものさし"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 1,
+  "minutes": 12,
+  "theme": "色素二量体の励起子分裂と遷移双極子の強さ",
+  "topic": "色素二量体の励起子分裂と遷移双極子の強さ",
+  "statement": {
+   "tex": "同じ色素分子 1，2 が近接している．それぞれの励起エネルギーは $E_0$ で，分子 1 だけが励起された状態 $|1\\rangle$ と分子 2 だけが励起された状態 $|2\\rangle$ の間に励起子結合 $J$（$J>0$，実数）がはたらく：\n\\[H=\\begin{pmatrix}E_0&J\\\\J&E_0\\end{pmatrix}.\\]\n各分子の遷移双極子モーメントはベクトル $\\boldsymbol{\\mu}_1,\\boldsymbol{\\mu}_2$ で，大きさはともに $\\mu$，なす角は $\\alpha$ である．状態 $c_1|1\\rangle+c_2|2\\rangle$ の遷移双極子は $c_1\\boldsymbol{\\mu}_1+c_2\\boldsymbol{\\mu}_2$ であり，吸収の強さはその大きさの2乗に比例する．\n\\begin{enumerate}\n\\item $H$ の固有値を求めよ．\n\\item 高いエネルギーの固有状態と低いエネルギーの固有状態の遷移双極子の大きさの2乗をそれぞれ $\\mu,\\alpha$ で表せ．\n\\item 二量体の吸収スペクトルに，$0.060\\,\\mathrm{eV}$ 離れた2本の吸収帯が現れ，高エネルギー側の強さが低エネルギー側の $3$ 倍であった．$J$ と $\\alpha$（度）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_0\\pm J$\n(2) 高：$\\mu^2(1+\\cos\\alpha)$，低：$\\mu^2(1-\\cos\\alpha)$\n(3) $J=0.03\\,\\mathrm{eV}$，$\\alpha=60^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\det(H-E)=0$ より $(E_0-E)^2=J^2$，$\\boldsymbol{E=E_0\\pm J}$．固有状態は $|\\pm\\rangle=(|1\\rangle\\pm|2\\rangle)/\\sqrt2$ で，励起は2分子に等しく広がっている（励起子）．\n\n(2) $|\\pm\\rangle$ の遷移双極子は $(\\boldsymbol{\\mu}_1\\pm\\boldsymbol{\\mu}_2)/\\sqrt2$ なので\n\\[|\\boldsymbol{\\mu}_\\pm|^2=\\frac{\\mu^2+\\mu^2\\pm2\\mu^2\\cos\\alpha}{2}=\\mu^2(1\\pm\\cos\\alpha).\\]\n$J>0$ では $|+\\rangle$ が高いので，高：$\\boldsymbol{\\mu^2(1+\\cos\\alpha)}$，低：$\\boldsymbol{\\mu^2(1-\\cos\\alpha)}$．和は $2\\mu^2$ で単量体2個分に保たれ，強さが2本に配分し直されるだけである．\n\n(3) 分裂は $2J=0.060\\,\\mathrm{eV}$ より $\\boldsymbol{J=0.03\\,\\mathrm{eV}}$．強さの比 $\\dfrac{1+\\cos\\alpha}{1-\\cos\\alpha}=3$ より $\\cos\\alpha=\\frac12$，$\\boldsymbol{\\alpha=60^\\circ}$．\n\n双極子が平行（$\\alpha=0$）なら高エネルギー側だけが光る（H会合体，青方偏移），一直線に並んで $J<0$ なら低エネルギー側だけが光る（J会合体，赤方偏移）．光合成アンテナの色素集合の吸収スペクトルもこの考え方で解析される．"
+   }
+  ],
+  "idea": {
+   "tex": "励起子結合で励起が対称・反対称の組合せに分かれ，遷移双極子のベクトル和に応じて吸収の強さが2本に配分される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) {E_0+J, E_0-J}\n(2) 高：μ^2(1+cos(α)) ; 低：μ^2(1-cos(α))\n(3) J [eV]：0.03 ; α [°]：60"
+  },
+  "methods": [],
+  "tags": [
+   "励起子",
+   "二量体",
+   "ダビドフ分裂",
+   "遷移双極子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 1,
+  "minutes": 12,
+  "theme": "零点エネルギーによる速度論的同位体効果（C–H 結合の切断）",
+  "topic": "零点エネルギーによる速度論的同位体効果（C–H 結合の切断）",
+  "statement": {
+   "tex": "酵素反応で C–H 結合の水素が引き抜かれる段階を考える．C–H 結合の伸縮振動を，ばね定数 $k$ のばねにつながれた水素（質量 $m_H$）の振動とみなす（炭素は十分重く動かないとする）．量子力学では振動の最低エネルギー（零点エネルギー）は $\\frac12\\hbar\\omega$ である．遷移状態ではこの振動が失われ，活性化エネルギーは反応物の零点エネルギーの分だけ低くなるとする．H を重水素 D（$m_D=2m_H$，ばね定数は同じ）に置き換えたときの反応速度の比 $k_H/k_D$（速度論的同位体効果）を考える．反応速度はアレニウス型 $\\propto e^{-E_a/k_BT}$ とする．\n\\begin{enumerate}\n\\item 振動数の比 $\\omega_D/\\omega_H$ を求めよ．\n\\item C–H 伸縮の波数は $2900\\,\\mathrm{cm^{-1}}$ で，$1\\,\\mathrm{cm^{-1}}$ は $1.24\\times10^{-4}\\,\\mathrm{eV}$ に相当する．H と D の零点エネルギーの差を $\\mathrm{eV}$ 単位で求めよ．\n\\item $k_BT=0.0259\\,\\mathrm{eV}$（$300\\,\\mathrm{K}$）として $k_H/k_D$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{1}{\\sqrt{2}}$\n(2) $\\approx0.0527\\,\\mathrm{eV}$\n(3) $k_H/k_D\\approx7.6$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\omega=\\sqrt{k/m}$ より $\\omega_D/\\omega_H=\\sqrt{m_H/m_D}=\\boldsymbol{1/\\sqrt2}$．\n\n(2) $\\hbar\\omega_H=2900\\times1.24\\times10^{-4}=0.360\\,\\mathrm{eV}$ なので\n\\[\\Delta E=\\frac12\\hbar\\omega_H\\left(1-\\frac{1}{\\sqrt2}\\right)=0.180\\times0.293=\\boldsymbol{0.0527\\,\\mathrm{eV}}.\\]\n\n(3) H の方が零点エネルギーが高い分だけ活性化エネルギーが $\\Delta E$ 低いので\n\\[\\frac{k_H}{k_D}=\\exp\\frac{\\Delta E}{k_BT}=\\exp\\frac{0.0527}{0.0259}=e^{2.03}=\\boldsymbol{7.6}.\\]\n\nこの「半古典的な上限」$\\approx7$ を大きく超える同位体効果（数十〜百）が，大豆リポキシゲナーゼなどの酵素で観測されている．これは水素が障壁を越えずにトンネルしている証拠とされ，酵素反応での量子トンネル効果の代表例である（トンネル確率は $\\exp(-\\mathrm{const}\\cdot\\sqrt m)$ のように質量に強く依存する）．"
+   }
+  ],
+  "idea": {
+   "tex": "同位体置換でばね定数は変わらず振動数が $1/\\sqrt m$ で変わる．零点エネルギーの差が活性化エネルギーの差となり速度比を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1/sqrt(2)\n(2) ΔE [eV]：≈0.0527\n(3) ≈7.6"
+  },
+  "methods": [],
+  "tags": [
+   "速度論的同位体効果",
+   "零点エネルギー",
+   "酵素反応",
+   "プロトントンネル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 2,
+  "minutes": 18,
+  "theme": "ラジカル対の一重項－三重項混合と一重項収率",
+  "topic": "ラジカル対の一重項－三重項混合と一重項収率",
+  "statement": {
+   "tex": "渡り鳥の磁気コンパスの候補であるラジカル対機構を簡単化して考える．光で生じた2つのラジカル（不対電子1個ずつ）は，はじめ電子スピンの一重項\n\\[|S\\rangle=\\frac{1}{\\sqrt2}\\left(|\\uparrow\\downarrow\\rangle-|\\downarrow\\uparrow\\rangle\\right)\\]\nにある．電子 1，2 のスピンはそれぞれ周囲の核スピンと地磁気の影響で角振動数 $\\omega_1,\\omega_2$ で $z$ 軸まわりに歳差運動し，ハミルトニアンは $H=\\hbar\\omega_1S_{1z}+\\hbar\\omega_2S_{2z}$（$S_z$ は固有値 $\\pm\\frac12$）とする．$\\delta=\\omega_1-\\omega_2$ とおく．\n\\begin{enumerate}\n\\item 時刻 $t$ に一重項にいる確率 $P_S(t)$ を $\\delta,t$ で表せ．\n\\item ラジカル対はスピン状態によらず速さ $k$ で反応して消える．反応した瞬間に一重項だったものが一重項生成物になるとき，一重項生成物の収率 $\\Phi_S=\\int_0^\\infty k e^{-kt}P_S(t)\\,dt$ を $k,\\delta$ で表せ．\n\\item $k=2.0\\times10^6\\,\\mathrm{s^{-1}}$ とする．地磁気の向きによって $\\delta$ が $5.0\\times10^6\\,\\mathrm{s^{-1}}$ と $3.0\\times10^6\\,\\mathrm{s^{-1}}$ になるとき，それぞれの $\\Phi_S$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P_S(t)=\\cos^{2}\\left(\\frac{\\delta t}{2}\\right)$\n(2) $\\Phi_S=\\frac{2k^2+\\delta^2}{2(k^2+\\delta^2)}$\n(3) $\\approx0.569$，$\\approx0.654$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $H|\\uparrow\\downarrow\\rangle=\\frac{\\hbar(\\omega_1-\\omega_2)}{2}|\\uparrow\\downarrow\\rangle=\\frac{\\hbar\\delta}{2}|\\uparrow\\downarrow\\rangle$，$H|\\downarrow\\uparrow\\rangle=-\\frac{\\hbar\\delta}{2}|\\downarrow\\uparrow\\rangle$ より\n\\[|\\psi(t)\\rangle=\\frac{1}{\\sqrt2}\\left(e^{-i\\delta t/2}|\\uparrow\\downarrow\\rangle-e^{i\\delta t/2}|\\downarrow\\uparrow\\rangle\\right),\\qquad \\langle S|\\psi(t)\\rangle=\\cos\\frac{\\delta t}{2}.\\]\nよって $\\boldsymbol{P_S=\\cos^2(\\delta t/2)}$．一重項と三重項 $T_0=(|\\uparrow\\downarrow\\rangle+|\\downarrow\\uparrow\\rangle)/\\sqrt2$ の間を振動する（$S$–$T_0$ 混合）．\n\n(2) $\\cos^2\\frac{\\delta t}{2}=\\frac12(1+\\cos\\delta t)$，$\\int_0^\\infty ke^{-kt}\\cos\\delta t\\,dt=\\frac{k^2}{k^2+\\delta^2}$ より\n\\[\\Phi_S=\\frac12+\\frac12\\cdot\\frac{k^2}{k^2+\\delta^2}=\\boldsymbol{\\frac{2k^2+\\delta^2}{2(k^2+\\delta^2)}}.\\]\n\n(3) $\\delta=5.0\\times10^6$：$\\Phi_S=\\frac12+\\frac12\\cdot\\frac{4}{29}=\\boldsymbol{0.569}$．$\\delta=3.0\\times10^6$：$\\Phi_S=\\frac12+\\frac12\\cdot\\frac4{13}=\\boldsymbol{0.654}$．\n\n$k\\sim\\delta$ のときに収率が $\\delta$ に最も敏感になる．$\\delta$ は地磁気（約 $50\\,\\mu\\mathrm{T}$，電子のラーモア角振動数 $\\sim10^7\\,\\mathrm{s^{-1}}$）と異方的な超微細相互作用の兼ね合いで磁場の「向き」に依存しうるので，生成物の量を通して方位が化学的に読み取れる．そのためにはスピンのコヒーレンスがマイクロ秒程度保たれる必要がある．"
+   }
+  ],
+  "idea": {
+   "tex": "2電子の歳差の速さの差 $\\delta$ が一重項と三重項を混ぜる．寿命 $1/k$ との兼ね合いで生成物の収率が磁場に依存する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) cos(δ t/2)^2\n(2) (2k^2+δ^2)/(2(k^2+δ^2))\n(3) δ=5.0e6：≈0.569 ; δ=3.0e6：≈0.654"
+  },
+  "methods": [],
+  "tags": [
+   "ラジカル対機構",
+   "磁気コンパス",
+   "一重項三重項混合",
+   "スピンダイナミクス"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 2,
+  "minutes": 18,
+  "theme": "光合成アンテナの捕獲律速モデルと量子効率",
+  "topic": "光合成アンテナの捕獲律速モデルと量子効率",
+  "statement": {
+   "tex": "光合成のアンテナは，$N-1$ 個の色素（励起エネルギー $\\varepsilon$）と 1 個の反応中心色素（励起エネルギー $\\varepsilon-\\Delta$，$\\Delta\\ge0$）からなるとする．色素間の励起エネルギー移動は十分速く，励起は $N$ 個の色素の間で常に温度 $T$ の熱平衡（ボルツマン分布）にあるとする．励起はどの色素でも速さ $k_f$ で失われ（蛍光・熱），反応中心にいるときに限り速さ $k_t$ で電荷分離（光化学反応）に使われる．\n\\begin{enumerate}\n\\item 励起が反応中心にいる確率 $p_R$ を $N,\\Delta,k_BT$ で表せ．\n\\item 吸収した光子が電荷分離に使われる割合（量子効率）$\\Phi$ を $p_R,k_t,k_f$ で表せ．\n\\item $N=200$，$\\Delta=0$，$k_t=(3\\,\\mathrm{ps})^{-1}$，$k_f=(1\\,\\mathrm{ns})^{-1}$ のとき $\\Phi$ を求めよ．\n\\item 同じ $N,k_t,k_f$ で $\\Phi=0.95$ にするために必要な $\\Delta/k_BT$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_R=\\frac{e^{\\Delta/k_BT}}{N-1+e^{\\Delta/k_BT}}$\n(2) $\\Phi=\\frac{p_Rk_t}{p_Rk_t+k_f}$\n(3) $\\Phi=\\frac{5}{8}$\n(4) $\\Delta/k_BT\\approx2.49$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ボルツマン因子はアンテナ色素が $e^{-\\varepsilon/k_BT}$，反応中心が $e^{-(\\varepsilon-\\Delta)/k_BT}$．よって\n\\[\\boldsymbol{p_R=\\frac{e^{\\Delta/k_BT}}{N-1+e^{\\Delta/k_BT}}}.\\]\n\n(2) 平衡が速いので，系全体として電荷分離の実効的な速さは $p_Rk_t$，失われる速さは $k_f$．競合過程の比として $\\boldsymbol{\\Phi=\\dfrac{p_Rk_t}{p_Rk_t+k_f}}$．\n\n(3) $p_R=1/200$，$p_Rk_t=(600\\,\\mathrm{ps})^{-1}$，$k_f=(1000\\,\\mathrm{ps})^{-1}$ より $\\Phi=\\dfrac{1/600}{1/600+1/1000}=\\boldsymbol{\\dfrac58}$．\n\n(4) $\\Phi=0.95$ には $p_Rk_t=19k_f$，$p_R=19\\times\\frac{3}{1000}=0.057$．$x=e^{\\Delta/k_BT}$ として $\\frac{x}{199+x}=0.057$ より $x=12.0$，$\\Delta/k_BT=\\ln12.0=\\boldsymbol{2.49}$．\n\nアンテナを大きくすると吸収断面積は $N$ 倍になるが，励起が反応中心にいる確率は $1/N$ に薄まる．実際の光合成系の量子効率が $90\\,\\%$ を超えるのは，移動と電荷分離が蛍光寿命（ns）より桁違いに速いこと，および反応中心周辺のエネルギー勾配による．"
+   }
+  ],
+  "idea": {
+   "tex": "速い熱平衡の下では，反応中心の占有確率 $p_R$ が電荷分離の実効速度を決め，蛍光との競合で量子効率が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) exp(Δ/(k_B T))/(N-1+exp(Δ/(k_B T)))\n(2) p_R k_t/(p_R k_t+k_f)\n(3) 5/8\n(4) ≈2.49"
+  },
+  "methods": [],
+  "tags": [
+   "光合成",
+   "アンテナ",
+   "エネルギー移動",
+   "量子効率",
+   "ボルツマン分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 2,
+  "minutes": 18,
+  "theme": "FRET の配向因子 κ² とその等方平均",
+  "topic": "FRET の配向因子 κ² とその等方平均",
+  "statement": {
+   "tex": "FRET のフェルスター距離は $R_0^6\\propto\\kappa^2$ を満たす．ここで配向因子は\n\\[\\kappa=\\hat{\\boldsymbol{d}}\\cdot\\hat{\\boldsymbol{a}}-3(\\hat{\\boldsymbol{d}}\\cdot\\hat{\\boldsymbol{r}})(\\hat{\\boldsymbol{a}}\\cdot\\hat{\\boldsymbol{r}})\\]\nで，$\\hat{\\boldsymbol{d}},\\hat{\\boldsymbol{a}}$ はドナーとアクセプターの遷移双極子の向き，$\\hat{\\boldsymbol{r}}$ は両者を結ぶ向きの単位ベクトルである．\n\\begin{enumerate}\n\\item 2つの双極子が $\\hat{\\boldsymbol{r}}$ の向きに一直線に並ぶときと，ともに $\\hat{\\boldsymbol{r}}$ に垂直で互いに平行なときの $\\kappa^2$ をそれぞれ求めよ．\n\\item $\\hat{\\boldsymbol{d}}$ と $\\hat{\\boldsymbol{a}}$ がそれぞれ独立に等方的なランダムな向きをとるときの平均 $\\langle\\kappa^2\\rangle$ を求めよ．単位ベクトル $\\hat{\\boldsymbol{n}}$ の等方平均について $\\langle n_in_j\\rangle=\\frac13\\delta_{ij}$ を用いてよい．\n\\item $\\langle\\kappa^2\\rangle$ を仮定して求めた $R_0$ に対し，実際には双極子が一直線に並んでいた場合の $R_0$ は何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 一直線：$4$，平行：$1$\n(2) $\\frac{2}{3}$\n(3) $6^{1/6}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 一直線：$\\kappa=1-3=-2$，$\\boldsymbol{\\kappa^2=4}$．平行で $\\hat{\\boldsymbol{r}}$ に垂直：$\\kappa=1$，$\\boldsymbol{\\kappa^2=1}$．\n\n(2) 展開すると\n\\[\\kappa^2=(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol a})^2-6(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol a})(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol r})(\\hat{\\boldsymbol a}\\cdot\\hat{\\boldsymbol r})+9(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol r})^2(\\hat{\\boldsymbol a}\\cdot\\hat{\\boldsymbol r})^2.\\]\n$\\hat{\\boldsymbol d},\\hat{\\boldsymbol a}$ は独立なので平均は別々にとれる．\n\\[\\langle(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol a})^2\\rangle=\\sum_{ij}\\langle d_id_j\\rangle\\langle a_ia_j\\rangle=\\sum_i\\frac19=\\frac13,\\]\n\\[\\langle(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol a})(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol r})(\\hat{\\boldsymbol a}\\cdot\\hat{\\boldsymbol r})\\rangle=\\sum_{ijk}\\langle d_id_j\\rangle\\langle a_ia_k\\rangle r_jr_k=\\frac19|\\hat{\\boldsymbol r}|^2=\\frac19,\\qquad \\langle(\\hat{\\boldsymbol d}\\cdot\\hat{\\boldsymbol r})^2\\rangle\\langle(\\hat{\\boldsymbol a}\\cdot\\hat{\\boldsymbol r})^2\\rangle=\\frac19.\\]\nよって $\\langle\\kappa^2\\rangle=\\frac13-\\frac69+\\frac99=\\boldsymbol{\\frac23}$．\n\n(3) $R_0\\propto(\\kappa^2)^{1/6}$ より $\\left(\\dfrac{4}{2/3}\\right)^{1/6}=\\boldsymbol{6^{1/6}}\\approx1.35$ 倍．\n\n$\\kappa^2$ は $0$ から $4$ まで変わりうるが，$1/6$ 乗のため $R_0$ への影響は比較的小さい．色素がナノ秒の間に十分速く回転する場合は動的平均 $2/3$ が正当化され，蛍光異方性の測定でその妥当性を確かめる．"
+   }
+  ],
+  "idea": {
+   "tex": "双極子間相互作用の角度依存性を等方平均すると $2/3$ になる．$R_0$ は $\\kappa^2$ の $1/6$ 乗でしか効かない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 一直線：4 ; 平行：1\n(2) 2/3\n(3) 6^(1/6)"
+  },
+  "methods": [],
+  "tags": [
+   "FRET",
+   "配向因子",
+   "双極子相互作用",
+   "等方平均"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 3,
+  "minutes": 25,
+  "theme": "2準位系のコヒーレント移動と黄金律によるフェルスター速度",
+  "topic": "2準位系のコヒーレント移動と黄金律によるフェルスター速度",
+  "statement": {
+   "tex": "色素 1，2 の励起状態のエネルギーを $\\varepsilon_1,\\varepsilon_2$（$\\Delta=\\varepsilon_1-\\varepsilon_2$），励起子結合を $J$（実数）とする．\n\\begin{enumerate}\n\\item 環境の影響を無視する．時刻 $0$ に励起が色素 1 にあるとき，その後に色素 2 に見いだす確率の最大値を $J,\\Delta$ で表せ．\n\\item 環境（タンパク質の振動）による揺らぎが大きくコヒーレンスがすぐに失われる場合，移動は黄金律の速さ\n\\[k=\\frac{2\\pi}{\\hbar}J^2\\int_{-\\infty}^{\\infty}f_1(E)\\,a_2(E)\\,dE\\]\nで起こる（フェルスター機構）．$f_1$ は色素 1 の発光スペクトル，$a_2$ は色素 2 の吸収スペクトルで，ともに面積 1 に規格化されている．両者がどちらも標準偏差 $\\sigma$ のガウス関数で，中心が $\\Delta$ だけ離れているとき，重なり積分を $\\Delta,\\sigma$ で表せ．\n\\item $J=5.0\\,\\mathrm{meV}$，$\\sigma=20\\,\\mathrm{meV}$，$\\Delta=10\\,\\mathrm{meV}$，$\\hbar=0.658\\,\\mathrm{meV\\,ps}$ のとき，$k$ を $\\mathrm{ps^{-1}}$ 単位で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{4J^2}{4J^2+\\Delta^2}$\n(2) $\\frac{1}{2\\sigma\\sqrt{\\pi}}e^{-\\Delta^2/(4\\sigma^2)}$\n(3) $k\\approx3.16\\,\\mathrm{ps^{-1}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) エネルギーの基準を $(\\varepsilon_1+\\varepsilon_2)/2$ にとると $H=\\frac{\\Delta}{2}\\sigma_z+J\\sigma_x$．これは2準位のラビ振動で\n\\[P_2(t)=\\frac{4J^2}{4J^2+\\Delta^2}\\sin^2\\frac{\\Omega t}{2},\\qquad \\hbar\\Omega=\\sqrt{\\Delta^2+4J^2}.\\]\n最大値は $\\boldsymbol{\\dfrac{4J^2}{4J^2+\\Delta^2}}$．$|\\Delta|\\gg|J|$ では励起はほとんど移らない．\n\n(2) $f_1(E)=\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{-E^2/2\\sigma^2}$，$a_2(E)=\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{-(E-\\Delta)^2/2\\sigma^2}$ として，ガウス関数の畳み込みは分散が足されて\n\\[\\int f_1a_2\\,dE=\\frac{1}{\\sqrt{2\\pi\\cdot2\\sigma^2}}e^{-\\Delta^2/(2\\cdot2\\sigma^2)}=\\boldsymbol{\\frac{1}{2\\sigma\\sqrt\\pi}e^{-\\Delta^2/(4\\sigma^2)}}.\\]\n\n(3) 重なり積分 $=\\dfrac{e^{-1/16}}{40\\sqrt\\pi}=0.01325\\,\\mathrm{meV^{-1}}$．\n\\[k=\\frac{2\\pi}{0.658}\\times25\\times0.01325=\\boldsymbol{3.16\\,\\mathrm{ps^{-1}}}\\]\n（移動時間 $\\approx0.32\\,\\mathrm{ps}$）．\n\n黄金律は，揺らぎの幅 $\\sigma$ が $J$ よりずっと大きく，位相が $\\hbar/\\sigma$ 程度で失われる場合に正しい（インコヒーレントなホッピング）．この数値例では $J/\\sigma=1/4$ で，(1) のコヒーレント振動の周期 $2\\pi/\\Omega\\approx0.29\\,\\mathrm{ps}$ と移動時間が同程度である．光合成アンテナの多くはこのような中間領域にあり，2D 電子分光で見られた「量子ビート」の解釈をめぐる議論の舞台になった．"
+   }
+  ],
+  "idea": {
+   "tex": "弱い揺らぎではラビ振動（コヒーレント移動），強い揺らぎでは黄金律による速さ（スペクトルの重なり）で移動する．後者がフェルスター理論である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 4J^2/(4J^2+Δ^2)\n(2) exp(-Δ^2/(4σ^2))/(2σ sqrt(pi))\n(3) k [1/ps]：≈3.16"
+  },
+  "methods": [],
+  "tags": [
+   "エネルギー移動",
+   "フェルスター理論",
+   "フェルミの黄金律",
+   "コヒーレンス",
+   "光合成"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 3,
+  "minutes": 25,
+  "theme": "タンパク質中の電子トンネルの距離減衰とマーカスの速度式",
+  "topic": "タンパク質中の電子トンネルの距離減衰とマーカスの速度式",
+  "statement": {
+   "tex": "タンパク質中で電子供与体 D から受容体 A へ電子が移る．電子移動の速さはマーカス理論により\n\\[k=\\frac{2\\pi}{\\hbar}|H_{DA}|^2\\frac{1}{\\sqrt{4\\pi\\lambda k_BT}}\\exp\\left[-\\frac{(\\Delta G+\\lambda)^2}{4\\lambda k_BT}\\right]\\]\nで与えられる（$\\Delta G$ は反応の自由エネルギー変化，$\\lambda$ は再配向エネルギー）．電子の結合 $|H_{DA}|^2$ は，D と A の間の距離 $r$ とともに $e^{-\\beta r}$ のように減衰する．\n\\begin{enumerate}\n\\item D と A の間を，電子のエネルギーより $U=1.0\\,\\mathrm{eV}$ 高い一様な障壁とみなすと，障壁内の電子の波動関数は $e^{-\\kappa r}$ で減衰する．$\\beta=2\\kappa$ を $\\mathrm{\\AA^{-1}}$ 単位で求めよ（$m_e=9.11\\times10^{-31}\\,\\mathrm{kg}$，$1\\,\\mathrm{eV}=1.60\\times10^{-19}\\,\\mathrm{J}$，$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$）．\n\\item 以下 $\\beta=1.1\\,\\mathrm{\\AA^{-1}}$ とする．他の条件を変えずに $r$ を $10\\,\\mathrm{\\AA}$ から $15\\,\\mathrm{\\AA}$ にすると，$k$ は何倍になるか．\n\\item $|H_{DA}|=0.10\\,\\mathrm{meV}$，$\\lambda=0.70\\,\\mathrm{eV}$，$k_BT=25.7\\,\\mathrm{meV}$，$\\hbar=6.58\\times10^{-16}\\,\\mathrm{eV\\,s}$ とする．$\\Delta G$ を変えたときの $k$ の最大値を求めよ．\n\\item 同じ条件で $\\Delta G=0$ のときの $k$ は，(3) の最大値の何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta\\approx1.02\\,\\mathrm{\\AA^{-1}}$\n(2) $\\approx4.1\\times10^{-3}$ 倍\n(3) $k_{\\max}\\approx2.0\\times10^8\\,\\mathrm{s^{-1}}$\n(4) $\\approx1.1\\times10^{-3}$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 障壁内では $-\\frac{\\hbar^2}{2m_e}\\psi''=-U\\psi$ より $\\kappa=\\sqrt{2m_eU}/\\hbar$．\n\\[\\kappa=\\frac{\\sqrt{2\\times9.11\\times10^{-31}\\times1.60\\times10^{-19}}}{1.055\\times10^{-34}}=5.12\\times10^9\\,\\mathrm{m^{-1}},\\qquad \\boldsymbol{\\beta=2\\kappa=1.02\\,\\mathrm{\\AA^{-1}}}.\\]\nタンパク質で実測される $\\beta\\approx1.0\\sim1.4\\,\\mathrm{\\AA^{-1}}$ と同程度である．\n\n(2) $e^{-\\beta\\Delta r}=e^{-1.1\\times5}=e^{-5.5}=\\boldsymbol{4.1\\times10^{-3}}$．距離が $5\\,\\mathrm{\\AA}$ 増えるだけで速さは約 $250$ 分の 1 になる．\n\n(3) 指数因子が 1 になる $\\Delta G=-\\lambda$（活性化エネルギーなし）で最大．$\\sqrt{4\\pi\\lambda k_BT}=\\sqrt{4\\pi\\times0.70\\times0.0257}=0.475\\,\\mathrm{eV}$ だから\n\\[k_{\\max}=\\frac{2\\pi}{6.58\\times10^{-16}}\\cdot\\frac{(1.0\\times10^{-4})^2}{0.475}=\\boldsymbol{2.0\\times10^8\\,\\mathrm{s^{-1}}}.\\]\n\n(4) $\\exp\\left(-\\dfrac{\\lambda}{4k_BT}\\right)=\\exp\\left(-\\dfrac{0.70}{0.1028}\\right)=\\boldsymbol{1.1\\times10^{-3}}$．\n\n生体の電子伝達鎖では，補因子が $14\\,\\mathrm{\\AA}$ 以内の間隔で並び（距離因子），$-\\Delta G\\approx\\lambda$ に近くなるよう調整されている（エネルギー因子）ことで，ミリ秒より速い移動が保証されている．$-\\Delta G>\\lambda$ では逆に遅くなる（逆転領域）．"
+   }
+  ],
+  "idea": {
+   "tex": "電子の結合は障壁中の波動関数の重なりで距離とともに指数関数的に減り，エネルギー因子は $-\\Delta G=\\lambda$ で最大になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) β [1/Å]：≈1.02\n(2) ≈4.1e-3\n(3) k [1/s]：≈2.0e8\n(4) ≈1.1e-3"
+  },
+  "methods": [],
+  "tags": [
+   "電子移動",
+   "マーカス理論",
+   "量子トンネル効果",
+   "タンパク質"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 3,
+  "minutes": 22,
+  "theme": "STED 顕微鏡の分解能：誘導放出による発光領域の縮小",
+  "topic": "STED 顕微鏡の分解能：誘導放出による発光領域の縮小",
+  "statement": {
+   "tex": "STED（誘導放出抑制）顕微鏡では，励起光で色素を励起した直後に，中心で強度ゼロのドーナツ形の STED 光を当てる．STED 光の強度 $I$ の位置では，励起された色素が蛍光を出さずに基底状態に戻され，蛍光を出せる割合は $e^{-I/I_s}$ になる（$I_s$ は飽和強度）．1次元で考え，励起の分布を半値全幅 $d$ のガウス関数\n\\[h(x)=\\exp\\left(-\\frac{4\\ln2\\,x^2}{d^2}\\right)\\]\nとし，STED 光は中心付近で $I(x)=ax^2$（$a>0$）とする．\n\\begin{enumerate}\n\\item 蛍光を出す領域の分布 $h(x)e^{-I(x)/I_s}$ の半値全幅 $d'$ を $d,a,I_s$ で表せ．\n\\item ドーナツの最大強度を $I_m$ とし，$a=\\dfrac{4\\ln2\\,I_m}{d^2}$ と近似する．$d=250\\,\\mathrm{nm}$，$I_m/I_s=100$ のとき $d'$ を求めよ．\n\\item $d'=20\\,\\mathrm{nm}$ にするには $I_m/I_s$ をいくらにすればよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $d'=\\frac{d}{\\sqrt{1+\\frac{ad^2}{4I_s\\ln 2}}}$\n(2) $d'\\approx24.9\\,\\mathrm{nm}$\n(3) $I_m/I_s\\approx155$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 指数部をまとめると\n\\[h(x)e^{-ax^2/I_s}=\\exp\\left[-\\frac{4\\ln2\\,x^2}{d^2}\\left(1+\\frac{ad^2}{4\\ln2\\,I_s}\\right)\\right].\\]\nこれは半値全幅 $\\boldsymbol{d'=d\\Big/\\sqrt{1+\\dfrac{ad^2}{4\\ln2\\,I_s}}}$ のガウス関数である．\n\n(2) 与えられた $a$ では $d'=d/\\sqrt{1+I_m/I_s}=250/\\sqrt{101}=\\boldsymbol{24.9\\,\\mathrm{nm}}$．\n\n(3) $1+I_m/I_s=(250/20)^2=156.25$ より $I_m/I_s=\\boldsymbol{155}$．\n\n回折限界は「光の強度分布の幅」を制限するが，「蛍光を出せる分子の分布」は STED 光の飽和によって非線形に絞れる．原理的には $I_m/I_s\\to\\infty$ で分解能に限界がない（実際は色素の退色などで数十 nm 程度）．$d'=d/\\sqrt{1+I_m/I_s}$ はヘルの式と呼ばれる．"
+   }
+  ],
+  "idea": {
+   "tex": "飽和する非線形応答 $e^{-I/I_s}$ を中心ゼロのドーナツ光と組み合わせると，発光できる領域が強度の平方根に反比例して細くなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) d/sqrt(1+a d^2/(4 I_s ln(2)))\n(2) d' [nm]：≈24.9\n(3) ≈155"
+  },
+  "methods": [],
+  "tags": [
+   "超解像",
+   "STED顕微鏡",
+   "回折限界",
+   "誘導放出"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 4,
+  "minutes": 35,
+  "theme": "ラジカル対の超微細相互作用と低磁場効果",
+  "topic": "ラジカル対の超微細相互作用と低磁場効果",
+  "statement": {
+   "tex": "ラジカル対の一方（電子 1）だけが，スピン $\\frac12$ の核 $\\boldsymbol{I}$ と等方的な超微細相互作用をもつとする．$\\hbar=1$ とし，ハミルトニアンを\n\\[H=a\\,\\boldsymbol{S}_1\\cdot\\boldsymbol{I}+\\omega_0(S_{1z}+S_{2z})\\]\nとする（$a>0$ は超微細結合定数，$\\omega_0$ は外部磁場による電子のラーモア角振動数．核のゼーマン項は無視する）．はじめ電子スピンは一重項 $|S\\rangle$，核スピンは完全にランダム（上下が確率 $\\frac12$ ずつの混合状態）である．\n\\begin{enumerate}\n\\item 零磁場（$\\omega_0=0$）で $H$ の固有値を求めよ．\n\\item 零磁場での一重項確率 $P_S(t)$ を求めよ．一重項射影演算子 $P_S=\\frac14-\\boldsymbol{S}_1\\cdot\\boldsymbol{S}_2$ と $(\\boldsymbol{S}_1+\\boldsymbol{S}_2)|S\\rangle=0$ を用いると，$P_S(t)=\\frac14+\\frac14\\sum_{i}\\mathrm{Tr}\\left[S_{1i}(t)S_{1i}\\right]$（トレースは電子 1 と核の4次元空間でとる，$S_{1i}(t)$ はハイゼンベルク表示）となることを使ってよい．\n\\item 強磁場（$\\omega_0\\gg a$）では，$H$ のうち $aS_{1z}I_z$ だけが効くとしてよい．このときの $P_S(t)$ を求めよ．\n\\item ラジカル対の寿命が $1/a$ より十分長く，一重項収率が $P_S(t)$ の時間平均で与えられるとき，零磁場と強磁場での一重項収率をそれぞれ求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{a}{4}$（3重），$-\\frac{3a}{4}$\n(2) $P_S(t)=\\frac{5}{8}+\\frac{3}{8}\\cos at$\n(3) $P_S(t)=\\frac{1}{2}+\\frac{1}{2}\\cos\\left(\\frac{at}{2}\\right)$\n(4) 零磁場 $\\frac{5}{8}$，強磁場 $\\frac{1}{2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol F=\\boldsymbol S_1+\\boldsymbol I$ とすると $\\boldsymbol S_1\\cdot\\boldsymbol I=\\frac12[F(F+1)-\\frac32]$．$F=1$ で $\\boldsymbol{a/4}$（3重縮退），$F=0$ で $\\boldsymbol{-3a/4}$．電子 2 の2状態をかけて全体では各 2 倍に縮退する．\n\n(2) 電子 2 には何もはたらかないので $\\boldsymbol S_2$ は時間変化しない．$\\langle\\boldsymbol S_1(t)\\cdot\\boldsymbol S_2\\rangle$ で $\\boldsymbol S_2|S\\rangle=-\\boldsymbol S_1|S\\rangle$ を使い，電子 1 と核の縮約状態が $\\frac14\\cdot1$ であることから与式を得る．$\\boldsymbol S_1$ を $F$ の各部分空間内の部分（時間変化しない）と $F=1\\leftrightarrow F=0$ をつなぐ部分（角振動数 $a$ で振動）に分ける．$F=1$ 内では射影定理より $\\boldsymbol S_1\\to\\frac12\\boldsymbol F$，$F=0$ 内では 0 なので\n\\[\\frac14\\sum_i\\mathrm{Tr}\\left[\\left(\\tfrac12F_i\\right)^2\\right]_{F=1}=\\frac14\\cdot\\frac14\\cdot F(F+1)\\cdot3=\\frac38.\\]\n一方 $\\frac14\\sum_i\\mathrm{Tr}[S_{1i}^2]=\\frac14\\cdot\\frac34\\cdot4=\\frac34$ なので，振動部分の振幅は $\\frac34-\\frac38=\\frac38$．よって\n\\[\\boldsymbol{P_S(t)=\\frac14+\\frac38+\\frac38\\cos at=\\frac58+\\frac38\\cos at}.\\]\n\n(3) $T_\\pm$ はゼーマン分裂で $S$ から離れ，$S$ と $T_0$ だけが混ざる．核が $m_I=\\pm\\frac12$ のとき電子 1 の歳差は $\\omega_0\\pm\\frac a2$，電子 2 は $\\omega_0$ なので差は $\\delta=\\pm\\frac a2$．$P_S=\\cos^2(\\delta t/2)=\\cos^2(at/4)$ で，両方の $m_I$ で同じだから\n\\[\\boldsymbol{P_S(t)=\\frac12+\\frac12\\cos\\frac{at}{2}}.\\]\n\n(4) 時間平均で振動項が消え，零磁場 $\\boldsymbol{\\frac58}$，強磁場 $\\boldsymbol{\\frac12}$．\n\n零磁場では $S$ が $T_0,T_\\pm$ の全部と混ざりうるが，対称性のため一部しか混ざらず $5/8$ が残る．磁場を上げると $T_\\pm$ が切り離されて $S$–$T_0$ 混合だけになり，収率が変わる．地磁気（ラーモア角振動数 $\\sim10^7\\,\\mathrm{s^{-1}}$）は典型的な超微細結合と同程度かそれ以下なので，生体のラジカル対はちょうど「低磁場効果」が効く領域にある．超微細相互作用が異方的ならば収率は磁場の向きに依存し，これがクリプトクロム説による鳥の磁気コンパスの物理である．"
+   }
+  ],
+  "idea": {
+   "tex": "超微細相互作用が一重項と三重項を混ぜる．磁場は $T_\\pm$ を切り離して混合の仕方を変え，一重項収率に磁場依存性が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) {a/4, -3a/4}\n(2) 5/8+3/8 cos(a t)\n(3) 1/2+1/2 cos(a t/2)\n(4) 零磁場：5/8 ; 強磁場：1/2"
+  },
+  "methods": [],
+  "tags": [
+   "ラジカル対機構",
+   "超微細相互作用",
+   "低磁場効果",
+   "磁気コンパス",
+   "スピン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 4,
+  "minutes": 35,
+  "theme": "リング状アンテナ（LH2）の励起子状態と放射の強さ",
+  "topic": "リング状アンテナ（LH2）の励起子状態と放射の強さ",
+  "statement": {
+   "tex": "紅色光合成細菌のアンテナ LH2 では，$N$ 個の色素が円周上に等間隔に並んでいる．色素 $n$（$n=0,1,\\ldots,N-1$，$n=N$ は $n=0$ と同じ）だけが励起された状態を $|n\\rangle$ とし，隣どうしの励起子結合 $J$ だけを考える：\n\\[H=\\sum_nE_0|n\\rangle\\langle n|+J\\sum_n\\left(|n\\rangle\\langle n+1|+|n+1\\rangle\\langle n|\\right).\\]\n各色素の遷移双極子は円の接線方向を向き，色素 $n$ の双極子は $\\mu(-\\sin\\phi_n,\\cos\\phi_n,0)$（$\\phi_n=2\\pi n/N$）である．状態 $\\sum_nc_n|n\\rangle$ の遷移双極子は $\\sum_nc_n\\boldsymbol{\\mu}_n$ である．\n\\begin{enumerate}\n\\item $|k\\rangle=\\frac{1}{\\sqrt N}\\sum_ne^{2\\pi ikn/N}|n\\rangle$（$k=0,1,\\ldots,N-1$）が固有状態であることを用いて，その固有値 $E_k$ を求めよ．\n\\item 遷移双極子が $0$ でない $k$（$-N/2<k\\le N/2$ の範囲で表す）と，その遷移双極子の大きさの2乗を $\\mu,N$ で表せ．\n\\item $N=18$，$J=-300\\,\\mathrm{cm^{-1}}$ のとき，最低の励起子状態と，(2) の状態のエネルギー差を $\\mathrm{cm^{-1}}$ 単位で求めよ．\n\\item 励起子状態の間で熱平衡（$k_BT=200\\,\\mathrm{cm^{-1}}$）が成り立つとき，リング全体の放射の速さは色素1個の放射の速さの何倍か．放射の速さは遷移双極子の大きさの2乗に比例する．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_k=E_0+2J\\cos\\frac{2\\pi k}{N}$\n(2) $k=\\pm1$，$\\frac{N\\mu^2}{2}$\n(3) $\\approx36.2\\,\\mathrm{cm^{-1}}$\n(4) $\\approx3.43$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $H|k\\rangle=\\frac{1}{\\sqrt N}\\sum_n\\left[E_0e^{i\\theta n}+J\\left(e^{i\\theta(n+1)}+e^{i\\theta(n-1)}\\right)\\right]|n\\rangle$（$\\theta=2\\pi k/N$）より $\\boldsymbol{E_k=E_0+2J\\cos\\dfrac{2\\pi k}{N}}$．\n\n(2) $-\\sin\\phi_n+i\\cos\\phi_n$ などを $e^{\\pm i\\phi_n}$ で書くと，$\\boldsymbol{\\mu}_n$ の各成分は $e^{\\pm i\\phi_n}$ の1次結合である．$\\sum_ne^{i(2\\pi k/N\\pm\\phi_n)}$ は $k\\pm1\\equiv0\\pmod N$ のときだけ $N$，他は 0．よって明るい状態は $\\boldsymbol{k=\\pm1}$ だけで，$k=1$ のとき\n\\[\\boldsymbol{\\mu}_{k=1}=\\frac{\\mu}{\\sqrt N}\\sum_ne^{i\\phi_n}(-\\sin\\phi_n,\\cos\\phi_n,0)=\\frac{\\mu\\sqrt N}{2}(-i,1,0),\\qquad|\\boldsymbol\\mu_{k=1}|^2=\\boldsymbol{\\frac{N\\mu^2}{2}}.\\]\n$k=-1$ も同じで，和 $N\\mu^2$ は単量体 $N$ 個分の和に等しい（強さの総和則）．\n\n(3) $J<0$ では $k=0$ が最低で，これは暗い状態である．\n\\[E_{\\pm1}-E_0^{(k=0)}=2|J|\\left(1-\\cos\\frac{2\\pi}{18}\\right)=600\\times0.0603=\\boldsymbol{36.2\\,\\mathrm{cm^{-1}}}.\\]\n\n(4) 放射の速さの比は $\\sum_k p_k|\\boldsymbol\\mu_k|^2/\\mu^2=N\\,p_{1}$（$p_{\\pm1}$ は等しい）．$p_k=e^{-E_k/k_BT}/Z$ を18状態について数値計算すると $p_1=0.191$，$\\boldsymbol{18\\times0.191=3.43}$ 倍．\n\n$T\\to0$ では暗い $k=0$ にとどまり放射しない．逆に $k_BT\\gg|J|$ では全状態に均等に分布して $N\\times\\frac1N=1$ 倍に戻る．中間温度で単量体より速く光る（超放射）のは，励起が複数の色素にコヒーレントに広がっているためである．実際の LH2 では色素のエネルギーの乱れ（不均一性）のため $k=0$ も一部明るくなり，コヒーレンスの広がりは数個の色素程度に縮む．"
+   }
+  ],
+  "idea": {
+   "tex": "並進対称（回転対称）な環では励起子は波数 $k$ の平面波になり，接線方向の双極子のため $k=\\pm1$ だけが光と結合して強さを独占する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) E_0+2J cos(2pi k/N)\n(2) k：{1, -1} ; |μ_k|^2：N μ^2/2\n(3) [cm^-1]：≈36.2\n(4) ≈3.43"
+  },
+  "methods": [],
+  "tags": [
+   "励起子",
+   "光合成アンテナ",
+   "LH2",
+   "超放射",
+   "ブロッホ状態"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-07-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-111",
+  "level": 4,
+  "minutes": 35,
+  "theme": "マーカス理論の導出：変位した調和ポテンシャルとエネルギーギャップの揺らぎ",
+  "topic": "マーカス理論の導出：変位した調和ポテンシャルとエネルギーギャップの揺らぎ",
+  "statement": {
+   "tex": "電子移動の反応物状態 R と生成物状態 P の自由エネルギーを，環境（溶媒やタンパク質）の分極を表す1つの座標 $x$ の関数として\n\\[G_R(x)=\\frac12Kx^2,\\qquad G_P(x)=\\frac12K(x-d)^2+\\Delta G\\]\nとおく（$K>0$，$d>0$）．再配向エネルギー $\\lambda$ を，反応物の平衡位置 $x=0$ のまま電子だけを P に移したときに必要な余分のエネルギー $\\lambda=G_P(0)-\\Delta G$ と定義する．\n\\begin{enumerate}\n\\item $\\lambda$ を $K,d$ で表せ．\n\\item 2つの曲線の交点での $G_R$ の値（活性化エネルギー $\\Delta G^\\ddagger$）を $\\Delta G,\\lambda$ で表せ．\n\\item R の状態で $x$ は温度 $T$ のボルツマン分布 $\\propto e^{-G_R(x)/k_BT}$ に従う．エネルギーギャップ $u=G_P(x)-G_R(x)$ の平均と分散を $\\Delta G,\\lambda,k_BT$ で表せ．\n\\item 電子移動の速さは黄金律により $k=\\frac{2\\pi}{\\hbar}|H_{DA}|^2\\langle\\delta(u)\\rangle$（$\\langle\\ \\rangle$ は R の熱平均）で与えられる．$\\langle\\delta(u)\\rangle$ を $\\Delta G,\\lambda,k_BT$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=\\frac{1}{2}Kd^2$\n(2) $\\Delta G^\\ddagger=\\frac{(\\Delta G+\\lambda)^2}{4\\lambda}$\n(3) 平均 $\\lambda+\\Delta G$，分散 $2\\lambda k_BT$\n(4) $\\langle\\delta(u)\\rangle=\\frac{1}{\\sqrt{4\\pi\\lambda k_BT}}\\exp\\left(-\\frac{(\\Delta G+\\lambda)^2}{4\\lambda k_BT}\\right)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $G_P(0)=\\frac12Kd^2+\\Delta G$ より $\\boldsymbol{\\lambda=\\frac12Kd^2}$．\n\n(2) $G_R=G_P$ から $0=-Kdx+\\frac12Kd^2+\\Delta G$，$x^*=\\dfrac{\\lambda+\\Delta G}{Kd}$．\n\\[\\Delta G^\\ddagger=\\frac12K{x^*}^2=\\frac{(\\lambda+\\Delta G)^2}{2Kd^2}=\\boldsymbol{\\frac{(\\Delta G+\\lambda)^2}{4\\lambda}}.\\]\n\n(3) $u=\\lambda+\\Delta G-Kdx$ は $x$ の1次式．$\\langle x\\rangle=0$，$\\langle x^2\\rangle=k_BT/K$ より\n\\[\\langle u\\rangle=\\boldsymbol{\\lambda+\\Delta G},\\qquad \\langle(u-\\langle u\\rangle)^2\\rangle=K^2d^2\\frac{k_BT}{K}=\\boldsymbol{2\\lambda k_BT}.\\]\n\n(4) $u$ は平均 $\\lambda+\\Delta G$，分散 $2\\lambda k_BT$ のガウス分布に従うので，$\\langle\\delta(u)\\rangle$ はその確率密度の $u=0$ での値：\n\\[\\boldsymbol{\\langle\\delta(u)\\rangle=\\frac{1}{\\sqrt{4\\pi\\lambda k_BT}}\\exp\\left[-\\frac{(\\Delta G+\\lambda)^2}{4\\lambda k_BT}\\right]}.\\]\n指数部は $-\\Delta G^\\ddagger/k_BT$ に一致する．\n\n黄金律の $\\delta$ 関数は「エネルギーギャップが熱揺らぎで偶然 0 になったとき電子がトンネルする」ことを表す（フランク＝コンドンの原理）．速さは $-\\Delta G=\\lambda$ で最大となり，それ以上発熱的にすると遅くなる（マーカスの逆転領域）．逆転領域では高振動数の分子内振動の量子性が効き，速さの低下は古典的な予測より緩やかになる．"
+   }
+  ],
+  "idea": {
+   "tex": "2つの変位した放物線の交点が活性化状態を与え，熱平衡のエネルギーギャップの揺らぎが分散 $2\\lambda k_BT$ のガウス分布になることからマーカスの式が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) K d^2/2\n(2) (ΔG+λ)^2/(4λ)\n(3) 平均：λ+ΔG ; 分散：2λ k_B T\n(4) exp(-(ΔG+λ)^2/(4λ k_B T))/sqrt(4pi λ k_B T)"
+  },
+  "methods": [],
+  "tags": [
+   "マーカス理論",
+   "電子移動",
+   "再配向エネルギー",
+   "フェルミの黄金律",
+   "逆転領域"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

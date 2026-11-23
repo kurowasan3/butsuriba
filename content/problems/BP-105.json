@@ -1,0 +1,747 @@
+[
+ {
+  "id": "BP-01-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 0,
+  "minutes": 8,
+  "theme": "自由連結鎖の末端間距離（DNA の大きさ）",
+  "topic": "自由連結鎖の末端間距離（DNA の大きさ）",
+  "statement": {
+   "tex": "DNA やタンパク質のような長い鎖状分子（高分子）を，長さ $b$ の線分（セグメント）$N$ 本がつながったものとみなす．各セグメントのベクトルを $\\vec b_1,\\vec b_2,\\dots,\\vec b_N$（$|\\vec b_i|=b$）とし，それぞれの向きはまったく自由で互いに無関係である（自由連結鎖）．このとき，異なるセグメントの内積の平均は $\\langle\\vec b_i\\cdot\\vec b_j\\rangle=0\\ (i\\neq j)$ である．鎖の一端から他端へのベクトルを $\\vec R=\\vec b_1+\\vec b_2+\\cdots+\\vec b_N$ とする．\n\\begin{enumerate}\n\\item $\\langle|\\vec R|^2\\rangle$ を $N,\\,b$ で表せ．\n\\item ある DNA 分子は $b=100\\,\\mathrm{nm}$，全長 $Nb=16\\,\\mathrm{\\mu m}$ の自由連結鎖とみなせる．末端間距離の2乗平均平方根 $\\sqrt{\\langle|\\vec R|^2\\rangle}$ は何 $\\mathrm{\\mu m}$ か．\n\\item 同じ種類の高分子で長さ（$N$）を4倍にすると，$\\sqrt{\\langle|\\vec R|^2\\rangle}$ は何倍になるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle|\\vec R|^2\\rangle=Nb^2$ (2) $\\approx1.26\\,\\mathrm{\\mu m}$ (3) $2$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 展開すると\n\\[ |\\vec R|^2=\\sum_{i}|\\vec b_i|^2+\\sum_{i\\neq j}\\vec b_i\\cdot\\vec b_j \\]\nである．第1項は $Nb^2$，第2項は平均すると $0$ なので\n\\[ \\boldsymbol{\\langle|\\vec R|^2\\rangle=Nb^2}. \\]\nこれはランダムウォークで「$N$ 歩後の距離が $\\sqrt N$ 歩分にしかならない」のと同じ結果である．\n\n(2) $\\sqrt{Nb^2}=\\sqrt{(Nb)\\,b}=\\sqrt{16\\,\\mathrm{\\mu m}\\times0.1\\,\\mathrm{\\mu m}}=\\sqrt{1.6}\\,\\mathrm{\\mu m}\\approx\\boldsymbol{1.26\\,\\mathrm{\\mu m}}$．全長 $16\\,\\mathrm{\\mu m}$ の分子が，その $1/13$ ほどの大きさの糸玉に丸まっている．\n\n(3) $\\sqrt{\\langle|\\vec R|^2\\rangle}\\propto\\sqrt N$ なので $\\sqrt4=\\boldsymbol{2}$ 倍．\n\nこの分野では次に，鎖の曲げにくさを取り入れた「みみず鎖」や，鎖どうしが重ならない効果（排除体積）を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "セグメントの向きが独立なら交差項は平均で消え，$\\langle R^2\\rangle=Nb^2$．高分子の大きさは長さの平方根に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) <R^2>：N b^2\n(2) R [μm]：≈1.26\n(3) 2"
+  },
+  "methods": [],
+  "tags": [
+   "自由連結鎖",
+   "ランダムウォーク",
+   "末端間距離",
+   "DNA"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 0,
+  "minutes": 10,
+  "theme": "タンパク質の折り畳みの2状態モデルと変性温度",
+  "topic": "タンパク質の折り畳みの2状態モデルと変性温度",
+  "statement": {
+   "tex": "タンパク質は，決まった立体構造に折り畳まれた状態（天然状態 N）と，ほどけてさまざまな形をとる状態（変性状態 U）の間を行き来する．簡単なモデルとして，天然状態は形が1通りでエネルギー $-\\varepsilon\\ (\\varepsilon>0)$，変性状態は形が $\\Omega$ 通りあってどれもエネルギー $0$ とする．温度 $T$ で，エネルギー $E$ の1つの形が実現する確率はボルツマン因子 $e^{-E/(k_BT)}$ に比例する（$k_B$ はボルツマン定数）．\n\\begin{enumerate}\n\\item タンパク質が変性状態 U にある確率 $P_U$ を $\\varepsilon,\\,\\Omega,\\,k_B,\\,T$ で表せ．\n\\item $P_U=1/2$ となる温度（変性温度）$T_m$ を求めよ．\n\\item アミノ酸 $100$ 個からなるタンパク質で，変性状態では各アミノ酸が独立に3通りの形をとる（$\\Omega=3^{100}$）とする．$\\varepsilon=5.0\\times10^{-19}\\,\\mathrm{J}$，$k_B=1.38\\times10^{-23}\\,\\mathrm{J/K}$ として $T_m$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P_U=\\dfrac{\\Omega e^{-\\varepsilon/(k_BT)}}{1+\\Omega e^{-\\varepsilon/(k_BT)}}$ (2) $T_m=\\dfrac{\\varepsilon}{k_B\\ln\\Omega}$ (3) $T_m\\approx330\\,\\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 天然状態の重みは $e^{\\varepsilon/(k_BT)}$（1通り），変性状態の重みは $\\Omega\\times e^{0}=\\Omega$ である．確率は重みの比なので\n\\[ P_U=\\frac{\\Omega}{e^{\\varepsilon/(k_BT)}+\\Omega}=\\boldsymbol{\\frac{\\Omega e^{-\\varepsilon/(k_BT)}}{1+\\Omega e^{-\\varepsilon/(k_BT)}}}. \\]\n\n(2) $P_U=1/2$ は $\\Omega e^{-\\varepsilon/(k_BT_m)}=1$，すなわち\n\\[ \\boldsymbol{T_m=\\frac{\\varepsilon}{k_B\\ln\\Omega}}. \\]\n低温ではエネルギーの低い天然状態が，高温では「形の数」の多い変性状態が勝つ．$k_B\\ln\\Omega$ は変性状態のエントロピーで，$T_m$ はエネルギーとエントロピーが釣り合う温度である．\n\n(3) $\\ln\\Omega=100\\ln3\\approx109.9$ なので $T_m=\\dfrac{5.0\\times10^{-19}}{1.38\\times10^{-23}\\times109.9}\\approx\\boldsymbol{330\\,\\mathrm{K}}$（約 $57^\\circ\\mathrm{C}$）．\n\n$P_U$ を $T$ の関数として描くと，$\\varepsilon$ と $k_B\\ln\\Omega$ が大きいため $T_m$ 付近で急に $0$ から $1$ へ変わる．次は熱量測定（比熱のピーク）から2状態モデルを検証する方法を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "状態の数（エントロピー）とエネルギーの競合で折り畳み・変性が決まる．変性温度は $\\varepsilon=k_BT_m\\ln\\Omega$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) P_U：Ω e^(-epsilon/(k_B T))/(1+Ω e^(-epsilon/(k_B T)))\n(2) T_m：epsilon/(k_B ln Ω)\n(3) T_m [K]：≈330"
+  },
+  "methods": [],
+  "tags": [
+   "2状態モデル",
+   "タンパク質の折り畳み",
+   "ボルツマン分布",
+   "変性温度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 0,
+  "minutes": 12,
+  "theme": "格子模型による受容体とリガンドの結合と解離定数",
+  "topic": "格子模型による受容体とリガンドの結合と解離定数",
+  "statement": {
+   "tex": "細胞の受容体（タンパク質）1個と，それに結合する小さな分子（リガンド）$L$ 個が体積 $V$ の溶液中にある．溶液を体積 $v$ の小部屋 $\\Omega=V/v$ 個に分け，各リガンドはどれか1つの部屋に入る（1部屋に1個まで，$L\\ll\\Omega$）．リガンドは溶液中にいるときより受容体に結合したときのほうがエネルギーが $\\varepsilon\\ (>0)$ だけ低い．温度 $T$ で，ある配置が実現する確率は $e^{-(\\text{全エネルギー})/(k_BT)}$ に比例する．区別できない $n$ 個のリガンドを $\\Omega$ 個の部屋に入れる方法の数は $\\dfrac{\\Omega!}{n!\\,(\\Omega-n)!}\\simeq\\dfrac{\\Omega^n}{n!}$ と近似してよい．\n\\begin{enumerate}\n\\item 「受容体にリガンドが結合している」状態と「結合していない」状態の確率の比 $p_{\\mathrm{b}}/p_{\\mathrm{u}}$ を $L,\\,\\Omega,\\,\\varepsilon,\\,k_BT$ で表せ．\n\\item リガンドの濃度を $c=L/V$ とする．結合している確率 $p_{\\mathrm{b}}$ が $1/2$ となる濃度（解離定数）$K_d$ を $v,\\,\\varepsilon,\\,k_BT$ で表せ．\n\\item $v=1.0\\,\\mathrm{nm^3}$，$\\varepsilon=12k_BT$ のとき $K_d$ を $\\mathrm{mol/L}$ 単位で求めよ．アボガドロ定数は $6.02\\times10^{23}\\,\\mathrm{/mol}$，$e^{-12}=6.14\\times10^{-6}$，$1\\,\\mathrm{L}=10^{24}\\,\\mathrm{nm^3}$ とする．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{p_{\\mathrm{b}}}{p_{\\mathrm{u}}}=\\dfrac{L}{\\Omega}e^{\\varepsilon/(k_BT)}$ (2) $K_d=\\dfrac{e^{-\\varepsilon/(k_BT)}}{v}$ (3) $K_d\\approx1.0\\times10^{-5}\\,\\mathrm{mol/L}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 溶液中のリガンドのエネルギーを $0$ とする．結合していない状態では $L$ 個すべてが溶液中にあり，配置の数は $\\Omega^L/L!$，エネルギーは $0$．結合した状態では1個が受容体に付き（エネルギー $-\\varepsilon$），残り $L-1$ 個の配置の数は $\\Omega^{L-1}/(L-1)!$．よって\n\\[ \\frac{p_{\\mathrm{b}}}{p_{\\mathrm{u}}}=\\frac{\\Omega^{L-1}/(L-1)!}{\\Omega^L/L!}e^{\\varepsilon/(k_BT)}=\\boldsymbol{\\frac{L}{\\Omega}e^{\\varepsilon/(k_BT)}}. \\]\n\n(2) $L/\\Omega=Lv/V=cv$ なので $p_{\\mathrm{b}}=\\dfrac{cve^{\\varepsilon/(k_BT)}}{1+cve^{\\varepsilon/(k_BT)}}=\\dfrac{c/K_d}{1+c/K_d}$ の形になり，\n\\[ \\boldsymbol{K_d=\\frac{e^{-\\varepsilon/(k_BT)}}{v}}. \\]\n結合が強い（$\\varepsilon$ が大きい）ほど，低い濃度で結合する．\n\n(3) $K_d=\\dfrac{6.14\\times10^{-6}}{1.0\\,\\mathrm{nm^3}}=6.14\\times10^{-6}\\,\\mathrm{nm^{-3}}=6.14\\times10^{18}\\,\\mathrm{L^{-1}}$．アボガドロ定数で割って\n\\[ K_d=\\frac{6.14\\times10^{18}}{6.02\\times10^{23}}\\,\\mathrm{mol/L}\\approx\\boldsymbol{1.0\\times10^{-5}\\,\\mathrm{mol/L}}\\ (10\\,\\mathrm{\\mu M}). \\]\n\nこの $p_{\\mathrm b}=\\dfrac{c/K_d}{1+c/K_d}$ は化学平衡の質量作用の法則から得られる式と同じ形である．次は，結合部位が複数あって互いに影響し合う「協同的な結合」（ヒル係数）を学ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "結合のエネルギー得とリガンドが溶液中で持つ配置の数（エントロピー）の競合から，結合曲線と解離定数が統計力学で導ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) p_b/p_u：L/Ω e^(epsilon/(k_B T))\n(2) K_d：e^(-epsilon/(k_B T))/v\n(3) K_d [mol/L]：≈1.0e-5"
+  },
+  "methods": [],
+  "tags": [
+   "リガンド結合",
+   "格子模型",
+   "解離定数",
+   "ボルツマン分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ガウス鎖のエントロピー弾性と最も確からしい末端間距離",
+  "topic": "ガウス鎖のエントロピー弾性と最も確からしい末端間距離",
+  "statement": {
+   "tex": "セグメント長 $b$，セグメント数 $N\\ (\\gg1)$ の自由連結鎖の末端間ベクトル $\\vec R$ は，3次元のガウス分布\n\\[ P(\\vec R)=\\left(\\frac{3}{2\\pi Nb^2}\\right)^{3/2}\\exp\\left(-\\frac{3|\\vec R|^2}{2Nb^2}\\right) \\]\nに従う．鎖のエネルギーは $\\vec R$ によらないとし，温度を $T$ とする．\n\\begin{enumerate}\n\\item 末端間距離 $r=|\\vec R|$ の確率密度が最大となる $r$ を求めよ．\n\\item 末端を $\\vec R=(x,0,0)$ に固定したときのエントロピー $S(x)=k_B\\ln P+\\text{const}$ から自由エネルギー $F=-TS$ を作り，末端を保つのに必要な力 $f=\\partial F/\\partial x$ を $f=kx$ と書くときのばね定数 $k$ を求めよ．\n\\item $b=100\\,\\mathrm{nm}$，$Nb=16\\,\\mathrm{\\mu m}$ の DNA の末端を $x=1.0\\,\\mathrm{\\mu m}$ だけ引き離して保つのに必要な力は何 $\\mathrm{pN}$ か．$k_BT=4.1\\,\\mathrm{pN\\cdot nm}$ とする．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $r=\\sqrt{\\dfrac{2N}{3}}\\,b$ (2) $k=\\dfrac{3k_BT}{Nb^2}$ (3) $f\\approx7.7\\times10^{-3}\\,\\mathrm{pN}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 長さ $r$ の殻の体積 $4\\pi r^2dr$ を掛けて，$r$ の分布は $p(r)\\propto r^2e^{-3r^2/(2Nb^2)}$．$\\ln p=2\\ln r-\\dfrac{3r^2}{2Nb^2}+\\text{const}$ を微分して $0$ とおくと $\\dfrac{2}{r}=\\dfrac{3r}{Nb^2}$，\n\\[ \\boldsymbol{r=\\sqrt{\\frac{2N}{3}}\\,b}. \\]\n$\\vec R$ の分布そのものは $\\vec R=\\vec 0$ で最大だが，距離 $r$ については球殻の体積因子 $r^2$ のため有限の値で最大になる．\n\n(2) $S(x)=\\text{const}-\\dfrac{3k_Bx^2}{2Nb^2}$，$F=\\text{const}+\\dfrac{3k_BT}{2Nb^2}x^2$．よって $f=\\dfrac{3k_BT}{Nb^2}x$，\n\\[ \\boldsymbol{k=\\frac{3k_BT}{Nb^2}}. \\]\nエネルギーは変わらないのに，伸ばすと取りうる形の数（エントロピー）が減るため，縮もうとする力が生じる（エントロピー弾性）．ばね定数は $T$ に比例し，鎖が長いほど柔らかい．\n\n(3) $Nb^2=(16\\times10^3\\,\\mathrm{nm})(100\\,\\mathrm{nm})=1.6\\times10^6\\,\\mathrm{nm^2}$ なので\n\\[ f=\\frac{3\\times4.1\\times1000}{1.6\\times10^6}\\,\\mathrm{pN}\\approx\\boldsymbol{7.7\\times10^{-3}\\,\\mathrm{pN}}. \\]\n光ピンセットで測れる最小の力（$\\sim0.01\\,\\mathrm{pN}$）程度であり，DNA は小さな力でも大きく伸びる．ガウス近似は $x\\ll Nb$ のときだけ正しい．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス鎖の自由エネルギーは $F=\\frac{3k_BT}{2Nb^2}R^2$ で，エネルギーではなくエントロピーに由来するばねになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) r：sqrt(2N/3) b\n(2) k：3 k_B T/(N b^2)\n(3) f [pN]：≈7.7e-3"
+  },
+  "methods": [],
+  "tags": [
+   "ガウス鎖",
+   "エントロピー弾性",
+   "高分子",
+   "DNA"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 1,
+  "minutes": 15,
+  "theme": "みみず鎖モデルの末端間距離と持続長",
+  "topic": "みみず鎖モデルの末端間距離と持続長",
+  "statement": {
+   "tex": "DNA のように曲げにくい鎖を，長さ $L$ のなめらかな曲線とみなす（みみず鎖）．曲線に沿った長さ $s$ の点での単位接ベクトルを $\\vec t(s)$ とすると，熱ゆらぎによる向きの相関は\n\\[ \\langle\\vec t(s)\\cdot\\vec t(s')\\rangle=e^{-|s-s'|/\\xi} \\]\nで与えられる．$\\xi$ を持続長という．末端間ベクトルは $\\vec R=\\int_0^L\\vec t(s)\\,ds$ である．\n\\begin{enumerate}\n\\item $\\langle|\\vec R|^2\\rangle$ を $L,\\,\\xi$ で表せ．\n\\item $L\\gg\\xi$ で $\\langle|\\vec R|^2\\rangle$ を自由連結鎖の $\\langle|\\vec R|^2\\rangle=Lb$（$b$ はセグメント長，$N=L/b$）と比べる．対応するセグメント長（クーン長）$b$ を $\\xi$ で表せ．\n\\item 持続長 $\\xi=50\\,\\mathrm{nm}$ の DNA で $L=150\\,\\mathrm{nm}$ のとき，$\\sqrt{\\langle|\\vec R|^2\\rangle}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle|\\vec R|^2\\rangle=2\\xi L-2\\xi^2\\left(1-e^{-L/\\xi}\\right)$ (2) $b=2\\xi$ (3) $\\approx101\\,\\mathrm{nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) \n\\[ \\langle|\\vec R|^2\\rangle=\\int_0^L\\!\\!\\int_0^L e^{-|s-s'|/\\xi}\\,ds\\,ds'=2\\int_0^L ds\\int_0^{s}e^{-(s-s')/\\xi}ds'=2\\xi\\int_0^L\\left(1-e^{-s/\\xi}\\right)ds \\]\nより\n\\[ \\boldsymbol{\\langle|\\vec R|^2\\rangle=2\\xi L-2\\xi^2\\left(1-e^{-L/\\xi}\\right)}. \\]\n$L\\ll\\xi$ では展開して $\\langle R^2\\rangle\\simeq L^2$（棒），$L\\gg\\xi$ では $\\simeq2\\xi L$（ランダムコイル）となる．\n\n(2) $2\\xi L=Lb$ より $\\boldsymbol{b=2\\xi}$．持続長の2倍の長さを1つの「自由に向きを変える線分」とみなせば，長い鎖は自由連結鎖と同じになる．\n\n(3) $L/\\xi=3$ を代入して $\\langle R^2\\rangle=L^2\\left[\\dfrac23-\\dfrac29(1-e^{-3})\\right]\\approx0.4555L^2$，\n\\[ \\sqrt{\\langle R^2\\rangle}\\approx0.675\\times150\\,\\mathrm{nm}\\approx\\boldsymbol{101\\,\\mathrm{nm}}. \\]\n約 $440$ 塩基対の DNA は，棒でもコイルでもない中間の形をとる．"
+   }
+  ],
+  "idea": {
+   "tex": "接ベクトルの相関長が持続長．相関関数を2重積分すれば棒とランダムコイルをつなぐ式が得られ，クーン長は $2\\xi$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) <R^2>：2 xi L - 2 xi^2 (1-e^(-L/xi))\n(2) b：2xi\n(3) R [nm]：≈101"
+  },
+  "methods": [],
+  "tags": [
+   "みみず鎖",
+   "持続長",
+   "クーン長",
+   "DNA"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 1,
+  "minutes": 15,
+  "theme": "2状態転移のファントホッフ解析と熱量測定のピーク",
+  "topic": "2状態転移のファントホッフ解析と熱量測定のピーク",
+  "statement": {
+   "tex": "タンパク質の変性を2状態（天然 N ⇄ 変性 U）の化学平衡とみなす．変性に伴う1モルあたりのエンタルピー変化 $h\\ (>0)$ とエントロピー変化 $s\\ (>0)$ は温度によらないとし，平衡定数を $K=e^{-(h-Ts)/(RT)}$（$R$ は気体定数），変性している割合を $f=K/(1+K)$ とする．\n\\begin{enumerate}\n\\item $f=1/2$ となる温度 $T_m$ を求めよ．\n\\item $T=T_m$ での傾き $df/dT$ を $h,\\,R,\\,T_m$ で表せ．\n\\item 1モルあたりの平均のエンタルピーは $\\langle H\\rangle=H_N+fh$ である．変性に伴う過剰な熱容量 $C=d\\langle H\\rangle/dT$ の $T=T_m$ での値を $h,\\,R,\\,T_m$ で表せ．\n\\item $h=400\\,\\mathrm{kJ/mol}$，$T_m=333\\,\\mathrm{K}$，$R=8.314\\,\\mathrm{J/(mol\\cdot K)}$ のとき (3) の値を $\\mathrm{kJ/(mol\\cdot K)}$ 単位で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_m=\\dfrac{h}{s}$ (2) $\\dfrac{df}{dT}=\\dfrac{h}{4RT_m^2}$ (3) $C=\\dfrac{h^2}{4RT_m^2}$ (4) $\\approx43\\,\\mathrm{kJ/(mol\\cdot K)}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $K=1$，すなわち $h-T_ms=0$ より $\\boldsymbol{T_m=h/s}$．\n\n(2) $\\ln K=-\\dfrac{h}{RT}+\\dfrac{s}{R}$ より $\\dfrac{d\\ln K}{dT}=\\dfrac{h}{RT^2}$（ファントホッフの式）．$f=K/(1+K)$ から $\\dfrac{df}{dT}=f(1-f)\\dfrac{d\\ln K}{dT}$ なので，$f=1/2$ で\n\\[ \\boldsymbol{\\frac{df}{dT}=\\frac{h}{4RT_m^2}}. \\]\n転移が鋭いほど $h$ が大きい．融解曲線の傾きから求めた $h$ をファントホッフ・エンタルピーという．\n\n(3) $C=h\\,\\dfrac{df}{dT}$ より $\\boldsymbol{C=\\dfrac{h^2}{4RT_m^2}}$．\n\n(4) $C=\\dfrac{(4.0\\times10^5)^2}{4\\times8.314\\times333^2}\\,\\mathrm{J/(mol\\cdot K)}\\approx4.3\\times10^4\\,\\mathrm{J/(mol\\cdot K)}=\\boldsymbol{43\\,\\mathrm{kJ/(mol\\cdot K)}}$．\n\n示差走査熱量計（DSC）では，ピークの面積から熱量測定によるエンタルピー $h_{\\mathrm{cal}}$ が，ピークの高さと (3) から $h_{\\mathrm{vH}}$ が求まる．両者が一致することが「中間状態のない2状態転移」の実験的な証拠になる．"
+   }
+  ],
+  "idea": {
+   "tex": "平衡定数の温度微分（ファントホッフの式）から，融解曲線の傾きと比熱のピークがどちらも $h$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) T_m：h/s\n(2) df/dT：h/(4R T_m^2)\n(3) C：h^2/(4R T_m^2)\n(4) C [kJ/(mol K)]：≈43"
+  },
+  "methods": [],
+  "tags": [
+   "2状態モデル",
+   "ファントホッフの式",
+   "熱量測定",
+   "タンパク質の変性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 2,
+  "minutes": 20,
+  "theme": "光ピンセットで引っ張る自由連結鎖の力－伸長曲線",
+  "topic": "光ピンセットで引っ張る自由連結鎖の力－伸長曲線",
+  "statement": {
+   "tex": "セグメント長 $b$，セグメント数 $N$ の自由連結鎖（3次元）の一端を固定し，他端に $z$ 方向の一定の力 $f$ を光ピンセットで加える．各セグメントの向きは独立で，$z$ 軸となす角を $\\theta$ とすると，そのセグメントのエネルギーは $-fb\\cos\\theta$ である．温度を $T$，$\\beta=1/(k_BT)$ とする．\n\\begin{enumerate}\n\\item 平均の伸び $\\langle z\\rangle$ を $N,\\,b,\\,\\beta f$ で表せ．\n\\item 力が小さい（$\\beta fb\\ll1$）とき $\\langle z\\rangle\\simeq f/k$ と書ける．$k$ を求めよ．\n\\item 力が大きい（$\\beta fb\\gg1$）とき，$1-\\dfrac{\\langle z\\rangle}{Nb}$ の主要項を求めよ．\n\\item $b=100\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\cdot nm}$，$f=0.10\\,\\mathrm{pN}$ のとき $\\langle z\\rangle/(Nb)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle z\\rangle=Nb\\left(\\dfrac{1}{\\tanh(\\beta fb)}-\\dfrac{1}{\\beta fb}\\right)$ (2) $k=\\dfrac{3}{\\beta Nb^2}$ (3) $\\dfrac{1}{\\beta fb}$ (4) $\\approx0.61$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 1セグメントの分配関数は\n\\[ z_1=\\int_0^{2\\pi}\\!\\!d\\phi\\int_0^\\pi e^{\\beta fb\\cos\\theta}\\sin\\theta\\,d\\theta=\\frac{4\\pi\\sinh(\\beta fb)}{\\beta fb}. \\]\n$\\langle b\\cos\\theta\\rangle=\\dfrac{\\partial\\ln z_1}{\\partial(\\beta f)}$ なので\n\\[ \\boldsymbol{\\langle z\\rangle=Nb\\left(\\coth(\\beta fb)-\\frac{1}{\\beta fb}\\right)}. \\]\n括弧内はランジュバン関数 $\\mathcal L(u)=\\coth u-1/u$ である．\n\n(2) $\\coth u\\simeq\\dfrac1u+\\dfrac u3$ より $\\langle z\\rangle\\simeq\\dfrac{N\\beta fb^2}{3}$，$\\boldsymbol{k=\\dfrac{3}{\\beta Nb^2}=\\dfrac{3k_BT}{Nb^2}}$．ガウス鎖のエントロピーばねと一致する．\n\n(3) $\\coth u\\to1$ より $1-\\dfrac{\\langle z\\rangle}{Nb}\\simeq\\boldsymbol{\\dfrac{1}{\\beta fb}}=\\dfrac{k_BT}{fb}$．全長に近づく速さは $1/f$ である．\n\n(4) $\\beta fb=\\dfrac{0.10\\times100}{4.1}=2.44$，$\\coth2.44\\approx1.015$ なので $\\langle z\\rangle/(Nb)\\approx1.015-0.410\\approx\\boldsymbol{0.61}$．力の目安 $k_BT/b\\approx0.04\\,\\mathrm{pN}$ を超えると線形応答が破れる．\n\n実際の DNA では，大きな力での伸びは (3) の $1/f$ ではなく $1/\\sqrt f$ で全長に近づき，自由連結鎖では説明できない．これはみみず鎖モデルで説明される．"
+   }
+  ],
+  "idea": {
+   "tex": "各セグメントは力の中の独立な双極子と同じで，伸びはランジュバン関数になる．小さな力ではエントロピーばね，大きな力では $1-z/L\\propto1/f$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) <z>：N b (1/tanh(beta f b) - 1/(beta f b))\n(2) k：3/(beta N b^2)\n(3) 1/(beta f b)\n(4) ≈0.61"
+  },
+  "methods": [],
+  "tags": [
+   "自由連結鎖",
+   "力－伸長曲線",
+   "光ピンセット",
+   "ランジュバン関数",
+   "DNA"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 2,
+  "minutes": 20,
+  "theme": "2つの結合部位をもつ受容体の協同的結合とヒル係数",
+  "topic": "2つの結合部位をもつ受容体の協同的結合とヒル係数",
+  "statement": {
+   "tex": "リガンドの結合部位を2つもつタンパク質がある．リガンド濃度を $c$，1つの部位の解離定数を $K$ とし，$x=c/K$ とおく．空の状態，1個結合（2通り），2個結合の状態の統計的重みはそれぞれ $1$，$x$（各），$\\omega x^2$ である．$\\omega$ は2個目の結合が1個目によってどれだけ有利になるかを表す（$\\omega>1$ なら正の協同性）．\n\\begin{enumerate}\n\\item 部位の占有率 $\\theta$（結合リガンド数の平均を2で割ったもの）を $x,\\,\\omega$ で表せ．\n\\item $\\theta=1/2$ となる $x$ を求めよ．\n\\item ヒル係数 $n_H=\\dfrac{d\\ln[\\theta/(1-\\theta)]}{d\\ln x}$ を $\\theta=1/2$ で求め，$\\omega$ で表せ．\n\\item $\\omega=100$ のとき $n_H$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\theta=\\dfrac{x+\\omega x^2}{1+2x+\\omega x^2}$ (2) $x=\\dfrac{1}{\\sqrt\\omega}$ (3) $n_H=\\dfrac{2\\sqrt\\omega}{1+\\sqrt\\omega}$ (4) $\\dfrac{20}{11}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 分配関数 $Z=1+2x+\\omega x^2$．結合数の平均は $\\langle n\\rangle=\\dfrac{2x+2\\omega x^2}{Z}$ なので\n\\[ \\boldsymbol{\\theta=\\frac{x+\\omega x^2}{1+2x+\\omega x^2}}. \\]\n\n(2) $\\dfrac{\\theta}{1-\\theta}=\\dfrac{x+\\omega x^2}{1+x}$．これが $1$ になるのは $\\omega x^2=1$，$\\boldsymbol{x=1/\\sqrt\\omega}$．\n\n(3) $\\ln\\dfrac{\\theta}{1-\\theta}=\\ln x+\\ln(1+\\omega x)-\\ln(1+x)$ を $\\ln x$ で微分して\n\\[ n_H=1+\\frac{\\omega x}{1+\\omega x}-\\frac{x}{1+x}. \\]\n$x=1/\\sqrt\\omega$ を代入すると $\\omega x=\\sqrt\\omega$，$\\dfrac{x}{1+x}=\\dfrac{1}{1+\\sqrt\\omega}$ より\n\\[ \\boldsymbol{n_H=1+\\frac{\\sqrt\\omega-1}{\\sqrt\\omega+1}=\\frac{2\\sqrt\\omega}{1+\\sqrt\\omega}}. \\]\n$\\omega=1$（独立）で $n_H=1$，$\\omega\\to\\infty$（全か無か）で $n_H\\to2$（部位の数）となる．\n\n(4) $\\sqrt\\omega=10$ より $n_H=\\boldsymbol{20/11}\\approx1.82$．\n\nヒル係数は「結合曲線がどれだけスイッチ的か」を表し，部位の数を超えない．ヘモグロビン（4部位）では $n_H\\approx2.8$ である．"
+   }
+  ],
+  "idea": {
+   "tex": "分配関数から占有率を出し，$\\ln[\\theta/(1-\\theta)]$ の傾きで協同性を測る．ヒル係数は1と部位数の間に入る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) θ：(x+omega x^2)/(1+2x+omega x^2)\n(2) x：1/sqrt(omega)\n(3) n_H：2 sqrt(omega)/(1+sqrt(omega))\n(4) 20/11"
+  },
+  "methods": [],
+  "tags": [
+   "協同的結合",
+   "ヒル係数",
+   "分配関数",
+   "リガンド結合"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 2,
+  "minutes": 20,
+  "theme": "排除体積効果とフローリー指数",
+  "topic": "排除体積効果とフローリー指数",
+  "statement": {
+   "tex": "良溶媒中の高分子（セグメント長 $b$，セグメント数 $N$）では，セグメントどうしが重なれない（排除体積）ため鎖が広がる．大きさ $R$ の鎖の自由エネルギーを，フローリーにならって\n\\[ \\frac{F(R)}{k_BT}=\\frac{3R^2}{2Nb^2}+\\frac{vN^2}{2R^3} \\]\nと見積もる．第1項はエントロピー弾性，第2項はセグメントの衝突の数（$v>0$ は排除体積）による．\n\\begin{enumerate}\n\\item $F$ を最小にする $R$ を $N,\\,b,\\,v$ で表せ．\n\\item $d$ 次元空間では第2項が $\\dfrac{vN^2}{2R^d}$ となる．$R\\propto N^\\nu$ と書くときの指数 $\\nu$ を $d$ で表せ．\n\\item $\\nu$ が理想鎖の値 $1/2$ に等しくなる次元 $d$ を求めよ．\n\\item 3次元で，同じ高分子の長さを10倍にすると $R$ は何倍になるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R=\\left(\\dfrac{vb^2N^3}{2}\\right)^{1/5}$ (2) $\\nu=\\dfrac{3}{d+2}$ (3) $d=4$ (4) $10^{3/5}\\approx3.98$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{1}{k_BT}\\dfrac{dF}{dR}=\\dfrac{3R}{Nb^2}-\\dfrac{3vN^2}{2R^4}=0$ より $R^5=\\dfrac{vb^2N^3}{2}$，\n\\[ \\boldsymbol{R=\\left(\\frac{vb^2N^3}{2}\\right)^{1/5}}\\propto N^{3/5}. \\]\n\n(2) $\\dfrac{3R}{Nb^2}=\\dfrac{dvN^2}{2R^{d+1}}$ より $R^{d+2}\\propto N^3$，$\\boldsymbol{\\nu=\\dfrac{3}{d+2}}$．\n\n(3) $\\dfrac{3}{d+2}=\\dfrac12$ より $\\boldsymbol{d=4}$．4次元以上ではランダムウォークが自分自身とほとんど交わらないため，排除体積は効かない（上部臨界次元）．\n\n(4) $10^{3/5}\\approx\\boldsymbol{3.98}$ 倍（理想鎖なら $\\sqrt{10}\\approx3.16$ 倍）．\n\nフローリーの $\\nu=3/5$ は，精密な値 $\\nu\\approx0.588$ に非常に近い（2つの項の誤差が打ち消し合うため）．$d=1$ では $\\nu=1$（まっすぐ伸びる）で厳密に正しく，$d=2$ の $\\nu=3/4$ も厳密値と一致する．変性したタンパク質の大きさも $R\\propto N^{0.59}$ に従うことが知られている．"
+   }
+  ],
+  "idea": {
+   "tex": "エントロピー弾性（鎖を縮める）と排除体積の反発（広げる）の釣り合いから $R\\propto N^{3/(d+2)}$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) R：(v b^2 N^3/2)^(1/5)\n(2) ν：3/(d+2)\n(3) d：4\n(4) ≈3.98"
+  },
+  "methods": [],
+  "tags": [
+   "排除体積",
+   "フローリー理論",
+   "スケーリング",
+   "高分子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 3,
+  "minutes": 25,
+  "theme": "強く引っ張ったみみず鎖：DNA の力－伸長曲線（マルコ＝シッジャ）",
+  "topic": "強く引っ張ったみみず鎖：DNA の力－伸長曲線（マルコ＝シッジャ）",
+  "statement": {
+   "tex": "長さ $L$ のみみず鎖を $z$ 方向の力 $f$ で引く．単位接ベクトル $\\vec t(s)$ の配置のエネルギーは\n\\[ E=\\frac{\\kappa}{2}\\int_0^L\\left|\\frac{d\\vec t}{ds}\\right|^2ds-f\\int_0^Lt_z\\,ds \\]\nで，$\\kappa$ は曲げ剛性，持続長は $\\xi=\\kappa/(k_BT)$ である．力が強いと $\\vec t\\simeq\\hat z$ で，横成分 $t_x,t_y$ は小さく $t_z\\simeq1-\\frac12(t_x^2+t_y^2)$ と近似できる．$L$ は十分長く，$t_x(s)=\\frac{1}{\\sqrt L}\\sum_q\\tilde t_x(q)e^{iqs}$（$q=2\\pi m/L$）とフーリエ展開してよい．\n\\begin{enumerate}\n\\item エネルギーの等分配則を用いて $\\langle t_x^2\\rangle$ を $k_BT,\\,\\kappa,\\,f$ で表せ．ただし $L\\to\\infty$ で $\\frac1L\\sum_q\\to\\int\\frac{dq}{2\\pi}$，$\\int_{-\\infty}^{\\infty}\\dfrac{dq}{2\\pi}\\dfrac{1}{\\kappa q^2+f}=\\dfrac{1}{2\\sqrt{\\kappa f}}$ である．\n\\item 相対的な縮み $1-\\langle z\\rangle/L$ を $k_BT,\\,f,\\,\\xi$ で表せ．\n\\item $\\xi=50\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\cdot nm}$ の DNA を全長の $95\\%$ まで伸ばすのに必要な力は何 $\\mathrm{pN}$ か．\n\\item 同じ DNA をクーン長 $b=2\\xi$ の自由連結鎖とみなすと，(3) の力での $1-\\langle z\\rangle/L$ はいくらと予測されるか（大きな力の近似 $1-\\langle z\\rangle/L\\simeq k_BT/(fb)$ を用いよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle t_x^2\\rangle=\\dfrac{k_BT}{2\\sqrt{\\kappa f}}$ (2) $1-\\dfrac{\\langle z\\rangle}{L}=\\dfrac12\\sqrt{\\dfrac{k_BT}{f\\xi}}$ (3) $f\\approx8.2\\,\\mathrm{pN}$ (4) $\\approx0.005$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 定数項を除くと $E=\\frac12\\int_0^L\\left[\\kappa(t_x'^2+t_y'^2)+f(t_x^2+t_y^2)\\right]ds$．フーリエ成分で書くと $E=\\frac12\\sum_q(\\kappa q^2+f)\\left(|\\tilde t_x(q)|^2+|\\tilde t_y(q)|^2\\right)$ となり，各モードは独立な調和振動子である．等分配則から $\\langle|\\tilde t_x(q)|^2\\rangle=\\dfrac{k_BT}{\\kappa q^2+f}$ で，\n\\[ \\langle t_x^2\\rangle=\\frac1L\\sum_q\\frac{k_BT}{\\kappa q^2+f}\\to\\int\\frac{dq}{2\\pi}\\frac{k_BT}{\\kappa q^2+f}=\\boldsymbol{\\frac{k_BT}{2\\sqrt{\\kappa f}}}. \\]\n主に波長 $\\sim\\sqrt{\\kappa/f}$ より長いゆらぎが効いている．\n\n(2) $\\langle t_z\\rangle=1-\\frac12\\langle t_x^2+t_y^2\\rangle=1-\\langle t_x^2\\rangle$ なので，$\\kappa=\\xi k_BT$ を使って\n\\[ \\boldsymbol{1-\\frac{\\langle z\\rangle}{L}=\\frac{k_BT}{2\\sqrt{\\kappa f}}=\\frac12\\sqrt{\\frac{k_BT}{f\\xi}}}. \\]\n\n(3) $\\dfrac12\\sqrt{\\dfrac{k_BT}{f\\xi}}=0.05$ より $f=\\dfrac{k_BT}{4\\xi(0.05)^2}=\\dfrac{4.1}{4\\times50\\times0.0025}\\,\\mathrm{pN}\\approx\\boldsymbol{8.2\\,\\mathrm{pN}}$．\n\n(4) $\\dfrac{k_BT}{fb}=\\dfrac{4.1}{8.2\\times100}\\approx\\boldsymbol{0.005}$．自由連結鎖は縮みを10倍も過小に見積もる．\n\nみみず鎖では縮みが $f^{-1/2}$ で減る（自由連結鎖は $f^{-1}$）．これは連続的な曲げのゆらぎが，大きな力でもなかなか伸び切らないためであり，光ピンセットによる DNA の測定結果はみみず鎖とよく一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "強い張力のもとで横ゆらぎを調和近似し，モードごとの等分配則で $\\langle t_\\perp^2\\rangle$ を出す．縮みは $f^{-1/2}$ でゆっくり消える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) <t_x^2>：k_B T/(2 sqrt(kappa f))\n(2) 1/2 sqrt(k_B T/(f xi))\n(3) f [pN]：≈8.2\n(4) ≈0.005"
+  },
+  "methods": [],
+  "tags": [
+   "みみず鎖",
+   "力－伸長曲線",
+   "等分配則",
+   "フーリエモード",
+   "DNA",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ヘリックス－コイル転移のジム＝ブラッグ模型",
+  "topic": "ヘリックス－コイル転移のジム＝ブラッグ模型",
+  "statement": {
+   "tex": "ポリペプチド鎖の各残基がヘリックス（h）かコイル（c）の状態をとる．統計的重みは，h の残基1つごとに $s$，h の連続した区間（ヘリックス）が1つ始まるごとに余分に $\\sigma\\ (\\ll1)$ とする（c の重みは $1$）．残基 $i$ と $i+1$ の状態の組に重みを割り当てる転送行列（行・列の順は h，c）\n\\[ M=\\begin{pmatrix} s & 1\\\\ \\sigma s & 1\\end{pmatrix} \\]\nを使うと，$N\\to\\infty$ で分配関数は $Z\\simeq\\lambda_+^N$（$\\lambda_+$ は $M$ の大きいほうの固有値）となる．\n\\begin{enumerate}\n\\item $\\lambda_+$ を $s,\\,\\sigma$ で表せ．\n\\item ヘリックスの割合は $\\theta=\\dfrac{\\partial\\ln\\lambda_+}{\\partial\\ln s}$ である．$s=1$ での $\\theta$ と $\\dfrac{d\\theta}{ds}$ を求めよ．\n\\item ヘリックスの区間数の残基あたりの平均は $\\dfrac{\\partial\\ln\\lambda_+}{\\partial\\ln\\sigma}$ である．$s=1$ でのヘリックス1本の平均の長さ（残基数）を求め，$\\sigma=10^{-4}$ のときの値を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda_+=\\dfrac{1+s+\\sqrt{(1-s)^2+4\\sigma s}}{2}$ (2) $\\theta=\\dfrac12$，$\\dfrac{d\\theta}{ds}=\\dfrac{1}{4\\sqrt\\sigma}$ (3) $1+\\dfrac{1}{\\sqrt\\sigma}$，$101$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 固有方程式 $(s-\\lambda)(1-\\lambda)-\\sigma s=0$，すなわち $\\lambda^2-(1+s)\\lambda+s(1-\\sigma)=0$ より\n\\[ \\boldsymbol{\\lambda_+=\\frac{1+s+\\sqrt{(1-s)^2+4\\sigma s}}{2}}. \\]\n\n(2) $\\theta=\\dfrac{s}{\\lambda_+}\\dfrac{\\partial\\lambda_+}{\\partial s}$，$\\dfrac{\\partial\\lambda_+}{\\partial s}=\\dfrac12\\left[1+\\dfrac{-(1-s)+2\\sigma}{\\sqrt{(1-s)^2+4\\sigma s}}\\right]$．$s=1$ では $\\lambda_+=1+\\sqrt\\sigma$，$\\partial_s\\lambda_+=\\dfrac{1+\\sqrt\\sigma}{2}$ なので $\\boldsymbol{\\theta=1/2}$．もう1回微分して整理すると\n\\[ \\left.\\frac{d\\theta}{ds}\\right|_{s=1}=\\frac{1+\\sqrt\\sigma}{4(\\sqrt\\sigma+\\sigma)}=\\boldsymbol{\\frac{1}{4\\sqrt\\sigma}}. \\]\n$\\sigma\\to0$ で転移はいくらでも鋭くなる．$\\sigma$ はヘリックスの始まりのコスト（最初の水素結合ができるまでのエントロピー損失）で，これが協同性の源である．\n\n(3) $\\nu=\\sigma\\dfrac{\\partial\\ln\\lambda_+}{\\partial\\sigma}$．$s=1$ では $\\lambda_+=1+\\sqrt\\sigma$ なので $\\nu=\\dfrac{\\sigma}{1+\\sqrt\\sigma}\\cdot\\dfrac{1}{2\\sqrt\\sigma}=\\dfrac{\\sqrt\\sigma}{2(1+\\sqrt\\sigma)}$．平均の長さは\n\\[ \\frac{\\theta}{\\nu}=\\boldsymbol{1+\\frac{1}{\\sqrt\\sigma}}, \\]\n$\\sigma=10^{-4}$ で $\\boldsymbol{101}$ 残基．\n\n1次元の短距離相互作用系なので真の相転移はないが，$\\sigma\\ll1$ だと $1/\\sqrt\\sigma$ 程度の長さのブロックが一斉に変わるため，鋭い転移に見える．"
+   }
+  ],
+  "idea": {
+   "tex": "転送行列の最大固有値が自由エネルギーを与え，$\\ln\\lambda_+$ を $s,\\sigma$ で微分すればヘリックス割合と区間数が出る．協同性の長さは $1/\\sqrt\\sigma$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) λ_+：(1+s+sqrt((1-s)^2+4 sigma s))/2\n(2) θ：1/2 ; dθ/ds：1/(4 sqrt(sigma))\n(3) 1+1/sqrt(sigma) ; 101"
+  },
+  "methods": [],
+  "tags": [
+   "ヘリックス－コイル転移",
+   "ジム＝ブラッグ模型",
+   "転送行列",
+   "協同性",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ガウス鎖の回転半径と散乱関数（デバイ関数）",
+  "topic": "ガウス鎖の回転半径と散乱関数（デバイ関数）",
+  "statement": {
+   "tex": "変性したタンパク質や DNA の大きさは，X線・中性子の小角散乱で測られる．セグメント数 $N\\ (\\gg1)$，セグメント長 $b$ のガウス鎖を連続的に扱い，鎖に沿った位置 $u\\in[0,N]$ の点を $\\vec r(u)$ とする．2点間の距離は $\\langle|\\vec r(u)-\\vec r(u')|^2\\rangle=|u-u'|b^2$ で，$\\vec r(u)-\\vec r(u')$ はガウス分布に従う．\n\\begin{enumerate}\n\\item 回転半径 $R_g^2=\\dfrac{1}{2N^2}\\displaystyle\\int_0^N\\!\\!\\int_0^N\\langle|\\vec r(u)-\\vec r(u')|^2\\rangle\\,du\\,du'$ を $N,\\,b$ で表せ．\n\\item 散乱関数 $S(q)=\\dfrac{1}{N^2}\\displaystyle\\int_0^N\\!\\!\\int_0^N\\langle e^{i\\vec q\\cdot(\\vec r(u)-\\vec r(u'))}\\rangle\\,du\\,du'$ を $x=q^2R_g^2$ の関数として求めよ．ガウス分布する3次元ベクトル $\\vec a$ に対して $\\langle e^{i\\vec q\\cdot\\vec a}\\rangle=e^{-q^2\\langle|\\vec a|^2\\rangle/6}$ である．\n\\item $x\\ll1$ での $S$ の展開を $x$ の1次まで求めよ．\n\\item $x\\gg1$ での $S$ の主要項を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R_g^2=\\dfrac{Nb^2}{6}$ (2) $S=\\dfrac{2\\left(e^{-x}+x-1\\right)}{x^2}$ (3) $S\\simeq1-\\dfrac{x}{3}$ (4) $S\\simeq\\dfrac{2}{x}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\displaystyle\\int_0^N\\!\\!\\int_0^N|u-u'|\\,du\\,du'=\\frac{N^3}{3}$ なので $R_g^2=\\dfrac{b^2}{2N^2}\\cdot\\dfrac{N^3}{3}=\\boldsymbol{\\dfrac{Nb^2}{6}}$．末端間距離の2乗 $Nb^2$ の $1/6$ である．\n\n(2) $\\langle e^{i\\vec q\\cdot(\\vec r(u)-\\vec r(u'))}\\rangle=e^{-q^2b^2|u-u'|/6}$．$\\alpha=q^2b^2/6$ とおくと\n\\[ S=\\frac{2}{N^2}\\int_0^N du\\int_0^u e^{-\\alpha(u-u')}du'=\\frac{2}{N^2\\alpha^2}\\left(e^{-\\alpha N}+\\alpha N-1\\right). \\]\n$\\alpha N=q^2R_g^2=x$ なので\n\\[ \\boldsymbol{S=\\frac{2\\left(e^{-x}+x-1\\right)}{x^2}} \\]\n（デバイ関数）．\n\n(3) $e^{-x}=1-x+\\frac{x^2}{2}-\\frac{x^3}{6}+\\cdots$ を代入して $S=1-\\dfrac{x}{3}+\\cdots$，すなわち $\\boldsymbol{S\\simeq1-\\dfrac{q^2R_g^2}{3}}$．これはギニエの法則で，鎖の形によらず小さい $q$ の散乱から $R_g$ が決まる．\n\n(4) $S\\simeq\\boldsymbol{\\dfrac{2}{x}}=\\dfrac{12}{q^2Nb^2}$．$q^{-2}$ のべきは，$1/q$ より短いスケールで鎖がランダムウォーク（フラクタル次元2）であることを反映する．排除体積のある鎖では $S\\propto q^{-1/\\nu}$ となる．"
+   }
+  ],
+  "idea": {
+   "tex": "2点の距離分布がガウス型なら散乱振幅の平均は $e^{-q^2|u-u'|b^2/6}$．二重積分でデバイ関数，小 $q$ でギニエ則，大 $q$ でフラクタル次元が読める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) R_g^2：N b^2/6\n(2) S：2(e^(-x)+x-1)/x^2\n(3) S：1-x/3\n(4) S：2/x"
+  },
+  "methods": [],
+  "tags": [
+   "ガウス鎖",
+   "回転半径",
+   "小角散乱",
+   "デバイ関数",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 4,
+  "minutes": 35,
+  "theme": "アロステリック効果の MWC モデル",
+  "topic": "アロステリック効果の MWC モデル",
+  "statement": {
+   "tex": "2つの結合部位をもつタンパク質が，2つの構造 R（弛緩型）と T（緊張型）をとる（モノー＝ワイマン＝シャンジュー模型）．リガンドがないとき，T と R の存在比は $[T]/[R]=L\\ (>1)$ である．各構造の中では2つの部位は独立で，解離定数は R で $K_R$，T で $K_T$ とする．$x=c/K_R$（$c$ はリガンド濃度），$r=K_R/K_T\\ (<1)$ とおくと，分配関数（R の空の状態の重みを1とする）は\n\\[ Z=(1+x)^2+L(1+rx)^2 \\]\nとなる．\n\\begin{enumerate}\n\\item 部位の占有率 $\\theta=\\dfrac{x}{2}\\dfrac{\\partial\\ln Z}{\\partial x}$ を求めよ．\n\\item 構造 R にある確率が $1/2$ となる $x$ を $L,\\,r$ で表せ（$r\\sqrt L<1$ とする）．\n\\item $r=0$（リガンドは R にしか結合しない）とする．$\\theta=1/2$ となる $x$ と，そこでのヒル係数 $n_H=\\dfrac{d\\ln[\\theta/(1-\\theta)]}{d\\ln x}$ を $L$ で表せ．\n\\item (3) で $L=8$ のとき，$\\theta=1/2$ となる $x$ と $n_H$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\theta=\\dfrac{x(1+x)+Lrx(1+rx)}{(1+x)^2+L(1+rx)^2}$ (2) $x=\\dfrac{\\sqrt L-1}{1-r\\sqrt L}$ (3) $x=\\sqrt{1+L}$，$n_H=\\dfrac{2\\sqrt{1+L}}{1+\\sqrt{1+L}}$ (4) $x=3$，$n_H=\\dfrac32$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{\\partial Z}{\\partial x}=2(1+x)+2Lr(1+rx)$ より\n\\[ \\boldsymbol{\\theta=\\frac{x(1+x)+Lrx(1+rx)}{(1+x)^2+L(1+rx)^2}}. \\]\n\n(2) R にある確率は $\\dfrac{(1+x)^2}{Z}$．これが $1/2$ となるのは $(1+x)^2=L(1+rx)^2$，すなわち $1+x=\\sqrt L(1+rx)$ のときで\n\\[ \\boldsymbol{x=\\frac{\\sqrt L-1}{1-r\\sqrt L}}. \\]\nリガンドが R により強く結合するため，結合が進むと構造が T から R へ切り替わる（構造の変化がリガンドを介して部位間の「情報」を伝える）．\n\n(3) $r=0$ では $\\theta=\\dfrac{x(1+x)}{(1+x)^2+L}$．$\\theta=1/2$ は $2x(1+x)=(1+x)^2+L$，すなわち $x^2=1+L$ で $\\boldsymbol{x=\\sqrt{1+L}}$．次に $\\dfrac{\\theta}{1-\\theta}=\\dfrac{x(1+x)}{1+x+L}$ より\n\\[ n_H=1+\\frac{x}{1+x}-\\frac{x}{1+x+L}. \\]\n$a=\\sqrt{1+L}$ とおくと $1+a+L=a+a^2=a(1+a)$ なので $\\dfrac{x}{1+x+L}=\\dfrac{1}{1+a}$，\n\\[ \\boldsymbol{n_H=1+\\frac{a-1}{a+1}=\\frac{2\\sqrt{1+L}}{1+\\sqrt{1+L}}}. \\]\n$L=0$（構造変化なし）で $n_H=1$，$L\\to\\infty$ で $n_H\\to2$ となる．\n\n(4) $a=3$ より $\\boldsymbol{x=3}$，$\\boldsymbol{n_H=6/4=3/2}$．\n\n部位どうしが直接相互作用しなくても，2つの構造の間の平衡を通じて協同性が生まれる．ヘモグロビン（4部位）の酸素結合曲線は MWC モデルでよく再現され，$L\\sim10^4$ 程度である．"
+   }
+  ],
+  "idea": {
+   "tex": "部位どうしの直接の相互作用がなくても，リガンド親和性の異なる2つの構造の平衡を介して協同性（$n_H>1$）が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) θ：(x(1+x)+L r x(1+r x))/((1+x)^2+L(1+r x)^2)\n(2) x：(sqrt(L)-1)/(1-r sqrt(L))\n(3) x：sqrt(1+L) ; n_H：2 sqrt(1+L)/(1+sqrt(1+L))\n(4) x：3 ; n_H：3/2"
+  },
+  "methods": [],
+  "tags": [
+   "MWCモデル",
+   "アロステリー",
+   "協同的結合",
+   "ヒル係数",
+   "ヘモグロビン",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 4,
+  "minutes": 35,
+  "theme": "狭い空間に閉じ込めた高分子の自由エネルギー",
+  "topic": "狭い空間に閉じ込めた高分子の自由エネルギー",
+  "statement": {
+   "tex": "DNA を細いナノ流路やウイルスの殻に閉じ込めるときの自由エネルギーを考える．セグメント長 $b$，セグメント数 $N$ のガウス鎖で，一端を $\\vec r_0$ に固定したとき他端が $\\vec r$ にある重み $G(\\vec r,N)$ は拡散方程式\n\\[ \\frac{\\partial G}{\\partial N}=\\frac{b^2}{6}\\nabla^2G \\]\nに従い，鎖が入れない壁の上では $G=0$ である．分配関数は $Z=\\int G\\,d^3r$ で，閉じ込めによる自由エネルギーの増加は $\\Delta F=-k_BT\\ln(Z/Z_{\\mathrm{free}})$ である．\n\\begin{enumerate}\n\\item 鎖を間隔 $D$ の2枚の平板 $0<z<D$ の間に閉じ込める．$Nb^2\\gg D^2$ のとき，$G$ の $z$ 依存性は最も減衰の遅い固有関数 $\\sin(\\pi z/D)$ が支配する．$\\Delta F$ の主要項を $N,\\,b,\\,D,\\,k_BT$ で表せ．\n\\item 鎖が平板を押し広げる力 $f=-\\partial\\Delta F/\\partial D$ を求めよ．\n\\item 半径 $a$ の円筒の中に閉じ込めた場合の $\\Delta F$ の主要項を求めよ．2次元のヘルムホルツ方程式 $\\nabla^2\\psi=-k^2\\psi$ の円内で $\\psi=0$（周上）を満たす最小の $k$ は $k=j/a$（$j\\approx2.405$ はベッセル関数 $J_0$ の最初の零点）である．\n\\item $b=100\\,\\mathrm{nm}$，$Nb=16\\,\\mathrm{\\mu m}$ の DNA を $D=1.0\\,\\mathrm{\\mu m}$ の平板間に閉じ込めたときの $\\Delta F/(k_BT)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta F=\\dfrac{\\pi^2Nb^2k_BT}{6D^2}$ (2) $f=\\dfrac{\\pi^2Nb^2k_BT}{3D^3}$ (3) $\\Delta F=\\dfrac{j^2Nb^2k_BT}{6a^2}$ (4) $\\approx2.6$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $G=\\sum_n c_n\\sin\\dfrac{n\\pi z}{D}\\,e^{-\\frac{b^2}{6}\\left(\\frac{n\\pi}{D}\\right)^2N}\\times(\\text{$x,y$ 方向の自由な拡散})$ と展開でき，$Nb^2\\gg D^2$ では $n=1$ の項だけが残る．$x,y$ 方向の積分は自由な鎖と同じなので，\n\\[ \\frac{Z}{Z_{\\mathrm{free}}}\\simeq(\\text{$N$ によらない係数})\\times\\exp\\left(-\\frac{\\pi^2Nb^2}{6D^2}\\right), \\]\n\\[ \\boldsymbol{\\Delta F\\simeq\\frac{\\pi^2Nb^2k_BT}{6D^2}}. \\]\n$N$ に比例する（示量的な）項が主要項で，係数の対数は $N$ によらない補正である．\n\n(2) $\\boldsymbol{f=\\dfrac{\\pi^2Nb^2k_BT}{3D^3}}$．閉じ込められた鎖は壁を押し広げようとする（エントロピー的な圧力）．\n\n(3) 断面の固有値 $k^2=j^2/a^2$ が $(\\pi/D)^2$ の代わりに入り，\n\\[ \\boldsymbol{\\Delta F\\simeq\\frac{j^2Nb^2k_BT}{6a^2}}\\approx\\frac{0.96\\,Nb^2k_BT}{a^2}. \\]\n\n(4) $Nb^2=1.6\\times10^6\\,\\mathrm{nm^2}$，$D^2=10^6\\,\\mathrm{nm^2}$ より $\\dfrac{\\Delta F}{k_BT}=\\dfrac{\\pi^2\\times1.6}{6}\\approx\\boldsymbol{2.6}$．\n\n鎖の自由度を「虚時間の量子力学」と見ると，(1) は箱の中の粒子の基底エネルギー（$\\hbar^2/2m\\leftrightarrow b^2/6$）に当たる．$D$ が持続長に近いほど狭くなると，みみず鎖の曲げの効果が効いて $\\Delta F\\propto N D^{-2/3}$（オダイク領域）に変わる．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス鎖の重みは拡散方程式に従い，閉じ込めの自由エネルギーは最低固有値 $\\times\\,Nb^2/6$．箱の中の量子力学と同じ構造である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ΔF：pi^2 N b^2 k_B T/(6D^2)\n(2) f：pi^2 N b^2 k_B T/(3D^3)\n(3) ΔF：j^2 N b^2 k_B T/(6a^2)\n(4) ≈2.6"
+  },
+  "methods": [],
+  "tags": [
+   "ガウス鎖",
+   "閉じ込め",
+   "拡散方程式",
+   "固有値問題",
+   "DNA",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 4,
+  "minutes": 40,
+  "theme": "タンパク質の折り畳みのランダムエネルギー模型とガラス転移",
+  "topic": "タンパク質の折り畳みのランダムエネルギー模型とガラス転移",
+  "statement": {
+   "tex": "$N$ 残基のタンパク質で，各残基が $\\gamma$ 通りの形をとるとすると，変性状態の形は全部で $\\gamma^N$ 通りある．それらのエネルギーは互いに無関係で，平均 $0$，分散 $w^2$ の正規分布に従うとする（ランダムエネルギー模型）．すなわちエネルギーが $E$ 付近の幅 $dE$ にある形の数は\n\\[ n(E)\\,dE=\\frac{\\gamma^N}{\\sqrt{2\\pi w^2}}e^{-E^2/(2w^2)}dE \\]\nである．$N\\gg1$，$w^2\\propto N$ とし，$n(E)$ の前の係数 $1/\\sqrt{2\\pi w^2}$ の対数は無視してよい．天然状態は1つだけで，エネルギーは $E_N\\ (<0)$ である．\n\\begin{enumerate}\n\\item 変性状態のエントロピー $S(E)=k_B\\ln n(E)$ が $0$ になるエネルギー $E_c\\ (<0)$ と，変性状態がそのエネルギーまで冷える温度 $T_g$（$1/T=dS/dE$ から求める．ガラス転移温度）を求めよ．\n\\item $T>T_g$ での変性状態の自由エネルギー $F_U=E-TS$ を $T$ の関数として求めよ．\n\\item 天然状態の自由エネルギー $E_N$ と $F_U$ が等しくなる折り畳み温度 $T_f\\ (>T_g)$ を求めよ（$|E_N|>|E_c|$ とする）．\n\\item $E_N=\\dfrac54E_c$ のとき $T_f/T_g$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_c=-w\\sqrt{2N\\ln\\gamma}$，$T_g=\\dfrac{w}{k_B\\sqrt{2N\\ln\\gamma}}$ (2) $F_U=-\\dfrac{w^2}{2k_BT}-k_BTN\\ln\\gamma$ (3) $T_f=\\dfrac{-E_N+\\sqrt{E_N^2-2Nw^2\\ln\\gamma}}{2Nk_B\\ln\\gamma}$ (4) $2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $S(E)=k_B\\left[N\\ln\\gamma-\\dfrac{E^2}{2w^2}\\right]$．$S=0$ より $\\boldsymbol{E_c=-w\\sqrt{2N\\ln\\gamma}}$．$\\dfrac1T=\\dfrac{dS}{dE}=-\\dfrac{k_BE}{w^2}$ より $E(T)=-\\dfrac{w^2}{k_BT}$．これが $E_c$ に達する温度は\n\\[ \\boldsymbol{T_g=\\frac{w}{k_B\\sqrt{2N\\ln\\gamma}}}. \\]\n$T<T_g$ では変性状態は数個の最低エネルギーの形に凍結し（ガラス状態），その間の行き来は極端に遅くなる．\n\n(2) $E=-\\dfrac{w^2}{k_BT}$，$S=k_BN\\ln\\gamma-\\dfrac{k_B}{2w^2}\\dfrac{w^4}{k_B^2T^2}$ を代入して\n\\[ \\boldsymbol{F_U=-\\frac{w^2}{2k_BT}-k_BTN\\ln\\gamma}. \\]\n\n(3) $E_N=F_U(T_f)$ を $\\tau=k_BT_f$ について整理すると $N\\ln\\gamma\\,\\tau^2+E_N\\tau+\\dfrac{w^2}{2}=0$．2つの解の積は $\\dfrac{w^2}{2N\\ln\\gamma}=(k_BT_g)^2$ なので，一方が $T_g$ より上，他方が下にある．大きいほうを取って\n\\[ \\boldsymbol{T_f=\\frac{-E_N+\\sqrt{E_N^2-2Nw^2\\ln\\gamma}}{2Nk_B\\ln\\gamma}}. \\]\n$F_U$ は $T$ について単調減少（$dF_U/dT=-S<0$）で $F_U(T_g)=E_c$ だから，$T_f>T_g$ となる条件は $E_N<E_c$，つまり天然状態が変性状態のエネルギー分布の「底」より十分低いことである．\n\n(4) $E_N^2-E_c^2=\\dfrac{9}{16}E_c^2$ より $k_BT_f=\\dfrac{\\frac54|E_c|+\\frac34|E_c|}{2N\\ln\\gamma}=\\dfrac{|E_c|}{N\\ln\\gamma}$．一方 $k_BT_g=\\dfrac{|E_c|}{2N\\ln\\gamma}$ なので $T_f/T_g=\\boldsymbol{2}$．\n\n速く確実に折り畳まれるには，ガラス状態に捕まる前に天然状態が安定になる，すなわち $T_f/T_g$ が大きいことが必要である（ブリンゲルソン＝ウォリネスの「最小フラストレーションの原理」）．進化はアミノ酸配列を選んで $T_f/T_g$ を大きくしたと考えられる．"
+   }
+  ],
+  "idea": {
+   "tex": "ランダムな配列のエネルギー地形ではエントロピーが $0$ になる温度 $T_g$ で凍結する．天然状態のエネルギーが分布の底 $E_c$ より低ければ $T_f>T_g$ で折り畳める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) E_c：-w sqrt(2N ln gamma) ; T_g：w/(k_B sqrt(2N ln gamma))\n(2) F_U：-w^2/(2 k_B T) - k_B T N ln gamma\n(3) T_f：(-E_N+sqrt(E_N^2-2N w^2 ln gamma))/(2N k_B ln gamma)\n(4) 2"
+  },
+  "methods": [],
+  "tags": [
+   "ランダムエネルギー模型",
+   "タンパク質の折り畳み",
+   "ガラス転移",
+   "エネルギー地形",
+   "院試"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]

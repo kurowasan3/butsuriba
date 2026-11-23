@@ -1,0 +1,749 @@
+[
+ {
+  "id": "BP-03-001",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 0,
+  "minutes": 10,
+  "theme": "ATP 加水分解の自由エネルギーとキネシンの効率",
+  "topic": "ATP 加水分解の自由エネルギーとキネシンの効率",
+  "statement": {
+   "tex": "細胞の中では，ATP（アデノシン三リン酸）が ADP（アデノシン二リン酸）とリン酸 Pi に分解される反応 ATP $\\to$ ADP $+$ Pi が，さまざまな分子機械のエネルギー源になっている．この反応で 1 mol あたりに使える自由エネルギー（ギブズエネルギー変化）は\n\\[ \\Delta G=\\Delta G_0+RT\\ln\\frac{[\\mathrm{ADP}][\\mathrm{Pi}]}{[\\mathrm{ATP}]} \\]\nで与えられる．ここで $[\\ ]$ は濃度を $1\\,\\mathrm{M}\\ (=1\\,\\mathrm{mol/L})$ を単位として表した数，$\\Delta G_0=-30.5\\,\\mathrm{kJ/mol}$，$R=8.314\\,\\mathrm{J/(mol\\,K)}$ である．$\\Delta G<0$ なら反応は自発的に進み，$|\\Delta G|$ が取り出しうる仕事の上限になる．温度は $T=310\\,\\mathrm{K}$ とする．\n\\begin{enumerate}\n\\item 細胞内の濃度が $[\\mathrm{ATP}]=5.0\\,\\mathrm{mM}$，$[\\mathrm{ADP}]=0.050\\,\\mathrm{mM}$，$[\\mathrm{Pi}]=5.0\\,\\mathrm{mM}$ のとき，$\\Delta G$ を $\\mathrm{kJ/mol}$ 単位で求めよ．\n\\item (1) の $|\\Delta G|$ を ATP 1分子あたりのエネルギーに直し，$\\mathrm{pN\\,nm}\\ (=10^{-21}\\,\\mathrm{J})$ 単位で求めよ．アボガドロ定数は $N_A=6.022\\times10^{23}\\,\\mathrm{mol^{-1}}$ とする．\n\\item キネシンは微小管の上を ATP 1分子につき $8.0\\,\\mathrm{nm}$ ずつ歩く分子モーターである．$6.0\\,\\mathrm{pN}$ の後ろ向きの力に逆らって1歩進むときにする仕事と，(2) のエネルギーとの比（効率）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta G\\approx-56.0\\,\\mathrm{kJ/mol}$　(2) $\\approx93.0\\,\\mathrm{pN\\,nm}$　(3) 効率 $\\approx0.516$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 濃度比は $\\dfrac{(0.050\\times10^{-3})(5.0\\times10^{-3})}{5.0\\times10^{-3}}=5.0\\times10^{-5}$．$RT=8.314\\times310=2577\\,\\mathrm{J/mol}$ なので\n\\[ \\Delta G=-30.5+2.577\\times\\ln(5.0\\times10^{-5})=-30.5-25.5\\approx\\boldsymbol{-56.0\\,\\mathrm{kJ/mol}}. \\]\nADP が ATP よりずっと少ない（反応が平衡から遠い）ほど，$|\\Delta G|$ は $|\\Delta G_0|$ より大きくなる．\n\n(2) $\\dfrac{56.0\\times10^{3}}{6.022\\times10^{23}}=9.30\\times10^{-20}\\,\\mathrm{J}=\\boldsymbol{93.0\\,\\mathrm{pN\\,nm}}$．これは熱エネルギー $k_BT\\approx4.28\\,\\mathrm{pN\\,nm}$ の約 22 倍である．\n\n(3) 仕事は $6.0\\,\\mathrm{pN}\\times8.0\\,\\mathrm{nm}=48\\,\\mathrm{pN\\,nm}$．効率は $48/93.0\\approx\\boldsymbol{0.516}$．\n\n分子モーターは熱ゆらぎ $k_BT$ の数十倍しかないエネルギーで動いている．次は，ゆらぎの中で力と速度がどう決まるか（化学反応の速度と力の関係）を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "細胞内の ATP 加水分解の自由エネルギーは濃度で決まり，1分子あたり約 $20k_BT\\approx90\\,\\mathrm{pN\\,nm}$．力×歩幅と比べて効率がわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ΔG [kJ/mol]：≈-56.0\n(2) [pN nm]：≈93.0\n(3) 効率：≈0.516"
+  },
+  "methods": [],
+  "tags": [
+   "ATP",
+   "自由エネルギー",
+   "キネシン",
+   "効率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-002",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 0,
+  "minutes": 10,
+  "theme": "プロトン駆動力と ATP 合成酵素の化学量論",
+  "topic": "プロトン駆動力と ATP 合成酵素の化学量論",
+  "statement": {
+   "tex": "ミトコンドリアの内膜では，膜の内外の電位差と水素イオン（プロトン）の濃度差によって，プロトンが内側へ流れ込もうとする．プロトン1個が内側へ移るときに放出する自由エネルギーは，素電荷を $q$ として $q\\Delta p$ と書け，\n\\[ \\Delta p=\\Delta\\psi+\\frac{k_BT}{q}\\,(\\ln10)\\,\\Delta\\mathrm{pH} \\]\n（プロトン駆動力）で与えられる．$\\Delta\\psi$ は膜電位の大きさ，$\\Delta\\mathrm{pH}$ は内外の pH の差で，どちらもプロトンを内側へ押し込む向きを正とする．$T=310\\,\\mathrm{K}$ で $k_BT/q=26.7\\,\\mathrm{mV}$，$q=1.602\\times10^{-19}\\,\\mathrm{C}$ とする．\n\\begin{enumerate}\n\\item $\\Delta\\psi=150\\,\\mathrm{mV}$，$\\Delta\\mathrm{pH}=0.80$ のとき，$\\Delta p$ を $\\mathrm{mV}$ 単位で求めよ．\n\\item プロトン1個が放出する自由エネルギー $q\\Delta p$ を $\\mathrm{pN\\,nm}\\ (=10^{-21}\\,\\mathrm{J})$ 単位で求めよ．\n\\item ATP 1分子の合成には $83.0\\,\\mathrm{pN\\,nm}$ の自由エネルギーが必要とする．ATP 合成酵素は，膜の中の回転子（10個のサブユニットの輪）がプロトン10個の通過で1回転し，1回転で ATP を3分子つくる．ATP 1分子あたりのプロトン数と，このときのエネルギー変換効率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta p\\approx199\\,\\mathrm{mV}$　(2) $q\\Delta p\\approx31.9\\,\\mathrm{pN\\,nm}$　(3) プロトン数 $\\frac{10}{3}$，効率 $\\approx0.78$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $26.7\\times2.303\\times0.80=49.2\\,\\mathrm{mV}$ なので $\\Delta p=150+49.2\\approx\\boldsymbol{199\\,\\mathrm{mV}}$．\n\n(2) $q\\Delta p=1.602\\times10^{-19}\\times0.199=3.19\\times10^{-20}\\,\\mathrm{J}=\\boldsymbol{31.9\\,\\mathrm{pN\\,nm}}$．\n\n(3) 1回転で 10 個のプロトンが通り 3 分子の ATP ができるので，ATP 1分子あたり $\\boldsymbol{10/3}$ 個．使われる自由エネルギーは $\\frac{10}{3}\\times31.9=106\\,\\mathrm{pN\\,nm}$ なので，効率は $83.0/106\\approx\\boldsymbol{0.78}$．\n\nエネルギーだけから見ると $83.0/31.9=2.6$ 個，つまり最低 3 個のプロトンがあれば足りる．整数でない化学量論 $10/3$ は，回転子のサブユニット数と ATP をつくる部位の数（3）の比で決まっている．次は，この回転運動そのもの（F$_1$ モーターのトルクとゆらぎ）を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "膜を挟む電位差と濃度差は，合わせて1つの「駆動力」になる．回転モーターでは歯車の比が化学量論を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Δp [mV]：≈199\n(2) [pN nm]：≈31.9\n(3) プロトン数：10/3 ; 効率：≈0.78"
+  },
+  "methods": [],
+  "tags": [
+   "プロトン駆動力",
+   "ATP合成酵素",
+   "化学浸透",
+   "膜電位",
+   "効率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-003",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 0,
+  "minutes": 8,
+  "theme": "ランダウアー原理で見積もる情報処理のエネルギー",
+  "topic": "ランダウアー原理で見積もる情報処理のエネルギー",
+  "statement": {
+   "tex": "1ビットの情報（0 か 1 かが等確率でわからない状態）を記録したメモリを消去して，必ず 0 の状態にそろえるには，温度 $T$ の環境の中では少なくとも\n\\[ W_{\\min}=k_BT\\ln2 \\]\nの仕事が必要である（ランダウアー原理）．$k_B=1.381\\times10^{-23}\\,\\mathrm{J/K}$，$T=300\\,\\mathrm{K}$ とする．\n\\begin{enumerate}\n\\item $W_{\\min}$ を $\\mathrm{pN\\,nm}\\ (=10^{-21}\\,\\mathrm{J})$ 単位で求めよ．\n\\item ATP 1分子の加水分解で使える自由エネルギーを $20k_BT$ とする．このエネルギーで消去できるビット数の上限を求めよ．\n\\item DNA を複製するとき，1塩基ごとに4種類（A，T，G，C）のうち1つを選んで書き込む．これは $\\log_2 4=2$ ビットの情報の記録にあたる．1塩基の書き込みに ATP 1分子ぶん（$20k_BT$）を使うとすると，ランダウアー原理の下限（2 ビットぶん）はその何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $W_{\\min}\\approx2.87\\,\\mathrm{pN\\,nm}$　(2) $\\dfrac{20}{\\ln2}\\approx28.9$ ビット　(3) $\\dfrac{\\ln2}{10}\\approx0.069$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $k_BT=1.381\\times10^{-23}\\times300=4.14\\times10^{-21}\\,\\mathrm{J}=4.14\\,\\mathrm{pN\\,nm}$．よって $W_{\\min}=4.14\\times0.693\\approx\\boldsymbol{2.87\\,\\mathrm{pN\\,nm}}$．\n\n(2) $\\dfrac{20k_BT}{k_BT\\ln2}=\\boldsymbol{\\dfrac{20}{\\ln2}\\approx28.9}$ ビット．\n\n(3) 下限は $2k_BT\\ln2$ なので $\\dfrac{2k_BT\\ln2}{20k_BT}=\\boldsymbol{\\dfrac{\\ln2}{10}\\approx0.069}$ 倍．実際の複製は下限の約 15 倍のエネルギーを使っている．間違いを減らす（校正する）にはさらにエネルギーが必要になる．\n\nランダウアー原理は「情報も熱力学の量である」ことを示している．次は，測定とフィードバックで仕事を取り出す「マクスウェルの悪魔」の熱力学を学ぶとよい．"
+   }
+  ],
+  "idea": {
+   "tex": "情報の消去には $k_BT\\ln2$ 毎ビットの仕事がいる．生体分子の扱うエネルギー（$\\sim20k_BT$）と同じ尺度で比べられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) W_min [pN nm]：≈2.87\n(2) ビット数：≈28.9\n(3) ≈0.069"
+  },
+  "methods": [],
+  "tags": [
+   "ランダウアー原理",
+   "情報熱力学",
+   "ATP",
+   "DNA複製"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-004",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 1,
+  "minutes": 15,
+  "theme": "キネシンの連続歩行距離（プロセッシビティ）と負荷",
+  "topic": "キネシンの連続歩行距離（プロセッシビティ）と負荷",
+  "statement": {
+   "tex": "キネシンは微小管から離れるまでに何百歩も連続して歩く．これを次のように模型化する．モーターは微小管に結合している間，速度定数 $k_s$ のポアソン過程で前向きに距離 $d$ ずつ進み，それとは独立に速度定数 $k_d$ で微小管から離れる（解離）．\n\\begin{enumerate}\n\\item 結合していた時間の平均 $\\tau$ と，離れるまでに進む距離（走行距離）の平均 $\\langle L\\rangle$ を求めよ．\n\\item 走行距離が $x$ を超える確率 $P(L>x)$ を求めよ（$\\langle L\\rangle\\gg d$ として連続量で扱ってよい）．\n\\item $d=8.0\\,\\mathrm{nm}$，$k_s=100\\,\\mathrm{s^{-1}}$，$k_d=1.0\\,\\mathrm{s^{-1}}$ のとき，$\\langle L\\rangle$ と $P(L>2.0\\,\\mathrm{\\mu m})$ を求めよ．\n\\item 後ろ向きの負荷 $f=4.0\\,\\mathrm{pN}$ をかけると，離脱の速度定数は $k_d(f)=k_d\\,e^{f\\delta/k_BT}$（$\\delta=1.2\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\,nm}$）に増え，歩行の速度定数は $50\\,\\mathrm{s^{-1}}$ に下がった．このときの $\\langle L\\rangle$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tau=\\dfrac{1}{k_d}$，$\\langle L\\rangle=\\dfrac{d\\,k_s}{k_d}$　(2) $P(L>x)=e^{-xk_d/(d\\,k_s)}$　(3) $\\langle L\\rangle\\approx800\\,\\mathrm{nm}$，$P\\approx0.082$　(4) $\\langle L\\rangle\\approx124\\,\\mathrm{nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 結合時間は速度定数 $k_d$ の指数分布にしたがうので $\\boldsymbol{\\tau=1/k_d}$．その間の平均歩数は $k_s\\tau$ なので $\\boldsymbol{\\langle L\\rangle=dk_s/k_d}$．\n\n（離散的に見ると，各事象が「離脱」である確率は $p=k_d/(k_s+k_d)$ で，離脱までの歩数は幾何分布，平均歩数は $(1-p)/p=k_s/k_d$ となり一致する．）\n\n(2) $n$ 歩以上進む確率は $(1-p)^n\\simeq e^{-np}$．$n=x/d$，$p\\simeq k_d/k_s$ として\n\\[ \\boldsymbol{P(L>x)=e^{-xk_d/(dk_s)}=e^{-x/\\langle L\\rangle}}. \\]\n\n(3) $\\langle L\\rangle=8.0\\times100/1.0=\\boldsymbol{800\\,\\mathrm{nm}}$，$P=e^{-2000/800}=e^{-2.5}\\approx\\boldsymbol{0.082}$．\n\n(4) $f\\delta/k_BT=4.8/4.1=1.17$ より $k_d(f)=3.22\\,\\mathrm{s^{-1}}$．$\\langle L\\rangle=8.0\\times50/3.22\\approx\\boldsymbol{124\\,\\mathrm{nm}}$．負荷は歩行を遅くし離脱を速めるので，走行距離は2つの効果の積で急に短くなる．"
+   }
+  ],
+  "idea": {
+   "tex": "互いに独立なポアソン過程の競合．走行距離は指数分布で，平均は（歩行速度）/（離脱率）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) τ：1/k_d ; ⟨L⟩：d k_s/k_d\n(2) e^(-x k_d/(d k_s))\n(3) ⟨L⟩ [nm]：≈800 ; P：≈0.082\n(4) ⟨L⟩ [nm]：≈124"
+  },
+  "methods": [],
+  "tags": [
+   "キネシン",
+   "プロセッシビティ",
+   "ポアソン過程",
+   "指数分布",
+   "ベル模型"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-005",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 1,
+  "minutes": 15,
+  "theme": "2準位系の急なエネルギー変化とジャルジンスキー等式",
+  "topic": "2準位系の急なエネルギー変化とジャルジンスキー等式",
+  "statement": {
+   "tex": "エネルギー $0$ と $\\varepsilon$ の2状態をとる分子（たとえば2つの構造をとるタンパク質）が温度 $T$ の熱浴と平衡にある（$\\beta=1/k_BT$）．時刻 $0$ に外部操作で上の準位のエネルギーを $\\varepsilon$ から $\\varepsilon_1$ に一瞬で変える．一瞬なので状態は変わらず，系がされる仕事 $W$ は，上の状態にいれば $\\varepsilon_1-\\varepsilon$，下の状態にいれば $0$ である．\n\\begin{enumerate}\n\\item 仕事の平均 $\\langle W\\rangle$ を求めよ．\n\\item $\\langle e^{-\\beta W}\\rangle$ を計算し，それが $e^{-\\beta\\Delta F}$（$\\Delta F$ は操作の前後の平衡状態の自由エネルギー差）に等しいことを確かめよ．$\\Delta F$ を求めよ．\n\\item $\\varepsilon=k_BT$，$\\varepsilon_1=3k_BT$ のとき，$\\langle W\\rangle/k_BT$ と $\\Delta F/k_BT$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle W\\rangle=\\dfrac{(\\varepsilon_1-\\varepsilon)e^{-\\beta\\varepsilon}}{1+e^{-\\beta\\varepsilon}}$　(2) $\\Delta F=-k_BT\\ln\\dfrac{1+e^{-\\beta\\varepsilon_1}}{1+e^{-\\beta\\varepsilon}}$　(3) $\\dfrac{\\langle W\\rangle}{k_BT}\\approx0.538$，$\\dfrac{\\Delta F}{k_BT}\\approx0.265$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 上の状態にいる確率は $p=\\dfrac{e^{-\\beta\\varepsilon}}{1+e^{-\\beta\\varepsilon}}$．よって $\\boldsymbol{\\langle W\\rangle=\\dfrac{(\\varepsilon_1-\\varepsilon)e^{-\\beta\\varepsilon}}{1+e^{-\\beta\\varepsilon}}}$．\n\n(2)\n\\[ \\langle e^{-\\beta W}\\rangle=(1-p)+pe^{-\\beta(\\varepsilon_1-\\varepsilon)}=\\frac{1+e^{-\\beta\\varepsilon_1}}{1+e^{-\\beta\\varepsilon}}=\\frac{Z'}{Z}. \\]\n$F=-k_BT\\ln Z$ なので $Z'/Z=e^{-\\beta\\Delta F}$ であり，ジャルジンスキー等式が成り立つ．\n\\[ \\boldsymbol{\\Delta F=-k_BT\\ln\\frac{1+e^{-\\beta\\varepsilon_1}}{1+e^{-\\beta\\varepsilon}}}. \\]\n操作の後，系は平衡にない（分布はもとのまま）が，等式は終状態の平衡自由エネルギーを与える．\n\n(3) $\\langle W\\rangle/k_BT=2e^{-1}/(1+e^{-1})\\approx\\boldsymbol{0.538}$，$\\Delta F/k_BT=\\ln\\dfrac{1+e^{-1}}{1+e^{-3}}\\approx\\boldsymbol{0.265}$．$\\langle W\\rangle>\\Delta F$ で第2法則と整合し，差 $0.273k_BT$ が散逸した仕事（その後の緩和で熱になる）である．"
+   }
+  ],
+  "idea": {
+   "tex": "一瞬の操作では仕事は「どの状態にいたか」だけで決まる．指数平均は分配関数の比になり，非平衡操作から平衡の自由エネルギー差が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ⟨W⟩：(epsilon_1 - epsilon) e^(-beta epsilon)/(1 + e^(-beta epsilon))\n(2) ΔF：-k_B T ln((1 + e^(-beta epsilon_1))/(1 + e^(-beta epsilon)))\n(3) ⟨W⟩/(k_B T)：≈0.538 ; ΔF/(k_B T)：≈0.265"
+  },
+  "methods": [],
+  "tags": [
+   "ジャルジンスキー等式",
+   "2準位系",
+   "散逸仕事",
+   "非平衡仕事"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-006",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 1,
+  "minutes": 15,
+  "theme": "光ピンセットに捕らえたビーズのゆらぎとコーナー周波数",
+  "topic": "光ピンセットに捕らえたビーズのゆらぎとコーナー周波数",
+  "statement": {
+   "tex": "光ピンセット（ばね定数 $\\kappa$ の調和ポテンシャル）に捕らえた半径 $a$ のビーズの1次元の運動を，慣性を無視したランジュバン方程式\n\\[ \\gamma\\dot x=-\\kappa x+\\xi(t),\\qquad\\langle\\xi(t)\\xi(s)\\rangle=2\\gamma k_BT\\,\\delta(t-s) \\]\nで表す．$\\gamma=6\\pi\\eta a$ は粘性抵抗係数（$\\eta$ は水の粘性率）である．\n\\begin{enumerate}\n\\item 定常状態での時間相関関数 $C(t)=\\langle x(t)x(0)\\rangle$（$t\\ge0$）を求めよ．\n\\item パワースペクトル $S(\\omega)=\\displaystyle\\int_{-\\infty}^{\\infty}C(t)e^{i\\omega t}\\,dt$ を求めよ．$S$ が低周波の値の半分になる周波数（コーナー周波数）$f_c=\\omega_c/2\\pi$ を $\\kappa,\\,\\gamma$ で表せ．\n\\item $a=0.50\\,\\mathrm{\\mu m}$，$\\eta=1.0\\times10^{-3}\\,\\mathrm{Pa\\,s}$，$\\kappa=0.050\\,\\mathrm{pN/nm}$ のとき，緩和時間 $\\gamma/\\kappa$ と $f_c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $C(t)=\\dfrac{k_BT}{\\kappa}e^{-\\kappa t/\\gamma}$　(2) $S(\\omega)=\\dfrac{2\\gamma k_BT}{\\kappa^2+\\gamma^2\\omega^2}$，$f_c=\\dfrac{\\kappa}{2\\pi\\gamma}$　(3) $\\gamma/\\kappa\\approx1.88\\times10^{-4}\\,\\mathrm{s}$，$f_c\\approx844\\,\\mathrm{Hz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x(t)=x(0)e^{-\\kappa t/\\gamma}+\\dfrac1\\gamma\\displaystyle\\int_0^te^{-\\kappa(t-s)/\\gamma}\\xi(s)\\,ds$．ノイズは $x(0)$ と無相関なので $C(t)=\\langle x^2\\rangle e^{-\\kappa t/\\gamma}$．定常分布はボルツマン分布で，等分配則から $\\kappa\\langle x^2\\rangle=k_BT$．よって\n\\[ \\boldsymbol{C(t)=\\frac{k_BT}{\\kappa}e^{-\\kappa t/\\gamma}}. \\]\n\n(2) $C(t)$ は $t$ について偶関数なので\n\\[ S(\\omega)=\\frac{k_BT}{\\kappa}\\cdot\\frac{2\\kappa/\\gamma}{(\\kappa/\\gamma)^2+\\omega^2}=\\boldsymbol{\\frac{2\\gamma k_BT}{\\kappa^2+\\gamma^2\\omega^2}}. \\]\nローレンツ型で，$\\omega_c=\\kappa/\\gamma$ で半分になる．$\\boldsymbol{f_c=\\kappa/(2\\pi\\gamma)}$．\n\n(3) $\\gamma=6\\pi\\times1.0\\times10^{-3}\\times0.50\\times10^{-6}=9.42\\times10^{-9}\\,\\mathrm{N\\,s/m}$，$\\kappa=5.0\\times10^{-5}\\,\\mathrm{N/m}$．$\\gamma/\\kappa\\approx\\boldsymbol{1.88\\times10^{-4}\\,\\mathrm{s}}$，$f_c=1/(2\\pi\\times1.88\\times10^{-4})\\approx\\boldsymbol{844\\,\\mathrm{Hz}}$．\n\n実験では測ったスペクトルをローレンツ型で当てはめて $f_c$ を求め，$\\gamma$ がわかっていれば $\\kappa=2\\pi\\gamma f_c$ でトラップを較正する．等分配則 $\\kappa=k_BT/\\langle x^2\\rangle$ と組み合わせると検出器の感度も決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "過減衰の調和振動子の相関は指数関数，スペクトルはローレンツ型．コーナー周波数はばね定数と抵抗係数の比で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) C(t)：k_B T/kappa e^(-kappa t/gamma)\n(2) S：2 gamma k_B T/(kappa^2 + gamma^2 omega^2) ; f_c：kappa/(2 pi gamma)\n(3) 緩和時間 [s]：≈1.88e-4 ; f_c [Hz]：≈844"
+  },
+  "methods": [],
+  "tags": [
+   "ランジュバン方程式",
+   "光ピンセット",
+   "パワースペクトル",
+   "コーナー周波数",
+   "ストークス抵抗"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-007",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 2,
+  "minutes": 20,
+  "theme": "動的力分光法：一定の負荷速度での破断力（ベル＝エヴァンス模型）",
+  "topic": "動的力分光法：一定の負荷速度での破断力（ベル＝エヴァンス模型）",
+  "statement": {
+   "tex": "受容体と結合した分子を一定の速さで引っ張ると，力が $F=rt$（$r$ は負荷速度）で増え，結合はいずれ切れる．力 $F$ のもとでの解離の速度定数はベル模型\n\\[ k(F)=k_0\\,e^{Fx_b/k_BT} \\]\nにしたがう（$x_b$ は結合状態から障壁頂上までの距離）．\n\\begin{enumerate}\n\\item 力が $F$ に達するまで結合が切れずに残る確率 $S(F)$ を求めよ．\n\\item 破断力の確率密度 $p(F)=-dS/dF$ が最大になる力（最頻破断力）$F^*$ を求めよ（$rx_b>k_0k_BT$ とする）．\n\\item $k_BT=4.1\\,\\mathrm{pN\\,nm}$，$x_b=0.50\\,\\mathrm{nm}$，$k_0=0.010\\,\\mathrm{s^{-1}}$，$r=1000\\,\\mathrm{pN/s}$ のとき $F^*$ を求めよ．また，$r$ を10倍にするごとに $F^*$ はいくら増えるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S(F)=\\exp\\left[-\\dfrac{k_0k_BT}{rx_b}\\left(e^{Fx_b/k_BT}-1\\right)\\right]$　(2) $F^*=\\dfrac{k_BT}{x_b}\\ln\\dfrac{rx_b}{k_0k_BT}$　(3) $F^*\\approx77.2\\,\\mathrm{pN}$，増分 $\\approx18.9\\,\\mathrm{pN}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dS}{dt}=-k(F)S$ で $dt=dF/r$ なので $\\dfrac{d\\ln S}{dF}=-\\dfrac{k_0}{r}e^{Fx_b/k_BT}$．積分して\n\\[ \\boldsymbol{S(F)=\\exp\\left[-\\frac{k_0k_BT}{rx_b}\\left(e^{Fx_b/k_BT}-1\\right)\\right]}. \\]\n\n(2) $p(F)=\\dfrac{k(F)}{r}S(F)$．$\\dfrac{d\\ln p}{dF}=\\dfrac{x_b}{k_BT}-\\dfrac{k(F)}{r}=0$ より $k(F^*)=\\dfrac{rx_b}{k_BT}$，すなわち\n\\[ \\boldsymbol{F^*=\\frac{k_BT}{x_b}\\ln\\frac{rx_b}{k_0k_BT}}. \\]\n\n(3) $\\dfrac{rx_b}{k_0k_BT}=\\dfrac{500}{0.041}=1.22\\times10^4$，$\\ln=9.41$，$\\dfrac{k_BT}{x_b}=8.2\\,\\mathrm{pN}$．$F^*\\approx\\boldsymbol{77.2\\,\\mathrm{pN}}$．$F^*$ は $\\ln r$ の1次関数で，10倍ごとの増分は $\\dfrac{k_BT}{x_b}\\ln10\\approx\\boldsymbol{18.9\\,\\mathrm{pN}}$．\n\n「結合の強さ」は1つの数ではなく負荷速度に依存する．$F^*$ を $\\ln r$ に対してプロットすると，傾きから $x_b$，切片から $k_0$ が求まる（動的力分光法）．"
+   }
+  ],
+  "idea": {
+   "tex": "生存確率の微分方程式を力について積分する．最頻破断力は「解離率が負荷速度×$x_b/k_BT$ に追いつく力」で，$\\ln r$ に比例して増える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) S：exp(-(k_0 k_B T/(r x_b)) (e^(F x_b/(k_B T)) - 1))\n(2) F^*：k_B T/x_b ln(r x_b/(k_0 k_B T))\n(3) F^* [pN]：≈77.2 ; 増分 [pN]：≈18.9"
+  },
+  "methods": [],
+  "tags": [
+   "ベル模型",
+   "動的力分光法",
+   "破断力",
+   "生存確率",
+   "1分子計測"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-008",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ブラウン・ラチェットとしてのアクチン重合：重合力",
+  "topic": "ブラウン・ラチェットとしてのアクチン重合：重合力",
+  "statement": {
+   "tex": "アクチン繊維の先端は，負荷 $F$ で押しつけられた膜（壁）に接している．壁は熱ゆらぎで先端から離れたり近づいたりし，先端と壁のすき間が単量体の大きさ $\\delta$ 以上開いたときだけ単量体が付加できる（ブラウン・ラチェット）．すき間のゆらぎは単量体の付加よりずっと速く，すき間 $h\\ (\\ge0)$ は負荷 $F$ のもとでの平衡分布にしたがうとする．単量体濃度を $M$，付加の速度定数を $k_aM$（すき間が十分あるとき），解離の速度定数を $k_d$ とする．\n\\begin{enumerate}\n\\item すき間が $\\delta$ 以上である確率 $p$ を求めよ．\n\\item 先端（壁）の平均の伸長速度 $v(F)$ を求めよ．\n\\item 伸長が止まる力（重合力）$F_s$ を求めよ．\n\\item $k_BT=4.1\\,\\mathrm{pN\\,nm}$，$\\delta=2.7\\,\\mathrm{nm}$，$k_a=11.6\\,\\mathrm{\\mu M^{-1}s^{-1}}$，$M=10\\,\\mathrm{\\mu M}$，$k_d=1.4\\,\\mathrm{s^{-1}}$ のとき，$F_s$ と $v(0)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=e^{-F\\delta/k_BT}$　(2) $v=\\left(k_aMe^{-F\\delta/k_BT}-k_d\\right)\\delta$　(3) $F_s=\\dfrac{k_BT}{\\delta}\\ln\\dfrac{k_aM}{k_d}$　(4) $F_s\\approx6.71\\,\\mathrm{pN}$，$v(0)\\approx309\\,\\mathrm{nm/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 壁の位置エネルギーは $Fh$ なので，すき間の分布は $P(h)=\\dfrac{F}{k_BT}e^{-Fh/k_BT}$（$h\\ge0$）．\n\\[ \\boldsymbol{p=\\int_\\delta^\\infty P(h)\\,dh=e^{-F\\delta/k_BT}}. \\]\n\n(2) 付加は速度 $k_aMp$，解離は（すき間によらず）$k_d$ で起こり，それぞれ先端を $\\pm\\delta$ 動かす．\n\\[ \\boldsymbol{v=\\delta\\left(k_aMe^{-F\\delta/k_BT}-k_d\\right)}. \\]\n\n(3) $v=0$ より $\\boldsymbol{F_s=\\dfrac{k_BT}{\\delta}\\ln\\dfrac{k_aM}{k_d}}$．$k_BT\\ln(M/M_c)$（$M_c=k_d/k_a$ は臨界濃度）は単量体1個の付加の自由エネルギー変化の大きさなので，$F_s\\delta$ はちょうどその自由エネルギーに等しい．ラチェットは熱力学の上限まで力を出せる．\n\n(4) $\\ln(116/1.4)=4.42$，$k_BT/\\delta=1.52\\,\\mathrm{pN}$ より $F_s\\approx\\boldsymbol{6.71\\,\\mathrm{pN}}$．$v(0)=2.7\\times(116-1.4)\\approx\\boldsymbol{309\\,\\mathrm{nm/s}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "熱ゆらぎで開くすき間を，付加反応が「整流」して一方向の運動にする．すき間の確率はボルツマン因子で，止まる力は付加の自由エネルギーに一致する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) p：e^(-F delta/(k_B T))\n(2) v：delta (k_a M e^(-F delta/(k_B T)) - k_d)\n(3) F_s：k_B T/delta ln(k_a M/k_d)\n(4) F_s [pN]：≈6.71 ; v(0) [nm/s]：≈309"
+  },
+  "methods": [],
+  "tags": [
+   "ブラウン・ラチェット",
+   "アクチン重合",
+   "重合力",
+   "ボルツマン因子",
+   "臨界濃度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-009",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 2,
+  "minutes": 20,
+  "theme": "多段階反応の待ち時間とランダムネス・パラメータ",
+  "topic": "多段階反応の待ち時間とランダムネス・パラメータ",
+  "statement": {
+   "tex": "分子モーターの1歩は，いくつかの不可逆な化学反応が順に起こって完了するとする．$i$ 番目の反応の速度定数を $k_i$（$i=1,\\dots,N$）とし，各反応の待ち時間は独立な指数分布にしたがう．1歩の待ち時間 $\\tau$（全反応の待ち時間の和）について，ランダムネス・パラメータ $r=\\dfrac{\\mathrm{Var}(\\tau)}{\\langle\\tau\\rangle^2}$ を定義する．\n\\begin{enumerate}\n\\item $N=2$ のとき，$\\langle\\tau\\rangle$ と $\\mathrm{Var}(\\tau)$ を $k_1,\\,k_2$ で表せ．\n\\item $N=2$ のとき，$r$ の最小値を求めよ．\n\\item 1歩に $N$ 個の等しい速度定数の反応が必要なとき $r$ を求めよ．また，測定で $r=0.30$ が得られたとき，律速となる反応の数 $N$ の最小値を求めよ（一般の $k_i$ で $r\\ge1/N$ であることを用いてよい）．\n\\item キネシンの1歩が「ATP の結合（速度定数 $k_bc$，$c$ は ATP 濃度）」と「それ以外の反応（速度定数 $k_2$）」の2段階からなるとする．$r$ が最小になる ATP 濃度 $c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle\\tau\\rangle=\\dfrac{1}{k_1}+\\dfrac{1}{k_2}$，$\\mathrm{Var}(\\tau)=\\dfrac{1}{k_1^2}+\\dfrac{1}{k_2^2}$　(2) $\\dfrac12$　(3) $r=\\dfrac1N$，$N=4$　(4) $c=\\dfrac{k_2}{k_b}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 指数分布（速度定数 $k$）の平均は $1/k$，分散は $1/k^2$．独立な和なので平均も分散も足し算になり\n\\[ \\boldsymbol{\\langle\\tau\\rangle=\\frac{1}{k_1}+\\frac{1}{k_2}},\\qquad\\boldsymbol{\\mathrm{Var}(\\tau)=\\frac{1}{k_1^2}+\\frac{1}{k_2^2}}. \\]\n\n(2) $a=1/k_1$，$b=1/k_2$ とおくと $r=\\dfrac{a^2+b^2}{(a+b)^2}\\ge\\dfrac12$（等号は $a=b$）．最小値は $\\boldsymbol{1/2}$．\n\n(3) $\\langle\\tau\\rangle=N/k$，$\\mathrm{Var}=N/k^2$ より $\\boldsymbol{r=1/N}$．一般に $r\\ge1/N$（コーシー＝シュワルツの不等式 $(\\sum a_i)^2\\le N\\sum a_i^2$）なので，$r=0.30$ なら $N\\ge1/0.30=3.3$，すなわち $\\boldsymbol{N=4}$ 以上．\n\n(4) (2) より $r$ が最小になるのは $1/(k_bc)=1/k_2$，すなわち $\\boldsymbol{c=k_2/k_b}$．このとき $r=1/2$ で，速度はちょうど最大速度の半分（$c$ がミカエリス定数に等しい）になる．低濃度では ATP の結合だけが律速で $r\\to1$，高濃度ではもう一方だけが律速で $r\\to1$ である．\n\nランダムネス・パラメータは平均速度だけでは見えない「隠れた段階の数」を教えてくれる（キネシンでは高濃度で $r\\approx0.5$ が観測され，2つ以上の律速段階があることがわかった）．"
+   }
+  ],
+  "idea": {
+   "tex": "独立な待ち時間の和では平均と分散がそれぞれ足し合わさる．$r=\\mathrm{Var}/\\langle\\tau\\rangle^2$ は律速段階の数の逆数の目安になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ⟨τ⟩：1/k_1 + 1/k_2 ; Var：1/k_1^2 + 1/k_2^2\n(2) 1/2\n(3) r：1/N ; N：4\n(4) c：k_2/k_b"
+  },
+  "methods": [],
+  "tags": [
+   "分子モーター",
+   "ランダムネス・パラメータ",
+   "待ち時間分布",
+   "多段階反応",
+   "キネシン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-010",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 3,
+  "minutes": 25,
+  "theme": "クルックスの揺動定理とガウス分布の仕事：RNA ヘアピンの自由エネルギー",
+  "topic": "クルックスの揺動定理とガウス分布の仕事：RNA ヘアピンの自由エネルギー",
+  "statement": {
+   "tex": "RNA ヘアピンを光ピンセットで引き伸ばして（順過程）ほどき，同じ速さで戻して（逆過程）折りたたませる実験を繰り返す．順過程の仕事 $W$ の分布 $P_F(W)$ と，逆過程の仕事 $W$ の分布 $P_R(W)$ の間にはクルックスの揺動定理\n\\[ \\frac{P_F(W)}{P_R(-W)}=e^{\\beta(W-\\Delta F)} \\]\nが成り立つ（$\\beta=1/k_BT$，$\\Delta F$ は2つの平衡状態の自由エネルギー差）．$P_F$ は平均 $\\mu$，分散 $\\sigma^2$ のガウス分布であったとする．\n\\begin{enumerate}\n\\item ジャルジンスキー等式 $\\langle e^{-\\beta W}\\rangle_F=e^{-\\beta\\Delta F}$ を用いて $\\Delta F$ を $\\mu,\\,\\sigma,\\,\\beta$ で表せ．\n\\item クルックスの定理から，逆過程の仕事の平均 $W_R\\equiv\\langle W\\rangle_R$ を求めよ．また $\\Delta F$ を $W_F\\equiv\\langle W\\rangle_F\\ (=\\mu)$ と $W_R$ だけで表せ．\n\\item $k_BT=4.1\\,\\mathrm{pN\\,nm}$，$\\mu=160\\,\\mathrm{pN\\,nm}$，$\\sigma=6.0\\,\\mathrm{pN\\,nm}$ のとき，$\\Delta F$ と $\\langle W\\rangle_R$ を求めよ．\n\\item (3) の条件で，順過程の仕事が $\\Delta F$ を下回る（「第2法則に反する」ように見える）確率を求めよ．標準正規分布の累積分布関数を $\\Phi$ として $\\Phi(-0.732)=0.232$ を用いてよい．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta F=\\mu-\\dfrac{\\beta\\sigma^2}{2}$　(2) $W_R=\\beta\\sigma^2-\\mu$，$\\Delta F=\\dfrac{W_F-W_R}{2}$　(3) $\\Delta F\\approx155.6\\,\\mathrm{pN\\,nm}$，$\\langle W\\rangle_R\\approx-151.2\\,\\mathrm{pN\\,nm}$　(4) $\\approx0.232$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ガウス分布で $\\langle e^{-\\beta W}\\rangle=e^{-\\beta\\mu+\\beta^2\\sigma^2/2}$．これを $e^{-\\beta\\Delta F}$ と等しいとおいて\n\\[ \\boldsymbol{\\Delta F=\\mu-\\frac{\\beta\\sigma^2}{2}}. \\]\n平均の散逸仕事は $\\langle W\\rangle_F-\\Delta F=\\beta\\sigma^2/2$ で，ゆらぎの大きさで決まる（揺動散逸関係）．\n\n(2) $P_R(-W)=P_F(W)e^{-\\beta(W-\\Delta F)}$．右辺の指数部をまとめると\n\\[ -\\frac{(W-\\mu)^2}{2\\sigma^2}-\\beta W=-\\frac{(W-\\mu+\\beta\\sigma^2)^2}{2\\sigma^2}+\\text{const}, \\]\nなので $-W_R$ は平均 $\\mu-\\beta\\sigma^2$ のガウス分布にしたがう．よって $\\boldsymbol{\\langle W\\rangle_R=\\beta\\sigma^2-\\mu}$（分散は同じ $\\sigma^2$）．(1) と合わせて\n\\[ \\boldsymbol{\\Delta F=\\frac{\\langle W\\rangle_F-\\langle W\\rangle_R}{2}}. \\]\nまた $P_F(W)$ と $P_R(-W)$ はちょうど $W=\\Delta F$ で交わる．\n\n(3) $\\beta\\sigma^2=36/4.1=8.78\\,\\mathrm{pN\\,nm}$．$\\Delta F=160-4.39\\approx\\boldsymbol{155.6\\,\\mathrm{pN\\,nm}}$，$\\langle W\\rangle_R=8.78-160\\approx\\boldsymbol{-151.2\\,\\mathrm{pN\\,nm}}$．\n\n(4) $P(W<\\Delta F)=\\Phi\\left(\\dfrac{\\Delta F-\\mu}{\\sigma}\\right)=\\Phi\\left(-\\dfrac{\\beta\\sigma}{2}\\right)=\\Phi(-0.732)\\approx\\boldsymbol{0.232}$．1分子程度の小さな系では，平均の不等式 $\\langle W\\rangle\\ge\\Delta F$ に反する試行がまれでない頻度で起こる．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス分布の仕事ではジャルジンスキー等式が「平均 − 分散/2$k_BT$」になる．クルックスの定理は順・逆の分布を結び，その交点が $\\Delta F$ を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ΔF：mu - beta sigma^2/2\n(2) W_R：beta sigma^2 - mu ; ΔF：(W_F - W_R)/2\n(3) ΔF [pN nm]：≈155.6 ; ⟨W⟩_R [pN nm]：≈-151.2\n(4) ≈0.232"
+  },
+  "methods": [],
+  "tags": [
+   "クルックスの揺動定理",
+   "ジャルジンスキー等式",
+   "1分子計測",
+   "散逸仕事",
+   "RNAヘアピン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-011",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 3,
+  "minutes": 25,
+  "theme": "回転モーターの定常揺動定理によるトルクの測定",
+  "topic": "回転モーターの定常揺動定理によるトルクの測定",
+  "statement": {
+   "tex": "F$_1$-ATPase のような回転分子モーターに付けたプローブの回転角 $\\theta$ が，一定のトルク $N$ と熱ゆらぎを受けて\n\\[ \\xi\\dot\\theta=N+\\eta(t),\\qquad\\langle\\eta(t)\\eta(s)\\rangle=2\\xi k_BT\\,\\delta(t-s) \\]\nにしたがうとする（$\\xi$ は回転の抵抗係数）．時間 $t$ の間の回転角の変化を $\\Delta\\theta$ とする．\n\\begin{enumerate}\n\\item $\\Delta\\theta$ の平均と分散を求めよ．\n\\item $\\Delta\\theta$ の確率密度 $P(\\Delta\\theta)$ について，$\\ln\\dfrac{P(\\Delta\\theta)}{P(-\\Delta\\theta)}$ を求めよ（定常揺動定理）．結果が $\\xi$ や $t$ によらないことに注意せよ．\n\\item 測定で，$t=10\\,\\mathrm{ms}$ における $\\Delta\\theta$ の平均が $4.0\\,\\mathrm{rad}$，分散が $0.82\\,\\mathrm{rad^2}$ であった．$k_BT=4.1\\,\\mathrm{pN\\,nm}$ としてトルク $N$ を求めよ．\n\\item このモーターは ATP 1分子ごとに $120^\\circ$ 回転する．1分子あたりにする仕事と，ATP 1分子の自由エネルギー $90\\,\\mathrm{pN\\,nm}$ との比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 平均 $\\dfrac{Nt}{\\xi}$，分散 $\\dfrac{2k_BTt}{\\xi}$　(2) $\\ln\\dfrac{P(\\Delta\\theta)}{P(-\\Delta\\theta)}=\\dfrac{N\\Delta\\theta}{k_BT}$　(3) $N=40\\,\\mathrm{pN\\,nm}$　(4) 比 $\\approx0.93$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Delta\\theta=\\dfrac{Nt}{\\xi}+\\dfrac1\\xi\\displaystyle\\int_0^t\\eta\\,ds$．平均 $\\boldsymbol{Nt/\\xi}$，分散 $\\dfrac{1}{\\xi^2}\\cdot2\\xi k_BTt=\\boldsymbol{2k_BTt/\\xi}$．\n\n(2) ガウス分布 $P\\propto\\exp\\left[-\\dfrac{(\\Delta\\theta-Nt/\\xi)^2}{4k_BTt/\\xi}\\right]$ より\n\\[ \\ln\\frac{P(\\Delta\\theta)}{P(-\\Delta\\theta)}=\\frac{4\\Delta\\theta\\,Nt/\\xi}{4k_BTt/\\xi}=\\boldsymbol{\\frac{N\\Delta\\theta}{k_BT}}. \\]\n右辺は回転 $\\Delta\\theta$ の間に熱浴へ捨てられる熱（$=N\\Delta\\theta$）を $k_BT$ で割ったもの，すなわち媒質のエントロピー生成であり，抵抗係数（プローブの大きさ）を知らなくてもトルクが測れる．\n\n(3) (1) より $N=\\dfrac{2k_BT\\langle\\Delta\\theta\\rangle}{\\mathrm{Var}(\\Delta\\theta)}=\\dfrac{2\\times4.1\\times4.0}{0.82}=\\boldsymbol{40\\,\\mathrm{pN\\,nm}}$．\n\n(4) 仕事は $N\\times\\dfrac{2\\pi}{3}=83.8\\,\\mathrm{pN\\,nm}$．比は $83.8/90\\approx\\boldsymbol{0.93}$．F$_1$ モーターは ATP の自由エネルギーをほぼ損失なく力学的仕事に変えている．"
+   }
+  ],
+  "idea": {
+   "tex": "ドリフトのあるブラウン運動では，正逆の確率比の対数が「熱/$k_BT$」に等しい．平均と分散の比から抵抗係数によらずトルクが決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 平均：N t/xi ; 分散：2 k_B T t/xi\n(2) N Δθ/(k_B T)\n(3) N [pN nm]：≈40\n(4) 比：≈0.93"
+  },
+  "methods": [],
+  "tags": [
+   "定常揺動定理",
+   "F1-ATPase",
+   "回転モーター",
+   "トルク",
+   "エントロピー生成"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-012",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 3,
+  "minutes": 30,
+  "theme": "能動的なノイズを受けるビーズの有効温度と揺動散逸関係の破れ",
+  "topic": "能動的なノイズを受けるビーズの有効温度と揺動散逸関係の破れ",
+  "statement": {
+   "tex": "細胞の中に入れたビーズを光ピンセット（ばね定数 $\\kappa$）で捕らえると，熱ノイズに加えて，分子モーターによる能動的な力 $f(t)$ も受ける．\n\\[ \\gamma\\dot x=-\\kappa x+\\xi(t)+f(t),\\quad\\langle\\xi(t)\\xi(s)\\rangle=2\\gamma k_BT\\delta(t-s),\\quad\\langle f(t)f(s)\\rangle=Ae^{-|t-s|/\\tau_a} \\]\nとし，$\\xi$ と $f$ は独立とする．\n\\begin{enumerate}\n\\item 定常状態の $\\langle x^2\\rangle$ を求めよ．\n\\item 等分配則 $\\kappa\\langle x^2\\rangle=k_BT_{\\mathrm{eff}}$ で有効温度 $T_{\\mathrm{eff}}$ を定義する．$T_{\\mathrm{eff}}$ を求め，$T_{\\mathrm{eff}}$ がばね定数 $\\kappa$ に依存することを確かめよ．\n\\item 揺らぎのスペクトル $C(\\omega)=\\displaystyle\\int\\langle x(t)x(0)\\rangle e^{i\\omega t}dt$ と，外力 $h$ への応答関数 $\\chi(\\omega)=1/(\\kappa-i\\gamma\\omega)$ を用いて，周波数ごとの有効温度を $T_{\\mathrm{eff}}(\\omega)=\\dfrac{\\omega C(\\omega)}{2k_B\\,\\mathrm{Im}\\chi(\\omega)}$ で定義する．$T_{\\mathrm{eff}}(\\omega)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle x^2\\rangle=\\dfrac{k_BT}{\\kappa}+\\dfrac{A\\tau_a}{(\\gamma+\\kappa\\tau_a)\\kappa}$　(2) $T_{\\mathrm{eff}}=T+\\dfrac{A\\tau_a}{(\\gamma+\\kappa\\tau_a)k_B}$　(3) $T_{\\mathrm{eff}}(\\omega)=T+\\dfrac{A\\tau_a}{(1+\\omega^2\\tau_a^2)k_B\\gamma}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 方程式は線形なので，熱ノイズと能動ノイズの寄与が足し合わさる．熱ノイズの寄与は $k_BT/\\kappa$．$\\tau_r=\\gamma/\\kappa$ として，能動ノイズの寄与は\n\\[ \\langle x_a^2\\rangle=\\frac{1}{\\gamma^2}\\int_0^\\infty\\!\\!\\int_0^\\infty e^{-(u+v)/\\tau_r}Ae^{-|u-v|/\\tau_a}du\\,dv=\\frac{A}{\\gamma^2}\\cdot\\frac{\\tau_r^2\\tau_a}{\\tau_r+\\tau_a}. \\]\n（$u>v$ の部分を2倍し，$s=u-v$ で積分する．）$\\tau_r=\\gamma/\\kappa$ を代入して\n\\[ \\boldsymbol{\\langle x^2\\rangle=\\frac{k_BT}{\\kappa}+\\frac{A\\tau_a}{\\kappa(\\gamma+\\kappa\\tau_a)}}. \\]\n\n(2) $\\boldsymbol{T_{\\mathrm{eff}}=T+\\dfrac{A\\tau_a}{k_B(\\gamma+\\kappa\\tau_a)}}$．熱平衡なら $T_{\\mathrm{eff}}=T$ はばね定数によらないはずだが，能動ノイズがあると $\\kappa$ を大きくするほど $T_{\\mathrm{eff}}$ は $T$ に近づく．トラップの緩和が速いと，遅い能動的な力（相関時間 $\\tau_a$）が平均化されるからである．\n\n(3) $x(\\omega)=\\chi(\\omega)[\\xi+f]$ なので\n\\[ C(\\omega)=|\\chi|^2\\left[2\\gamma k_BT+\\frac{2A\\tau_a}{1+\\omega^2\\tau_a^2}\\right],\\qquad\\mathrm{Im}\\chi=\\gamma\\omega|\\chi|^2. \\]\nよって\n\\[ \\boldsymbol{T_{\\mathrm{eff}}(\\omega)=T+\\frac{A\\tau_a}{k_B\\gamma(1+\\omega^2\\tau_a^2)}}. \\]\n高周波（$\\omega\\tau_a\\gg1$）では揺動散逸定理が回復して $T_{\\mathrm{eff}}\\to T$，低周波では大きくずれる．応答（能動マイクロレオロジー）と揺らぎ（受動マイクロレオロジー）を比べるこの方法で，細胞内の非平衡な活動が実際に測られている．"
+   }
+  ],
+  "idea": {
+   "tex": "線形系ではノイズごとの寄与が足し合わさる．色のついた能動ノイズは等分配則も揺動散逸定理も破り，その破れは周波数とトラップの硬さに依存する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ⟨x^2⟩：k_B T/kappa + A tau_a/(kappa (gamma + kappa tau_a))\n(2) T_eff：T + A tau_a/(k_B (gamma + kappa tau_a))\n(3) T_eff(ω)：T + A tau_a/(k_B gamma (1 + omega^2 tau_a^2))"
+  },
+  "methods": [],
+  "tags": [
+   "ランジュバン方程式",
+   "有効温度",
+   "揺動散逸定理",
+   "能動物質",
+   "マイクロレオロジー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-013",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 4,
+  "minutes": 35,
+  "theme": "2準位系に働くマクスウェルの悪魔：取り出せる仕事と情報量",
+  "topic": "2準位系に働くマクスウェルの悪魔：取り出せる仕事と情報量",
+  "statement": {
+   "tex": "エネルギー $0$ と $E$ の2状態をとる分子が温度 $T$ の熱浴と平衡にある（$\\beta=1/k_BT$）．状態 $i\\ (=0,1)$ にいる確率を $p_i$ とする．「悪魔」が分子の状態を誤りなく測定し，その結果に応じて操作して仕事を取り出す．\n\\begin{enumerate}\n\\item \\textbf{方法 A}：状態 1 なら，その瞬間に分子を状態 0 に移してエネルギー $E$ を仕事として取り出し，状態 0 なら何もしない．取り出す仕事の平均 $W_A$ を $\\beta E$ を含む式で求めよ．\n\\item \\textbf{方法 B}：状態 $i$ だと分かったら，空いているもう一方の準位のエネルギーを一瞬で無限大に上げ（その準位は空なので仕事はいらない），その後，熱浴と接したまま準静的にもとのエネルギーへ戻す．状態 $i$ のときに取り出す仕事を $p_i$ で表し，その平均 $W_B$ がシャノンエントロピー $H=-\\sum_ip_i\\ln p_i$ を用いて $k_BTH$ となることを示せ．\n\\item $\\beta E=1$ のとき，$W_A/k_BT$ と $W_B/k_BT$ を求めよ．\n\\item 方法 A で，$E$ を選んで $W_A$ を最大にする．最大値を与える $x=\\beta E$ は $1+e^x=xe^x$ を満たす．このとき $W_A/k_BT=x-1$ となることを示し，その値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $W_A=\\dfrac{E}{1+e^{\\beta E}}$　(2) 取り出す仕事 $-k_BT\\ln p_i$，平均 $k_BTH$　(3) $\\dfrac{W_A}{k_BT}\\approx0.269$，$\\dfrac{W_B}{k_BT}\\approx0.582$　(4) $\\approx0.278$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p_1=\\dfrac{e^{-\\beta E}}{1+e^{-\\beta E}}=\\dfrac{1}{1+e^{\\beta E}}$ なので $\\boldsymbol{W_A=Ep_1=\\dfrac{E}{1+e^{\\beta E}}}$．\n\n(2) 状態 0 と分かった場合：準位 1 を無限大にすると分配関数は $Z_i=1$（$F_i=0$）．準位 1 を準静的に $E$ まで戻すとき，系にされる仕事は自由エネルギー変化 $F_f-F_i=-k_BT\\ln(1+e^{-\\beta E})=k_BT\\ln p_0$．したがって取り出す仕事は $-k_BT\\ln p_0$．\n\n状態 1 と分かった場合：準位 0 を無限大にすると $F_i=E$．準位 0 を $0$ まで戻すと $F_f=-k_BT\\ln(1+e^{-\\beta E})$ で，取り出す仕事は $F_i-F_f=E+k_BT\\ln(1+e^{-\\beta E})=-k_BT\\ln p_1$．\n\nいずれも $\\boldsymbol{-k_BT\\ln p_i}$ で，平均は $\\sum_ip_i(-k_BT\\ln p_i)=\\boldsymbol{k_BTH}$．誤りのない測定では測定結果と状態の相互情報量が $H$ に等しく，$W\\le k_BT\\times$(相互情報量) という情報を含む第2法則の上限を方法 B は達成する．終状態はもとの平衡状態に戻っている．\n\n(3) $p_1=1/(1+e)=0.269$ より $W_A/k_BT=\\boldsymbol{0.269}$．$H=-(0.731\\ln0.731+0.269\\ln0.269)\\approx0.582$ より $W_B/k_BT\\approx\\boldsymbol{0.582}$．方法 A は情報を半分も使えていない．\n\n(4) $g(x)=\\dfrac{x}{1+e^x}$ とおくと $g'(x)=\\dfrac{1+e^x-xe^x}{(1+e^x)^2}=0$ より $1+e^x=xe^x$．このとき $g=\\dfrac{x}{xe^x}=e^{-x}$，また条件を $e^{-x}=x-1$ と書き直せるので $g=x-1$．数値的に解くと $x=1.278$ で，$W_A/k_BT=\\boldsymbol{0.278}$．\n\nいずれの方法でも，測定結果を記録したメモリを消去するにはランダウアー原理により平均 $k_BTH$ 以上の仕事が要るので，サイクル全体で熱浴から正味の仕事は取り出せない．"
+   }
+  ],
+  "idea": {
+   "tex": "測定で状態が確定すると，その分だけ自由エネルギーが増えたことになる．準静的な操作でこれを回収すると，取り出せる仕事の上限 $k_BT\\times$（情報量）に達する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) W_A：E/(1 + e^(beta E))\n(2) 記述：状態 i のとき取り出す仕事 -k_B T ln p_i，平均 k_B T H\n(3) W_A/(k_B T)：≈0.269 ; W_B/(k_B T)：≈0.582\n(4) ≈0.278"
+  },
+  "methods": [],
+  "tags": [
+   "マクスウェルの悪魔",
+   "情報熱力学",
+   "シャノンエントロピー",
+   "ランダウアー原理",
+   "2準位系"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-014",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 4,
+  "minutes": 35,
+  "theme": "明滅ラチェット：非対称なのこぎり形ポテンシャルによる輸送",
+  "topic": "明滅ラチェット：非対称なのこぎり形ポテンシャルによる輸送",
+  "statement": {
+   "tex": "1次元のブラウン粒子（拡散係数 $D$）に，周期 $L$ の非対称なのこぎり形ポテンシャルを周期的に入れたり切ったりする（明滅ラチェット）．ポテンシャルの各周期は，極小点 $x=0$ から前方（$+x$ 向き）へ距離 $\\alpha L$ で極大に達し，後方（$-x$ 向き）へ距離 $(1-\\alpha)L$ で極大に達する（$0<\\alpha<1/2$）．ポテンシャルの高さは $k_BT$ よりずっと大きい．\n\\begin{itemize}\n\\item ポテンシャルを入れている時間 $\\tau_1$ の間に，粒子はいま居る谷の極小点に完全に落ち込む．\n\\item ポテンシャルを切っている時間 $\\tau_2$ の間，粒子は自由に拡散する．\n\\item 次にポテンシャルを入れると，粒子はそのとき居る谷の極小点に落ちる．2周期以上離れる確率は無視する．\n\\end{itemize}\n相補誤差関数を $\\mathrm{erfc}(z)=\\dfrac{2}{\\sqrt\\pi}\\displaystyle\\int_z^\\infty e^{-s^2}ds$ とする．\n\\begin{enumerate}\n\\item 1回の明滅で粒子が1周期前方の谷に移る確率 $p_f$ と，1周期後方の谷に移る確率 $p_b$ を求めよ．\n\\item 平均速度 $v$ を $p_f,\\,p_b$ を用いて表せ．\n\\item $\\alpha=1/2$（対称なポテンシャル）のとき $v$ はいくらか．\n\\item $L=8.0\\,\\mathrm{nm}$，$\\alpha=0.20$，$D=1.0\\,\\mathrm{\\mu m^2/s}$，$\\tau_2=2.56\\,\\mathrm{\\mu s}$，$\\tau_1=10.0\\,\\mathrm{\\mu s}$ のとき $v$ を $\\mathrm{\\mu m/s}$ 単位で求めよ．$\\mathrm{erfc}(0.5)=0.4795$，$\\mathrm{erfc}(2)=0.004678$ を用いよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_f=\\dfrac12\\mathrm{erfc}\\left(\\dfrac{\\alpha L}{\\sqrt{4D\\tau_2}}\\right)$，$p_b=\\dfrac12\\mathrm{erfc}\\left(\\dfrac{(1-\\alpha)L}{\\sqrt{4D\\tau_2}}\\right)$　(2) $v=\\dfrac{(p_f-p_b)L}{\\tau_1+\\tau_2}$　(3) $0$　(4) $v\\approx151\\,\\mathrm{\\mu m/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 切っている間の変位はガウス分布（分散 $2D\\tau_2$）．前方の極大 $\\alpha L$ を越えると次の谷へ落ちるので\n\\[ p_f=\\int_{\\alpha L}^\\infty\\frac{e^{-x^2/4D\\tau_2}}{\\sqrt{4\\pi D\\tau_2}}dx=\\boldsymbol{\\frac12\\mathrm{erfc}\\left(\\frac{\\alpha L}{\\sqrt{4D\\tau_2}}\\right)}, \\]\n同様に $\\boldsymbol{p_b=\\dfrac12\\mathrm{erfc}\\left(\\dfrac{(1-\\alpha)L}{\\sqrt{4D\\tau_2}}\\right)}$．\n\n(2) 1周期 $\\tau_1+\\tau_2$ の平均変位は $L(p_f-p_b)$ なので $\\boldsymbol{v=\\dfrac{L(p_f-p_b)}{\\tau_1+\\tau_2}}$．$\\alpha<1/2$ なら近い方の極大（前方）を越えやすいので $v>0$．\n\n(3) $\\alpha=1/2$ なら $p_f=p_b$ で $\\boldsymbol{v=0}$．空間の非対称性と，明滅による詳細つりあいの破れ（非平衡）の両方がそろって初めて正味の流れが生じる．ポテンシャルを入れっぱなし・切りっぱなしの平衡状態では，非対称でも流れはない．\n\n(4) $\\sqrt{4D\\tau_2}=\\sqrt{4\\times10^6\\times2.56\\times10^{-6}}=3.2\\,\\mathrm{nm}$．$\\alpha L/3.2=0.5$，$(1-\\alpha)L/3.2=2.0$ なので $p_f=0.2398$，$p_b=0.00234$．\n\\[ v=\\frac{8.0\\times0.2374}{12.56\\times10^{-6}}\\,\\mathrm{nm/s}=1.51\\times10^5\\,\\mathrm{nm/s}\\approx\\boldsymbol{151\\,\\mathrm{\\mu m/s}}. \\]\nポテンシャルを入れるたびにエネルギーを注入しており，これが熱ゆらぎを一方向の運動に整流する元手になっている．"
+   }
+  ],
+  "idea": {
+   "tex": "拡散で近い方の山を越える確率が高いことを，周期的な明滅が整流に変える．非対称性と非平衡性の両方が必要．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述：p_f = (1/2) erfc(αL/√(4Dτ_2))，p_b = (1/2) erfc((1−α)L/√(4Dτ_2))\n(2) v：L (p_f - p_b)/(tau_1 + tau_2)\n(3) 0\n(4) v [μm/s]：≈151"
+  },
+  "methods": [],
+  "tags": [
+   "ブラウン・ラチェット",
+   "明滅ラチェット",
+   "拡散",
+   "誤差関数",
+   "非平衡輸送"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-03-015",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-107",
+  "level": 4,
+  "minutes": 40,
+  "theme": "力で傾いた3次ポテンシャルの障壁：ベル模型を超えて",
+  "topic": "力で傾いた3次ポテンシャルの障壁：ベル模型を超えて",
+  "statement": {
+   "tex": "分子結合の反応座標 $x$ に沿った自由エネルギーを，次の1次＋3次の関数で表す（$E_b,\\,x_b>0$）．\n\\[ U_0(x)=\\frac32E_b\\frac{x}{x_b}-2E_b\\left(\\frac{x}{x_b}\\right)^3 \\]\n結合に一定の力 $F\\ (>0)$ をかけると，ポテンシャルは $U(x)=U_0(x)-Fx$ になる．\n\\begin{enumerate}\n\\item $F=0$ のとき，$U$ の極小点と極大点の位置，および障壁の高さを求めよ．\n\\item $s=\\sqrt{1-\\dfrac{2Fx_b}{3E_b}}$ とおく．力 $F$ のもとでの障壁の高さ $E_b(F)$ と，極小点から極大点までの距離 $x_b(F)$ を $s$ を用いて表せ．また障壁が消える力 $F_c$ を求めよ．\n\\item クラマースの公式では，解離の速度定数は $k\\propto\\sqrt{U''(x_{\\min})\\,|U''(x_{\\max})|}\\;e^{-E_b(F)/k_BT}$ である．$k(F)/k(0)$ を $s$ で表せ．\n\\item $E_b=20k_BT$，$x_b=1.0\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\,nm}$ とする．$F_c$ を求めよ．また $F=30\\,\\mathrm{pN}$ での $\\ln[k(F)/k(0)]$ を，(3) の結果とベル模型 $k(F)/k(0)=e^{Fx_b/k_BT}$ のそれぞれで求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 極小 $x=-\\dfrac{x_b}{2}$，極大 $x=\\dfrac{x_b}{2}$，高さ $E_b$　(2) $E_b(F)=E_bs^3$，$x_b(F)=x_bs$，$F_c=\\dfrac{3E_b}{2x_b}$　(3) $\\dfrac{k(F)}{k(0)}=s\\,e^{E_b(1-s^3)/k_BT}$　(4) $F_c\\approx123\\,\\mathrm{pN}$，$\\ln\\dfrac{k}{k_0}\\approx6.71$（3次），$\\approx7.32$（ベル）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $U_0'(x)=\\dfrac{3E_b}{2x_b}-\\dfrac{6E_bx^2}{x_b^3}=0$ より $x=\\pm x_b/2$．$U_0''=-12E_bx/x_b^3$ なので $\\boldsymbol{x=-x_b/2}$ が極小，$\\boldsymbol{x=x_b/2}$ が極大．$U_0(x_b/2)-U_0(-x_b/2)=2\\left(\\dfrac34-\\dfrac14\\right)E_b=\\boldsymbol{E_b}$．\n\n(2) $U'(x)=0$ より $x^2=\\dfrac{x_b^2}{4}\\left(1-\\dfrac{2Fx_b}{3E_b}\\right)$，すなわち $x_\\pm=\\pm\\dfrac{x_bs}{2}$．よって $\\boldsymbol{x_b(F)=x_bs}$．障壁は\n\\[ U(x_+)-U(x_-)=\\frac32E_bs-Fx_bs-\\frac12E_bs^3, \\]\n$Fx_b=\\frac32E_b(1-s^2)$ を代入して $\\boldsymbol{E_b(F)=E_bs^3=E_b\\left(1-\\frac{2Fx_b}{3E_b}\\right)^{3/2}}$．$s=0$ で障壁が消えるので $\\boldsymbol{F_c=\\dfrac{3E_b}{2x_b}}$．\n\n小さい $F$ では $E_b(F)\\simeq E_b-Fx_b$ でベル模型に一致するが，力とともに障壁までの距離 $x_b(F)$ も縮むので，ベル模型は解離を過大評価する．\n\n(3) $|U''(x_\\pm)|=\\dfrac{12E_b}{x_b^3}\\cdot\\dfrac{x_bs}{2}=\\dfrac{6E_bs}{x_b^2}$ なので，前因子は $s$ に比例する．\n\\[ \\boldsymbol{\\frac{k(F)}{k(0)}=s\\,e^{E_b(1-s^3)/k_BT}}. \\]\nこれは障壁の形の指数 $\\nu=2/3$ のドゥドコ＝フンマー＝サボの式にあたる．\n\n(4) $E_b=82\\,\\mathrm{pN\\,nm}$ より $F_c=\\dfrac{3\\times82}{2\\times1.0}=\\boldsymbol{123\\,\\mathrm{pN}}$．$F=30\\,\\mathrm{pN}$ で $s=\\sqrt{1-30/123}=0.8695$，$s^3=0.6575$．\n\\[ \\ln\\frac{k}{k_0}=\\ln0.8695+20(1-0.6575)=-0.140+6.851\\approx\\boldsymbol{6.71}. \\]\nベル模型では $30\\times1.0/4.1\\approx\\boldsymbol{7.32}$．$F$ が $F_c$ の4分の1程度でも，速度定数に約 $e^{0.6}\\approx1.8$ 倍の違いが出る．"
+   }
+  ],
+  "idea": {
+   "tex": "力はポテンシャルを傾けて障壁を下げるだけでなく，極小と極大を近づけ，曲率も変える．障壁の高さは $(1-F/F_c)^{3/2}$ で消え，ベル模型はその1次近似である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 極小：-x_b/2 ; 極大：x_b/2 ; 高さ：E_b\n(2) E_b(F)：E_b s^3 ; x_b(F)：x_b s ; F_c：3 E_b/(2 x_b)\n(3) s e^(E_b (1 - s^3)/(k_B T))\n(4) F_c [pN]：≈123 ; 3次：≈6.71 ; ベル：≈7.32"
+  },
+  "methods": [],
+  "tags": [
+   "ベル模型",
+   "クラマースの公式",
+   "力依存の反応速度",
+   "1分子計測",
+   "障壁の消失"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ }
+]
