@@ -94,6 +94,8 @@ node tests/run.mjs                                   # 検査（全部 ✓ に�
   `dist/_headers` の CSP などのセキュリティヘッダーは Cloudflare Pages でだけ効く
 - 更新したら `sw.js` の `VERSION` を上げる（端末のキャッシュが入れ替わる）
 
+全問題の「問題 → 解答」PDF（科目ごと、1ページに1問、しおり付き）は `node tools/make_pdf.cjs data pdf && python3 tools/merge_pdf.py pdf` で `pdf/` に作れます。
+
 ローカルで試すときは `python3 -m http.server` を実行して `http://localhost:8000` を開きます。
 
 ## 構成
