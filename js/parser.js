@@ -4,7 +4,8 @@
 
 export const FILE_VERSION = '0.26.0';
 const FUNC_NAMES = ['arcsin', 'arccos', 'arctan', 'asin', 'acos', 'atan', 'sinh', 'cosh', 'tanh', 'coth', 'sech', 'csch', 'arsinh', 'arcosh', 'artanh',
-  'sin', 'cos', 'tan', 'cot', 'sec', 'csc', 'exp', 'log', 'ln', 'sqrt', 'abs', 'floor', 'ceil', 'sign'];
+  'sin', 'cos', 'tan', 'cot', 'sec', 'csc', 'exp', 'log', 'ln', 'sqrt', 'abs', 'floor', 'ceil', 'sign',
+  'arcsinh', 'arccosh', 'arctanh', 'asinh', 'acosh', 'atanh'];   // 逆双曲線関数の別の書き方
 const CONST_NAMES = ['pi', 'e'];
 // 物理用：ギリシャ文字の名前（omega → ω）と ħ（hbar）を1つの文字として扱う
 export const GREEK = { alpha: 'α', beta: 'β', gamma: 'γ', delta: 'δ', epsilon: 'ε', zeta: 'ζ', eta: 'η', theta: 'θ',
@@ -36,7 +37,19 @@ export const FN = {
   arsinh: Math.asinh, arcosh: Math.acosh, artanh: Math.atanh,
   exp: Math.exp, log: Math.log, ln: Math.log, sqrt: Math.sqrt, abs: Math.abs,
   floor: Math.floor, ceil: Math.ceil, sign: Math.sign, pow: rpow,
+  arcsinh: Math.asinh, arccosh: Math.acosh, arctanh: Math.atanh, asinh: Math.asinh, acosh: Math.acosh, atanh: Math.atanh,
+  zeta,
 };
+
+// リーマンのゼータ関数 ζ(s)（s > 1。ζ(3)≈1.202 など統計力学で使う）：オイラー＝マクローリンの公式で和を補正
+function zeta(x) {
+  if (!(x > 1)) return NaN;
+  const N = 20;
+  let sum = 0;
+  for (let n = 1; n < N; n++) sum += Math.pow(n, -x);
+  return sum + Math.pow(N, 1 - x) / (x - 1) + Math.pow(N, -x) / 2 + x * Math.pow(N, -x - 1) / 12
+    - x * (x + 1) * (x + 2) * Math.pow(N, -x - 3) / 720;
+}
 
 // 添字：m_1、ω_0、k_B、m_{e} を1つの文字として扱う（直前の文字に付ける）
 function subscript(s, i, out) {
@@ -79,6 +92,8 @@ function tokenize(src) {
       i = j; continue;
     }
     if (c === 'π') { out.push({ k: 'const', v: 'pi' }); i++; continue; }
+    // ζ(3) はゼータ関数（ζ の直後に括弧があるとき）
+    if (c === 'ζ' && /^\s*\(/.test(s.slice(i + 1))) { out.push({ k: 'func', v: 'zeta' }); i++; continue; }
     // Δt・ΔH・δx は1つの量として読む（物理では x/Δt を x/(Δt) の意味で書くため）。直後が関数名などの単語なら分けない
     if ((c === 'Δ' || c === 'δ') && i + 1 < s.length && /[A-Za-zθα-ωΓΘΛΣΦΨΩħ]/.test(s[i + 1])) {
       const word = (s.slice(i + 1).match(/^[A-Za-z]+/) || [''])[0];
@@ -95,7 +110,8 @@ function tokenize(src) {
       while (run.length) {
         const name = NAMES.find(n => run.startsWith(n));
         if (name) {
-          if (GREEK[name]) out.push({ k: 'var', v: GREEK[name] });
+          if (name === 'zeta' && run.length === 4 && /^\s*\(/.test(s.slice(j))) out.push({ k: 'func', v: 'zeta' });
+          else if (GREEK[name]) out.push({ k: 'var', v: GREEK[name] });
           else if (CONST_NAMES.includes(name)) out.push({ k: 'const', v: name });
           else out.push({ k: 'func', v: name });
           run = run.slice(name.length);
@@ -289,6 +305,8 @@ const TEX_FN = {
   asin: '\\arcsin', acos: '\\arccos', atan: '\\arctan', arcsin: '\\arcsin', arccos: '\\arccos', arctan: '\\arctan',
   sinh: '\\sinh', cosh: '\\cosh', tanh: '\\tanh', coth: '\\coth', sech: '\\operatorname{sech}', csch: '\\operatorname{csch}',
   arsinh: '\\operatorname{arsinh}', arcosh: '\\operatorname{arcosh}', artanh: '\\operatorname{artanh}',
+  arcsinh: '\\operatorname{arsinh}', arccosh: '\\operatorname{arcosh}', arctanh: '\\operatorname{artanh}',
+  asinh: '\\operatorname{arsinh}', acosh: '\\operatorname{arcosh}', atanh: '\\operatorname{artanh}', zeta: '\\zeta',
 };
 function wrap(s, cond) { return cond ? `\\left(${s}\\right)` : s; }
 

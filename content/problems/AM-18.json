@@ -1082,35 +1082,36 @@
   "kind": "written",
   "field": "AM-18",
   "level": 3,
-  "minutes": 35,
-  "theme": "2つの輪の間の石けん膜：臨界間隔と面積の比較",
-  "topic": "2つの輪の間の石けん膜：臨界間隔と面積の比較",
+  "minutes": 30,
+  "theme": "回転する容器の液面の形を束縛条件つき変分原理で求める",
+  "topic": "回転する容器の液面の形を束縛条件つき変分原理で求める",
   "statement": {
-   "tex": "半径 $R$ の2つの円形の輪を，同じ軸上に間隔 $d$ で平行に置き，その間に石けん膜を張る．重力は無視する．膜は表面積が極小になる回転面 $r=r(z)$（$-d/2\\leqq z\\leqq d/2$）をとるとする．\n\\begin{enumerate}\n\\item 膜の形 $r(z)$ を求め，定数を決める条件を書け．\n\\item 回転面の膜が存在しうる最大の間隔 $d_c$ を求めよ．また $d=d_c$ のときの膜のくびれの半径 $r(0)$ を求めよ（$R$ を単位として数値で，有効数字3桁）．\n\\item 回転面の膜（安定な方の解）の面積が，2つの輪にそれぞれ平らな円板の膜を張った場合の面積 $2\\pi R^2$ に等しくなる間隔 $d_e$ を $R$ を単位として有効数字3桁で求めよ．\n\\end{enumerate}"
+   "tex": "半径 $R$ の円筒容器に密度 $\\rho$ の液体を深さ $h$ まで入れ，鉛直な中心軸のまわりに角速度 $\\omega$ で回転させる．液体とともに回転する座標系で，定常状態の液面の高さを $z=f(r)$ とすると，液面の形は\n\\[U[f]=\\int_0^R\\left(\\frac12\\rho gf^2-\\frac12\\rho\\omega^2r^2f\\right)2\\pi r\\,dr\\]\nを，体積一定の条件 $\\displaystyle\\int_0^Rf\\,2\\pi r\\,dr=\\pi R^2h$ のもとで最小にするように決まる（液面は底に達しないとする）．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item $U$ の被積分関数の2つの項がそれぞれ何のエネルギーかを説明し，ラグランジュの未定乗数 $\\lambda$ を用いて $f(r)$ を $r$ と $\\lambda$ で表せ．\n\\item 体積の条件から，中心での液面の高さ $f(0)$ を求めよ．\n\\item 液面が容器の底に触れないための $\\omega$ の条件を求めよ．\n\\item 未定乗数 $\\lambda$ の物理的な意味を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $r=c\\cosh\\dfrac{z}{c}$，$R=c\\cosh\\dfrac{d}{2c}$　(2) $d_c\\approx1.33R$，$r(0)\\approx0.552R$　(3) $d_e\\approx1.06R$"
+   "tex": "(1) $f=\\dfrac{\\omega^2r^2}{2g}+\\dfrac{\\lambda}{\\rho g}$　(2) $f(0)=h-\\dfrac{\\omega^2R^2}{4g}$　(3) $\\omega<\\dfrac{2\\sqrt{gh}}{R}$　(4) 中心の底での（ゲージ）圧力 $\\lambda=\\rho gf(0)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 面積 $S=2\\pi\\int r\\sqrt{1+r'^2}\\,dz$ の被積分関数 $F=r\\sqrt{1+r'^2}$ は $z$ を含まないので，第1積分 $F-r'\\dfrac{\\partial F}{\\partial r'}=\\dfrac{r}{\\sqrt{1+r'^2}}=c$（定数）がある．$r'=\\sqrt{r^2/c^2-1}$ を積分し，対称性から $z=0$ をくびれにとると\n\\[\n\\boldsymbol{r=c\\cosh\\frac zc}\\quad(\\text{カテノイド}),\\qquad \\boldsymbol{R=c\\cosh\\frac{d}{2c}} .\n\\]\n\n(2) $u=\\dfrac{d}{2c}$ とおくと条件は $\\dfrac{2R}{d}=\\dfrac{\\cosh u}{u}$．右辺は $u>0$ で最小値をもつので，$\\dfrac{2R}{d}$ がその最小値以上のときだけ解がある．最小条件は $\\dfrac{d}{du}\\dfrac{\\cosh u}{u}=0$，すなわち $u\\tanh u=1$ で，数値的に $u_*=1.1997$，$\\dfrac{\\cosh u_*}{u_*}=1.5089$．よって\n\\[\n\\boldsymbol{d_c=\\frac{2R}{1.5089}\\approx1.33R},\\qquad r(0)=c=\\frac{d_c}{2u_*}=\\frac{R}{\\cosh u_*}\\approx\\boldsymbol{0.552R}.\n\\]\n$d>d_c$ では回転面の膜は存在せず，膜はちぎれて2枚の円板になる．\n\n(3) $d<d_c$ では $c$ の解が2つあり，$c$ の大きい（くびれの浅い）方が安定である．カテノイドの面積は\n\\[\nS=2\\pi\\int_{-d/2}^{d/2}c\\cosh^2\\frac zc\\,dz=\\pi c\\left(d+c\\sinh\\frac dc\\right).\n\\]\n$R=1$ として，$c\\cosh\\frac{d}{2c}=1$ の大きい方の根 $c(d)$ について $S=2\\pi$ を数値的に解くと $d_e=1.0554$，$c=0.8255$．よって $\\boldsymbol{d_e\\approx1.06R}$．$d_e<d<d_c$ ではカテノイドは極小（準安定）だが，面積は2枚の円板より大きい．"
+    "tex": "(1) 高さ $0$ から $f$ までの液柱の重力の位置エネルギーは $\\int_0^f\\rho gz\\,dz=\\frac12\\rho gf^2$（底面積あたり），遠心力のポテンシャル $-\\frac12\\omega^2r^2$ による分は $-\\frac12\\rho\\omega^2r^2f$ である．束縛を入れた汎関数 $U-\\lambda\\left(\\int f\\,2\\pi r\\,dr-\\pi R^2h\\right)$ の変分をとると，$f$ の微分を含まないので各点で\n\\[\\rho gf-\\frac12\\rho\\omega^2r^2-\\lambda=0\\quad\\Rightarrow\\quad f=\\boldsymbol{\\frac{\\omega^2r^2}{2g}+\\frac{\\lambda}{\\rho g}}.\\]\n液面は回転放物面になる．\n\n(2) $\\displaystyle\\int_0^R\\left(\\frac{\\omega^2r^2}{2g}+C\\right)2\\pi r\\,dr=\\frac{\\pi\\omega^2R^4}{4g}+\\pi R^2C=\\pi R^2h$ より $C=h-\\dfrac{\\omega^2R^2}{4g}$，すなわち $f(0)=\\boldsymbol{h-\\dfrac{\\omega^2R^2}{4g}}$．\n\n(3) $f(0)>0$ より $\\boldsymbol{\\omega<\\dfrac{2\\sqrt{gh}}{R}}$．\n\n(4) $\\lambda=\\rho gf(0)$ で，中心軸上の底での液体のゲージ圧力（大気圧からの増分）に等しい．体積一定の束縛を保つために必要な「圧力」が未定乗数として現れている．変分の条件 $\\rho gf-\\frac12\\rho\\omega^2r^2=\\lambda$ は「液面上でポテンシャルが一定（等ポテンシャル面）」という流体静力学の条件そのものである．"
    }
   ],
   "idea": {
-   "tex": "極小曲面の第1積分からカテノイドが得られ，境界条件 $2R/d=\\cosh u/u$ の右辺の最小値が膜の存在限界を決める．さらに円板2枚（Goldschmidt 解）との面積比較で，カテノイドが最小でなくなる間隔 $d_e<d_c$ があることがわかる．原題は形を求めるだけで，捻りでは存在限界・くびれ・面積の比較を数値で問う．"
+   "tex": "微分を含まない汎関数の束縛つき変分は各点の代数方程式になる．未定乗数は体積の束縛を保つ圧力の意味をもつ．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $r$：c cosh (z/c) ; $R$：c cosh (d/(2c))\n(2) 記述\n(3) 記述"
+   "spec": "(1) $f$：ω^2 r^2/(2g)+λ/(ρ g)\n(2) $f(0)$：h-ω^2 R^2/(4g)\n(3) ω<2sqrt(g h)/R\n(4) 記述：中心の底での圧力 ρ g f(0)"
   },
   "methods": [],
   "tags": [
    "変分法",
-   "カテノイド",
-   "極小曲面",
-   "数値解"
+   "ラグランジュの未定乗数",
+   "束縛条件",
+   "回転流体",
+   "等ポテンシャル面"
   ],
   "provenance": {
    "created": "2026-11-24"

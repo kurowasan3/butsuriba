@@ -733,33 +733,34 @@
   "field": "SR-28",
   "level": 1,
   "minutes": 15,
-  "theme": "空間的に離れた事象の時間順序",
-  "topic": "空間的に離れた事象の時間順序",
+  "theme": "動く列車の中で鉛直に投げたボール：横方向の速度の変換",
+  "topic": "動く列車の中で鉛直に投げたボール：横方向の速度の変換",
   "statement": {
-   "tex": "系 K の $x$ 軸上で，事象 1 の後に事象 2 が起こった．事象 2 は事象 1 より $+x$ 側に距離 $l$ 離れており，時間差は $T$ である（$cT<l$，光速 $c$）．\n\\begin{enumerate}\n\\item 事象 1 が事象 2 の原因となりうるか判定せよ．\n\\item 2 事象が同時となる慣性系の（K に対する）速さ $V$ と，その系での 2 事象の距離を求めよ．\n\\item 一般に $c\\Delta t>|\\Delta x|$（$\\Delta t>0$）なら，K に対し $x$ 方向に速さ $V<c$ で動くどの慣性系でも $\\Delta t'>0$ であることを示せ．\n\\end{enumerate}"
+   "tex": "列車（慣性系 S$'$）が地上（慣性系 S）に対して $x$ 方向に速さ $v$ で走っている．列車内で，ボールを鉛直上向き（$y'$ 方向）に速さ $u$ で投げた（投げた直後だけを考え，重力は無視する）．光速を $c$，$\\gamma=1/\\sqrt{1-v^2/c^2}$ とする．\n\\begin{enumerate}\n\\item ローレンツ変換から，速度の変換則\n\\[u_x=\\frac{u_x'+v}{1+vu_x'/c^2},\\qquad u_y=\\frac{u_y'}{\\gamma(1+vu_x'/c^2)}\\]\nを導け．\n\\item 地上から見たボールの速度の成分 $u_x,u_y$ と速さ $|\\boldsymbol u|$ を求めよ．\n\\item 地上から見たボールの進む向きが $x$ 軸となす角 $\\alpha$ について，$\\tan\\alpha$ を求めよ．\n\\item ボールの代わりに光（$u=c$）を鉛直上向きに出したとき，地上でも光の速さが $c$ であることを確かめ，$\\tan\\alpha$ を $v,c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) なりえない（必要な信号速度 $l/T>c$）　(2) $V=\\dfrac{c^2T}{l}$（$+x$ 向き），距離 $\\sqrt{l^2-c^2T^2}$　(3) 証明（解説参照）"
+   "tex": "(1) 証明（解説参照）　(2) $u_x=v$，$u_y=\\dfrac u\\gamma$，$|\\boldsymbol u|=\\sqrt{v^2+u^2\\left(1-\\dfrac{v^2}{c^2}\\right)}$　(3) $\\tan\\alpha=\\dfrac{u}{\\gamma v}$　(4) $\\tan\\alpha=\\dfrac{\\sqrt{c^2-v^2}}{v}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $cT<l$（空間的間隔）．事象 1 から 2 に影響を伝えるには速さ $l/T>c$ が必要で不可能．\n\n(2) $\\Delta t'=\\gamma(\\Delta t-V\\Delta x/c^2)=\\gamma(T-Vl/c^2)=0$ より $\\boldsymbol{V=\\dfrac{c^2T}{l}}$（$+x$ 向き，$V/c=cT/l<1$）．それより速い系では順序が逆転する．距離は世界間隔の不変性から\n\\[\\boldsymbol{\\sqrt{l^2-c^2T^2}}.\\]\n\n(3) $\\Delta t'=\\gamma\\left(\\Delta t-\\dfrac{V\\Delta x}{c^2}\\right)$．$|V\\Delta x|/c^2<|\\Delta x|/c<\\Delta t$ なので括弧内は正で $\\Delta t'>0$．時間的に離れた（因果的に結びうる）事象の順序はすべての慣性系で保たれる．"
+    "tex": "(1) $x=\\gamma(x'+vt')$，$y=y'$，$t=\\gamma(t'+vx'/c^2)$ の微分をとると $dx=\\gamma(dx'+v\\,dt')$，$dy=dy'$，$dt=\\gamma(1+vu_x'/c^2)dt'$．$dx/dt$，$dy/dt$ を計算すれば与式を得る．横方向の長さは変わらないが，時間の進み方が違うので横方向の速度も変わる．\n\n(2) $u_x'=0$，$u_y'=u$ を代入して $u_x=\\boldsymbol v$，$u_y=\\boldsymbol{\\dfrac u\\gamma}$．\n\\[|\\boldsymbol u|=\\boldsymbol{\\sqrt{v^2+u^2\\left(1-\\frac{v^2}{c^2}\\right)}}\\quad(<\\sqrt{v^2+u^2}).\\]\n\n(3) $\\tan\\alpha=\\dfrac{u_y}{u_x}=\\boldsymbol{\\dfrac{u}{\\gamma v}}$．ニュートン力学の $u/v$ より小さい．\n\n(4) $u=c$ で $|\\boldsymbol u|^2=v^2+c^2-v^2=c^2$．$\\tan\\alpha=\\dfrac{c}{\\gamma v}=\\boldsymbol{\\dfrac{\\sqrt{c^2-v^2}}{v}}$．光時計の光が地上では斜めに進んで見えることと同じで，この傾きから時間の遅れが導ける．"
    }
   ],
   "idea": {
-   "tex": "$\\Delta t'=\\gamma(\\Delta t-V\\Delta x/c^2)$ の符号は $c\\Delta t$ と $|\\Delta x|$ の大小で決まり，時間的間隔なら順序は不変．"
+   "tex": "横方向の座標は変わらないが時間が $\\gamma(1+vu_x'/c^2)$ 倍に延びるので，横方向の速度は $1/\\gamma$ 倍になる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述：なりえない\n(2) $V$：c^2 T/l ; 距離：sqrt(l^2-c^2 T^2)\n(3) 記述"
+   "spec": "(1) 記述\n(2) $u_x$：v ; $u_y$：u/γ ; $|\\boldsymbol u|$：sqrt(v^2+u^2 (1-v^2/c^2))\n(3) $\\tan\\alpha$：u/(γ v)\n(4) $\\tan\\alpha$：sqrt(c^2-v^2)/v"
   },
   "methods": [],
   "tags": [
-   "因果律",
-   "世界間隔",
-   "同時性の相対性"
+   "速度の変換",
+   "ローレンツ変換",
+   "光速不変",
+   "時間の遅れ"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -1023,34 +1024,34 @@
   "field": "SR-28",
   "level": 1,
   "minutes": 15,
-  "theme": "空間的に離れた事象の同時刻化と順序逆転",
-  "topic": "空間的に離れた事象の同時刻化と順序逆転",
+  "theme": "ゆっくり運んだ時計による同期とアインシュタインの同期",
+  "topic": "ゆっくり運んだ時計による同期とアインシュタインの同期",
   "statement": {
-   "tex": "慣性系 $S$ の $x$ 軸上で，事象 A が時刻 $t=0$，位置 $x=0$ で起こり，事象 B が時刻 $t=T$，位置 $x=L$ で起こった（$T>0$，$L>cT$，光速 $c$）．$S$ に対して $x$ 軸方向に速度 $v$ で動く慣性系 $S'$ を考える．\n\\begin{enumerate}\n\\item A と B が $S'$ で同時に見える $v$ を求めよ．\n\\item そのとき $S'$ で測った A, B 間の距離を求めよ．また，A と B が「同じ場所」で起こるように見える慣性系は存在するか．\n\\item $S'$ で B が A より先に起こったように見える $v$ の範囲を求めよ．それでも因果律に矛盾しない理由を述べよ．\n\\end{enumerate}"
+   "tex": "慣性系 S で，原点 O と $x=L$ の点 P に静止した時計があり，光信号によって（アインシュタインの方法で）同期されている．O の時計と同じ時刻に合わせた時計 C を，O から P まで S に対して一定の速さ $u$ で運ぶ（加速・減速は瞬間的とし，その影響は無視する）．光速を $c$ とする．\n\\begin{enumerate}\n\\item S の時計で測った運搬時間 $t$ と，その間に時計 C が刻む時間 $\\tau$ を求めよ．\n\\item P に着いたとき，C の読みは P の時計より $\\Delta$ だけ遅れている．$\\Delta$ を $L,u,c$ で表し，$u\\ll c$ での最低次を求めよ．\n\\item $u\\to0$ の極限で何がいえるか．\n\\item $L=1000\\,\\mathrm{km}$ を $u=300\\,\\mathrm{m/s}$（旅客機程度）で運ぶときの $\\Delta$ を求めよ（$c=3.00\\times10^8\\,\\mathrm{m/s}$）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $v=\\dfrac{c^2T}{L}$（$+x$ 向き）　(2) $\\sqrt{L^2-c^2T^2}$，存在しない　(3) $\\dfrac{c^2T}{L}<v<c$"
+   "tex": "(1) $t=\\dfrac Lu$，$\\tau=\\dfrac Lu\\sqrt{1-\\dfrac{u^2}{c^2}}$　(2) $\\Delta=\\dfrac Lu\\left(1-\\sqrt{1-\\dfrac{u^2}{c^2}}\\right)$，最低次 $\\dfrac{Lu}{2c^2}$　(3) $\\Delta\\to0$：ゆっくり運んだ時計による同期はアインシュタインの同期と一致する　(4) $\\Delta\\approx1.7\\times10^{-9}\\,\\mathrm{s}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "ローレンツ変換 $t'=\\gamma(t-vx/c^2)$ より\n\\[t'_B-t'_A=\\gamma\\left(T-\\frac{vL}{c^2}\\right).\\]\n\n(1) これが $0$ となるのは $\\boldsymbol{v=\\dfrac{c^2T}{L}}$．$L>cT$ だから $v<c$ で実現でき，$+x$ 向き（B の方向）である．\n\n(2) 不変間隔 $s^2=L^2-c^2T^2>0$（空間的）．$S'$ では $\\Delta t'=0$ なので $\\Delta x'=\\boldsymbol{\\sqrt{L^2-c^2T^2}}$．直接にも $\\Delta x'=\\gamma(L-vT)=\\gamma L(1-c^2T^2/L^2)$ に $\\gamma=L/\\sqrt{L^2-c^2T^2}$ を代入して一致する．同じ場所 $\\Delta x'=0$ なら $s^2=-c^2\\Delta t'^2\\le0$ でなければならないが $s^2>0$ なので，そのような系は\\textbf{存在しない}．\n\n(3) $t'_B-t'_A<0 \\iff v>c^2T/L$．$|v|<c$ と合わせて $\\boldsymbol{\\dfrac{c^2T}{L}<v<c}$．A, B は空間的に離れており，光でも結べない（$cT<L$）ので互いに因果的影響を及ぼせず，順序が系によって入れ替わっても因果律に反しない．"
+    "tex": "(1) $t=\\boldsymbol{\\dfrac Lu}$．運動する時計の進みは $\\sqrt{1-u^2/c^2}$ 倍なので $\\tau=\\boldsymbol{\\dfrac Lu\\sqrt{1-\\dfrac{u^2}{c^2}}}$．\n\n(2) $\\Delta=t-\\tau=\\boldsymbol{\\dfrac Lu\\left(1-\\sqrt{1-\\dfrac{u^2}{c^2}}\\right)}\\approx\\dfrac Lu\\cdot\\dfrac{u^2}{2c^2}=\\boldsymbol{\\dfrac{Lu}{2c^2}}$．\n\n(3) $\\Delta\\propto u$ なので $u\\to0$ で $\\Delta\\to0$．運搬に時間をかければ遅れはいくらでも小さくでき，「十分ゆっくり運んだ時計による同期」は光信号による同期と一致する．同時刻の定義は約束ごとだが，自然な2つの方法が同じ結果を与えることが確かめられる．\n\n(4) $\\Delta\\approx\\dfrac{1.0\\times10^6\\times300}{2\\times(3.00\\times10^8)^2}\\,\\mathrm s\\approx\\boldsymbol{1.7\\times10^{-9}\\,\\mathrm s}$．原子時計を航空機で運ぶ実験（ハフェレ＝キーティング）では，これと重力による効果の両方が測られた．"
    }
   ],
   "idea": {
-   "tex": "$\\Delta t'=\\gamma(\\Delta t-v\\Delta x/c^2)$ の符号は $v$ によって変わり得るが，それは不変間隔が空間的な場合に限られる．"
+   "tex": "運搬中の時間の遅れは $Lu/(2c^2)$ で速さに比例するので，ゆっくり運べば 0 に近づき，光による同期と一致する．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $v$：c^2 T/L\n(2) 距離：sqrt(L^2-c^2 T^2) ; 記述：存在しない\n(3) c^2 T/L<v<c"
+   "spec": "(1) $t$：L/u ; $\\tau$：L sqrt(1-u^2/c^2)/u\n(2) $\\Delta$：L (1-sqrt(1-u^2/c^2))/u ; 最低次：L u/(2c^2)\n(3) 記述：Δ→0 でアインシュタインの同期と一致\n(4) $\\Delta$ [s]：≈1.67e-9"
   },
   "methods": [],
   "tags": [
-   "ローレンツ変換",
-   "同時刻の相対性",
-   "不変間隔",
-   "因果律"
+   "同時刻",
+   "時計の同期",
+   "時間の遅れ",
+   "固有時"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -1465,34 +1466,34 @@
   "field": "SR-28",
   "level": 1,
   "minutes": 15,
-  "theme": "赤信号が緑に見える速さとその先",
-  "topic": "赤信号が緑に見える速さとその先",
+  "theme": "光速を超えて動く光のスポット：因果律に反しない超光速",
+  "topic": "光速を超えて動く光のスポット：因果律に反しない超光速",
   "statement": {
-   "tex": "赤信号（波長 $\\lambda_R$）を無視してバイクで踏切を通過した物理学者が「ドップラー効果で信号が緑（波長 $\\lambda_G<\\lambda_R$）に見えた」と主張した．信号に向かってまっすぐ近づいていたとする．光速を $c$ とする．\n\\begin{enumerate}\n\\item この主張が成り立つための速さ $v$ を求めよ．\n\\item その速さのまま踏切を通過し，後方の別の信号（緑，波長 $\\lambda_G$）をバックミラーで見るとどの波長に見えるか．計算せずに答えられる理由も述べよ．\n\\item 赤信号が可視域の短波長端 $\\lambda_V$ より短く「見えなくなる」ためには，接近速度 $v$ はいくらより大きくなければならないか．\n\\end{enumerate}"
+   "tex": "灯台の光線が一定の角速度 $\\Omega$ で水平面内を回転し，回転軸から距離 $D$ にある平らな壁を照らしている．壁上で回転軸に最も近い点を原点とし，壁に沿った座標を $x$ とする．光線が原点方向と角 $\\phi$ をなす時刻に出た光は，壁の $x=D\\tan\\phi$ に当たる．光速を $c$ とする．\n\\begin{enumerate}\n\\item 光の伝わる時間を無視した場合（光が瞬時に届くとした場合）の，壁上の光点の速さを $\\phi$ で表せ．\n\\item 光の伝わる時間を考えると，光点が $x$ にくる時刻は $t=\\dfrac{\\phi}{\\Omega}+\\dfrac{\\sqrt{D^2+x^2}}{c}$ である．原点での光点の速さ $V_0$ を求め，$V_0>c$ となる条件を $D$ について求めよ．\n\\item 光点の速さが $c$ を超えても特殊相対論と矛盾しない理由を述べよ．\n\\item 光点が原点から遠ざかる側で，$x\\to\\infty$ の極限の光点の速さを求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $v=c\\dfrac{\\lambda_R^2-\\lambda_G^2}{\\lambda_R^2+\\lambda_G^2}$　(2) $\\lambda_R$（赤に見える）　(3) $v>c\\dfrac{\\lambda_R^2-\\lambda_V^2}{\\lambda_R^2+\\lambda_V^2}$"
+   "tex": "(1) $\\dfrac{D\\Omega}{\\cos^2\\phi}$　(2) $V_0=D\\Omega$，$D>\\dfrac{c}{\\Omega}$　(3) 光点は物体でも信号でもなく，壁上の異なる点に順に光が当たるだけなので，光点の移動によって情報やエネルギーは運ばれない　(4) $c$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 接近する観測者に対して $\\lambda=\\lambda_0\\sqrt{(1-\\beta)/(1+\\beta)}$（$\\beta=v/c$）．$\\dfrac{1+\\beta}{1-\\beta}=\\left(\\dfrac{\\lambda_R}{\\lambda_G}\\right)^2$ より\n\\[\\boldsymbol{v=c\\frac{\\lambda_R^2-\\lambda_G^2}{\\lambda_R^2+\\lambda_G^2}}.\\]\n赤と緑なら $v\\approx0.24c$ で，現実的でない．\n\n(2) 後退時のドップラー因子は接近時の逆数 $\\sqrt{(1+\\beta)/(1-\\beta)}=\\lambda_R/\\lambda_G$ なので，$\\lambda_G\\times(\\lambda_R/\\lambda_G)=\\boldsymbol{\\lambda_R}$．緑の信号は赤に見える．因子が速さのみで決まり，向きの反転で逆数になることから計算不要．\n\n(3) (1) と同様に $\\lambda_G$ を $\\lambda_V$ に置き換えた速さより速ければよい：\n\\[\\boldsymbol{v>c\\frac{\\lambda_R^2-\\lambda_V^2}{\\lambda_R^2+\\lambda_V^2}}.\\]\nこのとき赤信号は紫外線になり見えない．"
+    "tex": "(1) $x=D\\tan\\phi$，$\\dot\\phi=\\Omega$ より $\\dot x=\\boldsymbol{\\dfrac{D\\Omega}{\\cos^2\\phi}}$．\n\n(2) $\\phi=\\arctan(x/D)$ より\n\\[\\frac{dt}{dx}=\\frac{D}{\\Omega(D^2+x^2)}+\\frac{x}{c\\sqrt{D^2+x^2}}.\\]\n$x=0$ で $dt/dx=1/(\\Omega D)$，$V_0=\\boldsymbol{D\\Omega}$．$V_0>c$ は $\\boldsymbol{D>c/\\Omega}$（たとえば $\\Omega=1\\,\\mathrm{rad/s}$ なら $D>3\\times10^5\\,\\mathrm{km}$ で，月面ならこの条件を満たす）．\n\n(3) 壁上の点 $x_1$ と $x_2$ を照らす光は，それぞれ灯台から別々に出たもので，$x_1$ の事象が $x_2$ の事象の原因になっているわけではない．光点の「移動」で $x_1$ から $x_2$ へ情報を送ることはできないので，因果律に反しない．\n\n(4) $x\\to\\infty$ で第1項は $0$，第2項は $1/c$ に近づくので，速さは $\\boldsymbol c$ に近づく（下から）．遠ざかる側では伝播時間の差が加わって見かけの速さが抑えられる．"
    }
   ],
   "idea": {
-   "tex": "縦ドップラー因子 $\\sqrt{(1+\\beta)/(1-\\beta)}$ は向きの反転で逆数になる．赤→緑の速さで後方の緑はちょうど赤に戻る．"
+   "tex": "光点の位置は別々の光線が順に当たる点の列で，物体の運動ではない．超光速でも情報は運ばれないので因果律に反しない．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $v$：c (λ_R^2-λ_G^2)/(λ_R^2+λ_G^2)\n(2) 波長：λ_R ; 記述\n(3) v>c (λ_R^2-λ_V^2)/(λ_R^2+λ_V^2)"
+   "spec": "(1) D Ω/cos(φ)^2\n(2) $V_0$：D Ω ; 条件：記述：D>c/Ω\n(3) 記述\n(4) c"
   },
   "methods": [],
   "tags": [
-   "ドップラー効果",
-   "縦ドップラー",
-   "可視光",
-   "逆数関係"
+   "超光速",
+   "因果律",
+   "光の伝播時間",
+   "見かけの速さ"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -6226,34 +6227,35 @@
   "field": "SR-28",
   "level": 3,
   "minutes": 20,
-  "theme": "フィゾーの実験とフレネルの引きずり係数",
-  "topic": "フィゾーの実験とフレネルの引きずり係数",
+  "theme": "運動する観測者が見る黒体放射の温度の方向依存性",
+  "topic": "運動する観測者が見る黒体放射の温度の方向依存性",
   "statement": {
-   "tex": "計量は $\\eta_{\\mu\\nu}=\\mathrm{diag}(+1,-1,-1,-1)$（符号 $(+,-,-,-)$）とする．\n屈折率 $n$ の水が管の中を速さ $v$（$v\\ll c$）で流れている．水の静止系では光は速さ $c/n$ で進む．\n\\begin{enumerate}\n\\item 流れと同じ向きに進む光の，実験室系での速さ $u$ を速度の合成則で正確に求めよ．\n\\item $v$ の1次までで $u\\approx\\dfrac{c}{n}+fv$ と書いたときの係数 $f$（フレネルの引きずり係数）を求めよ．\n\\item フィゾーの実験では，光を2つに分け，一方は流れに沿って，他方は流れに逆らって，それぞれ水中を合計 $L$ 進ませてから重ねる．光の（真空中の）波長を $\\lambda$ とするとき，2つの光の到達時間差 $\\Delta t$ と，それによる干渉縞のずれ（縞何本分か）を $v$ の1次で求めよ．\n\\end{enumerate}"
+   "tex": "等方的な温度 $T_0$ の黒体放射（宇宙マイクロ波背景放射）が静止して見える慣性系 S に対して，観測者が速さ $v=\\beta c$ で運動している（$\\gamma=1/\\sqrt{1-\\beta^2}$）．光子の4元波数 $(\\omega/c,\\boldsymbol k)$ はローレンツ変換に従う．観測者の系で，観測者の進行方向と角 $\\theta$ をなす方向の空を見るとする（$\\theta=0$ が真正面）．\n\\begin{enumerate}\n\\item その方向から来る光子について，S での角振動数 $\\omega$ と観測者が測る角振動数 $\\omega_o$ の関係を求めよ．\n\\item 光子の占有数 $n=1/(e^{\\hbar\\omega/k_BT}-1)$ がローレンツ不変であることを認めて，観測者が方向 $\\theta$ に見るスペクトルが温度 $T(\\theta)$ の黒体放射になることを示し，$T(\\theta)$ を求めよ．\n\\item $\\beta\\ll1$ として $T(\\theta)$ を $\\beta^2$ の項まで展開し，$\\cos\\theta$ の係数（双極子成分）と $\\cos^2\\theta$ の係数を求めよ．\n\\item 全方向（観測者の系での立体角）について平均した温度 $\\langle T\\rangle$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $u=\\frac{c/n+v}{1+\\frac{v}{nc}}$ (2) $f=1-\\frac{1}{n^2}$ (3) $\\Delta t=\\dfrac{2Lv(n^2-1)}{c^2}$，$\\dfrac{2Lv(n^2-1)}{c\\lambda}$ 本"
+   "tex": "(1) $\\omega_o=\\dfrac{\\omega}{\\gamma(1-\\beta\\cos\\theta)}$　(2) $T(\\theta)=\\dfrac{T_0}{\\gamma(1-\\beta\\cos\\theta)}$　(3) $\\cos\\theta$ の係数 $\\beta T_0$，$\\cos^2\\theta$ の係数 $\\beta^2T_0$　(4) $\\langle T\\rangle=\\dfrac{T_0}{2\\gamma\\beta}\\ln\\dfrac{1+\\beta}{1-\\beta}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 速度の合成則 $u=\\dfrac{u'+v}{1+u'v/c^2}$ に $u'=c/n$ を入れて $\\boldsymbol{u=\\dfrac{c/n+v}{1+v/(nc)}}$．\n\n(2) $u\\approx\\left(\\dfrac{c}{n}+v\\right)\\left(1-\\dfrac{v}{nc}\\right)\\approx\\dfrac{c}{n}+v-\\dfrac{v}{n^2}$．よって $\\boldsymbol{f=1-1/n^2}$．\n水が光を完全には引きずらない（$f<1$）ことは，19世紀にはエーテルの部分的な引きずりとして説明されたが，相対論では速度の合成則の帰結にすぎない．\n\n(3) 時間差は\n\\[\\Delta t=\\frac{L}{c/n-fv}-\\frac{L}{c/n+fv}\\approx\\frac{2Lfvn^2}{c^2}=\\boldsymbol{\\frac{2Lv(n^2-1)}{c^2}}.\\]\n縞のずれは\n\\[\\frac{c\\Delta t}{\\lambda}=\\boldsymbol{\\frac{2Lv(n^2-1)}{c\\lambda}}\\ \\text{本}.\\]\n水（$n=1.33$），$L=3\\,\\mathrm{m}$，$v=7\\,\\mathrm{m/s}$，$\\lambda=530\\,\\mathrm{nm}$ なら約 $0.2$ 本である．流れの向きを逆にすると反対側にずれるので，その 2 倍の差が観測される．"
+    "tex": "(1) 観測者が方向 $\\theta$ を見るとき，光子は観測者の系で $-\\hat{\\boldsymbol n}$ 向きに進み，$k_x'=-(\\omega_o/c)\\cos\\theta$．S へ逆変換すると $\\omega=\\gamma(\\omega_o+\\beta ck_x')=\\gamma\\omega_o(1-\\beta\\cos\\theta)$ より\n\\[\\omega_o=\\boldsymbol{\\frac{\\omega}{\\gamma(1-\\beta\\cos\\theta)}}.\\]\n\n(2) 占有数は不変なので，観測者の系でも $n=\\dfrac1{e^{\\hbar\\omega/k_BT_0}-1}=\\dfrac1{e^{\\hbar\\omega_o\\gamma(1-\\beta\\cos\\theta)/k_BT_0}-1}$．これは温度\n\\[T(\\theta)=\\boldsymbol{\\frac{T_0}{\\gamma(1-\\beta\\cos\\theta)}}\\]\nのプランク分布そのものである．各方向ごとに黒体放射の形は保たれ，温度だけが変わる．\n\n(3) $\\dfrac1\\gamma\\approx1-\\dfrac{\\beta^2}2$，$\\dfrac1{1-\\beta\\cos\\theta}\\approx1+\\beta\\cos\\theta+\\beta^2\\cos^2\\theta$ より\n\\[T\\approx T_0\\left(1+\\beta\\cos\\theta+\\beta^2\\left(\\cos^2\\theta-\\tfrac12\\right)\\right).\\]\n$\\cos\\theta$ の係数 $\\boldsymbol{\\beta T_0}$，$\\cos^2\\theta$ の係数 $\\boldsymbol{\\beta^2T_0}$．太陽系の運動（$\\beta\\approx1.2\\times10^{-3}$）による双極子異方性 $\\approx3.4\\,\\mathrm{mK}$ が実際に観測されている．\n\n(4) $\\langle T\\rangle=\\dfrac12\\displaystyle\\int_{-1}^1\\frac{T_0\\,d\\mu}{\\gamma(1-\\beta\\mu)}=\\boldsymbol{\\frac{T_0}{2\\gamma\\beta}\\ln\\frac{1+\\beta}{1-\\beta}}$．$\\beta\\to0$ で $T_0$ に戻る．"
    }
   ],
   "idea": {
-   "tex": "媒質中の光速 $c/n$ と流速を相対論的に合成すると，1次で $(1-1/n^2)v$ だけ引きずられる．"
+   "tex": "占有数は不変量なので，振動数がドップラー因子倍になれば温度も同じ因子倍になる．方向ごとに黒体放射のまま温度だけが変わる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) (c/n+v)/(1+v/(n c))\n(2) 1-1/n^2\n(3) 時間差：2L v(n^2-1)/c^2 ; 縞のずれ：2L v(n^2-1)/(c λ)"
+   "spec": "(1) $\\omega_o$：ω/(γ(1-β cos(θ)))\n(2) $T$：T_0/(γ(1-β cos(θ)))\n(3) $\\cos\\theta$ の係数：β T_0 ; $\\cos^2\\theta$ の係数：β^2 T_0\n(4) $\\langle T\\rangle$：T_0 ln((1+β)/(1-β))/(2γ β)"
   },
   "methods": [],
   "tags": [
-   "フィゾーの実験",
-   "速度の合成",
-   "フレネルの引きずり係数",
-   "干渉"
+   "ドップラー効果",
+   "黒体放射",
+   "宇宙背景放射",
+   "ローレンツ不変量",
+   "4元波数"
   ],
   "provenance": {
    "created": "2026-11-03"

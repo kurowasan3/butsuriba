@@ -7149,35 +7149,35 @@
   "field": "QM-41",
   "level": 3,
   "minutes": 25,
-  "theme": "4次ポテンシャルの基底エネルギーの上下評価",
-  "topic": "4次ポテンシャルの基底エネルギーの上下評価",
+  "theme": "片側を壁で切った調和振動子と壁の移動による準位の変化",
+  "topic": "片側を壁で切った調和振動子と壁の移動による準位の変化",
   "statement": {
-   "tex": "質量 $m$ の粒子が 1 次元ポテンシャル $U(x)=\\beta x^4$（$\\beta>0$）中にある．以下では $\\langle x\\rangle=\\langle p\\rangle=0$ の状態を考え，$\\sigma^2=\\langle x^2\\rangle$ とおく．\n\\begin{enumerate}\n  \\item 運動量の大きさを $p\\sim\\hbar/x$ と見積もり，$E(x)=\\dfrac{\\hbar^2}{2mx^2}+\\beta x^4$ の最小値として基底エネルギーの概算値 $E_{\\rm est}$ を求めよ．\n  \\item 厳密な不確定性関係 $\\langle p^2\\rangle\\ge\\hbar^2/(4\\sigma^2)$ と不等式 $\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2$ を用いて，任意の状態のエネルギー期待値に対する下限 $E_{\\rm LB}$ を求めよ．これは基底エネルギーの厳密な下限となる．\n  \\item 数値計算による厳密な基底エネルギーを $E_0=c\\,(\\hbar^4\\beta/m^2)^{1/3}$（$c$ は数値定数）と書く．$E_{\\rm est}/E_0$ と $E_{\\rm LB}/E_0$ を $c$ で表せ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の粒子が，ポテンシャル $V(x)=\\frac12m\\omega^2x^2$（$x>0$），$V=\\infty$（$x\\le0$）の中にある（半分の調和振動子）．全空間の調和振動子の固有関数を利用してよい．$\\ell=\\sqrt{\\hbar/(m\\omega)}$ とする．\n\\begin{enumerate}\n\\item 固有エネルギー $E_n$（$n=0,1,2,\\dots$）を求めよ．\n\\item 基底状態での位置の期待値 $\\langle x\\rangle$ を求めよ．\n\\item 壁の位置を $x=0$ から $x=-b$（$b>0$ は小さい）へ移す．壁の位置を外向きに $\\delta b$ 動かしたときのエネルギーの変化は $\\delta E=-\\dfrac{\\hbar^2}{2m}\\psi'(\\text{壁})^2\\,\\delta b$ である（壁にはたらく力）．基底エネルギーの変化を $b$ の1次で求めよ．\n\\item 基底状態でのポテンシャルエネルギーの期待値 $\\langle V\\rangle$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E_{\\rm est}=\\dfrac{3\\cdot2^{2/3}}{4}\\left(\\dfrac{\\hbar^4\\beta}{m^2}\\right)^{1/3}$　(2) $E_{\\rm LB}=\\dfrac{3\\cdot2^{1/3}}{8}\\left(\\dfrac{\\hbar^4\\beta}{m^2}\\right)^{1/3}$　(3) $E_{\\rm est}/E_0=\\dfrac{3\\cdot2^{2/3}}{4c}$，$E_{\\rm LB}/E_0=\\dfrac{3\\cdot2^{1/3}}{8c}$"
+   "tex": "(1) $E_n=\\left(2n+\\dfrac32\\right)\\hbar\\omega$　(2) $\\langle x\\rangle=2\\sqrt{\\dfrac{\\hbar}{\\pi m\\omega}}$　(3) $\\Delta E=-2\\hbar\\omega b\\sqrt{\\dfrac{m\\omega}{\\pi\\hbar}}$　(4) $\\langle V\\rangle=\\dfrac34\\hbar\\omega$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{dE}{dx}=-\\dfrac{\\hbar^2}{mx^3}+4\\beta x^3=0$ より $x^6=\\dfrac{\\hbar^2}{4m\\beta}$．このとき $\\beta x^4=\\dfrac{\\hbar^2}{4mx^2}$ だから\n\\[E_{\\rm est}=\\frac{3\\hbar^2}{4mx^2}=\\frac34\\hbar^2 m^{-1}\\left(\\frac{4m\\beta}{\\hbar^2}\\right)^{1/3}=\\boldsymbol{\\frac{3\\cdot2^{2/3}}{4}\\left(\\frac{\\hbar^4\\beta}{m^2}\\right)^{1/3}}.\\]\n\n(2) $\\langle E\\rangle=\\dfrac{\\langle p^2\\rangle}{2m}+\\beta\\langle x^4\\rangle\\ge\\dfrac{\\hbar^2}{8m\\sigma^2}+\\beta\\sigma^4\\equiv g(\\sigma)$．どの状態でもこの不等式が成り立つので $\\langle E\\rangle\\ge\\min_\\sigma g$．$g'(\\sigma)=0$ より $\\sigma^6=\\dfrac{\\hbar^2}{16m\\beta}$，このとき $\\beta\\sigma^4=\\dfrac{\\hbar^2}{16m\\sigma^2}$ で\n\\[E_{\\rm LB}=\\frac{3\\hbar^2}{16m\\sigma^2}=\\frac{3}{16}\\frac{\\hbar^2}{m}\\left(\\frac{16m\\beta}{\\hbar^2}\\right)^{1/3}=\\boldsymbol{\\frac{3\\cdot2^{1/3}}{8}\\left(\\frac{\\hbar^4\\beta}{m^2}\\right)^{1/3}}.\\]\n基底状態も「ある状態」なので $E_0\\ge E_{\\rm LB}$．\n\n(3) $\\boldsymbol{\\dfrac{E_{\\rm est}}{E_0}=\\dfrac{3\\cdot2^{2/3}}{4c}}$，$\\boldsymbol{\\dfrac{E_{\\rm LB}}{E_0}=\\dfrac{3\\cdot2^{1/3}}{8c}}$．数値計算の $c\\approx0.67$ を入れると前者は約 1.8，後者は約 0.71 で，粗い見積もり (1) は過大評価だが，(2) は厳密な下限で，真値の約 7 割を与える．両者の比 $E_{\\rm est}/E_{\\rm LB}=2^{4/3}$ は $c$ によらない．いずれもエネルギーのスケール $(\\hbar^4\\beta/m^2)^{1/3}$ は正しく捉えている．"
+    "tex": "(1) 全空間の調和振動子の固有関数のうち，$x=0$ で 0 になる奇関数（$n_{\\rm full}=1,3,5,\\dots$）を $x>0$ に制限したものが固有関数になる（規格化は $\\sqrt2$ 倍）．よって $E_n=\\boldsymbol{\\left(2n+\\dfrac32\\right)\\hbar\\omega}$．\n\n(2) 基底状態は $\\psi=\\sqrt2\\,\\psi_1$，$\\psi_1^2=\\dfrac{2x^2}{\\sqrt\\pi\\ell^3}e^{-x^2/\\ell^2}$．\n\\[\\langle x\\rangle=2\\int_0^\\infty x\\psi_1^2dx=\\frac{4}{\\sqrt\\pi\\ell^3}\\int_0^\\infty x^3e^{-x^2/\\ell^2}dx=\\frac{2\\ell}{\\sqrt\\pi}=\\boldsymbol{2\\sqrt{\\frac{\\hbar}{\\pi m\\omega}}}.\\]\n\n(3) $\\psi'(0)^2=2\\psi_1'(0)^2=\\dfrac{4}{\\sqrt\\pi\\ell^3}$．よって\n\\[\\Delta E=-\\frac{\\hbar^2}{2m}\\cdot\\frac{4}{\\sqrt\\pi\\ell^3}b=-\\frac{2\\hbar\\omega b}{\\sqrt\\pi\\ell}=\\boldsymbol{-2\\hbar\\omega b\\sqrt{\\frac{m\\omega}{\\pi\\hbar}}}.\\]\n壁を外に動かすと閉じ込めが緩みエネルギーが下がる．$b\\to\\infty$ では全空間の基底エネルギー $\\frac12\\hbar\\omega$ に近づく．\n\n(4) $\\psi$ は全空間の振動子の固有関数（を制限したもの）なので，$x>0$ の領域でもビリアル定理 $\\langle T\\rangle=\\langle V\\rangle$ が成り立つ（壁の位置で $\\psi=0$，$xV'$ の表面項は $x=0$ で消える）．よって $\\langle V\\rangle=\\frac12E_0=\\boldsymbol{\\dfrac34\\hbar\\omega}$．"
    }
   ],
   "idea": {
-   "tex": "不確定性関係を「$p\\sim\\hbar/x$」という目安ではなく $\\langle p^2\\rangle\\ge\\hbar^2/4\\langle x^2\\rangle$ と厳密に使い，$\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2$ と組み合わせると，基底エネルギーの厳密な下限が得られる．"
+   "tex": "壁で切った振動子の固有関数は全空間の奇関数の固有関数．壁の移動によるエネルギー変化は壁での傾き $\\psi'(0)^2$ で決まる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $E_{\\rm est}$：((3*2^(2/3))/(4))(((hbar ^(4) β)/(m ^(2))))^(1/3)\n(2) $E_{\\rm LB}$：((3*2^(1/3))/(8))(((hbar ^(4) β)/(m ^(2))))^(1/3)\n(3) $E_{\\rm est}/E_0$：3*2^(2/3)/(4 c) ; $E_{\\rm LB}/E_0$：3*2^(1/3)/(8 c)"
+   "spec": "(1) $E_n$：(2n+3/2) ħ ω\n(2) 2sqrt(ħ/(π m ω))\n(3) -2ħ ω b sqrt(m ω/(π ħ))\n(4) 3ħ ω/4"
   },
   "methods": [],
   "tags": [
-   "不確定性原理",
-   "非調和振動子",
-   "基底エネルギー",
-   "下限評価",
-   "4次ポテンシャル"
+   "調和振動子",
+   "境界条件",
+   "パリティ",
+   "ビリアル定理",
+   "壁にはたらく力"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -7399,35 +7399,34 @@
   "field": "QM-41",
   "level": 3,
   "minutes": 25,
-  "theme": "不確定性関係による四次振動子の厳密下限",
-  "topic": "不確定性関係による四次振動子の厳密下限",
+  "theme": "なめらかな段差ポテンシャルでの反射率：厳密式とその極限",
+  "topic": "なめらかな段差ポテンシャルでの反射率：厳密式とその極限",
   "statement": {
-   "tex": "質量 $m$ の粒子がポテンシャル $V(x)=\\lambda x^4$（$\\lambda>0$）の中にある．基底状態はパリティ偶なので $\\langle x\\rangle=\\langle p\\rangle=0$ である．\n\\begin{enumerate}\n\\item $\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2$ と $\\langle p^2\\rangle\\langle x^2\\rangle\\ge\\hbar^2/4$ を用いて，基底エネルギー $E_0$ の下限を $s^2=\\langle x^2\\rangle$ の関数として与え，それを最小化して\n\\[\nE_0\\ge c\\left(\\frac{\\hbar^4\\lambda}{m^2}\\right)^{1/3}\n\\]\nの形の厳密な不等式を導け．定数 $c$ を求めよ．\n\\item 同じ手法を調和振動子 $V=\\frac12m\\omega^2x^2$ に適用すると何が得られるか．\n\\item 数値計算による厳密な基底エネルギーを $E_0=c_0\\left(\\hbar^4\\lambda/m^2\\right)^{1/3}$ と書く．(1) の下限との比（下限$/E_0$）を $c_0$ で表し，下限が厳密値に一致しない理由を述べよ．\n\\end{enumerate}"
+   "tex": "ポテンシャル $V(x)=\\dfrac{V_0}{1+e^{-x/a}}$（$V_0>0$，幅 $a$ のなめらかな上り段差）に，左から質量 $m$，エネルギー $E>V_0$ の粒子が入射する．$k_1=\\sqrt{2mE}/\\hbar$，$k_2=\\sqrt{2m(E-V_0)}/\\hbar$ とすると，反射率は厳密に\n\\[R=\\left(\\frac{\\sinh\\pi a(k_1-k_2)}{\\sinh\\pi a(k_1+k_2)}\\right)^2\\]\nで与えられる．\n\\begin{enumerate}\n\\item 急な段差（$x<0$ で $V=0$，$x>0$ で $V=V_0$）について，波動関数とその導関数の接続から反射率 $R_0$ を求めよ．\n\\item 厳密式で $a\\to0$ とすると (1) と一致することを確かめよ．\n\\item $\\pi a(k_1-k_2)\\gg1$ のとき，$R$ を指数関数で近似せよ．\n\\item 透過率 $T=1-R$ を $\\sinh$ の積と商の形で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $c=3\\cdot2^{-8/3}$　(2) $E_0\\ge\\frac12\\hbar\\omega$（厳密値と一致）　(3) 比 $\\dfrac{3\\cdot2^{-8/3}}{c_0}$．$\\langle x^4\\rangle=\\langle x^2\\rangle^2$ の等号が成り立つ波動関数が存在しないため"
+   "tex": "(1) $R_0=\\left(\\dfrac{k_1-k_2}{k_1+k_2}\\right)^2$　(2) 確認（解説参照）　(3) $R\\approx e^{-4\\pi ak_2}$　(4) $T=\\dfrac{\\sinh(2\\pi ak_1)\\sinh(2\\pi ak_2)}{\\sinh^2(\\pi ak_1+\\pi ak_2)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $E_0=\\dfrac{\\langle p^2\\rangle}{2m}+\\lambda\\langle x^4\\rangle\\ge\\dfrac{\\hbar^2}{8ms^2}+\\lambda s^4\\equiv F(s)$．$F'(s)=-\\dfrac{\\hbar^2}{4ms^3}+4\\lambda s^3=0$ より $s^6=\\dfrac{\\hbar^2}{16m\\lambda}$．このとき $\\lambda s^4=\\lambda s^6/s^2=\\dfrac{\\hbar^2}{16ms^2}$ なので\n\\[\nF_{\\min}=\\frac{3\\hbar^2}{16ms^2}=\\frac{3\\hbar^2}{16m}\\left(\\frac{16m\\lambda}{\\hbar^2}\\right)^{1/3}=3\\cdot16^{-2/3}\\left(\\frac{\\hbar^4\\lambda}{m^2}\\right)^{1/3}.\n\\]\n$E_0\\ge F(s)\\ge F_{\\min}$ だから $\\boldsymbol{c=3\\cdot2^{-8/3}}$（約 0.47）．各不等式が厳密なので，これは単なる見積もりではなく厳密な下限である．\n\n(2) $E_0\\ge\\dfrac{\\hbar^2}{8ms^2}+\\dfrac12m\\omega^2s^2\\ge2\\sqrt{\\dfrac{\\hbar^2}{8m}\\cdot\\dfrac{m\\omega^2}{2}}=\\dfrac12\\hbar\\omega$．基底状態のガウス関数は $\\Delta x\\Delta p=\\hbar/2$ を等号で満たすので，下限は厳密値に一致する．\n\n(3) 比は $\\boldsymbol{\\dfrac{3\\cdot2^{-8/3}}{c_0}}$ で，数値計算の $c_0\\approx0.67$ を使うと約 0.71 と 1 に届かない．$\\langle x^4\\rangle=\\langle x^2\\rangle^2$ は $|\\psi|^2$ が $x^2$ の一点（$x=\\pm s$）に集中するとき，$\\Delta x\\Delta p=\\hbar/2$ はガウス型のときにしか等号にならず，二つの条件を同時に満たす状態は存在しない．実際ガウス型では $\\langle x^4\\rangle=3\\langle x^2\\rangle^2$ である．"
+    "tex": "(1) $x<0$ で $\\psi=e^{ik_1x}+re^{-ik_1x}$，$x>0$ で $\\psi=te^{ik_2x}$．$x=0$ で $1+r=t$，$k_1(1-r)=k_2t$ より $r=\\dfrac{k_1-k_2}{k_1+k_2}$，\n\\[R_0=\\boldsymbol{\\left(\\frac{k_1-k_2}{k_1+k_2}\\right)^2}.\\]\n\n(2) $a\\to0$ で $\\sinh\\pi a(k_1\\mp k_2)\\approx\\pi a(k_1\\mp k_2)$ なので，比は $\\dfrac{k_1-k_2}{k_1+k_2}$ になり (1) と一致する．\n\n(3) $\\sinh x\\approx e^x/2$ を分子・分母に使うと\n\\[R\\approx\\left(e^{\\pi a(k_1-k_2)-\\pi a(k_1+k_2)}\\right)^2=\\boldsymbol{e^{-4\\pi ak_2}}.\\]\n段差の幅 $a$ が波長より十分大きいと反射は指数関数的に小さくなり，古典力学（$E>V_0$ なら必ず透過）に近づく．量子的な反射は，ポテンシャルが波長の尺度で急に変わるときにだけ大きい．\n\n(4) $\\sinh^2(A+B)-\\sinh^2(A-B)=\\sinh2A\\sinh2B$（$A=\\pi ak_1$，$B=\\pi ak_2$）より\n\\[T=\\boldsymbol{\\frac{\\sinh(2\\pi ak_1)\\sinh(2\\pi ak_2)}{\\sinh^2\\left(\\pi a(k_1+k_2)\\right)}}.\\]"
    }
   ],
   "idea": {
-   "tex": "不確定性関係による「見積もり」も，$\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2$ と組み合わせれば厳密な下限定理になる．等号条件が両立するかで評価の精度が決まる．"
+   "tex": "なめらかさの尺度 $a$ と波長の比が反射を決める．$a\\to0$ で急な段差の結果，$ka\\gg1$ で反射は $e^{-4\\pi ak_2}$ と指数関数的に消える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $c$：3*2^(-8/3)\n(2) 記述\n(3) 比：3*2^(-8/3)/c_0 ; 理由：記述"
+   "spec": "(1) $R_0$：((k_1-k_2)/(k_1+k_2))^2\n(2) 記述\n(3) exp(-4π a k_2)\n(4) $T$：sinh(2π a k_1) sinh(2π a k_2)/sinh(π a (k_1+k_2))^2"
   },
   "methods": [],
   "tags": [
-   "不確定性原理",
-   "基底エネルギー",
-   "四次振動子",
-   "下限評価",
-   "変分"
+   "反射率",
+   "透過率",
+   "ポテンシャル段差",
+   "古典極限"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -7650,35 +7649,35 @@
   "field": "QM-41",
   "level": 3,
   "minutes": 25,
-  "theme": "不確定性関係による基底エネルギーの厳密下限",
-  "topic": "不確定性関係による基底エネルギーの厳密下限",
+  "theme": "運動量表示で解くデルタ関数井戸の束縛状態",
+  "topic": "運動量表示で解くデルタ関数井戸の束縛状態",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 任意の規格化された状態について $\\langle x\\rangle=\\langle p\\rangle=0$ とは限らないが，$\\langle p^2\\rangle\\ge(\\Delta p)^2$，$\\langle x^2\\rangle\\ge(\\Delta x)^2$ と $\\Delta x\\Delta p\\ge\\hbar/2$ を用いて，調和振動子 $H=\\frac{p^2}{2m}+\\frac12m\\omega^2x^2$ の任意の状態で $\\langle H\\rangle\\ge\\frac12\\hbar\\omega$ であることを示せ．等号が成り立つ状態の条件は何か．\n\\item 同様の方法で，非調和振動子 $H=\\dfrac{p^2}{2m}+\\lambda x^4$（$\\lambda>0$）の基底エネルギーに対する厳密な下限を求めよ（$\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2$ を用いよ）．\n\\item 数値的に求めた基底エネルギーを $E_0=c\\left(\\hbar^4\\lambda/m^2\\right)^{1/3}$（$c$ は数値定数）と書く．(2) の下限と $E_0$ の比を $c$ で表し，調和振動子と違って等号が成り立たない理由を述べよ．\n\\end{enumerate}"
+   "tex": "ポテンシャル $V(x)=-\\alpha\\delta(x)$（$\\alpha>0$）の中の質量 $m$ の粒子の束縛状態（エネルギー $E<0$）を，運動量表示の波動関数\n\\[\\phi(p)=\\frac1{\\sqrt{2\\pi\\hbar}}\\int_{-\\infty}^\\infty\\psi(x)e^{-ipx/\\hbar}dx\\]\nで求める．$b=\\sqrt{-2mE}$ とおく．\n\\begin{enumerate}\n\\item シュレーディンガー方程式を運動量表示に直すと $\\left(\\dfrac{p^2}{2m}-E\\right)\\phi(p)=\\dfrac{\\alpha}{\\sqrt{2\\pi\\hbar}}\\psi(0)$ となることを示せ．\n\\item $\\psi(0)=\\dfrac1{\\sqrt{2\\pi\\hbar}}\\displaystyle\\int\\phi(p)\\,dp$ を用いて自己無撞着の条件を立て，束縛エネルギー $E$ を求めよ．$\\displaystyle\\int_{-\\infty}^\\infty\\frac{dp}{p^2+b^2}=\\frac\\pi b$ を用いてよい．\n\\item 規格化された $\\phi(p)$ を $p,b$ で表せ（位相は実で正にとる）．\n\\item 運動量の2乗の期待値 $\\langle p^2\\rangle$ と，$|p|>b$ である確率を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）．等号は $\\langle x\\rangle=\\langle p\\rangle=0$ の最小不確定（ガウス）状態で $\\Delta x^2=\\hbar/2m\\omega$ のとき　(2) $E_0\\ge\\dfrac{3}{16}\\,16^{1/3}\\left(\\dfrac{\\hbar^4\\lambda}{m^2}\\right)^{1/3}$　(3) 比 $\\dfrac{3\\cdot16^{1/3}}{16c}$（1 より小さい）"
+   "tex": "(1) 証明（解説参照）　(2) $E=-\\dfrac{m\\alpha^2}{2\\hbar^2}$（$b=\\dfrac{m\\alpha}\\hbar$）　(3) $\\phi(p)=\\sqrt{\\dfrac{2b^3}{\\pi}}\\dfrac{1}{p^2+b^2}$　(4) $\\langle p^2\\rangle=b^2$，確率 $\\dfrac12-\\dfrac1\\pi$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $s=\\Delta x$ とおくと $\\Delta p\\ge\\hbar/2s$ なので\n\\[ \\langle H\\rangle\\ge\\frac{(\\Delta p)^2}{2m}+\\frac12m\\omega^2(\\Delta x)^2\\ge\\frac{\\hbar^2}{8ms^2}+\\frac12m\\omega^2s^2\\ge2\\sqrt{\\frac{\\hbar^2}{8ms^2}\\cdot\\frac{m\\omega^2s^2}{2}}=\\frac{\\hbar\\omega}2. \\]\n最初の不等号は $\\langle x\\rangle=\\langle p\\rangle=0$，2 番目は最小不確定状態（ガウス波束），3 番目は $s^2=\\hbar/2m\\omega$ のときに等号．これは基底状態 $\\psi_0$ そのものなので，基底エネルギーは $\\frac12\\hbar\\omega$ より低くなりえない．\n\n(2) $\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2\\ge(\\Delta x)^4=s^4$ より\n\\[ \\langle H\\rangle\\ge f(s)=\\frac{\\hbar^2}{8ms^2}+\\lambda s^4. \\]\n$f'(s)=-\\dfrac{\\hbar^2}{4ms^3}+4\\lambda s^3=0$ より $s^6=\\dfrac{\\hbar^2}{16m\\lambda}$．このとき $\\lambda s^4=\\dfrac{\\hbar^2}{16ms^2}$ なので\n\\[ f_{\\min}=\\frac{3\\hbar^2}{16ms^2}=\\frac{3}{16}\\frac{\\hbar^2}{m}\\left(\\frac{16m\\lambda}{\\hbar^2}\\right)^{1/3}=\\boldsymbol{\\frac{3}{16}\\,16^{1/3}\\left(\\frac{\\hbar^4\\lambda}{m^2}\\right)^{1/3}}. \\]\n各不等式は任意の状態で成立するので，これは基底エネルギーの厳密な下限である．\n\n(3) 比は $\\boldsymbol{\\dfrac{3\\cdot16^{1/3}}{16c}}$．数値計算の $c\\approx0.67$ を使うと約 0.71 で，下限は真値の約 7 割である．調和振動子と違って等号が成り立たないのは，$\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2$ の等号が $x^2$ の分散 0（$x=\\pm s$ に集中）を要求し，最小不確定状態（ガウス型，$\\langle x^4\\rangle=3\\langle x^2\\rangle^2$）と両立しないためである．"
+    "tex": "(1) $\\dfrac{-\\hbar^2}{2m}\\psi''-\\alpha\\delta(x)\\psi=E\\psi$ に $\\dfrac{e^{-ipx/\\hbar}}{\\sqrt{2\\pi\\hbar}}$ を掛けて積分すると，運動エネルギー項は $\\dfrac{p^2}{2m}\\phi$，デルタ関数の項は $-\\dfrac{\\alpha}{\\sqrt{2\\pi\\hbar}}\\psi(0)$ になり与式を得る．\n\n(2) (1) より $\\phi(p)=\\dfrac{2m\\alpha\\psi(0)}{\\sqrt{2\\pi\\hbar}}\\cdot\\dfrac1{p^2+b^2}$．これを $\\psi(0)=\\frac1{\\sqrt{2\\pi\\hbar}}\\int\\phi\\,dp$ に代入すると\n\\[\\psi(0)=\\frac{2m\\alpha\\psi(0)}{2\\pi\\hbar}\\cdot\\frac\\pi b\\quad\\Rightarrow\\quad b=\\frac{m\\alpha}\\hbar,\\qquad E=-\\frac{b^2}{2m}=\\boldsymbol{-\\frac{m\\alpha^2}{2\\hbar^2}}.\\]\n束縛状態は1つだけである．\n\n(3) $\\displaystyle\\int\\frac{dp}{(p^2+b^2)^2}=\\frac{\\pi}{2b^3}$ より $\\phi(p)=\\boldsymbol{\\sqrt{\\dfrac{2b^3}\\pi}\\dfrac1{p^2+b^2}}$（位置表示の $e^{-b|x|/\\hbar}$ のフーリエ変換であるローレンツ型）．\n\n(4) $\\displaystyle\\int\\frac{p^2\\,dp}{(p^2+b^2)^2}=\\frac\\pi{2b}$ より $\\langle p^2\\rangle=\\boldsymbol{b^2}$．運動エネルギーの期待値 $b^2/2m=|E|$ で，ポテンシャルの期待値は $-2|E|$ である．$|p|>b$ の確率は\n\\[2\\cdot\\frac{2b^3}\\pi\\int_b^\\infty\\frac{dp}{(p^2+b^2)^2}=\\frac{4}{\\pi}\\cdot\\frac12\\left(\\frac\\pi4-\\frac12\\right)=\\boldsymbol{\\frac12-\\frac1\\pi}.\\]"
    }
   ],
   "idea": {
-   "tex": "不確定性関係と $\\langle x^4\\rangle\\ge\\langle x^2\\rangle^2$ を組み合わせると，変分法（上限）とは逆の厳密な下限が得られる．調和振動子では等号が達成される点が特別．"
+   "tex": "デルタ関数のポテンシャルは運動量表示では定数 $\\psi(0)$ を掛ける演算になり，$\\phi(p)$ が代数的に決まる．自己無撞着の条件が固有値を与える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 下限：(3/16) 16^(1/3) (hbar^4 λ/m^2)^(1/3)\n(3) 比：3*16^(1/3)/(16 c) ; 理由：記述"
+   "spec": "(1) 記述\n(2) $E$：-m α^2/(2ħ^2)\n(3) $\\phi(p)$：sqrt(2b^3/π)/(p^2+b^2)\n(4) $\\langle p^2\\rangle$：b^2 ; 確率：1/2-1/π"
   },
   "methods": [],
   "tags": [
-   "不確定性原理",
-   "零点エネルギー",
-   "非調和振動子",
-   "下限評価",
-   "四次ポテンシャル"
+   "運動量表示",
+   "デルタ関数ポテンシャル",
+   "束縛状態",
+   "フーリエ変換",
+   "自己無撞着"
   ],
   "provenance": {
    "created": "2026-11-23"

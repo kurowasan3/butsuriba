@@ -3992,33 +3992,35 @@
   "field": "QM-120",
   "level": 2,
   "minutes": 20,
-  "theme": "コンプトン端とγ線スペクトル",
-  "topic": "コンプトン端とγ線スペクトル",
+  "theme": "中性子の鏡面全反射：物質波の屈折率と臨界角",
+  "topic": "中性子の鏡面全反射：物質波の屈折率と臨界角",
   "statement": {
-   "tex": "$\\gamma$ 線スペクトロメータでは，検出器内の自由電子とみなせる電子へのコンプトン散乱により，電子の運動エネルギー分布に上端（コンプトン端）$T_m$ が現れる．電子の静止エネルギーを $m_ec^2$，コンプトン波長を $\\Lambda$ とする．\n\\begin{enumerate}\n\\item コンプトン端が $T_m$ に観測された．入射放射の波長 $\\lambda$ とエネルギー $\\varepsilon$ を $T_m,m_ec^2,\\Lambda$ で表せ．\n\\item 光電ピーク（$\\varepsilon$）とコンプトン端の差 $\\varepsilon-T_m$ は，$\\varepsilon\\to\\infty$ で一定値に近づくことを示し，その値を求めよ．\n\\item 入射エネルギーが $\\varepsilon=m_ec^2$ のとき，コンプトン端の位置 $T_m$ を求めよ．\n\\end{enumerate}"
+   "tex": "遅い中性子（質量 $m$）が物質に入ると，原子核との相互作用を平均した一様なポテンシャル（フェルミの擬ポテンシャル）\n\\[V=\\frac{2\\pi\\hbar^2}{m}Nb\\]\nを感じる（$N$ は単位体積あたりの原子核の数，$b>0$ は干渉性散乱長）．真空中の中性子の波長を $\\lambda$ とする．\n\\begin{enumerate}\n\\item 物質の中性子に対する屈折率 $n=k_{\\rm in}/k_{\\rm out}$（物質内と真空中の波数の比）を $\\lambda,N,b$ で表せ．\n\\item 表面すれすれの小さな角 $\\theta$（表面と進む向きのなす角）で入射するとき，全反射が起こる臨界角 $\\theta_c$ を求めよ（$\\theta_c\\ll1$）．\n\\item 表面に垂直な速度成分が $v_c$ 以下の中性子は，どんな入射角でも全反射される．$v_c$ を求めよ．\n\\item ニッケル（$N=9.1\\times10^{28}\\,\\mathrm{m^{-3}}$，$b=1.03\\times10^{-14}\\,\\mathrm m$）で，$\\lambda=1.0\\,\\mathrm{nm}$ の中性子の臨界角 $\\theta_c$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\lambda=\\Lambda\\left(\\sqrt{1+\\dfrac{2m_ec^2}{T_m}}-1\\right)$，$\\varepsilon=\\dfrac{m_ec^2}{\\sqrt{1+2m_ec^2/T_m}-1}$　(2) $\\dfrac{m_ec^2}{2}$　(3) $T_m=\\dfrac23m_ec^2$"
+   "tex": "(1) $n=\\sqrt{1-\\dfrac{\\lambda^2Nb}{\\pi}}$　(2) $\\theta_c=\\lambda\\sqrt{\\dfrac{Nb}{\\pi}}$　(3) $v_c=\\dfrac{2\\hbar\\sqrt{\\pi Nb}}{m}$　(4) $\\theta_c\\approx1.7\\times10^{-2}\\,\\mathrm{rad}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $T$ が最大になるのは後方散乱：$\\lambda'=\\lambda+2\\Lambda$．$T_m=hc\\left(\\dfrac1\\lambda-\\dfrac1{\\lambda+2\\Lambda}\\right)=\\dfrac{2\\Lambda hc}{\\lambda(\\lambda+2\\Lambda)}$．$hc=m_ec^2\\Lambda$ を用いると\n\\[\\lambda^2+2\\Lambda\\lambda-\\frac{2\\Lambda^2m_ec^2}{T_m}=0\\ \\Rightarrow\\ \\boldsymbol{\\lambda=\\Lambda\\left(\\sqrt{1+\\frac{2m_ec^2}{T_m}}-1\\right)}.\\]\n\\[\\boldsymbol{\\varepsilon=\\frac{hc}{\\lambda}=\\frac{m_ec^2\\Lambda}{\\lambda}=\\frac{m_ec^2}{\\sqrt{1+2m_ec^2/T_m}-1}}.\\]\n\n(2) $\\varepsilon-T_m=\\varepsilon'(180^\\circ)=\\dfrac{\\varepsilon}{1+2\\varepsilon/m_ec^2}\\to\\boldsymbol{\\dfrac{m_ec^2}2}$（約 $0.26$ MeV）．\n\n(3) $T_m=\\dfrac{2\\varepsilon^2/m_ec^2}{1+2\\varepsilon/m_ec^2}$ に $\\varepsilon=m_ec^2$ を代入して $\\boldsymbol{T_m=\\tfrac23m_ec^2}$．（実例：${}^{137}$Cs の $0.662$ MeV では $T_m\\approx0.48$ MeV．）"
+    "tex": "(1) エネルギー保存 $\\dfrac{\\hbar^2k^2}{2m}=\\dfrac{\\hbar^2k_{\\rm in}^2}{2m}+V$ より $k_{\\rm in}^2=k^2-4\\pi Nb$．$k=2\\pi/\\lambda$ を使うと\n\\[n^2=1-\\frac{4\\pi Nb}{k^2}=1-\\frac{\\lambda^2Nb}\\pi,\\qquad n=\\boldsymbol{\\sqrt{1-\\frac{\\lambda^2Nb}{\\pi}}}.\\]\n$b>0$ では $n<1$ で，光と違って真空側から入るときに全反射が起こる．\n\n(2) 表面に平行な波数成分は保存されるので，スネルの法則は $\\cos\\theta=n\\cos\\theta'$．全反射の条件 $\\cos\\theta_c=n$ を $1-\\frac{\\theta_c^2}2=1-\\frac{\\lambda^2Nb}{2\\pi}$ と近似して $\\theta_c=\\boldsymbol{\\lambda\\sqrt{\\dfrac{Nb}\\pi}}$．\n\n(3) 表面に垂直な運動のエネルギー $\\frac12mv_\\perp^2$ が $V$ より小さければ物質に入れない．$v_c=\\sqrt{2V/m}=\\boldsymbol{\\dfrac{2\\hbar\\sqrt{\\pi Nb}}{m}}$（数 m/s 程度）．この速さ以下の超冷中性子は物質の容器に閉じ込めることができ，中性子の寿命の測定に使われる．\n\n(4) $\\theta_c=1.0\\times10^{-9}\\times\\sqrt{\\dfrac{9.1\\times10^{28}\\times1.03\\times10^{-14}}{\\pi}}\\approx\\boldsymbol{1.7\\times10^{-2}\\,\\mathrm{rad}}$（約 $1^\\circ$）．臨界角が波長に比例するので，中性子導管（ガイド管）でゆっくりした中性子を遠くまで運べる．"
    }
   ],
   "idea": {
-   "tex": "コンプトン端は後方散乱で決まり，その残りエネルギーは後方散乱光子そのもので，高エネルギーで $m_ec^2/2$ に飽和する．"
+   "tex": "物質中の一様な擬ポテンシャルで波数が減るので，屈折率が 1 より小さくなり，すれすれ入射で全反射する．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\lambda$：Λ (sqrt(1+2 m_e c^2/T_m)-1) ; $\\varepsilon$：m_e c^2/(sqrt(1+2 m_e c^2/T_m)-1)\n(2) m_e c^2/2\n(3) $T_m$：2 m_e c^2/3"
+   "spec": "(1) $n$：sqrt(1-λ^2 N b/π)\n(2) $\\theta_c$：λ sqrt(N b/π)\n(3) $v_c$：2ħ sqrt(π N b)/m\n(4) $\\theta_c$ [rad]：≈1.7e-2"
   },
   "methods": [],
   "tags": [
-   "コンプトン散乱",
-   "コンプトン端",
-   "ガンマ線分光"
+   "中性子",
+   "物質波",
+   "屈折率",
+   "全反射",
+   "擬ポテンシャル"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -5018,35 +5020,35 @@
   "kind": "written",
   "field": "QM-120",
   "level": 2,
-  "minutes": 25,
-  "theme": "高速電子のデバイ・シェラー環と相対論補正",
-  "topic": "高速電子のデバイ・シェラー環と相対論補正",
+  "minutes": 20,
+  "theme": "ハイゼンベルクのγ線顕微鏡",
+  "topic": "ハイゼンベルクのγ線顕微鏡",
   "statement": {
-   "tex": "運動エネルギー $T$ の電子ビーム（電子の静止エネルギー $m_ec^2$）がアルミニウムの多結晶薄膜を通過し，膜から距離 $L$ のスクリーン上に同心円状の回折環をつくる．アルミニウムは面心立方格子で格子定数 $a$，最も内側の 2 つの環は $(111)$ 面と $(200)$ 面の 1 次反射による．プランク定数を $h$，光速を $c$ とし，回折角は小さいとする．\n\\begin{enumerate}\n\\item 電子の波長 $\\lambda$ を相対論的に求めよ．非相対論の式による波長はその何倍か．\n\\item 2 つの環の半径 $r_1$（$(111)$），$r_2$（$(200)$）を $L,\\lambda,a$ で表せ．\n\\item 環の半径から格子定数を逆算するとき，誤って非相対論の波長を使うと格子定数は何倍に誤るか．\n\\end{enumerate}"
+   "tex": "波長 $\\lambda$ の光で，$x$ 軸上を運動する電子の位置を顕微鏡で観測する．光は $x$ 軸に沿って入射し，電子で散乱された光子1個が，$x$ 軸に垂直な方向に置いた対物レンズに入る．レンズは電子から見て半頂角 $\\varepsilon$ の円錐の範囲の光を集め，その分解能（位置の不確かさ）は $\\Delta x\\approx\\dfrac{\\lambda}{2\\sin\\varepsilon}$ である．散乱による波長の変化は無視し，プランク定数を $h$ とする．\n\\begin{enumerate}\n\\item 散乱光子がレンズのどこを通ったかわからないため，電子が受け取る運動量の $x$ 成分に不確かさ $\\Delta p_x$ が生じる．$\\Delta p_x$ を求めよ．\n\\item $\\Delta x\\,\\Delta p_x$ を求めよ．\n\\item 電子の位置を $\\Delta x=0.10\\,\\mathrm{nm}$ の精度で知るのに使える光の最大の波長と，そのときの光子のエネルギーを求めよ（$\\sin\\varepsilon=1$ とし，$hc=1240\\,\\mathrm{eV\\cdot nm}$）．\n\\item (3) の光について，コンプトン散乱による波長の変化の最大値（$2h/(m_ec)$，$h/(m_ec)=2.43\\,\\mathrm{pm}$）は波長の何倍か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\lambda=\\dfrac{hc}{\\sqrt{T(T+2m_ec^2)}}$；$\\sqrt{1+\\dfrac{T}{2m_ec^2}}$ 倍　(2) $r_1=\\dfrac{\\sqrt3L\\lambda}{a}$，$r_2=\\dfrac{2L\\lambda}{a}$　(3) $\\sqrt{1+\\dfrac{T}{2m_ec^2}}$ 倍（過大）"
+   "tex": "(1) $\\Delta p_x=\\dfrac{2h\\sin\\varepsilon}{\\lambda}$　(2) $\\Delta x\\,\\Delta p_x\\approx h$　(3) $\\lambda=0.20\\,\\mathrm{nm}$，$6.2\\,\\mathrm{keV}$　(4) $\\approx0.024$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $pc=\\sqrt{T(T+2m_ec^2)}$ より $\\boldsymbol{\\lambda=\\dfrac{hc}{\\sqrt{T(T+2m_ec^2)}}}$．非相対論では $\\lambda_{\\rm NR}=hc/\\sqrt{2m_ec^2T}$ で，比は $\\boldsymbol{\\lambda_{\\rm NR}/\\lambda=\\sqrt{1+T/2m_ec^2}}$．（$T=100$ keV で $1.048$．）\n\n(2) 立方晶の面間隔 $d=a/\\sqrt{h^2+k^2+l^2}$：$d_{111}=a/\\sqrt3$，$d_{200}=a/2$．ブラッグ条件 $2d\\sin\\vartheta=\\lambda$，回折ビームは入射方向から $2\\vartheta$ ずれるので環の半径 $r=L\\tan2\\vartheta\\approx2L\\vartheta\\approx L\\lambda/d$．\n\\[\\boldsymbol{r_1=\\frac{\\sqrt3L\\lambda}{a}},\\qquad\\boldsymbol{r_2=\\frac{2L\\lambda}{a}}.\\]\n（半径比 $r_2/r_1=2/\\sqrt3=\\sqrt{4/3}$ は面心立方の特徴．）\n\n(3) $a\\approx\\sqrt3L\\lambda/r_1\\propto\\lambda$．非相対論の波長は $\\sqrt{1+T/2m_ec^2}$ 倍長いので，格子定数も $\\boldsymbol{\\sqrt{1+T/2m_ec^2}}$ 倍に過大に出る（$100$ keV で約 5\\%）．"
+    "tex": "(1) 散乱光子の運動量の大きさは $h/\\lambda$ で，$x$ 成分は $-\\dfrac h\\lambda\\sin\\varepsilon$ から $+\\dfrac h\\lambda\\sin\\varepsilon$ までのどれでもありうる．運動量保存により電子の反跳の $x$ 成分にも同じ幅の不確かさが生じ，$\\Delta p_x=\\boldsymbol{\\dfrac{2h\\sin\\varepsilon}{\\lambda}}$．\n\n(2) $\\Delta x\\,\\Delta p_x\\approx\\dfrac{\\lambda}{2\\sin\\varepsilon}\\cdot\\dfrac{2h\\sin\\varepsilon}\\lambda=\\boldsymbol h$．波長やレンズの大きさを変えても積は小さくできない．位置をよく見るために $\\lambda$ を短く，$\\varepsilon$ を大きくするほど，運動量を大きく乱してしまう．\n\n(3) $\\lambda=2\\Delta x\\sin\\varepsilon\\le\\boldsymbol{0.20\\,\\mathrm{nm}}$．光子のエネルギーは $\\dfrac{1240}{0.20}\\,\\mathrm{eV}=\\boldsymbol{6.2\\,\\mathrm{keV}}$（X線）．\n\n(4) $\\dfrac{2\\times2.43\\times10^{-3}\\,\\mathrm{nm}}{0.20\\,\\mathrm{nm}}\\approx\\boldsymbol{0.024}$．波長の変化は数％程度で，無視した近似は妥当である．"
    }
   ],
   "idea": {
-   "tex": "多結晶の回折環は $r\\approx L\\lambda/d$．電子顕微鏡領域では相対論補正 $\\sqrt{1+T/2m_ec^2}$ が数 \\% 効き，構造解析の精度を左右する．"
+   "tex": "分解能は開き角に比例して良くなるが，同じ開き角の分だけ散乱光子の運動量の向きが不定になる．積はどうやっても $h$ 程度になる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\lambda$：h c/sqrt(T (T+2 m_e c^2)) ; 倍率：sqrt(1+T/(2 m_e c^2))\n(2) $r_1$：sqrt(3) L λ/a ; $r_2$：2 L λ/a\n(3) 倍率：sqrt(1+T/(2 m_e c^2))"
+   "spec": "(1) 2h sin(ε)/λ\n(2) h\n(3) 最大の波長 [nm]：≈0.20 ; エネルギー [keV]：≈6.2\n(4) ≈0.024"
   },
   "methods": [],
   "tags": [
-   "電子回折",
-   "デバイ・シェラー法",
-   "面心立方格子",
-   "相対論的波長"
+   "不確定性原理",
+   "γ線顕微鏡",
+   "光子の運動量",
+   "分解能"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -5316,35 +5318,34 @@
   "field": "QM-120",
   "level": 2,
   "minutes": 20,
-  "theme": "電子顕微鏡の相対論的波長補正",
-  "topic": "電子顕微鏡の相対論的波長補正",
+  "theme": "光電効果の時間遅れ：古典的な波の描像による見積もりと光子の描像",
+  "topic": "光電効果の時間遅れ：古典的な波の描像による見積もりと光子の描像",
   "statement": {
-   "tex": "電位差 $V$ で加速された電子（質量 $m_e$，電荷 $-q$）のド・ブロイ波長を考える．プランク定数を $h$，光速を $c$ とする．\n\\begin{enumerate}\n  \\item 相対論を考慮すると波長は\n  \\[ \\lambda=\\frac{A}{\\sqrt{V(1+BV)}} \\]\n  と書ける．定数 $A,B$ を求めよ．\n  \\item 非相対論的な式による波長 $\\lambda_{\\rm nr}$ と相対論的な波長 $\\lambda$ の比 $\\lambda_{\\rm nr}/\\lambda$ を $V$ で表せ．\n  \\item 非相対論的な式が波長を相対的に $\\delta$ だけ過大評価する加速電圧 $V$ を求めよ．\n\\end{enumerate}"
+   "tex": "強度 $I$（単位面積あたりの仕事率）の単色光を金属に当てる．古典的な波の描像では，原子1個（半径 $r$）が断面積 $\\pi r^2$ に入射する光のエネルギーを吸収してため込み，それが仕事関数 $W$ に達するまで電子は飛び出さないと考えられる．\n\\begin{enumerate}\n\\item 光を当ててから電子が飛び出すまでの時間 $t$ を見積もれ．\n\\item $I=1.0\\times10^{-6}\\,\\mathrm{W/m^2}$，$r=1.0\\times10^{-10}\\,\\mathrm{m}$，$W=2.0\\,\\mathrm{eV}$（$1\\,\\mathrm{eV}=1.6\\times10^{-19}\\,\\mathrm J$）のとき $t$ を求めよ．\n\\item 光子の描像で，面積 $S=1.0\\,\\mathrm{cm^2}$ の金属面に1秒あたりに当たる光子の数 $N$ を求めよ．光子のエネルギーは $3.0\\,\\mathrm{eV}$ とする．\n\\item 光子がランダムに（ポアソン過程として）到着するとき，光を当て始めてから面 $S$ に最初の光子が当たるまでの平均時間を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $A=\\dfrac{h}{\\sqrt{2m_eq}}$，$B=\\dfrac{q}{2m_ec^2}$　(2) $\\sqrt{1+\\dfrac{qV}{2m_ec^2}}$　(3) $V=\\dfrac{2m_ec^2}{q}\\left[(1+\\delta)^2-1\\right]$"
+   "tex": "(1) $t=\\dfrac{W}{\\pi r^2I}$　(2) $t\\approx1.0\\times10^7\\,\\mathrm{s}$　(3) $N\\approx2.1\\times10^8\\,\\mathrm{s^{-1}}$　(4) $\\approx4.8\\times10^{-9}\\,\\mathrm{s}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 運動エネルギー $T=qV$ に対して $p^2c^2=T^2+2Tm_ec^2$ だから\n\\[ p=\\sqrt{2m_eqV\\left(1+\\frac{qV}{2m_ec^2}\\right)},\\qquad \\lambda=\\frac{h}{\\sqrt{2m_eq}}\\frac{1}{\\sqrt{V(1+BV)}}. \\]\n\\[\\boldsymbol{A=\\frac{h}{\\sqrt{2m_eq}}},\\qquad\\boldsymbol{B=\\frac{q}{2m_ec^2}}.\\]\n（数値では $A\\approx12.26$ Å V$^{1/2}$，$B\\approx9.78\\times10^{-7}\\ \\mathrm{V^{-1}}$．）\n\n(2) $\\lambda_{\\rm nr}=A/\\sqrt V$ より $\\boldsymbol{\\lambda_{\\rm nr}/\\lambda=\\sqrt{1+BV}=\\sqrt{1+\\dfrac{qV}{2m_ec^2}}}$．\n\n(3) $\\sqrt{1+BV}=1+\\delta$ より\n\\[\\boldsymbol{V=\\frac{(1+\\delta)^2-1}{B}=\\frac{2m_ec^2}{q}\\left[(1+\\delta)^2-1\\right]}.\\]\n$\\delta=0.1$ では約 $215$ kV．通常の透過電子顕微鏡（$200$ kV 前後）では相対論補正が 10\\% 程度に達し，無視できない．"
+    "tex": "(1) 原子が単位時間に受け取るエネルギーは $\\pi r^2I$ なので $t=\\boldsymbol{\\dfrac{W}{\\pi r^2I}}$．\n\n(2) $t=\\dfrac{2.0\\times1.6\\times10^{-19}}{\\pi\\times(1.0\\times10^{-10})^2\\times1.0\\times10^{-6}}\\,\\mathrm s\\approx\\boldsymbol{1.0\\times10^7\\,\\mathrm s}$（約4か月）．\n\n(3) $N=\\dfrac{IS}{3.0\\,\\mathrm{eV}}=\\dfrac{1.0\\times10^{-6}\\times1.0\\times10^{-4}}{4.8\\times10^{-19}}\\,\\mathrm{s^{-1}}\\approx\\boldsymbol{2.1\\times10^8\\,\\mathrm{s^{-1}}}$．\n\n(4) 到着率 $N$ のポアソン過程で最初の到着までの時間は平均 $1/N\\approx\\boldsymbol{4.8\\times10^{-9}\\,\\mathrm s}$．光子の1つ1つが電子1個に全エネルギーを渡すので，どんなに弱い光でも光電子はほぼ瞬時に（最初の光子とともに）出始める．実験では弱い光でも測定できるほどの遅れはなく，古典的な波の描像は破綻する．"
    }
   ],
   "idea": {
-   "tex": "$p^2c^2=T^2+2Tmc^2$ から波長に $\\sqrt{1+eV/2mc^2}$ の補正因子が掛かり，数百 kV の電子顕微鏡では 1 割近い効果になる．"
+   "tex": "波の描像ではエネルギーが面全体に薄く広がるので原子1個に貯まるのに長時間かかる．光子の描像では最初の光子が当たればすぐに電子が出る．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $A$：h/sqrt(2 m_e q) ; $B$：q/(2 m_e c^2)\n(2) 比：sqrt(1+q V/(2 m_e c^2))\n(3) $V$：(2 m_e c^2/q)((1+δ)^2-1)"
+   "spec": "(1) W/(π r^2 I)\n(2) $t$ [s]：≈1.0e7\n(3) $N$ [1/s]：≈2.1e8\n(4) [s]：≈4.8e-9"
   },
   "methods": [],
   "tags": [
-   "ド・ブロイ波長",
-   "電子",
-   "相対論的補正",
-   "電子顕微鏡",
-   "加速電圧"
+   "光電効果",
+   "光子",
+   "古典論の破綻",
+   "ポアソン過程"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -5672,35 +5673,34 @@
   "field": "QM-120",
   "level": 2,
   "minutes": 20,
-  "theme": "2点測定でプランク定数と電圧オフセットを分離",
-  "topic": "2点測定でプランク定数と電圧オフセットを分離",
+  "theme": "フランク＝ヘルツの実験：電流の急減の間隔と接触電位差",
+  "topic": "フランク＝ヘルツの実験：電流の急減の間隔と接触電位差",
   "statement": {
-   "tex": "X 線管の管電圧を電圧計で読むと $V$ であるが，実際に電子（電荷 $-q$）を加速している電圧は未知の一定のずれ $V_0$ を含んで $V+V_0$ であるとする．連続 X 線の短波長限界 $\\lambda$ を 2 つの読み値で測った結果，読み $V_1$ で $\\lambda_1$，読み $V_2$（$V_2>V_1$）で $\\lambda_2$ を得た．光速を $c$ とする．\n\\begin{enumerate}\n\\item $1/\\lambda$ を $V$ の 1 次関数として表し，2 点の傾きからプランク定数 $h$ を求めよ．\n\\item $V_0$ を求めよ．\n\\item $V_0$ を無視して 1 点（読み $V_i$，$\\lambda_i$）だけから $h_i=qV_i\\lambda_i/c$ と求めると，真の値からの相対誤差 $h_i/h-1$ はいくらか．どちらの点のほうが誤差が小さいか．\n\\end{enumerate}"
+   "tex": "水銀蒸気を満たした管で，陰極から出た電子を格子までの電圧 $V$ で加速し，格子と陽極の間には小さな逆電圧（減速電圧）をかける．陽極電流を $V$ の関数として測ると，電流は増加と急減を周期的に繰り返す．水銀原子の最低励起エネルギーを $\\varepsilon_1$，電気素量を $q$ とする．\n\\begin{enumerate}\n\\item 電流が急減する電圧の間隔 $\\Delta V$ を求めよ．\n\\item 実測では最初の急減が電圧 $V_1$ で起こり，以後の間隔は $\\Delta V$ であった．陰極と格子の間には，電子を減速する向きの接触電位差 $V_c$ がある．$V_c$ を求めよ．\n\\item 励起された水銀原子が基底状態に戻るときに出す光の波長 $\\lambda$ を求めよ（プランク定数 $h$，光速 $c$）．\n\\item $\\Delta V=4.9\\,\\mathrm V$ のとき，$\\lambda$ を求めよ（$hc=1240\\,\\mathrm{eV\\cdot nm}$）．\n\\item 格子と陽極の間の減速電圧が必要な理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac1\\lambda=\\dfrac{q}{hc}(V+V_0)$，$h=\\dfrac{q\\lambda_1\\lambda_2(V_2-V_1)}{c(\\lambda_1-\\lambda_2)}$　(2) $V_0=\\dfrac{\\lambda_2V_2-\\lambda_1V_1}{\\lambda_1-\\lambda_2}$　(3) $-\\dfrac{V_0}{V_i+V_0}$；高電圧の点"
+   "tex": "(1) $\\Delta V=\\dfrac{\\varepsilon_1}{q}$　(2) $V_c=V_1-\\Delta V$　(3) $\\lambda=\\dfrac{hc}{\\varepsilon_1}$　(4) $\\lambda\\approx253\\,\\mathrm{nm}$　(5) 原子を励起してエネルギーを失った電子が陽極に届かないようにし，励起の起こり始めを電流の急減として見えるようにするため"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $q(V+V_0)=hc/\\lambda$ より\n\\[ \\frac1{\\lambda}=\\frac{q}{hc}\\,(V+V_0). \\]\n傾き $\\dfrac{q}{hc}=\\dfrac{1/\\lambda_2-1/\\lambda_1}{V_2-V_1}$ より\n\\[ \\boldsymbol{h=\\frac{q(V_2-V_1)}{c(1/\\lambda_2-1/\\lambda_1)}=\\frac{q\\lambda_1\\lambda_2(V_2-V_1)}{c(\\lambda_1-\\lambda_2)}}. \\]\n\n(2) $(V_1+V_0)\\lambda_1=(V_2+V_0)\\lambda_2\\ (=hc/q)$ より\n\\[\\boldsymbol{V_0=\\frac{\\lambda_2V_2-\\lambda_1V_1}{\\lambda_1-\\lambda_2}}.\\]\n\n(3) 真の関係は $h=q(V_i+V_0)\\lambda_i/c$ なので\n\\[\\boldsymbol{\\frac{h_i}{h}-1=\\frac{V_i}{V_i+V_0}-1=-\\frac{V_0}{V_i+V_0}}.\\]\n相対誤差はほぼ $V_0/V_i$ に比例するので，\\textbf{高電圧の点}（$V_2$）のほうが誤差が小さい．傾きを使えば一定のオフセットは消える．（例：$V_1=20$ kV，$V_2=40$ kV，$V_0\\approx0.33$ kV なら誤差は約 $1.6\\%$ と $0.8\\%$．）"
+    "tex": "(1) 電子のエネルギーが $\\varepsilon_1$ に達すると原子を励起してエネルギーを失う．電圧が $\\varepsilon_1/q$ 増えるごとに，格子までに励起できる回数が1回ずつ増えるので $\\Delta V=\\boldsymbol{\\dfrac{\\varepsilon_1}{q}}$．\n\n(2) 電子が実際に得るエネルギーは $q(V-V_c)$ なので，最初の急減は $V_1=\\dfrac{\\varepsilon_1}q+V_c$．よって $V_c=\\boldsymbol{V_1-\\Delta V}$．間隔をとれば接触電位差の影響が消えるので，励起エネルギーは間隔から求める．\n\n(3) $\\lambda=\\boldsymbol{\\dfrac{hc}{\\varepsilon_1}}$．\n\n(4) $\\lambda=\\dfrac{1240}{4.9}\\,\\mathrm{nm}\\approx\\boldsymbol{253\\,\\mathrm{nm}}$（紫外線）．実際に管からこの波長の水銀の輝線が観測され，原子のエネルギー準位が離散的であることが，衝突と分光の両方から確かめられた．\n\n(5) 励起を起こしてエネルギーをほとんど失った電子は，小さな減速電圧を越えられず陽極に届かない．そのため励起が起こり始める電圧で陽極電流が急減する．減速電圧がなければ，エネルギーを失った電子も陽極に集まり，電流の変化がはっきりしない．"
    }
   ],
   "idea": {
-   "tex": "短波長限界の逆数は加速電圧に比例する．2 点の傾きを使えば一定の電圧オフセットに影響されずに $h$ が決まる．"
+   "tex": "電子が励起エネルギーを得るたびに非弾性衝突でエネルギーを失うので，電流の急減は $\\varepsilon_1/q$ ごとに現れる．間隔をとると接触電位差が消える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $h$：q λ_1 λ_2 (V_2-V_1)/(c (λ_1-λ_2))\n(2) $V_0$：(λ_2 V_2-λ_1 V_1)/(λ_1-λ_2)\n(3) 相対誤差：-V_0/(V_i+V_0) ; 点：記述"
+   "spec": "(1) ε_1/q\n(2) $V_c$：V_1-ΔV\n(3) $\\lambda$：h c/ε_1\n(4) $\\lambda$ [nm]：≈253\n(5) 記述"
   },
   "methods": [],
   "tags": [
-   "短波長限界",
-   "プランク定数",
-   "デュエイン・ハントの法則",
-   "系統誤差",
-   "直線フィット"
+   "フランク＝ヘルツの実験",
+   "エネルギー準位",
+   "非弾性衝突",
+   "接触電位差"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -6323,34 +6323,35 @@
   "field": "QM-120",
   "level": 2,
   "minutes": 20,
-  "theme": "コンプトン端からのγ線エネルギー決定",
-  "topic": "コンプトン端からのγ線エネルギー決定",
+  "theme": "アインシュタインの固体比熱模型",
+  "topic": "アインシュタインの固体比熱模型",
   "statement": {
-   "tex": "ある単色 $\\gamma$ 線を薄いタンタル箔に当て，放出される電子のエネルギースペクトルを測定した．連続部分の上端（コンプトン端）は $T_m$ にあった．電子が箔中で 2 回目の相互作用をしないとし，電子の静止エネルギーを $m_ec^2$，タンタルの K 殻結合エネルギーを $B$ とする．\n\\begin{enumerate}\n\\item $\\gamma$ 線のエネルギー $E_0$ を $T_m,m_ec^2$ で表せ．\n\\item K 殻光電子のエネルギー $T_K$ と，光電ピークとコンプトン端の間隔 $E_0-T_m$ を $E_0$ で表せ．また，この間隔が $E_0\\to\\infty$ でどんな値に近づくか示せ．\n\\item 電子対生成で生じる電子の運動エネルギーの上限 $T_p$ を求めよ（原子核の反跳は無視する）．この上限を使って，スペクトル中のある電子が対生成によるものかどうかをどう判定できるか述べよ．\n\\end{enumerate}"
+   "tex": "固体中の $N_A$ 個（1 mol）の原子が，それぞれ3方向に独立な角振動数 $\\omega$ の振動子として振動し，1つの振動子のエネルギーは $n\\hbar\\omega$（$n=0,1,2,\\dots$，零点エネルギーは除く）に量子化されているとする（アインシュタイン模型）．ボルツマン定数を $k_B$，気体定数を $R=N_Ak_B$ とする．\n\\begin{enumerate}\n\\item 温度 $T$ での振動子1個の平均エネルギー $\\langle\\varepsilon\\rangle$ を求めよ．\n\\item モル比熱 $C$ を，$x=\\hbar\\omega/(k_BT)$ を用いて表せ．\n\\item 高温（$x\\ll1$）と低温（$x\\gg1$）での $C$ の主要項を求めよ．\n\\item アインシュタイン温度 $\\Theta_E=\\hbar\\omega/k_B$ に等しい温度での $C$ は，古典値（デュロン＝プティの値）の何倍か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E_0=\\dfrac{T_m+\\sqrt{T_m^2+2T_mm_ec^2}}{2}$　(2) $T_K=E_0-B$；$E_0-T_m=\\dfrac{E_0}{1+2E_0/(m_ec^2)}$，$\\dfrac{m_ec^2}{2}$ に近づく　(3) $T_p=E_0-2m_ec^2$；これを超える電子は対生成ではない"
+   "tex": "(1) $\\langle\\varepsilon\\rangle=\\dfrac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}$　(2) $C=\\dfrac{3Rx^2e^x}{(e^x-1)^2}$　(3) 高温 $C\\approx3R$，低温 $C\\approx3Rx^2e^{-x}$　(4) $\\dfrac{e}{(e-1)^2}\\approx0.92$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) コンプトン端（$180^\\circ$ 散乱）は $T_m=\\dfrac{2E_0^2}{m_ec^2+2E_0}$．$2E_0^2-2T_mE_0-T_mm_ec^2=0$ の正の根は\n\\[\\boldsymbol{E_0=\\frac{T_m+\\sqrt{T_m^2+2T_mm_ec^2}}{2}}.\\]\n（$T_m=1.118$ MeV なら $E_0=1.33$ MeV で ${}^{60}$Co の線に相当．）\n\n(2) 光電子：$\\boldsymbol{T_K=E_0-B}$．間隔は後方散乱光子のエネルギーで\n\\[\\boldsymbol{E_0-T_m=\\frac{E_0}{1+2E_0/m_ec^2}}.\\]\n$E_0\\to\\infty$ では $\\boldsymbol{m_ec^2/2}$（約 $0.256$ MeV）に近づく．どれほど高エネルギーでも後方散乱光子は $m_ec^2/2$ を超えない．\n\n(3) 対生成で電子と陽電子が分け合える運動エネルギーの合計は $E_0-2m_ec^2$ なので，電子 1 個の運動エネルギーは $\\boldsymbol{T_p=E_0-2m_ec^2}$ 以下．これを超えるエネルギーの電子は対生成では作れず，光電子（$E_0-B$ など）でもなければ $0\\le T\\le T_m$ に分布するコンプトン電子である．（$E_0=1.33$ MeV では $T_p=0.31$ MeV で，$0.35$ MeV の電子はコンプトン電子と判定できる．）"
+    "tex": "(1) ボルツマン分布で平均すると，$y=\\hbar\\omega/k_BT$ として\n\\[\\langle\\varepsilon\\rangle=\\frac{\\sum n\\hbar\\omega e^{-ny}}{\\sum e^{-ny}}=\\boldsymbol{\\frac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}}\\]\n（プランクが空洞放射で用いた振動子の平均エネルギー）．\n\n(2) 1 mol で振動子は $3N_A$ 個，$U=3N_A\\langle\\varepsilon\\rangle$．$T$ で微分して\n\\[C=\\boldsymbol{\\frac{3Rx^2e^x}{(e^x-1)^2}}.\\]\n\n(3) $x\\ll1$ で $e^x-1\\approx x$ より $C\\approx\\boldsymbol{3R}$（等分配則，デュロン＝プティの法則）．$x\\gg1$ では $C\\approx\\boldsymbol{3Rx^2e^{-x}}$ で指数関数的に 0 に近づく．振動の量子 $\\hbar\\omega$ より熱エネルギーが小さいと振動が励起されず，比熱に寄与しない（「凍結」）．これが低温で比熱が減る現象の最初の量子論的説明であった．\n\n(4) $x=1$ で $\\dfrac{C}{3R}=\\boldsymbol{\\dfrac{e}{(e-1)^2}}\\approx0.92$．なお実際の低温比熱は $T^3$ に比例し，振動数に分布をもたせたデバイ模型の方がよく合う．"
    }
   ],
   "idea": {
-   "tex": "コンプトン端の式を逆に解いて入射エネルギーを決め，光電ピークとの間隔が $m_ec^2/2$ に飽和すること，対生成電子の上限を使って起源を判定する．"
+   "tex": "量子化された振動子の平均エネルギーはプランクの式になり，$k_BT\\ll\\hbar\\omega$ では振動が凍結して比熱が指数関数的に消える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $E_0$：(T_m+sqrt(T_m^2+2 T_m m_e c^2))/2\n(2) $T_K$：E_0-B ; 間隔：E_0/(1+2 E_0/(m_e c^2)) ; 極限：m_e c^2/2\n(3) $T_p$：E_0-2 m_e c^2 ; 判定：記述"
+   "spec": "(1) $\\langle\\varepsilon\\rangle$：ħ ω/(exp(ħ ω/(k_B T))-1)\n(2) $C$：3R x^2 exp(x)/(exp(x)-1)^2\n(3) 高温：3R ; 低温：3R x^2 exp(-x)\n(4) e/(e-1)^2"
   },
   "methods": [],
   "tags": [
-   "コンプトン端",
-   "光電効果",
-   "電子対生成",
-   "γ線スペクトル"
+   "アインシュタイン模型",
+   "比熱",
+   "量子化",
+   "プランク分布",
+   "デュロン＝プティの法則"
   ],
   "provenance": {
    "created": "2026-11-23"

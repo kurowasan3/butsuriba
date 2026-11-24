@@ -740,34 +740,35 @@
   "field": "NU-59",
   "level": 2,
   "minutes": 25,
-  "theme": "鏡像核の質量差からクーロン半径を求める",
-  "topic": "鏡像核の質量差からクーロン半径を求める",
+  "theme": "核の電荷分布（フェルミ分布）：表面の厚さと平均2乗半径",
+  "topic": "核の電荷分布（フェルミ分布）：表面の厚さと平均2乗半径",
   "statement": {
-   "tex": "鏡像核 ${}^{15}\\mathrm{O}$（$Z=8$）と ${}^{15}\\mathrm{N}$（$Z=7$）の基底状態の違いは，核力の荷電独立性を仮定すると，クーロンエネルギーと中性子・陽子の質量差だけから来るとする．原子核を半径 $R$ の一様に帯電した球とし，$k=\\dfrac{q^2}{4\\pi\\varepsilon_0}$（$q$ は電気素量）とする．${}^{15}\\mathrm{O}$ の電子捕獲の $Q$ 値（原子の質量差）を $Q_e$，中性子と水素原子の静止エネルギーの差を $\\delta=(m_n-m_{\\rm H})c^2$ とする．\n\\begin{enumerate}\n\\item 電荷 $Zq$ の一様な球のクーロンエネルギーを $\\dfrac35\\dfrac{Z(Z-1)k}{R}$ として，鏡像核 $(Z+1,\\ A=2Z+1)$ と $(Z,\\ A)$ のクーロンエネルギーの差 $\\Delta E_C$ を求めよ．\n\\item ${}^{15}\\mathrm{O}$ と ${}^{15}\\mathrm{N}$ の原子の質量差をクーロンエネルギーの差と $\\delta$ で表し，$R$ と $r_0=R/A^{1/3}$ を $k,\\ Q_e,\\ \\delta$ で表せ．\n\\item 陽子が s 軌道にある励起状態では，鏡像核のうち陽子の多い方で準位が相対的に下がる（トーマス＝エールマン効果）．その理由を定性的に述べよ．\n\\end{enumerate}"
+   "tex": "電子散乱から求めた原子核の電荷密度は，フェルミ型の分布\n\\[\\rho(r)=\\frac{\\rho_0}{1+\\exp\\{(r-c)/a\\}}\\]\nでよく表される（$c$ は半密度半径，$a$ は表面のぼやけの長さで $c\\gg a$）．\n\\begin{enumerate}\n\\item 密度が $0.9\\rho_0$ から $0.1\\rho_0$ に下がるまでの厚さ $t$ を $a$ で表せ．\n\\item $F(0)=0$ の関数 $F$ について，$c\\gg a$ のとき $\\displaystyle\\int_0^\\infty\\frac{F'(r)\\,dr}{1+e^{(r-c)/a}}\\approx F(c)+\\frac{\\pi^2a^2}{6}F''(c)$ が成り立つ（ゾンマーフェルト展開）．全電荷 $Q=\\int\\rho\\,4\\pi r^2dr$ を $\\rho_0,c,a$ で表せ．\n\\item 平均2乗半径 $\\langle r^2\\rangle=\\dfrac1Q\\int r^2\\rho\\,4\\pi r^2dr$ を $a^2$ の1次まで求めよ．\n\\item 平均2乗半径が等しい一様帯電球の半径 $R$ を，$a^2/c^2$ の1次まで $c,a$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta E_C=\\dfrac{6Zk}{5R}$　(2) $Q_e=\\Delta E_C-\\delta$，$R=\\dfrac{42k}{5(Q_e+\\delta)}$，$r_0=\\dfrac{42k}{5\\cdot15^{1/3}(Q_e+\\delta)}$　(3) 説明（束縛の弱い s 波の陽子は核の外まで広がり，クーロンエネルギーが小さい）"
+   "tex": "(1) $t=4a\\ln3$　(2) $Q=\\dfrac{4\\pi}3\\rho_0c^3\\left(1+\\dfrac{\\pi^2a^2}{c^2}\\right)$　(3) $\\langle r^2\\rangle=\\dfrac35c^2+\\dfrac75\\pi^2a^2$　(4) $R=c+\\dfrac{7\\pi^2a^2}{6c}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac35\\dfrac{k}{R}\\left[(Z+1)Z-Z(Z-1)\\right]=\\boldsymbol{\\dfrac{6Zk}{5R}}$．\n\n(2) ${}^{15}\\mathrm{O}$ は ${}^{15}\\mathrm{N}$ の中性子1個を陽子に置きかえたもの（原子では電子も1個増える）．核力の部分は等しいので\n\\[\nQ_e=M({}^{15}\\mathrm{O})c^2-M({}^{15}\\mathrm{N})c^2=\\Delta E_C-\\delta .\n\\]\nよって $\\Delta E_C=Q_e+\\delta$．$Z=7$ として $\\dfrac{42k}{5R}=Q_e+\\delta$ より\n\\[\nR=\\boldsymbol{\\frac{42k}{5(Q_e+\\delta)}},\\qquad r_0=\\frac{R}{15^{1/3}}=\\boldsymbol{\\frac{42k}{5\\cdot15^{1/3}(Q_e+\\delta)}}.\n\\]\n実在の値（$Q_e\\approx2.75\\,\\mathrm{MeV}$，$\\delta\\approx0.78\\,\\mathrm{MeV}$）では $R\\approx3.4\\,\\mathrm{fm}$，$r_0\\approx1.4\\,\\mathrm{fm}$ となる．電子散乱から得る $r_0\\approx1.2\\ \\mathrm{fm}$ よりやや大きいのは，表面のぼやけや交換項を無視したためである．\n\n(3) 陽子が過剰な核では，最後の陽子の束縛が弱く（またはしきいの上にあり），s 波には遠心力の障壁がないので，波動関数が核の外まで大きく広がる．陽子と他の陽子の平均距離が大きくなってクーロンエネルギーが減るため，鏡像核（中性子の多い方）に比べて準位が下がる．p 波や d 波の状態は遠心力の障壁で閉じ込められるので，この効果は小さい．"
+    "tex": "(1) $\\rho=0.9\\rho_0$ では $e^{(r-c)/a}=1/9$，$\\rho=0.1\\rho_0$ では $e^{(r-c)/a}=9$．よって $t=a(\\ln9-\\ln\\frac19)=\\boldsymbol{4a\\ln3}\\approx4.4a$．\n\n(2) $F'=4\\pi\\rho_0r^2$，$F=\\frac{4\\pi}3\\rho_0r^3$，$F''(c)=8\\pi\\rho_0c$ より\n\\[Q=\\frac{4\\pi}{3}\\rho_0c^3+\\frac{\\pi^2a^2}6\\cdot8\\pi\\rho_0c=\\boldsymbol{\\frac{4\\pi}3\\rho_0c^3\\left(1+\\frac{\\pi^2a^2}{c^2}\\right)}.\\]\n\n(3) 同様に $F'=4\\pi\\rho_0r^4$ で $\\int r^2\\rho\\,4\\pi r^2dr=\\frac{4\\pi}5\\rho_0c^5\\left(1+\\frac{10\\pi^2a^2}{3c^2}\\right)$．比をとって $a^2$ の1次まで展開すると\n\\[\\langle r^2\\rangle=\\frac35c^2\\left(1+\\frac{7\\pi^2a^2}{3c^2}\\right)=\\boldsymbol{\\frac35c^2+\\frac75\\pi^2a^2}.\\]\n\n(4) 一様球では $\\langle r^2\\rangle=\\frac35R^2$ なので $R^2=c^2+\\frac73\\pi^2a^2$，$R=\\boldsymbol{c+\\dfrac{7\\pi^2a^2}{6c}}$．表面のぼやけがあるため，同じ平均2乗半径の一様球の半径は半密度半径 $c$ より大きい．実際の原子核では $t\\approx2.3\\,\\mathrm{fm}$ がほぼ一定で，$c$ が $A^{1/3}$ に比例する．"
    }
   ],
   "idea": {
-   "tex": "荷電独立性のもとでは，鏡像核の質量差はクーロンエネルギーの差と $n$–$p$ の質量差だけで，そこから核の大きさが求まる．同じクーロンエネルギーの見方で，束縛の弱い s 波の陽子状態が下がる（トーマス＝エールマン効果）ことも説明できる．"
+   "tex": "フェルミ分布はフェルミ統計の占有数と同じ形なので，ゾンマーフェルト展開で積分を $a^2$ の補正つきで評価できる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\Delta E_C$：6 Z k/(5 R)\n(2) $R$：42 k/(5 (Q_e+δ)) ; $r_0$：42 k/(5*15^(1/3) (Q_e+δ))\n(3) 記述"
+   "spec": "(1) $t$：4a ln(3)\n(2) $Q$：(4π/3) ρ_0 c^3 (1+π^2 a^2/c^2)\n(3) (3/5) c^2+(7/5) π^2 a^2\n(4) $R$：c+7π^2 a^2/(6c)"
   },
   "methods": [],
   "tags": [
-   "鏡像核",
-   "クーロンエネルギー",
-   "荷電独立性",
-   "原子核半径"
+   "電荷分布",
+   "フェルミ分布",
+   "平均2乗半径",
+   "ゾンマーフェルト展開",
+   "核半径"
   ],
   "provenance": {
    "created": "2026-11-24"
@@ -789,35 +790,34 @@
   "field": "NU-59",
   "level": 2,
   "minutes": 25,
-  "theme": "分離エネルギー差から鏡像核の半径",
-  "topic": "分離エネルギー差から鏡像核の半径",
+  "theme": "巨大単極共鳴（呼吸モード）と核物質の非圧縮率",
+  "topic": "巨大単極共鳴（呼吸モード）と核物質の非圧縮率",
   "statement": {
-   "tex": "原子質量を ${}^{12}\\mathrm{C}$：$M_0$，${}^{11}\\mathrm{B}$：$M_B$，${}^{11}\\mathrm{C}$：$M_C$，水素原子：$M_H$，中性子：$m_n$ とし，光速を $c$ とする．\n\\begin{enumerate}\n\\item ${}^{12}\\mathrm{C}$ の陽子分離エネルギー $S_p$ と中性子分離エネルギー $S_n$ を求めよ．\n\\item 核力が荷電独立（${}^{11}\\mathrm{B}$ と ${}^{11}\\mathrm{C}$ の核力による結合エネルギーが等しい）とすると，$S_n-S_p$ は鏡像核 ${}^{11}\\mathrm{C}$ と ${}^{11}\\mathrm{B}$ の Coulomb エネルギーの差 $\\Delta E_C$ に厳密に等しいことを示せ（電子の結合エネルギーは無視）．\n\\item 原子核を半径 $R$ の一様帯電球とみなし Coulomb エネルギーを $\\frac35\\frac{Z^2k}{R}$（$k=q^2/4\\pi\\varepsilon_0$，$q$ は電気素量）とする．$R$ と $r_0=R/A^{1/3}$ を $S_n,\\ S_p,\\ k$ で表せ．\n\\end{enumerate}"
+   "tex": "核物質の核子1個あたりのエネルギーを，飽和密度 $\\rho_0$ のまわりで\n\\[\\frac EA(\\rho)=-b+\\frac{K}{18}\\left(\\frac{\\rho-\\rho_0}{\\rho_0}\\right)^2\\]\nと展開する（$K$ を非圧縮率という）．質量数 $A$ の原子核を一様な球とし，核子の質量を $m$，核子の平均2乗半径を $s^2=\\langle r^2\\rangle$ とする．呼吸モード（巨大単極共鳴）では，核全体が一様に膨張・収縮し，半径が $R=R_0(1+\\xi)$（$|\\xi|\\ll1$），速度場が $\\boldsymbol u=\\boldsymbol r\\,\\dot\\xi$ となる．\n\\begin{enumerate}\n\\item $(\\rho-\\rho_0)/\\rho_0$ を $\\xi$ の1次で表し，エネルギーの増加 $U$ を $\\xi$ の2次で求めよ．\n\\item 運動エネルギーを $T=\\frac12\\mathcal M\\dot\\xi^2$ と書いたときの $\\mathcal M$ を求めよ．\n\\item 振動の角振動数 $\\omega$ と励起エネルギー $E_M=\\hbar\\omega$ を求めよ．\n\\item $s^2=\\frac35r_0^2A^{2/3}$ とする．観測された $E_M$ から $K$ を求める式を書け．$E_M$ は $A$ にどう依存するか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $S_p=(M_B+M_H-M_0)c^2$，$S_n=(M_C+m_n-M_0)c^2$　(2) 略（解説参照）　(3) $R=\\dfrac{33k}{5(S_n-S_p)}$，$r_0=\\dfrac{33k}{5\\cdot11^{1/3}(S_n-S_p)}$"
+   "tex": "(1) $\\dfrac{\\rho-\\rho_0}{\\rho_0}=-3\\xi$，$U=\\dfrac{AK\\xi^2}2$　(2) $\\mathcal M=mAs^2$　(3) $\\omega=\\sqrt{\\dfrac{K}{ms^2}}$，$E_M=\\hbar\\sqrt{\\dfrac K{ms^2}}$　(4) $K=\\dfrac{3mr_0^2A^{2/3}E_M^2}{5\\hbar^2}$，$E_M\\propto A^{-1/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $S_p=\\boldsymbol{(M_B+M_H-M_0)c^2}$，$S_n=\\boldsymbol{(M_C+m_n-M_0)c^2}$．（実在の値はそれぞれ約 $16.0\\,\\mathrm{MeV}$，$18.7\\,\\mathrm{MeV}$．）\n\n(2) 差をとると $M_0$ が消えて\n\\[ S_n-S_p=(M_C-M_B)c^2+(m_n-M_H)c^2. \\]\n原子質量を $M(Z,N)=ZM_H+Nm_n-B/c^2$ と書くと，${}^{11}\\mathrm{C}=(6,5)$，${}^{11}\\mathrm{B}=(5,6)$ より\n\\[ M_C-M_B=M_H-m_n-\\frac{B({}^{11}\\mathrm{C})-B({}^{11}\\mathrm{B})}{c^2}. \\]\n荷電独立性により結合エネルギーの差は Coulomb エネルギーの差だけで $B({}^{11}\\mathrm{B})-B({}^{11}\\mathrm{C})=\\Delta E_C$．代入すると $S_n-S_p=\\Delta E_C$．\n\n(3) $\\Delta E_C=\\frac35\\frac{k}{R}(6^2-5^2)=\\frac{33k}{5R}$ を $S_n-S_p$ に等しいとおいて\n\\[ R=\\boldsymbol{\\frac{33k}{5(S_n-S_p)}},\\qquad r_0=\\frac{R}{11^{1/3}}=\\boldsymbol{\\frac{33k}{5\\cdot11^{1/3}(S_n-S_p)}}. \\]\n実在の値（$S_n-S_p\\approx2.76\\,\\mathrm{MeV}$）では $R\\approx3.4\\,\\mathrm{fm}$，$r_0\\approx1.5\\,\\mathrm{fm}$．（$Z^2$ の代わりに自己エネルギーを除いた $Z(Z-1)$ を使うと $r_0$ は約 1 割小さくなる．）"
+    "tex": "(1) 体積は $(1+\\xi)^3$ 倍になるので $\\rho=\\rho_0(1+\\xi)^{-3}\\approx\\rho_0(1-3\\xi)$，$\\dfrac{\\rho-\\rho_0}{\\rho_0}=\\boldsymbol{-3\\xi}$．1核子あたり $\\frac K{18}\\cdot9\\xi^2=\\frac K2\\xi^2$ 増えるので $U=\\boldsymbol{\\dfrac{AK\\xi^2}{2}}$．\n\n(2) $T=\\sum_i\\frac12m|\\boldsymbol r_i|^2\\dot\\xi^2=\\frac12mAs^2\\dot\\xi^2$ より $\\mathcal M=\\boldsymbol{mAs^2}$．\n\n(3) $\\omega^2=\\dfrac{AK}{\\mathcal M}=\\dfrac{K}{ms^2}$ より $\\omega=\\boldsymbol{\\sqrt{\\dfrac K{ms^2}}}$，$E_M=\\boldsymbol{\\hbar\\sqrt{\\dfrac K{ms^2}}}$．\n\n(4) $E_M^2=\\dfrac{5\\hbar^2K}{3mr_0^2A^{2/3}}$ より $K=\\boldsymbol{\\dfrac{3mr_0^2A^{2/3}E_M^2}{5\\hbar^2}}$，$E_M\\propto\\boldsymbol{A^{-1/3}}$．${}^{208}\\mathrm{Pb}$ で $E_M\\approx14\\,\\mathrm{MeV}$ から $K\\approx200\\sim250\\,\\mathrm{MeV}$ 程度が得られ，中性子星の構造を決める状態方程式の重要な入力になる（実際には表面などの補正がある）．"
    }
   ],
   "idea": {
-   "tex": "同じ親核からの $S_n$ と $S_p$ の差は鏡像核対の質量差そのもので，核力部分が相殺して Coulomb エネルギー差だけが残る．"
+   "tex": "一様な膨張では密度変化 $-3\\xi$ からエネルギーが $K\\xi^2/2$ 増え，慣性は $mAs^2$．調和振動の振動数から非圧縮率が測れる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $S_p$：(M_B+M_H-M_0) c^2 ; $S_n$：(M_C+m_n-M_0) c^2\n(2) 証明\n(3) $R$：33 k/(5 (S_n-S_p)) ; $r_0$：33 k/(5*11^(1/3) (S_n-S_p))"
+   "spec": "(1) $(\\rho-\\rho_0)/\\rho_0$：-3ξ ; $U$：A K ξ^2/2\n(2) $\\mathcal M$：m A s^2\n(3) $\\omega$：sqrt(K/(m s^2)) ; $E_M$：ħ sqrt(K/(m s^2))\n(4) $K$：3m r_0^2 A^(2/3) E_M^2/(5ħ^2)"
   },
   "methods": [],
   "tags": [
-   "分離エネルギー",
-   "鏡像核",
-   "Coulombエネルギー",
-   "核半径",
-   "荷電独立性"
+   "巨大共鳴",
+   "非圧縮率",
+   "核物質",
+   "集団運動"
   ],
   "provenance": {
    "created": "2026-11-23"

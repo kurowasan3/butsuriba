@@ -1540,35 +1540,35 @@
   "field": "QM-46",
   "level": 2,
   "minutes": 20,
-  "theme": "灰色球モデル：反応・弾性断面積から吸収を推定",
-  "topic": "灰色球モデル：反応・弾性断面積から吸収を推定",
+  "theme": "球形井戸ポテンシャルのボルン近似と回折の極小",
+  "topic": "球形井戸ポテンシャルのボルン近似と回折の極小",
   "statement": {
-   "tex": "半径 $R$ の核を「灰色球」で模型化する：$kR\\gg1$ とし，$l<kR$ の部分波では $S$ 行列要素が $\\eta_l=\\eta$（$0\\le\\eta\\le1$ の実定数），$l\\ge kR$ では $\\eta_l=1$ とする．\n\\begin{enumerate}\n\\item 反応断面積 $\\sigma_r$，弾性散乱断面積 $\\sigma_{\\rm el}$，全断面積 $\\sigma_t$ を $R,\\ \\eta$ で表せ．\n\\item ある高速中性子で全断面積 $\\sigma_t$ と反応断面積 $\\sigma_r$ が測定された．$\\eta$，$R$，$\\sigma_{\\rm el}$ を $\\sigma_t,\\sigma_r$ で表せ．\n\\item 一般に $\\eta_l=|\\eta_l|e^{2i\\delta_l}$ が複素数の場合，$|\\eta_l|$（すなわち吸収）を固定したとき弾性散乱断面積が最小になるのはどんなときか．これを用いて，吸収があれば必ず弾性散乱（影散乱）もあることを示せ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の粒子が球形井戸 $V(r)=-V_0$（$r<a$），$V=0$（$r>a$）で散乱される．ボルン近似の散乱振幅は\n\\[f(\\theta)=-\\frac{2m}{\\hbar^2q}\\int_0^\\infty rV(r)\\sin(qr)\\,dr,\\qquad q=2k\\sin\\frac\\theta2\\]\nで与えられる（$k$ は入射波数）．\n\\begin{enumerate}\n\\item $f$ を $q$ の関数として求めよ．\n\\item $q\\to0$ の極限 $f(0)$ と，低エネルギー（$ka\\ll1$）での全断面積 $\\sigma$ を求めよ．\n\\item 微分断面積が最初に 0 になるのは $\\tan(qa)=qa$ の最小の正の解 $qa\\approx4.49$ のときである．この零点が $0<\\theta\\le\\pi$ のどこかに現れるための $ka$ の下限を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sigma_r=\\pi R^2(1-\\eta^2)$，$\\sigma_{\\rm el}=\\pi R^2(1-\\eta)^2$，$\\sigma_t=2\\pi R^2(1-\\eta)$　(2) $\\eta=\\dfrac{2\\sigma_r}{\\sigma_t}-1$，$R=\\dfrac{\\sigma_t}{2\\sqrt{\\pi(\\sigma_t-\\sigma_r)}}$，$\\sigma_{\\rm el}=\\sigma_t-\\sigma_r$　(3) $\\eta_l$ が正の実数のとき，最小値 $\\propto(1-|\\eta_l|)^2>0$"
+   "tex": "(1) $f=\\dfrac{2mV_0\\left(\\sin qa-qa\\cos qa\\right)}{\\hbar^2q^3}$　(2) $f(0)=\\dfrac{2mV_0a^3}{3\\hbar^2}$，$\\sigma=\\dfrac{16\\pi m^2V_0^2a^6}{9\\hbar^4}$　(3) $ka\\approx2.25$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$\\sigma_r=\\dfrac{\\pi}{k^2}\\sum(2l+1)(1-|\\eta_l|^2)$，$\\sigma_{\\rm el}=\\dfrac{\\pi}{k^2}\\sum(2l+1)|1-\\eta_l|^2$．\n\n(1) $\\sum_{l=0}^{L-1}(2l+1)=L^2$，$L=kR$ より $\\dfrac{\\pi}{k^2}L^2=\\pi R^2$．よって\n\\[\n\\sigma_r=\\pi R^2(1-\\eta^2),\\quad\\sigma_{\\rm el}=\\pi R^2(1-\\eta)^2,\\quad\\sigma_t=\\sigma_r+\\sigma_{\\rm el}=2\\pi R^2(1-\\eta).\n\\]\n$\\eta=0$（黒体球）で $\\sigma_r=\\sigma_{\\rm el}=\\pi R^2$，$\\sigma_t=2\\pi R^2$ を再現する．\n\n(2) $\\sigma_r/\\sigma_t=(1+\\eta)/2$ より $\\boldsymbol{\\eta=\\dfrac{2\\sigma_r}{\\sigma_t}-1}$．$1-\\eta=\\dfrac{2(\\sigma_t-\\sigma_r)}{\\sigma_t}$ なので\n\\[ \\pi R^2=\\frac{\\sigma_t}{2(1-\\eta)}=\\frac{\\sigma_t^2}{4(\\sigma_t-\\sigma_r)},\\qquad\\boldsymbol{R=\\frac{\\sigma_t}{2\\sqrt{\\pi(\\sigma_t-\\sigma_r)}}}. \\]\n$\\boldsymbol{\\sigma_{\\rm el}=\\sigma_t-\\sigma_r}$（$=\\pi R^2(1-\\eta)^2$ と一致）．\n\n(3) $|1-\\eta_l|^2=1-2|\\eta_l|\\cos2\\delta_l+|\\eta_l|^2\\ge(1-|\\eta_l|)^2$ で，等号は $\\cos2\\delta_l=1$，すなわち $\\eta_l$ が正の実数のとき．吸収 $1-|\\eta_l|^2>0$ があれば $|\\eta_l|<1$ なので $|1-\\eta_l|^2\\ge(1-|\\eta_l|)^2>0$．したがって弾性散乱断面積は必ず正で，吸収体の背後の影を作るための回折（影散乱）が避けられない．"
+    "tex": "(1) $\\displaystyle\\int_0^ar\\sin qr\\,dr=\\frac{\\sin qa-qa\\cos qa}{q^2}$ より\n\\[f=\\boldsymbol{\\frac{2mV_0\\left(\\sin qa-qa\\cos qa\\right)}{\\hbar^2q^3}}.\\]\n\n(2) $\\sin qa-qa\\cos qa\\approx\\frac{(qa)^3}3$ より $f(0)=\\boldsymbol{\\dfrac{2mV_0a^3}{3\\hbar^2}}$（体積積分 $\\int V\\,d^3r$ に比例する）．低エネルギーでは $q\\le2k\\to0$ なので散乱は等方的で\n\\[\\sigma=4\\pi f(0)^2=\\boldsymbol{\\frac{16\\pi m^2V_0^2a^6}{9\\hbar^4}}.\\]\n\n(3) $q$ の最大値は後方散乱の $2k$ なので，$2ka\\ge4.49$，$ka\\ge\\boldsymbol{2.25}$．このとき角分布に回折の極小が現れ，その角度から半径 $a$ がわかる（原子核の電子散乱で核の大きさを測る原理）．"
    }
   ],
   "idea": {
-   "tex": "吸収があると $|\\eta|<1$ となり，$|1-\\eta|\\ge1-|\\eta|>0$ から弾性散乱が必ず伴う．比 $\\sigma_r/\\sigma_t=(1+\\eta)/2$ で吸収の強さが読める．"
+   "tex": "ボルン振幅はポテンシャルのフーリエ変換．一様な球の形状因子 $(\\sin x-x\\cos x)/x^3$ の零点が回折の極小を与える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\sigma_r$：pi R ^(2)(1- η ^(2)) ; $\\sigma_{\\rm el}$：pi R ^(2)(1- η)^(2) ; $\\sigma_t$：2 pi R ^(2)(1- η)\n(2) $\\eta$：2σ_r/σ_t-1 ; $R$：σ_t/(2 sqrt(pi (σ_t-σ_r))) ; $\\sigma_{\\rm el}$：σ_t-σ_r\n(3) 記述"
+   "spec": "(1) $f$：2m V_0 (sin(q a)-q a cos(q a))/(ħ^2 q^3)\n(2) $f(0)$：2m V_0 a^3/(3ħ^2) ; $\\sigma$：16π m^2 V_0^2 a^6/(9ħ^4)\n(3) $ka$ の下限：≈2.25"
   },
   "methods": [],
   "tags": [
-   "黒体球",
-   "灰色球",
-   "反応断面積",
-   "影散乱",
-   "光学模型"
+   "ボルン近似",
+   "散乱振幅",
+   "球形井戸",
+   "回折",
+   "形状因子"
   ],
   "provenance": {
    "created": "2026-11-23"

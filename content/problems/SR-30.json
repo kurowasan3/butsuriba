@@ -647,33 +647,34 @@
   "field": "SR-30",
   "level": 2,
   "minutes": 12,
-  "theme": "静止した荷電パイ中間子の2体崩壊",
-  "topic": "静止した荷電パイ中間子の2体崩壊",
+  "theme": "電子の非弾性散乱から原子核の励起エネルギーを求める",
+  "topic": "電子の非弾性散乱から原子核の励起エネルギーを求める",
   "statement": {
-   "tex": "計量は $\\eta_{\\mu\\nu}=\\mathrm{diag}(+1,-1,-1,-1)$（符号 $(+,-,-,-)$）とする．静止した $\\pi^+$（質量 $M$）が $\\mu^+$（質量 $m$）とニュートリノ（質量 $0$）に崩壊する．\n\\begin{enumerate}\n\\item ミューオンの運動量の大きさ $p$ を $M,m,c$ で表せ．\n\\item ミューオンの全エネルギー $E_\\mu$ を $M,m,c$ で表せ．\n\\item ミューオンの運動エネルギー $T$ と速さの比 $v/c$ を求めよ．\n\\end{enumerate}"
+   "tex": "エネルギー $E$ の電子が，静止している質量 $M$ の原子核に当たり，入射方向と角 $\\theta$ をなす方向に散乱された．電子の質量は無視する（$E=pc$）．原子核は散乱後，励起エネルギー $\\varepsilon$ の励起状態（静止エネルギー $Mc^2+\\varepsilon$）になる．光速を $c$ とする．\n\\begin{enumerate}\n\\item 散乱電子のエネルギー $E'$ を $E,M,\\varepsilon,\\theta,c$ で表せ．（4元運動量の保存と不変量を使え．）\n\\item 同じ角度に弾性散乱（$\\varepsilon=0$）された電子のエネルギーを $E'_0$ とする．$E'_0-E'$ を $\\varepsilon$ の1次まで求め，$\\varepsilon$ より小さくなる理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $p=\\dfrac{(M^2-m^2)c}{2M}$　(2) $E_\\mu=\\dfrac{(M^2+m^2)c^2}{2M}$　(3) $T=\\dfrac{(M-m)^2c^2}{2M}$，$\\dfrac{v}{c}=\\dfrac{M^2-m^2}{M^2+m^2}$"
+   "tex": "(1) $E'=\\dfrac{EMc^2-Mc^2\\varepsilon-\\varepsilon^2/2}{Mc^2+E(1-\\cos\\theta)}$　(2) $E'_0-E'=\\dfrac{\\varepsilon Mc^2}{Mc^2+E(1-\\cos\\theta)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 4元運動量の保存 $P=p_\\mu+p_\\nu$ から $p_\\nu=P-p_\\mu$ とし，両辺を2乗する：$0=M^2c^2-2P\\cdot p_\\mu+m^2c^2$．静止系では $P=(Mc,\\boldsymbol{0})$，$p_\\mu=(E_\\mu/c,\\boldsymbol{p})$ だから $P\\cdot p_\\mu=ME_\\mu$．よって\n\\[E_\\mu=\\frac{(M^2+m^2)c^2}{2M}.\\]\nこれと $E_\\mu^2=p^2c^2+m^2c^4$ から $p^2c^2=\\dfrac{(M^2+m^2)^2-4M^2m^2}{4M^2}c^4=\\dfrac{(M^2-m^2)^2}{4M^2}c^4$，\n\\[p=\\boldsymbol{\\frac{(M^2-m^2)c}{2M}}.\\]\n（ニュートリノとの運動量のつり合いから $E_\\nu=pc$ でもあり，$E_\\mu+E_\\nu=Mc^2$ が確かめられる．）\n\n(2) 上で得たとおり $\\boldsymbol{E_\\mu=\\dfrac{(M^2+m^2)c^2}{2M}}$．\n\n(3) $T=E_\\mu-mc^2=\\dfrac{M^2-2Mm+m^2}{2M}c^2=\\boldsymbol{\\dfrac{(M-m)^2c^2}{2M}}$．速さは $v/c=pc/E_\\mu$ より $\\boldsymbol{\\dfrac{v}{c}=\\dfrac{M^2-m^2}{M^2+m^2}}$．$M$ と $m$ が近いほど $T$ は小さく，ミューオンは遅い（実際の $\\pi^+$ では $T$ は数 MeV にすぎない）．"
+    "tex": "(1) 4元運動量を $k,k'$（電子），$P$（原子核，始状態），$P'$（励起核）とすると $P'=k+P-k'$．両辺を2乗して $k^2=k'^2=0$ を使うと\n\\[(Mc^2+\\varepsilon)^2=M^2c^4+2EMc^2-2E'Mc^2-2EE'(1-\\cos\\theta).\\]\nこれを $E'$ について解いて\n\\[E'=\\boldsymbol{\\frac{EMc^2-Mc^2\\varepsilon-\\varepsilon^2/2}{Mc^2+E(1-\\cos\\theta)}}.\\]\n\n(2) $\\varepsilon=0$ とした $E'_0=\\dfrac{EMc^2}{Mc^2+E(1-\\cos\\theta)}$ との差は，$\\varepsilon^2$ を無視して\n\\[E'_0-E'=\\boldsymbol{\\frac{\\varepsilon Mc^2}{Mc^2+E(1-\\cos\\theta)}}.\\]\n分母が $Mc^2$ より大きいので差は $\\varepsilon$ より小さい．励起核の方が重いぶん反跳の運動エネルギーが少し小さくなるためである．スペクトル上の弾性ピークと非弾性ピークの間隔から $\\varepsilon$ を求めるときは，この反跳の補正が必要になる．"
    }
   ],
   "idea": {
-   "tex": "見たくない粒子の4元運動量を移項して2乗すると，その粒子の質量だけが残る．"
+   "tex": "$(k+P-k')^2=M^{*2}$ の1式で散乱電子のエネルギーが決まる．励起核の反跳の差でピーク間隔は $\\varepsilon$ より少し小さい．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $p$：(M^2-m^2) c/(2 M)\n(2) $E_\\mu$：(M^2+m^2) c^2/(2 M)\n(3) $T$：(M-m)^2 c^2/(2 M) ; $v/c$：(M^2-m^2)/(M^2+m^2)"
+   "spec": "(1) $E'$：(E M c^2-M c^2 ε-ε^2/2)/(M c^2+E(1-cos(θ)))\n(2) $E'_0-E'$：ε M c^2/(M c^2+E(1-cos(θ)))"
   },
   "methods": [],
   "tags": [
-   "2体崩壊",
-   "4元運動量保存",
-   "パイ中間子"
+   "非弾性散乱",
+   "4元運動量",
+   "原子核の励起",
+   "反跳"
   ],
   "provenance": {
    "created": "2026-10-31"
@@ -1238,35 +1239,35 @@
   "field": "SR-30",
   "level": 2,
   "minutes": 25,
-  "theme": "対生成しきい値の一般化と三重項生成",
-  "topic": "対生成しきい値の一般化と三重項生成",
+  "theme": "運動する原子による光子の共鳴吸収：ドップラー効果と反跳",
+  "topic": "運動する原子による光子の共鳴吸収：ドップラー効果と反跳",
   "statement": {
-   "tex": "静止質量 $M$ の静止した粒子に $\\gamma$ 線が当たり，標的粒子をそのまま残して静止質量の和が $\\Sigma$ の粒子群を新たに生成する反応 $\\gamma+M\\to M+(\\text{質量和 }\\Sigma)$ を考える．\n\\begin{enumerate}\n\\item この反応の $\\gamma$ 線エネルギーのしきい値 $E_{\\rm th}$ を $M,\\Sigma,c$ で表せ．\n\\item 標的が自由電子（質量 $m_e$）の場合の電子対生成（三重項生成）$\\gamma+e^-\\to e^-+e^-+e^+$ のしきい値を求めよ．また，しきい値で終状態の 3 粒子が共通にもつ速さ $v$ と，各粒子の運動エネルギーを求めよ．\n\\item 陽子（質量 $m_p$）の場での $\\mu$ 粒子（質量 $m_\\mu$）の対生成 $\\gamma+p\\to p+\\mu^-+\\mu^+$ のしきい値を求めよ．\n\\end{enumerate}"
+   "tex": "基底状態の静止エネルギーが $Mc^2$ の原子があり，励起エネルギー $\\varepsilon$ の励起状態（静止エネルギー $Mc^2+\\varepsilon$）をもつ．光速を $c$ とする．\n\\begin{enumerate}\n\\item 静止した原子が1個の光子を吸収して励起されるための光子のエネルギー $E_a$ を求めよ．\n\\item 静止した励起原子が基底状態に戻るときに放出する光子のエネルギー $E_e$ を求めよ．また $E_a-E_e$ を求めよ．\n\\item 原子が速さ $v=\\beta c$（$\\gamma=1/\\sqrt{1-\\beta^2}$）で運動しているとき，原子の速度と角 $\\theta$ をなす向きに進む光子を吸収するのに必要な光子のエネルギー $E(\\theta)$ を求めよ．\n\\item 光子の進む向きが原子の速度に垂直（$\\theta=\\pi/2$）のとき，$E/E_a$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E_{\\rm th}=\\dfrac{(M+\\Sigma)^2-M^2}{2M}c^2=\\Sigma c^2\\left(1+\\dfrac{\\Sigma}{2M}\\right)$　(2) $4m_ec^2$，$v=\\dfrac45c$，各 $\\dfrac23m_ec^2$　(3) $2m_\\mu c^2\\left(1+\\dfrac{m_\\mu}{m_p}\\right)$"
+   "tex": "(1) $E_a=\\varepsilon+\\dfrac{\\varepsilon^2}{2Mc^2}$　(2) $E_e=\\dfrac{\\varepsilon(2Mc^2+\\varepsilon)}{2(Mc^2+\\varepsilon)}$，$E_a-E_e=\\dfrac{\\varepsilon^2(2Mc^2+\\varepsilon)}{2Mc^2(Mc^2+\\varepsilon)}$　(3) $E(\\theta)=\\dfrac{\\varepsilon(2Mc^2+\\varepsilon)}{2\\gamma Mc^2(1-\\beta\\cos\\theta)}$　(4) $\\dfrac{E}{E_a}=\\sqrt{1-\\beta^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) しきい値では終状態の粒子は互いに静止し，全体が一つの質量 $M+\\Sigma$ の物体として動く．不変量 $s$ を始状態（実験室系）で計算して\n\\[ s=(E_\\gamma+Mc^2)^2-E_\\gamma^2=M^2c^4+2E_\\gamma Mc^2=(M+\\Sigma)^2c^4 \\]\nより $E_{\\rm th}=\\boldsymbol{\\dfrac{(M+\\Sigma)^2-M^2}{2M}c^2=\\Sigma c^2\\left(1+\\dfrac{\\Sigma}{2M}\\right)}$．$\\Sigma=2m$ なら $2mc^2(1+m/M)$ に戻る．\n\n(2) $M=m_e$，$\\Sigma=2m_e$ で $E_{\\rm th}=2m_ec^2(1+1)=\\boldsymbol{4m_ec^2}$．このとき全運動量 $E_{\\rm th}/c=4m_ec$，全エネルギー $5m_ec^2$ なので共通の速さは $v=pc^2/E=\\boldsymbol{\\tfrac45c}$．$\\gamma=1/\\sqrt{1-16/25}=5/3$ で各粒子の運動エネルギーは $(\\gamma-1)m_ec^2=\\boldsymbol{\\tfrac23m_ec^2}$．入射エネルギーの半分（$3\\times\\tfrac23=2$ 個分の $m_ec^2$）が運動エネルギーに取られ，原子核の場（$M\\gg m_e$）でのしきい値 $2m_ec^2$ の 2 倍になる．\n\n(3) $\\Sigma=2m_\\mu$，$M=m_p$：$E_{\\rm th}=\\boldsymbol{2m_\\mu c^2\\left(1+\\dfrac{m_\\mu}{m_p}\\right)}$．$m_\\mu/m_p\\approx0.11$ なので，反跳による上乗せは 1 割程度である．"
+    "tex": "(1) 光子の4元運動量を $k$，原子を $P$ とすると $(P+k)^2=(Mc^2+\\varepsilon)^2/c^2$．静止原子では $M^2c^4+2Mc^2E_a=(Mc^2+\\varepsilon)^2$ より\n\\[E_a=\\boldsymbol{\\varepsilon+\\frac{\\varepsilon^2}{2Mc^2}}.\\]\n反跳の運動エネルギーの分だけ $\\varepsilon$ より大きい．\n\n(2) $(P^*-k)^2=M^2c^2$ より $(Mc^2+\\varepsilon)^2-2(Mc^2+\\varepsilon)E_e=M^2c^4$，\n\\[E_e=\\boldsymbol{\\frac{\\varepsilon(2Mc^2+\\varepsilon)}{2(Mc^2+\\varepsilon)}},\\qquad E_a-E_e=\\boldsymbol{\\frac{\\varepsilon^2(2Mc^2+\\varepsilon)}{2Mc^2(Mc^2+\\varepsilon)}}\\approx\\frac{\\varepsilon^2}{Mc^2}.\\]\n自然幅がこの差より小さいと，放出された光子は別の静止原子に吸収されない．\n\n(3) 実験室系で $P\\cdot k=\\gamma Mc\\,\\dfrac{E}{c}(1-\\beta\\cos\\theta)$ なので $M^2c^4+2\\gamma Mc^2E(1-\\beta\\cos\\theta)=(Mc^2+\\varepsilon)^2$，\n\\[E(\\theta)=\\boldsymbol{\\frac{\\varepsilon(2Mc^2+\\varepsilon)}{2\\gamma Mc^2(1-\\beta\\cos\\theta)}}=\\frac{E_a}{\\gamma(1-\\beta\\cos\\theta)}.\\]\n\n(4) $\\theta=\\pi/2$ で $E/E_a=\\boldsymbol{\\sqrt{1-\\beta^2}}$．1次のドップラー効果は消え，$\\beta^2$ の2次の効果（原子の時計の遅れ）だけが残る．これを横ドップラー効果という．"
    }
   ],
   "idea": {
-   "tex": "しきい値は終状態が一体となって動く状態で，$s=M^2+2E_\\gamma M=(M+\\Sigma)^2$ から一般式が出る．標的が軽いと反跳に大きなエネルギーが取られる．"
+   "tex": "吸収・放出とも $(P\\pm k)^2$ の不変量の式1本で決まる．反跳で吸収と放出の線がずれ，運動する原子ではドップラー因子 $\\gamma(1-\\beta\\cos\\theta)$ がかかる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $E_{\\rm th}$：((M+Σ)^2-M^2) c^2/(2 M)\n(2) しきい値：4 m_e c^2 ; $v$：4/5 c ; 各粒子の運動エネルギー：2/3 m_e c^2\n(3) しきい値：2 m_μ c^2 (1+m_μ/m_p)"
+   "spec": "(1) $E_a$：ε+ε^2/(2M c^2)\n(2) $E_e$：ε (2M c^2+ε)/(2(M c^2+ε)) ; $E_a-E_e$：ε^2 (2M c^2+ε)/(2M c^2 (M c^2+ε))\n(3) $E$：ε (2M c^2+ε)/(2γ M c^2 (1-β cos(θ)))\n(4) sqrt(1-β^2)"
   },
   "methods": [],
   "tags": [
-   "しきい値",
-   "不変質量",
-   "対生成",
-   "三重項生成",
-   "μ粒子"
+   "共鳴吸収",
+   "反跳",
+   "ドップラー効果",
+   "4元運動量",
+   "横ドップラー効果"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -1485,34 +1486,34 @@
   "field": "SR-30",
   "level": 2,
   "minutes": 20,
-  "theme": "非対称衝突型加速器と等価固定標的エネルギー",
-  "topic": "非対称衝突型加速器と等価固定標的エネルギー",
+  "theme": "2体系の重心系運動量とケーレン関数",
+  "topic": "2体系の重心系運動量とケーレン関数",
   "statement": {
-   "tex": "エネルギー $E_e$ の電子（質量 $m_e$）とエネルギー $E_p$ の陽子（質量 $m_p$）のビームを正面衝突させる（$E_e<E_p$）．$E_e\\gg m_ec^2$，$E_p\\gg m_pc^2$ とする．\n\\begin{enumerate}\n\\item 重心系の全エネルギー $\\sqrt s$ の厳密な式を書き，質量を無視する近似で $\\sqrt s$ を $E_e,E_p$ で表せ．\n\\item 同じ $s$ を，静止した陽子に電子ビームを当てて得るには，電子のエネルギー $E$ はいくら必要か．電子の質量を無視し，$s\\approx m_p^2c^4+4E_eE_p$ として求めよ．\n\\item 重心系の実験室に対する速さ $\\beta$ を，質量を無視する近似で $E_e,E_p$ で表せ．また，その向きを答えよ．\n\\end{enumerate}"
+   "tex": "自然単位系（$c=1$）を用いる．不変質量 $\\sqrt s$ の系が質量 $m_1,m_2$ の2粒子からなる（2体崩壊の終状態や2体散乱の始状態・終状態）．重心系での各粒子の運動量の大きさを $k$，エネルギーを $E_1^*,E_2^*$ とする．\n\\begin{enumerate}\n\\item $E_1^*$，$E_2^*$ を $s,m_1,m_2$ で表せ．\n\\item $k=\\dfrac{\\sqrt{\\lambda(s,m_1^2,m_2^2)}}{2\\sqrt s}$，$\\lambda(x,y,z)=x^2+y^2+z^2-2xy-2yz-2zx$（ケーレン関数）を示し，$k$ を $[s-(m_1+m_2)^2][s-(m_1-m_2)^2]$ を用いて表せ．\n\\item $e^+e^-\\to\\mu^+\\mu^-$（$\\mu$ の質量 $m$）で，重心系での $\\mu$ の速さ $\\beta$ を $s,m$ で表せ．\n\\item しきい値の近く $\\sqrt s=m_1+m_2+Q$（$0<Q\\ll m_1,m_2$）で，$k$ を $Q$ の最低次で求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sqrt s\\approx2\\sqrt{E_e E_p}$　(2) $E\\approx\\dfrac{2E_e E_p}{m_pc^2}$　(3) $\\beta\\approx\\dfrac{E_p-E_e}{E_p+E_e}$，陽子の進む向き"
+   "tex": "(1) $E_1^*=\\dfrac{s+m_1^2-m_2^2}{2\\sqrt s}$，$E_2^*=\\dfrac{s+m_2^2-m_1^2}{2\\sqrt s}$　(2) $k=\\dfrac{\\sqrt{\\left(s-(m_1+m_2)^2\\right)\\left(s-(m_1-m_2)^2\\right)}}{2\\sqrt s}$　(3) $\\beta=\\sqrt{1-\\dfrac{4m^2}{s}}$　(4) $k\\approx\\sqrt{\\dfrac{2m_1m_2Q}{m_1+m_2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 全エネルギー $E_e+E_p$，全運動量の大きさ $p_p-p_e$（逆向き）．\n\\[ s=(E_e+E_p)^2-(p_p-p_e)^2c^2=m_e^2c^4+m_p^2c^4+2(E_eE_p+p_ep_pc^2). \\]\n$E\\gg mc^2$ では $pc\\approx E$ で $s\\approx4E_eE_p$，$\\boldsymbol{\\sqrt s\\approx2\\sqrt{E_eE_p}}$．\n\n(2) 静止陽子に電子 $E$：$s=m_e^2c^4+m_p^2c^4+2Em_pc^2$．電子の質量を無視し，$s=m_p^2c^4+4E_eE_p$ と等しくおくと\n\\[ \\boldsymbol{E=\\frac{2E_eE_p}{m_pc^2}}. \\]\n$E_p/(m_pc^2)\\gg1$ なので，衝突型の $E_e$ よりはるかに大きなエネルギー（$2E_p/(m_pc^2)$ 倍）が必要で，衝突型の方が圧倒的に有利である．\n\n(3) $\\beta=\\dfrac{(p_p-p_e)c}{E_e+E_p}\\approx\\boldsymbol{\\dfrac{E_p-E_e}{E_p+E_e}}$（$pc\\approx E$），向きは陽子ビームの向き．$\\gamma=1/\\sqrt{1-\\beta^2}\\approx\\dfrac{E_e+E_p}{2\\sqrt{E_eE_p}}$ である．非対称な衝突では生成物が陽子方向に集中する．"
+    "tex": "(1) 全4元運動量 $P=(\\sqrt s,\\boldsymbol0)$ について $p_2=P-p_1$ を2乗すると $m_2^2=s-2\\sqrt sE_1^*+m_1^2$．よって\n\\[E_1^*=\\boldsymbol{\\frac{s+m_1^2-m_2^2}{2\\sqrt s}},\\qquad E_2^*=\\boldsymbol{\\frac{s+m_2^2-m_1^2}{2\\sqrt s}}.\\]\n\n(2) $k^2=E_1^{*2}-m_1^2=\\dfrac{(s+m_1^2-m_2^2)^2-4sm_1^2}{4s}=\\dfrac{\\lambda(s,m_1^2,m_2^2)}{4s}$．展開すると $\\lambda=\\left(s-(m_1+m_2)^2\\right)\\left(s-(m_1-m_2)^2\\right)$ なので\n\\[k=\\boldsymbol{\\frac{\\sqrt{\\left(s-(m_1+m_2)^2\\right)\\left(s-(m_1-m_2)^2\\right)}}{2\\sqrt s}}.\\]\n$m_1,m_2$ について対称で，$\\sqrt s=m_1+m_2$（しきい値）で 0 になる．\n\n(3) $m_1=m_2=m$ で $k=\\frac12\\sqrt{s-4m^2}$，$E^*=\\frac{\\sqrt s}2$ より $\\beta=k/E^*=\\boldsymbol{\\sqrt{1-\\dfrac{4m^2}s}}$．断面積の因子 $\\beta(3-\\beta^2)/2$ などに現れる．\n\n(4) $s-(m_1+m_2)^2\\approx2(m_1+m_2)Q$，$s-(m_1-m_2)^2\\approx4m_1m_2$，$4s\\approx4(m_1+m_2)^2$ より\n\\[k^2\\approx\\frac{2m_1m_2Q}{m_1+m_2},\\qquad k\\approx\\boldsymbol{\\sqrt{\\frac{2m_1m_2Q}{m_1+m_2}}}.\\]\nこれは換算質量 $\\mu$ の粒子が運動エネルギー $Q$ をもつときの $\\sqrt{2\\mu Q}$ で，しきい値近くでは非相対論的な相対運動になる．位相空間（$\\propto k$）は $\\sqrt Q$ に比例して立ち上がる．"
    }
   ],
   "idea": {
-   "tex": "衝突型加速器の $\\sqrt s\\approx2\\sqrt{E_1E_2}$ と固定標的の $\\sqrt{2Em_pc^2}$ を不変量で比べる．"
+   "tex": "$p_2=P-p_1$ を2乗するだけで重心系のエネルギーが決まり，運動量はケーレン関数 $\\lambda$ にまとまる．しきい値では $\\sqrt{2\\mu Q}$ に帰着する．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\sqrt s$：2 sqrt(E_e E_p)\n(2) $E$：2 E_e E_p/(m_p c^2)\n(3) $\\beta$：(E_p-E_e)/(E_p+E_e) ; 向き：記述：陽子の進む向き"
+   "spec": "(1) $E_1^*$：(s+m_1^2-m_2^2)/(2sqrt(s)) ; $E_2^*$：(s+m_2^2-m_1^2)/(2sqrt(s))\n(2) $k$：sqrt((s-(m_1+m_2)^2) (s-(m_1-m_2)^2))/(2sqrt(s))\n(3) $\\beta$：sqrt(1-4m^2/s)\n(4) $k$：sqrt(2m_1 m_2 Q/(m_1+m_2))"
   },
   "methods": [],
   "tags": [
-   "不変質量",
-   "衝突型加速器",
    "重心系",
-   "固定標的"
+   "ケーレン関数",
+   "2体運動学",
+   "しきい値"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -1685,37 +1686,35 @@
   "kind": "written",
   "field": "SR-30",
   "level": 2,
-  "minutes": 30,
-  "theme": "パイ中間子生成のしきい値とGZK限界",
-  "topic": "パイ中間子生成のしきい値とGZK限界",
+  "minutes": 25,
+  "theme": "電子どうしの制動放射での光子エネルギーの上限",
+  "topic": "電子どうしの制動放射での光子エネルギーの上限",
   "statement": {
-   "tex": "反応 $\\gamma+p\\to p+\\pi^0$ を考える．陽子と中性パイ中間子の質量を $m_p$，$\\mu$ とする．\n\\begin{enumerate}\n\\item 静止している陽子に光子が当たるとき，反応が起こる光子エネルギーのしきい値 $\\varepsilon_{\\rm th}$ を $m_p,\\mu,c$ で表せ．\n\\item エネルギー $E_p$ の陽子とエネルギー $\\varepsilon$ の光子が，運動量のなす角 $\\psi$ で衝突する．反応のしきい値条件を書き，正面衝突（$\\psi=\\pi$）かつ $E_p\\gg m_pc^2$ の場合の陽子のしきい値エネルギー $E_{p,\\rm th}$ を $m_p,\\mu,c,\\varepsilon$ で表せ．また，このしきい値条件が，陽子の静止系での光子エネルギーが (1) の $\\varepsilon_{\\rm th}$ に等しいことと同値であることを示せ．\n\\item 実在の値で見積もる．$m_pc^2=938.3\\ \\mathrm{MeV}$，$\\mu c^2=135.0\\ \\mathrm{MeV}$ とし，宇宙マイクロ波背景放射（温度 $T=2.725\\ \\mathrm{K}$）の典型的な光子エネルギーを $\\varepsilon=2.70\\,k_BT$ とする（$k_B=8.617\\times10^{-5}\\ \\mathrm{eV/K}$）．(2) の $E_{p,\\rm th}$ を eV で求めよ．\n\\item しきい値ちょうどで反応したとき，生成された陽子とパイ中間子は実験室系でどのように運動するか．元の陽子のエネルギーのうちパイ中間子に移る割合を $m_p,\\mu$ で表せ．\n\\end{enumerate}"
+   "tex": "運動エネルギー $T$（全エネルギー $E=T+mc^2$，運動量の大きさ $p$）の電子が静止した電子に当たり，$e^-+e^-\\to e^-+e^-+\\gamma$ で光子を1個放出する．電子の質量を $m$，光速を $c$ とする．\n\\begin{enumerate}\n\\item 始状態の不変量 $s$（全エネルギーの2乗 $-$ 全運動量の2乗 $\\times c^2$）を $m,T,c$ で表せ．\n\\item 重心系での光子のエネルギーの最大値 $E^*_{\\max}$ を $m,T,c$ で表せ．\n\\item 実験室系で入射方向に放出される光子のエネルギーの最大値 $E_{\\max}$ を $m,T,E,p,c$ で表せ．（終状態の2電子が一体となって動く場合が最大である．）\n\\item 標的が静止した質量 $M$ の原子核のとき（$e^-+N\\to e^-+N+\\gamma$），同様の上限 $E'_{\\max}$ を求めよ．$M\\to\\infty$ で $T$ に一致することを確かめよ．\n\\item 電子標的で $T\\gg mc^2$ のとき，$E_{\\max}$ を $T-(\\cdots)$ の形で主要な補正まで求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\varepsilon_{\\rm th}=\\dfrac{\\mu(2m_p+\\mu)c^2}{2m_p}$　(2) $m_p^2c^4+2E_p\\varepsilon(1-\\beta_p\\cos\\psi)\\ge(m_p+\\mu)^2c^4$；$E_{p,\\rm th}=\\dfrac{\\mu(2m_p+\\mu)c^4}{4\\varepsilon}$　(3) $E_{p,\\rm th}\\approx1.1\\times10^{20}\\ \\mathrm{eV}$　(4) 両者は同じ速度（重心速度）で一緒に進む；割合 $\\dfrac{\\mu}{m_p+\\mu}$"
+   "tex": "(1) $s=2mc^2(T+2mc^2)$　(2) $E^*_{\\max}=\\dfrac{mc^2T}{\\sqrt{2mc^2(T+2mc^2)}}$　(3) $E_{\\max}=\\dfrac{mc^2T}{E+mc^2-pc}$　(4) $E'_{\\max}=\\dfrac{Mc^2T}{E+Mc^2-pc}$　(5) $E_{\\max}\\approx T-\\dfrac{mc^2}2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "以下 $c=1$ とする．しきい値では終状態の粒子が重心系で静止するので，不変量 $s=(p_1+p_2)^2$ が $(m_p+\\mu)^2$ に等しい．\n\n(1) 静止陽子：$s=m_p^2+2\\varepsilon m_p$．$s=(m_p+\\mu)^2$ より\n\\[ \\varepsilon_{\\rm th}=\\frac{(m_p+\\mu)^2-m_p^2}{2m_p}=\\boldsymbol{\\frac{\\mu(2m_p+\\mu)c^2}{2m_p}}. \\]\n\n(2) $s=m_p^2+2(E_p\\varepsilon-\\boldsymbol p_p\\cdot\\boldsymbol k)=m_p^2+2E_p\\varepsilon(1-\\beta_p\\cos\\psi)$．しきい値条件は $m_p^2+2E_p\\varepsilon(1-\\beta_p\\cos\\psi)=(m_p+\\mu)^2$．正面衝突 $\\cos\\psi=-1$，$\\beta_p\\to1$ で $4E_p\\varepsilon=\\mu(2m_p+\\mu)$，\n\\[ E_{p,\\rm th}=\\boldsymbol{\\frac{\\mu(2m_p+\\mu)c^4}{4\\varepsilon}}. \\]\n陽子の静止系での光子エネルギーは $\\varepsilon'=p_\\gamma\\cdot p_p/m_p=E_p\\varepsilon(1-\\beta_p\\cos\\psi)/m_p$ であり，しきい値条件は $m_p^2+2m_p\\varepsilon'=(m_p+\\mu)^2$，すなわち $\\varepsilon'=\\varepsilon_{\\rm th}$ と同値．正面衝突・超相対論的では $\\varepsilon'\\approx2\\gamma_p\\varepsilon$ で，背景光子が陽子から見て約 $2\\gamma_p$ 倍に青方偏移し $\\varepsilon_{\\rm th}$ に達することを意味する．\n\n(3) $\\varepsilon=2.70\\times8.617\\times10^{-5}\\times2.725=6.34\\times10^{-4}\\ \\mathrm{eV}$．$\\mu(2m_p+\\mu)c^4=135.0\\times2011.6\\ \\mathrm{MeV^2}=2.715\\times10^{17}\\ \\mathrm{eV^2}$．\n\\[ E_{p,\\rm th}=\\frac{2.715\\times10^{17}}{4\\times6.34\\times10^{-4}}\\ \\mathrm{eV}\\approx\\boldsymbol{1.1\\times10^{20}\\ \\mathrm{eV}}. \\]\nこれより高エネルギーの宇宙線陽子は背景放射との反応でエネルギーを失うため，遠方からはほとんど届かない（GZK 限界）．（実際には光子分布の高エネルギー側や斜め衝突のため，有効な限界は数 $\\times10^{19}\\ \\mathrm{eV}$ に下がる．）\n\n(4) しきい値では重心系で両粒子が静止しているので，実験室系では両者が重心速度で一体となって進む．同じ速度なのでエネルギーは静止質量に比例して分配され，パイ中間子の割合は\n\\[ \\boldsymbol{\\frac{\\mu}{m_p+\\mu}}. \\]\n光子のエネルギーは無視できるので，陽子は 1 回の反応でエネルギーのこの割合（実際の質量で約 13\\%）を失う．"
+    "tex": "(1) $s=(E+mc^2)^2-p^2c^2=2m^2c^4+2Emc^2=\\boldsymbol{2mc^2(T+2mc^2)}$．\n\n(2) 終状態の2電子の不変質量を $W$，光子の4元運動量を $k$ とすると $W^2c^4=s-2\\sqrt s\\,E^*_\\gamma$．$W\\ge2m$ より\n\\[E^*_{\\max}=\\frac{s-4m^2c^4}{2\\sqrt s}=\\boldsymbol{\\frac{mc^2T}{\\sqrt{2mc^2(T+2mc^2)}}}.\\]\n\n(3) 実験室系で全4元運動量 $(E+mc^2,\\,p)$ から光子（入射方向，エネルギー $E_\\gamma$）を引いた残りの不変質量は $W^2c^4=s-2E_\\gamma(E+mc^2-pc)$．$W=2m$ のとき最大で\n\\[E_{\\max}=\\frac{s-4m^2c^4}{2(E+mc^2-pc)}=\\boldsymbol{\\frac{mc^2T}{E+mc^2-pc}}.\\]\n\n(4) $s=m^2c^4+M^2c^4+2EMc^2$，$s-(m+M)^2c^4=2Mc^2T$ より $E'_{\\max}=\\boldsymbol{\\dfrac{Mc^2T}{E+Mc^2-pc}}$．$M\\to\\infty$ で分母 $\\to Mc^2$，$E'_{\\max}\\to T$．重い原子核は運動量を受け取ってもエネルギーをほとんど受け取らないので，電子は運動エネルギーをすべて光子に渡せる（制動放射スペクトルの端点）．\n\n(5) $pc=\\sqrt{E^2-m^2c^4}\\approx E-\\dfrac{m^2c^4}{2E}$ より $E+mc^2-pc\\approx mc^2\\left(1+\\dfrac{mc^2}{2E}\\right)$，\n\\[E_{\\max}\\approx T\\left(1-\\frac{mc^2}{2E}\\right)\\approx\\boldsymbol{T-\\frac{mc^2}2}.\\]\n電子標的では反跳する2電子の静止エネルギーの増加分があるため，光子は運動エネルギーのすべてを受け取ることはできない．"
    }
   ],
   "idea": {
-   "tex": "しきい値は不変量 $s=(m_p+\\mu)^2$ で決まり，静止陽子への光子入射と，超高エネルギー陽子への背景放射の正面衝突は同じ条件の別の系での見え方にすぎない（GZK 限界）．"
+   "tex": "光子を除いた残りの系の不変質量が最小（2電子が一体）のとき光子エネルギーが最大．$W^2=s-2E_\\gamma(E_{\\rm tot}-P\\cos\\theta)$ の1式で決まる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\varepsilon_{\\rm th}$：μ (2 m_p+μ) c^2/(2 m_p)\n(2) しきい値条件：記述 ; $E_{p,\\rm th}$：μ (2 m_p+μ) c^4/(4 ε)\n(3) $E_{p,\\rm th}$ [eV]：≈1.1e20\n(4) 運動：記述 ; 割合：μ/(m_p+μ)"
+   "spec": "(1) $s$：2m c^2 (T+2m c^2)\n(2) m c^2 T/sqrt(2m c^2 (T+2m c^2))\n(3) m c^2 T/(E+m c^2-p c)\n(4) M c^2 T/(E+M c^2-p c)\n(5) T-m c^2/2"
   },
   "methods": [],
   "tags": [
-   "しきい値エネルギー",
+   "制動放射",
    "不変質量",
-   "パイ中間子生成",
-   "GZK限界",
-   "宇宙線",
-   "宇宙マイクロ波背景放射"
+   "4元運動量",
+   "端点エネルギー"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -3182,34 +3181,34 @@
   "field": "SR-30",
   "level": 2,
   "minutes": 25,
-  "theme": "非対称Bファクトリーの重心系とB中間子の飛程",
-  "topic": "非対称Bファクトリーの重心系とB中間子の飛程",
+  "theme": "動く壁による相対論的フェルミ加速",
+  "topic": "動く壁による相対論的フェルミ加速",
   "statement": {
-   "tex": "非対称な電子・陽電子衝突型加速器で，エネルギー $E_1$ の電子とエネルギー $E_2$ の陽電子（$E_1>E_2$）を正面衝突させる．粒子の質量は無視してよい．\n\\begin{enumerate}\n\\item 重心系エネルギー $\\sqrt s$ を求めよ．\n\\item 重心系の速度 $\\beta_{\\rm cm}c$ と $\\beta\\gamma$（重心系の $\\beta_{\\rm cm}\\gamma_{\\rm cm}$）を求めよ．\n\\item 生成された $\\Upsilon(4S)$ は重心系でほぼ静止した $B$ 中間子対に崩壊する（$B$ の重心系での速さは無視）．$B$ の平均寿命を $\\tau$ とするとき，実験室系での平均飛程 $\\ell$ を求めよ．また総エネルギー $E_1+E_2$ を一定に保つとき $\\sqrt s$ が最大になるのはどのような配分か．\n\\end{enumerate}"
+   "tex": "質量 $m$ の粒子が $x$ 軸に沿って運動し，$x$ 軸に垂直な十分重い壁（質量は無限大とみなす）で弾性的にはね返される．壁は $x$ 軸に沿って一定の速さ $V=\\beta_wc$ で動いている．はね返る前の粒子のエネルギーを $E$，運動量の大きさを $p$ とし，$\\gamma_w=1/\\sqrt{1-\\beta_w^2}$，光速を $c$ とする．\n\\begin{enumerate}\n\\item 壁が粒子に向かって近づいてくる場合（正面衝突）に，はね返った後の粒子のエネルギー $E'$ を $E,p,\\beta_w,\\gamma_w,c$ で表せ．（壁の静止系で考えよ．）\n\\item 粒子が超相対論的（$E=pc$）のとき，正面衝突でのエネルギー比 $E'/E$ を $\\beta_w$ で表せ．また，壁が粒子と同じ向きに遠ざかっていて，粒子が追いついて衝突する場合（追突）の $E'/E$ を求めよ．\n\\item 超相対論的な粒子が，正面衝突と追突をそれぞれ確率 $\\dfrac{1+\\beta_w}{2}$，$\\dfrac{1-\\beta_w}{2}$ で経験する（衝突の頻度は相対速度に比例するため）．1回の衝突あたりのエネルギーの相対増加の平均 $\\langle\\Delta E\\rangle/E$ を $\\beta_w$ で表し，$\\beta_w\\ll1$ での主要項を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sqrt s=2\\sqrt{E_1E_2}$　(2) $\\beta_{\\rm cm}=\\dfrac{E_1-E_2}{E_1+E_2}$，$\\beta\\gamma=\\dfrac{E_1-E_2}{2\\sqrt{E_1E_2}}$　(3) $\\ell=\\dfrac{(E_1-E_2)c\\tau}{2\\sqrt{E_1E_2}}$；$E_1=E_2$（対称）"
+   "tex": "(1) $E'=\\gamma_w^2\\left((1+\\beta_w^2)E+2\\beta_w pc\\right)$　(2) 正面衝突 $\\dfrac{E'}{E}=\\dfrac{1+\\beta_w}{1-\\beta_w}$，追突 $\\dfrac{E'}{E}=\\dfrac{1-\\beta_w}{1+\\beta_w}$　(3) $\\dfrac{\\langle\\Delta E\\rangle}{E}=\\dfrac{4\\beta_w^2}{1-\\beta_w^2}$，主要項 $4\\beta_w^2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 質量を無視すると $s=(E_1+E_2)^2-(E_1-E_2)^2=4E_1E_2$，$\\boldsymbol{\\sqrt s=2\\sqrt{E_1E_2}}$．\n\n(2) $\\boldsymbol{\\beta_{\\rm cm}=\\dfrac{|p_{\\rm tot}|c}{E_{\\rm tot}}=\\dfrac{E_1-E_2}{E_1+E_2}}$．$\\boldsymbol{\\beta\\gamma=\\dfrac{|p_{\\rm tot}|c}{\\sqrt s}=\\dfrac{E_1-E_2}{2\\sqrt{E_1E_2}}}$．\n\n(3) 平均飛程は $\\boldsymbol{\\ell=\\beta\\gamma c\\tau=\\dfrac{(E_1-E_2)c\\tau}{2\\sqrt{E_1E_2}}}$．（例：$E_1=9.0$，$E_2=3.1\\ \\mathrm{GeV}$，$\\tau=1.52\\ \\mathrm{ps}$ なら $\\beta\\gamma\\approx0.56$，$\\ell\\approx254\\ \\mu\\mathrm m$．）対称衝突では $B$ がほぼ静止して飛程が $\\sim30\\ \\mu\\mathrm{m}$ 程度にしかならず，崩壊点の分離が困難．非対称化で崩壊時間差の測定（CP 非保存の時間依存測定）が可能になる．\n$E_1+E_2=E$ 一定のもとで $4E_1E_2$ は $E_1=E_2=E/2$ で最大．非対称化は重心系エネルギーを犠牲にしてブーストを得る設計である．"
+    "tex": "(1) 壁は $-x$ 向きに速さ $V$ で動き，粒子は $+x$ 向きに進むとする．壁の静止系（実験室に対して速度 $-V$）での粒子のエネルギーと運動量は\n\\[E^*=\\gamma_w(E+\\beta_w pc),\\qquad p^*c=\\gamma_w(pc+\\beta_wE).\\]\n重い壁での弾性反射では，壁の静止系でエネルギーは変わらず運動量の向きだけが反転する（$p^*\\to-p^*$）．実験室系に戻すと\n\\[E'=\\gamma_w(E^*+\\beta_wp^*c)=\\boldsymbol{\\gamma_w^2\\left((1+\\beta_w^2)E+2\\beta_wpc\\right)}.\\]\n\n(2) $pc=E$ を代入すると $E'/E=\\gamma_w^2(1+\\beta_w)^2=\\boldsymbol{\\dfrac{1+\\beta_w}{1-\\beta_w}}$．追突は壁の速度の向きが逆なので $\\beta_w\\to-\\beta_w$ として $\\boldsymbol{\\dfrac{1-\\beta_w}{1+\\beta_w}}$．これは光が動く鏡で反射されるときのドップラー因子の2乗と同じである．\n\n(3)\n\\[\\frac{\\langle\\Delta E\\rangle}{E}=\\frac{1+\\beta_w}{2}\\cdot\\frac{2\\beta_w}{1-\\beta_w}+\\frac{1-\\beta_w}{2}\\cdot\\frac{-2\\beta_w}{1+\\beta_w}=\\beta_w\\left(\\frac{1+\\beta_w}{1-\\beta_w}-\\frac{1-\\beta_w}{1+\\beta_w}\\right)=\\boldsymbol{\\frac{4\\beta_w^2}{1-\\beta_w^2}}.\\]\n$\\beta_w\\ll1$ では $\\boldsymbol{4\\beta_w^2}$．1回ごとの得失は $\\pm2\\beta_w$ の1次だが，正面衝突の方がわずかに多いため平均では $\\beta_w^2$ の正のエネルギー利得が残る．これが宇宙線の加速機構として提案されたフェルミ加速（2次のフェルミ加速）の核心である．"
    }
   ],
   "idea": {
-   "tex": "$s=4E_1E_2$ を一定に保ちながら非対称化すると重心系がブーストされ，短寿命粒子の飛程が測定可能な長さに伸びる．"
+   "tex": "壁の静止系では弾性反射でエネルギー不変・運動量反転．ローレンツ変換を往復すると利得 $\\gamma_w^2(1+\\beta_w)^2$ が出て，衝突頻度の偏りで平均 $\\beta_w^2$ の利得が残る．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\sqrt s$：2sqrt(E_1 E_2)\n(2) $\\beta_{\\rm cm}$：(E_1-E_2)/(E_1+E_2) ; $\\beta\\gamma$：(E_1-E_2)/(2sqrt(E_1 E_2))\n(3) $\\ell$：(E_1-E_2) c τ/(2sqrt(E_1 E_2))"
+   "spec": "(1) $E'$：γ_w^2 ((1+β_w^2) E+2β_w p c)\n(2) 正面衝突：(1+β_w)/(1-β_w) ; 追突：(1-β_w)/(1+β_w)\n(3) $\\langle\\Delta E\\rangle/E$：4β_w^2/(1-β_w^2) ; 主要項：4β_w^2"
   },
   "methods": [],
   "tags": [
-   "重心系エネルギー",
-   "非対称衝突",
-   "ローレンツブースト",
-   "B中間子"
+   "フェルミ加速",
+   "ローレンツ変換",
+   "弾性反射",
+   "宇宙線"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -3380,34 +3379,34 @@
   "field": "SR-30",
   "level": 2,
   "minutes": 20,
-  "theme": "飛行中のパイ中間子の崩壊：ニュートリノのエネルギー範囲とミューオンの最大角",
-  "topic": "飛行中のパイ中間子の崩壊：ニュートリノのエネルギー範囲とミューオンの最大角",
+  "theme": "ローレンツ不変なフラックス因子と衝突の相対速度",
+  "topic": "ローレンツ不変なフラックス因子と衝突の相対速度",
   "statement": {
-   "tex": "計量は $\\eta_{\\mu\\nu}=\\mathrm{diag}(+1,-1,-1,-1)$（符号 $(+,-,-,-)$）とする．\n荷電パイ中間子（質量 $M$）が $\\pi^+\\to\\mu^++\\nu_\\mu$ と崩壊する．ミューオンの質量を $m$，ニュートリノの質量は $0$ とする．\n\\begin{enumerate}\n\\item パイ中間子の静止系でのニュートリノのエネルギー $E^*$ を $M,m,c$ で表せ．\n\\item 実験室系でパイ中間子が全エネルギー $E$ で飛んでいる．実験室系でのニュートリノのエネルギーの最大値と最小値を $M,m,E,c$ で表せ．\n\\item 同じ状況で，パイ中間子の速さは静止系でのミューオンの速さより大きいとする．ミューオンが実験室系でパイ中間子の進行方向となす角の最大値を $\\theta_{\\max}$ として，$\\sin\\theta_{\\max}$ を $M,m,E,c$ で表せ．\n\\end{enumerate}"
+   "tex": "$c=1$ の単位を用いる．4元運動量 $p_1=(E_1,\\boldsymbol p_1)$，$p_2=(E_2,\\boldsymbol p_2)$，質量 $m_1,m_2$ の2粒子の衝突断面積の定義には，フラックス因子\n\\[F=4\\sqrt{(p_1\\cdot p_2)^2-m_1^2m_2^2},\\qquad p_1\\cdot p_2=E_1E_2-\\boldsymbol p_1\\cdot\\boldsymbol p_2\\]\nが現れる．これはローレンツ不変である．\n\\begin{enumerate}\n\\item 2粒子が同一直線（$x$ 軸）上を運動し，運動量の $x$ 成分を $p_1,p_2$，速度を $v_1=p_1/E_1$，$v_2=p_2/E_2$（符号付き）とする．$F=4E_1E_2|v_1-v_2|$ となることを示せ．\n\\item 重心系での各粒子の運動量の大きさを $k$，全エネルギーを $\\sqrt s$ とするとき，$F$ を $k,s$ で表せ．\n\\item 静止した質量 $m_2$ の標的に，運動量の大きさ $p_L$ の粒子1を当てるときの $F$ を求めよ．\n\\item 質量の無視できる2粒子が正面衝突するときの $F$ を $s$ で表せ．また，同じ向きに平行に進む場合の $F$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E^*=\\dfrac{(M^2-m^2)c^2}{2M}$ \\quad (2) 最大 $\\dfrac{(M^2-m^2)\\left(E+\\sqrt{E^2-M^2c^4}\\right)}{2M^2}$，最小 $\\dfrac{(M^2-m^2)\\left(E-\\sqrt{E^2-M^2c^4}\\right)}{2M^2}$ \\quad (3) $\\sin\\theta_{\\max}=\\dfrac{(M^2-m^2)c^2}{2m\\sqrt{E^2-M^2c^4}}$"
+   "tex": "(1) 証明（解説参照）　(2) $F=4k\\sqrt s$　(3) $F=4m_2p_L$　(4) 正面衝突 $F=2s$，平行 $F=0$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 静止系では $\\mu$ と $\\nu$ が同じ大きさ $p^*$ の運動量で逆向きに出る．$Mc^2=E^*+\\sqrt{E^{*2}+m^2c^4}$（$E^*=p^*c$）から\n\\[E^*=\\boldsymbol{\\frac{(M^2-m^2)c^2}{2M}}.\\]\n\n(2) パイ中間子のローレンツ因子は $\\gamma=E/(Mc^2)$，$\\gamma\\beta=\\sqrt{E^2-M^2c^4}/(Mc^2)$．静止系で角 $\\theta^*$ に出たニュートリノの実験室系のエネルギーはローレンツ変換で $E_\\nu=\\gamma E^*(1+\\beta\\cos\\theta^*)$ だから，最大・最小は $\\cos\\theta^*=\\pm1$ で\n\\[E_{\\nu}=\\frac{E^*}{Mc^2}\\left(E\\pm\\sqrt{E^2-M^2c^4}\\right)=\\boldsymbol{\\frac{(M^2-m^2)\\left(E\\pm\\sqrt{E^2-M^2c^4}\\right)}{2M^2}}.\\]\n静止系での分布が等方的なら，$\\cos\\theta^*$ について一様なので実験室系のエネルギーはこの範囲で一様分布になる．\n\n(3) 静止系のミューオンの運動量 $p^*=E^*/c$，その $\\gamma^*\\beta^*=p^*/(mc)=\\dfrac{M^2-m^2}{2Mm}$．実験室系では\n\\[\\tan\\theta=\\frac{p^*\\sin\\theta^*}{\\gamma(p^*\\cos\\theta^*+\\beta E^*_\\mu/c)}\\]\n（$E^*_\\mu$ は静止系のミューオンのエネルギー）．$\\beta>\\beta^*$ なのでミューオンは必ず前方に出て，角には最大値がある．運動量空間で，中心 $(\\gamma\\beta E^*_\\mu/c,0)$，半径 $\\gamma p^*$ と $p^*$ の楕円に原点から引いた接線の角を求めると\n\\[\\sin\\theta_{\\max}=\\frac{\\gamma^*\\beta^*}{\\gamma\\beta}=\\frac{M^2-m^2}{2Mm}\\cdot\\frac{Mc^2}{\\sqrt{E^2-M^2c^4}}=\\boldsymbol{\\frac{(M^2-m^2)c^2}{2m\\sqrt{E^2-M^2c^4}}}.\\]\n$E\\gg Mc^2$ では $\\theta_{\\max}\\propto1/E$ と小さくなる．ニュートリノビームの実験では，ミューオンがこの狭い円錐に入ることを利用してビームを監視する．"
+    "tex": "(1) $E_i^2=p_i^2+m_i^2$ を使うと\n\\[(E_1E_2-p_1p_2)^2-(E_1^2-p_1^2)(E_2^2-p_2^2)=E_1^2p_2^2+E_2^2p_1^2-2E_1E_2p_1p_2=(E_1p_2-E_2p_1)^2.\\]\nよって $F=4|E_1p_2-E_2p_1|=4E_1E_2\\left|\\dfrac{p_2}{E_2}-\\dfrac{p_1}{E_1}\\right|=\\boldsymbol{4E_1E_2|v_1-v_2|}$．断面積の定義の「入射流束 $\\times$ 標的密度」に現れる $|v_1-v_2|$ と，波動関数の規格化に伴う $2E_1\\cdot2E_2$ がまとまった形である．\n\n(2) 重心系では $\\boldsymbol p_1=-\\boldsymbol p_2$，$|\\boldsymbol p_i|=k$ なので $p_1\\cdot p_2=E_1E_2+k^2$．$E_i^2=k^2+m_i^2$ を使うと\n\\[(E_1E_2+k^2)^2-m_1^2m_2^2=k^2(E_1+E_2)^2\\quad\\Rightarrow\\quad F=\\boldsymbol{4k\\sqrt s}.\\]\n\n(3) $p_1\\cdot p_2=E_1m_2$ なので $(E_1m_2)^2-m_1^2m_2^2=m_2^2p_L^2$，$F=\\boldsymbol{4m_2p_L}$．\n\n(4) 質量 0 では $s=(p_1+p_2)^2=2p_1\\cdot p_2$ なので $F=4\\cdot\\dfrac s2=\\boldsymbol{2s}$．平行に進む場合は $p_1\\cdot p_2=E_1E_2(1-\\cos0)=0$ で $\\boldsymbol{F=0}$（互いに追いつかないので衝突は起こらない）．"
    }
   ],
   "idea": {
-   "tex": "静止系で崩壊を解き，ローレンツ変換で実験室系へ移す．エネルギーは $\\gamma E^*(1+\\beta\\cos\\theta^*)$，最大角は速度楕円への接線で決まる．"
+   "tex": "$(p_1\\cdot p_2)^2-m_1^2m_2^2$ は不変量で，同一直線上では $(E_1p_2-E_2p_1)^2$ に等しい．どの系で計算してもよい．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) (M^2-m^2)c^2/(2M)\n(2) 最大：(M^2-m^2) (E+sqrt(E^2-M^2 c^4))/(2 M^2) ; 最小：(M^2-m^2) (E-sqrt(E^2-M^2 c^4))/(2 M^2)\n(3) $\\sin\\theta_{\\max}$：(M^2-m^2) c^2/(2 m sqrt(E^2-M^2 c^4))"
+   "spec": "(1) 記述\n(2) $F$：4k sqrt(s)\n(3) $F$：4m_2 p_L\n(4) 正面衝突：2s ; 平行：0"
   },
   "methods": [],
   "tags": [
-   "2体崩壊",
-   "ローレンツ変換",
-   "ニュートリノビーム",
-   "最大角"
+   "フラックス因子",
+   "断面積",
+   "不変量",
+   "重心系"
   ],
   "provenance": {
    "created": "2026-11-03"
