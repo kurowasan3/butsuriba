@@ -140,6 +140,12 @@ function build(subject) {
 
 const CHUNK = 120;
 (async () => {
+  // 科目を指定しないときは、科目ごとに別のプロセスで作る（電磁気学など大きい科目でメモリが足りなくなるため）
+  if (!ONLY.length) {
+    const { execFileSync } = require('child_process');
+    for (const s of SUBJECTS) execFileSync(process.execPath, ['--max-old-space-size=4096', __filename, DATA, OUT, s], { stdio: 'inherit' });
+    return;
+  }
   const browser = await chromium.launch();
   for (const [i, s] of SUBJECTS.entries()) {
     if (ONLY.length && !ONLY.includes(s)) continue;
