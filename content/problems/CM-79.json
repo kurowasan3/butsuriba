@@ -196,6 +196,56 @@
   }
  },
  {
+  "id": "CM-02-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 1,
+  "minutes": 20,
+  "theme": "縦波・横波の速度比とPoisson比・震源距離",
+  "topic": "縦波・横波の速度比とPoisson比・震源距離",
+  "statement": {
+   "tex": "一様な等方性弾性体中の縦波（P 波）と横波（S 波）の速さを $c_l$，$c_t$ とする．Lamé 定数 $\\lambda,\\mu$ は Young 率 $E$，Poisson 比 $\\sigma$ と $\\lambda=\\dfrac{E\\sigma}{(1+\\sigma)(1-2\\sigma)}$，$\\mu=\\dfrac{E}{2(1+\\sigma)}$ の関係にある．\n\\begin{enumerate}\n\\item $(c_l/c_t)^2$ を $\\sigma$ だけで表せ．\n\\item 熱力学的安定性（体積弾性率 $K=\\lambda+\\tfrac23\\mu>0$ かつ $\\mu>0$）だけを仮定したとき，$c_l/c_t$ がとりうる範囲を求めよ．$\\sigma\\ge0$ の通常の物質ではどうなるか．\n\\item 地殻を $\\lambda=\\mu$ の弾性体とみなし，$c_t=3.5\\ {\\rm km/s}$ とする．ある観測点で P 波の到着から S 波の到着までの時間（初期微動継続時間）が $10.0\\ {\\rm s}$ であった．震源までの距離を求めよ．\n\\item 液体中では S 波が伝わらない．このことを $\\mu$ を用いて説明し，そのとき $c_l$ が何になるかを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{2(1-\\sigma)}{1-2\\sigma}$　(2) $c_l/c_t>2/\\sqrt3$；$\\sigma\\ge0$ なら $\\ge\\sqrt2$　(3) 約 $83\\ {\\rm km}$　(4) $\\mu=0$ で $c_t=0$，$c_l=\\sqrt{K/\\rho}$（音速）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 元の問題より $c_l^2=(\\lambda+2\\mu)/\\rho$，$c_t^2=\\mu/\\rho$．\n\\[ \\frac{\\lambda}{\\mu}=\\frac{2\\sigma}{1-2\\sigma}\\ \\Rightarrow\\ \\frac{c_l^2}{c_t^2}=\\frac{\\lambda}{\\mu}+2=\\frac{2(1-\\sigma)}{1-2\\sigma}. \\]\n\n(2) $\\lambda+2\\mu=K+\\tfrac43\\mu$ より $\\dfrac{c_l^2}{c_t^2}=\\dfrac{K}{\\mu}+\\dfrac43>\\dfrac43$（$K,\\mu>0$）．したがって $c_l/c_t>2/\\sqrt3\\simeq1.155$ で，上限はない（$K/\\mu\\to\\infty$，$\\sigma\\to\\tfrac12$ の非圧縮極限）．下限は $\\sigma\\to-1$ に対応する．$\\sigma\\ge0$ なら (1) より $(c_l/c_t)^2\\ge2$，$c_l/c_t\\ge\\sqrt2$．縦波はつねに横波より速い．\n\n(3) $\\lambda=\\mu$（$\\sigma=1/4$）で $c_l=\\sqrt3c_t=6.06\\ {\\rm km/s}$．距離 $D$ に対し $D/c_t-D/c_l=\\Delta t$ より\n\\[ D=\\frac{c_lc_t}{c_l-c_t}\\Delta t=\\frac{\\sqrt3}{\\sqrt3-1}c_t\\Delta t=2.366\\times3.5\\times10.0\\simeq83\\ {\\rm km}. \\]\n（大森公式 $D=k\\Delta t$ の係数 $k\\simeq8.3\\ {\\rm km/s}$ に相当．）\n\n(4) 液体はずれ変形に対して復元力をもたない（$\\mu=0$）ので $c_t=0$ となり横波は伝わらない．縦波は $c_l=\\sqrt{\\lambda/\\rho}=\\sqrt{K/\\rho}$ となり，流体の音速に一致する．地球の外核で S 波が伝わらないこと（S 波の影）から外核が液体と結論される．"
+   }
+  ],
+  "idea": {
+   "tex": "$c_l^2/c_t^2=K/\\mu+4/3$ と書き直すと安定性だけから $c_l/c_t>2/\\sqrt3$ が出る．速度比と到着時刻差から震源距離が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ((2(1- σ))/(1-2 σ))\n(2) 記述\n(3) [km]：≈83\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弾性波",
+   "P波",
+   "S波",
+   "Poisson比",
+   "初期微動継続時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-02-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -392,6 +442,56 @@
   }
  },
  {
+  "id": "CM-02-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 2,
+  "minutes": 30,
+  "theme": "先端に質量をつけた棒の縦振動と有効質量",
+  "topic": "先端に質量をつけた棒の縦振動と有効質量",
+  "statement": {
+   "tex": "密度 $\\rho$，Young 率 $E$，断面積 $A$，長さ $l$ の一様な細い棒（質量 $m=\\rho Al$）の一端 $x=0$ を固定し，他端 $x=l$ に質量 $M$ の小さなおもりを取り付けて縦振動させる．$c=\\sqrt{E/\\rho}$ とする．\n\\begin{enumerate}\n\\item おもりの運動方程式から $x=l$ での境界条件を書き，固有振動数を決める方程式が $q\\tan q=m/M$（$q=\\omega l/c$）となることを示せ．\n\\item $M\\to0$ と $M\\to\\infty$ の極限で最低角振動数を求め，後者を「ばね定数 $EA/l$ のばね＋おもり」と比べよ．\n\\item $m\\ll M$ のとき，$m/M$ の 1 次まで正しい最低角振動数が $\\omega_1\\simeq\\sqrt{\\dfrac{EA}{l\\,(M+m/3)}}$ と書けることを示せ（ばねの「有効質量」が $m/3$ であることの導出）．\n\\item $M=m$ のとき，$q\\tan q=1$ の根 $q=0.8603$ を用いて，(3) の近似式の誤差，および棒の質量を無視した場合の誤差を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-M\\omega^2u(l)=-EAu'(l)$ から $q\\tan q=m/M$　(2) $M\\to0$: $\\omega_1=\\pi c/2l$；$M\\to\\infty$: $\\omega_1\\to\\sqrt{EA/Ml}$　(3) 本文　(4) 近似式 $+0.66\\%$，質量無視 $+16\\%$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 固定端で $u(0)=0$ なので $u=a\\sin kx\\sin(\\omega t+\\phi)$，$\\omega=ck$．おもりには棒から張力 $-EA\\,\\partial_xu(l)$ がはたらくので\n\\[ M\\frac{\\partial^2u}{\\partial t^2}\\Big|_{x=l}=-EA\\frac{\\partial u}{\\partial x}\\Big|_{x=l}\\ \\Rightarrow\\ -M\\omega^2\\sin kl=-EAk\\cos kl. \\]\n$\\tan kl=\\dfrac{EAk}{M\\omega^2}=\\dfrac{EA}{Mc^2k}=\\dfrac{\\rho A}{Mk}$．$q=kl$ を掛けて $q\\tan q=\\dfrac{\\rho Al}{M}=\\dfrac mM$．\n\n(2) $M\\to0$：右辺 $\\to\\infty$，$q\\to\\pi/2$，$\\omega_1=\\pi c/(2l)$（一端固定・一端自由の棒の結果）．\n$M\\to\\infty$：$q\\to0$ で $q\\tan q\\simeq q^2=m/M$，$\\omega_1=\\dfrac cl\\sqrt{\\dfrac mM}=\\sqrt{\\dfrac{E}{\\rho l^2}\\cdot\\dfrac{\\rho Al}{M}}=\\sqrt{\\dfrac{EA}{Ml}}$．これは棒を質量のないばね（ばね定数 $EA/l$）とみなした結果そのもの．\n\n(3) $q\\tan q=q^2+\\dfrac{q^4}3+O(q^6)=\\mu$（$\\mu=m/M$）．$q^2=\\mu+\\alpha\\mu^2$ とおくと $\\mu+\\alpha\\mu^2+\\mu^2/3=\\mu$ より $\\alpha=-1/3$．よって $q^2\\simeq\\mu(1-\\mu/3)\\simeq\\dfrac{\\mu}{1+\\mu/3}$（$\\mu$ の 1 次まで）．\n\\[ \\omega_1^2=\\frac{c^2q^2}{l^2}\\simeq\\frac{E}{\\rho l^2}\\cdot\\frac{m/M}{1+m/3M}=\\frac{EA}{l(M+m/3)}. \\]\nばねの質量の 1/3 をおもりに加えればよい（ばねの各部が固定端からの距離に比例した速度で動くとした運動エネルギー $\\frac12\\cdot\\frac m3\\dot u_l^2$ と同じ）．\n\n(4) $\\mu=1$：近似 $q\\simeq\\sqrt{1/(1+1/3)}=\\sqrt{3}/2=0.8660$，正確な $0.8603$ に対し誤差 $+0.66\\%$．質量無視 $q=1$ では誤差 $+16\\%$．棒とおもりが同質量でも有効質量の近似はよく効く．"
+   }
+  ],
+  "idea": {
+   "tex": "先端質量の境界条件が $q\\tan q=m/M$ を与え，その小 $q$ 展開からばねの有効質量 $m/3$ が自然に導かれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "棒の縦振動",
+   "境界条件",
+   "有効質量",
+   "ばねの質量",
+   "超越方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-02-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -484,6 +584,160 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 3,
+  "minutes": 30,
+  "theme": "横慣性（Love補正）による棒の縦波の分散",
+  "topic": "横慣性（Love補正）による棒の縦波の分散",
+  "statement": {
+   "tex": "Poisson 比 $\\sigma$ の細くない棒の縦振動では，横方向の伸縮の慣性を考慮すると，運動方程式は\n\\[ \\frac{\\partial^2u}{\\partial t^2}-\\sigma^2\\kappa^2\\frac{\\partial^4u}{\\partial x^2\\partial t^2}=c^2\\frac{\\partial^2u}{\\partial x^2}\\qquad(c^2=E/\\rho) \\]\nとなる．$\\kappa$ は断面の回転半径（$\\kappa^2=I/A$，$I$ は断面の極慣性モーメント）である．\n\\begin{enumerate}\n\\item 平面波 $u\\propto e^{i(kx-\\omega t)}$ の分散関係 $\\omega(k)$ を求め，位相速度 $v_p$ と群速度 $v_g$ を求めよ．$v_g<v_p<c$ を示せ．\n\\item $k\\to\\infty$ で $\\omega$ はどうなるか．この結果から，このモデルが有効な波長の範囲について何が言えるか．\n\\item 半径 $R$ の円形断面をもつ長さ $l$ の両端自由の棒について，$\\kappa^2$ を $R$ で表し，第 $n$ 縦振動数が細い棒の値 $\\omega_n^{(0)}=n\\pi c/l$ からずれる相対量 $\\Delta\\omega_n/\\omega_n^{(0)}$ を $R/l$ の最低次で求めよ．なお，この方程式に対応する自由端の境界条件 $E\\,\\partial_xu+\\rho\\sigma^2\\kappa^2\\partial_x\\partial_t^2u=0$ が $u\\propto\\cos(n\\pi x/l)$ で満たされることも確かめよ．\n\\item 鋼の棒 $\\sigma=0.29$，$R/l=0.05$ のとき，基本振動の相対ずれを数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega=\\dfrac{ck}{\\sqrt{1+\\sigma^2\\kappa^2k^2}}$，$v_p=\\dfrac{c}{\\sqrt{1+\\sigma^2\\kappa^2k^2}}$，$v_g=\\dfrac{c}{(1+\\sigma^2\\kappa^2k^2)^{3/2}}$　(2) $\\omega\\to c/(\\sigma\\kappa)$ で飽和；$k\\kappa\\ll1$（波長 $\\gg$ 太さ）でのみ有効　(3) $\\kappa^2=R^2/2$，$\\Delta\\omega_n/\\omega_n^{(0)}\\simeq-\\dfrac{\\sigma^2n^2\\pi^2}{4}\\dfrac{R^2}{l^2}$　(4) $-5.2\\times10^{-4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 代入すると $-\\omega^2-\\sigma^2\\kappa^2k^2\\omega^2=-c^2k^2$，すなわち\n\\[ \\omega=\\frac{ck}{\\sqrt{1+\\sigma^2\\kappa^2k^2}}. \\]\n$v_p=\\dfrac{\\omega}{k}=\\dfrac{c}{\\sqrt{1+\\beta^2}}$（$\\beta=\\sigma\\kappa k$），\n\\[ v_g=\\frac{d\\omega}{dk}=c\\left[\\frac1{(1+\\beta^2)^{1/2}}-\\frac{\\beta^2}{(1+\\beta^2)^{3/2}}\\right]=\\frac{c}{(1+\\beta^2)^{3/2}}. \\]\n$\\beta>0$ なら $(1+\\beta^2)^{3/2}>(1+\\beta^2)^{1/2}>1$ なので $v_g<v_p<c$（正常分散：短い波ほど遅い）．\n\n(2) $k\\to\\infty$ で $\\omega\\to c/(\\sigma\\kappa)$ に飽和し，$v_g\\to0$．しかし実際の棒では波長が太さ程度になると断面内の変形が一様でなくなり（Pochhammer–Chree の厳密解），この近似は破綻する．このモデルは $\\sigma\\kappa k\\ll1$，すなわち波長が太さより十分長いときの 1 次補正として信頼できる．\n\n(3) 円形断面：$I=\\iint(y^2+z^2)dA=\\dfrac{\\pi R^4}{2}$，$A=\\pi R^2$ より $\\kappa^2=R^2/2$．\n両端自由：$u=\\cos k_nx\\,e^{-i\\omega t}$，$k_n=n\\pi/l$ とすると，$\\partial_xu$ と $\\partial_x\\partial_t^2u$ はともに $\\sin k_nx$ に比例し，$x=0,l$ で 0 なので境界条件は満たされる．よって $k_n$ は細い棒と同じで，振動数のみが分散関係で変わる：\n\\[ \\omega_n=\\frac{\\omega_n^{(0)}}{\\sqrt{1+\\sigma^2\\kappa^2k_n^2}}\\simeq\\omega_n^{(0)}\\left(1-\\frac{\\sigma^2\\kappa^2k_n^2}2\\right),\\quad\n\\frac{\\Delta\\omega_n}{\\omega_n^{(0)}}\\simeq-\\frac{\\sigma^2}{2}\\cdot\\frac{R^2}{2}\\cdot\\frac{n^2\\pi^2}{l^2}=-\\frac{\\sigma^2n^2\\pi^2R^2}{4l^2}. \\]\n倍音は $n^2$ に比例してより大きく下がり，倍音列が調和的でなくなる．\n\n(4) $-\\dfrac{0.29^2\\times\\pi^2\\times0.0025}{4}=-5.19\\times10^{-4}$（厳密式でも $-5.18\\times10^{-4}$）．"
+   }
+  ],
+  "idea": {
+   "tex": "横慣性の補正項は分散 $\\omega=ck/\\sqrt{1+\\sigma^2\\kappa^2k^2}$ を生み，両端自由の棒では波数は変わらず振動数だけが $-\\sigma^2n^2\\pi^2R^2/4l^2$ だけ下がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\omega$：((c k)/(sqrt(1+ σ ^(2) κ ^(2) k ^(2)))) ; $v_p$：((c)/(sqrt(1+ σ ^(2) κ ^(2) k ^(2)))) ; $v_g$：((c)/((1+ σ ^(2) κ ^(2) k ^(2))^(3/2)))\n(2) 記述\n(3) 記述\n(4) ≈-5.2e-4"
+  },
+  "methods": [],
+  "tags": [
+   "棒の縦振動",
+   "分散関係",
+   "群速度",
+   "Love理論",
+   "Poisson比"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 3,
+  "minutes": 35,
+  "theme": "弾性棒の接合部での反射と1/4波長整合層",
+  "topic": "弾性棒の接合部での反射と1/4波長整合層",
+  "statement": {
+   "tex": "断面積 $S$，密度 $\\rho$，ヤング率 $E$ の一様な棒を伝わる縦波を考える．棒の「機械インピーダンス」を $Z=S\\sqrt{\\rho E}$ と定義する．$x<0$ を棒 A（$S_A,\\rho_A,E_A$，インピーダンス $Z_A$），$x>0$ を棒 B（インピーダンス $Z_B$）とし，両者は $x=0$ で密着している．A 側から角振動数 $\\omega$ の正弦波が入射する．\n\\begin{enumerate}\n\\item 接合面で満たすべき 2 つの条件を述べ，変位振幅の反射率 $r$ と透過率 $\\tau$ を $Z_A,Z_B$ で表せ．また，縦波が単位時間に運ぶ平均エネルギー（パワー）が $\\frac12 Z\\omega^2|\\xi_0|^2$（$\\xi_0$ は変位振幅）であることを用いて，エネルギー透過率 $T$ と反射率 $R$ を求め，$R+T=1$ を確かめよ．\n\\item A と B が同じ材料で，断面積だけが $S_B=4S_A$ のとき，$r,\\tau,T$ を求めよ．材料が同じでも反射が起こる理由を一言で述べよ．\n\\item A と B の間に長さ $d$ の棒 C（インピーダンス $Z_C$，C 中の波数 $k_C$）を挟む（C は $0<x<d$）．エネルギー透過率が\n\\[ T=\\frac{4Z_AZ_B}{(Z_A+Z_B)^2\\cos^2 k_Cd+\\left(Z_C+\\dfrac{Z_AZ_B}{Z_C}\\right)^2\\sin^2 k_Cd} \\]\nとなることを示せ．\n\\item 角振動数 $\\omega$ で $T=1$（完全透過）となるための $Z_C$ と最小の $d$ の条件を求めよ．(2) の 2 本の棒をつなぐ場合，同じ材料の棒 C で整合させるには C の断面積と長さをどう選べばよいか．\n\\item $k_Cd=\\pi$ のとき，$Z_C$ によらず $T$ は C が無い場合の値に一致することを示し，その理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 変位と力 $SE\\,\\partial_x\\xi$ の連続．$r=\\dfrac{Z_A-Z_B}{Z_A+Z_B}$，$\\tau=\\dfrac{2Z_A}{Z_A+Z_B}$，$T=\\dfrac{4Z_AZ_B}{(Z_A+Z_B)^2}$，$R=r^2$　(2) $r=-3/5$，$\\tau=2/5$，$T=16/25$（インピーダンスが断面積に比例するため）　(3) 証明（解説参照）　(4) $Z_C=\\sqrt{Z_AZ_B}$，$d=\\lambda_C/4=\\pi/(2k_C)$；断面積 $2S_A$，長さ $\\lambda/4$　(5) $\\cos^2 k_Cd=1,\\ \\sin k_Cd=0$ で $T=4Z_AZ_B/(Z_A+Z_B)^2$（半波長層は透明）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 棒の変位を $\\xi(x,t)$ とすると，断面を通して左側が右側に及ぼす力は $F=-SE\\,\\partial_x\\xi$．接合面では (i) 変位の連続（密着），(ii) 力の連続（作用反作用，接合面の質量 0）が必要．\n$+x$ 向きの波 $\\xi=f(t-x/c)$ では，速度 $u=\\partial_t\\xi=f'$，$F=-SE\\partial_x\\xi=(SE/c)f'=Zu$（$SE/c=S\\sqrt{\\rho E}=Z$）．$-x$ 向きの波では $F=-Zu$．\n入射・反射・透過の変位振幅を $a,a',b$ とし $x=0$ で条件を課すと\n\\[ a+a'=b,\\qquad Z_A(a-a')=Z_Bb \\]\nよって $r=a'/a=\\dfrac{Z_A-Z_B}{Z_A+Z_B}$，$\\tau=b/a=\\dfrac{2Z_A}{Z_A+Z_B}$．\nパワーは $\\frac12Z\\omega^2|\\xi_0|^2$ なので $R=r^2$，$T=\\dfrac{Z_B}{Z_A}\\tau^2=\\dfrac{4Z_AZ_B}{(Z_A+Z_B)^2}$．\n$R+T=\\dfrac{(Z_A-Z_B)^2+4Z_AZ_B}{(Z_A+Z_B)^2}=1$．\n\n(2) $Z_B=4Z_A$ より $r=\\dfrac{1-4}{5}=-\\dfrac35$，$\\tau=\\dfrac25$，$T=\\dfrac{16}{25}=0.64$．波速 $\\sqrt{E/\\rho}$ は同じでも，インピーダンス（同じ変位速度を生むのに必要な力）は断面積に比例するので不整合が生じる．\n\n(3) 時間因子 $e^{i\\omega t}$ を省き，速度振幅 $u(x)$ と力 $F(x)$ を用いる．C 内で $u=Ce^{-ik_Cx}+De^{ik_Cx}$，$F=Z_C(Ce^{-ik_Cx}-De^{ik_Cx})$．これから\n\\[ \\begin{pmatrix}u(0)\\\\F(0)\\end{pmatrix}=\\begin{pmatrix}\\cos k_Cd & i\\sin k_Cd/Z_C\\\\ iZ_C\\sin k_Cd & \\cos k_Cd\\end{pmatrix}\\begin{pmatrix}u(d)\\\\F(d)\\end{pmatrix}. \\]\n入射速度振幅を 1，反射を $\\rho'$，透過を $t'$ とすると $u(0)=1+\\rho'$，$F(0)=Z_A(1-\\rho')$，$u(d)=t'$，$F(d)=Z_Bt'$．\n\\[ 1+\\rho'=t'\\Big(\\cos k_Cd+i\\frac{Z_B}{Z_C}\\sin k_Cd\\Big),\\quad Z_A(1-\\rho')=t'(iZ_C\\sin k_Cd+Z_B\\cos k_Cd). \\]\n第1式に $Z_A$ を掛けて第2式と足すと\n\\[ 2Z_A=t'\\Big[(Z_A+Z_B)\\cos k_Cd+i\\Big(Z_C+\\frac{Z_AZ_B}{Z_C}\\Big)\\sin k_Cd\\Big]. \\]\n$T=\\dfrac{Z_B}{Z_A}|t'|^2$ に代入して与式を得る．\n\n(4) $T=1$ は分母 $D=4Z_AZ_B$ を意味する．$D$ は $(Z_A+Z_B)^2$ と $\\left(Z_C+\\frac{Z_AZ_B}{Z_C}\\right)^2$ の重み $\\cos^2k_Cd,\\ \\sin^2k_Cd$（和 1）による加重平均であり，相加相乗平均より前者 $\\ge4Z_AZ_B$（等号は $Z_A=Z_B$ のときのみ），後者 $\\ge4Z_AZ_B$（等号は $Z_C^2=Z_AZ_B$ のときのみ）．$Z_A\\neq Z_B$ なら $D=4Z_AZ_B$ には $\\cos^2k_Cd=0$ かつ $Z_C=\\sqrt{Z_AZ_B}$ が必要十分．よって $Z_C=\\sqrt{Z_AZ_B}$，$k_Cd=\\pi/2$（最小），すなわち $d=\\lambda_C/4$．\n(2) の場合 $\\sqrt{Z_AZ_B}=2Z_A$，同材料なら断面積 $S_C=2S_A$，長さは棒中の波長の $1/4$．\n\n(5) $k_Cd=\\pi$ で $\\cos^2=1,\\ \\sin=0$ より $T=4Z_AZ_B/(Z_A+Z_B)^2$．行列は $-1$ 倍の単位行列となり，半波長の層は $u,F$ を符号反転して伝えるだけなので存在しないのと同じ（整合は特定の周波数でのみ成り立つ点に注意）．"
+   }
+  ],
+  "idea": {
+   "tex": "接合部の反射は波速ではなくインピーダンス $Z=S\\sqrt{\\rho E}$ の不整合で決まる．転送行列から 1/4 波長層 $Z_C=\\sqrt{Z_AZ_B}$ による完全整合と半波長層の透明性が導ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $r$：-3/5 ; $\\tau$：2/5 ; $T$：16/25\n(3) 証明\n(4) $Z_C$：sqrt(Z_A Z_B) ; $d$：λ_C /4 ; 断面積：2 S_A ; 長さ：λ /4\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "縦波",
+   "弾性棒",
+   "音響インピーダンス",
+   "反射",
+   "透過",
+   "1/4波長整合",
+   "転送行列"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 3,
+  "minutes": 35,
+  "theme": "自重のあるゴムひもとおもりの振動",
+  "topic": "自重のあるゴムひもとおもりの振動",
+  "statement": {
+   "tex": "自然長 $l_0$，断面積 $S$，ヤング率 $E$，質量 $M$（一様に分布）のゴムひもの上端を固定し，下端に質量 $m$ のおもりを付けてつるす．ゴムはフックの法則に従い，断面積の変化は無視する．$\\rho=M/(Sl_0)$，$c=\\sqrt{E/\\rho}$ とする．\n\\begin{enumerate}\n\\item 静止状態でのゴムの全伸び $\\Delta$ を求めよ．\n\\item おもりの上下の微小振動（基本モード）の角振動数 $\\omega$ が，$X=\\omega l_0/c$ として $X\\tan X=M/m$ を満たすことを示せ．\n\\item $M\\ll m$ のとき，$\\omega^2\\simeq\\dfrac{SE}{(m+M/3)\\,l_0}$ となることを示せ．\n\\item $l_0=0.30\\ \\mathrm{m}$，$S=5.0\\times10^{-6}\\ \\mathrm{m^2}$，$m=M=30\\ \\mathrm{g}$ で，静止時の伸びが $\\Delta=2.0\\ \\mathrm{cm}$ であった．$E$ を求め，周期を (2) の厳密な式，(3) の近似式，ゴムの質量を無視した式のそれぞれで計算せよ（$g=9.8\\ \\mathrm{m/s^2}$）．\n\\item ゴムの質量を無視する．おもりを自然長の位置で支えておき，支えを静かに外すと，おもりは振動したのち（わずかな減衰で）静止する．振動中にゴムがたるむことはあるか．また，最終的に熱として失われるエネルギーを $m,g,l_0,S,E$ で表し，重力の位置エネルギーの減少との比を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta=\\dfrac{(m+M/2)gl_0}{SE}$　(2) 証明（解説参照）　(3) 証明（解説参照）　(4) $E\\approx1.32\\times10^6\\ \\mathrm{Pa}$，周期：厳密 $0.269\\ \\mathrm{s}$，近似 $0.268\\ \\mathrm{s}$，質量無視 $0.232\\ \\mathrm{s}$　(5) たるまない（最高点でちょうど自然長）；$\\dfrac{m^2g^2l_0}{2SE}$，位置エネルギー減少の $1/2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 上端から $x$ の断面が支える重さは $mg+\\rho Sg(l_0-x)$．ひずみは $\\{mg+\\rho Sg(l_0-x)\\}/(SE)$ で，$0$ から $l_0$ まで積分して\n\\[ \\Delta=\\frac{gl_0}{SE}\\Big(m+\\frac{M}{2}\\Big). \\]\n\n(2) 平衡位置からの変位 $\\xi(x,t)$ は波動方程式 $\\xi_{tt}=c^2\\xi_{xx}$ に従う（重力は平衡で打ち消される）．境界条件は $\\xi(0,t)=0$，下端でおもりの運動方程式 $m\\xi_{tt}(l_0,t)=-SE\\,\\xi_x(l_0,t)$．$\\xi=A\\sin kx\\cos\\omega t$，$\\omega=ck$ を代入して\n\\[ m\\omega^2\\sin kl_0=SEk\\cos kl_0\\ \\Longrightarrow\\ \\tan kl_0=\\frac{SE}{mc^2k}=\\frac{\\rho S}{mk}. \\]\n両辺に $kl_0=X$ を掛けて $X\\tan X=\\rho Sl_0/m=M/m$．\n\n(3) $X$ が小さいとき $X\\tan X\\simeq X^2(1+X^2/3)$．$X^2\\simeq\\frac Mm(1-\\frac{M}{3m})$．$\\omega^2=X^2c^2/l_0^2=X^2\\frac{SE}{Ml_0}$ より\n\\[ \\omega^2\\simeq\\frac{SE}{ml_0}\\Big(1-\\frac{M}{3m}\\Big)\\simeq\\frac{SE}{(m+M/3)l_0}. \\]\nゴムの質量の $1/3$ がおもりに加わったように振る舞う．\n\n(4) (1) より $E=\\dfrac{(m+M/2)gl_0}{S\\Delta}=\\dfrac{0.045\\times9.8\\times0.30}{5.0\\times10^{-6}\\times0.020}=1.32\\times10^6\\ \\mathrm{Pa}$．$SE/l_0=22.05\\ \\mathrm{N/m}$．\n厳密：$X\\tan X=1$ の解 $X=0.8603$，$\\omega^2=X^2\\frac{SE}{Ml_0}=0.7402\\times735=544\\ \\mathrm{s^{-2}}$，$T=2\\pi/\\omega\\approx0.269\\ \\mathrm{s}$．\n近似：$T=2\\pi\\sqrt{(m+M/3)l_0/(SE)}=2\\pi\\sqrt{0.040/22.05}\\approx0.268\\ \\mathrm{s}$（$M=m$ でも誤差 1\\% 未満）．\n質量無視：$T=2\\pi\\sqrt{m/22.05}\\approx0.232\\ \\mathrm{s}$．\n\n(5) ばね定数 $k=SE/l_0$，平衡の伸び $\\Delta_0=mg/k$．自然長から静かに放すと振幅 $\\Delta_0$ の単振動になり，最高点はちょうど自然長なのでたるまない（減衰があれば振幅はさらに小さい）．最終状態でのゴムの弾性エネルギーは $\\frac12k\\Delta_0^2=\\dfrac{m^2g^2l_0}{2SE}$，位置エネルギーの減少は $mg\\Delta_0=\\dfrac{m^2g^2l_0}{SE}$．差 $\\dfrac{m^2g^2l_0}{2SE}$ が熱（内部摩擦・空気抵抗）として失われ，その比は $1/2$ で減衰の大きさによらない．"
+   }
+  ],
+  "idea": {
+   "tex": "ゴム自身の質量を入れると，静的な伸びには $M/2$，振動には超越方程式 $X\\tan X=M/m$ が現れ，その小 $M$ 展開から有効質量 $m+M/3$ が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta$：(((m + M /2) g l_0)/(S E))\n(2) 証明\n(3) 証明\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ヤング率",
+   "弾性棒",
+   "縦振動",
+   "有効質量",
+   "超越方程式",
+   "弾性エネルギー",
+   "エネルギー散逸"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -633,6 +887,56 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-02-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-79",
+  "level": 4,
+  "minutes": 45,
+  "theme": "Poisson固体のRayleigh波：速度と粒子軌道",
+  "topic": "Poisson固体のRayleigh波：速度と粒子軌道",
+  "statement": {
+   "tex": "$x_3<0$ を占める一様な等方性弾性体（Lamé 定数 $\\lambda=\\mu$，密度 $\\rho$）の自由表面 $x_3=0$ を $x_1$ 方向に進む表面波（Rayleigh 波）を考える．変位を\n\\[ \\boldsymbol u=\\alpha(k,0,-ip_1)e^{p_1x_3}e^{i(kx_1-\\omega t)}+\\beta(-p_2,0,ik)e^{p_2x_3}e^{i(kx_1-\\omega t)} \\]\n（$k>0$，$p_1,p_2>0$）とおく．第 1 項は縦波成分，第 2 項は横波成分である．$c_t=\\sqrt{\\mu/\\rho}$，$\\xi=(\\omega/kc_t)^2$ とする．\n\\begin{enumerate}\n\\item $p_1,p_2$ を $k,\\xi$ で表し，表面で応力 $T_{31}=T_{33}=0$ という条件から，$\\xi$ の満たす式が\n\\[ (2-\\xi)^2=4\\sqrt{1-\\xi}\\sqrt{1-\\xi/3} \\]\nとなることを示せ．\n\\item これを有理化して得られる 4 次方程式を解き，$0<\\xi<1$ の根を厳密に求めよ．Rayleigh 波の速さ $c_R$ は $c_t$ の何倍か．\n\\item 表面 $x_3=0$ における鉛直変位と水平変位の振幅比 $|u_3|/|u_1|$ を厳密に求めよ．また，粒子が描く楕円軌道は波の進行方向に対して順回りか逆回り（表面最上点で進行方向と逆向きに動く）か．\n\\item 水平変位 $u_1$ が 0 となる深さを波長 $\\Lambda=2\\pi/k$ を単位として求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_1=k\\sqrt{1-\\xi/3}$，$p_2=k\\sqrt{1-\\xi}$；式は本文　(2) $\\xi=2-2/\\sqrt3$，$c_R=\\sqrt{2-2/\\sqrt3}\\,c_t\\simeq0.9194c_t$　(3) $|u_3/u_1|=\\sqrt{1+2/\\sqrt3}\\simeq1.468$，逆回り（retrograde）　(4) 深さ $\\simeq0.192\\Lambda$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 縦波・横波の分散関係 $\\rho\\omega^2=(\\lambda+2\\mu)(k^2-p_1^2)$，$\\rho\\omega^2=\\mu(k^2-p_2^2)$ と $c_l^2=3c_t^2$（$\\lambda=\\mu$）より\n\\[ p_1=k\\sqrt{1-\\xi/3},\\qquad p_2=k\\sqrt{1-\\xi}. \\]\n$T_{31}=\\mu(\\partial_3u_1+\\partial_1u_3)=0$ を $x_3=0$ で：$\\alpha(kp_1+kp_1)+\\beta(-p_2^2-k^2)=0$，すなわち $2kp_1\\alpha=(k^2+p_2^2)\\beta$．\n$T_{33}=\\lambda(\\partial_1u_1+\\partial_3u_3)+2\\mu\\partial_3u_3=0$：\n$\\partial_1u_1=ik(\\alpha k-\\beta p_2)$，$\\partial_3u_3=-ip_1^2\\alpha+ikp_2\\beta$ より\n\\[ \\lambda(k^2-p_1^2)\\alpha-2\\mu p_1^2\\alpha+2\\mu kp_2\\beta=0\\ \\Rightarrow\\ \\{\\lambda k^2-(\\lambda+2\\mu)p_1^2\\}\\alpha+2\\mu kp_2\\beta=0. \\]\n$(\\lambda+2\\mu)(k^2-p_1^2)=\\rho\\omega^2=\\mu\\xi k^2$ を使うと $\\lambda k^2-(\\lambda+2\\mu)p_1^2=\\mu(\\xi-2)k^2$，また $k^2+p_2^2=(2-\\xi)k^2$．2 式から $\\beta$ を消去して\n\\[ (\\xi-2)k^2\\cdot(2-\\xi)k^2+2kp_2\\cdot2kp_1=0\\ \\Rightarrow\\ (2-\\xi)^2=\\frac{4p_1p_2}{k^2}=4\\sqrt{1-\\xi}\\sqrt{1-\\xi/3}. \\]\n\n(2) 両辺を 2 乗：$(2-\\xi)^4=16(1-\\xi)(1-\\xi/3)$．展開して整理すると\n\\[ \\xi(\\xi-4)(3\\xi^2-12\\xi+8)=0. \\]\n根は $0,4,2\\pm2/\\sqrt3$．$\\xi=0$ は自明解，$\\xi=4$ と $2+2/\\sqrt3$ は $\\xi>1$ で $p_2$ が実でなく表面波にならない．よって $\\xi=2-\\dfrac2{\\sqrt3}=0.8453$（2 乗前の式も満たすことを確認できる）．\n\\[ c_R=c_t\\sqrt{2-2/\\sqrt3}\\simeq0.9194\\,c_t. \\]\n\n(3) $\\beta=\\dfrac{2kp_1}{k^2+p_2^2}\\alpha$．表面で\n$u_1=\\alpha k\\left(1-\\dfrac{2p_1p_2}{k^2+p_2^2}\\right)$，$u_3=-i\\alpha p_1\\left(1-\\dfrac{2k^2}{k^2+p_2^2}\\right)$（共通因子 $e^{i(kx_1-\\omega t)}$ 省略）．\n(1) の式より $\\dfrac{2p_1p_2}{k^2+p_2^2}=\\dfrac{2-\\xi}{2}=\\dfrac1{\\sqrt3}$，$\\dfrac{2k^2}{k^2+p_2^2}=\\dfrac{2}{2-\\xi}=\\sqrt3$．\n\\[ \\left|\\frac{u_3}{u_1}\\right|=\\frac{p_1}{k}\\cdot\\frac{\\sqrt3-1}{1-1/\\sqrt3}=\\sqrt3\\,\\frac{p_1}{k}=\\sqrt{3-\\xi}=\\sqrt{1+\\frac{2}{\\sqrt3}}\\simeq1.468. \\]\n実部をとる．$\\alpha>0$，$\\theta=kx_1-\\omega t$ とすると $u_3=i\\alpha p_1(\\sqrt3-1)e^{i\\theta}$ だから\n\\[ u_1=C\\cos\\theta,\\qquad u_3=-C'\\sin\\theta\\qquad(C=\\alpha k(1-1/\\sqrt3)>0,\\ C'=\\alpha p_1(\\sqrt3-1)>0). \\]\n$x_3$ は物体の外向き（上向き）なので，粒子が最も高い位置にあるのは $\\theta=-\\pi/2$．固定点では $\\dot\\theta=-\\omega$ だから $\\dot u_1=C\\omega\\sin\\theta$ で，最上点では $\\dot u_1=-C\\omega<0$．すなわち最上点で進行方向と逆向きに動く逆回り（retrograde）の楕円であり，縦長（鉛直振幅が水平の約 1.47 倍）である．\n\n(4) 深さ $d$（$x_3=-d$）で $u_1\\propto e^{-p_1d}-\\dfrac{2p_1p_2}{k^2+p_2^2}e^{-p_2d}$．これが 0 となるのは\n\\[ d=\\frac{\\ln\\{(k^2+p_2^2)/2p_1p_2\\}}{p_1-p_2}=\\frac{\\ln\\sqrt3}{\\sqrt{1-\\xi/3}-\\sqrt{1-\\xi}}\\,\\frac1k\\simeq\\frac{1.209}{k}=0.192\\,\\Lambda. \\]\nこれより深いところでは $u_1$ の符号が反転し，粒子軌道は順回りに変わる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\lambda=\\mu$ では Rayleigh 方程式が因数分解でき $c_R/c_t=\\sqrt{2-2/\\sqrt3}$ が厳密に出る．境界条件の比から表面の振幅比 $\\sqrt{3-\\xi}$ と，水平成分が消える深さ（約 0.19 波長）まで閉じた形で求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Rayleigh波",
+   "表面波",
+   "弾性波",
+   "Poisson固体",
+   "楕円軌道"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

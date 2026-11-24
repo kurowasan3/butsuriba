@@ -296,6 +296,202 @@
   }
  },
  {
+  "id": "SM-07-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 2,
+  "minutes": 25,
+  "theme": "向きを覚えている酔歩（持続的ランダムウォーク）の拡散係数",
+  "topic": "向きを覚えている酔歩（持続的ランダムウォーク）の拡散係数",
+  "statement": {
+   "tex": "1次元の格子（間隔 $a$）上の不純物原子が，時間 $\\tau$ ごとに隣の格子点へ跳ぶ．ただし1回目の向きは左右等確率で，その後は確率 $p$ で直前と同じ向き，確率 $1-p$ で逆向きに跳ぶ．$i$ 回目の跳びの向きを $s_i=\\pm1$ とし，$c=2p-1$ とおく．\n\\begin{enumerate}\n\\item 相関 $\\langle s_is_{i+n}\\rangle$ を求めよ．\n\\item $N$ 回跳んだ後の変位 $x$ の分散 $\\langle x^2\\rangle$ を求め，$N\\to\\infty$ での主要項を答えよ．\n\\item 拡散係数 $D$（$\\langle x^2\\rangle\\simeq2Dt$ で定義）を求めよ．$p=\\frac12$ と $p\\to1$ で何が起こるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c^n=(2p-1)^n$　(2) $\\langle x^2\\rangle=a^2\\left[N\\dfrac{1+c}{1-c}-\\dfrac{2c(1-c^N)}{(1-c)^2}\\right]\\simeq Na^2\\dfrac{p}{1-p}$　(3) $D=\\dfrac{a^2}{2\\tau}\\dfrac{p}{1-p}$（$p=\\frac12$ で $\\frac{a^2}{2\\tau}$，$p\\to1$ で発散）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $s_{i+1}=s_i$ となる確率が $p$ なので $\\langle s_is_{i+1}\\rangle=p-(1-p)=c$．向きの変化はマルコフ的で，$n$ 回の積をとって $\\boldsymbol{\\langle s_is_{i+n}\\rangle=c^n}$．\n\n(2) $x=a\\sum_{i=1}^Ns_i$ で，$\\langle s_i\\rangle=0$．\n\\[\n\\langle x^2\\rangle=a^2\\sum_{i,j}c^{|i-j|}=a^2\\left[N+2\\sum_{n=1}^{N-1}(N-n)c^n\\right]\n=\\boldsymbol{a^2\\left[N\\frac{1+c}{1-c}-\\frac{2c(1-c^N)}{(1-c)^2}\\right]}.\n\\]\n$N\\to\\infty$ では第1項が主で，$\\dfrac{1+c}{1-c}=\\dfrac{p}{1-p}$ より $\\boldsymbol{\\langle x^2\\rangle\\simeq Na^2\\dfrac{p}{1-p}}$．相関があっても和が有限なので中心極限定理が成り立ち，分布はガウス分布に近づく．\n\n(3) $t=N\\tau$ として $2Dt=Na^2\\dfrac{p}{1-p}$ より\n\\[\n\\boldsymbol{D=\\frac{a^2}{2\\tau}\\,\\frac{p}{1-p}}.\n\\]\n$p=\\frac12$ で相関のない酔歩の $\\dfrac{a^2}{2\\tau}$ に戻る．$p\\to1$ では向きをほとんど変えないので，弾道的な運動に近づき $D$ が発散する（相関時間 $\\tau/(1-p)$ の間に速さ $a/\\tau$ で進む）．"
+   }
+  ],
+  "idea": {
+   "tex": "速度に相関があるランダムウォークでは，拡散係数は相関関数の和（グリーン＝久保型）で決まる．1ステップの相関 $c$ が指数関数的に減るとき，和は $(1+c)/(1-c)$ 倍の因子になる．原題は相関のない酔歩の分布と拡散係数で，捻りでは向きの持続を入れた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $c^n$：(2 p -1)^(n)\n(2) 記述\n(3) $D$：((a ^(2))/(2 τ))((p)/(1- p))"
+  },
+  "methods": [],
+  "tags": [
+   "ランダムウォーク",
+   "相関",
+   "拡散係数",
+   "中心極限定理"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-07-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 2,
+  "minutes": 25,
+  "theme": "M 個ずつの移入のファノ因子 (M+1)/2",
+  "topic": "M 個ずつの移入のファノ因子 (M+1)/2",
+  "statement": {
+   "tex": "$M$ 個ずつの集団が率 $\\lambda_M$ で加わり，各個体が率 $\\beta$ で死ぬ．\n\\begin{enumerate}\n\\item 定常の平均と分散が $\\langle n\\rangle=\\sum_MM\\lambda_M/\\beta$，$\\sigma^2=\\sum_M\\frac{M(M+1)}{2}\\lambda_M/\\beta$ であることを，モーメントの式から示せ．\n\\item 1種類の $M$ だけのときのファノ因子を求めよ．\n\\item 平均を一定にして，2個ずつと3個ずつの組合せで分散を最小にする方法と最小値を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $\\frac{M+1}2$　(3) 2個ずつだけ；$\\sigma^2=\\frac32\\langle n\\rangle$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot{\\langle n\\rangle}=\\sum M\\lambda_M-\\beta\\langle n\\rangle$，$\\dot{\\langle n^2\\rangle}=\\sum\\lambda_M(2M\\langle n\\rangle+M^2)-\\beta(2\\langle n^2\\rangle-\\langle n\\rangle)$．定常で与式．\n\n(2) $\\boldsymbol{\\frac{M+1}2}$（$M=1$ でポアソン）．\n\n(3) ファノ因子は $M$ について増加するので，小さい方だけを使う：$\\boldsymbol{\\frac32\\langle n\\rangle}$．"
+   }
+  ],
+  "idea": {
+   "tex": "まとまって起こる生成（バースト）はゆらぎを増やし，ファノ因子がバーストの大きさで決まる（遺伝子発現のノイズ）．原題の2・3個の場合を一般の $M$ にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) ((M +1)/(2))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "マスター方程式",
+   "バースト",
+   "ファノ因子",
+   "遺伝子発現"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-07-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 2,
+  "minutes": 30,
+  "theme": "対角のステップを加えた正方格子のランダムウォークの拡散テンソル",
+  "topic": "対角のステップを加えた正方格子のランダムウォークの拡散テンソル",
+  "statement": {
+   "tex": "平面の格子上で，各ステップが率 $\\lambda$ で起こるランダムウォークを考える．拡散テンソルは $D_{ij}=\\frac12\\sum\\lambda\\Delta x_i\\Delta x_j$ である．\n\\begin{enumerate}\n\\item 正方格子（4方向）と三角格子（6方向，長さ1）の $D$ を求めよ．\n\\item 正方格子に $(1,1)$ と $(-1,-1)$ のステップを加えた場合の $D_{ij}$ を求め，主軸と主値を求めよ．\n\\item (2) の $\\langle x^2+y^2\\rangle$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 正方格子 $D=\\lambda\\delta_{ij}$，三角格子 $D=\\frac32\\lambda\\delta_{ij}$　(2) $D=\\lambda\\begin{pmatrix}2&1\\\\1&2\\end{pmatrix}$；$(1,1)$ 方向 $3\\lambda$，$(1,-1)$ 方向 $\\lambda$　(3) $8\\lambda t$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 正方格子：$D_{xx}=\\frac12\\lambda(1+1)=\\lambda$．三角格子：$\\sum\\Delta x^2=1+1+4\\times\\frac14=3$，$D=\\frac32\\lambda$（等方的）．\n\n(2) 対角のステップが $D_{xx},D_{yy},D_{xy}$ に $\\lambda$ ずつ加える：与式．固有値 $\\boldsymbol{3\\lambda}$（$(1,1)$），$\\boldsymbol\\lambda$（$(1,-1)$）．\n\n(3) $2\\,\\mathrm{tr}D\\,t=\\boldsymbol{8\\lambda t}$（ステップの長さの2乗の和 $4+4=8$ と一致）．"
+   }
+  ],
+  "idea": {
+   "tex": "ランダムウォークの拡散テンソルはステップの2次のモーメントで決まり，格子の対称性が等方性を決める．原題の3つの格子を，拡散テンソルの統一的な計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 8 λ t"
+  },
+  "methods": [],
+  "tags": [
+   "ランダムウォーク",
+   "拡散テンソル",
+   "フォッカー＝プランク方程式",
+   "異方性"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-07-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 2,
+  "minutes": 25,
+  "theme": "互いに増やし合う2つの集団の平均場の安定条件",
+  "topic": "互いに増やし合う2つの集団の平均場の安定条件",
+  "statement": {
+   "tex": "遷移率 $(m,n)\\to(m+1,n)$：$\\mu+\\lambda_1n$，$(m-1,n)$：$\\beta_1m$，$(m,n+1)$：$\\lambda_2m$，$(m,n-1)$：$\\beta_2n$ の系を考える．\n\\begin{enumerate}\n\\item 平均の時間変化の式を導け．\n\\item 正の安定な平衡点が存在する条件と，平衡点を求めよ．\n\\item $\\mu=1$，$\\lambda_1=\\lambda_2=1$，$\\beta_1=\\beta_2=2$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dot{\\langle m\\rangle}=\\mu+\\lambda_1\\langle n\\rangle-\\beta_1\\langle m\\rangle$，$\\dot{\\langle n\\rangle}=\\lambda_2\\langle m\\rangle-\\beta_2\\langle n\\rangle$　(2) $\\beta_1\\beta_2>\\lambda_1\\lambda_2$；$m^*=\\dfrac{\\mu\\beta_2}{\\beta_1\\beta_2-\\lambda_1\\lambda_2}$，$n^*=\\dfrac{\\lambda_2}{\\beta_2}m^*$　(3) $m^*=\\frac23$，$n^*=\\frac13$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 遷移率が線形なので平均の式が閉じる．\n\n(2) 係数行列 $\\begin{pmatrix}-\\beta_1&\\lambda_1\\\\\\lambda_2&-\\beta_2\\end{pmatrix}$ のトレースは負，行列式 $\\beta_1\\beta_2-\\lambda_1\\lambda_2>0$ が安定の条件．\n\n(3) $m^*=\\frac{2}{4-1}=\\boldsymbol{\\frac23}$，$n^*=\\boldsymbol{\\frac13}$．"
+   }
+  ],
+  "idea": {
+   "tex": "線形の遷移率の系では平均が閉じた方程式に従い，相互の増殖が死亡に勝たない条件で安定になる．原題のフォッカー＝プランクの解析の前段を，具体的な平衡の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "マスター方程式",
+   "平均場",
+   "安定性",
+   "共分散"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SM-07-007",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -439,6 +635,205 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-07-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 3,
+  "minutes": 35,
+  "theme": "線形の出生死亡と移入の過程の定常分布の平均と分散",
+  "topic": "線形の出生死亡と移入の過程の定常分布の平均と分散",
+  "statement": {
+   "tex": "個体ごとの出生率 $\\lambda$，死亡率 $\\beta$（$\\beta>\\lambda$），一定の移入率 $\\nu$ のマスター方程式 $\\dot p_n=\\lambda(n-1)p_{n-1}+\\nu p_{n-1}+\\beta(n+1)p_{n+1}-[(\\lambda+\\beta)n+\\nu]p_n$ を考える．\n\\begin{enumerate}\n\\item 平均の時間変化の式を導き，定常の平均を求めよ．\n\\item 2次のモーメントの式から定常の分散を求め，ファノ因子（分散/平均）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle n\\rangle=\\dfrac{\\nu}{\\beta-\\lambda}$　(2) $\\sigma^2=\\dfrac{\\nu\\beta}{(\\beta-\\lambda)^2}$，ファノ因子 $\\dfrac{\\beta}{\\beta-\\lambda}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot{\\langle n\\rangle}=\\nu+(\\lambda-\\beta)\\langle n\\rangle$ より $\\boldsymbol{\\nu/(\\beta-\\lambda)}$．\n\n(2) $\\dot{\\langle n^2\\rangle}=2(\\lambda-\\beta)\\langle n^2\\rangle+(2\\nu+\\lambda+\\beta)\\langle n\\rangle+\\nu$．定常で $\\sigma^2=\\dfrac{(\\lambda+\\beta)\\mu+\\nu}{2(\\beta-\\lambda)}$，$\\mu=\\frac{\\nu}{\\beta-\\lambda}$ を入れて $\\boldsymbol{\\frac{\\nu\\beta}{(\\beta-\\lambda)^2}}$．ファノ因子 $\\boldsymbol{\\frac{\\beta}{\\beta-\\lambda}}>1$（出生がゆらぎを増幅：負の二項分布）．"
+   }
+  ],
+  "idea": {
+   "tex": "個体ごとの出生があるとゆらぎがポアソン分布より大きくなる．原題の一定率の出生を，個体に比例する出生に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\sigma^2$：((ν β)/((β - λ)^(2))) ; ファノ因子：((β)/(β - λ))"
+  },
+  "methods": [],
+  "tags": [
+   "マスター方程式",
+   "母関数",
+   "出生死亡過程",
+   "ファノ因子"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-07-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 3,
+  "minutes": 35,
+  "theme": "対消滅のある系の定常分布を厳密に求めて上界と比べる",
+  "topic": "対消滅のある系の定常分布を厳密に求めて上界と比べる",
+  "statement": {
+   "tex": "$\\dot p_n=\\lambda(p_{n-1}-p_n)+\\beta[(n+1)np_{n+1}-n(n-1)p_n]$ を考える（$r=\\lambda/\\beta$）．\n\\begin{enumerate}\n\\item 詳細つり合いから，$n\\geqq1$ の定常分布が $p_n\\propto\\dfrac{r^n}{n!(n-1)!}$ となることを示せ．$n=0$ はどうなるか．\n\\item $r=2$ で平均と分散を数値的に求め，上界 $\\langle n\\rangle\\leqq\\frac{1+\\sqrt{1+4r}}2$，$\\sigma^2\\leqq r+\\frac14$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明；$n=0$ は一時的（定常で $p_0=0$）　(2) $\\langle n\\rangle\\approx1.78\\leqq2$，$\\sigma^2\\approx0.62\\leqq2.25$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\lambda p_{n-1}=\\beta n(n-1)p_n$ より $p_n=\\dfrac{r}{n(n-1)}p_{n-1}$．$n=1\\to0$ の率は $0$ なので $0$ から出たら戻らない．\n\n(2) 数値的に和をとって $\\langle n\\rangle\\approx\\boldsymbol{1.78}$，$\\sigma^2\\approx\\boldsymbol{0.62}$．上界を満たす（分散はポアソンより小さい：対消滅がゆらぎを抑える）．"
+   }
+  ],
+  "idea": {
+   "tex": "閉じないモーメント方程式からも上界は得られるが，詳細つり合いがあれば厳密な分布で確かめられる．原題の上界の導出を，厳密解との比較にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "マスター方程式",
+   "詳細つり合い",
+   "対消滅",
+   "モーメントの上界"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-07-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 3,
+  "minutes": 30,
+  "theme": "ロジスティックな出生死亡過程の線形雑音近似",
+  "topic": "ロジスティックな出生死亡過程の線形雑音近似",
+  "statement": {
+   "tex": "出生率 $\\lambda n$，死亡率 $\\beta n^2/K$ の過程のフォッカー＝プランク方程式のドリフトは $u(x)=\\lambda x-\\beta x^2/K$，拡散は $D(x)=\\lambda x+\\beta x^2/K$ である．\n\\begin{enumerate}\n\\item 決定論的な平衡点 $x^*$ を求めよ．\n\\item 平衡点のまわりで $u\\approx-\\gamma(x-x^*)$，$D\\approx D(x^*)$ とすると分散は $D(x^*)/2\\gamma$ である．これを求めよ．\n\\item 相対的なゆらぎを $K$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x^*=\\lambda K/\\beta$　(2) $\\sigma^2=x^*$　(3) $1/\\sqrt{x^*}\\propto K^{-1/2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=0$：$\\boldsymbol{x^*=\\lambda K/\\beta}$．\n\n(2) $\\gamma=-u'(x^*)=\\lambda$，$D(x^*)=2\\lambda x^*$：$\\sigma^2=\\boldsymbol{x^*}$（ポアソン的）．\n\n(3) $\\sigma/x^*=\\boldsymbol{1/\\sqrt{x^*}}$：系が大きいほどゆらぎは相対的に小さい．"
+   }
+  ],
+  "idea": {
+   "tex": "線形雑音近似は平衡点のまわりのガウス的なゆらぎを与え，相対的なゆらぎは系の大きさの平方根に反比例する．原題のバースト移入の問題を，ロジスティック成長に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フォッカー＝プランク方程式",
+   "線形雑音近似",
+   "ロジスティック成長",
+   "ゆらぎ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-07-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-94",
+  "level": 3,
+  "minutes": 45,
+  "theme": "ドリフト付きブラウン運動の初通過時刻分布",
+  "topic": "ドリフト付きブラウン運動の初通過時刻分布",
+  "statement": {
+   "tex": "1 単位時間ごとに確率 $\\frac{1+v}{2}$ で右へ，確率 $\\frac{1-v}{2}$ で左へ単位長さだけ跳ぶランダムウォーク（$|v|<1$）を考える．\n\\begin{enumerate}\n\\item $t$ 単位時間後の変位 $X_t$ の平均と分散を求めよ．また $|v|\\ll1$ のとき，$t\\gg1$ で $X_t$ の分布が\n\\[ f(x,t)=\\frac{1}{\\sqrt{2\\pi t}}\\exp\\!\\left[-\\frac{(x-vt)^2}{2t}\\right] \\]\nで近似できることと整合していることを確かめよ．以下では粒子を連続な $f(x,t)$ に従うブラウン粒子とみなし，$v$ は正・負・0 のいずれでもよいとする．\n\\item 時刻 $0$ に $x=0$ を出た粒子が位置 $\\theta>0$ に初めて到達する時刻の確率密度を $p_\\theta(t)$ とする．$x>\\theta$ に達するには必ず一度 $\\theta$ を通ることから成り立つ関係\n\\[ f(x,t)=\\int_0^t f(x-\\theta,\\,t-t')\\,p_\\theta(t')\\,dt' \\]\nと，公式 $\\displaystyle\\int_0^\\infty \\frac{1}{\\sqrt{\\pi t}}e^{-\\frac{z^2}{4t}-st}dt=\\frac{e^{-|z|\\sqrt s}}{\\sqrt s}$，$\\displaystyle\\int_0^\\infty \\frac{|z|}{2\\sqrt{\\pi t^3}}e^{-\\frac{z^2}{4t}-st}dt=e^{-|z|\\sqrt s}$（$s>0$）を用いて，ラプラス変換 $\\tilde p_\\theta(s)=\\int_0^\\infty e^{-st}p_\\theta(t)\\,dt$ と $p_\\theta(t)$ を求めよ．\n\\item 粒子がいつかは $\\theta$ に到達する確率 $\\Pi$ を，$v>0$，$v=0$，$v<0$ の各場合に求めよ．\n\\item $v>0$ のとき，初通過時刻の平均と分散を求めよ．また $v=0$ のときは到達確率が 1 なのに平均初通過時刻が発散することを，$p_\\theta(t)$ の $t\\to\\infty$ での振る舞いから示せ．\n\\item $v<0$ のとき，「いつかは $\\theta$ に到達した」という条件のもとでの初通過時刻の条件付き分布は，ドリフトを $v\\to|v|$ と反転させた場合の分布と完全に一致することを示し，条件付き平均到達時刻を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 平均 $vt$，分散 $t(1-v^2)$　(2) $\\tilde p_\\theta(s)=e^{v\\theta-\\theta\\sqrt{v^2+2s}}$，$p_\\theta(t)=\\dfrac{\\theta}{\\sqrt{2\\pi t^3}}e^{-(\\theta-vt)^2/2t}$　(3) $v\\ge0$ で $\\Pi=1$，$v<0$ で $\\Pi=e^{-2|v|\\theta}$　(4) 平均 $\\theta/v$，分散 $\\theta/v^3$；$v=0$ で $p_\\theta\\sim\\frac{\\theta}{\\sqrt{2\\pi}}t^{-3/2}$ のため平均発散　(5) 証明（解説参照），条件付き平均 $\\theta/|v|$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 各ステップの変位 $\\sigma_i=\\pm1$ は独立で $\\langle\\sigma_i\\rangle=v$，$\\langle\\sigma_i^2\\rangle=1$ より分散 $1-v^2$．よって $\\langle X_t\\rangle=vt$，$\\mathrm{Var}\\,X_t=t(1-v^2)$．$|v|\\ll1$ なら分散 $\\simeq t$ であり，中心極限定理により平均 $vt$，分散 $t$ のガウス分布 $f(x,t)$ に漸近する（$x$ の格子間隔は 2 だが，偶奇の片方だけに値をもつ確率を幅 2 にならした密度とみなせばよい）．\n\n(2) 関係式は時間の畳み込みなので，$\\mathcal L_s[f(x,t)]=\\mathcal L_s[f(x-\\theta,t)]\\,\\tilde p_\\theta(s)$．\n\\[ \\mathcal L_s[f(x,t)]=e^{vx}\\int_0^\\infty\\frac{dt}{\\sqrt{2\\pi t}}\\exp\\!\\left[-\\frac{x^2}{2t}-\\Big(\\frac{v^2}{2}+s\\Big)t\\right]=\\frac{e^{vx}}{\\sqrt{v^2+2s}}e^{-|x|\\sqrt{v^2+2s}} \\]\n（第 1 公式で $z=\\sqrt2x$，$s\\to v^2/2+s$ とした）．$x>\\theta$ なので\n\\[ \\tilde p_\\theta(s)=\\frac{e^{vx-x\\sqrt{v^2+2s}}}{e^{v(x-\\theta)-(x-\\theta)\\sqrt{v^2+2s}}}=e^{v\\theta-\\theta\\sqrt{v^2+2s}}. \\]\n第 2 公式（$z=\\sqrt2\\theta$，$s\\to v^2/2+s$）より $e^{-\\theta\\sqrt{v^2+2s}}=\\int_0^\\infty\\frac{\\theta}{\\sqrt{2\\pi t^3}}e^{-\\theta^2/2t-v^2t/2-st}dt$．$e^{v\\theta}$ を掛けて指数をまとめると\n\\[ p_\\theta(t)=\\frac{\\theta}{\\sqrt{2\\pi t^3}}\\exp\\!\\left[-\\frac{(\\theta-vt)^2}{2t}\\right]. \\]\n\n(3) $\\Pi=\\int_0^\\infty p_\\theta\\,dt=\\tilde p_\\theta(0)=e^{v\\theta-\\theta|v|}$．よって $v\\ge0$ で $\\Pi=1$，$v<0$ で $\\Pi=e^{2v\\theta}=e^{-2|v|\\theta}<1$．\n\n(4) $v>0$ で $\\tilde p=e^{v\\theta-\\theta\\sqrt{v^2+2s}}$．$\\phi(s)=\\sqrt{v^2+2s}$ とおくと $\\phi'(0)=1/v$，$\\phi''(0)=-1/v^3$．\n$\\langle t\\rangle=-\\tilde p'(0)=\\theta\\phi'(0)=\\theta/v$．\n$\\langle t^2\\rangle=\\tilde p''(0)=\\theta^2\\phi'(0)^2-\\theta\\phi''(0)=\\theta^2/v^2+\\theta/v^3$．\nよって分散 $=\\theta/v^3$．\n$v=0$ では $p_\\theta(t)=\\frac{\\theta}{\\sqrt{2\\pi}}t^{-3/2}e^{-\\theta^2/2t}\\sim\\frac{\\theta}{\\sqrt{2\\pi}}t^{-3/2}$ $(t\\to\\infty)$．$\\int^\\infty t^{-3/2}dt$ は収束するので $\\Pi=1$ だが，$\\int^\\infty t\\cdot t^{-3/2}dt=\\int^\\infty t^{-1/2}dt$ は発散する．同じことは $\\tilde p=e^{-\\theta\\sqrt{2s}}$ が $s=0$ で $\\sqrt s$ 型の非解析性をもつ（$-\\tilde p'(0)=\\infty$）ことにも現れる．\n\n(5) $v<0$ のとき条件付き密度は $p_\\theta(t)/\\Pi$．\n\\[ \\frac{p_\\theta(t)}{e^{2v\\theta}}=\\frac{\\theta}{\\sqrt{2\\pi t^3}}\\exp\\!\\left[-\\frac{\\theta^2-2v\\theta t+v^2t^2}{2t}-2v\\theta\\right]=\\frac{\\theta}{\\sqrt{2\\pi t^3}}\\exp\\!\\left[-\\frac{(\\theta+vt)^2}{2t}\\right] \\]\nであり，これは $p_\\theta(t)$ で $v\\to-v=|v|$ と置いたものに等しい（ラプラス変換でも $e^{v\\theta-\\theta\\phi}/e^{2v\\theta}=e^{|v|\\theta-\\theta\\phi}$）．したがって条件付き平均は (4) より $\\theta/|v|$．逆向きの風に逆らって到達できた粒子は，あたかも順風に乗ったかのような時刻分布で到達する．"
+   }
+  ],
+  "idea": {
+   "tex": "初通過分布のラプラス変換 $e^{v\\theta-\\theta\\sqrt{v^2+2s}}$ から，到達確率（$s=0$ の値），平均・分散（微分），$v=0$ での平均の発散（$\\sqrt s$ 特異性）がすべて読める．さらに $v<0$ で到達条件付き分布がドリフト反転系に一致するという意外な対称性が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 平均：v t ; 分散：t (1- v ^(2))\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ランダムウォーク",
+   "ブラウン運動",
+   "初通過時刻",
+   "ラプラス変換",
+   "畳み込み",
+   "ドリフト",
+   "逆ガウス分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

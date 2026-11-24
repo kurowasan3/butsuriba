@@ -193,6 +193,798 @@
   }
  },
  {
+  "id": "WV-03-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 20,
+  "theme": "一端が自由な弦の基準振動を調和振動子に分解する",
+  "topic": "一端が自由な弦の基準振動を調和振動子に分解する",
+  "statement": {
+   "tex": "長さ $a$，線密度 $\\sigma$，張力 $T$ の弦が $x=0$ で固定され，$x=a$ で自由（$\\partial_xy=0$）である．\n\\begin{enumerate}\n\\item 境界条件をみたす正規直交なモード関数を求めよ．\n\\item ラグランジアンが独立な調和振動子の和になることを示し，振動数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sqrt{2/a}\\sin\\dfrac{(n-\\frac12)\\pi x}{a}$　(2) $\\omega_n=\\sqrt{\\dfrac T\\sigma}\\dfrac{(n-\\frac12)\\pi}{a}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sin kx$ で $\\cos ka=0$：$\\boldsymbol{k=(n-\\frac12)\\pi/a}$．正規化 $\\sqrt{2/a}$．\n\n(2) モード関数の直交性で $L=\\sum\\left[\\frac\\sigma2\\dot q_n^2-\\frac T2k_n^2q_n^2\\right]$，$\\boldsymbol{\\omega_n=\\sqrt{T/\\sigma}\\,k_n}$（奇数倍音だけ：開管）．"
+   }
+  ],
+  "idea": {
+   "tex": "場は基準モードで独立な調和振動子に分解され，境界条件がモードを決める．原題の両端固定を一端自由に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(2/ a) sin (((n -((1)/(2))) pi x)/(a))\n(2) $\\omega_n$：sqrt(((T)/(σ)))(((n -((1)/(2))) pi)/(a))"
+  },
+  "methods": [],
+  "tags": [
+   "弦",
+   "基準振動",
+   "ラグランジアン",
+   "境界条件"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 20,
+  "theme": "平面波のトレース速度と到達時刻差からの方向決定",
+  "topic": "平面波のトレース速度と到達時刻差からの方向決定",
+  "statement": {
+   "tex": "3 次元空間を速さ $v$ で伝わる平面音波 $u=A\\cos(\\boldsymbol k\\cdot\\boldsymbol r-\\omega t)$（$\\omega=vk$，$k=|\\boldsymbol k|$，$\\boldsymbol k=k\\boldsymbol n$，$\\boldsymbol n=(n_x,n_y,n_z)$ は単位ベクトル，$n_x,n_y,n_z>0$）を考える．\n\\begin{enumerate}\n\\item 等位相面が $x$ 軸と交わる点は $x$ 軸上をある速さ $v_x$ で動く．$v_x,v_y,v_z$ を求め，$\\dfrac1{v_x^2}+\\dfrac1{v_y^2}+\\dfrac1{v_z^2}=\\dfrac1{v^2}$ を示せ．また，$(v_x,v_y,v_z)$ は速度ベクトルとみなせるか．\n\\item 原点と $(d,0,0)$，$(0,d,0)$，$(0,0,d)$ に置いたマイクで同じ波面の到達時刻を測ったところ，原点に対する遅れがそれぞれ $\\tau_x,\\tau_y,\\tau_z$ であった．$v$ と $\\boldsymbol n$ を求めよ．\n\\item $d=1.0\\ \\mathrm m$，$\\tau_x=1.0\\ \\mathrm{ms}$，$\\tau_y=\\tau_z=2.0\\ \\mathrm{ms}$ のとき，$v$ と $\\boldsymbol n$ を数値で答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_x=v/n_x$ など．どれも $v$ 以上で，ベクトルの成分ではない　(2) $v=\\dfrac d{\\sqrt{\\tau_x^2+\\tau_y^2+\\tau_z^2}}$，$\\boldsymbol n=\\dfrac{(\\tau_x,\\tau_y,\\tau_z)}{\\sqrt{\\tau_x^2+\\tau_y^2+\\tau_z^2}}$　(3) $v\\simeq333\\ \\mathrm{m/s}$，$\\boldsymbol n=(1,2,2)/3$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位相一定 $\\boldsymbol k\\cdot\\boldsymbol r-\\omega t=$ 一定 で $y=z=0$ とすると $kn_xx-\\omega t=$ 一定，よって $v_x=\\dfrac{\\omega}{kn_x}=\\dfrac v{n_x}$．同様に $v_y=v/n_y$，$v_z=v/n_z$．\n\\[\n\\frac1{v_x^2}+\\frac1{v_y^2}+\\frac1{v_z^2}=\\frac{n_x^2+n_y^2+n_z^2}{v^2}=\\frac1{v^2}.\n\\]\n各 $v_x\\ge v$ であり，$(v_x,v_y,v_z)$ の大きさは $v$ より大きく，向きも $\\boldsymbol n$ と一般に異なるので速度ベクトルではない（ベクトルとして振る舞うのは「遅さ」$\\boldsymbol n/v$ の方である）．\n\n(2) 波面が原点から $(d,0,0)$ まで $x$ 軸に沿って進む時間は $\\tau_x=d/v_x=dn_x/v$．同様に $\\tau_y=dn_y/v$，$\\tau_z=dn_z/v$．$n_x^2+n_y^2+n_z^2=1$ より\n\\[\nv=\\frac d{\\sqrt{\\tau_x^2+\\tau_y^2+\\tau_z^2}},\\qquad \\boldsymbol n=\\frac{v}{d}(\\tau_x,\\tau_y,\\tau_z).\n\\]\n(3) $\\sqrt{1+4+4}\\ \\mathrm{ms}=3.0\\ \\mathrm{ms}$ より $v=1.0/(3.0\\times10^{-3})\\simeq3.3\\times10^2\\ \\mathrm{m/s}$，$\\boldsymbol n=(1,2,2)/3$．"
+   }
+  ],
+  "idea": {
+   "tex": "等位相面と座標軸の交点はトレース速度 $v/n_i\\,(\\ge v)$ で動き，その逆数（スローネス）がベクトルの成分になる．これを使うと到達時刻差から波の向きと速さが決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平面波",
+   "波数ベクトル",
+   "位相速度",
+   "トレース速度",
+   "スローネス",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 20,
+  "theme": "d次元の拡がりと吸収：振幅減衰から吸収係数を測る",
+  "topic": "d次元の拡がりと吸収：振幅減衰から吸収係数を測る",
+  "statement": {
+   "tex": "等方的な点波源から角振動数一定の波が定常的に放射されている．波のエネルギー密度は振幅の 2 乗に比例するとする．\n\\begin{enumerate}\n\\item $d$ 次元空間（$d=1,2,3$）で，半径 $r\\sim r+\\Delta$ の殻を単位時間に通過するエネルギーが $r$ によらないとき，振幅 $A(r)$ の $r$ 依存性を求めよ．\n\\item 媒質に吸収があり，波が距離 $dr$ 進むごとにエネルギー流が割合 $2\\alpha\\,dr$ だけ失われるとする．$A(r)$ を求めよ．\n\\item 3 次元の音波で，$r_1=10\\ \\mathrm m$ と $r_2=20\\ \\mathrm m$ での振幅の比が $A(r_2)/A(r_1)=0.40$ であった．$\\alpha$ を求めよ．\n\\item (3) の場合に，幾何学的拡がりによる減衰率 $|d(\\ln A)/dr|$ の寄与と吸収の寄与が等しくなる距離を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A\\propto r^{-(d-1)/2}$　(2) $A=C\\,r^{-(d-1)/2}e^{-\\alpha r}$　(3) $\\alpha=\\dfrac{\\ln1.25}{10\\ \\mathrm m}\\simeq2.2\\times10^{-2}\\ \\mathrm m^{-1}$　(4) $r=1/\\alpha\\simeq45\\ \\mathrm m$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d$ 次元で半径 $r$ の球面の「面積」は $r^{d-1}$ に比例する．殻を通るエネルギー流 $\\propto A^2r^{d-1}$ が一定だから $A\\propto r^{-(d-1)/2}$（$d=1$：一定，$d=2$：$r^{-1/2}$，$d=3$：$r^{-1}$）．\n\n(2) 全エネルギー流 $P(r)\\propto A^2r^{d-1}$ が $dP/dr=-2\\alpha P$ を満たすので $P\\propto e^{-2\\alpha r}$．よって $A^2r^{d-1}\\propto e^{-2\\alpha r}$，\n\\[\nA(r)=C\\,r^{-(d-1)/2}e^{-\\alpha r}.\n\\]\n(3) $d=3$：$\\dfrac{A(r_2)}{A(r_1)}=\\dfrac{r_1}{r_2}e^{-\\alpha(r_2-r_1)}=\\dfrac12e^{-10\\alpha}=0.40$．よって $e^{-10\\alpha}=0.80$，$\\alpha=\\dfrac{\\ln1.25}{10}\\ \\mathrm{m^{-1}}\\simeq2.2\\times10^{-2}\\ \\mathrm{m^{-1}}$．\n\n(4) $\\ln A=\\text{const}-\\ln r-\\alpha r$ より $|d\\ln A/dr|=1/r+\\alpha$．$1/r=\\alpha$ で等しく，$r=1/\\alpha\\simeq45\\ \\mathrm m$．これより遠方では吸収が支配的になる．"
+   }
+  ],
+  "idea": {
+   "tex": "エネルギー流の保存を $d$ 次元・吸収ありに一般化すると $A\\propto r^{-(d-1)/2}e^{-\\alpha r}$．2 点の振幅比から拡がり分を除いて吸収係数を取り出せる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\alpha$：((ln 1.25)/(10 m))\n(4) $r$ [m]：≈45"
+  },
+  "methods": [],
+  "tags": [
+   "球面波",
+   "円筒波",
+   "エネルギー保存",
+   "吸収",
+   "減衰"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "温度勾配のある空気中の音の伝播時間",
+  "topic": "温度勾配のある空気中の音の伝播時間",
+  "statement": {
+   "tex": "地点 A，B 間（距離 $l$）の空気の温度が，A の $T_1$ から B の $T_2$ まで距離に比例して変化している．音速は $v=\\alpha\\sqrt T$（$\\alpha$ は定数）で与えられる．\n\\begin{enumerate}\n\\item 音が A から B に達するまでの時間 $t$ を求めよ．\n\\item 平均温度 $\\bar T=(T_1+T_2)/2$ の一様な空気を仮定して見積もった時間 $t_0=l/(\\alpha\\sqrt{\\bar T})$ と比べ，常に $t\\ge t_0$ であることを示せ．\n\\item $l=1.00\\ \\mathrm{km}$，$T_1=250\\ \\mathrm K$，$T_2=310\\ \\mathrm K$，$\\alpha=20.05\\ \\mathrm{m\\,s^{-1}K^{-1/2}}$ のとき，$t$ と相対差 $(t-t_0)/t_0$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t=\\dfrac{2l}{\\alpha(\\sqrt{T_1}+\\sqrt{T_2})}$　(2) 証明（解説参照）　(3) $t\\approx2.98\\ \\mathrm s$，$(t-t_0)/t_0\\approx1.4\\times10^{-3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T(x)=T_1+(T_2-T_1)x/l$，$dT=(T_2-T_1)dx/l$ より\n\\[ t=\\int_0^l\\frac{dx}{\\alpha\\sqrt{T}}=\\frac{l}{\\alpha(T_2-T_1)}\\int_{T_1}^{T_2}\\frac{dT}{\\sqrt T}=\\frac{2l(\\sqrt{T_2}-\\sqrt{T_1})}{\\alpha(T_2-T_1)}=\\frac{2l}{\\alpha(\\sqrt{T_1}+\\sqrt{T_2})} . \\]\n（$T_1=T_2$ でも正しい極限を与える．）\n\n(2) $t/t_0=\\dfrac{2\\sqrt{\\bar T}}{\\sqrt{T_1}+\\sqrt{T_2}}$．$\\left(\\sqrt{T_1}+\\sqrt{T_2}\\right)^2=T_1+T_2+2\\sqrt{T_1T_2}\\le2(T_1+T_2)=4\\bar T$ より $t/t_0\\ge1$（等号は $T_1=T_2$）．$1/\\sqrt T$ が下に凸であること（イェンセンの不等式）の反映である．\n\n(3) $t=\\dfrac{2000}{20.05(15.811+17.607)}=2.985\\ \\mathrm s$．$t_0=1000/(20.05\\sqrt{280})=2.981\\ \\mathrm s$，相対差 $1.4\\times10^{-3}$．温度差がこの程度なら平均温度での見積もりで十分である．"
+   }
+  ],
+  "idea": {
+   "tex": "音速が場所によるときは $t=\\int dx/v$．$v\\propto\\sqrt T$，$T$ が線形なら積分は初等的で，平均温度による見積もりは常に過小評価になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $t$：((2 l)/(α (sqrt(T_1)+ sqrt(T_2))))\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "音速",
+   "波の伝播",
+   "温度依存性",
+   "積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "見かけの位相速度（トレース速度）と真の位相速度",
+  "topic": "見かけの位相速度（トレース速度）と真の位相速度",
+  "statement": {
+   "tex": "一様な媒質中を角周波数 $\\omega$ の平面波が伝わり，ある一定の位相が $x,y,z$ 軸に沿って速さ $v_1,v_2,v_3$ で移動するように見える．\n\\begin{enumerate}\n\\item 波数ベクトル $\\boldsymbol k$ を求め，真の位相速度 $v$ が $\\dfrac1{v^2}=\\dfrac1{v_1^2}+\\dfrac1{v_2^2}+\\dfrac1{v_3^2}$ を満たすことを示せ．\n\\item $v_1=v_2=v_3=V$ のとき $v$ と伝播方向を求めよ．\n\\item 音速 $v=340\\ \\mathrm{m/s}$ の空気中で $v_1=500\\ \\mathrm{m/s}$，$v_2=700\\ \\mathrm{m/s}$ と測定された．$v_3$ と，波の進む向きが各軸となす角の余弦を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol k=\\omega\\left(\\dfrac{\\boldsymbol e_x}{v_1}+\\dfrac{\\boldsymbol e_y}{v_2}+\\dfrac{\\boldsymbol e_z}{v_3}\\right)$　(2) $v=V/\\sqrt3$，$(1,1,1)/\\sqrt3$ の向き　(3) $v_3\\approx619\\ \\mathrm{m/s}$，方向余弦 $(0.68,\\ 0.49,\\ 0.55)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位相 $\\omega t-\\boldsymbol k\\cdot\\boldsymbol r$ が一定の点が $x$ 軸上を動く速さは，$\\omega t-k_xx=\\text{一定}$ より $v_1=\\omega/k_x$．同様に $v_2=\\omega/k_y$，$v_3=\\omega/k_z$．よって\n\\[ \\boldsymbol k=\\omega\\left(\\frac{\\boldsymbol e_x}{v_1}+\\frac{\\boldsymbol e_y}{v_2}+\\frac{\\boldsymbol e_z}{v_3}\\right),\\qquad \\frac1{v^2}=\\frac{k^2}{\\omega^2}=\\frac1{v_1^2}+\\frac1{v_2^2}+\\frac1{v_3^2} . \\]\nしたがって $v_i\\ge v$ で，各軸上の見かけの速さは真の位相速度より大きい（$v_i=v/\\cos\\alpha_i$）．見かけの速さはいくらでも大きくなりうるが，何も運ばないので矛盾はない．\n\n(2) $1/v^2=3/V^2$ より $v=V/\\sqrt3$，向きは $(1,1,1)/\\sqrt3$．\n\n(3) $\\dfrac1{v_3^2}=\\dfrac1{340^2}-\\dfrac1{500^2}-\\dfrac1{700^2}$ より $v_3=619\\ \\mathrm{m/s}$．方向余弦 $\\cos\\alpha_i=v/v_i=(0.680,\\,0.486,\\,0.549)$（2乗和は1）．"
+   }
+  ],
+  "idea": {
+   "tex": "位相の見かけの速さは $v_i=\\omega/k_i=v/\\cos\\alpha_i\\ge v$．逆数の2乗和が真の速さの逆数の2乗を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平面波",
+   "波数ベクトル",
+   "位相速度",
+   "トレース速度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 20,
+  "theme": "音圧・変位・ひずみの関係と線形音響の限界",
+  "topic": "音圧・変位・ひずみの関係と線形音響の限界",
+  "statement": {
+   "tex": "空気（密度 $\\rho=1.29\\ \\mathrm{kg/m^3}$，音速 $v=340\\ \\mathrm{m/s}$）中を，振動数 $1.0\\ \\mathrm{kHz}$，音の強さのレベル $100\\ \\mathrm{dB}$（基準 $I_0=1.0\\times10^{-12}\\ \\mathrm{W/m^2}$）の平面音波が伝わる．\n\\begin{enumerate}\n\\item 音圧振幅 $\\Delta p_m$，粒子速度の振幅 $u_m$，変位振幅 $a$ を求めよ．$a$ は波長の何倍か．\n\\item ひずみ振幅 $(\\partial\\xi/\\partial x)_m$ を求め，それが $u_m/v$ および $\\Delta p_m/(\\rho v^2)$ に等しいことを示せ．\n\\item 線形近似は $(\\partial\\xi/\\partial x)_m\\ll1$ のときに有効である．ひずみ振幅が1に達する強さとそのレベル（dB）を見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta p_m\\approx3.0\\ \\mathrm{Pa}$，$u_m\\approx6.8\\ \\mathrm{mm/s}$，$a\\approx1.1\\ \\mu\\mathrm m$，$a/\\lambda\\approx3.2\\times10^{-6}$　(2) $\\approx2.0\\times10^{-5}$　(3) $I=\\rho v^3/2\\approx2.5\\times10^7\\ \\mathrm{W/m^2}$，約 $194\\ \\mathrm{dB}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $I=10^{-12}\\times10^{10}=1.0\\times10^{-2}\\ \\mathrm{W/m^2}$．$I=\\Delta p_m^2/(2\\rho v)$ より\n\\[ \\Delta p_m=\\sqrt{2\\rho vI}=\\sqrt{2\\times1.29\\times340\\times0.01}=2.96\\ \\mathrm{Pa} . \\]\n$\\Delta p_m=\\rho vu_m$ から $u_m=2.96/438.6=6.75\\times10^{-3}\\ \\mathrm{m/s}$，$a=u_m/\\omega=6.75\\times10^{-3}/(2\\pi\\times10^3)=1.07\\times10^{-6}\\ \\mathrm m$．$\\lambda=0.34\\ \\mathrm m$ なので $a/\\lambda=3.2\\times10^{-6}$．\n\n(2) $\\xi=a\\cos(\\omega t-kx)$ で $(\\partial\\xi/\\partial x)_m=ka=\\omega a/v=u_m/v=1.99\\times10^{-5}$．また $\\Delta p=-\\rho v^2\\,\\partial\\xi/\\partial x$（体積弾性率 $\\rho v^2$）より $(\\partial\\xi/\\partial x)_m=\\Delta p_m/(\\rho v^2)$ でも同じ値になる．\n\n(3) $u_m=v$，$\\Delta p_m=\\rho v^2=1.49\\times10^5\\ \\mathrm{Pa}$（大気圧程度）となるので $I=\\rho v^3/2=1.29\\times340^3/2=2.5\\times10^7\\ \\mathrm{W/m^2}$，レベル $10\\log_{10}(2.5\\times10^{19})\\approx194\\ \\mathrm{dB}$．実際にはこれよりずっと低いレベルから非線形効果（波形のひずみ・衝撃波形成）が現れるが，音圧振幅が大気圧に達する約 $194\\ \\mathrm{dB}$ が空気中の正弦音波の上限の目安となる．"
+   }
+  ],
+  "idea": {
+   "tex": "進行波ではひずみ $=u/v=\\Delta p/\\rho v^2$．音圧振幅が $\\rho v^2$（大気圧程度）に近づくと線形音響が破綻する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ≈2.0e-5\n(3) $I$ [W/m²]：≈2.5e7 ; [dB]：≈194"
+  },
+  "methods": [],
+  "tags": [
+   "音波",
+   "音圧",
+   "音の強さ",
+   "デシベル",
+   "非線形"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "2点測定から減衰係数と波長を求める",
+  "topic": "2点測定から減衰係数と波長を求める",
+  "statement": {
+   "tex": "一様な吸収性媒質中を平面波 $\\xi=ae^{-\\gamma x}\\cos(\\omega t-kx)$ が伝わる．波の進む向きに $d=0.30\\ \\mathrm m$ 離れた2点で測定すると，下流側の振幅は上流側の $0.80$ 倍で，振動の位相は $2.6\\ \\mathrm{rad}$ 遅れていた（$d$ は波長より短いことがわかっている）．\n\\begin{enumerate}\n\\item 減衰係数 $\\gamma$ と波長 $\\lambda$ を求めよ．\n\\item 振幅が $1/e$ になる距離は何波長分か．\n\\item 音の強さのレベルは $1\\ \\mathrm m$ あたり何 dB 減るか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\gamma\\approx0.74\\ \\mathrm{m^{-1}}$，$\\lambda\\approx0.72\\ \\mathrm m$　(2) 約 $1.9$ 波長　(3) 約 $6.5\\ \\mathrm{dB/m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 振幅比 $e^{-\\gamma d}=0.80$ より $\\gamma=\\ln1.25/0.30=0.744\\ \\mathrm{m^{-1}}$．位相差 $kd=2.6$ より $k=8.67\\ \\mathrm{m^{-1}}$，$\\lambda=2\\pi/k=0.725\\ \\mathrm m$．\n\n(2) $1/\\gamma=1.34\\ \\mathrm m=1.34/0.725\\,\\lambda\\approx1.9\\lambda$．（逆に，振幅が割合 $\\eta$ だけ変わる2点の位相差は $\\Delta\\varphi=-k\\ln(1-\\eta)/\\gamma$ で，減衰係数と波数の比が位相差と振幅変化を結びつける．）\n\n(3) 強さは振幅の2乗に比例し $e^{-2\\gamma x}$．1 m あたり $10\\log_{10}e^{2\\gamma}=20\\gamma\\log_{10}e=20\\times0.744\\times0.4343=6.5\\ \\mathrm{dB}$．"
+   }
+  ],
+  "idea": {
+   "tex": "減衰波では振幅比が $\\gamma$ を，位相差が $k$ を独立に与える．位相差と振幅変化は比 $k/\\gamma$ で結ばれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\gamma$ [m⁻¹]：≈0.74 ; $\\lambda$ [m]：≈0.72\n(2) 記述\n(3) [dB/m]：≈6.5"
+  },
+  "methods": [],
+  "tags": [
+   "減衰波",
+   "減衰係数",
+   "位相差",
+   "デシベル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "円筒容器の3面に等しく音が届く条件",
+  "topic": "円筒容器の3面に等しく音が届く条件",
+  "statement": {
+   "tex": "半径 $R=1.0\\,\\mathrm{m}$，高さ $h$ の閉じた円筒容器の中心に，パワー $P=0.10\\,\\mathrm{W}$ の等方点音源がある．音は壁（側面・上底・下底）で完全に吸収され，空気中の減衰は無視する．\n\\begin{enumerate}\n\\item 側面，上底，下底のそれぞれに届く平均エネルギー流がすべて $P/3$ に等しくなるような $h/R$ を求めよ．\n\\item そのとき，側面上で平均した音の強さと，底面上で平均した音の強さの比を求めよ．\n\\item そのとき，底面の中心での音の強さを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h/R=1/\\sqrt2\\approx0.71$　(2) 側面：底面 $=1:\\sqrt2$（側面の平均強さは底面の $1/\\sqrt2$ 倍）　(3) $2P/(\\pi R^2)\\approx6.4\\times10^{-2}\\,\\mathrm{W/m^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "側面が音源に張る立体角を求める．音源から見て底面の縁までの方向と軸のなす角を $\\theta_0$ とすると $\\cos\\theta_0=\\dfrac{h/2}{\\sqrt{(h/2)^2+R^2}}$．1 つの底面の立体角は $2\\pi(1-\\cos\\theta_0)$ なので，側面の立体角は $4\\pi-4\\pi(1-\\cos\\theta_0)=4\\pi\\cos\\theta_0$．よって側面に届く流量は\n\\[\n\\Phi_{\\text{側}}=P\\cos\\theta_0=\\frac{P}{\\sqrt{1+(2R/h)^2}}.\n\\]\n(1) $\\Phi_{\\text{側}}=P/3$ なら残りの $2P/3$ が対称に 2 つの底面に分かれ，各 $P/3$ となる．$\\sqrt{1+(2R/h)^2}=3$ より $(2R/h)^2=8$，$h/R=2/\\sqrt8=1/\\sqrt2\\approx0.71$．\n\n(2) 側面積 $2\\pi Rh=\\sqrt2\\,\\pi R^2$，底面積 $\\pi R^2$．流量が等しいので平均強さの比は面積の逆比で，側面：底面 $=\\dfrac1{\\sqrt2}:1$．\n\n(3) 底面中心は音源から $h/2=R/(2\\sqrt2)$ の距離にあるので\n\\[\nI=\\frac{P}{4\\pi (h/2)^2}=\\frac{P}{4\\pi R^2/8}=\\frac{2P}{\\pi R^2}=\\frac{2\\times0.10}{\\pi\\times1.0^2}\\approx6.4\\times10^{-2}\\,\\mathrm{W/m^2}.\n\\]\n底面平均 $P/(3\\pi R^2)\\approx1.1\\times10^{-2}\\,\\mathrm{W/m^2}$ の 6 倍で，強さが底面上で大きく不均一であることが分かる．"
+   }
+  ],
+  "idea": {
+   "tex": "側面の立体角は $4\\pi\\cos\\theta_0$．3 面に等分する条件は $\\cos\\theta_0=1/3$ という単純な形になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "点音源",
+   "立体角",
+   "エネルギー流",
+   "円筒",
+   "音の強さ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "縦定在波の密度・圧力・速度の位相関係",
+  "topic": "縦定在波の密度・圧力・速度の位相関係",
+  "statement": {
+   "tex": "平衡密度 $\\rho_0$，音速 $v$ の気体中に縦の定在波 $\\xi(x,t)=a\\cos kx\\cos\\omega t$（$\\omega=vk$，$ak\\ll1$）が維持されている．\n\\begin{enumerate}\n\\item 密度のゆらぎ $\\delta\\rho(x,t)$ と圧力のゆらぎ $\\delta p(x,t)$ を求めよ（$\\delta p=v^2\\delta\\rho$ としてよい）．密度振動の振幅が最大になる位置は変位の節・腹のどちらか．\n\\item $t=T/4$（$T$ は周期）での区間 $0\\le x\\le\\lambda/2$ の両端の粒子の速度の向きを答え，その直後に区間の中央 $x=\\lambda/4$ の密度が増えるか減るかを判定せよ．\n\\item 圧力振幅の最大値 $\\delta p_{\\max}$ と粒子速度振幅の最大値 $u_{\\max}$ の比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\delta\\rho=\\rho_0ak\\sin kx\\cos\\omega t$，$\\delta p=\\rho_0v^2ak\\sin kx\\cos\\omega t$；変位の節で最大　(2) $x=0$ は $-x$ 向き，$x=\\lambda/2$ は $+x$ 向き（区間が膨張）→ 中央の密度は減る　(3) $\\delta p_{\\max}/u_{\\max}=\\rho_0v$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 連続の式（線形）$\\delta\\rho=-\\rho_0\\,\\partial\\xi/\\partial x$ より\n\\[\n\\delta\\rho=\\rho_0ak\\sin kx\\cos\\omega t,\\qquad \\delta p=v^2\\delta\\rho=\\rho_0v^2ak\\sin kx\\cos\\omega t.\n\\]\n$|\\sin kx|=1$ の点 $x=\\lambda/4+n\\lambda/2$ は $\\cos kx=0$，すなわち変位の節である．縦波では変位の節が密度（圧力）の腹になる．\n\n(2) 粒子速度 $u=\\partial\\xi/\\partial t=-a\\omega\\cos kx\\sin\\omega t$．$t=T/4$ で $\\sin\\omega t=1$ なので $u=-a\\omega\\cos kx$．$x=0$ では $u=-a\\omega$（$-x$ 向き），$x=\\lambda/2$ では $u=+a\\omega$（$+x$ 向き）．両端が外向きに動くので区間は膨張しつつある．実際 $t=T/4$ 直後は $\\cos\\omega t<0$ となり $x=\\lambda/4$ で $\\delta\\rho=\\rho_0ak\\cos\\omega t<0$，密度は減る．\n\n(3) $\\delta p_{\\max}=\\rho_0v^2ak$，$u_{\\max}=a\\omega=avk$ より $\\delta p_{\\max}/u_{\\max}=\\rho_0v$（媒質の音響インピーダンス）．ただし両者の最大は異なる場所（圧力は変位の節，速度は変位の腹）で，時間的にも $T/4$ ずれて起こる．"
+   }
+  ],
+  "idea": {
+   "tex": "縦定在波では変位の節＝密度・圧力の腹で，速度とは空間的にも時間的にも $1/4$ 周期ずれる．振幅比は音響インピーダンス $\\rho_0v$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "定在波",
+   "縦波",
+   "密度変化",
+   "音圧",
+   "音響インピーダンス"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "等振幅点の間隔が交互に変わる定在波",
+  "topic": "等振幅点の間隔が交互に変わる定在波",
+  "statement": {
+   "tex": "両端を固定した長さ $1.20\\,\\mathrm{m}$ の弦に定在波が立っている．変位振幅がちょうど $3.0\\,\\mathrm{mm}$ になる点を探したところ，隣り合う点の間隔は $20.0\\,\\mathrm{cm}$ と $10.0\\,\\mathrm{cm}$ が交互に現れ，両端に最も近い点は端から $5.0\\,\\mathrm{cm}$ の位置にあった．\n\\begin{enumerate}\n\\item 波長と，この振動が第何倍音（基本音を第 0 倍音とする）に当たるかを求めよ．\n\\item 最大変位振幅 $a$ を求めよ．\n\\item 振幅が $A'$ の点を探したとき，隣り合う点の間隔がすべて等しくなるとする．$A'$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=60\\,\\mathrm{cm}$，第 3 倍音（4 倍振動）　(2) $a=6.0\\,\\mathrm{mm}$　(3) $A'=a/\\sqrt2\\approx4.2\\,\\mathrm{mm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "端を $x=0$ とし振幅分布を $A(x)=a|\\sin kx|$ とする．振幅 $A_0$ の点は各節の両側に節から距離 $x_0$（$a\\sin kx_0=A_0$）のところに対になって現れる．節をはさむ 2 点の間隔は $2x_0$，腹をはさむ 2 点の間隔は $\\lambda/2-2x_0$．\n\n(1) 間隔の和は $\\lambda/2=20.0+10.0=30.0\\,\\mathrm{cm}$ なので $\\lambda=60\\,\\mathrm{cm}$．弦長は $1.20\\,\\mathrm{m}=4\\cdot\\lambda/2$ で，腹が 4 個の 4 倍振動＝第 3 倍音．\n\n(2) 端は節であり，端に最も近い点が $x_0=5.0\\,\\mathrm{cm}$．したがって節をはさむ間隔は $2x_0=10.0\\,\\mathrm{cm}$（腹をはさむのが $20.0\\,\\mathrm{cm}$）で整合する．\n\\[\na=\\frac{3.0\\,\\mathrm{mm}}{\\sin(2\\pi\\cdot5.0/60)}=\\frac{3.0}{\\sin(\\pi/6)}=6.0\\,\\mathrm{mm}.\n\\]\n（間隔の情報だけでは $2x_0=20\\,\\mathrm{cm}$ の可能性 $a=3.0/\\sin(\\pi/3)\\approx3.5\\,\\mathrm{mm}$ も残るが，端の情報で一意に決まる．）\n\n(3) 等間隔となるのは $2x_0=\\lambda/2-2x_0$，すなわち $x_0=\\lambda/8$，$kx_0=\\pi/4$ のとき．$A'=a\\sin(\\pi/4)=a/\\sqrt2\\approx4.2\\,\\mathrm{mm}$（間隔 $\\lambda/4=15\\,\\mathrm{cm}$）．"
+   }
+  ],
+  "idea": {
+   "tex": "等振幅点は節の両側に対で並び，間隔は $2x_0$ と $\\lambda/2-2x_0$ が交互になる．等間隔になるのは振幅が $a/\\sqrt2$ の特別な場合だけ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $a$ [mm]：≈6.0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "定在波",
+   "弦",
+   "倍音",
+   "振幅分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ピストンを動かす共鳴管で比熱比を測る",
+  "topic": "ピストンを動かす共鳴管で比熱比を測る",
+  "statement": {
+   "tex": "一端を振動膜（振動数 $\\nu=2000\\,\\mathrm{Hz}$）でふさいだ管の中で，ピストンを一定の速さ $u=1.00\\,\\mathrm{cm/s}$ でゆっくり引き出していく．管内に置いたマイクの信号は，共鳴のたびに大きくなり，その極大は $\\tau=8.58\\,\\mathrm{s}$ ごとに現れた．\n\\begin{enumerate}\n\\item 空気中の音速 $v$ を求めよ．\n\\item 気温 $20^\\circ\\mathrm{C}$，空気のモル質量 $M=2.9\\times10^{-2}\\,\\mathrm{kg/mol}$，$R=8.31\\,\\mathrm{J/(mol\\,K)}$ として，空気の比熱比 $\\gamma$ を求めよ．\n\\item ピストンの速さを 2 倍にすると，極大の時間間隔はどう変わるか．また，膜の振動数を 2 倍にした場合はどうか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=2u\\tau\\nu\\approx343\\,\\mathrm{m/s}$　(2) $\\gamma\\approx1.40$　(3) どちらも間隔は半分（$4.29\\,\\mathrm{s}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 管長が $\\lambda/2$ 変わるごとに共鳴が繰り返す（両端とも変位の節の条件 $L=n\\lambda/2$）．ピストンが $\\lambda/2$ 動く時間が $\\tau$ なので $u\\tau=\\lambda/2$，\n\\[\nv=\\lambda\\nu=2u\\tau\\nu=2\\times0.0100\\times8.58\\times2000\\approx343\\,\\mathrm{m/s}.\n\\]\n(2) $v=\\sqrt{\\gamma RT/M}$ より\n\\[\n\\gamma=\\frac{v^2M}{RT}=\\frac{343.2^2\\times0.029}{8.31\\times293}\\approx1.40 .\n\\]\n(3) $\\tau=\\lambda/(2u)=v/(2u\\nu)$．$u$ を 2 倍にしても，$\\nu$ を 2 倍にしても $\\tau$ は半分の $4.29\\,\\mathrm{s}$ になる．"
+   }
+  ],
+  "idea": {
+   "tex": "共鳴位置の間隔 $\\lambda/2$ をピストンの等速運動で時間に変換すれば，時間計測だけで音速と比熱比が求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v$ [m/s]：≈343\n(2) $\\gamma$：≈1.40\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "共鳴管",
+   "音速",
+   "定在波",
+   "比熱比"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "共鳴振動数の列から管の種類を判定",
+  "topic": "共鳴振動数の列から管の種類を判定",
+  "statement": {
+   "tex": "長さの分からない管の中の空気柱の固有振動を調べたところ，隣り合う 2 つの固有振動数として $750\\,\\mathrm{Hz}$ と $1050\\,\\mathrm{Hz}$ が得られた．音速 $v=340\\,\\mathrm{m/s}$，開口端は変位の腹とみなす（開口端補正は無視）．\n\\begin{enumerate}\n\\item この管は両端開管か，一端閉管か．理由をつけて判定し，管の長さを求めよ．\n\\item この管で $1250\\,\\mathrm{Hz}$ 未満の固有振動はいくつあるか．\n\\item 閉じている端を開いて両端開管にすると，$1250\\,\\mathrm{Hz}$ 未満の固有振動数はどうなるか．すべて挙げよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 一端閉管，$L\\approx0.57\\,\\mathrm{m}$　(2) 4 個（150, 450, 750, 1050 Hz）　(3) 300, 600, 900, 1200 Hz の 4 個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 両端開管なら $\\nu_n=n\\,v/(2L)$ で，隣接振動数の差 $300\\,\\mathrm{Hz}$ が基本振動数になり，$750/300=2.5$ が整数でないので矛盾．一端閉管なら $\\nu_n=(2n+1)v/(4L)$ で差は $2\\cdot v/(4L)=300\\,\\mathrm{Hz}$，基本振動数 $v/(4L)=150\\,\\mathrm{Hz}$ となり $750=5\\times150$，$1050=7\\times150$ と整合する．よって一端閉管で\n\\[\nL=\\frac{v}{4\\times150}=\\frac{340}{600}\\approx0.57\\,\\mathrm{m}.\n\\]\n(2) $150(2n+1)<1250$ より $2n+1<8.33$，$2n+1=1,3,5,7$ の 4 個．\n\n(3) 両端開管では $\\nu_n=n\\,v/(2L)=300n\\,\\mathrm{Hz}$．$300n<1250$ より $n=1,2,3,4$：$300,600,900,1200\\,\\mathrm{Hz}$ の 4 個．"
+   }
+  ],
+  "idea": {
+   "tex": "隣接振動数の差と振動数自身の比を調べれば，奇数倍列（閉管）か整数倍列（開管）かが判定できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "気柱",
+   "開管",
+   "閉管",
+   "固有振動",
+   "共鳴"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "壁に向かうコウモリが聞くうなり",
+  "topic": "壁に向かうコウモリが聞くうなり",
+  "statement": {
+   "tex": "コウモリが振動数 $\\nu_0=40.0\\,\\mathrm{kHz}$ の超音波を出しながら，壁に垂直に一定の速さ $u$ で近づいている．コウモリは自分の出す音と壁からの反射音を同時に聞く．空気中の音速は $v=340\\,\\mathrm{m/s}$，風はない．\n\\begin{enumerate}\n\\item コウモリが聞くうなりの振動数 $\\Delta\\nu$ を $\\nu_0,u,v$ で表せ．\n\\item $\\Delta\\nu=1.20\\,\\mathrm{kHz}$ のとき $u$ を求めよ．\n\\item そのとき，コウモリの真後ろ（壁と反対側）の軌道上に置かれた静止マイクが記録するうなりの振動数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta\\nu=\\dfrac{2u\\nu_0}{v-u}$　(2) $u=\\dfrac{v\\Delta\\nu}{2\\nu_0+\\Delta\\nu}\\approx5.0\\,\\mathrm{m/s}$　(3) $\\dfrac{2\\nu_0uv}{v^2-u^2}\\approx1.18\\,\\mathrm{kHz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 壁（静止）が受ける振動数は近づく音源から $\\nu_w=\\nu_0\\dfrac{v}{v-u}$．壁は静止音源として $\\nu_w$ を反射し，近づく観測者であるコウモリが聞く振動数は\n\\[\n\\nu'=\\nu_w\\frac{v+u}{v}=\\nu_0\\frac{v+u}{v-u}.\n\\]\nコウモリ自身の音は（自分と一緒に動くので）$\\nu_0$ のまま聞こえる．$\\Delta\\nu=\\nu'-\\nu_0=\\dfrac{2u\\nu_0}{v-u}$．\n\n(2) $\\Delta\\nu(v-u)=2u\\nu_0$ より $u=\\dfrac{v\\Delta\\nu}{2\\nu_0+\\Delta\\nu}=\\dfrac{340\\times1200}{81200}\\approx5.02\\,\\mathrm{m/s}$．\n\n(3) 後方の静止マイク：直接音は遠ざかる音源から $\\nu_0\\dfrac{v}{v+u}$，反射音は静止した壁からの $\\nu_w=\\nu_0\\dfrac v{v-u}$．うなりは\n\\[\n\\nu_0v\\left(\\frac1{v-u}-\\frac1{v+u}\\right)=\\frac{2\\nu_0uv}{v^2-u^2}=\\frac{2\\times40000\\times5.02\\times340}{340^2-5.02^2}\\approx1.18\\,\\mathrm{kHz}.\n\\]\nコウモリ自身が聞くうなりより $v/(v+u)$ 倍だけ小さい．"
+   }
+  ],
+  "idea": {
+   "tex": "音源と受信者が一体で動くと，往路と復路のドップラー効果が両方効いて $(v+u)/(v-u)$ 倍になる．静止受信者とは結果がわずかに異なる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta\\nu$：((2 u ν_0)/(v - u))\n(2) $u$ [m/s]：≈5.0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "反射",
+   "うなり",
+   "エコーロケーション"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "球面波の減衰：拡散と吸収が拮抗する距離",
+  "topic": "球面波の減衰：拡散と吸収が拮抗する距離",
+  "statement": {
+   "tex": "等方点音源からの音波の振幅は $\\dfrac{a_0}{r}e^{-\\gamma r}$ のように減衰する（$\\gamma$ は減衰係数）．音源から $r_1=10\\,\\mathrm{m}$ と $r_2=20\\,\\mathrm{m}$ の点での音の強さのレベル差が $6.53\\,\\mathrm{dB}$ であった．\n\\begin{enumerate}\n\\item $\\gamma$ を求めよ．\n\\item 距離 $r$ とともに強さが減る割合 $-\\dfrac{d\\ln I}{dr}$ のうち，球面拡散による部分と吸収による部分が等しくなる距離 $r^*$ を求めよ．\n\\item $100\\,\\mathrm{m}$ と $200\\,\\mathrm{m}$ の点での強さのレベル差を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\gamma\\approx5.9\\times10^{-3}\\,\\mathrm{m^{-1}}$　(2) $r^*=1/\\gamma\\approx1.7\\times10^2\\,\\mathrm{m}$　(3) 約 $11\\,\\mathrm{dB}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "強さは $I\\propto\\dfrac{e^{-2\\gamma r}}{r^2}$．\n\n(1) $I_1/I_2=10^{0.653}=4.50$．$\\dfrac{I_1}{I_2}=\\dfrac{r_2^2}{r_1^2}e^{2\\gamma(r_2-r_1)}$ より\n\\[\n\\gamma=\\frac{\\ln\\left(\\frac{I_1}{I_2}\\frac{r_1^2}{r_2^2}\\right)}{2(r_2-r_1)}=\\frac{\\ln(4.50/4)}{20}\\approx5.9\\times10^{-3}\\,\\mathrm{m^{-1}}.\n\\]\n(2) $-\\dfrac{d\\ln I}{dr}=\\dfrac2r+2\\gamma$．両者が等しいのは $r^*=1/\\gamma\\approx1.7\\times10^2\\,\\mathrm{m}$．これより遠方では吸収が主になる．\n\n(3) $\\dfrac{I_{100}}{I_{200}}=4e^{2\\gamma\\times100}=4\\times3.25\\approx13.0$，レベル差 $10\\log_{10}13.0\\approx11\\,\\mathrm{dB}$．近距離（$10\\to20\\,\\mathrm{m}$）での $6.5\\,\\mathrm{dB}$ と違い，遠距離では吸収が効いて距離 2 倍あたりの減少が大きくなる．"
+   }
+  ],
+  "idea": {
+   "tex": "球面波の強さの減少は拡散 $2/r$ と吸収 $2\\gamma$ の和で，$r=1/\\gamma$ を境に支配的な機構が入れ替わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\gamma$ [m⁻¹]：≈5.9e-3\n(2) 記述\n(3) [dB]：≈11"
+  },
+  "methods": [],
+  "tags": [
+   "音の減衰",
+   "点音源",
+   "デシベル",
+   "減衰係数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "減衰する平面波で音量を2倍にした効果",
+  "topic": "減衰する平面波で音量を2倍にした効果",
+  "statement": {
+   "tex": "$x$ 軸方向に進む平面音波の強さのレベルが，$x=0$ で $60\\,\\mathrm{dB}$，$x=50\\,\\mathrm{m}$ で $50\\,\\mathrm{dB}$ であった．振幅は $e^{-\\gamma x}$ で減衰する．\n\\begin{enumerate}\n\\item 減衰係数 $\\gamma$ と，音が聞こえなくなる（レベル $0\\,\\mathrm{dB}$）位置 $x_0$ を求めよ．\n\\item 音源の出力を 2 倍にすると，$x_0$ は何 m 延びるか．\n\\item 減衰のない点音源の場合，出力を 2 倍にすると聞こえる距離は何倍になるか．(2) と比較して，減衰のある平面波との違いを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\gamma\\approx2.3\\times10^{-2}\\,\\mathrm{m^{-1}}$，$x_0=300\\,\\mathrm{m}$　(2) 約 $15\\,\\mathrm{m}$　(3) $\\sqrt2$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "強さ $I\\propto e^{-2\\gamma x}$，レベル $L=10\\log_{10}(I/I_0)$ なので $L(x)=L(0)-20\\gamma x\\log_{10}e$．\n\n(1) $10=20\\gamma\\times50\\times0.4343$ より $\\gamma=\\dfrac{\\ln10}{100}\\approx2.30\\times10^{-2}\\,\\mathrm{m^{-1}}$．レベルは $50\\,\\mathrm{m}$ あたり $10\\,\\mathrm{dB}$ 下がるので $x_0=300\\,\\mathrm{m}$．\n\n(2) 出力 2 倍でレベルは $10\\log_{10}2\\approx3.01\\,\\mathrm{dB}$ 上がる．$1\\,\\mathrm{m}$ あたり $0.20\\,\\mathrm{dB}$ 下がるので，延びは $3.01/0.20\\approx15\\,\\mathrm{m}$（$x_0$ の $5\\%$）．\n\n(3) 減衰のない点音源では $I\\propto P/r^2$，聞こえる限界 $r_0\\propto\\sqrt P$ なので $\\sqrt2$ 倍（$41\\%$ 増）．指数減衰では距離がパワーの対数にしか比例しない（$x_0=\\frac{1}{2\\gamma}\\ln(I(0)/I_0)$）ため，出力を上げても到達距離はわずかしか延びない．"
+   }
+  ],
+  "idea": {
+   "tex": "指数減衰ではレベルが距離に比例して下がるので，到達距離は出力の対数にしか依存しない．べき減衰との違いが顕著に出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\gamma$ [m⁻¹]：≈2.3e-2 ; $x_0$ [m]：300\n(2) [m]：≈15\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "音の減衰",
+   "平面波",
+   "デシベル",
+   "到達距離"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 1,
+  "minutes": 15,
+  "theme": "斜めに置かれた円柱が受ける音波エネルギー",
+  "topic": "斜めに置かれた円柱が受ける音波エネルギー",
+  "statement": {
+   "tex": "空気（密度 $\\rho=1.29\\ \\mathrm{kg/m^3}$，音速 $v=340$ m/s）中を，振動数 $17$ kHz，圧力振幅 $(\\Delta p)_m=3.5$ Pa の平面音波が伝わっている．その中に，半径 $R=10$ cm，長さ $L=60$ cm の閉じた円柱（両端は平らな円板）が，軸を波の進行方向から $\\theta=30^\\circ$ 傾けて置かれている．円柱の寸法は波長より十分大きく，入射した音は表面で完全に吸収されるとする（回折は無視）．\n\\begin{enumerate}\n\\item 側面と端面のそれぞれに到達する平均エネルギー流（1周期平均）を求めよ．\n\\item 傾き $\\theta$ を変えたとき，円柱全体が受けるエネルギー流が最大になる $\\theta$ とそのときの値を求めよ．\n\\item 寸法が波長より十分大きいという条件が必要な理由を簡潔に述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 側面 $0.84$ mW，端面 $0.38$ mW（計 $1.22$ mW）　(2) $\\tan\\theta=2L/(\\pi R)$ より $\\theta=75^\\circ$，$1.73$ mW　(3) 波長程度以下では回折で幾何学的な影が成り立たず，受けるエネルギーが投影面積×強度で決まらないから"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "強度は $I=\\dfrac{(\\Delta p)_m^2}{2\\rho v}=\\dfrac{3.5^2}{2\\times1.29\\times340}=1.40\\times10^{-2}\\ \\mathrm{W/m^2}$．波長は $\\lambda=v/\\nu=2.0$ cm で寸法より十分小さいので，物体が受けるエネルギー流は「強度 × 波の進行方向に垂直な面への投影面積」である．\n\n(1) 側面の投影は $2R\\times L$ の長方形を $\\sin\\theta$ 倍したもの：$A_{\\text{側}}=2RL\\sin\\theta=0.060\\ \\mathrm{m^2}$．照らされる端面は 1 枚で，投影は $\\pi R^2\\cos\\theta=0.0272\\ \\mathrm{m^2}$．よって\n\\[\\Phi_{\\text{側}}=8.4\\times10^{-4}\\ \\text{W},\\quad \\Phi_{\\text{端}}=3.8\\times10^{-4}\\ \\text{W}.\\]\n\n(2) $A(\\theta)=2RL\\sin\\theta+\\pi R^2\\cos\\theta$ を最大化：$A'=0$ より $\\tan\\theta=\\dfrac{2L}{\\pi R}=3.82$，$\\theta=75.3^\\circ$．最大値は $A_{\\max}=\\sqrt{(2RL)^2+(\\pi R^2)^2}=0.124\\ \\mathrm{m^2}$，$\\Phi_{\\max}=1.73\\times10^{-3}$ W．（真横 $90^\\circ$ ではなく，端面の寄与があるぶん少し手前で最大になる．）\n\n(3) 投影面積で計算できるのは，波を光線のように扱える（物体の後ろに明確な影ができる）場合だけである．寸法が波長程度以下だと回折により波が回り込み，受けるエネルギーは投影面積とは異なる（散乱・吸収断面積の問題になる）．"
+   }
+  ],
+  "idea": {
+   "tex": "物体が受ける平均エネルギー流は強度×投影面積．形と向きの問題は投影面積の最大化に帰着する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 側面 [mW]：≈0.84 ; 端面 [mW]：≈0.38\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "音波",
+   "強度",
+   "投影面積",
+   "エネルギー流",
+   "幾何学的近似"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "WV-03-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -388,6 +1180,1948 @@
   }
  },
  {
+  "id": "WV-03-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "吊り下げた鎖の振動：節の位置と波の往復時間",
+  "topic": "吊り下げた鎖の振動：節の位置と波の往復時間",
+  "statement": {
+   "tex": "長さ $l$，線密度 $\\rho$ の一様で柔らかい鎖の上端を固定してつり下げ，鉛直面内で微小に横振動させる．重力加速度を $g$ とし，下端（自由端）から測った鎖に沿った距離を $s$ とする．\n\\begin{enumerate}\n\\item 横変位を $y=Z(s)\\cos\\omega t$ とおき，$Z(s)$ が $\\xi=2\\omega\\sqrt{s/g}$ の 0 次 Bessel 関数 $J_0(\\xi)$ に比例することを示せ（下端で変位が有限であることを用いよ）．\n\\item 固有角振動数 $\\omega_n$ を $J_0$ の正の零点 $j_{0n}$（$j_{01}=2.405$，$j_{02}=5.520$）で表せ．基本振動 $\\omega_1$ を，同じ長さの一様な剛体棒を上端まわりの振り子にしたときの角振動数と比べよ．\n\\item 第2モードで静止している点（上端以外の節）は下端から鎖の長さの何割の位置にあるか．\n\\item 横波のパルスが下端から上端まで伝わるのに要する時間 $\\tau$ を求めよ．また $J_0$ の零点の漸近形 $j_{0n}\\simeq(n-\\tfrac14)\\pi$ を用いると，高次モードで $\\omega_n\\simeq(n-\\tfrac14)\\pi/\\tau$ となることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Z\\propto J_0(2\\omega\\sqrt{s/g})$　(2) $\\omega_n=\\dfrac{j_{0n}}2\\sqrt{g/l}$，$\\omega_1=1.202\\sqrt{g/l}$（剛体棒は $1.225\\sqrt{g/l}$，約 2% 大）　(3) 下端から $(j_{01}/j_{02})^2l\\simeq0.190\\,l$　(4) $\\tau=2\\sqrt{l/g}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 下端から $s$ の点の張力は $T=\\rho g s$．元の問題と同様に，微小部分の運動方程式は $\\rho\\,\\partial_t^2y=\\partial_s(T\\partial_sy)$．$y=Z\\cos\\omega t$ を代入して\n\\[ g\\frac{d}{ds}\\left(s\\frac{dZ}{ds}\\right)+\\omega^2Z=0. \\]\n$\\xi=2\\omega\\sqrt{s/g}$ とおくと $s=g\\xi^2/4\\omega^2$，$s\\,\\dfrac{d}{ds}=\\dfrac{\\xi}{2}\\dfrac{d}{d\\xi}$ より $\\dfrac{d}{ds}\\left(s\\dfrac{dZ}{ds}\\right)=\\dfrac{\\omega^2}{g}\\left(Z''+\\dfrac1\\xi Z'\\right)$（$'=d/d\\xi$）．よって\n\\[ Z''+\\frac1\\xi Z'+Z=0 \\]\nは 0 次 Bessel 方程式．一般解 $AJ_0(\\xi)+BY_0(\\xi)$ のうち $Y_0$ は $\\xi\\to0$（下端）で対数発散するので $B=0$，$Z=AJ_0(2\\omega\\sqrt{s/g})$．\n\n(2) 上端 $s=l$ で $Z=0$：$J_0(2\\omega\\sqrt{l/g})=0$．よって $\\omega_n=\\dfrac{j_{0n}}{2}\\sqrt{\\dfrac gl}$，$\\omega_1=1.2024\\sqrt{g/l}$．\n剛体棒の振り子：$\\omega=\\sqrt{\\dfrac{mgl/2}{ml^2/3}}=\\sqrt{\\dfrac{3g}{2l}}=1.2247\\sqrt{g/l}$．鎖の基本振動は剛体棒よりわずか約 1.8% 低いだけで，基本モードの鎖はほぼ棒のように振れる．\n\n(3) $\\omega_2$ のモードは $Z\\propto J_0\\!\\left(j_{02}\\sqrt{s/l}\\right)$．上端以外の零点は $j_{02}\\sqrt{s/l}=j_{01}$，すなわち\n\\[ \\frac sl=\\left(\\frac{j_{01}}{j_{02}}\\right)^2=\\left(\\frac{2.405}{5.520}\\right)^2\\simeq0.190. \\]\n節は下端から全長の約 19% の位置にあり，中点よりずっと下に寄る（下ほど張力が小さく波が遅いため）．\n\n(4) 位置 $s$ での横波の速さは $v=\\sqrt{T/\\rho}=\\sqrt{gs}$．\n\\[ \\tau=\\int_0^l\\frac{ds}{\\sqrt{gs}}=2\\sqrt{\\frac lg}. \\]\nすると $\\omega_n=\\dfrac{j_{0n}}2\\sqrt{\\dfrac gl}=\\dfrac{j_{0n}}{\\tau}\\simeq\\dfrac{(n-\\frac14)\\pi}{\\tau}$．一様な弦（固定端–自由端）なら $\\omega_n=(n-\\frac12)\\pi/\\tau$ となるところ，$-\\tfrac14$ になるのは下端付近で波速が 0 に近づくことによる位相のずれ（WKB の転回点の効果）である．"
+   }
+  ],
+  "idea": {
+   "tex": "張力が下端からの距離に比例するので $\\xi\\propto\\sqrt s$ で Bessel 方程式になる．節の位置は零点の比の 2 乗で決まり，高次モードは波の伝播時間 $2\\sqrt{l/g}$ で量子化される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $\\tau$：2 sqrt(l / g)"
+  },
+  "methods": [],
+  "tags": [
+   "吊り下げ鎖",
+   "Bessel関数",
+   "固有振動",
+   "WKB",
+   "波の伝播時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "はじいた弦のモード間エネルギー配分",
+  "topic": "はじいた弦のモード間エネルギー配分",
+  "statement": {
+   "tex": "両端 $x=0,l$ を固定した張力 $T$，線密度 $\\rho$ の弦の点 $x=a$（$0<a<l$）をつまんで高さ $h$ だけ横に引き，両側が直線になった形から静かに放す．\n\\begin{enumerate}\n\\item 変位を $y=\\sum_n b_n\\sin\\dfrac{n\\pi x}{l}\\cos\\omega_nt$ と表すとき，$b_n$ を求めよ．\n\\item 第 $n$ モードの力学的エネルギー $E_n$ を求め，$\\sum_nE_n$ が放す直前に弦に蓄えられた位置エネルギー $E_0=\\dfrac T2\\displaystyle\\int_0^l\\left(\\frac{\\partial y}{\\partial x}\\right)^2dx$ に等しいことを（級数の値を用いずに）説明し，$E_0$ を求めよ．\n\\item 中点 $a=l/2$ ではじいたとき，全エネルギーのうち基本振動に入る割合を求めよ．\n\\item $a=l/3$ ではじいたとき，鳴らない倍音はどれか．また，ある特定のモード $n_0$（$n_0\\ge2$）を確実に鳴らさないためには，どこをはじけばよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $b_n=\\dfrac{2hl^2}{\\pi^2n^2a(l-a)}\\sin\\dfrac{n\\pi a}{l}$　(2) $E_n=\\dfrac{Tn^2\\pi^2}{4l}b_n^2$，$E_0=\\dfrac{Th^2l}{2a(l-a)}$　(3) $8/\\pi^2\\simeq81\\%$　(4) $n=3,6,9,\\dots$；$a=kl/n_0$（$k=1,\\dots,n_0-1$，すなわち第 $n_0$ モードの節）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 初期形 $y_0(x)$ は $0<x<a$ で $hx/a$，$a<x<l$ で $h(l-x)/(l-a)$．初速 0 なので $\\cos\\omega_nt$ のみが現れ，\n\\[ b_n=\\frac2l\\int_0^ly_0\\sin\\frac{n\\pi x}{l}dx . \\]\n部分積分を 2 回行う（$y_0''=-\\dfrac{hl}{a(l-a)}\\delta(x-a)$ を使うと速い）と\n\\[ b_n=\\frac2l\\cdot\\frac{l^2}{n^2\\pi^2}\\cdot\\frac{hl}{a(l-a)}\\sin\\frac{n\\pi a}{l}=\\frac{2hl^2}{\\pi^2n^2a(l-a)}\\sin\\frac{n\\pi a}{l}. \\]\n\n(2) 第 $n$ モード $y_n=b_n\\sin k_nx\\cos\\omega_nt$（$k_n=n\\pi/l$，$\\omega_n=ck_n$，$c^2=T/\\rho$）の位置エネルギーが最大となる $t=0$ で\n\\[ E_n=\\frac T2\\int_0^l b_n^2k_n^2\\cos^2k_nx\\,dx=\\frac{Tl}{4}k_n^2b_n^2=\\frac{Tn^2\\pi^2}{4l}b_n^2. \\]\n運動エネルギー・位置エネルギーとも $\\sin k_nx$，$\\cos k_nx$ の直交性によりモードごとに分離するので，全エネルギーはモードのエネルギーの和．全エネルギーは保存し，$t=0$ では位置エネルギーのみなので $\\sum E_n=E_0$．\n\\[ E_0=\\frac T2\\left[\\left(\\frac ha\\right)^2a+\\left(\\frac h{l-a}\\right)^2(l-a)\\right]=\\frac{Th^2}2\\left(\\frac1a+\\frac1{l-a}\\right)=\\frac{Th^2l}{2a(l-a)}. \\]\n（実際 $\\sum E_n=\\dfrac{4Th^2l^3}{\\pi^2a^2(l-a)^2}\\sum\\dfrac{\\sin^2(n\\pi a/l)}{n^2}$ で，$\\sum\\sin^2(n\\theta)/n^2=\\theta(\\pi-\\theta)/2$ を使うと一致する．）\n\n(3) $a=l/2$：$b_1=8h/\\pi^2$，$E_1=\\dfrac{T\\pi^2}{4l}\\cdot\\dfrac{64h^2}{\\pi^4}=\\dfrac{16Th^2}{\\pi^2l}$．$E_0=\\dfrac{2Th^2}{l}$．\n\\[ \\frac{E_1}{E_0}=\\frac8{\\pi^2}\\simeq0.811. \\]\n（偶数モードは $\\sin(n\\pi/2)=0$ で鳴らず，奇数モードのエネルギーは $1/n^2$ に比例；$\\sum_{\\rm odd}1/n^2=\\pi^2/8$ と整合．）\n\n(4) $b_n\\propto\\sin(n\\pi/3)$ は $n=3,6,9,\\dots$ で 0．一般に $\\sin(n_0\\pi a/l)=0$，すなわち $a=kl/n_0$（第 $n_0$ モードの節）ではじけばそのモードと，その整数倍のうち同じ点が節となるモードが鳴らない．ピアノのハンマーが弦長の約 1/7〜1/9 の位置を打つのは，不協和な第 7 倍音などを弱めるためである．"
+   }
+  ],
+  "idea": {
+   "tex": "初期形の 2 階微分がデルタ関数になるので $b_n\\propto\\sin(n\\pi a/l)/n^2$，モードのエネルギーは $\\propto\\sin^2/n^2$．中点はじきで基本音に $8/\\pi^2$ が入り，はじく点がモードの節ならそのモードは鳴らない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $b_n$：((2 h l ^(2))/(pi ^(2) n ^(2) a (l - a))) sin ((n pi a)/(l))\n(2) $E_n$：((T n ^(2) pi ^(2))/(4 l)) b_n ^(2) ; $E_0$：((T h ^(2) l)/(2 a (l - a)))\n(3) [%]：≈81\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弦の振動",
+   "Fourier級数",
+   "エネルギー配分",
+   "倍音",
+   "直交性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "正方形膜の縮退と直角二等辺三角形膜",
+  "topic": "正方形膜の縮退と直角二等辺三角形膜",
+  "statement": {
+   "tex": "張力 $T$，面密度 $\\rho$ の一様な膜（$c=\\sqrt{T/\\rho}$）について考える．\n\\begin{enumerate}\n\\item 周囲を固定した一辺 $a$ の正方形膜 $0\\le x,y\\le a$ の固有角振動数 $\\omega_{mn}$（$m,n$ は正の整数）を書き，最低の 3 つの異なる振動数の比を求めよ．縮退しているものはどれか．\n\\item $\\omega_{12}=\\omega_{21}$ の縮退モードの重ね合わせ\n\\[ z=\\sin\\frac{\\pi x}a\\sin\\frac{2\\pi y}a-\\sin\\frac{2\\pi x}a\\sin\\frac{\\pi y}a \\]\nが対角線 $y=x$ 上でつねに 0 になることを示せ．\n\\item 直角をはさむ 2 辺の長さが $a$ の直角二等辺三角形の膜（周囲固定）の基本角振動数 $\\Omega_1$ と，第 2 の固有角振動数 $\\Omega_2$ を求めよ．比 $\\Omega_2/\\Omega_1$ はいくらか．\n\\item 同じ面積の正方形膜と比べて，三角形膜の基本振動数は高いか低いか．比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega_{mn}=\\dfrac{c\\pi}a\\sqrt{m^2+n^2}$；比 $\\sqrt2:\\sqrt5:\\sqrt8$，$\\sqrt5$ は $(1,2),(2,1)$ で縮退　(2) 略（$y=x$ で両項が等しい）　(3) $\\Omega_1=\\sqrt5\\,c\\pi/a$，$\\Omega_2=\\sqrt{10}\\,c\\pi/a$，比 $\\sqrt2$　(4) 三角形が高い．比 $\\sqrt{5}/2\\simeq1.118$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 元の問題の結果より $\\omega_{mn}=\\dfrac{c\\pi}{a}\\sqrt{m^2+n^2}$．小さい順に $(1,1):\\sqrt2$，$(1,2),(2,1):\\sqrt5$，$(2,2):\\sqrt8$．比は $\\sqrt2:\\sqrt5:\\sqrt8=1:1.581:2$．$\\sqrt5$ が 2 重に縮退している（正方形の対称性による）．\n\n(2) $y=x$ を代入すると $\\sin\\dfrac{\\pi x}a\\sin\\dfrac{2\\pi x}a-\\sin\\dfrac{2\\pi x}a\\sin\\dfrac{\\pi x}a=0$．時間因子に関係なくつねに 0 なので，対角線は節線になる．\n\n(3) 三角形 $0\\le y\\le x\\le a$ を考える（直角の頂点は $(a,0)$，2 辺は $y=0$ と $x=a$，斜辺は $y=x$）．一般に\n\\[ z_{mn}=\\sin\\frac{m\\pi x}a\\sin\\frac{n\\pi y}a-\\sin\\frac{n\\pi x}a\\sin\\frac{m\\pi y}a\\quad(m\\ne n) \\]\nは正方形の波動方程式の解で，$y=0$，$x=a$ で 0（正方形の境界条件），$y=x$ でも 0．したがって三角形膜の固有モードであり，角振動数は $\\omega_{mn}$．逆に三角形の固有関数は $y=x$ について反対称に拡張すると正方形の固有関数になり，正方形の固有空間で反対称な組み合わせはこれに限られるので，これが三角形の全モードである（$m=n$ や対称な組み合わせは対角線上で 0 にならず不適）．\nしたがって $m<n$ の組 $(1,2),(1,3),(2,3),\\dots$ が順に現れ，\n\\[ \\Omega_1=\\frac{c\\pi}a\\sqrt5,\\qquad\\Omega_2=\\frac{c\\pi}a\\sqrt{10},\\qquad \\frac{\\Omega_2}{\\Omega_1}=\\sqrt2. \\]\n正方形の基本モード $(1,1)$ は三角形には現れない．\n\n(4) 三角形の面積 $a^2/2$ と同じ面積の正方形の辺は $a/\\sqrt2$，その基本振動数は $\\dfrac{c\\pi}{a/\\sqrt2}\\sqrt2=\\dfrac{2c\\pi}{a}$．比 $\\Omega_1/\\omega_{\\rm sq}=\\sqrt5/2\\simeq1.118$．三角形の方が約 12% 高い（同面積なら円に近い形ほど基本振動数が低いという Rayleigh–Faber–Krahn の不等式と整合）．"
+   }
+  ],
+  "idea": {
+   "tex": "正方形の縮退モードの反対称結合は対角線を節線にもつので，直角二等辺三角形膜の固有モードが正方形の結果から鏡像法的に得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\Omega_1$：sqrt(5) c pi / a ; $\\Omega_2$：sqrt(10) c pi / a ; 比：sqrt(2)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "膜の振動",
+   "縮退",
+   "節線",
+   "鏡像法",
+   "固有振動数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "両端自由の棒への撃力と並進・基準振動の分配",
+  "topic": "両端自由の棒への撃力と並進・基準振動の分配",
+  "statement": {
+   "tex": "長さ $L$，質量 $M$ の一様な棒が，滑らかな水平面上に $x$ 軸に沿って $0\\le x\\le L$ に置かれ静止している．棒の縦変位 $u(x,t)$ は $\\dfrac{\\partial^2u}{\\partial x^2}=\\dfrac1{v^2}\\dfrac{\\partial^2u}{\\partial t^2}$ に従い，両端は自由端（$u_x(0,t)=u_x(L,t)=0$）である．\n\\begin{enumerate}\n\\item この系の一般解を求めよ．ただし，重心が静止しているという条件は課さない．\n\\item 時刻 $t=0$ に，棒の点 $x=x_0$（$0<x_0<L$）に $x$ 方向の撃力 $J$ を加えた．直後の速度分布は $\\dfrac{\\partial u}{\\partial t}(x,0)=\\dfrac{JL}{M}\\delta(x-x_0)$，$u(x,0)=0$ とみなせる．$t>0$ の $u(x,t)$ を求めよ．\n\\item $n$ 番目の基準振動のエネルギー $E_n$ と重心の並進運動エネルギー $E_{\\rm tr}$ の比 $E_n/E_{\\rm tr}$ を求めよ．また，基本振動 ($n=1$) を全く励起しない $x_0$ はどこか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=Bt+C+\\sum_{n\\ge1}A_n\\cos(k_nx)\\cos(\\omega_nt+\\delta_n)$，$k_n=n\\pi/L$，$\\omega_n=vk_n$　(2) $u=\\dfrac JM\\Bigl[t+2\\sum_{n\\ge1}\\dfrac{\\cos(k_nx_0)\\cos(k_nx)\\sin\\omega_nt}{\\omega_n}\\Bigr]$　(3) $E_n/E_{\\rm tr}=2\\cos^2(n\\pi x_0/L)$，$x_0=L/2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=a(x)\\cos(\\omega t+\\delta)$ $(\\omega\\ne0)$ を代入すると $a''=-k^2a$，自由端条件から $a=A\\cos kx$，$\\sin kL=0$ で $k_n=n\\pi/L$．これに加え，$\\omega=0$ に対応する解として $u_{tt}=0$，$u_{xx}=0$，$u_x=0$（両端）を満たす $u=Bt+C$（剛体的な並進）がある．よって\n\\[u=Bt+C+\\sum_{n=1}^\\infty A_n\\cos(k_nx)\\cos(\\omega_nt+\\delta_n),\\quad \\omega_n=\\frac{n\\pi v}{L}.\\]\n\n(2) $u(x,0)=0$ より $C=0$，$\\cos\\delta_n=0$ と選べて $u=Bt+\\sum b_n\\cos(k_nx)\\sin\\omega_nt$．$\\{1,\\cos k_nx\\}$ は $[0,L]$ で直交し $\\int_0^L\\cos^2k_nx\\,dx=L/2$ なので，\n\\[\\delta(x-x_0)=\\frac1L+\\frac2L\\sum_{n\\ge1}\\cos(k_nx_0)\\cos(k_nx).\\]\n$u_t(x,0)=B+\\sum b_n\\omega_n\\cos k_nx=\\dfrac{JL}{M}\\delta(x-x_0)$ と比べて $B=J/M$，$b_n\\omega_n=\\dfrac{2J}{M}\\cos k_nx_0$．よって\n\\[u=\\frac JM\\Bigl[t+2\\sum_{n=1}^\\infty\\frac{\\cos(k_nx_0)\\cos(k_nx)\\sin\\omega_nt}{\\omega_n}\\Bigr].\\]\n重心速度は $B=J/M$ で運動量保存と一致する．\n\n(3) $E_{\\rm tr}=\\frac12M(J/M)^2=\\dfrac{J^2}{2M}$．$n$ 番目のモードのエネルギーは $t=0$ の運動エネルギーで評価でき（直交性により各モードは独立），線密度 $M/L$ を用いて\n\\[E_n=\\frac12\\frac ML\\int_0^L\\Bigl(\\frac{2J}{M}\\cos k_nx_0\\Bigr)^2\\cos^2k_nx\\,dx=\\frac{J^2}{M}\\cos^2\\frac{n\\pi x_0}{L}.\\]\nよって $E_n/E_{\\rm tr}=2\\cos^2(n\\pi x_0/L)$．端 ($x_0\\to0$) を叩くと各モードに並進の2倍ずつ配分される．$n=1$ を励起しないのは $\\cos(\\pi x_0/L)=0$，$x_0=L/2$（基本振動の節）．\n（注：$\\sum_nE_n$ は発散するが，これは点撃力という理想化のためで，有限幅で力を加えれば高次モードは抑えられる．）"
+   }
+  ],
+  "idea": {
+   "tex": "自由端系では $\\omega=0$ の並進モード $Bt+C$ を落とせない．撃力をモード展開すると，並進と各基準振動へのエネルギー配分が撃点での基準関数の値で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "自由端",
+   "ゼロモード",
+   "撃力",
+   "モード展開",
+   "縦振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "井戸の幅を突然2倍にしたときの遷移確率",
+  "topic": "井戸の幅を突然2倍にしたときの遷移確率",
+  "statement": {
+   "tex": "質量 $M$ の粒子が無限に深い井戸型ポテンシャル（$0<x<L$ で $V=0$，それ以外で $V=\\infty$）の基底状態にある．時刻 $t=0$ に右側の壁を一瞬で $x=2L$ まで移動させた（波動関数は変化する暇がない）．\n\\begin{enumerate}\n\\item 新しい井戸の定常状態 $\\varphi'_m(x)$（規格化したもの）とエネルギー $E'_m$ を求め，元の基底エネルギー $E_1$ との関係を書け．\n\\item 移動直後に測定したエネルギーが $E'_m$ となる確率 $P_m=\\left|\\int\\varphi'_m\\varphi_1\\,dx\\right|^2$ を，$m=2$ と奇数 $m$ について求めよ．$m\\ge4$ の偶数ではどうなるか．\n\\item 新しい基底状態に見出される確率は元の基底状態にとどまる確率としては意外に小さい．最も起こりやすいのはどの状態か．\n\\item 移動直後のエネルギー期待値 $\\sum_mP_mE'_m$ を $E_1$ で表せ（直接和を取らずに求めよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\varphi'_m=\\sqrt{1/L}\\sin\\dfrac{m\\pi x}{2L}$，$E'_m=\\dfrac{m^2}{4}E_1$　(2) $P_2=\\dfrac12$，奇数 $m$：$P_m=\\dfrac{32}{\\pi^2(m^2-4)^2}$（$P_1=\\dfrac{32}{9\\pi^2}\\approx0.360$），$m\\ge4$ の偶数は $0$　(3) $m=2$（確率 1/2）　(4) $E_1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 基本問題3.8と同様に，幅 $2L$ の井戸では $\\varphi'_m=\\sqrt{\\tfrac{2}{2L}}\\sin\\dfrac{m\\pi x}{2L}$，$E'_m=\\dfrac{\\hbar^2}{2M}\\Bigl(\\dfrac{m\\pi}{2L}\\Bigr)^2=\\dfrac{m^2}{4}E_1$（$E_1=\\hbar^2\\pi^2/(2ML^2)$）．\n\n(2) $\\varphi_1=\\sqrt{2/L}\\sin(\\pi x/L)$（$0<x<L$，それ以外 0）．$c_m=\\dfrac{\\sqrt2}{L}\\displaystyle\\int_0^L\\sin\\frac{\\pi x}{L}\\sin\\frac{m\\pi x}{2L}dx$．\n$m=2$：$c_2=\\dfrac{\\sqrt2}{L}\\cdot\\dfrac L2=\\dfrac1{\\sqrt2}$，$P_2=\\dfrac12$．\n$m\\neq2$：積和公式で\n\\[\\int_0^L\\sin\\frac{\\pi x}{L}\\sin\\frac{m\\pi x}{2L}dx=\\frac{L}{\\pi}\\Bigl[\\frac{\\sin((m-2)\\pi/2)}{m-2}-\\frac{\\sin((m+2)\\pi/2)}{m+2}\\Bigr]\\]\nここで $\\sin((m\\pm2)\\pi/2)=-\\sin(m\\pi/2)$ なので値は $\\dfrac{L}{\\pi}\\sin\\dfrac{m\\pi}{2}\\Bigl(\\dfrac{1}{m+2}-\\dfrac{1}{m-2}\\Bigr)=-\\dfrac{4L\\sin(m\\pi/2)}{\\pi(m^2-4)}$．\n偶数 $m\\ (\\ge4)$ では 0．奇数 $m$ では $|c_m|^2=\\dfrac{2}{L^2}\\cdot\\dfrac{16L^2}{\\pi^2(m^2-4)^2}=\\dfrac{32}{\\pi^2(m^2-4)^2}$．$P_1=\\dfrac{32}{9\\pi^2}=0.360$．\n\n(3) $P_2=1/2>P_1\\approx0.360$．最も起こりやすいのは第1励起状態 $m=2$．$\\varphi'_2$ は $0<x<L$ で $\\varphi_1$ と同じ形（節が $x=L$）だからである．$\\sum P_m=1/2+0.360+0.0130+\\cdots=1$ も確かめられる．\n\n(4) 突然の変化では直後の状態は $\\varphi_1$ のまま．エネルギー期待値は $\\langle\\varphi_1|H'|\\varphi_1\\rangle$ で，$\\varphi_1$ が存在する $0<x<L$ では $H'=H$ なので $\\sum_mP_mE'_m=E_1$．（奇数 $m$ で $P_mE'_m\\sim 8E_1/(\\pi^2m^2)$ と和はゆっくり収束するが，値は $E_1=4E'_1$ に一致する．）"
+   }
+  ],
+  "idea": {
+   "tex": "突然近似で展開係数を計算すると，新しい井戸の $m=2$ 状態が古い基底状態と同形なので確率 $1/2$ となり，基底状態より起こりやすい．期待値は和を取らずに $E_1$ と分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\varphi'_m$：sqrt(1/ L) sin ((m pi x)/(2 L)) ; $E'_m$：((m ^(2))/(4)) E_1\n(2) 記述\n(3) $m$：2\n(4) E_1"
+  },
+  "methods": [],
+  "tags": [
+   "量子力学",
+   "無限井戸",
+   "突然近似",
+   "遷移確率",
+   "固有関数展開"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "自然長が有限なばね鎖の横波と縦波の速さの比",
+  "topic": "自然長が有限なばね鎖の横波と縦波の速さの比",
+  "statement": {
+   "tex": "質量 $m$ のおもりを，ばね定数 $k$，自然長 $l$ のばねで直線状につなぎ，平衡状態でおもりが $x$ 軸上に間隔 $a$ で並ぶように両端を固定した（$a>l$ とは限らないとして考える）．重力は無視する．\n\\begin{enumerate}\n\\item $n$ 番目のおもりだけを $x$ 軸に垂直に $y$ だけずらしたとき（隣は $x$ 軸上），おもりにはたらく力の $y$ 成分を $y$ の 1 次まで求めよ．\n\\item 一般の微小な横変位 $u_n$ に対して横方向の運動方程式を書き，連続極限での横波の速さ $c_T$ を求めよ．同様に縦変位に対する縦波の速さ $c_L$ を求め，比 $c_T/c_L$ を求めよ．\n\\item $l\\to0$（「自然長ゼロのばね」）の場合と $a<l$ の場合，横振動について何がいえるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F_y=-2k\\Bigl(1-\\dfrac la\\Bigr)y$　(2) $c_T=a\\sqrt{\\dfrac km\\Bigl(1-\\dfrac la\\Bigr)}$，$c_L=a\\sqrt{k/m}$，$c_T/c_L=\\sqrt{1-l/a}$　(3) $l\\to0$ で $c_T=c_L$；$a<l$ では横方向に不安定（座屈）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 隣のおもりへの距離は $s=\\sqrt{a^2+y^2}$，ばねの張力 $k(s-l)$ は隣へ向かう．$y$ 成分は 1 本あたり $-k(s-l)\\,y/s$．2 本分で\n\\[F_y=-2k\\Bigl(1-\\frac{l}{\\sqrt{a^2+y^2}}\\Bigr)y=-2k\\Bigl(1-\\frac la\\Bigr)y+O(y^3).\\]\n平衡での張力 $T_0=k(a-l)$ を使えば $F_y=-2(T_0/a)y$．\n\n(2) 一般の変位でも 1 次までは各ばねの寄与が変位の差に比例して重ね合わさり，\n\\[m\\ddot u_n=-\\frac{T_0}{a}(u_n-u_{n-1})-\\frac{T_0}{a}(u_n-u_{n+1}),\\quad \\frac{T_0}{a}=k\\Bigl(1-\\frac la\\Bigr).\\]\n基本問題3.5と同様に連続極限をとれば $c_T^2=\\dfrac{T_0}{a}\\dfrac{a^2}{m}=\\dfrac{k(a-l)a}{m}$．縦変位では各ばねの伸びの変化がそのまま変位の差なので結合定数は $k$ で，$c_L^2=ka^2/m$．よって\n\\[\\frac{c_T}{c_L}=\\sqrt{1-\\frac la}.\\]\n横方向の結合定数は張力/間隔，縦方向はばね定数そのものという違いがある．演習問題3.2.1 の「強く引き伸ばされたばね」($a\\gg l$) はこの比が 1 に近づく極限である．\n\n(3) $l\\to0$ では $T_0/a=k$ となり横・縦の結合が等しく $c_T=c_L$（自然長ゼロのばねは等方的な調和ポテンシャル $\\tfrac12k|\\boldsymbol r|^2$ を与えるため）．$a<l$ では $T_0<0$（圧縮）で横方向の「ばね定数」が負となり，$\\omega^2<0$ のモードが現れて直線配置は不安定になる．"
+   }
+  ],
+  "idea": {
+   "tex": "横方向の有効結合定数は張力/間隔 $=k(1-l/a)$，縦方向は $k$ であり，自然長の有無で横波と縦波の速さの比が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $F_y$：-2 k (1-((l)/(a))) y\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ばね鎖",
+   "横波",
+   "縦波",
+   "線形化",
+   "張力",
+   "不安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "一様な抵抗を受ける弦の変数分離と過減衰モード",
+  "topic": "一様な抵抗を受ける弦の変数分離と過減衰モード",
+  "statement": {
+   "tex": "両端 $x=0,L$ を固定した弦が，速度に比例する一様な抵抗を受けて\n\\[\\frac{\\partial^2u}{\\partial t^2}+\\gamma\\frac{\\partial u}{\\partial t}=v^2\\frac{\\partial^2u}{\\partial x^2}\\qquad(\\gamma>0)\\]\nに従う．\n\\begin{enumerate}\n\\item $u=a(x)b(t)$ と変数分離し，分離定数を $-\\lambda$ とおいて $a,b$ の方程式を導け．$\\lambda\\le0$ では固定端条件を満たす非自明な $a$ が存在しないことを示し，$\\lambda_n$ を求めよ．\n\\item $\\gamma=5\\pi v/L$ のとき，過減衰・臨界減衰・減衰振動となるモードをそれぞれ答えよ．\n\\item (2) の条件で初期条件 $u(x,0)=h\\sin(\\pi x/L)$，$u_t(x,0)=0$ のとき $u(x,t)$ を求め，十分時間が経った後の減衰率（$u\\propto e^{-rt}$ の $r$）を $\\pi v/L$ の何倍かで答えよ．「抵抗が強いほど早く静まる」とはいえないことを，$r$ の $\\gamma$ 依存性から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a''=-\\lambda a$，$\\ddot b+\\gamma\\dot b+v^2\\lambda b=0$，$\\lambda_n=(n\\pi/L)^2$　(2) $n=1,2$ 過減衰，臨界減衰なし，$n\\ge3$ 減衰振動　(3) $r=\\bigl(\\tfrac52-\\tfrac{\\sqrt{21}}2\\bigr)\\dfrac{\\pi v}L\\approx0.209\\,\\dfrac{\\pi v}{L}$；過減衰では $r\\simeq\\omega_1^2/\\gamma$ で $\\gamma$ とともに小さくなる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 代入して両辺を $v^2ab$ で割ると $\\dfrac{\\ddot b+\\gamma\\dot b}{v^2b}=\\dfrac{a''}{a}=-\\lambda$（定数）．よって $a''=-\\lambda a$，$\\ddot b+\\gamma\\dot b+v^2\\lambda b=0$．\n$\\lambda=0$：$a=c_1+c_2x$，$a(0)=a(L)=0$ から $a\\equiv0$．$\\lambda=-\\mu^2<0$：$a=c_1\\cosh\\mu x+c_2\\sinh\\mu x$，$a(0)=0$ で $c_1=0$，$a(L)=c_2\\sinh\\mu L=0$ で $c_2=0$．よって $\\lambda=k^2>0$，$a=\\sin kx$，$\\sin kL=0$ より $k_n=n\\pi/L$，$\\lambda_n=(n\\pi/L)^2$．\n\n(2) $\\omega_n=n\\pi v/L$ として $\\ddot b+\\gamma\\dot b+\\omega_n^2b=0$．過減衰は $\\omega_n<\\gamma/2=2.5\\pi v/L$，すなわち $n<2.5$．よって $n=1,2$ が過減衰，$n=2.5$ は整数でないので臨界減衰はなく，$n\\ge3$ が減衰振動．低い（長波長の）モードほど過減衰になる．\n\n(3) $n=1$ のみが励起される．$\\omega_1=\\pi v/L$，$r_\\pm=\\dfrac\\gamma2\\pm\\sqrt{\\dfrac{\\gamma^2}4-\\omega_1^2}=\\dfrac{\\pi v}{L}\\Bigl(\\dfrac52\\pm\\dfrac{\\sqrt{21}}2\\Bigr)$．$b=C_+e^{-r_+t}+C_-e^{-r_-t}$ で $b(0)=h$，$\\dot b(0)=0$ から $C_\\pm=\\mp\\dfrac{r_\\mp h}{r_+-r_-}$，すなわち\n\\[u=\\frac{h\\sin(\\pi x/L)}{r_+-r_-}\\bigl(r_+e^{-r_-t}-r_-e^{-r_+t}\\bigr).\\]\n長時間後は遅い方 $r_-=\\bigl(\\tfrac52-\\tfrac{\\sqrt{21}}{2}\\bigr)\\pi v/L\\approx0.209\\,\\pi v/L$ で減衰する．$\\gamma\\gg\\omega_1$ では $r_-\\simeq\\omega_1^2/\\gamma$ で，抵抗を強くするほど減衰率は小さくなる（臨界減衰 $\\gamma=2\\omega_1$ で最大）．"
+   }
+  ],
+  "idea": {
+   "tex": "変数分離の分離定数の符号を境界条件で決めると，各モードは独立な減衰振動子となる．一様な抵抗では長波長モードから過減衰になり，抵抗が強すぎると逆に緩和が遅くなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変数分離",
+   "減衰振動",
+   "過減衰",
+   "固定端",
+   "電信方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "一端固定・他端ばね支持の弦の固有値方程式",
+  "topic": "一端固定・他端ばね支持の弦の固有値方程式",
+  "statement": {
+   "tex": "張力 $T$ の弦が $0\\le x\\le L$ に張られ，$u$ は $u_{xx}=u_{tt}/v^2$ に従う．$x=0$ は固定端，$x=L$ の端は質量の無視できるリングで，$x$ 軸に垂直な滑らかな棒に沿って動き，リングはばね定数 $K$ のばねで $u=0$ の位置に引き戻される．\n\\begin{enumerate}\n\\item $x=L$ での境界条件を書け．\n\\item 固有振動 $u=\\sin(kx)\\cos(\\omega t+\\delta)$ の波数 $k$ が満たす方程式を求めよ．$K\\to0$，$K\\to\\infty$ でそれぞれ固定端-自由端と固定端-固定端の結果に帰着することを示せ．\n\\item $K=T/L$ のとき，基本振動の $kL$ を有効数字 4 桁で求めよ．\n\\item 基本振動の波長がちょうど $8L/3$（すなわち $kL=3\\pi/4$）となる $K$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T\\,u_x(L,t)=-K\\,u(L,t)$　(2) $\\tan kL=-\\dfrac{Tk}{K}$；$K\\to0$：$kL=(n-\\tfrac12)\\pi$，$K\\to\\infty$：$kL=n\\pi$　(3) $kL=2.029$　(4) $K=\\dfrac{3\\pi T}{4L}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) リングは質量 0 なので，弦の張力の横成分 $-Tu_x(L)$ とばねの力 $-Ku(L)$ の和が 0：$Tu_x(L,t)+Ku(L,t)=0$．\n\n(2) 固定端 $x=0$ から $a(x)=\\sin kx$．(1) に代入して $Tk\\cos kL+K\\sin kL=0$，\n\\[\\tan kL=-\\frac{Tk}{K}.\\]\n$K\\to0$ では $\\cos kL=0$，$kL=(n-\\tfrac12)\\pi$（自由端，演習問題3.2.4）．$K\\to\\infty$ では $\\sin kL=0$，$kL=n\\pi$（固定端，基本問題3.6）．有限の $K$ では各 $kL$ は $((n-\\tfrac12)\\pi,\\,n\\pi)$ の間にあり，$K$ とともに単調に増える．\n\n(3) $K=T/L$ では $\\tan kL=-kL$．$(\\pi/2,\\pi)$ の根を数値的に求めると $kL=2.0288\\approx2.029$（$=0.6458\\pi$）．次の根は $4.913$．\n\n(4) $kL=3\\pi/4$ なら $\\tan kL=-1$ より $Tk/K=1$，$K=Tk=\\dfrac{3\\pi T}{4L}\\approx2.36\\,T/L$．"
+   }
+  ],
+  "idea": {
+   "tex": "弾性支持の端は固定端と自由端を補間する混合（ロバン）境界条件 $Tu_x+Ku=0$ を与え，波数の量子化は超越方程式 $\\tan kL=-Tk/K$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $kL$：≈2.029\n(4) $K$：((3 pi T)/(4 L))"
+  },
+  "methods": [],
+  "tags": [
+   "境界条件",
+   "ロバン条件",
+   "固定端",
+   "自由端",
+   "超越方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "弾性床上の弦：分散関係と遮断",
+  "topic": "弾性床上の弦：分散関係と遮断",
+  "statement": {
+   "tex": "張力 $T$，線密度 $\\sigma$ の弦が，単位長さあたりのばね定数 $K$ の一様な弾性床（各点の変位 $u$ に比例する復元力 $-Ku$ を単位長さあたりに及ぼす）の上に張られている．弦の変位 $u(x,t)$ は\n\\[\n\\frac{\\partial^2 u}{\\partial x^2}-\\frac{1}{v^2}\\frac{\\partial^2 u}{\\partial t^2}=\\kappa^2 u,\\qquad v=\\sqrt{\\frac T\\sigma},\\quad \\kappa=\\sqrt{\\frac KT}\n\\]\nに従う．\n\\begin{enumerate}\n\\item 正弦波 $u=A\\cos(kx-\\omega t+\\delta)$（$k,\\omega>0$）がこの方程式の解となるための $\\omega$ と $k$ の関係（分散関係）を求めよ．\n\\item 位相速度 $v_{\\rm p}=\\omega/k$ と群速度 $v_{\\rm g}=d\\omega/dk$ を求め，$v_{\\rm p}>v>v_{\\rm g}$ および $v_{\\rm p}v_{\\rm g}=v^2$ が成り立つことを示せ．\n\\item 角振動数 $\\omega$ の正弦波が伝搬できるための $\\omega$ の条件を求めよ．\n\\item $x\\ge0$ に張られた十分長い弦の端 $x=0$ を $u(0,t)=B\\cos\\omega t$ と振動させる．$\\omega$ が (3) の条件を満たさないとき，$x\\to\\infty$ で有界な定常解を求めよ．また，この場合に弦の各点の振動の位相はどうなっているか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega^2=v^2(k^2+\\kappa^2)$　(2) $v_{\\rm p}=v\\sqrt{1+\\kappa^2/k^2}$，$v_{\\rm g}=v/\\sqrt{1+\\kappa^2/k^2}$，積 $v^2$　(3) $\\omega>v\\kappa$　(4) $u=Be^{-qx}\\cos\\omega t$，$q=\\sqrt{\\kappa^2-\\omega^2/v^2}$．全点が同位相で振動し，波は進まない（エバネッセント）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_x^2u=-k^2u$，$\\partial_t^2u=-\\omega^2u$ を代入すると $-k^2+\\omega^2/v^2=\\kappa^2$．よって\n\\[\n\\omega^2=v^2(k^2+\\kappa^2),\\qquad \\omega=v\\sqrt{k^2+\\kappa^2}.\n\\]\n$\\kappa=0$ では元の分散のない関係 $\\omega=vk$ に戻る．\n\n(2) $v_{\\rm p}=\\dfrac{\\omega}{k}=v\\sqrt{1+\\kappa^2/k^2}>v$．\n\\[\nv_{\\rm g}=\\frac{d\\omega}{dk}=\\frac{vk}{\\sqrt{k^2+\\kappa^2}}=\\frac{v}{\\sqrt{1+\\kappa^2/k^2}}<v.\n\\]\n積は $v_{\\rm p}v_{\\rm g}=v\\sqrt{k^2+\\kappa^2}/k\\cdot vk/\\sqrt{k^2+\\kappa^2}=v^2$．位相速度が $k$ に依存するので，異なる波数の成分は異なる速さで進み，波形は崩れる（分散がある）．\n\n(3) 実数の $k$ が存在するには $k^2=\\omega^2/v^2-\\kappa^2>0$，すなわち $\\omega>v\\kappa=\\sqrt{K/\\sigma}$．これは弦の各点がばねだけで単振動するときの角振動数で，遮断角振動数となる．\n\n(4) $\\omega<v\\kappa$ のとき $u=X(x)\\cos\\omega t$ とおくと $X''=(\\kappa^2-\\omega^2/v^2)X=q^2X$．$x\\to\\infty$ で有界なのは $X=Be^{-qx}$ のみなので\n\\[\nu(x,t)=Be^{-qx}\\cos\\omega t,\\qquad q=\\sqrt{\\kappa^2-\\frac{\\omega^2}{v^2}}.\n\\]\nすべての点が同じ位相 $\\omega t$ で振動し，振幅が指数関数的に減衰するだけで，波は伝わらない．時間平均のエネルギー流 $\\langle -T u_xu_t\\rangle\\propto\\langle\\cos\\omega t\\sin\\omega t\\rangle=0$ で，エネルギーも運ばれない．"
+   }
+  ],
+  "idea": {
+   "tex": "正弦波を代入して分散関係を求める操作は同じだが，$\\kappa^2u$ 項が分散と遮断を生む．位相速度は光速ならぬ $v$ を超え，群速度と $v_{\\rm p}v_{\\rm g}=v^2$ の関係にある（クライン–ゴルドン型）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) ω>vκ\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "分散関係",
+   "位相速度",
+   "群速度",
+   "遮断振動数",
+   "エバネッセント波",
+   "クライン-ゴルドン方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "無歪み線路：減衰しても形が崩れない波",
+  "topic": "無歪み線路：減衰しても形が崩れない波",
+  "statement": {
+   "tex": "弦の変位 $u(x,t)$ が，減衰項を含む方程式\n\\[\n\\frac{\\partial^2u}{\\partial t^2}+2\\gamma\\frac{\\partial u}{\\partial t}+\\gamma^2u=v^2\\frac{\\partial^2u}{\\partial x^2}\\qquad(\\gamma>0)\n\\]\nに従うとする（速度に比例する抵抗と，それにつり合うように調整された復元力がはたらく状況．電信方程式の「無歪み条件」に相当）．\n\\begin{enumerate}\n\\item $u=e^{-\\gamma t}w(x,t)$ とおくと，$w$ は通常の波動方程式 $w_{tt}=v^2w_{xx}$ に従うことを示せ．\n\\item これを用いて一般解を書き，$t=0$ に $x=0$ 付近にあった右向きのパルス $u(x,0)=F(x)$ が，時刻 $t$ にどのような形になっているか答えよ．\n\\item $u=e^{i(kx-\\omega t)}$ を代入して複素角振動数 $\\omega(k)$ を求め，${\\rm Re}\\,\\omega$ が $k$ に比例すること（分散がないこと）を確かめよ．\n\\item 復元力の項 $\\gamma^2u$ がない方程式 $u_{tt}+2\\gamma u_t=v^2u_{xx}$ では $\\omega(k)$ はどうなるか．波数 $k$ の成分が振動しながら減衰するための条件と，そのときの位相速度を求め，パルスの形が崩れる理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（代入で $\\gamma$ の項が相殺）　(2) $u=e^{-\\gamma t}[f(x-vt)+g(x+vt)]$，パルスは $e^{-\\gamma t}F(x-vt)$（形を保ち一様に減衰）　(3) $\\omega=\\pm vk-i\\gamma$　(4) $\\omega=-i\\gamma\\pm\\sqrt{v^2k^2-\\gamma^2}$；$k>\\gamma/v$ のとき振動，$v_{\\rm p}=\\sqrt{v^2-\\gamma^2/k^2}$（$k$ 依存）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=e^{-\\gamma t}w$ より\n\\[\nu_t=e^{-\\gamma t}(w_t-\\gamma w),\\qquad u_{tt}=e^{-\\gamma t}(w_{tt}-2\\gamma w_t+\\gamma^2w).\n\\]\n左辺 $=e^{-\\gamma t}\\{w_{tt}-2\\gamma w_t+\\gamma^2w+2\\gamma w_t-2\\gamma^2w+\\gamma^2w\\}=e^{-\\gamma t}w_{tt}$．右辺 $=e^{-\\gamma t}v^2w_{xx}$ なので $w_{tt}=v^2w_{xx}$．\n\n(2) $w$ はダランベールの解 $f(x-vt)+g(x+vt)$ で書けるので\n\\[\nu(x,t)=e^{-\\gamma t}\\{f(x-vt)+g(x+vt)\\}.\n\\]\n右向きのパルスなら $g=0$，$t=0$ で $f=F$．よって $u(x,t)=e^{-\\gamma t}F(x-vt)$：形をまったく変えずに速さ $v$ で進み，高さだけが一様に $e^{-\\gamma t}$ 倍になる．\n\n(3) $u_t=-i\\omega u$，$u_{tt}=-\\omega^2u$，$u_{xx}=-k^2u$ を代入すると $-\\omega^2-2i\\gamma\\omega+\\gamma^2=-v^2k^2$，すなわち $(\\omega+i\\gamma)^2=v^2k^2$．\n\\[\n\\omega=\\pm vk-i\\gamma.\n\\]\n${\\rm Re}\\,\\omega=\\pm vk$ は $k$ に比例し，減衰率 $\\gamma$ はどの $k$ でも共通．だから全成分が同じ速さで進み同じ割合で減衰し，形が崩れない．\n\n(4) $-\\omega^2-2i\\gamma\\omega=-v^2k^2$ より $(\\omega+i\\gamma)^2=v^2k^2-\\gamma^2$，\n\\[\n\\omega=-i\\gamma\\pm\\sqrt{v^2k^2-\\gamma^2}.\n\\]\n振動しながら減衰するのは $k>\\gamma/v$ のときで，位相速度は $v_{\\rm p}=\\sqrt{v^2-\\gamma^2/k^2}$．これは $k$ に依存し（長波長ほど遅い），$k<\\gamma/v$ の成分は振動せずに過減衰する．成分ごとに速さが異なるので，パルスは崩れ，後ろに尾を引く．"
+   }
+  ],
+  "idea": {
+   "tex": "$e^{-\\gamma t}$ をくくり出すと波動方程式に帰着し，ダランベール解がそのまま使える．$\\gamma^2u$ 項の有無で分散が消えたり現れたりする（ヘヴィサイドの無歪み条件）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ダランベールの解",
+   "減衰波",
+   "電信方程式",
+   "無歪み条件",
+   "分散関係"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "エネルギー流と定在波のエネルギーの往復",
+  "topic": "エネルギー流と定在波のエネルギーの往復",
+  "statement": {
+   "tex": "張力 $T$，線密度 $\\sigma$（$v^2=T/\\sigma$）の弦のエネルギー密度は $E=\\dfrac12\\sigma\\left(u_t^2+v^2u_x^2\\right)$ である．エネルギー流（単位時間に点 $x$ を $x$ 軸正の向きに通過するエネルギー）を $S=-Tu_xu_t$ とする．\n\\begin{enumerate}\n\\item 波動方程式を用いて，連続の式 $\\dfrac{\\partial E}{\\partial t}+\\dfrac{\\partial S}{\\partial x}=0$ を示せ．\n\\item 右向きの任意の波 $u=f(x-vt)$ では $S=vE$ が各点・各時刻で成り立つことを示せ．\n\\item $u=A\\cos(kx-\\omega t)+B\\cos(kx+\\omega t)$（$\\omega=vk$）について，$S$ の時間平均を求めよ．\n\\item $A=B$ の定在波 $u=2A\\cos kx\\cos\\omega t$ について，$t=0$ と $t=\\pi/(2\\omega)$ でエネルギー密度が最大となる位置をそれぞれ答えよ．また 1 波長あたりの全エネルギーが時間によらないことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略　(2) 略　(3) $\\langle S\\rangle=\\frac12\\sigma v\\omega^2(A^2-B^2)$　(4) $t=0$：節（$\\cos kx=0$），$t=\\pi/2\\omega$：腹（$\\sin kx=0$）．1波長あたり $\\sigma A^2\\omega^2\\lambda$ で一定"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_tE=\\sigma(u_tu_{tt}+v^2u_xu_{xt})$，$\\partial_xS=-T(u_{xx}u_t+u_xu_{xt})$．$T=\\sigma v^2$ と $u_{tt}=v^2u_{xx}$ を用いると\n\\[\n\\partial_tE+\\partial_xS=\\sigma v^2(u_tu_{xx}+u_xu_{xt})-\\sigma v^2(u_{xx}u_t+u_xu_{xt})=0.\n\\]\n\n(2) $u_x=f'$，$u_t=-vf'$ より $E=\\frac12\\sigma(v^2f'^2+v^2f'^2)=\\sigma v^2f'^2$，$S=-\\sigma v^2f'(-vf')=\\sigma v^3f'^2=vE$．エネルギーが波形と一緒に速さ $v$ で運ばれる．\n\n(3) $\\theta_\\pm=kx\\mp\\omega t$ として $u_x=-Ak\\sin\\theta_+-Bk\\sin\\theta_-$，$u_t=A\\omega\\sin\\theta_+-B\\omega\\sin\\theta_-$．\n\\[\nS=-Tu_xu_t=Tk\\omega\\,(A\\sin\\theta_++B\\sin\\theta_-)(A\\sin\\theta_+-B\\sin\\theta_-)=\\sigma v^2k\\omega\\left(A^2\\sin^2\\theta_+-B^2\\sin^2\\theta_-\\right)\n\\]\nとなり，交差項は打ち消し合う．時間平均 $\\langle\\sin^2\\rangle=\\frac12$ と $v^2k=v\\omega$ より\n\\[\n\\langle S\\rangle=\\frac12\\sigma v\\omega^2(A^2-B^2).\n\\]\n右向き・左向きの波はエネルギーを独立に運び，正味の流れはその差になる．\n\n(4) $u_t=-2A\\omega\\cos kx\\sin\\omega t$，$u_x=-2Ak\\sin kx\\cos\\omega t$ より\n\\[\nE=2\\sigma A^2\\omega^2\\left(\\cos^2kx\\sin^2\\omega t+\\sin^2kx\\cos^2\\omega t\\right).\n\\]\n$t=0$ では $E\\propto\\sin^2kx$（すべて位置エネルギー）で最大は節 $\\cos kx=0$．$t=\\pi/2\\omega$ では $E\\propto\\cos^2kx$（すべて運動エネルギー）で最大は腹 $\\sin kx=0$．1 波長での積分は $\\int_0^\\lambda\\cos^2kx\\,dx=\\int_0^\\lambda\\sin^2kx\\,dx=\\lambda/2$ より $2\\sigma A^2\\omega^2\\cdot\\frac\\lambda2(\\sin^2\\omega t+\\cos^2\\omega t)=\\sigma A^2\\omega^2\\lambda$ で一定．定在波でもエネルギーは静止しておらず，$S=-\\sigma vA^2\\omega^2\\sin2kx\\sin2\\omega t$ によって節と腹の間を 1/4 波長だけ往復している（平均流は (3) の $A=B$ として $0$）．"
+   }
+  ],
+  "idea": {
+   "tex": "エネルギー密度にエネルギー流を組み合わせて連続の式を作ると，進行波では $S=vE$，逆向きの 2 波では流れが $A^2-B^2$ に比例，定在波ではエネルギーが節と腹の間を往復することが分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 証明\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "波のエネルギー",
+   "エネルギー流",
+   "連続の式",
+   "定在波",
+   "ポインティングベクトル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "打撃された弦の永久変位",
+  "topic": "打撃された弦の永久変位",
+  "statement": {
+   "tex": "無限に長い弦（波の速さ $v$）が $t=0$ で $u(x,0)=0$ にあり，$|x|\\le a$ の部分をハンマーで叩いて初速度\n\\[\n\\left.\\frac{\\partial u}{\\partial t}\\right|_{t=0}=v_0(x)=\\begin{cases}-U\\left(1-\\dfrac{x^2}{a^2}\\right)&(|x|\\le a)\\\\  0&(|x|>a)\\end{cases}\\qquad(U>0)\n\\]\nを与えた．\n\\begin{enumerate}\n\\item 一般の初期条件 $u(x,0)=u_0(x)$，$u_t(x,0)=v_0(x)$ に対する解をダランベールの解 $f(x-vt)+g(x+vt)$ から導け．\n\\item 中央の点の変位 $u(0,t)$ を $t\\ge0$ のすべてで求めよ．\n\\item 十分時間がたつと，任意の固定した $x$ で弦は元の位置に戻らず，一定の変位にとどまる．その値を求め，このとき弦の形がどうなっているか説明せよ．\n\\item 初期形 $u_0(x)$ を与えるとき，右向きの波だけが生じるような初速度 $v_0(x)$ を $u_0$ を用いて表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=\\dfrac{u_0(x-vt)+u_0(x+vt)}{2}+\\dfrac1{2v}\\displaystyle\\int_{x-vt}^{x+vt}v_0(s)ds$　(2) $0\\le t\\le a/v$：$u(0,t)=-Ut+\\dfrac{Uv^2t^3}{3a^2}$，$t\\ge a/v$：$-\\dfrac{2Ua}{3v}$　(3) $-\\dfrac{2Ua}{3v}$．幅が $2vt$ で広がり続ける台地状　(4) $v_0=-vu_0'$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f(x)+g(x)=u_0(x)$，$-vf'(x)+vg'(x)=v_0(x)$．後者を積分して $-f+g=\\frac1v\\int_0^xv_0\\,ds+C$．よって\n\\[\nf(x)=\\frac{u_0}{2}-\\frac1{2v}\\int_0^xv_0ds-\\frac C2,\\qquad g(x)=\\frac{u_0}{2}+\\frac1{2v}\\int_0^xv_0ds+\\frac C2,\n\\]\n\\[\nu(x,t)=\\frac{u_0(x-vt)+u_0(x+vt)}{2}+\\frac1{2v}\\int_{x-vt}^{x+vt}v_0(s)\\,ds.\n\\]\n\n(2) $u_0=0$ なので $u(0,t)=\\dfrac1{2v}\\int_{-vt}^{vt}v_0ds$．$vt\\le a$ では\n\\[\nu(0,t)=-\\frac{U}{2v}\\left[2vt-\\frac{2(vt)^3}{3a^2}\\right]=-Ut+\\frac{Uv^2t^3}{3a^2}.\n\\]\n$vt\\ge a$ では積分区間が $[-a,a]$ を含むので $u(0,t)=-\\dfrac{U}{2v}\\cdot\\dfrac{4a}{3}=-\\dfrac{2Ua}{3v}$ で一定．$t=a/v$ で両式は一致し，速度 $-U(1-v^2t^2/a^2)$ も $0$ になる．\n\n(3) 固定した $x$ で $vt>|x|+a$ となれば積分区間が $[-a,a]$ を含み，$u=\\dfrac{1}{2v}\\int_{-a}^av_0ds=-\\dfrac{2Ua}{3v}$．弦は $|x|<vt-a$ の範囲で高さ $-2Ua/(3v)$ の平らな台地となり，その両端の傾斜部（幅 $2a$）が速さ $v$ で左右に遠ざかる．台地は静止しているのでエネルギーをもたず，エネルギーはすべて両端の傾斜部が運ぶ．与えた運動量（$\\sigma\\int v_0dx$）が弦全体の永久変位として残る．\n\n(4) 左向き成分 $g$ がなくなる条件は $g'=0$，すなわち $u_0'+v_0/v=0$．よって $v_0(x)=-v\\,u_0'(x)$（このとき $u=u_0(x-vt)$）．"
+   }
+  ],
+  "idea": {
+   "tex": "ダランベールの公式の速度項 $\\frac1{2v}\\int v_0$ は，初速度の総量に比例する永久変位（広がる台地）を残す．変位で与えた初期条件は戻るが，打撃では戻らない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ダランベールの公式",
+   "初期値問題",
+   "打撃された弦",
+   "永久変位"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ダンパー付きの端：無反射終端",
+  "topic": "ダンパー付きの端：無反射終端",
+  "statement": {
+   "tex": "$x\\le0$ に張られた半無限の弦（張力 $T$，線密度 $\\sigma$，$v=\\sqrt{T/\\sigma}$）の端 $x=0$ が，質量の無視できるリングで鉛直な棒に通されており，リングは棒に沿って（$u$ 方向に）なめらかに動けるが，速度に比例する抵抗力 $-b\\,u_t(0,t)$（$b>0$）を受ける．弦の変位は $u=f(x-vt)+g(x+vt)$ と書ける．\n\\begin{enumerate}\n\\item リングにはたらく力のつり合いから，$x=0$ での境界条件を書け．\n\\item $g(s)$ を $f$ を用いて $g(s)=Rf(-s)$ の形で表し，$R$ を $T,v,b$（または $Z=\\sigma v$）で表せ．$b\\to0$ と $b\\to\\infty$ の極限を確かめよ．\n\\item 反射波がまったく生じない $b$ の値を求め，その物理的意味を述べよ．\n\\item 入射したパルスのエネルギーのうちダンパーで失われる割合を求め，それが $b$ のどの値で最大になるか答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T u_x(0,t)+b\\,u_t(0,t)=0$　(2) $R=\\dfrac{Z-b}{Z+b}$，$Z=\\sigma v=T/v$．$b\\to0$ で $R=1$（自由端），$b\\to\\infty$ で $R=-1$（固定端）　(3) $b=Z=\\sqrt{T\\sigma}$　(4) $1-R^2=\\dfrac{4Zb}{(Z+b)^2}$，$b=Z$ で最大値 $1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 弦がリングに及ぼす横向きの力は $-Tu_x(0,t)$（弦は $x<0$ 側にある）．質量が $0$ なので力の和が $0$：\n\\[\n-Tu_x(0,t)-b\\,u_t(0,t)=0.\n\\]\n\n(2) $u_x=f'(-vt)+g'(vt)$，$u_t=-vf'(-vt)+vg'(vt)$ を代入すると\n\\[\nT\\{f'(-vt)+g'(vt)\\}+bv\\{g'(vt)-f'(-vt)\\}=0\\ \\Longrightarrow\\ g'(s)=-\\frac{T-bv}{T+bv}f'(-s).\n\\]\n積分して（定数は入射前に $u=0$ であることから $0$）$g(s)=Rf(-s)$，\n\\[\nR=\\frac{T-bv}{T+bv}=\\frac{Z-b}{Z+b},\\qquad Z=\\frac Tv=\\sigma v=\\sqrt{T\\sigma}.\n\\]\n$b\\to0$ で $R=1$，すなわち自由端の $g(s)=f(-s)$．$b\\to\\infty$ で $R=-1$，固定端の $g(s)=-f(-s)$ に一致する．\n\n(3) $R=0$ となるのは $b=Z=\\sqrt{T\\sigma}$．もし $x>0$ にも同じ弦が無限に続いていれば，そこには右向きの波 $h(x-vt)$ だけがあり $u_x=-u_t/v$ なので，右側の弦がこの点に及ぼす力は $Tu_x(0^+)=-\\frac Tv u_t=-Zu_t$ である．$b=Z$ のダンパーはこれとまったく同じ力を与える．端が「無限に続く弦」を完全に模倣するので反射が起こらない（インピーダンス整合）．\n\n(4) 反射波の全エネルギーは $\\sigma v^2\\int g'^2ds=R^2\\times$（入射エネルギー）．失われる割合は\n\\[\n1-R^2=\\frac{(Z+b)^2-(Z-b)^2}{(Z+b)^2}=\\frac{4Zb}{(Z+b)^2}.\n\\]\n相加相乗平均より $(Z+b)^2\\ge4Zb$ で，等号は $b=Z$．このとき入射エネルギーがすべて吸収される．"
+   }
+  ],
+  "idea": {
+   "tex": "自由端・固定端は，ダンパー付き端の $b\\to0,\\infty$ の極限．反射係数は $(Z-b)/(Z+b)$ で，$b$ を弦の特性インピーダンスに合わせると反射が消える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $b$：sqrt(Tσ) ; $Z$：sqrt(Tσ)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "自由端反射",
+   "固定端反射",
+   "境界条件",
+   "インピーダンス整合",
+   "無反射終端",
+   "エネルギー吸収"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "斜めに交わる2平面波の干渉縞とその移動",
+  "topic": "斜めに交わる2平面波の干渉縞とその移動",
+  "statement": {
+   "tex": "2 次元系の $x<0$ の領域から，2 つの平面波\n\\[\nu_1=A\\cos(\\boldsymbol k_1\\cdot\\boldsymbol r-\\omega_1t),\\qquad u_2=A\\cos(\\boldsymbol k_2\\cdot\\boldsymbol r-\\omega_2t)\n\\]\nを入射させる．$|\\boldsymbol k_n|=\\omega_n/v$ で，$\\boldsymbol k_1$ は $x$ 軸から $+\\alpha$，$\\boldsymbol k_2$ は $-\\beta$ の向き（$0<\\alpha,\\beta<\\pi/2$）である．直線 $x=0$ 上（スクリーン）で $u_1+u_2$ を観測する．\n\\begin{enumerate}\n\\item $\\omega_1=\\omega_2=\\omega$（$k=\\omega/v$）のとき，$x=0$ 上で常に $u=0$ となる点の $y$ 座標と，その間隔 $D$ を求めよ．\n\\item $\\omega_2=\\omega_1+\\Delta\\omega$（$\\Delta\\omega>0$）とすると，(1) の節は $y$ 方向に動く．その速度を求めよ．\n\\item $v=340\\ \\mathrm{m/s}$，$\\alpha=\\beta=30^\\circ$，振動数 $f_1=1000\\ \\mathrm{Hz}$，$f_2=1002\\ \\mathrm{Hz}$ のとき，(1) の間隔（$f_1$ で計算）と (2) の節の速さを数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $y=\\dfrac{(2n+1)\\pi}{k(\\sin\\alpha+\\sin\\beta)}$，$D=\\dfrac{2\\pi}{k(\\sin\\alpha+\\sin\\beta)}$　(2) $-\\dfrac{\\Delta\\omega}{k_1\\sin\\alpha+k_2\\sin\\beta}$（$-y$ 向き）　(3) $D=0.34\\ \\mathrm m$，速さ $\\simeq0.68\\ \\mathrm{m/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\boldsymbol k_1=k_1(\\cos\\alpha,\\sin\\alpha)$，$\\boldsymbol k_2=k_2(\\cos\\beta,-\\sin\\beta)$．$x=0$ 上では $a=k_1\\sin\\alpha$，$b=k_2\\sin\\beta$ として\n\\[\nu=A\\cos(ay-\\omega_1t)+A\\cos(-by-\\omega_2t)=2A\\cos\\frac{(a+b)y+(\\omega_2-\\omega_1)t}{2}\\cos\\frac{(a-b)y-(\\omega_1+\\omega_2)t}{2}.\n\\]\n(1) $\\omega_1=\\omega_2$ では第 1 因子が時間によらず，$(a+b)y/2=(n+\\frac12)\\pi$ で常に $u=0$：\n\\[\ny=\\frac{(2n+1)\\pi}{k(\\sin\\alpha+\\sin\\beta)},\\qquad D=\\frac{2\\pi}{k(\\sin\\alpha+\\sin\\beta)}=\\frac{\\lambda}{\\sin\\alpha+\\sin\\beta}.\n\\]\n（第 2 因子による零点は時間とともに動くので常に $0$ にはならない．）$\\alpha=\\beta=\\pi/4$ なら $D=\\sqrt2\\pi/k$ で元問題に一致．\n\n(2) 第 1 因子の零点は $(a+b)y+\\Delta\\omega\\,t=(2n+1)\\pi$，よって $\\dot y=-\\dfrac{\\Delta\\omega}{a+b}=-\\dfrac{\\Delta\\omega}{k_1\\sin\\alpha+k_2\\sin\\beta}$．縞は $-y$ 向き（$\\boldsymbol k_2$ の $y$ 成分の向き）に流れ，スクリーン上の固定点では振動数 $\\Delta\\omega/2\\pi$ のうなりとして観測される．\n\n(3) $\\lambda=0.34\\ \\mathrm m$，$\\sin\\alpha+\\sin\\beta=1$ より $D=0.34\\ \\mathrm m$．速さは $\\dfrac{2\\pi\\cdot2}{(k_1+k_2)/2}\\simeq\\Delta f\\,\\lambda=0.68\\ \\mathrm{m/s}$（厳密には $0.6793\\ \\mathrm{m/s}$）．"
+   }
+  ],
+  "idea": {
+   "tex": "スクリーン上では各平面波の $y$ 方向波数 $k\\sin\\theta$ だけが効き，縞間隔は $\\lambda/(\\sin\\alpha+\\sin\\beta)$．振動数がわずかに違うと縞は $\\Delta f\\cdot D$ 程度の速さで流れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $y$：(((2 n +1) pi)/(k (sin α + sin β))) ; $D$：((2 pi)/(k (sin α + sin β)))\n(2) -((Δ ω)/(k_1 sin α + k_2 sin β))\n(3) $D$ [m]：≈0.34 ; 速さ [m/s]：≈0.68"
+  },
+  "methods": [],
+  "tags": [
+   "平面波",
+   "干渉縞",
+   "うなり",
+   "波数ベクトル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "複素単位ベクトルの平面波とエバネッセント波",
+  "topic": "複素単位ベクトルの平面波とエバネッセント波",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item $\\boldsymbol n=(n_1,n_2,n_3)$ を定ベクトルとし，$u=f(\\boldsymbol n\\cdot\\boldsymbol r-vt)$ が 3 次元波動方程式を任意の $f$ に対して満たすための $\\boldsymbol n$ の条件を求めよ．\n\\item この条件は $\\boldsymbol n$ が複素ベクトルでも（$f$ を指数関数にとれば）そのまま使える．$\\boldsymbol n=(\\cosh\\eta,\\ i\\sinh\\eta,\\ 0)$（$\\eta>0$）が条件を満たすことを確かめ，$u=\\mathrm{Re}\\,\\exp\\!\\left[\\dfrac{i\\omega}{v}(\\boldsymbol n\\cdot\\boldsymbol r-vt)\\right]$ を実関数で書け．\n\\item 2 次元波動方程式の解 $u=e^{-\\kappa y}\\cos(kx-\\omega t)$（$\\kappa>0$）について，$k,\\kappa,\\omega$ の関係を求め，$x$ 方向の位相速度が $v$ より小さいことを示せ．\n\\item 屈折率の大きい媒質から境界面 $y=0$ に入射角 $\\theta$ で入射した波（入射側の速さ $v_1$）が全反射するとき，$y>0$（速さ $v_2>v_1$）にしみ出す波の減衰長 $1/\\kappa$ を $\\omega,v_1,v_2,\\theta$ で表せ．境界に沿った位相速度 $v_1/\\sin\\theta$ は保存するものとする．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol n\\cdot\\boldsymbol n=n_1^2+n_2^2+n_3^2=1$　(2) $u=e^{-(\\omega/v)\\sinh\\eta\\,y}\\cos\\!\\left(\\dfrac{\\omega}{v}\\cosh\\eta\\,x-\\omega t\\right)$　(3) $k^2-\\kappa^2=\\omega^2/v^2$，$\\omega/k=v/\\sqrt{1+\\kappa^2/k^2}<v$　(4) $\\dfrac1\\kappa=\\dfrac{1}{\\omega\\sqrt{\\sin^2\\theta/v_1^2-1/v_2^2}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $s=\\boldsymbol n\\cdot\\boldsymbol r-vt$ とおくと $\\partial^2u/\\partial x_i^2=n_i^2f''(s)$，$\\partial^2u/\\partial t^2=v^2f''(s)$．よって\n\\[\n\\nabla^2u-\\frac1{v^2}\\frac{\\partial^2u}{\\partial t^2}=(n_1^2+n_2^2+n_3^2-1)f''(s)\n\\]\nが任意の $f$ で $0$ となる条件は $\\boldsymbol n\\cdot\\boldsymbol n=1$（$|\\boldsymbol n|=1$ ではなく，複素共役をとらない内積）．これで演習問題 4.3.2 の $f+g$ も同様に解となる．\n\n(2) $\\cosh^2\\eta+(i\\sinh\\eta)^2=\\cosh^2\\eta-\\sinh^2\\eta=1$．\n\\[\n\\exp\\!\\left[\\frac{i\\omega}{v}(x\\cosh\\eta+iy\\sinh\\eta)-i\\omega t\\right]=e^{-(\\omega/v)\\sinh\\eta\\,y}e^{i[(\\omega/v)\\cosh\\eta\\,x-\\omega t]}\n\\]\nの実部をとって $u=e^{-(\\omega/v)\\sinh\\eta\\,y}\\cos\\left(\\frac\\omega v\\cosh\\eta\\,x-\\omega t\\right)$．\n\n(3) 代入すると $(-k^2+\\kappa^2+\\omega^2/v^2)u=0$ より $k^2-\\kappa^2=\\omega^2/v^2$．$k=(\\omega/v)\\cosh\\eta$，$\\kappa=(\\omega/v)\\sinh\\eta$ と同じ形で，$x$ 方向の位相速度 $\\omega/k=v/\\cosh\\eta=v/\\sqrt{1+\\kappa^2/k^2}<v$．$y$ 方向へは減衰し，等位相面（$x=$ 一定の線）と等振幅面（$y=$ 一定）が直交する「非一様平面波」である．\n\n(4) 境界に沿う波数は $k=\\omega\\sin\\theta/v_1$ で $y>0$ でも共通．$y>0$ では (3) より $\\kappa^2=k^2-\\omega^2/v_2^2=\\omega^2(\\sin^2\\theta/v_1^2-1/v_2^2)$．全反射条件 $\\sin\\theta>v_1/v_2$ のとき正で，\n\\[\n\\frac1\\kappa=\\frac{1}{\\omega\\sqrt{\\sin^2\\theta/v_1^2-1/v_2^2}}.\n\\]"
+   }
+  ],
+  "idea": {
+   "tex": "$f(\\boldsymbol n\\cdot\\boldsymbol r-vt)$ が解となる条件は $|\\boldsymbol n|=1$ ではなく $\\boldsymbol n\\cdot\\boldsymbol n=1$．複素 $\\boldsymbol n$ を許すと全反射のしみ出し（エバネッセント波）が同じ枠組みで得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $u$：e^(-(ω/v) sinh ηy) cos ((ω/v) cosh ηx-ω t)\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平面波",
+   "一般解",
+   "エバネッセント波",
+   "全反射",
+   "複素波数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "3点の位相差から波の方向と速さを決める",
+  "topic": "3点の位相差から波の方向と速さを決める",
+  "statement": {
+   "tex": "一様な媒質中を，振動数 $f=500\\ \\mathrm{Hz}$ の平面調和波が未知の方向に伝わっている．原点 O と，O から各座標軸の正の向きに $d=0.20\\ \\mathrm m$ 離れた3点 $X(d,0,0)$，$Y(0,d,0)$，$Z(0,0,d)$ にセンサーを置いたところ，X，Y，Z での振動は O の振動よりそれぞれ $1.20\\ \\mathrm{rad}$，$1.20\\ \\mathrm{rad}$，$0.90\\ \\mathrm{rad}$ だけ位相が遅れていた．\n\\begin{enumerate}\n\\item 2点 $\\boldsymbol r_1,\\boldsymbol r_2$ の振動の位相差を，波数ベクトル $\\boldsymbol k$ を用いて表せ．\n\\item 波数ベクトル，波の伝わる向きの方向余弦，波長，位相速度を求めよ．\n\\item 測定した位相差が $2\\pi$ の不定性なしに使えるためには，$d$ と波長 $\\lambda$ の間にどのような条件があればよいか（十分条件を1つ述べよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta\\varphi=\\boldsymbol k\\cdot(\\boldsymbol r_2-\\boldsymbol r_1)$　(2) $\\boldsymbol k=(6.0,\\ 6.0,\\ 4.5)\\ \\mathrm{m^{-1}}$，方向余弦 $(0.625,\\ 0.625,\\ 0.469)$，$\\lambda\\approx0.65\\ \\mathrm m$，$v\\approx3.3\\times10^2\\ \\mathrm{m/s}$　(3) 例えば $d<\\lambda/2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 波は $\\xi=a\\cos(\\omega t-\\boldsymbol k\\cdot\\boldsymbol r)$ と書けるので，$\\boldsymbol r_2$ の振動は $\\boldsymbol r_1$ より $\\Delta\\varphi=\\boldsymbol k\\cdot(\\boldsymbol r_2-\\boldsymbol r_1)$ だけ遅れる．$\\boldsymbol k=(\\omega/v)(\\cos\\alpha,\\cos\\beta,\\cos\\gamma)$ と書けば $\\Delta\\varphi=\\frac\\omega v|(x_2-x_1)\\cos\\alpha+(y_2-y_1)\\cos\\beta+(z_2-z_1)\\cos\\gamma|$．\n\n(2) X での遅れ $=k_xd$ などから\n\\[ \\boldsymbol k=\\frac{1}{0.20}(1.20,\\,1.20,\\,0.90)=(6.0,\\,6.0,\\,4.5)\\ \\mathrm{m^{-1}},\\quad k=\\sqrt{92.25}=9.60\\ \\mathrm{m^{-1}} . \\]\n方向余弦は $\\boldsymbol k/k=(0.625,0.625,0.469)$（軸となす角 $51^\\circ,51^\\circ,62^\\circ$）．$\\lambda=2\\pi/k=0.654\\ \\mathrm m$，$v=\\omega/k=2\\pi\\times500/9.60=327\\ \\mathrm{m/s}$．\n\n(3) 各軸方向の位相差の大きさは $|k_i|d\\le kd$ だから，$kd<\\pi$，すなわち $d<\\lambda/2$ なら位相差は $(-\\pi,\\pi)$ に収まり一意に決まる．本問では $d/\\lambda=0.31$ で条件を満たす．"
+   }
+  ],
+  "idea": {
+   "tex": "平面波の位相差は $\\boldsymbol k\\cdot\\Delta\\boldsymbol r$．直交3方向の位相差を測れば $\\boldsymbol k$ の成分がそのまま得られ，方向と速さが決まる（センサーアレイによる到来方向推定）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平面波",
+   "波数ベクトル",
+   "位相差",
+   "方向余弦",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-048",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "斜めに動く観測者から見た平面波",
+  "topic": "斜めに動く観測者から見た平面波",
+  "statement": {
+   "tex": "媒質 K 中を平面波 $\\xi=a\\cos(\\omega t-kx)$（位相速度 $v=\\omega/k$）が伝わる．観測者の系 K$'$ は K に対して，$xy$ 面内で $x$ 軸と角 $\\theta$ をなす向きに一定の速さ $V$ で動く（ガリレイ変換，$\\boldsymbol r=\\boldsymbol r'+\\boldsymbol Vt$）．\n\\begin{enumerate}\n\\item K$'$ での波の式を求め，K$'$ で観測される角周波数 $\\omega'$ と波長を求めよ．\n\\item K$'$ で測った $x'$ 方向の位相速度を求めよ．$V\\cos\\theta>v$ のとき何が起こるか．\n\\item $v=340\\ \\mathrm{m/s}$，$V=250\\ \\mathrm{m/s}$ のとき，観測される振動数がもとの半分になる $\\theta$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\xi=a\\cos\\left[\\left(1-\\dfrac{V\\cos\\theta}{v}\\right)\\omega t-kx'\\right]$，$\\omega'=\\omega(1-V\\cos\\theta/v)$，波長は不変　(2) $v-V\\cos\\theta$；$\\omega'<0$ となり，波は $-x'$ 方向に進むように見える　(3) $\\theta\\approx47^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=x'+Vt\\cos\\theta$ を代入して\n\\[ \\xi=a\\cos\\left[(\\omega-kV\\cos\\theta)t-kx'\\right]=a\\cos\\left[\\left(1-\\frac{V\\cos\\theta}{v}\\right)\\omega t-kx'\\right] . \\]\n$\\omega'=\\omega-\\boldsymbol k\\cdot\\boldsymbol V=\\omega(1-V\\cos\\theta/v)$（観測者の運動によるドップラー効果）．$k$ は変わらないので波長は不変．\n\n(2) $\\omega't-kx'=\\text{一定}$ より $v'=\\omega'/k=v-V\\cos\\theta$．$V\\cos\\theta>v$ なら $\\omega'<0$，すなわち観測者は波を追い越し，K$'$ では波が $-x'$ 方向に進むように見える（$\\omega'=0$ なら波形は静止して見える）．\n\n(3) $\\omega'=\\omega/2\\iff V\\cos\\theta/v=1/2$，$\\cos\\theta=340/500=0.68$，$\\theta=47^\\circ$．"
+   }
+  ],
+  "idea": {
+   "tex": "ガリレイ変換で波数は不変，角周波数は $\\omega'=\\omega-\\boldsymbol k\\cdot\\boldsymbol V$ だけ変わる．効くのは速度の波の進行方向成分のみ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\theta$ [°]：≈47"
+  },
+  "methods": [],
+  "tags": [
+   "平面波",
+   "ガリレイ変換",
+   "ドップラー効果",
+   "位相速度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-049",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "球面進行波の解になりうる振幅の距離依存性",
+  "topic": "球面進行波の解になりうる振幅の距離依存性",
+  "statement": {
+   "tex": "3次元の波動方程式 $\\nabla^2\\xi=\\dfrac1{v^2}\\dfrac{\\partial^2\\xi}{\\partial t^2}$ を考える．\n\\begin{enumerate}\n\\item 任意の2回微分可能な関数 $f$ に対し，$\\xi=f(t-\\alpha x)$ が解となる $\\alpha$ を求め，その物理的意味を述べよ．\n\\item 球対称な場合，$\\nabla^2\\xi=\\dfrac1r\\dfrac{\\partial^2(r\\xi)}{\\partial r^2}$ を用いて，$\\xi=r^{-n}f(t-r/v)$ が任意の $f$ について解になるのは $n=1$ に限ることを示せ．\n\\item 振幅が $1/r$ に比例することを，エネルギー保存の観点から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\pm1/v$；$1/\\alpha$ は波形が伝わる速度（$\\alpha>0$ で $+x$ 方向）　(2) 証明（解説参照）　(3) 強度 $\\propto\\xi^2$ と球面積 $4\\pi r^2$ の積が一定"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_x^2\\xi=\\alpha^2f''$，$\\partial_t^2\\xi=f''$ なので $\\alpha^2=1/v^2$．$f(t-\\alpha x)$ は時刻 $t$ に位置 $x$ にある波形が，時刻 $t+dt$ に $x+dt/\\alpha$ に移ることを表し，$1/\\alpha$ は波形の伝播速度である．\n\n(2) $r\\xi=r^{1-n}f(\\tau)$，$\\tau=t-r/v$ とおくと\n\\[ \\frac{\\partial^2(r\\xi)}{\\partial r^2}=-n(1-n)r^{-n-1}f-\\frac{2(1-n)}{v}r^{-n}f'+\\frac{r^{1-n}}{v^2}f'' . \\]\n$r$ で割ると最後の項は $\\frac1{v^2}\\partial_t^2\\xi$ に等しいので，波動方程式との差は\n\\[ \\nabla^2\\xi-\\frac1{v^2}\\partial_t^2\\xi=-(1-n)\\left[\\frac{n}{r^{n+2}}f+\\frac{2}{v\\,r^{n+1}}f'\\right] . \\]\n任意の $f$ について0になるには，$f$ と $f'$ の係数がともに0であることが必要で，$f'$ の係数から $n=1$（このとき $f$ の係数も0）．$n=0$（振幅一定の球面波）は解にならない．\n\n(3) 球面を通るエネルギー流は（媒質の減衰がなければ）半径によらず一定で，$\\langle j\\rangle\\cdot4\\pi r^2=\\text{一定}$．$\\langle j\\rangle\\propto(\\text{振幅})^2$ より振幅 $\\propto1/r$．(2) の結果はこれを波動方程式から裏づけている．"
+   }
+  ],
+  "idea": {
+   "tex": "$r\\xi$ が1次元波動方程式を満たすので，球面進行波の振幅は $1/r$ でなければならない．他のべきでは波形が変形してしまう．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "波動方程式",
+   "球面波",
+   "進行波",
+   "ダランベール解"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-050",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "縦波の圧縮部での粒子速度と質量流",
+  "topic": "縦波の圧縮部での粒子速度と質量流",
+  "statement": {
+   "tex": "一様な媒質（平衡密度 $\\rho_0$）中を縦波 $\\xi=a\\cos(\\omega t-kx)$ が $+x$ 方向に伝わる（位相速度 $v=\\omega/k$，$ka\\ll1$）．\n\\begin{enumerate}\n\\item 密度の変化 $\\delta\\rho=\\rho-\\rho_0$ を求め，$t=0$ で密度が最大となる位置と，そこでの変位・粒子速度を求めよ．\n\\item 任意の形の進行波 $\\xi=f(t-x/v)$ でも，粒子速度 $u$ と密度変化の間に $u=v\\,\\delta\\rho/\\rho_0$ が成り立つことを示せ．圧縮部・膨張部で粒子はそれぞれどちら向きに動くか．\n\\item 質量流束の2次の時間平均 $\\langle\\delta\\rho\\,u\\rangle$ を求め，平均エネルギー密度 $\\langle w\\rangle=\\frac12\\rho_0a^2\\omega^2$ を用いて表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\delta\\rho=-\\rho_0\\,\\partial\\xi/\\partial x=-\\rho_0ak\\sin(\\omega t-kx)$；$kx=\\pi/2+2\\pi m$，そこで $\\xi=0$，$u=+a\\omega$（最大）　(2) 証明（解説参照）；圧縮部で $+x$，膨張部で $-x$ 向き　(3) $\\langle\\delta\\rho\\,u\\rangle=\\langle w\\rangle/v$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 厚さ $dx$ の層は $dx(1+\\partial\\xi/\\partial x)$ に伸びるので，1次で $\\delta\\rho=-\\rho_0\\,\\partial\\xi/\\partial x=-\\rho_0ak\\sin(\\omega t-kx)$．$t=0$ で $\\delta\\rho=\\rho_0ak\\sin kx$ は $kx=\\pi/2+2\\pi m$ で最大．そこで $\\xi=a\\cos kx=0$（変位0の点），$u=\\partial\\xi/\\partial t=-a\\omega\\sin(\\omega t-kx)=a\\omega\\sin kx=+a\\omega$（$+x$ 向き最大）．\n\n(2) $\\xi=f(t-x/v)$ なら $u=f'$，$\\partial\\xi/\\partial x=-f'/v$ なので $\\delta\\rho/\\rho_0=f'/v=u/v$．よって $u=v\\,\\delta\\rho/\\rho_0$：圧縮部（$\\delta\\rho>0$）では粒子は波の進む向きに，膨張部では逆向きに動く．\n\n(3) $\\delta\\rho\\,u=\\rho_0u^2/v$ なので\n\\[ \\langle\\delta\\rho\\,u\\rangle=\\frac{\\rho_0}{v}\\langle u^2\\rangle=\\frac{\\rho_0a^2\\omega^2}{2v}=\\frac{\\langle w\\rangle}{v} . \\]\n1次では粒子は往復するだけだが，2次では正味の質量流（運動量密度）$\\langle w\\rangle/v$ が生じ，進行波が運動量 $(\\text{エネルギー})/v$ を運ぶことに対応する．"
+   }
+  ],
+  "idea": {
+   "tex": "進行波では $\\partial_x\\xi=-\\partial_t\\xi/v$ より $u=v\\,\\delta\\rho/\\rho_0$．圧縮部の粒子は前進し，2次の平均として運動量密度 $\\langle w\\rangle/v$ が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "縦波",
+   "密度変化",
+   "粒子速度",
+   "波の運動量",
+   "進行波"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-051",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "振幅の測定から点音源の位置を決める",
+  "topic": "振幅の測定から点音源の位置を決める",
+  "statement": {
+   "tex": "一様で吸収のない媒質中に点波源がある．球面波の変位振幅は波源からの距離に反比例するとする．\n\\begin{enumerate}\n\\item 波源が位置ベクトル $\\boldsymbol r_1,\\boldsymbol r_2$ の2点を通る直線上にあり，2点での振幅が $a_1,a_2$（$a_1\\ne a_2$）であるとき，波源の位置として考えられるものをすべて求めよ．\n\\item 平面上の3点 $A(0,0)$，$B(4,0)$，$C(0,4)$（単位 m）で振幅を測ったところ，A での振幅は B，C での振幅のちょうど2倍であった．波源がこの平面内にあるとして，その位置を求めよ．\n\\item (2) の解を1つに決めるには，さらに何を測ればよいか．1つ例を挙げよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol r=\\dfrac{a_1\\boldsymbol r_1+a_2\\boldsymbol r_2}{a_1+a_2}$（2点の間）または $\\boldsymbol r=\\dfrac{a_1\\boldsymbol r_1-a_2\\boldsymbol r_2}{a_1-a_2}$（外側）　(2) $(1.10,\\,1.10)\\ \\mathrm m$ または $(-2.43,\\,-2.43)\\ \\mathrm m$　(3) 例：第4の点 $D(4,4)$ での振幅を測る（候補ごとに $\\rho_D=4.11\\ \\mathrm m$，$9.09\\ \\mathrm m$ と大きく異なる）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 距離を $\\rho_1,\\rho_2$ とすると $a_1\\rho_1=a_2\\rho_2$，すなわち $\\rho_1:\\rho_2=a_2:a_1$．直線上でこの比を満たす点は，線分 $\\boldsymbol r_1\\boldsymbol r_2$ を $a_2:a_1$ に内分する点と外分する点の2つで\n\\[ \\boldsymbol r=\\frac{a_1\\boldsymbol r_1+a_2\\boldsymbol r_2}{a_1+a_2},\\qquad \\boldsymbol r=\\frac{a_1\\boldsymbol r_1-a_2\\boldsymbol r_2}{a_1-a_2} . \\]\n（例：$a_1=3a_2$ なら内分点は $\\boldsymbol r_1$ から $1/4$，外分点は $\\boldsymbol r_1$ の外側に $|\\boldsymbol r_2-\\boldsymbol r_1|/2$．）波源が2点の間にあると分かっていれば前者．\n\n(2) 波源を $(x,y)$ とする．$\\rho_B=\\rho_C=2\\rho_A$．$\\rho_B=\\rho_C$ から $x=y$．$\\rho_B^2=4\\rho_A^2$：$(x-4)^2+x^2=8x^2$，すなわち $3x^2+4x-8=0$，\n\\[ x=\\frac{-2\\pm2\\sqrt7}{3}=1.10\\ \\text{または}\\ -2.43 . \\]\n波源は $(1.10,1.10)$ または $(-2.43,-2.43)$．（それぞれ A からの距離 $1.55\\ \\mathrm m$，$3.44\\ \\mathrm m$ で，どちらも条件を満たす．）\n\n(3) 2つの振幅比の条件はそれぞれアポロニウスの円を与え，2円の交点は一般に2つある．4点目，例えば $D(4,4)$ での振幅を測れば，$\\rho_D$ は2候補で $4.11\\ \\mathrm m$ と $9.09\\ \\mathrm m$ と大きく異なるので判別できる．（音源の発する時刻が分かれば，A への到達時間 $\\rho_A/v$ からも判別できる．）"
+   }
+  ],
+  "idea": {
+   "tex": "振幅比は距離比を与え，その軌跡はアポロニウスの円（直線上では内分点・外分点）．2条件の交点は一般に2つあり，1つに決めるには追加の測定が要る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "球面波",
+   "振幅",
+   "点波源",
+   "アポロニウスの円",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-052",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "吸収のある球面音波：減衰係数と到達距離",
+  "topic": "吸収のある球面音波：減衰係数と到達距離",
+  "statement": {
+   "tex": "吸収のある一様な媒質中に，振動数 $\\nu=1.45\\ \\mathrm{kHz}$ の等方な点音源がある．球面波の振幅は $a(r)\\propto r^{-1}e^{-\\gamma r}$ で表される．音源から $r_0=5.0\\ \\mathrm m$ の点で変位振幅は $a_0=50\\ \\mu\\mathrm m$ であり，$r=10.0\\ \\mathrm m$ の点 A では振幅は $a_0$ の $1/3.0$ であった．\n\\begin{enumerate}\n\\item 減衰係数 $\\gamma$ と，点 A での粒子速度の振幅を求めよ．\n\\item 音の強さのレベルが $r_0$ での値より $60\\ \\mathrm{dB}$ 低くなる距離を求めよ（数値的に解いてよい）．\n\\item 吸収がない場合，(2) の距離はいくらになるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\gamma\\approx0.081\\ \\mathrm{m^{-1}}$，$u_A\\approx15\\ \\mathrm{cm/s}$　(2) 約 $60\\ \\mathrm m$　(3) $5.0\\ \\mathrm{km}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{a}{a_0}=\\dfrac{r_0}{r}e^{-\\gamma(r-r_0)}=\\dfrac13$ より\n\\[ \\gamma=\\frac{\\ln(3r_0/r)}{r-r_0}=\\frac{\\ln1.5}{5.0}=0.081\\ \\mathrm{m^{-1}} . \\]\nA での粒子速度振幅 $u_A=2\\pi\\nu\\,a_0/3=2\\pi\\times1450\\times50\\times10^{-6}/3=0.15\\ \\mathrm{m/s}$．\n\n(2) $60\\ \\mathrm{dB}$ の低下は振幅が $10^{-3}$ 倍になること．$\\dfrac{r_0}{r}e^{-\\gamma(r-r_0)}=10^{-3}$，すなわち\n\\[ \\ln\\frac r{r_0}+\\gamma(r-r_0)=3\\ln10=6.91 \\]\nを数値的に解くと $r\\approx59.6\\ \\mathrm m$（$\\ln(r/r_0)=2.48$，$\\gamma(r-r_0)=4.43$ で，吸収の寄与の方が大きい）．\n\n(3) 吸収がなければ $r_0/r=10^{-3}$，$r=5.0\\ \\mathrm{km}$．吸収が遠方での音の到達距離を劇的に縮めることがわかる．"
+   }
+  ],
+  "idea": {
+   "tex": "球面波では幾何学的な $1/r$ と指数関数的吸収が重なる．遠方では指数関数的吸収が支配的になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\gamma$ [m⁻¹]：≈0.081 ; $u_A$ [cm/s]：≈15\n(2) [m]：≈60\n(3) [km]：≈5.0"
+  },
+  "methods": [],
+  "tags": [
+   "球面波",
+   "減衰係数",
+   "音の強さ",
+   "デシベル",
+   "数値解法"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-053",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "進行波と定常波のエネルギー密度の比較",
+  "topic": "進行波と定常波のエネルギー密度の比較",
+  "statement": {
+   "tex": "一様な弾性媒質（密度 $\\rho$）を考える．\n\\begin{enumerate}\n\\item 減衰のない平面進行波 $\\xi=a\\cos(\\omega t-kx)$ で，ある点の変位が最大になってから周期の $1/6$ 後にその点のエネルギー密度（運動＋ポテンシャル）が $w_0$ であった．平均エネルギー密度 $\\langle w\\rangle$ を $w_0$ で表せ．\n\\item 定常波 $\\xi=a\\cos kx\\cos\\omega t$ の場合，運動エネルギー密度は $\\frac12\\rho a^2\\omega^2\\cos^2kx\\sin^2\\omega t$，ポテンシャルエネルギー密度は $\\frac12\\rho a^2\\omega^2\\sin^2kx\\cos^2\\omega t$ である．変位の腹から $\\lambda/12$ の点で，変位が最大になってから周期の $1/6$ 後のエネルギー密度が $w_0$ であった．その点での時間平均エネルギー密度を $w_0$ で表せ．\n\\item 定常波の時間平均エネルギー密度は場所によらないことを示せ．それにもかかわらず (2) の比が (1) と異なる理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle w\\rangle=\\dfrac23w_0$　(2) $\\dfrac45w_0$　(3) $\\langle w\\rangle=\\frac14\\rho a^2\\omega^2$（$x$ によらない）；瞬間値の運動・ポテンシャルの配分が場所によるため"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 進行波では $w=\\rho a^2\\omega^2\\sin^2(\\omega t-kx)$（運動とポテンシャルが等しい），$\\langle w\\rangle=\\frac12\\rho a^2\\omega^2$．変位最大のとき位相 $\\omega t-kx=0$，$T/6$ 後は $\\pi/3$ で $w_0=\\rho a^2\\omega^2\\cdot\\frac34$．よって $\\langle w\\rangle=\\frac12\\cdot\\frac43w_0=\\frac23w_0$．\n\n(2) 腹からの距離 $\\lambda/12$ では $kx=\\pi/6$，$\\cos^2kx=\\frac34$，$\\sin^2kx=\\frac14$．変位最大は $\\cos\\omega t=\\pm1$ のときで，$T/6$ 後は $\\sin^2\\omega t=\\frac34$，$\\cos^2\\omega t=\\frac14$．\n\\[ w_0=\\tfrac12\\rho a^2\\omega^2\\left(\\tfrac34\\cdot\\tfrac34+\\tfrac14\\cdot\\tfrac14\\right)=\\tfrac12\\rho a^2\\omega^2\\cdot\\tfrac58 . \\]\n時間平均は $\\langle w\\rangle=\\frac12\\rho a^2\\omega^2\\left(\\frac12\\cos^2kx+\\frac12\\sin^2kx\\right)=\\frac14\\rho a^2\\omega^2$．よって $\\langle w\\rangle/w_0=\\frac{1/2}{5/8}=\\frac45$．\n\n(3) (2) の計算のとおり $\\langle w\\rangle=\\frac14\\rho a^2\\omega^2$ で $x$ によらない．しかし瞬間のエネルギー密度は，腹付近では運動エネルギー，節付近ではポテンシャルエネルギーが主で，その時間変化（$\\sin^2\\omega t$ と $\\cos^2\\omega t$）の重みが場所によって異なる．一般に $\\langle w\\rangle/w_0=2/(1+2\\cos^2kx)$ となり，場所によって変わる．進行波では運動とポテンシャルが常に同位相で等しいため，比は場所によらず $2/3$．"
+   }
+  ],
+  "idea": {
+   "tex": "進行波では $w\\propto\\sin^2(\\text{位相})$ なので瞬間値から平均が決まる．定常波では運動・ポテンシャルのエネルギーが逆位相で入れ替わり，その配分が場所によって変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((4)/(5)) w_0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エネルギー密度",
+   "進行波",
+   "定常波",
+   "弾性波"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-054",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "点音源から正方形を貫くエネルギー流",
+  "topic": "点音源から正方形を貫くエネルギー流",
+  "statement": {
+   "tex": "等方的な点音源 S が，平面 $\\Pi$ から距離 $l=1.00\\,\\mathrm{m}$ の位置にある．S から $\\Pi$ に下ろした垂線の足を O とし，O での音の強さは $I_0=30\\,\\mu\\mathrm{W/m^2}$ である．波の減衰は無視する．\n\\begin{enumerate}\n\\item $\\Pi$ 上に O を中心とする 1 辺 $2l$ の正方形をとる．この正方形を貫く平均エネルギー流 $\\langle\\Phi\\rangle$ を求めよ．（ヒント：答えが音源の全パワーの簡単な分数になる理由を，S を中心とする立方体を考えて説明せよ．）\n\\item 同じ平面上で，この正方形に内接する円板・外接する円板を貫く平均エネルギー流をそれぞれ求め，(1) の値がその間にあることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle\\Phi\\rangle=\\dfrac{2\\pi}{3}l^2I_0\\approx 63\\,\\mu\\mathrm{W}$（全パワー $4\\pi l^2I_0$ の $1/6$）　(2) 内接円板 $2\\pi l^2I_0(1-1/\\sqrt2)\\approx 55\\,\\mu\\mathrm{W}$，外接円板 $2\\pi l^2I_0(1-1/\\sqrt3)\\approx 80\\,\\mu\\mathrm{W}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "点音源の全パワーを $P$ とすると，距離 $r$ での強さは $I=P/(4\\pi r^2)$．O で $I_0=P/(4\\pi l^2)$ より $P=4\\pi l^2I_0$．減衰がないので，ある面を貫くエネルギー流は，その面が S に張る立体角 $\\Omega$ を用いて $\\langle\\Phi\\rangle=P\\,\\Omega/(4\\pi)=I_0l^2\\Omega$ となる．\n\n(1) S を中心とする 1 辺 $2l$ の立方体を考えると，その 1 つの面がちょうど問題の正方形である．立方体の 6 面は対称で S を囲むので，各面の立体角は $4\\pi/6=2\\pi/3$．よって\n\\[\n\\langle\\Phi\\rangle=\\frac{P}{6}=\\frac{2\\pi}{3}l^2I_0=\\frac{2\\pi}{3}\\times1.00^2\\times30\\times10^{-6}\\approx 6.3\\times10^{-5}\\,\\mathrm{W}=63\\,\\mu\\mathrm{W}.\n\\]\n（直接積分すると $\\Omega=\\displaystyle\\int\\!\\!\\int_{-l}^{l}\\frac{l\\,dx\\,dy}{(x^2+y^2+l^2)^{3/2}}=4\\arctan\\frac{l^2}{l\\sqrt{l^2+2l^2}}=4\\arctan\\frac1{\\sqrt3}=\\frac{2\\pi}{3}$ でも確かめられる．）\n\n(2) 半径 $R$ の円板の立体角は $\\Omega=2\\pi\\left(1-\\dfrac{l}{\\sqrt{l^2+R^2}}\\right)$．内接円 $R=l$：$\\Omega=2\\pi(1-1/\\sqrt2)$，$\\langle\\Phi\\rangle=2\\pi l^2I_0(1-1/\\sqrt2)\\approx55\\,\\mu\\mathrm{W}$．外接円 $R=\\sqrt2\\,l$：$\\Omega=2\\pi(1-1/\\sqrt3)$，$\\langle\\Phi\\rangle\\approx80\\,\\mu\\mathrm{W}$．$55<63<80$ で整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "減衰のない点音源からのエネルギー流は立体角で決まる．正方形を立方体の 1 面と見れば積分なしで全パワーの $1/6$ と分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "点音源",
+   "エネルギー流",
+   "立体角",
+   "音の強さ",
+   "対称性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-055",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "定在波のエネルギー流と局所保存則",
+  "topic": "定在波のエネルギー流と局所保存則",
+  "statement": {
+   "tex": "ヤング率 $E$，密度 $\\rho$ の一様な棒（音速 $v=\\sqrt{E/\\rho}$）に縦の定在波 $\\xi=a\\cos kx\\cos\\omega t$（$\\omega=vk$）が立っている．単位体積あたりのエネルギー密度を $w=\\frac12\\rho\\dot\\xi^2+\\frac12E\\,\\xi'^2$（$\\dot{}=\\partial_t$，$'=\\partial_x$），単位面積あたりのエネルギー流密度を $S=-E\\,\\xi'\\dot\\xi$ とする．\n\\begin{enumerate}\n\\item $S(x,t)$ を求め，局所保存則 $\\partial w/\\partial t+\\partial S/\\partial x=0$ が成り立つことを示せ．\n\\item $|S|$ の最大値と，それが起こる位置（$0\\le x\\le\\lambda/2$ の範囲）を求めよ．\n\\item この定在波は振幅 $a/2$ の逆向きの 2 つの進行波の重ね合わせである．1 つの進行波が運ぶ平均エネルギー流密度 $\\langle S_1\\rangle$ と (2) の最大値の比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S=-\\dfrac14\\rho a^2\\omega^2v\\sin2kx\\sin2\\omega t$　(2) $|S|_{\\max}=\\dfrac14\\rho a^2\\omega^2v$，$x=\\lambda/8,\\ 3\\lambda/8$　(3) $|S|_{\\max}/\\langle S_1\\rangle=2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\xi'=-ak\\sin kx\\cos\\omega t$，$\\dot\\xi=-a\\omega\\cos kx\\sin\\omega t$．\n\\[\nS=-E\\xi'\\dot\\xi=-Ea^2k\\omega\\sin kx\\cos kx\\sin\\omega t\\cos\\omega t=-\\frac14Ea^2k\\omega\\sin2kx\\sin2\\omega t .\n\\]\n$E=\\rho v^2$，$vk=\\omega$ より $Ek\\omega=\\rho\\omega^2v$．よって $S=-\\frac14\\rho a^2\\omega^2v\\sin2kx\\sin2\\omega t$．\n\n$\\partial_tw=\\rho\\dot\\xi\\ddot\\xi+E\\xi'\\dot\\xi'$，$\\partial_xS=-E(\\xi''\\dot\\xi+\\xi'\\dot\\xi')$．和は $\\dot\\xi(\\rho\\ddot\\xi-E\\xi'')$ で，波動方程式 $\\rho\\ddot\\xi=E\\xi''$ により 0．（具体形でも $\\rho a^2\\omega(\\omega^2-v^2k^2)(\\cdots)=0$ となる．）\n\n(2) $|\\sin2kx|=1$ のとき最大．$0\\le x\\le\\lambda/2$ では $2kx=\\pi/2,\\,3\\pi/2$，すなわち $x=\\lambda/8,\\ 3\\lambda/8$（変位の節と腹の中間）．最大値は $\\frac14\\rho a^2\\omega^2v$（$|\\sin2\\omega t|=1$ の瞬間）．節（$x=\\lambda/4$）や腹（$x=0,\\lambda/2$）ではつねに $S=0$ で，エネルギーは節と腹の間を往復するだけで正味に流れない（時間平均 $\\langle S\\rangle=0$）．\n\n(3) 振幅 $a/2$ の進行波の平均エネルギー流密度は $\\langle S_1\\rangle=\\frac12\\rho\\left(\\frac a2\\right)^2\\omega^2v=\\frac18\\rho a^2\\omega^2v$．よって $|S|_{\\max}/\\langle S_1\\rangle=2$．"
+   }
+  ],
+  "idea": {
+   "tex": "定在波でもエネルギー流は 0 ではなく，$\\sin2kx\\sin2\\omega t$ の形で節と腹の間を往復する．その瞬間的最大値は成分進行波の平均流の 2 倍．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "定在波",
+   "エネルギー流",
+   "連続の式",
+   "弾性波",
+   "エネルギー密度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-056",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "伸びで張力を与えた弦のオクターブ条件",
+  "topic": "伸びで張力を与えた弦のオクターブ条件",
+  "statement": {
+   "tex": "同じ材料・同じ自然長・同じ質量の 2 本の弦があり，張力は伸び（自然長からの伸び率）に比例する．一方の弦の伸び率を $\\eta_1=2.0\\%$ とする．\n\\begin{enumerate}\n\\item 弦の両端を引っ張って伸ばし，伸びた全長を振動させる場合（振動部分の長さが $1+\\eta$ 倍になる），もう一方の弦の基本振動数がちょうど 1 オクターブ上（2 倍）になる伸び率 $\\eta_2$ を求めよ．\n\\item 弦を間隔の決まった 2 つの駒の間に張り，駒の外側から巻き取って伸ばす場合（振動部分の長さは一定で，その中の弦の質量が $1/(1+\\eta)$ 倍になる），同じく 2 倍の振動数を与える $\\eta_2$ を求めよ．\n\\item 「張力を 4 倍にすれば振動数は 2 倍」という素朴な答え $\\eta_2=4\\eta_1=8.0\\%$ と比べ，(1)(2) がそれぞれ大きいか小さいかを物理的に説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\eta_2\\approx8.5\\%$　(2) $\\eta_2\\approx7.6\\%$　(3) (1) は弦が長くなる効果で大きく，(2) は線密度が下がる効果で小さくなる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "基本振動数 $\\nu=\\dfrac1{2L}\\sqrt{\\dfrac{T}{\\mu}}$，$T\\propto\\eta$．\n\n(1) 質量 $m$ の弦の長さが $L=L_0(1+\\eta)$ になると $\\mu=m/L$，よって $\\nu=\\dfrac12\\sqrt{\\dfrac{T}{mL}}\\propto\\sqrt{\\dfrac{\\eta}{1+\\eta}}$．$\\nu_2/\\nu_1=2$ より\n\\[\n\\frac{\\eta_2}{1+\\eta_2}=\\frac{4\\eta_1}{1+\\eta_1}=\\frac{0.080}{1.02}=0.07843,\\qquad \\eta_2=\\frac{0.07843}{1-0.07843}\\approx0.0851=8.5\\%.\n\\]\n(2) $L$ は一定，$\\mu=\\mu_0/(1+\\eta)$ なので $\\nu\\propto\\sqrt{T/\\mu}\\propto\\sqrt{\\eta(1+\\eta)}$．\n\\[\n\\eta_2(1+\\eta_2)=4\\eta_1(1+\\eta_1)=0.0816,\\qquad \\eta_2=\\frac{-1+\\sqrt{1+4\\times0.0816}}{2}\\approx0.0758=7.6\\%.\n\\]\n(3) (1) では伸ばすと振動部分が長くなり振動数を下げる方向に働く（$1/\\sqrt{L}$ の因子）ので，余分に伸ばす必要がある．(2) では同じ長さの中の質量が減って線密度が下がり振動数を上げる方向に働くので，張力は 4 倍未満でよい．"
+   }
+  ],
+  "idea": {
+   "tex": "張力を伸びで与えると長さや線密度も同時に変わる．振動部分の長さが変わるか，質量が変わるかで補正の向きが逆になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弦の振動",
+   "基本振動数",
+   "張力",
+   "線密度",
+   "オクターブ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-057",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "破断応力が決める弦の最高振動数",
+  "topic": "破断応力が決める弦の最高振動数",
+  "statement": {
+   "tex": "長さ $L=0.65\\,\\mathrm{m}$ の鋼線（密度 $\\rho=7.8\\times10^3\\,\\mathrm{kg/m^3}$，引張強さ（破断応力）$\\sigma_{\\max}=2.0\\,\\mathrm{GPa}$）を両端固定で張る．\n\\begin{enumerate}\n\\item 断面積によらず，この長さの鋼線で出せる基本振動数には上限 $\\nu_{\\max}$ があることを示し，その値を求めよ．\n\\item 最初，鋼線は破断応力の $60\\%$ の応力で張られている．振動部分の長さを $35\\%$ 短くし張力を $70\\%$ 増やせば基本振動数は何倍になるはずか．またそれは実現可能か．\n\\item (2) の最初の状態から，振動部分の長さを $35\\%$ 短くしたとき，基本振動数は最大で何倍まで上げられるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nu_{\\max}=\\dfrac1{2L}\\sqrt{\\sigma_{\\max}/\\rho}\\approx3.9\\times10^2\\,\\mathrm{Hz}$　(2) 約 $2.0$ 倍（$\\sqrt{1.7}/0.65$）だが，応力が破断応力の $102\\%$ になり不可能　(3) $1/(0.65\\sqrt{0.6})\\approx1.99$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 断面積 $A$ の線で $T=\\sigma A$，$\\mu=\\rho A$ なので\n\\[\n\\nu=\\frac1{2L}\\sqrt{\\frac T\\mu}=\\frac1{2L}\\sqrt{\\frac{\\sigma}{\\rho}}\n\\]\nとなり $A$ が消える．$\\sigma\\le\\sigma_{\\max}$ より $\\nu_{\\max}=\\dfrac1{2\\times0.65}\\sqrt{\\dfrac{2.0\\times10^9}{7.8\\times10^3}}=\\dfrac{506}{1.3}\\approx3.9\\times10^2\\,\\mathrm{Hz}$．太い線にしても上限は上がらない．\n\n(2) $\\nu\\propto\\sqrt T/L$ より比は $\\sqrt{1.70}/0.65\\approx2.01$．しかし張力を $1.7$ 倍にすると応力は $0.60\\times1.70=1.02\\,\\sigma_{\\max}$ となり，破断応力を超える．よって実現できない（線が切れる）．\n\n(3) 最初の振動数は $\\nu_0=\\sqrt{0.6}\\,\\nu_{\\max}\\approx3.0\\times10^2\\,\\mathrm{Hz}$．長さ $0.65L$ での上限は $\\nu_{\\max}/0.65\\approx6.0\\times10^2\\,\\mathrm{Hz}$．比は $\\dfrac1{0.65\\sqrt{0.6}}\\approx1.99$ で，わずかに 2 倍（1 オクターブ）に届かない．"
+   }
+  ],
+  "idea": {
+   "tex": "張力と線密度がともに断面積に比例するので，弦の最高振動数は材料の $\\sqrt{\\sigma_{\\max}/\\rho}$ と長さだけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\nu_{\\max}$ [Hz]：≈3.9e2\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弦の振動",
+   "張力",
+   "破断応力",
+   "基本振動数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-058",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "棒の把持位置で選ばれる縦固有振動",
+  "topic": "棒の把持位置で選ばれる縦固有振動",
+  "statement": {
+   "tex": "長さ $l=50\\,\\mathrm{cm}$ の銅棒（ヤング率 $E=1.3\\times10^{11}\\,\\mathrm{Pa}$，密度 $\\rho=8.9\\times10^3\\,\\mathrm{kg/m^3}$）の縦振動を考える．把持点は変位の節，両端は自由端とする．\n\\begin{enumerate}\n\\item 一方の端から $l/4$ の点で棒をつかんだとき，$20\\sim50\\,\\mathrm{kHz}$ の範囲にある縦固有振動数をすべて求めよ．\n\\item 中点でつかんだ場合の同じ範囲の固有振動数をすべて求め，(1) と共通の振動数があるかどうか答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $22.9,\\ 38.2\\,\\mathrm{kHz}$ の 2 個　(2) $26.8,\\ 34.4,\\ 42.0,\\ 49.7\\,\\mathrm{kHz}$ の 4 個；共通なし"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "両端自由の棒の縦振動は $\\xi\\propto\\cos(n\\pi x/l)\\cos\\omega_nt$，$\\nu_n=\\dfrac{n}{2l}\\sqrt{\\dfrac E\\rho}$（$n=1,2,\\dots$）．把持すると，この中で把持点が節になるモードだけが残る．\n$v=\\sqrt{E/\\rho}=\\sqrt{1.3\\times10^{11}/8.9\\times10^3}\\approx3.82\\times10^3\\,\\mathrm{m/s}$，$v/(2l)\\approx3.82\\,\\mathrm{kHz}$．\n\n(1) $x=l/4$ が節：$\\cos(n\\pi/4)=0$ より $n=2,6,10,14,\\dots$（$n\\equiv2\\pmod 4$）．$\\nu_n=3.82n\\,\\mathrm{kHz}$ のうち範囲内は $n=6$：$22.9\\,\\mathrm{kHz}$，$n=10$：$38.2\\,\\mathrm{kHz}$ の 2 個（$n=2$ は $7.6$，$n=14$ は $53.5\\,\\mathrm{kHz}$ で範囲外）．\n\n(2) $x=l/2$ が節：$\\cos(n\\pi/2)=0$ より $n$ は奇数．範囲内は $n=7,9,11,13$：$26.8,\\ 34.4,\\ 42.0,\\ 49.7\\,\\mathrm{kHz}$ の 4 個．$n$ が偶数か奇数かで (1) と (2) の集合は交わらず，共通の振動数はない．"
+   }
+  ],
+  "idea": {
+   "tex": "把持は自由‐自由棒の固有モードのうち把持点が節になるものだけを選ぶフィルター．把持位置を変えると許されるモード番号の集合が変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "縦振動",
+   "棒",
+   "固有振動数",
+   "境界条件",
+   "節"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-059",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "基本音と2倍音が混ざった弦のエネルギー",
+  "topic": "基本音と2倍音が混ざった弦のエネルギー",
+  "statement": {
+   "tex": "質量 $m$，長さ $L$ の弦が両端固定で張られており，基本振動の角振動数は $\\omega_1$ である．弦の変位が\n\\[\ny(x,t)=a_1\\sin\\frac{\\pi x}{L}\\cos\\omega_1t+a_2\\sin\\frac{2\\pi x}{L}\\cos(2\\omega_1t+\\varphi)\n\\]\nで与えられる．\n\\begin{enumerate}\n\\item 弦の全力学的エネルギー $E$ を求めよ．$\\varphi$ に依存するか．\n\\item 弦の運動エネルギーの時間平均 $\\langle K\\rangle$ を求めよ．\n\\item $a_1=2a_2$ のとき，2 つのモードが担うエネルギーの比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E=\\dfrac{m\\omega_1^2}{4}(a_1^2+4a_2^2)$，$\\varphi$ によらない　(2) $\\langle K\\rangle=\\dfrac{m\\omega_1^2}{8}(a_1^2+4a_2^2)$　(3) $1:1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "線密度 $\\mu=m/L$，張力 $T=\\mu(\\omega_1L/\\pi)^2$（$\\omega_1=\\frac{\\pi}{L}\\sqrt{T/\\mu}$）．\n\n(1) 運動エネルギー $K=\\dfrac\\mu2\\displaystyle\\int_0^L\\dot y^2dx$．$\\int_0^L\\sin\\frac{\\pi x}{L}\\sin\\frac{2\\pi x}{L}dx=0$（直交性）より交差項が消え，$\\int_0^L\\sin^2(\\cdot)dx=L/2$ を用いて\n\\[\nK=\\frac m4\\left[\\omega_1^2a_1^2\\sin^2\\omega_1t+4\\omega_1^2a_2^2\\sin^2(2\\omega_1t+\\varphi)\\right].\n\\]\n位置エネルギー $U=\\dfrac T2\\displaystyle\\int_0^L y'^2dx$ も同様に交差項が消え\n\\[\nU=\\frac m4\\left[\\omega_1^2a_1^2\\cos^2\\omega_1t+4\\omega_1^2a_2^2\\cos^2(2\\omega_1t+\\varphi)\\right].\n\\]\n（$T(\\pi/L)^2/\\mu=\\omega_1^2$ を使った．）和は $E=\\dfrac{m\\omega_1^2}{4}(a_1^2+4a_2^2)$ で一定，$\\varphi$ によらない．\n\n(2) $\\langle\\sin^2\\rangle=1/2$ より $\\langle K\\rangle=E/2=\\dfrac{m\\omega_1^2}{8}(a_1^2+4a_2^2)$．\n\n(3) 基本モード $\\frac m4\\omega_1^2a_1^2=\\frac m4\\omega_1^2(4a_2^2)$，第 2 モード $\\frac m4(2\\omega_1)^2a_2^2=m\\omega_1^2a_2^2$．等しいので $1:1$．振幅が半分でも振動数が 2 倍なので同じエネルギーを持つ．"
+   }
+  ],
+  "idea": {
+   "tex": "弦の正規モードは直交するのでエネルギーはモードごとの和 $\\frac m4\\omega_n^2a_n^2$ になる．エネルギーは振幅だけでなく振動数の 2 乗で重みづけされる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 1:1"
+  },
+  "methods": [],
+  "tags": [
+   "弦の振動",
+   "正規モード",
+   "直交性",
+   "エネルギー",
+   "倍音"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-060",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "棒の定在波エネルギーと最大応力",
+  "topic": "棒の定在波エネルギーと最大応力",
+  "statement": {
+   "tex": "長さ $l$，断面積 $S$，密度 $\\rho$，ヤング率 $Y$ の棒が両端自由で，基本の縦振動 $\\xi=a\\cos(\\pi x/l)\\cos\\omega t$（$0\\le x\\le l$）をしている．\n\\begin{enumerate}\n\\item 角振動数 $\\omega$ と，棒の全力学的エネルギー $W$ を求めよ．\n\\item 棒の内部に生じる応力の振幅の最大値 $\\sigma_{\\max}$ とその位置を求めよ．\n\\item $W$ を $\\sigma_{\\max}$ を用いて表し，棒全体が一様に応力 $\\sigma_{\\max}$ で引き伸ばされたときの弾性エネルギーと比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega=\\dfrac{\\pi}{l}\\sqrt{\\dfrac Y\\rho}$，$W=\\dfrac14\\rho Sl\\omega^2a^2=\\dfrac{\\pi^2SYa^2}{4l}$　(2) $\\sigma_{\\max}=\\pi Ya/l$（中点）　(3) $W=\\dfrac{Sl\\sigma_{\\max}^2}{4Y}$，一様応力の場合 $\\dfrac{Sl\\sigma_{\\max}^2}{2Y}$ の半分"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 両端自由（$\\xi'=0$）の基本モードは波長 $2l$，$k=\\pi/l$，$\\omega=kv=\\dfrac\\pi l\\sqrt{Y/\\rho}$．\n$t=0$ では $\\dot\\xi=0$ なので全エネルギーは弾性エネルギーのみ：\n\\[\nW=\\int_0^l\\frac{YS}{2}\\xi'^2dx=\\frac{YS}{2}\\left(\\frac{a\\pi}{l}\\right)^2\\int_0^l\\sin^2\\frac{\\pi x}{l}dx=\\frac{\\pi^2SYa^2}{4l}.\n\\]\n$Y=\\rho\\omega^2l^2/\\pi^2$ を代入すると $W=\\frac14\\rho Sl\\omega^2a^2$．\n\n(2) 応力 $\\sigma=Y\\xi'=-\\dfrac{\\pi Ya}{l}\\sin\\dfrac{\\pi x}{l}\\cos\\omega t$．振幅は $x=l/2$（変位の節）で最大，$\\sigma_{\\max}=\\pi Ya/l$．\n\n(3) $a=\\sigma_{\\max}l/(\\pi Y)$ を代入して $W=\\dfrac{\\pi^2SY}{4l}\\cdot\\dfrac{\\sigma_{\\max}^2l^2}{\\pi^2Y^2}=\\dfrac{Sl\\sigma_{\\max}^2}{4Y}$．一様応力 $\\sigma_{\\max}$ のときの弾性エネルギーは $\\dfrac{\\sigma_{\\max}^2}{2Y}Sl$ なので，$W$ はちょうどその半分．$\\sin^2$ の空間平均が $1/2$ であることの表れである．"
+   }
+  ],
+  "idea": {
+   "tex": "定在波の全エネルギーは最大変形の瞬間の弾性エネルギーに等しく，最大応力で書くと一様変形の場合のちょうど半分になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\omega$：((pi)/(l)) sqrt(((Y)/(ρ))) ; $W$：((1)/(4)) ρ S l ω ^(2) a ^(2)\n(2) $\\sigma_{\\max}$：pi Y a / l\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "縦振動",
+   "定在波",
+   "弾性エネルギー",
+   "応力",
+   "棒"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-061",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "振動する受信器と振動する音源の帯域比較",
+  "topic": "振動する受信器と振動する音源の帯域比較",
+  "statement": {
+   "tex": "$x$ 軸上に振動数 $\\nu_0=2000\\,\\mathrm{Hz}$ の音源と受信器がある．音速は $v=340\\,\\mathrm{m/s}$．\n\\begin{enumerate}\n\\item 音源を静止させ，受信器を $x$ 軸に沿って振幅 $a=50\\,\\mathrm{cm}$，角振動数 $\\omega$ で単振動させる．受信される振動数の幅（最大値と最小値の差）が $\\Delta\\nu=200\\,\\mathrm{Hz}$ となる $\\omega$ を求めよ．\n\\item 逆に受信器を静止させ，音源を同じ振幅で単振動させたとき，同じ帯域幅を与える $\\omega$ を求めよ．\n\\item (2) の場合，受信振動数の最大値と最小値の平均は $\\nu_0$ からずれる．そのずれを求め，(1) の場合と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega=\\dfrac{v\\Delta\\nu}{2a\\nu_0}=34.0\\,\\mathrm{s^{-1}}$　(2) $\\omega=\\dfrac{v\\nu_0}{a\\Delta\\nu}\\left(\\sqrt{1+(\\Delta\\nu/\\nu_0)^2}-1\\right)\\approx33.9\\,\\mathrm{s^{-1}}$　(3) 平均は $\\nu_0v^2/(v^2-u^2)$ で約 $+5.0\\,\\mathrm{Hz}$ ずれる；(1) ではずれ 0"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 動く受信器の速度成分（音源に向かう向き）を $u$ とすると $\\nu=\\nu_0(v+u)/v$ で $u$ に線形．$u$ は $\\pm a\\omega$ の間を動くので $\\Delta\\nu=2\\nu_0a\\omega/v$，\n\\[\n\\omega=\\frac{v\\Delta\\nu}{2a\\nu_0}=\\frac{340\\times200}{2\\times0.50\\times2000}=34.0\\,\\mathrm{s^{-1}}.\n\\]\n(2) 動く音源では $\\nu=\\nu_0v/(v-u)$．$u_{\\max}=a\\omega$ として\n\\[\n\\Delta\\nu=\\nu_0v\\left(\\frac1{v-u_{\\max}}-\\frac1{v+u_{\\max}}\\right)=\\frac{2\\nu_0vu_{\\max}}{v^2-u_{\\max}^2}.\n\\]\n$u_{\\max}$ の 2 次方程式 $\\Delta\\nu\\,u_{\\max}^2+2\\nu_0vu_{\\max}-\\Delta\\nu v^2=0$ の正の解は $u_{\\max}=\\dfrac{v\\nu_0}{\\Delta\\nu}\\left(\\sqrt{1+(\\Delta\\nu/\\nu_0)^2}-1\\right)$．よって $\\omega=u_{\\max}/a\\approx33.9\\,\\mathrm{s^{-1}}$（$u_{\\max}\\approx16.96\\,\\mathrm{m/s}$）．\n\n(3) 動く音源の場合 $\\dfrac{\\nu_{\\max}+\\nu_{\\min}}2=\\dfrac{\\nu_0v}2\\left(\\frac1{v-u}+\\frac1{v+u}\\right)=\\dfrac{\\nu_0v^2}{v^2-u^2}\\approx2005.0\\,\\mathrm{Hz}$ で，$\\nu_0$ より約 $5.0\\,\\mathrm{Hz}$ 高い．これは $\\nu$ が $u$ の非線形（凸）関数だからで，近づくときの上昇が遠ざかるときの低下より大きい．(1) の受信器運動では線形なので平均はちょうど $\\nu_0$．"
+   }
+  ],
+  "idea": {
+   "tex": "ドップラー効果は受信器の速度には線形，音源の速度には非線形．その差が帯域幅のわずかな違いと中心周波数の上方シフトとして現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\omega$ [s⁻¹]：≈34.0\n(2) $\\omega$ [s⁻¹]：≈33.9\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "単振動",
+   "周波数変調",
+   "非線形性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-062",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "加速して遠ざかる音源と音速到達の瞬間",
+  "topic": "加速して遠ざかる音源と音速到達の瞬間",
+  "statement": {
+   "tex": "振動数 $\\nu_0$ の音源が受信器と同じ位置から，時刻 $t=0$ に一定の加速度 $w$ で静止状態から一直線に遠ざかり始める．受信器は静止しており，音速は $v$ とする．\n\\begin{enumerate}\n\\item 時刻 $t$ に受信器が受ける振動数 $\\nu(t)$ を求めよ．\n\\item 受信器が振動数 $\\nu_0/2$ を受けるのはいつか．その音が放出された瞬間の音源の速さを求めよ．\n\\item $\\nu_0=1700\\,\\mathrm{Hz}$，$w=10.0\\,\\mathrm{m/s^2}$，$v=340\\,\\mathrm{m/s}$ のとき，(2) の時刻と，$t=10.0\\,\\mathrm{s}$ での受信振動数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nu=\\dfrac{\\nu_0}{\\sqrt{1+2wt/v}}$　(2) $t=\\dfrac{3v}{2w}$，放出時の音源の速さはちょうど $v$　(3) $t=51\\,\\mathrm{s}$，$\\nu(10\\,\\mathrm{s})\\approx1.35\\,\\mathrm{kHz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 時刻 $t'$ に放出された音は，音源の位置 $wt'^2/2$ から戻ってきて $t=t'+\\dfrac{wt'^2}{2v}$ に届く．放出時の速さ $wt'$ で遠ざかる音源なので $\\nu=\\nu_0\\dfrac{v}{v+wt'}$．$t'$ の 2 次方程式を解くと $wt'=v\\left(\\sqrt{1+2wt/v}-1\\right)$，よって\n\\[\n\\nu=\\frac{\\nu_0}{\\sqrt{1+2wt/v}}.\n\\]\n（あるいは $\\nu=\\nu_0\\,dt'/dt$，$dt/dt'=1+wt'/v$ からも同じ．）\n\n(2) $\\nu=\\nu_0/2$ ⇔ $1+2wt/v=4$ ⇔ $t=\\dfrac{3v}{2w}$．そのとき $wt'=v(2-1)=v$：その音は音源がちょうど音速に達した瞬間に放出されたものである．\n\n(3) $t=\\dfrac{3\\times340}{2\\times10.0}=51\\,\\mathrm{s}$．$t=10.0\\,\\mathrm{s}$ では $\\nu=\\dfrac{1700}{\\sqrt{1+200/340}}\\approx1.35\\times10^3\\,\\mathrm{Hz}$．"
+   }
+  ],
+  "idea": {
+   "tex": "受信振動数は放出時刻と受信時刻の対応 $dt'/dt$ で決まる．ちょうど半分の振動数が，音源が音速に達した瞬間の音に対応するという意外な関係がある．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\nu$：((ν_0)/(sqrt(1+2 w t / v)))\n(2) 記述\n(3) $t$ [s]：51 ; $\\nu(10\\,\\mathrm{s})$ [kHz]：≈1.35"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "加速度運動",
+   "遅延時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-063",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "単振動する壁による反射音のうなり",
+  "topic": "単振動する壁による反射音のうなり",
+  "statement": {
+   "tex": "振動数 $\\nu_0=1700\\,\\mathrm{Hz}$ の静止音源と静止受信器が，壁の同じ法線上に置かれている．音速は $v=340\\,\\mathrm{m/s}$．\n\\begin{enumerate}\n\\item 壁が一定の速さ $u=6.0\\,\\mathrm{cm/s}$ で遠ざかるとき，受信器が記録するうなりの振動数を求めよ．\n\\item 壁が法線方向に振幅 $A=5.0\\,\\mathrm{cm}$，周期 $T_w=2.0\\,\\mathrm{s}$ で単振動するとき，うなりの振動数の最大値と，壁の振動 1 周期あたりのうなりの回数を求めよ（壁の速さ $\\ll v$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta\\nu=\\dfrac{2\\nu_0u}{v+u}\\approx0.60\\,\\mathrm{Hz}$　(2) 最大 $\\dfrac{4\\pi\\nu_0A}{vT_w}\\approx1.6\\,\\mathrm{Hz}$，1 周期あたり $\\dfrac{8A}{\\lambda}=2$ 回"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 遠ざかる壁が受ける振動数 $\\nu_0\\dfrac{v-u}{v}$．壁を遠ざかる音源とみて，受信器での反射音は $\\nu'=\\nu_0\\dfrac{v-u}{v}\\cdot\\dfrac{v}{v+u}=\\nu_0\\dfrac{v-u}{v+u}$．直接音 $\\nu_0$ とのうなりは\n\\[\n\\Delta\\nu=\\nu_0-\\nu'=\\frac{2\\nu_0u}{v+u}=\\frac{2\\times1700\\times0.060}{340.06}\\approx0.60\\,\\mathrm{Hz}.\n\\]\n(2) 壁の速度 $u(t)=A\\Omega\\cos\\Omega t$（$\\Omega=2\\pi/T_w$），$|u|\\ll v$ では $\\Delta\\nu\\approx\\dfrac{2\\nu_0|u|}{v}$．最大値は\n\\[\n\\Delta\\nu_{\\max}=\\frac{2\\nu_0A\\Omega}{v}=\\frac{2\\times1700\\times0.050\\times\\pi}{340}\\approx1.6\\,\\mathrm{Hz}.\n\\]\n1 周期でのうなりの回数は $\\displaystyle\\int_0^{T_w}\\frac{2\\nu_0A\\Omega|\\cos\\Omega t|}{v}dt=\\frac{2\\nu_0A\\Omega}{v}\\cdot\\frac{4}{\\Omega}=\\frac{8A\\nu_0}{v}=\\frac{8A}{\\lambda}$．$\\lambda=0.20\\,\\mathrm{m}$ より 2 回．これは，反射音の経路長が 1 周期で $2\\times(2A)\\times2=8A$ だけ変化し，波長 1 つ分の変化ごとに 1 回うなるという解釈と一致する．周期 $T_w$ によらない．"
+   }
+  ],
+  "idea": {
+   "tex": "反射音のうなりは経路長の変化を波長で数えたもの．壁が往復運動すると，1 周期のうなりの回数は振幅と波長だけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta\\nu$ [Hz]：≈0.60\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "反射",
+   "うなり",
+   "動く壁"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-064",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "減衰を含む点音源の可聴距離",
+  "topic": "減衰を含む点音源の可聴距離",
+  "statement": {
+   "tex": "等方点音源から $r_0=20.0\\,\\mathrm{m}$ の点で強さのレベルが $L_0=30.0\\,\\mathrm{dB}$ である．振幅は $\\dfrac1re^{-\\gamma r}$ に比例し，$\\gamma=2.0\\times10^{-3}\\,\\mathrm{m^{-1}}$ とする．\n\\begin{enumerate}\n\\item 減衰を無視したときの可聴限界距離 $r_{\\rm a}$（レベル $0\\,\\mathrm{dB}$）を求めよ．\n\\item 減衰を考慮したときの可聴限界距離 $r_{\\rm b}$ を数値的に求めよ．\n\\item 減衰がある状況で，可聴限界を (1) の $r_{\\rm a}$ まで延ばすには，音源の出力を何倍にすればよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $r_{\\rm a}=r_010^{L_0/20}\\approx6.3\\times10^2\\,\\mathrm{m}$　(2) $r_{\\rm b}\\approx3.4\\times10^2\\,\\mathrm{m}$　(3) 約 $12$ 倍（$+10.6\\,\\mathrm{dB}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "強さ $I\\propto e^{-2\\gamma r}/r^2$ なので\n\\[\nL(r)=L_0-20\\log_{10}\\frac r{r_0}-20\\gamma(r-r_0)\\log_{10}e .\n\\]\n(1) $\\gamma=0$ で $L=0$：$r_{\\rm a}=r_010^{L_0/20}=20.0\\times10^{1.5}\\approx632\\,\\mathrm{m}$．\n\n(2) $20\\log_{10}(r/20)+0.01737(r-20)=30$ を解く．$r=336$ で左辺 $\\approx24.5+5.49=30.0$．よって $r_{\\rm b}\\approx3.4\\times10^2\\,\\mathrm{m}$ で，減衰によって可聴距離はほぼ半分になる．\n\n(3) $r=r_{\\rm a}$ での吸収による余分な減少は $20\\gamma(r_{\\rm a}-r_0)\\log_{10}e=20\\times2.0\\times10^{-3}\\times612\\times0.4343\\approx10.6\\,\\mathrm{dB}$．これを補うには出力を $10^{1.06}\\approx12$ 倍にする必要がある．"
+   }
+  ],
+  "idea": {
+   "tex": "拡散と吸収の両方を含むと可聴距離は超越方程式の解になる．わずかな減衰係数でも遠距離では大きなデシベル損失になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $r_{\\rm b}$ [m]：≈3.4e2\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "音の減衰",
+   "点音源",
+   "デシベル",
+   "可聴距離",
+   "数値解"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-065",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "音叉の減衰と聞こえ終わる時刻の距離依存",
+  "topic": "音叉の減衰と聞こえ終わる時刻の距離依存",
+  "statement": {
+   "tex": "鳴っている音叉の振動の振幅は $e^{-\\beta t}$ で減衰する．音叉から $r_A=5.0\\,\\mathrm{m}$ の観測者 A は，$r_B=50\\,\\mathrm{m}$ の観測者 B より $\\tau=19\\,\\mathrm{s}$ 遅く音が聞こえなくなった．音速は $v=340\\,\\mathrm{m/s}$，聞こえなくなる強さの閾値は両者で同じとする．\n\\begin{enumerate}\n\\item 空気による音の吸収を無視して $\\beta$ を求めよ．\n\\item 空気中の振幅減衰係数 $\\gamma=5.0\\times10^{-3}\\,\\mathrm{m^{-1}}$（振幅 $\\propto e^{-\\gamma r}/r$）を考慮すると $\\beta$ はいくらになるか．\n\\item (1) の場合（空気の吸収なし），音が聞こえなくなる時刻 $t_f(r)$ は距離 $r$ とともにどう変わるか．$t_f$ が最小になる距離を求め，(2) の場合にはそのような距離が存在しないことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta=\\dfrac{\\ln(r_B/r_A)}{\\tau+(r_B-r_A)/v}\\approx0.12\\,\\mathrm{s^{-1}}$　(2) $\\beta=\\dfrac{\\ln(r_B/r_A)+\\gamma(r_B-r_A)}{\\tau+(r_B-r_A)/v}\\approx0.13\\,\\mathrm{s^{-1}}$　(3) $r^*=v/\\beta\\approx2.8\\,\\mathrm{km}$ で最小；(2) では $\\beta/v<\\gamma$ のため単調減少"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "時刻 $t_e$ に放出された音の距離 $r$ での強さは $I\\propto\\dfrac{e^{-2\\beta t_e-2\\gamma r}}{r^2}$．閾値 $I_{\\rm th}$ に達する放出時刻 $t_e(r)$ は\n\\[\n2\\beta t_e=-2\\ln r-2\\gamma r+C\\quad(C\\text{ は定数}),\n\\]\n聞こえなくなる時刻は $t_f=t_e+r/v$．\n\n(1) $\\gamma=0$．$t_{eA}-t_{eB}=\\dfrac{\\ln(r_B/r_A)}{\\beta}$，また $t_{fA}-t_{fB}=\\tau$ より $t_{eA}-t_{eB}=\\tau+\\dfrac{r_B-r_A}{v}$．よって\n\\[\n\\beta=\\frac{\\ln(r_B/r_A)}{\\tau+(r_B-r_A)/v}=\\frac{\\ln10}{19+45/340}=\\frac{2.303}{19.13}\\approx0.12\\,\\mathrm{s^{-1}}.\n\\]\n(2) $\\beta(t_{eA}-t_{eB})=\\ln(r_B/r_A)+\\gamma(r_B-r_A)$ より $\\beta=\\dfrac{2.303+0.225}{19.13}\\approx0.13\\,\\mathrm{s^{-1}}$．\n\n(3) $t_f(r)=\\dfrac rv-\\dfrac{\\ln r+\\gamma r}{\\beta}+\\text{const}$，$\\dfrac{dt_f}{dr}=\\dfrac1v-\\dfrac1\\beta\\left(\\dfrac1r+\\gamma\\right)$．\n$\\gamma=0$ では $r<v/\\beta$ で負，$r>v/\\beta$ で正なので，$t_f$ は $r^*=v/\\beta=340/0.120\\approx2.8\\,\\mathrm{km}$ で最小．近くでは遠い人ほど早く聞こえなくなるが，$r^*$ より遠くでは伝播の遅れが勝る．\n(2) の値では $\\beta/v=3.9\\times10^{-4}\\,\\mathrm{m^{-1}}<\\gamma$ なので $dt_f/dr<0$ が常に成り立ち，遠いほど早く聞こえなくなる（極小はない）．"
+   }
+  ],
+  "idea": {
+   "tex": "聞こえ終わる時刻は「音源の減衰」と「伝播の遅れ」の競合で決まり，空気の吸収があるとその競合の結果が逆転しうる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\beta$ [s⁻¹]：≈0.12\n(2) $\\beta$ [s⁻¹]：≈0.13\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "減衰振動",
+   "音叉",
+   "音の減衰",
+   "伝播時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-066",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "音波の圧力・エネルギー等分配と音響インピーダンス",
+  "topic": "音波の圧力・エネルギー等分配と音響インピーダンス",
+  "statement": {
+   "tex": "密度 $\\rho$ の媒質中を，縦波の調和平面波 $\\xi(x,t)=a\\cos(\\omega t-kx)$（$\\xi$ は媒質要素の $x$ 方向変位，位相速度 $v=\\omega/k$）が伝わる．密度変化は $\\rho$ に比べて十分小さいとする．\n\\begin{enumerate}\n\\item 厚さ $dx$ の薄い層の運動方程式と波動方程式 $\\partial^2\\xi/\\partial t^2=v^2\\,\\partial^2\\xi/\\partial x^2$ を用いて，圧力の増分が $\\Delta p=-\\rho v^2\\,\\partial\\xi/\\partial x$ と書けることを示せ．\n\\item 単位体積あたりの運動エネルギー $w_K=\\frac12\\rho(\\partial\\xi/\\partial t)^2$ と弾性エネルギー $w_P=(\\Delta p)^2/(2\\rho v^2)$ が，進行波では各点・各時刻で等しいことを示し，強度 $I$ を圧力振幅 $(\\Delta p)_m$ で表せ．\n\\item 振動数 $1.0$ kHz，強度 $I=1.0\\ \\mathrm{W/m^2}$ の音波が，空気中（$\\rho=1.2\\ \\mathrm{kg/m^3}$，$v=340$ m/s）と水中（$\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$，$v=1480$ m/s）をそれぞれ伝わる．両者の圧力振幅と変位振幅を求め，それぞれの比（水/空気）を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $w_K=w_P$，$I=(\\Delta p)_m^2/(2\\rho v)$　(3) 空気：$(\\Delta p)_m=29$ Pa，$a=11\\ \\mu$m；水：$(\\Delta p)_m=1.7\\times10^3$ Pa，$a=0.19\\ \\mu$m．比は圧力 $60$ 倍，変位 $1/60$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 断面積 1 の層（質量 $\\rho\\,dx$）に働く力は $-\\dfrac{\\partial(\\Delta p)}{\\partial x}dx$ なので\n\\[\\rho\\frac{\\partial^2\\xi}{\\partial t^2}=-\\frac{\\partial(\\Delta p)}{\\partial x}.\\]\n左辺に波動方程式を代入すると $\\dfrac{\\partial}{\\partial x}\\left(\\rho v^2\\dfrac{\\partial\\xi}{\\partial x}+\\Delta p\\right)=0$．波のない部分では $\\Delta p=0,\\ \\partial\\xi/\\partial x=0$ なので積分定数は 0 で，$\\Delta p=-\\rho v^2\\,\\partial\\xi/\\partial x$．\n\n(2) $\\partial\\xi/\\partial t=-a\\omega\\sin\\phi$，$\\partial\\xi/\\partial x=ak\\sin\\phi$（$\\phi=\\omega t-kx$）より\n\\[w_K=\\tfrac12\\rho a^2\\omega^2\\sin^2\\phi,\\qquad w_P=\\frac{\\rho^2v^4a^2k^2\\sin^2\\phi}{2\\rho v^2}=\\tfrac12\\rho a^2\\omega^2\\sin^2\\phi\\]\n（$vk=\\omega$）で等しい．全エネルギー密度の平均は $\\langle w\\rangle=\\frac12\\rho a^2\\omega^2$，強度 $I=\\langle w\\rangle v=\\frac12\\rho v a^2\\omega^2$．$(\\Delta p)_m=\\rho v^2ak=\\rho v a\\omega$ を用いて $I=\\dfrac{(\\Delta p)_m^2}{2\\rho v}$．\n\n(3) $(\\Delta p)_m=\\sqrt{2\\rho vI}$，$a=\\dfrac{(\\Delta p)_m}{\\rho v\\omega}$．空気 $\\rho v=408$：$(\\Delta p)_m=28.6$ Pa，$a=1.1\\times10^{-5}$ m．水 $\\rho v=1.48\\times10^6$：$(\\Delta p)_m=1.72\\times10^3$ Pa，$a=1.9\\times10^{-7}$ m．比は $\\sqrt{(\\rho v)_{\\text{水}}/(\\rho v)_{\\text{空気}}}=60$ で，同じ強度なら水中では圧力は 60 倍，変位は $1/60$ になる．音響インピーダンス $\\rho v$ が大きい媒質ほど「小さく揺れて大きく押す」．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\Delta p=-\\rho v^2\\partial_x\\xi$ から $I=(\\Delta p)_m^2/(2\\rho v)$．同じ強度でも音響インピーダンス $\\rho v$ の比の平方根で圧力と変位の振幅が逆向きに変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "音波",
+   "圧力振幅",
+   "エネルギー等分配",
+   "音響インピーダンス",
+   "強度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-067",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "点音源の圧力振幅と変位/波長比の普遍式",
+  "topic": "点音源の圧力振幅と変位/波長比の普遍式",
+  "statement": {
+   "tex": "等方的な点音源（音響出力 $P=0.80$ W，振動数 $600$ Hz）から距離 $r=1.5$ m の点を考える．空気は理想気体（比熱比 $\\gamma=1.40$，大気圧 $p_0=1.013\\times10^5$ Pa，密度 $\\rho=1.23\\ \\mathrm{kg/m^3}$，音速 $v=340$ m/s）とし，減衰は無視する．\n\\begin{enumerate}\n\\item この点での圧力振幅 $(\\Delta p)_m$ と，その大気圧に対する比を求めよ．\n\\item 媒質の変位振幅 $a$ と波長 $\\lambda$ の比が $\\dfrac{a}{\\lambda}=\\dfrac{1}{2\\pi\\gamma}\\dfrac{(\\Delta p)_m}{p_0}$ と，振動数によらない形に書けることを示し，値を求めよ．\n\\item 同じ距離 $r=1.5$ m で $(\\Delta p)_m/p_0=0.10$（線形近似が怪しくなる目安）に達するには，音源の出力はいくらでなければならないか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $(\\Delta p)_m=4.9$ Pa，比 $4.8\\times10^{-5}$　(2) $a/\\lambda=5.5\\times10^{-6}$（$a=3.1\\ \\mu$m）　(3) $P\\approx3.5\\times10^6$ W"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 距離 $r$ での強度 $I=P/(4\\pi r^2)$ と $I=(\\Delta p)_m^2/(2\\rho v)$ から\n\\[(\\Delta p)_m=\\sqrt{\\frac{\\rho vP}{2\\pi r^2}}=\\sqrt{\\frac{1.23\\times340\\times0.80}{2\\pi\\times1.5^2}}=4.9\\ \\text{Pa},\\qquad \\frac{(\\Delta p)_m}{p_0}=4.8\\times10^{-5}.\\]\n\n(2) $\\Delta p=-\\rho v^2\\,\\partial\\xi/\\partial x$ より $(\\Delta p)_m=\\rho v^2ka=2\\pi\\rho v^2a/\\lambda$．理想気体の断熱音速 $v^2=\\gamma p_0/\\rho$ を使えば $\\rho v^2=\\gamma p_0$ なので\n\\[\\frac a\\lambda=\\frac{(\\Delta p)_m}{2\\pi\\rho v^2}=\\frac{1}{2\\pi\\gamma}\\frac{(\\Delta p)_m}{p_0}=5.5\\times10^{-6}.\\]\n（$\\lambda=0.567$ m より $a=3.1\\times10^{-6}$ m．）相対圧力変化が小さければ変位は波長に比べて必ず小さい，という線形近似の自己無撞着性を表している．\n\n(3) $P=\\dfrac{2\\pi r^2(\\Delta p)_m^2}{\\rho v}=\\dfrac{2\\pi\\times1.5^2\\times(1.013\\times10^4)^2}{1.23\\times340}=3.5\\times10^6$ W．通常の音源（数 W 以下）では線形近似が非常によく成り立つ．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\rho v^2=\\gamma p_0$ を使うと変位/波長比が圧力比だけで決まり，振動数に依らない．線形近似の妥当性の目安になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $(\\Delta p)_m$ [Pa]：≈4.9 ; 比：≈4.8e-5\n(2) 記述\n(3) $P$ [W]：≈3.5e6"
+  },
+  "methods": [],
+  "tags": [
+   "点音源",
+   "圧力振幅",
+   "変位振幅",
+   "断熱音速",
+   "線形近似"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-068",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 20,
+  "theme": "2点の音圧レベルから減衰係数と出力を逆算",
+  "topic": "2点の音圧レベルから減衰係数と出力を逆算",
+  "statement": {
+   "tex": "等方的な点音源から出る音（振動数 200 Hz）の音圧レベル（ラウドネスレベル）を測ったところ，距離 $r_1=50$ m で $L_1=60.0$ dB，$r_2=200$ m で $L_2=46.0$ dB であった．基準強度（可聴限界）は $I_0=1.0\\times10^{-10}\\ \\mathrm{W/m^2}$，レベルは $L=10\\log_{10}(I/I_0)$ dB で定義される．音波の振幅は距離とともに $e^{-\\gamma r}$ の因子でも減衰する（$\\gamma$ は振幅の減衰係数）．\n\\begin{enumerate}\n\\item 減衰係数 $\\gamma$ を求めよ．\n\\item 音源の出力 $P$ を求めよ．\n\\item 音が聞こえなくなる（$I=I_0$ となる）距離を数値的に求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\gamma=1.5\\times10^{-3}\\ \\mathrm{m^{-1}}$　(2) $P=3.7$ W　(3) 約 $2.1$ km"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "強度は $I(r)=\\dfrac{P}{4\\pi r^2}e^{-2\\gamma r}$（強度は振幅の 2 乗なので $e^{-2\\gamma r}$）．\n\n(1) 2 点のレベル差は\n\\[L_1-L_2=10\\log_{10}\\frac{I_1}{I_2}=20\\log_{10}\\frac{r_2}{r_1}+20\\gamma(r_2-r_1)\\log_{10}e.\\]\n$20\\log_{10}4=12.04$ dB なので $14.0-12.04=8.686\\,\\gamma\\times150$，$\\gamma=1.50\\times10^{-3}\\ \\mathrm{m^{-1}}$．\n\n(2) $P=4\\pi r_1^2 I_0\\,10^{L_1/10}e^{2\\gamma r_1}=4\\pi\\times2500\\times10^{-10}\\times10^6\\times e^{0.150}=3.65$ W．\n\n(3) $\\dfrac{P e^{-2\\gamma r}}{4\\pi r^2}=I_0$ を数値的に解くと $r\\approx2.14\\times10^3$ m．減衰がなければ $r=\\sqrt{P/(4\\pi I_0)}\\approx5.4\\times10^4$ m なので，吸収が可聴距離を大きく縮めている．"
+   }
+  ],
+  "idea": {
+   "tex": "レベル差は幾何学的拡散 $20\\log(r_2/r_1)$ と吸収 $8.69\\gamma\\Delta r$ の和．2 点測定で両者を分離できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\gamma$ [m⁻¹]：≈1.5e-3\n(2) $P$ [W]：≈3.7\n(3) [km]：≈2.1"
+  },
+  "methods": [],
+  "tags": [
+   "音圧レベル",
+   "デシベル",
+   "減衰係数",
+   "点音源",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-069",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 25,
+  "theme": "正方形膜の固有振動数え上げとワイル則",
+  "topic": "正方形膜の固有振動数え上げとワイル則",
+  "statement": {
+   "tex": "一辺 $a$（面積 $S=a^2$）の正方形膜の周囲を固定し，面に垂直な振動（伝搬速度 $v$）を考える．固有角振動数は $\\omega=\\dfrac{\\pi v}{a}\\sqrt{n_1^2+n_2^2}$（$n_1,n_2=1,2,\\dots$）である．\n\\begin{enumerate}\n\\item $\\omega$ が大きいとき，$\\omega$ から $\\omega+d\\omega$ の間の固有振動の数 $dN$ を求めよ．\n\\item $\\omega\\le20\\pi v/a$ を満たす固有振動の数を正確に数え，(1) を積分した主要項 $N_0(\\omega)$ と比較せよ．\n\\item 差の主要部分が周長 $L=4a$ を用いて $-\\dfrac{L\\omega}{4\\pi v}$ と書けることを，格子点の数え方から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $dN=\\dfrac{S}{2\\pi v^2}\\omega\\,d\\omega$　(2) 正確には 294 個，$N_0=100\\pi\\approx314$　(3) $N\\approx N_0-\\dfrac{L\\omega}{4\\pi v}=314-20\\approx294$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $R=a\\omega/\\pi v$ とおくと，$(n_1,n_2)$ 平面の第1象限で半径 $R$ の円内にある格子点の数が $N$．面積近似で $N_0=\\dfrac{\\pi R^2}{4}=\\dfrac{S\\omega^2}{4\\pi v^2}$，よって $dN=\\dfrac{S}{2\\pi v^2}\\omega\\,d\\omega$．\n\n(2) $R=20$．$n_1=1,\\dots,19$ について $n_2\\le\\lfloor\\sqrt{400-n_1^2}\\rfloor$ を足し上げると\n$19+19+19+19+19+19+18+18+17+17+16+16+15+14+13+12+10+8+6=294$．主要項は $N_0=\\pi\\cdot400/4=314.2$．\n\n(3) 円の 1/4 の面積 $\\pi R^2/4$ は軸上の点（$n_1=0$ または $n_2=0$）まで含めて数えた個数に対応するが，固定端では $n_1,n_2\\ge1$ なので軸上の点は除かれる．各軸上の点はおよそ $R$ 個，各点は面積の半分しか寄与しないとみると，差は $2\\times R/2=R=\\dfrac{a\\omega}{\\pi v}=\\dfrac{L\\omega}{4\\pi v}$．$N\\approx314.2-20=294.2$ で正確な値 294 とよく一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "モード数は格子点の数え上げで，主要項は面積（ワイル則），次の補正は境界長に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $dN$：((S)/(2 pi v ^(2))) ω d ω\n(2) 記述\n(3) $N$：≈294"
+  },
+  "methods": [],
+  "tags": [
+   "モード密度",
+   "膜の振動",
+   "ワイル則",
+   "格子点"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-070",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 2,
+  "minutes": 30,
+  "theme": "次元解析と曲げ剛性をもつ弦の振動数",
+  "topic": "次元解析と曲げ剛性をもつ弦の振動数",
+  "statement": {
+   "tex": "長さ $L$ の弦が両端で張力 $T$ をかけて張られている．線密度を $\\mu$ とする．実際の金属弦はさらに曲げ剛性 $\\kappa=EI$（$E$：ヤング率，$I$：断面二次モーメント，次元は $[\\text{力}]\\times[\\text{長さ}]^2$）をもつ．\n\\begin{enumerate}\n\\item 基本振動数 $f$ が $L,T,\\mu,\\kappa$ だけで決まるとして，次元解析により $f$ が\n\\[ f=\\frac1L\\sqrt{\\frac T\\mu}\\;\\Phi\\!\\left(\\frac{\\kappa}{TL^2}\\right) \\]\nの形に書けることを示せ．次元解析だけで $\\Phi$ を決められない理由を述べよ．\n\\item 張力が無視できる極限 $T\\to0$（棒の曲げ振動）で $f$ が有限の値にとどまることを要請して，$\\Phi(\\xi)$ の $\\xi\\to\\infty$ での振る舞いを決め，そのときの $f$ の $L$ 依存性を求めよ．\n\\item 横変位 $y(x,t)$ は $\\mu\\,y_{tt}=T\\,y_{xx}-\\kappa\\,y_{xxxx}$ に従い，両端は $y=y_{xx}=0$（支点支持）とする．第 $n$ モードの振動数 $f_n$ を求め，$\\Phi$ を具体的に決定せよ．\n\\item 鋼線（密度 $7.8\\times10^3\\ \\mathrm{kg/m^3}$，$E=2.0\\times10^{11}\\ \\mathrm{Pa}$，直径 $1.0\\ \\mathrm{mm}$，断面は円で $I=\\pi d^4/64$）を $L=0.60\\ \\mathrm m$，$T=700\\ \\mathrm N$ で張る．曲げ剛性を無視した基本振動数 $f_1^{(0)}$，および第 10 倍音が $10f_1^{(0)}$ から何セントずれるかを求めよ（1 セント＝半音の 1/100，振動数比 $r$ は $1200\\log_2r$ セント）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\kappa/(TL^2)$ が唯一の無次元量のため（理由は解説）　(2) $\\Phi\\propto\\sqrt\\xi$，$f\\propto\\dfrac{1}{L^2}\\sqrt{\\dfrac\\kappa\\mu}$　(3) $f_n=\\dfrac{n}{2L}\\sqrt{\\dfrac T\\mu}\\sqrt{1+\\dfrac{\\pi^2n^2\\kappa}{TL^2}}$，$\\Phi(\\xi)=\\frac12\\sqrt{1+\\pi^2\\xi}$　(4) $f_1^{(0)}\\approx282\\ \\mathrm{Hz}$，約 $+33$ セント（高い側）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 次元は $[L]=\\mathrm m$，$[T]=\\mathrm{kg\\,m\\,s^{-2}}$，$[\\mu]=\\mathrm{kg\\,m^{-1}}$，$[\\kappa]=\\mathrm{kg\\,m^3s^{-2}}$．$f=CL^\\alpha T^\\beta\\mu^\\gamma$ とすると kg：$\\beta+\\gamma=0$，m：$\\alpha+\\beta-\\gamma=0$，s：$-2\\beta=-1$．よって $\\beta=\\frac12,\\gamma=-\\frac12,\\alpha=-1$ で $f\\sim\\frac1L\\sqrt{T/\\mu}$．4 つの量と 3 つの基本次元から作れる独立な無次元量は 1 個で，$\\xi=\\kappa/(TL^2)$（$[\\kappa/T]=\\mathrm m^2$）．したがって一般形は $f=\\frac1L\\sqrt{T/\\mu}\\,\\Phi(\\xi)$ で，任意関数 $\\Phi$ は次元からは決まらない（物理法則＝運動方程式が必要）．\n\n(2) $T\\to0$ では $\\xi\\to\\infty$．$\\frac1L\\sqrt{T/\\mu}\\,\\Phi(\\kappa/(TL^2))$ が $T$ によらない有限値に近づくには $\\Phi(\\xi)\\simeq C\\xi^{1/2}$．このとき\n\\[ f\\simeq\\frac{C}{L}\\sqrt{\\frac T\\mu}\\sqrt{\\frac{\\kappa}{TL^2}}=\\frac{C}{L^2}\\sqrt{\\frac\\kappa\\mu}, \\]\nすなわち長さの 2 乗に反比例（弦の $1/L$ とは異なる）．\n\n(3) 境界条件を満たす $y=\\sin\\frac{n\\pi x}{L}\\cos\\omega t$ を代入すると\n\\[ \\mu\\omega^2=T\\left(\\frac{n\\pi}{L}\\right)^2+\\kappa\\left(\\frac{n\\pi}{L}\\right)^4 . \\]\n$f_n=\\omega/2\\pi$ より\n\\[ f_n=\\frac{n}{2L}\\sqrt{\\frac T\\mu}\\sqrt{1+\\frac{\\pi^2n^2\\kappa}{TL^2}} . \\]\n$n=1$ で $\\Phi(\\xi)=\\frac12\\sqrt{1+\\pi^2\\xi}$．$\\xi\\to\\infty$ で $\\Phi\\to\\frac\\pi2\\sqrt\\xi$ となり (2) と整合する．\n\n(4) $\\mu=\\rho\\pi d^2/4=6.13\\times10^{-3}\\ \\mathrm{kg/m}$，$f_1^{(0)}=\\frac1{2L}\\sqrt{T/\\mu}=\\frac{1}{1.2}\\times338\\approx282\\ \\mathrm{Hz}$．\n$\\kappa=E\\pi d^4/64=9.82\\times10^{-3}\\ \\mathrm{N\\,m^2}$，$B\\equiv\\pi^2\\kappa/(TL^2)=3.85\\times10^{-4}$．$f_{10}/(10f_1^{(0)})=\\sqrt{1+100B}=1.0190$ より $1200\\log_2 1.0190\\approx33$ セント高い．倍音が整数倍からずれる（非調和性）ことはピアノの調律で実際に問題になる．"
+   }
+  ],
+  "idea": {
+   "tex": "次元解析は無次元量が 1 つ残ると任意関数を残すが，極限での物理的要請でその漸近形が決まる．曲げ剛性は倍音を高い側にずらす．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $f_n$：((n)/(2 L)) sqrt(((T)/(μ))) sqrt(1+((pi ^(2) n ^(2) κ)/(T L ^(2)))) ; $\\Phi(\\xi)$：((1)/(2)) sqrt(1+ pi ^(2) ξ)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "次元解析",
+   "弦の振動",
+   "曲げ剛性",
+   "分散関係",
+   "非調和性",
+   "倍音"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "WV-03-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -480,6 +3214,756 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-071",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 35,
+  "theme": "一様な初速度球からの波：Huygensの原理",
+  "topic": "一様な初速度球からの波：Huygensの原理",
+  "statement": {
+   "tex": "3 次元の波動方程式 $\\dfrac{\\partial^2u}{\\partial t^2}=c^2\\Delta u$ の初期値問題の解は，初期値 $u=0$，$\\partial u/\\partial t=g(\\boldsymbol x)$ のとき\n\\[\nu(\\boldsymbol x,t)=\\frac{1}{4\\pi c^2t}\\oint_{|\\boldsymbol x'-\\boldsymbol x|=ct}g(\\boldsymbol x')\\,dS'\n\\]\nで与えられる（$t>0$）．いま $g=g_0$（$|\\boldsymbol x|<a$），$g=0$（$|\\boldsymbol x|>a$）とする．\n\\begin{enumerate}\n\\item 球の中心での $u(0,t)$ を求めよ．\n\\item 中心から距離 $r_0\\ (>a)$ の点での $u(r_0,t)$ を求めよ．\n\\item (2) の信号が届いている時間幅と最大値を求めよ．また $\\displaystyle\\int_0^\\infty u(r_0,t)\\,dt$ を求め，それが体積 $V=\\frac43\\pi a^3$ の一様な「源」$g_0/c^2$ のつくる Coulomb 型ポテンシャル $\\dfrac{g_0V}{4\\pi c^2r_0}$ に等しいことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u(0,t)=g_0t\\ (t<a/c)$，$0\\ (t>a/c)$　(2) $|r_0-ct|<a$ のとき $u=\\dfrac{g_0\\{a^2-(r_0-ct)^2\\}}{4cr_0}$，それ以外 $0$　(3) 時間幅 $2a/c$，最大値 $\\dfrac{g_0a^2}{4cr_0}$（$t=r_0/c$），$\\displaystyle\\int u\\,dt=\\frac{g_0a^3}{3c^2r_0}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "公式は「半径 $ct$ の球面上での $g$ の平均 $\\langle g\\rangle$ に $t$ をかけたもの」$u=t\\langle g\\rangle$ である．\n\n(1) 中心では半径 $ct$ の球面が $ct<a$ なら全部球内にあるので $\\langle g\\rangle=g_0$，$u=g_0t$．$ct>a$ なら球面は球外で $u=0$．$t=a/c$ で値 $g_0a/c$ から 0 に不連続に落ちる．\n\n(2) 観測点を中心とする半径 $R=ct$ の球面のうち，球 $|\\boldsymbol x|<a$ に入る部分の面積を求める．観測点から見て球の中心方向からの角を $\\theta$ とすると，球面上の点と球の中心の距離の 2 乗は $r_0^2+R^2-2r_0R\\cos\\theta$．これが $a^2$ 未満となるのは $\\cos\\theta>\\dfrac{r_0^2+R^2-a^2}{2r_0R}$．その面積は\n\\[\n2\\pi R^2\\left(1-\\frac{r_0^2+R^2-a^2}{2r_0R}\\right)=\\frac{\\pi R}{r_0}\\{a^2-(r_0-R)^2\\}\\qquad(|r_0-R|<a).\n\\]\nよって\n\\[\nu=\\frac{g_0}{4\\pi c^2t}\\frac{\\pi ct}{r_0}\\{a^2-(r_0-ct)^2\\}=\\frac{g_0\\{a^2-(r_0-ct)^2\\}}{4cr_0}.\n\\]\n\n(3) $|r_0-ct|<a$，すなわち $(r_0-a)/c<t<(r_0+a)/c$ の間だけ信号があり，幅は $2a/c$．後に何も残らない（3 次元の Huygens の原理）．最大は $ct=r_0$ で $g_0a^2/(4cr_0)$．$\\xi=ct-r_0$ として\n\\[\n\\int u\\,dt=\\frac{g_0}{4c^2r_0}\\int_{-a}^{a}(a^2-\\xi^2)\\,d\\xi=\\frac{g_0a^3}{3c^2r_0}=\\frac{g_0}{4\\pi c^2r_0}\\cdot\\frac43\\pi a^3 .\n\\]\n時間積分 $\\int u\\,dt$ は $\\Delta(\\int u\\,dt)=-g/c^2$（波動方程式を時間積分し，$t\\to\\infty$ で $u,\\dot u\\to0$）を満たすので Poisson 方程式の解になる，という事情の表れである．"
+   }
+  ],
+  "idea": {
+   "tex": "解は「球面平均×時間」．一様球の初速度は外部で放物線型の有限長パルスになり，時間積分は静的 Poisson 解に一致する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "波動方程式",
+   "初期値問題",
+   "Kirchhoffの公式",
+   "Huygensの原理",
+   "球面平均"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-072",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 30,
+  "theme": "Gauss型初期変位の中心での符号反転",
+  "topic": "Gauss型初期変位の中心での符号反転",
+  "statement": {
+   "tex": "3 次元波動方程式 $u_{tt}=c^2\\Delta u$ について，初期値 $u=f$，$\\partial u/\\partial t=0$ に対する Poisson の解\n\\[\nu(\\boldsymbol p,t)=\\frac1{4\\pi}\\oint_{R=ct}\\left(\\frac{f}{c^2t^2}+\\frac1{ct}\\frac{\\partial f}{\\partial R}\\right)dS\n\\]\n（$R$：点 $\\boldsymbol p$ からの距離）を用いる．\n\\begin{enumerate}\n\\item $f=f(r)$ が球対称（$f$ を $r<0$ へ偶関数として延長する）のとき，\n\\[\nu(r,t)=\\frac{(r+ct)f(r+ct)+(r-ct)f(r-ct)}{2r}\n\\]\nとなることを示せ．\n\\item $f=e^{-r^2/a^2}$ のとき中心の値 $u(0,t)$ を求めよ．\n\\item $u(0,t)$ が 0 になる時刻と，最小値およびそのときの時刻を求めよ．\n\\item $\\displaystyle\\int u\\,d^3x$ が時間によらないことを示し，$t\\gg a/c$ で波が $r\\simeq ct$ の殻に集まったときにもこの積分値が保たれていることを (1) の式で確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(2) $u(0,t)=\\left(1-\\dfrac{2c^2t^2}{a^2}\\right)e^{-c^2t^2/a^2}$　(3) $t=\\dfrac{a}{\\sqrt2c}$ で 0，$t=\\sqrt{\\dfrac32}\\dfrac ac$ で最小値 $-2e^{-3/2}\\approx-0.446$　(4) $\\int u\\,d^3x=\\pi^{3/2}a^3$（一定）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) Poisson の解は $u=\\dfrac{\\partial}{\\partial t}\\left(t\\,\\overline{f}(\\boldsymbol p,ct)\\right)$（$\\overline f$：半径 $ct$ の球面上の平均）と同じである．実際 $\\dfrac{\\partial}{\\partial t}(t\\overline f)=\\overline f+t\\,c\\,\\overline{\\partial f/\\partial R}$ で，$\\overline f=\\dfrac{1}{4\\pi c^2t^2}\\oint f\\,dS$ から与式になる．\n球対称な $f$ に対し，中心から $r$ の点で半径 $R$ の球面平均は，球面上の点の中心からの距離 $s$ を変数にすると $dS=2\\pi R\\,s\\,ds/r$ なので\n\\[\n\\overline f=\\frac{1}{2rR}\\int_{|r-R|}^{r+R}sf(s)\\,ds=\\frac1{2rR}\\int_{r-R}^{r+R}sf(s)\\,ds\n\\]\n（$sf(s)$ は奇関数なので下端を $r-R$ にしてよい）．$R=ct$ として $t\\overline f=\\dfrac1{2rc}\\int_{r-ct}^{r+ct}sf(s)ds$ を $t$ で微分すると与式を得る．\n\n(2) $F(s)=sf(s)$ とおくと $u(r,t)=\\dfrac{F(ct+r)-F(ct-r)}{2r}\\to F'(ct)$（$r\\to0$）．$F'(s)=f+sf'=(1-2s^2/a^2)e^{-s^2/a^2}$ なので\n\\[\nu(0,t)=\\left(1-\\frac{2c^2t^2}{a^2}\\right)e^{-c^2t^2/a^2}.\n\\]\n\n(3) $\\tau=ct/a$ として $h(\\tau)=(1-2\\tau^2)e^{-\\tau^2}$．$h=0$ は $\\tau=1/\\sqrt2$．$h'(\\tau)=\\tau(4\\tau^2-6)e^{-\\tau^2}=0$ より $\\tau=\\sqrt{3/2}$ で最小値 $h=-2e^{-3/2}\\approx-0.446$．初めに盛り上がっていた中心が，いったん初期値の約 45\\% の深さまでへこむ．\n\n(4) $\\dfrac{d^2}{dt^2}\\int u\\,d^3x=c^2\\int\\Delta u\\,d^3x=0$（表面積分は $u$ が局在しているので 0）で，$t=0$ で $\\dfrac{d}{dt}\\int u=0$．よって $\\int u\\,d^3x=\\int f\\,d^3x=\\pi^{3/2}a^3$ で一定．\n$t\\gg a/c$ では $r>0$ の領域で $f(r+ct)\\approx0$ なので $u\\simeq\\dfrac{(r-ct)f(r-ct)}{2r}$．$\\xi=r-ct$ として\n\\[\n\\int u\\,d^3x\\simeq\\int4\\pi r^2\\frac{\\xi f(\\xi)}{2r}dr=2\\pi\\int(ct+\\xi)\\xi f(\\xi)d\\xi=2\\pi\\int\\xi^2e^{-\\xi^2/a^2}d\\xi=\\pi^{3/2}a^3 .\n\\]\n（$ct$ の項は $\\xi f(\\xi)$ が奇関数なので消える．）殻の波は正負の部分をもち，振幅は $1/r$ で減るが，体積積分は保存される．"
+   }
+  ],
+  "idea": {
+   "tex": "球対称解は $ru$ が 1 次元波動方程式を満たすことに帰着し，中心値は $\\frac{d}{ds}[sf(s)]_{s=ct}$．滑らかな山でも中心は負にへこむ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "波動方程式",
+   "Poissonの解",
+   "球対称波",
+   "初期値問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-073",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 40,
+  "theme": "波動方程式の線形性とエネルギーの加法性",
+  "topic": "波動方程式の線形性とエネルギーの加法性",
+  "statement": {
+   "tex": "弦の変位 $u(x,t)$ が波動方程式 $u_{xx}=\\dfrac1{v^2}u_{tt}$ に従うとし，エネルギーを（定数倍を除いて）\n\\[E[u]=\\frac12\\int_{-\\infty}^{\\infty}\\left(\\frac{u_t^2}{v^2}+u_x^2\\right)dx\\]\nで定義する．$f,g$ は十分滑らかで遠方で速やかに 0 になる関数とする．\n\\begin{enumerate}\n\\item 積 $u=f(x-vt)\\,g(x+vt)$ を波動方程式の左辺 $-$ 右辺に代入した結果を求め，積が解となるのは $f'g'\\equiv0$ の場合に限ることを示せ．\n\\item 右向きの波と左向きの波の和 $u=f(x-vt)+g(x+vt)$ について，2 つの波が重なっている時刻でも $E[u]=E[f(x-vt)]+E[g(x+vt)]$ が成り立つことを示せ．\n\\item 同じ向きに進む 2 つのパルス $u=F(x-vt)+F(x-vt-d)$，$F(\\xi)=Ae^{-\\xi^2/a^2}$ のエネルギーを $d$ の関数として求めよ．また，$E[u]$ が単独パルスのエネルギーのちょうど 2 倍になる $d\\ (>0)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u_{xx}-u_{tt}/v^2=4f'(x-vt)g'(x+vt)$　(2) 交差項が打ち消し合う　(3) $E=2E_F\\left[1+\\left(1-\\frac{d^2}{a^2}\\right)e^{-d^2/2a^2}\\right]$，$E_F=\\sqrt{\\frac\\pi2}\\frac{A^2}{a}$；$d=a$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\xi=x-vt$，$\\eta=x+vt$ とおく．$u_x=f'g+fg'$，$u_{xx}=f''g+2f'g'+fg''$．$u_t=-vf'g+vfg'$，$u_{tt}=v^2(f''g-2f'g'+fg'')$．よって\n\\[u_{xx}-\\frac1{v^2}u_{tt}=4f'(\\xi)g'(\\eta).\\]\nこれが全ての $(x,t)$，すなわち全ての独立な $(\\xi,\\eta)$ で 0 となるには $f'\\equiv0$ または $g'\\equiv0$，つまりどちらかが定数のときに限る．線形な方程式でも，解の積は一般に解ではない．\n\n(2) $u_x=f'(\\xi)+g'(\\eta)$，$u_t/v=-f'(\\xi)+g'(\\eta)$ より\n\\[\\frac{u_t^2}{v^2}+u_x^2=(g'-f')^2+(g'+f')^2=2f'^2+2g'^2.\\]\n交差項 $\\pm2f'g'$ が打ち消すので，エネルギー密度そのものが各波の寄与の和になり，重なっている時刻も含めて $E[u]=E[f]+E[g]$．\n\n(3) 右向きの波だけなので $u_t/v=-u_x$，よって $E=\\int u_x^2dx$．単独パルスでは\n\\[E_F=\\int F'(\\xi)^2d\\xi=\\frac{4A^2}{a^4}\\int\\xi^2e^{-2\\xi^2/a^2}d\\xi=\\frac{4A^2}{a^4}\\cdot\\frac{\\sqrt\\pi}{2}\\left(\\frac{a^2}{2}\\right)^{3/2}=\\sqrt{\\frac\\pi2}\\,\\frac{A^2}{a}.\\]\n2 つのパルスでは $E=2E_F+2\\int F'(\\xi)F'(\\xi-d)d\\xi$．ガウス積分を実行すると\n\\[\\int F'(\\xi)F'(\\xi-d)d\\xi=E_F\\left(1-\\frac{d^2}{a^2}\\right)e^{-d^2/2a^2}\\]\nなので\n\\[E(d)=2E_F\\left[1+\\left(1-\\frac{d^2}{a^2}\\right)e^{-d^2/2a^2}\\right].\\]\n$d\\to0$ で $4E_F$（振幅 2 倍で 4 倍），$d\\to\\infty$ で $2E_F$．$E=2E_F$ となるのは交差項が 0 の $d=a$．（$d>a$ では交差項が負で，$E<2E_F$ となる．）"
+   }
+  ],
+  "idea": {
+   "tex": "波動方程式は線形でも 2 次量のエネルギーは一般に加法的でない．しかし逆向きに進む波どうしは交差項が恒等的に打ち消し合い，重なっていてもエネルギーが加法的になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "波動方程式",
+   "重ね合わせの原理",
+   "ダランベール解",
+   "エネルギー",
+   "干渉"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-074",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 35,
+  "theme": "第2近隣ばねをもつ格子の連続極限と分散補正",
+  "topic": "第2近隣ばねをもつ格子の連続極限と分散補正",
+  "statement": {
+   "tex": "質量 $m$ のおもりが $x$ 軸方向に間隔 $a$ で無限に並び，$n$ 番目のおもりの（$x$ 軸に垂直な）変位を $u_n(t)$ とする．おもりは隣接するおもりと変位の差に比例する復元力（比例定数 $\\kappa_1>0$）で，さらに 2 つ隣のおもりとも変位の差に比例する力（比例定数 $\\kappa_2$，符号は任意）で結合している：\n\\[\nm\\ddot u_n=\\kappa_1(u_{n+1}+u_{n-1}-2u_n)+\\kappa_2(u_{n+2}+u_{n-2}-2u_n).\n\\]\n$u_n(t)=u(na,t)$ となる滑らかな関数 $u(x,t)$ を考える．\n\\begin{enumerate}\n\\item $u$ を $x=na$ のまわりでテイラー展開し，$a^4$ の次数まで残すと $u$ は\n\\[\\frac{\\partial^2u}{\\partial t^2}=c^2\\frac{\\partial^2u}{\\partial x^2}+\\beta\\frac{\\partial^4u}{\\partial x^4}\\]\nに従うことを示し，$c^2$ と $\\beta$ を $m,a,\\kappa_1,\\kappa_2$ で表せ．\n\\item (1) の方程式に $u=e^{i(qx-\\omega t)}$ を代入して分散関係を求めよ．また，長波長での「分散の最低次補正」が消える（$\\beta=0$）ための $\\kappa_2/\\kappa_1$ を求めよ．\n\\item $\\kappa_2=0$ のとき，離散系の厳密な分散関係 $\\omega(q)$ を求め，それを $q$ について展開した結果が (2) と $q^3$ の次数まで一致することを確かめよ．\n\\item $\\kappa_2=0$ で波長 $\\lambda=10a$ の波の位相速度 $\\omega/q$ は $c$ の何倍か（厳密な分散関係で，有効数字 4 桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c^2=\\dfrac{a^2(\\kappa_1+4\\kappa_2)}{m}$，$\\beta=\\dfrac{a^4(\\kappa_1+16\\kappa_2)}{12m}$　(2) $\\omega^2=c^2q^2-\\beta q^4$，$\\kappa_2/\\kappa_1=-1/16$　(3) $\\omega=2\\sqrt{\\kappa_1/m}\\,|\\sin(qa/2)|$　(4) $0.9836$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u(x\\pm h)=u\\pm hu'+\\frac{h^2}{2}u''\\pm\\frac{h^3}{6}u'''+\\frac{h^4}{24}u''''\\pm\\cdots$ より奇数次が打ち消し，\n\\[u(x+h)+u(x-h)-2u(x)=h^2u''+\\frac{h^4}{12}u''''+O(h^6).\\]\n$h=a$ と $h=2a$ を代入すると，右辺は\n\\[\\kappa_1\\Bigl(a^2u''+\\tfrac{a^4}{12}u''''\\Bigr)+\\kappa_2\\Bigl(4a^2u''+\\tfrac{16a^4}{12}u''''\\Bigr).\\]\nよって\n\\[\\frac{\\partial^2u}{\\partial t^2}=\\frac{a^2(\\kappa_1+4\\kappa_2)}{m}\\frac{\\partial^2u}{\\partial x^2}+\\frac{a^4(\\kappa_1+16\\kappa_2)}{12m}\\frac{\\partial^4u}{\\partial x^4}.\\]\n$a\\to0$ で第2項は落ち，波動方程式になる（$\\kappa_1+4\\kappa_2>0$ が安定の条件）．\n\n(2) $\\partial_x\\to iq$，$\\partial_t\\to-i\\omega$ より $-\\omega^2=-c^2q^2+\\beta q^4$，すなわち $\\omega^2=c^2q^2-\\beta q^4$．位相速度は $\\omega/q\\simeq c\\left(1-\\dfrac{\\beta q^2}{2c^2}\\right)$ で，$\\beta=0$，すなわち $\\kappa_2=-\\kappa_1/16$ のとき $q^2$ の補正が消え，より短い波長まで「分散のない」波として振る舞う．\n\n(3) $u_n=e^{i(qna-\\omega t)}$ を代入すると $-m\\omega^2=\\kappa_1(e^{iqa}+e^{-iqa}-2)=-4\\kappa_1\\sin^2(qa/2)$．よって $\\omega=2\\sqrt{\\kappa_1/m}\\,|\\sin(qa/2)|$．$\\sin y=y-y^3/6+\\cdots$ より\n\\[\\omega\\simeq\\sqrt{\\tfrac{\\kappa_1}{m}}\\,qa\\left(1-\\tfrac{q^2a^2}{24}\\right).\\]\n一方 (2) で $\\kappa_2=0$ とすると $c=a\\sqrt{\\kappa_1/m}$，$\\beta/c^2=a^2/12$ で $\\omega=cq\\sqrt{1-a^2q^2/12}\\simeq cq(1-a^2q^2/24)$．両者は一致する．\n\n(4) $qa=2\\pi a/\\lambda=\\pi/5$．$\\dfrac{\\omega/q}{c}=\\dfrac{\\sin(qa/2)}{qa/2}=\\dfrac{\\sin(\\pi/10)}{\\pi/10}=0.98363\\ldots\\approx0.9836$．波長が格子間隔の10倍でも位相速度は約 1.6\\% 遅い．"
+   }
+  ],
+  "idea": {
+   "tex": "差分を $a^4$ まで展開すると4階微分の分散項が現れ，その係数は結合の重み $\\kappa_1+16\\kappa_2$ で決まる．負の第2近隣結合で最低次の分散を打ち消せる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $c^2$：((a ^(2)(κ_1 +4 κ_2))/(m)) ; $\\beta$：((a ^(4)(κ_1 +16 κ_2))/(12 m))\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "連続極限",
+   "波動方程式",
+   "分散関係",
+   "テイラー展開",
+   "格子振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-075",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 35,
+  "theme": "中点に質点をつけた固定端弦の固有振動",
+  "topic": "中点に質点をつけた固定端弦の固有振動",
+  "statement": {
+   "tex": "張力 $T$，線密度 $\\sigma$，長さ $L$ の弦の両端 $x=0,L$ を固定し，中点 $x=L/2$ に質量 $M$ の小さな質点を取りつけた．弦の横変位 $u(x,t)$ は質点の位置以外では $\\dfrac{\\partial^2u}{\\partial x^2}=\\dfrac1{v^2}\\dfrac{\\partial^2u}{\\partial t^2}$（$v=\\sqrt{T/\\sigma}$）に従い，$u$ は $x=L/2$ で連続，質点は弦から張力の横成分を受ける．弦の質量を $m_s=\\sigma L$ とおく．\n\\begin{enumerate}\n\\item 中点の質点に対する運動方程式を，$x=L/2$ の左右での $\\partial u/\\partial x$ を用いて書け．\n\\item 中点について反対称な固有振動の角振動数を求めよ．\n\\item 中点について対称な固有振動では，$\\theta=\\omega L/(2v)$ が $\\theta\\tan\\theta=m_s/M$ を満たすことを示せ．\n\\item $M=m_s$ のとき，基本振動の角振動数は質点がない場合の何倍か（有効数字 3 桁）．\n\\item $M\\gg m_s$ のとき，基本振動の角振動数を $m_s/M$ の 1 次まで求め，「弦の質量の $1/3$ が質点に加わった有効質量」で表されることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $M\\ddot u(L/2,t)=T\\{u_x(L/2^+,t)-u_x(L/2^-,t)\\}$　(2) $\\omega=2n\\pi v/L$（$n=1,2,\\ldots$）　(3) 略　(4) $0.548$ 倍　(5) $\\omega_1^2\\simeq\\dfrac{4T}{L(M+m_s/3)}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 質点の左右の弦は張力 $T$ で質点を引き，横成分はそれぞれ $Tu_x(L/2^+)$，$-Tu_x(L/2^-)$（微小振動）．よって $M\\ddot u(L/2,t)=T\\{u_x(L/2^+,t)-u_x(L/2^-,t)\\}$．\n\n(2) $u=a(x)\\cos(\\omega t+\\delta)$，$k=\\omega/v$ とおく．固定端 $x=0$ を満たす左半分の解は $a=A\\sin kx$．反対称振動では $a(L-x)=-a(x)$ だから $a(L/2)=0$，質点は静止し $u_x$ は連続（反対称関数の導関数は対称）なので (1) は自動的に満たされる．条件は $\\sin(kL/2)=0$，$k=2n\\pi/L$，$\\omega=2n\\pi v/L$．質点の有無に無関係で，裸の弦の偶数番目の基準振動と同じ．\n\n(3) 対称振動では $a(x)=A\\sin kx\\ (0\\le x\\le L/2)$，$a(L-x)=a(x)$ なので $u_x(L/2^+)=-u_x(L/2^-)=-Ak\\cos(kL/2)$．(1) に代入して\n\\[-M\\omega^2A\\sin\\frac{kL}{2}=-2TAk\\cos\\frac{kL}{2}\\ \\Rightarrow\\ \\tan\\frac{kL}{2}=\\frac{2Tk}{M\\omega^2}=\\frac{2\\sigma}{Mk}.\\]\n($T/\\omega^2=\\sigma/k^2$ を使った．) $\\theta=kL/2$ とすると $\\theta\\tan\\theta=\\sigma L/M=m_s/M$．\n\n(4) $\\theta\\tan\\theta=1$ の最小正根は $\\theta_1=0.8603$．質点なしの基本振動は $\\theta=\\pi/2$（$\\omega=\\pi v/L$）なので比は $0.8603/(\\pi/2)=0.5477\\approx0.548$．（反対称の最低モード $\\omega=2\\pi v/L$ はこれより高いので，これが基本振動．）\n\n(5) $\\mu=m_s/M\\ll1$ なら $\\theta$ は小さく，$\\theta\\tan\\theta=\\theta^2+\\theta^4/3+\\cdots=\\mu$．逐次近似で $\\theta^2\\simeq\\mu-\\mu^2/3\\simeq\\dfrac{\\mu}{1+\\mu/3}$．$\\omega=2v\\theta/L$ より\n\\[\\omega_1^2=\\frac{4v^2}{L^2}\\frac{\\sigma L/M}{1+m_s/(3M)}=\\frac{4T}{L(M+m_s/3)}.\\]\n$4T/L$ は長さ $L/2$ の弦 2 本が質点に及ぼす横方向のばね定数であり，弦自身の質量はその $1/3$ が質点に上乗せされた形で効く（レイリーの有効質量）．"
+   }
+  ],
+  "idea": {
+   "tex": "質点での張力の傾きのジャンプが境界条件となり，対称モードだけが超越方程式 $\\theta\\tan\\theta=m_s/M$ に変わる．重い質点の極限で弦質量の $1/3$ が有効質量に加わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega$：2 n pi v / L\n(3) 証明\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "固有振動",
+   "境界条件",
+   "超越方程式",
+   "有効質量",
+   "弦"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-076",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 40,
+  "theme": "吊り下げた鎖の横振動とベッセル関数",
+  "topic": "吊り下げた鎖の横振動とベッセル関数",
+  "statement": {
+   "tex": "長さ $L$，線密度 $\\sigma$ の一様な柔らかい鎖の上端を固定して鉛直に吊るし，鉛直面内の微小な横振動を考える．下端（自由端）から上向きに測った距離を $x$（$0\\le x\\le L$），横変位を $u(x,t)$ とする．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 位置 $x$ での張力 $T(x)$ を求め，長さ $\\Delta x$ の微小部分の運動方程式から\n\\[\\frac{\\partial}{\\partial x}\\Bigl(gx\\frac{\\partial u}{\\partial x}\\Bigr)=\\frac{\\partial^2u}{\\partial t^2}\\]\nを導け．\n\\item $u=a(x)\\cos\\omega t$ とおき，$\\xi=2\\omega\\sqrt{x/g}$ と変数変換すると $a$ は 0 次ベッセル方程式 $\\dfrac{d^2a}{d\\xi^2}+\\dfrac1\\xi\\dfrac{da}{d\\xi}+a=0$ を満たすことを示せ．下端で $a$ が有限であることから $a=J_0(\\xi)$ とする．\n\\item 上端の固定端条件から固有角振動数 $\\omega_n$ を $J_0$ の零点 $j_{0,n}$ で表し，$\\omega_1$ を $\\sqrt{g/L}$ の何倍かで答えよ（$j_{0,1}=2.4048$）．\n\\item 同じ長さの剛体棒を上端まわりに振らせた物理振り子の角振動数と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T=\\sigma gx$　(2) 略　(3) $\\omega_n=\\dfrac{j_{0,n}}{2}\\sqrt{\\dfrac gL}$，$\\omega_1=1.202\\sqrt{g/L}$　(4) 剛体棒は $\\sqrt{3/2}\\sqrt{g/L}=1.225\\sqrt{g/L}$ で，鎖の基本振動は約 1.8\\% 低い"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 点 $x$ より下の鎖の重さを支えるので $T(x)=\\sigma gx$．微小部分 $[x,x+\\Delta x]$ に働く横方向の力は上下端の張力の横成分の差 $T u_x|_{x+\\Delta x}-Tu_x|_x\\simeq\\partial_x(Tu_x)\\Delta x$（微小振動）．運動方程式 $\\sigma\\Delta x\\,u_{tt}=\\partial_x(\\sigma gx\\,u_x)\\Delta x$ より $\\partial_x(gx\\,u_x)=u_{tt}$．張力が場所で変わるので，演習問題3.2.2の一様な波動方程式とは異なる．\n\n(2) $u=a\\cos\\omega t$ を代入して $g\\,(xa')'+\\omega^2a=0$．$\\xi^2=4\\omega^2x/g$ より $x=g\\xi^2/(4\\omega^2)$，$\\dfrac{d}{dx}=\\dfrac{2\\omega^2}{g\\xi}\\dfrac{d}{d\\xi}$．\n$x\\dfrac{da}{dx}=\\dfrac{\\xi}{2}\\dfrac{da}{d\\xi}$，$\\dfrac{d}{dx}\\Bigl(\\dfrac\\xi2\\dfrac{da}{d\\xi}\\Bigr)=\\dfrac{2\\omega^2}{g\\xi}\\cdot\\dfrac12\\bigl(a'+\\xi a''\\bigr)$（$'$ は $\\xi$ 微分）．よって\n\\[g\\cdot\\frac{\\omega^2}{g\\xi}(a'+\\xi a'')+\\omega^2a=0\\ \\Rightarrow\\ a''+\\frac1\\xi a'+a=0.\\]\n第二の解 $Y_0$ は $\\xi\\to0$（下端）で対数発散するので除き，$a=AJ_0(\\xi)$．\n\n(3) $x=L$ で $a=0$：$J_0(2\\omega\\sqrt{L/g})=0$ より $2\\omega_n\\sqrt{L/g}=j_{0,n}$，\n\\[\\omega_n=\\frac{j_{0,n}}{2}\\sqrt{\\frac gL},\\qquad \\omega_1=1.2024\\sqrt{g/L}.\\]\n（$j_{0,2}=5.520$，$j_{0,3}=8.654$ で，振動数は等間隔にならない．）\n\n(4) 剛体棒の物理振り子は $I=\\tfrac13ML^2$，重心距離 $L/2$ で $\\omega=\\sqrt{\\dfrac{MgL/2}{ML^2/3}}=\\sqrt{\\tfrac32}\\sqrt{\\dfrac gL}=1.2247\\sqrt{g/L}$．鎖の基本振動はこれより約 1.8\\% 低く，単振り子（長さ $L$）の $1.000\\sqrt{g/L}$ よりは高い．鎖は曲がれる分だけ剛体棒より「柔らかい」．"
+   }
+  ],
+  "idea": {
+   "tex": "張力が位置に比例する系では波動方程式が変数係数となり，$\\xi\\propto\\sqrt x$ の変換でベッセル方程式に帰着する．固有振動数は $J_0$ の零点で量子化され等間隔でない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $T$：σ g x\n(2) 証明\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "吊り下げた鎖",
+   "ベッセル関数",
+   "変数係数",
+   "固有振動数",
+   "ダニエル・ベルヌーイ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-077",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 35,
+  "theme": "動く固定端での反射とドップラー効果",
+  "topic": "動く固定端での反射とドップラー効果",
+  "statement": {
+   "tex": "張力 $T$，線密度 $\\sigma$（波の速さ $v=\\sqrt{T/\\sigma}$）の弦が $x\\le X(t)$ の領域に張られ，端は位置 $X(t)=Vt$（$0<V<v$）にある固定端で，端が $x$ 軸正の向きに一定の速さ $V$ で動いている（端での変位は常に $0$）．弦の変位は $x\\le Vt$ で $u(x,t)=f(x-vt)+g(x+vt)$ と書ける．\n\\begin{enumerate}\n\\item 端での条件 $u(Vt,t)=0$ から，$g(s)$ を $f$ を用いて表せ．\n\\item 入射波が $u_{\\rm in}=A\\cos(kx-\\omega t)$（$\\omega=vk$）のとき，反射波の角振動数 $\\omega'$ と振幅を求めよ．\n\\item 幅 $\\ell$ の孤立パルス（$f(s)$ が長さ $\\ell$ の区間の外で $0$）が入射したとき，反射パルスの幅 $\\ell'$ を求めよ．\n\\item 孤立パルスのもつ全エネルギーについて，反射パルスと入射パルスの比 $E'/E$ を求めよ．ただし，一方向に進む波 $F(x\\mp vt)$ の全エネルギーは $\\sigma v^2\\int F'(s)^2ds$ である．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $g(s)=-f\\!\\left(-\\dfrac{v-V}{v+V}s\\right)$　(2) $\\omega'=\\dfrac{v-V}{v+V}\\omega$，振幅 $A$（符号反転）　(3) $\\ell'=\\dfrac{v+V}{v-V}\\ell$　(4) $E'/E=\\dfrac{v-V}{v+V}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f(Vt-vt)+g(Vt+vt)=0$．$s=(v+V)t$ とおくと $Vt-vt=-\\dfrac{v-V}{v+V}s$ だから\n\\[\ng(s)=-f\\!\\left(-\\beta s\\right),\\qquad \\beta=\\frac{v-V}{v+V}.\n\\]\n$V=0$ で静止した固定端の結果 $g(s)=-f(-s)$ に戻る．\n\n(2) $f(s)=A\\cos ks$ より $g(x+vt)=-A\\cos\\{\\beta k(x+vt)\\}$．反射波の波数は $k'=\\beta k$，角振動数は\n\\[\n\\omega'=vk'=\\frac{v-V}{v+V}\\,\\omega.\n\\]\n振幅は $A$ のまま（位相は反転）．遠ざかる鏡による反射でのドップラー効果である．\n\n(3) $f$ が $s\\in[s_1,s_1+\\ell]$ でのみ $0$ でないとき，$g(s)=-f(-\\beta s)$ が $0$ でないのは $-\\beta s\\in[s_1,s_1+\\ell]$，すなわち長さ $\\ell/\\beta$ の区間．よって $\\ell'=\\dfrac{v+V}{v-V}\\ell$（引き伸ばされる）．\n\n(4) $E=\\sigma v^2\\int f'(s)^2ds$．$g'(s)=\\beta f'(-\\beta s)$ より\n\\[\nE'=\\sigma v^2\\int\\beta^2f'(-\\beta s)^2ds=\\sigma v^2\\beta\\int f'(s')^2ds'=\\beta E.\n\\]\nよって $E'/E=\\dfrac{v-V}{v+V}<1$．振幅は同じでも波形が引き伸ばされて傾きが小さくなり，エネルギーが減る．減った分は，遠ざかる端を押す仕事（波の放射圧）として失われる．"
+   }
+  ],
+  "idea": {
+   "tex": "固定端条件を動く位置 $x=Vt$ で課すと，$g$ の引数がスケール因子 $(v-V)/(v+V)$ 倍され，ドップラー偏移・パルスの伸長・エネルギー減少が一挙に出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega'$：((v - V)/(v + V)) ω ; 振幅：A\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "固定端反射",
+   "ダランベールの解",
+   "ドップラー効果",
+   "動く鏡",
+   "波のエネルギー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-078",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 35,
+  "theme": "質点でつないだ弦：透過の低域通過特性",
+  "topic": "質点でつないだ弦：透過の低域通過特性",
+  "statement": {
+   "tex": "張力 $T$，線密度 $\\sigma$（波の速さ $v=\\sqrt{T/\\sigma}$）の無限に長い弦の $x=0$ に，大きさの無視できる質量 $M$ の小球が固定されている．$x<0$ で $u=f(x-vt)+g(x+vt)$，$x>0$ で $u=h(x-vt)$ とする．小球は横方向（$u$ 方向）にのみ動き，重力は無視する．\n\\begin{enumerate}\n\\item $x=0$ で満たすべき 2 つの条件を書け．\n\\item 入射波 $e^{i(kx-\\omega t)}$ に対し反射波 $r\\,e^{i(-kx-\\omega t)}$，透過波 $\\tau\\,e^{i(kx-\\omega t)}$ とおいて $r,\\tau$ を求め，$|r|^2+|\\tau|^2=1$ を示せ．また，透過エネルギーが入射の半分になる角振動数 $\\omega_{\\rm c}$ を求めよ．\n\\item 小球の変位 $u_0(t)=u(0,t)$ と入射波の $x=0$ での値 $F(t)=f(-vt)$ の間に\n\\[\nM\\ddot u_0=\\frac{2T}{v}\\left(\\dot F-\\dot u_0\\right)\n\\]\nが成り立つことを示せ．\n\\item 弦全体が静止していたところに，高さ $b$ の階段状の入射波（$x=0$ に $t=0$ で到達し，その後 $F(t)=b$）が来た．$t>0$ の $u_0(t)$，および十分時間がたった後の反射波・透過波の形を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u$ の連続，$M u_{tt}(0,t)=T\\{u_x(0^+,t)-u_x(0^-,t)\\}$　(2) $\\tau=\\dfrac{1}{1-i\\omega/\\omega_{\\rm c}}$，$r=\\dfrac{i\\omega/\\omega_{\\rm c}}{1-i\\omega/\\omega_{\\rm c}}$，$\\omega_{\\rm c}=\\dfrac{2T}{Mv}=\\dfrac{2\\sigma v}{M}$　(3) 略　(4) $u_0=b(1-e^{-t/t_0})$，$t_0=\\dfrac{Mv}{2T}$；透過波 $u=b\\{1-e^{-(t-x/v)/t_0}\\}$（$0<x<vt$），反射波 $-b\\,e^{-(t+x/v)/t_0}$（$-vt<x<0$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 弦はつながっているので $u(0^-,t)=u(0^+,t)$．小球の運動方程式は，両側の弦から受ける横向きの力の和で\n\\[\nM\\frac{\\partial^2u}{\\partial t^2}(0,t)=T\\left\\{\\frac{\\partial u}{\\partial x}(0^+,t)-\\frac{\\partial u}{\\partial x}(0^-,t)\\right\\}.\n\\]\n\n(2) 連続性より $1+r=\\tau$．運動方程式より $-M\\omega^2\\tau=T\\{ik\\tau-ik(1-r)\\}=2ikT(\\tau-1)$．$Tk/\\omega=T/v$ を使って整理すると\n\\[\n\\tau=\\frac{2ikT}{2ikT+M\\omega^2}=\\frac{1}{1-i\\omega/\\omega_{\\rm c}},\\qquad r=\\tau-1=\\frac{i\\omega/\\omega_{\\rm c}}{1-i\\omega/\\omega_{\\rm c}},\\qquad \\omega_{\\rm c}=\\frac{2T}{Mv}.\n\\]\n$|\\tau|^2=\\dfrac{1}{1+\\omega^2/\\omega_{\\rm c}^2}$，$|r|^2=\\dfrac{\\omega^2/\\omega_{\\rm c}^2}{1+\\omega^2/\\omega_{\\rm c}^2}$ で，和は $1$（両側の弦は同じなので強度比がそのままエネルギー比）．$|\\tau|^2=1/2$ となるのは $\\omega=\\omega_{\\rm c}$．低い振動数は通し，高い振動数は反射する低域通過フィルターである．\n\n(3) $u_0=F+g(vt)=h(-vt)$．$\\dot F=-vf'(-vt)$，$\\dot u_0=-vh'(-vt)$，$\\dfrac{d}{dt}g(vt)=vg'(vt)=\\dot u_0-\\dot F$．これらから\n\\[\nu_x(0^+)-u_x(0^-)=h'-f'-g'=\\frac{-\\dot u_0+\\dot F-(\\dot u_0-\\dot F)}{v}=\\frac{2}{v}(\\dot F-\\dot u_0).\n\\]\n運動方程式に代入して $M\\ddot u_0=\\dfrac{2T}{v}(\\dot F-\\dot u_0)$．\n\n(4) $t_0=Mv/(2T)$ とおくと $\\dot F=b\\,\\delta(t)$ なので，$t=0$ で $\\dot u_0$ は $b/t_0$ に跳び（$u_0$ 自体は連続），$t>0$ では $\\ddot u_0=-\\dot u_0/t_0$．よって\n\\[\n\\dot u_0=\\frac{b}{t_0}e^{-t/t_0},\\qquad u_0(t)=b\\left(1-e^{-t/t_0}\\right).\n\\]\n透過波は $h(-vt)=u_0(t)$ より，$0<x<vt$ で $u=u_0(t-x/v)=b\\{1-e^{-(t-x/v)/t_0}\\}$：なめらかに立ち上がる階段（立ち上がり幅 $\\sim vt_0$）．反射波は $g(vt)=u_0-F=-be^{-t/t_0}$ より，$-vt<x<0$ で $g(x+vt)=-b\\,e^{-(t+x/v)/t_0}$：高さ $-b$，幅 $vt_0$ の指数関数形の負のパルスが左へ進む．"
+   }
+  ],
+  "idea": {
+   "tex": "境界条件に小球の運動方程式が入ると反射・透過係数が振動数に依存する．時間領域では 1 階の緩和方程式となり，階段波は時定数 $Mv/2T$ でなまされ，反射は指数関数パルスになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 証明\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "反射",
+   "透過",
+   "境界条件",
+   "インピーダンス",
+   "低域通過フィルター",
+   "質点付きの弦"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-079",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 35,
+  "theme": "120°で交わる3平面波：節線が消え節が点になる",
+  "topic": "120°で交わる3平面波：節線が消え節が点になる",
+  "statement": {
+   "tex": "2 次元系で，振幅 $A$・角振動数 $\\omega$ が等しく，波数ベクトルが\n\\[\n\\boldsymbol k_1=k(1,0),\\quad \\boldsymbol k_2=k\\left(-\\tfrac12,\\tfrac{\\sqrt3}2\\right),\\quad \\boldsymbol k_3=k\\left(-\\tfrac12,-\\tfrac{\\sqrt3}2\\right)\n\\]\nの 3 つの平面波 $A\\cos(\\boldsymbol k_n\\cdot\\boldsymbol r-\\omega t)$ を重ね合わせる．\n\\begin{enumerate}\n\\item 各点は角振動数 $\\omega$ の単振動をする．その振幅の 2 乗 $a(\\boldsymbol r)^2$ を，$\\cos[(\\boldsymbol k_i-\\boldsymbol k_j)\\cdot\\boldsymbol r]$ を用いて表せ．\n\\item 振幅が最大値 $3A$ をとる点のうち原点に最も近いもの（原点以外）までの距離を求めよ．それらの点での振動は原点の振動と同位相か．\n\\item 振幅が $0$ になる点を求め，原点に最も近いものまでの距離を求めよ．2波源の干渉で見られるような「節線」は存在するか．\n\\item この波は全体として定在波（全点が同位相または逆位相で振動する波）といえるか．振幅 $0$ の点のまわりを 1 周したときの振動位相の変化に注目して答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a^2=A^2\\{3+2\\sum_{i<j}\\cos[(\\boldsymbol k_i-\\boldsymbol k_j)\\cdot\\boldsymbol r]\\}$　(2) $4\\pi/(3k)$，位相は $\\pm2\\pi/3$ ずれる（同位相の最大点までは $4\\pi/(\\sqrt3k)$）　(3) 例えば $(2\\pi/3k,\\ \\pm2\\pi/(3\\sqrt3k))$，$(0,\\pm4\\pi/(3\\sqrt3k))$ など；距離 $4\\pi/(3\\sqrt3k)$．節は孤立点で節線はない　(4) 定在波ではない．零点のまわりで位相が $2\\pi$ 回る（位相特異点・渦）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=\\mathrm{Re}\\,[A\\,S(\\boldsymbol r)e^{-i\\omega t}]$，$S=\\sum_ne^{i\\boldsymbol k_n\\cdot\\boldsymbol r}$ で，振幅は $a=A|S|$．\n\\[\n|S|^2=\\sum_{i,j}e^{i(\\boldsymbol k_i-\\boldsymbol k_j)\\cdot\\boldsymbol r}=3+2\\sum_{i<j}\\cos[(\\boldsymbol k_i-\\boldsymbol k_j)\\cdot\\boldsymbol r].\n\\]\n(2) $|S|=3$ には 3 つの位相 $\\theta_n=\\boldsymbol k_n\\cdot\\boldsymbol r$ が $2\\pi$ を法として等しいことが必要．$\\boldsymbol k_1+\\boldsymbol k_2+\\boldsymbol k_3=\\boldsymbol 0$ より $\\theta_1+\\theta_2+\\theta_3=0$ なので共通値 $\\theta$ は $3\\theta\\equiv0$，すなわち $\\theta\\in\\{0,\\pm2\\pi/3\\}$．$\\theta_1=\\theta_2=2\\pi/3$ を解くと $kx=2\\pi/3$，$k(-x/2+\\sqrt3y/2)=2\\pi/3$ より $\\boldsymbol r=\\frac{2\\pi}{3k}(1,\\sqrt3)$，距離 $\\dfrac{4\\pi}{3k}$．ここでの振動は $S=3e^{2\\pi i/3}$ なので原点と位相が $2\\pi/3$ ずれる．最大点は一辺 $4\\pi/(3k)$ の三角格子をなし，原点と同位相の最大点（$\\theta=0$）までは $4\\pi/(\\sqrt3k)$．\n\n(3) $S=e^{ikx}+2e^{-ikx/2}\\cos\\frac{\\sqrt3ky}{2}=0 \\iff e^{3ikx/2}=-2\\cos\\frac{\\sqrt3ky}2$．絶対値から $\\cos\\frac{\\sqrt3ky}2=\\pm\\frac12$．\n・$\\cos=\\frac12$：$e^{3ikx/2}=-1$，$x=\\frac{2\\pi(2m+1)}{3k}$，$y=\\pm\\frac{2\\pi}{3\\sqrt3k}+\\frac{4\\pi j}{\\sqrt3k}$．\n・$\\cos=-\\frac12$：$e^{3ikx/2}=1$，$x=\\frac{4\\pi m}{3k}$，$y=\\pm\\frac{4\\pi}{3\\sqrt3k}+\\frac{4\\pi j}{\\sqrt3k}$．\n最も近いのは $(\\frac{2\\pi}{3k},\\pm\\frac{2\\pi}{3\\sqrt3k})$，$(0,\\pm\\frac{4\\pi}{3\\sqrt3k})$ などで，距離はいずれも $\\dfrac{4\\pi}{3\\sqrt3k}$（最大点の三角形の重心）．零点は 2 つの条件（実部・虚部 $=0$）を同時に満たす孤立点で，節線は存在しない．\n\n(4) $S$ は複素数で位置により偏角が変わるので，各点の振動の位相 $\\arg S$ が場所ごとに連続的に異なる．定在波ではない．零点のまわりを 1 周すると $\\arg S$ は $\\pm2\\pi$ 変化し（位相特異点），零点の近くでは山が零点のまわりを回転する．4 波の場合は $S$ が実数（$2\\{\\cos kx+\\cos ky\\}$）なので節が線になったのと対照的である．"
+   }
+  ],
+  "idea": {
+   "tex": "波数ベクトルの和が $\\boldsymbol 0$ の 3 平面波では空間振幅 $S(\\boldsymbol r)$ が本質的に複素になり，節は線でなく孤立した位相特異点（渦）になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平面波",
+   "干渉",
+   "定在波",
+   "位相特異点",
+   "三角格子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-080",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 35,
+  "theme": "d次元動径波動方程式と r^{-(d-1)/2} 変換",
+  "topic": "d次元動径波動方程式と r^{-(d-1)/2} 変換",
+  "statement": {
+   "tex": "$d$ 次元空間の波動方程式 $\\nabla^2u=\\dfrac1{v^2}\\dfrac{\\partial^2u}{\\partial t^2}$ の，原点からの距離 $r$ と $t$ のみに依存する解 $u(r,t)$ を考える．\n\\begin{enumerate}\n\\item $\\nabla^2u=\\dfrac{\\partial^2u}{\\partial r^2}+\\dfrac{d-1}{r}\\dfrac{\\partial u}{\\partial r}$ を示せ．\n\\item $u=r^{-(d-1)/2}w(r,t)$ とおくと，$w$ が\n\\[\n\\frac{\\partial^2w}{\\partial r^2}-\\frac{(d-1)(d-3)}{4r^2}w=\\frac1{v^2}\\frac{\\partial^2w}{\\partial t^2}\n\\]\nを満たすことを示せ．\n\\item 任意の関数形の進行波 $u=r^{-(d-1)/2}f(r-vt)$ が厳密解になるのはどの次元か．$d=2$ で $w=\\cos(kr-\\omega t)$ とした近似解が良い近似となる条件を述べよ．\n\\item $d=5$ では $w=\\left(1+\\dfrac{i}{kr}\\right)e^{i(kr-\\omega t)}$（$\\omega=vk$）が (2) の方程式の厳密解であることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2) 略（解説参照）　(3) $d=1,3$ のみ．$d=2$ では $kr\\gg1$（余分な項 $w/(4r^2)$ が $k^2w$ に比べ無視できる）　(4) 代入で恒等的に $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $r^2=\\sum_ix_i^2$ より $\\partial r/\\partial x_i=x_i/r$．\n\\[\n\\frac{\\partial^2u}{\\partial x_i^2}=\\frac{\\partial}{\\partial x_i}\\left(\\frac{x_i}{r}u'\\right)=\\frac{u'}{r}-\\frac{x_i^2}{r^3}u'+\\frac{x_i^2}{r^2}u''\n\\]\n（$'=\\partial/\\partial r$）．$i$ について和をとると $\\sum x_i^2=r^2$ だから $\\nabla^2u=u''+\\dfrac{d-1}ru'$．$d=3$ で基本問題 4.11 の式になる．\n\n(2) $p=(d-1)/2$，$u=r^{-p}w$ とする．$u'=r^{-p}(w'-\\frac prw)$，\n$u''=r^{-p}\\left(w''-\\frac{2p}rw'+\\frac{p(p+1)}{r^2}w\\right)$．\n\\[\nu''+\\frac{2p}ru'=r^{-p}\\left(w''+\\frac{p(p+1)-2p^2}{r^2}w\\right)=r^{-p}\\left(w''-\\frac{p(p-1)}{r^2}w\\right).\n\\]\n$p(p-1)=\\frac{(d-1)(d-3)}4$ より示された式を得る．\n\n(3) $(d-1)(d-3)=0$，すなわち $d=1,3$ のとき $w$ は 1 次元波動方程式に従い，$w=f(r-vt)+g(r+vt)$ が厳密解．$d=2$ では係数 $-\\frac14$ で，$w''+\\frac{w}{4r^2}=\\frac{\\ddot w}{v^2}$．$w=\\cos(kr-\\omega t)$ を代入すると $\\omega=vk$ のもとで残差は $\\frac{w}{4r^2}$ で，主要項 $k^2w$ との比が $\\frac1{4k^2r^2}$．よって $kr\\gg1$（波源から多数波長はなれた所）で良い近似．これが 2 次元の $A/\\sqrt r$ 型円筒波が近似解にとどまる理由である．\n\n(4) $d=5$ では $w''-\\frac{2}{r^2}w=\\frac{\\ddot w}{v^2}$．$w=(1+\\frac{i}{kr})e^{i\\phi}$，$\\phi=kr-\\omega t$ について\n$w'=\\left(ik-\\frac{1}{r}-\\frac{i}{kr^2}\\right)e^{i\\phi}$，\n$w''=\\left(-k^2-\\frac{ik}{r}+\\frac{1}{r^2}+\\frac{1}{r^2}+\\frac{2i}{kr^3}\\right)e^{i\\phi}$\n$=\\left(-k^2-\\frac{ik}{r}+\\frac2{r^2}+\\frac{2i}{kr^3}\\right)e^{i\\phi}$．\n$\\frac2{r^2}w=\\left(\\frac2{r^2}+\\frac{2i}{kr^3}\\right)e^{i\\phi}$ を引くと $\\left(-k^2-\\frac{ik}r\\right)e^{i\\phi}=-k^2\\left(1+\\frac{i}{kr}\\right)e^{i\\phi}=-k^2w$．一方 $\\ddot w/v^2=-\\frac{\\omega^2}{v^2}w=-k^2w$ で一致する．奇数次元 $d\\ge5$ では有限項の補正で厳密解が書ける（偶数次元ではそうならない）．"
+   }
+  ],
+  "idea": {
+   "tex": "$u=r^{-(d-1)/2}w$ で動径方程式は 1 次元型＋遠心ポテンシャル $(d-1)(d-3)/4r^2$ になり，それが消えるのは $d=1,3$ だけ．$d=2$ の円筒波が近似にとどまる理由がこれでわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "球面波",
+   "動径ラプラシアン",
+   "d次元",
+   "円筒波",
+   "ホイヘンスの原理"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-081",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 40,
+  "theme": "球対称初期変位の収束：中心で振幅が2倍に反転",
+  "topic": "球対称初期変位の収束：中心で振幅が2倍に反転",
+  "statement": {
+   "tex": "3 次元の球対称な波 $u(r,t)=\\dfrac{f(r-vt)+g(r+vt)}{r}$ を用いて，初期値問題\n\\[\nu(r,0)=\\phi(r)=\\begin{cases}U_0\\left(1-\\dfrac{r^2}{a^2}\\right)&(r<a)\\\\0&(r\\ge a)\\end{cases},\\qquad \\frac{\\partial u}{\\partial t}(r,0)=0\n\\]\nを解く．\n\\begin{enumerate}\n\\item $w=ru$ が 1 次元波動方程式に従い，$r=0$ で $u$ が有限であるためには $w(0,t)=0$ が必要であることを用いて，$\\psi(s)=s\\,\\phi(|s|)$（$s$ の奇関数）を使った解\n\\[\nu(r,t)=\\frac{\\psi(r-vt)+\\psi(r+vt)}{2r}\n\\]\nを導け．\n\\item 中心での変位 $u(0,t)$ を求めよ（$t<a/v$ と $t>a/v$ に分けよ）．\n\\item $u(0,t)$ の最小値（下限）と，中心が初めて $u=0$ を通過する時刻を求めよ．\n\\item 十分時間が経った後の波（$t>a/v$）は原点付近を含む $r<vt-a$ で厳密に $u=0$ となることを示し，外向きに進む球殻状の波の振幅が $r$ とともにどう変化するかを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $t<a/v$：$u(0,t)=U_0\\left(1-\\dfrac{3v^2t^2}{a^2}\\right)$，$t>a/v$：$0$　(3) 下限 $-2U_0$（$t\\to a/v$ 直前），零点通過 $t=a/(\\sqrt3v)$　(4) $r<vt-a$ で $\\psi$ の引数がともに $|s|\\ge a$ となり $0$；外向き殻の振幅は $1/r$ で減衰"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 基本問題 4.11 の結果から $u_{rr}+\\frac2ru_r=\\frac1{r}(ru)_{rr}$ なので，$w=ru$ は $w_{rr}=w_{tt}/v^2$ を満たし，$w=F(r-vt)+G(r+vt)$．初期条件 $w(r,0)=r\\phi(r)$，$w_t(r,0)=0$ をダランベールの公式で解くと，$w$ を $r<0$ に奇関数として拡張したもの $\\psi(s)=s\\phi(|s|)$ を用いて $w=\\frac12[\\psi(r-vt)+\\psi(r+vt)]$．奇拡張によって $w(0,t)=\\frac12[\\psi(-vt)+\\psi(vt)]=0$ が自動的に満たされる．よって $u=\\dfrac{\\psi(r-vt)+\\psi(r+vt)}{2r}$．\n\n(2) $\\psi$ が奇関数なので $\\psi(r-vt)=-\\psi(vt-r)$，\n\\[\nu(0,t)=\\lim_{r\\to0}\\frac{\\psi(vt+r)-\\psi(vt-r)}{2r}=\\psi'(vt)=\\phi(vt)+vt\\,\\phi'(vt).\n\\]\n$vt<a$ では $\\phi=U_0(1-s^2/a^2)$，$s\\phi'=-2U_0s^2/a^2$ より $u(0,t)=U_0\\left(1-\\dfrac{3v^2t^2}{a^2}\\right)$．$vt>a$ では $\\phi=\\phi'=0$ より $u(0,t)=0$．\n\n(3) $u(0,t)$ は $t<a/v$ で単調減少し，$t\\to a/v$ で $U_0(1-3)=-2U_0$ に近づく（その直後 $0$ に跳ぶ）．初期の最大変位の 2 倍の大きさで逆向きに振れる：周囲から集まる波が中心で収束するため．零点通過は $1-3v^2t^2/a^2=0$ より $t=\\dfrac{a}{\\sqrt3v}$．\n\n(4) $r<vt-a$ では $r-vt<-a$，$r+vt>a$（$r\\ge0,\\ vt>a$ のとき $r+vt>a$）なので $\\psi(r\\mp vt)=0$，$u=0$．すなわち初期擾乱が通過した後には何も残らない（3 次元のホイヘンスの原理）．外向きの殻 $vt-a<r<vt+a$ では，$r\\gg a$ で主に $\\psi(r-vt)/(2r)$ が残り，形 $\\psi$ を保ったまま振幅が $1/r$ で減衰して進む．$\\psi(s)=s\\phi(|s|)$ は前半（$s>0$）が正，後半が負なので，遠方では正と負の部分をもつ N 型の波になる．"
+   }
+  ],
+  "idea": {
+   "tex": "$ru$ の奇拡張で初期値問題を解くと，中心の変位は $\\psi'(vt)=\\phi+r\\phi'$ となり，なだらかな初期変位でも収束によって $-2U_0$ まで振れ，通過後は厳密に静止する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "球面波",
+   "ダランベール解",
+   "初期値問題",
+   "収束",
+   "ホイヘンスの原理"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-082",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 25,
+  "theme": "回転棒の両端の音叉によるうなりの回数",
+  "topic": "回転棒の両端の音叉によるうなりの回数",
+  "statement": {
+   "tex": "長さ $2R$（$R=0.50\\,\\mathrm{m}$）の軽い棒の両端に，同じ振動数 $\\nu_0=680\\,\\mathrm{Hz}$ の音叉が取り付けられ，棒は中点のまわりに水平面内で一定の角速度 $\\Omega=2.0\\,\\mathrm{rad/s}$ で回転している．観測者は回転面内の十分遠方に静止している．音速は $v=340\\,\\mathrm{m/s}$．\n\\begin{enumerate}\n\\item 観測者が聞くうなりの振動数の最大値を求めよ．\n\\item 棒が 1 回転する間に観測者が聞くうなりの総数 $N$ を求めよ．$N$ が $\\Omega$ によらないことを，2 つの音叉から観測者までの距離の差を用いて説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta\\nu_{\\max}=\\dfrac{2\\nu_0v\\,\\Omega R}{v^2-(\\Omega R)^2}\\approx4.0\\,\\mathrm{Hz}$　(2) $N=\\dfrac{8R\\nu_0}{v}=\\dfrac{8R}{\\lambda}=8$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 棒が観測者方向と角 $\\phi=\\Omega t$ をなすとき，両端の速さ $u=\\Omega R$ の視線方向成分は $\\pm\\Omega R\\sin\\phi$．一方は近づき他方は遠ざかるので\n\\[\n\\Delta\\nu=\\nu_0\\frac{v}{v-u_r}-\\nu_0\\frac{v}{v+u_r}=\\frac{2\\nu_0vu_r}{v^2-u_r^2},\\quad u_r=\\Omega R|\\sin\\phi|.\n\\]\n最大は $u_r=\\Omega R=1.0\\,\\mathrm{m/s}$ のとき：$\\Delta\\nu_{\\max}=\\dfrac{2\\times680\\times340\\times1.0}{340^2-1}\\approx4.0\\,\\mathrm{Hz}$．\n\n(2) $u\\ll v$ では $\\Delta\\nu\\approx\\dfrac{2\\nu_0\\Omega R}{v}|\\sin\\Omega t|$．1 周期で積分して\n\\[\nN=\\int_0^{2\\pi/\\Omega}\\Delta\\nu\\,dt=\\frac{2\\nu_0\\Omega R}{v}\\cdot\\frac{4}{\\Omega}=\\frac{8R\\nu_0}{v}=\\frac{8\\times0.50\\times680}{340}=8.\n\\]\n解釈：遠方の観測者での 2 つの音の位相差は $2\\pi d/\\lambda$（$d$ は 2 音叉から観測者までの距離の差）である．$d=2R\\cos\\phi$ は 1 回転で $+2R\\to-2R\\to+2R$ と変化し，その総変化量は $8R$．うなり 1 回は位相差の $2\\pi$ の変化に当たるので $N=8R/\\lambda$ で，回転の速さによらない（速く回せばうなりは速くなるが回数は同じ）．$\\lambda=0.50\\,\\mathrm{m}$ より $N=8$．"
+   }
+  ],
+  "idea": {
+   "tex": "うなりの回数は 2 波の経路差の総変化量を波長で割ったもので，ドップラー効果の大きさ（回転速度）によらない幾何学的量になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta\\nu_{\\max}$ [Hz]：≈4.0\n(2) $N$：((8 R ν_0)/(v))"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "うなり",
+   "回転",
+   "位相差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-083",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 30,
+  "theme": "超音速で通過する音源の聞こえ方",
+  "topic": "超音速で通過する音源の聞こえ方",
+  "statement": {
+   "tex": "振動数 $\\nu_0=1.8\\,\\mathrm{kHz}$ の音源が，静止した観測者から距離 $l=250\\,\\mathrm{m}$ 離れた直線上を，音速 $v=340\\,\\mathrm{m/s}$ の $\\beta=1.50$ 倍の一定速度で通過する．音源が観測者に最も近づく時刻を $t=0$ とする．\n\\begin{enumerate}\n\\item 観測者が初めて音を聞く時刻 $t_1$ を求めよ．そのとき聞く振動数はどうなるか．\n\\item 時刻 $t=1.00\\,\\mathrm{s}$ に観測者は 2 つの音を同時に聞く．それぞれが放出された時刻と，聞こえる振動数（の大きさ）を求めよ．一方の音は時間反転して（後から出た音が先に）聞こえることを説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t_1=\\dfrac{l\\sqrt{\\beta^2-1}}{\\beta v}\\approx0.55\\,\\mathrm{s}$（最接近の後），振動数は発散（衝撃波）　(2) 放出時刻 $-1.80\\,\\mathrm{s}$ の音：約 $4.0\\,\\mathrm{kHz}$（時間反転），$+0.20\\,\\mathrm{s}$ の音：約 $1.1\\,\\mathrm{kHz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "音源の位置を $(ut_e,0)$（$u=\\beta v$），観測者を $(0,l)$ とする．時刻 $t_e$ に放出された音の到着時刻は\n\\[\nt(t_e)=t_e+\\frac{\\sqrt{u^2t_e^2+l^2}}{v}.\n\\]\n受信振動数は $\\nu=\\nu_0\\Big/\\dfrac{dt}{dt_e}$，$\\dfrac{dt}{dt_e}=1+\\dfrac{u^2t_e}{vr}=1-\\beta\\cos\\theta$（$\\theta$ は音源の速度と音源→観測者の方向のなす角，$\\cos\\theta=-ut_e/r$）．\n\n(1) 最初に届く音は $t(t_e)$ の最小値で，$dt/dt_e=0$，すなわち $\\cos\\theta=1/\\beta$（マッハ角）．$t_e=-\\dfrac{l}{u\\sqrt{\\beta^2-1}}$，$r=\\dfrac{l\\beta}{\\sqrt{\\beta^2-1}}$ より\n\\[\nt_1=-\\frac{l}{\\beta v\\sqrt{\\beta^2-1}}+\\frac{l\\beta}{v\\sqrt{\\beta^2-1}}=\\frac{l\\sqrt{\\beta^2-1}}{\\beta v}=\\frac{250\\times1.118}{1.5\\times340}\\approx0.55\\,\\mathrm{s}.\n\\]\n最接近（真横を通過）してから $0.55\\,\\mathrm{s}$ 後で，このとき $dt/dt_e=0$ なので受信振動数は発散する（衝撃波の到達）．\n\n(2) $t=1.00\\,\\mathrm{s}$ で $v^2(t-t_e)^2=u^2t_e^2+l^2$ を解くと 2 根 $t_e\\approx-1.80\\,\\mathrm{s}$，$+0.204\\,\\mathrm{s}$．\n・$t_e=-1.80\\,\\mathrm{s}$：$x_e=-920\\,\\mathrm{m}$，$\\cos\\theta=0.965$，$1-\\beta\\cos\\theta=-0.447<0$，$|\\nu|=\\nu_0/0.447\\approx4.0\\,\\mathrm{kHz}$．\n・$t_e=+0.204\\,\\mathrm{s}$：$x_e=+104\\,\\mathrm{m}$，$\\cos\\theta=-0.384$，$1-\\beta\\cos\\theta=1.576$，$\\nu\\approx1.1\\,\\mathrm{kHz}$．\n前者の枝では $dt/dt_e<0$：早く（$t_e$ が小さく）出た音ほど遅く届く．音源が自分の過去の音を追い越しているためで，近づいてくる区間の音は逆再生のように聞こえる．"
+   }
+  ],
+  "idea": {
+   "tex": "$dt/dt_e=1-\\beta\\cos\\theta$ の符号が超音速では変わる．零点がマッハ角＝衝撃波で，負の枝は時間反転した音として聞こえる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "超音速",
+   "衝撃波",
+   "マッハ角",
+   "遅延時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-084",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 25,
+  "theme": "迫るピストンでの反射と断熱不変量",
+  "topic": "迫るピストンでの反射と断熱不変量",
+  "statement": {
+   "tex": "音速 $v=330\\,\\mathrm{m/s}$ の気体中で，静止した音源の音が速さ $u=0.33\\,\\mathrm{m/s}$ で近づく壁により垂直に反射される．\n\\begin{enumerate}\n\\item 反射によって波長は何 % 変化するか．\n\\item 長さ $L$ の管の一端は固定壁，他端は速さ $u\\ (\\ll v)$ でゆっくり押し込まれるピストンである．管内を往復する音波パケットの振動数 $\\nu$ について，$\\nu L$ が一定に保たれることを示せ．\n\\item (2) で管の長さが半分になるまでに，振動数は何倍になるか．このとき，ピストンでの反射は何回ほど起こるか（$L_0=1.0\\,\\mathrm{m}$ とせよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2u/(v+u)\\approx0.20\\%$ 短くなる　(2) 証明（解説参照）　(3) 2 倍；約 $3.5\\times10^2$ 回"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 壁が受ける振動数 $\\nu_1=\\nu\\dfrac{v+u}{v}$，反射音（近づく音源としての壁から）は $\\nu'=\\nu_1\\dfrac{v}{v-u}=\\nu\\dfrac{v+u}{v-u}$．波長は $\\lambda'=\\lambda\\dfrac{v-u}{v+u}$ で，変化率は\n\\[\n\\frac{\\lambda-\\lambda'}{\\lambda}=\\frac{2u}{v+u}=\\frac{0.66}{330.33}\\approx2.0\\times10^{-3}=0.20\\%\\ (\\text{短くなる}).\n\\]\n(2) ピストンで 1 回反射するごとに $\\nu\\to\\nu(v+u)/(v-u)\\approx\\nu(1+2u/v)$．往復時間は $2L/v$ なので，粗視化した時間変化率は\n\\[\n\\frac{d\\nu}{dt}=\\nu\\frac{2u/v}{2L/v}=\\frac{\\nu u}{L}.\n\\]\n一方 $dL/dt=-u$．よって $\\dfrac{d}{dt}(\\nu L)=\\dfrac{\\nu u}{L}L-\\nu u=0$，$\\nu L=$ 一定．（定在波のモード番号 $n=2L\\nu/v$ が保存する断熱不変量になっている．）\n\n(3) $L\\to L/2$ で $\\nu\\to2\\nu$．反射 1 回あたり $\\ln\\nu$ は $\\ln\\frac{v+u}{v-u}\\approx2u/v=2\\times10^{-3}$ 増えるので，回数は $\\ln2/(2\\times10^{-3})\\approx3.5\\times10^2$ 回．（ピストンが $0.5\\,\\mathrm{m}$ 進む時間 $1.5\\times10^3\\,\\mathrm{s}$ を往復時間で割っても，$\\int dt\\,v/(2L)=\\frac{v}{2u}\\ln2\\approx3.5\\times10^2$ と一致．）"
+   }
+  ],
+  "idea": {
+   "tex": "1 回の反射でのドップラー偏移を往復時間で平均すると $\\nu L=$ 一定という断熱不変量が得られ，ゆっくり縮む空洞の音は長さに反比例して高くなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "反射",
+   "断熱不変量",
+   "定在波",
+   "動く壁"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-03-085",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-14",
+  "level": 3,
+  "minutes": 40,
+  "theme": "質点付き弦の振動数シフトと逆問題",
+  "topic": "質点付き弦の振動数シフトと逆問題",
+  "statement": {
+   "tex": "長さ $L$，線密度 $\\rho$ の一様な弦が張力 $T$ で両端を固定されている（$c=\\sqrt{T/\\rho}$）．弦の $x=a$ の位置に小さな質点 $m$ を取り付ける．微小な横振動のみを考える．\n\\begin{enumerate}\n\\item 振動数 $\\omega=ck$ の固有振動に対する厳密な固有値方程式が\n\\[\n\\cot ka+\\cot k(L-a)=\\frac{m}{\\rho}\\,k\n\\]\nとなることを示せ．\n\\item $m\\ll\\rho L$ として，第 $n$ モードの振動数 $\\omega_n=n\\pi c/L$ の相対変化 $\\delta\\omega_n/\\omega_n$ を $m$ の 1 次まで求めよ．\n\\item 質点の質量と位置が未知で，第 1，第 2 モードの振動数の相対変化を測ったところ，それぞれ $-1.00\\%$，$-0.50\\%$ であった．$m/(\\rho L)$ と $a/L$ を求めよ（$a$ を決める際の不定性にも触れよ）．さらに第 3 モードの相対変化を予言せよ．\n\\item 逆の極限 $m\\gg\\rho L$ で，最低振動数を求め，物理的に解釈せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\dfrac{\\delta\\omega_n}{\\omega_n}=-\\dfrac{m}{\\rho L}\\sin^2\\dfrac{n\\pi a}{L}$　(3) $m/(\\rho L)=0.0114\\ (=0.08/7)$，$a/L=0.385$ または $0.615$；第 3 モード $-0.25\\%$　(4) $\\omega\\simeq\\sqrt{\\dfrac{TL}{m\\,a(L-a)}}$（弦を 2 本のばねとみた質点の振動）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 弦は $\\rho\\,\\partial_t^2y=T\\partial_x^2y$ に従う．$y=Y(x)\\cos\\omega t$ とおき両端固定より\n\\[\nY=A\\sin kx\\ (0<x<a),\\qquad Y=B\\sin k(L-x)\\ (a<x<L).\n\\]\n$x=a$ で連続：$A\\sin ka=B\\sin k(L-a)\\equiv Y_a$．質点の運動方程式は張力の横成分の差で\n\\[\nm\\ddot y(a)=T\\big[Y'(a^+)-Y'(a^-)\\big]\\cos\\omega t\\ \\Rightarrow\\ -m\\omega^2Y_a=-Tk\\big[B\\cos k(L-a)+A\\cos ka\\big].\n\\]\n$A=Y_a/\\sin ka$，$B=Y_a/\\sin k(L-a)$ を代入し，$\\omega^2=c^2k^2=Tk^2/\\rho$ を用いると\n\\[\n\\cot ka+\\cot k(L-a)=\\frac{m}{\\rho}k .\n\\]\n\n(2) $k=k_n+\\delta k$，$k_n=n\\pi/L$．$\\sin k_nL=0$ の近くで，$f(k)=\\cot ka+\\cot k(L-a)=\\dfrac{\\sin kL}{\\sin ka\\,\\sin k(L-a)}$．$\\sin kL\\simeq(-1)^nL\\,\\delta k$，$\\sin k_n(L-a)=-(-1)^n\\sin k_na$ より\n\\[\nf\\simeq-\\frac{L\\,\\delta k}{\\sin^2k_na}=\\frac m\\rho k_n\\ \\Rightarrow\\ \\frac{\\delta\\omega_n}{\\omega_n}=\\frac{\\delta k}{k_n}=-\\frac{m}{\\rho L}\\sin^2\\frac{n\\pi a}{L}.\n\\]\n（レイリーの原理：運動エネルギーが $\\tfrac12 m\\dot y(a)^2$ だけ増え，弦全体の運動エネルギーとの比 $\\tfrac{2m}{\\rho L}\\sin^2k_na$ の半分だけ振動数が下がる，と解釈できる．節に質点を置けば変化しない．）\n\n(3) $\\mu=m/(\\rho L)$，$\\xi=\\pi a/L$ とすると $\\varepsilon_1=\\mu\\sin^2\\xi=0.0100$，$\\varepsilon_2=\\mu\\sin^22\\xi=4\\mu\\sin^2\\xi\\cos^2\\xi=0.0050$．比をとって $4\\cos^2\\xi=1/2$，$\\cos^2\\xi=1/8$．よって $\\xi=\\arccos(1/\\sqrt8)=1.209$，$a/L=0.385$．$\\sin^2\\xi=7/8$ より $\\mu=0.0100\\times8/7=0.0114$．$\\sin^2 n\\xi$ は $\\xi\\to\\pi-\\xi$（$a\\to L-a$）で不変なので，$a/L=0.615$ とも区別できない（左右対称性）．\n第 3 モード：$\\sin3\\xi=\\sin\\xi\\,(3-4\\sin^2\\xi)=-\\tfrac12\\sin\\xi$，$\\sin^23\\xi=\\tfrac14\\sin^2\\xi$．よって $\\varepsilon_3=\\tfrac14\\varepsilon_1=0.25\\%$，すなわち $\\delta\\omega_3/\\omega_3=-0.25\\%$．\n\n(4) $m\\gg\\rho L$ では最低モードで $k$ が小さく，$\\cot z\\simeq1/z$ として\n\\[\n\\frac1{ka}+\\frac1{k(L-a)}=\\frac m\\rho k\\ \\Rightarrow\\ k^2=\\frac{\\rho L}{m\\,a(L-a)},\\quad \\omega=ck=\\sqrt{\\frac{TL}{m\\,a(L-a)}} .\n\\]\nこれは，弦の両側がばね定数 $T/a$，$T/(L-a)$ のばねとして質点を引き戻す（弦の質量は無視できる）振動 $\\omega^2=(T/a+T/(L-a))/m$ にほかならない．"
+   }
+  ],
+  "idea": {
+   "tex": "質点の位置での張力の折れ曲がりが接続条件を与え，1 次摂動では $\\delta\\omega_n/\\omega_n=-(m/\\rho L)\\sin^2(n\\pi a/L)$．2 つのモードのシフト比から位置が，大きさから質量が決まる逆問題になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弦の振動",
+   "固有振動",
+   "摂動",
+   "レイリーの原理",
+   "逆問題",
+   "接続条件"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

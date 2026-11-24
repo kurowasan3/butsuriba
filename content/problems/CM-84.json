@@ -498,6 +498,309 @@
   }
  },
  {
+  "id": "CM-07-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-84",
+  "level": 3,
+  "minutes": 35,
+  "theme": "気泡を含む水の音速（Woodの式）",
+  "topic": "気泡を含む水の音速（Woodの式）",
+  "statement": {
+   "tex": "水（密度 $\\rho_l$，音速 $c_l$）の中に，半径が音の波長に比べて十分小さい空気の気泡が体積分率 $\\phi$ で一様に分散している．気泡と水は一緒に動き（相対運動なし），音の振動に対して気泡内の空気は等温的に圧縮される（気泡が小さく熱伝導が速い）とする．表面張力は無視し，平均圧力を $p_0$，空気の密度を $\\rho_g$ とする．\n\\begin{enumerate}\n\\item 混合物を一様な圧縮性完全流体とみなして線形化した連続の方程式と Euler 方程式から，混合物中の音速が\n\\[\\frac{1}{c^2}=\\rho_{\\rm mix}\\,\\kappa_{\\rm mix},\\qquad \\rho_{\\rm mix}=\\phi\\rho_g+(1-\\phi)\\rho_l,\\quad \\kappa_{\\rm mix}=\\frac{\\phi}{p_0}+\\frac{1-\\phi}{\\rho_lc_l^2}\\]\nで与えられることを示せ（$\\kappa=-\\frac1V\\frac{\\partial V}{\\partial p}$ は圧縮率）．\n\\item $p_0=1.0\\times10^5\\ \\mathrm{Pa}$，$\\rho_l=1000\\ \\mathrm{kg/m^3}$，$c_l=1480\\ \\mathrm{m/s}$，$\\rho_g=1.2\\ \\mathrm{kg/m^3}$ として，$\\phi=1\\,\\%$ のときの音速を求めよ．\n\\item 音速を $\\phi$ の関数とみて，最小となる $\\phi$ と最小値を近似的に求めよ．その値を，水だけ（1480 m/s）・空気だけ（等温で約 290 m/s）の音速と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\partial^2\\rho'/\\partial t^2=c^2\\nabla^2\\rho'$，$c^2=(\\partial p/\\partial\\rho)=1/(\\rho_{\\rm mix}\\kappa_{\\rm mix})$　(2) $c\\approx100\\ \\mathrm{m/s}$　(3) $\\phi\\approx1/2$ で $c_{\\min}\\approx\\sqrt{4p_0/\\rho_l}\\approx20\\ \\mathrm{m/s}$（どちらの単体より遠く遅い）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 混合物の密度 $\\rho$，圧力 $p$ について $\\rho=\\rho_{\\rm mix}+\\rho'$，$p=p_0+p'$，$\\boldsymbol v=\\boldsymbol v'$ と置いて線形化すると\n\\[\\frac{\\partial\\rho'}{\\partial t}+\\rho_{\\rm mix}\\,\\mathrm{div}\\,\\boldsymbol v'=0,\\qquad \\rho_{\\rm mix}\\frac{\\partial\\boldsymbol v'}{\\partial t}=-\\mathrm{grad}\\,p'.\\]\n$\\boldsymbol v'$ を消去して $\\partial^2\\rho'/\\partial t^2=\\nabla^2p'=(\\partial p/\\partial\\rho)\\nabla^2\\rho'$．よって $c^2=\\partial p/\\partial\\rho$．\n質量 $m$ の混合物の体積は $V=V_g+V_l$．圧力変化に対し $dV=dV_g+dV_l=-(\\kappa_gV_g+\\kappa_lV_l)dp$，よって $\\kappa_{\\rm mix}=\\phi\\kappa_g+(1-\\phi)\\kappa_l$．等温の空気は $pV_g=$一定 より $\\kappa_g=1/p_0$，水は $\\kappa_l=1/(\\rho_lc_l^2)$．質量一定で $\\rho=m/V$ だから $d\\rho/\\rho=-dV/V=\\kappa_{\\rm mix}dp$，すなわち\n\\[c^2=\\frac{\\partial p}{\\partial\\rho}=\\frac{1}{\\rho_{\\rm mix}\\kappa_{\\rm mix}}.\\]\n密度は主に水が，圧縮率は主に空気が担うので，両者の「悪いところ」が組み合わさって音速が非常に小さくなる．\n\n(2) $\\kappa_{\\rm mix}=\\dfrac{0.01}{10^5}+\\dfrac{0.99}{1000\\times1480^2}=1.000\\times10^{-7}+4.5\\times10^{-10}=1.0045\\times10^{-7}\\ \\mathrm{Pa^{-1}}$，$\\rho_{\\rm mix}=990\\ \\mathrm{kg/m^3}$．\n\\[c=\\frac{1}{\\sqrt{990\\times1.0045\\times10^{-7}}}\\approx100\\ \\mathrm{m/s}.\\]\nわずか 1 % の気泡で音速は水の約 1/15 になる．\n\n(3) $\\rho_g\\ll\\rho_l$，$\\kappa_l\\ll\\kappa_g$ なので，$\\phi$ が極端に 0 や 1 に近くなければ $\\rho_{\\rm mix}\\kappa_{\\rm mix}\\simeq(1-\\phi)\\rho_l\\cdot\\phi/p_0$．これは $\\phi=1/2$ で最大となるので\n\\[c_{\\min}\\simeq\\sqrt{\\frac{p_0}{\\rho_l\\phi(1-\\phi)}}\\Big|_{\\phi=1/2}=\\sqrt{\\frac{4p_0}{\\rho_l}}=20\\ \\mathrm{m/s}.\\]\n（正確な式で数値的に最小化しても $\\phi\\approx0.50$，$c_{\\min}\\approx20.0\\ \\mathrm{m/s}$．）水 1480 m/s，空気約 290 m/s のどちらよりもはるかに遅い．"
+   }
+  ],
+  "idea": {
+   "tex": "音速 $c^2=\\partial p/\\partial\\rho$ を混合物に適用すると $1/c^2=\\rho\\kappa$ で，密度は水・圧縮率は空気が担うため，混合物の音速はどちらの成分よりも桁違いに小さくなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $c$ [m/s]：≈100\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "音波",
+   "音速",
+   "圧縮率",
+   "気泡流",
+   "Woodの式",
+   "線形化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-07-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-84",
+  "level": 3,
+  "minutes": 35,
+  "theme": "波形壁上の線形圧縮性流と造波抵抗",
+  "topic": "波形壁上の線形圧縮性流と造波抵抗",
+  "statement": {
+   "tex": "2 次元の完全流体（密度 $\\rho_0$，音速 $c$）が $x$ 方向に一様な速さ $U$ で流れており，その下側を波形の壁 $y=h(x)=\\varepsilon\\sin kx$（$\\varepsilon k\\ll1$）が仕切っている（流体は $y>h(x)$ を占める）．マッハ数を $M=U/c$ とする．流れは渦なしで，攪乱の速度ポテンシャル $\\phi$ は線形近似で\n\\[(1-M^2)\\phi_{xx}+\\phi_{yy}=0\\]\nに従い，壁での境界条件は $\\phi_y(x,0)=U h'(x)$，圧力の攪乱は $p'=-\\rho_0U\\phi_x$ で与えられるとする．壁が流体から受ける $x$ 方向の力の，壁の単位面積（$xz$ 面への射影面積）あたりの平均値を $\\bar D=\\langle p'(x,0)\\,h'(x)\\rangle$（$\\langle\\ \\rangle$ は 1 波長平均）とする．\n\\begin{enumerate}\n\\item $M<1$ のとき，$y\\to\\infty$ で有界な $\\phi$ を求め，壁上の $p'$ を求めよ．また $\\bar D=0$ を示せ．\n\\item $M>1$ のとき，攪乱が壁から遠ざかる向きにのみ伝わる（壁に向かって入ってくる波はない）という条件で $\\phi$ を求め，壁上の $p'$ と $\\bar D$ を求めよ．\n\\item (2) の $\\bar D$ は流体の粘性がないのに 0 でない．その物理的な起源を述べよ．また $M\\to1$ で (1)(2) の結果がどうなるかを述べ，線形理論の適用限界について論ぜよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\phi=-\\dfrac{U\\varepsilon}{\\sqrt{1-M^2}}e^{-k\\sqrt{1-M^2}\\,y}\\cos kx$，$p'=-\\dfrac{\\rho_0U^2\\varepsilon k}{\\sqrt{1-M^2}}\\sin kx$，$\\bar D=0$　\n(2) $\\phi=-\\dfrac{U\\varepsilon}{\\sqrt{M^2-1}}\\sin k\\!\\left(x-\\sqrt{M^2-1}\\,y\\right)$，$p'=\\dfrac{\\rho_0U^2\\varepsilon k}{\\sqrt{M^2-1}}\\cos kx$，$\\bar D=\\dfrac{\\rho_0U^2\\varepsilon^2k^2}{2\\sqrt{M^2-1}}$　\n(3) 無限遠へ運び去られるマッハ波のエネルギー（造波抵抗）．$M\\to1$ で両者とも発散し線形理論は破綻（遷音速）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $M<1$ では方程式は楕円型．$\\gamma=\\sqrt{1-M^2}$ とおき，変数分離で $\\phi=A e^{-\\gamma k y}\\cos kx$（$y\\to\\infty$ で有界な解）を仮定すると $(1-M^2)\\phi_{xx}+\\phi_{yy}=(-\\gamma^2k^2+\\gamma^2k^2)\\phi=0$ を満たす．境界条件 $\\phi_y(x,0)=-\\gamma kA\\cos kx=U\\varepsilon k\\cos kx$ から $A=-U\\varepsilon/\\gamma$．よって\n\\[\\phi=-\\frac{U\\varepsilon}{\\gamma}e^{-\\gamma ky}\\cos kx,\\qquad p'(x,0)=-\\rho_0U\\phi_x=-\\frac{\\rho_0U^2\\varepsilon k}{\\gamma}\\sin kx .\\]\n$p'$ は $\\sin kx$（壁の高さ $h$ と同位相，山で負圧）に比例し，$h'=\\varepsilon k\\cos kx$ とは $90^\\circ$ ずれているので $\\bar D=\\langle -\\tfrac{\\rho_0U^2\\varepsilon^2k^2}{\\gamma}\\sin kx\\cos kx\\rangle=0$．圧力分布は山の前後で対称で，抵抗は生じない（d'Alembert の背理の圧縮性版）．\n\n(2) $M>1$ では方程式は双曲型（波動方程式）で，$\\beta=\\sqrt{M^2-1}$ として一般解は $\\phi=F(x-\\beta y)+G(x+\\beta y)$．$x-\\beta y=\\text{const}$ の特性線は壁から下流・上方へ伸びるマッハ線であり，壁から出て遠ざかる攪乱を表す．壁へ向かう波は無いので $G=0$．境界条件 $\\phi_y(x,0)=-\\beta F'(x)=U\\varepsilon k\\cos kx$ より $F'(\\xi)=-\\dfrac{U\\varepsilon k}{\\beta}\\cos k\\xi$，\n\\[\\phi=-\\frac{U\\varepsilon}{\\beta}\\sin k(x-\\beta y),\\qquad p'(x,0)=-\\rho_0UF'(x)=\\frac{\\rho_0U^2\\varepsilon k}{\\beta}\\cos kx .\\]\n今度は $p'\\propto h'$（上流を向いた斜面で正圧）なので\n\\[\\bar D=\\Big\\langle \\frac{\\rho_0U^2\\varepsilon k}{\\beta}\\cos kx\\cdot\\varepsilon k\\cos kx\\Big\\rangle=\\frac{\\rho_0U^2\\varepsilon^2k^2}{2\\sqrt{M^2-1}} .\\]\n（ここで壁が受ける $x$ 方向の力は，流体から壁へ向かう法線 $(h',-1)/\\sqrt{1+h'^2}$ と面素 $\\sqrt{1+h'^2}\\,dx$ から $p\\,h'\\,dx$ となる．）\n\n(3) 超音速では攪乱が減衰せずマッハ波として $y\\to\\infty$ まで伝わり，そのエネルギー流束を供給するために壁は仕事をし続けねばならない．これが造波抵抗であり，散逸（粘性）とは無関係である．亜音速では攪乱が指数関数的に局在して無限遠にエネルギーが逃げないので抵抗は 0 である．$M\\to1$ では $\\gamma,\\beta\\to0$ で $p'$，$\\bar D$ がともに $1/\\sqrt{|1-M^2|}$ で発散し，攪乱の減衰長 $1/(\\gamma k)$ も発散する．実際には攪乱が小さいという線形化の仮定（$|u'|\\ll|U-c|$ 程度が必要）が破れ，非線形項を残した遷音速理論が必要になる．"
+   }
+  ],
+  "idea": {
+   "tex": "線形化ポテンシャル方程式が $M<1$ で楕円型，$M>1$ で双曲型になることから，正弦波形壁で圧力の位相が $90^\\circ$ ずれ，超音速でだけ放射（マッハ波）による造波抵抗が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\phi$：-((U ε)/(sqrt(1- M ^(2)))) e ^(- k sqrt(1- M ^(2)) y) cos k x ; $p'$：-((ρ_0 U ^(2) ε k)/(sqrt(1- M ^(2)))) sin k x ; $\\bar D$：0\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "線形化ポテンシャル流",
+   "超音速流",
+   "マッハ波",
+   "造波抵抗",
+   "Ackeret理論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-07-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-84",
+  "level": 3,
+  "minutes": 35,
+  "theme": "衝撃波のエントロピー跳びと弱衝撃波",
+  "topic": "衝撃波のエントロピー跳びと弱衝撃波",
+  "statement": {
+   "tex": "比熱比 $\\gamma$ の理想気体中の直立衝撃波を考える．上流側（添字 1）・下流側（添字 2）の圧力，密度，単位質量あたりの内部エネルギーを $p,\\rho,\\epsilon$ とすると，Rankine–Hugoniot の関係\n\\[\\epsilon_2-\\epsilon_1=\\frac{p_1+p_2}{2}\\left(\\frac1{\\rho_1}-\\frac1{\\rho_2}\\right),\\qquad \\epsilon=\\frac{p}{(\\gamma-1)\\rho}\\]\nが成り立つ．圧力比を $P=p_2/p_1$ とする．\n\\begin{enumerate}\n\\item 密度比 $\\rho_2/\\rho_1$ を $P$ で表せ．\n\\item $P\\to\\infty$（強い衝撃波）の極限で $\\rho_2/\\rho_1$ と温度比 $T_2/T_1$ がどうなるかを述べよ．$\\gamma=1.4$，$P=10$ のときの $\\rho_2/\\rho_1$，$T_2/T_1$ の値も求めよ．\n\\item 単位質量あたりのエントロピーの跳び $\\Delta s=s_2-s_1$ を定積比熱 $c_v$ を用いて表し，$\\varepsilon=P-1$ で展開したとき $\\varepsilon$ の 1 次と 2 次の項が消え，\n\\[\\frac{\\Delta s}{c_v}=\\frac{\\gamma^2-1}{12\\gamma^2}\\varepsilon^3+O(\\varepsilon^4)\\]\nとなることを示せ．\n\\item (3) を用いて，圧力が下がる「膨張衝撃波」（$P<1$）が理想気体中で存在しえない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\rho_2}{\\rho_1}=\\dfrac{(\\gamma+1)P+(\\gamma-1)}{(\\gamma-1)P+(\\gamma+1)}$　\n(2) $\\rho_2/\\rho_1\\to\\dfrac{\\gamma+1}{\\gamma-1}$（有限），$T_2/T_1\\to\\infty$．$\\gamma=1.4,P=10$ で $\\rho_2/\\rho_1=3.81$，$T_2/T_1=2.62$　\n(3) $\\Delta s/c_v=\\ln\\!\\big[P(\\rho_1/\\rho_2)^\\gamma\\big]=\\dfrac{\\gamma^2-1}{12\\gamma^2}\\varepsilon^3+\\cdots$　\n(4) $P<1$ では $\\Delta s<0$ となり第 2 法則に反する．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $r=\\rho_2/\\rho_1$ とおき，$p_1,\\rho_1$ で割ると\n\\[\\frac{1}{\\gamma-1}\\left(\\frac{P}{r}-1\\right)=\\frac{1+P}{2}\\left(1-\\frac1r\\right).\\]\n両辺に $2(\\gamma-1)r$ をかけて $2P-2r=(\\gamma-1)(1+P)(r-1)$，$r$ について解くと\n\\[r=\\frac{(\\gamma+1)P+(\\gamma-1)}{(\\gamma-1)P+(\\gamma+1)} .\\]\n\n(2) $P\\to\\infty$ で $r\\to(\\gamma+1)/(\\gamma-1)$（$\\gamma=1.4$ なら 6，単原子気体なら 4）．どれほど強い衝撃波でも圧縮には上限がある．一方 $T_2/T_1=P/r=\\dfrac{P\\{(\\gamma-1)P+\\gamma+1\\}}{(\\gamma+1)P+\\gamma-1}\\sim\\dfrac{\\gamma-1}{\\gamma+1}P\\to\\infty$ で，エネルギーは圧縮ではなく加熱に回る．$\\gamma=1.4$，$P=10$ では $r=\\dfrac{24+0.4}{4+2.4}=\\dfrac{24.4}{6.4}=3.81$，$T_2/T_1=10/3.8125=2.62$．\n\n(3) 理想気体では $s=c_v\\ln(p\\rho^{-\\gamma})+\\text{const}$ より\n\\[\\frac{\\Delta s}{c_v}=\\ln P-\\gamma\\ln r .\\]\n$P=1+\\varepsilon$ とすると $r=\\dfrac{2\\gamma+(\\gamma+1)\\varepsilon}{2\\gamma+(\\gamma-1)\\varepsilon}$．$\\ln r=\\ln\\!\\big(1+\\tfrac{\\gamma+1}{2\\gamma}\\varepsilon\\big)-\\ln\\!\\big(1+\\tfrac{\\gamma-1}{2\\gamma}\\varepsilon\\big)$ と書き，$a_\\pm=\\tfrac{\\gamma\\pm1}{2\\gamma}$ とおくと\n\\[\\ln r=(a_+-a_-)\\varepsilon-\\tfrac12(a_+^2-a_-^2)\\varepsilon^2+\\tfrac13(a_+^3-a_-^3)\\varepsilon^3+\\cdots\\]\n$a_+-a_-=\\tfrac1\\gamma$，$a_+^2-a_-^2=\\tfrac1\\gamma$，$a_+^3-a_-^3=\\tfrac{3\\gamma^2+1}{4\\gamma^3}$ より\n\\[\\gamma\\ln r=\\varepsilon-\\tfrac12\\varepsilon^2+\\frac{3\\gamma^2+1}{12\\gamma^2}\\varepsilon^3+\\cdots .\\]\n$\\ln P=\\varepsilon-\\tfrac12\\varepsilon^2+\\tfrac13\\varepsilon^3-\\cdots$ から引くと，1 次・2 次は打ち消し合い\n\\[\\frac{\\Delta s}{c_v}=\\left(\\frac13-\\frac{3\\gamma^2+1}{12\\gamma^2}\\right)\\varepsilon^3=\\frac{\\gamma^2-1}{12\\gamma^2}\\varepsilon^3+O(\\varepsilon^4).\\]\n弱い衝撃波はほぼ断熱可逆（エントロピー生成は強さの 3 乗）であり，音波の近似が良い理由でもある．\n\n(4) $\\gamma>1$ なので係数は正．$P<1$（$\\varepsilon<0$）の弱い膨張衝撃波では $\\Delta s<0$．断熱的に孤立した流れの中で流体粒子のエントロピーが減ることは第 2 法則に反するので，膨張衝撃波は存在しない（膨張は連続的な膨張波として起こる）．なお $\\Delta s/c_v$ は $P$ の単調増加関数で $P=1$ でのみ 0 になることも確かめられる．"
+   }
+  ],
+  "idea": {
+   "tex": "Hugoniot 曲線は等エントロピー曲線と $P=1$ で 2 次まで接するため，エントロピーの跳びは衝撃波の強さの 3 乗から始まり，その符号が圧縮衝撃波だけを許す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "衝撃波",
+   "Rankine-Hugoniot",
+   "エントロピー",
+   "弱衝撃波",
+   "強衝撃波"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-07-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-84",
+  "level": 3,
+  "minutes": 40,
+  "theme": "ピストンが駆動する衝撃波とエントロピー",
+  "topic": "ピストンが駆動する衝撃波とエントロピー",
+  "statement": {
+   "tex": "断面一様な長い管に，静止した理想気体（圧力 $p_1$，密度 $\\rho_1$，音速 $c_1=\\sqrt{\\gamma p_1/\\rho_1}$，比熱比 $\\gamma$ 一定）が入っている．時刻 $t=0$ に管の端のピストンが一定の速さ $u_p$ で気体に向かって動き始め，一定速度 $V$ で進む衝撃波が生じた．衝撃波の後ろの気体はピストンと同じ速さ $u_p$ で動く．熱伝導・粘性は衝撃波面の外では無視する．$M=V/c_1$ とおく．\n\\begin{enumerate}\n\\item 衝撃波面とともに動く系で質量・運動量・エネルギーの保存則を書き，密度比と圧力比が\n\\[ \\frac{\\rho_2}{\\rho_1}=\\frac{(\\gamma+1)M^2}{(\\gamma-1)M^2+2},\\qquad \\frac{p_2}{p_1}=\\frac{2\\gamma M^2-(\\gamma-1)}{\\gamma+1} \\]\nとなることを示せ（自明な解 $M$ によらず $\\rho_2=\\rho_1$ は除く）．\n\\item $\\dfrac{u_p}{c_1}=\\dfrac{2(M^2-1)}{(\\gamma+1)M}$ を示し，与えられた $u_p$ に対する衝撃波速度 $V$ を求めよ．\n\\item 強いピストン（$u_p\\gg c_1$）と弱いピストン（$u_p\\ll c_1$）の極限で $V$ を求め，前者について密度比の極限 $(\\gamma+1)/(\\gamma-1)$ と整合することを確かめよ．\n\\item 空気（$\\gamma=1.4$，$c_1=340\\ \\mathrm{m/s}$）で $u_p=680\\ \\mathrm{m/s}$ のとき，$V$，$M$，$\\rho_2/\\rho_1$，$p_2/p_1$ を求めよ．\n\\item 単位質量あたりのエントロピー変化 $\\Delta s=c_v\\ln\\left[\\dfrac{p_2}{p_1}\\left(\\dfrac{\\rho_1}{\\rho_2}\\right)^{\\gamma}\\right]$ を弱い衝撃波（$\\epsilon=M^2-1$ が小さい）について $\\epsilon$ の最低次まで求めよ．これを用いて，ピストンを引き抜く（$u_p<0$）場合に衝撃波が生じない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $V=\\dfrac{\\gamma+1}{4}u_p+\\sqrt{\\left(\\dfrac{\\gamma+1}{4}u_p\\right)^2+c_1^2}$　(3) 強：$V\\to\\dfrac{\\gamma+1}{2}u_p$，弱：$V\\simeq c_1+\\dfrac{\\gamma+1}{4}u_p$　(4) $V\\approx 939\\ \\mathrm{m/s}$，$M\\approx2.76$，$\\rho_2/\\rho_1\\approx3.62$，$p_2/p_1\\approx8.73$　(5) $\\Delta s\\simeq c_v\\dfrac{2\\gamma(\\gamma-1)}{3(\\gamma+1)^2}\\epsilon^3$；$u_p<0$ は $M<1$（$\\epsilon<0$）で $\\Delta s<0$ となり第2法則に反する"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 衝撃波静止系では上流の流速 $v_1=V$（波に向かって流入），下流 $v_2=V-u_p$．\n\\[ \\rho_1v_1=\\rho_2v_2,\\quad p_1+\\rho_1v_1^2=p_2+\\rho_2v_2^2,\\quad \\frac{v_1^2}{2}+\\frac{\\gamma}{\\gamma-1}\\frac{p_1}{\\rho_1}=\\frac{v_2^2}{2}+\\frac{\\gamma}{\\gamma-1}\\frac{p_2}{\\rho_2}. \\]\n（エンタルピー $h=\\frac{\\gamma}{\\gamma-1}p/\\rho$．）$X=\\rho_2/\\rho_1=v_1/v_2$，$Y=p_2/p_1$ とおくと，運動量式を $p_1$ で割って $Y-1=\\gamma M^2(1-1/X)$．エネルギー式から $\\frac12v_1^2(1/X^2-1)=\\frac{c_1^2}{\\gamma-1}(1-Y/X)$，すなわち $(\\gamma-1)M^2(1-X^2)=2(X^2-XY)$．$Y$ を代入すると\n\\[ \\big[\\{2+(\\gamma-1)M^2\\}X-(\\gamma+1)M^2\\big](X-1)=0 \\]\n$X\\neq1$ から与式の $X$，これを $Y$ の式に入れて $Y=\\dfrac{2\\gamma M^2-(\\gamma-1)}{\\gamma+1}$．\n\n(2) $u_p=v_1-v_2=V(1-1/X)=V\\dfrac{2(M^2-1)}{(\\gamma+1)M^2}$ より $\\dfrac{u_p}{c_1}=\\dfrac{2(M^2-1)}{(\\gamma+1)M}$．$V=Mc_1$ として $V^2-\\frac{\\gamma+1}{2}u_pV-c_1^2=0$，正の根\n\\[ V=\\frac{\\gamma+1}{4}u_p+\\sqrt{\\Big(\\frac{\\gamma+1}{4}u_p\\Big)^2+c_1^2}. \\]\n\n(3) $u_p\\gg c_1$：$V\\to\\frac{\\gamma+1}{2}u_p$．このとき質量保存 $\\rho_1V=\\rho_2(V-u_p)$ から $\\rho_2/\\rho_1=V/(V-u_p)\\to\\frac{(\\gamma+1)/2}{(\\gamma-1)/2}=\\frac{\\gamma+1}{\\gamma-1}$ で，強い衝撃波の密度比の上限と一致．\n$u_p\\ll c_1$：$V\\simeq c_1+\\frac{\\gamma+1}{4}u_p$（音速＋補正．弱い衝撃波は音波に近づく）．\n\n(4) $\\frac{\\gamma+1}{4}u_p=408$，$V=408+\\sqrt{408^2+340^2}=408+531.1\\approx939\\ \\mathrm{m/s}$，$M=2.76$，$M^2=7.63$．\n$X=\\dfrac{2.4\\times7.63}{0.4\\times7.63+2}\\approx3.62$，$Y=\\dfrac{2.8\\times7.63-0.4}{2.4}\\approx8.73$．\n\n(5) $M^2=1+\\epsilon$ として $\\ln Y-\\gamma\\ln X$ を展開すると，$\\epsilon$ と $\\epsilon^2$ の項は打ち消し合い\n\\[ \\frac{\\Delta s}{c_v}\\simeq\\frac{2\\gamma(\\gamma-1)}{3(\\gamma+1)^2}\\,\\epsilon^3. \\]\n弱い衝撃波のエントロピー生成は強さの 3 乗に比例する．ピストンを引くと (2) より $M<1$（$\\epsilon<0$）が必要で $\\Delta s<0$ となり，断熱系のエントロピー増大則に反する．したがって膨張衝撃波は存在せず，連続的な膨張波（希薄波）になる．"
+   }
+  ],
+  "idea": {
+   "tex": "ランキン＝ユゴニオ関係を「ピストン速度→衝撃波速度」の逆問題として解き，強・弱の極限と，エントロピー跳び $\\propto(M^2-1)^3$ による膨張衝撃波の禁止を導く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $V$：((γ +1)/(4)) u_p + sqrt((((γ +1)/(4)) u_p)^(2)+ c_1 ^(2))\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "衝撃波",
+   "ランキン・ユゴニオ",
+   "ピストン問題",
+   "マッハ数",
+   "エントロピー",
+   "圧縮性流体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-07-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-84",
+  "level": 3,
+  "minutes": 25,
+  "theme": "細管でつながったシャボン玉の収縮と不安定性",
+  "topic": "細管でつながったシャボン玉の収縮と不安定性",
+  "statement": {
+   "tex": "半径 $R_0$ のシャボン玉が，長さ $l$，内半径 $r$ の細管の一端についている．細管内の気体の流れはポアズイユ流（粘性率 $\\eta$）とし，気体の圧縮性は無視する（$4\\sigma/R\\ll p_0$）．石けん水の表面張力は $\\sigma$．\n\\begin{enumerate}\n\\item 細管の他端を大気に開いたとき，シャボン玉が縮んで消えるまでの時間 $t_0$ を求めよ．\n\\item 半径が $R_0/2$ になるまでの時間は $t_0$ の何倍か．\n\\item 細管の両端に同じ半径 $R_0$ のシャボン玉を 1 個ずつつけ（大気とは通じない），わずかに大きさに差をつける．この平衡は不安定であることを示し，差が指数関数的に増える割合 $\\lambda$ を $t_0$ で表せ．\n\\item $R_0=3.0$ cm，$l=1.0$ cm，$r=0.50$ mm，$\\eta=1.8\\times10^{-5}$ Pa·s，$\\sigma=0.045$ N/m のとき，$t_0$ と $\\lambda$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t_0=\\dfrac{2\\eta lR_0^4}{\\sigma r^4}$　(2) $15/16$ 倍　(3) $\\lambda=\\dfrac{\\sigma r^4}{4\\eta lR_0^4}=\\dfrac1{2t_0}$　(4) $t_0=1.0\\times10^2$ s，$\\lambda=4.8\\times10^{-3}\\ \\mathrm{s^{-1}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) シャボン膜は 2 面なので内部の過剰圧は $4\\sigma/R$．ポアズイユの式より流出量\n\\[\n-\\frac{d}{dt}\\left(\\frac43\\pi R^3\\right)=\\frac{\\pi r^4}{8\\eta l}\\cdot\\frac{4\\sigma}{R}\\quad\\Longrightarrow\\quad R^3\\frac{dR}{dt}=-\\frac{\\sigma r^4}{8\\eta l}.\n\\]\n積分して $R^4=R_0^4-\\dfrac{\\sigma r^4}{2\\eta l}t$．$R=0$ となる時刻は $t_0=\\dfrac{2\\eta lR_0^4}{\\sigma r^4}$．\n\n(2) $R^4=R_0^4(1-t/t_0)$ より $R=R_0/2$ では $1-t/t_0=1/16$，$t=\\dfrac{15}{16}t_0$．時間の大半は大きい段階で費やされ，最後は一気につぶれる．\n\n(3) $R_1=R_0+x$，$R_2=R_0-x$ とする．圧力差 $p_2-p_1=4\\sigma(1/R_2-1/R_1)\\approx8\\sigma x/R_0^2>0$ なので気体は小さい玉から大きい玉へ流れ，差を広げる（不安定）．玉 1 の体積変化 $4\\pi R_0^2\\dot x$ が流量に等しいから\n\\[\n4\\pi R_0^2\\dot x=\\frac{\\pi r^4}{8\\eta l}\\cdot\\frac{8\\sigma x}{R_0^2}\\quad\\Longrightarrow\\quad \\dot x=\\frac{\\sigma r^4}{4\\eta lR_0^4}x=\\lambda x,\\qquad \\lambda=\\frac1{2t_0}.\n\\]\n\n(4) $t_0=\\dfrac{2(1.8\\times10^{-5})(0.010)(0.030)^4}{(0.045)(5.0\\times10^{-4})^4}=1.0\\times10^2$ s，$\\lambda=4.8\\times10^{-3}\\ \\mathrm{s^{-1}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "ラプラス圧 $4\\sigma/R$ は小さい玉ほど大きいので，大気への放出では $R^4$ が時間に線形に減り，2 玉の連結では小さい方が大きい方に吸い込まれる不安定が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $t_0$：((2 η l R_0 ^(4))/(σ r ^(4)))\n(2) 15/16倍\n(3) $\\lambda$：((σ r ^(4))/(4 η l R_0 ^(4)))\n(4) $t_0$ [s]：≈1.0e2 ; $\\lambda$ [s⁻¹]：≈4.8e-3"
+  },
+  "methods": [],
+  "tags": [
+   "シャボン玉",
+   "ポアズイユ流",
+   "ラプラス圧",
+   "不安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-07-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-84",
+  "level": 3,
+  "minutes": 40,
+  "theme": "有限深さの水面波と水底圧力計",
+  "topic": "有限深さの水面波と水底圧力計",
+  "statement": {
+   "tex": "深さ $h$ の一様な湖で，$x$ 方向に進む微小振幅の水面波 $\\eta=a\\cos(kx-\\omega t)$ を考える．水は非圧縮・非粘性で流れは渦なし，表面張力は無視する．水底は $z=-h$，静止水面は $z=0$．\n\\begin{enumerate}\n\\item 速度ポテンシャルを $\\phi=f(z)\\sin(kx-\\omega t)$ の形で求め，分散関係 $\\omega^2=gk\\tanh kh$ を導け．\n\\item 水粒子の軌跡は楕円であることを示し，深さ $z$ における水平・鉛直の振幅を求めよ．水底での運動はどうなるか．\n\\item 水底（$z=-h$）での圧力の変動振幅 $\\Delta p$ を $a$ で表せ．\n\\item 水深 $h=10.0$ m の水底に置いた圧力計が，周期 $4.0$ s，振幅 $\\Delta p=1.0$ kPa の圧力変動を記録した．波長，水面での波の振幅 $a$，位相速度と群速度を求めよ（$g=9.8$ m/s$^2$，$\\rho=1.0\\times10^3$ kg/m$^3$）．深水・浅水の近似式による値と比べ，この波はどちらに近いか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\phi=\\dfrac{\\omega a}{k}\\dfrac{\\cosh k(z+h)}{\\sinh kh}\\sin(kx-\\omega t)$，$\\omega^2=gk\\tanh kh$　(2) 水平振幅 $a\\dfrac{\\cosh k(z+h)}{\\sinh kh}$，鉛直振幅 $a\\dfrac{\\sinh k(z+h)}{\\sinh kh}$；水底では水平往復運動のみ　(3) $\\Delta p=\\dfrac{\\rho g a}{\\cosh kh}$　(4) 波長 $24.7$ m（$kh=2.55$），$a=0.66$ m，$c_p=6.2$ m/s，$c_g=3.3$ m/s；深水波に近い（深水近似で波長 $25.0$ m，$c_g=c_p/2$；浅水近似 $\\sqrt{gh}=9.9$ m/s は大きく外れる）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 非圧縮・渦なしより $\\nabla^2\\phi=0$：$f''=k^2f$．水底で $\\partial_z\\phi=0$ より $f=C\\cosh k(z+h)$．線形化した運動学的条件 $\\partial_t\\eta=\\partial_z\\phi|_{z=0}$：$\\omega a\\sin(kx-\\omega t)=Ck\\sinh kh\\,\\sin(kx-\\omega t)$ より $C=\\dfrac{\\omega a}{k\\sinh kh}$．線形化したベルヌーイの式 $\\partial_t\\phi+p/\\rho+gz=$const を表面 $z=\\eta$（圧力一定）で用いると $\\partial_t\\phi|_{0}+g\\eta=0$：$-\\omega C\\cosh kh+ga=0$．$C$ を代入して\n\\[\n\\omega^2=gk\\tanh kh .\n\\]\n\n(2) $u=\\partial_x\\phi=\\omega a\\dfrac{\\cosh k(z+h)}{\\sinh kh}\\cos\\theta$，$w=\\partial_z\\phi=\\omega a\\dfrac{\\sinh k(z+h)}{\\sinh kh}\\sin\\theta$（$\\theta=kx-\\omega t$）．時間で積分すると変位は\n\\[\n\\xi=-a\\frac{\\cosh k(z+h)}{\\sinh kh}\\sin\\theta,\\quad \\zeta=a\\frac{\\sinh k(z+h)}{\\sinh kh}\\cos\\theta,\n\\]\nよって楕円軌道で，水平半軸 $a\\cosh k(z+h)/\\sinh kh$，鉛直半軸 $a\\sinh k(z+h)/\\sinh kh$（表面 $z=0$ で鉛直振幅は $a$）．水底 $z=-h$ では鉛直振幅 0，水平振幅 $a/\\sinh kh$ の往復運動となる．\n\n(3) ベルヌーイの式より圧力変動 $p'=-\\rho\\,\\partial_t\\phi$．$z=-h$ で\n\\[\np'=-\\rho\\,\\partial_t\\Big[\\frac{\\omega a}{k\\sinh kh}\\sin\\theta\\Big]=\\frac{\\rho\\omega^2a}{k\\sinh kh}\\cos\\theta=\\frac{\\rho g a}{\\cosh kh}\\cos\\theta\n\\]\n（分散関係を使った）．よって $\\Delta p=\\rho g a/\\cosh kh$．深いほど水面の揺れは水底に届かない．\n\n(4) $\\omega=2\\pi/4.0=1.571$ s$^{-1}$．$\\omega^2=gk\\tanh(kh)$ を数値的に解くと $k=0.255$ m$^{-1}$，$kh=2.55$，波長 $\\lambda=24.7$ m．\n\\[\na=\\frac{\\Delta p}{\\rho g}\\cosh kh=\\frac{1.0\\times10^3}{9.8\\times10^3}\\times6.43=0.66\\ \\text{m}.\n\\]\n$c_p=\\omega/k=6.2$ m/s．$c_g=\\dfrac{d\\omega}{dk}=\\dfrac{c_p}2\\left(1+\\dfrac{2kh}{\\sinh2kh}\\right)=3.3$ m/s．\n比較：深水近似 $\\lambda=gT^2/2\\pi=25.0$ m，$c_g=c_p/2=3.1$ m/s とほぼ一致．浅水近似 $c=\\sqrt{gh}=9.9$ m/s とは大きく違う．$kh\\approx2.5>\\pi/2$ 程度でほぼ深水波とみなせるが，水底の圧力は水面の振幅の約 $1/6$ に減衰していることに注意（圧力計から表面波高を推定するには $\\cosh kh$ の補正が不可欠）．"
+   }
+  ],
+  "idea": {
+   "tex": "有限深さの水面波は $\\cosh k(z+h)$ で深さ方向に減衰し，水底の圧力振幅は $\\rho g a/\\cosh kh$．分散関係を数値的に解いて，水底圧力計の記録から表面波高を復元する逆問題になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\Delta p$：((ρ g a)/(cosh k h))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "水面波",
+   "分散関係",
+   "ポテンシャル流",
+   "群速度",
+   "深水波",
+   "浅水波",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-07-012",
   "schema": "lemma.problem/1",
   "kind": "written",

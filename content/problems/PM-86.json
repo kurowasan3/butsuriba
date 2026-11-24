@@ -145,6 +145,54 @@
   }
  },
  {
+  "id": "PM-07-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 1,
+  "minutes": 20,
+  "theme": "ディリクレの原理：単位円板での試行関数との比較",
+  "topic": "ディリクレの原理：単位円板での試行関数との比較",
+  "statement": {
+   "tex": "単位円板 $D$ で境界値 $\\cos\\theta$ をとる関数 $w$ のうち，$\\int_D|\\nabla w|^2dA$ を最小にするのは調和関数である．\n\\begin{enumerate}\n\\item 調和関数の解 $u$ と $\\int_D|\\nabla u|^2dA$ を求めよ．\n\\item 試行関数 $w=r^2\\cos\\theta$ の値を求め，$u$ より大きいことを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=r\\cos\\theta=x$，$\\pi$　(2) $\\dfrac{5\\pi}4>\\pi$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol{u=x}$，$|\\nabla u|^2=1$ で $\\boldsymbol\\pi$．\n\n(2) $|\\nabla w|^2=(2r\\cos\\theta)^2+(r\\sin\\theta)^2$，$\\int_0^1\\int_0^{2\\pi}(4r^2\\cos^2\\theta+r^2\\sin^2\\theta)r\\,d\\theta\\,dr=\\dfrac{5\\pi}4$．\\hfill（調和関数が最小）"
+   }
+  ],
+  "idea": {
+   "tex": "ディリクレの原理により，境界値を固定したエネルギー積分は調和関数で最小になる．原題の一般的な証明に，具体的な比較を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $u$：x ; π\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ディリクレの原理",
+   "調和関数",
+   "エネルギー最小"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-07-004",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -292,6 +340,606 @@
   }
  },
  {
+  "id": "PM-07-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 20,
+  "theme": "空気から水中への最短時間経路（スネルの法則の数値解）",
+  "topic": "空気から水中への最短時間経路（スネルの法則の数値解）",
+  "statement": {
+   "tex": "水面を $x$ 軸にとる．空気中（屈折率 $1$）の点 $A(0,\\ 1)$ から水中（屈折率 $n=4/3$）の点 $B(2,\\ -1)$ へ光が進む（単位は m）．光が水面の点 $(x,0)$ を通るとし，光路長を最小にする経路をとる．\n\\begin{enumerate}\n\\item 光路長 $L(x)$ を書き，$L'(x)=0$ がスネルの法則 $\\sin\\theta_1=n\\sin\\theta_2$ と同値であることを示せ（$\\theta_1,\\theta_2$ は法線からの角）．\n\\item $x$ を数値的に求めよ（有効数字3桁）．\n\\item 入射角 $\\theta_1$ と屈折角 $\\theta_2$ を度で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $x\\approx1.27\\ \\mathrm{m}$　(3) $\\theta_1\\approx51.8^\\circ$，$\\theta_2\\approx36.1^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L(x)=\\sqrt{1+x^2}+n\\sqrt{1+(2-x)^2}$．\n\\[\nL'(x)=\\frac{x}{\\sqrt{1+x^2}}-n\\frac{2-x}{\\sqrt{1+(2-x)^2}}=\\sin\\theta_1-n\\sin\\theta_2 .\n\\]\n$L''>0$ なので $L'=0$ が最小を与え，それは $\\sin\\theta_1=n\\sin\\theta_2$ である．\\hfill$\\square$\n\n(2) $L'(x)=0$ を数値的に解くと $\\boldsymbol{x\\approx1.27\\ \\mathrm{m}}$（$x=1.2705$）．屈折率の大きい水中の経路を短くするため，中点 $x=1$ より遠い位置で水面に入る．\n\n(3) $\\tan\\theta_1=1.2705$ より $\\boldsymbol{\\theta_1\\approx51.8^\\circ}$，$\\tan\\theta_2=2-1.2705$ より $\\boldsymbol{\\theta_2\\approx36.1^\\circ}$．$\\sin51.8^\\circ/\\sin36.1^\\circ=1.333$ でスネルの法則をみたす．"
+   }
+  ],
+  "idea": {
+   "tex": "「異なる速さの2領域を通る最短時間の経路」は，微分すると $\\sin\\theta_1/v_1=\\sin\\theta_2/v_2$ になり，光ではスネルの法則そのものになる．原題（ボートと徒歩）の1変数の最小化を，光学の問題として数値的に解かせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $x$ [m]：≈1.27\n(3) $\\theta_1$ [°]：≈51.8 ; $\\theta_2$ [°]：≈36.1"
+  },
+  "methods": [],
+  "tags": [
+   "最小値問題",
+   "フェルマーの原理",
+   "屈折",
+   "数値解"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 25,
+  "theme": "長さを与えた鎖のたるみ（カテナリーの超越方程式）",
+  "topic": "長さを与えた鎖のたるみ（カテナリーの超越方程式）",
+  "statement": {
+   "tex": "同じ高さで水平距離 $2a$ 離れた2点の間に，長さ $\\ell$（$>2a$）の一様な鎖を吊るす．鎖の形は $y=c\\cosh\\dfrac xc+$（定数）である（最下点を $x=0$）．\n\\begin{enumerate}\n\\item 弧長の条件から $c$ のみたす式を書け．\n\\item $a=1\\ \\mathrm{m}$，$\\ell=3\\ \\mathrm{m}$ のとき $c$ を数値的に求めよ（有効数字3桁）．\n\\item そのときのたるみ（支点と最下点の高さの差）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2c\\sinh\\dfrac ac=\\ell$　(2) $c\\approx0.616\\ \\mathrm{m}$　(3) 約 $1.01\\ \\mathrm{m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\int_{-a}^a\\sqrt{1+\\sinh^2(x/c)}\\,dx=\\int_{-a}^a\\cosh\\dfrac xc\\,dx=2c\\sinh\\dfrac ac$ より $\\boldsymbol{2c\\sinh\\dfrac ac=\\ell}$．\n\n(2) $2c\\sinh(1/c)=3$ を数値的に解いて $\\boldsymbol{c\\approx0.616\\ \\mathrm{m}}$．（$c$ は最下点の張力 $T_0$ と線密度 $\\lambda$ で $c=T_0/(\\lambda g)$．）\n\n(3) たるみは $c\\left(\\cosh\\dfrac ac-1\\right)=0.616\\times(\\cosh1.622-1)\\approx\\boldsymbol{1.01\\ \\mathrm{m}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "カテナリーの弧長は $\\cosh$ の積分で閉じた形になるが，長さを与えて形を決める問題は $c$ についての超越方程式になる．原題の弧長の計算を逆向きに使い，実際のたるみを求めさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $c$ [m]：≈0.616\n(3) [m]：≈1.01"
+  },
+  "methods": [],
+  "tags": [
+   "カテナリー",
+   "弧長",
+   "双曲線関数",
+   "数値解"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ラグランジュの未定乗数法でエントロピー最大の分布を求める",
+  "topic": "ラグランジュの未定乗数法でエントロピー最大の分布を求める",
+  "statement": {
+   "tex": "エネルギー $0,\\ \\epsilon,\\ 2\\epsilon$ の3つの状態をとる系の確率を $p_0,p_1,p_2$ とする．$\\sum p_n=1$，平均エネルギー $\\sum p_nE_n=\\dfrac\\epsilon2$ の条件のもとで，エントロピー $S=-\\sum p_n\\ln p_n$ を最大にする．\n\\begin{enumerate}\n\\item ラグランジュの未定乗数法で，$p_n\\propto x^n$ の形になることを示せ．\n\\item $x$ を求めよ．\n\\item $p_0,p_1,p_2$ と，$x=e^{-\\epsilon/k_BT}$ とみなしたときの $\\epsilon/k_BT$ を求めよ（有効数字3桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $x=\\dfrac{\\sqrt{13}-1}{6}\\approx0.434$　(3) $p_0\\approx0.616$，$p_1\\approx0.268$，$p_2\\approx0.116$；$\\epsilon/k_BT\\approx0.834$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathcal L=-\\sum p_n\\ln p_n-\\alpha\\left(\\sum p_n-1\\right)-\\beta\\left(\\sum p_nE_n-\\frac\\epsilon2\\right)$ を $p_n$ で微分して $-\\ln p_n-1-\\alpha-\\beta E_n=0$，$p_n\\propto e^{-\\beta E_n}=x^n$（$x=e^{-\\beta\\epsilon}$）．\\hfill$\\square$\n\n(2) $\\dfrac{x+2x^2}{1+x+x^2}=\\dfrac12$ より $3x^2+x-1=0$，正の根 $\\boldsymbol{x=\\dfrac{\\sqrt{13}-1}{6}\\approx0.434}$．\n\n(3) $1+x+x^2=1.623$ で割って $\\boldsymbol{p_0\\approx0.616,\\ p_1\\approx0.268,\\ p_2\\approx0.116}$．$\\epsilon/k_BT=-\\ln x\\approx\\boldsymbol{0.834}$．条件つき極値として得た分布が，そのままボルツマン分布になっている．"
+   }
+  ],
+  "idea": {
+   "tex": "条件つきの極値問題はラグランジュの未定乗数法で解け，エントロピー最大の分布ではエネルギーの条件の乗数が逆温度になる．原題の幾何学的な条件つき極値を，統計力学の基礎に結びつけた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $x$：≈0.434\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラグランジュの未定乗数法",
+   "エントロピー",
+   "ボルツマン分布",
+   "極値"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 30,
+  "theme": "高階導関数を含む変分問題（梁・スプライン）",
+  "topic": "高階導関数を含む変分問題（梁・スプライン）",
+  "statement": {
+   "tex": "汎関数 $I[y]=\\displaystyle\\int_a^bf(x,y,y',y'')\\,dx$ を考える．\n\\begin{enumerate}\n\\item 両端で $y$ と $y'$ をともに固定するとき，$\\delta I=0$ から得られる Euler の微分方程式を導け．\n\\item $f=(y'')^2$ とし，$y(0)=0,\\ y'(0)=0,\\ y(1)=1,\\ y'(1)=0$ のもとで $I$ を最小にする $y$ と最小値を求めよ．\n\\item (2) で $y'(1)$ を固定しない（$y(0)=0,\\ y'(0)=0,\\ y(1)=1$ のみ）とき，$x=1$ で自然に課される境界条件を導き，最小にする $y$ と最小値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\partial f}{\\partial y}-\\dfrac{d}{dx}\\dfrac{\\partial f}{\\partial y'}+\\dfrac{d^2}{dx^2}\\dfrac{\\partial f}{\\partial y''}=0$．(2) $y=3x^2-2x^3$，最小値 $12$．(3) 自然境界条件 $\\partial f/\\partial y''=0$ すなわち $y''(1)=0$；$y=\\frac12(3x^2-x^3)$，最小値 $3$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $y\\to y+\\delta y$ として\n\\[\\delta I=\\int_a^b\\Big(f_y\\delta y+f_{y'}\\delta y'+f_{y''}\\delta y''\\Big)dx.\\]\n$\\delta y'=(\\delta y)'$，$\\delta y''=(\\delta y)''$ を使い，第2項を1回，第3項を2回部分積分する：\n\\[\\delta I=\\Big[f_{y'}\\delta y+f_{y''}\\delta y'-\\big(f_{y''}\\big)'\\delta y\\Big]_a^b+\\int_a^b\\Big(f_y-\\frac{d}{dx}f_{y'}+\\frac{d^2}{dx^2}f_{y''}\\Big)\\delta y\\,dx.\\]\n両端で $\\delta y=\\delta y'=0$ なら境界項は消え，任意の $\\delta y$ について $\\delta I=0$ より\n\\[f_y-\\frac{d}{dx}f_{y'}+\\frac{d^2}{dx^2}f_{y''}=0.\\]\n\n(2) $f=y''^2$ で $\\frac{d^2}{dx^2}(2y'')=0$，すなわち $y''''=0$，$y$ は3次式．$y(0)=y'(0)=0$ より $y=Ax^2+Bx^3$，$A+B=1$，$2A+3B=0$ から $A=3,B=-2$．$y''=6-12x$，$I=\\int_0^1(6-12x)^2dx=12$．\nこれが最小であることは，境界条件を満たす任意の $\\eta$（$\\eta,\\eta'$ が両端で0）について $I[y+\\eta]=I[y]+2\\int y''\\eta''dx+\\int\\eta''^2dx$ で，中央の項は部分積分と $y''''=0$ により 0，最後の項 $\\ge0$ から分かる．\n\n(3) $x=1$ で $\\delta y=0$ だが $\\delta y'$ は任意なので，境界項 $f_{y''}\\delta y'|_{x=1}$ が残り，$f_{y''}=2y''(1)=0$ が必要（自然境界条件．片持ち梁の自由端でモーメント 0 に対応）．$y=Ax^2+Bx^3$，$A+B=1$，$2A+6B=0$ より $A=\\frac32$，$B=-\\frac12$．$y''=3-3x$，$I=\\int_0^1 9(1-x)^2dx=3$．拘束が緩んだので最小値は 12 から 3 に下がる．"
+   }
+  ],
+  "idea": {
+   "tex": "高階の Euler–Lagrange 方程式と自然境界条件．曲げエネルギー最小は3次スプラインになり，端の拘束を外すと最小値が下がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分法",
+   "Euler-Lagrange方程式",
+   "自然境界条件",
+   "スプライン",
+   "梁"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 30,
+  "theme": "終点が鉛直線上で自由な最速降下線",
+  "topic": "終点が鉛直線上で自由な最速降下線",
+  "statement": {
+   "tex": "鉛直面内で，原点 A から静かに（初速 0）放した質点が，滑らかな曲線に沿って重力のもとで滑り降り，A から水平距離 $L$ の位置にある鉛直な直線 $x=L$ 上のどこかに到達すればよいとする（到達点の高さは自由）．水平右向きに $x$，鉛直下向きに $y$ をとる．\n\\begin{enumerate}\n\\item 所要時間を最小にする曲線はサイクロイド $x=a(\\theta-\\sin\\theta)$，$y=a(1-\\cos\\theta)$ の一部であることを用い，終点が自由であることから生じる条件（横断条件）を導いて $a$ と到達点の深さを求めよ．\n\\item 最小所要時間を求めよ．\n\\item 直線の斜面で $x=L$ に到達する場合の最小時間と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 横断条件：終点で曲線は水平（$y'=0$）．$a=L/\\pi$，深さ $2L/\\pi$．(2) $T_{\\min}=\\sqrt{\\pi L/g}\\approx1.772\\sqrt{L/g}$．(3) 直線では $45^\\circ$ の斜面で $2\\sqrt{L/g}$（約 13\\% 長い）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T=\\displaystyle\\int_0^L\\frac{\\sqrt{1+y'^2}}{\\sqrt{2gy}}dx$，$f=\\sqrt{(1+y'^2)/(2gy)}$．Euler 方程式の解はサイクロイド．終点 $x=L$ で $y$ が自由なので，変分の境界項 $\\big[f_{y'}\\delta y\\big]_{x=L}$ が 0 であることが必要で，$f_{y'}=\\dfrac{y'}{\\sqrt{2gy(1+y'^2)}}=0$，すなわち $y'(L)=0$：曲線は終点で水平．\nサイクロイドで $dy/dx=\\sin\\theta/(1-\\cos\\theta)=0$ となるのは $\\theta=\\pi$（最下点）．$x=a\\pi=L$ より $a=L/\\pi$，深さ $y=2a=2L/\\pi$．\n\n(2) サイクロイド上では $ds=2a\\sin(\\theta/2)d\\theta$，$v=\\sqrt{2gy}=2\\sqrt{ga}\\sin(\\theta/2)$ なので $dt=\\sqrt{a/g}\\,d\\theta$．\n\\[T_{\\min}=\\pi\\sqrt{\\frac ag}=\\pi\\sqrt{\\frac{L}{\\pi g}}=\\sqrt{\\frac{\\pi L}{g}}.\\]\n（検算：$x=L$ に達するサイクロイドを終点のパラメータ $\\theta_1$ で表すと $T(\\theta_1)=\\theta_1\\sqrt{L/(g(\\theta_1-\\sin\\theta_1))}$ で，これは $\\theta_1=\\pi$ で最小．）\n\n(3) 終点 $(L,Y)$ への直線：長さ $s=\\sqrt{L^2+Y^2}$，加速度 $gY/s$ で $t^2=2s^2/(gY)=2(L^2+Y^2)/(gY)$．$Y=L$ で最小となり $t=2\\sqrt{L/g}$．比は $2/\\sqrt\\pi=1.128$．"
+   }
+  ],
+  "idea": {
+   "tex": "終点が曲線上で自由なら横断条件 ∂f/∂y′=0 が加わり，最速降下線は終点で水平，すなわちサイクロイドのちょうど半アーチになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分法",
+   "最速降下線",
+   "サイクロイド",
+   "横断条件",
+   "自然境界条件"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 30,
+  "theme": "初速をもつ最速降下線と同じ高さへの到達",
+  "topic": "初速をもつ最速降下線と同じ高さへの到達",
+  "statement": {
+   "tex": "鉛直下向きに $y$ 軸，水平に $x$ 軸をとる（重力加速度 $g$）．質量 $m$ の質点が原点 O から速さ $v_0\\ (>0)$ で出発し，摩擦のない曲線に沿って滑って，**出発点と同じ高さ**の点 $(L,0)$（$L>0$）に到達する．所要時間を最小にする曲線を考える．$z=v_0^2/(2g)$ とおく．\n\\begin{enumerate}\n\\item 最速降下線は，直線 $y=-z$ 上に尖点をもつサイクロイド $x=x_c+a(\\theta-\\sin\\theta)$，$y=a(1-\\cos\\theta)-z$ の一部であることを示せ．\n\\item 出発点・到達点に対応するパラメータを $\\theta_0,\\ 2\\pi-\\theta_0$（$a(1-\\cos\\theta_0)=z$）とする．このサイクロイド上では $dt=\\sqrt{a/g}\\,d\\theta$ であることを示し，$L$ と所要時間 $T$ を $a,\\theta_0$ で表せ．\n\\item 最速降下線の最下点が出発点より $z$ だけ下にある場合の $L$ と $T$ を $v_0,g$ で表し，同じ2点を水平な直線で結んだときの時間 $L/v_0$ との比を求めよ．\n\\item $v_0$ を固定して $L\\to\\infty$ とすると，$T\\simeq\\sqrt{2\\pi L/g}$ となり $v_0$ によらなくなることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（$(y+z)(1+y'^2)=2a$）　(2) $L=2a(\\pi-\\theta_0+\\sin\\theta_0)$，$T=2\\sqrt{a/g}\\,(\\pi-\\theta_0)$　(3) $L=(\\pi+2)\\dfrac{v_0^2}{2g}$，$T=\\dfrac{\\pi v_0}{\\sqrt2\\,g}$，比 $\\dfrac{\\sqrt2\\pi}{\\pi+2}\\approx0.864$　(4) $\\theta_0\\to0$ で $L\\simeq2\\pi a$，$T\\simeq2\\pi\\sqrt{a/g}=\\sqrt{2\\pi L/g}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) エネルギー保存より速さは $v=\\sqrt{v_0^2+2gy}=\\sqrt{2g(y+z)}$．所要時間は\n\\[ T[y]=\\int_0^L\\frac{\\sqrt{1+y'^2}}{\\sqrt{2g(y+z)}}\\,dx . \\]\n被積分関数 $f$ は $x$ を陽に含まないので Euler-Lagrange 方程式の第1積分 $y'\\partial f/\\partial y'-f=\\text{const}$ が成り立ち，\n\\[ \\frac{y'^2}{\\sqrt{1+y'^2}\\sqrt{y+z}}-\\frac{\\sqrt{1+y'^2}}{\\sqrt{y+z}}=-\\frac{1}{\\sqrt{(1+y'^2)(y+z)}}=\\text{const} \\]\nより $(y+z)(1+y'^2)=2a$（$a>0$ 定数）．$Y=y+z$ とおけばこれは $v_0=0$ の最速降下線と同じ方程式であり，その解は $Y=0$ に尖点をもつサイクロイド $x=x_c+a(\\theta-\\sin\\theta)$，$Y=a(1-\\cos\\theta)$ である．よって曲線は $y=a(1-\\cos\\theta)-z$ で，尖点は直線 $y=-z$ 上にある．\n\n(2) $ds=\\sqrt{dx^2+dy^2}=a\\sqrt{2-2\\cos\\theta}\\,d\\theta=2a\\sin(\\theta/2)\\,d\\theta$，$v=\\sqrt{2gY}=\\sqrt{2ga(1-\\cos\\theta)}=2\\sqrt{ga}\\sin(\\theta/2)$ より $dt=ds/v=\\sqrt{a/g}\\,d\\theta$．\n出発点と到達点はともに $Y=z$ なので，1つのアーチ上の対称な2点 $\\theta_0$ と $2\\pi-\\theta_0$ である．よって\n\\[ L=a\\big[(2\\pi-2\\theta_0)-\\sin(2\\pi-\\theta_0)+\\sin\\theta_0\\big]=2a(\\pi-\\theta_0+\\sin\\theta_0),\\qquad T=2\\sqrt{a/g}\\,(\\pi-\\theta_0). \\]\n\n(3) 最下点は $\\theta=\\pi$ で $y=2a-z$．これが $z$ に等しいので $a=z$，したがって $1-\\cos\\theta_0=1$，$\\theta_0=\\pi/2$．\n\\[ L=2z\\left(\\frac\\pi2+1\\right)=(\\pi+2)\\frac{v_0^2}{2g},\\qquad T=\\pi\\sqrt{\\frac zg}=\\frac{\\pi v_0}{\\sqrt2\\,g}. \\]\n水平直線では速さ $v_0$ のままなので時間 $L/v_0=(\\pi+2)v_0/(2g)$．比は\n\\[ \\frac{T}{L/v_0}=\\frac{\\sqrt2\\,\\pi}{\\pi+2}\\approx0.864 . \\]\nいったん潜って加速するほうが約14\\%速い．\n\n(4) $v_0$ ($z$) を固定して $L\\to\\infty$ とするには $a\\to\\infty$，すなわち $1-\\cos\\theta_0=z/a\\to0$ で $\\theta_0\\to0$．このとき $L\\simeq2\\pi a$，$T\\simeq2\\pi\\sqrt{a/g}$ だから\n\\[ T\\simeq2\\pi\\sqrt{\\frac{L}{2\\pi g}}=\\sqrt{\\frac{2\\pi L}{g}} . \\]\nこれは $v_0$ を含まない．長距離では曲線が深さ $\\sim L/\\pi$ まで潜るので，初速による運動エネルギーは潜行で得るエネルギーに比べ無視できるようになる．（直線での時間 $L/v_0$ は $L$ に比例するが，最速降下線の時間は $\\sqrt L$ にしか比例しない．）"
+   }
+  ],
+  "idea": {
+   "tex": "初速は「尖点を $v_0^2/2g$ だけ上にずらす」ことで吸収でき，$dt=\\sqrt{a/g}\\,d\\theta$ を使うと同高度2点間の時間が初等的に求まる．長距離極限では初速が効かなくなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $L$：(pi +2)((v_0 ^(2))/(2 g)) ; $T$：((pi v_0)/(sqrt(2) g)) ; 比：≈0.864\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "最速降下線",
+   "サイクロイド",
+   "Beltrami恒等式",
+   "初速",
+   "漸近評価"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 25,
+  "theme": "円錐面上の測地線と自己交差",
+  "topic": "円錐面上の測地線と自己交差",
+  "statement": {
+   "tex": "頂点を原点とし，$z$ 軸を軸とする半頂角 $\\alpha\\ (0<\\alpha<\\pi/2)$ の円錐面 $\\boldsymbol r=(s\\sin\\alpha\\cos\\varphi,\\ s\\sin\\alpha\\sin\\varphi,\\ s\\cos\\alpha)$（$s>0$ は母線に沿った頂点からの距離）を考える．\n\\begin{enumerate}\n\\item 円錐面上の線素を $s,\\varphi$ で表し，$\\varphi$ をパラメータとする曲線 $s=s(\\varphi)$ の長さを最小にする Euler-Lagrange 方程式の第1積分を求めよ．\n\\item 頂点に最も近づく点で $s=s_m$，$\\varphi=\\varphi_0$ とするとき，測地線が $s=\\dfrac{s_m}{\\cos\\{(\\varphi-\\varphi_0)\\sin\\alpha\\}}$ で与えられることを示し，円錐を展開した平面上で直線になることを説明せ．\n\\item 無限遠から来て無限遠へ去る測地線が回る方位角の総量 $\\Delta\\varphi$ を求めよ．\n\\item 測地線が自分自身と交差するための $\\alpha$ の条件を求め，$\\alpha=10^\\circ$ のときの自己交差点の個数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $d\\ell^2=ds^2+s^2\\sin^2\\alpha\\,d\\varphi^2$，$\\dfrac{s^2\\sin\\alpha}{\\sqrt{s'^2+s^2\\sin^2\\alpha}}=s_m$　(2) 略　(3) $\\Delta\\varphi=\\pi/\\sin\\alpha$　(4) $\\alpha<\\pi/6$；$\\alpha=10^\\circ$ で2個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d\\boldsymbol r=(\\sin\\alpha\\cos\\varphi,\\sin\\alpha\\sin\\varphi,\\cos\\alpha)ds+s\\sin\\alpha(-\\sin\\varphi,\\cos\\varphi,0)d\\varphi$ の2つのベクトルは直交するので $d\\ell^2=ds^2+s^2\\sin^2\\alpha\\,d\\varphi^2$．$k=\\sin\\alpha$ とおき長さ $\\int f\\,d\\varphi$，$f=\\sqrt{s'^2+k^2s^2}$（$s'=ds/d\\varphi$）．$f$ は $\\varphi$ を陽に含まないので $s'\\partial f/\\partial s'-f=-k^2s^2/f=\\text{const}$．最接近点 $s'=0$ で $k^2s^2/f=ks_m$ だから\n\\[ \\frac{k s^2}{\\sqrt{s'^2+k^2s^2}}=s_m . \\]\n\n(2) これを解くと $s'^2=k^2s^2(s^2/s_m^2-1)$，すなわち $\\dfrac{ds}{s\\sqrt{s^2/s_m^2-1}}=\\pm k\\,d\\varphi$．$s=s_m/\\cos u$ とおくと $ds=s_m\\sin u/\\cos^2u\\,du$，$\\sqrt{s^2/s_m^2-1}=\\tan u$ で左辺 $=du$．よって $u=k(\\varphi-\\varphi_0)$，\n\\[ s=\\frac{s_m}{\\cos\\{k(\\varphi-\\varphi_0)\\}} . \\]\n円錐を母線に沿って切り開くと，線素は平面極座標 $(s,\\psi)$，$\\psi=k\\varphi$ の $ds^2+s^2d\\psi^2$ になる（中心角 $2\\pi k$ の扇形）．上式は $s\\cos(\\psi-\\psi_0)=s_m$，すなわち原点からの距離 $s_m$ の直線である．\n\n(3) $s\\to\\infty$ となるのは $k(\\varphi-\\varphi_0)\\to\\pm\\pi/2$．よって $\\Delta\\varphi=\\pi/k=\\pi/\\sin\\alpha$．\n\n(4) 円錐上で同じ点となるのは $s$ が等しく $\\varphi$ が $2\\pi j$（$j$ は正の整数）だけ異なるときである．$s$ は $\\varphi_0$ について対称なので，$\\varphi=\\varphi_0-\\pi j$ と $\\varphi_0+\\pi j$ が同じ点を与え，これが測地線上にある条件は $k\\pi j<\\pi/2$，すなわち $j<1/(2\\sin\\alpha)$．$j=1$ が許される条件（自己交差が起こる条件）は $\\sin\\alpha<1/2$，すなわち $\\alpha<\\pi/6\\ (30^\\circ)$．$\\alpha=10^\\circ$ では $1/(2\\sin10^\\circ)=2.88$ なので $j=1,2$ の **2個**．（展開図では扇形の中心角 $2\\pi\\sin\\alpha$ が小さいほど直線が何枚もの「コピー」を横切ることに対応する．）"
+   }
+  ],
+  "idea": {
+   "tex": "$\\varphi$ が循環的なので第1積分が直ちに得られ，測地線は展開図上の直線．総回転角 $\\pi/\\sin\\alpha$ が $2\\pi$ を超えると自己交差する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "測地線",
+   "円錐",
+   "第1積分",
+   "展開図",
+   "自己交差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 25,
+  "theme": "Clairautの関係と大円航路の最高緯度",
+  "topic": "Clairautの関係と大円航路の最高緯度",
+  "statement": {
+   "tex": "半径 $R$ の球面上の点を緯度 $\\beta$，経度 $\\varphi$ で表す．\n\\begin{enumerate}\n\\item 経度 $\\varphi$ をパラメータとして曲線 $\\beta(\\varphi)$ の長さの Euler-Lagrange 方程式の第1積分を求め，測地線の方位角 $A$（北から測った進行方向の角）について Clairaut の関係 $\\cos\\beta\\sin A=\\text{const}$ を導け．\n\\item 測地線の最高緯度を $\\beta_m$（経度 $\\varphi_m$）とするとき，$\\tan\\beta=\\tan\\beta_m\\cos(\\varphi-\\varphi_m)$ が第1積分を満たすことを確かめ，これが球の中心を通る平面と球面の交線（大円）であることを示せ．\n\\item 北緯 $45^\\circ$ の2点 P（経度 $-45^\\circ$），Q（経度 $+45^\\circ$）を結ぶ測地線について，最高緯度 $\\beta_m$，P での出発方位角，測地線の長さを求め，緯線（北緯 $45^\\circ$ の小円）に沿った長さと比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\cos^2\\beta}{\\sqrt{\\beta'^2+\\cos^2\\beta}}=\\cos\\beta_m$，$\\cos\\beta\\sin A=\\cos\\beta_m$　(2) 略　(3) $\\tan\\beta_m=\\sqrt2$，$\\beta_m\\approx54.7^\\circ$；出発方位角 $\\sin A=\\sqrt{2/3}$，$A\\approx54.7^\\circ$（北東寄り）；長さ $\\pi R/3\\approx1.047R$，緯線は $\\pi R/(2\\sqrt2)\\approx1.111R$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d\\ell^2=R^2(d\\beta^2+\\cos^2\\beta\\,d\\varphi^2)$．長さ $R\\int f\\,d\\varphi$，$f=\\sqrt{\\beta'^2+\\cos^2\\beta}$．$f$ は $\\varphi$ を陽に含まないので $\\beta'\\partial f/\\partial\\beta'-f=-\\cos^2\\beta/f=\\text{const}$．最高緯度の点で $\\beta'=0$，$f=\\cos\\beta_m$ だから\n\\[ \\frac{\\cos^2\\beta}{\\sqrt{\\beta'^2+\\cos^2\\beta}}=\\cos\\beta_m . \\]\n方位角 $A$ は東向き成分 $R\\cos\\beta\\,d\\varphi=d\\ell\\sin A$ で定まるので $\\sin A=\\cos\\beta/f$．したがって $\\cos\\beta\\sin A=\\cos\\beta_m$（Clairaut の関係）．\n\n(2) $\\varphi_m=0$ としてよい．$\\tan\\beta=T\\cos\\varphi$（$T=\\tan\\beta_m$）を微分すると $\\beta'/\\cos^2\\beta=-T\\sin\\varphi$．$\\beta'^2+\\cos^2\\beta=\\cos^2\\beta\\,(1+T^2\\sin^2\\varphi\\cos^2\\beta)$ で，$\\cos^2\\beta=1/(1+T^2\\cos^2\\varphi)$ を用いると\n\\[ 1+\\frac{T^2\\sin^2\\varphi}{1+T^2\\cos^2\\varphi}=\\frac{1+T^2}{1+T^2\\cos^2\\varphi}=(1+T^2)\\cos^2\\beta . \\]\nよって $\\cos^2\\beta/f=\\cos^2\\beta/(\\cos^2\\beta\\sqrt{1+T^2})=1/\\sqrt{1+T^2}=\\cos\\beta_m$．第1積分を満たす．\nまた $\\boldsymbol r=R(\\cos\\beta\\cos\\varphi,\\cos\\beta\\sin\\varphi,\\sin\\beta)$ について $\\tan\\beta=T\\cos\\varphi$ は $z=T x$，すなわち $Tx-z=0$ という原点を通る平面の式に等しい．ゆえに測地線は大円．\n\n(3) 対称性から $\\varphi_m=0$．P で $\\tan45^\\circ=1=T\\cos45^\\circ$ より $T=\\tan\\beta_m=\\sqrt2$，$\\beta_m=\\arctan\\sqrt2\\approx54.7^\\circ$．\nClairaut：$\\cos45^\\circ\\sin A=\\cos\\beta_m=1/\\sqrt3$ より $\\sin A=\\sqrt{2/3}$，$A\\approx54.7^\\circ$（真東より北寄りに出発する）．\n中心角 $\\sigma$ は $\\cos\\sigma=\\sin^2\\beta+\\cos^2\\beta\\cos\\Delta\\varphi=\\frac12+\\frac12\\cos90^\\circ=\\frac12$，$\\sigma=\\pi/3$．長さ $\\pi R/3\\approx1.047R$．\n緯線に沿うと $R\\cos45^\\circ\\cdot\\frac\\pi2=\\frac{\\pi R}{2\\sqrt2}\\approx1.111R$．大円航路は約 $6\\%$ 短く，途中で北緯約 $54.7^\\circ$ まで北上する．"
+   }
+  ],
+  "idea": {
+   "tex": "経度が循環座標であることから Clairaut の関係が出て，最高緯度と初期方位角が初等的に求まる．同緯度の2点でも最短路は高緯度側に膨らむ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "測地線",
+   "球面",
+   "Clairautの関係",
+   "大円",
+   "第1積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 30,
+  "theme": "石鹸膜カテノイドの臨界条件の幾何学的意味",
+  "topic": "石鹸膜カテノイドの臨界条件の幾何学的意味",
+  "statement": {
+   "tex": "半径 $y_2$ の2つの同軸な円輪が，軸（$x$ 軸）方向に距離 $2x_2$ 離れて置かれ，その間に石鹸膜が張られている．膜は面積 $S=2\\pi\\int_{-x_2}^{x_2}y\\sqrt{1+y'^2}\\,dx$ を停留させる回転面であるとする．\n\\begin{enumerate}\n\\item 対称な解が $y=a\\cosh(x/a)$ となることを示し，$k=x_2/a$ と $\\alpha=y_2/x_2$ の関係を求めよ．\n\\item 解が存在する $\\alpha$ の下限 $\\alpha_0$ を与える $k_0$ は $k_0\\tanh k_0=1$ を満たすことを示せ．\n\\item 臨界状態 $k=k_0$ では，円輪の位置で膜の母線（懸垂線）に引いた接線が，軸上の中点（原点）を通ることを示せ．\n\\item $k_0$，$\\alpha_0$，膜が存在できる輪の間隔の最大値 $(2x_2/y_2)_{\\max}$，および臨界状態でのくびれの半径 $a/y_2$ を数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\cosh k/k$　(2) $d\\alpha/dk=0$ より　(3) 略　(4) $k_0\\approx1.1997$，$\\alpha_0\\approx1.5089$，$(2x_2/y_2)_{\\max}=2/\\alpha_0\\approx1.3255$，$a/y_2=1/\\cosh k_0\\approx0.5524$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $g=y\\sqrt{1+y'^2}$ は $x$ を陽に含まないので $y'\\partial g/\\partial y'-g=-y/\\sqrt{1+y'^2}=-a$（定数）．$y'=\\sqrt{y^2-a^2}/a$ を解いて $y=a\\cosh\\{(x-b)/a\\}$，左右対称から $b=0$．境界条件 $y_2=a\\cosh(x_2/a)$ を $x_2$ で割ると\n\\[ \\alpha=\\frac{y_2}{x_2}=\\frac{\\cosh k}{k}. \\]\n\n(2) $\\alpha(k)$ は $k\\to0$ と $k\\to\\infty$ で $+\\infty$ に発散するので最小値 $\\alpha_0$ をもつ．\n\\[ \\frac{d\\alpha}{dk}=\\frac{k\\sinh k-\\cosh k}{k^2}=0\\iff k\\tanh k=1 . \\]\n$\\alpha<\\alpha_0$ では解がなく，$\\alpha>\\alpha_0$ では2解ある．\n\n(3) 円輪の位置 $(x_2,y_2)$ での接線の傾きは $y'=\\sinh k$．接線 $y=y_2+\\sinh k\\,(x-x_2)$ の $x=0$ での値は\n\\[ y_2-x_2\\sinh k=a(\\cosh k-k\\sinh k)=a\\cosh k\\,(1-k\\tanh k). \\]\n$k=k_0$ ではこれが $0$．すなわち両端での接線が軸上の点（原点）で交わる．逆に，「両端の接線が軸と交わる点が中点に一致する」ことが臨界（2解が合体する）条件である．（これは包絡線の議論：$a$ を変えた懸垂線族 $y=a\\cosh(x/a)$ の包絡線が原点を通る直線群の接点の軌跡となることの現れ．）\n\n(4) $k\\tanh k=1$ を数値的に解くと $k_0\\approx1.19968$，$\\alpha_0=\\cosh k_0/k_0\\approx1.50888$．輪の間隔の最大値は $2x_2/y_2=2/\\alpha_0\\approx1.3255$．くびれの半径 $a=y_2/\\cosh k_0$ より $a/y_2\\approx0.5524$．輪の間隔を広げていくと，くびれは輪の半径の約55\\%まで細った時点で解が消え，膜は不安定化して破れる．"
+   }
+  ],
+  "idea": {
+   "tex": "臨界条件 $k\\tanh k=1$ は「端点での接線が軸上の中点を通る」という幾何学的条件と同値．臨界値でのくびれ半径と最大間隔を数値で得る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "最小回転面",
+   "懸垂線",
+   "カテノイド",
+   "石鹸膜",
+   "臨界点",
+   "超越方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 30,
+  "theme": "石鹸膜の一次転移：カテノイドとGoldschmidt解",
+  "topic": "石鹸膜の一次転移：カテノイドとGoldschmidt解",
+  "statement": {
+   "tex": "半径 $y_2$ の2つの同軸円輪（間隔 $2x_2$）の間に張られた膜の形として，懸垂線 $y=a\\cosh(x/a)$ の回転面（カテノイド，$k=x_2/a$，$y_2/x_2=\\cosh k/k$）と，2枚の円板だけからなる Goldschmidt 解（面積 $S_G=2\\pi y_2^2$）を比べる．\n\\begin{enumerate}\n\\item カテノイドの面積 $S_C$ を求め，$S_C/S_G=k\\,\\mathrm{sech}^2k+\\tanh k$ を示せ．\n\\item $S_C=S_G$ となる条件が $k(1+\\tanh k)=1$ と簡単になることを示し，その解 $k_1$ を数値で求めよ．\n\\item 間隔 $2x_2/y_2$ を0から増やしていくとき，(i) カテノイドが面積最小（大域的に安定）である範囲，(ii) カテノイドが解として存在する範囲をそれぞれ求めよ．ただしカテノイド解が存在する限界は $k_0\\tanh k_0=1$（$k_0\\approx1.1997$）で与えられる．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_C=2\\pi a^2(k+\\sinh k\\cosh k)$　(2) $k_1\\approx0.6392$　(3) (i) $2x_2/y_2<2k_1/\\cosh k_1\\approx1.055$　(ii) $2x_2/y_2<2k_0/\\cosh k_0\\approx1.3255$（その間は準安定）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sqrt{1+y'^2}=\\cosh(x/a)$ より\n\\[ S_C=2\\pi\\int_{-x_2}^{x_2}a\\cosh^2\\frac xa\\,dx=4\\pi a^2\\int_0^k\\cosh^2u\\,du=2\\pi a^2(k+\\sinh k\\cosh k). \\]\n$y_2=a\\cosh k$ を用いて\n\\[ \\frac{S_C}{S_G}=\\frac{k+\\sinh k\\cosh k}{\\cosh^2k}=k\\,\\mathrm{sech}^2k+\\tanh k . \\]\n\n(2) $t=\\tanh k$ とおくと $\\mathrm{sech}^2k=1-t^2$．$k(1-t^2)+t=1\\iff k(1-t)(1+t)=1-t$．$t<1$ なので $k(1+\\tanh k)=1$．数値的に解いて $k_1\\approx0.63923$（このとき $\\tanh k_1\\approx0.5644$）．\n\n(3) 同じ $\\alpha=y_2/x_2$ に対し2つのカテノイドがあり，面積が小さいのは $k$ の小さい方（$k<k_0$ の枝）である．$S_C/S_G$ は $0<k<k_1$ で $1$ より小さい．$2x_2/y_2=2k/\\cosh k$ は $0<k<k_0$ で単調増加なので\n(i) $2x_2/y_2<2k_1/\\cosh k_1\\approx1.0554$ ではカテノイドの面積が最小（大域的安定）．\n(ii) $1.0554<2x_2/y_2<2k_0/\\cosh k_0\\approx1.3255$ ではカテノイドは存在するが Goldschmidt 解より面積が大きく，局所的にのみ安定（準安定）．$1.3255$ を超えるとカテノイドは存在せず，膜は2枚の円板に移る．\nこれは「大域的最小の入れ替わり」（$k_1$）と「局所解の消滅」（$k_0$）が異なる点で起こる一次相転移的な構造（ヒステリシス）である．"
+   }
+  ],
+  "idea": {
+   "tex": "面積比の式は $k(1+\\tanh k)=1$ に簡約され，大域的安定性が失われる間隔 1.055 と局所解が消える間隔 1.3255 が異なる（準安定領域の存在）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $k_1$：≈0.6392\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "最小回転面",
+   "Goldschmidt解",
+   "カテノイド",
+   "準安定",
+   "一次転移"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 25,
+  "theme": "円錐面上の測地線と自己交差",
+  "topic": "円錐面上の測地線と自己交差",
+  "statement": {
+   "tex": "半頂角 $\\alpha$（$0<\\alpha<\\pi/2$）の直円錐の側面を考える．頂点からの母線に沿った距離を $r$，軸のまわりの方位角を $\\varphi$ とすると，側面上の線素は $ds^2=dr^2+r^2\\sin^2\\alpha\\,d\\varphi^2$ である．\n\\begin{enumerate}\n\\item 曲線 $r=r(\\varphi)$ の長さ $\\int\\sqrt{r'^2+r^2\\sin^2\\alpha}\\,d\\varphi$ を最小にする曲線（測地線）が，定数 $r_0,\\varphi_0$ を用いて $r=\\dfrac{r_0}{\\cos\\{(\\varphi-\\varphi_0)\\sin\\alpha\\}}$ と表されることを示せ．\n\\item 1 本の測地線が側面上で自分自身と交わるための $\\alpha$ の条件を求めよ．\n\\item $\\alpha=10^\\circ$ のとき，1 本の（両方向に無限に延ばした）測地線の自己交差点の数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）．(2) $\\sin\\alpha<\\dfrac12$，すなわち $\\alpha<30^\\circ$．(3) 2 個．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 被積分関数 $L=\\sqrt{r'^2+r^2\\sin^2\\alpha}$ は $\\varphi$ を陽に含まないので，ベルトラミの第一積分 $L-r'\\partial L/\\partial r'=\\text{const}$ より\n\\[\\frac{r^2\\sin^2\\alpha}{\\sqrt{r'^2+r^2\\sin^2\\alpha}}=r_0\\sin\\alpha\\quad(r_0:\\text{頂点への最近接距離}).\\]\n$\\psi=\\varphi\\sin\\alpha$ とおくと $ds^2=dr^2+r^2d\\psi^2$ は平面の極座標の線素（円錐の展開図）であり，上式は $r^2/\\sqrt{(dr/d\\psi)^2+r^2}=r_0$ となる．$u=1/r$ と置けば $(du/d\\psi)^2+u^2=1/r_0^2$，解は $u=\\cos(\\psi-\\psi_0)/r_0$，すなわち展開図上の直線 $r\\cos(\\psi-\\psi_0)=r_0$．よって $r=r_0/\\cos\\{(\\varphi-\\varphi_0)\\sin\\alpha\\}$．\n\n(2) $r>0$ の範囲は $|(\\varphi-\\varphi_0)\\sin\\alpha|<\\pi/2$，すなわち測地線が掃く方位角の全幅は $\\pi/\\sin\\alpha$．$r$ は $\\varphi_0$ について対称なので，$\\varphi_0\\pm\\delta$ の 2 点は同じ $r$ をもつ．方位角が $2\\pi k$（$k$ は正整数）だけ違えば円錐上で同じ点だから，$2\\delta=2\\pi k$ を満たす $\\delta<\\pi/(2\\sin\\alpha)$ があれば自己交差する．$k=1$ が可能な条件は $\\pi<\\pi/(2\\sin\\alpha)$，すなわち $\\sin\\alpha<1/2$，$\\alpha<30^\\circ$．（$\\alpha=30^\\circ$ では交点は無限遠に退き，交差しない．）\n\n(3) $k<\\dfrac{1}{2\\sin\\alpha}=\\dfrac{1}{2\\sin10^\\circ}=2.88$ を満たす正整数 $k=1,2$ に対してそれぞれ 1 点ずつ交点ができるので 2 個．"
+   }
+  ],
+  "idea": {
+   "tex": "円錐は展開すると平面（扇形）になり，測地線は直線になる．直線が掃く角度 $\\pi$ が展開角 $2\\pi\\sin\\alpha$ の何倍かで自己交差の数が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分法",
+   "測地線",
+   "ベルトラミの公式",
+   "円錐",
+   "展開図",
+   "自己交差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 2,
+  "minutes": 20,
+  "theme": "壁に接するドームの等周問題",
+  "topic": "壁に接するドームの等周問題",
+  "statement": {
+   "tex": "$x$ 軸まわりの回転体の側面の母線を $y=y(x)\\ (\\ge0)$ とする．側面積 $A=2\\pi\\int y\\sqrt{1+y'^2}dx$ を一定に保って体積 $V=\\pi\\int y^2dx$ を最大にする．\n\\begin{enumerate}\n\\item ラグランジュ未定乗数 $\\mu$ を用いて，極値曲線が $y^2-\\dfrac{\\mu y}{\\sqrt{1+y'^2}}=C$（定数）を満たすことを示せ．閉じた回転体（母線の両端が軸上 $y=0$ にある）では $C=0$ となり，球になることを示せ．\n\\item 平らな壁（平面 $x=0$）に密着したドームを考える．壁に接する底面は面積に数えず，ドームの曲面の面積 $A$ を一定として，壁とドームが囲む体積を最大にする．母線の一端 $x=0$ での $y$ が自由であることから自然境界条件を立て，最適な形を求めよ．\n\\item (2) の最大体積は，同じ面積 $A$ の閉じた球の体積の何倍か．鏡像を用いてこの結果を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）．(2) 壁で $y'=0$：半径 $\\mu$ の半球．(3) $\\sqrt2$ 倍．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V-\\dfrac{\\mu}{2}A$ の停留を考え，$\\pi$ で割って被積分関数 $L=y^2-\\mu y\\sqrt{1+y'^2}$．$L$ は $x$ を陽に含まないから\n\\[L-y'\\frac{\\partial L}{\\partial y'}=y^2-\\mu y\\sqrt{1+y'^2}+\\frac{\\mu yy'^2}{\\sqrt{1+y'^2}}=y^2-\\frac{\\mu y}{\\sqrt{1+y'^2}}=C.\\]\n母線が軸上 $y=0$ に達する点では左辺 $=0$ なので $C=0$．すると $\\sqrt{1+y'^2}=\\mu/y$，$y^2(1+y'^2)=\\mu^2$，すなわち $\\dfrac{d}{dx}(y^2)=\\pm2\\sqrt{\\mu^2-y^2}$ を積分して $(x-x_0)^2+y^2=\\mu^2$：中心が軸上の円，回転体は球．\n\n(2) ドームの頂点は軸上（$y=0$）にあるので (1) と同じく $C=0$，母線は軸上に中心をもつ半径 $\\mu$ の円弧．壁 $x=0$ で $y$ が自由な端点の自然境界条件は $\\partial L/\\partial y'=-\\dfrac{\\mu yy'}{\\sqrt{1+y'^2}}=0$，$y\\ne0$ だから $y'=0$．円弧が壁で傾き 0 になるのは中心が壁上にあるときなので，ドームは壁に中心をもつ半球．\n\n(3) 半球：$A=2\\pi R^2$，$V_\\text{h}=\\dfrac23\\pi R^3=\\dfrac23\\pi\\left(\\dfrac{A}{2\\pi}\\right)^{3/2}$．球：$V_\\text{s}=\\dfrac43\\pi\\left(\\dfrac{A}{4\\pi}\\right)^{3/2}$．比は $\\dfrac{V_\\text h}{V_\\text s}=\\dfrac12\\cdot2^{3/2}=\\sqrt2$．\n説明：ドームを壁で鏡映すると，面積 $2A$ で体積 $2V$ の閉曲面ができる．面積 $2A$ の最大体積は球で，その体積は面積 $A$ の球の $2^{3/2}$ 倍．したがって $V_\\text{max}=\\frac12\\cdot2^{3/2}V_\\text s=\\sqrt2V_\\text s$ であり，最適形はその球の半分（半球）である．"
+   }
+  ],
+  "idea": {
+   "tex": "等周問題は第一積分で $C=0$ の円弧に帰着する．壁があると自然境界条件 $y'=0$ が加わり半球になり，鏡像法で体積比 $\\sqrt2$ が直ちにわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分法",
+   "等周問題",
+   "ラグランジュ未定乗数",
+   "自然境界条件",
+   "球",
+   "鏡像"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-07-007",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -433,6 +1081,358 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 3,
+  "minutes": 30,
+  "theme": "サイクロイドの等時性：曲率半径と振動の周期",
+  "topic": "サイクロイドの等時性：曲率半径と振動の周期",
+  "statement": {
+   "tex": "下に凸のサイクロイド $x=a(\\phi+\\sin\\phi)$，$y=a(1-\\cos\\phi)$（$-\\pi<\\phi<\\pi$，最下点は $\\phi=0$）に沿って，ビーズが重力のもとで摩擦なく動く．\n\\begin{enumerate}\n\\item 最下点から測った弧長 $s$ を $\\phi$ で表し，高さ $y$ を $s$ で表せ．\n\\item 最下点での曲率半径を求めよ．\n\\item ビーズの運動が振幅によらない単振動になることを示し，周期を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $s=4a\\sin\\dfrac\\phi2$，$y=\\dfrac{s^2}{8a}$　(2) $4a$　(3) $T=4\\pi\\sqrt{\\dfrac ag}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dx}{d\\phi}=a(1+\\cos\\phi)$，$\\dfrac{dy}{d\\phi}=a\\sin\\phi$ より $\\dfrac{ds}{d\\phi}=a\\sqrt{2+2\\cos\\phi}=2a\\cos\\dfrac\\phi2$．よって $\\boldsymbol{s=4a\\sin\\dfrac\\phi2}$．$y=2a\\sin^2\\dfrac\\phi2=\\boldsymbol{\\dfrac{s^2}{8a}}$．\n\n(2) 最下点の近くでは $y\\simeq\\dfrac{x^2}{8a}$（$s\\simeq x$）なので，曲率 $y''=\\dfrac{1}{4a}$，曲率半径 $\\boldsymbol{4a}$．\n\n(3) 弧に沿った運動方程式は $m\\ddot s=-mg\\dfrac{dy}{ds}=-\\dfrac{mg}{4a}s$．厳密に単振動で，角振動数 $\\sqrt{g/4a}$，周期\n\\[\n\\boldsymbol{T=2\\pi\\sqrt{\\frac{4a}{g}}=4\\pi\\sqrt{\\frac ag}}\n\\]\nは振幅によらない（等時性）．同じ曲率半径の円の振り子の微小振動と同じ周期で，大振幅でもずれない．"
+   }
+  ],
+  "idea": {
+   "tex": "弧長をパラメータにすると，サイクロイドでは高さが弧長の2乗に厳密に比例し，運動が単振動になる．最下点の曲率半径 $4a$ は対応する単振り子の長さになる．原題のサイクロイドの曲率を，ホイヘンスの等時振り子に結びつけた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $s$：4 a sin ((φ)/(2)) ; $y$：((s ^(2))/(8 a))\n(2) 4 a\n(3) $T$：4 pi sqrt(((a)/(g)))"
+  },
+  "methods": [],
+  "tags": [
+   "サイクロイド",
+   "弧長",
+   "曲率",
+   "単振動"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 3,
+  "minutes": 45,
+  "theme": "地球貫通最速降下トンネルの逆問題",
+  "topic": "地球貫通最速降下トンネルの逆問題",
+  "statement": {
+   "tex": "地球を半径 $R=6.37\\times10^6\\,\\mathrm{m}$ の一様密度球とし，地表での重力加速度を $g=9.8\\,\\mathrm{m/s^2}$ とする．地表の2点 S, E（中心角 $\\theta_0$，$0<\\theta_0\\le\\pi$）を結ぶ摩擦のないトンネル内を，S から静かに放した質点が E まで運動する．\n\\begin{enumerate}\n\\item 中心から距離 $r$ の点での速さ $v$ を求め，所要時間を $T=\\sqrt{R/g}\\int ds/\\sqrt{R^2-r^2}$ と表せ．\n\\item 最速降下トンネルは，半径 $R$ の円に内接して滑らずに転がる半径 $b=R\\theta_0/(2\\pi)$ の円の周上の点が描く内サイクロイドであることが知られている（証明は不要）．$a=R-b$ としてこの曲線を\n\\[ x=a\\sin\\frac{bu}{R}-b\\sin\\frac{au}{R},\\quad z=a\\cos\\frac{bu}{R}+b\\cos\\frac{au}{R}\\quad(0\\le u\\le2\\pi) \\]\nと表すとき，$ds/du$ と $R^2-r^2$ を計算し，所要時間 $T_b=\\sqrt{R/g}\\sqrt{\\theta_0(2\\pi-\\theta_0)}$ を導け．\n\\item 2点を直線（弦）トンネルで結んだ場合の所要時間 $T_c$ を求めよ．\n\\item $T_b=T_c/2$ となる $\\theta_0$ を求め，そのときの地表に沿った2点間距離，トンネルの最大深さ，最高速度を数値で求めよ．\n\\item $\\theta_0\\to0$ で $T_b\\simeq\\sqrt{2\\pi d/g}$（$d=R\\theta_0$）となることを示し，その意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=\\sqrt{(g/R)(R^2-r^2)}$　(2) $ds/du=\\frac{ab}{R}\\sqrt{2(1-\\cos u)}$，$R^2-r^2=2ab(1-\\cos u)$，$T_b=2\\pi\\sqrt{ab}/\\sqrt{gR}$　(3) $T_c=\\pi\\sqrt{R/g}\\approx42.2$ 分（$\\theta_0$ によらない）　(4) $\\theta_0=\\pi(1-\\sqrt3/2)\\approx0.421$；距離約 $2.68\\times10^3\\,\\mathrm{km}$，最大深さ $R(1-\\sqrt3/2)\\approx853\\,\\mathrm{km}$，最高速度約 $3.95\\,\\mathrm{km/s}$　(5) 一様重力場で同じ高さの2点を結ぶ最速降下線（1アーチのサイクロイド）の時間に一致"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 内部の重力は $-(GM/R^3)\\boldsymbol r=-(g/R)\\boldsymbol r$ で，ポテンシャルエネルギー $\\frac12m(g/R)r^2$．エネルギー保存 $\\frac12mv^2+\\frac12m\\frac gRr^2=\\frac12m\\frac gRR^2$ より $v=\\sqrt{(g/R)(R^2-r^2)}$．$T=\\int ds/v=\\sqrt{R/g}\\int ds/\\sqrt{R^2-r^2}$．\n\n(2) $u=0$ で $(x,z)=(0,R)$（S），$u=2\\pi$ で $\\sin(2\\pi a/R)=\\sin(2\\pi-2\\pi b/R)=-\\sin(2\\pi b/R)$ などを用いて $(x,z)=R(\\sin\\frac{2\\pi b}R,\\cos\\frac{2\\pi b}R)$，中心角 $2\\pi b/R=\\theta_0$（E）．\n\\[ \\frac{dx}{du}=\\frac{ab}R\\Big(\\cos\\frac{bu}R-\\cos\\frac{au}R\\Big),\\quad \\frac{dz}{du}=-\\frac{ab}R\\Big(\\sin\\frac{bu}R+\\sin\\frac{au}R\\Big) \\]\nより $(ds/du)^2=\\frac{a^2b^2}{R^2}\\big[2-2\\cos\\frac{(a+b)u}{R}\\big]=\\frac{a^2b^2}{R^2}\\,2(1-\\cos u)$（$a+b=R$）．\nまた $r^2=x^2+z^2=a^2+b^2+2ab\\cos u$ だから $R^2-r^2=(a+b)^2-a^2-b^2-2ab\\cos u=2ab(1-\\cos u)$．よって\n\\[ \\frac{ds/du}{\\sqrt{R^2-r^2}}=\\frac{\\sqrt{ab}}{R}\\ (\\text{一定}),\\qquad T_b=\\sqrt{\\frac Rg}\\cdot\\frac{2\\pi\\sqrt{ab}}{R}. \\]\n$b=R\\theta_0/2\\pi$，$a=R(1-\\theta_0/2\\pi)$ を代入して $T_b=\\sqrt{R/g}\\sqrt{\\theta_0(2\\pi-\\theta_0)}$．\n\n(3) 弦の中点を原点に弦方向の座標 $\\xi$ をとると，弦方向の力は $-(mg/R)\\xi$（中心からの距離の弦方向成分）．単振動で角振動数 $\\sqrt{g/R}$，S から E は半周期：$T_c=\\pi\\sqrt{R/g}=2.53\\times10^3\\,\\mathrm{s}\\approx42.2$ 分．$\\theta_0$ によらない．\n\n(4) $\\sqrt{\\theta_0(2\\pi-\\theta_0)}=\\pi/2$ より $\\theta_0^2-2\\pi\\theta_0+\\pi^2/4=0$，$\\theta_0\\le\\pi$ の解は $\\theta_0=\\pi(1-\\sqrt3/2)\\approx0.4209$．\n地表距離 $R\\theta_0\\approx2.68\\times10^3\\,\\mathrm{km}$．最も深い点は $u=\\pi$ で $r_m=a-b$，深さ $R-r_m=2b=R\\theta_0/\\pi=R(1-\\sqrt3/2)\\approx853\\,\\mathrm{km}$．\n最高速度は最深点で $v=\\sqrt{(g/R)(R^2-r_m^2)}\\approx3.95\\times10^3\\,\\mathrm{m/s}$（時速約 $1.4\\times10^4\\,\\mathrm{km}$）．所要時間は約21.1分．\n\n(5) $\\theta_0\\ll1$ で $T_b\\simeq\\sqrt{R/g}\\sqrt{2\\pi\\theta_0}=\\sqrt{2\\pi R\\theta_0/g}=\\sqrt{2\\pi d/g}$．近距離ではトンネルは浅く重力は一様 $g$ とみなせ，同じ高さの2点（距離 $d$）を結ぶ最速降下線は尖点から尖点への1アーチのサイクロイド（$d=2\\pi a$，時間 $2\\pi\\sqrt{a/g}$）であり，その時間 $\\sqrt{2\\pi d/g}$ に一致する．弦トンネルの時間が距離によらないのに対し，最速降下トンネルは $\\sqrt d$ に比例して短くなる．"
+   }
+  ],
+  "idea": {
+   "tex": "内サイクロイド上では $ds/\\sqrt{R^2-r^2}$ が一定となり時間が初等的に求まる．$\\theta_0$ によらない弦トンネル（42分）との比から逆に距離を決め，近距離極限で一様重力のサイクロイドに帰着することを確認する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v$：sqrt((g / R)(R ^(2)- r ^(2)))\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "最速降下線",
+   "内サイクロイド",
+   "地球トンネル",
+   "一様密度球",
+   "逆問題",
+   "極限"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 3,
+  "minutes": 40,
+  "theme": "滑車に掛けた綱：準線と平衡の存在条件",
+  "topic": "滑車に掛けた綱：準線と平衡の存在条件",
+  "statement": {
+   "tex": "同じ高さにある2つの小さな滑らかな滑車（水平距離 $2d$）に，線密度 $\\rho$，全長 $\\ell$ の一様な柔らかい綱を掛ける．滑車の間の部分は垂れ下がり，両端の部分は滑車から鉛直に垂れ下がる．重力加速度を $g$ とし，滑車の位置を $(\\pm d,0)$，$y$ 軸を鉛直上向きにとる．\n\\begin{enumerate}\n\\item 長さ一定の拘束のもとで位置エネルギーを最小にする問題として，滑車間の綱の形が $y=\\lambda+a\\cosh(x/a)$（$\\lambda$ は Lagrange 未定乗数に由来する定数）となることを示せ．さらに，綱の各点の張力が $T=\\rho g(y-\\lambda)$ であることを示せ．\n\\item 平衡状態では，鉛直に垂れた両端の先端がともに高さ $y=\\lambda$（懸垂線の準線）にあることを示せ．\n\\item $k=d/a$ を用いて $\\ell/d$ を $k$ で表し，平衡が存在するための $\\ell$ の条件を求めよ．\n\\item $\\ell=7d$ のとき2つの平衡がある．それぞれの $k$ と垂れ下がり部分の長さ $h$ を求め，懸垂線の族（$a$ をパラメータとし，残りの綱は鉛直に垂らす）の中で位置エネルギーを比べることにより，どちらが安定か判定せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略　(2) 張力の連続性から $\\rho gh=T(\\pm d)=\\rho g(0-\\lambda)$　(3) $\\ell/d=2e^k/k$，平衡は $\\ell\\ge2ed\\approx5.44d$ のときのみ　(4) $k\\approx0.4465$（$h\\approx2.466d$，浅い方，安定）と $k\\approx1.889$（$h\\approx1.790d$，深い方，不安定）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 滑車間の綱の位置エネルギー $\\rho g\\int y\\,ds$ を，長さ $\\int ds$ 一定の拘束のもとで停留させる．未定乗数 $\\rho g\\lambda$ を導入し $\\rho g\\int(y-\\lambda)\\sqrt{1+y'^2}dx$ を停留させる．$Y=y-\\lambda$ とおくと最小回転面と同形の汎関数 $\\int Y\\sqrt{1+y'^2}dx$ で，$x$ を陽に含まないので $Y/\\sqrt{1+y'^2}=a$，解は $Y=a\\cosh\\{(x-b)/a\\}$．対称性から $b=0$：$y=\\lambda+a\\cosh(x/a)$．\n張力：綱の微小部分のつり合いから張力の水平成分 $H$ は一定，鉛直成分は $Hy'$ で，$d(Hy')/dx=\\rho g\\sqrt{1+y'^2}$．$y'=\\sinh(x/a)$ を代入すると $H\\cosh(x/a)/a=\\rho g\\cosh(x/a)$ より $H=\\rho ga$．張力の大きさは $T=H\\sqrt{1+y'^2}=\\rho ga\\cosh(x/a)=\\rho g(y-\\lambda)$．\n\n(2) 滑車は滑らかで小さいので張力は滑車の両側で等しい．鉛直部分（長さ $h$）は下端で張力 $0$，滑車で $\\rho gh$．よって $\\rho gh=T(\\pm d)=\\rho g(0-\\lambda)$，すなわち $h=-\\lambda$：両端の先端は高さ $y=\\lambda$（準線）にちょうど届く．\n\n(3) 懸垂線が $(\\pm d,0)$ を通るので $\\lambda=-a\\cosh k$，$h=a\\cosh k$．滑車間の長さ $2a\\sinh k$．\n\\[ \\ell=2a\\sinh k+2a\\cosh k=2ae^k=\\frac{2de^k}{k}. \\]\n$e^k/k$ は $k=1$ で最小値 $e$ をとるので，平衡が存在するのは $\\ell\\ge2ed\\approx5.44d$．これより短いと，どの形でも滑車での張力のつり合いがとれず，綱は一方へ滑り落ちる．\n\n(4) $2e^k/k=7$ を解くと $k\\approx0.4465$ と $k\\approx1.8886$．$h=a\\cosh k=d\\cosh k/k$ より $h\\approx2.466d$，$1.790d$．\n懸垂線族での位置エネルギー（滑車の高さを基準）は，$a$ を与えると $h(a)=\\frac12(\\ell-2a\\sinh(d/a))$ として\n\\[ \\frac{U(a)}{\\rho g}=\\int_{-d}^{d}\\big(a\\cosh\\tfrac xa-a\\cosh\\tfrac da\\big)\\cosh\\tfrac xa\\,dx-h(a)^2 . \\]\n$dU/da=0$ がちょうど (3) の平衡条件になり（数値的にも確認できる），2階微分は $k\\approx0.4465$（たるみの小さい浅い形，$a\\approx2.24d$）で正，$k\\approx1.889$（深い形）で負．よって**浅い方が安定**，深い方は不安定（わずかに乱すと綱が一方に滑る）．\n（なお (3) の条件を $h$ で書くと $h/d=\\cosh k/k\\ge1.5089$ の形にもなり，最小回転面の臨界値と同じ関数が現れる．）"
+   }
+  ],
+  "idea": {
+   "tex": "未定乗数 $\\lambda$ は懸垂線の準線の高さであり，張力は準線からの高さに比例する．そのため滑車から垂れた綱の先端は準線に揃い，全長に対する平衡の存在条件 $\\ell\\ge2ed$ が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "懸垂線",
+   "Lagrange未定乗数",
+   "準線",
+   "滑車",
+   "平衡の安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 3,
+  "minutes": 50,
+  "theme": "最速降下線のスネル則とサイクロイドトンネル",
+  "topic": "最速降下線のスネル則とサイクロイドトンネル",
+  "statement": {
+   "tex": "鉛直下向きに $x$ 軸，水平方向に $y$ 軸をとった鉛直面内で，一様な重力（重力加速度 $g$）を受ける質点が，原点 O から初速 $0$ で滑らかな曲線 $y=y(x)$ に沿って滑り降りる．摩擦と空気抵抗はない．\n\\begin{enumerate}\n\\item 所要時間 $T=\\displaystyle\\int\\frac{ds}{v}$ を最小にする曲線上では，接線が鉛直下向き（$+x$ 向き）となす角を $\\psi$，その点の速さを $v$ とするとき，$\\dfrac{\\sin\\psi}{v}=C$（一定）が成り立つことを，オイラー＝ラグランジュ方程式 $\\dfrac{\\partial L}{\\partial y}-\\dfrac{d}{dx}\\dfrac{\\partial L}{\\partial y'}=0$ を用いて示せ．また，この曲線の最深点の深さ $x_{\\max}$ を $C,g$ で表せ．\n\\item サイクロイド $x=a(1-\\cos\\phi)$，$y=a(\\phi-\\sin\\phi)$（$a>0$，$0\\le\\phi\\le2\\pi$）が (1) の条件を満たすことを示し，$C$ を $a,g$ で表せ．さらに，O から媒介変数 $\\phi$ の点までの所要時間が $\\phi\\sqrt{a/g}$ であることを示せ．\n\\item 終点 P$(x_1,y_1)$（$x_1>0,\\ y_1>0$）を通る最速降下曲線が，P に到達する前に P より深い点を通過する（いったん P より下がってから P へ上る）ための条件を $y_1/x_1$ で表せ．\n\\item 同じ高さにある 2 地点 A（$=$O）と B を，(2) のサイクロイドの $\\phi=0$ から $\\phi=2\\pi$ の部分の形をした真空トンネルで結ぶ．AB 間の距離は $D=310\\ \\mathrm{km}$，$g=9.8\\ \\mathrm{m\\,s^{-2}}$ とする（地球の曲率・自転は無視）．A から初速 $0$ で放した物体が B に達するまでの時間 $T_0$ と，トンネルの最大深さを求めよ．\n\\item 物体 1 を時刻 $0$ に A から，物体 2 を時刻 $\\tau\\ (0<\\tau<T_0)$ に B から，いずれも初速 $0$ で放す．2 物体が出会う時刻と，そのときの A からの水平距離および深さを $a,\\ \\omega\\equiv\\sqrt{g/a},\\ \\tau$ で表し，$\\tau=60\\ \\mathrm{s}$ のときの数値を求めよ．\n\\item 比較のため，A と B を中点の真下深さ $h$ の点で折れ曲がる 2 本の直線トンネル（V 字形．折れ曲がり点では速さを失わずに向きだけ変わるとする）で結ぶ．A から B までの所要時間を最小にする $h$ とその最小時間 $T_V$ を求め，$T_V/T_0$ が $D$ によらない定数であることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照），$x_{\\max}=\\dfrac{1}{2gC^2}$　(2) $C=\\dfrac{1}{2\\sqrt{ga}}$，時間 $\\phi\\sqrt{a/g}$　(3) $y_1/x_1>\\pi/2$　(4) $T_0=\\sqrt{2\\pi D/g}\\approx446\\ \\mathrm{s}\\ (\\approx7.4$ 分$)$，最大深さ $D/\\pi\\approx98.7\\ \\mathrm{km}$　(5) 時刻 $\\dfrac{\\pi}{\\omega}+\\dfrac{\\tau}{2}$，水平距離 $\\pi a+a\\left(\\dfrac{\\omega\\tau}{2}+\\sin\\dfrac{\\omega\\tau}{2}\\right)$，深さ $a\\left(1+\\cos\\dfrac{\\omega\\tau}{2}\\right)$；$\\tau=60$ s で $253$ s，$196$ km，$94.3$ km　(6) $h=D/2$，$T_V=2\\sqrt{2D/g}\\approx503$ s，$T_V/T_0=2/\\sqrt\\pi\\approx1.13$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 速さはエネルギー保存より $v=\\sqrt{2gx}$．$ds=\\sqrt{1+y'^2}\\,dx$ なので\n\\[ T=\\int L\\,dx,\\qquad L(x,y')=\\frac{\\sqrt{1+y'^2}}{\\sqrt{2gx}}. \\]\n$L$ は $y$ を陽に含まないので $\\partial L/\\partial y=0$ となり，オイラー＝ラグランジュ方程式は $\\dfrac{\\partial L}{\\partial y'}=\\text{一定}$ を与える：\n\\[ \\frac{y'}{\\sqrt{1+y'^2}}\\cdot\\frac{1}{\\sqrt{2gx}}=C. \\]\n$y'=dy/dx=\\tan\\psi$ だから $\\dfrac{y'}{\\sqrt{1+y'^2}}=\\sin\\psi$，$\\sqrt{2gx}=v$ で $\\dfrac{\\sin\\psi}{v}=C$．（屈折率 $\\propto1/v$ の媒質中の光のスネルの法則と同形．）\n最深点では接線が水平で $\\psi=\\pi/2$，よって $v=1/C$，$x_{\\max}=\\dfrac{v^2}{2g}=\\dfrac{1}{2gC^2}$．\n\n(2) $dx=a\\sin\\phi\\,d\\phi$，$dy=a(1-\\cos\\phi)\\,d\\phi$ より $\\tan\\psi=\\dfrac{dy}{dx}=\\dfrac{1-\\cos\\phi}{\\sin\\phi}=\\tan\\dfrac{\\phi}{2}$，すなわち $\\psi=\\phi/2$．また $v=\\sqrt{2ga(1-\\cos\\phi)}=2\\sqrt{ga}\\sin\\dfrac{\\phi}{2}$．よって\n\\[ \\frac{\\sin\\psi}{v}=\\frac{1}{2\\sqrt{ga}}=C\\quad(\\text{一定}). \\]\n（$x_{\\max}=1/(2gC^2)=2a$ とも整合．）線素は $ds=\\sqrt{dx^2+dy^2}=2a\\sin\\dfrac{\\phi}{2}\\,d\\phi$ なので $dt=\\dfrac{ds}{v}=\\sqrt{\\dfrac{a}{g}}\\,d\\phi$，積分して所要時間 $\\phi\\sqrt{a/g}$．$\\phi$ は時間に比例して増える：$\\phi=\\omega t$，$\\omega=\\sqrt{g/a}$．\n\n(3) O と P を通るサイクロイドの $\\phi$ を $\\phi_1$ とすると，最深点は $\\phi=\\pi$ なので，P の手前で P より深くなるのは $\\phi_1>\\pi$ のときである．\n\\[ f(\\phi)=\\frac{y}{x}=\\frac{\\phi-\\sin\\phi}{1-\\cos\\phi},\\qquad f'(\\phi)=\\frac{2-2\\cos\\phi-\\phi\\sin\\phi}{(1-\\cos\\phi)^2}=\\frac{4\\sin\\frac{\\phi}{2}\\left(\\sin\\frac{\\phi}{2}-\\frac{\\phi}{2}\\cos\\frac{\\phi}{2}\\right)}{(1-\\cos\\phi)^2}. \\]\n$s=\\phi/2\\in(0,\\pi)$ で $\\sin s>0$，かつ $\\sin s-s\\cos s>0$（$s<\\pi/2$ では $\\tan s>s$，$s\\ge\\pi/2$ では $\\cos s\\le0$）なので $f$ は単調増加．$f(\\pi)=\\pi/2$ より，条件は $y_1/x_1>\\pi/2$．\n\n(4) $D=2\\pi a$ より $a=D/(2\\pi)=49.3\\ \\mathrm{km}$．$T_0=2\\pi\\sqrt{a/g}=\\sqrt{2\\pi D/g}=\\sqrt{2\\pi\\times3.1\\times10^5/9.8}\\approx446\\ \\mathrm{s}\\approx7.4$ 分．最大深さ $2a=D/\\pi\\approx98.7\\ \\mathrm{km}$．\n\n(5) (2) より物体 1 は $\\phi_1=\\omega t$．サイクロイドは $\\phi=\\pi$ に関して左右対称（$\\phi\\leftrightarrow2\\pi-\\phi$ が鏡映）なので，B から放した物体 2 は $\\phi_2=2\\pi-\\omega(t-\\tau)$．出会う条件 $\\phi_1=\\phi_2$ より\n\\[ t_m=\\frac{\\pi}{\\omega}+\\frac{\\tau}{2},\\qquad \\phi_m=\\pi+\\frac{\\omega\\tau}{2}. \\]\n位置は $y=a(\\phi_m-\\sin\\phi_m)=\\pi a+a\\left(\\dfrac{\\omega\\tau}{2}+\\sin\\dfrac{\\omega\\tau}{2}\\right)$，深さ $x=a(1-\\cos\\phi_m)=a\\left(1+\\cos\\dfrac{\\omega\\tau}{2}\\right)$．\n数値：$a=4.934\\times10^4$ m，$\\omega=\\sqrt{9.8/4.934\\times10^4}=1.409\\times10^{-2}\\ \\mathrm{s^{-1}}$，$\\omega\\tau/2=0.423$．$t_m=223+30=253$ s，$y=155+49.3\\times(0.423+0.410)=196$ km，深さ $49.3\\times(1+0.912)=94.3$ km．（等時性のため，2 物体が最深点を通る時刻の差がそのまま $\\tau$ に保たれ，出会う点は最深点から B 側へずれる．）\n\n(6) 片側の直線の長さ $\\ell=\\sqrt{h^2+D^2/4}$，その方向の加速度 $gh/\\ell$．下りの時間は $\\sqrt{2\\ell^2/(gh)}$，上りは対称で同じなので\n\\[ T_V(h)=2\\sqrt{\\frac{2}{g}\\left(h+\\frac{D^2}{4h}\\right)}. \\]\n$h+\\dfrac{D^2}{4h}$ は相加相乗平均より $h=D/2$ で最小値 $D$．よって $T_V=2\\sqrt{2D/g}=2\\sqrt{2\\times3.1\\times10^5/9.8}\\approx503$ s．\n\\[ \\frac{T_V}{T_0}=\\frac{2\\sqrt{2D/g}}{\\sqrt{2\\pi D/g}}=\\frac{2}{\\sqrt\\pi}\\approx1.13 \\]\nで $D$ によらない．最適な折れ線でもサイクロイドより約 13% 遅い．"
+   }
+  ],
+  "idea": {
+   "tex": "最速降下問題はラグランジアンが $y$ を含まないことから「$\\sin\\psi/v$ 一定」というスネル則が直ちに出る．サイクロイドでは媒介変数が時間に比例する（$\\phi=\\omega t$）ので，時間差をつけて両端から放した物体の会合点などが簡単に求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $C$：((1)/(2 sqrt(g a))) ; 時間：φ sqrt(a / g)\n(3) 記述\n(4) 記述\n(5) 記述\n(6) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分原理",
+   "オイラー=ラグランジュ方程式",
+   "最速降下線",
+   "サイクロイド",
+   "等時性",
+   "スネルの法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 3,
+  "minutes": 40,
+  "theme": "懸垂線と支点張力の最小化",
+  "topic": "懸垂線と支点張力の最小化",
+  "statement": {
+   "tex": "線密度 $\\lambda$ の一様で柔らかい鎖を，同じ高さで水平距離 $2a$ 離れた 2 点 $(\\pm a,\\,y_s)$ から吊るす．重力加速度は $-y$ 方向に $g$．鎖の長さは自由に選べるものとする．\n\\begin{enumerate}\n\\item 長さ一定の条件のもとで位置エネルギーを最小にする変分問題をラグランジュの未定乗数法で立て，解が $y=A\\cosh(x/A)+B$ となることを示せ．\n\\item 最下点での張力 $T_0$ と，任意の点での張力 $T$ を $A,B,y$ で表せ．特に $T$ はその点の直線 $y=B$（準線）からの高さだけで決まることを示せ．\n\\item 鎖の長さを変えたとき，支点での張力 $T_s$ を最小にする $A$ は $u=a/A$ が $u\\tanh u=1$ を満たすときであることを示し，$u$ を数値的に求めよ．そのときの $T_s$（$\\lambda g a$ 単位），鎖の長さとスパンの比，たるみとスパン $2a$ の比を求めよ．\n\\item (3) の最適な鎖で，両支点における鎖の接線は準線 $y=B$ 上の中点 $x=0$ で交わることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $T_0=\\lambda gA$，$T=\\lambda g(y-B)$　(3) $u=1.200$；$T_s=\\lambda g a\\cosh u/u=1.51\\,\\lambda ga$，長さ／スパン $=\\sinh u/u=1.258$，たるみ／スパン $=(\\cosh u-1)/(2u)=0.338$　(4) 証明（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $U=\\lambda g\\displaystyle\\int y\\sqrt{1+y'^2}\\,dx$，長さ $\\ell=\\displaystyle\\int\\sqrt{1+y'^2}\\,dx$．$U-\\lambda g B\\,\\ell$ を停留にする（$-\\lambda gB$ が未定乗数）：$F=(y-B)\\sqrt{1+y'^2}$．$F$ は $x$ を陽に含まないので第 1 積分\n\\[\nF-y'\\frac{\\partial F}{\\partial y'}=\\frac{y-B}{\\sqrt{1+y'^2}}=A\\ (\\text{一定}).\n\\]\n$y-B=A\\cosh\\chi$ とおくと $y'=\\sinh\\chi$，$dy=A\\sinh\\chi\\,d\\chi=\\sinh\\chi\\,dx$ より $\\chi=x/A$（対称性から原点を中央に）．よって $y=A\\cosh(x/A)+B$．\n\n(2) 水平張力は一定 $T_0$．最下点から弧長 $s$ の部分の鉛直つり合い $T_0y'=\\lambda g s$，$s=A\\sinh(x/A)$，$y'=\\sinh(x/A)$ より $T_0=\\lambda gA$．任意の点で $T=T_0\\sqrt{1+y'^2}=\\lambda gA\\cosh(x/A)=\\lambda g(y-B)$．\n\n(3) $T_s=\\lambda gA\\cosh(a/A)=\\lambda g a\\,\\dfrac{\\cosh u}{u}$．$u$ で微分して 0：\n\\[\n\\frac{d}{du}\\frac{\\cosh u}{u}=\\frac{u\\sinh u-\\cosh u}{u^2}=0\\ \\Rightarrow\\ u\\tanh u=1 .\n\\]\n数値解 $u=1.1997$．$u\\to0$（ゆるい鎖）でも $u\\to\\infty$（張った鎖）でも $T_s\\to\\infty$ なのでこれが最小．\n$T_s=\\lambda ga\\cosh u/u=1.509\\,\\lambda ga$．長さ $2A\\sinh u=2a\\sinh u/u$，スパン比 $\\sinh u/u=1.258$．たるみ $A(\\cosh u-1)$，スパン比 $(\\cosh u-1)/(2u)=0.338$．\n\n(4) 支点 $(a,\\,B+A\\cosh u)$ での接線の傾きは $\\sinh u$．準線 $y=B$ まで下りるのに水平に $\\Delta x=A\\cosh u/\\sinh u=A\\coth u$ 戻る．最適条件 $u\\tanh u=1$ より $\\coth u=u$，よって $\\Delta x=Au=a$．すなわち接線は $x=a-a=0$ で準線と交わる．対称性から反対側の接線も同じ点で交わる．（この点が「最適」の幾何学的特徴づけであり，$T_s=\\lambda g(y_s-B)$ を最小化することは，支点の準線からの高さを最小にすることと同じである．）"
+   }
+  ],
+  "idea": {
+   "tex": "懸垂線では張力が準線からの高さに比例する．支点張力を長さについて最小化すると $u\\tanh u=1$ が現れ，そのとき両端の接線は準線上の中点で交わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $T_0$：λ g A ; $T$：λ g (y - B)\n(3) 記述\n(4) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "懸垂線",
+   "変分法",
+   "ラグランジュの未定乗数",
+   "張力",
+   "最適化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 3,
+  "minutes": 30,
+  "theme": "最速降下線：終点より深く潜る場合",
+  "topic": "最速降下線：終点より深く潜る場合",
+  "statement": {
+   "tex": "鉛直面内に，$x$ 軸を水平，$y$ 軸を鉛直下向きにとる．質量 $m$ のビーズが原点 A から静かに放され，滑らかな針金に沿って点 B$(L,H)$ まで滑る．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 所要時間 $T[y]=\\displaystyle\\int_0^L\\sqrt{\\frac{1+y'^2}{2gy}}\\,dx$ を最小にする曲線が，サイクロイド $x=a(\\theta-\\sin\\theta),\\ y=a(1-\\cos\\theta)$ であることを示し，原点から媒介変数 $\\theta$ の点までの所要時間が $\\theta\\sqrt{a/g}$ であることを示せ．\n\\item $L=\\pi H$ のとき，B に対応する $\\theta_B$ と $a/H$ を数値で求めよ．ビーズは途中で B より深いところまで潜るか．潜るなら最大の深さを $H$ を単位に求めよ．\n\\item (2) の場合の最短時間を $\\sqrt{H/g}$ を単位に求め，A と B を結ぶ直線の針金の場合と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）．(2) $\\theta_B\\approx4.11$，$a\\approx0.637H$；潜る．最大深さ $2a\\approx1.27H$．(3) $T\\approx3.28\\sqrt{H/g}$；直線では $\\sqrt{2(1+\\pi^2)}\\sqrt{H/g}\\approx4.66\\sqrt{H/g}$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) エネルギー保存より $v=\\sqrt{2gy}$，$dt=ds/v$ で $T$ の式を得る．被積分関数 $F=\\sqrt{(1+y'^2)/y}$ は $x$ を陽に含まないので $F-y'F_{y'}=\\dfrac{1}{\\sqrt{y(1+y'^2)}}=\\text{const}$，すなわち $y(1+y'^2)=2a$．$y=a(1-\\cos\\theta)$ とおくと $y'^2=\\dfrac{2a-y}{y}=\\cot^2\\dfrac\\theta2$，$dx=dy/y'=a(1-\\cos\\theta)d\\theta$ より $x=a(\\theta-\\sin\\theta)$（原点を通る）．\nまた $ds=\\sqrt{dx^2+dy^2}=2a\\sin\\frac\\theta2d\\theta$，$v=\\sqrt{2ga(1-\\cos\\theta)}=2\\sqrt{ga}\\sin\\frac\\theta2$ だから $dt=\\sqrt{a/g}\\,d\\theta$，所要時間は $\\theta\\sqrt{a/g}$．\n\n(2) $L/H=\\dfrac{\\theta_B-\\sin\\theta_B}{1-\\cos\\theta_B}=\\pi$ を数値的に解くと $\\theta_B\\approx4.107$（$>\\pi$）．$1-\\cos\\theta_B\\approx1.569$ より $a=H/1.569\\approx0.637H$．$\\theta_B>\\pi$ なのでビーズはサイクロイドの最下点 $\\theta=\\pi$（深さ $2a$）を通過してから B へ上る．最大深さ $2a\\approx1.27H$．\n\n(3) $T=\\theta_B\\sqrt{a/g}=4.107\\sqrt{0.637}\\sqrt{H/g}\\approx3.28\\sqrt{H/g}$．直線の場合，長さ $\\ell=H\\sqrt{1+\\pi^2}$，加速度 $gH/\\ell$ の等加速度運動で $T=\\sqrt{2\\ell^2/(gH)}=\\sqrt{2(1+\\pi^2)}\\sqrt{H/g}\\approx4.66\\sqrt{H/g}$．最速降下線は約 30\\% 速い．一度深く潜って速さを稼ぐ方が得になる．"
+   }
+  ],
+  "idea": {
+   "tex": "最速降下線は端点が浅く遠いと終点より深く潜る（$L/H>\\pi/2$ で $\\theta_B>\\pi$）．サイクロイド上では所要時間が媒介変数に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分法",
+   "最速降下線",
+   "サイクロイド",
+   "ベルトラミの公式",
+   "数値解"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-07-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-86",
+  "level": 3,
+  "minutes": 25,
+  "theme": "カテノイド石けん膜の存在限界",
+  "topic": "カテノイド石けん膜の存在限界",
+  "statement": {
+   "tex": "半径 $R$ の 2 つの円形の針金を，中心を結ぶ直線（$x$ 軸）に垂直に，$x=\\pm h$ に置き，間に石けん膜を張る．膜は $x$ 軸まわりの回転面 $y=y(x)$ をなし，表面積を極小にする（端の円板の膜は考えない）．\n\\begin{enumerate}\n\\item 膜の形が $y=c\\cosh(x/c)$ であり，$c$ が $R=c\\cosh(h/c)$ で決まることを示せ．\n\\item 回転面の解が存在するための $h/R$ の上限を求めよ（$u\\tanh u=1$ の根 $u\\approx1.200$ を用いてよい）．\n\\item $h/R=0.5$ のとき，条件を満たすくびれ半径 $c$ を 2 つ求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）．(2) $h/R<1/\\sinh u^*\\approx0.663$（輪の間隔 $2h<1.33R$）．(3) $c\\approx0.848R$ と $c\\approx0.235R$（前者が安定な膜）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 面積 $A=2\\pi\\int_{-h}^{h}y\\sqrt{1+y'^2}dx$．$F=y\\sqrt{1+y'^2}$ は $x$ を陽に含まないので $F-y'F_{y'}=\\dfrac{y}{\\sqrt{1+y'^2}}=c$（定数）．$y'=\\sqrt{y^2-c^2}/c$ を積分して $y=c\\cosh\\{(x-x_0)/c\\}$．対称性から $x_0=0$．境界条件 $y(\\pm h)=R$ より $R=c\\cosh(h/c)$．（これは膜の各断面で張力の軸方向成分が一定という条件と同じ．）\n\n(2) $u=h/c$ とおくと $\\dfrac hR=\\dfrac{u}{\\cosh u}$．右辺の最大は $\\dfrac{d}{du}\\dfrac{u}{\\cosh u}=\\dfrac{1-u\\tanh u}{\\cosh u}=0$，すなわち $u^*\\tanh u^*=1$，$u^*\\approx1.1997$ で，最大値は $\\dfrac{u^*}{\\cosh u^*}=\\dfrac{1}{\\sinh u^*}\\approx0.6627$．したがって $h/R<0.663$（輪の間隔 $2h<1.33R$）でないとカテノイドは存在せず，それ以上離すと膜は切れて 2 枚の円板膜になる（ゴールドシュミット解）．\n\n(3) $u/\\cosh u=0.5$ を数値的に解くと $u_1\\approx0.589$，$u_2\\approx2.127$．$c=h/u=0.5R/u$ より $c_1\\approx0.848R$，$c_2\\approx0.235R$．くびれの太い方（$u<u^*$）が面積の極小で安定，細い方は不安定な停留解である．"
+   }
+  ],
+  "idea": {
+   "tex": "石けん膜はカテノイドになるが，境界条件 $R=c\\cosh(h/c)$ は $h/R$ が大きすぎると解をもたず，膜が破れる臨界間隔が存在する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分法",
+   "石けん膜",
+   "カテノイド",
+   "極小曲面",
+   "ゴールドシュミット解",
+   "分岐"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

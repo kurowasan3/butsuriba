@@ -195,6 +195,56 @@
   }
  },
  {
+  "id": "AS-03-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-76",
+  "level": 1,
+  "minutes": 15,
+  "theme": "等方的宇宙線強度から地球への入射数と電力",
+  "topic": "等方的宇宙線強度から地球への入射数と電力",
+  "statement": {
+   "tex": "大気上端での一次宇宙線は等方的で，その強度（単位面積・単位時間・単位立体角あたりの粒子数）は $J=0.30\\ \\mathrm{cm^{-2}\\,s^{-1}\\,sr^{-1}}$，平均運動エネルギーは $3.0\\ \\mathrm{GeV}$ とする．\n\\begin{enumerate}\n\\item 上半球から水平な面に入射する粒子数（フラックス）が $\\pi J$ であることを示せ．\n\\item 地球（半径 $6.4\\times10^6\\ \\mathrm m$）全体に毎秒入射する粒子数と，宇宙線が運ぶ電力を求めよ．\n\\item 太陽定数を $1361\\ \\mathrm{W/m^2}$ として，太陽から地球が受ける電力との比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $4.9\\times10^{18}\\ \\mathrm{s^{-1}}$，$2.3\\ \\mathrm{GW}$　(3) $\\approx1.3\\times10^{-8}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 天頂角 $\\theta$ の方向から来る粒子が水平面を通過する割合は $\\cos\\theta$．よって\n\\[ \\Phi=\\int J\\cos\\theta\\,d\\Omega=J\\int_0^{2\\pi}d\\phi\\int_0^{\\pi/2}\\cos\\theta\\sin\\theta\\,d\\theta=\\pi J. \\]\n\n(2) $\\pi J=0.942\\ \\mathrm{cm^{-2}s^{-1}}=9.42\\times10^3\\ \\mathrm{m^{-2}s^{-1}}$．地表面積 $4\\pi R^2=5.15\\times10^{14}\\ \\mathrm{m^2}$ より入射数 $N=4.85\\times10^{18}\\ \\mathrm{s^{-1}}$．\n電力 $P=N\\times3.0\\ \\mathrm{GeV}=4.85\\times10^{18}\\times4.81\\times10^{-10}\\ \\mathrm J/\\mathrm s=2.3\\times10^9\\ \\mathrm W$．\n\n(3) 太陽からの電力は断面積 $\\pi R^2$ に対し $1361\\times\\pi R^2=1.75\\times10^{17}\\ \\mathrm W$．比は $2.3\\times10^9/1.75\\times10^{17}=1.3\\times10^{-8}$．宇宙線のエネルギー入力は太陽光に比べ無視できるほど小さい．"
+   }
+  ],
+  "idea": {
+   "tex": "等方的強度 $J$ から平面フラックスへは $\\cos\\theta$ の重みで $\\pi J$，球面全体の入射数は $4\\pi R^2\\cdot\\pi J$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) [s⁻¹]：≈4.9e18 ; [GW]：≈2.3\n(3) ≈1.3e-8"
+  },
+  "methods": [],
+  "tags": [
+   "宇宙線",
+   "フラックス",
+   "強度",
+   "立体角",
+   "エネルギー収支"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "AS-03-010",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -385,6 +435,56 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-03-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-76",
+  "level": 2,
+  "minutes": 20,
+  "theme": "超新星ニュートリノの到着時間差と質量上限",
+  "topic": "超新星ニュートリノの到着時間差と質量上限",
+  "statement": {
+   "tex": "距離 $d$ の超新星から，質量 $m$ のニュートリノが（ほぼ）同時に放出された．エネルギー $E\\gg mc^2$ のニュートリノの到着の遅れを考える．\n\\begin{enumerate}\n\\item エネルギー $E_1<E_2$ の 2 個のニュートリノの到着時刻差が $\\Delta t\\simeq\\dfrac{d}{2c}(mc^2)^2\\left(\\dfrac1{E_1^2}-\\dfrac1{E_2^2}\\right)$ となることを示せ．\n\\item $d=1.66\\times10^5$ 光年（$1$ 光年 $=9.46\\times10^{15}\\ \\mathrm m$）の超新星から，$8\\ \\mathrm{MeV}$ と $36\\ \\mathrm{MeV}$ のニュートリノが $10\\ \\mathrm s$ 以内の時間差で検出された．放出時刻のばらつきが不明でも，「低エネルギー側が高エネルギー側より $10\\ \\mathrm s$ を超えて遅れてはいない」ことから得られる $mc^2$ の上限を求めよ．\n\\item 同じ超新星で，$10\\ \\mathrm{MeV}$ のニュートリノが光より 1 日遅れて届くには $mc^2$ はいくら必要か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $mc^2\\lesssim16\\ \\mathrm{eV}$　(3) $mc^2\\approx1.8\\ \\mathrm{keV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $v=c\\sqrt{1-(mc^2/E)^2}$ より飛行時間は\n\\[\nt=\\frac dv=\\frac dc\\left(1-\\frac{m^2c^4}{E^2}\\right)^{-1/2}\\simeq\\frac dc\\left(1+\\frac{m^2c^4}{2E^2}\\right).\n\\]\n2 個の差をとって $\\Delta t=\\dfrac{d}{2c}(mc^2)^2\\left(\\dfrac1{E_1^2}-\\dfrac1{E_2^2}\\right)$．\n\n(2) $d/c=1.66\\times10^5\\times9.46\\times10^{15}/(3.00\\times10^8)=5.24\\times10^{12}\\ \\mathrm s$．$1/E_1^2-1/E_2^2=1/64-1/1296=1.485\\times10^{-2}\\ \\mathrm{MeV^{-2}}$．質量による遅れが $10\\ \\mathrm s$ 以下より\n\\[\n(mc^2)^2\\le\\frac{2\\times10}{5.24\\times10^{12}\\times1.485\\times10^{-2}}\\ \\mathrm{MeV^2}=2.57\\times10^{-10}\\ \\mathrm{MeV^2},\n\\]\n$mc^2\\lesssim1.6\\times10^{-5}\\ \\mathrm{MeV}=16\\ \\mathrm{eV}$．（放出に時間幅があっても，同時放出を仮定するより弱くはならない保守的な上限になる．）\n\n(3) $\\dfrac dc\\dfrac{(mc^2)^2}{2E^2}=86400\\ \\mathrm s$ より $mc^2=E\\sqrt{2c\\cdot86400/d}=10\\ \\mathrm{MeV}\\times\\sqrt{2\\times86400/5.24\\times10^{12}}=1.8\\times10^{-4}\\ \\mathrm{MeV}\\approx1.8\\ \\mathrm{keV}$．"
+   }
+  ],
+  "idea": {
+   "tex": "相対論的な速度の遅れ $\\propto(mc^2/E)^2$ を天文学的距離が増幅するので，エネルギーの異なるニュートリノのわずかな到着時間差からニュートリノ質量に制限がつく．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) $mc^2$ [keV]：≈1.8"
+  },
+  "methods": [],
+  "tags": [
+   "ニュートリノ質量",
+   "超新星",
+   "SN1987A",
+   "飛行時間",
+   "相対論的運動学"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

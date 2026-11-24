@@ -195,6 +195,104 @@
   }
  },
  {
+  "id": "AS-01-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 1,
+  "minutes": 20,
+  "theme": "恒星の光を受ける板の平衡温度：片面と両面の放射",
+  "topic": "恒星の光を受ける板の平衡温度：片面と両面の放射",
+  "statement": {
+   "tex": "半径 $R_\\star=7.0\\times10^5\\ \\mathrm{km}$，表面温度 $6000\\ \\mathrm K$ の恒星から $d=1.5\\times10^8\\ \\mathrm{km}$ の位置で，黒体の物体の平衡温度を求める．\n\\begin{enumerate}\n\\item 球の場合の平衡温度を求めよ．\n\\item 恒星に面を向けた薄い板で，両面から放射する場合と，裏面を断熱して片面だけから放射する場合の平衡温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T=T_\\star\\sqrt{\\dfrac{R_\\star}{2d}}\\approx290\\ \\mathrm K$　(2) 両面 $\\approx345\\ \\mathrm K$，片面 $\\approx410\\ \\mathrm K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 吸収 $\\sigma T_\\star^4\\frac{R_\\star^2}{d^2}\\pi r^2$ と放射 $4\\pi r^2\\sigma T^4$ を等しくおいて $\\boldsymbol{\\approx290\\ \\mathrm K}$．\n\n(2) 板：吸収 $\\sigma T_\\star^4\\frac{R_\\star^2}{d^2}$（単位面積）．両面放射 $2\\sigma T^4$ で $T=T_\\star\\sqrt{R_\\star/d}\\cdot2^{-1/4}\\approx\\boldsymbol{345\\ \\mathrm K}$，片面 $\\boldsymbol{410\\ \\mathrm K}$．"
+   }
+  ],
+  "idea": {
+   "tex": "放射平衡の温度は吸収と放射の面積の比で決まる．原題の球に，板の2つの場合を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 両面 [K]：≈345 ; 片面 [K]：≈410"
+  },
+  "methods": [],
+  "tags": [
+   "放射平衡",
+   "シュテファン＝ボルツマンの法則",
+   "平衡温度"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-01-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 1,
+  "minutes": 15,
+  "theme": "太陽ニュートリノ束と季節変動",
+  "topic": "太陽ニュートリノ束と季節変動",
+  "statement": {
+   "tex": "太陽のエネルギーはすべて pp 連鎖（正味 $4p\\to{}^4\\mathrm{He}+2e^++2\\nu_e$，$\\alpha$ 粒子 1 個あたり放出エネルギー $26.73\\ \\mathrm{MeV}$）でまかなわれているとする．ただしニュートリノは $\\alpha$ 粒子 1 個あたり平均 $0.53\\ \\mathrm{MeV}$ を持ち去り，これは光度に寄与しない．太陽の光度 $L_\\odot=3.83\\times10^{26}\\ \\mathrm W$，地球の軌道長半径 $1.496\\times10^{11}\\ \\mathrm m$，離心率 $e=0.0167$ とする．\n\\begin{enumerate}\n\\item 地球（平均距離）でのニュートリノ束を求めよ．\n\\item 近日点と遠日点でのニュートリノ束の比を求めよ．\n\\item 太陽が 1 秒あたりに消費する水素（陽子）の質量を求めよ（$m_p=1.673\\times10^{-27}\\ \\mathrm{kg}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $6.5\\times10^{14}\\ \\mathrm{m^{-2}s^{-1}}$　(2) $1.07$　(3) $6.1\\times10^{11}\\ \\mathrm{kg/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 光度に寄与するエネルギーは $\\alpha$ 1 個あたり $26.73-0.53=26.20\\ \\mathrm{MeV}=4.20\\times10^{-12}\\ \\mathrm J$．$\\alpha$ の生成率\n\\[\nN_\\alpha=\\frac{3.83\\times10^{26}}{4.20\\times10^{-12}}=9.12\\times10^{37}\\ \\mathrm{s^{-1}},\n\\]\nニュートリノは $\\alpha$ 1 個につき 2 個なので $N_\\nu=1.82\\times10^{38}\\ \\mathrm{s^{-1}}$．束は\n\\[\n\\Phi=\\frac{N_\\nu}{4\\pi r^2}=\\frac{1.82\\times10^{38}}{4\\pi(1.496\\times10^{11})^2}=6.5\\times10^{14}\\ \\mathrm{m^{-2}s^{-1}}.\n\\]\n\n(2) 近日点距離 $a(1-e)$，遠日点距離 $a(1+e)$ で $\\Phi\\propto r^{-2}$ だから\n\\[\n\\frac{\\Phi_{\\rm peri}}{\\Phi_{\\rm aph}}=\\left(\\frac{1+e}{1-e}\\right)^2=1.069,\n\\]\n約 7\\% の季節変動（太陽ニュートリノ検出器で実際に観測されている）．\n\n(3) 陽子消費率 $4N_\\alpha=3.65\\times10^{38}\\ \\mathrm{s^{-1}}$，質量にして $3.65\\times10^{38}\\times1.673\\times10^{-27}=6.1\\times10^{11}\\ \\mathrm{kg/s}$．"
+   }
+  ],
+  "idea": {
+   "tex": "光度を α 粒子生成率に換算し，1 反応あたり 2 個のニュートリノから束を求める．逆二乗則から軌道離心率による季節変動が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [m⁻²s⁻¹]：≈6.5e14\n(2) ≈1.07\n(3) [kg/s]：≈6.1e11"
+  },
+  "methods": [],
+  "tags": [
+   "太陽ニュートリノ",
+   "pp連鎖",
+   "ニュートリノ束",
+   "逆二乗則",
+   "太陽光度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "AS-01-010",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -390,6 +488,255 @@
   }
  },
  {
+  "id": "AS-01-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 2,
+  "minutes": 25,
+  "theme": "サハの式で 10000 K の水素の電離度を求める",
+  "topic": "サハの式で 10000 K の水素の電離度を求める",
+  "statement": {
+   "tex": "水素の電離平衡はサハの式 $\\dfrac{x^2}{1-x}=\\dfrac1n\\left(\\dfrac{m_ek_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{-\\Delta/k_BT}$（$n$ は全水素の数密度，$\\Delta=13.6\\ \\mathrm{eV}$）で与えられる．\n\\begin{enumerate}\n\\item $T=1.0\\times10^4\\ \\mathrm K$，$n=1.0\\times10^{20}\\ \\mathrm{m^{-3}}$ での電離度 $x$ を求めよ．\n\\item $k_BT\\ll\\Delta$ でも大きく電離する理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x\\approx0.81$　(2) エントロピー（自由電子の位相空間の大きさ）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 右辺 $\\approx3.38$．$x^2+3.38x-3.38=0$ より $\\boldsymbol{x\\approx0.81}$．\n\n(2) $k_BT=0.86$ eV $\\ll13.6$ eV だが，前因子（電子1個あたりの位相空間の体積）が $\\sim10^7$ と大きく，エントロピーが束縛エネルギーに勝つ．"
+   }
+  ],
+  "idea": {
+   "tex": "電離平衡はエネルギーとエントロピーの競合で，希薄な気体では低い温度でも電離する．原題の式の導出を，具体的な電離度の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $x$：≈0.81\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "サハの式",
+   "電離平衡",
+   "化学ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-01-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 2,
+  "minutes": 20,
+  "theme": "放射圧と気体圧が等しくなる温度",
+  "topic": "放射圧と気体圧が等しくなる温度",
+  "statement": {
+   "tex": "完全電離した星の内部では，気体圧 $P_g=\\dfrac{\\rho kT}{\\mu m_H}$ と放射圧 $P_r=\\dfrac13aT^4$（$a=4\\sigma/c$）が共存する．ここで $\\rho$ は質量密度，$\\mu$ は平均分子量，$m_H=1.67\\times10^{-27}\\ \\mathrm{kg}$ である．$k=1.38\\times10^{-23}\\ \\mathrm{J/K}$，$a=7.56\\times10^{-16}\\ \\mathrm{J\\,m^{-3}K^{-4}}$ とする．\n\\begin{enumerate}\n\\item 密度 $\\rho$ が与えられたとき，$P_r=P_g$ となる温度 $T_*$ を求めよ．\n\\item 太陽中心の値 $\\rho=1.5\\times10^5\\ \\mathrm{kg/m^3}$，$\\mu=0.60$ を用いて $T_*$ を計算せよ．\n\\item 太陽中心の実際の温度は $1.6\\times10^7\\ \\mathrm K$ である．このときの $P_r/P_g$ を求め，太陽中心の圧力を支えているのはどちらか答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_*=\\left(\\dfrac{3\\rho k}{a\\mu m_H}\\right)^{1/3}$　(2) $T_*\\approx2.0\\times10^8\\ \\mathrm K$　(3) $P_r/P_g\\approx5\\times10^{-4}$，気体圧"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac13aT^4=\\dfrac{\\rho kT}{\\mu m_H}$ より $T_*^3=\\dfrac{3\\rho k}{a\\mu m_H}$．\n\n(2) $T_*^3=\\dfrac{3(1.5\\times10^5)(1.38\\times10^{-23})}{(7.56\\times10^{-16})(0.60)(1.67\\times10^{-27})}\\approx8.2\\times10^{24}\\ \\mathrm{K^3}$，$T_*\\approx2.0\\times10^8\\ \\mathrm K$．\n\n(3) \n\\[\n\\frac{P_r}{P_g}=\\frac{a\\mu m_HT^3}{3\\rho k}=\\left(\\frac{T}{T_*}\\right)^3=\\left(\\frac{1.6\\times10^7}{2.0\\times10^8}\\right)^3\\approx5\\times10^{-4}.\n\\]\n太陽中心の圧力はほぼ完全に気体圧で支えられている．「中心圧力をすべて放射圧とみなす」見積もりは温度を過大評価する．放射圧が重要になるのは $P_r/P_g\\propto T^3/\\rho$ が大きい大質量星である．"
+   }
+  ],
+  "idea": {
+   "tex": "$P_r/P_g=(T/T_*)^3$ で $T_*\\propto\\rho^{1/3}$．太陽中心では放射圧は気体圧の $10^{-3}$ 以下．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "放射圧",
+   "気体圧",
+   "恒星内部",
+   "太陽中心",
+   "Stefan-Boltzmann則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-01-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 2,
+  "minutes": 25,
+  "theme": "太陽の放射による質量減少と地球軌道の膨張",
+  "topic": "太陽の放射による質量減少と地球軌道の膨張",
+  "statement": {
+   "tex": "太陽の半径 $R=6.96\\times10^8\\ \\mathrm m$，有効表面温度 $T=5770\\ \\mathrm K$，質量 $M=1.99\\times10^{30}\\ \\mathrm{kg}$，地球の軌道半径 $r=1.496\\times10^{11}\\ \\mathrm m$ とする．太陽を黒体とみなし，$\\sigma=5.67\\times10^{-8}\\ \\mathrm{W\\,m^{-2}K^{-4}}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$，1 年 $=3.16\\times10^7\\ \\mathrm s$ とする．\n\\begin{enumerate}\n\\item 太陽の光度 $L$ と，放射によって毎秒失われる質量 $\\dot M$ を求めよ．\n\\item 太陽の質量が公転周期に比べてゆっくり等方的に減少するとき，地球の円軌道は円のまま広がり，$Mr$ が一定に保たれることを示せ．\n\\item 放射による質量減少だけを考えたとき，地球の軌道半径は 1 年に何 cm 増えるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L\\approx3.8\\times10^{26}\\ \\mathrm W$，$\\dot M\\approx4.3\\times10^{9}\\ \\mathrm{kg/s}$　(2) 証明（解説参照）　(3) 約 $1.0\\ \\mathrm{cm/年}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=4\\pi R^2\\sigma T^4=4\\pi(6.96\\times10^8)^2(5.67\\times10^{-8})(5770)^4\\approx3.83\\times10^{26}\\ \\mathrm W$．\n$\\dot M=L/c^2\\approx3.83\\times10^{26}/(9.0\\times10^{16})\\approx4.3\\times10^9\\ \\mathrm{kg/s}$．\n\n(2) 等方的な質量放出は地球に接線方向の力を及ぼさない（太陽の重力は常に中心力）ので，地球の角運動量 $\\ell=m\\sqrt{GMr}$（円軌道）は保存する．変化が十分ゆっくりなら軌道は各瞬間に円軌道とみなせ（断熱変化），$\\sqrt{GMr}=$ 一定，すなわち $Mr=$ 一定．\n\n(3) $Mr=$ 一定より $\\dfrac{\\dot r}{r}=-\\dfrac{\\dot M}{M}$（$\\dot M$ は減少率なので $\\dot r>0$）．\n\\[\n\\dot r=r\\frac{|\\dot M|}{M}=1.496\\times10^{11}\\times\\frac{4.26\\times10^9}{1.99\\times10^{30}}\\times3.16\\times10^7\\approx1.0\\times10^{-2}\\ \\mathrm{m/年}.\n\\]\nすなわち毎年約 1 cm 広がる（太陽風による質量損失を加えると少し大きくなる）．"
+   }
+  ],
+  "idea": {
+   "tex": "放射は $\\dot M=L/c^2$ の質量損失．中心力のもとで角運動量 $m\\sqrt{GMr}$ が保存するので $Mr$ 一定，軌道は $\\dot r/r=|\\dot M|/M$ で広がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $L$ [W]：≈3.8e26 ; $\\dot M$ [kg/s]：≈4.3e9\n(2) 証明\n(3) [cm/年]：≈1.0"
+  },
+  "methods": [],
+  "tags": [
+   "黒体放射",
+   "太陽光度",
+   "質量エネルギー等価",
+   "断熱不変量",
+   "地球軌道"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-01-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 2,
+  "minutes": 25,
+  "theme": "分光連星のHα線の周期的偏移",
+  "topic": "分光連星のHα線の周期的偏移",
+  "statement": {
+   "tex": "ある分光連星の主星の H$\\alpha$ 線（実験室での波長 $\\lambda_0=6562.80$ Å）を観測すると，波長が周期 $4.00$ 日で $6561.50$ Å から $6566.90$ Å の間を正弦的に往復していた．軌道は円で，軌道面は視線を含む（真横から見ている）とする．$c=3.00\\times10^8\\ \\mathrm{m/s}$，$G=6.67\\times10^{-11}\\ \\mathrm{N\\,m^2/kg^2}$，太陽質量 $M_\\odot=1.99\\times10^{30}\\ \\mathrm{kg}$．\n\\begin{enumerate}\n\\item 相対論的な縦ドップラー公式を用いて，両端の波長に対応する視線速度を求めよ．また 1 次近似 $\\Delta\\lambda/\\lambda_0=v/c$ との差を評価し，近似の妥当性を論じよ．\n\\item 連星系の重心の視線速度 $V_0$ と主星の軌道速度 $K$ を求めよ．\n\\item 主星の重心まわりの軌道半径 $a_1$ と，質量関数 $f=\\dfrac{PK^3}{2\\pi G}$ を求めよ（$f$ は $M_\\odot$ 単位）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-59.4\\ \\mathrm{km/s}$（接近），$+187.2\\ \\mathrm{km/s}$（後退）；1 次近似との差は $\\sim\\beta^2c\\sim0.06\\ \\mathrm{km/s}$ 程度で無視できる　(2) $V_0\\approx+63.9\\ \\mathrm{km/s}$（後退），$K\\approx123\\ \\mathrm{km/s}$　(3) $a_1\\approx6.8\\times10^9\\ \\mathrm{m}$，$f\\approx0.78M_\\odot$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 視線方向の後退速度 $v=\\beta c$ に対し $\\lambda/\\lambda_0=\\sqrt{(1+\\beta)/(1-\\beta)}$，逆に解いて $\\beta=\\dfrac{k-1}{k+1}$，$k=(\\lambda/\\lambda_0)^2$．\n$\\lambda=6561.50$ Å：$\\beta=-1.980\\times10^{-4}$，$v=-59.4\\ \\mathrm{km/s}$．\n$\\lambda=6566.90$ Å：$\\beta=+6.241\\times10^{-4}$，$v=+187.2\\ \\mathrm{km/s}$．\n展開 $\\Delta\\lambda/\\lambda_0=\\beta+\\beta^2/2+\\cdots$ より，1 次近似との相対差は $\\beta/2\\sim3\\times10^{-4}$，速度にして $0.06\\ \\mathrm{km/s}$ 程度で無視できる．\n\n(2) 重心速度は両端の平均，軌道速度は振幅の半分：\n\\[V_0=\\frac{187.2+(-59.4)}{2}=63.9\\ \\mathrm{km/s},\\qquad K=\\frac{187.2-(-59.4)}{2}=123.3\\ \\mathrm{km/s}.\\]\n\n(3) $P=4.00\\times86400=3.456\\times10^5\\ \\mathrm s$．$a_1=\\dfrac{KP}{2\\pi}=\\dfrac{1.233\\times10^5\\times3.456\\times10^5}{2\\pi}=6.78\\times10^9\\ \\mathrm m$（太陽半径の約 10 倍）．\n\\[f=\\frac{PK^3}{2\\pi G}=\\frac{3.456\\times10^5\\times(1.233\\times10^5)^3}{2\\pi\\times6.67\\times10^{-11}}=1.55\\times10^{30}\\ \\mathrm{kg}\\approx0.78M_\\odot .\\]\n（$f=M_2^3\\sin^3 i/(M_1+M_2)^2$ であり，伴星質量の下限を与える．）"
+   }
+  ],
+  "idea": {
+   "tex": "縦ドップラー公式の逆変換で視線速度を出し，周期的変化の平均と振幅から重心運動と軌道運動を分離する．$\\beta\\sim10^{-4}$ では相対論的補正は $\\beta^2$ で無視できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドップラー効果",
+   "分光連星",
+   "視線速度",
+   "質量関数",
+   "Hα線"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-01-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 2,
+  "minutes": 25,
+  "theme": "pp連鎖の連続スペクトルとpep反応の線スペクトル",
+  "topic": "pp連鎖の連続スペクトルとpep反応の線スペクトル",
+  "statement": {
+   "tex": "太陽中心部の反応 $\\mathrm{p+p\\to d+e^++\\nu_e}$（pp 反応）と $\\mathrm{p+e^-+p\\to d+\\nu_e}$（pep 反応）を考える．始状態の粒子の運動エネルギーは無視し，$m_pc^2=938.272$ MeV，$m_dc^2=1875.613$ MeV，$m_ec^2=0.511$ MeV，ニュートリノ質量は 0 とする．\n\\begin{enumerate}\n\\item pp 反応の $Q$ 値を求めよ．ニュートリノのエネルギーの最大値を，終状態の他の 2 粒子の不変質量が最小になる配置を考えて厳密に求めよ．\n\\item 陽電子の運動エネルギーの最大値と，重陽子の反跳運動エネルギーの最大値を求めよ．\n\\item pep 反応ではニュートリノのエネルギーが一つの値に決まることを示し，その値を求めよ（反跳も考慮せよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q=0.420$ MeV，$E_\\nu^{\\max}=0.420$ MeV（反跳補正 $\\approx5\\times10^{-5}$ MeV）　(2) $T_e^{\\max}\\approx0.420$ MeV，$T_d^{\\max}\\approx1.6\\times10^{-4}$ MeV　(3) $E_\\nu=1.441$ MeV（単色）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Q=2m_p-m_d-m_e=1876.544-1875.613-0.511=0.420$ MeV．始状態の全エネルギー（静止系）$M=2m_p$．ニュートリノのエネルギーは $E_\\nu=\\dfrac{M^2-m_{de}^2}{2M}$（$m_{de}$ は $\\mathrm d+\\mathrm e^+$ 系の不変質量）で，$m_{de}$ が最小 $m_d+m_e$（d と e$^+$ が同じ速度で運動）のとき最大：\n\\[\nE_\\nu^{\\max}=\\frac{M^2-(m_d+m_e)^2}{2M}=\\frac{(M-m_d-m_e)(M+m_d+m_e)}{2M}=0.41995\\ \\mathrm{MeV}.\n\\]\n$Q$ との差 $Q^2/2M\\approx5\\times10^{-5}$ MeV は反跳分．最小値は 0（e$^+$ と d が逆向き運動量を分け合う）．よって $0\\le E_\\nu\\le0.420$ MeV の連続スペクトル．\n\n(2) 陽電子：残り（$\\mathrm d+\\nu$）の不変質量の最小値は $m_d$ なので $E_e^{\\max}=\\dfrac{M^2+m_e^2-m_d^2}{2M}$，$T_e^{\\max}=E_e^{\\max}-m_e=0.4198$ MeV．\n重陽子：$E_d^{\\max}=\\dfrac{M^2+m_d^2-m_e^2}{2M}$，$T_d^{\\max}=1.6\\times10^{-4}$ MeV（161 eV）．重い重陽子はほとんどエネルギーを持ち去れない．\n\n(3) 終状態は 2 体（$\\mathrm d+\\nu$）なので，静止系の運動量保存から $E_\\nu$ は一意に決まる．$M'=2m_p+m_e=1877.055$ MeV として\n\\[\nE_\\nu=\\frac{M'^2-m_d^2}{2M'}=1.441\\ \\mathrm{MeV}\n\\]\n（$M'-m_d=1.442$ MeV から反跳 $\\approx0.55$ keV を引いた値）．pep ニュートリノは単色の線スペクトルになる．"
+   }
+  ],
+  "idea": {
+   "tex": "3 体崩壊の端点は「残り 2 粒子の不変質量が最小」の配置で厳密に決まる．電子捕獲型の pep 反応は 2 体終状態なので単色ニュートリノを出す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $Q$ [MeV]：≈0.420 ; $E_\\nu^{\\max}$ [MeV]：≈0.420\n(2) $T_e^{\\max}$ [MeV]：≈0.420 ; $T_d^{\\max}$ [MeV]：≈1.6e-4\n(3) $E_\\nu$ [MeV]：≈1.441"
+  },
+  "methods": [],
+  "tags": [
+   "pp連鎖",
+   "太陽ニュートリノ",
+   "3体崩壊",
+   "不変質量",
+   "pep反応",
+   "運動学"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "AS-01-012",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -531,6 +878,54 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-01-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-74",
+  "level": 3,
+  "minutes": 35,
+  "theme": "相対論的な電子の白色矮星にはチャンドラセカール質量がある",
+  "topic": "相対論的な電子の白色矮星にはチャンドラセカール質量がある",
+  "statement": {
+   "tex": "質量 $M$，半径 $R$ の白色矮星の電子は $T=0$ のフェルミ気体である．\n\\begin{enumerate}\n\\item 電子が超相対論的なとき，運動エネルギーが $E_{\\rm el}\\propto\\dfrac{\\hbar cN^{4/3}}{R}$ であることを示せ．\n\\item 重力エネルギー $-\\gamma GM^2/R$ と比べ，安定な半径が存在しない質量の上限があることを説明せよ．\n\\item 上限の大きさが $\\left(\\dfrac{\\hbar c}{G}\\right)^{3/2}\\dfrac{1}{m_p^2}$ 程度であることを示し，太陽質量で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) 説明　(3) $\\approx3.7\\times10^{30}\\ \\mathrm{kg}\\approx1.9M_\\odot$（正確には $1.4M_\\odot$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p_F\\propto\\hbar N^{1/3}/R$，各電子 $\\sim cp_F$ で $E_{\\rm el}\\sim\\hbar cN^{4/3}/R$．\\hfill$\\square$\n\n(2) 両方が $1/R$ に比例し，係数の大小だけで決まる．$N^{4/3}$ と $M^2\\propto N^2$ の比較で，大きな $M$ では重力が勝ち収縮が止まらない．\n\n(3) $\\hbar cN^{4/3}\\sim GN^2m_p^2$ で $N\\sim(\\hbar c/Gm_p^2)^{3/2}$，$M\\sim Nm_p$．数値は $\\boldsymbol{\\approx1.9M_\\odot}$．"
+   }
+  ],
+  "idea": {
+   "tex": "非相対論では $R\\propto M^{-1/3}$ だが，相対論的な縮退圧は重力と同じ $1/R$ の依存性をもち，質量の上限を生む．原題の非相対論的な模型を相対論の極限に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) [kg]：≈3.7e30"
+  },
+  "methods": [],
+  "tags": [
+   "白色矮星",
+   "縮退圧",
+   "チャンドラセカール質量"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

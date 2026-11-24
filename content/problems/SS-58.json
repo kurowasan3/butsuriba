@@ -194,6 +194,55 @@
   }
  },
  {
+  "id": "SS-06-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ジョセフソン電圧標準のアレイ設計",
+  "topic": "ジョセフソン電圧標準のアレイ設計",
+  "statement": {
+   "tex": "交流ジョセフソン効果 $f=2eV/h$ を用いると，周波数の測定から電圧が決まる．\n\\begin{enumerate}\n\\item 接合を流れる交流電流の周波数が $1.0\\ \\mathrm{GHz}$ のとき，接合にかかる直流電圧を求めよ．\n\\item 電圧標準では，周波数 $f$ のマイクロ波を照射した $N$ 個の接合を直列に並べ，各接合を第 1 ステップ（電圧 $hf/2e$）に置く．$f=75\\ \\mathrm{GHz}$ で $10\\ \\mathrm{V}$ を得るのに必要な接合数を求めよ．\n\\item $N=20208$ 個の接合で $1.018\\ \\mathrm{V}$ を出したい．照射周波数をいくらにすればよいか．\n\\end{enumerate}\n（磁束量子 $\\Phi_0=h/2e=2.0678\\times10^{-15}\\ \\mathrm{Wb}$）"
+  },
+  "answer": {
+   "tex": "(1) $2.07\\ \\mathrm{\\mu V}$　(2) 約 $6.4\\times10^4$ 個　(3) $24.4\\ \\mathrm{GHz}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V=\\dfrac{hf}{2e}=\\Phi_0f=2.0678\\times10^{-15}\\times1.0\\times10^9=2.07\\times10^{-6}\\ \\mathrm{V}$．\n\n(2) 1 接合あたり $\\Phi_0f=2.0678\\times10^{-15}\\times7.5\\times10^{10}=1.551\\times10^{-4}\\ \\mathrm{V}$．$N=10/1.551\\times10^{-4}=6.45\\times10^4$ 個．\n\n(3) $f=\\dfrac{V}{N\\Phi_0}=\\dfrac{1.018}{20208\\times2.0678\\times10^{-15}}=2.44\\times10^{10}\\ \\mathrm{Hz}=24.4\\ \\mathrm{GHz}$．\n周波数は極めて高精度に測れるので，電圧はその精度（$\\Phi_0=h/2e$ が定義値）で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "1 接合の電圧は $\\Phi_0f$ で μV 程度にすぎないため，実用電圧標準は数万個の接合を直列にして周波数から電圧を定める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [μ V]：≈2.07\n(2) 記述\n(3) [GHz]：≈24.4"
+  },
+  "methods": [],
+  "tags": [
+   "ジョセフソン効果",
+   "電圧標準",
+   "磁束量子",
+   "シャピロステップ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-06-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -390,6 +439,304 @@
   }
  },
  {
+  "id": "SS-06-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 2,
+  "minutes": 25,
+  "theme": "グラフェンと GaAs のランダウ準位の間隔の比較（10 T）",
+  "topic": "グラフェンと GaAs のランダウ準位の間隔の比較（10 T）",
+  "statement": {
+   "tex": "グラフェンの電子は $H=v_F(\\pi_x\\sigma_x+\\pi_y\\sigma_y)$ で記述され，磁場中で $E_n=\\pm v_F\\sqrt{2\\hbar eBn}$ のランダウ準位をもつ．\n\\begin{enumerate}\n\\item $E_n\\propto\\sqrt n$ を，$H^2$ が非相対論的なランダウ準位の問題に帰着することから説明せよ．\n\\item $v_F=1.0\\times10^6\\ \\mathrm{m/s}$，$B=10\\ \\mathrm T$ で $E_1$ を求め，GaAs（$m^*=0.067m_e$）の $\\hbar\\omega_c$ と比べよ．\n\\item $n=0$ の準位の特徴を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 説明　(2) $E_1\\approx115\\ \\mathrm{meV}$，GaAs $17\\ \\mathrm{meV}$（約7倍）　(3) エネルギー $0$ で電子とホールが共有（室温の量子ホール効果）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $H^2=v_F^2(\\pi^2+e\\hbar B\\sigma_z)$ は $g=2$ のパウリのハミルトニアンと同じ形で，固有値 $2e\\hbar Bv_F^2n$．平方根をとって与式．\n\n(2) $v_F\\sqrt{2\\hbar eB}=10^6\\times\\sqrt{2\\times1.055\\times10^{-34}\\times1.6\\times10^{-19}\\times10}\\approx\\boldsymbol{115\\ \\mathrm{meV}}$．GaAs は $\\hbar eB/m^*\\approx\\boldsymbol{17\\ \\mathrm{meV}}$．\n\n(3) $E_0=0$ はバンドの電子とホールのちょうど中間にあり，半分ずつ満たされる．準位間隔が大きいので室温でも量子ホール効果が見える．"
+   }
+  ],
+  "idea": {
+   "tex": "線形の分散のディラック電子では，ランダウ準位が $\\sqrt n$ で並び，最初の間隔が非常に大きい．原題の導出を，通常の半導体との比較にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $E_1$ [meV]：≈115 ; GaAs [meV]：17\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "グラフェン",
+   "ディラック電子",
+   "ランダウ準位",
+   "量子ホール効果"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 2,
+  "minutes": 30,
+  "theme": "超伝導体中の電磁波の分散と侵入長",
+  "topic": "超伝導体中の電磁波の分散と侵入長",
+  "statement": {
+   "tex": "散乱のない電子気体（超伝導電子のモデル）では $\\dfrac{\\partial\\boldsymbol J}{\\partial t}=\\dfrac{Ne^2}{m}\\boldsymbol E$ が成り立つ．これと真空の Maxwell 方程式（$\\boldsymbol J$ を電流源とする）を組み合わせる．$\\lambda^2=\\dfrac{m}{\\mu_0Ne^2}$，$\\omega_p=c/\\lambda$ とおく．\n\\begin{enumerate}\n\\item $\\nabla\\cdot\\boldsymbol E\\neq0$ となる（縦の）振動が存在するならば，その角周波数は $\\omega_p$ に限られることを示せ．\n\\item 横波 $\\boldsymbol E=\\boldsymbol E_0e^{i(kx-\\omega t)}$（$\\boldsymbol E_0\\perp\\hat{\\boldsymbol x}$）の分散関係を求めよ．$\\omega<\\omega_p$ のとき場が表面から侵入する深さ（振幅が $1/e$ になる距離）$\\delta(\\omega)$ を求めよ．\n\\item $N=1.0\\times10^{28}\\ \\mathrm{m^{-3}}$ のとき $\\lambda$ と $\\omega_p/2\\pi$ を数値で求め，$\\omega=\\omega_p/2$ での $\\delta$ を求めよ（$m=9.11\\times10^{-31}$ kg，$e=1.60\\times10^{-19}$ C）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left(\\dfrac{\\partial^2}{\\partial t^2}+\\omega_p^2\\right)\\nabla\\cdot\\boldsymbol E=0$ より $\\omega=\\omega_p$　(2) $k^2=\\dfrac{\\omega^2-\\omega_p^2}{c^2}$，$\\delta=\\dfrac{\\lambda}{\\sqrt{1-\\omega^2/\\omega_p^2}}$　(3) $\\lambda\\approx53$ nm，$\\omega_p/2\\pi\\approx9.0\\times10^{14}$ Hz，$\\delta\\approx61$ nm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\nabla\\times\\boldsymbol B=\\mu_0\\boldsymbol J+c^{-2}\\partial_t\\boldsymbol E$ の発散をとると $0=\\mu_0\\nabla\\cdot\\boldsymbol J+c^{-2}\\partial_t\\nabla\\cdot\\boldsymbol E$．時間微分して $\\partial_t\\boldsymbol J=\\frac{Ne^2}{m}\\boldsymbol E$ を使うと\n\\[\n\\frac{\\mu_0Ne^2}{m}\\nabla\\cdot\\boldsymbol E+\\frac1{c^2}\\frac{\\partial^2}{\\partial t^2}\\nabla\\cdot\\boldsymbol E=0\n\\ \\Longrightarrow\\ \\left(\\frac{\\partial^2}{\\partial t^2}+\\omega_p^2\\right)\\nabla\\cdot\\boldsymbol E=0 .\n\\]\nよって電荷密度のゆらぎ（縦振動）は波数によらず $\\omega=\\omega_p$ のプラズマ振動のみ．それ以外の周波数では $\\nabla\\cdot\\boldsymbol E=0$．\n\n(2) $\\nabla\\times(\\nabla\\times\\boldsymbol E)=-\\partial_t\\nabla\\times\\boldsymbol B$ に $\\nabla\\cdot\\boldsymbol E=0$ を用いて\n\\[\n\\nabla^2\\boldsymbol E=\\mu_0\\partial_t\\boldsymbol J+\\frac1{c^2}\\partial_t^2\\boldsymbol E=\\frac1{\\lambda^2}\\boldsymbol E+\\frac1{c^2}\\partial_t^2\\boldsymbol E .\n\\]\n平面波を代入して $-k^2=\\dfrac1{\\lambda^2}-\\dfrac{\\omega^2}{c^2}$，すなわち $\\omega^2=\\omega_p^2+c^2k^2$．$\\omega<\\omega_p$ では $k=i\\kappa$，$\\kappa=\\dfrac{\\sqrt{\\omega_p^2-\\omega^2}}{c}=\\dfrac1\\lambda\\sqrt{1-\\omega^2/\\omega_p^2}$ で振幅は $e^{-\\kappa x}$．\n\\[\n\\delta=\\frac1\\kappa=\\frac{\\lambda}{\\sqrt{1-\\omega^2/\\omega_p^2}}\n\\]\n$\\omega\\to0$ で $\\delta\\to\\lambda$（原問題の静的な侵入長），$\\omega\\to\\omega_p$ で発散し，$\\omega>\\omega_p$ では透過する．\n\n(3) $\\lambda=\\sqrt{\\dfrac{9.11\\times10^{-31}}{4\\pi\\times10^{-7}\\times1.0\\times10^{28}\\times(1.60\\times10^{-19})^2}}\\approx5.3\\times10^{-8}$ m $=53$ nm．$\\omega_p=c/\\lambda\\approx5.6\\times10^{15}$ s$^{-1}$，$\\omega_p/2\\pi\\approx9.0\\times10^{14}$ Hz（紫外域）．$\\omega=\\omega_p/2$ では $\\delta=\\lambda/\\sqrt{3/4}\\approx61$ nm．\n（注：実際の超伝導体ではエネルギーギャップ以上の周波数で超伝導が壊れるので，この模型は低周波でのみ現実的である．）"
+   }
+  ],
+  "idea": {
+   "tex": "散乱のない電子気体ではプラズマ振動数 $\\omega_p=c/\\lambda$ が境目となり，低周波の場は侵入長 $\\lambda/\\sqrt{1-\\omega^2/\\omega_p^2}$ でしか入れない．静的な侵入長はその $\\omega\\to0$ 極限．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "侵入長",
+   "プラズマ振動数",
+   "分散関係",
+   "London理論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 2,
+  "minutes": 30,
+  "theme": "零磁場分裂：スピン1とスピン3/2の対比",
+  "topic": "零磁場分裂：スピン1とスピン3/2の対比",
+  "statement": {
+   "tex": "$\\hbar=1$ とし，スピン $S$ の系のハミルトニアン\n\\[H=DS_z^2+E(S_x^2-S_y^2)+bS_z\\qquad(D>0,\\ E\\ne0,\\ b\\ \\text{は実数で磁場に比例})\\]\nを考える．\n\\begin{enumerate}\n\\item $S=1$ のとき，固有値を $b$ の関数として厳密に求めよ．\n\\item $S=1$，$b=0$ のとき，各固有状態を求め，$\\langle\\boldsymbol S\\rangle=0$ を確かめよ．時間反転を $\\Theta|1,m\\rangle=(-1)^m|1,-m\\rangle$ とするとき，各固有状態は $\\Theta$ でどう変換されるか．また $|b|\\ll|E|$ でのエネルギー変化が $b$ の 2 次になる理由を述べよ．\n\\item $S=\\tfrac32$，$b=0$ のとき，固有値と縮退度を求めよ．\n\\item $S=\\tfrac32$ で $|b|$ が小さいとき，(3) の各準位の $b$ の 1 次の分裂幅を求めよ．$c=D/\\sqrt{D^2+3E^2}$ を用いよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0,\\ D\\pm\\sqrt{E^2+b^2}$　(2) $|0\\rangle$（$E=0$），$(|1\\rangle\\pm|{-1}\\rangle)/\\sqrt2$（$D\\pm E$）；$\\Theta|0\\rangle=|0\\rangle$，$\\Theta(|1\\rangle\\pm|{-1}\\rangle)/\\sqrt2=\\mp(|1\\rangle\\pm|{-1}\\rangle)/\\sqrt2$；非縮退で $\\langle S_z\\rangle=0$ のため 1 次の寄与なし　(3) $\\tfrac54D\\pm\\sqrt{D^2+3E^2}$，それぞれ 2 重縮退（クラマース）　(4) 下の準位 $|2c-1|\\,|b|$，上の準位 $(2c+1)|b|$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 標準基底で $S_x^2-S_y^2=\\frac12(S_+^2+S_-^2)$，$\\langle1|S_+^2|{-1}\\rangle=2$ より $H=\\begin{pmatrix}D+b&0&E\\\\0&0&0\\\\E&0&D-b\\end{pmatrix}$．$|0\\rangle$ は固有値 0，$\\{|1\\rangle,|{-1}\\rangle\\}$ ブロックの固有値は $D\\pm\\sqrt{E^2+b^2}$．\n\n(2) $b=0$ で $|0\\rangle$（0），$(|1\\rangle\\pm|{-1}\\rangle)/\\sqrt2$（$D\\pm E$）．$S_\\pm$ は $m$ を 1 だけ変えるので，これらの状態内で $\\langle S_x\\rangle=\\langle S_y\\rangle=0$，$\\langle S_z\\rangle$ は $|1\\rangle$ と $|{-1}\\rangle$ の重みが等しいので 0．\n$\\Theta|0\\rangle=|0\\rangle$，$\\Theta(|1\\rangle\\pm|{-1}\\rangle)/\\sqrt2=(-|{-1}\\rangle\\mp|1\\rangle)/\\sqrt2=\\mp(|1\\rangle\\pm|{-1}\\rangle)/\\sqrt2$．（$H$ は $\\boldsymbol S$ の 2 次式で実係数なので $\\Theta H\\Theta^{-1}=H$．）\n各状態は時間反転で自分自身（の定数倍）に移るので $\\langle\\boldsymbol S\\rangle=-\\langle\\boldsymbol S\\rangle=0$．したがって $bS_z$ の 1 次摂動は 0 で，変化は 2 次：$D\\pm\\sqrt{E^2+b^2}\\simeq D\\pm\\left(|E|+\\frac{b^2}{2|E|}\\right)$．\n\n(3) $S=\\frac32$ では $S_x^2-S_y^2$ は $m$ を $\\pm2$ 変えるので，$\\{|\\tfrac32\\rangle,|{-\\tfrac12}\\rangle\\}$ と $\\{|{-\\tfrac32}\\rangle,|\\tfrac12\\rangle\\}$ に分かれる．$\\langle\\tfrac32|S_+^2|{-\\tfrac12}\\rangle=\\sqrt3\\cdot2=2\\sqrt3$ より，前者のブロックは\n$\\begin{pmatrix}\\frac94D&\\sqrt3E\\\\\\sqrt3E&\\frac14D\\end{pmatrix}$，固有値 $\\frac54D\\pm\\sqrt{D^2+3E^2}$．後者も同じ．よって各準位 2 重縮退．半整数スピンなので $\\Theta^2=-1$ で，時間反転不変な $H$ の準位は必ずクラマース 2 重縮退．\n\n(4) $S_z$ は 2 つのブロックを結ばないので，1 次の分裂はブロック内の $\\langle S_z\\rangle$ で決まる．前者のブロックで $\\tan2\\theta=\\sqrt3E/D$ とすると $\\cos2\\theta=c$．下の固有状態は $|{-\\tfrac12}\\rangle$ の重み $\\frac{1+c}{2}$，$|\\tfrac32\\rangle$ の重み $\\frac{1-c}2$ をもつので\n$\\langle S_z\\rangle=\\frac32\\cdot\\frac{1-c}{2}-\\frac12\\cdot\\frac{1+c}{2}=\\frac{1-2c}{2}$．相方（後者ブロック）は符号が逆．よって分裂幅 $2|\\langle S_z\\rangle||b|=|2c-1||b|$．\n上の準位は重みが入れ替わって $\\langle S_z\\rangle=\\pm\\frac{1+2c}{2}$，分裂幅 $(2c+1)|b|$．\n（スピン 1 では零磁場で縮退が完全に解け磁場応答は 2 次，スピン $\\frac32$ ではクラマース縮退が残り 1 次の分裂が生じる．$E\\to0$ で $c\\to1$ となり $|b|$ と $3|b|$，すなわち $m=\\pm\\frac12,\\pm\\frac32$ の分裂に戻る．）"
+   }
+  ],
+  "idea": {
+   "tex": "時間反転不変な結晶場は整数スピンの縮退を完全に解いて磁気応答を 2 次にできるが，半整数スピンではクラマース縮退が必ず残り，有効 $g$ 因子付きの 1 次ゼーマン分裂が生き残る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間反転",
+   "スピンハミルトニアン",
+   "零磁場分裂",
+   "クラマース縮退",
+   "有効g因子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 2,
+  "minutes": 20,
+  "theme": "対破壊しきい波長から同位体効果の指数",
+  "topic": "対破壊しきい波長から同位体効果の指数",
+  "statement": {
+   "tex": "スズの超伝導体で，クーパー対を壊せる光子の最大波長が $\\lambda_{\\max}=1.08\\ \\mathrm{mm}$ であった．\n\\begin{enumerate}\n\\item エネルギーギャップ $E_g=2\\Delta(0)$ を meV 単位で求め，BCS 理論の関係 $E_g=3.53\\,kT_c$ から臨界温度 $T_c$ を見積もれ．\n\\item 同位体を濃縮した試料で測ると，$^{116}\\mathrm{Sn}$ では $\\lambda_{\\max}=1.0700\\ \\mathrm{mm}$，$^{124}\\mathrm{Sn}$ では $\\lambda_{\\max}=1.1041\\ \\mathrm{mm}$ であった．$T_c\\propto M^{-\\alpha}$（$M$ は同位体質量）と書くとき $\\alpha$ を求めよ．$E_g/kT_c$ は同位体によらないとし，質量は質量数で近似せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_g=1.15\\ \\mathrm{meV}$，$T_c\\approx3.8\\ \\mathrm{K}$　(2) $\\alpha\\approx0.47$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E_g=\\dfrac{hc}{\\lambda_{\\max}}=\\dfrac{1240\\ \\mathrm{eV\\,nm}}{1.08\\times10^6\\ \\mathrm{nm}}=1.15\\times10^{-3}\\ \\mathrm{eV}$．\n$T_c=\\dfrac{E_g}{3.53k}=\\dfrac{1.15\\times10^{-3}}{3.53\\times8.617\\times10^{-5}}=3.8\\ \\mathrm{K}$（実測 $3.7\\ \\mathrm{K}$ に近い）．\n\n(2) $\\lambda_{\\max}\\propto1/E_g\\propto1/T_c\\propto M^{\\alpha}$．したがって\n\\[ \\alpha=\\frac{\\ln(\\lambda_{124}/\\lambda_{116})}{\\ln(124/116)}=\\frac{\\ln(1.1041/1.0700)}{\\ln(1.0690)}=\\frac{0.03137}{0.06672}=0.47. \\]\nBCS 理論（フォノン媒介）の予言 $\\alpha=1/2$ に近い．重い同位体ほどギャップが小さく，しきい波長が長い．"
+   }
+  ],
+  "idea": {
+   "tex": "しきい波長は $1/E_g\\propto1/T_c$ に比例するので，同位体ごとのしきい波長の比から同位体効果の指数が直接読める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E_g$ [meV]：≈1.15 ; $T_c$ [K]：≈3.8\n(2) $\\alpha$：≈0.47"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "エネルギーギャップ",
+   "BCS理論",
+   "同位体効果",
+   "臨界温度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 2,
+  "minutes": 15,
+  "theme": "シャピロステップから担体の電荷を決める",
+  "topic": "シャピロステップから担体の電荷を決める",
+  "statement": {
+   "tex": "ジョセフソン接合に直流電圧 $V$ がかかると，超伝導電流は周波数 $f=qV/h$ で振動する（$q$ は超伝導を担う粒子の電荷）．さらに周波数 $f_{\\rm rf}$ のマイクロ波を照射すると，$I$–$V$ 特性に電圧間隔 $\\Delta V=hf_{\\rm rf}/q$ の等間隔な階段（シャピロステップ）が現れる．\n\\begin{enumerate}\n\\item $f_{\\rm rf}=10.0\\ \\mathrm{GHz}$ で照射したところ，ステップの間隔が $\\Delta V=20.68\\ \\mathrm{\\mu V}$ と測定された．$q/e$ を求めよ．\n\\item (1) の結果を用いて，直流電圧 $1.5\\ \\mathrm{\\mu V}$ をかけたときの交流ジョセフソン電流の周波数を求めよ．\n\\item もし担体が電荷 $e$ の単一電子であったなら，(1) のステップ間隔はいくらになるはずか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $q/e=2.00$　(2) $0.725\\ \\mathrm{GHz}$　(3) $41.4\\ \\mathrm{\\mu V}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $q=\\dfrac{hf_{\\rm rf}}{\\Delta V}=\\dfrac{(6.626\\times10^{-34})(1.00\\times10^{10})}{20.68\\times10^{-6}}=3.204\\times10^{-19}\\ \\mathrm{C}$，$q/e=2.00$．超伝導の担体は電子対（クーパー対）である．\n\n(2) $f=\\dfrac{2eV}{h}=\\dfrac{2(1.602\\times10^{-19})(1.5\\times10^{-6})}{6.626\\times10^{-34}}=7.25\\times10^8\\ \\mathrm{Hz}=0.725\\ \\mathrm{GHz}$．\n\n(3) $\\Delta V=hf_{\\rm rf}/e=2\\times20.68=41.4\\ \\mathrm{\\mu V}$．"
+   }
+  ],
+  "idea": {
+   "tex": "交流ジョセフソン効果の周波数–電圧比 $q/h$ はシャピロステップ間隔として直接測れ，担体の電荷が $2e$ であることが分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [GHz]：≈0.725\n(3) [μ V]：≈41.4"
+  },
+  "methods": [],
+  "tags": [
+   "ジョセフソン効果",
+   "シャピロステップ",
+   "クーパー対",
+   "磁束量子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 2,
+  "minutes": 20,
+  "theme": "SQUIDの磁場分解能と磁束の量子化",
+  "topic": "SQUIDの磁場分解能と磁束の量子化",
+  "statement": {
+   "tex": "超伝導リングを貫く磁束は磁束量子 $\\Phi_0=h/2e=2.0678\\times10^{-15}\\ \\mathrm{Wb}$ を単位に量子化される．\n\\begin{enumerate}\n\\item 直径 $3.0\\ \\mathrm{mm}$ の円形リングをもつ SQUID が $\\Phi_0/5000$ の磁束変化を検出できるとき，検出できる最小の磁束密度変化を求めよ．\n\\item このリングを地磁気 $B=5.0\\times10^{-5}\\ \\mathrm{T}$（リング面に垂直）中で $T_c$ 以下に冷却すると，およそ何個の磁束量子が捕捉されるか．\n\\item 地磁気中で冷やしたときに捕捉される磁束が $\\Phi_0$ 未満になる（磁束量子化の効果が個々の量子として見える）リング直径の上限を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $5.9\\times10^{-14}\\ \\mathrm{T}$　(2) 約 $1.7\\times10^5$ 個　(3) 約 $7.3\\ \\mathrm{\\mu m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 面積 $A=\\pi(1.5\\times10^{-3})^2=7.07\\times10^{-6}\\ \\mathrm{m^2}$．\n\\[ \\Delta B=\\frac{\\Phi_0/5000}{A}=\\frac{4.136\\times10^{-19}}{7.07\\times10^{-6}}=5.9\\times10^{-14}\\ \\mathrm{T}. \\]\n地磁気の約 $10^{-9}$ 倍で，脳磁図（$\\sim10^{-13}\\ \\mathrm{T}$）の計測に届く感度である．\n\n(2) $N=\\dfrac{BA}{\\Phi_0}=\\dfrac{5.0\\times10^{-5}\\times7.07\\times10^{-6}}{2.0678\\times10^{-15}}=1.7\\times10^5$ 個．\n\n(3) $B\\pi(d/2)^2<\\Phi_0$ より $d<2\\sqrt{\\dfrac{\\Phi_0}{\\pi B}}=2\\sqrt{\\dfrac{2.0678\\times10^{-15}}{\\pi\\times5.0\\times10^{-5}}}=7.3\\times10^{-6}\\ \\mathrm{m}$．マクロなリングでは量子数が巨大で量子化は見えにくいが，SQUID は 1 量子の数千分の 1 を読むことでこれを補っている．"
+   }
+  ],
+  "idea": {
+   "tex": "SQUID の磁場分解能は（検出できる磁束の割合）×$\\Phi_0$/面積で決まり，同じ $\\Phi_0$ からリング中の捕捉量子数や量子化が見えるサイズも見積もれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [T]：≈5.9e-14\n(2) 記述\n(3) [μ m]：≈7.3"
+  },
+  "methods": [],
+  "tags": [
+   "SQUID",
+   "磁束量子化",
+   "磁束量子",
+   "超伝導リング",
+   "磁場計測"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-06-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -484,6 +831,559 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 35,
+  "theme": "同じギャップの超伝導体どうしのトンネル電流の跳び",
+  "topic": "同じギャップの超伝導体どうしのトンネル電流の跳び",
+  "statement": {
+   "tex": "薄い絶縁膜をはさんだ2つの金属のトンネル接合を考える．トンネルの行列要素はエネルギーによらず，両方が常伝導のときのコンダクタンスを $G_n$ とする．$T=0$ とし，超伝導体の準粒子の状態密度（常伝導状態との比）を $\\dfrac{|E|}{\\sqrt{E^2-\\Delta^2}}$（$|E|>\\Delta$），$0$（$|E|<\\Delta$）とする．\n\\begin{enumerate}\n\\item 片方が超伝導（ギャップ $\\Delta$），もう片方が常伝導のとき，電流 $I(V)$ を閉じた形で求めよ．\n\\item 両方が同じギャップ $\\Delta$ の超伝導体のとき，$I(V)$ を積分の形で書け．$eV<2\\Delta$ で電流が流れないことを示せ．\n\\item (2) で $eV\\to2\\Delta+0$ のときの電流を求め，同じ電圧での常伝導どうしの電流との比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $eV>\\Delta$ で $I=\\dfrac{G_n}{e}\\sqrt{(eV)^2-\\Delta^2}$，$eV<\\Delta$ で $0$　(2) $I=\\dfrac{G_n}{e}\\displaystyle\\int_{\\Delta-eV}^{-\\Delta}\\frac{|E|}{\\sqrt{E^2-\\Delta^2}}\\frac{|E+eV|}{\\sqrt{(E+eV)^2-\\Delta^2}}dE$　(3) $I=\\dfrac{\\pi\\Delta}{2e}G_n$，比 $\\dfrac\\pi4$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$T=0$ では，電圧 $V$ をかけると一方のフェルミ準位から $eV$ の範囲の電子が，もう一方の空いた状態へトンネルする．電流は両側の状態密度の積を積分して $I=\\dfrac{G_n}{e}\\int N_1(E)N_2(E+eV)\\,dE$（積分範囲は占有と空きの条件で決まる）．\n\n(1) 常伝導側の状態密度は $1$．超伝導側の空いた状態は $E>\\Delta$ にだけある（または占有状態は $E<-\\Delta$）ので\n\\[\nI=\\frac{G_n}{e}\\int_\\Delta^{eV}\\frac{E}{\\sqrt{E^2-\\Delta^2}}dE=\\boldsymbol{\\frac{G_n}{e}\\sqrt{(eV)^2-\\Delta^2}}\\quad(eV>\\Delta),\n\\]\n$eV<\\Delta$ では $\\boldsymbol{0}$．微分コンダクタンス $dI/dV=G_n\\dfrac{eV}{\\sqrt{(eV)^2-\\Delta^2}}$ は状態密度そのもので，$eV=\\Delta$ で発散する．\n\n(2) 左の占有状態 $E<-\\Delta$ から右の空いた状態 $E+eV>\\Delta$ へ移るので，$\\Delta-eV<E<-\\Delta$ で\n\\[\n\\boldsymbol{I=\\frac{G_n}{e}\\int_{\\Delta-eV}^{-\\Delta}\\frac{|E|}{\\sqrt{E^2-\\Delta^2}}\\frac{|E+eV|}{\\sqrt{(E+eV)^2-\\Delta^2}}dE}.\n\\]\n積分範囲が空でないためには $\\Delta-eV<-\\Delta$，すなわち $eV>2\\Delta$．$eV<2\\Delta$ では準粒子の電流は流れない（クーパー対を壊すのに $2\\Delta$ 必要）．\n\n(3) $eV=2\\Delta+\\delta$，$E=-\\Delta-x$ とおくと，範囲は $0<x<\\delta$ で，$\\delta\\to0$ では被積分関数は\n\\[\n\\frac{\\Delta}{\\sqrt{2\\Delta x}}\\cdot\\frac{\\Delta}{\\sqrt{2\\Delta(\\delta-x)}}=\\frac{\\Delta}{2\\sqrt{x(\\delta-x)}},\\qquad\n\\int_0^\\delta\\frac{dx}{\\sqrt{x(\\delta-x)}}=\\pi .\n\\]\nよって $\\boldsymbol{I=\\dfrac{\\pi\\Delta}{2e}G_n}$ で，$\\delta\\to0$ でも $0$ にならない（電流がとびとびに跳ぶ）．常伝導どうしの電流は $G_nV=\\dfrac{2\\Delta}{e}G_n$ なので，比は $\\boldsymbol{\\pi/4}$．2つの状態密度の平方根の発散がちょうど重なるために有限の跳びが生じる．電圧を大きくすると電流は $G_nV$ に近づく．"
+   }
+  ],
+  "idea": {
+   "tex": "トンネル電流は両側の状態密度の積のたたみこみで，BCS の状態密度には $1/\\sqrt{E-\\Delta}$ の発散がある．同じギャップの超伝導体どうしでは，2つの発散が $eV=2\\Delta$ でちょうど重なり，積分が $\\pi$ になって有限の電流の跳びが生じる．原題は NIS 接合の電流と異なるギャップの SIS 接合の特徴点で，捻りでは同じギャップでの跳びの大きさを求めさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $I$：((pi Δ)/(2 e)) G_n ; 比：((pi)/(4))"
+  },
+  "methods": [],
+  "tags": [
+   "トンネル効果",
+   "BCS状態密度",
+   "SIS接合",
+   "準粒子"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 35,
+  "theme": "1次元電子ガスの強磁性：部分偏極が現れない理由",
+  "topic": "1次元電子ガスの強磁性：部分偏極が現れない理由",
+  "statement": {
+   "tex": "長さ $L$ の1次元の電子ガス（電子 $N$ 個，密度 $n=N/L$，質量 $m$）に，短距離の斥力 $V(x)=G\\delta(x)$ が働く．ハートリー＝フォック近似では，相互作用のエネルギーは同じスピンの電子どうしで打ち消し合い，$E_{\\rm int}=\\dfrac{G}{L}N_\\uparrow N_\\downarrow$ となる．スピン偏極を $\\zeta=(N_\\uparrow-N_\\downarrow)/N$ とする．\n\\begin{enumerate}\n\\item $T=0$ での1電子あたりのエネルギー $E(\\zeta)/N$ を求めよ．\n\\item $E(\\zeta)/N$ が $\\zeta^2$ の1次関数になることから，基底状態は $\\zeta=0$ か $\\zeta=1$ のどちらかであることを示し，強磁性になる密度の条件を求めよ．\n\\item 3次元の電子ガスで同じ近似をすると，運動エネルギーは $\\frac{3}{10}E_F\\left[(1+\\zeta)^{5/3}+(1-\\zeta)^{5/3}\\right]$（$E_F$ は常磁性状態のフェルミエネルギー），相互作用は $\\frac{Gn}{4}(1-\\zeta^2)$ になる．常磁性状態が不安定になる条件を，両スピン合わせた状態密度 $g(E_F)=\\dfrac{3n}{2E_F}$ を用いて表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{E}{N}=\\dfrac{\\hbar^2\\pi^2n^2}{24m}(1+3\\zeta^2)+\\dfrac{Gn}{4}(1-\\zeta^2)$　(2) $n<n_c=\\dfrac{2mG}{\\pi^2\\hbar^2}$ で強磁性（$\\zeta=1$）　(3) $\\dfrac12Gg(E_F)>1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) スピン $\\sigma$ の電子 $N_\\sigma$ 個は $|k|<k_\\sigma=\\pi N_\\sigma/L$ を占め，運動エネルギーは $\\dfrac{\\hbar^2k_\\sigma^3L}{6\\pi m}=\\dfrac{\\hbar^2\\pi^2N_\\sigma^3}{6mL^2}$．$N_\\sigma=\\frac N2(1\\pm\\zeta)$ を入れて和をとると\n\\[\n\\frac{E_{\\rm kin}}{N}=\\frac{\\hbar^2\\pi^2n^2}{48m}\\left[(1+\\zeta)^3+(1-\\zeta)^3\\right]=\\frac{\\hbar^2\\pi^2n^2}{24m}(1+3\\zeta^2).\n\\]\n相互作用は $\\dfrac{G}{LN}\\cdot\\dfrac{N^2}{4}(1-\\zeta^2)=\\dfrac{Gn}{4}(1-\\zeta^2)$．よって\n\\[\n\\boldsymbol{\\frac{E}{N}=\\frac{\\hbar^2\\pi^2n^2}{24m}(1+3\\zeta^2)+\\frac{Gn}{4}(1-\\zeta^2)}.\n\\]\n\n(2) $E/N=A+B\\zeta^2$（$B=\\dfrac{\\hbar^2\\pi^2n^2}{8m}-\\dfrac{Gn}{4}$）は $\\zeta^2\\in[0,1]$ の1次関数なので，最小は端点 $\\zeta=0$（$B>0$）か $\\zeta=1$（$B<0$）でとる．部分的な偏極は決して最小にならない．$B<0$ の条件は\n\\[\n\\frac{\\hbar^2\\pi^2n}{8m}<\\frac G4\\iff\\boldsymbol{n<n_c=\\frac{2mG}{\\pi^2\\hbar^2}}.\n\\]\n1次元では低密度ほど運動エネルギーの損が小さく，強磁性になりやすい（この近似の範囲で）．\n\n(3) $\\zeta$ について展開すると $\\frac3{10}E_F\\left[2+\\frac{10}{9}\\zeta^2+\\cdots\\right]=\\frac35E_F+\\frac13E_F\\zeta^2+\\cdots$．$\\zeta^2$ の係数 $\\dfrac13E_F-\\dfrac{Gn}{4}$ が負になれば常磁性は不安定：\n\\[\n\\frac{Gn}{4}>\\frac{E_F}{3}\\iff\\frac{G}{2}\\cdot\\frac{3n}{2E_F}>1\\iff\\boldsymbol{\\frac12Gg(E_F)>1}\n\\]\n（ストーナー条件）．3次元では運動エネルギーが $\\zeta$ について上に凸の部分を含むので，部分偏極の状態も現れうる．"
+   }
+  ],
+  "idea": {
+   "tex": "ハートリー＝フォック近似では，接触型の斥力は反対スピンの間にだけ働き，運動エネルギーと交換エネルギーの競合が偏極を決める．1次元では運動エネルギーが $\\zeta^2$ の1次関数になり，偏極は $0$ か $1$ かの全か無かになる．3次元では同じ展開からストーナー条件が出る．原題は1次元での強磁性と常磁性の比較で，捻りでは偏極の連続変化と3次元との違いを問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ハートリー＝フォック近似",
+   "ストーナー条件",
+   "強磁性",
+   "電子ガス"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 30,
+  "theme": "超伝導薄板の反磁性と有効磁化率",
+  "topic": "超伝導薄板の反磁性と有効磁化率",
+  "statement": {
+   "tex": "London 方程式 $\\nabla\\times\\boldsymbol J+\\dfrac{Ne^2}{m}\\boldsymbol B=0$ に従う超伝導体の平板 $|x|<d$（$y,z$ 方向に無限）を，板面に平行な一様外部磁場 $\\boldsymbol B_0=B_0\\hat{\\boldsymbol z}$ の中に置く．$\\lambda^2=m/(\\mu_0Ne^2)$ とし，変位電流は無視する．\n\\begin{enumerate}\n\\item 板内の $B_z(x)$ と遮蔽電流密度 $\\boldsymbol J(x)$ を求めよ．\n\\item 板の厚さ方向に平均した磁束密度 $\\langle B\\rangle$ から，有効磁化率 $\\chi_{\\rm eff}=\\langle B\\rangle/B_0-1$（$\\langle B\\rangle=B_0(1+\\chi_{\\rm eff})$ で定義）を求めよ．\n\\item $d\\gg\\lambda$ と $d\\ll\\lambda$ の極限での $\\chi_{\\rm eff}$ を求め，薄い板では Meissner 効果（完全反磁性 $\\chi=-1$）が弱まることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B_z=B_0\\dfrac{\\cosh(x/\\lambda)}{\\cosh(d/\\lambda)}$，$\\boldsymbol J=-\\dfrac{B_0}{\\mu_0\\lambda}\\dfrac{\\sinh(x/\\lambda)}{\\cosh(d/\\lambda)}\\hat{\\boldsymbol y}$　(2) $\\chi_{\\rm eff}=-1+\\dfrac{\\lambda}{d}\\tanh\\dfrac{d}{\\lambda}$　(3) $d\\gg\\lambda$：$\\chi_{\\rm eff}\\to-1+\\lambda/d\\to-1$；$d\\ll\\lambda$：$\\chi_{\\rm eff}\\approx-\\dfrac{d^2}{3\\lambda^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\nabla\\times\\boldsymbol B=\\mu_0\\boldsymbol J$ の回転をとり $\\nabla\\cdot\\boldsymbol B=0$ と London 方程式を使うと $\\nabla^2\\boldsymbol B=\\boldsymbol B/\\lambda^2$．$B_z(x)$ のみ，対称性 $B_z(-x)=B_z(x)$ と境界条件 $B_z(\\pm d)=B_0$（接線成分の連続）より\n\\[\nB_z(x)=B_0\\frac{\\cosh(x/\\lambda)}{\\cosh(d/\\lambda)} .\n\\]\n$\\mu_0J_y=(\\nabla\\times\\boldsymbol B)_y=-\\partial_xB_z$ より\n\\[\n\\boldsymbol J=-\\frac{B_0}{\\mu_0\\lambda}\\frac{\\sinh(x/\\lambda)}{\\cosh(d/\\lambda)}\\hat{\\boldsymbol y},\n\\]\n表面付近の厚さ $\\lambda$ 程度を逆向きに流れる遮蔽電流である．\n\n(2) \n\\[\n\\langle B\\rangle=\\frac1{2d}\\int_{-d}^{d}B_z\\,dx=B_0\\frac{\\lambda}{d}\\tanh\\frac{d}{\\lambda},\\qquad\n\\chi_{\\rm eff}=\\frac{\\lambda}{d}\\tanh\\frac d\\lambda-1 .\n\\]\n\n(3) $d\\gg\\lambda$：$\\tanh\\to1$ で $\\chi_{\\rm eff}\\approx-1+\\lambda/d\\to-1$（完全反磁性．$\\lambda/d$ は表面層からの補正）．$d\\ll\\lambda$：$u=d/\\lambda$ として $\\tanh u/u=1-u^2/3+\\cdots$ より\n\\[\n\\chi_{\\rm eff}\\approx-\\frac{d^2}{3\\lambda^2}\\ (\\to0).\n\\]\n侵入長より薄い板では磁場がほぼ素通りし，反磁性はきわめて弱くなる．これは薄膜超伝導体の臨界磁場が大きくなる（磁場を排除するためのエネルギーコストが小さい）ことの起源でもある．"
+   }
+  ],
+  "idea": {
+   "tex": "London 方程式の解は表面から $\\lambda$ だけ侵入する $\\cosh$ 型．厚さ平均をとると有効磁化率が $-1+(\\lambda/d)\\tanh(d/\\lambda)$ となり，Meissner 効果が試料サイズと侵入長の比で決まることがわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\chi_{\\rm eff}$：-1+((λ)/(d)) tanh ((d)/(λ))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "London方程式",
+   "Meissner効果",
+   "侵入長",
+   "磁化率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 35,
+  "theme": "超伝導薄板の有効磁化率と輸送電流",
+  "topic": "超伝導薄板の有効磁化率と輸送電流",
+  "statement": {
+   "tex": "厚さ $2a$ の超伝導体の平板が $-a<x<a$ を占め，$y,z$ 方向には無限に広がっている．板内では London 方程式 $\\mathrm{rot}\\,\\boldsymbol J=-\\boldsymbol B/(\\mu_0\\lambda^2)$（$\\lambda$：侵入長）と $\\mathrm{rot}\\,\\boldsymbol B=\\mu_0\\boldsymbol J$ が成り立つ（変位電流は無視）．磁場は $z$ 成分 $B(x)$ だけ，電流密度は $y$ 成分 $J(x)$ だけをもつとする．\n\\begin{enumerate}\n\\item 板の両側に一様な外部磁場 $B_{\\rm ext}$（$z$ 向き）がかかり，輸送電流はないとき，板内の $B(x)$ と板内平均 $\\langle B\\rangle$ を求め，有効磁化率 $\\chi_{\\rm eff}=\\langle B\\rangle/B_{\\rm ext}-1$ を求めよ．\n\\item $\\chi_{\\rm eff}$ を $a\\gg\\lambda$ と $a\\ll\\lambda$ の極限で（後者は $a/\\lambda$ の最低次まで）求め，薄い板では完全反磁性（$\\chi=-1$）からほど遠いことを示せ．\n\\item 外部磁場に加えて，$y$ 方向に輸送電流を流す．板の $z$ 方向単位長さあたりの全電流を $K\\ (>0)$ とする．板外の磁場が $x>a$ で $B_{\\rm ext}-\\mu_0K/2$，$x<-a$ で $B_{\\rm ext}+\\mu_0K/2$ となる理由を述べ，板内の $J(x)$ を求めよ．\n\\item (3) で $|J|$ が最大になる位置とその値を求めよ．$a\\gg\\lambda$ のとき，$|J|$ が臨界電流密度 $J_c$ を超えないで流せる最大の $K$ を $B_{\\rm ext}$ の関数として求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B=B_{\\rm ext}\\dfrac{\\cosh(x/\\lambda)}{\\cosh(a/\\lambda)}$，$\\langle B\\rangle=B_{\\rm ext}\\dfrac{\\lambda}{a}\\tanh\\dfrac{a}{\\lambda}$，$\\chi_{\\rm eff}=\\dfrac{\\lambda}{a}\\tanh\\dfrac a\\lambda-1$　(2) $a\\gg\\lambda$：$\\chi\\simeq-1+\\lambda/a$，$a\\ll\\lambda$：$\\chi\\simeq-\\dfrac{a^2}{3\\lambda^2}$　(3) $J=-\\dfrac{B_{\\rm ext}}{\\mu_0\\lambda}\\dfrac{\\sinh(x/\\lambda)}{\\cosh(a/\\lambda)}+\\dfrac{K}{2\\lambda}\\dfrac{\\cosh(x/\\lambda)}{\\sinh(a/\\lambda)}$　(4) $x=-a$ で $|J|_{\\max}=\\dfrac{B_{\\rm ext}}{\\mu_0\\lambda}\\tanh\\dfrac a\\lambda+\\dfrac{K}{2\\lambda}\\coth\\dfrac a\\lambda$；$K_{\\max}=2\\left(\\lambda J_c-\\dfrac{B_{\\rm ext}}{\\mu_0}\\right)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$J=J_y$，$B=B_z$ に対して $(\\mathrm{rot}\\,\\boldsymbol B)_y=-\\partial B/\\partial x=\\mu_0J$，$(\\mathrm{rot}\\,\\boldsymbol J)_z=\\partial J/\\partial x=-B/(\\mu_0\\lambda^2)$．よって\n\\[\n\\frac{d^2B}{dx^2}=\\frac{B}{\\lambda^2},\\qquad J=-\\frac1{\\mu_0}\\frac{dB}{dx}.\n\\]\n一般解は $B=C_1\\cosh(x/\\lambda)+C_2\\sinh(x/\\lambda)$．境界で $B$ は連続（表面に有限の厚さのない電流はない）．\n\n(1) $B(\\pm a)=B_{\\rm ext}$ より $C_2=0$，$B=B_{\\rm ext}\\cosh(x/\\lambda)/\\cosh(a/\\lambda)$．\n\\[\n\\langle B\\rangle=\\frac1{2a}\\int_{-a}^{a}B\\,dx=B_{\\rm ext}\\frac{\\lambda}{a}\\tanh\\frac a\\lambda,\\qquad \\chi_{\\rm eff}=\\frac{\\lambda}{a}\\tanh\\frac a\\lambda-1 .\n\\]\n\n(2) $a\\gg\\lambda$ では $\\tanh\\to1$ で $\\chi_{\\rm eff}\\simeq-1+\\lambda/a$（侵入層の分だけ完全反磁性から外れる）．$a\\ll\\lambda$ では $\\tanh u=u-u^3/3+\\cdots$ より\n\\[\n\\chi_{\\rm eff}\\simeq-\\frac{a^2}{3\\lambda^2}\\quad(|\\chi_{\\rm eff}|\\ll1).\n\\]\n薄膜では磁場がほぼ素通りし，マイスナー効果は弱い．\n\n(3) 板を $z$ 方向に単位長さ，$x$ 方向に横切る長方形に Ampère の法則を使うと $B(-a)-B(a)=\\mu_0K$．また外部磁場の対称部分は $B_{\\rm ext}$ なので（輸送電流のつくる磁場は面電流の磁場と同様に両側で逆向き $\\mp\\mu_0K/2$），$B(a)=B_{\\rm ext}-\\mu_0K/2$，$B(-a)=B_{\\rm ext}+\\mu_0K/2$．これを満たす解は\n\\[\nB=B_{\\rm ext}\\frac{\\cosh(x/\\lambda)}{\\cosh(a/\\lambda)}-\\frac{\\mu_0K}{2}\\frac{\\sinh(x/\\lambda)}{\\sinh(a/\\lambda)},\n\\]\n\\[\nJ=-\\frac1{\\mu_0}\\frac{dB}{dx}=-\\frac{B_{\\rm ext}}{\\mu_0\\lambda}\\frac{\\sinh(x/\\lambda)}{\\cosh(a/\\lambda)}+\\frac{K}{2\\lambda}\\frac{\\cosh(x/\\lambda)}{\\sinh(a/\\lambda)}.\n\\]\n実際 $\\int_{-a}^{a}J\\,dx=K$ となる．\n\n(4) $\\sinh$ 項は奇関数，$\\cosh$ 項は偶関数で表面で最大だから，$|J|$ は二つの寄与が同符号になる $x=-a$ で最大：\n\\[\n|J|_{\\max}=\\frac{B_{\\rm ext}}{\\mu_0\\lambda}\\tanh\\frac a\\lambda+\\frac{K}{2\\lambda}\\coth\\frac a\\lambda .\n\\]\n$a\\gg\\lambda$ では $|J|_{\\max}\\simeq\\dfrac1\\lambda\\left(\\dfrac{B_{\\rm ext}}{\\mu_0}+\\dfrac K2\\right)\\le J_c$ より\n\\[\nK_{\\max}=2\\left(\\lambda J_c-\\frac{B_{\\rm ext}}{\\mu_0}\\right)\\quad(B_{\\rm ext}<\\mu_0\\lambda J_c).\n\\]\n遮蔽電流と輸送電流が一方の表面で重なるため，外部磁場があると流せる電流が直線的に減る．"
+   }
+  ],
+  "idea": {
+   "tex": "London 方程式の解は $\\cosh,\\sinh$ の重ね合わせで，対称成分（遮蔽）と反対称成分（輸送電流）が一方の表面で加算される．薄膜極限では磁化率が $-(a/\\lambda)^2/3$ に縮む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "London方程式",
+   "超伝導",
+   "侵入長",
+   "マイスナー効果",
+   "臨界電流"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 30,
+  "theme": "超伝導薄膜の有効磁化率（London）",
+  "topic": "超伝導薄膜の有効磁化率（London）",
+  "statement": {
+   "tex": "超伝導体では London 方程式 $\\operatorname{rot}(\\mu_0\\lambda^2\\boldsymbol J)=-\\boldsymbol B$ と $\\operatorname{rot}\\boldsymbol B=\\mu_0\\boldsymbol J$ が成り立つ（$\\lambda$ は侵入長）．厚さ $2d$ の無限に広い超伝導板（$-d<x<d$）に，板面に平行な一様外部磁場 $B_0\\boldsymbol e_z$ をかける．\n\\begin{enumerate}\n\\item 板内の磁束密度 $B_z(x)$ を求めよ．\n\\item 板内で平均した磁化 $\\langle M\\rangle=\\langle B\\rangle/\\mu_0-B_0/\\mu_0$ から有効磁化率 $\\chi_{\\rm eff}=\\mu_0\\langle M\\rangle/B_0$ を求めよ．\n\\item 厚い板（$d\\gg\\lambda$）と薄膜（$d\\ll\\lambda$）の極限で $\\chi_{\\rm eff}$ の主要項を求めよ．完全反磁性（$\\chi=-1$）からのずれはそれぞれ何で決まるか．\n\\item $\\lambda=50\\ \\mathrm{nm}$ の物質で厚さ $20\\ \\mathrm{nm}$ の薄膜をつくった．$\\chi_{\\rm eff}$ を有効数字 3 桁で求め，(3) の近似値と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B_z=B_0\\dfrac{\\cosh(x/\\lambda)}{\\cosh(d/\\lambda)}$　(2) $\\chi_{\\rm eff}=\\dfrac{\\lambda}{d}\\tanh\\dfrac d\\lambda-1$　(3) $d\\gg\\lambda$：$\\chi\\simeq-1+\\dfrac{\\lambda}{d}$；$d\\ll\\lambda$：$\\chi\\simeq-\\dfrac{d^2}{3\\lambda^2}$　(4) $\\chi_{\\rm eff}=-0.0131$（近似 $-0.0133$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol B=B(x)\\boldsymbol e_z$，$\\boldsymbol J=J(x)\\boldsymbol e_y$．London 方程式より $\\mu_0\\lambda^2\\dfrac{dJ}{dx}=-B$，Ampère の法則より $-\\dfrac{dB}{dx}=\\mu_0J$．$J$ を消去して $\\dfrac{d^2B}{dx^2}=\\dfrac{B}{\\lambda^2}$．対称性と境界条件 $B(\\pm d)=B_0$（表面電流なし）より\n\\[B(x)=B_0\\frac{\\cosh(x/\\lambda)}{\\cosh(d/\\lambda)}.\\]\n\n(2) $\\langle B\\rangle=\\dfrac{1}{2d}\\displaystyle\\int_{-d}^{d}B\\,dx=B_0\\frac{\\lambda}{d}\\tanh\\frac d\\lambda$．よって\n\\[\\chi_{\\rm eff}=\\frac{\\langle B\\rangle}{B_0}-1=\\frac\\lambda d\\tanh\\frac d\\lambda-1.\\]\n\n(3) $d\\gg\\lambda$：$\\tanh\\to1$ で $\\chi\\simeq-1+\\lambda/d$．磁場は表面の厚さ $\\lambda$ の層にだけ侵入するので，その体積比 $\\lambda/d$ だけ完全反磁性から外れる．\n$d\\ll\\lambda$：$\\tanh u\\simeq u-u^3/3$ より $\\chi\\simeq\\dfrac\\lambda d\\left(\\dfrac d\\lambda-\\dfrac{d^3}{3\\lambda^3}\\right)-1=-\\dfrac{d^2}{3\\lambda^2}$．磁場はほぼ完全に侵入し，反磁性は膜厚の 2 乗に比例して弱くなる（遮蔽電流 $J\\simeq-B_0x/(\\mu_0\\lambda^2)$ が小さいため）．\n\n(4) $d=10\\ \\mathrm{nm}$，$d/\\lambda=0.2$．$\\chi=5\\tanh0.2-1=5\\times0.197375-1=-0.0131$．近似式は $-0.04/3=-0.0133$ で，差は約 1.6\\%．"
+   }
+  ],
+  "idea": {
+   "tex": "London 方程式で磁場は $\\cosh(x/\\lambda)$ 型に侵入する．平均をとると有効磁化率 $\\frac\\lambda d\\tanh\\frac d\\lambda-1$ が得られ，薄膜では完全反磁性が $d^2/3\\lambda^2$ まで弱まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $\\chi_{\\rm eff}$：≈-0.0131"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "London方程式",
+   "侵入長",
+   "反磁性",
+   "磁化率",
+   "薄膜"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 40,
+  "theme": "異方的振動子での軌道角運動量の消失と回転応答",
+  "topic": "異方的振動子での軌道角運動量の消失と回転応答",
+  "statement": {
+   "tex": "2 次元の異方的調和振動子\n\\[H_0=\\frac{p_x^2+p_y^2}{2m}+\\frac m2(\\omega_x^2x^2+\\omega_y^2y^2)\\qquad(\\omega_x>\\omega_y,\\ \\omega_x-\\omega_y\\ll\\omega_x)\\]\nを考える．固有状態を $|n_x,n_y\\rangle$ とし，$L_z=xp_y-yp_x$ とする．\n\\begin{enumerate}\n\\item $H_0$ の縮退のないエネルギー固有状態では $\\langle L_z\\rangle=0$ となることを時間反転を用いて示せ．\n\\item 第一励起の 2 準位 $|1,0\\rangle,|0,1\\rangle$ の間の行列要素 $\\langle1,0|L_z|0,1\\rangle$ を求めよ（$\\omega_x\\ne\\omega_y$ のまま厳密に）．\n\\item 角速度 $\\Omega$ で回転する座標系に移ったときのハミルトニアン $H=H_0-\\Omega L_z$ を考える．他の準位との結合を無視して，この 2 準位のエネルギーを $\\Omega$ の関数として求めよ．\n\\item 低い方の状態の $\\langle L_z\\rangle$ を $\\Omega$ の関数として求め，$\\Omega\\ll\\omega_x-\\omega_y$ と $\\Omega\\gg\\omega_x-\\omega_y$ での振る舞いを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 非縮退固有状態は $\\Theta|n\\rangle\\propto|n\\rangle$ で，$\\Theta L_z\\Theta^{-1}=-L_z$ より $\\langle L_z\\rangle=-\\langle L_z\\rangle=0$　(2) $-\\dfrac{i\\hbar}2\\Big(\\sqrt{\\dfrac{\\omega_y}{\\omega_x}}+\\sqrt{\\dfrac{\\omega_x}{\\omega_y}}\\Big)\\equiv-i\\hbar K$　(3) $E_\\pm=\\hbar(\\omega_x+\\omega_y)\\pm\\hbar\\sqrt{\\Big(\\dfrac{\\omega_x-\\omega_y}{2}\\Big)^2+K^2\\Omega^2}$　(4) $\\langle L_z\\rangle_-=\\dfrac{\\hbar K^2\\Omega}{\\sqrt{(\\omega_x-\\omega_y)^2/4+K^2\\Omega^2}}$：小さい $\\Omega$ で $\\simeq\\dfrac{2\\hbar K^2\\Omega}{\\omega_x-\\omega_y}$（線形，永久角運動量なし），大きい $\\Omega$ で $\\to\\hbar K\\approx\\hbar$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $H_0$ は実で時間反転不変なので $H_0\\Theta|n\\rangle=E_n\\Theta|n\\rangle$．非縮退なら $\\Theta|n\\rangle=e^{i\\delta}|n\\rangle$．$\\Theta L_z\\Theta^{-1}=-L_z$ と反ユニタリ性 $\\langle\\tilde\\beta|\\tilde\\alpha\\rangle=\\langle\\alpha|\\beta\\rangle$ より\n$\\langle n|L_z|n\\rangle=\\langle\\tilde n|\\Theta L_z^\\dagger\\Theta^{-1}|\\tilde n\\rangle=-\\langle n|L_z|n\\rangle$，よって 0．（実際 $|1,0\\rangle\\propto xe^{-\\cdots}$ は実関数で，$L_z=-i\\hbar\\partial_\\phi$ の期待値は純虚かつ実なので 0．）\n\n(2) $x=\\sqrt{\\frac{\\hbar}{2m\\omega_x}}(a_x+a_x^\\dagger)$，$p_x=i\\sqrt{\\frac{m\\hbar\\omega_x}{2}}(a_x^\\dagger-a_x)$（$y$ も同様）．\n$\\langle1,0|xp_y|0,1\\rangle=\\sqrt{\\frac{\\hbar}{2m\\omega_x}}\\cdot\\left(-i\\sqrt{\\frac{m\\hbar\\omega_y}{2}}\\right)=-\\frac{i\\hbar}{2}\\sqrt{\\frac{\\omega_y}{\\omega_x}}$，\n$\\langle1,0|yp_x|0,1\\rangle=\\sqrt{\\frac{\\hbar}{2m\\omega_y}}\\cdot i\\sqrt{\\frac{m\\hbar\\omega_x}{2}}=\\frac{i\\hbar}2\\sqrt{\\frac{\\omega_x}{\\omega_y}}$．\nよって $\\langle1,0|L_z|0,1\\rangle=-\\frac{i\\hbar}{2}\\left(\\sqrt{\\frac{\\omega_y}{\\omega_x}}+\\sqrt{\\frac{\\omega_x}{\\omega_y}}\\right)=-i\\hbar K$．（等方的なら $-i\\hbar$．）\n\n(3) $E_{10}=\\hbar(\\frac32\\omega_x+\\frac12\\omega_y)$，$E_{01}=\\hbar(\\frac12\\omega_x+\\frac32\\omega_y)$，平均 $\\hbar(\\omega_x+\\omega_y)$，差 $\\hbar(\\omega_x-\\omega_y)$．$L_z$ の対角要素は (1) より 0．2×2 行列\n$\\begin{pmatrix}E_{10}&i\\hbar K\\Omega\\\\-i\\hbar K\\Omega&E_{01}\\end{pmatrix}$ を対角化して\n\\[E_\\pm=\\hbar(\\omega_x+\\omega_y)\\pm\\hbar\\sqrt{\\frac{(\\omega_x-\\omega_y)^2}{4}+K^2\\Omega^2}.\\]\n\n(4) ヘルマン・ファインマンの定理より $\\langle L_z\\rangle=-\\partial E/\\partial\\Omega$：\n\\[\\langle L_z\\rangle_-=\\frac{\\hbar K^2\\Omega}{\\sqrt{(\\omega_x-\\omega_y)^2/4+K^2\\Omega^2}}.\\]\n$\\Omega\\ll\\omega_x-\\omega_y$：$\\langle L_z\\rangle_-\\simeq\\frac{2\\hbar K^2}{\\omega_x-\\omega_y}\\Omega$．$\\Omega=0$ で 0 から線形に立ち上がり（エネルギーの $\\Omega$ 依存は 2 次），永久的な角運動量はない＝軌道角運動量の消失．\n$\\Omega\\gg\\omega_x-\\omega_y$：$\\langle L_z\\rangle_-\\to\\hbar K\\approx\\hbar$．$|1,0\\rangle$ と $|0,1\\rangle$ が $(|1,0\\rangle+i|0,1\\rangle)/\\sqrt2$ 型に混ざり，等方的な場合の $L_z=\\hbar$ 状態が回復する．結晶場による消失は，外場が結晶場分裂より強くなると解ける．"
+   }
+  ],
+  "idea": {
+   "tex": "時間反転不変で非縮退なら $\\langle\\boldsymbol L\\rangle=0$．角運動量は異方性分裂と外場（回転）の競合で現れ，弱い外場への応答は線形（2 次のエネルギー）になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間反転",
+   "軌道角運動量の消失",
+   "異方的調和振動子",
+   "ヘルマン・ファインマン",
+   "結晶場"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 40,
+  "theme": "輸送電流と外部磁場を担う超伝導板の臨界電流",
+  "topic": "輸送電流と外部磁場を担う超伝導板の臨界電流",
+  "statement": {
+   "tex": "散乱を受けない電子（数密度 $n$，電荷 $-e$，質量 $m$）が電流を担う超伝導体を考える．電流密度は加速方程式 $\\dfrac{\\partial\\boldsymbol J}{\\partial t}=\\dfrac{ne^2}{m}\\boldsymbol E$ に従い，さらにマイスナー効果を表す条件として $\\mathrm{rot}\\,\\boldsymbol J=-\\dfrac{ne^2}{m}\\boldsymbol B$ が成り立つとする．誘電率・透磁率は真空と同じ $\\varepsilon_0,\\mu_0$ とする．\n\\begin{enumerate}\n\\item 静的な場合のマクスウェル方程式を用いて，超伝導体内で $\\lambda^2\\nabla^2\\boldsymbol B=\\boldsymbol B$ が成り立つことを示し，$\\lambda$ を求めよ．\n\\item $-d\\le x\\le d$ に $y,z$ 方向に無限に広い超伝導板がある．外部から $z$ 方向の一様磁場 $B_a$ をかけ，同時に板に $+y$ 方向の輸送電流を $z$ 方向単位長さあたり $K$ 流す．このとき板の外の磁場は $z$ 方向で，$x<-d$ で $B_a+\\frac{\\mu_0K}{2}$，$x>d$ で $B_a-\\frac{\\mu_0K}{2}$ となる．板内の $B_z(x)$ を求めよ．\n\\item 板内の電流密度 $J_y(x)$ を求め，$\\displaystyle\\int_{-d}^{d}J_y\\,dx=K$ を確かめよ．また $J_y$ を $x$ の偶関数部分と奇関数部分に分け，それぞれが何を担うか説明せよ．\n\\item 電流密度の大きさがどこか 1 点でも臨界値 $J_c$ を超えると超伝導が壊れるとする．超伝導を保てる最大の輸送電流 $K_c$ を $B_a$ の関数として求めよ（$K>0,\\ B_a\\ge0$ とする）．$K=0$ で超伝導が保てる最大の $B_a$ も求めよ．\n\\item $d\\gg\\lambda$ と $d\\ll\\lambda$ のそれぞれの極限で $K_c$ を求め，厚い板では $K_c$ が板厚によらないことの物理的理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=\\sqrt{\\dfrac{m}{\\mu_0ne^2}}$．\n(2) $B_z=B_a\\dfrac{\\cosh(x/\\lambda)}{\\cosh(d/\\lambda)}-\\dfrac{\\mu_0K}{2}\\dfrac{\\sinh(x/\\lambda)}{\\sinh(d/\\lambda)}$．\n(3) $J_y=\\dfrac{K}{2\\lambda}\\dfrac{\\cosh(x/\\lambda)}{\\sinh(d/\\lambda)}-\\dfrac{B_a}{\\mu_0\\lambda}\\dfrac{\\sinh(x/\\lambda)}{\\cosh(d/\\lambda)}$；偶部分＝輸送電流，奇部分＝外部磁場の遮蔽電流．\n(4) $K_c=2\\lambda J_c\\tanh\\dfrac{d}{\\lambda}-\\dfrac{2B_a}{\\mu_0}\\tanh^2\\dfrac{d}{\\lambda}$；$B_a<\\mu_0\\lambda J_c\\coth(d/\\lambda)$．\n(5) $d\\gg\\lambda$：$K_c=2\\lambda J_c-2B_a/\\mu_0$；$d\\ll\\lambda$：$K_c\\simeq2dJ_c-\\dfrac{2B_ad^2}{\\mu_0\\lambda^2}$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 静的な場合 $\\mathrm{rot}\\,\\boldsymbol B=\\mu_0\\boldsymbol J$．回転をとって $\\mathrm{rot\\,rot}\\,\\boldsymbol B=\\mathrm{grad\\,div}\\,\\boldsymbol B-\\nabla^2\\boldsymbol B=-\\nabla^2\\boldsymbol B$（$\\mathrm{div}\\,\\boldsymbol B=0$）．右辺は $\\mu_0\\,\\mathrm{rot}\\,\\boldsymbol J=-\\dfrac{\\mu_0ne^2}{m}\\boldsymbol B$．よって $\\lambda^2\\nabla^2\\boldsymbol B=\\boldsymbol B$，$\\lambda^2=\\dfrac{m}{\\mu_0ne^2}$．\n\n(2) $B_z=B(x)$ は $\\lambda^2B''=B$ を満たすので $B=\\alpha\\cosh(x/\\lambda)+\\beta\\sinh(x/\\lambda)$．境界で磁場の接線成分は連続（表面電流は有限の $\\lambda$ 層に分布しデルタ関数的な面電流はない）なので $B(\\pm d)=B_a\\mp\\mu_0K/2$．偶部分から $\\alpha\\cosh(d/\\lambda)=B_a$，奇部分から $\\beta\\sinh(d/\\lambda)=-\\mu_0K/2$．\n\\[\nB_z(x)=B_a\\frac{\\cosh(x/\\lambda)}{\\cosh(d/\\lambda)}-\\frac{\\mu_0K}{2}\\frac{\\sinh(x/\\lambda)}{\\sinh(d/\\lambda)}.\n\\]\n\n(3) $\\mathrm{rot}\\,\\boldsymbol B$ の $y$ 成分は $-\\partial B_z/\\partial x$ なので $J_y=-\\dfrac1{\\mu_0}\\dfrac{dB_z}{dx}$：\n\\[\nJ_y(x)=\\frac{K}{2\\lambda}\\frac{\\cosh(x/\\lambda)}{\\sinh(d/\\lambda)}-\\frac{B_a}{\\mu_0\\lambda}\\frac{\\sinh(x/\\lambda)}{\\cosh(d/\\lambda)}.\n\\]\n$\\displaystyle\\int_{-d}^{d}J_y\\,dx=-\\frac{B(d)-B(-d)}{\\mu_0}=K$．偶関数部分（$\\cosh$）は正味の電流 $K$ を運ぶ輸送電流で両表面に同じ向きに集中する．奇関数部分（$\\sinh$）は正味ゼロで，$x>0$ と $x<0$ で逆向きに流れて外部磁場 $B_a$ を遮蔽するマイスナー電流である．\n\n(4) $|J_y|$ は $\\cosh,\\ \\sinh$ の単調性から表面 $x=\\pm d$ で最大．\n\\[\nJ_y(\\pm d)=\\frac{K}{2\\lambda}\\coth\\frac d\\lambda\\mp\\frac{B_a}{\\mu_0\\lambda}\\tanh\\frac d\\lambda .\n\\]\n$K,B_a\\ge0$ では $x=-d$（遮蔽電流と輸送電流が同じ向きで重なる側，外部磁場が強め合う側）が最大．$J_y(-d)\\le J_c$ より\n\\[\nK_c=2\\lambda J_c\\tanh\\frac d\\lambda-\\frac{2B_a}{\\mu_0}\\tanh^2\\frac d\\lambda .\n\\]\n$K_c>0$ が必要なので，$K=0$ で許される磁場は $B_a<\\mu_0\\lambda J_c\\coth(d/\\lambda)$．外部磁場をかけるほど流せる輸送電流は直線的に減る．\n\n(5) $d\\gg\\lambda$：$\\tanh\\to1$ で $K_c=2\\lambda J_c-\\dfrac{2B_a}{\\mu_0}$．$d\\ll\\lambda$：$\\tanh(d/\\lambda)\\simeq d/\\lambda$ で $K_c\\simeq2dJ_c-\\dfrac{2B_ad^2}{\\mu_0\\lambda^2}$（$B_a=0$ では電流は板全体にほぼ一様に流れ，断面全体で $J_c$ に達する）．\n厚い板では電流は両表面の厚さ $\\sim\\lambda$ の層にしか流れない（内部は $B=0,\\ J=0$）．電流を担える断面は表面層の $2\\lambda$ だけであり，板をいくら厚くしても臨界電流は増えない．"
+   }
+  ],
+  "idea": {
+   "tex": "ロンドン方程式の解を偶（輸送電流）と奇（遮蔽電流）に分解すると，臨界状態は両者が重なる片側表面で決まり，$K_c$ と $B_a$ のトレードオフと「厚さによらない臨界電流」が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\lambda$：sqrt(((m)/(μ_0 n e ^(2))))\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ロンドン方程式",
+   "マイスナー効果",
+   "侵入長",
+   "超伝導",
+   "臨界電流",
+   "遮蔽電流"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 45,
+  "theme": "ロンドン方程式と超伝導線の運動インダクタンス",
+  "topic": "ロンドン方程式と超伝導線の運動インダクタンス",
+  "statement": {
+   "tex": "超伝導電子（数密度 $n_s$，質量 $m$，電荷 $-e$）が散乱を受けずに運動する古典的モデルを考える．真空の透磁率を $\\mu_0$ とする．\n\\begin{enumerate}\n\\item 超伝導電流密度 $\\boldsymbol j=-n_se\\boldsymbol v$ について，運動方程式から $\\partial\\boldsymbol j/\\partial t=\\dfrac{1}{\\mu_0\\lambda^2}\\boldsymbol E$ を導き，$\\lambda$ を $n_s,m,e,\\mu_0$ で表せ．さらに，超伝導電子の運動エネルギー密度を $\\boldsymbol j$ で表し，運動エネルギーと磁場エネルギーの和 $\\displaystyle\\int\\Big(\\frac{\\boldsymbol B^2}{2\\mu_0}+\\frac{\\mu_0\\lambda^2}{2}\\boldsymbol j^2\\Big)dV$（$\\mu_0\\boldsymbol j=\\nabla\\times\\boldsymbol B$）を $\\boldsymbol B$ について最小化すると $\\boldsymbol B+\\lambda^2\\nabla\\times\\nabla\\times\\boldsymbol B=0$ が得られることを示せ．\n\\item $n_s=4.0\\times10^{28}\\ \\mathrm{m^{-3}}$ のときの $\\lambda$ を求めよ（$m=9.11\\times10^{-31}\\ \\mathrm{kg}$，$e=1.60\\times10^{-19}\\ \\mathrm C$）．\n\\item 半径 $a$ の無限に長い超伝導円柱導線に，軸方向に全電流 $I$ が定常的に流れている．導線内の磁場 $B_\\varphi(r)$ と電流密度 $j_z(r)$ を変形ベッセル関数 $I_0,I_1$ を用いて求めよ．また $a=10\\lambda$ のとき中心と表面の電流密度の比 $j_z(0)/j_z(a)$ を数値で答えよ（$I_0(10)=2.816\\times10^3$）．\n\\item 運動エネルギーを $\\tfrac12L_kI^2$ と書いて単位長さあたりの運動インダクタンス $L_k$ を求めよ．ただし $\\displaystyle\\int_0^a I_0(r/\\lambda)^2\\,r\\,dr=\\frac{a^2}{2}\\big[I_0(a/\\lambda)^2-I_1(a/\\lambda)^2\\big]$ を用いてよい．さらに $a\\ll\\lambda$ と $a\\gg\\lambda$ の極限形を求め，それぞれの物理的意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=\\sqrt{\\dfrac{m}{\\mu_0n_se^2}}$，運動エネルギー密度 $\\dfrac{\\mu_0\\lambda^2}{2}j^2$，ロンドン方程式は証明（解説参照）　(2) $\\lambda\\approx2.7\\times10^{-8}\\ \\mathrm m=27\\ \\mathrm{nm}$　(3) $B_\\varphi=\\dfrac{\\mu_0I}{2\\pi a}\\dfrac{I_1(r/\\lambda)}{I_1(a/\\lambda)}$，$j_z=\\dfrac{I}{2\\pi a\\lambda}\\dfrac{I_0(r/\\lambda)}{I_1(a/\\lambda)}$，$j_z(0)/j_z(a)=1/I_0(10)\\approx3.6\\times10^{-4}$　(4) $L_k=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I_0^2-I_1^2}{I_1^2}$（引数 $a/\\lambda$）；$a\\ll\\lambda$：$\\dfrac{\\mu_0\\lambda^2}{\\pi a^2}$，$a\\gg\\lambda$：$\\dfrac{\\mu_0\\lambda}{4\\pi a}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 散乱がないので $m\\dot{\\boldsymbol v}=-e\\boldsymbol E$．$\\boldsymbol j=-n_se\\boldsymbol v$ を時間微分して\n\\[\\frac{\\partial\\boldsymbol j}{\\partial t}=\\frac{n_se^2}{m}\\boldsymbol E\\equiv\\frac{1}{\\mu_0\\lambda^2}\\boldsymbol E,\\qquad \\lambda=\\sqrt{\\frac{m}{\\mu_0n_se^2}}.\\]\n運動エネルギー密度は $\\tfrac12n_smv^2=\\dfrac{m}{2n_se^2}j^2=\\dfrac{\\mu_0\\lambda^2}{2}j^2$．$\\boldsymbol j=\\nabla\\times\\boldsymbol B/\\mu_0$ を代入して\n\\[\\mathcal F=\\frac1{2\\mu_0}\\int\\big[\\boldsymbol B^2+\\lambda^2(\\nabla\\times\\boldsymbol B)^2\\big]dV.\\]\n$\\boldsymbol B\\to\\boldsymbol B+\\delta\\boldsymbol B$ として\n\\[\\delta\\mathcal F=\\frac1{\\mu_0}\\int\\big[\\boldsymbol B\\cdot\\delta\\boldsymbol B+\\lambda^2(\\nabla\\times\\boldsymbol B)\\cdot(\\nabla\\times\\delta\\boldsymbol B)\\big]dV.\\]\n恒等式 $\\nabla\\cdot(\\delta\\boldsymbol B\\times\\boldsymbol C)=\\boldsymbol C\\cdot(\\nabla\\times\\delta\\boldsymbol B)-\\delta\\boldsymbol B\\cdot(\\nabla\\times\\boldsymbol C)$（$\\boldsymbol C=\\nabla\\times\\boldsymbol B$）で部分積分し，表面項は境界で $\\delta\\boldsymbol B=0$（外部場が固定）として落とすと\n\\[\\delta\\mathcal F=\\frac1{\\mu_0}\\int\\delta\\boldsymbol B\\cdot\\big[\\boldsymbol B+\\lambda^2\\nabla\\times\\nabla\\times\\boldsymbol B\\big]dV=0\\]\nが任意の $\\delta\\boldsymbol B$ で成り立つので $\\boldsymbol B+\\lambda^2\\nabla\\times\\nabla\\times\\boldsymbol B=0$．$\\nabla\\cdot\\boldsymbol B=0$ より $\\nabla^2\\boldsymbol B=\\boldsymbol B/\\lambda^2$ とも書ける．\n\n(2) $\\lambda=\\sqrt{\\dfrac{9.11\\times10^{-31}}{(4\\pi\\times10^{-7})(4.0\\times10^{28})(1.60\\times10^{-19})^2}}\\approx2.7\\times10^{-8}\\ \\mathrm m$．\n\n(3) 対称性から $\\boldsymbol B=B(r)\\hat{\\boldsymbol\\varphi}$．$\\nabla^2\\boldsymbol B=\\boldsymbol B/\\lambda^2$ の $\\varphi$ 成分は\n\\[B''+\\frac{B'}{r}-\\frac{B}{r^2}-\\frac{B}{\\lambda^2}=0,\\]\n$s=r/\\lambda$ とすれば 1 次の変形ベッセル方程式．$r=0$ で正則な解は $B=C\\,I_1(r/\\lambda)$．表面ではアンペールの法則より $B(a)=\\mu_0I/2\\pi a$ なので\n\\[B_\\varphi=\\frac{\\mu_0I}{2\\pi a}\\frac{I_1(r/\\lambda)}{I_1(a/\\lambda)}.\\]\n$\\mu_0j_z=\\dfrac1r\\dfrac{d}{dr}(rB)$ と $\\dfrac{d}{ds}\\big(sI_1(s)\\big)=sI_0(s)$ より\n\\[j_z=\\frac{I}{2\\pi a\\lambda}\\frac{I_0(r/\\lambda)}{I_1(a/\\lambda)}.\\]\n（$\\int_0^a j_z2\\pi r\\,dr=I$ も同じ公式で確認できる．）$j_z(0)/j_z(a)=1/I_0(a/\\lambda)=1/I_0(10)\\approx3.6\\times10^{-4}$：電流は表面の厚さ $\\sim\\lambda$ の層にしか流れない．\n\n(4) $\\tfrac12L_kI^2=\\dfrac{\\mu_0\\lambda^2}{2}\\displaystyle\\int_0^a j_z^2\\,2\\pi r\\,dr$ より\n\\[L_k=\\frac{\\mu_0\\lambda^2}{I^2}\\cdot2\\pi\\cdot\\frac{I^2}{(2\\pi a\\lambda)^2I_1^2}\\cdot\\frac{a^2}{2}\\big(I_0^2-I_1^2\\big)=\\frac{\\mu_0}{4\\pi}\\,\\frac{I_0(a/\\lambda)^2-I_1(a/\\lambda)^2}{I_1(a/\\lambda)^2}.\\]\n・$a\\ll\\lambda$：$I_0\\simeq1$，$I_1\\simeq a/2\\lambda$ より $L_k\\simeq\\dfrac{\\mu_0\\lambda^2}{\\pi a^2}=\\dfrac{m}{n_se^2}\\dfrac{1}{\\pi a^2}$．電流は断面に一様に流れ，電子の慣性（質量）がそのまま「インダクタンス」として現れる（断面積に反比例）．\n・$a\\gg\\lambda$：$I_\\nu(x)\\simeq\\dfrac{e^x}{\\sqrt{2\\pi x}}\\Big(1-\\dfrac{4\\nu^2-1}{8x}\\Big)$ より $I_0-I_1\\simeq I_1/(2x)$，$I_0+I_1\\simeq2I_1$ なので $I_0^2-I_1^2\\simeq I_1^2/x$．よって $L_k\\simeq\\dfrac{\\mu_0\\lambda}{4\\pi a}$．これは周長 $2\\pi a$，厚さ $\\lambda/2$（$j^2$ の減衰長）の表面層に電流 $j\\simeq I/(2\\pi a\\lambda)$ が流れるとした評価と一致し，$\\lambda/a$ だけ小さい．"
+   }
+  ],
+  "idea": {
+   "tex": "ロンドンの古典モデル（加速方程式＋運動エネルギー $\\tfrac12\\mu_0\\lambda^2j^2$ の変分）から侵入長を導き，円柱導線に適用すると電流が $I_0(r/\\lambda)$ で表面に集中する．電子の慣性が運動インダクタンスとして現れ，$a/\\lambda$ の大小で $\\lambda^2/a^2$ から $\\lambda/a$ へスケーリングが変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\lambda$ [m]：≈2.7e-8\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "ロンドン方程式",
+   "侵入長",
+   "変分原理",
+   "変形ベッセル関数",
+   "運動インダクタンス",
+   "表皮効果"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 20,
+  "theme": "有限温度でのクーパー対破壊しきい周波数",
+  "topic": "有限温度でのクーパー対破壊しきい周波数",
+  "statement": {
+   "tex": "鉛（$T_c=7.19\\ \\mathrm{K}$）の絶対零度でのエネルギーギャップ（クーパー対 1 組を壊すのに要するエネルギー）は $E_g(0)=2\\Delta(0)=2.73\\ \\mathrm{meV}$ である．\n\\begin{enumerate}\n\\item $T=0$ で光子 1 個によってクーパー対を壊せる最大波長と，対応する最小周波数を求めよ．\n\\item $T_c$ 近傍では BCS 理論により $\\Delta(T)\\approx1.74\\,\\Delta(0)\\sqrt{1-T/T_c}$ と振る舞う．周波数 $100\\ \\mathrm{GHz}$ のマイクロ波光子が対を壊し始める温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda_{\\max}=0.454\\ \\mathrm{mm}$，$f_{\\min}=0.660\\ \\mathrm{THz}$　(2) $T\\approx7.14\\ \\mathrm{K}$（$T_c$ の約 $0.05\\ \\mathrm{K}$ 下）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 光子のエネルギーが $2\\Delta(0)$ 以上なら対を壊せる．$\\lambda_{\\max}=\\dfrac{hc}{2\\Delta(0)}=\\dfrac{1240\\ \\mathrm{eV\\,nm}}{2.73\\times10^{-3}\\ \\mathrm{eV}}=4.54\\times10^5\\ \\mathrm{nm}=0.454\\ \\mathrm{mm}$，$f_{\\min}=c/\\lambda_{\\max}=6.60\\times10^{11}\\ \\mathrm{Hz}$（遠赤外域）．\n\n(2) $hf=2\\Delta(T)$ から $\\Delta(T)=\\dfrac{hf}{2}=\\dfrac{(6.626\\times10^{-34})(10^{11})}{2\\times1.602\\times10^{-19}}=0.207\\ \\mathrm{meV}$．$\\Delta(0)=1.365\\ \\mathrm{meV}$ なので $\\Delta/\\Delta(0)=0.1515$．\n\\[ \\sqrt{1-T/T_c}=\\frac{0.1515}{1.74}=0.0871,\\quad 1-\\frac{T}{T_c}=7.6\\times10^{-3},\\quad T=7.19(1-0.0076)=7.14\\ \\mathrm{K}. \\]\n$100\\ \\mathrm{GHz}$ は $f_{\\min}$ の約 $1/7$ にすぎず，ギャップがそこまで閉じるのは $T_c$ の直下（約 $0.05\\ \\mathrm{K}$ 下）に限られる．このときの $\\Delta/\\Delta(0)\\approx0.15$ は小さいので $T_c$ 近傍の近似は妥当．"
+   }
+  ],
+  "idea": {
+   "tex": "対破壊のしきいは $2\\Delta(T)$ で，$T_c$ に近づくとギャップが $\\sqrt{1-T/T_c}$ で閉じるため，低周波の光子でも $T_c$ 直下では対を壊せる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\lambda_{\\max}$ [mm]：≈0.454 ; $f_{\\min}$ [THz]：≈0.660\n(2) $T$ [K]：≈7.14"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "クーパー対",
+   "エネルギーギャップ",
+   "BCS理論",
+   "遠赤外吸収"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 25,
+  "theme": "BCSの弱結合公式と結合定数への指数的感度",
+  "topic": "BCSの弱結合公式と結合定数への指数的感度",
+  "statement": {
+   "tex": "BCS 理論の弱結合極限では，デバイ温度 $\\Theta_D$，無次元結合定数 $\\lambda=N(0)V$ を用いて\n\\[ kT_c=1.13\\,k\\Theta_D\\,e^{-1/\\lambda},\\qquad \\Delta(0)=2k\\Theta_D\\,e^{-1/\\lambda} \\]\nが成り立つ．\n\\begin{enumerate}\n\\item $2\\Delta(0)/kT_c$ が物質によらない普遍定数になることを示し，その値を求めよ．\n\\item インジウム（$T_c=3.40\\ \\mathrm{K}$，$\\Theta_D=108\\ \\mathrm{K}$）について，$\\lambda$ とエネルギーギャップ $2\\Delta(0)$（meV）を求めよ．\n\\item 圧力などで $\\Theta_D$ を変えずに $\\lambda$ だけを $10\\%$ 増やすと，$T_c$ はいくらになるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2\\Delta(0)/kT_c=4/1.13=3.53$　(2) $\\lambda=0.279$，$2\\Delta(0)=1.03\\ \\mathrm{meV}$　(3) $T_c\\approx4.7\\ \\mathrm{K}$（約 $1.38$ 倍）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 比をとると $\\Theta_D$ と $e^{-1/\\lambda}$ が消えて $\\dfrac{2\\Delta(0)}{kT_c}=\\dfrac{4}{1.13}=3.53$（物質定数を含まない）．\n\n(2) $e^{-1/\\lambda}=\\dfrac{T_c}{1.13\\,\\Theta_D}=\\dfrac{3.40}{122.0}=0.02786$，$\\lambda=\\dfrac1{\\ln35.9}=0.279$．\n$2\\Delta(0)=3.53kT_c=3.53\\times8.617\\times10^{-5}\\times3.40=1.03\\times10^{-3}\\ \\mathrm{eV}=1.03\\ \\mathrm{meV}$．\n\n(3) $\\dfrac{T_c'}{T_c}=\\exp\\!\\left(\\dfrac1\\lambda-\\dfrac1{1.1\\lambda}\\right)=\\exp\\!\\left(\\dfrac{0.0909}{0.279}\\right)=e^{0.326}=1.38$，$T_c'=4.7\\ \\mathrm{K}$．\n$\\lambda$ が小さいほど $T_c$ は $\\lambda$ に指数関数的に敏感で（$d\\ln T_c/d\\ln\\lambda=1/\\lambda\\approx3.6$），10\\% の変化が 38\\% の変化を生む．これは $e^{-1/\\lambda}$ が $\\lambda=0$ でテイラー展開できない（摂動論では得られない）ことの反映でもある．"
+   }
+  ],
+  "idea": {
+   "tex": "弱結合 BCS 公式では $T_c$ と $\\Delta(0)$ が同じ因子 $\\Theta_De^{-1/\\lambda}$ を持つので比が普遍定数 3.53 になり，一方 $T_c$ 自体は $\\lambda$ に指数関数的に敏感である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\lambda$：≈0.279 ; $2\\Delta(0)$ [meV]：≈1.03\n(3) $T_c$ [K]：≈4.7"
+  },
+  "methods": [],
+  "tags": [
+   "BCS理論",
+   "エネルギーギャップ",
+   "臨界温度",
+   "結合定数",
+   "デバイ温度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 3,
+  "minutes": 30,
+  "theme": "臨界磁場曲線から凝縮エネルギーと比熱の飛び",
+  "topic": "臨界磁場曲線から凝縮エネルギーと比熱の飛び",
+  "statement": {
+   "tex": "第一種超伝導体の熱力学的臨界磁場は $B_c(T)=B_{c0}\\left[1-(T/T_c)^2\\right]$ に従う．常伝導相と超伝導相の単位体積あたりのギブズ自由エネルギーの差は $g_n-g_s=B_c(T)^2/(2\\mu_0)$ である．鉛では $T_c=7.19\\ \\mathrm{K}$ で，$T=2.0\\ \\mathrm{K}$ において $0.074\\ \\mathrm{T}$ の磁場で超伝導が壊れる．\n\\begin{enumerate}\n\\item $B_{c0}$ を求めよ．\n\\item $T=0$ での凝縮エネルギー（単位体積あたり）を求めよ．\n\\item エントロピー差 $s_n-s_s$ を $B_c$ で表し，$T=2.0\\ \\mathrm{K}$ で磁場により転移させるときの単位体積あたりの潜熱を求めよ．\n\\item $T=T_c$（零磁場）での比熱の飛び $c_s-c_n$ が $\\dfrac{4B_{c0}^2}{\\mu_0T_c}$ となることを示し，数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0.080\\ \\mathrm{T}$　(2) $2.6\\times10^3\\ \\mathrm{J/m^3}$　(3) $s_n-s_s=-\\frac{B_c}{\\mu_0}\\frac{dB_c}{dT}$，潜熱 $7.3\\times10^2\\ \\mathrm{J/m^3}$　(4) $2.8\\times10^3\\ \\mathrm{J/(m^3K)}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $B_{c0}=\\dfrac{0.074}{1-(2.0/7.19)^2}=\\dfrac{0.074}{0.9226}=0.0802\\ \\mathrm{T}$．\n\n(2) $\\dfrac{B_{c0}^2}{2\\mu_0}=\\dfrac{(0.0802)^2}{2\\times4\\pi\\times10^{-7}}=2.56\\times10^3\\ \\mathrm{J/m^3}$．\n\n(3) $s=-\\partial g/\\partial T$ より $s_n-s_s=-\\dfrac{d}{dT}\\dfrac{B_c^2}{2\\mu_0}=-\\dfrac{B_c}{\\mu_0}\\dfrac{dB_c}{dT}$．$dB_c/dT=-2B_{c0}T/T_c^2<0$ なので $s_n>s_s$（超伝導相の方が秩序が高い）．潜熱は\n\\[ L=T(s_n-s_s)=\\frac{T B_c}{\\mu_0}\\cdot\\frac{2B_{c0}T}{T_c^2}=\\frac{2.0\\times0.074\\times2\\times0.0802\\times2.0}{4\\pi\\times10^{-7}\\times(7.19)^2}=7.3\\times10^2\\ \\mathrm{J/m^3}. \\]\n（磁場中の転移は一次転移で潜熱を伴う．）\n\n(4) $c=T\\,\\partial s/\\partial T$ より $c_s-c_n=T\\dfrac{d}{dT}\\left(\\dfrac{B_c}{\\mu_0}\\dfrac{dB_c}{dT}\\right)=\\dfrac{T}{\\mu_0}\\left[\\left(\\dfrac{dB_c}{dT}\\right)^2+B_c\\dfrac{d^2B_c}{dT^2}\\right]$．$T=T_c$ で $B_c=0$，$dB_c/dT=-2B_{c0}/T_c$ なので\n\\[ c_s-c_n=\\frac{T_c}{\\mu_0}\\cdot\\frac{4B_{c0}^2}{T_c^2}=\\frac{4B_{c0}^2}{\\mu_0T_c}=\\frac{4(0.0802)^2}{4\\pi\\times10^{-7}\\times7.19}=2.8\\times10^3\\ \\mathrm{J/(m^3K)}. \\]\n零磁場の転移では潜熱はなく（$B_c=0$ で $s_n=s_s$）比熱が不連続に跳ぶ二次転移である．"
+   }
+  ],
+  "idea": {
+   "tex": "臨界磁場曲線 $B_c(T)$ が自由エネルギー差 $B_c^2/2\\mu_0$ を与えるので，温度微分で潜熱（磁場中は一次転移）と $T_c$ での比熱の飛び（零磁場は二次転移）が求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [T]：≈0.080\n(2) [J/m³]：≈2.6e3\n(3) 記述\n(4) [J/(m³K)]：≈2.8e3"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "臨界磁場",
+   "凝縮エネルギー",
+   "潜熱",
+   "比熱の飛び",
+   "熱力学"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -633,6 +1533,108 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 4,
+  "minutes": 40,
+  "theme": "薄膜の平行臨界磁場：バルクの上部臨界磁場との違い",
+  "topic": "薄膜の平行臨界磁場：バルクの上部臨界磁場との違い",
+  "statement": {
+   "tex": "線形化したギンツブルグ＝ランダウ方程式\n\\[\n-\\left(\\nabla-\\frac{2ie}{\\hbar}\\boldsymbol A\\right)^2\\psi=\\frac{1}{\\xi(T)^2}\\psi,\\qquad \\xi(T)=\\xi_0\\left(1-\\frac{T}{T_c}\\right)^{-1/2}\n\\]\nの解が現れる最大の磁場が，常伝導相と超伝導相の境界を与える．$\\Phi_0=h/(2e)$ とする．\n\\begin{enumerate}\n\\item バルクの試料で，一様な磁場 $B\\hat z$ をかけたとき（$\\boldsymbol A=(0,Bx,0)$）の境界 $B_{c2}(T)$ を求めよ．\n\\item 厚さ $d\\ (\\ll\\xi)$ の薄膜（$|z|<d/2$）に，膜面に平行な磁場 $B\\hat y$ をかける．$\\boldsymbol A=(Bz,0,0)$ とし，膜面で $\\partial_z\\psi=0$ とする．$d\\ll\\xi$ では $\\psi$ の $z$ 依存性が無視できることを用いて，境界 $B_\\parallel(T)$ を求めよ．\n\\item $B_\\parallel/B_{c2}$ を $\\xi,\\ d$ で表し，$T\\to T_c$ で $B_{c2}$ と $B_\\parallel$ がそれぞれ $1-T/T_c$ の何乗に比例するかを答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B_{c2}=\\dfrac{\\Phi_0}{2\\pi\\xi^2}=\\dfrac{\\Phi_0}{2\\pi\\xi_0^2}\\left(1-\\dfrac{T}{T_c}\\right)$　(2) $B_\\parallel=\\dfrac{\\sqrt3\\,\\Phi_0}{\\pi\\xi d}$　(3) $\\dfrac{B_\\parallel}{B_{c2}}=\\dfrac{2\\sqrt3\\,\\xi}{d}$；$B_{c2}\\propto(1-T/T_c)^1$，$B_\\parallel\\propto(1-T/T_c)^{1/2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$q=2e/\\hbar$ とおく．$\\Phi_0=\\dfrac{h}{2e}=\\dfrac{\\pi\\hbar}{e}$ なので $\\dfrac1q=\\dfrac{\\Phi_0}{2\\pi}$．\n\n(1) $\\psi=e^{iky}f(x)$ とすると\n\\[\n-f''+q^2B^2\\left(x-\\frac{k}{qB}\\right)^2f=\\frac1{\\xi^2}f .\n\\]\nこれは調和振動子で，最小固有値は $qB$（ランダウ準位の最低）．解が存在する最大の磁場は $qB=1/\\xi^2$，\n\\[\n\\boldsymbol{B_{c2}=\\frac{1}{q\\xi^2}=\\frac{\\Phi_0}{2\\pi\\xi^2}=\\frac{\\Phi_0}{2\\pi\\xi_0^2}\\left(1-\\frac{T}{T_c}\\right)}.\n\\]\n\n(2) $\\psi=e^{ikx}f(z)$ とすると $-f''+(k-qBz)^2f=\\xi^{-2}f$．$d\\ll\\xi$ なら境界条件 $f'=0$ のもとで $f$ はほぼ一定で，固有値は $\\langle(k-qBz)^2\\rangle=k^2-2kqB\\langle z\\rangle+q^2B^2\\langle z^2\\rangle$（膜の厚さ方向の平均）．$\\langle z\\rangle=0$，$\\langle z^2\\rangle=d^2/12$ なので $k=0$ で最小 $q^2B^2d^2/12$．これが $1/\\xi^2$ に等しいとして\n\\[\n\\boldsymbol{B_\\parallel=\\frac{\\sqrt{12}}{q\\xi d}=\\frac{\\sqrt{12}\\,\\Phi_0}{2\\pi\\xi d}=\\frac{\\sqrt3\\,\\Phi_0}{\\pi\\xi d}}.\n\\]\n\n(3) $\\boldsymbol{\\dfrac{B_\\parallel}{B_{c2}}=\\dfrac{2\\sqrt3\\,\\xi}{d}}\\gg1$．薄い膜では磁場が渦を作るほどの広がりがなく，秩序変数への影響は $\\langle z^2\\rangle$ で小さく抑えられるので，ずっと強い磁場まで超伝導が残る．$\\xi\\propto(1-T/T_c)^{-1/2}$ より $\\boldsymbol{B_{c2}\\propto(1-T/T_c)^1}$，$\\boldsymbol{B_\\parallel\\propto(1-T/T_c)^{1/2}}$．薄膜の相境界は $T_c$ の近くで放物線ではなく平方根の形で立ち上がる．"
+   }
+  ],
+  "idea": {
+   "tex": "線形化した GL 方程式は荷電粒子のシュレディンガー方程式と同じ形で，境界の磁場は最低固有値が $1/\\xi^2$ に一致する条件で決まる．バルクではランダウ準位 $qB$，薄膜では厚さ方向の平均 $q^2B^2\\langle z^2\\rangle$ が最低固有値になり，温度依存性の指数が変わる．原題はバルクの $H_{c2}(T)$ で，捻りでは薄膜の平行磁場と比べた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $B_{c2}$：((Φ_0)/(2 pi ξ ^(2)))\n(2) $B_\\parallel$：((sqrt(3) Φ_0)/(pi ξ d))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ギンツブルグ＝ランダウ方程式",
+   "上部臨界磁場",
+   "薄膜",
+   "コヒーレンス長"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-06-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-58",
+  "level": 4,
+  "minutes": 45,
+  "theme": "超伝導薄膜の平行臨界磁場の増大",
+  "topic": "超伝導薄膜の平行臨界磁場の増大",
+  "statement": {
+   "tex": "厚さ $d$ の広い超伝導平板が $-d/2\\le x\\le d/2$ を占め，外部から板面に平行な一様磁場 $\\boldsymbol B_0=B_0\\hat{\\boldsymbol z}$ がかかっている．板内ではロンドン方程式 $\\nabla^2\\boldsymbol B=\\boldsymbol B/\\lambda^2$ が成り立ち（$\\lambda$ は侵入長で，磁場によらない一定値とする），超伝導電子の運動エネルギー密度は $\\tfrac12\\mu_0\\lambda^2j^2$ である．端の効果は無視する．\n\\begin{enumerate}\n\\item 板内の磁場 $B_z(x)$ と電流密度 $\\boldsymbol j(x)$ を求めよ．\n\\item 板内の平均磁束密度 $\\bar B$ を $B_0$ と $d/\\lambda$ で表し，$d\\ll\\lambda$ と $d\\gg\\lambda$ の極限での振る舞いを述べよ．\n\\item 外部磁場 $H=B_0/\\mu_0$ を一定に保ったときのギブズ自由エネルギー（単位体積あたり）は，磁場ゼロのときに比べ $\\displaystyle\\Delta g=-\\mu_0\\int_0^{H}M\\,dH'$ だけ増える．ここで $M=\\bar B/\\mu_0-H$ は平均磁化である．$\\Delta g$ を求めよ．\n\\item 超伝導状態の凝縮エネルギー密度を $B_c^2/2\\mu_0$（$B_c$ はバルクの熱力学的臨界磁場）とし，$\\Delta g$ がこれに等しくなる磁場を平行臨界磁場 $B_{c\\parallel}$ とする．$B_{c\\parallel}$ を求め，$d\\ll\\lambda$ では $B_{c\\parallel}\\simeq2\\sqrt3\\,(\\lambda/d)B_c$ となることを示せ．$B_c=10\\ \\mathrm{mT}$，$\\lambda=50\\ \\mathrm{nm}$ で $d=10\\ \\mathrm{nm}$ と $d=500\\ \\mathrm{nm}$ のそれぞれについて $B_{c\\parallel}$ を数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B_z=B_0\\dfrac{\\cosh(x/\\lambda)}{\\cosh(d/2\\lambda)}$，$j_y=-\\dfrac{B_0}{\\mu_0\\lambda}\\dfrac{\\sinh(x/\\lambda)}{\\cosh(d/2\\lambda)}$　(2) $\\bar B=B_0\\dfrac{2\\lambda}{d}\\tanh\\dfrac{d}{2\\lambda}$；$d\\ll\\lambda$ で $\\bar B\\simeq B_0\\big(1-\\frac{d^2}{12\\lambda^2}\\big)$（ほぼ完全侵入），$d\\gg\\lambda$ で $\\bar B\\simeq2\\lambda B_0/d\\to0$（マイスナー状態）　(3) $\\Delta g=\\dfrac{B_0^2}{2\\mu_0}\\Big[1-\\dfrac{2\\lambda}{d}\\tanh\\dfrac{d}{2\\lambda}\\Big]$　(4) $B_{c\\parallel}=B_c\\Big[1-\\dfrac{2\\lambda}{d}\\tanh\\dfrac{d}{2\\lambda}\\Big]^{-1/2}$；$d=10\\ \\mathrm{nm}$：$0.17\\ \\mathrm T$，$d=500\\ \\mathrm{nm}$：$11\\ \\mathrm{mT}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 対称性から $\\boldsymbol B=B(x)\\hat{\\boldsymbol z}$ で $B''=B/\\lambda^2$．$x\\to-x$ で対称，境界で $B(\\pm d/2)=B_0$（接線成分の連続）より\n\\[B_z(x)=B_0\\frac{\\cosh(x/\\lambda)}{\\cosh(d/2\\lambda)}.\\]\n$\\nabla\\times\\boldsymbol B=\\mu_0\\boldsymbol j$ の $y$ 成分 $-\\partial_xB_z=\\mu_0j_y$ より\n\\[j_y=-\\frac{B_0}{\\mu_0\\lambda}\\frac{\\sinh(x/\\lambda)}{\\cosh(d/2\\lambda)},\\]\n両面で逆向きに流れる遮蔽電流で，中心でゼロ．\n\n(2) $\\bar B=\\dfrac1d\\displaystyle\\int_{-d/2}^{d/2}B\\,dx=B_0\\frac{2\\lambda}{d}\\tanh\\frac{d}{2\\lambda}$．$y=d/2\\lambda$ として $\\tanh y/y=1-y^2/3+\\cdots$ より，$d\\ll\\lambda$ では $\\bar B\\simeq B_0(1-d^2/12\\lambda^2)$：磁場はほとんど遮蔽されず，$B$ の中央でのへこみは $B_0d^2/8\\lambda^2$ 程度，電流は $j_y\\simeq-B_0x/\\mu_0\\lambda^2$ と線形．$d\\gg\\lambda$ では $\\tanh\\to1$ で $\\bar B\\simeq2\\lambda B_0/d$：磁場は両表面から厚さ $\\lambda$ だけ侵入し，内部はマイスナー状態．\n\n(3) $\\bar B=\\mu_0Hf$，$f\\equiv\\dfrac{2\\lambda}{d}\\tanh\\dfrac{d}{2\\lambda}$（$H$ によらない）なので $M=-H(1-f)$．\n\\[\\Delta g=\\mu_0(1-f)\\int_0^HH'dH'=\\frac{B_0^2}{2\\mu_0}(1-f).\\]\n（直接 $\\int\\big[B^2/2\\mu_0+\\mu_0\\lambda^2j^2/2\\big]dx-H\\int B\\,dx$ を常伝導の場合 $-B_0^2d/2\\mu_0$ と比較しても同じ結果になる．）完全反磁性（$f=0$）なら $B_0^2/2\\mu_0$ で，薄膜では磁場が侵入するため $1-f$ 倍に小さくなる．\n\n(4) $\\dfrac{B_{c\\parallel}^2}{2\\mu_0}(1-f)=\\dfrac{B_c^2}{2\\mu_0}$ より\n\\[B_{c\\parallel}=\\frac{B_c}{\\sqrt{1-f}}=B_c\\Big[1-\\frac{2\\lambda}{d}\\tanh\\frac{d}{2\\lambda}\\Big]^{-1/2}.\\]\n$d\\ll\\lambda$ では $1-f\\simeq d^2/12\\lambda^2$ なので $B_{c\\parallel}\\simeq\\sqrt{12}\\,\\dfrac{\\lambda}{d}B_c=2\\sqrt3\\dfrac{\\lambda}{d}B_c$．\n・$d=10\\ \\mathrm{nm}$（$d/2\\lambda=0.1$）：$1-f=1-10\\tanh0.1=3.32\\times10^{-3}$，$B_{c\\parallel}=0.010/\\sqrt{3.32\\times10^{-3}}\\approx0.17\\ \\mathrm T$（近似式 $2\\sqrt3\\times5\\times10\\ \\mathrm{mT}=0.173\\ \\mathrm T$ とも一致）．バルクの 17 倍．\n・$d=500\\ \\mathrm{nm}$（$d/2\\lambda=5$）：$f=0.2\\tanh5\\approx0.200$，$B_{c\\parallel}=0.010/\\sqrt{0.800}\\approx11\\ \\mathrm{mT}$ で，ほぼバルクの値．\n薄膜は磁場を排除しないので「排除のエネルギー損」が小さく，非常に強い平行磁場まで超伝導を保てる．（$n_s$ の磁場による抑制を取り入れたギンツブルク–ランダウ理論では係数が $2\\sqrt6$ になるが，$\\lambda/d$ に比例する増大という定性的結論は同じ．）"
+   }
+  ],
+  "idea": {
+   "tex": "平板内の磁場は $\\cosh(x/\\lambda)$ で侵入し，平均磁化が $1-\\frac{2\\lambda}{d}\\tanh\\frac{d}{2\\lambda}$ 倍に弱まる．ギブズ自由エネルギーの増加と凝縮エネルギーを比べると，薄膜の平行臨界磁場が $2\\sqrt3(\\lambda/d)B_c$ と大きく増大することが分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "ロンドン方程式",
+   "侵入長",
+   "薄膜",
+   "磁化",
+   "ギブズ自由エネルギー",
+   "臨界磁場",
+   "凝縮エネルギー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

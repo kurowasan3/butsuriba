@@ -147,6 +147,199 @@
   }
  },
  {
+  "id": "RQ-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 1,
+  "minutes": 20,
+  "theme": "長さ L の箱での離散的なモードと交換関係",
+  "topic": "長さ L の箱での離散的なモードと交換関係",
+  "statement": {
+   "tex": "1+1 次元で長さ $L$ の周期境界条件の実スカラー場を $\\phi(x)=\\sum_p\\dfrac{1}{\\sqrt{2E_pL}}(a_pe^{ipx}+a_p^\\dagger e^{-ipx})$（$p=2\\pi n/L$）と展開する．\n\\begin{enumerate}\n\\item $[\\phi(x),\\pi(y)]=i\\delta(x-y)$ を与える $a_p$ の交換関係を求めよ．\n\\item $L\\to\\infty$ で連続な場合の $(2\\pi)\\delta(p-q)$ に対応することを説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $[a_p,a_q^\\dagger]=\\delta_{pq}$　(2) $\\sum_p\\to\\frac{L}{2\\pi}\\int dp$，$\\delta_{pq}\\to\\frac{2\\pi}L\\delta(p-q)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) この正規化で $\\sum_p\\frac1L e^{ip(x-y)}=\\delta(x-y)$ を使うと $\\boldsymbol{[a_p,a_q^\\dagger]=\\delta_{pq}}$．\n\n(2) 連続の演算子 $a(p)=\\sqrt L\\,a_p$ とおけば $[a(p),a^\\dagger(q)]=L\\delta_{pq}\\to2\\pi\\delta(p-q)$．"
+   }
+  ],
+  "idea": {
+   "tex": "連続な運動量のデルタ関数は，有限の箱の離散的なモードの極限として理解できる．原題の3次元の連続な場合を，箱の中の離散的な場合に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "正準交換関係",
+   "周期境界条件",
+   "生成消滅演算子"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 1,
+  "minutes": 20,
+  "theme": "φ⁴ 相互作用のあるハイゼンベルク方程式",
+  "topic": "φ⁴ 相互作用のあるハイゼンベルク方程式",
+  "statement": {
+   "tex": "$H=\\int d^3x\\left[\\frac12\\pi^2+\\frac12(\\nabla\\phi)^2+\\frac12m^2\\phi^2+\\frac{\\lambda}{4!}\\phi^4\\right]$ とする．\n\\begin{enumerate}\n\\item $\\dot\\phi=i[H,\\phi]$ と $\\dot\\pi=i[H,\\pi]$ を計算せよ．\n\\item $\\phi$ がみたす方程式を求め，古典的なオイラー＝ラグランジュ方程式と一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dot\\phi=\\pi$，$\\dot\\pi=\\nabla^2\\phi-m^2\\phi-\\frac\\lambda6\\phi^3$　(2) $(\\partial^2+m^2)\\phi+\\frac\\lambda6\\phi^3=0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $[\\pi(\\boldsymbol y)^2,\\phi(\\boldsymbol x)]=-2i\\pi\\delta$，$[\\phi^4(\\boldsymbol y),\\pi(\\boldsymbol x)]=4i\\phi^3\\delta$ などから与式．\n\n(2) $\\ddot\\phi=\\nabla^2\\phi-m^2\\phi-\\frac\\lambda6\\phi^3$：オイラー＝ラグランジュ方程式と同じ形（演算子として）．"
+   }
+  ],
+  "idea": {
+   "tex": "ハイゼンベルクの運動方程式は，相互作用があっても古典的な場の方程式と同じ形になる．原題の自由場の場合に相互作用を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ハイゼンベルク描像",
+   "運動方程式",
+   "φ⁴理論"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 1,
+  "minutes": 20,
+  "theme": "4つの場の時間順序積の真空期待値とウィックの定理の項数",
+  "topic": "4つの場の時間順序積の真空期待値とウィックの定理の項数",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item ウィックの定理を用いて $\\langle0|T\\,\\phi_1\\phi_2\\phi_3\\phi_4|0\\rangle$ を $\\Delta_F$ で表せ（$\\phi_i=\\phi(x_i)$）．\n\\item $2n$ 個の場の時間順序積の真空期待値に現れる項の数を求め，$n=3$ の値を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta_{12}\\Delta_{34}+\\Delta_{13}\\Delta_{24}+\\Delta_{14}\\Delta_{23}$　(2) $(2n-1)!!$；$15$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 正規順序の部分の真空期待値は $0$ で，完全な縮約だけが残る：与式．\n\n(2) 1つ目の場の相手は $2n-1$ 通り，残りで再帰的に $\\boldsymbol{(2n-1)!!}$．$n=3$ で $\\boldsymbol{15}$．"
+   }
+  ],
+  "idea": {
+   "tex": "真空期待値ではすべての場が縮約された項だけが残り，ペアの作り方の数だけ項がある．原題の3つの場の検証を，4つの場の真空期待値に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) Δ_12 Δ_34 + Δ_13 Δ_24 + Δ_14 Δ_23\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ウィックの定理",
+   "縮約",
+   "組合せ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 1,
+  "minutes": 20,
+  "theme": "電波の1波長の立方体に含まれる光子数：古典的な場が現れる条件",
+  "topic": "電波の1波長の立方体に含まれる光子数：古典的な場が現れる条件",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 周波数 $100\\ \\mathrm{MHz}$，強度 $1\\ \\mathrm{W/m^2}$ の電波で，1辺が波長の立方体に含まれる光子の数を見積もれ．\n\\item 古典的な電磁場が成り立つのに，電子の古典的な場がない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sim10^{18}$　(2) フェルミオンは1つの状態に1個しか入れない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) エネルギー密度 $I/c=3.3\\times10^{-9}\\ \\mathrm{J/m^3}$，体積 $27\\ \\mathrm{m^3}$，光子1個 $6.6\\times10^{-26}$ J：$\\boldsymbol{\\sim1.4\\times10^{18}}$ 個．\n\n(2) ボース粒子は1つのモードに巨視的な数が入り（コヒーレント状態），古典的な場になる．フェルミオンはパウリの原理で占有数が1以下なので，古典的な場にならない．"
+   }
+  ],
+  "idea": {
+   "tex": "古典的な場は1つのモードの占有数が大きいボース粒子の極限である．原題の思想的な問いに，具体的な数の見積もりを加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "古典極限",
+   "光子数",
+   "フェルミオン",
+   "ボース粒子"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "RQ-04-004",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -294,6 +487,735 @@
   }
  },
  {
+  "id": "RQ-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "質量の異なる2つの実スカラー場では回転の電荷が保存しない",
+  "topic": "質量の異なる2つの実スカラー場では回転の電荷が保存しない",
+  "statement": {
+   "tex": "$\\mathcal L=\\frac12\\partial\\phi_1\\cdot\\partial\\phi_1+\\frac12\\partial\\phi_2\\cdot\\partial\\phi_2-\\frac12m_1^2\\phi_1^2-\\frac12m_2^2\\phi_2^2$ を考える．\n\\begin{enumerate}\n\\item $m_1=m_2$ のとき，$Q=\\int d^3x(\\dot\\phi_1\\phi_2-\\dot\\phi_2\\phi_1)$ が保存することを示せ．\n\\item $m_1\\ne m_2$ のとき $\\dot Q$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $\\dot Q=(m_2^2-m_1^2)\\int\\phi_1\\phi_2\\,d^3x$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot Q=\\int(\\ddot\\phi_1\\phi_2-\\ddot\\phi_2\\phi_1)$，$\\ddot\\phi_i=\\nabla^2\\phi_i-m^2\\phi_i$ を入れ部分積分すると $0$．\\hfill$\\square$\n\n(2) 同じ計算で質量の項が残り $\\boldsymbol{\\dot Q=(m_2^2-m_1^2)\\int\\phi_1\\phi_2}$（対称性を破る項に比例）．"
+   }
+  ],
+  "idea": {
+   "tex": "ネーターの保存量は対称性が破れると保存しなくなり，その変化率は破れの大きさに比例する．原題の SO(3) 対称な場合に，対称性の破れを加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ネーターの定理",
+   "対称性の破れ",
+   "保存量"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ブーストの保存電荷とエネルギー重心の等速運動",
+  "topic": "ブーストの保存電荷とエネルギー重心の等速運動",
+  "statement": {
+   "tex": "エネルギー運動量テンソル $T^{\\mu\\nu}$ が保存し対称であるとする．ブーストのネーター電荷は $K^i=\\int d^3x(x^iT^{00}-tT^{0i})$ である．\n\\begin{enumerate}\n\\item $dK^i/dt=0$ を示せ．\n\\item エネルギーの重心 $X^i_E=\\dfrac{1}{E}\\int x^iT^{00}d^3x$ が速度 $P^i/E$ で等速運動することを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) 証明"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_tT^{00}=-\\partial_jT^{j0}$ と部分積分で $\\int x^i\\partial_tT^{00}=\\int T^{i0}$．これが $\\int T^{0i}=P^i$ を打ち消す．\\hfill$\\square$\n\n(2) $K^i=EX^i_E-tP^i$ が一定なので $\\dot X^i_E=P^i/E$．\\hfill$\\square$"
+   }
+  ],
+  "idea": {
+   "tex": "ブーストの対称性の保存量は，エネルギーの重心の等速運動を表す．原題の電荷の導出に，その解釈を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "ネーターの定理",
+   "ブースト",
+   "エネルギー運動量テンソル",
+   "重心"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "古典的なスケール不変性をもつ相互作用のべき：3・4・6次元",
+  "topic": "古典的なスケール不変性をもつ相互作用のべき：3・4・6次元",
+  "statement": {
+   "tex": "$d$ 次元時空のスカラー場の作用 $S=\\int d^dx\\left[\\frac12(\\partial\\phi)^2-g\\phi^p\\right]$ を考える．\n\\begin{enumerate}\n\\item 運動項が不変になるスケーリング次元 $D$ を求めよ．\n\\item $g\\phi^p$ の項もスケール不変になる $p$ を $d$ で求め，整数になる $d$ と $p$ の組を挙げよ．\n\\item 質量項がスケール不変性を破る理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $D=\\dfrac{d-2}2$　(2) $p=\\dfrac{2d}{d-2}$；$(d,p)=(3,6),(4,4),(6,3)$　(3) 質量が長さの尺度を導入する"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\int d^dx(\\partial\\phi)^2$ が不変：$d-2-2D=0$．\n\n(2) $d-pD=0$ より $\\boldsymbol{p=2d/(d-2)}$．$\\boldsymbol{(3,6),(4,4),(6,3)}$（$d=2$ では任意のべき）．\n\n(3) $m^2\\phi^2$ は次元 $d-2$ の係数をもち不変でない．"
+   }
+  ],
+  "idea": {
+   "tex": "古典的なスケール不変性は結合定数が無次元であることと同じで，次元によって許されるべきが決まる．原題の4次元の議論を一般の次元に広げた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $D$：((d -2)/(2))\n(2) $p$：((2d)/(d-2)) ; $(d,p)$：{(3, 6), (4, 4), (6, 3)}\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "スケール不変性",
+   "スケーリング次元",
+   "相互作用"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "真空のエネルギー密度をプランクスケールで切ると観測値の10^120倍",
+  "topic": "真空のエネルギー密度をプランクスケールで切ると観測値の10^120倍",
+  "statement": {
+   "tex": "質量のないスカラー場の正規順序をとらないハミルトニアンの真空期待値は $\\langle0|H|0\\rangle=V\\int\\dfrac{d^3p}{(2\\pi)^3}\\dfrac{|\\boldsymbol p|}{2}$ である（$\\hbar=c=1$）．\n\\begin{enumerate}\n\\item 運動量の上限 $\\Lambda$ で切ったときのエネルギー密度を求めよ．\n\\item $\\Lambda=1.2\\times10^{19}\\ \\mathrm{GeV}$ のときの値を GeV$^4$ で求め，観測される暗黒エネルギー密度 $(2.3\\ \\mathrm{meV})^4$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\Lambda^4}{16\\pi^2}$　(2) $\\sim10^{74}\\ \\mathrm{GeV^4}$；約 $10^{120}$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{4\\pi}{(2\\pi)^3}\\int_0^\\Lambda\\dfrac{p^3}{2}dp=\\boldsymbol{\\dfrac{\\Lambda^4}{16\\pi^2}}$．\n\n(2) $\\approx1.4\\times10^{74}\\ \\mathrm{GeV^4}$．$(2.3\\times10^{-12})^4\\approx2.8\\times10^{-47}$ との比は $\\boldsymbol{10^{120}}$（宇宙定数問題）．"
+   }
+  ],
+  "idea": {
+   "tex": "正規順序で捨てた零点エネルギーは重力に結合すれば観測可能で，素朴な見積もりは観測と $10^{120}$ 倍ずれる．原題の正規順序の計算に，その代償を考えさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ((Λ ^(4))/(16 pi ^(2)))\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "零点エネルギー",
+   "宇宙定数問題",
+   "カットオフ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "質量のない場の同時刻の相関は 1/(4π²r²)",
+  "topic": "質量のない場の同時刻の相関は 1/(4π²r²)",
+  "statement": {
+   "tex": "質量のない実スカラー場の真空の2点関数 $D(x-y)=\\langle0|\\phi(x)\\phi(y)|0\\rangle=\\displaystyle\\int\\frac{d^3p}{(2\\pi)^32|\\boldsymbol p|}e^{-ip\\cdot(x-y)}$ を考える．\n\\begin{enumerate}\n\\item 同時刻（$x^0=y^0$）で $D=\\dfrac{1}{4\\pi^2r^2}$（$r=|\\boldsymbol x-\\boldsymbol y|$）を示せ．\n\\item 空間的に離れた点でも相関が $0$ でないことと，因果律が破れないことは矛盾しないか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) 矛盾しない（交換子は $0$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 角度積分で $\\dfrac{1}{4\\pi^2r}\\int_0^\\infty\\sin pr\\,dp=\\dfrac{1}{4\\pi^2r^2}$（収束因子で）．\\hfill$\\square$\n\n(2) 因果律は交換子 $[\\phi(x),\\phi(y)]=D(x-y)-D(y-x)$ が空間的に $0$ であることで，相関（真空のもつれ）は信号を送れない．"
+   }
+  ],
+  "idea": {
+   "tex": "真空には空間的に離れた点の間にも相関があるが，交換子が消えるので因果律は保たれる．原題の1粒子状態の行列要素を，2点関数の計算に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "2点関数",
+   "真空の相関",
+   "もつれ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "閉じた弦の正準交換関係とデルタ関数のモード和",
+  "topic": "閉じた弦の正準交換関係とデルタ関数のモード和",
+  "statement": {
+   "tex": "閉じた弦で $[x^\\mu,p^\\nu]=i\\eta^{\\mu\\nu}$，$[\\alpha^\\mu_m,\\alpha^\\nu_n]=m\\eta^{\\mu\\nu}\\delta_{m+n,0}$（$\\tilde\\alpha$ も同様）とする．\n\\begin{enumerate}\n\\item $[X^\\mu(\\sigma),\\Pi^\\nu(\\sigma')]$ が $\\frac{1}{2\\pi}\\sum_ne^{in(\\sigma-\\sigma')}$ に比例することを示せ．\n\\item その和がデルタ関数であることを示し，$[X,\\Pi]=i\\eta\\delta(\\sigma-\\sigma')$ を得よ．\n\\item ゼロモードと振動の寄与がそれぞれ何を与えるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 計算　(2) フーリエ級数の完全性　(3) ゼロモードが $n=0$ の項，振動が $n\\neq0$ の項"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1)(2) $\\Pi=T\\dot X$ と展開を使い，$\\alpha$ と $\\tilde\\alpha$ の項が $e^{\\pm in(\\sigma-\\sigma')}$ を与える．\n\n(3) $x,p$ が定数項 $\\frac1{2\\pi}$ を与える．"
+   }
+  ],
+  "idea": {
+   "tex": "モードの交換関係と場の交換関係は，フーリエ級数の完全性で結ばれる．原題の計算を，各項の役割の理解にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "正準量子化",
+   "モード展開",
+   "デルタ関数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "2枚の D ブレーンの間に張った弦の古典的なエネルギーと W ボソン",
+  "topic": "2枚の D ブレーンの間に張った弦の古典的なエネルギーと W ボソン",
+  "statement": {
+   "tex": "距離 $d$ 離れた平行な2枚の D ブレーンの間に張った開いた弦を考える．\n\\begin{enumerate}\n\\item 横方向 $X^\\perp$ のモード展開を書け．\n\\item 振動のない最低エネルギーの配位のエネルギーを求めよ．\n\\item これがゲージボソンの質量に対応するという解釈を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $X^\\perp=x_1+\\frac{d}{\\pi}\\sigma+\\sum\\frac1n\\alpha_ne^{-in\\tau}\\sin n\\sigma$ の形　(2) $E=Td=\\dfrac{d}{2\\pi\\alpha'}$　(3) ブレーンが重なると質量 $0$ になり，非可換ゲージ対称性が現れる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma=0,\\pi$ で $x_1,x_2$ に固定．\n\n(2) 長さ×張力．\n\n(3) 対称性の破れでのヒッグス機構に相当．"
+   }
+  ],
+  "idea": {
+   "tex": "ブレーン間の弦の質量は距離に比例し，ブレーンの位置がヒッグス場の期待値の役割をする．原題の展開に物理的な解釈を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Dブレーン",
+   "ディリクレ境界条件",
+   "弦の張力",
+   "質量"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "頂点演算子の OPE：e^{ik₁X} e^{ik₂X} ～ |z−w|^{α′k₁·k₂}",
+  "topic": "頂点演算子の OPE：e^{ik₁X} e^{ik₂X} ～ |z−w|^{α′k₁·k₂}",
+  "statement": {
+   "tex": "$\\langle X(z)X(w)\\rangle=-\\frac{\\alpha'}2\\ln|z-w|^2$ とする．\n\\begin{enumerate}\n\\item $:e^{ik_1X(z)}::e^{ik_2X(w)}:\\sim|z-w|^{\\alpha'k_1k_2}:e^{i(k_1+k_2)X(w)}:$ を示せ．\n\\item $:e^{ikX}:$ の共形ウェイトを求めよ．\n\\item ウェイト $(1,1)$ となる条件から閉じた弦のタキオンの質量を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) ウィックの定理で $e^{-k_1k_2\\langle XX\\rangle}$　(2) $h=\\bar h=\\frac{\\alpha'k^2}4$　(3) $k^2=\\frac4{\\alpha'}$，$M^2=-\\frac4{\\alpha'}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 縮約の指数化：$e^{k_1k_2\\frac{\\alpha'}2\\ln|z-w|^2}$．\n\n(3) $M^2=-k^2$（$\\eta=(-,+,\\ldots)$）．"
+   }
+  ],
+  "idea": {
+   "tex": "頂点演算子の積の OPE が散乱振幅の基礎である．原題の一次演算子の確認に，OPE と質量を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "頂点演算子",
+   "OPE",
+   "共形ウェイト",
+   "タキオン"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "線形ディラトンで c = 26 にする：4次元の弦の Q",
+  "topic": "線形ディラトンで c = 26 にする：4次元の弦の Q",
+  "statement": {
+   "tex": "線形ディラトンのボソンの中心電荷は $c=1+6\\alpha'Q^2$ である．\n\\begin{enumerate}\n\\item $D-1$ 個の自由ボソンと1個の線形ディラトンで全体の中心電荷を $26$ にする $Q^2$ を求めよ．\n\\item $D=4$ の値を求めよ．\n\\item $D>26$ では何が起こるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q^2=\\dfrac{26-D}{6\\alpha'}$　(2) $Q^2=\\dfrac{11}{3\\alpha'}$　(3) $Q^2<0$：$Q$ が虚数（時間的な線形ディラトン）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(D-1)+1+6\\alpha'Q^2=26$．\n\n(2) $22/6$．\n\n(3) 時間方向の線形ディラトン（宇宙論的な解）が必要．"
+   }
+  ],
+  "idea": {
+   "tex": "線形ディラトンは中心電荷を調整し，臨界次元以外の弦理論を可能にする．原題の OPE の計算の先に，その用途を示した．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "線形ディラトン",
+   "中心電荷",
+   "臨界次元",
+   "非臨界弦"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "重力子・B 場・ディラトンの物理的偏極の数え上げ",
+  "topic": "重力子・B 場・ディラトンの物理的偏極の数え上げ",
+  "statement": {
+   "tex": "$\\zeta_{\\mu\\nu}:\\partial X^\\mu\\bar\\partial X^\\nu e^{ikX}:$ が $(1,1)$ の一次演算子になる条件は $k^2=0$，$k^\\mu\\zeta_{\\mu\\nu}=k^\\nu\\zeta_{\\mu\\nu}=0$ である．\n\\begin{enumerate}\n\\item ゲージ同値 $\\zeta_{\\mu\\nu}\\sim\\zeta_{\\mu\\nu}+k_\\mu\\xi_\\nu+\\xi'_\\mu k_\\nu$ を考えると，$D=26$ で独立な偏極は $24\\times24$ になることを述べよ．\n\\item これを $SO(24)$ の表現に分解し，各粒子を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 横方向の成分だけが残る　(2) $576=299+276+1$：重力子，反対称テンソル $B$，ディラトン"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(2) 対称トレースレス $\\frac{24\\cdot25}2-1=299$，反対称 $276$，トレース $1$．"
+   }
+  ],
+  "idea": {
+   "tex": "閉じた弦の質量のない状態は重力子を含み，弦理論が量子重力であることを示す．原題の一次性の条件に，粒子の同定を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "一次演算子",
+   "閉じた弦の質量のない状態",
+   "重力子",
+   "偏極"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "マヨラナフェルミオンの c = ½ から超弦の臨界次元 10",
+  "topic": "マヨラナフェルミオンの c = ½ から超弦の臨界次元 10",
+  "statement": {
+   "tex": "2次元のマヨラナフェルミオン1つの中心電荷は $c=\\frac12$ である．\n\\begin{enumerate}\n\\item ディラックフェルミオンの中心電荷を答えよ．\n\\item 超弦では各方向にボソン1つとマヨラナフェルミオン1つがあり，ゴースト（$bc$ と $\\beta\\gamma$）の合計は $-26+11=-15$ である．臨界次元を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1$　(2) $\\frac32D=15$ で $D=10$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) マヨラナ2つ．\n\n(2) $D(1+\\frac12)-15=0$．"
+   }
+  ],
+  "idea": {
+   "tex": "中心電荷の勘定だけで超弦の臨界次元が出る．原題の $c=\\frac12$ の導出に，その帰結を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 1\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "マヨラナフェルミオン",
+   "中心電荷",
+   "超弦",
+   "臨界次元"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "bc 系の中心電荷の公式を λ = 2，½，3/2 に適用する",
+  "topic": "bc 系の中心電荷の公式を λ = 2，½，3/2 に適用する",
+  "statement": {
+   "tex": "$bc$ 系（フェルミオン）の中心電荷は $c=-12\\lambda^2+12\\lambda-2$，同じウェイトのボソン的な $\\beta\\gamma$ 系は符号が逆である．\n\\begin{enumerate}\n\\item $\\lambda=2$（ボソン弦のゴースト）の $c$ を求めよ．\n\\item $\\lambda=\\frac12$ では何になるか，その意味を述べよ．\n\\item $\\lambda=\\frac32$ の $\\beta\\gamma$ 系（超弦のゴースト）の $c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-26$　(2) $1$：ディラックフェルミオン　(3) $11$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $-48+24-2$．\n\n(2) $-3+6-2=1$．$b,c$ がともにウェイト $\\frac12$ のふつうのフェルミオン．\n\n(3) $-(-27+18-2)=11$．"
+   }
+  ],
+  "idea": {
+   "tex": "1つの公式でボソン弦と超弦のゴーストの寄与がわかる．原題の公式の導出を，その応用にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -26\n(2) 記述\n(3) 11"
+  },
+  "methods": [],
+  "tags": [
+   "ゴースト",
+   "bc系",
+   "中心電荷",
+   "βγ系"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "OPE から [α_m, α_n] と [L_m, α_n] を導く",
+  "topic": "OPE から [α_m, α_n] と [L_m, α_n] を導く",
+  "statement": {
+   "tex": "$\\partial X(z)\\partial X(w)\\sim-\\frac{\\alpha'}2\\frac1{(z-w)^2}$，$i\\partial X=\\sqrt{\\frac{\\alpha'}2}\\sum\\alpha_mz^{-m-1}$ とする．\n\\begin{enumerate}\n\\item 周回積分の方法で $[\\alpha_m,\\alpha_n]=m\\delta_{m+n,0}$ を示せ．\n\\item $\\partial X$ がウェイト1の一次場であることから $[L_m,\\alpha_n]=-n\\alpha_{m+n}$ を示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\oint\\oint z^mw^n(z-w)^{-2}$ の留数　(2) 一次場のモードの一般公式 $[L_m,\\phi_n]=((h-1)m-n)\\phi_{m+n}$ で $h=1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\oint_w dz\\,z^m(z-w)^{-2}=mw^{m-1}$，$\\oint dw\\,mw^{m+n-1}=m\\delta_{m+n,0}$．\n\n(2) 確認．"
+   }
+  ],
+  "idea": {
+   "tex": "OPE と周回積分でモードの交換関係が得られる．原題の計算に，ヴィラソロ生成子との交換関係を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "OPE",
+   "モードの交換関係",
+   "ヴィラソロ生成子"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "電場のある D ブレーン：臨界電場 E_c = 1/(2πα′)",
+  "topic": "電場のある D ブレーン：臨界電場 E_c = 1/(2πα′)",
+  "statement": {
+   "tex": "D ブレーン上の一様な電場 $F_{01}=E$ の下で，ボルン＝インフェルトのラグランジアンは $\\sqrt{-\\det(\\eta+2\\pi\\alpha'F)}$ である．\n\\begin{enumerate}\n\\item これを $E$ で表せ．\n\\item 臨界電場 $E_c$ を求め，その意味を述べよ．\n\\item 境界条件 $\\partial_\\sigma X^1=2\\pi\\alpha'E\\,\\partial_\\tau X^0$ から，$E\\to E_c$ で弦の端がどうなるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sqrt{1-(2\\pi\\alpha'E)^2}$　(2) $E_c=\\dfrac1{2\\pi\\alpha'}$；それ以上で作用が虚数（弦の対生成による不安定）　(3) 端の電荷に働く力が張力とつり合い，弦が無限に引き伸ばされる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $2\\times2$ の行列式 $-1+(2\\pi\\alpha'E)^2$．\n\n(2) 確認．\n\n(3) 張力 $T=\\frac1{2\\pi\\alpha'}$ と電場の力 $E$ が等しい．"
+   }
+  ],
+  "idea": {
+   "tex": "弦理論の電場には上限があり，ボルン＝インフェルト作用の平方根に表れる．原題の境界条件の導出を，臨界電場の物理にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ボルン＝インフェルト",
+   "臨界電場",
+   "境界条件",
+   "開いた弦"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ブレーン間の弦の基底状態がタキオンでなくなる臨界距離",
+  "topic": "ブレーン間の弦の基底状態がタキオンでなくなる臨界距離",
+  "statement": {
+   "tex": "距離 $d$ の2枚の D ブレーンの間の弦の質量は $M^2=\\left(\\frac{d}{2\\pi\\alpha'}\\right)^2+\\frac{N-1}{\\alpha'}$ である．\n\\begin{enumerate}\n\\item 基底状態（$N=0$）の質量が $0$ になる臨界距離を求めよ．\n\\item 第1励起状態の質量を求め，ゲージボソンとしての解釈を述べよ．\n\\item $d\\to0$ で現れるゲージ対称性を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $d_c=2\\pi\\sqrt{\\alpha'}$　(2) $M=\\dfrac{d}{2\\pi\\alpha'}$：2つの $U(1)$ に電荷をもつ W ボソン　(3) $U(2)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\frac{d^2}{4\\pi^2\\alpha'^2}=\\frac1{\\alpha'}$．\n\n(2) $N=1$：$M=Td$．\n\n(3) W ボソンが質量 $0$ になり $U(1)^2\\to U(2)$．"
+   }
+  ],
+  "idea": {
+   "tex": "ブレーンが近づくと弦の状態が質量を失い，非可換ゲージ対称性が現れる．原題の多くの問いを，臨界距離と対称性の増大にしぼった．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) U (2)"
+  },
+  "methods": [],
+  "tags": [
+   "Dブレーン",
+   "タキオン",
+   "Wボソン",
+   "ゲージ対称性の増大"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "RQ-04-007",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -435,6 +1357,395 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 30,
+  "theme": "弦の零点エネルギーをゼータ関数で正則化するとカシミールエネルギー",
+  "topic": "弦の零点エネルギーをゼータ関数で正則化するとカシミールエネルギー",
+  "statement": {
+   "tex": "両端固定の長さ $a$ の弦の量子化で $H=\\sum_n\\omega_n(a_n^\\dagger a_n+\\frac12)$，$\\omega_n=n\\pi c/a$ である．\n\\begin{enumerate}\n\\item 零点エネルギーが発散することを示せ．\n\\item $\\sum_{n=1}^\\infty n=\\zeta(-1)=-\\frac1{12}$ と置きかえて有限部分を求めよ．\n\\item 弦の長さを変えるときの力を求め，引力か斥力かを答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{\\pi c}{2a}\\sum n$ が発散　(2) $E_0=-\\dfrac{\\pi\\hbar c}{24a}$　(3) $F=-\\dfrac{\\pi\\hbar c}{24a^2}$（引力）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E_0=\\frac12\\sum\\hbar\\omega_n=\\frac{\\pi\\hbar c}{2a}\\sum n$．\n\n(2) $\\frac{\\pi\\hbar c}{2a}\\left(-\\frac1{12}\\right)=\\boldsymbol{-\\dfrac{\\pi\\hbar c}{24a}}$（1次元のカシミールエネルギー）．\n\n(3) $F=-\\partial_aE_0=\\boldsymbol{-\\dfrac{\\pi\\hbar c}{24a^2}}$：端を引き寄せる\\textbf{引力}．"
+   }
+  ],
+  "idea": {
+   "tex": "零点エネルギーは発散するが，境界に依存する有限部分は観測可能なカシミール力を与える．原題の生成消滅演算子の導入に，零点エネルギーの物理を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $E_0$：-((pi hbar c)/(24 a))\n(3) $F$：-((pi hbar c)/(24 a ^(2)))"
+  },
+  "methods": [],
+  "tags": [
+   "零点エネルギー",
+   "ゼータ関数正則化",
+   "カシミール効果"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 30,
+  "theme": "スカラー場を反交換関係で量子化すると因果律が破れる",
+  "topic": "スカラー場を反交換関係で量子化すると因果律が破れる",
+  "statement": {
+   "tex": "実スカラー場を $\\{a_p,a_q^\\dagger\\}=(2\\pi)^3\\delta^3(\\boldsymbol p-\\boldsymbol q)$ で量子化したとする．\n\\begin{enumerate}\n\\item $\\{\\phi(x),\\phi(y)\\}=D(x-y)+D(y-x)$ を示せ．\n\\item 空間的に離れた点でこれが $0$ でないことを（質量0の同時刻の場合で）示せ．\n\\item ハミルトニアンは正だが，何が問題か述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $\\dfrac{2}{4\\pi^2r^2}\\ne0$　(3) 空間的に離れた観測量が交換しない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 反交換関係で $aa^\\dagger+a^\\dagger a$ の真空期待値をとると与式．\n\n(2) 同時刻の $D=\\frac{1}{4\\pi^2r^2}$ から $\\boldsymbol{\\frac{1}{2\\pi^2r^2}}$．\n\n(3) $\\phi$ 自身が観測量なので，空間的に離れた測定が互いに影響し因果律が破れる（スピン0は交換関係，スピン $\\frac12$ は反交換関係：スピンと統計の定理）．"
+   }
+  ],
+  "idea": {
+   "tex": "スピンと統計の関係は，正のエネルギーと因果律の両立から決まる．原題のディラック場を交換関係で量子化する例の逆を考えさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "スピンと統計",
+   "反交換関係",
+   "因果律"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 30,
+  "theme": "角運動量の振動子表示：α^1_{−1} + iα^2_{−1} の状態はスピン 1",
+  "topic": "角運動量の振動子表示：α^1_{−1} + iα^2_{−1} の状態はスピン 1",
+  "statement": {
+   "tex": "開いた弦の角運動量のスピン部分は $S^{ij}=-i\\sum_{n\\geqq1}\\frac1n(\\alpha^i_{-n}\\alpha^j_n-\\alpha^j_{-n}\\alpha^i_n)$ で，$[\\alpha^i_m,\\alpha^j_n]=m\\delta^{ij}\\delta_{m+n,0}$．\n\\begin{enumerate}\n\\item $[S^{12},\\alpha^1_{-1}]$ と $[S^{12},\\alpha^2_{-1}]$ を求めよ．\n\\item $|\\pm\\rangle=\\frac1{\\sqrt2}(\\alpha^1_{-1}\\pm i\\alpha^2_{-1})|0\\rangle$ の $S^{12}$ の固有値を求めよ．\n\\item これがレベル1の状態の解釈に意味することを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $[S^{12},\\alpha^1_{-1}]=i\\alpha^2_{-1}$，$[S^{12},\\alpha^2_{-1}]=-i\\alpha^1_{-1}$　(2) $\\pm1$　(3) ベクトル粒子（光子）のヘリシティ $\\pm1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n=1$ の項だけが効く：$-i(\\alpha^1_{-1}[\\alpha^2_1,\\alpha^1_{-1}]-\\alpha^2_{-1}[\\alpha^1_1,\\alpha^1_{-1}])=i\\alpha^2_{-1}$．同様に $[S^{12},\\alpha^2_{-1}]=-i\\alpha^1_{-1}$．\n\n(2) $S^{12}|0\\rangle=0$ なので $S^{12}(\\alpha^1_{-1}\\pm i\\alpha^2_{-1})|0\\rangle=(i\\alpha^2_{-1}\\pm\\alpha^1_{-1})|0\\rangle=\\pm(\\alpha^1_{-1}\\pm i\\alpha^2_{-1})|0\\rangle$．\n\n(3) 開いた弦の最初の励起状態はスピン1．"
+   }
+  ],
+  "idea": {
+   "tex": "ネーターの電荷を振動子で書くと，弦の状態のスピンが直接読める．原題の保存電流の導出を，スピンの固有値の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) {+1, -1}\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ローレンツ生成子",
+   "開いた弦",
+   "スピン",
+   "振動子"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 30,
+  "theme": "光円錐ゲージのレベル2・3・4の状態の数と SO(25) の表現",
+  "topic": "光円錐ゲージのレベル2・3・4の状態の数と SO(25) の表現",
+  "statement": {
+   "tex": "光円錐ゲージの開いた弦（横方向 $24$）の状態の数は $\\prod_n(1-q^n)^{-24}$ の係数で与えられる．\n\\begin{enumerate}\n\\item レベル $2,3,4$ の状態の数を求めよ．\n\\item レベル2が $SO(25)$ の対称トレースレス2階テンソルの次元と一致することを確かめよ．\n\\item レベル3が対称トレースレス3階テンソルと反対称2階テンソルの和に一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $324$，$3200$，$25650$　(2) $\\frac{25\\cdot26}2-1=324$　(3) $2900+300=3200$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 数値で展開．\n\n(3) 対称3階：$\\binom{27}3=2925$ からトレース $25$ を引いて $2900$．反対称：$300$．"
+   }
+  ],
+  "idea": {
+   "tex": "質量のある状態は $SO(25)$ の表現にまとまり，ローレンツ不変性が光円錐ゲージでも成り立つ．原題の具体的な構成を，母関数での数え上げにした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((25*26)/(2))-1\n(3) 2900+300"
+  },
+  "methods": [],
+  "tags": [
+   "光円錐量子化",
+   "状態の数え上げ",
+   "分配関数",
+   "SO(25)表現"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 35,
+  "theme": "⟨0|[L₂, L₋₂]|0⟩ から中心電荷 c = D を求め，ゴーストで D = 26",
+  "topic": "⟨0|[L₂, L₋₂]|0⟩ から中心電荷 c = D を求め，ゴーストで D = 26",
+  "statement": {
+   "tex": "$D$ 個の自由なボソンの $L_n=\\frac12\\sum_m\\alpha_{n-m}\\cdot\\alpha_m$ を考える（$p=0$）．\n\\begin{enumerate}\n\\item $L_{-2}|0\\rangle=\\frac12\\alpha_{-1}\\cdot\\alpha_{-1}|0\\rangle$ を示し，そのノルムを求めよ．\n\\item $[L_2,L_{-2}]=4L_0+\\frac c{12}(8-2)$ から $c$ を求めよ．\n\\item ゴーストの中心電荷が $-26$ であることから臨界次元を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac D2$　(2) $c=D$　(3) $D=26$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\frac14\\langle\\alpha_1\\cdot\\alpha_1\\,\\alpha_{-1}\\cdot\\alpha_{-1}\\rangle=\\frac14\\cdot2D$．\n\n(2) $\\frac D2=\\frac c2$．\n\n(3) $D-26=0$．"
+   }
+  ],
+  "idea": {
+   "tex": "中心電荷は1つの行列要素で決まり，ゴーストと合わせて臨界次元が出る．原題の一般の導出を，最短の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ((D)/(2))\n(2) $c$：D\n(3) $D$：26"
+  },
+  "methods": [],
+  "tags": [
+   "ヴィラソロ代数",
+   "中心電荷",
+   "臨界次元",
+   "ゴースト"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 30,
+  "theme": "シュワルツ微分で平面から円柱へ：L₀ のずれ −c/24",
+  "topic": "シュワルツ微分で平面から円柱へ：L₀ のずれ −c/24",
+  "statement": {
+   "tex": "$T$ は $T(w)=\\left(\\frac{dz}{dw}\\right)^2T(z)+\\frac c{12}\\{z;w\\}$ で変換する．$\\{z;w\\}=\\frac{z^{(3)}}{z'}-\\frac32\\left(\\frac{z''}{z'}\\right)^2$．\n\\begin{enumerate}\n\\item $z=e^{-iw}$ のとき $\\{z;w\\}=\\frac12$ を示せ．\n\\item 円柱の $T$ のゼロモードが $L_0-\\frac c{24}$ になることを示せ．\n\\item 光円錐ゲージの横方向 $c=24$ で，基底状態のエネルギーと開いた弦のタキオンの関係を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\{z;w\\}=-1+\\frac32=\\frac12$　(2) $T_{\\rm cyl}=-z^2T(z)+\\frac c{24}$　(3) $-\\frac{24}{24}=-1$ のずれが $a=1$ を与え，$M^2=-1/\\alpha'$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $z'=-iz$，$z''=-z$，$z^{(3)}=iz$．\n\n(2) モード展開で $-z^2T(z)$ のゼロモードは $-L_0$ に対応し，符号の規約を合わせて $L_0-\\frac c{24}$．\n\n(3) 確認．"
+   }
+  ],
+  "idea": {
+   "tex": "正規順序定数は平面から円柱への写像のカシミールエネルギーとして現れる．原題の変換則の検証を，物理的な帰結の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\{z;w\\}$：-1+((3)/(2))\n(2) $T_{\\rm cyl}$：- z ^(2) T (z)+((c)/(24))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "シュワルツ微分",
+   "カシミールエネルギー",
+   "円柱",
+   "正規順序定数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 30,
+  "theme": "ボルン＝インフェルト作用の F⁴ までの展開",
+  "topic": "ボルン＝インフェルト作用の F⁴ までの展開",
+  "statement": {
+   "tex": "$\\mathcal L=\\sqrt{\\det(1+F)}$（$F$ は反対称行列，$2\\pi\\alpha'=1$）とする．\n\\begin{enumerate}\n\\item $\\det(1+F)=\\exp\\mathrm{tr}\\ln(1+F)$ と，反対称行列の奇数冪のトレースが $0$ であることから，$\\mathcal L=\\exp\\left(\\frac14\\mathrm{tr}\\ln(1-F^2)\\right)$ を示せ．\n\\item $F^4$ までの展開 $\\mathcal L=1-\\frac14\\mathrm{tr}F^2-\\frac18\\mathrm{tr}F^4+\\frac1{32}(\\mathrm{tr}F^2)^2+\\cdots$ を示せ．\n\\item $F^2$ の項がマクスウェル項であることを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac12\\mathrm{tr}[\\ln(1+F)+\\ln(1-F)]$　(2) 展開　(3) $-\\frac14\\mathrm{tr}F^2=\\frac14F_{\\mu\\nu}F^{\\mu\\nu}$（ユークリッド）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathrm{tr}\\ln(1+F)=\\mathrm{tr}\\ln(1-F)$（転置）．\n\n(2) $\\frac14\\mathrm{tr}\\ln(1-F^2)=-\\frac14\\mathrm{tr}F^2-\\frac18\\mathrm{tr}F^4+\\cdots$ を指数関数に入れる．乱数の行列で数値的に確認．"
+   }
+  ],
+  "idea": {
+   "tex": "ボルン＝インフェルト作用はマクスウェル理論に $\\alpha'$ の補正を加える．原題の運動方程式の検証の前に，展開の構造を確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ボルン＝インフェルト",
+   "低エネルギー展開",
+   "行列のトレース"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "RQ-04-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "RQ-101",
+  "level": 3,
+  "minutes": 35,
+  "theme": "円周のコンパクト化：自己双対半径と R = √(2α′) の比較",
+  "topic": "円周のコンパクト化：自己双対半径と R = √(2α′) の比較",
+  "statement": {
+   "tex": "$X^{25}\\sim X^{25}+2\\pi R$ の閉じた弦の質量は $M^2=\\frac{n^2}{R^2}+\\frac{m^2R^2}{\\alpha'^2}+\\frac2{\\alpha'}(N+\\tilde N-2)$，$N-\\tilde N=nm$ である．\n\\begin{enumerate}\n\\item $R\\to\\alpha'/R$，$n\\leftrightarrow m$ でスペクトルが不変であることを示せ．\n\\item $R=\\sqrt{\\alpha'}$ で新たに質量のない状態をすべて求めよ．\n\\item $R=\\sqrt{2\\alpha'}$ では一般の半径の状態以外に質量のない状態があるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 確認　(2) $N=\\tilde N=0$ で $(n,m)=(\\pm2,0),(0,\\pm2)$；$(N,\\tilde N)=(1,0)$ で $n=m=\\pm1$，$(0,1)$ で $n=-m=\\pm1$　(3) ない（$N=\\tilde N=1$，$n=m=0$ のみ）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(2) $N+\\tilde N=0$：$n^2+m^2=4$ かつ $nm=0$．$N=1,\\tilde N=0$：$n^2+m^2=2$，$nm=1$．ベクトルが $U(1)^2\\to SU(2)\\times SU(2)$ に増大する．\n\n(3) 数値の探索で確認．"
+   }
+  ],
+  "idea": {
+   "tex": "T 双対性の固定点では余分な状態が質量を失い，ゲージ対称性が増大する．原題の自己双対半径の解析に，一般の半径との比較を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "T双対性",
+   "自己双対半径",
+   "ゲージ対称性の増大",
+   "カルツァ＝クライン"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

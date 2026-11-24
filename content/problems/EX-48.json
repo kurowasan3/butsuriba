@@ -195,6 +195,55 @@
   }
  },
  {
+  "id": "EX-01-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-48",
+  "level": 1,
+  "minutes": 25,
+  "theme": "物理量の見積もり（太陽の温度・ヘリウムの音速・水素分子の回転温度・隕石の衝突）",
+  "topic": "物理量の見積もり（太陽の温度・ヘリウムの音速・水素分子の回転温度・隕石の衝突）",
+  "statement": {
+   "tex": "与えられた数値から，次の量を有効数字2桁で見積もれ．$\\sigma_{SB}=5.67\\times10^{-8}\\ \\mathrm{W\\,m^{-2}K^{-4}}$，$R=8.31\\ \\mathrm{J/(mol\\,K)}$，$\\hbar=1.05\\times10^{-34}\\ \\mathrm{J\\,s}$，$k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$，陽子の質量 $1.67\\times10^{-27}\\ \\mathrm{kg}$ とする．\n\\begin{enumerate}\n\\item 太陽定数 $1.36\\ \\mathrm{kW/m^2}$ と太陽の見かけの角半径 $4.65\\times10^{-3}\\ \\mathrm{rad}$ から，太陽の表面温度（黒体とする）．\n\\item $0^\\circ\\mathrm{C}$ のヘリウムガス中の音速（モル質量 $4.0\\ \\mathrm{g/mol}$）．\n\\item 核間距離 $0.074\\ \\mathrm{nm}$ の水素分子の回転の特性温度 $\\theta=\\dfrac{\\hbar^2}{2Ik_B}$（定積比熱が $\\frac32k_B$ から $\\frac52k_B$ へ変わる温度の目安）．\n\\item 直径 $10\\ \\mathrm{m}$，密度 $3.0\\times10^3\\ \\mathrm{kg/m^3}$ の隕石が $20\\ \\mathrm{km/s}$ で地球に衝突するときのエネルギー（TNT 換算，$1\\ \\mathrm{kt}=4.18\\times10^{12}\\ \\mathrm{J}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $5.8\\times10^3\\ \\mathrm{K}$　(2) $9.7\\times10^2\\ \\mathrm{m/s}$　(3) $88\\ \\mathrm{K}$　(4) $3.1\\times10^{14}\\ \\mathrm{J}$（約 $75\\ \\mathrm{kt}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 太陽の表面から出る放射 $\\sigma T^4$ は，地球の位置では立体角の比 $\\theta^2$（$\\theta$ は角半径）だけ薄まる：$S=\\sigma T^4\\theta^2$．\n\\[\nT=\\left(\\frac{S}{\\sigma\\theta^2}\\right)^{1/4}=\\left(\\frac{1360}{5.67\\times10^{-8}\\times2.16\\times10^{-5}}\\right)^{1/4}\\approx\\boldsymbol{5.8\\times10^3\\ \\mathrm{K}}.\n\\]\n距離も半径も知らなくてよい．\n\n(2) 単原子なので $\\gamma=\\frac53$：$v=\\sqrt{\\dfrac{\\gamma RT}{M}}=\\sqrt{\\dfrac{5/3\\times8.31\\times273}{4.0\\times10^{-3}}}\\approx\\boldsymbol{9.7\\times10^2\\ \\mathrm{m/s}}$（空気の約3倍）．\n\n(3) 換算質量 $m_p/2$，$I=\\frac{m_p}{2}r^2=4.6\\times10^{-48}\\ \\mathrm{kg\\,m^2}$．\n\\[\n\\theta=\\frac{\\hbar^2}{2Ik_B}=\\frac{(1.05\\times10^{-34})^2}{2\\times4.6\\times10^{-48}\\times1.38\\times10^{-23}}\\approx\\boldsymbol{88\\ \\mathrm{K}}.\n\\]\n（実際の比熱の変化は，オルトとパラの比の問題もあり $100$–$300\\ \\mathrm{K}$ に広がる．）\n\n(4) 質量 $\\frac43\\pi(5)^3\\times3.0\\times10^3=1.6\\times10^6\\ \\mathrm{kg}$，運動エネルギー $\\frac12\\times1.6\\times10^6\\times(2\\times10^4)^2\\approx\\boldsymbol{3.1\\times10^{14}\\ \\mathrm{J}}$，約 $\\boldsymbol{75\\ \\mathrm{kt}}$（広島型原爆の数倍）．"
+   }
+  ],
+  "idea": {
+   "tex": "見積もりでは，求めたい量を測れる量に結びつける1本の関係式を見つけるのが鍵になる．太陽の温度は距離を知らなくても見かけの大きさと太陽定数で決まり，回転温度は分子の大きさだけで決まる．原題も同じ形式の見積もり問題で，捻りでは与えるデータを変え，関係式を自分で選ばせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [K]：≈5.8e3\n(2) [m/s]：≈9.7e2\n(3) [K]：88\n(4) [J]：≈3.1e14"
+  },
+  "methods": [],
+  "tags": [
+   "オーダー評価",
+   "黒体放射",
+   "音速",
+   "回転温度"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "EX-01-009",
   "schema": "lemma.problem/1",
   "kind": "written",

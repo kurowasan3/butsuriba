@@ -147,6 +147,55 @@
   }
  },
  {
+  "id": "PM-08-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-87",
+  "level": 1,
+  "minutes": 20,
+  "theme": "置換の符号を巡回分解で求める",
+  "topic": "置換の符号を巡回分解で求める",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 長さ $k$ の巡回置換の符号が $(-1)^{k-1}$ であることを用いて，$n$ 文字の置換の符号は $(-1)^{n-c}$（$c$ は巡回の数）であることを示せ．\n\\item 置換 $(1,2,3,4,5)\\to(3,1,4,5,2)$ の符号を求めよ（$i$ 番目に $\\sigma(i)$ を並べる）．\n\\item $4$ 次元で $\\epsilon_{ijkl}\\epsilon_{ijmn}$ を $\\delta$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $+1$　(3) $2(\\delta_{km}\\delta_{ln}-\\delta_{kn}\\delta_{lm})$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 各巡回は $k-1$ 個の互換で書け，全体で $\\sum(k_i-1)=n-c$ 個．\\hfill$\\square$\n\n(2) $1\\to3\\to4\\to5\\to2\\to1$ の5巡回1つ：$(-1)^{5-1}=\\boldsymbol{+1}$．（$O(n)$ で計算でき，行列式より安い．）\n\n(3) $i,j$ について和をとると $k,l$ と $m,n$ が同じ組のときだけ $0$ でない：$\\boldsymbol{2(\\delta_{km}\\delta_{ln}-\\delta_{kn}\\delta_{lm})}$．"
+   }
+  ],
+  "idea": {
+   "tex": "置換の符号は巡回分解で線形時間で計算できる．原題の計算機の問いに具体的な答えを与え，レヴィ＝チヴィタ記号の縮約公式を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) +1\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "置換",
+   "符号",
+   "レヴィ＝チヴィタ記号",
+   "巡回"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-08-004",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -288,6 +337,107 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-08-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-87",
+  "level": 2,
+  "minutes": 20,
+  "theme": "点反転の合成と並進・回転との関係",
+  "topic": "点反転の合成と並進・回転との関係",
+  "statement": {
+   "tex": "3 次元のスピンを持たない粒子を考える．並進演算子 $\\mathcal{T}(\\boldsymbol d)$（$\\mathcal T(\\boldsymbol d)|\\boldsymbol x\\rangle=|\\boldsymbol x+\\boldsymbol d\\rangle$），原点に関するパリティ $\\pi$（$\\pi|\\boldsymbol x\\rangle=|-\\boldsymbol x\\rangle$），原点を通る軸のまわりの回転 $\\mathcal D(R)$（$\\mathcal D(R)|\\boldsymbol x\\rangle=|R\\boldsymbol x\\rangle$）を用いる．点 $\\boldsymbol a$ に関する反転 $\\pi_{\\boldsymbol a}$ を $\\pi_{\\boldsymbol a}|\\boldsymbol x\\rangle=|2\\boldsymbol a-\\boldsymbol x\\rangle$ で定義する．\n\\begin{enumerate}\n\\item $\\pi_{\\boldsymbol a}$ を $\\pi$ と $\\mathcal T$ で表せ．また $\\pi\\,\\mathcal T(\\boldsymbol d)\\,\\pi=\\mathcal T(-\\boldsymbol d)$ を，$\\boldsymbol p$ がパリティ奇であることから示せ．\n\\item 2 つの点反転の積 $\\pi_{\\boldsymbol a}\\pi_{\\boldsymbol b}$ を求めよ．$\\pi_{\\boldsymbol a}$ と $\\pi_{\\boldsymbol b}$ が交換するのはどのようなときか．\n\\item $\\mathcal D(R)\\,\\pi_{\\boldsymbol a}\\,\\mathcal D(R)^{-1}$ を求め，$\\pi_{\\boldsymbol a}$ と $\\mathcal D(R)$ が交換する条件を述べよ．\n\\item 1 次元のポテンシャル $V(x)$ が $x=0$ と $x=\\ell\\ (>0)$ の 2 点のそれぞれに関して鏡映対称であるとする．ハミルトニアンが必ず持つ連続でない並進対称性を答え，その結果エネルギー固有状態についていえること（定理の名前）を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\pi_{\\boldsymbol a}=\\mathcal T(2\\boldsymbol a)\\pi=\\pi\\,\\mathcal T(-2\\boldsymbol a)$　(2) $\\pi_{\\boldsymbol a}\\pi_{\\boldsymbol b}=\\mathcal T(2(\\boldsymbol a-\\boldsymbol b))$；交換するのは $\\boldsymbol a=\\boldsymbol b$ のときのみ　(3) $\\mathcal D(R)\\pi_{\\boldsymbol a}\\mathcal D(R)^{-1}=\\pi_{R\\boldsymbol a}$；$R\\boldsymbol a=\\boldsymbol a$（$\\boldsymbol a$ が回転軸上）のとき交換　(4) 周期 $2\\ell$ の離散並進対称性 $V(x+2\\ell)=V(x)$；固有状態はブロッホの定理 $\\psi(x+2\\ell)=e^{2ik\\ell}\\psi(x)$ の形に選べる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathcal T(2\\boldsymbol a)\\pi|\\boldsymbol x\\rangle=\\mathcal T(2\\boldsymbol a)|-\\boldsymbol x\\rangle=|2\\boldsymbol a-\\boldsymbol x\\rangle$ より $\\pi_{\\boldsymbol a}=\\mathcal T(2\\boldsymbol a)\\pi$．また $\\pi\\boldsymbol p\\pi=-\\boldsymbol p$ と $\\mathcal T(\\boldsymbol d)=\\exp(-i\\boldsymbol p\\cdot\\boldsymbol d/\\hbar)$ から\n\\[\\pi\\mathcal T(\\boldsymbol d)\\pi=\\exp(-i\\pi\\boldsymbol p\\pi\\cdot\\boldsymbol d/\\hbar)=\\exp(+i\\boldsymbol p\\cdot\\boldsymbol d/\\hbar)=\\mathcal T(-\\boldsymbol d).\\]\nしたがって $\\mathcal T(2\\boldsymbol a)\\pi=\\pi\\,\\mathcal T(-2\\boldsymbol a)$ とも書ける．\n\n(2) $\\pi_{\\boldsymbol a}\\pi_{\\boldsymbol b}=\\mathcal T(2\\boldsymbol a)\\pi\\,\\mathcal T(2\\boldsymbol b)\\pi=\\mathcal T(2\\boldsymbol a)\\mathcal T(-2\\boldsymbol b)\\pi^2=\\mathcal T(2(\\boldsymbol a-\\boldsymbol b))$．\n同様に $\\pi_{\\boldsymbol b}\\pi_{\\boldsymbol a}=\\mathcal T(2(\\boldsymbol b-\\boldsymbol a))$．両者が等しいのは $\\mathcal T(4(\\boldsymbol a-\\boldsymbol b))=1$，すなわち $\\boldsymbol a=\\boldsymbol b$ のときだけ（並進は $\\boldsymbol d\\ne0$ で恒等演算子でない）．2 つの反転の合成は並進になる．\n\n(3) $\\mathcal D(R)\\pi\\mathcal D(R)^{-1}=\\pi$（回転と原点反転は交換），$\\mathcal D(R)\\mathcal T(\\boldsymbol d)\\mathcal D(R)^{-1}=\\mathcal T(R\\boldsymbol d)$（$|\\boldsymbol x\\rangle\\to|R^{-1}\\boldsymbol x\\rangle\\to|R^{-1}\\boldsymbol x+\\boldsymbol d\\rangle\\to|\\boldsymbol x+R\\boldsymbol d\\rangle$）より\n\\[\\mathcal D(R)\\pi_{\\boldsymbol a}\\mathcal D(R)^{-1}=\\mathcal T(2R\\boldsymbol a)\\pi=\\pi_{R\\boldsymbol a}.\\]\n交換するのは $\\pi_{R\\boldsymbol a}=\\pi_{\\boldsymbol a}$，すなわち $R\\boldsymbol a=\\boldsymbol a$（$\\boldsymbol a$ が回転軸上にある，または $\\boldsymbol a=0$）のとき．\n\n(4) $H$ が $\\pi_0$ と $\\pi_\\ell$ の両方と交換すれば，その積 $\\pi_\\ell\\pi_0=\\mathcal T(2\\ell)$ とも交換する．よって $V(x+2\\ell)=V(x)$ という周期 $2\\ell$ の離散並進対称性を必ず持つ（$V$ の周期は $2\\ell$ の約数）．$H$ と $\\mathcal T(2\\ell)$ の同時固有状態を選べ，$\\mathcal T(2\\ell)$ はユニタリなので固有値は $e^{-2ik\\ell}$ の形となり，$\\psi(x+2\\ell)=e^{2ik\\ell}\\psi(x)$（ブロッホの定理）．"
+   }
+  ],
+  "idea": {
+   "tex": "点反転は $\\pi_{\\boldsymbol a}=\\mathcal T(2\\boldsymbol a)\\pi$ と分解でき，2 つの反転の合成は並進になる．2 つの鏡映中心をもつ系は必然的に周期系になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "並進",
+   "パリティ",
+   "回転",
+   "点反転",
+   "ブロッホの定理",
+   "群の合成"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-08-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-87",
+  "level": 2,
+  "minutes": 25,
+  "theme": "反交換するエルミート演算子の同時固有状態",
+  "topic": "反交換するエルミート演算子の同時固有状態",
+  "statement": {
+   "tex": "有限次元のヒルベルト空間で，エルミート演算子 $A,B$ が反交換する（$AB+BA=0$）とする．\n\\begin{enumerate}\n\\item $A$ と $B$ の同時固有状態があれば，その固有値 $a,b$ について $ab=0$ であることを示せ．\n\\item さらに $B$ が逆演算子を持つとき，$A$ の固有値は $\\pm$ の対で現れ，$a$ と $-a$ の多重度が等しいことを示せ．このとき $A$ と $B$ の同時固有状態はどのようなものに限られるか．\n\\item スピン 1 の 3 次元空間で $A=S_z$（$\\hbar=1$，基底 $|{+1}\\rangle,|0\\rangle,|{-1}\\rangle$）とする．$A$ と反交換するエルミート演算子 $B$ の最も一般的な行列を求めよ．\n\\item (3) の $B$ について，$A$ と $B$ の同時固有状態をすべて求め，(1) の主張と整合することを確かめよ．また $B$ が正則であることはありうるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2ab=0$ より $a=0$ または $b=0$　(2) $A(B|a\\rangle)=-aB|a\\rangle$ で $B$ は $a$ と $-a$ の固有空間を 1 対 1 に写す；同時固有状態は $a=0$ のもののみ（$b\\ne0$ なので）　(3) $B=\\begin{pmatrix}0&0&\\beta\\\\0&\\gamma&0\\\\\\beta^*&0&0\\end{pmatrix}$（$\\beta\\in\\mathbb C,\\gamma\\in\\mathbb R$）　(4) $|0\\rangle$（$a=0,b=\\gamma$）は常に同時固有状態．$\\beta\\ne0$ なら他にない；$\\beta=0$ なら $|\\pm1\\rangle$ も（$b=0$）．$\\beta\\ne0,\\gamma\\ne0$ で $B$ は正則"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A|\\Phi\\rangle=a|\\Phi\\rangle$，$B|\\Phi\\rangle=b|\\Phi\\rangle$ なら $0=(AB+BA)|\\Phi\\rangle=2ab|\\Phi\\rangle$．$|\\Phi\\rangle\\ne0$ より $ab=0$．\n\n(2) $A|a\\rangle=a|a\\rangle$ とすると $A(B|a\\rangle)=-BA|a\\rangle=-a\\,B|a\\rangle$．$B$ が正則なら $B|a\\rangle\\ne0$ なので $-a$ も固有値．$B$ は固有空間 $V_a$ を $V_{-a}$ の中へ単射に写し，同様に $V_{-a}\\to V_a$ も単射なので $\\dim V_a=\\dim V_{-a}$．同時固有状態では $b\\ne0$（$B$ 正則）なので (1) より $a=0$：同時固有状態は $A$ の零固有空間内の $B$ の固有ベクトルに限られる．\n\n(3) $A=\\mathrm{diag}(1,0,-1)$ とし $B_{ij}$ を成分とすると $(AB+BA)_{ij}=(a_i+a_j)B_{ij}=0$．$a_i+a_j\\ne0$ の成分は 0 になり，残るのは $(i,j)=(1,3),(3,1),(2,2)$．エルミート性より\n\\[B=\\begin{pmatrix}0&0&\\beta\\\\0&\\gamma&0\\\\\\beta^*&0&0\\end{pmatrix},\\quad \\beta\\in\\mathbb C,\\ \\gamma\\in\\mathbb R.\\]\n\n(4) $|0\\rangle$ は $A|0\\rangle=0$，$B|0\\rangle=\\gamma|0\\rangle$ で同時固有状態（$a=0$）．$\\{|{+1}\\rangle,|{-1}\\rangle\\}$ 部分空間では $B=\\begin{pmatrix}0&\\beta\\\\\\beta^*&0\\end{pmatrix}$ で固有値 $\\pm|\\beta|$，固有ベクトル $(|{+1}\\rangle\\pm e^{-i\\arg\\beta}|{-1}\\rangle)/\\sqrt2$ は $A$ の固有状態ではない．したがって $\\beta\\ne0$ なら同時固有状態は $|0\\rangle$ だけで，$a=0$ なので (1) と整合．$\\beta=0$ なら $|\\pm1\\rangle$ も同時固有状態だが $b=0$ で，やはり $ab=0$．\n$\\det B=-\\gamma|\\beta|^2$ なので $\\beta\\ne0,\\gamma\\ne0$ で $B$ は正則であり，(2) のとおり $A$ の固有値 $\\pm1$ が対で現れ，同時固有状態は $a=0$ の $|0\\rangle$ のみ．（$B$ が正則だと $A$ の零固有空間の次元は全体の次元と同じ偶奇になる．）"
+   }
+  ],
+  "idea": {
+   "tex": "反交換は $B$ が $A$ の固有値の符号を反転する写像であることを意味し，同時固有状態は「どちらかの固有値が 0」に限られる．具体行列では $(a_i+a_j)B_{ij}=0$ が許される成分を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "反交換",
+   "同時固有状態",
+   "パリティ",
+   "スペクトルの対称性",
+   "スピン1"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -441,6 +591,157 @@
   }
  },
  {
+  "id": "PM-08-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-87",
+  "level": 3,
+  "minutes": 30,
+  "theme": "SL(2,C)変換とローレンツブースト",
+  "topic": "SL(2,C)変換とローレンツブースト",
+  "statement": {
+   "tex": "実数 $a_0,a_1,a_2,a_3$ を用いて $2\\times2$ エルミート行列 $X=a_0I+\\boldsymbol\\sigma\\cdot\\boldsymbol a$ を作る（$\\boldsymbol\\sigma$ はパウリ行列）．\n\\begin{enumerate}\n\\item $\\det X$ を $a_0,\\boldsymbol a$ で表せ．また，$\\det M=1$ をみたす任意の複素 $2\\times2$ 行列 $M$ に対し $X'=MXM^\\dagger$ もエルミートで $\\det X'=\\det X$ となることを示せ．\n\\item $M=\\exp(\\eta\\sigma_3/2)$（$\\eta$ は実数）のとき $X'=a_0'I+\\boldsymbol\\sigma\\cdot\\boldsymbol a'$ の $a_0',\\boldsymbol a'$ を求め，$(a_0,\\boldsymbol a)$ の変換が何に当たるかを答えよ．\n\\item 同じ $M$ で $MXM^\\dagger$ の代わりに相似変換 $X''=MXM^{-1}$ を考える．$X''=a_0''I+\\boldsymbol\\sigma\\cdot\\boldsymbol a''$ と書くとき，$a_0''$ と $\\boldsymbol a''$ を求めよ．保存される量は何か．また $\\boldsymbol a''$ は一般に実ベクトルか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\det X=a_0^2-|\\boldsymbol a|^2$　(2) $a_0'=a_0\\cosh\\eta+a_3\\sinh\\eta$，$a_3'=a_0\\sinh\\eta+a_3\\cosh\\eta$，$a_1'=a_1,a_2'=a_2$：$z$ 方向のローレンツブースト（ラピディティ $\\eta$）　(3) $a_0''=a_0$，$a_3''=a_3$，$a_1''=a_1\\cosh\\eta-ia_2\\sinh\\eta$，$a_2''=ia_1\\sinh\\eta+a_2\\cosh\\eta$；保存量は $a_0$ と $\\boldsymbol a\\cdot\\boldsymbol a=\\sum a_k^2$（$|\\boldsymbol a|^2$ ではない），$\\boldsymbol a''$ は一般に複素．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $X=\\begin{pmatrix}a_0+a_3&a_1-ia_2\\\\a_1+ia_2&a_0-a_3\\end{pmatrix}$ より $\\det X=a_0^2-a_3^2-(a_1^2+a_2^2)=a_0^2-|\\boldsymbol a|^2$．$X'^\\dagger=(MXM^\\dagger)^\\dagger=MX^\\dagger M^\\dagger=X'$ でエルミート．$\\det X'=\\det M\\det X\\,\\overline{\\det M}=|\\det M|^2\\det X=\\det X$．エルミート行列は $a_0I+\\boldsymbol\\sigma\\cdot\\boldsymbol a$（実係数）で一意に表せるので，$(a_0,\\boldsymbol a)$ の線形変換で $a_0^2-|\\boldsymbol a|^2$ が保たれる，すなわちローレンツ変換が引き起こされる．\n\n(2) $M=\\mathrm{diag}(e^{\\eta/2},e^{-\\eta/2})=M^\\dagger$．\n\\[\nX'=\\begin{pmatrix}e^{\\eta}(a_0+a_3)&a_1-ia_2\\\\a_1+ia_2&e^{-\\eta}(a_0-a_3)\\end{pmatrix}.\n\\]\n$a_0'=\\frac12\\mathrm{tr}X'=\\frac12[e^\\eta(a_0+a_3)+e^{-\\eta}(a_0-a_3)]=a_0\\cosh\\eta+a_3\\sinh\\eta$，$a_3'=\\frac12[e^\\eta(a_0+a_3)-e^{-\\eta}(a_0-a_3)]=a_0\\sinh\\eta+a_3\\cosh\\eta$，非対角成分は不変なので $a_1'=a_1,a_2'=a_2$．$(a_0,a_3)$ を $(ct,z)$ とみれば $z$ 方向のローレンツブースト．回転 $\\exp(-i\\boldsymbol\\sigma\\cdot\\hat n\\phi/2)$ がユニタリで $\\boldsymbol a$ の回転を与えるのに対し，エルミートな $M$ はブーストを与える．\n\n(3) $M^{-1}=\\mathrm{diag}(e^{-\\eta/2},e^{\\eta/2})$ なので\n\\[\nX''=\\begin{pmatrix}a_0+a_3&e^{\\eta}(a_1-ia_2)\\\\e^{-\\eta}(a_1+ia_2)&a_0-a_3\\end{pmatrix}.\n\\]\n$a_0''=\\frac12\\mathrm{tr}X''=a_0$，$a_3''=\\frac12(X''_{11}-X''_{22})=a_3$．非対角成分から\n\\[\na_1''=\\tfrac12(X''_{12}+X''_{21})=\\tfrac12[e^{\\eta}(a_1-ia_2)+e^{-\\eta}(a_1+ia_2)]=a_1\\cosh\\eta-ia_2\\sinh\\eta,\n\\]\n\\[\na_2''=\\tfrac1{2i}(X''_{21}-X''_{12})=\\tfrac1{2i}[-2a_1\\sinh\\eta+2ia_2\\cosh\\eta]=ia_1\\sinh\\eta+a_2\\cosh\\eta.\n\\]\n\n相似変換はトレースと行列式を保つので $a_0$ と $a_0^2-\\boldsymbol a\\cdot\\boldsymbol a$，したがって $\\boldsymbol a\\cdot\\boldsymbol a=a_1^2+a_2^2+a_3^2$（複素数の 2 乗和）が保存される．実際 $(a_1\\cosh\\eta-ia_2\\sinh\\eta)^2+(ia_1\\sinh\\eta+a_2\\cosh\\eta)^2=a_1^2+a_2^2$．しかし $a_1''$ は虚部をもち，$X''$ はエルミートでなくなる．これは $(a_1,a_2)$ 面内の虚角 $i\\eta$ の「回転」であり，$M$ がユニタリ（$M^\\dagger=M^{-1}$）のときに限り 2 つの変換は一致して実回転を与える．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\det(a_0+\\boldsymbol\\sigma\\cdot\\boldsymbol a)=a_0^2-|\\boldsymbol a|^2$ はミンコフスキー計量そのもの．$MXM^\\dagger$ と $MXM^{-1}$ を区別すると，ユニタリ $M$ は回転，エルミート $M$ はブーストを与えることが見える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "パウリ行列",
+   "行列式",
+   "SL(2C)",
+   "ローレンツ変換",
+   "回転"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-08-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-87",
+  "level": 3,
+  "minutes": 40,
+  "theme": "二面体対称性をもつ環上の粒子の縮退",
+  "topic": "二面体対称性をもつ環上の粒子の縮退",
+  "statement": {
+   "tex": "半径一定の円環上を動く粒子（角度 $\\phi$，慣性モーメント $I$）のハミルトニアン\n\\[\nH=\\frac{L_z^2}{2I}+V_0\\cos(N\\phi),\\qquad L_z=-i\\hbar\\frac{\\partial}{\\partial\\phi}\n\\]\nを考える（$N\\ge3$ は整数，$V_0$ は実数）．回転 $T:\\psi(\\phi)\\mapsto\\psi(\\phi-2\\pi/N)$ と反転 $\\Pi:\\psi(\\phi)\\mapsto\\psi(-\\phi)$ はともに $H$ と交換する．$\\varepsilon=\\hbar^2/(2I)$ とおく．\n\\begin{enumerate}\n\\item $\\Pi T\\Pi=T^{-1}$ を示し，$T$ と $\\Pi$ が交換しないことを確かめよ．\n\\item $T$ の固有値は $\\omega^k$（$\\omega=e^{-2\\pi i/N}$，$k=0,1,\\dots,N-1$）である．$H$ と $T$ の同時固有状態で $T=\\omega^k$ をもつものを $|E,k\\rangle$ とすると，$\\Pi|E,k\\rangle$ は $T=\\omega^{-k}$ をもつことを示せ．これより，$k\\not\\equiv -k\\pmod N$ のエネルギー準位は必ず縮退していることを結論せよ．どの $k$ が例外になるか．\n\\item $N=3$ とする．$V_0=0$ の準位 $E=m^2\\varepsilon$（$m=0,\\pm1,\\pm2,\\pm3$）が $V_0\\neq0$ でそれぞれ縮退を保つか分裂するかを答えよ．分裂するものについては，$V_0$ の何次で分裂が現れるかと，その最低次の分裂幅を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Pi T\\Pi=T^{-1}\\neq T$　(2) $k\\ne0$（$N$ 偶数のときは $k\\ne N/2$ も）の準位は 2 重縮退．例外は $k=0$ と $k=N/2$　(3) $m=\\pm1,\\pm2$ は縮退を保つ．$m=\\pm3$ は $V_0$ の 2 次で分裂し，幅 $\\dfrac{V_0^2}{18\\varepsilon}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(\\Pi T\\Pi\\psi)(\\phi)$：$\\Pi\\psi=\\psi(-\\phi)\\equiv\\chi(\\phi)$，$T\\chi=\\chi(\\phi-2\\pi/N)=\\psi(-\\phi+2\\pi/N)$，さらに $\\Pi$ で $\\psi(\\phi+2\\pi/N)=(T^{-1}\\psi)(\\phi)$．よって $\\Pi T\\Pi=T^{-1}$．$T^{-1}\\ne T$（$N\\ge3$）なので $\\Pi T=T^{-1}\\Pi\\ne T\\Pi$．\n\n(2) $T\\,\\Pi|E,k\\rangle=\\Pi(\\Pi T\\Pi)|E,k\\rangle=\\Pi T^{-1}|E,k\\rangle=\\omega^{-k}\\Pi|E,k\\rangle$．また $[H,\\Pi]=0$ なので $\\Pi|E,k\\rangle$ も同じエネルギー $E$ をもつ．$\\omega^{-k}\\ne\\omega^k$，すなわち $2k\\not\\equiv0\\pmod N$ なら $|E,k\\rangle$ と $\\Pi|E,k\\rangle$ は $T$ の異なる固有値をもち 1 次独立なので，準位 $E$ は少なくとも 2 重に縮退する．例外は $2k\\equiv0$，すなわち $k=0$ と（$N$ が偶数なら）$k=N/2$ で，このとき $[T,\\Pi]$ はその部分空間で 0 になり縮退は保証されない．交換しない 2 つの保存量があっても，その交換子が消える部分空間では縮退しなくてよいことの具体例である．\n\n(3) 基底 $|m\\rangle=e^{im\\phi}/\\sqrt{2\\pi}$ では $T|m\\rangle=e^{-2\\pi im/N}|m\\rangle=\\omega^m|m\\rangle$ なので $k\\equiv m\\pmod3$．$V_0\\cos3\\phi=\\frac{V_0}2(e^{3i\\phi}+e^{-3i\\phi})$ は $m\\to m\\pm3$ のみを結ぶ．\n・$m=\\pm1$（$k=1,2$），$m=\\pm2$（$k=2,1$）：(2) より厳密に 2 重縮退を保つ．\n・$m=0$：もともと非縮退．\n・$m=\\pm3$：ともに $k=0$ で，(2) の保証はない．$|3\\rangle$ と $|-3\\rangle$ は $m$ が 6 違うので 1 次では結ばれず，1 次の分裂はない．2 次では中間状態 $|0\\rangle$ を経て結ばれる（$|\\pm6\\rangle$ は $|3\\rangle$ と $|-3\\rangle$ の両方には同時につながらない）．縮退部分空間での有効ハミルトニアンの非対角要素は\n\\[\nH^{\\rm eff}_{3,-3}=\\frac{\\langle3|V|0\\rangle\\langle0|V|-3\\rangle}{E_3^{(0)}-E_0^{(0)}}=\\frac{(V_0/2)^2}{9\\varepsilon}=\\frac{V_0^2}{36\\varepsilon}.\n\\]\n（対角要素の 2 次補正は $|3\\rangle$ と $|-3\\rangle$ で等しい．）固有状態は $|3\\rangle\\pm|-3\\rangle$（$\\cos3\\phi,\\ \\sin3\\phi$）で，分裂幅は $2H^{\\rm eff}_{3,-3}=\\dfrac{V_0^2}{18\\varepsilon}$．\n$\\sin3\\phi$ 型は $|0\\rangle$ と混ざれないのに対し，$\\cos3\\phi$ 型は $|0\\rangle$ と混ざって押し上げられる，と見ることもできる．"
+   }
+  ],
+  "idea": {
+   "tex": "交換しない保存量 $T,\\Pi$（$\\Pi T\\Pi=T^{-1}$）は $T$ の固有値 $\\omega^k$ と $\\omega^{-k}$ の状態を結ぶので縮退を強制するが，$\\omega^k=\\omega^{-k}$ の部分空間では交換子が消え縮退は保証されない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "縮退",
+   "対称性",
+   "交換関係",
+   "円環上の粒子",
+   "摂動論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-08-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-87",
+  "level": 3,
+  "minutes": 35,
+  "theme": "回転行列の複素共役と実表現・擬実表現",
+  "topic": "回転行列の複素共役と実表現・擬実表現",
+  "statement": {
+   "tex": "角運動量 $j$ の回転行列を $\\mathcal D^{(j)}_{m'm}(R)=\\langle j,m'|\\mathcal D(R)|j,m\\rangle$ とし，時間反転の位相を $\\Theta|j,m\\rangle=i^{2m}|j,-m\\rangle$ に選ぶ．\n\\begin{enumerate}\n\\item $\\Theta$ と回転が交換することを用いて，$\\mathcal D^{(j)*}_{m'm}(R)=(-1)^{m-m'}\\mathcal D^{(j)}_{-m',-m}(R)$ を導け．\n\\item この関係を行列の等式 $\\mathcal D^{(j)}(R)^*=C\\,\\mathcal D^{(j)}(R)\\,C^{-1}$ の形に書け．ただし $C_{m'm}=(-1)^{j-m}\\delta_{m',-m}$ とする．$C$ が $e^{-i\\pi J_y/\\hbar}$ の行列 $d^{(j)}(\\pi)$ に等しいことを確かめ，$CC^*=C^2$ と $C^T$ を $C$ で表せ．\n\\item $j=1$ では，基底 $|e_x\\rangle=(-|1,1\\rangle+|1,-1\\rangle)/\\sqrt2$，$|e_y\\rangle=i(|1,1\\rangle+|1,-1\\rangle)/\\sqrt2$，$|e_z\\rangle=|1,0\\rangle$ で $\\mathcal D^{(1)}(R)$ がすべて実直交行列になることを示せ．\n\\item $j=\\tfrac12$ では，どのようなユニタリ基底変換 $V$ をとっても $V^\\dagger\\mathcal D^{(1/2)}(R)V$ を全 $R$ について実行列にはできないことを示せ（既約表現に対するシューアの補題を用いてよい）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $C=d^{(j)}(\\pi)$，$C^2=(-1)^{2j}$，$C^T=(-1)^{2j}C$　(3) $\\mathcal D^{(1)}$ は $\\boldsymbol x\\to R\\boldsymbol x$ の $3\\times3$ 回転行列そのもの　(4) 実化できると $C$ が対称行列であることになり $C^T=-C$ と矛盾"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Theta\\boldsymbol J\\Theta^{-1}=-\\boldsymbol J$，$\\Theta i\\Theta^{-1}=-i$ より $\\Theta\\mathcal D(R)\\Theta^{-1}=\\mathcal D(R)$．$\\langle j,-m'|\\Theta\\mathcal D(R)|j,m\\rangle$ を 2 通りに計算する．\n(a) $\\Theta\\mathcal D|j,m\\rangle=\\mathcal D\\Theta|j,m\\rangle=i^{2m}\\mathcal D|j,-m\\rangle$ より，値は $i^{2m}\\mathcal D^{(j)}_{-m',-m}$．\n(b) $\\mathcal D|j,m\\rangle=\\sum_{m''}|j,m''\\rangle\\mathcal D^{(j)}_{m''m}$ に反線形な $\\Theta$ を作用させると $\\sum_{m''}\\mathcal D^{(j)*}_{m''m}i^{2m''}|j,-m''\\rangle$．$-m''=-m'$ の成分を取って $i^{2m'}\\mathcal D^{(j)*}_{m'm}$．\n両者を等置して $\\mathcal D^{(j)*}_{m'm}=i^{2(m-m')}\\mathcal D^{(j)}_{-m',-m}=(-1)^{m-m'}\\mathcal D^{(j)}_{-m',-m}$（$m-m'$ は整数）．\n\n(2) $C_{m',-m'}=(-1)^{j+m'}$，$(C^{-1})_{-m,m}=(-1)^{-(j+m)}$ なので\n$(C\\mathcal DC^{-1})_{m'm}=(-1)^{j+m'}\\mathcal D_{-m',-m}(-1)^{-(j+m)}=(-1)^{m'-m}\\mathcal D_{-m',-m}=\\mathcal D^*_{m'm}$．\n$d^{(j)}_{m'm}(\\pi)=(-1)^{j-m}\\delta_{m',-m}$（例：$j=\\frac12$ で $d(\\pi)=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}$，$j=1$ で反対角に $1,-1,1$）なので $C=d^{(j)}(\\pi)$．\n$C$ は実で $(C^2)_{mm}=C_{m,-m}C_{-m,m}=(-1)^{j+m}(-1)^{j-m}=(-1)^{2j}$，よって $CC^*=C^2=(-1)^{2j}$．$C$ は直交行列なので $C^T=C^{-1}=(-1)^{2j}C$：整数 $j$ で対称，半整数 $j$ で反対称．\n\n(3) $|e_i\\rangle$ はベクトル演算子の直交座標成分と同じ変換をし，$\\mathcal D(R)|e_i\\rangle=\\sum_k|e_k\\rangle R_{ki}$（$R$ は 3 次元回転行列）となる．たとえば $z$ 軸まわり角 $\\phi$ の回転で $|1,\\pm1\\rangle\\to e^{\\mp i\\phi}|1,\\pm1\\rangle$ より $|e_x\\rangle\\to\\cos\\phi|e_x\\rangle+\\sin\\phi|e_y\\rangle$，$|e_y\\rangle\\to-\\sin\\phi|e_x\\rangle+\\cos\\phi|e_y\\rangle$．$y$ 軸まわりも同様で，オイラー角の積も実直交行列．（$|e_i\\rangle$ はすべて $\\Theta|e_i\\rangle=-|e_i\\rangle$ を満たす「実」ベクトルの定数倍であり，(2) で $C$ が対称なことに対応．）\n\n(4) $V^\\dagger\\mathcal D(R)V=O(R)$ が全 $R$ で実とする．複素共役をとり $V^T\\mathcal D^*V^*=O=V^\\dagger\\mathcal DV$，すなわち $\\mathcal D^*=W\\mathcal DW^{-1}$，$W=V^*V^\\dagger$（$W^T=W$）．一方 (2) より $\\mathcal D^*=C\\mathcal DC^{-1}$．よって $C^{-1}W$ は全 $\\mathcal D(R)$ と交換し，既約性とシューアの補題より $W=\\lambda C$．$W$ は対称だが $j=\\frac12$ では $C^T=-C$ なので $\\lambda=0$ となり $W$ の正則性に矛盾．よって実化は不可能（スピン $\\frac12$ 表現は擬実表現）．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\Theta$ と回転の可換性は $\\mathcal D^*=C\\mathcal DC^{-1}$（$C=d(\\pi)$）を意味し，$C^T=(-1)^{2j}C$ が表現の実・擬実を分ける．これは $\\Theta^2=(-1)^{2j}$ と同じ情報である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間反転",
+   "回転行列",
+   "D行列",
+   "実表現",
+   "擬実表現",
+   "シューアの補題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-08-010",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -584,6 +885,56 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-08-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-87",
+  "level": 4,
+  "minutes": 40,
+  "theme": "ガリレイブーストと質量の超選択則",
+  "topic": "ガリレイブーストと質量の超選択則",
+  "statement": {
+   "tex": "一次元で質量 $m$ の粒子を考える．ブースト演算子 $\\hat G(v)=e^{imv\\hat x/\\hbar}$，並進演算子 $\\hat T(a)=e^{-ia\\hat p/\\hbar}$（$(\\hat T(a)\\psi)(x)=\\psi(x-a)$）とする．\n\\begin{enumerate}\n\\item $\\hat G^{-1}\\hat p\\hat G$ を求め，$\\hat G$ が速度 $v$ のブーストを表すことを説明せよ．\n\\item 自由粒子のシュレディンガー方程式の解 $\\psi(x,t)$ に対し\n\\[ \\psi'(x,t)=\\exp\\left[\\frac{i}{\\hbar}\\left(mvx-\\frac12mv^2t\\right)\\right]\\psi(x-vt,t) \\]\nも解であることを示せ．また位相因子を $e^{imvx/\\hbar}$ だけにした場合は解にならないことを確かめよ．\n\\item $\\hat G(v)\\hat T(a)\\hat G(v)^{-1}\\hat T(a)^{-1}$ を計算せよ．\n\\item 質量 $m_1$ と $m_2\\ (\\ne m_1)$ の 2 種の粒子の重ね合わせ $\\alpha|m_1\\rangle+\\beta|m_2\\rangle$ に，(3) の操作列（ブースト $\\to$ 並進 $\\to$ 逆ブースト $\\to$ 逆並進に相当）を施す．操作列全体は古典的には何もしないことと同じだが，状態はどう変わるか．ここから，非相対論的量子力学で異なる質量の状態の重ね合わせに物理的意味を与えられない（質量の超選択則）理由を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat G^{-1}\\hat p\\hat G=\\hat p+mv$ (2) 証明（解説参照）．$e^{imvx/\\hbar}$ のみだと余分な項 $\\frac12mv^2\\psi'$ が残る (3) $e^{imva/\\hbar}$ (4) 相対位相が $(m_1-m_2)va/\\hbar$ だけずれる（干渉が観測される物理量が座標系の取り方に依存してしまう）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(\\hat G^{-1}\\hat p\\hat G\\psi)(x)=e^{-imvx/\\hbar}(-i\\hbar)\\frac{d}{dx}\\left(e^{imvx/\\hbar}\\psi\\right)=(\\hat p+mv)\\psi$．位置は不変（$\\hat G$ は $\\hat x$ の関数）で運動量だけが $mv$ ずれるので，速度 $v$ で動く系への乗り換え（ガリレイブースト）を表す．\n\n(2) $y=x-vt$ とし $\\psi'=e^{i\\Phi}\\psi(y,t)$，$\\Phi=(mvx-\\frac12mv^2t)/\\hbar$．\n$\\partial_t\\psi'=e^{i\\Phi}\\left(-\\frac{imv^2}{2\\hbar}\\psi+\\partial_t\\psi-v\\partial_y\\psi\\right)$，\n$\\partial_x^2\\psi'=e^{i\\Phi}\\left(-\\frac{m^2v^2}{\\hbar^2}\\psi+\\frac{2imv}{\\hbar}\\partial_y\\psi+\\partial_y^2\\psi\\right)$．\n\\[ i\\hbar\\partial_t\\psi'+\\frac{\\hbar^2}{2m}\\partial_x^2\\psi'=e^{i\\Phi}\\left[\\frac{mv^2}{2}\\psi+i\\hbar\\partial_t\\psi-i\\hbar v\\partial_y\\psi-\\frac{mv^2}{2}\\psi+i\\hbar v\\partial_y\\psi+\\frac{\\hbar^2}{2m}\\partial_y^2\\psi\\right] \\]\n$=e^{i\\Phi}\\left[i\\hbar\\partial_t\\psi+\\frac{\\hbar^2}{2m}\\partial_y^2\\psi\\right]=0$．位相 $-\\frac12mv^2t/\\hbar$ を落とすと括弧内に $-\\frac{mv^2}{2}\\psi$ が相殺されずに残り，解にならない．（ブーストで運動エネルギーが $v\\langle p\\rangle+\\frac12mv^2$ 変わることに対応する．）\n\n(3) $(\\hat T^{-1}\\psi)(x)=\\psi(x+a)$ → $\\hat G^{-1}$：$e^{-imvx/\\hbar}\\psi(x+a)$ → $\\hat T$：$e^{-imv(x-a)/\\hbar}\\psi(x)$ → $\\hat G$：$e^{imvx/\\hbar}e^{-imv(x-a)/\\hbar}\\psi(x)=e^{imva/\\hbar}\\psi(x)$．よって\n\\[ \\hat G\\hat T\\hat G^{-1}\\hat T^{-1}=e^{imva/\\hbar}\\hat1 . \\]\n（$[\\frac{i}{\\hbar}mv\\hat x,-\\frac{i}{\\hbar}a\\hat p]=\\frac{imva}{\\hbar}$ が c 数であることからも得られる．）\n\n(4) 質量 $m_j$ の成分は $e^{im_jva/\\hbar}$ を受け取るので\n\\[ \\alpha|m_1\\rangle+\\beta|m_2\\rangle\\ \\mapsto\\ e^{im_1va/\\hbar}\\left(\\alpha|m_1\\rangle+\\beta e^{i(m_2-m_1)va/\\hbar}|m_2\\rangle\\right). \\]\n操作列はガリレイ群の元としては恒等変換（ブーストと並進は古典的には可換）なのに，相対位相が $(m_2-m_1)va/\\hbar$ だけ変わる．もし異なる質量の重ね合わせで干渉（相対位相）が観測できるなら，同じ物理状況を記述する座標系の選び方によって観測結果が変わってしまい，ガリレイ不変性と矛盾する．したがって異なる質量の状態の重ね合わせは物理的に純粋状態として扱えず，混合状態と区別できない（Bargmann の質量超選択則）．"
+   }
+  ],
+  "idea": {
+   "tex": "ブーストと並進の交換子は c 数 $imva/\\hbar$ で，ガリレイ群の量子表現は位相つき（射影）表現になる．位相が質量に依存するため，異なる質量の重ね合わせは不変な意味をもたない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ガリレイ変換",
+   "ブースト",
+   "射影表現",
+   "超選択則",
+   "ユニタリ変換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

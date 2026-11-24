@@ -294,6 +294,157 @@
   }
  },
  {
+  "id": "QM-10-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 2,
+  "minutes": 25,
+  "theme": "2量子ビット演算子のパウリ展開とSWAP",
+  "topic": "2量子ビット演算子のパウリ展開とSWAP",
+  "statement": {
+   "tex": "$\\sigma_0=I$，$\\sigma_1,\\sigma_2,\\sigma_3$ をパウリ行列とする．$4\\times4$ 行列（2 つのスピン 1/2 の空間の演算子）$X$ を\n\\[ X=\\sum_{\\mu,\\nu=0}^{3}c_{\\mu\\nu}\\,\\sigma_\\mu\\otimes\\sigma_\\nu \\]\nと展開する．\n\\begin{enumerate}\n\\item $\\mathrm{tr}\\left[(\\sigma_\\mu\\otimes\\sigma_\\nu)(\\sigma_\\rho\\otimes\\sigma_\\lambda)\\right]=4\\delta_{\\mu\\rho}\\delta_{\\nu\\lambda}$ を示し，$c_{\\mu\\nu}$ を $X$ のトレースで表せ．\n\\item 2 つのスピンの状態を入れ替える演算子 $P$（$P|a\\rangle\\otimes|b\\rangle=|b\\rangle\\otimes|a\\rangle$）の展開係数 $c_{\\mu\\nu}$ をすべて求めよ．\n\\item (2) の結果と $P^2=I$ だけを用いて（$4\\times4$ 行列を対角化せずに），$\\boldsymbol\\sigma^{(1)}\\cdot\\boldsymbol\\sigma^{(2)}=\\sum_{k=1}^3\\sigma_k\\otimes\\sigma_k$ の固有値とその縮退度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c_{\\mu\\nu}=\\frac14\\mathrm{tr}[(\\sigma_\\mu\\otimes\\sigma_\\nu)X]$　(2) $c_{00}=c_{11}=c_{22}=c_{33}=\\frac12$，他は 0，すなわち $P=\\frac12(I+\\boldsymbol\\sigma^{(1)}\\cdot\\boldsymbol\\sigma^{(2)})$　(3) $+1$（3重），$-3$（1重）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathrm{tr}(A\\otimes B)=\\mathrm{tr}A\\,\\mathrm{tr}B$ と $(A\\otimes B)(C\\otimes D)=AC\\otimes BD$ より\n\\[\n\\mathrm{tr}[(\\sigma_\\mu\\otimes\\sigma_\\nu)(\\sigma_\\rho\\otimes\\sigma_\\lambda)]=\\mathrm{tr}(\\sigma_\\mu\\sigma_\\rho)\\,\\mathrm{tr}(\\sigma_\\nu\\sigma_\\lambda).\n\\]\n$\\sigma_k^2=I$，$\\sigma_j\\sigma_k=i\\epsilon_{jkl}\\sigma_l\\ (j\\ne k)$，$\\mathrm{tr}\\sigma_k=0$，$\\mathrm{tr}I=2$ より $\\mathrm{tr}(\\sigma_\\mu\\sigma_\\rho)=2\\delta_{\\mu\\rho}$．よって積は $4\\delta_{\\mu\\rho}\\delta_{\\nu\\lambda}$．展開式に $\\sigma_\\mu\\otimes\\sigma_\\nu$ を掛けてトレースをとれば $c_{\\mu\\nu}=\\frac14\\mathrm{tr}[(\\sigma_\\mu\\otimes\\sigma_\\nu)X]$．\n\n(2) 基底 $|ab\\rangle$ で $\\langle a'b'|P|ab\\rangle=\\delta_{a'b}\\delta_{b'a}$．よって\n\\[\n\\mathrm{tr}[(A\\otimes B)P]=\\sum_{a,b}\\langle ab|(A\\otimes B)|ba\\rangle=\\sum_{a,b}A_{ab}B_{ba}=\\mathrm{tr}(AB).\n\\]\nしたがって $c_{\\mu\\nu}=\\frac14\\mathrm{tr}(\\sigma_\\mu\\sigma_\\nu)=\\frac12\\delta_{\\mu\\nu}$．すなわち\n\\[\nP=\\tfrac12\\left(I\\otimes I+\\sum_{k}\\sigma_k\\otimes\\sigma_k\\right)=\\tfrac12(I+\\boldsymbol\\sigma^{(1)}\\cdot\\boldsymbol\\sigma^{(2)}).\n\\]\n\n(3) $P^2=I$ より $P$ の固有値は $\\pm1$．$\\mathrm{tr}P=\\sum_{a,b}\\delta_{ab}=2$ なので（固有値 $+1$ の個数 $n_+$，$-1$ の個数 $n_-$ として $n_++n_-=4$，$n_+-n_-=2$）$n_+=3$，$n_-=1$．$\\boldsymbol\\sigma^{(1)}\\cdot\\boldsymbol\\sigma^{(2)}=2P-I$ だから，固有値は $2\\cdot1-1=+1$（3 重，対称な三重項）と $2(-1)-1=-3$（1 重，反対称な一重項）．"
+   }
+  ],
+  "idea": {
+   "tex": "パウリ行列の直交性 $\\mathrm{tr}(\\sigma_\\mu\\sigma_\\nu)=2\\delta_{\\mu\\nu}$ をテンソル積に拡張すると，入れ替え演算子が $\\frac12(1+\\boldsymbol\\sigma\\cdot\\boldsymbol\\sigma)$ と分かり，スピン-スピン相互作用の固有値が対角化なしで得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "パウリ行列",
+   "トレース",
+   "テンソル積",
+   "交換演算子",
+   "一重項",
+   "三重項"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 2,
+  "minutes": 25,
+  "theme": "スピン1/2の測定確率と状態トモグラフィー",
+  "topic": "スピン1/2の測定確率と状態トモグラフィー",
+  "statement": {
+   "tex": "スピン $1/2$ の系を考える（$\\boldsymbol S=\\frac\\hbar2\\boldsymbol\\sigma$）．\n\\begin{enumerate}\n\\item 系が $\\boldsymbol S\\cdot\\hat{\\boldsymbol n}$ の固有値 $+\\hbar/2$ の固有状態にあるとき，別の単位ベクトル $\\hat{\\boldsymbol m}$ の方向のスピン成分を測って $+\\hbar/2$ を得る確率を $\\hat{\\boldsymbol n}\\cdot\\hat{\\boldsymbol m}$ で表せ．\n\\item (1) の状態で $\\langle(\\Delta S_x)^2\\rangle+\\langle(\\Delta S_y)^2\\rangle+\\langle(\\Delta S_z)^2\\rangle$ を求めよ．また，密度演算子 $\\rho=\\frac12(\\mathbf 1+\\boldsymbol P\\cdot\\boldsymbol\\sigma)$（$|\\boldsymbol P|\\le1$）で表される混合状態では同じ量がいくらになるか．\n\\item ある純粋状態のスピンを多数用意し，$S_x$ を測ると $+\\hbar/2$ が確率 $0.8$，$S_z$ を測ると $+\\hbar/2$ が確率 $0.5$ で得られた．$S_y$ を測って $+\\hbar/2$ を得る確率として可能な値をすべて求めよ．また，混合状態の可能性も許すと，その確率はどの範囲の値をとりうるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{1+\\hat{\\boldsymbol n}\\cdot\\hat{\\boldsymbol m}}2$　(2) 純粋状態 $\\dfrac{\\hbar^2}2$，混合状態 $\\dfrac{\\hbar^2}{4}(3-|\\boldsymbol P|^2)$　(3) $0.9$ または $0.1$；混合を許すと $0.1\\le p_y\\le0.9$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $|\\hat{\\boldsymbol n};+\\rangle\\langle\\hat{\\boldsymbol n};+|=\\frac12(\\mathbf 1+\\hat{\\boldsymbol n}\\cdot\\boldsymbol\\sigma)$ を用いる．$\\hat{\\boldsymbol m}$ 方向で $+\\hbar/2$ を得る確率は\n\\[\n|\\langle\\hat{\\boldsymbol m};+|\\hat{\\boldsymbol n};+\\rangle|^2=\\mathrm{Tr}\\left[\\tfrac12(\\mathbf 1+\\hat{\\boldsymbol m}\\cdot\\boldsymbol\\sigma)\\tfrac12(\\mathbf 1+\\hat{\\boldsymbol n}\\cdot\\boldsymbol\\sigma)\\right]=\\frac{1+\\hat{\\boldsymbol n}\\cdot\\hat{\\boldsymbol m}}{2}\n\\]\n（$\\mathrm{Tr}\\,\\sigma_i=0$，$\\mathrm{Tr}\\,\\sigma_i\\sigma_j=2\\delta_{ij}$）．2 方向のなす角を $\\gamma$ とすれば $\\cos^2(\\gamma/2)$ である．\n\n(2) 一般に $\\rho=\\frac12(\\mathbf 1+\\boldsymbol P\\cdot\\boldsymbol\\sigma)$ で $\\langle S_i\\rangle=\\frac\\hbar2P_i$，$S_i^2=\\frac{\\hbar^2}4\\mathbf 1$ より $\\langle(\\Delta S_i)^2\\rangle=\\frac{\\hbar^2}4(1-P_i^2)$．和をとって\n\\[\n\\sum_i\\langle(\\Delta S_i)^2\\rangle=\\frac{\\hbar^2}{4}\\left(3-|\\boldsymbol P|^2\\right).\n\\]\n純粋状態は $\\boldsymbol P=\\hat{\\boldsymbol n}$，$|\\boldsymbol P|=1$ なので $\\hbar^2/2$（向きによらない）．混合状態ではこれより大きく，完全に偏りのない状態 $\\boldsymbol P=0$ で最大値 $3\\hbar^2/4$．\n\n(3) 各軸の確率は $p_i=\\frac{1+P_i}2$，すなわち $P_i=2p_i-1$．与えられた値から $P_x=0.6$，$P_z=0$．純粋状態では $|\\boldsymbol P|=1$ だから\n\\[\nP_y^2=1-0.36-0=0.64,\\qquad P_y=\\pm0.8,\\qquad p_y=0.9\\ \\text{または}\\ 0.1 .\n\\]\n2 つの測定だけでは $P_y$ の符号が決まらない（$xz$ 面に関する鏡映で移り合う 2 状態を区別できない）．混合状態を許すと条件は $|\\boldsymbol P|\\le1$，すなわち $P_y^2\\le0.64$ で，$0.1\\le p_y\\le0.9$ の任意の値が可能．"
+   }
+  ],
+  "idea": {
+   "tex": "純粋状態は $\\frac12(\\mathbf 1+\\hat{\\boldsymbol n}\\cdot\\boldsymbol\\sigma)$ と書け，各軸の測定確率は $\\frac{1+n_i}{2}$．$|\\hat{\\boldsymbol n}|=1$ という拘束が分散の和の一定性と「2 軸の測定から第 3 軸が符号を除いて決まる」ことを与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "スピン1/2",
+   "ブロッホベクトル",
+   "分散",
+   "密度演算子",
+   "状態トモグラフィー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "QM-10-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QM-97",
+  "level": 2,
+  "minutes": 30,
+  "theme": "磁場勾配下の2スピン交換：SWAPの不完全性",
+  "topic": "磁場勾配下の2スピン交換：SWAPの不完全性",
+  "statement": {
+   "tex": "2 個のスピン $1/2$ からなる系のハミルトニアンが，$t>0$ で\n\\[ H=\\frac{4\\Delta}{\\hbar^2}\\boldsymbol S_1\\cdot\\boldsymbol S_2+\\frac{2\\delta}{\\hbar}(S_{1z}-S_{2z})\\qquad(\\Delta,\\delta>0) \\]\nで与えられる（第 2 項は 2 つのスピンの位置で磁場が異なることによる）．$t\\le0$ で系は $|+-\\rangle$ にある．\n\\begin{enumerate}\n\\item $|++\\rangle,|--\\rangle$ に見いだされる確率が常にゼロである理由を述べよ．\n\\item $|-+\\rangle$ に見いだされる確率 $P_{-+}(t)$ を厳密に求めよ．\n\\item $\\delta\\gg\\Delta$ のとき，$H_0=\\frac{4\\Delta}{\\hbar^2}S_{1z}S_{2z}+\\frac{2\\delta}{\\hbar}(S_{1z}-S_{2z})$ を非摂動ハミルトニアン，残り $\\frac{2\\Delta}{\\hbar^2}(S_{1+}S_{2-}+S_{1-}S_{2+})$ を摂動として，時間を含む 1 次摂動論で $P_{-+}(t)$ を求め，(2) と比較せよ．\n\\item $|+-\\rangle\\to|-+\\rangle$ の完全な入れ替え（SWAP）が起こりうるのはどのような場合か．そうでない場合に達成できる最大確率を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_{1z}+S_{2z}$ が保存し初期値は 0　(2) $P_{-+}=\\dfrac{\\Delta^2}{\\Delta^2+\\delta^2}\\sin^2\\!\\left(\\dfrac{2\\sqrt{\\Delta^2+\\delta^2}}{\\hbar}t\\right)$　(3) $P_{-+}^{(1)}=\\dfrac{\\Delta^2}{\\delta^2}\\sin^2\\dfrac{2\\delta t}{\\hbar}$（$\\Delta\\ll\\delta$ で一致）　(4) $\\delta=0$ のときのみ（$t=\\pi\\hbar/4\\Delta$）．最大確率 $\\Delta^2/(\\Delta^2+\\delta^2)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol S_1\\cdot\\boldsymbol S_2$ も $S_{1z}-S_{2z}$ も全スピンの $z$ 成分 $S_z=S_{1z}+S_{2z}$ と可換なので $S_z$ は保存する．初期状態は $S_z=0$ なので，$S_z=\\pm\\hbar$ の $|++\\rangle,|--\\rangle$ には遷移しない．（$\\boldsymbol S^2$ は第 2 項と可換でないので保存しない．）\n\n(2) $\\boldsymbol S_1\\cdot\\boldsymbol S_2=S_{1z}S_{2z}+\\frac12(S_{1+}S_{2-}+S_{1-}S_{2+})$．基底 $\\{|+-\\rangle,|-+\\rangle\\}$ で\n\\[ H=\\begin{pmatrix}-\\Delta+2\\delta&2\\Delta\\\\2\\Delta&-\\Delta-2\\delta\\end{pmatrix}=-\\Delta\\,\\mathbf 1+2\\delta\\,\\sigma_z+2\\Delta\\,\\sigma_x . \\]\n$\\sigma_z,\\sigma_x$ 部分は大きさ $2\\sqrt{\\Delta^2+\\delta^2}$ の「磁場」なので，固有値は $-\\Delta\\pm2\\sqrt{\\Delta^2+\\delta^2}$．2 準位のラビ公式（固有値差 $\\hbar\\Omega=4\\sqrt{\\Delta^2+\\delta^2}$，混合角 $\\sin^2\\theta=\\frac{(2\\Delta)^2}{(2\\Delta)^2+(2\\delta)^2}$）より\n\\[ P_{-+}(t)=\\frac{\\Delta^2}{\\Delta^2+\\delta^2}\\sin^2\\frac{\\Omega t}{2}=\\frac{\\Delta^2}{\\Delta^2+\\delta^2}\\sin^2\\!\\left(\\frac{2\\sqrt{\\Delta^2+\\delta^2}}{\\hbar}t\\right). \\]\n$P_{+-}=1-P_{-+}$．$\\delta=0$ で $\\sin^2(2\\Delta t/\\hbar)$ に戻る．\n\n(3) $H_0$ の固有値は $|+-\\rangle$ で $-\\Delta+2\\delta$，$|-+\\rangle$ で $-\\Delta-2\\delta$．遷移角振動数 $\\omega_{-+,+-}=-4\\delta/\\hbar$．摂動の行列要素は $V_{-+,+-}=2\\Delta$（時間によらない）．\n\\[ c_{-+}^{(1)}=\\frac{-i}{\\hbar}\\int_0^t2\\Delta\\,e^{-4i\\delta t'/\\hbar}dt'=\\frac{-i\\cdot2\\Delta}{\\hbar}\\cdot\\frac{e^{-4i\\delta t/\\hbar}-1}{-4i\\delta/\\hbar}, \\]\n\\[ P_{-+}^{(1)}=\\frac{4\\Delta^2}{16\\delta^2}\\cdot4\\sin^2\\frac{2\\delta t}{\\hbar}=\\frac{\\Delta^2}{\\delta^2}\\sin^2\\frac{2\\delta t}{\\hbar}. \\]\n(2) で $\\Delta\\ll\\delta$ とすれば $\\frac{\\Delta^2}{\\Delta^2+\\delta^2}\\simeq\\frac{\\Delta^2}{\\delta^2}$，$\\sqrt{\\Delta^2+\\delta^2}\\simeq\\delta$ となって一致する．1 次摂動論は振幅のずれと振動数のずれ（$\\sim\\Delta^2/\\delta$）の両方を無視しているので，全時間で有効なのは $\\Delta\\ll\\delta$ かつ $t\\ll\\hbar\\delta/\\Delta^2$ の場合に限る．$\\delta=0$ では (3) の式は $4\\Delta^2t^2/\\hbar^2$ となり，$t\\ll\\hbar/2\\Delta$ でしか使えない．\n\n(4) $P_{-+}$ の最大値は $\\Delta^2/(\\Delta^2+\\delta^2)$ で，これが 1 になるのは $\\delta=0$ のときだけ．このとき $2\\Delta t/\\hbar=\\pi/2$，すなわち $t=\\pi\\hbar/4\\Delta$ で完全な SWAP が起こる．磁場勾配 $\\delta$ があると $|+-\\rangle$ と $|-+\\rangle$ のエネルギーがずれて非共鳴となり，入れ替えは不完全になる（2 スピン量子ビットで交換ゲートを使う際，局所磁場差を抑える必要がある理由）．"
+   }
+  ],
+  "idea": {
+   "tex": "$S_z$ 保存で問題は $\\{|+-\\rangle,|-+\\rangle\\}$ の 2 準位に帰着し，磁場勾配が離調，交換が結合となるラビ問題になる．離調があると SWAP は不完全で，大きな離調では 1 次摂動論と一致する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間依存摂動論",
+   "スピン交換相互作用",
+   "2準位系",
+   "ラビ振動",
+   "保存量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "QM-10-007",
   "schema": "lemma.problem/1",
   "kind": "written",

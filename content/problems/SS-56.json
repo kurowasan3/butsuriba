@@ -194,6 +194,54 @@
   }
  },
  {
+  "id": "SS-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 1,
+  "minutes": 20,
+  "theme": "並進演算子の固有値と周期境界条件による波数の量子化",
+  "topic": "並進演算子の固有値と周期境界条件による波数の量子化",
+  "statement": {
+   "tex": "1次元で周期 $a$ のポテンシャルの中の電子を考える．$T_a\\psi(x)=\\psi(x+a)$ とする．\n\\begin{enumerate}\n\\item $[T_a,H]=0$ を示し，同時固有状態が $\\psi(x+a)=e^{ika}\\psi(x)$ をみたすことを説明せよ．\n\\item $N$ 個の格子点に周期境界条件 $\\psi(x+Na)=\\psi(x)$ を課すとき，許される $k$ とブリルアン域の中の数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 説明　(2) $k=\\dfrac{2\\pi n}{Na}$，$N$ 個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V(x+a)=V(x)$ と微分の並進不変性から交換する．$T_a$ はユニタリーなので固有値は $e^{ika}$．\n\n(2) $e^{ikNa}=1$ より $\\boldsymbol{k=2\\pi n/Na}$．$-\\pi/a<k\\leqq\\pi/a$ に $\\boldsymbol N$ 個（1つのバンドに格子点の数だけの状態）．"
+   }
+  ],
+  "idea": {
+   "tex": "ブロッホの定理は並進演算子とハミルトニアンの同時対角化にすぎない．原題の直交性の証明を，並進演算子の固有値と状態の数え上げに変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ブロッホの定理",
+   "並進対称性",
+   "周期境界条件"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-04-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -390,6 +438,251 @@
   }
  },
  {
+  "id": "SS-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 2,
+  "minutes": 25,
+  "theme": "強結合鎖の1つのサイトのエネルギーを下げた不純物の束縛状態",
+  "topic": "強結合鎖の1つのサイトのエネルギーを下げた不純物の束縛状態",
+  "statement": {
+   "tex": "1次元の強結合鎖 $E\\psi_n=E_0\\psi_n-t(\\psi_{n-1}+\\psi_{n+1})$（$t>0$）で，サイト $0$ のエネルギーだけが $E_0-\\Delta$（$\\Delta>0$）に下がっている．\n\\begin{enumerate}\n\\item $\\psi_n=c^{|n|}$（$|c|<1$）とおき，$n\\ne0$ と $n=0$ の式から $\\Delta=t(c^{-1}-c)$ を示せ．\n\\item 束縛状態のエネルギーを求め，どんな小さな $\\Delta>0$ でもバンドの外に束縛状態ができることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $E=E_0-\\sqrt{\\Delta^2+4t^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n\\ne0$：$E-E_0=-t(c+c^{-1})$．$n=0$：$E-E_0+\\Delta=-2tc$．差をとって与式．\\hfill$\\square$\n\n(2) $(c+c^{-1})^2=(c^{-1}-c)^2+4$ より $\\boldsymbol{E=E_0-\\sqrt{\\Delta^2+4t^2}}<E_0-2t$．$\\Delta>0$ ならつねに解 $0<c<1$ がある（1次元では弱い引力でも束縛）．"
+   }
+  ],
+  "idea": {
+   "tex": "1次元では局所的な引力はつねに束縛状態を作り，そのエネルギーはバンドの外に出る．原題のホッピングの欠陥を，サイトのエネルギーの欠陥に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "強結合模型",
+   "不純物",
+   "局在状態",
+   "バンド"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 2,
+  "minutes": 25,
+  "theme": "V0 cos²(πx/a) のポテンシャル：第2のギャップが1次で消える",
+  "topic": "V0 cos²(πx/a) のポテンシャル：第2のギャップが1次で消える",
+  "statement": {
+   "tex": "周期 $a$ のポテンシャル $V(x)=V_0\\cos^2(\\pi x/a)$ の中の電子を，ほぼ自由な電子の近似で考える．\n\\begin{enumerate}\n\\item $V$ をフーリエ級数で表せ．\n\\item 1次の摂動で，第1と第2のバンドギャップの大きさを求めよ．\n\\item 第2のギャップは何次の摂動で初めて現れるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac{V_0}2+\\frac{V_0}4(e^{2\\pi ix/a}+e^{-2\\pi ix/a})$　(2) $\\frac{V_0}{2}$ と $0$　(3) 2次"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\cos^2\\theta=\\frac12(1+\\cos2\\theta)$ より与式．\n\n(2) $n$ 番目のギャップは $2|V_n|$：$\\boldsymbol{2\\cdot\\frac{V_0}4=\\frac{V_0}2}$，$V_2=0$ なので $\\boldsymbol0$．\n\n(3) $V_1$ を2回使う過程（$k\\to k-G\\to k-2G$）で \\textbf{2次}，大きさ $\\sim V_1^2/E_G$．"
+   }
+  ],
+  "idea": {
+   "tex": "バンドギャップはポテンシャルの対応するフーリエ成分で決まり，成分がなければ高次の効果でしか開かない．原題の一般論を，フーリエ成分が1つだけの例で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ((V_0)/(2))+((V_0)/(4))(e ^(2 pi i x / a)+ e ^(-2 pi i x / a))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ほぼ自由な電子",
+   "バンドギャップ",
+   "フーリエ成分"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 2,
+  "minutes": 25,
+  "theme": "直交しない原子軌道から作ったブロッホ状態の規格化",
+  "topic": "直交しない原子軌道から作ったブロッホ状態の規格化",
+  "statement": {
+   "tex": "1次元で原子軌道 $\\phi(x)$ を各格子点 $na$ に置き，$\\Psi_k=\\dfrac{1}{\\sqrt N}\\sum_ne^{ikna}\\phi(x-na)$ とする．隣どうしの重なりを $s=\\int\\phi^*(x)\\phi(x-a)dx$（実数），それより遠い重なりは $0$ とする．\n\\begin{enumerate}\n\\item $\\Psi_k$ がブロッホ状態であることを示せ．\n\\item $\\langle\\Psi_k|\\Psi_k\\rangle$ を求めよ．\n\\item 直交する局在関数（ワニエ関数）を作るには，どのように規格化を直せばよいか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $1+2s\\cos ka$　(3) $\\Psi_k/\\sqrt{1+2s\\cos ka}$ をフーリエ変換で戻す"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Psi_k(x+a)=\\frac1{\\sqrt N}\\sum e^{ikna}\\phi(x-(n-1)a)=e^{ika}\\Psi_k(x)$．\\hfill$\\square$\n\n(2) $\\frac1N\\sum_{n,n'}e^{ik(n-n')a}\\langle\\phi_{n'}|\\phi_n\\rangle=\\boldsymbol{1+2s\\cos ka}$．\n\n(3) 規格化したブロッホ状態 $\\tilde\\Psi_k=\\Psi_k/\\sqrt{1+2s\\cos ka}$ から $w_n=\\frac1{\\sqrt N}\\sum_ke^{-ikna}\\tilde\\Psi_k$ を作ると，正規直交な局在関数になる．"
+   }
+  ],
+  "idea": {
+   "tex": "原子軌道は隣と重なるのでそのままでは直交しないが，ブロッホ状態で規格化を直してから戻すと直交するワニエ関数になる．原題の一般論を，重なりのある具体例で計算させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 1+2 s cos k a\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "強結合近似",
+   "重なり積分",
+   "ブロッホ状態",
+   "ワニエ関数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 2,
+  "minutes": 30,
+  "theme": "2価の正方格子が絶縁体になるポテンシャルの強さの数値",
+  "topic": "2価の正方格子が絶縁体になるポテンシャルの強さの数値",
+  "statement": {
+   "tex": "格子定数 $a$ の正方格子で $V=2A[\\cos\\gamma x+\\cos\\gamma y]$（$\\gamma=2\\pi/a$）の中の電子を，ほぼ自由な電子の近似で考える．辺の中点 $X$ で $E=\\frac{\\hbar^2\\gamma^2}{8m}\\pm A$，角 $M$ で $E=\\frac{\\hbar^2\\gamma^2}{4m}\\pm2A$ と $\\frac{\\hbar^2\\gamma^2}{4m}$（2重）となる．\n\\begin{enumerate}\n\\item 第1バンドの最大と第2バンドの最小がどこにあるか答え，価電子数2の結晶が絶縁体になる条件を求めよ．\n\\item $a=3.0$ Å で必要な $A$ を eV で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 第1バンドの最大は $M$，第2バンドの最小は $X$；$A>\\dfrac{\\hbar^2\\gamma^2}{24m}$　(2) $A>1.39\\ \\mathrm{eV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 最大 $\\frac{\\hbar^2\\gamma^2}{4m}-2A$（$M$），最小 $\\frac{\\hbar^2\\gamma^2}{8m}+A$（$X$）．重ならない条件 $\\frac{\\hbar^2\\gamma^2}{8m}<3A$：$\\boldsymbol{A>\\hbar^2\\gamma^2/24m}$．\n\n(2) $\\dfrac{h^2}{24ma^2}=\\dfrac{(6.63\\times10^{-34})^2}{24\\times9.11\\times10^{-31}\\times(3\\times10^{-10})^2}\\approx\\boldsymbol{1.39\\ \\mathrm{eV}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "2次元以上では，ギャップが開いても別の方向のバンドと重なって金属になりうる．原題の条件の導出に，具体的な格子定数での数値評価を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ほぼ自由な電子",
+   "バンドの重なり",
+   "絶縁体",
+   "ブリルアン域"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 2,
+  "minutes": 20,
+  "theme": "強束縛バンドの有効質量と符号反転",
+  "topic": "強束縛バンドの有効質量と符号反転",
+  "statement": {
+   "tex": "格子定数 $a$ の 1 次元結晶で，強束縛近似によるバンドが\n\\[ E(k)=E_0-2t\\cos ka\\qquad(t>0,\\ -\\pi/a<k\\le\\pi/a) \\]\nで与えられる．有効質量を $\\dfrac1{m^*}=\\dfrac1{\\hbar^2}\\dfrac{d^2E}{dk^2}$ で定義する．\n\\begin{enumerate}\n\\item $m^*(k)$ を求め，バンド下端（$k=0$）と上端（$k=\\pi/a$）での値を比較せよ．\n\\item $m^*$ が発散する波数を求め，その点で群速度 $v_g=\\hbar^{-1}dE/dk$ がどうなっているか述べよ．\n\\item $t=1.0\\ \\mathrm{eV}$，$a=0.30\\ \\mathrm{nm}$ のとき，バンド下端の $m^*/m$（$m$ は電子の静止質量）を求めよ．また，自由電子の $E=\\hbar^2k^2/2m$ では $m^*=m$ となることとの関係を，$ka\\ll1$ の展開から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $m^*=\\dfrac{\\hbar^2}{2ta^2\\cos ka}$；下端 $+\\hbar^2/2ta^2$，上端 $-\\hbar^2/2ta^2$　(2) $k=\\pm\\pi/2a$，$|v_g|$ が最大 $2ta/\\hbar$　(3) $m^*/m\\approx0.42$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{d^2E}{dk^2}=2ta^2\\cos ka$ より $m^*(k)=\\dfrac{\\hbar^2}{2ta^2\\cos ka}$．$k=0$ で $m^*=\\hbar^2/(2ta^2)>0$，$k=\\pi/a$ で $m^*=-\\hbar^2/(2ta^2)<0$．上端付近の電子は外力と逆向きに加速される（正孔として振る舞う）．\n\n(2) $\\cos ka=0$，すなわち $k=\\pm\\pi/(2a)$ で $|m^*|\\to\\infty$．群速度 $v_g=\\dfrac{2ta}{\\hbar}\\sin ka$ はここで最大値 $2ta/\\hbar$ をとる．速度が極値なので $dv_g/dk=0$，外力を加えても（その瞬間）速度が変わらない＝慣性が無限大に見える．\n\n(3) $m^*=\\dfrac{\\hbar^2}{2ta^2}=\\dfrac{(1.055\\times10^{-34})^2}{2(1.602\\times10^{-19})(3.0\\times10^{-10})^2}=3.86\\times10^{-31}\\ \\mathrm{kg}$，$m^*/m=0.42$．\n$ka\\ll1$ で $E\\approx E_0-2t+ta^2k^2=\\text{const}+\\dfrac{\\hbar^2k^2}{2m^*}$ と自由粒子型の放物線になる．自由電子 $E=\\hbar^2k^2/2m$ では $d^2E/dk^2=\\hbar^2/m$ が一定で，定義から恒等的に $m^*=m$．強束縛ではバンド幅 $4t$ と格子定数が曲率を決め，$m^*$ は $m$ と無関係な値をとる．"
+   }
+  ],
+  "idea": {
+   "tex": "有効質量はバンドの曲率で決まり，余弦バンドでは下端で正，上端で負，変曲点で発散する（群速度最大の点）．自由電子では曲率一定のため $m^*=m$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "有効質量",
+   "強束縛近似",
+   "バンド構造",
+   "群速度",
+   "正孔"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-04-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -481,6 +774,253 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 3,
+  "minutes": 35,
+  "theme": "斥力のデルタ関数列（クローニッヒ＝ペニー）の最低バンドと最初のギャップ",
+  "topic": "斥力のデルタ関数列（クローニッヒ＝ペニー）の最低バンドと最初のギャップ",
+  "statement": {
+   "tex": "$V(x)=\\dfrac{\\hbar^2\\lambda}{m}\\sum_n\\delta(x-na)$（$\\lambda>0$）で，エネルギー $E=\\hbar^2q^2/2m$ の状態は $\\cos ka=\\cos qa+\\dfrac{\\lambda}{q}\\sin qa$ をみたす．\n\\begin{enumerate}\n\\item $\\lambda a\\ll1$ で最低バンドの底のエネルギーを求め，ポテンシャルの平均値と比べよ．\n\\item 最初のギャップの一方の端が $qa=\\pi$ であることを示し，$\\lambda a\\ll1$ でのギャップの幅を求めよ．\n\\item 結果をほぼ自由な電子の近似の $2|V_G|$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E\\approx\\dfrac{\\hbar^2\\lambda}{ma}$（平均値）　(2) 幅 $\\approx\\dfrac{2\\hbar^2\\lambda}{ma}$　(3) 一致（$V_G=\\hbar^2\\lambda/ma$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $k=0$：$1-\\cos qa=\\frac\\lambda q\\sin qa$．小さい $qa$ で $\\frac{(qa)^2}2\\approx\\lambda a$，$E=\\dfrac{\\hbar^2q^2}{2m}\\approx\\boldsymbol{\\dfrac{\\hbar^2\\lambda}{ma}}$（$=\\langle V\\rangle$）．\n\n(2) $k=\\pi/a$：$\\cos qa+\\frac\\lambda q\\sin qa=-1$．$qa=\\pi$ で成り立つ．もう一方は $qa=\\pi+\\epsilon$ で $\\frac{\\epsilon^2}2\\approx\\frac{\\lambda a}{\\pi}\\epsilon$，$\\epsilon\\approx\\frac{2\\lambda a}{\\pi}$．$\\Delta E\\approx\\dfrac{\\hbar^2}{2m}\\dfrac{2\\pi\\epsilon}{a^2}=\\boldsymbol{\\dfrac{2\\hbar^2\\lambda}{ma}}$．\n\n(3) フーリエ成分 $V_G=\\dfrac{\\hbar^2\\lambda}{ma}$ で $2|V_G|$ に一致．"
+   }
+  ],
+  "idea": {
+   "tex": "デルタ関数の列は周期ポテンシャルの厳密に解ける模型で，弱い極限ではほぼ自由な電子の近似と一致する．原題の引力の列の負のエネルギーのバンドを，斥力の列の正のエネルギーのバンドに変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クローニッヒ＝ペニー模型",
+   "バンドギャップ",
+   "周期ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 3,
+  "minutes": 30,
+  "theme": "マシュー方程式の第1と第2のバンドギャップ",
+  "topic": "マシュー方程式の第1と第2のバンドギャップ",
+  "statement": {
+   "tex": "$-\\psi''+\\lambda\\cos(2x)\\psi=E\\psi$（$|\\lambda|\\ll1$，周期 $\\pi$）を考える．\n\\begin{enumerate}\n\\item 第1のギャップ（$E\\approx1$）の両端のエネルギーとブロッホ状態を求めよ．\n\\item 第2のギャップ（$E\\approx4$）は1次では開かない．2次の摂動でその大きさを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E=1\\pm\\frac\\lambda2$；$\\cos x$（$+$），$\\sin x$（$-$）　(2) $\\dfrac{\\lambda^2}{8}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $e^{\\pm ix}$ が $\\frac\\lambda2$ で結合．$\\cos x$ は $1+\\frac\\lambda2$，$\\sin x$ は $\\boldsymbol{1-\\frac\\lambda2}$（$\\lambda>0$）．\n\n(2) $e^{\\pm2ix}$ は $e^{0}$ を経由して結合し，有効な結合は $\\dfrac{(\\lambda/2)^2}{4-0}=\\dfrac{\\lambda^2}{16}$．$\\cos2x$ と $\\sin2x$ の分裂は $2\\times\\dfrac{\\lambda^2}{16}=\\boldsymbol{\\dfrac{\\lambda^2}8}$（数値計算と一致）．"
+   }
+  ],
+  "idea": {
+   "tex": "1つのフーリエ成分だけのポテンシャルでも，高次の摂動で上のギャップが開く．原題の最低バンドの端を，第2のギャップまで広げた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((λ ^(2))/(8))"
+  },
+  "methods": [],
+  "tags": [
+   "マシュー方程式",
+   "ほぼ自由な電子",
+   "2次摂動",
+   "バンドギャップ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 3,
+  "minutes": 35,
+  "theme": "蜂の巣格子（グラフェン）の強結合バンドとディラック点",
+  "topic": "蜂の巣格子（グラフェン）の強結合バンドとディラック点",
+  "statement": {
+   "tex": "炭素間距離 $a$ の蜂の巣格子で，最近接のホッピング $t$ の強結合模型を考える．ブラベ格子の基本ベクトルを $\\boldsymbol a_1=a(\\frac32,\\frac{\\sqrt3}2)$，$\\boldsymbol a_2=a(\\frac32,-\\frac{\\sqrt3}2)$ とする．\n\\begin{enumerate}\n\\item エネルギーが $E=\\pm t|1+e^{i\\boldsymbol k\\cdot\\boldsymbol a_1}+e^{i\\boldsymbol k\\cdot\\boldsymbol a_2}|$ となることを示せ．\n\\item $\\boldsymbol K=\\left(\\dfrac{2\\pi}{3a},\\dfrac{2\\pi}{3\\sqrt3a}\\right)$ で $E=0$ となることを示せ．\n\\item $\\boldsymbol K$ の近くで $E\\approx\\pm\\hbar v_F|\\boldsymbol k-\\boldsymbol K|$ と書け，$v_F$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) 確認　(3) $v_F=\\dfrac{3ta}{2\\hbar}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 単位胞に A,B の2原子．A は B の3つの最近接（位置の差が $0,\\boldsymbol a_1,\\boldsymbol a_2$ に対応）とだけ結合し，$2\\times2$ 行列 $\\begin{pmatrix}0&-tf\\\\-tf^*&0\\end{pmatrix}$，$f=1+e^{i\\boldsymbol k\\cdot\\boldsymbol a_1}+e^{i\\boldsymbol k\\cdot\\boldsymbol a_2}$．固有値 $\\pm t|f|$．\\hfill$\\square$\n\n(2) $\\boldsymbol K\\cdot\\boldsymbol a_1=\\frac{4\\pi}3$，$\\boldsymbol K\\cdot\\boldsymbol a_2=\\frac{2\\pi}3$，$f=1+e^{4\\pi i/3}+e^{2\\pi i/3}=0$．\n\n(3) $f$ を展開すると $|\\nabla_kf|=\\frac{3a}2$ の線形の形で，$\\boldsymbol{v_F=\\dfrac{3ta}{2\\hbar}}$（$t\\approx2.8$ eV，$a=1.42$ Å で $\\approx10^6$ m/s）．"
+   }
+  ],
+  "idea": {
+   "tex": "2つの副格子をもつ強結合模型は，特定の点でバンドが線形に接するディラック点をもつ．原題の正方格子の強結合バンドを，蜂の巣格子に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) $v_F$：((3 t a)/(2 hbar))"
+  },
+  "methods": [],
+  "tags": [
+   "強結合模型",
+   "グラフェン",
+   "ディラック点",
+   "フェルミ速度"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 3,
+  "minutes": 30,
+  "theme": "並進演算子とワニエ–シュタルク梯子",
+  "topic": "並進演算子とワニエ–シュタルク梯子",
+  "statement": {
+   "tex": "一次元のハミルトニアン $\\hat H=\\dfrac{\\hat p^2}{2m}+V(\\hat x)+F\\hat x$ を考える．$V$ は周期 $d$ の周期関数（$V(x+d)=V(x)$），$F>0$ は一様な力（電場）を表す定数である．並進演算子 $\\hat T=e^{-id\\hat p/\\hbar}$ を用いる．\n\\begin{enumerate}\n\\item $\\hat T$ はユニタリで $(\\hat T\\psi)(x)=\\psi(x-d)$ と作用することを示し，$\\hat T\\hat x\\hat T^{-1}$ を求めよ．\n\\item $[\\hat H,\\hat T]$ を求めよ．$F=0$ ならば $\\hat T$ は保存量となるが，$F\\neq0$ でも，$\\hat H$ がエネルギー $E$ の固有状態 $\\psi_E$ をもつなら $\\hat T\\psi_E$ もまた固有状態であることを示し，そのエネルギーを求めよ．\n\\item 任意の状態について $\\langle\\hat T\\rangle(t)$ を $\\langle\\hat T\\rangle(0)$ で表せ．$\\langle\\hat T\\rangle$ が元に戻る最短時間 $T_{\\rm B}$ を求めよ．\n\\item $d=0.5\\ {\\rm nm}$，$F=e\\times10^{6}\\ {\\rm V/m}$（$e$ は電気素量）のときの $T_{\\rm B}$ を有効数字 2 桁で求めよ．$h=6.63\\times10^{-34}\\ {\\rm J\\,s}$，$e=1.60\\times10^{-19}\\ {\\rm C}$．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat T\\hat x\\hat T^{-1}=\\hat x-d$ (2) $[\\hat H,\\hat T]=Fd\\,\\hat T$，$\\hat T\\psi_E$ のエネルギーは $E+Fd$（梯子 $E+nFd$）(3) $\\langle\\hat T\\rangle(t)=e^{iFdt/\\hbar}\\langle\\hat T\\rangle(0)$，$T_{\\rm B}=2\\pi\\hbar/(Fd)=h/(Fd)$ (4) $T_{\\rm B}\\approx8.3\\times10^{-12}\\ {\\rm s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\hat p$ はエルミートだから $(e^{-id\\hat p/\\hbar})^\\dagger=e^{id\\hat p/\\hbar}=\\hat T^{-1}$ でユニタリ．$\\hat p=-i\\hbar\\,d/dx$ より $\\hat T=e^{-d\\,d/dx}=\\sum_n\\frac{(-d)^n}{n!}\\frac{d^n}{dx^n}$ はテイラー展開そのもので $(\\hat T\\psi)(x)=\\psi(x-d)$．\n$(\\hat T\\hat x\\hat T^{-1}\\psi)(x)=\\left[x'\\psi(x'+d)\\right]_{x'=x-d}=(x-d)\\psi(x)$ より $\\hat T\\hat x\\hat T^{-1}=\\hat x-d$．\n\n(2) $\\hat T$ は $\\hat p$ と可換，$\\hat T V(\\hat x)\\hat T^{-1}=V(\\hat x-d)=V(\\hat x)$．よって $\\hat T\\hat H\\hat T^{-1}=\\hat H-Fd$，すなわち $\\hat T\\hat H=(\\hat H-Fd)\\hat T$，\n\\[ [\\hat H,\\hat T]=\\hat H\\hat T-\\hat T\\hat H=Fd\\,\\hat T . \\]\n$F=0$ なら可換で $\\hat T$ は保存（ブロッホの定理）．$F\\ne0$ で $\\hat H\\psi_E=E\\psi_E$ なら $\\hat H\\hat T\\psi_E=\\hat T\\hat H\\psi_E+Fd\\hat T\\psi_E=(E+Fd)\\hat T\\psi_E$．繰り返して $E+nFd$（$n\\in\\mathbb Z$）の等間隔な梯子（ワニエ–シュタルク梯子）．物理的には，固有状態を 1 周期ずらすと位置エネルギーが $Fd$ だけ変わるだけ．\n\n(3) ハイゼンベルクの方程式 $\\frac{d}{dt}\\langle\\hat T\\rangle=\\frac{1}{i\\hbar}\\langle[\\hat T,\\hat H]\\rangle=\\frac{-Fd}{i\\hbar}\\langle\\hat T\\rangle=\\frac{iFd}{\\hbar}\\langle\\hat T\\rangle$．よって $\\langle\\hat T\\rangle(t)=e^{iFdt/\\hbar}\\langle\\hat T\\rangle(0)$．$\\langle\\hat T\\rangle$ は結晶運動量の位相 $e^{-ikd}$ の平均であり，それが周期 $T_{\\rm B}=\\dfrac{2\\pi\\hbar}{Fd}=\\dfrac{h}{Fd}$ で回転する：結晶運動量が $\\hbar\\dot k=-F$ でブリルアンゾーンを周回するブロッホ振動．\n\n(4) $Fd=1.60\\times10^{-19}\\times10^{6}\\times0.5\\times10^{-9}=8.0\\times10^{-23}\\ {\\rm J}$．$T_{\\rm B}=6.63\\times10^{-34}/8.0\\times10^{-23}\\approx8.3\\times10^{-12}\\ {\\rm s}$．"
+   }
+  ],
+  "idea": {
+   "tex": "周期ポテンシャルの並進対称性は一様力で破れるが，$\\hat T\\hat H\\hat T^{-1}=\\hat H-Fd$ と「定数だけずれる」ため，エネルギー梯子と $\\langle\\hat T\\rangle$ の一様な位相回転（ブロッホ振動）が厳密に導かれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "並進演算子",
+   "ブロッホの定理",
+   "ワニエ-シュタルク梯子",
+   "ブロッホ振動",
+   "ユニタリ変換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-04-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-56",
+  "level": 3,
+  "minutes": 40,
+  "theme": "ディラック櫛のバンド構造と弱・強結合極限",
+  "topic": "ディラック櫛のバンド構造と弱・強結合極限",
+  "statement": {
+   "tex": "質量 $m$ の電子が 1 次元周期ポテンシャル\n\\[\nV(x)=\\alpha\\sum_{n=-\\infty}^{\\infty}\\delta(x-na)\\qquad(\\alpha>0)\n\\]\nの中を運動する（障壁の幅 $b\\to0$，高さ $V_0\\to\\infty$ で $V_0b=\\alpha$ を一定に保ったクローニッヒ＝ペニー模型の極限）．$E=\\hbar^2q^2/2m>0$，$P=m\\alpha a/\\hbar^2$ とする．\n\\begin{enumerate}\n\\item ブロッホの定理 $\\psi(x+a)=e^{ika}\\psi(x)$ を用いて，許されるエネルギーの条件\n\\[\n\\cos ka=\\cos qa+P\\frac{\\sin qa}{qa}\n\\]\nを導け．\n\\item 各許容バンドの上端は $qa=n\\pi$（$n=1,2,\\dots$），すなわち自由電子のエネルギー $E=\\hbar^2n^2\\pi^2/2ma^2$ にちょうど一致することを示せ．\n\\item $P\\ll1$ のとき，最低のエネルギーギャップ（$qa=\\pi$ の直上）の幅が $P$ の 1 次で $\\Delta E\\simeq2\\alpha/a$ となることを示し，これがポテンシャルのフーリエ成分 $V_G$（$G=2\\pi/a$）を用いたほぼ自由な電子近似の結果 $2|V_G|$ と一致することを確かめよ．\n\\item $P\\gg1$ のとき，最低の許容バンドの幅 $W$ を $P$ の最低次で求めよ．$P\\to\\infty$ で各バンドはどのような準位に縮退するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) $qa=n\\pi$ で右辺 $=(-1)^n$　(3) $\\Delta E\\simeq2\\alpha/a=2|V_G|$　(4) $W\\simeq\\dfrac{2\\pi^2\\hbar^2}{ma^2P}=\\dfrac{2\\pi^2\\hbar^4}{m^2\\alpha a^3}$．$P\\to\\infty$ で長さ $a$ の箱の準位 $\\hbar^2n^2\\pi^2/2ma^2$ に縮退"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $0<x<a$ で $\\psi=A\\sin qx+B\\cos qx$．ブロッホの定理から $-a<x<0$ では $\\psi(x)=e^{-ika}\\psi(x+a)$．$x=0$ で $\\psi$ は連続，$\\psi'$ はデルタ関数により $\\psi'(0^+)-\\psi'(0^-)=\\frac{2m\\alpha}{\\hbar^2}\\psi(0)$ だけ跳ぶ．\n連続性：$B=e^{-ika}(A\\sin qa+B\\cos qa)$．\n跳び：$qA-e^{-ika}q(A\\cos qa-B\\sin qa)=\\frac{2m\\alpha}{\\hbar^2}B$．\n第 1 式から $A\\sin qa=B(e^{ika}-\\cos qa)$．第 2 式に $e^{ika}$ をかけ $A$ を消去すると，\n\\[\n(e^{ika}-\\cos qa)^2+\\sin^2qa=\\frac{2m\\alpha}{\\hbar^2q}e^{ika}\\sin qa\n\\]\nとなり，左辺 $=e^{2ika}-2e^{ika}\\cos qa+1$．$e^{ika}$ で割ると $2\\cos ka-2\\cos qa=\\frac{2m\\alpha}{\\hbar^2q}\\sin qa$，すなわち\n\\[\n\\cos ka=\\cos qa+P\\frac{\\sin qa}{qa}\\equiv f(qa).\n\\]\n$|f|\\le1$ の $q$ だけが許容される．\n\n(2) $qa=n\\pi$ では $f=(-1)^n$ で $|f|=1$ の端．$qa=n\\pi$ のわずか上 $qa=n\\pi+\\delta$（$\\delta>0$）では $f\\simeq(-1)^n\\left[1+\\frac{P\\delta}{n\\pi}\\right]$ で $|f|>1$（禁止帯），わずか下では $|f|<1$（許容帯）．よって $qa=n\\pi$ は各許容バンドの上端で，そこでは $\\sin qa=0$，すなわち波動関数がデルタ関数の位置で節をもちポテンシャルを感じないため，自由電子と同じエネルギーになる．\n\n(3) $qa=\\pi+\\delta$ で展開すると $f\\simeq-1+\\frac{\\delta^2}2-\\frac{P\\delta}{\\pi}$．$f<-1$ となるのは $0<\\delta<2P/\\pi$．$E=\\frac{\\hbar^2(qa)^2}{2ma^2}$ より\n\\[\n\\Delta E\\simeq\\frac{\\hbar^2\\pi}{ma^2}\\cdot\\frac{2P}{\\pi}=\\frac{2\\hbar^2P}{ma^2}=\\frac{2\\alpha}{a}.\n\\]\n一方 $V_G=\\frac1a\\int_0^aV(x)e^{-iGx}dx=\\frac{\\alpha}{a}$ なので，ほぼ自由な電子近似のギャップ $2|V_G|=2\\alpha/a$ と一致する．\n\n(4) $P\\gg1$ では $|f|\\le1$ のためには $\\sin qa/qa$ が小さくなければならず，最低バンドは $qa=\\pi$ の直下に限られる．$qa=\\pi-\\varepsilon$ とおくと $f\\simeq-1+\\frac{P\\varepsilon}{\\pi}$（$\\varepsilon\\ll1$）で，$f$ が $-1$ から $+1$ まで動く範囲は $0\\le\\varepsilon\\le2\\pi/P$．よって\n\\[\nW\\simeq\\frac{\\hbar^2\\pi}{ma^2}\\cdot\\frac{2\\pi}{P}=\\frac{2\\pi^2\\hbar^2}{ma^2P}=\\frac{2\\pi^2\\hbar^4}{m^2\\alpha a^3}.\n\\]\n$P\\to\\infty$ で $W\\to0$ となり，各バンドは隣り合うデルタ関数で仕切られた長さ $a$ の無限井戸の準位 $E_n=\\hbar^2n^2\\pi^2/2ma^2$ に縮退する（強結合極限：トンネルが弱く，バンド幅はトンネル振幅に比例して $1/\\alpha$ で小さくなる）．"
+   }
+  ],
+  "idea": {
+   "tex": "クローニッヒ＝ペニー模型をデルタ櫛の極限にすると条件式が簡単になり，バンド上端が自由電子と一致すること，弱結合ギャップ $2|V_G|$，強結合でのバンド幅 $\\propto1/\\alpha$ を一つの式から読み取れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クローニッヒペニー模型",
+   "ディラック櫛",
+   "ブロッホの定理",
+   "バンドギャップ",
+   "ほぼ自由な電子近似",
+   "強結合近似"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

@@ -195,6 +195,156 @@
   }
  },
  {
+  "id": "EX-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-51",
+  "level": 1,
+  "minutes": 20,
+  "theme": "ポアソン分布の階乗モーメントと偶奇",
+  "topic": "ポアソン分布の階乗モーメントと偶奇",
+  "statement": {
+   "tex": "微弱光を光子計数器で測る．一定時間内の検出数 $x$ は平均 $m$ のポアソン分布 $P_x=e^{-m}m^x/x!$ に従う．\n\\begin{enumerate}\n\\item 階乗モーメント $\\langle x(x-1)\\cdots(x-k+1)\\rangle=m^k$ を示し，これから分散が $m$，3 次の中心モーメント $\\langle(x-m)^3\\rangle$ が $m$ であることを導け．\n\\item 検出数が偶数である確率を求めよ．$m\\to0$ と $m\\to\\infty$ での値を述べよ．\n\\item $P_x$ を最大にする $x$ を求めよ．最大値をとる $x$ が 2 つになるのはどのようなときか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sigma^2=m$，$\\langle(x-m)^3\\rangle=m$．(2) $\\dfrac{1+e^{-2m}}2$（$m\\to0$ で 1，$m\\to\\infty$ で $1/2$）．(3) $x=\\lfloor m\\rfloor$；$m$ が整数のとき $x=m-1,\\ m$ の 2 つ．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\langle x(x-1)\\cdots(x-k+1)\\rangle=\\sum_{x\\ge k}e^{-m}\\dfrac{m^x}{(x-k)!}=m^ke^{-m}\\sum_{j\\ge0}\\dfrac{m^j}{j!}=m^k$．\nよって $\\langle x\\rangle=m$，$\\langle x^2\\rangle=m^2+m$，$\\langle x^3\\rangle=\\langle x(x-1)(x-2)\\rangle+3\\langle x^2\\rangle-2\\langle x\\rangle=m^3+3m^2+m$．\n分散 $=\\langle x^2\\rangle-m^2=m$．3 次中心モーメント $=\\langle x^3\\rangle-3m\\langle x^2\\rangle+2m^3=m^3+3m^2+m-3m^3-3m^2+2m^3=m$．\n\n(2) $P(\\text{偶})=e^{-m}\\sum_{j}\\dfrac{m^{2j}}{(2j)!}=e^{-m}\\cosh m=\\dfrac{1+e^{-2m}}{2}$．$m\\to0$ では検出 0 個がほぼ確実なので 1，$m\\to\\infty$ では偶奇が等確率で $1/2$ に近づく（偏差 $e^{-2m}/2$ は指数的に小さい）．\n\n(3) $P_x/P_{x-1}=m/x$ なので，$x<m$ なら増加，$x>m$ なら減少．最大は $x=\\lfloor m\\rfloor$（$m<1$ なら $x=0$）．$m$ が整数のときは $P_{m}/P_{m-1}=1$ となり $x=m-1$ と $x=m$ で同じ最大値をとる．"
+   }
+  ],
+  "idea": {
+   "tex": "ポアソン分布は階乗モーメントが $m^k$ と極めて単純で，全キュムラントが $m$ になる．偶奇の確率は $\\cosh$ で書ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン分布",
+   "階乗モーメント",
+   "分散",
+   "歪度",
+   "光子計数",
+   "最頻値"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-51",
+  "level": 1,
+  "minutes": 20,
+  "theme": "放射線計数の統計：ポアソン分布と正規近似",
+  "topic": "放射線計数の統計：ポアソン分布と正規近似",
+  "statement": {
+   "tex": "ある放射性線源からの $\\alpha$ 粒子の真の計数率は $1.00\\times10^4\\,\\mathrm{s^{-1}}$ で一定とし，計数はポアソン分布に従うとする．\n\\begin{enumerate}\n\\item 計数の相対統計誤差（標準偏差/平均）を $0.10\\%$ にするには，何秒間計数すればよいか．\n\\item 10 ms の時間窓で計数する（平均 100）．計数が 90 以上 110 以下になる確率を，連続補正つきの正規近似で求めよ．ポアソン分布による厳密値は $0.7065$ である．\n\\item 0.10 ms の時間窓で 1 個も計数されない確率を求めよ．同じ量を平均 1，標準偏差 1 の正規近似（連続補正つき）で求めるとどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $100\\,\\mathrm{s}$　(2) 約 $0.706$　(3) $e^{-1}\\approx0.368$（正規近似では約 $0.31$ で不適）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ポアソン分布では平均 $\\bar N$ に対し $\\sigma=\\sqrt{\\bar N}$，相対誤差 $1/\\sqrt{\\bar N}=10^{-3}$ より $\\bar N=10^6$．計数率 $10^4\\,\\mathrm{s^{-1}}$ なので $100\\,\\mathrm{s}$．\n\n(2) 平均 $100$，$\\sigma=10$．連続補正で $89.5<x<110.5$ とすると $z=\\pm1.05$：\n\\[\nP=2\\Phi(1.05)-1=0.706.\n\\]\n厳密値 $0.7065$ とよく一致する（連続補正をしないで $z=\\pm1$ とすると $0.683$ となりずれる）．\n\n(3) 平均 $\\lambda=10^4\\times10^{-4}=1$．ポアソン分布で $P(0)=e^{-1}=0.368$．正規近似（平均 1，$\\sigma=1$）で $x<0.5$ の確率は $\\Phi(-0.5)=0.309$ となり 16% も小さい．さらに正規分布は負の計数にも確率を与えてしまう．平均が小さいとポアソン分布は非対称で，正規近似は使えない．"
+   }
+  ],
+  "idea": {
+   "tex": "計数の標準偏差 $\\sqrt N$ がポアソン統計に由来することを使い，平均が大きいときは連続補正つき正規近似が有効だが，平均が 1 程度では破綻することを確かめる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [s]：100\n(2) ≈0.706\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン分布",
+   "正規分布",
+   "計数統計",
+   "連続補正",
+   "放射線計測"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-51",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ガウス型とローレンツ型ピークの幅と面積",
+  "topic": "ガウス型とローレンツ型ピークの幅と面積",
+  "statement": {
+   "tex": "検出器のピークの形を考える．\n\\begin{enumerate}\n\\item ガウス分布 $f(x)=\\dfrac{1}{\\sigma\\sqrt{2\\pi}}e^{-(x-\\bar x)^2/2\\sigma^2}$ について，半値半幅 HWHM を $\\sigma$ で表せ．また $\\bar x\\pm\\mathrm{HWHM}$ の範囲に入る事象の割合を求めよ．\n\\item ピーク高さ $H$ と FWHM からピーク面積 $A$ を求める式 $A=c\\,H\\cdot\\mathrm{FWHM}$ の係数 $c$ をガウス分布について求めよ．\n\\item ローレンツ（コーシー）分布 $f(x)=\\dfrac{1}{\\pi}\\dfrac{\\Gamma/2}{(x-\\bar x)^2+(\\Gamma/2)^2}$ について，(1)(2) と同じ量を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathrm{HWHM}=\\sqrt{2\\ln2}\\,\\sigma=1.177\\sigma$，割合 $\\mathrm{erf}(\\sqrt{\\ln2})=0.761$　(2) $c=\\sqrt{\\pi/(4\\ln2)}=1.064$　(3) $\\mathrm{HWHM}=\\Gamma/2$，割合 $1/2$，$c=\\pi/2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f(\\bar x+k\\sigma)/f(\\bar x)=e^{-k^2/2}=1/2$ より $k=\\sqrt{2\\ln2}=1.177$．範囲内の割合は\n\\[\\int_{-k}^{k}\\frac{e^{-u^2/2}}{\\sqrt{2\\pi}}du=\\mathrm{erf}\\!\\left(\\frac{k}{\\sqrt2}\\right)=\\mathrm{erf}(\\sqrt{\\ln2})=0.761.\\]\n(2) $H=\\dfrac{A}{\\sigma\\sqrt{2\\pi}}$，$\\mathrm{FWHM}=2\\sqrt{2\\ln2}\\,\\sigma$ より $A=H\\sigma\\sqrt{2\\pi}=H\\cdot\\mathrm{FWHM}\\cdot\\dfrac{\\sqrt{2\\pi}}{2\\sqrt{2\\ln2}}=\\sqrt{\\dfrac{\\pi}{4\\ln2}}\\,H\\cdot\\mathrm{FWHM}$，$c=1.064$．\n(3) 頂点の値 $2/(\\pi\\Gamma)$ の半分になるのは $(x-\\bar x)^2=(\\Gamma/2)^2$，よって HWHM $=\\Gamma/2$．範囲内の割合は $\\dfrac1\\pi[\\arctan u]_{-1}^{1}=\\dfrac12$．面積 1 に対し $H\\cdot\\mathrm{FWHM}=\\dfrac{2}{\\pi\\Gamma}\\Gamma=\\dfrac2\\pi$ なので $c=\\pi/2=1.571$．ローレンツ型は裾が重く，半値幅の内側に半分しか入らない（分散は発散する）．"
+   }
+  ],
+  "idea": {
+   "tex": "HWHM $=1.177\\sigma$ を出発点に，ピーク面積と幅・高さの関係を分布の形ごとに比較し，裾の重さの違いを定量化する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $c$：≈1.064\n(3) $\\mathrm{HWHM}$：Γ /2 ; 割合：1/2 ; $c$：pi /2"
+  },
+  "methods": [],
+  "tags": [
+   "正規分布",
+   "半値幅",
+   "ローレンツ分布",
+   "ピーク面積"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "EX-04-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -385,6 +535,209 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-51",
+  "level": 2,
+  "minutes": 20,
+  "theme": "二項分布とスピン常磁性の揺らぎ",
+  "topic": "二項分布とスピン常磁性の揺らぎ",
+  "statement": {
+   "tex": "磁場 $B$ 中にある，互いに独立な $N$ 個のスピン（磁気モーメント $\\pm\\mu$）を温度 $T$ で考える．各スピンが磁場の向きをとる確率は $p=\\dfrac{e^{\\beta\\mu B}}{e^{\\beta\\mu B}+e^{-\\beta\\mu B}}$（$\\beta=1/k_BT$）である．上向きスピン数 $n$ は二項分布 $\\binom Nn p^n q^{N-n}$（$q=1-p$）に従い，全磁気モーメントは $M=\\mu(2n-N)$．\n\\begin{enumerate}\n\\item 母関数 $(q+pe^s)^N$ を用いて $\\langle n\\rangle=Np$，$\\langle(\\Delta n)^2\\rangle=Npq$ を示せ．\n\\item $\\langle M\\rangle$ と $\\langle(\\Delta M)^2\\rangle$ を $\\beta\\mu B$ の双曲線関数で表せ．\n\\item 揺動散逸関係 $\\langle(\\Delta M)^2\\rangle=k_BT\\,\\dfrac{\\partial\\langle M\\rangle}{\\partial B}$ が成り立つことを確かめよ．$B=0$ のときの磁化率 $\\chi=\\partial\\langle M\\rangle/\\partial B$ はどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）．(2) $\\langle M\\rangle=N\\mu\\tanh(\\beta\\mu B)$，$\\langle(\\Delta M)^2\\rangle=N\\mu^2\\,\\mathrm{sech}^2(\\beta\\mu B)$．(3) 成立；$\\chi(0)=N\\mu^2/k_BT$（キュリー則）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $G(s)=\\sum_n\\binom Nn(pe^s)^nq^{N-n}=(q+pe^s)^N$（$G(0)=1$ が規格化）．$\\langle n\\rangle=G'(0)=Np(q+p)^{N-1}=Np$．$\\langle n^2\\rangle=G''(0)=N(N-1)p^2+Np$ より $\\langle(\\Delta n)^2\\rangle=Np-Np^2=Npq$．\n\n(2) $2p-1=\\tanh(\\beta\\mu B)$，$4pq=1-\\tanh^2=\\mathrm{sech}^2(\\beta\\mu B)$．$M=\\mu(2n-N)$ より\n\\[\\langle M\\rangle=N\\mu(2p-1)=N\\mu\\tanh(\\beta\\mu B),\\qquad\\langle(\\Delta M)^2\\rangle=4\\mu^2Npq=N\\mu^2\\mathrm{sech}^2(\\beta\\mu B).\\]\n\n(3) $\\dfrac{\\partial\\langle M\\rangle}{\\partial B}=N\\mu\\cdot\\beta\\mu\\,\\mathrm{sech}^2(\\beta\\mu B)$ なので $k_BT\\,\\partial\\langle M\\rangle/\\partial B=N\\mu^2\\mathrm{sech}^2(\\beta\\mu B)=\\langle(\\Delta M)^2\\rangle$．$B=0$ では $\\chi=N\\mu^2/k_BT$（キュリー則）．磁化率という応答が，無磁場での自発的な揺らぎ $N\\mu^2$（独立なランダムウォーク）で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "二項分布の分散 $Npq$ は独立スピン系の磁化の揺らぎそのものであり，揺動散逸関係を通じてキュリー則を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "二項分布",
+   "母関数",
+   "分散",
+   "常磁性",
+   "揺動散逸定理",
+   "キュリー則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-51",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ポアソン分布の正規近似と歪みの補正",
+  "topic": "ポアソン分布の正規近似と歪みの補正",
+  "statement": {
+   "tex": "平均 $m$ のポアソン分布 $P_x=e^{-m}m^x/x!$ を $m\\gg1$ で考える．$x=m+\\delta$（$|\\delta|\\ll m$）とおく．\n\\begin{enumerate}\n\\item スターリングの公式 $x!\\simeq\\sqrt{2\\pi x}\\,x^xe^{-x}$ を用いて\n\\[\\ln P_x\\simeq-\\frac12\\ln(2\\pi m)-\\frac{\\delta^2}{2m}+\\frac{\\delta^3}{6m^2}-\\frac{\\delta}{2m}\\]\nを示せ（$\\delta^4/m^3$，$\\delta^2/m^2$ 程度の項は無視）．\n\\item $m=100$ のとき，$x=110$ と $x=90$ に対する $P_x$ を，(a) 正規分布 $\\dfrac{1}{\\sqrt{2\\pi m}}e^{-\\delta^2/2m}$ と (b) (1) の補正込みの式で計算せよ．厳密値はそれぞれ $0.02342$，$0.02504$ である．\n\\item 正規近似では $x=110$ と $x=90$ の確率が等しくなるが，実際には $P_{90}>P_{110}$ である．この非対称の起源を (1) の式の各補正項に即して説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）．(2) (a) 両方 0.0242；(b) $P_{110}\\approx0.0234$，$P_{90}\\approx0.0250$．(3) 歪度 $1/\\sqrt m$ の $\\delta^3$ 項と，前因子 $1/\\sqrt{2\\pi x}$ から来る $-\\delta/2m$ 項による．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln P_x=-m+x\\ln m-\\ln x!\\simeq-m+x\\ln m-x\\ln x+x-\\frac12\\ln(2\\pi x)$．$x=m+\\delta$ を代入すると\n\\[\\ln P_x\\simeq\\delta-(m+\\delta)\\ln\\left(1+\\frac\\delta m\\right)-\\frac12\\ln(2\\pi m)-\\frac12\\ln\\left(1+\\frac\\delta m\\right).\\]\n$(m+\\delta)\\ln(1+\\delta/m)=(m+\\delta)\\left(\\frac\\delta m-\\frac{\\delta^2}{2m^2}+\\frac{\\delta^3}{3m^3}\\right)+\\cdots=\\delta+\\frac{\\delta^2}{2m}-\\frac{\\delta^3}{6m^2}+\\cdots$，$\\frac12\\ln(1+\\delta/m)\\simeq\\frac{\\delta}{2m}$ より与式を得る．\n\n(2) (a) $\\dfrac{1}{\\sqrt{200\\pi}}e^{-100/200}=0.03989\\times0.6065=0.02420$（$\\pm10$ で共通）．\n(b) 補正因子 $\\exp\\left(\\dfrac{\\delta^3}{6m^2}-\\dfrac{\\delta}{2m}\\right)$：$\\delta=10$ で $\\exp(0.01667-0.05)=e^{-0.0333}=0.9672$，$P_{110}\\approx0.02340$．$\\delta=-10$ で $e^{+0.0333}=1.0339$，$P_{90}\\approx0.02502$．厳密値と 0.1\\% 程度で一致する（正規近似は 3\\% 程度ずれる）．\n\n(3) ポアソン分布は 3 次キュムラントが $m$ で歪度 $m/m^{3/2}=1/\\sqrt m>0$ をもち，右に裾を引く．$\\delta^3/6m^2$ 項はこの歪みを表し，$\\delta>0$ 側をわずかに持ち上げる．一方 $-\\delta/2m$ 項は規格化前因子 $1/\\sqrt{2\\pi x}$ が $x$ とともに減ることに由来し，$\\delta>0$ 側を下げる．$|\\delta|<\\sqrt{3m}$ では後者が勝つため，平均の少し下側（最頻値側）の確率が大きく，$P_{90}>P_{110}$ となる．"
+   }
+  ],
+  "idea": {
+   "tex": "中心極限定理の正規近似の次の補正は $1/\\sqrt m$ の歪度項で，ポアソン分布の左右非対称を定量的に再現する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン分布",
+   "正規分布",
+   "スターリングの公式",
+   "歪度",
+   "エッジワース展開",
+   "漸近近似"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-51",
+  "level": 2,
+  "minutes": 25,
+  "theme": "待ち時間分布と検査のパラドックス",
+  "topic": "待ち時間分布と検査のパラドックス",
+  "statement": {
+   "tex": "放射性線源からのパルスが，平均計数率 $a$ でランダム（各時刻独立）に到来する．\n\\begin{enumerate}\n\\item 時間 $t$ の間にパルスが 1 つも来ない確率 $P(t)$ が，$P(t_1+t_2)=P(t_1)P(t_2)$ と $P(dt)=1-a\\,dt$ から $P(t)=e^{-at}$ となることを示し，相続くパルスの時間間隔の確率密度 $f(t)$ と平均間隔を求めよ．\n\\item $N$ 個の間隔のうち，長さが $\\tau_1$ と $\\tau_2$ の間にあるものの数を求めよ．また長さが平均間隔より短い間隔の割合を求めよ．\n\\item 観測者が任意の時刻に実験室に入ったとき，その時刻を含む間隔（直前のパルスから直後のパルスまで）の長さの期待値は $2/a$ であることを示せ．平均間隔の 2 倍になるのはなぜか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f(t)=ae^{-at}$，平均間隔 $1/a$．(2) $N(e^{-a\\tau_1}-e^{-a\\tau_2})$；$1-e^{-1}\\approx63\\%$．(3) $2/a$（長い間隔ほど選ばれやすい長さバイアスのため）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $P(t+dt)=P(t)P(dt)=P(t)(1-a\\,dt)$ より $dP/dt=-aP$，$P(0)=1$ から $P(t)=e^{-at}$．間隔が $t$ と $t+dt$ の間にある確率は「$t$ の間に来ず，次の $dt$ に来る」確率 $f(t)dt=e^{-at}a\\,dt$．$\\int_0^\\infty f\\,dt=1$ で規格化されており，平均間隔は $\\langle t\\rangle=\\int_0^\\infty t\\,ae^{-at}dt=1/a$．\n\n(2) $N\\int_{\\tau_1}^{\\tau_2}ae^{-at}dt=N(e^{-a\\tau_1}-e^{-a\\tau_2})$．平均 $1/a$ より短い割合は $1-e^{-1}=0.632$．ランダム事象では短い間隔の方が多い．\n\n(3) ランダムな時刻が長さ $t$ の間隔に落ちる確率は，その間隔の個数密度 $f(t)$ と長さ $t$ の積に比例する．よって観測時刻を含む間隔の長さの密度は\n\\[g(t)=\\frac{t f(t)}{\\int_0^\\infty tf(t)dt}=a^2te^{-at},\\qquad\\langle t\\rangle_g=\\int_0^\\infty a^2t^2e^{-at}dt=\\frac{2}{a}.\\]\n別解：無記憶性により，観測時刻から次のパルスまでの時間も，直前のパルスから観測時刻までの時間も平均 $1/a$ の指数分布で，和の平均は $2/a$．長い間隔ほど「当たりやすい」ため（長さバイアス），平均間隔の 2 倍になる．"
+   }
+  ],
+  "idea": {
+   "tex": "ポアソン過程の間隔は指数分布で短い間隔が多いが，ランダムな時刻を含む間隔は長さで重み付けされ平均 $2/a$ になる（検査のパラドックス）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン過程",
+   "指数分布",
+   "間隔分布",
+   "無記憶性",
+   "検査のパラドックス",
+   "放射性崩壊"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-51",
+  "level": 2,
+  "minutes": 25,
+  "theme": "スターリング公式の精密化と二項分布の中央確率",
+  "topic": "スターリング公式の精密化と二項分布の中央確率",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item $n!=\\displaystyle\\int_0^\\infty x^ne^{-x}\\,dx$ の被積分関数を $e^{f(x)}$，$f(x)=n\\ln x-x$ と書き，$f$ の最大点のまわりで 2 次まで展開する（ラプラスの方法）ことにより，$n\\gg1$ で $n!\\simeq\\sqrt{2\\pi n}\\,n^ne^{-n}$ を導け．\n\\item 公平なコインを $2n$ 回投げて表がちょうど $n$ 回出る確率 $P_n$ が，$n\\gg1$ で $P_n\\simeq1/\\sqrt{\\pi n}$ となることを示せ．\n\\item 次の補正を含む $n!\\simeq\\sqrt{2\\pi n}\\,n^ne^{-n}\\left(1+\\dfrac1{12n}\\right)$ を用いると，$1/\\sqrt{\\pi n}$ は $P_n$ を相対的に約 $\\dfrac1{8n}$ だけ過大評価することを示せ．$n=50$ で $P_{50}$ の厳密値と比べて確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $P_n\\simeq1/\\sqrt{\\pi n}$　(3) $P_n\\simeq\\dfrac{1}{\\sqrt{\\pi n}}\\left(1-\\dfrac1{8n}\\right)$；$n=50$ で厳密値 $0.07959$，近似 $0.07979$，比 $1.0025=1+1/400$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f'(x)=n/x-1=0$ より最大点 $x_0=n$，$f''(x_0)=-n/x_0^2=-1/n$．よって\n\\[\nn!\\simeq e^{f(n)}\\int_{-\\infty}^{\\infty}e^{-(x-n)^2/(2n)}\\,dx=n^ne^{-n}\\sqrt{2\\pi n}.\n\\]\nガウス関数の幅 $\\sqrt n$ は $x_0=n$ に比べて小さいので，積分範囲を $-\\infty$ まで広げてよい．\n\n(2) $P_n=\\dbinom{2n}{n}2^{-2n}=\\dfrac{(2n)!}{(n!)^2\\,4^n}$．スターリングの公式で\n\\[\nP_n\\simeq\\frac{\\sqrt{4\\pi n}\\,(2n)^{2n}e^{-2n}}{2\\pi n\\,n^{2n}e^{-2n}\\,4^n}=\\frac{1}{\\sqrt{\\pi n}}.\n\\]\n\n(3) 補正因子を入れると\n\\[\nP_n\\simeq\\frac{1}{\\sqrt{\\pi n}}\\cdot\\frac{1+\\frac1{24n}}{\\left(1+\\frac1{12n}\\right)^2}\\simeq\\frac1{\\sqrt{\\pi n}}\\left(1+\\frac1{24n}-\\frac2{12n}\\right)=\\frac1{\\sqrt{\\pi n}}\\left(1-\\frac1{8n}\\right).\n\\]\nよって $\\dfrac{1/\\sqrt{\\pi n}}{P_n}\\simeq1+\\dfrac1{8n}$．$n=50$：厳密値 $P_{50}=\\binom{100}{50}/2^{100}=0.079589$，近似 $1/\\sqrt{50\\pi}=0.079788$，比 $1.00250$ で，$1+1/400=1.0025$ と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "ラプラスの方法で $\\sqrt{2\\pi n}$ 因子まで含むスターリング公式を導き，二項係数の中央値に応用．$1/(12n)$ 補正が近似の相対誤差 $1/(8n)$ を定量的に説明する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "スターリングの公式",
+   "ラプラスの方法",
+   "鞍点法",
+   "二項分布",
+   "漸近展開"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

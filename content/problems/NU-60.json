@@ -195,6 +195,157 @@
   }
  },
  {
+  "id": "NU-02-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 1,
+  "minutes": 15,
+  "theme": "結合エネルギーの2階差分による殻ギャップ",
+  "topic": "結合エネルギーの2階差分による殻ギャップ",
+  "statement": {
+   "tex": "カルシウム同位体の全結合エネルギーが $B(^{39}\\mathrm{Ca})=326.42\\ \\mathrm{MeV}$，$B(^{40}\\mathrm{Ca})=342.05\\ \\mathrm{MeV}$，$B(^{41}\\mathrm{Ca})=350.42\\ \\mathrm{MeV}$ で与えられている．\n\\begin{enumerate}\n\\item 中性子分離エネルギー $S_n(N)=B(N)-B(N-1)$ を用いて，$N=20$ における中性子殻ギャップが $\\Delta=S_n(20)-S_n(21)=2B(^{40}\\mathrm{Ca})-B(^{39}\\mathrm{Ca})-B(^{41}\\mathrm{Ca})$ と見積もれる理由を説明し，$\\Delta$ の値を求めよ．このギャップはどの 2 つの準位の間のものか，パリティの変化も含めて答えよ．\n\\item 同様にして $^{16}$O（$N=8$）で得られるギャップは $11.5\\ \\mathrm{MeV}$ である．殻間隔が $\\hbar\\omega\\propto A^{-1/3}$ に従うとしたときの $^{40}$Ca での予想値を求め，(1) と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta\\approx7.3\\ \\mathrm{MeV}$．$1d_{3/2}$（$+$）と $1f_{7/2}$（$-$）の間でパリティが反転する　(2) 予想 $8.5\\ \\mathrm{MeV}$．実測の方が小さい（$f_{7/2}$ がスピン軌道力で下がるため）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $^{40}$Ca は $N=20$ で閉殻．$S_n(20)=B(^{40})-B(^{39})=15.63\\ \\mathrm{MeV}$ は閉殻の最後の準位から中性子を取り去るエネルギー（その準位の束縛の深さ），$S_n(21)=B(^{41})-B(^{40})=8.37\\ \\mathrm{MeV}$ は次の空いた準位に入った中性子の束縛の深さである．両者の差がその 2 準位のエネルギー差，すなわち殻ギャップを与える．\n\\[\n\\Delta=2(342.05)-326.42-350.42=7.26\\approx7.3\\ \\mathrm{MeV}.\n\\]\n$N=20$ の最後の準位は $1d_{3/2}$（$l=2$，パリティ $+$），次は $1f_{7/2}$（$l=3$，パリティ $-$）で，殻をまたぐとパリティが反転する．\n\n(2) $11.5\\times(16/40)^{1/3}=11.5\\times0.737=8.5\\ \\mathrm{MeV}$．実測の $7.3\\ \\mathrm{MeV}$ はこれより小さい．$N=20$ の上の $1f_{7/2}$ はスピン軌道相互作用で大きく下がり（これが $N=28$ の魔法数の原因），$N=20$ のギャップを狭めている．単純な調和振動子のスケーリングからのずれは，スピン軌道分離の効果を示す．"
+   }
+  ],
+  "idea": {
+   "tex": "閉殻核の前後の結合エネルギーの 2 階差分（分離エネルギーの段差）が殻ギャップを与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻ギャップ",
+   "分離エネルギー",
+   "閉殻",
+   "40Ca",
+   "スピン軌道相互作用"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 1,
+  "minutes": 15,
+  "theme": "安定線の中性子過剰の漸近形",
+  "topic": "安定線の中性子過剰の漸近形",
+  "statement": {
+   "tex": "半経験的質量公式のうちクーロン項 $a_cZ^2/A^{1/3}$（$a_c=0.72\\ \\mathrm{MeV}$）と非対称項 $a_a(A-2Z)^2/A$（$a_a=23\\ \\mathrm{MeV}$）だけが $Z$ に依存するとし，中性子と水素原子の質量差は無視する．\n\\begin{enumerate}\n\\item $A$ を固定したとき質量を最小にする $Z_{\\min}$ を求め，$Z_{\\min}/A=0.45$ となる質量数 $A$ を求めよ．\n\\item 安定線上の中性子過剰 $N-Z$ が，$A$ がそれほど大きくない範囲で $N-Z\\simeq\\dfrac{a_c}{4a_a}A^{5/3}$ と振る舞うことを示せ．$A=208$ について，この近似式と (1) の厳密な式による値を比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Z_{\\min}=\\dfrac{A}{2+(a_c/2a_a)A^{2/3}}$，$A\\approx54$　(2) $A=208$ で近似式 $57$，厳密式 $45$（実際の $^{208}$Pb は $44$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f(Z)=a_cZ^2A^{-1/3}+a_a(A-2Z)^2/A$ を $Z$ で微分して 0 とおくと\n\\[\n2a_cZA^{-1/3}-\\frac{4a_a(A-2Z)}{A}=0\\ \\Longrightarrow\\ Z_{\\min}=\\frac{A}{2+\\dfrac{a_c}{2a_a}A^{2/3}}.\n\\]\n$a_c/2a_a=0.72/46=0.01565$．$Z_{\\min}/A=0.45$ とすると $0.01565A^{2/3}=1/0.45-2=0.2222$，$A^{2/3}=14.20$，$A=53.5\\approx54$．\n\n(2) $r=a_c/2a_a$ とおくと\n\\[\nN-Z=A-2Z_{\\min}=A\\frac{rA^{2/3}}{2+rA^{2/3}}\\simeq\\frac r2A^{5/3}=\\frac{a_c}{4a_a}A^{5/3}\\quad(rA^{2/3}\\ll2).\n\\]\nクーロン反発が $Z^2$ に比例して強まるため，中性子過剰は $A^{5/3}$ という $A$ より速い割合で増える．$A=208$ では $rA^{2/3}=0.549$ と小さくないので，近似式は $0.00783\\times208^{5/3}=57.1$，厳密式は $Z_{\\min}=81.6$ より $N-Z=44.8$．実際の $^{208}$Pb（$N-Z=44$）には厳密式の方がよく合い，重い核では近似式は過大評価になる．"
+   }
+  ],
+  "idea": {
+   "tex": "$Z_{\\min}$ の式を展開すると，クーロン項と非対称項の競合から中性子過剰 $\\propto A^{5/3}$ が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "液滴模型",
+   "半経験的質量公式",
+   "安定線",
+   "中性子過剰",
+   "クーロン項",
+   "非対称項"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 1,
+  "minutes": 20,
+  "theme": "40Caの分離エネルギーと液滴模型の限界",
+  "topic": "40Caの分離エネルギーと液滴模型の限界",
+  "statement": {
+   "tex": "結合エネルギーを\n\\[\nB=a_vA-a_sA^{2/3}-a_c\\frac{Z^2}{A^{1/3}}-a_a\\frac{(N-Z)^2}{A}+\\frac{\\delta_0}{A^{1/2}}\n\\]\nとし，$a_v=15.56$，$a_s=17.23$，$a_c=0.697$，$a_a=23.285\\ \\mathrm{MeV}$，$\\delta_0=+12$（偶偶核），$0$（$A$ 奇），$-12\\ \\mathrm{MeV}$（奇奇核）とする．\n\\begin{enumerate}\n\\item $^{40}_{20}$Ca の中性子分離エネルギー $S_n$ と陽子分離エネルギー $S_p$ を求めよ．$S_p<S_n$ となる主な理由を述べよ．\n\\item $^{41}_{20}$Ca の $S_n$ を求めよ．\n\\item 実測値は $S_n(^{40}\\mathrm{Ca})=15.6$，$S_n(^{41}\\mathrm{Ca})=8.4\\ \\mathrm{MeV}$ である．(1)(2) の差 $S_n(^{40}\\mathrm{Ca})-S_n(^{41}\\mathrm{Ca})$ を実測と比べ，液滴模型で再現できない部分の起源を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_n\\approx15.4\\ \\mathrm{MeV}$，$S_p\\approx7.4\\ \\mathrm{MeV}$（クーロン反発）　(2) $S_n\\approx10.4\\ \\mathrm{MeV}$　(3) 模型の差 $5.0\\ \\mathrm{MeV}$ に対し実測 $7.3\\ \\mathrm{MeV}$．差の残りは $N=20$ の殻ギャップ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $B(^{40}\\mathrm{Ca})=622.40-201.52-0.697\\times400/3.420-0+12/6.325=341.25\\ \\mathrm{MeV}$．\n$B(^{39}\\mathrm{Ca})$（$N=19,Z=20$，$A$ 奇）$=606.84-198.15-0.697\\times400/3.391-23.285/39=325.88\\ \\mathrm{MeV}$．\n$S_n=B(^{40}\\mathrm{Ca})-B(^{39}\\mathrm{Ca})=15.37\\ \\mathrm{MeV}$．\n$B(^{39}\\mathrm{K})$（$Z=19,N=20$）$=606.84-198.15-0.697\\times361/3.391-23.285/39=333.90\\ \\mathrm{MeV}$，$S_p=341.25-333.90=7.36\\ \\mathrm{MeV}$．\n$^{39}$K と $^{39}$Ca は非対称項が等しく，差はクーロン項のみ（$0.697\\times39/3.391\\approx8.0\\ \\mathrm{MeV}$）．陽子は他の 19 個の陽子からクーロン反発を受けるため，その分束縛が弱い．\n\n(2) $B(^{41}\\mathrm{Ca})$（$N=21$，$A$ 奇）$=637.96-204.87-0.697\\times400/3.448-23.285/41=351.67\\ \\mathrm{MeV}$．$S_n=351.67-341.25=10.42\\ \\mathrm{MeV}$．\n\n(3) 模型：$15.37-10.42=4.95\\ \\mathrm{MeV}$．その内訳は主に対エネルギー（$^{40}$Ca の $+12/\\sqrt{40}=1.90\\ \\mathrm{MeV}$ が $S_n(^{40})$ を増やし $S_n(^{41})$ を減らすので約 $3.8\\ \\mathrm{MeV}$）と非対称項（約 $1.1\\ \\mathrm{MeV}$）．実測は $15.6-8.4=7.3\\ \\mathrm{MeV}$ で，残り約 $2.3\\ \\mathrm{MeV}$ は液滴模型にない殻効果，すなわち $N=20$ の閉殻（$1d_{3/2}$ と $1f_{7/2}$ の間のギャップ）によるもので，41 番目の中性子が次の殻に入るため束縛が急に弱くなる．"
+   }
+  ],
+  "idea": {
+   "tex": "分離エネルギーは結合エネルギーの差分．液滴模型は対エネルギーと非対称項による段差は出すが，魔法数での殻ギャップは出せない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $S_n$ [MeV]：≈15.4 ; $S_p$ [MeV]：≈7.4\n(2) $S_n$ [MeV]：≈10.4\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "半経験的質量公式",
+   "分離エネルギー",
+   "40Ca",
+   "対エネルギー",
+   "殻効果"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "NU-02-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -390,6 +541,1008 @@
   }
  },
  {
+  "id": "NU-02-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 30,
+  "theme": "タリウム鉱石を使う地球化学的な太陽ニュートリノ検出器",
+  "topic": "タリウム鉱石を使う地球化学的な太陽ニュートリノ検出器",
+  "statement": {
+   "tex": "${}^{205}\\mathrm{Tl}$（$Z=81$，$N=124$）が太陽ニュートリノを捕獲して ${}^{205}\\mathrm{Pb}$（$Z=82$，$N=123$，半減期 $1.4\\times10^7$ 年）になる反応を，古い鉱石の中で数える検出器を考える．殻模型の準位の順序は，陽子が $\\cdots,\\ 2d_{3/2},\\ 3s_{1/2}\\ (82)$，中性子が $\\cdots,\\ 3p_{3/2},\\ 2f_{5/2},\\ 3p_{1/2}\\ (126)$ とする．\n\\begin{enumerate}\n\\item ${}^{205}\\mathrm{Tl}$ と ${}^{205}\\mathrm{Pb}$ の基底状態のスピン・パリティを殻模型で予想せよ．${}^{205}\\mathrm{Pb}$ の低い励起状態 $1/2^-$ はどう説明できるか．\n\\item 太陽は $4p\\to{}^4\\mathrm{He}+2e^++2\\nu_e+26.7\\ \\mathrm{MeV}$ でエネルギーを出しているとして，地球での太陽ニュートリノの流束を求めよ（太陽定数 $1.37\\ \\mathrm{kW/m^2}$）．\n\\item 捕獲の断面積を $\\sigma=1.0\\times10^{-45}\\ \\mathrm{cm^2}$ とすると，${}^{205}\\mathrm{Tl}$ $1\\ \\mathrm{g}$ を含む鉱石の中にある ${}^{205}\\mathrm{Pb}$ の放射平衡の原子数はいくつか（有効数字2桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) ${}^{205}\\mathrm{Tl}$：$1/2^+$（陽子の $3s_{1/2}$ の空孔），${}^{205}\\mathrm{Pb}$：$5/2^-$（中性子の $2f_{5/2}$ の空孔）；$1/2^-$ は $3p_{1/2}$ の空孔　(2) $6.4\\times10^{10}\\ \\mathrm{cm^{-2}s^{-1}}$　(3) 約 $1.2\\times10^2$ 個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ${}^{205}\\mathrm{Tl}$ は陽子が魔法数 $82$ に1つ足りず，最後の $3s_{1/2}$ 軌道に空孔が1つある．中性子 $124$ は偶数で対をなす．よって $\\boldsymbol{1/2^+}$（$s$ 軌道のパリティは $+$）．\n\n${}^{205}\\mathrm{Pb}$ は陽子が魔法数で閉殻，中性子は $126$ より3つ少ない．エネルギーの高い $3p_{1/2}$（2個入る）を空にし，さらに $2f_{5/2}$ に空孔を1つ作るのが基底状態で，$\\boldsymbol{5/2^-}$（$f$ は $l=3$ でパリティ $-$）．$2f_{5/2}$ を満たして $3p_{1/2}$ に空孔を作った配置が，すぐ上にある $\\boldsymbol{1/2^-}$ の励起状態になる（$3p_{1/2}$ と $2f_{5/2}$ がほぼ縮退しているため）．\n\n(2) 1回の反応 $26.7\\ \\mathrm{MeV}=4.28\\times10^{-12}\\ \\mathrm{J}$ ごとにニュートリノが2個できるので\n\\[\n\\phi=\\frac{2\\times1.37\\times10^3}{4.28\\times10^{-12}}=6.4\\times10^{14}\\ \\mathrm{m^{-2}s^{-1}}=\\boldsymbol{6.4\\times10^{10}\\ \\mathrm{cm^{-2}s^{-1}}}.\n\\]\n（ニュートリノが持ち去るエネルギーは数％なので，それを無視してよい．）\n\n(3) 標的の原子数 $N_T=\\dfrac{6.02\\times10^{23}}{205}=2.94\\times10^{21}$，平均寿命 $\\tau=\\dfrac{t_{1/2}}{\\ln2}=6.4\\times10^{14}\\ \\mathrm{s}$．生成率と崩壊率がつり合う原子数は\n\\[\nN_{\\rm eq}=N_T\\sigma\\phi\\tau=2.94\\times10^{21}\\times10^{-45}\\times6.4\\times10^{10}\\times6.4\\times10^{14}\\approx\\boldsymbol{1.2\\times10^2\\ \\text{個}}.\n\\]\n数百万年分の太陽ニュートリノを積算できるのが利点だが，数は非常に少ない．"
+   }
+  ],
+  "idea": {
+   "tex": "閉殻の近くの核のスピン・パリティは，空孔の軌道で決まる．地球化学的な検出器では，生成率 $N_T\\sigma\\phi$ と崩壊率 $N/\\tau$ のつり合いで原子数が決まり，長寿命の生成核なら長期間の平均流束を測れる．原題は準位図の説明と捕獲率の計算で，捻りでは流束から平衡原子数までを一続きにした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [cm⁻²s⁻¹]：≈6.4e10\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻模型",
+   "太陽ニュートリノ",
+   "放射平衡",
+   "ニュートリノ捕獲"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 30,
+  "theme": "シュミット値と単一粒子の四重極モーメント（粒子と空孔）",
+  "topic": "シュミット値と単一粒子の四重極モーメント（粒子と空孔）",
+  "statement": {
+   "tex": "奇数核の磁気モーメントと電気四重極モーメントが，最後の1核子（または1空孔）で決まるとする．$g_s^{(p)}=5.586$，$g_s^{(n)}=-3.826$，$g_l^{(p)}=1$，$g_l^{(n)}=0$ とする．\n\\begin{enumerate}\n\\item $j=l+\\frac12$ と $j=l-\\frac12$ のそれぞれについて，磁気モーメント $\\mu$（$\\mu_N$ 単位）を $j,\\ g_l,\\ g_s$ で表せ．\n\\item ${}^{39}\\mathrm{K}$（陽子 $d_{3/2}$ の空孔），${}^{209}\\mathrm{Bi}$（陽子 $h_{9/2}$），${}^{41}\\mathrm{Ca}$（中性子 $f_{7/2}$）のシュミット値を求めよ．\n\\item 単一陽子の四重極モーメントは $Q=-\\dfrac{2j-1}{2j+2}\\langle r^2\\rangle$，空孔では符号が逆になる．$\\langle r^2\\rangle=\\frac35R^2$，$R=1.2A^{1/3}\\ \\mathrm{fm}$ として，${}^{209}\\mathrm{Bi}$ と ${}^{39}\\mathrm{K}$ の $Q$ を $\\mathrm{fm^2}$ 単位で求めよ（有効数字2桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $j=l+\\frac12$：$\\mu=\\left(j-\\frac12\\right)g_l+\\frac12g_s$，$j=l-\\frac12$：$\\mu=\\dfrac{j}{j+1}\\left[\\left(j+\\frac32\\right)g_l-\\frac12g_s\\right]$　(2) ${}^{39}\\mathrm{K}$：$0.12\\mu_N$，${}^{209}\\mathrm{Bi}$：$2.62\\mu_N$，${}^{41}\\mathrm{Ca}$：$-1.91\\mu_N$　(3) ${}^{209}\\mathrm{Bi}$：$-22\\ \\mathrm{fm^2}$，${}^{39}\\mathrm{K}$：$+4.0\\ \\mathrm{fm^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol\\mu=g_l\\boldsymbol l+g_s\\boldsymbol s$ の $\\boldsymbol j$ 方向への射影 $\\mu=\\dfrac{\\langle\\boldsymbol\\mu\\cdot\\boldsymbol j\\rangle}{j(j+1)}j$ を計算する．$\\boldsymbol l\\cdot\\boldsymbol j=\\frac12[j(j+1)+l(l+1)-\\frac34]$，$\\boldsymbol s\\cdot\\boldsymbol j=\\frac12[j(j+1)-l(l+1)+\\frac34]$ を使うと\n\\[\n\\boldsymbol{j=l+\\tfrac12:\\ \\mu=\\left(j-\\tfrac12\\right)g_l+\\tfrac12g_s},\\qquad\n\\boldsymbol{j=l-\\tfrac12:\\ \\mu=\\frac{j}{j+1}\\left[\\left(j+\\tfrac32\\right)g_l-\\tfrac12g_s\\right]}.\n\\]\n（1つの空孔の磁気モーメントは，同じ軌道の1粒子と同じ．）\n\n(2) ${}^{39}\\mathrm{K}$：$j=\\frac32=l-\\frac12$（$l=2$），$\\mu=\\frac35(3-2.793)=\\boldsymbol{0.12\\mu_N}$．\n${}^{209}\\mathrm{Bi}$：$j=\\frac92=l-\\frac12$（$l=5$），$\\mu=\\frac{9}{11}(6-2.793)=\\boldsymbol{2.62\\mu_N}$．\n${}^{41}\\mathrm{Ca}$：$j=\\frac72=l+\\frac12$，$g_l=0$ なので $\\mu=\\frac12g_s^{(n)}=\\boldsymbol{-1.91\\mu_N}$．\n（実験値は $0.39,\\ 4.1,\\ -1.59\\ \\mu_N$ で，シュミット値はおおよその傾向を与える．）\n\n(3) ${}^{209}\\mathrm{Bi}$：$R=7.12\\ \\mathrm{fm}$，$\\langle r^2\\rangle=30.4\\ \\mathrm{fm^2}$，$Q=-\\frac{8}{11}\\times30.4\\approx\\boldsymbol{-22\\ \\mathrm{fm^2}}$（陽子は赤道面に偏った扁平な分布）．\n${}^{39}\\mathrm{K}$：$R=4.07\\ \\mathrm{fm}$，$\\langle r^2\\rangle=9.94\\ \\mathrm{fm^2}$，空孔なので $Q=+\\frac25\\times9.94\\approx\\boldsymbol{+4.0\\ \\mathrm{fm^2}}$（符号が正）．閉殻からの1粒子と1空孔で四重極モーメントの符号が逆になる．"
+   }
+  ],
+  "idea": {
+   "tex": "単一粒子模型の磁気モーメントは $\\boldsymbol l,\\boldsymbol s$ の $\\boldsymbol j$ への射影で決まり，$j=l\\pm\\frac12$ の2本のシュミット線になる．四重極モーメントは粒子の軌道の形を反映し，空孔では電荷分布の欠けた部分として符号が逆になる．原題は公式の導出と数核種の値で，捻りでは粒子と空孔の四重極の符号を比べる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻模型",
+   "磁気モーメント",
+   "シュミット線",
+   "電気四重極モーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Fermi気体から対称エネルギーの運動エネルギー部分",
+  "topic": "Fermi気体から対称エネルギーの運動エネルギー部分",
+  "statement": {
+   "tex": "陽子と中性子がそれぞれ独立に，一様な間隔 $\\eta$ の 1 粒子準位（各準位にスピン逆向きの 2 個まで入る）を下から詰めているとする．\n\\begin{enumerate}\n\\item $A=N+Z$ 一定の偶々核で，$N=Z$ から $|N-Z|=4n$ にすると全エネルギーが $\\frac{\\eta}{8}(N-Z)^2$ だけ増えることを示せ．\n\\item 準位間隔 $\\eta$ を 3 次元 Fermi 気体模型で見積もる．$N=Z=A/2$ のとき，各種核子の Fermi エネルギーを $\\varepsilon_F$ とし，Fermi 面での 1 粒子状態密度（スピンを含む）から $\\eta$ を $\\varepsilon_F$, $A$ で表せ．\n\\item (1)(2) から，質量公式の対称エネルギー項 $a_\\mathrm{sym}\\frac{(N-Z)^2}{A}$ のうち運動エネルギーに由来する部分 $a_\\mathrm{sym}^\\mathrm{kin}$ を $\\varepsilon_F$ で表し，$\\varepsilon_F=38\\,\\mathrm{MeV}$ として数値を求めよ．また，Fermi 気体の全運動エネルギー $\\frac35\\varepsilon_F$ を $N,Z$ の関数として厳密に書き，$(N-Z)/A$ の 2 次まで展開して同じ結果になることを確かめよ．経験値 $a_\\mathrm{sym}\\approx23\\,\\mathrm{MeV}$ との差は何を意味するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E=2\\eta n^2=\\frac{\\eta}{8}(N-Z)^2$　(2) $\\eta=\\dfrac{8\\varepsilon_F}{3A}$　(3) $a_\\mathrm{sym}^\\mathrm{kin}=\\varepsilon_F/3\\approx12.7\\,\\mathrm{MeV}$．残り約 $10\\,\\mathrm{MeV}$ は核力（ポテンシャル）の荷電依存（陽子-中性子間引力が強いこと）による"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n$ 対の陽子を中性子に移す．$j$ 番目の対は占有された最上準位から数えて $(2j-1)$ 番目の空き分だけ上がるので，上昇は 1 粒子あたり $(2j-1)\\eta$，対では $2(2j-1)\\eta$．\n\\[ E=2\\eta\\sum_{j=1}^n(2j-1)=2\\eta n^2,\\qquad |N-Z|=4n\\ \\Rightarrow\\ E=\\frac{\\eta}{8}(N-Z)^2. \\]\n(2) 1 種あたり粒子数 $\\mathcal N=A/2$．状態密度は $g(\\varepsilon)\\propto\\varepsilon^{1/2}$ で $\\mathcal N=\\int_0^{\\varepsilon_F}g\\,d\\varepsilon=\\frac23g(\\varepsilon_F)\\varepsilon_F$．よって $g(\\varepsilon_F)=\\frac{3\\mathcal N}{2\\varepsilon_F}=\\frac{3A}{4\\varepsilon_F}$．1 準位に 2 状態入るので準位間隔は\n\\[ \\eta=\\frac{2}{g(\\varepsilon_F)}=\\frac{8\\varepsilon_F}{3A}. \\]\n(3) (1) に代入：$E=\\frac{\\eta}{8}(N-Z)^2=\\frac{\\varepsilon_F}{3}\\frac{(N-Z)^2}{A}$，$a^\\mathrm{kin}_\\mathrm{sym}=\\varepsilon_F/3=12.7\\,\\mathrm{MeV}$．\n\n厳密計算：体積一定で Fermi エネルギーは密度の $2/3$ 乗に比例するので，$D=N-Z$ として\n\\[ E_\\mathrm{kin}=\\frac35\\varepsilon_F\\frac{A}{2}\\left[\\left(1+\\frac DA\\right)^{5/3}+\\left(1-\\frac DA\\right)^{5/3}\\right]=\\frac35\\varepsilon_FA+\\frac{\\varepsilon_F}{3}\\frac{D^2}{A}+O(D^4). \\]\n（$(1\\pm x)^{5/3}$ の 2 次の係数 $\\frac{5}{3}\\cdot\\frac{2}{3}\\cdot\\frac12=\\frac59$ から $\\frac35\\cdot\\frac12\\cdot2\\cdot\\frac59=\\frac13$．）一致する．\n\n経験値 $\\approx23\\,\\mathrm{MeV}$ の約半分しか説明できない．残りは核力のポテンシャルエネルギーが $N\\neq Z$ で浅くなる効果（$T=0$ の陽子-中性子対の引力が強い）によるもので，対称エネルギーは運動エネルギー（Pauli 原理）とポテンシャルの両方から来る．"
+   }
+  ],
+  "idea": {
+   "tex": "等間隔準位の「詰め替え」で得た $\\frac\\eta8(N-Z)^2$ に Fermi 気体の準位間隔 $\\eta=8\\varepsilon_F/3A$ を入れると対称エネルギーの運動項 $\\varepsilon_F/3$ が出て，経験値の約半分しか説明しないことがわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E$：2 η n ^(2)\n(2) $\\eta$：((8 ε_F)/(3 A))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "対称エネルギー",
+   "Fermi気体模型",
+   "質量公式",
+   "状態密度",
+   "Pauli原理"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 30,
+  "theme": "同重体放物線と安定線の漸近形",
+  "topic": "同重体放物線と安定線の漸近形",
+  "statement": {
+   "tex": "質量公式の $Z$ に依存する部分だけを取り出し，原子質量エネルギーを\n\\[ M(A,Z)c^2=\\text{($Z$ によらない項)}-\\Delta\\,Z+a_C\\frac{Z^2}{A^{1/3}}+a_A\\frac{(A-2Z)^2}{A} \\]\nとする．ここで $\\Delta=(m_n-M_\\mathrm{H})c^2=0.782\\,\\mathrm{MeV}$，$a_C=0.711\\,\\mathrm{MeV}$，$a_A=23.7\\,\\mathrm{MeV}$，対エネルギーは無視する．\n\\begin{enumerate}\n\\item 奇数 $A$ の同重体で $M(A,Z)c^2=B_A(Z-Z_A)^2+C_A$ の形になることを示し，$B_A$，$Z_A$ を求めよ．\n\\item もし Coulomb 力がなければ（$a_C=0$），安定核の $Z_A/A$ はいくらか．$1/2$ より大きいか小さいか，その理由も述べよ．\n\\item 実際の $a_C$ のもとで，$Z_A/A=0.40$ となる質量数 $A$ を数値的に求めよ．また $A=238$ での $Z_A$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B_A=\\dfrac{a_C}{A^{1/3}}+\\dfrac{4a_A}{A}$，$Z_A=\\dfrac{(4a_A+\\Delta)A}{8a_A+2a_CA^{2/3}}$　(2) $Z_A/A=0.5041>1/2$（中性子の方が重いので陽子が少し多い方が軽い）　(3) $A\\approx204$；$Z_A(238)\\approx93.2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Z$ について平方完成する．$Z$ の 2 次の係数は $\\frac{a_C}{A^{1/3}}+\\frac{4a_A}{A}\\equiv B_A$．1 次の係数は $-\\Delta-4a_A$．よって\n\\[ \\frac{\\partial (Mc^2)}{\\partial Z}=2B_AZ-(4a_A+\\Delta)=0\\ \\Rightarrow\\ Z_A=\\frac{4a_A+\\Delta}{2B_A}=\\frac{(4a_A+\\Delta)A}{8a_A+2a_CA^{2/3}}. \\]\n残りを $C_A$ にまとめれば $M c^2=B_A(Z-Z_A)^2+C_A$．\n\n(2) $a_C=0$ で $\\frac{Z_A}{A}=\\frac{4a_A+\\Delta}{8a_A}=\\frac12+\\frac{\\Delta}{8a_A}=0.5+0.0041=0.5041$．$1/2$ より大きい．中性子は水素原子より $0.782\\,\\mathrm{MeV}$ 重いので，対称項の損を少し払っても中性子を陽子（＋電子）に替えた方が原子質量が軽くなる．現実の重い核の中性子過剰はすべて Coulomb 斥力による．\n\n(3) $\\frac{Z_A}{A}=\\frac{4a_A+\\Delta}{8a_A+2a_CA^{2/3}}=0.40$ より $8a_A+2a_CA^{2/3}=\\frac{95.582}{0.40}=238.96$，$A^{2/3}=\\frac{238.96-189.6}{1.422}=34.71$，$A=34.71^{3/2}=204.5$．\n$A=238$：$A^{2/3}=38.40$，$Z_A=\\frac{95.582\\times238}{189.6+54.61}=93.2$（実際の ${}^{238}\\mathrm{U}$ は $Z=92$）．"
+   }
+  ],
+  "idea": {
+   "tex": "同重体質量の $Z$ 依存は放物線で，頂点 $Z_A$ は対称項・Coulomb 項・$n$-H 質量差の競合で決まる．Coulomb 力がなければ安定線はむしろ陽子過剰側にずれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $B_A$：((a_C)/(A ^(1/3)))+((4 a_A)/(A)) ; $Z_A$：(((4 a_A + Δ) A)/(8 a_A +2 a_C A ^(2/3)))\n(2) 記述\n(3) $A$：≈204 ; $Z_A(238)$：≈93.2"
+  },
+  "methods": [],
+  "tags": [
+   "質量公式",
+   "同重体",
+   "β安定線",
+   "Coulombエネルギー",
+   "対称エネルギー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 20,
+  "theme": "一定Zの安定奇数A同位体の範囲",
+  "topic": "一定Zの安定奇数A同位体の範囲",
+  "statement": {
+   "tex": "奇数 $A$ の同重体で β 崩壊に対して安定な核の $Z$ は，$Z_A=\\dfrac{A}{1.98+0.015A^{2/3}}$ に最も近い整数であるとする（Weizsäcker の質量公式から得られる式）．\n\\begin{enumerate}\n\\item 原子番号 $Z$ の元素が奇数 $A$ の安定同位体をもつための $A$ の条件を $Z_A(A)$ を用いて書け．\n\\item $Z=50$（スズ）について，その条件を満たす $A$ の範囲を数値的に求め，安定な奇数 $A$ 同位体をすべて挙げよ．\n\\item 実際のスズには奇数 $A$ の安定同位体が ${}^{115}\\mathrm{Sn}$, ${}^{117}\\mathrm{Sn}$, ${}^{119}\\mathrm{Sn}$ の 3 つある．(2) の結果と比べ，差の原因を考察せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Z-\\frac12<Z_A(A)<Z+\\frac12$　(2) $115.6<A<118.2$，すなわち $A=117$ のみ　(3) $Z=50$ が魔法数で殻効果により陽子の結合が強く，安定域が広がるため"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 安定核は $Z_A$ に最も近い整数なので $|Z-Z_A(A)|<\\frac12$．$Z_A$ は $A$ の増加関数だから，これは $A$ の区間を与える．\n\n(2) $Z_A(A)=49.5$ と $50.5$ を数値的に解く．例えば $A=115$：$A^{2/3}=23.65$，$Z_A=115/2.3348=49.26$；$A=117$：$Z_A=50.03$；$A=119$：$Z_A=50.79$．\n根を求めると $Z_A=49.5\\Leftrightarrow A=115.6$，$Z_A=50.5\\Leftrightarrow A=118.2$．区間 $115.6<A<118.2$ の奇数は $A=117$ のみ．$Z_A$ の傾きは $dZ_A/dA\\approx0.38$ なので，一般に 1 つの $Z$ に対して奇数 $A$ の安定核は約 $1/0.38/2\\approx1.3$ 個しかない．\n\n(3) 実際には 3 つある．$Z=50$ は陽子の魔法数で，滑らかな質量公式にない殻効果（閉殻による余分な結合）が $Z=50$ の核の質量を下げ，その同重体放物線の極小を $Z=50$ に引き寄せる．そのため $Z=50$ が安定となる $A$ の範囲が広がる（スズは安定同位体の数が最多の元素）．"
+   }
+  ],
+  "idea": {
+   "tex": "「$Z_A$ に最も近い整数」の条件を $A$ について逆に解くと，1 元素あたりの安定奇数 $A$ 同位体の数が $1/(2\\,dZ_A/dA)$ 程度と見積もれ，魔法数での例外が殻効果を浮き彫りにする．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "β安定性",
+   "同位体",
+   "質量公式",
+   "魔法数",
+   "殻効果"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Schmidt値と g_s のクエンチング",
+  "topic": "Schmidt値と g_s のクエンチング",
+  "statement": {
+   "tex": "奇核の磁気モーメントは最後の 1 個の核子（軌道角運動量 $l$，全角運動量 $j=l\\pm\\frac12$）だけで決まるとする（単一粒子模型）．核子の $g$ 因子を $g_l$, $g_s$ とする．\n\\begin{enumerate}\n\\item $\\mu=g_jj$（核磁子単位）とおくとき，\n\\[ j=l+\\tfrac12:\\ \\mu=jg_l+\\tfrac12(g_s-g_l),\\qquad j=l-\\tfrac12:\\ \\mu=\\frac{j}{j+1}\\left[\\left(j+\\tfrac32\\right)g_l-\\tfrac12g_s\\right] \\]\nとなることを示せ．\n\\item 自由核子の値（陽子 $g_l=1$, $g_s=5.586$；中性子 $g_l=0$, $g_s=-3.826$）を用いて，${}^{209}\\mathrm{Bi}$（陽子 $h_{9/2}$）と ${}^{17}\\mathrm{O}$（中性子 $d_{5/2}$）の磁気モーメントを求めよ．\n\\item 核内では $g_s$ が自由値の約 $0.6$ 倍に減る（クエンチング）とする説がある．$g_s\\to0.6g_s$ として (2) を計算し直し，実験値 $\\mu({}^{209}\\mathrm{Bi})=+4.11$，$\\mu({}^{17}\\mathrm{O})=-1.894$ と比べて何がいえるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) ${}^{209}\\mathrm{Bi}$：$+2.62$，${}^{17}\\mathrm{O}$：$-1.91$　(3) Bi：$+3.54$（実験に近づく），O：$-1.15$（実験から遠ざかる）．一律のクエンチングでは両方を説明できず，芯偏極などの状態に依存する補正が必要"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol\\mu=g_l\\boldsymbol l+g_s\\boldsymbol s$ の $\\boldsymbol j$ 方向への射影から $g_j=\\frac{\\langle\\boldsymbol\\mu\\cdot\\boldsymbol j\\rangle}{j(j+1)}$．$\\boldsymbol l\\cdot\\boldsymbol j=\\frac12[j(j+1)+l(l+1)-s(s+1)]$，$\\boldsymbol s\\cdot\\boldsymbol j=\\frac12[j(j+1)+s(s+1)-l(l+1)]$ より\n\\[ g_j=\\frac{g_l+g_s}{2}+\\frac{g_l-g_s}{2}\\cdot\\frac{l(l+1)-\\frac34}{j(j+1)}. \\]\n$j=l+\\frac12$：$l(l+1)-\\frac34=(j-\\frac12)(j+\\frac12)-\\frac34=j^2-1$ を代入すると，$g_j j=\\frac{(g_l+g_s)j}{2}+\\frac{(g_l-g_s)(j^2-1)}{2(j+1)}=\\frac{(g_l+g_s)j}{2}+\\frac{(g_l-g_s)(j-1)}{2}=jg_l+\\frac12(g_s-g_l)$．\n$j=l-\\frac12$：$l=j+\\frac12$，$l(l+1)-\\frac34=j(j+2)$ より $g_jj=\\frac{(g_l+g_s)j}{2}+\\frac{(g_l-g_s)j(j+2)}{2(j+1)}=\\frac{j}{j+1}[(j+\\frac32)g_l-\\frac12g_s]$．\n\n(2) ${}^{209}\\mathrm{Bi}$：$j=\\frac92=l-\\frac12$（$l=5$），$\\mu=\\frac{4.5}{5.5}(6-2.793)=+2.62$．\n${}^{17}\\mathrm{O}$：$j=\\frac52=l+\\frac12$（$l=2$），$\\mu=0+\\frac12(-3.826)=-1.91$．\n\n(3) Bi：$g_s=3.352$ で $\\mu=\\frac{4.5}{5.5}(6-1.676)=+3.54$（実験 $4.11$ に近づく）．\nO：$g_s=-2.296$ で $\\mu=-1.15$（実験 $-1.894$ は自由値の Schmidt 値にほぼ一致していたのに大きく外れる）．\n$j=l+\\frac12$ の中性子では $\\mu$ が $g_s$ だけで決まるので，${}^{17}\\mathrm{O}$ は $g_s$ の一律クエンチングを強く否定する．実験値のずれは状態ごとに異なる芯偏極（最後の核子による芯のスピン偏極）や中間子交換電流の効果として扱う必要がある．"
+   }
+  ],
+  "idea": {
+   "tex": "Schmidt 値は $g_l,g_s$ の 1 次式なので，$g_s$ の一律クエンチングを ${}^{17}\\mathrm{O}$（$\\mu=g_s/2$ だけで決まる）に当てはめると破綻し，補正が状態依存であることが分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Schmidt値",
+   "磁気モーメント",
+   "殻模型",
+   "g因子",
+   "クエンチング"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 25,
+  "theme": "分光学的四極子モーメントから固有変形",
+  "topic": "分光学的四極子モーメントから固有変形",
+  "statement": {
+   "tex": "${}^{175}_{\\ 71}\\mathrm{Lu}$（基底状態スピン $J=7/2$）の分光学的電気四極子モーメント（$m=J$ 状態で測られる値）は $Q_s=+3.49\\,\\mathrm{b}$（$1\\,\\mathrm{b}=100\\,\\mathrm{fm^2}$）である．強結合の回転模型では，核に固定した系での固有四極子モーメント $Q_0$ と\n\\[ Q_s=\\frac{3K^2-J(J+1)}{(J+1)(2J+3)}Q_0,\\qquad K=J \\]\nの関係がある．\n\\begin{enumerate}\n\\item $Q_0$ を求めよ．\n\\item 核を一様帯電の回転楕円体（半軸 $c$, $a$，体積は半径 $R=1.2A^{1/3}\\,\\mathrm{fm}$ の球と同じ）とし，$Q_0=\\frac25Z(c^2-a^2)$ として $c/a$ を（微小変形の近似を使わずに）数値的に求めよ．\n\\item もし $Q_s$ をそのまま固有値とみなしたら $c/a$ はいくらになるか．微小変形近似 $c/a\\approx1+\\frac{5Q}{4ZR^2}$ の値とも比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q_0=7.48\\,\\mathrm{b}$　(2) $c/a=1.303$　(3) $Q_s$ を使うと $c/a=1.139$（変形を大幅に過小評価）．微小変形近似は (2) で $1.292$，(3) で $1.136$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $K=J=\\frac72$：$\\frac{3J^2-J(J+1)}{(J+1)(2J+3)}=\\frac{J(2J-1)}{(J+1)(2J+3)}=\\frac{3.5\\times6}{4.5\\times10}=\\frac{7}{15}$．$Q_0=3.49\\times\\frac{15}{7}=7.48\\,\\mathrm{b}=748\\,\\mathrm{fm^2}$．\n\n(2) $R=1.2\\times175^{1/3}=6.712\\,\\mathrm{fm}$．$a^2c=R^3$ と $x=c/a$ から $a=Rx^{-1/3}$，$c=Rx^{2/3}$．\n\\[ Q_0=\\frac25ZR^2\\left(x^{4/3}-x^{-2/3}\\right),\\qquad \\frac25ZR^2=\\frac25\\times71\\times45.05=1279\\,\\mathrm{fm^2}. \\]\n$x^{4/3}-x^{-2/3}=748/1279=0.585$ を数値的に解いて $x=c/a=1.303$．\n\n(3) $Q=349\\,\\mathrm{fm^2}$ なら $x^{4/3}-x^{-2/3}=0.273$ で $c/a=1.139$．固有変形を半分以下に見積もる誤りになる．\n微小変形近似：$c/a=1+\\varepsilon$，$Q\\approx\\frac45ZR^2\\varepsilon$ より $\\varepsilon=\\frac{5Q}{4ZR^2}$．(2) で $\\varepsilon=0.292$（$c/a=1.292$），(3) で $0.136$．$\\varepsilon\\approx0.3$ では 1 \\% 程度の誤差が出る．"
+   }
+  ],
+  "idea": {
+   "tex": "実験で測る $Q_s$ は回転平均で固有値 $Q_0$ より小さく（$J=7/2$ で $7/15$ 倍），これを補正しないと変形を大きく過小評価する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電気四極子モーメント",
+   "変形核",
+   "回転模型",
+   "射影因子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Fermi気体模型と対称エネルギーの運動項",
+  "topic": "Fermi気体模型と対称エネルギーの運動項",
+  "statement": {
+   "tex": "原子核（質量数 $A=N+Z$）を，半径 $R=r_0A^{1/3}$ の球内に閉じ込められた陽子・中性子の独立な完全縮退 Fermi 気体とみなす．核子の質量を $M$ とし，陽子と中性子の質量差は無視する．核子数密度 $\\rho_0=A/V$ は $A$ によらず一定とする．\n\\begin{enumerate}\n\\item 粒子数 $K$ の一種類の核子（スピン $1/2$）が体積 $V$ に完全縮退しているとき，その全運動エネルギーが $E_K=\\frac35K\\varepsilon_F(K)$（$\\varepsilon_F(K)$ はその核子の Fermi エネルギー）となることを示せ．\n\\item 中性子過剰度 $I=(N-Z)/A$ を導入する．$A$ と $\\rho_0$ を固定したとき，陽子と中性子の全運動エネルギーの和 $E_{\\rm kin}$ を $I$ の 2 次まで展開し，\n\\[ E_{\\rm kin}\\simeq\\frac35\\varepsilon_0A\\left(1+c\\,I^2\\right) \\]\nの形に書いたときの定数 $c$ と $\\varepsilon_0$（$N=Z$ のときの Fermi エネルギー）を求めよ．\n\\item 質量公式の対称エネルギー項を $a_{\\rm sym}(N-Z)^2/A$ と書くとき，(2) から得られる運動エネルギー由来の寄与 $a_{\\rm sym}^{\\rm kin}$ を $\\varepsilon_0$ で表し，$\\rho_0=0.16\\ {\\rm fm^{-3}}$，$Mc^2=939\\ {\\rm MeV}$，$\\hbar c=197.3\\ {\\rm MeV\\,fm}$ として数値を求めよ．経験値 $a_{\\rm sym}\\approx23\\ {\\rm MeV}$ と比べて何がいえるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_K=\\frac35K\\varepsilon_F$　(2) $c=\\frac59$，$\\varepsilon_0=\\frac{\\hbar^2}{2M}\\left(\\frac{3\\pi^2\\rho_0}{2}\\right)^{2/3}$　(3) $a_{\\rm sym}^{\\rm kin}=\\varepsilon_0/3\\approx12\\ {\\rm MeV}$（$\\varepsilon_0\\approx37\\ {\\rm MeV}$）．経験値の約半分で，残りは核力ポテンシャルの陽子・中性子依存性から来る．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 運動量 $p$ 以下の状態数はスピン縮退 2 を含めて $n(p)=2\\cdot\\frac{4\\pi p^3V/3}{h^3}=\\frac{Vp^3}{3\\pi^2\\hbar^3}$．$n(p_F)=K$ より $p_F=\\hbar(3\\pi^2K/V)^{1/3}$．全運動エネルギーは\n\\[ E_K=\\int_0^{p_F}\\frac{p^2}{2M}\\,\\frac{dn}{dp}dp=\\frac{V}{\\pi^2\\hbar^3}\\int_0^{p_F}\\frac{p^4}{2M}dp=\\frac{V p_F^5}{10\\pi^2\\hbar^3M}=\\frac35K\\frac{p_F^2}{2M}=\\frac35K\\varepsilon_F . \\]\n\n(2) $\\varepsilon_F(K)=\\frac{\\hbar^2}{2M}(3\\pi^2K/V)^{2/3}$ なので $E_K\\propto K^{5/3}$．$N=\\frac A2(1+I)$，$Z=\\frac A2(1-I)$，$\\varepsilon_0=\\varepsilon_F(A/2)=\\frac{\\hbar^2}{2M}\\left(\\frac{3\\pi^2\\rho_0}{2}\\right)^{2/3}$ とおくと\n\\[ E_{\\rm kin}=\\frac35\\varepsilon_0\\frac A2\\left[(1+I)^{5/3}+(1-I)^{5/3}\\right]. \\]\n$(1\\pm I)^{5/3}=1\\pm\\frac53I+\\frac59I^2\\pm\\cdots$ より奇数次は打ち消し，\n\\[ E_{\\rm kin}=\\frac35\\varepsilon_0A\\left(1+\\frac59I^2+\\frac{5}{243}I^4+\\cdots\\right),\\qquad c=\\frac59. \\]\n\n(3) $I^2$ 項は $\\frac35\\cdot\\frac59\\varepsilon_0AI^2=\\frac{\\varepsilon_0}{3}\\frac{(N-Z)^2}{A}$．よって $a_{\\rm sym}^{\\rm kin}=\\varepsilon_0/3$．\n数値：$k_F=(3\\pi^2\\cdot0.08)^{1/3}=1.333\\ {\\rm fm^{-1}}$，$\\varepsilon_0=\\frac{(\\hbar ck_F)^2}{2Mc^2}=\\frac{(263.0)^2}{1878}\\approx36.8\\ {\\rm MeV}$，$a_{\\rm sym}^{\\rm kin}\\approx12.3\\ {\\rm MeV}$．\n経験値 $23\\ {\\rm MeV}$ の約半分しか説明できない．残りは，核力のポテンシャルエネルギーが陽子と中性子で異なる（同種核子より異種核子間の引力が強い）ことによる寄与である．Pauli 原理だけで対称エネルギーの「半分」が出ることが要点．"
+   }
+  ],
+  "idea": {
+   "tex": "Fermi エネルギーが $K^{2/3}$ に比例するため全運動エネルギーは $K^{5/3}$ の凸関数となり，$N=Z$ からずれると必ず増える．これが対称エネルギーの運動項 $\\varepsilon_F/3$ を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E_K$：((3)/(5)) K ε_F\n(2) $c$：((5)/(9)) ; $\\varepsilon_0$：((hbar ^(2))/(2 M))(((3 pi ^(2) ρ_0)/(2)))^(2/3)\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Fermi気体模型",
+   "対称エネルギー",
+   "質量公式",
+   "完全縮退"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 25,
+  "theme": "非一様電荷分布のクーロン自己エネルギーと分裂",
+  "topic": "非一様電荷分布のクーロン自己エネルギーと分裂",
+  "statement": {
+   "tex": "全電荷 $Ze$ が半径 $R$ の球内に分布している．$k=1/4\\pi\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 電荷密度が中心で最大の放物型分布 $\\rho(r)=\\rho_0\\left(1-\\dfrac{r^2}{R^2}\\right)$（$r\\le R$）のとき，静電エネルギーが $U=\\dfrac57\\dfrac{kZ^2e^2}{R}$ となることを示せ．一様分布の場合（係数 $3/5$）と比べ，大小の理由を述べよ．\n\\item 一様に帯電した液滴（密度一定）が同じ大きさの 2 つの球に分裂する．クーロンエネルギーと表面エネルギーはそれぞれ元の何倍になるか．\n\\item ${}^{238}_{92}\\mathrm{U}$ について，一様分布のクーロンエネルギー $E_C=\\dfrac35\\dfrac{kZ^2e^2}{R}$（$R=1.2A^{1/3}\\ \\mathrm{fm}$，$ke^2=1.44\\ \\mathrm{MeV\\,fm}$）と表面エネルギー $E_S=17.8A^{2/3}\\ \\mathrm{MeV}$ を求め，(2) の対称分裂で放出されるエネルギー（2 つの球が十分離れた状態との差）を見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $U=\\dfrac57\\dfrac{kZ^2e^2}{R}$（電荷が中心に集まるので一様より大きい）　(2) クーロン $2^{-2/3}\\approx0.630$ 倍，表面 $2^{1/3}\\approx1.260$ 倍　(3) $E_C\\approx983\\ \\mathrm{MeV}$，$E_S\\approx684\\ \\mathrm{MeV}$，放出エネルギー約 $1.9\\times10^2\\ \\mathrm{MeV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 半径 $r$ 内の電荷は\n\\[ q(r)=4\\pi\\rho_0\\int_0^r\\Big(1-\\frac{r'^2}{R^2}\\Big)r'^2dr'=4\\pi\\rho_0\\Big(\\frac{r^3}{3}-\\frac{r^5}{5R^2}\\Big),\\quad Ze=q(R)=\\frac{8\\pi\\rho_0R^3}{15}. \\]\n半径 $r$ の球に厚さ $dr$ の殻（電荷 $dq=4\\pi r^2\\rho\\,dr$）を外から運んでくる仕事は $k\\,q(r)\\,dq/r$ なので\n\\[ U=k\\int_0^R\\frac{q(r)}{r}4\\pi r^2\\rho(r)\\,dr=k(4\\pi\\rho_0)^2\\int_0^R\\Big(\\frac{r^4}{3}-\\frac{r^6}{5R^2}\\Big)\\Big(1-\\frac{r^2}{R^2}\\Big)dr . \\]\n積分は $R^5\\left(\\frac1{15}-\\frac1{21}-\\frac1{35}+\\frac1{45}\\right)=\\frac{4R^5}{315}$．$4\\pi\\rho_0=\\frac{15Ze}{2R^3}$ を入れて\n\\[ U=k\\frac{225Z^2e^2}{4R^6}\\cdot\\frac{4R^5}{315}=\\frac57\\frac{kZ^2e^2}{R}. \\]\n$5/7>3/5$：同じ全電荷でも電荷が中心付近に集まるほど平均距離が小さく，エネルギーは大きい．\n\n(2) 密度一定なので各球の半径は $R'=2^{-1/3}R$，電荷 $Ze/2$．\nクーロン：$2\\times\\frac35\\frac{k(Ze/2)^2}{R'}=\\frac35\\frac{kZ^2e^2}{R}\\cdot\\frac{2}{4}\\cdot2^{1/3}=2^{-2/3}E_C$．\n表面：$2\\times4\\pi R'^2\\sigma=2\\cdot2^{-2/3}\\cdot4\\pi R^2\\sigma=2^{1/3}E_S$．\n\n(3) $R=1.2\\times238^{1/3}=7.437\\ \\mathrm{fm}$．\n\\[ E_C=\\frac35\\cdot\\frac{1.44\\times92^2}{7.437}=983\\ \\mathrm{MeV},\\qquad E_S=17.8\\times238^{2/3}=684\\ \\mathrm{MeV}. \\]\nエネルギー変化 $\\Delta E=(2^{1/3}-1)E_S+(2^{-2/3}-1)E_C=177.7-363.9=-186\\ \\mathrm{MeV}$．すなわち約 $1.9\\times10^2\\ \\mathrm{MeV}$ が放出される（実際の核分裂の約 200 MeV と同程度）．"
+   }
+  ],
+  "idea": {
+   "tex": "自己エネルギーは $\\int kq(r)dq/r$ で分布に依存する．分裂ではクーロン項が $2^{-2/3}$ 倍，表面項が $2^{1/3}$ 倍となり，重い核ではクーロン項の減少が勝る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $U$：((5)/(7))((k Z ^(2) e ^(2))/(R))\n(2) 記述\n(3) $E_C$ [MeV]：≈983 ; $E_S$ [MeV]：≈684 ; 放出エネルギー [MeV]：≈1.9e2"
+  },
+  "methods": [],
+  "tags": [
+   "静電エネルギー",
+   "電荷分布",
+   "液滴模型",
+   "核分裂",
+   "クーロンエネルギー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 25,
+  "theme": "一般の分散関係をもつフェルミ気体の圧力と核物質",
+  "topic": "一般の分散関係をもつフェルミ気体の圧力と核物質",
+  "statement": {
+   "tex": "体積 $V$ に $A$ 個のフェルミ粒子（スピン・アイソスピン縮退度 $g$）が閉じ込められ，1 粒子エネルギーが波数 $k$ に対して $\\epsilon=Ck^s$（$C,s>0$）で与えられるとする．絶対零度で考える．\n\\begin{enumerate}\n\\item 1 粒子あたりの平均エネルギーが $U/A=\\dfrac{3}{3+s}E_F$ となること，および $E_F\\propto(A/V)^{s/3}$ を示せ．\n\\item 圧力 $p=-\\left(\\partial U/\\partial V\\right)_A$ が $p=\\dfrac{s}{3+s}\\rho E_F=\\dfrac s3\\dfrac UV$（$\\rho=A/V$）となることを示せ．非相対論的（$s=2$）と超相対論的（$s=1$）の場合を書け．\n\\item 対称核物質（$N=Z$，$g=4$）で $\\rho=0.16\\ \\mathrm{fm^{-3}}$ のとき，フェルミ波数 $k_F$，フェルミエネルギー $E_F$（非相対論，$mc^2=939\\ \\mathrm{MeV}$，$\\hbar c=197.3\\ \\mathrm{MeV\\,fm}$），運動エネルギーによる圧力 $p$ を MeV/fm$^3$ と Pa で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $s=2$：$p=\\frac25\\rho E_F=\\frac23\\frac UV$，$s=1$：$p=\\frac14\\rho E_F=\\frac13\\frac UV$　(3) $k_F\\approx1.33\\ \\mathrm{fm^{-1}}$，$E_F\\approx37\\ \\mathrm{MeV}$，$p\\approx2.4\\ \\mathrm{MeV/fm^3}\\approx3.8\\times10^{32}\\ \\mathrm{Pa}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 状態数は $A=g\\dfrac{V}{(2\\pi)^3}\\dfrac{4\\pi k_F^3}{3}$，すなわち $k_F=\\left(\\dfrac{6\\pi^2\\rho}{g}\\right)^{1/3}$．よって $E_F=Ck_F^s\\propto\\rho^{s/3}$．平均エネルギーは\n\\[ \\frac UA=\\frac{\\int_0^{k_F}Ck^s\\,k^2dk}{\\int_0^{k_F}k^2dk}=\\frac{3}{3+s}Ck_F^s=\\frac{3}{3+s}E_F . \\]\n\n(2) $A$ 一定で $E_F=c'(A/V)^{s/3}$ より $\\dfrac{\\partial E_F}{\\partial V}=-\\dfrac s3\\dfrac{E_F}{V}$．\n\\[ p=-\\frac{\\partial U}{\\partial V}=-\\frac{3A}{3+s}\\frac{\\partial E_F}{\\partial V}=\\frac{s}{3+s}\\frac AVE_F=\\frac s3\\frac UV . \\]\n$s=2$：$p=\\dfrac25\\rho E_F=\\dfrac23\\dfrac UV$．$s=1$：$p=\\dfrac14\\rho E_F=\\dfrac13\\dfrac UV$（光子気体と同じ関係）．\n\n(3) $k_F=\\left(\\dfrac{3\\pi^2\\rho}{2}\\right)^{1/3}=(2.369)^{1/3}=1.333\\ \\mathrm{fm^{-1}}$．\n$E_F=\\dfrac{(\\hbar ck_F)^2}{2mc^2}=\\dfrac{(263.0)^2}{1878}=36.8\\ \\mathrm{MeV}$．\n$p=\\dfrac25\\times0.16\\times36.8=2.36\\ \\mathrm{MeV/fm^3}$．$1\\ \\mathrm{MeV/fm^3}=1.602\\times10^{-13}\\ \\mathrm{J}/10^{-45}\\ \\mathrm{m^3}=1.602\\times10^{32}\\ \\mathrm{Pa}$ なので $p\\approx3.8\\times10^{32}\\ \\mathrm{Pa}$．\n核物質は飽和密度で平衡にあるので，この巨大な縮退圧は核力の引力による負の圧力でちょうど打ち消されている．"
+   }
+  ],
+  "idea": {
+   "tex": "フェルミ気体の圧力はエネルギー密度の $s/3$ 倍で，分散関係の冪だけで決まる．核物質では運動エネルギーの縮退圧が $10^{32}$ Pa に達し，核力の引力と釣り合う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) $k_F$ [fm⁻¹]：≈1.33 ; $E_F$ [MeV]：≈37 ; $p$ [MeV/fm³]：≈2.4"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ気体模型",
+   "縮退圧",
+   "フェルミエネルギー",
+   "核物質",
+   "状態方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 25,
+  "theme": "中性子過剰核のフェルミ気体と対称エネルギー",
+  "topic": "中性子過剰核のフェルミ気体と対称エネルギー",
+  "statement": {
+   "tex": "$^{208}_{\\ 82}$Pb（$N=126$，$Z=82$）を，半径 $R=r_0A^{1/3}$（$r_0=1.2\\ \\mathrm{fm}$）の球内に閉じ込められた，中性子と陽子それぞれ独立な縮退フェルミ気体とみなす．$\\hbar c=197.3\\ \\mathrm{MeV\\,fm}$，核子の静止エネルギーを $mc^2=939\\ \\mathrm{MeV}$ とし，非相対論的に扱う．\n\\begin{enumerate}\n\\item 中性子と陽子のフェルミ運動量 $p_{F}^{(n)},\\,p_F^{(p)}$（MeV/$c$ 単位）とフェルミエネルギー $E_F^{(n)},\\,E_F^{(p)}$ を求めよ．\n\\item 最後の中性子の分離エネルギーが $S_n=7.4\\ \\mathrm{MeV}$ であるとき，中性子に対する井戸の深さ $V_n$ を見積もれ．\n\\item 核子数 $A$ と体積を一定に保ったまま全運動エネルギーを $x=(N-Z)/A$ の 2 次まで展開すると，$E_{\\rm kin}=\\frac35 E_FA+a_{\\rm kin}\\dfrac{(N-Z)^2}{A}$ の形になることを示し，$a_{\\rm kin}$ を $N=Z=A/2$ としたときのフェルミエネルギー $E_F$ で表せ．さらに $A=208$ での数値を求め，経験的な非対称項係数 $a_a\\approx23\\ \\mathrm{MeV}$ と比べて何がいえるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_F^{(n)}\\approx267\\ \\mathrm{MeV}/c$，$p_F^{(p)}\\approx231\\ \\mathrm{MeV}/c$，$E_F^{(n)}\\approx38.0\\ \\mathrm{MeV}$，$E_F^{(p)}\\approx28.5\\ \\mathrm{MeV}$　(2) $V_n\\approx45\\ \\mathrm{MeV}$　(3) $a_{\\rm kin}=E_F/3\\approx11\\ \\mathrm{MeV}$（経験値の約半分．残りは核力ポテンシャルのアイソスピン依存から来る）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) スピン 2 状態を考えると，体積 $V$ 中の $N$ 個のフェルミ粒子について $N=\\dfrac{2V}{(2\\pi\\hbar)^3}\\dfrac{4\\pi}{3}p_F^3$，すなわち $p_F=\\hbar\\left(\\dfrac{3\\pi^2N}{V}\\right)^{1/3}$．$V=\\frac43\\pi r_0^3A$ を代入すると\n\\[\np_F^{(n)}=\\frac{\\hbar}{r_0}\\left(\\frac{9\\pi N}{4A}\\right)^{1/3},\\qquad p_F^{(p)}=\\frac{\\hbar}{r_0}\\left(\\frac{9\\pi Z}{4A}\\right)^{1/3}.\n\\]\n$\\hbar c/r_0=164.4\\ \\mathrm{MeV}$，$N/A=0.606$，$Z/A=0.394$ より $cp_F^{(n)}=267\\ \\mathrm{MeV}$，$cp_F^{(p)}=231\\ \\mathrm{MeV}$．$E_F=(cp_F)^2/(2mc^2)$ より $E_F^{(n)}=38.0\\ \\mathrm{MeV}$，$E_F^{(p)}=28.5\\ \\mathrm{MeV}$．中性子過剰のため中性子のフェルミ面は約 $9.5\\ \\mathrm{MeV}$ 高い．\n\n(2) 最後の中性子はフェルミ面にいて，井戸の底から $E_F^{(n)}$，井戸の縁（連続状態の端）まで $S_n$ 離れている．よって $V_n=E_F^{(n)}+S_n\\approx38.0+7.4\\approx45\\ \\mathrm{MeV}$．\n\n(3) $E_{\\rm kin}=\\frac35\\left(NE_F^{(n)}+ZE_F^{(p)}\\right)=\\frac35\\frac{\\hbar^2}{2m}\\left(\\frac{3\\pi^2}{V}\\right)^{2/3}\\left(N^{5/3}+Z^{5/3}\\right)$．$N=\\frac A2(1+x)$，$Z=\\frac A2(1-x)$ とおくと\n\\[\n(1+x)^{5/3}+(1-x)^{5/3}=2+\\frac{10}{9}x^2+O(x^4).\n\\]\n$E_F=\\frac{\\hbar^2}{2m}\\left(\\frac{3\\pi^2A}{2V}\\right)^{2/3}$ を用いると $\\frac35\\frac{\\hbar^2}{2m}\\left(\\frac{3\\pi^2}{V}\\right)^{2/3}\\left(\\frac A2\\right)^{5/3}=\\frac{3}{10}E_FA$ だから\n\\[\nE_{\\rm kin}=\\frac{3}{10}E_FA\\left(2+\\frac{10}{9}x^2\\right)=\\frac35E_FA+\\frac{E_F}{3}\\frac{(N-Z)^2}{A}.\n\\]\nよって $a_{\\rm kin}=E_F/3$．$A=208$ の対称核では $cp_F=250\\ \\mathrm{MeV}$，$E_F=33.4\\ \\mathrm{MeV}$ なので $a_{\\rm kin}\\approx11.1\\ \\mathrm{MeV}$（$^{208}$Pb の運動エネルギー増加は $\\approx104\\ \\mathrm{MeV}$．展開しない厳密計算でも $103.8\\ \\mathrm{MeV}$ で一致）．これは経験値 $a_a\\approx23\\ \\mathrm{MeV}$ の約半分であり，残り半分は中性子–陽子間引力が同種核子間より強いという核力のアイソスピン依存（ポテンシャルエネルギー）に由来する．"
+   }
+  ],
+  "idea": {
+   "tex": "$N\\neq Z$ では中性子・陽子のフェルミ面がずれ，その運動エネルギー差を $(N-Z)/A$ で展開すると対称エネルギーの運動学的寄与 $E_F/3$ が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $p_F^{(n)}$ [MeV/c]：≈267 ; $p_F^{(p)}$ [MeV/c]：≈231 ; $E_F^{(n)}$ [MeV]：≈38.0 ; $E_F^{(p)}$ [MeV]：≈28.5\n(2) $V_n$ [MeV]：≈45\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ気体模型",
+   "フェルミ運動量",
+   "フェルミエネルギー",
+   "井戸の深さ",
+   "対称エネルギー",
+   "208Pb"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 20,
+  "theme": "準位の収容数・パリティ・磁気モーメントから軌道を決める",
+  "topic": "準位の収容数・パリティ・磁気モーメントから軌道を決める",
+  "statement": {
+   "tex": "奇数個の中性子をもつある核の基底状態は，最後の 1 個の中性子が殻模型のある単一粒子準位 $(l,j)$ を占めることで決まっている．この準位には中性子だけで最大 10 個まで入る．\n\\begin{enumerate}\n\\item $j$ を求め，可能な軌道角運動量 $l$ を 2 通り挙げよ．\n\\item それぞれの場合について，シュミット値（単一粒子模型の磁気モーメント）を求めよ．中性子の $g$ 因子は $g_l=0$，$g_s=-3.826$ とし，結果は核磁子 $\\mu_N$ 単位で答えよ．\n\\item 基底状態の磁気モーメントが $-1.9\\,\\mu_N$ と測定された．この核の基底状態のスピン・パリティ $J^\\pi$ を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $j=9/2$，$l=4$（$g_{9/2}$）または $l=5$（$h_{9/2}$）　(2) $g_{9/2}$：$-1.91\\,\\mu_N$，$h_{9/2}$：$+1.57\\,\\mu_N$　(3) $J^\\pi=9/2^+$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 同種核子 1 種類だけなら，準位 $j$ には $m_j=-j,\\dots,j$ の $2j+1$ 個が入る．$2j+1=10$ より $j=9/2$．$j=l\\pm\\frac12$ だから $l=4$（$j=l+\\frac12$，$g_{9/2}$，パリティ $+$）または $l=5$（$j=l-\\frac12$，$h_{9/2}$，パリティ $-$）．\n\n(2) シュミット値は\n\\[\nj=l+\\tfrac12:\\ \\mu=\\left(j-\\tfrac12\\right)g_l+\\tfrac12g_s,\\qquad\nj=l-\\tfrac12:\\ \\mu=\\frac{j}{j+1}\\left[\\left(j+\\tfrac32\\right)g_l-\\tfrac12g_s\\right].\n\\]\n中性子では $g_l=0$ なので，$g_{9/2}$：$\\mu=\\frac12(-3.826)=-1.913\\,\\mu_N$，$h_{9/2}$：$\\mu=\\dfrac{9/2}{11/2}\\cdot\\dfrac{3.826}{2}=+1.565\\,\\mu_N$．スピンと軌道が反平行だと符号まで反転する．\n\n(3) 測定値 $-1.9\\,\\mu_N$ は $g_{9/2}$ のシュミット値に一致し，$h_{9/2}$ とは符号から異なる．よって最後の中性子は $1g_{9/2}$ にあり，パリティは $(-1)^4=+$．$J^\\pi=9/2^+$．"
+   }
+  ],
+  "idea": {
+   "tex": "収容数から $j$ が決まっても $l=j\\mp\\frac12$ の 2 通りが残り，パリティかシュミット磁気モーメントで区別できる（中性子では符号が反転する）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻模型",
+   "単一粒子準位",
+   "パリティ",
+   "シュミット値",
+   "磁気モーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 25,
+  "theme": "単純な殻模型の予言とその破れ（23Na）",
+  "topic": "単純な殻模型の予言とその破れ（23Na）",
+  "statement": {
+   "tex": "殻模型の陽子準位が下から次の順に並んでいるとする（括弧は殻のまとまり）．\n\\[\n[1s_{1/2}]\\,[1p_{3/2},1p_{1/2}]\\,[1d_{5/2},2s_{1/2},1d_{3/2}]\\,[1f_{7/2}]\\,[2p_{3/2},1f_{5/2},2p_{1/2},1g_{9/2}]\n\\]\n陽子数 $Z$ が奇数，中性子数 $N$ が偶数の核では，対になっていない最後の陽子 1 個が基底状態の $J^\\pi$ を決めるものとする（極端な単一粒子模型）．\n\\begin{enumerate}\n\\item $Z\\le 40$ の範囲で，この模型が $J^\\pi=3/2^-$ を予言する $Z$ をすべて挙げよ．\n\\item 同様に $J^\\pi=5/2^+$ を予言する $Z$ をすべて挙げよ．\n\\item $^{23}_{11}$Na の基底状態は実際には $3/2^+$ である．$1d_{5/2}$ に入った 3 個の陽子がつくり得る合成角運動量 $J$ をすべて求め，$3/2^+$ がこの配位の範囲内で説明可能かどうか論ぜよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Z=3,5,29,31$　(2) $Z=9,11,13$　(3) $(d_{5/2})^3$ の $J=3/2,\\,5/2,\\,9/2$．パリティは $+$ で，$J=3/2$ は許されるので，対相関だけでは決まらない（変形などで $3/2$ が下がる）と考えれば説明可能"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "各準位の収容数は $2j+1$．累積陽子数は $1s_{1/2}$:1–2，$1p_{3/2}$:3–6，$1p_{1/2}$:7–8，$1d_{5/2}$:9–14，$2s_{1/2}$:15–16，$1d_{3/2}$:17–20，$1f_{7/2}$:21–28，$2p_{3/2}$:29–32，$1f_{5/2}$:33–38，$2p_{1/2}$:39–40．パリティは $(-1)^l$．\n\n(1) $3/2^-$ は $p_{3/2}$（$l=1$）．奇数番目の陽子が $1p_{3/2}$ に入るのは $Z=3,5$，$2p_{3/2}$ に入るのは $Z=29,31$．（$1d_{3/2}$ の $Z=17,19$ は $3/2^+$ なので除く．）\n\n(2) $5/2^+$ は $d_{5/2}$．$Z=9,11,13$．（$1f_{5/2}$ の $Z=33,35,37$ は $5/2^-$．）\n\n(3) $j=5/2$ に同種粒子 3 個を入れる．パウリ原理により $m$ の値は相異なり，$M=m_1+m_2+m_3$ の分布は\n$M=9/2:1,\\ 7/2:1,\\ 5/2:2,\\ 3/2:3,\\ 1/2:3$．\n最大 $M$ から順に多重項を取り去ると $J=9/2,\\ 5/2,\\ 3/2$ が 1 つずつ現れる．パリティは $(+)^3=+$．\n極端な単一粒子模型（対相関で 2 個が $J=0$ を組み，残り 1 個が $J=j=5/2$ を与える）は $5/2^+$ を予言するが，同じ $(d_{5/2})^3$ 配位の中に $3/2^+$ も含まれている．$^{23}$Na は大きく変形した核で，粒子間の残留相互作用（変形場）によって $3/2^+$ が最低になると解釈される．したがって配位自体は否定されず，「最後の 1 個だけで決まる」という仮定が破れている例である．"
+   }
+  ],
+  "idea": {
+   "tex": "準位の並びから単一粒子模型の $J^\\pi$ を逆引きし，$(j)^3$ 配位が $j$ 以外の $J$ も含むことから予言の破れを理解する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $Z$：{3, 5, 29, 31}\n(2) $Z$：{9, 11, 13}\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻模型",
+   "基底状態スピン",
+   "パリティ",
+   "配位",
+   "23Na",
+   "変形核"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 20,
+  "theme": "単一粒子四重極モーメントと有効電荷・空孔",
+  "topic": "単一粒子四重極モーメントと有効電荷・空孔",
+  "statement": {
+   "tex": "殻模型では，閉殻の外の軌道 $j$ にある 1 個の陽子が $m=j$ の状態にあるとき，核の電気四重極モーメントは\n\\[\nQ_{\\rm sp}=-\\frac{2j-1}{2j+2}\\langle r^2\\rangle\n\\]\nで与えられる．$^{209}_{\\ 83}$Bi の基底状態 $9/2^-$ は $^{208}$Pb の閉殻の外の $1h_{9/2}$ 陽子 1 個で記述される．$\\langle r^2\\rangle$ は半径 $R=r_0A^{1/3}$（$r_0=1.2\\ \\mathrm{fm}$）の一様球の値とする．\n\\begin{enumerate}\n\\item $Q_{\\rm sp}$ を barn 単位で求めよ（$1\\ \\mathrm{b}=100\\ \\mathrm{fm}^2$）．\n\\item 実測値は $Q=-0.52\\ \\mathrm{b}$ である．陽子の有効電荷 $e_{\\rm eff}$（$Q=e_{\\rm eff}Q_{\\rm sp}/e$ とする）を求め，$e_{\\rm eff}>e$ となる物理的理由を述べよ．\n\\item 仮に $1h_{9/2}$ 軌道が陽子 1 個分だけ欠けた（空孔 1 個の）核を考えると，単一粒子模型での $Q$ は (1) とどう関係するか．理由とともに答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q_{\\rm sp}\\approx-0.22\\ \\mathrm{b}$　(2) $e_{\\rm eff}\\approx2.3\\,e$（芯の分極）　(3) 符号が反転し $Q\\approx+0.22\\ \\mathrm{b}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 一様球では $\\langle r^2\\rangle=\\frac35R^2=\\frac35(1.2)^2(209)^{2/3}=30.4\\ \\mathrm{fm}^2$．$j=9/2$ で $\\dfrac{2j-1}{2j+2}=\\dfrac{8}{11}$ だから\n\\[\nQ_{\\rm sp}=-\\frac{8}{11}\\times30.4=-22.1\\ \\mathrm{fm}^2\\approx-0.22\\ \\mathrm{b}.\n\\]\n負号は，$m=j$ の陽子が赤道面付近に集中し，電荷分布が扁平（オブレート）であることを表す．\n\n(2) $e_{\\rm eff}/e=(-0.52)/(-0.221)\\approx2.3$．価陽子の電場・核力が $^{208}$Pb 芯を変形（分極）させ，芯の陽子分布も同じ向きの四重極変形を持つため，価陽子 1 個の値よりも大きな四重極モーメントが観測される．\n\n(3) 満ちた $j$ 殻は球対称で $Q=0$．空孔 1 個の状態（$M=j$）は満殻から $m=-j$ の陽子を 1 個取り除いた状態である．$|j,m\\rangle$ と $|j,-m\\rangle$ の電荷密度は等しい（時間反転）ので，空孔状態の $Q$ は $0-Q_{\\rm sp}=-Q_{\\rm sp}$ となる．したがって $Q\\approx+0.22\\ \\mathrm{b}$（プロレート）．粒子と空孔で四重極モーメントの符号が反転する．"
+   }
+  ],
+  "idea": {
+   "tex": "単一粒子の四重極モーメントは負（扁平）で，実測との比が芯の分極を表す有効電荷になる．空孔は満殻からの差なので符号が反転する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $Q_{\\rm sp}$ [b]：≈-0.22\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電気四重極モーメント",
+   "殻模型",
+   "有効電荷",
+   "芯分極",
+   "粒子-空孔対称性",
+   "209Bi"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 20,
+  "theme": "鏡映核のスピン・パリティとシュミット値の和",
+  "topic": "鏡映核のスピン・パリティとシュミット値の和",
+  "statement": {
+   "tex": "殻模型（単一粒子模型）について次の問いに答えよ．陽子の $g$ 因子は $g_l=1$，$g_s=5.586$，中性子は $g_l=0$，$g_s=-3.826$ とし，磁気モーメントは核磁子 $\\mu_N$ 単位とする．\n\\begin{enumerate}\n\\item $^{3}$He，$^{3}$H，$^{27}$Al，$^{41}$Sc の基底状態の $J^\\pi$ を予言せよ．\n\\item $^{3}$He と $^{3}$H のシュミット値をそれぞれ求めよ．また，その和が核子の磁気モーメントの和 $\\mu_p+\\mu_n$ に等しいことを示せ．実測値 $\\mu(^3\\mathrm{He})=-2.128$，$\\mu(^3\\mathrm{H})=2.979$ の和と比較せよ．\n\\item $^{27}$Al と $^{41}$Sc のシュミット値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $^3$He，$^3$H：$1/2^+$；$^{27}$Al：$5/2^+$；$^{41}$Sc：$7/2^-$　(2) $^3$He：$-1.913$，$^3$H：$+2.793$，和 $0.880=\\mu_p+\\mu_n$（実測和 $0.851$）　(3) $^{27}$Al：$4.79$，$^{41}$Sc：$5.79$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $^3$He（$Z=2,N=1$）は 2 個の陽子が $1s_{1/2}$ を満たし，中性子 1 個が $1s_{1/2}$ にある（$1s_{1/2}$ の中性子空孔と見てもよい）．$l=0$ なので $1/2^+$．鏡映核 $^3$H は陽子と中性子を入れ替えたもので同じく $1/2^+$．$^{27}$Al は 13 番目の陽子が $1d_{5/2}$（$l=2$）にあるので $5/2^+$（中性子 14 個は $d_{5/2}$ を満たす）．$^{41}$Sc は 20 中性子・20 陽子の閉殻の外の陽子が $1f_{7/2}$（$l=3$）にあるので $7/2^-$．\n\n(2) $j=l+\\frac12$ のシュミット値 $\\mu=(j-\\frac12)g_l+\\frac12g_s$ で $l=0$ とすると $\\mu=g_s/2$．$^3$He（不対核子は中性子）：$\\mu=-1.913$．$^3$H（不対核子は陽子）：$\\mu=+2.793$．$s$ 状態では磁気モーメントは不対核子の固有磁気モーメントそのものなので，和は $\\mu_p+\\mu_n=2.793-1.913=0.880$．実測の和は $-2.128+2.979=0.851$ で，3% 程度の精度で一致する．個々の値のずれ（約 $0.2\\,\\mu_N$）は大きく逆符号であり，これは鏡映核の間で反対称に効く中間子交換電流の寄与が和では打ち消すことを示唆する．\n\n(3) いずれも $j=l+\\frac12$ の陽子．$^{27}$Al：$\\mu=(5/2-1/2)\\cdot1+5.586/2=4.793$．$^{41}$Sc：$\\mu=(7/2-1/2)+2.793=5.793$．（実測値はそれぞれ $3.64$，$5.43$ でシュミット線より内側にある．）"
+   }
+  ],
+  "idea": {
+   "tex": "鏡映核対は同じ $J^\\pi$ をもち，$s_{1/2}$ では両者のシュミット値の和が $\\mu_p+\\mu_n$ になる．個別のずれは逆符号で和では打ち消し合う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻模型",
+   "鏡映核",
+   "スピン・パリティ",
+   "シュミット値",
+   "磁気モーメント",
+   "3He"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 25,
+  "theme": "A=64の同重体：対エネルギーと二重β",
+  "topic": "A=64の同重体：対エネルギーと二重β",
+  "statement": {
+   "tex": "原子の質量エネルギーを $M(A,Z)c^2=Zm_{\\rm H}c^2+(A-Z)m_nc^2-B(A,Z)$ とし，結合エネルギーを\n\\[\nB=a_vA-a_sA^{2/3}-a_c\\frac{Z^2}{A^{1/3}}-a_a\\frac{(A-2Z)^2}{A}+\\delta,\\qquad\n\\delta=\\begin{cases}+12/\\sqrt A&(\\text{偶偶核})\\\\0&(A\\ \\text{奇})\\\\-12/\\sqrt A&(\\text{奇奇核})\\end{cases}\\ (\\mathrm{MeV})\n\\]\nで与える（$a_c=0.697$，$a_a=23.285\\ \\mathrm{MeV}$）．$(m_n-m_{\\rm H})c^2=0.782\\ \\mathrm{MeV}$，$m_ec^2=0.511\\ \\mathrm{MeV}$ とする．$A=64$ の同重体（$_{27}$Co，$_{28}$Ni，$_{29}$Cu，$_{30}$Zn，$_{31}$Ga）について考える．\n\\begin{enumerate}\n\\item 質量が $Z$ の連続関数として最小になる $Z_0$ を求めよ．「$Z_0$ に最も近い核種が安定」と考えるとどの核種が安定と予想されるか．\n\\item $^{64}$Cu の $\\beta^-$ 崩壊と電子捕獲（EC）の $Q$ 値をそれぞれ求め，$^{64}$Cu が両方向に崩壊できることを示せ．$\\beta^+$ 崩壊は可能か．\n\\item この模型では $^{64}$Ni と $^{64}$Zn のどちらが軽いか．重い方に可能な崩壊様式と $Q$ 値を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Z_0\\approx28.8$，素朴には $^{64}$Cu（$Z=29$）　(2) $Q_{\\beta^-}\\approx0.78\\ \\mathrm{MeV}$，$Q_{\\rm EC}\\approx1.96\\ \\mathrm{MeV}$．$\\beta^+$ も可能（最大エネルギー $\\approx0.94\\ \\mathrm{MeV}$）　(3) $^{64}$Ni が軽い．$^{64}$Zn は二重電子捕獲（$\\beta^+$EC も）が可能で $Q\\approx1.19\\ \\mathrm{MeV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Z$ に依存する部分は $-0.782Z+a_cZ^2A^{-1/3}+a_a(A-2Z)^2/A$（$\\delta$ を除く）．微分して 0 とおくと\n\\[\nZ_0=\\frac{4a_a+0.782}{8a_a/A+2a_cA^{-1/3}}=\\frac{93.92}{2.9106+0.3485}=28.82.\n\\]\n最も近い整数は $Z=29$ で，素朴には $^{64}$Cu が安定と予想される．しかし $^{64}$Cu は奇奇核で対エネルギーの分だけ重い．\n\n(2) 各核種の $M(A,Z)c^2$ を（$Z$ によらない定数を除いて）計算すると，\n$Z=28:-583.66$，$29:-581.70$，$30:-582.47$，$27:-576.36$，$31:-573.99\\ \\mathrm{MeV}$．原子質量で\n\\[\nQ_{\\beta^-}(\\mathrm{Cu}\\to\\mathrm{Zn})=M_{29}-M_{30}=0.78\\ \\mathrm{MeV},\\quad Q_{\\rm EC}(\\mathrm{Cu}\\to\\mathrm{Ni})=M_{29}-M_{28}=1.96\\ \\mathrm{MeV}.\n\\]\n$\\beta^+$ には $Q_{\\rm EC}>2m_ec^2=1.022\\ \\mathrm{MeV}$ が必要で，これを満たすので可能（陽電子の最大運動エネルギー $1.96-1.02=0.94\\ \\mathrm{MeV}$）．偶偶核の質量放物線と奇奇核の質量放物線が $2\\times12/\\sqrt{64}=3\\ \\mathrm{MeV}$ ずれているため，奇奇核の $^{64}$Cu は両隣の偶偶核より重くなり，両方向に崩壊する．（実測は $Q_{\\beta^-}=0.58$，$Q_{\\rm EC}=1.68\\ \\mathrm{MeV}$．）\n\n(3) $M_{30}-M_{28}=1.19\\ \\mathrm{MeV}>0$ で $^{64}$Ni が軽い．$^{64}$Zn から $^{64}$Cu への単一の弱崩壊は $M_{30}<M_{29}$ のため禁止されるが，2 段を同時に行う二重電子捕獲 $^{64}\\mathrm{Zn}+2e^-\\to{}^{64}\\mathrm{Ni}+2\\nu$（$Q\\approx1.19\\ \\mathrm{MeV}$）や $\\beta^+$EC（$Q-1.02\\approx0.16\\ \\mathrm{MeV}$ 残る）がエネルギー的に許される．その確率は極めて小さいため $^{64}$Zn は実質的に安定であり，$A=64$ では偶偶核 2 つ（Ni と Zn）が安定となる．（実測 $Q=1.10\\ \\mathrm{MeV}$．）"
+   }
+  ],
+  "idea": {
+   "tex": "偶 $A$ では対エネルギーで偶偶核・奇奇核の 2 本の質量放物線に分かれ，$Z_0$ に最も近い奇奇核は不安定で，2 つの偶偶核が安定になり得る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "液滴模型",
+   "同重体",
+   "質量放物線",
+   "対エネルギー",
+   "二重β崩壊",
+   "64Cu"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 20,
+  "theme": "鏡映核のβ+崩壊エネルギー予言と模型の限界",
+  "topic": "鏡映核のβ+崩壊エネルギー予言と模型の限界",
+  "statement": {
+   "tex": "質量数 $A=2Z+1$ の鏡映核の対 $(Z,\\,Z+1)$ を考える．両者の質量差はクーロンエネルギー差 $\\Delta E_C$ と中性子–水素原子の質量差 $(m_n-m_{\\rm H})c^2=0.782\\ \\mathrm{MeV}$ だけで決まるとし，核は半径 $R=r_0A^{1/3}$（$r_0=1.25\\ \\mathrm{fm}$）の一様帯電球（$E_C=\\frac35Z(Z-1)e^2/4\\pi\\varepsilon_0R$）とする．$e^2/4\\pi\\varepsilon_0=1.44\\ \\mathrm{MeV\\,fm}$，$m_ec^2=0.511\\ \\mathrm{MeV}$．\n\\begin{enumerate}\n\\item $\\Delta E_C$ を $A$ だけの式で表せ．\n\\item 陽子の多い方の核 $^{41}$Sc の電子捕獲の $Q$ 値と $\\beta^+$ 崩壊の最大運動エネルギーを予言せよ．\n\\item $A=3$（$^3$H と $^3$He）にこの模型を当てはめると，どちらがどちらへ崩壊すると予言されるか．実際は $^3$H が $\\beta^-$ 崩壊して $^3$He になる（$Q=18.6\\ \\mathrm{keV}$）．実際の $\\Delta E_C$ を求め，模型の何が問題かを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta E_C=\\dfrac35\\dfrac{e^2}{4\\pi\\varepsilon_0r_0}\\dfrac{A-1}{A^{1/3}}$　(2) $Q_{\\rm EC}\\approx7.24\\ \\mathrm{MeV}$，$\\beta^+$ 最大 $\\approx6.2\\ \\mathrm{MeV}$　(3) 模型は $\\Delta E_C=0.96\\ \\mathrm{MeV}>0.782$ で $^3$He$\\to{}^3$H を予言（誤り）．実際の $\\Delta E_C=0.764\\ \\mathrm{MeV}$．軽い核を一様球とみなすことが過大評価の原因"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Z(Z+1)-(Z-1)Z=2Z=A-1$ なので\n\\[\n\\Delta E_C=\\frac35\\frac{e^2}{4\\pi\\varepsilon_0}\\frac{A-1}{r_0A^{1/3}}=0.691\\,\\frac{A-1}{A^{1/3}}\\ \\mathrm{MeV}.\n\\]\n\n(2) 鏡映核の原子質量差は $\\Delta Mc^2=\\Delta E_C-(m_n-m_{\\rm H})c^2$（陽子の多い方が重い分）．$A=41$：$\\Delta E_C=0.691\\times40/3.448=8.02\\ \\mathrm{MeV}$，$Q_{\\rm EC}=\\Delta Mc^2=8.02-0.78=7.24\\ \\mathrm{MeV}$．$\\beta^+$ の最大運動エネルギーは $Q_{\\rm EC}-2m_ec^2=6.21\\ \\mathrm{MeV}$．（実測は $Q_{\\rm EC}=6.50\\ \\mathrm{MeV}$，最大 $5.47\\ \\mathrm{MeV}$ で，$r_0=1.25$ ではやや過大．）\n\n(3) $A=3$：$\\Delta E_C=0.691\\times2/1.442=0.96\\ \\mathrm{MeV}$．$\\Delta Mc^2=0.96-0.78=+0.18\\ \\mathrm{MeV}>0$ なので，模型では $^3$He の方が重く，$^3$He が電子捕獲で $^3$H になると予言してしまう．実際は $M(^3\\mathrm H)-M(^3\\mathrm{He})=18.6\\ \\mathrm{keV}$ なので，$\\Delta E_C=0.782-0.0186=0.764\\ \\mathrm{MeV}$．$^3$He の 2 個の陽子間のクーロンエネルギーは，一様球の式が与えるよりも 2 割ほど小さい．3 体系は表面が非常にぼやけ，陽子間距離が大きいので，一様に詰まった球という液滴的な描像は成り立たない．中性子と陽子の質量差とクーロン差が僅差で競う軽い鏡映核では，模型の小さな誤差が崩壊の向きまで逆転させる．"
+   }
+  ],
+  "idea": {
+   "tex": "鏡映核の $\\beta^+$ エネルギーはほぼ $\\Delta E_C\\propto(A-1)/A^{1/3}$ で決まるが，$^3$H/$^3$He では $\\Delta E_C$ と $m_n-m_{\\rm H}$ が拮抗し，一様球模型は崩壊の向きを誤る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta E_C$：((3)/(5))((e ^(2))/(4 pi ε_0 r_0))((A -1)/(A ^(1/3)))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "鏡映核",
+   "クーロンエネルギー",
+   "β+崩壊",
+   "電子捕獲",
+   "トリチウム",
+   "模型の限界"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 20,
+  "theme": "中性子–水素質量差を残した最安定同重体",
+  "topic": "中性子–水素質量差を残した最安定同重体",
+  "statement": {
+   "tex": "原子質量の経験式（偶奇効果を除く）\n\\[\nM(A,Z)=Zm_{\\rm H}+(A-Z)m_n-\\alpha A+\\beta A^{2/3}+\\gamma\\frac{(A-2Z)^2}{A}+\\varepsilon\\frac{Z^2}{A^{1/3}}\n\\]\nを考える（$\\alpha,\\beta,\\gamma,\\varepsilon$ は定数，$c=1$ の単位）．$\\Delta\\equiv m_n-m_{\\rm H}$ とおく．\n\\begin{enumerate}\n\\item $\\Delta$ を無視せずに，$A$ 一定で $M$ を最小にする $Z_{\\min}$ を求め，$Z_{\\min}=\\dfrac A2\\cdot\\dfrac{1+\\Delta/4\\gamma}{1+(\\varepsilon/4\\gamma)A^{2/3}}$ と書けることを示せ．\n\\item $\\gamma=23.285\\ \\mathrm{MeV}$，$\\varepsilon=0.697\\ \\mathrm{MeV}$，$\\Delta=0.782\\ \\mathrm{MeV}$ として，$A=27$ と $A=125$ の $Z_{\\min}$ を，$\\Delta$ を無視した場合と比べよ．\n\\item $\\Delta$ の効果による $Z_{\\min}$ のずれが 0.5 を超えるのは，およそ $Z_{\\min}$ がいくら以上の領域か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $A=27$：$12.65\\to12.75$；$A=125$：$52.65\\to53.09$　(3) $Z_{\\min}\\gtrsim60$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A$ 一定で微分すると\n\\[\n\\frac{\\partial M}{\\partial Z}=m_{\\rm H}-m_n-\\frac{4\\gamma(A-2Z)}{A}+\\frac{2\\varepsilon Z}{A^{1/3}}=0\n\\]\n\\[\n\\Longrightarrow\\ Z\\left(\\frac{8\\gamma}{A}+\\frac{2\\varepsilon}{A^{1/3}}\\right)=4\\gamma+\\Delta\n\\ \\Longrightarrow\\ Z_{\\min}=\\frac{4\\gamma+\\Delta}{8\\gamma/A+2\\varepsilon A^{-1/3}}=\\frac A2\\cdot\\frac{1+\\Delta/4\\gamma}{1+(\\varepsilon/4\\gamma)A^{2/3}}.\n\\]\n$\\Delta=0$ とすれば通常の式 $Z_{\\min}=0.5A\\left(1+0.25A^{2/3}\\varepsilon/\\gamma\\right)^{-1}$ に戻る．中性子の方が重いので，$\\Delta$ は陽子を増やす向きに働く．\n\n(2) $\\varepsilon/4\\gamma=0.007483$，$1+\\Delta/4\\gamma=1.00840$．\n$A=27$：$A^{2/3}=9$，$\\Delta$ なし $13.5/1.0673=12.65$，あり $12.75$．\n$A=125$：$A^{2/3}=25$，$\\Delta$ なし $62.5/1.1871=52.65$，あり $53.09$．\n\n(3) ずれは $\\delta Z\\simeq Z_{\\min}\\Delta/4\\gamma=0.0084Z_{\\min}$．$\\delta Z>0.5$ には $Z_{\\min}>0.5/0.0084\\approx60$．希土類より重い領域では，$\\Delta$ を無視すると最安定な $Z$ を 1 つ取り違えるおそれがある．"
+   }
+  ],
+  "idea": {
+   "tex": "$m_n-m_{\\rm H}$ の項は $Z_{\\min}$ を一定比率 $1+\\Delta/4\\gamma$ だけ押し上げ，重い核では整数 1 つ分の差になり得る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "半経験的質量公式",
+   "最安定同重体",
+   "中性子水素質量差",
+   "β安定線"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 25,
+  "theme": "2つのQ値から質量放物線を決める",
+  "topic": "2つのQ値から質量放物線を決める",
+  "statement": {
+   "tex": "奇数 $A$ の同重体の原子質量は $Z$ の 2 次関数 $M(Z)c^2=M_0c^2+a(Z-Z_0)^2$ で表されるとする（$a>0$，$Z_0$ は連続変数）．$A=127$ について，原子質量差で表した $Q$ 値が次のように測定されている：\n\\[\n^{127}_{\\ 51}\\mathrm{Sb}\\to{}^{127}_{\\ 52}\\mathrm{Te}\\ (\\beta^-):\\ Q=1.60\\ \\mathrm{MeV},\\qquad\n^{127}_{\\ 55}\\mathrm{Cs}\\to{}^{127}_{\\ 54}\\mathrm{Xe}\\ (\\mathrm{EC}):\\ Q=1.06\\ \\mathrm{MeV}.\n\\]\n\\begin{enumerate}\n\\item $a$ と $Z_0$ を求めよ．\n\\item $^{127}$Te の $\\beta^-$ 崩壊と $^{127}$Xe の電子捕獲の $Q$ 値を予言し，$A=127$ で $\\beta$ 安定な核種を答えよ．\n\\item $^{127}$Xe は $\\beta^+$ 崩壊できるか．$m_ec^2=0.511\\ \\mathrm{MeV}$．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a\\approx0.443\\ \\mathrm{MeV}$，$Z_0\\approx53.3$　(2) $Q(\\mathrm{Te})\\approx0.71\\ \\mathrm{MeV}$，$Q(\\mathrm{Xe})\\approx0.17\\ \\mathrm{MeV}$，安定なのは $^{127}$I　(3) できない（$Q<1.022\\ \\mathrm{MeV}$，EC のみ）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Z\\to Z+1$ の $\\beta^-$ の $Q$ は $M(Z)-M(Z+1)=a[(Z-Z_0)^2-(Z+1-Z_0)^2]=a(2Z_0-2Z-1)$．$Z+1\\to Z$ の EC の $Q$ は $a(2Z+1-2Z_0)$．\n\\[\n1.60=a(2Z_0-103),\\qquad 1.06=a(109-2Z_0).\n\\]\n辺々加えて $2.66=6a$，$a=0.4433\\ \\mathrm{MeV}$．$2Z_0=103+1.60/0.4433=106.61$，$Z_0=53.30$．\n\n(2) $^{127}$Te$\\to{}^{127}$I：$Q=a(2Z_0-105)=0.4433\\times1.61=0.71\\ \\mathrm{MeV}$．$^{127}$Xe$\\to{}^{127}$I（EC）：$Q=a(107-2Z_0)=0.4433\\times0.39=0.17\\ \\mathrm{MeV}$．どちらも $Z=53$ に向かって崩壊し，$^{127}$I は $^{127}$Te からも $^{127}$Xe からも低いので $\\beta$ 安定．$Z_0=53.3$ に最も近い整数が $53$ であることと一致する．（実測は $0.70$，$0.66\\ \\mathrm{MeV}$．$^{127}$Xe の予言値は放物線の頂点付近で小さな値の差になるため誤差が大きい．）\n\n(3) $\\beta^+$ には原子質量差で $Q>2m_ec^2=1.022\\ \\mathrm{MeV}$ が必要．$0.17\\ \\mathrm{MeV}$ では不可能で，$^{127}$Xe は電子捕獲のみで崩壊する．"
+   }
+  ],
+  "idea": {
+   "tex": "奇数 $A$ の質量放物線は 2 つのパラメータ $(a,Z_0)$ だけで決まるので，両側の崩壊 $Q$ 値 2 つから中間の核種の安定性を予言できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $a$ [MeV]：≈0.443 ; $Z_0$：≈53.3\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "質量放物線",
+   "β安定性",
+   "同重体",
+   "電子捕獲",
+   "Q値",
+   "127I"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 2,
+  "minutes": 20,
+  "theme": "数値質量公式の係数の意味とA=27のβ安定性",
+  "topic": "数値質量公式の係数の意味とA=27のβ安定性",
+  "statement": {
+   "tex": "原子質量（u 単位）の経験式\n\\[\nM=0.99198A-0.000841Z+0.01968A^{2/3}+0.0007668\\frac{Z^2}{A^{1/3}}+0.09966\\frac{(Z-A/2)^2}{A}-\\delta\n\\]\nを考える（$A$ 奇では $\\delta=0$）．$m_n=1.008665\\ \\mathrm{u}$，$1\\ \\mathrm{u}=931.5\\ \\mathrm{MeV}/c^2$，$m_ec^2=0.511\\ \\mathrm{MeV}$ とする．\n\\begin{enumerate}\n\\item 係数 $0.99198$ と $0.000841$ の物理的意味を説明し，前者から体積項の係数 $a_v$（MeV）を求めよ．\n\\item $A=27$ で $M$ を最小にする連続な $Z_0$ を求めよ．\n\\item $^{27}$Mg の $\\beta^-$ 崩壊と $^{27}$Si の電子捕獲の $Q$ 値を求め，$^{27}$Si の $\\beta^+$ 最大エネルギーも答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0.99198=m_n-a_v/c^2$ で $a_v\\approx15.5\\ \\mathrm{MeV}$；$0.000841\\ \\mathrm{u}\\approx(m_n-m_{\\rm H})$　(2) $Z_0\\approx12.7$　(3) $Q_{\\beta^-}(\\mathrm{Mg})\\approx1.7\\ \\mathrm{MeV}$，$Q_{\\rm EC}(\\mathrm{Si})\\approx5.6\\ \\mathrm{MeV}$，$\\beta^+$ 最大 $\\approx4.6\\ \\mathrm{MeV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $M=Zm_{\\rm H}+(A-Z)m_n-B/c^2=Am_n-Z(m_n-m_{\\rm H})-B/c^2$ と比べる．$B$ の体積項 $a_vA$ から $A$ の係数は $m_n-a_v/c^2=0.99198$．よって $a_v=(1.008665-0.99198)\\times931.5=15.5\\ \\mathrm{MeV}$．$Z$ の係数 $-0.000841\\ \\mathrm u=-0.783\\ \\mathrm{MeV}/c^2$ は $-(m_n-m_{\\rm H})$ に当たる．残りは表面項・クーロン項・非対称項・対項．\n\n(2) $\\dfrac{\\partial M}{\\partial Z}=-0.000841+\\dfrac{2\\times0.0007668Z}{3}+\\dfrac{2\\times0.09966(Z-13.5)}{27}=0$ より\n$Z(0.0005112+0.0073822)=0.000841+0.099660$，$Z_0=12.73$．最も近い整数は 13（$^{27}$Al）．\n\n(3) $A$ 奇なので $\\delta=0$．\n\\[\nM(12)-M(13)=+0.000841+0.0007668\\frac{144-169}{3}+0.09966\\frac{2.25-0.25}{27}=0.000841-0.006390+0.007382=0.001833\\ \\mathrm u,\n\\]\n$Q_{\\beta^-}=1.71\\ \\mathrm{MeV}>0$ なので $^{27}$Mg は $\\beta^-$ 不安定．\n$M(14)-M(13)=-0.000841+0.0007668\\dfrac{196-169}{3}+0.09966\\dfrac{(0.5)^2-(-0.5)^2}{27}=-0.000841+0.006901+0=0.006060\\ \\mathrm u$（$Z=13,14$ は $A/2$ から等距離なので非対称項は相殺）．$Q_{\\rm EC}=5.65\\ \\mathrm{MeV}$，$\\beta^+$ の最大運動エネルギーは $5.65-1.02=4.62\\ \\mathrm{MeV}$．（実測は $Q_{\\beta^-}=2.61$，$Q_{\\rm EC}=4.81\\ \\mathrm{MeV}$．$A=27$ だけが安定なのは Al．）"
+   }
+  ],
+  "idea": {
+   "tex": "数値質量公式の係数は $m_n-a_v$ や $m_n-m_{\\rm H}$ と読み解ける．奇数 $A$ では放物線の底に最も近い核だけが安定．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $Z_0$：≈12.7\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "半経験的質量公式",
+   "β安定性",
+   "27Mg",
+   "27Si",
+   "Q値"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "NU-02-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -481,6 +1634,462 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 35,
+  "theme": "変形核の回転バンドと奇核の磁気モーメント",
+  "topic": "変形核の回転バンドと奇核の磁気モーメント",
+  "statement": {
+   "tex": "${}^{164}\\mathrm{Dy}$ の基底回転バンドの $2^+$ 準位は $73.4\\ \\mathrm{keV}$ にある．\n\\begin{enumerate}\n\\item 剛体回転子 $E_J=\\dfrac{\\hbar^2}{2\\mathcal I}J(J+1)$ として，$4^+,\\ 6^+,\\ 8^+$ のエネルギーを予想せよ（$4^+$ の実測は $242.2\\ \\mathrm{keV}$）．\n\\item 半径 $R=1.2A^{1/3}\\ \\mathrm{fm}$ の一様な剛体球の慣性モーメントで計算した $2^+$ のエネルギーを求め，実際の慣性モーメントが剛体の値の何倍かを答えよ（$\\hbar c=197.3\\ \\mathrm{MeV\\,fm}$，核子の質量 $938.9\\ \\mathrm{MeV}/c^2$）．\n\\item 対称軸への角運動量の射影が $K$ の奇核の状態 $J$ の磁気モーメントは $\\mu=g_RJ+(g_K-g_R)\\dfrac{K^2}{J+1}$ である．${}^{165}\\mathrm{Ho}$ の基底状態（$J=K=7/2$）の $\\mu=4.17\\mu_N$ と $g_R=Z/A$ から $g_K$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $4^+$：$245\\ \\mathrm{keV}$，$6^+$：$514\\ \\mathrm{keV}$，$8^+$：$881\\ \\mathrm{keV}$　(2) 約 $44\\ \\mathrm{keV}$，約 $0.60$ 倍　(3) $g_K\\approx1.42$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{\\hbar^2}{2\\mathcal I}=\\dfrac{73.4}{6}=12.23\\ \\mathrm{keV}$．$E_J=12.23J(J+1)$ より $E_4=\\boldsymbol{245}$，$E_6=\\boldsymbol{514}$，$E_8=\\boldsymbol{881\\ \\mathrm{keV}}$．$4^+$ の実測 $242.2\\ \\mathrm{keV}$ はわずかに低く，回転が速いと慣性モーメントが増える（遠心伸長・対相関の弱まり）ことを示す．\n\n(2) $\\mathcal I_{\\rm rig}=\\frac25AmR^2$，$R=1.2\\times164^{1/3}=6.56\\ \\mathrm{fm}$．\n\\[\nE_2^{\\rm rig}=\\frac{6(\\hbar c)^2}{2\\cdot\\frac25Amc^2R^2}=\\frac{6\\times197.3^2}{0.8\\times164\\times938.9\\times43.0}\\ \\mathrm{MeV}\\approx\\boldsymbol{44\\ \\mathrm{keV}}.\n\\]\n実測 $73.4\\ \\mathrm{keV}$ との比から $\\mathcal I/\\mathcal I_{\\rm rig}\\approx\\boldsymbol{0.60}$．渦なし流体（$\\propto\\beta^2$）よりはずっと大きいが，対相関のために剛体よりは小さい．\n\n(3) $g_R=\\dfrac{67}{165}=0.406$．$J=K=\\frac72$ で $\\dfrac{K^2}{J+1}=\\dfrac{49/4}{9/2}=\\dfrac{49}{18}$：\n\\[\n4.17=0.406\\times3.5+(g_K-0.406)\\frac{49}{18}\\ \\Rightarrow\\ \\boldsymbol{g_K\\approx1.42}.\n\\]\nこれは陽子の $h_{11/2}$ 起源の軌道（$g_l=1$ に近い）を占める奇陽子の値として妥当で，基底状態の磁気モーメントの大部分は奇陽子が担っている．"
+   }
+  ],
+  "idea": {
+   "tex": "変形核の低い準位は $J(J+1)$ の回転バンドで，$2^+$ のエネルギーから慣性モーメントが決まり，剛体との比が核の内部構造（対相関）を表す．奇核の磁気モーメントは集団回転の $g_R$ と内部運動の $g_K$ の寄与に分かれる．原題は ${}^{164}\\mathrm{Dy}$ と ${}^{163}\\mathrm{Ho}$ の準位の解釈で，捻りでは慣性モーメントの比と $g_K$ の数値を求めさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $g_K$：≈1.42"
+  },
+  "methods": [],
+  "tags": [
+   "回転バンド",
+   "慣性モーメント",
+   "集団模型",
+   "磁気モーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 35,
+  "theme": "偶数Aの同重体と二重β崩壊",
+  "topic": "偶数Aの同重体と二重β崩壊",
+  "statement": {
+   "tex": "偶数 $A$ の同重体の原子質量を（u 単位で）\n\\[ M(A,Z)=B_A(Z-Z_A)^2+C_A\\mp\\delta(A)\\quad(\\text{上：偶々核，下：奇々核}) \\]\nとし，$Z_A=\\dfrac{A}{1.98+0.015A^{2/3}}$，$B_A=\\dfrac{0.0828+0.000625A^{2/3}}{A}$，$\\delta(A)=0.036A^{-3/4}$ とする（$1\\,\\mathrm{u}=931.5\\,\\mathrm{MeV}/c^2$）．\n\\begin{enumerate}\n\\item 偶々核 $(A,Z)$ が隣の奇々核への 1 回の β 崩壊（$\\beta^\\pm$, EC）に対して安定であるための条件が $|Z-Z_A|<\\dfrac12+\\dfrac{\\delta}{B_A}$ であることを示せ．\n\\item $A=130$ について $Z_A$, $B_A$, $\\delta$ を求め，1 回の β 崩壊に対して安定な偶々核の $Z$ をすべて挙げよ．\n\\item (2) で得た核のうち重い方は，二重 β 過程で軽い方に移り得る．どちらの核がどの過程（$\\beta^-\\beta^-$，$\\beta^+\\beta^+$，二重電子捕獲 2EC）で崩壊し得るか．このモデルでの $Q$ 値を MeV で求めて判定せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $Z_A=54.97$，$B_A=7.60\\times10^{-4}\\,\\mathrm{u}$，$\\delta=9.35\\times10^{-4}\\,\\mathrm{u}$；条件 $|Z-Z_A|<1.73$ より $Z=54$（Xe），$56$（Ba）　(3) $Q=[M(56)-M(54)]c^2=0.086\\,\\mathrm{MeV}$．${}^{130}\\mathrm{Ba}\\to{}^{130}\\mathrm{Xe}$ の 2EC のみ可能（$\\beta^+\\beta^+$ は $4m_ec^2$ 必要で不可）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=Z-Z_A$ とおく．偶々核 $Z$ と奇々核 $Z\\pm1$ の質量差は\n\\[ M(Z\\pm1)-M(Z)=B_A[(x\\pm1)^2-x^2]+2\\delta=B_A(1\\pm2x)+2\\delta. \\]\n両方とも正（崩壊できない）である条件は $1-2|x|+2\\delta/B_A>0$，すなわち $|x|<\\frac12+\\frac{\\delta}{B_A}$．\n（原子質量で書けば $\\beta^-$, EC の条件は質量差の正負だけで決まり，$\\beta^+$ はさらに厳しいので，これが必要十分．）\n\n(2) $A^{2/3}=25.66$．$Z_A=130/(1.98+0.3849)=54.97$，$B_A=(0.0828+0.01604)/130=7.60\\times10^{-4}$，$\\delta=0.036/38.5=9.35\\times10^{-4}$．\n$\\frac12+\\frac{\\delta}{B_A}=0.5+1.23=1.73$．$|Z-54.97|<1.73$ を満たす偶数は $Z=54$（$|x|=0.97$）と $Z=56$（$|x|=1.03$）．この窓の幅 $3.46>2$ なので，偶々の安定同重体が 2 つ現れ得る．\n\n(3) $M(56)-M(54)=B_A[(56-Z_A)^2-(54-Z_A)^2]=4B_A(55-Z_A)=4\\times7.60\\times10^{-4}\\times0.030=9.2\\times10^{-5}\\,\\mathrm{u}=0.086\\,\\mathrm{MeV}$．\nよって ${}^{130}\\mathrm{Ba}$ の方が重く，${}^{130}\\mathrm{Ba}\\to{}^{130}\\mathrm{Xe}$ が $Z$ を 2 減らす二重過程で可能．原子質量差で $\\beta^+\\beta^+$ は $Q>4m_ec^2=2.04\\,\\mathrm{MeV}$，EC$\\beta^+$ は $Q>2m_ec^2$ が必要なので不可能で，2EC（$Q>0$ のみ必要）だけが許される．${}^{130}\\mathrm{Xe}$ は安定．\n（注：実測の $Q$ 値は約 $2.6\\,\\mathrm{MeV}$ で，${}^{130}\\mathrm{Ba}$ の 2EC は地球化学的に観測されている．また実際には ${}^{130}\\mathrm{Te}\\to{}^{130}\\mathrm{Xe}$ の $\\beta^-\\beta^-$ もある．滑らかな質量公式は定性的な構造を与えるが，$Q$ 値の精度は低い．）"
+   }
+  ],
+  "idea": {
+   "tex": "対エネルギー $\\delta$ が放物線を 2 本に分けるため，偶々核の安定窓の幅 $1+2\\delta/B_A$ が 1 を超え，1 回の β 崩壊では安定だが二重 β 崩壊はできる核が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "対エネルギー",
+   "同重体",
+   "二重β崩壊",
+   "二重電子捕獲",
+   "質量公式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 35,
+  "theme": "陽子と中性子の井戸の深さとCoulomb・対称ポテンシャル",
+  "topic": "陽子と中性子の井戸の深さとCoulomb・対称ポテンシャル",
+  "statement": {
+   "tex": "${}^{208}_{\\ 82}{\\rm Pb}$（$Z=82$，$N=126$）を，半径 $R=1.3A^{1/3}\\ {\\rm fm}$ の球形井戸型ポテンシャル中の陽子・中性子の独立な完全縮退 Fermi 気体とみなす．Fermi エネルギーは $\\varepsilon_F(K)=\\frac{\\hbar^2}{2M}\\left(\\frac{3\\pi^2K}{V}\\right)^{2/3}$（$K$ はその種類の核子数，$V=\\frac43\\pi R^3$）で，$\\hbar c=197.3\\ {\\rm MeV\\,fm}$，$Mc^2=939\\ {\\rm MeV}$，$e^2/4\\pi\\varepsilon_0=1.44\\ {\\rm MeV\\,fm}$ とする．\n陽子・中性子ともに，最大運動エネルギーをもつ核子の結合エネルギー（分離エネルギー）は $8\\ {\\rm MeV}$ であることが知られている．陽子に対しては，核力による深さ $V_p$ の井戸の底を，一様帯電球の Coulomb ポテンシャルの核内体積平均 $U_C=\\frac65\\frac{Ze^2}{4\\pi\\varepsilon_0R}$ だけ持ち上げた井戸を用いる．中性子の井戸の深さを $V_n$ とする．\n\\begin{enumerate}\n\\item 中性子と陽子の Fermi エネルギー $\\varepsilon_F^n,\\ \\varepsilon_F^p$ を求めよ．\n\\item $V_n$ と $V_p$（Coulomb を除いた核力部分の深さ）を求めよ．\n\\item 核力ポテンシャルが $V_{n,p}=V_0\\mp V_1\\dfrac{N-Z}{A}$ と書けるとする（中性子に $-$，陽子に $+$）．$V_0$ と $V_1$ を求め，「中性子過剰核では陽子の方が強く束縛される」ことの物理的理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\varepsilon_F^n\\approx32.4\\ {\\rm MeV}$，$\\varepsilon_F^p\\approx24.3\\ {\\rm MeV}$　(2) $V_n\\approx40.4\\ {\\rm MeV}$，$V_p\\approx50.7\\ {\\rm MeV}$　(3) $V_0\\approx45.5\\ {\\rm MeV}$，$V_1\\approx24\\ {\\rm MeV}$．陽子は多数の中性子と（より強い）pn 相互作用をするため．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $R=1.3\\times208^{1/3}=7.70\\ {\\rm fm}$，$V=1.913\\times10^3\\ {\\rm fm^3}$．\n$\\frac{\\hbar^2}{2M}=\\frac{(197.3)^2}{2\\times939}=20.73\\ {\\rm MeV\\,fm^2}$．\n中性子：$3\\pi^2\\cdot126/V=1.950\\ {\\rm fm^{-3}}$，$(\\ )^{2/3}=1.561\\ {\\rm fm^{-2}}$，$\\varepsilon_F^n=32.4\\ {\\rm MeV}$．\n陽子：$3\\pi^2\\cdot82/V=1.269\\ {\\rm fm^{-3}}$，$(\\ )^{2/3}=1.172\\ {\\rm fm^{-2}}$，$\\varepsilon_F^p=24.3\\ {\\rm MeV}$．\n（$\\varepsilon_F=45.2\\,(K/A)^{2/3}\\ {\\rm MeV}$ と書ける．）\n\n(2) Fermi 準位（最上位核子のエネルギー）が $-8\\ {\\rm MeV}$ であるから\n中性子：$-V_n+\\varepsilon_F^n=-8$ より $V_n=\\varepsilon_F^n+8=40.4\\ {\\rm MeV}$．\n陽子：$-V_p+U_C+\\varepsilon_F^p=-8$．$U_C=\\frac65\\cdot\\frac{82\\times1.44}{7.70}=18.4\\ {\\rm MeV}$ より $V_p=24.3+8+18.4=50.7\\ {\\rm MeV}$．\n\n(3) $I=(N-Z)/A=44/208=0.2115$．$V_0=(V_n+V_p)/2=45.5\\ {\\rm MeV}$，$V_p-V_n=2V_1I=10.3\\ {\\rm MeV}$ より $V_1=10.3/(2\\times0.2115)\\approx24\\ {\\rm MeV}$．\nすなわち $\\varepsilon_F^n-\\varepsilon_F^p=8.1\\ {\\rm MeV}$ は Coulomb エネルギー $18.4\\ {\\rm MeV}$ より小さく，その差 $10.3\\ {\\rm MeV}$ を核力の深さの差（対称ポテンシャル，Lane ポテンシャル）が補っている．\n理由：核力は同種核子間（nn, pp：Pauli 原理により $T=1$ 状態のみ）より異種核子間（pn：$T=0$ 状態も可能）で強く引き合う．中性子過剰核では陽子のまわりに中性子が多いので陽子は深い井戸を感じ，中性子は浅い井戸を感じる．これは〔22〕型の問題でいう対称エネルギーのポテンシャル部分にあたる．"
+   }
+  ],
+  "idea": {
+   "tex": "陽子・中性子の Fermi 準位が等しい（β 安定）という条件から，Fermi エネルギーの差では Coulomb を打ち消しきれないことがわかり，核力ポテンシャル自体が中性子過剰度に依存すること（対称ポテンシャル）を逆算できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\varepsilon_F^n$ [MeV]：≈32.4 ; $\\varepsilon_F^p$ [MeV]：≈24.3\n(2) $V_n$ [MeV]：≈40.4 ; $V_p$ [MeV]：≈50.7\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Fermi気体模型",
+   "井戸型ポテンシャル",
+   "Coulombエネルギー",
+   "対称ポテンシャル",
+   "Lane ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 25,
+  "theme": "分光学的四重極モーメントと内在四重極モーメント",
+  "topic": "分光学的四重極モーメントと内在四重極モーメント",
+  "statement": {
+   "tex": "原子核の分光学的四重極モーメントを，スピン $I$ の状態 $|I,M=I\\rangle$ における $Q_{zz}$ 演算子の期待値で定義する．\n\\begin{enumerate}\n\\item $Q_{zz}$ が階数 2 の既約テンソル演算子の成分であることを用いて，$I=0$ および $I=1/2$ では分光学的四重極モーメントが必ず 0 になることを示せ．内部の電荷分布が球対称でなくても 0 になることに注意せよ．\n\\item 対称軸をもつ変形核（内在四重極モーメント $Q_0$，回転帯の $K=I$）では $Q_{\\rm s}=Q_0\\dfrac{I(2I-1)}{(I+1)(2I+3)}$ である．$I=1,\\ 3/2,\\ 7/2,\\ 9/2$ での $Q_{\\rm s}/Q_0$ と，$I\\to\\infty$ の極限を求めよ．\n\\item ${}^{175}\\mathrm{Lu}$（$I=7/2$）の分光学的四重極モーメントは $3.49\\ \\mathrm{b}$ である．内在四重極モーメント $Q_0$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $0.1,\\ 0.2,\\ 7/15\\approx0.467,\\ 6/11\\approx0.545$，$I\\to\\infty$ で $1$　(3) $Q_0\\approx7.5\\ \\mathrm{b}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ウィグナー–エッカルトの定理より $\\langle I,M|T^{(2)}_0|I,M\\rangle=\\langle IM;20|IM\\rangle\\,\\dfrac{\\langle I\\|T^{(2)}\\|I\\rangle}{\\sqrt{2I+1}}$．クレブシュ–ゴルダン係数 $\\langle IM;20|IM\\rangle$ は角運動量 $I,2,I$ が三角条件 $2\\le I+I$ を満たさないと 0．$I=0$ では $2I=0<2$，$I=1/2$ では $2I=1<2$ なのでいずれも 0．\n物理的には，スピン $0$ や $1/2$ の状態では核の向きが空間的に定まらず（偏極しても角度分布の 2 階の異方性をもてない），内部で変形していても実験室系で平均すると四重極成分が消える．\n\n(2) $f(I)=\\dfrac{I(2I-1)}{(I+1)(2I+3)}$：\n$I=1$：$\\dfrac{1}{2\\cdot5}=0.1$，$I=3/2$：$\\dfrac{3/2\\cdot2}{5/2\\cdot6}=0.2$，$I=7/2$：$\\dfrac{7/2\\cdot6}{9/2\\cdot10}=\\dfrac7{15}=0.467$，$I=9/2$：$\\dfrac{9/2\\cdot8}{11/2\\cdot12}=\\dfrac6{11}=0.545$．\n$I\\to\\infty$ で $f\\to\\dfrac{2I^2}{2I^2}=1$．スピンが大きいほど対称軸が $z$ 軸にそろい，量子的な「ぶれ」による平均化が減る．\n\n(3) $Q_0=Q_{\\rm s}/f(7/2)=3.49\\times\\dfrac{15}{7}=7.48\\ \\mathrm{b}$．分光学的に測る値は内在変形の半分以下しか見せていない．"
+   }
+  ],
+  "idea": {
+   "tex": "分光学的四重極モーメントは内在モーメントに幾何学的因子 $I(2I-1)/[(I+1)(2I+3)]$ を掛けたもの．$I\\le1/2$ ではテンソルの階数 2 を支えられず必ず 0．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) $Q_0$ [b]：≈7.5"
+  },
+  "methods": [],
+  "tags": [
+   "電気四重極モーメント",
+   "ウィグナー・エッカルトの定理",
+   "内在四重極モーメント",
+   "回転帯",
+   "核スピン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 30,
+  "theme": "小変形回転楕円体の四重極と液滴模型の変形エネルギー",
+  "topic": "小変形回転楕円体の四重極と液滴模型の変形エネルギー",
+  "statement": {
+   "tex": "一様に帯電した原子核の表面を $a=R(1+\\varepsilon)$（対称軸方向），$b=R(1-\\varepsilon/2)$（垂直方向）の回転楕円体とする（$|\\varepsilon|\\ll1$，体積は $\\varepsilon$ の 1 次まで保存）．\n\\begin{enumerate}\n\\item $Q_0=\\dfrac25Z(a^2-b^2)$ を $\\varepsilon$ の 1 次まで展開し，$Q_0\\simeq\\dfrac45ZR\\,\\Delta R$（$\\Delta R=a-b$）を示せ．\n\\item ${}^{181}_{73}\\mathrm{Ta}$ の内在四重極モーメントを $4.2\\ \\mathrm{b}$，$R=1.2A^{1/3}\\ \\mathrm{fm}$ として，$\\varepsilon$，$\\Delta R$，$a$，$b$ を求めよ．\n\\item 液滴模型では，この変形で表面エネルギーは $E_S(1+\\frac25\\varepsilon^2)$，クーロンエネルギーは $E_C(1-\\frac15\\varepsilon^2)$ になる．$E_S=17.8A^{2/3}\\ \\mathrm{MeV}$，$E_C=0.711Z^2A^{-1/3}\\ \\mathrm{MeV}$ を用いて (2) の変形に要するエネルギーを求めよ．液滴模型だけでこの核の変形を説明できるか論ぜよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q_0\\simeq\\dfrac65ZR^2\\varepsilon=\\dfrac45ZR\\Delta R$　(2) $\\varepsilon\\approx0.10$，$\\Delta R\\approx1.06\\ \\mathrm{fm}$，$a\\approx7.49\\ \\mathrm{fm}$，$b\\approx6.43\\ \\mathrm{fm}$　(3) 約 $1.0\\ \\mathrm{MeV}$ のエネルギー損．液滴模型では球形が安定で，変形は殻効果による"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a^2-b^2=R^2\\big[(1+\\varepsilon)^2-(1-\\varepsilon/2)^2\\big]=R^2(3\\varepsilon+\\tfrac34\\varepsilon^2)\\simeq3R^2\\varepsilon$．$\\Delta R=a-b=\\frac32R\\varepsilon$ だから\n\\[ Q_0\\simeq\\frac25Z\\cdot3R^2\\varepsilon=\\frac65ZR^2\\varepsilon=\\frac45ZR\\,\\Delta R . \\]\n（$\\varepsilon$ の 1 次では $\\frac{a+b}{2}=R$ と区別しなくてよい．）\n\n(2) $R=1.2\\times181^{1/3}=6.788\\ \\mathrm{fm}$，$Q_0=420\\ \\mathrm{fm^2}$．\n\\[ \\varepsilon=\\frac{5Q_0}{6ZR^2}=\\frac{5\\times420}{6\\times73\\times46.08}=0.104,\\quad \\Delta R=\\tfrac32R\\varepsilon=1.06\\ \\mathrm{fm}, \\]\n$a=R(1+\\varepsilon)=7.49\\ \\mathrm{fm}$，$b=R(1-\\varepsilon/2)=6.43\\ \\mathrm{fm}$．\n\n(3) $E_S=17.8\\times181^{2/3}=569.6\\ \\mathrm{MeV}$，$E_C=0.711\\times73^2/181^{1/3}=669.8\\ \\mathrm{MeV}$．変形エネルギーは\n\\[ \\Delta E=\\frac{2E_S-E_C}{5}\\varepsilon^2=\\frac{1139.1-669.8}{5}\\times(0.104)^2=93.9\\times0.01083\\approx1.0\\ \\mathrm{MeV}>0 . \\]\n$2E_S>E_C$（核分裂パラメータ $x=E_C/2E_S\\approx0.59<1$）なので液滴模型では球形が安定で，変形は約 1 MeV のエネルギー損となる．実際に基底状態が変形しているのは，殻効果（ニルソン準位の変形による一粒子エネルギーの利得）がこの損を上回るためである．"
+   }
+  ],
+  "idea": {
+   "tex": "$Q_0$ は小変形で $\\varepsilon$ に比例する．液滴模型では変形エネルギーが $(2E_S-E_C)\\varepsilon^2/5$ で正となり，希土類核の大きな永久変形は殻効果なしには説明できない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\varepsilon$：≈0.10 ; $\\Delta R$ [fm]：≈1.06 ; $a$ [fm]：≈7.49 ; $b$ [fm]：≈6.43\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電気四重極モーメント",
+   "核変形",
+   "液滴模型",
+   "変形エネルギー",
+   "殻効果",
+   "タンタル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 25,
+  "theme": "炭素同位体の配位と中性子ハローの広がり",
+  "topic": "炭素同位体の配位と中性子ハローの広がり",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 単純な殻模型（準位順 $1s_{1/2},1p_{3/2},1p_{1/2},1d_{5/2},2s_{1/2},\\dots$）に従って，$^{13}$C，$^{15}$C，$^{11}$Be の基底状態の $J^\\pi$ を予言せよ．\n\\item $^{15}$C の基底状態は実際に $1/2^+$ であり，最後の中性子は $2s_{1/2}$ 軌道にある．一方 $^{11}$Be の基底状態は $1/2^+$ で，$1/2^-$ は $0.32\\ \\mathrm{MeV}$ の励起状態である．$^{11}$Be について何が起きているか説明せよ．\n\\item $B(^{14}\\mathrm{C})=105.285\\ \\mathrm{MeV}$，$B(^{15}\\mathrm{C})=106.503\\ \\mathrm{MeV}$ とする．$^{15}$C を「$^{14}$C 芯 + $s$ 波の中性子」とみなし，芯の外で中性子の波動関数が $\\psi\\propto e^{-\\kappa r}/r$ で減衰するとして，減衰長 $1/\\kappa$ を求めよ．さらに，この漸近形だけで中性子–芯間距離の二乗平均平方根を見積もり，$R=1.2A^{1/3}\\ \\mathrm{fm}$ と比べよ．換算質量は $\\mu c^2=\\frac{14}{15}\\times939.6\\ \\mathrm{MeV}$，$\\hbar c=197.3\\ \\mathrm{MeV\\,fm}$ とする．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $^{13}$C：$1/2^-$，$^{15}$C：$1/2^+$（$1d_{5/2}$ なら $5/2^+$ だが $2s_{1/2}$ が下がる），$^{11}$Be：$1/2^-$　(2) $N=7$ で $2s_{1/2}$ が $1p_{1/2}$ より下に来る準位の逆転（パリティ反転）　(3) $1/\\kappa\\approx4.3\\ \\mathrm{fm}$，$r_{\\rm rms}\\approx3.0\\ \\mathrm{fm}$（$R=3.0\\ \\mathrm{fm}$ と同程度で，芯の外に大きく広がる）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 陽子数 6 の炭素は陽子が $1s_{1/2}^2\\,1p_{3/2}^4$ で $J=0$ に組む．$^{13}$C（$N=7$）は 7 番目の中性子が $1p_{1/2}$（$l=1$）に入り $1/2^-$．$^{15}$C（$N=9$）は $1p$ 殻が閉じて 9 番目の中性子が次の殻に入る．準位順どおりなら $1d_{5/2}$ で $5/2^+$ だが，この領域では $2s_{1/2}$ と $1d_{5/2}$ がほぼ縮退しており，実際は $2s_{1/2}$ で $1/2^+$ になる（いずれにせよパリティは $+$ で $^{13}$C と逆）．$^{11}$Be（$N=7$）は $^{13}$C と同じく $1/2^-$ と予言される．\n\n(2) $^{11}$Be では 7 番目の中性子が $1p_{1/2}$ でなく $2s_{1/2}$ に入る方が $0.32\\ \\mathrm{MeV}$ だけ低い．すなわち $N=7$ でも陽子数が少ない（$Z=4$）中性子過剰核では $2s_{1/2}$ が $1p_{1/2}$ より下に下がり，$N=8$ の魔法数が消失している（準位の逆転，パリティ反転）．$s$ 軌道は遠心力障壁がなく，弱束縛になると大きく広がってエネルギーが下がりやすい．\n\n(3) 中性子分離エネルギー $S_n=B(^{15}\\mathrm{C})-B(^{14}\\mathrm{C})=1.218\\ \\mathrm{MeV}$．芯の外では $-\\frac{\\hbar^2}{2\\mu}\\nabla^2\\psi=-S_n\\psi$ より\n\\[\n\\kappa=\\frac{\\sqrt{2\\mu c^2S_n}}{\\hbar c}=\\frac{\\sqrt{2\\times876.96\\times1.218}}{197.3}=0.234\\ \\mathrm{fm}^{-1},\\qquad \\frac1\\kappa=4.3\\ \\mathrm{fm}.\n\\]\n漸近形 $|\\psi|^2r^2\\propto e^{-2\\kappa r}$ を $0<r<\\infty$ で用いると\n\\[\n\\langle r^2\\rangle=\\frac{\\int_0^\\infty r^2e^{-2\\kappa r}dr}{\\int_0^\\infty e^{-2\\kappa r}dr}=\\frac{1}{2\\kappa^2},\\qquad r_{\\rm rms}=\\frac{1}{\\sqrt2\\,\\kappa}=3.0\\ \\mathrm{fm}.\n\\]\nこれは核半径 $R=1.2\\times15^{1/3}=2.96\\ \\mathrm{fm}$ と同程度であり，最後の中性子が芯の表面のはるか外まで広がった（ハロー的な）分布をもつことを示す．通常の核子の束縛（$S_n\\sim8\\ \\mathrm{MeV}$）なら $1/\\kappa\\approx1.6\\ \\mathrm{fm}$ にすぎない．"
+   }
+  ],
+  "idea": {
+   "tex": "弱束縛の $s$ 波中性子は遠心力障壁がないため $1/\\kappa=\\hbar/\\sqrt{2\\mu S_n}$ で大きく広がり，$p$ と $s$ の準位逆転（$^{11}$Be）や中性子ハローを生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻模型",
+   "炭素同位体",
+   "パリティ反転",
+   "11Be",
+   "中性子ハロー",
+   "分離エネルギー",
+   "減衰長"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 25,
+  "theme": "奇奇核14Nのスピンと磁気モーメント",
+  "topic": "奇奇核14Nのスピンと磁気モーメント",
+  "statement": {
+   "tex": "殻模型の単一粒子 $g$ 因子を，陽子 $g_l=1$，$g_s=5.586$，中性子 $g_l=0$，$g_s=-3.826$ とする（磁気モーメントは $\\mu_N$ 単位）．\n\\begin{enumerate}\n\\item $^{41}_{20}$Ca と $^{39}_{19}$K の基底状態の $J^\\pi$ とシュミット値を求めよ．\n\\item $^{14}_{\\ 7}$N の陽子と中性子はともに $1p_{1/2}$ 軌道に 1 個ずつ不対で残る．可能な $J^\\pi$ を挙げよ．\n\\item 角運動量 $\\boldsymbol j_p,\\boldsymbol j_n$ が合成されて $\\boldsymbol J$ をつくるとき，磁気モーメントは $\\mu=\\dfrac{J}{2}\\left[(g_p+g_n)+(g_p-g_n)\\dfrac{j_p(j_p+1)-j_n(j_n+1)}{J(J+1)}\\right]$（$g_p=\\mu_p^{\\rm sp}/j_p$ などは各軌道の $g$ 因子）で与えられる．$^{14}$N で $J=1$ の場合の $\\mu$ を求め，実測値 $0.404\\,\\mu_N$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $^{41}$Ca：$7/2^-$，$-1.91$；$^{39}$K：$3/2^+$，$+0.12$　(2) $0^+$，$1^+$　(3) $\\mu=0.373\\,\\mu_N$（実測 $0.404$ に近く，$J^\\pi=1^+$ を支持）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "シュミット値：$j=l+\\frac12$ で $\\mu=(j-\\frac12)g_l+\\frac12g_s$，$j=l-\\frac12$ で $\\mu=\\dfrac{j}{j+1}\\left[(j+\\frac32)g_l-\\frac12g_s\\right]$．\n\n(1) $^{41}$Ca：20 陽子・20 中性子の閉殻の外の 21 番目の中性子が $1f_{7/2}$（$l=3$）にあり $7/2^-$．$\\mu=\\frac12(-3.826)=-1.913$．$^{39}$K：$Z=19$ で $1d_{3/2}$ に陽子空孔 1 個（$l=2$）なので $3/2^+$．空孔 1 個の磁気モーメントは粒子 1 個と同じ（磁気双極子は $m\\to-m$ で符号が反転し，満殻からの差をとると粒子と同じになる）．$j=l-\\frac12$ の陽子で\n\\[\n\\mu=\\frac{3/2}{5/2}\\left(3-2.793\\right)=0.124.\n\\]\n\n(2) $^{14}$N（$Z=N=7$）：$1p_{1/2}$ に陽子・中性子が 1 個ずつ．$J=|j_p-j_n|,\\dots,j_p+j_n=0,1$．パリティ $(-1)^{1+1}=+$．よって $0^+$ または $1^+$．\n\n(3) $p_{1/2}$ は $j=l-\\frac12$．陽子：$\\mu_p^{\\rm sp}=\\frac{1/2}{3/2}\\left(2-2.793\\right)=-0.264$，$g_p=-0.529$．中性子：$\\mu_n^{\\rm sp}=\\frac13\\cdot\\frac{3.826}{2}=0.638$，$g_n=1.275$．$j_p=j_n$ なので第 2 項は消え\n\\[\n\\mu=\\frac J2(g_p+g_n)=\\frac12(-0.529+1.275)=0.373\\,\\mu_N.\n\\]\n実測値 $0.404\\,\\mu_N$ と 1 割以内で一致する．$J=0$ なら $\\mu=0$ だから，0 でない磁気モーメントの観測は $J^\\pi=1^+$ を支持する．（公式は Landé の射影 $\\boldsymbol\\mu=\\frac{(g_p\\boldsymbol j_p+g_n\\boldsymbol j_n)\\cdot\\boldsymbol J}{J(J+1)}\\boldsymbol J$ から得られる．）"
+   }
+  ],
+  "idea": {
+   "tex": "奇奇核の磁気モーメントは各不対核子の $g$ 因子を Landé 射影で合成して得られ，$^{14}$N の $1^+$ をよく説明する．空孔の磁気モーメントは粒子と同じ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "殻模型",
+   "奇奇核",
+   "14N",
+   "シュミット値",
+   "磁気モーメント",
+   "Landé射影",
+   "粒子-空孔"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 30,
+  "theme": "α崩壊のQ値と液滴模型でのα不安定の境界",
+  "topic": "α崩壊のQ値と液滴模型でのα不安定の境界",
+  "statement": {
+   "tex": "結合エネルギーを\n\\[\nB=a_vA-a_sA^{2/3}-a_c\\frac{Z(Z-1)}{A^{1/3}}-a_a\\frac{(N-Z)^2}{A}+\\frac{\\delta_0}{A^{3/4}}\n\\]\nとし，$a_v=15.5$，$a_s=16.8$，$a_c=0.72$，$a_a=23.0\\ \\mathrm{MeV}$，$\\delta_0=+34.5\\ \\mathrm{MeV}$（偶偶核）とする．$^4$He の結合エネルギーは $28.3\\ \\mathrm{MeV}$．\n\\begin{enumerate}\n\\item $^{238}_{\\ 92}$U$\\,\\to{}^{234}_{\\ 90}$Th$\\,+\\,\\alpha$ の $Q$ 値を求めよ．\n\\item 静止した $^{238}$U が崩壊するとき，$\\alpha$ 粒子と娘核の運動エネルギーを非相対論的に求めよ（質量比は質量数比で近似）．\n\\item 対エネルギー項を除き，$Z$ を $Z=A/(2+0.0157A^{2/3})$（安定線）の連続関数として扱うとき，$Q_\\alpha>0$ となる最小の質量数 $A$ を数値的に求めよ．この結果は自然界の $\\alpha$ 放射性核とどう対応するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q\\approx5.5\\ \\mathrm{MeV}$（実測 $4.27\\ \\mathrm{MeV}$）　(2) $T_\\alpha\\approx5.43\\ \\mathrm{MeV}$，$T_{\\rm Th}\\approx0.093\\ \\mathrm{MeV}$　(3) $A\\approx150$（$^{147}$Sm，$^{144}$Nd などの長寿命 α 放射体と対応）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Q=B(^{234}\\mathrm{Th})+B(\\alpha)-B(^{238}\\mathrm{U})$．数値は\n$B(^{238}\\mathrm U)=3689.0-645.1-0.72\\times8372/6.197-23.0\\times54^2/238+34.5/238^{3/4}=1789.9\\ \\mathrm{MeV}$，\n$B(^{234}\\mathrm{Th})=1767.1\\ \\mathrm{MeV}$（同様）．よって $Q=1767.1+28.3-1789.9\\approx5.5\\ \\mathrm{MeV}$（数値計算で $5.53\\ \\mathrm{MeV}$）．$\\alpha$ 粒子の大きな結合エネルギー $28.3\\ \\mathrm{MeV}$ が，4 核子を取り去るのに必要な $\\approx22.8\\ \\mathrm{MeV}$ を上回ることが $Q>0$ の理由である．\n\n(2) 運動量保存 $p_\\alpha=p_{\\rm Th}$ と $T=p^2/2m$ より $T_\\alpha:T_{\\rm Th}=m_{\\rm Th}:m_\\alpha=234:4$．\n\\[\nT_\\alpha=Q\\frac{234}{238}=5.43\\ \\mathrm{MeV},\\qquad T_{\\rm Th}=Q\\frac{4}{238}=0.093\\ \\mathrm{MeV}.\n\\]\n\n(3) $Q_\\alpha(A)=B(A-4,Z-2)+28.3-B(A,Z)$ を，$Z=A/(2+0.0157A^{2/3})$ として対項なしで評価すると，$A$ が小さいところで負，大きいところで正となり，根を数値的に求めると $A\\approx151$（$Z\\approx62$）．つまり液滴模型では質量数がおよそ 150 を超える核は $\\alpha$ 崩壊に対してエネルギー的に不安定である．実際に $^{147}$Sm，$^{144}$Nd，$^{152}$Gd などは極めて長い半減期の $\\alpha$ 放射体である．$Q$ が小さいと透過確率が指数関数的に小さくなるため，顕著な $\\alpha$ 崩壊は $Q\\gtrsim4\\ \\mathrm{MeV}$ となる $A\\gtrsim210$ の領域に限られる．"
+   }
+  ],
+  "idea": {
+   "tex": "$Q_\\alpha=B(\\alpha)-[B(A,Z)-B(A-4,Z-2)]$．液滴模型ではクーロン項の増大により $A\\approx150$ 以上で $Q_\\alpha>0$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $Q$ [MeV]：≈5.5\n(2) $T_\\alpha$ [MeV]：≈5.43 ; $T_{\\rm Th}$ [MeV]：≈0.093\n(3) $A$：≈150"
+  },
+  "methods": [],
+  "tags": [
+   "α崩壊",
+   "Q値",
+   "半経験的質量公式",
+   "反跳エネルギー",
+   "238U",
+   "α不安定"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "NU-02-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "NU-60",
+  "level": 3,
+  "minutes": 30,
+  "theme": "核分裂のQ値と分裂可能性の液滴模型条件",
+  "topic": "核分裂のQ値と分裂可能性の液滴模型条件",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 核子あたりの結合エネルギーが $^{236}$U：$7.586$，$^{144}$Ba：$8.265$，$^{89}$Kr：$8.617\\ \\mathrm{MeV}$ であるとき，$^{236}\\mathrm{U}\\to{}^{144}\\mathrm{Ba}+{}^{89}\\mathrm{Kr}+3n$ で放出されるエネルギーを求めよ．\n\\item 液滴模型の表面項 $a_sA^{2/3}$ とクーロン項 $a_cZ^2/A^{1/3}$ だけを考え，核 $(A,Z)$ が等しい 2 片 $(A/2,Z/2)$ に分裂するとき $Q>0$ となる条件を $Z^2/A$ についての不等式で表せ．$a_s=17.23$，$a_c=0.697\\ \\mathrm{MeV}$ として数値を求め，$^{236}$U の場合の $Q$ も計算せよ．\n\\item 球が体積一定のまま小さな回転楕円体変形（パラメータ $\\epsilon$）を受けると，表面エネルギーは $E_s(1+\\frac25\\epsilon^2)$，クーロンエネルギーは $E_c(1-\\frac15\\epsilon^2)$ になる．球形が不安定になる（障壁が消える）条件を $Z^2/A$ で表し数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q\\approx167\\ \\mathrm{MeV}$　(2) $Z^2/A>\\dfrac{(2^{1/3}-1)a_s}{(1-2^{-2/3})a_c}\\approx17.4$，$^{236}$U で $Q\\approx182\\ \\mathrm{MeV}$　(3) $Z^2/A>2a_s/a_c\\approx49$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 中性子の結合エネルギーは 0 なので\n\\[\nQ=144\\times8.265+89\\times8.617-236\\times7.586=1190.2+766.9-1790.3\\approx167\\ \\mathrm{MeV}.\n\\]\n\n(2) $Q=E_s(A,Z)+E_c(A,Z)-2[E_s(A/2,Z/2)+E_c(A/2,Z/2)]$．$E_s(A/2)=a_s(A/2)^{2/3}$ より $2E_s(A/2)=2^{1/3}E_s(A)$，$2E_c(A/2,Z/2)=2\\cdot a_c(Z/2)^2(A/2)^{-1/3}=2^{-2/3}E_c(A,Z)$．よって\n\\[\nQ=E_c(1-2^{-2/3})-E_s(2^{1/3}-1)>0\\iff \\frac{Z^2}{A}>\\frac{(2^{1/3}-1)a_s}{(1-2^{-2/3})a_c}=\\frac{0.2599\\times17.23}{0.3700\\times0.697}=17.4.\n\\]\nこれは $Z\\gtrsim40$ 程度（$A\\gtrsim90$）の核で対称分裂がエネルギー的に可能なことを意味する．$^{236}$U：$E_s=17.23\\times38.19=658.0$，$E_c=0.697\\times8464/6.18=954.7\\ \\mathrm{MeV}$，$Q=954.7\\times0.370-658.0\\times0.260\\approx182\\ \\mathrm{MeV}$（(1) と同程度）．\n\n(3) 変形によるエネルギー変化は $\\Delta E=\\frac{\\epsilon^2}{5}(2E_s-E_c)$．$\\Delta E<0$（球が不安定）となるのは $E_c>2E_s$，すなわち\n\\[\n\\frac{Z^2}{A}>\\frac{2a_s}{a_c}=\\frac{2\\times17.23}{0.697}\\approx49.\n\\]\n$^{236}$U の $Z^2/A=35.9$ は (2) の条件は満たすが (3) は満たさない．すなわち分裂はエネルギー的に可能でも障壁があり，中性子吸収などで励起しないと実際には（自発分裂は極めて遅く）起こらない．比 $x=(Z^2/A)/49$ が分裂性パラメータである．"
+   }
+  ],
+  "idea": {
+   "tex": "表面項とクーロン項の比較から，対称分裂の発熱条件 $Z^2/A>17$ と，障壁消失（球の不安定）条件 $Z^2/A>2a_s/a_c\\approx49$ の 2 つのしきいが得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $Q$ [MeV]：≈167\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "核分裂",
+   "液滴模型",
+   "分裂性パラメータ",
+   "Q値",
+   "結合エネルギー曲線",
+   "236U"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

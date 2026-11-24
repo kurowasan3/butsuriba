@@ -294,6 +294,104 @@
   }
  },
  {
+  "id": "AS-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-104",
+  "level": 2,
+  "minutes": 30,
+  "theme": "母天体から放出された塵が太陽系から飛び去る大きさとP-R寿命",
+  "topic": "母天体から放出された塵が太陽系から飛び去る大きさとP-R寿命",
+  "statement": {
+   "tex": "太陽（光度 $L=3.83\\times10^{26}\\ \\mathrm{W}$，質量 $M=1.99\\times10^{30}\\ \\mathrm{kg}$）のまわりの，半径 $s$，密度 $\\rho=2.5\\times10^3\\ \\mathrm{kg/m^3}$ の球形の塵を考える．塵は光をすべて吸収するとし，放射圧と重力の比を $\\beta$ とする．$G=6.67\\times10^{-11}\\ \\mathrm{N\\,m^2/kg^2}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$，$1\\ \\mathrm{AU}=1.50\\times10^{11}\\ \\mathrm{m}$ とする．\n\\begin{enumerate}\n\\item $\\beta$ を $s$ の関数として求めよ．\n\\item 半径 $1\\ \\mathrm{AU}$ の円軌道を回る彗星から，相対速度 $0$ で塵が放出される．塵が太陽系から飛び去る条件を $\\beta$ で表し，飛び去らない最小の半径 $s$ を求めよ（有効数字2桁）．\n\\item 飛び去らない塵はポインティング＝ロバートソン効果で円軌道を保ちながら太陽に落ちていく．半径 $a$ の円軌道から太陽に落ちるまでの時間は $t=\\dfrac{4\\pi\\rho sc^2a^2}{3L}$ である．$s=10\\ \\mu\\mathrm{m}$ の塵が $1\\ \\mathrm{AU}$ から落ちるまでの時間を年で求めよ（有効数字2桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta=\\dfrac{3L}{16\\pi GMc\\rho s}$　(2) $\\beta\\geqq\\dfrac12$；$s\\approx0.46\\ \\mu\\mathrm{m}$　(3) 約 $1.7\\times10^4$ 年"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 放射圧の力は $\\dfrac{L}{4\\pi r^2c}\\pi s^2$，重力は $\\dfrac{GM}{r^2}\\dfrac43\\pi s^3\\rho$．どちらも $r^{-2}$ なので比は距離によらず\n\\[\n\\boldsymbol{\\beta=\\frac{3L}{16\\pi GMc\\rho s}}.\n\\]\n\n(2) 塵には実効的な重力 $(1-\\beta)GMm/r^2$ が働く．放出時の速さは母天体の円軌道の速さ $v^2=GM/r$ のままなので，単位質量あたりの力学的エネルギーは\n\\[\n\\frac12\\frac{GM}{r}-(1-\\beta)\\frac{GM}{r}=\\frac{GM}{r}\\left(\\beta-\\frac12\\right).\n\\]\nこれが $0$ 以上なら飛び去るので，条件は $\\boldsymbol{\\beta\\geqq1/2}$（$\\beta\\geqq1$ ではない）．$\\beta<\\frac12$ となる最小の半径は\n\\[\ns=\\frac{3L}{8\\pi GMc\\rho}=\\frac{3\\times3.83\\times10^{26}}{8\\pi\\times6.67\\times10^{-11}\\times1.99\\times10^{30}\\times3.0\\times10^8\\times2.5\\times10^3}\\approx\\boldsymbol{0.46\\ \\mu\\mathrm{m}}.\n\\]\n\n(3) $t=\\dfrac{4\\pi\\times2.5\\times10^3\\times10^{-5}\\times9.0\\times10^{16}\\times(1.5\\times10^{11})^2}{3\\times3.83\\times10^{26}}\\approx5.5\\times10^{11}\\ \\mathrm{s}\\approx\\boldsymbol{1.7\\times10^4\\ \\text{年}}$．太陽系の年齢に比べてずっと短いので，惑星間塵は彗星や小惑星から絶えず補給されている必要がある．"
+   }
+  ],
+  "idea": {
+   "tex": "放射圧も重力も $r^{-2}$ なので，塵には弱められた重力 $(1-\\beta)$ が働く．母天体の円軌道の速さのまま放出されると，$\\beta=1/2$ でちょうど脱出速度になる．原題は放射圧で吹き飛ばされる最小の大きさ（$\\beta=1$）と P-R 効果の寿命の見積もりで，捻りでは放出の初期条件から $1/2$ になることを問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\beta$：((3 L)/(16 pi G M c ρ s))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "放射圧",
+   "ポインティング＝ロバートソン効果",
+   "惑星間塵",
+   "ケプラー運動"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AS-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AS-104",
+  "level": 2,
+  "minutes": 25,
+  "theme": "星間水素のライマンα線の幅の内訳",
+  "topic": "星間水素のライマンα線の幅の内訳",
+  "statement": {
+   "tex": "温度 $T=100\\ \\mathrm{K}$，数密度 $1\\ \\mathrm{cm^{-3}}$ 程度の星間の中性水素雲による，基底状態から 2p への吸収線（ライマン α）を考える．リュードベリ振動数 $cR_\\infty=3.29\\times10^{15}\\ \\mathrm{Hz}$，2p のアインシュタインの A 係数 $6.27\\times10^8\\ \\mathrm{s^{-1}}$，水素原子の質量 $1.67\\times10^{-27}\\ \\mathrm{kg}$，$k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$ とする．\n\\begin{enumerate}\n\\item 線の振動数を求めよ．\n\\item 自然幅（半値全幅 $A/2\\pi$）とドップラー幅（半値全幅 $\\nu\\sqrt{8\\ln2\\,k_BT/(mc^2)}$）を求め，比を答えよ．\n\\item 2p の微細構造の分裂は約 $11\\ \\mathrm{GHz}$，1s の超微細構造の分裂は $1.42\\ \\mathrm{GHz}$ である．衝突による幅（衝突の頻度程度）も見積もり，これらの大きさの順序を答えよ．この吸収線で超微細構造は分解できるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2.47\\times10^{15}\\ \\mathrm{Hz}$　(2) 自然幅 $1.0\\times10^8\\ \\mathrm{Hz}$，ドップラー幅 $1.8\\times10^{10}\\ \\mathrm{Hz}$，比 約 $1.8\\times10^2$　(3) 衝突幅 $\\sim10^{-10}\\ \\mathrm{Hz}$ ≪ 自然幅 ≪ 超微細 ≪ ドップラー幅 ≈ 微細構造；分解できない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\nu=cR_\\infty\\left(1-\\frac14\\right)=\\boldsymbol{2.47\\times10^{15}\\ \\mathrm{Hz}}$（$121.6\\ \\mathrm{nm}$）．\n\n(2) 自然幅は $\\dfrac{A}{2\\pi}=\\boldsymbol{1.0\\times10^8\\ \\mathrm{Hz}}$．ドップラー幅は\n\\[\n\\Delta\\nu_D=2.47\\times10^{15}\\sqrt{\\frac{8\\ln2\\times1.38\\times10^{-23}\\times100}{1.67\\times10^{-27}\\times9.0\\times10^{16}}}\\approx\\boldsymbol{1.8\\times10^{10}\\ \\mathrm{Hz}},\n\\]\n比は約 $\\boldsymbol{1.8\\times10^2}$．線の中心部はドップラー幅で決まり，自然幅は線の裾（ローレンツ型の翼）にだけ効く．\n\n(3) 衝突の頻度は $n\\sigma v\\sim10^6\\ \\mathrm{m^{-3}}\\times10^{-19}\\ \\mathrm{m^2}\\times10^3\\ \\mathrm{m/s}\\sim10^{-10}\\ \\mathrm{s^{-1}}$ で，衝突幅は完全に無視できる．大きさの順は\n\\[\n\\boldsymbol{\\text{衝突幅}\\ (10^{-10})\\ll\\text{自然幅}\\ (10^8)\\ll\\text{超微細}\\ (1.4\\times10^9)\\ll\\text{ドップラー幅}\\ (1.8\\times10^{10})\\approx\\text{微細構造}\\ (1.1\\times10^{10})}\n\\]\n（単位 Hz）．超微細構造の分裂はドップラー幅より1桁小さいので，この線では\\textbf{分解できない}．星間水素の超微細構造は，代わりに 1s の2準位間の $21\\ \\mathrm{cm}$ 線として直接観測される．"
+   }
+  ],
+  "idea": {
+   "tex": "スペクトル線の幅には自然幅，ドップラー幅，衝突幅があり，希薄で冷たい星間ガスではドップラー幅が支配し，衝突幅は事実上ゼロになる．微細構造・超微細構造の分裂と比べることで，どの構造が分解できるかが決まる．原題は $\\alpha$ などを含む次数の見積もりで，捻りでは具体的な数値で並べさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [Hz]：≈2.47e15\n(2) 自然幅 [Hz]：≈1.0e8 ; ドップラー幅 [Hz]：≈1.8e10 ; 比：≈1.8e2\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "スペクトル線幅",
+   "ドップラー幅",
+   "自然幅",
+   "微細構造"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "AS-04-007",
   "schema": "lemma.problem/1",
   "kind": "written",

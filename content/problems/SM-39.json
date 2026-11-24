@@ -197,6 +197,151 @@
   }
  },
  {
+  "id": "SM-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 1,
+  "minutes": 20,
+  "theme": "局所的な外場への応答と相関関数（揺動応答関係）",
+  "topic": "局所的な外場への応答と相関関数（揺動応答関係）",
+  "statement": {
+   "tex": "$F=\\int d^dx\\left[\\frac\\gamma2(\\nabla\\phi)^2+\\frac{\\mu^2}2\\phi^2-h(\\boldsymbol x)\\phi\\right]$ のガウス模型を考える．\n\\begin{enumerate}\n\\item 平衡の $\\langle\\phi(\\boldsymbol x)\\rangle$ を $h$ と $G$ で表せ．\n\\item $h=h_0\\delta(\\boldsymbol x)$ の応答が相関関数 $\\langle\\phi(\\boldsymbol x)\\phi(0)\\rangle$ に比例することを示し，意味を述べよ．\n\\item 3次元の臨界点（$\\mu=0$）で応答の距離依存性を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\int G(\\boldsymbol x-\\boldsymbol y)h(\\boldsymbol y)d^dy$　(2) 揺動応答関係　(3) $1/r$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 停留条件 $(-\\gamma\\nabla^2+\\mu^2)\\phi=h$ の解：$\\boldsymbol{\\int Gh}$．\n\n(2) $\\langle\\phi\\rangle=h_0G(\\boldsymbol x)$，$G$ は相関関数そのもの：自発的なゆらぎの相関が小さな外場への応答を決める．\n\n(3) $\\boldsymbol{1/r}$（長距離の応答：臨界点で帯磁率が発散）．"
+   }
+  ],
+  "idea": {
+   "tex": "相関関数はグリーン関数で，局所的な摂動への応答を与える．原題の方程式の確認を，揺動応答関係として解釈させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 1/ r"
+  },
+  "methods": [],
+  "tags": [
+   "グリーン関数",
+   "線形応答",
+   "揺動散逸"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 1,
+  "minutes": 20,
+  "theme": "2次元イジング模型のモンテカルロ：転移温度と反転の確率",
+  "topic": "2次元イジング模型のモンテカルロ：転移温度と反転の確率",
+  "statement": {
+   "tex": "2次元正方格子のイジング模型をメトロポリス法でシミュレーションする．\n\\begin{enumerate}\n\\item オンサーガーの厳密な転移温度 $k_BT_c=\\dfrac{2J}{\\ln(1+\\sqrt2)}$ と平均場の値 $4J$ を比べよ．\n\\item $T=T_c$ で，4つの隣がすべて同じ向きのスピンを反転させる提案が受け入れられる確率を求めよ．\n\\item 臨界点の近くでシミュレーションが遅くなる理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2.27J$（平均場は約1.8倍高い）　(2) $e^{-8J/k_BT_c}\\approx0.029$　(3) 臨界減速（相関長の発散で大きな領域の反転が必要）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol{2.269J}$．平均場はゆらぎを無視して $T_c$ を過大評価．\n\n(2) エネルギー差 $8J$：$e^{-8/2.269}\\approx\\boldsymbol{0.029}$．\n\n(3) 相関長と緩和時間が発散し，局所的な反転では大きなクラスターが動きにくい（クラスターアルゴリズムで改善）．"
+   }
+  ],
+  "idea": {
+   "tex": "数値実験は厳密解と平均場の違いを実感させる．原題のシミュレーションの探索を，具体的な数値の見積もりにした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2.27 J\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "モンテカルロ法",
+   "メトロポリス法",
+   "2次元イジング模型",
+   "オンサーガー"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 1,
+  "minutes": 20,
+  "theme": "ラシュブルックの不等式を2次元と3次元のイジング模型の指数で確かめる",
+  "topic": "ラシュブルックの不等式を2次元と3次元のイジング模型の指数で確かめる",
+  "statement": {
+   "tex": "$\\alpha+2\\beta+\\gamma\\geqq2$（ラシュブルックの不等式）が熱力学から導かれる．\n\\begin{enumerate}\n\\item 2次元イジング模型（$\\alpha=0$，$\\beta=\\frac18$，$\\gamma=\\frac74$）で確かめよ．\n\\item 3次元イジング模型（$\\alpha=0.110$，$\\beta=0.326$，$\\gamma=1.237$）で確かめよ．\n\\item 平均場の指数ではどうか．等号が成り立つことの意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2$（等号）　(2) $\\approx2.00$　(3) $0+1+1=2$；スケーリング仮説"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $0+\\frac14+\\frac74=\\boldsymbol2$．\n\n(2) $0.110+0.652+1.237=\\boldsymbol{1.999}$．\n\n(3) 平均場も $\\boldsymbol2$．すべて等号で，自由エネルギーの同次性（スケーリング仮説）から等号が導かれる．"
+   }
+  ],
+  "idea": {
+   "tex": "熱力学の不等式は実際の臨界指数で等号になり，スケーリング仮説を支持する．原題の導出を，具体的な指数で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 2\n(2) ≈2.00\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラシュブルックの不等式",
+   "臨界指数",
+   "スケーリング"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SM-04-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -396,6 +541,688 @@
   }
  },
  {
+  "id": "SM-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 30,
+  "theme": "井戸型の引力をもつ剛体球の第2ビリアル係数とボイル温度",
+  "topic": "井戸型の引力をもつ剛体球の第2ビリアル係数とボイル温度",
+  "statement": {
+   "tex": "直径 $\\sigma$ の剛体球の外側 $\\sigma<r<1.5\\sigma$ に深さ $\\varepsilon$ の引力の井戸がある．第2ビリアル係数は $B_2=-\\frac12\\int(e^{-\\beta U}-1)d^3r$ である．\n\\begin{enumerate}\n\\item $B_2$ を求めよ．\n\\item ボイル温度（$B_2=0$）を求めよ．\n\\item 高温と低温での $B_2$ の符号の意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B_2=\\dfrac{2\\pi\\sigma^3}3\\left[1-(1.5^3-1)(e^{\\beta\\varepsilon}-1)\\right]$　(2) $k_BT_B\\approx2.85\\varepsilon$　(3) 高温で斥力が勝ち正，低温で引力が勝ち負"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $r<\\sigma$ で $e^{-\\beta U}-1=-1$，井戸で $e^{\\beta\\varepsilon}-1$．積分して与式．\n\n(2) $e^{\\beta\\varepsilon}=1+\\dfrac{1}{2.375}$，$\\boldsymbol{k_BT_B=\\varepsilon/\\ln1.421\\approx2.85\\varepsilon}$．\n\n(3) $B_2>0$ は圧力が理想気体より高く（排除体積），$B_2<0$ は低い（引力）．"
+   }
+  ],
+  "idea": {
+   "tex": "第2ビリアル係数は斥力と引力の競合を温度の関数として表し，その符号が変わる温度がボイル温度である．原題の2次元の剛体円板を，引力のある3次元の模型に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ビリアル展開",
+   "第2ビリアル係数",
+   "ボイル温度"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "2状態ポッツ模型はイジング模型と同じ",
+  "topic": "2状態ポッツ模型はイジング模型と同じ",
+  "statement": {
+   "tex": "$q$ 状態ポッツ模型 $H=-\\dfrac{3J}{2}\\sum_{\\langle ij\\rangle}\\delta_{\\sigma_i\\sigma_j}$ を考える．\n\\begin{enumerate}\n\\item $T=0$ の基底状態の数を答えよ．\n\\item $q=2$ のとき $\\delta_{\\sigma_i\\sigma_j}=\\frac12(1+s_is_j)$（$s=\\pm1$）を用いて，イジング模型と同じであることを示し，イジングの結合定数を求めよ．\n\\item 最近接数 $z$ の格子の平均場の転移温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $q$　(2) $J_I=\\frac34J$　(3) $k_BT_c=\\frac34zJ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) すべてのサイトが同じ値：$\\boldsymbol q$ 通り．\n\n(2) $H=-\\frac{3J}{4}\\sum s_is_j+\\text{const}$ で $\\boldsymbol{J_I=\\frac34J}$．\n\n(3) イジングの平均場 $k_BT_c=zJ_I=\\boldsymbol{\\frac34zJ}$（$q=2$ では2次転移，$q=3$ では平均場で1次転移）．"
+   }
+  ],
+  "idea": {
+   "tex": "ポッツ模型は $q=2$ でイジング模型に帰着し，連続転移になる．原題の $q=3$ の1次転移と対比するため，$q=2$ の場合を問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) q\n(2) $J_I$：((3)/(4)) J\n(3) $k_BT_c$：((3)/(4)) z J"
+  },
+  "methods": [],
+  "tags": [
+   "ポッツ模型",
+   "イジング模型",
+   "平均場近似",
+   "基底状態"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "1次元イジング模型の相関長を転送行列の固有値比から求める",
+  "topic": "1次元イジング模型の相関長を転送行列の固有値比から求める",
+  "statement": {
+   "tex": "磁場のない1次元イジング模型の転送行列は $T=\\begin{pmatrix}e^{\\beta J}&e^{-\\beta J}\\\\e^{-\\beta J}&e^{\\beta J}\\end{pmatrix}$ である．\n\\begin{enumerate}\n\\item 固有値 $\\lambda_\\pm$ を求めよ．\n\\item 相関関数 $\\langle s_0s_r\\rangle=(\\lambda_-/\\lambda_+)^r$ から相関長 $\\xi$ を求めよ．\n\\item 低温での $\\xi$ の振る舞いと，$\\beta J=2$ での値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2\\cosh\\beta J$，$2\\sinh\\beta J$　(2) $\\xi=-\\dfrac{1}{\\ln\\tanh\\beta J}$　(3) $\\xi\\approx\\frac12e^{2\\beta J}$；$\\approx27$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol{\\lambda_\\pm=e^{\\beta J}\\pm e^{-\\beta J}}$．\n\n(2) $e^{-r/\\xi}=(\\tanh\\beta J)^r$ より $\\boldsymbol{\\xi=-1/\\ln\\tanh\\beta J}$．\n\n(3) $\\tanh x\\approx1-2e^{-2x}$ で $\\xi\\approx\\frac12e^{2\\beta J}$．$\\beta J=2$ で $\\boldsymbol{27.3}$．有限の温度では有限で，相転移はない（$T=0$ でだけ発散）．"
+   }
+  ],
+  "idea": {
+   "tex": "転送行列の2つの固有値の比が相関長を決め，1次元では有限温度で発散しない．原題の分配関数と磁化の議論を，相関長の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\xi$：-((1)/(ln tanh β J))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "転送行列",
+   "相関長",
+   "1次元イジング模型"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "平均場近似の帯磁率：転移点の上下で振幅の比は2",
+  "topic": "平均場近似の帯磁率：転移点の上下で振幅の比は2",
+  "statement": {
+   "tex": "平均場の自己無撞着方程式 $m=\\tanh\\beta(B+Jqm)$，$T_c=Jq$（$k_B=1$）を考える．\n\\begin{enumerate}\n\\item $B=0$，$T$ が $T_c$ の少し下で $m\\approx\\sqrt3(1-T/T_c)^{1/2}$ を示せ．\n\\item 帯磁率 $\\chi=\\partial m/\\partial B|_{B=0}$ を $T>T_c$ と $T<T_c$ で求め，振幅の比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $T>T_c$：$\\dfrac{1}{T-T_c}$，$T<T_c$：$\\dfrac{1}{2(T_c-T)}$；比 $2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\tanh x\\approx x-x^3/3$：$m=\\frac{T_c}Tm-\\frac13\\left(\\frac{T_c}T\\right)^3m^3$ より $m^2\\approx3(1-T/T_c)$．\n\n(2) 微分して $\\chi=\\dfrac{\\beta(1-m^2)}{1-\\beta T_c(1-m^2)}$．$m=0$ で $\\boldsymbol{1/(T-T_c)}$，$m^2=3(1-T/T_c)$ で $\\boldsymbol{1/2(T_c-T)}$．比は $\\boldsymbol2$（指数 $\\gamma=1$ は同じ）．"
+   }
+  ],
+  "idea": {
+   "tex": "平均場近似では臨界指数だけでなく振幅の比も普遍的な値をとる．原題の自己無撞着方程式の解析に，帯磁率の振幅比を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平均場近似",
+   "帯磁率",
+   "キュリー＝ワイス則",
+   "振幅比"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "超流動の秩序変数の位相のねじれのエネルギー：南部＝ゴールドストーンモード",
+  "topic": "超流動の秩序変数の位相のねじれのエネルギー：南部＝ゴールドストーンモード",
+  "statement": {
+   "tex": "$F=\\int d^dx\\left[\\gamma|\\nabla\\psi|^2+\\alpha_2|\\psi|^2+\\alpha_4|\\psi|^4\\right]$（$\\alpha_2<0$）を考える．\n\\begin{enumerate}\n\\item 一様な基底状態の集合を求めよ．\n\\item $\\psi=\\psi_0e^{iqx}$ の自由エネルギー密度の増加を求め，$q\\to0$ で $0$ になることの意味を述べよ．\n\\item 振幅のゆらぎにはエネルギーの間隔があることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $|\\psi_0|^2=-\\dfrac{\\alpha_2}{2\\alpha_4}$ の円　(2) $\\gamma q^2|\\psi_0|^2$；ギャップのないモード　(3) 曲率 $-4\\alpha_2>0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol{|\\psi|^2=-\\alpha_2/2\\alpha_4}$，位相は任意（円周）．\n\n(2) $\\boldsymbol{\\gamma q^2|\\psi_0|^2}$．位相の一様なずれはエネルギーを変えず，長波長のねじれのエネルギーは $q^2$ で $0$ に近づく（南部＝ゴールドストーンモード，超流動の剛性 $\\propto\\gamma|\\psi_0|^2$）．\n\n(3) $|\\psi|$ の方向の2階微分は $-4\\alpha_2>0$：振幅モードは有限の「質量」をもつ．"
+   }
+  ],
+  "idea": {
+   "tex": "連続対称性が自発的に破れると，基底状態の集合に沿ったギャップのない励起が現れる．原題の基底状態の議論に，ゆらぎのエネルギーの計算を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "自発的対称性の破れ",
+   "ゴールドストーンモード",
+   "超流動",
+   "位相剛性"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "異方性のある古典ハイゼンベルク模型：符号で XY 型とイジング型に分かれる",
+  "topic": "異方性のある古典ハイゼンベルク模型：符号で XY 型とイジング型に分かれる",
+  "statement": {
+   "tex": "単位ベクトルのスピンの模型 $E=-J\\sum\\boldsymbol s_i\\cdot\\boldsymbol s_j+g\\sum_i\\left[(s_i^z)^2-\\frac12((s_i^x)^2+(s_i^y)^2)\\right]$ を考える．\n\\begin{enumerate}\n\\item $g>0$ と $g<0$ の $T=0$ の基底状態を求めよ．\n\\item それぞれの秩序相の対称性（XY 型かイジング型か）を答えよ．\n\\item $g=0$ のときの平均場の転移温度を求めよ（最近接数 $q$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $g>0$：$xy$ 面内にそろう；$g<0$：$\\pm z$ にそろう　(2) XY 型（連続），イジング型（離散）　(3) $k_BT_c=\\dfrac{qJ}{3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 異方性の項は $\\frac32(s^z)^2-\\frac12$ なので，$g>0$ で $s^z=0$（面内），$g<0$ で $s^z=\\pm1$．\n\n(2) 面内では回転の自由度が残り \\textbf{XY 型}，$z$ 軸では上下の2つで \\textbf{イジング型}．\n\n(3) $\\langle\\boldsymbol s\\rangle=m$ の分子場 $qJm$ で $m\\approx\\frac{\\beta qJm}{3}$（ランジュバン関数）：$\\boldsymbol{k_BT_c=qJ/3}$．"
+   }
+  ],
+  "idea": {
+   "tex": "小さな異方性が秩序相の対称性を決め，相図を分ける．原題の定性的な相図の議論を，基底状態と転移温度の具体的な計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $k_BT_c$：((q J)/(3))"
+  },
+  "methods": [],
+  "tags": [
+   "異方性",
+   "ハイゼンベルク模型",
+   "XY模型",
+   "平均場"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "多重臨界点の平均場の指数と上部臨界次元",
+  "topic": "多重臨界点の平均場の指数と上部臨界次元",
+  "statement": {
+   "tex": "$f=\\alpha_2m^2+\\alpha_{2n}m^{2n}$（$\\alpha_2\\propto T-T_c$）を考える．\n\\begin{enumerate}\n\\item 指数 $\\beta$ と $\\alpha$ を $n$ で表せ．\n\\item 平均場が正しい次元の下限 $d_c=\\dfrac{2n}{n-1}$ を用いて，$n=2,3$ と $n\\to\\infty$ の $d_c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta=\\dfrac{1}{2(n-1)}$，$\\alpha=\\dfrac{n-2}{n-1}$　(2) $4$，$3$，$2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $m^{2n-2}\\propto(T_c-T)$ で $\\boldsymbol{\\beta=\\frac{1}{2(n-1)}}$．$f\\propto(T_c-T)^{2-\\alpha}$，$f\\sim\\alpha_2m^2\\propto(T_c-T)^{1+2\\beta}$ で $\\boldsymbol{\\alpha=1-2\\beta=\\frac{n-2}{n-1}}$．\n\n(2) $\\boldsymbol{4,\\ 3,\\ 2}$（三重臨界点は3次元で平均場がほぼ正しい）．"
+   }
+  ],
+  "idea": {
+   "tex": "上部臨界次元はゆらぎの自由エネルギー $\\propto\\xi^{-d}$ と平均場の自由エネルギーの比較で決まり，高次の臨界点ほど低い．原題の導出を具体的な値の確認にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\beta$：((1)/(2(n -1))) ; $\\alpha$：((n -2)/(n -1))\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "多重臨界点",
+   "上部臨界次元",
+   "ギンツブルク判定条件"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "1次元と3次元のオルンシュタイン＝ゼルニケ相関関数の厳密形",
+  "topic": "1次元と3次元のオルンシュタイン＝ゼルニケ相関関数の厳密形",
+  "statement": {
+   "tex": "$G(\\boldsymbol x)=\\displaystyle\\int\\frac{d^dk}{(2\\pi)^d}\\frac{e^{-i\\boldsymbol k\\cdot\\boldsymbol x}}{\\gamma(k^2+\\xi^{-2})}$ を考える．\n\\begin{enumerate}\n\\item $d=1$ で $G$ を求めよ．\n\\item $d=3$ で $G$ を求めよ．\n\\item どちらも $r\\gg\\xi$ で $e^{-r/\\xi}/r^{(d-1)/2}$ の形であることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\xi}{2\\gamma}e^{-|x|/\\xi}$　(2) $\\dfrac{e^{-r/\\xi}}{4\\pi\\gamma r}$　(3) 確認"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 留数で $\\boldsymbol{\\frac{\\xi}{2\\gamma}e^{-|x|/\\xi}}$．\n\n(2) 湯川ポテンシャルと同じ：$\\boldsymbol{\\frac{e^{-r/\\xi}}{4\\pi\\gamma r}}$．\n\n(3) $d=1$ で $r^0$，$d=3$ で $r^{-1}$：$(d-1)/2=0,1$．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス模型の相関関数は相関長の外で指数的に減衰し，べきの前因子は次元で決まる．原題の鞍点法の議論を，厳密に計算できる次元で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (ξ/(2γ))e^(-|x|/ξ)\n(2) ((e^(-r/ξ))/(4πγ r))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "相関関数",
+   "オルンシュタイン＝ゼルニケ",
+   "相関長",
+   "グリーン関数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 30,
+  "theme": "すべての方向に4階微分をもつリフシッツ点の上部臨界次元",
+  "topic": "すべての方向に4階微分をもつリフシッツ点の上部臨界次元",
+  "statement": {
+   "tex": "$F=\\int d^dx\\left[\\frac12(\\nabla^2\\phi)^2+\\frac12\\mu^2\\phi^2+g\\phi^4\\right]$（等方的なリフシッツ点）を考える．\n\\begin{enumerate}\n\\item ガウス固定点での $\\phi$ のスケーリング次元を求めよ．\n\\item $\\mu^2$ と $g$ のスケーリング次元を求めよ．\n\\item $\\phi^4$ が有意になる次元を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta_\\phi=\\dfrac{d-4}{2}$　(2) $[\\mu^2]=4$，$[g]=8-d$　(3) $d<8$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(\\nabla^2\\phi)^2$ が無次元：$d-4-2\\Delta_\\phi=0$．\n\n(2) $[\\mu^2]=d-2\\Delta_\\phi=\\boldsymbol4$，$[g]=d-4\\Delta_\\phi=\\boldsymbol{8-d}$．\n\n(3) $\\boldsymbol{d<8}$（通常の $4$，一方向だけのリフシッツの $7$ と比べて高い）．"
+   }
+  ],
+  "idea": {
+   "tex": "勾配の次数が上がると場の次元が下がり，相互作用の上部臨界次元が上がる．原題の異方的なリフシッツ点を，等方的な場合に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta_\\phi$：((d -4)/(2))\n(2) $[\\mu²]$：4 ; $[g]$：8- d\n(3) d<8"
+  },
+  "methods": [],
+  "tags": [
+   "リフシッツ点",
+   "スケーリング次元",
+   "上部臨界次元",
+   "繰り込み群"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ゲージ場と結合したスカラー場の結合定数の次元",
+  "topic": "ゲージ場と結合したスカラー場の結合定数の次元",
+  "statement": {
+   "tex": "$F=\\int d^dx\\left[\\frac14F_{ij}F_{ij}+|(\\partial_i-ieA_i)\\psi|^2+\\mu^2|\\psi|^2+g|\\psi|^4\\right]$ を考える．\n\\begin{enumerate}\n\\item $\\psi$ と $A_i$ のスケーリング次元を求めよ．\n\\item $e$ と $g$ のスケーリング次元を求めよ．\n\\item 両方が同時に限界的になる次元を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) どちらも $\\dfrac{d-2}2$　(2) $[e]=\\dfrac{4-d}{2}$，$[g]=4-d$　(3) $d=4$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 運動項から $\\boldsymbol{(d-2)/2}$．\n\n(2) $eA\\psi$ が $\\partial\\psi$ と同じ次元：$[e]+[A]=1$，$\\boldsymbol{[e]=(4-d)/2}$．$[g]=d-4\\cdot\\frac{d-2}2=\\boldsymbol{4-d}$．\n\n(3) $\\boldsymbol{d=4}$．3次元ではどちらも有意（超伝導の転移の解析が難しい理由）．"
+   }
+  ],
+  "idea": {
+   "tex": "次元解析で結合定数が有意かどうかが決まり，ゲージ結合と自己相互作用の臨界次元が一致する．原題の臨界次元の問いに，自己相互作用を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) どちらも：((d -2)/(2))\n(2) $[e]$：((4- d)/(2)) ; $[g]$：4- d\n(3) $d$：4"
+  },
+  "methods": [],
+  "tags": [
+   "スケーリング次元",
+   "ゲージ結合",
+   "臨界次元",
+   "超伝導"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "立方格子の異方性の項が長距離で効かない理由",
+  "topic": "立方格子の異方性の項が長距離で効かない理由",
+  "statement": {
+   "tex": "$d$ 次元の立方格子の秩序変数 $\\phi$ のガウス固定点を考える．\n\\begin{enumerate}\n\\item 立方対称だが $SO(d)$ 対称でない最も簡単な2次の項として $\\sum_i(\\partial_i^2\\phi)^2$ を考える．その結合定数のスケーリング次元を求めよ．\n\\item 長距離で回転対称性が回復する理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-2$（無関係）　(2) 無関係な演算子は長距離で消える"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial^4\\phi^2$ の次元は $4+2\\Delta_\\phi=d+2$．結合定数は $d-(d+2)=\\boldsymbol{-2}$．\n\n(2) 繰り込み群で長距離に行くほど $\\zeta^{-2}$ で弱まり，$(\\nabla\\phi)^2$ の回転対称な項だけが残る．"
+   }
+  ],
+  "idea": {
+   "tex": "格子の対称性は長距離では無関係な演算子としてしか現れない．原題の定性的な問いを，スケーリング次元の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -2\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "格子異方性",
+   "無関係な演算子",
+   "回転対称性の回復"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ε展開の臨界指数を N = 1, 2, 3 で 3 次元の値と比べる",
+  "topic": "ε展開の臨界指数を N = 1, 2, 3 で 3 次元の値と比べる",
+  "statement": {
+   "tex": "$O(N)$ 模型のウィルソン＝フィッシャー固定点で，$\\epsilon$ の1次まで $\\nu=\\frac12+\\frac{N+2}{4(N+8)}\\epsilon$，$\\gamma=1+\\frac{N+2}{2(N+8)}\\epsilon$ である（$\\eta=O(\\epsilon^2)$）．\n\\begin{enumerate}\n\\item スケーリング関係を用いて $\\alpha$ と $\\beta$ を $\\epsilon$ の1次で求めよ．\n\\item $\\epsilon=1$，$N=1$ の値を3次元イジング模型（$\\nu=0.630$，$\\gamma=1.237$，$\\alpha=0.110$，$\\beta=0.326$）と比べよ．\n\\item $N=2,3$ で $\\alpha$ の値を求め，符号の傾向を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\frac{4-N}{2(N+8)}\\epsilon$，$\\beta=\\frac12-\\frac{3}{2(N+8)}\\epsilon$　(2) $\\nu=0.583$，$\\gamma=1.167$，$\\alpha=0.167$，$\\beta=0.333$　(3) $0.10$，$0.045$；$N$ が大きいほど小さく，$N>4$ で負"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\alpha=2-d\\nu$，$\\beta=\\frac\\nu2(d-2+\\eta)$ に代入．\n\n(2) 1次の近似でも平均場よりかなり良い（$\\beta$ はほぼ一致）．\n\n(3) $N=2$：$0.10$，$N=3$：$0.045$．実際の3次元の値は $N=2,3$ で負になる（高次の補正）．"
+   }
+  ],
+  "idea": {
+   "tex": "ε展開の1次でも3次元の臨界指数をかなり再現する．原題の導出を，数値的な比較にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\alpha$：((4- N)/(2(N +8))) ε ; $\\beta$：((1)/(2))-((3)/(2(N +8))) ε\n(2) $\\nu$：≈0.583 ; $\\gamma$：≈1.167 ; $\\alpha$：≈0.167 ; $\\beta$：≈0.333\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ε展開",
+   "ウィルソン＝フィッシャー固定点",
+   "臨界指数",
+   "O(N)模型"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ウィルソン＝フィッシャー固定点へのクロスオーバーの長さ",
+  "topic": "ウィルソン＝フィッシャー固定点へのクロスオーバーの長さ",
+  "statement": {
+   "tex": "$\\dfrac{d\\tilde g}{ds}=\\epsilon\\tilde g-A\\tilde g^2$ の解は $g(s)=\\dfrac{g_\\star}{1-(1-g_\\star/g_0)e^{-\\epsilon s}}$ である．\n\\begin{enumerate}\n\\item $A$ と $g_\\star$ を求めよ（$A=\\frac{N+8}{2\\pi^2}$）．\n\\item 初期値 $g_0\\ll g_\\star$ のとき，$g$ が $g_\\star$ の半分になる $s$ を求め，その長さ $\\xi_\\times=\\Lambda^{-1}e^{s}$ を $g_0$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $g_\\star=\\dfrac{2\\pi^2\\epsilon}{N+8}$　(2) $s\\approx\\frac1\\epsilon\\ln\\frac{g_\\star}{g_0}$，$\\xi_\\times\\sim\\Lambda^{-1}(g_\\star/g_0)^{1/\\epsilon}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $g_\\star=\\epsilon/A=\\boldsymbol{\\frac{2\\pi^2\\epsilon}{N+8}}$．\n\n(2) $g=g_\\star/2$：$(1-g_\\star/g_0)e^{-\\epsilon s}=-1$，$e^{\\epsilon s}\\approx g_\\star/g_0$．これより短い距離ではガウス的，長い距離ではウィルソン＝フィッシャーの振る舞い．"
+   }
+  ],
+  "idea": {
+   "tex": "弱い結合から出発すると，臨界の振る舞いが現れるまでにクロスオーバーの長さがある．原題の解の導出に，その物理的な意味を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $g_\\star$：((2 pi ^(2) ε)/(N +8))\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "繰り込み群の流れ",
+   "クロスオーバー",
+   "固定点"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 2,
+  "minutes": 30,
+  "theme": "磁壁の長さで書くIsingエネルギーと核生成",
+  "topic": "磁壁の長さで書くIsingエネルギーと核生成",
+  "statement": {
+   "tex": "$N$ 個の格子点からなり，各点の最近接点の数が $\\gamma$ の格子上の Ising 模型\n\\[ E\\{s_i\\}=-\\varepsilon\\sum_{\\langle i,j\\rangle}s_is_j-B\\sum_{i=1}^Ns_i\\qquad(\\varepsilon>0) \\]\nを考える．$+$ スピンの数を $N_+$，異符号の最近接対の数を $N_{+-}$ とする（周期境界条件）．\n\\begin{enumerate}\n\\item $E=-\\dfrac{\\gamma N\\varepsilon}{2}+2\\varepsilon N_{+-}-B(2N_+-N)$ と書けることを示せ．\n\\item 正方格子（$\\gamma=4$）で，全スピンが $+$ の状態に，磁場 $B=-h$（$h>0$，$-$ スピンを好む）がかかっている．一辺 $\\ell$ 格子間隔の正方形領域のスピンを全部 $-$ に反転したときのエネルギー変化 $\\Delta E(\\ell)$ を求めよ．\n\\item $\\Delta E(\\ell)$ を $\\ell$ の連続関数とみなし，最大値をとる臨界サイズ $\\ell^*$ と障壁の高さ $\\Delta E^*$ を求めよ．$h\\to0$ で全 $+$ の状態（準安定状態）の寿命はどうなると考えられるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（$\\sum s_is_j=\\gamma N/2-2N_{+-}$）　(2) $\\Delta E=8\\varepsilon\\ell-2h\\ell^2$　(3) $\\ell^*=2\\varepsilon/h$，$\\Delta E^*=8\\varepsilon^2/h$；$h\\to0$ で障壁が $1/h$ で発散し，寿命 $\\sim e^{8\\varepsilon^2/(hk_BT)}$ は極めて長くなる．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 最近接対の総数は $\\gamma N/2=N_{++}+N_{--}+N_{+-}$．同符号の対は $s_is_j=+1$，異符号の対は $-1$ なので\n\\[ \\sum_{\\langle i,j\\rangle}s_is_j=(N_{++}+N_{--})-N_{+-}=\\frac{\\gamma N}{2}-2N_{+-}. \\]\nまた $\\sum s_i=N_+-N_-=2N_+-N$．代入して与式を得る．なお $\\gamma N_+=2N_{++}+N_{+-}$ を用いて $N_{+-}=\\gamma N_+-2N_{++}$ とすれば，$E=-4\\varepsilon N_{++}+2(\\gamma\\varepsilon-B)N_+-(\\gamma\\varepsilon/2-B)N$ という $N_+,N_{++}$ による表示にも一致する．エネルギーは「磁壁の長さ」$N_{+-}$ と磁化だけで決まる．\n\n(2) 正方形の境界を横切る最近接対の数は $4\\ell$ なので $\\Delta N_{+-}=4\\ell$．反転したスピン数は $\\ell^2$ で $\\Delta(2N_+-N)=-2\\ell^2$．$B=-h$ として\n\\[ \\Delta E=2\\varepsilon\\cdot4\\ell-(-h)(-2\\ell^2)=8\\varepsilon\\ell-2h\\ell^2. \\]\n（$\\ell=1$ で $8\\varepsilon-2h$ は，1 個のスピン反転で 4 本の結合が破れることに一致．）\n\n(3) $d\\Delta E/d\\ell=8\\varepsilon-4h\\ell=0$ より $\\ell^*=2\\varepsilon/h$，$\\Delta E^*=8\\varepsilon\\cdot\\dfrac{2\\varepsilon}{h}-2h\\dfrac{4\\varepsilon^2}{h^2}=\\dfrac{8\\varepsilon^2}{h}$．$\\ell<\\ell^*$ の $-$ 領域は縮んで消え，$\\ell>\\ell^*$ なら成長して全体が $-$ に転じる．熱活性化の頻度は $e^{-\\Delta E^*/k_BT}$ に比例するから，$h\\to0$ で障壁が $1/h$ で発散し，準安定な $+$ 状態の寿命は $e^{8\\varepsilon^2/(hk_BT)}$ 程度に急激に長くなる（ヒステリシスの起源）．"
+   }
+  ],
+  "idea": {
+   "tex": "Ising エネルギーを異符号対の数（磁壁の長さ）と磁化で書き直すと，ドメインの表面エネルギーと体積エネルギーの競合が見え，核生成の臨界サイズと障壁が求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Ising模型",
+   "磁壁",
+   "核生成",
+   "準安定状態",
+   "最近接対"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SM-04-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -490,6 +1317,696 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ひずみとの結合で1次転移になる強誘電体の転移温度と潜熱",
+  "topic": "ひずみとの結合で1次転移になる強誘電体の転移温度と潜熱",
+  "statement": {
+   "tex": "強誘電体の単位体積あたりの自由エネルギーを，分極 $P$ とひずみ $u$ を含めて\n\\[\nf=\\frac{a}{2}(T-T_0)P^2+\\frac{b}{4}P^4+\\frac{c}{6}P^6+\\frac{K}{2}u^2-guP^2\n\\]\nとする（$a,\\ c,\\ K>0$，$b>0$）．\n\\begin{enumerate}\n\\item $u$ について最小化して消去し，$P$ だけの自由エネルギーの $P^4$ の係数 $b'$ を求めよ．\n\\item 転移が1次になる弾性定数 $K$ の条件を求めよ．\n\\item 1次転移のとき，転移温度 $T_1$，転移点での分極の跳び $P_1^2$，単位体積あたりの潜熱 $\\ell$ を $a,\\ b',\\ c,\\ T_0$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $b'=b-\\dfrac{2g^2}{K}$　(2) $K<\\dfrac{2g^2}{b}$　(3) $T_1=T_0+\\dfrac{3b'^2}{16ac}$，$P_1^2=-\\dfrac{3b'}{4c}$，$\\ell=\\dfrac{a}{2}T_1P_1^2=-\\dfrac{3ab'T_1}{8c}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial f/\\partial u=Ku-gP^2=0$ より $u=gP^2/K$．代入すると $\\frac K2u^2-guP^2=-\\dfrac{g^2P^4}{2K}$ で\n\\[\nf=\\frac a2(T-T_0)P^2+\\frac{b'}{4}P^4+\\frac c6P^6,\\qquad \\boldsymbol{b'=b-\\frac{2g^2}{K}}.\n\\]\n自発分極が格子をひずませ，そのひずみが分極をさらに安定にするので，4次の係数が小さくなる．\n\n(2) $b'>0$ なら2次転移，$b'<0$ なら6次の項で安定化された1次転移になる．$\\boldsymbol{K<2g^2/b}$（柔らかい結晶）．\n\n(3) $x=P^2$ として $f=\\frac a2(T-T_0)x+\\frac{b'}4x^2+\\frac c6x^3$．1次転移点では $f=0$ と $\\partial f/\\partial x=0$ が $x>0$ で同時に成り立つ：\n\\[\n\\frac a2(T-T_0)+\\frac{b'}4x+\\frac c6x^2=0,\\qquad \\frac a2(T-T_0)+\\frac{b'}2x+\\frac c2x^2=0 .\n\\]\n差をとると $\\dfrac{b'}{4}+\\dfrac c3x=0$，$\\boldsymbol{P_1^2=x=-\\dfrac{3b'}{4c}}$．代入して\n\\[\n\\frac a2(T_1-T_0)=-\\frac{b'}{4}x-\\frac c6x^2=\\frac{3b'^2}{16c}-\\frac{3b'^2}{32c}=\\frac{3b'^2}{32c},\\qquad \\boldsymbol{T_1=T_0+\\frac{3b'^2}{16ac}}.\n\\]\n潜熱は $T_1$ でのエントロピーの跳び $\\Delta s=-\\partial f/\\partial T=-\\frac a2P^2$ から\n\\[\n\\boldsymbol{\\ell=T_1\\cdot\\frac a2P_1^2=-\\frac{3ab'T_1}{8c}}>0 .\n\\]\n転移は $T_0$ より高い温度で不連続に起こり，相の共存と温度ヒステリシスが現れる．"
+   }
+  ],
+  "idea": {
+   "tex": "秩序変数と2次で結合する別の自由度（ひずみ）を消去すると，4次の係数が負の向きに繰り込まれる．格子が柔らかいと4次の係数が負になり，6次の項で安定化された1次転移になる．原題は立方対称の Landau 関数と結合による1次転移の条件で，捻りでは転移温度・分極の跳び・潜熱まで具体的に求めさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ランダウ理論",
+   "1次転移",
+   "強誘電体",
+   "ひずみ結合"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "片側だけ配向を固定したネマチック液晶のフレデリクス転移",
+  "topic": "片側だけ配向を固定したネマチック液晶のフレデリクス転移",
+  "statement": {
+   "tex": "厚さ $d$ のネマチック液晶の層（$0<z<d$）を考える．下のガラス $z=0$ では分子の向き（ダイレクター）が $x$ 方向に強く固定され，上の面 $z=d$ は配向処理がなく，ダイレクターは自由に向きを変えられる．$y$ 方向に磁場 $H$ をかけ，ダイレクターを $\\hat n=(\\cos\\theta(z),\\sin\\theta(z),0)$ とする．単位面積あたりの自由エネルギーは\n\\[\nF=\\int_0^d\\left[\\frac k2\\left(\\frac{d\\theta}{dz}\\right)^2-\\frac12\\chi_aH^2\\sin^2\\theta\\right]dz\\qquad(k>0,\\ \\chi_a>0)\n\\]\nとする．\n\\begin{enumerate}\n\\item $\\theta(z)$ のみたすオイラー＝ラグランジュ方程式と境界条件を書き，空間変化の尺度となる長さを答えよ．\n\\item 一様な状態 $\\theta=0$ が不安定になる臨界磁場 $H_c$ を求めよ．両方の面で固定した場合の臨界磁場と比べよ．\n\\item $H$ が $H_c$ をわずかに超えたとき，$\\theta(z)\\simeq\\theta_m\\sin\\dfrac{\\pi z}{2d}$ として，最大の傾き $\\theta_m$ を $H/H_c$ で表せ（$\\sin^2\\theta\\simeq\\theta^2-\\frac{\\theta^4}{3}$ とせよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $k\\theta''+\\chi_aH^2\\sin\\theta\\cos\\theta=0$，$\\theta(0)=0$，$\\theta'(d)=0$；長さ $\\xi_H=\\dfrac1H\\sqrt{\\dfrac{k}{\\chi_a}}$　(2) $H_c=\\dfrac{\\pi}{2d}\\sqrt{\\dfrac k{\\chi_a}}$（両面固定の半分）　(3) $\\theta_m^2\\simeq2\\left(1-\\dfrac{H_c^2}{H^2}\\right)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 変分をとると\n\\[\n\\boldsymbol{k\\theta''+\\chi_aH^2\\sin\\theta\\cos\\theta=0},\n\\]\n境界条件は $z=0$ で $\\theta=0$（固定），$z=d$ は自由端なので境界項から $\\theta'(d)=0$．弾性と磁場のエネルギーが釣り合う長さは $\\boldsymbol{\\xi_H=\\dfrac{1}{H}\\sqrt{\\dfrac{k}{\\chi_a}}}$．\n\n(2) $\\theta$ が小さいとき $k\\theta''+\\chi_aH^2\\theta=0$．境界条件をみたす解 $\\sin\\dfrac{z}{\\xi_H}$ が存在するのは $\\dfrac{d}{\\xi_H}=\\dfrac\\pi2$（最初の解）のときで，\n\\[\n\\boldsymbol{H_c=\\frac{\\pi}{2d}\\sqrt{\\frac{k}{\\chi_a}}}.\n\\]\n両面で固定した場合は $\\theta(0)=\\theta(d)=0$ で $d/\\xi_H=\\pi$，$H_c=\\dfrac\\pi d\\sqrt{k/\\chi_a}$．片側が自由だと変形の波長が2倍にとれるので，臨界磁場は\\textbf{半分}になる．\n\n(3) $\\theta=\\theta_m\\sin\\dfrac{\\pi z}{2d}$ を代入し，$\\left\\langle\\sin^2\\right\\rangle=\\frac12$，$\\left\\langle\\sin^4\\right\\rangle=\\frac38$（区間 $[0,d]$ での平均）を使うと\n\\[\n\\frac Fd=\\frac k2\\left(\\frac{\\pi}{2d}\\right)^2\\frac{\\theta_m^2}{2}-\\frac12\\chi_aH^2\\left(\\frac{\\theta_m^2}{2}-\\frac{\\theta_m^4}{3}\\cdot\\frac38\\right)\n=\\frac{\\chi_a}{4}(H_c^2-H^2)\\theta_m^2+\\frac{\\chi_aH^2}{16}\\theta_m^4 .\n\\]\n$\\theta_m$ で最小化して\n\\[\n\\boldsymbol{\\theta_m^2=2\\left(1-\\frac{H_c^2}{H^2}\\right)}\\simeq\\frac{4(H-H_c)}{H_c}.\n\\]\n変形は $H_c$ から $\\sqrt{H-H_c}$ で連続的に立ち上がる（2次転移的な超臨界分岐）．"
+   }
+  ],
+  "idea": {
+   "tex": "フレデリクス転移は，弾性エネルギーと磁場のエネルギーの釣り合いで決まる線形固有値問題で，境界条件が変形の最長波長を決める．片面が自由端なら波長が2倍にとれて臨界磁場は半分になる．転移の上では非線形項で振幅が $\\sqrt{H-H_c}$ に比例して決まる．原題は両面固定の臨界磁場と振幅で，捻りでは片面を自由にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $H_c$：((pi)/(2 d)) sqrt(((k)/(χ_a)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "液晶",
+   "フレデリクス転移",
+   "変分法",
+   "分岐"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 35,
+  "theme": "6次のランダウ理論の1次転移：潜熱と過熱の限界",
+  "topic": "6次のランダウ理論の1次転移：潜熱と過熱の限界",
+  "statement": {
+   "tex": "$F=a(T)m^2+bm^4+cm^6$（$b<0$，$c>0$ は一定），$a=a_0(T-T_0)$ とする．\n\\begin{enumerate}\n\\item 転移温度 $T_c$ と，転移での $m$ の跳びを求めよ．\n\\item 単位体積あたりの潜熱を求めよ．\n\\item 秩序相が準安定に存在できる上限の温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_c=T_0+\\dfrac{b^2}{4a_0c}$，$m^2=\\dfrac{|b|}{2c}$　(2) $L=\\dfrac{a_0T_c|b|}{2c}$　(3) $T_0+\\dfrac{b^2}{3a_0c}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $F(m)=0$ と $F'(m)=0$ を連立：$m^2=-\\frac{b}{2c}$，$a=\\frac{b^2}{4c}$．\n\n(2) 秩序相の $S=-\\partial_TF=-a_0m^2$．跳び $a_0\\frac{|b|}{2c}$ に $T_c$ を掛けて $\\boldsymbol{L=\\dfrac{a_0T_c|b|}{2c}}$．\n\n(3) $3cm^4+2bm^2+a=0$ が実数解をもつ限界 $a=\\frac{b^2}{3c}$：$\\boldsymbol{T=T_0+\\dfrac{b^2}{3a_0c}}$（過熱の限界）．"
+   }
+  ],
+  "idea": {
+   "tex": "6次のランダウ理論は1次転移を記述し，潜熱や準安定状態の限界も計算できる．原題の転移の位置と跳びに，潜熱と過熱の限界を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) T_0 +((b ^(2))/(3 a_0 c))"
+  },
+  "methods": [],
+  "tags": [
+   "ランダウ理論",
+   "1次転移",
+   "潜熱",
+   "準安定状態"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "長距離イジング模型の比熱の跳び：平均場が厳密になる模型",
+  "topic": "長距離イジング模型の比熱の跳び：平均場が厳密になる模型",
+  "statement": {
+   "tex": "すべてのスピンが等しく相互作用する模型 $E=-\\dfrac{J}{2N}\\left(\\sum s_i\\right)^2$ は，大きな $N$ で $m=\\tanh(\\beta Jm)$ が厳密に成り立つ（$T_c=J$，$k_B=1$）．\n\\begin{enumerate}\n\\item 平均のエネルギーが $E=-\\frac12NJm^2$ であることを説明せよ．\n\\item $T_c$ のすぐ下で $E$ を $T$ の1次まで求め，比熱の跳び $\\Delta C$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 説明（ゆらぎが $1/\\sqrt N$ で消える）　(2) $E\\approx-\\frac32N(T_c-T)$；$\\Delta C=\\frac32N$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 鞍点法で $\\sum s_i=Nm$ のゆらぎは $\\sqrt N$ 程度で，エネルギーへの寄与は $O(1)$．\n\n(2) $m^2\\approx3(1-T/T_c)$ で $E=-\\frac32NJ(1-T/T_c)=-\\frac32N(T_c-T)$．$T>T_c$ では $E=0$．$\\boldsymbol{\\Delta C=\\frac32N}$（$k_B$ 単位；指数 $\\alpha=0$ の跳び）．"
+   }
+  ],
+  "idea": {
+   "tex": "長距離相互作用の模型では平均場近似が厳密になり，比熱は跳びをもつ．原題の鞍点法の導出に，比熱の計算を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "キュリー＝ワイス模型",
+   "鞍点法",
+   "比熱の跳び"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "三重臨界点の平均場の指数とスケーリング関係",
+  "topic": "三重臨界点の平均場の指数とスケーリング関係",
+  "statement": {
+   "tex": "$f=\\alpha_2m^2+\\alpha_6m^6-Bm$，$\\alpha_2=a(T-T_c)$，$\\alpha_6>0$ を考える（三重臨界点：$\\alpha_4=0$）．\n\\begin{enumerate}\n\\item 臨界指数 $\\beta,\\gamma,\\delta,\\alpha$ を求めよ．\n\\item $\\alpha+2\\beta+\\gamma=2$ と $\\gamma=\\beta(\\delta-1)$ を確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta=\\frac14$，$\\gamma=1$，$\\delta=5$，$\\alpha=\\frac12$　(2) 確認"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $B=0$：$2\\alpha_2m+6\\alpha_6m^5=0$，$m\\propto(T_c-T)^{1/4}$．$T=T_c$：$B=6\\alpha_6m^5$ で $\\delta=5$．$\\chi=1/2\\alpha_2$ で $\\gamma=1$．$f_{\\min}\\propto-(T_c-T)^{3/2}$ で $C\\propto(T_c-T)^{-1/2}$，$\\alpha=\\frac12$．\n\n(2) $\\frac12+\\frac12+1=2$，$\\frac14\\times4=1$．"
+   }
+  ],
+  "idea": {
+   "tex": "4次の項が消える点では6次の項が臨界の振る舞いを決め，指数が変わってもスケーリング関係は保たれる．原題の1次転移の議論の中の三重臨界点に焦点を当てた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\beta$：((1)/(4)) ; $\\gamma$：1 ; $\\delta$：5 ; $\\alpha$：((1)/(2))\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "三重臨界点",
+   "臨界指数",
+   "ラシュブルック関係"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "実のスカラー場の変調相：縞の振幅",
+  "topic": "実のスカラー場の変調相：縞の振幅",
+  "statement": {
+   "tex": "1次元の実のスカラー場で $F=\\int dx\\left[\\alpha_2\\phi^2+\\alpha_4\\phi^4-\\gamma(\\phi')^2+\\kappa(\\phi'')^2\\right]$（$\\alpha_4,\\gamma,\\kappa>0$）を考える．\n\\begin{enumerate}\n\\item $\\phi=A\\cos k_0x$ のとき，2次の項を最小にする $k_0$ を求めよ．\n\\item 転移の起こる $\\alpha_2$ の値 $\\alpha_c$ を求めよ．\n\\item $\\alpha_2<\\alpha_c$ での平衡の振幅 $A$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $k_0^2=\\dfrac{\\gamma}{2\\kappa}$　(2) $\\alpha_c=\\dfrac{\\gamma^2}{4\\kappa}$　(3) $A^2=\\dfrac{2(\\alpha_c-\\alpha_2)}{3\\alpha_4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 2次の係数 $\\alpha_2-\\gamma k^2+\\kappa k^4$ の最小：$\\boldsymbol{k_0^2=\\gamma/2\\kappa}$．\n\n(2) 最小値 $\\alpha_2-\\frac{\\gamma^2}{4\\kappa}$ が負になる点：$\\boldsymbol{\\alpha_c=\\gamma^2/4\\kappa}$．\n\n(3) 平均 $\\langle\\cos^2\\rangle=\\frac12$，$\\langle\\cos^4\\rangle=\\frac38$ で $F/L=\\frac12(\\alpha_2-\\alpha_c)A^2+\\frac38\\alpha_4A^4$，最小で $\\boldsymbol{A^2=\\frac{2(\\alpha_c-\\alpha_2)}{3\\alpha_4}}$．並進対称性が破れる（縞）．"
+   }
+  ],
+  "idea": {
+   "tex": "勾配の項の符号が負だと有限の波数の秩序（変調相）が現れる．原題の複素場の平面波を，実の場の縞模様に変え，振幅まで求めさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $k_0^2$：((γ)/(2 κ))\n(2) $\\alpha_c$：((γ ^(2))/(4 κ))\n(3) $A^2$：((2(α_c - α_2))/(3 α_4))"
+  },
+  "methods": [],
+  "tags": [
+   "変調相",
+   "ランダウ＝ギンツブルク理論",
+   "空間変調",
+   "縞模様"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "立方異方性の有意性：ハイゼンベルク固定点が安定な N の範囲",
+  "topic": "立方異方性の有意性：ハイゼンベルク固定点が安定な N の範囲",
+  "statement": {
+   "tex": "$O(N)$ 模型に立方異方性 $\\lambda\\sum_a\\phi_a^4$ を加えると，$\\epsilon$ の1次で $\\dfrac{d\\tilde\\lambda}{ds}=\\epsilon\\tilde\\lambda-\\dfrac6{\\pi^2}\\tilde g\\tilde\\lambda-\\dfrac{9}{2\\pi^2}\\tilde\\lambda^2$ である．\n\\begin{enumerate}\n\\item ハイゼンベルク固定点 $\\tilde g=\\frac{2\\pi^2\\epsilon}{N+8}$，$\\tilde\\lambda=0$ で $\\lambda$ の方向の固有値を求めよ．\n\\item ハイゼンベルク固定点が安定になる $N$ の範囲を求めよ．\n\\item 3次元の磁性体（$N=3$）について，この近似の結論を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\epsilon\\dfrac{N-4}{N+8}$　(2) $N<4$　(3) 等方的な振る舞いが長距離で回復する（この次数では）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\epsilon-\\dfrac{6}{\\pi^2}\\cdot\\dfrac{2\\pi^2\\epsilon}{N+8}=\\boldsymbol{\\epsilon\\dfrac{N-4}{N+8}}$．\n\n(2) 負なら無関係：$\\boldsymbol{N<4}$．\n\n(3) $N=3$ では立方異方性は無関係で，ハイゼンベルクの普遍性（高次の補正では $N_c\\approx3$ で微妙）．"
+   }
+  ],
+  "idea": {
+   "tex": "固定点のまわりの線形化で，対称性を破る摂動が有意かどうかが決まる．原題の4つの固定点の分類の中から，ハイゼンベルク固定点の安定性に焦点を当てた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ε ((N -4)/(N +8))\n(2) N<4\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "立方異方性",
+   "固定点の安定性",
+   "繰り込み群",
+   "臨界次元"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "サイン＝ゴルドン模型の cos βφ のスケーリング次元",
+  "topic": "サイン＝ゴルドン模型の cos βφ のスケーリング次元",
+  "statement": {
+   "tex": "2次元のガウス模型 $\\frac12(\\nabla\\phi)^2$ で，演算子 $\\cos\\beta\\phi$ のスケーリング次元は $\\Delta=\\dfrac{\\beta^2}{4\\pi}$ である．\n\\begin{enumerate}\n\\item $\\cos\\beta\\phi$ が有意になる条件を求めよ．\n\\item 繰り込み群の1ステップで係数が $\\zeta^{2-\\Delta}$ 倍になることから，$\\lambda(s)$ の振る舞いを述べよ．\n\\item $\\beta^2=4\\pi$ のときの $\\Delta$ を求めよ（この点は自由フェルミオンと等価）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta^2<8\\pi$　(2) $\\lambda\\propto e^{(2-\\Delta)s}$　(3) $1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Delta<2$：$\\boldsymbol{\\beta^2<8\\pi}$．\n\n(2) $\\boldsymbol{\\lambda(s)=\\lambda_0e^{(2-\\beta^2/4\\pi)s}}$：$\\beta^2<8\\pi$ で増大（質量ギャップ），$>8\\pi$ で減衰（ガウス的）．$\\beta^2=8\\pi$ がコステリッツ＝サウレス転移．\n\n(3) $\\boldsymbol1$（質量のあるディラックフェルミオンの質量項 $\\bar\\psi\\psi$ の次元）．"
+   }
+  ],
+  "idea": {
+   "tex": "2次元のガウス模型では頂点演算子の次元が結合定数で連続的に変わり，ある値で有意から無関係に変わる．原題の導出を，次元の公式の応用にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) β^2<8π\n(2) 記述\n(3) 1"
+  },
+  "methods": [],
+  "tags": [
+   "サイン＝ゴルドン模型",
+   "スケーリング次元",
+   "KT転移",
+   "自由フェルミオン"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "膜の曲げ剛性の繰り込みと持続長",
+  "topic": "膜の曲げ剛性の繰り込みと持続長",
+  "statement": {
+   "tex": "熱ゆらぎで2次元の膜の曲げ剛性（$k_BT$ 単位）が $\\dfrac{d\\lambda}{ds}\\approx-\\dfrac{5}{4\\pi}$（$\\zeta=e^s$）で流れる．\n\\begin{enumerate}\n\\item $\\lambda(s)$ を求めよ．\n\\item 剛性が $0$ になる長さ（持続長）$\\xi_p$ を，格子の長さ $a$ と $\\lambda_0$ で表せ．\n\\item $\\lambda_0=2$ と $\\lambda_0=20$ で $\\xi_p/a$ を求め，生体膜（$\\lambda_0\\sim20$）の結論を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda_0-\\frac{5s}{4\\pi}$　(2) $\\xi_p=ae^{4\\pi\\lambda_0/5}$　(3) $\\approx150$，$\\approx10^{22}$；実際上は平ら"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol{\\lambda=\\lambda_0-\\frac{5}{4\\pi}s}$（長距離ほど柔らかい）．\n\n(2) $s^*=\\frac{4\\pi\\lambda_0}5$：$\\boldsymbol{\\xi_p=ae^{4\\pi\\lambda_0/5}}$．\n\n(3) $\\lambda_0=2$：$e^{5.03}\\approx\\boldsymbol{150}$．$\\lambda_0=20$：$e^{50}\\approx\\boldsymbol{10^{22}}$ で，細胞の大きさでは平らに見える．"
+   }
+  ],
+  "idea": {
+   "tex": "熱ゆらぎは膜を長距離で柔らかくし，持続長は剛性に指数関数的に依存する．原題の流れの式の導出を，持続長の評価にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) λ_0 -((5 s)/(4 pi))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "膜",
+   "曲げ剛性",
+   "繰り込み群",
+   "持続長"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 35,
+  "theme": "2つのイジング秩序変数の結合：分離した固定点の不安定性",
+  "topic": "2つのイジング秩序変数の結合：分離した固定点の不安定性",
+  "statement": {
+   "tex": "$\\dfrac{dg_i}{ds}=\\epsilon g_i-(36g_i^2+\\lambda^2)I$，$\\dfrac{d\\lambda}{ds}=\\epsilon\\lambda-(8\\lambda^2+12\\lambda g_1+12\\lambda g_2)I$ とする．\n\\begin{enumerate}\n\\item 分離したイジング固定点（$g_1=g_2=\\frac{\\epsilon}{36I}$，$\\lambda=0$）で $\\lambda$ の方向の固有値を求めよ．\n\\item $O(2)$ 固定点（$\\lambda=2g$）の値を求め，$O(2)$ 対称な形 $g(\\phi_1^2+\\phi_2^2)^2$ と一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac\\epsilon3>0$（不安定）　(2) $g=\\frac{\\epsilon}{40I}$，$\\lambda=\\frac{\\epsilon}{20I}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\epsilon-24gI=\\epsilon-\\frac{24}{36}\\epsilon=\\boldsymbol{\\frac\\epsilon3}$：結合は有意で分離した固定点は不安定．\n\n(2) $\\lambda=2g$ を入れると $\\epsilon=40gI$ が両方の式で成り立つ：$\\boldsymbol{g=\\epsilon/40I}$，$\\boldsymbol{\\lambda=\\epsilon/20I}$．$(\\phi_1^2+\\phi_2^2)^2=\\phi_1^4+\\phi_2^4+2\\phi_1^2\\phi_2^2$ と一致．"
+   }
+  ],
+  "idea": {
+   "tex": "2つの秩序変数の結合は分離した固定点では有意で，流れは対称性が拡大した固定点に向かう．原題の固定点の列挙を，安定性の具体的な計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (ε/3)>0\n(2) $g$：((ε)/(40 I)) ; $\\lambda$：((ε)/(20 I))"
+  },
+  "methods": [],
+  "tags": [
+   "結合した秩序変数",
+   "固定点",
+   "対称性の拡大",
+   "繰り込み群"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 30,
+  "theme": "Bragg-Williams近似の意味と無限長距離模型",
+  "topic": "Bragg-Williams近似の意味と無限長距離模型",
+  "statement": {
+   "tex": "Ising 模型 $E=-\\varepsilon\\sum_{\\langle i,j\\rangle}s_is_j-B\\sum_is_i$（格子点数 $N$，最近接点数 $\\gamma$）において，Bragg–Williams 近似は $+$ スピン対の割合を $\\dfrac{N_{++}}{\\gamma N/2}\\approx\\left(\\dfrac{N_+}{N}\\right)^2$ とおくものである．$L=2N_+/N-1$ とする．\n\\begin{enumerate}\n\\item $N_+$ を固定し，$+$ スピン $N_+$ 個を $N$ 個の格子点にあらゆる仕方で（等確率で）配置したとき，$N_{++}$ の平均値を厳密に求めよ．$N\\to\\infty$（$L$ 固定）でそれが Bragg–Williams の値になることを示せ．\n\\item 全スピン対が等しく相互作用する模型（Curie–Weiss 模型）\n\\[ E_{\\rm CW}=-\\frac{J}{N}\\sum_{i<j}s_is_j-B\\sum_is_i \\]\nのエネルギーを $L$ だけで厳密に表せ．\n\\item (2) の模型の分配関数を $L$ についての和として書き，$J=\\gamma\\varepsilon$ とおくと，$N\\to\\infty$ で 1 スピンあたりの自由エネルギーが Bragg–Williams 近似の Ising 模型のものと一致することを示せ．このことから Bragg–Williams 近似が無視しているものは何か述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle N_{++}\\rangle=\\dfrac{\\gamma N}{2}\\dfrac{N_+(N_+-1)}{N(N-1)}\\to\\dfrac{\\gamma N}{2}\\left(\\dfrac{N_+}{N}\\right)^2$　(2) $E_{\\rm CW}=-\\dfrac{J}{2}(NL^2-1)-BNL$　(3) $Z=\\sum_L\\dfrac{N!}{N_+!N_-!}e^{\\beta N(JL^2/2+BL)}\\times$定数，$f=-\\frac J2L_m^2-BL_m+\\frac{k_BT}{2}\\big[(1+L_m)\\log\\frac{1+L_m}{2}+(1-L_m)\\log\\frac{1-L_m}{2}\\big]$ が一致．BW は近接スピン間の相関（短距離秩序の揺らぎ）を無視している．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 特定の最近接対 $(i,j)$ が両方 $+$ になる確率は，$N_+$ 個を $N$ 点に無作為に置くとき $\\dfrac{N_+}{N}\\cdot\\dfrac{N_+-1}{N-1}$．対の数は $\\gamma N/2$ だから，期待値の線形性より\n\\[ \\langle N_{++}\\rangle=\\frac{\\gamma N}{2}\\frac{N_+(N_+-1)}{N(N-1)}. \\]\n$N\\to\\infty$ で $N_+/N=(1+L)/2$ を固定すると $\\to\\dfrac{\\gamma N}{2}\\left(\\dfrac{1+L}{2}\\right)^2$，すなわち $\\sigma=\\frac12(L+1)^2-1$ で Bragg–Williams の仮定と一致する．つまり BW 近似は「与えられた $L$ をもつ配置のエネルギーを，その $L$ の全配置にわたる単純平均で置き換える」近似である．\n\n(2) $\\left(\\sum_is_i\\right)^2=N+2\\sum_{i<j}s_is_j$ と $\\sum_is_i=NL$ より $\\sum_{i<j}s_is_j=\\dfrac{N^2L^2-N}{2}$．\n\\[ E_{\\rm CW}=-\\frac{J}{2N}(N^2L^2-N)-BNL=-\\frac J2(NL^2-1)-BNL. \\]\nエネルギーは配置によらず $L$ だけで決まる（相関を無視する必要がない）．\n\n(3) 同じ $L$ を持つ配置の数は $\\dfrac{N!}{N_+!N_-!}$ だから\n\\[ Z_{\\rm CW}=e^{-\\beta J/2}\\sum_{L}\\frac{N!}{\\{N(1+L)/2\\}!\\{N(1-L)/2\\}!}\\exp\\left[\\beta N\\left(\\frac J2L^2+BL\\right)\\right]. \\]\n$J=\\gamma\\varepsilon$ とおくと，これは Bragg–Williams 近似の Ising 模型の分配関数 $\\sum_L\\frac{N!}{N_+!N_-!}\\exp[\\beta N(\\frac12\\varepsilon\\gamma L^2+BL)]$ と定数因子 $e^{-\\beta J/2}$（1 スピンあたり $O(1/N)$）しか違わない．最大項で評価し Stirling 公式を使えば 1 スピンあたりの自由エネルギーは解答欄の $f$ で一致する．\nしたがって BW 近似は短距離模型を「全員と弱く相互作用する模型」に置き換えるものであり，近接スピンが同じ向きにそろいやすいという相関（$N_{++}$ の平均値からのずれ，短距離秩序）を無視している．そのため臨界温度を過大に見積もり（例：1 次元でも $T_c=\\gamma\\varepsilon/k_B\\neq0$ を与える），臨界指数も平均場の値になる．"
+   }
+  ],
+  "idea": {
+   "tex": "BW 近似は「固定した $L$ での無作為配置平均」であり，それは全対相互作用の Curie–Weiss 模型では厳密になる．近似の意味を2つの角度から特定する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $E_{\\rm CW}$：-((J)/(2))(N L ^(2)-1)- B N L\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Ising模型",
+   "Bragg-Williams近似",
+   "Curie-Weiss模型",
+   "平均場近似",
+   "短距離秩序"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 35,
+  "theme": "平均場Ising模型の臨界指数と振幅比",
+  "topic": "平均場Ising模型の臨界指数と振幅比",
+  "statement": {
+   "tex": "Bragg–Williams 近似の Ising 模型では，長距離秩序 $L$（1 スピンあたりの磁化）が\n\\[ L=\\tanh\\frac{B+k_BT_cL}{k_BT},\\qquad k_BT_c=\\gamma\\varepsilon \\]\nで決まり，1 スピンあたりの内部エネルギーは $B=0$ で $u=-\\frac12k_BT_cL^2$ である．\n\\begin{enumerate}\n\\item $B=0$ で，$T\\to T_c-0$ における $L^2$ を $t=1-T/T_c$ の 1 次まで求め，比熱 $C/(Nk_B)$ が $T_c$ でとる跳びを求めよ．\n\\item $T=T_c$ の臨界等温線上で，弱磁場での $L$ を $B$ の関数として求めよ（臨界指数 $\\delta$）．\n\\item 帯磁率 $\\chi=(\\partial L/\\partial B)_{T}|_{B\\to0}$ を $T_c$ の上下で求め，$\\chi=\\dfrac{A_\\pm}{k_B|T-T_c|}$ と書いたときの振幅比 $A_+/A_-$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L^2\\simeq3t$，$\\Delta C=\\frac32Nk_B$（$T_c$ 以下で $\\frac32Nk_B$，以上で 0）　(2) $L\\simeq\\left(\\dfrac{3B}{k_BT_c}\\right)^{1/3}$（$\\delta=3$）　(3) $T>T_c$：$\\chi=\\dfrac{1}{k_B(T-T_c)}$，$T<T_c$：$\\chi=\\dfrac{1}{2k_B(T_c-T)}$，$A_+/A_-=2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "以下 $b=B/k_BT$，$\\tau=T/T_c$ とし，$\\tanh^{-1}L=L+\\frac{L^3}{3}+\\cdots$ を用いて自己無撞着方程式を $\\tanh^{-1}L=b+L/\\tau$ と書く．\n\n(1) $B=0$：$L+\\frac{L^3}{3}=\\frac{L}{\\tau}$ より $L^2=3\\left(\\frac1\\tau-1\\right)\\simeq3t$（$t\\ll1$）．$u=-\\frac12k_BT_cL^2\\simeq-\\frac32k_BT_c\\left(1-\\frac{T}{T_c}\\right)$ なので\n\\[ \\frac{C}{N}=\\frac{du}{dT}=\\frac32k_B\\quad(T\\to T_c-0). \\]\n$T>T_c$ では $L=0$，$u=0$ で $C=0$．よって比熱は $T_c$ で $\\frac32Nk_B$ だけ跳ぶ．\n\n(2) $\\tau=1$：$L+\\frac{L^3}{3}=b+L$ より $L^3=3b$，$L\\simeq\\left(\\dfrac{3B}{k_BT_c}\\right)^{1/3}$．$B\\propto L^\\delta$ で $\\delta=3$．\n\n(3) $L=L_0+\\delta L$ として $b$ の 1 次まで展開すると，$\\dfrac{d}{dL}\\tanh^{-1}L=\\dfrac1{1-L^2}$ より $\\dfrac{\\delta L}{1-L_0^2}=b+\\dfrac{\\delta L}{\\tau}$．\n$T>T_c$（$L_0=0$）：$\\delta L\\left(1-\\frac1\\tau\\right)=b$ より\n\\[ \\chi=\\frac{1}{k_BT}\\frac{\\tau}{\\tau-1}=\\frac{1}{k_B(T-T_c)}. \\]\n$T<T_c$：$\\dfrac{1}{1-L_0^2}\\simeq1+L_0^2\\simeq1+3t$，$\\frac1\\tau\\simeq1+t$ より $\\delta L(3t-t)=b$，\n\\[ \\chi=\\frac{1}{2t\\,k_BT}\\simeq\\frac{1}{2k_B(T_c-T)}. \\]\nしたがって $A_+=1$，$A_-=\\frac12$，$A_+/A_-=2$（平均場理論の普遍振幅比）．秩序相では非線形項 $L^3/3$ が復元力を強めるため，同じ $|T-T_c|$ でも応答が半分になる．"
+   }
+  ],
+  "idea": {
+   "tex": "自己無撞着方程式を $L$ について 3 次まで展開すると，比熱の跳び $\\frac32Nk_B$，$\\delta=3$，帯磁率の振幅比 2 といった平均場の普遍量が一挙に得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Ising模型",
+   "平均場近似",
+   "臨界指数",
+   "帯磁率",
+   "比熱の跳び"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 40,
+  "theme": "1次元イジング環：転送行列・相関長・比熱の極大",
+  "topic": "1次元イジング環：転送行列・相関長・比熱の極大",
+  "statement": {
+   "tex": "$N$ 個のイジングスピン $\\sigma_j=\\pm1$ が環状に並び，ハミルトニアンが $H=-J\\sum_{j=1}^N\\sigma_j\\sigma_{j+1}$（$J>0$，$\\sigma_{N+1}\\equiv\\sigma_1$）で与えられる．温度 $T$ で $K=J/(k_BT)$ とおく．\n\\begin{enumerate}\n\\item 転送行列 $\\mathsf T_{\\sigma\\sigma'}=e^{K\\sigma\\sigma'}$ を用いて，有限の $N$ で厳密に\n\\[\nZ_N=(2\\cosh K)^N+(2\\sinh K)^N\n\\]\nとなることを示せ．熱力学極限で自由エネルギーが $F=-Nk_BT\\log(2\\cosh K)$ になることを確かめよ．\n\\item 距離 $r$（$0\\le r\\le N$）離れたスピンの相関 $\\langle\\sigma_1\\sigma_{1+r}\\rangle$ を有限の $N$ で求めよ．$N\\to\\infty$ での相関長 $\\xi$（格子間隔単位，$\\langle\\sigma_1\\sigma_{1+r}\\rangle\\propto e^{-r/\\xi}$）を求め，低温 $K\\gg1$ での漸近形を示せ．\n\\item 熱力学極限での比熱 $C$ を求めよ．$C$ が極大となる温度は方程式 $K\\tanh K=1$ の解 $K_*$ で決まることを示し，極大値 $C_{\\max}/(Nk_B)$ を $K_*$ だけの簡単な式で表せ．数値も求めよ．\n\\item 有限環で自由エネルギーが熱力学極限の値からずれる量 $\\delta F=F_N-F_\\infty$ を求め，これが無視できなくなる条件を $N$ と $\\xi$ の関係で述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 固有値 $2\\cosh K,\\ 2\\sinh K$ で $Z_N=\\mathrm{Tr}\\,\\mathsf T^N$　(2) $\\langle\\sigma_1\\sigma_{1+r}\\rangle=\\dfrac{\\tanh^rK+\\tanh^{N-r}K}{1+\\tanh^NK}$，$\\xi=-1/\\log\\tanh K\\simeq\\tfrac12e^{2K}$　(3) $C=Nk_BK^2\\,\\mathrm{sech}^2K$，$C_{\\max}/(Nk_B)=K_*^2-1\\approx0.439$（$K_*\\approx1.200$，$k_BT/J\\approx0.834$）　(4) $\\delta F=-k_BT\\log(1+\\tanh^NK)$，$N\\lesssim\\xi$ で無視できない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathsf T=\\begin{pmatrix}e^K&e^{-K}\\\\e^{-K}&e^K\\end{pmatrix}$．$Z_N=\\sum_{\\{\\sigma\\}}\\prod_j\\mathsf T_{\\sigma_j\\sigma_{j+1}}=\\mathrm{Tr}\\,\\mathsf T^N$．固有値は $\\lambda_\\pm=e^K\\pm e^{-K}$，すなわち $\\lambda_+=2\\cosh K$，$\\lambda_-=2\\sinh K$（固有ベクトル $(1,\\pm1)/\\sqrt2$）．よって $Z_N=\\lambda_+^N+\\lambda_-^N$．$0<\\tanh K<1$ なので $N\\to\\infty$ で $\\lambda_-^N/\\lambda_+^N\\to0$，$F=-k_BT\\log Z_N\\to-Nk_BT\\log(2\\cosh K)$．\n\n(2) $\\mathsf S=\\mathrm{diag}(1,-1)$ とすると $\\langle\\sigma_1\\sigma_{1+r}\\rangle=\\mathrm{Tr}(\\mathsf S\\mathsf T^r\\mathsf S\\mathsf T^{N-r})/Z_N$．$\\mathsf S$ は固有ベクトル $(1,1)/\\sqrt2$ と $(1,-1)/\\sqrt2$ を入れ替えるので，固有基底で $\\mathsf S=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$，\n\\[\n\\mathrm{Tr}(\\mathsf S\\mathsf T^r\\mathsf S\\mathsf T^{N-r})=\\lambda_-^r\\lambda_+^{N-r}+\\lambda_+^r\\lambda_-^{N-r}.\n\\]\n$\\lambda_+^N$ で割って\n\\[\n\\langle\\sigma_1\\sigma_{1+r}\\rangle=\\frac{\\tanh^rK+\\tanh^{N-r}K}{1+\\tanh^NK}.\n\\]\n（$r=0,N$ で 1 となり，環の対称性 $r\\leftrightarrow N-r$ も満たす．）$N\\to\\infty$ で $\\tanh^rK=e^{-r/\\xi}$，$\\xi=-1/\\log\\tanh K$．$K\\gg1$ では $\\tanh K\\simeq1-2e^{-2K}$ より $\\xi\\simeq\\tfrac12e^{2K}$（低温で指数関数的に長くなるが，有限温度で発散はしない＝相転移なし）．\n\n(3) $U=-\\partial\\log Z/\\partial\\beta=-NJ\\tanh K$．$C=dU/dT=Nk_BK^2\\,\\mathrm{sech}^2K$．\n$g(K)=K^2\\mathrm{sech}^2K$ として $g'=2K\\,\\mathrm{sech}^2K(1-K\\tanh K)=0$ より $K_*\\tanh K_*=1$．このとき $\\mathrm{sech}^2K_*=1-\\tanh^2K_*=1-1/K_*^2$ なので\n\\[\n\\frac{C_{\\max}}{Nk_B}=K_*^2\\left(1-\\frac1{K_*^2}\\right)=K_*^2-1 .\n\\]\n数値的に $K_*\\approx1.1997$，$k_BT/J\\approx0.834$，$C_{\\max}/(Nk_B)\\approx0.439$．（相転移ではなくショットキー型のなだらかな山である．）\n\n(4) $F_N=-k_BT\\log\\{\\lambda_+^N(1+\\tanh^NK)\\}$ より $\\delta F=-k_BT\\log(1+\\tanh^NK)=-k_BT\\log(1+e^{-N/\\xi})$．$N\\gg\\xi$ では指数関数的に小さく，$N\\lesssim\\xi$（低温で相関長が環の周長に達する）と $O(k_BT)$ の補正になる．"
+   }
+  ],
+  "idea": {
+   "tex": "転送行列の 2 つの固有値 $2\\cosh K,2\\sinh K$ がすべてを決め，比 $\\tanh K$ が相関長を与える．比熱極大の条件 $K\\tanh K=1$ から極大値が $K_*^2-1$ と閉じた形になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "イジング模型",
+   "転送行列",
+   "相関関数",
+   "相関長",
+   "比熱",
+   "ショットキー型"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 3,
+  "minutes": 40,
+  "theme": "ローレンツ空洞場・オンサーガー空洞場と分極破局",
+  "topic": "ローレンツ空洞場・オンサーガー空洞場と分極破局",
+  "statement": {
+   "tex": "誘電率 $\\varepsilon$ の一様等方な誘電体の内部に一様な（巨視的）電場 $\\boldsymbol E$ があり，分極は $\\boldsymbol P=(\\varepsilon-\\varepsilon_0)\\boldsymbol E$ である．誘電体の中に小さな空洞を作り，その中心の電場を考える（空洞内は真空とする）．\n\\begin{enumerate}\n\\item 周囲の分極を変えずに（分極を凍結したまま）空洞を切り出す．空洞が (a) 球，(b) $\\boldsymbol E$ に平行な細長い針，(c) $\\boldsymbol E$ に垂直な薄い円板 のとき，中心の電場をそれぞれ $\\boldsymbol E,\\boldsymbol P$ で表せ．\n\\item 球形空洞を作った後，周囲の誘電体が新しい境界条件に応じて分極し直す場合（遠方の電場は $\\boldsymbol E$ のまま）の空洞内の電場 $\\boldsymbol E_c$ を求めよ．$\\varepsilon\\to\\infty$ の極限で (1)(a) と比較せよ．\n\\item 永久双極子モーメント $\\mu$ をもつ分子が数密度 $n$ で存在し，各分子は (1)(a) の局所場 $\\boldsymbol E_{\\mathrm L}$ の中で温度 $T$ の熱平衡にあるとする（誘起分極は無視）．$\\mu E_{\\mathrm L}\\ll k_BT$ として，$\\boldsymbol P$ と $\\boldsymbol E$ の関係を自己無撞着に求め，電気感受率 $\\chi=P/(\\varepsilon_0E)$ を $T_c\\equiv\\dfrac{n\\mu^2}{9\\varepsilon_0k_B}$ を用いて表せ．\n\\item (3) の結果は $T\\to T_c$ で何を予言するか．水（$n=3.34\\times10^{28}\\ \\mathrm{m^{-3}}$，$\\mu=6.17\\times10^{-30}\\ \\mathrm{C\\,m}$）について $T_c$ を見積もり，この予言の妥当性を論じよ（$\\varepsilon_0=8.85\\times10^{-12}\\ \\mathrm{F/m}$，$k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) (a) $\\boldsymbol E+\\dfrac{\\boldsymbol P}{3\\varepsilon_0}$，(b) $\\boldsymbol E$，(c) $\\boldsymbol E+\\dfrac{\\boldsymbol P}{\\varepsilon_0}=\\dfrac{\\boldsymbol D}{\\varepsilon_0}$　(2) $\\boldsymbol E_c=\\dfrac{3\\varepsilon}{2\\varepsilon+\\varepsilon_0}\\boldsymbol E$（$\\varepsilon\\to\\infty$ で $\\tfrac32E$ に有界，ローレンツ場は発散）　(3) $\\chi=\\dfrac{3T_c}{T-T_c}$　(4) $T\\to T_c$ で $\\chi\\to\\infty$（自発分極）を予言；水で $T_c\\approx1.2\\times10^3\\ \\mathrm K$ となり室温で強誘電体になるという誤った結論（ローレンツ場の過大評価）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 凍結した分極のまま穴を開けると，穴の電場は「一様分極した同形の誘電体片を取り除いた」ことに相当し，取り除いた片が作っていた反分極場 $-N\\boldsymbol P/\\varepsilon_0$（$N$ は反電場係数）を差し引くので $\\boldsymbol E_{\\rm cav}=\\boldsymbol E+N\\boldsymbol P/\\varepsilon_0$．\n(a) 球 $N=1/3$：$\\boldsymbol E+\\boldsymbol P/(3\\varepsilon_0)$．（空洞表面の分極電荷 $\\sigma=-P\\cos\\theta$ が中心に作る場 $\\dfrac{P}{2\\varepsilon_0}\\int_0^\\pi\\cos^2\\theta\\sin\\theta\\,d\\theta=\\dfrac{P}{3\\varepsilon_0}$ としても得られる．）\n(b) 針 $N=0$：$\\boldsymbol E$（電場の接線成分の連続）．\n(c) 円板 $N=1$：$\\boldsymbol E+\\boldsymbol P/\\varepsilon_0=\\boldsymbol D/\\varepsilon_0$（電束密度の法線成分の連続）．\n\n(2) 電位を空洞内 $\\varphi_{\\rm in}=-Ar\\cos\\theta$，外 $\\varphi_{\\rm out}=\\left(-Er+\\dfrac{B}{r^2}\\right)\\cos\\theta$ とおく．$r=R$ で $\\varphi$ 連続：$-AR=-ER+B/R^2$，$D_r$ 連続：$-\\varepsilon_0A=\\varepsilon\\left(-E-2B/R^3\\right)$．解いて\n\\[\nA=\\frac{3\\varepsilon}{2\\varepsilon+\\varepsilon_0}E .\n\\]\nローレンツ場 $E+P/(3\\varepsilon_0)=\\dfrac{\\varepsilon+2\\varepsilon_0}{3\\varepsilon_0}E$ は $\\varepsilon\\to\\infty$ で発散するが，$E_c\\to\\tfrac32E$ は有界．周囲が分極し直すことで空洞場が遮蔽される．\n\n(3) 局所場 $E_{\\mathrm L}$ 中の双極子のエネルギーは $-\\mu E_{\\mathrm L}\\cos\\theta$．ボルツマン分布で\n\\[\n\\langle\\mu\\cos\\theta\\rangle=\\mu\\left(\\coth x-\\frac1x\\right)\\approx\\frac{\\mu x}{3}=\\frac{\\mu^2E_{\\mathrm L}}{3k_BT}\\quad\\left(x=\\frac{\\mu E_{\\mathrm L}}{k_BT}\\ll1\\right).\n\\]\n$P=\\dfrac{n\\mu^2}{3k_BT}\\left(E+\\dfrac{P}{3\\varepsilon_0}\\right)$ を $P$ について解くと\n\\[\nP=\\frac{n\\mu^2/(3k_BT)}{1-n\\mu^2/(9\\varepsilon_0k_BT)}E,\\qquad\n\\chi=\\frac{3T_c/T}{1-T_c/T}=\\frac{3T_c}{T-T_c}.\n\\]\n\n(4) キュリー・ワイス型で，$T\\to T_c$ で $\\chi\\to\\infty$，すなわち外場なしでも有限の分極が自己維持される（強誘電転移，「分極破局」）を予言する．水では\n\\[\nT_c=\\frac{3.34\\times10^{28}\\times(6.17\\times10^{-30})^2}{9\\times8.85\\times10^{-12}\\times1.38\\times10^{-23}}\\approx1.2\\times10^3\\ \\mathrm K\n\\]\nとなり，室温の水が強誘電体になるという事実に反する結論になる（実際の水は $\\varepsilon/\\varepsilon_0\\approx80$ の常誘電体）．ローレンツ場は双極子自身が周囲に誘起した分極（反作用場）まで分子を整列させる場として数えてしまい過大評価になる．(2) のオンサーガー空洞場を使うとこの破局は生じない．"
+   }
+  ],
+  "idea": {
+   "tex": "「分極を凍結して空洞を切り出す」ローレンツ場は空洞の形で変わり，周囲が緩和するオンサーガー場とも異なる．ローレンツ場で永久双極子を自己無撞着に扱うとキュリー・ワイス型の偽の強誘電転移（分極破局）が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\chi$：((3 T_c)/(T - T_c))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ローレンツ局所場",
+   "オンサーガー空洞場",
+   "反電場係数",
+   "ランジュバン関数",
+   "分極破局",
+   "キュリー・ワイス則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -640,6 +2157,57 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-04-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-39",
+  "level": 4,
+  "minutes": 55,
+  "theme": "スピン1平均場模型（ブルーム・キャペル）の三重臨界点",
+  "topic": "スピン1平均場模型（ブルーム・キャペル）の三重臨界点",
+  "statement": {
+   "tex": "$N$ 個のスピン $\\sigma_j\\in\\{+1,0,-1\\}$ からなる系のハミルトニアンを\n\\[\n\\mathcal H=-\\frac{J}{2N}\\left(\\sum_{j=1}^N\\sigma_j\\right)^2+D\\sum_{j=1}^N\\sigma_j^2\\qquad(J>0,\\ D\\ge0)\n\\]\nとする（全スピン間に一様な相互作用 $J/N$，$D$ は $\\sigma=0$ を有利にする単イオン異方性）．$N\\gg1$ とし，スターリングの公式 $\\ln N!\\simeq N\\ln N-N$ を用いてよい．$\\beta=1/k_{\\rm B}T$，$a=e^{-\\beta D}$ とおく．\n\\begin{enumerate}\n\\item $\\sigma=+1,0,-1$ のスピン数を $N_+,N_0,N_-$ とし，$m=(N_+-N_-)/N$，$Q=(N_++N_-)/N$ とする．1スピン当たりの自由エネルギー $f(m,Q)=u-Ts$ を $m,Q$ で表せ．\n\\item $f$ を $Q$ と $m$ について停留させることにより，平衡の磁化 $m$ が満たす自己無撞着方程式\n\\[\nm=\\frac{2a\\sinh(\\beta Jm)}{1+2a\\cosh(\\beta Jm)}\n\\]\nを導け．\n\\item $D=0$ のときの転移温度 $T_{\\rm c}$ を求めよ．また一般の $D$ で $m=0$ が不安定化する（2次転移の）条件を $T$ と $D$ の関係として求めよ．\n\\item 平衡状態は関数 $\\Phi(m)=\\dfrac J2m^2-k_{\\rm B}T\\ln\\left[1+2a\\cosh(\\beta Jm)\\right]$ の最小点で与えられることが知られている（その停留条件は (2) の方程式と一致する）．$\\Phi$ を $m$ について4次まで展開し，$m^4$ の係数の符号が変わる点として三重臨界点 $(T_{\\rm t},D_{\\rm t})$ を求めよ．\n\\item $T=0$ で秩序相（$m\\neq0$）が基底状態となる $D$ の範囲を求めよ．また $D_{\\rm t}<D<J/2$ では転移がどのようになるかを (4) をもとに説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f=-\\dfrac J2m^2+DQ+k_{\\rm B}T\\left[\\dfrac{Q+m}2\\ln\\dfrac{Q+m}2+\\dfrac{Q-m}2\\ln\\dfrac{Q-m}2+(1-Q)\\ln(1-Q)\\right]$　(2) 証明（解説参照）　(3) $k_{\\rm B}T_{\\rm c}=\\dfrac{2J}{3}$；2次転移線 $\\dfrac{2a}{1+2a}=\\dfrac{k_{\\rm B}T}{J}$，すなわち $D=k_{\\rm B}T\\ln\\dfrac{2(J-k_{\\rm B}T)}{k_{\\rm B}T}$　(4) $m^4$ の係数 $\\propto(4a-1)$；$k_{\\rm B}T_{\\rm t}=\\dfrac J3$，$D_{\\rm t}=\\dfrac{2J}{3}\\ln2\\simeq0.462J$　(5) $D<J/2$．$D_{\\rm t}<D<J/2$ では $m$ が有限の値から $0$ へ跳ぶ1次転移になる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) エネルギーは $\\sum_j\\sigma_j=Nm$，$\\sum_j\\sigma_j^2=NQ$ より $u=-\\dfrac J2m^2+DQ$．状態数は $W=\\dfrac{N!}{N_+!N_0!N_-!}$ で，$N_\\pm=N\\dfrac{Q\\pm m}{2}$，$N_0=N(1-Q)$．スターリングの公式より $s=k_{\\rm B}\\ln W/N=-k_{\\rm B}\\sum_\\alpha p_\\alpha\\ln p_\\alpha$（$p_\\pm=\\tfrac{Q\\pm m}2$，$p_0=1-Q$）．よって\n\\[\nf(m,Q)=-\\frac J2m^2+DQ+k_{\\rm B}T\\left[p_+\\ln p_++p_-\\ln p_-+p_0\\ln p_0\\right].\n\\]\n\n(2) $\\partial f/\\partial Q=0$：$D+\\dfrac{k_{\\rm B}T}{2}\\ln\\dfrac{p_+p_-}{p_0^2}=0$ より $p_+p_-=a^2p_0^2$．\n$\\partial f/\\partial m=0$：$-Jm+\\dfrac{k_{\\rm B}T}{2}\\ln\\dfrac{p_+}{p_-}=0$ より $p_+/p_-=e^{2\\beta Jm}$．\n両式から $p_\\pm=a\\,p_0\\,e^{\\pm\\beta Jm}$．規格化 $p_++p_0+p_-=1$ より $p_0=\\dfrac1{1+2a\\cosh\\beta Jm}$．したがって\n\\[\nm=p_+-p_-=\\frac{2a\\sinh(\\beta Jm)}{1+2a\\cosh(\\beta Jm)} .\n\\]\nこれは有効磁場 $Jm$ 中の単一スピンの熱平均 $\\langle\\sigma\\rangle$ に等しい．\n\n(3) 右辺を $m$ で展開すると1次の係数は $\\beta J\\dfrac{2a}{1+2a}$．$m=0$ 以外の解が連続的に生じる（2次転移）条件は傾きが $1$：\n\\[\n\\frac{2a}{1+2a}=\\frac{k_{\\rm B}T}{J}\\iff a=\\frac{k_{\\rm B}T}{2(J-k_{\\rm B}T)}\\iff D=k_{\\rm B}T\\ln\\frac{2(J-k_{\\rm B}T)}{k_{\\rm B}T}.\n\\]\n$D=0$（$a=1$）では $k_{\\rm B}T_{\\rm c}=2J/3$（スピン $\\pm1$ だけのイジング模型の $J$ より小さい．$\\sigma=0$ の状態がエントロピーを稼ぎ秩序を壊すため）．\n\n(4) $h=\\beta Jm$ として $\\ln(1+2a\\cosh h)$ を展開する．$w=\\dfrac{2a}{1+2a}$（$=\\langle\\sigma^2\\rangle_0$）とおくと，単一スピン分布のキュムラントにより\n\\[\n\\ln(1+2a\\cosh h)=\\ln(1+2a)+\\frac{w}{2}h^2+\\frac{w-3w^2}{24}h^4+O(h^6).\n\\]\nよって\n\\[\n\\Phi(m)=\\text{const}+\\frac J2\\left(1-\\beta Jw\\right)m^2-\\frac{\\beta^3J^4}{24}\\,w(1-3w)\\,m^4+\\cdots\n\\]\n$m^4$ の係数は $-\\dfrac{\\beta^3J^4}{24}w(1-3w)=\\dfrac{\\beta^3J^4a(4a-1)}{12(1+2a)^2}$ で，$a>1/4$ で正（2次転移），$a<1/4$ で負となる．三重臨界点は2次の係数と4次の係数が同時に $0$：$w=1/3$（$a=1/4$）かつ $\\beta Jw=1$．よって\n\\[\nk_{\\rm B}T_{\\rm t}=\\frac J3,\\qquad D_{\\rm t}=k_{\\rm B}T_{\\rm t}\\ln4=\\frac{2J}{3}\\ln2\\simeq0.462J .\n\\]\n\n(5) $T=0$ では $f=u$．全スピン $\\sigma=\\pm1$ の揃った状態は $u=-J/2+D$，全 $\\sigma=0$ は $u=0$ なので，秩序相が基底状態となるのは $D<J/2$．$D_{\\rm t}<D<J/2$ では $T=0$ で秩序があるが，$m=0$ のまわりで $m^4$ の係数が負になるため，$m^2$ の係数が正（$m=0$ が局所安定）のうちに有限の $m$ に別の極小が現れ，それが $m=0$ より低くなる温度で磁化は不連続に跳ぶ（1次転移）．例えば $D=0.475J$ で $\\Phi$ を数値的に最小化すると $k_{\\rm B}T\\simeq0.256J$ で $m\\simeq0.71$ から $0$ へ跳ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "スピン1に拡張した平均場模型では，非磁性状態 $\\sigma=0$ の重み $a=e^{-\\beta D}$ によって単一スピン分布の4次キュムラントの符号が変わり，2次転移線が三重臨界点 $(J/3,\\ \\tfrac{2J}{3}\\ln2)$ で1次転移へ切り替わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平均場近似",
+   "イジング模型",
+   "ブルーム・キャペル模型",
+   "三重臨界点",
+   "ランダウ展開",
+   "1次転移"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

@@ -194,6 +194,55 @@
   }
  },
  {
+  "id": "SS-05-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 1,
+  "minutes": 15,
+  "theme": "抵抗温度係数から禁制帯幅と吸収端を求める",
+  "topic": "抵抗温度係数から禁制帯幅と吸収端を求める",
+  "statement": {
+   "tex": "真性シリコン試料の室温 $T=300\\ \\mathrm K$ での抵抗の温度係数 $\\alpha=\\dfrac1\\rho\\dfrac{d\\rho}{dT}$ を測ると $\\alpha=-0.072\\ \\mathrm{K^{-1}}$ であった．抵抗率は $\\rho\\propto\\exp(E_g/2kT)$ に従うとする．\n\\begin{enumerate}\n\\item 禁制帯幅 $E_g$ と，低温での光伝導の長波長限界（しきい波長）$\\lambda_{\\rm th}$ を求めよ．\n\\item この試料の $|\\alpha|$ が銅の抵抗温度係数 $4.3\\times10^{-3}\\ \\mathrm{K^{-1}}$ に等しくなる温度を求めよ（$E_g$ は一定とする）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_g=2kT^2|\\alpha|\\approx1.1\\ \\mathrm{eV}$，$\\lambda_{\\rm th}\\approx1.1\\ \\mu\\mathrm m$　(2) 約 $1.2\\times10^3\\ \\mathrm K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln\\rho=\\text{const}+\\dfrac{E_g}{2kT}$ より $\\alpha=-\\dfrac{E_g}{2kT^2}$．\n\\[\nE_g=2kT^2|\\alpha|=2\\times8.617\\times10^{-5}\\times(300)^2\\times0.072\\approx1.12\\ \\mathrm{eV}.\n\\]\n光子 1 個で電子・正孔対を作る条件 $hc/\\lambda\\ge E_g$ より $\\lambda_{\\rm th}=hc/E_g=1240\\ \\mathrm{eV\\,nm}/1.12\\ \\mathrm{eV}\\approx1.1\\ \\mu\\mathrm m$．\n\n(2) $|\\alpha|=\\dfrac{E_g}{2kT^2}=4.3\\times10^{-3}$ より\n\\[\nT=\\sqrt{\\frac{E_g}{2k\\times4.3\\times10^{-3}}}\\approx1.2\\times10^3\\ \\mathrm K.\n\\]\n$|\\alpha|\\propto T^{-2}$ なので，半導体の抵抗の温度感度は高温ほど小さくなる（サーミスタは低温ほど敏感）．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\rho\\propto e^{E_g/2kT}$ の対数微分 $\\alpha=-E_g/2kT^2$ から，電気測定だけで光学的しきい波長が予言できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [K]：≈1.2e3"
+  },
+  "methods": [],
+  "tags": [
+   "真性半導体",
+   "抵抗温度係数",
+   "禁制帯幅",
+   "光伝導"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-05-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -390,6 +439,556 @@
   }
  },
  {
+  "id": "SS-05-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 30,
+  "theme": "pn接合の空乏層と接合容量の逆問題",
+  "topic": "pn接合の空乏層と接合容量の逆問題",
+  "statement": {
+   "tex": "誘電率 $\\varepsilon$ の一様な媒質中で，電荷密度が $x$ だけに依存し\n\\[\n\\rho(x)=\\begin{cases}-\\rho_1 & (-w_1<x<0)\\\\ +\\rho_2 & (0<x<w_2)\\\\ 0 & (\\text{それ以外})\\end{cases}\\qquad(\\rho_1,\\rho_2>0)\n\\]\nで，$x<-w_1$ と $x>w_2$ では電場が 0 であるとする（半導体 pn 接合の空乏層のモデル）．$V(-w_1)=0$ とする．\n\\begin{enumerate}\n\\item $w_1,w_2$ の間に成り立つ関係を求めよ．\n\\item 電場 $E(x)$ と電位 $V(x)$ を求め，電場の大きさの最大値を求めよ．\n\\item 両端の電位差 $V_0=V(w_2)-V(-w_1)$ が与えられたとき，$w_1,w_2$ を $V_0$ で表せ．\n\\item 単位面積あたりの片側の電荷 $\\sigma=\\rho_1w_1$ を用いて微分容量 $C=d\\sigma/dV_0$ を求め，$C=\\varepsilon/(w_1+w_2)$（厚さ $w_1+w_2$ の平行板コンデンサーと同じ形）となることを示せ．\n\\item $1/C^2$ を $V_0$ に対してプロットすると直線になることを示し，$\\rho_1\\gg\\rho_2$ のとき傾き $s$ から $\\rho_2$ を求める式を与えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho_1w_1=\\rho_2w_2$　(2) $-w_1<x<0$：$E=-\\dfrac{\\rho_1(x+w_1)}{\\varepsilon}$，$V=\\dfrac{\\rho_1(x+w_1)^2}{2\\varepsilon}$；$0<x<w_2$：$E=-\\dfrac{\\rho_2(w_2-x)}{\\varepsilon}$，$V=V_0-\\dfrac{\\rho_2(w_2-x)^2}{2\\varepsilon}$；$|E|_{\\max}=\\rho_1w_1/\\varepsilon$（$x=0$）　(3) $w_1=\\sqrt{\\dfrac{2\\varepsilon V_0\\rho_2}{\\rho_1(\\rho_1+\\rho_2)}}$，$w_2=\\sqrt{\\dfrac{2\\varepsilon V_0\\rho_1}{\\rho_2(\\rho_1+\\rho_2)}}$　(4) $C=\\varepsilon/(w_1+w_2)$　(5) $\\dfrac1{C^2}=\\dfrac{2(\\rho_1+\\rho_2)}{\\varepsilon\\rho_1\\rho_2}V_0$，$\\rho_2=\\dfrac{2}{\\varepsilon s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 両外側で $E=0$ なので，ガウスの法則より空乏層全体の電荷は 0：$\\rho_1w_1=\\rho_2w_2$．\n\n(2) $\\dfrac{dE}{dx}=\\dfrac\\rho\\varepsilon$，$E(-w_1)=0$ から，$-w_1<x<0$ で $E=-\\dfrac{\\rho_1(x+w_1)}{\\varepsilon}$．$0<x<w_2$ で $E(w_2)=0$ から $E=-\\dfrac{\\rho_2(w_2-x)}{\\varepsilon}$．$x=0$ で両者は $-\\rho_1w_1/\\varepsilon=-\\rho_2w_2/\\varepsilon$ と連続．$|E|$ は $x=0$ で最大 $\\rho_1w_1/\\varepsilon$．\n$V=-\\int E\\,dx$ より $-w_1<x<0$ で $V=\\dfrac{\\rho_1(x+w_1)^2}{2\\varepsilon}$，$0<x<w_2$ で $V=V_0-\\dfrac{\\rho_2(w_2-x)^2}{2\\varepsilon}$（$x=0$ での連続性から $V_0$ が (3) の式になる）．\n\n(3) $x=0$ での連続から $V_0=\\dfrac{\\rho_1w_1^2+\\rho_2w_2^2}{2\\varepsilon}$．$w_2=\\rho_1w_1/\\rho_2$ を代入して $V_0=\\dfrac{\\rho_1w_1^2(\\rho_1+\\rho_2)}{2\\varepsilon\\rho_2}$，よって\n$w_1=\\sqrt{\\dfrac{2\\varepsilon V_0\\rho_2}{\\rho_1(\\rho_1+\\rho_2)}}$，$w_2=\\dfrac{\\rho_1}{\\rho_2}w_1=\\sqrt{\\dfrac{2\\varepsilon V_0\\rho_1}{\\rho_2(\\rho_1+\\rho_2)}}$．空乏層幅は $\\sqrt{V_0}$ に比例する．\n\n(4) $\\sigma=\\rho_1w_1=\\sqrt{\\dfrac{2\\varepsilon\\rho_1\\rho_2V_0}{\\rho_1+\\rho_2}}$．$C=\\dfrac{d\\sigma}{dV_0}=\\dfrac{\\sigma}{2V_0}$．一方 $w_1+w_2=\\sigma\\left(\\dfrac1{\\rho_1}+\\dfrac1{\\rho_2}\\right)$ と $V_0=\\dfrac{\\sigma^2}{2\\varepsilon}\\left(\\dfrac1{\\rho_1}+\\dfrac1{\\rho_2}\\right)$ より $\\dfrac{\\sigma}{2V_0}=\\dfrac{\\varepsilon}{\\sigma(1/\\rho_1+1/\\rho_2)}=\\dfrac{\\varepsilon}{w_1+w_2}$．電荷の増減は空乏層の両端でだけ起こるので，平行板コンデンサーと同じ形になる．\n\n(5) $\\dfrac1{C^2}=\\dfrac{(w_1+w_2)^2}{\\varepsilon^2}=\\dfrac{2(\\rho_1+\\rho_2)}{\\varepsilon\\rho_1\\rho_2}V_0$ は $V_0$ に比例．$\\rho_1\\gg\\rho_2$ なら傾き $s\\simeq\\dfrac{2}{\\varepsilon\\rho_2}$，すなわち $\\rho_2=\\dfrac{2}{\\varepsilon s}$（濃度の低い側の電荷密度が容量-電圧測定から決まる）．"
+   }
+  ],
+  "idea": {
+   "tex": "ポアソン方程式の区分積分に電荷中性条件を加えると空乏層幅が $\\sqrt{V_0}$ に比例し，微分容量が平行板と同じ $\\varepsilon/(w_1+w_2)$ になる．$1/C^2$–$V$ 直線から電荷密度を逆算できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\rho_1w_1$：ρ_2 w_2\n(2) 記述\n(3) $w_1$：sqrt(((2 ε V_0 ρ_2)/(ρ_1 (ρ_1 + ρ_2)))) ; $w_2$：sqrt(((2 ε V_0 ρ_1)/(ρ_2 (ρ_1 + ρ_2))))\n(4) $C$：ε /(w_1 + w_2)\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン方程式",
+   "空乏層",
+   "pn接合",
+   "微分容量",
+   "C-V測定",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "真性半導体の導電率の温度変化と前因子",
+  "topic": "真性半導体の導電率の温度変化と前因子",
+  "statement": {
+   "tex": "不純物を含まない半導体の真性キャリア密度は $n_i\\propto T^{3/2}\\exp(-E_g/2kT)$ に従う（$E_g$ は禁制帯幅＝電子・正孔対の最小生成エネルギー）．温度を $T_1=280\\ \\mathrm K$ から $T_2=350\\ \\mathrm K$ に上げると導電率が $\\eta=8.0$ 倍になった．\n\\begin{enumerate}\n\\item 移動度が格子散乱で決まり $\\mu\\propto T^{-3/2}$ である場合，$E_g$ を求めよ．\n\\item 移動度が温度によらないとすると，$E_g$ の推定値はいくらになるか．\n\\item 両者の差を，$T_1$，$T_2$ を用いた一般式で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_g=\\dfrac{2kT_1T_2}{T_2-T_1}\\ln\\eta\\approx0.50\\ \\mathrm{eV}$　(2) 約 $0.42\\ \\mathrm{eV}$　(3) $\\dfrac{3kT_1T_2}{T_2-T_1}\\ln\\dfrac{T_2}{T_1}$（$\\approx3k\\bar T\\approx0.08\\ \\mathrm{eV}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\sigma=e n_i(\\mu_n+\\mu_p)$．\n\n(1) $\\mu\\propto T^{-3/2}$ なら $T^{3/2}$ が打ち消し合い $\\sigma\\propto e^{-E_g/2kT}$．\n\\[\n\\eta=\\exp\\left[\\frac{E_g}{2k}\\left(\\frac1{T_1}-\\frac1{T_2}\\right)\\right]\\ \\Rightarrow\\ E_g=\\frac{2kT_1T_2}{T_2-T_1}\\ln\\eta=\\frac{2\\times8.617\\times10^{-5}\\times280\\times350}{70}\\times2.079\\approx0.50\\ \\mathrm{eV}.\n\\]\n(2) $\\sigma\\propto T^{3/2}e^{-E_g/2kT}$ なら $\\ln\\eta=\\tfrac32\\ln\\dfrac{T_2}{T_1}+\\dfrac{E_g}{2k}\\left(\\dfrac1{T_1}-\\dfrac1{T_2}\\right)$．\n\\[\nE_g'=\\frac{2kT_1T_2}{T_2-T_1}\\left[\\ln\\eta-\\frac32\\ln\\frac{T_2}{T_1}\\right]=0.241\\times(2.079-0.335)\\approx0.42\\ \\mathrm{eV}.\n\\]\n(3) 差は $E_g-E_g'=\\dfrac{3kT_1T_2}{T_2-T_1}\\ln\\dfrac{T_2}{T_1}\\approx3k\\sqrt{T_1T_2}\\approx0.08\\ \\mathrm{eV}$．前因子の温度依存性 $T^\\alpha$ は実効活性化エネルギーに $2\\alpha kT$ 程度の補正を与える．"
+   }
+  ],
+  "idea": {
+   "tex": "導電率の温度依存性は $n_i$ の前因子 $T^{3/2}$ と移動度の $T^{-3/2}$ が打ち消し合うときに純粋な指数関数となる．前因子の扱いで $E_g$ は数 $kT$ ずれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E_g$ [eV]：≈0.50\n(2) [eV]：≈0.42\n(3) ((3 k T_1 T_2)/(T_2 - T_1)) ln ((T_2)/(T_1))"
+  },
+  "methods": [],
+  "tags": [
+   "真性半導体",
+   "禁制帯幅",
+   "導電率",
+   "移動度",
+   "アレニウスプロット"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 25,
+  "theme": "導電率データから禁制帯幅とドナー準位を分離",
+  "topic": "導電率データから禁制帯幅とドナー準位を分離",
+  "statement": {
+   "tex": "ある n 型半導体の導電率 $\\sigma$ を測定して次の値を得た．\n\\[\n\\begin{array}{c|cccc}\nT\\ (\\mathrm K) & 600 & 500 & 50 & 40\\\\ \\hline\n\\sigma\\ (\\mathrm{S/m}) & 1150 & 297 & 0.0982 & 0.0550\n\\end{array}\n\\]\n高温の 2 点では真性伝導が，低温の 2 点ではドナーからの電子の熱励起（補償のない場合）が支配的で，いずれも $\\sigma\\propto\\exp(-E/2kT)$ の形（$E$ はそれぞれ禁制帯幅 $E_g$，ドナー準位の活性化エネルギー $E_d$）に従い，前因子の温度依存性は無視できるとする．\n\\begin{enumerate}\n\\item $E_g$ と $E_d$ を求めよ．\n\\item $\\ln\\sigma$ を $1/T$ に対してプロットしたとき，2 つの直線（高温側・低温側）を外挿した交点の温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_g\\approx0.70\\ \\mathrm{eV}$，$E_d\\approx0.020\\ \\mathrm{eV}$　(2) 約 $2.9\\times10^2\\ \\mathrm K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 2 点から $E=2k\\dfrac{\\ln(\\sigma_a/\\sigma_b)}{1/T_b-1/T_a}$．\n高温側：$E_g=2\\times8.617\\times10^{-5}\\times\\dfrac{\\ln(1150/297)}{1/500-1/600}=\\dfrac{1.72\\times10^{-4}\\times1.354}{3.33\\times10^{-4}}\\approx0.70\\ \\mathrm{eV}$．\n低温側：$E_d=1.72\\times10^{-4}\\times\\dfrac{\\ln(0.0982/0.0550)}{1/40-1/50}=\\dfrac{1.72\\times10^{-4}\\times0.580}{5.0\\times10^{-3}}\\approx0.020\\ \\mathrm{eV}$．\n\n(2) 各直線を $\\sigma=A_ie^{-E_g/2kT}$，$\\sigma=A_de^{-E_d/2kT}$ と書くと\n$A_i=1150\\,e^{E_g/2k\\cdot600}\\approx1.0\\times10^6\\ \\mathrm{S/m}$，$A_d=0.0982\\,e^{E_d/2k\\cdot50}\\approx1.0\\ \\mathrm{S/m}$．交点は\n\\[\nT_\\times=\\frac{E_g-E_d}{2k\\ln(A_i/A_d)}=\\frac{0.68}{2\\times8.617\\times10^{-5}\\times13.8}\\approx2.9\\times10^2\\ \\mathrm K.\n\\]\n（実際の試料ではこの付近はドナーが出尽くした飽和領域で，$\\sigma$ はほぼ一定となり，2 直線の間を平坦部がつなぐ．）"
+   }
+  ],
+  "idea": {
+   "tex": "$\\ln\\sigma$–$1/T$ の傾きは高温側で $E_g/2k$，低温側で $E_d/2k$．前因子（切片）も読めば 2 つの領域の境目まで見積もれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E_g$ [eV]：≈0.70 ; $E_d$ [eV]：≈0.020\n(2) [K]：≈2.9e2"
+  },
+  "methods": [],
+  "tags": [
+   "n型半導体",
+   "ドナー準位",
+   "禁制帯幅",
+   "アレニウスプロット"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "光伝導の緩和：線形再結合と2分子再結合の判別",
+  "topic": "光伝導の緩和：線形再結合と2分子再結合の判別",
+  "statement": {
+   "tex": "真性半導体の暗抵抗率が $\\rho_0=60\\ \\Omega\\cdot\\mathrm{cm}$ である．一様な光を当てると $\\rho_1=30\\ \\Omega\\cdot\\mathrm{cm}$ になり，光を消して $t_1=5.0\\ \\mathrm{ms}$ 後には $\\rho_2=40\\ \\Omega\\cdot\\mathrm{cm}$ となった．移動度は一定で，光で生じた過剰電子と過剰正孔の密度は等しいとする．\n\\begin{enumerate}\n\\item 過剰キャリアが $\\Delta n\\propto e^{-t/\\tau}$（線形再結合）で減衰するとして寿命 $\\tau$ を求め，光を消して $10\\ \\mathrm{ms}$ 後の抵抗率を予言せよ．\n\\item 再結合が $d\\Delta n/dt=-\\gamma(\\Delta n)^2$（2 分子再結合）に従うとすると，$10\\ \\mathrm{ms}$ 後の抵抗率はいくらになるか．\n\\item (2) の場合の，光を消した直後の瞬間的な減衰時定数 $\\Delta n/|d\\Delta n/dt|$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tau\\approx7.2\\ \\mathrm{ms}$，$\\rho=48\\ \\Omega\\cdot\\mathrm{cm}$　(2) $\\rho=45\\ \\Omega\\cdot\\mathrm{cm}$　(3) $5.0\\ \\mathrm{ms}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "過剰導電率 $\\Delta\\sigma=1/\\rho-1/\\rho_0\\propto\\Delta n$．\n$t=0$：$\\Delta\\sigma_0=\\tfrac1{30}-\\tfrac1{60}=\\tfrac1{60}$，$t_1$：$\\Delta\\sigma_1=\\tfrac1{40}-\\tfrac1{60}=\\tfrac1{120}\\ (\\Omega\\cdot\\mathrm{cm})^{-1}$．\n\n(1) $\\Delta\\sigma_1/\\Delta\\sigma_0=e^{-t_1/\\tau}=1/2$ より $\\tau=t_1/\\ln2\\approx7.2\\ \\mathrm{ms}$．$10\\ \\mathrm{ms}$ 後は $\\Delta\\sigma=\\tfrac1{240}$，$1/\\rho=\\tfrac1{60}+\\tfrac1{240}=\\tfrac{1}{48}$ で $\\rho=48\\ \\Omega\\cdot\\mathrm{cm}$．\n\n(2) $1/\\Delta n=1/\\Delta n_0+\\gamma t$ で $1/\\Delta\\sigma$ が $t$ に比例して増える：$1/\\Delta\\sigma=60,\\ 120$（$t=0,5\\ \\mathrm{ms}$）から $10\\ \\mathrm{ms}$ で $180$．$1/\\rho=\\tfrac1{60}+\\tfrac1{180}=\\tfrac1{45}$，$\\rho=45\\ \\Omega\\cdot\\mathrm{cm}$．\n\n(3) $\\Delta n/|d\\Delta n/dt|=1/(\\gamma\\Delta n_0)$．$1/\\Delta n$ が $t_1=5\\ \\mathrm{ms}$ で倍増したから $\\gamma\\Delta n_0t_1=1$，時定数は $5.0\\ \\mathrm{ms}$．2 分子再結合では時定数が $\\Delta n$ とともに長くなるので，3 点目の測定で両機構を区別できる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\Delta\\sigma$ の対数が線形なら単一寿命，逆数が線形なら 2 分子再結合．同じ 2 点から異なる予言が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) [ms]：≈5.0"
+  },
+  "methods": [],
+  "tags": [
+   "光伝導",
+   "再結合",
+   "キャリア寿命",
+   "真性半導体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 25,
+  "theme": "2 種キャリアのホール効果と真性半導体の移動度",
+  "topic": "2 種キャリアのホール効果と真性半導体の移動度",
+  "statement": {
+   "tex": "電子（密度 $n$，移動度 $\\mu_n$）と正孔（密度 $p$，移動度 $\\mu_p$）が共存する半導体に $x$ 方向の電場 $E_x$ をかけ，$z$ 方向に弱い磁場 $B$（$\\mu_nB,\\ \\mu_pB\\ll1$）をかける．$y$ 方向の電流が 0 の定常状態を考える．\n\\begin{enumerate}\n\\item 横方向電場とかけた電場の比 $E_y/E_x$ を求めよ（$B$ の 1 次まで）．\n\\item 真性半導体（$n=p$）では $|E_y/E_x|$ はどう表されるか．\n\\item 真性ゲルマニウムで $\\mu_n/\\mu_p=2.1$ が知られており，$B=0.50\\ \\mathrm T$ で $|E_y/E_x|=0.050$ であった．$\\mu_n,\\ \\mu_p$ を求め，$n_i=2.4\\times10^{13}\\ \\mathrm{cm^{-3}}$ として抵抗率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{E_y}{E_x}=B\\dfrac{p\\mu_p^2-n\\mu_n^2}{p\\mu_p+n\\mu_n}$　(2) $B|\\mu_n-\\mu_p|$　(3) $\\mu_n\\approx0.19$，$\\mu_p\\approx0.091\\ \\mathrm{m^2/(V\\cdot s)}$，$\\rho\\approx0.92\\ \\Omega\\cdot\\mathrm m$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 正孔の速度は $\\boldsymbol v_p=\\mu_p(\\boldsymbol E+\\boldsymbol v_p\\times\\boldsymbol B)$，電子は $\\boldsymbol v_n=-\\mu_n(\\boldsymbol E+\\boldsymbol v_n\\times\\boldsymbol B)$．$B$ の 1 次まで\n\\[\nv_{py}=\\mu_pE_y-\\mu_p^2BE_x,\\qquad v_{ny}=-\\mu_nE_y-\\mu_n^2BE_x .\n\\]\n$j_y=e(pv_{py}-nv_{ny})=e[(p\\mu_p+n\\mu_n)E_y-(p\\mu_p^2-n\\mu_n^2)BE_x]=0$ より\n\\[\n\\frac{E_y}{E_x}=B\\,\\frac{p\\mu_p^2-n\\mu_n^2}{p\\mu_p+n\\mu_n}.\n\\]\n電子と正孔は同じ向き（$-y$）へ曲げられるので，横電場への寄与は打ち消し合う．\n\n(2) $n=p$ なら $\\dfrac{E_y}{E_x}=B\\dfrac{\\mu_p^2-\\mu_n^2}{\\mu_p+\\mu_n}=-B(\\mu_n-\\mu_p)$，$|E_y/E_x|=B|\\mu_n-\\mu_p|$．\n\n(3) $\\mu_n-\\mu_p=0.050/0.50=0.10\\ \\mathrm{m^2/(V\\cdot s)}$，$\\mu_n=2.1\\mu_p$ より $\\mu_p=0.10/1.1=0.091$，$\\mu_n=0.19\\ \\mathrm{m^2/(V\\cdot s)}$．\n$\\sigma=en_i(\\mu_n+\\mu_p)=1.60\\times10^{-19}\\times2.4\\times10^{19}\\times0.282=1.08\\ \\mathrm{S/m}$，$\\rho\\approx0.92\\ \\Omega\\cdot\\mathrm m$．"
+   }
+  ],
+  "idea": {
+   "tex": "2 種キャリアの横電場は $p\\mu_p^2-n\\mu_n^2$ に比例する．真性半導体では移動度の差だけが見える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ホール効果",
+   "真性半導体",
+   "移動度",
+   "2キャリア"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "フェルミ分布の粒子・空孔対称性とドナー準位",
+  "topic": "フェルミ分布の粒子・空孔対称性とドナー準位",
+  "statement": {
+   "tex": "フェルミ＝ディラック分布を $f(E)=1/(e^{(E-\\mu)/kT}+1)$ とする．\n\\begin{enumerate}\n\\item 任意の $\\Delta$ と $T$ に対して $f(\\mu+\\Delta)+f(\\mu-\\Delta)=1$ が厳密に成り立つことを示せ（$\\Delta\\ll kT$ の近似は不要である）．\n\\item $N$ 個（$N$ は偶数）の 1 粒子準位が，あるエネルギー $E_0$ に関して対称に（$E_0+\\varepsilon_i$ と $E_0-\\varepsilon_i$ が対になって）並んでいる．ここにちょうど $N/2$ 個の電子を入れると，どの温度でも化学ポテンシャルが $\\mu=E_0$ となることを示せ．\n\\item 半導体のドナー準位（エネルギー $E_d$）は，電子が入らないか，上向きまたは下向きスピンの電子が 1 個だけ入るかのいずれかである．大正準分布からその占有確率が $f_D=\\dfrac{1}{1+\\frac12e^{(E_d-\\mu)/kT}}$ となることを示せ．$f_D=1/2$ となる $E_d$ と，$f_D(\\mu+kT)+f_D(\\mu-kT)$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2) 証明（解説参照）　(3) $E_d=\\mu+kT\\ln2$；$f_D(\\mu+kT)+f_D(\\mu-kT)\\approx0.424+0.845=1.27$（1 にならない）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=\\Delta/kT$ とすると\n\\[\nf(\\mu+\\Delta)+f(\\mu-\\Delta)=\\frac1{e^x+1}+\\frac1{e^{-x}+1}=\\frac1{e^x+1}+\\frac{e^x}{1+e^x}=1.\n\\]\nすなわち $\\mu$ より $\\Delta$ 上の状態が占有される確率と，$\\Delta$ 下の状態が空いている確率（空孔の確率）は厳密に等しい．したがって $f(\\mu)=1/2$ は $f(\\mu\\pm\\Delta)$ の平均にどんな $\\Delta$ でも一致する．\n\n(2) $\\mu=E_0$ とすると，(1) により各対の占有数の和は $f(E_0+\\varepsilon_i)+f(E_0-\\varepsilon_i)=1$．対は $N/2$ 組あるので全電子数は $N/2$ となり条件を満たす．全電子数 $\\sum f$ は $\\mu$ の狭義単調増加関数だから，解は $\\mu=E_0$ ただ一つで，温度によらない．\n\n(3) ドナー準位の微視的状態は「空（エネルギー 0，粒子数 0）」「↑ 1 個」「↓ 1 個」の 3 つ．大正準分布の重みは $1,\\ e^{-(E_d-\\mu)/kT},\\ e^{-(E_d-\\mu)/kT}$ なので\n\\[\nf_D=\\frac{2e^{-(E_d-\\mu)/kT}}{1+2e^{-(E_d-\\mu)/kT}}=\\frac1{1+\\frac12e^{(E_d-\\mu)/kT}}.\n\\]\n$f_D=1/2$ は $\\frac12e^{(E_d-\\mu)/kT}=1$，すなわち $E_d=\\mu+kT\\ln2$．\n$f_D(\\mu+kT)=1/(1+e/2)=0.424$，$f_D(\\mu-kT)=1/(1+e^{-1}/2)=0.845$，和は $1.27$．縮重度 2 の状態と縮重していない空状態との非対称で粒子・空孔対称性が破れる．"
+   }
+  ],
+  "idea": {
+   "tex": "フェルミ分布の「$P_F$ は $P_+$ と $P_-$ の平均」は小さい $\\Delta$ に限らず厳密な粒子・空孔対称性であり，対称な準位配置では $\\mu$ が温度によらず固定される．縮重の非対称があると対称性は破れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ・ディラック分布",
+   "粒子空孔対称性",
+   "化学ポテンシャル",
+   "ドナー準位",
+   "大正準分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "有効質量差による真性フェルミ準位のずれ",
+  "topic": "有効質量差による真性フェルミ準位のずれ",
+  "statement": {
+   "tex": "真性シリコン（$E_g=1.12\\ \\mathrm{eV}$，状態密度有効質量 $m_e^*=1.08m_e$，$m_h^*=0.56m_e$）を考える．価電子帯上端をエネルギーの原点とし，$E_g$ の温度変化は無視する．非縮退近似では\n\\[ n=N_c e^{-(E_g-E_F)/k_BT},\\quad p=N_v e^{-E_F/k_BT},\\quad N_{c,v}=2\\left(\\frac{2\\pi m_{e,h}^*k_BT}{h^2}\\right)^{3/2}. \\]\n\\begin{enumerate}\n\\item 真性条件 $n=p$ からフェルミ準位 $E_F$ を求め，$T=400\\ \\mathrm K$ でのギャップ中央からのずれ（符号つき，meV）を求めよ．\n\\item $T=400\\ \\mathrm K$ で伝導帯の底の状態が占有される確率を求めよ．\n\\item 同じ確率を $T=300\\ \\mathrm K$ で求め，400 K との比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_F=\\frac{E_g}{2}+\\frac34k_BT\\ln(m_h^*/m_e^*)$，$-17\\ \\mathrm{meV}$（価電子帯側）　(2) $5.4\\times10^{-8}$　(3) $2.4\\times10^{-10}$，比 約 $2.2\\times10^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $N_ce^{-(E_g-E_F)/k_BT}=N_ve^{-E_F/k_BT}$ より $e^{(2E_F-E_g)/k_BT}=N_v/N_c=(m_h^*/m_e^*)^{3/2}$．\n\\[ E_F=\\frac{E_g}{2}+\\frac34k_BT\\ln\\frac{m_h^*}{m_e^*}. \\]\n400 K で $k_BT=0.03447$ eV，$\\ln(0.56/1.08)=-0.657$ より，ずれは $\\frac34\\times0.03447\\times(-0.657)=-0.0170$ eV $=-17$ meV．伝導帯の状態密度が大きいので，フェルミ準位は価電子帯側へ寄る．\n\n(2) $E_g-E_F=0.56+0.0170=0.577$ eV．\n\\[ f=\\frac1{e^{0.577/0.03447}+1}\\approx e^{-16.74}=5.4\\times10^{-8}. \\]\n（ギャップ中央と仮定した場合の $8\\times10^{-8}$ 程度より小さい．）\n\n(3) 300 K で $k_BT=0.02585$ eV，ずれ $=-0.0127$ eV，$E_g-E_F=0.5727$ eV．$f\\approx e^{-22.15}=2.4\\times10^{-10}$．\n比 $f(400)/f(300)\\approx2.2\\times10^2$．温度が 3 割上がるだけで占有確率は 200 倍以上になり，真性キャリア密度の強い温度依存性の原因となる．"
+   }
+  ],
+  "idea": {
+   "tex": "電子と正孔の有効質量が異なると，真性フェルミ準位はギャップ中央から温度に比例してずれる．占有確率はボルツマン因子のため温度に極めて敏感．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ≈5.4e-8\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ準位",
+   "真性半導体",
+   "有効質量",
+   "有効状態密度",
+   "占有確率",
+   "シリコン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "混晶の組成設計によるLEDの発光波長と線幅",
+  "topic": "混晶の組成設計によるLEDの発光波長と線幅",
+  "statement": {
+   "tex": "直接遷移型半導体 $\\mathrm{Al}_x\\mathrm{Ga}_{1-x}\\mathrm{As}$ のバンドギャップは，$0\\le x\\le0.45$ で $E_g(x)=1.424+1.247x\\ \\mathrm{[eV]}$（300 K）と近似できる．LED の自発放出スペクトルは $E\\ge E_g$ で $I(E)\\propto\\sqrt{E-E_g}\\,e^{-(E-E_g)/k_BT}$ の形をとるとする．$hc=1240\\ \\mathrm{eV\\,nm}$，$T=300\\ \\mathrm K$．\n\\begin{enumerate}\n\\item 発光スペクトルのピークエネルギーが $E_g+\\frac12k_BT$ になることを示せ．\n\\item ピーク波長を $700\\ \\mathrm{nm}$ にするための組成 $x$ を求めよ．\n\\item この発光の半値全幅は $\\Delta E\\approx1.8k_BT$ である．波長での線幅 $\\Delta\\lambda$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $x\\approx0.27$（$E_g\\approx1.758\\ \\mathrm{eV}$）　(3) $\\Delta\\lambda\\approx18\\ \\mathrm{nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=E-E_g$ とおくと $\\dfrac{d}{du}\\left(u^{1/2}e^{-u/k_BT}\\right)=e^{-u/k_BT}\\left(\\dfrac1{2\\sqrt u}-\\dfrac{\\sqrt u}{k_BT}\\right)=0$ より $u=\\frac12k_BT$．ピークは $E_g+\\frac12k_BT$．\n\n(2) ピークエネルギー $E_p=1240/700=1.771$ eV，$k_BT=0.0259$ eV より $E_g=1.771-0.0129=1.758$ eV．\n\\[ x=\\frac{1.758-1.424}{1.247}=0.27. \\]\n$x<0.45$ なので直接遷移のままで，効率よく発光する．（ピークを単純に $E_g$ とすると $x=0.28$．）\n\n(3) $\\lambda=hc/E$ より $|\\Delta\\lambda|=\\dfrac{\\lambda^2}{hc}\\Delta E=\\dfrac{(700)^2}{1240}\\times1.8\\times0.0259=18$ nm．\nLED の線幅は熱エネルギー程度の広がりをもつため数十 nm となり，レーザー（誘導放出）の線幅に比べてはるかに広い．"
+   }
+  ],
+  "idea": {
+   "tex": "発光波長はバンドギャップで決まり，混晶組成でギャップを設計できる．スペクトルの形は状態密度×ボルツマン因子で，ピーク位置・線幅に kT が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $x$：≈0.27\n(3) $\\Delta\\lambda$ [nm]：≈18"
+  },
+  "methods": [],
+  "tags": [
+   "LED",
+   "バンドギャップ",
+   "混晶",
+   "AlGaAs",
+   "発光スペクトル",
+   "線幅"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "微量ドープで伝導度が下がる逆説",
+  "topic": "微量ドープで伝導度が下がる逆説",
+  "statement": {
+   "tex": "真性キャリア密度 $n_i=1.0\\times10^{16}\\ \\mathrm{m^{-3}}$，電子移動度 $\\mu_n=0.135\\ \\mathrm{m^2/(V\\,s)}$，正孔移動度 $\\mu_p=0.048\\ \\mathrm{m^2/(V\\,s)}$ の半導体（室温）を考える．不純物はすべてイオン化し，熱平衡で $np=n_i^2$ が成り立つとする．\n\\begin{enumerate}\n\\item 伝導度 $\\sigma=e(n\\mu_n+p\\mu_p)$ を $n$ の関数とみて，最小となる $n$ と最小値 $\\sigma_{\\min}$ を求めよ．真性伝導度 $\\sigma_i$ との比 $\\sigma_{\\min}/\\sigma_i$ も求めよ．\n\\item $\\sigma_{\\min}$ を実現するのに必要な正味の不純物濃度 $N_a-N_d$ を求めよ．ドナーとアクセプタのどちらを入れるべきか．\n\\item この半導体の原子数密度を $5.0\\times10^{28}\\ \\mathrm{m^{-3}}$ として，(2) の正味の不純物の原子数比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n=n_i\\sqrt{\\mu_p/\\mu_n}=6.0\\times10^{15}\\ \\mathrm{m^{-3}}$，$\\sigma_{\\min}=2en_i\\sqrt{\\mu_n\\mu_p}=2.6\\times10^{-4}\\ \\mathrm{S/m}$，$\\sigma_{\\min}/\\sigma_i=0.88$　(2) $N_a-N_d=1.1\\times10^{16}\\ \\mathrm{m^{-3}}$（アクセプタ）　(3) $2.2\\times10^{-13}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p=n_i^2/n$ より $\\sigma(n)=e\\left(n\\mu_n+\\dfrac{n_i^2}{n}\\mu_p\\right)$．$d\\sigma/dn=e(\\mu_n-n_i^2\\mu_p/n^2)=0$ から\n\\[ n_{\\min}=n_i\\sqrt{\\mu_p/\\mu_n}=1.0\\times10^{16}\\sqrt{0.048/0.135}=5.96\\times10^{15}\\ \\mathrm{m^{-3}}. \\]\nこのとき $p=n_i\\sqrt{\\mu_n/\\mu_p}=1.68\\times10^{16}$，$\\sigma_{\\min}=2en_i\\sqrt{\\mu_n\\mu_p}=2\\times1.602\\times10^{-19}\\times10^{16}\\times0.0805=2.58\\times10^{-4}\\ \\mathrm{S/m}$．真性では $\\sigma_i=en_i(\\mu_n+\\mu_p)=2.93\\times10^{-4}\\ \\mathrm{S/m}$ で，\n\\[ \\frac{\\sigma_{\\min}}{\\sigma_i}=\\frac{2\\sqrt{\\mu_n\\mu_p}}{\\mu_n+\\mu_p}=0.88 \\]\n（相乗平均/相加平均なので必ず $\\le1$）．\n\n(2) 電荷中性 $p-n+N_d-N_a=0$ より $N_a-N_d=p-n=1.68\\times10^{16}-0.60\\times10^{16}=1.08\\times10^{16}\\ \\mathrm{m^{-3}}$．正孔を増やす必要があるのでアクセプタを加える（弱い p 型）．移動度の小さいキャリアを多数派にすると伝導度が下がる．\n\n(3) $1.08\\times10^{16}/5.0\\times10^{28}=2.2\\times10^{-13}$．この程度のごく微量のアクセプタで，伝導度は真性値より約 12\\% 下がる．"
+   }
+  ],
+  "idea": {
+   "tex": "$np=n_i^2$ の拘束下で $\\sigma$ は $n=n_i\\sqrt{\\mu_p/\\mu_n}$ で最小となり，移動度の小さい側に少しドープすると真性より伝導度が下がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) ≈2.2e-13"
+  },
+  "methods": [],
+  "tags": [
+   "伝導度",
+   "移動度",
+   "ドーピング",
+   "質量作用の法則",
+   "最小伝導度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ダイヤモンド中の熱的伝導電子は何km³に1個か",
+  "topic": "ダイヤモンド中の熱的伝導電子は何km³に1個か",
+  "statement": {
+   "tex": "真性半導体（絶縁体）の伝導電子密度を，有効質量を自由電子質量 $m$ に等しいとして\n\\[ n=2\\left(\\frac{2\\pi mkT}{h^2}\\right)^{3/2}e^{-E_g/2kT} \\]\nで見積もる．\n\\begin{enumerate}\n\\item $T=300\\ \\mathrm{K}$ での前因子 $N=2(2\\pi mkT/h^2)^{3/2}$ を求めよ．\n\\item ダイヤモンド（$E_g=5.33\\ \\mathrm{eV}$）とゲルマニウム（$E_g=0.70\\ \\mathrm{eV}$）の $300\\ \\mathrm{K}$ での $n$ をそれぞれ求めよ．ダイヤモンド中に熱励起された伝導電子が平均 1 個存在するには，一辺何 km の立方体が必要か．\n\\item ダイヤモンドの $n$ が，ゲルマニウムの $300\\ \\mathrm{K}$ での値に達する温度を求めよ（ギャップの温度変化は無視する）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2.5\\times10^{25}\\ \\mathrm{m^{-3}}$　(2) $n_{\\rm C}\\approx4\\times10^{-20}\\ \\mathrm{m^{-3}}$，$n_{\\rm Ge}\\approx3.3\\times10^{19}\\ \\mathrm{m^{-3}}$，一辺約 $2.9\\times10^{3}\\ \\mathrm{km}$　(3) 約 $1.9\\times10^3\\ \\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{2\\pi mkT}{h^2}=\\dfrac{2\\pi(9.109\\times10^{-31})(1.381\\times10^{-23})(300)}{(6.626\\times10^{-34})^2}=5.40\\times10^{16}\\ \\mathrm{m^{-2}}$，$N=2(5.40\\times10^{16})^{3/2}=2.51\\times10^{25}\\ \\mathrm{m^{-3}}$．\n\n(2) $kT=0.02585\\ \\mathrm{eV}$，$2kT=0.0517\\ \\mathrm{eV}$．\nダイヤモンド：$5.33/0.0517=103.1$，$n_{\\rm C}=2.51\\times10^{25}e^{-103.1}=4.3\\times10^{-20}\\ \\mathrm{m^{-3}}$．\nゲルマニウム：$0.70/0.0517=13.54$，$n_{\\rm Ge}=2.51\\times10^{25}e^{-13.54}=3.3\\times10^{19}\\ \\mathrm{m^{-3}}$．\n比は $e^{-(5.33-0.70)/2kT}\\approx10^{-39}$．電子 1 個に必要な体積 $V=1/n_{\\rm C}=2.3\\times10^{19}\\ \\mathrm{m^3}$，一辺 $V^{1/3}=2.9\\times10^6\\ \\mathrm{m}\\approx2900\\ \\mathrm{km}$（月の直径に近い）．室温のダイヤモンドには熱的な伝導電子は事実上存在しない．\n\n(3) $2\\left(\\dfrac{2\\pi mkT}{h^2}\\right)^{3/2}e^{-5.33/2kT}=3.3\\times10^{19}$ を解く．前因子を無視した粗い見積もりは $5.33/T=0.70/300$ より $T\\approx2300\\ \\mathrm{K}$．前因子の $T^{3/2}$ 増加を入れて数値的に解くと $T\\approx1.9\\times10^3\\ \\mathrm{K}$．"
+   }
+  ],
+  "idea": {
+   "tex": "ギャップが指数の肩に $E_g/2kT$ で入るため，ギャップ差 4.6 eV が 39 桁の密度差を生む．逆に同じ密度に達する温度はギャップにほぼ比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [m⁻³]：≈2.5e25\n(2) $n_{\\rm C}$ [m⁻³]：≈4e-20 ; $n_{\\rm Ge}$ [m⁻³]：≈3.3e19 ; 一辺 [km]：≈2.9e3\n(3) [K]：≈1.9e3"
+  },
+  "methods": [],
+  "tags": [
+   "真性キャリア密度",
+   "絶縁体",
+   "ダイヤモンド",
+   "ゲルマニウム",
+   "ボルツマン因子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 2,
+  "minutes": 20,
+  "theme": "微分抵抗から理想係数と直列抵抗を分離",
+  "topic": "微分抵抗から理想係数と直列抵抗を分離",
+  "statement": {
+   "tex": "実際のダイオードの順方向特性を，理想係数 $n$ を含む $I=I_0\\left[e^{eV_j/nkT}-1\\right]$（$V_j$ は接合にかかる電圧）と，素子に直列に入る抵抗 $R_s$ でモデル化する．端子電圧は $V=V_j+IR_s$ である．\n\\begin{enumerate}\n\\item 順方向で $I\\gg I_0$ のとき，端子から見た微分抵抗 $r=dV/dI$ が $r=\\dfrac{nkT}{eI}+R_s$ となることを示せ．また逆方向バイアス（$-V\\gg kT/e$）では $r$ がどうなるか．\n\\item $T=300\\ \\mathrm{K}$ で，$I=1.0\\ \\mathrm{mA}$ のとき $r=30.0\\ \\Omega$，$I=10\\ \\mathrm{mA}$ のとき $r=5.20\\ \\Omega$ であった．$n$ と $R_s$ を求めよ．\n\\item このダイオードで $I=100\\ \\mathrm{mA}$ のときの $r$ を求め，微分抵抗の主因が何に移るか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）；逆方向では $r\\to\\infty$（$\\approx\\frac{nkT}{eI_0}e^{e|V_j|/nkT}$）　(2) $n\\approx1.07$，$R_s\\approx2.4\\ \\Omega$　(3) $r\\approx2.7\\ \\Omega$，直列抵抗が支配的"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $dV/dI=dV_j/dI+R_s$．$dI/dV_j=\\dfrac{eI_0}{nkT}e^{eV_j/nkT}=\\dfrac{e(I+I_0)}{nkT}\\approx\\dfrac{eI}{nkT}$ より $r=\\dfrac{nkT}{eI}+R_s$．室温・$n=1$ なら第 1 項は $26\\ \\Omega/I[\\mathrm{mA}]$．\n逆方向では $V_j=-|V_j|$ で $dI/dV_j=\\dfrac{eI_0}{nkT}e^{-e|V_j|/nkT}\\to0$ なので $r\\to\\infty$（電流は $-I_0$ で飽和）．\n\n(2) $r_1-r_2=\\dfrac{nkT}{e}\\left(\\dfrac1{I_1}-\\dfrac1{I_2}\\right)$ より $\\dfrac{nkT}{e}=\\dfrac{24.8}{1000-100}=0.02756\\ \\mathrm{V}$．$kT/e=0.02585\\ \\mathrm{V}$ なので $n=1.07$．$R_s=30.0-0.02756/0.001=2.44\\ \\Omega$．\n\n(3) $r=0.02756/0.1+2.44=0.28+2.44=2.7\\ \\Omega$．接合の微分抵抗 $0.28\\ \\Omega$ は $R_s$ より小さく，大電流域では直列抵抗が微分抵抗を支配する（$I$–$V$ 曲線が指数関数から直線に近づく）．"
+   }
+  ],
+  "idea": {
+   "tex": "微分抵抗 $r=nkT/eI+R_s$ は $1/I$ の一次関数なので，2 つの電流での測定から理想係数と直列抵抗を分離できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $n$：≈1.07 ; $R_s$ [Ω]：≈2.4\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ショックレー方程式",
+   "微分抵抗",
+   "理想係数",
+   "直列抵抗",
+   "ダイオード"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-05-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -483,6 +1082,563 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 30,
+  "theme": "Si-MOSFETの量子ホール効果：谷の縮退とゲート電圧の間隔",
+  "topic": "Si-MOSFETの量子ホール効果：谷の縮退とゲート電圧の間隔",
+  "statement": {
+   "tex": "Si(100) の MOS 構造の反転層の電子は，有効質量 $m^*=0.19m_e$ の2次元電子ガスとしてふるまい，スピン2重と谷2重の合わせて4重の縮退をもつ（ゼーマン分裂と谷の分裂は無視する）．面に垂直に $B=10\\ \\mathrm{T}$ をかける．酸化膜は厚さ $100\\ \\mathrm{nm}$，比誘電率 $3.9$ で，電子の面密度はゲート電圧 $V$ に対し $n_s=C(V-V_{\\rm th})/e$（$C$ は単位面積あたりの容量）とする．\n\\begin{enumerate}\n\\item ランダウ準位のエネルギーと，1つの準位の単位面積あたりの状態数（縮退をすべて含む）を求めよ．\n\\item ゲート電圧を上げていくとき，1つのランダウ準位を埋めるのに必要なゲート電圧の増分 $\\Delta V$ と，準位が埋まるたびにフェルミ準位が跳ぶ大きさを求めよ（有効数字2桁）．\n\\item $n_s=1.0\\times10^{16}\\ \\mathrm{m^{-2}}$ のときの占有率 $\\nu$ を求め，少し乱れがある試料で期待されるホール伝導度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_N=\\hbar\\omega_c\\left(N+\\frac12\\right)$，$\\omega_c=\\dfrac{eB}{m^*}$；$\\dfrac{4eB}{h}$　(2) $\\Delta V\\approx4.5\\ \\mathrm{V}$，$\\hbar\\omega_c\\approx6.1\\ \\mathrm{meV}$　(3) $\\nu\\approx4.1$，$\\sigma_{xy}=\\dfrac{4e^2}{h}\\approx1.5\\times10^{-4}\\ \\mathrm{S}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ランダウゲージで $\\psi=e^{iky}\\phi(x)$ とすると，中心 $x_0=\\hbar k/(eB)$ の調和振動子になり $\\boldsymbol{E_N=\\hbar\\omega_c\\left(N+\\frac12\\right)}$，$\\omega_c=eB/m^*$．幅 $W$ の試料で $x_0$ が試料内にある $k$（間隔 $2\\pi/L_y$）の数は $\\dfrac{eBWL_y}{h}$ なので，1スピン1谷あたり単位面積に $eB/h$ 個．4重の縮退を入れて $\\boldsymbol{4eB/h}$．\n\n(2) $C=\\dfrac{3.9\\varepsilon_0}{100\\ \\mathrm{nm}}=3.45\\times10^{-4}\\ \\mathrm{F/m^2}$．1準位の電荷 $e\\cdot\\dfrac{4eB}{h}$ を入れるのに\n\\[\n\\Delta V=\\frac{4e^2B}{hC}=\\frac{4\\times(1.60\\times10^{-19})^2\\times10}{6.63\\times10^{-34}\\times3.45\\times10^{-4}}\\approx\\boldsymbol{4.5\\ \\mathrm{V}}.\n\\]\n乱れのない試料では，フェルミ準位は準位を埋めている間は一定で，埋まった瞬間に $\\hbar\\omega_c=\\dfrac{\\hbar eB}{m^*}\\approx\\boldsymbol{6.1\\ \\mathrm{meV}}$ 跳ぶ（階段状）．乱れがあると準位が幅をもち，局在状態があるため階段の角がなまり，フェルミ準位は滑らかに上がる．\n\n(3) $\\nu=\\dfrac{n_s}{eB/h}=\\dfrac{1.0\\times10^{16}\\times6.63\\times10^{-34}}{1.60\\times10^{-19}\\times10}\\approx\\boldsymbol{4.1}$．最初のランダウ準位（4重）がちょうど埋まり，次の準位の端の局在状態にフェルミ準位がある．局在状態は電流を運ばないので，ホール伝導度は満ちた準位の数で決まるプラトーにのる：\n\\[\n\\boldsymbol{\\sigma_{xy}=4\\frac{e^2}{h}\\approx1.5\\times10^{-4}\\ \\mathrm{S}}.\n\\]\n谷の縮退のため，プラトーは $\\nu=4,8,12,\\dots$ に現れる．"
+   }
+  ],
+  "idea": {
+   "tex": "ランダウ準位の縮退は単位面積あたり $eB/h$ に内部の縮退をかけたもので，MOS 構造ではゲート電圧が面密度を線形に決めるので，準位1つあたりのゲート電圧の幅が計算できる．乱れによる局在状態がプラトーを作り，ホール伝導度は満ちた準位の数 $\\times e^2/h$ になる．原題は一般的な定性の議論で，捻りでは谷の縮退と具体的な数値を入れた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta V$ [V]：≈4.5 ; $\\hbar\\omega_c$ [meV]：≈6.1\n(3) $\\nu$：≈4.1 ; $\\sigma_{xy}$ [S]：≈1.5e-4"
+  },
+  "methods": [],
+  "tags": [
+   "ランダウ準位",
+   "量子ホール効果",
+   "MOS構造",
+   "谷縮退"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ドナーの凍結：ケイ素中のリンの電離の温度依存性",
+  "topic": "ドナーの凍結：ケイ素中のリンの電離の温度依存性",
+  "statement": {
+   "tex": "ケイ素中にドナー（リン）が $N_D=1.0\\times10^{22}\\ \\mathrm{m^{-3}}$ あり，各ドナー準位は伝導帯の底より $\\Delta=45\\ \\mathrm{meV}$ 下にある．伝導帯の有効状態密度を $N_c=2.8\\times10^{25}\\times(T/300\\ \\mathrm K)^{3/2}\\ \\mathrm{m^{-3}}$ とする．非縮退で $n_c\\ll N_D$ のとき，$n_c\\approx\\sqrt{N_DN_c/2}\\,e^{-\\Delta/2k_BT}$ となる．\n\\begin{enumerate}\n\\item $T=30\\ \\mathrm K$ での $n_c$ を求め，近似の条件をみたすことを確かめよ．\n\\item $T=300\\ \\mathrm K$ で同じ式を使うとどうなるか．実際にはどうなっているか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n_c\\approx1.1\\times10^{19}\\ \\mathrm{m^{-3}}\\ll N_D$　(2) $1.6\\times10^{23}>N_D$ となり近似が破れる；ほぼすべて電離（$n_c\\approx N_D$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $N_c=8.9\\times10^{23}$，$k_BT=2.59$ meV，$e^{-8.70}=1.7\\times10^{-4}$．$n_c\\approx6.7\\times10^{22}\\times1.7\\times10^{-4}\\approx\\boldsymbol{1.1\\times10^{19}}$（凍結）．\n\n(2) $\\boldsymbol{1.6\\times10^{23}}>N_D$ で $n_c\\ll N_D$ の仮定と矛盾．室温ではドナーは\\textbf{ほぼすべて電離}し $n_c\\approx N_D$（飽和領域）．"
+   }
+  ],
+  "idea": {
+   "tex": "キャリア密度の近似式は導出の仮定の範囲でだけ使える．原題の真性的な模型の式を，ドナーの凍結と飽和の判定に応用させた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "半導体",
+   "ドナー",
+   "キャリア凍結",
+   "化学ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 35,
+  "theme": "半導体の化学ポテンシャルとドナー・狭ギャップ",
+  "topic": "半導体の化学ポテンシャルとドナー・狭ギャップ",
+  "statement": {
+   "tex": "バンドギャップ $E_g$ の半導体で，伝導帯の下端を $E_c=E_g$，価電子帯の上端を $E_v=0$ とする．伝導電子と正孔はそれぞれ有効質量 $m_e,m_h$ の自由粒子とし，状態密度はスピンを含めて伝導帯で $D_c(E)=\\dfrac{1}{2\\pi^2}\\left(\\dfrac{2m_e}{\\hbar^2}\\right)^{3/2}(E-E_c)^{1/2}$（価電子帯も同様）とする．化学ポテンシャル $\\mu$ はどちらのバンド端からも $kT$ より十分離れている（非縮退）とする．\n\\begin{enumerate}\n\\item 伝導電子密度が $n=N_ce^{-(E_c-\\mu)/kT}$，$N_c=2\\left(\\dfrac{2\\pi m_ekT}{h^2}\\right)^{3/2}$ と書けることを示せ．正孔密度 $p$ も同様に書き，積 $np$ が $\\mu$ によらないことを示せ．\n\\item 真性半導体 ($n=p$) の $\\mu$ を求めよ．\n\\item ドナーを密度 $N_D$ だけ含み，ドナーはすべてイオン化しているとする（アクセプターはない）．電荷中性条件から $n$ を真性キャリア密度 $n_i=\\sqrt{np}$ と $N_D$ で表せ．\n\\item $E_g=1.12\\ \\mathrm{eV}$，$m_e=1.08m_0$，$m_h=0.81m_0$，$N_D=1.0\\times10^{21}\\ \\mathrm{m^{-3}}$ とする（$E_g$ は温度によらないとする）．$T=300\\ \\mathrm{K}$ で $n_i\\approx8.9\\times10^{15}\\ \\mathrm{m^{-3}}$ である．300 K での $E_c-\\mu$ を求めよ．また $n_i=N_D$ となる温度 $T^*$（これより高温で真性領域になる）を数値的に求めよ．$N_c(300\\ \\mathrm{K})=2.8\\times10^{25}\\ \\mathrm{m^{-3}}$ を用いてよい．\n\\item 真性半導体で $m_h\\gg m_e$ の場合，(2) の $\\mu$ は温度とともに伝導帯に近づく．$\\mu=E_c$ となる温度を求め，$E_g=0.17\\ \\mathrm{eV}$，$m_e=0.014m_0$，$m_h=0.40m_0$ の狭ギャップ半導体について数値を求めよ．この結果は (1) の前提について何を意味するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $np=N_cN_ve^{-E_g/kT}$　(2) $\\mu=\\dfrac{E_g}{2}+\\dfrac34kT\\log\\dfrac{m_h}{m_e}$　(3) $n=\\dfrac{N_D}{2}+\\sqrt{\\dfrac{N_D^2}{4}+n_i^2}$　(4) $E_c-\\mu\\approx0.26\\ \\mathrm{eV}$，$T^*\\approx5.9\\times10^2\\ \\mathrm{K}$　(5) $kT=\\dfrac{2E_g}{3\\log(m_h/m_e)}$，$T\\approx3.9\\times10^2\\ \\mathrm{K}$（非縮退近似が破綻する）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 非縮退では $f\\simeq e^{-(E-\\mu)/kT}$．$y^2=(E-E_c)/kT$ とおくと\n\\[n=\\int_{E_c}^\\infty D_c(E)e^{-(E-\\mu)/kT}dE=\\frac1{2\\pi^2}\\left(\\frac{2m_e}{\\hbar^2}\\right)^{3/2}(kT)^{3/2}e^{-(E_c-\\mu)/kT}\\int_0^\\infty 2y^2e^{-y^2}dy.\\]\n$\\int_0^\\infty2y^2e^{-y^2}dy=\\sqrt\\pi/2$ を使い整理すると $n=2\\left(\\frac{2\\pi m_ekT}{h^2}\\right)^{3/2}e^{-(E_c-\\mu)/kT}$．正孔は $1-f\\simeq e^{-(\\mu-E)/kT}$ より $p=N_ve^{-(\\mu-E_v)/kT}$，$N_v=2(2\\pi m_hkT/h^2)^{3/2}$．積は $np=N_cN_ve^{-E_g/kT}$ で $\\mu$ によらない（質量作用の法則）．\n\n(2) $n=p$ より $e^{2\\mu/kT}=\\frac{N_v}{N_c}e^{E_g/kT}=\\left(\\frac{m_h}{m_e}\\right)^{3/2}e^{E_g/kT}$，\n\\[\\mu=\\frac{E_g}{2}+\\frac34kT\\log\\frac{m_h}{m_e}.\\]\n\n(3) 電荷中性 $n=p+N_D$ と $p=n_i^2/n$ から $n^2-N_Dn-n_i^2=0$，正の根を取り\n\\[n=\\frac{N_D}{2}+\\sqrt{\\frac{N_D^2}{4}+n_i^2}.\\]\n$n_i\\ll N_D$ で $n\\simeq N_D$（外因性領域），$n_i\\gg N_D$ で $n\\simeq n_i$（真性領域）．\n\n(4) 300 K では $n_i\\ll N_D$ なので $n\\simeq N_D$．$E_c-\\mu=kT\\log(N_c/N_D)=0.02585\\times\\log(2.8\\times10^4)\\approx0.26\\ \\mathrm{eV}$．\n$T^*$ は $\\sqrt{N_cN_v}\\,e^{-E_g/2kT}=N_D$，$\\sqrt{N_cN_v}=\\sqrt{N_cN_v}\\big|_{300}(T/300)^{3/2}$（$\\sqrt{N_cN_v}|_{300}=2.27\\times10^{25}\\ \\mathrm{m^{-3}}$）．\n\\[\\frac{E_g}{2kT}=\\log\\frac{2.27\\times10^{25}(T/300)^{3/2}}{10^{21}}\\]\nを反復で解くと $T^*\\approx589\\ \\mathrm{K}$（$\\approx5.9\\times10^2\\ \\mathrm{K}$）．\n\n(5) $\\mu=E_g$ とおくと $\\frac34kT\\log\\frac{m_h}{m_e}=\\frac{E_g}{2}$，\n\\[kT=\\frac{2E_g}{3\\log(m_h/m_e)}.\\]\n$\\log(0.40/0.014)=\\log28.6=3.35$ より $kT=0.34/10.05=0.0338\\ \\mathrm{eV}$，$T\\approx3.9\\times10^2\\ \\mathrm{K}$．室温付近でも $\\mu$ が伝導帯端から $kT$ 程度しか離れず，伝導帯の電子は縮退に近い．したがって $f\\simeq e^{-(E-\\mu)/kT}$ という非縮退近似は使えず，フェルミ–ディラック積分で扱う必要がある．電子の有効質量が非常に小さい（伝導帯の状態密度が小さい）ことが原因である．"
+   }
+  ],
+  "idea": {
+   "tex": "質量作用の法則 $np=n_i^2$ から外因性→真性の移り変わりを求め，有効質量比が大きい狭ギャップ半導体では真性の化学ポテンシャルが室温程度で伝導帯に達し非縮退近似が破れることを示す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\mu$：((E_g)/(2))+((3)/(4)) k T ln ((m_h)/(m_e))\n(3) $n$：((N_D)/(2))+ sqrt(((N_D ^(2))/(4))+ n_i ^(2))\n(4) 記述\n(5) $kT$：((2 E_g)/(3 ln (m_h / m_e))) ; $T$ [K]：≈3.9e2"
+  },
+  "methods": [],
+  "tags": [
+   "半導体",
+   "真性キャリア密度",
+   "化学ポテンシャル",
+   "質量作用の法則",
+   "ドナー",
+   "有効質量",
+   "縮退",
+   "狭ギャップ半導体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 40,
+  "theme": "補償半導体のキャリア凍結と見かけの活性化エネルギー",
+  "topic": "補償半導体のキャリア凍結と見かけの活性化エネルギー",
+  "statement": {
+   "tex": "n 型半導体にドナー（密度 $N_d$，準位 $E_d=E_c-\\Delta$）と，わずかなアクセプター（密度 $N_a$，$N_a\\ll N_d$，常にすべてイオン化）が含まれている．伝導電子密度は非縮退近似で $n=N_ce^{-(E_c-E_F)/k_BT}$（$N_c\\propto T^{3/2}$），ドナーが電子を捕らえている確率はスピン縮退を考えて $f_d=\\dfrac{1}{1+\\frac12e^{(E_d-E_F)/k_BT}}$ とする．正孔は無視できるとする．\n\\begin{enumerate}\n\\item 十分高温でドナーがすべてイオン化し，真性キャリア密度 $n_i$ が無視できないとき，$n$ と正孔密度 $p$ を $N_d,N_a,n_i$ で表せ．\n\\item $N_a=0$ の場合，低温（ほとんどのドナーが中性）で $n$ を $N_c,N_d,\\Delta,T$ で表せ．\n\\item $N_a\\neq0$ で $n\\ll N_a$ となる低温の場合，$n$ と $E_F$ を求めよ．$T\\to0$ で $E_F$ はどこに近づくか．\n\\item $\\ln n$ を $1/T$ に対してプロットしたとき（$N_c$ の $T$ 依存は緩やかとして無視），(2)(3) の場合の傾きから読み取られる活性化エネルギーはそれぞれいくらか．\n\\item $\\Delta=45\\ \\mathrm{meV}$，$N_d=1.0\\times10^{22}\\ \\mathrm{m^{-3}}$，$N_c=2.8\\times10^{25}(T/300\\,\\mathrm K)^{3/2}\\ \\mathrm{m^{-3}}$，$k_B=8.617\\times10^{-5}\\ \\mathrm{eV/K}$ とする．$T=20\\ \\mathrm K$ における $n$ を，$N_a=0$ と $N_a=1.0\\times10^{20}\\ \\mathrm{m^{-3}}$ の場合についてそれぞれ求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n=\\dfrac{N_d-N_a}{2}+\\sqrt{\\left(\\dfrac{N_d-N_a}{2}\\right)^2+n_i^2}$，$p=n_i^2/n$　(2) $n=\\sqrt{\\dfrac{N_cN_d}{2}}e^{-\\Delta/2k_BT}$　(3) $n=\\dfrac{N_c(N_d-N_a)}{2N_a}e^{-\\Delta/k_BT}$，$E_F=E_d+k_BT\\ln\\dfrac{N_d-N_a}{2N_a}\\to E_d$　(4) (2) $\\Delta/2$，(3) $\\Delta$　(5) $N_a=0$：$1.05\\times10^{17}\\ \\mathrm{m^{-3}}$，$N_a=10^{20}$：$1.09\\times10^{14}\\ \\mathrm{m^{-3}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 電気的中性 $n+N_a=p+N_d$ と質量作用則 $np=n_i^2$ より $n^2-(N_d-N_a)n-n_i^2=0$．正の根をとり\n\\[\nn=\\frac{N_d-N_a}{2}+\\sqrt{\\left(\\frac{N_d-N_a}{2}\\right)^2+n_i^2},\\qquad p=\\frac{n_i^2}{n}=\\sqrt{\\left(\\frac{N_d-N_a}{2}\\right)^2+n_i^2}-\\frac{N_d-N_a}{2}.\n\\]\n\n(2) イオン化ドナー密度は $N_d^+=N_d(1-f_d)=\\dfrac{N_d}{1+2e^{(E_F-E_d)/k_BT}}$．ほとんど中性なら $N_d^+\\approx\\dfrac{N_d}2e^{-(E_F-E_d)/k_BT}$．中性条件 $n=N_d^+$ に $e^{E_F/k_BT}=\\dfrac{n}{N_c}e^{E_c/k_BT}$ を代入すると\n\\[\nn=\\frac{N_d}{2}\\cdot\\frac{N_c}{n}e^{-(E_c-E_d)/k_BT}\\ \\Rightarrow\\ n=\\sqrt{\\frac{N_cN_d}{2}}\\,e^{-\\Delta/2k_BT}.\n\\]\n\n(3) 中性条件 $n+N_a=N_d^+$ で $n\\ll N_a$ なら $N_d^+\\approx N_a$，中性ドナーは $N_d-N_a$．\n\\[\n\\frac{N_d^+}{N_d-N_d^+}=\\frac12e^{(E_d-E_F)/k_BT}=\\frac{N_a}{N_d-N_a}\\ \\Rightarrow\\ E_F=E_d+k_BT\\ln\\frac{N_d-N_a}{2N_a}.\n\\]\n$n=N_ce^{-(E_c-E_d)/k_BT}e^{(E_F-E_d)/k_BT}=\\dfrac{N_c(N_d-N_a)}{2N_a}e^{-\\Delta/k_BT}$．$T\\to0$ で $E_F\\to E_d$（ドナー準位に固定される．補償がないときの $(E_c+E_d)/2$ とは異なる）．\n\n(4) (2) は $n\\propto e^{-\\Delta/2k_BT}$ で傾き $-\\Delta/2k_B$，活性化エネルギー $\\Delta/2$．(3) は $n\\propto e^{-\\Delta/k_BT}$ で活性化エネルギー $\\Delta$．ごくわずかな補償があるだけで，十分低温では見かけの活性化エネルギーが 2 倍になる．補償がないとき電子はドナーと伝導帯の間で「対」をつくる平衡（$n^2\\propto N_d$）になるのに対し，補償があるとフェルミ準位がドナー準位に固定されるためである．\n\n(5) $T=20$ K：$N_c=2.8\\times10^{25}\\times(1/15)^{1.5}=4.82\\times10^{23}\\ \\mathrm{m^{-3}}$，$\\Delta/k_BT=0.045/(8.617\\times10^{-5}\\times20)=26.11$．\n$N_a=0$：$n=\\sqrt{4.82\\times10^{23}\\times10^{22}/2}\\,e^{-13.06}=4.91\\times10^{22}\\times2.14\\times10^{-6}\\approx1.05\\times10^{17}\\ \\mathrm{m^{-3}}$．\n$N_a=10^{20}$：$n=4.82\\times10^{23}\\times\\dfrac{0.99\\times10^{22}}{2\\times10^{20}}\\times e^{-26.11}\\approx1.09\\times10^{14}\\ \\mathrm{m^{-3}}$（$n\\ll N_a$ で (3) の条件を満たす）．\n1\\% の補償で伝導電子が約 1/1000 に減る．（$N_a=0$ のとき $n\\approx N_a$ となる温度は約 39 K で，これより低温で (3) の振る舞いに移る．）"
+   }
+  ],
+  "idea": {
+   "tex": "補償のない n 型半導体の凍結領域では $n\\propto e^{-\\Delta/2k_BT}$ だが，わずかなアクセプターがあると $E_F$ がドナー準位に固定され $n\\propto e^{-\\Delta/k_BT}$ と活性化エネルギーが倍になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "半導体",
+   "n型",
+   "ドナー",
+   "補償",
+   "キャリア凍結",
+   "フェルミ準位",
+   "活性化エネルギー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 35,
+  "theme": "補償型 p-Ge とホール係数の符号反転",
+  "topic": "補償型 p-Ge とホール係数の符号反転",
+  "statement": {
+   "tex": "100 g の純粋な Ge に In を $4.0\\times10^{-5}$ g，Sb を $2.0\\times10^{-5}$ g 加えて結晶を成長させた．In, Sb はすべて活性な不純物として一様に入ったとする．定数：$e=1.60\\times10^{-19}\\ \\mathrm C$，$N_A=6.02\\times10^{23}\\ \\mathrm{mol^{-1}}$，原子量 In 114.8，Sb 121.8，Ge の密度 $5.32\\ \\mathrm{g/cm^3}$，300 K の Ge で真性キャリア密度 $n_i=2.4\\times10^{19}\\ \\mathrm{m^{-3}}$，電子・正孔の移動度 $\\mu_e=0.39$，$\\mu_h=0.19\\ \\mathrm{m^2/(V\\,s)}$．\n\\begin{enumerate}\n\\item アクセプタ密度 $N_a$，ドナー密度 $N_d$ を求め，伝導型を判定せよ．300 K での多数キャリアと少数キャリアの密度を求めよ（不純物はすべてイオン化しているとする）．\n\\item 300 K での抵抗率 $\\rho$ とホール係数 $R_H$（多数キャリアのみ近似）を求めよ．\n\\item 電子と正孔が共存するとき，弱磁場のホール係数が $R_H=\\dfrac{p\\mu_h^2-n\\mu_e^2}{e(p\\mu_h+n\\mu_e)^2}$ となることを導け（散乱緩和時間のエネルギー依存は無視）．\n\\item この試料を加熱すると $n_i$ が増え，ある温度で $R_H$ の符号が正から負に反転する．反転時の $p/n$ と，そのときの $n_i$ を $N=N_a-N_d$ と $b=\\mu_e/\\mu_h$ で表し，数値を求めよ（$b$ は温度によらず一定とする）．反転時の $p$ と $n$ が等しくないことの意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N_a\\approx1.12\\times10^{22}\\ \\mathrm{m^{-3}}$，$N_d\\approx5.26\\times10^{21}\\ \\mathrm{m^{-3}}$，p 型；$p\\approx5.9\\times10^{21}\\ \\mathrm{m^{-3}}$，$n\\approx9.8\\times10^{16}\\ \\mathrm{m^{-3}}$　(2) $\\rho\\approx5.6\\times10^{-3}\\ \\Omega\\,\\mathrm m$，$R_H\\approx1.06\\times10^{-3}\\ \\mathrm{m^3/C}$　(3) 証明（解説参照）　(4) $p/n=b^2$，$n_i^*=\\dfrac{N}{b-1/b}=\\dfrac{bN}{b^2-1}\\approx3.8\\times10^{21}\\ \\mathrm{m^{-3}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) Ge の体積 $V=100/5.32=18.80\\ \\mathrm{cm^3}=1.880\\times10^{-5}\\ \\mathrm{m^3}$．\nIn 原子数 $=\\dfrac{4.0\\times10^{-5}}{114.8}\\times6.02\\times10^{23}=2.10\\times10^{17}$，$N_a=2.10\\times10^{17}/1.880\\times10^{-5}\\approx1.12\\times10^{22}\\ \\mathrm{m^{-3}}$．\nSb 原子数 $=\\dfrac{2.0\\times10^{-5}}{121.8}\\times6.02\\times10^{23}=9.89\\times10^{16}$，$N_d\\approx5.26\\times10^{21}\\ \\mathrm{m^{-3}}$．\n$N_a>N_d$ なので p 型（補償型）．正味 $N=N_a-N_d\\approx5.90\\times10^{21}\\ \\mathrm{m^{-3}}\\gg n_i$．\n中性条件 $p-n=N$ と $np=n_i^2$ より $p=N/2+\\sqrt{N^2/4+n_i^2}\\approx N=5.9\\times10^{21}\\ \\mathrm{m^{-3}}$（多数キャリア：正孔），$n=n_i^2/p=(2.4\\times10^{19})^2/5.9\\times10^{21}\\approx9.8\\times10^{16}\\ \\mathrm{m^{-3}}$（少数キャリア：電子）．\n注意：多数キャリア密度は $N_a$ ではなく補償後の $N_a-N_d$ である．\n\n(2) $\\rho=\\dfrac1{e(p\\mu_h+n\\mu_e)}\\approx\\dfrac{1}{1.60\\times10^{-19}\\times5.90\\times10^{21}\\times0.19}\\approx5.6\\times10^{-3}\\ \\Omega\\,\\mathrm m$．$R_H\\approx\\dfrac1{ep}\\approx1.06\\times10^{-3}\\ \\mathrm{m^3/C}$（正）．\n\n(3) 電流を $x$ 方向，磁場を $z$ 方向とし，$x$ 方向の電場を $E_x$，ホール電場を $E_y$ とする．緩和時間近似の定常ドリフトでは電子の速度は $\\boldsymbol v_e=-\\mu_e(\\boldsymbol E+\\boldsymbol v_e\\times\\boldsymbol B)$，正孔は $\\boldsymbol v_h=\\mu_h(\\boldsymbol E+\\boldsymbol v_h\\times\\boldsymbol B)$．弱磁場では右辺の $\\boldsymbol v$ に 0 次の $v_{ex}=-\\mu_eE_x$，$v_{hx}=\\mu_hE_x$ を入れてよい．$(\\boldsymbol v\\times\\boldsymbol B)_y=-v_xB$ より\n\\[\nv_{ey}=-\\mu_e(E_y+\\mu_eE_xB),\\qquad v_{hy}=\\mu_h(E_y-\\mu_hE_xB),\n\\]\nよって $y$ 方向の電流密度は\n\\[\nj_{ey}=-env_{ey}=en\\mu_e(E_y+\\mu_eE_xB),\\qquad j_{hy}=epv_{hy}=ep\\mu_h(E_y-\\mu_hE_xB).\n\\]\n定常では $j_{ey}+j_{hy}=0$ より\n\\[\nE_y=\\frac{p\\mu_h^2-n\\mu_e^2}{p\\mu_h+n\\mu_e}E_xB.\n\\]\n$j_x=e(p\\mu_h+n\\mu_e)E_x$ なので\n\\[\nR_H=\\frac{E_y}{j_xB}=\\frac{p\\mu_h^2-n\\mu_e^2}{e(p\\mu_h+n\\mu_e)^2}.\n\\]\n$n=0$ で $1/(ep)$，$p=0$ で $-1/(en)$ に帰着する．\n\n(4) $R_H=0$ は $p\\mu_h^2=n\\mu_e^2$，すなわち $p/n=b^2$．これと $np=n_i^2$ から $n=n_i/b$，$p=bn_i$．中性条件 $p-n=N$ に代入して\n\\[\nn_i^*=\\frac{N}{b-1/b}=\\frac{bN}{b^2-1}.\n\\]\n$b=0.39/0.19=2.05$，$b-1/b=1.565$ より $n_i^*\\approx5.90\\times10^{21}/1.565\\approx3.8\\times10^{21}\\ \\mathrm{m^{-3}}$．\nこのとき $p/n=b^2\\approx4.2$ で，正孔はなお電子の 4 倍以上あり伝導型としては p 型のままである．それでもホール係数がゼロになるのは，ホール係数がキャリアの数でなく「数 $\\times$ 移動度$^2$」で重み付けされるためで，移動度の大きい電子の寄与が少数でも打ち消すからである．さらに高温では $R_H<0$ となり，ホール係数の符号だけから伝導型を判定すると誤る．"
+   }
+  ],
+  "idea": {
+   "tex": "2 種キャリアのホール係数は $p\\mu_h^2-n\\mu_e^2$ で決まるので，p 型試料でも $p/n=b^2$ で $R_H=0$ となり，$n_i^*=bN/(b^2-1)$ を超えると符号が負に反転する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 証明\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "半導体",
+   "Ge",
+   "不純物",
+   "補償",
+   "ホール係数",
+   "移動度",
+   "符号反転",
+   "真性キャリア"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ホール係数の符号反転温度",
+  "topic": "ホール係数の符号反転温度",
+  "statement": {
+   "tex": "アクセプタ密度 $N_A$（すべてイオン化）の p 型半導体を加熱していくと，真性キャリア密度 $n_i$ が増え，ある温度でホール電圧が 0 になり，それより高温では符号が反転する．電子と正孔の移動度の比を $b=\\mu_n/\\mu_p\\ (>1)$ とし，弱磁場のホール電場は $p\\mu_p^2-n\\mu_n^2$ に比例するとする．質量作用の法則 $np=n_i^2$ と電荷中性 $p=n+N_A$ が成り立つ．\n\\begin{enumerate}\n\\item ホール電圧が 0 になるときの $p/n$ と，そのときの $n_i/N_A$ を $b$ で表せ．\n\\item そのとき全電流のうち電子が運ぶ割合を求めよ．\n\\item $b=2.0$，$N_A=1.0\\times10^{15}\\ \\mathrm{cm^{-3}}$ とし，$n_i=CT^{3/2}e^{-E_g/2kT}$（$E_g=0.66\\ \\mathrm{eV}$ 一定，$n_i(300\\ \\mathrm K)=2.4\\times10^{13}\\ \\mathrm{cm^{-3}}$）として，符号反転の温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p/n=b^2$，$n_i/N_A=\\dfrac{b}{b^2-1}$　(2) $\\dfrac{1}{1+b}$　(3) $n_i=6.7\\times10^{14}\\ \\mathrm{cm^{-3}}$，$T\\approx3.9\\times10^2\\ \\mathrm K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p\\mu_p^2=n\\mu_n^2$ より $p/n=b^2$．$p-n=N_A$ から $n=\\dfrac{N_A}{b^2-1}$，$p=\\dfrac{b^2N_A}{b^2-1}$，\n\\[\nn_i=\\sqrt{np}=\\frac{b}{b^2-1}N_A .\n\\]\n(2) 電子の電流の割合は $\\dfrac{n\\mu_n}{n\\mu_n+p\\mu_p}=\\dfrac{nb}{nb+nb^2}=\\dfrac{1}{1+b}$．正孔のほうが多くても，ホール電圧が消える点では電流の $1/(1+b)$ を電子が担う．\n\n(3) $n_i=\\dfrac{2}{3}N_A=6.7\\times10^{14}\\ \\mathrm{cm^{-3}}$．$\\dfrac{n_i(T)}{n_i(300)}=\\left(\\dfrac{T}{300}\\right)^{3/2}\\exp\\left[\\dfrac{E_g}{2k}\\left(\\dfrac1{300}-\\dfrac1T\\right)\\right]=27.8$ を数値的に解くと $T\\approx389\\ \\mathrm K\\approx3.9\\times10^2\\ \\mathrm K$．"
+   }
+  ],
+  "idea": {
+   "tex": "ホール電圧の消失条件 $p\\mu_p^2=n\\mu_n^2$ と質量作用の法則・中性条件を連立すると，符号反転点が $n_i/N_A=b/(b^2-1)$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((1)/(1+ b))\n(3) $n_i$ [cm⁻³]：≈6.7e14 ; $T$ [K]：≈3.9e2"
+  },
+  "methods": [],
+  "tags": [
+   "ホール効果",
+   "p型半導体",
+   "真性キャリア",
+   "符号反転",
+   "移動度比"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "有効質量の非対称と真性フェルミ準位のずれ",
+  "topic": "有効質量の非対称と真性フェルミ準位のずれ",
+  "statement": {
+   "tex": "非縮退近似のもとで，伝導帯・価電子帯のキャリア密度は\n\\[ n=N_c e^{-(E_c-E_F)/kT},\\quad p=N_v e^{-(E_F-E_v)/kT},\\quad N_{c,v}=2\\left(\\frac{2\\pi m_{e,h}^{*}kT}{h^2}\\right)^{3/2} \\]\nで与えられる（$m_e^*,m_h^*$ は電子・正孔の有効質量，$E_g=E_c-E_v$）．\n\\begin{enumerate}\n\\item 真性半導体（$n=p$）のフェルミ準位 $E_{Fi}$ を，バンドギャップ中央 $E_m=(E_c+E_v)/2$ からのずれとして求めよ．また積 $np$ が $E_F$ によらないことを示せ．\n\\item $m_e^*=0.014m$，$m_h^*=0.43m$，$E_g=0.17\\ \\mathrm{eV}$（温度によらないとする）の狭ギャップ半導体について，$T=300\\ \\mathrm{K}$ での $E_{Fi}-E_m$ を数値で求めよ（$kT=0.02585\\ \\mathrm{eV}$）．\n\\item 非縮退近似が妥当である目安を $E_c-E_{Fi}\\ge 3kT$ とする．(2) の物質で真性状態にこの近似が使える上限温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_{Fi}-E_m=\\dfrac34kT\\ln\\dfrac{m_h^*}{m_e^*}$，$np=N_cN_ve^{-E_g/kT}$　(2) $+0.066\\ \\mathrm{eV}$（伝導帯側）　(3) $T\\approx 177\\ \\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n=p$ より $N_ce^{-(E_c-E_F)/kT}=N_ve^{-(E_F-E_v)/kT}$．対数をとって\n\\[ 2E_F=E_c+E_v+kT\\ln\\frac{N_v}{N_c}\\ \\Rightarrow\\ E_{Fi}-E_m=\\frac{kT}{2}\\ln\\frac{N_v}{N_c}=\\frac34kT\\ln\\frac{m_h^*}{m_e^*}. \\]\nまた $np=N_cN_v\\exp[-(E_c-E_F+E_F-E_v)/kT]=N_cN_ve^{-E_g/kT}$ で $E_F$ が消える（質量作用の法則）．$N_cN_v\\propto (m_e^*m_h^*)^{3/2}T^3$ なので $np\\propto T^3e^{-E_g/kT}$ となる．\n\n(2) $m_h^*/m_e^*=30.7$，$\\ln 30.7=3.42$．$E_{Fi}-E_m=0.75\\times0.02585\\times3.42=0.066\\ \\mathrm{eV}$．$E_g/2=0.085\\ \\mathrm{eV}$ と同程度で，真性フェルミ準位は伝導帯下端のわずか $0.019\\ \\mathrm{eV}\\ (<kT)$ 下にある．\n\n(3) $E_c-E_{Fi}=\\dfrac{E_g}{2}-\\dfrac34kT\\ln\\dfrac{m_h^*}{m_e^*}\\ge3kT$ より\n\\[ kT\\le\\frac{E_g/2}{3+\\frac34\\ln(m_h^*/m_e^*)}=\\frac{0.085}{3+2.569}=0.01526\\ \\mathrm{eV}, \\]\n$T\\le 0.01526/(8.617\\times10^{-5})\\approx177\\ \\mathrm{K}$．室温では真性状態ですら電子は縮退しかけており，「ギャップ中央にフェルミ準位」という描像は破綻する．"
+   }
+  ],
+  "idea": {
+   "tex": "$np$ はフェルミ準位によらないが，真性フェルミ準位は有効質量比で $\\frac34kT\\ln(m_h^*/m_e^*)$ ずれ，狭ギャップで質量比が大きいと伝導帯に迫って非縮退近似が崩れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [eV]：+0.066\n(3) $T$ [K]：≈177"
+  },
+  "methods": [],
+  "tags": [
+   "真性半導体",
+   "フェルミ準位",
+   "有効質量",
+   "状態密度",
+   "質量作用の法則",
+   "狭ギャップ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "アレニウスプロットが与えるのは0K外挿ギャップ",
+  "topic": "アレニウスプロットが与えるのは0K外挿ギャップ",
+  "statement": {
+   "tex": "真性キャリア密度が $n_i(T)=CT^{3/2}\\exp\\!\\left[-\\dfrac{E_g(T)}{2kT}\\right]$（$C$ は定数）と書ける半導体で，バンドギャップが温度とともに線形に減少する：$E_g(T)=E_{g0}-\\alpha T$．\n\\begin{enumerate}\n\\item $\\ln(n_iT^{-3/2})$ を $1/T$ に対してプロットすると直線になることを示し，その傾きから得られる「見かけのギャップ」が $E_g(T)$ ではなく $E_{g0}$ であることを示せ．\n\\item ある試料で $n_i(300\\ \\mathrm{K})=1.0\\times10^{16}\\ \\mathrm{m^{-3}}$，$n_i(400\\ \\mathrm{K})=5.35\\times10^{18}\\ \\mathrm{m^{-3}}$ と測定された．見かけのギャップを求めよ．\n\\item この物質の $300\\ \\mathrm{K}$ でのギャップが光吸収端から $1.12\\ \\mathrm{eV}$ と分かっているとき，$\\alpha$ を求めよ．また，ギャップの温度変化を無視して $E_g=1.12\\ \\mathrm{eV}$ 一定として $n_i(400\\ \\mathrm{K})$ を $300\\ \\mathrm{K}$ の値から外挿すると，何倍過小評価になるか．\n\\end{enumerate}\n（$k=8.617\\times10^{-5}\\ \\mathrm{eV/K}$）"
+  },
+  "answer": {
+   "tex": "(1) 傾き $-E_{g0}/2k$（証明は解説参照）　(2) $1.21\\ \\mathrm{eV}$　(3) $\\alpha=3.0\\times10^{-4}\\ \\mathrm{eV/K}$，約 $1.5$ 倍の過小評価（$5.35\\times10^{18}$ に対し $3.46\\times10^{18}\\ \\mathrm{m^{-3}}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln(n_iT^{-3/2})=\\ln C-\\dfrac{E_{g0}-\\alpha T}{2kT}=\\left(\\ln C+\\dfrac{\\alpha}{2k}\\right)-\\dfrac{E_{g0}}{2k}\\cdot\\dfrac1T$．\n$\\alpha T$ の項は $1/T$ に依らない定数 $\\alpha/2k$ に化けて切片に吸収され，傾きは $-E_{g0}/2k$．したがって傾きから得るのは $T\\to0$ に外挿した $E_{g0}$ であり，測定温度での $E_g(T)$ ではない．代わりに前因子が $e^{\\alpha/2k}$ 倍される．\n\n(2) $T_1=300,\\ T_2=400\\ \\mathrm{K}$ として\n\\[ E_{g0}=\\frac{2k\\ln\\!\\left[\\dfrac{n_i(T_2)}{n_i(T_1)}\\left(\\dfrac{T_1}{T_2}\\right)^{3/2}\\right]}{1/T_1-1/T_2}\n=\\frac{2(8.617\\times10^{-5})\\ln(535\\times0.6495)}{8.333\\times10^{-4}}=1.21\\ \\mathrm{eV}. \\]\n\n(3) $\\alpha=(E_{g0}-E_g(300))/300=(1.21-1.12)/300=3.0\\times10^{-4}\\ \\mathrm{eV/K}$．\n$E_g=1.12$ 一定とすると $n_i(400)=10^{16}(4/3)^{3/2}\\exp\\!\\left[\\dfrac{1.12}{2k}\\left(\\dfrac1{300}-\\dfrac1{400}\\right)\\right]=3.46\\times10^{18}\\ \\mathrm{m^{-3}}$．実測 $5.35\\times10^{18}$ との比は $1.55$．ギャップが $100\\ \\mathrm{K}$ で $0.03\\ \\mathrm{eV}$ 縮むことで，ボルツマン因子 $e^{-E_g/2kT}$ が追加で効くためである．"
+   }
+  ],
+  "idea": {
+   "tex": "$E_g=E_{g0}-\\alpha T$ の線形項は $e^{-E_g/2kT}$ の中で定数因子 $e^{\\alpha/2k}$ になるため，アレニウス勾配は 0 K 外挿値 $E_{g0}$ を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [eV]：≈1.21\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "真性キャリア密度",
+   "バンドギャップ",
+   "温度依存性",
+   "アレニウスプロット",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ダイオード順方向電圧の温度係数",
+  "topic": "ダイオード順方向電圧の温度係数",
+  "statement": {
+   "tex": "シリコン pn 接合ダイオードの電流電圧特性を $I=I_0\\left[e^{eV/kT}-1\\right]$ とし，飽和電流は $I_0\\propto T^3e^{-E_g/kT}$（$E_g=1.12\\ \\mathrm{eV}$ 一定）と温度変化するとする．$T=300\\ \\mathrm{K}$ で $I_0=8.0\\times10^{-11}\\ \\mathrm{A}$ である．\n\\begin{enumerate}\n\\item $300\\ \\mathrm{K}$ で順方向電圧 $0.50\\ \\mathrm{V}$ をかけたときの電流を求めよ．\n\\item 温度が $330\\ \\mathrm{K}$ に上がったとき，$I_0$ は何倍になるか．同じ $0.50\\ \\mathrm{V}$ での電流を求めよ．\n\\item 電流を一定に保つとき，順方向電圧の温度係数 $dV/dT$ が近似的に\n\\[ \\frac{dV}{dT}\\approx-\\frac{E_g/e+3kT/e-V}{T} \\]\nとなることを示し，(1) の動作点で数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $20\\ \\mathrm{mA}$　(2) 約 $68$ 倍，$0.24\\ \\mathrm{A}$　(3) $-2.3\\ \\mathrm{mV/K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $eV/kT=0.50/0.025852=19.34$，$I=8.0\\times10^{-11}(e^{19.34}-1)=2.0\\times10^{-2}\\ \\mathrm{A}=20\\ \\mathrm{mA}$．\n\n(2) $\\dfrac{I_0(330)}{I_0(300)}=\\left(\\dfrac{330}{300}\\right)^3\\exp\\!\\left[\\dfrac{E_g}{k}\\left(\\dfrac1{300}-\\dfrac1{330}\\right)\\right]=1.331\\times\\exp(3.95)=68$．$I_0=5.5\\times10^{-9}\\ \\mathrm{A}$．\n$330\\ \\mathrm{K}$ では $eV/kT=0.50/0.02844=17.58$ なので $I=5.47\\times10^{-9}e^{17.58}=0.24\\ \\mathrm{A}$．$30\\ \\mathrm{K}$ の上昇で電流は約 12 倍になる（熱暴走の原因）．\n\n(3) $e^{eV/kT}\\gg1$ として $V=\\dfrac{kT}{e}\\ln\\dfrac{I}{I_0(T)}$．$\\ln I_0=\\text{const}+3\\ln T-E_g/kT$ より\n\\[ \\frac{dV}{dT}=\\frac{k}{e}\\ln\\frac{I}{I_0}-\\frac{kT}{e}\\frac{d\\ln I_0}{dT}=\\frac VT-\\frac{kT}{e}\\left(\\frac3T+\\frac{E_g}{kT^2}\\right)=-\\frac{E_g/e+3kT/e-V}{T}. \\]\n数値：$(1.12+0.0776-0.50)/300=2.3\\times10^{-3}$，$dV/dT=-2.3\\ \\mathrm{mV/K}$．これは順方向ダイオードを温度センサとして使う原理である．"
+   }
+  ],
+  "idea": {
+   "tex": "$I_0$ の強い温度依存（$T^3e^{-E_g/kT}$）のため，一定電圧では電流が急増し，一定電流では順電圧が約 $-2\\ \\mathrm{mV/K}$ で下がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [mA]：20\n(2) 記述\n(3) [mV/K]：≈-2.3"
+  },
+  "methods": [],
+  "tags": [
+   "pn接合",
+   "ショックレー方程式",
+   "飽和電流",
+   "温度係数",
+   "ダイオード温度計"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "C–V測定による不純物濃度と拡散電位の逆算",
+  "topic": "C–V測定による不純物濃度と拡散電位の逆算",
+  "statement": {
+   "tex": "片側階段接合（$p^+n$ 接合，$N_a\\gg N_d$）では空乏層はほぼ n 側だけに広がり，逆バイアス $V_R$ での空乏層幅は $W=\\sqrt{2\\varepsilon(V_0+V_R)/(eN_d)}$（$V_0$ は拡散電位，$\\varepsilon=\\varepsilon_r\\varepsilon_0$）である．接合面積 $A=1.0\\ \\mathrm{mm^2}$，$\\varepsilon_r=16$ のゲルマニウム試料で，接合容量が $V_R=0$ で $C_0=615\\ \\mathrm{pF}$，$V_R=5.0\\ \\mathrm{V}$ で $C_5=201\\ \\mathrm{pF}$ と測定された．\n\\begin{enumerate}\n\\item 接合容量を平行平板コンデンサとみなし，$1/C^2$ が $V_R$ の一次関数になることを示せ．\n\\item 測定値から $N_d$ と $V_0$ を求めよ．\n\\item $V_R=5.0\\ \\mathrm{V}$ での空乏層幅を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac1{C^2}=\\dfrac{2(V_0+V_R)}{e\\varepsilon N_dA^2}$　(2) $N_d=2.0\\times10^{22}\\ \\mathrm{m^{-3}}$，$V_0=0.60\\ \\mathrm{V}$　(3) $0.70\\ \\mathrm{\\mu m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $C=\\varepsilon A/W$ に $W$ を代入して $C=A\\sqrt{\\dfrac{e\\varepsilon N_d}{2(V_0+V_R)}}$，よって\n\\[ \\frac1{C^2}=\\frac{2}{e\\varepsilon N_dA^2}(V_0+V_R), \\]\n傾き $s=2/(e\\varepsilon N_dA^2)$，$V_R$ 軸切片 $-V_0$ の直線．\n\n(2) $1/C_0^2=2.644\\times10^{18}\\ \\mathrm{F^{-2}}$，$1/C_5^2=2.475\\times10^{19}\\ \\mathrm{F^{-2}}$．\n$s=(2.475\\times10^{19}-2.644\\times10^{18})/5.0=4.42\\times10^{18}\\ \\mathrm{F^{-2}V^{-1}}$．\n$N_d=\\dfrac{2}{e\\varepsilon A^2s}=\\dfrac{2}{(1.602\\times10^{-19})(16\\times8.854\\times10^{-12})(10^{-12})(4.42\\times10^{18})}=2.0\\times10^{22}\\ \\mathrm{m^{-3}}$．\n$V_0=\\dfrac{1/C_0^2}{s}=\\dfrac{2.644\\times10^{18}}{4.42\\times10^{18}}=0.60\\ \\mathrm{V}$．\n\n(3) $W=\\varepsilon A/C_5=\\dfrac{1.417\\times10^{-10}\\times10^{-6}}{2.01\\times10^{-10}}=7.0\\times10^{-7}\\ \\mathrm{m}=0.70\\ \\mathrm{\\mu m}$（$V_R=0$ の $0.23\\ \\mathrm{\\mu m}$ の約 3 倍）．"
+   }
+  ],
+  "idea": {
+   "tex": "空乏層容量の $1/C^2$–$V$ プロットは直線で，傾きから低濃度側の不純物濃度，切片から拡散電位が逆算できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $N_d$ [m⁻³]：≈2.0e22 ; $V_0$ [V]：≈0.60\n(3) [μ m]：≈0.70"
+  },
+  "methods": [],
+  "tags": [
+   "pn接合",
+   "空乏層",
+   "接合容量",
+   "C-V測定",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-05-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-57",
+  "level": 3,
+  "minutes": 25,
+  "theme": "外因性から真性への移行温度と黄金比",
+  "topic": "外因性から真性への移行温度と黄金比",
+  "statement": {
+   "tex": "リン（ドナー）を $N_d=1.0\\times10^{21}\\ \\mathrm{m^{-3}}$ ドープしたシリコンを考える．ドナーはすべてイオン化しており，熱平衡で $np=n_i^2$，電荷中性 $n=p+N_d$ が成り立つ．真性キャリア密度は\n\\[ n_i(T)=n_i(300)\\left(\\frac{T}{300}\\right)^{3/2}\\exp\\!\\left[-\\frac{E_g}{2k}\\left(\\frac1T-\\frac1{300}\\right)\\right],\\quad n_i(300)=1.0\\times10^{16}\\ \\mathrm{m^{-3}},\\ E_g=1.12\\ \\mathrm{eV} \\]\nとする．\n\\begin{enumerate}\n\\item $300\\ \\mathrm{K}$ での電子密度と正孔密度を求めよ．\n\\item 一般の温度で $n$ を $N_d$ と $n_i$ で厳密に表せ．\n\\item $n_i(T)=N_d$ となる温度 $T_*$ を求め，そのときの $n/N_d$ と $p/N_d$ を求めよ．\n\\end{enumerate}\n（$k=8.617\\times10^{-5}\\ \\mathrm{eV/K}$）"
+  },
+  "answer": {
+   "tex": "(1) $n=1.0\\times10^{21}\\ \\mathrm{m^{-3}}$，$p=1.0\\times10^{11}\\ \\mathrm{m^{-3}}$　(2) $n=\\dfrac{N_d}{2}+\\sqrt{\\dfrac{N_d^2}{4}+n_i^2}$　(3) $T_*\\approx583\\ \\mathrm{K}$，$n/N_d=\\frac{1+\\sqrt5}{2}=1.618$，$p/N_d=\\frac{\\sqrt5-1}{2}=0.618$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $N_d\\gg n_i$ なので $n\\approx N_d=1.0\\times10^{21}\\ \\mathrm{m^{-3}}$，$p=n_i^2/n=10^{32}/10^{21}=1.0\\times10^{11}\\ \\mathrm{m^{-3}}$．\n\n(2) $p=n_i^2/n$ を $n=p+N_d$ に代入して $n^2-N_dn-n_i^2=0$．正の根 $n=\\dfrac{N_d}2+\\sqrt{\\dfrac{N_d^2}4+n_i^2}$．\n\n(3) $n_i(T_*)=10^{21}$ を数値的に解く：\n\\[ \\ln\\!\\left[10^{16}(T/300)^{3/2}\\right]-\\frac{1.12}{2k}\\left(\\frac1T-\\frac1{300}\\right)=\\ln10^{21} \\]\nより $T_*\\approx583\\ \\mathrm{K}$．このとき (2) で $n_i=N_d$ とおくと $n/N_d=\\dfrac{1+\\sqrt5}2=1.618$（黄金比 $\\varphi$），$p/N_d=n/N_d-1=\\dfrac{\\sqrt5-1}2=1/\\varphi=0.618$．$np=N_d^2$ と $n-p=N_d$ を同時に満たす数が黄金比とその逆数である．これより高温では $n\\approx p\\approx n_i$ の真性領域に入り，ドーピングの効果は失われる．"
+   }
+  ],
+  "idea": {
+   "tex": "$n^2-N_dn-n_i^2=0$ から $n$ が厳密に決まり，$n_i=N_d$ の外因性–真性の境目では $n/N_d$ が黄金比になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $n$ [m⁻³]：≈1.0e21 ; $p$ [m⁻³]：≈1.0e11\n(2) $n$：((N_d)/(2))+ sqrt(((N_d ^(2))/(4))+ n_i ^(2))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "n型半導体",
+   "キャリア濃度",
+   "電荷中性",
+   "真性領域",
+   "質量作用の法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

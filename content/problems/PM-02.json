@@ -196,6 +196,401 @@
   }
  },
  {
+  "id": "PM-02-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "異方的な導電率テンソル：電流と電場のなす角",
+  "topic": "異方的な導電率テンソル：電流と電場のなす角",
+  "statement": {
+   "tex": "導電率テンソルを $\\sigma_{ij}=\\begin{pmatrix}2&1&1\\\\1&2&1\\\\1&1&2\\end{pmatrix}$ とする．\n\\begin{enumerate}\n\\item 固有値と固有ベクトルを求めよ．一定の大きさの電場で電流が最大になる向きを答えよ．\n\\item 電場が $x$ 方向のとき，電流と電場のなす角を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $4$（$(1,1,1)$），$1$（それに垂直な平面）；$(1,1,1)$ 方向　(2) $\\approx35.3^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma=I+\\boldsymbol1\\boldsymbol1^T$ なので固有値 $\\boldsymbol{4}$（$(1,1,1)$）と $\\boldsymbol1$（2重）．最大は $\\boldsymbol{(1,1,1)}$ 方向．\n\n(2) $\\boldsymbol J=(2,1,1)$，$\\cos=\\dfrac{2}{\\sqrt6}$，$\\boldsymbol{35.3^\\circ}$．"
+   }
+  ],
+  "idea": {
+   "tex": "異方的な媒質では電流と電場が平行とは限らず，主軸の方向でだけ平行になる．原題の電流が流れない方向の行列を，正定値の行列に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [°]：≈35.3"
+  },
+  "methods": [],
+  "tags": [
+   "テンソル",
+   "固有値",
+   "導電率",
+   "異方性"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "完全反対称化したテンソルはスカラー三重積に比例する",
+  "topic": "完全反対称化したテンソルはスカラー三重積に比例する",
+  "statement": {
+   "tex": "$S_{ijk}=u_iv_jw_k-v_iu_jw_k+v_iw_ju_k-w_iv_ju_k+w_iu_jv_k-u_iw_jv_k$ とする．\n\\begin{enumerate}\n\\item $S_{ijk}=\\epsilon_{ijk}\\,\\boldsymbol u\\cdot(\\boldsymbol v\\times\\boldsymbol w)$ を示せ．\n\\item $\\boldsymbol u=(1,0,1)$，$\\boldsymbol v=(0,1,-1)$，$\\boldsymbol w=(1,1,1)$ で $S_{123}$ と $0$ でない成分の数を求めよ．$\\boldsymbol w=(1,1,0)$ ならどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $S_{123}=1$，6成分；$\\boldsymbol w=(1,1,0)$ ではすべて $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $S$ は添字について完全反対称なので $\\epsilon_{ijk}S_{123}$ に比例し，$S_{123}=\\det(\\boldsymbol u,\\boldsymbol v,\\boldsymbol w)$．\\hfill$\\square$\n\n(2) $\\det=1\\cdot(1+1)-0+1\\cdot(0-1)=\\boldsymbol1$．$\\epsilon_{ijk}\\ne0$ の $\\boldsymbol6$ 成分．$\\boldsymbol w=(1,1,0)$ では3つのベクトルが1次従属で $\\det=0$，\\textbf{すべて $0$}．"
+   }
+  ],
+  "idea": {
+   "tex": "3階の完全反対称テンソルは3次元では1成分しかなく，行列式で決まる．原題の成分計算を，構造の理解に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "反対称テンソル",
+   "レヴィ＝チヴィタ記号",
+   "行列式"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "テンソルの3つの不変量から固有方程式を作る",
+  "topic": "テンソルの3つの不変量から固有方程式を作る",
+  "statement": {
+   "tex": "$T=\\begin{pmatrix}1&2&0\\\\2&1&0\\\\0&0&3\\end{pmatrix}$ とする．\n\\begin{enumerate}\n\\item $\\alpha=T_{ii}$，$\\beta=T_{ij}T_{ji}$，$\\gamma=T_{ij}T_{jk}T_{ki}$ を求めよ．\n\\item $\\lambda^3-\\alpha\\lambda^2+\\tfrac12(\\alpha^2-\\beta)\\lambda-\\tfrac16(\\alpha^3-3\\alpha\\beta+2\\gamma)=0$ を作り，固有値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $5,\\ 19,\\ 53$　(2) $\\lambda^3-5\\lambda^2+3\\lambda+9=0$；$-1,3,3$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 固有値 $-1,3,3$ から $\\alpha=\\boldsymbol5$，$\\beta=1+9+9=\\boldsymbol{19}$，$\\gamma=-1+27+27=\\boldsymbol{53}$（直接の計算と一致）．\n\n(2) $\\frac12(25-19)=3$，$\\frac16(125-285+106)=-9$．$\\boldsymbol{\\lambda^3-5\\lambda^2+3\\lambda+9=(\\lambda+1)(\\lambda-3)^2}$．"
+   }
+  ],
+  "idea": {
+   "tex": "固有方程式の係数は回転で不変なトレースの組合せで書ける．原題の一般的な証明を，具体的な行列で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "不変量",
+   "固有方程式",
+   "トレース"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "具体的な行列をスカラー・ベクトル・対称トレースレスに分解する",
+  "topic": "具体的な行列をスカラー・ベクトル・対称トレースレスに分解する",
+  "statement": {
+   "tex": "$T=\\begin{pmatrix}1&2&3\\\\0&1&4\\\\1&0&1\\end{pmatrix}$ を $T_{ij}=\\alpha\\delta_{ij}+\\epsilon_{ijk}\\omega_k+B_{ij}$（$B$ は対称でトレース $0$）と分解せよ．また，$T_{ijk}=T_{jik}$ かつ $T_{ijk}=-T_{ikj}$ をみたすテンソルは $0$ であることを示せ．"
+  },
+  "answer": {
+   "tex": "$\\alpha=1$，$\\boldsymbol\\omega=(2,-1,1)$，$B=\\begin{pmatrix}0&1&2\\\\1&0&2\\\\2&2&0\\end{pmatrix}$；証明"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\alpha=\\frac13\\mathrm{tr}T=\\boldsymbol1$．反対称部分 $\\frac12(T-T^T)$ の $(1,2)=1=\\omega_3$，$(2,3)=2=\\omega_1$，$(1,3)=1=-\\omega_2$ より $\\boldsymbol{\\boldsymbol\\omega=(2,-1,1)}$．対称部分から $\\alpha I$ を引いて $B$．\n\n後半：$T_{ijk}=T_{jik}=-T_{jki}=-T_{kji}=T_{kij}=T_{ikj}=-T_{ijk}$ より $0$．\\hfill$\\square$"
+   }
+  ],
+  "idea": {
+   "tex": "2階テンソルは回転の下で既約な3つの部分（1+3+5成分）に分かれる．原題の一般の証明を，具体的な行列で分解させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "記述"
+  },
+  "methods": [],
+  "tags": [
+   "テンソルの分解",
+   "反対称部分",
+   "トレースレス"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "多変数ガウス積分の4次と6次のモーメント",
+  "topic": "多変数ガウス積分の4次と6次のモーメント",
+  "statement": {
+   "tex": "平均 $0$，共分散 $G$ のガウス分布を考える．\n\\begin{enumerate}\n\\item $\\langle\\phi_a^4\\rangle$ を $G_{aa}$ で表せ．\n\\item 1変数（分散 $\\sigma^2$）で $\\langle\\cos\\phi\\rangle$ を求めよ．\n\\item $\\langle\\phi_{a_1}\\cdots\\phi_{a_6}\\rangle$ の項の数を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3G_{aa}^2$　(2) $e^{-\\sigma^2/2}$　(3) $15$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ウィックの3つのペアの作り方がすべて $G_{aa}^2$：$\\boldsymbol{3G_{aa}^2}$．\n\n(2) $\\langle e^{i\\phi}\\rangle=e^{-\\sigma^2/2}$ の実部：$\\boldsymbol{e^{-\\sigma^2/2}}$（ゆらぎが周期的な量を弱める：デバイ＝ワラー因子）．\n\n(3) $5!!=\\boldsymbol{15}$．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス分布のモーメントはウィックの定理で計算でき，指数関数の期待値も2次のモーメントで決まる．原題の一般的な証明を，具体的な値の計算にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) e ^(- σ ^(2)/2)\n(3) 15"
+  },
+  "methods": [],
+  "tags": [
+   "ガウス積分",
+   "ウィックの定理",
+   "モーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "崩壊連鎖の三角行列と娘核の最大時刻",
+  "topic": "崩壊連鎖の三角行列と娘核の最大時刻",
+  "statement": {
+   "tex": "放射性崩壊の連鎖 $\\mathrm A\\xrightarrow{\\lambda_1}\\mathrm B\\xrightarrow{\\lambda_2}\\mathrm C$（C は安定）で，各核の数 $\\boldsymbol N=(N_A,N_B,N_C)^T$ は $\\dfrac{d\\boldsymbol N}{dt}=M\\boldsymbol N$ に従う．初期条件は $\\boldsymbol N(0)=(N_0,0,0)^T$．\n\\begin{enumerate}\n\\item 行列 $M$ を書き，その特性方程式と固有値を求めよ．\n\\item $\\lambda_1\\ne\\lambda_2$ として $N_B(t)$ を求めよ．特に $\\lambda_1=2\\lambda$，$\\lambda_2=\\lambda$ のとき，$N_B$ が最大になる時刻とその最大値を求めよ．\n\\item $\\lambda_1=\\lambda_2=\\lambda$ のとき $M$ は対角化できないことを示し，$N_B(t)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $M=\\begin{pmatrix}-\\lambda_1&0&0\\\\ \\lambda_1&-\\lambda_2&0\\\\0&\\lambda_2&0\\end{pmatrix}$，$\\mu(\\mu+\\lambda_1)(\\mu+\\lambda_2)=0$，固有値 $0,-\\lambda_1,-\\lambda_2$　(2) $N_B=\\dfrac{\\lambda_1N_0}{\\lambda_2-\\lambda_1}(e^{-\\lambda_1t}-e^{-\\lambda_2t})$；$t=\\dfrac{\\ln2}{\\lambda}$ で最大値 $N_0/2$　(3) $N_B=N_0\\lambda te^{-\\lambda t}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot N_A=-\\lambda_1N_A$，$\\dot N_B=\\lambda_1N_A-\\lambda_2N_B$，$\\dot N_C=\\lambda_2N_B$ より\n\\[ M=\\begin{pmatrix}-\\lambda_1&0&0\\\\ \\lambda_1&-\\lambda_2&0\\\\0&\\lambda_2&0\\end{pmatrix}. \\]\n下三角行列なので $\\det(M-\\mu I)=(-\\lambda_1-\\mu)(-\\lambda_2-\\mu)(-\\mu)=0$，すなわち $\\mu(\\mu+\\lambda_1)(\\mu+\\lambda_2)=0$．固有値は対角成分 $0,-\\lambda_1,-\\lambda_2$（$\\mu=0$ は全核数の保存に対応）．\n\n(2) $N_A=N_0e^{-\\lambda_1t}$．$\\dot N_B+\\lambda_2N_B=\\lambda_1N_0e^{-\\lambda_1t}$ を解いて $N_B(0)=0$ とすると\n\\[ N_B=\\frac{\\lambda_1N_0}{\\lambda_2-\\lambda_1}\\left(e^{-\\lambda_1t}-e^{-\\lambda_2t}\\right). \\]\n$\\lambda_1=2\\lambda,\\lambda_2=\\lambda$：$N_B=2N_0(e^{-\\lambda t}-e^{-2\\lambda t})$．$\\dot N_B=2N_0\\lambda(-e^{-\\lambda t}+2e^{-2\\lambda t})=0$ より $e^{-\\lambda t}=1/2$，$t=\\ln2/\\lambda$．最大値 $2N_0(\\frac12-\\frac14)=N_0/2$．\n\n(3) $\\lambda_1=\\lambda_2=\\lambda$ のとき固有値 $-\\lambda$ は重根．$M+\\lambda I=\\begin{pmatrix}0&0&0\\\\ \\lambda&0&0\\\\0&\\lambda&\\lambda\\end{pmatrix}$ の階数は 2 なので，固有値 $-\\lambda$ の固有ベクトルは 1 本しかなく（重複度 2 に満たない），$M$ は対角化できない．\nこのとき $\\dot N_B+\\lambda N_B=\\lambda N_0e^{-\\lambda t}$ より $(N_Be^{\\lambda t})'=\\lambda N_0$，$N_B=N_0\\lambda te^{-\\lambda t}$．(2) の式で $\\lambda_2\\to\\lambda_1$ の極限をとっても同じ結果になる．固有値の縮退で指数関数に $t$ が掛かる（ジョルダン標準形の特徴）．"
+   }
+  ],
+  "idea": {
+   "tex": "崩壊連鎖の係数行列は三角行列で固有値は崩壊定数そのもの．崩壊定数が等しいと固有値が縮退して対角化不能になり，解に $te^{-\\lambda t}$ が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "三角行列",
+   "特性方程式",
+   "固有値",
+   "放射性崩壊",
+   "ベイトマン方程式",
+   "ジョルダン標準形"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "鏡映の合成と回転：2次元直交変換",
+  "topic": "鏡映の合成と回転：2次元直交変換",
+  "statement": {
+   "tex": "平面の位置ベクトル $(x,y)^T$ に作用する行列として\n\\[ B=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix},\\qquad D=\\begin{pmatrix}\\frac{\\sqrt3}2&\\frac12\\\\-\\frac12&\\frac{\\sqrt3}2\\end{pmatrix} \\]\nを考える．また，原点を通り $x$ 軸と角 $\\alpha$ をなす直線に関する鏡映を $F(\\alpha)$，原点のまわりの反時計回り角 $\\varphi$ の回転を $R(\\varphi)$ と書く．\n\\begin{enumerate}\n\\item $F(\\alpha)$ の行列を求め，$F(\\beta)F(\\alpha)=R(2(\\beta-\\alpha))$ および $R(\\varphi)F(\\alpha)=F(\\alpha+\\varphi/2)$ を示せ．\n\\item $B$，$D$ がそれぞれどの変換かを答え，積 $DB$ と $BD$ がどの直線に関する鏡映かを求めよ．\n\\item $M=(BD)(DB)$ とする．$M^n=I$ となる最小の正の整数 $n$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F(\\alpha)=\\begin{pmatrix}\\cos2\\alpha&\\sin2\\alpha\\\\ \\sin2\\alpha&-\\cos2\\alpha\\end{pmatrix}$，関係式は証明（解説参照）　(2) $B=F(45^\\circ)$，$D=R(-30^\\circ)$；$DB=F(30^\\circ)$，$BD=F(60^\\circ)$　(3) $n=6$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 直線方向の単位ベクトル $\\boldsymbol e=(\\cos\\alpha,\\sin\\alpha)$ について，鏡映は $\\boldsymbol v\\mapsto2(\\boldsymbol e\\cdot\\boldsymbol v)\\boldsymbol e-\\boldsymbol v$，すなわち $F(\\alpha)=2\\boldsymbol e\\boldsymbol e^T-I=\\begin{pmatrix}\\cos2\\alpha&\\sin2\\alpha\\\\ \\sin2\\alpha&-\\cos2\\alpha\\end{pmatrix}$．\n直接計算すると\n\\[ F(\\beta)F(\\alpha)=\\begin{pmatrix}\\cos2\\beta\\cos2\\alpha+\\sin2\\beta\\sin2\\alpha & \\cos2\\beta\\sin2\\alpha-\\sin2\\beta\\cos2\\alpha\\\\ \\sin2\\beta\\cos2\\alpha-\\cos2\\beta\\sin2\\alpha & \\sin2\\beta\\sin2\\alpha+\\cos2\\beta\\cos2\\alpha\\end{pmatrix}=R(2(\\beta-\\alpha)). \\]\nまた $R(\\varphi)F(\\alpha)=\\begin{pmatrix}\\cos(2\\alpha+\\varphi)&\\sin(2\\alpha+\\varphi)\\\\ \\sin(2\\alpha+\\varphi)&-\\cos(2\\alpha+\\varphi)\\end{pmatrix}=F(\\alpha+\\varphi/2)$（加法定理）．\n\n(2) $B=F(45^\\circ)$（$x,y$ の入れ替え＝直線 $y=x$ に関する鏡映，$\\det B=-1$）．$D=R(-30^\\circ)$（時計回りに $30^\\circ$ の回転，$\\det D=1$）．\n$DB=R(-30^\\circ)F(45^\\circ)=F(45^\\circ-15^\\circ)=F(30^\\circ)$．\n$BD$ については転置をとるのが早い：$F,R$ は直交行列で $F^T=F$，$R(\\varphi)^T=R(-\\varphi)$ なので $(BD)^T=D^TB=R(30^\\circ)F(45^\\circ)=F(60^\\circ)$．$F(60^\\circ)$ は対称行列なので $BD=F(60^\\circ)$．\n\n(3) $M=F(60^\\circ)F(30^\\circ)=R(2(60^\\circ-30^\\circ))=R(60^\\circ)$．$R(60^\\circ)^n=R(60^\\circ n)=I$ となる最小の $n$ は $n=6$．"
+   }
+  ],
+  "idea": {
+   "tex": "2 次元直交行列は回転（$\\det=1$）か鏡映（$\\det=-1$）で，鏡映 2 回の合成は軸のなす角の 2 倍の回転になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $n$：6"
+  },
+  "methods": [],
+  "tags": [
+   "一次変換",
+   "回転行列",
+   "鏡映",
+   "直交行列",
+   "群",
+   "行列の積"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 1,
+  "minutes": 20,
+  "theme": "2状態マルコフ連鎖：モード行列で求める遷移行列のn乗",
+  "topic": "2状態マルコフ連鎖：モード行列で求める遷移行列のn乗",
+  "statement": {
+   "tex": "ある分子は 2 つの配座状態 1，2 をとり，一定の時間間隔ごとに確率 $p$ で $1\\to2$，確率 $q$ で $2\\to1$ に遷移する（$0<p,q$，$p+q<2$）．状態 1，2 にいる確率を並べた列ベクトル $\\boldsymbol\\pi_n$ は $\\boldsymbol\\pi_{n+1}=P\\boldsymbol\\pi_n$，\n\\[ P=\\begin{pmatrix}1-p&q\\\\ p&1-q\\end{pmatrix} \\]\nに従う．\n\\begin{enumerate}\n\\item $P$ の固有値と固有ベクトルを求め，モード行列 $C$ とその逆行列 $C^{-1}$ を求めて $C^{-1}PC$ を計算せよ．\n\\item $P^n$ を求め，$n\\to\\infty$ の極限（定常分布）を答えよ．\n\\item $p=0.3$，$q=0.1$ とする．はじめ確実に状態 1 にいたとき，状態 1 にいる確率と定常値との差が $0.01$ 未満になる最小の $n$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 固有値 $1$（$(q,p)^T$），$1-p-q$（$(1,-1)^T$）；$C=\\begin{pmatrix}q&1\\\\p&-1\\end{pmatrix}$，$C^{-1}=\\frac{1}{p+q}\\begin{pmatrix}1&1\\\\p&-q\\end{pmatrix}$，$C^{-1}PC=\\mathrm{diag}(1,1-p-q)$　(2) $P^n=\\frac1{p+q}\\begin{pmatrix}q+p\\rho^n&q(1-\\rho^n)\\\\p(1-\\rho^n)&p+q\\rho^n\\end{pmatrix}$（$\\rho=1-p-q$），定常分布 $\\left(\\frac q{p+q},\\frac p{p+q}\\right)$　(3) $n=9$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\det(P-\\lambda I)=(1-p-\\lambda)(1-q-\\lambda)-pq=\\lambda^2-(2-p-q)\\lambda+(1-p-q)=(\\lambda-1)(\\lambda-(1-p-q))$．\n固有値は $\\lambda_1=1$，$\\lambda_2=\\rho\\equiv1-p-q$．\n$\\lambda_1=1$：$-px_1+qx_2=0$ より $(q,p)^T$．$\\lambda_2=\\rho$：$qx_1+qx_2=0$ より $(1,-1)^T$．\nモード行列 $C=\\begin{pmatrix}q&1\\\\p&-1\\end{pmatrix}$，$\\det C=-(p+q)$ より $C^{-1}=\\dfrac{1}{p+q}\\begin{pmatrix}1&1\\\\p&-q\\end{pmatrix}$．\n$PC=\\begin{pmatrix}q&\\rho\\\\p&-\\rho\\end{pmatrix}$，$C^{-1}PC=\\dfrac1{p+q}\\begin{pmatrix}q+p&\\rho-\\rho\\\\pq-pq&p\\rho+q\\rho\\end{pmatrix}=\\begin{pmatrix}1&0\\\\0&\\rho\\end{pmatrix}$．\n\n(2) $P^n=C\\,\\mathrm{diag}(1,\\rho^n)\\,C^{-1}=\\dfrac1{p+q}\\begin{pmatrix}q+p\\rho^n&q(1-\\rho^n)\\\\p(1-\\rho^n)&p+q\\rho^n\\end{pmatrix}$．\n$|\\rho|<1$ なので $n\\to\\infty$ で $\\rho^n\\to0$，$P^n\\to\\dfrac1{p+q}\\begin{pmatrix}q&q\\\\p&p\\end{pmatrix}$．初期分布によらず定常分布 $\\boldsymbol\\pi_\\infty=\\left(\\dfrac q{p+q},\\dfrac p{p+q}\\right)^T$（固有値 1 の固有ベクトル）に近づく．$p\\,\\pi_{1}=q\\,\\pi_{2}$ は詳細つり合いを表す．\n\n(3) $\\rho=0.6$，定常値 $q/(p+q)=0.25$．状態 1 の確率は $(P^n)_{11}=0.25+0.75\\times0.6^n$．$0.75\\times0.6^n<0.01$ より $n>\\dfrac{\\ln(0.75/0.01)}{\\ln(1/0.6)}=\\dfrac{\\ln75}{\\ln(5/3)}\\approx8.45$．よって $n=9$（$n=8$ では差 $0.0126$，$n=9$ で $0.0076$）．\n緩和は第 2 固有値 $\\rho$ で決まり，緩和時間は $-1/\\ln|\\rho|\\approx1.96$ ステップ．"
+   }
+  ],
+  "idea": {
+   "tex": "遷移行列は常に固有値 1 をもち，その固有ベクトルが定常分布．モード行列で対角化すれば $P^n$ が求まり，定常状態への近づき方は第 2 固有値 $1-p-q$ のべきで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $n$：9"
+  },
+  "methods": [],
+  "tags": [
+   "固有値",
+   "固有ベクトル",
+   "モード行列",
+   "対角化",
+   "マルコフ連鎖",
+   "定常分布",
+   "緩和"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-02-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -391,6 +786,659 @@
   }
  },
  {
+  "id": "PM-02-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "はしご形抵抗回路の極限と収束の速さ",
+  "topic": "はしご形抵抗回路の極限と収束の速さ",
+  "statement": {
+   "tex": "直列の抵抗 $R$ と並列の抵抗 $2R$ を1段とするはしご形回路がある．$n$ 段の回路の入力抵抗を $R_n$ とすると，$R_1=3R$，$R_{n+1}=R+\\dfrac{2R\\cdot R_n}{2R+R_n}$ である（最後の段の先は開放）．\n\\begin{enumerate}\n\\item 数列 $R_n$ が単調で有界であることを示し，極限 $R_\\infty$ を求めよ．\n\\item $e_n=R_n-R_\\infty$ とおくとき，$n$ が大きいと $e_{n+1}\\simeq\\lambda e_n$ となる $\\lambda$ を求めよ．\n\\item $R_n$ が $R_\\infty$ と $0.1\\%$ 以内で一致するのは何段以上か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R_\\infty=2R$　(2) $\\lambda=\\dfrac14$　(3) 6段以上"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $g(r)=R+\\dfrac{2Rr}{2R+r}$ は $r$ について単調増加．$R_1=3R$，$R_2=R+\\frac{6R}{5}=2.2R<R_1$ なので，帰納的に $R_{n+1}<R_n$（単調減少）で，すべて $R$ 以上（有界）．極限は $r=g(r)$：$r^2-Rr-2R^2=0$，$\\boldsymbol{R_\\infty=2R}$．\n\n(2) $\\lambda=g'(R_\\infty)=\\dfrac{(2R)^2}{(2R+R_\\infty)^2}=\\boldsymbol{\\dfrac14}$．\n\n(3) 漸化式を計算すると $R_2=2.2R,\\ R_3=2.0476R,\\ R_4=2.0118R,\\ R_5=2.0029R,\\ R_6=2.00073R,\\dots$（誤差は毎回ほぼ $\\frac14$ 倍）．相対誤差は $R_5$ で $0.15\\%$，$R_6$ で $0.037\\%$ なので，$0.1\\%$ 以内になるのは $\\boldsymbol{6}$ \\textbf{段以上}．"
+   }
+  ],
+  "idea": {
+   "tex": "漸化式で決まる数列の極限は不動点で，収束の速さは不動点での写像の微分で決まる．無限に続く回路の入力抵抗は「1段足しても変わらない」条件で求まる．原題の数列の極限を回路に結びつけた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\lambda$：((1)/(4))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "数列の極限",
+   "漸化式",
+   "不動点",
+   "回路"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "等方的なガウス積分：4つの座標の積の積分",
+  "topic": "等方的なガウス積分：4つの座標の積の積分",
+  "statement": {
+   "tex": "$\\gamma>0$ とする．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_{\\mathbb R^3}r^{-3}e^{-\\gamma r^2}x_ix_j\\,dV$ を求めよ．\n\\item $\\displaystyle\\int_{\\mathbb R^3}e^{-\\gamma r^2}x_ix_jx_kx_l\\,dV=C(\\delta_{ij}\\delta_{kl}+\\delta_{ik}\\delta_{jl}+\\delta_{il}\\delta_{jk})$ となる理由を述べ，$C$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{2\\pi}{3\\gamma}\\delta_{ij}$　(2) $C=\\dfrac{\\pi^{3/2}}{4\\gamma^{7/2}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 等方的なので $\\propto\\delta_{ij}$，トレースから $\\frac13\\int r^{-1}e^{-\\gamma r^2}dV=\\frac{4\\pi}{3}\\cdot\\frac1{2\\gamma}$．$\\boldsymbol{\\frac{2\\pi}{3\\gamma}\\delta_{ij}}$．\n\n(2) 完全対称で等方的な4階テンソルはこの形だけ．$i=j=1$，$k=l=2$ の成分は $C=\\int x^2e^{-\\gamma x^2}dx\\int y^2e^{-\\gamma y^2}dy\\int e^{-\\gamma z^2}dz=\\left(\\dfrac{\\sqrt\\pi}{2\\gamma^{3/2}}\\right)^2\\sqrt{\\dfrac\\pi\\gamma}=\\boldsymbol{\\dfrac{\\pi^{3/2}}{4\\gamma^{7/2}}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "等方的な積分は等方テンソルに比例し，係数は1つの成分の計算で決まる．原題の2・3階の積分を，4階まで進めた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $C$：((pi ^(3/2))/(4 γ ^(7/2)))"
+  },
+  "methods": [],
+  "tags": [
+   "等方テンソル",
+   "ガウス積分",
+   "対称性"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "90°回転と180°回転で不変な2階テンソルの違い",
+  "topic": "90°回転と180°回転で不変な2階テンソルの違い",
+  "statement": {
+   "tex": "$x_3$ 軸のまわりの回転を考える．\n\\begin{enumerate}\n\\item $90^\\circ$ 回転で不変な2階テンソルの一般形を求め，任意の角の回転で不変な場合と同じであることを示せ．\n\\item $180^\\circ$ 回転だけで不変な2階テンソルの一般形を求め，独立な成分の数を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\begin{pmatrix}\\alpha&\\omega&0\\\\-\\omega&\\alpha&0\\\\0&0&\\beta\\end{pmatrix}$　(2) $T_{13}=T_{23}=T_{31}=T_{32}=0$，他は任意（5成分）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $90^\\circ$ 回転 $x_1\\to x_2$，$x_2\\to-x_1$ で $T_{11}=T_{22}$，$T_{12}=-T_{21}$，$T_{13}=T_{23}=T_{31}=T_{32}=0$．この形は任意の角の回転で不変．\n\n(2) $180^\\circ$ 回転は $x_1,x_2$ の符号を反転：$x_3$ と混ざる成分だけが $0$．$T_{11},T_{12},T_{21},T_{22},T_{33}$ の $\\boldsymbol5$ 成分．"
+   }
+  ],
+  "idea": {
+   "tex": "2階テンソルでは4回対称性があれば連続的な回転対称性と区別できないが，2回対称性では区別できる．原題の連続的な回転を，離散的な回転と比べさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "不変テンソル",
+   "対称性",
+   "回転"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "弾性テンソルの独立な成分は21個",
+  "topic": "弾性テンソルの独立な成分は21個",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item $n$ 次元の完全対称な $m$ 階テンソルの独立な成分の数を求め，$n=3,m=4$ の値を求めよ．\n\\item 弾性テンソル $C_{ijkl}$ が $C_{ijkl}=C_{jikl}=C_{ijlk}=C_{klij}$ をみたすとき，3次元での独立な成分の数を求めよ．\n\\item 等方的な物質では何個になるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\binom{n+m-1}{m}$；$15$　(2) $21$　(3) $2$（$\\lambda,\\mu$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 重複組合せで $\\boldsymbol{\\binom{n+m-1}{m}}$，$\\binom64=\\boldsymbol{15}$．\n\n(2) $(ij)$ の対は6通り，$C$ は6行6列の対称行列：$\\frac{6\\cdot7}{2}=\\boldsymbol{21}$．\n\n(3) 等方テンソルは $\\delta_{ij}\\delta_{kl}$ と $\\delta_{ik}\\delta_{jl}+\\delta_{il}\\delta_{jk}$ の組合せで $\\boldsymbol2$．"
+   }
+  ],
+  "idea": {
+   "tex": "対称性で独立な成分の数が大きく減る．原題の完全対称・反対称の数え上げを，弾性テンソルに応用させた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 21\n(3) 2"
+  },
+  "methods": [],
+  "tags": [
+   "テンソルの独立成分",
+   "対称性",
+   "弾性テンソル",
+   "組合せ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "反交換するエルミート演算子のスペクトル",
+  "topic": "反交換するエルミート演算子のスペクトル",
+  "statement": {
+   "tex": "有限次元 $N$ のヒルベルト空間上で，エルミート演算子 $A,B$ が反交換関係 $\\{A,B\\}=AB+BA=0$ を満たす．\n\\begin{enumerate}\n\\item $A$ と $B$ の同時固有ケット $|a,b\\rangle$ が存在すれば，$ab=0$ であることを示せ．\n\\item $B$ が 0 を固有値にもたない（逆演算子をもつ）とする．$A$ の固有値 $a$ の固有ケット $|a\\rangle$ に対して $B|a\\rangle$ は $A$ の固有値 $-a$ の固有ケットであることを示し，$A$ の固有値は $\\pm a$ が同じ多重度で対をなすこと，特に $\\mathrm{Tr}\\,A^{2k+1}=0$（$k=0,1,2,\\dots$）を示せ．\n\\item さらに $A^2=B^2=\\mathbf 1$ とする．$N$ は偶数でなければならないことを示せ．また $N=2$ の例を 1 つ挙げ，$C=-iAB$ がエルミートで $C^2=\\mathbf 1$，かつ $A,B$ の両方と反交換することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\{A,B\\}|a,b\\rangle=2ab|a,b\\rangle=0$　(2) $AB|a\\rangle=-aB|a\\rangle$，$B$ が可逆なので多重度が等しい　(3) $\\mathrm{Tr}A=0$ かつ固有値 $\\pm1$ より $N$ 偶数；例 $A=\\sigma_x,\\ B=\\sigma_z$，$C=-i\\sigma_x\\sigma_z=\\sigma_y$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $0=\\{A,B\\}|a,b\\rangle=(ab+ba)|a,b\\rangle=2ab|a,b\\rangle$．$|a,b\\rangle\\ne0$ だから $ab=0$．すなわち同時固有ケットは少なくとも一方の固有値が 0 のときに限って存在しうる．\n\n(2) $AB|a\\rangle=-BA|a\\rangle=-aB|a\\rangle$．$B$ は可逆なので $B|a\\rangle\\ne0$ で，これは $A$ の固有値 $-a$ の固有ケット．したがって $B$ は $A$ の固有値 $a$ の固有空間 $V_a$ を $V_{-a}$ の中へ単射に写し，$\\dim V_a\\le\\dim V_{-a}$．$a\\to-a$ として逆向きの不等式も成り立つので $\\dim V_a=\\dim V_{-a}$．固有値が $\\pm a$ で同じ多重度の対をなすから\n\\[\n\\mathrm{Tr}\\,A^{2k+1}=\\sum_a(\\dim V_a)\\,a^{2k+1}=0 .\n\\]\n（別解：$\\mathrm{Tr}A=\\mathrm{Tr}(B^{-1}BA)=-\\mathrm{Tr}(B^{-1}AB)=-\\mathrm{Tr}A$．）なお $a=0$ の固有空間は自分自身に写るだけで制約はない．\n\n(3) $B^2=\\mathbf 1$ なら $B$ は可逆なので (2) が使える．$A^2=\\mathbf 1$ より $A$ の固有値は $\\pm1$ だけで，その多重度を $n_\\pm$ とすると (2) より $n_+=n_-$．よって $N=n_++n_-=2n_+$ は偶数．\n\n例：$A=\\sigma_x=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$，$B=\\sigma_z=\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}$．$C=-iAB=-i\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}=\\begin{pmatrix}0&i\\\\-i&0\\end{pmatrix}$（$=-\\sigma_y$）．\n$C^\\dagger=iBA=-iAB=C$（反交換を使った）でエルミート，$C^2=-ABAB=ABBA=\\mathbf 1$．$AC+CA=-iA^2B-iABA=-iB+iA^2B=0$，同様に $BC+CB=0$．こうして互いに反交換し 2 乗が 1 のエルミート演算子の組が 3 つ得られる（パウリ代数）．"
+   }
+  ],
+  "idea": {
+   "tex": "反交換する演算子 $B$ は $A$ の固有値を $a\\to-a$ に写す．$B$ が可逆なら $\\pm a$ の多重度が等しく，2 乗が 1 なら次元が偶数に限られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "反交換関係",
+   "エルミート演算子",
+   "固有値",
+   "パウリ行列",
+   "トレース"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "縮退した可換演算子と逐次測定",
+  "topic": "縮退した可換演算子と逐次測定",
+  "statement": {
+   "tex": "3 次元のケット空間の規格直交基底 $\\{|1\\rangle,|2\\rangle,|3\\rangle\\}$ で，エルミート演算子 $A$, $B$ が\n\\[\nA\\doteq\\begin{pmatrix}a&0&0\\\\0&-a&0\\\\0&0&-a\\end{pmatrix},\\qquad\nB\\doteq\\begin{pmatrix}b&0&0\\\\0&c&-id\\\\0&id&c\\end{pmatrix}\n\\]\n（$a\\ne0$, $b$, $c$, $d$ は実数）と表される．\n\\begin{enumerate}\n\\item $[A,B]=0$ を確かめ，$B$ の固有値と規格化固有ケットを求めよ．\n\\item (i) $B$ だけで固有ケットが一意に定まる（$B$ 単独で完全な組をなす）条件，(ii) $A$ と $B$ を合わせると同時固有ケットが一意に定まる条件，をそれぞれ $b,c,d$ で表せ．\n\\item 以下 $b=c+d$，$d\\neq0$ とする．状態 $|\\psi\\rangle=(|1\\rangle+|2\\rangle+|3\\rangle)/\\sqrt3$ で $B$ を測定したとき，結果 $b$ を得る確率と，測定直後の（規格化した）状態を求めよ．\n\\item (3) で結果 $b$ を得た直後に続けて $A$ を測定する．結果 $a$ を得る確率を求めよ．またこの後もう一度 $B$ を測定すると何が得られるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 固有値 $b$：$|1\\rangle$；$c+d$：$(|2\\rangle+i|3\\rangle)/\\sqrt2$；$c-d$：$(i|2\\rangle+|3\\rangle)/\\sqrt2$　(2) (i) $b,\\ c+d,\\ c-d$ がすべて異なる（$d\\ne0$ かつ $b\\ne c\\pm d$）　(ii) $d\\neq0$　(3) 確率 $2/3$，状態 $\\frac{1}{\\sqrt2}|1\\rangle+\\frac{1-i}{2\\sqrt2}|2\\rangle+\\frac{1+i}{2\\sqrt2}|3\\rangle$　(4) 確率 $1/2$．その後の $B$ 測定は確実に $b$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A$ は $\\{|2\\rangle,|3\\rangle\\}$ 上で $-a$ 倍（単位行列の定数倍）なので，同じブロック構造をもつ $B$ と可換：$AB=BA=\\mathrm{diag}(ab,\\,-aM)$（$M$ は $B$ の右下 $2\\times2$ ブロック）．\n$B$ の右下ブロック $\\begin{pmatrix}c&-id\\\\id&c\\end{pmatrix}$ の固有方程式は $(c-\\lambda)^2-d^2=0$，$\\lambda=c\\pm d$．\n$\\lambda=c+d$：$-id\\,x_3=d\\,x_2$ より $x_3=ix_2$，固有ケット $(|2\\rangle+i|3\\rangle)/\\sqrt2$．\n$\\lambda=c-d$：$x_2=-ix_3$ ，固有ケット $(i|2\\rangle+|3\\rangle)/\\sqrt2$（位相は任意）．\nもう 1 つは固有値 $b$ の $|1\\rangle$．\n\n(2) (i) $B$ の 3 つの固有値 $b$, $c+d$, $c-d$ が互いに異なれば $B$ 単独で完全．すなわち $d\\ne0$ かつ $b\\ne c\\pm d$．\n(ii) $A$ の固有値で $|1\\rangle$ と $\\{|2\\rangle,|3\\rangle\\}$ が分離されるので，残るのは $\\{|2\\rangle,|3\\rangle\\}$ 内の縮退だけ．ここで $B$ の固有値 $c\\pm d$ が異なればよく，条件は $d\\ne0$（$b$ の値は無関係）．\n例えば $b=c+d$ のとき $B$ は縮退しているが，組 $(A,B)$ の固有値の組 $(a,b)$, $(-a,b)$, $(-a,c-d)$ は互いに異なり，同時固有ケットを完全に区別する．\n\n(3) 固有値 $b$ の固有空間は $|1\\rangle$ と $|v_+\\rangle=(|2\\rangle+i|3\\rangle)/\\sqrt2$ で張られる．射影演算子 $\\Pi_b=|1\\rangle\\langle1|+|v_+\\rangle\\langle v_+|$．\n$\\langle1|\\psi\\rangle=1/\\sqrt3$，$\\langle v_+|\\psi\\rangle=\\dfrac{1-i}{\\sqrt6}$ より\n\\[\n\\Pr(b)=\\frac13+\\frac{|1-i|^2}{6}=\\frac13+\\frac13=\\frac23 .\n\\]\n測定直後の状態は\n\\[\n\\frac{\\Pi_b|\\psi\\rangle}{\\sqrt{2/3}}=\\sqrt{\\frac32}\\left(\\frac{1}{\\sqrt3}|1\\rangle+\\frac{1-i}{\\sqrt6}\\cdot\\frac{|2\\rangle+i|3\\rangle}{\\sqrt2}\\right)\n=\\frac{1}{\\sqrt2}|1\\rangle+\\frac{1-i}{2\\sqrt2}|2\\rangle+\\frac{1+i}{2\\sqrt2}|3\\rangle .\n\\]\n縮退した測定は固有空間への射影であって，状態は一つの固有ケットに落ちるとは限らない．\n\n(4) $A=a$ の固有空間は $|1\\rangle$ だけなので，$\\Pr(a)=|1/\\sqrt2|^2=\\dfrac12$．$A$ 測定後の状態は $|1\\rangle$（結果 $a$ の場合）か $|v_+\\rangle$（結果 $-a$ の場合）で，どちらも $B$ の固有値 $b$ の固有ケットである．$[A,B]=0$ なので $A$ の測定は $B$ の値を乱さず，再度 $B$ を測ると確率 1 で $b$ を得る．"
+   }
+  ],
+  "idea": {
+   "tex": "縮退した固有値の測定は固有空間への射影を与え，可換な第 2 の観測量を加えて初めて状態が確定する．$B$ 単独では縮退していても $(A,B)$ の組が完全になる条件を見極める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "同時固有ケット",
+   "縮退",
+   "完全系",
+   "射影測定",
+   "可換演算子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "実演算子は表示に依存するか",
+  "topic": "実演算子は表示に依存するか",
+  "statement": {
+   "tex": "ある規格直交基底 $\\{|b'\\rangle\\}$ でのすべての行列要素 $\\langle b'|A|b''\\rangle$ が実数であるとき，$A$ はその基底で「実」であるということにする．スピン $1/2$ の演算子 $S_x,S_y,S_z$（$S_z$ の固有基底 $\\{|+\\rangle,|-\\rangle\\}$ で通常のパウリ行列の $\\hbar/2$ 倍）と，1 次元の $x$, $p$ について考える．\n\\begin{enumerate}\n\\item $S_y$ の固有ケット $|S_y;\\pm\\rangle=(|+\\rangle\\pm i|-\\rangle)/\\sqrt2$ を基底にとって $S_x,S_y,S_z$ の行列表現を求め，どれが実かを答えよ．\n\\item 「$S_x,S_y,S_z$ の 3 つすべてが実になる」規格直交基底は存在しないことを，交換関係 $[S_x,S_y]=i\\hbar S_z$ を用いて証明せよ．\n\\item 位置表示 $\\{|x'\\rangle\\}$ で，次の演算子が実かどうか判定せよ：$x$，$p$，$p^2$，$xp+px$，$H=p^2/2m+V(x)$（$V$ は実関数）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_x\\doteq\\frac\\hbar2\\begin{pmatrix}0&-i\\\\i&0\\end{pmatrix}$（実でない），$S_y\\doteq\\frac\\hbar2\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}$（実），$S_z\\doteq\\frac\\hbar2\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}$（実）　(2) 解説参照　(3) 実：$x$, $p^2$, $H$；実でない：$p$, $xp+px$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V=(|S_y;+\\rangle,|S_y;-\\rangle)=\\frac1{\\sqrt2}\\begin{pmatrix}1&1\\\\i&-i\\end{pmatrix}$ として $V^\\dagger\\sigma_jV$ を計算する．\n\\[\nV^\\dagger\\sigma_xV=\\begin{pmatrix}0&-i\\\\i&0\\end{pmatrix},\\quad\nV^\\dagger\\sigma_yV=\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix},\\quad\nV^\\dagger\\sigma_zV=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}.\n\\]\n例えば $\\langle S_y;+|S_x|S_y;-\\rangle=\\frac\\hbar2\\cdot\\frac12(1,-i)\\begin{pmatrix}-i\\\\1\\end{pmatrix}=\\frac\\hbar2(-i)$．標準基底では $S_y$ だけが実でなかったのが，この基底では $S_x$ だけが実でない．「実である」ことは表示に依存する．\n\n(2) ある基底で $S_x,S_y,S_z$ の行列 $X,Y,Z$ がすべて実であったと仮定する．エルミートかつ実なので $X,Y,Z$ は実対称行列．すると\n\\[\n[X,Y]^{\\mathsf T}=[Y^{\\mathsf T},X^{\\mathsf T}]=[Y,X]=-[X,Y]\n\\]\nで $[X,Y]$ は実の反対称行列．一方 $[X,Y]=i\\hbar Z$ だから $Z=-\\frac{i}{\\hbar}[X,Y]$ は純虚数の行列となる．$Z$ は実でもあるから $Z=0$．しかし $S_z$ の固有値は $\\pm\\hbar/2\\ne0$ なので矛盾．よってそのような基底は存在しない（スピン $1/2$ に限らず，任意のスピンで同様）．\n\n(3) 位置表示の行列要素（核）は\n$\\langle x'|x|x''\\rangle=x'\\delta(x'-x'')$：実．\n$\\langle x'|p|x''\\rangle=-i\\hbar\\,\\delta'(x'-x'')$：純虚数で実でない．\n$\\langle x'|p^2|x''\\rangle=-\\hbar^2\\delta''(x'-x'')$：実．\n$\\langle x'|(xp+px)|x''\\rangle=-i\\hbar(x'+x'')\\delta'(x'-x'')$：純虚数で実でない（(2) と同じ論法で，$x$ と $p$ の積の反対称化した部分は実にならない）．\n$\\langle x'|H|x''\\rangle=\\left(-\\frac{\\hbar^2}{2m}\\delta''(x'-x'')+V(x')\\delta(x'-x'')\\right)$：実．\nしたがってハミルトニアンは位置表示で実であり，そのため $\\psi$ が固有関数なら $\\psi^*$ も同じ固有値の固有関数になる（時間反転対称性の表現）．一方，運動量表示 $\\{|p'\\rangle\\}$ では $p$ は実だが，$x$ は $i\\hbar\\,\\partial/\\partial p'$ となり実でない．"
+   }
+  ],
+  "idea": {
+   "tex": "「実演算子」は基底の選び方に依存する概念である．実対称行列どうしの交換子は実反対称になることから，$[S_x,S_y]=i\\hbar S_z$ を満たす 3 成分を同時に実にする基底は存在しない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "行列表現",
+   "表示の変換",
+   "エルミート演算子",
+   "交換関係",
+   "時間反転"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 30,
+  "theme": "環状連成振動の縮退の解け方とうなり",
+  "topic": "環状連成振動の縮退の解け方とうなり",
+  "statement": {
+   "tex": "半径一定の円周上を滑らかに動ける質量 $m$ の 3 つの小物体 1,2,3 が，円周に沿ったばねで環状につながれている．各物体の平衡位置からの円周方向の変位を $x_1,x_2,x_3$ とする．物体 1–2 間のばね定数は $k'$，物体 2–3 間と 3–1 間のばね定数は $k$ である．運動方程式は $m\\ddot{\\boldsymbol x}=-\\hat K\\boldsymbol x$，\n\\[\n\\hat K=\\begin{pmatrix}k+k'&-k'&-k\\\\-k'&k+k'&-k\\\\-k&-k&2k\\end{pmatrix}\n\\]\nと書ける．\n\\begin{enumerate}\n\\item $\\hat K$ の固有値と，規格化された固有ベクトルを求めよ．\n\\item $k'=k$ のとき固有値は縮退し，縮退した固有空間の中では正規直交基底の選び方に任意性がある．$k'\\neq k$ のとき固有ベクトルはどう決まるか．$k'\\to k$ の極限で残る基底の特徴を，対称性の観点から述べよ．\n\\item $t=0$ で $\\boldsymbol x=(d,0,0)$，すべて静止の状態から放す．$x_1(t),x_2(t)$ を求めよ．\n\\item $k'=k(1+\\varepsilon)$，$0<\\varepsilon\\ll1$ とする．物体 2 は $d/3$ を中心に振動し，その振幅はゆっくり変化する．振幅が初めて最大となる時刻 $t^*$ を $\\varepsilon$ の最低次で求め，その時の物体 2 と物体 1 の振幅を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0:\\ \\frac1{\\sqrt3}(1,1,1)$，$k+2k':\\ \\frac1{\\sqrt2}(1,-1,0)$，$3k:\\ \\frac1{\\sqrt6}(1,1,-2)$　(2) $k'\\ne k$ では縮退がなく固有ベクトルは一意．極限で 1↔2 の入れ替えに対し反対称・対称な基底が選ばれる．(3) $x_{1,2}=d\\left[\\frac13\\pm\\frac12\\cos\\omega_at+\\frac16\\cos\\omega_bt\\right]$，$\\omega_a=\\sqrt{(k+2k')/m}$，$\\omega_b=\\sqrt{3k/m}$　(4) $t^*\\simeq\\dfrac{3\\pi}{\\varepsilon}\\sqrt{\\dfrac{m}{3k}}$，物体 2 の振幅 $2d/3$，物体 1 の振幅 $d/3$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 特性方程式を直接解いてもよいが，系の対称性（1↔2 の入れ替え）を使うと速い．$\\boldsymbol v_0=(1,1,1)$ は各行の和が 0 なので $\\hat K\\boldsymbol v_0=\\boldsymbol 0$（固有値 0：全体の一様回転）．$\\boldsymbol v_a=(1,-1,0)$ に対し\n\\[\n\\hat K\\boldsymbol v_a=\\big((k+k')+k',\\ -k'-(k+k'),\\ -k+k\\big)=(k+2k')\\boldsymbol v_a .\n\\]\n$\\boldsymbol v_b=(1,1,-2)$ に対し $\\hat K\\boldsymbol v_b=(3k,3k,-6k)=3k\\,\\boldsymbol v_b$．固有値の和 $0+(k+2k')+3k=4k+2k'=\\mathrm{tr}\\,\\hat K$ も確認できる．規格化して\n\\[\n\\boldsymbol e_0=\\tfrac1{\\sqrt3}(1,1,1),\\quad \\boldsymbol e_a=\\tfrac1{\\sqrt2}(1,-1,0),\\quad \\boldsymbol e_b=\\tfrac1{\\sqrt6}(1,1,-2).\n\\]\n固有角振動数は $0,\\ \\omega_a=\\sqrt{(k+2k')/m},\\ \\omega_b=\\sqrt{3k/m}$．\n\n(2) $k'=k$ では $\\hat K$ の固有値は $0,3k,3k$ で，固有値 $3k$ の固有空間は平面 $x_1+x_2+x_3=0$ 全体．その中の任意の正規直交ペアが固有ベクトルになる．$k'\\ne k$ では 3 つの固有値が相異なるので，固有ベクトルは（定数倍を除いて）一意に決まり，$\\boldsymbol e_a,\\boldsymbol e_b$ は $k'$ によらない．よって $k'\\to k$ の極限でも縮退空間から $\\boldsymbol e_a$（1↔2 の入れ替えで符号を変える反対称モード）と $\\boldsymbol e_b$（対称モード）が選び出される．摂動（ばね 1–2 の変化）が保つ対称性で縮退空間の基底が決まる，というのが要点である．\n\n(3) $\\hat K$ は実対称なので固有ベクトルは直交し，初期変位を展開できる：\n\\[\n(1,0,0)=\\tfrac13(1,1,1)+\\tfrac12(1,-1,0)+\\tfrac16(1,1,-2).\n\\]\n初速度 0 なので各モードは $\\cos\\omega t$ で振動し，固有値 0 のモードは定数のまま（全体の重心は動かない）．よって\n\\[\n\\boldsymbol x(t)=d\\left[\\tfrac13(1,1,1)+\\tfrac12\\cos\\omega_at\\,(1,-1,0)+\\tfrac16\\cos\\omega_bt\\,(1,1,-2)\\right],\n\\]\n\\[\nx_1=d\\left(\\tfrac13+\\tfrac12\\cos\\omega_at+\\tfrac16\\cos\\omega_bt\\right),\\qquad x_2=d\\left(\\tfrac13-\\tfrac12\\cos\\omega_at+\\tfrac16\\cos\\omega_bt\\right).\n\\]\n\n(4) $x_2-\\frac d3=d\\left(-\\tfrac12\\cos\\omega_at+\\tfrac16\\cos\\omega_bt\\right)$ は角振動数がわずかに異なる 2 つの振動の重ね合わせで，うなりの包絡線は $\\frac d2$ と $\\frac d6$ の位相差 $\\phi=(\\omega_a-\\omega_b)t$ に応じ $\\frac d3$（$\\phi=0$）から $\\frac{2d}{3}$（$\\phi=\\pi$）まで変化する．初めて最大となるのは $(\\omega_a-\\omega_b)t^*=\\pi$．\n\\[\n\\omega_a=\\sqrt{\\frac{3k+2k\\varepsilon}{m}}\\simeq\\omega_b\\left(1+\\frac{\\varepsilon}{3}\\right)\\ \\Rightarrow\\ \\omega_a-\\omega_b\\simeq\\frac{\\varepsilon}{3}\\omega_b,\n\\]\n\\[\nt^*\\simeq\\frac{3\\pi}{\\varepsilon\\,\\omega_b}=\\frac{3\\pi}{\\varepsilon}\\sqrt{\\frac{m}{3k}}.\n\\]\nこのとき物体 2 の振動振幅は $\\frac d2+\\frac d6=\\frac{2d}{3}$．物体 1 は $x_1-\\frac d3=d(\\frac12\\cos\\omega_at+\\frac16\\cos\\omega_bt)$ で，位相差 $\\pi$ では振幅 $\\frac d2-\\frac d6=\\frac d3$．つまりエネルギーが物体 1 から 2 へゆっくり移る．なお $\\varepsilon=0$ ではうなりは起きず，物体 2 の振幅は $d/3$ のままである．"
+   }
+  ],
+  "idea": {
+   "tex": "実対称行列の固有値問題を環状連成振動に適用．縮退固有空間の基底は数学的には任意だが，対称性を保つ小さな摂動が基底を選び，わずかな固有値の分裂がうなり（モード間のエネルギー移動）として現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "固有値問題",
+   "対角化",
+   "縮退",
+   "実対称行列",
+   "連成振動",
+   "基準振動",
+   "うなり"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "非エルミートでも実固有値：PT対称と例外点",
+  "topic": "非エルミートでも実固有値：PT対称と例外点",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item エルミート行列 $H$ の固有値は実数であり，異なる固有値に属する固有ベクトルは直交することを示せ．\n\\item 利得と損失をもつ 2 つの結合した導波路（または共振器）のモードの方程式が $i\\,\\dfrac{d}{dz}\\boldsymbol\\psi=H\\boldsymbol\\psi$，\n\\[ H=\\begin{pmatrix} i\\gamma & \\kappa\\\\ \\kappa & -i\\gamma\\end{pmatrix}\\qquad(\\gamma\\ge0,\\ \\kappa>0) \\]\nで与えられる．$H$ はエルミートでないが，固有値を求め，それが実数になる $\\gamma$ の範囲を求めよ．\n\\item $\\gamma=\\kappa$ のとき $H$ は対角化できないことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\lambda=\\pm\\sqrt{\\kappa^2-\\gamma^2}$，実数となるのは $0\\le\\gamma\\le\\kappa$　(3) $H\\ne0$ かつ $H^2=0$ なので対角化不能（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $H\\boldsymbol x=\\lambda\\boldsymbol x$（$\\boldsymbol x\\ne0$）とする．$\\boldsymbol x^\\dagger H\\boldsymbol x=\\lambda\\boldsymbol x^\\dagger\\boldsymbol x$．左辺のエルミート共役をとると $(\\boldsymbol x^\\dagger H\\boldsymbol x)^*=\\boldsymbol x^\\dagger H^\\dagger\\boldsymbol x=\\boldsymbol x^\\dagger H\\boldsymbol x$ なので左辺は実数，$\\boldsymbol x^\\dagger\\boldsymbol x>0$ も実数．よって $\\lambda$ は実数．\n次に $H\\boldsymbol x=\\lambda\\boldsymbol x$，$H\\boldsymbol y=\\mu\\boldsymbol y$（$\\lambda\\ne\\mu$）とすると，$\\boldsymbol y^\\dagger H\\boldsymbol x=\\lambda\\boldsymbol y^\\dagger\\boldsymbol x$，一方 $\\boldsymbol y^\\dagger H\\boldsymbol x=(H\\boldsymbol y)^\\dagger\\boldsymbol x=\\mu\\boldsymbol y^\\dagger\\boldsymbol x$（$\\mu$ は実数）．差をとって $(\\lambda-\\mu)\\boldsymbol y^\\dagger\\boldsymbol x=0$，よって $\\boldsymbol y^\\dagger\\boldsymbol x=0$．\n\n(2) $\\det(H-\\lambda I)=(i\\gamma-\\lambda)(-i\\gamma-\\lambda)-\\kappa^2=\\lambda^2+\\gamma^2-\\kappa^2=0$ より $\\lambda=\\pm\\sqrt{\\kappa^2-\\gamma^2}$．\n$\\gamma<\\kappa$ なら 2 つの異なる実固有値（モードは伝播しても増幅も減衰もしない），$\\gamma>\\kappa$ なら $\\lambda=\\pm i\\sqrt{\\gamma^2-\\kappa^2}$ の純虚数となり一方のモードは指数的に増幅する．実数になるのは $0\\le\\gamma\\le\\kappa$．\n（エルミート性は固有値が実数であるための十分条件にすぎない．この $H$ は空間反転（成分の交換）と時間反転（複素共役）の積に対して不変であり，それが実固有値の起源である．）\n\n(3) $\\gamma=\\kappa$ のとき固有値は $0$（重根）．もし対角化可能なら $H=S\\,\\mathrm{diag}(0,0)S^{-1}=0$ となるはずだが $H\\ne0$．実際 $H^2=\\begin{pmatrix}-\\kappa^2+\\kappa^2 & i\\kappa^2-i\\kappa^2\\\\ \\cdot&\\cdot\\end{pmatrix}=0$ で $H$ は冪零行列．固有ベクトルは $(1,-i)^T$ の 1 本のみで，2 つの固有値と固有ベクトルが同時に合体する（例外点）．"
+   }
+  ],
+  "idea": {
+   "tex": "エルミート性は実固有値の十分条件であって必要条件ではない．PT 対称な非エルミート行列は $\\gamma<\\kappa$ で実固有値をもち，$\\gamma=\\kappa$ で固有ベクトルまで縮退する例外点が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エルミート行列",
+   "固有値",
+   "直交性",
+   "非エルミート",
+   "PT対称性",
+   "例外点",
+   "対角化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 20,
+  "theme": "二次曲面の判定と体積：縮退固有値",
+  "topic": "二次曲面の判定と体積：縮退固有値",
+  "statement": {
+   "tex": "実対称行列\n\\[ A=\\begin{pmatrix}4&2&2\\\\2&7&4\\\\2&4&7\\end{pmatrix} \\]\nを用いて，曲面 $\\boldsymbol x^TA\\boldsymbol x=4x^2+7y^2+7z^2+4xy+4xz+8yz=1$ を考える（たとえば異方的な結晶中の等エネルギー面）．\n\\begin{enumerate}\n\\item $A$ の固有値を求めよ．\n\\item この曲面はどのような図形か．半軸の長さと対称軸の方向を答えよ．\n\\item この曲面が囲む体積を，対角化を使わずに $\\det A$ だけから求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3,3,12$　(2) 回転楕円体（扁平）．半軸 $1/\\sqrt3,1/\\sqrt3,1/(2\\sqrt3)$，対称軸は $(1,2,2)/3$ 方向（短軸）　(3) $\\dfrac{4\\pi}{3\\sqrt{\\det A}}=\\dfrac{2\\pi}{9\\sqrt3}\\approx0.403$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A-3I=\\begin{pmatrix}1&2&2\\\\2&4&4\\\\2&4&4\\end{pmatrix}$ は階数 1 なので固有値 3 は 2 重．残りは $\\mathrm{Tr}A=18$ より $18-3-3=12$．\n（確認：$A\\boldsymbol n$ を $\\boldsymbol n=(1,2,2)/3$ で計算すると $A(1,2,2)^T=(12,24,24)^T=12(1,2,2)^T$．）\n\n(2) 直交変換で主軸座標 $(X,Y,Z)$ に移ると $3X^2+3Y^2+12Z^2=1$．固有値がすべて正なので楕円体で，2 つが等しいから回転楕円体．半軸は $1/\\sqrt3,\\ 1/\\sqrt3,\\ 1/\\sqrt{12}=1/(2\\sqrt3)$．固有値 12 の固有ベクトル $\\boldsymbol n=(1,2,2)/3$ の方向が対称軸で，その方向が最も短い（扁平な回転楕円体）．固有値 3 の固有空間は $\\boldsymbol n$ に垂直な平面全体で，その中のどの方向も主軸になれる．\n\n(3) 半軸 $a_i=1/\\sqrt{\\lambda_i}$ の楕円体の体積は $\\dfrac{4\\pi}3a_1a_2a_3=\\dfrac{4\\pi}{3\\sqrt{\\lambda_1\\lambda_2\\lambda_3}}=\\dfrac{4\\pi}{3\\sqrt{\\det A}}$．\n$\\det A=4(49-16)-2(14-8)+2(8-14)=132-12-12=108$ より\n\\[ V=\\frac{4\\pi}{3\\sqrt{108}}=\\frac{4\\pi}{18\\sqrt3}=\\frac{2\\pi}{9\\sqrt3}\\approx0.403. \\]\n（$\\det A=3\\cdot3\\cdot12=108$ と整合．）"
+   }
+  ],
+  "idea": {
+   "tex": "$A-\\lambda I$ の階数が 1 と分かれば固有値の縮退とトレースから全固有値が出る．楕円体の体積は固有値の積，すなわち行列式だけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "固有値",
+   "実対称行列",
+   "縮退",
+   "二次曲面",
+   "主軸変換",
+   "行列式",
+   "トレース"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 25,
+  "theme": "環状の3連成振動子と縮退した基準振動",
+  "topic": "環状の3連成振動子と縮退した基準振動",
+  "statement": {
+   "tex": "質量 $m$ の 3 個の質点が円周上に並び，隣り合う質点どうし（1–2，2–3，3–1）がばね定数 $k$ のばねで結ばれ，さらに各質点はばね定数 $k_0$ のばねで固定点にもつながれている．円周に沿った変位を $\\boldsymbol x=(x_1,x_2,x_3)^T$ とすると運動方程式は $m\\ddot{\\boldsymbol x}=-K\\boldsymbol x$，\n\\[ K=\\begin{pmatrix}k_0+2k&-k&-k\\\\-k&k_0+2k&-k\\\\-k&-k&k_0+2k\\end{pmatrix}. \\]\n\\begin{enumerate}\n\\item $K$ を直交行列で対角化し，基準角振動数を求めよ．トレースで結果を確かめよ．\n\\item 時刻 0 に質点 1 だけを $a$ だけ変位させ，すべて静かに放した．$x_1(t)$，$x_2(t)$ を求めよ．\n\\item $k\\ll k_0$ のとき，(2) の運動で質点 1 の振動の振幅がほぼ最小になる最初の時刻と，そのときの $x_1$ の振幅を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 固有値 $k_0$（$(1,1,1)/\\sqrt3$），$k_0+3k$（2重）；$\\omega_1=\\sqrt{k_0/m}$，$\\omega_2=\\sqrt{(k_0+3k)/m}$（2重），$\\mathrm{Tr}K=3k_0+6k$　(2) $x_1=\\frac a3(\\cos\\omega_1t+2\\cos\\omega_2t)$，$x_2=x_3=\\frac a3(\\cos\\omega_1t-\\cos\\omega_2t)$　(3) $t=\\pi/(\\omega_2-\\omega_1)\\approx\\frac{2\\pi}{3k}\\sqrt{mk_0}$，振幅 $a/3$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $J$ を全成分 1 の $3\\times3$ 行列とすると $K=(k_0+3k)I-kJ$．$J$ の固有値は $3$（固有ベクトル $\\boldsymbol u_1=(1,1,1)/\\sqrt3$）と $0$（2 重，$\\boldsymbol u_1$ に垂直な平面）．よって $K$ の固有値は $k_0+3k-3k=k_0$（$\\boldsymbol u_1$）と $k_0+3k$（2 重）．$\\boldsymbol u_1$ に垂直な正規直交基底として $\\boldsymbol u_2=(1,-1,0)/\\sqrt2$，$\\boldsymbol u_3=(1,1,-2)/\\sqrt6$ をとり $S=(\\boldsymbol u_1\\ \\boldsymbol u_2\\ \\boldsymbol u_3)$ とすれば $S^TKS=\\mathrm{diag}(k_0,\\,k_0+3k,\\,k_0+3k)$．\n基準角振動数は $\\omega_1=\\sqrt{k_0/m}$（全員が同位相に動く），$\\omega_2=\\sqrt{(k_0+3k)/m}$（2 重縮退）．\nトレース：$\\mathrm{Tr}K=3(k_0+2k)=3k_0+6k$，固有値の和 $k_0+2(k_0+3k)=3k_0+6k$ で一致．\n\n(2) 射影 $Q=\\boldsymbol u_1\\boldsymbol u_1^T=J/3$ を用いると，初速 0 の解は\n\\[ \\boldsymbol x(t)=\\left[\\cos\\omega_1t\\,Q+\\cos\\omega_2t\\,(I-Q)\\right]\\boldsymbol x(0). \\]\n$\\boldsymbol x(0)=(a,0,0)^T$ のとき $Q\\boldsymbol x(0)=\\frac a3(1,1,1)^T$，$(I-Q)\\boldsymbol x(0)=\\frac a3(2,-1,-1)^T$．よって\n\\[ x_1=\\frac a3(\\cos\\omega_1t+2\\cos\\omega_2t),\\qquad x_2=x_3=\\frac a3(\\cos\\omega_1t-\\cos\\omega_2t). \\]\n縮退した 2 つの基準モードの組み合わせ方は任意だが，射影を使えば基底の選び方によらずに解が書ける．\n\n(3) $k\\ll k_0$ なら $\\omega_2-\\omega_1$ は小さく，$x_1$ は角振動数 $\\approx\\omega_1$ の振動で，その振幅は $\\frac a3|1+2e^{i(\\omega_2-\\omega_1)t}|$ とゆっくり変化する．最小は位相差 $(\\omega_2-\\omega_1)t=\\pi$ のときで，値は $\\frac a3|1-2|=\\frac a3$．\n$\\omega_2-\\omega_1\\approx\\dfrac{3k}{2\\sqrt{mk_0}}$ より $t\\approx\\dfrac{\\pi}{\\omega_2-\\omega_1}\\approx\\dfrac{2\\pi\\sqrt{mk_0}}{3k}$．このとき $x_2,x_3$ の振幅は $\\frac a3\\cdot2=\\frac{2a}3$ と最大になり，エネルギーが残りの 2 質点に移っている．2 質点の連成振動と違い，質点 1 のエネルギーは完全には移らない（振幅は $a/3$ までしか下がらない）．"
+   }
+  ],
+  "idea": {
+   "tex": "$K=(k_0+3k)I-kJ$ と分解すれば固有値・縮退がすぐ分かり，射影演算子による対角化で縮退モードの基底選びに依存しない解が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $t$：pi /(ω_2 - ω_1) ; 振幅：a /3"
+  },
+  "methods": [],
+  "tags": [
+   "対角化",
+   "直交行列",
+   "縮退",
+   "射影演算子",
+   "トレース",
+   "連成振動",
+   "基準振動",
+   "うなり"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 20,
+  "theme": "縮退がある可換行列の同時固有ベクトル",
+  "topic": "縮退がある可換行列の同時固有ベクトル",
+  "statement": {
+   "tex": "実対称行列\n\\[\nA=\\begin{pmatrix}2&1&1\\\\1&2&1\\\\1&1&2\\end{pmatrix},\\qquad B=\\begin{pmatrix}1&0&0\\\\0&0&1\\\\0&1&0\\end{pmatrix}\n\\]\nを考える．\n\\begin{enumerate}\n\\item $[A,B]=0$ を確かめ，$A$ の固有値を求めよ．\n\\item $v=(1,-1,0)^T$ は $A$ の固有ベクトルであるが $B$ の固有ベクトルではないことを示せ．これは「可換な演算子は固有ベクトルを共有する」という主張と矛盾しないか．\n\\item $A$ と $B$ の同時固有ベクトルからなる正規直交基底を求め，各ベクトルの固有値の組 $(a,b)$ を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $[A,B]=0$，固有値 $4,1,1$　(2) $Bv=(1,0,-1)^T\\not\\propto v$．縮退した固有値の固有空間では基底の選び方に任意性があるので矛盾しない　(3) $\\tfrac1{\\sqrt3}(1,1,1)^T:(4,1)$，$\\tfrac1{\\sqrt2}(0,1,-1)^T:(1,-1)$，$\\tfrac1{\\sqrt6}(2,-1,-1)^T:(1,1)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A=1+J$（$J$ は全成分 1 の行列）であり，$B$ は第 2・第 3 成分の入れ替え（置換行列）．$BJ=JB=J$ なので $[A,B]=[J,B]=0$．$J$ の固有値は $3,0,0$ なので $A$ の固有値は $4,1,1$．\n\n(2) $Av=(2-1,1-2,1-1)^T=(1,-1,0)^T=v$ なので固有値 1 の固有ベクトル．$Bv=(1,0,-1)^T$ は $v$ に比例しない．定理が保証するのは「同時固有ベクトルからなる基底が存在する」ことであり，縮退した固有空間（ここでは $a=1$ の 2 次元空間）の任意のベクトルが $B$ の固有ベクトルになるわけではない．$[A,B]=0$ から $B$ はこの固有空間を自分自身に写すので，その中で $B$ を対角化すればよい．\n\n(3) $a=4$ の固有ベクトル $u_1=(1,1,1)^T/\\sqrt3$ は $Bu_1=u_1$ で $b=1$．$a=1$ の固有空間 $\\{x_1+x_2+x_3=0\\}$ の中で $B$ を対角化する：$B$ の固有値 $-1$ は $x_1=0,\\ x_3=-x_2$ で $u_2=(0,1,-1)^T/\\sqrt2$，固有値 $+1$ は $x_2=x_3$ で $u_3=(2,-1,-1)^T/\\sqrt6$．\n\\[\nu_1:(4,1),\\qquad u_2:(1,-1),\\qquad u_3:(1,1).\n\\]\n組 $(a,b)$ がすべて異なるので，$\\{A,B\\}$ は状態を一意に指定する完全な可換観測量の組をなす．"
+   }
+  ],
+  "idea": {
+   "tex": "可換性が保証するのは同時固有基底の存在であって，縮退空間では片方の固有ベクトルを適当に選び直す必要がある．縮退を第 2 の観測量で解くのが完全可換観測量系の考え方．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "可換行列",
+   "同時固有ベクトル",
+   "縮退",
+   "完全可換観測量",
+   "対称性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 2,
+  "minutes": 20,
+  "theme": "最小多項式から作る射影と関数",
+  "topic": "最小多項式から作る射影と関数",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item エルミート演算子 $A$（定数倍の恒等演算子ではない）が $A^2-4A+3=0$ を満たす．$A$ の固有値を求め，$A^{-1}$ を $A$ の 1 次式で表せ．\n\\item 各固有値への射影演算子 $P_1,P_3$ を $A$ の 1 次式で表し，$e^{i\\theta A}=c_0(\\theta)+c_1(\\theta)A$ となる $c_0,c_1$ を求めよ．\n\\item スピン 1 の $S_z$ は $S_z^3=\\hbar^2S_z$ を満たす．これを用いて $z$ 軸まわりの回転演算子 $e^{-i\\varphi S_z/\\hbar}$ を $1,\\ S_z,\\ S_z^2$ の 1 次結合で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 固有値 $1,3$，$A^{-1}=(4-A)/3$　(2) $P_1=(3-A)/2$，$P_3=(A-1)/2$，$c_0=\\tfrac12(3e^{i\\theta}-e^{3i\\theta})$，$c_1=\\tfrac12(e^{3i\\theta}-e^{i\\theta})$　(3) $e^{-i\\varphi S_z/\\hbar}=1-i\\sin\\varphi\\,\\dfrac{S_z}{\\hbar}-(1-\\cos\\varphi)\\dfrac{S_z^2}{\\hbar^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 固有ベクトル $A u=\\lambda u$ に多項式を作用させると $(\\lambda^2-4\\lambda+3)u=0$，よって $\\lambda\\in\\{1,3\\}$．$A$ が定数でないので両方とも現れる．$A(4-A)=4A-A^2=3$ より $A^{-1}=(4-A)/3$．\n\n(2) $(A-1)(A-3)=0$ なので $P_1=\\dfrac{A-3}{1-3}=\\dfrac{3-A}{2}$，$P_3=\\dfrac{A-1}{3-1}=\\dfrac{A-1}{2}$．実際 $P_1+P_3=1$，$P_1P_3=-(A-1)(A-3)/4=0$，$P_1^2=P_1$．スペクトル分解 $A=P_1+3P_3$ より\n\\[\ne^{i\\theta A}=e^{i\\theta}P_1+e^{3i\\theta}P_3=\\frac{3e^{i\\theta}-e^{3i\\theta}}{2}+\\frac{e^{3i\\theta}-e^{i\\theta}}{2}A .\n\\]\n（$\\theta=\\pi$ では $c_0=-1,\\ c_1=0$ となり $e^{i\\pi A}=-1$．）\n\n(3) $s=S_z/\\hbar$ とおくと $s^3=s$，すなわち固有値は $0,\\pm1$．$s^{2k+1}=s$，$s^{2k}=s^2$（$k\\ge1$）なので\n\\[\ne^{-i\\varphi s}=1+\\sum_{k\\ge0}\\frac{(-i\\varphi)^{2k+1}}{(2k+1)!}s+\\sum_{k\\ge1}\\frac{(-i\\varphi)^{2k}}{(2k)!}s^2=1-i\\sin\\varphi\\,s+(\\cos\\varphi-1)s^2 .\n\\]\n固有値 $m=0,\\pm1$ に対し $1-im\\sin\\varphi+(\\cos\\varphi-1)m^2=e^{-im\\varphi}$ となり整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "演算子が満たす最小多項式の根が固有値であり，ラグランジュ補間で射影と任意の関数 $f(A)$ が $A$ の有限次多項式で書ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $P_1$：(3- A)/2 ; $P_3$：(A -1)/2 ; $c_0$：((1)/(2))(3 e ^(i θ)- e ^(3 i θ)) ; $c_1$：((1)/(2))(e ^(3 i θ)- e ^(i θ))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "最小多項式",
+   "射影演算子",
+   "スペクトル分解",
+   "スピン1",
+   "回転演算子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-02-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -483,6 +1531,108 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 3,
+  "minutes": 30,
+  "theme": "同時固有ケットの個数と交換子の階数",
+  "topic": "同時固有ケットの個数と交換子の階数",
+  "statement": {
+   "tex": "$n$ 次元のヒルベルト空間上のエルミート演算子 $A,B$ を考える．\n\\begin{enumerate}\n\\item $A$ と $B$ の同時固有ケットで互いに直交するものが $k$ 個あり，それらが張る部分空間を $W$ とする．$W$ の直交補空間 $W^\\perp$ も $A$ と $B$ の両方で不変であること，および $[A,B]$ は $W$ 上で 0 であり $W^\\perp$ の中に値をとることを示せ．\n\\item エルミート演算子 $A,B$ に対して，$[A,B]$ の階数（像の次元）がちょうど 1 になることはないことを示せ．（ヒント：$C=-i[A,B]$ はエルミートで $\\mathrm{Tr}\\,C=0$．）\n\\item (1)(2) を用いて，「互いに直交する同時固有ケットが $n-1$ 個あれば，$[A,B]=0$ が結論できる」ことを示せ．\n\\item $n=3$ で，同時固有ケットがちょうど 1 方向しかなく $[A,B]\\ne0$ となる $A,B$ の例を 1 つ挙げ，$[A,B]$ を行列で書け．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2)(3) 証明（解説参照）　(4) 例：$A=\\mathrm{diag}(1,1,-1)$，$B=\\begin{pmatrix}0&0&0\\\\0&0&1\\\\0&1&0\\end{pmatrix}$，$[A,B]=\\begin{pmatrix}0&0&0\\\\0&0&2\\\\0&-2&0\\end{pmatrix}$（同時固有ケットは $(1,0,0)^{\\mathsf T}$ 方向のみ）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $|w\\rangle\\in W$ は同時固有ケットの 1 次結合なので $A|w\\rangle\\in W$．$|v\\rangle\\in W^\\perp$ に対し $\\langle w|A|v\\rangle=\\langle Aw|v\\rangle=0$（$A$ はエルミートで $A|w\\rangle\\in W$）．よって $A|v\\rangle\\in W^\\perp$．$B$ も同様．\n\n$W$ を張る同時固有ケット $|a',b'\\rangle$ に対し $[A,B]|a',b'\\rangle=(a'b'-b'a')|a',b'\\rangle=0$ なので $[A,B]$ は $W$ 上で 0．また $|v\\rangle\\in W^\\perp$ なら $AB|v\\rangle,\\ BA|v\\rangle\\in W^\\perp$ だから $[A,B]|v\\rangle\\in W^\\perp$．したがって $[A,B]$ の像は $W^\\perp$ に含まれ，階数は $\\dim W^\\perp=n-k$ 以下．\n\n(2) $C=-i[A,B]$ とおくと $C^\\dagger=i[A,B]^\\dagger=i(BA-AB)=-i[A,B]=C$ でエルミート，$\\mathrm{Tr}\\,C=-i(\\mathrm{Tr}AB-\\mathrm{Tr}BA)=0$．$C$ の階数が 1 なら，対角化したとき 0 でない固有値はただ 1 つ $c\\neq0$ で，$\\mathrm{Tr}\\,C=c\\ne0$ となり矛盾．よって $[A,B]$ の階数は 1 になりえない．\n\n(3) $k=n-1$ なら (1) より $[A,B]$ の階数は $1$ 以下．(2) より階数 1 は不可能なので階数 0，すなわち $[A,B]=0$．（実際，$W^\\perp$ は 1 次元で $A,B$ で不変なので，その中のベクトルは自動的に $n$ 番目の同時固有ケットになる．）\n\n(4) $A=\\mathrm{diag}(1,1,-1)$，$B=\\begin{pmatrix}0&0&0\\\\0&0&1\\\\0&1&0\\end{pmatrix}$ とすると\n\\[\nAB=\\begin{pmatrix}0&0&0\\\\0&0&1\\\\0&-1&0\\end{pmatrix},\\quad BA=\\begin{pmatrix}0&0&0\\\\0&0&-1\\\\0&1&0\\end{pmatrix},\\quad [A,B]=\\begin{pmatrix}0&0&0\\\\0&0&2\\\\0&-2&0\\end{pmatrix}\\ne0 .\n\\]\n$e_1=(1,0,0)^{\\mathsf T}$ は $A=1,\\ B=0$ の同時固有ケット．$\\{e_2,e_3\\}$ の部分空間では $A=\\sigma_z$，$B=\\sigma_x$ であり，両者に共通の固有ベクトルはない．$A$ の固有値 1 の固有空間 $\\mathrm{span}\\{e_1,e_2\\}$ 内のベクトル $(\\alpha,\\beta,0)^{\\mathsf T}$ が $B$ の固有ベクトルになるには $B(\\alpha,\\beta,0)^{\\mathsf T}=(0,0,\\beta)^{\\mathsf T}$ より $\\beta=0$，固有値 $-1$ の固有空間は $e_3$ だけで $Be_3=e_2$ は比例しない．よって同時固有ケットは $e_1$ 方向のみ．$[A,B]$ の階数は 2 で，(2) と整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "同時固有ケットの張る空間の直交補空間に交換子が閉じ込められる．交換子は $i\\times$（トレースゼロのエルミート）なので階数 1 になりえず，「$n-1$ 個あれば十分」が従う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "交換子",
+   "同時固有ケット",
+   "エルミート演算子",
+   "トレース",
+   "線形代数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-02-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-02",
+  "level": 3,
+  "minutes": 45,
+  "theme": "行列指数関数・転送行列とGolden–Thompson",
+  "topic": "行列指数関数・転送行列とGolden–Thompson",
+  "statement": {
+   "tex": "実対称行列 $A=\\begin{pmatrix}a&c\\\\c&b\\end{pmatrix}$ の固有値を $\\lambda_1>\\lambda_2$ とし，$\\exp(A)=\\sum_{n=0}^\\infty A^n/n!$ とする．\n\\begin{enumerate}\n\\item $\\det\\{\\exp(A)\\}=e^{\\mathrm{tr}A}$ を示せ．\n\\item $m=\\frac{a+b}{2}$，$r=\\sqrt{\\left(\\frac{a-b}{2}\\right)^2+c^2}$ とおく．$(A-mI)^2=r^2I$ を用いて，\n\\[ \\exp(A)=e^{m}\\left[\\cosh r\\,I+\\frac{\\sinh r}{r}(A-mI)\\right] \\]\nを示せ（$r>0$ とする）．\n\\item $Z_N=\\mathrm{tr}\\big[\\{\\exp(A)\\}^N\\big]$ を求め，$F=\\lim_{N\\to\\infty}\\frac1N\\ln Z_N$ を $a,b,c$ で表せ．また $\\frac1N\\ln Z_N-F$ が $N\\to\\infty$ でどのように 0 に近づくかを答えよ．\n\\item 次に $h,K$ を実数として $H_1=\\begin{pmatrix}h&0\\\\0&-h\\end{pmatrix}$，$H_2=\\begin{pmatrix}0&K\\\\K&0\\end{pmatrix}$ とし，$M=\\exp(H_1)\\exp(H_2)$ とする．$\\det M=1$ に注意して $M$ の固有値を求め，$F'=\\lim_{N\\to\\infty}\\frac1N\\ln\\mathrm{tr}[M^N]$ を $h,K$ で表せ．\n\\item $\\exp(H_1+H_2)$ について同様に定めた量 $F''=\\lim_{N\\to\\infty}\\frac1N\\ln\\mathrm{tr}[\\{\\exp(H_1+H_2)\\}^N]$ を求め，$hK\\neq0$ のとき $F'>F''$ であることを $h,K$ の 4 次までの展開で示せ．\n\\item $M_n=\\exp(H_1/n)\\exp(H_2/n)$ に対して $\\lim_{n\\to\\infty}n\\,F'(h/n,K/n)=F''$ を示せ（$F'(h,K)$ は (4) の結果）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) 証明（解説参照）　(3) $Z_N=e^{N\\lambda_1}+e^{N\\lambda_2}$，$F=\\lambda_1=m+r$；差は $\\frac1N e^{-2Nr}$ 程度で指数的に 0　(4) 固有値 $e^{\\pm F'}$，$F'=\\operatorname{arccosh}(\\cosh h\\cosh K)$　(5) $F''=\\sqrt{h^2+K^2}$，$\\cosh h\\cosh K-\\cosh\\sqrt{h^2+K^2}=\\frac{h^2K^2}{6}+\\cdots>0$　(6) 証明（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A$ は実対称なので直交行列 $U$ で $A=U\\Lambda U^{-1}$，$\\Lambda=\\mathrm{diag}(\\lambda_1,\\lambda_2)$．$A^n=U\\Lambda^nU^{-1}$ より $\\exp(A)=U\\,\\mathrm{diag}(e^{\\lambda_1},e^{\\lambda_2})U^{-1}$．行列式の積公式から $\\det\\exp(A)=e^{\\lambda_1+\\lambda_2}=e^{\\mathrm{tr}A}$．\n\n(2) $A-mI=\\begin{pmatrix}\\frac{a-b}2&c\\\\c&-\\frac{a-b}2\\end{pmatrix}$ を平方すると $\\left[\\left(\\frac{a-b}{2}\\right)^2+c^2\\right]I=r^2I$．$mI$ は $A-mI$ と可換なので $\\exp(A)=e^m\\exp(A-mI)$．$B=A-mI$ とおくと $B^{2k}=r^{2k}I$，$B^{2k+1}=r^{2k}B$ なので\n\\[ \\exp(B)=\\sum_k\\frac{r^{2k}}{(2k)!}I+\\sum_k\\frac{r^{2k}}{(2k+1)!}B=\\cosh r\\,I+\\frac{\\sinh r}{r}B. \\]\n\n(3) $\\{\\exp(A)\\}^N=U\\,\\mathrm{diag}(e^{N\\lambda_1},e^{N\\lambda_2})U^{-1}$，$\\mathrm{tr}[UXU^{-1}]=\\mathrm{tr}X$ より $Z_N=e^{N\\lambda_1}+e^{N\\lambda_2}$．$\\lambda_{1,2}=m\\pm r$ なので\n\\[ \\frac1N\\ln Z_N=\\lambda_1+\\frac1N\\ln\\!\\left(1+e^{-2Nr}\\right)\\to\\lambda_1=\\frac{a+b}{2}+\\sqrt{\\Big(\\frac{a-b}{2}\\Big)^2+c^2}. \\]\n補正は $\\frac1N\\ln(1+e^{-2Nr})\\simeq\\frac1Ne^{-2Nr}$ で，固有値の差 $2r$ をギャップとして指数関数的に消える．\n\n(4) $\\exp(H_1)=\\mathrm{diag}(e^h,e^{-h})$，(2) より $\\exp(H_2)=\\begin{pmatrix}\\cosh K&\\sinh K\\\\\\sinh K&\\cosh K\\end{pmatrix}$．\n\\[ M=\\begin{pmatrix}e^h\\cosh K&e^h\\sinh K\\\\e^{-h}\\sinh K&e^{-h}\\cosh K\\end{pmatrix},\\quad \\mathrm{tr}M=2\\cosh h\\cosh K,\\quad \\det M=\\cosh^2K-\\sinh^2K=1. \\]\n固有値は $\\mu^2-2\\cosh h\\cosh K\\,\\mu+1=0$ の根で，$\\cosh h\\cosh K\\ge1$ より $\\mu_\\pm=e^{\\pm F'}$，$\\cosh F'=\\cosh h\\cosh K$．$\\mathrm{tr}M^N=2\\cosh(NF')$ だから $F'=\\operatorname{arccosh}(\\cosh h\\cosh K)$．\n\n(5) $H_1+H_2=\\begin{pmatrix}h&K\\\\K&-h\\end{pmatrix}$ の固有値は $\\pm\\sqrt{h^2+K^2}$ なので (3) より $F''=\\sqrt{h^2+K^2}$．$\\cosh$ は $[0,\\infty)$ で単調増加なので $F'>F''\\iff\\cosh h\\cosh K>\\cosh\\sqrt{h^2+K^2}$．展開して\n\\[ \\cosh h\\cosh K=1+\\frac{h^2+K^2}{2}+\\frac{h^4+K^4}{24}+\\frac{h^2K^2}{4}+\\cdots,\\quad \\cosh\\sqrt{h^2+K^2}=1+\\frac{h^2+K^2}{2}+\\frac{(h^2+K^2)^2}{24}+\\cdots \\]\n差は $\\frac{h^2K^2}{4}-\\frac{h^2K^2}{12}=\\frac{h^2K^2}{6}>0$．$H_1,H_2$ が非可換なため $\\exp(H_1)\\exp(H_2)\\neq\\exp(H_1+H_2)$ であり，最大固有値は「和の指数」より大きくなる（Golden–Thompson 不等式 $\\mathrm{tr}\\,e^{H_1+H_2}\\le\\mathrm{tr}\\,e^{H_1}e^{H_2}$ の一例）．\n\n(6) $\\cosh\\frac hn\\cosh\\frac Kn=1+\\frac{h^2+K^2}{2n^2}+O(n^{-4})$．$\\operatorname{arccosh}(1+\\epsilon)=\\sqrt{2\\epsilon}\\,(1+O(\\epsilon))$ より\n\\[ nF'\\!\\left(\\tfrac hn,\\tfrac Kn\\right)=n\\sqrt{\\frac{h^2+K^2}{n^2}+O(n^{-4})}\\,(1+O(n^{-2}))\\to\\sqrt{h^2+K^2}=F''. \\]\nこれは Lie–Trotter 公式 $\\lim_n(e^{H_1/n}e^{H_2/n})^n=e^{H_1+H_2}$ の固有値レベルでの表れである．"
+   }
+  ],
+  "idea": {
+   "tex": "転送行列の最大固有値が $N\\to\\infty$ の自由エネルギー密度を決める．非可換な 2 つの行列では $\\ln\\lambda_{\\max}(e^{H_1}e^{H_2})>\\lambda_{\\max}(H_1+H_2)$ となり（差は $h^2K^2/6$ から始まる），Trotter 分割で一致が回復する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 証明\n(3) 記述\n(4) 記述\n(5) 記述\n(6) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "行列指数関数",
+   "対角化",
+   "トレース",
+   "転送行列",
+   "最大固有値",
+   "Golden-Thompson不等式",
+   "Trotter公式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

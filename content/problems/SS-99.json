@@ -147,6 +147,252 @@
   }
  },
  {
+  "id": "SS-07-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 1,
+  "minutes": 25,
+  "theme": "2点較正の熱電対で起電力から温度を読む曖昧さ",
+  "topic": "2点較正の熱電対で起電力から温度を読む曖昧さ",
+  "statement": {
+   "tex": "熱起電力が冷接点 $0\\,$℃のとき $E(t)=at+\\dfrac b2t^2$ で表される熱電対がある．高温接点を $100\\,$℃にすると $1.0\\ \\mathrm{mV}$，$200\\,$℃にすると $1.8\\ \\mathrm{mV}$ であった（冷接点 $0\\,$℃）．\n\\begin{enumerate}\n\\item $a,b$ と中立温度を求めよ．\n\\item 冷接点を $0\\,$℃に保ち，起電力 $2.0\\ \\mathrm{mV}$ が測定された．高温接点の温度として可能なものをすべて求めよ．\n\\item 冷接点を $20\\,$℃にしたとき，熱起電力の最大値と逆変温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a=11\\ \\mu\\mathrm V/\\mathrm K$，$b=-0.02\\ \\mu\\mathrm V/\\mathrm K^2$，$t_n=550\\,$℃　(2) $230\\,$℃ または $870\\,$℃　(3) 最大 $2.81\\ \\mathrm{mV}$（$550\\,$℃で），逆変温度 $1080\\,$℃"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $100a+5000b=1.0\\times10^{-3}$，$200a+20000b=1.8\\times10^{-3}$．解いて $b=-2\\times10^{-8}\\ \\mathrm{V/K^2}$，$a=1.1\\times10^{-5}\\ \\mathrm{V/K}$．$t_n=-a/b=550\\,$℃．\n\n(2) $-10^{-8}t^2+1.1\\times10^{-5}t-2.0\\times10^{-3}=0$．$t=\\dfrac{1.1\\times10^{-5}\\pm\\sqrt{1.21\\times10^{-10}-8\\times10^{-11}}}{2\\times10^{-8}}=229.8,\\ 870.2\\,$℃．\n熱起電力は中立温度で極大をとる放物線なので，1つの起電力に2つの温度が対応する．どちらかを決めるには別の情報（例えば温度を少し上げたとき起電力が増すか減るか＝熱電能の符号）が必要．\n\n(3) 中立温度は $t_0$ によらず $550\\,$℃．$E_{\\max}=a(550-20)+\\dfrac b2(550^2-20^2)=5.83-3.021=2.81\\ \\mathrm{mV}$．逆変温度 $t_i=2t_n-t_0=1080\\,$℃．"
+   }
+  ],
+  "idea": {
+   "tex": "2点の較正で放物線が決まる．放物線ゆえに起電力から温度を逆算すると中立温度の両側に2解が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "熱電対",
+   "中立温度",
+   "逆変温度",
+   "較正"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 1,
+  "minutes": 20,
+  "theme": "熱電図から熱起電力の最大値と逆変温度を読む",
+  "topic": "熱電図から熱起電力の最大値と逆変温度を読む",
+  "statement": {
+   "tex": "金属 X, Y の鉛に対する熱電能は，$0\\,$℃でそれぞれ $12.0$，$1.5$，$100\\,$℃でそれぞれ $10.0$，$3.5$（単位 $\\mu\\mathrm V/\\mathrm K$）であり，いずれも温度の1次関数である．X と Y で熱電対をつくる．\n\\begin{enumerate}\n\\item 接合点を $20\\,$℃と $300\\,$℃にしたときの熱起電力を求めよ．\n\\item 冷接点を $20\\,$℃に保つとき，熱起電力が最大になる高温接点の温度とその最大値，および熱起電力が再び 0 になる温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1.15\\ \\mathrm{mV}$　(2) $262.5\\,$℃で最大 $1.18\\ \\mathrm{mV}$；$505\\,$℃で 0"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "熱電能の差 $\\Delta\\eta(t)=\\eta_X-\\eta_Y$ は $0\\,$℃で $10.5$，$100\\,$℃で $6.5$ なので $\\Delta\\eta=10.5-0.04t\\ (\\mu\\mathrm V/\\mathrm K)$．\n\n(1) 中点 $160\\,$℃の $\\Delta\\eta=10.5-6.4=4.1$ を使って（〔38・1〕と同様）$E=4.1\\times280=1148\\ \\mu\\mathrm V=1.15\\ \\mathrm{mV}$．\n\n(2) 最大は $\\Delta\\eta=0$ の中立温度 $t_n=10.5/0.04=262.5\\,$℃．このとき中点 $141.25\\,$℃の $\\Delta\\eta=4.85$ より $E_{\\max}=4.85\\times242.5=1176\\ \\mu\\mathrm V=1.18\\ \\mathrm{mV}$．再び 0 になるのは $t_i=2t_n-t_0=525-20=505\\,$℃．"
+   }
+  ],
+  "idea": {
+   "tex": "1次の熱電能では「中点の熱電能×温度差」が熱起電力．熱電能の差が 0 になる温度が極大の位置を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [mV]：≈1.15\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "熱電図",
+   "熱電能",
+   "中立温度",
+   "逆変温度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 1,
+  "minutes": 15,
+  "theme": "伝導電子の全運動量と導線の反跳",
+  "topic": "伝導電子の全運動量と導線の反跳",
+  "statement": {
+   "tex": "長さ $l=1000$ m，断面積 $S=1.0\\ \\mathrm{mm^2}$ のまっすぐな銅線（密度 $8.9\\times10^3\\ \\mathrm{kg/m^3}$）に電流 $I=70$ A が流れている．\n\\begin{enumerate}\n\\item 導線中の伝導電子の全運動量を求めよ．それが電子密度や断面積によらないことを示せ．\n\\item 最初電流が流れておらず静止していた導線（摩擦なしに長さ方向に動けるとする）に電流を流し始め，電流が $70$ A に達したとき，導線は長さ方向にどれだけの速さで動いているか．外部回路との接続による力は無視する．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=\\dfrac{m}{e}Il=4.0\\times10^{-7}$ N$\\cdot$s　(2) $v=\\dfrac{mIl}{eM}=4.5\\times10^{-8}$ m/s（電流と同じ向き）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 電子密度を $n$，ドリフト速度を $u$ とすると $I=neuS$．電子の数は $nSl$ なので\n\\[ p=nSl\\cdot mu=\\frac{m}{e}Il=\\frac{9.11\\times10^{-31}}{1.60\\times10^{-19}}\\times70\\times1000=4.0\\times10^{-7}\\ \\mathrm{N\\cdot s}. \\]\n$n$ と $S$ は $I=neuS$ を通して打ち消し合う．向きは電流と逆向き（電子の運動の向き）．\n\n(2) 導線（格子＋電子）の全運動量は外力がなければ保存される．電子が電流と逆向きに運動量 $p$ を得るので，格子（質量 $M=\\rho Sl=8.9$ kg）は電流の向きに運動量 $p$ を得る：\n\\[ v=\\frac{p}{M}=\\frac{4.0\\times10^{-7}}{8.9}=4.5\\times10^{-8}\\ \\mathrm{m/s}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "電子の全運動量は $(m/e)Il$ で，電流と長さだけで決まる．運動量保存により電流の立ち上がりで導線が反跳する（慣性効果）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $v$ [m/s]：≈4.5e-8"
+  },
+  "methods": [],
+  "tags": [
+   "伝導電子",
+   "ドリフト速度",
+   "運動量",
+   "運動量保存"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 1,
+  "minutes": 20,
+  "theme": "交流電場中の Drude 電子の応答",
+  "topic": "交流電場中の Drude 電子の応答",
+  "statement": {
+   "tex": "金属中の電子が Drude 模型 $m\\dot v=-eE-mv/\\tau$ に従い，緩和時間 $\\tau=1.0\\times10^{-14}\\ \\mathrm s$ とする．\n\\begin{enumerate}\n\\item 直流電場 $E_0=20\\ \\mathrm{V/m}$ のときのドリフト速度を求めよ．\n\\item 交流電場 $E_0\\cos\\omega t$ に対する定常状態の速度振幅と，電場に対する位相の遅れを求めよ．\n\\item 速度振幅が直流の値の半分になる周波数 $f=\\omega/2\\pi$ と，そのときの電子の変位の振幅を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3.5\\ \\mathrm{cm/s}$　(2) $v_0(\\omega)=\\dfrac{eE_0\\tau/m}{\\sqrt{1+\\omega^2\\tau^2}}$，遅れ $\\arctan\\omega\\tau$　(3) $f\\approx2.8\\times10^{13}\\ \\mathrm{Hz}$，変位振幅 $\\approx1.0\\times10^{-16}\\ \\mathrm m$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 定常状態 $\\dot v=0$ で $|v_D|=\\dfrac{eE_0\\tau}{m}=\\dfrac{1.60\\times10^{-19}\\times20\\times1.0\\times10^{-14}}{9.11\\times10^{-31}}=0.035\\ \\mathrm{m/s}=3.5\\ \\mathrm{cm/s}$．\n\n(2) $E=\\mathrm{Re}\\,E_0e^{-i\\omega t}$，$v=\\mathrm{Re}\\,\\tilde ve^{-i\\omega t}$ を代入：$-i\\omega m\\tilde v=-eE_0-m\\tilde v/\\tau$ より\n\\[\n\\tilde v=-\\frac{eE_0\\tau/m}{1-i\\omega\\tau}.\n\\]\n振幅 $v_0(\\omega)=\\dfrac{eE_0\\tau/m}{\\sqrt{1+\\omega^2\\tau^2}}$，位相は（$-eE$ の向きに対して）$\\arctan\\omega\\tau$ だけ遅れる．\n\n(3) $\\sqrt{1+\\omega^2\\tau^2}=2$ より $\\omega\\tau=\\sqrt3$，$f=\\dfrac{\\sqrt3}{2\\pi\\tau}=2.8\\times10^{13}\\ \\mathrm{Hz}$（赤外域，波長約 $11\\ \\mu\\mathrm m$）．速度振幅は $1.76\\ \\mathrm{cm/s}$，変位振幅は\n\\[\nx_0=\\frac{v_0}{\\omega}=\\frac{0.0176}{1.73\\times10^{14}}=1.0\\times10^{-16}\\ \\mathrm m,\n\\]\n原子核の大きさ程度にすぎない．電流を担うのはこの微小な集団的変位であり，個々の電子は $10^6\\ \\mathrm{m/s}$ 程度のフェルミ速度で乱雑に運動している．"
+   }
+  ],
+  "idea": {
+   "tex": "Drude 方程式の交流解 $\\sigma(\\omega)=\\sigma_0/(1-i\\omega\\tau)$ により，$\\omega\\tau\\sim1$ の赤外域で応答が遅れて弱まる．ドリフトの変位は極めて小さい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [cm/s]：≈3.5\n(2) $v_0(\\omega)$：((e E_0 τ / m)/(sqrt(1+ ω ^(2) τ ^(2)))) ; 遅れ：arctan ω τ\n(3) $f$ [Hz]：≈2.8e13 ; 変位振幅 [m]：≈1.0e-16"
+  },
+  "methods": [],
+  "tags": [
+   "Drude模型",
+   "ドリフト速度",
+   "交流伝導度",
+   "緩和時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ホール電圧の符号と自由電子模型の破綻",
+  "topic": "ホール電圧の符号と自由電子模型の破綻",
+  "statement": {
+   "tex": "亜鉛箔（厚さ $t=0.020\\ \\mathrm{mm}$，$z$ 方向）に $+x$ 方向の電流 $I=1.5\\ \\mathrm{A}$ を流し，$+z$ 方向に磁束密度 $B=2.0\\ \\mathrm{T}$ をかける．箔の幅は $y$ 方向（$0\\le y\\le w$）で，電位差 $V(y{=}w)-V(y{=}0)=-4.5\\ \\mu\\mathrm{V}$ が測定された．電気素量 $e=1.60\\times10^{-19}\\ \\mathrm C$．\n\\begin{enumerate}\n\\item 電子と正孔それぞれの場合に $y=0$ と $y=w$ のどちらの面が高電位になるかを調べ，この測定から支配的なキャリアの符号を決めよ．\n\\item ホール係数 $R_H$（符号つき）とキャリア密度を求めよ．\n\\item 亜鉛は 2 価で，密度 $7.14\\ \\mathrm{g/cm^3}$，原子量 $65.4$ である．自由電子模型が予言する $R_H$ を求め，(2) と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 電子なら $y=w$ 側，正孔なら $y=0$ 側が高電位．測定は $y=0$ が高い→正孔的　(2) $R_H=+3.0\\times10^{-11}\\ \\mathrm{m^3/C}$，$p=2.1\\times10^{29}\\ \\mathrm{m^{-3}}$　(3) $R_H^{\\rm free}=-4.7\\times10^{-11}\\ \\mathrm{m^3/C}$．符号も大きさも合わない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ローレンツ力 $q\\boldsymbol v\\times\\boldsymbol B$ を調べる．正孔（$q=+e$，$\\boldsymbol v=+v\\hat x$）では $e v B(\\hat x\\times\\hat z)=-evB\\hat y$ で正電荷が $y=0$ 側に溜まり，$y=0$ が高電位．電子（$q=-e$，$\\boldsymbol v=-v\\hat x$）では $(-e)(-v)B(\\hat x\\times\\hat z)=-evB\\hat y$ で電子が $y=0$ 側に溜まり，$y=w$ が高電位．測定値 $V(w)-V(0)<0$ は $y=0$ が高電位であり，正孔的（正のキャリア）である．\n\n(2) ホール電場 $E_H=V_H/w$，電流密度 $j=I/(wt)$ より $R_H=E_H/(jB)=V_Ht/(IB)$（$w$ によらない）：\n\\[ R_H=+\\frac{(4.5\\times10^{-6})(2.0\\times10^{-5})}{(1.5)(2.0)}=+3.0\\times10^{-11}\\ \\mathrm{m^3/C},\\qquad p=\\frac1{eR_H}=2.1\\times10^{29}\\ \\mathrm{m^{-3}}. \\]\n\n(3) 原子密度 $n_a=\\dfrac{7.14\\times10^3\\times6.02\\times10^{26}}{65.4}=6.58\\times10^{28}\\ \\mathrm{m^{-3}}$，伝導電子密度 $2n_a=1.32\\times10^{29}\\ \\mathrm{m^{-3}}$．自由電子模型では\n\\[ R_H^{\\rm free}=-\\frac1{2n_ae}=-4.7\\times10^{-11}\\ \\mathrm{m^3/C}. \\]\n実測は符号が逆で大きさも異なる．亜鉛ではフェルミ面がブリルアンゾーン境界と交わり，正孔的なフェルミ面部分が寄与するためで，自由電子模型の限界を示す．"
+   }
+  ],
+  "idea": {
+   "tex": "ホール電圧の極性からキャリアの符号が決まる．2 価金属の亜鉛では正のホール係数が現れ，自由電子模型が破綻する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $R_H$ [m³/C]：+3.0*10^(-11) ; $p$ [m⁻³]：≈2.1e29\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ホール効果",
+   "ホール係数",
+   "キャリアの符号",
+   "亜鉛",
+   "自由電子模型"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-07-004",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -289,6 +535,704 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 30,
+  "theme": "固体物理の小問集（磁束格子・中性子フィルター・ホール係数・プラズモン）",
+  "topic": "固体物理の小問集（磁束格子・中性子フィルター・ホール係数・プラズモン）",
+  "statement": {
+   "tex": "次の量を有効数字2桁で求めよ．$\\Phi_0=2.07\\times10^{-15}\\ \\mathrm{Wb}$，$e=1.60\\times10^{-19}\\ \\mathrm{C}$，$m_e=9.11\\times10^{-31}\\ \\mathrm{kg}$，$\\hbar=1.05\\times10^{-34}\\ \\mathrm{J\\,s}$，$\\varepsilon_0=8.85\\times10^{-12}\\ \\mathrm{F/m}$ とする．\n\\begin{enumerate}\n\\item 第2種超伝導体の内部の平均磁束密度が $0.20\\ \\mathrm{T}$ のとき，三角格子に並んだ磁束線の最近接間隔．\n\\item 格子定数 $0.287\\ \\mathrm{nm}$ の体心立方格子の鉄の多結晶の粉末を詰めた管を中性子が通る．ブラッグ反射を起こさずに素通りできる中性子の最短の波長．\n\\item 厚さ $20\\ \\mu\\mathrm{m}$ の金属箔に電流 $0.50\\ \\mathrm{A}$ を流し，箔に垂直に $2.0\\ \\mathrm{T}$ の磁場をかけるとホール電圧 $5.3\\ \\mu\\mathrm{V}$ が生じた．キャリア密度．\n\\item 電子密度 $8.6\\times10^{28}\\ \\mathrm{m^{-3}}$ の金属薄膜で反射された高速電子のエネルギー損失スペクトルに現れる，体積プラズモンと表面プラズモンの損失エネルギー．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1.1\\times10^{2}\\ \\mathrm{nm}$　(2) $0.41\\ \\mathrm{nm}$　(3) $5.9\\times10^{28}\\ \\mathrm{m^{-3}}$　(4) 体積 $11\\ \\mathrm{eV}$，表面 $7.7\\ \\mathrm{eV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 各磁束線は $\\Phi_0$ を運ぶ．三角格子の単位胞の面積は $\\frac{\\sqrt3}{2}a^2$ で，そこに磁束線が1本なので $B=\\dfrac{2\\Phi_0}{\\sqrt3a^2}$．\n\\[\na=\\sqrt{\\frac{2\\Phi_0}{\\sqrt3B}}=\\sqrt{\\frac{2\\times2.07\\times10^{-15}}{1.732\\times0.20}}\\approx\\boldsymbol{1.1\\times10^2\\ \\mathrm{nm}}.\n\\]\n\n(2) 粉末にはあらゆる向きの結晶があるので，$\\lambda\\leqq2d$ となる格子面があれば必ずどこかでブラッグ反射して散らされる．体心立方格子で許される反射のうち面間隔が最大なのは $(110)$ で $d=a/\\sqrt2$．よって $\\lambda>2d=\\sqrt2a$ の中性子だけが素通りする：\n\\[\n\\lambda_{\\min}=\\sqrt2\\times0.287\\approx\\boldsymbol{0.41\\ \\mathrm{nm}}.\n\\]\n（$(100)$ は体心立方格子では消滅則で禁止される．）冷たい中性子だけを取り出すフィルターになる．\n\n(3) $V_H=\\dfrac{IB}{net}$ より\n\\[\nn=\\frac{IB}{eV_Ht}=\\frac{0.50\\times2.0}{1.60\\times10^{-19}\\times5.3\\times10^{-6}\\times2.0\\times10^{-5}}\\approx\\boldsymbol{5.9\\times10^{28}\\ \\mathrm{m^{-3}}}\n\\]\n（1原子に1個の伝導電子をもつ銅に近い値）．\n\n(4) $\\omega_p=\\sqrt{\\dfrac{ne^2}{\\varepsilon_0m_e}}$ より $\\hbar\\omega_p\\approx\\boldsymbol{11\\ \\mathrm{eV}}$（$10.9\\ \\mathrm{eV}$）．表面プラズモンは $\\hbar\\omega_p/\\sqrt2\\approx\\boldsymbol{7.7\\ \\mathrm{eV}}$．スペクトルにはこれらの整数倍とその組み合わせの位置に損失のピークが並ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "固体物理の基本的な量を，対応する単純な関係（磁束量子の格子，粉末でのブラッグの切断，ホール電圧，プラズマ振動数）から数値で見積もる．原題も同じ形式の小問集で，捻りでは各小問の物質や問い方を変えた（三角格子，体心立方の消滅則，表面プラズモン）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [nm]：≈1.1e2\n(2) [nm]：≈0.41\n(3) [m⁻³]：≈5.9e28\n(4) 体積 [eV]：11 ; 表面 [eV]：≈7.7"
+  },
+  "methods": [],
+  "tags": [
+   "磁束量子",
+   "ブラッグ反射",
+   "ホール効果",
+   "プラズモン"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ドルーデ模型のプラズマ振動数と金属の透明になる波長（銅）",
+  "topic": "ドルーデ模型のプラズマ振動数と金属の透明になる波長（銅）",
+  "statement": {
+   "tex": "ドルーデ模型の導電率は $\\sigma(\\omega)=\\dfrac{ne^2\\tau/m}{1-i\\omega\\tau}$ である．\n\\begin{enumerate}\n\\item $\\omega\\tau\\gg1$ で誘電関数 $\\varepsilon(\\omega)=1+\\dfrac{i\\sigma}{\\varepsilon_0\\omega}$ が $1-\\dfrac{\\omega_p^2}{\\omega^2}$ になることを示し，$\\omega_p$ を求めよ．\n\\item 銅（$n=8.5\\times10^{28}\\ \\mathrm{m^{-3}}$）の $\\hbar\\omega_p$ と，対応する真空中の波長を求めよ．\n\\item $\\omega<\\omega_p$ と $\\omega>\\omega_p$ で光の伝わり方はどう違うか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega_p=\\sqrt{\\dfrac{ne^2}{\\varepsilon_0m}}$　(2) $\\approx10.8\\ \\mathrm{eV}$，$\\approx115\\ \\mathrm{nm}$　(3) 下では反射，上では透過"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma\\approx\\dfrac{ine^2}{m\\omega}$ を入れて $\\varepsilon=1-\\dfrac{ne^2}{\\varepsilon_0m\\omega^2}$．$\\boldsymbol{\\omega_p=\\sqrt{ne^2/\\varepsilon_0m}}$．\n\n(2) $\\omega_p=1.64\\times10^{16}\\ \\mathrm{s^{-1}}$，$\\hbar\\omega_p\\approx\\boldsymbol{10.8\\ \\mathrm{eV}}$，$\\lambda=2\\pi c/\\omega_p\\approx\\boldsymbol{115\\ \\mathrm{nm}}$（紫外）．\n\n(3) $\\varepsilon<0$ では波数が虚数で\\textbf{反射}（金属光沢），$\\varepsilon>0$ では\\textbf{透過}（紫外で金属が透明になる）．"
+   }
+  ],
+  "idea": {
+   "tex": "ドルーデの導電率から誘電関数が得られ，プラズマ振動数で金属の光学的性質が変わる．原題のオームの法則の導出を，光学応答に広げた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\omega_p$：sqrt(((n e ^(2))/(ε_0 m)))\n(2) [eV]：≈10.8 ; [nm]：≈115\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドルーデ模型",
+   "プラズマ振動数",
+   "誘電関数",
+   "光学応答"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 30,
+  "theme": "楕円体のフェルミ面のサイクロトロン質量",
+  "topic": "楕円体のフェルミ面のサイクロトロン質量",
+  "statement": {
+   "tex": "分散 $E=\\dfrac{\\hbar^2}2\\left(\\dfrac{k_x^2}{m_x}+\\dfrac{k_y^2}{m_y}+\\dfrac{k_z^2}{m_z}\\right)$ の電子が磁場 $B\\hat z$ の中で半古典的に運動する．周期は $T=\\dfrac{\\hbar^2}{eB}\\dfrac{\\partial A}{\\partial E}$（$A$ は $k_z$ 一定の断面の面積）で与えられる．\n\\begin{enumerate}\n\\item $A(E)$ を求めよ．\n\\item サイクロトロン角振動数を $\\omega_c=eB/m_c$ と書くとき，$m_c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A=\\dfrac{2\\pi\\sqrt{m_xm_y}}{\\hbar^2}\\left(E-\\dfrac{\\hbar^2k_z^2}{2m_z}\\right)$　(2) $m_c=\\sqrt{m_xm_y}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 断面は半軸 $\\sqrt{2m_xE'}/\\hbar$，$\\sqrt{2m_yE'}/\\hbar$ の楕円（$E'=E-\\hbar^2k_z^2/2m_z$）：$\\boldsymbol{A=\\dfrac{2\\pi\\sqrt{m_xm_y}}{\\hbar^2}E'}$．\n\n(2) $T=\\dfrac{2\\pi\\sqrt{m_xm_y}}{eB}$ より $\\boldsymbol{m_c=\\sqrt{m_xm_y}}$（$k_z$ によらない）．磁場の向きを変えて測るとフェルミ面の形がわかる．"
+   }
+  ],
+  "idea": {
+   "tex": "サイクロトロンの周期はフェルミ面の断面積のエネルギー微分で決まり，異方的な有効質量の幾何平均が現れる．原題の球形のフェルミ面を楕円体に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $A$：((2 pi sqrt(m_x m_y))/(hbar ^(2)))(E -((hbar ^(2) k_z ^(2))/(2 m_z)))\n(2) $m_c$：sqrt(m_x m_y)"
+  },
+  "methods": [],
+  "tags": [
+   "サイクロトロン運動",
+   "有効質量",
+   "フェルミ面",
+   "半古典論"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 30,
+  "theme": "熱電能から Peltier 係数・Thomson 係数を求める（Kelvin の関係）",
+  "topic": "熱電能から Peltier 係数・Thomson 係数を求める（Kelvin の関係）",
+  "statement": {
+   "tex": "鉛に対する熱起電力係数がそれぞれ $\\alpha_1,\\beta_1$ と $\\alpha_2,\\beta_2$ である金属 A, B で熱電対をつくる（$(\\mathrm A,\\mathrm{Pb})=\\alpha_1(t-t_0)+\\frac{\\beta_1}{2}(t^2-t_0^2)$ など，$t$ は℃）．絶対温度を $T=t+273.15$ とする．Kelvin の関係\n\\[ \\Pi_{AB}=T\\eta_{AB},\\qquad\\mu_A-\\mu_B=T\\frac{d\\eta_{AB}}{dT} \\]\n（$\\eta_{AB}$ は熱電能，$\\Pi_{AB}$ は A–B 接合の Peltier 係数，$\\mu$ は Thomson 係数）を用いて，\n\\begin{enumerate}\n\\item 温度 $t$ における $\\eta_{AB}$，$\\Pi_{AB}$，$\\mu_A-\\mu_B$ を求めよ．\n\\item $\\alpha_1-\\alpha_2=13.3\\ \\mu\\mathrm V/\\mathrm K$，$\\beta_1-\\beta_2=-0.038\\ \\mu\\mathrm V/\\mathrm K^2$ のとき，$t=100\\,$℃での値を求めよ．\n\\item 中立温度で Peltier 係数はどうなるか．物理的に解釈せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\eta_{AB}=\\alpha_1-\\alpha_2+(\\beta_1-\\beta_2)t$，$\\Pi_{AB}=(t+273.15)\\eta_{AB}$，$\\mu_A-\\mu_B=(t+273.15)(\\beta_1-\\beta_2)$　(2) $\\eta=9.5\\ \\mu\\mathrm V/\\mathrm K$，$\\Pi=3.5\\ \\mathrm{mV}$，$\\mu_A-\\mu_B=-14\\ \\mu\\mathrm V/\\mathrm K$　(3) $\\Pi=0$（$t_n=350\\,$℃）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 〔37〕より $\\eta_{AB}=\\dfrac{d(\\mathrm A,\\mathrm B)}{dt}=\\alpha_1-\\alpha_2+(\\beta_1-\\beta_2)t$．$dT=dt$ なので $d\\eta/dT=\\beta_1-\\beta_2$．Kelvin の関係から $\\Pi_{AB}=(t+273.15)\\{\\alpha_1-\\alpha_2+(\\beta_1-\\beta_2)t\\}$，$\\mu_A-\\mu_B=(t+273.15)(\\beta_1-\\beta_2)$．\n\n(2) $\\eta=13.3-0.038\\times100=9.5\\ \\mu\\mathrm V/\\mathrm K$．$\\Pi=373.15\\times9.5\\times10^{-6}=3.5\\times10^{-3}\\ \\mathrm V$（1 A あたり 3.5 mW の吸発熱）．$\\mu_A-\\mu_B=373.15\\times(-0.038)=-14\\ \\mu\\mathrm V/\\mathrm K$．\n\n(3) 中立温度 $t_n=13.3/0.038=350\\,$℃では $\\eta=0$ なので $\\Pi=0$：接合点を電流が流れても Peltier 熱が出入りしない．熱起電力の放物線の頂点に対応し，ここを境に Peltier 熱の符号（電流の向きに対する吸熱・発熱）が逆転する．"
+   }
+  ],
+  "idea": {
+   "tex": "熱電能の1次式から，Kelvin の関係で Peltier 係数（$T\\eta$）と Thomson 係数の差（$T\\,d\\eta/dT$）がすべて決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\Pi$：0"
+  },
+  "methods": [],
+  "tags": [
+   "熱電能",
+   "Peltier係数",
+   "Thomson係数",
+   "Kelvinの関係"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 30,
+  "theme": "熱電能が非線形のとき：台形公式の誤差と Simpson 則",
+  "topic": "熱電能が非線形のとき：台形公式の誤差と Simpson 則",
+  "statement": {
+   "tex": "熱電対の熱起電力は熱電能 $\\eta(t)$ の積分 $E=\\int_t^{t'}\\eta\\,d\\tau$ で与えられる．\n\\begin{enumerate}\n\\item $\\eta$ が $t$ の1次式なら，熱電能の差 $\\Delta\\eta$（温度 $t$），$\\Delta\\eta'$（温度 $t'$）から $E=\\frac{\\Delta\\eta+\\Delta\\eta'}{2}(t'-t)$ となり，これは $\\eta$ のグラフが $t$ と $t'$ の間で正負にまたがる（中立温度をはさむ）場合も符号つきで成り立つことを確かめよ．\n\\item $E=0$ となるのは，熱電能が 0 になる温度が $t$ と $t'$ のちょうど中点にあるときであることを示せ．\n\\item $\\eta=c_0+c_1\\tau+c_2\\tau^2$ と2次の項がある場合，(1) の台形公式の誤差 $E_{\\text{真}}-E_{\\text{台形}}$ を求めよ．また，中点の熱電能 $\\eta_m$ も測れば $E=\\frac{t'-t}{6}(\\eta+4\\eta_m+\\eta')$ が厳密に成り立つことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) 解説参照　(3) 誤差 $-\\dfrac{c_2}{6}(t'-t)^3$；Simpson 則は3次以下の多項式で厳密"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\eta=p+q\\tau$ なら $\\int_t^{t'}\\eta\\,d\\tau=p(t'-t)+\\frac q2(t'^2-t^2)=(t'-t)\\left\\{p+\\frac q2(t+t')\\right\\}=\\frac{\\eta(t)+\\eta(t')}{2}(t'-t)$．途中で $\\eta$ が符号を変えても積分は符号つき面積なので，台形の「符号つき面積」として同じ式が成り立つ（図では2つの三角形の差）．\n\n(2) $E=0$ ⇔ $\\eta(t)+\\eta(t')=0$ ⇔ $p+q\\frac{t+t'}{2}=0$ ⇔ $\\eta\\left(\\frac{t+t'}2\\right)=0$．すなわち中立温度 $t_n=(t+t')/2$．これは逆変温度の式 $t'=2t_n-t$ にほかならない．\n\n(3) $h=t'-t$ とする．$\\int\\eta=$ 台形 $+$（2次の項の寄与の差）．$c_2$ の項について $\\int_t^{t'}\\tau^2d\\tau-\\frac{t^2+t'^2}{2}h=\\frac{t'^3-t^3}{3}-\\frac{(t^2+t'^2)(t'-t)}{2}=-\\frac{(t'-t)^3}{6}$．よって誤差 $=-\\frac{c_2}{6}h^3$．\nSimpson 則：$\\frac h6\\{\\eta(t)+4\\eta(\\frac{t+t'}2)+\\eta(t')\\}$ は $1,\\tau,\\tau^2$（さらに $\\tau^3$）に対して厳密（直接代入で確認できる）．"
+   }
+  ],
+  "idea": {
+   "tex": "熱起電力は熱電能の符号つき面積．1次なら台形で厳密，2次の熱電能では誤差 $-c_2h^3/6$ が出て，中点の値を加えた Simpson 則で厳密になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "熱電能",
+   "熱電図",
+   "台形公式",
+   "Simpson則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 30,
+  "theme": "交流伝導率の総和則と最大吸収",
+  "topic": "交流伝導率の総和則と最大吸収",
+  "statement": {
+   "tex": "Drude 模型で，電場 $\\boldsymbol E=\\boldsymbol E_0e^{i\\omega t}$ に対する複素電気伝導率は $\\sigma(\\omega)=\\dfrac{Ne^2}{m(\\nu+i\\omega)}=\\sigma_r-i\\sigma_i$ である（$\\nu$ は衝突頻度）．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_0^\\infty\\sigma_r(\\omega)\\,d\\omega$ を計算し，これが $\\nu$（散乱の強さ）によらないことを示せ（$f$ 総和則）．$\\nu\\to0$ の極限で $\\sigma_r(\\omega)$ はどのような関数に近づくか．\n\\item $\\sigma_i(\\omega)$ が最大となる角周波数とその最大値を，直流伝導率 $\\sigma_0=Ne^2/(m\\nu)$ を用いて表せ．\n\\item 振幅 $E_0$，角周波数 $\\omega$ を固定し，試料の衝突頻度 $\\nu$ だけを変えられるとする．単位体積あたりの時間平均 Joule 熱を最大にする $\\nu$ と，その最大値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\pi Ne^2}{2m}$；$\\sigma_r\\to\\dfrac{\\pi Ne^2}{m}\\delta(\\omega)$（$\\omega\\ge0$ 側で重み $\\pi Ne^2/2m$）　(2) $\\omega=\\nu$ で $\\sigma_i=\\sigma_0/2$　(3) $\\nu=\\omega$，$\\langle p\\rangle_{\\max}=\\dfrac{Ne^2E_0^2}{4m\\omega}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\sigma=\\dfrac{Ne^2(\\nu-i\\omega)}{m(\\nu^2+\\omega^2)}$ より $\\sigma_r=\\dfrac{Ne^2}{m}\\dfrac{\\nu}{\\nu^2+\\omega^2}$，$\\sigma_i=\\dfrac{Ne^2}{m}\\dfrac{\\omega}{\\nu^2+\\omega^2}$．\n\n(1) \n\\[\n\\int_0^\\infty\\sigma_r\\,d\\omega=\\frac{Ne^2}{m}\\int_0^\\infty\\frac{\\nu\\,d\\omega}{\\nu^2+\\omega^2}=\\frac{Ne^2}{m}\\cdot\\frac{\\pi}{2}=\\frac{\\pi Ne^2}{2m},\n\\]\n$\\nu$ によらない．散乱を強くすると曲線は低く広く，弱くすると高く狭くなるが面積は不変．$\\nu\\to0$ で Lorentz 型 $\\frac{\\nu}{\\nu^2+\\omega^2}\\to\\pi\\delta(\\omega)$ なので $\\sigma_r\\to\\dfrac{\\pi Ne^2}{m}\\delta(\\omega)$：散乱のない自由電子（超伝導体の性質の一部）では全スペクトル重みが $\\omega=0$ に集中する．\n\n(2) $\\dfrac{d}{d\\omega}\\dfrac{\\omega}{\\nu^2+\\omega^2}=\\dfrac{\\nu^2-\\omega^2}{(\\nu^2+\\omega^2)^2}=0$ より $\\omega=\\nu$．このとき $\\sigma_i=\\dfrac{Ne^2}{2m\\nu}=\\dfrac{\\sigma_0}{2}$（同時に $\\sigma_r=\\sigma_0/2$ で，位相のずれは $45^\\circ$）．\n\n(3) 実電場 $E_0\\cos\\omega t$ に対する時間平均 Joule 熱は $\\langle p\\rangle=\\frac12\\sigma_rE_0^2=\\dfrac{Ne^2E_0^2}{2m}\\dfrac{\\nu}{\\nu^2+\\omega^2}$．$\\nu$ について微分すると $\\dfrac{\\omega^2-\\nu^2}{(\\nu^2+\\omega^2)^2}=0$ より $\\nu=\\omega$．最大値は\n\\[\n\\langle p\\rangle_{\\max}=\\frac{Ne^2E_0^2}{4m\\omega}.\n\\]\n散乱が弱すぎると電子は電場と $90^\\circ$ ずれて振動するだけで仕事を受けず，強すぎると速度が小さくなる．衝突時間が周期 $\\times1/2\\pi$ 程度のとき吸収が最大となる．"
+   }
+  ],
+  "idea": {
+   "tex": "散乱率を変えても $\\sigma_r$ の面積（スペクトル重み）は $\\pi Ne^2/2m$ で不変．吸収は $\\nu=\\omega$ で最大となり，散乱がゼロでも無限大でもエネルギーは吸収されない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Drude模型",
+   "交流伝導率",
+   "総和則",
+   "Joule熱",
+   "緩和時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Drude模型の磁気抵抗とCorbino円板",
+  "topic": "Drude模型の磁気抵抗とCorbino円板",
+  "statement": {
+   "tex": "金属中の伝導電子（電荷 $-e$，質量 $m$，数密度 $N$）が，速度に比例する抵抗力 $-m\\boldsymbol v/\\tau$ を受けて運動するという古典電子論のモデルで，定常状態を考える．$\\sigma_0=Ne^2\\tau/m$，$\\omega_c=eB/m$，$\\beta=\\omega_c\\tau$ とする．一様な磁場 $\\boldsymbol B=B\\boldsymbol e_z$ がかかり，電流・電場は $xy$ 面内にある．\n\\begin{enumerate}\n\\item 運動方程式から，$\\boldsymbol E$ を $\\boldsymbol J$ で表す式（抵抗率テンソル）と，$\\boldsymbol J$ を $\\boldsymbol E$ で表す式（伝導度テンソル）を求めよ．\n\\item 細長い板（Hall 棒）で $x$ 方向だけに電流密度 $J$ を流すとき，$E_x,E_y$ を求め，$x$ 方向の抵抗率が $B$ に依らないことを示せ．\n\\item 内半径 $r_1$，外半径 $r_2$，厚さ $h$ の円環板（Corbino 円板）の内周と外周に電極をつける．電場は動径成分だけをもつ．電極間の抵抗 $R(B)$ を求めよ．\n\\item (2)，(3) のいずれでも単位体積あたりの Joule 熱が $|\\boldsymbol J|^2/\\sigma_0$ に等しいことを示し，その理由を電子 1 個のエネルギー収支から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol E=\\dfrac1{\\sigma_0}\\begin{pmatrix}1&\\beta\\\\-\\beta&1\\end{pmatrix}\\boldsymbol J$，$\\boldsymbol J=\\dfrac{\\sigma_0}{1+\\beta^2}\\begin{pmatrix}1&-\\beta\\\\\\beta&1\\end{pmatrix}\\boldsymbol E$　(2) $E_x=J/\\sigma_0$，$E_y=-\\beta J/\\sigma_0$（磁気抵抗なし）　(3) $R=\\dfrac{(1+\\beta^2)\\ln(r_2/r_1)}{2\\pi\\sigma_0h}$　(4) どちらも $\\boldsymbol J\\cdot\\boldsymbol E=|\\boldsymbol J|^2/\\sigma_0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 定常状態で $0=-e(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)-m\\boldsymbol v/\\tau$．$\\boldsymbol v=-\\boldsymbol J/(Ne)$ を代入すると\n\\[\n\\boldsymbol E=\\frac{\\boldsymbol J}{\\sigma_0}+\\frac{\\boldsymbol J\\times\\boldsymbol B}{Ne},\\qquad \\frac{B}{Ne}=\\frac{\\beta}{\\sigma_0}.\n\\]\n$\\boldsymbol J\\times\\boldsymbol B=(J_yB,-J_xB)$ なので $E_x=(J_x+\\beta J_y)/\\sigma_0$，$E_y=(J_y-\\beta J_x)/\\sigma_0$．逆に解いて\n\\[\nJ_x=\\frac{\\sigma_0}{1+\\beta^2}(E_x-\\beta E_y),\\qquad J_y=\\frac{\\sigma_0}{1+\\beta^2}(\\beta E_x+E_y).\n\\]\n\n(2) $J_y=0$ とおくと $E_x=J/\\sigma_0$，$E_y=-\\beta J/\\sigma_0$（Hall 電場）．$E_x/J=1/\\sigma_0$ は $B$ に依らない．Hall 電場が Lorentz 力を打ち消し，電子は $x$ 方向にまっすぐ進むからである．\n\n(3) $E_\\phi=0$ なので $J_r=\\dfrac{\\sigma_0}{1+\\beta^2}E_r$，$J_\\phi=\\dfrac{\\sigma_0\\beta}{1+\\beta^2}E_r$．電流 $I=2\\pi rhJ_r$ は $r$ に依らないから $E_r=\\dfrac{(1+\\beta^2)I}{2\\pi\\sigma_0hr}$，\n\\[\nV=\\int_{r_1}^{r_2}E_r\\,dr=\\frac{(1+\\beta^2)I}{2\\pi\\sigma_0h}\\ln\\frac{r_2}{r_1},\\qquad R(B)=\\frac{(1+\\beta^2)\\ln(r_2/r_1)}{2\\pi\\sigma_0h}.\n\\]\nHall 電場が生じない幾何では $1+\\beta^2$ 倍の磁気抵抗が現れる．\n\n(4) Hall 棒：$\\boldsymbol J\\cdot\\boldsymbol E=JE_x=J^2/\\sigma_0$．Corbino：$\\boldsymbol J\\cdot\\boldsymbol E=J_rE_r=\\dfrac{\\sigma_0E_r^2}{1+\\beta^2}$，一方 $|\\boldsymbol J|^2=J_r^2+J_\\phi^2=\\dfrac{\\sigma_0^2E_r^2}{1+\\beta^2}$ なので $\\boldsymbol J\\cdot\\boldsymbol E=|\\boldsymbol J|^2/\\sigma_0$．\n\n理由：電子 1 個に電場がする仕事率は $-e\\boldsymbol E\\cdot\\boldsymbol v$．運動方程式に $\\boldsymbol v$ をかけると，磁気力 $-e\\boldsymbol v\\times\\boldsymbol B$ は $\\boldsymbol v$ に垂直で仕事をしないので $-e\\boldsymbol E\\cdot\\boldsymbol v=mv^2/\\tau$（抵抗力による散逸）．単位体積では $Nmv^2/\\tau=\\dfrac{Nm}{\\tau}\\dfrac{J^2}{N^2e^2}=\\dfrac{J^2}{\\sigma_0}$．磁場は電流の向きを曲げるだけで，散逸と $|\\boldsymbol J|$ の関係は変えない．"
+   }
+  ],
+  "idea": {
+   "tex": "磁気力は仕事をしないので Joule 熱はつねに $|\\boldsymbol J|^2/\\sigma_0$．磁気抵抗が見えるかどうかは Hall 電場が立つ幾何かどうかで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $R$：(((1+ β ^(2)) ln (r_2 / r_1))/(2 pi σ_0 h))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "古典電子論",
+   "Drude模型",
+   "Joule熱",
+   "Hall効果",
+   "磁気抵抗",
+   "Corbino円板"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 20,
+  "theme": "伝導電子にはたらく全電気力と緩和時間",
+  "topic": "伝導電子にはたらく全電気力と緩和時間",
+  "statement": {
+   "tex": "長さ $l=1000$ m，断面積 $S=1.0\\ \\mathrm{mm^2}$ の銅線に電流 $I=4.5$ A が流れている．銅の抵抗率を $\\rho=1.7\\times10^{-8}\\ \\Omega\\cdot$m，自由電子の数密度を $n=8.4\\times10^{28}\\ \\mathrm{m^{-3}}$ とする．\n\\begin{enumerate}\n\\item 導線中のすべての自由電子にはたらく電気力の和 $F$ を求めよ．$F$ が断面積によらないことを示せ．\n\\item ドルーデ模型で電子の運動量緩和時間 $\\tau$ を求め，$F$ が「電子が衝突で格子に渡す運動量の時間率」$nSl\\cdot mu/\\tau$（$u$ はドリフト速度）に等しいことを確かめよ．\n\\item フェルミ速度を $v_F=1.6\\times10^6$ m/s として平均自由行程を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F=en\\rho lI=1.0\\times10^6$ N　(2) $\\tau=\\dfrac{m}{ne^2\\rho}=2.5\\times10^{-14}$ s　(3) $\\lambda=v_F\\tau=3.9\\times10^{-8}$ m（約 40 nm）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 電場は $E=\\rho j=\\rho I/S$，電子数は $nSl$．\n\\[ F=nSl\\cdot eE=en\\rho lI=1.6\\times10^{-19}\\times8.4\\times10^{28}\\times1.7\\times10^{-8}\\times1000\\times4.5=1.0\\times10^6\\ \\mathrm{N}. \\]\n$S$ は打ち消し合う．このような巨大な力がはたらいても電子が加速されないのは，同じ大きさの力を格子から受けているためである（その反作用として導線全体にはたらく正味の力は 0）．\n\n(2) ドルーデの式 $\\sigma=ne^2\\tau/m$ より $\\tau=\\dfrac{m}{ne^2\\rho}=\\dfrac{9.11\\times10^{-31}}{8.4\\times10^{28}\\times(1.6\\times10^{-19})^2\\times1.7\\times10^{-8}}=2.5\\times10^{-14}$ s．$u=I/(neS)$ を用いると\n\\[ nSl\\frac{mu}{\\tau}=nSl\\cdot\\frac{m}{\\tau}\\cdot\\frac{I}{neS}=\\frac{mlI}{e\\tau}=\\frac{mlI}{e}\\cdot\\frac{ne^2\\rho}{m}=en\\rho lI=F. \\]\n定常状態では，電場から得る運動量がすべて衝突で格子に渡される．\n\n(3) $\\lambda=v_F\\tau=1.6\\times10^6\\times2.5\\times10^{-14}=3.9\\times10^{-8}$ m．格子間隔（約 0.3 nm）の 100 倍以上であり，電子が格子のイオン 1 個 1 個と衝突しているわけではないことを示す．"
+   }
+  ],
+  "idea": {
+   "tex": "電子集団への全電気力 $en\\rho lI$ は断面積によらず，定常状態では衝突による格子への運動量移送とつり合う．これからドルーデの緩和時間が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\tau$ [s]：≈2.5e-14\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ドルーデ模型",
+   "緩和時間",
+   "平均自由行程",
+   "オームの法則",
+   "運動量移送"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ホール測定：移動度の厚さ非依存性と端子ずれの補正",
+  "topic": "ホール測定：移動度の厚さ非依存性と端子ずれの補正",
+  "statement": {
+   "tex": "p 型半導体の直方体試料（長さ $l=40\\ \\mathrm{mm}$，幅 $h=8.0\\ \\mathrm{mm}$，厚さ $d=1.0\\ \\mathrm{mm}$）の長さ方向に電流 $I=2.0\\ \\mathrm{mA}$ を流すと，長さ方向の両端の電位差は $V=4.0\\ \\mathrm V$ であった．厚さ方向に磁束密度 $B=0.40\\ \\mathrm T$ をかけると，幅方向のホール電圧は $V_H=12\\ \\mathrm{mV}$ であった．\n\\begin{enumerate}\n\\item 抵抗率 $\\rho$，正孔密度 $p$，正孔移動度 $\\mu$ を求めよ．\n\\item $\\mu$ は $l,h,V,V_H,B$ だけで表され，$d$ や $I$ によらないことを示せ．ホール角 $\\tan\\theta_H$ も求めよ．\n\\item 幅方向の 2 つの電圧端子が長さ方向に $\\delta=0.10\\ \\mathrm{mm}$ ずれて付けられていると，磁場がなくてもどれだけの電圧が現れるか．また，これを除いて $V_H$ を得る方法を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho=40\\ \\Omega\\cdot\\mathrm{cm}$，$p\\approx4.2\\times10^{14}\\ \\mathrm{cm^{-3}}$，$\\mu\\approx0.038\\ \\mathrm{m^2/(V\\cdot s)}$　(2) $\\mu=\\dfrac{lV_H}{hVB}$，$\\tan\\theta_H=\\mu B\\approx0.015$　(3) $10\\ \\mathrm{mV}$；磁場を反転した 2 測定の差の半分をとる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\rho=\\dfrac{V}{I}\\dfrac{hd}{l}=\\dfrac{4.0}{2.0\\times10^{-3}}\\times\\dfrac{8.0\\times10^{-3}\\times1.0\\times10^{-3}}{4.0\\times10^{-2}}=0.40\\ \\Omega\\cdot\\mathrm m=40\\ \\Omega\\cdot\\mathrm{cm}$．\n\nホール電場 $E_H=V_H/h$ はローレンツ力とつり合い $E_H=v B$，$I=epvhd$ より\n\\[\np=\\frac{IB}{edV_H}=\\frac{2.0\\times10^{-3}\\times0.40}{1.60\\times10^{-19}\\times1.0\\times10^{-3}\\times1.2\\times10^{-2}}=4.2\\times10^{20}\\ \\mathrm{m^{-3}}.\n\\]\n$\\mu=\\dfrac{1}{ep\\rho}=0.0375\\ \\mathrm{m^2/(V\\cdot s)}$．\n\n(2) $\\mu=\\dfrac{v}{E_x}=\\dfrac{E_H/B}{V/l}=\\dfrac{lV_H}{hVB}=\\dfrac{0.040\\times0.012}{0.0080\\times4.0\\times0.40}=0.0375\\ \\mathrm{m^2/(V\\cdot s)}$．$d$ と $I$ は現れない．ホール角は $\\tan\\theta_H=E_H/E_x=\\mu B=0.015$．\n\n(3) 端子間に長さ方向の電場 $E_x=V/l$ による電位差 $V\\delta/l=4.0\\times0.10/40=0.010\\ \\mathrm V=10\\ \\mathrm{mV}$ が加わる（ホール電圧と同程度！）．この成分は $B$ の向きによらず，ホール電圧は $B$ の反転で符号を変えるので，$V_H=\\tfrac12[V(+B)-V(-B)]$ とすれば除去できる．"
+   }
+  ],
+  "idea": {
+   "tex": "移動度はホール角 $\\mu B=E_H/E_x$ そのものなので試料の厚さや電流によらない．ホール測定では磁場反転で不平衡電圧を除く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\mu$：((l V_H)/(h V B)) ; $\\tan\\theta_H$：≈0.015\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ホール効果",
+   "移動度",
+   "p型半導体",
+   "ホール角"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 25,
+  "theme": "平均自由行程の温度変化と細線のサイズ効果",
+  "topic": "平均自由行程の温度変化と細線のサイズ効果",
+  "statement": {
+   "tex": "銀の伝導電子密度を $n=5.86\\times10^{28}\\ \\mathrm{m^{-3}}$，室温の抵抗率を $\\rho_{300}=1.62\\times10^{-8}\\ \\Omega\\,\\mathrm m$ とし，自由電子模型（Drude–Sommerfeld）で考える．\n\\begin{enumerate}\n\\item $n$ からフェルミエネルギー $E_F$ とフェルミ速度 $v_F$ を求めよ．\n\\item 平均自由行程 $\\ell=v_F\\tau$ について，積 $\\rho\\ell$ が散乱の詳細（$\\tau$）によらず $n$ だけで決まることを示し，室温での $\\ell$ を求めよ．\n\\item 残留抵抗比 $\\rho_{300}/\\rho_{4.2\\,\\mathrm K}=1000$ の純銀について，4.2 K での $\\ell$ を求めよ．この銀で直径 $20\\ \\mu\\mathrm m$ の細線を作ると，表面散乱のため 4.2 K の抵抗率は何倍になるか．表面散乱の効果は Matthiessen 則で $1/\\ell_{\\rm eff}=1/\\ell+1/D$（$D$：直径）と見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_F\\approx5.50\\ \\mathrm{eV}$，$v_F\\approx1.39\\times10^6\\ \\mathrm{m/s}$　(2) $\\rho\\ell=\\dfrac{m v_F}{ne^2}=8.4\\times10^{-16}\\ \\Omega\\,\\mathrm m^2$，$\\ell_{300}\\approx52\\ \\mathrm{nm}$　(3) $\\ell_{4.2}\\approx52\\ \\mu\\mathrm m$，抵抗率は約 3.6 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E_F=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}=\\dfrac{(1.055\\times10^{-34})^2}{2\\times9.11\\times10^{-31}}(3\\pi^2\\times5.86\\times10^{28})^{2/3}=8.81\\times10^{-19}\\ \\mathrm J=5.50\\ \\mathrm{eV}$．$v_F=\\sqrt{2E_F/m}=1.39\\times10^6\\ \\mathrm{m/s}$．\n\n(2) $\\rho=\\dfrac{m}{ne^2\\tau}$ と $\\ell=v_F\\tau$ の積は $\\rho\\ell=\\dfrac{mv_F}{ne^2}=\\dfrac{\\hbar(3\\pi^2n)^{1/3}}{ne^2}$ で $\\tau$ によらない．数値は\n\\[\n\\rho\\ell=\\frac{9.11\\times10^{-31}\\times1.39\\times10^6}{5.86\\times10^{28}\\times(1.60\\times10^{-19})^2}=8.4\\times10^{-16}\\ \\Omega\\,\\mathrm m^2,\n\\]\n$\\ell_{300}=8.4\\times10^{-16}/1.62\\times10^{-8}=5.2\\times10^{-8}\\ \\mathrm m=52\\ \\mathrm{nm}$（$\\tau=3.7\\times10^{-14}\\ \\mathrm s$）．原子間隔の約 200 倍である．\n\n(3) $\\rho\\ell$ 一定だから $\\ell_{4.2}=1000\\ell_{300}=52\\ \\mu\\mathrm m$．直径 $20\\ \\mu\\mathrm m$ の線では $\\ell$ が $D$ を超え，\n\\[\n\\frac{\\rho_{\\rm wire}}{\\rho_{\\rm bulk}}=\\frac{\\ell}{\\ell_{\\rm eff}}=1+\\frac{\\ell}{D}=1+\\frac{52}{20}\\approx3.6.\n\\]\n室温（$\\ell=52\\ \\mathrm{nm}\\ll D$）では補正は $0.3\\%$ 程度で無視できるのに，低温の純金属では試料の太さが抵抗を決めるようになる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\rho\\ell=mv_F/ne^2$ は散乱機構によらないので，抵抗比がそのまま平均自由行程の比になる．低温では $\\ell$ が試料寸法を超えサイズ効果が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E_F$ [eV]：≈5.50 ; $v_F$ [m/s]：≈1.39e6\n(2) $\\rho\\ell$：((m v_F)/(n e ^(2))) ; $\\ell_{300}$ [nm]：≈52\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "自由電子模型",
+   "フェルミ速度",
+   "平均自由行程",
+   "残留抵抗比",
+   "サイズ効果"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 25,
+  "theme": "同じ質量のアルミ線と銅線の電流比較",
+  "topic": "同じ質量のアルミ線と銅線の電流比較",
+  "statement": {
+   "tex": "アルミニウム（3 価，原子量 27.0，密度 $2.70\\ \\mathrm{g/cm^3}$，緩和時間 $\\tau_{\\rm Al}=8.0\\times10^{-15}\\ \\mathrm s$）と銅（1 価，原子量 63.5，密度 $8.96\\ \\mathrm{g/cm^3}$，$\\tau_{\\rm Cu}=2.5\\times10^{-14}\\ \\mathrm s$）を Drude 模型で比べる．\n\\begin{enumerate}\n\\item それぞれの伝導電子密度と電気伝導率を求めよ．\n\\item 質量 $0.10\\ \\mathrm{kg}$，長さ $20\\ \\mathrm m$ の導線を両金属で作り，両端に $3.0\\ \\mathrm V$ をかけた．それぞれの電流を求めよ．\n\\item (2) の状況で，伝導電子のドリフト速度はどちらが大きいか．その比を求め，電流の大小と逆になる理由を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n_{\\rm Al}\\approx1.81\\times10^{29}$，$n_{\\rm Cu}\\approx8.5\\times10^{28}\\ \\mathrm{m^{-3}}$；$\\sigma_{\\rm Al}\\approx4.1\\times10^7$，$\\sigma_{\\rm Cu}\\approx6.0\\times10^7\\ \\Omega^{-1}\\mathrm m^{-1}$　(2) $I_{\\rm Al}\\approx11\\ \\mathrm A$，$I_{\\rm Cu}\\approx5.0\\ \\mathrm A$　(3) 銅の方が大きく，$v_{\\rm Al}/v_{\\rm Cu}=0.32$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n=\\dfrac{zN_A\\rho_m}{A}$：\n$n_{\\rm Al}=\\dfrac{3\\times6.02\\times10^{23}\\times2.70\\times10^{6}}{27.0}=1.81\\times10^{29}\\ \\mathrm{m^{-3}}$，$n_{\\rm Cu}=\\dfrac{6.02\\times10^{23}\\times8.96\\times10^6}{63.5}=8.5\\times10^{28}\\ \\mathrm{m^{-3}}$．\n$\\sigma=ne^2\\tau/m$ より $\\sigma_{\\rm Al}=\\dfrac{1.81\\times10^{29}\\times(1.60\\times10^{-19})^2\\times8.0\\times10^{-15}}{9.11\\times10^{-31}}=4.1\\times10^7$，$\\sigma_{\\rm Cu}=6.0\\times10^7\\ \\Omega^{-1}\\mathrm m^{-1}$．\n\n(2) 断面積 $S=M/(\\rho_mL)$，抵抗 $R=\\dfrac{L}{\\sigma S}=\\dfrac{\\rho_mL^2}{\\sigma M}$，電流 $I=\\dfrac{V\\sigma M}{\\rho_mL^2}$．\nAl：$S=1.85\\ \\mathrm{mm^2}$，$R=0.265\\ \\Omega$，$I=11.3\\ \\mathrm A$．Cu：$S=0.558\\ \\mathrm{mm^2}$，$R=0.599\\ \\Omega$，$I=5.0\\ \\mathrm A$．\n$I\\propto\\sigma/\\rho_m$ なので，伝導率では銅に劣るアルミニウムが同じ質量なら約 2.3 倍の電流を流す（送電線にアルミが使われる理由）．\n\n(3) 両者とも電場は $E=V/L=0.15\\ \\mathrm{V/m}$ で等しく，$v_D=eE\\tau/m$ は $\\tau$ だけで決まる：$v_{\\rm Al}/v_{\\rm Cu}=8.0/25=0.32$（$v_{\\rm Al}=0.21\\ \\mathrm{mm/s}$，$v_{\\rm Cu}=0.66\\ \\mathrm{mm/s}$）．電流 $I=nev_DS$ では，アルミは電子密度が 2.1 倍，断面積が 3.3 倍大きく，ドリフトの遅さを補って余りある．"
+   }
+  ],
+  "idea": {
+   "tex": "同じ質量・長さの導線の電流は $\\sigma/\\rho_m$ に比例する．ドリフト速度は $\\tau$ だけで決まり，電流の大小は電子密度と断面積で逆転する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $I_{\\rm Al}$ [A]：≈11 ; $I_{\\rm Cu}$ [A]：≈5.0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Drude模型",
+   "電気伝導率",
+   "抵抗",
+   "ドリフト速度",
+   "アルミニウム",
+   "銅"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 25,
+  "theme": "Wiedemann–Franz 則：古典論の誤差の打ち消し",
+  "topic": "Wiedemann–Franz 則：古典論の誤差の打ち消し",
+  "statement": {
+   "tex": "金属の電子による熱伝導率を気体分子運動論の式 $\\kappa=\\frac13C_ev^2\\tau$（$C_e$：単位体積あたりの電子比熱，$v$：電子の速さ，$\\tau$：緩和時間）で表し，電気伝導率 $\\sigma=ne^2\\tau/m$ と比べる．銅では $n=8.5\\times10^{28}\\ \\mathrm{m^{-3}}$，$\\tau=2.3\\times10^{-14}\\ \\mathrm s$ とする．\n\\begin{enumerate}\n\\item 古典論（$C_e=\\frac32nk_B$，$v^2=3k_BT/m$）と Sommerfeld 理論（$C_e=\\frac{\\pi^2}{2}nk_B\\frac{k_BT}{E_F}$，$v=v_F$）のそれぞれでローレンツ数 $L=\\kappa/(\\sigma T)$ を求めよ．\n\\item 銅の 300 K での電気伝導率と熱伝導率を Sommerfeld 理論で求めよ．\n\\item 銅（$E_F=7.0\\ \\mathrm{eV}$）の 300 K において，古典論の $C_e$ と $v^2$ はそれぞれ Sommerfeld 理論の何倍か．古典論のローレンツ数がそれでも同じ桁になる理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 古典論 $L=\\frac32(k_B/e)^2=1.11\\times10^{-8}$，Sommerfeld $L=\\frac{\\pi^2}{3}(k_B/e)^2=2.44\\times10^{-8}\\ \\mathrm{W\\,\\Omega\\,K^{-2}}$　(2) $\\sigma\\approx5.5\\times10^7\\ \\Omega^{-1}\\mathrm m^{-1}$，$\\kappa\\approx4.0\\times10^2\\ \\mathrm{W\\,m^{-1}K^{-1}}$　(3) $C_e$ は約 83 倍過大，$v^2$ は約 1/180 に過小；誤差が打ち消し合う"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\dfrac{\\kappa}{\\sigma T}=\\dfrac{C_ev^2m}{3ne^2T}$．\n古典論：$\\dfrac{\\frac32nk_B\\cdot3k_BT/m\\cdot m}{3ne^2T}=\\dfrac32\\left(\\dfrac{k_B}{e}\\right)^2=1.11\\times10^{-8}\\ \\mathrm{W\\,\\Omega\\,K^{-2}}$．\nSommerfeld：$v_F^2=2E_F/m$ を用いて $\\dfrac{\\frac{\\pi^2}{2}nk_B\\frac{k_BT}{E_F}\\cdot\\frac{2E_F}{m}\\cdot m}{3ne^2T}=\\dfrac{\\pi^2}{3}\\left(\\dfrac{k_B}{e}\\right)^2=2.44\\times10^{-8}\\ \\mathrm{W\\,\\Omega\\,K^{-2}}$（実験値とよく合う）．\n\n(2) $\\sigma=\\dfrac{ne^2\\tau}{m}=\\dfrac{8.5\\times10^{28}\\times(1.60\\times10^{-19})^2\\times2.3\\times10^{-14}}{9.11\\times10^{-31}}=5.5\\times10^7\\ \\Omega^{-1}\\mathrm m^{-1}$．\n$\\kappa=L\\sigma T=2.44\\times10^{-8}\\times5.5\\times10^7\\times300=4.0\\times10^2\\ \\mathrm{W\\,m^{-1}K^{-1}}$（実測 約 400）．\n\n(3) 比熱：$\\dfrac{C^{\\rm cl}}{C^{\\rm S}}=\\dfrac{3E_F}{\\pi^2k_BT}=\\dfrac{3\\times7.0}{\\pi^2\\times0.02585}=82.8$．\n速さの 2 乗：$\\dfrac{v_{\\rm cl}^2}{v_F^2}=\\dfrac{3k_BT}{2E_F}=\\dfrac{3\\times0.02585}{14.0}=5.5\\times10^{-3}$（約 1/180）．\n古典論は熱を運ぶ電子の数を過大に，その速さを過小に見積もり，両者の積は $82.8\\times5.5\\times10^{-3}=0.456=\\frac{9}{2\\pi^2}$ と $T,E_F$ によらない定数になる．このため古典論でも Wiedemann–Franz 則（$\\kappa/\\sigma T$ が一定）は得られ，数値も約 2 倍の違いにとどまった．"
+   }
+  ],
+  "idea": {
+   "tex": "熱伝導率と電気伝導率の比では $\\tau$ が消える．古典論は比熱を $\\sim E_F/k_BT$ 倍過大，$v^2$ を同じ因子だけ過小に見積もるため誤差が相殺される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 古典論 $L$：≈1.11e-8 ; Sommerfeld $L$ [W Ω K⁻²]：≈2.44e-8\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Wiedemann-Franz則",
+   "ローレンツ数",
+   "熱伝導率",
+   "Sommerfeld模型",
+   "電子比熱"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 20,
+  "theme": "2キャリア系のホール効果と消えるホール係数",
+  "topic": "2キャリア系のホール効果と消えるホール係数",
+  "statement": {
+   "tex": "ある半金属では，電子（密度 $n$，移動度 $\\mu_e$）と正孔（密度 $p$，移動度 $\\mu_h$）が同時に伝導に寄与している．磁場は弱く（$\\mu B\\ll1$），各キャリアは独立にドルーデ模型に従うとする．電気素量を $e$ とする．\n\\begin{enumerate}\n\\item 電気伝導度 $\\sigma$ とホール係数 $R_H$ を $n,p,\\mu_e,\\mu_h$ で表せ．\n\\item $n=2p$ の試料でホール係数が $0$ と測定された．移動度の比 $b=\\mu_e/\\mu_h$ を求めよ．また，この測定値を単一キャリアの公式 $R_H=-1/(n_{\\rm app}e)$ で解析すると何が起こるか述べよ．\n\\item (2) の試料で $n=4.0\\times10^{28}\\ \\mathrm{m^{-3}}$，抵抗率 $\\rho=1.72\\times10^{-8}\\ \\Omega\\,\\mathrm{m}$ のとき，$\\mu_e$ と $\\mu_h$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sigma=e(n\\mu_e+p\\mu_h)$，$R_H=\\dfrac{p\\mu_h^2-n\\mu_e^2}{e(n\\mu_e+p\\mu_h)^2}$　(2) $b=1/\\sqrt2\\approx0.707$．見かけのキャリア密度 $n_{\\rm app}$ が無限大になり無意味　(3) $\\mu_e\\approx5.3\\times10^{-3}\\ \\mathrm{m^2/(V\\,s)}$，$\\mu_h\\approx7.5\\times10^{-3}\\ \\mathrm{m^2/(V\\,s)}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 電流を $x$ 方向，磁場を $z$ 方向にとる．弱磁場で各キャリアの電流密度は\n\\[ \\boldsymbol j_i=\\sigma_i\\boldsymbol E+\\sigma_i\\mu_i\\,(\\pm)\\,(\\boldsymbol E\\times\\boldsymbol B)\\quad(\\text{正孔は}+,\\ \\text{電子は}-),\\qquad \\sigma_e=ne\\mu_e,\\ \\sigma_h=pe\\mu_h \\]\n（$\\mu B$ の 1 次まで）．$\\boldsymbol E\\times\\boldsymbol B$ の $y$ 成分は $-E_xB$ だから，$j_y=0$ の条件から\n\\[ (\\sigma_e+\\sigma_h)E_y=(\\sigma_h\\mu_h-\\sigma_e\\mu_e)E_xB \\]\nが得られる．$j_x\\simeq(\\sigma_e+\\sigma_h)E_x$ を用いて $R_H=E_y/(j_xB)$ は\n\\[ R_H=\\frac{\\sigma_h\\mu_h-\\sigma_e\\mu_e}{(\\sigma_e+\\sigma_h)^2}=\\frac{p\\mu_h^2-n\\mu_e^2}{e(n\\mu_e+p\\mu_h)^2},\\qquad \\sigma=e(n\\mu_e+p\\mu_h). \\]\n$p=0$ なら $R_H=-1/(ne)$，$n=0$ なら $+1/(pe)$ に戻る．\n\n(2) $R_H=0\\iff p\\mu_h^2=n\\mu_e^2$，よって $b^2=p/n=1/2$，$b=1/\\sqrt2\\approx0.707$．このとき正孔のほうが移動度が大きい．単一キャリアの式で解析すると $n_{\\rm app}=-1/(eR_H)\\to\\infty$ となり，実際には有限の電子・正孔が存在するのにホール測定からキャリア密度を決められない．ホール係数の小ささは「キャリアが多い」ことを必ずしも意味しない．\n\n(3) $\\sigma=1/\\rho=5.81\\times10^{7}\\ \\Omega^{-1}\\mathrm{m^{-1}}$．$p\\mu_h=(n/2)(\\sqrt2\\,\\mu_e)=n\\mu_e/\\sqrt2$ より\n\\[ \\sigma=en\\mu_e\\left(1+\\tfrac1{\\sqrt2}\\right)\\ \\Rightarrow\\ \\mu_e=\\frac{5.81\\times10^7}{(1.602\\times10^{-19})(4.0\\times10^{28})(1.707)}=5.3\\times10^{-3}\\ \\mathrm{m^2V^{-1}s^{-1}}, \\]\n$\\mu_h=\\sqrt2\\,\\mu_e=7.5\\times10^{-3}\\ \\mathrm{m^2V^{-1}s^{-1}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "ホール係数は各キャリアの寄与が移動度の 2 乗で重み付けされて打ち消し合うため，2 キャリア系では $R_H=0$ でもキャリアは有限に存在しうる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\mu_e$ [m²/(V s)]：≈5.3e-3 ; $\\mu_h$ [m²/(V s)]：≈7.5e-3"
+  },
+  "methods": [],
+  "tags": [
+   "ホール効果",
+   "ホール係数",
+   "移動度",
+   "2キャリアモデル",
+   "半金属",
+   "ドルーデ模型"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 2,
+  "minutes": 25,
+  "theme": "平均自由行程とマティーセン則・不純物濃度",
+  "topic": "平均自由行程とマティーセン則・不純物濃度",
+  "statement": {
+   "tex": "銀（原子量 108，密度 $10.5\\times10^3\\ \\mathrm{kg/m^3}$，1 原子あたり伝導電子 1 個，$E_F=5.5\\ \\mathrm{eV}$）の抵抗率は $0\\ ^\\circ\\mathrm C$ で $\\rho(273\\ \\mathrm K)=1.5\\times10^{-8}\\ \\Omega\\,\\mathrm m$，液体ヘリウム温度では一定値（残留抵抗）$\\rho_0=1.0\\times10^{-11}\\ \\Omega\\,\\mathrm m$ になった．電子の散乱はフェルミ準位の電子が担うとして，ドルーデ式 $\\rho=m_ev_F/(ne^2\\lambda)$ を用いよ．\n\\begin{enumerate}\n\\item $0\\ ^\\circ\\mathrm C$ での平均自由行程 $\\lambda$ と，原子間隔 $d\\approx n^{-1/3}$ との比を求めよ．\n\\item 残留抵抗から，低温での平均自由行程 $\\lambda_0$ を求めよ．\n\\item 残留抵抗はすべて不純物原子による散乱で生じ，不純物 1 個の散乱断面積が $\\sigma_{\\rm imp}=1.0\\times10^{-19}\\ \\mathrm{m^2}$ であるとして，不純物の原子数比（濃度）を見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda\\approx5.6\\times10^{-8}\\ \\mathrm m$，$\\lambda/d\\approx2.2\\times10^2$　(2) $\\lambda_0\\approx8.4\\times10^{-5}\\ \\mathrm m$（約 0.08 mm）　(3) 約 $2\\times10^{-6}$（2 ppm）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$n=\\dfrac{10.5\\times10^3\\times6.02\\times10^{26}}{108}=5.85\\times10^{28}\\ \\mathrm{m^{-3}}$，$d=n^{-1/3}=2.58\\times10^{-10}$ m，\n$v_F=\\sqrt{2E_F/m_e}=\\sqrt{\\dfrac{2\\times5.5\\times1.60\\times10^{-19}}{9.11\\times10^{-31}}}=1.39\\times10^6$ m/s．\n\n(1) \n\\[ \\lambda=\\frac{m_ev_F}{\\rho ne^2}=\\frac{(9.11\\times10^{-31})(1.39\\times10^6)}{(1.5\\times10^{-8})(5.85\\times10^{28})(1.60\\times10^{-19})^2}=5.6\\times10^{-8}\\ \\mathrm m, \\]\n$\\lambda/d\\approx2.2\\times10^2$．室温でも電子は原子数百個分を散乱なしに進む（周期格子は散乱しない．散乱源は格子振動）．\n\n(2) マティーセン則 $\\rho=\\rho_{\\rm phonon}(T)+\\rho_0$ で，低温では $\\rho_{\\rm phonon}\\to0$．$\\lambda\\propto1/\\rho$ より\n\\[ \\lambda_0=\\lambda\\frac{\\rho(273)}{\\rho_0}=5.6\\times10^{-8}\\times1500=8.4\\times10^{-5}\\ \\mathrm m. \\]\n（厳密には $\\rho(273)$ も $\\rho_0$ を含むが，その割合は $10^{-3}$ 以下で無視できる．）\n\n(3) $\\lambda_0=1/(n_{\\rm imp}\\sigma_{\\rm imp})$ より\n\\[ n_{\\rm imp}=\\frac1{(8.4\\times10^{-5})(1.0\\times10^{-19})}=1.2\\times10^{23}\\ \\mathrm{m^{-3}},\\qquad \\frac{n_{\\rm imp}}{n}=2.0\\times10^{-6}. \\]\n残留抵抗比 $\\rho(273)/\\rho_0=1500$ は数 ppm 程度の純度を意味し，残留抵抗が試料純度の指標になる．"
+   }
+  ],
+  "idea": {
+   "tex": "平均自由行程は抵抗率に反比例し，マティーセン則で残留抵抗を分離すると不純物散乱の平均自由行程から試料純度を見積もれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\lambda_0$ [m]：≈8.4e-5\n(3) ≈2e-6"
+  },
+  "methods": [],
+  "tags": [
+   "平均自由行程",
+   "ドルーデ模型",
+   "マティーセン則",
+   "残留抵抗",
+   "不純物散乱",
+   "フェルミ速度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -438,6 +1382,157 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 3,
+  "minutes": 35,
+  "theme": "Peltier 係数の測定と Peltier 冷却の限界",
+  "topic": "Peltier 係数の測定と Peltier 冷却の限界",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item ある熱電接合を水中に入れ，一方向に電流 $I$ を $t_0$ 秒流したとき接合部付近で発生した熱が $H_1$，逆向きに同じ電流を $t_0$ 秒流したとき $H_2$ であった（単位 J）．接合部付近の導線の抵抗 $R$ による Joule 熱も含まれているとして，Peltier 係数 $\\Pi$ と $R$ を求めよ．\n\\item この原理を使った Peltier 冷却素子（低温側の接合温度 $T_c$，高温側 $T_h$）を考える．素子の熱電能を $S$（$\\Pi=ST_c$），全抵抗を $R$，両接合間の熱コンダクタンスを $K$ とし，素子で発生する Joule 熱の半分が低温側に流れるとすると，低温側から奪う熱流は\n\\[ Q_c=ST_cI-\\tfrac12I^2R-K(T_h-T_c). \\]\n$Q_c$ を最大にする電流と最大値を求めよ．\n\\item $Q_c=0$ となる最大の温度差 $\\Delta T_{\\max}$ を性能指数 $Z=S^2/(RK)$ で表せ．$S=4.0\\times10^{-4}\\ \\mathrm{V/K}$，$R=1.0\\times10^{-2}\\ \\Omega$，$K=5.0\\times10^{-3}\\ \\mathrm{W/K}$，$T_h=300\\ \\mathrm K$ のときの $T_c$ と $\\Delta T_{\\max}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Pi=\\dfrac{H_1-H_2}{2It_0}$，$R=\\dfrac{H_1+H_2}{2I^2t_0}$　(2) $I^*=\\dfrac{ST_c}{R}$，$Q_{c,\\max}=\\dfrac{S^2T_c^2}{2R}-K(T_h-T_c)$　(3) $T_h-T_c=\\dfrac12ZT_c^2$；$Z=3.2\\times10^{-3}\\ \\mathrm K^{-1}$，$T_c\\approx222\\ \\mathrm K$，$\\Delta T_{\\max}\\approx78\\ \\mathrm K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $H_1=(\\Pi I+I^2R)t_0$，$H_2=(-\\Pi I+I^2R)t_0$．差と和から $\\Pi=\\dfrac{H_1-H_2}{2It_0}$，$R=\\dfrac{H_1+H_2}{2I^2t_0}$．Joule 熱は電流の向きによらないので差をとれば消える（〔39〕の結果は Joule 熱を含めても変わらない）．\n\n(2) $dQ_c/dI=ST_c-IR=0$ より $I^*=ST_c/R$．$Q_{c,\\max}=\\dfrac{S^2T_c^2}{R}-\\dfrac{S^2T_c^2}{2R}-K\\Delta T=\\dfrac{S^2T_c^2}{2R}-K\\Delta T$．\n電流を増やすと Peltier 吸熱は $I$ に比例して増えるが，Joule 熱が $I^2$ で増えるので最適電流がある．\n\n(3) $Q_{c,\\max}=0$ より $\\Delta T_{\\max}=\\dfrac{S^2T_c^2}{2RK}=\\dfrac12ZT_c^2$．\n数値：$Z=\\dfrac{1.6\\times10^{-7}}{5\\times10^{-5}}=3.2\\times10^{-3}\\ \\mathrm K^{-1}$．$300-T_c=1.6\\times10^{-3}T_c^2$ を解いて $T_c=\\dfrac{-1+\\sqrt{1+4\\times1.6\\times10^{-3}\\times300}}{3.2\\times10^{-3}}=221.5\\ \\mathrm K$，$\\Delta T_{\\max}=78.5\\ \\mathrm K$（そのときの電流 $I^*=8.9\\ \\mathrm A$）．"
+   }
+  ],
+  "idea": {
+   "tex": "電流を反転させた差で Joule 熱を消して Peltier 係数を測る．冷却素子では Peltier 吸熱（∝I）と Joule 熱（∝I²）の競合で最大温度差 $ZT_c^2/2$ が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Pi$：((H_1 - H_2)/(2 I t_0)) ; $R$：((H_1 + H_2)/(2 I ^(2) t_0))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Peltier効果",
+   "熱電冷却",
+   "性能指数",
+   "Joule熱"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 3,
+  "minutes": 35,
+  "theme": "Drude模型のHall効果と磁気抵抗",
+  "topic": "Drude模型のHall効果と磁気抵抗",
+  "statement": {
+   "tex": "古典電子論（Drude 模型）で，電荷 $q_\\alpha$，質量 $m_\\alpha$，数密度 $N_\\alpha$ の担体 $\\alpha$ が運動方程式\n\\[\nm_\\alpha\\frac{d\\boldsymbol v}{dt}=-\\nu_\\alpha m_\\alpha\\boldsymbol v+q_\\alpha(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)\n\\]\nに従うとする．$z$ 方向の一様な磁束密度 $B$ の下，$x$ 方向に長い細い棒状試料に電流を流す（定常状態で $J_y=0$）．移動度を $\\mu_\\alpha=|q_\\alpha|/(m_\\alpha\\nu_\\alpha)$ とする．\n\\begin{enumerate}\n\\item 担体が電子（電荷 $-e$，密度 $N$，移動度 $\\mu$）のみのとき，縦抵抗率 $\\rho_{xx}=E_x/J_x$ と Hall 係数 $R_H=E_y/(J_xB)$ を求めよ．$\\rho_{xx}$ は $B$ に依存するか．\n\\item 電子（密度 $N$，移動度 $\\mu_1$）と正孔（電荷 $+e$，密度 $N$，移動度 $\\mu_2$）が同数ある補償系では，$\\rho_{xx}$ はどうなるか．\n\\item (2) で $\\mu_1=\\mu_2=\\mu$ のとき，Hall 電場と $\\rho_{xx}(B)$ を求め，強磁場で $\\rho_{xx}$ が $B^2$ に比例して増大する（磁気抵抗）物理的理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho_{xx}=\\dfrac1{Ne\\mu}$（$B$ によらない），$R_H=-\\dfrac1{Ne}$　(2) $\\rho_{xx}=\\dfrac{1+\\mu_1\\mu_2B^2}{Ne(\\mu_1+\\mu_2)}$　(3) $E_y=0$，$\\rho_{xx}=\\dfrac{1+\\mu^2B^2}{2Ne\\mu}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "定常状態で $\\boldsymbol v=\\pm\\mu_\\alpha(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)$（符号は電荷の符号）．\n\n(1) 電子では $\\boldsymbol v=-\\mu(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)$．$J_y=0$ なら $v_y=0$ なので $y$ 成分：$0=-\\mu(E_y-v_xB)$ より $E_y=v_xB$．$x$ 成分：$v_x=-\\mu E_x$（$v_y=0$ だから磁場項なし）．よって $J_x=-Nev_x=Ne\\mu E_x$，\n\\[\n\\rho_{xx}=\\frac1{Ne\\mu},\\qquad R_H=\\frac{E_y}{J_xB}=\\frac{v_xB}{-Nev_xB}=-\\frac1{Ne}.\n\\]\nHall 電場が Lorentz 力の $y$ 成分をちょうど打ち消すので，担体は磁場がないときと同じに走り，$\\rho_{xx}$ は $B$ によらない（単一担体では磁気抵抗ゼロ）．\n\n(2) 各担体の伝導率テンソルは，$\\sigma_\\alpha=Ne\\mu_\\alpha$ として\n\\[\nJ^\\alpha_x=\\frac{\\sigma_\\alpha(E_x\\pm\\mu_\\alpha BE_y)}{1+\\mu_\\alpha^2B^2},\\quad\nJ^\\alpha_y=\\frac{\\sigma_\\alpha(E_y\\mp\\mu_\\alpha BE_x)}{1+\\mu_\\alpha^2B^2}\n\\]\n（上の符号が正孔，下が電子）．$J_y=J^e_y+J^h_y=0$ から $E_y$ を決めて $J_x$ に代入し整理すると\n\\[\n\\rho_{xx}=\\frac{1+\\mu_1\\mu_2B^2}{Ne(\\mu_1+\\mu_2)} .\n\\]\n（$B=0$ で通常の $1/(Ne(\\mu_1+\\mu_2))$．）\n\n(3) $\\mu_1=\\mu_2$ のとき電子と正孔の Hall 電流 $J^e_y,J^h_y$ は $E_y=0$ でちょうど打ち消し合うので Hall 電場は生じない．すると各担体は $y$ 方向の Lorentz 力を打ち消してもらえず，サイクロトロン運動で $x$ 方向の進行が妨げられる：$\\rho_{xx}=\\dfrac{1+\\mu^2B^2}{2Ne\\mu}$，$\\mu B\\gg1$ で $\\propto B^2$（ビスマス等の半金属で見られる大きな磁気抵抗の古典的説明）．"
+   }
+  ],
+  "idea": {
+   "tex": "単一担体では Hall 電場が Lorentz 力を完全に打ち消すため磁気抵抗が出ない．2 種の担体があると Hall 電場で両方を同時には打ち消せず，$B^2$ 型の磁気抵抗が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\rho_{xx}$：((1)/(N e μ)) ; $R_H$：-((1)/(N e))\n(2) $\\rho_{xx}$：((1+ μ_1 μ_2 B ^(2))/(N e (μ_1 + μ_2)))\n(3) $E_y$：0 ; $\\rho_{xx}$：((1+ μ ^(2) B ^(2))/(2 N e μ))"
+  },
+  "methods": [],
+  "tags": [
+   "Drude模型",
+   "Ohmの法則",
+   "Hall効果",
+   "磁気抵抗",
+   "伝導率テンソル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-07-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-99",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ホール素子の感度限界と移動度",
+  "topic": "ホール素子の感度限界と移動度",
+  "statement": {
+   "tex": "長さ $l$（$y$ 方向），幅 $w$（$x$ 方向，$-w/2\\le x\\le w/2$），厚さ $d$（$z$ 方向）の薄い直方体試料（$l\\gg w\\gg d$）に，$+y$ 向きの電流 $I$ を流し，$+z$ 向きの一様磁場 $B$ をかける．キャリアは電荷 $-e$，数密度 $n$，移動度 $\\mu$ の電子のみとし，抵抗率は $\\rho=1/(ne\\mu)$ とする．$x=\\pm w/2$ の側面中央に付けた電極間のホール電圧 $V_H$ を測る．\n\\begin{enumerate}\n\\item $x=+w/2$ と $x=-w/2$ のどちらの電位が高いか．また $V_H$ の大きさを求めよ．\n\\item 厚さ $d=50\\ \\mathrm{nm}$ の金属膜で，$B=0.50\\ \\mathrm{T}$，$I=2.0\\ \\mathrm{mA}$ のとき $V_H=1.47\\ \\mu\\mathrm{V}$ であった．$n$ を求めよ（$e=1.60\\times10^{-19}\\ \\mathrm{C}$）．\n\\item 試料の発熱を $P=I^2\\rho l/(wd)$ に制限した上で，ホール電極間に現れる試料自身の熱雑音電圧（実効値）$\\sqrt{4k_BTR_{PQ}\\Delta f}$ と $V_H$ の比（SN 比）を考える．ここで $R_{PQ}=\\rho w/(ld)$ は電極間の抵抗の目安，$\\Delta f$ は測定帯域で，測定器の雑音は無視する．SN 比が試料の寸法 $l,w,d$ にも $n$ にもよらず，$\\mu$ だけを通して物質に依存することを示せ．\n\\item $P=10\\ \\mathrm{mW}$，$T=300\\ \\mathrm{K}$，$\\Delta f=100\\ \\mathrm{Hz}$ のとき，SN 比 1 で検出できる最小磁場 $B_{\\min}$ を，銅（$\\mu=4.4\\times10^{-3}\\ \\mathrm{m^2/(V\\,s)}$）と InSb（$\\mu=7.0\\ \\mathrm{m^2/(V\\,s)}$）について求めよ（$k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=-w/2$ 側が高い，$V_H=\\dfrac{IB}{ned}$　(2) $n\\approx8.5\\times10^{28}\\ \\mathrm{m^{-3}}$　(3) $\\mathrm{SN}=\\mu B\\sqrt{\\dfrac{P}{4k_BT\\Delta f}}$　(4) $B_{\\min}=\\dfrac1\\mu\\sqrt{\\dfrac{4k_BT\\Delta f}{P}}$：銅 $\\approx2.9\\times10^{-6}\\ \\mathrm T$，InSb $\\approx1.8\\times10^{-9}\\ \\mathrm T$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 電子の速度は $-y$ 向き $\\boldsymbol v=-v\\hat{\\boldsymbol y}$．ローレンツ力 $(-e)\\boldsymbol v\\times\\boldsymbol B=(-e)(-vB)(\\hat{\\boldsymbol y}\\times\\hat{\\boldsymbol z})=evB\\,\\hat{\\boldsymbol x}$ により電子は $x=+w/2$ 側に溜まり，そこが負に帯電する．よって $x=-w/2$ 側の電位が高い．\n定常状態では $eE_x=evB$，$I=nevwd$ より $E_x=IB/(newd)$，\n\\[\nV_H=wE_x=\\frac{IB}{ned}.\n\\]\n\n(2) $n=\\dfrac{IB}{eV_Hd}=\\dfrac{2.0\\times10^{-3}\\times0.50}{1.60\\times10^{-19}\\times1.47\\times10^{-6}\\times5.0\\times10^{-8}}\\approx8.5\\times10^{28}\\ \\mathrm{m^{-3}}$（1 原子 1 個の伝導電子をもつ銅程度）．\n\n(3) 発熱の制限から $I=\\sqrt{Pwd/(\\rho l)}$．よって\n\\[\nV_H=\\frac{B}{ned}\\sqrt{\\frac{Pwd}{\\rho l}},\\qquad V_N=\\sqrt{4k_BT\\Delta f\\,\\frac{\\rho w}{ld}}.\n\\]\n比をとると\n\\[\n\\frac{V_H}{V_N}=\\frac{B\\sqrt P}{ned\\sqrt{4k_BT\\Delta f}}\\sqrt{\\frac{wd}{\\rho l}\\cdot\\frac{ld}{\\rho w}}=\\frac{B}{ne\\rho}\\sqrt{\\frac{P}{4k_BT\\Delta f}}=\\mu B\\sqrt{\\frac{P}{4k_BT\\Delta f}}.\n\\]\n寸法はすべて打ち消し合い，$n$ も $1/(ne\\rho)=\\mu$ の形でしか残らない．薄くすれば $V_H$ は増えるが抵抗も増えて電流が制限され雑音も増えるため，利得が相殺される．\n\n(4) $\\mathrm{SN}=1$ より $B_{\\min}=\\dfrac1\\mu\\sqrt{\\dfrac{4k_BT\\Delta f}{P}}$．$\\sqrt{4\\times1.38\\times10^{-23}\\times300\\times100/0.010}\\approx1.29\\times10^{-8}\\ \\mathrm{T\\cdot m^2/(V\\,s)}$ なので\n銅：$B_{\\min}\\approx1.29\\times10^{-8}/4.4\\times10^{-3}\\approx2.9\\times10^{-6}\\ \\mathrm T$，\nInSb：$B_{\\min}\\approx1.29\\times10^{-8}/7.0\\approx1.8\\times10^{-9}\\ \\mathrm T$．\nキャリア密度が小さく $V_H$ が大きいことが半導体ホール素子の利点と言われるが，発熱制限と熱雑音を考えると本質は移動度 $\\mu$ であり，高移動度の InSb が金属より 3 桁以上有利になる．"
+   }
+  ],
+  "idea": {
+   "tex": "発熱と熱雑音で制限すると，ホール測定の SN 比は $\\mu B\\sqrt{P/4k_BT\\Delta f}$ となり寸法もキャリア密度も消え，移動度だけが感度を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $n$ [m⁻³]：≈8.5e28\n(3) $\\mathrm{SN}$：μ B sqrt(((P)/(4 k_B T Δ f)))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ホール効果",
+   "ホール電圧",
+   "熱雑音",
+   "ジョンソン雑音",
+   "SN比",
+   "移動度",
+   "ホール素子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

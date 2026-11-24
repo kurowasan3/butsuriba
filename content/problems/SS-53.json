@@ -192,6 +192,202 @@
   }
  },
  {
+  "id": "SS-01-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 1,
+  "minutes": 15,
+  "theme": "2次元の格子で基本ベクトルの取り替えを判定する",
+  "topic": "2次元の格子で基本ベクトルの取り替えを判定する",
+  "statement": {
+   "tex": "正方格子 $\\{(m,n)\\}$ を考える．\n\\begin{enumerate}\n\\item $(2,1),(1,1)$ はこの格子の基本ベクトルの組か．$(2,0),(0,1)$ はどうか．\n\\item 一般に，基本ベクトルを変える整数行列 $M$ が $\\det M=\\pm1$ をみたす理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 前者は基本ベクトル（$\\det=1$），後者は違う（$\\det=2$，格子の半分しか生成しない）　(2) $M$ と $M^{-1}$ がともに整数行列"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\det\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}=\\boldsymbol1$ で，逆行列も整数：基本ベクトル．$\\det\\begin{pmatrix}2&0\\\\0&1\\end{pmatrix}=2$：$(1,0)$ を作れない．\n\n(2) どちらの組も他方を整数係数で表すので $M$，$M^{-1}$ は整数行列．$\\det M\\det M^{-1}=1$ で両方とも整数なので $\\pm1$（単位胞の体積は不変）．"
+   }
+  ],
+  "idea": {
+   "tex": "基本ベクトルの取り替えは行列式 $\\pm1$ の整数行列で，単位胞の体積を保つ．原題の3次元の証明を，2次元の具体例で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ブラベ格子",
+   "基本ベクトル",
+   "行列式",
+   "単位胞"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 1,
+  "minutes": 20,
+  "theme": "正方格子の第2ブリルアン域の形と面積",
+  "topic": "正方格子の第2ブリルアン域の形と面積",
+  "statement": {
+   "tex": "格子定数 $a$ の正方格子の逆格子（間隔 $2\\pi/a$）を考える．\n\\begin{enumerate}\n\\item 第2ブリルアン域の境界を求め，形を述べよ．\n\\item 第2ブリルアン域の面積を求め，第1ブリルアン域と等しいことを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $|k_x|+|k_y|=2\\pi/a$ と $|k_x|,|k_y|\\leqq\\pi/a$ の間の4つの三角形　(2) $(2\\pi/a)^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 第1域は $|k_x|,|k_y|\\leqq\\pi/a$ の正方形．次に近い逆格子点 $(\\pm1,\\pm1)\\frac{2\\pi}a$ の垂直2等分線は $|k_x|+|k_y|=2\\pi/a$．その間の\\textbf{4つの直角二等辺三角形}が第2域．\n\n(2) 外の正方形（対角線 $4\\pi/a$）の面積 $2(2\\pi/a)^2$ から第1域を引いて $\\boldsymbol{(2\\pi/a)^2}$．4つの三角形を逆格子ベクトルで移すと第1域をちょうど覆う．"
+   }
+  ],
+  "idea": {
+   "tex": "高次のブリルアン域は第1域と同じ面積で，逆格子ベクトルの平行移動で第1域に戻せる．原題の一般的な証明を，正方格子で具体的に確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) (2 pi / a)^(2)"
+  },
+  "methods": [],
+  "tags": [
+   "ブリルアン域",
+   "正方格子",
+   "逆格子"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 1,
+  "minutes": 20,
+  "theme": "Bragg 反射の遮断波長と観測ピーク数",
+  "topic": "Bragg 反射の遮断波長と観測ピーク数",
+  "statement": {
+   "tex": "格子定数 $a=0.40\\ \\mathrm{nm}$ の立方晶に，波長 $\\lambda$ の X 線を当てる（回折はすべて 1 次として面指数で区別する）．\n\\begin{enumerate}\n\\item 結晶が面心立方のとき，$\\lambda=0.30\\ \\mathrm{nm}$ で生じるすべての Bragg 反射の面指数と回折角 $\\theta$ を求めよ．\n\\item 波長を長くしていくと，ある波長 $\\lambda_c$ 以上ではどの方向にも Bragg 反射が起こらなくなる．面心立方の $\\lambda_c$ を求めよ．同じ $a$ の体心立方・単純立方ではそれぞれいくらか．\n\\item 多結晶ベリリウムなどの「中性子フィルター」はこの性質を利用して長波長の中性子だけを通す．その理由を簡潔に説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) (111)：$\\theta\\approx40.5^\\circ$，(200)：$\\theta\\approx48.6^\\circ$ の 2 本のみ　(2) FCC $\\lambda_c=2a/\\sqrt3\\approx0.462\\ \\mathrm{nm}$，BCC $\\sqrt2a\\approx0.566\\ \\mathrm{nm}$，SC $2a=0.80\\ \\mathrm{nm}$　(3) 解説参照"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sin\\theta=\\dfrac{\\lambda\\sqrt N}{2a}$，$N=h^2+k^2+l^2$．面心立方で許されるのは $h,k,l$ が全部偶数か全部奇数の $N=3,4,8,11,\\dots$．$\\sin\\theta\\le1$ より $N\\le(2a/\\lambda)^2=(0.80/0.30)^2=7.11$．よって $N=3,4$ のみ．\n\\[\n(111):\\ \\sin\\theta=\\frac{0.30\\sqrt3}{0.80}=0.650,\\ \\theta=40.5^\\circ;\\qquad (200):\\ \\sin\\theta=\\frac{0.30\\times2}{0.80}=0.750,\\ \\theta=48.6^\\circ.\n\\]\n\n(2) Bragg 条件が解をもつには $\\lambda\\le2d$ が必要．最大の面間隔は消滅しない最小の $N$ で決まる．面心立方では $N_{\\min}=3$ で $\\lambda_c=2a/\\sqrt3=0.462\\ \\mathrm{nm}$．体心立方（$h+k+l$ 偶数）は $N_{\\min}=2$ で $\\lambda_c=2a/\\sqrt2=0.566\\ \\mathrm{nm}$，単純立方は $N_{\\min}=1$ で $\\lambda_c=2a=0.80\\ \\mathrm{nm}$．\n\n(3) 多結晶では，$\\lambda<\\lambda_c$ の中性子はどこかの微結晶で必ず Bragg 散乱されて進路を曲げられ，透過ビームから除かれる．$\\lambda>\\lambda_c$ の中性子はどの微結晶でも Bragg 散乱されないので（吸収の小さい物質なら）ほとんど素通りする．したがって十分厚い多結晶は $\\lambda_c$ より長波長（低エネルギー）の中性子だけを通すフィルターになる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\lambda>2d_{\\max}$ ではどの面でも Bragg 条件が満たせない．$d_{\\max}$ は消滅則で許される最小の $h^2+k^2+l^2$ で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Bragg回折",
+   "消滅則",
+   "遮断波長",
+   "中性子フィルター",
+   "面心立方"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 1,
+  "minutes": 20,
+  "theme": "隣り合う次数の反射から次数と面間隔を決める",
+  "topic": "隣り合う次数の反射から次数と面間隔を決める",
+  "statement": {
+   "tex": "ある結晶の 1 組の格子面に，波長 $0.154\\ \\mathrm{nm}$ の X 線を当てて入射角（面となす角）$\\theta$ を変えていくと，同じ面からの Bragg 反射が $\\theta=27.5^\\circ$ と $\\theta=38.0^\\circ$ に観測された．この 2 つは連続する次数 $n,\\ n+1$ の反射であることがわかっているが，$n$ は不明である．\n\\begin{enumerate}\n\\item $n$ と面間隔 $d$ を求めよ．\n\\item この面からは全部で何次までの反射が観測されうるか．最高次の反射角を求めよ．\n\\item 1 次の反射しか起こらない（2 次が起こらない）ためには，1 次の反射角 $\\theta_1$ がどんな条件を満たせばよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n=3$，$d\\approx0.500\\ \\mathrm{nm}$　(2) 6 次まで，$\\theta_6\\approx67.5^\\circ$　(3) $\\sin\\theta_1>1/2$，すなわち $\\theta_1>30^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $2d\\sin\\theta_n=n\\lambda$，$2d\\sin\\theta_{n+1}=(n+1)\\lambda$ の比をとると\n\\[\n\\frac{\\sin38.0^\\circ}{\\sin27.5^\\circ}=\\frac{0.6157}{0.4617}=1.333=\\frac{n+1}{n}\\ \\Rightarrow\\ n=3.\n\\]\n$d=\\dfrac{3\\times0.154}{2\\sin27.5^\\circ}=0.500\\ \\mathrm{nm}$．\n\n(2) $\\sin\\theta_n=\\dfrac{n\\lambda}{2d}=0.154n\\le1$ より $n\\le6.49$，6 次まで．$\\sin\\theta_6=0.924$，$\\theta_6=67.5^\\circ$．\n\n(3) $\\sin\\theta_n=n\\sin\\theta_1$ なので，2 次が起こらない条件は $2\\sin\\theta_1>1$，すなわち $\\theta_1>30^\\circ$．（一般に観測できる次数の最大値は $\\lfloor1/\\sin\\theta_1\\rfloor$．）"
+   }
+  ],
+  "idea": {
+   "tex": "$\\sin\\theta_n$ は次数 $n$ に比例するので，隣接 2 次数の正弦比 $(n+1)/n$ から未知の次数が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $n$：3 ; $d$ [nm]：≈0.500\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Bragg回折",
+   "高次反射",
+   "面間隔",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-01-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -388,6 +584,454 @@
   }
  },
  {
+  "id": "SS-01-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "体心立方格子の逆格子は面心立方格子",
+  "topic": "体心立方格子の逆格子は面心立方格子",
+  "statement": {
+   "tex": "立方体の辺 $a$ の体心立方（BCC）格子の基本ベクトルを $\\boldsymbol a_1=\\frac a2(-1,1,1)$，$\\boldsymbol a_2=\\frac a2(1,-1,1)$，$\\boldsymbol a_3=\\frac a2(1,1,-1)$ とする．\n\\begin{enumerate}\n\\item 逆格子の基本ベクトルを求め，FCC 格子であることを示せ．\n\\item 最も短い逆格子ベクトルの長さと個数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol b_1=\\frac{2\\pi}a(0,1,1)$ など（辺 $4\\pi/a$ の FCC）　(2) $\\dfrac{2\\sqrt2\\pi}a$，12個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol b_i=2\\pi\\dfrac{\\boldsymbol a_j\\times\\boldsymbol a_k}{V}$，$V=a^3/2$ で $\\boldsymbol b_1=\\frac{2\\pi}a(0,1,1)$，$\\boldsymbol b_2=\\frac{2\\pi}a(1,0,1)$，$\\boldsymbol b_3=\\frac{2\\pi}a(1,1,0)$：辺 $4\\pi/a$ の\\textbf{FCC}．\n\n(2) $\\frac{2\\pi}a(\\pm1,\\pm1,0)$ などの $\\boldsymbol{12}$ 個，長さ $\\boldsymbol{2\\sqrt2\\pi/a}$（第1ブリルアン域は菱形十二面体）．"
+   }
+  ],
+  "idea": {
+   "tex": "FCC と BCC は互いに逆格子の関係にある．原題の FCC から BCC への向きを逆にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "逆格子",
+   "BCC",
+   "FCC",
+   "基本ベクトル"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "BCC の消滅則と CsCl 構造の弱い反射",
+  "topic": "BCC の消滅則と CsCl 構造の弱い反射",
+  "statement": {
+   "tex": "単純立方格子（辺 $a$）の単位胞に原子を置いた結晶の X 線回折を考える．逆格子ベクトルは $\\boldsymbol G=\\frac{2\\pi}a(h,k,l)$．\n\\begin{enumerate}\n\\item $(0,0,0)$ と $\\frac a2(1,1,1)$ に同じ原子（散乱振幅 $f$）を置いた BCC の構造因子を求め，消える反射を答えよ．\n\\item 2つの位置に異なる原子（$f_1,f_2$）を置いた CsCl 構造では，(1) で消えた反射の強さはどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f(1+(-1)^{h+k+l})$；$h+k+l$ が奇数の反射が消える　(2) $|f_1-f_2|^2$ に比例（弱く現れる）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $S=f(1+e^{i\\pi(h+k+l)})$：$\\boldsymbol{h+k+l}$ \\textbf{が奇数}で $0$．\n\n(2) $S=f_1+f_2(-1)^{h+k+l}$．奇数の反射は $\\boldsymbol{|f_1-f_2|^2}$ に比例して現れる（超格子反射）．"
+   }
+  ],
+  "idea": {
+   "tex": "単位胞の中の原子の配置は構造因子として回折強度に現れ，特定の反射を消す．原題のダイヤモンドの構造因子の代わりに，BCC と CsCl の対比を問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "構造因子",
+   "消滅則",
+   "X線回折",
+   "BCC"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ダイヤモンドと閃亜鉛鉱の (200) 反射",
+  "topic": "ダイヤモンドと閃亜鉛鉱の (200) 反射",
+  "statement": {
+   "tex": "ダイヤモンド構造は FCC 格子に2原子の基底 $\\boldsymbol 0$，$\\boldsymbol d=\\frac a4(1,1,1)$ を置いたもの．立方体の座標で $\\boldsymbol G=\\frac{2\\pi}a(h,k,l)$（$h,k,l$ はすべて偶数かすべて奇数）．\n\\begin{enumerate}\n\\item 基底の構造因子 $1+e^{i\\boldsymbol G\\cdot\\boldsymbol d}$ を求め，$(111)$，$(200)$，$(220)$ の強度の有無を答えよ．\n\\item 散乱の起こる最小の4つの $|\\boldsymbol G|$ を求めよ．\n\\item 閃亜鉛鉱（GaAs）では $(200)$ 反射の強さはどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1+i^{h+k+l}$；$(111)$ あり，$(200)$ なし，$(220)$ あり　(2) $\\frac{2\\pi}a\\times\\sqrt3,\\sqrt8,\\sqrt{11},\\sqrt{16}$　(3) $|f_{\\rm Ga}-f_{\\rm As}|^2$ に比例して弱く現れる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol G\\cdot\\boldsymbol d=\\frac\\pi2(h+k+l)$．$(111)$：$|1-i|^2=2$，$(200)$：$1+(-1)=0$，$(220)$：$2$．\n\n(2) $(111),(220),(311),(400)$：$\\boldsymbol{\\frac{2\\pi}a\\sqrt3,\\sqrt8,\\sqrt{11},4}$．\n\n(3) $f_{\\rm Ga}+f_{\\rm As}(-1)$ で $\\boldsymbol{|f_{\\rm Ga}-f_{\\rm As}|^2}$（原子番号31と33で非常に弱い）．"
+   }
+  ],
+  "idea": {
+   "tex": "ダイヤモンド構造では基底の干渉で FCC で許される反射の一部が消え，2種類の原子にすると弱く復活する．原題に閃亜鉛鉱との比較を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "構造因子",
+   "ダイヤモンド構造",
+   "閃亜鉛鉱",
+   "X線回折"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "斜交格子の計量テンソルと逆格子・格子面間隔",
+  "topic": "斜交格子の計量テンソルと逆格子・格子面間隔",
+  "statement": {
+   "tex": "平面内の正規直交基底 $\\boldsymbol e_1,\\boldsymbol e_2$ に対し，格子ベクトル $\\boldsymbol a=2\\boldsymbol e_1$，$\\boldsymbol b=\\boldsymbol e_1+2\\boldsymbol e_2$ をもつ 2 次元結晶を考え，$\\boldsymbol a,\\boldsymbol b$ を基底に採る．\n\\begin{enumerate}\n\\item 計量テンソル $g_{\\alpha\\beta}$ とその逆 $g^{\\alpha\\beta}$ を求め，$\\boldsymbol a,\\boldsymbol b$ のなす角と単位胞の面積を $g_{\\alpha\\beta}$ だけから求めよ．\n\\item $\\boldsymbol A\\cdot\\boldsymbol a=1,\\ \\boldsymbol A\\cdot\\boldsymbol b=0,\\ \\boldsymbol B\\cdot\\boldsymbol a=0,\\ \\boldsymbol B\\cdot\\boldsymbol b=1$ を満たす逆格子ベクトル $\\boldsymbol A,\\boldsymbol B$ を $\\boldsymbol a,\\boldsymbol b$ の 1 次結合で表せ．逆格子の単位胞の面積はいくらか．\n\\item 共変成分が $(u_1,u_2)=(1,0)$ のベクトル $\\boldsymbol u$ の反変成分と長さを求めよ．\n\\item ミラー指数 $(h,k)=(1,1)$ の格子線（格子点を通る直線群 $hx^1+kx^2=$ 整数，$x^\\alpha$ は $\\boldsymbol a,\\boldsymbol b$ に関する座標）の間隔 $d$ を $g^{\\alpha\\beta}$ で表し，数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $g_{\\alpha\\beta}=\\begin{pmatrix}4&2\\\\2&5\\end{pmatrix}$，$g^{\\alpha\\beta}=\\frac1{16}\\begin{pmatrix}5&-2\\\\-2&4\\end{pmatrix}$，$\\cos\\theta=1/\\sqrt5$（$63.4^\\circ$），面積 $4$　(2) $\\boldsymbol A=(5\\boldsymbol a-2\\boldsymbol b)/16$，$\\boldsymbol B=(-2\\boldsymbol a+4\\boldsymbol b)/16$，面積 $1/4$　(3) $u^\\alpha=(5/16,-1/8)$，$|\\boldsymbol u|=\\sqrt5/4$　(4) $d=1/\\sqrt{g^{\\alpha\\beta}h_\\alpha h_\\beta}=4/\\sqrt5$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $g_{11}=\\boldsymbol a\\cdot\\boldsymbol a=4$，$g_{12}=\\boldsymbol a\\cdot\\boldsymbol b=2$，$g_{22}=\\boldsymbol b\\cdot\\boldsymbol b=5$．$\\det g=16$ より $g^{\\alpha\\beta}=\\dfrac1{16}\\begin{pmatrix}5&-2\\\\-2&4\\end{pmatrix}$．\n$\\cos\\theta=g_{12}/\\sqrt{g_{11}g_{22}}=2/\\sqrt{20}=1/\\sqrt5$，$\\theta=63.4^\\circ$．面積 $=|\\boldsymbol a||\\boldsymbol b|\\sin\\theta=\\sqrt{g_{11}g_{22}-g_{12}^2}=\\sqrt{\\det g}=4$．\n\n(2) $\\boldsymbol A=g^{11}\\boldsymbol a+g^{12}\\boldsymbol b$，$\\boldsymbol B=g^{21}\\boldsymbol a+g^{22}\\boldsymbol b$ とおくと $\\boldsymbol A\\cdot\\boldsymbol a=g^{11}g_{11}+g^{12}g_{21}=\\delta^1_1=1$ など，$g^{\\alpha\\gamma}g_{\\gamma\\beta}=\\delta^\\alpha_\\beta$ からすべての条件が満たされる．よって\n\\[ \\boldsymbol A=\\frac{5\\boldsymbol a-2\\boldsymbol b}{16}=\\frac{2\\boldsymbol e_1-\\boldsymbol e_2}{4},\\qquad \\boldsymbol B=\\frac{-2\\boldsymbol a+4\\boldsymbol b}{16}=\\frac{\\boldsymbol e_2}{2}. \\]\n$\\boldsymbol A\\cdot\\boldsymbol A=g^{11}$ などより逆格子の計量は $g^{\\alpha\\beta}$ で，面積は $\\sqrt{\\det g^{-1}}=1/\\sqrt{\\det g}=1/4$．（直接：$|A_1B_2-A_2B_1|=\\tfrac12\\cdot\\tfrac12=1/4$．）\n\n(3) $u^\\alpha=g^{\\alpha\\beta}u_\\beta=(g^{11},g^{21})=(5/16,-2/16)$．$|\\boldsymbol u|^2=u^\\alpha u_\\alpha=5/16$，$|\\boldsymbol u|=\\sqrt5/4$．（$\\boldsymbol u=\\boldsymbol A$ そのものである．）\n\n(4) 直線群 $hx^1+kx^2=n$ は，$\\boldsymbol G=h\\boldsymbol A+k\\boldsymbol B$ を用いて $\\boldsymbol G\\cdot\\boldsymbol r=n$（$\\boldsymbol r=x^1\\boldsymbol a+x^2\\boldsymbol b$ なら $\\boldsymbol A\\cdot\\boldsymbol r=x^1$，$\\boldsymbol B\\cdot\\boldsymbol r=x^2$）と書ける．法線 $\\boldsymbol G$ 方向の間隔は $d=1/|\\boldsymbol G|$ で\n\\[ |\\boldsymbol G|^2=g^{\\alpha\\beta}h_\\alpha h_\\beta=\\frac{5-2\\cdot2+4}{16}=\\frac5{16},\\qquad d=\\frac{4}{\\sqrt5}\\approx1.79. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "斜交基底では計量 $g_{\\alpha\\beta}$ が全幾何（角度・面積）を担い，その逆 $g^{\\alpha\\beta}$ が逆格子の計量になる．格子面間隔は $1/\\sqrt{g^{\\alpha\\beta}h_\\alpha h_\\beta}$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $d$：4/sqrt(5)"
+  },
+  "methods": [],
+  "tags": [
+   "計量テンソル",
+   "逆格子",
+   "共変成分",
+   "反変成分",
+   "斜交座標",
+   "1-形式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "単純立方格子の空隙と高次元への一般化",
+  "topic": "単純立方格子の空隙と高次元への一般化",
+  "statement": {
+   "tex": "半径 $R$ の剛体球が単純立方格子をなし，最近接どうしが接している．\n\\begin{enumerate}\n\\item 立方体の体心位置にある空隙に入る最大の球の半径 $\\rho$ を求め，この空隙をすべてその球で埋めた（CsCl 型の）構造の充填率を求めよ．\n\\item 同じことを $d$ 次元の単純超立方格子（一辺 $2R$ の超立方体の頂点に半径 $R$ の超球）で考える．超立方体の中心の空隙に入る最大の超球の半径 $\\rho_d$ と，単純超立方格子自身の充填率 $f_d$ を $d$ の関数として求めよ．ただし $d$ 次元の半径 $R$ の球の体積は $V_d(R)=\\dfrac{\\pi^{d/2}}{\\Gamma(d/2+1)}R^d$ である．\n\\item $\\rho_d=R$ となる次元を求め，その次元で空隙を同じ球で埋めた構造の充填率を求めよ．また $d$ がそれより大きいとき何が起こるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho=(\\sqrt3-1)R$，充填率 $\\frac{\\pi}{6}\\{1+(\\sqrt3-1)^3\\}\\approx0.729$　(2) $\\rho_d=(\\sqrt d-1)R$，$f_d=\\dfrac{\\pi^{d/2}}{2^d\\Gamma(d/2+1)}$　(3) $d=4$，充填率 $\\pi^2/16\\approx0.617$；$d\\ge5$ では空隙の球の方が格子の球より大きくなる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 体心から頂点までの距離は体対角線の半分 $\\sqrt3R$（一辺 $2R$）．これから頂点球の半径 $R$ を引いて $\\rho=(\\sqrt3-1)R\\approx0.732R$．単位胞（体積 $8R^3$）には頂点球 $8\\times\\frac18=1$ 個と体心球 1 個が入るので\n\\[\nf=\\frac{\\frac43\\pi R^3+\\frac43\\pi\\rho^3}{8R^3}=\\frac\\pi6\\left\\{1+(\\sqrt3-1)^3\\right\\}=0.5236\\times1.392\\approx0.729.\n\\]\n単純立方の $\\pi/6\\approx0.524$ はもちろん，体心立方 $0.680$ をも上回る．\n\n(2) $d$ 次元超立方体（一辺 $2R$）の中心から頂点までの距離は $\\frac12\\cdot2R\\sqrt d=\\sqrt dR$ なので $\\rho_d=(\\sqrt d-1)R$．単位胞には頂点球が $2^d\\times2^{-d}=1$ 個入るから\n\\[\nf_d=\\frac{V_d(R)}{(2R)^d}=\\frac{\\pi^{d/2}}{2^d\\,\\Gamma(d/2+1)}.\n\\]\n$d=1,2,3$ で $1,\\ \\pi/4,\\ \\pi/6$ を再現し，$d\\to\\infty$ で急速に 0 に近づく．\n\n(3) $\\sqrt d-1=1$ より $d=4$．このとき中心にも同じ大きさの球が入り，単位胞に 2 個の球が入るので\n\\[\nf=\\frac{2V_4(R)}{16R^4}=\\frac{2\\cdot\\frac{\\pi^2}{2}R^4}{16R^4}=\\frac{\\pi^2}{16}\\approx0.617.\n\\]\n（これは 4 次元の $D_4$ 格子である．）$d\\ge5$ では $\\rho_d>R$ となり，「隙間」に格子球より大きな球が入る．高次元では立方格子はほとんど空っぽであることを示している．"
+   }
+  ],
+  "idea": {
+   "tex": "体心の空隙半径は体対角線の幾何 $(\\sqrt d-1)R$ で決まり，$d=4$ で格子球と同じ大きさになる．高次元では単純超立方格子の充填率は急速に 0 になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\rho$：(sqrt(3)-1) R ; 充填率：≈0.729\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "充填率",
+   "単純立方格子",
+   "空隙",
+   "CsCl構造",
+   "高次元球"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "Bain 変形に沿った体心正方格子の充填率",
+  "topic": "Bain 変形に沿った体心正方格子の充填率",
+  "statement": {
+   "tex": "格子定数 $a,a,c$ の体心正方格子（頂点と体心に同じ原子）を考え，$s=c/a$ とおく．原子を剛体球とみなし，球の直径は最近接原子間距離に等しいとする．\n\\begin{enumerate}\n\\item $\\sqrt{2/3}\\le s\\le\\sqrt2$ の範囲で最近接距離は頂点–体心間距離であることを示し，充填率 $f(s)$ を求めよ．\n\\item $s=1$ と $s=\\sqrt2$ はそれぞれ何の構造か．各々の充填率を求めよ．\n\\item $f(s)$ はこの範囲で $s=1$ のみに停留点をもち，そこで極小となることを示せ．範囲の下端 $s=\\sqrt{2/3}$ での充填率も求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f(s)=\\dfrac{\\pi}{3s}\\left(\\dfrac12+\\dfrac{s^2}{4}\\right)^{3/2}$　(2) $s=1$：体心立方 $\\sqrt3\\pi/8\\approx0.680$，$s=\\sqrt2$：面心立方 $\\pi/(3\\sqrt2)\\approx0.740$　(3) $s=1$ で極小，$f(\\sqrt{2/3})=2\\pi/9\\approx0.698$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 頂点–体心間距離は $d_1=\\sqrt{a^2/2+c^2/4}=a\\sqrt{\\frac12+\\frac{s^2}4}$．他の候補は $a$（底面の辺）と $c$．$d_1\\le a\\iff s\\le\\sqrt2$，$d_1\\le c\\iff s^2\\ge\\frac12+\\frac{s^2}{4}\\iff s\\ge\\sqrt{2/3}$．よって範囲内で最近接距離は $d_1$，球の半径は $r=d_1/2$．単位胞（体積 $a^2c$）に 2 個の原子があるので\n\\[\nf(s)=\\frac{2\\cdot\\frac43\\pi(d_1/2)^3}{a^3s}=\\frac{\\pi}{3s}\\left(\\frac12+\\frac{s^2}{4}\\right)^{3/2}.\n\\]\n\n(2) $s=1$ は体心立方：$f=\\frac\\pi3(3/4)^{3/2}=\\frac{\\sqrt3\\pi}{8}\\approx0.680$．$s=\\sqrt2$ では体心正方格子を $45^\\circ$ 回転した一辺 $\\sqrt2a$ の立方胞で見ると面心立方になる（Bain の対応）：$f=\\frac{\\pi}{3\\sqrt2}\\approx0.740$．\n\n(3) $\\ln f=\\frac32\\ln\\left(\\frac12+\\frac{s^2}4\\right)-\\ln s+\\text{const}$ より\n\\[\n\\frac{d\\ln f}{ds}=\\frac{3s/4}{\\frac12+\\frac{s^2}{4}}-\\frac1s=\\frac{\\frac{s^2}{2}-\\frac12}{s\\left(\\frac12+\\frac{s^2}{4}\\right)}.\n\\]\nこれは $s<1$ で負，$s>1$ で正なので $s=1$ が唯一の停留点で極小．つまり体心立方は Bain 変形の経路上で充填率が局所的に最も低い構造である．下端では $f(\\sqrt{2/3})=\\frac{\\pi}{3}\\left(\\frac23\\right)^{3/2}\\Big/\\sqrt{\\frac23}=\\frac{2\\pi}{9}\\approx0.698$．"
+   }
+  ],
+  "idea": {
+   "tex": "体心正方格子を $c/a$ で連続変形すると BCC（$c/a=1$）と FCC（$c/a=\\sqrt2$）がつながり，BCC は充填率の極小点になっている．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $f(s)$：((pi)/(3 s))(((1)/(2))+((s ^(2))/(4)))^(3/2)\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "充填率",
+   "体心立方",
+   "面心立方",
+   "体心正方",
+   "Bain変形"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "粉末X線回折ピークの指数付けと格子型判定",
+  "topic": "粉末X線回折ピークの指数付けと格子型判定",
+  "statement": {
+   "tex": "立方晶の金属の粉末試料に波長 $\\lambda=0.1540\\ \\mathrm{nm}$ の X 線を当てたところ，回折角 $2\\theta$ が小さい順に $38.5^\\circ,\\ 44.7^\\circ,\\ 65.1^\\circ,\\ 78.2^\\circ$ に強いピークが観測された（いずれも 1 次の回折として扱う）．\n\\begin{enumerate}\n\\item 各ピークの $\\sin^2\\theta$ の比を求め，結晶が単純立方・体心立方・面心立方のどれであるか判定し，各ピークに指数 $(hkl)$ をつけよ．\n\\item 格子定数 $a$ を求めよ．\n\\item 次に現れるピークの $2\\theta$ を求めよ．また，そのピークは最初のピークを与える面の「2 次の反射」とも解釈できることを説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3:4:8:11$ → 面心立方，(111),(200),(220),(311)　(2) $a\\approx0.405\\ \\mathrm{nm}$　(3) (222)，$2\\theta\\approx82.4^\\circ$；$d_{222}=d_{111}/2$ なので (111) の 2 次反射と同じ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 立方晶では $d=a/\\sqrt N$（$N=h^2+k^2+l^2$）で，Bragg 条件 $\\lambda=2d\\sin\\theta$ より $\\sin^2\\theta=\\dfrac{\\lambda^2}{4a^2}N$．$\\theta=19.25^\\circ,22.35^\\circ,32.55^\\circ,39.1^\\circ$ に対し $\\sin^2\\theta=0.1085,\\ 0.1446,\\ 0.2893,\\ 0.3978$．最小値で割ると $1:1.333:2.667:3.667$，3 倍して $3:4:8:11$．$N=3,4,8,11$ は $h,k,l$ がすべて偶数またはすべて奇数のもの（面心立方の消滅則）で，単純立方なら $1:2:3:\\cdots$，体心立方なら $2:4:6:\\cdots$ となるはずである．よって面心立方で，指数は $(111),(200),(220),(311)$．\n\n(2) $a=\\dfrac{\\lambda\\sqrt N}{2\\sin\\theta}$ に各ピークを代入すると $0.4045,\\ 0.4050,\\ 0.4048,\\ 0.4049\\ \\mathrm{nm}$．平均して $a\\approx0.405\\ \\mathrm{nm}$（アルミニウム）．\n\n(3) 次の許される $N$ は $12$，$(222)$．$\\sin\\theta=\\dfrac{0.1540\\sqrt{12}}{2\\times0.405}=0.659$，$\\theta=41.2^\\circ$，$2\\theta\\approx82.4^\\circ$．$d_{222}=a/\\sqrt{12}=d_{111}/2$ だから，$2d_{222}\\sin\\theta=\\lambda$ は $2d_{111}\\sin\\theta=2\\lambda$ と同値，すなわち (111) 面の 2 次反射と区別できない．回折実験では「間隔 $d$ の面の $n$ 次」と「間隔 $d/n$ の面の 1 次」は同じピークを与える．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\sin^2\\theta$ の比は $h^2+k^2+l^2$ の比で，消滅則によって格子型が判定できる．高次反射は面間隔 $d/n$ の面の 1 次反射と等価．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $a$ [nm]：≈0.405\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Bragg回折",
+   "粉末X線回折",
+   "消滅則",
+   "面心立方",
+   "指数付け"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ダイヤモンド構造の空隙と体心立方への埋め込み",
+  "topic": "ダイヤモンド構造の空隙と体心立方への埋め込み",
+  "statement": {
+   "tex": "格子定数 $a$ のダイヤモンド構造（面心立方の格子点 $(0,0,0)$ 型と，それを $(a/4,a/4,a/4)$ だけずらした点に原子）を，最近接原子が接する剛体球でモデル化する．\n\\begin{enumerate}\n\\item 原子半径 $r$ を $a$ で表し，充填率を求めよ．\n\\item 位置 $(a/2,a/2,a/2)$ には原子がない．ここに入れる最大の球の半径を求めよ．\n\\item (2) と同等な空隙（単位胞あたり 8 個ある）をすべて同じ原子で埋めると，どのような格子になるか．その充填率が (1) の 2 倍であることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $r=\\sqrt3a/8$，充填率 $\\sqrt3\\pi/16\\approx0.340$　(2) $\\sqrt3a/8$（原子と同じ大きさ）　(3) 格子定数 $a/2$ の体心立方，充填率 $\\sqrt3\\pi/8\\approx0.680$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 最近接は $(0,0,0)$ と $(a/4,a/4,a/4)$ で距離 $\\sqrt3a/4=2r$，よって $r=\\sqrt3a/8$．単位胞に原子 8 個：\n\\[\nf=\\frac{8\\cdot\\frac43\\pi r^3}{a^3}=\\frac{32\\pi}{3}\\left(\\frac{\\sqrt3}{8}\\right)^3=\\frac{\\sqrt3\\pi}{16}\\approx0.340.\n\\]\n\n(2) $(a/2,a/2,a/2)$ に最も近い原子は $(a/4,a/4,a/4)$ など 4 個で，距離 $\\sqrt3a/4$（$(a/2,a/2,0)$ 型の面心原子は距離 $a/2$ でより遠い）．よって最大半径は $\\sqrt3a/4-r=\\sqrt3a/8=r$．原子と同じ大きさの球がちょうど入る．\n\n(3) 空隙は $(a/2,0,0)$ 型の 4 個と $(3a/4,3a/4,3a/4)$ 型の 4 個．埋めた後の原子座標は $a/4$ を単位として「3 成分がすべて偶数」または「すべて奇数」の点全体となる．これは格子定数 $a/2$ の立方格子の頂点（すべて偶数）と体心（すべて奇数）であり，体心立方である．最近接距離は $\\frac{\\sqrt3}{2}\\cdot\\frac a2=\\frac{\\sqrt3a}{4}=2r$ で整合する．充填率は\n\\[\nf=\\frac{16\\cdot\\frac43\\pi r^3}{a^3}=2\\times\\frac{\\sqrt3\\pi}{16}=\\frac{\\sqrt3\\pi}{8}\\approx0.680,\n\\]\n体心立方の値に一致する．すなわちダイヤモンド構造は体心立方格子の半分の位置を規則的に抜いた構造である．"
+   }
+  ],
+  "idea": {
+   "tex": "ダイヤモンド構造の空の四面体位置は原子と同じ大きさの球が入るほど大きく，全部埋めると格子定数 $a/2$ の体心立方になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $r$：sqrt(3) a /8 ; 充填率：≈0.340\n(2) sqrt(3) a /8\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ダイヤモンド構造",
+   "原子半径",
+   "充填率",
+   "空隙",
+   "体心立方"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 2,
+  "minutes": 25,
+  "theme": "遮蔽された1次元イオン鎖のマーデルング定数",
+  "topic": "遮蔽された1次元イオン鎖のマーデルング定数",
+  "statement": {
+   "tex": "間隔 $a$ で一直線に並んだイオン鎖を考える．イオン間の相互作用は遮蔽されたクーロンポテンシャル（湯川型）$\\pm\\dfrac{e^2}{4\\pi\\varepsilon_0}\\dfrac{e^{-\\kappa r}}{r}$ で表されるとし，基準イオンが他のすべてのイオンから受けるポテンシャルエネルギーを $-\\alpha(\\kappa)\\dfrac{e^2}{4\\pi\\varepsilon_0a}$ と書いて $\\alpha$ を（遮蔽を含めた）マーデルング定数と定義する．\n\\begin{enumerate}\n\\item 電荷が $+,-,+,-,\\dots$ と交互に並ぶとき，$\\alpha(\\kappa)=2\\ln(1+e^{-\\kappa a})$ を示せ．$\\kappa\\to0$ の極限も述べよ．\n\\item $\\kappa a=1$ のとき $\\alpha$ を求め，最近接の 2 イオンだけを考えた近似値と比べよ．\n\\item 遮蔽がない（$\\kappa=0$）とき，電荷が $+,+,-,-,+,+,-,-,\\dots$ と 2 個ずつ交互に並ぶ鎖のマーデルング定数を求めよ．どちらの配列がイオン結晶として安定か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照），$\\kappa\\to0$ で $2\\ln2\\approx1.386$　(2) $\\alpha=2\\ln(1+e^{-1})\\approx0.627$，最近接のみ $2e^{-1}\\approx0.736$　(3) $\\ln2\\approx0.693$；交互配列（$2\\ln2$）の方が安定"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 基準イオンから距離 $ja$ には左右 2 個のイオンがあり，$j$ が奇数なら異符号（引力），偶数なら同符号（斥力）．よって\n\\[\n\\alpha(\\kappa)=2\\sum_{j=1}^\\infty\\frac{(-1)^{j+1}}{j}e^{-j\\kappa a}=2\\ln\\left(1+e^{-\\kappa a}\\right),\n\\]\nここで $\\ln(1+x)=\\sum_{j\\ge1}(-1)^{j+1}x^j/j$（$|x|<1$）を $x=e^{-\\kappa a}$ で用いた．$\\kappa>0$ では級数は絶対収束する．$\\kappa\\to0$ で $\\alpha\\to2\\ln2$（Abel の定理）となり，遮蔽のない値を再現する．\n\n(2) $\\alpha=2\\ln(1+e^{-1})=2\\ln1.3679=0.627$．最近接のみなら $2e^{-1}=0.736$．遮蔽があっても第 2 近接以降（同符号の斥力が先に来る）が約 15% 結合を弱める．\n\n(3) 配列の符号を $s_n$（$n\\bmod4=0,1$ で $+$，$2,3$ で $-$）とし基準を $n=0$ とする．$\\alpha=-\\sum_{n\\ne0}s_0s_n/|n|$．距離 $n$ の左右 2 個の符号和 $s_n+s_{-n}$ は $n=1,2,3,4,\\dots$ で $0,-2,0,+2,0,-2,\\dots$ となる．よって\n\\[\n\\alpha=\\frac{2}{2}-\\frac{2}{4}+\\frac{2}{6}-\\cdots=\\sum_{m=1}^\\infty\\frac{(-1)^{m+1}}{m}=\\ln2.\n\\]\n最近接の一方が同符号になるため，マーデルング定数は交互配列の半分になる．静電エネルギーが低い（$\\alpha$ が大きい）交互配列の方が安定である．"
+   }
+  ],
+  "idea": {
+   "tex": "交代級数 $\\sum(-1)^{j+1}x^j/j=\\ln(1+x)$ により遮蔽付きのマーデルング定数が閉じた形になる．配列を変えると $\\ln2$ のように別の値になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "マーデルング定数",
+   "イオン結晶",
+   "遮蔽",
+   "湯川ポテンシャル",
+   "級数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-01-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -478,6 +1122,56 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-01-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-53",
+  "level": 3,
+  "minutes": 30,
+  "theme": "NaCl のマーデルング定数：殻和の不収束と Evjen 法",
+  "topic": "NaCl のマーデルング定数：殻和の不収束と Evjen 法",
+  "statement": {
+   "tex": "NaCl 構造で最近接イオン間距離を $r$ とし，イオンを整数座標 $(i,j,k)r$ に置く（$i+j+k$ が偶数の点に基準イオンと同符号，奇数の点に異符号）．基準イオンの静電エネルギーを $-\\alpha\\dfrac{e^2}{4\\pi\\varepsilon_0r}$ とする．\n\\begin{enumerate}\n\\item 距離 $\\sqrt N\\,r$ の殻ごとに和をとる級数 $\\alpha=\\dfrac{6}{\\sqrt1}-\\dfrac{12}{\\sqrt2}+\\dfrac{8}{\\sqrt3}-\\dfrac{6}{\\sqrt4}+\\cdots$ の第 6 項までを書き，各段階の部分和を計算せよ．この級数の収束について何がいえるか．\n\\item Evjen の方法では，基準イオンを中心とする一辺 $2n\\,r$ の立方体内のイオンだけを取り，立方体の面上のイオンは電荷の $1/2$，辺上は $1/4$，頂点は $1/8$ として数える（立方体全体が電気的に中性になる）．$n=1$ のときの $\\alpha$ の近似値を求めよ．\n\\item $n=2$ の Evjen 近似値を求め，真の値 $1.7476$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $6-\\frac{12}{\\sqrt2}+\\frac{8}{\\sqrt3}-\\frac{6}{2}+\\frac{24}{\\sqrt5}-\\frac{24}{\\sqrt6}$；部分和 $6,\\ -2.485,\\ 2.134,\\ -0.867,\\ 9.867,\\ 0.069$，振動して収束しない　(2) $1.456$　(3) $1.752$（誤差約 0.2%）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 距離 $\\sqrt N r$ の点の数は $N=1,2,3,4,5,6$ で $6,12,8,6,24,24$．$N$ が奇数なら異符号（$\\alpha$ に正の寄与）．\n\\[\n\\alpha=6-\\frac{12}{\\sqrt2}+\\frac{8}{\\sqrt3}-\\frac{6}{2}+\\frac{24}{\\sqrt5}-\\frac{24}{\\sqrt6}+\\cdots\n\\]\n部分和は $6.000,\\ -2.485,\\ 2.134,\\ -0.867,\\ 9.867,\\ 0.069$．殻の点数は $N^{1/2}$ 程度で増え，各項の大きさ（点数$/\\sqrt N$）は小さくならないので，この殻和は振動して収束しない．殻ごとに切ると殻自体が正味の電荷をもつことが原因である．\n\n(2) $n=1$：一辺 $2r$ の立方体．面心 6 個（距離 $r$，異符号，重み $1/2$），辺の中点 12 個（距離 $\\sqrt2r$，同符号，重み $1/4$），頂点 8 個（距離 $\\sqrt3r$，異符号，重み $1/8$）：\n\\[\n\\alpha_1=\\frac{6}{2}-\\frac{12}{4\\sqrt2}+\\frac{8}{8\\sqrt3}=3-2.121+0.577=1.456.\n\\]\n\n(3) $n=2$：一辺 $4r$ の立方体．内部（$|i|,|j|,|k|\\le1$）は重み 1，$|x|=2$ の成分ごとに $1/2$ を掛ける．各点の寄与 $-(-1)^{i+j+k}w/\\sqrt{i^2+j^2+k^2}$ を合計すると（数え上げは解答者が距離の殻ごとに整理してよい）\n\\[\n\\alpha_2=1.752\n\\]\nとなる．具体的には内部 26 点で $6-\\frac{12}{\\sqrt2}+\\frac{8}{\\sqrt3}=2.134$，表面の点（重み付き）で $-0.382$ が加わる．真の値 $1.7476$ との差は $0.004$（約 0.2%）で，わずか 124 点の和で高精度に収束する．中性な塊ごとに和をとれば，長距離の打ち消し合いが正しく扱われる．"
+   }
+  ],
+  "idea": {
+   "tex": "殻ごとの和は殻が電荷をもつため振動して収束しない．立方体を電気的に中性にする Evjen の重み付けで急速に収束する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ≈1.456\n(3) ≈1.752"
+  },
+  "methods": [],
+  "tags": [
+   "マーデルング定数",
+   "NaCl構造",
+   "Evjen法",
+   "条件収束",
+   "イオン結晶"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

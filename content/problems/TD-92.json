@@ -146,6 +146,55 @@
   }
  },
  {
+  "id": "TD-05-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 1,
+  "minutes": 20,
+  "theme": "d 次元の点源からの拡散：平均2乗距離 2dDt",
+  "topic": "d 次元の点源からの拡散：平均2乗距離 2dDt",
+  "statement": {
+   "tex": "$d$ 次元で，時刻 $0$ に原点に量 $M$ を置いた拡散の解は $C=\\dfrac{M}{(4\\pi Dt)^{d/2}}e^{-r^2/4Dt}$ である．\n\\begin{enumerate}\n\\item $d=2,3$ でこれが原題の相似解の形 $\\eta F(\\xi)$ に一致することを確かめよ．\n\\item $\\langle r^2\\rangle$ を求めよ．\n\\item 3次元で $D=1\\times10^{-9}\\ \\mathrm{m^2/s}$ の分子の根平均2乗距離が $1\\ \\mathrm{mm}$ になる時間を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 確認　(2) $2dDt$　(3) $\\approx170\\ \\mathrm s$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d=2$ で $\\eta=M/Dt$，$d=3$ で $\\eta=M/(Dt)^{3/2}$，$\\xi=r/\\sqrt{Dt}$ の関数．\n\n(2) 各方向の分散 $2Dt$ で $\\boldsymbol{2dDt}$．\n\n(3) $6Dt=10^{-6}$：$\\boldsymbol{t\\approx170\\ \\mathrm s}$（細胞の大きさ $10\\ \\mu$m なら $0.02$ s）．"
+   }
+  ],
+  "idea": {
+   "tex": "点源からの拡散はどの次元でもガウス分布で，広がりは $\\sqrt t$ に比例する．原題の円柱と球の相似解をまとめ，生物学的な時間尺度を見積もらせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) [s]：≈170"
+  },
+  "methods": [],
+  "tags": [
+   "拡散方程式",
+   "相似解",
+   "ガウス分布",
+   "平均2乗変位"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "TD-05-004",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -293,6 +342,302 @@
   }
  },
  {
+  "id": "TD-05-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 2,
+  "minutes": 30,
+  "theme": "端の温度を一定に保った半無限の棒：相似解と erfc",
+  "topic": "端の温度を一定に保った半無限の棒：相似解と erfc",
+  "statement": {
+   "tex": "半無限の棒 $x>0$ の温度 $\\theta(x,t)$ が $\\partial_t\\theta=D\\partial_x^2\\theta$ に従う．$t<0$ で $\\theta=0$，$t\\geqq0$ で端の温度を $\\theta(0,t)=\\theta_0$ に保つ．\n\\begin{enumerate}\n\\item 次元解析で $\\theta=\\theta_0F(z)$，$z=x/\\sqrt{Dt}$ と書けることを示し，$F$ のみたす方程式を導け．\n\\item $F$ を解き，$\\theta=\\theta_0\\,\\mathrm{erfc}\\left(\\dfrac{x}{2\\sqrt{Dt}}\\right)$ を示せ．\n\\item 温度が $\\theta_0/2$ になる位置を求めよ．端から流れ込む熱流束（熱伝導率 $\\kappa$）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F''+\\dfrac z2F'=0$　(2) 証明　(3) $x\\approx0.954\\sqrt{Dt}$；$\\dfrac{\\kappa\\theta_0}{\\sqrt{\\pi Dt}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 他に長さの尺度がないので $\\theta/\\theta_0$ は $x/\\sqrt{Dt}$ だけの関数．代入して $\\boldsymbol{F''+\\frac z2F'=0}$．（点熱源と違い，全熱量は一定でないので前因子がない．）\n\n(2) $F'=Ce^{-z^2/4}$，$F(0)=1$，$F(\\infty)=0$ より $F=\\mathrm{erfc}(z/2)$．\\hfill$\\square$\n\n(3) $\\mathrm{erfc}(z/2)=\\frac12$ は $z/2\\approx0.477$，$\\boldsymbol{x\\approx0.954\\sqrt{Dt}}$（$\\sqrt t$ で広がる）．流束 $-\\kappa\\partial_x\\theta|_0=\\kappa\\theta_0\\dfrac{1}{\\sqrt{\\pi Dt}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "熱伝導方程式の相似解は保存量や境界条件で形が決まる．原題の点熱源（全熱量一定）を，端の温度一定の問題に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "熱伝導方程式",
+   "相似解",
+   "誤差関数",
+   "次元解析"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 2,
+  "minutes": 25,
+  "theme": "両端を閉じた管の濃度が平均に近づくまでの時間",
+  "topic": "両端を閉じた管の濃度が平均に近づくまでの時間",
+  "statement": {
+   "tex": "長さ $L$ の管で，$C(x,0)=C_0+(C_1-C_0)x/L$ から両端を閉じた後の濃度は\n\\[\nC=C_0+(C_1-C_0)\\left[\\frac12-\\sum_{n\\ \\text{奇数}}\\frac{4}{n^2\\pi^2}\\cos\\frac{n\\pi x}{L}e^{-n^2\\pi^2Dt/L^2}\\right]\n\\]\nである．\n\\begin{enumerate}\n\\item 端 $x=0$ での平均からのずれが $(C_1-C_0)$ の $1\\%$ 以下になる時間を，最初の項だけで見積もれ．\n\\item $L=1\\ \\mathrm{mm}$，$D=1\\times10^{-9}\\ \\mathrm{m^2/s}$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t\\approx\\dfrac{L^2}{\\pi^2D}\\ln\\dfrac{4}{0.01\\pi^2}\\approx0.375\\dfrac{L^2}{D}$　(2) $\\approx375\\ \\mathrm s$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{4}{\\pi^2}e^{-\\pi^2Dt/L^2}=0.01$ より $\\boldsymbol{t=0.375L^2/D}$．\n\n(2) $\\boldsymbol{375\\ \\mathrm s}$（約6分）．高次の項は $e^{-9\\pi^2Dt/L^2}$ でずっと速く消える．"
+   }
+  ],
+  "idea": {
+   "tex": "拡散の緩和は最も遅いモードで決まり，時間尺度は $L^2/\\pi^2D$ である．原題の解の導出を，緩和時間の見積もりにした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [s]：≈375"
+  },
+  "methods": [],
+  "tags": [
+   "拡散方程式",
+   "ノイマン条件",
+   "フーリエ級数",
+   "緩和時間"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 2,
+  "minutes": 25,
+  "theme": "通電線の内部温度分布とBiot数",
+  "topic": "通電線の内部温度分布とBiot数",
+  "statement": {
+   "tex": "半径 $r_0$，抵抗率 $\\rho$，熱伝導率 $\\kappa$ の長い円柱導線に一様な電流密度で電流 $I$ を流す．表面からの放熱は単位面積・単位温度差あたり $\\nu$ で，周囲温度を $\\theta_0$ とする．定常状態を考える．\n\\begin{enumerate}\n\\item 表面温度の上昇 $\\theta_s-\\theta_0$ を求めよ．\n\\item 導線内部の温度分布 $\\theta(r)$ を求め，中心と表面の温度差を求めよ．\n\\item 中心–表面の温度差と表面–周囲の温度差の比を求め，銅線（$r_0=1\\ \\mathrm{mm}$，$\\kappa=400\\ \\mathrm{W/(m\\,K)}$，$\\nu=10\\ \\mathrm{W/(m^2K)}$）でその値を評価せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\theta_s-\\theta_0=\\dfrac{I^2\\rho}{2\\pi^2r_0^3\\nu}$　(2) $\\theta(r)=\\theta_s+\\dfrac{q}{4\\kappa}(r_0^2-r^2)$，$q=\\dfrac{I^2\\rho}{\\pi^2r_0^4}$；中心–表面差 $\\dfrac{I^2\\rho}{4\\pi^2\\kappa r_0^2}$　(3) $\\dfrac{r_0\\nu}{2\\kappa}=1.25\\times10^{-5}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "単位体積の発熱 $q=\\rho J^2=\\dfrac{\\rho I^2}{\\pi^2r_0^4}$．\n\n(1) 単位長さで $q\\pi r_0^2=2\\pi r_0\\nu(\\theta_s-\\theta_0)$ より $\\theta_s-\\theta_0=\\dfrac{qr_0}{2\\nu}=\\dfrac{I^2\\rho}{2\\pi^2r_0^3\\nu}$（〔32・3〕と同じ）．\n\n(2) 半径 $r$ の円柱内の発熱が外へ伝導される：$-\\kappa\\dfrac{d\\theta}{dr}2\\pi r=q\\pi r^2$，$\\dfrac{d\\theta}{dr}=-\\dfrac{qr}{2\\kappa}$．積分して $\\theta=\\theta_s+\\dfrac{q}{4\\kappa}(r_0^2-r^2)$．中心–表面差 $\\dfrac{qr_0^2}{4\\kappa}=\\dfrac{I^2\\rho}{4\\pi^2\\kappa r_0^2}$．\n\n(3) 比 $=\\dfrac{qr_0^2/4\\kappa}{qr_0/2\\nu}=\\dfrac{r_0\\nu}{2\\kappa}$（Biot 数の半分）．$=\\dfrac{10^{-3}\\times10}{800}=1.25\\times10^{-5}$．金属線では内部はほぼ一様温度で，温度上昇は表面の放熱だけで決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "内部の熱伝導による温度差と表面放熱による温度差の比は Biot 数 $r_0\\nu/\\kappa$ で決まり，金属線ではきわめて小さい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\theta(r)$：θ_s +((q)/(4 κ))(r_0 ^(2)- r ^(2)) ; $q$：((I ^(2) ρ)/(pi ^(2) r_0 ^(4))) ; 中心–表面差：((I ^(2) ρ)/(4 pi ^(2) κ r_0 ^(2)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Joule熱",
+   "熱伝導",
+   "温度分布",
+   "Biot数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 2,
+  "minutes": 30,
+  "theme": "溶断電流のスケーリング：表面放熱型と端部伝導型",
+  "topic": "溶断電流のスケーリング：表面放熱型と端部伝導型",
+  "statement": {
+   "tex": "融点までの温度上昇が $\\theta_m$ の金属線（抵抗率 $\\rho$，熱伝導率 $\\kappa$）について考える．\n\\begin{enumerate}\n\\item 表面からの放熱（〔32・3〕型，係数 $\\nu$）だけで冷える長い線では，溶断電流は直径の何乗に比例するか．直径 $0.5\\ \\mathrm{mm}$ の線が $10\\ \\mathrm A$ で溶断するとき，同じ材料で直径 $1.0\\ \\mathrm{mm}$ の線の溶断電流を求めよ．\n\\item 真空中の短い細線（長さ $L$，半径 $r$）で，表面放熱が無視でき，熱は両端の（室温に保たれた）太い端子へ線に沿った熱伝導だけで逃げるとする．定常状態の最高温度上昇（中央）を求め，溶断電流を求めよ．\n\\item (2) の場合，溶断電流は $r$ と $L$ にどう依存するか．(1) の場合と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3/2$ 乗；約 $28\\ \\mathrm A$　(2) $\\theta_{\\max}=\\dfrac{qL^2}{8\\kappa}$（$q=\\rho I^2/\\pi^2r^4$），$I_f=\\dfrac{\\pi r^2}{L}\\sqrt{\\dfrac{8\\kappa\\theta_m}{\\rho}}$　(3) $I_f\\propto r^2/L$（断面積に比例，長さに反比例）；(1) は $r^{3/2}$ で長さによらない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 〔32・4〕より $I_f=\\pi\\sqrt{2\\nu r^3\\theta_m/\\rho}\\propto r^{3/2}$（Preece の法則）．$10\\times2^{3/2}=28.3\\ \\mathrm A$．\n\n(2) 線に沿った座標 $x$（$-L/2\\le x\\le L/2$，両端 $\\theta=0$）で，熱伝導方程式 $\\kappa\\theta''+q=0$．解は $\\theta=\\dfrac{q}{2\\kappa}\\left(\\dfrac{L^2}{4}-x^2\\right)$，中央で $\\theta_{\\max}=\\dfrac{qL^2}{8\\kappa}$．$\\theta_{\\max}=\\theta_m$ とおいて\n\\[ \\frac{\\rho I^2L^2}{8\\kappa\\pi^2r^4}=\\theta_m\\ \\Longrightarrow\\ I_f=\\frac{\\pi r^2}{L}\\sqrt{\\frac{8\\kappa\\theta_m}{\\rho}}. \\]\n\n(3) $I_f\\propto r^2/L$，すなわち電流密度 $J_f=I_f/\\pi r^2\\propto1/L$ で太さによらない．短い線ほど溶けにくい．(1) では長さによらず $r^{3/2}$．放熱の機構によって溶断電流の太さ依存も長さ依存も変わる．"
+   }
+  ],
+  "idea": {
+   "tex": "溶断電流のスケーリングは放熱機構で決まる：表面放熱なら $r^{3/2}$（Preece），端部への伝導なら $r^2/L$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\theta_{\\max}$：((q L ^(2))/(8 κ)) ; $I_f$：((pi r ^(2))/(L)) sqrt(((8 κ θ_m)/(ρ)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "溶断電流",
+   "Preeceの法則",
+   "熱伝導",
+   "スケーリング"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 2,
+  "minutes": 25,
+  "theme": "Newtonの冷却則の誤差評価と厳密な放射冷却",
+  "topic": "Newtonの冷却則の誤差評価と厳密な放射冷却",
+  "statement": {
+   "tex": "熱容量 $C$，表面積 $A$ の黒体が，温度 $T_0$ の周囲（黒体放射とみなす）の中で放射だけで冷える．$\\sigma=5.67\\times10^{-8}\\ \\mathrm{W\\,m^{-2}\\,K^{-4}}$ とする．\n\\begin{enumerate}\n\\item 温度差 $\\Delta T=T-T_0$ が小さいとき冷却は Newton の冷却則 $dQ/dt=hA\\,\\Delta T$ に従う．放射による熱伝達係数 $h$ を $T_0$ で表し，$T_0=300\\ \\mathrm K$ での数値を求めよ．\n\\item 厳密な放射の正味損失率と (1) の線形近似の比を $x=\\Delta T/T_0$ の多項式で表せ．$T_0=300\\ \\mathrm K$ のとき，線形近似が正味損失率を 10\\% 過小評価するのは $\\Delta T$ がいくらのときか．\n\\item 物体が $2T_0$ から $1.5T_0$ まで冷えるのに要する時間を，厳密な式と Newton の冷却則（$h$ は (1) のもの）とでそれぞれ $\\tau=C/(4\\sigma AT_0^3)$ を単位として求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h=4\\sigma T_0^3\\approx6.1\\ \\mathrm{W\\,m^{-2}K^{-1}}$　(2) 比 $=1+\\frac32x+x^2+\\frac14x^3$，$\\Delta T\\approx19\\ \\mathrm K$　(3) 厳密 $\\approx0.262\\tau$，Newton $=\\ln2\\,\\tau\\approx0.693\\tau$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $dQ/dt=\\sigma A(T^4-T_0^4)=\\sigma A(T-T_0)(T+T_0)(T^2+T_0^2)\\approx4\\sigma T_0^3A\\,\\Delta T$．よって $h=4\\sigma T_0^3=4(5.67\\times10^{-8})(300)^3\\approx6.1\\ \\mathrm{W\\,m^{-2}K^{-1}}$．\n\n(2) $T=T_0(1+x)$ として\n\\[\n\\frac{T^4-T_0^4}{4T_0^3\\Delta T}=\\frac{(1+x)^4-1}{4x}=1+\\frac32x+x^2+\\frac14x^3 .\n\\]\n線形近似が真の値の 90\\% となる（真の値の 10\\% 分を過小評価する）条件として $\\frac32x+x^2+\\frac14x^3=0.1$ を解くと $x\\approx0.0639$，$\\Delta T\\approx19\\ \\mathrm K$．室温付近でも十数 K の温度差で 1 割の誤差になる．\n\n(3) 厳密には $C\\,dT/dt=-\\sigma A(T^4-T_0^4)$．$y=T/T_0$ とおくと\n\\[\nt_{\\text{厳密}}=\\frac{C}{\\sigma AT_0^3}\\int_{1.5}^{2}\\frac{dy}{y^4-1}=4\\tau\\int_{1.5}^{2}\\frac{dy}{y^4-1}.\n\\]\n$\\displaystyle\\int\\frac{dy}{y^4-1}=\\frac14\\ln\\frac{y-1}{y+1}-\\frac12\\arctan y$ を用いて $\\int_{1.5}^2=0.06553$，よって $t_{\\text{厳密}}\\approx0.262\\tau$．\n\nNewton 則では $\\Delta T$ が $T_0$ から $0.5T_0$ に半減するので $t_{\\text N}=\\tau\\ln2\\approx0.693\\tau$．高温では放射が $T^4$ で強まるため，実際の冷却は Newton 則の予測の約 0.38 倍の時間で済む．"
+   }
+  ],
+  "idea": {
+   "tex": "$T^4-T_0^4$ の線形化が Newton 則．誤差は $\\frac32\\Delta T/T_0$ が主要項で，大きな温度差では冷却時間が大幅に短くなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h$ [W m⁻²K⁻¹]：≈6.1\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Newtonの冷却則",
+   "Stefan-Boltzmann則",
+   "線形化",
+   "放射冷却",
+   "誤差評価"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 2,
+  "minutes": 25,
+  "theme": "大小の球の放射冷却と温度の逆転",
+  "topic": "大小の球の放射冷却と温度の逆転",
+  "statement": {
+   "tex": "同じ材質（密度 $\\rho_m$，比熱 $c_p$，一定とする）で表面が黒体の 2 つの球がある．小球の半径は $a$，大球の半径は $4a$ である．時刻 $t=0$ に小球の温度は $2T_0$，大球の温度は $T_0$ であった．各球は内部で温度が一様に保たれ，放射によってのみ熱を失い，周囲からの吸収は無視できるとする．\n\\begin{enumerate}\n\\item 半径 $R$ の球の温度変化率を $\\dfrac{dT}{dt}=-\\dfrac{\\kappa T^4}{R}$ と書くとき，$\\kappa$ を求めよ．また $t=0$ における小球と大球の冷却速度の比を求めよ．\n\\item 2 球の温度が等しくなる時刻 $t^*$ と，そのときの温度 $T^*$ を求めよ．\n\\item $a=1.0\\ \\mathrm{cm}$，$T_0=800\\ \\mathrm K$，$\\rho_m=7.87\\times10^3\\ \\mathrm{kg/m^3}$，$c_p=450\\ \\mathrm{J\\,kg^{-1}K^{-1}}$，$\\sigma=5.67\\times10^{-8}\\ \\mathrm{W\\,m^{-2}K^{-4}}$ として $t^*$ と $T^*$ の数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\kappa=\\dfrac{3\\sigma}{\\rho_mc_p}$，比 $64$　(2) $t^*=\\dfrac{7a}{18\\kappa T_0^3}$，$T^*=\\left(\\dfrac{24}{31}\\right)^{1/3}T_0$　(3) $t^*\\approx1.6\\times10^2\\ \\mathrm s$，$T^*\\approx735\\ \\mathrm K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\rho_m\\frac43\\pi R^3c_p\\dfrac{dT}{dt}=-4\\pi R^2\\sigma T^4$ より $\\dfrac{dT}{dt}=-\\dfrac{3\\sigma}{\\rho_mc_p}\\dfrac{T^4}{R}$，$\\kappa=3\\sigma/(\\rho_mc_p)$．\n$t=0$ での比は $\\dfrac{(2T_0)^4/a}{T_0^4/(4a)}=64$．\n\n(2) $\\dfrac{d}{dt}\\dfrac1{T^3}=\\dfrac{3\\kappa}{R}$ より $\\dfrac1{T^3}=\\dfrac1{T_i^3}+\\dfrac{3\\kappa t}{R}$．\n\\[\n\\text{小球: }\\frac1{8T_0^3}+\\frac{3\\kappa t}{a},\\qquad\n\\text{大球: }\\frac1{T_0^3}+\\frac{3\\kappa t}{4a}.\n\\]\n等しいとおくと $\\dfrac94\\dfrac{\\kappa t}{a}=\\dfrac7{8T_0^3}$，$t^*=\\dfrac{7a}{18\\kappa T_0^3}$．このとき\n\\[\n\\frac1{T^{*3}}=\\frac1{T_0^3}+\\frac{3}{4a}\\cdot\\frac{7a}{18T_0^3}=\\frac{31}{24T_0^3},\\qquad T^*=\\left(\\frac{24}{31}\\right)^{1/3}T_0 .\n\\]\n以後は小球のほうが低温になる（温度の逆転）．\n\n(3) $\\kappa=3(5.67\\times10^{-8})/(7.87\\times10^3\\times450)=4.80\\times10^{-14}\\ \\mathrm{m\\,K^{-3}s^{-1}}$．\n$t^*=\\dfrac{7\\times0.010}{18\\times4.80\\times10^{-14}\\times(800)^3}\\approx1.6\\times10^2\\ \\mathrm s$，$T^*=800\\times(24/31)^{1/3}\\approx735\\ \\mathrm K$．"
+   }
+  ],
+  "idea": {
+   "tex": "冷却率は $T^4/R$ に比例し，$1/T^3$ が時間に線形に増える．初め高温の小球は急冷して大球と温度が逆転する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\kappa$：((3 σ)/(ρ_m c_p)) ; 比：64\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "放射冷却",
+   "Stefan-Boltzmann則",
+   "熱容量",
+   "寸法効果",
+   "温度逆転"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "TD-05-007",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -434,6 +779,159 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 3,
+  "minutes": 35,
+  "theme": "交流加熱法（ACカロリメトリー）による熱容量測定",
+  "topic": "交流加熱法（ACカロリメトリー）による熱容量測定",
+  "statement": {
+   "tex": "熱容量 $C$ の試料 S が，熱コンダクタンス $K$（単位温度差あたりの熱流，$K=\\lambda A/l$）の細線で温度 $T_0$ の熱浴につながれている．S の内部は常に一様な温度 $T_{\\rm S}(t)$ をもち，線の熱容量・放射・対流は無視する．S に取り付けた抵抗 $r$ のヒーターに電流 $I(t)=I_0\\cos\\omega t$ を流す．$P_0=rI_0^2$ とおく．\n\\begin{enumerate}\n\\item $\\theta(t)=T_{\\rm S}(t)-T_0$ が満たす微分方程式を書け．\n\\item 十分時間が経過した定常状態で，$\\theta(t)=\\bar\\theta+\\theta_{\\rm ac}\\cos(2\\omega t-\\varphi)$ と書けることを示し，$\\bar\\theta,\\ \\theta_{\\rm ac},\\ \\tan\\varphi$ を求めよ．\n\\item $\\theta_{\\rm ac}$ と $\\varphi$ の測定から $C$ と $K$ をそれぞれ求める式を示せ．とくに $2\\omega C\\gg K$ のとき，$C$ が $K$ を知らなくても決まることを示せ．\n\\item $P_0=10.0\\ \\mathrm{mW}$，$\\omega=1.00\\ \\mathrm{rad/s}$ で，$\\bar\\theta=0.500\\ \\mathrm K$，位相の遅れ $\\varphi=45^\\circ$ であった．$K$ と $C$ を求め，$\\theta_{\\rm ac}$ を予言せよ．また，ヒーターを切ったあと温度差が $1/e$ になるまでの時間を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $C\\dot\\theta=-K\\theta+P_0\\cos^2\\omega t$　(2) $\\bar\\theta=\\dfrac{P_0}{2K}$，$\\theta_{\\rm ac}=\\dfrac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}$，$\\tan\\varphi=\\dfrac{2\\omega C}{K}$　(3) $C=\\dfrac{P_0\\sin\\varphi}{4\\omega\\theta_{\\rm ac}}$，$K=\\dfrac{P_0\\cos\\varphi}{2\\theta_{\\rm ac}}$；$2\\omega C\\gg K$ で $C\\approx\\dfrac{P_0}{4\\omega\\theta_{\\rm ac}}$　(4) $K=1.00\\times10^{-2}\\ \\mathrm{W/K}$，$C=5.00\\times10^{-3}\\ \\mathrm{J/K}$，$\\theta_{\\rm ac}\\approx0.354\\ \\mathrm K$，緩和時間 $C/K=0.50\\ \\mathrm s$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ジュール熱 $rI^2=P_0\\cos^2\\omega t$，線を通じた熱流出 $K\\theta$ より\n\\[ C\\frac{d\\theta}{dt}=-K\\theta+P_0\\cos^2\\omega t=-K\\theta+\\frac{P_0}2+\\frac{P_0}2\\cos2\\omega t. \\]\n電流の周波数 $\\omega$ に対し，加熱は $2\\omega$ で振動することに注意．\n\n(2) 線形方程式なので，過渡項 $\\propto e^{-Kt/C}$ が減衰したあとの特解を求める．定数部分：$\\bar\\theta=P_0/(2K)$．振動部分は複素数 $\\tilde\\theta e^{2i\\omega t}$ として\n\\[ (2i\\omega C+K)\\tilde\\theta=\\frac{P_0}2\\ \\Longrightarrow\\ \\tilde\\theta=\\frac{P_0}{2(K+2i\\omega C)}=\\frac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}e^{-i\\varphi},\\ \\tan\\varphi=\\frac{2\\omega C}{K}. \\]\nよって $\\theta_{\\rm ac}=\\dfrac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}$．\n\n(3) $\\theta_{\\rm ac}=\\dfrac{P_0\\cos\\varphi}{2K}=\\dfrac{P_0\\sin\\varphi}{4\\omega C}$ より\n\\[ C=\\frac{P_0\\sin\\varphi}{4\\omega\\theta_{\\rm ac}},\\qquad K=\\frac{P_0\\cos\\varphi}{2\\theta_{\\rm ac}}. \\]\n$2\\omega C\\gg K$ では $\\varphi\\to\\pi/2$，$\\theta_{\\rm ac}\\approx P_0/(4\\omega C)$ で，$K$ によらず $C$ が求まる（試料と熱浴との結合の詳細に鈍感な測定法）．\n\n(4) $K=P_0/(2\\bar\\theta)=0.0100/1.00=1.00\\times10^{-2}\\ \\mathrm{W/K}$．$\\tan45^\\circ=1$ より $C=K/(2\\omega)=5.00\\times10^{-3}\\ \\mathrm{J/K}$．\n\\[ \\theta_{\\rm ac}=\\frac{0.0100}{2\\sqrt{2}\\times0.0100}=\\frac{1}{2\\sqrt2}\\approx0.354\\ \\mathrm K. \\]\nヒーターを切ると $C\\dot\\theta=-K\\theta$ より $\\theta\\propto e^{-Kt/C}$，緩和時間 $\\tau=C/K=0.50\\ \\mathrm s$．"
+   }
+  ],
+  "idea": {
+   "tex": "交流電流のジュール加熱は $2\\omega$ で振動し，温度応答の振幅と位相の遅れから熱容量と熱コンダクタンスを分離できる（1 次遅れ系の周波数応答）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\bar\\theta$：((P_0)/(2 K)) ; $\\theta_{\\rm ac}$：((P_0)/(2 sqrt(K ^(2)+4 ω ^(2) C ^(2)))) ; $\\tan\\varphi$：((2 ω C)/(K))\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ACカロリメトリー",
+   "熱容量",
+   "熱伝導",
+   "緩和時間",
+   "周波数応答",
+   "ジュール熱"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 3,
+  "minutes": 35,
+  "theme": "熱伝導しない天体の平均温度と多層温室モデル",
+  "topic": "熱伝導しない天体の平均温度と多層温室モデル",
+  "statement": {
+   "tex": "太陽を有効温度 $T_\\odot=5772\\ {\\rm K}$，半径 $R_\\odot=6.957\\times10^8\\ {\\rm m}$ の黒体とし，太陽からの距離 $r$ にある小さな球形天体（自転なし）を考える．天体からの放射は熱放射のみとし，1 AU $=1.496\\times10^{11}\\ {\\rm m}$ とする．\n\\begin{enumerate}\n\\item 天体が熱伝導のよい黒体球（表面温度一様）のとき，平衡温度 $T_{\\rm eq}$ を $T_\\odot,R_\\odot,r$ で表し，$r=1\\ {\\rm AU}$ での値を求めよ．\n\\item 天体が熱を全く伝えない黒体球で，表面の各点が入射とその点の放射だけでつり合う場合，太陽直下点からの角度 $\\theta$ の点の温度 $T(\\theta)$ を求めよ（夜側は $0\\ {\\rm K}$ とせよ）．太陽直下点の温度は $T_{\\rm eq}$ の何倍か．\n\\item (2) の天体の全表面での平均温度 $\\langle T\\rangle$ を $T_{\\rm eq}$ で表し，$r=1\\ {\\rm AU}$ での値を求めよ．吸収・放射するエネルギーの総量は (1) と同じなのに $\\langle T\\rangle$ が $T_{\\rm eq}$ と異なる理由を，一般的な不等式で説明せよ．\n\\item 熱伝導のよい惑星（アルベド $A$）を，可視光には透明で赤外線を完全に吸収・放射する薄い大気層 $N$ 枚が覆っているとする（各層は上下両面から黒体放射する）．地表温度 $T_s$ が $(N+1)^{1/4}T_e$ になることを示せ．ここで $T_e$ はアルベドを考慮した大気のない場合の平衡温度である．金星（$r=0.723\\ {\\rm AU}$，$A=0.77$）の $T_e$ を求め，実際の地表温度約 $737\\ {\\rm K}$ を説明するのに必要な $N$ を見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_{\\rm eq}=T_\\odot\\sqrt{R_\\odot/2r}\\approx278\\ {\\rm K}$　(2) $T(\\theta)=\\sqrt2\\,T_{\\rm eq}\\cos^{1/4}\\theta$（$\\theta<\\pi/2$），直下点は $\\sqrt2$ 倍（$\\approx394\\ {\\rm K}$）　(3) $\\langle T\\rangle=\\frac{2\\sqrt2}{5}T_{\\rm eq}\\approx0.566\\,T_{\\rm eq}\\approx157\\ {\\rm K}$（べき平均の不等式 $\\langle T\\rangle\\le\\langle T^4\\rangle^{1/4}$）　(4) $T_e\\approx227\\ {\\rm K}$，$N\\approx110$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 天体の位置での太陽放射強度は $\\sigma T_\\odot^4(R_\\odot/r)^2$．半径 $a$ の球が受けるのは断面積 $\\pi a^2$ 分，放射は全表面 $4\\pi a^2$ から：\n\\[\n\\sigma T_\\odot^4\\left(\\frac{R_\\odot}r\\right)^2\\pi a^2=4\\pi a^2\\sigma T_{\\rm eq}^4\\ \\Rightarrow\\ T_{\\rm eq}=T_\\odot\\sqrt{\\frac{R_\\odot}{2r}}.\n\\]\n$r=1\\ {\\rm AU}$：$T_{\\rm eq}=5772\\times\\sqrt{6.957\\times10^8/2.992\\times10^{11}}\\approx278\\ {\\rm K}$．\n\n(2) 太陽直下点から角度 $\\theta$ の面素は単位面積当たり $\\sigma T_\\odot^4(R_\\odot/r)^2\\cos\\theta$ を受け，それを $\\sigma T^4$ で放射する：\n\\[\nT(\\theta)=T_\\odot\\sqrt{\\frac{R_\\odot}{r}}\\cos^{1/4}\\theta=\\sqrt2\\,T_{\\rm eq}\\cos^{1/4}\\theta\\quad(0\\le\\theta<\\pi/2).\n\\]\n直下点は $\\sqrt2\\,T_{\\rm eq}\\approx394\\ {\\rm K}$．\n\n(3) $\\mu=\\cos\\theta$ とすると，全球面での面積平均は $\\dfrac1{4\\pi}\\displaystyle\\int_0^1\\sqrt2T_{\\rm eq}\\mu^{1/4}\\,2\\pi\\,d\\mu=\\frac{\\sqrt2T_{\\rm eq}}2\\cdot\\frac45=\\frac{2\\sqrt2}{5}T_{\\rm eq}\\approx0.566\\,T_{\\rm eq}\\approx157\\ {\\rm K}$．\n全放射量は同じなので $\\langle T^4\\rangle=T_{\\rm eq}^4$ はどちらでも成り立つ．しかし $t\\mapsto t^4$ は凸関数なので，べき平均の不等式（イェンセンの不等式）より $\\langle T\\rangle\\le\\langle T^4\\rangle^{1/4}=T_{\\rm eq}$ で，等号は温度一様のときに限る．温度の不均一が大きいほど平均温度は下がる（月の平均温度が低いのはこのため）．\n\n(4) 上から順に層 $1,\\dots,N$ とし温度を $T_1,\\dots,T_N$ とする．定常状態では各高さで正味の上向きエネルギー流は吸収した太陽放射 $\\sigma T_e^4$（単位面積・全球平均）に等しい．最上層の上では $\\sigma T_1^4=\\sigma T_e^4$．層 $k$ と $k+1$ の間では上向き $\\sigma T_{k+1}^4$，下向き $\\sigma T_k^4$ で，$\\sigma(T_{k+1}^4-T_k^4)=\\sigma T_e^4$．よって $T_k^4=kT_e^4$，地表と層 $N$ の間で $T_s^4-T_N^4=T_e^4$ より\n\\[\nT_s=(N+1)^{1/4}T_e .\n\\]\n金星：$T_e=T_\\odot\\sqrt{R_\\odot/2r}\\,(1-A)^{1/4}=5772\\times\\sqrt{6.957\\times10^8/(2\\times1.082\\times10^{11})}\\times0.23^{1/4}\\approx227\\ {\\rm K}$．\n$(737/227)^4\\approx112$ より $N\\approx110$．薄い吸収層が 100 枚以上分の赤外の光学的厚さが必要であり，金星の大気が極めて厚い CO$_2$ 大気であることに対応している．"
+   }
+  ],
+  "idea": {
+   "tex": "放射平衡は $\\langle T^4\\rangle$ を決めるだけで，温度分布が不均一だと平均温度はイェンセンの不等式で下がる．逆に赤外に不透明な層を重ねると $T_s^4$ が層数に比例して上がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $T_e$ [K]：≈227 ; $N$：≈110"
+  },
+  "methods": [],
+  "tags": [
+   "黒体放射",
+   "ステファン・ボルツマンの法則",
+   "放射平衡",
+   "イェンセンの不等式",
+   "温室効果",
+   "アルベド"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-05-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-92",
+  "level": 3,
+  "minutes": 35,
+  "theme": "テーパー導体のジュール熱と温度最高点",
+  "topic": "テーパー導体のジュール熱と温度最高点",
+  "statement": {
+   "tex": "長さ $L$ の導体棒が，$x=0$ で半径 $r_1$，$x=L$ で半径 $r_2$（$r_1<r_2$，$r_2-r_1\\ll L$）の円錐台形をしており，半径は $x$ について一次関数で変わる．抵抗率 $\\rho$，熱伝導率 $\\kappa$ は一定で，側面からの放熱はなく，両端は温度 $T_0$ の熱浴に接している．棒に電流 $I$ を流し，定常状態になった．\n\\begin{enumerate}\n\\item 位置 $x$ での単位長さあたりの発熱率 $J(x)$ を求めよ．\n\\item 断面を $+x$ 向きに通過する熱流 $F(x)$ を，その断面の半径 $r$ の関数として求め，温度が最高となる断面の半径 $r^*$ を $r_1,r_2$ で表せ．\n\\item 最高温度 $T_{\\max}$ を求めよ．\n\\item 同じ長さ・半径 $R$ の一様な円柱の最高温度と比べると，(3) の結果はどのような $R$ の円柱に相当するか．また体積（材料の量）を (1) の円錐台と等しくした一様な円柱と比べ，どちらの最高温度が高いか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $J=\\dfrac{\\rho I^2}{\\pi r(x)^2}$，$r(x)=r_1+\\dfrac{(r_2-r_1)x}{L}$　(2) $F=\\dfrac{\\rho I^2L}{\\pi(r_2-r_1)}\\left(\\dfrac{1}{2r_1}+\\dfrac1{2r_2}-\\dfrac1r\\right)$，$r^*=\\dfrac{2r_1r_2}{r_1+r_2}$（調和平均）　(3) $T_{\\max}=T_0+\\dfrac{\\rho I^2L^2}{8\\pi^2\\kappa r_1^2r_2^2}$　(4) $R=\\sqrt{r_1r_2}$（幾何平均）の円柱に相当．同体積の円柱は $R^2=(r_1^2+r_1r_2+r_2^2)/3>r_1r_2$ なので円錐台の方が最高温度が高い"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 微小部分の抵抗 $dR=\\rho\\,dx/(\\pi r^2)$ より $J(x)=I^2\\dfrac{dR}{dx}=\\dfrac{\\rho I^2}{\\pi r(x)^2}$．\n\n(2) 定常状態のエネルギー収支 $\\dfrac{dF}{dx}=J(x)$．$\\Delta=r_2-r_1$，$dx=\\dfrac{L}{\\Delta}dr$ とすると\n\\[ \\frac{dF}{dr}=\\frac{L}{\\Delta}\\frac{\\rho I^2}{\\pi r^2}\\ \\Rightarrow\\ F=-\\frac{k}{r}+C_1,\\quad k=\\frac{\\rho I^2L}{\\pi\\Delta}. \\]\nフーリエの法則 $F=-\\kappa\\pi r^2\\dfrac{dT}{dx}=-\\kappa\\pi r^2\\dfrac{\\Delta}{L}\\dfrac{dT}{dr}$ より\n\\[ T(r)=T_0-\\frac{L}{\\pi\\kappa\\Delta}\\int_{r_1}^r\\frac{C_1-k/r'}{r'^2}dr'=T_0-\\frac{L}{\\pi\\kappa\\Delta}\\left[C_1(u_1-u)-\\frac k2(u_1^2-u^2)\\right] \\]\n（$u=1/r$，$u_i=1/r_i$）．$T(r_2)=T_0$ より $C_1(u_1-u_2)=\\frac k2(u_1^2-u_2^2)$，$C_1=\\dfrac k2(u_1+u_2)$．よって\n\\[ F=\\frac{\\rho I^2L}{\\pi(r_2-r_1)}\\left(\\frac1{2r_1}+\\frac1{2r_2}-\\frac1r\\right). \\]\n温度最高点は $F=0$ の断面：$\\dfrac1{r^*}=\\dfrac12\\left(\\dfrac1{r_1}+\\dfrac1{r_2}\\right)$，$r^*=\\dfrac{2r_1r_2}{r_1+r_2}$．細い側に寄る．\n\n(3) $u^*=(u_1+u_2)/2$ を代入すると角括弧は $k(u_1-u^*)\\{u^*-\\tfrac12(u_1+u^*)\\}=-\\tfrac k2(u_1-u^*)^2$．よって\n\\[ T_{\\max}=T_0+\\frac{Lk}{2\\pi\\kappa\\Delta}\\left(\\frac{u_1-u_2}{2}\\right)^2=T_0+\\frac{L}{2\\pi\\kappa\\Delta}\\frac{\\rho I^2L}{\\pi\\Delta}\\frac{\\Delta^2}{4r_1^2r_2^2}=T_0+\\frac{\\rho I^2L^2}{8\\pi^2\\kappa r_1^2r_2^2}. \\]\n\n(4) 一様円柱（半径 $R$）では $J$ 一定，温度分布は放物線で $T_{\\max}=T_0+\\dfrac{JL^2}{8\\kappa\\pi R^2}=T_0+\\dfrac{\\rho I^2L^2}{8\\pi^2\\kappa R^4}$．(3) は $R^4=r_1^2r_2^2$，すなわち $R=\\sqrt{r_1r_2}$ の円柱と同じ．\n円錐台の体積は $\\dfrac{\\pi L}{3}(r_1^2+r_1r_2+r_2^2)$ なので同体積円柱は $R^2=\\dfrac{r_1^2+r_1r_2+r_2^2}{3}$．$r_1^2+r_2^2>2r_1r_2$ より $R^2>r_1r_2$．よって同じ材料量なら一様円柱の方が最高温度は低く，テーパー導体の方が高温になる（溶断しやすい）．"
+   }
+  ],
+  "idea": {
+   "tex": "熱流 $F$ が $1/r$ の一次式になるため，最高温度の断面は両端半径の調和平均，最高温度は幾何平均半径の円柱と同じになる．材料量一定なら一様断面が最も冷える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ジュール熱",
+   "熱伝導",
+   "定常状態",
+   "ヒューズ",
+   "調和平均",
+   "境界値問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

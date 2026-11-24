@@ -391,6 +391,354 @@
   }
  },
  {
+  "id": "CM-03-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 2,
+  "minutes": 35,
+  "theme": "自重片持ち梁を先端で支えて水平に戻す",
+  "topic": "自重片持ち梁を先端で支えて水平に戻す",
+  "statement": {
+   "tex": "長さ $l$，曲げ剛性 $EI$（$E$ は Young 率，$I=ba^3/12$），線密度 $\\rho$ の一様な細い棒の一端 $x=0$ を壁に水平に固定する（片持ち梁）．たわみは小さく，下向きを正とする．\n\\begin{enumerate}\n\\item 自重だけで生じる先端の下がり $h_0$ を求めよ．\n\\item 先端 $x=l$ を上向きの力 $F$ で押し上げて，先端の高さを固定端と同じ（下がり $0$）にしたい．$F$ を求め，それが棒の重さ $\\rho gl$ の何倍かを答えよ．\n\\item (2) の状態でのたわみ $y(x)$ を因数分解した形で求め，最大たわみの位置 $x_m$ と大きさ $y_m$ を求めよ．$y_m$ は $h_0$ の何分の 1 か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h_0=\\dfrac{\\rho gl^4}{8EI}$　(2) $F=\\frac38\\rho gl$　(3) $y=\\dfrac{\\rho g}{48EI}x^2(l-x)(3l-2x)$，$x_m=\\dfrac{15-\\sqrt{33}}{16}l\\approx0.578l$，$y_m=\\dfrac{(39+55\\sqrt{33})\\rho gl^4}{65536\\,EI}\\approx\\dfrac{\\rho gl^4}{185EI}$，$h_0$ の約 $1/23$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "曲げモーメントのつり合い $EI\\,y''=M(x)$．点 $x$ より先の部分による（下向きを正とする）モーメントは\n\\[\nM(x)=\\frac{\\rho g}2(l-x)^2-F(l-x).\n\\]\n境界条件 $y(0)=y'(0)=0$．\n\n(1) $F=0$：$EIy''=\\frac{\\rho g}2(l-x)^2$ を 2 回積分して $y=\\frac{\\rho g}{24EI}x^2(6l^2-4lx+x^2)$，$h_0=y(l)=\\frac{\\rho gl^4}{8EI}$．\n\n(2) $F$ 単独のたわみは $-\\frac{F}{6EI}x^2(3l-x)$，先端で $-\\frac{Fl^3}{3EI}$．重ね合わせて $y(l)=\\frac{\\rho gl^4}{8EI}-\\frac{Fl^3}{3EI}=0$ から $F=\\frac38\\rho gl$．棒の重さの半分ではなく $3/8$ でよい（残り $5/8$ は固定端が支え，さらに固定端モーメント $\\rho gl^2/8$ が残る）．\n\n(3) 代入して整理すると\n\\[\ny=\\frac{\\rho g}{24EI}x^2(6l^2-4lx+x^2)-\\frac{\\rho gl}{16EI}x^2(3l-x)=\\frac{\\rho g}{48EI}x^2(3l^2-5lx+2x^2)=\\frac{\\rho g}{48EI}x^2(l-x)(3l-2x).\n\\]\n$0<x<l$ で $y>0$．$\\frac{d}{dx}[x^2(3l^2-5lx+2x^2)]=x(8x^2-15lx+6l^2)=0$ より $x_m=\\frac{15-\\sqrt{33}}{16}l\\approx0.578l$．代入して\n\\[\ny_m=\\frac{(39+55\\sqrt{33})}{65536}\\frac{\\rho gl^4}{EI}\\approx0.00542\\frac{\\rho gl^4}{EI}\\approx\\frac{\\rho gl^4}{185EI}.\n\\]\n$h_0=0.125\\rho gl^4/EI$ と比べて約 $1/23$．先端の傾きは $y'(l)=-\\frac{\\rho gl^3}{48EI}$（先端は少し上を向く）．"
+   }
+  ],
+  "idea": {
+   "tex": "片持ち梁の自重たわみと先端荷重たわみの重ね合わせで，先端を戻す力は $\\frac38\\rho gl$（一端固定・他端支持梁の反力）．たわみは因数分解でき，最大たわみは $0.578l$ に生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h_0$：((ρ g l ^(4))/(8 E I))\n(2) $F$：((3)/(8)) ρ g l\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "梁のたわみ",
+   "片持ち梁",
+   "重ね合わせ",
+   "不静定梁",
+   "曲げモーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 2,
+  "minutes": 35,
+  "theme": "一端固定・他端支持梁の中央集中荷重",
+  "topic": "一端固定・他端支持梁の中央集中荷重",
+  "statement": {
+   "tex": "質量の無視できる長さ $l$，曲げ剛性 $EI$ の真っすぐな梁を水平に置き，左端 $x=0$ は壁に固定（変位も傾きも $0$），右端 $x=l$ は単純支持（変位 $0$，曲げモーメント $0$）とする．中央 $x=l/2$ に重さ $W$ のおもりをつるす．たわみは小さいとする．\n\\begin{enumerate}\n\\item 右端の支点反力 $R$ と，固定端に生じる曲げモーメントの大きさ $M_0$ を求めよ．\n\\item 中央のたわみ $h$ を求め，両端単純支持の場合 $\\frac{Wl^3}{48EI}$，両端固定の場合 $\\frac{Wl^3}{192EI}$ と比べよ．\n\\item たわみが最大となる位置と最大たわみを求めよ．最大たわみは中央に生じるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R=\\frac5{16}W$，$M_0=\\frac3{16}Wl$　(2) $h=\\dfrac{7Wl^3}{768EI}$（$\\frac{1}{48}=\\frac{16}{768}$，$\\frac1{192}=\\frac4{768}$ の間）　(3) 右端から $l/\\sqrt5$（$x\\approx0.553l$），$y_{\\max}=\\dfrac{Wl^3}{48\\sqrt5\\,EI}=\\dfrac{\\sqrt5Wl^3}{240EI}$，中央ではなく支持端寄り"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "下向きのたわみを $y$ とし，$EIy''=-M(x)$（$M$ は下に凸に曲げる向きを正）．右端の反力 $R$ を未知として，点 $x$ より右側の力のモーメントから\n\\[\nM(x)=\\begin{cases}R(l-x)-W\\left(\\frac l2-x\\right) & (0\\le x\\le l/2)\\\\ R(l-x) & (l/2\\le x\\le l)\\end{cases}\n\\]\n境界条件：$y(0)=y'(0)=0$，$y(l)=0$，$x=l/2$ で $y,y'$ 連続．\n\n(1) 右側区間で $EIy''=-R(l-x)$，左側区間で $EIy''=-R(l-x)+W(l/2-x)$．これを積分して 5 個の条件を課すと（未知数は積分定数 4 個と $R$），$R=\\frac5{16}W$ を得る．固定端のモーメントは $M(0)=Rl-\\frac{Wl}2=-\\frac3{16}Wl$，大きさ $\\frac3{16}Wl$（上に凸に曲げる向き）．\n（別解：重ね合わせ．片持ち梁の中央荷重による先端たわみ $\\frac{5Wl^3}{48EI}$ を，先端力 $R$ による $\\frac{Rl^3}{3EI}$ で打ち消して $R=\\frac5{16}W$．）\n\n(2) 積分定数を定めると $0\\le x\\le l/2$ で $y=\\dfrac{W}{96EI}x^2(9l-11x)$，$l/2\\le x\\le l$ で $y=\\dfrac{W}{96EI}(l-x)(10lx-5x^2-2l^2)$．$x=l/2$ で\n\\[\nh=\\frac{7Wl^3}{768EI}.\n\\]\n$\\frac1{48}=\\frac{16}{768}$，$\\frac1{192}=\\frac{4}{768}$ だから，両端単純支持の $7/16$，両端固定の $7/4$ 倍．片側を固定にするだけでたわみは半分以下になる．\n\n(3) 左区間では $y'=\\frac{W}{96EI}x(18l-33x)$ は $x<l/2$ で正なので極大はない．右区間で $\\frac{d}{dx}[(l-x)(10lx-5x^2-2l^2)]=15x^2-30lx+12l^2=0$ を解くと $x=l\\left(1-\\frac1{\\sqrt5}\\right)\\approx0.553l$（右端から $l/\\sqrt5$）．このとき\n\\[\ny_{\\max}=\\frac{\\sqrt5\\,Wl^3}{240EI}=\\frac{Wl^3}{48\\sqrt5\\,EI}\\approx0.00932\\frac{Wl^3}{EI}\n\\]\nで，中央の $7/768\\approx0.00911$ よりわずかに大きい．固定端側が強く拘束されているため，最大たわみの位置は荷重点より単純支持端側にずれる．"
+   }
+  ],
+  "idea": {
+   "tex": "不静定梁は反力を未知数に加えた境界値問題（または重ね合わせ）で解ける．一端固定・他端支持では反力 $5W/16$，最大たわみは荷重点ではなく支持端寄りの $l/\\sqrt5$ に生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $R$：((5)/(16)) W ; $M_0$：((3)/(16)) W l\n(2) $h$：((7 W l ^(3))/(768 E I))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "梁のたわみ",
+   "不静定梁",
+   "集中荷重",
+   "支点反力",
+   "重ね合わせ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 2,
+  "minutes": 25,
+  "theme": "軸圧縮を受ける梁の横振動と座屈",
+  "topic": "軸圧縮を受ける梁の横振動と座屈",
+  "statement": {
+   "tex": "Young 率 $E$，密度 $\\rho$，断面積 $A$，断面 2 次モーメント $I$，長さ $l$ の一様な細い梁の両端 $x=0,l$ を単純支持（ピン支持：変位と曲げモーメントが 0）し，軸方向に一定の圧縮力 $P$ を加えた状態で横振動させる．横変位 $u(x,t)$ は\n\\[ \\rho A\\frac{\\partial^2u}{\\partial t^2}+EI\\frac{\\partial^4u}{\\partial x^4}+P\\frac{\\partial^2u}{\\partial x^2}=0 \\]\nに従う．\n\\begin{enumerate}\n\\item 圧縮力の項が上の形で現れる理由を，微小部分にはたらく力の横成分から説明せよ．\n\\item 境界条件を満たす固有モードと固有角振動数 $\\omega_n(P)$ を求めよ．\n\\item 基本振動数が 0 になる圧縮力 $P_{\\rm c}$ を求め，その意味を述べよ．\n\\item $P=P_{\\rm c}/2$ のとき $\\omega_2/\\omega_1$ を求め，$P=0$ のときの値と比較せよ．また，張力（$P<0$）を強くしていくと $\\omega_2/\\omega_1$ はどんな値に近づくか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 本文　(2) $u_n\\propto\\sin\\dfrac{n\\pi x}{l}$，$\\omega_n^2=\\dfrac{1}{\\rho A}\\left(\\dfrac{n\\pi}{l}\\right)^2\\left[EI\\left(\\dfrac{n\\pi}{l}\\right)^2-P\\right]$　(3) $P_{\\rm c}=\\pi^2EI/l^2$（Euler 座屈荷重）　(4) $\\sqrt{28}\\simeq5.29$（$P=0$ では $4$），張力極限で $2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 圧縮力 $P$ は梁の軸に沿ってはたらくので，傾き $\\partial_xu$ の断面では横成分 $-P\\partial_xu$ をもつ（向きは各断面で内向き）．長さ $dx$ の部分には左右の差として $-P\\,\\partial_x^2u\\,dx$ の横力がはたらく．これは弦の張力 $T$ を $-P$ に置き換えたもので，弦の方程式 $\\rho A\\ddot u=T u''$ に梁の曲げ剛性の項 $-EIu''''$ を加えると与式を得る．\n\n(2) ピン支持では $u=0$，$\\partial_x^2u=0$（$x=0,l$）．$u=\\sin k_nx\\,\\cos\\omega t$，$k_n=n\\pi/l$ はこれを満たす．代入して\n\\[ -\\rho A\\omega^2+EIk_n^4-Pk_n^2=0\\ \\Rightarrow\\ \\omega_n^2=\\frac{k_n^2(EIk_n^2-P)}{\\rho A}. \\]\n\n(3) $\\omega_1=0$ となるのは $EIk_1^2=P$，すなわち $P_{\\rm c}=\\pi^2EI/l^2$．これは両端ピン支持柱の Euler 座屈荷重で，$P>P_{\\rm c}$ では $\\omega_1^2<0$ となり変位が指数関数的に成長する（静的不安定）．振動数の測定から $\\omega_1^2\\propto(1-P/P_{\\rm c})$ を外挿すれば，壊さずに座屈荷重を推定できる．\n\n(4) $\\omega_n^2\\propto n^2(n^2-P/P_{\\rm c})$．$P=P_{\\rm c}/2$：$\\omega_1^2\\propto\\tfrac12$，$\\omega_2^2\\propto4\\cdot\\tfrac72=14$，比 $\\sqrt{28}\\simeq5.29$．$P=0$ では $\\omega_n\\propto n^2$ で比 4．張力 $|P|\\to\\infty$ では $\\omega_n^2\\propto n^2|P|$ が支配して弦と同じ $\\omega_n\\propto n$ となり，比は 2 に近づく．"
+   }
+  ],
+  "idea": {
+   "tex": "軸力は弦の張力と符号違いの項として入り，基本振動数が 0 になる点が Euler 座屈荷重に一致する．振動と座屈の統一．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $P_{\\rm c}$：pi ^(2) E I / l ^(2)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "梁の横振動",
+   "座屈",
+   "Euler荷重",
+   "軸力",
+   "固有振動数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 2,
+  "minutes": 20,
+  "theme": "自重でたわむ片持ち梁の曲率と限界長さ",
+  "topic": "自重でたわむ片持ち梁の曲率と限界長さ",
+  "statement": {
+   "tex": "厚さ $h$，幅 $b$ の長方形断面をもつ一様な鋼の梁の一端を壁に水平に埋め込み，長さ $l$ の部分を突き出させた．梁は自重でわずかにたわむ．壁から梁に沿って測った距離を $x$ とし，梁の曲げは中立面の曲率半径 $R$ と曲げモーメント $N$ の関係 $1/R=N/(EI)$（$I=bh^3/12$）に従うものとする．鋼のヤング率 $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$，密度 $\\rho=7.8\\times10^{3}\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 中立面の曲率半径 $R(x)$ を求めよ．\n\\item 梁の表面に生じる伸び（ひずみ）の最大値 $\\varepsilon_{\\max}$ を求め，それが幅 $b$ によらないことを確かめよ．\n\\item $h=10\\,\\mathrm{cm}$ のとき，$\\varepsilon_{\\max}$ が $1.0\\times10^{-3}$ を超えない最大の突き出し長さ $l$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R(x)=\\dfrac{Eh^2}{6\\rho g(l-x)^2}$　(2) $\\varepsilon_{\\max}=\\dfrac{3\\rho g l^2}{Eh}$（壁の付け根の上下表面）　(3) $l\\approx 9.3\\,\\mathrm{m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位置 $x$ より先の部分（長さ $l-x$，質量 $\\rho bh(l-x)$）の重力が断面に及ぼすモーメントは\n\\[ N(x)=\\rho g b h\\,\\frac{(l-x)^2}{2}. \\]\nよって\n\\[ \\frac1R=\\frac{N}{EI}=\\frac{12\\rho g bh(l-x)^2}{2Ebh^3}=\\frac{6\\rho g(l-x)^2}{Eh^2},\\qquad R(x)=\\frac{Eh^2}{6\\rho g(l-x)^2}. \\]\n曲率は付け根 $x=0$ で最大，先端で $0$ になる．\n\n(2) 中立面から $z$ 離れた繊維のひずみは $z/R$ なので，表面 $z=h/2$ で最大：\n\\[ \\varepsilon_{\\max}=\\frac{h}{2R(0)}=\\frac{3\\rho g l^2}{Eh}. \\]\n$b$ は自重（$\\propto b$）と曲げ剛性（$\\propto b$）で打ち消し合い，現れない．\n\n(3) $\\varepsilon_{\\max}\\le\\varepsilon_0$ より\n\\[ l\\le\\sqrt{\\frac{\\varepsilon_0 E h}{3\\rho g}}=\\sqrt{\\frac{10^{-3}\\cdot2.0\\times10^{11}\\cdot0.10}{3\\cdot7.8\\times10^3\\cdot9.8}}\\approx9.3\\,\\mathrm{m}. \\]\n（付け根の曲率半径 $R(0)=h/(2\\varepsilon_0)=50\\,\\mathrm{m}$ に対応．）"
+   }
+  ],
+  "idea": {
+   "tex": "自重による曲げモーメントは $(l-x)^2$ に比例し，表面ひずみは $l^2/h$ に比例して幅によらない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $R(x)$：((E h ^(2))/(6 ρ g (l - x)^(2)))\n(2) $\\varepsilon_{\\max}$：((3 ρ g l ^(2))/(E h))\n(3) $l$ [m]：≈9.3"
+  },
+  "methods": [],
+  "tags": [
+   "片持ち梁",
+   "曲率半径",
+   "自重",
+   "曲げひずみ",
+   "許容長さ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 2,
+  "minutes": 20,
+  "theme": "先端の傾きをゼロにする片持ち梁",
+  "topic": "先端の傾きをゼロにする片持ち梁",
+  "statement": {
+   "tex": "一端を壁に固定した長さ $l$ の質量の無視できる弾性棒（ヤング率 $E$，断面二次モーメント $I$）がある．固定端を原点とし棒に沿って $x$ 軸，たわみを $y$ とすると，小さなたわみでは $EI\\,y''=N(x)$（$N(x)$ は断面 $x$ における曲げモーメント）が成り立つ．自由端に $y$ 方向の力 $F$ を加えると同時に，自由端に偶力のモーメント $N_0$ を力 $F$ による曲げを打ち消す向きに加える．\n\\begin{enumerate}\n\\item 自由端で棒の接線が $x$ 軸に平行（$y'(l)=0$）になるような $N_0$ を求めよ．\n\\item そのときのたわみ曲線 $y(x)$ と自由端のたわみ $\\lambda$ を求め，$N_0=0$ のときのたわみと比べよ．\n\\item 棒の断面が一辺 $a$ の正方形のとき，正方形を棒の軸のまわりに $45^\\circ$ 回して（対角線が $y$ 方向を向くように）固定し直すと $\\lambda$ は変わるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N_0=Fl/2$　(2) $y=\\dfrac{F}{EI}\\left(\\dfrac{lx^2}{4}-\\dfrac{x^3}{6}\\right)$，$\\lambda=\\dfrac{Fl^3}{12EI}$（$N_0=0$ の $\\dfrac{Fl^3}{3EI}$ の $1/4$）　(3) 変わらない（$I=a^4/12$ は向きによらない）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 断面 $x$ より先の部分に働く外力のモーメントは $N(x)=F(l-x)-N_0$．$y(0)=y'(0)=0$ のもとで積分すると\n\\[ EI\\,y'=F\\left(lx-\\frac{x^2}{2}\\right)-N_0x,\\qquad EI\\,y=F\\left(\\frac{lx^2}{2}-\\frac{x^3}{6}\\right)-\\frac{N_0x^2}{2}. \\]\n$y'(l)=0$ より $Fl^2/2-N_0l=0$，$N_0=Fl/2$．\n\n(2) 代入して $y=\\dfrac{F}{EI}\\left(\\dfrac{lx^2}{4}-\\dfrac{x^3}{6}\\right)$，\n\\[ \\lambda=y(l)=\\frac{F}{EI}\\left(\\frac{l^3}{4}-\\frac{l^3}{6}\\right)=\\frac{Fl^3}{12EI}. \\]\n$N_0=0$ のとき $\\lambda_0=Fl^3/(3EI)$ なので，その $1/4$ である（先端の回転を拘束した「ガイド付き」片持ち梁）．なお $x=l/2$ で $N=0$ となり変曲点になる．\n\n(3) 断面二次モーメント $I=\\int z^2\\,dS$ は，正方形の中心を通る任意の軸に対して $I_y=I_z$ かつ $I_y+I_z=\\int(y^2+z^2)dS$ が軸の向きによらないことから，どの向きでも $I=a^4/12$．よって $\\lambda$ は変わらない．"
+   }
+  ],
+  "idea": {
+   "tex": "端モーメントで先端の回転を拘束するとたわみは1/4になる．正方形断面の I は回転不変．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N_0$：Fl/2\n(2) $y$：((F)/(E I))(((l x ^(2))/(4))-((x ^(3))/(6))) ; $\\lambda$：((F l ^(3))/(12 E I))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "片持ち梁",
+   "たわみ曲線",
+   "曲げモーメント",
+   "断面二次モーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 2,
+  "minutes": 25,
+  "theme": "単純支持梁の非対称荷重と相反定理",
+  "topic": "単純支持梁の非対称荷重と相反定理",
+  "statement": {
+   "tex": "長さ $l$ の質量の無視できる梁（曲げ剛性 $EI$）が両端で単純支持（たわみ $0$，曲げモーメント $0$）されている．小さなたわみは $EI\\,y''=N(x)$ に従う．\n\\begin{enumerate}\n\\item 左端から $l/4$ の点に鉛直力 $F$ を加えた．荷重点のたわみ $\\lambda_1$ と中央のたわみ $\\lambda_c$ を求めよ．\n\\item 力 $F$ を中央に加えたとき，左端から $l/4$ の点のたわみ $\\lambda'$ を求め，$\\lambda_c$ と比べよ．この一致はどんな一般的性質の現れか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda_1=\\dfrac{3Fl^3}{256EI}$，$\\lambda_c=\\dfrac{11Fl^3}{768EI}$　(2) $\\lambda'=\\dfrac{11Fl^3}{768EI}=\\lambda_c$（マクスウェルの相反定理）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "力 $F$ が左端から $a$（右端から $c=l-a$）に働くとき，支点反力は左 $Fc/l$，右 $Fa/l$．$0\\le x\\le a$ で $N=Fcx/l$，$a\\le x\\le l$ で $N=Fa(l-x)/l$．両端 $y=0$，荷重点で $y,y'$ 連続の条件で積分すると\n\\[ y(x)=\\frac{Fcx\\,(l^2-c^2-x^2)}{6lEI}\\ (0\\le x\\le a),\\qquad y(x)=\\frac{Fa(l-x)\\{l^2-a^2-(l-x)^2\\}}{6lEI}\\ (a\\le x\\le l). \\]\n\n(1) $a=l/4$，$c=3l/4$．荷重点：\n\\[ \\lambda_1=\\frac{Fa^2c^2}{3lEI}=\\frac{F(l/4)^2(3l/4)^2}{3lEI}=\\frac{3Fl^3}{256EI}. \\]\n中央 $x=l/2\\ (\\ge a)$：\n\\[ \\lambda_c=\\frac{F(l/4)(l/2)\\{l^2-l^2/16-l^2/4\\}}{6lEI}=\\frac{11Fl^3}{768EI}. \\]\n荷重点より中央の方が大きくたわむ（最大たわみは荷重点ではない）．\n\n(2) $a=c=l/2$，$x=l/4$：\n\\[ \\lambda'=\\frac{F(l/2)(l/4)\\{l^2-l^2/4-l^2/16\\}}{6lEI}=\\frac{11Fl^3}{768EI}=\\lambda_c. \\]\n線形弾性体では「点 A に力を加えたときの点 B の変位」と「点 B に同じ力を加えたときの点 A の変位」が等しい（マクスウェル＝ベッティの相反定理）．弾性エネルギーが変位の2次形式で，そのコンプライアンス行列が対称であることの帰結である．"
+   }
+  ],
+  "idea": {
+   "tex": "単純支持梁のたわみを区分的に積分し，非対称荷重で最大たわみが荷重点と一致しないこと，相反定理を確認する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\lambda_1$：((3 F l ^(3))/(256 E I)) ; $\\lambda_c$：((11 F l ^(3))/(768 E I))\n(2) $\\lambda'$：((11 F l ^(3))/(768 E I))"
+  },
+  "methods": [],
+  "tags": [
+   "単純支持梁",
+   "たわみ",
+   "相反定理",
+   "曲げモーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 2,
+  "minutes": 20,
+  "theme": "帯鋼を多重に巻くときの仕事と限界巻き数",
+  "topic": "帯鋼を多重に巻くときの仕事と限界巻き数",
+  "statement": {
+   "tex": "長さ $l=2.0\\,\\mathrm{m}$，幅 $h=6.0\\,\\mathrm{cm}$，厚さ $\\delta=0.50\\,\\mathrm{mm}$ のまっすぐなばね鋼の帯を，幅の方向を軸として曲げ，同じ半径の円を $n$ 回巻いた形（厚さを無視した $n$ 重の輪）にする．ヤング率 $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，この鋼が弾性を保つ最大ひずみは $5.0\\times10^{-3}$ とする．\n\\begin{enumerate}\n\\item 必要な仕事 $A_n$ を $n$ の関数として求めよ．\n\\item 弾性の範囲で巻ける最大の巻き数 $n$ と，そのときの仕事を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A_n=\\dfrac{\\pi^2Eh\\delta^3}{6l}n^2\\approx1.23n^2\\,\\mathrm{J}$　(2) $n=6$，$A_6\\approx44\\,\\mathrm{J}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 曲率半径 $R$ で一様に曲げた長さ $l$ の帯のエネルギーは，$1/R=N/(EI)$ より\n\\[ U=\\frac{EI\\,l}{2R^2},\\qquad I=\\frac{h\\delta^3}{12}. \\]\n（中立面から $z$ の繊維のひずみ $z/R$ のエネルギー密度 $E z^2/(2R^2)$ を断面で積分しても同じ．）\n$n$ 回巻きでは $2\\pi Rn=l$，$R=l/(2\\pi n)$．\n\\[ A_n=\\frac{Eh\\delta^3}{12}\\cdot\\frac{l\\cdot4\\pi^2n^2}{2l^2}=\\frac{\\pi^2Eh\\delta^3}{6l}n^2=\\frac{\\pi^2\\cdot2.0\\times10^{11}\\cdot0.060\\cdot(5.0\\times10^{-4})^3}{6\\cdot2.0}n^2\\approx1.23\\,n^2\\,\\mathrm{J}. \\]\n\n(2) 表面のひずみ $\\varepsilon=\\dfrac{\\delta}{2R}=\\dfrac{\\pi n\\delta}{l}\\le5.0\\times10^{-3}$ より $n\\le\\dfrac{5.0\\times10^{-3}\\cdot2.0}{\\pi\\cdot5.0\\times10^{-4}}=6.37$．よって $n=6$，$A_6=36\\times1.23\\approx44\\,\\mathrm{J}$．"
+   }
+  ],
+  "idea": {
+   "tex": "曲げエネルギーは曲率の2乗に比例し，巻き数の2乗で増える．表面ひずみが弾性限界を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $A_n$：((pi ^(2) E h δ ^(3))/(6 l)) n ^(2)\n(2) $n$：6 ; $A_6$ [J]：≈44"
+  },
+  "methods": [],
+  "tags": [
+   "曲げ",
+   "弾性エネルギー",
+   "曲率",
+   "弾性限界",
+   "帯鋼"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-03-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -483,6 +831,156 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 3,
+  "minutes": 35,
+  "theme": "頂部を横ばねで支えた柱の座屈荷重",
+  "topic": "頂部を横ばねで支えた柱の座屈荷重",
+  "statement": {
+   "tex": "長さ $l$，曲げ剛性 $EI$ の一様な柱の下端 $x=0$ を地面に鉛直に固定（変位も傾きも 0）し，上端 $x=l$ に鉛直下向きの荷重 $W$ をのせる．上端は自由に回転できるが，水平方向にはばね定数 $K$ の水平ばねでつながれており，上端の水平変位を $y_1$ とすると上端には水平復元力 $-Ky_1$ がはたらく．柱の自重は無視し，たわみ $y(x)$ は微小とする．\n\\begin{enumerate}\n\\item 高さ $x$ の断面より上の部分にはたらく力のモーメントのつり合いから，$y(x)$ の満たす微分方程式を書け．\n\\item $\\omega^2=W/EI$，$z=\\omega l$，$\\kappa=Kl^3/EI$ とおく．たわみ $y_1\\neq0$ が可能になる条件が\n\\[ \\tan z = z-\\frac{z^3}{\\kappa} \\]\nで与えられることを示せ．\n\\item $K\\to0$ と $K\\to\\infty$ の極限で最小の座屈荷重 $W_{\\rm c}$ を求め，それぞれどのような支持条件の柱に対応するか述べよ（$\\tan z=z$ の最小正根は $z\\simeq4.493$ を用いてよい）．\n\\item 座屈荷重がちょうど $W_{\\rm c}=\\pi^2EI/l^2$ になるためのばね定数 $K$ を求めよ．また，そのとき $z=\\pi$ が実際に最小の根であることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $EI\\,y''=W(y_1-y)-Ky_1(l-x)$　(2) 本文の式　(3) $K\\to0$: $W_{\\rm c}=\\pi^2EI/4l^2$（一端固定・他端自由），$K\\to\\infty$: $W_{\\rm c}\\simeq20.19\\,EI/l^2$（一端固定・他端ピン）　(4) $K=\\pi^2EI/l^3$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 高さ $x$ の点 P より上の部分には，上端で鉛直荷重 $W$（P に対する腕の長さ $y_1-y$）と水平力 $-Ky_1$（腕の長さ $l-x$）がはたらく．これと曲げモーメント $EI\\,y''$ のつり合いより\n\\[ EI\\,y''=W(y_1-y)-Ky_1(l-x). \\]\n\n(2) $\\omega^2=W/EI$ とおくと $y''+\\omega^2y=\\omega^2y_1-\\dfrac{K y_1}{EI}(l-x)$．特解は $y_1-\\dfrac{Ky_1}{W}(l-x)$ なので\n\\[ y=A\\sin\\omega x+B\\cos\\omega x+y_1-\\frac{Ky_1}{W}(l-x). \\]\n境界条件：$y(0)=0$ より $B=y_1\\left(\\dfrac{Kl}{W}-1\\right)$．$y'(0)=0$ より $A\\omega+\\dfrac{Ky_1}{W}=0$，$A=-\\dfrac{Ky_1}{W\\omega}$．$y(l)=y_1$ より $A\\sin\\omega l+B\\cos\\omega l=0$．代入して $y_1$ で割ると\n\\[ -\\frac{K}{W\\omega}\\sin\\omega l+\\left(\\frac{Kl}{W}-1\\right)\\cos\\omega l=0\n\\ \\Longrightarrow\\ \\tan\\omega l=\\omega l-\\frac{W\\omega}{K}. \\]\n$W\\omega/K=EI\\omega^3/K=z^3/\\kappa$ だから $\\tan z=z-z^3/\\kappa$．$y_1\\neq0$ はこの条件のときに限り可能．\n\n(3) $K\\to0$（$\\kappa\\to0$）：右辺 $\\to-\\infty$ となるので根は $\\cos z\\to0$，最小は $z=\\pi/2$，$W_{\\rm c}=\\pi^2EI/(4l^2)$．上端完全自由の片持ち柱（元の問題の結果 $W<\\pi^2EI/4l^2$ に一致）．\n$K\\to\\infty$：$\\tan z=z$，最小正根 $z\\simeq4.493$，$W_{\\rm c}\\simeq20.19\\,EI/l^2$．上端の水平変位が禁止され回転は自由，すなわち一端固定・他端ピン支持の柱．\n\n(4) $z=\\pi$ が根であるには $\\tan\\pi=0=\\pi-\\pi^3/\\kappa$，よって $\\kappa=\\pi^2$，すなわち $K=\\pi^2EI/l^3$．\n最小性：$0<z<\\pi/2$ では $\\tan z>z>z-z^3/\\kappa$ なので根なし．$\\pi/2<z<\\pi$ では $\\tan z<0$ だが $z-z^3/\\pi^2=z(1-z^2/\\pi^2)>0$ なので根なし．$z=\\pi/2$ は $\\cos z=0$ で条件式 $\\sin z=(z-z^3/\\kappa)\\cos z$ を満たさない．ゆえに $z=\\pi$ が最小根．\n\n注：ばねを強くしても座屈荷重は $20.19EI/l^2$ で頭打ちになる．ばね定数 $\\pi^2EI/l^3$ ですでに両端ピン柱と同じ $\\pi^2EI/l^2$ に達する．"
+   }
+  ],
+  "idea": {
+   "tex": "上端の水平ばねが座屈条件を $\\tan z=z-z^3/\\kappa$ に変え，片持ち柱 ($\\pi/2$) と固定–ピン柱 ($4.493$) を連続的につなぐ．特別な $\\kappa=\\pi^2$ で Euler の基本荷重が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $K$：pi ^(2) E I / l ^(3)"
+  },
+  "methods": [],
+  "tags": [
+   "座屈",
+   "Euler荷重",
+   "柱",
+   "弾性支持",
+   "超越方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 3,
+  "minutes": 30,
+  "theme": "自重で張り出す梁の最適支点（エアリー点）",
+  "topic": "自重で張り出す梁の最適支点（エアリー点）",
+  "statement": {
+   "tex": "長さ $L$，単位長さあたりの重さ $w$，曲げ剛性 $EI$ の一様な梁を，両端から等しい距離 $a$ の2点（$x=a$，$x=L-a$）で単純支持する．たわみは小さく，下向きたわみ $v$ は $EI\\,v''=-N(x)$（$N$ は梁を下に凸に曲げる向きを正とする曲げモーメント）に従う．\n\\begin{enumerate}\n\\item 両端の断面が鉛直のまま（端での傾き $v'=0$）となる $a/L$ を求めよ（精密な基準尺を支える「エアリー点」）．\n\\item 自重によるたわみについて，梁の両端の高さと中央の高さが等しくなる $a/L$ を有効数字3桁で求めよ．\n\\item $a=0$（両端支持）のとき中央のたわみを求め，$L$ を一定にして梁の厚さ $h$（長方形断面）を2倍にするとたわみが何倍になるか答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a/L=\\dfrac12\\left(1-\\dfrac1{\\sqrt3}\\right)\\approx0.211$　(2) $32u^3-24u+5=0$ の根 $u=a/L\\approx0.223$　(3) $\\lambda=\\dfrac{5wL^4}{384EI}$，$1/4$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "対称性から各支点反力は $wL/2$．左半分 $0\\le x\\le L/2$ で\n\\[ N(x)=-\\frac{wx^2}{2}+\\frac{wL}{2}(x-a)\\,\\theta(x-a) \\]\n（$\\theta$ は階段関数）．対称性より $v'(L/2)=0$ なので，$EI\\,v'(x)=\\displaystyle\\int_x^{L/2}N(s)\\,ds$．\n\n(1) $v'(0)=0$ $\\iff$ $\\displaystyle\\int_0^{L/2}N\\,dx=-\\frac{wL^3}{48}+\\frac{wL}{4}\\left(\\frac L2-a\\right)^2=0$．\nよって $\\left(\\dfrac L2-a\\right)^2=\\dfrac{L^2}{12}$，$a=\\dfrac L2\\left(1-\\dfrac1{\\sqrt3}\\right)\\approx0.2113L$．\n\n(2) $v(0)-v(L/2)=-\\displaystyle\\int_0^{L/2}v'(x)\\,dx=-\\frac1{EI}\\int_0^{L/2}sN(s)\\,ds$（積分順序の交換）．これを $0$ とおく：\n\\[ -\\frac w2\\cdot\\frac{L^4}{64}+\\frac{wL}{2}\\int_a^{L/2}s(s-a)\\,ds=0,\\qquad \\int_a^{L/2}s(s-a)\\,ds=\\frac{L^3}{24}-\\frac{aL^2}{8}+\\frac{a^3}{6}. \\]\n$u=a/L$ として $\\dfrac1{24}-\\dfrac u8+\\dfrac{u^3}{6}=\\dfrac1{64}$，すなわち\n\\[ 32u^3-24u+5=0. \\]\n$0<u<1/2$ の根は $u\\approx0.223$．(1) の値とわずかに異なり，目的（端面の向きか，高さの揃い方か）によって最適支点は変わる．\n\n(3) $a=0$ では $N=\\frac w2x(L-x)$ で，$v(0)=0$ より $\\lambda=v(L/2)=\\dfrac1{EI}\\displaystyle\\int_0^{L/2}s\\cdot\\frac w2 s(L-s)\\,ds=\\frac{w}{2EI}\\left(\\frac{L^4}{24}-\\frac{L^4}{64}\\right)=\\frac{5wL^4}{384EI}$．長方形断面では $w\\propto h$，$I\\propto h^3$ なので $\\lambda\\propto h^{-2}$，厚さ2倍でたわみは $1/4$ 倍．"
+   }
+  ],
+  "idea": {
+   "tex": "張り出し梁の支点位置で端と中央のたわみを調整する．傾きゼロ条件（エアリー点）と高さ一致条件は異なる値になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "梁",
+   "自重",
+   "エアリー点",
+   "支点の最適化",
+   "たわみ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-03-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-80",
+  "level": 3,
+  "minutes": 25,
+  "theme": "角加速度で回転する平板の慣性力によるたわみ",
+  "topic": "角加速度で回転する平板の慣性力によるたわみ",
+  "statement": {
+   "tex": "長さ $l$（回転軸から先端までの距離），幅 $b$，厚さ $h\\ (h\\ll b,l)$ の長方形の鋼板の一辺（幅 $b$ の辺）を鉛直な回転軸に固定し，板面が軸を含むようにする．軸を一定の角加速度 $\\beta$ で回し始めると，板は慣性力で板面に垂直にわずかにたわむ（重力の影響は考えない）．鋼のヤング率 $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$，密度 $\\rho=7.8\\times10^{3}\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 板の先端のたわみ $\\lambda$ を求め，幅 $b$ によらないことを示せ．\n\\item 曲げによる表面ひずみの最大値 $\\varepsilon_{\\max}$ を求めよ．\n\\item $l=0.50\\,\\mathrm{m}$，$h=2.0\\,\\mathrm{mm}$ のとき，$\\varepsilon_{\\max}\\le1.0\\times10^{-3}$ となる最大の $\\beta$ と，そのときの $\\lambda$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=\\dfrac{11\\rho\\beta l^5}{10Eh^2}$　(2) $\\varepsilon_{\\max}=\\dfrac{2\\rho\\beta l^3}{Eh}$（軸の付け根）　(3) $\\beta\\approx2.1\\times10^2\\,\\mathrm{rad/s^2}$，$\\lambda\\approx6.9\\,\\mathrm{cm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "軸からの距離 $\\xi$ の部分は加速度 $\\beta\\xi$ で運動するので，板には軸方向単位長さあたり $q(\\xi)=\\rho hb\\beta\\xi$ の慣性力（に相当する曲げ荷重）が働く．位置 $x$ の断面の曲げモーメント：\n\\[ N(x)=\\int_x^l q(\\xi)(\\xi-x)\\,d\\xi=\\rho hb\\beta\\left(\\frac{l^3}{3}-\\frac{l^2x}{2}+\\frac{x^3}{6}\\right). \\]\n$I=bh^3/12$．\n\n(1) $y''=N/(EI)$，$y(0)=y'(0)=0$ より $\\lambda=\\displaystyle\\int_0^l(l-x)\\frac{N(x)}{EI}dx$．\n\\[ \\int_0^l(l-x)\\left(\\frac{l^3}{3}-\\frac{l^2x}{2}+\\frac{x^3}{6}\\right)dx=\\left(\\frac16-\\frac1{12}+\\frac1{120}\\right)l^5=\\frac{11}{120}l^5. \\]\n\\[ \\lambda=\\frac{12\\rho\\beta}{Eh^2}\\cdot\\frac{11l^5}{120}=\\frac{11\\rho\\beta l^5}{10Eh^2}. \\]\n荷重も曲げ剛性も $b$ に比例するので $b$ は消える．\n\n(2) 最大モーメントは付け根 $N(0)=\\rho hb\\beta l^3/3$．$\\varepsilon_{\\max}=\\dfrac{h}{2}\\dfrac{N(0)}{EI}=\\dfrac{2\\rho\\beta l^3}{Eh}$．\n\n(3) $\\beta_{\\max}=\\dfrac{\\varepsilon_0Eh}{2\\rho l^3}=\\dfrac{10^{-3}\\cdot2.0\\times10^{11}\\cdot2.0\\times10^{-3}}{2\\cdot7.8\\times10^3\\cdot0.125}\\approx2.05\\times10^2\\,\\mathrm{rad/s^2}$．\nこのとき $\\lambda=\\dfrac{11\\rho\\beta l^5}{10Eh^2}\\approx0.069\\,\\mathrm{m}$（$l$ の約14\\%で，「小さなたわみ」の近似はぎりぎりである）．"
+   }
+  ],
+  "idea": {
+   "tex": "回転の角加速度による慣性力は軸からの距離に比例する三角形分布荷重となり，片持ち梁として処理できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\lambda$：((11 ρ β l ^(5))/(10 E h ^(2)))\n(2) $\\varepsilon_{\\max}$：((2 ρ β l ^(3))/(E h))\n(3) $\\beta$ [rad/s²]：≈2.1e2 ; $\\lambda$ [cm]：≈6.9"
+  },
+  "methods": [],
+  "tags": [
+   "片持ち梁",
+   "慣性力",
+   "角加速度",
+   "分布荷重",
+   "たわみ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

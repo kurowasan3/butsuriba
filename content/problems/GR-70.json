@@ -197,6 +197,249 @@
   }
  },
  {
+  "id": "GR-01-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 1,
+  "minutes": 20,
+  "theme": "90°回転の線形写像が定める (1,1) テンソルと2形式",
+  "topic": "90°回転の線形写像が定める (1,1) テンソルと2形式",
+  "statement": {
+   "tex": "平面 $\\mathbb R^2$（計量 $\\delta_{\\mu\\nu}$）で，接ベクトルを $90^\\circ$ 回転させる線形写像 $\\hat J$ を考える．\n\\begin{enumerate}\n\\item $\\hat J$ が定める $(1,1)$ テンソル $J^\\mu{}_\\nu$ の成分を求め，$J^\\mu{}_\\rho J^\\rho{}_\\nu=-\\delta^\\mu_\\nu$ を示せ．\n\\item 添字を下げた $J_{\\mu\\nu}=g_{\\mu\\rho}J^\\rho{}_\\nu$ が反対称であることを示し，2形式として $dx\\wedge dy$ との関係を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $J=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}$；証明　(2) $J_{12}=-1$，$J_{21}=1$；$\\pm dx\\wedge dy$（面積形式）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\hat J(e_1)=e_2$，$\\hat J(e_2)=-e_1$ より $J^2{}_1=1$，$J^1{}_2=-1$．$J^2=-I$．\n\n(2) $\\delta$ で下げても同じ行列で反対称．$\\frac12J_{\\mu\\nu}dx^\\mu\\wedge dx^\\nu=-dx\\wedge dy$（符号は向きの約束による）．"
+   }
+  ],
+  "idea": {
+   "tex": "線形写像は $(1,1)$ テンソル，計量で添字を下げると $(0,2)$ テンソルになる．原題の抽象的な対応を，回転という具体例で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "テンソル",
+   "線形写像",
+   "複素構造",
+   "2形式"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 1,
+  "minutes": 20,
+  "theme": "外微分と引き戻しの可換性を極座標で確かめる",
+  "topic": "外微分と引き戻しの可換性を極座標で確かめる",
+  "statement": {
+   "tex": "$\\omega=x\\,dy-y\\,dx$ を考える．\n\\begin{enumerate}\n\\item $d\\omega$ を求めよ．\n\\item 極座標への写像で引き戻した $\\omega$ と $d\\omega$ を求め，$d(\\phi^*\\omega)=\\phi^*(d\\omega)$ を確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2\\,dx\\wedge dy$　(2) $\\phi^*\\omega=r^2d\\theta$，$d(r^2d\\theta)=2r\\,dr\\wedge d\\theta=\\phi^*(2dx\\wedge dy)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $dx\\wedge dy-dy\\wedge dx=\\boldsymbol{2\\,dx\\wedge dy}$．\n\n(2) $x\\,dy-y\\,dx=r^2d\\theta$．$d(r^2d\\theta)=2r\\,dr\\wedge d\\theta$．$dx\\wedge dy=r\\,dr\\wedge d\\theta$ なので一致．"
+   }
+  ],
+  "idea": {
+   "tex": "外微分は座標によらず，引き戻しと可換である．原題の一般的な証明を，具体的な形式で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "外微分",
+   "引き戻し",
+   "微分形式",
+   "極座標"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 1,
+  "minutes": 20,
+  "theme": "極座標の正規直交基底は座標基底でない",
+  "topic": "極座標の正規直交基底は座標基底でない",
+  "statement": {
+   "tex": "平面の極座標で正規直交基底 $e_r=\\partial_r$，$e_\\theta=\\dfrac1r\\partial_\\theta$ を考える．\n\\begin{enumerate}\n\\item $[e_r,e_\\theta]$ を求めよ．\n\\item この基底が座標系から誘導されたものでないことを説明せよ．双対基底 $f^r,f^\\theta$ を求め，$df^\\theta\\ne0$ を確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-\\dfrac1re_\\theta$　(2) $f^r=dr$，$f^\\theta=r\\,d\\theta$，$df^\\theta=dr\\wedge d\\theta$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $[\\partial_r,\\frac1r\\partial_\\theta]f=-\\frac1{r^2}\\partial_\\theta f$ より $\\boldsymbol{-\\frac1re_\\theta}$．\n\n(2) 座標基底なら交換子は $0$．双対基底 $f^\\theta=r\\,d\\theta$ は閉形式でなく（$df^\\theta=dr\\wedge d\\theta\\ne0$），どんな座標の微分にもならない．"
+   }
+  ],
+  "idea": {
+   "tex": "基底ベクトルが交換しないことは，その基底が座標から来ないことを意味する．原題の一般的な証明の代わりに，具体例で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "交換子",
+   "正規直交基底",
+   "座標基底",
+   "非ホロノミック"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 1,
+  "minutes": 20,
+  "theme": "平面の極座標のクリストッフェル記号はテンソルでない",
+  "topic": "平面の極座標のクリストッフェル記号はテンソルでない",
+  "statement": {
+   "tex": "平面の計量 $ds^2=dr^2+r^2d\\theta^2$ を考える．\n\\begin{enumerate}\n\\item $0$ でないクリストッフェル記号を求めよ．\n\\item 直交座標ではすべて $0$ であることと比べ，クリストッフェル記号がテンソルでないことを説明せよ．\n\\item 2つの接続の差がテンソルであることの意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Gamma^r{}_{\\theta\\theta}=-r$，$\\Gamma^\\theta{}_{r\\theta}=\\Gamma^\\theta{}_{\\theta r}=\\dfrac1r$　(2) 説明　(3) 説明"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 公式から与式．\n\n(2) テンソルなら1つの座標系で $0$ なら全座標系で $0$．非斉次項 $\\partial^2x/\\partial y\\partial y$ があるため．\n\n(3) 非斉次項は接続によらず，差では打ち消す．接続の空間はテンソルの空間を平行移動したもの．"
+   }
+  ],
+  "idea": {
+   "tex": "平坦な空間でも曲線座標ではクリストッフェル記号が $0$ でなく，接続がテンソルでないことがわかる．原題の一般的な変換則を，具体例で示させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クリストッフェル記号",
+   "接続",
+   "変換則"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 1,
+  "minutes": 20,
+  "theme": "キリング方程式を球面の ∂_φ で確かめる",
+  "topic": "キリング方程式を球面の ∂_φ で確かめる",
+  "statement": {
+   "tex": "$(\\mathcal L_Xg)_{\\mu\\nu}=\\nabla_\\mu X_\\nu+\\nabla_\\nu X_\\mu$ を用いる．単位球面で $X=\\partial_\\phi$ とする．\n\\begin{enumerate}\n\\item $X_\\mu$ を求めよ．\n\\item $\\nabla_\\theta X_\\phi+\\nabla_\\phi X_\\theta=0$ と $\\nabla_\\phi X_\\phi=0$ を確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $X_\\theta=0$，$X_\\phi=\\sin^2\\theta$　(2) 確認"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $X_\\phi=g_{\\phi\\phi}=\\boldsymbol{\\sin^2\\theta}$．\n\n(2) $\\nabla_\\theta X_\\phi=\\partial_\\theta X_\\phi-\\Gamma^\\phi{}_{\\theta\\phi}X_\\phi=2\\sin\\theta\\cos\\theta-\\cot\\theta\\sin^2\\theta=\\sin\\theta\\cos\\theta$．$\\nabla_\\phi X_\\theta=-\\Gamma^\\phi{}_{\\phi\\theta}X_\\phi=-\\sin\\theta\\cos\\theta$．和は $0$．$\\nabla_\\phi X_\\phi=-\\Gamma^\\theta{}_{\\phi\\phi}X_\\theta=0$．"
+   }
+  ],
+  "idea": {
+   "tex": "リー微分の共変微分による形はキリング方程式を与える．原題の公式の導出を，具体例の確認に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "キリング方程式",
+   "共変微分",
+   "リー微分"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "GR-01-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -340,6 +583,690 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "メスバウアーの温度シフトとパウンド＝レブカ，GPS衛星の時計",
+  "topic": "メスバウアーの温度シフトとパウンド＝レブカ，GPS衛星の時計",
+  "statement": {
+   "tex": "時計の進み方のずれを，$v\\ll c$，弱い重力場の最低次で考える．$k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$，$1\\ \\mathrm{u}=1.66\\times10^{-27}\\ \\mathrm{kg}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$，$g=9.8\\ \\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 結晶中の ${}^{57}\\mathrm{Fe}$ 原子核（質量 $57\\ \\mathrm{u}$）は熱振動しており，古典的に $\\langle v^2\\rangle=3k_BT/m$ とする．メスバウアー線の振動数の，温度 $1\\ \\mathrm{K}$ あたりの相対的なずれ（2次のドップラー効果）を求めよ（有効数字2桁）．\n\\item 高さ $22.5\\ \\mathrm{m}$ の塔の上下での重力による振動数の相対的なずれを求め，それと同じずれを (1) の効果で作るのに必要な線源と吸収体の温度差を求めよ．\n\\item 地球（質量 $M$，半径 $R$，自転は無視）の表面の時計に対し，半径 $r$ の円軌道を回る衛星の時計の進み方の相対的なずれを $GM/(Rc^2)$ と $r/R$ で表せ．ずれが $0$ になる軌道半径と，GPS 衛星（$r=4.17R$）の時計が1日に進む時間を求めよ（$GM/(Rc^2)=6.96\\times10^{-10}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-\\dfrac{3k_B}{2mc^2}\\approx-2.4\\times10^{-15}\\ \\mathrm{K^{-1}}$　(2) $\\dfrac{gH}{c^2}\\approx2.5\\times10^{-15}$，約 $1.0\\ \\mathrm{K}$　(3) $\\dfrac{\\Delta\\tau}{\\tau}=\\dfrac{GM}{Rc^2}\\left(1-\\dfrac{3R}{2r}\\right)$；$r=\\dfrac32R$；約 $38\\ \\mu\\mathrm{s}$ 進む"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 運動する原子核の固有時間は $d\\tau=dt\\sqrt{1-v^2/c^2}\\simeq\\left(1-\\dfrac{v^2}{2c^2}\\right)dt$ で，振動数は平均して $\\dfrac{\\Delta\\nu}{\\nu}=-\\dfrac{\\langle v^2\\rangle}{2c^2}=-\\dfrac{3k_BT}{2mc^2}$ だけずれる（1次のドップラー効果は平均で消える）．$1\\ \\mathrm{K}$ あたり\n\\[\n\\frac{3k_B}{2mc^2}=\\frac{3\\times1.38\\times10^{-23}}{2\\times57\\times1.66\\times10^{-27}\\times9.0\\times10^{16}}\\approx\\boldsymbol{2.4\\times10^{-15}\\ \\mathrm{K^{-1}}}\n\\]\n（温度が高いほど振動数が下がる）．\n\n(2) 重力によるずれは $\\dfrac{\\Delta\\nu}{\\nu}=\\dfrac{gH}{c^2}=\\dfrac{9.8\\times22.5}{9.0\\times10^{16}}\\approx\\boldsymbol{2.5\\times10^{-15}}$．(1) と比べて，線源と吸収体の温度差 $\\boldsymbol{\\approx1.0\\ \\mathrm{K}}$ で同じ大きさのずれが生じる．パウンド＝レブカの実験では，温度を $0.1\\ \\mathrm{K}$ 程度まで管理する必要があった．\n\n(3) 遠方の時計に対する進み方は $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{GM}{rc^2}-\\dfrac{v^2}{2c^2}$．円軌道では $v^2=GM/r$ なので衛星は $1-\\dfrac{3GM}{2rc^2}$，地表は $1-\\dfrac{GM}{Rc^2}$．差は\n\\[\n\\boldsymbol{\\frac{\\Delta\\tau}{\\tau}=\\frac{GM}{Rc^2}\\left(1-\\frac{3R}{2r}\\right)}.\n\\]\n$\\boldsymbol{r=\\frac32R}$（高度 $R/2\\approx3200\\ \\mathrm{km}$）で $0$．GPS では $6.96\\times10^{-10}\\times(1-0.360)=4.46\\times10^{-10}$ で，1日（$86400\\ \\mathrm{s}$）に $\\boldsymbol{\\approx38\\ \\mu\\mathrm{s}}$ 地上より進む（重力で $+46\\ \\mu\\mathrm{s}$，速度で $-7\\ \\mu\\mathrm{s}$）．"
+   }
+  ],
+  "idea": {
+   "tex": "時計の進み方は $1-\\Phi/c^2-v^2/2c^2$ でまとめて書ける．熱運動の $\\langle v^2\\rangle$ は温度に比例するので，メスバウアー線では $1\\ \\mathrm{K}$ の温度差が $20\\ \\mathrm{m}$ ほどの高さの差と同じずれを生む．衛星では重力と速度の効果が逆符号で，$r=3R/2$ で打ち消し合う．原題は5つの状況のずれの式を答える問題で，捻りでは効果どうしの大きさを比べさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "2次のドップラー効果",
+   "重力赤方偏移",
+   "時間の遅れ",
+   "GPS"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 25,
+  "theme": "臨界点以外ではヘッセ行列はテンソルにならない例",
+  "topic": "臨界点以外ではヘッセ行列はテンソルにならない例",
+  "statement": {
+   "tex": "関数 $f(x,y)=x$ を考える．\n\\begin{enumerate}\n\\item 直交座標で $\\partial_\\mu\\partial_\\nu f$ を求めよ．\n\\item 極座標で $\\partial_\\mu\\partial_\\nu f$ を $(r,\\theta)=(1,0)$ で求め，(1) をテンソルとして変換したものと一致しないことを示せ．\n\\item なぜ $df=0$ の点では一致するかを説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) すべて $0$　(2) $\\partial_\\theta^2f=-1\\ne0$　(3) 余分な項が $\\partial f$ に比例"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol0$．\n\n(2) $f=r\\cos\\theta$，$\\partial_\\theta^2f=-r\\cos\\theta=\\boldsymbol{-1}$．テンソルなら $0$ のはず．\n\n(3) $\\dfrac{\\partial^2f}{\\partial y^\\mu\\partial y^\\nu}=\\dfrac{\\partial x^\\alpha}{\\partial y^\\mu}\\dfrac{\\partial x^\\beta}{\\partial y^\\nu}\\partial_\\alpha\\partial_\\beta f+\\dfrac{\\partial^2x^\\alpha}{\\partial y^\\mu\\partial y^\\nu}\\partial_\\alpha f$．第2項は $df=0$ で消える．"
+   }
+  ],
+  "idea": {
+   "tex": "2階微分は一般にテンソルでなく，1階微分が消える点でだけテンソルになる．原題の証明の反例を具体的に示させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) すべて：0\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ヘッセ行列",
+   "テンソルの変換則",
+   "臨界点"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 25,
+  "theme": "立体射影座標での球面の計量の行列式と面積",
+  "topic": "立体射影座標での球面の計量の行列式と面積",
+  "statement": {
+   "tex": "半径 $R$ の球面の計量は，立体射影座標 $(X,Y)$ で $ds^2=\\dfrac{4R^2}{(1+X^2+Y^2)^2}(dX^2+dY^2)$ と書ける．\n\\begin{enumerate}\n\\item 座標変換で $g=\\det g_{\\mu\\nu}$ がヤコビアンの2乗で変わることを示せ．\n\\item 立体射影座標で $\\sqrt g$ を積分して全面積を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tilde g=\\left|\\dfrac{\\partial x}{\\partial\\tilde x}\\right|^2g$　(2) $4\\pi R^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\tilde g_{\\mu\\nu}=\\frac{\\partial x^\\alpha}{\\partial\\tilde x^\\mu}\\frac{\\partial x^\\beta}{\\partial\\tilde x^\\nu}g_{\\alpha\\beta}$ の行列式．\n\n(2) $\\sqrt g=\\dfrac{4R^2}{(1+\\rho^2)^2}$，$\\int_0^\\infty\\dfrac{4R^2\\cdot2\\pi\\rho\\,d\\rho}{(1+\\rho^2)^2}=\\boldsymbol{4\\pi R^2}$．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\sqrt g\\,d^nx$ は座標によらない体積要素で，座標が変わってもヤコビアンが打ち消す．原題の変換則を，球面の面積の計算に使わせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 4 pi R ^(2)"
+  },
+  "methods": [],
+  "tags": [
+   "計量の行列式",
+   "ヤコビアン",
+   "立体射影",
+   "球面"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 25,
+  "theme": "球面の計量のリー微分：∂_φ はキリングベクトル，∂_θ は違う",
+  "topic": "球面の計量のリー微分：∂_φ はキリングベクトル，∂_θ は違う",
+  "statement": {
+   "tex": "単位球面の計量 $g=d\\theta^2+\\sin^2\\theta\\,d\\phi^2$ と公式 $(\\mathcal L_Xg)_{\\mu\\nu}=X^\\rho\\partial_\\rho g_{\\mu\\nu}+g_{\\mu\\rho}\\partial_\\nu X^\\rho+g_{\\rho\\nu}\\partial_\\mu X^\\rho$ を用いる．\n\\begin{enumerate}\n\\item $X=\\partial_\\phi$ で $\\mathcal L_Xg=0$ を示せ．\n\\item $X=\\partial_\\theta$ で $\\mathcal L_Xg$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $(\\mathcal L_Xg)_{\\phi\\phi}=2\\sin\\theta\\cos\\theta$，他は $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 成分が定数で $g$ は $\\phi$ によらないのですべて $0$（$\\partial_\\phi$ は回転の対称性）．\n\n(2) $\\partial_\\theta g_{\\phi\\phi}=\\boldsymbol{2\\sin\\theta\\cos\\theta}$．流れで計量が変わり，キリングベクトルではない．"
+   }
+  ],
+  "idea": {
+   "tex": "リー微分が $0$ のベクトル場はキリングベクトルで，計量の対称性を表す．原題の公式の導出を，具体的な判定に使わせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "リー微分",
+   "キリングベクトル",
+   "球面"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "左不変形式で 3 次元球面の体積を求める",
+  "topic": "左不変形式で 3 次元球面の体積を求める",
+  "statement": {
+   "tex": "オイラー角 $(\\theta,\\phi,\\psi)$ の範囲 $0<\\theta<\\pi$，$0<\\phi<2\\pi$，$0<\\psi<4\\pi$ で $\\sigma_1=-\\sin\\psi\\,d\\theta+\\cos\\psi\\sin\\theta\\,d\\phi$，$\\sigma_2=\\cos\\psi\\,d\\theta+\\sin\\psi\\sin\\theta\\,d\\phi$，$\\sigma_3=d\\psi+\\cos\\theta\\,d\\phi$ とする．\n\\begin{enumerate}\n\\item $d\\sigma_3=\\sigma_1\\wedge\\sigma_2$ を示せ．\n\\item 単位3次元球面の計量は $\\frac14(\\sigma_1^2+\\sigma_2^2+\\sigma_3^2)$ である．体積形式 $\\frac18\\sigma_1\\wedge\\sigma_2\\wedge\\sigma_3$ を積分して体積を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $2\\pi^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d\\sigma_3=-\\sin\\theta\\,d\\theta\\wedge d\\phi$．$\\sigma_1\\wedge\\sigma_2=(-\\sin^2\\psi\\sin\\theta-\\cos^2\\psi\\sin\\theta)d\\theta\\wedge d\\phi=-\\sin\\theta\\,d\\theta\\wedge d\\phi$．\\hfill$\\square$\n\n(2) $\\sigma_1\\wedge\\sigma_2\\wedge\\sigma_3=-\\sin\\theta\\,d\\theta\\wedge d\\phi\\wedge d\\psi$．$\\frac18\\int\\sin\\theta\\,d\\theta\\,d\\phi\\,d\\psi=\\frac18\\cdot2\\cdot2\\pi\\cdot4\\pi=\\boldsymbol{2\\pi^2}$．"
+   }
+  ],
+  "idea": {
+   "tex": "$SU(2)\\simeq S^3$ の左不変形式は簡単な構造方程式をみたし，体積の計算も簡単になる．原題の構造方程式に，体積の計算を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 2 pi ^(2)"
+  },
+  "methods": [],
+  "tags": [
+   "左不変形式",
+   "3次元球面",
+   "体積",
+   "オイラー角"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ねじれのある接続の具体例で 2∇_[μ∇_ν]f = −T ∂f を確かめる",
+  "topic": "ねじれのある接続の具体例で 2∇_[μ∇_ν]f = −T ∂f を確かめる",
+  "statement": {
+   "tex": "$\\mathbb R^2$ の接続で $\\Gamma^x{}_{xy}=a$（定数），他の成分は $0$ とする．\n\\begin{enumerate}\n\\item ねじれ $T^\\rho{}_{\\mu\\nu}=\\Gamma^\\rho{}_{\\mu\\nu}-\\Gamma^\\rho{}_{\\nu\\mu}$ を求めよ．\n\\item スカラー $f$ について $\\nabla_x\\nabla_yf-\\nabla_y\\nabla_xf$ を計算し，$-T^\\rho{}_{xy}\\partial_\\rho f$ と一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T^x{}_{xy}=a=-T^x{}_{yx}$　(2) $-a\\partial_xf$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T^x{}_{xy}=a-0=\\boldsymbol a$．\n\n(2) $\\nabla_\\mu\\nabla_\\nu f=\\partial_\\mu\\partial_\\nu f-\\Gamma^\\rho{}_{\\mu\\nu}\\partial_\\rho f$．差は $-(\\Gamma^x{}_{xy}-\\Gamma^x{}_{yx})\\partial_xf=\\boldsymbol{-a\\partial_xf}$．"
+   }
+  ],
+  "idea": {
+   "tex": "ねじれは共変微分がスカラーに対しても交換しないことに現れる．原題の一般的な証明を具体例で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ねじれ",
+   "接続",
+   "共変微分"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "リンドラー時空の時間的測地線はミンコフスキーの静止した粒子",
+  "topic": "リンドラー時空の時間的測地線はミンコフスキーの静止した粒子",
+  "statement": {
+   "tex": "2次元のリンドラー計量 $ds^2=-x^2dt^2+dx^2$（$x>0$）を考える．\n\\begin{enumerate}\n\\item 時間的測地線の保存量を用いて，固有時 $\\tau$ で $x^2=E^2-\\tau^2$（$\\tau=0$ で最大）を示せ．\n\\item $T=x\\sinh t$，$X=x\\cosh t$ でミンコフスキー座標に移ると，この測地線は $X=E$ の静止した粒子であることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（$x^2\\dot t=E$）　(2) 証明"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $t$ は循環座標：$x^2\\dot t=E$．$-x^2\\dot t^2+\\dot x^2=-1$ より $\\dot x^2=E^2/x^2-1$，$u=x^2$ で $\\dot u^2=4(E^2-u)$，$u=E^2-\\tau^2$．\\hfill$\\square$\n\n(2) $X^2-T^2=x^2=E^2-\\tau^2$．$\\tanh t=T/X$ と $x^2\\dot t=E$ から $T=\\tau$，$X=E$ が確かめられる．\\hfill$\\square$"
+   }
+  ],
+  "idea": {
+   "tex": "加速系（リンドラー座標）での複雑な測地線は，慣性系では静止した粒子にすぎない．原題の2次元の宇宙論的な計量を，リンドラー計量に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "リンドラー時空",
+   "測地線",
+   "保存量",
+   "加速系"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 25,
+  "theme": "平面のキリングベクトルとユークリッド群のリー代数",
+  "topic": "平面のキリングベクトルとユークリッド群のリー代数",
+  "statement": {
+   "tex": "平面 $ds^2=dr^2+r^2d\\phi^2$ を考える．\n\\begin{enumerate}\n\\item $P_x=\\cos\\phi\\,\\partial_r-\\dfrac{\\sin\\phi}{r}\\partial_\\phi$，$P_y=\\sin\\phi\\,\\partial_r+\\dfrac{\\cos\\phi}{r}\\partial_\\phi$，$J=\\partial_\\phi$ が平行移動と回転を表すことを確かめよ．\n\\item 交換関係 $[J,P_x]$，$[J,P_y]$，$[P_x,P_y]$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 確認（$P_x=\\partial_x$，$P_y=\\partial_y$）　(2) $P_y$，$-P_x$，$0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 直交座標の $\\partial_x,\\partial_y$ を極座標で書いたもの．$J$ は回転．\n\n(2) 直交座標で $J=x\\partial_y-y\\partial_x$：$[J,\\partial_x]=\\partial_y$，$[J,\\partial_y]=-\\partial_x$，$[\\partial_x,\\partial_y]=0$．球面の so(3) で半径を無限大にした極限（縮約）．"
+   }
+  ],
+  "idea": {
+   "tex": "キリングベクトルは対称性の生成子で，リー代数をつくる．原題の球面の so(3) を，平面のユークリッド代数に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "キリングベクトル",
+   "リー代数",
+   "ユークリッド群"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "2次元ミンコフスキー時空のペンローズ図",
+  "topic": "2次元ミンコフスキー時空のペンローズ図",
+  "statement": {
+   "tex": "2次元ミンコフスキー時空 $ds^2=-du\\,dv$（$u=t-x$，$v=t+x$）を考える．\n\\begin{enumerate}\n\\item $u=\\tan U$，$v=\\tan V$ とすると，$ds^2=\\dfrac{-dU\\,dV}{\\cos^2U\\cos^2V}$ となることを示せ．\n\\item $U,V$ の範囲を答え，共形因子を除いた計量 $-dU\\,dV$ で全時空が有限の菱形に描けることを説明せよ．\n\\item 時間的な無限遠，空間的な無限遠，光的な無限遠が図のどこにあたるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $-\\frac\\pi2<U,V<\\frac\\pi2$　(3) 菱形の上下の頂点，左右の頂点，4つの辺"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $du=\\dfrac{dU}{\\cos^2U}$ などを代入．\n\n(2) $\\tan$ の値域から $\\boldsymbol{|U|,|V|<\\pi/2}$．光線は $U$ または $V$ が一定の $45^\\circ$ の線のまま．\n\n(3) $i^\\pm$：$U=V=\\pm\\frac\\pi2$（上下の頂点），$i^0$：左右の頂点，$\\mathscr I^\\pm$：辺．"
+   }
+  ],
+  "idea": {
+   "tex": "共形変換で無限遠を有限の境界に移すと，時空の因果構造が一目でわかる．原題のアインシュタイン静止宇宙への埋め込みを，2次元の簡単な場合で体験させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ペンローズ図",
+   "共形コンパクト化",
+   "光円錐座標"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ダストのエネルギー運動量保存から測地線運動と連続の式が出る",
+  "topic": "ダストのエネルギー運動量保存から測地線運動と連続の式が出る",
+  "statement": {
+   "tex": "圧力のないダスト $T^{\\mu\\nu}=\\rho u^\\mu u^\\nu$（$u^\\mu u_\\mu=-1$）を考える．\n\\begin{enumerate}\n\\item $\\nabla_\\mu T^{\\mu\\nu}=0$ に $u_\\nu$ を掛けて，$\\nabla_\\mu(\\rho u^\\mu)=0$ を示せ．\n\\item 残りから $u^\\mu\\nabla_\\mu u^\\nu=0$（測地線）を示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) 証明"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u_\\nu u^\\mu\\nabla_\\mu u^\\nu=\\frac12u^\\mu\\nabla_\\mu(u\\cdot u)=0$ を使うと $u_\\nu\\nabla_\\mu(\\rho u^\\mu u^\\nu)=-\\nabla_\\mu(\\rho u^\\mu)=0$．\\hfill$\\square$\n\n(2) $\\nabla_\\mu(\\rho u^\\mu)u^\\nu+\\rho u^\\mu\\nabla_\\mu u^\\nu=0$ の第1項は $0$ なので $\\rho\\ne0$ で $u^\\mu\\nabla_\\mu u^\\nu=0$．\\hfill$\\square$"
+   }
+  ],
+  "idea": {
+   "tex": "アインシュタイン方程式が保存則を要求するため，物質の運動方程式（測地線）は場の方程式から導かれる．原題の点粒子の議論を，連続体のダストで行わせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "ダスト",
+   "測地線",
+   "エネルギー運動量保存"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "変分原理による測地線：双曲平面",
+  "topic": "変分原理による測地線：双曲平面",
+  "statement": {
+   "tex": "上半平面 $y>0$ に計量 $ds^2=\\dfrac{dx^2+dy^2}{y^2}$（Poincaré 双曲平面）を入れる．\n\\begin{enumerate}\n\\item $L=\\tfrac12g_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu$（$\\dot{}=d/ds$）に Euler–Lagrange 方程式を適用して測地線方程式を書き，0 でない Christoffel 記号をすべて読み取れ．\n\\item 円 $x^2+y^2=R^2$（$y>0$ の部分）が測地線であることを示せ．\n\\item 2点 $(-1,1)$ と $(1,1)$ を結ぶ測地線の長さを求め，直線 $y=1$ に沿った長さ $2$ と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\ddot x-\\dfrac{2}{y}\\dot x\\dot y=0$，$\\ddot y+\\dfrac{1}{y}(\\dot x^2-\\dot y^2)=0$；$\\Gamma^x{}_{xy}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$　(2) 略（解説参照）　(3) $2\\ln(1+\\sqrt2)\\approx1.763<2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\dfrac{\\dot x^2+\\dot y^2}{2y^2}$．\n$x$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot x}{y^2}\\Bigr)=0\\Rightarrow\\ddot x-\\dfrac{2\\dot x\\dot y}{y}=0$．\n$y$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot y}{y^2}\\Bigr)=-\\dfrac{\\dot x^2+\\dot y^2}{y^3}\\Rightarrow\\ddot y+\\dfrac{\\dot x^2-\\dot y^2}{y}=0$．\n$\\ddot x^\\lambda+\\Gamma^\\lambda{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$ と比べ，$\\Gamma^x{}_{xy}=\\Gamma^x{}_{yx}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$．\n\n(2) $x$ の式から $\\dot x=Cy^2$（第1積分）．また $L=\\tfrac12$（弧長パラメータ）より $\\dot x^2+\\dot y^2=y^2$．円上で $x=R\\cos\\theta$, $y=R\\sin\\theta$ とおくと $ds=\\sqrt{dx^2+dy^2}/y=d\\theta/\\sin\\theta$ なので $\\dot\\theta=\\sin\\theta$．このとき $\\dot x=-R\\sin\\theta\\,\\dot\\theta=-R\\sin^2\\theta=-y^2/R$ で $C=-1/R$ の定数，また $\\dot y=R\\cos\\theta\\sin\\theta$ より $\\dot x^2+\\dot y^2=R^2\\sin^2\\theta(\\sin^2\\theta+\\cos^2\\theta)=y^2$ も成り立つ．$L=$ 一定の式を $s$ で微分して $x$ の式を使うと $\\dot y\\,[\\,y$ の式$\\,]=0$ となるので，$\\dot y\\ne0$ の点で $y$ の式も満たされ（連続性により全体で成立），円は測地線である．\n\n(3) 両点を通り中心が $x$ 軸上にある円は $x^2+y^2=2$（$R=\\sqrt2$）で，$\\theta$ は $3\\pi/4$ から $\\pi/4$ まで．\n\\[\ns=\\int_{\\pi/4}^{3\\pi/4}\\frac{d\\theta}{\\sin\\theta}=\\Bigl[\\ln\\tan\\frac\\theta2\\Bigr]_{\\pi/4}^{3\\pi/4}=2\\ln\\cot\\frac{\\pi}{8}=2\\ln(1+\\sqrt2)\\approx1.763 .\n\\]\n直線 $y=1$ に沿えば $\\int_{-1}^1dx/1=2$．「上へ膨らんだ」円弧の方が短い．$y$ が大きいほど距離が縮むため，測地線は $y$ の大きい方へ迂回する．"
+   }
+  ],
+  "idea": {
+   "tex": "測地線方程式を作用 $\\int L\\,ds$ の変分から作る手法を，曲がった2次元空間に適用し，「直線より曲がった道が短い」ことを具体的に確かめる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "測地線",
+   "変分原理",
+   "Christoffel記号",
+   "双曲平面",
+   "Poincaré上半平面"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "共変発散の公式と非テンソル性のわな",
+  "topic": "共変発散の公式と非テンソル性のわな",
+  "statement": {
+   "tex": "3次元 Euclid 空間を球座標 $(r,\\theta,\\varphi)$ で表す（$ds^2=dr^2+r^2d\\theta^2+r^2\\sin^2\\theta\\,d\\varphi^2$）．\n\\begin{enumerate}\n\\item $g=\\det(g_{\\mu\\nu})$ として $\\Gamma^\\mu{}_{\\mu\\lambda}=\\partial_\\lambda\\ln\\sqrt{g}$ を示し，共変発散が $\\nabla_\\mu A^\\mu=\\dfrac1{\\sqrt g}\\partial_\\mu(\\sqrt g\\,A^\\mu)$ となることを導け．\n\\item ベクトル場 $A^r=r^n,\\ A^\\theta=A^\\varphi=0$ について，$\\partial_\\mu A^\\mu$ と $\\nabla_\\mu A^\\mu$ をそれぞれ求めよ．\n\\item 同じベクトル場をデカルト座標で表すと $\\boldsymbol A=r^{n-1}\\boldsymbol x$ である．デカルト座標での発散 $\\partial_iA^i$ を計算し，(2) のどちらと一致するか答えよ．これから Christoffel 記号の項が必要な理由を説明せよ．また $\\nabla_\\mu A^\\mu=0$ となる $n$ を求め，物理的な意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $\\partial_\\mu A^\\mu=nr^{n-1}$，$\\nabla_\\mu A^\\mu=(n+2)r^{n-1}$　(3) $\\partial_iA^i=(n+2)r^{n-1}$ で $\\nabla_\\mu A^\\mu$ と一致．$n=-2$（Coulomb 場）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Gamma^\\mu{}_{\\mu\\lambda}=\\tfrac12g^{\\mu\\rho}(\\partial_\\mu g_{\\rho\\lambda}+\\partial_\\lambda g_{\\rho\\mu}-\\partial_\\rho g_{\\mu\\lambda})$．第1項と第3項は $\\mu\\leftrightarrow\\rho$ の入れ替えで打ち消し合うので $\\Gamma^\\mu{}_{\\mu\\lambda}=\\tfrac12g^{\\mu\\rho}\\partial_\\lambda g_{\\rho\\mu}$．行列式の微分公式 $\\partial_\\lambda g=g\\,g^{\\mu\\rho}\\partial_\\lambda g_{\\rho\\mu}$ より $\\Gamma^\\mu{}_{\\mu\\lambda}=\\partial_\\lambda\\ln\\sqrt g$．よって\n\\[\n\\nabla_\\mu A^\\mu=\\partial_\\mu A^\\mu+\\Gamma^\\mu{}_{\\mu\\lambda}A^\\lambda=\\partial_\\mu A^\\mu+A^\\lambda\\partial_\\lambda\\ln\\sqrt g=\\frac{1}{\\sqrt g}\\partial_\\mu(\\sqrt g\\,A^\\mu).\n\\]\n(2) $\\sqrt g=r^2\\sin\\theta$．$\\partial_\\mu A^\\mu=\\partial_r r^n=nr^{n-1}$．一方\n\\[\n\\nabla_\\mu A^\\mu=\\frac{1}{r^2}\\partial_r(r^2\\cdot r^n)=(n+2)r^{n-1}.\n\\]\n(3) $\\partial_i(r^{n-1}x^i)=3r^{n-1}+(n-1)r^{n-2}\\dfrac{x^i}{r}x^i=(n+2)r^{n-1}$．これは $\\nabla_\\mu A^\\mu$ と一致し，単なる偏微分 $\\partial_\\mu A^\\mu$ とは一致しない．偏微分の和は座標系によって値が変わり（スカラーでない），Christoffel 記号の項がその非テンソル的な変換（$\\Gamma$ の変換則の非斉次項）を打ち消して初めて座標によらないスカラーになる．\n\n$\\nabla_\\mu A^\\mu=0$ となるのは $n=-2$，すなわち $A^r\\propto1/r^2$．点電荷の Coulomb 場（点質量の重力場）であり，原点以外で湧き出しがないことに対応する．（$\\partial_\\mu A^\\mu=0$ を誤って使うと $n=0$ という一様な動径場が「発散ゼロ」と結論されてしまう．）"
+   }
+  ],
+  "idea": {
+   "tex": "共変微分の Christoffel 項が「偏微分の非テンソル性」を補正することを，球座標の発散という身近な例で数値的に確かめる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "共変微分",
+   "共変発散",
+   "Christoffel記号",
+   "球座標",
+   "テンソル変換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 25,
+  "theme": "GPS衛星時計の相対論的ずれ",
+  "topic": "GPS衛星時計の相対論的ずれ",
+  "statement": {
+   "tex": "重力場中を運動する時計の固有時は，弱い場で $d\\tau=dt\\sqrt{1+2\\chi/c^2-v^2/c^2}$（$\\chi$：Newton ポテンシャル，$t$：無限遠の静止時計の時間）で与えられる．地球を質量 $M$ の球とし，$GM=3.986\\times10^{14}\\ {\\rm m^3/s^2}$，地球半径 $R=6.371\\times10^6$ m，自転角速度 $\\Omega=7.292\\times10^{-5}\\ {\\rm rad/s}$，$c=2.998\\times10^8$ m/s とする．\n\\begin{enumerate}\n\\item 半径 $r$ の円軌道を回る衛星の時計の進み方 $d\\tau/dt$ を $c^{-2}$ の1次で $GM,r$ だけで表せ．\n\\item GPS 衛星（$r=2.656\\times10^7$ m）の時計は，赤道上の地上時計に対して1日（86400 s）あたり何 $\\mu$s 進む（遅れる）か．重力による寄与，衛星の速度による寄与，地上時計の自転速度による寄与に分けて答えよ．補正しないと1日で測位誤差はおよそ何 km になるか．\n\\item 衛星の時計と赤道上の地上時計の進み方が一致する円軌道の半径を $R$ を単位として求めよ（自転の寄与を無視した場合と含めた場合）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{3GM}{2c^2r}$　(2) 重力 $+45.7$，衛星速度 $-7.2$，地上自転 $+0.10$，合計 約 $+38.6\\ \\mu$s/日（衛星が進む）；誤差 約 12 km/日　(3) 無視：$r=1.5R$，含める：$r\\approx1.497R$（高度約 3170 km）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\chi=-GM/r$，円軌道で $v^2=GM/r$．\n\\[\n\\frac{d\\tau}{dt}\\simeq1+\\frac{\\chi}{c^2}-\\frac{v^2}{2c^2}=1-\\frac{GM}{c^2r}-\\frac{GM}{2c^2r}=1-\\frac{3GM}{2c^2r}.\n\\]\n(2) 地上時計：$\\dfrac{d\\tau_0}{dt}\\simeq1-\\dfrac{GM}{c^2R}-\\dfrac{\\Omega^2R^2}{2c^2}$．差 $\\dfrac{d\\tau_s-d\\tau_0}{dt}$ の各寄与に $86400$ s を掛ける．\n・重力：$\\dfrac{GM}{c^2}\\Bigl(\\dfrac1R-\\dfrac1r\\Bigr)\\times86400=\\dfrac{3.986\\times10^{14}}{8.988\\times10^{16}}(1.5696-0.3765)\\times10^{-7}\\times86400\\approx+45.7\\ \\mu{\\rm s}$．\n・衛星速度：$-\\dfrac{GM}{2c^2r}\\times86400\\approx-7.2\\ \\mu{\\rm s}$（$v=3.87$ km/s）．\n・地上の自転速度（地上時計が遅れる分，相対的に衛星が進む）：$+\\dfrac{\\Omega^2R^2}{2c^2}\\times86400\\approx+0.10\\ \\mu{\\rm s}$．\n合計約 $+38.6\\ \\mu$s/日．光速を掛けると $3.0\\times10^8\\times38.6\\times10^{-6}\\approx1.2\\times10^4$ m，すなわち 1 日で約 12 km の誤差が蓄積する．\n\n(3) 自転を無視すると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}\\Rightarrow r=\\dfrac32R$．自転を含めると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}+\\dfrac{\\Omega^2R^2}{2}$ より\n\\[\nr=\\frac{3R}{2}\\Bigl(1+\\frac{\\Omega^2R^3}{2GM}\\Bigr)^{-1}\\approx1.497R ,\n\\]\n高度は約 3170 km．これより低い軌道（ISS など）では速度効果が勝って衛星時計は遅れ，高い軌道では重力効果が勝って進む．"
+   }
+  ],
+  "idea": {
+   "tex": "重力場中の時計の式を，重力による進みと運動による遅れの競合として読み，GPS の 38 μs/日と，両効果が打ち消し合う「中立軌道」(r=1.5R) を導く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "重力赤方偏移",
+   "時間の遅れ",
+   "GPS",
+   "固有時",
+   "弱い重力場"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 2,
+  "minutes": 30,
+  "theme": "回転円周上の光の周回時間差と時計合わせの破綻",
+  "topic": "回転円周上の光の周回時間差と時計合わせの破綻",
+  "statement": {
+   "tex": "半径 $R$ の円周に沿って光を導く（光ファイバーや鏡で光が円周上を一周する）装置が，慣性系で中心を通る軸のまわりに角速度 $\\Omega$ で回転している．円周上の一点 P から，回転方向（順方向）と逆方向に同時に光を送り出し，光が一周して P に戻るまでの時間を考える．\n\\begin{enumerate}\n\\item 慣性系で測った順方向・逆方向の周回時間 $t_\\pm$ と差 $\\Delta t=t_+-t_-$ を求めよ．\n\\item P に置いた時計（円周とともに運動）で測った時間差 $\\Delta\\tau$ を，円の面積 $\\mathcal A=\\pi R^2$ を用いて表せ．\n\\item 円周上に並べた時計を，隣どうし光信号でアインシュタインの方法（往復時間の半分）で次々に同期させながら一周すると，最初の時計に戻ったとき食い違いが残る．その大きさ $\\delta$ を (2) を用いて求めよ（$R\\Omega\\ll c$ とし，往復の非対称は順方向・逆方向の差だけで決まるとしてよい）．\n\\item 地球の赤道（$R=6.378\\times10^6$ m，$\\Omega=7.292\\times10^{-5}$ rad/s）について $\\Delta\\tau$ と $\\delta$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t_\\pm=\\dfrac{2\\pi R}{c\\mp R\\Omega}$，$\\Delta t=\\dfrac{4\\pi R^2\\Omega}{c^2-R^2\\Omega^2}$　(2) $\\Delta\\tau=\\dfrac{4\\mathcal A\\Omega}{c^2}\\gamma$，$\\gamma=1/\\sqrt{1-R^2\\Omega^2/c^2}$　(3) $\\delta=\\Delta\\tau/2\\simeq2\\mathcal A\\Omega/c^2$　(4) $\\Delta\\tau\\approx415$ ns，$\\delta\\approx207$ ns"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 慣性系では光はどちら向きにも速さ $c$．順方向の光は P が $R\\Omega t$ だけ先に進むので $ct_+=2\\pi R+R\\Omega t_+$，逆方向は $ct_-=2\\pi R-R\\Omega t_-$．\n\\[ t_\\pm=\\frac{2\\pi R}{c\\mp R\\Omega},\\qquad \\Delta t=2\\pi R\\,\\frac{2R\\Omega}{c^2-R^2\\Omega^2}=\\frac{4\\pi R^2\\Omega}{c^2-R^2\\Omega^2}. \\]\n\n(2) P の時計は速さ $R\\Omega$ で動くので $d\\tau=dt/\\gamma$．$c^2-R^2\\Omega^2=c^2/\\gamma^2$ より\n\\[ \\Delta\\tau=\\frac{\\Delta t}{\\gamma}=\\frac{4\\pi R^2\\Omega\\gamma^2}{c^2\\gamma}=\\frac{4\\mathcal A\\Omega}{c^2}\\gamma\\simeq\\frac{4\\mathcal A\\Omega}{c^2}. \\]\n光の速さは慣性系ではどちら向きも $c$ でも，円周上の観測者には順方向・逆方向の周回時間が異なって見え（Sagnac 効果），これによって回転を絶対的に検出できる．\n\n(3) 隣り合う時計 $i,i+1$ をアインシュタインの方法で合わせると，順方向と逆方向の片道時間の差の半分だけ真の（慣性系の同時刻に基づく）時刻とずれる．一周分を足し合わせると，ずれの総和は順・逆周回時間差の半分 $\\delta=\\Delta\\tau/2\\simeq2\\mathcal A\\Omega/c^2$．$\\Omega\\ne0$ なら $\\delta\\ne0$ で，回転円周上では矛盾のない大域的同時刻を光で定義できない．\n\n(4) $\\mathcal A\\Omega=\\pi(6.378\\times10^6)^2\\times7.292\\times10^{-5}=9.32\\times10^{9}\\ {\\rm m^2/s}$．\n\\[ \\Delta\\tau=\\frac{4\\times9.32\\times10^9}{8.988\\times10^{16}}\\ {\\rm s}=4.15\\times10^{-7}\\ {\\rm s}=415\\ {\\rm ns},\\qquad \\delta=207\\ {\\rm ns}. \\]\n後者は GPS などの時刻比較で実際に補正される量（赤道一周で約 207 ns）である．"
+   }
+  ],
+  "idea": {
+   "tex": "慣性系で光速一定から周回時間差 $4\\mathcal A\\Omega\\gamma/c^2$ が出る．その半分が一周の時計合わせの食い違いとなり，回転は光で絶対的に検出される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\delta$：Δ τ /2\n(4) $\\Delta\\tau$ [ns]：≈415 ; $\\delta$ [ns]：≈207"
+  },
+  "methods": [],
+  "tags": [
+   "Sagnac効果",
+   "回転座標系",
+   "同時刻",
+   "時計の同期",
+   "GPS"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -546,6 +1473,453 @@
   }
  },
  {
+  "id": "GR-01-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ドメインウォールのそばの平坦な時空とリンドラー地平線",
+  "topic": "ドメインウォールのそばの平坦な時空とリンドラー地平線",
+  "statement": {
+   "tex": "ドメインウォールの時空 $ds^2=-(1-k|z|)^2dt^2+dz^2+(1-k|z|)^2e^{2kt}(dx^2+dy^2)$（$c=1$，$k>0$）の，$z>0$ の側で $x,y$ 方向に動かない運動を考える．このとき $(t,z)$ の部分 $ds^2=-(1-kz)^2dt^2+dz^2$ だけが効く．\n\\begin{enumerate}\n\\item $X=\\dfrac1k-z$ とおき，$T'=X\\sinh kt$，$Z'=X\\cosh kt$ と変換すると，$(t,z)$ の部分がミンコフスキー計量になることを示せ．\n\\item 位置 $z_0$ に静止し続ける観測者の固有加速度の大きさと向きを求めよ．\n\\item $z_0$ で静かに放した粒子は，ウォールから遠ざかる．粒子が $z=1/k$ に達するまでの固有時間と座標時間 $t$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（$-dT'^2+dZ'^2=-k^2X^2dt^2+dX^2$）　(2) $\\dfrac{k}{1-kz_0}$，ウォールに向かう向き（$-z$ 方向）　(3) 固有時間 $\\dfrac1k-z_0$，座標時間 $\\infty$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $dT'=\\sinh kt\\,dX+kX\\cosh kt\\,dt$，$dZ'=\\cosh kt\\,dX+kX\\sinh kt\\,dt$ より\n\\[\n-dT'^2+dZ'^2=dX^2-k^2X^2dt^2=dz^2-(1-kz)^2dt^2 .\n\\]\n$(t,z)$ の部分はミンコフスキー時空のリンドラー座標で，$X=0$（$z=1/k$）が地平線 $T'=\\pm Z'$ に対応する．\\hfill$\\square$\n\n(2) $z_0$ に静止する観測者は $X_0=\\dfrac1k-z_0$ を一定に保ち，ミンコフスキー時空で $Z'^2-T'^2=X_0^2$ の双曲線運動をする．その固有加速度の大きさは\n\\[\n\\boldsymbol{a=\\frac{1}{X_0}=\\frac{k}{1-kz_0}},\n\\]\n向きは $X$ が増える向き，すなわち\\textbf{ウォールに向かう向き}（$-z$）．静止するにはウォールの方へ押し続けなければならないので，自由な粒子はウォールから遠ざかる（ウォールは斥力的にふるまう）．ウォールのすぐそば（$z_0\\to0$）で $a\\to k$．\n\n(3) 放した瞬間（$t=0$）に静止しているので，ミンコフスキー時空で $Z'=X_0$ に静止した直線 $Z'=X_0$ が世界線になる．地平線 $Z'=T'$（$X=0$）に達するのは $T'=X_0$ のときで，固有時間は $\\boldsymbol{X_0=\\dfrac1k-z_0}$．一方 $X\\to0$ は $kt\\to\\infty$ に対応するので，座標時間 $t$ は $\\boldsymbol{\\infty}$（静止観測者からは地平線に近づき続けるように見える）．"
+   }
+  ],
+  "idea": {
+   "tex": "時空が平坦でも，座標の取り方で重力のような効果が現れる．$-(1-kz)^2dt^2+dz^2$ はリンドラー座標そのもので，ウォールの側に静止するには一定の固有加速度が必要になり，放した粒子はウォールから遠ざかって有限の固有時間で地平線に達する．原題は曲率が $0$ であることと初期加速度の計算で，捻りではリンドラー座標への変換と地平線への到達を問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "リンドラー座標",
+   "測地線",
+   "固有加速度",
+   "地平線"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ド・ジッター時空の静的座標と宇宙論的地平線",
+  "topic": "ド・ジッター時空の静的座標と宇宙論的地平線",
+  "statement": {
+   "tex": "5次元ミンコフスキー空間の双曲面 $-c^2T^2+\\sum_{i=1}^4(X^i)^2=R^2$ がド・ジッター時空である．\n\\begin{enumerate}\n\\item $cT=\\sqrt{R^2-r^2}\\sinh\\dfrac{ct}{R}$，$X^4=\\sqrt{R^2-r^2}\\cosh\\dfrac{ct}{R}$，$X^i=r\\omega^i$（$i=1,2,3$，$\\omega$ は単位ベクトル）が拘束をみたすことを確かめよ．\n\\item 誘導計量が $ds^2=-\\left(1-\\dfrac{r^2}{R^2}\\right)c^2dt^2+\\dfrac{dr^2}{1-r^2/R^2}+r^2d\\Omega_2^2$ となることを示せ．\n\\item $r=R$ の意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 確認　(2) 証明　(3) 観測者の事象の地平線（$R=c/H$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $-(R^2-r^2)\\sinh^2+(R^2-r^2)\\cosh^2+r^2=R^2$．\n\n(2) $-c^2dT^2+(dX^4)^2=-(R^2-r^2)\\dfrac{c^2dt^2}{R^2}+\\dfrac{r^2dr^2}{R^2-r^2}$．これに $dr^2+r^2d\\Omega_2^2$ を加えて整理すると与式．\\hfill$\\square$\n\n(3) $g_{tt}=0$ となる\\textbf{事象の地平線}．$r=0$ の観測者は $r>R$ からの信号を受け取れない．"
+   }
+  ],
+  "idea": {
+   "tex": "ド・ジッター時空は座標の取り方で膨張宇宙にも静的な時空にも見え，静的座標では地平線が明らかになる．原題の閉じた座標と平坦な座標に，静的座標を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ド・ジッター時空",
+   "静的座標",
+   "地平線",
+   "双曲面"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 30,
+  "theme": "キリングベクトルの最大数 n(n+1)/2",
+  "topic": "キリングベクトルの最大数 n(n+1)/2",
+  "statement": {
+   "tex": "キリングベクトルは $\\nabla_\\mu\\nabla_\\nu K_\\rho=R_{\\rho\\nu\\mu\\sigma}K^\\sigma$ をみたす．\n\\begin{enumerate}\n\\item 1点での $K_\\mu$ と $\\nabla_\\mu K_\\nu$ の値がキリングベクトル全体を決めることを説明せよ．\n\\item $n$ 次元でキリングベクトルの独立な数が高々 $\\dfrac{n(n+1)}2$ であることを示せ．\n\\item 2次元球面，4次元ミンコフスキー時空でこの最大値を確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 説明　(2) 証明　(3) $3$，$10$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 2階微分が $K$ 自身で決まるので，曲線に沿って $K$ と $\\nabla K$ についての1階の常微分方程式になる．初期値で決まる．\n\n(2) $K_\\mu$ が $n$ 個，$\\nabla_\\mu K_\\nu$ は反対称で $\\frac{n(n-1)}2$ 個，和 $\\boldsymbol{\\frac{n(n+1)}2}$．\n\n(3) 球面：回転3つ．ミンコフスキー：並進4，ローレンツ6，計 $\\boldsymbol{10}$（ポアンカレ群）．"
+   }
+  ],
+  "idea": {
+   "tex": "キリングベクトルの2階微分の公式は，初期値問題としてキリングベクトルの数の上限を与える．原題の公式の導出を，数の上限の証明に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "キリングベクトル",
+   "最大対称空間",
+   "等長変換"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 35,
+  "theme": "回転系の計量・Coriolis力とSagnac効果",
+  "topic": "回転系の計量・Coriolis力とSagnac効果",
+  "statement": {
+   "tex": "慣性系の円柱座標 $(t,\\rho,\\varphi_I,z)$ での計量 $ds^2=-c^2dt^2+d\\rho^2+\\rho^2d\\varphi_I^2+dz^2$ から，$z$ 軸のまわりに角速度 $\\omega$ で回転する座標 $\\varphi=\\varphi_I-\\omega t$ に移る．\n\\begin{enumerate}\n\\item 回転座標 $(t,\\rho,\\varphi,z)$ での計量成分 $g_{tt},\\,g_{t\\varphi}$ を求めよ．\n\\item Christoffel 記号 $\\Gamma^\\rho{}_{tt},\\ \\Gamma^\\rho{}_{t\\varphi},\\ \\Gamma^\\rho{}_{\\varphi\\varphi}$ を求め，速さが $c$ に比べて小さいときの測地線方程式の $\\rho$ 成分から，遠心力と Coriolis 力に対応する項を読み取れ．\n\\item 回転座標で静止した半径 $R$ のリング状光ファイバーに沿って，光を $+\\varphi$ 向きと $-\\varphi$ 向きに一周させる．$ds^2=0$ を用いて，リング上に静止した時計で測った到着時刻の差 $\\Delta\\tau$ を厳密に求めよ．\n\\item 面積 $A=0.010\\ {\\rm m^2}$ のコイルを $N=1000$ 回巻いた光ファイバージャイロが地球自転（$\\omega=7.29\\times10^{-5}\\ {\\rm rad/s}$，回転軸に垂直に設置）を検出するときの $\\Delta\\tau$ を，$\\omega R\\ll c$ として数値で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$　(2) $\\Gamma^\\rho{}_{tt}=-\\omega^2\\rho$，$\\Gamma^\\rho{}_{t\\varphi}=-\\omega\\rho$，$\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho$；$\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi$　(3) $\\Delta\\tau=\\dfrac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}}$　(4) $\\Delta\\tau\\approx4NA\\omega/c^2\\approx3.2\\times10^{-20}\\ {\\rm s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d\\varphi_I=d\\varphi+\\omega dt$ を代入すると\n\\[\nds^2=-(c^2-\\omega^2\\rho^2)dt^2+2\\omega\\rho^2\\,d\\varphi\\,dt+d\\rho^2+\\rho^2d\\varphi^2+dz^2 .\n\\]\nよって $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$，$g_{\\rho\\rho}=g_{zz}=1$，$g_{\\varphi\\varphi}=\\rho^2$．\n\n(2) $g_{\\rho\\rho}=1$ で $g_{\\rho\\mu}=0\\ (\\mu\\ne\\rho)$ だから $\\Gamma^\\rho{}_{\\mu\\nu}=-\\tfrac12\\partial_\\rho g_{\\mu\\nu}$．\n\\[\n\\Gamma^\\rho{}_{tt}=-\\tfrac12\\partial_\\rho(-c^2+\\omega^2\\rho^2)=-\\omega^2\\rho,\\quad\n\\Gamma^\\rho{}_{t\\varphi}=-\\tfrac12\\partial_\\rho(\\omega\\rho^2)=-\\omega\\rho,\\quad\n\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho .\n\\]\n低速では $d\\tau\\simeq dt$ として測地線方程式 $\\ddot x^\\rho+\\Gamma^\\rho{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$（$\\dot{}=d/dt$, $\\dot t=1$）より\n\\[\n\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi .\n\\]\n第1項は極座標の通常の遠心項，$\\omega^2\\rho$ が回転系の遠心力，$2\\omega\\rho\\dot\\varphi$ が Coriolis 力（$-2\\boldsymbol\\omega\\times\\boldsymbol v$ の動径成分）である．すなわち慣性力は $g_{tt}$ の $\\rho$ 依存（遠心力）と非対角成分 $g_{t\\varphi}$（Coriolis 力）から生じる．\n\n(3) $\\rho=R$, $dz=0$ で $ds^2=0$：\n\\[\n(c^2-\\omega^2R^2)dt^2-2\\omega R^2\\,d\\varphi\\,dt-R^2d\\varphi^2=0\n\\Rightarrow dt=\\frac{\\omega R^2d\\varphi\\pm Rc\\,|d\\varphi|}{c^2-\\omega^2R^2}.\n\\]\n$dt>0$ をとると $+\\varphi$ 向きでは $dt=\\dfrac{R\\,d\\varphi}{c-\\omega R}$，$-\\varphi$ 向きでは $dt=\\dfrac{R\\,|d\\varphi|}{c+\\omega R}$．一周の座標時の差は\n\\[\n\\Delta t=2\\pi R\\Bigl(\\frac1{c-\\omega R}-\\frac1{c+\\omega R}\\Bigr)=\\frac{4\\pi R^2\\omega}{c^2-\\omega^2R^2}.\n\\]\nリング上の静止時計は $d\\tau=\\sqrt{-g_{tt}}\\,dt/c=\\sqrt{1-\\omega^2R^2/c^2}\\,dt$ なので\n\\[\n\\Delta\\tau=\\frac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}} .\n\\]\n(4) $\\omega R\\ll c$ で $\\Delta\\tau\\simeq4(\\pi R^2)\\omega/c^2$，一般の閉曲線では $4A\\omega/c^2$．$N$ 巻きで\n\\[\n\\Delta\\tau=\\frac{4NA\\omega}{c^2}=\\frac{4\\times1000\\times0.010\\times7.29\\times10^{-5}}{(3.00\\times10^8)^2}\\approx3.2\\times10^{-20}\\ {\\rm s}.\n\\]"
+   }
+  ],
+  "idea": {
+   "tex": "回転座標の計量の非対角成分 $g_{t\\varphi}$ が Coriolis 力を生み，同じ成分が光の往復時間差（Sagnac 効果）として計量から直接読み取れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $g_{tt}$：-(c ^(2)- ω ^(2) ρ ^(2)) ; $g_{t\\varphi}$：ω ρ ^(2)\n(2) 記述\n(3) $\\Delta\\tau$：((4 pi R ^(2) ω)/(c ^(2) sqrt(1- ω ^(2) R ^(2)/ c ^(2))))\n(4) $\\Delta\\tau$ [s]：≈3.2e-20"
+  },
+  "methods": [],
+  "tags": [
+   "回転座標系",
+   "Christoffel記号",
+   "Coriolis力",
+   "Sagnac効果",
+   "光ファイバージャイロ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 30,
+  "theme": "Newton極限の逆問題：計量から重力源を読む",
+  "topic": "Newton極限の逆問題：計量から重力源を読む",
+  "statement": {
+   "tex": "本問では $x^4=ct$，計量の符号を $(+,+,+,-)$ とし，弱い静的重力場で $g_{44}=-(1+2\\Phi/c^2)$（$\\Phi$：Newton ポテンシャル），場の方程式の Newton 極限は $\\triangle g_{44}=-\\kappa c^2\\rho$（$\\kappa=8\\pi G/c^4$）であるとする．\n\nある球対称な静的計量で\n\\[\ng_{44}=-\\Bigl(1-\\frac{a}{r}+\\frac{b}{r^2}\\Bigr)\\qquad(a,b>0\\ \\text{定数})\n\\]\nが与えられた．$r$ は十分大きく弱い場の近似が使えるとする．\n\\begin{enumerate}\n\\item ゆっくり動く粒子の動径方向の加速度 $d^2r/dt^2$ を求めよ．引力と斥力が入れ替わる半径を答えよ．\n\\item $\\triangle g_{44}=-\\kappa c^2\\rho$ を用いて，$r>0$ に分布する「実効的な質量密度」$\\rho_{\\rm eff}(r)$ を求めよ．\n\\item $b=\\dfrac{GQ^2}{4\\pi\\varepsilon_0c^4}$（点電荷 $Q$ の Reissner–Nordström 解に対応）とするとき，$\\rho_{\\rm eff}c^2$ を電場のエネルギー密度 $u=\\varepsilon_0E^2/2$ と比較せよ．係数のずれは何に由来するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{d^2r}{dt^2}=-\\dfrac{c^2a}{2r^2}+\\dfrac{c^2b}{r^3}$，$r=2b/a$ より内側で斥力　(2) $\\rho_{\\rm eff}=\\dfrac{2b}{\\kappa c^2r^4}=\\dfrac{bc^2}{4\\pi Gr^4}$　(3) $\\rho_{\\rm eff}c^2=2u$（応力（圧力）も重力源になるため）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 低速の測地線方程式は $\\dfrac{d^2x^k}{dt^2}=\\dfrac{c^2}{2}\\dfrac{\\partial g_{44}}{\\partial x^k}$．\n\\[\n\\frac{\\partial g_{44}}{\\partial r}=-\\Bigl(\\frac{a}{r^2}-\\frac{2b}{r^3}\\Bigr)\n\\Rightarrow\n\\frac{d^2r}{dt^2}=-\\frac{c^2a}{2r^2}+\\frac{c^2b}{r^3}.\n\\]\n第1項は $a=2GM/c^2$ とすれば Newton 引力 $-GM/r^2$．$r<2b/a$ では右辺が正となり斥力になる．\n\n(2) 球対称のラプラシアン $\\triangle f=\\dfrac1{r^2}\\dfrac{d}{dr}\\Bigl(r^2\\dfrac{df}{dr}\\Bigr)$ で $\\triangle(1/r)=0\\ (r>0)$，$\\triangle(1/r^2)=2/r^4$．よって\n\\[\n\\triangle g_{44}=-\\frac{2b}{r^4}=-\\kappa c^2\\rho_{\\rm eff}\n\\Rightarrow\\rho_{\\rm eff}=\\frac{2b}{\\kappa c^2r^4}=\\frac{bc^2}{4\\pi Gr^4}.\n\\]\n(3) 代入すると $\\rho_{\\rm eff}c^2=\\dfrac{bc^4}{4\\pi Gr^4}=\\dfrac{Q^2}{16\\pi^2\\varepsilon_0r^4}$．一方 $E=Q/(4\\pi\\varepsilon_0r^2)$ より $u=\\dfrac{\\varepsilon_0E^2}{2}=\\dfrac{Q^2}{32\\pi^2\\varepsilon_0r^4}$．したがって $\\rho_{\\rm eff}c^2=2u$．\n\n$g_{44}$ を決める重力源は $T_{44}$ だけでなく $T_{44}-\\tfrac12g_{44}T$，すなわち $\\rho c^2+\\sum_kp_k$（能動的重力質量 $\\rho+(p_1+p_2+p_3)/c^2$）である．電場の Maxwell 応力は動径方向に張力 $p_r=-u$，接線方向に圧力 $p_\\theta=p_\\varphi=+u$ をもち，和は $+u$．ゆえに実効的な源は $u+u=2u$ となる．"
+   }
+  ],
+  "idea": {
+   "tex": "Newton 極限 $\\triangle g_{44}=-\\kappa c^2\\rho$ を逆に使って計量から源を読むと，電場のエネルギーが2倍に効く——圧力も重力を生む（$\\rho+3p/c^2$ 型）ことの具体例．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\rho_{\\rm eff}$：((2 b)/(κ c ^(2) r ^(4)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Newton極限",
+   "弱い重力場",
+   "Reissner-Nordström",
+   "能動的重力質量",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 35,
+  "theme": "局所慣性系への2次の座標変換（Rindler）",
+  "topic": "局所慣性系への2次の座標変換（Rindler）",
+  "statement": {
+   "tex": "局所慣性系の座標を $\\bar x^\\mu$，一般座標を $x^\\mu$ とすると $\\Gamma^\\lambda{}_{\\rho\\nu}=\\dfrac{\\partial x^\\lambda}{\\partial\\bar x^\\mu}\\dfrac{\\partial^2\\bar x^\\mu}{\\partial x^\\rho\\partial x^\\nu}$ が成り立つ．\n\\begin{enumerate}\n\\item 点 $P$（座標 $x_P$）で $\\bar x^\\mu=\\Delta x^\\mu+\\tfrac12\\Gamma^\\mu{}_{\\alpha\\beta}(P)\\Delta x^\\alpha\\Delta x^\\beta$（$\\Delta x=x-x_P$）とおくと，$\\bar x$ 座標での Christoffel 記号が $P$ で 0 になることを示せ．\n\\item 2次元の計量 $ds^2=-(1+gx/c^2)^2(dx^0)^2+dx^2$（$x^0=ct$，$g$ は定数）について，原点での Christoffel 記号を求め，(1) の変換を具体的に書け．\n\\item この計量は Minkowski 時空 $ds^2=-(dW)^2+dX^2$ を\n\\[\nX=\\Bigl(\\frac{c^2}{g}+x\\Bigr)\\cosh\\frac{gx^0}{c^2}-\\frac{c^2}{g},\\qquad W=\\Bigl(\\frac{c^2}{g}+x\\Bigr)\\sinh\\frac{gx^0}{c^2}\n\\]\nで書き換えたものである．この厳密な変換を原点のまわりに2次まで展開し，(2) の結果と一致することを確かめよ．$x=$ 一定 の観測者の固有加速度はいくらか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $\\Gamma^x{}_{00}=\\Gamma^0{}_{0x}=g/c^2$（他は 0）；$\\bar x^0=x^0+\\dfrac{g}{c^2}x^0x$，$\\bar x=x+\\dfrac{g}{2c^2}(x^0)^2$　(3) 展開は (2) と一致；固有加速度 $g/(1+gx/c^2)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{\\partial\\bar x^\\mu}{\\partial x^\\rho}\\Big|_P=\\delta^\\mu{}_\\rho$，$\\dfrac{\\partial^2\\bar x^\\mu}{\\partial x^\\rho\\partial x^\\nu}\\Big|_P=\\Gamma^\\mu{}_{\\rho\\nu}(P)$．Christoffel 記号の変換則\n\\[\n\\bar\\Gamma^\\lambda{}_{\\mu\\nu}=\\frac{\\partial\\bar x^\\lambda}{\\partial x^\\alpha}\\frac{\\partial x^\\sigma}{\\partial\\bar x^\\mu}\\frac{\\partial x^\\tau}{\\partial\\bar x^\\nu}\\Gamma^\\alpha{}_{\\sigma\\tau}-\\frac{\\partial x^\\sigma}{\\partial\\bar x^\\mu}\\frac{\\partial x^\\tau}{\\partial\\bar x^\\nu}\\frac{\\partial^2\\bar x^\\lambda}{\\partial x^\\sigma\\partial x^\\tau}\n\\]\nに $P$ での値を代入すると $\\bar\\Gamma^\\lambda{}_{\\mu\\nu}(P)=\\Gamma^\\lambda{}_{\\mu\\nu}-\\Gamma^\\lambda{}_{\\mu\\nu}=0$．（与式 $\\Gamma=\\frac{\\partial x}{\\partial\\bar x}\\frac{\\partial^2\\bar x}{\\partial x\\partial x}$ は $\\bar\\Gamma=0$ の場合のこの変換則そのもの．）\n\n(2) $g_{00}=-(1+gx/c^2)^2$，$g_{xx}=1$．\n$\\Gamma^x{}_{00}=-\\tfrac12\\partial_xg_{00}=\\dfrac{g}{c^2}\\Bigl(1+\\dfrac{gx}{c^2}\\Bigr)$，$\\Gamma^0{}_{0x}=\\tfrac12g^{00}\\partial_xg_{00}=\\dfrac{g/c^2}{1+gx/c^2}$，他は 0．原点ではともに $g/c^2$．よって\n\\[\n\\bar x^0=x^0+\\tfrac12\\cdot2\\Gamma^0{}_{0x}x^0x=x^0+\\frac{g}{c^2}x^0x,\\qquad\\bar x=x+\\frac{g}{2c^2}(x^0)^2 .\n\\]\n(3) $\\cosh u\\simeq1+u^2/2$，$\\sinh u\\simeq u$ として2次まで：\n\\[\nX\\simeq\\Bigl(\\frac{c^2}{g}+x\\Bigr)\\Bigl(1+\\frac{g^2(x^0)^2}{2c^4}\\Bigr)-\\frac{c^2}{g}\\simeq x+\\frac{g}{2c^2}(x^0)^2,\\quad\nW\\simeq\\Bigl(\\frac{c^2}{g}+x\\Bigr)\\frac{gx^0}{c^2}=x^0+\\frac{g}{c^2}x^0x .\n\\]\n(2) と完全に一致する．$x=$ 一定の世界線は $(X+c^2/g)^2-W^2=(c^2/g+x)^2$ の双曲線で，固有加速度は $c^2/(c^2/g+x)=g/(1+gx/c^2)$．原点の観測者は $g$ で加速しているが，位置によって加速度が異なる（剛体的に加速する棒）．"
+   }
+  ],
+  "idea": {
+   "tex": "局所慣性系への変換は「座標の2次の項＝Christoffel 記号」で決まる．これを一様加速系に当てはめると，厳密な Rindler 変換の2次展開と一致する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "局所慣性系",
+   "Christoffel記号",
+   "座標変換",
+   "Rindler座標",
+   "等価原理"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 35,
+  "theme": "重力の「ベクトル・ポテンシャル」による慣性力",
+  "topic": "重力の「ベクトル・ポテンシャル」による慣性力",
+  "statement": {
+   "tex": "本問では $x^4=ct$，計量の符号 $(+,+,+,-)$ を用い，重力場のスカラー・ポテンシャル $\\chi=-\\tfrac{c^2}{2}(1+g_{44})$，ベクトル・ポテンシャル $\\gamma_k=g_{k4}/\\sqrt{-g_{44}}$，空間計量 $\\gamma_{kl}=g_{kl}+\\gamma_k\\gamma_l$ を定義する．質点の3次元的加速度の共変成分 $a_k=\\gamma_{kl}\\,d^2x^l/dt^2$ は\n\\[\na_k=-\\frac{\\partial\\chi}{\\partial x^k}-c\\sqrt{1+\\frac{2\\chi}{c^2}}\\,\\frac{\\partial\\gamma_k}{\\partial t}\n\\]\nで与えられる（空間計量が時間によらない等の条件の下で）．\n\n慣性系の座標 $X$ から，$X=x+\\tfrac12bt^2$（$b$ は定数，$Y=y,\\ Z=z$，時間 $t$ は共通）で定義される座標 $(x,y,z,t)$ に移る（1次元的に考えてよい）．\n\\begin{enumerate}\n\\item この座標での $g_{11},\\,g_{14},\\,g_{44}$ を求め，$\\chi,\\ \\gamma_1,\\ \\gamma_{11}$ を求めよ．\n\\item 公式から $a_1$ を求め，$d^2x/dt^2$ が厳密に $-b$ になることを確かめよ．慣性力はどの項から生じているか．\n\\item 同じく加速度 $g$ で加速する観測者の座標として，計量 $ds^2=dx^2-(1+gx/c^2)^2(dx^4)^2$ を用いることもできる．このときの $\\chi,\\ \\gamma_k$ と原点での $a_1$ を求め，(2) と比較せよ．電磁気学のどのような事情と類似しているか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $g_{11}=1$，$g_{14}=bt/c$，$g_{44}=-(1-b^2t^2/c^2)$；$\\chi=-\\tfrac12b^2t^2$，$\\gamma_1=\\dfrac{bt/c}{\\sqrt{1-b^2t^2/c^2}}$，$\\gamma_{11}=\\dfrac{1}{1-b^2t^2/c^2}$　(2) $a_1=-\\dfrac{b}{1-b^2t^2/c^2}$，$d^2x/dt^2=a_1/\\gamma_{11}=-b$；$-\\partial_t\\gamma$ の項（誘導項）から　(3) $\\chi=gx(1+gx/2c^2)$，$\\gamma_k=0$，$a_1=-g$（勾配項から）．ゲージ（ポテンシャルの選び方）の違い"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $dX=dx+bt\\,dt$ より\n\\[\nds^2=dX^2-c^2dt^2=dx^2+2\\frac{bt}{c}\\,dx\\,dx^4-\\Bigl(1-\\frac{b^2t^2}{c^2}\\Bigr)(dx^4)^2 .\n\\]\n$g_{11}=1$，$g_{14}=bt/c$（交差項の係数 $2g_{14}$），$g_{44}=-(1-b^2t^2/c^2)$．\n$\\chi=-\\tfrac{c^2}{2}\\cdot\\dfrac{b^2t^2}{c^2}=-\\tfrac12b^2t^2$（$x$ によらない），$\\gamma_1=\\dfrac{bt/c}{\\sqrt{1-b^2t^2/c^2}}$，$\\gamma_{11}=1+\\gamma_1^2=\\dfrac{1}{1-b^2t^2/c^2}$．\n\n(2) $\\partial\\chi/\\partial x=0$．$\\sqrt{1+2\\chi/c^2}=\\sqrt{-g_{44}}=\\sqrt{1-b^2t^2/c^2}$，$\\dfrac{\\partial\\gamma_1}{\\partial t}=\\dfrac{b}{c}\\Bigl(1-\\dfrac{b^2t^2}{c^2}\\Bigr)^{-3/2}$．よって\n\\[\na_1=-c\\sqrt{1-\\frac{b^2t^2}{c^2}}\\cdot\\frac bc\\Bigl(1-\\frac{b^2t^2}{c^2}\\Bigr)^{-3/2}=-\\frac{b}{1-b^2t^2/c^2},\\qquad\n\\frac{d^2x}{dt^2}=\\frac{a_1}{\\gamma_{11}}=-b .\n\\]\n自由粒子は $X=$ 一定（または等速）なので $x=X-\\tfrac12bt^2$，確かに $\\ddot x=-b$ で厳密に一致する（測地線方程式 $\\Gamma^1{}_{44}=b/c^2$ からも得られる）．この座標ではスカラー・ポテンシャルに空間勾配がなく，慣性力はすべてベクトル・ポテンシャルの時間変化 $-\\partial\\gamma/\\partial t$ から生じる．\n\n(3) $g_{44}=-(1+gx/c^2)^2$ より $\\chi=-\\tfrac{c^2}{2}\\bigl[1-(1+gx/c^2)^2\\bigr]=gx\\Bigl(1+\\dfrac{gx}{2c^2}\\Bigr)$，$g_{k4}=0$ より $\\gamma_k=0$．\n\\[\na_1=-\\frac{\\partial\\chi}{\\partial x}=-g\\Bigl(1+\\frac{gx}{c^2}\\Bigr)\\xrightarrow{x=0}-g .\n\\]\n同じ「加速する観測者が感じる慣性力」が，(2) では $-\\partial_t\\boldsymbol\\gamma$，(3) では $-\\nabla\\chi$ として現れる．電磁気学で一様電場を $\\phi=-Ex,\\ \\boldsymbol A=0$ とも $\\phi=0,\\ \\boldsymbol A=-E t\\hat x$ とも書ける（$\\boldsymbol E=-\\nabla\\phi-\\partial_t\\boldsymbol A$）のと同じで，重力のポテンシャルの分け方は座標の選び方（ゲージ）に依存し，物理的な加速度は両者で一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "重力の3次元加速度の公式を「Galilei 的な加速座標」に適用すると，慣性力が誘導電場のようにベクトル・ポテンシャルの時間微分から出てくる．ポテンシャルの分け方は座標（ゲージ）依存である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "重力ポテンシャル",
+   "ベクトル・ポテンシャル",
+   "加速度系",
+   "ゲージ",
+   "計量の非対角成分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 35,
+  "theme": "加速ロケットの時計と投下した探査機の固有時",
+  "topic": "加速ロケットの時計と投下した探査機の固有時",
+  "statement": {
+   "tex": "慣性系に対して一定の固有加速度 $g$ で $+x$ 方向に加速するロケットの後端を原点とする座標では\n\\[\nds^2=dx^2+dy^2+dz^2-c^2\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2dt^2\n\\]\nであり（$t$ は後端の時計の時間），この座標で静止した点は剛体的に加速する．このとき自由粒子の運動は $\\dfrac{d^2x}{dt^2}-\\dfrac{2g/c^2}{1+gx/c^2}\\Bigl(\\dfrac{dx}{dt}\\Bigr)^2+g\\Bigl(1+\\dfrac{gx}{c^2}\\Bigr)=0$ に従う．\n\\begin{enumerate}\n\\item ロケットの前端（$x=L$）と後端に置いた時計の進み方の比を求めよ．$g=9.8\\ {\\rm m/s^2}$，$L=100$ m のとき，1年（$3.16\\times10^7$ s）で生じるずれはいくらか．\n\\item 時刻 $t=0$ に後端（$x=0$）で探査機を静かに放す．その後の $x(t)$ が $x=\\dfrac{c^2}{g}\\Bigl(\\dfrac{1}{\\cosh(gt/c)}-1\\Bigr)$ であることを確かめ，探査機の固有時 $\\tau(t)$ を求めよ．\n\\item $t\\to\\infty$ で探査機はどこに近づき，そのとき探査機の固有時はいくらに近づくか．$g=9.8\\ {\\rm m/s^2}$ で数値を答えよ．ロケットから見た探査機と，探査機自身の経験の違いを説明せよ．\n\\item 慣性系の立場（探査機は静止，ロケットの同時刻面は地平線の事象を通る直線）から (2) の $\\tau(t)$ を導け．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $1+gL/c^2$；$\\approx1.09\\times10^{-14}$，1年で約 $0.34\\ \\mu$s 前端が進む　(2) $\\tau=\\dfrac{c}{g}\\tanh\\dfrac{gt}{c}$　(3) $x\\to-c^2/g\\approx-0.97$ 光年（地平線），$\\tau\\to c/g\\approx0.97$ 年　(4) 略（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 静止時計は $d\\tau=(1+gx/c^2)dt$．比は $d\\tau_L/d\\tau_0=1+gL/c^2$．$gL/c^2=980/(9.0\\times10^{16})\\approx1.09\\times10^{-14}$，1年で $3.16\\times10^7\\times1.09\\times10^{-14}\\approx3.4\\times10^{-7}$ s．前端の時計が進む（等価原理による重力赤方偏移と同じ）．\n\n(2) $\\xi=1+gx/c^2=1/\\cosh(gt/c)$ とおくと運動方程式は $\\ddot\\xi-2\\dot\\xi^2/\\xi+(g^2/c^2)\\xi=0$．$u=1/\\xi=\\cosh(gt/c)$ とすると $\\ddot\\xi-2\\dot\\xi^2/\\xi=-\\ddot u/u^2$ なので方程式は $\\ddot u=(g/c)^2u$ となり，$u=\\cosh(gt/c)$ は初期条件 $u(0)=1,\\ \\dot u(0)=0$（$x=0,\\ \\dot x=0$）を満たす．\n速度は $v=\\dot x=-c\\,\\dfrac{\\tanh(gt/c)}{\\cosh(gt/c)}$．固有時は\n\\[\n\\frac{d\\tau}{dt}=\\sqrt{\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2-\\frac{v^2}{c^2}}=\\frac{\\sqrt{1-\\tanh^2(gt/c)}}{\\cosh(gt/c)}=\\frac{1}{\\cosh^2(gt/c)}\n\\]\nより $\\tau=\\dfrac cg\\tanh\\dfrac{gt}{c}$．\n\n(3) $t\\to\\infty$ で $x\\to-c^2/g$，$\\tau\\to c/g$．$c/g=3.0\\times10^8/9.8=3.06\\times10^7$ s $\\approx0.97$ 年，$c^2/g\\approx0.97$ 光年．ロケットから見ると探査機は永遠に落下し続けて地平線 $x=-c^2/g$ に漸近し，その時計はどんどん遅れて $\\tau=c/g$ の手前で凍りつくように見える．しかし探査機自身は単に慣性系で静止しているだけで，$\\tau=c/g$ を過ぎても普通に時を刻む．その後の事象からの光はロケットに追いつけない（地平線の向こう側）．\n\n(4) 慣性系 $(X,T)$ で，ロケット後端は $(X+c^2/g)^2-c^2T^2=(c^2/g)^2$，探査機は $X=0$ に静止し，その固有時は $T$ そのもの．後端の時刻 $t$ での同時刻面はラピディティ $\\phi=gt/c$ をもつ直線で，地平線の事象 $(X,T)=(-c^2/g,0)$ を通る（〔62〕(3)）：\n\\[\ncT=\\tanh\\phi\\,\\Bigl(X+\\frac{c^2}{g}\\Bigr).\n\\]\n$X=0$ を代入して $T=\\dfrac cg\\tanh\\dfrac{gt}{c}$，すなわち $\\tau(t)=\\dfrac cg\\tanh\\dfrac{gt}{c}$ で (2) と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "一様加速系での時計の進み（前後の差）に加え，投下した探査機の固有時が有限値 $c/g$ で頭打ちになることを，加速系の運動方程式と慣性系の同時刻面の両方から導く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\tau$：((c)/(g)) tanh ((g t)/(c))\n(3) 記述\n(4) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "一様加速系",
+   "Rindler座標",
+   "地平線",
+   "固有時",
+   "等価原理",
+   "重力赤方偏移"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 3,
+  "minutes": 25,
+  "theme": "パウンド–レブカ実験の向きと熱的系統誤差",
+  "topic": "パウンド–レブカ実験の向きと熱的系統誤差",
+  "statement": {
+   "tex": "高さ $H=22.6\\ \\mathrm{m}$ の塔の**下端**に 14.4 keV の ${}^{57}\\mathrm{Fe}$ メスバウアー線源，**上端**に吸収体を置き，重力赤方偏移を測定する（$g=9.80\\ \\mathrm{m/s^2}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$）．\n\\begin{enumerate}\n\\item 吸収体に届いた光子の相対的な振動数変化 $\\Delta\\nu/\\nu$ を求め，その符号を答えよ．\n\\item 共鳴を回復するには吸収体をどちら向きにどれだけの速さで動かせばよいか（mm/s 単位）．\n\\item 線源と吸収体の温度がわずかに異なると，二次のドップラー効果（時間の遅れ）$\\Delta\\nu/\\nu=-\\langle v^2\\rangle/2c^2$ によっても振動数がずれる．(1) と同じ大きさのずれを生む温度差 $\\Delta T$ を求めよ．原子 1 個の運動エネルギーを $\\frac32k_{\\mathrm B}T$ とし，${}^{57}\\mathrm{Fe}$ 原子の質量 $M=9.45\\times10^{-26}\\ \\mathrm{kg}$，$k_{\\mathrm B}=1.38\\times10^{-23}\\ \\mathrm{J/K}$ とする．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta\\nu/\\nu=-gH/c^2=-2.46\\times10^{-15}$（赤方偏移）　(2) 下向き（線源に近づく向き）に $7.4\\times10^{-4}\\ \\mathrm{mm/s}$　(3) $\\Delta T=2MgH/3k_{\\mathrm B}\\approx1.0\\ \\mathrm K$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 光子は重力ポテンシャルを $gH$ だけ登るので，エネルギー $h\\nu$ に対し $h\\nu\\cdot gH/c^2$ を失う：\n\\[ \\frac{\\Delta\\nu}{\\nu}=-\\frac{gH}{c^2}=-\\frac{9.80\\times22.6}{(3.00\\times10^8)^2}=-2.46\\times10^{-15}. \\]\n吸収体の共鳴振動数より低い（赤方偏移）．\n\n(2) 吸収体から見た光子の振動数を上げるには，吸収体を線源に**近づける**向き，すなわち下向きに動かす．$v/c=gH/c^2$ より\n\\[ v=\\frac{gH}{c}=\\frac{9.80\\times22.6}{3.00\\times10^8}=7.4\\times10^{-7}\\ \\mathrm{m/s}=7.4\\times10^{-4}\\ \\mathrm{mm/s}. \\]\n\n(3) $\\langle v^2\\rangle=3k_{\\mathrm B}T/M$ より二次ドップラーシフトは $-3k_{\\mathrm B}T/2Mc^2$．温度差 $\\Delta T$ による相対ずれ $3k_{\\mathrm B}\\Delta T/2Mc^2$ が $gH/c^2$ に等しいとおくと\n\\[ \\Delta T=\\frac{2MgH}{3k_{\\mathrm B}}=\\frac{2\\times9.45\\times10^{-26}\\times9.80\\times22.6}{3\\times1.38\\times10^{-23}}=1.0\\ \\mathrm K. \\]\nわずか 1 K の温度差で効果と同程度の系統誤差が生じるため，実際の実験では線源と吸収体の温度を厳密に管理し，両者の上下を入れ替えた測定の差をとった．"
+   }
+  ],
+  "idea": {
+   "tex": "重力赤方偏移は $gH/c^2$ で，補償には吸収体を線源へ近づける．二次ドップラー効果では約 1 K の温度差が同じ大きさのずれを生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 下向きに [mm/s]：≈7.4e-4\n(3) $\\Delta T$ [K]：≈1.0"
+  },
+  "methods": [],
+  "tags": [
+   "重力赤方偏移",
+   "パウンド・レブカ実験",
+   "メスバウアー効果",
+   "二次ドップラー効果",
+   "系統誤差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "GR-01-013",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -640,6 +2014,55 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "GR-01-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "GR-70",
+  "level": 4,
+  "minutes": 40,
+  "theme": "回転する円柱のまわりの光の周回時間差（重力磁気）",
+  "topic": "回転する円柱のまわりの光の周回時間差（重力磁気）",
+  "statement": {
+   "tex": "密度 $\\rho$，半径 $R$ の非常に長い円柱が，軸のまわりに角速度 $\\omega$ で回っている．線形化した重力（ローレンツゲージ）で，計量の $h_{0i}$ 成分は\n\\[\n\\nabla^2h_{0i}=\\frac{16\\pi G}{c^4}\\rho c\\,v_i\n\\]\nをみたす（$v_i$ は物質の速度）．円柱のまわりの半径 $r\\ (>R)$ の円に沿って光ファイバーを張り，固定された点から光を時計回りと反時計回りに1周させる．$\\omega$ と $G$ の1次まで考える．\n\\begin{enumerate}\n\\item 静磁気学との対応を使って $\\oint h_{0i}dx^i$ を求め，2方向の周回時間の差 $\\Delta t$ を求めよ．$\\Delta t$ が $r$ によらないことを確かめよ．どちら向きの光が先に戻るか．\n\\item 回転しない円柱のまわりで実験室全体を角速度 $\\Omega$ で回したときのサニャック効果 $\\Delta t=\\dfrac{4\\pi r^2\\Omega}{c^2}$ と比べ，(1) と同じ時間差を与える $\\Omega$ を，単位長さあたりの角運動量 $j$ で表せ．\n\\item 鋼鉄（$\\rho=8.0\\times10^3\\ \\mathrm{kg/m^3}$）の円柱 $R=0.50\\ \\mathrm{m}$ を毎秒100回転させたときの $\\Delta t$ を求め，可視光の周期 $2\\times10^{-15}\\ \\mathrm{s}$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left|\\oint h_{0i}dx^i\\right|=\\dfrac{4\\pi^2G\\rho\\omega R^4}{c^3}$，$\\Delta t=\\dfrac{8\\pi^2G\\rho\\omega R^4}{c^4}=\\dfrac{16\\pi Gj}{c^4}$（$r$ によらない），回転と同じ向きの光が先に戻る　(2) $\\Omega=\\dfrac{4Gj}{r^2c^2}$　(3) $\\Delta t\\approx2\\times10^{-37}\\ \\mathrm{s}$，光の周期の約 $10^{-22}$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 静磁気学 $\\nabla^2\\boldsymbol A=-\\mu_0\\boldsymbol J$ と比べると，$h_{0i}$ は $\\boldsymbol A$ で $\\mu_0\\to\\dfrac{16\\pi G}{c^3}$，電荷密度 $\\to\\rho$ とし，全体の符号を変えたものである．回転する一様な電荷の円柱はソレノイドと同じで，内部の磁場は $B(r')=\\mu_0\\rho_e\\omega\\dfrac{R^2-r'^2}{2}$，外部の磁場は $0$．外側の円に沿った $\\oint\\boldsymbol A\\cdot d\\boldsymbol l$ は内部の磁束に等しい：\n\\[\n\\Phi=\\int_0^R\\mu_0\\rho_e\\omega\\frac{R^2-r'^2}{2}2\\pi r'dr'=\\frac{\\pi\\mu_0\\rho_e\\omega R^4}{4}.\n\\]\n置き換えて $\\left|\\oint h_{0i}dx^i\\right|=\\boldsymbol{\\dfrac{4\\pi^2G\\rho\\omega R^4}{c^3}}$．\n\n光は $ds^2=0$：$-c^2dt^2+2h_{0i}c\\,dt\\,dx^i+dl^2=0$ より $c\\,dt\\simeq dl+h_{0i}dx^i$．向きを変えると第2項の符号が変わるので\n\\[\n\\boldsymbol{\\Delta t=\\frac{2}{c}\\left|\\oint h_{0i}dx^i\\right|=\\frac{8\\pi^2G\\rho\\omega R^4}{c^4}=\\frac{16\\pi Gj}{c^4}},\\qquad j=\\frac12\\pi\\rho R^4\\omega .\n\\]\n円柱の外では「重力磁場」は $0$ だが，ポテンシャルの周回積分は内部の磁束で決まるので，$\\Delta t$ は $\\boldsymbol{r}$ \\textbf{によらない}（アハラノフ＝ボーム効果と同じ構造）．$h_{0i}$ は $-\\boldsymbol A$ に対応するので，回転と同じ向きに進む光の方が $dt$ が小さく，\\textbf{先に戻る}（慣性系の引きずり）．\n\n(2) $\\dfrac{4\\pi r^2\\Omega}{c^2}=\\dfrac{16\\pi Gj}{c^4}$ より $\\boldsymbol{\\Omega=\\dfrac{4Gj}{r^2c^2}}$．これは半径 $r$ での慣性系の引きずりの角速度で，$r^{-2}$ で減る．\n\n(3) $\\omega=2\\pi\\times100\\ \\mathrm{s^{-1}}$ として\n\\[\n\\Delta t=\\frac{8\\pi^2\\times6.67\\times10^{-11}\\times8.0\\times10^3\\times628\\times0.0625}{(3.0\\times10^8)^4}\\approx\\boldsymbol{2\\times10^{-37}\\ \\mathrm{s}},\n\\]\n光の周期の $\\boldsymbol{10^{-22}}$ 倍程度で，実験室での検出は絶望的である．"
+   }
+  ],
+  "idea": {
+   "tex": "線形化重力の $h_{0i}$ はベクトルポテンシャルと同じ方程式に従い，回転する円柱はソレノイドに対応する．外部では「重力磁場」は $0$ でも，周回積分は内部の磁束で決まるので，光の周回時間差は円の半径によらない．原題は $r=R$ での時間差の見積もりで，捻りでは $r$ によらないこと，サニャック効果への読みかえ，向きを問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Omega$：((4 G j)/(r ^(2) c ^(2)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "線形化重力",
+   "重力磁気",
+   "慣性系の引きずり",
+   "サニャック効果"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

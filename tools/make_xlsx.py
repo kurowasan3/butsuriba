@@ -59,6 +59,10 @@ def main():
             code, fno, n = pid.rsplit('-', 2)
             counter[(code, int(fno))] = max(counter.get((code, int(fno)), 0), int(n))
     today = date.today().isoformat()
+    # 参考元などの非公開の情報（private/sources.json、リポジトリには入れない）：tid → {source, method, memo, date, checks}
+    sp = HERE.parent / 'private' / 'sources.json'
+    private = json.loads(sp.read_text(encoding='utf-8')) if sp.exists() else {}
+    mark = lambda b: '済' if b else '未'
     for it in items:
         code = SUBJECTS[it['subject']][0]
         fno = SUBJECTS[it['subject']][1].index(it['field']) + 1
@@ -73,6 +77,13 @@ def main():
                '解答・解説': it['solution'], '核となるアイデア': it['idea'], '参考元（非公開）': '', '作成方法': 'AI作成',
                '検証:二重解答': '', '検証:SymPy等': '✓', '検証:人間確認': '', '検証済み': '', 'タグ': it['tags'],
                'メモ': '', '入力用の答え': it['input']}
+        pv = private.get(it.get('tid') or '')
+        if pv:
+            ck = pv.get('checks') or {}
+            row.update({'参考元（非公開）': pv.get('source', ''), '作成方法': pv.get('method', ''), 'メモ': pv.get('memo', ''),
+                        '検証:二重解答': mark(ck.get('dual')), '検証:SymPy等': mark(ck.get('sympy')), '検証:人間確認': mark(ck.get('human'))})
+            if pv.get('date') and it['q'] not in known:
+                row['作成日'] = pv['date']
         ws.append([row[c] for c in COLS])
     for i, c in enumerate(COLS, 1):
         ws.column_dimensions[ws.cell(1, i).column_letter].width = WIDTH.get(c, 10)

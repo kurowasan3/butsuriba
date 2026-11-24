@@ -388,6 +388,1105 @@
   }
  },
  {
+  "id": "AM-03-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "磁場の中の2次元調和振動子：速度に1次の項をもつラグランジアン",
+  "topic": "磁場の中の2次元調和振動子：速度に1次の項をもつラグランジアン",
+  "statement": {
+   "tex": "$L=\\frac12(\\dot x^2+\\dot y^2)+\\frac B2(x\\dot y-y\\dot x)-\\frac12\\omega_0^2(x^2+y^2)$ を考える．\n\\begin{enumerate}\n\\item ラグランジュ方程式を求めよ．\n\\item ハミルトニアン $H(x,y,p_x,p_y)$ を求めよ．\n\\item 基準振動の角振動数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\ddot x=B\\dot y-\\omega_0^2x$，$\\ddot y=-B\\dot x-\\omega_0^2y$　(2) $H=\\frac12\\left(p_x+\\frac B2y\\right)^2+\\frac12\\left(p_y-\\frac B2x\\right)^2+\\frac12\\omega_0^2(x^2+y^2)$　(3) $\\omega_\\pm=\\sqrt{\\omega_0^2+\\frac{B^2}{4}}\\pm\\frac B2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p_x=\\dot x-\\frac B2y$，$p_y=\\dot y+\\frac B2x$．$\\dot p_x=\\frac B2\\dot y-\\omega_0^2x$ から $\\boldsymbol{\\ddot x=B\\dot y-\\omega_0^2x}$，同様に $\\ddot y=-B\\dot x-\\omega_0^2y$（ローレンツ力）．\n\n(2) $H=p_x\\dot x+p_y\\dot y-L$ で速度の1次の項が消え，与式．\n\n(3) $z=x+iy$ で $\\ddot z=-iB\\dot z-\\omega_0^2z$，$z\\propto e^{-i\\omega t}$ で $\\omega^2-B\\omega-\\omega_0^2=0$．$\\boldsymbol{\\omega_\\pm=\\sqrt{\\omega_0^2+B^2/4}\\pm B/2}$（$B\\to$ 大でランダウ準位とマグネトロン運動）．"
+   }
+  ],
+  "idea": {
+   "tex": "速度に1次の項はハミルトニアンに現れず，運動量と速度の関係をずらすだけである．原題のあいまいな例を，物理的な意味のある磁場中の振動子に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $H$：((1)/(2))(p_x +((B)/(2)) y)^(2)+((1)/(2))(p_y -((B)/(2)) x)^(2)+((1)/(2)) ω_0 ^(2)(x ^(2)+ y ^(2))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ハミルトニアン",
+   "ルジャンドル変換",
+   "磁場",
+   "基準振動"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "速度に比例する抵抗があると位相空間の面積は縮む",
+  "topic": "速度に比例する抵抗があると位相空間の面積は縮む",
+  "statement": {
+   "tex": "質量 $m$ の粒子が重力と速度に比例する抵抗の中を鉛直に動く：$\\dot z=p/m$，$\\dot p=-mg-\\gamma p$．初期値が長方形 $|z|\\leqq a$，$|p|\\leqq b$ を占める．\n\\begin{enumerate}\n\\item 時刻 $t$ での $(z,p)$ を初期値の1次式で表せ．\n\\item 時刻 $t$ で占める領域の面積を求めよ．\n\\item これがリウヴィルの定理と矛盾しない理由を，相空間の流れの発散で説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=p_0e^{-\\gamma t}-\\dfrac{mg}{\\gamma}(1-e^{-\\gamma t})$，$z=z_0+\\dfrac{p_0}{m\\gamma}(1-e^{-\\gamma t})+\\cdots$　(2) $4abe^{-\\gamma t}$　(3) 発散が $-\\gamma$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p$ の式を解き，$z$ を積分すると $z=z_0+\\dfrac{p_0}{m\\gamma}(1-e^{-\\gamma t})-\\dfrac{g}{\\gamma}\\left(t-\\dfrac{1-e^{-\\gamma t}}{\\gamma}\\right)$．\n\n(2) 写像のヤコビアンは $\\det\\begin{pmatrix}1&\\frac{1-e^{-\\gamma t}}{m\\gamma}\\\\0&e^{-\\gamma t}\\end{pmatrix}=e^{-\\gamma t}$，面積 $\\boldsymbol{4abe^{-\\gamma t}}$（平行四辺形）．\n\n(3) 流れの発散 $\\partial_z\\dot z+\\partial_p\\dot p=-\\gamma\\ne0$．抵抗のある運動はハミルトン系でなく，面積は保たれない．（$\\gamma\\to0$ で $4ab$ に戻る．）"
+   }
+  ],
+  "idea": {
+   "tex": "リウヴィルの定理はハミルトン系の位相空間の流れの発散が $0$ であることによる．原題の自由落下の面積保存に抵抗を加え，面積が縮むことを見させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 4 a b e ^(- γ t)\n(3) 発散が：- γ"
+  },
+  "methods": [],
+  "tags": [
+   "リウヴィルの定理",
+   "位相空間",
+   "散逸",
+   "面積"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "質量行列が非対角な2重振り子のHamilton関数",
+  "topic": "質量行列が非対角な2重振り子のHamilton関数",
+  "statement": {
+   "tex": "長さ $l$ の軽い棒 2 本と質量 $m$ のおもり 2 個からなる 2 重振り子が鉛直面内で微小振動する．上の棒と下の棒が鉛直となす角を $\\theta_1,\\theta_2$ とすると，2 次の近似で\n\\[\nT=\\frac12ml^2\\bigl(2\\dot\\theta_1^2+2\\dot\\theta_1\\dot\\theta_2+\\dot\\theta_2^2\\bigr),\\qquad U=\\frac12mgl\\bigl(2\\theta_1^2+\\theta_2^2\\bigr)\n\\]\nである．\n\\begin{enumerate}\n\\item $T=\\frac12\\sum a_{rs}\\dot\\theta_r\\dot\\theta_s$ の係数行列 $a$ とその逆行列 $a^{-1}$ を求め，Hamilton 関数 $H=\\frac12\\sum(a^{-1})_{rs}p_rp_s+U$ を具体的に書け．運動量 $p_1,p_2$ は $\\dot\\theta_1,\\dot\\theta_2$ でどう表されるか．\n\\item 正準方程式を $\\dot{\\boldsymbol z}=\\mathsf M\\boldsymbol z$（$\\boldsymbol z=(\\theta_1,\\theta_2,p_1,p_2)^{\\rm T}$）の形に書き，$\\mathsf M$ の固有値が $\\pm i\\omega$ の形であることを示して基準角振動数を求めよ．\n\\item $\\mathsf M$ の固有値が $\\lambda$ なら $-\\lambda$ も固有値であることを，正準方程式の構造（$\\mathsf M=\\mathsf J\\mathsf S$，$\\mathsf S$ は対称，$\\mathsf J=\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}$ ブロック）から一般的に示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_1^2-2p_1p_2+2p_2^2}{2ml^2}+\\dfrac12mgl(2\\theta_1^2+\\theta_2^2)$　(2) $\\omega^2=(2\\mp\\sqrt2)\\,g/l$　(3) 証明"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a=ml^2\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$，$\\det=m^2l^4$，$a^{-1}=\\dfrac{1}{ml^2}\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}$．$p_r=\\sum_sa_{rs}\\dot\\theta_s$：$p_1=ml^2(2\\dot\\theta_1+\\dot\\theta_2)$，$p_2=ml^2(\\dot\\theta_1+\\dot\\theta_2)$．よって\n\\[\nH=\\frac{p_1^2-2p_1p_2+2p_2^2}{2ml^2}+\\frac12mgl(2\\theta_1^2+\\theta_2^2).\n\\]\n\n(2) $H=\\frac12\\boldsymbol z^{\\rm T}\\mathsf S\\boldsymbol z$，$\\mathsf S=\\begin{pmatrix}b&0\\\\0&a^{-1}\\end{pmatrix}$（$b=mgl\\,\\mathrm{diag}(2,1)$）とすると正準方程式は $\\dot{\\boldsymbol\\theta}=a^{-1}\\boldsymbol p$，$\\dot{\\boldsymbol p}=-b\\boldsymbol\\theta$，すなわち $\\mathsf M=\\begin{pmatrix}0&a^{-1}\\\\-b&0\\end{pmatrix}$．$\\mathsf M^2=\\mathrm{diag}(-a^{-1}b,\\,-ba^{-1})$ より $\\mathsf M$ の固有値 $\\lambda$ は $\\lambda^2=-\\omega^2$，$\\omega^2$ は $a^{-1}b$ の固有値．\n\\[\na^{-1}b=\\frac gl\\begin{pmatrix}2&-1\\\\-2&2\\end{pmatrix},\\quad (2-\\mu)^2-2=0\\ \\Rightarrow\\ \\mu=2\\pm\\sqrt2\\ \\Bigl(\\times\\frac gl\\Bigr).\n\\]\n固有値は $\\pm i\\omega$，$\\omega^2=(2\\mp\\sqrt2)g/l$．\n\n(3) $\\mathsf J^{\\rm T}=-\\mathsf J=\\mathsf J^{-1}$，$\\mathsf S^{\\rm T}=\\mathsf S$ より $\\mathsf M^{\\rm T}=\\mathsf S^{\\rm T}\\mathsf J^{\\rm T}=-\\mathsf S\\mathsf J=-\\mathsf J^{-1}(\\mathsf J\\mathsf S)\\mathsf J=-\\mathsf J^{-1}\\mathsf M\\mathsf J$．よって $\\mathsf M^{\\rm T}$ は $-\\mathsf M$ と相似で，$\\mathsf M$ と $\\mathsf M^{\\rm T}$ は同じ固有値をもつから，$\\lambda$ が固有値なら $-\\lambda$ も固有値．（Hamilton 系の線形化では固有値が $\\pm$ 対で現れ，安定なら純虚数の対になる．）"
+   }
+  ],
+  "idea": {
+   "tex": "運動エネルギーが非対角でも Hamilton 関数は $a^{-1}$ で書け，正準方程式の行列 $\\mathsf J\\mathsf S$ の固有値が $\\pm$ 対になる（シンプレクティック構造）ことが基準振動の計算に直結する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $H$：((p_1 ^(2)-2 p_1 p_2 +2 p_2 ^(2))/(2 m l ^(2)))+((1)/(2)) m g l (2 θ_1 ^(2)+ θ_2 ^(2))\n(2) 記述\n(3) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "Hamilton関数",
+   "2次形式",
+   "2重振り子",
+   "基準振動",
+   "シンプレクティック行列"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "逆さ調和振動子の位相空間とセパラトリクス",
+  "topic": "逆さ調和振動子の位相空間とセパラトリクス",
+  "statement": {
+   "tex": "Hamilton 関数\n\\[\nH=\\frac{p^2}{2m}-\\frac12m\\omega^2q^2\n\\]\nの 1 次元の系（不安定平衡点の近くの運動のモデル）を考える．\n\\begin{enumerate}\n\\item 正準方程式を書き，Newton の運動方程式と同等であることを示せ．初期値 $q(0)=q_0,\\ p(0)=p_0$ の解を求めよ．\n\\item 位相空間の軌道を求め，$E>0,\\ E=0,\\ E<0$ の場合に分けて図示せよ（言葉で説明してよい）．$E=0$ の軌道（セパラトリクス）を式で表せ．\n\\item $q(0)=-a$，$p(0)=m\\omega a(1+\\varepsilon)$（$0<\\varepsilon\\ll1$）から出発した粒子が $q=0$ に達するまでの時間 $t_1$ を求め，$\\varepsilon\\to0$ で $t_1\\simeq\\dfrac{1}{2\\omega}\\log\\dfrac{2}{\\varepsilon}$ と対数的に発散することを示せ．\n\\item 位相空間の正方形領域 $|q|\\le b,\\ |p|\\le m\\omega b$ が時間 $t$ 後にどんな図形に移るかを述べ，面積が保たれることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $q=q_0\\cosh\\omega t+\\dfrac{p_0}{m\\omega}\\sinh\\omega t$，$p=p_0\\cosh\\omega t+m\\omega q_0\\sinh\\omega t$　(2) 双曲線 $p^2-m^2\\omega^2q^2=2mE$，セパラトリクス $p=\\pm m\\omega q$　(3) $t_1=\\dfrac1\\omega\\tanh^{-1}\\dfrac{1}{1+\\varepsilon}$　(4) 平行四辺形，面積 $4m\\omega b^2$ 不変"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot q=\\partial H/\\partial p=p/m$，$\\dot p=-\\partial H/\\partial q=m\\omega^2q$．第 1 式を微分して第 2 式を代入すると $m\\ddot q=m\\omega^2q$（反発力 $m\\omega^2q$ の Newton の式）．解は\n\\[\nq=q_0\\cosh\\omega t+\\frac{p_0}{m\\omega}\\sinh\\omega t,\\qquad p=p_0\\cosh\\omega t+m\\omega q_0\\sinh\\omega t .\n\\]\n\n(2) $H=E$ より $p^2-m^2\\omega^2q^2=2mE$．$E>0$：$p$ 軸と交わる双曲線（左右に通り抜ける運動），$E<0$：$q$ 軸と交わる双曲線（跳ね返される運動），$E=0$：漸近線 $p=\\pm m\\omega q$ 自身．$p=-m\\omega q$ 上の点は原点に近づき（安定多様体），$p=m\\omega q$ 上の点は原点から遠ざかる（不安定多様体）．原点は鞍点．\n\n(3) $q(t)=-a\\cosh\\omega t+a(1+\\varepsilon)\\sinh\\omega t=0$ より $\\tanh\\omega t_1=\\dfrac{1}{1+\\varepsilon}$，\n\\[\nt_1=\\frac{1}{\\omega}\\tanh^{-1}\\frac1{1+\\varepsilon}=\\frac{1}{2\\omega}\\log\\frac{2+\\varepsilon}{\\varepsilon}\\simeq\\frac{1}{2\\omega}\\log\\frac2\\varepsilon .\n\\]\n$\\varepsilon=0$（セパラトリクス上）では無限の時間をかけて原点に近づくだけで，到達しない．\n\n(4) 写像は線形で，$(q,p)$ を行列 $\\begin{pmatrix}\\cosh\\omega t&\\sinh\\omega t/(m\\omega)\\\\ m\\omega\\sinh\\omega t&\\cosh\\omega t\\end{pmatrix}$ で変換する．正方形は平行四辺形に移り，$p=m\\omega q$ 方向に $e^{\\omega t}$ 倍に伸び，$p=-m\\omega q$ 方向に $e^{-\\omega t}$ 倍に縮む．行列式は $\\cosh^2\\omega t-\\sinh^2\\omega t=1$ なので面積 $4m\\omega b^2$ は不変（Liouville の定理）．"
+   }
+  ],
+  "idea": {
+   "tex": "逆さ振動子では位相空間の軌道が双曲線になり，セパラトリクスのすぐ近くを通る運動は鞍点付近で対数的に長い時間を費やす．領域は伸び縮みしながら面積を保つ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "正準方程式",
+   "位相空間",
+   "逆さ振動子",
+   "セパラトリクス",
+   "鞍点",
+   "Liouvilleの定理"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "V字ポテンシャルの位相空間と断熱不変量",
+  "topic": "V字ポテンシャルの位相空間と断熱不変量",
+  "statement": {
+   "tex": "1次元の質点（質量 $m$）が $H(q,p)=\\dfrac{p^2}{2m}+F|q|$（$F>0$ は定数）で記述される．エネルギーを $E$ とする．\n\\begin{enumerate}\n\\item ハミルトンの正準方程式を書き，位相空間 $(q,p)$ での軌跡の形を述べよ（どのような曲線をつないだものか）．\n\\item 軌跡が囲む面積 $S(E)$ を求めよ．\n\\item 周期 $T$ を正準方程式から直接求め，$T=dS/dE$ が成り立つことを確かめよ．\n\\item $F$ を振動の周期に比べて十分ゆっくり $8$ 倍に増やした．$S$ が断熱不変量であることを用いて，終状態のエネルギーがはじめの何倍かを求めよ．また周期は何倍になるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dot q=p/m$, $\\dot p=-F\\,\\mathrm{sgn}\\,q$．2本の放物線 $p^2=2m(E\\mp Fq)$ をつないだ閉曲線　(2) $S=\\dfrac{8\\sqrt{2m}}{3F}E^{3/2}$　(3) $T=\\dfrac{4\\sqrt{2mE}}{F}$　(4) エネルギー $4$ 倍，周期 $1/4$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot q=\\partial H/\\partial p=p/m$，$\\dot p=-\\partial H/\\partial q=-F\\,\\mathrm{sgn}\\,q$．$q>0$ では $p^2=2m(E-Fq)$，$q<0$ では $p^2=2m(E+Fq)$ という左右に開いた放物線の弧で，$q=\\pm E/F$ で $p=0$，$q=0$ で $p=\\pm\\sqrt{2mE}$ を通る．$q=0$ でつながる点では接線の傾きが不連続（角）になる．時計回りに回る．\n\n(2) 対称性より\n\\[S=4\\int_0^{E/F}\\sqrt{2m(E-Fq)}\\,dq=4\\sqrt{2m}\\cdot\\frac{2}{3F}E^{3/2}=\\frac{8\\sqrt{2m}}{3F}E^{3/2}.\\]\n\n(3) $q=0$ から $q=E/F$ までは一定の減速度 $F/m$ で速さ $\\sqrt{2E/m}$ が $0$ になるので，所要時間 $\\sqrt{2E/m}\\,/(F/m)=\\sqrt{2mE}/F$．周期はその4倍で $T=4\\sqrt{2mE}/F$．一方 $dS/dE=\\frac{8\\sqrt{2m}}{3F}\\cdot\\frac32E^{1/2}=\\frac{4\\sqrt{2mE}}{F}$ で一致する．（一般に $T=\\oint dq/\\dot q=\\oint m\\,dq/p=\\frac{\\partial}{\\partial E}\\oint p\\,dq$．）\n\n(4) $S\\propto E^{3/2}/F$ が一定なので $E\\propto F^{2/3}$．$F\\to8F$ で $E\\to 8^{2/3}E=4E$．周期は $T\\propto E^{1/2}/F$ より $2/8=1/4$ 倍．調和振動子（$E\\propto\\omega$）と異なり，エネルギーの増え方はポテンシャルの形で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "位相空間面積 $S=\\oint p\\,dq$ は周期を $T=dS/dE$ で与え，ゆっくりした変化では不変に保たれる．調和振動子の楕円を非調和なV字ポテンシャルに一般化する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $S$：((8 sqrt(2 m))/(3 F)) E ^(3/2)\n(3) $T$：((4 sqrt(2 m E))/(F))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "位相空間",
+   "作用変数",
+   "断熱不変量",
+   "周期"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "2次元調和振動子の転回半径と閉軌道",
+  "topic": "2次元調和振動子の転回半径と閉軌道",
+  "statement": {
+   "tex": "質量 $m$，角振動数 $\\omega$ の2次元等方調和振動子のハミルトニアンは，平面極座標 $(r,\\varphi)$ と共役運動量 $(p_r,p_\\varphi)$ を用いて\n\\[H=\\frac{p_r^2}{2m}+\\frac{p_\\varphi^2}{2mr^2}+\\frac12m\\omega^2r^2\\]\nである．面積速度の2倍を $h\\equiv r^2\\dot\\varphi\\ (>0)$，エネルギーを $E$ とする．\n\\begin{enumerate}\n\\item 動径の転回点（$p_r=0$）の半径 $r_1<r_2$ について，$r_1r_2$ と $r_1^2+r_2^2$ を $E,h,m,\\omega$ で表せ．また $E\\ge m\\omega h$ を示し，等号が円運動に対応することを述べよ．\n\\item $r=r_1$ から $r=r_2$ まで進む間の $\\varphi$ の変化 $\\Delta\\varphi$ が，$E,h$ によらず $\\pi/2$ であることを積分により示せ．\n\\item (2) と面積速度一定から，軌道は原点を中心とする半軸 $r_1,r_2$ の楕円であると考えられる．この楕円の面積を一周期で掃く条件から，公転周期が $2\\pi/\\omega$ になることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $r_1r_2=h/\\omega$，$r_1^2+r_2^2=\\dfrac{2E}{m\\omega^2}$，$E\\ge m\\omega h$（等号で $r_1=r_2$：円運動）　(2) $\\Delta\\varphi=\\pi/2$　(3) $\\pi r_1r_2/(h/2)=2\\pi/\\omega$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p_\\varphi=mh$（保存）．$p_r=0$ で $E=\\dfrac{mh^2}{2r^2}+\\dfrac12m\\omega^2r^2$，$u=r^2$ とおくと\n\\[\\omega^2u^2-\\frac{2E}{m}u+h^2=0.\\]\n解と係数の関係より $r_1^2r_2^2=h^2/\\omega^2$，$r_1^2+r_2^2=2E/(m\\omega^2)$．よって $r_1r_2=h/\\omega$．相加相乗平均より $r_1^2+r_2^2\\ge 2r_1r_2$，すなわち $2E/(m\\omega^2)\\ge 2h/\\omega$，$E\\ge m\\omega h$．等号は $r_1=r_2$ で，動径が変化しない円運動．\n\n(2) $\\dot r=p_r/m=\\pm\\sqrt{2E/m-h^2/r^2-\\omega^2r^2}$，$\\dot\\varphi=h/r^2$ より\n\\[\\Delta\\varphi=\\int_{r_1}^{r_2}\\frac{h\\,dr}{r^2\\sqrt{2E/m-h^2/r^2-\\omega^2r^2}}.\\]\n$u=r^2$（$dr=du/(2r)$）とすると\n\\[\\Delta\\varphi=\\frac h2\\int_{u_1}^{u_2}\\frac{du}{u\\sqrt{-\\omega^2u^2+(2E/m)u-h^2}}=\\frac h2\\int_{u_1}^{u_2}\\frac{du}{u\\,\\omega\\sqrt{(u-u_1)(u_2-u)}}.\\]\n公式 $\\displaystyle\\int_{u_1}^{u_2}\\frac{du}{u\\sqrt{(u-u_1)(u_2-u)}}=\\frac{\\pi}{\\sqrt{u_1u_2}}$ と $\\sqrt{u_1u_2}=r_1r_2=h/\\omega$ より\n\\[\\Delta\\varphi=\\frac{h}{2\\omega}\\cdot\\frac{\\pi\\omega}{h}=\\frac\\pi2.\\]\nゆえに近点から遠点まで常に $90^\\circ$ 回り，一周で動径は2回振動して軌道は閉じる（ケプラー問題の $180^\\circ$ と対照的）．\n\n(3) 面積速度は $h/2$ で一定．楕円の面積 $\\pi r_1r_2=\\pi h/\\omega$ を掃く時間は $\\dfrac{\\pi h/\\omega}{h/2}=\\dfrac{2\\pi}{\\omega}$ で，$E,h$ によらない．デカルト座標で $x,y$ が各々角振動数 $\\omega$ で単振動することと整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "転回点の4次方程式の解と係数の関係から $r_1r_2=h/\\omega$ が出て，近点→遠点の角度が常に $\\pi/2$ になる．面積速度で周期まで閉じた議論ができる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta\\varphi$：pi /2\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "2次元調和振動子",
+   "中心力",
+   "面積速度",
+   "閉軌道",
+   "転回点"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "球面容器内を転がる球のハミルトニアン",
+  "topic": "球面容器内を転がる球のハミルトニアン",
+  "statement": {
+   "tex": "半径 $R$ の球面容器の内面を，半径 $a\\ (<R)$，質量 $m$，中心まわりの慣性モーメント $I=\\beta ma^2$ の球が，容器の中心 $O$ を含む鉛直面内で滑らずに転がる．$O$ と球の中心を結ぶ線が鉛直下向きとなす角を $\\theta$ とし，重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item ラグランジアンを求め，$\\theta$ に共役な運動量 $p_\\theta$，ハミルトニアン $H(\\theta,p_\\theta)$，正準方程式を書け．\n\\item 微小振動の角振動数を求めよ．中身の詰まった一様球（$\\beta=2/5$）と薄い球殻（$\\beta=2/3$）の周期の比 $T_{\\text{殻}}/T_{\\text{一様}}$ を求めよ．\n\\item $p_\\theta$ は「$O$ のまわりの球の角運動量 $L_O$」（重心運動の角運動量＋自転の角運動量）とは一致しない．$L_O$ を $\\dot\\theta$ で表し，$p_\\theta$ との比を求めよ．また，一様球で $L_O$ が運動中つねに $0$ となるのは $R$ が $a$ の何倍のときか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_\\theta=(1+\\beta)m(R-a)^2\\dot\\theta$，$H=\\dfrac{p_\\theta^2}{2(1+\\beta)m(R-a)^2}-mg(R-a)\\cos\\theta$　(2) $\\omega=\\sqrt{\\dfrac{g}{(1+\\beta)(R-a)}}$，$T_{\\text{殻}}/T_{\\text{一様}}=\\dfrac{5}{\\sqrt{21}}\\approx1.09$　(3) $L_O=m(R-a)\\{(R-a)-\\beta a\\}\\dot\\theta$，$L_O/p_\\theta=\\dfrac{R-a-\\beta a}{(1+\\beta)(R-a)}$，$R=\\tfrac75a$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 球の中心の速さは $v=(R-a)\\dot\\theta$．接点で滑らない条件から，球の自転角速度（紙面垂直成分，$\\theta$ の増す向きを正）は $\\Omega_s=-v/a$（転がりながら内面を進むので公転と逆回り）．\n\\[T=\\frac12mv^2+\\frac12\\beta ma^2\\Omega_s^2=\\frac12(1+\\beta)m(R-a)^2\\dot\\theta^2,\\quad U=-mg(R-a)\\cos\\theta.\\]\n\\[p_\\theta=\\frac{\\partial L}{\\partial\\dot\\theta}=(1+\\beta)m(R-a)^2\\dot\\theta,\\quad H=\\frac{p_\\theta^2}{2(1+\\beta)m(R-a)^2}-mg(R-a)\\cos\\theta.\\]\n正準方程式：$\\dot\\theta=\\dfrac{p_\\theta}{(1+\\beta)m(R-a)^2}$，$\\dot p_\\theta=-mg(R-a)\\sin\\theta$．\n\n(2) $\\sin\\theta\\simeq\\theta$ として $\\ddot\\theta=-\\dfrac{g}{(1+\\beta)(R-a)}\\theta$，$\\omega=\\sqrt{g/\\{(1+\\beta)(R-a)\\}}$．$T\\propto\\sqrt{1+\\beta}$ より\n\\[\\frac{T_{\\text{殻}}}{T_{\\text{一様}}}=\\sqrt{\\frac{5/3}{7/5}}=\\sqrt{\\frac{25}{21}}=\\frac5{\\sqrt{21}}\\approx1.09.\\]\n\n(3) 重心運動の角運動量は $m(R-a)^2\\dot\\theta$，自転の角運動量は $I\\Omega_s=-\\beta ma^2\\cdot\\frac{(R-a)\\dot\\theta}{a}=-\\beta ma(R-a)\\dot\\theta$．\n\\[L_O=m(R-a)\\{(R-a)-\\beta a\\}\\dot\\theta,\\qquad \\frac{L_O}{p_\\theta}=\\frac{R-a-\\beta a}{(1+\\beta)(R-a)}.\\]\n$p_\\theta$ は「$O$ まわりの角運動量」ではなく，接点まわりの角運動量 $(I+ma^2)|\\Omega_s|=(1+\\beta)ma v$ を $(R-a)/a$ 倍したもので，自転の寄与が同符号で入る．$L_O\\equiv0$ となるのは $R-a=\\beta a$，一様球では $R=(1+\\beta)a=\\tfrac75a$．このとき公転と逆回りの自転がちょうど打ち消し合う．"
+   }
+  ],
+  "idea": {
+   "tex": "転がり拘束で運動エネルギーが $(1+\\beta)$ 倍され，それがハミルトニアンの有効質量に入る．一般化運動量が素朴な「中心まわりの角運動量」と違うことを，自転の向きまで含めて確認する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "剛体",
+   "転がり",
+   "一般化運動量",
+   "ハミルトニアン",
+   "微小振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "運動量表示のラグランジアンと構成不能条件",
+  "topic": "運動量表示のラグランジアンと構成不能条件",
+  "statement": {
+   "tex": "1 自由度系のハミルトニアン $H(q,p)=\\dfrac{p^2}{2m}+V(q)$ に対し，$p$ と $\\dot p$ を独立変数とする「運動量表示のラグランジアン」\n\\[ L'(p,\\dot p)=-\\dot p\\,q-H(q,p) \\]\nを考える．ただし右辺の $q$ は $\\dot p=-\\partial H/\\partial q=-V'(q)$ を $q$ について解き，$\\dot p$ で表したものとする．\n\\begin{enumerate}\n\\item $V=\\tfrac12 kq^2$（$k>0$）のとき $L'$ を求め，その Euler--Lagrange 方程式 $\\dfrac{d}{dt}\\dfrac{\\partial L'}{\\partial\\dot p}-\\dfrac{\\partial L'}{\\partial p}=0$ が元の運動と同じ振動数の単振動を与えることを示せ．座標表示の $L=\\tfrac12 m\\dot q^2-\\tfrac12 kq^2$ と比べ，「質量」と「ばね定数」の役割はどうなっているか．\n\\item $V=\\tfrac14\\lambda q^4$（$\\lambda>0$）のとき $L'$ を求めよ（$\\dot p^{1/3}$ は実数の 3 乗根とする）．その Euler--Lagrange 方程式と定義式 $\\dot p=-\\lambda q^3$ をあわせると Hamilton 方程式が再現されることを示せ．\n\\item 一様な力の場 $V=-Fq$（$F$ は定数）や自由粒子 $V=0$ では $L'$ が構成できない．その理由を述べ，$L'$ が（局所的に）構成できるための $H$ に対する条件を書け．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L'=\\dfrac{\\dot p^2}{2k}-\\dfrac{p^2}{2m}$，$\\ddot p=-(k/m)p$．「質量」$1/k$，「ばね定数」$1/m$ と役割が入れ替わる．(2) $L'=\\tfrac34\\lambda^{-1/3}|\\dot p|^{4/3}-\\dfrac{p^2}{2m}$　(3) $\\dot p=F$ が $q$ によらず $q$ を $\\dot p$ で表せない．条件は $\\partial^2H/\\partial q^2\\neq0$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot p=-kq$ より $q=-\\dot p/k$．\n\\[ L'=-\\dot p\\left(-\\frac{\\dot p}{k}\\right)-\\frac{p^2}{2m}-\\frac k2\\frac{\\dot p^2}{k^2}=\\frac{\\dot p^2}{2k}-\\frac{p^2}{2m}. \\]\nEuler--Lagrange 方程式は $\\dfrac{d}{dt}\\left(\\dfrac{\\dot p}{k}\\right)+\\dfrac pm=0$，すなわち $\\ddot p=-\\dfrac km p$ で角振動数 $\\sqrt{k/m}$ の単振動．これは $q$ の運動と同じ振動数である．$L'$ は「質量」$1/k$，「ばね定数」$1/m$ の調和振動子のラグランジアンの形をしており，運動量表示では慣性とばねの役割が入れ替わる（振動数 $\\sqrt{(1/m)/(1/k)}=\\sqrt{k/m}$ は不変）．\n\n(2) $\\dot p=-\\lambda q^3$ より $q=-(\\dot p/\\lambda)^{1/3}$（実 3 乗根）．$\\dot p\\cdot\\dot p^{1/3}=|\\dot p|^{4/3}$，$q^4=\\lambda^{-4/3}|\\dot p|^{4/3}$ だから\n\\[ L'=\\lambda^{-1/3}|\\dot p|^{4/3}-\\frac{p^2}{2m}-\\frac\\lambda4\\lambda^{-4/3}|\\dot p|^{4/3}=\\frac34\\lambda^{-1/3}|\\dot p|^{4/3}-\\frac{p^2}{2m}. \\]\n$\\partial L'/\\partial\\dot p=\\lambda^{-1/3}\\dot p^{1/3}=-q$，$\\partial L'/\\partial p=-p/m$ なので Euler--Lagrange 方程式は $\\dfrac{d}{dt}(-q)+\\dfrac pm=0$，すなわち $\\dot q=p/m=\\partial H/\\partial p$．定義式 $\\dot p=-\\lambda q^3=-\\partial H/\\partial q$ と合わせて Hamilton 方程式が再現される．\n\n(3) $L'$ を作るには $\\dot p=-\\partial H/\\partial q$ を $q$ について解く必要がある．$V=-Fq$ では $\\dot p=F$，$V=0$ では $\\dot p=0$ となり $q$ を含まないので，$q$ を $\\dot p$ の関数として表せない．逆関数定理より，$\\partial(\\dot p)/\\partial q=-\\partial^2H/\\partial q^2\\neq0$ が（局所的な）可解条件である．これは座標表示の Legendre 変換に必要な $\\partial^2L/\\partial\\dot q^2\\neq0$ に対応する，$q$ についての Legendre 変換の非退化条件である．"
+   }
+  ],
+  "idea": {
+   "tex": "$q\\leftrightarrow\\dot p$ の Legendre 変換は $\\partial^2H/\\partial q^2\\ne0$ のときだけ可能で，調和振動子では質量とばね定数の役割が入れ替わった双対なラグランジアンになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Legendre変換",
+   "運動量表示",
+   "双対性",
+   "非退化条件",
+   "調和振動子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ゲージの異なる2つのハミルトニアンと保存量",
+  "topic": "ゲージの異なる2つのハミルトニアンと保存量",
+  "statement": {
+   "tex": "電荷 $e$，質量 $m$ の粒子が $x$ 軸上を一様な静電場 $E$（$x$ 方向）の中で運動する．電磁ポテンシャルとして\n\\[ \\text{(I)}\\ \\ \\phi=-Ex,\\ A=0,\\qquad \\text{(II)}\\ \\ \\phi=0,\\ A=-Et \\]\nの 2 通りを用いる．ラグランジアンは $L=\\tfrac12 m\\dot x^2-e\\phi+e\\dot xA$ である．\n\\begin{enumerate}\n\\item (I),(II) のラグランジアン $L_{\\rm I},L_{\\rm II}$ に対し，$L_{\\rm II}=L_{\\rm I}+\\dfrac{d}{dt}f(x,t)$ となる関数 $f$ を求めよ．\n\\item それぞれの正準運動量 $p_{\\rm I},p_{\\rm II}$ とハミルトニアン $H_{\\rm I},H_{\\rm II}$ を求め，$p_{\\rm II}=p_{\\rm I}+\\partial f/\\partial x$，$H_{\\rm II}=H_{\\rm I}-\\partial f/\\partial t$ が成り立つことを確かめよ．\n\\item (II) では $x$ が循環座標なので $p_{\\rm II}$ は保存する．粒子は加速しているのに「運動量」が保存するのはなぜか．$p_{\\rm II}$ を力学的な量で表して説明せよ．\n\\item $H_{\\rm II}$ は保存しない．$\\dfrac{dH_{\\rm II}}{dt}$ を求め，(II) の正準変数で書いた保存量（エネルギー）を見出せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f=-eExt$　(2) $p_{\\rm I}=m\\dot x$，$p_{\\rm II}=m\\dot x-eEt$，$H_{\\rm I}=\\dfrac{p_{\\rm I}^2}{2m}-eEx$，$H_{\\rm II}=\\dfrac{(p_{\\rm II}+eEt)^2}{2m}$　(3) $p_{\\rm II}=m\\dot x-eEt$ は「運動量 − 力積」で一定（初期運動量に等しい）　(4) $\\dfrac{dH_{\\rm II}}{dt}=\\dfrac{eE}{m}(p_{\\rm II}+eEt)$，保存量 $H_{\\rm II}-eEx$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L_{\\rm I}=\\tfrac12m\\dot x^2+eEx$，$L_{\\rm II}=\\tfrac12m\\dot x^2-eEt\\dot x$．\n\\[ L_{\\rm II}-L_{\\rm I}=-eEt\\dot x-eEx=-\\frac{d}{dt}(eExt) \\]\nより $f=-eExt$（定数の差は任意）．\n\n(2) $p_{\\rm I}=m\\dot x$，$p_{\\rm II}=m\\dot x-eEt$．$\\partial f/\\partial x=-eEt$ なので $p_{\\rm II}=p_{\\rm I}+\\partial f/\\partial x$．\n$H_{\\rm I}=p_{\\rm I}\\dot x-L_{\\rm I}=\\dfrac{p_{\\rm I}^2}{2m}-eEx$．$H_{\\rm II}=p_{\\rm II}\\dot x-L_{\\rm II}$ に $\\dot x=(p_{\\rm II}+eEt)/m$ を入れると\n\\[ H_{\\rm II}=\\frac{(p_{\\rm II}+eEt)^2}{m}-\\frac{(p_{\\rm II}+eEt)^2}{2m}+eEt\\frac{p_{\\rm II}+eEt}{m}-eEt\\frac{p_{\\rm II}+eEt}{m}=\\frac{(p_{\\rm II}+eEt)^2}{2m}. \\]\n一方 $\\partial f/\\partial t=-eEx$ なので $H_{\\rm I}-\\partial f/\\partial t=\\dfrac{(m\\dot x)^2}{2m}-eEx+eEx=\\dfrac{(p_{\\rm II}+eEt)^2}{2m}=H_{\\rm II}$．\n\n(3) $H_{\\rm II}$ は $x$ を含まないので $\\dot p_{\\rm II}=-\\partial H_{\\rm II}/\\partial x=0$．実際 $p_{\\rm II}=m\\dot x-eEt$ は「力学的運動量 $m\\dot x$」から「時刻 0 からの力積 $eEt$」を引いたもので，$m\\ddot x=eE$ により一定（$=m\\dot x(0)$）である．正準運動量はゲージに依存し，力学的運動量とは一致しない．\n\n(4) $\\dfrac{dH_{\\rm II}}{dt}=\\dfrac{\\partial H_{\\rm II}}{\\partial t}=\\dfrac{eE}{m}(p_{\\rm II}+eEt)=eE\\dot x\\ne0$．よって $\\dfrac{d}{dt}(H_{\\rm II}-eEx)=0$ で，保存量は $H_{\\rm II}-eEx=\\dfrac{(p_{\\rm II}+eEt)^2}{2m}-eEx=H_{\\rm I}$（力学的エネルギー）．"
+   }
+  ],
+  "idea": {
+   "tex": "全時間微分の付加 $f$ は $P=p+\\partial f/\\partial q$，$H'=H-\\partial f/\\partial t$ という変換を生み，ゲージ変換そのものである．保存則の見え方（循環座標・時間依存性）はゲージで入れ替わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $f$：- e E x t\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ゲージ変換",
+   "全時間微分",
+   "正準運動量",
+   "循環座標",
+   "エネルギー保存"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "キック写像の固有値の逆数対と安定性",
+  "topic": "キック写像の固有値の逆数対と安定性",
+  "statement": {
+   "tex": "質量 $m$ の粒子が直線上で次の操作を周期的に繰り返す：時間 $T$ だけ自由運動した直後，瞬間的な力積 $\\Delta p=-\\kappa q$（$\\kappa>0$ は定数，$q$ はそのときの位置）を受ける．1 周期の写像を $(q,p)^{\\rm T}\\mapsto M(q,p)^{\\rm T}$ と書く．\n\\begin{enumerate}\n\\item $M$ を求め，$M^{\\rm T}JM=J$（$J=\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}$）および $\\det M=1$ を示せ．\n\\item 一般に $2n$ 次正方行列 $M$ が $M^{\\rm T}JM=J$（$J^2=-1$）を満たすとき，$M^{-1}=-JM^{\\rm T}J$ を示し，これを用いて「$\\lambda$ が $M$ の固有値ならば $1/\\lambda$ も $M$ の固有値」であることを示せ．\n\\item $s=\\kappa T/m$ とする．運動が有界（安定）であるための $s$ の条件を求めよ．\n\\item $s=3$ のとき $M^3=1$ となることを示し，その物理的意味を述べよ．$s=5$ のときの固有値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $M=\\begin{pmatrix}1&T/m\\\\-\\kappa&1-\\kappa T/m\\end{pmatrix}$，$\\det M=1$　(2) $M^{-1}$ と $M^{\\rm T}$ は相似で，固有値は $\\lambda,1/\\lambda$ の対　(3) $0<s<4$　(4) 固有値 $e^{\\pm2\\pi i/3}$ で $M^3=1$（3 周期ごとに元の状態に戻る）．$s=5$：$\\lambda=\\dfrac{-3\\pm\\sqrt5}{2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 自由運動：$q'=q+pT/m$，$p'=p$．続くキック：$p''=p'-\\kappa q'$．合わせて\n\\[ M=\\begin{pmatrix}1&0\\\\-\\kappa&1\\end{pmatrix}\\begin{pmatrix}1&T/m\\\\0&1\\end{pmatrix}=\\begin{pmatrix}1&T/m\\\\-\\kappa&1-\\kappa T/m\\end{pmatrix}. \\]\n$\\det M=1-\\kappa T/m+\\kappa T/m=1$．$2\\times2$ 行列では $M^{\\rm T}JM=(\\det M)J$ が恒等的に成り立つので $M^{\\rm T}JM=J$．\n\n(2) $M^{\\rm T}JM=J$ の両辺に左から $-J$ を掛けると，$J^2=-1$ より $(-JM^{\\rm T}J)M=-J^2=1$．よって $M^{-1}=-JM^{\\rm T}J=J^{-1}M^{\\rm T}J$（$J^{-1}=-J$）．したがって $M^{-1}$ は $M^{\\rm T}$ と相似で，$M^{\\rm T}$ と $M$ は同じ固有値を持つ．$M$ の固有値が $\\lambda$ なら $M^{-1}$ の固有値は $1/\\lambda$（$M$ は正則）であり，それが $M$ の固有値でもある．よって固有値は $\\lambda,1/\\lambda$ の対で現れる．\n\n(3) 特性方程式 $\\lambda^2-(2-s)\\lambda+1=0$．固有値の積は 1．$|2-s|<2$ なら $\\lambda=e^{\\pm i\\mu}$（$\\cos\\mu=1-s/2$）で単位円上にあり有界．$|2-s|>2$ なら実数で $|\\lambda|>1$ のものがあり指数的に発散する．よって安定条件は $0<s<4$．（$s=4$ は境界で $\\lambda=-1$ が重根，一般に線形増大．）\n\n(4) $s=3$：$\\cos\\mu=-1/2$ より $\\mu=2\\pi/3$．$\\mathrm{tr}M=2-s=-1$，$\\det M=1$ だから Cayley--Hamilton より $M^2+M+1=0$，両辺に $M-1$ を掛けて $M^3-1=0$．すなわちどの初期条件でも 3 周期後に正確に元の $(q,p)$ に戻る．$s=5$：$\\lambda^2+3\\lambda+1=0$ より $\\lambda=(-3\\pm\\sqrt5)/2$（積 1，$|\\lambda|>1$ の側が不安定性を与え，符号が負なので 1 周期ごとに $q$ の符号が反転しつつ増大する）．"
+   }
+  ],
+  "idea": {
+   "tex": "シンプレクティック行列では $M^{-1}=J^{-1}M^{\\rm T}J$ により固有値が $\\lambda,1/\\lambda$ 対になり，安定性は「全固有値が単位円上」という $|\\mathrm{tr}M|<2$ の条件に帰着する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 0<s<4\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "シンプレクティック行列",
+   "固有値",
+   "逆行列",
+   "安定性",
+   "キック写像"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "強磁場中の1階ラグランジアンとE×Bドリフト",
+  "topic": "強磁場中の1階ラグランジアンとE×Bドリフト",
+  "statement": {
+   "tex": "強い一様磁場 $B\\hat{\\boldsymbol z}$（$eB>0$）中の荷電粒子（電荷 $e$）の平面運動で，慣性を無視した極限（案内中心近似）では，ラグランジアン\n\\[ L=\\frac{eB}{2}(x\\dot y-y\\dot x)-U(x,y) \\]\nが用いられる（$U$ はポテンシャルエネルギー）．速度について 1 次でしかない点に注意．\n\\begin{enumerate}\n\\item Euler--Lagrange 方程式を導き，$U=e\\phi$ のとき速度が $\\boldsymbol E\\times\\boldsymbol B/B^2$（$\\boldsymbol E=-\\nabla\\phi$）となることを示せ．\n\\item 正準変数を $\\eta=(q,p)$ として，Hamilton の原理を $\\delta\\displaystyle\\int\\left[\\tfrac12(p\\dot q-q\\dot p)-H\\right]dt=0$ と書く．$L$ がこの形になるように $(q,p)$ と $H$ を $(x,y)$ と $U$ で選べ（$x,y$ そのものが互いに共役になる）．その Hamilton 方程式が (1) と一致することを確かめよ．\n\\item $U=\\tfrac12\\kappa(x^2+y^2)$（$\\kappa>0$）のとき，粒子は原点のまわりを一定角速度で回る．その角速度と向きを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dot x=-\\dfrac{1}{eB}\\dfrac{\\partial U}{\\partial y}$，$\\dot y=\\dfrac{1}{eB}\\dfrac{\\partial U}{\\partial x}$（$=\\boldsymbol E\\times\\boldsymbol B/B^2$）　(2) $q=y$，$p=eBx$，$H=U$　(3) $\\omega=\\kappa/(eB)$，反時計回り（$+z$ 軸まわり正の向き）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial L/\\partial\\dot x=-\\tfrac{eB}{2}y$，$\\partial L/\\partial x=\\tfrac{eB}{2}\\dot y-U_x$ より\n\\[ -\\frac{eB}{2}\\dot y-\\frac{eB}{2}\\dot y+U_x=0\\ \\Rightarrow\\ \\dot y=\\frac{U_x}{eB}. \\]\n同様に $\\partial L/\\partial\\dot y=\\tfrac{eB}{2}x$，$\\partial L/\\partial y=-\\tfrac{eB}{2}\\dot x-U_y$ より $\\dot x=-U_y/(eB)$．$U=e\\phi$ なら $\\dot x=-\\phi_y/B=E_y/B$，$\\dot y=\\phi_x/B=-E_x/B$．一方 $\\boldsymbol E\\times\\boldsymbol B/B^2=(E_yB,-E_xB,0)/B^2$ で一致する（E×B ドリフト）．\n\n(2) $\\tfrac{eB}{2}(x\\dot y-y\\dot x)=\\tfrac12\\{(eBx)\\dot y-y\\,\\tfrac{d}{dt}(eBx)\\}$ なので，$q=y$，$p=eBx$ とおけば $\\tfrac12(p\\dot q-q\\dot p)$ に一致し，$H=U$．Hamilton 方程式は\n\\[ \\dot y=\\frac{\\partial U}{\\partial(eBx)}=\\frac{U_x}{eB},\\qquad \\frac{d}{dt}(eBx)=-\\frac{\\partial U}{\\partial y}, \\]\nで (1) と同じ．（なお $\\tfrac12(p\\dot q-q\\dot p)=p\\dot q-\\tfrac12\\tfrac{d}{dt}(pq)$ なので，通常の作用 $\\int(p\\dot q-H)dt$ とは境界項しか違わない．）平面の座標 $x,y$ がそのまま位相空間をなすことが特徴である．\n\n(3) $\\dot x=-\\kappa y/(eB)$，$\\dot y=\\kappa x/(eB)$．$\\omega=\\kappa/(eB)$ とおくと $x+iy\\propto e^{i\\omega t}$．よって角速度 $\\kappa/(eB)$ で反時計回り（$xy$ 平面を $+z$ 側から見て）に等速円運動する．$H=U$ が保存するので半径は一定である．"
+   }
+  ],
+  "idea": {
+   "tex": "速度に 1 次のラグランジアンでは配位空間そのものが位相空間になり，$x$ と $eBy$（あるいは $y$ と $eBx$）が正準共役となる．Hamilton の原理の対称形 $\\tfrac12\\tilde\\eta J\\dot\\eta$ がそのまま現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $q$：y ; $p$：eBx ; $H$：U\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Hamiltonの原理",
+   "1階ラグランジアン",
+   "案内中心",
+   "E×Bドリフト",
+   "正準共役"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "加速する支点のばね振り子：2つのハミルトニアン",
+  "topic": "加速する支点のばね振り子：2つのハミルトニアン",
+  "statement": {
+   "tex": "質量 $m$ の質点がばね定数 $k$ のばねで支点につながれ，$x$ 軸上を運動する．支点は $t\\ge0$ で $x_s(t)=\\tfrac12at^2$（$a$ は定数）と加速度運動する．ばねの伸びを $X=x-x_s(t)-\\ell_0$（$\\ell_0$ は自然長）とすると，ラグランジアンは $L=\\tfrac12m\\dot x^2-\\tfrac12kX^2$ である．\n\\begin{enumerate}\n\\item $L$ を $X,\\dot X,t$ で表し，$X$ に共役な運動量 $P'$ とハミルトニアン $H'(X,P',t)$ を求めよ．$H'$ は保存するか．\n\\item $L$ から全時間微分を取り除き，時間を陽に含まないラグランジアン $L''(X,\\dot X)$ を作れ．対応する運動量 $P$ とハミルトニアン $H''$ を求め，$P$ と $P'$ の関係を述べよ．\n\\item $H'$ と $H''$ から得られる運動方程式が同じであることを示せ．\n\\item $t=0$ で $X=0$，$\\dot x=0$ のとき $X(t)$ を求め，ばねの伸びの大きさの最大値と $H''$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P'=m(\\dot X+at)$，$H'=\\dfrac{P'^2}{2m}-atP'+\\dfrac k2X^2$，$dH'/dt=-aP'\\ne0$ で保存しない　(2) $L''=\\tfrac12m\\dot X^2-\\tfrac12kX^2-maX$，$P=m\\dot X=P'-mat$，$H''=\\dfrac{P^2}{2m}+\\dfrac k2X^2+maX$（保存）　(3) ともに $m\\ddot X=-kX-ma$　(4) $X=-\\dfrac{ma}{k}(1-\\cos\\omega t)$，$\\omega=\\sqrt{k/m}$，最大 $2ma/k$，$H''=0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot x=\\dot X+at$ だから $L=\\tfrac12m(\\dot X+at)^2-\\tfrac12kX^2$．$P'=\\partial L/\\partial\\dot X=m(\\dot X+at)$（実験室系の運動量 $m\\dot x$ に等しい）．$\\dot X=P'/m-at$ より\n\\[ H'=P'\\dot X-L=\\frac{P'^2}{m}-atP'-\\frac{P'^2}{2m}+\\frac k2X^2=\\frac{P'^2}{2m}-atP'+\\frac k2X^2. \\]\n$dH'/dt=\\partial H'/\\partial t=-aP'$ は一般に 0 でないので保存しない．\n\n(2) 展開すると $L=\\tfrac12m\\dot X^2+mat\\dot X+\\tfrac12ma^2t^2-\\tfrac12kX^2$．$mat\\dot X=\\tfrac{d}{dt}(matX)-maX$，$\\tfrac12ma^2t^2=\\tfrac{d}{dt}(\\tfrac16ma^2t^3)$ なので\n\\[ L=L''+\\frac{d}{dt}\\left(matX+\\tfrac16ma^2t^3\\right),\\quad L''=\\tfrac12m\\dot X^2-\\tfrac12kX^2-maX. \\]\n$P=m\\dot X=P'-mat$，$H''=\\dfrac{P^2}{2m}+\\dfrac k2X^2+maX$ で，$t$ を陽に含まないので保存する．$maX$ は支点系での慣性力 $-ma$ のポテンシャルである．\n\n(3) $H'$ から：$\\dot X=P'/m-at$，$\\dot P'=-kX$．前者を微分して $\\ddot X=\\dot P'/m-a=-kX/m-a$．$H''$ から：$\\dot X=P/m$，$\\dot P=-kX-ma$ で $m\\ddot X=-kX-ma$．同じである．\n\n(4) 平衡点 $X_0=-ma/k$ のまわりの単振動．$X(0)=0$，$\\dot X(0)=\\dot x(0)-a\\cdot0=0$ より $X=-\\dfrac{ma}{k}(1-\\cos\\omega t)$．伸びの大きさは最大 $2ma/k$（静的なずれ $ma/k$ の 2 倍）．$H''$ は $t=0$ の値 $0$ で一定．"
+   }
+  ],
+  "idea": {
+   "tex": "同じ運動を記述するハミルトニアンでも，全時間微分の除き方次第で時間依存性が変わり，一方は保存量・他方は非保存となる．保存する方は力学的エネルギーではなく慣性力ポテンシャルを含む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) ともに $m\\ddot X$：- k X - m a\n(4) $X$：-((m a)/(k))(1- cos ω t) ; $\\omega$：sqrt(k / m) ; 最大：2 m a / k ; $H''$：0"
+  },
+  "methods": [],
+  "tags": [
+   "時間依存ハミルトニアン",
+   "全時間微分",
+   "慣性力",
+   "保存量",
+   "加速座標系"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "回転系のハミルトニアンと遠心項の相殺",
+  "topic": "回転系のハミルトニアンと遠心項の相殺",
+  "statement": {
+   "tex": "$z$ 軸のまわりに一定角速度 $\\omega$ で回転する座標系 $(x,y)$ で，質量 $m$ の粒子の平面運動を考える．ラグランジアンは\n\\[ L=\\frac m2\\left[(\\dot x-\\omega y)^2+(\\dot y+\\omega x)^2\\right]-V(x,y). \\]\n\\begin{enumerate}\n\\item $L=\\tfrac12\\dot{\\boldsymbol q}^{\\rm T}\\mathsf T\\dot{\\boldsymbol q}+\\dot{\\boldsymbol q}^{\\rm T}\\boldsymbol a+L_0$ の形に書き，$\\mathsf T,\\boldsymbol a,L_0$ を求めよ．\n\\item 公式 $H=\\tfrac12(\\boldsymbol p-\\boldsymbol a)^{\\rm T}\\mathsf T^{-1}(\\boldsymbol p-\\boldsymbol a)-L_0$ を用いて $H$ を求めよ．$L_0$ に含まれていた遠心力ポテンシャルは $H$ でどうなるか．\n\\item $V=\\tfrac12m\\Omega_0^2(x^2+y^2)$（$\\Omega_0>0$）のとき，回転系での微小振動（基準振動）の角振動数をすべて求めよ．\n\\item (3) で $\\omega>\\Omega_0$ のとき，$H$ は原点で極小にならない（正定値でない）ことを具体的な状態を示して確かめよ．それでも運動が安定であることと (3) の結果との関係を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathsf T=m\\mathbf 1$，$\\boldsymbol a=m\\omega(-y,x)$，$L_0=\\tfrac12m\\omega^2(x^2+y^2)-V$　(2) $H=\\dfrac{p_x^2+p_y^2}{2m}-\\omega(xp_y-yp_x)+V$（遠心項は相殺して消える）　(3) $|\\Omega_0-\\omega|$ と $\\Omega_0+\\omega$　(4) $x=r,\\ y=0,\\ p_x=0,\\ p_y=m\\Omega_0r$ で $H=m\\Omega_0r^2(\\Omega_0-\\omega)<0$．$H$ は鞍点だが固有振動数はすべて実で安定（正定値性は十分条件にすぎない）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 展開して\n\\[ L=\\frac m2(\\dot x^2+\\dot y^2)+m\\omega(x\\dot y-y\\dot x)+\\frac m2\\omega^2(x^2+y^2)-V \\]\nなので $\\mathsf T=m\\mathbf 1$，$\\boldsymbol a=m\\omega(-y,\\,x)$，$L_0=\\tfrac12m\\omega^2(x^2+y^2)-V$．\n\n(2) \n\\[ \\frac{|\\boldsymbol p-\\boldsymbol a|^2}{2m}=\\frac{(p_x+m\\omega y)^2+(p_y-m\\omega x)^2}{2m}=\\frac{p_x^2+p_y^2}{2m}-\\omega(xp_y-yp_x)+\\frac m2\\omega^2(x^2+y^2). \\]\nこれから $L_0$ を引くと\n\\[ H=\\frac{p_x^2+p_y^2}{2m}-\\omega(xp_y-yp_x)+V. \\]\n$L_0$ にあった遠心力ポテンシャル $-\\tfrac12m\\omega^2r^2$ は $(\\boldsymbol p-\\boldsymbol a)^2$ から出る項と相殺し，$H$ には現れない．$\\boldsymbol p=m(\\dot{\\boldsymbol r}+\\boldsymbol\\omega\\times\\boldsymbol r)$ は慣性系での運動量なので，$H=E_{\\text{慣性系}}-\\omega L_z$（Jacobi 積分）である．\n\n(3) Hamilton 方程式は $\\dot x=p_x/m+\\omega y$，$\\dot y=p_y/m-\\omega x$，$\\dot p_x=\\omega p_y-m\\Omega_0^2x$，$\\dot p_y=-\\omega p_x-m\\Omega_0^2y$．複素変数 $\\zeta=x+iy$，$\\pi=p_x+ip_y$ を使うと\n\\[ \\dot\\zeta=\\frac\\pi m-i\\omega\\zeta,\\qquad\\dot\\pi=-i\\omega\\pi-m\\Omega_0^2\\zeta. \\]\n$\\zeta=e^{-i\\omega t}u$，$\\pi=e^{-i\\omega t}v$ とおくと $\\dot u=v/m$，$\\dot v=-m\\Omega_0^2u$ で $u\\propto e^{\\pm i\\Omega_0t}$．よって $\\zeta\\propto e^{-i(\\omega\\mp\\Omega_0)t}$ で，角振動数は $|\\Omega_0-\\omega|$ と $\\Omega_0+\\omega$（慣性系の 2 つの円運動を回転系で見たもの）．\n\n(4) $x=r,\\ y=0,\\ p_x=0,\\ p_y=m\\Omega_0r$（慣性系で反時計回りの円軌道）では\n\\[ H=\\frac{m\\Omega_0^2r^2}{2}-\\omega r\\cdot m\\Omega_0r+\\frac{m\\Omega_0^2r^2}{2}=m\\Omega_0r^2(\\Omega_0-\\omega)<0. \\]\n一方 $p=0$，$r\\ne0$ では $H>0$，原点で $H=0$ なので，原点は $H$ の鞍点で正定値でない．しかし (3) よりすべての振動数が実数で，運動は有界（慣性系では単なる等方振動子）．$H$ の正定値性は安定性の十分条件にすぎず，速度に 1 次の項（ジャイロ項 $-\\omega L_z$）があるとき，正定値でなくても安定でありうる（ジャイロ安定化）．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\dot q$ に 1 次の項を含む $L$ の Legendre 変換では，$L_0$ の遠心項が $(\\boldsymbol p-\\boldsymbol a)^2$ からの項と相殺し，$H=E-\\omega L_z$ となる．$H$ が正定値でなくても安定でありうる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $H$：((p_x ^(2)+ p_y ^(2))/(2 m))- ω (x p_y - y p_x)+ V\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転座標系",
+   "Legendre変換",
+   "Jacobi積分",
+   "ジャイロ安定化",
+   "基準振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "一定速度で押し込むピストンと厳密な断熱不変量",
+  "topic": "一定速度で押し込むピストンと厳密な断熱不変量",
+  "statement": {
+   "tex": "$x=0$ に固定された壁と，$x=X(t)$ にあり一定の速さ $u$ で $-x$ 方向に動くピストンの間を，質量 $m$ の粒子が往復する（重力なし，衝突は完全弾性，ピストンの質量は十分大きい，非相対論的）．$n=0,1,2,\\dots$ 回目にピストンに衝突するときのピストンの位置を $X_n$，衝突直前の粒子の速さを $v_n$ とし，$X_0=L$，$v_0>u$ とする．\n\\begin{enumerate}\n\\item ピストンとの 1 回の衝突で粒子の速さはどう変わるか．\n\\item $X_n(v_n+u)$ が $n$ によらない（厳密な保存量である）ことを示し，$v_n$ と $X_n$ を $n$ の式で表せ．\n\\item $u\\ll v_0$ のとき，ピストンが $L$ から $L/2$ まで進む間の衝突回数をおよそ求め，そのとき粒子の速さが何倍になるか答えよ．\n\\item $u\\ll v$ の極限で，間隔 $X$ のときに粒子がピストンに及ぼす平均の力 $F$ を $X$ の関数として求め，ピストンがする仕事と粒子のエネルギー増加が一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v\\to v+2u$　(2) $X_n(v_n+u)=L(v_0+u)$，$v_n=v_0+2nu$，$X_n=\\dfrac{L(v_0+u)}{v_0+(2n+1)u}$　(3) 約 $v_0/(2u)$ 回，速さは 2 倍　(4) $F=\\dfrac{mv^2}{X}=\\dfrac{mv_0^2L^2}{X^3}$，$-\\displaystyle\\int_L^XF\\,dX=\\tfrac12mv_0^2\\left(\\tfrac{L^2}{X^2}-1\\right)=\\Delta E$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ピストン系で見ると粒子は速さ $v+u$ で近づき $v+u$ で跳ね返る．実験室系に戻すと $v+u+u=v+2u$．\n\n(2) $n$ 回目の衝突後の速さは $v_n+2u=v_{n+1}$（固定壁では速さ不変）．衝突後，粒子は固定壁まで行って戻り，次の衝突までの時間 $\\Delta t$ に $v_{n+1}\\Delta t=X_n+X_{n+1}$ 進む．その間ピストンは $X_n-X_{n+1}=u\\Delta t$ 進むので\n\\[ (X_n-X_{n+1})v_{n+1}=u(X_n+X_{n+1})\\ \\Rightarrow\\ X_n(v_{n+1}-u)=X_{n+1}(v_{n+1}+u). \\]\n$v_{n+1}-u=v_n+u$ だから $X_n(v_n+u)=X_{n+1}(v_{n+1}+u)$．よって $X_n(v_n+u)=L(v_0+u)$ は厳密な保存量．$v_n=v_0+2nu$ を代入して $X_n=\\dfrac{L(v_0+u)}{v_0+(2n+1)u}$．\n\n(3) $X_n\\le L/2$ となる条件は $v_0+(2n+1)u\\ge2(v_0+u)$，すなわち $n\\ge\\dfrac{v_0+u}{2u}\\approx\\dfrac{v_0}{2u}$．そのとき $v_n+u=2(v_0+u)$ なので $u\\ll v_0$ では $v\\approx2v_0$，速さはほぼ 2 倍．（衝突 1 回で $2u$ ずつ増え，約 $v_0/(2u)$ 回で合計 $v_0$ 増える．）\n\n(4) $u\\ll v$ では保存量は $Xv\\approx Lv_0$（1 次元の断熱不変量 $\\oint p\\,dq=2mvX$ に対応）．ピストンとの衝突頻度は $v/(2X)$，1 回の運動量移行は $2mv$ なので平均の力は\n\\[ F=2mv\\cdot\\frac{v}{2X}=\\frac{mv^2}{X}=\\frac{mv_0^2L^2}{X^3}. \\]\nピストンが $L$ から $X$ まで押し込む仕事は $-\\displaystyle\\int_L^XF\\,dX'=\\frac{mv_0^2L^2}{2}\\left(\\frac1{X^2}-\\frac1{L^2}\\right)$，粒子のエネルギーは $E=\\tfrac12mv^2=\\tfrac12mv_0^2L^2/X^2$ で，増加分 $\\Delta E$ は仕事に一致する．$E\\propto X^{-2}$ は 1 次元理想気体の断熱変化（$\\gamma=3$）であり，量子力学の箱のエネルギー準位 $E_n\\propto X^{-2}$ と同じスケーリングである．"
+   }
+  ],
+  "idea": {
+   "tex": "一定速度のピストンでは $X_n(v_n+u)$ が衝突ごとに厳密に保存され，ゆっくりした極限で断熱不変量 $vX$ に帰着する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "断熱不変量",
+   "弾性衝突",
+   "ピストン",
+   "1次元気体",
+   "作用変数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "二重振り子：運動量ゼロでも動く上の振り子",
+  "topic": "二重振り子：運動量ゼロでも動く上の振り子",
+  "statement": {
+   "tex": "長さ $l$ の軽い棒 2 本と質量 $m$ の等しいおもり 2 個からなる平面二重振り子を考える．上の棒の鉛直からの角を $\\theta_1$，下の棒の鉛直からの角を $\\theta_2$ とする（重力加速度 $g$）．\n\\begin{enumerate}\n\\item ラグランジアンを $L=\\tfrac12\\dot{\\boldsymbol\\theta}^{\\rm T}\\mathsf T\\dot{\\boldsymbol\\theta}+L_0$ の形に書き，ハミルトニアン $H(\\theta_1,\\theta_2,p_1,p_2)$ を求めよ．\n\\item $\\theta_1=\\theta_2=0$ で $p_1=0$，$p_2=P_0\\,(>0)$ という状態の $\\dot\\theta_1,\\dot\\theta_2$ を求めよ．上の振り子は止まっているか．\n\\item 線形化した Hamilton 方程式から微小振動の角振動数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_1^2-2p_1p_2\\cos(\\theta_1-\\theta_2)+2p_2^2}{2ml^2\\{1+\\sin^2(\\theta_1-\\theta_2)\\}}-mgl(2\\cos\\theta_1+\\cos\\theta_2)$　(2) $\\dot\\theta_1=-\\dfrac{P_0}{ml^2}$，$\\dot\\theta_2=\\dfrac{2P_0}{ml^2}$（上の振り子は逆向きに回る）　(3) $\\omega^2=(2\\mp\\sqrt2)\\,g/l$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) おもりの位置は $\\boldsymbol r_1=l(\\sin\\theta_1,-\\cos\\theta_1)$，$\\boldsymbol r_2=\\boldsymbol r_1+l(\\sin\\theta_2,-\\cos\\theta_2)$．運動エネルギーは $\\tfrac12m l^2[2\\dot\\theta_1^2+2\\dot\\theta_1\\dot\\theta_2\\cos(\\theta_1-\\theta_2)+\\dot\\theta_2^2]$ で\n\\[ \\mathsf T=ml^2\\begin{pmatrix}2&\\cos\\Delta\\\\\\cos\\Delta&1\\end{pmatrix},\\quad\\Delta=\\theta_1-\\theta_2,\\quad L_0=mgl(2\\cos\\theta_1+\\cos\\theta_2). \\]\n$\\det\\mathsf T=m^2l^4(2-\\cos^2\\Delta)=m^2l^4(1+\\sin^2\\Delta)>0$，\n\\[ \\mathsf T^{-1}=\\frac{1}{ml^2(1+\\sin^2\\Delta)}\\begin{pmatrix}1&-\\cos\\Delta\\\\-\\cos\\Delta&2\\end{pmatrix}. \\]\n$H=\\tfrac12\\boldsymbol p^{\\rm T}\\mathsf T^{-1}\\boldsymbol p-L_0$ より\n\\[ H=\\frac{p_1^2-2p_1p_2\\cos\\Delta+2p_2^2}{2ml^2(1+\\sin^2\\Delta)}-mgl(2\\cos\\theta_1+\\cos\\theta_2). \\]\n\n(2) $\\dot{\\boldsymbol\\theta}=\\mathsf T^{-1}\\boldsymbol p$ で $\\Delta=0$，$p_1=0$，$p_2=P_0$ とすると $\\dot\\theta_1=-P_0/(ml^2)$，$\\dot\\theta_2=2P_0/(ml^2)$．$p_1=ml^2(2\\dot\\theta_1+\\dot\\theta_2)=0$ は「$\\theta_1$ に共役な運動量が 0」というだけで，上の振り子は静止しておらず，下の振り子と逆向きに回っている．正準運動量と速度は $\\mathsf T$ の非対角成分のため 1 対 1 に対応しない．\n\n(3) 2 次まで展開すると $H_2=\\dfrac{p_1^2-2p_1p_2+2p_2^2}{2ml^2}+\\dfrac{mgl}{2}(2\\theta_1^2+\\theta_2^2)$（定数を除く）．Hamilton 方程式 $\\dot{\\boldsymbol\\theta}=\\mathsf T_0^{-1}\\boldsymbol p$，$\\dot{\\boldsymbol p}=-\\mathsf K\\boldsymbol\\theta$（$\\mathsf T_0=ml^2\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$，$\\mathsf K=mgl\\,\\mathrm{diag}(2,1)$）から $\\det(\\mathsf K-\\omega^2\\mathsf T_0)=0$：\n\\[ (2g/l-2\\omega^2)(g/l-\\omega^2)-\\omega^4=0\\ \\Rightarrow\\ \\omega^4-4\\frac gl\\omega^2+2\\frac{g^2}{l^2}=0, \\]\n$\\omega^2=(2\\mp\\sqrt2)g/l$．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\mathsf T$ の非対角成分のため $p_i=0$ でも $\\dot\\theta_i\\ne0$ となりうる．$\\mathsf T^{-1}$ を正しく作れば，Hamilton 形式の線形化から基準振動が直接得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\dot\\theta_1$：-((P_0)/(m l ^(2))) ; $\\dot\\theta_2$：((2 P_0)/(m l ^(2)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "二重振り子",
+   "ハミルトニアン",
+   "正準運動量",
+   "基準振動",
+   "質量行列"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "与えられたハミルトニアンから逆にLと保存量",
+  "topic": "与えられたハミルトニアンから逆にLと保存量",
+  "statement": {
+   "tex": "ある 2 自由度系のハミルトニアンが\n\\[ H=\\frac{p_x^2}{2m}+\\frac{(p_y-eBx)^2}{2m}-eEy \\]\nで与えられている（$m,e,B,E$ は正の定数）．\n\\begin{enumerate}\n\\item 対応するラグランジアン $L(x,y,\\dot x,\\dot y)$ を求め，どのような物理系か答えよ．\n\\item $H$ 以外に，(i) 時間を陽に含まない保存量と，(ii) 時間を陽に含む保存量を 1 つずつ見出せ．どちらも $x,y$ が循環座標でないにもかかわらず保存することに注意せよ．\n\\item (2) の保存量を用いて，長時間平均の速度 $\\langle\\dot x\\rangle$，$\\langle\\dot y\\rangle$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\tfrac12m(\\dot x^2+\\dot y^2)+eBx\\dot y+eEy$：一様磁場 $B\\hat{\\boldsymbol z}$（$\\boldsymbol A=(0,Bx,0)$）と一様電場 $E\\hat{\\boldsymbol y}$ 中の荷電粒子　(2) (i) $p_x-eBy$，(ii) $p_y-eEt$　(3) $\\langle\\dot x\\rangle=E/B$，$\\langle\\dot y\\rangle=0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot x=\\partial H/\\partial p_x=p_x/m$，$\\dot y=(p_y-eBx)/m$．よって $p_x=m\\dot x$，$p_y=m\\dot y+eBx$ で\n\\[ L=p_x\\dot x+p_y\\dot y-H=\\frac m2(\\dot x^2+\\dot y^2)+eBx\\dot y+eEy. \\]\n$\\mathsf T=m\\mathbf 1$，$\\boldsymbol a=(0,eBx)$，$L_0=eEy$ に当たる．$e\\dot{\\boldsymbol r}\\cdot\\boldsymbol A$ で $\\boldsymbol A=(0,Bx,0)$（$\\nabla\\times\\boldsymbol A=B\\hat{\\boldsymbol z}$），$-e\\phi$ で $\\phi=-Ey$（電場 $E\\hat{\\boldsymbol y}$）．\n\n(2) Hamilton 方程式は\n\\[ \\dot p_x=\\frac{eB}{m}(p_y-eBx)=eB\\dot y,\\qquad\\dot p_y=eE. \\]\n(i) $\\dfrac{d}{dt}(p_x-eBy)=eB\\dot y-eB\\dot y=0$．$x$ 方向の並進はゲージ変換を伴う対称性で，それに対応する保存量である．\n(ii) $\\dfrac{d}{dt}(p_y-eEt)=0$．$y$ 方向の並進は $L$ を $eE\\varepsilon$（定数）だけ変える，すなわち $\\tfrac{d}{dt}(eE\\varepsilon t)$ だけ変えるので，時間を陽に含む保存量になる．$H$ は $t$ を陽に含まないので保存．\n\n(3) $C_1=p_x-eBy$，$C_2=p_y-eEt$ とおく．$m\\dot x=C_1+eBy$，$m\\dot y=C_2+eEt-eBx$．後者を微分して\n\\[ m\\ddot y=eE-eB\\dot x=eE-\\frac{eB}{m}(C_1+eBy). \\]\nこれは $y$ が $y^*=\\dfrac{1}{eB}\\left(\\dfrac{mE}{B}-C_1\\right)$ のまわりで角振動数 $\\omega_c=eB/m$ で単振動することを表す．よって $\\langle y\\rangle=y^*$，$\\langle\\dot y\\rangle=0$，\n\\[ \\langle\\dot x\\rangle=\\frac{C_1+eBy^*}{m}=\\frac EB. \\]\n$\\boldsymbol E\\times\\boldsymbol B/B^2=(E/B)\\hat{\\boldsymbol x}$ のドリフトに一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "$H$ が $p$ について 2 次なら逆 Legendre 変換で $L$ が決まる．座標が $H$ に現れても，ゲージ変換を伴う並進対称性から $p_x-eBy$ や $p_y-eEt$ のような保存量が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "逆Legendre変換",
+   "保存量",
+   "Noetherの定理",
+   "ゲージ",
+   "E×Bドリフト"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "計量に由来する閉じ込め：測地線運動",
+  "topic": "計量に由来する閉じ込め：測地線運動",
+  "statement": {
+   "tex": "2 自由度系のラグランジアン\n\\[ L=\\frac12\\dot q_1^2+\\frac12\\frac{\\dot q_2^2}{1+\\kappa^2q_1^2}\\qquad(\\kappa>0\\ \\text{は定数}) \\]\nを考える（ポテンシャルはない）．\n\\begin{enumerate}\n\\item ハミルトニアンと Hamilton の運動方程式を求めよ．\n\\item $p_2$ が保存することを用い，$p_2\\ne0$ のとき $q_1$ が振幅によらない角振動数で単振動することを示し，その角振動数を求めよ．\n\\item $q_1=A\\sin\\omega t$，$q_2(0)=0$ のとき $q_2(t)$ を求め，$q_2$ 方向の平均の速さを求めよ．\n\\item ポテンシャルがないのに $q_1$ が有界になる理由を，この系を曲面上の測地線運動と見て説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\tfrac12p_1^2+\\tfrac12(1+\\kappa^2q_1^2)p_2^2$，$\\dot q_1=p_1$，$\\dot q_2=(1+\\kappa^2q_1^2)p_2$，$\\dot p_1=-\\kappa^2q_1p_2^2$，$\\dot p_2=0$　(2) $\\omega=\\kappa|p_2|$　(3) $q_2=p_2\\left(1+\\tfrac{\\kappa^2A^2}2\\right)t-\\dfrac{p_2\\kappa^2A^2}{4\\omega}\\sin2\\omega t$，平均 $p_2(1+\\kappa^2A^2/2)$　(4) 計量 $g_{22}$ が $q_1$ で減少し，$p_2$ 一定のもとで有効ポテンシャル $\\tfrac12\\kappa^2p_2^2q_1^2$ が生じる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p_1=\\dot q_1$，$p_2=\\dot q_2/(1+\\kappa^2q_1^2)$．\n\\[ H=\\frac12p_1^2+\\frac12(1+\\kappa^2q_1^2)p_2^2. \\]\n運動方程式は $\\dot q_1=p_1$，$\\dot q_2=(1+\\kappa^2q_1^2)p_2$，$\\dot p_1=-\\kappa^2q_1p_2^2$，$\\dot p_2=0$．\n\n(2) $p_2$ は一定（$q_2$ は循環座標）．$\\ddot q_1=\\dot p_1=-\\kappa^2p_2^2q_1$ は線形で，角振動数 $\\omega=\\kappa|p_2|$ の単振動．振幅に依存しない．\n\n(3) $\\dot q_2=p_2(1+\\kappa^2A^2\\sin^2\\omega t)=p_2\\left(1+\\tfrac{\\kappa^2A^2}{2}-\\tfrac{\\kappa^2A^2}{2}\\cos2\\omega t\\right)$ を積分して\n\\[ q_2=p_2\\left(1+\\frac{\\kappa^2A^2}{2}\\right)t-\\frac{p_2\\kappa^2A^2}{4\\omega}\\sin2\\omega t. \\]\n平均の速さは $p_2(1+\\kappa^2A^2/2)$ で，$q_1$ 方向に大きく振れるほど $q_2$ 方向に速く進む（$\\dot q_2$ は $p_2$ でなく $(1+\\kappa^2q_1^2)p_2$）．\n\n(4) $L$ は計量 $ds^2=dq_1^2+\\dfrac{dq_2^2}{1+\\kappa^2q_1^2}$ の曲面上の自由運動（測地線運動）である．$p_2$ を固定すると $H=\\tfrac12p_1^2+U_{\\rm eff}(q_1)$，$U_{\\rm eff}=\\tfrac12p_2^2+\\tfrac12\\kappa^2p_2^2q_1^2$ となる．$q_1$ が大きいほど $q_2$ 方向の実際の長さ $dq_2/\\sqrt{1+\\kappa^2q_1^2}$ が縮むので，同じ $p_2$ を保つのに大きな速度 $\\dot q_2$ が必要になりエネルギーが増える．このため $q_1$ は $|q_1|\\le A$ に閉じ込められる（遠心力的な有効ポテンシャル，Routh 還元）．"
+   }
+  ],
+  "idea": {
+   "tex": "循環座標の運動量を固定すると，運動エネルギーの計量の座標依存性が有効ポテンシャルになり，ポテンシャルがなくても閉じ込めと等時振動が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "循環座標",
+   "有効ポテンシャル",
+   "測地線",
+   "Routh還元",
+   "ハミルトニアン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ばねで吊った振り子のハミルトニアンと特異点",
+  "topic": "ばねで吊った振り子のハミルトニアンと特異点",
+  "statement": {
+   "tex": "鉛直なばね（ばね定数 $k$）の下端に軽い支点がつけられ，支点は鉛直線上だけを動ける．支点から長さ $l$ の軽い棒で質量 $m$ のおもりが吊られ，鉛直面内で振れる．支点の自然長位置からの下向き変位を $z$，棒の鉛直下向きからの角を $\\theta$ とする（重力加速度 $g$）．\n\\begin{enumerate}\n\\item ラグランジアンを求め，$\\mathsf T$ を用いてハミルトニアン $H(z,\\theta,p_z,p_\\theta)$ を求めよ．\n\\item $H$ は $\\theta=\\pm\\pi/2$ で定義できない．その理由を運動学的に説明せよ．\n\\item 平衡点のまわりで $H$ を展開し，2 次の項から 2 つの微小振動の角振動数を，3 次の項からモード間の最低次の結合項を求めよ．両モードが 2:1 共鳴するための $k$ の条件を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\tfrac m2(\\dot z^2-2l\\dot z\\dot\\theta\\sin\\theta+l^2\\dot\\theta^2)+mg(z+l\\cos\\theta)-\\tfrac k2z^2$，$H=\\dfrac{l^2p_z^2+2l\\sin\\theta\\,p_zp_\\theta+p_\\theta^2}{2ml^2\\cos^2\\theta}+\\tfrac k2z^2-mg(z+l\\cos\\theta)$　(2) $\\det\\mathsf T=m^2l^2\\cos^2\\theta=0$：$\\dot z=l\\dot\\theta$ の組合せで運動エネルギーが 0　(3) $\\omega_z=\\sqrt{k/m}$，$\\omega_\\theta=\\sqrt{g/l}$，結合 $\\dfrac{p_zp_\\theta\\theta}{ml}$，共鳴 $k=4mg/l$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) おもりの位置（水平，鉛直下向き）は $(l\\sin\\theta,\\ z+l\\cos\\theta)$．速度は $(l\\dot\\theta\\cos\\theta,\\ \\dot z-l\\dot\\theta\\sin\\theta)$ なので\n\\[ L=\\frac m2(\\dot z^2-2l\\dot z\\dot\\theta\\sin\\theta+l^2\\dot\\theta^2)+mg(z+l\\cos\\theta)-\\frac k2z^2. \\]\n$\\mathsf T=m\\begin{pmatrix}1&-l\\sin\\theta\\\\-l\\sin\\theta&l^2\\end{pmatrix}$，$\\det\\mathsf T=m^2l^2\\cos^2\\theta$，\n\\[ \\mathsf T^{-1}=\\frac{1}{ml^2\\cos^2\\theta}\\begin{pmatrix}l^2&l\\sin\\theta\\\\l\\sin\\theta&1\\end{pmatrix}. \\]\n$H=\\tfrac12\\boldsymbol p^{\\rm T}\\mathsf T^{-1}\\boldsymbol p+V$ より\n\\[ H=\\frac{l^2p_z^2+2l\\sin\\theta\\,p_zp_\\theta+p_\\theta^2}{2ml^2\\cos^2\\theta}+\\frac k2z^2-mg(z+l\\cos\\theta). \\]\n\n(2) $\\theta=\\pm\\pi/2$ では棒が水平で，おもりの速度は $(0,\\ \\dot z\\mp l\\dot\\theta)$．$\\dot z=\\pm l\\dot\\theta$ という組合せでは支点が動いてもおもりは静止し，運動エネルギーが 0 になる．$\\mathsf T$ が零固有値を持ち逆行列が存在しないので，$\\boldsymbol p$ から速度が決まらず Legendre 変換ができない（支点が質量を持たないことによる）．\n\n(3) 平衡点は $z_0=mg/k$，$\\theta=0$．$\\zeta=z-z_0$ として，$1/\\cos^2\\theta=1+\\theta^2+\\cdots$，$\\sin\\theta=\\theta+\\cdots$ より\n\\[ H=\\frac{p_z^2}{2m}+\\frac k2\\zeta^2+\\frac{p_\\theta^2}{2ml^2}+\\frac{mgl}{2}\\theta^2+\\frac{p_zp_\\theta\\theta}{ml}+O(4)+\\text{const}. \\]\n2 次の項から $\\omega_z=\\sqrt{k/m}$，$\\omega_\\theta=\\sqrt{g/l}$．ポテンシャルには $\\zeta$-$\\theta$ の結合がなく，最低次の結合は運動エネルギー由来の 3 次項 $p_zp_\\theta\\theta/(ml)$ である．この項は $\\omega_z\\approx2\\omega_\\theta$ のとき共鳴的にエネルギーを移す（上下振動から振り子運動が励起される）．条件は $k/m=4g/l$，すなわち $k=4mg/l$．"
+   }
+  ],
+  "idea": {
+   "tex": "運動エネルギーの行列 $\\mathsf T$ が位置に依存し特異になりうること，モード結合が運動エネルギー由来の 3 次項 $p_zp_\\theta\\theta$ で起こり 2:1 共鳴を生むことが要点．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\omega_z$：sqrt(k / m) ; $\\omega_\\theta$：sqrt(g / l) ; 結合：((p_z p_θ θ)/(m l)) ; 共鳴 $k$：4 m g / l"
+  },
+  "methods": [],
+  "tags": [
+   "ハミルトニアン",
+   "質量行列",
+   "特異点",
+   "非線形結合",
+   "内部共鳴",
+   "ばね振り子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "回転する腕に付いた無重力振り子と保存量",
+  "topic": "回転する腕に付いた無重力振り子と保存量",
+  "statement": {
+   "tex": "水平な滑らかな平面上（重力は無視できる）で，固定点 O を中心とする半径 $a$ の円周上を，点 A が一定の角速度 $\\omega$ で回転している（A の位置角は $\\omega t$）．A から長さ $l$ の軽い棒で質量 $m$ の質点が取り付けられ，棒は A のまわりに平面内で自由に回れる．棒の向きを固定方向から測った角 $\\theta$ で表す．\n\\begin{enumerate}\n\\item $\\theta$ に共役な運動量 $p_\\theta$ とハミルトニアン $H(\\theta,p_\\theta,t)$ を求めよ．$H$ は保存されるか．\n\\item $K=H-\\omega p_\\theta$ が運動の定数であることを Hamilton の運動方程式から示し，相対角 $\\varphi=\\theta-\\omega t$ と $\\dot\\varphi$ で表せ．その物理的意味を述べよ．\n\\item $\\varphi$ の運動方程式を求め，$\\varphi=0$ のまわりの微小振動の角振動数を求めよ．\n\\item $\\varphi=0$ から相対角速度 $\\dot\\varphi_0$ で出発したとき，質点が腕に対して 1 回転以上回り続けるための条件を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_\\theta=ml^2\\dot\\theta+ma\\omega l\\cos(\\theta-\\omega t)$，$H=\\dfrac{[p_\\theta-ma\\omega l\\cos(\\theta-\\omega t)]^2}{2ml^2}-\\dfrac12ma^2\\omega^2$，保存されない　(2) $K=\\frac12ml^2\\dot\\varphi^2-\\frac12m\\omega^2(a^2+l^2+2al\\cos\\varphi)$　(3) $\\ddot\\varphi=-\\dfrac{a\\omega^2}{l}\\sin\\varphi$，$\\Omega=\\omega\\sqrt{a/l}$　(4) $|\\dot\\varphi_0|>2\\omega\\sqrt{a/l}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 質点の位置 $(a\\cos\\omega t+l\\cos\\theta,\\ a\\sin\\omega t+l\\sin\\theta)$ から\n\\[\nL=\\frac m2\\left[l^2\\dot\\theta^2+2a\\omega l\\dot\\theta\\cos(\\theta-\\omega t)+a^2\\omega^2\\right].\n\\]\n$p_\\theta=ml^2\\dot\\theta+ma\\omega l\\cos(\\theta-\\omega t)$，$H=p_\\theta\\dot\\theta-L=\\dfrac{[p_\\theta-ma\\omega l\\cos(\\theta-\\omega t)]^2}{2ml^2}-\\dfrac12ma^2\\omega^2$．$H$ は $t$ を陽に含むので保存されない．\n\n(2) $H$ は $\\theta-\\omega t$ の組合せでしか $\\theta,t$ に依存しないから $\\partial H/\\partial t=-\\omega\\,\\partial H/\\partial\\theta=\\omega\\dot p_\\theta$．よって\n\\[\n\\frac{dK}{dt}=\\frac{dH}{dt}-\\omega\\dot p_\\theta=\\frac{\\partial H}{\\partial t}-\\omega\\dot p_\\theta=0 .\n\\]\n$\\dot\\theta=\\dot\\varphi+\\omega$ を代入して整理すると\n\\[\nK=\\frac12ml^2\\dot\\varphi^2-\\frac12m\\omega^2\\left(a^2+l^2+2al\\cos\\varphi\\right).\n\\]\n$a^2+l^2+2al\\cos\\varphi=|\\boldsymbol r|^2$ は O から質点までの距離の 2 乗だから，$K$ は腕とともに回る系での相対運動エネルギーと遠心力ポテンシャル $-\\frac12m\\omega^2r^2$ の和（Jacobi 積分）である．慣性系のエネルギー $E$ と O まわりの角運動量 $L_z$ を用いれば $K=E-\\omega L_z$ とも書ける．\n\n(3) $K$ を時間微分するか，Lagrange 方程式から $ml^2\\ddot\\theta=-ma\\omega^2l\\sin(\\theta-\\omega t)$，すなわち\n\\[\n\\ddot\\varphi=-\\frac{a\\omega^2}{l}\\sin\\varphi .\n\\]\nこれは「重力加速度」$a\\omega^2$（遠心加速度）の単振り子で，安定点 $\\varphi=0$（質点が腕の延長上の外側）のまわりの角振動数は $\\Omega=\\omega\\sqrt{a/l}$．\n\n(4) $K$ の保存より $\\dot\\varphi^2=\\dot\\varphi_0^2-\\dfrac{2a\\omega^2}{l}(1-\\cos\\varphi)$．$\\varphi=\\pi$ を越えるには $\\dot\\varphi_0^2>4a\\omega^2/l$，すなわち $|\\dot\\varphi_0|>2\\omega\\sqrt{a/l}$．"
+   }
+  ],
+  "idea": {
+   "tex": "$H$ が $\\theta-\\omega t$ にしか依存しないとき $H-\\omega p_\\theta$ が保存し，それは回転系の Jacobi 積分．回転する支点の振り子は遠心加速度 $a\\omega^2$ を重力とする振り子になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\ddot\\varphi$：-((a ω ^(2))/(l)) sin φ ; $\\Omega$：ω sqrt(a / l)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間依存ハミルトニアン",
+   "Jacobi積分",
+   "回転座標系",
+   "振り子",
+   "保存量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "駆動回転する螺旋走路とモーターの仕事",
+  "topic": "駆動回転する螺旋走路とモーターの仕事",
+  "statement": {
+   "tex": "半径 $a$ の円柱が鉛直な中心軸のまわりにモーターで一定角速度 $\\omega$ で回され続けている．円柱の外壁には滑らかな螺旋状の走路があり，円柱に対する質量 $m$ の質点の回転角を $\\theta_R$ とすると質点の高さは $z=-c\\theta_R$（$c>0$）である．慣性系での質点の回転角は $\\theta_I=\\theta_R+\\omega t$．時刻 $0$ に質点は $\\theta_R=0$ で円柱に対して静止している．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 慣性系の座標 $\\theta_I$ でのハミルトニアン $H_I$ と，円柱固定系の座標 $\\theta_R$ でのハミルトニアン $H_R$ を求め，それぞれ保存されるか判定せよ．\n\\item 相対運動 $\\theta_R(t)$ を求め，それが $\\omega$ によらないことを示せ．質点が高さ $h$ だけ下りるのに要する時間 $t_h$ を求めよ．\n\\item 円柱を一定角速度に保つためにモーターが加えるべきトルク $\\tau$ を求めよ．\n\\item 質点が $h$ だけ下りる間にモーターがする仕事 $W$ を求め，$H_R$ の保存則と整合することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H_I=\\dfrac{(p_I+mc^2\\omega)^2}{2m(a^2+c^2)}-mgc(\\theta_I-\\omega t)-\\dfrac m2c^2\\omega^2$（非保存），$H_R=\\dfrac{(p_R-ma^2\\omega)^2}{2m(a^2+c^2)}-mgc\\theta_R-\\dfrac m2a^2\\omega^2$（保存）　(2) $\\theta_R=\\dfrac{gc}{2(a^2+c^2)}t^2$，$t_h=\\sqrt{\\dfrac{2h(a^2+c^2)}{gc^2}}$　(3) $\\tau=\\dfrac{ma^2gc}{a^2+c^2}$　(4) $W=ma^2\\omega\\sqrt{\\dfrac{2gh}{a^2+c^2}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L_I=\\frac m2\\left[a^2\\dot\\theta_I^2+c^2(\\dot\\theta_I-\\omega)^2\\right]+mgc(\\theta_I-\\omega t)$．$p_I=m(a^2+c^2)\\dot\\theta_I-mc^2\\omega$ より\n\\[\nH_I=\\frac{(p_I+mc^2\\omega)^2}{2m(a^2+c^2)}-mgc(\\theta_I-\\omega t)-\\frac m2c^2\\omega^2 ,\n\\]\n$t$ を陽に含むので保存されない．$L_R=\\frac m2\\left[a^2(\\dot\\theta_R+\\omega)^2+c^2\\dot\\theta_R^2\\right]+mgc\\theta_R$，$p_R=m(a^2+c^2)\\dot\\theta_R+ma^2\\omega$ より\n\\[\nH_R=\\frac{(p_R-ma^2\\omega)^2}{2m(a^2+c^2)}-mgc\\theta_R-\\frac m2a^2\\omega^2 ,\n\\]\n$t$ を含まないので保存される．値は $H_R=E-\\omega L_z$（$E$ は質点の力学的エネルギー，$L_z=ma^2(\\dot\\theta_R+\\omega)$ は軸まわりの角運動量）．\n\n(2) $\\dot p_R=mgc$，$p_R=m(a^2+c^2)\\dot\\theta_R+ma^2\\omega$ で $\\omega$ の項は定数なので $\\ddot\\theta_R=\\dfrac{gc}{a^2+c^2}$．$\\theta_R=\\dfrac{gc}{2(a^2+c^2)}t^2$ は $\\omega$ によらない（円柱半径が一定なので遠心力は走路に垂直，Coriolis 力も走路に垂直で，いずれも走路方向の成分をもたない）．$c\\theta_R=h$ から $t_h=\\sqrt{2h(a^2+c^2)/(gc^2)}$．\n\n(3) 質点の軸まわりの角運動量の変化率 $\\dot L_z=ma^2\\ddot\\theta_R=\\dfrac{ma^2gc}{a^2+c^2}$ は走路から受けるトルクであり，その反作用を打ち消すためモーターは $\\tau=\\dfrac{ma^2gc}{a^2+c^2}$ を加える．\n\n(4) $W=\\tau\\omega t_h=\\dfrac{ma^2gc\\,\\omega}{a^2+c^2}\\sqrt{\\dfrac{2h(a^2+c^2)}{gc^2}}=ma^2\\omega\\sqrt{\\dfrac{2gh}{a^2+c^2}}$．\n一方 $H_R=E-\\omega L_z$ 一定より $\\Delta E=\\omega\\Delta L_z=\\omega\\,ma^2\\dot\\theta_R(t_h)$．$\\dot\\theta_R(t_h)=\\dfrac{gc\\,t_h}{a^2+c^2}=\\sqrt{\\dfrac{2gh}{a^2+c^2}}$ だから $\\Delta E=W$．すなわち質点の力学的エネルギー $E$（運動エネルギー＋重力の位置エネルギー）の増加はちょうどモーターの仕事に等しく，$H_R$ の保存はエネルギー収支 $\\Delta E=W$ を表している．"
+   }
+  ],
+  "idea": {
+   "tex": "駆動回転系の $H_R=E-\\omega L_z$ の保存は「モーターの仕事 $=\\omega\\times$ 角運動量の増加」を意味する．螺旋上の相対運動は回転速度によらない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $H_I$：(((p_I + m c ^(2) ω)^(2))/(2 m (a ^(2)+ c ^(2))))- m g c (θ_I - ω t)-((m)/(2)) c ^(2) ω ^(2) ; $H_R$：(((p_R - m a ^(2) ω)^(2))/(2 m (a ^(2)+ c ^(2))))- m g c θ_R -((m)/(2)) a ^(2) ω ^(2)\n(2) $\\theta_R$：((g c)/(2(a ^(2)+ c ^(2)))) t ^(2) ; $t_h$：sqrt(((2 h (a ^(2)+ c ^(2)))/(g c ^(2))))\n(3) $\\tau$：((m a ^(2) g c)/(a ^(2)+ c ^(2)))\n(4) $W$：ma^2ωsqrt(((2gh)/(a^2+c^2)))"
+  },
+  "methods": [],
+  "tags": [
+   "回転座標系",
+   "時間依存ハミルトニアン",
+   "Jacobi積分",
+   "仕事とエネルギー",
+   "螺旋"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 25,
+  "theme": "一般解を座標に用いた時間依存変換",
+  "topic": "一般解を座標に用いた時間依存変換",
+  "statement": {
+   "tex": "質量 $m$ の粒子が，距離 $a$ 離れた 2 つの固定点に結ばれた 2 本のばね（自然長 0，ばね定数 $k_1,k_2$）の力を受けて，ばねに沿った直線上を動く．一方の固定点からの距離を $q$ とする．$\\omega=\\sqrt{(k_1+k_2)/m}$，$b=k_1a/(k_1+k_2)$ とする．\n\\begin{enumerate}\n\\item ハミルトニアン $H(q,p)$ を（定数項を除いて）求めよ．\n\\item 新しい座標 $Q$ を $q=b+Q\\sin\\omega t$ で導入する．$Q$ に共役な運動量 $P$ とハミルトニアン $H'(Q,P,t)$ を求め，$P$ と $H'$ をもとの $q,p$ で表せ．$H'$ の値はエネルギー $E$ とどう違うか．\n\\item $H'$ から得られる $Q$ の運動方程式の一般解が $Q=A+B\\cot\\omega t$（$A,B$ は定数）であることを示せ．$Q$ が一定となるのはどのような運動か．また $\\omega t=n\\pi$ で何が起こるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p^2}{2m}+\\dfrac12m\\omega^2(q-b)^2$　(2) $P=p\\sin\\omega t$，$H'=\\dfrac{P^2}{2m\\sin^2\\omega t}-\\omega PQ\\cot\\omega t+\\dfrac m2\\omega^2Q^2\\sin^2\\omega t=E-\\omega p(q-b)\\cot\\omega t$　(3) $Q$ 一定 $\\iff$ $t=0$ に平衡点 $q=b$ を通る運動；$\\omega t=n\\pi$ で座標変換が特異（$Q$ が発散）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\frac m2\\dot q^2-\\frac{k_1}2q^2-\\frac{k_2}2(a-q)^2=\\frac m2\\left[\\dot q^2-\\omega^2(q-b)^2\\right]+\\text{定数}$．$H=\\dfrac{p^2}{2m}+\\dfrac12m\\omega^2(q-b)^2$（$=E$，保存）．\n\n(2) $\\dot q=\\dot Q\\sin\\omega t+\\omega Q\\cos\\omega t$ を代入すると\n\\[\nL'=\\frac m2\\left[\\dot Q^2\\sin^2\\omega t+\\omega Q\\dot Q\\sin2\\omega t+\\omega^2Q^2\\cos2\\omega t\\right].\n\\]\n$P=\\partial L'/\\partial\\dot Q=m\\sin\\omega t\\,(\\dot Q\\sin\\omega t+\\omega Q\\cos\\omega t)=m\\dot q\\sin\\omega t=p\\sin\\omega t$．\n\\[\nH'=P\\dot Q-L'=\\frac{P^2}{2m\\sin^2\\omega t}-\\omega PQ\\cot\\omega t+\\frac m2\\omega^2Q^2\\sin^2\\omega t .\n\\]\n$Q=(q-b)/\\sin\\omega t$，$P=p\\sin\\omega t$ を代入すると\n\\[\nH'=\\frac{p^2}{2m}+\\frac m2\\omega^2(q-b)^2-\\omega p(q-b)\\cot\\omega t=E-\\omega p(q-b)\\cot\\omega t .\n\\]\n$H'$ は $t$ を陽に含み保存されず，値も $E$ と異なる．\n\n(3) $q-b$ の一般解は $\\alpha\\sin\\omega t+\\beta\\cos\\omega t$ だから $Q=\\alpha+\\beta\\cot\\omega t$．実際，$L'$ の Lagrange 方程式に $Q=A+B\\cot\\omega t$ を代入すると恒等的に満たされる．$Q$ が一定 $\\iff B=0\\iff q-b=A\\sin\\omega t$，すなわち $t=0$ に平衡点を通る（位相が固定された）運動に限られる．$\\omega t=n\\pi$ では $\\sin\\omega t=0$ で $q=b$ に固定され，$Q$ から $q$ が決まらない（$P=0$，$H'$ の運動項 $P^2/\\sin^2$ が不定）．この座標変換は一般解の形を座標に取り込んだもので，$B\\ne0$ の運動では $Q$ がそこで発散する．"
+   }
+  ],
+  "idea": {
+   "tex": "特殊解の形 $q-b\\propto\\sin\\omega t$ を座標変換に用いると，その解だけが $Q=$ 一定になり，他の解は $\\cot\\omega t$ で特異になる．$H'$ は $E$ から $\\omega p(q-b)\\cot\\omega t$ だけずれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $H$：((p ^(2))/(2 m))+((1)/(2)) m ω ^(2)(q - b)^(2)\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間依存座標変換",
+   "ハミルトニアン",
+   "調和振動子",
+   "保存量",
+   "特異性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Weber型速度依存ポテンシャルと落下速度の上限",
+  "topic": "Weber型速度依存ポテンシャルと落下速度の上限",
+  "statement": {
+   "tex": "質量 $m$ の粒子が，速度に依存するポテンシャル\n\\[\nU=-\\frac kr\\left(1+\\frac{\\dot r^2}{c^2}\\right)\\qquad(k>0,\\ c>0\\ \\text{は速さの次元の定数})\n\\]\nの影響下で 3 次元空間を運動する（ラグランジアン $L=T-U$，$r$ は原点からの距離）．\n\\begin{enumerate}\n\\item 球座標でハミルトニアン $H(r,\\theta,\\varphi,p_r,p_\\theta,p_\\varphi)$ を求めよ．$H$ は保存されるか．また $H$ の値は $T+U$ に等しいか．\n\\item 角運動量 0 で原点に向かって落下する運動を考える．エネルギー（$H$ の値）を $E$ とするとき，$\\dot r^2$ を $r$ の関数として求めよ．\n\\item $r\\to0$ で $|\\dot r|$ はどんな値に近づくか．また運動中つねに $|\\dot r|<c$ となるための $E$ の条件を求め，無限遠での速さ $v_\\infty$ の条件に書き直せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac1{2m}\\left[\\left(1+\\dfrac{2k}{mc^2r}\\right)^{-1}p_r^2+\\dfrac{p_\\theta^2}{r^2}+\\dfrac{p_\\varphi^2}{r^2\\sin^2\\theta}\\right]-\\dfrac kr$；保存されるが $T+U$ とは異なる（$H=T-\\frac kr+\\frac{k\\dot r^2}{c^2r}$）　(2) $\\dot r^2=\\dfrac{2c^2(Er+k)}{mc^2r+2k}$　(3) $|\\dot r|\\to c$；$E<\\frac12mc^2$，すなわち $v_\\infty<c$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\frac m2(\\dot r^2+r^2\\dot\\theta^2+r^2\\sin^2\\theta\\,\\dot\\varphi^2)+\\frac kr\\left(1+\\frac{\\dot r^2}{c^2}\\right)$．\n$p_r=\\left(m+\\frac{2k}{c^2r}\\right)\\dot r$，$p_\\theta=mr^2\\dot\\theta$，$p_\\varphi=mr^2\\sin^2\\theta\\,\\dot\\varphi$．$H=\\sum p\\dot q-L$ に代入して\n\\[\nH=\\frac1{2m}\\left[\\left(1+\\frac{2k}{mc^2r}\\right)^{-1}p_r^2+\\frac{p_\\theta^2}{r^2}+\\frac{p_\\varphi^2}{r^2\\sin^2\\theta}\\right]-\\frac kr .\n\\]\n$t$ を陽に含まないので保存される．速度で書くと $H=T+\\dfrac{k\\dot r^2}{c^2r}-\\dfrac kr$ であり，$T+U=T-\\dfrac kr-\\dfrac{k\\dot r^2}{c^2r}$ とは $\\dot r^2$ の項の符号が異なる（$U$ が速度の 2 次を含むため）．\n\n(2) 角運動量 0 なら $\\dot\\theta=\\dot\\varphi=0$ で\n\\[\nE=\\frac12\\left(m+\\frac{2k}{c^2r}\\right)\\dot r^2-\\frac kr\\quad\\Longrightarrow\\quad\\dot r^2=\\frac{2(E+k/r)}{m+2k/(c^2r)}=\\frac{2c^2(Er+k)}{mc^2r+2k}.\n\\]\n\n(3) $r\\to0$ で $\\dot r^2\\to2c^2k/(2k)=c^2$，すなわち $|\\dot r|\\to c$（$E$ によらない）．引力で加速されても，動径方向の実効質量 $m+2k/(c^2r)$ が増大して速さは $c$ で頭打ちになる．さらに\n\\[\n\\dot r^2-c^2=\\frac{c^2r(2E-mc^2)}{mc^2r+2k}\n\\]\nだから，すべての $r>0$ で $|\\dot r|<c\\iff E<\\frac12mc^2$．$E=\\frac12mv_\\infty^2$（$r\\to\\infty$）なので $v_\\infty<c$ と同値．$v_\\infty>c$ で入射すると速さは単調に減少して $c$ に近づく．"
+   }
+  ],
+  "idea": {
+   "tex": "Weber 型の速度依存ポテンシャルでは動径方向の実効質量が $m+2k/(c^2r)$ となり，$H$ の保存から中心付近の落下速度が $c$ に漸近する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\dot r^2$：((2 c ^(2)(E r + k))/(m c ^(2) r +2 k))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "速度依存ポテンシャル",
+   "ハミルトニアン",
+   "Weberポテンシャル",
+   "エネルギー積分",
+   "実効質量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "AM-03-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -481,6 +1580,1409 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "対称こまのハミルトニアンと「眠りごま」の安定条件",
+  "topic": "対称こまのハミルトニアンと「眠りごま」の安定条件",
+  "statement": {
+   "tex": "対称こまのラグランジアンは $L=\\frac12I_1(\\dot\\theta^2+\\dot\\varphi^2\\sin^2\\theta)+\\frac12I_3(\\dot\\psi+\\dot\\varphi\\cos\\theta)^2-Mgl\\cos\\theta$ である．\n\\begin{enumerate}\n\\item 運動量 $p_\\theta,p_\\varphi,p_\\psi$ とハミルトニアンを求めよ．\n\\item 鉛直に立って回る状態（$\\theta=0$，$p_\\varphi=p_\\psi=I_3\\omega_3$）のまわりで $\\theta$ についての有効ポテンシャルを2次まで展開せよ．\n\\item 鉛直の回転が安定である条件を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_\\theta^2}{2I_1}+\\dfrac{(p_\\varphi-p_\\psi\\cos\\theta)^2}{2I_1\\sin^2\\theta}+\\dfrac{p_\\psi^2}{2I_3}+Mgl\\cos\\theta$　(2) $\\left(\\dfrac{(I_3\\omega_3)^2}{8I_1}-\\dfrac{Mgl}{2}\\right)\\theta^2+\\text{const}$　(3) $I_3^2\\omega_3^2>4I_1Mgl$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p_\\psi=I_3(\\dot\\psi+\\dot\\varphi\\cos\\theta)$，$p_\\varphi=I_1\\dot\\varphi\\sin^2\\theta+p_\\psi\\cos\\theta$，$p_\\theta=I_1\\dot\\theta$．ルジャンドル変換で与式．\n\n(2) $1-\\cos\\theta\\simeq\\theta^2/2$，$\\sin^2\\theta\\simeq\\theta^2$ で第2項 $\\simeq\\dfrac{(I_3\\omega_3)^2\\theta^2}{8I_1}$，$Mgl\\cos\\theta\\simeq Mgl(1-\\theta^2/2)$．\n\n(3) 2次の係数が正：$\\boldsymbol{I_3^2\\omega_3^2>4I_1Mgl}$．摩擦で $\\omega_3$ が減るとこの条件が破れ，こまは急にふらつき始める．"
+   }
+  ],
+  "idea": {
+   "tex": "ハミルトニアンで循環座標の運動量を定数とみなすと，$\\theta$ の1自由度の問題になる．原題のハミルトン方程式の導出に，鉛直のこまの安定条件を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ハミルトニアン",
+   "対称こま",
+   "眠りごま",
+   "安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "1階のLagrange関数と強磁場中のドリフト",
+  "topic": "1階のLagrange関数と強磁場中のドリフト",
+  "statement": {
+   "tex": "強い一様磁場 $B\\boldsymbol e_z$ 中の電荷 $q>0$ の粒子が，平面内のポテンシャル $U(x,y)$ を受けている．質量の効果が無視できる極限では，Lagrange 関数として速度の 1 次式\n\\[\nL=\\frac{qB}{2}(x\\dot y-y\\dot x)-U(x,y)\n\\]\nを用いることができる．\n\\begin{enumerate}\n\\item 変分原理 $\\delta\\int L\\,dt=0$ から運動方程式を導け．\n\\item $Q=y,\\ P=qBx$ とおくと，$L$ は $P\\dot Q-H$（$H=U$）と全微分の差しかないことを示し，(1) が $H=U$ を Hamilton 関数とする正準方程式であることを確かめよ．$Q=x,\\ P=qBy$ と組んだ場合はどうなるか．\n\\item $U=\\frac12k(x^2+y^2)$ のとき運動を求めよ．また質量 $m$ を残した厳密な運動（Lagrange 関数に $\\frac12m(\\dot x^2+\\dot y^2)$ を加える）の遅い円運動の角速度を求め，$m\\to0$ で (3) の結果に一致すること，および $m$ の 1 次の補正を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dot x=-\\dfrac{1}{qB}\\dfrac{\\partial U}{\\partial y}$，$\\dot y=\\dfrac1{qB}\\dfrac{\\partial U}{\\partial x}$　(2) $F=-\\frac{qB}2xy$ の全微分を除き $L=P\\dot Q-U$．$(x,qBy)$ と組むと時間反転した運動になる　(3) 角速度 $\\Omega=k/(qB)$ の反時計回り円運動．厳密には $\\Omega=\\dfrac{\\sqrt{q^2B^2+4mk}-qB}{2m}\\simeq\\dfrac{k}{qB}-\\dfrac{mk^2}{(qB)^3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{\\partial L}{\\partial\\dot x}=-\\dfrac{qB}2y$，$\\dfrac{\\partial L}{\\partial x}=\\dfrac{qB}{2}\\dot y-U_x$ より $-\\dfrac{qB}{2}\\dot y-\\dfrac{qB}2\\dot y+U_x=0$，すなわち $\\dot y=U_x/(qB)$．同様に $\\dfrac{\\partial L}{\\partial\\dot y}=\\dfrac{qB}2x$，$\\dfrac{\\partial L}{\\partial y}=-\\dfrac{qB}2\\dot x-U_y$ より $\\dot x=-U_y/(qB)$．これは $\\boldsymbol E\\times\\boldsymbol B$ ドリフト $\\boldsymbol v=\\dfrac{\\boldsymbol F\\times\\boldsymbol B}{qB^2}$（$\\boldsymbol F=-\\nabla U$）である．\n\n(2) $\\dfrac{qB}{2}(x\\dot y-y\\dot x)=qBx\\dot y-\\dfrac{qB}{2}(x\\dot y+y\\dot x)=qBx\\dot y-\\dfrac{d}{dt}\\Bigl(\\dfrac{qB}2xy\\Bigr)$ より\n\\[\nL=P\\dot Q-H+\\frac{dF}{dt},\\qquad Q=y,\\ P=qBx,\\ H=U,\\ F=-\\frac{qB}{2}xy .\n\\]\n全微分は変分に寄与しないので，$\\delta\\int L\\,dt=0$ は位相空間の変分原理 $\\delta\\int(P\\dot Q-H)dt=0$ と同じであり，正準方程式\n\\[\n\\dot Q=\\dot y=\\frac{\\partial U}{\\partial P}=\\frac{1}{qB}U_x,\\qquad \\dot P=qB\\dot x=-\\frac{\\partial U}{\\partial Q}=-U_y\n\\]\nは (1) に一致する．$x,y$ は互いに共役な正準変数で，位相空間そのものが実空間の平面である．\n$Q=x,\\ P=qBy$ と組むと $\\dot Q=\\partial H/\\partial P=U_y/(qB)$ となり (1) と符号が逆，すなわち時間を反転した運動になる（$L=-P\\dot Q-H+\\cdots$ なので正しくは $(x,\\,-qBy)$ が共役対）．\n\n(3) $\\dot x=-\\dfrac{k}{qB}y$，$\\dot y=\\dfrac{k}{qB}x$ より角速度 $\\Omega=k/(qB)$ の反時計回りの等速円運動（半径は初期値で決まる）．\n質量を入れると $m\\ddot x=qB\\dot y-kx,\\ m\\ddot y=-qB\\dot x-ky$．$x+iy=e^{i\\Omega t}$ を代入して $-m\\Omega^2=-qB\\Omega-k$，すなわち $m\\Omega^2+qB\\Omega-k=0$ の正の根\n\\[\n\\Omega=\\frac{\\sqrt{q^2B^2+4mk}-qB}{2m}=\\frac{k}{qB}-\\frac{mk^2}{(qB)^3}+O(m^2)\n\\]\nが遅い（マグネトロン）運動．もう一つの根は $\\Omega\\simeq-qB/m$ の速いサイクロトロン運動で，$m\\to0$ で消える．"
+   }
+  ],
+  "idea": {
+   "tex": "速度の1次式だけの Lagrange 関数では実空間の $x,y$ 自身が正準共役対になり，Hamilton 関数はポテンシャルそのもの．強磁場の遅いドリフトを位相空間の変分原理で捉える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "位相空間の変分原理",
+   "正準方程式",
+   "E×Bドリフト",
+   "1階のLagrange関数",
+   "案内中心"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 30,
+  "theme": "円柱座標で見た磁場中の荷電粒子",
+  "topic": "円柱座標で見た磁場中の荷電粒子",
+  "statement": {
+   "tex": "一様な磁束密度 $B\\boldsymbol e_z$（$B>0$）中の質量 $m$，電荷 $q>0$ の粒子を，ベクトルポテンシャル $\\boldsymbol A=\\frac12\\boldsymbol B\\times\\boldsymbol r$ と円柱座標 $(r,\\varphi,z)$ で扱う．\n\\begin{enumerate}\n\\item Hamilton 関数を $r,p_r,p_\\varphi,p_z$ で表せ．\n\\item $p_\\varphi>0$ のとき，$z$ 方向の運動を除いた動径運動の有効ポテンシャルの最小点 $r_0$ と，そこでの値を求めよ．この平衡はどんな運動に対応するか．\n\\item $r_0$ のまわりの動径方向の微小振動の角振動数を求め，$p_\\varphi$ によらずサイクロトロン角振動数 $qB/m$ に等しいことを示せ．原点が円軌道の内部にないのに $r$ が振動する理由を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_r^2}{2m}+\\dfrac{1}{2mr^2}\\Bigl(p_\\varphi-\\dfrac{qB}{2}r^2\\Bigr)^2+\\dfrac{p_z^2}{2m}$　(2) $r_0=\\sqrt{2p_\\varphi/(qB)}$，最小値 0（静止）　(3) $\\omega=qB/m$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol A=\\frac B2(-y,x,0)=\\frac{Br}{2}\\boldsymbol e_\\varphi$．$L=\\frac m2(\\dot r^2+r^2\\dot\\varphi^2+\\dot z^2)+\\frac{qB}{2}r^2\\dot\\varphi$ より $p_r=m\\dot r$，$p_\\varphi=mr^2\\dot\\varphi+\\frac{qB}2r^2$，$p_z=m\\dot z$．$H=\\sum p\\dot q-L$ を計算して\n\\[\nH=\\frac{p_r^2}{2m}+\\frac{1}{2mr^2}\\Bigl(p_\\varphi-\\frac{qB}{2}r^2\\Bigr)^2+\\frac{p_z^2}{2m}.\n\\]\n（$=\\frac1{2m}(\\boldsymbol p-q\\boldsymbol A)^2$．）$\\varphi$ は循環座標で $p_\\varphi=$ 一定．\n\n(2) 有効ポテンシャル $V(r)=\\dfrac{(p_\\varphi-ar^2)^2}{2mr^2}$（$a=qB/2$）は $\\ge0$ で，$p_\\varphi=ar^2$ のとき 0 になる．よって $r_0=\\sqrt{2p_\\varphi/(qB)}$，$V(r_0)=0$．このとき $\\dot r=0$ かつ $\\dot\\varphi=(p_\\varphi-ar_0^2)/(mr_0^2)=0$ で，粒子は静止している（運動エネルギー 0）．\n\n(3) $f(r)=p_\\varphi/r-ar$ とおくと $V=f^2/(2m)$．$f(r_0)=0$ なので $V''(r_0)=f'(r_0)^2/m$，$f'(r_0)=-p_\\varphi/r_0^2-a=-2a$．よって $V''(r_0)=4a^2/m$，\n\\[\n\\omega^2=\\frac{V''(r_0)}{m}=\\frac{4a^2}{m^2}=\\Bigl(\\frac{qB}{m}\\Bigr)^2 .\n\\]\n$r_0$ の近くのエネルギーをもつ運動は，点 $(r_0,\\varphi_0)$ 付近を中心とする小さなサイクロトロン円運動である（$p_\\varphi=\\frac{qB}2(R^2-\\rho^2)$ で $\\rho\\to0$ のとき $R=r_0$）．中心が原点からずれているので，円を 1 周する間に原点からの距離 $r$ は 1 回増減する．その周期がサイクロトロン周期 $2\\pi m/(qB)$ なので，動径振動の角振動数は $p_\\varphi$ によらず $qB/m$ となる．"
+   }
+  ],
+  "idea": {
+   "tex": "対称ゲージの円柱座標では，静止した粒子が有効ポテンシャルの最小点にあたり，そのまわりの動径振動は原点からずれた小円運動の見え方であるため角振動数がちょうどサイクロトロン振動数になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\omega$：qB/m"
+  },
+  "methods": [],
+  "tags": [
+   "Hamilton関数",
+   "荷電粒子",
+   "円柱座標",
+   "有効ポテンシャル",
+   "サイクロトロン運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 30,
+  "theme": "眠りゴマの安定条件をHamilton関数から",
+  "topic": "眠りゴマの安定条件をHamilton関数から",
+  "statement": {
+   "tex": "対称軸上の 1 点を固定した対称コマ（固定点まわりの横の慣性モーメント $I_1$，対称軸まわり $I_3$，質量 $M$，固定点から重心まで $l$）の Hamilton 関数は Euler 角 $(\\theta,\\varphi,\\psi)$ を用いて\n\\[\nH=\\frac{p_\\theta^2}{2I_1}+\\frac{(p_\\varphi-p_\\psi\\cos\\theta)^2}{2I_1\\sin^2\\theta}+\\frac{p_\\psi^2}{2I_3}+Mgl\\cos\\theta\n\\]\nで与えられる．\n\\begin{enumerate}\n\\item $p_\\varphi,p_\\psi$ が保存することを示し，$\\theta$ の運動に対する有効ポテンシャル $V(\\theta)$ を書け．\n\\item 対称軸が鉛直上向き（$\\theta=0$）で回転するコマ（眠りゴマ）では $p_\\varphi=p_\\psi$ であることを示せ．\n\\item $p_\\varphi=p_\\psi$ のとき $V(\\theta)$ を $\\theta=0$ のまわりで $\\theta^2$ の項まで展開し，眠りゴマが安定である条件と，わずかに傾いたときの $\\theta$ の微小振動の角振動数を求めよ．条件を対称軸まわりの角速度 $\\omega_3$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V=\\dfrac{(p_\\varphi-p_\\psi\\cos\\theta)^2}{2I_1\\sin^2\\theta}+Mgl\\cos\\theta$　(2) 証明　(3) $p_\\psi^2>4I_1Mgl$，$\\Omega^2=\\dfrac{p_\\psi^2}{4I_1^2}-\\dfrac{Mgl}{I_1}$，$\\omega_3^2>\\dfrac{4I_1Mgl}{I_3^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $H$ は $\\varphi,\\psi$ を含まないので $\\dot p_\\varphi=-\\partial H/\\partial\\varphi=0$，$\\dot p_\\psi=0$．$p_\\psi^2/(2I_3)$ は定数なので，$\\theta$ の運動は $\\dfrac{p_\\theta^2}{2I_1}+V(\\theta)=$ 一定，\n\\[\nV(\\theta)=\\frac{(p_\\varphi-p_\\psi\\cos\\theta)^2}{2I_1\\sin^2\\theta}+Mgl\\cos\\theta .\n\\]\n\n(2) $p_\\varphi=I_1\\sin^2\\theta\\,\\dot\\varphi+p_\\psi\\cos\\theta$（鉛直軸まわりの角運動量），$p_\\psi=I_3(\\dot\\psi+\\dot\\varphi\\cos\\theta)=I_3\\omega_3$（対称軸まわりの角運動量）．$\\theta=0$ では対称軸が鉛直軸に一致するので両者は等しく $p_\\varphi=p_\\psi$．（$V$ が $\\theta\\to0$ で有限であるためにも $p_\\varphi=p_\\psi$ が必要．）\n\n(3) $p_\\varphi=p_\\psi$ のとき $1-\\cos\\theta\\simeq\\theta^2/2$，$\\sin\\theta\\simeq\\theta$ より\n\\[\nV(\\theta)\\simeq Mgl+\\left(\\frac{p_\\psi^2}{8I_1}-\\frac{Mgl}{2}\\right)\\theta^2 .\n\\]\n$\\theta=0$ が極小（安定）である条件は $p_\\psi^2>4I_1Mgl$．微小振動は $\\frac{p_\\theta^2}{2I_1}+\\frac12K\\theta^2$（$K=\\frac{p_\\psi^2}{4I_1}-Mgl$）の形なので\n\\[\n\\Omega^2=\\frac{K}{I_1}=\\frac{p_\\psi^2}{4I_1^2}-\\frac{Mgl}{I_1}.\n\\]\n$p_\\psi=I_3\\omega_3$ を代入すると安定条件は $\\omega_3^2>4I_1Mgl/I_3^2$．摩擦で $\\omega_3$ がこの値を下回るとコマは急に倒れ始める．"
+   }
+  ],
+  "idea": {
+   "tex": "Hamilton 関数の循環座標から保存量を読み取り，$\\theta=0$ で $V$ が有限になる条件 $p_\\varphi=p_\\psi$ のもとで 2 次展開すると眠りゴマの安定条件が直ちに出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Hamilton関数",
+   "対称コマ",
+   "眠りゴマ",
+   "有効ポテンシャル",
+   "安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 40,
+  "theme": "振り子のセパラトリクスの面積と周期の対数発散",
+  "topic": "振り子のセパラトリクスの面積と周期の対数発散",
+  "statement": {
+   "tex": "長さ $l$ の単振り子（質量 $m$，$\\omega_0=\\sqrt{g/l}$）の Hamilton 関数は $H=\\dfrac{p^2}{2ml^2}-mgl\\cos q$ である．\n\\begin{enumerate}\n\\item 位相空間でのセパラトリクス（$E=mgl$ の軌道）の式 $p(q)$ を求め，それが囲む領域（振動運動の領域）の面積が $16ml^2\\omega_0$ であることを示せ．\n\\item 微小振動の作用変数 $J=\\oint p\\,dq=2\\pi E'/\\omega_0$（$E'$ は最低点から測ったエネルギー）を用いて，Bohr–Sommerfeld の量子化 $J=nh$ のもとで振動運動の状態の数 $N_{\\rm osc}$ を見積もれ．これを単純な見積もり「セパラトリクスのエネルギー $2mgl$ を $\\hbar\\omega_0$ で割った数」と比べ，比を求めよ．\n\\item エネルギー $E$ がセパラトリクスよりわずかに低いとき（$0<mgl-E\\ll mgl$），振動の周期が\n\\[\nT\\simeq\\frac{2}{\\omega_0}\\log\\frac{32\\,mgl}{mgl-E}\n\\]\nとなることを示せ．ただし第 1 種完全楕円積分の漸近形 $K(k)\\simeq\\log(4/k')$（$k'=\\sqrt{1-k^2}\\to0$）を用いてよい．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=\\pm2ml^2\\omega_0\\cos(q/2)$，面積 $16ml^2\\omega_0$　(2) $N_{\\rm osc}\\simeq\\dfrac{8}{\\pi}\\dfrac{ml^2\\omega_0}{\\hbar}$，比 $4/\\pi$　(3) 略（与式）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E=mgl$ のとき $p^2=2ml^2\\cdot mgl(1+\\cos q)=4m^2l^4\\omega_0^2\\cos^2(q/2)$（$g=l\\omega_0^2$）．よって $p=\\pm2ml^2\\omega_0\\cos(q/2)$，$-\\pi\\le q\\le\\pi$．面積は\n\\[\n2\\int_{-\\pi}^{\\pi}2ml^2\\omega_0\\cos\\frac q2\\,dq=4ml^2\\omega_0\\Bigl[2\\sin\\frac q2\\Bigr]_{-\\pi}^{\\pi}=16ml^2\\omega_0 .\n\\]\n\n(2) 作用変数は位相空間の軌道が囲む面積であり，$J=nh$ の量子化では面積 $h=2\\pi\\hbar$ ごとに 1 つの状態が対応する．よって振動状態の数は\n\\[\nN_{\\rm osc}\\simeq\\frac{16ml^2\\omega_0}{2\\pi\\hbar}=\\frac{8}{\\pi}\\frac{ml^2\\omega_0}{\\hbar}.\n\\]\n単純な見積もり $\\dfrac{2mgl}{\\hbar\\omega_0}=\\dfrac{2ml^2\\omega_0}{\\hbar}$ との比は $\\dfrac{8/\\pi}{2}=\\dfrac4\\pi\\simeq1.27$．非調和性で振動数が下がり（準位間隔が詰まり），状態の数が多くなる．\n\n(3) 振幅を $q_0$，$k=\\sin(q_0/2)$ とすると $E=-mgl\\cos q_0=mgl(2k^2-1)$，周期は $T=4K(k)/\\omega_0$．$k'^2=1-k^2=\\dfrac{mgl-E}{2mgl}$．漸近形を用いて\n\\[\nT\\simeq\\frac{4}{\\omega_0}\\log\\frac{4}{k'}=\\frac{2}{\\omega_0}\\log\\frac{16}{k'^2}=\\frac{2}{\\omega_0}\\log\\frac{32\\,mgl}{mgl-E}.\n\\]\nセパラトリクスに近づくと周期は対数的に発散する（頂点付近の鞍点で長時間とどまるため）．"
+   }
+  ],
+  "idea": {
+   "tex": "セパラトリクスの囲む面積（作用）で状態数を数えると非調和性の補正 $4/\\pi$ が現れ，セパラトリクス近傍では鞍点の効果で周期が対数発散する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "正準方程式",
+   "位相空間",
+   "単振り子",
+   "セパラトリクス",
+   "作用変数",
+   "楕円積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 40,
+  "theme": "回転座標系のHamiltonianとJacobi積分・回転鞍点",
+  "topic": "回転座標系のHamiltonianとJacobi積分・回転鞍点",
+  "statement": {
+   "tex": "質量 $m$ の質点を，慣性系に対して $z$ 軸のまわりに一定の角速度 $\\Omega$ で回転する座標系の円柱座標 $(\\rho,\\varphi,z)$ で記述する．\n\\begin{enumerate}\n\\item ポテンシャル $U(\\rho,z)$（$\\varphi$ によらない）のもとでの Lagrange 関数，正準運動量 $p_\\rho,p_\\varphi,p_z$，Hamilton 関数 $H$ を求めよ．\n\\item $H=E-\\Omega p_\\varphi$（$E$ は慣性系での力学的エネルギー）であることを示せ．ポテンシャルが回転座標系に固定された非軸対称なもの $U(x',y',z)$ の場合，$E$ と $H$ のどちらが保存するか．\n\\item 回転座標系に固定された平面ポテンシャル $U=\\frac m2(\\omega_x^2x'^2+\\omega_y^2y'^2)$（$\\omega_x>\\omega_y>0$）のもとで，原点に静止した質点が不安定になる $\\Omega$ の範囲を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\frac m2\\{\\dot\\rho^2+\\rho^2(\\dot\\varphi+\\Omega)^2+\\dot z^2\\}-U$，$p_\\rho=m\\dot\\rho$，$p_\\varphi=m\\rho^2(\\dot\\varphi+\\Omega)$，$p_z=m\\dot z$，$H=\\dfrac{p_\\rho^2+p_z^2}{2m}+\\dfrac{p_\\varphi^2}{2m\\rho^2}-\\Omega p_\\varphi+U$．(2) 非軸対称なら保存するのは $H$（Jacobi 積分）のみ．(3) $\\omega_y<\\Omega<\\omega_x$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 慣性系での方位角は $\\varphi+\\Omega t$ なので $T=\\frac m2\\{\\dot\\rho^2+\\rho^2(\\dot\\varphi+\\Omega)^2+\\dot z^2\\}$．$p_\\varphi=m\\rho^2(\\dot\\varphi+\\Omega)$ は慣性系での角運動量 $L_z$ に等しい．\n\\[H=p_\\rho\\dot\\rho+p_\\varphi\\dot\\varphi+p_z\\dot z-L=\\frac{p_\\rho^2+p_z^2}{2m}+\\frac{p_\\varphi^2}{2m\\rho^2}-\\Omega p_\\varphi+U.\\]\n\n(2) $\\dot\\varphi=(p_\\varphi/m\\rho^2)-\\Omega$ を用いれば $H=\\left[\\frac{p_\\rho^2+p_z^2}{2m}+\\frac{p_\\varphi^2}{2m\\rho^2}+U\\right]-\\Omega p_\\varphi=E-\\Omega L_z$．$L$ が $t$ を陽に含まないので $H$ は常に保存．$U$ が回転座標系に固定され $\\varphi$ に依存すると $p_\\varphi$ は保存せず，慣性系では $U$ が時間に陽に依存するので $E$ も保存しない．保存するのは組合せ $E-\\Omega L_z$（Jacobi 積分）のみ．\n\n(3) 回転直交座標で $L=\\frac m2\\{(\\dot x'-\\Omega y')^2+(\\dot y'+\\Omega x')^2\\}-U$ より\n\\[\\ddot x'-2\\Omega\\dot y'+(\\omega_x^2-\\Omega^2)x'=0,\\qquad \\ddot y'+2\\Omega\\dot x'+(\\omega_y^2-\\Omega^2)y'=0.\\]\n$e^{st}$ を入れると特性方程式\n\\[s^4+(\\omega_x^2+\\omega_y^2+2\\Omega^2)s^2+(\\omega_x^2-\\Omega^2)(\\omega_y^2-\\Omega^2)=0.\\]\n$s^2$ の2次式として，1次の係数 $\\omega_x^2+\\omega_y^2+2\\Omega^2$ は正なので，両根が負の実数（安定）になる条件は定数項が正かつ判別式が正．判別式は $(\\omega_x^2+\\omega_y^2+2\\Omega^2)^2-4(\\omega_x^2-\\Omega^2)(\\omega_y^2-\\Omega^2)=(\\omega_x^2-\\omega_y^2)^2+8\\Omega^2(\\omega_x^2+\\omega_y^2)>0$ で常に正．よって不安定 $\\iff(\\omega_x^2-\\Omega^2)(\\omega_y^2-\\Omega^2)<0\\iff\\omega_y<\\Omega<\\omega_x$（このとき $s^2>0$ の根があり指数的に発散）．$\\Omega>\\omega_x$ では回転座標系の位置エネルギー $U-\\frac m2\\Omega^2\\rho^2$ は原点で極大なのに，Coriolis 力のため安定になる（ジャイロ安定化）．"
+   }
+  ],
+  "idea": {
+   "tex": "回転座標系の H は E−ΩL_z で，非軸対称ポテンシャルではこれだけが保存する．回転する異方的調和ポテンシャルは ω_y<Ω<ω_x の帯でだけ不安定．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Hamiltonian",
+   "回転座標系",
+   "Jacobi積分",
+   "ジャイロ安定化",
+   "Coriolis力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "回転座標系のケプラー問題と周転円",
+  "topic": "回転座標系のケプラー問題と周転円",
+  "statement": {
+   "tex": "質量 $M$ の太陽（原点に固定）のまわりを，質量 $m$ の惑星が平面内で運動する（万有引力定数 $G$）．この運動を，原点のまわりに一定角速度 $\\Omega\\ (>0)$ で回転する座標系の極座標 $(r,\\phi)$ で記述する．慣性系の極角 $\\theta$ とは $\\theta=\\phi+\\Omega t$ の関係にある．\n\\begin{enumerate}\n\\item ラグランジアン $L(r,\\phi,\\dot r,\\dot\\phi)$ を書き，共役運動量 $p_r,p_\\phi$ とハミルトニアン $H(r,\\phi,p_r,p_\\phi)$ を求めよ．$H$ は保存されるが，惑星の力学的エネルギー $E$ とは一致しない．$H$ を $E$ と $p_\\phi$ で表せ．\n\\item 回転系で惑星が静止し続ける（$\\dot r=\\dot\\phi=0$）平衡点の半径 $r_0$ と，そこでの $H$ の値 $H_0$ を $G,M,m,\\Omega$ で表せ．\n\\item 平衡点にある惑星に，$p_\\phi$ を変えずに動径方向の小さな運動量 $m\\Omega\\delta$（$\\delta\\ll r_0$）を与えた．回転系での軌道は，$r_0$ を中心とする閉曲線（周転円）になることを示し，その動径方向・接線方向の振幅と周期を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_r=m\\dot r$, $p_\\phi=mr^2(\\dot\\phi+\\Omega)$, $H=\\dfrac{p_r^2}{2m}+\\dfrac{p_\\phi^2}{2mr^2}-\\Omega p_\\phi-\\dfrac{GMm}{r}=E-\\Omega p_\\phi$　(2) $r_0=(GM/\\Omega^2)^{1/3}$, $H_0=-\\tfrac32 m(GM\\Omega)^{2/3}$　(3) 動径振幅 $\\delta$，接線振幅 $2\\delta$ の楕円，周期 $2\\pi/\\Omega$（ドリフトなし）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 慣性系の速度の2乗は $\\dot r^2+r^2(\\dot\\phi+\\Omega)^2$ だから\n\\[L=\\frac m2\\{\\dot r^2+r^2(\\dot\\phi+\\Omega)^2\\}+\\frac{GMm}{r}.\\]\n$p_r=m\\dot r$，$p_\\phi=mr^2(\\dot\\phi+\\Omega)$（慣性系での角運動量）．$\\dot\\phi=p_\\phi/(mr^2)-\\Omega$ を用いて\n\\[H=p_r\\dot r+p_\\phi\\dot\\phi-L=\\frac{p_r^2}{2m}+\\frac{p_\\phi^2}{2mr^2}-\\Omega p_\\phi-\\frac{GMm}{r}.\\]\n$H$ は $t$ を陽に含まないので保存する．はじめの3項の和 $\\frac{p_r^2}{2m}+\\frac{p_\\phi^2}{2mr^2}-\\frac{GMm}{r}$ は慣性系の力学的エネルギー $E$ なので $H=E-\\Omega p_\\phi$（ヤコビ積分）．$T$ が速度の同次2次式でない（$\\dot\\phi$ の1次項を含む）ため $H\\neq E$ となる．\n\n(2) 正準方程式は\n\\[\\dot r=\\frac{p_r}{m},\\quad \\dot p_r=\\frac{p_\\phi^2}{mr^3}-\\frac{GMm}{r^2},\\quad \\dot\\phi=\\frac{p_\\phi}{mr^2}-\\Omega,\\quad \\dot p_\\phi=0.\\]\n$\\dot\\phi=0$ より $p_\\phi=mr_0^2\\Omega$，$\\dot p_r=0$ より $mr_0\\Omega^2=GMm/r_0^2$，よって $r_0^3=GM/\\Omega^2$．このとき\n\\[H_0=\\frac{mr_0^2\\Omega^2}{2}-mr_0^2\\Omega^2-mr_0^2\\Omega^2=-\\frac32 mr_0^2\\Omega^2=-\\frac32m(GM\\Omega)^{2/3}\\]\n（$GM/r_0=r_0^2\\Omega^2$ を用いた）．\n\n(3) $p_\\phi=mr_0^2\\Omega$ のまま $r=r_0+x$ とし $x$ の1次まで展開する．\n$\\dot p_r=m\\ddot x$ の右辺を $r_0$ のまわりで展開すると（$r_0$ では $0$）\n\\[m\\ddot x=\\Big(-\\frac{3p_\\phi^2}{mr_0^4}+\\frac{2GMm}{r_0^3}\\Big)x=(-3m\\Omega^2+2m\\Omega^2)x=-m\\Omega^2x.\\]\nよって $x=\\delta\\sin\\Omega t$（初速 $\\dot x(0)=\\Omega\\delta$）．次に\n\\[\\dot\\phi=\\frac{p_\\phi}{mr^2}-\\Omega\\simeq\\Omega\\Big(1-\\frac{2x}{r_0}\\Big)-\\Omega=-\\frac{2\\Omega}{r_0}x\n\\Rightarrow r_0\\phi=2\\delta(\\cos\\Omega t-1).\\]\n接線方向の変位 $y=r_0\\phi$ は $y+2\\delta=2\\delta\\cos\\Omega t$．したがって\n\\[\\Big(\\frac{x}{\\delta}\\Big)^2+\\Big(\\frac{y+2\\delta}{2\\delta}\\Big)^2=1\\]\nの楕円（動径振幅 $\\delta$，接線振幅 $2\\delta$，$r_0$ 方向の中心からのずれなし）を周期 $2\\pi/\\Omega$ で回る．動径振動数が公転角速度に一致する（ケプラー問題の縮退）ため $y$ に永年的なドリフトが生じず，回転系で閉じる．向きは $x>0$ で $\\dot y<0$，すなわち公転と逆向きに回る．"
+   }
+  ],
+  "idea": {
+   "tex": "回転系では $T$ に速度の1次項が入り $H=E-\\Omega p_\\phi\\neq E$．ケプラー問題では周転円振動数が公転角速度と一致するため，回転系の摂動軌道が 1:2 の楕円として閉じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ハミルトニアン",
+   "回転座標系",
+   "ヤコビ積分",
+   "ケプラー問題",
+   "周転円"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "落下するばね付き2物体と下端の静止",
+  "topic": "落下するばね付き2物体と下端の静止",
+  "statement": {
+   "tex": "質量 $m_1$（下）と $m_2$（上）の2物体が，自然長 $l$，ばね定数 $k$ の軽いばねでつながれ，鉛直線上だけを運動する．鉛直上向きに $x$ 軸をとり，下の物体の座標を $x_1$，上の物体の座標を $x_2$ とする．重力加速度の大きさを $g$ とする．はじめ上の物体を手で支え，下の物体はつり下がった状態で静止している．時刻 $t=0$ に上の物体を静かに放す．$M=m_1+m_2$，$\\mu=m_1m_2/M$，$\\omega=\\sqrt{k/\\mu}$ とする．\n\\begin{enumerate}\n\\item 重心座標 $Q=(m_1x_1+m_2x_2)/M$，伸び $q=x_2-x_1-l$ とその共役運動量 $P,p$ を用いて，ハミルトニアンを $H=H_Q(Q,P)+H_q(q,p)$ の形に書け．また $P,p$ を $p_1=m_1\\dot x_1$，$p_2=m_2\\dot x_2$ で表せ．\n\\item ポアソン括弧 $\\{P,H\\}$ と $\\{H_Q,H_q\\}$ を計算し，それぞれの物理的意味を述べよ．\n\\item 放した後の $x_1(t)$ を求め，下の物体の加速度が $t=0$ で $m_1,m_2$ によらず $0$ であることを示せ．\n\\item ばねが初めて自然長になる時刻 $t_1$ と，それまでに下の物体が落下する距離を $g,\\omega$ で表せ．同じ時間に自由落下する距離の何 \\% か（有効数字2桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{P^2}{2M}+MgQ+\\dfrac{p^2}{2\\mu}+\\dfrac k2q^2$，$P=p_1+p_2$，$p=(m_1p_2-m_2p_1)/M$　(2) $\\{P,H\\}=-Mg$，$\\{H_Q,H_q\\}=0$　(3) $x_1=x_1(0)-\\tfrac12gt^2+\\dfrac{g}{\\omega^2}(1-\\cos\\omega t)$，$\\ddot x_1(0)=0$　(4) $t_1=\\dfrac{\\pi}{2\\omega}$，落下距離 $\\left(\\dfrac{\\pi^2}{8}-1\\right)\\dfrac{g}{\\omega^2}\\approx0.234\\,g/\\omega^2$，自由落下の約 $19\\%$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x_1=Q-\\frac{m_2}{M}(q+l)$，$x_2=Q+\\frac{m_1}{M}(q+l)$ より $T=\\frac12M\\dot Q^2+\\frac12\\mu\\dot q^2$，重力ポテンシャル $g(m_1x_1+m_2x_2)=MgQ$．よって\n\\[L=\\frac12M\\dot Q^2+\\frac12\\mu\\dot q^2-MgQ-\\frac k2q^2,\\quad P=M\\dot Q,\\ p=\\mu\\dot q,\\]\n\\[H=\\frac{P^2}{2M}+MgQ+\\frac{p^2}{2\\mu}+\\frac k2q^2.\\]\n$P=m_1\\dot x_1+m_2\\dot x_2=p_1+p_2$，$p=\\mu(\\dot x_2-\\dot x_1)=\\frac{m_1m_2}{M}\\Big(\\frac{p_2}{m_2}-\\frac{p_1}{m_1}\\Big)=\\frac{m_1p_2-m_2p_1}{M}$．\n\n(2) $\\{P,H\\}=\\frac{\\partial P}{\\partial Q}\\frac{\\partial H}{\\partial P}-\\frac{\\partial P}{\\partial P}\\frac{\\partial H}{\\partial Q}=-Mg=\\dot P$：全運動量は重力 $-Mg$ で変化する．$H_Q$ は $(Q,P)$，$H_q$ は $(q,p)$ のみの関数だから，どの項も一方の偏微分が $0$ で $\\{H_Q,H_q\\}=0$．$\\dot H_Q=\\{H_Q,H\\}=\\{H_Q,H_Q\\}+\\{H_Q,H_q\\}=0$ となり，重心運動と相対運動のエネルギーが別々に保存する．\n\n(3) $\\dot P=-Mg$ より $\\ddot Q=-g$，$\\dot Q(0)=0$．相対運動は $\\ddot q=-\\omega^2q$．初期のつり合い $kq_0=m_1g$ より $q_0=m_1g/k$，$\\dot q(0)=0$ なので $q=q_0\\cos\\omega t$．\n\\[x_1=Q-\\frac{m_2}{M}(q+l)=x_1(0)-\\frac12gt^2+\\frac{m_2}{M}q_0(1-\\cos\\omega t).\\]\nここで $\\frac{m_2}{M}q_0\\omega^2=\\frac{m_2}{M}\\frac{m_1g}{k}\\frac{kM}{m_1m_2}=g$，つまり $\\frac{m_2}{M}q_0=g/\\omega^2$．よって\n\\[x_1(t)=x_1(0)-\\frac12gt^2+\\frac g{\\omega^2}(1-\\cos\\omega t),\\quad \\ddot x_1=-g+g\\cos\\omega t.\\]\n$\\ddot x_1(0)=0$（質量比によらない）．放した瞬間，下の物体にはたらく力はばねの張力と重力がつり合ったままで，ばねの伸びが変わるまで情報が伝わらないためである．\n\n(4) $q=0$ となる最初の時刻は $\\omega t_1=\\pi/2$，$t_1=\\pi/(2\\omega)$．\n\\[x_1(0)-x_1(t_1)=\\frac12g\\frac{\\pi^2}{4\\omega^2}-\\frac{g}{\\omega^2}=\\Big(\\frac{\\pi^2}{8}-1\\Big)\\frac g{\\omega^2}\\approx0.234\\frac g{\\omega^2}.\\]\n自由落下では $\\frac{\\pi^2}{8}\\frac g{\\omega^2}\\approx1.234\\,g/\\omega^2$ なので，比は $1-8/\\pi^2\\approx0.19$，約 $19\\%$．"
+   }
+  ],
+  "idea": {
+   "tex": "重心と相対座標で $H$ が分離し，ポアソン括弧で各部分の保存がわかる．相対振動の振幅がちょうど $g/\\omega^2$ に一致するため，放した瞬間の下端の加速度が質量によらず $0$ になる（スリンキー効果）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\{P,H\\}$：- M g ; $\\{H_Q,H_q\\}$：0\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン括弧",
+   "重心座標",
+   "相対座標",
+   "保存量",
+   "ばね"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "単振り子のセパラトリクスと位相空間面積",
+  "topic": "単振り子のセパラトリクスと位相空間面積",
+  "statement": {
+   "tex": "長さ $l$ の軽い剛体棒の先に質量 $m$ のおもりをつけた単振り子が鉛直面内で運動する．鉛直下向きから測った角を $\\theta$，$\\omega_0=\\sqrt{g/l}$ とし，最下点をポテンシャルの基準にとる．\n\\begin{enumerate}\n\\item ハミルトニアン $H(\\theta,p_\\theta)$ を書け．\n\\item エネルギー $E=2mgl$ の軌跡（セパラトリクス）を $p_\\theta=f(\\theta)$ の形で表せ．\n\\item $-\\pi\\le\\theta\\le\\pi$ でセパラトリクスが囲む領域の面積 $S_*$ を求めよ．これを微小振動の公式 $S=2\\pi E/\\omega_0$ に $E=2mgl$ を代入した値と比べ，比を求めよ．\n\\item セパラトリクス上で $\\theta(0)=0$，$\\dot\\theta(0)>0$ の運動について $\\theta(t)$ を求め（$\\theta=4\\arctan e^{\\omega_0t}-\\pi$ が解であることを確かめればよい），振り子が最上点に到達するのに要する時間を論ぜよ．また $t\\to\\infty$ で $\\pi-\\theta$ はどのように $0$ に近づくか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_\\theta^2}{2ml^2}+mgl(1-\\cos\\theta)$　(2) $p_\\theta=\\pm2m\\sqrt{gl^3}\\cos\\dfrac\\theta2$　(3) $S_*=16m\\sqrt{gl^3}$，微小振動公式の値 $4\\pi m\\sqrt{gl^3}$ との比 $4/\\pi\\approx1.27$　(4) 最上点には有限時間で到達しない．$\\pi-\\theta\\simeq4e^{-\\omega_0t}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\frac12ml^2\\dot\\theta^2-mgl(1-\\cos\\theta)$，$p_\\theta=ml^2\\dot\\theta$ より\n\\[H=\\frac{p_\\theta^2}{2ml^2}+mgl(1-\\cos\\theta).\\]\n\n(2) $H=2mgl$ とおくと $\\dfrac{p_\\theta^2}{2ml^2}=mgl(1+\\cos\\theta)=2mgl\\cos^2\\dfrac\\theta2$ なので\n\\[p_\\theta=\\pm2ml\\sqrt{gl}\\cos\\frac\\theta2=\\pm2m\\sqrt{gl^3}\\cos\\frac\\theta2.\\]\n$\\theta=\\pm\\pi$（倒立点，鞍点）で上下の枝が交わる．内側（$E<2mgl$）は秤動の閉曲線，外側（$E>2mgl$）は回転運動で $p_\\theta$ が符号を変えない波形の曲線になる．\n\n(3)\n\\[S_*=2\\int_{-\\pi}^{\\pi}2m\\sqrt{gl^3}\\cos\\frac\\theta2\\,d\\theta=4m\\sqrt{gl^3}\\Big[2\\sin\\frac\\theta2\\Big]_{-\\pi}^{\\pi}=16m\\sqrt{gl^3}.\\]\n微小振動の公式では $2\\pi\\cdot2mgl/\\omega_0=4\\pi m\\sqrt{gl^3}$．比は $16/(4\\pi)=4/\\pi\\approx1.27$．$T=dS/dE$ であり，非線形性で周期が伸びる分だけ実際の面積が大きくなる．\n\n(4) $\\theta=4\\arctan e^{\\omega_0t}-\\pi$ とすると $\\theta(0)=0$．$\\dot\\theta=\\dfrac{4\\omega_0e^{\\omega_0t}}{1+e^{2\\omega_0t}}=\\dfrac{2\\omega_0}{\\cosh\\omega_0t}$．また $\\phi\\equiv\\arctan e^{\\omega_0t}$ とおくと $\\theta+\\pi=4\\phi$ なので $\\cos\\frac\\theta2=\\sin\\frac{\\theta+\\pi}{2}=\\sin2\\phi=\\dfrac{2\\tan\\phi}{1+\\tan^2\\phi}$，すなわち $\\cos\\frac\\theta2=\\dfrac{2e^{\\omega_0t}}{1+e^{2\\omega_0t}}=\\dfrac1{\\cosh\\omega_0t}$．したがって $\\dot\\theta=2\\omega_0\\cos\\frac\\theta2$ で，(2) の $p_\\theta=ml^2\\dot\\theta=2m\\sqrt{gl^3}\\cos\\frac\\theta2$ を満たす（正準方程式の1階形）．$\\theta$ は単調増加で $t\\to\\infty$ のとき $\\theta\\to\\pi$ だが，有限の $t$ では $\\theta<\\pi$．すなわち最上点には有限時間では到達しない（鞍点に漸近するだけ）．\n$\\pi-\\theta=\\pi-4\\arctan e^{\\omega_0t}+\\pi=4\\big(\\frac\\pi2-\\arctan e^{\\omega_0t}\\big)=4\\arctan e^{-\\omega_0t}\\simeq4e^{-\\omega_0t}$．倒立点まわりの線形化 $\\ddot\\xi=\\omega_0^2\\xi$ の減衰解と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "セパラトリクスは閉形式で書け，囲む面積 $16m\\sqrt{gl^3}$ は調和近似の $4/\\pi$ 倍．その上の運動は鞍点へ指数関数的に漸近し，有限時間で倒立点に達しない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $H$：((p_θ ^(2))/(2 m l ^(2)))+ m g l (1- cos θ)\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "位相空間",
+   "セパラトリクス",
+   "単振り子",
+   "作用変数",
+   "鞍点"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 30,
+  "theme": "q̇とṗを変数とするハミルトニアン型関数",
+  "topic": "q̇とṗを変数とするハミルトニアン型関数",
+  "statement": {
+   "tex": "1 自由度系 $L=\\tfrac12 m\\dot q^2-V(q)$ に対し，$p=\\partial L/\\partial\\dot q$，$\\dot p=\\partial L/\\partial q$ を用いて $q$ を $\\dot p$ で表し，\n\\[ G(\\dot q,\\dot p)=\\dot p\\,q-L \\]\nを定義する（$q$ についての Legendre 変換）．このとき $\\partial G/\\partial\\dot p=q$，$\\partial G/\\partial\\dot q=-p$ が成り立つ．\n\\begin{enumerate}\n\\item $V=\\tfrac12 kq^2$ のとき $G$ を求め，$G$ が全エネルギー $E$ とどう関係するか述べよ．\n\\item $V=\\tfrac14\\lambda q^4$（$\\lambda>0$）のとき $G$ を $\\dot q,\\dot p$ で表せ．また $G$ を運動エネルギー $T$ とポテンシャル $V$ で表し，$G$ が運動の定数でないことを $dG/dt$ を計算して示せ．\n\\item (2) の系の周期運動について，$G$ の 1 周期の時間平均 $\\langle G\\rangle$ を全エネルギー $E$ で表せ．さらに $V=c|q|^n$（$c>0,\\ n>1$）の場合の一般式を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $G=-\\dfrac{\\dot p^2}{2k}-\\dfrac{m\\dot q^2}{2}=-E$（保存）　(2) $G=-\\dfrac m2\\dot q^2-\\dfrac34\\lambda^{-1/3}|\\dot p|^{4/3}=-T-3V$，$\\dfrac{dG}{dt}=-2\\lambda q^3\\dot q\\ne0$　(3) $\\langle G\\rangle=-\\dfrac53E$，一般に $\\langle G\\rangle=-\\dfrac{3n-2}{n+2}E$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot p=-kq$ より $q=-\\dot p/k$．\n\\[ G=\\dot p\\left(-\\frac{\\dot p}{k}\\right)-\\frac m2\\dot q^2+\\frac k2\\frac{\\dot p^2}{k^2}=-\\frac{\\dot p^2}{2k}-\\frac m2\\dot q^2. \\]\n$\\dot p^2/(2k)=kq^2/2=V$ なので $G=-(T+V)=-E$ で，これは保存する．（$\\partial G/\\partial\\dot p=-\\dot p/k=q$，$\\partial G/\\partial\\dot q=-m\\dot q=-p$ も確認できる．）\n\n(2) 一般に $\\dot p=-V'(q)$ で，$G=\\dot p q-L=-qV'(q)-T+V$．$V=\\tfrac14\\lambda q^4$ では $qV'=4V$ だから $G=-T-3V$．$q=-(\\dot p/\\lambda)^{1/3}$（実 3 乗根）を用いると $V=\\tfrac14\\lambda^{-1/3}|\\dot p|^{4/3}$ なので\n\\[ G=-\\frac m2\\dot q^2-\\frac34\\lambda^{-1/3}|\\dot p|^{4/3}. \\]\n$E=T+V$ が保存するので $G=-E-2V$，よって\n\\[ \\frac{dG}{dt}=-2\\frac{dV}{dt}=-2\\lambda q^3\\dot q \\]\nは一般に 0 でない．$G$ は「ハミルトニアン」の形式的役割を持つが，時間を陽に含まなくても保存しない（$G$ の正準方程式は正規形でなく，$dG/dt=\\partial G/\\partial\\dot q\\,\\ddot q+\\partial G/\\partial\\dot p\\,\\ddot p=-p\\ddot q+q\\ddot p$ は消えない）．\n\n(3) 有界な周期運動に対するビリアル定理 $2\\langle T\\rangle=\\langle qV'(q)\\rangle=n\\langle V\\rangle$ と $\\langle T\\rangle+\\langle V\\rangle=E$ から\n\\[ \\langle V\\rangle=\\frac{2E}{n+2},\\quad\\langle T\\rangle=\\frac{nE}{n+2}. \\]\n$G=-qV'-T+V=-T-(n-1)V$ だから\n\\[ \\langle G\\rangle=-\\frac{nE}{n+2}-\\frac{2(n-1)E}{n+2}=-\\frac{3n-2}{n+2}E. \\]\n$n=4$ で $\\langle G\\rangle=-\\tfrac{10}{6}E=-\\tfrac53E$．$n=2$ では $-E$ となり (1) と一致する（調和振動子だけが $G$ が保存する特別な場合）．"
+   }
+  ],
+  "idea": {
+   "tex": "$q$ についての Legendre 変換で得る $G$ は $-qV'-T+V$ で，$qV'=2V$（調和）のときだけ $-E$ に一致して保存する．非調和では保存せず，時間平均はビリアル定理で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $G$：-E\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Legendre変換",
+   "ビリアル定理",
+   "非調和振動子",
+   "保存量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-048",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "Pfaffianによる行列式+1の証明",
+  "topic": "Pfaffianによる行列式+1の証明",
+  "statement": {
+   "tex": "$2n$ 次行列 $J_{2n}=\\begin{pmatrix}0_n&1_n\\\\-1_n&0_n\\end{pmatrix}$ を考える．\n\\begin{enumerate}\n\\item $J_{2n}^2=-1_{2n}$，$J_{2n}^{\\rm T}J_{2n}=1_{2n}$ を示し，これだけからは $\\det J_{2n}=\\pm1$ までしか言えないことを述べよ．\n\\item 反対称行列 $A$ の Pfaffian $\\mathrm{Pf}(A)$ について，(i) $\\mathrm{Pf}(A)^2=\\det A$，(ii) 任意の $2n$ 次行列 $B$ に対し $\\mathrm{Pf}(B^{\\rm T}AB)=\\det B\\,\\mathrm{Pf}(A)$，(iii) $\\mathrm{Pf}\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}=1$ でブロック対角行列の Pfaffian は各ブロックの Pfaffian の積，が成り立つことを用いてよい．$\\mathrm{Pf}(J_{2n})$ を求め，$\\det J_{2n}=+1$ を示せ．\n\\item $M^{\\rm T}J_{2n}M=J_{2n}$ を満たす任意の実行列 $M$ について，$\\det M=+1$（$-1$ ではない）を示せ．\n\\item 次の $4\\times4$ 行列 $M$ が $M^{\\rm T}J_4M=J_4$ を満たすことを確かめ，固有値を求めよ．\n\\[ M=\\begin{pmatrix}2&1&5&4\\\\1&1&4&1\\\\0&0&1&-1\\\\0&0&-1&2\\end{pmatrix} \\]\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $(\\det J)^2=1$ のみ　(2) $\\mathrm{Pf}(J_{2n})=(-1)^{n(n-1)/2}$，$\\det J_{2n}=\\mathrm{Pf}^2=1$　(3) $\\mathrm{Pf}(J)=\\det M\\,\\mathrm{Pf}(J)$，$\\mathrm{Pf}(J)\\neq0$ より $\\det M=1$　(4) 固有値 $\\dfrac{3\\pm\\sqrt5}{2}$（各 2 重）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ブロック計算で\n\\[ J_{2n}^2=\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}=\\begin{pmatrix}-1_n&0\\\\0&-1_n\\end{pmatrix},\\quad J_{2n}^{\\rm T}J_{2n}=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}=1_{2n}. \\]\n後者から $(\\det J)^2=1$，すなわち $\\det J=\\pm1$ しか分からない（前者からも $(\\det J)^2=\\det(-1_{2n})=1$）．\n\n(2) 基底を $(e_1,e_{n+1},e_2,e_{n+2},\\dots,e_n,e_{2n})$ の順に並べ替える置換行列を $P$ とすると，$P^{\\rm T}J_{2n}P=D:=\\mathrm{diag}(\\varepsilon,\\dots,\\varepsilon)$，$\\varepsilon=\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}$．(ii)(iii) より $\\mathrm{Pf}(D)=1=\\det P\\,\\mathrm{Pf}(J_{2n})$．並べ替え $(1,n+1,2,n+2,\\dots,n,2n)$ の転倒数は $(n-1)+(n-2)+\\dots+0=n(n-1)/2$ なので $\\det P=(-1)^{n(n-1)/2}$，よって $\\mathrm{Pf}(J_{2n})=(-1)^{n(n-1)/2}$．(i) より $\\det J_{2n}=\\mathrm{Pf}(J_{2n})^2=+1$．\n\n(3) (ii) を $A=J$，$B=M$ に用いると $\\mathrm{Pf}(J)=\\mathrm{Pf}(M^{\\rm T}JM)=\\det M\\,\\mathrm{Pf}(J)$．$\\mathrm{Pf}(J)=\\pm1\\neq0$ なので $\\det M=+1$．（$M^{\\rm T}JM=J$ の行列式をとるだけでは $(\\det M)^2=1$ しか出ない点が本質．）\n\n(4) $M=\\begin{pmatrix}A&AS\\\\0&A^{-\\rm T}\\end{pmatrix}$，$A=\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$，$S=\\begin{pmatrix}1&3\\\\3&-2\\end{pmatrix}$（対称）と分解できる：$AS=\\begin{pmatrix}5&4\\\\4&1\\end{pmatrix}$，$A^{-\\rm T}=\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}$．$M=\\begin{pmatrix}A&0\\\\0&A^{-\\rm T}\\end{pmatrix}\\begin{pmatrix}1&S\\\\0&1\\end{pmatrix}$ で，各因子はシンプレクティック（前者は $\\begin{pmatrix}A^{\\rm T}&0\\\\0&A^{-1}\\end{pmatrix}J\\begin{pmatrix}A&0\\\\0&A^{-\\rm T}\\end{pmatrix}=J$，後者は $S=S^{\\rm T}$ により $\\begin{pmatrix}1&0\\\\S&1\\end{pmatrix}J\\begin{pmatrix}1&S\\\\0&1\\end{pmatrix}=\\begin{pmatrix}0&1\\\\-1&S-S^{\\rm T}\\end{pmatrix}=J$）だから積もシンプレクティック．ブロック上三角なので固有値は $A$ と $A^{-\\rm T}$ の固有値の合併．$A$ の固有値は $\\lambda^2-3\\lambda+1=0$ より $(3\\pm\\sqrt5)/2$，$A^{-\\rm T}$ の固有値はその逆数で同じ集合．よって固有値は $(3\\pm\\sqrt5)/2$ が各 2 重で，逆数対 $\\lambda\\cdot\\lambda^{-1}=1$ をなし，$\\det M=1$ とも整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\det M=\\pm1$ までは行列式の積で出るが，符号 $+1$ を決めるには Pfaffian の変換則 $\\mathrm{Pf}(B^{\\rm T}AB)=\\det B\\,\\mathrm{Pf}A$ が要る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "シンプレクティック行列",
+   "Pfaffian",
+   "行列式",
+   "置換の符号"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-049",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "運動量表示の作用関数と端点微分",
+  "topic": "運動量表示の作用関数と端点微分",
+  "statement": {
+   "tex": "端点で運動量 $p$ を固定する変形された Hamilton の原理\n\\[ \\delta\\int_0^T\\bigl(-q\\dot p-H(q,p)\\bigr)dt=0,\\qquad \\delta p(0)=\\delta p(T)=0 \\]\nを考える．\n\\begin{enumerate}\n\\item この原理から Hamilton 方程式が導かれることを示せ．\n\\item 調和振動子 $H=\\dfrac{p^2}{2m}+\\dfrac12m\\omega^2q^2$ について，$p(0)=p_a$，$p(T)=p_b$ を満たす実際の運動に沿った値 $\\tilde S(p_b,p_a,T)=\\displaystyle\\int_0^T(-q\\dot p-H)\\,dt$ を求めよ（$\\sin\\omega T\\ne0$ とする）．\n\\item $\\partial\\tilde S/\\partial p_b$，$\\partial\\tilde S/\\partial p_a$，$\\partial\\tilde S/\\partial T$ を計算し，それぞれ $q(T)$，$q(0)$，エネルギーとどのような関係にあるかを示せ．\n\\item $\\omega T=\\pi/2$ のとき $q(0)$，$q(T)$ を $p_a,p_b$ で表し，その意味を述べよ．また $\\omega\\to0$（自由粒子）の極限で $\\tilde S$ がどうなるか論じよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $\\tilde S=\\dfrac{(p_a^2+p_b^2)\\cos\\omega T-2p_ap_b}{2m\\omega\\sin\\omega T}$　(3) $\\partial\\tilde S/\\partial p_b=-q(T)$，$\\partial\\tilde S/\\partial p_a=q(0)$，$\\partial\\tilde S/\\partial T=-E$　(4) $q(0)=-\\dfrac{p_b}{m\\omega}$，$q(T)=\\dfrac{p_a}{m\\omega}$（1/4 周期で $q$ と $p/(m\\omega)$ が入れ替わる）．$\\omega\\to0$ では $p_a\\ne p_b$ のとき発散，$p_a=p_b=p$ なら $\\tilde S\\to-\\dfrac{p^2T}{2m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\delta\\displaystyle\\int(-q\\dot p-H)dt=\\int\\left(-\\delta q\\,\\dot p-q\\,\\delta\\dot p-\\frac{\\partial H}{\\partial q}\\delta q-\\frac{\\partial H}{\\partial p}\\delta p\\right)dt$．第 2 項を部分積分すると $-[q\\delta p]_0^T+\\int\\dot q\\,\\delta p\\,dt$ で，境界項は $\\delta p=0$ で消える．よって\n\\[ \\int\\left[-\\left(\\dot p+\\frac{\\partial H}{\\partial q}\\right)\\delta q+\\left(\\dot q-\\frac{\\partial H}{\\partial p}\\right)\\delta p\\right]dt=0 \\]\nで，$\\delta q,\\delta p$ は内部で任意だから Hamilton 方程式が出る．\n\n(2) 運動方程式より $\\ddot p=-\\omega^2p$，$q=-\\dot p/(m\\omega^2)$．$p(t)=p_a\\cos\\omega t+B\\sin\\omega t$，$B=\\dfrac{p_b-p_a\\cos\\omega T}{\\sin\\omega T}$．軌道上で $-q\\dot p=m\\omega^2q^2$ なので被積分関数は $\\tfrac12m\\omega^2q^2-\\dfrac{p^2}{2m}=\\dfrac{1}{2m\\omega^2}(\\dot p^2-\\omega^2p^2)$．$\\ddot p=-\\omega^2p$ を使い部分積分すると\n\\[ \\tilde S=\\frac{1}{2m\\omega^2}\\Bigl[p\\dot p\\Bigr]_0^T=\\frac{1}{2m\\omega^2}\\bigl(p_b\\dot p(T)-p_a\\dot p(0)\\bigr). \\]\n$\\dot p(0)=\\omega B$，$\\dot p(T)=\\omega\\dfrac{p_b\\cos\\omega T-p_a}{\\sin\\omega T}$ を代入して\n\\[ \\tilde S=\\frac{(p_a^2+p_b^2)\\cos\\omega T-2p_ap_b}{2m\\omega\\sin\\omega T}. \\]\n\n(3) $\\dfrac{\\partial\\tilde S}{\\partial p_b}=\\dfrac{p_b\\cos\\omega T-p_a}{m\\omega\\sin\\omega T}=\\dfrac{\\dot p(T)}{m\\omega^2}=-q(T)$，$\\dfrac{\\partial\\tilde S}{\\partial p_a}=\\dfrac{p_a\\cos\\omega T-p_b}{m\\omega\\sin\\omega T}=-\\dfrac{\\dot p(0)}{m\\omega^2}=q(0)$．また直接微分すると\n\\[ \\frac{\\partial\\tilde S}{\\partial T}=-\\frac{p_a^2+p_b^2-2p_ap_b\\cos\\omega T}{2m\\sin^2\\omega T}=-\\left(\\frac{p_a^2}{2m}+\\frac{m\\omega^2q(0)^2}{2}\\right)=-E. \\]\n（$q(0)=-B/(m\\omega)$ を代入して確認できる．）$\\tilde S$ は運動量表示の作用で，その端点微分が座標を与える．\n\n(4) $\\omega T=\\pi/2$ で $\\tilde S=-p_ap_b/(m\\omega)$．(3) より $q(0)=-p_b/(m\\omega)$，$q(T)=p_a/(m\\omega)$．1/4 周期で位相空間が $90^\\circ$ 回転し，$(q,p/(m\\omega))$ の役割が入れ替わる．\n$\\omega\\to0$：$\\cos\\omega T\\simeq1-\\tfrac12\\omega^2T^2$，$\\sin\\omega T\\simeq\\omega T$ より\n\\[ \\tilde S\\simeq\\frac{(p_b-p_a)^2}{2m\\omega^2T}-\\frac{(p_a^2+p_b^2)T}{4m}. \\]\n自由粒子では $p$ が一定なので $p_a\\ne p_b$ を結ぶ軌道は存在せず $\\tilde S$ が発散する．$p_a=p_b=p$ なら $\\tilde S\\to-p^2T/(2m)=-ET$ と有限だが，このとき $q$ は端点の運動量では決まらない（$\\partial\\tilde S/\\partial p$ が端点の位置を一意に与えない）．"
+   }
+  ],
+  "idea": {
+   "tex": "端点で $p$ を固定する作用は運動量表示の母関数となり，$\\partial\\tilde S/\\partial p_b=-q(T)$ などが成り立つ．自由粒子極限ではこの境界値問題自体が不適切になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $\\tilde S$：(((p_a ^(2)+ p_b ^(2)) cos ω T -2 p_a p_b)/(2 m ω sin ω T))\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変形されたHamiltonの原理",
+   "作用関数",
+   "運動量表示",
+   "調和振動子",
+   "境界値問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-050",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "拡張位相空間の拘束と相対論的固有時",
+  "topic": "拡張位相空間の拘束と相対論的固有時",
+  "statement": {
+   "tex": "時間 $t$ も正準座標とみなす拡張位相空間 $(q,t;p,p_t)$ で，パラメータ $\\theta$ に関する「超ハミルトニアン」$\\mathcal H=\\lambda(\\theta)\\,\\psi(q,t,p,p_t)$ を考える．$\\lambda(\\theta)$ は Lagrange の未定乗数（任意関数），運動は拘束 $\\psi=0$ 上に限る．\n\\begin{enumerate}\n\\item $\\psi=p_t+H(q,p,t)$ のとき，$\\mathcal H$ による Hamilton 方程式（独立変数 $\\theta$）を書き，$dt/d\\theta=\\lambda$ であること，および $\\theta$ を消去すると通常の Hamilton 方程式と $dH/dt=\\partial H/\\partial t$ が得られることを示せ．\n\\item 自由相対論的粒子（1 次元，質量 $m$）に対して $\\psi=\\dfrac{1}{2m}\\left(p^2-\\dfrac{p_t^2}{c^2}+m^2c^2\\right)$ をとる．Hamilton 方程式を書き，$p_t=-E$（$E>0$）と置いて拘束から $E$ を $p$ で表し，$dx/dt$ を求めよ．\n\\item (2) で $c^2dt^2-dx^2=c^2d\\tau^2$ により固有時 $\\tau$ を定義するとき，$d\\tau=\\lambda\\,d\\theta$ を示せ．$\\lambda$ の選び方は何を意味するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{dq}{d\\theta}=\\lambda\\dfrac{\\partial H}{\\partial p}$，$\\dfrac{dp}{d\\theta}=-\\lambda\\dfrac{\\partial H}{\\partial q}$，$\\dfrac{dt}{d\\theta}=\\lambda$，$\\dfrac{dp_t}{d\\theta}=-\\lambda\\dfrac{\\partial H}{\\partial t}$　(2) $E=c\\sqrt{p^2+m^2c^2}$，$\\dfrac{dx}{dt}=\\dfrac{pc^2}{E}$　(3) $d\\tau=\\lambda d\\theta$．$\\lambda$ はパラメータの選び方（再パラメータ化）の自由度で，$\\lambda=1$ なら $\\theta$ が固有時"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\psi=p_t+H$ で，拘束上 $\\psi=0$ なので $\\lambda$ の微分を含む項は消え，\n\\[ \\frac{dq}{d\\theta}=\\lambda\\frac{\\partial H}{\\partial p},\\quad\\frac{dp}{d\\theta}=-\\lambda\\frac{\\partial H}{\\partial q},\\quad\\frac{dt}{d\\theta}=\\frac{\\partial\\mathcal H}{\\partial p_t}=\\lambda,\\quad\\frac{dp_t}{d\\theta}=-\\lambda\\frac{\\partial H}{\\partial t}. \\]\n$d/dt=\\lambda^{-1}d/d\\theta$ を使うと $\\dot q=\\partial H/\\partial p$，$\\dot p=-\\partial H/\\partial q$，$\\dot p_t=-\\partial H/\\partial t$．拘束 $p_t=-H$ を $t$ で微分すると $dH/dt=-\\dot p_t=\\partial H/\\partial t$．すなわち $p_t$ は（符号を除き）エネルギーで，その時間変化は $H$ の陽な時間依存だけで決まる．軌道 $q(t)$ は $\\lambda$ の選び方によらない．\n\n(2) $\\dfrac{dx}{d\\theta}=\\dfrac{\\partial\\mathcal H}{\\partial p}=\\dfrac{\\lambda p}{m}$，$\\dfrac{dt}{d\\theta}=\\dfrac{\\partial\\mathcal H}{\\partial p_t}=-\\dfrac{\\lambda p_t}{mc^2}$，$\\dfrac{dp}{d\\theta}=0$，$\\dfrac{dp_t}{d\\theta}=0$．拘束 $p_t^2/c^2=p^2+m^2c^2$ に $p_t=-E$ を入れると $E=c\\sqrt{p^2+m^2c^2}$．$dt/d\\theta=\\lambda E/(mc^2)$ なので\n\\[ \\frac{dx}{dt}=\\frac{\\lambda p/m}{\\lambda E/(mc^2)}=\\frac{pc^2}{E}. \\]\n\n(3) \n\\[ \\left(\\frac{dt}{d\\theta}\\right)^2-\\frac1{c^2}\\left(\\frac{dx}{d\\theta}\\right)^2=\\frac{\\lambda^2}{m^2}\\left(\\frac{E^2}{c^4}-\\frac{p^2}{c^2}\\right)=\\frac{\\lambda^2}{m^2c^2}\\cdot\\frac{E^2-p^2c^2}{c^2}=\\lambda^2 \\]\n（$E^2-p^2c^2=m^2c^4$）．よって $d\\tau^2=\\lambda^2d\\theta^2$，$d\\tau=\\lambda d\\theta$（$\\lambda>0$ の向き）．$\\lambda$ は世界線のパラメータの付け方の自由度（再パラメータ化不変性）に対応し，物理的軌道 $x(t)$ を変えない．$\\lambda=1$ と選べば $\\theta$ は固有時，非相対論的な (1) で $\\lambda=1$ なら $\\theta=t$ となる．"
+   }
+  ],
+  "idea": {
+   "tex": "拡張位相空間では $p_t+H=0$ が拘束となり，未定乗数 $\\lambda=dt/d\\theta$ はパラメータの選び方の自由度を表す．相対論では質量殻拘束に対し $\\lambda d\\theta$ が固有時になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "拡張位相空間",
+   "拘束",
+   "未定乗数",
+   "再パラメータ化",
+   "固有時",
+   "相対論的粒子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-051",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 40,
+  "theme": "二体問題の求積：軌道面と近点移動",
+  "topic": "二体問題の求積：軌道面と近点移動",
+  "statement": {
+   "tex": "中心力ポテンシャル $V(r)$ で相互作用する 2 質点を，重心座標と相対座標の極座標 $(r,\\theta,\\phi)$ で扱う（換算質量 $m$）．相対運動のハミルトニアンは\n\\[ H=\\frac1{2m}\\left(p_r^2+\\frac{p_\\theta^2}{r^2}+\\frac{p_\\phi^2}{r^2\\sin^2\\theta}\\right)+V(r). \\]\n\\begin{enumerate}\n\\item $p_\\phi=\\alpha_\\phi$ が一定であること，さらに $l^2=p_\\theta^2+\\alpha_\\phi^2/\\sin^2\\theta$ が一定であることを Hamilton 方程式から示せ．$\\theta$ の動く範囲を求めよ（$0<|\\alpha_\\phi|<l$ とする）．\n\\item $p_\\theta=\\pm\\sqrt{l^2-\\alpha_\\phi^2/\\sin^2\\theta}$ と $\\dot\\phi=\\alpha_\\phi/(mr^2\\sin^2\\theta)$，$\\dot\\theta=p_\\theta/(mr^2)$ から $d\\phi/d\\theta$ を積分し，軌道が原点を通る平面 $\\cot\\theta=\\tan i\\,\\sin(\\phi-\\phi_1)$（$\\phi_1$ は定数）上にあることを示せ．傾き $i$ を $\\alpha_\\phi,l$ で表せ．\n\\item $V=-k/r+\\beta/r^2$（$k>0$，$l^2+2m\\beta>0$）のとき，有界軌道で隣り合う近点の間に，軌道面内で動径ベクトルが回る角 $\\Delta\\psi$ を求めよ．$\\beta$ が小さいときの 1 周あたりの近点移動角も求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sin\\theta_{\\min}=|\\alpha_\\phi|/l$，$\\theta_{\\min}\\le\\theta\\le\\pi-\\theta_{\\min}$　(2) $\\cos i=\\alpha_\\phi/l$（$\\tan i=\\sqrt{l^2-\\alpha_\\phi^2}/\\alpha_\\phi$）　(3) $\\Delta\\psi=\\dfrac{2\\pi l}{\\sqrt{l^2+2m\\beta}}$，近点移動 $\\Delta\\psi-2\\pi\\approx-\\dfrac{2\\pi m\\beta}{l^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\phi$ は循環座標なので $\\dot p_\\phi=0$．また\n\\[ \\dot p_\\theta=-\\frac{\\partial H}{\\partial\\theta}=\\frac{\\alpha_\\phi^2\\cos\\theta}{mr^2\\sin^3\\theta},\\qquad\\dot\\theta=\\frac{p_\\theta}{mr^2} \\]\nより $\\dfrac{d}{dt}\\left(p_\\theta^2+\\dfrac{\\alpha_\\phi^2}{\\sin^2\\theta}\\right)=2p_\\theta\\dot p_\\theta-\\dfrac{2\\alpha_\\phi^2\\cos\\theta}{\\sin^3\\theta}\\dot\\theta=0$．$p_\\theta^2\\ge0$ より $\\sin^2\\theta\\ge\\alpha_\\phi^2/l^2$，すなわち $\\theta_{\\min}\\le\\theta\\le\\pi-\\theta_{\\min}$，$\\sin\\theta_{\\min}=|\\alpha_\\phi|/l$．\n\n(2) $\\dfrac{d\\phi}{d\\theta}=\\dfrac{\\dot\\phi}{\\dot\\theta}=\\dfrac{\\alpha_\\phi}{\\sin^2\\theta\\,p_\\theta}=\\pm\\dfrac{\\alpha_\\phi}{\\sin^2\\theta\\sqrt{l^2-\\alpha_\\phi^2(1+\\cot^2\\theta)}}$．$w=\\cot\\theta$，$dw=-d\\theta/\\sin^2\\theta$ とすると\n\\[ \\phi-\\phi_0=\\mp\\int\\frac{\\alpha_\\phi\\,dw}{\\sqrt{(l^2-\\alpha_\\phi^2)-\\alpha_\\phi^2w^2}}=\\mp\\arcsin\\frac{\\alpha_\\phi w}{\\sqrt{l^2-\\alpha_\\phi^2}}. \\]\nよって $\\cot\\theta=\\tan i\\,\\sin(\\phi-\\phi_1)$，$\\tan i=\\sqrt{l^2-\\alpha_\\phi^2}/\\alpha_\\phi$（符号は $\\phi_1$ に吸収）．両辺に $r\\sin\\theta$ を掛けると $z=r\\cos\\theta=\\tan i\\,(y\\cos\\phi_1-x\\sin\\phi_1)$ となり，原点を通る平面である．その法線と $z$ 軸のなす角 $i$ は $\\cos i=\\alpha_\\phi/l$（$=L_z/|\\boldsymbol L|$）．\n\n(3) 軌道面内の角 $\\psi$ について $\\dot\\psi=l/(mr^2)$，動径方向は\n\\[ \\frac{p_r^2}{2m}+\\frac{l^2+2m\\beta}{2mr^2}-\\frac kr=E. \\]\n$l'^2=l^2+2m\\beta$ とおき，$\\psi'=(l'/l)\\psi$ を角変数とみると $d\\psi'/dt=l'/(mr^2)$ で，これは角運動量 $l'$ の Kepler 問題そのもの．したがって $r$ は $\\psi'$ について周期 $2\\pi$ の閉じた楕円の式 $1/r=(mk/l'^2)(1+e\\cos\\psi')$ に従う．近点から近点までに $\\psi'$ が $2\\pi$ 進むので\n\\[ \\Delta\\psi=\\frac{2\\pi l}{\\sqrt{l^2+2m\\beta}}. \\]\n$\\beta$ が小さいとき $\\Delta\\psi-2\\pi\\approx-2\\pi m\\beta/l^2$（$\\beta>0$ なら近点は後退，$\\beta<0$ なら前進）．"
+   }
+  ],
+  "idea": {
+   "tex": "循環座標と全角運動量の保存で求積に持ち込み，$\\cot\\theta$ の線形関係から軌道面を読み取る．$1/r^2$ 摂動は角運動量の実効的な置換 $l^2\\to l^2+2m\\beta$ として厳密に扱え，近点移動を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\cos i$：α_φ / l\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "二体問題",
+   "循環座標",
+   "求積",
+   "軌道面",
+   "近点移動",
+   "中心力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-052",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "減衰振動子の時間依存ハミルトニアンと隠れた保存量",
+  "topic": "減衰振動子の時間依存ハミルトニアンと隠れた保存量",
+  "statement": {
+   "tex": "1 自由度系のハミルトニアン\n\\[ H=e^{-\\gamma t}\\frac{p^2}{2m}+e^{\\gamma t}\\frac{m\\omega_0^2q^2}{2}\\qquad(\\gamma,\\omega_0>0) \\]\nを考える．\n\\begin{enumerate}\n\\item Hamilton 方程式から $q$ の運動方程式を導け．$p$ は $m\\dot q$ に等しいか．\n\\item 対応するラグランジアン $L$ を求め，$Q=qe^{\\gamma t/2}$ と変数変換したうえで全時間微分を除き，時間を陽に含まないラグランジアン $L'(Q,\\dot Q)$ とハミルトニアン $H'(Q,P)$ を求めよ．\n\\item $H'$ の値は保存する．これを元の変数 $(q,p,t)$ で表した保存量 $I(q,p,t)$ を書け．\n\\item 臨界減衰 $\\gamma=2\\omega_0$ のとき，$H'$ はどのような系のハミルトニアンになるか．それを用いて $q(t)$ の一般解を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\ddot q+\\gamma\\dot q+\\omega_0^2q=0$，$p=me^{\\gamma t}\\dot q\\ne m\\dot q$　(2) $L=e^{\\gamma t}\\left(\\tfrac12m\\dot q^2-\\tfrac12m\\omega_0^2q^2\\right)$，$L'=\\tfrac12m\\dot Q^2-\\tfrac12m\\Omega^2Q^2$，$H'=\\dfrac{P^2}{2m}+\\dfrac12m\\Omega^2Q^2$，$\\Omega^2=\\omega_0^2-\\gamma^2/4$　(3) $I=\\dfrac1{2m}\\left(pe^{-\\gamma t/2}+\\tfrac{m\\gamma}2qe^{\\gamma t/2}\\right)^2+\\dfrac m2\\Omega^2q^2e^{\\gamma t}$　(4) 自由粒子，$q=(c_1+c_2t)e^{-\\omega_0t}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot q=e^{-\\gamma t}p/m$，$\\dot p=-e^{\\gamma t}m\\omega_0^2q$．$p=me^{\\gamma t}\\dot q$ を微分して $me^{\\gamma t}(\\ddot q+\\gamma\\dot q)=-e^{\\gamma t}m\\omega_0^2q$，すなわち $\\ddot q+\\gamma\\dot q+\\omega_0^2q=0$（減衰振動）．$p=me^{\\gamma t}\\dot q$ で，正準運動量は力学的運動量と異なる．\n\n(2) $L=p\\dot q-H=e^{\\gamma t}\\left(\\tfrac12m\\dot q^2-\\tfrac12m\\omega_0^2q^2\\right)$．$q=Qe^{-\\gamma t/2}$，$\\dot q=(\\dot Q-\\tfrac\\gamma2Q)e^{-\\gamma t/2}$ を代入すると\n\\[ L=\\frac m2\\dot Q^2-\\frac{m\\gamma}{2}Q\\dot Q+\\frac{m\\gamma^2}{8}Q^2-\\frac m2\\omega_0^2Q^2. \\]\n$-\\tfrac{m\\gamma}{2}Q\\dot Q=-\\tfrac{d}{dt}\\left(\\tfrac{m\\gamma}{4}Q^2\\right)$ を除いて\n\\[ L'=\\frac m2\\dot Q^2-\\frac m2\\Omega^2Q^2,\\quad\\Omega^2=\\omega_0^2-\\frac{\\gamma^2}{4}, \\]\n$P=m\\dot Q$，$H'=\\dfrac{P^2}{2m}+\\dfrac12m\\Omega^2Q^2$．時間を陽に含まないので保存する．\n\n(3) $P=m\\dot Q=m(\\dot q+\\tfrac\\gamma2q)e^{\\gamma t/2}=pe^{-\\gamma t/2}+\\tfrac{m\\gamma}{2}qe^{\\gamma t/2}$（$m\\dot q=pe^{-\\gamma t}$ を用いた）．よって\n\\[ I=\\frac1{2m}\\left(pe^{-\\gamma t/2}+\\frac{m\\gamma}{2}qe^{\\gamma t/2}\\right)^2+\\frac m2\\Omega^2q^2e^{\\gamma t} \\]\nは運動の定数である（元の $H$ は保存しない）．$\\Omega^2>0$ なら $Q$ は角振動数 $\\Omega$ で振動し，$q=Qe^{-\\gamma t/2}$ は減衰振動 $e^{-\\gamma t/2}\\cos(\\Omega t+\\delta)$ となる．\n\n(4) $\\gamma=2\\omega_0$ では $\\Omega=0$ で $H'=P^2/(2m)$：自由粒子．$P$ が保存し $Q=c_1+c_2t$，よって $q=(c_1+c_2t)e^{-\\omega_0t}$（臨界減衰の一般解）．保存量は $P=pe^{-\\omega_0t}+m\\omega_0qe^{\\omega_0t}$．"
+   }
+  ],
+  "idea": {
+   "tex": "減衰振動子は時間依存ハミルトニアン $H$ で書けるが，スケール変換 $Q=qe^{\\gamma t/2}$ と全微分の除去で時間に依らない振動子 $H'$ に等価になり，振動数 $\\sqrt{\\omega_0^2-\\gamma^2/4}$ と隠れた保存量が見える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $I$：((1)/(2 m))(p e ^(- γ t /2)+((m γ)/(2)) q e ^(γ t /2))^(2)+((m)/(2)) Ω ^(2) q ^(2) e ^(γ t)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間依存ハミルトニアン",
+   "減衰振動",
+   "Caldirola-Kanai",
+   "全時間微分",
+   "保存量",
+   "臨界減衰"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-053",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "放物線上を滑る質量ある支点の振り子",
+  "topic": "放物線上を滑る質量ある支点の振り子",
+  "statement": {
+   "tex": "鉛直面内に $x$ 軸（水平）と $z$ 軸（鉛直上向き）をとる．質量 $M$ の小物体 S が，固定された滑らかな放物線 $z=ax^2$（$a>0$）に沿って摩擦なく動く．S から長さ $l$ の軽い棒で質量 $m$ のおもりが吊るされ，おもりは同じ鉛直面内で振れる．S の位置を $x$，棒の鉛直下向きからの傾きを $\\theta$（おもりの座標は $(x+l\\sin\\theta,\\ ax^2-l\\cos\\theta)$）とする．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item ラグランジアンの運動エネルギー部分を $\\frac12\\dot{\\boldsymbol q}^{\\mathsf T}\\mathsf T\\dot{\\boldsymbol q}$（$\\boldsymbol q=(x,\\theta)$）と書くとき，$\\mathsf T$ とその行列式 $\\det\\mathsf T$ を求め，ハミルトニアン $H(x,\\theta,p_x,p_\\theta)$ を書け．\n\\item $M>0$ ならば $\\det\\mathsf T>0$ が全配位で成り立つことを示せ．また $M=0$ のとき $\\det\\mathsf T=0$ となる配位を求めよ．\n\\item $x=\\theta=0$ のまわりの微小振動の角振動数 $\\omega$ が満たす方程式を求めよ．\n\\item $M\\to0$ の極限で，(3) の 2 つの角振動数のうち有限にとどまるものを求め，それが長さ $l+\\rho$ の単振り子（$\\rho$ は放物線の底での曲率半径）の角振動数に一致することを示せ．もう一方はどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathsf T=\\begin{pmatrix}A&B\\\\B&C\\end{pmatrix}$，$A=(M+m)(1+4a^2x^2)$，$B=ml(\\cos\\theta+2ax\\sin\\theta)$，$C=ml^2$；$\\det\\mathsf T=ml^2[(M+m)(1+4a^2x^2)-m(\\cos\\theta+2ax\\sin\\theta)^2]$；$H=\\dfrac{Cp_x^2-2Bp_xp_\\theta+Ap_\\theta^2}{2\\det\\mathsf T}+(M+m)gax^2-mgl\\cos\\theta$　(2) $M=0$ では $\\tan\\theta=2ax$（棒が放物線に直交）で特異　(3) $Ml\\,\\omega^4-(M+m)g(1+2al)\\,\\omega^2+2(M+m)ag^2=0$　(4) $\\omega^2\\to\\dfrac{g}{l+1/(2a)}$（$\\rho=1/(2a)$），他方は $\\omega^2\\simeq (m/M)g(1+2al)/l\\to\\infty$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) S の速度は $(\\dot x,2ax\\dot x)$，おもりの速度は $(\\dot x+l\\cos\\theta\\,\\dot\\theta,\\ 2ax\\dot x+l\\sin\\theta\\,\\dot\\theta)$．よって\n\\[\nT=\\tfrac12(M+m)(1+4a^2x^2)\\dot x^2+ml(\\cos\\theta+2ax\\sin\\theta)\\dot x\\dot\\theta+\\tfrac12ml^2\\dot\\theta^2,\n\\]\n\\[\nV=Mgax^2+mg(ax^2-l\\cos\\theta)=(M+m)gax^2-mgl\\cos\\theta .\n\\]\n$A,B,C$ を上のようにおくと $\\det\\mathsf T=AC-B^2=ml^2\\left[(M+m)(1+4a^2x^2)-m(\\cos\\theta+2ax\\sin\\theta)^2\\right]$．$\\boldsymbol p=\\mathsf T\\dot{\\boldsymbol q}$ を逆に解き $H=\\frac12\\boldsymbol p^{\\mathsf T}\\mathsf T^{-1}\\boldsymbol p+V$ から\n\\[\nH=\\frac{Cp_x^2-2Bp_xp_\\theta+Ap_\\theta^2}{2(AC-B^2)}+(M+m)gax^2-mgl\\cos\\theta .\n\\]\n\n(2) Cauchy–Schwarz の不等式より $(\\cos\\theta+2ax\\sin\\theta)^2\\le(1+4a^2x^2)(\\cos^2\\theta+\\sin^2\\theta)=1+4a^2x^2$．よって\n\\[\n\\det\\mathsf T\\ge ml^2\\,M(1+4a^2x^2)>0 .\n\\]\n$M=0$ では等号条件 $(\\cos\\theta,\\sin\\theta)\\parallel(1,2ax)$，すなわち $\\tan\\theta=2ax$ で $\\det\\mathsf T=0$．これは棒が放物線の接線 $(1,2ax)$ に直交する配位で，このとき質量のない S を接線方向に動かしてもおもりは動かず（1 次の範囲で），$\\dot x$ が運動エネルギーで決まらなくなる．支点に質量を与えるとこの特異性は消える．\n\n(3) 原点で $\\mathsf T_0=\\begin{pmatrix}M+m&ml\\\\ ml&ml^2\\end{pmatrix}$，ポテンシャルの 2 次部分は $\\frac12[2(M+m)ga\\,x^2+mgl\\,\\theta^2]$．永年方程式 $\\det(\\mathsf K-\\omega^2\\mathsf T_0)=0$ を展開して $ml$ で割ると\n\\[\nMl\\,\\omega^4-(M+m)g(1+2al)\\,\\omega^2+2(M+m)ag^2=0 .\n\\]\n\n(4) $M\\to0$ で $\\omega^4$ の係数が消え，有限な根は $\\omega^2=\\dfrac{2ag^2}{g(1+2al)}=\\dfrac{g}{l+1/(2a)}$．放物線 $z=ax^2$ の底の曲率半径は $\\rho=1/(2a)$ だから，これは長さ $l+\\rho$ の単振り子の角振動数である（質量のない支点は「曲率中心から吊られた長い振り子」の一部として振る舞う）．もう一方の根は根と係数の関係から $\\omega^2\\simeq\\dfrac{(M+m)g(1+2al)}{Ml}\\to\\infty$ となり，消える自由度に対応する．"
+   }
+  ],
+  "idea": {
+   "tex": "支点に質量 $M$ を与えると Cauchy–Schwarz で $\\det\\mathsf T>0$ が保証され，$M\\to0$ では片方の基準振動が無限大に飛び，残りは曲率半径の分だけ長い振り子になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ハミルトニアン",
+   "ルジャンドル変換",
+   "運動エネルギー行列",
+   "微小振動",
+   "特異極限"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-054",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "クランク連結された振り子と強制振動",
+  "topic": "クランク連結された振り子と強制振動",
+  "statement": {
+   "tex": "水平な $x$ 軸上を動く点 S から長さ $l$，質量 $m$ の単振り子（棒は軽い）が鉛直面内で振れる（鉛直下向きからの傾き $\\theta$）．S は，原点を中心に回る慣性モーメント $I$ のはずみ車の縁（半径 $a$）の 1 点と，長さ $a$ の軽い棒で連結されており，はずみ車の回転角を $\\varphi$ とすると S の位置は $x_S=2a\\cos\\varphi$ である．S 自身の質量は無視する．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 運動エネルギー行列 $\\mathsf T$（座標 $(\\varphi,\\theta)$）とその行列式を求め，ハミルトニアン $H(\\varphi,\\theta,p_\\varphi,p_\\theta)$ を書け．$\\det\\mathsf T=0$ となりうるのはどのような場合か．\n\\item $I\\to\\infty$ の極限ではずみ車が一定角速度 $\\Omega$ で回る（$\\varphi=\\Omega t$）とみなす．$\\theta$ が小さいとき，振り子の定常的な強制振動 $\\theta(t)$ を求めよ（$\\Omega^2\\ne g/l$）．\n\\item (2) の定常状態で，おもりの $x$ 座標の振動振幅を求めよ．おもりが S と同じ振幅で逆位相に動くのは $\\Omega$ がいくらのときか．また $\\Omega\\to\\infty$ でおもりの振幅はどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathsf T=\\begin{pmatrix}I+4ma^2\\sin^2\\varphi&-2mla\\sin\\varphi\\cos\\theta\\\\-2mla\\sin\\varphi\\cos\\theta&ml^2\\end{pmatrix}$，$\\det\\mathsf T=ml^2(I+4ma^2\\sin^2\\varphi\\sin^2\\theta)$，$H=\\dfrac{ml^2p_\\varphi^2+4mla\\sin\\varphi\\cos\\theta\\,p_\\varphi p_\\theta+(I+4ma^2\\sin^2\\varphi)p_\\theta^2}{2\\det\\mathsf T}-mgl\\cos\\theta$；$I=0$ かつ $\\sin\\varphi\\sin\\theta=0$ のときのみ特異　(2) $\\theta=\\dfrac{2a\\Omega^2}{g-l\\Omega^2}\\cos\\Omega t$　(3) 振幅 $\\dfrac{2ag}{|g-l\\Omega^2|}$（位相は $\\Omega^2>g/l$ で反転），$\\Omega=\\sqrt{2g/l}$，$\\Omega\\to\\infty$ で $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot x_S=-2a\\sin\\varphi\\,\\dot\\varphi$．おもりの速度は $(\\dot x_S+l\\cos\\theta\\,\\dot\\theta,\\ l\\sin\\theta\\,\\dot\\theta)$ だから\n\\[\nL=\\frac12(I+4ma^2\\sin^2\\varphi)\\dot\\varphi^2-2mla\\sin\\varphi\\cos\\theta\\,\\dot\\varphi\\dot\\theta+\\frac12ml^2\\dot\\theta^2+mgl\\cos\\theta .\n\\]\n$\\det\\mathsf T=ml^2(I+4ma^2\\sin^2\\varphi)-4m^2l^2a^2\\sin^2\\varphi\\cos^2\\theta=ml^2(I+4ma^2\\sin^2\\varphi\\sin^2\\theta)$．$\\mathsf T^{-1}$ を用いて\n\\[\nH=\\frac{ml^2p_\\varphi^2+4mla\\sin\\varphi\\cos\\theta\\,p_\\varphi p_\\theta+(I+4ma^2\\sin^2\\varphi)p_\\theta^2}{2ml^2(I+4ma^2\\sin^2\\varphi\\sin^2\\theta)}-mgl\\cos\\theta .\n\\]\n$I>0$ なら $\\det\\mathsf T>0$．$I=0$ で $\\sin\\varphi=0$（クランクの死点）または $\\sin\\theta=0$（振り子が鉛直）のとき特異になる．後者は，振り子が鉛直なら S の水平運動とおもりの水平運動が区別できず，運動エネルギーが $\\dot x_S$ と $\\dot\\theta$ の独立な 2 次形式にならないことに対応する．\n\n(2) S の加速度 $\\ddot x_S=-2a\\Omega^2\\cos\\Omega t$．S とともに動く系では慣性力 $-m\\ddot x_S$ が水平にはたらき，$\\theta$ が小さいとき\n\\[\nml\\ddot\\theta=-mg\\theta-m\\ddot x_S\\quad\\Longrightarrow\\quad\\ddot\\theta+\\frac gl\\theta=\\frac{2a\\Omega^2}{l}\\cos\\Omega t .\n\\]\n（$H$ で $I\\to\\infty$ として $p_\\varphi$ を消去しても同じ．）定常解は $\\theta=\\dfrac{2a\\Omega^2/l}{g/l-\\Omega^2}\\cos\\Omega t=\\dfrac{2a\\Omega^2}{g-l\\Omega^2}\\cos\\Omega t$．\n\n(3) おもりの $x$ 座標は $x_S+l\\theta=2a\\cos\\Omega t\\left[1+\\dfrac{l\\Omega^2}{g-l\\Omega^2}\\right]=\\dfrac{2ag}{g-l\\Omega^2}\\cos\\Omega t$．振幅 $\\dfrac{2ag}{|g-l\\Omega^2|}$ で，$\\Omega^2>g/l$ では S と逆位相．同振幅・逆位相は $\\dfrac{2ag}{g-l\\Omega^2}=-2a$，すなわち $\\Omega=\\sqrt{2g/l}$．$\\Omega\\to\\infty$ では振幅 $\\to0$：高速で揺すられた振り子のおもりは慣性で静止し，棒だけが振れる．"
+   }
+  ],
+  "idea": {
+   "tex": "運動エネルギー行列の行列式 $ml^2(I+4ma^2\\sin^2\\varphi\\sin^2\\theta)$ で特異性を判定し，$I\\to\\infty$ では水平強制振動になる．高振動数ではおもりは動かず，$\\Omega=\\sqrt{2g/l}$ で S と鏡像的に動く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ハミルトニアン",
+   "運動エネルギー行列",
+   "クランク",
+   "強制振動",
+   "共鳴"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-055",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "回転する鞍点ポテンシャルとJacobi積分",
+  "topic": "回転する鞍点ポテンシャルとJacobi積分",
+  "statement": {
+   "tex": "質量 $m$ の質点が水平面（$xy$ 平面）内を動く．質点には，原点のまわりに一定角速度 $\\omega$ で回転する座標系 $(x',y')$\n\\[\nx'=x\\cos\\omega t+y\\sin\\omega t,\\qquad y'=-x\\sin\\omega t+y\\cos\\omega t\n\\]\nで $V=\\dfrac k2\\left(x'^2-y'^2\\right)$（$k>0$）と表される鞍点型のポテンシャルがはたらく．$\\Omega_0=\\sqrt{k/m}$ とおく．\n\\begin{enumerate}\n\\item 慣性系の座標 $(x,y)$ でのハミルトニアン $H$ と，回転系の座標 $(x',y')$ でのハミルトニアン $H'$ を求めよ．それぞれ保存されるか．\n\\item $H'$ の値は，慣性系でのエネルギー $E$ と原点まわりの角運動量 $L_z$ を用いて $E-\\omega L_z$ に等しいことを示せ．\n\\item 原点まわりの微小運動を回転系で調べ，特性根を求めよ．原点が安定となる $\\omega$ の条件を求め，安定なときの回転系での振動の角振動数を答えよ．\n\\item 安定な場合でも $H'$ は原点で極小になっていないことを示し，安定性の起源を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\frac{p_x^2+p_y^2}{2m}+\\frac k2[(x\\cos\\omega t+y\\sin\\omega t)^2-(-x\\sin\\omega t+y\\cos\\omega t)^2]$（非保存），$H'=\\frac{p_{x'}^2+p_{y'}^2}{2m}-\\omega(x'p_{y'}-y'p_{x'})+\\frac k2(x'^2-y'^2)$（保存）　(3) $s^2=-\\omega^2\\pm\\Omega_0^2$；安定条件 $\\omega>\\Omega_0$，角振動数 $\\sqrt{\\omega^2-\\Omega_0^2}$，$\\sqrt{\\omega^2+\\Omega_0^2}$　(4) 速度で書くと $y'$ 方向の係数 $-\\frac12(k+m\\omega^2)<0$；Coriolis 力によるジャイロ安定化"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 慣性系では $L=\\frac m2(\\dot x^2+\\dot y^2)-V(x,y,t)$ より $H=\\frac{p_x^2+p_y^2}{2m}+V(x,y,t)$．$V$ が $t$ を陽に含むので $H$（$=E$）は保存されない．\n回転系では $\\dot x^2+\\dot y^2=(\\dot x'-\\omega y')^2+(\\dot y'+\\omega x')^2$ だから\n\\[\nL'=\\frac m2\\left[(\\dot x'-\\omega y')^2+(\\dot y'+\\omega x')^2\\right]-\\frac k2(x'^2-y'^2),\n\\]\n$p_{x'}=m(\\dot x'-\\omega y')$，$p_{y'}=m(\\dot y'+\\omega x')$，\n\\[\nH'=\\frac{p_{x'}^2+p_{y'}^2}{2m}-\\omega(x'p_{y'}-y'p_{x'})+\\frac k2(x'^2-y'^2).\n\\]\n$H'$ は $t$ を陽に含まないので保存される．\n\n(2) $p_{x'},p_{y'}$ は慣性系の運動量 $m\\dot{\\boldsymbol r}$ の回転系成分だから $\\frac{p_{x'}^2+p_{y'}^2}{2m}=\\frac m2|\\dot{\\boldsymbol r}|^2$．また $x'p_{y'}-y'p_{x'}$ は $\\boldsymbol r\\times m\\dot{\\boldsymbol r}$ の $z$ 成分 $L_z$（回転で不変）．よって $H'=E-\\omega L_z$．$E,L_z$ はそれぞれ保存しないがこの組合せは保存する．\n\n(3) 回転系の運動方程式は\n\\[\n\\ddot x'-2\\omega\\dot y'-\\omega^2x'+\\Omega_0^2x'=0,\\qquad\\ddot y'+2\\omega\\dot x'-\\omega^2y'-\\Omega_0^2y'=0 .\n\\]\n$e^{st}$ を代入すると $(s^2+\\Omega_0^2-\\omega^2)(s^2-\\Omega_0^2-\\omega^2)+4\\omega^2s^2=0$，展開して\n\\[\ns^4+2\\omega^2s^2+\\omega^4-\\Omega_0^4=0\\quad\\Longrightarrow\\quad s^2=-\\omega^2\\pm\\Omega_0^2 .\n\\]\n安定（$s^2$ がともに負）$\\iff\\omega^2>\\Omega_0^2$，すなわち $\\omega>\\Omega_0$．そのとき回転系での角振動数は $\\sqrt{\\omega^2-\\Omega_0^2}$ と $\\sqrt{\\omega^2+\\Omega_0^2}$．$\\omega<\\Omega_0$ では $s^2=\\Omega_0^2-\\omega^2>0$ の根があり不安定．\n\n(4) $H'$ を回転系の速度で書くと $H'=\\frac m2(\\dot x'^2+\\dot y'^2)+\\frac12(k-m\\omega^2)x'^2-\\frac12(k+m\\omega^2)y'^2$．$y'^2$ の係数は常に負で，$\\omega>\\Omega_0$ では $x'^2$ の係数も負．したがって $H'$ は原点で極小でなく（Lagrange–Dirichlet の定理は使えない），安定性は速度に比例し仕事をしない Coriolis 力が運動を巻き込むこと（ジャイロ安定化）による．"
+   }
+  ],
+  "idea": {
+   "tex": "回転する鞍点は $H'=E-\\omega L_z$ が保存されるが不定値．特性方程式 $s^2=-\\omega^2\\pm\\Omega_0^2$ から，十分速く回せば Coriolis 力で安定化される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転座標系",
+   "Jacobi積分",
+   "鞍点",
+   "ジャイロ安定化",
+   "時間依存ハミルトニアン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-056",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 30,
+  "theme": "Larmor回転系と磁場中調和振動子の閉軌道",
+  "topic": "Larmor回転系と磁場中調和振動子の閉軌道",
+  "statement": {
+   "tex": "質量 $m$，電荷 $e\\ (>0)$ の粒子が $xy$ 平面内を動く．粒子には等方的な中心力 $V(r)=\\frac12m\\Omega_0^2r^2$ と，$z$ 方向の一様な静磁場 $B\\ (>0)$（ベクトル・ポテンシャル $\\boldsymbol A=\\frac12\\boldsymbol B\\times\\boldsymbol r$）がはたらく．$\\omega_L=eB/(2m)$ とおく．\n\\begin{enumerate}\n\\item 慣性系でのハミルトニアン $H$ を求めよ．\n\\item 角速度 $\\omega$ で回転する座標系に移ったときのハミルトニアンを求め，$\\omega$ を適切に選ぶと磁場の 1 次の項が消え，粒子が角振動数 $\\sqrt{\\Omega_0^2+\\omega_L^2}$ の等方調和振動子になることを示せ．その $\\omega$ の符号の意味も述べよ．\n\\item 慣性系での運動は 2 つの円運動の重ね合わせであることを示し，それらの角振動数 $\\omega_\\pm$ を求めよ．\n\\item 初期条件によらずすべての軌道が閉じ，かつ $\\omega_+=2\\omega_-$ となる磁場の強さ $B$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac1{2m}\\left[(p_x+\\tfrac{eB}2y)^2+(p_y-\\tfrac{eB}2x)^2\\right]+\\dfrac12m\\Omega_0^2r^2$　(2) $\\omega=-\\omega_L$ で $H'=\\dfrac{p'^2}{2m}+\\dfrac12m(\\Omega_0^2+\\omega_L^2)r'^2$　(3) $\\omega_\\pm=\\sqrt{\\Omega_0^2+\\omega_L^2}\\pm\\omega_L$　(4) $B=\\dfrac{m\\Omega_0}{\\sqrt2\\,e}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\frac m2(\\dot x^2+\\dot y^2)+\\frac{eB}2(x\\dot y-y\\dot x)-\\frac12m\\Omega_0^2r^2$．$p_x=m\\dot x-\\frac{eB}2y$，$p_y=m\\dot y+\\frac{eB}2x$ より\n\\[\nH=\\frac1{2m}\\left[\\left(p_x+\\frac{eB}2y\\right)^2+\\left(p_y-\\frac{eB}2x\\right)^2\\right]+\\frac12m\\Omega_0^2r^2 .\n\\]\n\n(2) 回転系 $x'=x\\cos\\omega t+y\\sin\\omega t$，$y'=-x\\sin\\omega t+y\\cos\\omega t$ では $\\dot x^2+\\dot y^2=\\dot x'^2+\\dot y'^2+2\\omega(x'\\dot y'-y'\\dot x')+\\omega^2r'^2$，$x\\dot y-y\\dot x=x'\\dot y'-y'\\dot x'+\\omega r'^2$ だから\n\\[\nL'=\\frac m2(\\dot x'^2+\\dot y'^2)+\\left(m\\omega+\\frac{eB}2\\right)(x'\\dot y'-y'\\dot x')+\\left(\\frac m2\\omega^2+\\frac{eB}2\\omega-\\frac m2\\Omega_0^2\\right)r'^2 .\n\\]\n$\\omega=-eB/(2m)=-\\omega_L$ とすると 1 次項が消え，$r'^2$ の係数は $-\\frac m2(\\Omega_0^2+\\omega_L^2)$．よって\n\\[\nH'=\\frac{p_{x'}^2+p_{y'}^2}{2m}+\\frac12m(\\Omega_0^2+\\omega_L^2)r'^2 ,\n\\]\n角振動数 $\\Omega=\\sqrt{\\Omega_0^2+\\omega_L^2}$ の等方調和振動子（Larmor の定理の厳密版）．$\\omega<0$ は，正電荷が $+z$ 向きの磁場中でサイクロトロン運動する向き（時計回り）に座標系を回すことを意味する．\n\n(3) 回転系の等方振動子の軌道は，角振動数 $\\pm\\Omega$ で逆向きに回る 2 つの円運動の和．慣性系に戻ると各成分に $-\\omega_L$ の回転が加わり，角速度 $\\Omega-\\omega_L$ と $-(\\Omega+\\omega_L)$ の円運動の和となる．大きさは\n\\[\n\\omega_\\pm=\\sqrt{\\Omega_0^2+\\omega_L^2}\\pm\\omega_L .\n\\]\n\n(4) すべての軌道が閉じる条件は $\\omega_+/\\omega_-$ が有理数．$\\omega_+=2\\omega_-$ なら $\\Omega+\\omega_L=2(\\Omega-\\omega_L)$，$\\Omega=3\\omega_L$，$\\Omega_0^2=8\\omega_L^2$．よって $\\omega_L=\\Omega_0/(2\\sqrt2)$，$B=2m\\omega_L/e=\\dfrac{m\\Omega_0}{\\sqrt2\\,e}$．このとき $\\omega_+=\\sqrt2\\,\\Omega_0$，$\\omega_-=\\Omega_0/\\sqrt2$ で，周期 $2\\pi/\\omega_-$ ごとに軌道が閉じる．"
+   }
+  ],
+  "idea": {
+   "tex": "Larmor 角速度 $-eB/2m$ の回転系では磁場の 1 次の効果が Coriolis 力と打ち消し合い，残る遠心項で等方振動子の振動数が $\\sqrt{\\Omega_0^2+\\omega_L^2}$ に上がる．慣性系の 2 つの円運動の振動数比で軌道の閉じ方が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $B$：((m Ω_0)/(sqrt(2) e))"
+  },
+  "methods": [],
+  "tags": [
+   "ベクトルポテンシャル",
+   "Larmorの定理",
+   "回転座標系",
+   "調和振動子",
+   "閉軌道"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-057",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "回転する螺旋円柱上の質点と鉛直加速度",
+  "topic": "回転する螺旋円柱上の質点と鉛直加速度",
+  "statement": {
+   "tex": "半径 $a$，質量 $M$ の一様な円柱（中心軸まわりの慣性モーメント $\\frac12Ma^2$）が鉛直な中心軸のまわりに自由に回転できる．円柱の外壁に螺旋状の滑らかな走路が取り付けられ，質量 $m$ の質点が走路に沿って滑る．円柱に対する質点の回転角を $\\theta$ とすると，質点の高さは $z=-c\\theta$（$c>0$，螺旋のピッチは $2\\pi c$）である．円柱の回転角を $\\varphi$（$\\theta$ と同じ向きを正）とする．\n時刻 $t=0$ で $\\theta=\\varphi=0$，質点は円柱に対して静止しており，円柱（と質点）は角速度 $\\Omega_0$ で回転している．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item ハミルトニアン $H(\\theta,\\varphi,p_\\theta,p_\\varphi)$ を求め，保存される運動量を初期条件で表せ．\n\\item $\\theta(t)$，$\\varphi(t)$ を求め，質点の鉛直加速度が $\\Omega_0$ によらないことを示せ．\n\\item $\\Omega_0>0$ のとき，円柱の回転が一瞬止まる時刻 $t^*$ を求めよ．\n\\item 質点の鉛直加速度の $M\\to0$ と $M\\to\\infty$ の極限を求め，物理的に解釈せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{(m+\\frac M2)a^2p_\\theta^2-2ma^2p_\\theta p_\\varphi+m(a^2+c^2)p_\\varphi^2}{2ma^2[mc^2+\\frac M2(a^2+c^2)]}-mgc\\theta$，$p_\\varphi=(m+\\frac M2)a^2\\Omega_0$　(2) $D=2mc^2+M(a^2+c^2)$ として $\\theta=\\dfrac{(m+M/2)gc}{D}t^2$，$\\varphi=\\Omega_0t-\\dfrac{mgc}{D}t^2$，$\\ddot z=-\\dfrac{(2m+M)c^2}{D}g$　(3) $t^*=\\dfrac{\\Omega_0D}{2mgc}$　(4) $M\\to0$：$-g$（自由落下），$M\\to\\infty$：$-\\dfrac{gc^2}{a^2+c^2}$（固定螺旋）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 質点の位置は $(a\\cos(\\theta+\\varphi),a\\sin(\\theta+\\varphi),-c\\theta)$ だから\n\\[\nL=\\frac m2\\left[(a^2+c^2)\\dot\\theta^2+2a^2\\dot\\theta\\dot\\varphi\\right]+\\frac12\\left(m+\\frac M2\\right)a^2\\dot\\varphi^2+mgc\\theta .\n\\]\n$p_\\theta=m(a^2+c^2)\\dot\\theta+ma^2\\dot\\varphi$，$p_\\varphi=ma^2\\dot\\theta+(m+\\frac M2)a^2\\dot\\varphi$．行列式 $|\\mathsf T|=ma^2[mc^2+\\frac M2(a^2+c^2)]$ で逆に解くと\n\\[\nH=\\frac{(m+\\frac M2)a^2p_\\theta^2-2ma^2p_\\theta p_\\varphi+m(a^2+c^2)p_\\varphi^2}{2|\\mathsf T|}-mgc\\theta .\n\\]\n$\\varphi$ はサイクリックで $p_\\varphi=(m+\\frac M2)a^2\\Omega_0$（一定）．\n\n(2) $\\dot p_\\theta=mgc$ より $p_\\theta=ma^2\\Omega_0+mgct$．$p_\\varphi$ の式から $\\dot\\varphi=\\Omega_0-\\dfrac{m}{m+M/2}\\dot\\theta$．これを $p_\\theta$ に代入すると $\\Omega_0$ の項が両辺で打ち消し合い\n\\[\n\\dot\\theta\\left[(a^2+c^2)-\\frac{ma^2}{m+M/2}\\right]=gct\\quad\\Longrightarrow\\quad\\dot\\theta=\\frac{2(m+M/2)gc}{D}t ,\n\\]\n$D=2mc^2+M(a^2+c^2)$．積分して $\\theta=\\dfrac{(m+M/2)gc}{D}t^2$，$\\varphi=\\Omega_0t-\\dfrac{mgc}{D}t^2$．$\\ddot z=-c\\ddot\\theta=-\\dfrac{(2m+M)c^2}{D}g$ は $\\Omega_0$ を含まない（運動方程式が線形で $\\Omega_0$ は一様回転の重ね合わせにすぎない）．\n\n(3) $\\dot\\varphi=\\Omega_0-\\dfrac{2mgc}{D}t=0$ より $t^*=\\dfrac{\\Omega_0D}{2mgc}$．以後円柱は逆回転する（質点が下りながら角運動量を円柱から奪うため）．\n\n(4) $M\\to0$：$\\ddot z\\to-\\dfrac{2mc^2}{2mc^2}g=-g$．質量のない円柱は抵抗なく回り，走路は質点の下で回転するだけで質点は自由落下する（慣性系での質点の水平角速度は $\\dot\\theta+\\dot\\varphi=\\Omega_0+Mgct/D\\to\\Omega_0$ で変わらない）．$M\\to\\infty$：$\\ddot z\\to-\\dfrac{gc^2}{a^2+c^2}$，傾き $\\tan\\alpha=c/a$ の固定斜面を滑る加速度 $g\\sin^2\\alpha$ に一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "$p_\\varphi$ 保存を用いて円柱の自由度を消去すると相対運動は等加速度になり，初期回転 $\\Omega_0$ は重ね合わされるだけ．円柱が軽いほど質点は自由落下に近づく．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "サイクリック座標",
+   "ハミルトニアン",
+   "螺旋",
+   "角運動量保存",
+   "極限"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-058",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "退化した時間依存ラグランジアンと正則解",
+  "topic": "退化した時間依存ラグランジアンと正則解",
+  "statement": {
+   "tex": "1 自由度の系のラグランジアンが\n\\[\nL=\\frac m2\\left(\\dot q^2\\sin^2\\omega t+\\omega q\\dot q\\sin2\\omega t+\\omega^2q^2\\right)\\qquad(m,\\omega>0)\n\\]\nで与えられている．\n\\begin{enumerate}\n\\item ハミルトニアン $H(q,p,t)$ を求めよ．\n\\item $Q=q\\sin\\omega t$ とおくと，ラグランジアンが時間に陽に依存しない形になることを示し，それがどのような力学系に対応するか述べよ．\n\\item (2) を利用して，$q,p,t$ の関数で表される運動の定数 $I(q,p,t)$ を求め，Hamilton の運動方程式を用いて $dI/dt=0$ を直接確かめよ．\n\\item $t=0$ で $\\dot q^2$ の係数が 0 になる（ラグランジアンが退化する）．$t=0$ で $q$ が有限な解をすべて求め，そのような解では $\\dot q(0)$ が自由に選べないことを示せ．$q(0)=q_0$ のとき $\\ddot q(0)$ と，解が最初に発散する時刻を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p^2}{2m\\sin^2\\omega t}-\\omega pq\\cot\\omega t-\\dfrac m2\\omega^2q^2\\sin^2\\omega t$　(2) $L'=\\frac m2(\\dot Q^2+\\omega^2Q^2)$：負のばね定数（逆さ振動子）　(3) $I=\\dfrac{p^2}{2m\\sin^2\\omega t}-\\dfrac m2\\omega^2q^2\\sin^2\\omega t$　(4) $q=q_0\\dfrac{\\sinh\\omega t}{\\sin\\omega t}$，必ず $\\dot q(0)=0$，$\\ddot q(0)=\\dfrac23\\omega^2q_0$，$t=\\pi/\\omega$ で発散"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p=m\\dot q\\sin^2\\omega t+m\\omega q\\sin\\omega t\\cos\\omega t$ より $\\dot q=\\dfrac{p}{m\\sin^2\\omega t}-\\omega q\\cot\\omega t$．\n\\[\nH=p\\dot q-L=\\frac{p^2}{2m\\sin^2\\omega t}-\\omega pq\\cot\\omega t-\\frac m2\\omega^2q^2\\sin^2\\omega t .\n\\]\n\n(2) $\\dot Q=\\dot q\\sin\\omega t+\\omega q\\cos\\omega t$ より $\\dot Q^2=\\dot q^2\\sin^2\\omega t+\\omega q\\dot q\\sin2\\omega t+\\omega^2q^2\\cos^2\\omega t$．したがって\n\\[\nL=\\frac m2\\left(\\dot Q^2+\\omega^2q^2\\sin^2\\omega t\\right)=\\frac m2\\left(\\dot Q^2+\\omega^2Q^2\\right).\n\\]\nポテンシャル $-\\frac12m\\omega^2Q^2$，すなわち負のばね定数をもつ「逆さ」調和振動子である．\n\n(3) $L'$ は $t$ を含まないので $H'=\\dfrac{P^2}{2m}-\\dfrac m2\\omega^2Q^2$（$P=m\\dot Q$）が保存する．$p=m\\sin\\omega t\\,\\dot Q=P\\sin\\omega t$ だから\n\\[\nI=\\frac{p^2}{2m\\sin^2\\omega t}-\\frac m2\\omega^2q^2\\sin^2\\omega t .\n\\]\n直接の確認：$\\dot q=\\partial H/\\partial p=\\dfrac{p}{m\\sin^2\\omega t}-\\omega q\\cot\\omega t$，$\\dot p=-\\partial H/\\partial q=\\omega p\\cot\\omega t+m\\omega^2q\\sin^2\\omega t$．\n\\[\n\\frac{dI}{dt}=-\\frac{\\omega p^2\\cos\\omega t}{m\\sin^3\\omega t}-m\\omega^3q^2\\sin\\omega t\\cos\\omega t+\\frac{p\\dot p}{m\\sin^2\\omega t}-m\\omega^2q\\dot q\\sin^2\\omega t\n\\]\nに代入すると，$p^2$ の項：$-\\frac{\\omega\\cos}{m\\sin^3}+\\frac{\\omega\\cos}{m\\sin^3}=0$，$pq$ の項：$\\omega^2-\\omega^2=0$，$q^2$ の項：$-m\\omega^3\\sin\\cos+m\\omega^3\\sin\\cos=0$ で $dI/dt=0$．\n\n(4) $Q$ の一般解は $Q=\\alpha\\cosh\\omega t+\\beta\\sinh\\omega t$，$q=Q/\\sin\\omega t$．$t\\to0$ で $q$ が有限であるには $\\alpha=0$ が必要で，$q(0)=\\beta$ から\n\\[\nq(t)=q_0\\frac{\\sinh\\omega t}{\\sin\\omega t}=q_0\\left(1+\\frac{\\omega^2t^2}{3}+O(t^4)\\right).\n\\]\nよって $\\dot q(0)=0$ が強制され，$\\ddot q(0)=\\dfrac23\\omega^2q_0$．正則な解は 1 パラメータ族しかなく，初期速度を指定できない（$t=0$ で運動方程式の $\\ddot q$ の係数が 0 となり，方程式自体が $\\dot q(0)$ を決める拘束になる）．また $\\sin\\omega t=0$ となる最初の時刻 $t=\\pi/\\omega$ で $q\\to\\infty$ に発散する．"
+   }
+  ],
+  "idea": {
+   "tex": "時間依存の点変換 $Q=q\\sin\\omega t$ で逆さ振動子に帰着し，保存量 $I(q,p,t)$ が得られる．$t=0$ の退化点では正則解の初速度が $0$ に強制される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $I$：((p^2)/(2m sin ^2ω t))-(m/2)ω^2q^2 sin ^2ω t\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "時間依存ラグランジアン",
+   "点変換",
+   "保存量",
+   "退化",
+   "逆さ振動子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-059",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "回転系の2体ばね系と相対平衡の振動",
+  "topic": "回転系の2体ばね系と相対平衡の振動",
+  "statement": {
+   "tex": "質量 $m_1,m_2$ の 2 質点が，ばね定数 $k$，自然長 $l_0$ の軽いばねで結ばれ，水平面内を運動する．重心は静止しているとし，換算質量を $\\mu=m_1m_2/(m_1+m_2)$ とする．重心を原点として一定角速度 $\\omega$ で回転する座標系を用いる．\n\\begin{enumerate}\n\\item 回転系での相対座標 $\\boldsymbol r'$ に対するハミルトニアン $H'$ を求め，その値が慣性系でのエネルギー $E$ と角運動量 $L_z$ を用いて $E-\\omega L_z$ に等しく，保存されることを示せ．\n\\item 2 質点が回転系で静止したまま（つまり慣性系で角速度 $\\omega$ の剛体回転として）存在できるためのばねの長さ $l$ と，そのための $\\omega$ の条件を求めよ．\n\\item この相対平衡のまわりの微小振動を回転系で調べ，零でない角振動数を求めよ．\n\\item (3) の結果を，遠心力ポテンシャルを含む有効ポテンシャルの動径方向の曲率 $k-\\mu\\omega^2$ から予想される値 $\\sqrt{k/\\mu-\\omega^2}$ と比べ，違いの原因を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H'=\\dfrac{|\\boldsymbol p'|^2}{2\\mu}-\\omega(x'p_{y'}-y'p_{x'})+\\dfrac k2(r'-l_0)^2$　(2) $l=\\dfrac{kl_0}{k-\\mu\\omega^2}$，$\\omega<\\sqrt{k/\\mu}$　(3) $\\sqrt{k/\\mu+3\\omega^2}$（他は 0：回転方向の中立モード）　(4) Coriolis 力が動径と接線を結合し，$4\\omega^2$ だけ振動数の 2 乗を押し上げる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 重心静止なので運動は相対座標 $\\boldsymbol r$ の換算質量 $\\mu$ の 1 体問題：$L=\\frac\\mu2|\\dot{\\boldsymbol r}|^2-\\frac k2(|\\boldsymbol r|-l_0)^2$．回転系では $\\dot{\\boldsymbol r}=\\dot{\\boldsymbol r}'+\\boldsymbol\\omega\\times\\boldsymbol r'$（成分）だから\n\\[\nL'=\\frac\\mu2|\\dot{\\boldsymbol r}'+\\boldsymbol\\omega\\times\\boldsymbol r'|^2-\\frac k2(r'-l_0)^2,\\qquad\\boldsymbol p'=\\mu(\\dot{\\boldsymbol r}'+\\boldsymbol\\omega\\times\\boldsymbol r'),\n\\]\n\\[\nH'=\\boldsymbol p'\\cdot\\dot{\\boldsymbol r}'-L'=\\frac{|\\boldsymbol p'|^2}{2\\mu}-\\boldsymbol\\omega\\cdot(\\boldsymbol r'\\times\\boldsymbol p')+\\frac k2(r'-l_0)^2 .\n\\]\n$\\boldsymbol p'$ は慣性系の運動量の回転系成分なので $\\frac{|\\boldsymbol p'|^2}{2\\mu}+\\frac k2(r-l_0)^2=E$，$\\boldsymbol r'\\times\\boldsymbol p'$ は角運動量 $L_z$ で，$H'=E-\\omega L_z$．$H'$ は $t$ を陽に含まず保存する（ここでは $E,L_z$ も個別に保存する）．\n\n(2) 回転系で $\\dot{\\boldsymbol r}'=0$ の平衡は，有効ポテンシャル $U_{\\rm eff}=\\frac k2(r'-l_0)^2-\\frac12\\mu\\omega^2r'^2$ の停留点：$k(l-l_0)=\\mu\\omega^2l$，\n\\[\nl=\\frac{kl_0}{k-\\mu\\omega^2}\\qquad(\\omega^2<k/\\mu).\n\\]\n$\\omega^2\\ge k/\\mu$ ではばねが遠心力を支えきれず平衡は存在しない．\n\n(3) 平衡点を $x'$ 軸上にとり，$x'=l+\\xi$，$y'=\\eta$ とする．$U_{\\rm eff}$ の 2 次は動径 $\\frac12(k-\\mu\\omega^2)\\xi^2$，接線方向は 0（円対称）．線形化した運動方程式は\n\\[\n\\ddot\\xi-2\\omega\\dot\\eta+\\left(\\frac k\\mu-\\omega^2\\right)\\xi=0,\\qquad\\ddot\\eta+2\\omega\\dot\\xi=0 .\n\\]\n$e^{st}$ を代入して $s^2\\left(s^2+\\frac k\\mu-\\omega^2+4\\omega^2\\right)=0$．零でない角振動数は\n\\[\n\\omega_r=\\sqrt{\\frac k\\mu+3\\omega^2}.\n\\]\n$s=0$ の重根は平衡円周に沿ったずれ（および角運動量の変化による平衡半径のずれ）に対応する．\n\n(4) 有効ポテンシャルの曲率だけなら $\\sqrt{k/\\mu-\\omega^2}$ だが，動径方向に動くと Coriolis 力が接線方向の運動を生み，それが再び Coriolis 力で動径方向の復元力になる．この結合が $4\\omega^2$ を加え $\\omega_r^2=k/\\mu-\\omega^2+4\\omega^2$ となる．慣性系で見れば角運動量保存のもとでの遠心障壁 $L^2/(2\\mu r^2)$ の曲率 $3\\mu\\omega^2$ が加わったものに一致する（$\\omega_r^2=U''/\\mu+3\\omega^2$）．"
+   }
+  ],
+  "idea": {
+   "tex": "回転系の $H'=E-\\omega L_z$ の停留点が剛体回転の相対平衡．その安定振動数は有効ポテンシャルの曲率ではなく，Coriolis 結合を含めて $\\sqrt{k/\\mu+3\\omega^2}$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) sqrt(k/μ+3ω^2)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転座標系",
+   "換算質量",
+   "相対平衡",
+   "Coriolis力",
+   "微小振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-060",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "眠りごまの安定条件と2つの歳差振動数",
+  "topic": "眠りごまの安定条件と2つの歳差振動数",
+  "statement": {
+   "tex": "1 点を固定された重い対称こま（対称軸まわりの慣性モーメント $I_3$，固定点まわりの横の慣性モーメント $I_1$，質量 $M$，固定点から重心まで $l$）を Euler 角 $(\\varphi,\\theta,\\psi)$ で記述する．$\\theta$ は対称軸と鉛直上向きのなす角，重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item ハミルトニアンを求め，保存量を挙げよ．$p_\\psi=I_3\\omega_3$ とおく．\n\\item こまが鉛直に立ったまま回る（$\\theta\\equiv0$）運動では $p_\\varphi=p_\\psi$ でなければならないことを示し，$\\varphi,\\psi$ を Routh の方法で消去して $\\theta$ の 1 自由度系の有効ポテンシャル $U(\\theta)$ を $\\theta^2$ の次数まで求めよ．\n\\item 鉛直に立ったこまが安定である条件を求めよ．\n\\item $\\theta$ が小さい定常歳差運動（$\\theta$ 一定）の歳差角速度 $\\dot\\varphi$ を，$\\theta\\to0$ の極限で求めよ．これらが (3) の条件で実数になることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_\\theta^2}{2I_1}+\\dfrac{(p_\\varphi-p_\\psi\\cos\\theta)^2}{2I_1\\sin^2\\theta}+\\dfrac{p_\\psi^2}{2I_3}+Mgl\\cos\\theta$；$p_\\varphi,p_\\psi,H$ が保存　(2) $U\\simeq\\text{const}+\\left(\\dfrac{p_\\psi^2}{8I_1}-\\dfrac{Mgl}{2}\\right)\\theta^2$　(3) $I_3^2\\omega_3^2>4I_1Mgl$　(4) $\\dot\\varphi=\\omega_\\pm=\\dfrac{I_3\\omega_3\\pm\\sqrt{I_3^2\\omega_3^2-4I_1Mgl}}{2I_1}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\frac{I_1}2(\\dot\\theta^2+\\dot\\varphi^2\\sin^2\\theta)+\\frac{I_3}2(\\dot\\psi+\\dot\\varphi\\cos\\theta)^2-Mgl\\cos\\theta$．$p_\\theta=I_1\\dot\\theta$，$p_\\psi=I_3(\\dot\\psi+\\dot\\varphi\\cos\\theta)$，$p_\\varphi=I_1\\sin^2\\theta\\,\\dot\\varphi+p_\\psi\\cos\\theta$ を用いて\n\\[\nH=\\frac{p_\\theta^2}{2I_1}+\\frac{(p_\\varphi-p_\\psi\\cos\\theta)^2}{2I_1\\sin^2\\theta}+\\frac{p_\\psi^2}{2I_3}+Mgl\\cos\\theta .\n\\]\n$\\varphi,\\psi$ はサイクリックで $p_\\varphi,p_\\psi$ が保存，$t$ を含まないので $H$（全エネルギー）も保存．\n\n(2) $p_\\varphi$ と $p_\\psi$ はそれぞれ角運動量の鉛直成分と対称軸成分．$\\theta=0$ では両軸が一致するので $p_\\varphi=p_\\psi$（式でも $\\sin\\theta\\to0$ で $H$ が有限であるには $p_\\varphi=p_\\psi$ が必要）．Routh 関数 $R=\\dot\\varphi p_\\varphi+\\dot\\psi p_\\psi-L=-\\frac{I_1}2\\dot\\theta^2+U(\\theta)$，\n\\[\nU(\\theta)=\\frac{p_\\psi^2}{2I_1}\\left(\\frac{1-\\cos\\theta}{\\sin\\theta}\\right)^2+Mgl\\cos\\theta+\\frac{p_\\psi^2}{2I_3}\n=\\frac{p_\\psi^2}{2I_1}\\tan^2\\frac\\theta2+Mgl\\cos\\theta+\\text{const}.\n\\]\n$\\tan(\\theta/2)\\simeq\\theta/2$ より $U\\simeq\\text{const}+\\left(\\dfrac{p_\\psi^2}{8I_1}-\\dfrac{Mgl}2\\right)\\theta^2$．\n\n(3) $\\theta=0$ が $U$ の極小 $\\iff p_\\psi^2>4I_1Mgl$，すなわち $I_3^2\\omega_3^2>4I_1Mgl$（速いこまの条件）．\n\n(4) 定常歳差では $\\partial U/\\partial\\theta=0$ を $\\theta$ 一定として書くと，$\\ddot\\theta=0$ の条件 $I_1\\dot\\varphi^2\\sin\\theta\\cos\\theta-I_3\\omega_3\\dot\\varphi\\sin\\theta+Mgl\\sin\\theta=0$．$\\sin\\theta$ で割って $\\theta\\to0$ とすると\n\\[\nI_1\\dot\\varphi^2-I_3\\omega_3\\dot\\varphi+Mgl=0,\\qquad\\dot\\varphi=\\omega_\\pm=\\frac{I_3\\omega_3\\pm\\sqrt{I_3^2\\omega_3^2-4I_1Mgl}}{2I_1}.\n\\]\n判別式が正であることは (3) の安定条件そのもの．眠りごまのまわりの微小運動は，対称軸の先端が角速度 $\\omega_+$（速い歳差）と $\\omega_-$（遅い歳差）で回る 2 つの円運動の重ね合わせであり，安定条件が破れると $\\omega_\\pm$ が複素数になって指数的に倒れる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\theta=0$ では $p_\\varphi=p_\\psi$ が強制され，Routh 関数の有効ポテンシャルが $\\tan^2(\\theta/2)$ を含む．その曲率の符号が眠りごまの安定条件で，同じ判別式が小振幅歳差の 2 振動数を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "対称こま",
+   "Routh関数",
+   "サイクリック座標",
+   "安定性",
+   "歳差運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-061",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "水平に歳差するこまの厳密な章動振動数",
+  "topic": "水平に歳差するこまの厳密な章動振動数",
+  "statement": {
+   "tex": "1 点を固定された重い対称こま（$I_1,I_3,M,l$，重力加速度 $g$）を考える．$\\theta$ は対称軸と鉛直上向きのなす角，$\\omega_3=\\dot\\psi+\\dot\\varphi\\cos\\theta$ は対称軸まわりの角速度成分（一定）である．$p_\\varphi=I_1b$，$p_\\psi=I_1a$ とおくと，Routh 関数は定数項を除いて\n\\[\nR=-\\frac{I_1}2\\dot\\theta^2+V(\\theta),\\qquad V(\\theta)=\\frac{I_1}2\\left(\\frac{b-a\\cos\\theta}{\\sin\\theta}\\right)^2+Mgl\\cos\\theta\n\\]\nとなる．\n\\begin{enumerate}\n\\item 対称軸が水平（$\\theta=\\pi/2$）のまま一定角速度で歳差する定常運動を考える．歳差角速度 $\\Omega$ を（近似なしで）求めよ．一般の $\\theta_0$ では定常歳差の角速度は 2 つあるが，$\\theta_0=\\pi/2$ ではいくつか．\n\\item この定常運動のまわりの $\\theta$ の微小振動（章動）の角振動数 $\\omega_n$ を厳密に求めよ．\n\\item 速いこま（$I_3\\omega_3\\gg\\sqrt{I_1Mgl}$）の極限で $\\omega_n$ を展開し，主要項と第 1 補正を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Omega=\\dfrac{Mgl}{I_3\\omega_3}$（1 つだけ）　(2) $\\omega_n=\\sqrt{\\left(\\dfrac{I_3\\omega_3}{I_1}\\right)^2+\\left(\\dfrac{Mgl}{I_3\\omega_3}\\right)^2}$　(3) $\\omega_n\\simeq\\dfrac{I_3\\omega_3}{I_1}+\\dfrac{I_1}{2}\\dfrac{(Mgl)^2}{(I_3\\omega_3)^3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a=I_3\\omega_3/I_1$．$\\theta=\\pi/2$ では $p_\\varphi=I_1\\sin^2\\theta\\,\\dot\\varphi+I_3\\omega_3\\cos\\theta=I_1\\dot\\varphi$，よって $b=\\dot\\varphi=\\Omega$．定常条件 $V'(\\theta_0)=0$ は\n\\[\nV'(\\theta)=I_1\\frac{(b-a\\cos\\theta)(a-b\\cos\\theta)}{\\sin^3\\theta}-Mgl\\sin\\theta ,\n\\]\n$\\theta=\\pi/2$ で $I_1ab-Mgl=0$．したがって $\\Omega=b=\\dfrac{Mgl}{I_1a}=\\dfrac{Mgl}{I_3\\omega_3}$（近似なし）．一般の $\\theta_0$ では $I_1\\Omega^2\\cos\\theta_0-I_3\\omega_3\\Omega+Mgl=0$ の 2 根があるが，$\\cos\\theta_0=0$ では 1 次方程式になり速い歳差の根は無限大に飛んで消え，1 つだけになる．\n\n(2) $u=\\cos\\theta$ とおき $V$ を $\\theta=\\pi/2$ のまわりで 2 次まで展開する．$\\theta=\\frac\\pi2+\\epsilon$ とすると $\\cos\\theta\\simeq-\\epsilon$，$\\sin\\theta\\simeq1-\\epsilon^2/2$ で\n\\[\n\\frac{b-a\\cos\\theta}{\\sin\\theta}\\simeq(b+a\\epsilon)\\left(1+\\frac{\\epsilon^2}2\\right)\\simeq b+a\\epsilon+\\frac b2\\epsilon^2,\n\\]\n\\[\nV\\simeq\\frac{I_1}2\\left[b^2+2ab\\epsilon+(a^2+b^2)\\epsilon^2\\right]+Mgl\\left(-\\epsilon\\right)+O(\\epsilon^3).\n\\]\n1 次項は $I_1ab=Mgl$ で消え，$V''=I_1(a^2+b^2)$．$\\theta$ の運動方程式は $I_1\\ddot\\epsilon=-V''\\epsilon$ だから\n\\[\n\\omega_n^2=a^2+b^2=\\left(\\frac{I_3\\omega_3}{I_1}\\right)^2+\\left(\\frac{Mgl}{I_3\\omega_3}\\right)^2 .\n\\]\nすなわち章動の角振動数の 2 乗は「軸まわりの回転による $a^2$」と「歳差角速度の 2 乗」の和に厳密に等しい．\n\n(3) $\\omega_n=a\\sqrt{1+\\Omega^2/a^2}\\simeq a+\\dfrac{\\Omega^2}{2a}=\\dfrac{I_3\\omega_3}{I_1}+\\dfrac{I_1(Mgl)^2}{2(I_3\\omega_3)^3}$．主要項はよく知られた速いこまの章動振動数 $I_3\\omega_3/I_1$ である．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\theta_0=\\pi/2$ では定常条件が 1 次式になり歳差角速度 $Mgl/(I_3\\omega_3)$ が厳密に決まる．Routh ポテンシャルの曲率から章動振動数が $\\sqrt{a^2+\\Omega^2}$ と厳密に求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Omega$：((M g l)/(I_3 ω_3))\n(2) $\\omega_n$：sqrt((((I_3 ω_3)/(I_1)))^(2)+(((M g l)/(I_3 ω_3)))^(2))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "対称こま",
+   "Routh関数",
+   "定常歳差",
+   "章動",
+   "微小振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-062",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "重心支持こまの蹴り出し後の運動範囲",
+  "topic": "重心支持こまの蹴り出し後の運動範囲",
+  "statement": {
+   "tex": "対称こま（質量 $M$，重心まわりの慣性モーメント $I_1,I_1,I_3$）が重心を滑らかな支点で支えられている．支点は，鉛直軸のまわりに自由に回る水平な円盤（軸まわりの慣性モーメント $I_0$）上の，軸から距離 $r$ の点に固定されている．円盤の回転角を $\\Theta$，こまの Euler 角を $(\\varphi,\\theta,\\psi)$（$\\theta$ は対称軸と鉛直のなす角）とする．\n時刻 0 に円盤は静止，こまは $\\theta=\\theta_0$，$\\dot\\varphi=0$，$\\dot\\psi=\\omega_3$ で，さらに対称軸を鉛直面内で $\\theta$ が増す向きに角速度 $\\dot\\theta(0)=\\Omega$ で蹴り出した．\n\\begin{enumerate}\n\\item ラグランジアンを書き，円盤はその後も静止し続けることを示せ．\n\\item こまの角運動量 $\\boldsymbol L$ の大きさと，$\\boldsymbol L$ と鉛直のなす角 $\\theta_L$ を求めよ（$\\tan\\alpha=I_1\\Omega/(I_3\\omega_3)$ とおけ）．\n\\item $\\theta$ が振動する範囲 $[\\theta_{\\min},\\theta_{\\max}]$ と，$\\theta$ の振動の角振動数を求めよ．\n\\item $\\Omega\\to0$ の極限で (3) の角振動数は何に近づくか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\frac12(I_0+Mr^2)\\dot\\Theta^2+\\frac{I_1}2(\\dot\\theta^2+\\dot\\varphi^2\\sin^2\\theta)+\\frac{I_3}2(\\dot\\psi+\\dot\\varphi\\cos\\theta)^2$：完全に分離し $\\dot\\Theta=0$ のまま　(2) $|\\boldsymbol L|=\\sqrt{I_3^2\\omega_3^2+I_1^2\\Omega^2}$，$\\cos\\theta_L=\\cos\\alpha\\cos\\theta_0$　(3) $\\theta_{\\max}=\\theta_L+\\alpha$，$\\theta_{\\min}=|\\theta_L-\\alpha|$，角振動数 $|\\boldsymbol L|/I_1$　(4) $I_3\\omega_3/I_1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 重心が支えられているので重力のトルクはなく位置エネルギーは一定．円盤の運動エネルギー $\\frac12I_0\\dot\\Theta^2$，こまの重心の運動エネルギー $\\frac12Mr^2\\dot\\Theta^2$，重心まわりの回転エネルギーを加えて\n\\[\nL=\\frac12(I_0+Mr^2)\\dot\\Theta^2+\\frac{I_1}2(\\dot\\theta^2+\\dot\\varphi^2\\sin^2\\theta)+\\frac{I_3}2(\\dot\\psi+\\dot\\varphi\\cos\\theta)^2 .\n\\]\n$\\Theta$ と $(\\varphi,\\theta,\\psi)$ は完全に分離しており，$p_\\Theta=(I_0+Mr^2)\\dot\\Theta=0$ が保存されるので円盤は静止し続ける（支点からこまへはトルクがはたらかず，こまの回転は円盤に角運動量を渡さない）．\n\n(2) こまは重心まわりのトルクなしの運動で $\\boldsymbol L$ は一定．初期に $\\dot\\varphi=0$ なので角速度は $\\omega_3\\boldsymbol e_3+\\Omega\\boldsymbol e_\\perp$（$\\boldsymbol e_\\perp=\\boldsymbol e_3\\times\\hat{\\boldsymbol\\theta}$ 向きの回転で $\\boldsymbol e_3$ が $\\hat{\\boldsymbol\\theta}$ 方向に動く）．よって $\\boldsymbol L=I_3\\omega_3\\boldsymbol e_3+I_1\\Omega\\boldsymbol e_\\perp$．$\\boldsymbol e_\\perp$ は水平（$\\boldsymbol e_3$ と鉛直を含む面に垂直）．\n\\[\n|\\boldsymbol L|=\\sqrt{I_3^2\\omega_3^2+I_1^2\\Omega^2},\\qquad L_z=I_3\\omega_3\\cos\\theta_0\\ \\Rightarrow\\ \\cos\\theta_L=\\frac{I_3\\omega_3\\cos\\theta_0}{|\\boldsymbol L|}=\\cos\\alpha\\cos\\theta_0 .\n\\]\n\n(3) トルクのない対称こまでは対称軸 $\\boldsymbol e_3$ は $\\boldsymbol L$ のまわりを半頂角 $\\alpha$（$\\boldsymbol e_3$ と $\\boldsymbol L$ のなす角，$\\tan\\alpha=I_1\\Omega/(I_3\\omega_3)$）で角速度 $|\\boldsymbol L|/I_1$ で一様に回る．鉛直から見た角 $\\theta$ は，球面上で $\\boldsymbol L$ の方向から角距離 $\\alpha$ の円上を動くので\n\\[\n\\theta_{\\max}=\\theta_L+\\alpha,\\qquad\\theta_{\\min}=|\\theta_L-\\alpha|\\quad(\\theta_L+\\alpha\\le\\pi\\ \\text{とする}).\n\\]\n$\\theta$ は円を 1 周する間に 1 往復するので，振動の角振動数は $|\\boldsymbol L|/I_1=\\sqrt{(I_3\\omega_3/I_1)^2+\\Omega^2}$．（初期値 $\\theta_0$ は $\\theta_{\\min}$ と $\\theta_{\\max}$ の中間にあり，端点ではない．）\n\n(4) $\\Omega\\to0$ で $|\\boldsymbol L|/I_1\\to I_3\\omega_3/I_1$（$\\alpha\\to0$ で振幅も 0）．これは重心支持のこまの章動の角振動数 $|a|=I_3\\omega_3/I_1$ に一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "重心支持では円盤とこまが完全に分離し，こまはトルクなしの対称こまとなる．蹴り出し後は対称軸が一定の $\\boldsymbol L$ のまわりの円錐を描くので，$\\theta$ の範囲と振動数が球面幾何から厳密に求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) I_3 ω_3 / I_1"
+  },
+  "methods": [],
+  "tags": [
+   "対称こま",
+   "トルクなし運動",
+   "サイクリック座標",
+   "角運動量",
+   "章動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-063",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 40,
+  "theme": "穴を通したばね連結2質点とひも極限",
+  "topic": "穴を通したばね連結2質点とひも極限",
+  "statement": {
+   "tex": "滑らかな水平面上を動く質量 $m_1$ の質点と，面の小さな穴から鉛直に吊るされた質量 $m_2$ の質点が，ばね定数 $k$，自然長 $l$ の軽いばねで穴を通して結ばれている．面上の質点の位置を穴を原点とする極座標 $(r,\\theta)$，穴から下へ垂れたばねの部分の長さを $x$ とする（ばねの全長は $r+x$）．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item Routh の方法で $\\theta$ を消去し，$p_\\theta=\\alpha$ のもとで面上の質点が半径 $r_0$ で等速円運動する条件と $r_0$ を求めよ．\n\\item この定常運動のまわりの微小振動の角振動数 $\\omega$ が満たす方程式を求めよ．$\\kappa=3\\alpha^2/(m_1r_0^4)$ とおき，$\\kappa$ を $m_2,g,r_0$ で表せ．\n\\item $k\\to\\infty$（ばねが伸びないひもになる）の極限で，有限にとどまる角振動数を求めよ．これが，伸びないひもで結んだ場合に直接求めた動径振動の角振動数と一致することを確かめよ．\n\\item 逆に $k\\to0$ の極限での 2 つの角振動数の振る舞いを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $r_0=\\left(\\dfrac{\\alpha^2}{m_1m_2g}\\right)^{1/3}$，$x_0=\\dfrac{m_2g}{k}-r_0+l$　(2) $m_1m_2\\omega^4-[(\\kappa+k)m_2+km_1]\\omega^2+\\kappa k=0$，$\\kappa=\\dfrac{3m_2g}{r_0}$　(3) $\\omega^2\\to\\dfrac{\\kappa}{m_1+m_2}=\\dfrac{3m_2g}{(m_1+m_2)r_0}$（他方 $\\simeq k(m_1+m_2)/(m_1m_2)\\to\\infty$）　(4) $\\omega^2\\to\\kappa/m_1=3m_2g/(m_1r_0)$ と $\\omega^2\\simeq k/m_2\\to0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=\\frac{m_1}2(\\dot r^2+r^2\\dot\\theta^2)+\\frac{m_2}2\\dot x^2+m_2gx-\\frac k2(r+x-l)^2$．$\\theta$ はサイクリックで $p_\\theta=m_1r^2\\dot\\theta=\\alpha$．Routh 関数\n\\[\nR=\\dot\\theta p_\\theta-L=-\\frac{m_1}2\\dot r^2-\\frac{m_2}2\\dot x^2-m_2gx+\\frac k2(r+x-l)^2+\\frac{\\alpha^2}{2m_1r^2}.\n\\]\n定常条件 $\\partial R/\\partial r=-\\dfrac{\\alpha^2}{m_1r^3}+k(r+x-l)=0$，$\\partial R/\\partial x=-m_2g+k(r+x-l)=0$ より，ばねの張力 $m_2g$ が向心力を与え\n\\[\nr_0=\\left(\\frac{\\alpha^2}{m_1m_2g}\\right)^{1/3},\\qquad x_0=\\frac{m_2g}k-r_0+l .\n\\]\n\n(2) $\\rho=r-r_0$，$\\xi=x-x_0$ として $R$ の 2 次項は\n\\[\n-\\frac{m_1}2\\dot\\rho^2-\\frac{m_2}2\\dot\\xi^2+\\frac12(\\kappa+k)\\rho^2+k\\rho\\xi+\\frac k2\\xi^2,\\qquad\\kappa=\\frac{3\\alpha^2}{m_1r_0^4}.\n\\]\n永年方程式 $\\begin{vmatrix}\\kappa+k-\\omega^2m_1&k\\\\k&k-\\omega^2m_2\\end{vmatrix}=0$，展開して\n\\[\nm_1m_2\\omega^4-\\left[(\\kappa+k)m_2+km_1\\right]\\omega^2+\\kappa k=0 .\n\\]\n$\\alpha^2=m_1m_2gr_0^3$ より $\\kappa=3m_2g/r_0$．\n\n(3) $k\\to\\infty$ で $k$ で割ると $\\omega^2(m_1+m_2)-\\kappa+O(1/k)=0$ の根が残り，\n\\[\n\\omega_-^2\\to\\frac{\\kappa}{m_1+m_2}=\\frac{3m_2g}{(m_1+m_2)r_0}.\n\\]\nもう一方は $\\omega_+^2\\simeq k(m_1+m_2)/(m_1m_2)\\to\\infty$（ばねの伸縮モード）．\n直接計算：伸びないひもなら $x=\\text{const}-r$ で $L=\\frac{m_1+m_2}2\\dot r^2+\\frac{m_1}2r^2\\dot\\theta^2-m_2gr$，有効ポテンシャル $U=\\frac{\\alpha^2}{2m_1r^2}+m_2gr$．$U'(r_0)=0$ で同じ $r_0$，$U''(r_0)=\\frac{3\\alpha^2}{m_1r_0^4}=\\kappa$．よって $\\omega^2=\\kappa/(m_1+m_2)$ で一致する．\n\n(4) $k\\to0$：$\\omega^4$ の方程式で $k=0$ とおくと $\\omega^2(m_1m_2\\omega^2-\\kappa m_2)=0$ より $\\omega_+^2\\to\\kappa/m_1=3m_2g/(m_1r_0)$（面上の質点だけの動径振動，張力一定 $m_2g$ のもとでの円軌道の振動）．もう一方は根の積 $\\kappa k/(m_1m_2)$ から $\\omega_-^2\\simeq k/m_2\\to0$（$m_2$ がばねで吊られた振動）．"
+   }
+  ],
+  "idea": {
+   "tex": "Routh 関数で $\\theta$ を消去した 2 自由度の微小振動．$k\\to\\infty$ の特異極限で 1 つのモードが無限大に飛び，残りは伸びないひもの系の動径振動 $\\sqrt{3m_2g/((m_1+m_2)r_0)}$ に一致する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $r_0$：(((α ^(2))/(m_1 m_2 g)))^(1/3) ; $x_0$：((m_2 g)/(k))- r_0 + l\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Routh関数",
+   "サイクリック座標",
+   "微小振動",
+   "基準振動",
+   "特異極限"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-064",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "減衰振動子の隠れた保存量と正準変換",
+  "topic": "減衰振動子の隠れた保存量と正準変換",
+  "statement": {
+   "tex": "1 次元の質量 $m$ の粒子のラグランジアン\n\\[\nL=\\frac12m\\left(\\dot x^2-\\omega^2x^2\\right)e^{\\gamma t}\\qquad(m,\\omega,\\gamma>0)\n\\]\nを考える．\n\\begin{enumerate}\n\\item 運動方程式とハミルトニアン $H(x,p,t)$ を求めよ．$H$ は保存されるか．\n\\item $I=H+\\dfrac\\gamma2xp$ が運動の定数であることを，Hamilton の運動方程式を用いて示せ．$I$ を $x,\\dot x,t$ で表せ．\n\\item 母関数 $F_2(x,P,t)=xPe^{\\gamma t/2}$ による正準変換で得られる新しいハミルトニアン $K(Q,P)$ を求め，$K$ と $I$ の関係を述べよ．\n\\item $K$ が正定値になる条件を求め，それが減衰振動（振動しながら減衰する）の条件と一致することを示せ．\n\\item 減衰振動の場合，$x(0)=x_0$，$\\dot x(0)=0$ の解は $|x(t)|\\le\\dfrac{\\omega x_0}{\\sqrt{\\omega^2-\\gamma^2/4}}e^{-\\gamma t/2}$ を満たすことを $I$ の保存から示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\ddot x+\\gamma\\dot x+\\omega^2x=0$，$H=\\dfrac{p^2}{2m}e^{-\\gamma t}+\\dfrac12m\\omega^2x^2e^{\\gamma t}$，保存されない　(2) $I=\\dfrac m2e^{\\gamma t}(\\dot x^2+\\gamma x\\dot x+\\omega^2x^2)$　(3) $Q=xe^{\\gamma t/2}$，$P=pe^{-\\gamma t/2}$，$K=\\dfrac{P^2}{2m}+\\dfrac\\gamma2QP+\\dfrac12m\\omega^2Q^2$，$K$ の値 $=I$　(4) $\\gamma<2\\omega$　(5) 本文参照"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p=m\\dot xe^{\\gamma t}$．Lagrange 方程式 $\\frac{d}{dt}(m\\dot xe^{\\gamma t})=-m\\omega^2xe^{\\gamma t}$ より $\\ddot x+\\gamma\\dot x+\\omega^2x=0$（速度に比例する抵抗を受ける調和振動子）．\n\\[\nH=p\\dot x-L=\\frac{p^2}{2m}e^{-\\gamma t}+\\frac12m\\omega^2x^2e^{\\gamma t},\n\\]\n$t$ を陽に含み保存されない．\n\n(2) $\\dot x=\\frac pme^{-\\gamma t}$，$\\dot p=-m\\omega^2xe^{\\gamma t}$．$\\frac{dH}{dt}=\\frac{\\partial H}{\\partial t}=-\\frac{\\gamma p^2}{2m}e^{-\\gamma t}+\\frac\\gamma2m\\omega^2x^2e^{\\gamma t}$．一方\n\\[\n\\frac\\gamma2\\frac{d}{dt}(xp)=\\frac\\gamma2\\left(\\frac{p^2}me^{-\\gamma t}-m\\omega^2x^2e^{\\gamma t}\\right).\n\\]\n和は 0 なので $dI/dt=0$．$p=m\\dot xe^{\\gamma t}$ を代入して $I=\\dfrac m2e^{\\gamma t}\\left(\\dot x^2+\\gamma x\\dot x+\\omega^2x^2\\right)$．\n\n(3) $p=\\partial F_2/\\partial x=Pe^{\\gamma t/2}$，$Q=\\partial F_2/\\partial P=xe^{\\gamma t/2}$，$K=H+\\partial F_2/\\partial t=H+\\frac\\gamma2xPe^{\\gamma t/2}=H+\\frac\\gamma2xp$．新変数で\n\\[\nK=\\frac{P^2}{2m}+\\frac\\gamma2QP+\\frac12m\\omega^2Q^2 ,\n\\]\n$t$ を含まず保存する．値は $I$ そのもので，(2) の保存量は「時間に依存しない新ハミルトニアン」の正体である．\n\n(4) $K$ は $(Q,P)$ の 2 次形式で，正定値 $\\iff$ 判別式 $\\left(\\frac\\gamma2\\right)^2-4\\cdot\\frac1{2m}\\cdot\\frac{m\\omega^2}2<0\\iff\\gamma<2\\omega$．これは特性方程式 $s^2+\\gamma s+\\omega^2=0$ が複素根をもつ（減衰振動）条件と一致する．$K$ が正定値なら等高線は楕円で $(Q,P)$ は周期運動（$Q=xe^{\\gamma t/2}$ が角振動数 $\\sqrt{\\omega^2-\\gamma^2/4}$ で振動），$\\gamma>2\\omega$ では双曲線となり振動しない．臨界 $\\gamma=2\\omega$ では $K=\\left(\\frac{P}{\\sqrt{2m}}+\\sqrt{\\frac m2}\\omega Q\\right)^2$ と完全平方になる．\n\n(5) $\\dot x^2+\\gamma x\\dot x+\\omega^2x^2=\\left(\\dot x+\\frac\\gamma2x\\right)^2+\\left(\\omega^2-\\frac{\\gamma^2}4\\right)x^2\\ge\\left(\\omega^2-\\frac{\\gamma^2}4\\right)x^2$．$I$ の保存と初期値 $I=\\frac12m\\omega^2x_0^2$ より\n\\[\n\\frac m2e^{\\gamma t}\\left(\\omega^2-\\frac{\\gamma^2}4\\right)x^2\\le\\frac12m\\omega^2x_0^2\n\\quad\\Longrightarrow\\quad|x(t)|\\le\\frac{\\omega x_0}{\\sqrt{\\omega^2-\\gamma^2/4}}e^{-\\gamma t/2}.\n\\]\n等号は $\\dot x=-\\frac\\gamma2x$ となる瞬間に成り立ち，この包絡線は最良である．"
+   }
+  ],
+  "idea": {
+   "tex": "Caldirola–Kanai 型ラグランジアンの $H$ は保存しないが，$H+\\frac\\gamma2xp$ が保存する．それは $Q=xe^{\\gamma t/2}$ への正準変換で得られる時間に依存しないハミルトニアンで，その正定値性が減衰振動の条件になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) γ<2ω\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "減衰振動",
+   "時間依存ハミルトニアン",
+   "正準変換",
+   "母関数",
+   "保存量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-065",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 3,
+  "minutes": 35,
+  "theme": "質量の異なる回転環と内部の小球の分離",
+  "topic": "質量の異なる回転環と内部の小球の分離",
+  "statement": {
+   "tex": "細い管を曲げてつくった半径 $R$，質量 $M$ の円環（質量は円周上に一様に分布）が，質量の無視できるスポークで中心 C を通る鉛直な軸に取り付けられ，水平面内で摩擦なく回転できる．管の中には質量 $m$ の小球 P が入っていて管に沿って摩擦なく動ける．P は環に固定された点 H と管に沿って張られたばね（質量は無視）でつながれており，ばねは弧 HP の長さ $\\Delta s$ に比例する大きさ $k\\Delta s$ の力を管に沿って及ぼす（$\\Delta s=0$ が自然長）．水平面内に固定した $x$ 軸から測った半直線 CH，CP の角度をそれぞれ $\\theta$，$\\varphi$ とし，$\\Delta s=R(\\varphi-\\theta)$ とする．小球の大きさは無視する．\n\\begin{enumerate}\n\\item ラグランジアン $L(\\theta,\\varphi,\\dot\\theta,\\dot\\varphi)$ とハミルトニアン $H$ を書け．また $\\ell=p_\\theta+p_\\varphi$ について $\\{\\ell,H\\}=0$ をポアソン括弧の計算で示し，$\\ell$ がどのような無限小変換の生成子になっているかを答えよ．\n\\item 新しい変数 $\\Theta=\\dfrac{M\\theta+m\\varphi}{M+m}$，$\\alpha=\\varphi-\\theta$ を用いてハミルトニアンを書き直し，系が等速回転と調和振動に分離することを示せ．相対運動の角振動数 $\\omega$ を求めよ．\n\\item はじめ系は $\\theta=\\varphi=0$（ばねは自然長）で静止していた．時刻 $t=0$ に環だけに撃力を加え，直後に $\\dot\\theta=\\Omega\\ (>0)$，$\\dot\\varphi=0$ となった．$\\theta(t)$，$\\varphi(t)$ を求め，ばねの伸び（弧の長さ）$|\\Delta s|$ の最大値を求めよ．\n\\item (3) の運動で，小球の角速度 $\\dot\\varphi$ は決して負にならないことを示せ．一方，環が一時的に逆向きに回る（$\\dot\\theta<0$ となる時刻がある）ための $M$，$m$ の条件を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\frac12MR^2\\dot\\theta^2+\\frac12mR^2\\dot\\varphi^2-\\frac12kR^2(\\varphi-\\theta)^2$，$H=\\dfrac{p_\\theta^2}{2MR^2}+\\dfrac{p_\\varphi^2}{2mR^2}+\\frac12kR^2(\\varphi-\\theta)^2$，$\\{\\ell,H\\}=0$，$\\ell$ は全体の剛体回転 $\\theta\\to\\theta+\\varepsilon,\\ \\varphi\\to\\varphi+\\varepsilon$ の生成子\n(2) $H=\\dfrac{p_\\Theta^2}{2(M+m)R^2}+\\dfrac{p_\\alpha^2}{2\\mu R^2}+\\frac12kR^2\\alpha^2$（$\\mu=\\frac{Mm}{M+m}$），$\\omega=\\sqrt{\\dfrac{k(M+m)}{Mm}}$\n(3) $\\theta=\\dfrac{\\Omega}{M+m}\\left(Mt+\\dfrac{m}{\\omega}\\sin\\omega t\\right)$，$\\varphi=\\dfrac{M\\Omega}{M+m}\\left(t-\\dfrac{\\sin\\omega t}{\\omega}\\right)$，$|\\Delta s|_{\\max}=R\\Omega/\\omega$\n(4) $\\dot\\varphi=\\frac{M\\Omega}{M+m}(1-\\cos\\omega t)\\ge0$．環が逆回転する条件は $m>M$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 環の慣性モーメントは $MR^2$，小球の速さは $R\\dot\\varphi$．ばねの位置エネルギーは $\\int_0^{\\Delta s}k s\\,ds=\\frac12k(\\Delta s)^2=\\frac12kR^2(\\varphi-\\theta)^2$．よって\n\\[ L=\\frac12MR^2\\dot\\theta^2+\\frac12mR^2\\dot\\varphi^2-\\frac12kR^2(\\varphi-\\theta)^2. \\]\n$p_\\theta=MR^2\\dot\\theta$，$p_\\varphi=mR^2\\dot\\varphi$ で，\n\\[ H=\\frac{p_\\theta^2}{2MR^2}+\\frac{p_\\varphi^2}{2mR^2}+\\frac12kR^2(\\varphi-\\theta)^2. \\]\n$\\ell$ は座標を含まないので\n\\[ \\{\\ell,H\\}=\\sum_q\\left(\\frac{\\partial\\ell}{\\partial q}\\frac{\\partial H}{\\partial p_q}-\\frac{\\partial\\ell}{\\partial p_q}\\frac{\\partial H}{\\partial q}\\right)=-\\frac{\\partial H}{\\partial\\theta}-\\frac{\\partial H}{\\partial\\varphi}=-kR^2(\\varphi-\\theta)+kR^2(\\varphi-\\theta)=0. \\]\n$\\delta q=\\varepsilon\\{q,\\ell\\}$ より $\\delta\\theta=\\delta\\varphi=\\varepsilon$，$\\delta p=0$．すなわち $\\ell$ は環と小球を一緒に回す回転の生成子であり，$H$ が $\\varphi-\\theta$ にしか依存しない（回転対称）ことが保存の理由である．$\\ell$ は系の全角運動量 $MR^2\\dot\\theta+mR^2\\dot\\varphi$．\n\n(2) 逆に解くと $\\theta=\\Theta-\\dfrac{m}{M+m}\\alpha$，$\\varphi=\\Theta+\\dfrac{M}{M+m}\\alpha$．代入すると交差項が打ち消し合い\n\\[ T=\\frac12(M+m)R^2\\dot\\Theta^2+\\frac12\\mu R^2\\dot\\alpha^2,\\qquad \\mu=\\frac{Mm}{M+m}. \\]\n点変換なので $p_\\Theta=(M+m)R^2\\dot\\Theta=\\ell$，$p_\\alpha=\\mu R^2\\dot\\alpha$ で\n\\[ H=\\frac{p_\\Theta^2}{2(M+m)R^2}+\\frac{p_\\alpha^2}{2\\mu R^2}+\\frac12kR^2\\alpha^2. \\]\n$\\Theta$ は循環座標で $\\Theta$ は等速回転，$\\alpha$ は $\\mu R^2\\ddot\\alpha=-kR^2\\alpha$ の調和振動で\n\\[ \\omega=\\sqrt{\\frac{k}{\\mu}}=\\sqrt{\\frac{k(M+m)}{Mm}}. \\]\n（$M=m$ なら $\\omega=\\sqrt{2k/m}$．）\n\n(3) 初期条件は $\\Theta(0)=\\alpha(0)=0$，$\\dot\\Theta(0)=\\dfrac{M\\Omega}{M+m}$，$\\dot\\alpha(0)=-\\Omega$．よって\n\\[ \\Theta=\\frac{M\\Omega}{M+m}t,\\qquad \\alpha=-\\frac{\\Omega}{\\omega}\\sin\\omega t. \\]\n元の変数に戻すと\n\\[ \\theta=\\frac{\\Omega}{M+m}\\left(Mt+\\frac{m}{\\omega}\\sin\\omega t\\right),\\qquad \\varphi=\\frac{M\\Omega}{M+m}\\left(t-\\frac{\\sin\\omega t}{\\omega}\\right). \\]\nばねの伸びは $|\\Delta s|=R|\\alpha|$ なので最大値は $R\\Omega/\\omega=R\\Omega\\sqrt{\\dfrac{Mm}{k(M+m)}}$．（エネルギーで見ても，撃力直後の運動エネルギー $\\frac12MR^2\\Omega^2$ のうち重心回転に $\\frac12\\frac{M^2}{M+m}R^2\\Omega^2$ が残り，残り $\\frac12\\mu R^2\\Omega^2$ が最大伸びでばねに蓄えられる：$\\frac12kR^2\\alpha_{\\max}^2=\\frac12\\mu R^2\\Omega^2$．）\n\n(4) 微分して\n\\[ \\dot\\varphi=\\frac{M\\Omega}{M+m}(1-\\cos\\omega t)\\ge0,\\qquad \\dot\\theta=\\frac{\\Omega}{M+m}(M+m\\cos\\omega t). \\]\n$\\dot\\varphi$ は周期的に 0 になる（瞬間的に止まる）が負にはならない．$\\dot\\theta$ の最小値は $\\cos\\omega t=-1$ のときの $\\dfrac{(M-m)\\Omega}{M+m}$ で，これが負になる条件は $m>M$．小球の方が重いと，ばねに引き戻された環は一時的に逆回転する（$m=M$ では瞬間的に停止するだけ）．両者の平均角速度はともに $M\\Omega/(M+m)$ である．"
+   }
+  ],
+  "idea": {
+   "tex": "重心角 $\\Theta=(M\\theta+m\\varphi)/(M+m)$ と相対角に移ると循環座標と換算質量 $\\mu$ の調和振動に分離し，撃力で与えた角運動量の配分から小球は決して逆走しない一方，$m>M$ なら環は逆回転する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $H$：((p_Θ ^(2))/(2(M + m) R ^(2)))+((p_α ^(2))/(2 μ R ^(2)))+((1)/(2)) k R ^(2) α ^(2) ; $\\omega$：sqrt(((k (M + m))/(M m)))\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラグランジアン",
+   "ハミルトニアン",
+   "ポアソン括弧",
+   "循環座標",
+   "換算質量",
+   "基準座標",
+   "回転対称性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -628,6 +3130,158 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-066",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 4,
+  "minutes": 45,
+  "theme": "放物線座標のKepler問題とRunge–Lenzベクトル",
+  "topic": "放物線座標のKepler問題とRunge–Lenzベクトル",
+  "statement": {
+   "tex": "質量 $m$ の質点が平面内で引力ポテンシャル $U=-k/r$（$k>0$）を受けて運動する．放物線座標 $(\\xi,\\eta)$ を\n\\[\nx=\\frac12(\\xi^2-\\eta^2),\\qquad y=\\xi\\eta\n\\]\nで定義する．\n\\begin{enumerate}\n\\item $r=\\frac12(\\xi^2+\\eta^2)$ を示し，Hamilton 関数を $\\xi,\\eta,p_\\xi,p_\\eta$ で表せ．\n\\item $H=E$ の式を変形して，Hamilton–Jacobi 方程式が変数分離できること，すなわち\n\\[\n\\beta=p_\\xi^2-2mE\\xi^2-2mk\n\\]\nが運動の恒量になることを示せ．\n\\item $\\beta$ を直角座標の量で表すと，Runge–Lenz ベクトル $\\boldsymbol A=\\boldsymbol p\\times\\boldsymbol L-mk\\,\\boldsymbol r/r$ の $x$ 成分を用いて $\\beta=-2A_x$ となることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_\\xi^2+p_\\eta^2}{2m(\\xi^2+\\eta^2)}-\\dfrac{2k}{\\xi^2+\\eta^2}$　(2) $p_\\xi^2-2mE\\xi^2-2mk=-(p_\\eta^2-2mE\\eta^2-2mk)=\\beta$　(3) $\\beta=-2A_x$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x^2+y^2=\\frac14(\\xi^2-\\eta^2)^2+\\xi^2\\eta^2=\\frac14(\\xi^2+\\eta^2)^2$ より $r=\\frac12(\\xi^2+\\eta^2)$．$\\dot x=\\xi\\dot\\xi-\\eta\\dot\\eta$，$\\dot y=\\eta\\dot\\xi+\\xi\\dot\\eta$ より\n\\[\nT=\\frac m2(\\dot x^2+\\dot y^2)=\\frac m2(\\xi^2+\\eta^2)(\\dot\\xi^2+\\dot\\eta^2).\n\\]\n$p_\\xi=m(\\xi^2+\\eta^2)\\dot\\xi$，$p_\\eta=m(\\xi^2+\\eta^2)\\dot\\eta$．$T$ は速度の 2 次同次式だから\n\\[\nH=T+U=\\frac{p_\\xi^2+p_\\eta^2}{2m(\\xi^2+\\eta^2)}-\\frac{2k}{\\xi^2+\\eta^2}.\n\\]\n\n(2) $H=E$ に $2m(\\xi^2+\\eta^2)$ を掛けると\n\\[\n(p_\\xi^2-2mE\\xi^2-2mk)+(p_\\eta^2-2mE\\eta^2-2mk)=0 .\n\\]\n第 1 括弧は $\\xi,p_\\xi$ だけ，第 2 括弧は $\\eta,p_\\eta$ だけの関数なので，$S=S_1(\\xi)+S_2(\\eta)$ とおけば Hamilton–Jacobi 方程式は $(S_1')^2-2mE\\xi^2-2mk=\\beta=-[(S_2')^2-2mE\\eta^2-2mk]$ と分離し，分離定数 $\\beta$ は運動の恒量．（直接にも，$\\dot\\beta=[\\beta,H]$ を計算すると $H=E$ の上で 0 になる．）\n\n(3) $p_\\xi=p_x\\xi+p_y\\eta$，$p_\\eta=-p_x\\eta+p_y\\xi$ を逆に解き，$E=H$ を代入して整理すると\n\\[\n\\beta=\\frac{p_\\xi^2\\eta^2-p_\\eta^2\\xi^2+2mk(\\xi^2-\\eta^2)}{\\xi^2+\\eta^2}.\n\\]\n一方 $L_z=xp_y-yp_x$，$A_x=p_yL_z-mkx/r$ を $\\xi,\\eta,p_\\xi,p_\\eta$ で表すと\n\\[\nA_x=\\frac{-p_\\xi^2\\eta^2+p_\\eta^2\\xi^2-2mk(\\xi^2-\\eta^2)}{2(\\xi^2+\\eta^2)}\n\\]\nとなり，$\\beta=-2A_x$．放物線座標での変数分離可能性は，Kepler 問題特有の保存量（Runge–Lenz ベクトル）の存在の表れである．"
+   }
+  ],
+  "idea": {
+   "tex": "Kepler 問題は極座標以外に放物線座標でも変数分離でき，そこで現れる分離定数の正体は Runge–Lenz ベクトルの成分である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $H$：((p_ξ ^(2)+ p_η ^(2))/(2 m (ξ ^(2)+ η ^(2))))-((2 k)/(ξ ^(2)+ η ^(2)))\n(2) 記述\n(3) $\\beta$：-2 A_x"
+  },
+  "methods": [],
+  "tags": [
+   "Hamilton関数",
+   "放物線座標",
+   "Kepler問題",
+   "変数分離",
+   "Runge-Lenzベクトル",
+   "中間積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-067",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 4,
+  "minutes": 45,
+  "theme": "ばねで吊った球面振り子：円錐運動とその安定性",
+  "topic": "ばねで吊った球面振り子：円錐運動とその安定性",
+  "statement": {
+   "tex": "鉛直なばね（ばね定数 $k$）の下端に軽い支点がつけられ，支点は鉛直線上だけを動ける．支点から長さ $l$ の軽い棒で質量 $m$ のおもりが吊られ，3 次元的に動ける（球面振り子）．支点の自然長位置からの下向き変位を $z$，棒の鉛直下向きからの角を $\\theta$，鉛直軸まわりの方位角を $\\phi$ とする．\n\\begin{enumerate}\n\\item ハミルトニアン $H(z,\\theta,\\phi,p_z,p_\\theta,p_\\phi)$ を求めよ．\n\\item $z,\\theta$ が一定の定常な円錐運動について，ばねの伸び $z$ と，$\\theta=\\theta_0$ を実現する $p_\\phi$ および $\\dot\\phi$ を求めよ．ばねの伸びは回転によって変わるか．\n\\item $\\theta_0=60^\\circ$ の定常円錐運動のまわりの微小振動（$p_\\phi$ は固定）の角振動数 $\\omega$ が満たす方程式を $k,m,g,l$ で表し，$k=4mg/l$ のときの $\\omega$ を求めよ．\n\\item (3) で $k\\to\\infty$（支点固定）とした極限の振動数が，球面振り子の円錐運動の既知の結果 $\\omega^2=\\dot\\phi^2(1+3\\cos^2\\theta_0)$ と一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{l^2p_z^2+2l\\sin\\theta\\,p_zp_\\theta+p_\\theta^2}{2ml^2\\cos^2\\theta}+\\dfrac{p_\\phi^2}{2ml^2\\sin^2\\theta}+\\dfrac k2z^2-mg(z+l\\cos\\theta)$　(2) $z=mg/k$（回転によらない），$p_\\phi^2=\\dfrac{m^2gl^3\\sin^4\\theta_0}{\\cos\\theta_0}$，$\\dot\\phi^2=\\dfrac{g}{l\\cos\\theta_0}$　(3) $\\omega^4-\\left(\\dfrac{4k}{m}+\\dfrac{14g}{l}\\right)\\omega^2+\\dfrac{14gk}{ml}=0$，$k=4mg/l$ で $\\omega=\\sqrt{2g/l},\\ \\sqrt{28g/l}$　(4) $\\omega^2\\to\\dfrac{7g}{2l}=\\dot\\phi^2\\cdot\\dfrac74$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) おもりの位置は $(l\\sin\\theta\\cos\\phi,\\ l\\sin\\theta\\sin\\phi,\\ z+l\\cos\\theta)$（第 3 成分は鉛直下向き）．運動エネルギーは平面の場合に $\\tfrac12ml^2\\sin^2\\theta\\,\\dot\\phi^2$ が加わるだけで，$p_\\phi=ml^2\\sin^2\\theta\\,\\dot\\phi$．$(z,\\theta)$ 部分の $\\mathsf T=m\\begin{pmatrix}1&-l\\sin\\theta\\\\-l\\sin\\theta&l^2\\end{pmatrix}$ を逆にして\n\\[ H=\\frac{l^2p_z^2+2l\\sin\\theta\\,p_zp_\\theta+p_\\theta^2}{2ml^2\\cos^2\\theta}+\\frac{p_\\phi^2}{2ml^2\\sin^2\\theta}+\\frac k2z^2-mg(z+l\\cos\\theta). \\]\n\n(2) $\\phi$ は循環座標で $p_\\phi$ 一定．$\\dot z=\\dot\\theta=0$ には $\\mathsf T^{-1}$ が正則なので $p_z=p_\\theta=0$．このとき $\\dot p_z=-\\partial H/\\partial z=mg-kz=0$ より $z=mg/k$：回転していても静止時と同じ伸び（棒の張力の鉛直成分は常に $mg$ で，それがそのままばねにかかる）．$\\dot p_\\theta=0$ より\n\\[ \\frac{p_\\phi^2\\cos\\theta_0}{ml^2\\sin^3\\theta_0}=mgl\\sin\\theta_0\\ \\Rightarrow\\ p_\\phi^2=\\frac{m^2gl^3\\sin^4\\theta_0}{\\cos\\theta_0},\\quad\\dot\\phi^2=\\frac{g}{l\\cos\\theta_0}. \\]\n\n(3) $p_\\phi$ を固定した $(z,\\theta)$ 系は質量行列 $\\mathsf T$，有効ポテンシャル $V_{\\rm eff}=\\tfrac k2z^2-mg(z+l\\cos\\theta)+\\dfrac{p_\\phi^2}{2ml^2\\sin^2\\theta}$ の系．$V_{\\rm eff}$ は $z$ と $\\theta$ に分離しているので，平衡点での 2 階微分は $V_{zz}=k$，$V_{z\\theta}=0$，\n\\[ V_{\\theta\\theta}=mgl\\cos\\theta_0+\\frac{p_\\phi^2}{ml^2}\\left(\\frac1{\\sin^2\\theta_0}+\\frac{3\\cos^2\\theta_0}{\\sin^4\\theta_0}\\right)=ml^2\\dot\\phi^2(1+3\\cos^2\\theta_0) \\]\n（$p_\\phi^2/(ml^2)=ml^2\\sin^4\\theta_0\\dot\\phi^2$ と $g=l\\cos\\theta_0\\dot\\phi^2$ を使った）．$\\theta_0=60^\\circ$ では $\\dot\\phi^2=2g/l$，$V_{\\theta\\theta}=\\tfrac72mgl$，$\\sin^2\\theta_0=\\tfrac34$．振動数は $\\det(\\mathsf V-\\omega^2\\mathsf T)=0$：\n\\[ (k-m\\omega^2)\\left(\\tfrac72mgl-ml^2\\omega^2\\right)-m^2l^2\\cdot\\tfrac34\\omega^4=0. \\]\n整理して $\\tfrac14m^2l^2\\omega^4-\\left(kml^2+\\tfrac72m^2gl\\right)\\omega^2+\\tfrac72kmgl=0$，すなわち\n\\[ \\omega^4-\\left(\\frac{4k}{m}+\\frac{14g}{l}\\right)\\omega^2+\\frac{14gk}{ml}=0. \\]\n$k=4mg/l$ で $\\omega^4-30(g/l)\\omega^2+56(g/l)^2=0$，$\\omega^2=2g/l,\\ 28g/l$．どちらも実数なので円錐運動は安定．なお平衡点では $\\sin\\theta_0\\ne0$ のため $\\mathsf T$ の非対角成分が残り，$z$ と $\\theta$ の振動は線形の段階で結合する（平面の $\\theta=0$ のまわりとの違い）．\n\n(4) $k\\to\\infty$ で方程式を $k$ で割ると $-\\dfrac4m\\omega^2+\\dfrac{14g}{ml}\\to0$，$\\omega^2\\to\\dfrac{7g}{2l}$．一方 $\\dot\\phi^2(1+3\\cos^2\\theta_0)=\\dfrac{2g}{l}\\cdot\\dfrac74=\\dfrac{7g}{2l}$ で一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "循環座標 $\\phi$ を消去して $(z,\\theta)$ の有効系にし，平衡点で質量行列と有効ポテンシャルの Hessian から基準振動を求める．円錐運動では $\\mathsf T$ の非対角成分により上下振動と振り子振動が線形結合する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "球面振り子",
+   "円錐運動",
+   "循環座標",
+   "有効ポテンシャル",
+   "基準振動",
+   "ばね振り子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-03-068",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-19",
+  "level": 4,
+  "minutes": 40,
+  "theme": "反対称テンソル場との結合と双曲線運動",
+  "topic": "反対称テンソル場との結合と双曲線運動",
+  "statement": {
+   "tex": "Minkowski 計量を $\\eta_{\\mu\\nu}=\\mathrm{diag}(-1,1,1,1)$，$x^\\mu=(ct,x,y,z)$，固有時 $\\tau$ に関する 4 元速度を $u^\\mu=dx^\\mu/d\\tau$ とする．質量 $m$ の 1 粒子の共変ラグランジアンを\n\\[\n\\Lambda=\\frac12m\\,u_\\mu u^\\mu+D^{\\mu\\nu}m_{\\mu\\nu},\\qquad m_{\\mu\\nu}=m(x_\\mu u_\\nu-x_\\nu u_\\mu)\n\\]\nとする．$D^{\\mu\\nu}$ は定数の反対称テンソル（次元は 1/時間）である．\n\\begin{enumerate}\n\\item 正準運動量 $p_\\nu=\\partial\\Lambda/\\partial u^\\nu$ と共変ハミルトニアン $H_c=p_\\nu u^\\nu-\\Lambda$ を $x,p$ で表せ．\n\\item Euler–Lagrange 方程式を求め，$u_\\mu u^\\mu$ が運動の定数であることを示せ．また，この運動方程式は電荷 $q$ の粒子が一様な電磁場 $F_{\\mu\\nu}$ の中で従う式 $m\\,du_\\mu/d\\tau=qF_{\\mu\\nu}u^\\nu$ と同じ形であることを示し，対応関係を述べよ．\n\\item $D$ の成分のうち $D_{01}=-D_{10}=-\\kappa/4$（$\\kappa>0$）のみが 0 でないとき，原点に静止した状態から出発した粒子の $x(t)$ を求めよ．$t\\to\\infty$ での速さを求め，固有加速度の大きさを答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_\\nu=mu_\\nu-2mD_{\\nu\\mu}x^\\mu$，$H_c=\\dfrac1{2m}\\eta^{\\nu\\lambda}(p_\\nu+2mD_{\\nu\\mu}x^\\mu)(p_\\lambda+2mD_{\\lambda\\sigma}x^\\sigma)$　(2) $m\\dfrac{du_\\nu}{d\\tau}=4mD_{\\nu\\sigma}u^\\sigma$，$qF_{\\nu\\sigma}=4mD_{\\nu\\sigma}$　(3) $x=\\dfrac c\\kappa\\left(\\sqrt{1+\\kappa^2t^2}-1\\right)$，速さ $\\to c$，固有加速度 $\\kappa c$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $D$ の反対称性より $D^{\\mu\\nu}m_{\\mu\\nu}=2mD^{\\mu\\nu}x_\\mu u_\\nu=2mD_{\\mu\\nu}x^\\mu u^\\nu$．\n\\[\np_\\nu=\\frac{\\partial\\Lambda}{\\partial u^\\nu}=mu_\\nu+2mD_{\\mu\\nu}x^\\mu=mu_\\nu-2mD_{\\nu\\mu}x^\\mu .\n\\]\n$\\Lambda$ は $u$ の 1 次の項を含むが，$H_c=p_\\nu u^\\nu-\\Lambda=\\frac12mu_\\nu u^\\nu$ となり，$u_\\nu=(p_\\nu+2mD_{\\nu\\mu}x^\\mu)/m$ を代入して\n\\[\nH_c=\\frac1{2m}\\eta^{\\nu\\lambda}\\left(p_\\nu+2mD_{\\nu\\mu}x^\\mu\\right)\\left(p_\\lambda+2mD_{\\lambda\\sigma}x^\\sigma\\right).\n\\]\n\n(2) $\\dfrac{d}{d\\tau}p_\\nu=\\dfrac{\\partial\\Lambda}{\\partial x^\\nu}=2mD_{\\nu\\sigma}u^\\sigma$．左辺は $m\\dfrac{du_\\nu}{d\\tau}+2mD_{\\mu\\nu}u^\\mu=m\\dfrac{du_\\nu}{d\\tau}-2mD_{\\nu\\mu}u^\\mu$ だから\n\\[\nm\\frac{du_\\nu}{d\\tau}=4mD_{\\nu\\sigma}u^\\sigma\\equiv K_\\nu .\n\\]\n$u^\\nu K_\\nu=4mD_{\\nu\\sigma}u^\\nu u^\\sigma=0$（反対称×対称）より $\\frac{d}{d\\tau}(u_\\nu u^\\nu)=0$．また $\\Lambda$ は $\\tau$ を陽に含まないので $H_c=\\frac12mu\\cdot u$ の保存とも整合する．初期に $u\\cdot u=-c^2$ とすれば固有時の定義と矛盾しない．Lorentz 力の式と比べると $qF_{\\nu\\sigma}=4mD_{\\nu\\sigma}$：定数 $D$ は一様な電磁場と同等で，$D_{0i}$ が電場，$D_{ij}$ が磁場に対応する．\n\n(3) $\\nu=0,1$ 成分は（$u_0=-u^0$，$u_1=u^1$）\n\\[\n-\\frac{du^0}{d\\tau}=4D_{01}u^1=-\\kappa u^1,\\qquad\\frac{du^1}{d\\tau}=4D_{10}u^0=\\kappa u^0 .\n\\]\n初期条件 $u^0=c$，$u^1=0$ から $u^0=c\\cosh\\kappa\\tau$，$u^1=c\\sinh\\kappa\\tau$（$u\\cdot u=-c^2$ を保つ）．積分して\n\\[\nct=\\frac c\\kappa\\sinh\\kappa\\tau,\\qquad x=\\frac c\\kappa(\\cosh\\kappa\\tau-1),\n\\]\n$\\tau$ を消去して $x(t)=\\dfrac c\\kappa\\left(\\sqrt{1+\\kappa^2t^2}-1\\right)$（双曲線運動）．$dx/dt=\\dfrac{c\\kappa t}{\\sqrt{1+\\kappa^2t^2}}\\to c$．固有加速度は $a^\\mu a_\\mu=\\kappa^2[-(u^1)^2+(u^0)^2]=\\kappa^2c^2$ より大きさ $\\kappa c$（一定）．一様な電場中の荷電粒子と同じく，光速に漸近する等加速度運動である．"
+   }
+  ],
+  "idea": {
+   "tex": "定数の反対称テンソルとの結合 $D^{\\mu\\nu}m_{\\mu\\nu}$ は一様電磁場と同じ Minkowski 力 $4mD_{\\nu\\sigma}u^\\sigma$ を与え，$D_{01}$ のみなら一定固有加速度の双曲線運動になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "共変ラグランジアン",
+   "共変ハミルトニアン",
+   "Minkowski力",
+   "双曲線運動",
+   "特殊相対論"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

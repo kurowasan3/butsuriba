@@ -193,6 +193,154 @@
   }
  },
  {
+  "id": "CM-01-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 1,
+  "minutes": 20,
+  "theme": "単純せん断流の速度勾配をひずみ速度と回転に分ける",
+  "topic": "単純せん断流の速度勾配をひずみ速度と回転に分ける",
+  "statement": {
+   "tex": "単純せん断流 $\\boldsymbol u=(\\gamma y,0,0)$ を考える．\n\\begin{enumerate}\n\\item 速度勾配 $\\partial_ju_i$ を対称部分（ひずみ速度 $e_{ij}$）と反対称部分に分けよ．\n\\item 渦度 $\\nabla\\times\\boldsymbol u$ と，流体要素の回転の角速度を求めよ．\n\\item ひずみ速度の主軸と主値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $e_{12}=e_{21}=\\gamma/2$，反対称部分 $\\pm\\gamma/2$　(2) $-\\gamma\\hat z$，$-\\gamma/2$　(3) $x=\\pm y$ の方向，$\\pm\\gamma/2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_yu_x=\\gamma$ だけが $0$ でない．$e_{12}=e_{21}=\\boldsymbol{\\gamma/2}$，反対称部分 $\\Omega_{12}=-\\Omega_{21}=\\gamma/2$．\n\n(2) $\\nabla\\times\\boldsymbol u=\\boldsymbol{-\\gamma\\hat z}$，角速度はその半分 $\\boldsymbol{-\\gamma/2}$（時計回り）．\n\n(3) $\\begin{pmatrix}0&\\gamma/2\\\\\\gamma/2&0\\end{pmatrix}$ の固有ベクトル $(1,\\pm1)$，主値 $\\boldsymbol{\\pm\\gamma/2}$（$45^\\circ$ 方向に伸び縮み）．"
+   }
+  ],
+  "idea": {
+   "tex": "速度勾配は2階テンソルで，対称部分が変形，反対称部分が回転を表す．原題の変換則の証明を，せん断流の分解に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "速度勾配テンソル",
+   "ひずみ速度",
+   "渦度",
+   "主軸"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 1,
+  "minutes": 25,
+  "theme": "円柱座標のひずみ：回転・ねじり・空洞",
+  "topic": "円柱座標のひずみ：回転・ねじり・空洞",
+  "statement": {
+   "tex": "円柱座標 $(r,\\theta,z)$ でのひずみテンソル\n\\[\ne_{rr}=\\frac{\\partial u_r}{\\partial r},\\ e_{\\theta\\theta}=\\frac1r\\frac{\\partial u_\\theta}{\\partial\\theta}+\\frac{u_r}r,\\ e_{zz}=\\frac{\\partial u_z}{\\partial z},\\ e_{r\\theta}=\\frac12\\left\\{r\\frac{\\partial}{\\partial r}\\left(\\frac{u_\\theta}r\\right)+\\frac1r\\frac{\\partial u_r}{\\partial\\theta}\\right\\},\n\\]\n\\[\ne_{\\theta z}=\\frac12\\left(\\frac1r\\frac{\\partial u_z}{\\partial\\theta}+\\frac{\\partial u_\\theta}{\\partial z}\\right),\\ e_{zr}=\\frac12\\left(\\frac{\\partial u_r}{\\partial z}+\\frac{\\partial u_z}{\\partial r}\\right)\n\\]\nを用いる．\n\\begin{enumerate}\n\\item $z$ 軸まわりの微小な剛体回転 $u_\\theta=\\Omega r$（$u_r=u_z=0$）のひずみをすべて求めよ．また，$e_{r\\theta}$ を誤って $\\frac12\\left(\\frac{\\partial u_\\theta}{\\partial r}+\\frac1r\\frac{\\partial u_r}{\\partial\\theta}\\right)$ と書くと，どのような誤った結論になるか．\n\\item 円柱のねじり $u_\\theta=\\tau rz$（$\\tau$ は単位長さあたりのねじれ角）のひずみを求め，主ひずみとその方向を答えよ．\n\\item 平面変位 $u_r=A/r$（$u_\\theta=u_z=0$）のひずみを求め，体積ひずみと，この変形の性質を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) すべて $0$；誤った式では $e_{r\\theta}=\\Omega/2$ となり剛体回転にずれがあることになる　(2) $e_{\\theta z}=\\tau r/2$ のみ．主ひずみ $\\pm\\tau r/2$（$\\theta$ 方向と $z$ 方向の 45° 方向），$0$（$r$ 方向）　(3) $e_{rr}=-A/r^2$，$e_{\\theta\\theta}=A/r^2$，他は $0$．体積ひずみ $0$ の純粋なずれ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u_\\theta/r=\\Omega$ は定数なので $e_{r\\theta}=\\frac12r\\partial_r\\Omega=0$．$e_{\\theta\\theta}=\\frac1r\\partial_\\theta(\\Omega r)=0$，他も 0．剛体回転のひずみは 0 で正しい．誤った式では $\\frac12\\partial_r(\\Omega r)=\\Omega/2\\neq0$ となり，回転だけで「ずれ」が生じるという誤りになる．$r\\partial_r(u_\\theta/r)$ の形は，局所的な基底ベクトル $\\hat{\\boldsymbol\\theta}$ 自体が回転していることの補正である．\n\n(2) $u_\\theta/r=\\tau z$ は $r$ によらないので $e_{r\\theta}=0$．$e_{\\theta\\theta}=\\frac1r\\partial_\\theta(\\tau rz)=0$．$e_{\\theta z}=\\frac12\\partial_z(\\tau rz)=\\frac{\\tau r}2$．その他 $0$．$(\\theta,z)$ ブロックの行列 $\\begin{pmatrix}0&\\tau r/2\\\\ \\tau r/2&0\\end{pmatrix}$ の固有値は $\\pm\\tau r/2$ で，主軸は $\\hat{\\boldsymbol\\theta}\\pm\\hat{\\boldsymbol z}$（周方向と軸方向の 45° の螺旋方向）．$r$ 方向は主ひずみ $0$．ひずみは表面 $r=a$ で最大 $\\tau a/2$ となり，ねじり破壊が 45° の螺旋面で起こる理由になる．\n\n(3) $e_{rr}=\\partial_r(A/r)=-A/r^2$，$e_{\\theta\\theta}=u_r/r=A/r^2$，その他 $0$．体積ひずみ $e_{rr}+e_{\\theta\\theta}+e_{zz}=0$．半径方向に縮み周方向に同じだけ伸びる純粋なずれで，円柱形空洞が広がるとき周囲の材料は体積を変えずに変形する．（このため，長い円筒形空洞の膨張は剛性率 $\\mu$ だけで決まる．）"
+   }
+  ],
+  "idea": {
+   "tex": "曲線座標のひずみ式の $r\\partial_r(u_\\theta/r)$ や $u_r/r$ の項は，基底ベクトルの回転・伸びの補正．剛体回転・ねじり・空洞膨張に当てはめると意味がはっきりする．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ひずみテンソル",
+   "円柱座標",
+   "剛体回転",
+   "ねじり",
+   "純粋ずれ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 1,
+  "minutes": 15,
+  "theme": "回転する棒と輪の破断：周速の上限は材料だけで決まる",
+  "topic": "回転する棒と輪の破断：周速の上限は材料だけで決まる",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 長さ $l$，密度 $\\rho$，引張強さ $\\sigma_m$ の一様な細い棒が，中点を通る鉛直軸のまわりに水平面内で回転している．張力が最大となる位置を示し，棒が破断する回転数 $n$ を求めよ．銅（$\\rho=8.9\\times10^3\\,\\mathrm{kg/m^3}$，$\\sigma_m=0.20\\,\\mathrm{GPa}$），$l=1.0\\,\\mathrm m$ の場合の値も求めよ．\n\\item 破断時の棒の先端の速さ $v$ は $l$ にも断面積にもよらないことを示し，銅と鋼（$\\rho=7.8\\times10^3\\,\\mathrm{kg/m^3}$，$\\sigma_m=0.50\\,\\mathrm{GPa}$）について $v$ を求めよ．\n\\item 同じ材料の細い輪を中心軸のまわりに回すと，周速 $\\sqrt{\\sigma_m/\\rho}$ で破断することが知られている．棒の先端と輪の周速の破断時の比を求め，なぜ棒のほうが速く回せるのか説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 中点で最大，$n=\\dfrac{1}{\\pi l}\\sqrt{\\dfrac{2\\sigma_m}{\\rho}}=67\\,\\mathrm{rps}$　(2) $v=\\sqrt{2\\sigma_m/\\rho}$；銅 $2.1\\times10^2\\,\\mathrm{m/s}$，鋼 $3.6\\times10^2\\,\\mathrm{m/s}$　(3) $\\sqrt2$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 中点から距離 $x$ の断面の張力 $T(x)$ は，それより外側の部分を向心運動させる力だから（断面積 $S$）\n\\[\nT(x)=\\int_x^{l/2}\\rho S\\omega^2x'\\,dx'=\\frac{\\rho S\\omega^2}{2}\\left(\\frac{l^2}{4}-x^2\\right).\n\\]\n最大は中点 $x=0$ で $T_{\\max}=\\rho S\\omega^2l^2/8$．$T_{\\max}/S=\\sigma_m$ から $\\omega=\\dfrac2l\\sqrt{\\dfrac{2\\sigma_m}{\\rho}}$，$n=\\dfrac{\\omega}{2\\pi}=\\dfrac1{\\pi l}\\sqrt{\\dfrac{2\\sigma_m}\\rho}$．\n銅：$\\sqrt{2\\times0.20\\times10^9/8.9\\times10^3}=212\\,\\mathrm{m/s}$，$n=212/\\pi=67\\,\\mathrm{rps}$．\n\n(2) $v=\\omega l/2=\\sqrt{2\\sigma_m/\\rho}$ で，$l$ も $S$ も含まない．銅 $212\\,\\mathrm{m/s}$，鋼 $\\sqrt{10^9/7.8\\times10^3}=358\\,\\mathrm{m/s}$．\n\n(3) 比 $\\sqrt{2\\sigma_m/\\rho}\\big/\\sqrt{\\sigma_m/\\rho}=\\sqrt2$．輪ではすべての部分が最大の周速で回り，向心力を張力だけで供給するのに対し，棒では軸に近い遅い部分が多く，中点の断面が支える半分の棒（質量 $\\rho Sl/2$）の重心は半径 $l/4$ にあるので，その向心加速度は先端の半分しかない（$T_{\\max}=\\rho Sv^2/2$，輪では $T=\\rho Sv^2$）．そのため同じ応力で 2 倍の $v^2$ に耐えられる．"
+   }
+  ],
+  "idea": {
+   "tex": "遠心応力は $\\rho v^2$ の程度で，破断周速は材料定数 $\\sqrt{\\sigma_m/\\rho}$ だけで決まる．形状は数係数（棒なら $\\sqrt2$）を変えるだけ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転体",
+   "遠心応力",
+   "引張強さ",
+   "次元解析"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-01-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -388,6 +536,942 @@
   }
  },
  {
+  "id": "CM-01-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ラメ定数からヤング率とポアソン比を求める（鋼）",
+  "topic": "ラメ定数からヤング率とポアソン比を求める（鋼）",
+  "statement": {
+   "tex": "等方弾性体で $\\sigma_{ij}=\\lambda\\delta_{ij}e_{kk}+2\\mu e_{ij}$ とする．\n\\begin{enumerate}\n\\item 一軸の引張り $\\sigma_{11}=\\sigma$（他は $0$）でひずみを求め，ヤング率 $E=\\sigma/e_{11}$ とポアソン比 $\\nu=-e_{22}/e_{11}$ を $\\lambda,\\mu$ で表せ．\n\\item 鋼（$\\lambda=112\\ \\mathrm{GPa}$，$\\mu=81\\ \\mathrm{GPa}$）の $E,\\nu$ を求めよ．\n\\item エネルギーが正である条件 $\\mu>0$，$\\lambda>-\\frac23\\mu$ を $\\nu$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E=\\dfrac{\\mu(3\\lambda+2\\mu)}{\\lambda+\\mu}$，$\\nu=\\dfrac{\\lambda}{2(\\lambda+\\mu)}$　(2) $E\\approx209\\ \\mathrm{GPa}$，$\\nu\\approx0.29$　(3) $-1<\\nu<\\frac12$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 逆に解くと $e_{ij}=\\dfrac{1}{2\\mu}\\left(\\sigma_{ij}-\\dfrac{\\lambda}{3\\lambda+2\\mu}\\delta_{ij}\\sigma_{kk}\\right)$．$e_{11}=\\dfrac{\\sigma(\\lambda+\\mu)}{\\mu(3\\lambda+2\\mu)}$，$e_{22}=-\\dfrac{\\lambda\\sigma}{2\\mu(3\\lambda+2\\mu)}$ から与式．\n\n(2) $E=\\dfrac{81\\times498}{193}\\approx\\boldsymbol{209\\ \\mathrm{GPa}}$，$\\nu=\\dfrac{112}{386}\\approx\\boldsymbol{0.29}$．\n\n(3) 体積弾性率 $\\lambda+\\frac23\\mu>0$ と $\\mu>0$ は $\\boldsymbol{-1<\\nu<\\frac12}$ と同値．"
+   }
+  ],
+  "idea": {
+   "tex": "等方弾性体は2つの定数で記述され，実験で測る量（ヤング率・ポアソン比）に換算できる．原題の逆変換と正定値性を，実在の材料の数値に結びつけた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E$：((μ (3 λ +2 μ))/(λ + μ)) ; $\\nu$：((λ)/(2(λ + μ)))\n(2) $E$ [GPa]：≈209 ; $\\nu$：≈0.29\n(3) -1<ν<1/2"
+  },
+  "methods": [],
+  "tags": [
+   "等方弾性体",
+   "ラメ定数",
+   "ヤング率",
+   "ポアソン比"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 30,
+  "theme": "回転する棒の張力と等強度設計",
+  "topic": "回転する棒の張力と等強度設計",
+  "statement": {
+   "tex": "連続体の運動方程式 $\\rho a_k=\\sum_l \\partial T_{kl}/\\partial x_l+\\rho K_k$ を 1 次元の細い棒に適用する．棒は長さ $L$，密度 $\\rho$ で，一端 $x=0$ を軸として水平面内を一定角速度 $\\omega$ で回転している（重力は無視）．棒の各断面での応力は棒方向の張力 $T(x)$ だけとし，断面積を $A(x)$ とする．\n\\begin{enumerate}\n\\item 断面積が一様で先端 $x=L$ が自由端のとき，$T(x)$ を求め，最大張力の位置と大きさを答えよ．\n\\item 先端に質量 $m$ の小物体を取り付け，棒の断面積 $A(x)$ を，どの断面でも張力がちょうど一定値 $\\sigma$（許容応力）になるように設計する（等強度棒）．$A(x)$ を求めよ．\n\\item (2) の棒の質量 $M$ と先端質量 $m$ の比 $M/m$ を，無次元量 $\\beta=\\omega L\\sqrt{\\rho/\\sigma}$ と誤差関数 $\\mathrm{erf}(s)=\\frac{2}{\\sqrt\\pi}\\int_0^s e^{-t^2}dt$ を用いて表し，$\\beta=1,2,3$ での値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T=\\frac12\\rho\\omega^2(L^2-x^2)$，最大は軸 $x=0$ で $\\frac12\\rho\\omega^2L^2$　(2) $A(x)=\\dfrac{m\\omega^2L}{\\sigma}\\exp\\!\\left[\\dfrac{\\rho\\omega^2(L^2-x^2)}{2\\sigma}\\right]$　(3) $\\dfrac Mm=\\sqrt{\\dfrac\\pi2}\\,\\beta\\,e^{\\beta^2/2}\\,\\mathrm{erf}\\!\\left(\\dfrac{\\beta}{\\sqrt2}\\right)$；$\\beta=1,2,3$ で約 $1.41,\\ 17.7,\\ 338$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "棒の微小部分 $[x,x+dx]$ は半径 $x$ の等速円運動をするので加速度は軸向き $\\omega^2x$．張力による力は $d(TA)$（外向き正）だから，運動方程式は\n\\[\n\\rho A\\,dx\\,(-\\omega^2x)=d(TA)\\quad\\Longrightarrow\\quad \\frac{d(TA)}{dx}=-\\rho\\omega^2xA .\n\\]\n(1) $A$ 一定なら $dT/dx=-\\rho\\omega^2x$，$T(L)=0$ より $T=\\frac12\\rho\\omega^2(L^2-x^2)$．単調減少なので最大は軸の位置 $x=0$ で $\\frac12\\rho\\omega^2L^2$．\n\n(2) $T=\\sigma$ 一定とすると $\\sigma A'=-\\rho\\omega^2xA$，よって $A=A_0e^{-\\rho\\omega^2x^2/(2\\sigma)}$．先端では棒の張力が先端質量の向心力を担うので $\\sigma A(L)=m\\omega^2L$．これから $A_0=\\frac{m\\omega^2L}{\\sigma}e^{\\rho\\omega^2L^2/(2\\sigma)}$ となり\n\\[\nA(x)=\\frac{m\\omega^2L}{\\sigma}\\exp\\!\\left[\\frac{\\rho\\omega^2(L^2-x^2)}{2\\sigma}\\right].\n\\]\n（検算：軸での張力 $\\sigma A(0)$ は $m\\omega^2L+\\int_0^L\\rho A\\omega^2x\\,dx$ に等しい．）\n\n(3) $M=\\int_0^L\\rho A\\,dx$．$s=x\\omega\\sqrt{\\rho/(2\\sigma)}$ とおくと\n\\[\nM=\\frac{\\rho m\\omega^2L}{\\sigma}e^{\\beta^2/2}\\sqrt{\\frac{2\\sigma}{\\rho\\omega^2}}\\int_0^{\\beta/\\sqrt2}e^{-s^2}ds\n=m\\sqrt{\\frac\\pi2}\\,\\beta\\,e^{\\beta^2/2}\\,\\mathrm{erf}\\!\\left(\\frac\\beta{\\sqrt2}\\right).\n\\]\n$\\beta=1,2,3$ で $M/m\\approx1.41,\\,17.7,\\,338$．$\\beta$ に対して $e^{\\beta^2/2}$ で爆発的に増えるので，材料の比強度 $\\sigma/\\rho$ が $(\\omega L)^2$ より十分大きくないと等強度設計でも現実的な構造にならない（宇宙エレベーターのテザー設計と同じ構造）．"
+   }
+  ],
+  "idea": {
+   "tex": "連続体の運動方程式を 1 次元化すると $d(TA)/dx=-\\rho\\omega^2xA$．張力一定を課すと断面積はガウス型に変化し，必要な質量は $e^{\\beta^2/2}$ で増える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "連続体の運動方程式",
+   "回転棒",
+   "張力",
+   "等強度設計",
+   "誤差関数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ひずみエネルギーの正定値性と拘束効果",
+  "topic": "ひずみエネルギーの正定値性と拘束効果",
+  "statement": {
+   "tex": "等方弾性体のひずみエネルギー密度 $W=\\frac12\\lambda\\left(\\sum_ke_{kk}\\right)^2+\\mu\\sum_{k,l}e_{kl}e_{kl}$ を考える．\n\\begin{enumerate}\n\\item ひずみを等方部分と偏差部分 $e'_{kl}=e_{kl}-\\frac13\\delta_{kl}\\sum_je_{jj}$ に分けると，$W=\\frac12k\\left(\\sum e_{kk}\\right)^2+\\mu\\sum e'_{kl}e'_{kl}$（$k=\\lambda+\\frac23\\mu$ は体積弾性率）と書けることを示せ．\n\\item 自然状態が安定であるためには，任意のひずみに対して $W>0$ でなければならない．この条件を $E$ と Poisson 比 $\\sigma$ に対する条件として表せ（$E>0$ とする）．\n\\item 同じ棒に同じ大きさの縦方向の圧縮応力 $T$ を加える 2 つの場合を考える．(a) 側面は自由（一軸応力状態）．(b) 側面が剛体の壁に密着していて横方向のひずみが $0$（一軸ひずみ状態）．単位体積あたりに蓄えられるエネルギーの比 $W_b/W_a$ を $\\sigma$ で表し，$\\sigma=0.3$ と $\\sigma\\to\\frac12$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 交差項 $\\sum e'_{kk}=0$ で消える　(2) $k>0,\\ \\mu>0$ すなわち $-1<\\sigma<\\frac12$　(3) $W_b/W_a=\\dfrac{(1+\\sigma)(1-2\\sigma)}{1-\\sigma}$；$\\sigma=0.3$ で $0.743$，$\\sigma\\to\\frac12$ で $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\theta=\\sum e_{kk}$ とおくと $e_{kl}=e'_{kl}+\\frac13\\theta\\delta_{kl}$，$\\sum_k e'_{kk}=0$．よって\n\\[\n\\sum_{k,l}e_{kl}e_{kl}=\\sum e'_{kl}e'_{kl}+\\frac23\\theta\\sum_ke'_{kk}+\\frac19\\theta^2\\cdot3=\\sum e'_{kl}e'_{kl}+\\frac13\\theta^2 .\n\\]\n$W=\\frac12\\lambda\\theta^2+\\mu\\left(\\sum e'e'+\\frac13\\theta^2\\right)=\\frac12\\left(\\lambda+\\frac23\\mu\\right)\\theta^2+\\mu\\sum e'_{kl}e'_{kl}$．\n\n(2) $\\theta$ と $e'$ は独立に選べる（純粋な体積変化と純粋なずれ）．$e'=0,\\ \\theta\\neq0$ から $k>0$，$\\theta=0,\\ e'\\neq0$ から $\\mu>0$ が必要十分．$\\mu=E/\\{2(1+\\sigma)\\}>0$ より $\\sigma>-1$，$k=E/\\{3(1-2\\sigma)\\}>0$ より $\\sigma<\\frac12$．よって $-1<\\sigma<\\frac12$．（負の Poisson 比も熱力学的には許される．）\n\n(3) (a) 一軸応力：$e_{11}=T/E$，$e_{22}=e_{33}=-\\sigma T/E$ で，計算すると $W_a=\\dfrac{T^2}{2E}$．\n\n(b) 一軸ひずみ：$e_{22}=e_{33}=0$ なので $T=(\\lambda+2\\mu)e_{11}$，$W_b=\\frac12(\\lambda+2\\mu)e_{11}^2=\\dfrac{T^2}{2(\\lambda+2\\mu)}$．$\\lambda+2\\mu=\\dfrac{E(1-\\sigma)}{(1+\\sigma)(1-2\\sigma)}$ を用いて\n\\[\n\\frac{W_b}{W_a}=\\frac{E}{\\lambda+2\\mu}=\\frac{(1+\\sigma)(1-2\\sigma)}{1-\\sigma}.\n\\]\n$\\sigma=0.3$ で $1.3\\times0.4/0.7=0.743$．$\\sigma\\to\\frac12$（ゴムのような非圧縮体）では $0$：側面を拘束された非圧縮体は縦方向にほとんど縮まず，同じ応力でもエネルギーをほとんど蓄えない（ゴムパッドが側面拘束で非常に硬くなる理由）．"
+   }
+  ],
+  "idea": {
+   "tex": "ひずみエネルギーを体積変化とずれに直交分解すると安定条件は $k>0,\\mu>0$．同じ応力でも側面拘束の有無でエネルギーが変わり，非圧縮極限では拘束すると 0 になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ひずみエネルギー",
+   "Lame定数",
+   "Poisson比",
+   "安定性",
+   "一軸ひずみ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 30,
+  "theme": "適合条件の判定と熱ひずみ",
+  "topic": "適合条件の判定と熱ひずみ",
+  "statement": {
+   "tex": "適合条件（Saint-Venant の条件）$\\dfrac{\\partial^2e_{ij}}{\\partial x_k\\partial x_l}+\\dfrac{\\partial^2e_{kl}}{\\partial x_i\\partial x_j}-\\dfrac{\\partial^2e_{ik}}{\\partial x_j\\partial x_l}-\\dfrac{\\partial^2e_{jl}}{\\partial x_i\\partial x_k}=0$ について次の問いに答えよ．\n\\begin{enumerate}\n\\item ひずみ場 $e_{11}=ax_2^2$，$e_{22}=bx_1^2$，$e_{12}=e_{21}=c\\,x_1x_2$，その他の成分 $0$（$a,b,c$ は定数）が実際の変位から生じうるための $c$ の条件を求め，そのときの変位 $\\boldsymbol u$ を剛体変位を除いて求めよ．\n\\item 自由な物体の温度が $\\Delta T(\\boldsymbol x)$ だけ変化すると，応力がなければ熱ひずみ $e_{kl}=\\alpha\\,\\Delta T(\\boldsymbol x)\\,\\delta_{kl}$（$\\alpha$ は線膨張率）が生じるはずである．このひずみ場が適合条件を満たすのは $\\Delta T$ が座標の 1 次関数のときに限ることを示せ．\n\\item (2) から，内部の温度分布について何がいえるか．例として $\\Delta T=\\beta x_1^2$ の場合を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c=a+b$，$\\boldsymbol u=(a x_1x_2^2,\\ b x_1^2x_2,\\ 0)$　(2) 条件はすべての 2 階偏導関数 $=0$，すなわち $\\Delta T$ は 1 次関数　(3) 温度分布が 1 次関数でなければ，外力がなくても必ず熱応力が生じる．$\\beta x_1^2$ は不適合で熱応力が発生"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 0 でない条件は $(i,j,k,l)=(1,1,2,2)$ の\n\\[\n\\frac{\\partial^2e_{11}}{\\partial x_2^2}+\\frac{\\partial^2e_{22}}{\\partial x_1^2}=2\\frac{\\partial^2e_{12}}{\\partial x_1\\partial x_2}\n\\]\nだけで（他は自明に成立），$2a+2b=2c$，すなわち $c=a+b$．このとき $\\partial u_1/\\partial x_1=ax_2^2$ より $u_1=ax_1x_2^2+g$，$\\partial u_2/\\partial x_2=bx_1^2$ より $u_2=bx_1^2x_2+h$，$e_{33}=0$ より $u_3$ は $x_3$ によらない．$e_{12}=\\frac12(2ax_1x_2+2bx_1x_2)+\\frac12(\\partial_2g+\\partial_1h)=cx_1x_2+\\frac12(\\partial_2g+\\partial_1h)$ なので $\\partial_2g+\\partial_1h=0$，さらに $e_{13}=e_{23}=0$ から $g,h,u_3$ は剛体変位に限られる．よって $\\boldsymbol u=(ax_1x_2^2,\\ bx_1^2x_2,\\ 0)$（＋剛体変位）．$c\\neq a+b$ ならどんな変位でも実現できない．\n\n(2) $e_{kl}=f\\delta_{kl}$（$f=\\alpha\\Delta T$）を代入する．$(i,j,k,l)=(1,1,2,2)$ などから $f_{,11}+f_{,22}=0,\\ f_{,22}+f_{,33}=0,\\ f_{,33}+f_{,11}=0$，これより $f_{,11}=f_{,22}=f_{,33}=0$．また $(i,j,k,l)=(1,1,2,3)$ などから $f_{,12}=f_{,23}=f_{,31}=0$．すべての 2 階偏導関数が 0 なので $f$ は 1 次関数．逆に 1 次関数なら明らかに満たす．\n\n(3) 応力 0 の自由膨張は温度が 1 次関数のときしか幾何学的に実現できない．それ以外では，各部分が自由に膨張すると隙間や重なりが生じてしまうので，物体が一体であるためには弾性ひずみが加わり，外力がなくても熱応力が生じる．$\\Delta T=\\beta x_1^2$ では $f_{,11}=2\\alpha\\beta\\neq0$ のため $f_{,11}+f_{,22}\\neq0$ となり不適合で，熱応力が必ず発生する（急冷したガラスが割れる原因）．"
+   }
+  ],
+  "idea": {
+   "tex": "適合条件はひずみ場が変位場から作れるかの判定条件．等方的熱ひずみに適用すると「1 次関数以外の温度分布は必ず熱応力を生む」という定理になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "適合条件",
+   "Saint-Venant",
+   "ひずみテンソル",
+   "熱応力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 30,
+  "theme": "球座標のひずみと魔法角",
+  "topic": "球座標のひずみと魔法角",
+  "statement": {
+   "tex": "極座標（球座標）$(r,\\theta,\\varphi)$ でのひずみテンソルの公式\n\\[\ne_{rr}=\\frac{\\partial u_r}{\\partial r},\\quad e_{\\theta\\theta}=\\frac1r\\frac{\\partial u_\\theta}{\\partial\\theta}+\\frac{u_r}r,\\quad e_{\\varphi\\varphi}=\\frac1{r\\sin\\theta}\\frac{\\partial u_\\varphi}{\\partial\\varphi}+\\frac{u_r}r+\\frac{u_\\theta\\cot\\theta}{r},\n\\]\n\\[\ne_{r\\theta}=\\frac12\\left\\{r\\frac{\\partial}{\\partial r}\\left(\\frac{u_\\theta}r\\right)+\\frac1r\\frac{\\partial u_r}{\\partial\\theta}\\right\\},\\quad\ne_{\\theta\\varphi}=\\frac12\\left\\{\\frac{\\sin\\theta}r\\frac{\\partial}{\\partial\\theta}\\left(\\frac{u_\\varphi}{\\sin\\theta}\\right)+\\frac1{r\\sin\\theta}\\frac{\\partial u_\\theta}{\\partial\\varphi}\\right\\}\n\\]\nなどを用いる．直交座標で $\\boldsymbol u=\\varepsilon\\left(-\\tfrac x2,\\,-\\tfrac y2,\\,z\\right)$（$\\varepsilon$ は微小定数）で与えられる，$z$ 方向に伸び横に縮む一様変形を考える．\n\\begin{enumerate}\n\\item $u_r,u_\\theta,u_\\varphi$ を求めよ．\n\\item 公式を用いて $e_{rr},e_{\\theta\\theta},e_{\\varphi\\varphi},e_{r\\theta}$ を求め，体積ひずみが $0$ であることを確かめよ．\n\\item 原点から出る線素のうち，長さが変わらない（$e_{rr}=0$）方向の $z$ 軸からの角度 $\\theta_0$ を求めよ．\n\\item $z$ 軸まわりの剛体回転 $u_\\varphi=\\Omega r\\sin\\theta$ に対して $e_{\\theta\\varphi}=0$ となることを確かめ，$\\sin\\theta\\,\\partial_\\theta(u_\\varphi/\\sin\\theta)$ という形が必要な理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u_r=\\frac\\varepsilon2r(3\\cos^2\\theta-1)$，$u_\\theta=-\\frac32\\varepsilon r\\sin\\theta\\cos\\theta$，$u_\\varphi=0$　(2) $e_{rr}=\\frac\\varepsilon2(3\\cos^2\\theta-1)$，$e_{\\theta\\theta}=\\frac\\varepsilon2(3\\sin^2\\theta-1)$，$e_{\\varphi\\varphi}=-\\frac\\varepsilon2$，$e_{r\\theta}=-\\frac34\\varepsilon\\sin2\\theta$，和は $0$　(3) $\\cos\\theta_0=1/\\sqrt3$，$\\theta_0\\approx54.7^\\circ$（魔法角）　(4) $u_\\varphi/\\sin\\theta=\\Omega r$ は $\\theta$ によらず $0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\hat{\\boldsymbol r}=(\\sin\\theta\\cos\\varphi,\\sin\\theta\\sin\\varphi,\\cos\\theta)$，$\\hat{\\boldsymbol\\theta}=(\\cos\\theta\\cos\\varphi,\\cos\\theta\\sin\\varphi,-\\sin\\theta)$，$\\hat{\\boldsymbol\\varphi}=(-\\sin\\varphi,\\cos\\varphi,0)$．$\\boldsymbol u=\\varepsilon r(-\\frac12\\sin\\theta\\cos\\varphi,-\\frac12\\sin\\theta\\sin\\varphi,\\cos\\theta)$ との内積から\n\\[\nu_r=\\varepsilon r\\left(\\cos^2\\theta-\\tfrac12\\sin^2\\theta\\right)=\\tfrac\\varepsilon2r(3\\cos^2\\theta-1),\\quad\nu_\\theta=\\varepsilon r\\left(-\\tfrac12\\sin\\theta\\cos\\theta-\\sin\\theta\\cos\\theta\\right)=-\\tfrac32\\varepsilon r\\sin\\theta\\cos\\theta,\\quad u_\\varphi=0 .\n\\]\n(2) $e_{rr}=\\partial_ru_r=\\frac\\varepsilon2(3\\cos^2\\theta-1)$．\n$e_{\\theta\\theta}=\\frac1r\\partial_\\theta u_\\theta+\\frac{u_r}r=-\\frac32\\varepsilon\\cos2\\theta+\\frac\\varepsilon2(3\\cos^2\\theta-1)=\\frac\\varepsilon2(3\\sin^2\\theta-1)$．\n$e_{\\varphi\\varphi}=\\frac{u_r}r+\\frac{u_\\theta\\cot\\theta}r=\\frac\\varepsilon2(3\\cos^2\\theta-1)-\\frac32\\varepsilon\\cos^2\\theta=-\\frac\\varepsilon2$．\n$e_{r\\theta}=\\frac12\\{r\\partial_r(-\\frac32\\varepsilon\\sin\\theta\\cos\\theta)+\\partial_\\theta(\\frac\\varepsilon2(3\\cos^2\\theta-1))\\}=\\frac12(0-3\\varepsilon\\sin\\theta\\cos\\theta)=-\\frac34\\varepsilon\\sin2\\theta$．\n和：$\\frac\\varepsilon2(3\\cos^2\\theta+3\\sin^2\\theta-2)-\\frac\\varepsilon2=0$．元の直交座標でも $\\mathrm{div}\\,\\boldsymbol u=\\varepsilon(-\\frac12-\\frac12+1)=0$ で一致する．$e_{\\varphi\\varphi}=-\\varepsilon/2$ が $\\theta$ によらないのは，$\\varphi$ 方向が常に水平で，水平方向のひずみが一様に $-\\varepsilon/2$ だからである．\n\n(3) $e_{rr}=\\frac\\varepsilon2(3\\cos^2\\theta-1)=\\varepsilon P_2(\\cos\\theta)=0$ より $\\cos\\theta_0=1/\\sqrt3$，$\\theta_0=54.7^\\circ$．NMR の魔法角回転と同じ角度で，$P_2(\\cos\\theta)$ の零点である．この円錐上の線素は伸び縮みしない（ただし向きは変わる：$e_{r\\theta}\\neq0$）．\n\n(4) $u_\\varphi/\\sin\\theta=\\Omega r$ は $\\theta$ によらないので第 1 項は 0，$u_\\theta=0$ なので第 2 項も 0．同様に $e_{r\\varphi}=\\frac12\\{r\\partial_r(u_\\varphi/r)\\}=0$，$e_{\\varphi\\varphi}=0$．回転の速さ $u_\\varphi$ 自体は $\\sin\\theta$ に比例して $\\theta$ とともに変わるが，これは剛体回転では軸からの距離 $r\\sin\\theta$ に比例するためで，ずれではない．単に $\\frac1r\\partial_\\theta u_\\varphi$ と書くと $\\Omega\\cos\\theta\\neq0$ という偽のずれが出てしまう．"
+   }
+  ],
+  "idea": {
+   "tex": "一様変形を球座標で見ると $e_{rr}=\\varepsilon P_2(\\cos\\theta)$ となり，伸びない方向は魔法角になる．公式の補正項（$\\cot\\theta$ や $\\sin\\theta\\,\\partial_\\theta(\\cdot/\\sin\\theta)$）が剛体運動を正しく 0 にする．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ひずみテンソル",
+   "球座標",
+   "Legendre多項式",
+   "魔法角",
+   "剛体回転"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "加熱された鋼円柱：拘束の仕方で変わる熱応力",
+  "topic": "加熱された鋼円柱：拘束の仕方で変わる熱応力",
+  "statement": {
+   "tex": "鋼の円柱を $\\Delta T=100\\,\\mathrm K$ だけ加熱する．鋼のヤング率 $E=200\\,\\mathrm{GPa}$，ポアソン比 $\\mu=0.29$，線膨張率 $\\alpha=1.1\\times10^{-5}\\,\\mathrm{K^{-1}}$ とする．壁との摩擦はなく，応力は一様とする．\n\\begin{enumerate}\n\\item 側面は自由で，長さだけを一定に保つとき，端面に加えるべき圧力 $p_1$ と側面方向（直径方向）のひずみを求めよ．\n\\item 長さも直径も変わらないよう全方向から拘束するとき，必要な圧力 $p_2$ を求めよ．\n\\item 側面だけを剛体のさやで拘束し，長さは自由にしたとき，さやが受ける圧力 $q$ と円柱の長さ方向のひずみを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_1=\\alpha E\\Delta T=2.2\\times10^8\\,\\mathrm{Pa}$，直径方向ひずみ $(1+\\mu)\\alpha\\Delta T=1.4\\times10^{-3}$　(2) $p_2=\\dfrac{\\alpha E\\Delta T}{1-2\\mu}=5.2\\times10^8\\,\\mathrm{Pa}$　(3) $q=\\dfrac{\\alpha E\\Delta T}{1-\\mu}=3.1\\times10^8\\,\\mathrm{Pa}$，$\\varepsilon_z=\\dfrac{1+\\mu}{1-\\mu}\\alpha\\Delta T=2.0\\times10^{-3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "熱ひずみを含むフックの法則：$\\varepsilon_i=\\alpha\\Delta T+\\dfrac{1}{E}\\{\\sigma_i-\\mu(\\sigma_j+\\sigma_k)\\}$（引張を正）．\n\n(1) $\\sigma_r=\\sigma_\\theta=0$，$\\varepsilon_z=0$：$0=\\alpha\\Delta T+\\sigma_z/E$ より $\\sigma_z=-\\alpha E\\Delta T$，$p_1=\\alpha E\\Delta T=1.1\\times10^{-5}\\times2\\times10^{11}\\times100=2.2\\times10^8\\,\\mathrm{Pa}$（約 $2.2\\times10^3$ 気圧）．\n直径方向：$\\varepsilon_r=\\alpha\\Delta T-\\mu\\sigma_z/E=(1+\\mu)\\alpha\\Delta T=1.42\\times10^{-3}$．長さを押さえた分，横に余計に膨らむ．\n\n(2) $\\sigma_r=\\sigma_\\theta=\\sigma_z=-p_2$，すべての $\\varepsilon=0$：$0=\\alpha\\Delta T-\\dfrac{p_2}{E}(1-2\\mu)$ より $p_2=\\dfrac{\\alpha E\\Delta T}{1-2\\mu}=\\dfrac{2.2\\times10^8}{0.42}=5.2\\times10^8\\,\\mathrm{Pa}$．\n\n(3) $\\sigma_r=\\sigma_\\theta=-q$，$\\sigma_z=0$，$\\varepsilon_r=0$：\n\\[\n0=\\alpha\\Delta T+\\frac{-q+\\mu q}{E}\\ \\Longrightarrow\\ q=\\frac{\\alpha E\\Delta T}{1-\\mu}=3.1\\times10^8\\,\\mathrm{Pa},\n\\]\n\\[\n\\varepsilon_z=\\alpha\\Delta T+\\frac{2\\mu q}{E}=\\alpha\\Delta T\\,\\frac{1+\\mu}{1-\\mu}=2.0\\times10^{-3}.\n\\]\n横を押さえると，自由な熱膨張（$1.1\\times10^{-3}$）の約 1.8 倍も伸びる．"
+   }
+  ],
+  "idea": {
+   "tex": "熱ひずみ $\\alpha\\Delta T$ を拘束で打ち消す応力は，拘束の方向数によって $E$，$E/(1-\\mu)$，$E/(1-2\\mu)$ と変わり，拘束されない方向にはポアソン効果で余分なひずみが出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $p_2$ [Pa]：≈5.2e8\n(3) $q$ [Pa]：≈3.1e8 ; $\\varepsilon_z$：≈2.0e-3"
+  },
+  "methods": [],
+  "tags": [
+   "熱応力",
+   "ポアソン比",
+   "フックの法則",
+   "拘束"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "焼きばめした回転リングが軸から浮く速さ",
+  "topic": "焼きばめした回転リングが軸から浮く速さ",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 半径 $r$，密度 $\\rho$，引張強さ $\\sigma_m$ の細い輪が中心を通り輪の面に垂直な軸のまわりに回転するとき，破断する回転数を求めよ．鉛（$\\rho=11.3\\times10^3\\,\\mathrm{kg/m^3}$，$\\sigma_m=15\\,\\mathrm{MPa}$），$r=25\\,\\mathrm{cm}$ の値も求めよ．\n\\item 鋼の細い輪（$E=200\\,\\mathrm{GPa}$，$\\rho=7.8\\times10^3\\,\\mathrm{kg/m^3}$，$\\sigma_m=0.50\\,\\mathrm{GPa}$）が，半径 $r=25\\,\\mathrm{cm}$ の剛体の円柱（ハブ）に焼きばめされている．輪の自然な半径はハブより $\\delta=0.10\\,\\mathrm{mm}$ 小さい．全体を回転させたとき，輪がハブから浮き上がる（接触圧が 0 になる）回転数を求めよ．\n\\item (2) の輪が破断する回転数を求め，浮き上がりと破断のどちらが先に起こるかを答えよ．また，浮き上がる前に破断が起こらないための $\\delta$ の条件を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n=\\dfrac{1}{2\\pi r}\\sqrt{\\dfrac{\\sigma_m}{\\rho}}=23\\,\\mathrm{rps}$　(2) $n=\\dfrac{1}{2\\pi}\\sqrt{\\dfrac{E\\delta}{\\rho r^3}}=64\\,\\mathrm{rps}$　(3) 破断は $161\\,\\mathrm{rps}$，浮き上がりが先．条件 $E\\delta/r<\\sigma_m$（$\\delta<0.63\\,\\mathrm{mm}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 輪の微小部分（中心角 $d\\phi$）に両端の張力 $T$ がはたらき，その合力 $T\\,d\\phi$ が向心力 $\\rho Sr\\,d\\phi\\cdot\\omega^2r$ を与える：$T=\\rho S\\omega^2r^2$．$T/S=\\sigma_m$ より $\\omega r=\\sqrt{\\sigma_m/\\rho}$，\n\\[\nn=\\frac{1}{2\\pi r}\\sqrt{\\frac{\\sigma_m}{\\rho}}=\\frac{\\sqrt{15\\times10^6/11.3\\times10^3}}{2\\pi\\times0.25}=\\frac{36.4}{1.571}=23\\,\\mathrm{rps}.\n\\]\n(2) 静止時，輪は半径 $r$ まで引き伸ばされているので張力 $T_0=ES\\delta/r$（ひずみ $\\delta/r$），単位長さあたりの接触力は $T_0/r$．ハブは剛体なので接触している間，輪の半径・張力は変わらず，回転すると接触力は\n\\[\nf=\\frac{T_0}{r}-\\rho S\\omega^2r\n\\]\nに減る．$f=0$ で浮き上がる：$\\omega^2=\\dfrac{E\\delta}{\\rho r^3}=\\dfrac{2\\times10^{11}\\times10^{-4}}{7.8\\times10^3\\times0.0156}=1.64\\times10^5$，$\\omega=405\\,\\mathrm{rad/s}$，$n=64\\,\\mathrm{rps}$．\n\n(3) 浮き上がった後は (1) と同じ自由な輪なので，破断は $n=\\dfrac{1}{2\\pi r}\\sqrt{\\sigma_m/\\rho}=\\dfrac{253}{2\\pi\\times0.25}=161\\,\\mathrm{rps}$．よって浮き上がりが先．焼きばめの応力 $E\\delta/r=80\\,\\mathrm{MPa}$ は浮き上がり時の遠心応力 $\\rho\\omega^2r^2$ に等しいから，浮き上がる前に破断しない条件は $E\\delta/r<\\sigma_m$，$\\delta<\\sigma_mr/E=0.63\\,\\mathrm{mm}$．"
+   }
+  ],
+  "idea": {
+   "tex": "回転する輪の張力は $\\rho S v^2$．焼きばめの張力が剛体ハブ上では変わらないため，遠心力が焼きばめの締め付け力を上回ったときに浮き上がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $n$：((1)/(2 pi r)) sqrt(((σ_m)/(ρ)))\n(2) $n$：((1)/(2 pi)) sqrt(((E δ)/(ρ r ^(3))))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転体",
+   "遠心応力",
+   "焼きばめ",
+   "フックの法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 25,
+  "theme": "張ったワイヤーのたわみと非線形ばね",
+  "topic": "張ったワイヤーのたわみと非線形ばね",
+  "statement": {
+   "tex": "直径 $d=1.0\\,\\mathrm{mm}$ の鋼線（$E=200\\,\\mathrm{GPa}$）が，距離 $l=2.0\\,\\mathrm m$ 離れた 2 つの固定点の間に水平に張られている．中点に質量 $m=0.25\\,\\mathrm{kg}$ のおもりをつるす．ワイヤーの質量は無視し，たわみ $x$ は $l$ に比べて十分小さいとする（$g=9.8\\,\\mathrm{m/s^2}$）．\n\\begin{enumerate}\n\\item はじめワイヤーの張力が 0（ちょうどたるみなく張られている）とき，中点の降下 $x_0$ を求めよ．\n\\item (1) のつり合いの位置のまわりでおもりが鉛直方向に微小振動するときの角振動数を求め，それがワイヤーの材料や太さによらず $x_0$ だけで決まることを示せ．\n\\item はじめにワイヤーに張力 $T_0=50\\,\\mathrm N$ を与えておいた場合の降下 $x_1$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x_0=l\\left(\\dfrac{mg}{2\\pi d^2E}\\right)^{1/3}=2.5\\,\\mathrm{cm}$　(2) $\\omega=\\sqrt{3g/x_0}=34\\,\\mathrm{rad/s}$　(3) $x_1=1.7\\,\\mathrm{cm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "半分の長さ $l/2$ のワイヤーが降下 $x$ で伸びる量は $\\sqrt{(l/2)^2+x^2}-\\dfrac l2\\approx\\dfrac{x^2}{l}$，ひずみ $2x^2/l^2$．張力 $T=T_0+ES\\cdot2x^2/l^2$（$S=\\pi d^2/4$）．鉛直のつり合いは $2T\\sin\\phi\\approx2T\\cdot\\dfrac{2x}{l}=mg$ なので\n\\[\nF(x)\\equiv\\frac{4T_0x}{l}+\\frac{8ESx^3}{l^3}=mg .\n\\]\n(1) $T_0=0$：$x_0^3=\\dfrac{mgl^3}{8ES}=\\dfrac{mgl^3}{2\\pi d^2E}$，\n\\[\nx_0=2.0\\times\\left(\\frac{0.25\\times9.8}{2\\pi\\times10^{-6}\\times2\\times10^{11}}\\right)^{1/3}=2.0\\times(1.95\\times10^{-6})^{1/3}=2.5\\times10^{-2}\\,\\mathrm m.\n\\]\n(2) 復元力の傾き $k=F'(x_0)=\\dfrac{24ESx_0^2}{l^3}=\\dfrac{3}{x_0}\\cdot\\dfrac{8ESx_0^3}{l^3}=\\dfrac{3mg}{x_0}$．よって $\\omega=\\sqrt{k/m}=\\sqrt{3g/x_0}=\\sqrt{3\\times9.8/0.025}=34\\,\\mathrm{rad/s}$．$F\\propto x^3$ という形だけから出るので，$E$ や $d$ は $x_0$ を通してしか現れない．\n\n(3) $T_0=50\\,\\mathrm N$，$ES=1.571\\times10^5\\,\\mathrm N$：$100x+1.571\\times10^5x^3=2.45$（SI）．数値的に解くと $x_1=0.0169\\,\\mathrm m=1.7\\,\\mathrm{cm}$．（張力の項だけなら $mgl/(4T_0)=2.45\\,\\mathrm{cm}$，伸びの項だけなら $2.5\\,\\mathrm{cm}$ で，両方が効くため小さくなる．）"
+   }
+  ],
+  "idea": {
+   "tex": "初張力のないワイヤーの横方向の復元力はたわみの 3 乗に比例する非線形ばねで，つり合い点まわりの振動数は $\\sqrt{3g/x_0}$ という普遍的な形になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega$：sqrt(3 g / x_0)\n(3) $x_1$ [cm]：≈1.7"
+  },
+  "methods": [],
+  "tags": [
+   "ヤング率",
+   "ワイヤー",
+   "非線形ばね",
+   "微小振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "加速する板：力の作用点と伸び縮み・弾性エネルギー",
+  "topic": "加速する板：力の作用点と伸び縮み・弾性エネルギー",
+  "statement": {
+   "tex": "なめらかな水平面上に，長さ $L$，断面積 $S$，ヤング率 $E$ の一様な弾性板が置かれている．板の後端から距離 $a$（$0\\le a\\le L$）の断面全体に，板の長さ方向に一定の力 $F_0$ を一様に加えて板を加速させる（例えば板に埋め込んだ薄い板を押す）．定常的な加速状態（振動は減衰した後）を考える．\n\\begin{enumerate}\n\\item 後端から $x$ の断面の内力（引張を正）を求めよ．\n\\item 板全体の長さの変化 $\\Delta L$ を求めよ．$a=0$（後端を押す）と $a=L/2$ の場合を書け．\n\\item 板に蓄えられる弾性エネルギー $U(a)$ を求め，$U$ を最小にする $a$ とその値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0<x<a$：$N=F_0x/L$（引張），$a<x<L$：$N=-F_0(L-x)/L$（圧縮）　(2) $\\Delta L=\\dfrac{F_0(2a-L)}{2ES}$；$a=0$ で $-\\dfrac{F_0L}{2ES}$，$a=L/2$ で 0　(3) $U=\\dfrac{F_0^2(L^2-3La+3a^2)}{6ESL}$，$a=L/2$ で最小値 $\\dfrac{F_0^2L}{24ES}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 加速度 $F_0/(\\rho SL)$ は一様．後端から $x$ までの部分（質量 $\\rho Sx$）を加速させる力は，$x<a$ なら前方からの引張 $N=F_0x/L$．$x>a$ なら，前方の部分（長さ $L-x$）を後ろから押す圧縮力 $F_0(L-x)/L$，すなわち $N=-F_0(L-x)/L$．\n\n(2)\n\\[\n\\Delta L=\\frac1{ES}\\left\\{\\int_0^a\\frac{F_0x}{L}dx-\\int_a^L\\frac{F_0(L-x)}{L}dx\\right\\}=\\frac{F_0}{2ESL}\\left\\{a^2-(L-a)^2\\right\\}=\\frac{F_0(2a-L)}{2ES}.\n\\]\n$a=0$：$\\Delta L=-F_0L/(2ES)$（平均ひずみ $F_0/(2ES)$ の圧縮）．$a=L/2$：後半の伸びと前半の縮みが打ち消し合って全長は変わらない．\n\n(3)\n\\[\nU=\\int_0^L\\frac{N^2}{2ES}dx=\\frac{F_0^2}{2ESL^2}\\left\\{\\frac{a^3}{3}+\\frac{(L-a)^3}{3}\\right\\}=\\frac{F_0^2(L^2-3La+3a^2)}{6ESL}.\n\\]\n$dU/da=0$ より $a=L/2$，$U_{\\min}=\\dfrac{F_0^2L}{24ES}$．これは後端を押す場合 $U(0)=\\dfrac{F_0^2L}{6ES}$ の $1/4$．"
+   }
+  ],
+  "idea": {
+   "tex": "加速する物体の内力は，作用点より後ろは引張・前は圧縮で，作用点を中央に置くと全長は変わらず弾性エネルギーも最小になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ヤング率",
+   "内力",
+   "加速度運動",
+   "弾性エネルギー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "横を拘束した円柱の圧縮：体積変化は増えるか",
+  "topic": "横を拘束した円柱の圧縮：体積変化は増えるか",
+  "statement": {
+   "tex": "長さ $l=65\\,\\mathrm{cm}$，直径 $D=2.0\\,\\mathrm{cm}$ の銅の円柱（$E=130\\,\\mathrm{GPa}$，ポアソン比 $\\mu=0.34$）が水平面上に立てて置かれ，上端面に一様に分布した鉛直下向きの力 $F=1000\\,\\mathrm N$ を受ける（自重は無視）．\n\\begin{enumerate}\n\\item 側面が自由なとき，円柱の体積変化を $\\mathrm{mm^3}$ 単位で求めよ．\n\\item 円柱を，すきまのない剛体の円筒（さや）に入れて側面を拘束した（摩擦なし）．このときの体積変化と，さやが受ける圧力 $q$ を求めよ．\n\\item (2) の場合の長さの変化は (1) の何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta V=-\\dfrac{(1-2\\mu)Fl}{E}=-1.6\\,\\mathrm{mm^3}$　(2) $\\Delta V=-\\dfrac{(1+\\mu)(1-2\\mu)}{1-\\mu}\\dfrac{Fl}{E}=-3.2\\,\\mathrm{mm^3}$，$q=\\dfrac{\\mu}{1-\\mu}\\dfrac FS=1.6\\,\\mathrm{MPa}$　(3) $\\dfrac{(1+\\mu)(1-2\\mu)}{1-\\mu}=0.65$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$S=\\pi D^2/4=3.14\\times10^{-4}\\,\\mathrm{m^2}$，$\\sigma_z=-F/S$．\n\n(1) $\\varepsilon_z=\\sigma_z/E$，$\\varepsilon_r=\\varepsilon_\\theta=-\\mu\\sigma_z/E$．体積ひずみ $\\varepsilon_z+2\\varepsilon_r=(1-2\\mu)\\sigma_z/E$ なので\n\\[\n\\Delta V=Sl(1-2\\mu)\\frac{\\sigma_z}{E}=-\\frac{(1-2\\mu)Fl}{E}=-\\frac{0.32\\times1000\\times0.65}{1.3\\times10^{11}}=-1.6\\times10^{-9}\\,\\mathrm{m^3}.\n\\]\n断面積によらないのがポイント．\n\n(2) $\\sigma_r=\\sigma_\\theta=-q$，$\\varepsilon_r=0$：$0=-q-\\mu(-q+\\sigma_z)$ より $-q=\\dfrac{\\mu}{1-\\mu}\\sigma_z$，$q=\\dfrac{\\mu}{1-\\mu}\\dfrac{F}{S}=0.515\\times3.18\\times10^6=1.6\\times10^6\\,\\mathrm{Pa}$．\n\\[\n\\varepsilon_z=\\frac{\\sigma_z-2\\mu(-q)}{E}=\\frac{\\sigma_z}{E}\\left(1-\\frac{2\\mu^2}{1-\\mu}\\right)=\\frac{\\sigma_z}{E}\\frac{(1+\\mu)(1-2\\mu)}{1-\\mu}.\n\\]\n体積変化は $Sl\\varepsilon_z=-\\dfrac{(1+\\mu)(1-2\\mu)}{1-\\mu}\\dfrac{Fl}{E}=-1.6\\times\\dfrac{1.34}{0.66}=-3.2\\,\\mathrm{mm^3}$．\n自由なときは横に膨らんで体積の減少を一部取り戻すが，拘束するとそれができないうえ，側面からの圧力でさらに圧縮されるので体積はより大きく減る．\n\n(3) 長さの変化の比は $\\dfrac{(1+\\mu)(1-2\\mu)}{1-\\mu}=\\dfrac{1.34\\times0.32}{0.66}=0.65$．長さは縮みにくくなる（見かけのヤング率が大きくなる）のに，体積は約 2 倍減る．"
+   }
+  ],
+  "idea": {
+   "tex": "一軸応力の体積ひずみは $(1-2\\mu)\\sigma/E$ で断面積によらない．側面を拘束すると長さは縮みにくくなるが体積はより大きく減る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta V$ [mm³]：≈-1.6\n(2) $\\Delta V$ [mm³]：≈-3.2 ; $q$ [MPa]：≈1.6\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン比",
+   "体積ひずみ",
+   "一軸圧縮",
+   "拘束"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "体積弾性率とポアソン比の範囲・ゴムの非圧縮性",
+  "topic": "体積弾性率とポアソン比の範囲・ゴムの非圧縮性",
+  "statement": {
+   "tex": "等方的な弾性体のヤング率を $E$，ポアソン比を $\\mu$ とする．\n\\begin{enumerate}\n\\item 一様な静水圧 $p$ を受けた物体の体積の相対変化 $\\Delta V/V$ を求め，圧縮率 $\\beta=-\\dfrac1V\\dfrac{dV}{dp}$ を $E,\\mu$ で表せ．\n\\item ずれ弾性率が $G=\\dfrac{E}{2(1+\\mu)}$ で与えられることを用いて，$E>0$ の物質が安定である（$\\beta>0$，$G>0$）ためにはポアソン比が $-1<\\mu<\\tfrac12$ を満たす必要があることを示せ．\n\\item 鋼は $E=200\\,\\mathrm{GPa}$，$G=79\\,\\mathrm{GPa}$，ゴムは $E=3.0\\,\\mathrm{MPa}$，$\\beta=4.0\\times10^{-10}\\,\\mathrm{Pa^{-1}}$ である．それぞれの $\\mu$ を求めよ．ゴムのひもを $10\\%$ 引き伸ばしたとき体積は相対的にどれだけ変わるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta V/V=-\\dfrac{3(1-2\\mu)p}{E}$，$\\beta=\\dfrac{3(1-2\\mu)}{E}$　(2) 証明（解説参照）　(3) 鋼 $\\mu=0.27$（$\\beta=7.0\\times10^{-12}\\,\\mathrm{Pa^{-1}}$），ゴム $\\mu=0.4998$；体積は $4\\times10^{-5}$ だけ増加"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma_x=\\sigma_y=\\sigma_z=-p$ のとき各方向のひずみは $\\varepsilon=\\dfrac{-p-\\mu(-2p)}{E}=-\\dfrac{(1-2\\mu)p}{E}$．体積ひずみは $3\\varepsilon$ なので\n\\[\n\\frac{\\Delta V}{V}=-\\frac{3(1-2\\mu)p}{E},\\qquad\\beta=\\frac{3(1-2\\mu)}{E}.\n\\]\n(2) $\\beta>0$ と $E>0$ より $1-2\\mu>0$，$\\mu<1/2$．$G>0$ と $E>0$ より $1+\\mu>0$，$\\mu>-1$．（$\\beta\\le0$ なら圧力を加えると膨張し，$G\\le0$ ならずれに対して不安定になる．$\\mu=1/2$ は $\\beta=0$ の非圧縮の極限．）\n\n(3) 鋼：$\\mu=\\dfrac{E}{2G}-1=\\dfrac{200}{158}-1=0.27$，$\\beta=\\dfrac{3\\times0.468}{2\\times10^{11}}=7.0\\times10^{-12}\\,\\mathrm{Pa^{-1}}$．\nゴム：$1-2\\mu=\\dfrac{E\\beta}{3}=\\dfrac{3.0\\times10^6\\times4.0\\times10^{-10}}{3}=4.0\\times10^{-4}$，$\\mu=0.4998$．\n一軸引張のひずみ $\\varepsilon$ による体積ひずみは $(1-2\\mu)\\varepsilon=4.0\\times10^{-4}\\times0.10=4\\times10^{-5}$（増加）．ゴムは引き伸ばしても体積がほとんど変わらない（非圧縮性）．体積弾性率 $1/\\beta=2.5\\,\\mathrm{GPa}$ はずれ弾性率 $G\\approx1.0\\,\\mathrm{MPa}$ の約 2500 倍である．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\beta=3(1-2\\mu)/E$ と $G=E/2(1+\\mu)$ の正値性からポアソン比の範囲が決まり，$\\mu\\to1/2$ は体積弾性率が剛性率より桁違いに大きい非圧縮的な物質に対応する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン比",
+   "体積弾性率",
+   "圧縮率",
+   "ずれ弾性率",
+   "ゴム"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "同質量の中実棒と薄肉管のねじり比較",
+  "topic": "同質量の中実棒と薄肉管のねじり比較",
+  "statement": {
+   "tex": "剛性率 $G$ の材料で，長さ $l$ の (A) 半径 $r_0$ の中実丸棒と，(B) 半径 $R\\ (\\gg$ 肉厚$)$ の薄肉円管を作る．両者の断面積（すなわち質量）は等しい．\n\\begin{enumerate}\n\\item 内半径 $r_1$，外半径 $r_2$ の厚肉管のねじりモーメント $N$ とねじれ角 $\\varphi$ の関係を導き，$r_1\\to0$ と薄肉の極限を確かめよ．\n\\item (B) と (A) のねじり剛性 $N/\\varphi$ の比を求めよ．\n\\item 同じねじりモーメント $N$ を加えたとき，材料中の最大せん断応力の比 (B)/(A) を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N=\\dfrac{\\pi G(r_2^4-r_1^4)}{2l}\\varphi$　(2) $2R^2/r_0^2$　(3) $r_0/(2R)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 半径 $r$ の円筒面上の母線は角 $\\gamma=r\\varphi/l$ だけ傾くので，せん断応力 $\\tau=G r\\varphi/l$．半径 $r$，厚さ $dr$ の環が担うモーメントは $dN=\\tau\\cdot2\\pi r\\,dr\\cdot r$．\n\\[ N=\\int_{r_1}^{r_2}\\frac{2\\pi G\\varphi}{l}r^3dr=\\frac{\\pi G(r_2^4-r_1^4)}{2l}\\varphi. \\]\n$r_1=0$ で中実棒 $N=\\pi Gr^4\\varphi/(2l)$．$r_{1,2}=R\\mp\\Delta r/2$ で $r_2^4-r_1^4\\approx4R^3\\Delta r$ より薄肉管 $N=2\\pi R^3\\Delta r\\,G\\varphi/l$．\n\n(2) 断面積一致：$2\\pi R\\Delta r=\\pi r_0^2$．\n\\[ \\frac{C_B}{C_A}=\\frac{2\\pi R^3\\Delta r}{\\pi r_0^4/2}=\\frac{\\pi r_0^2R^2}{\\pi r_0^4/2}=\\frac{2R^2}{r_0^2}. \\]\n同じ材料量でも半径の大きい管にすれば剛性は $R^2$ に比例して増す．\n\n(3) $\\tau_{\\max}=Gr_{\\rm out}\\varphi/l=N r_{\\rm out}/J$（$J$ は $N=GJ\\varphi/l$ の $J$）．\n(A)：$\\tau_A=\\dfrac{2N}{\\pi r_0^3}$．(B)：$\\tau_B=\\dfrac{NR}{2\\pi R^3\\Delta r}=\\dfrac{N}{\\pi r_0^2R}$．\n\\[ \\frac{\\tau_B}{\\tau_A}=\\frac{r_0}{2R}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "ねじり剛性は断面の極二次モーメントで決まり，同じ質量なら材料を外側に置くほど有利．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N$：((pi G (r_2 ^(4)- r_1 ^(4)))/(2 l)) φ\n(2) 2 R ^(2)/ r_0 ^(2)\n(3) r_0 /(2 R)"
+  },
+  "methods": [],
+  "tags": [
+   "ねじり",
+   "剛性率",
+   "中空軸",
+   "極二次モーメント",
+   "せん断応力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "両端固定の管の途中にねじりを加える",
+  "topic": "両端固定の管の途中にねじりを加える",
+  "statement": {
+   "tex": "内径 $d_1=30\\,\\mathrm{mm}$，外径 $d_2=50\\,\\mathrm{mm}$，長さ $l=3.0\\,\\mathrm{m}$ の鋼管の両端を動かない壁に固定した．一方の端から $a=1.0\\,\\mathrm{m}$ の位置の断面に，管の軸のまわりのねじりモーメント $N$ を加えたところ，その断面が $\\varphi=2.0^\\circ$ 回転した．剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$．\n\\begin{enumerate}\n\\item $N$ を求めよ．\n\\item 2つの壁がそれぞれ管から受けるねじりモーメントを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N\\approx2.2\\,\\mathrm{kN\\cdot m}$　(2) 近い側（$a$ 側）の壁 $\\approx1.5\\,\\mathrm{kN\\cdot m}$，遠い側 $\\approx0.75\\,\\mathrm{kN\\cdot m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "長さ $s$ の管のねじり剛性は $C(s)=GJ/s$，$J=\\dfrac{\\pi(d_2^4-d_1^4)}{32}=5.34\\times10^{-7}\\,\\mathrm{m^4}$．\n\n荷重断面が角 $\\varphi$ 回ると，長さ $a$ の部分と長さ $l-a$ の部分がともに角 $\\varphi$ ねじれる（並列ばね）．それぞれが伝えるモーメントは\n\\[ N_1=\\frac{GJ}{a}\\varphi,\\qquad N_2=\\frac{GJ}{l-a}\\varphi,\\qquad N=N_1+N_2=\\frac{GJl}{a(l-a)}\\varphi. \\]\n\n(1) $N=\\dfrac{8.0\\times10^{10}\\cdot5.34\\times10^{-7}\\cdot3.0}{1.0\\cdot2.0}\\cdot0.0349\\approx2.24\\times10^3\\,\\mathrm{N\\cdot m}$．\n\n(2) $N_1=N(l-a)/l\\approx1.49\\,\\mathrm{kN\\cdot m}$（近い壁），$N_2=Na/l\\approx0.75\\,\\mathrm{kN\\cdot m}$（遠い壁）．近い側の短い部分ほど硬いので大きな分担になる．なお片端だけ固定した長さ $3.0\\,\\mathrm{m}$ の管を $2.0^\\circ$ ねじるのに要するモーメントは $\\approx0.5\\,\\mathrm{kN\\cdot m}$ で，両端固定にすると同じ回転角に約4.5倍のモーメントが要る．"
+   }
+  ],
+  "idea": {
+   "tex": "両端固定の不静定ねじり問題は2本のねじりばねの並列として解ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N$ [kN· m]：≈2.2\n(2) 近い側の壁 [kN· m]：≈1.5 ; 遠い側 [kN· m]：≈0.75"
+  },
+  "methods": [],
+  "tags": [
+   "ねじり",
+   "不静定",
+   "中空管",
+   "ねじり剛性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "伝達動力の制約：ねじれ角か応力か",
+  "topic": "伝達動力の制約：ねじれ角か応力か",
+  "statement": {
+   "tex": "半径 $r=1.50\\,\\mathrm{cm}$ の鋼の中実軸が角速度 $\\omega=120\\,\\mathrm{rad/s}$ で回転して動力を伝える．剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$．許容条件は (i) 軸全体のねじれ角 $\\varphi\\le2.5^\\circ$，(ii) 最大せん断応力 $\\tau\\le6.0\\times10^7\\,\\mathrm{Pa}$ の2つである．\n\\begin{enumerate}\n\\item 軸の長さ $l=2.00\\,\\mathrm{m}$ のとき，伝達できる最大動力を求めよ．どちらの条件が効いているか．\n\\item 2つの条件が同時に限界に達する軸の長さ $l^*$ を求めよ．$l<l^*$ のとき最大動力は $l$ にどう依存するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P\\approx17\\,\\mathrm{kW}$（ねじれ角の条件が効く．応力条件だけなら $38\\,\\mathrm{kW}$）　(2) $l^*=Gr\\varphi/\\tau\\approx0.87\\,\\mathrm{m}$；$l<l^*$ では $P=\\pi r^3\\tau\\omega/2\\approx38\\,\\mathrm{kW}$ で $l$ によらない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "伝達動力 $P=N\\omega$．中実軸では $N=\\dfrac{\\pi Gr^4}{2l}\\varphi$，表面のせん断応力 $\\tau=\\dfrac{Gr\\varphi}{l}=\\dfrac{2N}{\\pi r^3}$．\n\n(1) 条件 (i)：$N_1=\\dfrac{\\pi\\cdot8.0\\times10^{10}\\cdot(0.015)^4}{2\\cdot2.00}\\cdot0.04363=139\\,\\mathrm{N\\cdot m}$，$P_1=N_1\\omega\\approx1.7\\times10^4\\,\\mathrm{W}$．\n条件 (ii)：$N_2=\\dfrac{\\pi r^3\\tau}{2}=318\\,\\mathrm{N\\cdot m}$，$P_2\\approx3.8\\times10^4\\,\\mathrm{W}$．\n小さい方 $P\\approx17\\,\\mathrm{kW}$ が答えで，ねじれ角の条件が効いている．\n\n(2) 両条件が一致するのは $\\tau=Gr\\varphi/l$ が等しいとき：$l^*=\\dfrac{Gr\\varphi}{\\tau}=\\dfrac{8.0\\times10^{10}\\cdot0.015\\cdot0.04363}{6.0\\times10^7}\\approx0.87\\,\\mathrm{m}$．\n$l<l^*$ では許容ねじれ角に達する前に応力が限界に達するので，$P=\\pi r^3\\tau\\omega/2\\approx38\\,\\mathrm{kW}$ で一定．$l>l^*$ では $P\\propto1/l$ で減少する．"
+   }
+  ],
+  "idea": {
+   "tex": "軸の設計では剛性（ねじれ角）と強度（応力）の2条件があり，長さによって支配的な条件が切り替わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $P$ [kW]：≈17\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ねじり",
+   "動力伝達",
+   "許容応力",
+   "軸設計"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "同じ最大ひずみでの引張・曲げ・ねじりのエネルギー比較",
+  "topic": "同じ最大ひずみでの引張・曲げ・ねじりのエネルギー比較",
+  "statement": {
+   "tex": "質量 $m=3.1\\,\\mathrm{kg}$ の鋼の棒を次の3通りに変形させる．いずれも材料中のひずみ（せん断変形ではせん断ひずみ）の最大値が $\\varepsilon=1.0\\times10^{-3}$ となるようにする．鋼のヤング率 $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$，密度 $\\rho=7.8\\times10^{3}\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 一様に引き伸ばす．\n\\item 長方形断面の棒を一定の曲率で曲げる．\n\\item 円形断面の棒の一端を固定し他端をねじる．\n\\end{enumerate}\nそれぞれの弾性エネルギー $U_1,U_2,U_3$ を求めよ．"
+  },
+  "answer": {
+   "tex": "$U_1=\\dfrac{mE\\varepsilon^2}{2\\rho}\\approx40\\,\\mathrm{J}$，$U_2=\\dfrac{U_1}{3}\\approx13\\,\\mathrm{J}$，$U_3=\\dfrac{mG\\varepsilon^2}{4\\rho}\\approx8\\,\\mathrm{J}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "体積 $V=m/\\rho=3.97\\times10^{-4}\\,\\mathrm{m^3}$．\n\n(1) エネルギー密度 $u=E\\varepsilon^2/2$ が一様：$U_1=\\dfrac{E\\varepsilon^2V}{2}=\\dfrac{2.0\\times10^{11}\\cdot10^{-6}\\cdot3.97\\times10^{-4}}{2}\\approx40\\,\\mathrm{J}$．\n\n(2) 中立面から $z$ の位置のひずみ $\\varepsilon(z)=\\varepsilon\\cdot z/(h/2)$．長方形断面では $z$ は $[-h/2,h/2]$ で一様に分布し $\\langle z^2\\rangle=h^2/12$，$\\langle\\varepsilon^2(z)\\rangle=\\varepsilon^2/3$．\n$U_2=\\dfrac{E\\varepsilon^2V}{6}=U_1/3\\approx13\\,\\mathrm{J}$．\n\n(3) せん断ひずみ $\\gamma(r)=\\varepsilon r/R$，$u=G\\gamma^2/2$．円断面で $\\langle r^2\\rangle=\\dfrac{\\int_0^Rr^2\\,2\\pi r\\,dr}{\\pi R^2}=\\dfrac{R^2}{2}$．\n$U_3=\\dfrac{G\\varepsilon^2V}{4}=\\dfrac{8.0\\times10^{10}\\cdot10^{-6}\\cdot3.97\\times10^{-4}}{4}\\approx7.9\\,\\mathrm{J}$．\n\n材料が許容ひずみで決まるとき，エネルギーを蓄える効率は一様引張が最大で，曲げ・ねじりでは中立部分が「遊んで」いる分だけ減る（ばね設計の基本的考え方）．"
+   }
+  ],
+  "idea": {
+   "tex": "同じ最大ひずみでも変形様式によってひずみ分布が違い，蓄えられる弾性エネルギーが変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弾性エネルギー",
+   "エネルギー密度",
+   "引張",
+   "曲げ",
+   "ねじり"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "おもりを吊るした棒の弾性エネルギー",
+  "topic": "おもりを吊るした棒の弾性エネルギー",
+  "statement": {
+   "tex": "長さ $l$，断面積 $A$，密度 $\\rho$，ヤング率 $E$ の一様な棒の上端を天井に固定し，下端に質量 $M$ のおもりを吊るして静止させた（重力加速度 $g$）．\n\\begin{enumerate}\n\\item 棒に蓄えられた弾性エネルギー $U$ を求めよ．\n\\item 棒の伸び $\\Delta l$ を求めよ．\n\\item $M=0$ のとき，$U$ を $\\Delta l$ で表し，同じ伸び $\\Delta l$ を一様な引張で与えた場合のエネルギー $EA(\\Delta l)^2/(2l)$ の何倍か答えよ．その理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $U=\\dfrac{g^2}{2EA}\\left(M^2l+\\rho AMl^2+\\dfrac{\\rho^2A^2l^3}{3}\\right)$　(2) $\\Delta l=\\dfrac{Mgl}{EA}+\\dfrac{\\rho gl^2}{2E}$　(3) $U=\\dfrac{2EA(\\Delta l)^2}{3l}$，$4/3$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "下端から上向きに $x$ をとると，断面 $x$ の張力は $T(x)=Mg+\\rho Agx$．長さ $dx$ の部分のエネルギーは $\\dfrac{T^2}{2EA}dx$，伸びは $\\dfrac{T}{EA}dx$．\n\n(1) $U=\\displaystyle\\int_0^l\\frac{(Mg+\\rho Agx)^2}{2EA}dx=\\frac{g^2}{2EA}\\left(M^2l+\\rho AMl^2+\\frac{\\rho^2A^2l^3}{3}\\right)$．\n\n(2) $\\Delta l=\\displaystyle\\int_0^l\\frac{Mg+\\rho Agx}{EA}dx=\\frac{Mgl}{EA}+\\frac{\\rho gl^2}{2E}$．\n\n(3) $M=0$：$U=\\dfrac{\\rho^2g^2Al^3}{6E}$，$\\Delta l=\\dfrac{\\rho gl^2}{2E}$ より $\\rho g=2E\\Delta l/l^2$，\n\\[ U=\\frac{A l^3}{6E}\\cdot\\frac{4E^2(\\Delta l)^2}{l^4}=\\frac{2EA(\\Delta l)^2}{3l}=\\frac43\\cdot\\frac{EA(\\Delta l)^2}{2l}. \\]\n全伸び $\\Delta l=\\int\\varepsilon\\,dx$ を固定したとき $U=\\frac{EA}{2}\\int\\varepsilon^2dx$ はひずみが一様なとき最小になる（コーシー＝シュワルツ不等式）．自重による伸びはひずみが上端ほど大きい不均一分布なので，エネルギーは一様の場合より大きい．"
+   }
+  ],
+  "idea": {
+   "tex": "張力が位置によって変わる棒のエネルギーと伸びを積分で求め，不均一ひずみではエネルギーが一様の場合より大きいことを示す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $U$：((g ^(2))/(2 E A))(M ^(2) l + ρ A M l ^(2)+((ρ ^(2) A ^(2) l ^(3))/(3)))\n(2) $\\Delta l$：((M g l)/(E A))+((ρ g l ^(2))/(2 E))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弾性エネルギー",
+   "自重",
+   "ひずみ分布",
+   "不等式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "段付き軸のねじりエネルギー",
+  "topic": "段付き軸のねじりエネルギー",
+  "statement": {
+   "tex": "長さ $l/2$ ずつの2つの部分からなる鋼の段付き丸棒がある．一方の部分の半径は $r=10\\,\\mathrm{mm}$，他方は $r/2$ で，全長 $l=1.0\\,\\mathrm{m}$．太い側の端を固定し，細い側の端を軸のまわりに $\\varphi=6.0^\\circ$ ねじった．剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$．\n\\begin{enumerate}\n\\item 太い部分と細い部分のねじれ角をそれぞれ求めよ．\n\\item 棒全体の弾性エネルギー $U$ を求め，全長が半径 $r$ の一様な棒を同じ角 $\\varphi$ だけねじった場合のエネルギー $U_0$ と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 太い部分 $\\varphi/17\\approx0.35^\\circ$，細い部分 $16\\varphi/17\\approx5.6^\\circ$　(2) $U=\\dfrac{\\pi Gr^4\\varphi^2}{34l}\\approx0.81\\,\\mathrm{J}$，$U_0=\\dfrac{\\pi Gr^4\\varphi^2}{4l}\\approx6.9\\,\\mathrm{J}$（$U/U_0=2/17$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "長さ $s$，半径 $\\rho$ の丸棒のねじり剛性 $k=\\dfrac{\\pi G\\rho^4}{2s}$．\n太い部分 $k_1=\\dfrac{\\pi Gr^4}{l}$，細い部分 $k_2=\\dfrac{\\pi G(r/2)^4}{l}=\\dfrac{k_1}{16}$．\n\n(1) 直列につながるので両部分のモーメントは等しく $k_1\\varphi_1=k_2\\varphi_2$，$\\varphi_1+\\varphi_2=\\varphi$．\n$\\varphi_1=\\dfrac{k_2}{k_1+k_2}\\varphi=\\dfrac{\\varphi}{17}\\approx0.35^\\circ$，$\\varphi_2=\\dfrac{16\\varphi}{17}\\approx5.65^\\circ$．\n\n(2) 合成剛性 $k=\\dfrac{k_1k_2}{k_1+k_2}=\\dfrac{k_1}{17}$．\n\\[ U=\\frac{k\\varphi^2}{2}=\\frac{\\pi Gr^4\\varphi^2}{34l}=\\frac{\\pi\\cdot8.0\\times10^{10}\\cdot10^{-8}\\cdot(0.1047)^2}{34}\\approx0.81\\,\\mathrm{J}. \\]\n一様な棒では $U_0=\\dfrac{\\pi Gr^4\\varphi^2}{4l}\\approx6.9\\,\\mathrm{J}$．$U/U_0=4/34=2/17$．ねじれはほぼ細い部分に集中する．"
+   }
+  ],
+  "idea": {
+   "tex": "ねじりばねの直列結合で，ねじれと弾性エネルギーは柔らかい（細い）部分に集中する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $U$ [J]：≈0.81 ; $U_0$ [J]：≈6.9"
+  },
+  "methods": [],
+  "tags": [
+   "ねじり",
+   "弾性エネルギー",
+   "段付き軸",
+   "直列ばね"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 15,
+  "theme": "ねじられた棒のエネルギー分布と中空化",
+  "topic": "ねじられた棒のエネルギー分布と中空化",
+  "statement": {
+   "tex": "半径 $R$，長さ $l$，剛性率 $G$ の丸棒の一端を固定し，他端を角 $\\varphi$ ねじる．\n\\begin{enumerate}\n\\item 弾性エネルギーの体積密度 $u$ を軸からの距離 $r$ の関数として求めよ．\n\\item 全エネルギーのうち $r>R/2$ の部分に蓄えられている割合を求めよ．\n\\item 中心の $r<R/2$ の部分をくり抜いた管に，元の棒と同じねじりモーメント $N$ を加えた．管の弾性エネルギーは元の棒の何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=\\dfrac{G\\varphi^2r^2}{2l^2}$　(2) $15/16$　(3) $16/15$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) せん断ひずみ $\\gamma=r\\varphi/l$，$u=\\dfrac{G\\gamma^2}{2}=\\dfrac{G\\varphi^2r^2}{2l^2}$．\n\n(2) 半径 $r$ の薄い円筒殻の体積 $2\\pi rl\\,dr$ より，エネルギーは $\\propto\\int r^3dr$．\n\\[ \\frac{\\int_{R/2}^Rr^3dr}{\\int_0^Rr^3dr}=1-\\frac1{16}=\\frac{15}{16}. \\]\n\n(3) モーメント $N$ を固定すると $U=\\dfrac{N^2}{2k}$，$k=\\dfrac{\\pi G(R^4-r_1^4)}{2l}$．くり抜きで $k$ は $15/16$ 倍になるので，$U$ は $16/15$ 倍．\n（角 $\\varphi$ を固定すれば $U$ は $15/16$ 倍で，(2) と同じ割合．質量は $3/4$ に減るが剛性は $6\\%$ 余りしか減らない．）"
+   }
+  ],
+  "idea": {
+   "tex": "ねじりのエネルギー密度は r^2 に比例し，ほとんどが外周部に蓄えられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $u$：((G φ ^(2) r ^(2))/(2 l ^(2)))\n(2) 15/16\n(3) 16/15倍"
+  },
+  "methods": [],
+  "tags": [
+   "ねじり",
+   "エネルギー密度",
+   "中空軸"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 2,
+  "minutes": 20,
+  "theme": "海水の圧縮で蓄えられる弾性エネルギーと海面低下",
+  "topic": "海水の圧縮で蓄えられる弾性エネルギーと海面低下",
+  "statement": {
+   "tex": "水の圧縮率を $\\beta=4.9\\times10^{-10}\\,\\mathrm{Pa^{-1}}$（一定），圧縮されていない水の密度を $\\rho=1.0\\times10^3\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$ とし，深さ $H=4000\\,\\mathrm{m}$ の海を考える（大気圧は無視し，密度変化は小さいとする）．\n\\begin{enumerate}\n\\item 海底での弾性エネルギーの体積密度 $u$ を求めよ．\n\\item 海面 $1\\,\\mathrm{m^2}$ あたりの水柱に蓄えられた弾性エネルギーを求めよ．\n\\item 水が非圧縮であった場合に比べて，海面は何 m 低くなっているか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=\\beta(\\rho gH)^2/2\\approx3.8\\times10^5\\,\\mathrm{J/m^3}$　(2) $\\beta\\rho^2g^2H^3/6\\approx5.0\\times10^8\\,\\mathrm{J/m^2}$　(3) $\\beta\\rho gH^2/2\\approx38\\,\\mathrm{m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 圧力 $p$ で体積 $V$ を圧縮する仕事 $\\int p\\,dV'$ で，$dV'/V=\\beta\\,dp$ より $u=\\int_0^p\\beta p'\\,dp'=\\beta p^2/2$．海底 $p=\\rho gH=3.92\\times10^7\\,\\mathrm{Pa}$ で\n$u=\\dfrac{4.9\\times10^{-10}\\cdot(3.92\\times10^7)^2}{2}\\approx3.8\\times10^5\\,\\mathrm{J/m^3}$．\n\n(2) 深さ $z$ で $p=\\rho gz$ として\n\\[ \\int_0^H\\frac{\\beta(\\rho gz)^2}{2}dz=\\frac{\\beta\\rho^2g^2H^3}{6}=\\frac{4.9\\times10^{-10}\\cdot(9.8\\times10^3)^2\\cdot(4.0\\times10^3)^3}{6}\\approx5.0\\times10^8\\,\\mathrm{J/m^2}. \\]\n\n(3) 深さ $z$ の層の厚さは相対的に $\\beta\\rho gz$ だけ縮むので，全体の縮み\n\\[ \\Delta H=\\int_0^H\\beta\\rho gz\\,dz=\\frac{\\beta\\rho gH^2}{2}\\approx38\\,\\mathrm{m}. \\]\n水の圧縮率は小さいが，海全体ではおよそ $40\\,\\mathrm{m}$ もの海面低下に相当する．"
+   }
+  ],
+  "idea": {
+   "tex": "液体の圧縮エネルギー密度 βp^2/2 を静水圧分布で積分し，海洋規模に拡張する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $u$ [J/m³]：≈3.8e5\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "圧縮率",
+   "弾性エネルギー",
+   "静水圧",
+   "海洋"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-01-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -479,6 +1563,354 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 3,
+  "minutes": 30,
+  "theme": "体積偶力がある媒質の非対称応力",
+  "topic": "体積偶力がある媒質の非対称応力",
+  "statement": {
+   "tex": "応力テンソルを「法線が $x_l$ 方向の面に働く単位面積あたりの力の $x_k$ 成分」を $T_{kl}$ と定義する（面に働く力は $t_k=\\sum_lT_{kl}n_l$）．通常は角運動量のつり合いから $T_{kl}=T_{lk}$ が導かれるが，ここでは物体内部に単位体積あたりの偶力（体積偶力）$\\boldsymbol c$ が働いているとする．\n\\begin{enumerate}\n\\item 辺の長さ $\\delta$ の微小立方体の中心まわりの回転の方程式を考え，微小量の次数を比較することにより，平衡でも運動中でも\n\\[ \\sum_{k,l}\\varepsilon_{ikl}T_{kl}=c_i \\]\nが成り立つことを示せ（$\\varepsilon_{ikl}$ は Levi-Civita 記号）．\n\\item 一様に磁化した磁性体（磁化 $\\boldsymbol M$）が一様磁場 $\\boldsymbol B$ の中にあると，単位体積あたり $\\boldsymbol M\\times\\boldsymbol B$ のトルクを受ける．$\\boldsymbol M=M\\hat{\\boldsymbol x}_1$，$\\boldsymbol B=B\\hat{\\boldsymbol x}_2$，$M=1.0\\times10^6\\ \\mathrm{A/m}$，$B=0.10\\ \\mathrm{T}$ のとき，応力の非対称部分 $T_{12}-T_{21}$ を求めよ．\n\\item 応力テンソルの反対称部分 $\\frac12(T_{kl}-T_{lk})$ は，直交変換のもとで（軸性）ベクトル $\\boldsymbol c/2$ と同じ 3 成分として振る舞うことを，(1) を用いて説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 面の力のモーメントは $-\\varepsilon_{ikl}T_{kl}\\delta^3$（3 次），角運動量変化は 5 次なので $\\varepsilon_{ikl}T_{kl}=c_i$　(2) $T_{12}-T_{21}=MB=1.0\\times10^5\\ \\mathrm{Pa}$　(3) $\\frac12(T_{kl}-T_{lk})=\\frac12\\sum_i\\varepsilon_{ikl}c_i$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 立方体の中心を原点にとる．法線 $\\pm\\hat{\\boldsymbol x}_l$ の面（中心 $\\pm\\frac\\delta2\\hat{\\boldsymbol x}_l$）に働く力は $\\pm T_{kl}\\delta^2$（$k$ 成分，主要項）．中心まわりのモーメントの $i$ 成分は，両面を合わせて\n\\[\n\\sum_{j,k}\\varepsilon_{ijk}\\left(\\tfrac\\delta2\\delta_{jl}\\right)\\left(T_{kl}\\delta^2\\right)\\times2=\\sum_k\\varepsilon_{ilk}T_{kl}\\delta^3 .\n\\]\n$l$ について和をとると，表面力のモーメントは $\\sum_{k,l}\\varepsilon_{ilk}T_{kl}\\delta^3=-\\sum_{k,l}\\varepsilon_{ikl}T_{kl}\\delta^3$．応力の勾配による補正は $\\delta^4$，体積力 $\\rho\\boldsymbol K$ のモーメントも $\\delta^4$，角運動量の時間変化は（質量 $\\sim\\delta^3$，腕 $\\sim\\delta$，速度差 $\\sim\\delta$ なので）$\\delta^5$ の微小量．一方，体積偶力のモーメントは $\\boldsymbol c\\,\\delta^3$ で 3 次．したがって 3 次の項のつり合いから\n\\[\n-\\sum_{k,l}\\varepsilon_{ikl}T_{kl}+c_i=0 .\n\\]\n例えば $i=1$ では $T_{23}-T_{32}=c_1$．$\\boldsymbol c=0$ なら通常の対称性 $T_{kl}=T_{lk}$ に戻る．\n\n(2) $\\boldsymbol c=\\boldsymbol M\\times\\boldsymbol B=MB\\,\\hat{\\boldsymbol x}_3$．$i=3$ の式は $T_{12}-T_{21}=c_3=MB=1.0\\times10^6\\times0.10=1.0\\times10^5\\ \\mathrm{Pa}$．\n\n(3) $\\varepsilon_{ikl}$ と恒等式 $\\sum_i\\varepsilon_{ikl}\\varepsilon_{imn}=\\delta_{km}\\delta_{ln}-\\delta_{kn}\\delta_{lm}$ より\n\\[\n\\sum_i\\varepsilon_{ikl}c_i=\\sum_{m,n}(\\delta_{km}\\delta_{ln}-\\delta_{kn}\\delta_{lm})T_{mn}=T_{kl}-T_{lk}.\n\\]\nしたがって反対称部分は $\\frac12\\sum_i\\varepsilon_{ikl}c_i$ で，3 成分 $c_i$ だけで決まる．$T_{kl}$ は 2 階テンソル，$\\varepsilon_{ikl}$ は（右手系の直交変換で）不変なので，$c_i=\\sum\\varepsilon_{ikl}T_{kl}$ はベクトルとして変換する（反転を含めると軸性ベクトル）．"
+   }
+  ],
+  "idea": {
+   "tex": "応力の対称性は「表面力のモーメント（3 次）より高次のものしか体積に効かない」ことから来る．3 次の体積偶力があれば対称性が破れ，その反対称部分が体積偶力そのものになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "応力テンソル",
+   "対称性",
+   "角運動量",
+   "体積偶力",
+   "Levi-Civita"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 3,
+  "minutes": 40,
+  "theme": "楕円座標のひずみと曲率",
+  "topic": "楕円座標のひずみと曲率",
+  "statement": {
+   "tex": "直交曲線座標 $(\\alpha_1,\\alpha_2,\\alpha_3)$ の線素を $ds^2=\\sum_iH_i^2d\\alpha_i^2$（$H_i$ はスケール因子）とし，変位の各座標方向成分を $u_i$ とすると，微小ひずみは\n\\[\ne_{ii}=\\frac1{H_i}\\frac{\\partial u_i}{\\partial\\alpha_i}+\\sum_{j\\neq i}\\frac{u_j}{H_iH_j}\\frac{\\partial H_i}{\\partial\\alpha_j},\\qquad\ne_{ij}=\\frac12\\left\\{\\frac{H_i}{H_j}\\frac{\\partial}{\\partial\\alpha_j}\\left(\\frac{u_i}{H_i}\\right)+\\frac{H_j}{H_i}\\frac{\\partial}{\\partial\\alpha_i}\\left(\\frac{u_j}{H_j}\\right)\\right\\}\\ (i\\neq j)\n\\]\nで与えられる．平面内の楕円座標 $x=c\\cosh\\xi\\cos\\eta$，$y=c\\sinh\\xi\\sin\\eta$（$c>0$）を考える．\n\\begin{enumerate}\n\\item スケール因子 $H_\\xi,H_\\eta$ を求めよ．\n\\item 共焦点楕円（$\\xi=$ 一定の曲線）の各点が，その楕円の外向き法線方向に一定の距離 $U$（微小）だけ変位する：$u_\\xi=U$，$u_\\eta=0$．$e_{\\xi\\xi},e_{\\eta\\eta},e_{\\xi\\eta}$ を求めよ．\n\\item 半長軸 $a$，半短軸 $b$ の楕円（$\\xi=\\xi_0$）の長軸の端（$\\eta=0$）と短軸の端（$\\eta=\\pi/2$）での周方向ひずみ $e_{\\eta\\eta}$ を $a,b,U$ で表せ．その結果を楕円の曲率 $\\kappa$ を用いて解釈せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H_\\xi=H_\\eta=H=c\\sqrt{\\sinh^2\\xi+\\sin^2\\eta}$　(2) $e_{\\xi\\xi}=0$，$e_{\\eta\\eta}=\\dfrac{Uc^2\\sinh\\xi\\cosh\\xi}{H^3}$，$e_{\\xi\\eta}=-\\dfrac{Uc^2\\sin\\eta\\cos\\eta}{2H^3}$　(3) 長軸端 $Ua/b^2$，短軸端 $Ub/a^2$；いずれも $e_{\\eta\\eta}=U\\kappa$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_\\xi(x,y)=c(\\sinh\\xi\\cos\\eta,\\cosh\\xi\\sin\\eta)$ より\n$H_\\xi^2=c^2(\\sinh^2\\xi\\cos^2\\eta+\\cosh^2\\xi\\sin^2\\eta)=c^2(\\sinh^2\\xi+\\sin^2\\eta)$．$\\partial_\\eta(x,y)=c(-\\cosh\\xi\\sin\\eta,\\sinh\\xi\\cos\\eta)$ からも同じ値．よって $H_\\xi=H_\\eta=H=c\\sqrt{\\sinh^2\\xi+\\sin^2\\eta}$（等角写像なので等しい）．\n$\\partial_\\xi H=c^2\\sinh\\xi\\cosh\\xi/H$，$\\partial_\\eta H=c^2\\sin\\eta\\cos\\eta/H$．\n\n(2) $e_{\\xi\\xi}=\\frac1H\\partial_\\xi U+\\frac{u_\\eta}{H^2}\\partial_\\eta H=0$（法線方向の変位が一様なので法線方向の伸びはない）．\n\\[\ne_{\\eta\\eta}=\\frac1H\\partial_\\eta u_\\eta+\\frac{u_\\xi}{H^2}\\partial_\\xi H=\\frac{U}{H^2}\\cdot\\frac{c^2\\sinh\\xi\\cosh\\xi}{H}=\\frac{Uc^2\\sinh\\xi\\cosh\\xi}{H^3}.\n\\]\n\\[\ne_{\\xi\\eta}=\\frac12\\left\\{\\partial_\\eta\\left(\\frac UH\\right)+\\partial_\\xi(0)\\right\\}=-\\frac U{2H^2}\\partial_\\eta H=-\\frac{Uc^2\\sin\\eta\\cos\\eta}{2H^3}.\n\\]\n（共焦点楕円は互いに平行曲線ではないので，法線ベクトル場は回転を伴い，ずれ成分が残る．）\n\n(3) $a=c\\cosh\\xi_0$，$b=c\\sinh\\xi_0$．$\\eta=0$ では $H=c\\sinh\\xi_0=b$ で $e_{\\eta\\eta}=Uc^2\\sinh\\xi_0\\cosh\\xi_0/b^3=U\\,ab/b^3=Ua/b^2$．$\\eta=\\pi/2$ では $H^2=c^2(\\sinh^2\\xi_0+1)=c^2\\cosh^2\\xi_0=a^2$，$e_{\\eta\\eta}=Uab/a^3=Ub/a^2$．楕円の曲率は長軸端で $a/b^2$，短軸端で $b/a^2$ だから，どちらでも $e_{\\eta\\eta}=U\\kappa$．一般に，曲線を法線方向に $U$ だけ平行移動すると長さの伸び率は $U\\kappa$ である（半径 $R$ の円なら $U/R$）．公式の $\\frac{1}{H_\\eta H_\\xi}\\partial_\\xi H_\\eta$ は $\\xi$ 一定曲線の曲率そのものである．"
+   }
+  ],
+  "idea": {
+   "tex": "一般直交座標のひずみ公式で，項 $\\frac{u_j}{H_iH_j}\\partial_jH_i$ は座標曲線の曲率を表す．一様な法線変位による周方向ひずみは $U\\kappa$ で，楕円の長軸端で最大になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ひずみテンソル",
+   "直交曲線座標",
+   "楕円座標",
+   "スケール因子",
+   "曲率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 3,
+  "minutes": 40,
+  "theme": "球状・円筒空洞の膨張と内径保持",
+  "topic": "球状・円筒空洞の膨張と内径保持",
+  "statement": {
+   "tex": "Lamé 定数 $\\lambda,\\mu$ の等方弾性体について，変位が半径方向成分 $u_r(r)$ だけの球対称・軸対称な静的問題を考える（体積力なし）．\n\\begin{enumerate}\n\\item 無限に広い弾性体中の半径 $r_1$ の球形空洞に圧力 $p$ を加える．変位，応力 $T_{rr},T_{\\theta\\theta}$，空洞表面の変位 $u_r(r_1)$ を求めよ．また，この変形での体積ひずみを求めよ．\n\\item 無限に広い弾性体中の半径 $r_1$ の長い円筒形空洞（軸方向のひずみ $0$）に圧力 $p$ を加えたときの $u_r(r_1)$ を求め，(1) と比較せよ．\n\\item 内外半径 $r_1,r_2$ の中空球の内面に圧力 $p_1$ を加える．同時に外面に圧力 $p_2$ を加えて，内面の半径がまったく変わらないようにしたい．$p_2$ を求めよ．また $p_2<p_1$ であることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u_r=\\dfrac{pr_1^3}{4\\mu r^2}$，$T_{rr}=-p\\dfrac{r_1^3}{r^3}$，$T_{\\theta\\theta}=T_{\\varphi\\varphi}=\\dfrac p2\\dfrac{r_1^3}{r^3}$，$u_r(r_1)=\\dfrac{pr_1}{4\\mu}$，体積ひずみ $0$　(2) $u_r(r_1)=\\dfrac{pr_1}{2\\mu}$（球の 2 倍）　(3) $p_2=p_1\\dfrac{3\\lambda+2\\mu+4\\mu r_1^3/r_2^3}{3(\\lambda+2\\mu)}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "球対称の場合，$\\mathrm{rot}\\,\\boldsymbol u=0$ で $\\nabla^2\\phi=$ 一定から $u_r=Ar+B/r^2$．ひずみ $e_{rr}=A-2B/r^3$，$e_{\\theta\\theta}=e_{\\varphi\\varphi}=A+B/r^3$，体積ひずみ $3A$．応力は $T_{kl}=\\lambda\\delta_{kl}\\sum e+2\\mu e_{kl}$ より\n\\[\nT_{rr}=(3\\lambda+2\\mu)A-\\frac{4\\mu B}{r^3},\\qquad T_{\\theta\\theta}=(3\\lambda+2\\mu)A+\\frac{2\\mu B}{r^3}.\n\\]\n(1) 無限遠で変位が 0 なので $A=0$．$T_{rr}(r_1)=-p$ から $B=pr_1^3/(4\\mu)$．よって $u_r=\\frac{pr_1^3}{4\\mu r^2}$，$T_{rr}=-pr_1^3/r^3$，$T_{\\theta\\theta}=T_{\\varphi\\varphi}=\\frac p2r_1^3/r^3$，$u_r(r_1)=\\frac{pr_1}{4\\mu}$．体積ひずみは $3A=0$：周囲の材料は体積を変えずに純粋なずれだけで変形するので，$\\lambda$（体積弾性率）はまったく効かない．\n\n(2) 軸対称・平面ひずみでは $u_r=Ar+B/r$，$e_{rr}=A-B/r^2$，$e_{\\theta\\theta}=A+B/r^2$，$T_{rr}=2(\\lambda+\\mu)A-2\\mu B/r^2$．$A=0$，$T_{rr}(r_1)=-p$ より $B=pr_1^2/(2\\mu)$，$u_r(r_1)=\\frac{pr_1}{2\\mu}$．球形空洞の 2 倍膨らむ：球では周方向に 2 方向で支えられるのに対し，円筒では 1 方向（$\\theta$）でしか支えられないためである．こちらも体積ひずみ $0$．\n\n(3) $u_r(r_1)=Ar_1+B/r_1^2=0$ より $B=-Ar_1^3$．$T_{rr}(r_1)=(3\\lambda+2\\mu)A+4\\mu A=-p_1$ より $A=-\\dfrac{p_1}{3\\lambda+6\\mu}$．\n\\[\np_2=-T_{rr}(r_2)=-A\\left(3\\lambda+2\\mu+4\\mu\\frac{r_1^3}{r_2^3}\\right)=p_1\\frac{3\\lambda+2\\mu+4\\mu r_1^3/r_2^3}{3(\\lambda+2\\mu)}.\n\\]\n$r_1<r_2$ なので分子 $<3\\lambda+2\\mu+4\\mu=3(\\lambda+2\\mu)$，よって $p_2<p_1$．内面を動かさないためには外圧は内圧より小さくてよい：$A<0$ で球殻全体が一様に圧縮され，その分の $T_{rr}$ の差が殻の厚さで支えられるためである．"
+   }
+  ],
+  "idea": {
+   "tex": "球対称解 $u_r=Ar+B/r^2$ の $B$ 項は純粋なずれで体積変化を伴わないため，無限媒質中の空洞膨張は $\\mu$ だけで決まる．内径固定の条件は $u_r(r_1)=0$ の境界条件の組み換えで解ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $u_r(r_1)$：((p r_1)/(2 μ))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "弾性体のつり合い",
+   "中空球",
+   "空洞",
+   "Lame定数",
+   "境界値問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 3,
+  "minutes": 25,
+  "theme": "円筒と半球の継ぎ目：変形の適合と破裂",
+  "topic": "円筒と半球の継ぎ目：変形の適合と破裂",
+  "statement": {
+   "tex": "半径 $r=25\\,\\mathrm{mm}$ のガラスの円筒容器の両端が半球でふさがれている．円筒部の壁の厚さは $t_c=1.0\\,\\mathrm{mm}$ である．ガラスの引張強さ $\\sigma_m=50\\,\\mathrm{MPa}$，ポアソン比 $\\mu=0.25$ とし，薄肉近似を用いる（外圧は 0）．\n\\begin{enumerate}\n\\item 円筒部の周方向応力と軸方向応力を内圧 $p$ で表し，円筒部が破れる内圧を求めよ．\n\\item 内圧をかけたとき，円筒部と半球部の半径の増加が等しくなる（継ぎ目で曲げが生じない）ための半球部の壁の厚さ $t_s$ を求めよ．\n\\item (2) の厚さにしたとき，容器の円筒部と半球部のどちらが先に破れるか．そのときの内圧を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sigma_\\theta=pr/t_c$，$\\sigma_z=pr/(2t_c)$；$p=\\sigma_mt_c/r=2.0\\,\\mathrm{MPa}$　(2) $t_s=\\dfrac{1-\\mu}{2-\\mu}t_c=0.43\\,\\mathrm{mm}$　(3) 半球部が先，$p=\\dfrac{2\\sigma_mt_s}{r}=1.7\\,\\mathrm{MPa}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 軸を含む面で半分に切ったつり合い：$2\\sigma_\\theta t_cL=p\\cdot2rL$ より $\\sigma_\\theta=pr/t_c$．軸に垂直な断面：$\\sigma_z\\cdot2\\pi rt_c=p\\pi r^2$ より $\\sigma_z=pr/(2t_c)$．大きいのは周方向で，$\\sigma_\\theta=\\sigma_m$ から $p=\\sigma_mt_c/r=50\\times10^6\\times10^{-3}/0.025=2.0\\,\\mathrm{MPa}$（約 20 気圧）．\n\n(2) 円筒部の周方向ひずみ（半径の相対増加）：\n\\[\n\\frac{\\Delta r_c}{r}=\\frac{\\sigma_\\theta-\\mu\\sigma_z}{E}=\\frac{pr}{Et_c}\\left(1-\\frac\\mu2\\right).\n\\]\n半球部では 2 方向とも $\\sigma=pr/(2t_s)$ なので\n\\[\n\\frac{\\Delta r_s}{r}=\\frac{(1-\\mu)\\sigma}{E}=\\frac{pr(1-\\mu)}{2Et_s}.\n\\]\n等しいとおくと $t_s=\\dfrac{1-\\mu}{2-\\mu}t_c=\\dfrac{0.75}{1.75}\\times1.0=0.43\\,\\mathrm{mm}$．\n\n(3) 半球部の応力 $pr/(2t_s)$ が $\\sigma_m$ に達する内圧は $p=2\\sigma_mt_s/r=2\\times50\\times10^6\\times0.4286\\times10^{-3}/0.025=1.7\\,\\mathrm{MPa}$ で，円筒部の $2.0\\,\\mathrm{MPa}$ より小さい．同じ厚さなら球殻は円筒より 2 倍強いが，変形をそろえるために半分以下まで薄くすると逆に弱点になる．"
+   }
+  ],
+  "idea": {
+   "tex": "薄肉円筒の周方向応力は球殻の 2 倍だが，継ぎ目で変形をそろえる条件ではポアソン比を通じて球殻側を薄くする必要があり，強度の大小が逆転する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $t_s$ [mm]：≈0.43\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "薄肉容器",
+   "周方向応力",
+   "ポアソン比",
+   "変形の適合条件"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 3,
+  "minutes": 25,
+  "theme": "回転棒の伸びと慣性モーメントの変化",
+  "topic": "回転棒の伸びと慣性モーメントの変化",
+  "statement": {
+   "tex": "長さ $l$（回転していないとき），密度 $\\rho$，ヤング率 $E$，断面積 $S$ の一様な細い棒が，一端を通る鉛直軸のまわりに水平面内を角速度 $\\omega$ で回転している．変形は小さいとし，$\\rho\\omega^2l^2/E$ の 1 次までを考える．\n\\begin{enumerate}\n\\item 軸から距離 $r$ の断面の張力 $T(r)$ と，その断面の変位 $u(r)$ を求めよ．\n\\item 棒全体の伸び $\\Delta l$ を求めよ．\n\\item 回転軸まわりの慣性モーメントの相対的な増加 $\\Delta I/I$ を求めよ．これは「棒が一様に $\\Delta l/l$ だけ伸びた」と考えた値 $2\\Delta l/l$ と一致するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T=\\dfrac{\\rho S\\omega^2}{2}(l^2-r^2)$，$u=\\dfrac{\\rho\\omega^2r(3l^2-r^2)}{6E}$　(2) $\\Delta l=\\dfrac{\\rho\\omega^2l^3}{3E}$　(3) $\\dfrac{\\Delta I}{I}=\\dfrac{4\\rho\\omega^2l^2}{5E}$；$2\\Delta l/l=\\dfrac{2\\rho\\omega^2l^2}{3E}$ とは一致しない（1.2 倍大きい）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 距離 $r$ より外側の部分を向心運動させる力が張力：\n\\[\nT(r)=\\int_r^l\\rho S\\omega^2r'\\,dr'=\\frac{\\rho S\\omega^2}{2}(l^2-r^2).\n\\]\n（1 次の精度では変形前の位置で積分してよい．）ひずみ $du/dr=T/(ES)$，$u(0)=0$ より\n\\[\nu(r)=\\frac{\\rho\\omega^2}{2E}\\left(l^2r-\\frac{r^3}{3}\\right)=\\frac{\\rho\\omega^2r(3l^2-r^2)}{6E}.\n\\]\n(2) $\\Delta l=u(l)=\\dfrac{\\rho\\omega^2l^3}{3E}$．\n\n(3) $I=\\int_0^l\\rho S(r+u)^2dr\\approx I_0+2\\rho S\\int_0^lru\\,dr$，$I_0=\\rho Sl^3/3$．\n\\[\n\\Delta I=\\frac{\\rho^2S\\omega^2}{E}\\int_0^l\\left(l^2r^2-\\frac{r^4}{3}\\right)dr=\\frac{\\rho^2S\\omega^2}{E}\\left(\\frac{l^5}{3}-\\frac{l^5}{15}\\right)=\\frac{4\\rho^2S\\omega^2l^5}{15E}.\n\\]\nよって $\\dfrac{\\Delta I}{I_0}=\\dfrac{4\\rho\\omega^2l^2}{5E}$．一様な伸びなら $2\\Delta l/l=\\dfrac{2\\rho\\omega^2l^2}{3E}$ で，実際はその $6/5$ 倍．張力は軸に近いほど大きいので内側がよく伸び，外側の部分全体が外へずれるため，慣性モーメントへの寄与が一様伸びの見積もりより大きくなる．"
+   }
+  ],
+  "idea": {
+   "tex": "回転棒のひずみは軸付近で大きく一様でないので，慣性モーメントの変化は全体の伸びから単純には決まらない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $T$：((ρ S ω ^(2))/(2))(l ^(2)- r ^(2)) ; $u$：((ρ ω ^(2) r (3 l ^(2)- r ^(2)))/(6 E))\n(2) $\\Delta l$：((ρ ω ^(2) l ^(3))/(3 E))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ヤング率",
+   "回転体",
+   "遠心応力",
+   "慣性モーメント"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 3,
+  "minutes": 30,
+  "theme": "水中につるした銅棒：伸びるか縮むか",
+  "topic": "水中につるした銅棒：伸びるか縮むか",
+  "statement": {
+   "tex": "長さ $l=1.0\\,\\mathrm m$ の銅の棒（密度 $\\rho=8.9\\times10^3\\,\\mathrm{kg/m^3}$，$E=130\\,\\mathrm{GPa}$，ポアソン比 $\\mu=0.34$）を，上端に付けた細い糸で鉛直につるす．\n\\begin{enumerate}\n\\item 空気中でつるしたとき，自重による棒の伸び $\\Delta l_0$ を求めよ．\n\\item 棒全体を水（密度 $\\rho_0=1.0\\times10^3\\,\\mathrm{kg/m^3}$）に沈め，上端が水面から深さ $h$ にあるようにつるした．棒の中の応力が「深さ $z$ での水圧 $p(z)=\\rho_0gz$ による等方的圧縮」と「密度 $\\rho-\\rho_0$ の棒が自重でつり下がる場合の一軸引張」の和で表されることを示し，棒の伸び $\\Delta l(h)$ を求めよ（大気圧は無視，$g=9.8\\,\\mathrm{m/s^2}$）．\n\\item 棒の長さがつるす前と変わらなくなる深さ $h$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta l_0=\\dfrac{\\rho gl^2}{2E}=0.34\\,\\mathrm{\\mu m}$　(2) $\\Delta l=\\dfrac{(\\rho-\\rho_0)gl^2}{2E}-\\dfrac{(1-2\\mu)\\rho_0g}{E}\\left(hl+\\dfrac{l^2}{2}\\right)$　(3) $h=\\dfrac{(\\rho-\\rho_0)l}{2(1-2\\mu)\\rho_0}-\\dfrac l2=12\\,\\mathrm m$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 下端から距離 $s$ の断面の張力は $\\rho gSs$，$\\Delta l_0=\\int_0^l\\dfrac{\\rho gs}{E}ds=\\dfrac{\\rho gl^2}{2E}=\\dfrac{8.9\\times10^3\\times9.8}{2\\times1.3\\times10^{11}}=3.4\\times10^{-7}\\,\\mathrm m$．\n\n(2) 深さ $z$ の断面（$h<z<h+l$，下端の深さ $L=h+l$）で考える．側面には水圧がかかるので $\\sigma_x=\\sigma_y=-\\rho_0gz$．断面より下の部分の鉛直のつり合い：重さ $\\rho gS(L-z)$，下端面の水圧による上向きの力 $\\rho_0gLS$，断面からの力 $\\sigma_zS$（上向き）より\n\\[\n\\sigma_z=\\rho g(L-z)-\\rho_0gL=-\\rho_0gz+(\\rho-\\rho_0)g(L-z).\n\\]\nよって応力は $-p(z)\\,\\mathbf 1+(\\rho-\\rho_0)g(L-z)\\,\\boldsymbol e_z\\boldsymbol e_z$ と書け，題意の 2 つの和である（線形弾性なので重ね合わせられる）．\n等方圧 $p$ による縦ひずみは $-(1-2\\mu)p/E$，一軸引張による伸びは (1) で $\\rho\\to\\rho-\\rho_0$ としたもの．したがって\n\\[\n\\Delta l=\\frac{(\\rho-\\rho_0)gl^2}{2E}-\\frac{1-2\\mu}{E}\\int_h^{h+l}\\rho_0gz\\,dz=\\frac{(\\rho-\\rho_0)gl^2}{2E}-\\frac{(1-2\\mu)\\rho_0g}{E}\\left(hl+\\frac{l^2}{2}\\right).\n\\]\n(3) $\\Delta l=0$ より\n\\[\nh=\\frac{(\\rho-\\rho_0)l}{2(1-2\\mu)\\rho_0}-\\frac l2=\\frac{7.9\\times10^3}{2\\times0.32\\times10^3}-0.5=12\\,\\mathrm m.\n\\]\nこれより深くつるすと，棒は糸で引っ張られているにもかかわらず元の長さより短くなる．"
+   }
+  ],
+  "idea": {
+   "tex": "水中の物体の応力は「水圧による等方圧縮」と「浮力で軽くなった有効密度 $\\rho-\\rho_0$ による一軸応力」に分解でき，等方圧によるポアソン効果の縮みが引張による伸びに勝ちうる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta l_0$ [μ m]：≈0.34\n(2) $\\Delta l$：(((ρ - ρ_0) g l ^(2))/(2 E))-(((1-2 μ) ρ_0 g)/(E))(h l +((l ^(2))/(2)))\n(3) $h$：(((ρ - ρ_0) l)/(2(1-2 μ) ρ_0))-((l)/(2))"
+  },
+  "methods": [],
+  "tags": [
+   "ヤング率",
+   "ポアソン比",
+   "自重",
+   "水圧",
+   "重ね合わせ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-01-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-78",
+  "level": 3,
+  "minutes": 25,
+  "theme": "角加速度する軸にはめた円板内部のねじれ",
+  "topic": "角加速度する軸にはめた円板内部のねじれ",
+  "statement": {
+   "tex": "半径 $r_1$ の軸に，内半径 $r_1$，外半径 $r_2$，厚さ $b$，密度 $\\rho$，剛性率 $G$ の一様な円板（リング）を固くはめた．軸が一定の角加速度 $\\beta$ で回転を速めている．\n\\begin{enumerate}\n\\item 半径 $r$ の円筒面を通して，内側の部分が外側の部分に及ぼす力のモーメント $N(r)$ を求めよ．リングの質量 $m$ を用いても表せ．\n\\item その円筒面上のせん断応力 $\\tau(r)$ を求めよ．\n\\item 弾性変形のために，リングの外縁は内縁に対してわずかに遅れて回転する．その遅れの角 $\\Delta\\theta$ を求めよ．（ヒント：半径方向の線要素は角 $\\gamma=r\\,d\\theta/dr$ だけ傾く．）\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N=\\dfrac{\\pi\\rho b\\beta}{2}(r_2^4-r^4)=\\dfrac{m\\beta(r_2^4-r^4)}{2(r_2^2-r_1^2)}$　(2) $\\tau=\\dfrac{\\rho\\beta(r_2^4-r^4)}{4r^2}$　(3) $\\Delta\\theta=\\dfrac{\\rho\\beta(r_2^2-r_1^2)^2}{8Gr_1^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 半径 $r$ より外側の部分（$r<s<r_2$）の角加速度を担うモーメントが $N(r)$：\n\\[ N(r)=\\beta\\int_r^{r_2}s^2\\,\\rho b\\,2\\pi s\\,ds=\\frac{\\pi\\rho b\\beta}{2}(r_2^4-r^4). \\]\n$m=\\pi\\rho b(r_2^2-r_1^2)$ を用いれば $N=\\dfrac{m\\beta(r_2^4-r^4)}{2(r_2^2-r_1^2)}$．\n\n(2) モーメントは面積 $2\\pi rb$ の円筒面に腕 $r$ で働くせん断応力で伝わる：\n\\[ \\tau(r)=\\frac{N}{2\\pi r^2b}=\\frac{\\rho\\beta(r_2^4-r^4)}{4r^2}. \\]\n\n(3) $\\gamma=\\tau/G$，$d\\theta/dr=\\gamma/r$（外向きに遅れる向きを正）より\n\\[ \\Delta\\theta=\\int_{r_1}^{r_2}\\frac{\\rho\\beta(r_2^4-r^4)}{4Gr^3}dr=\\frac{\\rho\\beta}{4G}\\left[\\frac{r_2^4}{2}\\left(\\frac1{r_1^2}-\\frac1{r_2^2}\\right)-\\frac{r_2^2-r_1^2}{2}\\right]=\\frac{\\rho\\beta(r_2^2-r_1^2)^2}{8Gr_1^2}. \\]\n例えば鋼で $r_1=2\\,\\mathrm{cm}$，$r_2=10\\,\\mathrm{cm}$，$\\beta=10^3\\,\\mathrm{rad/s^2}$ でも $\\Delta\\theta\\sim3\\times10^{-6}\\,\\mathrm{rad}$ と極めて小さい．"
+   }
+  ],
+  "idea": {
+   "tex": "回転体の角加速度に必要なモーメントの半径分布からせん断応力を求め，それを積分して円板内部のねじれ角を得る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N$：((pi ρ b β)/(2))(r_2 ^(4)- r ^(4))\n(2) $\\tau$：((ρ β (r_2 ^(4)- r ^(4)))/(4 r ^(2)))\n(3) $\\Delta\\theta$：((ρ β (r_2 ^(2)- r_1 ^(2))^(2))/(8 G r_1 ^(2)))"
+  },
+  "methods": [],
+  "tags": [
+   "剛体の回転",
+   "せん断応力",
+   "ねじれ",
+   "円板",
+   "角加速度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

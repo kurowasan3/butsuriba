@@ -196,6 +196,203 @@
   }
  },
  {
+  "id": "CM-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 1,
+  "minutes": 15,
+  "theme": "底の穴で支えられる水銀層",
+  "topic": "底の穴で支えられる水銀層",
+  "statement": {
+   "tex": "容器の底に直径 $d=70\\ \\mu\\mathrm m$ の円い穴があいており，水銀（密度 $1.36\\times10^4\\ \\mathrm{kg/m^3}$，表面張力 $0.49\\ \\mathrm{N/m}$）が入っている．水銀は穴の縁をぬらさず，穴の縁で水銀面は自由に向きを変えられるとする．$g=9.81\\ \\mathrm{m/s^2}$．\n\\begin{enumerate}\n\\item 水銀が穴から漏れない水銀層の最大の厚さ $h_{\\max}$ を求めよ．\n\\item 層の厚さが $h_{\\max}/2$ のとき，穴の下面にできる水銀面の曲率半径 $R$ と，水銀面が穴の面から下へ膨らむ高さ $s$ を求めよ．\n\\item 厚さ $h_{\\max}$ の状態から，容器を鉛直上向きに加速度 $g/2$ で加速させると，水銀層の厚さがいくらになるまで水銀が漏れ出すか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h_{\\max}=\\dfrac{4\\alpha}{\\rho gd}=21\\ \\mathrm{cm}$　(2) $R=d=70\\ \\mu\\mathrm m$，$s=d(1-\\sqrt3/2)=9.4\\ \\mu\\mathrm m$　(3) $\\tfrac23h_{\\max}=14\\ \\mathrm{cm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 穴の下に膨らむ水銀面の曲率半径は穴の半径 $d/2$ 以上にはなれず，半球のとき毛管圧は最大 $2\\alpha/(d/2)=4\\alpha/d$．これが静水圧 $\\rho gh$ を支えられる限界なので\n\\[ h_{\\max}=\\frac{4\\alpha}{\\rho gd}=\\frac{4\\times0.49}{1.36\\times10^4\\times9.81\\times7.0\\times10^{-5}}=0.21\\ \\mathrm m. \\]\n(2) $\\rho g h=2\\alpha/R$ より，$h=h_{\\max}/2$ で $R=2\\alpha/(\\rho gh)=4\\alpha/(\\rho g h_{\\max})=d=70\\ \\mu\\mathrm m$．穴の半径 $d/2$ の弦に対する球冠の高さ\n\\[ s=R-\\sqrt{R^2-(d/2)^2}=d\\Bigl(1-\\frac{\\sqrt3}{2}\\Bigr)=0.134d=9.4\\ \\mu\\mathrm m. \\]\n(3) 加速系では有効重力加速度が $g+g/2=\\tfrac32g$．支えられる最大の厚さは $\\dfrac{4\\alpha}{\\rho(3g/2)d}=\\tfrac23h_{\\max}=0.14\\ \\mathrm m$．それより上の水銀が漏れ出す．"
+   }
+  ],
+  "idea": {
+   "tex": "穴の下の液面の曲率半径は穴の半径より小さくなれないので，毛管圧には上限 4α/d がある．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h_{\\max}$：((4 α)/(ρ g d))\n(2) 記述\n(3) $\\tfrac23h_{\\max}$ [cm]：14"
+  },
+  "methods": [],
+  "tags": [
+   "毛管圧",
+   "ラプラスの式",
+   "水銀",
+   "非ぬれ",
+   "慣性力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 1,
+  "minutes": 15,
+  "theme": "水中の微小気泡の圧力",
+  "topic": "水中の微小気泡の圧力",
+  "statement": {
+   "tex": "水（密度 $1.0\\times10^3\\ \\mathrm{kg/m^3}$，表面張力 $\\alpha=0.073\\ \\mathrm{N/m}$）の中の空気の泡を考える．大気圧 $p_0=1.013\\times10^5\\ \\mathrm{Pa}$，$g=9.81\\ \\mathrm{m/s^2}$，温度は一定とする．\n\\begin{enumerate}\n\\item 深さ $h=5.0\\ \\mathrm m$ にある直径 $d=4.0\\ \\mu\\mathrm m$ の泡の内部の圧力を求めよ．\n\\item 深さ 5.0 m で，泡の内圧が十分大きな泡の内圧のちょうど 2 倍になる直径を求めよ．\n\\item 泡の中の気体の物質量 $\\nu$ が非常に小さいとき，泡の直径は深さによらず $d\\simeq\\sqrt{3\\nu RT/(2\\pi\\alpha)}$ となることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=p_0+\\rho gh+4\\alpha/d=2.2\\times10^5\\ \\mathrm{Pa}$（約 2.2 atm）　(2) $d=\\dfrac{4\\alpha}{p_0+\\rho gh}=1.9\\ \\mu\\mathrm m$　(3) 証明（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 泡の表面は 1 枚なので毛管圧は $2\\alpha/(d/2)=4\\alpha/d$．\n\\[ p=p_0+\\rho gh+\\frac{4\\alpha}{d}=1.013\\times10^5+0.491\\times10^5+0.730\\times10^5=2.23\\times10^5\\ \\mathrm{Pa}. \\]\n(2) 十分大きな泡の内圧は $p_0+\\rho gh$．$4\\alpha/d=p_0+\\rho gh$ より\n\\[ d=\\frac{4\\times0.073}{1.504\\times10^5}=1.9\\times10^{-6}\\ \\mathrm m. \\]\n(3) 泡内の気体について $\\Bigl(p_0+\\rho gh+\\dfrac{4\\alpha}{d}\\Bigr)\\dfrac{\\pi d^3}{6}=\\nu RT$．$\\nu$ が小さく $d$ が小さいと $4\\alpha/d\\gg p_0+\\rho gh$ となり，\n\\[ \\frac{4\\alpha}{d}\\cdot\\frac{\\pi d^3}{6}=\\nu RT\\ \\Rightarrow\\ d=\\sqrt{\\frac{3\\nu RT}{2\\pi\\alpha}}, \\]\n深さに依存しない．微小な泡では内圧が表面張力で決まり，水圧の変化をほとんど感じない．"
+   }
+  ],
+  "idea": {
+   "tex": "泡の内圧は外圧＋4α/d．マイクロメートル以下の泡では表面張力による圧力が水圧を上回り，泡の大きさは深さにほとんどよらなくなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $d$ [μm]：≈1.9\n(3) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "毛管圧",
+   "気泡",
+   "ラプラスの式",
+   "ボイルの法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 1,
+  "minutes": 15,
+  "theme": "U字管の毛管による液面差",
+  "topic": "U字管の毛管による液面差",
+  "statement": {
+   "tex": "内径 $d_1=0.50\\ \\mathrm{mm}$ と $d_2=1.00\\ \\mathrm{mm}$ の 2 本の鉛直な毛管を下でつないだ U 字管がある．$g=9.81\\ \\mathrm{m/s^2}$．\n\\begin{enumerate}\n\\item 水銀（密度 $1.36\\times10^4\\ \\mathrm{kg/m^3}$，表面張力 $0.49\\ \\mathrm{N/m}$，接触角 $138^\\circ$）を入れたときの液面の高さの差と，どちらの液面が高いかを答えよ．\n\\item 水（密度 $1.0\\times10^3\\ \\mathrm{kg/m^3}$，表面張力 $0.073\\ \\mathrm{N/m}$，接触角 $0$）を入れた場合について同じことを答えよ．\n\\item (2) で，細い管の上端から気体で圧力をかけて両液面をそろえるには，大気圧よりいくら高い圧力が必要か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta h=\\dfrac{4\\alpha|\\cos\\theta|(d_2-d_1)}{\\rho gd_1d_2}=11\\ \\mathrm{mm}$，太い管の方が高い　(2) $30\\ \\mathrm{mm}$，細い管の方が高い　(3) $4\\alpha(1/d_1-1/d_2)=2.9\\times10^2\\ \\mathrm{Pa}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "接触角 $\\theta$ のとき半径 $r$ の毛管内の液面の曲率半径は $r/\\cos\\theta$，液面直下の圧力は $p_0-2\\alpha\\cos\\theta/r=p_0-4\\alpha\\cos\\theta/d$．両管の底は同じ液体でつながるので\n\\[ \\rho g(h_1-h_2)=\\frac{4\\alpha\\cos\\theta}{d_1}-\\frac{4\\alpha\\cos\\theta}{d_2}. \\]\n(1) $\\cos138^\\circ=-0.743$ で右辺は負，細い管の液面が低い（太い管が高い）：\n\\[ \\Delta h=\\frac{4\\times0.49\\times0.743\\times0.50\\times10^{-3}}{1.36\\times10^4\\times9.81\\times0.50\\times10^{-6}}=1.1\\times10^{-2}\\ \\mathrm m. \\]\n(2) $\\theta=0$：細い管が高く $\\Delta h=\\dfrac{4\\times0.073\\times0.50\\times10^{-3}}{10^3\\times9.81\\times0.50\\times10^{-6}}=3.0\\times10^{-2}\\ \\mathrm m$．\n(3) 液面が同じ高さなら，細い管の液面直下の圧力 $p-4\\alpha/d_1$ と太い管の $p_0-4\\alpha/d_2$ が等しい：\n\\[ p-p_0=4\\alpha\\Bigl(\\frac1{d_1}-\\frac1{d_2}\\Bigr)=4\\times0.073\\times(2000-1000)=2.9\\times10^2\\ \\mathrm{Pa}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "U 字管の液面差は両管のラプラス圧の差で決まる．ぬれる液体では細い管が高く，ぬれない液体では低くなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "毛管現象",
+   "接触角",
+   "U字管",
+   "ラプラス圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 1,
+  "minutes": 15,
+  "theme": "同軸棒入り毛細管の環状すき間での上昇",
+  "topic": "同軸棒入り毛細管の環状すき間での上昇",
+  "statement": {
+   "tex": "内半径 $r_2$ のガラス毛細管の中心軸に沿って，半径 $r_1\\ (<r_2)$ の円柱棒を同軸に差し込み，全体を鉛直に立てて下端を水面に接触させる．水の密度を $\\rho$，表面張力を $\\sigma$ とし，管の内壁と水の接触角は $0$，棒の表面と水の接触角は $\\theta_1$ とする．メニスカス部分の体積は無視せよ．\n\\begin{enumerate}\n\\item 環状のすき間を水が上昇する高さ $h$ を求めよ．\n\\item 棒の表面がパラフィンで覆われ $\\theta_1=105^\\circ$ のとき，$r_1=0.75$ mm，$r_2=1.0$ mm，$\\sigma=0.073$ N/m として $h$ を求め，棒を抜いた管だけのときの上昇高さと比べよ．\n\\item 棒もガラス（$\\theta_1=0$）のとき，棒を入れることで上昇高さが棒なしの $k$ 倍 $(k>1)$ になるような $r_1$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h=\\dfrac{2\\sigma(r_2+r_1\\cos\\theta_1)}{\\rho g(r_2^2-r_1^2)}$　(2) $h\\approx2.7$ cm（棒なしは $1.5$ cm．はじく棒を入れても高くなる）　(3) $r_1=r_2(1-1/k)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 持ち上げられた水柱（断面積 $\\pi(r_2^2-r_1^2)$，高さ $h$）にはたらく鉛直方向の力のつり合いを考える．外壁の接触線（長さ $2\\pi r_2$）からは $\\sigma$，棒の接触線（長さ $2\\pi r_1$）からは鉛直成分 $\\sigma\\cos\\theta_1$ の力が上向きにはたらくので\n\\[\n\\rho g h\\,\\pi(r_2^2-r_1^2)=2\\pi\\sigma(r_2+r_1\\cos\\theta_1)\\quad\\Longrightarrow\\quad h=\\frac{2\\sigma(r_2+r_1\\cos\\theta_1)}{\\rho g(r_2^2-r_1^2)}.\n\\]\n\n(2) $\\cos105^\\circ=-0.259$ より $r_2+r_1\\cos\\theta_1=1.0-0.194=0.806$ mm，$r_2^2-r_1^2=0.4375\\ \\mathrm{mm^2}$．\n\\[\nh=\\frac{2(0.073)(0.806\\times10^{-3})}{(1000)(9.8)(0.4375\\times10^{-6})}=2.7\\times10^{-2}\\ \\mathrm m.\n\\]\n棒なしでは $h_0=2\\sigma/(\\rho g r_2)=1.5$ cm．棒は水をはじく（接触線の力は下向き）にもかかわらず，持ち上げるべき水の断面積が大きく減るため上昇高さは約 1.8 倍になる．\n\n(3) $\\theta_1=0$ なら $h=\\dfrac{2\\sigma}{\\rho g(r_2-r_1)}$．これが $k\\cdot\\dfrac{2\\sigma}{\\rho g r_2}$ に等しいとして $r_2-r_1=r_2/k$，すなわち $r_1=r_2(1-1/k)$．このとき上昇高さはすき間の幅 $r_2-r_1$ だけで決まり，幅 $r_2-r_1$ の平行平板間の上昇高さに一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "上昇高さは「接触線の全長×鉛直成分」と「持ち上げる液柱の断面積」の比で決まる．はじく棒でも断面積の減少効果が勝ることがある．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h$：((2 σ (r_2 + r_1 cos θ_1))/(ρ g (r_2 ^(2)- r_1 ^(2))))\n(2) $h$ [cm]：≈2.7\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "毛管上昇",
+   "接触角",
+   "環状すき間",
+   "力のつり合い"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-04-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -391,6 +588,1436 @@
   }
  },
  {
+  "id": "CM-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 25,
+  "theme": "レイノルズの輸送定理と一様な膨張",
+  "topic": "レイノルズの輸送定理と一様な膨張",
+  "statement": {
+   "tex": "速度場 $\\boldsymbol v$ で動く体積 $V(t)$ について，$\\dfrac{d}{dt}\\int_V\\rho\\,dV=\\int_V\\partial_t\\rho\\,dV+\\oint\\rho\\boldsymbol v\\cdot d\\boldsymbol S$ が成り立つ．\n\\begin{enumerate}\n\\item 一様な膨張 $\\boldsymbol v=H\\boldsymbol x$ で $\\dfrac{d}{dt}\\mathrm{vol}(V)=3H\\,\\mathrm{vol}(V)$ を示せ．\n\\item 連続の式 $\\partial_t\\rho+\\nabla\\cdot(\\rho\\boldsymbol v)=0$ があるとき，$\\dfrac{d}{dt}\\int_V\\rho f\\,dV=\\int_V\\rho\\dfrac{Df}{Dt}dV$ を示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) 証明（$D/Dt=\\partial_t+\\boldsymbol v\\cdot\\nabla$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\oint\\boldsymbol v\\cdot d\\boldsymbol S=\\int\\nabla\\cdot\\boldsymbol v\\,dV=3H\\,\\mathrm{vol}$．\\hfill$\\square$\n\n(2) 輸送定理と発散定理で $\\int[\\partial_t(\\rho f)+\\nabla\\cdot(\\rho f\\boldsymbol v)]dV=\\int[f(\\partial_t\\rho+\\nabla\\cdot\\rho\\boldsymbol v)+\\rho(\\partial_tf+\\boldsymbol v\\cdot\\nabla f)]dV$，第1項は $0$．\\hfill$\\square$"
+   }
+  ],
+  "idea": {
+   "tex": "輸送定理は動く体積の積分の時間微分を与え，連続の式と組み合わせると物質微分が自然に現れる．原題の定理の導出を，具体的な応用に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "レイノルズの輸送定理",
+   "連続の式",
+   "物質微分"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 25,
+  "theme": "運動量流束テンソルから壁に当たる噴流の力を求める",
+  "topic": "運動量流束テンソルから壁に当たる噴流の力を求める",
+  "statement": {
+   "tex": "非粘性流体の運動量保存は $\\partial_t(\\rho u_i)+\\partial_jt_{ij}=0$ の形に書ける．\n\\begin{enumerate}\n\\item 連続の式とオイラー方程式から $t_{ij}$ を求めよ．\n\\item 密度 $\\rho$，速さ $v$，断面積 $A$ の水の噴流が垂直な壁に当たり，壁に沿って広がる．大気圧の寄与を除いて壁が受ける力を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t_{ij}=\\rho u_iu_j+P\\delta_{ij}$　(2) $\\rho v^2A$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_t(\\rho u_i)=u_i\\partial_t\\rho+\\rho\\partial_tu_i=-u_i\\partial_j(\\rho u_j)-\\rho u_j\\partial_ju_i-\\partial_iP=-\\partial_j(\\rho u_iu_j+P\\delta_{ij})$．$\\boldsymbol{t_{ij}=\\rho u_iu_j+P\\delta_{ij}}$．\n\n(2) 噴流を囲む領域で，入ってくる運動量の流れ $\\rho v^2A$ が出ていかない（壁に沿う流れは法線方向の運動量をもたない）．壁が受ける力は $\\boldsymbol{\\rho v^2A}$．"
+   }
+  ],
+  "idea": {
+   "tex": "運動量流束テンソルを使うと，流れの細部を知らなくても力が計算できる．原題の導出を，噴流の力への応用にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ρ v ^(2) A"
+  },
+  "methods": [],
+  "tags": [
+   "運動量流束",
+   "オイラー方程式",
+   "噴流",
+   "保存則"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 30,
+  "theme": "回転流体中の浮力と遠心分離",
+  "topic": "回転流体中の浮力と遠心分離",
+  "statement": {
+   "tex": "鉛直な $z$ 軸のまわりに一定の角速度 $\\omega$ で回転する密閉容器に，密度 $\\rho$ の非圧縮性完全流体が満たされ，流体は容器とともに剛体回転している（容器とともに回る座標系で静止）．重力加速度を $g$，軸からの距離を $r$ とする．\n\\begin{enumerate}\n\\item 回転系で流体が静止しうるための外力（重力＋遠心力）のポテンシャル $U_p$ を書き，圧力 $p(r,z)$ を求めよ（軸上 $z=0$ での圧力を $p_0$ とする）．\n\\item 流体中に体積 $V$，密度 $\\rho_b\\,(<\\rho)$ の小物体が，容器の底の点（軸から距離 $r_0$）に軽い糸でつながれて静止している．物体の大きさと糸の長さは $r_0$ に比べ十分小さいとして，圧力が物体に及ぼす合力を求め，糸が鉛直となす角 $\\alpha$ と，糸が鉛直から軸に近づく向き・遠ざかる向きのどちらに傾くかを答えよ．\n\\item 次に，同じ装置に温度 $T$ の理想気体（モル質量 $M$）を入れて等温で剛体回転させる．重力を無視し，気体の密度 $\\rho(r)$ を求めよ．さらに，モル質量 $M_1, M_2\\ (M_2>M_1)$ の2成分の混合気体では，壁 $r=R$ と軸上とでの存在比 $n_2/n_1$ の比（分離係数）$\\alpha_{\\rm s}$ が\n\\[\\alpha_{\\rm s}=\\exp\\!\\left[\\frac{(M_2-M_1)\\,\\omega^2R^2}{2R_{\\rm g}T}\\right]\\]\nとなることを示し，$M_1=0.349\\ \\mathrm{kg/mol}$，$M_2=0.352\\ \\mathrm{kg/mol}$（UF$_6$ の2同位体），周速 $\\omega R=600\\ \\mathrm{m/s}$，$T=300\\ \\mathrm{K}$ について数値を求めよ（$R_{\\rm g}=8.314\\ \\mathrm{J/(mol\\,K)}$）．また，同じ条件で UF$_6$（$M_1$）だけの密度比 $\\rho(R)/\\rho(0)$ も概算せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $U_p=gz-\\tfrac12\\omega^2r^2$，$p=p_0+\\rho\\left(\\tfrac12\\omega^2r^2-gz\\right)$　(2) 合力 $\\rho V(g\\,\\boldsymbol e_z-\\omega^2r_0\\boldsymbol e_r)$，$\\tan\\alpha=\\omega^2r_0/g$，軸に近づく向きに傾く　(3) $\\rho(r)=\\rho(0)\\exp\\!\\left(\\frac{M\\omega^2r^2}{2R_{\\rm g}T}\\right)$，$\\alpha_{\\rm s}\\approx1.24$，$\\rho(R)/\\rho(0)\\approx e^{25.2}\\approx9\\times10^{10}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 回転系では外力は重力 $-g\\boldsymbol e_z$ と遠心力 $\\omega^2 r\\boldsymbol e_r$ で，ともに保存力：$\\boldsymbol K=-\\mathrm{grad}\\,U_p$，$U_p=gz-\\tfrac12\\omega^2r^2$．回転系で静止した流体には Euler の方程式から $\\mathrm{grad}\\,p=\\rho\\boldsymbol K$（流体は回転系で静止しているので Coriolis 力も 0）．$\\rho$ 一定なら $p+\\rho U_p=$一定，よって\n\\[p=p_0+\\rho\\left(\\tfrac12\\omega^2r^2-gz\\right).\\]\n等圧面は等ポテンシャル面 $z=\\omega^2r^2/2g+$一定（回転放物面）である．\n\n(2) 物体表面の圧力の合力は Gauss の定理で $\\boldsymbol F_p=-\\iint p\\,\\boldsymbol n\\,dS=-\\iiint\\mathrm{grad}\\,p\\,dV\\simeq -V\\,\\mathrm{grad}\\,p$（物体が小さいので $\\mathrm{grad}\\,p$ を一定とみなす）．$\\mathrm{grad}\\,p=\\rho(\\omega^2r_0\\boldsymbol e_r-g\\boldsymbol e_z)$ より\n\\[\\boldsymbol F_p=\\rho V\\left(g\\,\\boldsymbol e_z-\\omega^2r_0\\,\\boldsymbol e_r\\right).\\]\n「浮力」は上向きだけでなく軸に向かう成分をもつ．物体自身にはたらく重力と遠心力の和は $\\rho_bV(-g\\boldsymbol e_z+\\omega^2r_0\\boldsymbol e_r)$ なので，糸の張力以外の合力は\n\\[(\\rho-\\rho_b)V\\left(g\\,\\boldsymbol e_z-\\omega^2r_0\\,\\boldsymbol e_r\\right).\\]\n$\\rho>\\rho_b$ よりこれは上向きかつ軸向き．糸はこれと逆向きの張力を出すから糸はこの方向に伸び，鉛直となす角は $\\tan\\alpha=\\omega^2r_0/g$ で，軸に近づく向きに傾く（遠心力で外に飛ばされる直観とは逆）．\n\n(3) 重力を無視し，等温理想気体 $p=\\rho R_{\\rm g}T/M$．$dp/dr=\\rho\\omega^2r$ より\n\\[\\frac{R_{\\rm g}T}{M}\\frac{d\\rho}{dr}=\\rho\\omega^2 r\\quad\\Rightarrow\\quad\\rho(r)=\\rho(0)\\exp\\!\\left(\\frac{M\\omega^2r^2}{2R_{\\rm g}T}\\right).\\]\nこれは $\\rho=f(p)$ の場合の $P+U_p=$一定（$P=\\int dp/\\rho=(R_{\\rm g}T/M)\\ln p$）にほかならない．混合気体では各成分の分圧が独立に同じ式に従うので（Dalton の法則），$n_i(R)/n_i(0)=\\exp(M_i\\omega^2R^2/2R_{\\rm g}T)$．比をとって\n\\[\\alpha_{\\rm s}=\\frac{n_2(R)/n_1(R)}{n_2(0)/n_1(0)}=\\exp\\!\\left[\\frac{(M_2-M_1)\\omega^2R^2}{2R_{\\rm g}T}\\right].\\]\n数値：$(M_2-M_1)(\\omega R)^2/(2R_{\\rm g}T)=0.003\\times3.6\\times10^5/4988\\approx0.217$，$\\alpha_{\\rm s}\\approx1.24$．一方 $M_1(\\omega R)^2/(2R_{\\rm g}T)\\approx25.2$ なので $\\rho(R)/\\rho(0)\\approx e^{25.2}\\approx9\\times10^{10}$：気体のほとんどが壁際に押しつけられ，軸付近はほぼ真空になる．"
+   }
+  ],
+  "idea": {
+   "tex": "静止流体の条件 $\\mathrm{grad}\\,p=\\rho\\boldsymbol K$ を回転系の有効ポテンシャルに適用すると，浮力は「有効重力の逆向き」になり軸向き成分をもつ．$\\rho=f(p)$ の等温気体では同じ式が指数分布を与え，質量差による同位体分離の原理になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "静水圧",
+   "回転流体",
+   "浮力",
+   "アルキメデスの原理",
+   "遠心分離",
+   "同位体分離"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 30,
+  "theme": "非定常Bernoulli：管内流の立ち上がり",
+  "topic": "非定常Bernoulli：管内流の立ち上がり",
+  "statement": {
+   "tex": "水深 $h$（一定に保たれる）の大きな水槽の底に，長さ $L$ の細い水平管が取り付けられ，出口は弁で閉じられている．時刻 $t=0$ に弁を開くと水が大気中に流出しはじめる．水は非圧縮性完全流体，管内の流れは一様（速さ $v(t)$）とし，水槽内の流速と管の入口付近の加速は無視する．大気圧を $p_0$ とする．\n\\begin{enumerate}\n\\item 水面から管出口までの流線に沿って非定常 Bernoulli の定理（圧力方程式）を積分し，$v(t)$ の満たす微分方程式を導け．\n\\item $v(t)$ を求め，$v$ が最終速度の 99\\,\\% に達する時刻 $t_{99}$ を求めよ．$h=2.0\\ \\mathrm{m}$，$L=10\\ \\mathrm{m}$，$g=9.8\\ \\mathrm{m/s^2}$ の数値も示せ．\n\\item 管の中点の圧力を $v$ の関数として求め，弁を開いた直後と十分時間がたった後の値を比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L\\dfrac{dv}{dt}=gh-\\dfrac{v^2}{2}$　(2) $v=v_\\infty\\tanh\\dfrac{v_\\infty t}{2L}$，$v_\\infty=\\sqrt{2gh}$，$t_{99}=\\dfrac{2L}{v_\\infty}\\,\\mathrm{artanh}\\,0.99\\approx8.5\\ \\mathrm{s}$　(3) $p_{\\rm mid}=p_0+\\dfrac{\\rho}{2}\\left(gh-\\dfrac{v^2}{2}\\right)$：直後 $p_0+\\rho gh/2$，最終 $p_0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 非定常流では Euler 方程式を流線に沿って積分すると（$s$ を流線の弧長）\n\\[\\int_1^2\\frac{\\partial v}{\\partial t}ds+\\left[\\frac{v^2}{2}+\\frac p\\rho+gz\\right]_1^2=0 .\\]\nこれは $\\partial\\boldsymbol v/\\partial t=-\\mathrm{grad}(v^2/2+P+U_p)+\\boldsymbol v\\times\\boldsymbol\\omega$ の流線方向成分（$\\boldsymbol v\\times\\boldsymbol\\omega$ は流線に垂直）を積分したもの．点1を水面（$v\\simeq0$，$p=p_0$，$z=h$），点2を管出口（$p=p_0$，$z=0$）とし，加速を管内（長さ $L$）だけで考えると\n\\[L\\frac{dv}{dt}+\\frac{v^2}{2}-gh=0\\quad\\Rightarrow\\quad L\\frac{dv}{dt}=gh-\\frac{v^2}{2}.\\]\n\n(2) $v_\\infty=\\sqrt{2gh}$ とおくと $\\dfrac{dv}{v_\\infty^2-v^2}=\\dfrac{dt}{2L}$．$v(0)=0$ で積分して\n\\[v=v_\\infty\\tanh\\frac{v_\\infty t}{2L}.\\]\n$v/v_\\infty=0.99$ となるのは $t_{99}=\\dfrac{2L}{v_\\infty}\\mathrm{artanh}(0.99)=\\dfrac{2L}{v_\\infty}\\times2.647$．数値：$v_\\infty=6.26\\ \\mathrm{m/s}$，$t_{99}=20/6.26\\times2.647\\approx8.5\\ \\mathrm{s}$．定常 Bernoulli（Torricelli）の値に達するには管の長さに比例する時間がかかる．\n\n(3) 管内は一様流なので $v^2/2$ は管内で一定，圧力は管に沿って $\\partial p/\\partial x=-\\rho\\,dv/dt$ で線形に変わる．中点から出口（長さ $L/2$）まで積分すると\n\\[p_{\\rm mid}=p_0+\\rho\\frac L2\\frac{dv}{dt}=p_0+\\frac\\rho2\\left(gh-\\frac{v^2}{2}\\right).\\]\n弁を開いた直後（$v=0$）は $p_0+\\rho gh/2$（入口では $p_0+\\rho gh$ で，静水圧が管に沿って線形に下がる）．十分時間がたつと $v^2=2gh$ で $p_{\\rm mid}=p_0$：定常状態では管内全体が大気圧になり，静水圧はすべて運動エネルギーに変わる．"
+   }
+  ],
+  "idea": {
+   "tex": "圧力方程式 $\\partial\\phi/\\partial t+v^2/2+P+U_p=f(t)$ を流線に沿って積分すると，管内の流体の慣性 $L\\,dv/dt$ が Torricelli の定理に付け加わり，tanh 型の立ち上がりと時間変化する圧力分布が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Bernoulliの定理",
+   "非定常流",
+   "圧力方程式",
+   "Torricelliの定理",
+   "管内流"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 30,
+  "theme": "一様流＋湧き出し：Rankine半無限物体",
+  "topic": "一様流＋湧き出し：Rankine半無限物体",
+  "statement": {
+   "tex": "複素速度ポテンシャル\n\\[f(z)=Uz+m\\log z\\qquad(U>0,\\ m>0)\\]\nで表される2次元非圧縮渦なし流れを考える（$z=re^{i\\theta}$）．\n\\begin{enumerate}\n\\item 速度ポテンシャル $\\phi$ と流れの関数 $\\psi$ を書き，よどみ点の位置を求めよ．\n\\item よどみ点を通る流線（分離流線）$\\psi=\\pi m$ は，原点の湧き出しから出た流体と一様流から来た流体を隔てる半無限物体の表面とみなせる．この物体の表面を極座標で $r(\\theta)$ と表し，下流 $x\\to+\\infty$ での物体の幅 $2b$ を求めよ．また，その幅が湧き出しの流量 $Q$ と質量保存だけから説明できることを示せ．\n\\item 物体表面上の速さ $|f'(z)|$ の最大値は $U$ の何倍か．数値的に求め，そのときの $\\theta$ を示せ．表面の圧力が一様流の圧力 $p_\\infty$ を下回る範囲が存在することにも注意せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\phi=Ur\\cos\\theta+m\\ln r$，$\\psi=Ur\\sin\\theta+m\\theta$，よどみ点 $z=-m/U$　(2) $r=\\dfrac{m(\\pi-\\theta)}{U\\sin\\theta}$，$2b=\\dfrac{2\\pi m}{U}=\\dfrac{Q}{U}$　(3) $|f'|_{\\max}\\approx1.26\\,U$（$\\theta\\approx63^\\circ$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f=Ure^{i\\theta}+m(\\ln r+i\\theta)$ より $\\phi=Ur\\cos\\theta+m\\ln r$，$\\psi=Ur\\sin\\theta+m\\theta$．よどみ点は $f'(z)=U+m/z=0$ すなわち $z=-m/U$（負の実軸上，湧き出しの上流側）．\n\n(2) よどみ点 $\\theta=\\pi$ で $\\psi=m\\pi$．分離流線 $Ur\\sin\\theta+m\\theta=m\\pi$ より\n\\[r(\\theta)=\\frac{m(\\pi-\\theta)}{U\\sin\\theta}\\qquad(0<\\theta<2\\pi).\\]\n$y=r\\sin\\theta=m(\\pi-\\theta)/U$ で，下流 $\\theta\\to0$ では $y\\to\\pi m/U$，$\\theta\\to2\\pi$ では $y\\to-\\pi m/U$．よって幅 $2b=2\\pi m/U$．\n湧き出しの流量は $Q=\\oint v_r\\,r\\,d\\theta=\\oint m\\,d\\theta=2\\pi m$．下流では物体内部の流れは速さ $U$ の一様流に戻るので，質量保存から $Q=U\\cdot2b$，すなわち $2b=Q/U=2\\pi m/U$ となり一致する．\n\n(3) $|f'|^2=\\left|U+\\dfrac{m}{r}e^{-i\\theta}\\right|^2=U^2+\\dfrac{2Um\\cos\\theta}{r}+\\dfrac{m^2}{r^2}$ に $r(\\theta)$ を代入し，$\\theta$ について数値的に最大化すると，$\\theta\\approx63.0^\\circ$（$r\\approx2.29\\,m/U$）で\n\\[|f'|_{\\max}\\approx1.26\\,U.\\]\nBernoulli の定理より $p-p_\\infty=\\frac12\\rho(U^2-|f'|^2)$ なので，表面の肩の部分では $p<p_\\infty$（最小で $p-p_\\infty\\approx-0.29\\,\\rho U^2$），よどみ点では $p-p_\\infty=\\frac12\\rho U^2$．"
+   }
+  ],
+  "idea": {
+   "tex": "一様流と湧き出しの重ね合わせで，分離流線が物体の形をつくる．下流の幅は質量保存 $Q=U\\cdot2b$ だけで決まり，表面最大流速は円柱（$2U$）より小さい $1.26U$ になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $r$：((m (pi - θ))/(U sin θ)) ; $2b$：((2 pi m)/(U))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "複素速度ポテンシャル",
+   "湧き出し",
+   "よどみ点",
+   "Rankine半無限物体",
+   "流れの関数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 30,
+  "theme": "回転円筒容器の水面と底の乾き",
+  "topic": "回転円筒容器の水面と底の乾き",
+  "statement": {
+   "tex": "半径 $R$ の鉛直な円筒容器に，密度 $\\rho$ の液体が深さ $H$ まで入っている．容器を軸のまわりに一定の角速度 $\\omega$ で回転させ，液体全体が容器と一緒に剛体回転する定常状態を考える．大気圧を $p_a$，重力加速度を $g$ とし，液体はこぼれないとする．\n\\begin{enumerate}\n\\item 液体中の圧力 $p(r,z)$ と，水面の高さ $h(r)$ を求めよ（中心の水面の高さ $h_0$ を $H,R,\\omega,g$ で表せ）．\n\\item 中心で底が露出し始める角速度 $\\omega_c$ を求めよ．$R=0.10\\ \\mathrm{m}$，$H=0.050\\ \\mathrm{m}$，$g=9.8\\ \\mathrm{m/s^2}$ での値を答えよ．\n\\item $\\omega>\\omega_c$ のとき，底の乾いた部分の半径 $r_0$ を求めよ．(2) の数値で $\\omega=20\\ \\mathrm{rad/s}$ の場合の $r_0$ を求めよ．\n\\item 底面が液体から受ける力の合計（ゲージ圧によるもの）は，$\\omega$ によらず $\\rho g\\pi R^2H$ であることを，$\\omega<\\omega_c$ と $\\omega>\\omega_c$ の両方で直接積分して確かめ，その理由を運動量の釣合いから説明せよ．\n\\item 底面での最大ゲージ圧を，$\\omega\\le\\omega_c$ と $\\omega>\\omega_c$ の場合について求めよ．$\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$ として，$\\omega=20\\ \\mathrm{rad/s}$ での値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=p_a+\\rho\\left(\\dfrac{\\omega^2r^2}{2}+g(h_0-z)\\right)$，$h=h_0+\\dfrac{\\omega^2r^2}{2g}$，$h_0=H-\\dfrac{\\omega^2R^2}{4g}$　(2) $\\omega_c=\\dfrac{2\\sqrt{gH}}{R}=14\\ \\mathrm{rad/s}$　(3) $r_0=\\sqrt{R^2-\\dfrac{2R\\sqrt{gH}}{\\omega}}$，$r_0\\approx5.5\\ \\mathrm{cm}$　(4) 証明（解説参照）　(5) $\\omega\\le\\omega_c$：$\\rho\\left(gH+\\dfrac{\\omega^2R^2}{4}\\right)$，$\\omega>\\omega_c$：$\\rho\\omega R\\sqrt{gH}$；$1.4\\times10^3\\ \\mathrm{Pa}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 回転系で $\\nabla p=\\rho(\\omega^2r\\,\\boldsymbol{e}_r-g\\,\\boldsymbol{e}_z)$ より $p=\\frac12\\rho\\omega^2r^2-\\rho gz+C$．水面 ($p=p_a$) は $h(r)=h_0+\\dfrac{\\omega^2r^2}{2g}$（回転放物面），$p=p_a+\\rho\\{\\frac12\\omega^2r^2+g(h_0-z)\\}$．体積保存\n\\[ \\int_0^R2\\pi r\\Big(h_0+\\frac{\\omega^2r^2}{2g}\\Big)dr=\\pi R^2h_0+\\frac{\\pi\\omega^2R^4}{4g}=\\pi R^2H \\]\nより $h_0=H-\\dfrac{\\omega^2R^2}{4g}$（中心は $\\omega^2R^2/4g$ だけ下がり，壁では同じだけ上がる）．\n\n(2) $h_0=0$ より $\\omega_c=\\dfrac{2\\sqrt{gH}}{R}=\\dfrac{2\\sqrt{0.49}}{0.10}=14\\ \\mathrm{rad/s}$．\n\n(3) 水面 $h=\\dfrac{\\omega^2(r^2-r_0^2)}{2g}$（$r_0\\le r\\le R$）．体積\n\\[ \\int_{r_0}^R2\\pi r\\frac{\\omega^2(r^2-r_0^2)}{2g}dr=\\frac{\\pi\\omega^2(R^2-r_0^2)^2}{4g}=\\pi R^2H \\]\nより $R^2-r_0^2=\\dfrac{2R\\sqrt{gH}}{\\omega}$，$r_0=\\sqrt{R^2-\\dfrac{2R\\sqrt{gH}}{\\omega}}$．数値：$R^2-r_0^2=2\\times0.1\\times0.7/20=0.007$，$r_0=\\sqrt{0.003}\\approx0.055\\ \\mathrm{m}$．（$\\omega=\\omega_c$ で $r_0=0$ に連続につながる．）\n\n(4) 底面 ($z=0$) のゲージ圧は $\\rho gh(r)$．$\\omega\\le\\omega_c$：$\\displaystyle\\int_0^R\\rho gh\\,2\\pi r\\,dr=\\rho g\\times(\\text{体積})=\\rho g\\pi R^2H$．$\\omega>\\omega_c$：$\\displaystyle\\int_{r_0}^R\\rho\\frac{\\omega^2(r^2-r_0^2)}{2}2\\pi r\\,dr=\\rho g\\cdot\\frac{\\pi\\omega^2(R^2-r_0^2)^2}{4g}=\\rho g\\pi R^2H$．\n理由：液体は鉛直方向に加速度をもたない．液体に働く鉛直力は重力と底面からの力だけ（側壁は鉛直なので圧力は水平にしか働かない，大気圧の寄与は打ち消す）なので，底面の力は常に液体の重さに等しい．\n\n(5) ゲージ圧 $\\rho gh(r)$ は $r=R$ で最大．$\\omega\\le\\omega_c$：$\\rho g(h_0+\\frac{\\omega^2R^2}{2g})=\\rho(gH+\\frac{\\omega^2R^2}{4})$．$\\omega>\\omega_c$：$\\rho\\frac{\\omega^2(R^2-r_0^2)}{2}=\\rho\\omega R\\sqrt{gH}$（$\\omega_c$ で両者は一致）．数値：$10^3\\times20\\times0.10\\times0.70=1.4\\times10^3\\ \\mathrm{Pa}$（静止時の $\\rho gH=490\\ \\mathrm{Pa}$ の約 2.9 倍）．"
+   }
+  ],
+  "idea": {
+   "tex": "剛体回転の放物面に有限容器の体積保存を課すと，底の露出の臨界角速度と乾いた円の半径が求まる．底面の全力が角速度によらないことは鉛直方向の運動量の釣合いから明らか．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega_c$：((2 sqrt(g H))/(R))\n(3) $r_0$：sqrt(R ^(2)-((2 R sqrt(g H))/(ω))) ; $r_0$ [cm]：≈5.5\n(4) 証明\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "剛体回転",
+   "回転放物面",
+   "自由表面",
+   "静水圧",
+   "遠心力",
+   "体積保存"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "曲がった流路の自由渦と内外壁の圧力差",
+  "topic": "曲がった流路の自由渦と内外壁の圧力差",
+  "statement": {
+   "tex": "水平面内で，内壁半径 $a=0.10\\,\\mathrm{m}$，外壁半径 $b=0.20\\,\\mathrm{m}$ の同心円弧で囲まれた，高さ一定の平たい流路を理想流体（水，$\\rho=1.0\\times10^3\\,\\mathrm{kg/m^3}$）が定常に流れる．流路に入る前の上流では流れは一様で渦なしであった．流路の高さ $1\\,\\mathrm{m}$ あたりの体積流量は $q=0.10\\,\\mathrm{m^2/s}$ である．\n\\begin{enumerate}\n\\item 曲がり部での流速 $v$ が半径 $r$ にどう依存するか理由とともに述べ，内壁と外壁での流速を求めよ．\n\\item 外壁と内壁の圧力差 $p(b)-p(a)$ を求め，オイラー方程式の半径成分からも同じ結果が得られることを確かめよ．\n\\item 流線の間隔は内側と外側のどちらで密か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=C/r$，$C=q/\\ln(b/a)$；$v(a)\\approx1.44\\,\\mathrm{m/s}$，$v(b)\\approx0.72\\,\\mathrm{m/s}$　(2) $p(b)-p(a)=\\dfrac{\\rho C^2}{2}\\left(\\dfrac1{a^2}-\\dfrac1{b^2}\\right)\\approx7.8\\times10^2\\,\\mathrm{Pa}$　(3) 内側で密"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 理想流体では渦度は保存（ケルビンの循環定理）されるので，上流で渦なしなら曲がり部でも渦なし．同心円の流線 $v_\\theta=v(r)$ の渦度は $\\frac1r\\frac{d(rv)}{dr}=0$ より $v=C/r$（自由渦）．\n\\[ q=\\int_a^b\\frac Cr\\,dr=C\\ln\\frac ba,\\qquad C=\\frac{0.10}{\\ln2}=0.144\\,\\mathrm{m^2/s}. \\]\n$v(a)=C/a\\approx1.44\\,\\mathrm{m/s}$，$v(b)=C/b\\approx0.72\\,\\mathrm{m/s}$．\n\n(2) 渦なし流れでは全域でベルヌーイ定数が等しい：\n\\[ p(b)-p(a)=\\frac\\rho2\\left(v_a^2-v_b^2\\right)=\\frac{\\rho C^2}{2}\\left(\\frac1{a^2}-\\frac1{b^2}\\right)\\approx7.8\\times10^2\\,\\mathrm{Pa}. \\]\nオイラー方程式の半径成分（向心加速度）：$\\dfrac{dp}{dr}=\\dfrac{\\rho v^2}{r}=\\dfrac{\\rho C^2}{r^3}$．$a$ から $b$ まで積分すると同じ値になる．\n\n(3) 流線間の流量 $v\\,\\Delta r$ が一定なので $\\Delta r\\propto r$：流速の大きい内側ほど流線は密．すなわち外壁側は圧力が高く流速が小さい．"
+   }
+  ],
+  "idea": {
+   "tex": "曲がり流路の理想流体は自由渦となり，向心力を与える圧力勾配のため外側で圧力が高く流速が小さい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ベルヌーイの定理",
+   "自由渦",
+   "渦なし流れ",
+   "オイラー方程式",
+   "流線"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "鉛直ベンチュリ管と水銀差圧計",
+  "topic": "鉛直ベンチュリ管と水銀差圧計",
+  "statement": {
+   "tex": "断面積 $S_1=20\\,\\mathrm{cm^2}$ の太い部分と $S_2=10\\,\\mathrm{cm^2}$ の細い部分をもつ管を鉛直に立て，水を下から上へ流す．細い部分は太い部分より高さ $H$ だけ上にある．両断面の側壁の孔を，水銀（密度 $13.6\\times10^3\\,\\mathrm{kg/m^3}$）を入れたU字管の両側に水で満たした細管でつないだところ，水銀柱の高さの差が $\\Delta h=5.0\\,\\mathrm{cm}$ になった．水は理想流体とし，密度 $1.0\\times10^3\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$．\n\\begin{enumerate}\n\\item 体積流量 $Q$ を求めよ．\n\\item 結果が $H$ によらないことを示せ（管を傾けても読みから同じ式で流量が出る）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q=S_1S_2\\sqrt{\\dfrac{2g\\Delta h(\\rho_{\\rm Hg}/\\rho-1)}{S_1^2-S_2^2}}\\approx4.1\\times10^{-3}\\,\\mathrm{m^3/s}$　(2) 証明（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "太い断面の中心の高さを $0$，圧力 $p_1$，流速 $v_1$；細い断面は高さ $H$，$p_2$，$v_2$．\nベルヌーイ：$p_1+\\frac\\rho2v_1^2=p_2+\\frac\\rho2v_2^2+\\rho gH$．\n\n差圧計：U字管の低い側の水銀面の高さを $z_0$ とすると，同じ高さの水銀中の圧力の等しさから\n\\[ p_1+\\rho g(0-z_0)=p_2+\\rho g(H-z_0-\\Delta h)+\\rho_{\\rm Hg}g\\Delta h, \\]\n\\[ p_1-p_2=\\rho gH+(\\rho_{\\rm Hg}-\\rho)g\\Delta h. \\]\nこれをベルヌーイの式に代入すると $\\rho gH$ が打ち消し\n\\[ \\frac\\rho2(v_2^2-v_1^2)=(\\rho_{\\rm Hg}-\\rho)g\\Delta h. \\]\n$v_i=Q/S_i$ を用いて\n\\[ Q=S_1S_2\\sqrt{\\frac{2g\\Delta h(\\rho_{\\rm Hg}/\\rho-1)}{S_1^2-S_2^2}}=2.0\\times10^{-3}\\cdot1.0\\times10^{-3}\\sqrt{\\frac{2\\cdot9.8\\cdot0.050\\cdot12.6}{3.0\\times10^{-6}}}\\approx4.1\\times10^{-3}\\,\\mathrm{m^3/s}. \\]\n(2) 上の通り，接続管内の水の静水圧と流れの位置エネルギーの項が同じ $\\rho gH$ で打ち消すので，$H$（管の傾き）は結果に現れない．差圧計は「ピエゾ水頭」の差を直接測っている．"
+   }
+  ],
+  "idea": {
+   "tex": "差圧計の静水圧と管内流のポテンシャル項が相殺し，ベンチュリ管の読みは傾きによらない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "ベンチュリ管",
+   "ベルヌーイの定理",
+   "差圧計",
+   "流量測定"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ピトー管の軸上測定と速度分布の補正",
+  "topic": "ピトー管の軸上測定と速度分布の補正",
+  "statement": {
+   "tex": "断面積 $S=1.0\\times10^{-2}\\,\\mathrm{m^2}$ の円管内を空気（密度 $\\rho=1.2\\,\\mathrm{kg/m^3}$）が流れている．管軸上に置いたピトー管（全圧孔と静圧孔の圧力差を水柱で測る）の水柱の差が $\\Delta h=2.0\\,\\mathrm{cm}$ であった．水の密度 $\\rho_0=1.0\\times10^3\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$．\n\\begin{enumerate}\n\\item 管軸上の流速 $v_0$ を求めよ．\n\\item 乱流の速度分布が $u(r)=v_0(1-r/R)^{1/n}$（$R$ は管の半径）で近似できるとき，平均流速と $v_0$ の比を $n$ の式で求め，$n=7$ での体積流量 $Q$ を求めよ．速度分布を一様と仮定した場合の流量と比べよ．\n\\item $n=7$ のとき，ピトー管を軸から何 $R$ の位置に置けば，その点の流速が平均流速に等しくなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_0=\\sqrt{2g\\Delta h\\rho_0/\\rho}\\approx18\\,\\mathrm{m/s}$　(2) $\\bar u/v_0=\\dfrac{2n^2}{(n+1)(2n+1)}$，$n=7$ で $49/60\\approx0.817$，$Q\\approx0.15\\,\\mathrm{m^3/s}$（一様仮定の $0.18$ より約18\\%小）　(3) $r\\approx0.76R$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 全圧孔ではよどみ点圧 $p+\\frac12\\rho v_0^2$，静圧孔では $p$．差 $\\frac12\\rho v_0^2=\\rho_0g\\Delta h$（空気柱の重さは無視）．\n\\[ v_0=\\sqrt{\\frac{2g\\Delta h\\rho_0}{\\rho}}=\\sqrt{\\frac{2\\cdot9.8\\cdot0.020\\cdot1000}{1.2}}\\approx18.1\\,\\mathrm{m/s}. \\]\n\n(2) $s=r/R$ として\n\\[ \\frac{\\bar u}{v_0}=\\int_0^1(1-s)^{1/n}2s\\,ds. \\]\n$t=1-s$ とおくと $2\\int_0^1t^{1/n}(1-t)dt=2\\left(\\frac{n}{n+1}-\\frac{n}{2n+1}\\right)=\\frac{2n^2}{(n+1)(2n+1)}$．$n=7$ で $\\dfrac{98}{120}=\\dfrac{49}{60}\\approx0.817$．\n$Q=0.817\\cdot1.0\\times10^{-2}\\cdot18.1\\approx0.148\\,\\mathrm{m^3/s}$．一様分布と仮定した $Sv_0\\approx0.181\\,\\mathrm{m^3/s}$ は約 $18\\%$ の過大評価．\n\n(3) $(1-r/R)^{1/7}=49/60$ より $1-r/R=(49/60)^7\\approx0.242$，$r\\approx0.76R$．\n（参考：層流のポアズイユ分布なら $\\bar u/v_0=1/2$ で，同じ軸上の読みから求めた流量は半分になる．）"
+   }
+  ],
+  "idea": {
+   "tex": "ピトー管は局所流速しか測らないので，流量を出すには速度分布の情報が必要になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v_0$ [m/s]：≈18\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ピトー管",
+   "ベルヌーイの定理",
+   "速度分布",
+   "乱流",
+   "流量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "台上の容器から出る水平噴流の最大到達距離",
+  "topic": "台上の容器から出る水平噴流の最大到達距離",
+  "statement": {
+   "tex": "水深 $H$ まで水を満たした広い円筒容器が，高さ $D$ の台の上に置かれている．容器の側壁の，容器の底から高さ $y$ の位置に小孔をあけ，水平に噴き出す水が床に達する位置までの水平距離 $x$ を考える（粘性は無視）．\n\\begin{enumerate}\n\\item $D<H$ のとき，$x$ を最大にする $y$ と最大値 $x_{\\max}$ を求めよ．$H=50\\,\\mathrm{cm}$，$D=30\\,\\mathrm{cm}$ で数値を求めよ．\n\\item $D\\ge H$ のときはどうなるか．$H=50\\,\\mathrm{cm}$，$D=80\\,\\mathrm{cm}$ で数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $y=\\dfrac{H-D}{2}=10\\,\\mathrm{cm}$，$x_{\\max}=H+D=80\\,\\mathrm{cm}$　(2) $y=0$（底すれすれ），$x_{\\max}=2\\sqrt{HD}\\approx1.26\\,\\mathrm{m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "流出速度 $v=\\sqrt{2g(H-y)}$（トリチェリ），床までの落下高さ $y+D$，落下時間 $\\sqrt{2(y+D)/g}$．\n\\[ x=v\\sqrt{\\frac{2(y+D)}g}=2\\sqrt{(H-y)(y+D)}. \\]\n\n(1) $(H-y)(y+D)$ は $y$ の2次関数で，頂点 $y=\\dfrac{H-D}{2}$．これが $0<y<H$ にあるのは $D<H$ のとき．\n$x_{\\max}=2\\cdot\\dfrac{H+D}{2}=H+D$．数値：$y=10\\,\\mathrm{cm}$，$x_{\\max}=80\\,\\mathrm{cm}$．\n\n(2) $D\\ge H$ では頂点が $y\\le0$ にあり，$0\\le y\\le H$ で $x$ は単調減少．最大は $y\\to0$ で $x_{\\max}=2\\sqrt{HD}$．数値：$2\\sqrt{0.50\\cdot0.80}\\approx1.26\\,\\mathrm{m}$．\n（$D=0$ のときは $y=H/2$，$x_{\\max}=H$ となる．）"
+   }
+  ],
+  "idea": {
+   "tex": "噴流の到達距離は流出速度と落下時間の積で，2次関数の頂点が許される範囲にあるかで最適解の形が変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $y$：0 ; $x_{\\max}$ [m]：≈1.26"
+  },
+  "methods": [],
+  "tags": [
+   "トリチェリの定理",
+   "噴流",
+   "最大値問題",
+   "放物運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "流れに向けた曲管からの噴流（傾いた噴出口）",
+  "topic": "流れに向けた曲管からの噴流（傾いた噴出口）",
+  "statement": {
+   "tex": "L字形に曲げた細い管を，水平な開口部が流れに正対するように水流の中に入れ，鉛直部分を水面上に立てる．管に対する水流の速さは $v=2.5\\,\\mathrm{m/s}$．管の上端は閉じていて，水面から高さ $h_0=12\\,\\mathrm{cm}$ のところに小孔がある．粘性は無視し，$g=9.8\\,\\mathrm{m/s^2}$．\n\\begin{enumerate}\n\\item 小孔から水が噴き出すための $v$ の最小値を求めよ．\n\\item 小孔が鉛直上向きのとき，噴流は小孔から何 cm の高さまで上がるか．\n\\item 小孔の向きを鉛直から $30^\\circ$ 傾けたとき，噴流の最高点の小孔からの高さと，噴流が小孔と同じ高さに戻るまでの水平距離を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_{\\min}=\\sqrt{2gh_0}\\approx1.5\\,\\mathrm{m/s}$　(2) $h=\\dfrac{v^2}{2g}-h_0\\approx20\\,\\mathrm{cm}$　(3) 高さ $\\approx15\\,\\mathrm{cm}$，水平距離 $\\approx34\\,\\mathrm{cm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "管とともに動く座標系で考えると，流れは定常．開口部の正面の流線をたどり，遠方（水面と同じ深さの点，速さ $v$，静水圧）から小孔（高さ $h_0$，大気圧，噴出速度 $u$）までベルヌーイの式を使う．開口部の深さの静水圧は水面からの深さと相殺するので\n\\[ \\frac{v^2}{2}=gh_0+\\frac{u^2}{2},\\qquad u^2=v^2-2gh_0. \\]\n\n(1) $u^2>0$ より $v>\\sqrt{2gh_0}=\\sqrt{2\\cdot9.8\\cdot0.12}\\approx1.53\\,\\mathrm{m/s}$．\n\n(2) $u^2=6.25-2.35=3.90\\,\\mathrm{m^2/s^2}$．$h=\\dfrac{u^2}{2g}=\\dfrac{v^2}{2g}-h_0\\approx0.199\\,\\mathrm{m}\\approx20\\,\\mathrm{cm}$．\n\n(3) 放物運動．最高点の高さ $\\dfrac{u^2\\cos^230^\\circ}{2g}\\approx0.149\\,\\mathrm{m}$，水平到達距離 $\\dfrac{u^2\\sin60^\\circ}{g}\\approx0.344\\,\\mathrm{m}$．"
+   }
+  ],
+  "idea": {
+   "tex": "流れの運動エネルギー（よどみ点圧）を位置エネルギーと噴流の運動エネルギーに振り分ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v_{\\min}$ [m/s]：≈1.5\n(2) $h$ [cm]：≈20\n(3) 高さ [cm]：≈15 ; 水平距離 [cm]：≈34"
+  },
+  "methods": [],
+  "tags": [
+   "ベルヌーイの定理",
+   "よどみ点圧",
+   "ピトー管",
+   "噴流",
+   "放物運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "注射器から水を押し出す仕事の最小化",
+  "topic": "注射器から水を押し出す仕事の最小化",
+  "statement": {
+   "tex": "水平に置いた注射器（シリンダーの断面積 $S=2.0\\,\\mathrm{cm^2}$）に体積 $V=20\\,\\mathrm{cm^3}$ の水が入っている．先端の小孔の断面積は $s=0.50\\,\\mathrm{mm^2}\\ (\\ll S)$．ピストンを押して時間 $t=5.0\\,\\mathrm{s}$ で水をすべて押し出す．摩擦と粘性は無視し，水の密度 $\\rho=1.0\\times10^3\\,\\mathrm{kg/m^3}$．\n\\begin{enumerate}\n\\item ピストンに一定の力を加える場合，噴出速度，必要な力 $F$，仕事 $A$ を求めよ．\n\\item 時間 $t$ と体積 $V$ を固定したとき，(1) の仕事が考えうる押し方の中で最小であることを示せ．\n\\item 流量を時刻に比例して $0$ から増やしていき，時間 $t$ で押し出し終える場合の仕事は (1) の何倍か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=\\dfrac{V}{st}=8.0\\,\\mathrm{m/s}$，$F=\\dfrac{\\rho u^2S}{2}=6.4\\,\\mathrm{N}$，$A=\\dfrac{\\rho V^3}{2s^2t^2}=0.64\\,\\mathrm{J}$　(2) 証明（解説参照）　(3) $2$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$s\\ll S$ なのでシリンダー内の水の運動エネルギーは無視でき，仕事は噴出する水の運動エネルギーになる（準定常）．噴出速度 $u(\\tau)$ のとき，単位時間の仕事は $\\frac12\\rho su^3$．\n\n(1) 力が一定なら圧力 $p-p_0=F/S$ が一定，ベルヌーイ $F/S=\\frac12\\rho u^2$ より $u$ も一定で $u=\\dfrac{V}{st}=\\dfrac{2.0\\times10^{-5}}{5.0\\times10^{-7}\\cdot5.0}=8.0\\,\\mathrm{m/s}$．\n$F=\\frac12\\rho u^2S=\\frac12\\cdot10^3\\cdot64\\cdot2.0\\times10^{-4}=6.4\\,\\mathrm{N}$．\n$A=\\frac12\\rho Vu^2=\\dfrac{\\rho V^3}{2s^2t^2}=0.64\\,\\mathrm{J}$（$=F\\cdot V/S$ とも一致）．\n\n(2) 制約 $\\int_0^t su\\,d\\tau=V$ のもとで $A=\\frac12\\rho s\\int_0^tu^3d\\tau$ を考える．ヘルダー（またはジェンセン）の不等式より\n\\[ \\frac1t\\int_0^tu^3d\\tau\\ge\\left(\\frac1t\\int_0^tu\\,d\\tau\\right)^3=\\left(\\frac V{st}\\right)^3, \\]\n等号は $u$ が一定のとき．よって $A\\ge\\dfrac{\\rho V^3}{2s^2t^2}$ で，一定の力による押し出しが最小．\n\n(3) $u=k\\tau$，$\\int_0^tsk\\tau\\,d\\tau=V$ より $k=\\dfrac{2V}{st^2}$．\n\\[ A'=\\frac12\\rho s k^3\\frac{t^4}{4}=\\frac12\\rho s\\cdot\\frac{8V^3}{s^3t^6}\\cdot\\frac{t^4}{4}=\\frac{\\rho V^3}{s^2t^2}=2A. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "押し出しの仕事は噴流の運動エネルギーで，流量一定（力一定）のときに凸性から最小となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $u$ [m/s]：≈8.0 ; $F$ [N]：≈6.4 ; $A$ [J]：≈0.64\n(2) 証明\n(3) 2倍"
+  },
+  "methods": [],
+  "tags": [
+   "ベルヌーイの定理",
+   "仕事",
+   "運動エネルギー",
+   "変分",
+   "不等式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 25,
+  "theme": "容器形状と排水時間・水時計",
+  "topic": "容器形状と排水時間・水時計",
+  "statement": {
+   "tex": "水で満たされた容器の底に面積 $s$ の小穴をあけて排水する．穴からの流出速度は，そのときの水深 $z$ を用いて $\\sqrt{2gz}$ で与えられるとし（水面の断面積は $s$ に比べ十分大きい），粘性は無視する．\n\\begin{enumerate}\n\\item 断面積 $S$ の円筒容器に高さ $h$ まで水が入っている．水面が $h$ から $h/2$ まで下がる時間 $t_1$ と，$h/2$ から $0$ まで下がる時間 $t_2$ の比 $t_1/t_2$ を求めよ．\n\\item 頂点を下にした直円錐容器（頂点に穴，上端の半径 $R$，高さ $h$）が満水である．全排水時間は，同じ上端面積 $\\pi R^2$・同じ高さ $h$ の円筒容器の全排水時間の何倍か．\n\\item 鉛直軸のまわりに対称な容器で，水面が一定の速さ $u$ で下がるようにしたい（水時計）．底からの高さ $z$ での容器の半径 $r(z)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t_1/t_2=\\sqrt2-1\\approx0.41$　(2) $1/5$ 倍　(3) $r(z)=\\left(\\dfrac{2g s^2}{\\pi^2u^2}\\right)^{1/4}z^{1/4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "水面の断面積を $A(z)$ とすると連続の式より $A(z)\\,\\dfrac{dz}{dt}=-s\\sqrt{2gz}$，すなわち $dt=-\\dfrac{A(z)\\,dz}{s\\sqrt{2gz}}$．\n\n(1) $A=S$ で $t(z_a\\to z_b)=\\dfrac{S}{s}\\sqrt{\\dfrac2g}\\left(\\sqrt{z_a}-\\sqrt{z_b}\\right)$．よって\n\\[ \\frac{t_1}{t_2}=\\frac{\\sqrt h-\\sqrt{h/2}}{\\sqrt{h/2}}=\\sqrt2-1\\approx0.41. \\]\n水位が高いほど流出が速いので，上半分は下半分の約 0.41 倍の時間で抜ける．\n\n(2) 円錐では $A(z)=\\pi R^2z^2/h^2$．\n\\[ t_{\\rm cone}=\\frac{\\pi R^2}{h^2 s\\sqrt{2g}}\\int_0^h z^{3/2}dz=\\frac{2}{5}\\frac{\\pi R^2}{s}\\sqrt{\\frac{h}{2g}} . \\]\n円筒では $t_{\\rm cyl}=\\dfrac{\\pi R^2}{s}\\sqrt{\\dfrac{2h}{g}}=2\\dfrac{\\pi R^2}{s}\\sqrt{\\dfrac{h}{2g}}$．比は $t_{\\rm cone}/t_{\\rm cyl}=1/5$．\n\n(3) $dz/dt=-u$ 一定より $\\pi r^2u=s\\sqrt{2gz}$．よって $r^4=\\dfrac{2gs^2}{\\pi^2u^2}z$，すなわち $r\\propto z^{1/4}$（4 次の回転面）．"
+   }
+  ],
+  "idea": {
+   "tex": "排水は $A(z)\\dot z=-s\\sqrt{2gz}$ で決まり，容器形状 $A(z)$ を変えると排水時間の配分や水位の降下則を自在に設計できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 1/5倍\n(3) $r(z)$：(((2 g s ^(2))/(pi ^(2) u ^(2))))^(1/4) z ^(1/4)"
+  },
+  "methods": [],
+  "tags": [
+   "トリチェリの定理",
+   "排水時間",
+   "連続の式",
+   "水時計"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "噴流の到達距離と反作用力",
+  "topic": "噴流の到達距離と反作用力",
+  "statement": {
+   "tex": "床に置かれた広い容器に水が水深 $H=1.00$ m まで入っている．容器の左右の側壁に，断面積 $S=0.50\\ \\mathrm{cm^2}$ の小穴を 1 つずつあけたところ，2 本の噴流はどちらも側壁から水平距離 $L=0.80$ m の地点で床に達した．ただし 2 つの穴の高さは異なる．粘性と噴流の縮流は無視し，水位の変化も無視する．\n\\begin{enumerate}\n\\item 2 つの穴の水面からの深さを求めよ．\n\\item 流出する水が容器に及ぼす水平方向の合力の大きさと向きを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 0.20 m と 0.80 m　(2) $F=2\\rho gS\\sqrt{H^2-L^2}\\approx0.59$ N，深い穴のある側から浅い穴のある側へ向かう向き"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 深さ $y$ の穴からの流出速度は $\\sqrt{2gy}$，床までの高さは $H-y$ なので到達距離は\n\\[ L=\\sqrt{2gy}\\sqrt{\\frac{2(H-y)}{g}}=2\\sqrt{y(H-y)} . \\]\n$y^2-Hy+L^2/4=0$ を解くと $y=\\dfrac{H\\pm\\sqrt{H^2-L^2}}{2}=0.80,\\ 0.20$ m．同じ到達距離を与える高さは 2 つあり，それぞれの穴は一方ずつに対応する．\n\n(2) 1 本の噴流が容器に及ぼす反作用は運動量流束 $\\rho S v^2=2\\rho gSy$ で，噴流と逆向き．2 本は逆向きに出るので合力は\n\\[ F=2\\rho gS(y_1-y_2)=2\\rho gS\\sqrt{H^2-L^2}=2\\times10^3\\times9.8\\times0.50\\times10^{-4}\\times0.60\\approx0.59\\ \\mathrm N . \\]\n深い穴の噴流の反作用が勝つので，合力は深い穴の側壁から浅い穴の側壁へ向かう向き．"
+   }
+  ],
+  "idea": {
+   "tex": "到達距離 $2\\sqrt{y(H-y)}$ は $y\\leftrightarrow H-y$ で不変．同じ到達距離の 2 穴の深さの差 $\\sqrt{H^2-L^2}$ が反作用力の差を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "トリチェリの定理",
+   "噴流",
+   "運動量流束",
+   "反作用力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "三角形の切れ込みからの流出と反作用",
+  "topic": "三角形の切れ込みからの流出と反作用",
+  "statement": {
+   "tex": "水深 $h=0.75$ m まで水を入れた広い鉛直容器の側壁に，頂点を水面に置き，底辺を容器の底に置いた細い二等辺三角形の切れ込み（深さ $z$ での幅 $w(z)=bz/h$，$b=2.0$ mm）がある．切れ込みを閉じた状態から開いた直後について，粘性と縮流は無視して答えよ．\n\\begin{enumerate}\n\\item 流出する水による水平方向の反作用力 $F$ を求めよ．\n\\item 切れ込みを閉じていたときに水が切れ込みのふたに及ぼしていた静水圧の合力 $F_0$ との比 $F/F_0$ を求め，この比が切れ込みの形によらないことを説明せよ．\n\\item 流出の体積流量 $Q$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F=\\tfrac23\\rho gbh^2\\approx7.4$ N　(2) $F/F_0=2$　(3) $Q=\\tfrac25 b\\sqrt{2g}\\,h^{3/2}\\approx2.3\\times10^{-3}\\ \\mathrm{m^3/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "深さ $z$ での流出速度は $v=\\sqrt{2gz}$．幅 $w\\,dz$ の部分からの運動量流束は $\\rho v^2w\\,dz=2\\rho gz\\,w\\,dz$ であり，その反作用が容器に働く．\n\n(1) \\[ F=\\int_0^h2\\rho gz\\frac{bz}{h}dz=\\frac23\\rho gbh^2=\\frac23\\times10^3\\times9.8\\times2.0\\times10^{-3}\\times0.75^2\\approx7.4\\ \\mathrm N. \\]\n\n(2) 静水圧の合力は $F_0=\\displaystyle\\int_0^h\\rho gz\\,w\\,dz=\\frac13\\rho gbh^2$．よって $F/F_0=2$．各深さで運動量流束 $\\rho v^2=2\\rho gz$ が静水圧 $\\rho gz$ のちょうど 2 倍なので，どんな形 $w(z)$ でも積分の比は 2 になる．静水圧の欠損だけでは説明できず，穴へ向かう流れが穴付近の壁面の圧力も下げることが残り半分の原因である．\n\n(3) \\[ Q=\\int_0^h\\frac{bz}{h}\\sqrt{2gz}\\,dz=\\frac25b\\sqrt{2g}\\,h^{3/2}\\approx\\frac25\\times2.0\\times10^{-3}\\times4.43\\times0.650\\approx2.3\\times10^{-3}\\ \\mathrm{m^3/s}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "各深さで噴流の運動量流束 $2\\rho gz$ は静水圧 $\\rho gz$ の 2 倍．反作用力は穴の形によらず静水圧の合力のちょうど 2 倍になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $F$ [N]：≈7.4\n(2) 記述\n(3) $Q$ [m³/s]：≈2.3e-3"
+  },
+  "methods": [],
+  "tags": [
+   "運動量流束",
+   "反作用力",
+   "トリチェリの定理",
+   "静水圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "曲がった管に働く流れのモーメント",
+  "topic": "曲がった管に働く流れのモーメント",
+  "statement": {
+   "tex": "大きなタンクの側壁の点 $O$ から，内半径 $r=0.50$ cm の管が鉛直面内に引き出されている．管は途中で任意に曲がっていてよく，その出口は $O$ から水平に $X=22$ cm，鉛直下方に $Y=10$ cm の位置にあり，水は出口から水平より $\\theta=60^\\circ$ 下向き（タンクから遠ざかる向き）に流量 $Q=0.50$ L/s で流出する．管に入る水はタンク内から $O$ を通って水平に流入するものとし，管内の水の重さは無視する．\n\\begin{enumerate}\n\\item 流れる水が管壁に及ぼす力の，点 $O$ のまわりのモーメントの大きさ $N$ を $X,Y,\\theta$ などを用いて表し，数値を求めよ．\n\\item $N$ が管の途中の形によらないのはなぜか．\n\\item $N=0$ となる出口の向き $\\theta$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N=\\dfrac{\\rho Q^2}{\\pi r^2}\\,(X\\sin\\theta-Y\\cos\\theta)\\approx0.45\\ \\mathrm{N\\cdot m}$　(2) 解説参照　(3) $\\tan\\theta=Y/X$，$\\theta\\approx24^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "流速は $v=\\dfrac{Q}{\\pi r^2}=\\dfrac{0.50\\times10^{-3}}{\\pi\\times(0.50\\times10^{-2})^2}\\approx6.37$ m/s．\n\n(1) 管内の水について $O$ まわりの角運動量の収支を考える．定常なので，管壁が水に及ぼすモーメントは（流出する角運動量流束）$-$（流入する角運動量流束）に等しい．流入は $O$ を通るので腕の長さ 0．流出は位置 $(X,-Y)$，運動量流束 $\\rho Qv(\\cos\\theta,-\\sin\\theta)$ なので，その $O$ まわりのモーメントは\n\\[ X(-\\rho Qv\\sin\\theta)-(-Y)(\\rho Qv\\cos\\theta)=-\\rho Qv(X\\sin\\theta-Y\\cos\\theta). \\]\n水が管壁に及ぼすモーメントはこの反作用で，大きさ\n\\[ N=\\rho Qv(X\\sin\\theta-Y\\cos\\theta)=\\frac{\\rho Q^2}{\\pi r^2}(X\\sin\\theta-Y\\cos\\theta)\\approx 10^3\\times0.50\\times10^{-3}\\times6.37\\times(0.191-0.050)\\approx0.45\\ \\mathrm{N\\cdot m}. \\]\n（出口の大気圧の寄与は管の外面と打ち消し合う．）\n\n(2) 定常流ではモーメントは角運動量の出入りだけで決まり，管内部の経路は収支に現れないから．\n\n(3) $X\\sin\\theta=Y\\cos\\theta$，すなわち噴流の延長線が $O$ を通るとき $N=0$：$\\theta=\\arctan(Y/X)\\approx24^\\circ$．"
+   }
+  ],
+  "idea": {
+   "tex": "定常流のモーメントは角運動量流束の出入りだけで決まる．入口が $O$ を通れば，出口噴流の作用線の $O$ からの距離だけが効く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N$ [N· m]：≈0.45\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "角運動量流束",
+   "モーメント",
+   "運動量の法則",
+   "定常流"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 25,
+  "theme": "回転容器で底が露出する条件",
+  "topic": "回転容器で底が露出する条件",
+  "statement": {
+   "tex": "半径 $R$ の十分高い円筒容器に水が深さ $H$ まで入っている．容器を鉛直な中心軸のまわりに一定の角速度 $\\omega$ で回転させ，水が容器とともに剛体回転するようになった．\n\\begin{enumerate}\n\\item 軸上の水面の高さ $z_0$（容器の底から測る）を求めよ．\n\\item 底の中心が露出し始める角速度 $\\omega_c$ を求めよ．\n\\item $\\omega>\\omega_c$ のとき，底の露出している部分の半径 $r_0$ を求めよ．また $R=10$ cm，$H=10$ cm，$\\omega=30$ rad/s のときの値を求めよ．\n\\item 底が受ける水圧の合力（大気圧の分を除く）は $\\omega$ によらないことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $z_0=H-\\dfrac{\\omega^2R^2}{4g}$　(2) $\\omega_c=\\dfrac{2\\sqrt{gH}}{R}$　(3) $r_0=R\\sqrt{1-\\dfrac{2\\sqrt{gH}}{\\omega R}}\\approx5.8$ cm　(4) 証明（解説参照）：合力は常に $\\rho g\\pi R^2H$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "回転系での等圧面（自由表面）は $z=z_0+\\dfrac{\\omega^2r^2}{2g}$ の回転放物面．\n\n(1) 体積保存：$\\displaystyle\\int_0^R2\\pi r\\left(z_0+\\frac{\\omega^2r^2}{2g}\\right)dr=\\pi R^2z_0+\\frac{\\pi\\omega^2R^4}{4g}=\\pi R^2H$ より $z_0=H-\\dfrac{\\omega^2R^2}{4g}$．\n\n(2) $z_0=0$ で $\\omega_c=\\dfrac{2\\sqrt{gH}}{R}$．\n\n(3) 水面は $z=\\dfrac{\\omega^2(r^2-r_0^2)}{2g}$（$r_0\\le r\\le R$）．体積は\n\\[ \\int_{r_0}^R2\\pi r\\frac{\\omega^2(r^2-r_0^2)}{2g}dr=\\frac{\\pi\\omega^2}{4g}(R^2-r_0^2)^2=\\pi R^2H \\]\nより $R^2-r_0^2=\\dfrac{2R\\sqrt{gH}}{\\omega}$，$r_0=R\\sqrt{1-\\dfrac{2\\sqrt{gH}}{\\omega R}}$．数値：$\\omega_c=19.8$ rad/s $<30$ rad/s で，$r_0=10\\sqrt{1-\\dfrac{2\\times0.990}{3.0}}\\approx5.8$ cm．\n\n(4) 底の各点の圧力（大気圧を除く）は鉛直上方の水柱の重さ $\\rho g\\,z_{\\rm surf}(r)$（鉛直方向のつり合い）．よって合力は $\\displaystyle\\int\\rho g z_{\\rm surf}\\,2\\pi r\\,dr=\\rho g\\times(\\text{水の体積})=\\rho g\\pi R^2H$ で $\\omega$ によらない．側壁の圧力は水平なので鉛直方向に寄与しない．"
+   }
+  ],
+  "idea": {
+   "tex": "自由表面は回転放物面で，体積保存から軸上水位が決まる．底が露出した後は環状の水を体積保存で決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $z_0$：H-((ω^2R^2)/(4g))\n(2) $\\omega_c$：((2 sqrt(g H))/(R))\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転流体",
+   "回転放物面",
+   "体積保存",
+   "静水圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "シャボン玉の毛管圧と帯電",
+  "topic": "シャボン玉の毛管圧と帯電",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 表面張力 $\\alpha=45\\ \\mathrm{mN/m}$ のせっけん水でできた直径 $d=3.0\\ \\mathrm{mm}$ のシャボン玉の内外の圧力差を求めよ．\n\\item 水銀（$\\alpha=0.49\\ \\mathrm{N/m}$）の滴で，毛管圧が $1\\ \\mathrm{atm}$ に等しくなる直径を求めよ．\n\\item (1) のシャボン玉に電荷 $q$ を一様に与える（膜は導体とみなす）．内外の圧力差が 0 になる $q$ を求めよ．導体表面の電荷面密度 $\\sigma$ に対し表面には外向きに単位面積あたり $\\sigma^2/2\\varepsilon_0$ の力がはたらく．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta p=8\\alpha/d=120\\ \\mathrm{Pa}$　(2) $d=4\\alpha/p_0=19\\ \\mu\\mathrm m$　(3) $q=\\pi d^2\\sqrt{16\\varepsilon_0\\alpha/d}=1.3\\times10^{-9}\\ \\mathrm C$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) シャボン膜は内外 2 枚の表面をもつので，ラプラスの式から $\\Delta p=2\\times\\dfrac{2\\alpha}{d/2}=\\dfrac{8\\alpha}{d}=\\dfrac{8\\times0.045}{3.0\\times10^{-3}}=120\\ \\mathrm{Pa}$．\n\n(2) 液滴は表面 1 枚で $\\Delta p=4\\alpha/d=p_0$．$d=\\dfrac{4\\times0.49}{1.013\\times10^5}=1.9\\times10^{-5}\\ \\mathrm m$．\n\n(3) 電荷による外向きの圧力 $\\sigma^2/2\\varepsilon_0$（$\\sigma=q/\\pi d^2$）が表面張力による内向きの圧力 $8\\alpha/d$ を打ち消せばよい：\n\\[ \\frac{q^2}{2\\varepsilon_0\\pi^2d^4}=\\frac{8\\alpha}{d}\\ \\Rightarrow\\ q=\\pi d^2\\sqrt{\\frac{16\\varepsilon_0\\alpha}{d}}=\\pi(3\\times10^{-3})^2\\sqrt{\\frac{16\\times8.85\\times10^{-12}\\times0.045}{3\\times10^{-3}}}=1.3\\times10^{-9}\\ \\mathrm C. \\]\nこのとき内部の気体は外気と同じ圧力で，シャボン玉は表面張力に頼らず電気力で膨らみを保っている．"
+   }
+  ],
+  "idea": {
+   "tex": "ラプラス圧は膜の面数と曲率で決まる．帯電による外向きの静電圧力 σ²/2ε0 は表面張力の効果と競合する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta p$：8 α / d\n(2) $d$：4 α / p_0\n(3) $q$ [C]：≈1.3e-9"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラスの式",
+   "毛管圧",
+   "シャボン玉",
+   "静電圧力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "減圧で膨らむシャボン玉",
+  "topic": "減圧で膨らむシャボン玉",
+  "statement": {
+   "tex": "圧力 $p_0$ の空気で満たされた容器内に直径 $d$ のシャボン玉がある（せっけん水の表面張力 $\\alpha$）．容器内の空気の圧力を等温的に下げる．\n\\begin{enumerate}\n\\item 容器内の圧力を $p_0/n$ にしたところシャボン玉の直径が $\\eta$ 倍になった．$\\alpha$ を $p_0,d,n,\\eta$ で表せ．\n\\item $p_0=1.013\\times10^5\\ \\mathrm{Pa}$，$d=1.0\\ \\mathrm{cm}$，$\\alpha=0.040\\ \\mathrm{N/m}$ とする．容器を完全に真空にしたときシャボン玉の直径はいくらになるか（膜は破れないとする）．そのとき内部の気体の圧力はいくらか．\n\\item (2) の条件で $n=2$ のとき，$\\eta$ の $2^{1/3}$ からのずれ $\\eta/2^{1/3}-1$ を 1 次の近似で求めよ．この結果から (1) の方法で $\\alpha$ を測定することの難しさを論ぜよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\dfrac{p_0d}{8}\\cdot\\dfrac{1-\\eta^3/n}{\\eta^2-1}$　(2) $d_{\\max}=d\\sqrt{(p_0+8\\alpha/d)d/8\\alpha}=0.56\\ \\mathrm m$，内圧 $0.57\\ \\mathrm{Pa}$　(3) $\\approx-6.2\\times10^{-5}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 内部の空気は等温なので $p_{\\rm in}V=$ 一定．膜は 2 面なので $p_{\\rm in}=p_{\\rm out}+8\\alpha/d$：\n\\[ \\Bigl(p_0+\\frac{8\\alpha}{d}\\Bigr)d^3=\\Bigl(\\frac{p_0}{n}+\\frac{8\\alpha}{\\eta d}\\Bigr)\\eta^3d^3. \\]\n$\\alpha$ について解くと $\\dfrac{8\\alpha}{d}(1-\\eta^2)=p_0\\Bigl(\\dfrac{\\eta^3}{n}-1\\Bigr)$，すなわち\n\\[ \\alpha=\\frac{p_0d}{8}\\cdot\\frac{1-\\eta^3/n}{\\eta^2-1}. \\]\n(2) 外圧 0 では $\\dfrac{8\\alpha}{D}D^3=\\Bigl(p_0+\\dfrac{8\\alpha}{d}\\Bigr)d^3$ より\n\\[ D=\\sqrt{\\frac{(p_0+8\\alpha/d)d^3}{8\\alpha}}=\\sqrt{\\frac{(1.013\\times10^5+32)\\times10^{-6}}{0.32}}=0.56\\ \\mathrm m. \\]\n内圧は $8\\alpha/D=0.57\\ \\mathrm{Pa}$．真空でも表面張力だけで有限の大きさに留まる（直径は 56 倍）．\n(3) $\\eta=n^{1/3}(1+\\varepsilon)$ を (1) の式に代入して 1 次まで展開すると $p_0(1+3\\varepsilon)+\\dfrac{8\\alpha}{d}n^{2/3}=p_0+\\dfrac{8\\alpha}{d}$，\n\\[ \\varepsilon=\\frac{8\\alpha}{3p_0d}(1-n^{2/3})=\\frac{32}{3\\times1.013\\times10^5}(1-1.587)=-6.2\\times10^{-5}. \\]\n$\\eta$ は表面張力を無視した値 $2^{1/3}$ と $10^{-4}$ 程度しか違わないので，(1) の式の分子 $1-\\eta^3/n$ は小さな数どうしの差になり，$\\eta$ を $10^{-5}$ の精度で測らないと $\\alpha$ が求まらない．測定には $8\\alpha/d$ が $p_0$ に比べて無視できない小さなシャボン玉か，低い圧力を使うべきである．"
+   }
+  ],
+  "idea": {
+   "tex": "シャボン玉内の気体はボイルの法則に従い，内圧は外圧＋8α/d．外圧 0 でも表面張力だけで大きさが決まる．大きな玉では表面張力の寄与が小さく測定には不向き．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\alpha$：((p_0 d)/(8))*((1- η ^(3)/ n)/(η ^(2)-1))\n(2) 記述\n(3) ≈-6.2e-5"
+  },
+  "methods": [],
+  "tags": [
+   "シャボン玉",
+   "ラプラス圧",
+   "ボイルの法則",
+   "感度解析"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "浮上する気泡と池の深さ",
+  "topic": "浮上する気泡と池の深さ",
+  "statement": {
+   "tex": "池の底でできた直径 $d$ の気泡が水面まで上がると直径が $n$ 倍になった．気体の膨張は等温とし，大気圧 $p_0=1.013\\times10^5\\ \\mathrm{Pa}$，水の密度 $\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$，表面張力 $\\alpha=0.073\\ \\mathrm{N/m}$，$g=9.81\\ \\mathrm{m/s^2}$ とする（水面直下の泡の外圧は $p_0$）．\n\\begin{enumerate}\n\\item 池の深さ $H$ を $p_0,\\alpha,\\rho,g,d,n$ で表し，$d=4.0\\ \\mu\\mathrm m$，$n=1.1$ の値を求めよ．\n\\item 表面張力を無視して深さを推定すると何 m になるか．相対誤差を求めよ．\n\\item 深さ $H$ を固定して $d\\to0$ とすると，$n$ はどう振る舞うか．$n-1$ の主要項を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{p_0(n^3-1)+4\\alpha(n^2-1)/d}{\\rho g}=5.0\\ \\mathrm m$　(2) $3.4\\ \\mathrm m$，約 $31\\ \\%$ 過小　(3) $n\\to1$，$n-1\\simeq\\dfrac{\\rho gHd}{8\\alpha}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 等温で $p_{\\rm in}d^3$ 一定：\n\\[ \\Bigl(p_0+\\rho gH+\\frac{4\\alpha}{d}\\Bigr)d^3=\\Bigl(p_0+\\frac{4\\alpha}{nd}\\Bigr)n^3d^3 \\]\n\\[ \\Rightarrow\\ H=\\frac{p_0(n^3-1)+4\\alpha(n^2-1)/d}{\\rho g}=\\frac{3.35\\times10^4+1.53\\times10^4}{9.81\\times10^3}=4.98\\ \\mathrm m. \\]\n(2) $\\alpha=0$ なら $H_0=p_0(n^3-1)/\\rho g=3.42\\ \\mathrm m$．$(H-H_0)/H=0.31$，すなわち約 31 % 過小評価になる．小さな泡では表面張力の項が無視できない．\n(3) 両辺を展開して $p_0+\\rho gH+\\dfrac{4\\alpha}{d}=p_0n^3+\\dfrac{4\\alpha n^2}{d}$．$d\\to0$ では $4\\alpha/d$ が支配的になり $n^2\\to1$．$n=1+\\varepsilon$ として 1 次まで：$\\rho gH=3p_0\\varepsilon+\\dfrac{8\\alpha}{d}\\varepsilon$，$d\\to0$ では\n\\[ \\varepsilon\\simeq\\frac{\\rho gHd}{8\\alpha}\\to0. \\]\n非常に小さな泡は内圧が表面張力で決まるため，浮上してもほとんど膨らまない．（例：$d=0.1\\ \\mu\\mathrm m$，$H=5\\ \\mathrm m$ で $n-1\\approx0.008$．）"
+   }
+  ],
+  "idea": {
+   "tex": "泡の気体量保存（等温）に，外圧が水深で変わることと毛管圧 4α/d の両方を入れる．小さい泡ほど表面張力が支配して膨張しなくなる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $H$ [m]：≈5.0\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "毛管圧",
+   "気泡",
+   "ボイルの法則",
+   "漸近評価"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 15,
+  "theme": "上端が水面に近い毛管のメニスカス",
+  "topic": "上端が水面に近い毛管のメニスカス",
+  "statement": {
+   "tex": "内径 $d=0.50\\ \\mathrm{mm}$ のガラス毛管を水（表面張力 $0.073\\ \\mathrm{N/m}$，密度 $1.0\\times10^3\\ \\mathrm{kg/m^3}$，ガラスとの接触角 $0$）に鉛直に差し込む．$g=9.81\\ \\mathrm{m/s^2}$．\n\\begin{enumerate}\n\\item 毛管が十分長いときの水の上昇高さ $h_0$ を求めよ．\n\\item 毛管の水面上に出ている部分の長さを $h=25\\ \\mathrm{mm}$ にすると，水は管の上端まで上がって止まる．このときのメニスカスの曲率半径 $R$ と，メニスカスが管壁となす見かけの角度 $\\varphi$ を求めよ．\n\\item 突き出し長さを $5.0\\ \\mathrm{mm}$ にした場合の $R$ と $\\varphi$ を求めよ．突き出しを短くしても水があふれ出さない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h_0=\\dfrac{4\\alpha}{\\rho gd}=60\\ \\mathrm{mm}$　(2) $R=\\dfrac{2\\alpha}{\\rho gh}=0.60\\ \\mathrm{mm}$，$\\cos\\varphi=\\dfrac{d}{2R}$ より $\\varphi=65^\\circ$　(3) $R=3.0\\ \\mathrm{mm}$，$\\varphi=85^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $h_0=\\dfrac{4\\alpha}{\\rho gd}=\\dfrac{4\\times0.073}{10^3\\times9.81\\times0.50\\times10^{-3}}=0.060\\ \\mathrm m$．\n\n(2) 液柱は上端（高さ $h$）までしか上がれない．メニスカス直下の圧力は $p_0-\\rho gh$ で，これを毛管圧 $2\\alpha/R$ が支えるので\n\\[ R=\\frac{2\\alpha}{\\rho gh}=\\frac{2\\times0.073}{10^3\\times9.81\\times0.025}=6.0\\times10^{-4}\\ \\mathrm m. \\]\nメニスカスは管の縁（半径 $d/2$）に固定された球面の一部なので $\\cos\\varphi=\\dfrac{d/2}{R}=\\dfrac{0.25}{0.595}=0.42$，$\\varphi=65^\\circ$．管の縁（鋭い角）では接触線が止まるので，見かけの角度は $0$ でなくてよい．\n\n(3) $h=5.0\\ \\mathrm{mm}$：$R=2.98\\ \\mathrm{mm}$，$\\cos\\varphi=0.084$，$\\varphi=85^\\circ$．\n突き出しを短くするほど支える水柱が低くなり，必要な毛管圧が小さくなるのでメニスカスが平らに近づく（$R\\to\\infty$）だけで，液面が管の外に盛り上がる理由はない．毛管現象で「永久に水があふれ続ける噴水」は作れない．"
+   }
+  ],
+  "idea": {
+   "tex": "液柱の高さが管の長さで制限されると，メニスカスの曲率が自動的に調整されて静水圧を支える．縁での見かけの接触角は変わりうる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h_0$：((4 α)/(ρ g d))\n(2) 記述\n(3) $R$ [mm]：≈3.0 ; $\\varphi$ [°]：85"
+  },
+  "methods": [],
+  "tags": [
+   "毛管現象",
+   "メニスカス",
+   "ラプラス圧",
+   "接触角"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "上端を閉じた毛管を沈める",
+  "topic": "上端を閉じた毛管を沈める",
+  "statement": {
+   "tex": "長さ $l=110\\ \\mathrm{mm}$，内径 $d=20\\ \\mu\\mathrm m$ のガラス毛管の上端を閉じ，下端から鉛直に液体中へ沈める．外気圧は $p_0=1.013\\times10^5\\ \\mathrm{Pa}$，温度は一定とする．\n\\begin{enumerate}\n\\item 液体が水（表面張力 $0.073\\ \\mathrm{N/m}$，接触角 $0$）のとき，管内外の液面が同じ高さになるのは管を何 mm 沈めたときか．静水圧の差は無視できる（液面が同じ高さなので）．\n\\item 液体が水銀（接触角 $\\theta>90^\\circ$）のときは，どれだけ沈めても管内の液面は外の液面より必ず低いことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=\\dfrac{l}{1+p_0d/4\\alpha}=14\\ \\mathrm{mm}$　(2) 証明（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 管を $x$ 沈めて内外の液面が一致したとすると，閉じ込めた空気の長さは $l-x$，圧力はボイルの法則より $p=p_0l/(l-x)$．管内の液面直下の圧力は外の液面と同じ高さなので $p_0$．ぬれる液体ではメニスカスは上に凹で，気体側の圧力が液体側より $4\\alpha/d$ 高い：\n\\[ \\frac{p_0l}{l-x}=p_0+\\frac{4\\alpha}{d}\\ \\Rightarrow\\ x=\\frac{l}{1+p_0d/(4\\alpha)}=\\frac{110}{1+6.94}=13.9\\ \\mathrm{mm}. \\]\n\n(2) 管内の液面が外の液面より深さ $y$ だけ下にあるとする（$y<0$ なら上）．液面直下の圧力は $p_0+\\rho gy$．ぬれない液体ではメニスカスは気体側へ凸で，液体側の圧力が気体側より $4\\alpha|\\cos\\theta|/d$ 高い．よって気体の圧力は\n\\[ p_{\\rm gas}=p_0+\\rho gy-\\frac{4\\alpha|\\cos\\theta|}{d}. \\]\n一方，気体は初め圧力 $p_0$ で管全体を満たしており，液体が入れば圧縮されるだけなので $p_{\\rm gas}\\ge p_0$．したがって $\\rho gy\\ge4\\alpha|\\cos\\theta|/d>0$，すなわち管内の液面は必ず外より下にある（液体が入ってこない間は液面は管の下端にあり，やはり外より下）．ぬれる液体と違い，空気の圧縮と毛管降下が同じ向きに働くからである．"
+   }
+  ],
+  "idea": {
+   "tex": "閉じた毛管内の気体の圧縮（ボイル）とラプラス圧の釣り合い．ぬれる液体では両者が打ち消せるが，ぬれない液体では同じ向きに働くので液面は必ず下がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "毛管現象",
+   "ボイルの法則",
+   "ラプラス圧",
+   "非ぬれ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "閉じた毛管での液面上昇と表面張力",
+  "topic": "閉じた毛管での液面上昇と表面張力",
+  "statement": {
+   "tex": "長さ $l$，内径 $d$ の鉛直な毛管の上端を閉じ，下端を液面に接触させたところ，液体は管内を高さ $h$ まで上がった．液体の密度を $\\rho$，接触角を $\\theta$，大気圧を $p_0$ とする．温度は一定．\n\\begin{enumerate}\n\\item 表面張力 $\\alpha$ を求めよ．\n\\item 水（$\\alpha=0.073\\ \\mathrm{N/m}$，$\\theta=0$，$\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$），$l=100\\ \\mathrm{mm}$，$d=20\\ \\mu\\mathrm m$，$p_0=1.013\\times10^5\\ \\mathrm{Pa}$ のとき $h$ を有効数字 3 桁で求めよ．また重力を無視した近似式 $h\\simeq\\dfrac{l\\cdot4\\alpha/d}{p_0+4\\alpha/d}$ による値と比べよ．\n\\item (2) で閉じ込められた空気の圧力を求め，上端が開いていた場合の上昇高さと比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\dfrac{d}{4\\cos\\theta}\\Bigl[\\rho gh+\\dfrac{p_0h}{l-h}\\Bigr]$　(2) $h=12.5\\ \\mathrm{mm}$（近似式 $12.6\\ \\mathrm{mm}$）　(3) $1.158\\times10^5\\ \\mathrm{Pa}$；開いていれば $1.49\\ \\mathrm m$ 上がろうとする（管の長さを超える）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 空気は長さ $l\\to l-h$ に圧縮され $p=\\dfrac{p_0l}{l-h}$．液面直下の圧力は $p_0-\\rho gh$．メニスカス（曲率半径 $d/(2\\cos\\theta)$）の両側の圧力差は $4\\alpha\\cos\\theta/d$ で気体側が高い：\n\\[ \\frac{p_0l}{l-h}-(p_0-\\rho gh)=\\frac{4\\alpha\\cos\\theta}{d}\\ \\Rightarrow\\ \\alpha=\\frac{d}{4\\cos\\theta}\\Bigl[\\rho gh+\\frac{p_0h}{l-h}\\Bigr]. \\]\n(2) $4\\alpha/d=1.46\\times10^4\\ \\mathrm{Pa}$．方程式 $\\dfrac{p_0l}{l-h}-p_0+\\rho gh=1.46\\times10^4\\ \\mathrm{Pa}$ を数値的に解くと $h=12.5\\ \\mathrm{mm}$．重力を無視すると $\\dfrac{p_0h}{l-h}=\\dfrac{4\\alpha}{d}$ より $h=\\dfrac{l\\cdot4\\alpha/d}{p_0+4\\alpha/d}=\\dfrac{100\\times14600}{115925}=12.6\\ \\mathrm{mm}$．$\\rho gh\\approx123\\ \\mathrm{Pa}$ は $4\\alpha/d$ の 1 % 弱なので差は小さい．\n(3) $p=\\dfrac{p_0l}{l-h}=1.158\\times10^5\\ \\mathrm{Pa}$．開いた管なら $h_{\\rm open}=\\dfrac{4\\alpha}{\\rho gd}=1.49\\ \\mathrm m$ 上がろうとするが，閉じた管では空気の圧縮が毛管圧のほとんどを打ち消し，上昇はわずか 1 cm あまりに抑えられる．細い管では重力よりも閉じ込めた気体の圧力が上昇を支配する．"
+   }
+  ],
+  "idea": {
+   "tex": "閉じた毛管では毛管圧を静水圧と閉じ込め気体の圧縮の両方が支える．細い管では気体の圧縮が支配的で，上昇高さは開管よりはるかに小さい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $h$ [mm]：≈12.5\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "毛管現象",
+   "ボイルの法則",
+   "表面張力の測定",
+   "ラプラス圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "くさび形すき間で持ち上がる液体の体積",
+  "topic": "くさび形すき間で持ち上がる液体の体積",
+  "statement": {
+   "tex": "2 枚の長方形の鉛直平板を，鉛直な一辺どうしで接合し，微小な開き角 $\\delta\\varphi$ のくさびを作る．各平板は接合辺から水平方向に長さ $L$ あり，平板の上端は外の液面より高さ $H$ のところにある．これを密度 $\\rho$，表面張力 $\\sigma$，接触角 $\\theta\\ (<90^\\circ)$ の液体に部分的に浸す．接合辺からの水平距離を $x$ とし，すき間の幅は $x\\,\\delta\\varphi$ で近似せよ．\n\\begin{enumerate}\n\\item 液体が上端まで達していない場所での液面の高さ $h(x)$ を求め，液体が上端まで満ちている範囲 $0<x<x^*$ の $x^*$ を求めよ．\n\\item 外の液面より上に持ち上げられている液体の全体積 $V$ を求め，それが $\\delta\\varphi$ にほとんどよらないことを示せ．\n\\item 水（$\\sigma=0.073$ N/m，$\\theta=0$），$\\delta\\varphi=0.010$ rad，$H=5.0$ cm，$L=10$ cm のとき，$x^*$ と $V$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h=\\dfrac{2\\sigma\\cos\\theta}{\\rho g\\,\\delta\\varphi\\,x}$，$x^*=\\dfrac{2\\sigma\\cos\\theta}{\\rho g H\\delta\\varphi}$　(2) $V=\\dfrac{2\\sigma\\cos\\theta}{\\rho g}\\left(L-\\dfrac{x^*}{2}\\right)$　(3) $x^*=3.0$ cm，$V=1.3\\ \\mathrm{cm^3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位置 $x$ のすき間幅 $w=x\\,\\delta\\varphi$ は小さいので，その場所の液面は幅 $w$ の平行平板間のメニスカス（曲率半径 $w/(2\\cos\\theta)$ の円柱面）とみなせる．液面直下の圧力 $p_0-2\\sigma\\cos\\theta/w$ が外液面と同じ高さで $p_0$ に戻るから\n\\[\n\\rho g h=\\frac{2\\sigma\\cos\\theta}{x\\,\\delta\\varphi}\\quad\\Longrightarrow\\quad h(x)=\\frac{a}{x},\\qquad a\\equiv\\frac{2\\sigma\\cos\\theta}{\\rho g\\,\\delta\\varphi}.\n\\]\n$h(x)\\ge H$ となる $x\\le x^*=a/H$ では液体は上端まで満ちている．\n\n(2) 幅 $x\\delta\\varphi$，高さ $\\min(H,a/x)$ の液体を $x$ について積分すると\n\\[\nV=\\delta\\varphi\\left[\\int_0^{x^*}Hx\\,dx+\\int_{x^*}^{L}\\frac ax\\,x\\,dx\\right]=\\delta\\varphi\\left[\\frac{Hx^{*2}}{2}+a(L-x^*)\\right]=\\delta\\varphi\\,a\\left(L-\\frac{x^*}{2}\\right).\n\\]\n$\\delta\\varphi\\,a=2\\sigma\\cos\\theta/(\\rho g)$ なので\n\\[\nV=\\frac{2\\sigma\\cos\\theta}{\\rho g}\\left(L-\\frac{x^*}{2}\\right).\n\\]\n$x^*\\ll L$ なら $V\\approx 2\\sigma\\cos\\theta\\,L/(\\rho g)$ で，開き角 $\\delta\\varphi$ によらない．角を小さくすると液面は高くなるが，すき間が狭くなるため体積は変わらない（高さ $h\\propto1/x$ が発散しても，断面積 $\\propto x$ と打ち消し合う）．\n\n(3) $a=\\dfrac{2(0.073)}{(1000)(9.8)(0.010)}=1.49\\times10^{-3}\\ \\mathrm{m^2}$，$x^*=a/H=3.0\\times10^{-2}$ m．\n\\[\nV=\\frac{2(0.073)}{9800}\\left(0.10-0.0149\\right)=1.27\\times10^{-6}\\ \\mathrm{m^3}\\approx1.3\\ \\mathrm{cm^3}.\n\\]"
+   }
+  ],
+  "idea": {
+   "tex": "くさび内の液面は双曲線 $h\\propto1/x$ だが，持ち上がる体積は $h\\cdot x\\delta\\varphi$ の積分なので開き角が消え，$2\\sigma\\cos\\theta L/(\\rho g)$ という単純な形になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "毛管上昇",
+   "くさび",
+   "双曲線",
+   "ラプラス圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "表面張力を考慮した細い噴流の流量",
+  "topic": "表面張力を考慮した細い噴流の流量",
+  "statement": {
+   "tex": "丸い穴から水が鉛直下向きに連続した噴流として流れ出ている．ある水平断面 A での噴流の直径は $d$，そこから $l$ だけ下の断面 B での直径は $d/n$ $(n>1)$ である．水を非粘性・非圧縮とし，噴流は定常で各断面内の流速は一様とする．水の密度 $\\rho$，表面張力 $\\sigma$．\n\\begin{enumerate}\n\\item 表面張力による噴流内部の圧力の増加を考慮して，体積流量 $Q$ を求めよ．\n\\item $d=2.0$ mm，$n=1.5$，$l=10$ mm，$\\sigma=0.073$ N/m のとき $Q$ を求めよ．また表面張力を無視して計算すると何 \\% の過大評価になるか．\n\\item 与えられた $d$，$n$ に対して，$l$ がある値 $l_{\\min}$ より短いと，このような細まり方は（この模型の範囲で）起こり得ないことを示し，(2) の $d,n$ について $l_{\\min}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q=\\dfrac{\\pi d^2}{4}\\sqrt{\\dfrac{2\\left[gl-2\\sigma(n-1)/(\\rho d)\\right]}{n^4-1}}$　(2) $Q=0.55\\ \\mathrm{cm^3/s}$，無視すると $0.69\\ \\mathrm{cm^3/s}$ で約 26\\% 過大　(3) $l_{\\min}=\\dfrac{2\\sigma(n-1)}{\\rho g d}=3.7$ mm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 直径 $D$ の円柱状の水柱の内部圧力は，表面の曲率（半径 $D/2$ の円柱，主曲率の一方のみ）によって $p_0+\\sigma/(D/2)=p_0+2\\sigma/D$．断面 A，B での速さを $v_1,v_2$ とすると連続の式より $v_2=n^2v_1$．流線に沿ったベルヌーイの式は\n\\[\np_0+\\frac{2\\sigma}{d}+\\frac12\\rho v_1^2+\\rho g l=p_0+\\frac{2\\sigma n}{d}+\\frac12\\rho n^4v_1^2,\n\\]\n\\[\n\\frac12\\rho v_1^2(n^4-1)=\\rho gl-\\frac{2\\sigma(n-1)}{d}.\n\\]\nよって\n\\[\nQ=\\frac{\\pi d^2}{4}v_1=\\frac{\\pi d^2}{4}\\sqrt{\\frac{2\\left[gl-2\\sigma(n-1)/(\\rho d)\\right]}{n^4-1}}.\n\\]\n\n(2) $gl=0.098\\ \\mathrm{m^2/s^2}$，$2\\sigma(n-1)/(\\rho d)=0.0365\\ \\mathrm{m^2/s^2}$，$n^4-1=4.0625$．\n\\[\nQ=\\frac{\\pi(2.0\\times10^{-3})^2}{4}\\sqrt{\\frac{2(0.0615)}{4.0625}}=5.5\\times10^{-7}\\ \\mathrm{m^3/s}.\n\\]\n表面張力を無視すると $\\sqrt{2(0.098)/4.0625}$ を用いて $6.9\\times10^{-7}\\ \\mathrm{m^3/s}$ となり，約 26\\% 大きい．細い噴流では毛管圧の差が無視できない．\n\n(3) 細くなるほど内部圧力が上がるので，水は重力で加速されながら毛管圧の「坂」を下る必要がある．(1) で $v_1^2>0$ が必要だから $\\rho gl>2\\sigma(n-1)/d$，すなわち\n\\[\nl>l_{\\min}=\\frac{2\\sigma(n-1)}{\\rho g d}=\\frac{2(0.073)(0.5)}{(1000)(9.8)(2.0\\times10^{-3})}=3.7\\times10^{-3}\\ \\mathrm m.\n\\]"
+   }
+  ],
+  "idea": {
+   "tex": "円柱の毛管圧 $2\\sigma/D$ は細いほど大きく，噴流が細まるにはその増分を重力が補う必要がある．流量の補正と細まりの下限長さが得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $l_{\\min}$ [mm]：≈3.7"
+  },
+  "methods": [],
+  "tags": [
+   "噴流",
+   "ベルヌーイの定理",
+   "ラプラス圧",
+   "連続の式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 15,
+  "theme": "開いた細管に保持される水柱の上下メニスカス",
+  "topic": "開いた細管に保持される水柱の上下メニスカス",
+  "statement": {
+   "tex": "内半径 $r$ の細いガラス管を鉛直に保ち，両端を開いたまま，内部に長さ $L$ の水柱を保持させる．上側のメニスカスは完全にぬれた凹面（曲率半径 $r$ の半球面）である．下側のメニスカスは管の下端の内縁に固定されており，その形（曲率）は自由に変わりうるとする．水の密度 $\\rho$，表面張力 $\\sigma$，大気圧 $p_0$．\n\\begin{enumerate}\n\\item 下側メニスカスの曲率半径 $R_b$（下に向かってふくらむ凸面を正とする）を $L$ の関数として求めよ．\n\\item 保持できる水柱の最大長 $L_{\\max}$ を求め，同じ管での毛管上昇高さ $h_c$ と比べよ．\n\\item $r=0.40$ mm，$\\sigma=0.073$ N/m のとき，$L=5.0$ cm での $R_b$ と $L_{\\max}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $R_b=\\dfrac{2\\sigma}{\\rho gL-2\\sigma/r}$　(2) $L_{\\max}=\\dfrac{4\\sigma}{\\rho g r}=2h_c$　(3) $R_b=1.2$ mm，$L_{\\max}=7.4$ cm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 上側メニスカス直下の水の圧力は $p_0-2\\sigma/r$．水中を $L$ だけ下ると $p_0-2\\sigma/r+\\rho gL$．下側メニスカスが下に凸で曲率半径 $R_b$ なら，その内側の圧力は $p_0+2\\sigma/R_b$．等置して\n\\[\n\\frac{2\\sigma}{R_b}=\\rho gL-\\frac{2\\sigma}{r}\\quad\\Longrightarrow\\quad R_b=\\frac{2\\sigma}{\\rho gL-2\\sigma/r}.\n\\]\n$L<h_c\\equiv2\\sigma/(\\rho g r)$ では $R_b<0$（下側も凹面），$L=h_c$ で平面になる．\n\n(2) 下端の内縁に固定された球面の曲率半径は，半球のとき最小値 $r$ をとる．$R_b\\ge r$ が必要なので\n\\[\n\\rho gL-\\frac{2\\sigma}{r}\\le\\frac{2\\sigma}{r}\\quad\\Longrightarrow\\quad L_{\\max}=\\frac{4\\sigma}{\\rho g r}=2h_c.\n\\]\n上下のメニスカスがともに水柱を支えるので，毛管上昇高さのちょうど 2 倍まで保持できる．\n\n(3) $2\\sigma/r=365$ Pa，$\\rho gL=490$ Pa より $R_b=\\dfrac{0.146}{125}=1.2\\times10^{-3}$ m．$L_{\\max}=\\dfrac{4(0.073)}{(1000)(9.8)(4.0\\times10^{-4})}=7.4\\times10^{-2}$ m（$h_c=3.7$ cm）．"
+   }
+  ],
+  "idea": {
+   "tex": "上下のメニスカスの曲率の差は静水圧差 $\\rho gL$ で決まる．下側が半球になったところが限界で，最大長は毛管上昇高さの 2 倍．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $R_b$：((2 σ)/(ρ g L -2 σ / r))\n(2) $L_{\\max}$：((4 σ)/(ρ g r))\n(3) $R_b$ [mm]：≈1.2 ; $L_{\\max}$ [cm]：≈7.4"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス圧",
+   "メニスカス",
+   "静水圧",
+   "毛管"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "板にはさまれた水滴の引力と放出エネルギー",
+  "topic": "板にはさまれた水滴の引力と放出エネルギー",
+  "statement": {
+   "tex": "面積 $S$ の 2 枚の平行なガラス板の間に質量 $m$ の水滴をはさむ．水は板を完全にぬらし，間隔 $h$ は水のひろがりの大きさに比べて十分小さい．水の密度 $\\rho$，表面張力 $\\sigma$ とし，水の外周の側面の水平面内の曲率は無視する．\n\\begin{enumerate}\n\\item 水が板の内部にとどまっている間，板どうしの引力 $F$ を $h$ の関数として求めよ．$F$ が板の大きさによらないことに注意せよ．\n\\item 間隔 $h_0$ からゆっくり板を近づけていく．水が板全面に広がるときの間隔 $h_c$ を求めよ．\n\\item $h_0$ から $h_c$ までの間に毛管力がする仕事 $W$ を求め，それが界面エネルギーの減少に等しいことを示せ．$m=70$ mg，$S=10\\ \\mathrm{cm^2}$，$h_0=0.10$ mm，$\\sigma=0.073$ N/m として $F(h_0)$，$h_c$，$W$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F=\\dfrac{2\\sigma m}{\\rho h^2}$　(2) $h_c=\\dfrac{m}{\\rho S}$　(3) $W=\\dfrac{2\\sigma m}{\\rho}\\left(\\dfrac1{h_c}-\\dfrac1{h_0}\\right)$；$F(h_0)=1.0$ N，$h_c=70\\ \\mu$m，$W=4.4\\times10^{-5}$ J"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 外周のメニスカスは鉛直断面で半径 $h/2$ の半円なので，水の圧力は $p_0-2\\sigma/h$．ぬれている面積は $A=m/(\\rho h)$ だから\n\\[\nF=\\frac{2\\sigma}{h}\\cdot\\frac{m}{\\rho h}=\\frac{2\\sigma m}{\\rho h^2}.\n\\]\nぬれ面積が $h$ とともに変わるので，力は板の大きさではなく水の量で決まる．\n\n(2) $A=m/(\\rho h)=S$ より $h_c=m/(\\rho S)$．\n\n(3) 完全ぬれでは固体–気体界面を固体–液体界面に置き換えると単位面積あたり $\\sigma$ だけエネルギーが下がるので，両板あわせた界面エネルギーは（外周の側面を無視して）$E(h)=-2\\sigma A=-2\\sigma m/(\\rho h)$．$F=-dE/dh$ の大きさは $2\\sigma m/(\\rho h^2)$ で (1) と一致し，\n\\[\nW=\\int_{h_c}^{h_0}F\\,dh=\\frac{2\\sigma m}{\\rho}\\left(\\frac1{h_c}-\\frac1{h_0}\\right)=E(h_0)-E(h_c).\n\\]\n数値：$F(h_0)=\\dfrac{2(0.073)(70\\times10^{-6})}{(1000)(1.0\\times10^{-4})^2}=1.0$ N，$h_c=\\dfrac{70\\times10^{-6}}{(1000)(10\\times10^{-4})}=7.0\\times10^{-5}$ m，\n\\[\nW=\\frac{2(0.073)(70\\times10^{-6})}{1000}\\left(\\frac{1}{7.0\\times10^{-5}}-\\frac{1}{1.0\\times10^{-4}}\\right)=4.4\\times10^{-5}\\ \\mathrm J.\n\\]\n（このとき $F(h_c)=2.1$ N．これより狭くすると水は板の外にあふれる．）"
+   }
+  ],
+  "idea": {
+   "tex": "板間の水滴ではぬれ面積が $1/h$ で変わるため引力は $h^{-2}$ に比例し，その仕事は界面エネルギー $-2\\sigma A$ の減少として理解できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $F$：((2 σ m)/(ρ h ^(2)))\n(2) $h_c$：((m)/(ρ S))\n(3) $W$：((2 σ m)/(ρ))(((1)/(h_c))-((1)/(h_0))) ; $F(h_0)$ [N]：≈1.0 ; $h_c$：70 μ ; $W$ [J]：≈4.4e-5"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス圧",
+   "完全ぬれ",
+   "界面エネルギー",
+   "仕事"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 20,
+  "theme": "薄い水膜で密着した円板を引き離す仕事",
+  "topic": "薄い水膜で密着した円板を引き離す仕事",
+  "statement": {
+   "tex": "半径 $R$ の 2 枚のガラス円板を水でぬらして重ねると，間に厚さ $h$ の一様な水の層ができた（水はちょうど円板全面を覆う）．完全ぬれとし，水の表面張力を $\\sigma$ とする．水の量は一定で，蒸発は無視し，外周のメニスカスの水平面内の曲率も無視する．\n\\begin{enumerate}\n\\item 円板を面に垂直に引き離し始めるのに必要な力 $F_0$ を求めよ．\n\\item 円板を平行に保ったまま準静的に引き離し，間隔を $h$ から $nh$ にするのに必要な仕事 $W$ を求めよ（水は円板の中央に集まり，ぬれ面積が減る）．\n\\item $R=5.0$ cm，$h=1.9\\ \\mu$m，$\\sigma=0.073$ N/m のとき $F_0$ と $n=10$ での $W$ を求め，力が大きいのに仕事が小さい理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F_0=\\dfrac{2\\pi R^2\\sigma}{h}$　(2) $W=2\\pi R^2\\sigma\\left(1-\\dfrac1n\\right)$　(3) $F_0=0.60$ kN，$W=1.0$ mJ（変位がきわめて小さく，力が $x^{-2}$ で急減する）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 水の圧力は $p_0-2\\sigma/h$（外周のメニスカスは半径 $h/2$ の半円）．全面に作用して $F_0=\\pi R^2\\cdot2\\sigma/h=2\\pi R^2\\sigma/h$．\n\n(2) 間隔 $x$ のとき水の体積 $V=\\pi R^2h$ は一定で，ぬれ面積は $V/x$．したがって引力は\n\\[\nF(x)=\\frac{2\\sigma}{x}\\cdot\\frac Vx=\\frac{2\\sigma V}{x^2}.\n\\]\n\\[\nW=\\int_h^{nh}\\frac{2\\sigma V}{x^2}dx=2\\sigma V\\left(\\frac1h-\\frac1{nh}\\right)=2\\pi R^2\\sigma\\left(1-\\frac1n\\right).\n\\]\nこれは両板のぬれた面積の減少分 $2(\\pi R^2-\\pi R^2/n)$ に $\\sigma$ を掛けたものに等しい．\n\n(3) $F_0=\\dfrac{2\\pi(0.050)^2(0.073)}{1.9\\times10^{-6}}=6.0\\times10^2$ N．$W=2\\pi(0.050)^2(0.073)(0.9)=1.0\\times10^{-3}$ J．\n$n\\to\\infty$ でも $W\\to2\\pi R^2\\sigma=1.15$ mJ にしかならない．初期の力は 60 kg 重にもなるが，その力がはたらく変位は $\\mu$m 程度で，力は $x^{-2}$ で急減するため仕事はわずかである．"
+   }
+  ],
+  "idea": {
+   "tex": "薄い水膜の引力は巨大だが，体積一定のためぬれ面積とともに $x^{-2}$ で減る．全仕事は界面エネルギー $2\\pi R^2\\sigma$ を超えない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $F_0$：((2 pi R ^(2) σ)/(h))\n(2) $W$：2 pi R ^(2) σ (1-((1)/(n)))\n(3) $F_0$ [kN]：≈0.60 ; $W$ [mJ]：≈1.0"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス圧",
+   "完全ぬれ",
+   "界面エネルギー",
+   "付着"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-048",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 2,
+  "minutes": 15,
+  "theme": "液滴の合体で跳び上がる液滴",
+  "topic": "液滴の合体で跳び上がる液滴",
+  "statement": {
+   "tex": "半径 $r$ の同じ水滴が $N$ 個，等温で合体して 1 個の水滴になる．水の密度 $\\rho$，表面張力 $\\sigma$．\n\\begin{enumerate}\n\\item 合体で解放される表面の自由エネルギー $\\Delta E$ を求めよ．\n\\item 超撥水面の上で 2 個の水滴（$r=20\\ \\mu$m）が合体すると，解放エネルギーの一部が合体した水滴の上向きの運動エネルギーに変わり，水滴が跳び上がる．その割合を $f=0.060$ とするとき，跳び上がる速さ $v$ を求めよ（$\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$，$\\sigma=0.073$ N/m）．\n\\item 空気抵抗を無視したとき，跳び上がる高さはいくらか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta E=4\\pi r^2\\sigma\\left(N-N^{2/3}\\right)$　(2) $v=\\sqrt{\\dfrac{6f\\sigma(1-2^{-1/3})}{\\rho r}}=0.52$ m/s　(3) $1.4$ cm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 体積保存から合体後の半径は $N^{1/3}r$．表面積は $4\\pi r^2N\\to4\\pi r^2N^{2/3}$ に減るので\n\\[\n\\Delta E=4\\pi r^2\\sigma\\left(N-N^{2/3}\\right).\n\\]\n\n(2) $N=2$ で $\\Delta E=8\\pi r^2\\sigma(1-2^{-1/3})$，合体した水滴の質量 $M=\\frac83\\pi r^3\\rho$．$\\frac12Mv^2=f\\Delta E$ より\n\\[\nv=\\sqrt{\\frac{2f\\Delta E}{M}}=\\sqrt{\\frac{6f\\sigma(1-2^{-1/3})}{\\rho r}}=\\sqrt{\\frac{6(0.060)(0.073)(0.2063)}{(1000)(2.0\\times10^{-5})}}=0.52\\ \\mathrm{m/s}.\n\\]\n$v\\propto r^{-1/2}$ なので小さい滴ほど速い．\n\n(3) $H=\\dfrac{v^2}{2g}=\\dfrac{(0.521)^2}{2(9.8)}=1.4\\times10^{-2}$ m．合体後の滴の直径（約 50 $\\mu$m）の約 270 倍の高さまで跳ぶ（実際には空気抵抗で低くなる）．"
+   }
+  ],
+  "idea": {
+   "tex": "合体による表面積の減少 $N-N^{2/3}$ が解放エネルギーを与え，その一部が運動エネルギーに変わると微小液滴は $r^{-1/2}$ に比例する速さで跳び上がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta E$：4 pi r ^(2) σ (N - N ^(2/3))\n(2) $v$ [m/s]：≈0.52\n(3) [cm]：≈1.4"
+  },
+  "methods": [],
+  "tags": [
+   "表面エネルギー",
+   "液滴合体",
+   "超撥水",
+   "エネルギー変換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-04-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -484,6 +2111,712 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-049",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ハリケーンの目：ランキン渦と湿潤断熱減率",
+  "topic": "ハリケーンの目：ランキン渦と湿潤断熱減率",
+  "statement": {
+   "tex": "北半球の大型のハリケーンの目の中心の気圧は，海面の標準気圧 $p_0=1.0\\times10^5\\ \\mathrm{Pa}$ より $14\\%$ 低かった．空気の密度 $\\rho=1.275\\ \\mathrm{kg/m^3}$，定圧比熱 $c_p=1.0\\times10^3\\ \\mathrm{J/(kg\\,K)}$，$g=9.8\\ \\mathrm{m/s^2}$，水の蒸発熱 $L=2.3\\times10^6\\ \\mathrm{J/kg}$，$20^\\circ\\mathrm{C}$ での飽和水蒸気圧 $2.0\\times10^3\\ \\mathrm{Pa}$，水のモル質量 $18\\ \\mathrm{g/mol}$，$R=8.31\\ \\mathrm{J/(mol\\,K)}$ とする．空気は非圧縮とみなす．\n\\begin{enumerate}\n\\item 風速の分布をランキン渦（半径 $a$ の内側は剛体回転，外側は $v\\propto1/r$，最大風速 $V$ は $r=a$）とする．中心と遠方の気圧差を $V$ で表し，$V$ を求めよ（有効数字2桁）．\n\\item 乾いた空気が断熱的に上昇するときの気温の減少率（乾燥断熱減率）$\\Gamma_d=g/c_p$ を導け．\n\\item 水蒸気で飽和した空気が上昇するときは，凝結する水の潜熱が加わり，エネルギー収支は $c_p\\,dT+g\\,dz+L\\,dq_s=0$（$q_s=0.622\\,e_s/p$ は飽和比湿）となる．気圧の変化による $q_s$ の変化を無視し，クラウジウス＝クラペイロンの式 $\\dfrac{d\\ln e_s}{dT}=\\dfrac{LM_w}{RT^2}$ を使って，$20^\\circ\\mathrm{C}$ での減率 $\\Gamma_m$ を求めよ（有効数字2桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta p=\\rho V^2$，$V\\approx1.0\\times10^2\\ \\mathrm{m/s}$　(2) $\\Gamma_d=g/c_p\\approx9.8\\ \\mathrm{K/km}$　(3) $\\Gamma_m=\\dfrac{g}{c_p+L\\,dq_s/dT}\\approx3.7\\ \\mathrm{K/km}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 回転する流れでは $\\dfrac{dp}{dr}=\\rho\\dfrac{v^2}{r}$（コリオリ力は風速が大きいので無視）．外側 $v=Va/r$：$\\int_a^\\infty\\rho\\dfrac{V^2a^2}{r^3}dr=\\frac12\\rho V^2$．内側 $v=Vr/a$：$\\int_0^a\\rho\\dfrac{V^2r}{a^2}dr=\\frac12\\rho V^2$．合計で\n\\[\n\\boldsymbol{\\Delta p=\\rho V^2},\\qquad V=\\sqrt{\\frac{0.14\\times10^5}{1.275}}\\approx\\boldsymbol{1.0\\times10^2\\ \\mathrm{m/s}}.\n\\]\n（目の中で静止した空気からのベルヌーイの定理 $\\Delta p=\\frac12\\rho V^2$ では $148\\ \\mathrm{m/s}$ と過大になる．実際の最大風速は $80\\ \\mathrm{m/s}$ 程度．）北半球では低気圧に吹き込む空気がコリオリ力で右へそれ，上から見て反時計回りに回る．\n\n(2) 断熱変化 $dq=c_pdT-\\dfrac{dp}{\\rho}=0$ と静水圧平衡 $dp=-\\rho g\\,dz$ より $c_pdT=-g\\,dz$，\n\\[\n\\boldsymbol{\\Gamma_d=-\\frac{dT}{dz}=\\frac{g}{c_p}\\approx9.8\\ \\mathrm{K/km}}.\n\\]\n\n(3) $c_pdT+g\\,dz+L\\dfrac{dq_s}{dT}dT=0$ より $\\Gamma_m=\\dfrac{g}{c_p+L\\,dq_s/dT}$．$20^\\circ\\mathrm{C}$ で $q_s=0.622\\times\\dfrac{2.0\\times10^3}{1.0\\times10^5}=0.0124$，\n\\[\n\\frac{dq_s}{dT}=q_s\\frac{LM_w}{RT^2}=0.0124\\times\\frac{2.3\\times10^6\\times0.018}{8.31\\times293^2}=7.2\\times10^{-4}\\ \\mathrm{K^{-1}}.\n\\]\n$L\\,dq_s/dT=1.66\\times10^3\\ \\mathrm{J/(kg\\,K)}$ で\n\\[\n\\boldsymbol{\\Gamma_m=\\frac{9.8}{1.0\\times10^3+1.66\\times10^3}\\approx3.7\\ \\mathrm{K/km}}.\n\\]\nハリケーンの目のまわりで観測される約 $4\\ \\mathrm{K/km}$ の緩い減率は，暖かい海から供給された水蒸気の凝結熱で説明できる．"
+   }
+  ],
+  "idea": {
+   "tex": "旋衡風の釣り合い $dp/dr=\\rho v^2/r$ を渦の形で積分すると，中心の気圧の低下が最大風速の2乗に比例する．断熱減率は静水圧平衡と断熱条件から $g/c_p$ になり，凝結熱が加わると実効的な比熱が増えて減率が小さくなる．原題はベルヌーイの定理による見積もりと減率の説明で，捻りでは渦の形を入れ，湿潤減率を数値で求めさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta p$：ρ V ^(2) ; $V$ [m/s]：≈1.0e2\n(2) 記述\n(3) $\\Gamma_m$ [K/km]：≈3.7"
+  },
+  "methods": [],
+  "tags": [
+   "渦",
+   "ベルヌーイの定理",
+   "断熱減率",
+   "潜熱"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-050",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ノズル流のチョークと臨界圧力比",
+  "topic": "ノズル流のチョークと臨界圧力比",
+  "statement": {
+   "tex": "大きなタンク内に圧力 $p_1$，密度 $\\rho_1$，温度 $T_1$ の理想気体（比熱比 $\\gamma$，モル質量 $M$）があり，先細ノズルから外部へ定常的に断熱流出する．外力は無視し，流れは完全流体の等エントロピー流とする．ノズルのある断面での圧力を $p$ とする．\n\\begin{enumerate}\n\\item その断面での流速 $v$ と密度 $\\rho$ を $p/p_1$ の関数として書き，単位面積あたりの質量流量 $j=\\rho v$ が $p/p_1$ の関数として最大になる圧力比\n\\[\\frac{p^*}{p_1}=\\left(\\frac{2}{\\gamma+1}\\right)^{\\gamma/(\\gamma-1)}\\]\nを導け．\n\\item $p=p^*$ の断面では，流速がその場所の音速に等しいこと（$M=1$）を示し，そのときの温度 $T^*$ を $T_1$ で表せ．\n\\item 空気（$\\gamma=1.4$，$M=0.029\\ \\mathrm{kg/mol}$）と He（$\\gamma=5/3$，$M=0.004\\ \\mathrm{kg/mol}$）で $T_1=300\\ \\mathrm{K}$ のとき，$p^*/p_1$，最大流出速度 $v_m$（$p\\to0$ の極限），および $v^*$ をそれぞれ求めよ．\n\\item 外気圧 $p_0$ を $p^*$ より下げても先細ノズル出口の流速・流量は増えない．その理由を簡潔に述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $j\\propto x^{1/\\gamma}\\sqrt{1-x^{(\\gamma-1)/\\gamma}}$（$x=p/p_1$）が最大となるのは $x=(2/(\\gamma+1))^{\\gamma/(\\gamma-1)}$　(2) $v^*=c^*$，$T^*=\\dfrac{2T_1}{\\gamma+1}$　(3) 空気：$0.528$，$v_m=776\\ \\mathrm{m/s}$，$v^*=317\\ \\mathrm{m/s}$；He：$0.487$，$v_m=1766\\ \\mathrm{m/s}$，$v^*=883\\ \\mathrm{m/s}$　(4) 出口が音速になると下流の圧力変化（音波）が上流へ伝わらないため．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) Bernoulli の定理 $v^2/2+\\int dp/\\rho=$一定 と断熱関係 $\\rho=\\rho_1(p/p_1)^{1/\\gamma}$ から（Zeuner の公式）\n\\[v^2=\\frac{2\\gamma}{\\gamma-1}\\frac{p_1}{\\rho_1}\\left(1-x^{(\\gamma-1)/\\gamma}\\right),\\qquad \\rho=\\rho_1x^{1/\\gamma},\\qquad x=\\frac p{p_1}.\\]\nよって $j=\\rho v\\propto x^{1/\\gamma}\\sqrt{1-x^{(\\gamma-1)/\\gamma}}$．$j^2\\propto x^{2/\\gamma}-x^{(\\gamma+1)/\\gamma}$ を $x$ で微分して 0 とおくと\n\\[\\frac2\\gamma x^{2/\\gamma-1}=\\frac{\\gamma+1}{\\gamma}x^{1/\\gamma}\\ \\Rightarrow\\ x^{(\\gamma-1)/\\gamma}=\\frac{2}{\\gamma+1}\\ \\Rightarrow\\ \\frac{p^*}{p_1}=\\left(\\frac2{\\gamma+1}\\right)^{\\gamma/(\\gamma-1)}.\\]\n\n(2) $x^{(\\gamma-1)/\\gamma}=2/(\\gamma+1)$ を代入すると $v^{*2}=\\dfrac{2\\gamma}{\\gamma-1}\\dfrac{p_1}{\\rho_1}\\cdot\\dfrac{\\gamma-1}{\\gamma+1}=\\dfrac{2\\gamma}{\\gamma+1}\\dfrac{p_1}{\\rho_1}$．一方，局所音速 $c^2=\\gamma p/\\rho=\\gamma\\dfrac{p_1}{\\rho_1}x^{(\\gamma-1)/\\gamma}=\\dfrac{2\\gamma}{\\gamma+1}\\dfrac{p_1}{\\rho_1}$．よって $v^*=c^*$．理想気体で $T\\propto p/\\rho\\propto x^{(\\gamma-1)/\\gamma}$ より $T^*=\\dfrac{2}{\\gamma+1}T_1$．\n（別解：$d(\\rho v A)=0$ と $v\\,dv=-dp/\\rho=-c^2d\\rho/\\rho$ から $dA/A=(M^2-1)dv/v$．先細ノズルでは $M=1$ になれるのは出口だけで，そこで $j$ が最大．）\n\n(3) $c_1=\\sqrt{\\gamma R_{\\rm g}T_1/M}$，$v_m=\\sqrt{2/(\\gamma-1)}\\,c_1$，$v^*=\\sqrt{2/(\\gamma+1)}\\,c_1$．\n空気：$p^*/p_1=(1/1.2)^{3.5}=0.528$，$c_1=347\\ \\mathrm{m/s}$，$v_m=776\\ \\mathrm{m/s}$，$v^*=317\\ \\mathrm{m/s}$（$T^*=250\\ \\mathrm{K}$）．\nHe：$p^*/p_1=(3/4)^{2.5}=0.487$，$c_1=1019\\ \\mathrm{m/s}$，$v_m=1766\\ \\mathrm{m/s}$，$v^*=883\\ \\mathrm{m/s}$（$T^*=225\\ \\mathrm{K}$）．\n\n(4) $p_0<p^*$ にしても出口は音速 $v^*=c^*$ のまま（チョーク）．出口より下流の圧力の変化は音速で伝わるが，出口での流速が音速なので上流（ノズル内）へ伝わることができず，ノズル内の流れは外気圧を「知らない」．出口圧は $p^*$ にとどまり，余分の膨張はノズルの外で（膨張波・衝撃波として）起こる．したがって流量は $j^*$ で頭打ちになる．"
+   }
+  ],
+  "idea": {
+   "tex": "Zeuner の公式で流速は $p\\to0$ で $v_m$ に近づくが，質量流束 $\\rho v$ は途中で最大になり，その点はちょうど局所音速 $M=1$．先細ノズルでは流量がここで頭打ちになる（チョーク）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Zeunerの公式",
+   "圧縮性流体",
+   "断熱流",
+   "臨界圧力比",
+   "チョーク",
+   "ノズル",
+   "音速"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-051",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 35,
+  "theme": "壁上の半円柱・半球にはたらく揚力",
+  "topic": "壁上の半円柱・半球にはたらく揚力",
+  "statement": {
+   "tex": "渦なし非圧縮性完全流体が，平らな壁 $y=0$（流体は $y>0$ 側）に沿って $x$ 方向に速さ $U$ で一様に流れている．重力は無視し，遠方の圧力を $p_\\infty$ とする．\n\\begin{enumerate}\n\\item 壁に，半径 $a$ の半円柱（軸は $z$ 方向，断面は $x^2+y^2\\le a^2,\\ y\\ge0$）が固定されている．壁は対称面とみなせることを用いて表面の速さを求め，表面で $p=p_\\infty$ となる点の位置（流れの方向から測った角 $\\theta$）を求めよ．\n\\item 半円柱の底面には圧力 $p_\\infty$ がかかっているとして，単位長さあたりの壁から引き離す向きの力 $F_y$ を求めよ．\n\\item 壁に半径 $a$ の半球（$x^2+y^2+z^2\\le a^2,\\ y\\ge0$）が固定されている場合について，同様に表面で $p=p_\\infty$ となる角と，底面に $p_\\infty$ がかかるとしたときの力 $F_y$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=2U\\sin\\theta$，$\\sin\\theta=1/2$（$\\theta=30^\\circ,150^\\circ$）　(2) $F_y=\\dfrac53\\rho U^2a$（壁から離れる向き）　(3) $\\sin\\theta=2/3$（$\\theta\\approx41.8^\\circ,138.2^\\circ$），$F_y=\\dfrac{11\\pi}{32}\\rho U^2a^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 円柱を過ぎる一様流 $f=U(z+a^2/z)$ は $x$ 軸（$y=0$）について対称で，$y=0$ は流線である．したがって上半分の流れはそのまま「壁上の半円柱」の解になる．表面での速さは $v=2U\\sin\\theta$（$\\theta$ は $+x$ 軸から測る，$0\\le\\theta\\le\\pi$）．Bernoulli の定理より\n\\[p-p_\\infty=\\frac{\\rho U^2}{2}(1-4\\sin^2\\theta).\\]\n$p=p_\\infty$ は $\\sin\\theta=1/2$，すなわち $\\theta=30^\\circ,150^\\circ$．\n\n(2) 上面の外向き法線の $y$ 成分は $\\sin\\theta$，面素は $a\\,d\\theta$．底面からの $p_\\infty$ と合わせると，$p_\\infty$ 部分は打ち消すので\n\\[F_y=-\\int_0^\\pi(p-p_\\infty)\\sin\\theta\\,a\\,d\\theta=-\\frac{\\rho U^2a}{2}\\int_0^\\pi(1-4\\sin^2\\theta)\\sin\\theta\\,d\\theta=-\\frac{\\rho U^2a}{2}\\left(2-\\frac{16}{3}\\right)=\\frac53\\rho U^2a.\\]\n正なので壁から引き離す向き．完全な円柱では上下で打ち消して力は 0（D'Alembert）だが，半分だけ取り出すと頂部の低圧が効いて大きな揚力が残る．\n\n(3) 球を過ぎる流れも，流れの方向（$x$ 軸）を含む平面 $y=0$ について対称なので，その上半分が半球の解．表面速さは $v=\\frac32U\\sin\\theta$（$\\theta$ は $x$ 軸からの極角）で\n\\[p-p_\\infty=\\frac{\\rho U^2}{2}\\left(1-\\frac94\\sin^2\\theta\\right).\\]\n$p=p_\\infty$ は $\\sin\\theta=2/3$（$\\theta\\approx41.8^\\circ,138.2^\\circ$）．\n$x$ 軸を極軸とする球座標 $(\\theta,\\varphi)$ で表面点を $(a\\cos\\theta,\\ a\\sin\\theta\\cos\\varphi,\\ a\\sin\\theta\\sin\\varphi)$ とすると，半球は $-\\pi/2\\le\\varphi\\le\\pi/2$，法線の $y$ 成分は $\\sin\\theta\\cos\\varphi$，面素は $a^2\\sin\\theta\\,d\\theta\\,d\\varphi$．\n\\[F_y=-\\frac{\\rho U^2a^2}{2}\\int_{-\\pi/2}^{\\pi/2}\\cos\\varphi\\,d\\varphi\\int_0^\\pi\\left(1-\\frac94\\sin^2\\theta\\right)\\sin^2\\theta\\,d\\theta=-\\frac{\\rho U^2a^2}{2}\\cdot2\\left(\\frac\\pi2-\\frac94\\cdot\\frac{3\\pi}8\\right)=\\frac{11\\pi}{32}\\rho U^2a^2.\\]"
+   }
+  ],
+  "idea": {
+   "tex": "流れの対称面を壁とみなせば円柱・球の解がそのまま壁上の半円柱・半球の解になる．全体では力 0 でも，半分だけでは頂部の低圧のため壁から引き離す有限の力が残る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v$：2 U sin θ ; $\\sin\\theta$：1/2\n(2) $F_y$：((5)/(3)) ρ U ^(2) a\n(3) $\\sin\\theta$：2/3 ; $F_y$：((11 pi)/(32)) ρ U ^(2) a ^(2)"
+  },
+  "methods": [],
+  "tags": [
+   "円柱を過ぎる流れ",
+   "球を過ぎる流れ",
+   "Bernoulliの定理",
+   "圧力分布",
+   "鏡像",
+   "揚力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-052",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 35,
+  "theme": "同軸円筒間の2次元ポテンシャル流と付加質量",
+  "topic": "同軸円筒間の2次元ポテンシャル流と付加質量",
+  "statement": {
+   "tex": "半径 $b$ の固定された円筒の中に，半径 $a\\ (<b)$ の円柱が同軸に置かれ，間を密度 $\\rho$ の完全流体（非圧縮・渦なし）が満たしている．ある瞬間に内側の円柱が $x$ 方向に速度 $U$ で動いている（その瞬間は同軸とする）．流れは 2 次元で，速度ポテンシャル $\\varphi$（$\\boldsymbol{v}=\\nabla\\varphi$）はラプラス方程式を満たす．循環は 0 とする．\n\\begin{enumerate}\n\\item 極座標で変数分離し，$\\varphi$ の一般解を $\\theta$ について一価という条件のもとで書け．$\\log r$ の項と（多価な）$\\theta$ に比例する項が物理的に何を表すかも述べよ．\n\\item 境界条件 $\\partial_r\\varphi|_{r=a}=U\\cos\\theta$，$\\partial_r\\varphi|_{r=b}=0$ を満たす $\\varphi$ を求めよ．\n\\item 流体の運動エネルギー（単位長さあたり）$K$ を求め，付加質量 $m_a$（$K=\\frac12m_aU^2$）を求めよ．\n\\item $b\\to\\infty$ と $b\\to a$ の極限での $m_a$ を求め，後者について物理的に説明せよ．\n\\item $b=2a$ のとき，$m_a$ を排除した流体の質量 $\\rho\\pi a^2$ との比で答えよ．また，周囲の流体と同じ密度の円柱に単位長さあたり力 $F$ を加えたときの初期加速度と，内円柱表面 $\\theta=\\pi/2$ での流体の速さを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\varphi=C_0+D_0\\log r+\\sum_{n\\ge1}(C_nr^n+D_nr^{-n})(A_n\\cos n\\theta+B_n\\sin n\\theta)$；$\\log r$ は湧き出し，$\\theta$ 項は循環　(2) $\\varphi=-\\dfrac{Ua^2}{b^2-a^2}\\left(r+\\dfrac{b^2}{r}\\right)\\cos\\theta$　(3) $m_a=\\rho\\pi a^2\\dfrac{b^2+a^2}{b^2-a^2}$　(4) $b\\to\\infty$：$\\rho\\pi a^2$；$b\\to a$：$m_a\\simeq\\dfrac{\\rho\\pi a^3}{b-a}\\to\\infty$　(5) $5/3$；加速度 $\\dfrac{3F}{8\\rho\\pi a^2}$；速さ $\\dfrac53U$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\varphi=R(r)\\Theta(\\theta)$ とおくと $\\Theta''+\\lambda\\Theta=0$，$r^2R''+rR'-\\lambda R=0$．一価性 $\\Theta(\\theta+2\\pi)=\\Theta(\\theta)$ から $\\lambda=n^2$（$n=0,1,2,\\dots$），$\\Theta=A_n\\cos n\\theta+B_n\\sin n\\theta$．オイラー型方程式から $n\\ge1$ で $R=C_nr^n+D_nr^{-n}$，$n=0$ で $R=C_0+D_0\\log r$．\n$D_0\\log r$ は速度 $D_0/r$ の放射状流れ（湧き出し・吸い込み，強さ $2\\pi D_0$）．また $\\varphi=\\dfrac{\\Gamma}{2\\pi}\\theta$ は $\\varphi$ 自体は多価だが速度 $\\Gamma/(2\\pi r)\\,\\boldsymbol{e}_\\theta$ は一価で，循環 $\\Gamma$ の渦流れを表す．本問では流体の体積保存（湧き出しなし）と循環 0 からどちらも 0．\n\n(2) 境界条件が $\\cos\\theta$ のみを含むので $\\varphi=(Ar+B/r)\\cos\\theta$．\n\\[ A-\\frac{B}{a^2}=U,\\qquad A-\\frac{B}{b^2}=0 \\]\nより $B=-\\dfrac{Ua^2b^2}{b^2-a^2}$，$A=-\\dfrac{Ua^2}{b^2-a^2}$．$\\varphi=-\\dfrac{Ua^2}{b^2-a^2}\\Big(r+\\dfrac{b^2}{r}\\Big)\\cos\\theta$．\n\n(3) $K=\\dfrac\\rho2\\displaystyle\\int|\\nabla\\varphi|^2dA=\\dfrac\\rho2\\oint_{\\partial}\\varphi\\,\\partial_n\\varphi\\,ds$．外壁では $\\partial_r\\varphi=0$，内円柱面では流体から外向き法線が $-\\boldsymbol{e}_r$ なので\n\\[ K=-\\frac\\rho2\\int_0^{2\\pi}\\varphi(a,\\theta)\\,U\\cos\\theta\\,a\\,d\\theta=\\frac\\rho2\\cdot\\frac{Ua^2}{b^2-a^2}\\Big(a+\\frac{b^2}{a}\\Big)Ua\\pi=\\frac12\\rho\\pi a^2\\frac{b^2+a^2}{b^2-a^2}U^2. \\]\nよって $m_a=\\rho\\pi a^2\\dfrac{b^2+a^2}{b^2-a^2}$．\n\n(4) $b\\to\\infty$：$m_a\\to\\rho\\pi a^2$（無限流体中の円柱の付加質量は排除体積の流体質量に等しい）．\n$b=a+\\epsilon$：$m_a\\simeq\\rho\\pi a^2\\dfrac{2a^2}{2a\\epsilon}=\\dfrac{\\rho\\pi a^3}{\\epsilon}\\to\\infty$．円柱が動くと前方の流体（断面積 $\\sim a^2$）が幅 $\\epsilon$ の狭い隙間を通って後方へ回り込まねばならず，その速さが $\\sim Ua/\\epsilon$ と大きくなるため，運動エネルギーが $\\propto1/\\epsilon$ で発散する．\n\n(5) $b=2a$：$\\dfrac{b^2+a^2}{b^2-a^2}=\\dfrac53$，$m_a=\\dfrac53\\rho\\pi a^2$．\n円柱（質量 $\\rho\\pi a^2$）の運動方程式は $(\\rho\\pi a^2+m_a)\\dot U=F$（静止から動き始めた直後で，速度に依存する力はまだない）なので $\\dot U=\\dfrac{F}{\\frac83\\rho\\pi a^2}=\\dfrac{3F}{8\\rho\\pi a^2}$．\n$\\theta=\\pi/2$ での流体速度は $\\boldsymbol{v}=\\frac1r\\partial_\\theta\\varphi\\,\\boldsymbol{e}_\\theta$（$\\partial_r\\varphi=0$），$\\dfrac1a\\partial_\\theta\\varphi=\\dfrac{Ua^2}{b^2-a^2}\\Big(1+\\dfrac{b^2}{a^2}\\Big)\\sin\\theta=\\dfrac{b^2+a^2}{b^2-a^2}U=\\dfrac53U$．（無限流体なら $U$．）"
+   }
+  ],
+  "idea": {
+   "tex": "円柱まわりのポテンシャル流の変数分離を，外壁のある有限領域に拡張し，2 つの境界条件から係数を決める．付加質量 $\\rho\\pi a^2\\frac{b^2+a^2}{b^2-a^2}$ が壁の接近で発散することが結論．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\varphi$：-((U a ^(2))/(b ^(2)- a ^(2)))(r +((b ^(2))/(r))) cos θ\n(3) $m_a$：ρ pi a ^(2)((b ^(2)+ a ^(2))/(b ^(2)- a ^(2)))\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポテンシャル流",
+   "ラプラス方程式",
+   "変数分離",
+   "円柱",
+   "付加質量",
+   "運動エネルギー",
+   "完全流体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-053",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 35,
+  "theme": "楕円柱まわりの流れと一般の流入角",
+  "topic": "楕円柱まわりの流れと一般の流入角",
+  "statement": {
+   "tex": "2 次元・非粘性・非圧縮・渦なしで循環 0 の流れを考える．$\\zeta$ 面の半径 $R$ の円 $|\\zeta|=R$ を $z=\\zeta+\\dfrac{c^2}{\\zeta}$（$0<c<R$）で $z=x+iy$ 面に写す．\n\\begin{enumerate}\n\\item 円が写る曲線は楕円 $\\dfrac{x^2}{A^2}+\\dfrac{y^2}{B^2}=1$ であることを示し，$A$，$B$ を $R$，$c$ で表せ．\n\\item 無限遠で $+x$ 方向の速さ $U$ の一様流中にこの楕円柱があるとき，楕円上の点 $(A\\cos\\theta,B\\sin\\theta)$ における流速の大きさ $q(\\theta)$ を $A$，$B$，$U$，$\\theta$ で表せ．また点 $(0,B)$ での流速を求めよ．\n\\item 一様流の向きを $+x$ 軸から角 $\\beta$ だけ傾けた場合（無限遠で $u-iv\\to Ue^{-i\\beta}$）について，楕円上の流速の大きさを求めよ．よどみ点は楕円上のどこにあるか．\n\\item 一様流が短軸方向（$\\beta=\\pi/2$）のとき，最大流速を求めよ．$B/A\\to0$ の極限では何が起こるか．また，一般の $\\beta$ で点 $(0,B)$ の流速を求め，これが (2) の値の $\\cos\\beta$ 倍になる理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A=R+\\dfrac{c^2}{R}$，$B=R-\\dfrac{c^2}{R}$．(2) $q=\\dfrac{U(A+B)|\\sin\\theta|}{\\sqrt{A^2\\sin^2\\theta+B^2\\cos^2\\theta}}$，点 $(0,B)$ で $U\\left(1+\\dfrac BA\\right)$．(3) $q=\\dfrac{U(A+B)|\\sin(\\theta-\\beta)|}{\\sqrt{A^2\\sin^2\\theta+B^2\\cos^2\\theta}}$，よどみ点は $(\\pm A\\cos\\beta,\\pm B\\sin\\beta)$（複号同順）．(4) 最大流速 $U\\left(1+\\dfrac AB\\right)$（点 $(\\pm A,0)$），$B/A\\to0$ で発散（平板の端）．$(0,B)$ では $U\\cos\\beta\\left(1+\\dfrac BA\\right)$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\zeta=Re^{i\\theta}$ を代入すると $z=\\left(R+\\dfrac{c^2}{R}\\right)\\cos\\theta+i\\left(R-\\dfrac{c^2}{R}\\right)\\sin\\theta$．よって $x=A\\cos\\theta$，$y=B\\sin\\theta$，$A=R+c^2/R$，$B=R-c^2/R$ の楕円．なお $A+B=2R$，$A-B=2c^2/R$．\n\n(2) $z\\simeq\\zeta$（$|\\zeta|\\to\\infty$）だから，$\\zeta$ 面では円柱まわりの一様流 $f=U\\left(\\zeta+\\dfrac{R^2}{\\zeta}\\right)$ を使えばよい（円周上で流れ関数一定）．\n\\[\nw=\\frac{df/d\\zeta}{dz/d\\zeta}=U\\frac{1-R^2/\\zeta^2}{1-c^2/\\zeta^2}=U\\frac{\\zeta^2-R^2}{\\zeta^2-c^2}.\n\\]\n$\\zeta=Re^{i\\theta}$ で $\\zeta^2-R^2=R^2e^{i\\theta}\\cdot2i\\sin\\theta$，$\\zeta^2-c^2=Re^{i\\theta}\\{(R-c^2/R)\\cos\\theta+i(R+c^2/R)\\sin\\theta\\}=Re^{i\\theta}(B\\cos\\theta+iA\\sin\\theta)$．よって\n\\[\nq=|w|=\\frac{2RU|\\sin\\theta|}{\\sqrt{A^2\\sin^2\\theta+B^2\\cos^2\\theta}}=\\frac{U(A+B)|\\sin\\theta|}{\\sqrt{A^2\\sin^2\\theta+B^2\\cos^2\\theta}} .\n\\]\n$(0,B)$ は $\\theta=\\pi/2$ で $q=U(A+B)/A=U(1+B/A)$．\n\n(3) $\\zeta$ 面で $f=U\\left(\\zeta e^{-i\\beta}+\\dfrac{R^2}{\\zeta}e^{i\\beta}\\right)$ とすれば無限遠で $u-iv\\to Ue^{-i\\beta}$．$\\dfrac{df}{d\\zeta}=Ue^{-i\\beta}\\left(1-\\dfrac{R^2e^{2i\\beta}}{\\zeta^2}\\right)$ は $\\zeta=Re^{i\\theta}$ で $\\dfrac{U}{\\zeta^2}e^{-i\\beta}(\\zeta^2-R^2e^{2i\\beta})$，$|\\zeta^2-R^2e^{2i\\beta}|=2R^2|\\sin(\\theta-\\beta)|$．分母は (2) と同じなので\n\\[\nq=\\frac{U(A+B)|\\sin(\\theta-\\beta)|}{\\sqrt{A^2\\sin^2\\theta+B^2\\cos^2\\theta}} .\n\\]\nよどみ点は $\\theta=\\beta,\\ \\beta+\\pi$，すなわち $(\\pm A\\cos\\beta,\\pm B\\sin\\beta)$．これは楕円の中心から流れの方向に引いた直線と楕円の交点 $\\propto(\\cos\\beta,\\sin\\beta)$ とは（$\\beta=0,\\pi/2$ 以外）一致しない（離心角 $\\theta$ が $\\beta$ に等しい点）．\n\n(4) $\\beta=\\pi/2$ では $q=\\dfrac{U(A+B)|\\cos\\theta|}{\\sqrt{A^2\\sin^2\\theta+B^2\\cos^2\\theta}}$．$\\cos^2\\theta=s$ とおくと $q^2\\propto\\dfrac{s}{A^2-(A^2-B^2)s}$ は $s$ の増加関数なので $s=1$（点 $(\\pm A,0)$）で最大 $q_{\\max}=U(A+B)/B=U(1+A/B)$．$B/A\\to0$（平板）で $q_{\\max}\\to\\infty$：平板の端を流れが回り込むときの速度特異性である．\n\n一般の $\\beta$ で $(0,B)$（$\\theta=\\pi/2$）では $|\\sin(\\pi/2-\\beta)|=|\\cos\\beta|$ より $q=U\\cos\\beta\\,(1+B/A)$（$0\\le\\beta<\\pi/2$）．ポテンシャル流は線形なので，一様流を $x$ 成分 $U\\cos\\beta$ と $y$ 成分 $U\\sin\\beta$ に分解して重ね合わせられる．$y$ 方向の一様流に対して $(0,B)$ はよどみ点なので寄与 0，$x$ 成分の寄与だけが残るため $\\cos\\beta$ 倍になる．"
+   }
+  ],
+  "idea": {
+   "tex": "ジューコフスキー写像で円柱流を楕円柱流に移し，表面速度を離心角で表す．流入角を変えるとよどみ点は離心角 $\\beta$ の点に移り，重ね合わせで特定点の速度が単純に読める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ジューコフスキー変換",
+   "楕円柱",
+   "ポテンシャル流",
+   "よどみ点",
+   "重ね合わせ",
+   "複素速度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-054",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 40,
+  "theme": "ブラジウス公式の証明と湧き出しに引かれる円柱",
+  "topic": "ブラジウス公式の証明と湧き出しに引かれる円柱",
+  "statement": {
+   "tex": "非圧縮・非粘性の渦なし 2 次元定常流を，複素速度ポテンシャル $f(z)=\\Phi(x,y)+i\\Psi(x,y)$（$z=x+iy$）で表す．流体の密度を $\\rho$，物体まわりの力の成分を $X$，$Y$ とする．\n\\begin{enumerate}\n\\item $u=\\partial\\Phi/\\partial x=\\partial\\Psi/\\partial y$，$v=\\partial\\Phi/\\partial y=-\\partial\\Psi/\\partial x$ から，$f$ が正則であり $\\dfrac{df}{dz}=u-iv$ となることを示せ．\n\\item 物体表面が流線であることとベルヌーイの定理を用いて，ブラジウスの公式\n\\[\nX-iY=\\frac{i\\rho}{2}\\oint_C\\left(\\frac{df}{dz}\\right)^2dz\n\\]\nを示せ（$C$ は物体を囲み，特異点を余分に含まない任意の閉曲線）．\n\\item 原点を中心とする半径 $a$ の円柱の外部，点 $z=b$（$b>a$）に強さ $m$（単位時間あたり単位長さあたりの湧き出し量）の湧き出しがある．円柱表面で法線速度が 0 になるような複素速度ポテンシャルを求めよ．\n\\item (3) の円柱にはたらく力を (2) を用いて求めよ．円柱は湧き出しに引き寄せられるか，押しやられるか．湧き出しを吸い込み（$m<0$）に替えるとどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2) 証明（解説参照）．(3) $f=\\dfrac{m}{2\\pi}\\left[\\log(z-b)+\\log\\left(z-\\dfrac{a^2}{b}\\right)-\\log z\\right]$．(4) $X=\\dfrac{\\rho m^2a^2}{2\\pi b(b^2-a^2)}$，$Y=0$．湧き出しの方へ引き寄せられる．$m^2$ に比例するので吸い込みでも同じく引き寄せられる．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=\\Phi_x=\\Psi_y$，$v=\\Phi_y=-\\Psi_x$ はコーシー・リーマンの関係 $\\Phi_x=\\Psi_y$，$\\Phi_y=-\\Psi_x$ そのものなので（偏導関数が連続なら）$f$ は正則．このとき $\\dfrac{df}{dz}=\\Phi_x+i\\Psi_x=u-iv$．\n\n(2) 物体表面の線素 $ds$ に働く力は $-p\\,\\boldsymbol n\\,ds$．表面を反時計回りにたどり $dz=dx+i\\,dy$ とすると外向き法線は $\\boldsymbol n\\,ds=(dy,-dx)$ なので\n\\[\ndX=-p\\,dy,\\quad dY=p\\,dx,\\qquad dX-i\\,dY=-p(dy+i\\,dx)=-ip\\,d\\bar z .\n\\]\nベルヌーイの定理 $p=p_0-\\frac\\rho2|w|^2$（$w=u-iv$）を入れると，定数 $p_0$ の閉路積分は消えて $X-iY=\\dfrac{i\\rho}{2}\\oint|w|^2d\\bar z$．表面は流線なので速度は接線方向：$u+iv=q\\,\\dfrac{dz}{|dz|}$．よって $w=\\bar{(u+iv)}=q\\,\\dfrac{d\\bar z}{|dz|}$，$w\\,dz=q|dz|$ は実数で，$|w|^2d\\bar z=w\\bar w\\,d\\bar z=w\\,\\overline{(w\\,dz)}=w\\cdot w\\,dz$．したがって\n\\[\nX-iY=\\frac{i\\rho}{2}\\oint_{\\text{表面}}w^2dz .\n\\]\n$w^2$ は表面と $C$ の間で正則なので，コーシーの定理により積分路を $C$ に変形してよい．\n\n(3) 円定理（ミルン＝トムソン）：$f_0(z)=\\dfrac m{2\\pi}\\log(z-b)$ に対し $f=f_0(z)+\\overline{f_0(a^2/\\bar z)}$ とすると $|z|=a$ 上で $a^2/\\bar z=z$ なので $f$ の虚部が一定．$\\overline{f_0(a^2/\\bar z)}=\\dfrac m{2\\pi}\\log\\left(\\dfrac{a^2}{z}-b\\right)=\\dfrac m{2\\pi}\\left[\\log\\left(z-\\dfrac{a^2}{b}\\right)-\\log z\\right]+\\text{const}$．よって\n\\[\nf=\\frac m{2\\pi}\\left[\\log(z-b)+\\log(z-c)-\\log z\\right],\\quad c=\\frac{a^2}{b}\n\\]\n（鏡像点 $c$ の湧き出しと，中心の同じ強さの吸い込み）．\n\n(4) $w=\\dfrac m{2\\pi}\\left(\\dfrac1{z-b}+\\dfrac1{z-c}-\\dfrac1z\\right)$．$C$ が囲む特異点は $z=c,\\,0$．$w^2$ の留数は\n\\[\n\\operatorname{Res}_{z=c}=2\\left(\\frac m{2\\pi}\\right)^2\\left(\\frac1{c-b}-\\frac1c\\right),\\qquad\n\\operatorname{Res}_{z=0}=2\\left(\\frac m{2\\pi}\\right)^2\\left(\\frac1b+\\frac1c\\right)\n\\]\n（$z=0$ では $-1/z$ と他の項の積 $-\\frac{2}{z}\\left(\\frac1{z-b}+\\frac1{z-c}\\right)$ から）．和は $2\\left(\\frac m{2\\pi}\\right)^2\\left(\\frac1{c-b}+\\frac1b\\right)=2\\left(\\frac m{2\\pi}\\right)^2\\dfrac{c}{b(c-b)}$．\n\\[\nX-iY=\\frac{i\\rho}2\\cdot2\\pi i\\cdot\\frac{m^2}{2\\pi^2}\\frac{c}{b(c-b)}=\\frac{\\rho m^2}{2\\pi}\\frac{c}{b(b-c)}=\\frac{\\rho m^2a^2}{2\\pi b(b^2-a^2)} .\n\\]\n$X>0$，$Y=0$：力は湧き出しの方向（$+x$）を向き，円柱は湧き出しに引き寄せられる．湧き出し側の表面（$x>0$ 側）で流速が大きく圧力が低いためである．力は $m^2$ に比例するから吸い込みでも同じく引き寄せられる．遠方 $b\\gg a$ では $X\\simeq\\rho m^2a^2/(2\\pi b^3)$．"
+   }
+  ],
+  "idea": {
+   "tex": "ブラジウスの公式を表面が流線であることから導き，円定理で作った鏡像系に留数計算を適用すると，湧き出しでも吸い込みでも円柱が引き寄せられる（$\\propto m^2$）という直観に反する結論が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "複素速度ポテンシャル",
+   "コーシー・リーマン",
+   "ブラジウスの公式",
+   "円定理",
+   "鏡像法",
+   "湧き出し",
+   "留数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-055",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 35,
+  "theme": "回転散水器：遠心ポンプ効果と自由回転",
+  "topic": "回転散水器：遠心ポンプ効果と自由回転",
+  "statement": {
+   "tex": "水平面内で鉛直軸のまわりに摩擦なく回転できる長さ $2l$ の管（軸に関して対称）からなる散水器がある．水は軸上から（角運動量を持たずに）注入され，管の両端の断面積 $a$ の噴出口から噴出する．噴出の向きは水平面内で，回転する管の軸方向に対して角 $\\alpha$ をなし，両端とも同じ回転向きの反動を与える．散水器の上方 $h$ の高さに水面をもつ十分大きな貯水槽から水が供給される．噴出口の断面積は管の断面積より十分小さく，摩擦損失は無視し，水の密度を $\\rho$，重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 散水器を回転しないよう押さえたときの全流出量 $Q_s$ を求めよ．\n\\item 散水器が一定角速度 $\\omega$ で回転しているとき，噴出口に対する水の相対流出速度 $v_r$ が $\\sqrt{2gh+\\omega^2l^2}$ となることを，回転座標系でのベルヌーイの定理を用いて示せ．\n\\item 回転が自由（外部トルク 0）なときの定常角速度 $\\omega_0$ と，そのときの流出量 $Q$ と $Q_s$ の比を求めよ．\n\\item $\\alpha=\\pi/2$（噴出が管に垂直）の場合，回転を保つのに必要なトルクではなく，水から散水器が受けるトルク $T(\\omega)$ を求め，$T$ がすべての $\\omega\\ge0$ で正であり $\\omega\\to\\infty$ で一定値に近づくことを示せ．この結果は何を意味するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q_s=2a\\sqrt{2gh}$．(2) 証明（解説参照）．(3) $\\omega_0=\\dfrac{\\sqrt{2gh}\\tan\\alpha}{l}$，$Q/Q_s=\\dfrac1{\\cos\\alpha}$．(4) $T(\\omega)=2\\rho a l\\,v_r(v_r-\\omega l)$，$v_r=\\sqrt{2gh+\\omega^2l^2}$．$v_r>\\omega l$ より $T>0$，$\\omega\\to\\infty$ で $T\\to2\\rho a g h l$．摩擦がなければ定常回転に達せず角速度が際限なく（ほぼ一定の角加速度で）増える．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 静止時，水面から噴出口までベルヌーイの定理：$p_0/\\rho+gh=p_0/\\rho+v^2/2$ より $v=\\sqrt{2gh}$．2 つの口から $Q_s=2a\\sqrt{2gh}$．\n\n(2) 管とともに回転する座標系では流れは定常で，有効ポテンシャルに遠心力ポテンシャル $-\\frac12\\omega^2r^2$ が加わる．コリオリ力は相対速度に垂直で仕事をしないので，管に沿った流線上で\n\\[\n\\frac p\\rho+\\frac{v_r^2}{2}-\\frac12\\omega^2r^2=\\text{一定}.\n\\]\n軸上（$r=0$）では回転系と静止系の速度は一致し，そこまでは静止系のベルヌーイの定理が使える．よって水面での値と比べて，噴出口（$r=l$，$p=p_0$）で $\\dfrac{v_r^2}{2}-\\dfrac12\\omega^2l^2=gh$，すなわち $v_r=\\sqrt{2gh+\\omega^2l^2}$．回転は遠心ポンプとして働き流出速度を増す．\n\n(3) 噴出口での水の絶対速度の周方向成分は（反動の向きを正として）$v_r\\sin\\alpha-\\omega l$．注入水は角運動量 0 なので，散水器が水から受けるトルクは角運動量の流出率に等しい：\n\\[\nT=\\rho Q\\,l\\,(v_r\\sin\\alpha-\\omega l),\\qquad Q=2av_r .\n\\]\n自由回転では $T=0$ より $\\omega_0 l=v_r\\sin\\alpha$．両辺 2 乗して $\\omega_0^2l^2=(2gh+\\omega_0^2l^2)\\sin^2\\alpha$，$\\omega_0^2l^2\\cos^2\\alpha=2gh\\sin^2\\alpha$，\n\\[\n\\omega_0=\\frac{\\sqrt{2gh}\\,\\tan\\alpha}{l}.\n\\]\nこのとき $v_r=\\sqrt{2gh(1+\\tan^2\\alpha)}=\\sqrt{2gh}/\\cos\\alpha$，よって $Q/Q_s=1/\\cos\\alpha$（回転によって流量が増える）．\n\n(4) $\\alpha=\\pi/2$ で $T(\\omega)=2\\rho a l\\,v_r(v_r-\\omega l)$．$v_r=\\sqrt{2gh+\\omega^2l^2}>\\omega l$ なので常に $T>0$：トルクが 0 になる定常角速度は存在しない（(3) で $\\tan\\alpha\\to\\infty$ に対応）．大きな $\\omega$ では\n\\[\nv_r(v_r-\\omega l)=\\frac{v_r(v_r^2-\\omega^2l^2)}{v_r+\\omega l}=\\frac{2gh\\,v_r}{v_r+\\omega l}\\to gh\n\\]\nより $T\\to2\\rho a\\,g h\\,l$（一定）．すなわち摩擦がない理想的な場合，散水器は一定値に近いトルクで加速され続け，角速度はほぼ時間に比例して増加する．エネルギー収支も確かめておく．噴出水の絶対速度は $v_r-\\omega l$（周方向のみ）なので\n\\[\nT\\omega+\\rho Q\\frac{(v_r-\\omega l)^2}{2}=\\rho Q(v_r-\\omega l)\\frac{v_r+\\omega l}{2}=\\rho Q\\frac{v_r^2-\\omega^2l^2}{2}=\\rho Qgh\n\\]\nとなり，貯水槽の位置エネルギーの供給率が回転への仕事率と噴出水の運動エネルギーに分配される．$\\omega\\to\\infty$ では噴出水は静止系でほぼ止まり（$v_r-\\omega l\\to0$），供給エネルギーのほぼすべてが回転エネルギーになる．現実には軸受摩擦や管内損失で有限の角速度に落ち着く．"
+   }
+  ],
+  "idea": {
+   "tex": "回転系のベルヌーイの定理で遠心ポンプ効果 $v_r=\\sqrt{2gh+\\omega^2l^2}$ を取り込み，角運動量収支と連立すると自由回転角速度が $\\tan\\alpha$ に比例し，$\\alpha=\\pi/2$ では定常解が消える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "散水器",
+   "角運動量保存",
+   "回転座標系",
+   "ベルヌーイの定理",
+   "遠心力",
+   "トリチェリの定理",
+   "反動トルク"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-056",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 40,
+  "theme": "等温ノズル流の遷音速化と必要な加熱量",
+  "topic": "等温ノズル流の遷音速化と必要な加熱量",
+  "statement": {
+   "tex": "断面積 $A(x)$ がゆるやかに変わる軸対称な管の中を，理想気体（気体定数を質量あたり $R$ とする）が定常に 1 次元的に流れている．流れは等温 $T=T_0$ に保たれる（必要な熱は管壁から供給される）とし，等温音速 $a_0=\\sqrt{RT_0}$，マッハ数 $M=v/a_0$ を用いる．入口（断面積 $A_0$）でのマッハ数を $M_0$，圧力を $p_0$ とする．\n\\begin{enumerate}\n\\item 質量保存と運動方程式から $(1-M^2)\\dfrac{dM}{M}=-\\dfrac{dA}{A}$ を導き，これを積分して $A/A_0$ を $M$，$M_0$ で表せ．また圧力比 $p/p_0$ を $M$，$M_0$ で表せ．\n\\item 最小断面積（のど）$A_t$ の管で，亜音速の入口から出発した流れが，のどで $M=1$ を通過して滑らかに超音速へ移るための $M_0$ の条件式を示せ．$A_t/A_0=1/2$ のとき $M_0$ を数値で求めよ．\n\\item (2) の流れで，のどの下流で $M=2$ となる断面の面積比 $A/A_0$ と圧力比 $p/p_0$ を求めよ．\n\\item 入口から $M=2$ の断面までに単位質量の気体に与えられる熱量 $q$ を $a_0^2$ を単位として求めよ．なぜ等温流でも熱の出入りが必要なのか説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{A}{A_0}=\\dfrac{M_0}{M}\\exp\\dfrac{M^2-M_0^2}{2}$，$\\dfrac p{p_0}=\\exp\\left(-\\dfrac{M^2-M_0^2}{2}\\right)$．(2) $M_0\\exp\\dfrac{1-M_0^2}{2}=\\dfrac{A_t}{A_0}$，$M_0\\approx0.319$．(3) $A/A_0\\approx1.12$，$p/p_0\\approx0.142$．(4) $q=\\dfrac{a_0^2}{2}(4-M_0^2)\\approx1.95\\,a_0^2$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 質量保存 $\\rho vA=$ 一定 より $\\dfrac{d\\rho}\\rho+\\dfrac{dv}v+\\dfrac{dA}A=0$．運動方程式（オイラー方程式）$\\rho v\\dfrac{dv}{dx}=-\\dfrac{dp}{dx}$ と等温の状態方程式 $p=\\rho a_0^2$ から $v\\,dv=-a_0^2\\dfrac{d\\rho}{\\rho}$，すなわち $\\dfrac{d\\rho}{\\rho}=-M^2\\dfrac{dv}{v}$．代入して\n\\[\n(1-M^2)\\frac{dv}{v}=-\\frac{dA}{A},\\qquad \\frac{dv}{v}=\\frac{dM}{M}\\ (a_0\\text{ 一定}).\n\\]\n積分：$\\log M-\\dfrac{M^2}{2}=-\\log A+$ 一定 より\n\\[\n\\frac{A}{A_0}=\\frac{M_0}{M}\\exp\\frac{M^2-M_0^2}{2}.\n\\]\nまた $\\dfrac{d\\rho}{\\rho}=-M\\,dM$ を積分して $\\dfrac{p}{p_0}=\\dfrac{\\rho}{\\rho_0}=\\exp\\left(-\\dfrac{M^2-M_0^2}{2}\\right)$（等温ベルヌーイ $\\frac{v^2}2+a_0^2\\log p=$ 一定 と同じ）．\n\n(2) $dA/A=-(1-M^2)dM/M$ なので，$M<1$ では $A$ の減少とともに $M$ が増え，$M>1$ では $A$ の増加とともに $M$ が増える．$M=1$ を通過できるのは $dA=0$ の点，すなわちのどだけで，そこで $M=1$ でなければならない．(1) に $M=1$，$A=A_t$ を入れて\n\\[\nM_0\\exp\\frac{1-M_0^2}{2}=\\frac{A_t}{A_0}.\n\\]\n左辺は $0<M_0<1$ で単調増加（$\\frac{d}{dM_0}\\log=\\frac1{M_0}-M_0>0$）なので解は一つ．$A_t/A_0=1/2$ を数値的に解いて $M_0\\approx0.319$．（$M_0$ がこれより小さいと亜音速のまま，大きい値は質量流量がのどを通れず実現しない：チョーク．）\n\n(3) $M=2$：$\\dfrac{A}{A_0}=\\dfrac{0.319}{2}\\exp\\dfrac{4-0.1018}{2}\\approx1.12$，$\\dfrac p{p_0}=\\exp\\left(-\\dfrac{4-0.1018}{2}\\right)\\approx0.142$．なおのどでは $p_t/p_0=e^{-(1-M_0^2)/2}=M_0/(A_t/A_0)\\approx0.638$ で，これは $\\rho_ta_0A_t=\\rho_0M_0a_0A_0$ とも整合する．\n\n(4) 定常流のエネルギー式 $dq=d\\left(h+\\dfrac{v^2}{2}\\right)$ で，理想気体の比エンタルピー $h$ は温度だけの関数なので等温では一定．よって\n\\[\nq=\\frac{v^2-v_0^2}{2}=\\frac{a_0^2}{2}(M^2-M_0^2)=\\frac{a_0^2}{2}(4-0.1018)\\approx1.95\\,a_0^2 .\n\\]\n気体は膨張・加速するとき（断熱なら）内部エネルギーを運動エネルギーに変えて冷える．温度を保つには，増えた運動エネルギーにちょうど等しい熱を外から供給し続けなければならない．"
+   }
+  ],
+  "idea": {
+   "tex": "等温 1 次元流ではのどで等温マッハ数 $M=1$ を通過する条件から入口マッハ数が決まり（チョーク），加速に伴う運動エネルギー増加分がそのまま壁からの加熱量になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "圧縮性流体",
+   "ノズル流",
+   "等温流",
+   "マッハ数",
+   "チョーク",
+   "ラバルノズル",
+   "ベルヌーイの定理",
+   "エネルギー保存"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-057",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 25,
+  "theme": "水と灯油の二層容器の排水と流速の跳び",
+  "topic": "水と灯油の二層容器の排水と流速の跳び",
+  "statement": {
+   "tex": "底面積 $S$ の広い容器に，厚さ $h_1=30\\,\\mathrm{cm}$ の水（密度 $\\rho_1=1.0\\times10^3\\,\\mathrm{kg/m^3}$）と，その上に厚さ $h_2=20\\,\\mathrm{cm}$ の灯油（$\\rho_2=0.80\\times10^3\\,\\mathrm{kg/m^3}$）が入っている．底に面積 $s=S/400$ の小孔をあけた．粘性は無視し，流れは準定常とみなす．$g=9.8\\,\\mathrm{m/s^2}$．\n\\begin{enumerate}\n\\item 流出直後の水の流出速度を求めよ．\n\\item 水がすべて流れ出るまでの時間 $T$ を求めよ．\n\\item 水が流れ尽きる直前の流出速度と，直後に灯油が流れ出し始めたときの流出速度を求めよ．速度が跳ぶ理由を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=\\sqrt{2g(h_1+h_2\\rho_2/\\rho_1)}\\approx3.0\\,\\mathrm{m/s}$　(2) $T=\\dfrac Ss\\sqrt{\\dfrac2g}\\left(\\sqrt{h_1+h_2\\rho_2/\\rho_1}-\\sqrt{h_2\\rho_2/\\rho_1}\\right)\\approx50\\,\\mathrm{s}$　(3) 直前 $\\approx1.77\\,\\mathrm{m/s}$，直後 $\\approx1.98\\,\\mathrm{m/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 界面での圧力は $p_0+\\rho_2gh_2$．水の自由表面とみなした界面から孔までベルヌーイの式を適用：$\\frac12\\rho_1v^2=\\rho_1gh_1+\\rho_2gh_2$．\n\\[ v=\\sqrt{2g\\left(h_1+\\frac{\\rho_2}{\\rho_1}h_2\\right)}=\\sqrt{2\\cdot9.8\\cdot0.46}\\approx3.0\\,\\mathrm{m/s}. \\]\n\n(2) 水の厚さを $x$ とし，有効水頭 $Y=x+h_2\\rho_2/\\rho_1$（灯油層の厚さは変わらない）とおくと $S\\dot x=-s\\sqrt{2gY}$，$\\dot Y=\\dot x$．\n\\[ T=\\frac Ss\\int_{Y_1}^{Y_0}\\frac{dY}{\\sqrt{2gY}}=\\frac Ss\\sqrt{\\frac2g}\\left(\\sqrt{Y_0}-\\sqrt{Y_1}\\right),\\quad Y_0=0.46\\,\\mathrm{m},\\ Y_1=0.16\\,\\mathrm{m}. \\]\n$T=400\\cdot0.4518\\cdot(0.6782-0.4000)\\approx50\\,\\mathrm{s}$．\n\n(3) 直前：$v=\\sqrt{2gY_1}=\\sqrt{2\\cdot9.8\\cdot0.16}\\approx1.77\\,\\mathrm{m/s}$．\n直後：灯油が孔から出るので灯油自身について $\\frac12\\rho_2v^2=\\rho_2gh_2$，$v=\\sqrt{2gh_2}\\approx1.98\\,\\mathrm{m/s}$．\n同じ圧力差 $\\rho_2gh_2$ でも，加速される流体が密度の大きい水から小さい灯油に替わるため，到達速度が $\\sqrt{\\rho_1/\\rho_2}$ 倍に増える．"
+   }
+  ],
+  "idea": {
+   "tex": "二層液体の流出では有効水頭が上層の密度比で決まり，流出する液体が替わる瞬間に流出速度が不連続に増える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v$ [m/s]：≈3.0\n(2) $T$ [s]：≈50\n(3) 直前 [m/s]：≈1.77 ; 直後 [m/s]：≈1.98"
+  },
+  "methods": [],
+  "tags": [
+   "トリチェリの定理",
+   "ベルヌーイの定理",
+   "二層液体",
+   "排水時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-058",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 25,
+  "theme": "底の孔をふさぐ円柱に働く流体力（吸い付き）",
+  "topic": "底の孔をふさぐ円柱に働く流体力（吸い付き）",
+  "statement": {
+   "tex": "水深 $h$ の広い容器の水平な底に半径 $R_1$ の円孔があり，その真上に半径 $R_2\\,(>R_1)$ の閉じた円柱が同軸に置かれている．円柱の底面と容器の底のすき間 $\\delta$ は非常に小さく，水（理想流体，密度 $\\rho$）はすき間を通って中心に向かって流れ，孔から大気中に流れ出る．大気圧を $p_0$ とし，円柱の底面のうち孔の真上の部分（$r<R_1$）にかかる圧力は $p_0$ とみなす．\n\\begin{enumerate}\n\\item すき間の中の流速 $v(r)$ と圧力 $p(r)$（$R_1<r<R_2$）を求めよ．\n\\item 孔をふさいで流れがない場合に比べて，円柱の底面が受ける上向きの力は流れによってどれだけ減るか．\n\\item $h=0.50\\,\\mathrm{m}$，$R_1=1.0\\,\\mathrm{cm}$，$R_2=5.0\\,\\mathrm{cm}$，$\\rho=1.0\\times10^3\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$ のとき，(2) の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=\\sqrt{2gh}\\,\\dfrac{R_1}{r}$，$p=p_0+\\rho gh\\left(1-\\dfrac{R_1^2}{r^2}\\right)$　(2) $\\Delta F=\\pi\\rho ghR_1^2\\left(1+2\\ln\\dfrac{R_2}{R_1}\\right)$　(3) $\\Delta F\\approx6.5\\,\\mathrm{N}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 孔の縁 $r=R_1$ ではすき間から出た水は大気圧 $p_0$ になり，容器内の静止した水面からのベルヌーイの式より速さ $\\sqrt{2gh}$．すき間の高さは一定なので連続の式 $2\\pi r\\delta\\,v=$ 一定 より\n\\[ v(r)=\\sqrt{2gh}\\,\\frac{R_1}{r}. \\]\nベルヌーイの式 $p+\\frac12\\rho v^2=p_0+\\rho gh$（底の高さを基準）より\n\\[ p(r)=p_0+\\rho gh\\left(1-\\frac{R_1^2}{r^2}\\right). \\]\n\n(2) 流れがないときは底面全体に $p_0+\\rho gh$ がかかる．流れがあると，$r<R_1$ でゲージ圧 $0$，$R_1<r<R_2$ でゲージ圧 $\\rho gh(1-R_1^2/r^2)$．\n\\[ \\Delta F=\\rho gh\\pi R_2^2-\\int_{R_1}^{R_2}\\rho gh\\left(1-\\frac{R_1^2}{r^2}\\right)2\\pi r\\,dr=\\rho gh\\pi R_2^2-\\rho gh\\left[\\pi(R_2^2-R_1^2)-2\\pi R_1^2\\ln\\frac{R_2}{R_1}\\right] \\]\n\\[ =\\pi\\rho ghR_1^2\\left(1+2\\ln\\frac{R_2}{R_1}\\right). \\]\n上面の圧力は変わらないので，これだけ円柱が底に押し付けられる向きの力が増える．\n\n(3) $\\Delta F=\\pi\\cdot10^3\\cdot9.8\\cdot0.50\\cdot10^{-4}\\cdot(1+2\\ln5)\\approx1.54\\cdot4.22\\approx6.5\\,\\mathrm{N}$．\n（孔の面積だけを考えた素朴な値 $\\pi\\rho ghR_1^2\\approx1.5\\,\\mathrm{N}$ の約4倍で，すき間の流れによる圧力低下の寄与が大きい．）"
+   }
+  ],
+  "idea": {
+   "tex": "狭いすき間を中心に向かって加速する流れで圧力が下がり，孔の面積以上に物体が底に吸い付けられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta F$：pi ρ g h R_1 ^(2)(1+2 ln ((R_2)/(R_1)))\n(3) $\\Delta F$ [N]：≈6.5"
+  },
+  "methods": [],
+  "tags": [
+   "ベルヌーイの定理",
+   "連続の式",
+   "すき間流れ",
+   "流体力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-059",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 25,
+  "theme": "回転管からの流出と排出時間",
+  "topic": "回転管からの流出と排出時間",
+  "statement": {
+   "tex": "長さ $l$ の細い水平な管 $AB$ が，端 $A$ を通る鉛直軸のまわりに一定の角速度 $\\omega$ で回転している．端 $A$ は開いており，閉じた端 $B$ には管の断面積 $S$ に比べて十分小さい面積 $s$ の穴がある．管内には完全流体が入っており，流体柱は $B$ 側に寄って長さ $h$ を占めている（大気圧は両端で等しい）．\n\\begin{enumerate}\n\\item 穴から流出する流体の，管に対する速さ $v$ を $h$ の関数として求めよ．\n\\item はじめ管が流体で満たされていた（$h=l$）とする．流体柱が $h=l/2$ になるまでの時間 $T_{1/2}$ と，流体がすべて流出するまでの時間 $T$ を求めよ（準定常とみなしてよい）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v=\\omega\\sqrt{h(2l-h)}$　(2) $T_{1/2}=\\dfrac{\\pi S}{6\\omega s}$，$T=\\dfrac{\\pi S}{2\\omega s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 管とともに回転する系で考える．流れは（準）定常で，コリオリ力は速度に垂直で仕事をしないから，流線に沿って遠心力ポテンシャル $-\\tfrac12\\omega^2r^2$ を含むベルヌーイの式\n\\[ \\frac{p}{\\rho}+\\frac{v^2}{2}-\\frac{\\omega^2r^2}{2}=\\text{一定} \\]\nが成り立つ．流体柱の内側の自由面 $r=l-h$ では $p=p_0$，速さは $(s/S)v\\approx0$．穴 $r=l$ では $p=p_0$．よって\n\\[ \\frac{v^2}{2}=\\frac{\\omega^2}{2}\\left\\{l^2-(l-h)^2\\right\\}\\ \\Rightarrow\\ v=\\omega\\sqrt{h(2l-h)} . \\]\n\n(2) 連続の式 $S\\,\\dfrac{dh}{dt}=-s v=-s\\omega\\sqrt{h(2l-h)}$．$h=l(1-\\cos\\theta)$ とおくと $\\sqrt{h(2l-h)}=l\\sin\\theta$，$dh=l\\sin\\theta\\,d\\theta$ なので\n\\[ \\frac{d\\theta}{dt}=-\\frac{s\\omega}{S}. \\]\n$h=l$ は $\\theta=\\pi/2$，$h=l/2$ は $\\theta=\\pi/3$，$h=0$ は $\\theta=0$．したがって\n\\[ T_{1/2}=\\frac{S}{s\\omega}\\left(\\frac\\pi2-\\frac\\pi3\\right)=\\frac{\\pi S}{6\\omega s},\\qquad T=\\frac{\\pi S}{2\\omega s}. \\]\n$\\theta$ が等速で減るので，後半の方が前半の 2 倍の時間がかかる．"
+   }
+  ],
+  "idea": {
+   "tex": "回転系のベルヌーイの式に遠心力ポテンシャルを入れると $v=\\omega\\sqrt{h(2l-h)}$．排出の方程式は $h=l(1-\\cos\\theta)$ の置換で $\\theta$ の等速変化になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v$：ω sqrt(h (2 l - h))\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転座標系",
+   "ベルヌーイの定理",
+   "遠心力ポテンシャル",
+   "排出時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-060",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 30,
+  "theme": "先細・末広管を引き抜く力とキャビテーション",
+  "topic": "先細・末広管を引き抜く力とキャビテーション",
+  "statement": {
+   "tex": "水面が大気に開いた広いタンクの側壁に，水平な短い管が取り付けられ，水が大気中へ流出している．管の断面積は，壁側の入口で $A_1$，出口で $A_2$ であり，その間でなめらかに変化する．タンクの水面は管の軸より $h$ だけ高い．粘性は無視し，水の密度を $\\rho$ とする．\n\\begin{enumerate}\n\\item 水が管に及ぼす水平方向の力（管をタンクから引き抜こうとする向きを正とする）が\n\\[ F=\\rho gh\\frac{(A_1-A_2)^2}{A_1} \\]\nであることを示せ．\n\\item 先細管 $A_1=3.0\\ \\mathrm{cm^2}$，$A_2=1.0\\ \\mathrm{cm^2}$，$h=4.6$ m のとき $F$ を求めよ．\n\\item 向きを逆にした末広管 $A_1=1.0\\ \\mathrm{cm^2}$，$A_2=3.0\\ \\mathrm{cm^2}$ では，入口の圧力が負にならない（キャビテーションしない）ための $h$ の上限 $h_{\\max}$ と，そのときの $F$ を求めよ．大気圧は $p_0=1.0\\times10^5$ Pa とし，蒸気圧は無視する．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $F\\approx6.0$ N　(3) $h_{\\max}=\\dfrac{p_0}{\\rho g\\{(A_2/A_1)^2-1\\}}\\approx1.3$ m，$F=p_0A_1\\dfrac{A_2-A_1}{A_2+A_1}=5.0$ N"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 出口速度 $v_2=\\sqrt{2gh}$，入口速度 $v_1=v_2A_2/A_1$，入口のゲージ圧は $p_1-p_0=\\tfrac12\\rho(v_2^2-v_1^2)$．管内の水の $x$（流出向き）方向の運動量収支：\n\\[ \\rho Q(v_2-v_1)=(p_1-p_0)A_1+F_w ,\\quad Q=A_2v_2, \\]\nここで $F_w$ は管壁が水に及ぼす力（大気圧の一様な寄与は差し引いた）．代入して整理すると\n\\[ F_w=\\rho v_2^2A_2\\left(1-\\frac{A_2}{A_1}\\right)-\\frac{\\rho v_2^2}{2}\\left(1-\\frac{A_2^2}{A_1^2}\\right)A_1=-\\frac{\\rho v_2^2}{2A_1}(A_1-A_2)^2 . \\]\n水が管に及ぼす力はその反作用で $F=\\dfrac{\\rho v_2^2}{2A_1}(A_1-A_2)^2=\\rho gh\\dfrac{(A_1-A_2)^2}{A_1}>0$．先細でも末広でも，管は常に引き抜かれる向きに力を受ける．\n\n(2) $F=10^3\\times9.8\\times4.6\\times\\dfrac{(2.0\\times10^{-4})^2}{3.0\\times10^{-4}}\\approx6.0$ N．\n\n(3) 入口圧力 $p_1=p_0+\\rho gh\\{1-(A_2/A_1)^2\\}=p_0-8\\rho gh\\ge0$ より\n\\[ h_{\\max}=\\frac{p_0}{8\\rho g}=\\frac{1.0\\times10^5}{8\\times10^3\\times9.8}\\approx1.3\\ \\mathrm m . \\]\nこのとき $F=\\rho gh_{\\max}\\dfrac{(A_2-A_1)^2}{A_1}=p_0A_1\\dfrac{A_2-A_1}{A_2+A_1}=1.0\\times10^5\\times1.0\\times10^{-4}\\times\\dfrac12=5.0$ N．"
+   }
+  ],
+  "idea": {
+   "tex": "運動量収支とベルヌーイの式から $F=\\rho gh(A_1-A_2)^2/A_1\\ge0$．末広管は大きな力を生むが入口が負圧になり，キャビテーションが $h$ を制限する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $F$ [N]：≈6.0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "運動量の法則",
+   "ベルヌーイの定理",
+   "ノズル",
+   "キャビテーション"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-061",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 25,
+  "theme": "水銀の円盤層に浮く板の平衡と振動",
+  "topic": "水銀の円盤層に浮く板の平衡と振動",
+  "statement": {
+   "tex": "水平に固定したガラス板の上に体積 $V$ の水銀を置き，その上に質量 $M$ の水平なガラス板をのせる．水銀は 2 枚の板の間で厚さ $h$，半径 $R$ の薄い円盤（$h\\ll R$）をなす．水銀とガラスの接触角は $\\theta\\ (>90^\\circ)$，水銀の表面張力は $\\sigma$ とする．水銀の側面は鉛直断面で円弧をなすとし，水平面内の曲率（$1/R$ の項），水銀の重さと慣性，大気圧の効果は無視する．\n\\begin{enumerate}\n\\item 上板の平衡の位置での間隔 $h_0$ を求めよ．\n\\item 上板を鉛直方向にわずかにずらしたときの微小振動の角振動数 $\\omega$ を求めよ（接触角は $\\theta$ のまま，$V$ は一定）．結果が $\\sigma$ や $V$ によらないことに注意せよ．\n\\item $V=0.50\\ \\mathrm{cm^3}$，$M=0.40$ kg，$\\sigma=0.49$ N/m，$\\theta=135^\\circ$ のとき，$h_0$，$R$，振動数 $f$ を求めよ．また，間隔を $h_0/2$ にするには上板にさらに何 kg のおもりをのせればよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h_0=\\sqrt{\\dfrac{2\\sigma|\\cos\\theta|V}{Mg}}$　(2) $\\omega=\\sqrt{2g/h_0}$　(3) $h_0=0.30$ mm，$R=2.3$ cm，$f=41$ Hz，追加 $1.2$ kg"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 側面のメニスカスは鉛直断面で半径 $h/(2|\\cos\\theta|)$ の円弧なので，水銀内部の圧力は外より $\\Delta p=2\\sigma|\\cos\\theta|/h$ だけ高い．これが面積 $\\pi R^2=V/h$ に作用し，上板を押し上げる力は\n\\[\nF(h)=\\frac{2\\sigma|\\cos\\theta|}{h}\\cdot\\frac Vh=\\frac{2\\sigma|\\cos\\theta|V}{h^2}.\n\\]\n$F(h_0)=Mg$ より $h_0=\\sqrt{2\\sigma|\\cos\\theta|V/(Mg)}$．\n\n(2) ばね定数は\n\\[\nk=-\\frac{dF}{dh}\\Big|_{h_0}=\\frac{4\\sigma|\\cos\\theta|V}{h_0^3}=\\frac{2F(h_0)}{h_0}=\\frac{2Mg}{h_0},\n\\]\nよって $\\omega=\\sqrt{k/M}=\\sqrt{2g/h_0}$．$F\\propto h^{-2}$ という形だけで決まり，$\\sigma,V$ は $h_0$ を通してしか入らない．\n\n(3) $2\\sigma|\\cos\\theta|V=2(0.49)(0.707)(0.50\\times10^{-6})=3.46\\times10^{-7}$ N·m$^2$ より\n\\[\nh_0=\\sqrt{\\frac{3.46\\times10^{-7}}{(0.40)(9.8)}}=3.0\\times10^{-4}\\ \\mathrm m,\\qquad R=\\sqrt{\\frac{V}{\\pi h_0}}=2.3\\times10^{-2}\\ \\mathrm m,\n\\]\n\\[\n\\omega=\\sqrt{\\frac{2(9.8)}{2.97\\times10^{-4}}}=2.6\\times10^2\\ \\mathrm{s^{-1}},\\qquad f=\\frac{\\omega}{2\\pi}=41\\ \\mathrm{Hz}.\n\\]\n$F\\propto h^{-2}$ だから間隔を半分にするには全荷重を 4 倍にする必要があり，追加のおもりは $3M=1.2$ kg．"
+   }
+  ],
+  "idea": {
+   "tex": "ぬれない液体の薄層では体積一定のため支持力が $h^{-2}$ に比例する．このべき則だけから振動数 $\\sqrt{2g/h_0}$ が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h_0$：sqrt(((2σ| cos θ|V)/(Mg)))\n(2) $\\omega$：sqrt(2 g / h_0)\n(3) $h_0$ [mm]：≈0.30 ; $R$ [cm]：≈2.3 ; $f$ [Hz]：41 ; 追加 [kg]：≈1.2"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス圧",
+   "接触角",
+   "水銀",
+   "微小振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-062",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 3,
+  "minutes": 20,
+  "theme": "ぬれの異なる平行平板間の毛管引力",
+  "topic": "ぬれの異なる平行平板間の毛管引力",
+  "statement": {
+   "tex": "間隔 $d$，幅 $l$ の 2 枚の鉛直な平行平板を水に部分的に浸す．板 1 はきれいなガラス（接触角 $\\theta_1=0$），板 2 はパラフィンで覆われている（接触角 $\\theta_2$）．すき間は十分狭く（$d$ は毛管長より十分小さい），すき間内の液面の高さの変化に比べて板の外側のメニスカスの寄与（$\\sigma l$ の程度の力）は無視できるとする．水の液面は板の上端に達しないものとする．\n\\begin{enumerate}\n\\item すき間内の液面の，外の液面からの高さ $h$ を求めよ（負なら下がる）．\n\\item 板どうしにはたらく水平方向の力を求め，$h$ の符号によらず引力であることを示せ．\n\\item $d=0.10$ mm，$l=12$ cm，$\\theta_2=105^\\circ$，$\\sigma=0.073$ N/m のとき $h$ と力の大きさを求め，両板ともガラスの場合と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h=\\dfrac{\\sigma(\\cos\\theta_1+\\cos\\theta_2)}{\\rho g d}$　(2) $F=\\dfrac{\\rho g l h^2}{2}=\\dfrac{\\sigma^2(\\cos\\theta_1+\\cos\\theta_2)^2l}{2\\rho g d^2}$（常に引力）　(3) $h=5.5$ cm，$F=1.8$ N（両方ガラスなら 13 N）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) すき間内の水柱（高さ $h$，体積 $hdl$）の鉛直方向のつり合い：両板の接触線から上向きに $\\sigma l(\\cos\\theta_1+\\cos\\theta_2)$．よって $\\rho g hdl=\\sigma l(\\cos\\theta_1+\\cos\\theta_2)$，\n\\[\nh=\\frac{\\sigma(\\cos\\theta_1+\\cos\\theta_2)}{\\rho g d}.\n\\]\n\n(2) $h>0$ のとき：すき間内の高さ $0<z<h$ の水は圧力 $p_0-\\rho g z$（大気圧以下），板の外側は大気圧 $p_0$．各板は外から $\\rho g z$ の圧力差で押され，合力は\n\\[\nF=l\\int_0^h\\rho g z\\,dz=\\frac{\\rho g l h^2}{2}\n\\]\nの引力．\n$h<0$ のとき：すき間内は深さ $|h|$ まで空気（圧力 $p_0$），外側の深さ $0<z<|h|$ の水は圧力 $p_0+\\rho g z$．外から押す力は同じく $\\rho g l h^2/2$ で，やはり引力．よって\n\\[\nF=\\frac{\\sigma^2(\\cos\\theta_1+\\cos\\theta_2)^2l}{2\\rho g d^2}.\n\\]\n$\\cos\\theta_2=-\\cos\\theta_1$ のときだけこの主要項が消える．\n\n(3) $\\cos\\theta_1+\\cos\\theta_2=1-0.259=0.741$．\n\\[\nh=\\frac{0.073(0.741)}{(1000)(9.8)(1.0\\times10^{-4})}=5.5\\times10^{-2}\\ \\mathrm m,\\qquad F=\\frac{(1000)(9.8)(0.12)(0.0552)^2}{2}=1.8\\ \\mathrm N.\n\\]\n両方ガラスなら $\\cos$ の和が 2 で $F=2\\sigma^2l/(\\rho g d^2)=13$ N．はじく板を 1 枚にしただけで約 1/7 になる．"
+   }
+  ],
+  "idea": {
+   "tex": "狭いすき間の毛管力は静水圧差 $\\rho g h^2/2$ で決まり，液面が上がっても下がっても引力になる．大きさはぬれの和 $(\\cos\\theta_1+\\cos\\theta_2)^2$ に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h$：((σ (cos θ_1 + cos θ_2))/(ρ g d))\n(2) $F$：((ρ g l h ^(2))/(2))\n(3) $h$ [cm]：≈5.5 ; $F$ [N]：≈1.8"
+  },
+  "methods": [],
+  "tags": [
+   "毛管上昇",
+   "接触角",
+   "静水圧",
+   "毛管引力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -632,6 +2965,57 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-04-063",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-81",
+  "level": 4,
+  "minutes": 45,
+  "theme": "Blasius公式：湧き出しが円柱を引き寄せる",
+  "topic": "Blasius公式：湧き出しが円柱を引き寄せる",
+  "statement": {
+   "tex": "半径 $a$ の固定円柱（中心は原点）の外側，点 $z=b\\ (b>a)$ に強さ $m>0$ の湧き出し（単独なら $f=m\\log z$ 型）があり，周囲は静止した渦なし非圧縮性完全流体で満たされている．円柱のまわりの循環は 0 とする．\n\\begin{enumerate}\n\\item 円定理を用いて，円柱表面 $|z|=a$ が流線となる複素速度ポテンシャルが\n\\[f(z)=m\\log(z-b)+m\\log\\!\\left(z-\\frac{a^2}{b}\\right)-m\\log z\\]\nとなることを示せ（円柱の内部の特異点が何を意味するかも述べよ）．\n\\item Blasius の第1公式を用いて，円柱にはたらく力 $(F_1,F_2)$ を求めよ．\n\\item 円柱は湧き出しに引き寄せられるか，押しやられるか．湧き出しを吸い込み（$m<0$）に替えるとどうなるか．物理的理由も述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 円定理 $f=w(z)+\\overline{w}(a^2/z)$ により，像湧き出し $a^2/b$（強さ $m$）と中心の吸い込み（$-m$）　(2) $F_1=\\dfrac{2\\pi\\rho m^2a^2}{b(b^2-a^2)}$，$F_2=0$　(3) どちらの場合も $+x$ 向き（湧き出し・吸い込みの側）に引き寄せられる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 円定理：円柱がないときの複素ポテンシャル $w(z)$ の特異点がすべて $|z|>a$ にあるなら，$f(z)=w(z)+\\overline{w(a^2/\\bar z)}$ は $|z|=a$ を流線とする．$w=m\\log(z-b)$ なら $\\overline{w(a^2/\\bar z)}=m\\log(a^2/z-b)=m\\log(z-a^2/b)-m\\log z+$定数．よって与式を得る．$|z|=a$ で $\\bar z=a^2/z$ なので第2項は第1項の複素共役となり，$\\mathrm{Im}f$ は一定である．円柱内部には，鏡像点 $a^2/b$ の湧き出し $m$ と中心の吸い込み $-m$ があり，円柱表面を通る正味の流量が 0（円柱から流体が出ない）となっている．\n\n(2) Blasius の第1公式 $F_1-iF_2=\\dfrac{i\\rho}{2}\\oint_C\\left(\\dfrac{df}{dz}\\right)^2dz$ で，$C$ は円柱を囲み湧き出し $z=b$ を含まない閉曲線．$C$ 内の特異点は $z=a^2/b\\equiv c$ と $z=0$．\n\\[\\left(f'\\right)^2=m^2\\left(\\frac1{z-b}+\\frac1{z-c}-\\frac1z\\right)^2\\]\nの留数は，二乗項（2位の極）の留数が 0 なので交差項から：\n\\[\\mathrm{Res}_{z=c}=2m^2\\left(\\frac1{c-b}-\\frac1c\\right),\\quad \\mathrm{Res}_{z=0}=2m^2\\left(-\\frac1{0-b}-\\frac1{0-c}\\right)=2m^2\\left(\\frac1b+\\frac1c\\right).\\]\n和は $2m^2\\left(\\dfrac1{c-b}+\\dfrac1b\\right)=\\dfrac{2m^2c}{b(c-b)}=-\\dfrac{2m^2a^2}{b(b^2-a^2)}$．よって\n\\[F_1-iF_2=\\frac{i\\rho}{2}\\cdot2\\pi i\\cdot\\left(-\\frac{2m^2a^2}{b(b^2-a^2)}\\right)=\\frac{2\\pi\\rho m^2a^2}{b(b^2-a^2)}.\\]\n$F_1=\\dfrac{2\\pi\\rho m^2a^2}{b(b^2-a^2)}$，$F_2=0$．\n\n(3) $F_1>0$ は円柱が湧き出しの方向（$+x$）へ引き寄せられることを意味する．結果は $m^2$ に比例するので，吸い込み（$m<0$）でも同じく引き寄せられる．円柱の湧き出し側の面では流体が円柱の表面に沿って回り込み速く流れる（遠い側ではほとんど流れない）ので，Bernoulli の定理によって近い側の圧力が下がる．$b\\to a$ で力は $1/(b-a)$ のように発散し，$b\\gg a$ では $2\\pi\\rho m^2a^2/b^3$ で減衰する．"
+   }
+  ],
+  "idea": {
+   "tex": "円定理で境界条件を満たす像系を作り，Blasius の公式で円柱内部の極の留数だけを拾うと，湧き出し・吸い込みのどちらでも円柱が引き寄せられる（$\\propto m^2$）という直観に反する結果が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $F_1$：((2 pi ρ m ^(2) a ^(2))/(b (b ^(2)- a ^(2)))) ; $F_2$：0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Blasiusの公式",
+   "円定理",
+   "鏡像法",
+   "湧き出し",
+   "留数定理",
+   "複素速度ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

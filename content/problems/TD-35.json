@@ -195,6 +195,648 @@
   }
  },
  {
+  "id": "TD-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "不飽和水蒸気を等温圧縮して凝縮させる",
+  "topic": "不飽和水蒸気を等温圧縮して凝縮させる",
+  "statement": {
+   "tex": "シリンダー内に $100\\ ^\\circ$C の水蒸気だけが圧力 $p_1=0.60$ atm，体積 $V_0=5.0$ L で入っている．これを等温でゆっくり体積 $V=1.6$ L まで圧縮する．$100\\ ^\\circ$C の飽和蒸気圧は $p_0=1.0$ atm とし，水蒸気は理想気体，液体の体積は無視する．\n\\begin{enumerate}\n\\item 凝縮が始まるときの体積 $V_s$ を求めよ．\n\\item 最後に生じている液体の質量 $m_l$ を求めよ．\n\\item 全過程で外部がする仕事 $W$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V_s=V_0p_1/p_0=3.0$ L　(2) $m_l=\\dfrac{Mp_0(V_s-V)}{RT}=0.82$ g　(3) $W=p_1V_0\\ln\\dfrac{V_0}{V_s}+p_0(V_s-V)=0.30$ kJ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 圧力が $p_0$ に達したとき凝縮が始まる．ボイルの法則より $V_s=V_0p_1/p_0=3.0$ L．\n\n(2) その後は圧力 $p_0$ のまま気相の量が体積に比例して減るので\n\\[\nm_l=\\frac{Mp_0(V_s-V)}{RT}=\\frac{(0.018)(1.013\\times10^5)(1.4\\times10^{-3})}{(8.31)(373)}=8.2\\times10^{-4}\\ \\mathrm{kg}.\n\\]\n\n(3) 前半は等温圧縮，後半は定圧：\n\\[\nW=p_1V_0\\ln\\frac{V_0}{V_s}+p_0(V_s-V)=155+142=3.0\\times10^2\\ \\mathrm J.\n\\]"
+   }
+  ],
+  "idea": {
+   "tex": "等温線は飽和蒸気圧に達するまでボイルの法則に従い，そこから水平になる．凝縮量は水平部分の体積変化だけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $m_l$ [g]：≈0.82\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "飽和蒸気圧",
+   "等温圧縮",
+   "凝縮",
+   "ボイルの法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "凝縮で液体が占める体積と質量の割合",
+  "topic": "凝縮で液体が占める体積と質量の割合",
+  "statement": {
+   "tex": "飽和蒸気だけが入った容器の体積を等温で $1/n$ に縮める．飽和蒸気と液体の比体積の比を $N\\ (>n)$ とする．\n\\begin{enumerate}\n\\item 最終状態で，凝縮した液体の質量の割合 $y$ と，液体が占める体積の割合 $\\eta$ を求めよ．\n\\item 液体と蒸気の体積が等しくなる $n$ を求めよ．\n\\item $100\\ ^\\circ$C の水（蒸気 $1.673\\ \\mathrm{m^3/kg}$，液体 $1.0435\\times10^{-3}\\ \\mathrm{m^3/kg}$）について，$n=10$ のときの $y$ と $\\eta$ を求め，その対比を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $y=\\dfrac{N(n-1)}{n(N-1)}$，$\\eta=\\dfrac{n-1}{N-1}$　(2) $n=\\dfrac{N+1}2$　(3) $N=1.60\\times10^3$，$y=0.90$，$\\eta=5.6\\times10^{-3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 全質量 $m$，蒸気の比体積 $v$，液体 $v/N$．初めの体積 $mv$，最終 $mv/n$．液体の質量を $ym$ とすると\n\\[\n\\frac{mv}{n}=(1-y)mv+ym\\frac vN\\quad\\Longrightarrow\\quad y=\\frac{1-1/n}{1-1/N}=\\frac{N(n-1)}{n(N-1)}.\n\\]\n液体の体積の割合は\n\\[\n\\eta=\\frac{ymv/N}{mv/n}=\\frac{ny}{N}=\\frac{n-1}{N-1}.\n\\]\n\n(2) $\\eta=1/2$ より $n=\\dfrac{N+1}{2}$（等温線の水平部分の体積の中点）．\n\n(3) $N=1.673/(1.0435\\times10^{-3})=1.60\\times10^3$．$y=\\dfrac{1603(9)}{10(1602)}=0.90$，$\\eta=\\dfrac{9}{1602}=5.6\\times10^{-3}$．\n質量の 9 割が液体になっても，体積では 0.6\\% にすぎない．"
+   }
+  ],
+  "idea": {
+   "tex": "気液共存領域でのてこの規則．比体積比 $N$ が大きいと，質量はほとんど液体でも体積はほとんど蒸気という対比が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $y$：((N (n -1))/(n (N -1))) ; $\\eta$：((n -1)/(N -1))\n(2) $n$：((N +1)/(2))\n(3) $N$：≈1.60e3 ; $y$：≈0.90 ; $\\eta$：≈5.6e-3"
+  },
+  "methods": [],
+  "tags": [
+   "てこの規則",
+   "凝縮",
+   "比体積",
+   "気液共存"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "沸騰のエントロピー変化とトルートンの規則",
+  "topic": "沸騰のエントロピー変化とトルートンの規則",
+  "statement": {
+   "tex": "$1.0$ atm，$100\\ ^\\circ$C で沸騰している水 $m=1.0$ kg がすべて飽和蒸気になる．蒸発熱 $q=2.26$ MJ/kg，蒸気は理想気体とし，液体の体積は無視する．\n\\begin{enumerate}\n\\item 系のエントロピー増加 $\\Delta S$，系が外部にする仕事 $W$，内部エネルギーの増加 $\\Delta U$ を求めよ．蒸発熱のうち何 \\% が膨張の仕事に使われるか．\n\\item 1 mol あたりの蒸発エントロピーを求め，多くの液体で成り立つトルートンの規則（約 $88$ J/(mol·K)）と比べよ．\n\\item 熱を $200\\ ^\\circ$C の熱源から供給したとき，系と熱源をあわせたエントロピーの増加を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta S=6.1$ kJ/K，$W=0.17$ MJ，$\\Delta U=2.09$ MJ，約 7.6\\%　(2) $109$ J/(mol·K)（トルートンより大きい）　(3) $1.3$ kJ/K"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 一定温度 $T=373$ K で熱 $mq$ を受け取るので $\\Delta S=\\dfrac{mq}{T}=\\dfrac{2.26\\times10^6}{373}=6.06\\times10^3$ J/K．\n仕事 $W=p\\Delta V=\\dfrac{m}{M}RT=\\dfrac{1.0}{0.018}(8.31)(373)=1.72\\times10^5$ J．\n$\\Delta U=mq-W=2.09\\times10^6$ J．$W/(mq)=0.076$，すなわち約 7.6\\%．\n\n(2) $\\Delta S_{\\rm mol}=\\dfrac{qM}{T}=\\dfrac{(2.26\\times10^6)(0.018)}{373}=109$ J/(mol·K)．トルートンの値より 2 割以上大きい．液体の水では水素結合により分子の配置が強く秩序化しているため，気化で増えるエントロピーが大きい．\n\n(3) 熱源のエントロピー変化は $-mq/T_h=-\\dfrac{2.26\\times10^6}{473}=-4.78\\times10^3$ J/K．合計 $6.06\\times10^3-4.78\\times10^3=1.3\\times10^3$ J/K の増加（不可逆な熱伝導による）．"
+   }
+  ],
+  "idea": {
+   "tex": "蒸発熱の大部分は内部エネルギーに入り，膨張仕事は $RT/M$ 分だけ．モルあたりの蒸発エントロピーをトルートンの規則と比べると水の特異性が見える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) [kJ/K]：≈1.3"
+  },
+  "methods": [],
+  "tags": [
+   "蒸発熱",
+   "エントロピー",
+   "トルートンの規則",
+   "不可逆過程"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "蒸発・凝縮の分子流束と正味の蒸発",
+  "topic": "蒸発・凝縮の分子流束と正味の蒸発",
+  "statement": {
+   "tex": "温度 $T=373\\ \\mathrm{K}$（$100\\ ^\\circ\\mathrm{C}$）の水の平らな表面を考える．このときの飽和蒸気圧は $p_s=1.013\\times10^{5}\\ \\mathrm{Pa}$ である．水蒸気を理想気体とみなし，液面に入射した水分子のうち割合 $\\eta=0.036$ だけが液体に取り込まれ（残りは反射され），この $\\eta$ は液面の状態によらないとする．水のモル質量 $M=18\\ \\mathrm{g/mol}$，$100\\ ^\\circ\\mathrm{C}$ の水の密度 $\\rho=958\\ \\mathrm{kg/m^3}$ とする．\n\\begin{enumerate}\n\\item 気体分子運動論から，圧力 $p$，温度 $T$ の気体が単位面積・単位時間に壁へ運ぶ質量 $j(p)$ を $p,M,T$ で表せ．\n\\item 液面上が飽和蒸気（同じ温度 $T$）で満たされた平衡状態で，液面から蒸発していく水の質量流束 $j_{\\mathrm{ev}}$ を求めよ．\n\\item 液面上の水蒸気をポンプで連続的に排気し，水蒸気の分圧を $0.30\\,p_s$（温度は $T$ のまま）に保った．液温も $T$ に保たれるとき，正味の蒸発の質量流束と，液面が下がる速さを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $j=p\\sqrt{M/(2\\pi RT)}$　(2) $j_{\\rm ev}=\\eta p_s\\sqrt{M/(2\\pi RT)}\\approx3.5\\ \\mathrm{kg/(m^2\\,s)}=0.35\\ \\mathrm{g/(cm^2\\,s)}$　(3) $2.5\\ \\mathrm{kg/(m^2\\,s)}$，約 $2.6\\ \\mathrm{mm/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 単位面積・単位時間に壁に当たる分子数は $\\tfrac14 n\\langle v\\rangle$，$\\langle v\\rangle=\\sqrt{8RT/(\\pi M)}$，$n=p/(kT)$．分子1個の質量 $m_0=M/N_A$ を掛けて\n\\[ j=\\frac14\\frac{p}{kT}\\sqrt{\\frac{8RT}{\\pi M}}\\frac{M}{N_A}=p\\sqrt{\\frac{M}{2\\pi RT}}. \\]\n(2) 平衡では，液面から出ていく流束と液面に取り込まれる流束がつりあう．取り込まれるのは入射の $\\eta$ 倍だから\n\\[ j_{\\rm ev}=\\eta\\,p_s\\sqrt{\\frac{M}{2\\pi RT}}=0.036\\times1.013\\times10^5\\times\\sqrt{\\frac{0.018}{2\\pi\\times8.31\\times373}}\\approx0.036\\times97.4\\approx3.5\\ \\mathrm{kg/(m^2\\,s)}. \\]\n(3) 蒸発流束は液温だけで決まるので (2) と同じ．一方，取り込まれる流束は $\\eta\\,(0.30p_s)\\sqrt{M/(2\\pi RT)}$ になる．正味は\n\\[ j_{\\rm net}=\\eta(p_s-0.30p_s)\\sqrt{\\frac{M}{2\\pi RT}}=0.70\\times3.5\\approx2.5\\ \\mathrm{kg/(m^2\\,s)}, \\]\n液面の下降速度は $j_{\\rm net}/\\rho=2.45/958\\approx2.6\\times10^{-3}\\ \\mathrm{m/s}$．（実際には蒸発熱のため液面が急冷し，これほど速くは蒸発しない．）"
+   }
+  ],
+  "idea": {
+   "tex": "飽和蒸気との平衡では蒸発流束＝凝縮流束であり，蒸発流束は液温だけで決まるので，入射流束 $p\\sqrt{M/2\\pi RT}$ から非平衡時の正味の蒸発速度も求まる（Hertz–Knudsen の式）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $j_{\\rm ev}$ [kg/(m² s)]：≈3.5\n(3) [kg/(m² s)]：≈2.5 ; [mm/s]：≈2.6"
+  },
+  "methods": [],
+  "tags": [
+   "蒸発",
+   "凝縮係数",
+   "Hertz-Knudsen",
+   "分子流束",
+   "飽和蒸気圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "分子間引力による内圧の大きさ比較",
+  "topic": "分子間引力による内圧の大きさ比較",
+  "statement": {
+   "tex": "水のファン・デル・ワールス定数を $a=5.47\\ \\mathrm{atm\\,L^2/mol^2}$，$b=0.030\\ \\mathrm{L/mol}$ とする．\n\\begin{enumerate}\n\\item 液体の水（モル体積 $V_l=18\\ \\mathrm{cm^3/mol}$）で，分子間引力による圧力の補正項 $a/V^2$ を求めよ．これは「引力がなくなったら壁が受ける圧力がどれだけ増えるか」の目安である．\n\\item $100\\ ^\\circ\\mathrm{C}$，$1\\ \\mathrm{atm}$ の飽和水蒸気（理想気体とみなしてモル体積を求めよ）について同じ量を求め，蒸気圧との比を評価せよ．この結果は何を意味するか．\n\\item 液体の水に対して $V_l$ と $b$ を比べると，ファン・デル・ワールス方程式を液体の水にそのまま適用することについて何が言えるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 約 $1.7\\times10^4\\ \\mathrm{atm}$　(2) $V_g\\approx30.6\\ \\mathrm{L/mol}$，$a/V_g^2\\approx5.8\\times10^{-3}\\ \\mathrm{atm}$（蒸気圧の約 $0.6\\%$）　(3) $V_l<b$ となり，方程式は液体の水を定量的には記述できない．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a/V_l^2=5.47/(0.018)^2\\approx1.69\\times10^4\\ \\mathrm{atm}$．液体では分子間引力の効果が外圧（$1\\ \\mathrm{atm}$）より4桁も大きく，外圧がわずかでも液体が保たれるのはこの内圧のおかげである．\n(2) $V_g=RT/p=0.08206\\times373/1\\approx30.6\\ \\mathrm{L/mol}$．$a/V_g^2=5.47/30.6^2\\approx5.8\\times10^{-3}\\ \\mathrm{atm}$ で，蒸気圧の $0.6\\%$ 程度．したがって飽和水蒸気を理想気体として扱う誤差は1%未満で，クラウジウス–クラペイロンの式の計算などで理想気体近似が許される根拠になる．液体と気体で補正項の比は $(V_g/V_l)^2\\approx3\\times10^6$ にもなる．\n(3) $V_l=0.018\\ \\mathrm{L/mol}<b=0.030\\ \\mathrm{L/mol}$ であり，ファン・デル・ワールス方程式では $V>b$ でなければならないから，実際の液体の水の状態はこの式の定義域外になってしまう．臨界点から決めた定数で液体を記述すると定量的には破綻する（水は水素結合のため特に外れが大きい）．したがって (1) の値は桁の見積もりとしてのみ意味を持つ．"
+   }
+  ],
+  "idea": {
+   "tex": "引力の補正項 $a/V^2$ は液体と気体で $10^6$ 倍以上異なる．同時に，臨界定数由来の $b$ が液体の実モル体積を超えることからファン・デル・ワールス方程式の限界も見える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [atm]：≈1.7e4\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ファン・デル・ワールス方程式",
+   "内圧",
+   "分子間力",
+   "理想気体近似"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ベンゼンの臨界密度とファン・デル・ワールス模型の限界",
+  "topic": "ベンゼンの臨界密度とファン・デル・ワールス模型の限界",
+  "statement": {
+   "tex": "ベンゼン $\\mathrm{C_6H_6}$ の臨界温度は $T_c=562\\ \\mathrm{K}$，臨界圧力は $p_c=47\\ \\mathrm{atm}$ である．ベンゼンをファン・デル・ワールス気体とみなす．\n\\begin{enumerate}\n\\item 臨界状態の比体積 $v_c$（$\\mathrm{cm^3/g}$）と臨界密度 $\\rho_c$ を求めよ．\n\\item ファン・デル・ワールス方程式で記述される物質の密度は，臨界密度の何倍を超えられないか．\n\\item 室温の液体ベンゼンの密度は $0.879\\ \\mathrm{g/cm^3}$ である．(1)(2) と比べて何が言えるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_c=\\dfrac{3RT_c}{8Mp_c}\\approx4.7\\ \\mathrm{cm^3/g}$，$\\rho_c\\approx0.21\\ \\mathrm{g/cm^3}$　(2) 3倍（$V>b=V_c/3$）　(3) 実際の液体の密度は $\\rho_c$ の約 4.1 倍で，(2) の上限 3 倍を超えている．ファン・デル・ワールス方程式は液体密度を定量的に再現できない．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ファン・デル・ワールス気体では $p_cV_{c}=\\tfrac38RT_c$（$V_c$ はモル体積）．比体積は\n\\[ v_c=\\frac{V_c}{M}=\\frac{3RT_c}{8Mp_c}=\\frac{3\\times8.31\\times562}{8\\times0.078\\times47\\times1.013\\times10^5}\\approx4.7\\times10^{-3}\\ \\mathrm{m^3/kg}=4.7\\ \\mathrm{cm^3/g}, \\]\n$\\rho_c=1/v_c\\approx0.21\\ \\mathrm{g/cm^3}$．\n(2) 方程式 $(p+a/V^2)(V-b)=RT$ で $p>0$ となるには $V>b$．$V_c=3b$ だから $V>V_c/3$，すなわち $\\rho<3\\rho_c$．\n(3) $0.879/0.212\\approx4.1>3$．実在の液体ベンゼンはファン・デル・ワールス方程式が許す最大密度を超えている．臨界定数から決めた $b$ は分子の「排除体積」を過大評価しており（実測の臨界密度 $0.31\\ \\mathrm{g/cm^3}$ とも合わない），この方程式は臨界点付近の定性的な記述にとどまる．"
+   }
+  ],
+  "idea": {
+   "tex": "臨界比体積 $v_c=3RT_c/(8Mp_c)$．ファン・デル・ワールス模型では密度が $3\\rho_c$ を超えられないが，実在液体はこれを超えるという矛盾から模型の限界が分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v_c$ [cm³/g]：≈4.7 ; $\\rho_c$ [g/cm³]：≈0.21\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "臨界状態",
+   "臨界密度",
+   "ファン・デル・ワールス方程式",
+   "ベンゼン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "飽和蒸気の最大密度と液体の最大体積",
+  "topic": "飽和蒸気の最大密度と液体の最大体積",
+  "statement": {
+   "tex": "二酸化炭素をファン・デル・ワールス気体とし，$a=3.62\\ \\mathrm{atm\\,L^2/mol^2}$，$b=0.043\\ \\mathrm{L/mol}$，モル質量 $M=44\\ \\mathrm{g/mol}$ とする．\n\\begin{enumerate}\n\\item 飽和蒸気（液体と共存する気相）がとり得る密度の最大値を求めよ．容積 $1.0\\ \\mathrm{L}$ の容器を飽和蒸気だけで満たすとき，入れられる二酸化炭素の最大質量はいくらか．\n\\item 飽和蒸気圧の最大値を求めよ．\n\\item 質量 $1.0\\ \\mathrm{kg}$ の二酸化炭素が液体として存在できるときの体積の最大値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho_{\\max}=M/(3b)\\approx0.34\\ \\mathrm{g/cm^3}$，約 $0.34\\ \\mathrm{kg}$　(2) $p_{\\max}=a/(27b^2)\\approx73\\ \\mathrm{atm}$　(3) $V_{\\max}=3bm/M\\approx2.9\\ \\mathrm{L}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "気液共存領域では，温度が上がるにつれて飽和蒸気の密度は増え，液体の密度は減り，臨界点で両者が一致する．したがって飽和蒸気の密度の上限，液体の比体積の上限，飽和蒸気圧の上限はいずれも臨界点の値である．\n(1) $\\rho_{\\max}=\\rho_c=M/V_c=M/(3b)=44/(3\\times0.043)\\approx341\\ \\mathrm{g/L}$．$1.0\\ \\mathrm{L}$ の容器では最大約 $0.34\\ \\mathrm{kg}$（これより多く入れると，臨界温度以下ではどの温度でも液体が共存する）．\n(2) $p_{\\max}=p_c=a/(27b^2)=3.62/(27\\times0.043^2)\\approx73\\ \\mathrm{atm}$．\n(3) $V_{\\max}=\\dfrac{m}{M}V_c=\\dfrac{1000}{44}\\times3\\times0.043\\approx2.9\\ \\mathrm{L}$．"
+   }
+  ],
+  "idea": {
+   "tex": "共存曲線上の気相・液相の極値はすべて臨界点で与えられるので，飽和蒸気の最大密度・最大圧，液体の最大体積は臨界定数で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $V_{\\max}$ [L]：≈2.9"
+  },
+  "methods": [],
+  "tags": [
+   "臨界点",
+   "飽和蒸気",
+   "共存曲線",
+   "ファン・デル・ワールス定数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "二酸化炭素の臨界温度・密度と超臨界状態",
+  "topic": "二酸化炭素の臨界温度・密度と超臨界状態",
+  "statement": {
+   "tex": "二酸化炭素をファン・デル・ワールス気体とし，$a=3.62\\ \\mathrm{atm\\,L^2/mol^2}$，$b=0.043\\ \\mathrm{L/mol}$，$M=44\\ \\mathrm{g/mol}$ とする．\n\\begin{enumerate}\n\\item 臨界温度 $T_c$ と臨界密度 $\\rho_c$ を求めよ．\n\\item 密度を臨界密度に保ったまま加熱し，圧力を臨界圧力の 2 倍にしたい．温度を何 K にすればよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_c=\\dfrac{8a}{27Rb}\\approx304\\ \\mathrm{K}$，$\\rho_c=\\dfrac{M}{3b}\\approx0.34\\ \\mathrm{g/cm^3}$　(2) $T=\\tfrac54T_c\\approx380\\ \\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a=3.62\\times1.013\\times10^5\\times10^{-6}=0.367\\ \\mathrm{Pa\\,m^6/mol^2}$，$b=4.3\\times10^{-5}\\ \\mathrm{m^3/mol}$．\n\\[ T_c=\\frac{8a}{27Rb}=\\frac{8\\times0.367}{27\\times8.31\\times4.3\\times10^{-5}}\\approx304\\ \\mathrm{K},\\qquad \\rho_c=\\frac{M}{3b}=\\frac{0.044}{1.29\\times10^{-4}}\\approx341\\ \\mathrm{kg/m^3}. \\]\n(2) 換算方程式 $(\\pi+3/\\nu^2)(3\\nu-1)=8\\tau$ に $\\nu=1$，$\\pi=2$ を入れると $5\\times2=8\\tau$，$\\tau=5/4$．よって $T=1.25\\times304\\approx380\\ \\mathrm{K}$．（臨界密度の等容線は換算変数で $\\pi=4\\tau-3$ と直線になる．）"
+   }
+  ],
+  "idea": {
+   "tex": "臨界定数は $a,b$ から直接決まり，換算変数を使うと臨界等容線上の状態は $\\pi=4\\tau-3$ で簡単に求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $T_c$ [K]：≈304 ; $\\rho_c$ [g/cm³]：≈0.34\n(2) $T$ [K]：≈380"
+  },
+  "methods": [],
+  "tags": [
+   "臨界温度",
+   "臨界密度",
+   "換算状態方程式",
+   "等容線"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "圧力融解でスケートは説明できるか",
+  "topic": "圧力融解でスケートは説明できるか",
+  "statement": {
+   "tex": "氷の融点付近で，氷の比体積は水の比体積より $\\Delta v=0.091\\ \\mathrm{cm^3/g}$ だけ大きい．氷の融解熱 $q=333\\ \\mathrm{kJ/kg}$，$T=273\\ \\mathrm{K}$ とする．\n\\begin{enumerate}\n\\item クラウジウス–クラペイロンの式を用いて，融点の圧力係数 $dT/dp$ を $\\mathrm{K/atm}$ 単位で求めよ．\n\\item 質量 $70\\ \\mathrm{kg}$ のスケーターが，接触面積 $1.5\\ \\mathrm{cm^2}$ のブレード 1 本で立つ．ブレード下の圧力（大気圧との差）と，それによる融点の低下を求めよ．\n\\item 気温 $-10\\ ^\\circ\\mathrm{C}$ の氷を圧力だけで融かすには，どれだけの圧力が必要か（融点は圧力に対して線形に下がるとする）．同じスケーターでそれを実現するには接触面積を何 $\\mathrm{mm^2}$ にする必要があるか．「スケートが滑るのは圧力で氷が融けるため」という説明について論評せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $dT/dp=-T\\Delta v/q\\approx-7.5\\times10^{-3}\\ \\mathrm{K/atm}$　(2) 約 $45\\ \\mathrm{atm}$，融点低下 約 $0.34\\ \\mathrm{K}$　(3) 約 $1.3\\times10^3\\ \\mathrm{atm}$，約 $5\\ \\mathrm{mm^2}$．圧力融解だけでは $-10\\ ^\\circ\\mathrm{C}$ での滑りを説明できない（摩擦熱や表面の擬液体層が主因）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) クラウジウス–クラペイロンの式 $\\dfrac{dp}{dT}=\\dfrac{q}{T(v_{\\rm water}-v_{\\rm ice})}$，$v_{\\rm water}-v_{\\rm ice}=-\\Delta v$．\n\\[ \\frac{dT}{dp}=-\\frac{T\\Delta v}{q}=-\\frac{273\\times0.091\\times10^{-3}}{3.33\\times10^5}\\approx-7.5\\times10^{-8}\\ \\mathrm{K/Pa}\\approx-7.5\\times10^{-3}\\ \\mathrm{K/atm}. \\]\n(2) $\\Delta p=\\dfrac{70\\times9.8}{1.5\\times10^{-4}}\\approx4.6\\times10^6\\ \\mathrm{Pa}\\approx45\\ \\mathrm{atm}$．融点低下 $|\\Delta T|\\approx45\\times7.5\\times10^{-3}\\approx0.34\\ \\mathrm{K}$．\n(3) $\\Delta p=10/(7.5\\times10^{-3})\\approx1.3\\times10^3\\ \\mathrm{atm}\\approx1.34\\times10^8\\ \\mathrm{Pa}$．必要な面積は $686/1.34\\times10^8\\approx5\\times10^{-6}\\ \\mathrm{m^2}=5\\ \\mathrm{mm^2}$．実際のブレードの接触面積はこれよりはるかに大きく，(2) のように融点は $0.3\\ \\mathrm{K}$ 程度しか下がらない．しかも $1300\\ \\mathrm{atm}$ 付近では線形近似も怪しい．したがって $-10\\ ^\\circ\\mathrm{C}$ でも滑ることは圧力融解では説明できず，摩擦熱による融解や氷表面の擬液体層が主な原因と考えられている．"
+   }
+  ],
+  "idea": {
+   "tex": "融点の圧力係数は $-T\\Delta v/q\\approx-7.5\\ \\mathrm{mK/atm}$ と非常に小さく，日常的な圧力では融点はほとんど変わらない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [atm]：≈45 ; 融点低下 [K]：≈0.34\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス-クラペイロンの式",
+   "融点",
+   "圧力融解",
+   "スケート",
+   "氷"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 15,
+  "theme": "圧力鍋の温度：線形近似と積分形",
+  "topic": "圧力鍋の温度：線形近似と積分形",
+  "statement": {
+   "tex": "水の蒸発熱を $q=2.26\\ \\mathrm{MJ/kg}$（温度によらない），モル質量 $M=18\\ \\mathrm{g/mol}$ とし，飽和水蒸気を理想気体，液体の比体積は無視できるとする．標準大気圧 $p_0$ での沸点は $T_0=373\\ \\mathrm{K}$ である．\n\\begin{enumerate}\n\\item 圧力鍋の内部の圧力を $2p_0$ に保つ．内部の水の沸点を，クラウジウス–クラペイロンの式を積分して求めよ．\n\\item 沸点を $T_0$ のまわりで圧力について 1 次まで展開した式 $\\Delta T=\\dfrac{RT_0^2}{Mq}\\dfrac{\\Delta p}{p_0}$ で同じ量を見積もると，どれだけ誤差が出るか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac1T=\\dfrac1{T_0}-\\dfrac{R\\ln2}{Mq}$ より $T\\approx394\\ \\mathrm{K}$（約 $121\\ ^\\circ\\mathrm{C}$）　(2) 線形近似では $\\Delta T\\approx28.5\\ \\mathrm{K}$（$T\\approx402\\ \\mathrm{K}$）となり，約 $8\\ \\mathrm{K}$ 過大．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dp}{dT}=\\dfrac{q}{Tv'}$，$v'=\\dfrac{RT}{Mp}$ より $\\dfrac{dp}{p}=\\dfrac{Mq}{R}\\dfrac{dT}{T^2}$．積分して\n\\[ \\ln\\frac{p}{p_0}=\\frac{Mq}{R}\\left(\\frac1{T_0}-\\frac1T\\right)\\ \\Longrightarrow\\ \\frac1T=\\frac1{T_0}-\\frac{R\\ln2}{Mq}. \\]\n$\\dfrac{R\\ln2}{Mq}=\\dfrac{8.31\\times0.693}{0.018\\times2.26\\times10^6}=1.417\\times10^{-4}\\ \\mathrm{K^{-1}}$，$1/T_0=2.680\\times10^{-3}$ より $1/T=2.538\\times10^{-3}$，$T\\approx394\\ \\mathrm{K}$．\n(2) $\\dfrac{RT_0^2}{Mq}=\\dfrac{8.31\\times373^2}{0.018\\times2.26\\times10^6}\\approx28.5\\ \\mathrm{K}$ で，$\\Delta p/p_0=1$ なので $\\Delta T\\approx28.5\\ \\mathrm{K}$．実際の上昇 $21\\ \\mathrm{K}$ より約 $8\\ \\mathrm{K}$ 大きい．$\\ln(p/p_0)$ を $\\Delta p/p_0$ で近似したこと（$\\ln2=0.69$ vs $1$）と $1/T$ の非線形性が原因で，線形近似は $\\Delta p\\ll p_0$ でのみ使える．"
+   }
+  ],
+  "idea": {
+   "tex": "沸点の圧力依存は $\\ln p$ と $1/T$ の間で線形であり，圧力が倍になるような大きな変化では 1 次近似は大きく外れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス-クラペイロンの式",
+   "沸点上昇",
+   "圧力鍋",
+   "飽和蒸気圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 20,
+  "theme": "銅と氷の熱平衡：最終状態の判定とエントロピー",
+  "topic": "銅と氷の熱平衡：最終状態の判定とエントロピー",
+  "statement": {
+   "tex": "断熱容器（熱容量は無視）の中に，温度 $-10\\ ^\\circ\\mathrm{C}$ の氷 $100\\ \\mathrm{g}$ がある．そこへ温度 $100\\ ^\\circ\\mathrm{C}$ の銅片 $200\\ \\mathrm{g}$ を入れた．銅の比熱 $385\\ \\mathrm{J/(kg\\,K)}$，氷の比熱 $2.09\\ \\mathrm{kJ/(kg\\,K)}$，氷の融解熱 $333\\ \\mathrm{kJ/kg}$ とする．\n\\begin{enumerate}\n\\item 平衡状態の温度と，融けた氷の質量を求めよ．\n\\item 銅片のエントロピー変化，氷（および融けた水）のエントロピー変化，全体のエントロピー変化を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0\\ ^\\circ\\mathrm{C}$，約 $17\\ \\mathrm{g}$ が融ける　(2) 銅 $\\approx-24.0\\ \\mathrm{J/K}$，氷 $\\approx+28.3\\ \\mathrm{J/K}$，全体 $\\approx+4.3\\ \\mathrm{J/K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 銅が $0\\ ^\\circ\\mathrm{C}$ まで冷えるときに出す熱：$0.200\\times385\\times100=7700\\ \\mathrm{J}$．氷を $0\\ ^\\circ\\mathrm{C}$ まで温める熱：$0.100\\times2090\\times10=2090\\ \\mathrm{J}$．残り $5610\\ \\mathrm{J}$ は全部の氷を融かす熱 $33300\\ \\mathrm{J}$ より小さいので，氷は一部だけ融け，平衡温度は $0\\ ^\\circ\\mathrm{C}$．融ける質量は $5610/333000\\approx0.0168\\ \\mathrm{kg}\\approx17\\ \\mathrm{g}$．\n(2) 銅：$\\Delta S_{\\rm Cu}=0.200\\times385\\ln\\dfrac{273.15}{373.15}\\approx-24.0\\ \\mathrm{J/K}$．\n氷：$\\Delta S_{\\rm ice}=0.100\\times2090\\ln\\dfrac{273.15}{263.15}+\\dfrac{5610}{273.15}\\approx7.8+20.5\\approx28.3\\ \\mathrm{J/K}$．\n全体：$\\Delta S\\approx+4.3\\ \\mathrm{J/K}>0$（有限の温度差による熱伝導の不可逆性）．"
+   }
+  ],
+  "idea": {
+   "tex": "まず熱量の大小で最終状態（一部融解か全融解か）を判定し，最終温度が融点に固定されることを使ってエントロピーを計算する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エントロピー",
+   "熱量保存",
+   "融解",
+   "熱平衡",
+   "不可逆過程"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 20,
+  "theme": "氷の圧力融解：氷床とスケートの検証",
+  "topic": "氷の圧力融解：氷床とスケートの検証",
+  "statement": {
+   "tex": "0 °C（$T_0=273.15\\,\\mathrm{K}$），1 atm で氷と水が共存している．融解熱 $L=334\\,\\mathrm{J/g}$，密度は氷 $917\\,\\mathrm{kg/m^3}$，水 $1000\\,\\mathrm{kg/m^3}$ とし，融解曲線の傾きは一定とみなす（$1\\,\\mathrm{atm}=1.013\\times10^5\\,\\mathrm{Pa}$，$g=9.8\\,\\mathrm{m/s^2}$）．\n\\begin{enumerate}\n\\item 融点の圧力係数 $dT_m/dP$ を $\\mathrm{K/atm}$ 単位で求めよ．\n\\item 融点が $-1.0\\,^\\circ\\mathrm{C}$ まで下がるのに必要な圧力の増加 $\\Delta P$（atm）を求めよ．また，氷床の底の温度が $-1.0\\,^\\circ\\mathrm{C}$ のとき，底が融点に達するには氷の厚さ $h$ がいくら必要か（大気圧は無視し，氷の重さだけによる圧力を考える）．\n\\item 質量 $60\\,\\mathrm{kg}$ のスケーターが，長さ $20\\,\\mathrm{cm}$・幅 $3.0\\,\\mathrm{mm}$ の刃 1 枚で立つ．刃の下の融点降下は何 K か．「刃の圧力で氷がとけて滑る」という説明は $-5\\,^\\circ\\mathrm{C}$ のリンクで成り立つか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $dT_m/dP\\approx-7.5\\times10^{-3}\\,\\mathrm{K/atm}$　(2) $\\Delta P\\approx1.3\\times10^2\\,\\mathrm{atm}$（$1.35\\times10^7\\,\\mathrm{Pa}$），$h\\approx1.5\\times10^3\\,\\mathrm{m}$　(3) 約 $0.073\\,\\mathrm{K}$．成り立たない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 1 g あたりの比体積は $v_{\\rm ice}=1/917=1.0905\\times10^{-3}$，$v_{\\rm w}=1.000\\times10^{-3}\\,\\mathrm{m^3/kg}$．融解（氷→水）での変化 $\\Delta v=v_{\\rm w}-v_{\\rm ice}=-9.05\\times10^{-5}\\,\\mathrm{m^3/kg}$．クラペイロン＝クラウジウスの式より\n\\[\n\\frac{dT_m}{dP}=\\frac{T_0\\,\\Delta v}{L}=\\frac{273.15\\times(-9.05\\times10^{-5})}{3.34\\times10^5}=-7.40\\times10^{-8}\\,\\mathrm{K/Pa}=-7.5\\times10^{-3}\\,\\mathrm{K/atm}.\n\\]\n氷のほうが比体積が大きいので，加圧で融点は下がる．\n\n(2) $\\Delta P=1.0/(7.40\\times10^{-8})=1.35\\times10^7\\,\\mathrm{Pa}\\approx133\\,\\mathrm{atm}$．この圧力を氷の重さで作るには\n\\[\nh=\\frac{\\Delta P}{\\rho_{\\rm ice}g}=\\frac{1.35\\times10^7}{917\\times9.8}\\approx1.5\\times10^3\\,\\mathrm{m}.\n\\]\n厚さ 1.5 km 程度の氷床の底では，$-1\\,^\\circ\\mathrm{C}$ でも融解が起こりうる（南極氷床の底面融解の一因）．\n\n(3) 圧力は $P=\\dfrac{60\\times9.8}{0.20\\times3.0\\times10^{-3}}=9.8\\times10^5\\,\\mathrm{Pa}$（約 9.7 atm）．融点降下は $9.8\\times10^5\\times7.40\\times10^{-8}\\approx0.073\\,\\mathrm{K}$ にすぎない．$-5\\,^\\circ\\mathrm{C}$ の氷をとかすには約 $70$ 倍の圧力が必要で，圧力融解ではスケートの滑りは説明できない（摩擦熱や表面の擬液体層が主因とされる）．"
+   }
+  ],
+  "idea": {
+   "tex": "クラペイロンの式で融点の圧力係数を求めると水では $-7.5\\,\\mathrm{mK/atm}$ と非常に小さく，1 K 下げるには 130 atm（氷床 1.5 km 分）が要る．この小ささから，スケートの「圧力融解説」が定量的に否定される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta P$ [atm]：≈1.3e2 ; $h$ [m]：≈1.5e3\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラペイロン・クラウジウスの式",
+   "融点降下",
+   "圧力融解",
+   "氷床",
+   "スケート"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 1,
+  "minutes": 20,
+  "theme": "融点の圧力変化から融解熱を逆算",
+  "topic": "融点の圧力変化から融解熱を逆算",
+  "statement": {
+   "tex": "ナフタレン（モル質量 $128.2\\,\\mathrm{g/mol}$）の常圧での融点は $T_0=353.15\\,\\mathrm{K}$ で，融点の圧力係数が $dT_m/dP=+0.0350\\,\\mathrm{K/atm}$ と測定された．密度は固体 $1.145\\,\\mathrm{g/cm^3}$，液体 $0.981\\,\\mathrm{g/cm^3}$ である（$1\\,\\mathrm{atm}=1.013\\times10^5\\,\\mathrm{Pa}$，$R=8.314\\,\\mathrm{J/(mol\\,K)}$）．\n\\begin{enumerate}\n\\item 融解熱 $L$（J/g）を求めよ．\n\\item モル融解エントロピー $\\Delta S_m$ を気体定数 $R$ を単位として表せ．\n\\item $L$ と比体積変化 $\\Delta v$ が一定であるとして，クラペイロンの式を近似なしに積分し，融点を $10.0\\,\\mathrm{K}$ 上げるのに必要な圧力の増加を求めよ．傾き一定（線形）とした場合と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L\\approx149\\,\\mathrm{J/g}$（約 35.7 cal/g）　(2) $\\Delta S_m\\approx6.5R$　(3) 約 $282\\,\\mathrm{atm}$（線形近似では $286\\,\\mathrm{atm}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Delta v=\\dfrac1{0.981}-\\dfrac1{1.145}=0.1460\\,\\mathrm{cm^3/g}=1.460\\times10^{-7}\\,\\mathrm{m^3/g}$．$\\dfrac{dT_m}{dP}=\\dfrac{0.0350}{1.013\\times10^5}=3.455\\times10^{-7}\\,\\mathrm{K/Pa}$．クラペイロンの式 $\\dfrac{dT_m}{dP}=\\dfrac{T\\Delta v}{L}$ より\n\\[\nL=\\frac{T_0\\Delta v}{dT_m/dP}=\\frac{353.15\\times1.460\\times10^{-7}}{3.455\\times10^{-7}}\\approx149\\,\\mathrm{J/g}.\n\\]\n\n(2) $\\Delta S_m=\\dfrac{LM}{T_0}=\\dfrac{149.3\\times128.2}{353.15}=54.2\\,\\mathrm{J/(mol\\,K)}\\approx6.5R$．平面的な分子結晶では融解で配向の自由度も解放されるため，単原子金属の典型値（約 $1R$，リチャーズの規則）よりずっと大きい．\n\n(3) $\\dfrac{dT}{T}=\\dfrac{\\Delta v}{L}dP$ を積分して $T=T_0\\exp\\!\\left(\\dfrac{\\Delta v\\,\\Delta P}{L}\\right)$．よって\n\\[\n\\Delta P=\\frac{L}{\\Delta v}\\ln\\frac{T_0+10}{T_0}=\\frac{149.3}{1.460\\times10^{-7}}\\ln\\frac{363.15}{353.15}=2.85\\times10^7\\,\\mathrm{Pa}\\approx282\\,\\mathrm{atm}.\n\\]\n線形近似では $10/0.0350=286\\,\\mathrm{atm}$．温度が上がると $T\\Delta v/L$ が大きくなり傾きが増すので，必要な圧力はやや小さくなる（差は約 1.4%）．"
+   }
+  ],
+  "idea": {
+   "tex": "クラペイロンの式を逆に使い，融点の圧力係数と密度から融解熱・融解エントロピーを求める．$L,\\Delta v$ 一定なら $\\ln T$ が $P$ に比例する厳密解が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $L$ [J/g]：≈149\n(2) 記述\n(3) [atm]：≈282"
+  },
+  "methods": [],
+  "tags": [
+   "クラペイロン・クラウジウスの式",
+   "融解熱",
+   "融解エントロピー",
+   "逆問題",
+   "ナフタレン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "TD-04-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -390,6 +1032,1545 @@
   }
  },
  {
+  "id": "TD-04-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "アンモニア合成の化学平衡条件と質量作用の法則",
+  "topic": "アンモニア合成の化学平衡条件と質量作用の法則",
+  "statement": {
+   "tex": "反応 N$_2$ + 3H$_2$ $\\rightleftarrows$ 2NH$_3$ を一定の温度と圧力で考える．\n\\begin{enumerate}\n\\item 最小にすべき熱力学ポテンシャルを答え，平衡条件を化学ポテンシャルで書け．\n\\item 理想気体の $\\mu_i=k_BT\\ln(n_i\\lambda_i^3/z_i)$（$z_i$ は内部自由度の分配関数）を用いて，$\\dfrac{n_{\\rm NH_3}^2}{n_{\\rm N_2}n_{\\rm H_2}^3}$ が温度だけの関数であることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $G$；$2\\mu_{\\rm NH_3}=\\mu_{\\rm N_2}+3\\mu_{\\rm H_2}$　(2) 証明"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T,p$ 一定では $G$ を最小にする．$dN_{\\rm NH_3}=2d\\xi$，$dN_{\\rm N_2}=-d\\xi$，$dN_{\\rm H_2}=-3d\\xi$ で $dG=0$ から与式．\n\n(2) 代入すると $\\ln\\dfrac{n_{\\rm NH_3}^2}{n_{\\rm N_2}n_{\\rm H_2}^3}=\\ln\\dfrac{(z/\\lambda^3)_{\\rm NH_3}^2}{(z/\\lambda^3)_{\\rm N_2}(z/\\lambda^3)_{\\rm H_2}^3}$ で，右辺は $T$ だけで決まる．\\hfill$\\square$"
+   }
+  ],
+  "idea": {
+   "tex": "化学平衡は化学量論係数で重みをつけた化学ポテンシャルの和が $0$ という条件で，理想気体では質量作用の法則になる．原題の水素の電離を，係数のある反応に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明"
+  },
+  "methods": [],
+  "tags": [
+   "化学平衡",
+   "化学ポテンシャル",
+   "質量作用の法則",
+   "ギブス自由エネルギー"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ベルトロの状態方程式の臨界点と臨界係数",
+  "topic": "ベルトロの状態方程式の臨界点と臨界係数",
+  "statement": {
+   "tex": "ベルトロの状態方程式 $p=\\dfrac{k_BT}{v-b}-\\dfrac{a}{Tv^2}$（$v=V/N$）を考える．\n\\begin{enumerate}\n\\item 臨界点 $(v_c,T_c,p_c)$ を求めよ．\n\\item 臨界係数 $\\dfrac{p_cv_c}{k_BT_c}$ を求め，ファンデルワールスの値と比べよ．\n\\item 臨界指数 $\\beta,\\gamma,\\delta$ を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_c=3b$，$T_c^2=\\dfrac{8a}{27bk_B}$，$p_c=\\dfrac{a}{27b^2T_c}$　(2) $\\dfrac38$（同じ）　(3) $\\frac12,1,3$（平均場）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ファンデルワールスで $a\\to a/T$ としたもの．$\\partial_vp=\\partial_v^2p=0$ から $v_c=3b$，$k_BT_c=\\dfrac{8a}{27bT_c}$．\n\n(2) $\\dfrac{p_cv_c}{k_BT_c}=\\dfrac{3b\\,a/T_c}{27b^2k_BT_c}=\\dfrac{a}{9bk_BT_c^2}=\\boldsymbol{\\dfrac38}$．\n\n(3) 臨界点のまわりの展開がファンデルワールスと同じ形で $\\boldsymbol{\\beta=\\frac12,\\gamma=1,\\delta=3}$．"
+   }
+  ],
+  "idea": {
+   "tex": "状態方程式の形を変えても，臨界点のまわりの解析的な展開は平均場の指数を与える．原題のディーテリチの式をベルトロの式に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v_c$：3 b ; $T_c^2$：((8 a)/(27 b k_B)) ; $p_c$：((a)/(27 b ^(2) T_c))\n(2) ((3)/(8))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "臨界点",
+   "状態方程式",
+   "臨界係数",
+   "臨界指数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "電池の起電力の温度依存性と反応の熱力学量",
+  "topic": "電池の起電力の温度依存性と反応の熱力学量",
+  "statement": {
+   "tex": "ある可逆電池の反応（電子数 $z=2$）について，1 気圧での起電力が $T_0=298.15$ K の近くで\n\\[ E(T)=E_0+\\alpha(T-T_0)+\\beta(T-T_0)^2,\\quad E_0=1.0150\\ \\text{V},\\ \\alpha=-5.0\\times10^{-4}\\ \\text{V/K},\\ \\beta=2.0\\times10^{-6}\\ \\text{V/K}^2 \\]\nと測定された．Faraday 定数 $F=96485$ C/mol とする．\n\\begin{enumerate}\n\\item $T_0$ における反応 1 mol あたりの $\\Delta G$，$\\Delta S$，$\\Delta H$ を求めよ．\n\\item 電池を可逆的に放電するとき周囲とやりとりする熱と，同じ反応を短絡させて（電気的仕事なしで）起こしたときの熱をそれぞれ求めよ．比 $\\Delta G/\\Delta H$ を求め，これが 1 を超えうる条件を述べよ．\n\\item 反応の定圧熱容量変化 $\\Delta C_p$ を求めよ．\n\\item 可逆放電で周囲との熱のやりとりがなくなる温度 $T^*$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta G=-195.9$ kJ，$\\Delta S=-96.5$ J/K，$\\Delta H=-224.6$ kJ　(2) 可逆：$28.8$ kJ 放出，短絡：$224.6$ kJ 放出，$\\Delta G/\\Delta H=0.872$；$dE/dT>0$ なら 1 を超える　(3) $\\Delta C_p=2zF\\beta T_0=230$ J/(mol·K)　(4) $T^*=423$ K"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Delta G=-zFE_0=-2\\times96485\\times1.0150=-1.959\\times10^5$ J．\n$\\Delta S=-(\\partial\\Delta G/\\partial T)_p=zF\\,dE/dT=2\\times96485\\times(-5.0\\times10^{-4})=-96.5$ J/K．\n$\\Delta H=\\Delta G+T_0\\Delta S=-195.9\\ \\text{kJ}-28.8\\ \\text{kJ}=-224.6$ kJ．\n\n(2) 可逆放電では電気的仕事 $-\\Delta G=195.9$ kJ を外に出し，熱 $Q=T_0\\Delta S=-28.8$ kJ（周囲へ 28.8 kJ 放出）．短絡させると仕事は 0 で，熱 $\\Delta H=-224.6$ kJ（224.6 kJ 放出）．\n$\\Delta G/\\Delta H=0.872$．$\\Delta G/\\Delta H=1-T\\Delta S/\\Delta H$ で，発熱反応（$\\Delta H<0$）でも $\\Delta S>0$，すなわち $dE/dT>0$ なら比は 1 を超え，電池は周囲から熱を吸収してそれも電気的仕事に変える（第 2 法則には反しない）．\n\n(3) $\\Delta H=-zF\\left(E-T\\,dE/dT\\right)$ より $\\Delta C_p=\\dfrac{d\\Delta H}{dT}=zFT\\dfrac{d^2E}{dT^2}=2zF\\beta T_0=2\\times2\\times96485\\times2.0\\times10^{-6}\\times298.15=230$ J/(mol·K)．\n\n(4) $\\Delta S=zF\\,dE/dT=0$ より $\\alpha+2\\beta(T^*-T_0)=0$，$T^*=T_0-\\alpha/(2\\beta)=298.15+125=423$ K（この近似式が成り立つ範囲とする）．"
+   }
+  ],
+  "idea": {
+   "tex": "起電力の温度依存性を 2 次まで与えて，$\\Delta G,\\Delta S,\\Delta H$ だけでなく $\\Delta C_p$ と熱的中性の温度まで引き出し，可逆電池の「効率」$\\Delta G/\\Delta H$ が 1 を超えうることを示す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta G$ [kJ]：≈-195.9 ; $\\Delta S$ [J/K]：≈-96.5 ; $\\Delta H$ [kJ]：≈-224.6\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電池の熱力学",
+   "起電力",
+   "Gibbs自由エネルギー",
+   "反応エンタルピー",
+   "Gibbs-Helmholtzの式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 30,
+  "theme": "オイラーの関係式と光子気体",
+  "topic": "オイラーの関係式と光子気体",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 内部エネルギー $U(S,V,N)$ が示量的，すなわち任意の $\\lambda>0$ に対して $U(\\lambda S,\\lambda V,\\lambda N)=\\lambda U(S,V,N)$ であることを用いて，オイラーの関係式 $U=TS-PV+\\mu N$ を示せ．\n\\item 空洞内の電磁波（光子気体）は，粒子数が保存されず壁との吸収・放出で自由に変わるため，熱平衡では $\\mu=0$ である．また圧力はエネルギー密度 $u(T)=U/V$ を用いて $P=u/3$ と表される．(1) を用いてエントロピー密度 $s=S/V$ を $u,T$ で表せ．\n\\item マクスウェルの関係式 $(\\partial S/\\partial V)_T=(\\partial P/\\partial T)_V$ を用いて，$u(T)\\propto T^4$ を導け．\n\\item この光子気体を断熱的にゆっくり膨張させるとき，$T$ と $V$ の間に成り立つ関係を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略　(2) $s=\\dfrac{4u}{3T}$　(3) $u=\\sigma T^4$（$\\sigma$ は定数）　(4) $TV^{1/3}=\\text{const}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $U(\\lambda S,\\lambda V,\\lambda N)=\\lambda U(S,V,N)$ を $\\lambda$ で微分し $\\lambda=1$ とおくと\n\\[ \\Bigl(\\frac{\\partial U}{\\partial S}\\Bigr)S+\\Bigl(\\frac{\\partial U}{\\partial V}\\Bigr)V+\\Bigl(\\frac{\\partial U}{\\partial N}\\Bigr)N=U. \\]\n$dU=T\\,dS-P\\,dV+\\mu\\,dN$ より各偏微分は $T,-P,\\mu$ なので $U=TS-PV+\\mu N$．（これは $G=U-TS+PV=\\mu N$ と同値．）\n\n(2) $\\mu=0$ を代入すると $U=TS-PV$，すなわち $G=0$．両辺を $V$ で割って $u=Ts-u/3$，よって $s=\\dfrac{4u}{3T}$．$s$ も $T$ だけの関数である．\n\n(3) $S=s(T)V$ より $(\\partial S/\\partial V)_T=s(T)=\\dfrac{4u}{3T}$．一方 $(\\partial P/\\partial T)_V=\\dfrac{u'(T)}{3}$．等置して\n\\[ \\frac{du}{dT}=\\frac{4u}{T}\\ \\Longrightarrow\\ u=\\sigma T^4. \\]\nこれはシュテファン・ボルツマンの法則で，熱力学だけからは係数 $\\sigma$ は決まらない．\n\n(4) $S=\\dfrac{4}{3}\\sigma T^3V$ が一定なので $T^3V=\\text{const}$，すなわち $TV^{1/3}=\\text{const}$．（膨張宇宙で背景放射の温度がスケール因子に反比例して下がることに対応する．）"
+   }
+  ],
+  "idea": {
+   "tex": "示量性から $U=TS-PV+\\mu N$ が出て，$\\mu=0$ の光子気体では $G=0$ とマクスウェルの関係式だけで $u\\propto T^4$ が導ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $s$：((4 u)/(3 T))\n(3) $u$：σ T ^(4)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "オイラーの関係式",
+   "示量変数",
+   "化学ポテンシャル",
+   "光子気体",
+   "シュテファン・ボルツマンの法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 30,
+  "theme": "化学反応を含む系の相律",
+  "topic": "化学反応を含む系の相律",
+  "statement": {
+   "tex": "$n$ 種類の化学種が $\\nu$ 個の相に分かれ，その間に $r$ 個の独立な化学反応 $\\sum_j\\nu_j^{(k)}A_j\\rightleftharpoons0$（$k=1,\\dots,r$）が平衡にあるとする．さらに，系の作り方から各相の組成に $s$ 個の付加的な制約（例えば「生成物の物質量比が化学量論比に等しい」）がつく．\n\\begin{enumerate}\n\\item 変数（温度，圧力，各相の組成）と拘束条件（相平衡・化学平衡・付加条件）を数え上げて，自由度が\n\\[ f=n-\\nu+2-r-s \\]\nとなることを示せ．化学平衡の条件は $\\sum_j\\nu_j^{(k)}\\mu_j=0$ である．\n\\item 次の各系の自由度を求め，その意味を述べよ．\n\\begin{enumerate}\n\\item[(a)] 密閉容器中の $\\mathrm{CaCO_3(s)}\\rightleftharpoons\\mathrm{CaO(s)}+\\mathrm{CO_2(g)}$（2 つの固体は互いに溶け合わない別の相）．\n\\item[(b)] $\\mathrm{NH_4Cl}$ の固体だけを真空容器に入れて加熱し，$\\mathrm{NH_4Cl(s)}\\rightleftharpoons\\mathrm{NH_3(g)}+\\mathrm{HCl(g)}$ が平衡になった系．また，あとから $\\mathrm{NH_3}$ だけを余分に加えた場合．\n\\item[(c)] 気相のみの $\\mathrm{N_2}+3\\mathrm{H_2}\\rightleftharpoons2\\mathrm{NH_3}$ の平衡．任意の組成から始めた場合と，純粋な $\\mathrm{NH_3}$ だけから出発した場合．\n\\end{enumerate}\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略　(2)(a) $f=1$（分解圧は温度だけで決まる）　(b) $f=1$，$\\mathrm{NH_3}$ 追加後 $f=2$　(c) 任意組成 $f=3$，純 $\\mathrm{NH_3}$ から $f=2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 各相の組成は $n$ 個のモル分率のうち和が 1 の制約があるので $n-1$ 個．変数は $T,P$ と合わせて $N_{\\mathrm v}=2+\\nu(n-1)$．\n拘束条件は，各成分の化学ポテンシャルが全相で等しい条件が成分ごとに $\\nu-1$ 個で計 $n(\\nu-1)$ 個．これに独立な化学平衡条件 $r$ 個と付加条件 $s$ 個が加わる．よって\n\\[ f=2+\\nu(n-1)-n(\\nu-1)-r-s=n-\\nu+2-r-s. \\]\n化学平衡の条件は相平衡により化学ポテンシャルが相によらないので，どの相で書いても 1 本である．\n\n(2)(a) $n=3$，$\\nu=3$（CaCO$_3$ 固相，CaO 固相，気相），$r=1$，$s=0$ より $f=3-3+2-1=1$．$T$ を決めれば CO$_2$ の圧力（分解圧）が決まる．ある 1 つの温度で CO$_2$ を加えても圧力は戻り，CaO が CaCO$_3$ に変わるだけである．\n(b) $n=3$，$\\nu=2$（固相，気相），$r=1$．固体だけから出発すると気相で $p_{\\mathrm{NH_3}}=p_{\\mathrm{HCl}}$ という付加条件 $s=1$ がつき，$f=3-2+2-1-1=1$．解離圧は温度だけで決まる．NH$_3$ を余分に加えるとこの制約が消えて $s=0$，$f=2$ となり，同じ温度でも全圧は組成によって変わる．\n(c) $n=3$，$\\nu=1$，$r=1$ で $f=3-1+2-1=3$（$T,P$ と組成 1 つ）．純 NH$_3$ から出発すると $x_{\\mathrm{H_2}}=3x_{\\mathrm{N_2}}$ が保たれ $s=1$，$f=2$：$T,P$ を決めれば平衡組成が一意に決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "相律の数え上げに化学平衡の条件と初期条件由来の制約を加えると $f=n-\\nu+2-r-s$ となり，分解圧が温度だけで決まるかどうかが判定できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ギブスの相律",
+   "化学平衡",
+   "自由度",
+   "解離圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 30,
+  "theme": "グランドポテンシャルから状態方程式と圧縮率",
+  "topic": "グランドポテンシャルから状態方程式と圧縮率",
+  "statement": {
+   "tex": "グランドポテンシャルを $\\Omega(T,V,\\mu)=F-\\mu N$ とする（$d\\Omega=-S\\,dT-P\\,dV-N\\,d\\mu$）．\n\\begin{enumerate}\n\\item 示量性 $\\Omega(T,\\lambda V,\\mu)=\\lambda\\,\\Omega(T,V,\\mu)$ を用いて $\\Omega=-PV$ を示し，さらにギブス・デュエムの関係 $dP=\\dfrac{S}{V}dT+\\dfrac{N}{V}d\\mu$ を導け．\n\\item 数密度 $\\rho=N/V$ と等温圧縮率 $\\kappa_T=-\\frac1V(\\partial V/\\partial P)_{T,N}$ の間に $\\left(\\dfrac{\\partial\\rho}{\\partial\\mu}\\right)_T=\\rho^2\\kappa_T$ が成り立つことを示せ．\n\\item ある気体のグランドポテンシャルが $\\Omega=-cVT^{5/2}e^{\\mu/kT}$（$c>0$ は定数，$k$ はボルツマン定数）で与えられる．$N,P,S,U$ を求め，状態方程式 $PV=NkT$ と $U=\\frac32NkT$ を導け．また (2) の関係が成り立っていることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略　(2) 略　(3) $N=cVT^{3/2}e^{\\mu/kT}/k$，$P=cT^{5/2}e^{\\mu/kT}$，$S=Nk\\left(\\frac52-\\frac{\\mu}{kT}\\right)$，$U=\\frac32NkT$，$PV=NkT$，$\\kappa_T=1/P$ で $(\\partial\\rho/\\partial\\mu)_T=\\rho/(kT)=\\rho^2\\kappa_T$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Omega$ の自然な変数のうち示量的なのは $V$ だけなので，$\\lambda$ で微分して $\\lambda=1$ とおくと $(\\partial\\Omega/\\partial V)_{T,\\mu}V=\\Omega$．$(\\partial\\Omega/\\partial V)_{T,\\mu}=-P$ より $\\Omega=-PV$．このとき $P$ は $(T,\\mu)$ だけの関数となる．$d\\Omega=-P\\,dV-V\\,dP$ を $d\\Omega=-S\\,dT-P\\,dV-N\\,d\\mu$ と比べて $V\\,dP=S\\,dT+N\\,d\\mu$．\n\n(2) (1) より $(\\partial P/\\partial\\mu)_T=\\rho$．$\\rho$ も $(T,\\mu)$ の関数なので，$T$ 一定で\n\\[ \\Bigl(\\frac{\\partial\\rho}{\\partial\\mu}\\Bigr)_T=\\Bigl(\\frac{\\partial\\rho}{\\partial P}\\Bigr)_T\\Bigl(\\frac{\\partial P}{\\partial\\mu}\\Bigr)_T=\\rho\\Bigl(\\frac{\\partial\\rho}{\\partial P}\\Bigr)_T. \\]\n$N$ 一定で $\\rho=N/V$ より $(\\partial\\rho/\\partial P)_T=-\\frac{N}{V^2}(\\partial V/\\partial P)_{T,N}=\\rho\\kappa_T$．よって $(\\partial\\rho/\\partial\\mu)_T=\\rho^2\\kappa_T$．圧縮率は密度の化学ポテンシャルに対する応答で決まる．\n\n(3) $N=-(\\partial\\Omega/\\partial\\mu)_{T,V}=\\dfrac{cVT^{5/2}}{kT}e^{\\mu/kT}=-\\dfrac{\\Omega}{kT}$．$P=-\\Omega/V=cT^{5/2}e^{\\mu/kT}$．よって $PV=-\\Omega=NkT$．\n$S=-(\\partial\\Omega/\\partial T)_{V,\\mu}=cVe^{\\mu/kT}\\left(\\frac52T^{3/2}-\\frac{\\mu}{k}T^{1/2}\\right)=Nk\\left(\\frac52-\\frac{\\mu}{kT}\\right)$．\n$U=\\Omega+TS+\\mu N=-NkT+NkT\\left(\\frac52-\\frac{\\mu}{kT}\\right)+\\mu N=\\frac32NkT$．\n確認：$\\rho=P/(kT)$ より $(\\partial\\rho/\\partial\\mu)_T=\\rho/(kT)$．一方 $PV=NkT$ から $\\kappa_T=1/P=1/(\\rho kT)$ なので $\\rho^2\\kappa_T=\\rho/(kT)$ で一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\Omega$ の示量的変数は $V$ だけなので $\\Omega=-PV$ が出て，$P(T,\\mu)$ の勾配として密度とエントロピー密度が得られ，圧縮率も $\\mu$ 微分で書ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "グランドポテンシャル",
+   "示量性",
+   "ギブス・デュエムの関係",
+   "等温圧縮率",
+   "理想気体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 35,
+  "theme": "半透膜を介した平衡と浸透圧",
+  "topic": "半透膜を介した平衡と浸透圧",
+  "statement": {
+   "tex": "孤立系を，位置が固定された剛体の壁で部分系 A と B に分ける．壁は熱を通し，さらに溶媒分子（成分 1）だけを通す（溶質分子は通さない）．A は純粋な溶媒，B は溶質のモル分率 $x\\ (\\ll1)$ の希薄溶液である．\n\\begin{enumerate}\n\\item 全エントロピー $S=S_A(U_A,V_A,N_{1A})+S_B(U_B,V_B,N_{1B},N_{2B})$ が最大となるための必要条件を求め，熱平衡で A と B の間で等しくなる量と，等しくならなくてよい量を答えよ．\n\\item 希薄溶液中の溶媒の化学ポテンシャルが $\\mu_1^B=\\mu_1^{0}(T,P_B)-RTx$（$\\mu_1^0$ は純溶媒の 1 モル当たりの化学ポテンシャル）で与えられるとき，平衡での圧力差 $\\Pi=P_B-P_A$ を求めよ．溶媒のモル体積 $v_1$ は圧力によらないとする．\n\\item 平衡から外れて $P_B-P_A<\\Pi$ のとき，溶媒はどちら向きに移動するか．エントロピー増大から説明せよ．\n\\item $T=300\\,\\mathrm K$，$x=0.020$，$v_1=1.8\\times10^{-5}\\,\\mathrm{m^3/mol}$ のとき $\\Pi$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_A=T_B$，$\\mu_{1A}=\\mu_{1B}$．圧力は等しくなくてよい　(2) $\\Pi=RTx/v_1$　(3) A から B へ（溶液側へ）　(4) $\\Pi\\approx2.8\\times10^6\\,\\mathrm{Pa}$（約 27 気圧）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 孤立系なので $\\delta U_A=-\\delta U_B$，$\\delta N_{1A}=-\\delta N_{1B}$．壁は固定されているので $\\delta V_A=\\delta V_B=0$，溶質は通らないので $\\delta N_{2B}=0$．$dS=\\frac1TdU+\\frac PTdV-\\sum_j\\frac{\\mu_j}{T}dN_j$ を用いて\n\\[ \\delta S=\\Bigl(\\frac1{T_A}-\\frac1{T_B}\\Bigr)\\delta U_A-\\Bigl(\\frac{\\mu_{1A}}{T_A}-\\frac{\\mu_{1B}}{T_B}\\Bigr)\\delta N_{1A}. \\]\n任意の $\\delta U_A,\\delta N_{1A}$ に対して $\\delta S=0$ となるには $T_A=T_B$，$\\mu_{1A}=\\mu_{1B}$．体積の変分がないので $P_A=P_B$ は要求されず，溶質の化学ポテンシャルも等しくなくてよい．\n\n(2) $\\mu_1^0(T,P_A)=\\mu_1^0(T,P_B)-RTx$．$(\\partial\\mu_1^0/\\partial P)_T=v_1$（一定）より $\\mu_1^0(T,P_B)-\\mu_1^0(T,P_A)=v_1(P_B-P_A)$．よって $v_1\\Pi=RTx$，$\\Pi=\\dfrac{RTx}{v_1}$．$x\\simeq n_2/n_1$，$n_1v_1\\simeq V_B$ とすると $\\Pi V_B\\simeq n_2RT$（ファントホッフの式）となり，溶質が理想気体のようにふるまう．\n\n(3) $T_A=T_B=T$ のとき $\\delta S=-\\dfrac{\\mu_{1A}-\\mu_{1B}}{T}\\delta N_{1A}>0$ となる向きに変化する．$P_B-P_A<\\Pi$ なら $\\mu_{1B}=\\mu_1^0(T,P_A)+v_1(P_B-P_A)-RTx<\\mu_{1A}$．よって $\\delta N_{1A}<0$：溶媒は A から B へ（化学ポテンシャルの高い側から低い側へ）移動する．これが浸透である．\n\n(4) $\\Pi=\\dfrac{8.314\\times300\\times0.020}{1.8\\times10^{-5}}\\approx2.8\\times10^6\\,\\mathrm{Pa}$（約 27 気圧）．"
+   }
+  ],
+  "idea": {
+   "tex": "エントロピー最大の変分で，動かない半透膜は温度と透過成分の化学ポテンシャルだけを等しくし，圧力差（浸透圧）が残ることを示す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $\\Pi$ [Pa]：≈2.8e6"
+  },
+  "methods": [],
+  "tags": [
+   "熱平衡条件",
+   "化学ポテンシャル",
+   "エントロピー最大",
+   "浸透圧",
+   "半透膜"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "引力項の冪を変えた状態方程式の臨界点",
+  "topic": "引力項の冪を変えた状態方程式の臨界点",
+  "statement": {
+   "tex": "1 モルあたりの体積を $v$ として，ファンデルワールス方程式の引力項の冪を一般化した状態方程式\n\\[\nP=\\frac{RT}{v-b}-\\frac{a}{v^m}\\qquad(a,b>0,\\ m>1)\n\\]\nを考える．\n\\begin{enumerate}\n\\item 臨界点の体積 $v_c$ と温度 $T_c$ を $a,b,m,R$ で求めよ．\n\\item 臨界圧縮因子 $Z_c=P_cv_c/(RT_c)$ が $m$ だけで決まることを示し，その式を求めよ．$m=2$ の場合を確かめよ．\n\\item 実在気体の典型値 $Z_c\\approx0.29$ を再現する $m$ を数値で求めよ．また $m\\to1^+$ で何が起こるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_c=\\dfrac{m+1}{m-1}b$，$RT_c=\\dfrac{4mab}{(m^2-1)v_c^{\\,m}}$　(2) $Z_c=\\dfrac{m^2-1}{4m}$，$m=2$ で $3/8$　(3) $m\\approx1.74$．$m\\to1$ で $v_c\\to\\infty$，$Z_c\\to0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 臨界点の条件\n\\[\n\\left(\\frac{\\partial P}{\\partial v}\\right)_T=-\\frac{RT}{(v-b)^2}+\\frac{ma}{v^{m+1}}=0,\\qquad\n\\left(\\frac{\\partial^2 P}{\\partial v^2}\\right)_T=\\frac{2RT}{(v-b)^3}-\\frac{m(m+1)a}{v^{m+2}}=0 .\n\\]\n第1式より $RT=ma(v-b)^2/v^{m+1}$．第2式に代入し $\\dfrac{2}{v-b}=\\dfrac{m+1}{v}$，よって $v_c=\\dfrac{m+1}{m-1}b$．このとき $v_c-b=\\dfrac{2b}{m-1}$ で\n\\[\nRT_c=\\frac{ma(v_c-b)^2}{v_c^{m+1}}=\\frac{ma}{v_c^{m}}\\cdot\\frac{4b^2/(m-1)^2}{(m+1)b/(m-1)}=\\frac{4mab}{(m^2-1)v_c^{\\,m}} .\n\\]\n\n(2) $Z_c=\\dfrac{v_c}{v_c-b}-\\dfrac{a}{v_c^{m-1}RT_c}$．$\\dfrac{a}{v_c^{m-1}RT_c}=\\dfrac{v_c^2}{m(v_c-b)^2}$ であり $\\dfrac{v_c}{v_c-b}=\\dfrac{m+1}{2}$ なので\n\\[\nZ_c=\\frac{m+1}{2}-\\frac{(m+1)^2}{4m}=\\frac{(m+1)(m-1)}{4m}=\\frac{m^2-1}{4m}.\n\\]\n$m=2$ では $3/8$ となりファンデルワールス方程式の値に一致する（$v_c=3b$，$RT_c=8a/(27b)$ も再現）．\n\n(3) $\\dfrac{m^2-1}{4m}=0.29$ より $m^2-1.16m-1=0$，$m=\\dfrac{1.16+\\sqrt{1.16^2+4}}{2}\\approx1.74$．\n$Z_c$ は $m$ の増加関数で，$m\\to1^+$ では $v_c=\\frac{m+1}{m-1}b\\to\\infty$，$Z_c\\to0$ となり臨界点は無限遠へ逃げる（$m\\le1$ では引力が遠距離で強すぎ，臨界点が存在しない）．"
+   }
+  ],
+  "idea": {
+   "tex": "引力項 $a/v^m$ の冪を変えても $v_c/b$ と $Z_c=(m^2-1)/(4m)$ は $m$ だけで決まり，vdW（$m=2$）の $3/8$ は一族の一員にすぎない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v_c$：((m +1)/(m -1)) b ; $RT_c$：((4 m a b)/((m ^(2)-1) v_c ^(m)))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "臨界点",
+   "状態方程式",
+   "臨界圧縮因子",
+   "ファンデルワールス方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 40,
+  "theme": "3重点の潜熱関係と過冷却水の蒸気圧",
+  "topic": "3重点の潜熱関係と過冷却水の蒸気圧",
+  "statement": {
+   "tex": "1 成分系（H$_2$O）の固相 s，液相 $\\ell$，気相 g を考える．1 分子当たり（またはモル当たり）のエントロピー・体積を $s_i,v_i$（$i={\\rm s},\\ell,{\\rm g}$）と書く．$U$ の全微分を $dU=TdS-pdV+\\mu dN$ とする．\n\\begin{enumerate}\n\\item $G=U-TS+pV$ が示量的であることから $G=N\\mu$ を用い，化学ポテンシャルについてギブズ–デュエムの関係 $d\\mu=-s\\,dT+v\\,dp$ を導け．\n\\item これを用いて，相 $i$ と相 $j$ の共存線の傾きを $s_i,s_j,v_i,v_j$ で表せ．さらに 3 重点 $(T_{\\rm t},p_{\\rm t})$ では，昇華熱 $L_{\\rm sub}$，融解熱 $L_{\\rm fus}$，蒸発熱 $L_{\\rm vap}$（いずれもモル当たり）の間に $L_{\\rm sub}=L_{\\rm fus}+L_{\\rm vap}$ が成り立つことを示せ．\n\\item 3 重点における昇華曲線と蒸発曲線の傾きの比 $\\left.\\frac{dp}{dT}\\right|_{\\rm sg}\\Big/\\left.\\frac{dp}{dT}\\right|_{\\ell{\\rm g}}$ を，$v_{\\rm g}\\gg v_\\ell,v_{\\rm s}$ として潜熱で表し，$L_{\\rm fus}=6.01\\,\\mathrm{kJ/mol}$，$L_{\\rm vap}=45.0\\,\\mathrm{kJ/mol}$ として数値を求めよ．どちらの曲線が急か．\n\\item 氷の密度 $0.917\\,\\mathrm{g/cm^3}$，水の密度 $1.000\\,\\mathrm{g/cm^3}$，モル質量 $18.0\\,\\mathrm{g/mol}$，$T=273\\,\\mathrm{K}$ として，融解曲線の傾き $dp/dT$ を求めよ（atm/K 単位も示せ）．融点を $1\\,\\mathrm{K}$ 下げるのに必要な加圧の大きさはどれほどか．\n\\item 3 重点より低温でも，液体の水は過冷却状態として存在しうる．その飽和蒸気圧 $p_\\ell(T)$ は蒸発曲線を低温側に延長したものとする．蒸気を理想気体，潜熱を一定とし，凝縮相の体積を無視して，$T<T_{\\rm t}$ での比 $p_\\ell(T)/p_{\\rm s}(T)$（$p_{\\rm s}$ は氷の昇華圧）を求めよ．$T_{\\rm t}=273.16\\,\\mathrm{K}$，$T=263.15\\,\\mathrm{K}$（$-10^\\circ$C），$R=8.314\\,\\mathrm{J\\,K^{-1}mol^{-1}}$ として数値を出し，過冷却水滴と氷晶が共存する雲で何が起こるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\left.\\frac{dp}{dT}\\right|_{ij}=\\frac{s_i-s_j}{v_i-v_j}$，$L_{\\rm sub}=L_{\\rm fus}+L_{\\rm vap}$（解説参照）　(3) 比 $=1+L_{\\rm fus}/L_{\\rm vap}\\approx1.13$，昇華曲線の方が急　(4) $dp/dT\\approx-1.35\\times10^7\\,\\mathrm{Pa/K}\\approx-133\\,\\mathrm{atm/K}$，約 $130\\,\\mathrm{atm}$　(5) $p_\\ell/p_{\\rm s}=\\exp\\!\\left[\\frac{L_{\\rm fus}}{R}\\left(\\frac1T-\\frac1{T_{\\rm t}}\\right)\\right]\\approx1.11$；水滴が蒸発し氷晶が成長する"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $dG=dU-TdS-SdT+pdV+Vdp=-SdT+Vdp+\\mu dN$．$G$ は示量的で，示強変数 $T,p$ と $N$ の関数だから $G(T,p,\\lambda N)=\\lambda G(T,p,N)$，よって $G=Nf(T,p)$ と書け，$(\\partial G/\\partial N)_{T,p}=f=\\mu$ より $G=N\\mu$．これを微分すると $dG=Nd\\mu+\\mu dN$．上式と比べて $Nd\\mu=-SdT+Vdp$，すなわち $d\\mu=-s\\,dT+v\\,dp$（$s=S/N$，$v=V/N$）．\n\n(2) 共存線上では $\\mu_i(T,p)=\\mu_j(T,p)$ が保たれるので，線に沿って $d\\mu_i=d\\mu_j$：$-s_idT+v_idp=-s_jdT+v_jdp$．よって\n\\[ \\left.\\frac{dp}{dT}\\right|_{ij}=\\frac{s_i-s_j}{v_i-v_j}=\\frac{L_{ij}}{T(v_i-v_j)}\\quad(L_{ij}=T(s_i-s_j)). \\]\n3 重点では同じ $T_{\\rm t}$ で $L_{\\rm sub}=T_{\\rm t}(s_{\\rm g}-s_{\\rm s})=T_{\\rm t}(s_{\\rm g}-s_\\ell)+T_{\\rm t}(s_\\ell-s_{\\rm s})=L_{\\rm vap}+L_{\\rm fus}$．（エントロピーが状態量であることの帰結．）\n\n(3) $v_{\\rm g}-v_{\\rm s}\\simeq v_{\\rm g}-v_\\ell\\simeq v_{\\rm g}$ だから，比は $L_{\\rm sub}/L_{\\rm vap}=1+L_{\\rm fus}/L_{\\rm vap}=1+6.01/45.0\\approx1.13$．3 重点では昇華曲線の方が約 13\\% 急である．\n\n(4) $v_\\ell=18.0/1.000=18.0\\,\\mathrm{cm^3/mol}$，$v_{\\rm s}=18.0/0.917=19.6\\,\\mathrm{cm^3/mol}$，$v_\\ell-v_{\\rm s}\\approx-1.63\\times10^{-6}\\,\\mathrm{m^3/mol}$．\n\\[ \\frac{dp}{dT}=\\frac{L_{\\rm fus}}{T(v_\\ell-v_{\\rm s})}=\\frac{6010}{273\\times(-1.63\\times10^{-6})}\\approx-1.35\\times10^7\\,\\mathrm{Pa/K}\\approx-133\\,\\mathrm{atm/K}. \\]\n負の傾きは氷の方が体積が大きいためで，融点を $1\\,\\mathrm{K}$ 下げるには約 $130\\,\\mathrm{atm}$ の加圧が要る（スケートの刃程度の圧力では融点はわずかしか下がらない）．\n\n(5) 理想気体近似のクラウジウス–クラペイロンの式 $d\\ln p/dT=L/(RT^2)$ を 3 重点（両者とも $p_{\\rm t}$）から積分すると\n\\[ \\ln\\frac{p_\\ell}{p_{\\rm t}}=-\\frac{L_{\\rm vap}}{R}\\left(\\frac1T-\\frac1{T_{\\rm t}}\\right),\\quad \\ln\\frac{p_{\\rm s}}{p_{\\rm t}}=-\\frac{L_{\\rm sub}}{R}\\left(\\frac1T-\\frac1{T_{\\rm t}}\\right). \\]\n差をとり (2) を使うと\n\\[ \\frac{p_\\ell}{p_{\\rm s}}=\\exp\\left[\\frac{L_{\\rm fus}}{R}\\left(\\frac1T-\\frac1{T_{\\rm t}}\\right)\\right]. \\]\n$L_{\\rm fus}/R=723\\,\\mathrm{K}$，$1/263.15-1/273.16=1.39\\times10^{-4}\\,\\mathrm{K^{-1}}$ より指数は $0.101$，比 $\\approx1.11$．$T<T_{\\rm t}$ では常に $p_\\ell>p_{\\rm s}$（過冷却水の方が $\\mu$ が大きく準安定）．したがって水蒸気圧が両者の間にあると，水滴に対しては未飽和で蒸発し，氷晶に対しては過飽和で昇華成長する．水蒸気が水滴から氷晶へ移って氷晶が急成長し，降水の種となる（ベルシェロン過程）．"
+   }
+  ],
+  "idea": {
+   "tex": "ギブズ–デュエム関係から各共存線のクラペイロン式を出し，3 重点でエントロピーの加法性 $L_{\\rm sub}=L_{\\rm fus}+L_{\\rm vap}$ を使うと，過冷却水と氷の蒸気圧比が融解熱だけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ギブズ–デュエムの関係",
+   "クラペイロンの式",
+   "3重点",
+   "潜熱",
+   "過冷却",
+   "氷の融解曲線"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "空気を含む飽和水蒸気の等温圧縮",
+  "topic": "空気を含む飽和水蒸気の等温圧縮",
+  "statement": {
+   "tex": "シリンダー内に温度 $100\\ ^\\circ$C の空気と水蒸気の混合気体が体積 $V_1=10$ L で入っており，水蒸気はちょうど飽和している（分圧 $p_s=1.0$ atm，ごく少量の水滴が存在）．空気の分圧は $p_a=0.50$ atm．これを等温でゆっくり体積 $V_2=5.0$ L まで圧縮する．気体は理想気体とし，液体の体積と空気の水への溶解は無視する．水の蒸発熱は $q=2.26$ MJ/kg．\n\\begin{enumerate}\n\\item 凝縮する水の質量 $\\Delta m$ を求めよ．\n\\item 外部が気体にする仕事 $W$ を求めよ．\n\\item 気体から外部に放出される熱 $Q$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta m=\\dfrac{Mp_s(V_1-V_2)}{RT}=2.9$ g　(2) $W=p_s(V_1-V_2)+p_aV_1\\ln\\dfrac{V_1}{V_2}=0.86$ kJ　(3) $Q=\\Delta m\\,q+p_aV_1\\ln\\dfrac{V_1}{V_2}=7.0$ kJ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 温度一定なので水蒸気の分圧は $p_s$ のまま．気相の水蒸気の量は $p_sV/(RT)$ で $V$ に比例するから\n\\[\n\\Delta m=\\frac{Mp_s(V_1-V_2)}{RT}=\\frac{(0.018)(1.013\\times10^5)(5.0\\times10^{-3})}{(8.31)(373)}=2.9\\times10^{-3}\\ \\mathrm{kg}.\n\\]\n\n(2) 全圧は $p=p_s+p_aV_1/V$ だから\n\\[\nW=\\int_{V_2}^{V_1}p\\,dV=p_s(V_1-V_2)+p_aV_1\\ln\\frac{V_1}{V_2}=507+351=8.6\\times10^2\\ \\mathrm J.\n\\]\n\n(3) 空気は等温の理想気体なので，された仕事 $p_aV_1\\ln2=351$ J をそのまま熱として出す．水蒸気の部分は一定の圧力・温度で凝縮するので，放出熱は凝縮のエンタルピー $\\Delta m\\,q$（仕事 $p_s\\Delta V$ を含む）．\n\\[\nQ=\\Delta m\\,q+p_aV_1\\ln\\frac{V_1}{V_2}=(2.94\\times10^{-3})(2.26\\times10^6)+351=7.0\\times10^3\\ \\mathrm J.\n\\]\n加えた仕事のほぼ 8 倍の熱が出ていく．"
+   }
+  ],
+  "idea": {
+   "tex": "等温圧縮では飽和水蒸気の分圧は一定で凝縮だけが進み，空気は通常の等温圧縮となる．熱は凝縮の潜熱が支配的．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta m$ [g]：≈2.9\n(2) 記述\n(3) $Q$ [kJ]：≈7.0"
+  },
+  "methods": [],
+  "tags": [
+   "飽和蒸気",
+   "凝縮",
+   "分圧",
+   "等温圧縮",
+   "潜熱"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "密閉容器を加熱したときの水の液面の上下",
+  "topic": "密閉容器を加熱したときの水の液面の上下",
+  "statement": {
+   "tex": "体積 $V=6.0$ L の密閉容器に，水とその飽和水蒸気だけが合計 $m$ 入っている．蒸気表によると，$250\\ ^\\circ$C では液体・蒸気の比体積はそれぞれ $1.251$ L/kg，$50.13$ L/kg，$300\\ ^\\circ$C では $1.404$ L/kg，$21.67$ L/kg である．\n\\begin{enumerate}\n\\item $m=2.0$ kg のとき，$250\\ ^\\circ$C と $300\\ ^\\circ$C のそれぞれで蒸気の質量と，液体が占める体積を求めよ．\n\\item (1) で，加熱すると液体の質量は減るのに液体の体積は増える．その理由を説明せよ．\n\\item $m=1.0$ kg の場合について，同じ 2 つの温度で液体の体積を求め，(1) と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $250\\ ^\\circ$C：蒸気 $72$ g，液体 $2.41$ L；$300\\ ^\\circ$C：蒸気 $158$ g，液体 $2.59$ L　(2) 液体の熱膨張が蒸発による減少を上回る（全体の比体積が臨界比体積より小さい）　(3) $1.13$ L → $1.09$ L（減る）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 蒸気の質量を $m_v$，液体と蒸気の比体積を $v_l,v_v$ とすると $V=(m-m_v)v_l+m_vv_v$ より\n\\[\nm_v=\\frac{V-mv_l}{v_v-v_l}.\n\\]\n$250\\ ^\\circ$C：$m_v=\\dfrac{6.0-2.502}{50.13-1.251}=0.0716$ kg，液体の体積 $(2.0-0.0716)(1.251)=2.41$ L．\n$300\\ ^\\circ$C：$m_v=\\dfrac{6.0-2.808}{21.67-1.404}=0.158$ kg，液体の体積 $(2.0-0.158)(1.404)=2.59$ L．\n\n(2) 全体の平均比体積は $V/m=3.0$ L/kg で，水の臨界比体積（約 3.1 L/kg）より小さい．温度が上がると液体の比体積が大きく増え（12\\% 増），蒸気の密度も増す（比体積が半分以下）．蒸発する液体は 4\\% あまりにすぎず，液体の熱膨張が勝って液面が上がる．このまま加熱すると容器は液体で満たされる．\n\n(3) $V/m=6.0$ L/kg（臨界比体積より大）．$250\\ ^\\circ$C：$m_v=0.0972$ kg，液体 $(0.903)(1.251)=1.13$ L．$300\\ ^\\circ$C：$m_v=0.227$ kg，液体 $(0.773)(1.404)=1.09$ L．こちらは液面が下がり，加熱を続ければ液体はすべて蒸発する．"
+   }
+  ],
+  "idea": {
+   "tex": "密閉容器の気液共存系を加熱したときの液面の動きは，平均比体積が臨界比体積より小さいか大きいかで逆になる．てこの規則で定量化できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "気液共存",
+   "てこの規則",
+   "比体積",
+   "臨界点"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "氷を加熱してピストンを押し上げる",
+  "topic": "氷を加熱してピストンを押し上げる",
+  "statement": {
+   "tex": "断熱されたシリンダー内に，$0\\ ^\\circ$C の氷 $m=20$ g が，面積 $S=410\\ \\mathrm{cm^2}$ の質量の無視できるピストンの下に（すき間なく）入っている．外の圧力は $1.0$ atm．氷に熱 $Q$ を与える．氷の融解熱 $\\lambda=333$ kJ/kg，水の比熱 $c=4.19$ kJ/(kg·K)，$100\\ ^\\circ$C での蒸発熱 $q=2.26$ MJ/kg（定圧での値）とし，水蒸気は理想気体，液体・固体の体積変化は無視する．\n\\begin{enumerate}\n\\item ピストンが上がり始めるのに必要な熱 $Q_0$ を求めよ．\n\\item $Q=25.0$ kJ のとき，ピストンが上がる高さ $h$ を求めよ．\n\\item 水がすべて蒸発するまでに必要な熱と，そのときの $h$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $Q_0=m\\lambda+mc\\cdot100\\,\\mathrm K=15.0$ kJ　(2) $h=\\dfrac{(Q-Q_0)RT}{qMp_0S}=18$ cm　(3) $60$ kJ，$h=83$ cm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 氷を融かし（$m\\lambda=6.66$ kJ），水を $100\\ ^\\circ$C まで温める（$mc\\Delta T=8.38$ kJ）と沸騰が始まる．$Q_0=15.0$ kJ．\n\n(2) 残りの $Q-Q_0=9.96$ kJ で定圧のもとに蒸発する質量は（$q$ は定圧での蒸発熱＝エンタルピー変化で，大気を押しのける仕事を含む）\n\\[\nm_v=\\frac{Q-Q_0}{q}=4.41\\times10^{-3}\\ \\mathrm{kg}.\n\\]\nその体積 $m_vRT/(Mp_0)$ を $S$ で割って\n\\[\nh=\\frac{(Q-Q_0)RT}{qMp_0S}=\\frac{(4.41\\times10^{-3})(8.31)(373)}{(0.018)(1.013\\times10^5)(0.041)}=0.18\\ \\mathrm m.\n\\]\n\n(3) $Q_0+mq=15.0+45.2=60$ kJ．このとき $h=\\dfrac{mRT}{Mp_0S}=0.83$ m．"
+   }
+  ],
+  "idea": {
+   "tex": "融解・昇温・蒸発の段階を順に追い，定圧の蒸発熱（エンタルピー）から生じる蒸気の体積を出す．ピストンは熱がしきい値を超えて初めて動く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $h$：(((Q - Q_0) R T)/(q M p_0 S))\n(3) [kJ]：60 ; $h$ [cm]：83"
+  },
+  "methods": [],
+  "tags": [
+   "融解熱",
+   "蒸発熱",
+   "エンタルピー",
+   "定圧過程"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "飽和蒸気に冷水を注入したときの凝縮",
+  "topic": "飽和蒸気に冷水を注入したときの凝縮",
+  "statement": {
+   "tex": "断熱されたシリンダー内の，質量の無視できるピストンの下に $100\\ ^\\circ$C の飽和水蒸気 $m_v=1.0$ g がある．外の圧力は $1.0$ atm．ここに $22\\ ^\\circ$C の水 $m_w$ を注入する．シリンダーの熱容量とピストンの摩擦は無視し，水の比熱 $c=4.19$ kJ/(kg·K)，蒸発熱 $q=2.26$ MJ/kg（定圧での値），蒸気は理想気体，液体の体積は無視する．\n\\begin{enumerate}\n\\item 蒸気がすべて凝縮するための $m_w$ の最小値を求めよ．\n\\item $m_w=10$ g のとき，最終温度 $T_f$ と，ピストンが下がる間に大気圧がする仕事 $A$ を求めよ．\n\\item (2) のエネルギー収支で大気圧の仕事を別に加えなくてよい理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $m_w=\\dfrac{m_vq}{c(100-22)\\,\\mathrm K}=6.9$ g　(2) $T_f=78\\ ^\\circ$C，$A=\\dfrac{m_vRT}{M}=0.17$ kJ　(3) 定圧過程ではエンタルピーが保存し，$q$ がエンタルピー変化なので $p\\Delta V$ を含む"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 凝縮した蒸気（$100\\ ^\\circ$C の水になる）の放出熱 $m_vq$ で冷水を $100\\ ^\\circ$C まで温められなければ全部は凝縮する．境目は $m_vq=m_wc(100-22)$：\n\\[\nm_w=\\frac{(1.0\\times10^{-3})(2.26\\times10^6)}{(4190)(78)}=6.9\\times10^{-3}\\ \\mathrm{kg}.\n\\]\n\n(2) $m_w=10$ g $>6.9$ g なので蒸気は全部凝縮し，最終温度 $T_f$ は\n\\[\nm_vq+m_vc(100-T_f)=m_wc(T_f-22)\n\\]\n\\[\nT_f=\\frac{m_vq+c(100m_v+22m_w)}{c(m_v+m_w)}=\\frac{2260+4.19(100+220)}{4.19(11)}=78\\ ^\\circ\\mathrm C.\n\\]\nピストンは蒸気の体積 $V=m_vRT/(Mp_0)$ だけ下がるので\n\\[\nA=p_0V=\\frac{m_vRT}{M}=\\frac{(1.0\\times10^{-3})(8.31)(373)}{0.018}=1.7\\times10^2\\ \\mathrm J.\n\\]\n\n(3) 系（水＋蒸気）が断熱で外圧一定のもとで変化するので，$\\Delta U=A=-p_0\\Delta V$，すなわち $\\Delta(U+p_0V)=\\Delta H=0$．定圧の蒸発熱 $q$ は単位質量あたりのエンタルピー差なので，(2) のつり合いの式は $\\Delta H=0$ そのものであり，大気圧の仕事はすでに $q$ に含まれている．"
+   }
+  ],
+  "idea": {
+   "tex": "断熱・定圧の系ではエンタルピーが保存する．蒸気の凝縮で冷水を温める熱収支と，ピストンが下がる仕事が同じ枠組みで扱える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $m_w$ [g]：≈6.9\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "凝縮",
+   "エンタルピー",
+   "熱平衡",
+   "定圧過程"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "真空中のフィラメント蒸発と寿命",
+  "topic": "真空中のフィラメント蒸発と寿命",
+  "statement": {
+   "tex": "タングステン（モル質量 $M=184\\ \\mathrm{g/mol}$，密度 $\\rho=19.3\\ \\mathrm{g/cm^3}$）のフィラメントを高真空中で加熱する．蒸発する原子の流束は，同じ温度の飽和蒸気と平衡にあるときに表面へ入射する原子の流束に等しい（入射原子はすべて表面に取り込まれる）と仮定する．\n\\begin{enumerate}\n\\item $T_1=2000\\ \\mathrm{K}$ で，単位面積・単位時間あたりの質量損失が $\\mu_1=1.2\\times10^{-13}\\ \\mathrm{g/(s\\,cm^2)}$ であった．この温度の飽和蒸気圧 $p_1$ を求めよ．\n\\item $T_2=2800\\ \\mathrm{K}$ での飽和蒸気圧を $p_2=1.0\\times10^{-4}\\ \\mathrm{Pa}$ とする．半径 $r_0=10\\ \\mu\\mathrm{m}$ の円柱状フィラメントの半径が減っていく速さ $|dr/dt|$ を求め，半径が $10\\%$ 減るまでの時間を求めよ（温度は一定に保たれるとする）．\n\\item 実際のフィラメントでは，わずかに細い箇所があるとそこから断線しやすい．その理由を，(2) の結果と通電加熱の性質から簡潔に説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_1=\\mu_1\\sqrt{2\\pi RT_1/M}\\approx0.9\\ \\mathrm{nPa}$　(2) $|dr/dt|=\\dfrac{p_2}{\\rho}\\sqrt{\\dfrac{M}{2\\pi RT_2}}\\approx5.8\\times10^{-12}\\ \\mathrm{m/s}$，約 $1.7\\times10^{5}\\ \\mathrm{s}\\approx48$ 時間　(3) 細い所は抵抗が大きく高温になり，蒸発が急増してさらに細る正のフィードバックが働くため．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 入射質量流束は $j=p\\sqrt{M/(2\\pi RT)}$．高真空中では戻ってくる原子がないので質量損失は蒸発流束そのもので，仮定から $\\mu=p\\sqrt{M/(2\\pi RT)}$．よって\n\\[ p_1=\\mu_1\\sqrt{\\frac{2\\pi RT_1}{M}}=1.2\\times10^{-12}\\ \\mathrm{kg/(m^2s)}\\times\\sqrt{\\frac{2\\pi\\times8.31\\times2000}{0.184}}\\approx9\\times10^{-10}\\ \\mathrm{Pa}. \\]\n(2) $\\mu_2=p_2\\sqrt{M/(2\\pi RT_2)}=1.0\\times10^{-4}\\times1.12\\times10^{-3}\\approx1.1\\times10^{-7}\\ \\mathrm{kg/(m^2s)}$．長さ $l$ の円柱で質量収支 $\\rho\\cdot2\\pi r l\\,dr/dt=-\\mu_2\\cdot2\\pi rl$ より\n\\[ \\left|\\frac{dr}{dt}\\right|=\\frac{\\mu_2}{\\rho}\\approx\\frac{1.12\\times10^{-7}}{1.93\\times10^4}\\approx5.8\\times10^{-12}\\ \\mathrm{m/s}. \\]\n半径によらず一定なので，$\\Delta r=1.0\\ \\mu\\mathrm{m}$ に要する時間は $1.0\\times10^{-6}/5.8\\times10^{-12}\\approx1.7\\times10^5\\ \\mathrm{s}\\approx48\\ \\mathrm{h}$．\n(3) 同じ電流が流れる直列の導体では，断面積の小さい部分ほど単位長さ当たりの発熱 $I^2\\rho_e/(\\pi r^2)$ が大きく，放熱面積 $2\\pi r$ は小さいので温度が上がる．飽和蒸気圧は温度にほぼ指数関数的に依存するので，その部分の $|dr/dt|$ は急増し，さらに細って高温になる．この不安定性のため局所的に断線する．"
+   }
+  ],
+  "idea": {
+   "tex": "高真空への蒸発流束は飽和蒸気の入射流束に等しく，そこから飽和蒸気圧が測れる．半径減少速度は半径によらず一定で，局所的な細りは自己増幅する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $p_1$ [nPa]：≈0.9\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "蒸発",
+   "飽和蒸気圧",
+   "タングステン",
+   "フィラメント寿命",
+   "Langmuir法"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "蒸発熱から内圧と定数 a を推定",
+  "topic": "蒸発熱から内圧と定数 a を推定",
+  "statement": {
+   "tex": "液体が蒸発するとき，吸収する潜熱は主として分子間引力（内圧 $p_i=a/V^2$）に逆らう仕事と，外圧 $p$ に逆らって膨張する仕事に使われると考える．物質はファン・デル・ワールス方程式に従い，蒸気のモル体積 $V_g$ は液体のモル体積 $V_l$ に比べて十分大きく，蒸気は理想気体とみなせるとする．比潜熱を $q$，液体の密度を $\\rho$，モル質量を $M$ とする．\n\\begin{enumerate}\n\\item 液体の内圧 $p_i=a/V_l^2$ を $\\rho,q,M,T$ で表せ．\n\\item 水（$T=373\\ \\mathrm{K}$，$q=2.26\\ \\mathrm{MJ/kg}$，$\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$，$M=18\\ \\mathrm{g/mol}$）について $p_i$ を atm 単位で求めよ．外圧に逆らう仕事を無視した場合の値 $\\rho q$ と比べよ．\n\\item (2) の結果から水の定数 $a$ を $\\mathrm{atm\\,L^2/mol^2}$ 単位で推定し，臨界定数から得られる値 $5.47\\ \\mathrm{atm\\,L^2/mol^2}$ と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_i=\\rho\\left(q-\\dfrac{RT}{M}\\right)$　(2) $\\approx2.1\\times10^4\\ \\mathrm{atm}$（$\\rho q\\approx2.2\\times10^4\\ \\mathrm{atm}$ より約8%小さい）　(3) $a\\approx6.7\\ \\mathrm{atm\\,L^2/mol^2}$，臨界定数による値より約2割大きいが同程度．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 1 mol を蒸発させるとき，引力に逆らう仕事は\n\\[ \\int_{V_l}^{V_g}\\frac{a}{V^2}\\,dV=a\\left(\\frac1{V_l}-\\frac1{V_g}\\right)\\approx\\frac{a}{V_l}, \\]\n外圧に逆らう仕事は $p(V_g-V_l)\\approx pV_g=RT$．よってモル潜熱 $Mq=a/V_l+RT$．$V_l=M/\\rho$ を用いると\n\\[ p_i=\\frac{a}{V_l^2}=\\frac{Mq-RT}{V_l}=\\rho\\left(q-\\frac{RT}{M}\\right). \\]\n(2) $RT/M=8.31\\times373/0.018\\approx1.72\\times10^5\\ \\mathrm{J/kg}$，$q-RT/M\\approx2.09\\times10^6\\ \\mathrm{J/kg}$．\n\\[ p_i\\approx10^3\\times2.09\\times10^6=2.09\\times10^9\\ \\mathrm{Pa}\\approx2.1\\times10^4\\ \\mathrm{atm}. \\]\n外部仕事を無視すると $\\rho q=2.26\\times10^9\\ \\mathrm{Pa}\\approx2.2\\times10^4\\ \\mathrm{atm}$ で，差は $RT/(Mq)\\approx8\\%$．\n(3) $a=p_iV_l^2=2.09\\times10^9\\times(1.8\\times10^{-5})^2\\approx0.68\\ \\mathrm{Pa\\,m^6/mol^2}\\approx6.7\\ \\mathrm{atm\\,L^2/mol^2}$．臨界定数から求めた $5.47$ より約 $20\\%$ 大きいが，全く別の現象（蒸発と臨界点）から同じ桁の値が得られることは，内圧の描像がおおむね正しいことを示す．"
+   }
+  ],
+  "idea": {
+   "tex": "蒸発熱の大部分は内圧 $a/V_l^2$ に逆らう仕事であり，$p_i\\approx\\rho(q-RT/M)$．逆に蒸発熱から定数 $a$ を見積もれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $p_i$：ρ (q -((R T)/(M)))\n(2) [atm]：≈2.1e4\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "内圧",
+   "蒸発熱",
+   "ファン・デル・ワールス方程式",
+   "定数a"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ディーテリチ方程式の臨界定数",
+  "topic": "ディーテリチ方程式の臨界定数",
+  "statement": {
+   "tex": "実在気体の状態方程式の一つに，ディーテリチ（Dieterici）の式\n\\[ p=\\frac{RT}{V-b}\\exp\\!\\left(-\\frac{a}{RTV}\\right) \\]\nがある（$V$ はモル体積，$a,b>0$ は定数）．\n\\begin{enumerate}\n\\item 臨界点は等温線 $p(V)$ の変曲点で，かつ $(\\partial p/\\partial V)_T=0$ となる点である．臨界モル体積 $V_c$，臨界温度 $T_c$，臨界圧力 $p_c$ を $a,b,R$ で表せ．\n\\item 臨界圧縮因子 $Z_c=p_cV_c/(RT_c)$ を求め，ファン・デル・ワールス気体の値と比べよ．実在気体の $Z_c$ はおおむね $0.27\\sim0.29$ である．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V_c=2b$，$T_c=\\dfrac{a}{4Rb}$，$p_c=\\dfrac{a}{4e^2b^2}$　(2) $Z_c=2/e^2\\approx0.271$（ファン・デル・ワールス気体は $3/8=0.375$）．ディーテリチの式のほうが実在気体に近い．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln p=\\ln RT-\\ln(V-b)-\\dfrac{a}{RTV}$．$T$ 一定で $V$ について微分すると\n\\[ \\frac{1}{p}\\frac{\\partial p}{\\partial V}=-\\frac{1}{V-b}+\\frac{a}{RTV^2}\\equiv g(V). \\]\n$\\partial p/\\partial V=0$ は $g=0$．さらに $\\partial^2p/\\partial V^2=p(g'+g^2)$ なので，$g=0$ の点では変曲点条件は $g'=0$：\n\\[ \\frac{1}{(V-b)^2}-\\frac{2a}{RTV^3}=0. \\]\n$g=0$ から $RT=a(V-b)/V^2$．これを代入すると $\\dfrac{1}{(V-b)^2}=\\dfrac{2}{V(V-b)}$，すなわち $V=2(V-b)$，$V_c=2b$．すると $RT_c=a\\cdot b/(4b^2)=a/(4b)$ より $T_c=a/(4Rb)$．\n\\[ p_c=\\frac{RT_c}{V_c-b}\\exp\\!\\left(-\\frac{a}{RT_cV_c}\\right)=\\frac{a}{4b^2}\\exp\\!\\left(-\\frac{a}{(a/4b)\\cdot2b}\\right)=\\frac{a}{4e^2b^2}. \\]\n(2) $Z_c=\\dfrac{p_cV_c}{RT_c}=\\dfrac{a/(4e^2b^2)\\cdot2b}{a/(4b)}=\\dfrac{2}{e^2}\\approx0.271$．ファン・デル・ワールス気体の $Z_c=3/8=0.375$ よりずっと実測値に近い．"
+   }
+  ],
+  "idea": {
+   "tex": "臨界点は $\\partial p/\\partial V=\\partial^2p/\\partial V^2=0$．対数微分を使うと指数型の状態方程式でも簡単に解け，$Z_c=2/e^2$ がファン・デル・ワールスの $3/8$ より現実的になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $V_c$：2 b ; $T_c$：((a)/(4 R b)) ; $p_c$：((a)/(4 e ^(2) b ^(2)))\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "臨界点",
+   "ディーテリチ方程式",
+   "臨界圧縮因子",
+   "状態方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "臨界定数の選び方とファン・デル・ワールス定数",
+  "topic": "臨界定数の選び方とファン・デル・ワールス定数",
+  "statement": {
+   "tex": "二酸化炭素の臨界点の実測値は $T_c=304\\ \\mathrm{K}$，$p_c=73\\ \\mathrm{atm}$，$V_c=94\\ \\mathrm{cm^3/mol}$ である．ファン・デル・ワールス方程式では 3 つの臨界定数は 2 つの定数 $a,b$ で決まるので，どの 2 つを使うかで $a,b$ が変わる．\n\\begin{enumerate}\n\\item $T_c,p_c$ から $a,b$ を求めよ（$a$ は $\\mathrm{atm\\,L^2/mol^2}$，$b$ は $\\mathrm{cm^3/mol}$ 単位）．このとき予言される $V_c$ はいくらか．\n\\item $T_c,V_c$ から $a,b$ を求め，このとき予言される $p_c$ を求めよ．\n\\item 実測値から $Z_c=p_cV_c/(RT_c)$ を計算し，(1)(2) で予言値が実測とずれる原因を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a=\\dfrac{27R^2T_c^2}{64p_c}\\approx3.6\\ \\mathrm{atm\\,L^2/mol^2}$，$b=\\dfrac{RT_c}{8p_c}\\approx43\\ \\mathrm{cm^3/mol}$，$V_c=3b\\approx128\\ \\mathrm{cm^3/mol}$　(2) $b=V_c/3\\approx31\\ \\mathrm{cm^3/mol}$，$a=\\tfrac98RT_cV_c\\approx0.27\\ \\mathrm{Pa\\,m^6/mol^2}=2.6\\ \\mathrm{atm\\,L^2/mol^2}$，$p_c\\approx100\\ \\mathrm{atm}$　(3) $Z_c\\approx0.275$．ファン・デル・ワールス方程式では $Z_c=3/8$ に固定されるため．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "ファン・デル・ワールス気体では $V_c=3b$，$p_c=a/(27b^2)$，$T_c=8a/(27Rb)$．\n(1) $T_c,p_c$ から $b=RT_c/(8p_c)$，$a=27R^2T_c^2/(64p_c)$．$R=0.08206\\ \\mathrm{atm\\,L/(mol\\,K)}$ として\n\\[ b=\\frac{0.08206\\times304}{8\\times73}\\approx0.0427\\ \\mathrm{L/mol},\\quad a=\\frac{27\\times(0.08206\\times304)^2}{64\\times73}\\approx3.6\\ \\mathrm{atm\\,L^2/mol^2}. \\]\n予言される $V_c=3b\\approx128\\ \\mathrm{cm^3/mol}$ で，実測 $94$ より約 $36\\%$ 大きい．\n(2) $b=V_c/3=31.3\\ \\mathrm{cm^3/mol}$．$T_c=8a/(27Rb)$ より $a=\\tfrac{27}{8}RT_cb=\\tfrac98RT_cV_c=\\tfrac98\\times8.31\\times304\\times9.4\\times10^{-5}\\approx0.267\\ \\mathrm{Pa\\,m^6/mol^2}\\approx2.6\\ \\mathrm{atm\\,L^2/mol^2}$．\n\\[ p_c=\\frac{a}{27b^2}=\\frac{3RT_c}{8V_c}=\\frac{3\\times8.31\\times304}{8\\times9.4\\times10^{-5}}\\approx1.01\\times10^7\\ \\mathrm{Pa}\\approx100\\ \\mathrm{atm}. \\]\n(3) $Z_c=\\dfrac{73\\times101325\\times9.4\\times10^{-5}}{8.31\\times304}\\approx0.275$．ファン・デル・ワールス方程式は $Z_c=3/8=0.375$ を必然的に与えるので，3つの臨界定数を同時に再現できない．2つを合わせると残り1つが $0.375/0.275\\approx1.36$ 倍ずれる（(1) では $V_c$ が，(2) では $p_c$ が約 1.36 倍大きくなる）．"
+   }
+  ],
+  "idea": {
+   "tex": "ファン・デル・ワールス方程式は $Z_c=3/8$ を強制するので，臨界定数のどの2つで $a,b$ を決めるかで残りの予言値が $Z_c^{\\rm exp}$ との比だけずれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $a$ [atm L²/mol²]：≈3.6 ; $b$ [cm³/mol]：≈43 ; $V_c$ [cm³/mol]：≈128\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "臨界定数",
+   "ファン・デル・ワールス定数",
+   "臨界圧縮因子",
+   "二酸化炭素"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "換算ファン・デル・ワールス方程式とボイル温度",
+  "topic": "換算ファン・デル・ワールス方程式とボイル温度",
+  "statement": {
+   "tex": "ファン・デル・ワールス方程式 $(p+a/V^2)(V-b)=RT$（$V$ はモル体積）について，臨界値を単位とした換算変数 $\\pi=p/p_c$，$\\nu=V/V_c$，$\\tau=T/T_c$ を導入する．\n\\begin{enumerate}\n\\item 換算変数で書いた状態方程式を求めよ．\n\\item 換算温度 $\\tau=3/2$ の等温線上で，換算圧力が $\\pi=12$ となる換算体積 $\\nu$ をすべて求めよ．\n\\item 希薄極限で $pV=RT\\left(1+B(T)/V+\\cdots\\right)$ と展開したとき $B(T_B)=0$ となる温度（ボイル温度）$T_B$ を $T_c$ で表し，$T_c=304\\ \\mathrm{K}$ の二酸化炭素について数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left(\\pi+\\dfrac{3}{\\nu^2}\\right)(3\\nu-1)=8\\tau$　(2) $\\nu=1/2$ のみ　(3) $T_B=\\dfrac{27}{8}T_c\\approx1.03\\times10^3\\ \\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $V_c=3b$，$p_c=a/(27b^2)$，$RT_c=8a/(27b)$ を代入：$p=\\pi a/(27b^2)$，$V=3b\\nu$ とすると\n\\[ \\left(\\frac{\\pi a}{27b^2}+\\frac{a}{9b^2\\nu^2}\\right)(3\\nu-1)b=\\frac{8a\\tau}{27b}\\ \\Longrightarrow\\ \\left(\\pi+\\frac{3}{\\nu^2}\\right)(3\\nu-1)=8\\tau. \\]\n(2) $\\tau=3/2$，$\\pi=12$：$(12+3/\\nu^2)(3\\nu-1)=12$．$\\nu^2$ を掛けて整理すると\n\\[ 36\\nu^3-24\\nu^2+9\\nu-3=0\\ \\Longleftrightarrow\\ (2\\nu-1)(18\\nu^2-3\\nu+3)=0. \\]\n2次式の判別式 $9-216<0$ なので実根は $\\nu=1/2$ のみ（$\\tau>1$ では等温線は単調で，解は一意であることとも合う）．\n(3) $p=\\dfrac{RT}{V-b}-\\dfrac{a}{V^2}$ より $\\dfrac{pV}{RT}=\\dfrac{1}{1-b/V}-\\dfrac{a}{RTV}=1+\\left(b-\\dfrac{a}{RT}\\right)\\dfrac1V+\\cdots$．$B(T)=b-a/(RT)=0$ から $T_B=a/(Rb)=\\tfrac{27}{8}T_c$．二酸化炭素では $T_B=3.375\\times304\\approx1.03\\times10^3\\ \\mathrm{K}$．"
+   }
+  ],
+  "idea": {
+   "tex": "換算すると物質定数が消え，対応状態の原理が得られる．臨界点を基準にすると，ボイル温度なども普遍的な倍数 $27/8$ で表される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $T_B$ [K]：≈1.03e3"
+  },
+  "methods": [],
+  "tags": [
+   "換算状態方程式",
+   "対応状態の原理",
+   "ボイル温度",
+   "第2ビリアル係数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "封管実験の充填率と臨界点",
+  "topic": "封管実験の充填率と臨界点",
+  "statement": {
+   "tex": "密封したガラス管に液体の水と水蒸気（空気は含まない）を入れて加熱し，臨界温度に達したときにちょうど臨界状態を通過させたい（液面が管の途中で消える）．水の臨界温度 $T_c=647\\ \\mathrm{K}$，臨界圧力 $p_c=218\\ \\mathrm{atm}$，モル質量 $M=18\\ \\mathrm{g/mol}$，室温の液体の水の密度 $1.00\\ \\mathrm{g/cm^3}$ とし，室温での蒸気の質量は無視する．\n\\begin{enumerate}\n\\item 水をファン・デル・ワールス気体とみなして臨界密度を求め，室温で管の容積の何割を液体の水で満たせばよいか求めよ．\n\\item 水の臨界密度の実測値は $0.322\\ \\mathrm{g/cm^3}$ である．(1) の割合で充填した管を加熱すると，実際には臨界温度に達する前に何が起こるか．理由とともに述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho_c=\\dfrac{8Mp_c}{3RT_c}\\approx0.20\\ \\mathrm{g/cm^3}$，充填率 約 $20\\%$　(2) 平均密度（$0.20$）が実際の臨界密度（$0.32$）より小さいので，加熱とともに液面が下がり，臨界温度より低い温度で液体がすべて蒸発して管は気体で満たされる．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 管の容積は一定なので，管内の物質の平均密度 $\\bar\\rho$ は加熱しても一定である．臨界状態を通るには $\\bar\\rho=\\rho_c$ が必要．ファン・デル・ワールス気体では $p_cV_c=\\tfrac38RT_c$ より\n\\[ \\rho_c=\\frac{M}{V_c}=\\frac{8Mp_c}{3RT_c}=\\frac{8\\times0.018\\times218\\times1.013\\times10^5}{3\\times8.31\\times647}\\approx197\\ \\mathrm{kg/m^3}. \\]\n室温で液体の占める体積分率を $x$ とすると $\\bar\\rho\\approx x\\rho_l$ だから $x=\\rho_c/\\rho_l\\approx0.20$．\n(2) 実際の臨界密度は $0.322\\ \\mathrm{g/cm^3}$ なので $\\bar\\rho=0.20<\\rho_c$．共存曲線上で液相密度は温度とともに減って $\\rho_c$ に，気相密度は増えて $\\rho_c$ に近づく．てこの規則より液相の体積分率は $(\\bar\\rho-\\rho_g)/(\\rho_l-\\rho_g)$ であり，$\\bar\\rho<\\rho_c$ だと，$\\rho_g(T)$ が $\\bar\\rho$ に達する温度（$<T_c$）でこれが 0 になる．すなわち液面は下がり続け，臨界温度に達する前に液体が消えて管全体が蒸気になる．ちょうど臨界現象を見るには実測値に基づき約 $32\\%$ 充填する必要がある．"
+   }
+  ],
+  "idea": {
+   "tex": "封管では平均密度が保存されるので，臨界状態を通るには平均密度＝臨界密度が条件．ファン・デル・ワールスの臨界密度は実測と大きく違い，それで設計すると液体が先に蒸発し切ってしまう．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\rho_c$ [g/cm³]：≈0.20 ; 充填率 [%]：≈20\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "臨界状態",
+   "封管",
+   "臨界密度",
+   "てこの規則",
+   "水"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-048",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "過冷却水の凍結とエントロピー生成",
+  "topic": "過冷却水の凍結とエントロピー生成",
+  "statement": {
+   "tex": "断熱容器の中で，標準大気圧のもと質量 $m=1.00\\ \\mathrm{kg}$ の水が $t=-20\\ ^\\circ\\mathrm{C}$ まで過冷却されている．小さな氷片を入れたところ，水の一部が急速に凍って系は平衡状態に達した．水の比熱 $c=4.19\\ \\mathrm{kJ/(kg\\,K)}$（過冷却状態でも同じとする），氷の融解熱 $q=333\\ \\mathrm{kJ/kg}$ とし，氷片の質量・熱容量は無視する．\n\\begin{enumerate}\n\\item 平衡状態の温度と，凍った水の割合 $x$ を求めよ．\n\\item この過程での系のエントロピー変化を求め，正であることを確かめよ．\n\\item 比熱と融解熱が温度によらないとすると，何 $^\\circ\\mathrm{C}$ まで過冷却された水なら全部が凍るか．この結果は現実的か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0\\ ^\\circ\\mathrm{C}$，$x=c|t|/q\\approx0.25$　(2) $\\Delta S=mc\\ln\\dfrac{T_0}{T_1}-\\dfrac{xmq}{T_0}\\approx+12\\ \\mathrm{J/K}$　(3) 約 $-80\\ ^\\circ\\mathrm{C}$．実際には水は約 $-40\\ ^\\circ\\mathrm{C}$ で均質核生成により自発的に凍るうえ，比熱・融解熱の温度依存も大きく，非現実的．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 一部が凍るとき氷と水が共存するので，平衡温度は融点 $T_0=273\\ \\mathrm{K}$．断熱・定圧なのでエンタルピーが保存される．エンタルピーは状態量なので，「過冷却水を $0\\ ^\\circ\\mathrm{C}$ まで温める」→「$0\\ ^\\circ\\mathrm{C}$ で $xm$ を凍らせる」という経路で評価してよく\n\\[ mc\\,(T_0-T_1)=xmq\\ \\Longrightarrow\\ x=\\frac{c|t|}{q}=\\frac{4.19\\times20}{333}\\approx0.25. \\]\n(2) 同じ経路でエントロピー変化を計算する（$T_1=253\\ \\mathrm{K}$）：\n\\[ \\Delta S=mc\\ln\\frac{T_0}{T_1}-\\frac{xmq}{T_0}=4190\\ln\\frac{273.15}{253.15}-\\frac{0.2517\\times333000}{273.15}\\approx318.6-306.8\\approx+12\\ \\mathrm{J/K}. \\]\n断熱系でエントロピーが増えたので，この凍結は不可逆過程である（過冷却状態が準安定であったことに対応）．\n(3) $x=1$ となる条件は $c|t|=q$，$|t|=q/c\\approx79.5\\ \\mathrm{K}$，すなわち約 $-80\\ ^\\circ\\mathrm{C}$．しかし水は $-40\\ ^\\circ\\mathrm{C}$ 付近で均質核生成により必ず凍り，それほどの過冷却は得られない．また過冷却水の比熱は低温で大きく増え，融解熱は低温で小さくなるので，定数とした近似も成り立たない．"
+   }
+  ],
+  "idea": {
+   "tex": "断熱定圧ではエンタルピー保存で凍結量が決まり，状態量であることを使って都合のよい可逆経路でエントロピー生成を評価できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "過冷却",
+   "凍結",
+   "エンタルピー保存",
+   "エントロピー生成",
+   "不可逆過程"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-049",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "沸点の圧力依存から水蒸気の分子量を決める",
+  "topic": "沸点の圧力依存から水蒸気の分子量を決める",
+  "statement": {
+   "tex": "標準大気圧 $p_0=1.013\\times10^5\\ \\mathrm{Pa}$ の付近で，外圧を $\\Delta p=3.2\\ \\mathrm{kPa}$ 下げると水の沸点が $\\Delta T=0.90\\ \\mathrm{K}$ 下がることが測定された．沸点は $T=373\\ \\mathrm{K}$，蒸発熱は $q=2.26\\ \\mathrm{MJ/kg}$ で，液体の比体積は蒸気の比体積に比べて無視できる．\n\\begin{enumerate}\n\\item 飽和水蒸気の比体積 $v'$ を，状態方程式を仮定せずに求めよ．\n\\item 蒸気が理想気体であると仮定すると，(1) の結果から蒸気の「分子」のモル質量 $M_{\\rm vap}$ が決まる．$M_{\\rm vap}$ を求め，水蒸気がどのような分子からなるかを結論せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v'=\\dfrac{q\\,\\Delta T}{T\\,\\Delta p}\\approx1.7\\ \\mathrm{m^3/kg}$　(2) $M_{\\rm vap}=\\dfrac{RT}{p_0v'}=\\dfrac{RT^2\\Delta p}{p_0q\\Delta T}\\approx18\\ \\mathrm{g/mol}$．水蒸気は単量体の $\\mathrm{H_2O}$ 分子からなり，二量体などの会合はほとんどない．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) クラウジウス–クラペイロンの式 $\\dfrac{dp}{dT}=\\dfrac{q}{T(v'-v_l)}\\approx\\dfrac{q}{Tv'}$ を有限差分で近似して\n\\[ v'=\\frac{q\\,\\Delta T}{T\\,\\Delta p}=\\frac{2.26\\times10^6\\times0.90}{373\\times3.2\\times10^3}\\approx1.7\\ \\mathrm{m^3/kg}. \\]\n(2) 理想気体なら $p_0v'=RT/M_{\\rm vap}$．\n\\[ M_{\\rm vap}=\\frac{RT}{p_0v'}=\\frac{8.31\\times373}{1.013\\times10^5\\times1.70}\\approx1.8\\times10^{-2}\\ \\mathrm{kg/mol}. \\]\nこれは $\\mathrm{H_2O}$ のモル質量 $18\\ \\mathrm{g/mol}$ に一致する．もし蒸気中で 2 分子が会合した $(\\mathrm{H_2O})_2$ が主であれば $36\\ \\mathrm{g/mol}$ に近い値が得られるはずで，そうではないので，水は液相では水素結合で強く結びついていても，蒸気では単量体として存在する．（熱量測定と圧力・温度測定だけから分子量が分かる点に注意．）"
+   }
+  ],
+  "idea": {
+   "tex": "クラウジウス–クラペイロンの式は状態方程式なしに蒸気の比体積を与えるので，理想気体則と組み合わせると蒸気分子のモル質量（会合の有無）が分かる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v'$ [m³/kg]：≈1.7\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス-クラペイロンの式",
+   "沸点",
+   "比体積",
+   "分子量",
+   "水蒸気"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-050",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "昇温による飽和蒸気量の増加と倍増温度",
+  "topic": "昇温による飽和蒸気量の増加と倍増温度",
+  "statement": {
+   "tex": "容器に少量の水とその飽和水蒸気だけが封入され，温度は $T_0=373\\ \\mathrm{K}$ である．容器の容積は一定で，加熱しても液体の水は残っているとする．蒸気を理想気体とし，液体の体積は無視，蒸発熱 $q=2.26\\ \\mathrm{MJ/kg}$ は一定，$M=18\\ \\mathrm{g/mol}$ とする．\n\\begin{enumerate}\n\\item 温度を $\\Delta T=1.5\\ \\mathrm{K}$ 上げたとき，蒸気の質量は何 % 増えるか．\n\\item 蒸気の質量が 2 倍になるのは，温度を何 K 上げたときか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\Delta m}{m}=\\left(\\dfrac{qM}{RT_0}-1\\right)\\dfrac{\\Delta T}{T_0}\\approx4.9\\%$　(2) 約 $23\\ \\mathrm{K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "蒸気の質量は $m=\\dfrac{pVM}{RT}$ で，$V$ 一定．飽和蒸気圧は (積分形のクラウジウス–クラペイロンの式) $p=p_0\\exp\\!\\left[\\dfrac{qM}{R}\\left(\\dfrac1{T_0}-\\dfrac1T\\right)\\right]$．\n(1) $\\ln m=\\ln p-\\ln T+\\text{const}$ より $\\dfrac{dm}{m}=\\dfrac{dp}{p}-\\dfrac{dT}{T}=\\left(\\dfrac{qM}{RT}-1\\right)\\dfrac{dT}{T}$．$\\alpha\\equiv\\dfrac{qM}{RT_0}=\\dfrac{2.26\\times10^6\\times0.018}{8.31\\times373}\\approx13.1$ だから\n\\[ \\frac{\\Delta m}{m}\\approx(13.1-1)\\times\\frac{1.5}{373}\\approx0.049=4.9\\%. \\]\n(2) $\\dfrac{m}{m_0}=\\dfrac{T_0}{T}\\exp\\!\\left[\\alpha\\left(1-\\dfrac{T_0}{T}\\right)\\right]=2$，すなわち\n\\[ \\alpha\\left(1-\\frac{T_0}{T}\\right)-\\ln\\frac{T}{T_0}=\\ln2. \\]\n1 次近似では $\\Delta T\\approx T_0\\ln2/(\\alpha-1)\\approx21\\ \\mathrm{K}$．正確に数値で解くと $T\\approx395.7\\ \\mathrm{K}$，$\\Delta T\\approx23\\ \\mathrm{K}$．"
+   }
+  ],
+  "idea": {
+   "tex": "飽和蒸気量は $p/T$ に比例し，$qM/RT\\approx13$ の大きさのため温度に敏感（1 K で約 3%）．大きな変化には積分形を使う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [K]：≈23"
+  },
+  "methods": [],
+  "tags": [
+   "飽和蒸気",
+   "クラウジウス-クラペイロンの式",
+   "蒸気量",
+   "温度依存性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-051",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "蒸気圧曲線からの有効蒸発熱と適用限界",
+  "topic": "蒸気圧曲線からの有効蒸発熱と適用限界",
+  "statement": {
+   "tex": "蒸発熱 $q$ が一定，液体の比体積が無視でき，飽和蒸気が理想気体であると仮定する．物質のモル質量を $M$ とする．\n\\begin{enumerate}\n\\item 温度 $T_1$ で飽和蒸気圧が $p_1$ のとき，飽和蒸気圧 $p(T)$ を求めよ．\n\\item 水の飽和蒸気圧は $20\\ ^\\circ\\mathrm{C}$ で $2.34\\ \\mathrm{kPa}$，$100\\ ^\\circ\\mathrm{C}$ で $101.3\\ \\mathrm{kPa}$ である．(1) の式がこの 2 点を通るように $q$ を決めよ（$M=18\\ \\mathrm{g/mol}$）．また，この式による $50\\ ^\\circ\\mathrm{C}$ の飽和蒸気圧を求め，実測値 $12.3\\ \\mathrm{kPa}$ と比べよ．\n\\item (2) の $q$ を実測の蒸発熱（$20\\ ^\\circ\\mathrm{C}$ で $2.45\\ \\mathrm{MJ/kg}$，$100\\ ^\\circ\\mathrm{C}$ で $2.26\\ \\mathrm{MJ/kg}$）と比べ，(1) の仮定が成り立つ条件を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=p_1\\exp\\!\\left[\\dfrac{qM}{R}\\left(\\dfrac1{T_1}-\\dfrac1T\\right)\\right]$　(2) $q\\approx2.38\\ \\mathrm{MJ/kg}$，$p(50\\ ^\\circ\\mathrm{C})\\approx12.0\\ \\mathrm{kPa}$（実測より約 3% 小さい）　(3) 両者の中間の値（温度範囲の平均的な蒸発熱）になる．仮定は，温度範囲が狭く $q$ の変化が小さいこと，臨界温度より十分低く蒸気が希薄（理想気体）で $v'\\gg v_l$ であることが条件．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dp}{dT}=\\dfrac{q}{T(v'-v_l)}\\approx\\dfrac{q}{Tv'}=\\dfrac{qMp}{RT^2}$．変数分離して $T_1$ から積分すると\n\\[ p=p_1\\exp\\!\\left[\\frac{qM}{R}\\left(\\frac1{T_1}-\\frac1T\\right)\\right]. \\]\n(2) $q=\\dfrac{R\\ln(p_2/p_1)}{M(1/T_1-1/T_2)}=\\dfrac{8.31\\ln(101.3/2.34)}{0.018\\,(1/293.15-1/373.15)}\\approx2.38\\times10^6\\ \\mathrm{J/kg}$．\n$50\\ ^\\circ\\mathrm{C}$：$p=101.3\\exp\\!\\left[\\dfrac{qM}{R}\\left(\\dfrac{1}{373.15}-\\dfrac1{323.15}\\right)\\right]\\approx12.0\\ \\mathrm{kPa}$．実測 $12.3\\ \\mathrm{kPa}$ より約 $3\\%$ 小さい．\n(3) 得られた $q=2.38\\ \\mathrm{MJ/kg}$ は $20\\ ^\\circ\\mathrm{C}$ と $100\\ ^\\circ\\mathrm{C}$ の実測値の中間で，区間平均の蒸発熱とみなせる．実際の $q$ は温度上昇とともに減り（臨界点で 0），その結果 $\\ln p$ 対 $1/T$ は厳密には直線にならず，中間点でずれが生じる．(1) の仮定が許されるのは，(i) $q$ がほぼ一定とみなせる狭い温度範囲，(ii) 臨界温度より十分低く，蒸気密度が小さく理想気体とみなせて $v'\\gg v_l$ が成り立つ場合である．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\ln p$ は $1/T$ に対しほぼ直線で，傾きから蒸発熱が得られる．2 点から決めた $q$ は区間平均で，$q$ の温度依存が中間点での誤差を生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $q$ [MJ/kg]：≈2.38 ; $p(50\\ ^\\circ\\mathrm{C})$ [kPa]：≈12.0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス-クラペイロンの式",
+   "蒸気圧曲線",
+   "蒸発熱",
+   "適用範囲"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-052",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "断熱圧縮で氷を融かす：必要圧力と温度",
+  "topic": "断熱圧縮で氷を融かす：必要圧力と温度",
+  "statement": {
+   "tex": "$0\\ ^\\circ\\mathrm{C}$，$1\\ \\mathrm{atm}$ の氷を断熱的にゆっくり圧縮する．融点は圧力に対して線形に下がるとし，水の比体積は氷より $\\Delta v=0.090\\ \\mathrm{cm^3/g}$ 小さい．氷の比熱 $c=2.09\\ \\mathrm{kJ/(kg\\,K)}$，融解熱 $q=333\\ \\mathrm{kJ/kg}$，$T=273\\ \\mathrm{K}$ とし，圧縮仕事による内部エネルギー変化は融解熱に比べ無視できるとする．\n\\begin{enumerate}\n\\item 圧力 $p$ まで圧縮したときに融ける氷の割合 $x$ を $p$ の関数として求めよ（$x\\ll1$）．\n\\item 氷の $5.0\\%$ を融かすのに必要な圧力と，そのときの系の温度を求めよ．\n\\item 氷の $10\\%$ を融かそうとすると必要な圧力は約 $2\\times10^3\\ \\mathrm{atm}$ となる．この見積もりの信頼性について注意すべき点を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=\\dfrac{cT\\Delta v}{q^2}\\,p$　(2) 約 $1.1\\times10^3\\ \\mathrm{atm}$，約 $-8\\ ^\\circ\\mathrm{C}$　(3) 融点の線形近似が怪しくなるうえ，約 $2\\times10^3\\ \\mathrm{atm}$ 付近では氷 I が別の結晶相（氷 III など）に転移するので，この単純な計算は使えない．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 氷と水が共存する限り，系の温度は圧力 $p$ での融点 $T+\\Delta T$，$\\Delta T=-\\dfrac{T\\Delta v}{q}p$ に等しい（クラウジウス–クラペイロンの式，$p\\gg1\\ \\mathrm{atm}$）．断熱なので，融解に必要な熱 $xmq$ は系が $|\\Delta T|$ だけ冷えることで供給される（融けた少量の水の熱容量の違いは $x\\ll1$ で無視）：\n\\[ xmq=mc|\\Delta T|=mc\\frac{T\\Delta v}{q}p\\ \\Longrightarrow\\ x=\\frac{cT\\Delta v}{q^2}p. \\]\n(2) $p=\\dfrac{xq^2}{cT\\Delta v}=\\dfrac{0.05\\times(3.33\\times10^5)^2}{2.09\\times10^3\\times273\\times9.0\\times10^{-5}}\\approx1.08\\times10^8\\ \\mathrm{Pa}\\approx1.1\\times10^3\\ \\mathrm{atm}$．温度は $\\Delta T=-\\dfrac{T\\Delta v}{q}p\\approx-8.0\\ \\mathrm{K}$，すなわち約 $-8\\ ^\\circ\\mathrm{C}$．（検算：$x=c|\\Delta T|/q=2.09\\times8.0/333\\approx0.050$．）\n(3) $x\\propto p$ なので $10\\%$ には約 $2.1\\times10^3\\ \\mathrm{atm}$ が必要で，そのとき融点は約 $-16\\ ^\\circ\\mathrm{C}$．これほどの圧力では $\\Delta v,q$ の圧力・温度依存が無視できず線形近似の精度が落ちる．さらに約 $2\\times10^3\\ \\mathrm{atm}$，$-20\\ ^\\circ\\mathrm{C}$ 付近は氷 I・氷 III・水の三重点の近くで，氷 I 以外の相が現れるので，このモデルは適用限界を超える．"
+   }
+  ],
+  "idea": {
+   "tex": "断熱圧縮では融点降下分だけ系が冷え，その顕熱で融解熱がまかなわれる．融ける割合は圧力に比例し $x=cT\\Delta v\\,p/q^2$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $x$：((c T Δ v)/(q ^(2))) p\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス-クラペイロンの式",
+   "氷",
+   "圧力融解",
+   "断熱圧縮",
+   "高圧氷"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-053",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "三重点・潜熱と融解曲線の傾き",
+  "topic": "三重点・潜熱と融解曲線の傾き",
+  "statement": {
+   "tex": "三重点付近の二酸化炭素の飽和蒸気圧 $p$（atm）は温度 $T$（K）に対し $\\log_{10}p=\\alpha-\\beta/T$ と表され，昇華（固体–気体）では $\\alpha=9.05$，$\\beta=1.80\\times10^3\\ \\mathrm{K}$，蒸発（液体–気体）では $\\alpha=6.78$，$\\beta=1.31\\times10^3\\ \\mathrm{K}$ である．$M=44\\ \\mathrm{g/mol}$ とし，蒸気は理想気体，凝縮相の比体積は蒸気に比べ無視できるとする．\n\\begin{enumerate}\n\\item 三重点の温度と圧力を求めよ．\n\\item 三重点付近の昇華熱・蒸発熱・融解熱（比潜熱）を求めよ．\n\\item 三重点での固体と液体の密度をそれぞれ $1.51\\ \\mathrm{g/cm^3}$，$1.18\\ \\mathrm{g/cm^3}$ として，融解曲線の傾き $dp/dT$ を atm/K 単位で求めよ．室温（約 $1\\ \\mathrm{atm}$）でドライアイスが融けずに昇華する理由を (1) と合わせて説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_{\\rm tr}\\approx216\\ \\mathrm{K}$，$p_{\\rm tr}\\approx5.1\\ \\mathrm{atm}$　(2) 昇華熱 $\\approx0.78$，蒸発熱 $\\approx0.57$，融解熱 $\\approx0.21\\ \\mathrm{MJ/kg}$　(3) $dp/dT\\approx+53\\ \\mathrm{atm/K}$．三重点圧力が 1 atm より高く，液相は 5.1 atm 以上でしか存在しないため，1 atm では固体から直接気体になる．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 三重点では 2 本の曲線が交わる：$9.05-1800/T=6.78-1310/T$ より $T=490/2.27\\approx216\\ \\mathrm{K}$．$\\log_{10}p=9.05-1800/215.9\\approx0.713$，$p\\approx5.1\\ \\mathrm{atm}$．\n(2) 仮定のもとでクラウジウス–クラペイロンの式は $\\dfrac{d\\ln p}{dT}=\\dfrac{qM}{RT^2}$．$\\ln p=\\ln10\\,(\\alpha-\\beta/T)$ より $\\dfrac{d\\ln p}{dT}=\\dfrac{\\beta\\ln10}{T^2}$，よって $q=\\dfrac{\\beta R\\ln10}{M}$．\n昇華熱 $q_s=\\dfrac{1800\\times8.31\\times2.303}{0.044}\\approx7.8\\times10^5\\ \\mathrm{J/kg}$，蒸発熱 $q_v=\\dfrac{1310\\times8.31\\times2.303}{0.044}\\approx5.7\\times10^5\\ \\mathrm{J/kg}$．三重点のまわりでエンタルピーの閉じた循環（固→液→気→固）を考えると融解熱 $q_m=q_s-q_v\\approx2.1\\times10^5\\ \\mathrm{J/kg}$．\n(3) $\\Delta v=v_l-v_s=\\dfrac1{1180}-\\dfrac1{1510}\\approx1.85\\times10^{-4}\\ \\mathrm{m^3/kg}$．\n\\[ \\frac{dp}{dT}=\\frac{q_m}{T\\Delta v}=\\frac{2.13\\times10^5}{216\\times1.85\\times10^{-4}}\\approx5.3\\times10^6\\ \\mathrm{Pa/K}\\approx53\\ \\mathrm{atm/K}. \\]\n正で急な傾きなので，融解曲線は三重点（216 K，5.1 atm）からほぼ真上に伸びる．液相が存在できるのは $p>5.1\\ \\mathrm{atm}$ に限られ，1 atm では固相と気相しかないので，ドライアイスは昇華する（1 atm の昇華温度は $\\log_{10}1=9.05-1800/T$ より約 195 K）．"
+   }
+  ],
+  "idea": {
+   "tex": "2 本の蒸気圧曲線の交点が三重点で，傾きから潜熱が得られ，融解熱はその差．融解曲線の傾きも合わせると三重点まわりの相図が描ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $T_{\\rm tr}$ [K]：≈216 ; $p_{\\rm tr}$ [atm]：≈5.1\n(2) 昇華熱：≈0.78 ; 蒸発熱：≈0.57 ; 融解熱 [MJ/kg]：≈0.21\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "三重点",
+   "昇華熱",
+   "融解熱",
+   "相図",
+   "二酸化炭素",
+   "クラウジウス-クラペイロンの式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-054",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "一定温度熱源による加熱・蒸発のエントロピー生成",
+  "topic": "一定温度熱源による加熱・蒸発のエントロピー生成",
+  "statement": {
+   "tex": "質量 $m=1.00\\ \\mathrm{kg}$，温度 $t_1=10\\ ^\\circ\\mathrm{C}$ の水を標準大気圧のもとで加熱し，$100\\ ^\\circ\\mathrm{C}$ ですべて蒸発させる．水の比熱 $c=4.19\\ \\mathrm{kJ/(kg\\,K)}$，蒸発熱 $q=2.26\\ \\mathrm{MJ/kg}$ とする．\n\\begin{enumerate}\n\\item 水（$\\to$水蒸気）のエントロピー変化を求めよ．\n\\item 熱をすべて温度 $100\\ ^\\circ\\mathrm{C}$ の一つの大きな熱源（凝縮する蒸気の浴など）から受け取る場合，熱源のエントロピー変化と，全体として生成されるエントロピーを求めよ．\n\\item 生成エントロピーを 0 に近づけるにはどのように加熱すればよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta S=m\\left(c\\ln\\dfrac{T_2}{T_1}+\\dfrac{q}{T_2}\\right)\\approx7.2\\ \\mathrm{kJ/K}$　(2) 熱源 $\\approx-7.06\\ \\mathrm{kJ/K}$，生成 $\\approx+0.15\\ \\mathrm{kJ/K}$　(3) 水温よりわずかに高い温度の熱源を次々に取り替え，常に温度差を無限小にして加熱する（準静的加熱）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T_1=283\\ \\mathrm{K}$，$T_2=373\\ \\mathrm{K}$．可逆加熱と沸点での可逆蒸発の経路で\n\\[ \\Delta S=mc\\ln\\frac{T_2}{T_1}+\\frac{mq}{T_2}=4190\\ln\\frac{373.15}{283.15}+\\frac{2.26\\times10^6}{373.15}\\approx1157+6048\\approx7.2\\times10^3\\ \\mathrm{J/K}. \\]\n(2) 熱源が与える熱 $Q=mc(T_2-T_1)+mq=3.77\\times10^5+2.26\\times10^6=2.63\\times10^6\\ \\mathrm{J}$．熱源の温度は一定なので $\\Delta S_{\\rm res}=-Q/T_2\\approx-7.06\\times10^3\\ \\mathrm{J/K}$．生成エントロピー\n\\[ \\Delta S_{\\rm gen}=7205-7059\\approx1.5\\times10^2\\ \\mathrm{J/K}>0. \\]\n蒸発の部分は温度差なしに熱を受け取るので可逆で，生成は水温が熱源より低い加熱段階（10→100 °C）だけから生じる：$mc\\left[\\ln\\dfrac{T_2}{T_1}-\\dfrac{T_2-T_1}{T_2}\\right]\\approx146\\ \\mathrm{J/K}$．\n(3) 温度が少しずつ高い多数の熱源に順に接触させ，水と熱源の温度差を常に無限小に保てば，熱源のエントロピー減少は $-\\int\\delta Q/T$ と一致し，生成は 0 に近づく．"
+   }
+  ],
+  "idea": {
+   "tex": "エントロピー変化は状態量なので経路によらないが，生成エントロピーは熱源との温度差で決まり，等温の相転移部分は可逆に行える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エントロピー",
+   "蒸発",
+   "エントロピー生成",
+   "熱源",
+   "不可逆性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-055",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "氷と水の混合：全融解の境目とエントロピー",
+  "topic": "氷と水の混合：全融解の境目とエントロピー",
+  "statement": {
+   "tex": "熱容量の無視できる断熱容器に，温度 $t_2$ の水 $m_2=200\\ \\mathrm{g}$ が入っている．そこへ $0\\ ^\\circ\\mathrm{C}$ の氷 $m_1=50\\ \\mathrm{g}$ を入れて平衡に達するまで待つ．水の比熱 $c=4.19\\ \\mathrm{kJ/(kg\\,K)}$，氷の融解熱 $q=333\\ \\mathrm{kJ/kg}$ とする．\n\\begin{enumerate}\n\\item 氷がちょうどすべて融ける $t_2$ の値 $t^*$ を求めよ．\n\\item $t_2=15\\ ^\\circ\\mathrm{C}$ のとき，系のエントロピー変化を求めよ．\n\\item $t_2=60\\ ^\\circ\\mathrm{C}$ のとき，平衡温度と系のエントロピー変化を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $t^*=\\dfrac{m_1q}{m_2c}\\approx19.9\\ ^\\circ\\mathrm{C}$　(2) $\\Delta S=m_2c\\left(\\ln\\dfrac{T_0}{T_2}+\\dfrac{T_2-T_0}{T_0}\\right)\\approx1.2\\ \\mathrm{J/K}$　(3) 約 $32\\ ^\\circ\\mathrm{C}$，$\\Delta S\\approx11\\ \\mathrm{J/K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$T_0=273.15\\ \\mathrm{K}$ とする．\n(1) 水が $0\\ ^\\circ\\mathrm{C}$ まで冷えて出す熱 $m_2ct_2$ が，氷を全部融かす熱 $m_1q$ に等しい条件：$t^*=\\dfrac{m_1q}{m_2c}=\\dfrac{0.050\\times333000}{0.200\\times4190}\\approx19.9\\ ^\\circ\\mathrm{C}$．\n(2) $t_2<t^*$ なので氷は一部だけ融け，平衡温度は $0\\ ^\\circ\\mathrm{C}$．融ける量は $m_2c(T_2-T_0)/q$ で，そのエントロピーは $m_2c(T_2-T_0)/T_0$．\n\\[ \\Delta S=m_2c\\ln\\frac{T_0}{T_2}+\\frac{m_2c(T_2-T_0)}{T_0}=838\\left(\\ln\\frac{273.15}{288.15}+\\frac{15}{273.15}\\right)\\approx838\\times(-0.05346+0.05491)\\approx1.2\\ \\mathrm{J/K}. \\]\n(3) $t_2>t^*$ なので全部融け，最終温度 $T$ は\n\\[ m_1q+m_1c(T-T_0)=m_2c(T_2-T)\\ \\Longrightarrow\\ T=\\frac{m_2cT_2+m_1cT_0-m_1q}{(m_1+m_2)c}\\approx305.3\\ \\mathrm{K}\\ (32.1\\ ^\\circ\\mathrm{C}). \\]\n\\[ \\Delta S=\\frac{m_1q}{T_0}+m_1c\\ln\\frac{T}{T_0}+m_2c\\ln\\frac{T}{T_2}\\approx60.96+23.31-73.31\\approx11\\ \\mathrm{J/K}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "氷が全部融けるかどうかの境目 $t^*=m_1q/(m_2c)$ で場合分けし，部分融解なら最終温度は融点に固定される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エントロピー",
+   "融解",
+   "混合",
+   "熱平衡",
+   "場合分け"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-056",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "凝固熱の放出と可逆機関による仕事の回収",
+  "topic": "凝固熱の放出と可逆機関による仕事の回収",
+  "statement": {
+   "tex": "融点 $T_2=600\\ \\mathrm{K}$ の液体の鉛 $m=5.0\\ \\mathrm{g}$ と，$T_1=273\\ \\mathrm{K}$ の大量の氷（氷水）がある．鉛の融解熱を $q=22.5\\ \\mathrm{J/g}$，固体の鉛の比熱を $c=0.125\\ \\mathrm{J/(g\\cdot K)}$，氷の融解熱を $L=334\\ \\mathrm{J/g}$ とし，氷の温度は常に $T_1$ に保たれるとする．\n\\begin{enumerate}\n\\item 液体の鉛を直接氷の中に注いで熱平衡に達するまでに，鉛と氷からなる系のエントロピー増加 $\\Delta S$ と，融ける氷の質量 $m_1$ を求めよ．\n\\item 直接接触させる代わりに，鉛を高温熱源，氷を低温熱源として可逆熱機関を動かし，鉛が $T_1$ の固体になるまで運転する．取り出せる仕事 $W$ と，融ける氷の質量 $m_2$ を求めよ．\n\\item $W$ と (1) の $\\Delta S$ の間に成り立つ簡単な関係を示し，その意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta S\\approx0.48\\ \\mathrm{J/K}$，$m_1\\approx0.95\\ \\mathrm{g}$　(2) $W\\approx131\\ \\mathrm{J}$，$m_2\\approx0.56\\ \\mathrm{g}$　(3) $W=T_1\\Delta S$（直接接触で失われる仕事）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 鉛が失う熱は $Q=mq+mc(T_2-T_1)=112.5+204.4=316.9\\ \\mathrm{J}$．鉛のエントロピー変化は凝固（$T_2$ 一定）と冷却の和で\n\\[\n\\Delta S_{\\rm Pb}=-\\frac{mq}{T_2}-mc\\ln\\frac{T_2}{T_1}=-0.1875-0.4920=-0.680\\ \\mathrm{J/K}.\n\\]\n氷は温度 $T_1$ で熱 $Q$ を受け取るので $\\Delta S_{\\rm ice}=Q/T_1=1.161\\ \\mathrm{J/K}$．よって\n\\[\n\\Delta S=\\frac{Q}{T_1}-\\frac{mq}{T_2}-mc\\ln\\frac{T_2}{T_1}\\approx0.48\\ \\mathrm{J/K}.\n\\]\n融ける氷は $m_1=Q/L=0.95\\ \\mathrm{g}$．\n\n(2) 可逆機関では全系のエントロピーが変わらないので，氷が受け取る熱 $Q'$ は $Q'/T_1=-\\Delta S_{\\rm Pb}$ を満たす：$Q'=T_1|\\Delta S_{\\rm Pb}|=185.5\\ \\mathrm{J}$．エネルギー保存から\n\\[\nW=Q-Q'=Q-T_1\\left(\\frac{mq}{T_2}+mc\\ln\\frac{T_2}{T_1}\\right)\\approx131\\ \\mathrm{J},\n\\]\n融ける氷は $m_2=Q'/L=0.56\\ \\mathrm{g}$．\n\n(3) (1) の式と比べると $W=Q-T_1(Q/T_1-\\Delta S)=T_1\\Delta S$．直接接触による不可逆過程で生じたエントロピー $\\Delta S$ に低温熱源の温度を掛けたものが，失われた（取り出し損ねた）仕事に等しい（グイ＝ストドラの定理）．"
+   }
+  ],
+  "idea": {
+   "tex": "凝固を伴う冷却のエントロピー変化を計算し，不可逆過程のエントロピー生成と可逆機関で回収できた仕事の関係 $W_{\\rm lost}=T_0\\Delta S$ を確かめる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta S$ [J/K]：≈0.48 ; $m_1$ [g]：≈0.95\n(2) $W$ [J]：≈131 ; $m_2$ [g]：≈0.56\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エントロピー",
+   "凝固熱",
+   "可逆機関",
+   "失われた仕事",
+   "Gouy-Stodola"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-057",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "飽和蒸気の熱容量の符号と断熱膨張での凝結",
+  "topic": "飽和蒸気の熱容量の符号と断熱膨張での凝結",
+  "statement": {
+   "tex": "シリンダー内の水蒸気を，常に飽和状態（凝結寸前）を保つように圧縮・膨張させる．蒸気は理想気体（定圧モル比熱 $C_p=4R$）とみなし，液体の体積は蒸気に比べて無視する．蒸発のモル潜熱 $L$ は温度によらない定数とする．\n\\begin{enumerate}\n\\item クラウジウス＝クラペイロンの式を用いて，この過程（飽和曲線に沿った過程）での蒸気のモル熱容量 $C_{\\rm s}$ を $T$ の関数として求めよ．\n\\item $L=40.7\\ \\mathrm{kJ/mol}$ として $T=373\\ \\mathrm{K}$ での $C_{\\rm s}$ を求めよ．また，このモデルで $C_{\\rm s}=0$ となる温度 $T^*$ を求めよ．\n\\item $T<T^*$ のとき，飽和水蒸気を断熱的に（可逆的に）膨張させると，蒸気は過飽和になる（凝結が起こりうる）か，不飽和になるか．理由とともに答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $C_{\\rm s}=C_p-\\dfrac{L}{T}$　(2) $C_{\\rm s}\\approx-76\\ \\mathrm{J/(mol\\cdot K)}$，$T^*=L/C_p\\approx1.2\\times10^3\\ \\mathrm{K}$　(3) 過飽和になる（凝結する）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 1 mol について $\\delta Q=C_p\\,dT-V\\,dp$（理想気体の $dH=C_pdT$ より）．飽和曲線上ではクラウジウス＝クラペイロンの式 $\\dfrac{dp}{dT}=\\dfrac{L}{TV}$（液体の体積を無視）が成り立つので\n\\[\n\\delta Q=C_pdT-V\\frac{L}{TV}dT=\\left(C_p-\\frac{L}{T}\\right)dT,\\qquad C_{\\rm s}=C_p-\\frac{L}{T}.\n\\]\n\n(2) $C_p=4R=33.3\\ \\mathrm{J/(mol\\cdot K)}$，$L/T=40.7\\times10^3/373=109.1$ より $C_{\\rm s}\\approx-76\\ \\mathrm{J/(mol\\cdot K)}$．$C_{\\rm s}=0$ は $T^*=L/C_p=1.2\\times10^3\\ \\mathrm{K}$（実際には臨界点より上で $L$ 一定の仮定は成り立たないので，水では通常の温度範囲で常に $C_{\\rm s}<0$ と考えてよい）．\n\n(3) $C_{\\rm s}<0$ とは，飽和を保ったまま温度を下げる（膨張する）には熱を加えなければならないことを意味する．断熱膨張では熱が加わらないので，飽和曲線に沿う場合より温度が余分に下がる．同じ圧力で比べると温度が飽和温度より低い，すなわち蒸気圧が飽和蒸気圧を超える状態になり，蒸気は過飽和になって凝結が起こりうる（雲の生成の原理）．\n\n式で確かめると，断熱線では $C_pdT=V dp$ より $\\left(\\dfrac{dp}{dT}\\right)_{\\rm ad}=\\dfrac{C_p p}{RT}$，飽和曲線では $\\dfrac{dp}{dT}=\\dfrac{Lp}{RT^2}$．$T<L/C_p$ なら飽和曲線の方が急なので，温度を下げたとき飽和蒸気圧の方が速く下がり，実際の圧力が飽和蒸気圧を上回る．"
+   }
+  ],
+  "idea": {
+   "tex": "飽和曲線に沿う熱容量は $C_p-L/T$ で負になりうる．その符号が，断熱膨張で蒸気が過飽和になるかどうかを決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "飽和蒸気",
+   "クラウジウス・クラペイロン",
+   "負の熱容量",
+   "断熱膨張",
+   "過飽和"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-058",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 25,
+  "theme": "蒸気圧データからの蒸発熱推定と非理想性",
+  "topic": "蒸気圧データからの蒸発熱推定と非理想性",
+  "statement": {
+   "tex": "水の飽和蒸気圧は 95.0℃ で $84.55$ kPa，105.0℃ で $120.82$ kPa である．また 100.0℃ における飽和水蒸気の比体積は $v_g=1.673\\ \\mathrm{m^3/kg}$，水の比体積は $v_l=1.04\\times10^{-3}\\ \\mathrm{m^3/kg}$ である（$R=8.314\\ \\mathrm{J\\,mol^{-1}K^{-1}}$，水のモル質量 $M=18.015$ g/mol）．\n\\begin{enumerate}\n\\item 中心差分で $dP/dT$ を見積もり，クラペイロンの式から 100℃ での蒸発熱 $L$（J/kg）を求めよ．\n\\item 蒸気を理想気体，液体の体積を無視し，$L$ を一定として積分したクラウジウス・クラペイロンの式を二つの蒸気圧データに当てはめて $L$ を求めよ．\n\\item (1) と (2) の違いの主因を，100℃・1 atm（$101.325$ kPa）における水蒸気の圧縮因子 $Z=Pv_gM/(RT)$ を計算して説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L\\approx2.26\\times10^6$ J/kg　(2) $L\\approx2.29\\times10^6$ J/kg　(3) $Z\\approx0.984$．理想気体近似は $v_g$ を約 1.6% 過大評価し $L$ も同程度大きく出る"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $dP/dT\\approx(120.82-84.55)\\ \\mathrm{kPa}/10\\ \\mathrm K=3.627\\times10^3$ Pa/K．\n\\[ L=T(v_g-v_l)\\frac{dP}{dT}=373.15\\times(1.673-0.00104)\\times3627\\approx2.26\\times10^6\\ \\mathrm{J/kg}. \\]\n\n(2) $v_g\\approx RT/(MP)$，$v_l\\approx0$ とすると $\\dfrac{d\\ln P}{dT}=\\dfrac{ML}{RT^2}$．積分して\n\\[ \\ln\\frac{P_2}{P_1}=\\frac{ML}{R}\\left(\\frac1{T_1}-\\frac1{T_2}\\right) \\Rightarrow L=\\frac{RT_1T_2}{M(T_2-T_1)}\\ln\\frac{P_2}{P_1}. \\]\n$T_1=368.15$ K，$T_2=378.15$ K，$\\ln(120.82/84.55)=0.357$ を代入して $L\\approx2.29\\times10^6$ J/kg．\n\n(3) $Z=\\dfrac{101325\\times1.673\\times0.018015}{8.314\\times373.15}\\approx0.984$．実在の水蒸気は分子間引力のため理想気体より約 1.6% 体積が小さい．(2) は $v_g=RT/(MP)$ と置いたことで $v_g$ を過大に見積もり，$L$ も約 1.4% 大きく出る（(1)/(2) $\\approx0.987\\approx Z$）．実測の蒸発熱 $2.257\\times10^6$ J/kg に近いのは実測の $v_g$ を用いた (1) である．"
+   }
+  ],
+  "idea": {
+   "tex": "クラペイロンの式は厳密だが，理想気体近似で積分すると蒸気の非理想性（$Z<1$）がそのまま潜熱の誤差になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $L$ [J/kg]：≈2.26e6\n(2) $L$ [J/kg]：≈2.29e6\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス・クラペイロンの式",
+   "蒸発熱",
+   "蒸気圧",
+   "圧縮因子",
+   "数値推定"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-059",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 2,
+  "minutes": 20,
+  "theme": "沸点上昇：線形クラペイロン式の限界",
+  "topic": "沸点上昇：線形クラペイロン式の限界",
+  "statement": {
+   "tex": "100.0℃（373.15 K），1 atm で沸騰している水の圧力を 3 atm に上げる．蒸発熱 $L=2.26\\times10^6$ J/kg，1 atm での水蒸気の比体積 $1.677\\ \\mathrm{m^3/kg}$，水の比体積 $1.0\\times10^{-3}\\ \\mathrm{m^3/kg}$，$R=8.314\\ \\mathrm{J\\,mol^{-1}K^{-1}}$，$M=18.0$ g/mol とする．\n\\begin{enumerate}\n\\item クラペイロンの式を 1 atm での係数のまま線形に用いて沸点の上昇を求めよ．\n\\item 蒸気を理想気体，液体の体積を無視し，$L$ 一定としてクラウジウス・クラペイロンの式を積分して 3 atm での沸点を求めよ（実測は約 133.5℃）．(1) が大きく外れる理由を述べよ．\n\\item 圧力鍋で水を 120℃ で沸騰させるには何 atm 必要か（(2) と同じ近似で）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 約 56 K（156℃）　(2) 約 134℃．蒸気の比体積が圧力に反比例して減るのに，(1) は 1 atm の値で固定しているため　(3) 約 1.95 atm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dT}{dP}=\\dfrac{T(v_g-v_l)}{L}=\\dfrac{373.15\\times1.676}{2.26\\times10^6}\\approx2.77\\times10^{-4}$ K/Pa（約 28 K/atm）．\n$\\Delta P=2\\times1.013\\times10^5$ Pa より $\\Delta T\\approx56$ K．沸点 約 156℃．\n\n(2) $\\dfrac{d\\ln P}{dT}=\\dfrac{ML}{RT^2}$ を積分：\n\\[ \\frac1{T_2}=\\frac1{T_1}-\\frac{R}{ML}\\ln\\frac{P_2}{P_1}=\\frac1{373.15}-\\frac{8.314}{0.0180\\times2.26\\times10^6}\\ln3. \\]\n$\\dfrac{R}{ML}\\approx2.04\\times10^{-4}\\ \\mathrm{K^{-1}}$，$\\ln3=1.099$ で $1/T_2\\approx2.456\\times10^{-3}$，$T_2\\approx407$ K（約 134℃）．\n$v_g\\propto T/P$ は圧力が 3 倍になると約 1/3 に減り，$dT/dP$ も小さくなる．(1) はこれを無視して 1 atm での大きな傾きを 2 atm 分延長したため，上昇を 2 倍近く過大評価した．線形近似は $\\Delta P\\ll P$ のときにしか使えない．\n\n(3) $\\ln\\dfrac{P_2}{P_1}=\\dfrac{ML}{R}\\left(\\dfrac1{373.15}-\\dfrac1{393.15}\\right)\\approx4.89\\times10^3\\times1.363\\times10^{-4}\\approx0.667$，$P_2\\approx1.95$ atm（実測 約 1.96 atm）．"
+   }
+  ],
+  "idea": {
+   "tex": "クラペイロンの傾きは蒸気の比体積に比例し，比体積は圧力に反比例するので，大きな圧力変化では $\\ln P$ と $1/T$ の関係として積分しなければならない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス・クラペイロンの式",
+   "沸点上昇",
+   "圧力鍋",
+   "線形近似の限界",
+   "蒸発熱"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "TD-04-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -483,6 +2664,809 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-060",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 30,
+  "theme": "水と氷の柱：氷が上にくる理由と境界の移動",
+  "topic": "水と氷の柱：氷が上にくる理由と境界の移動",
+  "statement": {
+   "tex": "温度が一様な鉛直の深い柱に水と氷が共存している．氷の密度 $\\rho_s=917\\ \\mathrm{kg/m^3}$，水の密度 $\\rho_l=1000\\ \\mathrm{kg/m^3}$，融解熱 $L=3.34\\times10^5\\ \\mathrm{J/kg}$，温度 $T=273.15\\ \\mathrm{K}$，重力加速度 $g=9.8\\ \\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 境界より上にあるのは氷か水か．化学ポテンシャルの圧力依存性から理由を説明せよ．\n\\item 境界の高さ $h$ の温度変化 $dh/dT$ を $L,\\ T,\\ g,\\ \\rho_s,\\ \\rho_l$ で表せ．\n\\item 柱全体の温度を $0.010\\ \\mathrm{K}$ 上げると，境界はどちら向きにどれだけ動くか（有効数字2桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 氷（上）　(2) $\\dfrac{dh}{dT}=\\dfrac{L}{\\rho_sgT\\left(\\frac1{\\rho_s}-\\frac1{\\rho_l}\\right)}$　(3) 上向きに約 $15\\ \\mathrm{m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 単位質量あたりの化学ポテンシャルは $\\left(\\dfrac{\\partial\\mu}{\\partial P}\\right)_T=v=\\dfrac1\\rho$．圧力が上がると比体積の小さい相（密度の大きい相）の方が $\\mu$ が小さくなり安定になる．柱の下ほど圧力が高いので，下に密度の大きい水，上に\\textbf{氷}がくる．ふつうの物質（固体の方が重い）とは逆である．\n\n(2) 境界では2相の $\\mu$ が等しく，その圧力 $P$ と温度はクラウジウス＝クラペイロンの式\n\\[\n\\frac{dP}{dT}=\\frac{L}{T(v_l-v_s)},\\qquad v_l-v_s=\\frac1{\\rho_l}-\\frac1{\\rho_s}<0\n\\]\nをみたす．境界の圧力は上にある氷の重さで決まるので，境界が $dh$ 上がると $dP=-\\rho_sg\\,dh$．よって\n\\[\n\\boldsymbol{\\frac{dh}{dT}=-\\frac{1}{\\rho_sg}\\frac{dP}{dT}=\\frac{L}{\\rho_sgT\\left(\\frac1{\\rho_s}-\\frac1{\\rho_l}\\right)}}>0 .\n\\]\n\n(3) $\\dfrac1{\\rho_s}-\\dfrac1{\\rho_l}=9.05\\times10^{-5}\\ \\mathrm{m^3/kg}$，$\\dfrac{dP}{dT}=-1.35\\times10^7\\ \\mathrm{Pa/K}$，\n\\[\n\\frac{dh}{dT}=\\frac{1.35\\times10^7}{917\\times9.8}\\approx1.5\\times10^3\\ \\mathrm{m/K}.\n\\]\n$0.010\\ \\mathrm{K}$ では境界が\\textbf{上向きに約 $15\\ \\mathrm{m}$} 動く（下の氷が融ける）．温度を上げると融点が圧力の低い側でしか保てなくなる，と考えてもよい．逆に境界の高さの測定から，ごくわずかな温度差を読み取れる．"
+   }
+  ],
+  "idea": {
+   "tex": "重力のある柱では高さが圧力を決めるので，融解曲線 $P(T)$ がそのまま境界の高さ $h(T)$ に読みかえられる．水では $v_l<v_s$ のため $dP/dT<0$ で，氷が上にきて，温度を上げると境界が上がる．原題は一般の物質で $\\Delta\\rho$ を $dh/dT$ から求める問題で，捻りでは水にして向きと大きさを問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 上向きに [m]：≈15"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス＝クラペイロン",
+   "圧力",
+   "融解曲線",
+   "水の異常"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-061",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 30,
+  "theme": "超伝導の臨界磁場曲線から潜熱の最大と比熱の交差を求める",
+  "topic": "超伝導の臨界磁場曲線から潜熱の最大と比熱の交差を求める",
+  "statement": {
+   "tex": "第1種超伝導体の臨界磁場が $H_c(T)=H_0\\left[1-\\left(\\dfrac{T}{T_c}\\right)^2\\right]$ で与えられる．単位体積あたりで考え，常伝導相の磁化は無視する．超伝導相と常伝導相のギブズ自由エネルギーの差は $g_n-g_s=\\dfrac12\\mu_0H_c^2$ である．$t=T/T_c$ とする．\n\\begin{enumerate}\n\\item $H_c$ の $T$ の1次の項がないことは，熱力学のどの法則から要請されるか．\n\\item 臨界磁場の曲線に沿って常伝導相へ転移するときの潜熱 $\\ell(T)$（単位体積あたり）を求め，それが最大になる温度と最大値を求めよ．\n\\item 磁場 $0$ での比熱の差 $C_s-C_n$ を $t$ の関数として求めよ．$T=T_c$ での比熱の跳びと，$C_s=C_n$ となる温度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 第3法則（$T\\to0$ で $s_n-s_s\\to0$）　(2) $\\ell=2\\mu_0H_0^2t^2(1-t^2)$，$t=\\dfrac1{\\sqrt2}$ で最大 $\\dfrac12\\mu_0H_0^2$　(3) $C_s-C_n=\\dfrac{2\\mu_0H_0^2}{T_c}t(3t^2-1)$，跳び $\\dfrac{4\\mu_0H_0^2}{T_c}$，$t=\\dfrac1{\\sqrt3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$s=-\\partial g/\\partial T$ より\n\\[\ns_n-s_s=-\\mu_0H_c\\frac{dH_c}{dT}.\n\\]\n\n(1) $H_c=H_0+aT+\\cdots$ なら $T\\to0$ で $s_n-s_s\\to-\\mu_0H_0a\\ne0$ となり，エントロピーの差が $0$ に近づくという\\textbf{第3法則}（ネルンストの定理）に反する．よって $a=0$．\n\n(2) $\\ell=T(s_n-s_s)=-\\mu_0TH_cH_c'$．$H_c'=-\\dfrac{2H_0T}{T_c^2}$ を代入して\n\\[\n\\boldsymbol{\\ell=2\\mu_0H_0^2t^2(1-t^2)}.\n\\]\n$t^2=u$ とすると $u(1-u)$ は $u=\\frac12$ で最大なので，$\\boldsymbol{t=1/\\sqrt2}$ で $\\boldsymbol{\\ell_{\\max}=\\frac12\\mu_0H_0^2}$．$T\\to0$ と $T\\to T_c$ ではどちらも潜熱が $0$ になる（$T_c$ では2次転移）．\n\n(3) $C=T\\dfrac{ds}{dT}$ より\n\\[\nC_s-C_n=T\\frac{d}{dT}\\left(\\mu_0H_cH_c'\\right)=\\mu_0T\\left(H_c'^2+H_cH_c''\\right).\n\\]\n$H_c''=-\\dfrac{2H_0}{T_c^2}$ を使うと $H_c'^2+H_cH_c''=\\dfrac{2H_0^2}{T_c^2}(3t^2-1)$ なので\n\\[\n\\boldsymbol{C_s-C_n=\\frac{2\\mu_0H_0^2}{T_c}\\,t\\,(3t^2-1)}.\n\\]\n$t=1$ で $\\boldsymbol{\\dfrac{4\\mu_0H_0^2}{T_c}}$（ルッターガーの式 $\\mu_0T_cH_c'(T_c)^2$ と一致），$C_s=C_n$ は $\\boldsymbol{t=1/\\sqrt3}$．それより低温では超伝導相の比熱の方が小さい（エネルギーギャップの効果）．"
+   }
+  ],
+  "idea": {
+   "tex": "臨界磁場の曲線 $H_c(T)$ はギブズ自由エネルギーの差そのものなので，1回微分でエントロピー差と潜熱，2回微分で比熱差が得られる．放物線則では潜熱が $t=1/\\sqrt2$ で最大になり，比熱は $t=1/\\sqrt3$ で交差する．原題は一般の係数で $a=0$ と潜熱・比熱の跳びを問う問題で，捻りでは最大や交差の位置を問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "超伝導",
+   "臨界磁場",
+   "潜熱",
+   "比熱の跳び"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-062",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 35,
+  "theme": "超伝導転移の Clapeyron 式と Rutgers の比熱の飛び",
+  "topic": "超伝導転移の Clapeyron 式と Rutgers の比熱の飛び",
+  "statement": {
+   "tex": "体積 $V$ の第 1 種超伝導体を考える．常伝導相の磁化は無視でき，超伝導相は完全反磁性 $M=-H$ を示す．磁場中の Gibbs 関数は $dG=-SdT-\\mu_0VM\\,dH$ に従う．臨界磁場が $H_c(T)=H_0\\left[1-(T/T_c)^2\\right]$ で与えられるとする．\n\\begin{enumerate}\n\\item 共存条件 $G_n(T,H_c)=G_s(T,H_c)$ から，転移のエントロピー差 $S_n-S_s$ と潜熱 $L=T(S_n-S_s)$ を $H_c$ とその微分で表せ（磁気版の Clapeyron の式）．\n\\item $L(T)$ を求め，$L$ が最大となる温度とその最大値を求めよ．\n\\item 零磁場の転移点 $T=T_c$ では $L=0$ だが，熱容量が飛ぶ．飛び $C_s-C_n$ を求めよ（Rutgers の式）．この転移は何次の相転移か．\n\\item $\\mu_0H_0=0.080$ T，$T_c=7.2$ K，モル体積 $18.3\\times10^{-6}$ m$^3$/mol として，$T_c$ での比熱の飛び（J/(mol·K)）と $L$ の最大値（J/mol）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S_n-S_s=-\\mu_0VH_c\\dfrac{dH_c}{dT}$，$L=-\\mu_0VTH_c\\dfrac{dH_c}{dT}$　(2) $L=2\\mu_0VH_0^2t^2(1-t^2)$（$t=T/T_c$），最大は $T=T_c/\\sqrt2$ で $\\mu_0VH_0^2/2$　(3) $C_s-C_n=4\\mu_0VH_0^2/T_c$，2 次転移　(4) $0.052$ J/(mol·K)，$0.047$ J/mol"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 超伝導相では $M=-H$ だから $G_s(T,H)=G_s(T,0)+\\tfrac12\\mu_0VH^2$．常伝導相は $G_n(T,H)=G_n(T,0)$．共存条件より\n\\[ G_n(T,0)-G_s(T,0)=\\tfrac12\\mu_0VH_c(T)^2. \\]\n$T$ で微分し $S=-\\partial G/\\partial T$（$H=0$ でのエントロピーで，$S_s$ は $H$ によらない）を使うと $-(S_n-S_s)=\\mu_0VH_cH_c'$，よって\n\\[ S_n-S_s=-\\mu_0VH_c\\frac{dH_c}{dT},\\qquad L=T(S_n-S_s)=-\\mu_0VTH_c\\frac{dH_c}{dT}. \\]\n$dH_c/dT<0$ なので $S_n>S_s$：超伝導相の方が秩序だっている．\n\n(2) $H_c'=-2H_0T/T_c^2$ より $L=\\mu_0VT\\,H_0(1-t^2)\\cdot2H_0T/T_c^2=2\\mu_0VH_0^2t^2(1-t^2)$．$t^2=1/2$ で最大値 $\\mu_0VH_0^2/2$．\n\n(3) $C=T\\,\\partial S/\\partial T$ より\n\\[ C_s-C_n=-T\\frac{d}{dT}(S_n-S_s)=\\mu_0VT\\left[H_c'^2+H_cH_c''\\right]. \\]\n$T=T_c$ では $H_c=0$，$H_c'=-2H_0/T_c$ だから $C_s-C_n=\\mu_0VT_c\\cdot4H_0^2/T_c^2=4\\mu_0VH_0^2/T_c$．$G$ と 1 階微分（$S$，$M$）は連続で 2 階微分（熱容量）が不連続なので 2 次の相転移（Ehrenfest の分類）．\n\n(4) $\\mu_0H_0^2=(\\mu_0H_0)^2/\\mu_0=0.0064/(1.2566\\times10^{-6})=5093$ J/m$^3$．\n$\\Delta C=4\\times18.3\\times10^{-6}\\times5093/7.2=0.052$ J/(mol·K)，$L_{\\max}=18.3\\times10^{-6}\\times5093/2=0.047$ J/mol．"
+   }
+  ],
+  "idea": {
+   "tex": "Clapeyron の式を磁場–温度平面に移して超伝導体の潜熱を求め，$T_c$ で潜熱が消えて比熱が飛ぶ（1 次から 2 次へ移る）ことを Rutgers の式として導く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Clapeyron-Clausiusの式",
+   "超伝導",
+   "臨界磁場",
+   "相転移の次数",
+   "Rutgersの式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-063",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 35,
+  "theme": "二次相転移のエーレンフェストの式",
+  "topic": "二次相転移のエーレンフェストの式",
+  "statement": {
+   "tex": "ある物質が，相 1 と相 2 の間で「1 モル当たりのエントロピー $s$ と体積 $v$ は転移線上で連続だが，定圧モル比熱 $c_P$，熱膨張係数 $\\alpha=\\frac1v(\\partial v/\\partial T)_P$，等温圧縮率 $\\kappa_T=-\\frac1v(\\partial v/\\partial P)_T$ が不連続に跳ぶ」二次相転移を起こす．転移線を $P=P(T)$ とし，跳びを $\\Delta c_P=c_{P,2}-c_{P,1}$ などと書く．\n\\begin{enumerate}\n\\item 潜熱がないので，クラウジウス・クラペイロンの式 $dP/dT=\\Delta s/(\\Delta v)$ は $0/0$ となり使えない．転移線に沿って $s$ と $v$ がそれぞれ連続であり続けることを用いて\n\\[ \\frac{dP}{dT}=\\frac{\\Delta c_P}{Tv\\,\\Delta\\alpha}=\\frac{\\Delta\\alpha}{\\Delta\\kappa_T} \\]\nを示せ．必要なら $ds=\\frac{c_P}{T}dT-v\\alpha\\,dP$ を用いてよい．\n\\item (1) の 2 つの表式から，3 つの跳びの間に成り立つ関係式を書け．\n\\item $T=100\\,\\mathrm K$，$v=2.0\\times10^{-5}\\,\\mathrm{m^3/mol}$，$\\Delta c_P=5.0\\,\\mathrm{J/(mol\\,K)}$，$\\Delta\\alpha=1.0\\times10^{-5}\\,\\mathrm{K^{-1}}$ のとき，転移線の傾き $dP/dT$ と，熱力学的に整合するために必要な $\\Delta\\kappa_T$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略　(2) $\\Delta c_P\\,\\Delta\\kappa_T=Tv(\\Delta\\alpha)^2$　(3) $dP/dT=2.5\\times10^8\\,\\mathrm{Pa/K}$，$\\Delta\\kappa_T=4.0\\times10^{-14}\\,\\mathrm{Pa^{-1}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 転移線上の隣接点 $(T,P)\\to(T+dT,P+dP)$ でも $s_1=s_2$ が成り立つので $ds_1=ds_2$．\n\\[ \\frac{c_{P,1}}{T}dT-v\\alpha_1dP=\\frac{c_{P,2}}{T}dT-v\\alpha_2dP \\]\n（転移点で $v_1=v_2=v$）．よって $\\dfrac{\\Delta c_P}{T}dT=v\\Delta\\alpha\\,dP$，すなわち $\\dfrac{dP}{dT}=\\dfrac{\\Delta c_P}{Tv\\Delta\\alpha}$．\n同様に $dv=v\\alpha\\,dT-v\\kappa_T\\,dP$ に対し $dv_1=dv_2$ から $\\Delta\\alpha\\,dT=\\Delta\\kappa_T\\,dP$，すなわち $\\dfrac{dP}{dT}=\\dfrac{\\Delta\\alpha}{\\Delta\\kappa_T}$．\n（一次転移でクラウジウス・クラペイロンの式を導くときの「化学ポテンシャルの連続性」を，その 1 階微分 $s=-\\partial\\mu/\\partial T$，$v=\\partial\\mu/\\partial P$ の連続性に置き換えたものである．）\n\n(2) 2 式を等置して $\\Delta c_P\\,\\Delta\\kappa_T=Tv(\\Delta\\alpha)^2$．3 つの跳びは独立ではない（エーレンフェストの関係）．\n\n(3) $\\dfrac{dP}{dT}=\\dfrac{5.0}{100\\times2.0\\times10^{-5}\\times1.0\\times10^{-5}}=2.5\\times10^8\\,\\mathrm{Pa/K}$．$\\Delta\\kappa_T=\\dfrac{\\Delta\\alpha}{dP/dT}=\\dfrac{1.0\\times10^{-5}}{2.5\\times10^8}=4.0\\times10^{-14}\\,\\mathrm{Pa^{-1}}$．転移温度を $1\\,\\mathrm K$ 動かすのに約 2500 気圧が要る．"
+   }
+  ],
+  "idea": {
+   "tex": "潜熱のない転移では $\\mu$ ではなく $s,v$ の連続性を転移線に沿って微分し，比熱・熱膨張・圧縮率の跳びで転移線の傾きを表す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エーレンフェストの式",
+   "二次相転移",
+   "クラウジウス・クラペイロンの式",
+   "熱膨張係数",
+   "圧縮率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-064",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 40,
+  "theme": "潜熱の温度依存性を含む蒸気圧曲線",
+  "topic": "潜熱の温度依存性を含む蒸気圧曲線",
+  "statement": {
+   "tex": "気液共存線はクラウジウス・クラペイロンの式 $\\dfrac{dP}{dT}=\\dfrac{L}{T(v_{\\mathrm g}-v_{\\ell})}$ に従う（$L$ は 1 モル当たりの気化熱，$v_{\\mathrm g},v_\\ell$ は気体・液体のモル体積）．\n\\begin{enumerate}\n\\item 共存線に沿った潜熱の変化率が，一般に\n\\[ \\frac{dL}{dT}=\\Delta c_P+\\frac{L}{T}-\\frac{L}{\\Delta v}\\Bigl(\\frac{\\partial\\Delta v}{\\partial T}\\Bigr)_P \\]\nとなることを示せ．ここで $\\Delta c_P=c_{P,\\mathrm g}-c_{P,\\ell}$，$\\Delta v=v_{\\mathrm g}-v_\\ell$ であり，$ds=\\frac{c_P}{T}dT-\\bigl(\\frac{\\partial v}{\\partial T}\\bigr)_PdP$ を用いてよい．\n\\item $v_\\ell$ を無視し，気体を理想気体とみなすと，$dL/dT=\\Delta c_P$ に厳密に簡約されることを示せ．\n\\item (2) の近似で $\\Delta c_P$ を定数とし，$T_0$ で $P=P_0$，$L=L_0$ とする．$\\ln(P/P_0)$ を $T$ の関数として求めよ．\n\\item 水について $T_0=373.15\\,\\mathrm K$，$P_0=1\\,\\mathrm{atm}$，$L_0=40.66\\,\\mathrm{kJ/mol}$，$\\Delta c_P=-42\\,\\mathrm{J/(mol\\,K)}$，$R=8.314\\,\\mathrm{J/(mol\\,K)}$ とする．$0.33\\,\\mathrm{atm}$（エベレスト山頂程度）での沸点を数値的に求め，$L$ を一定とした場合の値との差を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2) 略　(3) $\\ln\\dfrac{P}{P_0}=-\\dfrac{L_0-\\Delta c_PT_0}{R}\\Bigl(\\dfrac1T-\\dfrac1{T_0}\\Bigr)+\\dfrac{\\Delta c_P}{R}\\ln\\dfrac{T}{T_0}$　(4) 約 $344.4\\,\\mathrm K$（$71^\\circ\\mathrm C$），$L$ 一定の場合（約 $344.0\\,\\mathrm K$）より約 $0.4\\,\\mathrm K$ 高い"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $L=T\\Delta s$．共存線に沿って $T\\to T+dT$，$P\\to P+dP$ と動かすと，各相で $ds=\\frac{c_P}{T}dT-(\\partial v/\\partial T)_PdP$ なので\n\\[ \\frac{d\\Delta s}{dT}=\\frac{\\Delta c_P}{T}-\\Bigl(\\frac{\\partial\\Delta v}{\\partial T}\\Bigr)_P\\frac{dP}{dT}=\\frac{\\Delta c_P}{T}-\\Bigl(\\frac{\\partial\\Delta v}{\\partial T}\\Bigr)_P\\frac{L}{T\\Delta v}. \\]\n$\\dfrac{dL}{dT}=\\Delta s+T\\dfrac{d\\Delta s}{dT}=\\dfrac{L}{T}+\\Delta c_P-\\dfrac{L}{\\Delta v}\\Bigl(\\dfrac{\\partial\\Delta v}{\\partial T}\\Bigr)_P$．\n\n(2) $\\Delta v\\simeq RT/P$ なら $(\\partial\\Delta v/\\partial T)_P=R/P=\\Delta v/T$．よって第 3 項は $-L/T$ となり第 2 項と打ち消し合って $dL/dT=\\Delta c_P$．\n\n(3) $L(T)=L_0+\\Delta c_P(T-T_0)$ と $\\dfrac{d\\ln P}{dT}=\\dfrac{L}{RT^2}$ より\n\\[ \\ln\\frac{P}{P_0}=\\int_{T_0}^T\\frac{(L_0-\\Delta c_PT_0)+\\Delta c_PT'}{RT'^2}dT'=-\\frac{L_0-\\Delta c_PT_0}{R}\\Bigl(\\frac1T-\\frac1{T_0}\\Bigr)+\\frac{\\Delta c_P}{R}\\ln\\frac{T}{T_0}. \\]\n\n(4) $P/P_0=0.33$ として (3) を数値的に解くと $T\\approx344.4\\,\\mathrm K$．$L$ 一定なら $\\frac1T=\\frac1{T_0}-\\frac{R}{L_0}\\ln\\frac{P}{P_0}$ より $T\\approx344.0\\,\\mathrm K$．差は約 $+0.4\\,\\mathrm K$ で，温度が下がると $L$ が大きくなる（$\\Delta c_P<0$）ため蒸気圧が下がりにくく，沸点がわずかに高くなる．\nなお，この線形モデルを外挿すると $L=0$ となるのは $T_0+L_0/|\\Delta c_P|\\approx1340\\,\\mathrm K$ で，実際の臨界温度 $647\\,\\mathrm K$ よりはるかに高い．臨界点近くでは (2) の近似（理想気体，$v_\\ell$ 無視）が破綻するためである．"
+   }
+  ],
+  "idea": {
+   "tex": "潜熱の温度依存性を共存線に沿って微分すると，理想気体近似では余分な項が厳密に相殺して $dL/dT=\\Delta c_P$ となり，蒸気圧曲線を一段精密にできる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "クラウジウス・クラペイロンの式",
+   "蒸気圧",
+   "気化熱",
+   "沸点",
+   "比熱"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-065",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 40,
+  "theme": "臨界点近傍の共存曲線と潜熱の√則",
+  "topic": "臨界点近傍の共存曲線と潜熱の√則",
+  "statement": {
+   "tex": "還元ファンデルワールス方程式 $P_r=\\dfrac{8T_r}{3V_r-1}-\\dfrac{3}{V_r^2}$ を考え，$\\tau=1-T_r$（$0<\\tau\\ll1$）とする．\n\\begin{enumerate}\n\\item 液相・気相の共存条件は，両相の化学ポテンシャル（モルギブズエネルギー）が等しいことである．等温線に沿って $d\\mu=v\\,dP$ を積分することにより，この条件が等温線とその共存圧の水平線が囲む二つの面積が等しいという条件（$\\int_{V_l}^{V_g}P_r\\,dV_r=P_r^{\\rm coex}(V_g-V_l)$）と同値であることを示せ．\n\\item 臨界点まわりで $V_r=1+\\phi$ と置き，$P_r$ を $\\tau,\\phi$ について展開すると，主要項は $P_r\\simeq1-4\\tau+6\\tau\\phi-\\frac32\\phi^3$ となる．これと (1) の条件を用いて，$\\tau$ の最低次で共存圧 $P_r^{\\rm coex}$ と $V_g-V_l$ を求めよ．\n\\item クラペイロン・クラウジウスの式を用いて，1 モルあたりの蒸発潜熱 $L$ の $\\tau\\to0$ での振る舞いを $R,T_c,\\tau$ で表せ．（臨界点では $P_cV_c/(RT_c)=3/8$．）\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $P_r^{\\rm coex}\\simeq1-4\\tau$，$V_g-V_l\\simeq4\\sqrt\\tau$（$V_{g,l}\\simeq1\\pm2\\sqrt\\tau$）　(3) $L\\simeq6RT_c\\sqrt{1-T/T_c}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 同じ等温線上で液相点 $l$ から気相点 $g$ まで $d\\mu=v\\,dP$（$T$ 一定）を積分すると\n\\[\n\\mu_g-\\mu_l=\\int_l^g v\\,dP=\\big[Pv\\big]_l^g-\\int_{v_l}^{v_g}P\\,dv=P^{\\rm coex}(v_g-v_l)-\\int_{v_l}^{v_g}P\\,dv\n\\]\n（両端で $P=P^{\\rm coex}$）．よって $\\mu_g=\\mu_l\\iff\\int_{v_l}^{v_g}P\\,dv=P^{\\rm coex}(v_g-v_l)$，すなわち等温線の下の面積と長方形の面積が等しく，水平線の上下にできる二つの面積が等しい．還元変数でも同じ形になる．\n\n(2) 展開 $P_r=1-4\\tau+6\\tau\\phi-\\frac32\\phi^3$ は $\\phi$ について「定数＋奇関数」なので，水平線 $P_r=1-4\\tau$ はこの曲線を $\\phi=0,\\pm\\phi_0$ で切り，奇関数部分の面積は $\\phi=0$ の左右で打ち消し合う．よって等面積条件は $P_r^{\\rm coex}=1-4\\tau$ で満たされる．\n$6\\tau\\phi-\\frac32\\phi^3=0$ の非零解 $\\phi_0^2=4\\tau$ より $\\phi=\\pm2\\sqrt\\tau$，すなわち $V_{g,l}\\simeq1\\pm2\\sqrt\\tau$，$V_g-V_l\\simeq4\\sqrt\\tau$．\n\n(3) 実単位で $dP/dT=(P_c/T_c)\\,dP_r^{\\rm coex}/dT_r\\simeq4P_c/T_c$，$\\Delta v=V_c\\cdot4\\sqrt\\tau$（$V_c$ はモル臨界体積）．クラペイロン・クラウジウスの式 $L=T\\Delta v\\,\\dfrac{dP}{dT}$ で $T\\simeq T_c$ として\n\\[\nL\\simeq T_c\\cdot4V_c\\sqrt\\tau\\cdot\\frac{4P_c}{T_c}=16P_cV_c\\sqrt\\tau=16\\cdot\\frac38RT_c\\sqrt\\tau=6RT_c\\sqrt{1-\\frac{T}{T_c}} .\n\\]\n潜熱は臨界点に向かって平方根則で 0 になる（平均場の臨界指数 $\\beta=1/2$ を反映）．"
+   }
+  ],
+  "idea": {
+   "tex": "等面積則は $\\mu_l=\\mu_g$ と同値で，臨界点近傍では展開の奇関数性から共存圧が直ちに決まり，密度差と潜熱が $\\sqrt{T_c-T}$ で消える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "マクスウェルの規則",
+   "等面積則",
+   "共存曲線",
+   "潜熱",
+   "クラペイロン・クラウジウス",
+   "臨界指数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-066",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 35,
+  "theme": "vdW逆転曲線の閉じた式と最高逆転温度",
+  "topic": "vdW逆転曲線の閉じた式と最高逆転温度",
+  "statement": {
+   "tex": "ジュール・トムソン係数は $\\mu_{\\rm JT}=\\left(\\dfrac{\\partial T}{\\partial P}\\right)_H=\\dfrac{1}{C_P}\\left[T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_P-V\\right]$ で与えられる．\n\\begin{enumerate}\n\\item 低密度で状態方程式が $Pv=RT+B(T)P$（$v$ はモル体積）と書けるとき，$\\mu_{\\rm JT}$ の符号は $TB'(T)-B(T)$ で決まることを示せ．ファンデルワールス気体の $B(T)=b-\\dfrac{a}{RT}$ について，逆転温度 $T_{\\rm inv}$ とボイル温度 $T_B$（$B(T_B)=0$）を求め，臨界温度 $T_c=\\dfrac{8a}{27bR}$ との比で表せ．\n\\item 還元ファンデルワールス方程式 $T_r=\\dfrac38\\left(P_r+\\dfrac{3}{V_r^2}\\right)\\left(V_r-\\dfrac13\\right)$ の逆転曲線（$\\mu_{\\rm JT}=0$）が，$s=\\sqrt{T_r/3}$ とおいて\n\\[\nP_r=9(3-2s)(2s-1)\n\\]\nと書けることを示せ．\n\\item 逆転曲線上で冷却可能な最大圧力と，そのときの温度を求めよ．また $P_r\\to0$ での二つの逆転温度を求め，(1) の結果と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T_{\\rm inv}=\\dfrac{2a}{bR}=\\dfrac{27}{4}T_c$，$T_B=\\dfrac{a}{bR}=\\dfrac{27}{8}T_c$　(2) 略（解説参照）　(3) $P_r^{\\max}=9$（$T_r=3$）．$P_r\\to0$ で $T_r=27/4$ と $3/4$；上側が (1) と一致"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $v=RT/P+B$ より $T(\\partial v/\\partial T)_P-v=RT/P+TB'-RT/P-B=TB'-B$．$C_P>0$ なので $\\mu_{\\rm JT}$ の符号は $TB'-B$ の符号．\nvdW では $TB'-B=\\dfrac{a}{RT}-b+\\dfrac{a}{RT}=\\dfrac{2a}{RT}-b$ で，これが 0 となる $T_{\\rm inv}=\\dfrac{2a}{bR}=\\dfrac{27}{4}T_c$（これ以下で冷却）．$B(T_B)=0$ より $T_B=\\dfrac{a}{bR}=\\dfrac{27}{8}T_c$，すなわち $T_{\\rm inv}=2T_B$．\n\n(2) 添字 r を省略する．$\\mu_{\\rm JT}=0\\iff T-V(\\partial T/\\partial V)_P=0$．\n\\[\n\\left(\\frac{\\partial T}{\\partial V}\\right)_P=\\frac38\\left[-\\frac{6}{V^3}\\left(V-\\frac13\\right)+P+\\frac{3}{V^2}\\right]\n\\]\nを代入して整理すると $T-V(\\partial T/\\partial V)_P=-\\dfrac{PV^2-18V+9}{8V^2}$．よって逆転曲線は $P=\\dfrac{18V-9}{V^2}$．このとき $P+3/V^2=\\dfrac{6(3V-1)}{V^2}$ なので\n\\[\nT=\\frac38\\cdot\\frac{6(3V-1)}{V^2}\\cdot\\frac{3V-1}{3}=\\frac34\\left(3-\\frac1V\\right)^2 .\n\\]\n$u=1/V$ とおくと $T=\\frac34(3-u)^2$，$P=18u-9u^2=9u(2-u)$．$3-u=2s$（$s=\\sqrt{T/3}$）より $u=3-2s$，$2-u=2s-1$ で\n\\[\nP_r=9(3-2s)(2s-1).\n\\]\n\n(3) $P_r=9(-4s^2+8s-3)$ は $s=1$ で最大値 $9$．このとき $T_r=3s^2=3$（$V_r=1$）．\n$P_r=0$ は $s=3/2,\\ 1/2$，すなわち $T_r=27/4$ と $T_r=3/4$．上側の $T_r=27/4$ は (1) の低密度での逆転温度 $T_{\\rm inv}=\\frac{27}{4}T_c$ と一致する（$P\\to0$ の気相枝では $V_r\\to\\infty$）．下側の $T_r=3/4$ は $V_r\\to1/2$ の高密度（液体側）の枝に対応し，低密度展開では得られない．"
+   }
+  ],
+  "idea": {
+   "tex": "逆転曲線は $u=1/V_r$ をパラメータにすると $T_r=\\frac34(3-u)^2$，$P_r=9u(2-u)$ となり，閉じた式 $P_r=9(3-2s)(2s-1)$ が得られる．最高逆転温度はボイル温度の 2 倍．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ジュール・トムソン効果",
+   "逆転温度",
+   "ボイル温度",
+   "第二ビリアル係数",
+   "ファンデルワールス方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-067",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ディーテリチ気体の臨界点と臨界近傍の振る舞い",
+  "topic": "ディーテリチ気体の臨界点と臨界近傍の振る舞い",
+  "statement": {
+   "tex": "1 モルあたりの体積 $v$ について状態方程式\n\\[\nP=\\frac{RT}{v-b}\\exp\\!\\left(-\\frac{a}{RTv}\\right)\\qquad(a,b>0)\n\\]\nに従う気体（ディーテリチ気体）を考える．\n\\begin{enumerate}\n\\item 臨界点 $(v_c,P_c,T_c)$ と $Z_c=P_cv_c/(RT_c)$ を求めよ．\n\\item 還元変数 $V_r=v/v_c$，$P_r=P/P_c$，$T_r=T/T_c$ による還元方程式を求めよ．\n\\item 臨界等温線 $T_r=1$ 上で $P_r-1\\simeq-A(V_r-1)^3$ と書けるときの係数 $A$ を求めよ．また，臨界等容線 $V_r=1$ 上，$T_r\\to1^+$ で $\\kappa_TP_c\\simeq\\dfrac{\\Gamma}{T_r-1}$ と書けるときの $\\Gamma$ を求めよ．ファンデルワールス気体では $A=3/2$，$\\Gamma=1/6$ である．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_c=2b$，$T_c=\\dfrac{a}{4bR}$，$P_c=\\dfrac{a}{4e^2b^2}$，$Z_c=\\dfrac{2}{e^2}\\approx0.271$　(2) $P_r=\\dfrac{T_r}{2V_r-1}\\exp\\!\\left(2-\\dfrac{2}{T_rV_r}\\right)$　(3) $A=\\dfrac23$，$\\Gamma=\\dfrac12$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln P=\\ln RT-\\ln(v-b)-\\dfrac{a}{RTv}$ を $v$ で微分すると $\\dfrac{1}{P}\\dfrac{\\partial P}{\\partial v}=-\\dfrac1{v-b}+\\dfrac{a}{RTv^2}\\equiv g(v)$．$\\partial_vP=Pg$，$\\partial_v^2P=P(g^2+g')$ なので臨界条件は $g=0$ かつ $g'=0$：\n\\[\n\\frac1{v-b}=\\frac{a}{RTv^2},\\qquad \\frac1{(v-b)^2}=\\frac{2a}{RTv^3}.\n\\]\n辺々割って $v-b=v/2$，$v_c=2b$．第1式から $RT_c=a(v_c-b)/v_c^2=a/(4b)$，$T_c=\\dfrac{a}{4bR}$．$\\dfrac{a}{RT_cv_c}=2$ より $P_c=\\dfrac{RT_c}{b}e^{-2}=\\dfrac{a}{4e^2b^2}$，$Z_c=\\dfrac{P_cv_c}{RT_c}=2e^{-2}\\approx0.271$（vdW の $0.375$ より実測値に近い）．\n\n(2) $\\dfrac{P}{P_c}=\\dfrac{RT/(v-b)}{RT_c/b}\\exp\\!\\left(2-\\dfrac{a}{RTv}\\right)$．$\\dfrac{RT}{v-b}\\cdot\\dfrac{b}{RT_c}=\\dfrac{T_r}{2V_r-1}$，$\\dfrac{a}{RTv}=\\dfrac{a}{RT_cv_c}\\dfrac{1}{T_rV_r}=\\dfrac{2}{T_rV_r}$ なので\n\\[\nP_r=\\frac{T_r}{2V_r-1}\\exp\\!\\left(2-\\frac{2}{T_rV_r}\\right).\n\\]\n\n(3) $T_r=1$，$V_r=1+x$ とすると $\\ln P_r=-\\ln(1+2x)+2-\\dfrac{2}{1+x}$．展開して\n\\[\n\\ln P_r=\\left(-2x+2x^2-\\tfrac83x^3\\right)+\\left(2x-2x^2+2x^3\\right)+O(x^4)=-\\tfrac23x^3+O(x^4),\n\\]\nよって $P_r-1\\simeq-\\frac23(V_r-1)^3$，$A=2/3$．\n次に $\\dfrac{\\partial\\ln P_r}{\\partial V_r}=-\\dfrac{2}{2V_r-1}+\\dfrac{2}{T_rV_r^2}$ は $V_r=1$ で $2(1-T_r)/T_r$，$P_r(1,T_r)=T_re^{2-2/T_r}$ なので\n\\[\n\\left(\\frac{\\partial P_r}{\\partial V_r}\\right)_{T_r}\\Big|_{V_r=1}=-2(T_r-1)e^{2(T_r-1)/T_r}\\simeq-2(T_r-1).\n\\]\n$\\kappa_TP_c=-\\dfrac{1}{V_r}\\left(\\dfrac{\\partial V_r}{\\partial P_r}\\right)_{T_r}\\simeq\\dfrac{1}{2(T_r-1)}$，$\\Gamma=1/2$．\n（vdW では $\\partial P_r/\\partial V_r|_{V_r=1}=-6(T_r-1)$．臨界指数は同じ平均場の値 $\\delta=3,\\ \\gamma=1$ で，係数だけが状態方程式に依存する．）"
+   }
+  ],
+  "idea": {
+   "tex": "$\\ln P$ の微分 $g$ を使うと臨界条件が $g=g'=0$ に簡約される．ディーテリチ気体も臨界指数は vdW と同じ平均場値だが，振幅 $A,\\Gamma$ や $Z_c=2/e^2$ は異なる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $v_c$：2 b ; $T_c$：((a)/(4 b R)) ; $P_c$：((a)/(4 e ^(2) b ^(2))) ; $Z_c$：≈0.271\n(2) $P_r$：((T_r)/(2 V_r -1)) exp (2-((2)/(T_r V_r)))\n(3) $A$：((2)/(3)) ; $\\Gamma$：((1)/(2))"
+  },
+  "methods": [],
+  "tags": [
+   "ディーテリチ方程式",
+   "臨界点",
+   "還元方程式",
+   "臨界指数",
+   "臨界振幅"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-068",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ディーテリチ気体の逆転曲線とvdWとの比較",
+  "topic": "ディーテリチ気体の逆転曲線とvdWとの比較",
+  "statement": {
+   "tex": "還元ディーテリチ方程式 $P_r=\\dfrac{T_r}{2V_r-1}\\exp\\!\\left(2-\\dfrac{2}{T_rV_r}\\right)$ に従う気体について，ジュール・トムソン係数 $\\mu_{\\rm JT}=\\dfrac{1}{C_P}\\left[T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_P-V\\right]$ が 0 となる逆転曲線を考える（添字 r は省略してよい）．\n\\begin{enumerate}\n\\item 逆転条件が $\\left(\\dfrac{\\partial\\ln T}{\\partial\\ln V}\\right)_P=1$ と同値であることを用いて，逆転曲線上で $T_r=8-\\dfrac{4}{V_r}$ となることを示し，逆転曲線 $P_r(T_r)$ を求めよ．\n\\item 逆転が起こり得る最大の圧力 $P_r^{\\max}$ と，そのときの $T_r$ を求めよ．\n\\item 低圧極限 $P_r\\to0$ での逆転温度を求めよ．ファンデルワールス気体の逆転曲線（$P_r\\to0$ で $T_r=27/4$ と $3/4$，最大圧力 $P_r=9$）と比べて，低温側の振る舞いの定性的な違いを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $P_r=(8-T_r)\\exp\\!\\left(\\dfrac52-\\dfrac{4}{T_r}\\right)$　(2) $T_r=4$ で $P_r^{\\max}=4e^{3/2}\\approx17.9$　(3) 上側 $T_r=8$．下側は $T_r\\to0$ まで延び，$P_r\\sim8e^{5/2}e^{-4/T_r}$ で指数関数的に 0 に近づく（有限温度で $P_r=0$ にならない）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mu_{\\rm JT}=0\\iff T=V(\\partial T/\\partial V)_P\\iff(\\partial\\ln T/\\partial\\ln V)_P=1$．\n$\\ln P=\\ln T-\\ln(2V-1)+2-\\dfrac{2}{TV}$ を $P$ 一定で微分すると\n\\[\n0=\\frac{dT}{T}-\\frac{2\\,dV}{2V-1}+\\frac{2}{TV}\\left(\\frac{dT}{T}+\\frac{dV}{V}\\right).\n\\]\n逆転条件 $dT/T=dV/V$ を代入して $\\dfrac{dV}{V}\\left[1-\\dfrac{2V}{2V-1}+\\dfrac{4}{TV}\\right]=0$，すなわち $\\dfrac{4}{TV}=\\dfrac{1}{2V-1}$，$T=\\dfrac{4(2V-1)}{V}=8-\\dfrac4V$．\nこれより $\\dfrac1V=\\dfrac{8-T}{4}$，$2V-1=\\dfrac{8}{8-T}-1=\\dfrac{T}{8-T}$，$\\dfrac{2}{TV}=\\dfrac{8-T}{2T}$．状態方程式に代入して\n\\[\nP_r=(8-T)\\exp\\!\\left(2-\\frac{8-T}{2T}\\right)=(8-T_r)\\exp\\!\\left(\\frac52-\\frac4{T_r}\\right).\n\\]\n\n(2) $\\dfrac{d}{dT}\\ln P_r=-\\dfrac{1}{8-T}+\\dfrac{4}{T^2}=0\\iff T^2+4T-32=0\\iff T=4$．$P_r^{\\max}=4e^{5/2-1}=4e^{3/2}\\approx17.9$（このとき $V_r=1$）．\n\n(3) $P_r=0$ となる有限温度は $T_r=8$ のみ（$V_r\\to\\infty$ の希薄極限）．これは第二ビリアル係数 $B=b-a/(RT)$（vdW と同じ）から得られる $T_{\\rm inv}=2a/(bR)$ を $T_c=a/(4bR)$ で割った値 8 と一致する．\n低温側では $T_r\\to0$ で $8-T_r\\to8$，$\\exp(-4/T_r)\\to0$ なので $P_r\\simeq8e^{5/2}e^{-4/T_r}$ となり，逆転曲線は $T_r=0$ まで指数関数的に圧力 0 に近づく．vdW では高密度側の枝が $T_r=3/4$ で $P_r=0$ に達するのと対照的で，ディーテリチ気体では冷却可能領域の下限温度が有限に定まらない．また最大逆転圧力も vdW の $9$ に比べ約 2 倍大きい．"
+   }
+  ],
+  "idea": {
+   "tex": "$(\\partial\\ln T/\\partial\\ln V)_P=1$ を使うと逆転条件が $T_r=8-4/V_r$ に一気に簡約され，閉じた逆転曲線が得られる．指数型の引力項のため低温側の振る舞いが vdW と定性的に異なる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $P_r$：(8- T_r) exp (((5)/(2))-((4)/(T_r)))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ジュール・トムソン効果",
+   "逆転曲線",
+   "ディーテリチ方程式",
+   "逆転温度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-069",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ギブス・デュエムからクラペイロンとエーレンフェストへ",
+  "topic": "ギブス・デュエムからクラペイロンとエーレンフェストへ",
+  "statement": {
+   "tex": "1 成分系のギブス自由エネルギーを $G(T,p,N)$，化学ポテンシャルを $\\mu=(\\partial G/\\partial N)_{T,p}$ とする．$G$ は示量変数 $N$ について 1 次同次（$G(T,p,\\lambda N)=\\lambda G(T,p,N)$）である．\n\\begin{enumerate}\n\\item $G=N\\mu$ を示し，これと $dG=-S\\,dT+V\\,dp+\\mu\\,dN$ からギブス・デュエムの関係 $d\\mu=-s\\,dT+v\\,dp$（$s=S/N$，$v=V/N$）を導け．\n\\item 2 相 1，2 が共存する曲線 $p(T)$ 上で $\\mu_1=\\mu_2$ が保たれることから，$\\dfrac{dp}{dT}=\\dfrac{\\Delta s}{\\Delta v}$ を導け．\n\\item 転移点で $\\Delta s=0$，$\\Delta v=0$ となる（潜熱も体積変化もない）転移では (2) は不定形になる．このとき，$s$ と $v$ の連続性が共存線に沿って保たれることを用いて\n\\[\n\\frac{dp}{dT}=\\frac{\\Delta c_p}{Tv\\,\\Delta\\alpha}=\\frac{\\Delta\\alpha}{\\Delta\\kappa_T}\n\\]\nを導け．ここで $c_p=T(\\partial s/\\partial T)_p$，$\\alpha=\\frac1v(\\partial v/\\partial T)_p$，$\\kappa_T=-\\frac1v(\\partial v/\\partial p)_T$，$\\Delta$ は 2 相の差である．\n\\item 0 ℃付近の氷の融解について，融解熱 $6.01\\ \\mathrm{kJ/mol}$，氷と水の密度 $917\\ \\mathrm{kg/m^3}$，$1000\\ \\mathrm{kg/m^3}$，モル質量 $18.0\\ \\mathrm{g/mol}$ として融解曲線の傾き $dp/dT$ を求め，融点を 1 K 下げるのに必要な圧力の増加を見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2)(3) 証明（解説参照）　(4) $dp/dT\\approx-1.35\\times10^7\\ \\mathrm{Pa/K}$（約 $-134\\ \\mathrm{atm/K}$），約 $13.5\\ \\mathrm{MPa}$ の加圧"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 同次性の式を $\\lambda$ で微分して $\\lambda=1$ とおくと $N(\\partial G/\\partial N)_{T,p}=G$，すなわち $G=N\\mu$（オイラーの定理）．よって $dG=\\mu\\,dN+N\\,d\\mu$．これを $dG=-S\\,dT+V\\,dp+\\mu\\,dN$ と比べて $N\\,d\\mu=-S\\,dT+V\\,dp$，すなわち $d\\mu=-s\\,dT+v\\,dp$．\n\n(2) 共存線上で $\\mu_1(T,p)=\\mu_2(T,p)$ が成り立ち続けるから $d\\mu_1=d\\mu_2$：$-s_1dT+v_1dp=-s_2dT+v_2dp$．よって $\\dfrac{dp}{dT}=\\dfrac{s_2-s_1}{v_2-v_1}=\\dfrac{\\Delta s}{\\Delta v}$．\n\n(3) 共存線上で $s_1=s_2$ が保たれるので $ds_1=ds_2$．$s(T,p)$ について\n\\[\nds=\\left(\\frac{\\partial s}{\\partial T}\\right)_pdT+\\left(\\frac{\\partial s}{\\partial p}\\right)_Tdp=\\frac{c_p}{T}dT-v\\alpha\\,dp\n\\]\n（マクスウェルの関係 $(\\partial s/\\partial p)_T=-(\\partial v/\\partial T)_p$）．差をとって $\\frac{\\Delta c_p}{T}dT-v\\Delta\\alpha\\,dp=0$ より $\\dfrac{dp}{dT}=\\dfrac{\\Delta c_p}{Tv\\Delta\\alpha}$．\n同様に $v_1=v_2$ が保たれるので $dv=v\\alpha\\,dT-v\\kappa_T\\,dp$ の差が 0：$\\Delta\\alpha\\,dT=\\Delta\\kappa_T\\,dp$，よって $\\dfrac{dp}{dT}=\\dfrac{\\Delta\\alpha}{\\Delta\\kappa_T}$．（これがエーレンフェストの関係式．）\n\n(4) $v_{\\rm 水}=0.0180/1000=1.80\\times10^{-5}$，$v_{\\rm 氷}=0.0180/917=1.963\\times10^{-5}\\ \\mathrm{m^3/mol}$，$\\Delta v=v_{\\rm 水}-v_{\\rm 氷}\\approx-1.63\\times10^{-6}\\ \\mathrm{m^3/mol}$．$\\Delta s=L/T$ だから\n\\[\n\\frac{dp}{dT}=\\frac{L}{T\\Delta v}=\\frac{6.01\\times10^3}{273\\times(-1.63\\times10^{-6})}\\approx-1.35\\times10^{7}\\ \\mathrm{Pa/K}.\n\\]\n傾きが負なので，加圧すると融点が下がる．1 K 下げるには約 $1.35\\times10^7\\ \\mathrm{Pa}\\approx13.5\\ \\mathrm{MPa}$（約 134 気圧）が必要．"
+   }
+  ],
+  "idea": {
+   "tex": "$G=N\\mu$ からギブス・デュエムを経て，共存線上で保存される量（$\\mu$，さらに 2 次転移では $s,v$）の微分を等置すれば，クラペイロンもエーレンフェストも同じ手続きで出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ギブス自由エネルギー",
+   "化学ポテンシャル",
+   "ギブス・デュエムの関係",
+   "クラウジウス・クラペイロンの式",
+   "エーレンフェストの関係式",
+   "相転移",
+   "氷の融解"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-070",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 40,
+  "theme": "共存線に沿う比熱と負の飽和蒸気比熱",
+  "topic": "共存線に沿う比熱と負の飽和蒸気比熱",
+  "statement": {
+   "tex": "純物質の液相 $\\alpha$ と気相 $\\beta$ が温度 $T$，圧力 $p(T)$ で共存している．1 mol 当たりの気化熱を $L(T)$，モル体積を $v^{(\\alpha)},v^{(\\beta)}$ とする．\n共存曲線に沿って温度を $dT$ 上げるとき（圧力も $p\\to p+dp$ と共存曲線に沿って変える），各相 1 mol が吸収する熱を $c_\\sigma^{(\\alpha)}dT$，$c_\\sigma^{(\\beta)}dT$ と書き，$c_\\sigma$ を「共存線に沿ったモル比熱」と呼ぶ．\n\\begin{enumerate}\n\\item 次の準静的サイクルを考える：A（温度 $T$ の液体 1 mol）$\\to$ B（共存線に沿って $T+dT$ の液体）$\\to$ C（$T+dT$ で全部気化）$\\to$ D（共存線に沿って $T$ の蒸気）$\\to$ A（$T$ で全部凝縮）．このサイクルに第 2 法則（$\\oint d'Q/T=0$）を適用し，\n\\[\n\\frac{d}{dT}\\left(\\frac LT\\right)=\\frac{c_\\sigma^{(\\beta)}-c_\\sigma^{(\\alpha)}}{T}\n\\quad\\text{すなわち}\\quad\n\\frac{dL}{dT}=\\frac LT+c_\\sigma^{(\\beta)}-c_\\sigma^{(\\alpha)}\n\\]\nを導け．\n\\item $c_\\sigma=c_p-T\\left(\\dfrac{\\partial v}{\\partial T}\\right)_p\\dfrac{dp}{dT}$ を示せ（$c_p$ は定圧モル比熱）．\n\\item 蒸気を理想気体，液体のモル体積を無視できる（$v^{(\\alpha)}\\ll v^{(\\beta)}$，液体の熱膨張も無視）とする．クラウジウス・クラペイロンの式を用いて $c_\\sigma^{(\\beta)}=c_p^{(\\beta)}-L/T$，$c_\\sigma^{(\\alpha)}\\simeq c_p^{(\\alpha)}$ を示し，$\\dfrac{dL}{dT}\\simeq c_p^{(\\beta)}-c_p^{(\\alpha)}$ を導け．\n\\item 100 ℃の水で $L=40.7\\ \\mathrm{kJ/mol}$，水蒸気 $c_p^{(\\beta)}=33.6\\ \\mathrm{J/(mol\\,K)}$，水 $c_p^{(\\alpha)}=75.3\\ \\mathrm{J/(mol\\,K)}$ として，$c_\\sigma^{(\\beta)}$ と $dL/dT$ を求めよ．\n\\item (4) の $c_\\sigma^{(\\beta)}$ の符号から，飽和水蒸気を断熱的・準静的に膨張させる（温度が下がる）と何が起こるかを説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2)(3) 導出（解説参照）　(4) $c_\\sigma^{(\\beta)}\\approx-75\\ \\mathrm{J/(mol\\,K)}$（負），$dL/dT\\approx-42\\ \\mathrm{J/(mol\\,K)}$　(5) 断熱膨張で蒸気は過飽和になり一部が凝縮する（霧・雲が生じる）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 各過程の吸熱：A$\\to$B は $c_\\sigma^{(\\alpha)}dT$（温度 $\\approx T$），B$\\to$C は $L(T+dT)$（温度 $T+dT$），C$\\to$D は $-c_\\sigma^{(\\beta)}dT$，D$\\to$A は $-L(T)$（温度 $T$）．可逆サイクルなので\n\\[\n\\frac{c_\\sigma^{(\\alpha)}dT}{T}+\\frac{L(T+dT)}{T+dT}-\\frac{c_\\sigma^{(\\beta)}dT}{T}-\\frac{L(T)}{T}=0\n\\]\n（$dT$ の 1 次まで）．よって $\\dfrac{d}{dT}\\left(\\dfrac LT\\right)=\\dfrac{c_\\sigma^{(\\beta)}-c_\\sigma^{(\\alpha)}}{T}$．左辺を展開して $\\dfrac{dL}{dT}=\\dfrac LT+c_\\sigma^{(\\beta)}-c_\\sigma^{(\\alpha)}$．\n（なお第 1 法則 $\\oint d'Q=\\oint p\\,dV$ からは，サイクルの面積 $\\Delta v\\,dp$ を用いて $dL+(c_\\sigma^{(\\alpha)}-c_\\sigma^{(\\beta)})dT=\\Delta v\\,dp$ が得られ，上式と組み合わせると $dp/dT=L/(T\\Delta v)$ が再現される．）\n\n(2) 共存線に沿って $T\\,ds=T\\left(\\dfrac{\\partial s}{\\partial T}\\right)_pdT+T\\left(\\dfrac{\\partial s}{\\partial p}\\right)_Tdp=c_p\\,dT-T\\left(\\dfrac{\\partial v}{\\partial T}\\right)_pdp$（マクスウェルの関係）．$dp=\\dfrac{dp}{dT}dT$ を代入して $c_\\sigma=T\\dfrac{ds}{dT}=c_p-T\\left(\\dfrac{\\partial v}{\\partial T}\\right)_p\\dfrac{dp}{dT}$．\n\n(3) 理想気体の蒸気では $T(\\partial v/\\partial T)_p=v^{(\\beta)}$．クラウジウス・クラペイロンの式 $\\dfrac{dp}{dT}=\\dfrac{L}{T(v^{(\\beta)}-v^{(\\alpha)})}\\simeq\\dfrac{L}{Tv^{(\\beta)}}$ を用いて $c_\\sigma^{(\\beta)}=c_p^{(\\beta)}-v^{(\\beta)}\\dfrac{L}{Tv^{(\\beta)}}=c_p^{(\\beta)}-\\dfrac LT$．液体は熱膨張を無視して $c_\\sigma^{(\\alpha)}\\simeq c_p^{(\\alpha)}$．(1) に代入すると $L/T$ が打ち消し合い $\\dfrac{dL}{dT}\\simeq c_p^{(\\beta)}-c_p^{(\\alpha)}$（キルヒホッフの式）．\n\n(4) $L/T=40.7\\times10^3/373\\approx109\\ \\mathrm{J/(mol\\,K)}$．$c_\\sigma^{(\\beta)}\\approx33.6-109\\approx-75\\ \\mathrm{J/(mol\\,K)}$．$dL/dT\\approx33.6-75.3\\approx-42\\ \\mathrm{J/(mol\\,K)}$（気化熱は温度とともに減少．実測値約 $-48\\ \\mathrm{J/(mol\\,K)}$ とおおむね合う）．\n\n(5) $c_\\sigma^{(\\beta)}<0$ は「飽和蒸気を共存線に沿って冷やすには熱を加えねばならない」ことを意味する．断熱（$ds=0$）で膨張させて温度を下げる場合を考える．飽和蒸気のエントロピー $s_\\sigma(T)$ は $ds_\\sigma/dT=c_\\sigma/T<0$ により温度低下とともに増加するのに対し，断熱膨張では $s$ が一定のまま．したがって膨張後は $s<s_\\sigma(T)$ となる．同じ温度の気相では圧力が高いほどエントロピーが小さく，飽和蒸気はその温度で安定に存在できる最小エントロピーの気相なので，$s<s_\\sigma$ は飽和蒸気圧を超えた過飽和状態を意味する．蒸気は気相のままでは不安定になり，一部が凝縮して液滴（霧・雲）ができる．断熱膨張で霧を作る霧箱や，上昇気流による雲の形成の原理である．"
+   }
+  ],
+  "idea": {
+   "tex": "クラペイロンを導くサイクルの「縦の辺」の熱を真面目に扱うと，潜熱の温度依存性と共存線に沿う比熱が得られ，水蒸気では $c_\\sigma<0$ という意外な結論（断熱膨張で凝縮）が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "相平衡",
+   "クラウジウス・クラペイロンの式",
+   "潜熱",
+   "キルヒホッフの式",
+   "共存線比熱",
+   "飽和蒸気",
+   "過飽和",
+   "霧箱"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-071",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ケルビンの式と臨界核・毛管凝縮",
+  "topic": "ケルビンの式と臨界核・毛管凝縮",
+  "statement": {
+   "tex": "半径 $r$ の球面（凸面）をもつ液滴の上の飽和蒸気圧 $p_r$ と，平面の液面上の飽和蒸気圧 $p_\\infty$ を考える．液体は非圧縮（密度 $\\rho$），蒸気は理想気体（モル質量 $M$），表面張力は $\\sigma$，温度は $T$．\n\\begin{enumerate}\n\\item 液体と蒸気の化学ポテンシャルが等しいという条件から，$\\ln\\dfrac{p_r}{p_\\infty}=\\dfrac{2\\sigma M}{\\rho RTr}$ を導け（$p_r-p_\\infty\\ll2\\sigma/r$ としてよい）．\n\\item $27\\ ^\\circ$C の水（$\\sigma=0.0717$ N/m，$\\rho=997\\ \\mathrm{kg/m^3}$）の蒸気が過飽和度 $p/p_\\infty=4$ にあるとき，平衡にある液滴の半径 $r^*$ と，その中の分子数を求めよ．この液滴より小さい滴，大きい滴はそれぞれどうなるか．\n\\item 同じ温度で相対湿度 $50\\%$ の空気に，水で完全にぬれる細孔をもつ物質を置く．凹面のメニスカス（曲率半径 $r$ の半球面）では蒸気圧が下がることを用いて，水がたまる（毛管凝縮が起こる）細孔の半径の上限を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $r^*=\\dfrac{2\\sigma M}{\\rho RT\\ln4}=0.75$ nm，約 59 個；小さい滴は蒸発，大きい滴は成長（不安定平衡）　(3) $1.5$ nm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 液体の圧力は $p_l=p_v+2\\sigma/r$．一定温度で単位質量あたりの化学ポテンシャルの変化は液体で $dp_l/\\rho$，理想気体の蒸気で $\\dfrac{RT}{M}\\dfrac{dp_v}{p_v}$．平面での共存状態（$p_l=p_v=p_\\infty$）から出発して等しく保つと\n\\[\n\\frac{1}{\\rho}\\left(p_r-p_\\infty+\\frac{2\\sigma}{r}\\right)=\\frac{RT}{M}\\ln\\frac{p_r}{p_\\infty}.\n\\]\n$p_r-p_\\infty\\ll2\\sigma/r$（$\\rho\\gg$ 蒸気の密度に対応）として $\\ln\\dfrac{p_r}{p_\\infty}=\\dfrac{2\\sigma M}{\\rho RTr}$．\n\n(2)\n\\[\nr^*=\\frac{2\\sigma M}{\\rho RT\\ln4}=\\frac{2(0.0717)(0.018)}{(997)(8.31)(300)(1.386)}=7.5\\times10^{-10}\\ \\mathrm m.\n\\]\n分子数 $\\dfrac{4\\pi r^{*3}\\rho N_A}{3M}\\approx59$．$r<r^*$ の滴では平衡蒸気圧が周囲より高いので蒸発して消え，$r>r^*$ の滴では低いので成長する（臨界核）．なお，この大きさでは巨視的な $\\sigma$ の使用は目安にすぎない．\n\n(3) 凹面では曲率の符号が逆になり $\\ln(p_r/p_\\infty)=-\\dfrac{2\\sigma M}{\\rho RTr}$．相対湿度 $\\varphi=p/p_\\infty$ のとき，$p_r\\le p$ となる（凝縮が進む）のは\n\\[\nr\\le\\frac{2\\sigma M}{\\rho RT\\ln(1/\\varphi)}=\\frac{2(0.0717)(0.018)}{(997)(8.31)(300)(0.693)}=1.5\\times10^{-9}\\ \\mathrm m.\n\\]\n完全ぬれではメニスカスの半径は細孔の半径に等しいので，半径約 1.5 nm 以下の細孔に水がたまる．"
+   }
+  ],
+  "idea": {
+   "tex": "化学ポテンシャルの一致から得るケルビンの式は，凸面では過飽和蒸気中の臨界核の大きさを，凹面では毛管凝縮が起こる細孔径を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) [nm]：≈1.5"
+  },
+  "methods": [],
+  "tags": [
+   "ケルビンの式",
+   "蒸気圧",
+   "化学ポテンシャル",
+   "核生成",
+   "毛管凝縮"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-072",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 30,
+  "theme": "マクスウェルの等面積則と共存状態の数値決定",
+  "topic": "マクスウェルの等面積則と共存状態の数値決定",
+  "statement": {
+   "tex": "ファン・デル・ワールス気体の換算状態方程式 $\\pi=\\dfrac{8\\tau}{3\\nu-1}-\\dfrac{3}{\\nu^2}$（$\\pi,\\nu,\\tau$ は臨界値で割った圧力・モル体積・温度）を考える．$\\tau<1$ の等温線は $\\nu$ について単調でなく，実際の等温変化では，液相 $\\nu_l$ と気相 $\\nu_g$ の間を圧力一定 $\\pi_s$ の水平線分で結ぶ相転移が起こる．\n\\begin{enumerate}\n\\item 2 相が共存するための条件は，2 相のモルあたりのギブズ自由エネルギー（化学ポテンシャル）が等しいことである．これを用いて，水平線分と等温線が囲む 2 つの領域の面積が等しい（$\\int_{\\nu_l}^{\\nu_g}\\pi\\,d\\nu=\\pi_s(\\nu_g-\\nu_l)$）ことを示せ．\n\\item 等面積則を $\\nu_l,\\nu_g$ を用いた具体的な式で書き，$\\tau=0.90$ について $\\pi_s,\\nu_l,\\nu_g$ を数値的に求めよ（有効数字 3 桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) 等面積則 $\\dfrac{8\\tau}{3}\\ln\\dfrac{3\\nu_g-1}{3\\nu_l-1}+\\dfrac{3}{\\nu_g}-\\dfrac{3}{\\nu_l}=\\pi_s(\\nu_g-\\nu_l)$ と $\\pi(\\nu_l)=\\pi(\\nu_g)=\\pi_s$ を連立して，$\\pi_s\\approx0.647$，$\\nu_l\\approx0.603$，$\\nu_g\\approx2.35$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 等温では $dG=V\\,dp$（1 mol あたり）．等温線（不安定部分も含めた解析的な曲線）に沿って液相の点 $l$ から気相の点 $g$ まで積分すると\n\\[ G_g-G_l=\\int_l^g V\\,dp. \\]\n部分積分により $\\int V\\,dp=[pV]_l^g-\\int_{V_l}^{V_g}p\\,dV=p_s(V_g-V_l)-\\int_{V_l}^{V_g}p\\,dV$．共存条件 $G_g=G_l$ から\n\\[ \\int_{V_l}^{V_g}p\\,dV=p_s(V_g-V_l). \\]\n左辺は等温線の下の面積，右辺は水平線分の下の長方形の面積なので，水平線分より上に出た部分（面積 II）と下にへこんだ部分（面積 I）が等しい．換算変数でも同じ形になる．\n(別解：$1\\to$ 等温線 $\\to5\\to$ 水平線分 $\\to1$ の可逆等温サイクルでは $\\oint dU=0$，$\\oint T\\,dS=T\\oint dS=0$ なので $\\oint p\\,dV=0$．)\n(2) $\\int_{\\nu_l}^{\\nu_g}\\pi\\,d\\nu=\\dfrac{8\\tau}{3}\\ln\\dfrac{3\\nu_g-1}{3\\nu_l-1}+\\dfrac3{\\nu_g}-\\dfrac3{\\nu_l}$．未知数 $\\nu_l,\\nu_g,\\pi_s$ に対して\n\\[ \\pi(\\nu_l)=\\pi_s,\\quad \\pi(\\nu_g)=\\pi_s,\\quad \\frac{8\\tau}{3}\\ln\\frac{3\\nu_g-1}{3\\nu_l-1}+\\frac3{\\nu_g}-\\frac3{\\nu_l}=\\pi_s(\\nu_g-\\nu_l) \\]\nの 3 式を連立する．$\\tau=0.90$ では，等温線の極小 ($\\nu\\approx0.72$) と極大 ($\\nu\\approx1.5$) の間の $\\pi$ を仮定して $\\pi(\\nu)=\\pi_s$ の外側 2 根を求め，等面積式が成り立つよう $\\pi_s$ を調整する（ニュートン法など）と\n\\[ \\pi_s\\approx0.647,\\qquad \\nu_l\\approx0.603,\\qquad \\nu_g\\approx2.35. \\]\n検算：$\\pi(0.603)=7.2/0.809-3/0.3636\\approx8.90-8.25=0.65$，$\\pi(2.35)=7.2/6.05-3/5.52\\approx1.190-0.543=0.647$．"
+   }
+  ],
+  "idea": {
+   "tex": "共存条件 $G_l=G_g$ と $dG=V\\,dp$ から等面積則が出る．換算変数で書けば，任意の $\\tau<1$ の共存圧と両相の体積が普遍的に数値で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "マクスウェルの等面積則",
+   "気液共存",
+   "ギブズ自由エネルギー",
+   "ファン・デル・ワールス方程式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-073",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 25,
+  "theme": "別経路（昇華）による比エントロピーの検算",
+  "topic": "別経路（昇華）による比エントロピーの検算",
+  "statement": {
+   "tex": "$0\\ ^\\circ\\mathrm{C}$，$1\\ \\mathrm{atm}$ の氷 1 kg を $100\\ ^\\circ\\mathrm{C}$，$1\\ \\mathrm{atm}$ の水蒸気にするときの比エントロピー変化 $\\Delta s$ を，2 つの経路で計算して比べる．データ：氷の融解熱 $q_m=333.6\\ \\mathrm{kJ/kg}$，水の比熱 $c=4.19\\ \\mathrm{kJ/(kg\\,K)}$，$100\\ ^\\circ\\mathrm{C}$ の蒸発熱 $q_v=2.26\\ \\mathrm{MJ/kg}$，$0\\ ^\\circ\\mathrm{C}$ 付近の昇華熱 $q_s=2.834\\ \\mathrm{MJ/kg}$，その温度の昇華圧 $p_s=611\\ \\mathrm{Pa}$．水蒸気は理想気体で定圧比熱 $c_p=4R/M$（$M=18\\ \\mathrm{g/mol}$）とする．$0\\ ^\\circ\\mathrm{C}$ と三重点の温度・圧力の違い，および凝縮相の圧力依存は無視してよい．\n\\begin{enumerate}\n\\item 経路 A（融解 → 水を $100\\ ^\\circ\\mathrm{C}$ まで加熱 → $100\\ ^\\circ\\mathrm{C}$ で蒸発）で $\\Delta s$ を求めよ．\n\\item 経路 B（$0\\ ^\\circ\\mathrm{C}$，$p_s$ で昇華 → 蒸気を $p_s$ のまま $100\\ ^\\circ\\mathrm{C}$ まで加熱 → $100\\ ^\\circ\\mathrm{C}$ で $1\\ \\mathrm{atm}$ まで等温圧縮）で $\\Delta s$ を求め，A と比べよ．\n\\item $\\Delta s$ を分子 1 個あたり $k_B$ 単位で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta s_A\\approx8.59\\ \\mathrm{kJ/(kg\\,K)}$　(2) $\\Delta s_B\\approx10.38+0.58-2.36\\approx8.59\\ \\mathrm{kJ/(kg\\,K)}$，A と 0.1% 以内で一致　(3) 約 $18.6\\,k_B$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T_0=273.15\\ \\mathrm{K}$，$T_b=373.15\\ \\mathrm{K}$．\n\\[ \\Delta s_A=\\frac{q_m}{T_0}+c\\ln\\frac{T_b}{T_0}+\\frac{q_v}{T_b}\\approx1221+4190\\times0.3119+\\frac{2.26\\times10^6}{373.15}\\approx1221+1307+6057\\approx8.59\\times10^3\\ \\mathrm{J/(kg\\,K)}. \\]\n(2) 昇華：$q_s/T_0=2.834\\times10^6/273.15\\approx10.38\\times10^3$．定圧加熱：$c_p=4\\times8.31/0.018\\approx1847\\ \\mathrm{J/(kg\\,K)}$，$c_p\\ln(T_b/T_0)\\approx1847\\times0.312\\approx576$．等温圧縮：理想気体で $-\\dfrac{R}{M}\\ln\\dfrac{p_0}{p_s}=-461.9\\ln\\dfrac{101325}{611}\\approx-461.9\\times5.11\\approx-2361$．\n\\[ \\Delta s_B\\approx10375+576-2361\\approx8.59\\times10^3\\ \\mathrm{J/(kg\\,K)}. \\]\nA（$8585$）と B（$8590$）は $0.1\\%$ 以内で一致する．エントロピーが状態量であることの確認であり，同時に，データ（昇華熱，昇華圧，蒸気の比熱）が熱力学的に整合していることを示している．差は近似（$c_p$ や昇華圧を三重点の値で代用したこと等）による．\n(3) $\\Delta s\\,M/R=8.59\\times10^3\\times0.018/8.31\\approx18.6$．分子 1 個あたり約 $18.6\\,k_B$ のエントロピーが増え，その大半（約 $13\\,k_B$）は蒸発による．"
+   }
+  ],
+  "idea": {
+   "tex": "エントロピーは状態量なので，融解→加熱→蒸発の経路と，昇華→気体加熱→等温圧縮の経路で同じ値になる．実測データでこれを確かめると熱力学の整合性が実感できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta s_A$ [kJ/(kg K)]：≈8.59\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エントロピー",
+   "状態量",
+   "昇華",
+   "融解",
+   "蒸発",
+   "理想気体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-074",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 25,
+  "theme": "2経路のエントロピー比較からキルヒホッフの式",
+  "topic": "2経路のエントロピー比較からキルヒホッフの式",
+  "statement": {
+   "tex": "1 mol の水（液体）が温度 $T_1$ で飽和蒸気とわずかに共存している．これを温度 $T_2$ の飽和蒸気に完全に変える．蒸気は理想気体（定圧モル比熱 $C_{pv}$），液体のモル比熱を $C_l$ とし，液体の体積は無視する．蒸発のモル潜熱 $L(T)$ は温度に依存してよい．\n\\begin{enumerate}\n\\item 経路 A：液体を飽和を保ったまま $T_1$ から $T_2$ まで加熱し，$T_2$ で蒸発させる．エントロピー変化 $\\Delta S_A$ を求めよ．\n\\item 経路 B：$T_1$ で蒸発させ，その蒸気を飽和を保ったまま $T_2$ まで変化させる．このとき飽和蒸気のモル熱容量は $C_{pv}-L(T)/T$ であることを用いて $\\Delta S_B$ を求めよ．\n\\item $\\Delta S_A=\\Delta S_B$ が任意の $T_2$ で成り立つことから $dL/dT$ を求めよ．$C_{pv}=4R$，$C_l=75.3\\ \\mathrm{J/(mol\\cdot K)}$ として数値も求めよ．また，$T_1=293\\ \\mathrm{K}$，$T_2=373\\ \\mathrm{K}$，$L(T_2)=40.7\\ \\mathrm{kJ/mol}$ のとき $\\Delta S$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta S_A=C_l\\ln\\dfrac{T_2}{T_1}+\\dfrac{L(T_2)}{T_2}$　(2) $\\Delta S_B=\\dfrac{L(T_1)}{T_1}+\\displaystyle\\int_{T_1}^{T_2}\\Big(C_{pv}-\\frac{L}{T}\\Big)\\frac{dT}{T}$　(3) $\\dfrac{dL}{dT}=C_{pv}-C_l\\approx-42\\ \\mathrm{J/(mol\\cdot K)}$，$\\Delta S\\approx127\\ \\mathrm{J/K}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 液体の体積を無視するので，飽和を保った加熱の熱容量は $C_l$．よって $\\Delta S_A=\\displaystyle\\int_{T_1}^{T_2}\\frac{C_l\\,dT}{T}+\\frac{L(T_2)}{T_2}=C_l\\ln\\frac{T_2}{T_1}+\\frac{L(T_2)}{T_2}$．\n\n(2) $T_1$ での蒸発で $L(T_1)/T_1$，その後の飽和蒸気の変化では $\\delta Q=(C_{pv}-L/T)dT$ なので\n\\[\n\\Delta S_B=\\frac{L(T_1)}{T_1}+\\int_{T_1}^{T_2}\\left(C_{pv}-\\frac{L(T)}{T}\\right)\\frac{dT}{T}.\n\\]\n\n(3) エントロピーは状態量なので $\\Delta S_A=\\Delta S_B$．両辺を $T_2$ で微分すると\n\\[\n\\frac{C_l}{T_2}+\\frac{L'(T_2)}{T_2}-\\frac{L(T_2)}{T_2^2}=\\frac{C_{pv}}{T_2}-\\frac{L(T_2)}{T_2^2}\n\\]\nとなり，$\\dfrac{dL}{dT}=C_{pv}-C_l$（キルヒホッフの式）．数値は $4\\times8.314-75.3\\approx-42\\ \\mathrm{J/(mol\\cdot K)}$（潜熱は温度とともに減少する）．\n\n$\\Delta S$ は経路 A で計算するのが簡単で，$\\Delta S=75.3\\ln\\dfrac{373}{293}+\\dfrac{40.7\\times10^3}{373}=18.2+109.1\\approx127\\ \\mathrm{J/K}$．"
+   }
+  ],
+  "idea": {
+   "tex": "同じ始状態・終状態を結ぶ2経路のエントロピー変化が等しいことを要求すると，潜熱の温度依存性（キルヒホッフの式）$dL/dT=C_{pv}-C_l$ が導かれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エントロピー",
+   "潜熱",
+   "飽和蒸気",
+   "キルヒホッフの式",
+   "状態量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-075",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 3,
+  "minutes": 30,
+  "theme": "2次相転移のエーレンフェストの関係式",
+  "topic": "2次相転移のエーレンフェストの関係式",
+  "statement": {
+   "tex": "1次相転移の共存線ではクラウジウス・クラペイロンの式が成り立つが，2次相転移ではモル体積 $v$ とモルエントロピー $s$ が転移線上で連続であり，潜熱も体積変化もない．\n\\begin{enumerate}\n\\item 転移線 $P(T)$ に沿って $s$ と $v$ が両相で等しいことを用いて，エーレンフェストの関係式\n\\[ \\frac{dP}{dT}=\\frac{\\Delta c_p}{Tv\\,\\Delta\\alpha}=\\frac{\\Delta\\alpha}{\\Delta\\kappa_T} \\]\nを導け．$\\Delta$ は 2 相の差，$\\alpha$ は体膨張率，$\\kappa_T$ は等温圧縮率，$c_p$ はモル定圧比熱．\n\\item ランダウ理論のモデルとして，秩序相のモルギブズエネルギーが無秩序相より\n\\[ \\Delta g=-\\frac{A^2}{4B}\\bigl(T_c(P)-T\\bigr)^2,\\qquad T_c(P)=T_0+kP \\]\n（$A,B,k$ は正の定数，$T<T_c$）だけ低いとする．転移点での $\\Delta c_p$，$v\\Delta\\alpha$，$v\\Delta\\kappa_T$ を求め，(1) の二つの式がどちらも転移線の傾き $1/k$ を与えることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\Delta c_p=\\dfrac{A^2T}{2B}$，$v\\Delta\\alpha=\\dfrac{A^2k}{2B}$，$v\\Delta\\kappa_T=\\dfrac{A^2k^2}{2B}$（秩序相−無秩序相），両式とも $dP/dT=1/k$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 転移線に沿って $ds^{(1)}=ds^{(2)}$．各相で\n\\[ ds=\\frac{c_p}{T}dT+\\left(\\frac{\\partial s}{\\partial P}\\right)_TdP=\\frac{c_p}{T}dT-v\\alpha\\,dP \\]\n（マクスウェルの関係式 $(\\partial s/\\partial P)_T=-(\\partial v/\\partial T)_P$ を使用）．$v$ は両相で共通なので差をとって $\\Delta c_p\\,dT/T=v\\Delta\\alpha\\,dP$，すなわち $dP/dT=\\Delta c_p/(Tv\\Delta\\alpha)$．\n同様に $dv=v\\alpha\\,dT-v\\kappa_T\\,dP$ の差をとり $\\Delta\\alpha\\,dT=\\Delta\\kappa_T\\,dP$，すなわち $dP/dT=\\Delta\\alpha/\\Delta\\kappa_T$．\n\n(2) $s=-\\partial g/\\partial T$，$v=\\partial g/\\partial P$ より $c_p=-T\\partial^2g/\\partial T^2$，$v\\alpha=\\partial^2g/\\partial T\\partial P$，$v\\kappa_T=-\\partial^2g/\\partial P^2$．$\\Delta g$ を微分して\n\\[ \\frac{\\partial^2\\Delta g}{\\partial T^2}=-\\frac{A^2}{2B},\\quad \\frac{\\partial^2\\Delta g}{\\partial T\\partial P}=\\frac{A^2k}{2B},\\quad \\frac{\\partial^2\\Delta g}{\\partial P^2}=-\\frac{A^2k^2}{2B}. \\]\n1 階微分は $T=T_c$ で 0 だから $s,v$ は連続（2 次転移）．したがって\n\\[ \\Delta c_p=\\frac{A^2T}{2B},\\quad v\\Delta\\alpha=\\frac{A^2k}{2B},\\quad v\\Delta\\kappa_T=\\frac{A^2k^2}{2B}. \\]\nこれより\n\\[ \\frac{\\Delta c_p}{Tv\\Delta\\alpha}=\\frac{A^2T/2B}{TA^2k/2B}=\\frac1k,\\qquad \\frac{\\Delta\\alpha}{\\Delta\\kappa_T}=\\frac{A^2k/2B}{A^2k^2/2B}=\\frac1k. \\]\n一方 $T_c=T_0+kP$ より転移線は $dP/dT=1/k$．三者が一致する．\n副産物として，両式を等置すると $\\Delta c_p=Tv(\\Delta\\alpha)^2/\\Delta\\kappa_T$ という比熱の跳びと弾性的量の関係が得られる．"
+   }
+  ],
+  "idea": {
+   "tex": "クラウジウス・クラペイロンは $s,v$ の跳びから，エーレンフェストは $s,v$ の連続性をもう一段微分した $c_p,\\alpha,\\kappa_T$ の跳びから得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "相転移",
+   "エーレンフェストの関係式",
+   "クラウジウス・クラペイロン",
+   "ランダウ理論",
+   "マクスウェルの関係式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -633,6 +3617,110 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-076",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 4,
+  "minutes": 50,
+  "theme": "ファン・デル・ワールス流体のスピノーダルと臨界指数",
+  "topic": "ファン・デル・ワールス流体のスピノーダルと臨界指数",
+  "statement": {
+   "tex": "臨界点の値 $p_{\\rm c},v_{\\rm c},T_{\\rm c}$ で規格化した変数 $\\tilde p=p/p_{\\rm c}$，$\\tilde v=v/v_{\\rm c}$，$\\tilde T=T/T_{\\rm c}$（$v$ は 1 粒子当たりの体積）を用いると，ファン・デル・ワールスの状態方程式は\n\\[ \\tilde p=\\frac{8\\tilde T}{3\\tilde v-1}-\\frac{3}{\\tilde v^{2}}\\qquad(\\tilde v>1/3) \\]\nと書ける．等温圧縮率を $K_T=-\\frac1v\\left(\\frac{\\partial v}{\\partial p}\\right)_T$ とする．\n\\begin{enumerate}\n\\item 等温線上で $(\\partial\\tilde p/\\partial\\tilde v)_{\\tilde T}=0$ となる点の集合（スピノーダル線）を，$\\tilde T_{\\rm s}(\\tilde v)$ および $\\tilde p_{\\rm s}(\\tilde v)$ として求めよ．$\\tilde p_{\\rm s}$ の最大値はどこで何になるか．\n\\item 液体側のスピノーダル点の圧力が負になる（液体が引っ張り応力に耐えうる）のは $\\tilde T$ がいくら以下のときか．\n\\item $\\tau=\\tilde T-1$，$\\omega=\\tilde v-1$ を小さいとして，$\\tilde p$ を $\\tau\\omega^2,\\ \\tau\\omega^3,\\ \\omega^4$ 以上の項を落として展開せよ．\n\\item $\\tau<0$ で，マクスウェルの等面積則を (3) の近似式に適用し，共存する 2 相の体積差 $\\Delta\\tilde v$ と共存圧 $\\tilde p_{\\rm cx}$ を $\\tau$ で表せ．$\\tilde T=0.99$ での $\\Delta\\tilde v$ の値を示せ．\n\\item 臨界点近傍で $K_T\\propto|\\tau|^{-\\gamma}$ と振る舞う．(a) 臨界等容線 $\\tilde v=1$ 上で $\\tau\\to+0$ とする場合，(b) $\\tau\\to-0$ で共存曲線上の各相に沿って近づく場合，それぞれ $-\\left(\\partial\\tilde p/\\partial\\tilde v\\right)_{\\tilde T}$ の主要項を求め，指数 $\\gamma$ と振幅比 $K_T(\\tau)/K_T(-\\tau)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tilde T_{\\rm s}=\\frac{(3\\tilde v-1)^2}{4\\tilde v^3}$，$\\tilde p_{\\rm s}=\\frac{3\\tilde v-2}{\\tilde v^3}$，最大値は $\\tilde v=1$ で $1$（臨界点）　(2) $\\tilde T<27/32\\approx0.84$　(3) $\\tilde p\\simeq1+4\\tau-6\\tau\\omega-\\frac32\\omega^3$　(4) $\\Delta\\tilde v=4\\sqrt{-\\tau}$，$\\tilde p_{\\rm cx}=1+4\\tau$；$\\tilde T=0.99$ で $\\Delta\\tilde v\\approx0.40$（厳密解 $0.41$）　(5) (a) $6\\tau$ (b) $12|\\tau|$；$\\gamma=1$，振幅比 $2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\left(\\frac{\\partial\\tilde p}{\\partial\\tilde v}\\right)_{\\tilde T}=-\\frac{24\\tilde T}{(3\\tilde v-1)^2}+\\frac{6}{\\tilde v^3}=0$ より $\\tilde T_{\\rm s}(\\tilde v)=\\frac{(3\\tilde v-1)^2}{4\\tilde v^3}$．これを状態方程式に代入すると\n\\[ \\tilde p_{\\rm s}=\\frac{2(3\\tilde v-1)}{\\tilde v^3}-\\frac{3}{\\tilde v^2}=\\frac{3\\tilde v-2}{\\tilde v^3}. \\]\n$\\frac{d\\tilde p_{\\rm s}}{d\\tilde v}=\\frac{3\\tilde v^3-3\\tilde v^2(3\\tilde v-2)}{\\tilde v^6}=\\frac{6(1-\\tilde v)}{\\tilde v^4}$ より最大は $\\tilde v=1$ で $\\tilde p_{\\rm s}=1$，そこで $\\tilde T_{\\rm s}=1$：臨界点はスピノーダル線の頂点である．$K_T$ はスピノーダル線上で発散する．\n\n(2) 液体側スピノーダルは $\\tilde v<1$ の枝．$\\tilde p_{\\rm s}<0\\iff\\tilde v<2/3$．$\\tilde T_{\\rm s}$ は $1/3<\\tilde v<1$ で単調増加（$\\tilde T_{\\rm s}'\\propto(3\\tilde v-1)(1-\\tilde v)>0$）なので，$\\tilde T<\\tilde T_{\\rm s}(2/3)=\\frac{1^2}{4\\cdot 8/27}=\\frac{27}{32}\\approx0.84$ のとき液体側スピノーダル圧は負．このとき過熱・引っ張られた液体は負圧でも準安定に存在しうる．\n\n(3) $\\frac{8\\tilde T}{3\\tilde v-1}=\\frac{8(1+\\tau)}{2(1+\\frac32\\omega)}=4(1+\\tau)\\left(1-\\frac32\\omega+\\frac94\\omega^2-\\frac{27}8\\omega^3+\\cdots\\right)$，$\\frac3{\\tilde v^2}=3(1-2\\omega+3\\omega^2-4\\omega^3+\\cdots)$．差をとると $\\omega^0:\\ 1+4\\tau$，$\\omega^1:\\ -6-6\\tau+6=-6\\tau$，$\\omega^2:\\ 9-9=0$（$\\tau\\omega^2$ は落とす），$\\omega^3:\\ -\\frac{27}2+12=-\\frac32$．よって\n\\[ \\tilde p\\simeq1+4\\tau-6\\tau\\omega-\\frac32\\omega^3. \\]\n\n(4) 近似式は $\\tilde p-(1+4\\tau)$ が $\\omega$ の奇関数なので，等面積則を満たす水平線は $\\tilde p_{\\rm cx}=1+4\\tau$，共存体積は $\\omega=\\pm\\omega_0$ の対称な 2 点．$-6\\tau\\omega_0-\\frac32\\omega_0^3=0$ より $\\omega_0^2=-4\\tau$，$\\Delta\\tilde v=2\\omega_0=4\\sqrt{-\\tau}$（秩序変数の臨界指数 $\\beta=1/2$）．$\\tilde T=0.99$ で $\\Delta\\tilde v=4\\times0.1=0.40$．（等面積則を厳密に数値で解くと $\\tilde v_\\ell=0.831$，$\\tilde v_{\\rm g}=1.243$，$\\Delta\\tilde v=0.412$ で，主要項はよく合う．）\n\n(5) $-\\frac{\\partial\\tilde p}{\\partial\\omega}\\simeq6\\tau+\\frac92\\omega^2$．\n(a) $\\omega=0$，$\\tau>0$：$6\\tau$．\n(b) 共存曲線上 $\\omega^2=-4\\tau=4|\\tau|$：$-6|\\tau|+18|\\tau|=12|\\tau|$（両相とも主要項は同じ）．\n$K_T=-\\frac1v\\frac{\\partial v}{\\partial p}\\propto\\left(-\\partial\\tilde p/\\partial\\tilde v\\right)^{-1}$（$v\\simeq v_{\\rm c}$）なので，どちらも $K_T\\propto|\\tau|^{-1}$，$\\gamma=1$．振幅比は $K_T(\\tau)/K_T(-\\tau)=12/6=2$：同じ $|\\tau|$ なら臨界点より上（臨界等容線上）の方が 2 倍圧縮されやすい．（これらは平均場の臨界指数・振幅比であり，実在流体では $\\beta\\approx0.33$，$\\gamma\\approx1.24$ とずれる．）"
+   }
+  ],
+  "idea": {
+   "tex": "還元変数で $(\\partial p/\\partial v)_T=0$ からスピノーダルと負圧の条件を出し，臨界点まわりの展開 $\\tilde p\\simeq1+4\\tau-6\\tau\\omega-\\frac32\\omega^3$ の奇関数性で等面積則を解いて平均場の臨界指数 $\\beta=1/2$，$\\gamma=1$ と振幅比 2 を得る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ファン・デル・ワールスの状態方程式",
+   "マクスウェルの等面積則",
+   "スピノーダル",
+   "臨界点",
+   "臨界指数",
+   "等温圧縮率",
+   "負圧"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "TD-04-077",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "TD-35",
+  "level": 4,
+  "minutes": 40,
+  "theme": "飽和蒸気の断熱膨張で凝縮か蒸発か",
+  "topic": "飽和蒸気の断熱膨張で凝縮か蒸発か",
+  "statement": {
+   "tex": "純物質の液体と蒸気が共存する系を考える．蒸気は理想気体（定圧モル比熱 $C_{p,v}$ 一定）とし，液体のモル体積は蒸気に比べて無視でき，液体のモル比熱を $C$（一定），蒸発のモル潜熱を $q(T)$ とする．共存曲線上の圧力を $p_s(T)$，気体定数を $R$ とする．\n\\begin{enumerate}\n\\item 温度 $T_0$，飽和圧 $p_0$ で共存している系を，熱浴に接したまま準静的に体積を $\\Delta V$ だけ増やした．蒸発したモル数 $\\Delta n$，吸収した熱 $Q$，内部エネルギー変化 $\\Delta U$ を求めよ．\n\\item 共存曲線に沿って $\\dfrac{dq}{dT}=C_{p,v}-C$ が成り立つことを示せ．また，共存曲線上の蒸気 1 mol のエントロピー $s_v^{\\rm sat}(T)$ が\n\\[\n\\frac{ds_v^{\\rm sat}}{dT}=\\frac1T\\left(C_{p,v}-\\frac{q}{T}\\right)\n\\]\nを満たすことを示せ（クラウジウス・クラペイロンの式を用いてよい）．\n\\item 液体 $n_l$ mol と蒸気 $n_v$ mol からなる系を熱浴から切り離し，断熱的・準静的に圧力を変えて温度を $dT$ 変化させた．蒸気のモル数の変化 $dn_v$ を求めよ．\n\\item 水（$T=373\\ {\\rm K}$，$q=40.7\\ {\\rm kJ/mol}$，$C_{p,v}=4R$，$C=75.3\\ {\\rm J\\,mol^{-1}K^{-1}}$，$R=8.314\\ {\\rm J\\,mol^{-1}K^{-1}}$）について，(a) 液体を含まない飽和水蒸気を断熱膨張させて温度を $1\\ {\\rm K}$ 下げると，蒸気の何 \\% が凝縮するか（あるいは蒸発するか）．(b) 断熱膨張で凝縮も蒸発も起こらない（$dn_v=0$）ための比 $n_l/n_v$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta n=\\dfrac{p_0\\Delta V}{RT_0}$，$Q=q\\Delta n$，$\\Delta U=(q-RT_0)\\Delta n$　(2) 証明（解説参照）　(3) $dn_v=-\\dfrac{n_lC+n_v\\,(C_{p,v}-q/T)}{q}\\,dT$　(4) (a) 約 $0.19\\%$ が凝縮　(b) $n_l/n_v=(q/T-C_{p,v})/C\\approx1.0$（これより液体が多ければ断熱膨張で蒸発，少なければ凝縮）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T_0$ 一定なら圧力も $p_0$ のまま．液体の体積は無視できるので，増えた体積はすべて新たな蒸気が占め，$p_0\\Delta V=\\Delta n\\,RT_0$，$\\Delta n=p_0\\Delta V/(RT_0)$．等温等圧の蒸発で吸収する熱は $Q=q\\,\\Delta n$．系が外にした仕事は $p_0\\Delta V=RT_0\\Delta n$ なので $\\Delta U=Q-p_0\\Delta V=(q-RT_0)\\Delta n$．\n\n(2) $q=h_v-h_l$．理想気体の $h_v$ は $T$ のみの関数で $dh_v/dT=C_{p,v}$．液体は $dh_l=C\\,dT+v_l\\,dp$ で $v_l$ を無視すると $dh_l/dT=C$．よって共存曲線に沿って $dq/dT=C_{p,v}-C$（キルヒホッフの式）．\n次に蒸気のエントロピーは $s_v=C_{p,v}\\log T-R\\log p+$ 定数．共存曲線上では $p=p_s(T)$ で，クラウジウス・クラペイロンの式（$v_l$ 無視，理想気体）$dp_s/dT=qp_s/(RT^2)$ を使うと\n\\[\n\\frac{ds_v^{\\rm sat}}{dT}=\\frac{C_{p,v}}{T}-\\frac{R}{p_s}\\frac{dp_s}{dT}=\\frac{C_{p,v}}T-\\frac q{T^2}=\\frac1T\\left(C_{p,v}-\\frac qT\\right).\n\\]\n（液体側は $ds_l/dT=C/T$ で，$s_v-s_l=q/T$ を $T$ で微分したものと上の式は $dq/dT=C_{p,v}-C$ により整合する．）\n\n(3) 全エントロピー $S=n_ls_l+n_vs_v^{\\rm sat}$，$n_l+n_v$ 一定．可逆断熱なので\n\\[\n0=dS=\\left[n_l\\frac CT+\\frac{n_v}T\\left(C_{p,v}-\\frac qT\\right)\\right]dT+(s_v-s_l)\\,dn_v,\\qquad s_v-s_l=\\frac qT .\n\\]\nよって $dn_v=-\\dfrac{n_lC+n_v\\,(C_{p,v}-q/T)}{q}\\,dT$．\n\n(4) $q/T=40700/373=109.1\\ {\\rm J\\,mol^{-1}K^{-1}}$，$C_{p,v}=33.3\\ {\\rm J\\,mol^{-1}K^{-1}}$．\n(a) $n_l=0$：$\\dfrac{dn_v}{n_v}=\\dfrac{q/T-C_{p,v}}{q}\\,dT=\\dfrac{75.8}{40700}\\,dT=1.86\\times10^{-3}\\,dT$．断熱膨張では圧力・温度が下がる（$dT=-1\\ {\\rm K}$）ので $dn_v/n_v\\approx-0.19\\%$：蒸気の約 0.19\\% が凝縮する．\n飽和蒸気線に沿ったエントロピーは温度とともに減る（$ds_v^{\\rm sat}/dT<0$）ため，断熱的にエントロピーを保ったまま冷やすと飽和線より「湿った」側に入る．霧箱や雲の発生と同じ原理である．\n(b) $dn_v=0$ の条件は $n_lC=n_v(q/T-C_{p,v})$，\n\\[\n\\frac{n_l}{n_v}=\\frac{109.1-33.3}{75.3}\\approx1.0 .\n\\]\n液体の方が多い湿り蒸気では，液体の持つ熱が放出されて逆に蒸発が起こる．"
+   }
+  ],
+  "idea": {
+   "tex": "共存線上の蒸気のエントロピーは $ds_v^{\\rm sat}/dT=(C_{p,v}-q/T)/T<0$ なので，乾いた飽和水蒸気は断熱膨張で凝縮する．液体が十分多いとその熱容量が勝って逆に蒸発する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "相平衡",
+   "クラウジウス・クラペイロンの式",
+   "潜熱",
+   "飽和蒸気",
+   "断熱膨張",
+   "キルヒホッフの式",
+   "凝縮"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

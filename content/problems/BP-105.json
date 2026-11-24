@@ -593,6 +593,108 @@
   }
  },
  {
+  "id": "BP-01-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 3,
+  "minutes": 45,
+  "theme": "協同的2状態転移の幅と van't Hoff エンタルピー",
+  "topic": "協同的2状態転移の幅と van't Hoff エンタルピー",
+  "statement": {
+   "tex": "鎖状高分子 1 分子は $N$ 個のユニットからなり，次の 2 種類の構造をとるとする（圧力一定，体積変化は無視する）．\n・低温構造：ただ 1 通りの状態で，エンタルピーを基準 $0$ とする．\n・ランダム構造：各ユニットが独立に $n$ 通りの状態をとれるため全部で $n^N$ 通りの状態があり，どの状態もエンタルピー $N\\varepsilon$（$\\varepsilon>0$）をもつ．\n分子どうしは独立とし，ボルツマン定数を $k_{\\rm B}$，気体定数を $R$ とする．\n\\begin{enumerate}\\item 1 分子当たりの転移のギブズ自由エネルギー変化 $\\Delta g(T)$ を求め，2 つの構造が等確率で現れる転移温度 $T_{\\rm m}$ を $\\varepsilon,n,k_{\\rm B}$ で表せ．\n\\item 1 分子の分配関数を $Z=1+n^N e^{-N\\varepsilon/k_{\\rm B}T}$ とし，1 分子当たりのギブズ自由エネルギーを $g=-k_{\\rm B}T\\ln Z$ とする．ランダム構造にある分子の割合を $\\theta(T)$ とするとき，ギブズ–ヘルムホルツの式 $h=-T^2\\left(\\partial (g/T)/\\partial T\\right)_p$ から平均エンタルピーが $h=N\\varepsilon\\,\\theta$ となることを示し，1 モル当たりの定圧熱容量が\n\\[ C_p=\\frac{(\\Delta H)^2}{RT^2}\\,\\theta(1-\\theta),\\qquad \\Delta H=N_{\\rm A}N\\varepsilon \\]\nとなることを示せ．\n\\item $\\Delta H$ と $T_{\\rm m}$ を用いて，$\\theta$ が $0.1$ から $0.9$ まで変わる温度幅 $\\delta T$ を $\\delta T\\ll T_{\\rm m}$ の近似で求め，さらに $N,n,T_{\\rm m}$ だけで表せ．$N=100$，$n=10$，$T_{\\rm m}=363\\,\\mathrm{K}$ として $\\delta T$，$\\Delta H$，熱容量のピーク値 $C_p(T_{\\rm m})$ を数値で求めよ（$R=8.31\\,\\mathrm{J\\,K^{-1}mol^{-1}}$，$\\ln 10=2.30$，$\\ln 9=2.20$）．\n\\item 実験では見かけの平衡定数 $K=\\theta/(1-\\theta)$ の温度依存性から van't Hoff エンタルピー $\\Delta H_{\\rm vH}\\equiv -R\\,d\\ln K/d(1/T)$ を求め，熱量計で測る全吸熱量 $\\Delta H_{\\rm cal}$ と比べることがある．いまの模型で $\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}$ を示せ．\n\\item 実は同じ鎖が $m$ 個の互いに独立な「ドメイン」（各 $N/m$ ユニット，各ドメインは上と同じ 2 状態的な転移をする）からなっていたとする．$\\theta$ をランダム構造にあるユニットの割合とすると，$T_{\\rm m}$，$\\Delta H_{\\rm cal}$，$\\Delta H_{\\rm vH}$，$\\delta T$ はそれぞれどうなるか．比 $\\Delta H_{\\rm vH}/\\Delta H_{\\rm cal}$ が何を測っているかを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta g=N\\varepsilon-Nk_{\\rm B}T\\ln n$，$T_{\\rm m}=\\varepsilon/(k_{\\rm B}\\ln n)$　(2) 証明（解説参照）　(3) $\\delta T\\simeq 2\\ln 9\\,RT_{\\rm m}^2/\\Delta H=2\\ln9\\,T_{\\rm m}/(N\\ln n)\\approx 6.9\\,\\mathrm{K}$，$\\Delta H\\approx 6.9\\times10^5\\,\\mathrm{J/mol}$，$C_p(T_{\\rm m})=(\\Delta H)^2/(4RT_{\\rm m}^2)\\approx 1.1\\times10^5\\,\\mathrm{J\\,K^{-1}mol^{-1}}$　(4) 証明（解説参照）　(5) $T_{\\rm m}$・$\\Delta H_{\\rm cal}$ は不変，$\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}/m$，$\\delta T$ は $m$ 倍．比は協同単位の大きさ（$1/m$）を測る"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ボルツマンの関係式より，ランダム構造と低温構造のエントロピー差は $\\Delta s=k_{\\rm B}\\ln n^N-k_{\\rm B}\\ln 1=Nk_{\\rm B}\\ln n$．エンタルピー差は $N\\varepsilon$ なので\n\\[ \\Delta g(T)=N\\varepsilon-TNk_{\\rm B}\\ln n . \\]\n2 構造が等確率となるのは $\\Delta g=0$，すなわち $T_{\\rm m}=\\varepsilon/(k_{\\rm B}\\ln n)$．これは $\\Delta H=T_{\\rm m}\\Delta S$（1 次転移の関係）にほかならない．\n\n(2) $Z=1+e^{-\\Delta g/k_{\\rm B}T}$ であり，$\\theta=e^{-\\Delta g/k_{\\rm B}T}/Z=n^Ne^{-\\beta N\\varepsilon}/Z$（$\\beta=1/k_{\\rm B}T$）．$g/T=-k_{\\rm B}\\ln Z$ より\n\\[ h=-T^2\\frac{\\partial}{\\partial T}\\left(-k_{\\rm B}\\ln Z\\right)=k_{\\rm B}T^2\\frac{1}{Z}\\frac{\\partial Z}{\\partial T}=k_{\\rm B}T^2\\cdot\\frac{n^Ne^{-\\beta N\\varepsilon}}{Z}\\cdot\\frac{N\\varepsilon}{k_{\\rm B}T^2}=N\\varepsilon\\,\\theta . \\]\nまた $\\theta=1/(1+e^{x})$，$x=\\Delta g/k_{\\rm B}T=N\\varepsilon/k_{\\rm B}T-N\\ln n$ とおくと $d\\theta/dT=-\\theta(1-\\theta)\\,dx/dT=\\theta(1-\\theta)N\\varepsilon/(k_{\\rm B}T^2)$．よって 1 モル当たり\n\\[ C_p=N_{\\rm A}N\\varepsilon\\frac{d\\theta}{dT}=\\frac{(N_{\\rm A}N\\varepsilon)^2}{N_{\\rm A}k_{\\rm B}T^2}\\theta(1-\\theta)=\\frac{(\\Delta H)^2}{RT^2}\\theta(1-\\theta). \\]\n\n(3) $\\ln\\dfrac{\\theta}{1-\\theta}=-x=-\\dfrac{\\Delta H}{R}\\left(\\dfrac1T-\\dfrac1{T_{\\rm m}}\\right)$（$\\Delta H/R=N\\varepsilon/k_{\\rm B}$，$N\\ln n=\\Delta H/(RT_{\\rm m})$ を用いた）．$\\theta=0.1,0.9$ は $\\ln\\frac{\\theta}{1-\\theta}=\\mp\\ln 9$ に対応し，$T=T_{\\rm m}+\\Delta$ で $\\frac1T-\\frac1{T_{\\rm m}}\\simeq-\\Delta/T_{\\rm m}^2$ と近似すると $\\Delta=\\pm\\ln9\\,RT_{\\rm m}^2/\\Delta H$．したがって\n\\[ \\delta T\\simeq\\frac{2\\ln 9\\,RT_{\\rm m}^2}{\\Delta H}=\\frac{2\\ln 9\\,T_{\\rm m}}{N\\ln n}. \\]\n数値：$\\delta T=2\\times2.20\\times363/(100\\times2.30)\\approx 6.9\\,\\mathrm{K}$．$\\Delta H=RNT_{\\rm m}\\ln n=8.31\\times100\\times363\\times2.30\\approx 6.9\\times10^5\\,\\mathrm{J/mol}$．ピークは $\\theta=1/2$ の $T_{\\rm m}$ で $C_p(T_{\\rm m})=(\\Delta H)^2/(4RT_{\\rm m}^2)\\approx 1.1\\times10^5\\,\\mathrm{J\\,K^{-1}mol^{-1}}$．ユニット数 $N$ が大きいほど転移は鋭く（幅 $\\propto1/N$），ピークは高く（$\\propto N^2$）なり，$N\\to\\infty$ で真の 1 次転移に近づく．\n\n(4) $\\ln K=-\\dfrac{\\Delta H}{R}\\left(\\dfrac1T-\\dfrac1{T_{\\rm m}}\\right)$ より $-R\\,d\\ln K/d(1/T)=\\Delta H$．一方，熱量計で測る全吸熱は $\\int C_p\\,dT=\\Delta H\\,[\\theta]_{0}^{1}=\\Delta H$．よって $\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}$（厳密な 2 状態系の判定基準）．\n\n(5) 各ドメインは $N/m$ ユニットの 2 状態系で，転移のエンタルピー $\\Delta H/m$，エントロピー $\\Delta S/m$ をもつから転移温度 $T_{\\rm m}=\\varepsilon/(k_{\\rm B}\\ln n)$ は不変．ドメインは独立なので，ランダム化したユニットの割合は 1 ドメインがランダム化している確率に等しく，$\\ln K=-\\frac{\\Delta H}{mR}\\left(\\frac1T-\\frac1{T_{\\rm m}}\\right)$．よって $\\Delta H_{\\rm vH}=\\Delta H/m$．全吸熱は全ユニットがランダム化するのに必要な熱なので $\\Delta H_{\\rm cal}=\\Delta H$ のまま．幅は (3) の式で $\\Delta H\\to\\Delta H/m$ として $\\delta T$ が $m$ 倍に広がる．比 $\\Delta H_{\\rm vH}/\\Delta H_{\\rm cal}=1/m$ は「一斉に転移する協同単位の大きさ」の全体に対する割合を表し，1 なら全体が一つの協同単位，1 より小さければ複数の独立なドメインがあることを示す．"
+   }
+  ],
+  "idea": {
+   "tex": "状態数 $n^N$ によるエントロピーとギブズ–ヘルムホルツ式から 2 状態系の熱容量ピークを出し，転移幅 $\\propto RT_{\\rm m}^2/\\Delta H$ を使って van't Hoff エンタルピーと熱量計エンタルピーの比で協同単位の大きさを読む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) $\\delta T$ [K]：≈6.9 ; $\\Delta H$ [J/mol]：≈6.9e5 ; $C_p(T_{\\rm m})$ [J K⁻¹mol⁻¹]：≈1.1e5\n(4) 証明\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ギブズ自由エネルギー",
+   "ギブズ–ヘルムホルツの式",
+   "ボルツマンの関係式",
+   "協同的転移",
+   "van't Hoff エンタルピー",
+   "熱容量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "BP-01-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "BP-105",
+  "level": 3,
+  "minutes": 50,
+  "theme": "折り返しエネルギーをもつ1次元ゴム鎖と張力の分解",
+  "topic": "折り返しエネルギーをもつ1次元ゴム鎖と張力の分解",
+  "statement": {
+   "tex": "長さ $d$ の棒 $N$ 本（$N\\gg1$）が一直線上に連なった鎖を考える．$j$ 番目の棒の向きを $s_j=\\pm1$（右向き/左向き）で表し，鎖の両端間の距離（符号つき）を $L=d\\sum_j s_j$ とする．隣り合う棒が逆向き（折り返し）になるごとにエネルギー $\\varepsilon\\ (>0)$ が必要で，鎖のエネルギーは $E=\\varepsilon\\sum_j\\dfrac{1-s_js_{j+1}}{2}$ である．温度 $T$，$\\beta=1/k_{\\rm B}T$ とし，端の効果は無視する．\n\\begin{enumerate}\n\\item 張力がないとき，相関 $\\langle s_js_{j+r}\\rangle$ と $\\langle L^2\\rangle$（$N$ の1次まで）を求めよ．\n\\item 鎖の両端に張力 $Y$ を加える（重み $e^{-\\beta(E-YL)}$ の張力一定アンサンブル）．転送行列を用いて1本当たりのギブス自由エネルギー $g=-k_{\\rm B}T\\ln\\lambda$ の $\\lambda$ を求めよ．\n\\item 伸長率 $x=\\langle L\\rangle/Nd$ を $Y$ の関数として求めよ．$\\varepsilon\\to0$ の極限を確認せよ．\n\\item $Y$ が小さいときの $x$ を求め，(1) の $\\langle L^2\\rangle$ と線形応答の関係 $\\langle L\\rangle=\\beta Y\\langle L^2\\rangle_0$ が成り立つことを確かめよ．また $x$ を固定したときの張力 $Y(T)$ を書け．\n\\item (4) の線形領域で，長さ一定のもとでの張力を $Y=Y_E+Y_S$，$Y_E=(\\partial U/\\partial L)_T$，$Y_S=-T(\\partial S/\\partial L)_T$ に分解し，$Y_E,Y_S$ を $Y$ で表せ．$Y_E$ の符号の物理的意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle s_js_{j+r}\\rangle=\\tanh^r\\dfrac{\\beta\\varepsilon}2$，$\\langle L^2\\rangle=Nd^2e^{\\beta\\varepsilon}$　(2) $\\lambda=\\cosh(\\beta Yd)+\\sqrt{\\sinh^2(\\beta Yd)+e^{-2\\beta\\varepsilon}}$　(3) $x=\\dfrac{\\sinh(\\beta Yd)}{\\sqrt{\\sinh^2(\\beta Yd)+e^{-2\\beta\\varepsilon}}}$，$\\varepsilon\\to0$ で $\\tanh(\\beta Yd)$　(4) $x\\simeq\\dfrac{Yd}{k_{\\rm B}T}e^{\\varepsilon/k_{\\rm B}T}$，$Y=\\dfrac{k_{\\rm B}T}{d}e^{-\\varepsilon/k_{\\rm B}T}x$　(5) $Y_E=-\\dfrac{\\varepsilon}{k_{\\rm B}T}Y<0$，$Y_S=\\left(1+\\dfrac{\\varepsilon}{k_{\\rm B}T}\\right)Y$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $Y=0$ では結合変数 $\\tau_j=s_js_{j+1}$ が互いに独立で，$P(\\tau=-1)=\\dfrac{e^{-\\beta\\varepsilon}}{1+e^{-\\beta\\varepsilon}}$．よって $\\langle\\tau\\rangle=\\dfrac{1-e^{-\\beta\\varepsilon}}{1+e^{-\\beta\\varepsilon}}=\\tanh\\dfrac{\\beta\\varepsilon}{2}\\equiv t$．$s_js_{j+r}=\\tau_j\\cdots\\tau_{j+r-1}$ だから $\\langle s_js_{j+r}\\rangle=t^r$．\n\\[\n\\langle L^2\\rangle=d^2\\sum_{j,k}\\langle s_js_k\\rangle\\simeq Nd^2\\left(1+2\\sum_{r\\ge1}t^r\\right)=Nd^2\\frac{1+t}{1-t}=Nd^2e^{\\beta\\varepsilon}.\n\\]\n折り返しのない直線部分の平均長さが $e^{\\beta\\varepsilon}$ 程度に伸び，有効的な「セグメント長」が大きくなる．\n\n(2) $h=\\beta Yd$ として重みを $\\prod_j T(s_j,s_{j+1})$，$T(s,s')=\\exp\\left[-\\beta\\varepsilon\\frac{1-ss'}{2}+\\frac h2(s+s')\\right]$ と書く：\n\\[\nT=\\begin{pmatrix}e^{h}&e^{-\\beta\\varepsilon}\\\\ e^{-\\beta\\varepsilon}&e^{-h}\\end{pmatrix}.\n\\]\n最大固有値は\n\\[\n\\lambda=\\cosh h+\\sqrt{\\sinh^2h+e^{-2\\beta\\varepsilon}},\\qquad g=-k_{\\rm B}T\\ln\\lambda .\n\\]\n\n(3) $\\langle L\\rangle=-N\\partial g/\\partial Y$ より $x=\\partial\\ln\\lambda/\\partial h$：\n\\[\nx=\\frac{\\sinh h+\\dfrac{\\sinh h\\cosh h}{\\sqrt{\\sinh^2h+e^{-2\\beta\\varepsilon}}}}{\\cosh h+\\sqrt{\\sinh^2h+e^{-2\\beta\\varepsilon}}}=\\frac{\\sinh h}{\\sqrt{\\sinh^2h+e^{-2\\beta\\varepsilon}}}.\n\\]\n$\\varepsilon\\to0$ では $\\sqrt{\\sinh^2h+1}=\\cosh h$ で $x=\\tanh(\\beta Yd)$（折り返しにコストがない独立な棒の鎖）．\n\n(4) $h\\ll e^{-\\beta\\varepsilon}$ では $x\\simeq h\\,e^{\\beta\\varepsilon}=\\dfrac{Yd}{k_{\\rm B}T}e^{\\varepsilon/k_{\\rm B}T}$．一方，線形応答 $\\langle L\\rangle=\\beta Y\\langle L^2\\rangle_0=\\beta YNd^2e^{\\beta\\varepsilon}$ より $x=\\beta Yde^{\\beta\\varepsilon}$ で一致する．$x$ を固定すると\n\\[\nY=\\frac{k_{\\rm B}T}{d}e^{-\\varepsilon/k_{\\rm B}T}x .\n\\]\n低温ほど鎖は非常に柔らかくなる（長い直線部分が向きをそろえるだけで伸びるため）．\n\n(5) $dF=-SdT+YdL$ よりマクスウェルの関係 $(\\partial S/\\partial L)_T=-(\\partial Y/\\partial T)_L$．よって $Y_S=T(\\partial Y/\\partial T)_L$，$Y_E=Y-T(\\partial Y/\\partial T)_L$．$Y=cTe^{-\\varepsilon/k_{\\rm B}T}$（$c=k_{\\rm B}x/d$）より $T(\\partial Y/\\partial T)_L=Y\\left(1+\\dfrac{\\varepsilon}{k_{\\rm B}T}\\right)$．したがって\n\\[\nY_S=\\left(1+\\frac{\\varepsilon}{k_{\\rm B}T}\\right)Y,\\qquad Y_E=-\\frac{\\varepsilon}{k_{\\rm B}T}Y<0 .\n\\]\n$Y_E<0$ は，鎖を伸ばすと折り返しの数が減って内部エネルギーが下がることを表す．エネルギー的には鎖は伸びたがっており，それを上回るエントロピー的な力（$Y_S>Y$）が鎖を縮めている．"
+   }
+  ],
+  "idea": {
+   "tex": "折り返しにエネルギーを課すと鎖は1次元イジング模型と同型になり，転送行列で $x=\\sinh h/\\sqrt{\\sinh^2h+e^{-2\\beta\\varepsilon}}$ を得る．線形領域の張力はエネルギー部分が負，エントロピー部分が全張力を上回る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\lambda$：cosh (β Yd)+sqrt(sinh ^2(β Yd)+e^(-2βε))\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ゴム弾性",
+   "1次元イジング模型",
+   "転送行列",
+   "線形応答",
+   "エントロピー弾性",
+   "マクスウェルの関係式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "BP-01-013",
   "schema": "lemma.problem/1",
   "kind": "written",

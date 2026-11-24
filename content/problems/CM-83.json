@@ -494,6 +494,159 @@
   }
  },
  {
+  "id": "CM-06-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-83",
+  "level": 3,
+  "minutes": 40,
+  "theme": "Clebsch 表示と剛体回転の変分原理",
+  "topic": "Clebsch 表示と剛体回転の変分原理",
+  "statement": {
+   "tex": "完全流体（バロトロピック）の運動は，速度の Clebsch 表示 $\\boldsymbol v=\\nabla\\phi+\\alpha\\nabla\\beta$ を用いたラグランジアン密度\n\\[\\mathcal L=\\rho\\left\\{\\frac{\\partial\\phi}{\\partial t}+\\alpha\\frac{\\partial\\beta}{\\partial t}+\\frac12(\\nabla\\phi+\\alpha\\nabla\\beta)^2\\right\\}+f(\\rho)\\]\nの変分原理から導かれ，その Euler–Lagrange 方程式は連続の式，$D\\alpha/Dt=0$，$D\\beta/Dt=0$，および\n\\[\\frac{\\partial\\phi}{\\partial t}+\\alpha\\frac{\\partial\\beta}{\\partial t}+\\frac12v^2+f'(\\rho)=0 \\tag{$*$}\\]\nである（圧力は $p=\\rho f'(\\rho)-f(\\rho)$）．\n\\begin{enumerate}\n\\item 渦度が $\\boldsymbol\\omega=\\nabla\\alpha\\times\\nabla\\beta$ となることを示し，これと $D\\alpha/Dt=D\\beta/Dt=0$ から「渦線は流体とともに動く（物質線である）」という Helmholtz の定理を導け．\n\\item 鉛直軸のまわりの角速度 $\\Omega$ の剛体回転 $\\boldsymbol v=\\Omega(-y,x,0)$ を，$\\phi=0$，$\\alpha=\\alpha(r)$（$r=\\sqrt{x^2+y^2}$）として Clebsch 表示し，Euler–Lagrange 方程式をすべて満たすような $\\alpha$ と $\\beta$ を求めよ．$\\beta$ が時間に依存しなければならないことに注意せよ．\n\\item (2) の解と式 $(*)$ から $f'(\\rho)$ の空間分布を求め，密度がほぼ一様な場合の圧力分布を導いて，向心力の釣り合いと一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nabla\\times(\\alpha\\nabla\\beta)=\\nabla\\alpha\\times\\nabla\\beta$．渦線は $\\alpha=$一定 と $\\beta=$一定 の面の交線で，両面は物質面なので渦線は物質線．　(2) $\\alpha=\\Omega r^2$，$\\beta=\\theta-\\Omega t$（$\\theta$ は方位角）　(3) $f'(\\rho)=\\tfrac12\\Omega^2r^2+\\text{const}$，$p=p_0+\\tfrac12\\rho\\Omega^2r^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\nabla\\times\\nabla\\phi=0$，$\\nabla\\times(\\alpha\\nabla\\beta)=\\nabla\\alpha\\times\\nabla\\beta+\\alpha\\nabla\\times\\nabla\\beta=\\nabla\\alpha\\times\\nabla\\beta$．よって $\\boldsymbol\\omega=\\nabla\\alpha\\times\\nabla\\beta$ で，$\\boldsymbol\\omega\\cdot\\nabla\\alpha=\\boldsymbol\\omega\\cdot\\nabla\\beta=0$．すなわち渦線はどの点でも面 $\\alpha=$一定 と面 $\\beta=$一定 の両方に接し，両面の交線になっている．$D\\alpha/Dt=0$ は流体粒子が $\\alpha$ の値を保つことであり，面 $\\alpha=$一定 は常に同じ流体粒子からなる物質面である．$\\beta$ も同様．二つの物質面の交線は物質線であるから，ある時刻に渦線であった流体粒子の列は以後も渦線であり続ける（Helmholtz の渦定理）．\n\n(2) 方位角を $\\theta$ とし，$\\nabla\\theta=\\boldsymbol e_\\theta/r$．$\\alpha=\\alpha(r)$，$\\phi=0$ で $\\boldsymbol v=\\Omega r\\boldsymbol e_\\theta$ を得るには，$\\alpha\\nabla\\beta$ が $\\boldsymbol e_\\theta$ 方向で大きさ $\\Omega r$ でなければならない．$\\beta=\\theta+g(t)$ とおくと $\\alpha/r=\\Omega r$ から $\\alpha=\\Omega r^2$．\n$D\\alpha/Dt=\\boldsymbol v\\cdot\\nabla\\alpha=\\Omega r\\boldsymbol e_\\theta\\cdot(2\\Omega r\\boldsymbol e_r)=0$ で満たされる．\n$D\\beta/Dt=g'(t)+\\boldsymbol v\\cdot\\nabla\\theta=g'(t)+\\Omega=0$ から $g=-\\Omega t$．時間に依存しない $\\beta=\\theta$ では $D\\beta/Dt=\\Omega\\neq0$ となり，Euler–Lagrange 方程式を満たさない．よって\n\\[\\alpha=\\Omega r^2,\\qquad\\beta=\\theta-\\Omega t .\\]\n（$\\beta$ は流体粒子に貼り付いた「ラベル」であり，回転とともに回るラベルは空間に固定した座標では時間に依存する．）連続の式は $\\rho=\\rho(r)$ で $\\nabla\\cdot(\\rho\\boldsymbol v)=0$ となり満たされる．確認として $\\boldsymbol\\omega=\\nabla\\alpha\\times\\nabla\\beta=2\\Omega r\\boldsymbol e_r\\times\\boldsymbol e_\\theta/r=2\\Omega\\boldsymbol e_z$ は剛体回転の渦度に一致する．\n\n(3) $(*)$ に $\\phi=0$，$\\alpha\\,\\partial_t\\beta=-\\Omega^2r^2$，$v^2=\\Omega^2r^2$ を代入：\n\\[-\\Omega^2r^2+\\frac12\\Omega^2r^2+f'(\\rho)=0\\ \\Rightarrow\\ f'(\\rho)=\\frac12\\Omega^2r^2\\]\n（$\\phi$ に $-Ct$ を加える自由度で定数が加わる）．$p=\\rho f'-f$ より $dp=\\rho\\,d(f')$ なので，$f'$ はエンタルピーに相当する．密度がほぼ一様なら\n\\[p=p_0+\\frac12\\rho\\Omega^2r^2 .\\]\nこれは $dp/dr=\\rho\\Omega^2r$，すなわち圧力勾配が向心力 $\\rho v^2/r=\\rho\\Omega^2r$ を与えるという釣り合いと一致する．時間依存する $\\beta$ の項 $\\alpha\\partial_t\\beta$ が無ければ符号が逆の $f'=-\\frac12\\Omega^2r^2$ となり誤った結果になる点が要である．"
+   }
+  ],
+  "idea": {
+   "tex": "Clebsch ポテンシャル $\\alpha,\\beta$ は流体粒子のラベルなので，定常な剛体回転でも $\\beta=\\theta-\\Omega t$ と時間に依存し，その $\\alpha\\partial_t\\beta$ 項が正しい遠心圧力を生む．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\alpha$：Ω r ^(2) ; $\\beta$：θ - Ω t\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "変分原理",
+   "Clebsch表示",
+   "Helmholtzの渦定理",
+   "剛体回転",
+   "ラグランジアン"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-06-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-83",
+  "level": 3,
+  "minutes": 40,
+  "theme": "平板翼の揚力・空力中心（ジューコフスキー変換）",
+  "topic": "平板翼の揚力・空力中心（ジューコフスキー変換）",
+  "statement": {
+   "tex": "2 次元・非粘性・非圧縮・渦なしの流れを考える．$z=x+iy$ 面の $x$ 軸上の線分 $-2a\\le x\\le 2a$（$a>0$）に厚さのない平板が固定されており，無限遠では速さ $U$，向きが $+x$ 軸から角 $\\alpha$（$0<\\alpha<\\pi/2$）だけ $+y$ 側に傾いた一様流，すなわち複素速度 $u-iv\\to Ue^{-i\\alpha}$ が流れている．したがって $x=-2a$ が前縁，$x=2a$ が後縁である．流体の密度を $\\rho$ とする．\n$\\zeta$ 面の円 $|\\zeta|=a$ の外部は，$z=\\zeta+a^2/\\zeta$ によって平板の外部に等角に写される．$\\zeta$ 面での複素速度ポテンシャルを\n\\[\nf=U\\left(\\zeta e^{-i\\alpha}+\\frac{a^2}{\\zeta}e^{i\\alpha}\\right)+\\frac{i\\Gamma}{2\\pi}\\log\\zeta\n\\]\nとする（$\\Gamma>0$ は時計回りの循環）．\n\\begin{enumerate}\n\\item 後縁で速度が有限になる（クッタの条件）ように $\\Gamma$ を定めよ．また，このとき前縁 $z=-2a$ の近くで流速はどう振る舞うか．\n\\item 平板が受ける力の大きさと向きを求めよ．力は平板に垂直ではない．平板に沿った成分はどこからどう生じるか説明せよ．\n\\item 平板の上下面の圧力差による平板に垂直な力 $N$ と，その作用点（圧力中心）の $x$ 座標 $x_{\\rm cp}$ を求めよ．$x_{\\rm cp}$ が $\\alpha$ によらないことを示せ．\n\\item 平板の中心 $x=0$ のまわりの力のモーメントの大きさと向きを求めよ．平板が中心まわりに自由に回転できるとき，このモーメントは迎え角 $\\alpha$ を増やす向きか減らす向きか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Gamma=4\\pi aU\\sin\\alpha$．前縁では流速が $|z+2a|^{-1/2}$ 的に発散する．(2) 大きさ $L=4\\pi\\rho U^2a\\sin\\alpha$，向きは一様流に垂直で $(-\\sin\\alpha,\\cos\\alpha)$ 方向．平板方向成分 $L\\sin\\alpha$（前縁向き）は前縁の特異点に集中した吸引力（leading-edge suction）．(3) $N=4\\pi\\rho U^2a\\sin\\alpha\\cos\\alpha$，$x_{\\rm cp}=-a$（前縁から翼弦の $1/4$）．(4) 大きさ $2\\pi\\rho U^2a^2\\sin2\\alpha$，時計回り（前縁を持ち上げる向き）で $\\alpha$ を増やす（不安定化）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 複素速度は $w=\\dfrac{df}{dz}=\\dfrac{df/d\\zeta}{dz/d\\zeta}$，$\\dfrac{dz}{d\\zeta}=1-\\dfrac{a^2}{\\zeta^2}$ は $\\zeta=\\pm a$（$z=\\pm2a$）で 0 になる．後縁 $\\zeta=a$ で $w$ が有限であるには $df/d\\zeta|_{\\zeta=a}=0$ が必要：\n\\[\n\\frac{df}{d\\zeta}\\Big|_{\\zeta=a}=U(e^{-i\\alpha}-e^{i\\alpha})+\\frac{i\\Gamma}{2\\pi a}=-2iU\\sin\\alpha+\\frac{i\\Gamma}{2\\pi a}=0\n\\quad\\Rightarrow\\quad \\Gamma=4\\pi aU\\sin\\alpha .\n\\]\n前縁 $\\zeta=-a$ では $df/d\\zeta=U(e^{-i\\alpha}-e^{i\\alpha})-\\dfrac{i\\Gamma}{2\\pi a}=-4iU\\sin\\alpha\\neq0$ のままで，$dz/d\\zeta\\simeq\\dfrac{2}{a}(\\zeta+a)$，$z+2a\\simeq-\\dfrac{(\\zeta+a)^2}{a}$ より $|w|\\propto|\\zeta+a|^{-1}\\propto|z+2a|^{-1/2}$ と発散する（流れが前縁を回り込む）．\n\n(2) ブラジウスの公式 $X-iY=\\dfrac{i\\rho}{2}\\oint w^2dz$ を大きな円上で評価する．$w=Ue^{-i\\alpha}+\\dfrac{i\\Gamma}{2\\pi z}+O(z^{-2})$ より $w^2$ の $1/z$ の係数は $\\dfrac{iU\\Gamma e^{-i\\alpha}}{\\pi}$ だから\n\\[\nX-iY=\\frac{i\\rho}{2}\\cdot2\\pi i\\cdot\\frac{iU\\Gamma e^{-i\\alpha}}{\\pi}=-i\\rho U\\Gamma e^{-i\\alpha},\\qquad X+iY=i\\rho U\\Gamma e^{i\\alpha}.\n\\]\nよって力の大きさは $L=\\rho U\\Gamma=4\\pi\\rho U^2a\\sin\\alpha$，向きは $ie^{i\\alpha}$ すなわち $(-\\sin\\alpha,\\cos\\alpha)$ で一様流に垂直（クッタ・ジューコフスキーの定理，抗力 0）．平板に垂直な成分は $L\\cos\\alpha$，平板に沿った成分は $-L\\sin\\alpha$（前縁向き）である．厚さ 0 の平板では圧力は面に垂直にしか働かないので，接線成分は前縁の速度発散点（$p\\to-\\infty$）に集中した有限の吸引力として生じる．\n\n(3) 圧力差による力は (2) の垂直成分に等しく $N=L\\cos\\alpha=4\\pi\\rho U^2a\\sin\\alpha\\cos\\alpha$．作用点を求めるため，円上 $\\zeta=ae^{i\\theta}$ を用いる．$z=2a\\cos\\theta$ で，上面が $0<\\theta<\\pi$，下面が $\\pi<\\theta<2\\pi$．\n\\[\n\\frac{df}{d\\zeta}=2iUe^{-i\\theta}\\bigl(\\sin(\\theta-\\alpha)+\\sin\\alpha\\bigr),\\qquad \\frac{dz}{d\\zeta}=2ie^{-i\\theta}\\sin\\theta\n\\]\nより表面流速は $q=U\\dfrac{\\sin(\\theta-\\alpha)+\\sin\\alpha}{\\sin\\theta}$．和積公式より $\\sin(\\theta-\\alpha)+\\sin\\alpha=2\\sin\\frac\\theta2\\cos\\left(\\frac\\theta2-\\alpha\\right)$ なので\n\\[\nq(\\theta)=U\\frac{\\cos(\\theta/2-\\alpha)}{\\cos(\\theta/2)} .\n\\]\n加法定理より上面（$\\theta$）で $q_{\\rm u}=U\\left|\\cos\\alpha+\\sin\\alpha\\tan\\frac\\theta2\\right|$，同じ $x=2a\\cos\\theta$ の下面（$2\\pi-\\theta$）で $q_{\\rm l}=U\\dfrac{|\\cos(\\frac\\theta2+\\alpha)|}{\\cos\\frac\\theta2}=U\\left|\\cos\\alpha-\\sin\\alpha\\tan\\frac\\theta2\\right|$．ベルヌーイの定理より\n\\[\np_{\\rm l}-p_{\\rm u}=\\frac\\rho2\\bigl(q_{\\rm u}^2-q_{\\rm l}^2\\bigr)=2\\rho U^2\\sin\\alpha\\cos\\alpha\\tan\\frac\\theta2\n=2\\rho U^2\\sin\\alpha\\cos\\alpha\\sqrt{\\frac{2a-x}{2a+x}}\n\\]\n（$\\tan\\frac\\theta2=\\sqrt{\\frac{1-\\cos\\theta}{1+\\cos\\theta}}$）．後縁 $x=2a$ で 0，前縁で $|x+2a|^{-1/2}$ のように発散するが積分可能．$x=2a\\cos\\phi$（$0\\le\\phi\\le\\pi$），$dx=-2a\\sin\\phi\\,d\\phi$ として\n\\[\nN=\\int_{-2a}^{2a}(p_{\\rm l}-p_{\\rm u})dx=2\\rho U^2\\sin\\alpha\\cos\\alpha\\cdot2a\\int_0^\\pi\\tan\\tfrac\\phi2\\sin\\phi\\,d\\phi=4\\pi\\rho U^2a\\sin\\alpha\\cos\\alpha,\n\\]\n\\[\n\\int_{-2a}^{2a}x(p_{\\rm l}-p_{\\rm u})dx=2\\rho U^2\\sin\\alpha\\cos\\alpha\\cdot4a^2\\int_0^\\pi\\tan\\tfrac\\phi2\\sin\\phi\\cos\\phi\\,d\\phi=-4\\pi\\rho U^2a^2\\sin\\alpha\\cos\\alpha\n\\]\n（$\\int_0^\\pi\\tan\\frac\\phi2\\sin\\phi\\,d\\phi=\\int_0^\\pi(1-\\cos\\phi)d\\phi=\\pi$，$\\int_0^\\pi(1-\\cos\\phi)\\cos\\phi\\,d\\phi=-\\pi/2$）．よって $x_{\\rm cp}=-4\\pi\\rho U^2a^2\\sin\\alpha\\cos\\alpha/N=-a$．前縁 $-2a$ から $a$，すなわち翼弦 $4a$ の $1/4$ の点で，$\\alpha$ によらない（空力中心）．$N$ は (2) の垂直成分と一致する．\n\n(4) 前縁吸引力は平板の線上（$x=-2a$）に沿って働くので中心まわりのモーメントを持たない．よってモーメントは $N$ によるもので，$z$ 成分は $x_{\\rm cp}N=-aN$，大きさ\n\\[\naN=4\\pi\\rho U^2a^2\\sin\\alpha\\cos\\alpha=2\\pi\\rho U^2a^2\\sin2\\alpha ,\n\\]\n向きは時計回り．時計回りの回転では前縁（$x<0$ 側）が $+y$ に持ち上がり，下から斜めに来る流れと平板のなす角が大きくなるので $\\alpha$ を増やす向き（中心で支えた平板は迎え角について不安定）．1/4 翼弦点より前で支えれば安定になる．"
+   }
+  ],
+  "idea": {
+   "tex": "クッタ条件で循環を決めたうえで，力の平板方向成分は前縁特異点の吸引力として現れ，圧力差の分布 $\\propto\\sqrt{(2a-x)/(2a+x)}$ から圧力中心が常に 1/4 翼弦点に来ることを導く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ジューコフスキー変換",
+   "クッタの条件",
+   "循環",
+   "揚力",
+   "ブラジウスの公式",
+   "前縁吸引力",
+   "空力中心",
+   "平板翼"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-06-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-83",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ベルヌーイの定理と渦度",
+  "topic": "ベルヌーイの定理と渦度",
+  "statement": {
+   "tex": "一様重力 $-g\\boldsymbol e_z$ 中の非圧縮完全流体のオイラー方程式 $\\rho\\dfrac{D\\boldsymbol v}{Dt}=-\\nabla p-\\rho g\\boldsymbol e_z$ を考え，$B\\equiv \\dfrac{p}{\\rho}+\\dfrac{v^2}{2}+gz$ とおく．\n\\begin{enumerate}\n\\item 恒等式 $(\\boldsymbol v\\cdot\\nabla)\\boldsymbol v=\\nabla\\dfrac{v^2}{2}-\\boldsymbol v\\times\\boldsymbol\\Omega$（$\\boldsymbol\\Omega=\\nabla\\times\\boldsymbol v$）を用いて，定常流では $\\nabla B=\\boldsymbol v\\times\\boldsymbol\\Omega$ となることを示し，$B$ が流線に沿って一定であることを導け．\n\\item 鉛直な円筒容器の水が角速度 $\\omega$ で剛体回転している（$v=\\omega r$）．$B$ を回転軸からの距離 $r$ の関数として求め，$B$ が流線ごとに異なることを確かめよ．また $\\boldsymbol v\\times\\boldsymbol\\Omega$ と $dB/dr$ が一致することを確認せよ．\n\\item 循環 $\\Gamma$ の自由渦 $v=\\Gamma/(2\\pi r)$ では $B$ は流れ全体で一定であることを示し，大気圧下の自由表面の形 $z(r)$ を求めよ（遠方 $r\\to\\infty$ での水面を $z=0$ とする）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $B=\\dfrac{p_0}{\\rho}+\\omega^2r^2$（$p_0$ は軸上水面での圧力），$dB/dr=2\\omega^2r$　(3) $z=-\\dfrac{\\Gamma^2}{8\\pi^2gr^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 定常なら $D\\boldsymbol v/Dt=(\\boldsymbol v\\cdot\\nabla)\\boldsymbol v=\\nabla(v^2/2)-\\boldsymbol v\\times\\boldsymbol\\Omega$．オイラー方程式に代入して\n\\[ \\nabla\\left(\\frac{v^2}{2}+\\frac p\\rho+gz\\right)=\\boldsymbol v\\times\\boldsymbol\\Omega,\\quad\\text{すなわち}\\quad \\nabla B=\\boldsymbol v\\times\\boldsymbol\\Omega . \\]\n右辺は $\\boldsymbol v$ に垂直なので $\\boldsymbol v\\cdot\\nabla B=0$：$B$ は流線に沿って一定（ベルヌーイの定理）．渦なし（$\\boldsymbol\\Omega=0$）なら $B$ は全域で一定．\n\n(2) 剛体回転の圧力は $p=p_0+\\tfrac12\\rho\\omega^2r^2-\\rho g z$（$z$ は軸上水面から測る）．よって\n\\[ B=\\frac{p_0}{\\rho}+\\frac{\\omega^2r^2}{2}+\\frac{\\omega^2r^2}{2}=\\frac{p_0}{\\rho}+\\omega^2r^2 , \\]\n流線（$r=$一定の円）ごとに値が違う．一方 $\\boldsymbol\\Omega=2\\omega\\boldsymbol e_z$，$\\boldsymbol v=\\omega r\\boldsymbol e_\\varphi$ より $\\boldsymbol v\\times\\boldsymbol\\Omega=2\\omega^2r\\,(\\boldsymbol e_\\varphi\\times\\boldsymbol e_z)=2\\omega^2r\\,\\boldsymbol e_r$．これは $dB/dr=2\\omega^2r$ と一致する．\n\n(3) $\\boldsymbol v=\\dfrac{\\Gamma}{2\\pi r}\\boldsymbol e_\\varphi$ の回転は $\\Omega_z=\\dfrac1r\\dfrac{d}{dr}(rv)=0$（$r>0$）なので $\\nabla B=0$，$B$ は全域で一定．自由表面では $p=p_0$ だから\n\\[ \\frac{\\Gamma^2}{8\\pi^2r^2}+gz=\\text{一定}=0\\ (r\\to\\infty) \\Rightarrow z=-\\frac{\\Gamma^2}{8\\pi^2gr^2}. \\]\n（半径方向のつり合い $dp/dr=\\rho v^2/r$ からも同じ結果が得られる．）"
+   }
+  ],
+  "idea": {
+   "tex": "オイラー方程式は $\\nabla B=\\boldsymbol v\\times\\boldsymbol\\Omega$ と書け，ベルヌーイの定数は流線に沿ってのみ一定，渦なしなら全域で一定．剛体回転と自由渦がその対比例．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) $z$：-((Γ ^(2))/(8 pi ^(2) g r ^(2)))"
+  },
+  "methods": [],
+  "tags": [
+   "オイラー方程式",
+   "ベルヌーイの定理",
+   "渦度",
+   "自由渦",
+   "剛体回転"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "CM-06-012",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -637,6 +790,58 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "CM-06-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "CM-83",
+  "level": 4,
+  "minutes": 50,
+  "theme": "平板翼のKutta条件・揚力・風圧中心",
+  "topic": "平板翼のKutta条件・揚力・風圧中心",
+  "statement": {
+   "tex": "Joukowski 変換 $z=\\zeta+\\dfrac{c^2}{\\zeta}$（$c>0$）は $\\zeta$ 平面の円 $|\\zeta|=c$ を $z$ 平面の線分 $-2c\\le x\\le2c$（弦長 $\\ell=4c$ の平板）に写す．この平板が，無限遠で速度 $U(\\cos\\alpha,\\sin\\alpha)$（$0<\\alpha<\\pi/2$）の一様流の中に固定されている．流体は渦なし非圧縮性完全流体，密度 $\\rho$．\n\\begin{enumerate}\n\\item $\\zeta$ 平面での複素速度ポテンシャルを，平板まわりの循環 $\\Gamma$（反時計回りを正）を含めて書け．後縁 $x=2c$（$\\zeta=c$）で流速が有限になる条件（Kutta の条件）から $\\Gamma$ を決めよ．\n\\item Kutta–Joukowski の定理を用いて単位幅あたりの揚力 $L$ とその向きを求め，揚力係数 $C_L=L/(\\frac12\\rho U^2\\ell)$ を $\\alpha$ で表せ．\n\\item Blasius の第2公式を用いて，平板の中心（原点）のまわりのモーメント $M$ を求め，揚力の作用線が平板と交わる点（風圧中心）の位置を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $w=U\\left(\\zeta e^{-i\\alpha}+\\dfrac{c^2e^{i\\alpha}}{\\zeta}\\right)-\\dfrac{i\\Gamma}{2\\pi}\\log\\zeta$，$\\Gamma=-4\\pi Uc\\sin\\alpha=-\\pi U\\ell\\sin\\alpha$（時計回り）　(2) $L=\\pi\\rho U^2\\ell\\sin\\alpha$，流れに垂直で $(-\\sin\\alpha,\\cos\\alpha)$ 向き，$C_L=2\\pi\\sin\\alpha$　(3) $M=-2\\pi\\rho U^2c^2\\sin2\\alpha$（時計回り），風圧中心は $x=-c$（前縁から弦長の $1/4$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\zeta$ 平面で半径 $c$ の円柱を過ぎる流れ（無限遠で $z\\simeq\\zeta$ なので遠方の速度は同じ $Ue^{i\\alpha}$）に循環を加えて\n\\[w(\\zeta)=U\\left(\\zeta e^{-i\\alpha}+\\frac{c^2e^{i\\alpha}}{\\zeta}\\right)-\\frac{i\\Gamma}{2\\pi}\\log\\zeta.\\]\n$z$ 平面の複素速度は $\\dfrac{dw}{dz}=\\dfrac{dw/d\\zeta}{dz/d\\zeta}$，$\\dfrac{dz}{d\\zeta}=1-\\dfrac{c^2}{\\zeta^2}$ は $\\zeta=\\pm c$（平板の両端）で 0．後縁 $\\zeta=c$ で $dw/dz$ が有限であるには $dw/d\\zeta|_{\\zeta=c}=0$：\n\\[U\\left(e^{-i\\alpha}-e^{i\\alpha}\\right)-\\frac{i\\Gamma}{2\\pi c}=0\\ \\Rightarrow\\ -2iU\\sin\\alpha=\\frac{i\\Gamma}{2\\pi c}\\ \\Rightarrow\\ \\Gamma=-4\\pi Uc\\sin\\alpha.\\]\n時計回りの循環 $4\\pi Uc\\sin\\alpha=\\pi U\\ell\\sin\\alpha$．\n\n(2) Kutta–Joukowski の定理（Blasius の第1公式で $z\\to\\infty$ の展開 $dw/dz=Ue^{-i\\alpha}+\\frac{\\Gamma}{2\\pi i z}+O(z^{-2})$ から）\n\\[F_1-iF_2=\\frac{i\\rho}{2}\\cdot2\\pi i\\cdot2Ue^{-i\\alpha}\\frac{\\Gamma}{2\\pi i}=i\\rho U\\Gamma e^{-i\\alpha}.\\]\n$\\Gamma<0$ を代入すると力の大きさは $\\rho U|\\Gamma|=4\\pi\\rho U^2c\\sin\\alpha$，向きは $F_1+iF_2=-i\\rho U\\Gamma e^{i\\alpha}=4\\pi\\rho U^2c\\sin\\alpha\\cdot ie^{i\\alpha}$，すなわち流れに垂直な $(-\\sin\\alpha,\\cos\\alpha)$ 方向で抗力は 0．\n\\[L=\\pi\\rho U^2\\ell\\sin\\alpha,\\qquad C_L=\\frac{L}{\\frac12\\rho U^2\\ell}=2\\pi\\sin\\alpha.\\]\n\n(3) Blasius の第2公式 $M=-\\dfrac\\rho2\\mathrm{Re}\\oint\\left(\\dfrac{dw}{dz}\\right)^2z\\,dz$ は，大きな円上で評価してよい．$\\zeta=z-\\dfrac{c^2}{z}+O(z^{-3})$ を用いて $dw/dz$ を $1/z$ で展開すると\n\\[\\frac{dw}{dz}=Ue^{-i\\alpha}+\\frac{\\Gamma}{2\\pi i}\\frac1z+\\frac{c^2U(e^{-i\\alpha}-e^{i\\alpha})}{z^2}+O(z^{-3}),\\]\n（$1/\\zeta=1/z+O(z^{-3})$ を用いた）．$(dw/dz)^2z$ の $1/z$ の係数は\n\\[\\left(\\frac{\\Gamma}{2\\pi i}\\right)^2+2Ue^{-i\\alpha}\\cdot c^2U(e^{-i\\alpha}-e^{i\\alpha})=-\\frac{\\Gamma^2}{4\\pi^2}+2U^2c^2(e^{-2i\\alpha}-1).\\]\n$\\oint=2\\pi i\\times$(係数)，その実部は $2\\pi\\cdot2U^2c^2\\sin2\\alpha$（第1項は実数なので $i$ 倍されて実部に寄与しない）．よって\n\\[M=-\\frac\\rho2\\cdot4\\pi U^2c^2\\sin2\\alpha=-2\\pi\\rho U^2c^2\\sin2\\alpha\\]\n（循環に依らない．時計回り：平板を流れに対して横向きにしようとする Munk モーメント）．\n風圧中心：力 $\\boldsymbol F=L(-\\sin\\alpha,\\cos\\alpha)$ が平板上の点 $(x_p,0)$ に作用するとすると，原点まわりのモーメントは $x_pF_2=x_pL\\cos\\alpha$．これを $M$ に等しいとおくと\n\\[x_p=\\frac{-2\\pi\\rho U^2c^2\\sin2\\alpha}{4\\pi\\rho U^2c\\sin\\alpha\\cos\\alpha}=-c.\\]\n前縁は $x=-2c$（流れは $+x$ 側へ向かう）なので，風圧中心は前縁から $c=\\ell/4$，すなわち弦長の $1/4$ の点（1/4 翼弦点）．"
+   }
+  ],
+  "idea": {
+   "tex": "Joukowski 変換と Kutta 条件で循環が $\\Gamma=\\pi U\\ell\\sin\\alpha$ と決まり，Kutta–Joukowski の定理から $C_L=2\\pi\\sin\\alpha$．Blasius の第2公式で求めたモーメントは循環に依らず，揚力の作用点が 1/4 翼弦点となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $M$：-2 pi ρ U ^(2) c ^(2) sin 2 α ; 風圧中心は $x$：- c"
+  },
+  "methods": [],
+  "tags": [
+   "Kutta-Joukowskiの定理",
+   "Kutta条件",
+   "Joukowski変換",
+   "平板翼",
+   "Blasiusの公式",
+   "風圧中心",
+   "揚力係数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

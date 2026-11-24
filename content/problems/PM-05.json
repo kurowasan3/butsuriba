@@ -193,6 +193,206 @@
   }
  },
  {
+  "id": "PM-05-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 1,
+  "minutes": 25,
+  "theme": "対称性・推進・変調の性質を組み合わせる",
+  "topic": "対称性・推進・変調の性質を組み合わせる",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．\n\\begin{enumerate}\n\\item 次の性質を定義から示せ：(a) $\\mathcal F[f(x-c)]=e^{-ikc}\\hat f(k)$，(b) $\\mathcal F[e^{ik_0x}f(x)]=\\hat f(k-k_0)$，(c) $f$ が実関数 $\\iff$ $\\overline{\\hat f(k)}=\\hat f(-k)$．\n\\item 実関数 $f$ のフーリエ変換が，ある実定数 $c$ と実数値関数 $R(k)$ を用いて $\\hat f(k)=e^{-ikc}R(k)$ と書けたとする．このとき $f$ は直線 $x=c$ に関して対称，すなわち $f(c+x)=f(c-x)$ であることを示せ．\n\\item 位置 $c$ を中心とし，搬送波数 $k_0$ をもつ波束 $f(x)=e^{-a(x-c)^2}\\cos k_0x$（$a>0$）のフーリエ変換を，積分を新たに計算せず（1）の性質と $\\mathcal F[e^{-ax^2}]=\\frac{1}{\\sqrt{2a}}e^{-k^2/4a}$ だけから求めよ．また，この $f$ は一般に $x=c$ に関して対称ではない．（2）の主張と矛盾しないことを $\\hat f$ の形から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2) 証明（解説参照）　(3) $\\hat f(k)=\\dfrac{1}{2\\sqrt{2a}}\\left[e^{-i(k-k_0)c}e^{-(k-k_0)^2/4a}+e^{-i(k+k_0)c}e^{-(k+k_0)^2/4a}\\right]$．$e^{ikc}\\hat f$ が実数でない（$e^{\\pm ik_0c}$ の位相が残る）ので仮定を満たさず矛盾しない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1)(a) $x-c=y$ と置換：$\\frac{1}{\\sqrt{2\\pi}}\\int f(y)e^{-ik(y+c)}dy=e^{-ikc}\\hat f(k)$．\n(b) $\\frac{1}{\\sqrt{2\\pi}}\\int f(x)e^{-i(k-k_0)x}dx=\\hat f(k-k_0)$．\n(c) $\\overline{\\hat f(k)}=\\frac{1}{\\sqrt{2\\pi}}\\int\\overline{f(x)}e^{ikx}dx=\\mathcal F[\\bar f](-k)$．$f$ 実なら $\\bar f=f$ より $\\overline{\\hat f(k)}=\\hat f(-k)$．逆に $\\overline{\\hat f(k)}=\\hat f(-k)$ なら $\\mathcal F[\\bar f](-k)=\\mathcal F[f](-k)$ が全ての $k$ で成り立ち，変換の一意性から $\\bar f=f$．\n\n(2) $h(x)=f(x+c)$ とおくと (a) より $\\hat h(k)=e^{ikc}\\hat f(k)=R(k)$ は実数値．$h$ は実関数なので (c) より $\\hat h(-k)=\\overline{\\hat h(k)}=\\hat h(k)$，すなわち $\\hat h$ は偶関数．すると\n\\[ h(-x)=\\frac{1}{\\sqrt{2\\pi}}\\int\\hat h(k)e^{-ikx}dk=\\frac{1}{\\sqrt{2\\pi}}\\int\\hat h(-k')e^{ik'x}dk'=h(x). \\]\nよって $f(c+x)=f(c-x)$．\n\n(3) $g(x)=e^{-ax^2}$，$\\hat g(k)=\\frac{1}{\\sqrt{2a}}e^{-k^2/4a}$．(a) より $\\mathcal F[g(x-c)]=e^{-ikc}\\hat g(k)$．$\\cos k_0x=\\frac12(e^{ik_0x}+e^{-ik_0x})$ と (b) より\n\\[ \\hat f(k)=\\frac12\\left[e^{-i(k-k_0)c}\\hat g(k-k_0)+e^{-i(k+k_0)c}\\hat g(k+k_0)\\right]. \\]\nこれを $e^{-ikc}\\cdot\\frac12\\left[e^{ik_0c}\\hat g(k-k_0)+e^{-ik_0c}\\hat g(k+k_0)\\right]$ と書くと，括弧内は $k_0c\\notin\\pi\\mathbb Z$ なら実数値でない．したがって (2) の仮定が成り立たず，矛盾はない．実際，$\\cos k_0x$ の山の位置は $x=c$ に揃っていないので，$f$ は $x=c$ に関して対称でない．$\\cos k_0x$ を $\\cos k_0(x-c)$ に変えると括弧内は実数となり，$f$ は対称になる．"
+   }
+  ],
+  "idea": {
+   "tex": "推進は位相 $e^{-ikc}$，変調は $k$ のずらしに対応する．「実関数」と「変換が（位相を除いて）実」を組み合わせると対称軸の位置がスペクトルの線形位相から読み取れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換の性質",
+   "推進",
+   "変調",
+   "対称性",
+   "ガウス波束"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 1,
+  "minutes": 25,
+  "theme": "推移則とRC回路の矩形パルス応答",
+  "topic": "推移則とRC回路の矩形パルス応答",
+  "statement": {
+   "tex": "抵抗 $R$ とコンデンサー $C$ の直列回路に電圧 $V(t)$ を加える．電荷 $q$ は $R\\dot q+q/C=V(t)$，$q(0)=0$ に従う．$\\tau_0=RC$ とする．\n\\begin{enumerate}\n\\item $V(t)=V_0$（$0<t<T$），$V(t)=0$（$t>T$）の矩形パルスのとき，ラプラス変換の推移則 $\\mathcal L[f(t-T)\\theta(t-T)]=e^{-sT}\\tilde f(s)$ を用いて $q(t)$ を求め，$t>T$ での形を簡潔に書け．\n\\item $V(t)=V_0e^{-t/\\tau_0}$（回路の時定数と同じ速さで減衰する電圧）のとき，$\\mathcal L[e^{\\alpha t}f(t)]=\\tilde f(s-\\alpha)$ を用いて $q(t)$ を求めよ．\n\\item (2) で電荷が最大となる時刻と最大値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $q=CV_0(1-e^{-t/\\tau_0})$（$t<T$），$q=CV_0(e^{T/\\tau_0}-1)e^{-t/\\tau_0}$（$t>T$）　(2) $q=\\dfrac{V_0}{R}te^{-t/\\tau_0}$　(3) $t=\\tau_0$，$q_{\\max}=CV_0/e$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "変換すると $R(s\\tilde q)+\\tilde q/C=\\tilde V$，$\\tilde q=\\dfrac{\\tilde V}{R(s+1/\\tau_0)}$．\n\n(1) $V=V_0[\\theta(t)-\\theta(t-T)]$ より $\\tilde V=\\dfrac{V_0}{s}(1-e^{-sT})$．\n\\[ \\tilde q=\\frac{V_0}{R}\\frac{1-e^{-sT}}{s(s+1/\\tau_0)}=CV_0\\left(\\frac1s-\\frac{1}{s+1/\\tau_0}\\right)(1-e^{-sT}). \\]\n$g(t)=CV_0(1-e^{-t/\\tau_0})$ とおくと推移則より $q(t)=g(t)-g(t-T)\\theta(t-T)$．$t>T$ では\n\\[ q=CV_0\\left[e^{-(t-T)/\\tau_0}-e^{-t/\\tau_0}\\right]=CV_0(e^{T/\\tau_0}-1)e^{-t/\\tau_0}. \\]\nすなわち $t=T$ での電荷 $CV_0(1-e^{-T/\\tau_0})$ から時定数 $\\tau_0$ で放電する．\n\n(2) $\\mathcal L[e^{-t/\\tau_0}]=\\dfrac{1}{s+1/\\tau_0}$ より $\\tilde q=\\dfrac{V_0}{R}\\dfrac{1}{(s+1/\\tau_0)^2}$．$\\mathcal L[t]=1/s^2$ に $\\mathcal L[e^{\\alpha t}f]=\\tilde f(s-\\alpha)$（$\\alpha=-1/\\tau_0$）を適用して $\\mathcal L[te^{-t/\\tau_0}]=1/(s+1/\\tau_0)^2$．よって\n\\[ q(t)=\\frac{V_0}{R}te^{-t/\\tau_0}. \\]\n駆動の減衰率が回路の固有減衰率と一致する「共鳴」で，二重極から $t$ に比例する因子が現れる．\n\n(3) $\\dot q\\propto(1-t/\\tau_0)e^{-t/\\tau_0}=0$ より $t=\\tau_0$，$q_{\\max}=\\dfrac{V_0}{R}\\tau_0e^{-1}=\\dfrac{CV_0}{e}$．"
+   }
+  ],
+  "idea": {
+   "tex": "時間推移は $e^{-sT}$ 倍，指数関数倍は $s$ の平行移動になる．減衰率が一致すると二重極となり $te^{-t/\\tau_0}$ の応答が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "推移則",
+   "RC回路",
+   "矩形パルス",
+   "二重極"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 1,
+  "minutes": 20,
+  "theme": "方形波電圧の電力スペクトル",
+  "topic": "方形波電圧の電力スペクトル",
+  "statement": {
+   "tex": "周期 $T$ の電圧 $V(t)$ が，$-T/2<t<0$ で $0$，$0<t<T/2$ で $V_0$ をとる方形波である（$\\omega_0=2\\pi/T$）．\n\\begin{enumerate}\n\\item $V(t)$ のフーリエ級数を求めよ．\n\\item この電圧を抵抗 $R$ に加えたときの平均電力のうち，直流成分による分と基本波（角周波数 $\\omega_0$）成分による分をそれぞれ求めよ．交流成分の電力のうち基本波が占める割合を有効数字 3 桁で答えよ．\n\\item パーセバルの等式から $\\displaystyle\\sum_{k=1}^\\infty\\frac{1}{(2k-1)^2}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V=\\dfrac{V_0}2+\\dfrac{2V_0}{\\pi}\\sum_{k\\ge1}\\dfrac{\\sin(2k-1)\\omega_0t}{2k-1}$　(2) 直流 $\\dfrac{V_0^2}{4R}$，基本波 $\\dfrac{2V_0^2}{\\pi^2R}$，割合 $\\dfrac8{\\pi^2}\\approx0.811$　(3) $\\dfrac{\\pi^2}8$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a_0/2=\\langle V\\rangle=V_0/2$．$a_n=\\frac2T\\int_0^{T/2}V_0\\cos n\\omega_0t\\,dt=0$．$b_n=\\frac2T\\int_0^{T/2}V_0\\sin n\\omega_0t\\,dt=\\frac{V_0}{n\\pi}(1-\\cos n\\pi)$，すなわち奇数 $n$ で $\\frac{2V_0}{n\\pi}$，偶数で $0$．\n\n(2) 平均電力は $\\langle V^2\\rangle/R$．直流分：$(V_0/2)^2/R=V_0^2/(4R)$．基本波：振幅 $2V_0/\\pi$ の正弦波の 2 乗平均は $\\frac12(2V_0/\\pi)^2=2V_0^2/\\pi^2$ なので $\\frac{2V_0^2}{\\pi^2R}$．全電力 $\\langle V^2\\rangle/R=\\frac{V_0^2}{2R}$ だから交流分は $\\frac{V_0^2}{4R}$．割合は $\\frac{2/\\pi^2}{1/4}=\\frac8{\\pi^2}\\approx0.811$．\n\n(3) 交流分の電力を全高調波で書くと $\\sum_k\\frac12\\left(\\frac{2V_0}{(2k-1)\\pi}\\right)^2=\\frac{2V_0^2}{\\pi^2}\\sum_k\\frac1{(2k-1)^2}=\\frac{V_0^2}4$．よって $\\sum\\frac1{(2k-1)^2}=\\frac{\\pi^2}8$．"
+   }
+  ],
+  "idea": {
+   "tex": "フーリエ係数の 2 乗はそのまま各周波数成分の電力．パーセバルの等式は「全電力＝各成分の電力の和」である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 直流：((V_0 ^(2))/(4 R)) ; 基本波：((2 V_0 ^(2))/(pi ^(2) R)) ; 割合：≈0.811\n(3) ((pi ^(2))/(8))"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ級数",
+   "方形波",
+   "パーセバルの等式",
+   "電力スペクトル",
+   "高調波"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 1,
+  "minutes": 15,
+  "theme": "方形波の級数から別の数値級数を得る",
+  "topic": "方形波の級数から別の数値級数を得る",
+  "statement": {
+   "tex": "$-\\pi<x<0$ で $0$，$0<x<\\pi$ で $\\pi$ をとる周期 $2\\pi$ の方形波のフーリエ級数が\n\\[f(x)=\\frac\\pi2+2\\sum_{k=1}^\\infty\\frac{\\sin(2k-1)x}{2k-1}\\]\nであることを用いてよい．\n\\begin{enumerate}\n\\item $x=\\pi/3$ を代入して，級数 $1-\\dfrac15+\\dfrac17-\\dfrac1{11}+\\dfrac1{13}-\\dfrac1{17}+\\cdots$（$6k\\pm1$ 型の奇数の逆数の交代和）の値を求めよ．\n\\item 級数を $0$ から $\\pi$ まで項別積分することにより，$\\displaystyle\\sum_{k=1}^\\infty\\frac1{(2k-1)^2}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\pi}{2\\sqrt3}\\approx0.907$　(2) $\\dfrac{\\pi^2}{8}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=\\pi/3$ で $\\sin\\frac{(2k-1)\\pi}3$ は $k=1,2,3,4,5,6,\\ldots$ に対し $\\frac{\\sqrt3}2,0,-\\frac{\\sqrt3}2,\\frac{\\sqrt3}2,0,-\\frac{\\sqrt3}2,\\ldots$（$2k-1=1,3,5,7,9,11,\\ldots$）．$f(\\pi/3)=\\pi$ だから\n\\[\\pi=\\frac\\pi2+2\\cdot\\frac{\\sqrt3}{2}\\left(1-\\frac15+\\frac17-\\frac1{11}+\\cdots\\right),\\]\nよって和は $\\dfrac{\\pi}{2\\sqrt3}\\approx0.907$．\n\n(2) $\\int_0^\\pi f\\,dx=\\pi^2$．右辺は $\\frac{\\pi^2}{2}+2\\sum_k\\frac{1-\\cos(2k-1)\\pi}{(2k-1)^2}=\\frac{\\pi^2}2+4\\sum_k\\frac1{(2k-1)^2}$．よって $\\sum\\frac1{(2k-1)^2}=\\frac{\\pi^2}{8}$．（フーリエ級数は項別積分可能．）"
+   }
+  ],
+  "idea": {
+   "tex": "同じフーリエ級数でも評価点を変えたり項別積分したりすることで，ライプニッツ級数以外のさまざまな数値級数が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ≈0.907\n(2) ((pi ^(2))/(8))"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ級数",
+   "方形波",
+   "数値級数",
+   "項別積分",
+   "ライプニッツ級数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-05-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -387,6 +587,1707 @@
   }
  },
  {
+  "id": "PM-05-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "減衰振動のフーリエ変換とローレンツ型のスペクトル",
+  "topic": "減衰振動のフーリエ変換とローレンツ型のスペクトル",
+  "statement": {
+   "tex": "$a>0$ とする．\n\\begin{enumerate}\n\\item 部分積分を2回用いて $\\displaystyle\\int_0^\\infty e^{-at}\\cos bt\\,dt=\\frac{a}{a^2+b^2}$，$\\displaystyle\\int_0^\\infty e^{-at}\\sin bt\\,dt=\\frac{b}{a^2+b^2}$ を示せ．\n\\item $\\displaystyle\\int_0^\\infty te^{-at}\\cos bt\\,dt$ を，$a$ についての微分で求めよ．\n\\item $t\\geqq0$ で $f(t)=e^{-\\gamma t}e^{i\\omega_0t}$ の振動のパワースペクトル $|\\tilde f(\\omega)|^2=\\left|\\int_0^\\infty f(t)e^{-i\\omega t}dt\\right|^2$ を求め，半値全幅を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $\\dfrac{a^2-b^2}{(a^2+b^2)^2}$　(3) $\\dfrac{1}{\\gamma^2+(\\omega-\\omega_0)^2}$，半値全幅 $2\\gamma$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $C=\\int e^{-at}\\cos bt\\,dt$，$S=\\int e^{-at}\\sin bt\\,dt$ とすると，部分積分で $C=\\frac1a-\\frac baS$，$S=\\frac baC$．連立して $C=\\dfrac{a}{a^2+b^2}$，$S=\\dfrac{b}{a^2+b^2}$．\\hfill$\\square$\n\n(2) $\\int te^{-at}\\cos bt\\,dt=-\\dfrac{\\partial C}{\\partial a}=\\boldsymbol{\\dfrac{a^2-b^2}{(a^2+b^2)^2}}$．\n\n(3) $\\tilde f=\\int_0^\\infty e^{-(\\gamma+i(\\omega-\\omega_0))t}dt=\\dfrac{1}{\\gamma+i(\\omega-\\omega_0)}$ より\n\\[\n\\boldsymbol{|\\tilde f|^2=\\frac{1}{\\gamma^2+(\\omega-\\omega_0)^2}}.\n\\]\n最大値の半分になるのは $|\\omega-\\omega_0|=\\gamma$，半値全幅は $\\boldsymbol{2\\gamma}$．振幅の減衰率 $\\gamma$（エネルギーの寿命 $1/2\\gamma$）と線幅が逆比例する．"
+   }
+  ],
+  "idea": {
+   "tex": "$e^{-at}\\cos bt$ の積分は部分積分を2回して元の積分に戻る形で解け，複素指数で書けば1行で出る．減衰する振動のフーリエ変換がローレンツ型になり，線幅と寿命が結びつく．原題の部分積分を分光学の線幅に使わせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) ((a ^(2)- b ^(2))/((a ^(2)+ b ^(2))^(2)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "部分積分",
+   "フーリエ変換",
+   "ローレンツ型",
+   "線幅"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "指数型波束の不確定性積と端の不連続",
+  "topic": "指数型波束の不確定性積と端の不連続",
+  "statement": {
+   "tex": "1 次元の波束 $u(x)$ を $u(x)=\\int_{-\\infty}^{\\infty}A(k)e^{ikx}dk$ と展開し，広がりを中心からのずれで\n\\[\n(\\Delta x)^2=\\frac{\\int(x-\\langle x\\rangle)^2|u|^2dx}{\\int|u|^2dx},\\qquad(\\Delta k)^2=\\frac{\\int(k-k_0)^2|A|^2dk}{\\int|A|^2dk}\n\\]\nと定義する（$k_0$：波束の中心波数）．\n\\begin{enumerate}\n\\item $u=Ne^{-\\alpha|x|/2}e^{ik_0x}$（$\\alpha>0$）について $|A(k)|^2$ の形，$\\Delta x$，$\\Delta k$ と積 $\\Delta x\\Delta k$ を求めよ．\n\\item 片側だけの波束 $u=Ne^{-\\alpha x/2}e^{ik_0x}$（$x>0$），$u=0$（$x<0$）について $\\langle x\\rangle$，$\\Delta x$ を求め，$\\Delta k$ が発散することを示せ．その原因を述べよ．\n\\item Gauss 型 $u\\propto e^{-x^2/(4s^2)}e^{ik_0x}$ の $\\Delta x\\Delta k$ を求め，(1) と比較せよ．\n\\end{enumerate}\n（ヒント：Parseval の等式から $(\\Delta k)^2=\\int|u'-ik_0u|^2dx\\big/\\int|u|^2dx$ が成り立つ．）"
+  },
+  "answer": {
+   "tex": "(1) $|A|^2\\propto\\dfrac{1}{\\{(k-k_0)^2+\\alpha^2/4\\}^2}$，$\\Delta x=\\dfrac{\\sqrt2}{\\alpha}$，$\\Delta k=\\dfrac\\alpha2$，$\\Delta x\\Delta k=\\dfrac1{\\sqrt2}$　(2) $\\langle x\\rangle=\\dfrac1\\alpha$，$\\Delta x=\\dfrac1\\alpha$，$|A|^2\\propto\\dfrac1{(k-k_0)^2+\\alpha^2/4}$ で $\\Delta k=\\infty$（$x=0$ の跳び）　(3) $\\Delta x\\Delta k=\\dfrac12$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A(k)=\\dfrac1{2\\pi}\\int u e^{-ikx}dx=\\dfrac{N}{2\\pi}\\left\\{\\dfrac{1}{\\alpha/2+iq}+\\dfrac1{\\alpha/2-iq}\\right\\}=\\dfrac{N}{2\\pi}\\dfrac{\\alpha}{q^2+\\alpha^2/4}$（$q=k-k_0$）．\n$|u|^2\\propto e^{-\\alpha|x|}$ は偶関数で $\\langle x\\rangle=0$，\n\\[\n(\\Delta x)^2=\\frac{\\int_0^\\infty x^2e^{-\\alpha x}dx}{\\int_0^\\infty e^{-\\alpha x}dx}=\\frac{2}{\\alpha^2}.\n\\]\nヒントの式で $u'-ik_0u=\\mp\\dfrac\\alpha2Ne^{-\\alpha|x|/2}e^{ik_0x}$（$x\\gtrless0$）だから $|u'-ik_0u|^2=\\dfrac{\\alpha^2}{4}|u|^2$，$(\\Delta k)^2=\\alpha^2/4$．（$|A|^2$ を直接積分しても $\\int q^2|A|^2/\\int|A|^2=\\alpha^2/4$．）よって $\\Delta x\\Delta k=\\dfrac{\\sqrt2}{\\alpha}\\cdot\\dfrac\\alpha2=\\dfrac1{\\sqrt2}$．\n\n(2) $|u|^2\\propto e^{-\\alpha x}$（$x>0$）より $\\langle x\\rangle=1/\\alpha$，$\\langle x^2\\rangle=2/\\alpha^2$，$(\\Delta x)^2=1/\\alpha^2$．\n$A=\\dfrac{N}{2\\pi}\\dfrac1{\\alpha/2+iq}$，$|A|^2\\propto\\dfrac1{q^2+\\alpha^2/4}$（Lorentz 型）．$\\int q^2|A|^2dq$ は被積分関数が $q\\to\\pm\\infty$ で 1 に近づくので発散し，$\\Delta k=\\infty$．\n原因は $x=0$ での $u$ の跳び：$u'$ に $N\\delta(x)$ が含まれ，ヒントの $\\int|u'-ik_0u|^2dx$ が $\\delta$ の 2 乗で発散する．跳びのある関数のスペクトルは $|A|\\sim1/|q|$ でしか減衰しない．(1) では $u$ は連続で $u'$ だけが跳ぶので $|A|\\sim1/q^2$ となり $\\Delta k$ は有限．\n\n(3) $|u|^2\\propto e^{-x^2/(2s^2)}$ より $\\Delta x=s$．$u'-ik_0u=-\\dfrac{x}{2s^2}u$ より $(\\Delta k)^2=\\dfrac{\\langle x^2\\rangle}{4s^4}=\\dfrac1{4s^2}$．$\\Delta x\\Delta k=\\dfrac12$（不確定性関係の下限）．(1) の $1/\\sqrt2\\approx0.707$ はそれより大きい．"
+   }
+  ],
+  "idea": {
+   "tex": "Parseval により $\\Delta k$ は $u'$ の 2 乗積分で決まる．折れ目（$u'$ の跳び）なら有限，$u$ 自身の跳びなら発散する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\Delta x\\Delta k$：((1)/(2))"
+  },
+  "methods": [],
+  "tags": [
+   "波束",
+   "Fourier変換",
+   "不確定性関係",
+   "Parsevalの等式",
+   "スペクトル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ばね付き端をもつ弦の非調和固有関数の直交性",
+  "topic": "ばね付き端をもつ弦の非調和固有関数の直交性",
+  "statement": {
+   "tex": "張力 $T$ の弦が $0\\le x\\le L$ に張られている．端 $x=0$ は固定され，端 $x=L$ は質量の無視できる輪を介して鉛直なばね（ばね定数 $\\kappa$）につながれているため，境界条件は\n\\[ u(0,t)=0,\\qquad T\\,\\frac{\\partial u}{\\partial x}(L,t)=-\\kappa\\,u(L,t) \\]\nである．$\\beta=\\kappa L/T\\ (>0)$ とおく．固有振動の空間部分は $X_n(x)=\\sin(k_n x)$ の形で，$k_n>0$ は\n\\[ k_nL\\cot(k_nL)=-\\beta \\]\nの正の解を小さい順に並べたもの（$n=1,2,\\dots$）である．$k_n$ は $\\pi/L$ の整数倍ではないので，三角関数の直交性 $\\int_{-L}^{L}\\sin\\frac{n\\pi x}{L}\\sin\\frac{m\\pi x}{L}dx=L\\delta_{nm}$ はそのままでは使えない．\n\\begin{enumerate}\n\\item 和積の公式を用いて積分を直接計算し，$n\\ne m$ のとき $\\displaystyle\\int_0^L \\sin(k_nx)\\sin(k_mx)\\,dx=0$ となることを示せ．固有値条件をどこで使うかを明示すること．\n\\item ノルム $N_n=\\displaystyle\\int_0^L\\sin^2(k_nx)\\,dx$ を $L,\\beta,k_nL$ で表せ．\n\\item 初期変位 $u_0(x)$，初速度 $0$ で弦を放したとき，$u(x,t)=\\sum_n a_n\\sin(k_nx)\\cos(\\omega_nt)$（$\\omega_n=vk_n$）の係数 $a_n$ を求めよ．また $\\beta\\to\\infty$ で通常の固定端の結果に戻ることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（$k_n\\cos k_nL\\sin k_mL=k_m\\cos k_mL\\sin k_nL$ を使う）　(2) $N_n=\\dfrac L2\\left[1+\\dfrac{\\beta}{\\beta^2+(k_nL)^2}\\right]$　(3) $a_n=\\dfrac{1}{N_n}\\displaystyle\\int_0^Lu_0(x)\\sin(k_nx)dx$．$\\beta\\to\\infty$ で $k_n\\to n\\pi/L$，$N_n\\to L/2$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n\\ne m$ なら $k_n\\ne k_m$ である．和積の公式より\n\\[ \\int_0^L\\sin k_nx\\sin k_mx\\,dx=\\frac12\\left[\\frac{\\sin(k_n-k_m)L}{k_n-k_m}-\\frac{\\sin(k_n+k_m)L}{k_n+k_m}\\right]. \\]\n加法定理で展開して通分すると，分子は\n\\[ (k_n+k_m)(s_nc_m-c_ns_m)-(k_n-k_m)(s_nc_m+c_ns_m)=2\\left(k_m s_nc_m-k_n c_ns_m\\right) \\]\n（$s_n=\\sin k_nL,\\ c_n=\\cos k_nL$）なので\n\\[ \\int_0^L\\sin k_nx\\sin k_mx\\,dx=\\frac{k_m\\cos k_mL\\,\\sin k_nL-k_n\\cos k_nL\\,\\sin k_mL}{k_n^2-k_m^2}. \\]\n固有値条件 $k\\cos kL=-(\\beta/L)\\sin kL$ を $k_n,k_m$ の両方に使うと分子は $-(\\beta/L)s_ms_n+(\\beta/L)s_ns_m=0$．よって直交する．固有値条件（$x=L$ の境界条件）がちょうど境界項を打ち消すのがポイントである．\n\n(2) $N_n=\\dfrac L2-\\dfrac{\\sin 2k_nL}{4k_n}=\\dfrac L2-\\dfrac{\\sin k_nL\\cos k_nL}{2k_n}$．固有値条件 $\\cot k_nL=-\\beta/(k_nL)$ より $\\sin k_nL\\cos k_nL=\\dfrac{\\cot k_nL}{1+\\cot^2k_nL}=-\\dfrac{\\beta\\,k_nL}{(k_nL)^2+\\beta^2}$．したがって\n\\[ N_n=\\frac L2\\left[1+\\frac{\\beta}{\\beta^2+(k_nL)^2}\\right]. \\]\n$N_n\\ne L/2$ である点が通常の正弦級数との違いである．\n\n(3) $u(x,0)=\\sum_na_n\\sin k_nx=u_0(x)$ の両辺に $\\sin k_mx$ をかけて $0$ から $L$ まで積分し，(1) を用いると $\\int_0^Lu_0\\sin k_mx\\,dx=a_mN_m$．よって\n\\[ a_n=\\frac1{N_n}\\int_0^Lu_0(x)\\sin(k_nx)\\,dx. \\]\n$\\beta\\to\\infty$ では $\\cot k_nL\\to-\\infty$ すなわち $k_nL\\to n\\pi$，また $N_n\\to L/2$ となり，固定端の公式 $a_n=\\frac2L\\int_0^Lu_0\\sin\\frac{n\\pi x}Ldx$ に戻る．（$\\beta\\to0$ では $k_nL\\to(n-\\frac12)\\pi$，$N_n\\to L/2$ で自由端の場合になる．）"
+   }
+  ],
+  "idea": {
+   "tex": "直交性は「周期 $\\pi/L$ の整数倍」ではなく，自己共役な境界条件から来る．非調和な固有値でも境界項が固有値条件で消えるので直交するが，ノルムは $L/2$ からずれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "直交性",
+   "固有関数展開",
+   "ロバン境界条件",
+   "スツルム・リウビル",
+   "弦"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "指数関数表示のパーセバル等式と級数和",
+  "topic": "指数関数表示のパーセバル等式と級数和",
+  "statement": {
+   "tex": "周期 $2L$ の関数を $f(x)=\\dfrac1{\\sqrt{2L}}\\sum_{n=-\\infty}^{\\infty}c_ne^{in\\pi x/L}$，$c_n=\\dfrac1{\\sqrt{2L}}\\int_{-L}^{L}f(x)e^{-in\\pi x/L}dx$ と展開する．\n\\begin{enumerate}\n\\item 指数関数の直交性 $\\int_{-L}^{L}e^{i(n-m)\\pi x/L}dx=2L\\delta_{nm}$ を用いて，$\\displaystyle\\int_{-L}^{L}|f(x)|^2dx=\\sum_{n=-\\infty}^{\\infty}|c_n|^2$（パーセバルの等式）を示せ．この展開の規格化 $1/\\sqrt{2L}$ が対称に選ばれていることの利点を述べよ．\n\\item $-L\\le x<L$ で $f(x)=e^{ax}$（$a>0$）とし，周期 $2L$ で拡張した関数の $c_n$ を求めよ．\n\\item (1)(2) から，$\\beta>0$ に対して $\\displaystyle\\sum_{n=-\\infty}^{\\infty}\\frac1{n^2+\\beta^2}$ を閉じた形で求めよ．さらに $\\beta\\to0$ の極限を考えて $\\sum_{n=1}^\\infty 1/n^2$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明．規格化が対称なので係数の2乗和がそのままノルムになる（ユニタリ）　(2) $c_n=(-1)^n\\sqrt{2L}\\,\\sinh(aL)\\dfrac{aL+in\\pi}{a^2L^2+n^2\\pi^2}$　(3) $\\dfrac{\\pi\\coth(\\pi\\beta)}{\\beta}$，$\\sum1/n^2=\\pi^2/6$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f^*(x)=\\frac1{\\sqrt{2L}}\\sum_mc_m^*e^{-im\\pi x/L}$ より\n\\[ \\int_{-L}^{L}|f|^2dx=\\frac1{2L}\\sum_{n,m}c_nc_m^*\\int_{-L}^{L}e^{i(n-m)\\pi x/L}dx=\\frac1{2L}\\sum_{n,m}c_nc_m^*\\,2L\\delta_{nm}=\\sum_n|c_n|^2. \\]\n展開と係数の式の両方に $1/\\sqrt{2L}$ を振り分けているので，基底 $e^{in\\pi x/L}/\\sqrt{2L}$ が正規直交となり，関数のノルムと係数ベクトルのノルムが係数なしで等しくなる（変換がユニタリ）．\n\n(2) $q=n\\pi/L$ とすると\n\\[ c_n=\\frac1{\\sqrt{2L}}\\int_{-L}^{L}e^{(a-iq)x}dx=\\frac{1}{\\sqrt{2L}}\\frac{e^{aL}e^{-in\\pi}-e^{-aL}e^{in\\pi}}{a-iq}=\\frac{2(-1)^n\\sinh aL}{\\sqrt{2L}\\,(a-iq)}. \\]\n$\\frac1{a-iq}=\\frac{a+iq}{a^2+q^2}$ を使い $L$ を掛けて整理すると $c_n=(-1)^n\\sqrt{2L}\\sinh(aL)\\dfrac{aL+in\\pi}{a^2L^2+n^2\\pi^2}$．\n\n(3) $|c_n|^2=2L\\sinh^2(aL)\\dfrac{1}{a^2L^2+n^2\\pi^2}$．一方 $\\int_{-L}^{L}e^{2ax}dx=\\dfrac{\\sinh 2aL}{a}$．パーセバルより\n\\[ \\sum_n\\frac{1}{a^2L^2+n^2\\pi^2}=\\frac{\\sinh2aL}{2aL\\sinh^2aL}=\\frac{\\coth aL}{aL}. \\]\n$aL=\\pi\\beta$ とおくと $\\dfrac1{\\pi^2}\\sum_n\\dfrac1{n^2+\\beta^2}=\\dfrac{\\coth\\pi\\beta}{\\pi\\beta}$，すなわち\n\\[ \\sum_{n=-\\infty}^{\\infty}\\frac{1}{n^2+\\beta^2}=\\frac{\\pi\\coth(\\pi\\beta)}{\\beta}. \\]\n$\\beta\\to0$ で左辺 $=\\frac1{\\beta^2}+2\\sum_{n\\ge1}\\frac1{n^2+\\beta^2}$，右辺 $=\\frac{\\pi}{\\beta}\\left(\\frac1{\\pi\\beta}+\\frac{\\pi\\beta}{3}+\\cdots\\right)=\\frac1{\\beta^2}+\\frac{\\pi^2}3+O(\\beta^2)$．比べて $\\sum_{n\\ge1}\\frac1{n^2}=\\frac{\\pi^2}6$．"
+   }
+  ],
+  "idea": {
+   "tex": "指数関数の直交性からパーセバルの等式が一行で出る．不連続な周期関数 $e^{ax}$ に適用すると，$\\coth$ の部分分数展開とゼータ値が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "複素フーリエ級数",
+   "パーセバルの等式",
+   "直交性",
+   "級数の和",
+   "coth"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "自由端の棒：並進と内部振動へのエネルギー分配",
+  "topic": "自由端の棒：並進と内部振動へのエネルギー分配",
+  "statement": {
+   "tex": "宇宙空間に浮かぶ長さ $L$，線密度 $\\rho$ の一様な棒の縦振動を考える．変位 $u(x,t)$ は波動方程式 $u_{tt}=v^2u_{xx}$ に従い，両端は自由端（$u_x(0,t)=u_x(L,t)=0$）である．時刻 $t=0$ に $u(x,0)=0$ で，棒の各点に\n\\[ \\frac{\\partial u}{\\partial t}(x,0)=v_0(x)=V\\left(1-\\frac xL\\right)\\qquad(V>0) \\]\nの初速度を与えた．$\\int_0^Lv_0dx\\ne0$ なので，基本問題で仮定した「重心が静止」の条件は成り立たない．\n\\begin{enumerate}\n\\item 自由端条件を満たす一般解には $\\cos(k_nx)$（$k_n=n\\pi/L,\\ n\\ge1$）のモードのほかに $n=0$ の項が必要である．その形を求めよ．\n\\item この初期条件に対する $u(x,t)$ を級数で求めよ．\n\\item 全運動エネルギーのうち，重心の並進運動に行く割合と内部振動に行く割合を求めよ．また，内部振動のエネルギーを各モードのエネルギーの和として計算し，結果が一致することを確かめよ（$\\sum_{j\\ge0}(2j+1)^{-4}=\\pi^4/96$ を用いてよい）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a_0+b_0t$　(2) $u=\\dfrac V2t+\\displaystyle\\sum_{n\\,\\text{奇数}}\\dfrac{4V}{n^2\\pi^2\\omega_n}\\cos(k_nx)\\sin(\\omega_nt)$，$\\omega_n=n\\pi v/L$　(3) 並進 $3/4$，内部振動 $1/4$（$\\rho LV^2/24$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 変数分離 $u=X(x)\\Theta(t)$ で $X''=-k^2X$，$\\ddot\\Theta=-v^2k^2\\Theta$．$k=0$ のとき $X=$ 定数（$X''=0$ の解のうち $X'(0)=X'(L)=0$ を満たすもの）で，$\\ddot\\Theta=0$ より $\\Theta=a_0+b_0t$．よって一般解は\n\\[ u=a_0+b_0t+\\sum_{n\\ge1}\\cos(k_nx)\\left[C_n\\cos\\omega_nt+D_n\\sin\\omega_nt\\right]. \\]\n$n=0$ 項は棒全体の並進（重心の等速運動）である．\n\n(2) $u(x,0)=0$ より $a_0=0,\\ C_n=0$．$u_t(x,0)=b_0+\\sum_n\\omega_nD_n\\cos k_nx=v_0(x)$ に，$0$〜$L$ で $1$ および $\\cos k_mx$ をかけて積分（$\\int_0^L\\cos k_nx\\cos k_mx\\,dx=\\frac L2\\delta_{nm}$，$\\int_0^L\\cos k_nx\\,dx=0$）すると\n\\[ b_0=\\frac1L\\int_0^Lv_0dx=\\frac V2,\\qquad \\omega_nD_n=\\frac2L\\int_0^LV\\left(1-\\frac xL\\right)\\cos k_nx\\,dx=\\frac{2V(1-(-1)^n)}{n^2\\pi^2}. \\]\n（$\\int_0^Lx\\cos k_nx\\,dx=\\frac{L^2((-1)^n-1)}{n^2\\pi^2}$ を用いた．）よって\n\\[ u(x,t)=\\frac V2t+\\sum_{n\\ \\text{奇数}}\\frac{4V}{n^2\\pi^2\\omega_n}\\cos\\frac{n\\pi x}{L}\\sin\\omega_nt. \\]\n重心速度は $b_0=V/2$（全運動量 $\\rho\\int v_0dx=\\rho LV/2$ を質量 $\\rho L$ で割ったものに一致）．\n\n(3) 全運動エネルギー $K=\\frac\\rho2\\int_0^LV^2(1-x/L)^2dx=\\frac{\\rho LV^2}{6}$．並進分 $K_{\\rm cm}=\\frac12\\rho L\\left(\\frac V2\\right)^2=\\frac{\\rho LV^2}{8}$．割合は $K_{\\rm cm}/K=3/4$，内部振動は $1/4$（$=\\rho LV^2/24$）．\nモードの和：第 $n$ モードのエネルギーは $E_n=\\frac{\\rho L}4(\\omega_nD_n)^2$ なので\n\\[ \\sum_{n\\,\\text{奇}}E_n=\\frac{\\rho L}{4}\\sum_{n\\,\\text{奇}}\\frac{16V^2}{n^4\\pi^4}=\\frac{4\\rho LV^2}{\\pi^4}\\cdot\\frac{\\pi^4}{96}=\\frac{\\rho LV^2}{24}. \\]\n一致する．（重心が動くと $n=0$ モードがエネルギーの大部分を持ち去る．基本問題の条件 $\\int v_0dx=0$ は $b_0=0$ に対応する．）"
+   }
+  ],
+  "idea": {
+   "tex": "自由端では $k=0$ のゼロモード（並進）が固有関数系に含まれ，その係数は $v_0$ の平均．並進と内部振動へのエネルギー分配がパーセバルの等式で一致する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) a_0 + b_0 t\n(2) 記述\n(3) 並進：3/4 ; 内部振動：1/4"
+  },
+  "methods": [],
+  "tags": [
+   "自由端",
+   "ゼロモード",
+   "重心運動",
+   "縦振動",
+   "エネルギー分配",
+   "余弦級数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "一端固定・一端自由の1/4波長正弦展開",
+  "topic": "一端固定・一端自由の1/4波長正弦展開",
+  "statement": {
+   "tex": "$0\\le x\\le L$ で定義された滑らかな関数 $f(x)$ が $f(0)=0$，$f'(L)=0$ を満たすとする（一端固定・一端自由の弦や管に対応）．\n\\begin{enumerate}\n\\item $f$ を $x=0$ に関して奇関数，$x=L$ に関して偶関数（$\\tilde f(2L-x)=\\tilde f(x)$）となるように拡張し，周期 $4L$ の関数 $\\tilde f$ を作る．$\\tilde f$ のフーリエ級数には $\\sin\\dfrac{(2n-1)\\pi x}{2L}$（$n=1,2,\\dots$）の項しか現れないことを示し，\n\\[ f(x)=\\sum_{n=1}^\\infty b_n\\sin\\frac{(2n-1)\\pi x}{2L},\\qquad b_n=\\frac2L\\int_0^Lf(x)\\sin\\frac{(2n-1)\\pi x}{2L}dx \\]\nを導け．\n\\item $f(x)=\\dfrac{x(2L-x)}{L^2}$ の $b_n$ を求めよ．\n\\item (2) の結果とパーセバルの等式を用いて $\\displaystyle\\sum_{n=1}^\\infty\\frac{1}{(2n-1)^6}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $b_n=\\dfrac{32}{\\pi^3(2n-1)^3}$　(3) $\\dfrac{\\pi^6}{960}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\tilde f$ は奇関数で周期 $4L$ なので，周期 $4L$（半周期 $2L$）のフーリエ級数で定数項と余弦項は消え\n\\[ \\tilde f(x)=\\sum_{m\\ge1}B_m\\sin\\frac{m\\pi x}{2L},\\qquad B_m=\\frac{1}{2L}\\int_{-2L}^{2L}\\tilde f\\sin\\frac{m\\pi x}{2L}dx=\\frac1L\\int_0^{2L}\\tilde f\\sin\\frac{m\\pi x}{2L}dx. \\]\n$[L,2L]$ の部分で $x=2L-y$ と置換すると，$\\tilde f(2L-y)=\\tilde f(y)$ と $\\sin\\frac{m\\pi(2L-y)}{2L}=\\sin\\left(m\\pi-\\frac{m\\pi y}{2L}\\right)=-(-1)^m\\sin\\frac{m\\pi y}{2L}$ より\n\\[ B_m=\\frac{1-(-1)^m}{L}\\int_0^Lf\\sin\\frac{m\\pi x}{2L}dx. \\]\n$m$ が偶数なら $0$，$m=2n-1$ なら $B_{2n-1}=\\frac2L\\int_0^Lf\\sin\\frac{(2n-1)\\pi x}{2L}dx=b_n$．各項 $\\sin\\frac{(2n-1)\\pi x}{2L}$ は $x=0$ で $0$，$x=L$ で微分が $0$ なので境界条件と整合している．\n\n(2) $\\kappa_n=\\frac{(2n-1)\\pi}{2L}$ とおく（$\\cos\\kappa_nL=0$，$\\sin\\kappa_nL=(-1)^{n+1}$）．部分積分を 2 回行うと\n\\[ \\int_0^Lf\\sin\\kappa_nx\\,dx=\\Big[-\\tfrac{f\\cos\\kappa_nx}{\\kappa_n}\\Big]_0^L+\\frac{1}{\\kappa_n}\\int_0^Lf'\\cos\\kappa_nx\\,dx=\\frac{1}{\\kappa_n}\\Big[\\tfrac{f'\\sin\\kappa_nx}{\\kappa_n}\\Big]_0^L-\\frac{1}{\\kappa_n^2}\\int_0^Lf''\\sin\\kappa_nx\\,dx. \\]\n$f(0)=0$，$\\cos\\kappa_nL=0$，$f'(L)=0$ により境界項はすべて消える．$f''=-2/L^2$ なので\n\\[ \\int_0^Lf\\sin\\kappa_nx\\,dx=\\frac{2}{L^2\\kappa_n^2}\\cdot\\frac{1-\\cos\\kappa_nL}{\\kappa_n}=\\frac{2}{L^2\\kappa_n^3}. \\]\nよって $b_n=\\frac2L\\cdot\\frac{2}{L^2\\kappa_n^3}=\\frac{4}{L^3}\\cdot\\frac{8L^3}{(2n-1)^3\\pi^3}=\\dfrac{32}{\\pi^3(2n-1)^3}$．\n（検算：$x=L$ で $\\sum b_n(-1)^{n+1}=1=f(L)$ は $\\sum(-1)^{n+1}/(2n-1)^3=\\pi^3/32$ と整合．）\n\n(3) $\\int_0^L\\sin\\kappa_nx\\sin\\kappa_mx\\,dx=\\frac L2\\delta_{nm}$ より $\\int_0^Lf^2dx=\\frac L2\\sum b_n^2$．左辺 $=\\frac1{L^4}\\int_0^Lx^2(2L-x)^2dx=\\frac{L}{L^5}\\cdot L^4\\left(\\frac43-1+\\frac15\\right)=\\frac{8L}{15}$．よって\n\\[ \\frac{8L}{15}=\\frac L2\\cdot\\frac{1024}{\\pi^6}\\sum\\frac1{(2n-1)^6}\\ \\Rightarrow\\ \\sum_{n\\ge1}\\frac1{(2n-1)^6}=\\frac{\\pi^6}{960}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "偶関数拡張（余弦級数）・奇関数拡張（正弦級数）を組み合わせ，$x=0$ で奇・$x=L$ で偶に拡張すると周期 $4L$ になり，1/4 波長の奇数倍だけのモードが現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $b_n$：((32)/(pi ^(3)(2 n -1)^(3)))\n(3) ((pi ^(6))/(960))"
+  },
+  "methods": [],
+  "tags": [
+   "関数の拡張",
+   "1/4波長",
+   "固定端",
+   "自由端",
+   "パーセバルの等式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "実数条件・半周期反対称性とベッセル関数",
+  "topic": "実数条件・半周期反対称性とベッセル関数",
+  "statement": {
+   "tex": "周期 $2L$ の関数 $f$ の三角関数表示 $f=A_0+\\sum_{n\\ge1}\\left[A_n\\cos\\frac{n\\pi x}{L}+B_n\\sin\\frac{n\\pi x}{L}\\right]$ と指数関数表示 $f=\\frac{1}{\\sqrt{2L}}\\sum_{n\\in\\mathbb Z}c_ne^{in\\pi x/L}$ を考える．\n\\begin{enumerate}\n\\item オイラーの関係式を用いて $c_n$（$n\\ge1$），$c_{-n}$，$c_0$ を $A_n,B_n,A_0$ で表せ．$f$ が実数値であることは $c_n$ についてのどんな条件と同値か．\n\\item $f(x+L)=-f(x)$（半周期ずらすと符号反転）が成り立つことと，偶数番目の $c_n$ がすべて $0$ になることが同値であることを示せ．\n\\item $f(x)=\\exp\\left(\\alpha\\cos\\frac{\\pi x}{L}\\right)$（$\\alpha$ は実数）について，$c_n=\\sqrt{2L}\\,I_n(\\alpha)$ と書けることを示せ．ここで $I_n(\\alpha)=\\frac1\\pi\\int_0^\\pi e^{\\alpha\\cos\\theta}\\cos n\\theta\\,d\\theta$（変形ベッセル関数）．さらに $\\sum_{n\\in\\mathbb Z}I_n(\\alpha)^2$ を $I_0$ を用いて表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c_{\\pm n}=\\sqrt{\\frac L2}(A_n\\mp iB_n)$，$c_0=\\sqrt{2L}A_0$；実数 $\\iff c_{-n}=c_n^*$　(2) 証明　(3) $\\sum_nI_n(\\alpha)^2=I_0(2\\alpha)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\cos\\theta=\\frac{e^{i\\theta}+e^{-i\\theta}}2$，$\\sin\\theta=\\frac{e^{i\\theta}-e^{-i\\theta}}{2i}$ を代入すると\n\\[ A_n\\cos\\theta_n+B_n\\sin\\theta_n=\\frac{A_n-iB_n}{2}e^{i\\theta_n}+\\frac{A_n+iB_n}2e^{-i\\theta_n}\\quad(\\theta_n=n\\pi x/L). \\]\n$\\frac1{\\sqrt{2L}}c_{\\pm n}=\\frac{A_n\\mp iB_n}2$ より $c_{\\pm n}=\\sqrt{\\frac L2}(A_n\\mp iB_n)$，$c_0=\\sqrt{2L}A_0$．係数の式 (3.7) を代入すれば $c_n=\\frac1{\\sqrt{2L}}\\int f e^{-in\\pi x/L}dx$ に一致する．\n$f$ が実 $\\iff$ $A_n,B_n$ が実 $\\iff c_{-n}=c_n^*$（$n\\ge0$，$c_0$ は実）．逆に $c_{-n}=c_n^*$ なら $n$ と $-n$ の項が互いに複素共役で，和は実．\n\n(2) $c_n$ の定義で $x\\to x+L$ と置換（周期性から積分区間はずらしてよい）すると，$g(x)=f(x+L)$ の係数は $\\frac{1}{\\sqrt{2L}}\\int f(x+L)e^{-in\\pi x/L}dx=e^{in\\pi}c_n=(-1)^nc_n$．$g=-f$ $\\iff$ 全ての $n$ で $(-1)^nc_n=-c_n$ $\\iff$ 偶数 $n$ で $c_n=0$（係数の一意性による）．\n\n(3) $\\theta=\\pi x/L$ と置換：\n\\[ c_n=\\frac{1}{\\sqrt{2L}}\\cdot\\frac L\\pi\\int_{-\\pi}^{\\pi}e^{\\alpha\\cos\\theta}e^{-in\\theta}d\\theta=\\frac{L}{\\pi\\sqrt{2L}}\\cdot2\\int_0^\\pi e^{\\alpha\\cos\\theta}\\cos n\\theta\\,d\\theta=\\frac{2L}{\\sqrt{2L}}I_n(\\alpha)=\\sqrt{2L}I_n(\\alpha). \\]\n（被積分関数の奇部分 $\\sin n\\theta$ は消える．）パーセバルの等式 $\\int_{-L}^{L}|f|^2dx=\\sum|c_n|^2$ より\n\\[ 2L\\sum_nI_n(\\alpha)^2=\\int_{-L}^{L}e^{2\\alpha\\cos(\\pi x/L)}dx=\\frac{L}{\\pi}\\int_{-\\pi}^{\\pi}e^{2\\alpha\\cos\\theta}d\\theta=2L\\,I_0(2\\alpha). \\]\nよって $\\sum_{n\\in\\mathbb Z}I_n(\\alpha)^2=I_0(2\\alpha)$．"
+   }
+  ],
+  "idea": {
+   "tex": "三角関数表示と指数表示の対応 $c_{\\pm n}\\propto A_n\\mp iB_n$ から，実数条件や半周期反対称性（奇数次高調波のみ）が係数の言葉で簡潔に書ける．母関数 $e^{\\alpha\\cos\\theta}$ に適用するとベッセル関数の恒等式が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "複素フーリエ級数",
+   "オイラーの関係式",
+   "実数条件",
+   "奇数次高調波",
+   "ベッセル関数",
+   "パーセバル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 35,
+  "theme": "非対称にはじいた弦：倍音の欠落と鏡像反転",
+  "topic": "非対称にはじいた弦：倍音の欠落と鏡像反転",
+  "statement": {
+   "tex": "張力 $T$，長さ $L$ の両端固定の弦（波の速さ $v$）を，点 $x=x_0$（$0<x_0<L$）で高さ $h$ に引っ張った折れ線の形\n\\[ u_0(x)=\\begin{cases}hx/x_0&(0\\le x\\le x_0)\\\\ h(L-x)/(L-x_0)&(x_0<x\\le L)\\end{cases} \\]\nから静かに放した．\n\\begin{enumerate}\n\\item $u(x,t)=\\sum_nA_n\\sin(k_nx)\\cos(\\omega_nt)$（$k_n=n\\pi/L$，$\\omega_n=vk_n$）の $A_n$ を求めよ．$x_0=L/3$ のとき欠落する倍音を答えよ．\n\\item 級数を用いて，半周期後の弦の形が $u(x,L/v)=-u_0(L-x)$（左右反転かつ上下反転）となることを示せ．\n\\item 全エネルギーのうち基本振動（$n=1$）が担う割合 $\\eta$ を $x_0/L$ の関数として求め，$x_0=L/2$ と $x_0=L/3$ での値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A_n=\\dfrac{2hL^2\\sin(n\\pi x_0/L)}{n^2\\pi^2x_0(L-x_0)}$．$x_0=L/3$ で $n=3,6,9,\\dots$ が欠落　(2) 証明　(3) $\\eta=\\dfrac{2L^2\\sin^2(\\pi x_0/L)}{\\pi^2x_0(L-x_0)}$；$x_0=L/2$ で $8/\\pi^2\\approx0.81$，$x_0=L/3$ で $27/(4\\pi^2)\\approx0.68$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A_n=\\frac2L\\int_0^Lu_0\\sin k_nx\\,dx$．部分積分すると $u_0(0)=u_0(L)=0$ より\n\\[ \\int_0^Lu_0\\sin k_nx\\,dx=\\frac1{k_n}\\int_0^Lu_0'\\cos k_nx\\,dx=\\frac1{k_n^2}\\left[\\frac{h}{x_0}+\\frac{h}{L-x_0}\\right]\\sin k_nx_0, \\]\n（$u_0'$ は $x_0$ で $h/x_0$ から $-h/(L-x_0)$ へ跳ぶので，$\\int u_0'\\cos k_nx\\,dx=\\frac{1}{k_n}\\left[\\frac h{x_0}\\sin k_nx_0+\\frac{h}{L-x_0}\\sin k_nx_0\\right]$）．よって\n\\[ A_n=\\frac{2}{L}\\cdot\\frac{L^2}{n^2\\pi^2}\\cdot\\frac{hL}{x_0(L-x_0)}\\sin\\frac{n\\pi x_0}{L}=\\frac{2hL^2\\sin(n\\pi x_0/L)}{n^2\\pi^2x_0(L-x_0)}. \\]\n$x_0=L/3$ では $\\sin(n\\pi/3)=0$ となる $n=3,6,9,\\dots$ が欠落する（はじいた点が節になるモードは励起されない）．\n\n(2) $t=L/v$ で $\\cos\\omega_nt=\\cos n\\pi=(-1)^n$．一方 $\\sin k_n(L-x)=\\sin(n\\pi-k_nx)=-(-1)^n\\sin k_nx$．よって\n\\[ u(x,L/v)=\\sum_nA_n(-1)^n\\sin k_nx=-\\sum_nA_n\\sin k_n(L-x)=-u_0(L-x). \\]\nすなわち半周期で弦は「左右と上下をともに反転した」形になる（頂点は $x=L-x_0$，高さ $-h$）．\n\n(3) 全エネルギーは初期の位置エネルギー $E=\\frac T2\\int_0^Lu_0'^2dx=\\frac T2\\left[\\frac{h^2}{x_0}+\\frac{h^2}{L-x_0}\\right]=\\frac{Th^2L}{2x_0(L-x_0)}$．第 $n$ モードのエネルギーは $E_n=\\frac{TL}{4}k_n^2A_n^2=\\frac{Th^2L^3\\sin^2(n\\pi x_0/L)}{n^2\\pi^2x_0^2(L-x_0)^2}$．よって\n\\[ \\eta=\\frac{E_1}{E}=\\frac{2L^2\\sin^2(\\pi x_0/L)}{\\pi^2x_0(L-x_0)}. \\]\n$x_0=L/2$：$\\eta=\\frac{2\\cdot1}{\\pi^2/4}=\\frac8{\\pi^2}\\approx0.811$．$x_0=L/3$：$\\eta=\\frac{2\\cdot(3/4)}{\\pi^2\\cdot2/9}=\\frac{27}{4\\pi^2}\\approx0.684$．端に近い点ではじくほど基本音の割合が下がり，倍音の豊かな音になる．"
+   }
+  ],
+  "idea": {
+   "tex": "はじく点の位置が $\\sin(n\\pi x_0/L)$ として係数に入り，節に当たる倍音は欠落する．$\\cos n\\pi=(-1)^n$ と $\\sin$ の反転性から半周期後の鏡像反転が級数だけで示せる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "初期値問題",
+   "はじいた弦",
+   "倍音",
+   "固定端",
+   "エネルギー分配",
+   "半周期"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "自由端の弦の傾いた初期形と端点の等速運動",
+  "topic": "自由端の弦の傾いた初期形と端点の等速運動",
+  "statement": {
+   "tex": "両端が自由端（$u_x(0,t)=u_x(L,t)=0$）の弦（波の速さ $v$）を，直線状に傾けた形\n\\[ u(x,0)=u_0(x)=a\\left(1-\\frac{2x}{L}\\right)\\qquad(0\\le x\\le L) \\]\nから静かに放した（$\\int_0^Lu_0dx=0$ なので重心は静止したまま）．\n\\begin{enumerate}\n\\item $u(x,t)=\\sum_{n\\ge1}A_n\\cos(k_nx)\\cos(\\omega_nt)$（$k_n=n\\pi/L$，$\\omega_n=vk_n$）の $A_n$ を求めよ．\n\\item 弦の中点 $x=L/2$ は常に静止していることを示せ．\n\\item 端点の変位 $u(0,t)$ を $0\\le t\\le L/v$ で閉じた形で求めよ．すなわち端点は等速で動くことを示し，その速さを答えよ．（$\\sum_{j\\ge0}(2j+1)^{-2}=\\pi^2/8$ を用いてよい．）\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A_n=\\dfrac{4a(1-(-1)^n)}{n^2\\pi^2}$（奇数 $n$ で $8a/(n^2\\pi^2)$）　(2) 証明　(3) $u(0,t)=a\\left(1-\\dfrac{2vt}{L}\\right)$，速さ $2av/L$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A_n=\\frac2L\\int_0^Lu_0\\cos k_nx\\,dx$．$\\int_0^L\\cos k_nx\\,dx=0$，$\\int_0^Lx\\cos k_nx\\,dx=\\frac{L^2((-1)^n-1)}{n^2\\pi^2}$ より\n\\[ A_n=\\frac2L\\cdot\\left(-\\frac{2a}{L}\\right)\\frac{L^2((-1)^n-1)}{n^2\\pi^2}=\\frac{4a(1-(-1)^n)}{n^2\\pi^2}. \\]\n偶数 $n$ は $0$，奇数 $n$ で $\\frac{8a}{n^2\\pi^2}$．（$\\int u_0dx=0$ なので $n=0$ 項は不要．）\n\n(2) 奇数 $n$ に対して $\\cos(k_nL/2)=\\cos(n\\pi/2)=0$．よって $u(L/2,t)=0$（全時刻）．初期形が中点に関して反対称で，自由端の反射でもこの反対称性が保たれるためである．\n\n(3) $x=0$ では $\\cos k_nx=1$ なので，$\\tau=\\pi vt/L\\in[0,\\pi]$ として\n\\[ u(0,t)=\\frac{8a}{\\pi^2}\\sum_{n\\,\\text{奇}}\\frac{\\cos n\\tau}{n^2}. \\]\n関数 $g(\\tau)=\\frac{\\pi}{2}-|\\tau|$（$|\\tau|\\le\\pi$，周期 $2\\pi$ の三角波）の余弦級数は $\\frac{2}{\\pi}\\int_0^\\pi(\\frac\\pi2-\\tau)\\cos n\\tau\\,d\\tau=\\frac{2(1-(-1)^n)}{\\pi n^2}$ より $g=\\frac4\\pi\\sum_{n\\,\\text{奇}}\\frac{\\cos n\\tau}{n^2}$．（$\\tau=0$ で $\\frac\\pi2=\\frac4\\pi\\cdot\\frac{\\pi^2}8$ と整合．）したがって\n\\[ u(0,t)=\\frac{8a}{\\pi^2}\\cdot\\frac{\\pi}{4}\\left(\\frac\\pi2-\\tau\\right)=a\\left(1-\\frac{2\\tau}{\\pi}\\right)=a\\left(1-\\frac{2vt}{L}\\right)\\quad(0\\le t\\le L/v). \\]\n端点は $a$ から $-a$ まで速さ $2av/L$ の等速運動をし，その後は折り返す（三角波）．（ダランベール解で見ると，自由端での偶関数拡張により $u(0,t)=\\frac12[u_0(vt)+u_0(-vt)]=u_0(vt)$ となり，端点の速さは初期形の傾きの大きさ $2a/L$ に $v$ をかけたものに等しい．）"
+   }
+  ],
+  "idea": {
+   "tex": "自由端の余弦展開で奇数次だけが残り，中点は節になる．端点の運動は $\\sum\\cos n\\tau/n^2$ という三角波の級数そのもので，滑らかでない「等速で往復する」運動になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $A_n$：((4 a (1-(-1)^(n)))/(n ^(2) pi ^(2)))\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "自由端",
+   "余弦級数",
+   "初期値問題",
+   "三角波",
+   "節"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "球対称関数の運動量表示と逆問題",
+  "topic": "球対称関数の運動量表示と逆問題",
+  "statement": {
+   "tex": "3 次元で，$r=|\\boldsymbol x|$ の関数 $F(r)$ を演算子とみなし，運動量固有ケット（$\\langle\\boldsymbol x'|\\boldsymbol p'\\rangle=(2\\pi\\hbar)^{-3/2}e^{i\\boldsymbol p'\\cdot\\boldsymbol x'/\\hbar}$）による行列要素 $\\langle\\boldsymbol p''|F(r)|\\boldsymbol p'\\rangle$ を考える．\n\\begin{enumerate}\n\\item $\\langle\\boldsymbol p''|F(r)|\\boldsymbol p'\\rangle$ が $q=|\\boldsymbol p'-\\boldsymbol p''|$ だけの関数 $G(q)$ になることを示し，$G(q)$ を $r$ についての 1 重積分で表せ．\n\\item 湯川型 $F(r)=e^{-\\mu r}/r$（$\\mu>0$）について $G(q)$ を求め，$\\mu\\to0$（クーロン型）の極限を述べよ．\n\\item 逆に，$G(q)=\\dfrac{C}{(q^2+\\hbar^2\\mu^2)^2}$（$C$ は定数）となる $F(r)$ を求めよ．\n\\item 半径 $R$ の球の内部で $1$，外部で $0$ となる $F(r)$ について $G(q)$ を求め，$q\\to0$ の極限が $\\int F\\,d^3x/(2\\pi\\hbar)^3$ に一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $G(q)=\\dfrac{4\\pi}{(2\\pi\\hbar)^3}\\displaystyle\\int_0^\\infty r^2F(r)\\frac{\\sin(qr/\\hbar)}{qr/\\hbar}dr$　(2) $G=\\dfrac{1}{2\\pi^2\\hbar(q^2+\\hbar^2\\mu^2)}$，$\\mu\\to0$ で $\\dfrac{1}{2\\pi^2\\hbar q^2}$　(3) $F(r)=\\dfrac{\\pi^2C}{\\hbar\\mu}e^{-\\mu r}$　(4) $G=\\dfrac{\\hbar\\sin(qR/\\hbar)-qR\\cos(qR/\\hbar)}{2\\pi^2\\hbar q^3}\\to\\dfrac{R^3}{6\\pi^2\\hbar^3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位置の完全系を 2 回挿入し $\\langle\\boldsymbol x''|F(r)|\\boldsymbol x'\\rangle=F(r')\\delta^3(\\boldsymbol x''-\\boldsymbol x')$ を使うと\n\\[\n\\langle\\boldsymbol p''|F|\\boldsymbol p'\\rangle=\\frac1{(2\\pi\\hbar)^3}\\int d^3x'\\,F(r')e^{i(\\boldsymbol p'-\\boldsymbol p'')\\cdot\\boldsymbol x'/\\hbar}.\n\\]\n$\\boldsymbol q=\\boldsymbol p'-\\boldsymbol p''$ を極軸にとり角度積分 $\\int_0^{2\\pi}d\\phi\\int_{-1}^1d\\cos\\theta\\,e^{iqr\\cos\\theta/\\hbar}=4\\pi\\dfrac{\\sin(qr/\\hbar)}{qr/\\hbar}$ を行うと\n\\[\nG(q)=\\frac{4\\pi}{(2\\pi\\hbar)^3}\\int_0^\\infty r^2F(r)\\frac{\\sin(qr/\\hbar)}{qr/\\hbar}dr ,\n\\]\n$\\boldsymbol q$ の向きによらない．\n\n(2) $\\kappa=q/\\hbar$ として $\\int_0^\\infty e^{-\\mu r}\\sin\\kappa r\\,dr=\\dfrac{\\kappa}{\\mu^2+\\kappa^2}$ より\n\\[\nG=\\frac{4\\pi}{(2\\pi\\hbar)^3}\\cdot\\frac{\\hbar}{q}\\cdot\\frac{q/\\hbar}{\\mu^2+q^2/\\hbar^2}=\\frac{4\\pi\\hbar^2}{(2\\pi\\hbar)^3(q^2+\\hbar^2\\mu^2)}=\\frac{1}{2\\pi^2\\hbar(q^2+\\hbar^2\\mu^2)} .\n\\]\n$\\mu\\to0$ で $1/(2\\pi^2\\hbar q^2)$（クーロンポテンシャルの運動量表示，$q\\to0$ で発散するのは長距離力の反映）．\n\n(3) (2) の結果を $\\mu^2$ で微分する：$\\dfrac{\\partial}{\\partial(\\mu^2)}=\\dfrac1{2\\mu}\\dfrac{\\partial}{\\partial\\mu}$ を $e^{-\\mu r}/r$ に作用させると $-\\dfrac{e^{-\\mu r}}{2\\mu}$，一方 $G$ には $-\\dfrac{\\hbar^2}{2\\pi^2\\hbar(q^2+\\hbar^2\\mu^2)^2}$．よって\n\\[\nF_0(r)=\\frac{e^{-\\mu r}}{2\\mu}\\ \\longleftrightarrow\\ G_0(q)=\\frac{\\hbar}{2\\pi^2(q^2+\\hbar^2\\mu^2)^2}.\n\\]\n変換は線形なので $G=C/(q^2+\\hbar^2\\mu^2)^2$ には $F=\\dfrac{2\\pi^2C}{\\hbar}F_0=\\dfrac{\\pi^2C}{\\hbar\\mu}e^{-\\mu r}$ が対応する（フーリエ変換の一意性より，この $F$ が唯一）．水素原子 $1s$ 状態の密度 $\\propto e^{-2r/a_0}$ の運動量表示が $(q^2+\\cdot)^{-2}$ 型になることと同じ構造．\n\n(4) $\\kappa=q/\\hbar$ として $\\int_0^Rr\\sin\\kappa r\\,dr=\\dfrac{\\sin\\kappa R-\\kappa R\\cos\\kappa R}{\\kappa^2}$ より\n\\[\nG=\\frac{4\\pi}{(2\\pi\\hbar)^3}\\frac{\\sin\\kappa R-\\kappa R\\cos\\kappa R}{\\kappa^3}=\\frac{\\hbar\\sin(qR/\\hbar)-qR\\cos(qR/\\hbar)}{2\\pi^2\\hbar q^3}.\n\\]\n$\\sin z-z\\cos z=z^3/3+O(z^5)$ より $q\\to0$ で $G\\to\\dfrac{4\\pi R^3/3}{(2\\pi\\hbar)^3}=\\dfrac{R^3}{6\\pi^2\\hbar^3}$．これは (1) で $\\sin z/z\\to1$ とした $\\int F\\,d^3x/(2\\pi\\hbar)^3$（球の体積 $/(2\\pi\\hbar)^3$）と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "$F(r)$ の運動量表示は運動量移行 $q$ だけの関数で，3 次元フーリエ変換を球ベッセル $j_0$ の 1 重積分に帰着できる．パラメータ微分を使うと逆問題（$G$ から $F$）も解ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $F(r)$：((pi ^(2) C)/(hbar μ)) e ^(- μ r)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "運動量表示",
+   "フーリエ変換",
+   "湯川ポテンシャル",
+   "変換関数",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "最小二乗近似としてのフーリエ係数",
+  "topic": "最小二乗近似としてのフーリエ係数",
+  "statement": {
+   "tex": "周期 $2\\pi$ の電圧信号 $f(\\theta)$（$\\theta=\\omega t$）を，$N$ 個の発振器の出力の和\n\\[ S_N(\\theta)=a_0+\\sum_{n=1}^{N}\\left(a_n\\cos n\\theta+b_n\\sin n\\theta\\right) \\]\nで近似したい．係数 $a_0,a_n,b_n$ は自由に調整でき，近似の良さを 1 周期あたりの二乗誤差\n\\[ E_N=\\int_{-\\pi}^{\\pi}\\left\\{f(\\theta)-S_N(\\theta)\\right\\}^2d\\theta \\]\nで測る．三角関数の直交関係 $\\int_{-\\pi}^{\\pi}\\cos n\\theta\\cos m\\theta\\,d\\theta=\\int_{-\\pi}^{\\pi}\\sin n\\theta\\sin m\\theta\\,d\\theta=\\pi\\delta_{nm}$，$\\int_{-\\pi}^{\\pi}\\cos n\\theta\\sin m\\theta\\,d\\theta=0$（$n,m\\ge1$）は用いてよい．\n\\begin{enumerate}\n\\item $E_N$ を最小にする係数を求め，それがフーリエ係数の公式に一致することを示せ．\n\\item 最小値が $E_N^{\\min}=\\displaystyle\\int_{-\\pi}^{\\pi}f^2d\\theta-2\\pi a_0^2-\\pi\\sum_{n=1}^{N}(a_n^2+b_n^2)$ となることを示せ．\n\\item のこぎり波 $f(\\theta)=\\theta$（$-\\pi<\\theta<\\pi$）について $E_1^{\\min}$，$E_2^{\\min}$ を求めよ．\n\\item (2) で $E_N^{\\min}\\ge0$ であることを用いて，$\\displaystyle\\sum_{n=1}^{\\infty}\\frac1{n^2}\\le\\frac{\\pi^2}{6}$ を示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a_0=\\frac1{2\\pi}\\int f$，$a_n=\\frac1\\pi\\int f\\cos n\\theta$，$b_n=\\frac1\\pi\\int f\\sin n\\theta$　(2) 証明（解説参照）　(3) $E_1^{\\min}=\\frac{2\\pi^3}{3}-4\\pi\\approx8.10$，$E_2^{\\min}=\\frac{2\\pi^3}{3}-5\\pi\\approx4.96$　(4) 証明（$b_n=2(-1)^{n+1}/n$ をベッセルの不等式に代入）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E_N$ は係数の 2 次式である．展開すると\n\\[ E_N=\\int f^2-2\\int fS_N+\\int S_N^2 . \\]\n直交関係より $\\int_{-\\pi}^{\\pi}S_N^2d\\theta=2\\pi a_0^2+\\pi\\sum_{n=1}^N(a_n^2+b_n^2)$（交差項は全て 0）．また $\\alpha_0=\\int f\\,d\\theta$，$\\alpha_n=\\int f\\cos n\\theta\\,d\\theta$，$\\beta_n=\\int f\\sin n\\theta\\,d\\theta$ とおくと $\\int fS_N=a_0\\alpha_0+\\sum(a_n\\alpha_n+b_n\\beta_n)$．よって\n\\[ E_N=\\int f^2-2a_0\\alpha_0+2\\pi a_0^2+\\sum_{n=1}^N\\left\\{\\pi a_n^2-2a_n\\alpha_n+\\pi b_n^2-2b_n\\beta_n\\right\\}. \\]\n各係数について独立な 2 次関数なので，平方完成して\n\\[ E_N=\\int f^2+2\\pi\\left(a_0-\\frac{\\alpha_0}{2\\pi}\\right)^2-\\frac{\\alpha_0^2}{2\\pi}+\\sum_{n=1}^N\\left\\{\\pi\\left(a_n-\\frac{\\alpha_n}{\\pi}\\right)^2+\\pi\\left(b_n-\\frac{\\beta_n}{\\pi}\\right)^2-\\frac{\\alpha_n^2+\\beta_n^2}{\\pi}\\right\\}. \\]\n最小となるのは $a_0=\\dfrac{1}{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f\\,d\\theta$，$a_n=\\dfrac1\\pi\\displaystyle\\int_{-\\pi}^{\\pi}f\\cos n\\theta\\,d\\theta$，$b_n=\\dfrac1\\pi\\displaystyle\\int_{-\\pi}^{\\pi}f\\sin n\\theta\\,d\\theta$ のときで，これはフーリエ係数の公式そのものである．特に，最適な $a_n$ は $N$ によらない（項を増やしても既存の係数を調整し直す必要がない）．これは基底の直交性の帰結である．\n\n(2) 最適値を代入すると $\\alpha_0=2\\pi a_0$，$\\alpha_n=\\pi a_n$，$\\beta_n=\\pi b_n$ なので\n\\[ E_N^{\\min}=\\int f^2-\\frac{(2\\pi a_0)^2}{2\\pi}-\\sum\\frac{\\pi^2(a_n^2+b_n^2)}{\\pi}=\\int_{-\\pi}^{\\pi}f^2d\\theta-2\\pi a_0^2-\\pi\\sum_{n=1}^N(a_n^2+b_n^2). \\]\n\n(3) $f=\\theta$ は奇関数なので $a_0=a_n=0$．部分積分で\n\\[ b_n=\\frac1\\pi\\int_{-\\pi}^{\\pi}\\theta\\sin n\\theta\\,d\\theta=\\frac2\\pi\\left[-\\frac{\\theta\\cos n\\theta}{n}\\right]_0^\\pi+\\frac{2}{\\pi n}\\int_0^\\pi\\cos n\\theta\\,d\\theta=\\frac{2(-1)^{n+1}}{n}. \\]\n$\\int_{-\\pi}^{\\pi}\\theta^2d\\theta=\\dfrac{2\\pi^3}{3}$ だから\n\\[ E_1^{\\min}=\\frac{2\\pi^3}{3}-4\\pi\\approx8.10,\\qquad E_2^{\\min}=\\frac{2\\pi^3}{3}-4\\pi-\\pi=\\frac{2\\pi^3}{3}-5\\pi\\approx4.96 . \\]\n\n(4) $E_N^{\\min}\\ge0$ より $\\pi\\sum_{n=1}^N\\dfrac{4}{n^2}\\le\\dfrac{2\\pi^3}{3}$，すなわち $\\sum_{n=1}^N\\dfrac1{n^2}\\le\\dfrac{\\pi^2}{6}$ が任意の $N$ で成り立つ．$N\\to\\infty$ として示された（実際には等号が成立する：パーセバルの等式）．"
+   }
+  ],
+  "idea": {
+   "tex": "フーリエ係数は「直交基底による最小二乗近似」の解であり，直交性のおかげで各係数が独立に決まる．残差の非負性がベッセルの不等式を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) $E_1^{\\min}$：≈8.10 ; $E_2^{\\min}$：≈4.96\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ係数",
+   "直交性",
+   "最小二乗近似",
+   "ベッセルの不等式",
+   "パーセバル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ファブリ・ペロー透過率の複素フーリエ展開",
+  "topic": "ファブリ・ペロー透過率の複素フーリエ展開",
+  "statement": {
+   "tex": "強度反射率 $R$（$0<R<1$）の 2 枚の鏡からなるファブリ・ペロー共振器の透過率は，往復の位相差 $\\delta$ の関数として\n\\[ T(\\delta)=\\frac{(1-R)^2}{1-2R\\cos\\delta+R^2} \\]\nで与えられる（周期 $2\\pi$）．ここでは複素フーリエ級数を $T(\\delta)=\\displaystyle\\sum_{n=-\\infty}^{\\infty}c_ne^{in\\delta}$，$c_n=\\dfrac1{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}T(\\delta)e^{-in\\delta}d\\delta$ と定義する．\n\\begin{enumerate}\n\\item $1-2R\\cos\\delta+R^2=(1-Re^{i\\delta})(1-Re^{-i\\delta})$ を用い，積分を実行せずに $c_n$ を求めよ．\n\\item 実数形のフーリエ級数 $T=A_0+\\sum_{n\\ge1}(A_n\\cos n\\delta+B_n\\sin n\\delta)$ の係数を求めよ．$c_{-n}=c_n^*$ との関係も述べよ．\n\\item パーセバルの等式を用いて，透過率の 2 乗の 1 周期平均 $\\overline{T^2}=\\dfrac1{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}T^2d\\delta$ を求めよ．\n\\item $c_n\\propto R^{|n|}$ となることの物理的意味を，共振器内を往復する光の多重反射の観点から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $c_n=\\frac{1-R}{1+R}R^{|n|}$　(2) $A_0=\\frac{1-R}{1+R}$，$A_n=\\frac{2(1-R)}{1+R}R^n$，$B_n=0$　(3) $\\overline{T^2}=\\frac{(1-R)(1+R^2)}{(1+R)^3}$　(4) $n$ 回余分に往復した光の寄与"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $|R e^{\\pm i\\delta}|<1$ なので等比級数に展開でき，\n\\[ \\frac{1}{(1-Re^{i\\delta})(1-Re^{-i\\delta})}=\\sum_{j\\ge0}\\sum_{k\\ge0}R^{j+k}e^{i(j-k)\\delta}. \\]\n$e^{in\\delta}$（$n\\ge0$）の係数は $j-k=n$ を満たす組 $(j,k)=(k+n,k)$ の和で $\\sum_{k\\ge0}R^{n+2k}=\\dfrac{R^n}{1-R^2}$．$n<0$ も同様に $\\dfrac{R^{|n|}}{1-R^2}$．フーリエ展開は一意なので\n\\[ c_n=\\frac{(1-R)^2}{1-R^2}R^{|n|}=\\frac{1-R}{1+R}R^{|n|}. \\]\n\n(2) $T$ は実数値で偶関数．$e^{in\\delta}+e^{-in\\delta}=2\\cos n\\delta$ より $A_0=c_0$，$A_n=c_n+c_{-n}$，$B_n=i(c_n-c_{-n})$．したがって\n\\[ A_0=\\frac{1-R}{1+R},\\quad A_n=\\frac{2(1-R)}{1+R}R^n,\\quad B_n=0 . \\]\n実関数では一般に $c_{-n}=c_n^*$ であり，ここでは $c_n$ が実数かつ $n$ について偶なので $B_n=0$ となる．\n\n(3) $\\dfrac1{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}|T|^2d\\delta=\\sum_n|c_n|^2$（直交性 $\\frac1{2\\pi}\\int e^{i(n-m)\\delta}d\\delta=\\delta_{nm}$ から従う）．\n\\[ \\sum_n|c_n|^2=\\left(\\frac{1-R}{1+R}\\right)^2\\left(1+2\\sum_{n\\ge1}R^{2n}\\right)=\\left(\\frac{1-R}{1+R}\\right)^2\\frac{1+R^2}{1-R^2}=\\frac{(1-R)(1+R^2)}{(1+R)^3}. \\]\n（$R=0.7$ なら $\\overline{T^2}\\approx0.0910$．なお $\\overline T=c_0=\\frac{1-R}{1+R}$．）\n\n(4) 透過振幅は，1 往復ごとに振幅反射率の 2 乗 $r^2$（$|r|^2=R$）と位相 $e^{i\\delta}$ がかかる部分波の和 $t\\sum_{j}(r^2e^{i\\delta})^j$ である．強度はその絶対値 2 乗なので，$j$ 回往復した波と $k$ 回往復した波の干渉項 $R^{j+k}e^{i(j-k)\\delta}$ の和になる．$e^{in\\delta}$ 成分は「往復回数の差が $n$」の干渉をすべて集めたもので，差が 1 増えるごとに少なくとも 1 往復分の強度損失 $R$ が掛かるため $c_n\\propto R^{|n|}$ となる．$R\\to1$ では $c_n$ がゆっくりしか減衰せず，多数の高調波が寄与して透過ピークが鋭くなる（フィネスが高い）．"
+   }
+  ],
+  "idea": {
+   "tex": "積分を使わず等比級数の積として展開すれば複素フーリエ係数が一挙に読み取れる．フーリエ次数＝往復回数の差という多重反射の物理的解釈が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $c_n$：((1-R)/(1+R))R^(|n|)\n(2) $A_0$：((1- R)/(1+ R)) ; $A_n$：((2(1- R))/(1+ R)) R ^(n) ; $B_n$：0\n(3) $\\overline{T^2}$：(((1- R)(1+ R ^(2)))/((1+ R)^(3)))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "複素フーリエ級数",
+   "ファブリ・ペロー",
+   "等比級数",
+   "パーセバル",
+   "多重反射"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "片端断熱棒の固有関数の直交性",
+  "topic": "片端断熱棒の固有関数の直交性",
+  "statement": {
+   "tex": "長さ $L$ の棒の温度 $u(x,t)$ が熱伝導方程式 $u_t=Du_{xx}$（$0<x<L$）に従い，$x=0$ の端は温度 $0$ に保たれ（$u(0,t)=0$），$x=L$ の端は断熱されている（$u_x(L,t)=0$）．\n\\begin{enumerate}\n\\item 変数分離解 $X(x)e^{-\\lambda t}$ の空間部分が $X_n(x)=\\sin k_nx$，$k_n=\\dfrac{(2n-1)\\pi}{2L}$（$n=1,2,\\dots$）となることを示し，\n\\[ \\int_0^L\\sin k_nx\\,\\sin k_mx\\,dx=\\frac L2\\delta_{nm} \\]\nを直接計算で示せ．\n\\item 境界条件を考えずに $\\sin\\dfrac{\\pi x}{2L}$ と $\\sin\\dfrac{\\pi x}{L}$ を並べると，区間 $[0,L]$ 上で直交しないことを積分値を求めて示せ．(1) の直交性が成り立つ理由を，積分区間の端での値の観点から説明せよ．\n\\item 初期温度が一様 $u(x,0)=u_0$ のとき，$u(x,t)$ を求めよ．また，十分時間がたった後の温度分布を支配する緩和時間 $\\tau$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\int=\\frac L2\\delta_{nm}$　(2) $\\int_0^L\\sin\\frac{\\pi x}{2L}\\sin\\frac{\\pi x}{L}dx=\\frac{4L}{3\\pi}\\ne0$　(3) $u=\\frac{4u_0}{\\pi}\\sum_{n\\ge1}\\frac{1}{2n-1}\\sin k_nx\\,e^{-Dk_n^2t}$，$\\tau=\\frac{4L^2}{\\pi^2D}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $X''=-k^2X$，$X(0)=0$ より $X=\\sin kx$．$X'(L)=k\\cos kL=0$ より $kL=(n-\\tfrac12)\\pi$，すなわち $k_n=\\dfrac{(2n-1)\\pi}{2L}$．積和公式で\n\\[ \\int_0^L\\sin k_nx\\sin k_mx\\,dx=\\frac12\\int_0^L\\{\\cos(k_n-k_m)x-\\cos(k_n+k_m)x\\}dx . \\]\n$n\\ne m$ のとき $(k_n-k_m)L=(n-m)\\pi$，$(k_n+k_m)L=(n+m-1)\\pi$ はいずれも $\\pi$ の整数倍なので $\\sin$ が 0 になり\n\\[ \\frac12\\left[\\frac{\\sin(k_n-k_m)x}{k_n-k_m}-\\frac{\\sin(k_n+k_m)x}{k_n+k_m}\\right]_0^L=0 . \\]\n$n=m$ のとき $\\frac12\\int_0^L(1-\\cos2k_nx)dx=\\frac L2-\\frac{\\sin((2n-1)\\pi)}{4k_n}=\\frac L2$．\n\n(2) $\\theta=\\dfrac{\\pi x}{2L}$ とおくと\n\\[ \\int_0^L\\sin\\frac{\\pi x}{2L}\\sin\\frac{\\pi x}{L}dx=\\frac{2L}{\\pi}\\int_0^{\\pi/2}\\sin\\theta\\sin2\\theta\\,d\\theta=\\frac{2L}{\\pi}\\int_0^{\\pi/2}2\\sin^2\\theta\\cos\\theta\\,d\\theta=\\frac{2L}{\\pi}\\cdot\\frac23=\\frac{4L}{3\\pi}\\ne0 . \\]\n直交性の理由：$X_n''=-k_n^2X_n$ より\n\\[ (k_m^2-k_n^2)\\int_0^LX_nX_m\\,dx=\\Big[X_nX_m'-X_n'X_m\\Big]_0^L . \\]\n(1) の関数はすべて同じ境界条件（$X(0)=0$，$X'(L)=0$）を満たすので右辺が 0 となり，$k_n\\ne k_m$ なら直交する．(2) の $\\sin(\\pi x/L)$ は $X'(L)=-\\pi/L\\neq0$ で境界条件を満たさないため右辺が残り直交しない．\n\n(3) $u=\\sum_nb_n\\sin k_nx\\,e^{-Dk_n^2t}$．$t=0$ で直交性より\n\\[ b_n=\\frac2L\\int_0^Lu_0\\sin k_nx\\,dx=\\frac{2u_0}{Lk_n}(1-\\cos k_nL)=\\frac{2u_0}{Lk_n}=\\frac{4u_0}{(2n-1)\\pi}. \\]\nよって $u(x,t)=\\dfrac{4u_0}{\\pi}\\displaystyle\\sum_{n\\ge1}\\frac{1}{2n-1}\\sin\\frac{(2n-1)\\pi x}{2L}\\exp\\!\\left[-\\frac{(2n-1)^2\\pi^2D}{4L^2}t\\right]$．\n長時間後は $n=1$ の項が支配し，$\\tau=\\dfrac1{Dk_1^2}=\\dfrac{4L^2}{\\pi^2D}$．（両端を温度 0 に固定した場合 $L^2/(\\pi^2D)$ の 4 倍：断熱端からは熱が逃げにくい．）"
+   }
+  ],
+  "idea": {
+   "tex": "区間に半整数個の波が入る固有関数でも，同じ境界条件を満たす限りグリーンの恒等式から直交する．境界条件を満たさない関数を混ぜると直交性は崩れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\int_0^L\\sin\\frac{\\pi x}{2L}\\sin\\frac{\\pi x}{L}dx$：((4L)/(3π))≠0\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "直交性",
+   "固有関数",
+   "熱伝導方程式",
+   "境界条件",
+   "スツルム・リウヴィル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "全波整流電圧のRCフィルタとリップル",
+  "topic": "全波整流電圧のRCフィルタとリップル",
+  "statement": {
+   "tex": "交流電圧 $V_0\\sin\\omega t$ を全波整流した電圧 $V_{\\rm in}(t)=V_0|\\sin\\omega t|$ を，抵抗 $R$ とコンデンサー $C$ の直列回路に加え，コンデンサーの両端電圧 $V_{\\rm out}(t)$ を出力とする（RC ローパスフィルタ）．$V_{\\rm out}$ は $RC\\,\\dot V_{\\rm out}+V_{\\rm out}=V_{\\rm in}$ に従う．\n\\begin{enumerate}\n\\item $V_{\\rm in}(t)$ の周期を答え，フーリエ級数に展開せよ．\n\\item 十分時間がたった後の定常状態での $V_{\\rm out}(t)$ をフーリエ級数で表せ．\n\\item 出力の直流成分 $\\bar V$ と，最も低い交流成分の振幅 $V_{\\rm r}$ の比（リップル率）$V_{\\rm r}/\\bar V$ を求め，$\\omega RC\\gg1$ での近似式を示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 周期 $\\pi/\\omega$，$V_{\\rm in}=\\frac{2V_0}{\\pi}-\\frac{4V_0}{\\pi}\\sum_{n\\ge1}\\frac{\\cos2n\\omega t}{4n^2-1}$　(2) $V_{\\rm out}=\\frac{2V_0}{\\pi}-\\frac{4V_0}{\\pi}\\sum_{n\\ge1}\\frac{\\cos(2n\\omega t-\\varphi_n)}{(4n^2-1)\\sqrt{1+(2n\\omega RC)^2}}$，$\\tan\\varphi_n=2n\\omega RC$　(3) $\\frac{V_{\\rm r}}{\\bar V}=\\frac{2}{3\\sqrt{1+(2\\omega RC)^2}}\\approx\\frac1{3\\omega RC}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $|\\sin\\omega t|$ は周期 $\\pi/\\omega$ の偶関数．$\\theta=\\omega t$ とし周期 $\\pi$ の級数 $a_0+\\sum a_n\\cos2n\\theta$ を求める．\n\\[ a_0=\\frac1\\pi\\int_0^\\pi\\sin\\theta\\,d\\theta=\\frac2\\pi,\\qquad a_n=\\frac2\\pi\\int_0^\\pi\\sin\\theta\\cos2n\\theta\\,d\\theta=\\frac1\\pi\\int_0^\\pi\\{\\sin(2n+1)\\theta-\\sin(2n-1)\\theta\\}d\\theta . \\]\n$\\int_0^\\pi\\sin(2m+1)\\theta\\,d\\theta=\\dfrac{2}{2m+1}$ より $a_n=\\dfrac1\\pi\\left(\\dfrac2{2n+1}-\\dfrac2{2n-1}\\right)=-\\dfrac{4}{\\pi(4n^2-1)}$．\n\\[ V_{\\rm in}=\\frac{2V_0}{\\pi}-\\frac{4V_0}{\\pi}\\sum_{n=1}^\\infty\\frac{\\cos2n\\omega t}{4n^2-1}. \\]\n\n(2) 方程式は線形なので各成分ごとに定常解を求めて重ね合わせる．入力 $e^{i\\Omega t}$ に対する応答は $\\dfrac{e^{i\\Omega t}}{1+i\\Omega RC}$，すなわち振幅が $1/\\sqrt{1+(\\Omega RC)^2}$ 倍，位相が $\\varphi=\\arctan\\Omega RC$ 遅れる．直流（$\\Omega=0$）はそのまま通る．$\\Omega=2n\\omega$ として\n\\[ V_{\\rm out}=\\frac{2V_0}{\\pi}-\\frac{4V_0}{\\pi}\\sum_{n=1}^\\infty\\frac{\\cos(2n\\omega t-\\varphi_n)}{(4n^2-1)\\sqrt{1+(2n\\omega RC)^2}},\\quad\\tan\\varphi_n=2n\\omega RC . \\]\n\n(3) $\\bar V=\\dfrac{2V_0}{\\pi}$，最低の交流成分は $n=1$（周波数 $2\\omega$）で $V_{\\rm r}=\\dfrac{4V_0}{3\\pi\\sqrt{1+(2\\omega RC)^2}}$．\n\\[ \\frac{V_{\\rm r}}{\\bar V}=\\frac{2}{3\\sqrt{1+(2\\omega RC)^2}}\\ \\approx\\ \\frac{1}{3\\omega RC}\\quad(\\omega RC\\gg1). \\]\n高調波 $n\\ge2$ は $1/(4n^2-1)$ と $1/(2n\\omega RC)$ の両方で抑えられるので，リップルはほぼ $n=1$ 成分で決まる．全波整流では基本の交流成分が $2\\omega$ になるため，半波整流（交流成分 $\\omega$ を含む）よりフィルタが効きやすい．"
+   }
+  ],
+  "idea": {
+   "tex": "全波整流波は周期が半分になり偶数次高調波だけを含む．線形回路の応答は成分ごとの周波数応答の重ね合わせとして求まり，リップル率が簡単な式で評価できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ級数",
+   "全波整流",
+   "RC回路",
+   "周波数応答",
+   "リップル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "離散フーリエの直交性・エイリアシング・環状格子",
+  "topic": "離散フーリエの直交性・エイリアシング・環状格子",
+  "statement": {
+   "tex": "$N$ を 2 以上の整数とし，$\\zeta=e^{2\\pi i/N}$ とおく．\n\\begin{enumerate}\n\\item 整数 $n,m$ に対して\n\\[ \\sum_{j=0}^{N-1}\\zeta^{nj}\\zeta^{-mj}=\\begin{cases}N & (n\\equiv m\\ \\bmod N)\\\\ 0 & (\\text{それ以外})\\end{cases} \\]\nを示せ．連続版の直交関係 $\\int_{-L}^{L}e^{i(n-m)\\pi x/L}dx=2L\\delta_{nm}$ との違いは何か．\n\\item 周期 $T$ の信号 $\\cos(2\\pi\\cdot7t/T)$ を 1 周期あたり $N=5$ 点（$t_j=jT/5$）でサンプリングした．得られる 5 個の値は，周波数が何倍の余弦波のサンプルと区別できないか．$1/T$ の $0$ 以上 $5/2$ 以下の倍数で答えよ．\n\\item $N$ 個の原子が環状に並んだ強束縛模型で，サイト $j$ の振幅 $\\psi_j$（$\\psi_{j+N}=\\psi_j$）に対するシュレーディンガー方程式が $E\\psi_j=-J(\\psi_{j+1}+\\psi_{j-1})$（$J>0$）で与えられる．$\\psi^{(k)}_j=\\zeta^{kj}/\\sqrt N$ が固有ベクトルであることを示し，エネルギー固有値 $E_k$ を求めよ．また $\\{\\psi^{(k)}\\}_{k=0}^{N-1}$ が正規直交系であることを (1) から示し，$N=6$ の固有値をすべて（縮退度とともに）書け．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（等比数列の和）．離散版では $n,m$ が $N$ を法として等しければ区別できない　(2) $2/T$（周波数 $2/T$ の余弦波）　(3) $E_k=-2J\\cos\\frac{2\\pi k}{N}$；$N=6$：$-2J$（1重），$-J$（2重），$J$（2重），$2J$（1重）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $q=n-m$ とおくと和は $\\sum_{j=0}^{N-1}(\\zeta^q)^j$．$q\\equiv0\\pmod N$ なら $\\zeta^q=1$ で和は $N$．そうでなければ $\\zeta^q\\ne1$ で等比数列の和\n\\[ \\frac{1-\\zeta^{qN}}{1-\\zeta^q}=\\frac{1-e^{2\\pi iq}}{1-\\zeta^q}=0 . \\]\n連続版では $n\\ne m$ なら必ず直交するが，離散版では $n$ と $n+N$ が同じ値の列を与えるため，$N$ を法とした剰余類でしか区別できない（周期的な「波数」の折り返し）．\n\n(2) サンプル値は $\\cos(2\\pi\\cdot7j/5)$．$7\\equiv2\\pmod5$ なので $e^{\\pm2\\pi i\\cdot7j/5}=e^{\\pm2\\pi i\\cdot2j/5}$，よって $\\cos(2\\pi\\cdot7j/5)=\\cos(2\\pi\\cdot2j/5)$．また $\\cos$ は $\\pm$ を区別しないので $-2\\equiv3$ の成分も同じ．$0\\le f\\le5/(2T)$ の範囲では周波数 $2/T$ の余弦波と区別できない（エイリアシング）．サンプリング点数がナイキスト条件 $N>2\\times7$ を満たしていないためである．\n\n(3) $\\psi^{(k)}_{j\\pm1}=\\zeta^{\\pm k}\\psi^{(k)}_j$ だから\n\\[ -J(\\psi_{j+1}+\\psi_{j-1})=-J(\\zeta^k+\\zeta^{-k})\\psi_j=-2J\\cos\\frac{2\\pi k}{N}\\psi_j . \\]\n周期条件 $\\psi_{j+N}=\\psi_j$ は $\\zeta^{kN}=1$ で満たされる．よって $E_k=-2J\\cos(2\\pi k/N)$．内積は\n\\[ \\sum_{j=0}^{N-1}\\psi_j^{(k)*}\\psi_j^{(k')}=\\frac1N\\sum_j\\zeta^{(k'-k)j}=\\delta_{kk'}\\quad(0\\le k,k'\\le N-1) \\]\nで，$k,k'$ が $0,\\dots,N-1$ の範囲では $k\\equiv k'\\pmod N$ は $k=k'$ と同値なので正規直交．$N$ 個あるので完全系でもある．\n$N=6$：$k=0$：$-2J$，$k=1,5$：$-J$，$k=2,4$：$J$，$k=3$：$2J$．縮退は $k$ と $N-k$（右回り・左回りの波）の組による．"
+   }
+  ],
+  "idea": {
+   "tex": "指数関数の直交性の離散版は「$N$ を法とした」直交性になり，波数の折り返し（エイリアシング，ブリルアンゾーン）が現れる．同じ和が環状格子の固有状態の正規直交性を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 2/ T\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "指数関数の直交性",
+   "離散フーリエ変換",
+   "エイリアシング",
+   "強束縛模型",
+   "周期境界条件"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "チャープしたガウス波束のフーリエ変換と不確定性積",
+  "topic": "チャープしたガウス波束のフーリエ変換と不確定性積",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．光パルスや量子力学の波束では，位相が $x^2$ に比例して変化する「チャープ」したガウス関数\n\\[ f(x)=e^{-(a+ib)x^2}\\qquad(a>0,\\ b\\ \\text{は実数}) \\]\nがしばしば現れる．\n\\begin{enumerate}\n\\item 複素積分の経路を適切に選び，$\\hat f(k)=\\dfrac{1}{\\sqrt{2(a+ib)}}\\exp\\!\\left(-\\dfrac{k^2}{4(a+ib)}\\right)$ を示せ．ただし $\\sqrt{\\ \\cdot\\ }$ は実部が正の分枝とする．\n\\item 確率密度 $|f(x)|^2$，$|\\hat f(k)|^2$ に関する分散 $\\langle x^2\\rangle=\\dfrac{\\int x^2|f|^2dx}{\\int|f|^2dx}$，$\\langle k^2\\rangle=\\dfrac{\\int k^2|\\hat f|^2dk}{\\int|\\hat f|^2dk}$ を求め，積 $\\Delta x\\,\\Delta k=\\sqrt{\\langle x^2\\rangle\\langle k^2\\rangle}$ を $a,b$ で表せ．\n\\item チャープ $b$ は $|f(x)|$ を全く変えないのに $\\Delta k$ を広げる．$\\Delta x\\Delta k$ の最小値とそれを与える条件を答え，その物理的意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat f(k)=\\dfrac{1}{\\sqrt{2(a+ib)}}e^{-k^2/4(a+ib)}$　(2) $\\langle x^2\\rangle=\\dfrac{1}{4a}$，$\\langle k^2\\rangle=\\dfrac{a^2+b^2}{a}$，$\\Delta x\\Delta k=\\dfrac12\\sqrt{1+\\dfrac{b^2}{a^2}}$　(3) 最小値 $\\tfrac12$（$b=0$，チャープなし）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $c=a+ib$（$\\mathrm{Re}\\,c>0$）とおく．平方完成により\n\\[ \\hat f(k)=\\frac{1}{\\sqrt{2\\pi}}e^{-k^2/4c}\\int_{-\\infty}^{\\infty}e^{-c(x+ik/2c)^2}dx. \\]\n$w=\\sqrt c\\,(x+ik/2c)$ と置換すると，$x$ が実軸を動くとき $w$ は原点からずれた，偏角 $\\varphi=\\tfrac12\\arg c\\in(-\\tfrac\\pi4,\\tfrac\\pi4)$ の直線上を動く．$e^{-w^2}$ は整関数であり，この直線と実軸を結ぶ縦の線分（$|\\mathrm{Re}\\,w|\\to\\infty$）上では $|e^{-w^2}|=e^{-\\mathrm{Re}(w^2)}$ が指数関数的に 0 に向かう（$|\\varphi|<\\pi/4$ なので $\\mathrm{Re}(w^2)\\to+\\infty$）．したがってコーシーの定理により，傾いた直線上の積分は実軸上のガウス積分に等しく\n\\[ \\int_{-\\infty}^{\\infty}e^{-c(x+ik/2c)^2}dx=\\frac{1}{\\sqrt c}\\int_{-\\infty}^{\\infty}e^{-u^2}du=\\sqrt{\\frac{\\pi}{c}}. \\]\nよって $\\hat f(k)=\\dfrac{1}{\\sqrt{2c}}e^{-k^2/4c}$．$b=0$ で通常のガウス関数の結果に戻る．\n\n(2) $|f|^2=e^{-2ax^2}$ より $\\langle x^2\\rangle=\\dfrac{1}{2\\cdot 2a}=\\dfrac{1}{4a}$．一方\n\\[ \\mathrm{Re}\\frac{1}{4c}=\\frac{a}{4(a^2+b^2)}\\ \\Rightarrow\\ |\\hat f(k)|^2\\propto\\exp\\!\\left(-\\frac{a}{2(a^2+b^2)}k^2\\right), \\]\nこれは分散 $\\langle k^2\\rangle=\\dfrac{a^2+b^2}{a}$ のガウス分布．したがって\n\\[ \\Delta x\\,\\Delta k=\\sqrt{\\frac{1}{4a}\\cdot\\frac{a^2+b^2}{a}}=\\frac12\\sqrt{1+\\frac{b^2}{a^2}}. \\]\n\n(3) $b^2\\ge0$ より $\\Delta x\\Delta k\\ge\\tfrac12$，等号は $b=0$ のときに限る．チャープは位置ごとに局所的な波数 $k_{\\rm loc}(x)=\\frac{d}{dx}(-bx^2)=-2bx$ を与えるので，包絡線が同じでも含まれる波数成分が増える．不確定性の下限 $\\tfrac12$（$\\Delta x\\Delta p\\ge\\hbar/2$）を達成するのは位相が平坦なガウス波束だけである．"
+   }
+  ],
+  "idea": {
+   "tex": "複素係数のガウス積分は積分路を傾いた直線に移して実ガウス積分に帰着する．位相のチャープは $|f|$ を変えずにスペクトル幅を広げ，不確定性積を下限から押し上げる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 最小値：((1)/(2))"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "ガウス関数",
+   "複素積分",
+   "チャープ",
+   "不確定性関係"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "線幅の合成とデコンボリューションの不可能性",
+  "topic": "線幅の合成とデコンボリューションの不可能性",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．分光測定では，真のスペクトル線形 $g(x)$ が装置の応答関数 $h(x)$ でぼかされ，観測される線形は畳み込み $F(x)=\\int_{-\\infty}^{\\infty}h(x-x')g(x')dx'$ となる．畳み込みのフーリエ変換が $\\hat F(k)=\\sqrt{2\\pi}\\,\\hat h(k)\\hat g(k)$ となることは用いてよい．規格化されたローレンツ関数とガウス関数を\n\\[ L_\\gamma(x)=\\frac{1}{\\pi}\\frac{\\gamma}{x^2+\\gamma^2},\\qquad G_\\sigma(x)=\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{-x^2/2\\sigma^2}\\qquad(\\gamma,\\sigma>0) \\]\nとする．\n\\begin{enumerate}\n\\item $\\hat L_\\gamma(k)$，$\\hat G_\\sigma(k)$ を求めよ．\n\\item 自然幅のローレンツ線形 $L_{\\gamma_1}$ をローレンツ型応答 $L_{\\gamma_2}$ の装置で測ると，観測線形はどうなるか．\n\\item 観測線形がガウス型 $G_{\\sigma_m}$ で，装置応答がガウス型 $G_{\\sigma_i}$（$\\sigma_i<\\sigma_m$）であることが分かっているとき，真の線形 $g$ を求めよ．\n\\item 観測線形がローレンツ型 $L_\\gamma$ で，装置応答がガウス型 $G_\\sigma$ であると主張された．そのような（絶対可積分な）真の線形 $g$ は存在しないことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat L_\\gamma=\\dfrac{e^{-\\gamma|k|}}{\\sqrt{2\\pi}}$，$\\hat G_\\sigma=\\dfrac{e^{-\\sigma^2k^2/2}}{\\sqrt{2\\pi}}$　(2) $L_{\\gamma_1+\\gamma_2}$（幅が単純に足し合わさる）　(3) $g=G_{\\sqrt{\\sigma_m^2-\\sigma_i^2}}$　(4) $\\hat g$ が $e^{\\sigma^2k^2/2-\\gamma|k|}/\\sqrt{2\\pi}$ となり $|k|\\to\\infty$ で発散するので不可能"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 留数定理（$k>0$ なら下半面，$k<0$ なら上半面で閉じる）により $\\int\\frac{e^{-ikx}}{x^2+\\gamma^2}dx=\\frac{\\pi}{\\gamma}e^{-\\gamma|k|}$．よって $\\hat L_\\gamma=\\frac{1}{\\sqrt{2\\pi}}\\frac{\\gamma}{\\pi}\\frac{\\pi}{\\gamma}e^{-\\gamma|k|}=\\frac{e^{-\\gamma|k|}}{\\sqrt{2\\pi}}$．またガウス積分 $\\int e^{-x^2/2\\sigma^2-ikx}dx=\\sqrt{2\\pi}\\sigma e^{-\\sigma^2k^2/2}$ より $\\hat G_\\sigma=\\frac{e^{-\\sigma^2k^2/2}}{\\sqrt{2\\pi}}$．いずれも $\\sqrt{2\\pi}\\hat f(0)=\\int f\\,dx=1$ を満たす．\n\n(2) $\\hat F=\\sqrt{2\\pi}\\cdot\\frac{e^{-\\gamma_1|k|}}{\\sqrt{2\\pi}}\\cdot\\frac{e^{-\\gamma_2|k|}}{\\sqrt{2\\pi}}=\\frac{e^{-(\\gamma_1+\\gamma_2)|k|}}{\\sqrt{2\\pi}}=\\hat L_{\\gamma_1+\\gamma_2}$．逆変換の一意性から $F=L_{\\gamma_1+\\gamma_2}$．ローレンツ幅は線形に加算される．\n\n(3) $\\hat G_{\\sigma_m}=\\sqrt{2\\pi}\\hat G_{\\sigma_i}\\hat g$ より\n\\[ \\hat g(k)=\\frac{1}{\\sqrt{2\\pi}}e^{-(\\sigma_m^2-\\sigma_i^2)k^2/2}=\\hat G_{\\sqrt{\\sigma_m^2-\\sigma_i^2}}(k). \\]\nよって $g=G_{\\sigma}$，$\\sigma=\\sqrt{\\sigma_m^2-\\sigma_i^2}$（ガウス幅は 2 乗和で加算）．\n\n(4) 同様に $\\hat g(k)=\\dfrac{\\hat L_\\gamma}{\\sqrt{2\\pi}\\hat G_\\sigma}=\\dfrac{1}{\\sqrt{2\\pi}}e^{\\sigma^2k^2/2-\\gamma|k|}$ となるが，これは $|k|\\to\\infty$ で発散する．一方 $g$ が絶対可積分なら $|\\hat g(k)|\\le\\frac{1}{\\sqrt{2\\pi}}\\int|g|dx<\\infty$ と有界でなければならない．矛盾．したがってそのような $g$ は存在しない．\n\n注：ガウス応答による畳み込みは高波数成分を $e^{-\\sigma^2k^2/2}$ で強く減衰させるので，観測線形の裾は少なくともそれだけ速く減衰した高周波成分しか持てない．ローレンツ型の $e^{-\\gamma|k|}$ はそれより遅く減衰するため矛盾する．デコンボリューション（逆畳み込み）は一般に高波数のノイズを指数関数的に増幅する不良設定問題である．"
+   }
+  ],
+  "idea": {
+   "tex": "畳み込みは $k$ 空間で積になるので，ローレンツ幅は和，ガウス分散は和で合成される．逆に割り算 $\\hat F/\\hat h$ が有界でなければ逆畳み込みは存在しない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "畳み込み",
+   "ローレンツ関数",
+   "ガウス関数",
+   "スペクトル線幅",
+   "デコンボリューション"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "デバイ遮蔽：3次元フーリエ変換で湯川ポテンシャル",
+  "topic": "デバイ遮蔽：3次元フーリエ変換で湯川ポテンシャル",
+  "statement": {
+   "tex": "3 次元のフーリエ変換を $\\hat f(\\boldsymbol k)=\\dfrac{1}{(2\\pi)^{3/2}}\\displaystyle\\int f(\\boldsymbol r)e^{-i\\boldsymbol k\\cdot\\boldsymbol r}d^3r$，逆変換を $f(\\boldsymbol r)=\\dfrac{1}{(2\\pi)^{3/2}}\\displaystyle\\int\\hat f(\\boldsymbol k)e^{i\\boldsymbol k\\cdot\\boldsymbol r}d^3k$ と定義する．電解質溶液やプラズマ中に置かれた点電荷 $q$ の静電ポテンシャル $\\phi(\\boldsymbol r)$ は，線形化デバイ・ヒュッケル近似で\n\\[ -\\nabla^2\\phi+\\kappa^2\\phi=\\frac{q}{\\varepsilon_0}\\delta^3(\\boldsymbol r)\\qquad(\\kappa>0) \\]\nに従う（右辺以外の電荷は周囲のイオンの誘起電荷 $\\rho_{\\rm ind}=-\\varepsilon_0\\kappa^2\\phi$ として左辺第 2 項に繰り込まれている）．$\\phi\\to0\\ (r\\to\\infty)$ とする．\n\\begin{enumerate}\n\\item $\\hat\\phi(\\boldsymbol k)$ を求めよ．\n\\item 逆変換で $\\phi(\\boldsymbol r)$ を求めよ．角度積分を先に実行し，残る 1 次元積分は留数定理で計算すること．\n\\item 実空間での積分を行わずに，誘起電荷の総量 $Q_{\\rm ind}=\\int\\rho_{\\rm ind}d^3r$ を求めよ．その結果の物理的意味を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat\\phi=\\dfrac{q}{\\varepsilon_0(2\\pi)^{3/2}}\\dfrac{1}{k^2+\\kappa^2}$　(2) $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{e^{-\\kappa r}}{r}$　(3) $Q_{\\rm ind}=-q$（完全遮蔽）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathcal F[\\nabla^2\\phi]=-k^2\\hat\\phi$，$\\mathcal F[\\delta^3]=(2\\pi)^{-3/2}$ より $(k^2+\\kappa^2)\\hat\\phi=\\dfrac{q}{\\varepsilon_0(2\\pi)^{3/2}}$．\n\n(2) $\\phi(\\boldsymbol r)=\\dfrac{q}{(2\\pi)^3\\varepsilon_0}\\displaystyle\\int\\frac{e^{i\\boldsymbol k\\cdot\\boldsymbol r}}{k^2+\\kappa^2}d^3k$．$\\boldsymbol r$ 方向を極軸にとると $\\int_0^{2\\pi}d\\varphi\\int_{-1}^{1}e^{ikr\\mu}d\\mu=\\frac{4\\pi\\sin kr}{kr}$ なので\n\\[ \\phi=\\frac{q}{2\\pi^2\\varepsilon_0 r}\\int_0^\\infty\\frac{k\\sin kr}{k^2+\\kappa^2}dk=\\frac{q}{4\\pi^2\\varepsilon_0r}\\,\\mathrm{Im}\\int_{-\\infty}^{\\infty}\\frac{ke^{ikr}}{k^2+\\kappa^2}dk. \\]\n$r>0$ なので上半面で閉じる（ジョルダンの補助定理）．極 $k=i\\kappa$ の留数は $\\frac{i\\kappa e^{-\\kappa r}}{2i\\kappa}=\\frac{e^{-\\kappa r}}{2}$．よって積分は $2\\pi i\\cdot\\frac{e^{-\\kappa r}}{2}=i\\pi e^{-\\kappa r}$，虚部は $\\pi e^{-\\kappa r}$．\n\\[ \\phi(r)=\\frac{q}{4\\pi\\varepsilon_0}\\frac{e^{-\\kappa r}}{r}. \\]\n$\\kappa\\to0$ でクーロンポテンシャル，$1/\\kappa$ はデバイ長．\n\n(3) $\\int f\\,d^3r=(2\\pi)^{3/2}\\hat f(\\boldsymbol 0)$ を用いると\n\\[ Q_{\\rm ind}=-\\varepsilon_0\\kappa^2(2\\pi)^{3/2}\\hat\\phi(\\boldsymbol 0)=-\\varepsilon_0\\kappa^2\\cdot\\frac{q}{\\varepsilon_0\\kappa^2}=-q. \\]\n周囲のイオン雲がちょうど $-q$ の電荷を集め，遠方からは全体が中性に見える（完全遮蔽）．これはポテンシャルが $1/r$ より速く減衰することと整合する．$\\kappa$ に依らない点が重要である．"
+   }
+  ],
+  "idea": {
+   "tex": "$-\\nabla^2+\\kappa^2$ はフーリエ空間で $k^2+\\kappa^2$ の掛け算になり，逆変換が湯川型を与える．全空間積分は $\\boldsymbol k=0$ のフーリエ成分なので，誘起電荷総量は逆変換なしで $-q$ と決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\phi$：((q)/(4 pi ε_0))((e ^(- κ r))/(r))\n(3) $Q_{\\rm ind}$：- q"
+  },
+  "methods": [],
+  "tags": [
+   "グリーン関数",
+   "湯川ポテンシャル",
+   "デバイ遮蔽",
+   "3次元フーリエ変換",
+   "留数定理"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "パーセバルの等式による帯域制限信号の積分",
+  "topic": "パーセバルの等式による帯域制限信号の積分",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．2 つの関数 $f,g$ に対するパーセバルの等式 $\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)\\overline{\\hat g(k)}dk=\\int_{-\\infty}^{\\infty}f(x)\\overline{g(x)}dx$ を用いてよい．\n\\begin{enumerate}\n\\item $s_a(x)=\\dfrac{\\sin ax}{x}$（$a>0$）のフーリエ変換が $\\hat s_a(k)=\\sqrt{\\dfrac{\\pi}{2}}\\,\\chi_a(k)$（$\\chi_a$ は $|k|<a$ で 1，$|k|>a$ で 0）となることを，$\\chi_a$ の逆変換を計算することで示せ．\n\\item 遮断波数 $a,b$ の 2 つの理想ローパスフィルタのインパルス応答の重なり積分 $\\displaystyle\\int_{-\\infty}^{\\infty}\\frac{\\sin ax\\,\\sin bx}{x^2}dx$（$a,b>0$）を求めよ．\n\\item $\\displaystyle I(a,c)=\\int_{-\\infty}^{\\infty}\\frac{\\sin ax}{x(x^2+c^2)}dx$（$a,c>0$）を求めよ．さらに $a\\to\\infty$ と $c\\to0$ の極限での振る舞いを，被積分関数から直接見積もった結果と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\pi\\min(a,b)$　(3) $I=\\dfrac{\\pi}{c^2}\\left(1-e^{-ac}\\right)$；$a\\to\\infty$ で $\\pi/c^2$，$c\\to0$ で $\\pi a/c$ と発散"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathcal F^{-1}[\\chi_a](x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-a}^{a}e^{ikx}dk=\\dfrac{1}{\\sqrt{2\\pi}}\\dfrac{2\\sin ax}{x}=\\sqrt{\\dfrac{2}{\\pi}}s_a(x)$．よって $\\hat s_a=\\sqrt{\\pi/2}\\,\\chi_a$．\n\n(2) $f=s_a$，$g=s_b$（実関数）にパーセバルの等式を用いると\n\\[ \\int\\frac{\\sin ax\\sin bx}{x^2}dx=\\int\\frac{\\pi}{2}\\chi_a\\chi_bdk=\\frac{\\pi}{2}\\cdot2\\min(a,b)=\\pi\\min(a,b). \\]\n（$a=b=1$ で有名な $\\int\\frac{\\sin^2x}{x^2}dx=\\pi$．）通過帯域の重なりの幅だけで決まる．\n\n(3) $g(x)=\\dfrac{1}{x^2+c^2}$ の変換は留数計算により $\\hat g(k)=\\sqrt{\\dfrac{\\pi}{2}}\\dfrac{e^{-c|k|}}{c}$（実）．パーセバルの等式より\n\\[ I=\\int\\sqrt{\\frac\\pi2}\\chi_a(k)\\sqrt{\\frac\\pi2}\\frac{e^{-c|k|}}{c}dk=\\frac{\\pi}{2c}\\cdot2\\int_0^ae^{-ck}dk=\\frac{\\pi}{c^2}\\left(1-e^{-ac}\\right). \\]\n極限：$a\\to\\infty$ では $\\frac{\\sin ax}{x}\\to\\pi\\delta(x)$（帯域無制限）なので $I\\to\\pi g(0)=\\pi/c^2$．結果も $\\frac{\\pi}{c^2}$ に一致．$c\\to0$ では $1-e^{-ac}\\approx ac$ より $I\\approx\\pi a/c\\to\\infty$．被積分関数は $x\\approx0$ で $\\frac{a}{x^2+c^2}$ と振る舞い，その積分 $\\int\\frac{a\\,dx}{x^2+c^2}=\\pi a/c$ と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\sin ax/x$ は $k$ 空間で箱型になるので，パーセバルの等式で $x$ 空間の振動積分を $k$ 空間の有限区間の単純な積分に置き換えられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "パーセバルの等式",
+   "sinc関数",
+   "ローパスフィルタ",
+   "ローレンツ関数",
+   "積分計算"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "有限時間で打ち切った減衰振動のスペクトル",
+  "topic": "有限時間で打ち切った減衰振動のスペクトル",
+  "statement": {
+   "tex": "時間信号のフーリエ変換を $\\hat f(\\omega)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(t)e^{-i\\omega t}dt$ と定義する．励起された原子が $t=0$ から自然放出する光の電場を，観測時間 $T$ で打ち切って\n\\[ f(t)=\\begin{cases}Ae^{-\\gamma t}e^{i\\omega_0t}&(0\\le t\\le T)\\\\0&(\\text{それ以外})\\end{cases}\\qquad(A,\\gamma,\\omega_0,T>0) \\]\nとモデル化する．$\\Delta=\\omega-\\omega_0$ とする．\n\\begin{enumerate}\n\\item パワースペクトル $|\\hat f(\\omega)|^2$ を $\\Delta,\\gamma,T$ で表せ．\n\\item $T\\to\\infty$ の極限で $|\\hat f|^2$ の半値全幅を求めよ．\n\\item 逆に $\\gamma\\to0$（減衰が無視できる）の極限で $|\\hat f|^2$ を求め，中心ピークの両側で最初に $|\\hat f|^2=0$ となる $\\Delta$ を求めよ．\n\\item (1) の $|\\hat f|^2$ を $\\omega$ について積分した値を，パーセバルの等式を用いて積分計算なしに求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $|\\hat f|^2=\\dfrac{A^2}{2\\pi}\\dfrac{1-2e^{-\\gamma T}\\cos\\Delta T+e^{-2\\gamma T}}{\\gamma^2+\\Delta^2}$　(2) $2\\gamma$　(3) $\\dfrac{A^2}{2\\pi}\\dfrac{\\sin^2(\\Delta T/2)}{(\\Delta/2)^2}$，$\\Delta=\\pm\\dfrac{2\\pi}{T}$　(4) $\\dfrac{A^2}{2\\gamma}(1-e^{-2\\gamma T})$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) \\[ \\hat f(\\omega)=\\frac{A}{\\sqrt{2\\pi}}\\int_0^Te^{-(\\gamma+i\\Delta)t}dt=\\frac{A}{\\sqrt{2\\pi}}\\frac{1-e^{-(\\gamma+i\\Delta)T}}{\\gamma+i\\Delta}. \\]\n$|1-e^{-\\gamma T}e^{-i\\Delta T}|^2=1-2e^{-\\gamma T}\\cos\\Delta T+e^{-2\\gamma T}$，$|\\gamma+i\\Delta|^2=\\gamma^2+\\Delta^2$ より与式．\n\n(2) $T\\to\\infty$ で $|\\hat f|^2\\to\\dfrac{A^2}{2\\pi}\\dfrac{1}{\\gamma^2+\\Delta^2}$（ローレンツ型）．最大値の半分になるのは $\\Delta^2=\\gamma^2$，半値全幅は $2\\gamma$．寿命 $\\tau=1/(2\\gamma)$（強度 $|f|^2\\propto e^{-2\\gamma t}$ の減衰時間）を使えば $\\Delta\\omega\\cdot\\tau=1$．\n\n(3) $\\gamma\\to0$ で分子は $2-2\\cos\\Delta T=4\\sin^2(\\Delta T/2)$ なので\n\\[ |\\hat f|^2\\to\\frac{A^2}{2\\pi}\\frac{\\sin^2(\\Delta T/2)}{(\\Delta/2)^2}. \\]\n$\\Delta=0$ で最大値 $\\frac{A^2T^2}{2\\pi}$，最初の零点は $\\Delta T/2=\\pm\\pi$，すなわち $\\Delta=\\pm2\\pi/T$．線幅は自然幅ではなく観測時間で決まる（フーリエ限界）．\n\n(4) パーセバルの等式より\n\\[ \\int_{-\\infty}^{\\infty}|\\hat f(\\omega)|^2d\\omega=\\int_{-\\infty}^{\\infty}|f(t)|^2dt=A^2\\int_0^Te^{-2\\gamma t}dt=\\frac{A^2}{2\\gamma}\\left(1-e^{-2\\gamma T}\\right). \\]\n(1) の式を直接積分するのは面倒だが，時間領域では自明である．$\\gamma\\to0$ では $A^2T$ になる．"
+   }
+  ],
+  "idea": {
+   "tex": "有限時間で打ち切ると減衰のローレンツ型に $\\mathrm{sinc}^2$ 型の観測時間の効果が重なる．2 つの極限で「線幅は $\\gamma$ と $1/T$ の大きい方で決まる」ことが読み取れ，全エネルギーはパーセバルで一発で出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 2 γ\n(3) 記述\n(4) ((A ^(2))/(2 γ))(1- e ^(-2 γ T))"
+  },
+  "methods": [],
+  "tags": [
+   "減衰振動",
+   "パワースペクトル",
+   "ローレンツ型",
+   "線幅",
+   "パーセバルの等式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "臨界減衰振動子の揺らぎと相関関数の逆問題",
+  "topic": "臨界減衰振動子の揺らぎと相関関数の逆問題",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．\n\\begin{enumerate}\n\\item $a>0$ とする．$e^{-a|x|}$ のフーリエ変換を求め，それを $a$ で微分することにより，\n\\[ f(x)=(1+a|x|)e^{-a|x|} \\]\nのフーリエ変換を求めよ．\n\\item (1) の結果を用いて，$x\\ge0$ に対し $\\displaystyle\\int_0^\\infty\\frac{\\cos kx}{(k^2+a^2)^2}dk$ を求めよ．\n\\item 白色雑音で駆動された臨界減衰振動子（固有角振動数 $a$，減衰定数 $2a$）の変位 $X(t)$ のパワースペクトルは $S(\\omega)=\\dfrac{S_0}{(\\omega^2+a^2)^2}$ である．ウィーナー・ヒンチンの定理より，自己相関関数は $C(\\tau)=\\langle X(t)X(t+\\tau)\\rangle=\\displaystyle\\int_{-\\infty}^{\\infty}S(\\omega)e^{i\\omega\\tau}d\\omega$ で与えられる．$C(\\tau)$ を求め，相関が最初に $1/e$ 倍に落ちる時間 $\\tau_c$ が $a\\tau_c$ のどのような方程式で決まるかを答えよ（数値で $a\\tau_c\\approx2.15$ となる）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathcal F[e^{-a|x|}]=\\sqrt{\\dfrac2\\pi}\\dfrac{a}{k^2+a^2}$，$\\hat f=\\sqrt{\\dfrac2\\pi}\\dfrac{2a^3}{(k^2+a^2)^2}$　(2) $\\dfrac{\\pi(1+ax)e^{-ax}}{4a^3}$　(3) $C(\\tau)=\\dfrac{\\pi S_0}{2a^3}(1+a|\\tau|)e^{-a|\\tau|}$，$(1+a\\tau_c)e^{-a\\tau_c}=e^{-1}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\displaystyle\\int e^{-a|x|-ikx}dx=\\frac{1}{a+ik}+\\frac{1}{a-ik}=\\frac{2a}{k^2+a^2}$ より $\\mathcal F[e^{-a|x|}]=\\sqrt{\\frac2\\pi}\\frac{a}{k^2+a^2}$．\n$-\\partial_a$ を施すと $\\mathcal F[|x|e^{-a|x|}]=-\\sqrt{\\frac2\\pi}\\partial_a\\frac{a}{k^2+a^2}=\\sqrt{\\frac2\\pi}\\frac{a^2-k^2}{(k^2+a^2)^2}$．よって\n\\[ \\hat f=\\sqrt{\\frac2\\pi}\\left[\\frac{a}{k^2+a^2}+\\frac{a(a^2-k^2)}{(k^2+a^2)^2}\\right]=\\sqrt{\\frac2\\pi}\\frac{2a^3}{(k^2+a^2)^2}. \\]\n\n(2) 逆変換 $f(x)=\\frac{1}{\\sqrt{2\\pi}}\\int\\hat fe^{ikx}dk$ に代入し，$\\hat f$ が偶関数であることを用いると\n\\[ (1+a|x|)e^{-a|x|}=\\frac{1}{\\sqrt{2\\pi}}\\sqrt{\\frac2\\pi}\\,2a^3\\cdot2\\int_0^\\infty\\frac{\\cos kx}{(k^2+a^2)^2}dk=\\frac{4a^3}{\\pi}\\int_0^\\infty\\frac{\\cos kx}{(k^2+a^2)^2}dk. \\]\nよって $x\\ge0$ で $\\displaystyle\\int_0^\\infty\\frac{\\cos kx}{(k^2+a^2)^2}dk=\\frac{\\pi(1+ax)e^{-ax}}{4a^3}$．$x=0$ で $\\frac{\\pi}{4a^3}$ を再現する．\n\n(3) (2) と同じ計算（$x\\to\\tau$，$k\\to\\omega$）で\n\\[ C(\\tau)=2S_0\\int_0^\\infty\\frac{\\cos\\omega\\tau}{(\\omega^2+a^2)^2}d\\omega=\\frac{\\pi S_0}{2a^3}(1+a|\\tau|)e^{-a|\\tau|}. \\]\n$C(\\tau)/C(0)=(1+a|\\tau|)e^{-a|\\tau|}$ は単調減少で，$1/e$ になる条件は $(1+a\\tau_c)e^{-a\\tau_c}=e^{-1}$．$u=a\\tau_c$ として $u-\\ln(1+u)=1$ を解くと $u\\approx2.146$．単純な指数減衰 $e^{-a\\tau}$（$a\\tau_c=1$）より相関が長く続き，また $\\tau=0$ で $C'(0)=0$（滑らか）である．これは変位が微分可能な過程であることの反映である．"
+   }
+  ],
+  "idea": {
+   "tex": "パラメータ微分でフーリエ対を増やし，逆変換をそのまま定積分の公式として読む．スペクトル $1/(\\omega^2+a^2)^2$ から相関関数 $(1+a|\\tau|)e^{-a|\\tau|}$ を逆に決める問題に結び付く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((pi (1+ a x) e ^(- a x))/(4 a ^(3)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "ローレンツ関数",
+   "パラメータ微分",
+   "ウィーナー・ヒンチンの定理",
+   "自己相関関数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "符号関数型の奇関数とゼロ位相フィルタの非因果性",
+  "topic": "符号関数型の奇関数とゼロ位相フィルタの非因果性",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．\n\\begin{enumerate}\n\\item $a>0$ とし，奇関数 $f_a(x)=\\mathrm{sgn}(x)\\,e^{-a|x|}$（$\\mathrm{sgn}$ は符号関数）のフーリエ変換を求めよ．\n\\item (1) の逆変換を書き下すことで，$x>0$ に対し $\\displaystyle\\int_0^\\infty\\frac{k\\sin kx}{k^2+a^2}dk$ を求めよ．\n\\item $a\\to0$ の極限を考えて，ディリクレ積分 $\\displaystyle\\int_0^\\infty\\frac{\\sin kx}{k}dk$ の値を $x$ の符号に応じて答えよ．\n\\item (2)(3) と部分分数分解を用いて $J(x)=\\displaystyle\\int_0^\\infty\\frac{\\sin kx}{k(k^2+a^2)}dk$ をすべての実数 $x$ について求めよ．\n\\item 単位ステップ $\\theta(t)$ は $\\theta(t)=\\dfrac12+\\dfrac1\\pi\\displaystyle\\int_0^\\infty\\frac{\\sin\\omega t}{\\omega}d\\omega$（$t\\neq0$）と表せる．この信号の各角周波数成分の振幅に $\\dfrac{a^2}{\\omega^2+a^2}$ を掛け，位相は変えない「ゼロ位相ローパスフィルタ」を通した出力 $y(t)$ を求めよ．入力が 0 である $t<0$ で $y(t)$ はどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat f_a=-i\\sqrt{\\dfrac2\\pi}\\dfrac{k}{k^2+a^2}$　(2) $\\dfrac{\\pi}{2}e^{-ax}$　(3) $\\dfrac\\pi2\\mathrm{sgn}(x)$　(4) $J(x)=\\dfrac{\\pi}{2a^2}\\mathrm{sgn}(x)\\left(1-e^{-a|x|}\\right)$　(5) $t>0$ で $y=1-\\frac12e^{-at}$，$t<0$ で $y=\\frac12e^{at}\\neq0$（入力より先に応答が出る：非因果的）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\displaystyle\\int_0^\\infty e^{-ax-ikx}dx-\\int_{-\\infty}^0e^{ax-ikx}dx=\\frac{1}{a+ik}-\\frac{1}{a-ik}=\\frac{-2ik}{k^2+a^2}$ より $\\hat f_a=-i\\sqrt{\\frac2\\pi}\\frac{k}{k^2+a^2}$．\n\n(2) 逆変換 $f_a(x)=\\frac{1}{\\sqrt{2\\pi}}\\int(-i)\\sqrt{\\frac2\\pi}\\frac{k}{k^2+a^2}e^{ikx}dk$ で，$\\cos kx$ の部分は $k$ について奇関数なので消え，$(-i)(i\\sin kx)=\\sin kx$ が残る．偶関数になった被積分関数を半分の区間にまとめて\n\\[ f_a(x)=\\frac{2}{\\pi}\\int_0^\\infty\\frac{k\\sin kx}{k^2+a^2}dk\\ \\Rightarrow\\ \\int_0^\\infty\\frac{k\\sin kx}{k^2+a^2}dk=\\frac\\pi2e^{-ax}\\quad(x>0). \\]\n\n(3) $a\\to0$ で左辺は $\\int_0^\\infty\\frac{\\sin kx}{k}dk$，右辺は $\\frac\\pi2$（$x>0$）．被積分関数は $x$ について奇関数なので $x<0$ では $-\\frac\\pi2$，$x=0$ で 0．すなわち $\\frac\\pi2\\mathrm{sgn}(x)$．（同時に $\\mathcal F[\\mathrm{sgn}]=-i\\sqrt{2/\\pi}\\,\\mathrm P\\frac1k$ も得られる．）\n\n(4) $\\dfrac{1}{k(k^2+a^2)}=\\dfrac{1}{a^2}\\left(\\dfrac1k-\\dfrac{k}{k^2+a^2}\\right)$ より，$x>0$ で\n\\[ J(x)=\\frac{1}{a^2}\\left(\\frac\\pi2-\\frac\\pi2e^{-ax}\\right)=\\frac{\\pi}{2a^2}\\left(1-e^{-ax}\\right). \\]\n$J$ は $x$ の奇関数なので $J(x)=\\frac{\\pi}{2a^2}\\mathrm{sgn}(x)(1-e^{-a|x|})$．\n\n(5) 各成分に $\\frac{a^2}{\\omega^2+a^2}$ を掛けると（直流成分 $\\frac12$ は $\\omega=0$ で倍率 1）\n\\[ y(t)=\\frac12+\\frac{a^2}{\\pi}J(t)=\\frac12+\\frac12\\mathrm{sgn}(t)\\left(1-e^{-a|t|}\\right). \\]\n$t>0$ で $y=1-\\frac12e^{-at}$，$t<0$ で $y=\\frac12e^{-a|t|}=\\frac12e^{at}$．入力が 0 の $t<0$ でも出力が現れる．振幅特性だけを持ち位相遅れのないフィルタは因果律を破る（インパルス応答 $\\frac a2e^{-a|t|}$ が $t<0$ に広がる）．実在の RC フィルタ $\\frac{a}{a+i\\omega}$ は振幅 $\\frac{a}{\\sqrt{\\omega^2+a^2}}$ と位相遅れをもち，ステップ応答は $\\theta(t)(1-e^{-at})$ と因果的になる．"
+   }
+  ],
+  "idea": {
+   "tex": "奇関数 $\\mathrm{sgn}(x)e^{-a|x|}$ の変換から $\\sin$ 型積分を読み取り，$a\\to0$ でディリクレ積分，部分分数で $J$ を得る．振幅だけを操作するフィルタは $t<0$ に応答が漏れ，因果性には位相が不可欠であることがわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((pi)/(2)) e ^(- a x)\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "奇関数",
+   "符号関数",
+   "ディリクレ積分",
+   "ローパスフィルタ",
+   "因果律"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "打撃された弦は元に戻らない：初速度問題",
+  "topic": "打撃された弦は元に戻らない：初速度問題",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．無限に長い弦の横変位 $u(x,t)$ が波動方程式 $\\partial_t^2u=v^2\\partial_x^2u$ に従う．$t=0$ で弦はまっすぐ（$u(x,0)=0$）であり，ハンマーで叩かれて初速度\n\\[ \\partial_tu(x,0)=g(x)=V_0e^{-x^2/b^2}\\qquad(V_0,b>0) \\]\nを得た．$u$ とその導関数は $|x|\\to\\infty$ で 0 に収束するとする．\n\\begin{enumerate}\n\\item $x$ についてフーリエ変換し，$\\hat u(k,t)$ を $\\hat g(k)$ で表せ．\n\\item 箱型関数 $\\chi_{L}(x)$（$|x|<L$ で 1，それ以外 0）のフーリエ変換が $\\sqrt{\\frac2\\pi}\\frac{\\sin kL}{k}$ であることと畳み込みの性質（$\\mathcal F[f*h]=\\sqrt{2\\pi}\\hat f\\hat h$）を用いて，$u(x,t)=\\dfrac{1}{2v}\\displaystyle\\int_{x-vt}^{x+vt}g(s)ds$ を導け．\n\\item 上の $g$ に対して $u(x,t)$ を誤差関数 $\\mathrm{erf}(z)=\\frac{2}{\\sqrt\\pi}\\int_0^ze^{-s^2}ds$ で表せ．\n\\item $t\\to\\infty$ で原点の変位 $u(0,t)$ はどうなるか．また弦全体の変位の積分 $\\int_{-\\infty}^\\infty u\\,dx$ の時間変化を $\\hat u(0,t)$ から求めよ．波が通り過ぎたあと弦はどうなっているか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat u(k,t)=\\hat g(k)\\dfrac{\\sin kvt}{kv}$　(2) 証明（解説参照）　(3) $u=\\dfrac{\\sqrt\\pi V_0b}{4v}\\left[\\mathrm{erf}\\dfrac{x+vt}{b}-\\mathrm{erf}\\dfrac{x-vt}{b}\\right]$　(4) $u(0,t)\\to\\dfrac{\\sqrt\\pi V_0b}{2v}$，$\\int u\\,dx=\\sqrt\\pi V_0b\\,t$（線形に増加）．弦は一定の高さ $\\frac{\\sqrt\\pi V_0b}{2v}$ に持ち上げられたまま，その台地が両側へ広がる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_t^2\\hat u=-v^2k^2\\hat u$．$\\hat u(k,0)=0$，$\\partial_t\\hat u(k,0)=\\hat g(k)$ より $\\hat u=\\hat g(k)\\dfrac{\\sin kvt}{kv}$（$k=0$ では $\\hat g(0)t$）．\n\n(2) $L=vt$ とすると $\\dfrac{\\sin kvt}{kv}=\\dfrac1v\\sqrt{\\dfrac\\pi2}\\hat\\chi_{vt}(k)$．よって\n\\[ \\hat u=\\frac{1}{v}\\sqrt{\\frac{\\pi}{2}}\\hat\\chi_{vt}\\hat g=\\frac{1}{2v}\\sqrt{2\\pi}\\hat\\chi_{vt}\\hat g=\\mathcal F\\!\\left[\\frac{1}{2v}\\chi_{vt}*g\\right]. \\]\nしたがって $u(x,t)=\\dfrac1{2v}\\displaystyle\\int\\chi_{vt}(x-s)g(s)ds=\\dfrac{1}{2v}\\int_{x-vt}^{x+vt}g(s)ds$．\n\n(3) $\\int_{x-vt}^{x+vt}V_0e^{-s^2/b^2}ds=V_0b\\frac{\\sqrt\\pi}{2}\\left[\\mathrm{erf}\\frac{x+vt}{b}-\\mathrm{erf}\\frac{x-vt}{b}\\right]$ より与式．\n\n(4) $u(0,t)=\\frac{\\sqrt\\pi V_0b}{4v}\\cdot2\\,\\mathrm{erf}\\frac{vt}{b}\\to\\frac{\\sqrt\\pi V_0b}{2v}$．また $\\int u\\,dx=\\sqrt{2\\pi}\\hat u(0,t)=\\sqrt{2\\pi}\\hat g(0)t=t\\int g\\,dx=\\sqrt\\pi V_0b\\,t$．\n変位は 0 に戻らない．初期変位の問題（両側に去る 2 つのパルスに分かれ，後には何も残らない）とは対照的に，初速度の問題では与えられた運動量が左右に運ばれる一方，両パルスの間の弦は高さ $\\frac{\\sqrt\\pi V_0b}{2v}=\\frac{1}{2v}\\int g\\,dx$ の平らな台地として残り，その幅 $2vt$ が広がり続ける．$k$ 空間では $\\frac{\\sin kvt}{kv}$ の $k=0$ 成分が $t$ に比例して成長することに対応する．"
+   }
+  ],
+  "idea": {
+   "tex": "初速度問題の解は $k$ 空間で $\\frac{\\sin kvt}{kv}$ 倍で，これは箱型関数の変換なので実空間では区間平均（ダランベール公式）になる．$k=0$ 成分が時間に比例して増えるため，叩かれた弦は持ち上がったまま戻らない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "波動方程式",
+   "ダランベールの公式",
+   "畳み込み",
+   "誤差関数",
+   "初速度問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "三角関数と畳み込みで sinc の高次積分",
+  "topic": "三角関数と畳み込みで sinc の高次積分",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．幅 $2$ のスリット（透過率 $\\chi(x)$：$|x|\\le1$ で 1，$|x|>1$ で 0）によるフラウンホーファー回折の振幅は $\\hat\\chi(k)$ に，強度は $|\\hat\\chi(k)|^2$ に比例する．\n\\begin{enumerate}\n\\item $\\hat\\chi(k)$ を求めよ．\n\\item 畳み込み $\\Lambda=\\chi*\\chi$，すなわち $\\Lambda(x)=\\displaystyle\\int\\chi(x-x')\\chi(x')dx'$ を求め，$\\hat\\Lambda(k)$ を $\\sin k/k$ で表せ（$\\mathcal F[f*g]=\\sqrt{2\\pi}\\hat f\\hat g$ を用いてよい）．\n\\item パーセバルの等式 $\\int\\hat f\\overline{\\hat g}dk=\\int f\\bar g\\,dx$ を用いて\n\\[ I_3=\\int_{-\\infty}^{\\infty}\\left(\\frac{\\sin k}{k}\\right)^3dk,\\qquad I_4=\\int_{-\\infty}^{\\infty}\\left(\\frac{\\sin k}{k}\\right)^4dk \\]\nを求めよ．\n\\item $I_4$ は回折強度 $|\\hat\\chi|^2$ の 2 乗の積分である．$\\int|\\hat\\chi|^2dk$ と $\\int|\\hat\\chi|^4dk$ の比から決まる「実効的なピーク幅」$W=\\dfrac{(\\int|\\hat\\chi|^2dk)^2}{\\int|\\hat\\chi|^4dk}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sqrt{\\dfrac2\\pi}\\dfrac{\\sin k}{k}$　(2) $\\Lambda=(2-|x|)$（$|x|\\le2$），$0$（$|x|>2$）；$\\hat\\Lambda=\\dfrac{2\\sqrt2}{\\sqrt\\pi}\\left(\\dfrac{\\sin k}{k}\\right)^2$　(3) $I_3=\\dfrac{3\\pi}{4}$，$I_4=\\dfrac{2\\pi}{3}$　(4) $W=\\dfrac{3\\pi}{2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\hat\\chi=\\frac{1}{\\sqrt{2\\pi}}\\int_{-1}^1e^{-ikx}dx=\\frac{1}{\\sqrt{2\\pi}}\\frac{2\\sin k}{k}=\\sqrt{\\frac2\\pi}\\frac{\\sin k}{k}$．\n\n(2) $\\Lambda(x)$ は区間 $[x-1,x+1]$ と $[-1,1]$ の重なりの長さなので $\\Lambda=\\max(2-|x|,0)$．$\\hat\\Lambda=\\sqrt{2\\pi}\\hat\\chi^2=\\sqrt{2\\pi}\\frac2\\pi\\left(\\frac{\\sin k}{k}\\right)^2=2\\sqrt{\\frac{2}{\\pi}}\\left(\\frac{\\sin k}{k}\\right)^2$．\n\n(3) $f=\\chi$，$g=\\Lambda$（いずれも実で，変換も実）として\n\\[ \\int\\hat\\chi\\hat\\Lambda dk=\\sqrt{\\frac2\\pi}\\cdot2\\sqrt{\\frac2\\pi}I_3=\\frac4\\pi I_3,\\qquad\\int\\chi\\Lambda dx=\\int_{-1}^1(2-|x|)dx=3. \\]\nよって $I_3=\\frac{3\\pi}{4}$．次に $f=g=\\Lambda$ として\n\\[ \\int\\hat\\Lambda^2dk=\\frac{8}{\\pi}I_4,\\qquad\\int\\Lambda^2dx=2\\int_0^2(2-x)^2dx=\\frac{16}{3}. \\]\nよって $I_4=\\frac{16}{3}\\cdot\\frac\\pi8=\\frac{2\\pi}{3}$．\n\n(4) $\\int|\\hat\\chi|^2dk=\\int\\chi^2dx=2$（パーセバル）．$\\int|\\hat\\chi|^4dk=\\frac{4}{\\pi^2}I_4=\\frac{4}{\\pi^2}\\cdot\\frac{2\\pi}{3}=\\frac{8}{3\\pi}$．よって $W=\\frac{4}{8/(3\\pi)}=\\frac{3\\pi}{2}\\approx4.71$．中央ピークの零点間隔 $2\\pi$ よりやや狭い値となり，ピークの「実効幅」の目安となる．"
+   }
+  ],
+  "idea": {
+   "tex": "$(\\sin k/k)^n$ の積分は，箱型関数とその畳み込み（三角関数）の重なり積分にパーセバルで翻訳すれば初等的に求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) sqrt(((2)/(pi)))((sin k)/(k))\n(2) 記述\n(3) $I_3$：((3 pi)/(4)) ; $I_4$：((2 pi)/(3))\n(4) $W$：((3 pi)/(2))"
+  },
+  "methods": [],
+  "tags": [
+   "パーセバルの等式",
+   "畳み込み",
+   "sinc関数",
+   "単スリット回折",
+   "三角関数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "パーセバルの等式で2つのローレンツ型の積を積分",
+  "topic": "パーセバルの等式で2つのローレンツ型の積を積分",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．$a,b>0$ とする．$\\mathcal F\\!\\left[\\dfrac{1}{x^2+a^2}\\right]=\\sqrt{\\dfrac\\pi2}\\dfrac{e^{-a|k|}}{a}$ は用いてよい．\n\\begin{enumerate}\n\\item 導関数の変換 $\\mathcal F[f']=ik\\hat f$ の双対版 $\\mathcal F[xf]=i\\hat f'(k)$ を用いて $\\mathcal F\\!\\left[\\dfrac{x}{x^2+a^2}\\right]$ を求めよ（$k\\neq0$）．\n\\item パーセバルの等式 $\\int\\hat f\\overline{\\hat g}dk=\\int f\\bar g\\,dx$ を用いて\n\\[ I_1=\\int_{-\\infty}^{\\infty}\\frac{dx}{(x^2+a^2)(x^2+b^2)},\\qquad I_2=\\int_{-\\infty}^{\\infty}\\frac{x^2\\,dx}{(x^2+a^2)(x^2+b^2)} \\]\nを求めよ．\n\\item 恒等式 $I_2+b^2I_1=\\displaystyle\\int\\frac{dx}{x^2+a^2}$ で結果を検算し，$b\\to a$ として $\\displaystyle\\int_0^\\infty\\frac{dx}{(x^2+a^2)^2}$ を求めよ．\n\\item 共鳴角振動数 $\\omega_0$ 近傍で，2 つの減衰振動子の応答の積が $\\dfrac{1}{(\\Delta^2+a^2)(\\Delta^2+b^2)}$（$\\Delta=\\omega-\\omega_0$）の形で表されるとする．$a$ を固定して $b$ を変えたとき，$b^2I_1$（$b\\to\\infty$ でローレンツ型 1 つの面積 $\\pi/a$ に近づく量）が $\\pi/a$ の半分になる $b$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-i\\sqrt{\\dfrac\\pi2}\\,\\mathrm{sgn}(k)e^{-a|k|}$　(2) $I_1=\\dfrac{\\pi}{ab(a+b)}$，$I_2=\\dfrac{\\pi}{a+b}$　(3) $\\dfrac{\\pi}{4a^3}$　(4) $b=a$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\hat f=\\sqrt{\\frac\\pi2}\\frac{e^{-a|k|}}{a}$ に対し $\\mathcal F[xf]=i\\hat f'(k)=i\\sqrt{\\frac\\pi2}\\frac{-a\\,\\mathrm{sgn}(k)e^{-a|k|}}{a}=-i\\sqrt{\\frac\\pi2}\\mathrm{sgn}(k)e^{-a|k|}$．（奇関数の変換が純虚数・奇関数であることと整合．）\n\n(2) 実関数 $\\frac{1}{x^2+a^2}$，$\\frac1{x^2+b^2}$ にパーセバルの等式を用いると\n\\[ I_1=\\frac{\\pi}{2ab}\\int e^{-(a+b)|k|}dk=\\frac{\\pi}{2ab}\\cdot\\frac{2}{a+b}=\\frac{\\pi}{ab(a+b)}. \\]\n$\\frac{x}{x^2+a^2}$，$\\frac{x}{x^2+b^2}$ について（変換は純虚数なので複素共役で符号が反転し，$(-i)(+i)=1$）\n\\[ I_2=\\frac\\pi2\\int\\mathrm{sgn}(k)^2e^{-(a+b)|k|}dk=\\frac{\\pi}{a+b}. \\]\n\n(3) $I_2+b^2I_1=\\frac{\\pi}{a+b}+\\frac{\\pi b}{a(a+b)}=\\frac{\\pi(a+b)}{a(a+b)}=\\frac\\pi a=\\int\\frac{dx}{x^2+a^2}$．正しい．$b\\to a$ で $I_1\\to\\frac{\\pi}{2a^3}$，被積分関数は偶関数なので $\\int_0^\\infty\\frac{dx}{(x^2+a^2)^2}=\\frac{\\pi}{4a^3}$．\n\n(4) $b^2I_1=\\frac{\\pi b}{a(a+b)}$．これが $\\frac{\\pi}{2a}$ になる条件は $\\frac{b}{a+b}=\\frac12$，すなわち $b=a$．2 つの線幅が等しいとき，積の面積は幅の広いほうを定数とみなした値のちょうど半分になる．"
+   }
+  ],
+  "idea": {
+   "tex": "ローレンツ型の積の積分は，$k$ 空間では指数関数の積 $e^{-(a+b)|k|}$ の積分になり，幅の和 $a+b$ が自然に現れる．$x$ 倍の関数も符号関数を介して同様に扱える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $I_1$：((pi)/(a b (a + b))) ; $I_2$：((pi)/(a + b))\n(3) ((pi)/(4 a ^(3)))\n(4) $b$：a"
+  },
+  "methods": [],
+  "tags": [
+   "パーセバルの等式",
+   "ローレンツ関数",
+   "定積分",
+   "共鳴"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "全波整流電圧のラプラス変換と平均値",
+  "topic": "全波整流電圧のラプラス変換と平均値",
+  "statement": {
+   "tex": "角周波数 $\\omega>0$ の交流電圧を全波整流した波形 $f(t)=|\\sin\\omega t|$（$t\\ge0$）を考える．ラプラス変換を $\\tilde f(s)=\\int_0^\\infty f(t)e^{-st}dt$ とする．\n\\begin{enumerate}\n\\item 一般に周期 $T$ の関数 $f$ に対し，$\\mathrm{Re}(s)>0$ で\n\\[ \\tilde f(s)=\\frac{1}{1-e^{-sT}}\\int_0^T f(t)e^{-st}dt \\]\nが成り立つことを示せ．\n\\item $f(t)=|\\sin\\omega t|$ のラプラス変換を求め，$\\coth$ を用いた形にまとめよ．収束座標 $s_0$ も答えよ．\n\\item 極限 $\\displaystyle\\lim_{s\\to+0}s\\tilde f(s)$ を求め，その値が物理的に何を意味するか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（周期ごとに分割して等比級数）　(2) $\\tilde f(s)=\\dfrac{\\omega}{s^2+\\omega^2}\\coth\\dfrac{\\pi s}{2\\omega}$，$s_0=0$　(3) $2/\\pi$（整流電圧の時間平均値，振幅 1 あたり）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\int_0^\\infty=\\sum_{n=0}^\\infty\\int_{nT}^{(n+1)T}$ とし，各区間で $t=nT+u$ とおくと $f(nT+u)=f(u)$ より\n\\[ \\tilde f(s)=\\sum_{n=0}^\\infty e^{-nsT}\\int_0^T f(u)e^{-su}du=\\frac{1}{1-e^{-sT}}\\int_0^T f(u)e^{-su}du. \\]\n$\\mathrm{Re}(s)>0$ なら $|e^{-sT}|<1$ で等比級数は収束する．\n\n(2) 周期は $T=\\pi/\\omega$，$0\\le t\\le T$ で $f=\\sin\\omega t$．\n\\[ \\int_0^{\\pi/\\omega}\\sin\\omega t\\,e^{-st}dt=\\mathrm{Im}\\int_0^{\\pi/\\omega}e^{(i\\omega-s)t}dt=\\mathrm{Im}\\frac{e^{(i\\omega-s)\\pi/\\omega}-1}{i\\omega-s}=\\mathrm{Im}\\frac{-(e^{-s\\pi/\\omega}+1)}{i\\omega-s}. \\]\n$\\dfrac{-1}{i\\omega-s}=\\dfrac{s+i\\omega}{s^2+\\omega^2}$ より，この積分は $\\dfrac{\\omega(1+e^{-\\pi s/\\omega})}{s^2+\\omega^2}$．よって\n\\[ \\tilde f(s)=\\frac{\\omega}{s^2+\\omega^2}\\,\\frac{1+e^{-\\pi s/\\omega}}{1-e^{-\\pi s/\\omega}}=\\frac{\\omega}{s^2+\\omega^2}\\coth\\frac{\\pi s}{2\\omega}. \\]\n$f$ は有界で $0$ に減衰しないので収束座標は $s_0=0$（$\\mathrm{Re}(s)>0$）．なお $\\coth$ は $s=2i\\omega n$（$n\\neq0$）に極をもち，これは周期 $\\pi/\\omega$ の高調波 $2n\\omega$ に対応する．\n\n(3) $s\\to0$ で $\\coth\\dfrac{\\pi s}{2\\omega}\\simeq\\dfrac{2\\omega}{\\pi s}$ なので\n\\[ s\\tilde f(s)\\simeq s\\cdot\\frac{\\omega}{\\omega^2}\\cdot\\frac{2\\omega}{\\pi s}=\\frac{2}{\\pi}. \\]\n一般に周期関数では (1) より $s\\tilde f(s)\\to\\frac1T\\int_0^Tf\\,dt$（時間平均）となる．$2/\\pi$ は全波整流電圧の直流成分（平均値）であり，整流回路の後段に大きな時定数のフィルタを置いたときに得られる直流電圧に当たる．"
+   }
+  ],
+  "idea": {
+   "tex": "周期関数のラプラス変換は 1 周期分の積分を $1/(1-e^{-sT})$ 倍するだけで得られ，$s\\to0$ の振る舞いが時間平均を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "周期関数",
+   "全波整流",
+   "coth",
+   "時間平均"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "逐次崩壊と縮退極限",
+  "topic": "逐次崩壊と縮退極限",
+  "statement": {
+   "tex": "放射性核種 A（崩壊定数 $\\lambda_A$）が崩壊して B になり，B は崩壊定数 $\\lambda_B$ でさらに安定核 C に崩壊する．時刻 $0$ で A が $N_0$ 個，B と C は $0$ 個とする．個数は\n\\[ \\dot N_A=-\\lambda_AN_A,\\qquad \\dot N_B=\\lambda_AN_A-\\lambda_BN_B \\]\nに従う．\n\\begin{enumerate}\n\\item ラプラス変換を用いて，$\\lambda_A\\neq\\lambda_B$ のときの $N_B(t)$ を求めよ．\n\\item $N_B$ が最大になる時刻 $t_m$ と最大値 $N_{B,\\max}$ を求めよ．\n\\item $\\lambda_B\\to\\lambda_A=\\lambda$ の極限で $N_B(t)$，$t_m$，$N_{B,\\max}$ はどうなるか．$N_B(t)$ については，ラプラス像で直接 $\\lambda_A=\\lambda_B$ とおいて逆変換した結果と一致することも確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N_B=\\dfrac{\\lambda_AN_0}{\\lambda_B-\\lambda_A}\\left(e^{-\\lambda_At}-e^{-\\lambda_Bt}\\right)$　(2) $t_m=\\dfrac{\\ln(\\lambda_A/\\lambda_B)}{\\lambda_A-\\lambda_B}$，$N_{B,\\max}=N_0\\left(\\dfrac{\\lambda_B}{\\lambda_A}\\right)^{\\lambda_B/(\\lambda_A-\\lambda_B)}$　(3) $N_B=N_0\\lambda te^{-\\lambda t}$，$t_m=1/\\lambda$，$N_{B,\\max}=N_0/e$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 変換して $s\\tilde N_A-N_0=-\\lambda_A\\tilde N_A$，$s\\tilde N_B=\\lambda_A\\tilde N_A-\\lambda_B\\tilde N_B$．よって\n\\[ \\tilde N_B=\\frac{\\lambda_AN_0}{(s+\\lambda_A)(s+\\lambda_B)}=\\frac{\\lambda_AN_0}{\\lambda_B-\\lambda_A}\\left(\\frac{1}{s+\\lambda_A}-\\frac{1}{s+\\lambda_B}\\right), \\]\n\\[ N_B(t)=\\frac{\\lambda_AN_0}{\\lambda_B-\\lambda_A}\\left(e^{-\\lambda_At}-e^{-\\lambda_Bt}\\right). \\]\n\n(2) $\\dot N_B=0$ より $\\lambda_Ae^{-\\lambda_At}=\\lambda_Be^{-\\lambda_Bt}$，$t_m=\\dfrac{\\ln(\\lambda_A/\\lambda_B)}{\\lambda_A-\\lambda_B}$（$\\lambda_A,\\lambda_B$ の大小によらず正）．このとき $e^{-\\lambda_Bt_m}=\\frac{\\lambda_A}{\\lambda_B}e^{-\\lambda_At_m}$ なので\n\\[ N_{B,\\max}=\\frac{\\lambda_AN_0}{\\lambda_B-\\lambda_A}e^{-\\lambda_At_m}\\left(1-\\frac{\\lambda_A}{\\lambda_B}\\right)=N_0\\frac{\\lambda_A}{\\lambda_B}e^{-\\lambda_At_m}. \\]\n$e^{-\\lambda_At_m}=(\\lambda_A/\\lambda_B)^{-\\lambda_A/(\\lambda_A-\\lambda_B)}$ を代入して $N_{B,\\max}=N_0(\\lambda_A/\\lambda_B)^{-\\lambda_B/(\\lambda_A-\\lambda_B)}=N_0(\\lambda_B/\\lambda_A)^{\\lambda_B/(\\lambda_A-\\lambda_B)}$．なお最大時刻には $\\lambda_AN_A=\\lambda_BN_B$（A と B の放射能が等しい）が成り立つ．\n\n(3) $\\lambda_B=\\lambda+\\varepsilon$，$\\lambda_A=\\lambda$ として $\\varepsilon\\to0$：$\\dfrac{e^{-\\lambda t}-e^{-(\\lambda+\\varepsilon)t}}{\\varepsilon}\\to te^{-\\lambda t}$ より $N_B\\to N_0\\lambda te^{-\\lambda t}$．\n$t_m=\\dfrac{\\ln(1+\\varepsilon/\\lambda)}{\\varepsilon}\\to\\dfrac1\\lambda$，$N_{B,\\max}=N_0(1+\\varepsilon/\\lambda)^{-(\\lambda+\\varepsilon)/\\varepsilon}\\to N_0e^{-1}$．\n直接法：$\\tilde N_B=\\dfrac{\\lambda N_0}{(s+\\lambda)^2}$ で，$\\mathcal L[te^{-\\lambda t}]=1/(s+\\lambda)^2$ より $N_B=N_0\\lambda te^{-\\lambda t}$．極限と一致し，このとき $N_B(1/\\lambda)=N_0/e$ も確認できる．"
+   }
+  ],
+  "idea": {
+   "tex": "二重極の部分分数分解は単極の差の極限として得られ，$te^{-\\lambda t}$ という「縮退した」応答が自然に現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N_B$：((λ_A N_0)/(λ_B - λ_A))(e ^(- λ_A t)- e ^(- λ_B t))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "逆ラプラス変換",
+   "部分分数分解",
+   "逐次崩壊",
+   "バテマン方程式",
+   "縮退極限"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "初期値定理・最終値定理とその破綻",
+  "topic": "初期値定理・最終値定理とその破綻",
+  "statement": {
+   "tex": "$f(t)$ とその導関数のラプラス変換が存在するとき，$\\mathcal L[f'](s)=s\\tilde f(s)-f(0)$ が成り立つ．\n\\begin{enumerate}\n\\item この式から，（極限と積分の交換を認めて）初期値定理 $\\displaystyle\\lim_{s\\to\\infty}s\\tilde f(s)=f(0)$ と，$f(\\infty)=\\lim_{t\\to\\infty}f(t)$ が存在するときの最終値定理 $\\displaystyle\\lim_{s\\to+0}s\\tilde f(s)=f(\\infty)$ を導け．\n\\item 質量 $m$，抵抗係数 $\\Gamma$，ばね定数 $K$ の振動子が静止状態（$x(0)=\\dot x(0)=0$）から一定力 $F_0$ を受ける．$\\tilde x(s)$ を求め，\\textbf{逆変換せずに} $x(\\infty)$，$\\dot x(0)$，$\\ddot x(0)$ を求めよ．\n\\item $\\Gamma=0$ のとき $\\lim_{s\\to+0}s\\tilde x(s)$ は有限値をもつが，$x(\\infty)$ は存在しない．最終値定理が使える条件を $s\\tilde x(s)$ の極の位置で述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\tilde x=\\dfrac{F_0}{s(ms^2+\\Gamma s+K)}$，$x(\\infty)=F_0/K$，$\\dot x(0)=0$，$\\ddot x(0)=F_0/m$　(3) $s\\tilde x(s)$ の極がすべて $\\mathrm{Re}\\,s<0$ にあること（虚軸上に極があると不可）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $s\\to\\infty$ では $\\int_0^\\infty f'(t)e^{-st}dt\\to0$ なので $s\\tilde f(s)-f(0)\\to0$．\n$s\\to+0$ では $\\int_0^\\infty f'(t)e^{-st}dt\\to\\int_0^\\infty f'dt=f(\\infty)-f(0)$ なので $s\\tilde f(s)-f(0)\\to f(\\infty)-f(0)$，すなわち $s\\tilde f(s)\\to f(\\infty)$．\n\n(2) $m(s^2\\tilde x)+\\Gamma s\\tilde x+K\\tilde x=F_0/s$ より $\\tilde x=\\dfrac{F_0}{s(ms^2+\\Gamma s+K)}$．\n・$x(\\infty)=\\lim_{s\\to0}s\\tilde x=F_0/K$（ばねの静的伸び）．\n・$\\dot x(0)=\\lim_{s\\to\\infty}s\\,\\mathcal L[\\dot x]=\\lim s(s\\tilde x-x(0))=\\lim\\dfrac{F_0s}{ms^2+\\Gamma s+K}=0$．\n・$\\ddot x(0)=\\lim_{s\\to\\infty}s\\,\\mathcal L[\\ddot x]=\\lim s\\cdot s^2\\tilde x=\\lim\\dfrac{F_0s^2}{ms^2+\\Gamma s+K}=\\dfrac{F_0}{m}$．\n最後の結果は，$t=0$ でばね力・抵抗力がゼロなので力 $F_0$ だけが加速度を与える，という直観と一致する．\n\n(3) $\\Gamma=0$，$\\omega^2=K/m$ のとき $x=\\dfrac{F_0}{K}(1-\\cos\\omega t)$ は振動し続け極限をもたないが，$s\\tilde x=\\dfrac{F_0}{m(s^2+\\omega^2)}\\to F_0/K$（振動の平均値）となる．(1) の導出では $\\int_0^\\infty f'dt$ の収束を仮定しており，これが破れている．$s\\tilde f(s)$ の極がすべて左半平面 $\\mathrm{Re}\\,s<0$ にあれば $f$ の各成分は減衰し $f(\\infty)$ が存在して定理が成り立つ．$\\pm i\\omega$ のように虚軸上（または右半平面）に極があると定理は使えない．$\\Gamma>0$ なら $ms^2+\\Gamma s+K=0$ の根は左半平面にあるので (2) は正当．"
+   }
+  ],
+  "idea": {
+   "tex": "導関数の変換公式の $s\\to\\infty$，$s\\to0$ 極限から，逆変換なしに初期挙動と最終状態が読み取れるが，虚軸上の極があると最終値定理は破綻する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "導関数",
+   "初期値定理",
+   "最終値定理",
+   "減衰振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-048",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "過減衰振動子のオーバーシュート条件",
+  "topic": "過減衰振動子のオーバーシュート条件",
+  "statement": {
+   "tex": "ばね・ダンパー系 $\\ddot x+\\gamma\\dot x+kx=0$ が過減衰（$\\gamma^2>4k$）であるとし，特性根を $-\\lambda_1,-\\lambda_2$（$0<\\lambda_1<\\lambda_2$，$\\lambda_1+\\lambda_2=\\gamma$，$\\lambda_1\\lambda_2=k$）とする．初期条件は $x(0)=x_0>0$，$\\dot x(0)=v_0$（原点に向けて押し出す場合 $v_0<0$）．\n\\begin{enumerate}\n\\item ラプラス変換により $x(t)$ を求めよ．\n\\item $t>0$ で $x$ が原点を通過する（オーバーシュートする）ための $v_0$ の条件と，そのときの通過時刻 $t^*$ を求めよ．通過は高々 1 回であることも示せ．\n\\item 臨界減衰 $\\gamma^2=4k$ の場合の通過条件を求め，(2) の条件の極限と一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=\\dfrac{(v_0+\\lambda_2x_0)e^{-\\lambda_1t}-(v_0+\\lambda_1x_0)e^{-\\lambda_2t}}{\\lambda_2-\\lambda_1}$　(2) $v_0<-\\lambda_2x_0$，$t^*=\\dfrac{1}{\\lambda_2-\\lambda_1}\\ln\\dfrac{v_0+\\lambda_1x_0}{v_0+\\lambda_2x_0}$　(3) $v_0<-\\dfrac{\\gamma}{2}x_0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 変換すると $(s^2+\\gamma s+k)\\tilde x=x_0(s+\\gamma)+v_0$．\n\\[ \\tilde x=\\frac{x_0(s+\\gamma)+v_0}{(s+\\lambda_1)(s+\\lambda_2)}=\\frac{A}{s+\\lambda_1}+\\frac{B}{s+\\lambda_2}, \\]\n$A=\\dfrac{x_0(\\gamma-\\lambda_1)+v_0}{\\lambda_2-\\lambda_1}=\\dfrac{v_0+\\lambda_2x_0}{\\lambda_2-\\lambda_1}$，$B=-\\dfrac{v_0+\\lambda_1x_0}{\\lambda_2-\\lambda_1}$．逆変換して答えを得る．\n\n(2) $x(t^*)=0 \\iff e^{(\\lambda_2-\\lambda_1)t^*}=\\dfrac{v_0+\\lambda_1x_0}{v_0+\\lambda_2x_0}$．左辺は $t^*>0$ で $1$ より大きい単調増加関数なので，解は高々 1 つで，存在条件は右辺 $>1$．\n・$v_0+\\lambda_2x_0>0$ なら分子 $<$ 分母で右辺 $<1$．不可．\n・$v_0+\\lambda_2x_0<0$ なら分子も負で $v_0+\\lambda_1x_0<0$，右辺 $=\\dfrac{|v_0|-\\lambda_1x_0}{|v_0|-\\lambda_2x_0}>1$．可．\nよって条件は $v_0<-\\lambda_2x_0$（遅い方ではなく\\textbf{速い方}の減衰率で決まる），$t^*=\\dfrac{1}{\\lambda_2-\\lambda_1}\\ln\\dfrac{v_0+\\lambda_1x_0}{v_0+\\lambda_2x_0}$．\n\n(3) $\\gamma^2=4k$ では $\\tilde x=\\dfrac{x_0}{s+\\gamma/2}+\\dfrac{v_0+\\gamma x_0/2}{(s+\\gamma/2)^2}$，$x=e^{-\\gamma t/2}\\{x_0+(v_0+\\tfrac{\\gamma}{2}x_0)t\\}$．$t>0$ で零点をもつ条件は $v_0+\\frac\\gamma2x_0<0$，すなわち $v_0<-\\frac{\\gamma}{2}x_0$．(2) で $\\lambda_1,\\lambda_2\\to\\gamma/2$ とした極限と一致する（このとき $t^*=-x_0/(v_0+\\gamma x_0/2)$ で，(2) の $t^*$ の極限とも一致）．"
+   }
+  ],
+  "idea": {
+   "tex": "過減衰解は 2 つの指数関数の差なので零点は高々 1 個で，その存在は速い減衰率 $\\lambda_2$ と初速の比較だけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $x$：(((v_0 + λ_2 x_0) e ^(- λ_1 t)-(v_0 + λ_1 x_0) e ^(- λ_2 t))/(λ_2 - λ_1))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "過減衰",
+   "臨界減衰",
+   "オーバーシュート",
+   "初期値問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-049",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "s微分の公式と共鳴・sinc積分",
+  "topic": "s微分の公式と共鳴・sinc積分",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item $\\mathcal L[tf(t)]=-\\dfrac{d\\tilde f}{ds}$ を示し，$\\mathcal L[t\\sin at]$，$\\mathcal L[t\\cos at]$（$a>0$）を求めよ．\n\\item 減衰のない振動子 $\\ddot x+\\omega^2x=\\dfrac{F_0}{m}\\cos\\omega t$ を $x(0)=\\dot x(0)=0$ で解け（共鳴駆動）．\n\\item $f(t)/t$ のラプラス変換が存在するとき $\\mathcal L\\!\\left[\\dfrac{f(t)}{t}\\right]=\\displaystyle\\int_s^\\infty\\tilde f(\\sigma)d\\sigma$ を示し，$\\mathcal L\\!\\left[\\dfrac{\\sin t}{t}\\right]$ を求めよ．さらに $s\\to+0$ として $\\displaystyle\\int_0^\\infty\\frac{\\sin t}{t}dt$ と，$\\displaystyle\\int_0^\\infty\\frac{e^{-t}\\sin t}{t}dt$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{2as}{(s^2+a^2)^2}$，$\\dfrac{s^2-a^2}{(s^2+a^2)^2}$　(2) $x=\\dfrac{F_0}{2m\\omega}t\\sin\\omega t$　(3) $\\arctan(1/s)$；$\\pi/2$；$\\pi/4$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{d}{ds}\\int_0^\\infty f(t)e^{-st}dt=-\\int_0^\\infty tf(t)e^{-st}dt$ より成立．$\\mathcal L[\\sin at]=\\dfrac{a}{s^2+a^2}$ を微分して $\\mathcal L[t\\sin at]=\\dfrac{2as}{(s^2+a^2)^2}$．$\\mathcal L[\\cos at]=\\dfrac{s}{s^2+a^2}$ より $-\\dfrac{d}{ds}\\dfrac{s}{s^2+a^2}=\\dfrac{s^2-a^2}{(s^2+a^2)^2}$．\n\n(2) $(s^2+\\omega^2)\\tilde x=\\dfrac{F_0}{m}\\dfrac{s}{s^2+\\omega^2}$，$\\tilde x=\\dfrac{F_0}{m}\\dfrac{s}{(s^2+\\omega^2)^2}=\\dfrac{F_0}{2m\\omega}\\cdot\\dfrac{2\\omega s}{(s^2+\\omega^2)^2}$．(1) より\n\\[ x=\\frac{F_0}{2m\\omega}\\,t\\sin\\omega t. \\]\n振幅が時間に比例して増大する（共鳴）．虚軸上の二重極 $s=\\pm i\\omega$ がこの $t$ 因子の起源．\n\n(3) $\\int_s^\\infty\\tilde f(\\sigma)d\\sigma=\\int_0^\\infty f(t)\\int_s^\\infty e^{-\\sigma t}d\\sigma\\,dt=\\int_0^\\infty\\frac{f(t)}{t}e^{-st}dt$．$f=\\sin t$ では\n\\[ \\mathcal L\\!\\left[\\frac{\\sin t}{t}\\right]=\\int_s^\\infty\\frac{d\\sigma}{1+\\sigma^2}=\\frac\\pi2-\\arctan s=\\arctan\\frac1s. \\]\n$s\\to+0$ で $\\int_0^\\infty\\frac{\\sin t}{t}dt=\\frac\\pi2$．また $s=1$ とおけば $\\int_0^\\infty\\frac{e^{-t}\\sin t}{t}dt=\\arctan1=\\frac\\pi4$．"
+   }
+  ],
+  "idea": {
+   "tex": "$t$ 倍は $s$ 微分，$1/t$ 倍は $s$ 積分に対応し，共鳴応答の $t\\sin\\omega t$ も sinc 積分 $\\pi/2$ も同じ道具で得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $x$：((F_0)/(2 m ω)) t sin ω t\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "s微分",
+   "共鳴",
+   "ディリクレ積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-050",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 30,
+  "theme": "駆動振動子の速度応答と共鳴極限",
+  "topic": "駆動振動子の速度応答と共鳴極限",
+  "statement": {
+   "tex": "固有角振動数 $b$ の減衰のない振動子が，静止状態（$x(0)=\\dot x(0)=0$）から外力 $\\dfrac{F_0}{m}\\cos at$（$a>0$）で駆動される：$\\ddot x+b^2x=\\dfrac{F_0}{m}\\cos at$．\n\\begin{enumerate}\n\\item 速度 $v=\\dot x$ のラプラス変換 $\\tilde v(s)$ を求め，$a\\neq b$ のとき部分分数分解で $v(t)$ を求めよ．\n\\item $v(t)$ を $\\cos$ 同士のたたみ込み積分の形に表し，$b=a$ の場合にたたみ込みを直接計算して $v(t)$ を求めよ．\n\\item (1) の結果で $b\\to a$ の極限をとったものが (2) と一致することを確かめよ．また $b=a$ のとき $v(t)$ の振幅（包絡線）の増加率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tilde v=\\dfrac{F_0}{m}\\dfrac{s^2}{(s^2+a^2)(s^2+b^2)}$，$v=\\dfrac{F_0}{m}\\dfrac{a\\sin at-b\\sin bt}{a^2-b^2}$　(2) $v=\\dfrac{F_0}{2ma}(\\sin at+at\\cos at)$　(3) 一致；包絡線は $\\dfrac{F_0}{2m}t$ で増加"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\tilde v=s\\tilde x-x(0)=s\\tilde x$，$\\tilde x=\\dfrac{F_0}{m}\\dfrac{s}{(s^2+a^2)(s^2+b^2)}$ より $\\tilde v=\\dfrac{F_0}{m}\\dfrac{s^2}{(s^2+a^2)(s^2+b^2)}$．\n\\[ \\frac{s^2}{(s^2+a^2)(s^2+b^2)}=\\frac{1}{a^2-b^2}\\left(\\frac{a^2}{s^2+a^2}-\\frac{b^2}{s^2+b^2}\\right) \\]\n（右辺を通分すると分子 $a^2(s^2+b^2)-b^2(s^2+a^2)=(a^2-b^2)s^2$）．よって $v=\\dfrac{F_0}{m}\\dfrac{a\\sin at-b\\sin bt}{a^2-b^2}$．\n\n(2) $\\tilde v=\\dfrac{F_0}{m}\\dfrac{s}{s^2+a^2}\\cdot\\dfrac{s}{s^2+b^2}$ より $v=\\dfrac{F_0}{m}\\int_0^t\\cos a(t-\\tau)\\cos b\\tau\\,d\\tau$．$b=a$ では\n\\[ \\int_0^t\\cos a(t-\\tau)\\cos a\\tau\\,d\\tau=\\frac12\\int_0^t\\{\\cos at+\\cos a(t-2\\tau)\\}d\\tau=\\frac{t\\cos at}{2}+\\frac{\\sin at}{2a}. \\]\nよって $v=\\dfrac{F_0}{2ma}(\\sin at+at\\cos at)$．\n\n(3) $b\\to a$ で $\\dfrac{a\\sin at-b\\sin bt}{a^2-b^2}\\to\\dfrac{\\frac{d}{da}(a\\sin at)}{2a}=\\dfrac{\\sin at+at\\cos at}{2a}$ となり一致．（これは $x=\\frac{F_0}{2ma}t\\sin at$ の微分とも一致する．）十分時間がたつと $v\\simeq\\dfrac{F_0}{2m}t\\cos at$ なので，速度振幅は $\\dfrac{F_0}{2m}t$ で線形に増加し，増加率は $F_0/(2m)$（$a$ によらない）．"
+   }
+  ],
+  "idea": {
+   "tex": "$s^2/((s^2+a^2)(s^2+b^2))$ は部分分数とたたみ込みの両方で逆変換でき，$b\\to a$ の極限が共鳴の二重極に対応する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\tilde v$：((F_0)/(m))((s ^(2))/((s ^(2)+ a ^(2))(s ^(2)+ b ^(2)))) ; $v$：((F_0)/(m))((a sin a t - b sin b t)/(a ^(2)- b ^(2)))\n(2) $v$：((F_0)/(2 m a))(sin a t + a t cos a t)\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "逆ラプラス変換",
+   "部分分数分解",
+   "たたみ込み",
+   "共鳴",
+   "極限"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-051",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "二重スリットのフーリエ変換と欠ける次数",
+  "topic": "二重スリットのフーリエ変換と欠ける次数",
+  "statement": {
+   "tex": "フーリエ変換を $F(u)=\\dfrac1{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{iux}dx$ で定義する．開口関数\n\\[f(x)=\\begin{cases}1,&d-\\frac w2<|x|<d+\\frac w2\\\\0,&\\text{それ以外}\\end{cases}\\qquad(d>w/2>0)\\]\nは，幅 $w$，中心間隔 $2d$ の二重スリットを表す．\n\\begin{enumerate}\n\\item $F(u)$ を求め，単スリットの変換と干渉因子の積に分解せよ．\n\\item フラウンホーファー回折強度 $I(u)\\propto|F(u)|^2$ の干渉極大は $ud=m\\pi$（$m$ は整数）に現れる．$2d=3w$ のとき，現れない（欠ける）次数 $m$ をすべて答え，$m=1,2$ の強度の $m=0$ に対する比を求めよ．\n\\item パーセバルの等式 $\\int|F|^2du=\\int|f|^2dx$ の両辺の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F=\\sqrt{\\dfrac2\\pi}\\cdot\\dfrac{2\\sin(uw/2)}{u}\\cos ud$　(2) $m=\\pm3,\\pm6,\\ldots$（3 の倍数，$0$ 以外）が欠ける．$I_1/I_0=\\dfrac{27}{4\\pi^2}\\approx0.684$，$I_2/I_0=\\dfrac{27}{16\\pi^2}\\approx0.171$　(3) どちらも $2w$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 幅 $w$ の単スリット（中心 $0$）の変換は $\\frac1{\\sqrt{2\\pi}}\\int_{-w/2}^{w/2}e^{iux}dx=\\frac1{\\sqrt{2\\pi}}\\frac{2\\sin(uw/2)}{u}$．中心を $\\pm d$ にずらすと $e^{\\pm iud}$ がかかり，和は $2\\cos ud$．よって\n\\[F(u)=\\frac1{\\sqrt{2\\pi}}\\frac{2\\sin(uw/2)}{u}\\cdot2\\cos ud=\\sqrt{\\frac2\\pi}\\,\\frac{2\\sin(uw/2)}u\\cos ud.\\]\n\n(2) $I\\propto\\left(\\frac{\\sin(uw/2)}{uw/2}\\right)^2\\cos^2ud$．極大 $u=m\\pi/d$ で回折因子の引数は $\\frac{uw}2=\\frac{m\\pi w}{2d}=\\frac{m\\pi}3$．これが $\\pi$ の整数倍になる $m=3,6,\\ldots$（および負）で強度 $0$，欠ける．\n$m=1$：$\\left(\\frac{\\sin(\\pi/3)}{\\pi/3}\\right)^2=\\left(\\frac{3\\sqrt3}{2\\pi}\\right)^2=\\frac{27}{4\\pi^2}\\approx0.684$．$m=2$：$\\left(\\frac{\\sin(2\\pi/3)}{2\\pi/3}\\right)^2=\\frac{27}{16\\pi^2}\\approx0.171$．\n\n(3) $\\int|f|^2dx=2w$．パーセバルより $\\int|F|^2du=2w$（$|F|^2=\\frac{8}{\\pi}\\frac{\\sin^2(uw/2)\\cos^2ud}{u^2}$ の積分．$\\cos^2ud=\\frac12(1+\\cos2ud)$ で，$\\cos 2ud$ の項は $2d>w$ のとき $0$ になり，残りは $\\frac4\\pi\\int\\frac{\\sin^2(uw/2)}{u^2}du=\\frac4\\pi\\cdot\\frac{\\pi w}{2}=2w$ と直接も確かめられる）．"
+   }
+  ],
+  "idea": {
+   "tex": "二重スリットの変換は「単スリット包絡線×干渉因子」の積になり（たたみ込み定理），包絡線の零点が干渉極大と重なる次数が欠ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $F$：sqrt(((2)/(pi)))*((2 sin (u w /2))/(u)) cos u d\n(2) 記述\n(3) どちらも：2 w"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "フラウンホーファー回折",
+   "二重スリット",
+   "欠ける次数",
+   "パーセバルの等式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-052",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ローレンツ型スペクトルと指数減衰",
+  "topic": "ローレンツ型スペクトルと指数減衰",
+  "statement": {
+   "tex": "フーリエ積分定理を用いて，$x>0$ に対して次を示せ．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_0^\\infty\\frac{\\cos ax}{b^2+a^2}\\,da=\\frac{\\pi}{2b}e^{-bx}$（$b>0$）．ただし $f(x)=e^{-b|x|}$ の余弦変換から導くこと．\n\\item $\\displaystyle\\int_0^\\infty\\frac{a\\sin ax}{1+a^2}\\,da=\\frac\\pi2e^{-x}$．\n\\item $\\displaystyle\\int_0^\\infty\\frac{\\cos ax}{(1+a^2)^2}\\,da=\\frac\\pi4(1+x)e^{-x}$．\n\\end{enumerate}\n（物理的には，減衰率 $b$ で指数減衰する振動の自己相関とローレンツ型スペクトル線形が互いにフーリエ変換の関係にあることを表す．）"
+  },
+  "answer": {
+   "tex": "(1)〜(3) 証明（解説参照）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 偶関数 $f$ に対するフーリエ積分定理は $f(x)=\\frac2\\pi\\int_0^\\infty\\cos ax\\,da\\int_0^\\infty f(u)\\cos au\\,du$．$f(u)=e^{-bu}$ に対し $\\int_0^\\infty e^{-bu}\\cos au\\,du=\\frac{b}{b^2+a^2}$ だから\n\\[e^{-bx}=\\frac{2b}{\\pi}\\int_0^\\infty\\frac{\\cos ax}{b^2+a^2}da\\ \\Longrightarrow\\ \\int_0^\\infty\\frac{\\cos ax}{b^2+a^2}da=\\frac\\pi{2b}e^{-bx}.\\]\n\n(2) $x>0$ で $e^{-x}$ を奇関数に拡張すると $f(x)=\\frac2\\pi\\int_0^\\infty\\sin ax\\,da\\int_0^\\infty e^{-u}\\sin au\\,du$．$\\int_0^\\infty e^{-u}\\sin au\\,du=\\frac{a}{1+a^2}$ より $\\int_0^\\infty\\frac{a\\sin ax}{1+a^2}da=\\frac\\pi2e^{-x}$．（(1) で $b=1$ として $x$ で微分しても符号を含め同じ結果になる．）\n\n(3) (1) の両辺を $\\beta=b^2$ で微分する（$-\\partial/\\partial\\beta$）．左辺は $\\int_0^\\infty\\frac{\\cos ax}{(\\beta+a^2)^2}da$．右辺は $\\frac{\\pi}{2}\\beta^{-1/2}e^{-\\sqrt\\beta x}$ を微分して\n\\[-\\frac{\\partial}{\\partial\\beta}\\left(\\frac\\pi2\\beta^{-1/2}e^{-\\sqrt\\beta x}\\right)=\\frac\\pi2\\left(\\frac12\\beta^{-3/2}+\\frac{x}{2\\beta}\\right)e^{-\\sqrt\\beta x}=\\frac{\\pi(1+bx)}{4b^3}e^{-bx}.\\]\n$b=1$ とおいて $\\int_0^\\infty\\frac{\\cos ax}{(1+a^2)^2}da=\\frac\\pi4(1+x)e^{-x}$．"
+   }
+  ],
+  "idea": {
+   "tex": "指数減衰とローレンツ型は余弦変換の対．パラメータ $b^2$ についての微分で，2 乗ローレンツ型の積分も一挙に得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ積分",
+   "余弦変換",
+   "ローレンツ型",
+   "指数減衰",
+   "パラメータ微分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-053",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 2,
+  "minutes": 25,
+  "theme": "チャープしたガウスパルスの時間帯域積",
+  "topic": "チャープしたガウスパルスの時間帯域積",
+  "statement": {
+   "tex": "光パルスの電場の包絡線（複素振幅）が\n\\[ f(t)=\\exp\\!\\left(-\\frac{t^2}{2\\tau^2}+\\frac{i\\beta t^2}{2}\\right)\\qquad(\\tau>0,\\ \\beta\\ \\text{は実定数}) \\]\nで与えられる（$\\beta\\neq0$ のとき瞬時周波数が時間とともに変化する「チャープ」パルス）．フーリエ変換を $\\tilde f(\\omega)=\\displaystyle\\int_{-\\infty}^{\\infty}f(t)e^{-i\\omega t}\\,dt$ と定義する．\n\\begin{enumerate}\n\\item $\\tilde f(\\omega)$ を求め，$|\\tilde f(\\omega)|^2$ がガウス型であることを示せ．\n\\item 時間幅 $\\Delta t$，周波数幅 $\\Delta\\omega$ をそれぞれ $|f(t)|^2$，$|\\tilde f(\\omega)|^2$ を分布とみたときの標準偏差（平均はともに 0）で定義する．積 $\\Delta t\\,\\Delta\\omega$ を求めよ．\n\\item スペクトル $|\\tilde f(\\omega)|^2$ を変えずに位相だけを補正してチャープを取り除くと，パルスの時間幅は何分の 1 に圧縮されるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tilde f(\\omega)=\\sqrt{\\pi/\\alpha}\\,e^{-\\omega^2/4\\alpha}$，$\\alpha=\\frac{1}{2\\tau^2}-\\frac{i\\beta}{2}$；$|\\tilde f|^2\\propto\\exp\\!\\left[-\\frac{\\tau^2\\omega^2}{1+\\beta^2\\tau^4}\\right]$　(2) $\\Delta t\\,\\Delta\\omega=\\frac12\\sqrt{1+\\beta^2\\tau^4}$　(3) $1/\\sqrt{1+\\beta^2\\tau^4}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\alpha=\\dfrac{1}{2\\tau^2}-\\dfrac{i\\beta}{2}$（$\\mathrm{Re}\\,\\alpha>0$）とおくと $f(t)=e^{-\\alpha t^2}$．平方完成\n\\[ -\\alpha t^2-i\\omega t=-\\alpha\\left(t+\\frac{i\\omega}{2\\alpha}\\right)^2-\\frac{\\omega^2}{4\\alpha} \\]\nを用い，積分路を複素平面内で平行移動しても（$\\mathrm{Re}\\,\\alpha>0$ なので無限遠の寄与は 0）値は変わらないから\n\\[ \\tilde f(\\omega)=\\sqrt{\\frac{\\pi}{\\alpha}}\\,e^{-\\omega^2/4\\alpha}. \\]\n$\\dfrac1\\alpha=\\dfrac{\\alpha^*}{|\\alpha|^2}$，$|\\alpha|^2=\\dfrac{1+\\beta^2\\tau^4}{4\\tau^4}$ より $\\mathrm{Re}\\dfrac1\\alpha=\\dfrac{2\\tau^2}{1+\\beta^2\\tau^4}$．よって\n\\[ |\\tilde f(\\omega)|^2=\\frac{\\pi}{|\\alpha|}\\exp\\!\\left[-\\frac{\\omega^2}{2}\\mathrm{Re}\\frac1\\alpha\\right]=\\frac{\\pi}{|\\alpha|}\\exp\\!\\left[-\\frac{\\tau^2\\omega^2}{1+\\beta^2\\tau^4}\\right] \\]\nとなりガウス型である．\n\n(2) $|f(t)|^2=e^{-t^2/\\tau^2}$ は分散 $\\tau^2/2$ のガウス分布なので $\\Delta t=\\tau/\\sqrt2$．$|\\tilde f|^2\\propto e^{-\\omega^2/(2\\sigma^2)}$ と比べて $\\sigma^2=\\dfrac{1+\\beta^2\\tau^4}{2\\tau^2}$，$\\Delta\\omega=\\dfrac{\\sqrt{1+\\beta^2\\tau^4}}{\\sqrt2\\,\\tau}$．したがって\n\\[ \\Delta t\\,\\Delta\\omega=\\frac12\\sqrt{1+\\beta^2\\tau^4}\\ \\ge\\ \\frac12 . \\]\n等号はチャープのない $\\beta=0$（ガウス分布のフーリエ変換が再びガウス分布で幅が逆数になる場合）に限る．\n\n(3) 位相補正後はスペクトル幅 $\\Delta\\omega$ をもつチャープなしガウスパルスになり，時間幅は最小値 $\\Delta t'=\\dfrac{1}{2\\Delta\\omega}=\\dfrac{\\tau}{\\sqrt2\\sqrt{1+\\beta^2\\tau^4}}$．よって $\\Delta t'/\\Delta t=1/\\sqrt{1+\\beta^2\\tau^4}$ 倍に圧縮される（チャープパルス増幅の原理）．"
+   }
+  ],
+  "idea": {
+   "tex": "ガウス関数のフーリエ変換は複素パラメータ $\\alpha$ でも平方完成で求まり，チャープは時間幅を変えずにスペクトル幅だけを広げるため時間帯域積が最小値 $1/2$ から $\\frac12\\sqrt{1+\\beta^2\\tau^4}$ に増える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta t\\,\\Delta\\omega$：((1)/(2)) sqrt(1+ β ^(2) τ ^(4))\n(3) 1/sqrt(1+β^2τ^4)"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "ガウス分布",
+   "チャープ",
+   "時間帯域積",
+   "不確定性関係",
+   "パルス圧縮"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PM-05-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -479,6 +2380,707 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-054",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "奇関数拡張の滑らかさと正弦係数の減衰",
+  "topic": "奇関数拡張の滑らかさと正弦係数の減衰",
+  "statement": {
+   "tex": "$0\\le x\\le L$ で定義された滑らかな関数 $f(x)$（$f(0)=f(L)=0$）の正弦級数 $f(x)=\\sum_{n\\ge1}b_n\\sin\\frac{n\\pi x}{L}$ を考える．\n\\begin{enumerate}\n\\item $f(x)=x(L-x)$ の $b_n$ を求め，$b_n=O(n^{-3})$ であることを確かめよ．$x=L/2$ を代入して $\\displaystyle\\sum_{j=0}^\\infty\\frac{(-1)^j}{(2j+1)^3}$ の値を求めよ．\n\\item 部分積分を繰り返すことにより，$b_n$ の $1/n^3$ の項が $f''(0)$ と $f''(L)$ だけで決まることを示せ（$1/n^3$ の係数を具体的に書け）．これを $f$ を原点対称に拡張して得られる周期 $2L$ の関数 $\\tilde f$ の滑らかさの言葉で解釈せよ．\n\\item $f(0)=f(L)=0$，$f''(0)=f''(L)=0$，$f'(0)=1$ を満たす最低次の多項式 $f$ を求め，その $b_n$ を計算せよ．さらにそれを用いて $\\displaystyle\\sum_{j=0}^\\infty\\frac{(-1)^j}{(2j+1)^5}$ の値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $b_n=\\dfrac{4L^2(1-(-1)^n)}{\\pi^3n^3}$，和 $=\\dfrac{\\pi^3}{32}$　(2) $b_n=\\dfrac{2L^2}{\\pi^3n^3}\\left[(-1)^{n}f''(L)-f''(0)\\right]+O(n^{-5})$　(3) $f=x-\\dfrac{2x^3}{L^2}+\\dfrac{x^4}{L^3}$，$b_n=\\dfrac{48L(1-(-1)^n)}{\\pi^5n^5}$，和 $=\\dfrac{5\\pi^5}{1536}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $b_n=\\dfrac2L\\int_0^Lx(L-x)\\sin\\frac{n\\pi x}Ldx=\\dfrac{4L^2}{\\pi^3n^3}\\left(1-(-1)^n\\right)$（奇数 $n$ で $\\frac{8L^2}{\\pi^3n^3}$，偶数で $0$）．$x=L/2$ で $\\sin\\frac{n\\pi}{2}=(-1)^j\\ (n=2j+1)$，$f(L/2)=L^2/4$ だから\n\\[ \\frac{L^2}4=\\frac{8L^2}{\\pi^3}\\sum_j\\frac{(-1)^j}{(2j+1)^3}\\ \\Rightarrow\\ \\sum_j\\frac{(-1)^j}{(2j+1)^3}=\\frac{\\pi^3}{32}. \\]\n\n(2) $q=n\\pi/L$ とする．部分積分を 2 回行うと，$f(0)=f(L)=0$ より境界項が消え\n\\[ \\int_0^Lf\\sin qx\\,dx=\\Big[-\\tfrac{f\\cos qx}{q}\\Big]_0^L+\\tfrac1q\\int_0^Lf'\\cos qx\\,dx=-\\frac1{q^2}\\int_0^Lf''\\sin qx\\,dx. \\]\nさらに 1 回部分積分すると $-\\dfrac1{q^2}\\int_0^Lf''\\sin qx\\,dx=\\dfrac1{q^3}\\left[f''(L)(-1)^n-f''(0)\\right]-\\dfrac1{q^3}\\int_0^Lf'''\\cos qx\\,dx$，最後の積分を更に部分積分すると $O(q^{-4})$ の項は $\\sin$ の境界値で消え，$O(q^{-5})$ が残る．よって\n\\[ b_n=\\frac{2L^2}{\\pi^3n^3}\\left[(-1)^nf''(L)-f''(0)\\right]+O(n^{-5}). \\]\n解釈：$\\tilde f$ は奇関数なので $\\tilde f,\\tilde f'$ は $x=0,\\pm L$ で自動的に連続だが，$\\tilde f''$ は奇関数なので $f''(0)\\ne0$ や $f''(L)\\neq0$ のとき $x=0,L$ で $\\pm f''$ の跳びをもつ．2 階導関数の不連続が $n^{-3}$ の減衰を生む．（(1) では $f''=-2$ なので $b_n=\\frac{2L^2}{\\pi^3n^3}(-2(-1)^n+2)$ で一致する．）\n\n(3) $f''(0)=0$ と $f(0)=0$ より $f=ax+bx^3+cx^4+\\cdots$．3 次以下では 4 条件を満たせないので 4 次を試す．$f''(L)=6bL+12cL^2=0$，$f(L)=aL+bL^3+cL^4=0$，$a=1$ を解いて $b=-2/L^2,\\ c=1/L^3$：\n\\[ f(x)=x-\\frac{2x^3}{L^2}+\\frac{x^4}{L^3}=\\frac{x(L-x)(L^2+Lx-x^2)}{L^3}. \\]\n$f''''=24/L^3$ なので部分積分を 4 回行うと $b_n=\\dfrac2L\\cdot\\dfrac{1}{q^5}\\cdot\\dfrac{24}{L^3}(1-(-1)^n)=\\dfrac{48L(1-(-1)^n)}{\\pi^5n^5}$．$x=L/2$ で $f(L/2)=\\frac L2-\\frac L4+\\frac L{16}=\\frac{5L}{16}$ なので\n\\[ \\frac{5L}{16}=\\frac{96L}{\\pi^5}\\sum_j\\frac{(-1)^j}{(2j+1)^5}\\ \\Rightarrow\\ \\sum_j\\frac{(-1)^j}{(2j+1)^5}=\\frac{5\\pi^5}{1536}. \\]"
+   }
+  ],
+  "idea": {
+   "tex": "正弦級数の係数の減衰の速さは，原点対称拡張した周期関数が何階まで連続かで決まる．境界で偶数階導関数を消すと収束が劇的に速くなり，それを使って級数の値も得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $b_n$：((4 L ^(2)(1-(-1)^(n)))/(pi ^(3) n ^(3))) ; 和：((pi ^(3))/(32))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "正弦級数",
+   "奇関数拡張",
+   "係数の減衰",
+   "滑らかさ",
+   "級数の和"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-055",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "ハンマーで叩いた弦のモードエネルギー",
+  "topic": "ハンマーで叩いた弦のモードエネルギー",
+  "statement": {
+   "tex": "線密度 $\\rho$，張力 $T$，長さ $L$ の弦（両端固定，$v=\\sqrt{T/\\rho}$）が静止している．時刻 $t=0$ に，幅 $b$ のハンマーで区間 $|x-x_0|<b/2$（$b/2<x_0<L-b/2$）を一様に叩き，弦に力積 $J$ を与えた．すなわち初期条件は $u(x,0)=0$，\n\\[ \\frac{\\partial u}{\\partial t}(x,0)=v_0(x)=\\begin{cases}J/(\\rho b)&(|x-x_0|<b/2)\\\\0&(\\text{それ以外})\\end{cases} \\]\nである．解を $u=\\sum_nA_n\\sin(k_nx)\\cos(\\omega_nt+\\delta_n)$（$k_n=n\\pi/L$，$\\omega_n=vk_n$）とする．\n\\begin{enumerate}\n\\item $A_n\\sin\\delta_n$ を求めよ（$A_n\\cos\\delta_n=0$）．\n\\item 第 $n$ モードの力学的エネルギー $E_n$ を求めよ．ただし弦のエネルギーは $\\displaystyle\\int_0^L\\left[\\frac\\rho2u_t^2+\\frac T2u_x^2\\right]dx$ とする．\n\\item $\\sum_nE_n$ がハンマーが与えた運動エネルギーに等しいことを，$E_n$ の和を直接計算せずに示せ．また $b\\to0$ の極限で $E_n$ がどうなるかを述べ，総エネルギーが発散することの意味を説明せよ．\n\\item $x_0=L/7$ のとき，$b\\to0$ でエネルギーが入らない倍音をすべて答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A_n\\sin\\delta_n=-\\dfrac{4J}{\\rho\\,\\omega_n L\\,k_nb}\\sin(k_nx_0)\\sin\\dfrac{k_nb}{2}$　(2) $E_n=\\dfrac{J^2}{\\rho L}\\sin^2(k_nx_0)\\left[\\dfrac{\\sin(k_nb/2)}{k_nb/2}\\right]^2$　(3) $\\sum E_n=J^2/(2\\rho b)$．$b\\to0$ で $E_n\\to\\frac{J^2}{\\rho L}\\sin^2k_nx_0$ は減衰せず総和は発散　(4) $n=7,14,21,\\dots$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 基本問題の公式 $A_n\\sin\\delta_n=-\\dfrac{2}{L\\omega_n}\\int_0^Lv_0\\sin k_nx\\,dx$ に代入：\n\\[ \\int_{x_0-b/2}^{x_0+b/2}\\frac{J}{\\rho b}\\sin k_nx\\,dx=\\frac{J}{\\rho b}\\cdot\\frac{2}{k_n}\\sin k_nx_0\\sin\\frac{k_nb}2, \\]\nよって $A_n\\sin\\delta_n=-\\dfrac{4J}{\\rho\\omega_nLk_nb}\\sin k_nx_0\\sin\\dfrac{k_nb}2$．\n\n(2) 第 $n$ モード $u_n=A_n\\sin k_nx\\cos(\\omega_nt+\\delta_n)$ のエネルギーは，$\\int_0^L\\sin^2=\\int_0^L\\cos^2=L/2$ と $Tk_n^2=\\rho\\omega_n^2$ より\n\\[ E_n=\\frac{\\rho L}{4}\\omega_n^2A_n^2\\left[\\sin^2(\\cdot)+\\cos^2(\\cdot)\\right]=\\frac{\\rho L}{4}\\omega_n^2A_n^2. \\]\n$A_n\\cos\\delta_n=0$ より $A_n^2=(A_n\\sin\\delta_n)^2$ なので\n\\[ E_n=\\frac{\\rho L}{4}\\cdot\\frac{16J^2}{\\rho^2L^2k_n^2b^2}\\sin^2k_nx_0\\sin^2\\frac{k_nb}{2}=\\frac{J^2}{\\rho L}\\sin^2(k_nx_0)\\left[\\frac{\\sin(k_nb/2)}{k_nb/2}\\right]^2. \\]\n\n(3) 異なるモードの交差項は直交性で消えるので，全エネルギー $=\\sum_nE_n$ であり，これは保存される．$t=0$ では $u=0$ なので位置エネルギーは $0$，運動エネルギーは $\\frac\\rho2\\int v_0^2dx=\\frac\\rho2\\cdot b\\cdot\\frac{J^2}{\\rho^2b^2}=\\frac{J^2}{2\\rho b}$．よって $\\sum_nE_n=\\dfrac{J^2}{2\\rho b}$（これは $\\sin$ 級数のパーセバルの等式そのもの）．\n$b\\to0$ では $\\frac{\\sin(k_nb/2)}{k_nb/2}\\to1$ で $E_n\\to\\frac{J^2}{\\rho L}\\sin^2k_nx_0$．これは $n$ について減衰しないので $\\sum E_n=\\infty$．有限の力積を無限に小さい領域に与えると運動エネルギー $J^2/(2\\rho b)$ が発散するためであり，実際のハンマーでは幅 $b$ によって $k_n\\gtrsim 1/b$ の高い倍音がカットされる（$\\mathrm{sinc}^2$ 因子）．\n\n(4) $E_n\\propto\\sin^2(n\\pi/7)=0 \\iff n$ が $7$ の倍数．$n=7,14,21,\\dots$（打点が第 $7$ 倍音の節に当たる．ピアノで不協和な第 7 倍音を抑える工夫として知られる．）"
+   }
+  ],
+  "idea": {
+   "tex": "力積の初速度分布をフーリエ展開すると，モードエネルギーは打点での $\\sin^2$ と打撃幅の $\\mathrm{sinc}^2$ の積になる．パーセバルの等式がエネルギー保存そのもので，点打撃の極限では紫外発散が生じる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $A_n\\sin\\delta_n$：-((4 J)/(ρ ω_n L k_n b)) sin (k_n x_0) sin ((k_n b)/(2))\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "初期値問題",
+   "固定端",
+   "モードエネルギー",
+   "パーセバル",
+   "ピアノ",
+   "倍音"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-056",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "矩形波のギブス現象の定量評価",
+  "topic": "矩形波のギブス現象の定量評価",
+  "statement": {
+   "tex": "信号発生器が周期 $2L$ の矩形波電圧\n\\[ f(x)=\\begin{cases}h & (0<x<L)\\\\ -h & (-L<x<0)\\end{cases} \\]\nを出力する（$x$ は時間に相当する変数）．この矩形波のフーリエ級数の奇数次高調波を低い方から $N$ 個だけ足し合わせた部分和を $S_N(x)$ とする．\n\\begin{enumerate}\n\\item $f(x)$ のフーリエ級数を求め，$S_N(x)$ を書け．\n\\item $S_N'(x)=\\dfrac{2h}{L}\\,\\dfrac{\\sin(2N\\pi x/L)}{\\sin(\\pi x/L)}$ を示し，$x>0$ で $S_N$ が最初に極大となる位置 $x_N$ を求めよ．\n\\item $N\\to\\infty$ のとき $S_N(x_N)\\to\\dfrac{2h}{\\pi}\\displaystyle\\int_0^{\\pi}\\frac{\\sin u}{u}\\,du$ となることを示せ．$\\displaystyle\\int_0^\\pi\\frac{\\sin u}{u}du\\approx1.8519$ を用いて，オーバーシュートが跳び $2h$ の約何 \\% になるか答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f=\\frac{4h}{\\pi}\\sum_{l\\ge0}\\frac{\\sin((2l+1)\\pi x/L)}{2l+1}$，$S_N=\\frac{4h}{\\pi}\\sum_{l=0}^{N-1}\\frac{\\sin((2l+1)\\pi x/L)}{2l+1}$　(2) $x_N=\\frac{L}{2N}$　(3) $S_N(x_N)\\to1.179h$，オーバーシュート $0.179h$ は跳び $2h$ の約 9\\%"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f$ は奇関数なので $A_0=A_n=0$．\n\\[ B_n=\\frac2L\\int_0^L h\\sin\\frac{n\\pi x}{L}dx=\\frac{2h}{n\\pi}\\{1-(-1)^n\\} \\]\nより奇数 $n=2l+1$ のみ $B_n=\\dfrac{4h}{(2l+1)\\pi}$．よって\n\\[ S_N(x)=\\frac{4h}{\\pi}\\sum_{l=0}^{N-1}\\frac{1}{2l+1}\\sin\\frac{(2l+1)\\pi x}{L}. \\]\n\n(2) $\\theta=\\pi x/L$ とおくと $S_N'(x)=\\dfrac{4h}{L}\\sum_{l=0}^{N-1}\\cos(2l+1)\\theta$．\n$2\\sin\\theta\\cos(2l+1)\\theta=\\sin(2l+2)\\theta-\\sin 2l\\theta$ の和は望遠鏡的に消えて $\\sin2N\\theta$ が残るので\n\\[ \\sum_{l=0}^{N-1}\\cos(2l+1)\\theta=\\frac{\\sin2N\\theta}{2\\sin\\theta},\\qquad S_N'(x)=\\frac{2h}{L}\\frac{\\sin(2N\\pi x/L)}{\\sin(\\pi x/L)}. \\]\n$0<x<L$ で分母は正，分子は $x=L/(2N)$ で初めて正から負に変わるので，最初の極大は $x_N=\\dfrac{L}{2N}$．\n\n(3) $S_N(0)=0$ だから\n\\[ S_N(x_N)=\\int_0^{x_N}S_N'(x)dx=\\frac{2h}{L}\\int_0^{L/2N}\\frac{\\sin(2N\\pi x/L)}{\\sin(\\pi x/L)}dx . \\]\n$u=2N\\pi x/L$ と置換すると $dx=\\dfrac{L}{2N\\pi}du$，$\\sin(\\pi x/L)=\\sin\\dfrac{u}{2N}$ で\n\\[ S_N(x_N)=\\frac{h}{N\\pi}\\int_0^\\pi\\frac{\\sin u}{\\sin(u/2N)}du\\ \\xrightarrow{N\\to\\infty}\\ \\frac{h}{N\\pi}\\int_0^\\pi\\frac{\\sin u}{u/2N}du=\\frac{2h}{\\pi}\\int_0^\\pi\\frac{\\sin u}{u}du . \\]\n（積分区間は有界で $\\sin(u/2N)\\cdot 2N/u\\to1$ が一様なので極限と積分は交換できる．）数値は $\\dfrac{2h}{\\pi}\\times1.8519\\approx1.1790h$．\n真の値 $h$ を $0.179h$ だけ超え，これは跳び $2h$ の約 $8.9\\%$（約 9\\%）である．$N$ を増やしても行き過ぎ位置 $x_N=L/(2N)$ は不連続点に近づくだけで，行き過ぎ量は 0 にならない（ギブス現象）．"
+   }
+  ],
+  "idea": {
+   "tex": "部分和の導関数がディリクレ核型の閉じた形になることを使い，最初の極大値を積分で表してスケール極限をとると，行き過ぎ量が $N$ によらない定数 $\\frac{2}{\\pi}\\mathrm{Si}(\\pi)$ に収束する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $x_N$：((L)/(2 N))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "矩形波",
+   "ギブス現象",
+   "部分和",
+   "ディリクレ核",
+   "正弦積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-057",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "1/3点で弾いた弦の欠ける倍音とエネルギー配分",
+  "topic": "1/3点で弾いた弦の欠ける倍音とエネルギー配分",
+  "statement": {
+   "tex": "両端 $x=0,\\ell$ を固定した張力 $T$，線密度 $\\rho$ の弦の微小振動 $u(x,t)$ は波動方程式 $\\rho u_{tt}=Tu_{xx}$ に従う．時刻 $t=0$ に，弦を $x=\\ell/3$ の点で高さ $h$ まで引き上げた三角形\n\\[ u(x,0)=\\begin{cases}\\dfrac{3h}{\\ell}x & (0\\le x\\le \\ell/3)\\\\[2mm] \\dfrac{3h}{2\\ell}(\\ell-x) & (\\ell/3\\le x\\le\\ell)\\end{cases} \\]\nの形から静かに放す（$u_t(x,0)=0$）．\n\\begin{enumerate}\n\\item $u(x,t)$ をフーリエ正弦級数で求めよ．\n\\item 第 $3,6,9,\\dots$ 倍音が全く励起されないことを示し，その理由を述べよ．\n\\item 弦の全力学的エネルギー $E=\\displaystyle\\int_0^\\ell\\left(\\frac{\\rho}{2}u_t^2+\\frac T2u_x^2\\right)dx$ を求め，各モード $n$ のエネルギー $E_n$ を求めよ．\n\\item 全エネルギーのうち基本振動（$n=1$）が担う割合を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=\\sum_{n\\ge1}b_n\\sin\\frac{n\\pi x}{\\ell}\\cos\\frac{n\\pi vt}{\\ell}$，$b_n=\\frac{9h}{n^2\\pi^2}\\sin\\frac{n\\pi}{3}$，$v=\\sqrt{T/\\rho}$　(2) $\\sin(n\\pi/3)=0$ ($n\\equiv0\\bmod3$)：弾いた点が第 $3m$ 倍音の節　(3) $E=\\frac{9Th^2}{4\\ell}$，$E_n=\\frac{81Th^2\\sin^2(n\\pi/3)}{4\\pi^2n^2\\ell}$　(4) $\\frac{27}{4\\pi^2}\\approx0.684$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 変数分離と固定端条件から $u=\\sum_n\\sin k_nx\\,(b_n\\cos\\omega_nt+b_n'\\sin\\omega_nt)$，$k_n=n\\pi/\\ell$，$\\omega_n=vk_n$，$v=\\sqrt{T/\\rho}$．$u_t(x,0)=0$ より $b_n'=0$．$b_n$ は $u(x,0)$ の正弦級数の係数で，$a=\\ell/3$ とおくと\n\\[ b_n=\\frac2\\ell\\left[\\int_0^{a}\\frac{h x}{a}\\sin k_nx\\,dx+\\int_a^\\ell\\frac{h(\\ell-x)}{\\ell-a}\\sin k_nx\\,dx\\right]. \\]\n部分積分すると境界項は打ち消し合い（$x=a$ で連続），$\\int_0^a\\frac{x}{a}\\sin k_nx\\,dx=-\\frac{\\cos k_na}{k_n}+\\frac{\\sin k_na}{ak_n^2}$，$\\int_a^\\ell\\frac{\\ell-x}{\\ell-a}\\sin k_nx\\,dx=\\frac{\\cos k_na}{k_n}+\\frac{\\sin k_na}{(\\ell-a)k_n^2}$ より\n\\[ b_n=\\frac{2h}{\\ell k_n^2}\\sin k_na\\left(\\frac1a+\\frac1{\\ell-a}\\right)=\\frac{2h\\ell^2\\sin(n\\pi a/\\ell)}{n^2\\pi^2a(\\ell-a)}=\\frac{9h}{n^2\\pi^2}\\sin\\frac{n\\pi}{3}. \\]\n\n(2) $n=3m$ なら $\\sin(m\\pi)=0$ で $b_n=0$．第 $3m$ 倍音のモード関数 $\\sin(3m\\pi x/\\ell)$ は $x=\\ell/3$ に節をもつ．初期形状の「折れ曲がり」（曲率の集中した点）が節にあるとそのモードには力が伝わらない：$b_n\\propto\\int u''(x,0)\\sin k_nx\\,dx$ で $u''(x,0)$ は $x=\\ell/3$ のデルタ関数だからである（ヤングの法則）．\n\n(3) $t=0$ では運動エネルギーは 0 で，\n\\[ E=\\frac T2\\int_0^\\ell u_x^2dx=\\frac T2\\left[\\left(\\frac{3h}{\\ell}\\right)^2\\frac\\ell3+\\left(\\frac{3h}{2\\ell}\\right)^2\\frac{2\\ell}{3}\\right]=\\frac T2\\cdot\\frac{9h^2}{2\\ell}=\\frac{9Th^2}{4\\ell}. \\]\nモードの直交性より $E=\\sum E_n$ と分解され，モード $n$ の位置エネルギー最大値（$t=0$）は\n\\[ E_n=\\frac T2k_n^2b_n^2\\int_0^\\ell\\sin^2k_nx\\,dx=\\frac{T\\pi^2n^2}{4\\ell}b_n^2=\\frac{81Th^2}{4\\pi^2\\ell}\\frac{\\sin^2(n\\pi/3)}{n^2}. \\]\n\n(4) $\\sin^2(\\pi/3)=3/4$ より $E_1=\\dfrac{243Th^2}{16\\pi^2\\ell}$．\n\\[ \\frac{E_1}{E}=\\frac{243}{16\\pi^2}\\cdot\\frac{4}{9}=\\frac{27}{4\\pi^2}\\approx0.684 . \\]\n約 68\\% が基本振動に入る．（検算：$\\sum_nE_n=\\frac{81Th^2}{4\\pi^2\\ell}\\cdot\\frac34\\sum_{3\\nmid n}\\frac1{n^2}=\\frac{243Th^2}{16\\pi^2\\ell}\\cdot\\frac89\\cdot\\frac{\\pi^2}{6}=\\frac{9Th^2}{4\\ell}$ で $E$ と一致．）"
+   }
+  ],
+  "idea": {
+   "tex": "弾く位置が倍音の節に当たるとその倍音が消える（ヤングの法則）．モードの直交性で全エネルギーがモードごとに分解でき，基本振動の割合が $27/(4\\pi^2)$ と求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) ≈0.684"
+  },
+  "methods": [],
+  "tags": [
+   "波動方程式",
+   "弦の振動",
+   "フーリエ正弦級数",
+   "倍音",
+   "エネルギー分配",
+   "ヤングの法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-058",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "三次多項式の展開とζ(6)",
+  "topic": "三次多項式の展開とζ(6)",
+  "statement": {
+   "tex": "周期 $2\\pi$ の周期関数 $f(x)=x(\\pi^2-x^2)$（$-\\pi\\le x<\\pi$）を考える．\n\\begin{enumerate}\n\\item $f(x)$ とその導関数 $f'(x)$ は周期関数として全実数上で連続であることを確かめ，$f(x)$ をフーリエ級数に展開せよ．\n\\item (1) の結果で $x=\\pi/2$ とおき，$\\displaystyle\\sum_{k=0}^\\infty\\frac{(-1)^k}{(2k+1)^3}$ を求めよ．\n\\item パーセバルの等式 $\\dfrac1\\pi\\displaystyle\\int_{-\\pi}^{\\pi}f^2dx=2a_0^2+\\sum_{n\\ge1}(a_n^2+b_n^2)$ を用いて $\\displaystyle\\sum_{n=1}^\\infty\\frac1{n^6}$ を求めよ．\n\\item フーリエ係数が $n^{-3}$ で減衰する理由を，(1) の滑らかさと関係づけて説明せよ（$f''$ の性質に着目せよ）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f=12\\sum_{n\\ge1}\\frac{(-1)^{n+1}}{n^3}\\sin nx$　(2) $\\frac{\\pi^3}{32}$　(3) $\\frac{\\pi^6}{945}$　(4) $f''=-6x$ が周期関数として $x=\\pm\\pi$ で不連続（跳び $12\\pi$）なため"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f(\\pi)=f(-\\pi)=0$ より $f$ は連続．$f'=\\pi^2-3x^2$ で $f'(\\pm\\pi)=-2\\pi^2$ が一致するので $f'$ も連続．\n$f$ は奇関数なので $a_0=a_n=0$，\n\\[ b_n=\\frac2\\pi\\int_0^\\pi(\\pi^2x-x^3)\\sin nx\\,dx . \\]\n部分積分を繰り返す（$g=\\pi^2x-x^3$，$g(0)=g(\\pi)=0$，$g''=-6x$，$g'''=-6$）：\n\\[ \\int_0^\\pi g\\sin nx\\,dx=\\left[-\\frac{g\\cos nx}{n}\\right]_0^\\pi+\\frac1n\\int_0^\\pi g'\\cos nx\\,dx=\\frac1n\\left[\\frac{g'\\sin nx}{n}\\right]_0^\\pi-\\frac1{n^2}\\int_0^\\pi g''\\sin nx\\,dx \\]\n\\[ =\\frac{6}{n^2}\\int_0^\\pi x\\sin nx\\,dx=\\frac{6}{n^2}\\cdot\\frac{\\pi(-1)^{n+1}}{n}. \\]\nよって $b_n=\\dfrac{12(-1)^{n+1}}{n^3}$，$f(x)=12\\displaystyle\\sum_{n=1}^\\infty\\frac{(-1)^{n+1}}{n^3}\\sin nx$．\n\n(2) $f(\\pi/2)=\\dfrac\\pi2\\cdot\\dfrac{3\\pi^2}{4}=\\dfrac{3\\pi^3}{8}$．$\\sin(n\\pi/2)$ は偶数 $n$ で 0，$n=2k+1$ で $(-1)^k$ で，$(-1)^{n+1}=1$．よって\n\\[ \\frac{3\\pi^3}{8}=12\\sum_{k\\ge0}\\frac{(-1)^k}{(2k+1)^3}\\quad\\Rightarrow\\quad\\sum_{k=0}^\\infty\\frac{(-1)^k}{(2k+1)^3}=\\frac{\\pi^3}{32}. \\]\n\n(3) $\\displaystyle\\int_{-\\pi}^{\\pi}x^2(\\pi^2-x^2)^2dx=2\\int_0^\\pi(\\pi^4x^2-2\\pi^2x^4+x^6)dx=2\\pi^7\\left(\\frac13-\\frac25+\\frac17\\right)=\\frac{16\\pi^7}{105}$．\nパーセバルより $\\dfrac{16\\pi^6}{105}=144\\displaystyle\\sum\\frac1{n^6}$，すなわち\n\\[ \\sum_{n=1}^\\infty\\frac1{n^6}=\\frac{16\\pi^6}{105\\cdot144}=\\frac{\\pi^6}{945}. \\]\n\n(4) 部分積分 1 回ごとに因子 $1/n$ が出る．境界項が消えるのは $f,f'$ が周期的に連続だからで，2 回目までは境界項が 0．$f''=-6x$ は $x=\\pi$ と $-\\pi$ で値 $\\mp6\\pi$ が食い違い，周期関数として跳び $12\\pi$ の不連続をもつ．3 回目の部分積分でこの跳びが境界項として残り，$b_n\\sim n^{-3}$ となる．一般に $f^{(k)}$ が初めて不連続になる $k$ に対し係数は $n^{-(k+1)}$ で減衰する（$x^2$ 型なら $f'$ が不連続で $n^{-2}$，矩形波なら $f$ 自体が不連続で $n^{-1}$）．"
+   }
+  ],
+  "idea": {
+   "tex": "端点で $f,f'$ が連続につながる奇多項式を選ぶと係数が $n^{-3}$ で減衰し，値の代入から $\\beta(3)=\\pi^3/32$，パーセバルから $\\zeta(6)=\\pi^6/945$ が得られる．係数の減衰の速さは周期関数としての滑らかさで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((pi ^(3))/(32))\n(3) ((pi ^(6))/(945))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ級数",
+   "パーセバルの等式",
+   "ゼータ関数",
+   "級数の和",
+   "係数の減衰"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-059",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 40,
+  "theme": "三角波で駆動される振動子と共鳴条件",
+  "topic": "三角波で駆動される振動子と共鳴条件",
+  "statement": {
+   "tex": "固有角振動数 $\\omega_0$ の減衰のない調和振動子が，周期 $2\\pi/\\Omega$ の三角波の力で駆動される：\n\\[ \\ddot x+\\omega_0^2x=a\\,g(\\Omega t),\\qquad g(\\theta)=\\frac{2|\\theta|}{\\pi}-1\\quad(-\\pi\\le\\theta<\\pi),\\ g(\\theta+2\\pi)=g(\\theta) \\]\n（$a>0$ は定数）．\n\\begin{enumerate}\n\\item $g(\\theta)$ をフーリエ級数に展開せよ．\n\\item 周期 $2\\pi/\\Omega$ の解をフーリエ級数で求めよ．$\\omega_0/\\Omega$ がどのような値のとき，周期解が（フーリエ級数として）存在しなくなるか．$\\omega_0=2\\Omega$ で共鳴が起こらない理由も述べよ．\n\\item $\\omega_0=2\\Omega$ とする．$0\\le t\\le\\pi/\\Omega$ で微分方程式を直接解き，(2) のフーリエ級数解の閉じた形を求めよ．ただし周期解は一意ではないので，角振動数 $2\\Omega$ の成分を含まないものを選べ．\n\\item (2)(3) を $t=0$ で比較して $\\displaystyle\\sum_{n=1}^\\infty\\frac{1}{(2n-1)^2\\{(2n-1)^2-4\\}}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $g=-\\frac{8}{\\pi^2}\\sum_{k\\,\\text{odd}}\\frac{\\cos k\\theta}{k^2}$　(2) $x=-\\frac{8a}{\\pi^2}\\sum_{k\\,\\text{odd}}\\frac{\\cos k\\Omega t}{k^2(\\omega_0^2-k^2\\Omega^2)}$；$\\omega_0/\\Omega$ が奇数のとき共鳴　(3) $x=\\frac{a}{4\\Omega^2}\\left(\\frac{2\\Omega t}{\\pi}-1\\right)-\\frac{a}{4\\pi\\Omega^2}\\sin2\\Omega t$　(4) $-\\frac{\\pi^2}{32}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $g$ は偶関数で平均 $\\frac1\\pi\\int_0^\\pi(\\frac{2\\theta}{\\pi}-1)d\\theta=0$．$n\\ge1$ で\n\\[ a_n=\\frac2\\pi\\int_0^\\pi\\left(\\frac{2\\theta}{\\pi}-1\\right)\\cos n\\theta\\,d\\theta=\\frac{4}{\\pi^2}\\int_0^\\pi\\theta\\cos n\\theta\\,d\\theta=\\frac{4}{\\pi^2}\\cdot\\frac{(-1)^n-1}{n^2}. \\]\n奇数 $n=k$ で $-\\dfrac{8}{\\pi^2k^2}$，偶数で 0．$g(\\theta)=-\\dfrac8{\\pi^2}\\displaystyle\\sum_{k=1,3,5,\\dots}\\frac{\\cos k\\theta}{k^2}$．\n\n(2) $x=\\sum_kX_k\\cos k\\Omega t$ を代入すると $(\\omega_0^2-k^2\\Omega^2)X_k=-\\dfrac{8a}{\\pi^2k^2}$．\n\\[ x(t)=-\\frac{8a}{\\pi^2}\\sum_{k\\ \\text{odd}}\\frac{\\cos k\\Omega t}{k^2(\\omega_0^2-k^2\\Omega^2)} . \\]\n$\\omega_0=k\\Omega$（$k$ 奇数）では分母が 0 となり周期解は存在しない（振幅が線形に増大する共鳴）．三角波は半周期ずらすと符号が反転する（$g(\\theta+\\pi)=-g(\\theta)$）ため偶数次高調波を含まず，$\\omega_0=2\\Omega,4\\Omega,\\dots$ では力にその振動数成分がないので共鳴しない．\n\n(3) $\\Omega t=\\theta$ とし $0\\le t\\le\\pi/\\Omega$ では $\\ddot x+4\\Omega^2x=a\\left(\\frac{2\\Omega t}{\\pi}-1\\right)$．特解は $\\dfrac{a}{4\\Omega^2}\\left(\\dfrac{2\\Omega t}{\\pi}-1\\right)$ で\n\\[ x=\\frac{a}{4\\Omega^2}\\left(\\frac{2\\Omega t}{\\pi}-1\\right)+A\\cos2\\Omega t+B\\sin2\\Omega t . \\]\n解は偶関数（力が偶関数で，級数解も偶）なので $\\dot x(0)=0$：$\\dfrac{a}{2\\pi\\Omega}+2\\Omega B=0$，$B=-\\dfrac{a}{4\\pi\\Omega^2}$．このとき $\\dot x(\\pi/\\Omega)=\\dfrac{a}{2\\pi\\Omega}+2\\Omega B=0$ も成り立ち，偶関数として周期的に滑らかにつながる．$A$ は任意（$\\cos2\\Omega t$ 自身が周期 $2\\pi/\\Omega$ の自由振動）．\n$2\\Omega$ 成分を調べると，$\\int_0^\\pi\\left(\\frac{2\\theta}{\\pi}-1\\right)\\cos2\\theta\\,d\\theta=\\frac2\\pi\\left[\\frac{\\theta\\sin2\\theta}{2}+\\frac{\\cos2\\theta}{4}\\right]_0^\\pi=0$，$\\int_0^\\pi\\sin2\\theta\\cos2\\theta\\,d\\theta=0$ なので，$2\\Omega$ 成分は $A$ のみ．よってフーリエ級数解は $A=0$：\n\\[ x(t)=\\frac{a}{4\\Omega^2}\\left(\\frac{2\\Omega|t|}{\\pi}-1\\right)-\\frac{a}{4\\pi\\Omega^2}\\sin2\\Omega|t|\\quad(|t|\\le\\pi/\\Omega). \\]\n\n(4) (3) で $x(0)=-\\dfrac{a}{4\\Omega^2}$．(2) で $\\omega_0=2\\Omega$，$t=0$ とすると\n\\[ x(0)=-\\frac{8a}{\\pi^2\\Omega^2}\\sum_{k\\ \\text{odd}}\\frac{1}{k^2(4-k^2)}=\\frac{8a}{\\pi^2\\Omega^2}\\sum_{k\\ \\text{odd}}\\frac1{k^2(k^2-4)} . \\]\n等置して\n\\[ \\sum_{n=1}^\\infty\\frac1{(2n-1)^2\\{(2n-1)^2-4\\}}=-\\frac{\\pi^2}{32}. \\]\n（検算：$\\frac1{k^2(k^2-4)}=\\frac14\\left(\\frac1{k^2-4}-\\frac1{k^2}\\right)$，$\\sum_{k\\,\\text{odd}}\\frac1{k^2}=\\frac{\\pi^2}8$，$\\sum_{k\\,\\text{odd}}\\frac{1}{k^2-4}=\\sum_{n\\ge1}\\frac14\\left(\\frac1{2n-3}-\\frac1{2n+1}\\right)=\\frac14(-1+1)=0$ で一致．初項 $k=1$ が $-1/3$ と負であることに注意．）"
+   }
+  ],
+  "idea": {
+   "tex": "三角波は半周期反対称なので奇数次高調波しか含まず，偶数倍の固有振動数では共鳴しない．非共鳴時の周期解を直接解いた閉じた形と級数を比べると，非自明な級数和が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) -((pi ^(2))/(32))"
+  },
+  "methods": [],
+  "tags": [
+   "三角波",
+   "強制振動",
+   "共鳴",
+   "フーリエ級数",
+   "級数の和"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-060",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "フーリエ変換の固有関数としての調和振動子固有状態",
+  "topic": "フーリエ変換の固有関数としての調和振動子固有状態",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．$f(x)$ とその導関数が無限遠で十分速く 0 に収束する関数に対し，$\\mathcal F[f'](k)=ik\\hat f(k)$ が成り立つことは用いてよい．\n\\begin{enumerate}\n\\item $\\mathcal F[xf(x)](k)=i\\dfrac{d\\hat f}{dk}(k)$ を示せ．\n\\item 演算子 $A^\\dagger=x-\\dfrac{d}{dx}$ について，$\\mathcal F[A^\\dagger f](k)=-i\\left(k-\\dfrac{d}{dk}\\right)\\hat f(k)$ を示せ．\n\\item $\\phi_0(x)=e^{-x^2/2}$ が $\\hat\\phi_0=\\phi_0$ を満たすことを用いて，$\\phi_n=(A^\\dagger)^n\\phi_0$ は $\\hat\\phi_n(k)=(-i)^n\\phi_n(k)$ を満たすことを示せ．また $\\phi_n(x)=H_n(x)e^{-x^2/2}$（$H_n$ はエルミート多項式：$H_0=1$，$H_{n+1}=2xH_n-H_n'$）であることを確かめよ．\n\\item 調和振動子 $H=\\frac12(p^2+x^2)$（$\\hbar=m=\\omega=1$）の固有関数は $\\phi_n$ である．運動量表示の波動関数 $\\tilde\\psi(p)=\\hat\\psi(p)$ を用いて，$n$ 番目の固有状態の運動量分布 $|\\tilde\\phi_n(p)|^2$ と位置分布 $|\\phi_n(x)|^2$ の関係を述べよ．さらに，フーリエ変換 $\\mathcal F$ を 4 回続けて施すと恒等変換になることを示し，$\\mathcal F$ の固有値としてありうるものをすべて挙げよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2)(3) 証明（解説参照），$\\hat\\phi_n=(-i)^n\\phi_n$　(4) $|\\tilde\\phi_n(p)|^2=|\\phi_n(p)|^2$（位置と運動量で同じ形）．$\\mathcal F^4=1$，固有値は $1,-i,-1,i$ のみ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{d\\hat f}{dk}=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int f(x)(-ix)e^{-ikx}dx=-i\\,\\mathcal F[xf]$．両辺に $i$ を掛けて $\\mathcal F[xf]=i\\hat f'(k)$．\n\n(2) 線形性と (1)，および $\\mathcal F[f']=ik\\hat f$ より\n\\[ \\mathcal F[A^\\dagger f]=i\\frac{d\\hat f}{dk}-ik\\hat f=-i\\left(k-\\frac{d}{dk}\\right)\\hat f. \\]\nすなわち $\\mathcal F A^\\dagger=-i A^\\dagger_k\\mathcal F$（$A_k^\\dagger=k-d/dk$ は変数を $k$ にした同じ演算子）．\n\n(3) $\\hat\\phi_0(k)=\\frac{1}{\\sqrt{2\\pi}}\\int e^{-x^2/2-ikx}dx=e^{-k^2/2}=\\phi_0(k)$．帰納法：$\\hat\\phi_n=(-i)^n\\phi_n$ を仮定すると\n\\[ \\hat\\phi_{n+1}=\\mathcal F[A^\\dagger\\phi_n]=-iA_k^\\dagger\\hat\\phi_n=-i(-i)^nA_k^\\dagger\\phi_n(k)=(-i)^{n+1}\\phi_{n+1}(k). \\]\nまた $\\phi_n=H_ne^{-x^2/2}$ と仮定すると $\\phi_n'=(H_n'-xH_n)e^{-x^2/2}$ なので\n\\[ A^\\dagger\\phi_n=(xH_n-H_n'+xH_n)e^{-x^2/2}=(2xH_n-H_n')e^{-x^2/2}=H_{n+1}e^{-x^2/2}. \\]\n$H_0=1$ から帰納的に成立（$H_1=2x$，$H_2=4x^2-2,\\dots$）．\n\n(4) $\\tilde\\phi_n(p)=(-i)^n\\phi_n(p)$ より $|\\tilde\\phi_n(p)|^2=|\\phi_n(p)|^2$：位置分布と運動量分布はまったく同じ関数形である（$H$ が $x\\leftrightarrow p$ について対称であることの反映）．\n次に $\\mathcal F^2[f](x)=f(-x)$ を示す：$\\mathcal F[\\hat f](y)=\\frac{1}{\\sqrt{2\\pi}}\\int\\hat f(k)e^{-iky}dk=f(-y)$（逆変換の式で $x\\to-y$）．よって $\\mathcal F^4=1$．$\\mathcal F f=\\lambda f$（$f\\ne0$）なら $f=\\mathcal F^4f=\\lambda^4f$ より $\\lambda^4=1$，すなわち $\\lambda\\in\\{1,-i,-1,i\\}$．$\\phi_n$ がこれらをすべて実現し（$n\\bmod4$ に応じて），$\\{\\phi_n\\}$ は完全系なので，任意の関数は $\\mathcal F$ の 4 つの固有空間に分解される．"
+   }
+  ],
+  "idea": {
+   "tex": "微分と $x$ 倍がフーリエ変換で入れ替わるので，生成演算子 $x-d/dx$ は変換で $-i$ 倍の同形演算子に写る．ガウス関数から積み上げたエルミート関数は $\\mathcal F$ の固有関数で，固有値 $(-i)^n$ をもつ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "導関数のフーリエ変換",
+   "エルミート関数",
+   "調和振動子",
+   "運動量表示",
+   "固有関数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-061",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 40,
+  "theme": "自由粒子のチャープ波束が一時的に収縮する",
+  "topic": "自由粒子のチャープ波束が一時的に収縮する",
+  "statement": {
+   "tex": "フーリエ変換は $\\hat f(k)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{-ikx}dx$，逆変換は $f(x)=\\dfrac{1}{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}\\hat f(k)e^{ikx}dk$ で定義する．質量 $m$ の自由粒子のシュレーディンガー方程式 $i\\hbar\\,\\partial_t\\psi=-\\dfrac{\\hbar^2}{2m}\\partial_x^2\\psi$ を考える（$\\psi$ とその $x$ 導関数は $|x|\\to\\infty$ で十分速く 0 になるとする）．\n\\begin{enumerate}\n\\item $x$ についてフーリエ変換して $\\hat\\psi(k,t)$ を $\\hat\\psi(k,0)$ で表せ．これは「虚数の拡散係数」$D=i\\hbar/2m$ をもつ拡散方程式とみなせることを述べよ．\n\\item 初期波動関数が $\\psi(x,0)=\\exp\\!\\left[-\\left(\\dfrac{1}{4\\sigma^2}-i\\beta\\right)x^2\\right]$（$\\sigma>0$，$\\beta$ は実数）のとき，$|\\psi(x,t)|^2$ はガウス型であり，その標準偏差が\n\\[ \\sigma_x(t)=\\sigma\\sqrt{\\frac{\\frac{1}{16\\sigma^4}+\\left(\\beta+\\frac{2\\hbar N t}{m}\\right)^2}{N}},\\qquad N=\\frac{1}{16\\sigma^4}+\\beta^2 \\]\nとなることを示せ．［拡散方程式 $u_t=Du_{xx}$ の初期値 $e^{-x^2/a}$ に対する解が $\\sqrt{\\frac{a}{a+4Dt}}e^{-x^2/(a+4Dt)}$ であることは，$\\mathrm{Re}(1/a)>0$ の複素数 $a$，複素数 $D$ に対しても成り立つとしてよい．］\n\\item $t>0$ で波束の幅が初期値より小さくなる（いったん収縮する）ための $\\beta$ の条件，幅が最小になる時刻 $t^*$，最小幅 $\\sigma_{\\min}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat\\psi(k,t)=\\hat\\psi(k,0)e^{-i\\hbar k^2t/2m}$　(2) 証明（解説参照）　(3) $\\beta<0$，$t^*=\\dfrac{m|\\beta|}{2\\hbar N}$，$\\sigma_{\\min}=\\dfrac{\\sigma}{\\sqrt{1+16\\beta^2\\sigma^4}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 両辺をフーリエ変換し $\\mathcal F[\\partial_x^2\\psi]=-k^2\\hat\\psi$ を用いると $i\\hbar\\partial_t\\hat\\psi=\\frac{\\hbar^2k^2}{2m}\\hat\\psi$．よって $\\hat\\psi(k,t)=\\hat\\psi(k,0)e^{-i\\hbar k^2t/2m}$．方程式は $\\partial_t\\psi=\\frac{i\\hbar}{2m}\\partial_x^2\\psi$ と書けるので，$D=i\\hbar/2m$ の拡散方程式と同形である（拡散では $e^{-Dk^2t}$ が減衰因子，ここでは純位相因子）．\n\n(2) $\\alpha_0=\\frac{1}{4\\sigma^2}-i\\beta$ とおくと $\\psi(x,0)=e^{-x^2/a_0}$，$a_0=1/\\alpha_0$．与えられた公式より $\\psi\\propto e^{-x^2/a(t)}$，\n\\[ a(t)=a_0+4Dt=\\frac{\\frac{1}{4\\sigma^2}+i\\beta}{N}+\\frac{2i\\hbar t}{m}=\\frac{\\frac{1}{4\\sigma^2}+i\\left(\\beta+\\frac{2\\hbar Nt}{m}\\right)}{N}. \\]\n$B(t)=\\beta+\\frac{2\\hbar Nt}{m}$ とおけば\n\\[ \\mathrm{Re}\\frac{1}{a}=\\frac{N\\cdot\\frac{1}{4\\sigma^2}}{\\frac{1}{16\\sigma^4}+B^2}. \\]\n$|\\psi|^2\\propto e^{-2\\mathrm{Re}(1/a)x^2}$ は分散 $\\sigma_x^2=\\dfrac{1}{4\\mathrm{Re}(1/a)}=\\sigma^2\\dfrac{\\frac{1}{16\\sigma^4}+B^2}{N}$ のガウス分布．$t=0$ で $B=\\beta$，$\\sigma_x=\\sigma$ となり整合する．\n\n(3) $\\sigma_x(t)$ は $B(t)^2$ の増加関数で，$B$ は $t$ について単調増加．$\\beta\\ge0$ なら $t>0$ で $B^2>\\beta^2$ となり常に広がる．$\\beta<0$ なら $B=0$ となる時刻\n\\[ t^*=-\\frac{m\\beta}{2\\hbar N}=\\frac{m|\\beta|}{2\\hbar N}>0 \\]\nまで縮み，そこで最小\n\\[ \\sigma_{\\min}=\\sigma\\sqrt{\\frac{1}{16\\sigma^4N}}=\\frac{\\sigma}{\\sqrt{1+16\\beta^2\\sigma^4}}. \\]\n物理的には $\\beta<0$ のとき局所波数 $k_{\\rm loc}=2\\beta x$ が外側ほど中心向きになっており，粒子が中心に「集まってくる」ためである．$t^*$ の後は自由波束として広がり続ける．"
+   }
+  ],
+  "idea": {
+   "tex": "自由シュレーディンガー方程式は虚数拡散係数の拡散方程式であり，ガウス解の複素パラメータ $a\\to a+4Dt$ の変化を追えば，負のチャープをもつ波束が一時的に収縮する（焦点を結ぶ）ことがわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "拡散方程式",
+   "シュレーディンガー方程式",
+   "ガウス波束",
+   "チャープ",
+   "波束の収縮"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-062",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 30,
+  "theme": "非整数べきの変換とフレネル型積分",
+  "topic": "非整数べきの変換とフレネル型積分",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 実数 $\\nu>-1$ と実数 $s>0$ に対し，$\\mathcal L[t^\\nu](s)=\\dfrac{\\Gamma(\\nu+1)}{s^{\\nu+1}}$ を示せ．ただし $\\Gamma(z)=\\int_0^\\infty u^{z-1}e^{-u}du$．特に $\\mathcal L[t^{-1/2}]$ を具体的に書け．\n\\item (1) を「逆向き」に用いると $\\dfrac{1}{\\sqrt t}=\\dfrac{1}{\\sqrt\\pi}\\displaystyle\\int_0^\\infty u^{-1/2}e^{-ut}du$（$t>0$）と書ける．これと $\\displaystyle\\int_0^\\infty\\frac{u^{p-1}}{1+u^2}du=\\frac{\\pi}{2\\sin(\\pi p/2)}$（$0<p<2$）を用いて，光の回折（フレネル積分）に現れる\n\\[ I=\\int_0^\\infty\\frac{\\sin t}{\\sqrt t}\\,dt \\]\nの値を求めよ．（積分順序の交換は認めてよい．）\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathcal L[t^{-1/2}]=\\sqrt{\\pi/s}$　(2) $I=\\sqrt{\\pi/2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $st=u$ とおくと\n\\[ \\int_0^\\infty t^\\nu e^{-st}dt=\\frac{1}{s^{\\nu+1}}\\int_0^\\infty u^\\nu e^{-u}du=\\frac{\\Gamma(\\nu+1)}{s^{\\nu+1}}. \\]\n$\\nu>-1$ は $t=0$ での可積分性の条件．整数 $\\nu=n$ なら $n!/s^{n+1}$ に戻る．$\\nu=-1/2$ では $\\Gamma(1/2)=\\sqrt\\pi$ より $\\mathcal L[t^{-1/2}]=\\sqrt{\\pi/s}$．\n\n(2) (1) で $t\\leftrightarrow s$ の役割を入れかえると，$t>0$ に対し $\\int_0^\\infty u^{-1/2}e^{-ut}du=\\sqrt{\\pi/t}$．よって\n\\[ I=\\frac{1}{\\sqrt\\pi}\\int_0^\\infty du\\,u^{-1/2}\\int_0^\\infty\\sin t\\,e^{-ut}dt=\\frac{1}{\\sqrt\\pi}\\int_0^\\infty\\frac{u^{-1/2}}{1+u^2}du. \\]\nここで $\\mathcal L[\\sin t](u)=1/(1+u^2)$ を使った．与式で $p=1/2$ として $\\int_0^\\infty\\frac{u^{-1/2}}{1+u^2}du=\\frac{\\pi}{2\\sin(\\pi/4)}=\\frac{\\pi}{\\sqrt2}$．ゆえに\n\\[ I=\\frac{1}{\\sqrt\\pi}\\cdot\\frac{\\pi}{\\sqrt2}=\\sqrt{\\frac{\\pi}{2}}. \\]\n変数変換 $t=x^2$ により $\\int_0^\\infty\\sin(x^2)dx=\\frac12\\sqrt{\\pi/2}$（フレネル積分）が同時に得られる．"
+   }
+  ],
+  "idea": {
+   "tex": "$t^\\nu$ の変換が $\\Gamma$ 関数を与えることを逆用し，$1/\\sqrt t$ を指数関数の重ね合わせで書けば，振動積分がラプラス変換の積分に化ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $I$：sqrt(pi /2)"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "ガンマ関数",
+   "フレネル積分",
+   "積分順序交換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-063",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "アーベル積分方程式と等時曲線",
+  "topic": "アーベル積分方程式と等時曲線",
+  "statement": {
+   "tex": "高さ $y$（鉛直上向きを正）をとる．なめらかな曲線に沿って，摩擦なしに小球が高さ $h$ から静かにすべり出し，最下点 $y=0$ に達する．曲線の弧長を $s$ とし，$\\varphi(y)=ds/dy\\ (>0)$ とおくと，最下点までの所要時間は（重力加速度 $g$）\n\\[ T(h)=\\int_0^h\\frac{\\varphi(y)}{\\sqrt{2g(h-y)}}\\,dy \\]\nである．ラプラス変換の変数を $p$ とし，$\\mathcal L[t^{-1/2}](p)=\\sqrt{\\pi/p}$ は用いてよい．\n\\begin{enumerate}\n\\item 右辺が $y$ についてのたたみ込み積分であることに注意し，$T(h)$ が $h$ によらない一定値 $T_0$ となるような $\\varphi(y)$ を求めよ（等時曲線問題）．\n\\item 半径 $r$ の円が転がってできるサイクロイドでは $\\varphi(y)=\\sqrt{2r/y}$ である．このときの $T_0$ を求めよ．\n\\item 同じ方法で，積分方程式 $\\displaystyle\\int_0^x\\frac{f(x')}{\\sqrt{x-x'}}dx'=x$ を満たす $f(x)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\varphi(y)=\\dfrac{\\sqrt{2g}\\,T_0}{\\pi\\sqrt y}$　(2) $T_0=\\pi\\sqrt{r/g}$　(3) $f(x)=\\dfrac{2\\sqrt x}{\\pi}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "たたみ込み $\\int_0^h a(h-y)b(y)dy$ のラプラス変換は $\\tilde a(p)\\tilde b(p)$ である．\n\n(1) $\\sqrt{2g}\\,T(h)=\\int_0^h (h-y)^{-1/2}\\varphi(y)dy$ をラプラス変換すると，$T(h)=T_0$ のとき\n\\[ \\frac{\\sqrt{2g}\\,T_0}{p}=\\sqrt{\\frac{\\pi}{p}}\\;\\tilde\\varphi(p)\\quad\\Longrightarrow\\quad\\tilde\\varphi(p)=\\frac{\\sqrt{2g}\\,T_0}{\\sqrt\\pi}\\,p^{-1/2}. \\]\n$\\mathcal L[y^{-1/2}]=\\sqrt{\\pi}\\,p^{-1/2}$ より $\\mathcal L^{-1}[p^{-1/2}]=\\dfrac{1}{\\sqrt{\\pi y}}$．よって\n\\[ \\varphi(y)=\\frac{\\sqrt{2g}\\,T_0}{\\pi\\sqrt y}. \\]\n\n(2) $\\sqrt{2r/y}=\\dfrac{\\sqrt{2g}T_0}{\\pi\\sqrt y}$ を比べて $\\sqrt{2r}=\\sqrt{2g}\\,T_0/\\pi$，すなわち $T_0=\\pi\\sqrt{r/g}$．どの高さから放しても同じ時間で最下点に着く（ホイヘンスの等時性）．実際に計算すると $\\int_0^h\\frac{dy}{\\sqrt{y(h-y)}}=\\pi$ なので $T=\\sqrt{2r}\\pi/\\sqrt{2g}$ と一致する．\n\n(3) 変換して $\\sqrt{\\pi/p}\\,\\tilde f(p)=1/p^2$，$\\tilde f(p)=\\pi^{-1/2}p^{-3/2}$．$\\mathcal L[x^{1/2}]=\\Gamma(3/2)p^{-3/2}=\\frac{\\sqrt\\pi}{2}p^{-3/2}$ より\n\\[ f(x)=\\frac{1}{\\sqrt\\pi}\\cdot\\frac{2}{\\sqrt\\pi}x^{1/2}=\\frac{2\\sqrt x}{\\pi}. \\]\n検算：$\\int_0^x\\frac{2\\sqrt{x'}}{\\pi\\sqrt{x-x'}}dx'=\\frac{2x}{\\pi}B\\!\\left(\\tfrac32,\\tfrac12\\right)=\\frac{2x}{\\pi}\\cdot\\frac\\pi2=x$．"
+   }
+  ],
+  "idea": {
+   "tex": "下限 0・上限 $x$ のたたみ込みはラプラス変換で積になるので，アーベル型積分方程式が代数的に解け，等時曲線がサイクロイドであることが従う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\varphi(y)$：((sqrt(2 g) T_0)/(pi sqrt(y)))\n(2) $T_0$：pi sqrt(r / g)\n(3) $f(x)$：((2 sqrt(x))/(pi))"
+  },
+  "methods": [],
+  "tags": [
+   "たたみ込み",
+   "アーベル積分方程式",
+   "等時曲線",
+   "サイクロイド"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-064",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 30,
+  "theme": "2 回の撃力で振動を止める",
+  "topic": "2 回の撃力で振動を止める",
+  "statement": {
+   "tex": "減衰振動子（質量 $m$，$\\ddot x+\\gamma\\dot x+\\omega_0^2x=F(t)/m$，$\\gamma<2\\omega_0$）が静止している．時刻 $t=0$ に力積 $P_1>0$ を加え，時刻 $t=\\tau>0$ に同じ向きの力積 $P_2>0$ を加える：$F(t)=P_1\\delta(t)+P_2\\delta(t-\\tau)$．$\\omega_d=\\sqrt{\\omega_0^2-\\gamma^2/4}$ とする．\n\\begin{enumerate}\n\\item ラプラス変換を用いて，$t>\\tau$ での $x(t)$ を求めよ（$t=0$ の撃力は $\\mathcal L[\\delta(t)]=1$ として扱う）．\n\\item $t>\\tau$ で振動子が完全に静止する（$x\\equiv0$）ための最小の $\\tau$ と，そのときの $P_2/P_1$ を求めよ．\n\\item 減衰がない場合（$\\gamma=0$）に (2) の結果はどうなるか．また減衰がある場合に $P_2=P_1$ では止められない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=\\dfrac{1}{m\\omega_d}\\left[P_1e^{-\\gamma t/2}\\sin\\omega_dt+P_2e^{-\\gamma(t-\\tau)/2}\\sin\\omega_d(t-\\tau)\\right]$　(2) $\\tau=\\pi/\\omega_d$，$P_2/P_1=e^{-\\gamma\\pi/(2\\omega_d)}$　(3) $\\tau=\\pi/\\omega_0$，$P_2=P_1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathcal L[\\delta(t-\\tau)]=e^{-s\\tau}$ より $m(s^2+\\gamma s+\\omega_0^2)\\tilde x=P_1+P_2e^{-s\\tau}$．\n\\[ \\tilde x=\\frac{P_1+P_2e^{-s\\tau}}{m\\{(s+\\gamma/2)^2+\\omega_d^2\\}}. \\]\n$\\mathcal L^{-1}\\!\\left[\\dfrac{1}{(s+\\gamma/2)^2+\\omega_d^2}\\right]=\\dfrac{e^{-\\gamma t/2}\\sin\\omega_dt}{\\omega_d}$ と推移則 $\\mathcal L[f(t-\\tau)\\theta(t-\\tau)]=e^{-s\\tau}\\tilde f$ より，$t>\\tau$ で答えの式を得る．\n\n(2) $t>\\tau$ で\n\\[ x=\\frac{e^{-\\gamma t/2}}{m\\omega_d}\\left[P_1\\sin\\omega_dt+P_2e^{\\gamma\\tau/2}\\sin(\\omega_dt-\\omega_d\\tau)\\right]. \\]\n括弧内が恒等的にゼロとなるには，$\\sin(\\omega_dt-\\omega_d\\tau)=-\\sin\\omega_dt$ でなければならず（$P_1,P_2>0$），$\\omega_d\\tau=\\pi\\ (\\mathrm{mod}\\ 2\\pi)$，かつ $P_1=P_2e^{\\gamma\\tau/2}$．最小の $\\tau=\\pi/\\omega_d$，$P_2/P_1=e^{-\\gamma\\pi/(2\\omega_d)}$．\n物理的には，最初の撃力による振動が半周期後に原点を逆向き最大速度 $-\\dfrac{P_1}{m}e^{-\\gamma\\tau/2}$ で通過する瞬間に，それをちょうど打ち消す力積を与えている．\n\n(3) $\\gamma=0$ では $\\tau=\\pi/\\omega_0$，$P_2=P_1$：半周期後に同じ力積を加えれば止まる．減衰があると半周期の間に速度が $e^{-\\gamma\\tau/2}$ 倍に減っているので，同じ大きさの力積では打ち消しすぎて逆向きの振動が残る．この考え方はクレーンやロボットアームの残留振動を抑える「インプットシェーピング」の原理である．"
+   }
+  ],
+  "idea": {
+   "tex": "ラプラス変換の推移則で複数の撃力の応答を重ね合わせ，係数比較で残留振動ゼロの条件（半周期遅れ・減衰分だけ小さい力積）を得る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "デルタ関数",
+   "推移則",
+   "減衰振動",
+   "インプットシェーピング"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-065",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 35,
+  "theme": "任意外力による振動子へのエネルギー移行",
+  "topic": "任意外力による振動子へのエネルギー移行",
+  "statement": {
+   "tex": "質量 $m$ の振動子 $m\\ddot x+\\Gamma\\dot x+Kx=F(t)$ が $x(0)=\\dot x(0)=0$ から外力 $F(t)$ を受ける．$\\gamma=\\Gamma/m$，$\\omega_1=\\sqrt{K/m-\\gamma^2/4}>0$ とする．\n\\begin{enumerate}\n\\item ラプラス変換とたたみ込みを用いて，$x(t)=\\displaystyle\\int_0^tG(t-\\tau)F(\\tau)d\\tau$ の形に表し，$G(t)$ を求めよ．\n\\item 以下 $\\Gamma=0$（$\\omega_0=\\sqrt{K/m}$）とし，外力は $t>T$ でゼロとする．$t>T$ での振動子の力学的エネルギー $E$ が\n\\[ E=\\frac{1}{2m}\\left|\\int_0^TF(\\tau)e^{-i\\omega_0\\tau}d\\tau\\right|^2 \\]\nで与えられることを示せ．\n\\item $F(t)=F_0$（$0<t<T$）の矩形力のとき $E$ を求めよ．$E=0$ となる $T$ はどのような値か，物理的に説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $G(t)=\\dfrac{1}{m\\omega_1}e^{-\\gamma t/2}\\sin\\omega_1t$　(2) 証明（解説参照）　(3) $E=\\dfrac{2F_0^2}{m\\omega_0^2}\\sin^2\\dfrac{\\omega_0T}{2}$；$T=2\\pi n/\\omega_0$（$n=1,2,\\dots$）で $E=0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $m(s^2+\\gamma s+\\omega_0^2)\\tilde x=\\tilde F$，$\\omega_0^2=K/m$．$\\tilde x=\\tilde G\\tilde F$，\n\\[ \\tilde G=\\frac{1}{m\\{(s+\\gamma/2)^2+\\omega_1^2\\}}\\ \\Rightarrow\\ G(t)=\\frac{1}{m\\omega_1}e^{-\\gamma t/2}\\sin\\omega_1t. \\]\n積の逆変換はたたみ込みなので $x=\\int_0^tG(t-\\tau)F(\\tau)d\\tau$．$G$ は $t=0$ の単位力積に対する応答（グリーン関数）である．\n\n(2) $\\Gamma=0$ で $G=\\dfrac{\\sin\\omega_0t}{m\\omega_0}$．$t>T$ では\n\\[ x=\\frac{1}{m\\omega_0}\\int_0^T\\sin\\omega_0(t-\\tau)F\\,d\\tau,\\quad \\dot x=\\frac1m\\int_0^T\\cos\\omega_0(t-\\tau)F\\,d\\tau. \\]\n$z=\\dot x+i\\omega_0x=\\dfrac1m\\int_0^Te^{i\\omega_0(t-\\tau)}F(\\tau)d\\tau=\\dfrac{e^{i\\omega_0t}}{m}\\int_0^TF(\\tau)e^{-i\\omega_0\\tau}d\\tau$．\n$E=\\dfrac m2(\\dot x^2+\\omega_0^2x^2)=\\dfrac m2|z|^2=\\dfrac{1}{2m}\\left|\\int_0^TF(\\tau)e^{-i\\omega_0\\tau}d\\tau\\right|^2$．（外力のフーリエ成分のうち固有振動数のものだけがエネルギーを与える．）\n\n(3) $\\int_0^TF_0e^{-i\\omega_0\\tau}d\\tau=F_0\\dfrac{1-e^{-i\\omega_0T}}{i\\omega_0}$，$|1-e^{-i\\omega_0T}|^2=4\\sin^2\\dfrac{\\omega_0T}{2}$．よって\n\\[ E=\\frac{2F_0^2}{m\\omega_0^2}\\sin^2\\frac{\\omega_0T}{2}. \\]\n$E=0$ は $T=2\\pi n/\\omega_0$．一定力 $F_0$ の下で振動子は新たな平衡点 $F_0/K$ のまわりを振幅 $F_0/K$ で振動し，ちょうど $n$ 周期後には $x=0,\\dot x=0$ に戻る．その瞬間に力を切ると元の平衡点で静止しており，エネルギーは残らない．逆に $T=\\pi(2n+1)/\\omega_0$ では最大 $E=2F_0^2/K$．"
+   }
+  ],
+  "idea": {
+   "tex": "グリーン関数によるたたみ込み表示から，無減衰振動子に残るエネルギーは外力の固有振動数でのフーリエ成分の 2 乗で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $G(t)$：((1)/(m ω_1)) e ^(- γ t /2) sin ω_1 t\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラプラス変換",
+   "グリーン関数",
+   "たたみ込み",
+   "強制振動",
+   "エネルギー移行"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-066",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 45,
+  "theme": "グリーン関数とデルタ関数ポテンシャルの束縛状態",
+  "topic": "グリーン関数とデルタ関数ポテンシャルの束縛状態",
+  "statement": {
+   "tex": "$\\hbar^2/2m=1$ の単位で 1 次元シュレーディンガー方程式を考える．$\\lambda>0$ とする．\n\\begin{enumerate}\n\\item $\\left(-\\dfrac{d^2}{dx^2}+\\lambda^2\\right)G(x)=\\delta(x)$ を満たす有界な $G(x)$ を，フーリエ変換と留数定理を用いて求めよ．\n\\item 引力的デルタ関数ポテンシャル $-\\psi''-g\\,\\delta(x)\\psi=E\\psi$（$g>0$）の束縛状態 $E=-\\lambda^2$ を考える．$\\psi(x)=g\\,\\psi(0)\\,G(x)$ と書けることを示し，自己無撞着条件から $\\lambda$ を求めよ．\n\\item 2 つのデルタ関数 $-\\psi''-g[\\delta(x-a)+\\delta(x+a)]\\psi=-\\lambda^2\\psi$（$a>0$）の場合に，(2) と同様の方法で $\\psi(a)$，$\\psi(-a)$ に対する連立方程式を導き，偶関数解・奇関数解に対する $\\lambda$ の決定方程式を求めよ．\n\\item 偶関数の束縛状態は $g,a$ によらずちょうど 1 つ存在するが，奇関数の束縛状態が存在するための $g,a$ の条件を求めよ．\n\\item $ga\\gg1$ のとき，2 つの束縛状態のエネルギー差 $\\Delta E$ の漸近形を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $G(x)=\\dfrac{e^{-\\lambda|x|}}{2\\lambda}$　(2) $\\lambda=g/2$（$E=-g^2/4$）　(3) 偶：$\\dfrac{2\\lambda}{g}=1+e^{-2\\lambda a}$，奇：$\\dfrac{2\\lambda}{g}=1-e^{-2\\lambda a}$　(4) $ga>1$　(5) $\\Delta E\\simeq g^2e^{-ga}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $G(x)=\\frac1{2\\pi}\\int\\hat G(k)e^{ikx}dk$，$\\delta(x)=\\frac1{2\\pi}\\int e^{ikx}dk$ を代入して $(k^2+\\lambda^2)\\hat G=1$．よって\n\\[G(x)=\\frac1{2\\pi}\\int_{-\\infty}^{\\infty}\\frac{e^{ikx}}{k^2+\\lambda^2}dk .\\]\n$x>0$ では上半平面で大きな半円を閉じ（ジョルダンの補題で円弧の寄与は 0），極 $k=i\\lambda$ の留数 $e^{-\\lambda x}/(2i\\lambda)$ より $G=\\frac{1}{2\\pi}2\\pi i\\frac{e^{-\\lambda x}}{2i\\lambda}=\\frac{e^{-\\lambda x}}{2\\lambda}$．$x<0$ では下半平面で閉じ（時計回り）同様に $e^{\\lambda x}/(2\\lambda)$．まとめて $G=e^{-\\lambda|x|}/(2\\lambda)$．\n\n(2) $E=-\\lambda^2$ とすると方程式は $(-\\frac{d^2}{dx^2}+\\lambda^2)\\psi=g\\,\\delta(x)\\psi(x)=g\\psi(0)\\delta(x)$．右辺は定数倍のデルタ関数なので，有界解は $\\psi(x)=g\\psi(0)G(x)$．$x=0$ とおくと $\\psi(0)=g\\psi(0)/(2\\lambda)$．$\\psi(0)\\neq0$（さもなくば $\\psi\\equiv0$）より $\\lambda=g/2$，$E=-g^2/4$，$\\psi\\propto e^{-g|x|/2}$．\n\n(3) 同様に $\\psi(x)=g[\\psi(a)G(x-a)+\\psi(-a)G(x+a)]$．$x=\\pm a$ とおいて $\\epsilon=e^{-2\\lambda a}$ とすると\n\\[\\psi(a)=\\frac{g}{2\\lambda}[\\psi(a)+\\epsilon\\psi(-a)],\\qquad \\psi(-a)=\\frac{g}{2\\lambda}[\\epsilon\\psi(a)+\\psi(-a)] .\\]\n非自明解の条件は行列 $\\begin{pmatrix}1&\\epsilon\\\\ \\epsilon&1\\end{pmatrix}$ の固有値 $1\\pm\\epsilon$ が $2\\lambda/g$ に等しいこと．固有ベクトル $(1,1)$（偶）で $2\\lambda/g=1+e^{-2\\lambda a}$，$(1,-1)$（奇）で $2\\lambda/g=1-e^{-2\\lambda a}$．\n\n(4) 偶：$h_+(\\lambda)=1+e^{-2\\lambda a}-2\\lambda/g$ は単調減少で $h_+(0)=2>0$，$h_+(\\infty)=-\\infty$ なので正の根がちょうど 1 つ．\n奇：$h_-(\\lambda)=1-e^{-2\\lambda a}-2\\lambda/g$ は $h_-(0)=0$，$h_-''=-4a^2e^{-2\\lambda a}<0$（上に凸），$h_-(\\infty)=-\\infty$．$\\lambda>0$ に根が存在するのは原点で増加しているとき，すなわち $h_-'(0)=2a-2/g>0$，つまり $ga>1$ のとき（このとき根は 1 つ）．$ga\\le1$ では奇状態は連続スペクトルに溶け込む．\n\n(5) $ga\\gg1$ では $\\lambda_\\pm\\approx\\frac g2(1\\pm e^{-2\\lambda a})\\approx \\frac g2(1\\pm e^{-ga})$．$E_\\pm=-\\lambda_\\pm^2\\approx-\\frac{g^2}{4}(1\\pm2e^{-ga})$ より\n\\[\\Delta E=E_--E_+\\simeq g^2e^{-ga}.\\]\n各井戸の束縛状態 $e^{-g|x\\mp a|/2}$ の重なり $\\sim e^{-ga}$ でトンネル分裂が生じる．"
+   }
+  ],
+  "idea": {
+   "tex": "デルタ関数ポテンシャルではシュレーディンガー方程式がグリーン関数で積分方程式になり，$\\psi(\\pm a)$ の有限次元の自己無撞着条件に帰着する．奇状態の出現条件は原点での傾きの比較で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $G(x)$：((e^(-λ|x|))/(2λ))\n(2) $\\lambda$：g/2\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ変換",
+   "留数定理",
+   "グリーン関数",
+   "デルタ関数ポテンシャル",
+   "束縛状態",
+   "トンネル分裂"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PM-05-067",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PM-05",
+  "level": 3,
+  "minutes": 30,
+  "theme": "のこぎり波：パーセバルとギブス現象",
+  "topic": "のこぎり波：パーセバルとギブス現象",
+  "statement": {
+   "tex": "周期 $2L$ ののこぎり波 $f(x)=x/L$（$-L<x<L$）を考える．\n\\begin{enumerate}\n\\item $f$ のフーリエ級数を求めよ．\n\\item パーセバルの等式を用いて $\\displaystyle\\sum_{n=1}^\\infty\\frac1{n^2}$ の値を求めよ．\n\\item 第 $N$ 部分和 $S_N(x)$ は不連続点 $x=L$ の手前で最大値をとる．$N\\to\\infty$ でその最大値は $1$ に近づかず，$\\dfrac{2}{\\pi}\\mathrm{Si}(\\pi)$（$\\mathrm{Si}(u)=\\int_0^u\\frac{\\sin t}{t}dt$）に近づくことを示し，数値（有効数字 3 桁）を求めよ．跳びの大きさに対するオーバーシュートの割合も答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f=\\dfrac2\\pi\\sum_{n\\ge1}\\dfrac{(-1)^{n+1}}{n}\\sin\\dfrac{n\\pi x}{L}$　(2) $\\dfrac{\\pi^2}6$　(3) $\\dfrac2\\pi\\mathrm{Si}(\\pi)\\approx1.18$，跳び $2$ に対し約 $9\\%$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f$ は奇関数なので $a_n=0$．\n\\[b_n=\\frac1L\\int_{-L}^L\\frac xL\\sin\\frac{n\\pi x}{L}dx=\\frac{2}{L^2}\\int_0^Lx\\sin\\frac{n\\pi x}Ldx=-\\frac{2}{n\\pi}\\cos n\\pi=\\frac{2(-1)^{n+1}}{n\\pi}.\\]\n\n(2) パーセバル：$\\dfrac1L\\int_{-L}^Lf^2dx=\\sum b_n^2$．左辺 $=\\dfrac1L\\cdot\\dfrac{2L}{3}=\\dfrac23$，右辺 $=\\dfrac4{\\pi^2}\\sum\\dfrac1{n^2}$．よって $\\sum\\dfrac1{n^2}=\\dfrac{\\pi^2}6$．\n\n(3) $\\xi=L-x$ とおくと $\\sin\\frac{n\\pi x}{L}=-(-1)^n\\sin\\frac{n\\pi\\xi}{L}$ より\n\\[S_N=\\frac2\\pi\\sum_{n=1}^N\\frac{\\sin(n\\pi\\xi/L)}{n}.\\]\n$\\dfrac{dS_N}{d\\xi}=\\dfrac2L\\sum_{n=1}^N\\cos\\dfrac{n\\pi\\xi}{L}$ の最初の零点は $\\xi\\approx\\dfrac{L}{N}$ 付近（正確には $\\xi_*=\\frac{L}{N+1}$ でディリクレ核が 0）．$h=\\pi\\xi/L$ とすると和はリーマン和 $\\sum_{n}\\frac{\\sin(nh)}{nh}h\\to\\int_0^{\\pi}\\frac{\\sin t}tdt$（$Nh\\to\\pi$）となり\n\\[\\max S_N\\to\\frac2\\pi\\mathrm{Si}(\\pi)\\approx\\frac2\\pi\\times1.8519=1.179.\\]\n跳びは $-1$ から $1$ への $2$ なので，オーバーシュート $0.179$ は跳びの約 $9\\%$（ギブス現象）．$N$ を増やしても最大値の位置が $x=L$ に近づくだけで高さは減らない．"
+   }
+  ],
+  "idea": {
+   "tex": "パーセバルの等式で $\\zeta(2)$ が得られ，部分和の最大値はリーマン和として正弦積分に収束する（ギブス現象）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((pi ^(2))/(6))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フーリエ級数",
+   "のこぎり波",
+   "パーセバルの等式",
+   "ギブス現象",
+   "正弦積分"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

@@ -295,6 +295,463 @@
   }
  },
  {
+  "id": "AM-06-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 30,
+  "theme": "ロジスティック写像の a と 2−a の共役性",
+  "topic": "ロジスティック写像の a と 2−a の共役性",
+  "statement": {
+   "tex": "ロジスティック写像 $x_{n+1}=f_a(x_n)=ax_n(1-x_n)$ を，$a<0$ も含めて実数パラメータ $a\\ (\\ne0,2)$ について考える．\n\\begin{enumerate}\n\\item アフィン変換 $x'=px+q$ によって，$f_a$ の任意の軌道 $\\{x_n\\}$ が $f_{2-a}$ の軌道 $\\{x'_n\\}$（$x'_{n+1}=f_{2-a}(x'_n)$）に写るような定数 $p,q$ を $a$ で表せ．\n\\item この対応で，$f_a$ の 2 つの不動点 $0,\\ (a-1)/a$ はそれぞれ $f_{2-a}$ のどの不動点に写るか．また対応する不動点で微分係数（乗数）が等しいことを確かめよ．\n\\item $a>0$ では安定な周期 2 軌道が $3<a<1+\\sqrt6$ で存在する．このことを用いて，$a<0$ で安定な周期 2 軌道が存在する $a$ の範囲を求めよ．\n\\item $a=-2$ のとき，$x_0=\\frac12+\\cos2\\theta_0$ から出発した軌道の一般項 $x_n$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=\\dfrac{a}{2-a}$，$q=\\dfrac{1-a}{2-a}$　(2) $(a-1)/a\\mapsto0$，$0\\mapsto(1-a)/(2-a)$（$f_{2-a}$ の非自明な不動点），乗数はそれぞれ $2-a$ と $a$ で一致　(3) $1-\\sqrt6<a<-1$　(4) $x_n=\\frac12+\\cos(2^{n+1}\\theta_0)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $z=\\frac a2-ax$ とおくと $x=\\frac12-\\frac za$，$1-x=\\frac12+\\frac za$ より\n\\[ z_{n+1}=\\frac a2-a\\cdot a\\Bigl(\\frac14-\\frac{z_n^2}{a^2}\\Bigr)=z_n^2+c,\\qquad c=\\frac a2-\\frac{a^2}4=-\\frac{a(a-2)}4 . \\]\n$c$ は $a\\to2-a$ で不変である（$-(2-a)(-a)/4=-a(a-2)/4$）．したがって $f_a$ も $f_{2-a}$ も同じ写像 $z\\mapsto z^2+c$ に共役であり，$\\frac a2-ax=\\frac{2-a}2-(2-a)x'$ と置けば両者が結ばれる．これを解いて\n\\[ x'=\\frac{ax+1-a}{2-a},\\qquad p=\\frac a{2-a},\\ q=\\frac{1-a}{2-a}. \\]\n直接代入でも $f_{2-a}(x')=\\dfrac{a f_a(x)+1-a}{2-a}$ が恒等的に成り立つ．\n\n(2) $x=(a-1)/a$ を代入すると $x'=\\dfrac{a-1+1-a}{2-a}=0$．$x=0$ は $x'=\\dfrac{1-a}{2-a}=\\dfrac{(2-a)-1}{2-a}$ に写り，これは $f_{2-a}$ の非自明な不動点．乗数は $f_a'(x)=a(1-2x)$ より $f_a'((a-1)/a)=2-a=f_{2-a}'(0)$，$f_a'(0)=a=f'_{2-a}\\bigl(\\tfrac{1-a}{2-a}\\bigr)=(2-a)\\bigl(1-\\tfrac{2(1-a)}{2-a}\\bigr)=a$．アフィン共役では乗数が保存されることと整合する．\n\n(3) 共役で周期軌道とその安定性（乗数）は保たれるので，$a<0$ の $f_a$ が安定周期 2 軌道を持つ条件は $3<2-a<1+\\sqrt6$，すなわち $1-\\sqrt6<a<-1$．（例：$a=-1.4$ では $\\{-0.3309,\\,0.6167\\}$ に収束し，$a=-1.5<1-\\sqrt6\\approx-1.449$ では周期 4 になる．）\n\n(4) $a=4$ では $x=\\sin^2\\varphi$ とおくと $4\\sin^2\\varphi\\cos^2\\varphi=\\sin^22\\varphi$ なので $x_n=\\sin^2(2^n\\varphi_0)$．$a=4$ から $2-a=-2$ への共役は $x'=\\dfrac{4x-3}{-2}=\\dfrac{3-4\\sin^2\\varphi}{2}=\\dfrac12+\\cos2\\varphi$．よって $\\varphi_0=\\theta_0$ として\n\\[ x_n=\\frac12+\\cos\\bigl(2^{n+1}\\theta_0\\bigr). \\]\n直接確認：$-2\\bigl(\\tfrac12+C\\bigr)\\bigl(\\tfrac12-C\\bigr)=-\\tfrac12+2C^2=\\tfrac12+\\cos2\\psi$（$C=\\cos\\psi$）．$a=-2$ の写像は区間 $[-\\tfrac12,\\tfrac32]$ 上で $a=4$ と同じ完全なカオス（リアプノフ指数 $\\ln2$）を示す．"
+   }
+  ],
+  "idea": {
+   "tex": "$z=\\frac a2-ax$ で $z\\mapsto z^2+c$ に直すと $c=-a(a-2)/4$ が $a\\leftrightarrow 2-a$ で対称なので，負のパラメータのロジスティック写像は正のパラメータのものと共役になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $p$：((a)/(2- a)) ; $q$：((1- a)/(2- a))\n(2) 記述\n(3) 1-sqrt(6)<a<-1\n(4) $x_n$：((1)/(2))+ cos (2^(n +1) θ_0)"
+  },
+  "methods": [],
+  "tags": [
+   "ロジスティック写像",
+   "共役",
+   "アフィン変換",
+   "周期2軌道",
+   "厳密解",
+   "負のパラメータ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Hénon-Heiles ポテンシャルの鞍点と脱出エネルギー",
+  "topic": "Hénon-Heiles ポテンシャルの鞍点と脱出エネルギー",
+  "statement": {
+   "tex": "質量 $m$ の質点が平面内でポテンシャル\n\\[ V(x,y)=\\frac12k(x^2+y^2)+\\lambda\\Bigl(x^2y-\\frac13y^3\\Bigr)\\qquad(k>0,\\ \\lambda>0) \\]\nの中を運動する．\n\\begin{enumerate}\n\\item 極座標 $(r,\\theta)$ で $V$ を書き，$V$ が回転 $\\theta\\to\\theta+2\\pi/3$ と鏡映 $\\theta\\to\\pi-\\theta$ の下で不変であることを示せ．\n\\item 極座標表示を用いて $V$ の停留点をすべて求め，各点での $V$ の値を求めよ．\n\\item 原点以外の停留点での $V$ のヘッセ行列の固有値を求め，その点が鞍点であることを示せ．また，鞍点近傍で動径方向の不安定な運動の成長率 $\\kappa$ と，それに垂直な方向の微小振動の角振動数 $\\Omega$ を求めよ．\n\\item 質点が原点付近の有界領域から逃げ出しうるための最小エネルギー（脱出エネルギー）$E_c$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V=\\frac12kr^2+\\frac\\lambda3r^3\\sin3\\theta$　(2) 原点（$V=0$，極小）と $r=k/\\lambda$，$\\theta=\\pi/2,\\,7\\pi/6,\\,11\\pi/6$ の 3 点（$V=k^3/6\\lambda^2$）　(3) 固有値 $-k,\\ 3k$；$\\kappa=\\sqrt{k/m}$，$\\Omega=\\sqrt{3k/m}$　(4) $E_c=k^3/(6\\lambda^2)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=r\\cos\\theta,\\ y=r\\sin\\theta$ で $x^2y-\\frac13y^3=\\frac{r^3}3\\sin\\theta(3\\cos^2\\theta-\\sin^2\\theta)=\\frac{r^3}3\\sin\\theta(3-4\\sin^2\\theta)=\\frac{r^3}3\\sin3\\theta$．よって\n\\[ V=\\frac12kr^2+\\frac\\lambda3r^3\\sin3\\theta . \\]\n$\\sin3(\\theta+2\\pi/3)=\\sin(3\\theta+2\\pi)=\\sin3\\theta$，$\\sin3(\\pi-\\theta)=\\sin(3\\pi-3\\theta)=\\sin3\\theta$ なので不変（正三角形の対称群 $C_{3v}$）．\n\n(2) $\\partial_\\theta V=\\lambda r^3\\cos3\\theta=0$，$\\partial_rV=kr+\\lambda r^2\\sin3\\theta=0$．$r=0$ は原点（$V=0$，ヘッセ行列 $k\\mathbf 1$ で極小）．$r\\ne0$ では $\\cos3\\theta=0$ より $\\sin3\\theta=\\pm1$；$\\sin3\\theta=+1$ だと $kr+\\lambda r^2>0$ で不可．$\\sin3\\theta=-1$，すなわち $\\theta=\\pi/2,\\,7\\pi/6,\\,11\\pi/6$ で $r=k/\\lambda$．直交座標では $(0,k/\\lambda)$，$(\\pm\\frac{\\sqrt3}2\\frac k\\lambda,-\\frac k{2\\lambda})$ で，一辺 $\\sqrt3k/\\lambda$ の正三角形の頂点．\n\\[ V=\\frac{k^3}{2\\lambda^2}-\\frac{k^3}{3\\lambda^2}=\\frac{k^3}{6\\lambda^2}. \\]\n\n(3) 対称性より $\\theta=\\pi/2$ の点で調べれば十分．極座標で $V_{rr}=k+2\\lambda r\\sin3\\theta=k-2k=-k$，$\\frac1{r^2}V_{\\theta\\theta}=-3\\lambda r\\sin3\\theta=3k$，$V_{r\\theta}=3\\lambda r^2\\cos3\\theta=0$（停留点では $\\partial_rV=0$ なので極座標の 2 階微分がそのまま正規直交方向のヘッセ行列を与える）．直交座標でも $V_{xx}=k+2\\lambda y=3k$，$V_{yy}=k-2\\lambda y=-k$，$V_{xy}=2\\lambda x=0$．固有値 $-k<0<3k$ で鞍点．\n動径方向 $m\\ddot\\xi=k\\xi$ より $\\xi\\propto e^{\\pm\\kappa t}$，$\\kappa=\\sqrt{k/m}$；接線方向 $m\\ddot\\eta=-3k\\eta$ より $\\Omega=\\sqrt{3k/m}=\\sqrt3\\,\\kappa$．（原点での振動数 $\\sqrt{k/m}$ より速い．）\n\n(4) 原点を囲む有界な領域 $V<E$ の境界が初めて開くのは，$E$ が最低の鞍点の値に達したときである．3 つの鞍点は同じ高さなので $E_c=k^3/(6\\lambda^2)$．無次元化 $k=m=\\lambda=1$ では $E_c=1/6$．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\sin3\\theta$ の形から鞍点は $\\sin3\\theta=-1$ の 3 方向に等距離 $k/\\lambda$ で並び，鞍点の高さが脱出エネルギーを与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $V$：((1)/(2)) k r ^(2)+((λ)/(3)) r ^(3) sin 3 θ\n(2) 記述\n(3) 記述\n(4) $E_c$：k^3/(6λ^2)"
+  },
+  "methods": [],
+  "tags": [
+   "Hénon-Heiles",
+   "極座標",
+   "三回対称",
+   "鞍点",
+   "脱出エネルギー",
+   "ヘッセ行列"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 30,
+  "theme": "不動点近傍の収束：超安定と臨界減速",
+  "topic": "不動点近傍の収束：超安定と臨界減速",
+  "statement": {
+   "tex": "ロジスティック写像 $x_{n+1}=ax_n(1-x_n)$ の不動点 $x^*=(a-1)/a$ からのずれを $\\delta_n=x_n-x^*$ とする．\n\\begin{enumerate}\n\\item $\\delta_{n+1}$ を $\\delta_n$ で厳密に表し，線形安定性の範囲を求めよ．\n\\item $a=2$ のとき，任意の $x_0$ に対する $x_n$ の一般項を求めよ．$x_0=0.1$ のとき $|x_n-\\frac12|<10^{-12}$ となる最小の $n$ を求めよ．\n\\item $a=3$（安定性の境界）では線形近似で収束が判定できない．$\\delta_{n+2}$ を $\\delta_n$ の 3 次まで展開し，$n\\to\\infty$ で $|\\delta_n|$ が $n$ のべきで減衰することを示してその漸近形を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\delta_{n+1}=(2-a)\\delta_n-a\\delta_n^2$，$1<a<3$　(2) $x_n=\\frac12\\{1-(1-2x_0)^{2^n}\\}$，$n=7$　(3) $\\delta_{n+2}=\\delta_n-18\\delta_n^3+O(\\delta_n^4)$，$|\\delta_n|\\simeq\\dfrac1{\\sqrt{18n}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a(x^*+\\delta)(1-x^*-\\delta)=ax^*(1-x^*)+a(1-2x^*)\\delta-a\\delta^2$ で，$ax^*(1-x^*)=x^*$，$a(1-2x^*)=a-2(a-1)=2-a$．よって\n\\[ \\delta_{n+1}=(2-a)\\delta_n-a\\delta_n^2 . \\]\n線形安定条件は $|2-a|<1$，すなわち $1<a<3$．\n\n(2) $a=2$ では $\\delta_{n+1}=-2\\delta_n^2$．$u_n=-2\\delta_n=1-2x_n$ とおくと $u_{n+1}=u_n^2$ で $u_n=u_0^{2^n}$．よって\n\\[ x_n=\\frac12\\bigl\\{1-(1-2x_0)^{2^n}\\bigr\\}. \\]\n$x_0=0.1$ では $|x_n-\\frac12|=\\frac12(0.8)^{2^n}$．$2^n\\ln(1/0.8)>\\ln(5\\times10^{11})$，すなわち $2^n>26.94/0.2231\\approx120.7$ が必要で，$n=7$（$2^7=128$，$\\frac12(0.8)^{128}\\approx2\\times10^{-13}$）．$n=6$ では $3\\times10^{-7}$ にとどまる．乗数 0 の「超安定」不動点では誤差の桁数が毎回倍になる．\n\n(3) $a=3$ で $g(\\delta)=-\\delta-3\\delta^2$．\n\\[ g(g(\\delta))=-(-\\delta-3\\delta^2)-3(\\delta+3\\delta^2)^2=\\delta-18\\delta^3-27\\delta^4 . \\]\n2 回分を 1 ステップ $k=n/2$ とみなし，$\\delta$ がゆっくり変わるので微分方程式 $\\frac{d\\delta}{dk}=-18\\delta^3$ で近似すると $\\frac1{\\delta^2}=36k+\\mathrm{const}$．よって $|\\delta_n|\\simeq\\frac1{6\\sqrt{n/2}}=\\frac1{\\sqrt{18n}}$（符号は毎回反転）．指数関数的でなく $n^{-1/2}$ でしか近づかない（臨界減速）．数値的にも $x_0=2/3+0.01$ から $n=10^5$ で $|\\delta|=7.43\\times10^{-4}$，予測 $7.45\\times10^{-4}$．"
+   }
+  ],
+  "idea": {
+   "tex": "不動点の乗数が 0 なら誤差は 2 乗で，$\\pm1$ なら線形項が消えて 3 次項で $n^{-1/2}$ のべき減衰になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $x_n$：((1)/(2))(1-(1-2 x_0)^(2^(n))) ; $n$：7\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ロジスティック写像",
+   "線形安定性",
+   "超安定",
+   "臨界減速",
+   "周期倍分岐"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 35,
+  "theme": "Rössler 系の不動点と外向きらせん",
+  "topic": "Rössler 系の不動点と外向きらせん",
+  "statement": {
+   "tex": "Rössler 方程式\n\\[ \\dot x=-(y+z),\\qquad \\dot y=x+ay,\\qquad \\dot z=b+z(x-c)\\qquad(a,b,c>0) \\]\nを考える．\n\\begin{enumerate}\n\\item 不動点を $a,b,c$ で表し，不動点が存在するための $c$ の条件を求めよ．\n\\item $z$ が小さい領域では $(x,y)$ 方程式は $\\dot x=-y,\\ \\dot y=x+ay$ と近似できる．この線形系の固有値を求め，$a=0.2$ のとき 1 周ごとに振幅が何倍になるか求めよ．\n\\item $a=b=0.2$，$c=5.7$ のとき原点近くの不動点の座標を求めよ．その点での線形化行列の固有値の和（トレース）を $a,b,c$ の式で表し数値を求めよ．数値計算で固有値が $0.0970\\pm0.9952i$ と負の実数 $\\lambda_3$ であるとき，$\\lambda_3$ を予言せよ．\n\\item 以上から，カオス的アトラクタの形（「らせん状に広がる部分」と「折り返して戻す部分」）がどのように生じるか説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $z_\\pm=\\frac{c\\pm\\sqrt{c^2-4ab}}{2a}$，$x=az$，$y=-z$；$c>2\\sqrt{ab}$　(2) $\\lambda=\\frac a2\\pm i\\sqrt{1-\\frac{a^2}4}$，$e^{\\pi a/\\sqrt{1-a^2/4}}\\approx1.88$ 倍　(3) $(x,y,z)\\approx(0.00703,-0.0351,0.0351)$，トレース $=a-\\frac{c+\\sqrt{c^2-4ab}}2\\approx-5.493$，$\\lambda_3\\approx-5.687$　(4) 解説参照"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot x=0$：$y=-z$，$\\dot y=0$：$x=-ay=az$，$\\dot z=0$：$b+z(az-c)=0$，すなわち $az^2-cz+b=0$．\n\\[ z_\\pm=\\frac{c\\pm\\sqrt{c^2-4ab}}{2a},\\quad x=az_\\pm,\\quad y=-z_\\pm . \\]\n実数解の条件は $c^2>4ab$，すなわち $c>2\\sqrt{ab}$（$a=b=0.2$ では $c>0.4$）．$c=2\\sqrt{ab}$ でサドル・ノード分岐．\n\n(2) 行列 $\\begin{pmatrix}0&-1\\\\1&a\\end{pmatrix}$ の固有値は $\\lambda^2-a\\lambda+1=0$ より $\\lambda=\\frac a2\\pm i\\sqrt{1-\\frac{a^2}4}$．1 周の時間 $T=2\\pi/\\sqrt{1-a^2/4}$ で振幅は $e^{aT/2}=\\exp\\bigl(\\pi a/\\sqrt{1-a^2/4}\\bigr)$ 倍．$a=0.2$ で $\\exp(0.6315)\\approx1.880$．$xy$ 平面内で外向きのらせんになる．\n\n(3) $c^2-4ab=32.49-0.16=32.33$，$\\sqrt{\\ }=5.68595$．$z_-=\\frac{5.7-5.68595}{0.4}\\approx0.03513$（$\\approx b/c$），$x=az_-\\approx0.00703$，$y\\approx-0.0351$．線形化行列\n\\[ J=\\begin{pmatrix}0&-1&-1\\\\1&a&0\\\\z&0&x-c\\end{pmatrix},\\quad \\mathrm{tr}J=a+x_--c=a-\\frac{c+\\sqrt{c^2-4ab}}2\\approx-5.4930 . \\]\n固有値の和はトレースに等しいので $\\lambda_3=-5.4930-2\\times0.0970=-5.687$．\n\n(4) 原点近くの不動点は $xy$ 面内で弱く不安定な焦点（成長率 $\\approx0.1$，角振動数 $\\approx1$）で，$z\\approx0$ に強く引きつける方向（$\\lambda_3\\approx-5.7$）を持つ．よって軌道は $z\\approx0$ の面にほぼ張り付いたまま外向きにらせん状に広がる．$x$ が $c$ を超えると $\\dot z=b+z(x-c)$ で $z$ が指数関数的に急増し，$\\dot x=-(y+z)$ により $x$ が大きく負に戻される．$x<c$ に戻ると $z$ は速く減衰して面に再注入される．この「伸ばし（らせん）」と「折りたたみ（$z$ 方向の跳ね上がり）」の繰り返しがカオスを生む．"
+   }
+  ],
+  "idea": {
+   "tex": "Rössler 系では $xy$ 面内の弱く不安定な焦点が「らせん状の伸び」を，$x>c$ での $z$ の急成長が「折り返し」を担い，トレース一定式から第 3 固有値も読める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Rössler方程式",
+   "不動点",
+   "線形安定性",
+   "らせん",
+   "伸長と折りたたみ",
+   "トレース"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 35,
+  "theme": "van der Pol 振動子の平均化法とリミットサイクルへの接近",
+  "topic": "van der Pol 振動子の平均化法とリミットサイクルへの接近",
+  "statement": {
+   "tex": "自励振動の van der Pol 方程式\n\\[ \\ddot x-\\varepsilon(1-x^2)\\dot x+x=0\\qquad(0<\\varepsilon\\ll1) \\]\nを考える．\n\\begin{enumerate}\n\\item $x=r\\cos(t+\\phi)$，$\\dot x=-r\\sin(t+\\phi)$ とおき，$r,\\phi$ の方程式を 1 周期にわたって平均すると $\\dot r=\\frac\\varepsilon2r\\bigl(1-\\frac{r^2}4\\bigr)$，$\\dot\\phi=0$ となることを示せ．\n\\item この方程式を解き，リミットサイクルの振幅と，リミットサイクル近傍での振幅のずれの減衰率を求めよ．\n\\item 初期条件 $x(0)=0.5,\\ \\dot x(0)=0$ から出発したとき，（1 周期平均した）振幅が $1.9$ に達する時刻を求めよ．$x(0)=3,\\ \\dot x(0)=0$ から出発して振幅が $2.1$ まで下がる時刻も求めよ．（$\\varepsilon$ を含む式で答えよ．）\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略　(2) $r(t)=\\dfrac2{\\sqrt{1+(4/r_0^2-1)e^{-\\varepsilon t}}}$，振幅 $2$，ずれは $e^{-\\varepsilon t}$ で減衰　(3) $t\\approx4.93/\\varepsilon$，$t\\approx1.79/\\varepsilon$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot x=-r\\sin(t+\\phi)$ を保つ条件 $\\dot r\\cos\\psi-r\\dot\\phi\\sin\\psi=0$（$\\psi=t+\\phi$）と運動方程式 $\\ddot x+x=\\varepsilon(1-x^2)\\dot x$ から\n$\\ddot x=-\\dot r\\sin\\psi-r(1+\\dot\\phi)\\cos\\psi$ を代入して $-\\dot r\\sin\\psi-r\\dot\\phi\\cos\\psi=-\\varepsilon r\\sin\\psi(1-r^2\\cos^2\\psi)$．拘束条件と連立して解くと\n\\[ \\dot r=\\varepsilon r\\sin^2\\psi(1-r^2\\cos^2\\psi),\\qquad r\\dot\\phi=\\varepsilon r\\sin\\psi\\cos\\psi(1-r^2\\cos^2\\psi). \\]\n$\\psi$ について平均すると $\\langle\\sin^2\\psi\\rangle=\\frac12$，$\\langle\\sin^2\\psi\\cos^2\\psi\\rangle=\\frac18$，$\\langle\\sin\\psi\\cos\\psi\\rangle=\\langle\\sin\\psi\\cos^3\\psi\\rangle=0$ より\n\\[ \\dot r=\\varepsilon r\\Bigl(\\frac12-\\frac{r^2}8\\Bigr)=\\frac\\varepsilon2r\\Bigl(1-\\frac{r^2}4\\Bigr),\\qquad\\dot\\phi=0. \\]\n\n(2) $s=r^2$ とおくと $\\dot s=\\varepsilon s(1-s/4)$（ロジスティック方程式）．解は $s=\\dfrac{4}{1+(4/s_0-1)e^{-\\varepsilon t}}$，すなわち\n\\[ r(t)=\\frac{2}{\\sqrt{1+(4/r_0^2-1)e^{-\\varepsilon t}}}. \\]\n$t\\to\\infty$ で $r\\to2$（初期振幅によらない）．$r=2+\\eta$ で線形化すると，$\\frac{d}{dr}\\bigl[\\frac\\varepsilon2(r-\\frac{r^3}4)\\bigr]_{r=2}=\\frac\\varepsilon2(1-3)=-\\varepsilon$ より $\\dot\\eta=-\\varepsilon\\eta$，$\\eta\\propto e^{-\\varepsilon t}$．減衰率は $\\varepsilon$．\n\n(3) 解を $t$ について解くと $t=\\dfrac1\\varepsilon\\ln\\dfrac{4/r_0^2-1}{4/r^2-1}$．\n$r_0=0.5,\\ r=1.9$：$\\dfrac{15}{4/3.61-1}=\\dfrac{15}{0.10803}=138.85$，$t=\\dfrac{4.933}\\varepsilon$．\n$r_0=3,\\ r=2.1$：$\\dfrac{4/9-1}{4/4.41-1}=\\dfrac{-0.5556}{-0.0930}=5.976$，$t=\\dfrac{1.788}\\varepsilon$．\n外側からの方が速いのは，$r$ が大きいと非線形減衰 $-\\varepsilon r^3/8$ が強いため．（$\\varepsilon=0.01$ の数値積分で，1 周期平均振幅が $1.9$，$2.1$ に達する時刻は $\\varepsilon t=4.934,\\ 1.788$．）"
+   }
+  ],
+  "idea": {
+   "tex": "平均化で振幅はロジスティック方程式 $\\dot{(r^2)}=\\varepsilon r^2(1-r^2/4)$ に従い，リミットサイクル $r=2$ への接近の速さは厳密に $\\varepsilon$ で与えられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "van der Pol方程式",
+   "リミットサイクル",
+   "平均化法",
+   "自励振動",
+   "アトラクタ",
+   "緩和率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 35,
+  "theme": "フラクタル次元の推定量の偏り（Vicsek フラクタル）",
+  "topic": "フラクタル次元の推定量の偏り（Vicsek フラクタル）",
+  "statement": {
+   "tex": "凝集クラスタのフラクタル次元を，粒子数 $N$ とクラスタを含む最小円の半径 $R$ から $D_{\\rm est}=\\ln N/\\ln R$ で推定する方法の偏りを，答えのわかっている決定論的フラクタルで調べる．格子間隔 1 の正方格子上で，第 0 世代を 1 個の格子点とし，第 $n$ 世代は第 $n-1$ 世代の図形を中心に置き，その上下左右に距離 $3^{n-1}$ だけずらした 4 つのコピーを加えたもの（十字形の Vicsek フラクタル）とする．\n\\begin{enumerate}\n\\item 第 $n$ 世代の点の数 $N_n$ と，全点を含む最小円の半径 $R_n$ を求めよ．\n\\item 真のフラクタル次元 $D$ を求めよ．\n\\item $D_{\\rm est}=\\ln N_n/\\ln R_n$ を $n=2,3,4$ で計算せよ．\n\\item $D_{\\rm est}$ が $D$ の 5\\% 以内に入る最小の $n$ と，そのときの点の数を求めよ．\n\\item 隣り合う世代の比から $D'_n=\\ln(N_n/N_{n-1})/\\ln(R_n/R_{n-1})$ と推定すると，$n=4$ でいくらになるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N_n=5^n$，$R_n=(3^n-1)/2$　(2) $D=\\ln5/\\ln3\\approx1.465$　(3) $2.32,\\ 1.88,\\ 1.75$　(4) $n=14$，$N\\approx6.1\\times10^9$　(5) $D'_4\\approx1.432$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 各世代で 5 倍になるので $N_n=5^n$．すべての点は $|x|+|y|\\le R_n$ を満たし（コピーの中心 $(\\pm3^{n-1},0)$ 等とコピー内の $|x|+|y|\\le R_{n-1}$ より帰納的に $3^{n-1}+R_{n-1}=R_n$），腕の先端 $(\\pm R_n,0)$，$(0,\\pm R_n)$ が原点から最も遠い．$R_n=3^{n-1}+R_{n-1}$，$R_0=0$ より $R_n=\\frac{3^n-1}2$．先端の 2 点が直径の両端になるので，最小円は原点中心で半径 $R_n$．\n\n(2) 長さを 3 倍にすると点が 5 倍になるので $D=\\ln5/\\ln3\\approx1.4650$．\n\n(3) $n=2$：$N=25,\\ R=4$，$D_{\\rm est}=\\ln25/\\ln4=2.32$（2 次元より大きい！）．$n=3$：$\\ln125/\\ln13=1.882$．$n=4$：$\\ln625/\\ln40=1.745$．\n\n(4) $D_{\\rm est}=\\dfrac{n\\ln5}{\\ln(3^n-1)-\\ln2}\\approx D\\dfrac{n\\ln3}{n\\ln3-\\ln2}$．5\\% 以内の条件 $\\dfrac{n\\ln3}{n\\ln3-\\ln2}<1.05$ は $n\\ln3>21\\ln2$，$n>13.25$．よって $n=14$（厳密式でも $n=13$ では不足，$n=14$ で満たす）．$N=5^{14}\\approx6.1\\times10^9$．単一クラスタの $\\ln N/\\ln R$ は「$R$ の単位（比例係数）」に由来する $1/\\ln R$ の偏りを持ち，収束が極めて遅い．\n\n(5) $D'_4=\\ln5/\\ln(40/13)=1.6094/1.1239=1.432$（真値との差 2\\%）．比をとると比例係数が打ち消され，偏りは $3^{-n}$ 程度に小さくなる．実際の DLA でも，$N$ と $R$ の両対数プロットの傾きで $D$ を求めるべきであることがわかる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\ln N/\\ln R$ は $N=CR^D$ の係数 $C$ による $1/\\ln R$ の偏りを持つので，小さなクラスタでは 2 を超えることさえあり，傾き（比）による推定が必要になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N_n$：5^(n) ; $R_n$：(3^(n)-1)/2\n(2) $D$：≈1.465\n(3) 記述\n(4) $n$：14 ; $N$：≈6.1e9\n(5) $D'_4$：≈1.432"
+  },
+  "methods": [],
+  "tags": [
+   "フラクタル次元",
+   "DLA",
+   "Vicsekフラクタル",
+   "最小包含円",
+   "推定量の偏り",
+   "スケーリング"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 35,
+  "theme": "ロジスティック写像のリアプノフ指数",
+  "topic": "ロジスティック写像のリアプノフ指数",
+  "statement": {
+   "tex": "ロジスティック写像 $x_{n+1}=ax_n(1-x_n)$ のリアプノフ指数を $\\lambda=\\lim_{N\\to\\infty}\\frac1N\\sum_{n=0}^{N-1}\\ln|a(1-2x_n)|$ で定義する．\n\\begin{enumerate}\n\\item $a=3.55$ では周期 8 の安定軌道があり，その 8 点は（小さい順に）$0.35480,\\ 0.37033,\\ 0.50603,\\ 0.54047,\\ 0.81266,\\ 0.82781,\\ 0.88168,\\ 0.88737$ である．この周期軌道の乗数 $\\mu$ を求め，周期軌道に近づく途中の点の誤差が 8 回の反復ごとにどうふるまうか述べよ．また $\\lambda$ を求めよ．\n\\item $a=3.60$ では数値計算で $\\lambda\\approx0.183$ を得る．初期値の差 $10^{-4}$ が $0.1$ 程度になるまでの反復回数を見積もれ．\n\\item $a=4$ のとき，$x=\\sin^2\\pi\\theta$ の置換により写像を $\\theta$ の簡単な写像に直し，$\\lambda=\\ln2$ であることを示せ．さらに不変密度 $\\rho(x)=\\dfrac{1}{\\pi\\sqrt{x(1-x)}}$ を用いて $\\lambda=\\int_0^1\\rho(x)\\ln|4(1-2x)|dx$ を計算し確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mu\\approx0.450$，誤差は 8 回ごとに符号を変えずに約 0.45 倍；$\\lambda=\\frac18\\ln\\mu\\approx-0.100$　(2) 約 38 回　(3) $\\theta_{n+1}=2\\theta_n\\ (\\mathrm{mod}\\ 1)$，$\\lambda=\\ln2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mu=\\prod_{i=1}^8a(1-2x_i)$．各因子は $a(1-2x_i)$：$1.0309,\\ 0.9207,\\ -0.0428,\\ -0.2873,\\ -2.2199,\\ -2.3275,\\ -2.7099,\\ -2.7503$（負が 6 個で積は正）．積は $\\mu\\approx0.450$．周期軌道からのずれは 8 回の反復で $\\mu$ 倍になるので，同じ周期位置で比べた誤差は符号を変えずにほぼ半分ずつ（$0.45$ 倍）小さくなる．周期軌道上では $\\lambda=\\frac18\\ln|\\mu|=\\frac{\\ln0.450}8\\approx-0.0999$（負：規則的）．\n\n(2) 差は平均して $e^{\\lambda n}$ 倍になるので $10^{-4}e^{0.183n}\\approx0.1$，$n\\approx\\ln(10^3)/0.183\\approx38$．（ただし成長は一様でなく揺らぎが大きい．）\n\n(3) $x=\\sin^2\\pi\\theta$ で $4x(1-x)=4\\sin^2\\pi\\theta\\cos^2\\pi\\theta=\\sin^22\\pi\\theta$．よって $\\theta_{n+1}=2\\theta_n\\ (\\mathrm{mod}\\ 1)$（ベルヌーイ・シフト）．$\\theta$ の差は毎回 2 倍になり，$x$ と $\\theta$ の対応は滑らかな（端点を除き）変換なので $\\lambda=\\ln2$．\n不変密度で計算：$x=\\sin^2\\varphi$（$0\\le\\varphi\\le\\pi/2$）とすると $\\rho\\,dx=\\frac2\\pi d\\varphi$，$1-2x=\\cos2\\varphi$．\n\\[ \\lambda=\\ln4+\\frac2\\pi\\int_0^{\\pi/2}\\ln|\\cos2\\varphi|\\,d\\varphi=\\ln4+\\frac1\\pi\\int_0^\\pi\\ln|\\cos\\psi|\\,d\\psi=\\ln4-\\ln2=\\ln2 \\]\n（$\\int_0^\\pi\\ln|\\cos\\psi|d\\psi=-\\pi\\ln2$ を用いた）．"
+   }
+  ],
+  "idea": {
+   "tex": "周期窓では乗数の対数がそのまま負のリアプノフ指数を与え，$a=4$ では倍角写像への共役から $\\lambda=\\ln2$ が厳密に出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ロジスティック写像",
+   "リアプノフ指数",
+   "周期8",
+   "初期値鋭敏性",
+   "不変密度",
+   "ベルヌーイシフト"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 30,
+  "theme": "周期2軌道の振幅と時間平均のずれ",
+  "topic": "周期2軌道の振幅と時間平均のずれ",
+  "statement": {
+   "tex": "ロジスティック写像 $f(x)=ax(1-x)$ の周期 2 軌道 $\\{x_+,x_-\\}$ を考える．\n\\begin{enumerate}\n\\item $f(f(x))-x$ から不動点を表す因子を除き，$x_\\pm$ の満たす 2 次方程式を求めよ．実数の周期 2 軌道が存在する $a>0$ の範囲を求めよ．\n\\item 周期 2 軌道の乗数 $\\mu_2=f'(x_+)f'(x_-)$ を $a$ の多項式で表し，安定な範囲と超安定になる $a$ を求めよ．\n\\item $a$ が 3 をわずかに超えたとき，周期 2 軌道の振れ幅 $x_+-x_-$ と，2 点の平均 $\\bar x=\\frac12(x_++x_-)$ が（不安定になった）不動点 $x^*$ からどれだけずれるかを，$a-3$ の主要項で表せ．時間平均した $x$ は不動点より大きいか小さいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a^2x^2-a(a+1)x+(a+1)=0$，$a\\ge3$　(2) $\\mu_2=-a^2+2a+4$，$3<a<1+\\sqrt6$，超安定 $a=1+\\sqrt5$　(3) $x_+-x_-\\simeq\\frac23\\sqrt{a-3}$，$\\bar x-x^*=\\frac{3-a}{2a}\\simeq-\\frac{a-3}6$（小さくなる）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $f(f(x))-x=-x(ax-a+1)\\bigl(a^2x^2-a(a+1)x+a+1\\bigr)$（前の 2 因子が不動点 $0$，$(a-1)/a$）．よって\n\\[ a^2x^2-a(a+1)x+(a+1)=0,\\qquad x_\\pm=\\frac{a+1\\pm\\sqrt{(a+1)(a-3)}}{2a}. \\]\n判別式 $a^2(a+1)(a-3)\\ge0$ より $a>0$ では $a\\ge3$（$a=3$ で不動点と一致して生まれる）．\n\n(2) 解と係数の関係 $x_++x_-=\\frac{a+1}a$，$x_+x_-=\\frac{a+1}{a^2}$ より\n\\[ \\mu_2=a^2(1-2x_+)(1-2x_-)=a^2\\Bigl[1-\\frac{2(a+1)}a+\\frac{4(a+1)}{a^2}\\Bigr]=-a^2+2a+4 . \\]\n$|\\mu_2|<1$：$\\mu_2<1$ は $a^2-2a-3>0$（$a>3$），$\\mu_2>-1$ は $a^2-2a-5<0$（$a<1+\\sqrt6$）．安定範囲 $3<a<1+\\sqrt6\\approx3.449$．超安定 $\\mu_2=0$：$a^2-2a-4=0$，$a=1+\\sqrt5\\approx3.236$（このとき $x=\\frac12$ が軌道に含まれる：$f(\\frac12)=\\frac a4$，$f(\\frac a4)=\\frac12$ ⇔ $(a-2)(a^2-2a-4)=0$）．\n\n(3) $x_+-x_-=\\frac{\\sqrt{(a+1)(a-3)}}a\\simeq\\frac{\\sqrt{4(a-3)}}3=\\frac23\\sqrt{a-3}$（平方根則：ピッチフォーク型の周期倍分岐）．\n平均は $\\bar x=\\frac{a+1}{2a}$，不動点 $x^*=\\frac{a-1}a$ との差は\n\\[ \\bar x-x^*=\\frac{a+1-2(a-1)}{2a}=\\frac{3-a}{2a}\\simeq-\\frac{a-3}6 . \\]\n振れ幅は $\\sqrt{a-3}$ で急に開くが，中心は $a-3$ に比例してゆっくり不動点より下にずれる．よって時間平均した $x$ は不動点の値より小さい（例：$a=3.2$ で $\\bar x=0.65625<x^*=0.6875$）．"
+   }
+  ],
+  "idea": {
+   "tex": "周期 2 の 2 次方程式の解と係数の関係から乗数 $-a^2+2a+4$ と平均 $(a+1)/2a$ が直ちに出て，振れ幅は $\\sqrt{a-3}$，中心のずれは $a-3$ に比例することがわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ロジスティック写像",
+   "周期2軌道",
+   "周期倍分岐",
+   "解と係数の関係",
+   "超安定",
+   "平方根則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 2,
+  "minutes": 20,
+  "theme": "2次式の逆数積分とサドルノード通過時間",
+  "topic": "2次式の逆数積分とサドルノード通過時間",
+  "statement": {
+   "tex": "直線上の点の位置 $x(t)$ が $\\dfrac{dx}{dt}=x^2-6x+c$（$c$ は定数）に従う．\n\\begin{enumerate}\n\\item $c=34$ のとき，$x=3$ から $x=8$ まで進むのに要する時間を求めよ．\n\\item $c>9$ のとき，$x=-\\infty$ から出発した点は有限時間で $x=+\\infty$ に到達する．その所要時間 $T(c)$ を求めよ．\n\\item $c=9+\\varepsilon$（$0<\\varepsilon\\ll1$）のとき，所要時間の大部分は $x=3$ の付近で費やされる．$T$ の $\\varepsilon$ 依存性を述べ，$c\\le9$ では何が起こるか説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\pi/20\\approx0.157$　(2) $T=\\dfrac{\\pi}{\\sqrt{c-9}}$　(3) $T=\\pi\\varepsilon^{-1/2}$ で発散；$c\\le9$ では固定点 $x=3\\pm\\sqrt{9-c}$ に捕まり通過しない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "平方完成 $x^2-6x+c=(x-3)^2+(c-9)$．$c>9$ では $b=\\sqrt{c-9}$ として\n\\[t=\\int\\frac{dx}{(x-3)^2+b^2}=\\frac1b\\tan^{-1}\\frac{x-3}{b}.\\]\n(1) $c=34$ で $b=5$：$\\dfrac15\\big[\\tan^{-1}1-\\tan^{-1}0\\big]=\\dfrac{\\pi}{20}\\approx0.157$．\n(2) $\\displaystyle T=\\int_{-\\infty}^{\\infty}\\frac{dx}{(x-3)^2+b^2}=\\frac{\\pi}{b}=\\frac{\\pi}{\\sqrt{c-9}}$．速度が $x^2$ で増えるので無限遠への到達は有限時間で起こる．\n(3) $b=\\sqrt\\varepsilon$ なので $T=\\pi/\\sqrt\\varepsilon\\to\\infty$．被積分関数は $|x-3|\\lesssim\\sqrt\\varepsilon$ の範囲で $1/\\varepsilon$ 程度と大きく，時間のほとんどはこの「ボトルネック」（消えかけた固定点の名残）で費やされる．$c=9$ では $x=3$ が半安定固定点，$c<9$ では $\\dot x=0$ となる 2 つの固定点 $x=3\\pm\\sqrt{9-c}$ が現れ，$-\\infty$ から来た点は小さいほうの固定点に漸近して通過しない（サドルノード分岐）．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\int dx/((x-p)^2+b^2)=\\pi/b$ が，サドルノード分岐直前の通過時間 $T\\propto(c-c_*)^{-1/2}$ という普遍的なスケーリングを与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ≈0.157\n(2) $T$：((pi)/(sqrt(c -9)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平方完成",
+   "逆正接",
+   "サドルノード分岐",
+   "ボトルネック",
+   "有限時間発散"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "AM-06-007",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -442,6 +899,619 @@
   }
  },
  {
+  "id": "AM-06-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 35,
+  "theme": "標準写像の正準性と固定点の安定性",
+  "topic": "標準写像の正準性と固定点の安定性",
+  "statement": {
+   "tex": "蹴られる回転子のモデル（標準写像）は，1 周期ごとに $(q,p)\\mapsto(q',p')$ を\n\\[\np'=p+K\\sin q,\\qquad q'=q+p'\n\\]\nで与える（$K>0$ は定数）．\n\\begin{enumerate}\n\\item この写像の関数行列式 $\\partial(q',p')/\\partial(q,p)$ が 1 であることを示せ．1 自由度ではこれだけで正準変換であることを説明せよ．\n\\item この写像を導く第 2 種の母関数 $W(q,P)$（$p=\\partial W/\\partial q$，$Q=\\partial W/\\partial P$，$Q=q',\\ P=p'$）を求めよ．\n\\item 固定点（$q'=q,\\ p'=p$，$q$ は $\\mathrm{mod}\\ 2\\pi$ で考える）で $p=0$ のものを求め，その線形安定性を調べよ．$q=\\pi$ の固定点が安定である $K$ の範囲を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 行列式 1　(2) $W=qP+\\frac12P^2+K\\cos q$　(3) $(0,0)$ は不安定，$(\\pi,0)$ は $0<K<4$ で安定"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{\\partial p'}{\\partial q}=K\\cos q$，$\\dfrac{\\partial p'}{\\partial p}=1$，$\\dfrac{\\partial q'}{\\partial q}=1+K\\cos q$，$\\dfrac{\\partial q'}{\\partial p}=1$．\n\\[\n\\frac{\\partial(q',p')}{\\partial(q,p)}=\\begin{vmatrix}1+K\\cos q&1\\\\K\\cos q&1\\end{vmatrix}=1 .\n\\]\n1 自由度では Poisson 括弧 $[Q,P]=\\dfrac{\\partial Q}{\\partial q}\\dfrac{\\partial P}{\\partial p}-\\dfrac{\\partial Q}{\\partial p}\\dfrac{\\partial P}{\\partial q}$ がちょうど関数行列式 $\\partial(Q,P)/\\partial(q,p)$ に等しく，$[Q,Q]=[P,P]=0$ は自明なので，行列式 1 は (18・23) と同値である．よって正準変換．\n\n(2) $p=\\partial W/\\partial q=P-K\\sin q$，$Q=\\partial W/\\partial P=q+P$ となる $W$ は\n\\[\nW=qP+\\frac12P^2+K\\cos q .\n\\]\n\n\n(3) $p'=p$ より $\\sin q=0$，$q'=q$（mod $2\\pi$）より $p'=p=0$（mod $2\\pi$）．$p=0$ の固定点は $(0,0)$ と $(\\pi,0)$．線形化行列 $\\begin{pmatrix}1+K\\cos q_0&1\\\\K\\cos q_0&1\\end{pmatrix}$ は行列式 1 なので，固有値 $\\lambda_{1,2}$ は $\\lambda_1\\lambda_2=1$，$\\lambda_1+\\lambda_2=\\mathrm{tr}=2+K\\cos q_0$．$|\\mathrm{tr}|<2$ なら固有値は単位円上の複素共役対（楕円型・安定），$|\\mathrm{tr}|>2$ なら実数で一方が $|\\lambda|>1$（双曲型・不安定）．\n$q_0=0$：$\\mathrm{tr}=2+K>2$ で不安定．$q_0=\\pi$：$\\mathrm{tr}=2-K$，$|2-K|<2\\iff0<K<4$ で安定．$K>4$ では周期倍分岐を起こして不安定になる．"
+   }
+  ],
+  "idea": {
+   "tex": "面積保存写像は 1 自由度では正準変換そのもので，第 2 種母関数で生成できる．行列式 1 のため固有値は逆数対となり，安定性はトレースだけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $W$：qP+(1/2)P^2+K cos q\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "関数行列式",
+   "正準変換",
+   "面積保存写像",
+   "標準写像",
+   "母関数",
+   "安定性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 35,
+  "theme": "軸がずれた回転輪上のビーズ：不完全分岐",
+  "topic": "軸がずれた回転輪上のビーズ：不完全分岐",
+  "statement": {
+   "tex": "半径 $a$ の滑らかな円形の輪（針金）が鉛直面内にあり，鉛直な $z$ 軸のまわりに一定の角速度 $\\omega$ で回転している．輪の面は常に $z$ 軸を含むが，輪の中心は $z$ 軸から水平に距離 $d\\ (\\ge0)$ だけずれている．質量 $m$ のビーズが輪に沿って摩擦なく動く．輪の最下点から測った中心角を $\\theta$（$\\theta>0$ を $z$ 軸から遠ざかる側）とし，ビーズの $z$ 軸からの距離が $d+a\\sin\\theta$，高さが $-a\\cos\\theta$ となるようにとる．$\\omega_0=\\sqrt{g/a}$ とする．\n\\begin{enumerate}\n\\item ラグランジアン，運動方程式，保存量を求めよ．\n\\item $d=0$ のとき，最下点以外の静止点（輪に対して静止する点）が存在するための $\\omega$ の条件を求めよ．\n\\item $0<d\\ll a$，$\\omega<\\omega_0$ のとき，最下点付近の静止点の位置 $\\theta_e$ を $d/a$ の 1 次まで求めよ．$\\omega\\to\\omega_0$ で何が起こるか．\n\\item $\\omega=\\omega_0$ ちょうどのとき，$\\theta_e$ の $d/a$ に対する主要な依存性を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\tfrac12m\\{a^2\\dot\\theta^2+\\omega^2(d+a\\sin\\theta)^2\\}+mga\\cos\\theta$，$ma^2\\ddot\\theta=-mga\\sin\\theta+m\\omega^2a(d+a\\sin\\theta)\\cos\\theta$，$h=\\tfrac12ma^2\\dot\\theta^2-\\tfrac12m\\omega^2(d+a\\sin\\theta)^2-mga\\cos\\theta$ が保存　(2) $\\omega>\\omega_0$　(3) $\\theta_e\\simeq\\dfrac{(\\omega/\\omega_0)^2}{1-(\\omega/\\omega_0)^2}\\dfrac da$，$\\omega\\to\\omega_0$ で係数が発散　(4) $\\theta_e\\simeq(2d/a)^{1/3}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ビーズの速度は，輪の面内の速さ $a\\dot\\theta$ と回転による速さ $\\omega(d+a\\sin\\theta)$ が直交するので\n\\[ L=\\tfrac12m\\{a^2\\dot\\theta^2+\\omega^2(d+a\\sin\\theta)^2\\}+mga\\cos\\theta. \\]\n運動方程式は\n\\[ ma^2\\ddot\\theta=-mga\\sin\\theta+m\\omega^2a(d+a\\sin\\theta)\\cos\\theta\\equiv F(\\theta). \\]\n$L$ は $t$ を陽に含まないから Jacobi 積分\n\\[ h=\\dot\\theta\\frac{\\partial L}{\\partial\\dot\\theta}-L=\\tfrac12ma^2\\dot\\theta^2-\\tfrac12m\\omega^2(d+a\\sin\\theta)^2-mga\\cos\\theta \\]\nが保存する（輪を回す外力が仕事をするので力学的エネルギーは保存しない）．\n\n(2) $d=0$ では $F=ma\\sin\\theta(a\\omega^2\\cos\\theta-g)$．$\\sin\\theta\\ne0$ の零点 $\\cos\\theta=\\omega_0^2/\\omega^2$ が存在するのは $\\omega>\\omega_0$ のとき．\n\n(3) $F(\\theta)=0$ を $\\theta$ について 1 次まで展開すると $-g\\theta+\\omega^2(d+a\\theta)=0$，\n\\[ \\theta_e=\\frac{\\omega^2d}{g-\\omega^2a}=\\frac{(\\omega/\\omega_0)^2}{1-(\\omega/\\omega_0)^2}\\,\\frac da. \\]\n$d\\ne0$ では最下点はもはや静止点ではなく，静止点は外側へずれる．そのずれの「感受率」$d\\theta_e/dd$ は $\\omega\\to\\omega_0$ で発散し，(2) の分岐（熊手型分岐）は $d$ によって「不完全分岐」に変わる．\n\n(4) $\\omega^2a=g$ を代入すると\n\\[ F/(ma)=g\\{-\\sin\\theta+\\sin\\theta\\cos\\theta\\}+\\omega_0^2d\\cos\\theta\\simeq-\\frac g2\\theta^3+\\frac gad. \\]\nよって $\\theta_e\\simeq(2d/a)^{1/3}$．臨界点では応答が $d$ の 1 次ではなく $1/3$ 乗となり，小さな偏心でも大きくずれる．"
+   }
+  ],
+  "idea": {
+   "tex": "回転軸と輪の中心がずれると対称性が破れ，熊手型分岐が不完全分岐になる：臨界角速度で静止点のずれが発散し，臨界点ちょうどでは偏心の $1/3$ 乗で応答する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転系",
+   "Jacobi積分",
+   "有効ポテンシャル",
+   "分岐",
+   "不完全分岐",
+   "対称性の破れ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 40,
+  "theme": "周期軌道の作用停留とDuffing振動子の調和平衡",
+  "topic": "周期軌道の作用停留とDuffing振動子の調和平衡",
+  "statement": {
+   "tex": "ラグランジアン $L=\\tfrac12m\\dot x^2-\\tfrac12kx^2-\\tfrac14\\beta x^4$（$m,k>0$，$|\\beta|$ は小さい）の非線形振動子を考える．周期 $T=2\\pi/\\omega$ の周期的な試行経路\n\\[ x(t)=A\\cos\\omega t+B\\cos3\\omega t \\]\nをとり，1 周期の作用 $I(A,B;\\omega)=\\displaystyle\\int_0^TL\\,dt$ を考える．\n\\begin{enumerate}\n\\item 周期的な試行経路について，作用 $I$ が係数の変化に対して停留することが，真の周期解の条件（運動方程式を各調和成分に射影したもの）と同値であることを説明せよ．\n\\item $B=0$ として $I(A)$ を求め，$\\partial I/\\partial A=0$ から振幅に依存する角振動数 $\\omega(A)$ を求めよ．\n\\item $B=0$ は $B$ について停留点でないことを示し，$\\partial I/\\partial B=0$ から $B$ を $\\beta$ の 1 次で求めよ．\n\\item $m=1\\ \\mathrm{kg}$，$k=1\\ \\mathrm{N/m}$，$\\beta=0.1\\ \\mathrm{N/m^3}$，$A=0.5\\ \\mathrm m$ のとき $\\omega$ と $B$ の数値を求めよ．\n\\item $\\beta=0$ の調和振動子で $x=a_0+\\sum_{j\\ge1}a_j\\cos j\\omega t$ としたとき，真の解 $\\omega^2=k/m$，$x=a_1\\cos\\omega t$ は $I$ の極小・極大・鞍点のいずれか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 下記　(2) $I=T\\Big[\\dfrac{(m\\omega^2-k)A^2}{4}-\\dfrac{3\\beta A^4}{32}\\Big]$，$\\omega^2=\\dfrac km+\\dfrac{3\\beta A^2}{4m}$　(3) $\\partial_BI|_{B=0}=-\\dfrac{T\\beta A^3}{8}\\ne0$，$B\\simeq\\dfrac{\\beta A^3}{4(9m\\omega^2-k)}\\simeq\\dfrac{\\beta A^3}{32k}$　(4) $\\omega\\approx1.0093\\ \\mathrm{rad/s}$，$B\\approx3.9\\times10^{-4}\\ \\mathrm m$　(5) 鞍点（$a_0$ 方向に負，$a_j\\ (j\\ge2)$ 方向に正）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 周期的な変分 $\\delta x$（$\\delta x(0)=\\delta x(T)$）に対し\n\\[ \\delta I=\\Big[m\\dot x\\,\\delta x\\Big]_0^T-\\int_0^T(m\\ddot x+kx+\\beta x^3)\\delta x\\,dt \\]\nで，境界項は周期性により打ち消す．$\\delta x=\\delta A\\cos\\omega t$ などをとれば，$\\partial I/\\partial A=0$ は運動方程式の残差 $m\\ddot x+kx+\\beta x^3$ の $\\cos\\omega t$ 成分が 0 であること（調和平衡法・Galerkin 法）にほかならない．\n\n(2) 1 周期の平均 $\\langle\\sin^2\\rangle=\\langle\\cos^2\\rangle=\\tfrac12$，$\\langle\\cos^4\\rangle=\\tfrac38$ より\n\\[ I=T\\Big[\\frac{m\\omega^2A^2}{4}-\\frac{kA^2}{4}-\\frac{\\beta}{4}\\cdot\\frac{3A^4}{8}\\Big]=T\\Big[\\frac{(m\\omega^2-k)A^2}{4}-\\frac{3\\beta A^4}{32}\\Big]. \\]\n$\\partial I/\\partial A=0$（$A\\ne0$）より $\\dfrac{m\\omega^2-k}{2}=\\dfrac{3\\beta A^2}{8}$，\n\\[ \\omega^2=\\frac km+\\frac{3\\beta A^2}{4m}. \\]\n（Lindstedt 法の 1 次の結果と一致する．）\n\n(3) $B$ の 1 次まで $\\langle x^4\\rangle=\\tfrac38A^4+4A^3B\\langle\\cos^3\\omega t\\cos3\\omega t\\rangle$，$\\cos^3=\\tfrac14(3\\cos\\omega t+\\cos3\\omega t)$ より $\\langle\\cos^3\\cos3\\rangle=\\tfrac18$．$B^2$ の項まで含めて\n\\[ I\\simeq T\\Big[\\frac{(m\\omega^2-k)A^2}{4}+\\frac{(9m\\omega^2-k)B^2}{4}-\\frac{3\\beta A^4}{32}-\\frac{\\beta A^3B}{8}\\Big]. \\]\n$\\partial I/\\partial B|_{B=0}=-T\\beta A^3/8\\ne0$ だから，単一調和の経路は $B$ 方向に停留していない．$\\partial I/\\partial B=0$ より\n\\[ B=\\frac{\\beta A^3}{4(9m\\omega^2-k)}\\simeq\\frac{\\beta A^3}{32k}\\quad(m\\omega^2\\simeq k). \\]\n\n(4) $\\omega^2=1+\\tfrac{3\\times0.1\\times0.25}{4}=1.01875$，$\\omega\\approx1.0093\\ \\mathrm{rad/s}$．$B\\simeq0.1\\times0.125/32\\approx3.9\\times10^{-4}\\ \\mathrm m$．（数値積分による真の周期解：$\\omega=1.00934$，第 3 高調波振幅 $3.8\\times10^{-4}$ m で，差は $O(\\beta^2)$．）\n\n(5) $\\beta=0$ では $I=-\\dfrac{\\pi k}{\\omega}a_0^2+\\dfrac{\\pi}{2\\omega}\\sum_{j\\ge1}(m\\omega^2j^2-k)a_j^2$．$\\omega^2=k/m$ で $a_1$ 方向の係数は 0（$a_1$ は任意），$a_j\\ (j\\ge2)$ 方向は $\\pi m\\omega(j^2-1)/2>0$，$a_0$ 方向は $-2\\pi k/\\omega<0$．よって真の解は極小でも極大でもなく鞍点である（作用は「最小」ではなく「停留」）．"
+   }
+  ],
+  "idea": {
+   "tex": "周期軌道の 1 周期の作用をフーリエ係数の関数とみると，その停留条件が調和平衡法そのものになり，Duffing 振動子の振幅依存振動数と第 3 高調波が作用の停留から求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $\\omega$ [rad/s]：≈1.0093 ; $B$ [m]：≈3.9e-4\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "作用原理",
+   "変分法",
+   "フーリエ級数",
+   "調和平衡法",
+   "Duffing振動子",
+   "非線形振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 40,
+  "theme": "Hénon-Heiles の三角形領域と状態密度",
+  "topic": "Hénon-Heiles の三角形領域と状態密度",
+  "statement": {
+   "tex": "無次元化した Hénon-Heiles 系 $H=\\frac12(p_x^2+p_y^2)+V(x,y)$，$V=\\frac12(x^2+y^2)+x^2y-\\frac13y^3$ を考える．\n\\begin{enumerate}\n\\item $V-\\frac16$ を 1 次式 3 つの積に因数分解し，原点を含む $V<\\frac16$ の連結領域 $D$ が正三角形の内部であること，さらに三角形の各辺上では $V$ が一定値 $\\frac16$ をとることを示せ．$D$ の面積 $S$ を求めよ．\n\\item エネルギー $E$ 以下の位相空間体積 $\\Gamma(E)=\\int_{H\\le E}dx\\,dy\\,dp_x\\,dp_y$ は $\\Gamma(E)=2\\pi\\int_{V\\le E}(E-V)\\,dx\\,dy$ と書けることを示し，状態密度 $g(E)=d\\Gamma/dE$ が $V\\le E$ の領域の面積の $2\\pi$ 倍であることを示せ．\n\\item $\\Gamma(1/6)$ と $g(1/6)$ を厳密に求めよ．\n\\item 3 次項を無視した調和近似での $\\Gamma$, $g$ と比べ，$E=1/6$ での比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $V-\\frac16=\\frac16(2y+1)(\\sqrt3x-y+1)(\\sqrt3x+y-1)$，$S=\\frac{3\\sqrt3}4$　(2) 略（$p$ 空間の円板の面積 $2\\pi(E-V)$）　(3) $\\Gamma(1/6)=\\frac{9\\sqrt3\\pi}{80}\\approx0.612$，$g(1/6)=\\frac{3\\sqrt3\\pi}2\\approx8.16$　(4) 調和近似 $\\Gamma=2\\pi^2E^2=\\pi^2/18$，$g=4\\pi^2E=2\\pi^2/3$；比は $\\Gamma$ で約 $1.116$，$g$ で約 $1.240$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $6V-1=3x^2+3y^2+6x^2y-2y^3-1$．$x$ を含まない部分は $3y^2-2y^3-1=-(2y+1)(y-1)^2$ なので\n\\[ 6V-1=3x^2(1+2y)-(2y+1)(y-1)^2=(2y+1)\\{3x^2-(y-1)^2\\}=(2y+1)(\\sqrt3x-y+1)(\\sqrt3x+y-1). \\]\n3 直線 $y=-\\frac12$，$y=\\sqrt3x+1$，$y=1-\\sqrt3x$ は頂点 $(0,1)$，$(\\pm\\frac{\\sqrt3}2,-\\frac12)$ の正三角形をなす．原点で $6V-1=-1<0$，三角形内部では各因子の符号が変わらないので $V<\\frac16$，辺上では因子のどれかが 0 なので $V=\\frac16$（辺全体が等ポテンシャル線）．3 頂点は $V$ の鞍点（高さ $\\frac16$）である．面積は底辺 $\\sqrt3$，高さ $\\frac32$ より $S=\\frac{3\\sqrt3}4$．\n\n(2) 固定した $(x,y)$ で $\\frac12p^2\\le E-V$ を満たす $(p_x,p_y)$ は半径 $\\sqrt{2(E-V)}$ の円板で面積 $2\\pi(E-V)$．よって $\\Gamma(E)=2\\pi\\int_{V\\le E}(E-V)\\,dxdy$．$E$ で微分すると，境界 $V=E$ 上で被積分関数が 0 なので境界の移動の寄与は消え，$g(E)=2\\pi\\int_{V\\le E}dxdy=2\\pi S(E)$．\n\n(3) $g(1/6)=2\\pi S=\\frac{3\\sqrt3\\pi}2\\approx8.162$．$\\Gamma$ は三角形上で積分する．$w=(1-y)/\\sqrt3$ とし，\n\\[ \\int_{-w}^{w}\\Bigl(\\tfrac16-V\\Bigr)dx=2w\\Bigl(\\tfrac16-\\tfrac{y^2}2+\\tfrac{y^3}3\\Bigr)-\\tfrac{2w^3}3\\Bigl(\\tfrac12+y\\Bigr). \\]\n$\\frac16-\\frac{y^2}2+\\frac{y^3}3=\\frac16(1-y)^2(1+2y)$，$w^3=\\frac{(1-y)^3}{3\\sqrt3}$ を代入すると $=\\frac{2}{9\\sqrt3}(1-y)^3(1+2y)$．$s=1-y$ として\n\\[ \\int_{-1/2}^{1}(1-y)^3(1+2y)\\,dy=\\int_0^{3/2}s^3(3-2s)\\,ds=\\frac34\\Bigl(\\frac32\\Bigr)^4-\\frac25\\Bigl(\\frac32\\Bigr)^5=\\frac{243}{320}. \\]\nしたがって $\\int_D(\\frac16-V)=\\frac{2}{9\\sqrt3}\\cdot\\frac{243}{320}=\\frac{9\\sqrt3}{160}$，$\\Gamma(1/6)=2\\pi\\cdot\\frac{9\\sqrt3}{160}=\\frac{9\\sqrt3\\pi}{80}\\approx0.6122$．\n\n(4) 調和近似 $V\\approx\\frac12r^2$ では $V\\le E$ は半径 $\\sqrt{2E}$ の円で $g=2\\pi\\cdot2\\pi E=4\\pi^2E$，$\\Gamma=2\\pi^2E^2$．$E=\\frac16$ で $g=\\frac{2\\pi^2}3\\approx6.580$，$\\Gamma=\\frac{\\pi^2}{18}\\approx0.5483$．比は $g$：$\\frac{3\\sqrt3\\pi/2}{2\\pi^2/3}=\\frac{9\\sqrt3}{4\\pi}\\approx1.240$，$\\Gamma$：$\\frac{81\\sqrt3}{40\\pi}\\approx1.116$．脱出エネルギーでは非調和性により状態密度が約 24\\% 増える（3 次項は $\\theta$ 平均では消えるが，円が三角形に膨らむ）．"
+   }
+  ],
+  "idea": {
+   "tex": "等ポテンシャル線 $V=1/6$ は 3 本の直線に因数分解でき，その三角形の面積がそのまま状態密度 $g=2\\pi S$ を与える（位相空間体積の幾何学化）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Hénon-Heiles",
+   "等ポテンシャル線",
+   "因数分解",
+   "位相空間体積",
+   "状態密度",
+   "非調和性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 40,
+  "theme": "二次写像の周期3の窓とパラメータ対応",
+  "topic": "二次写像の周期3の窓とパラメータ対応",
+  "statement": {
+   "tex": "写像 $y_{n+1}=g(y_n)=1-by_n^2$（$0<b\\le2$）を考える．\n\\begin{enumerate}\n\\item $y=0$ を含む周期 2 軌道が存在する $b$ を求め，そのときの周期 2 軌道の乗数を求めよ．\n\\item 1 次変換 $y=\\alpha(x-\\frac12)$ によりロジスティック写像 $x\\mapsto ax(1-x)$ が $g$ に写ることを示し，$\\alpha$ と $b$ を $a$ で表せ．これを用いて，ロジスティック写像の分岐点 $a=3,\\ 1+\\sqrt6$ に対応する $b$ を求めよ．\n\\item $b=\\frac74$ のとき，$g$ の周期 3 の点は 3 次方程式 $343y^3-98y^2-252y+8=0$ の 3 根（いずれも重根として現れる）であることが知られている．3 根を求めずに，この周期 3 軌道の乗数を求め，$b=7/4$ で何が起こるかを述べよ．また対応するロジスティック写像のパラメータを求めよ．\n\\item ロジスティック写像の周期倍分岐の集積点 $a_\\infty\\approx3.569946$ に対応する $b_\\infty$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $b=1$（軌道 $\\{0,1\\}$），乗数 0（超安定）　(2) $\\alpha=\\frac{4}{a-2}=\\frac ab$，$b=\\frac{a(a-2)}4$；$b=\\frac34,\\ \\frac54$　(3) 乗数 $=1$：接線（サドル・ノード）分岐で周期 3 の安定・不安定軌道が対で生まれる；$a=1+2\\sqrt2$　(4) $b_\\infty\\approx1.40116$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $g(0)=1$，$g(1)=1-b$．$y=0$ に戻るには $b=1$．乗数は $g'(0)g'(1)=(0)(-2)=0$ で超安定．\n\n(2) $y=\\alpha(x-\\frac12)$ を $y'=1-by^2$ に代入：$\\alpha(x'-\\frac12)=1-b\\alpha^2(x-\\frac12)^2$．一方 $x'-\\frac12=ax(1-x)-\\frac12=\\frac a4-\\frac12-a(x-\\frac12)^2$．係数比較で $\\alpha a=b\\alpha^2$，$\\alpha(\\frac a4-\\frac12)=1$．よって $\\alpha=\\frac4{a-2}$，$b=\\frac a\\alpha=\\frac{a(a-2)}4$（すなわち $\\alpha=a/b$）．\n$a=3$：$b=\\frac34$，$a=1+\\sqrt6$：$b=\\frac{(1+\\sqrt6)(\\sqrt6-1)}4=\\frac54$．共役は乗数を保存するので，これらが $g$ の第 1，第 2 分岐点になる．\n\n(3) $g'(y)=-2by$ なので周期 3 軌道の乗数は $\\mu=(-2b)^3y_1y_2y_3$．解と係数の関係より $y_1y_2y_3=-\\frac{8}{343}$，$b=\\frac74$ で $(-2b)^3=-\\frac{343}8$．よって\n\\[ \\mu=\\Bigl(-\\frac{343}8\\Bigr)\\Bigl(-\\frac8{343}\\Bigr)=1 . \\]\n乗数 $+1$ で，周期 3 点が重根になっていることから，$b=7/4$ は接線分岐（サドル・ノード分岐）点であり，$b>7/4$ で乗数 $<1$ の安定な周期 3 軌道と $>1$ の不安定な周期 3 軌道が対になって現れる（カオス領域中の周期 3 の窓の始まり）．$b<7/4$ では周期 3 点は実数でない．対応するロジスティックのパラメータは $\\frac{a(a-2)}4=\\frac74$ より $a^2-2a-7=0$，$a=1+2\\sqrt2\\approx3.8284$．\n\n(4) $b_\\infty=\\frac{a_\\infty(a_\\infty-2)}4=\\frac{3.569946\\times1.569946}4\\approx1.40116$．"
+   }
+  ],
+  "idea": {
+   "tex": "二次写像はすべて $b=a(a-2)/4$ でロジスティック写像に共役なので，周期 3 の窓の開始点 $b=7/4$ は 3 根の積だけから乗数 $1$ として確かめられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "二次写像",
+   "ロジスティック写像",
+   "共役",
+   "周期3",
+   "接線分岐",
+   "Vietaの関係",
+   "Feigenbaum"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 40,
+  "theme": "Lorenz 方程式の Hopf 分岐点",
+  "topic": "Lorenz 方程式の Hopf 分岐点",
+  "statement": {
+   "tex": "Lorenz 方程式 $\\dot x=\\sigma(y-x),\\ \\dot y=rx-y-xz,\\ \\dot z=xy-bz$（$\\sigma=10$，$b=8/3$）を考える．\n\\begin{enumerate}\n\\item 相空間の体積要素の時間変化率を求め，任意の体積が $10^{-6}$ 倍に縮むのに要する時間を求めよ．\n\\item $r>1$ で現れる原点以外の不動点 $C_\\pm$ における線形化行列の固有方程式を，$\\sigma,b,r$ で表せ．\n\\item $C_\\pm$ が安定性を失う（純虚数の固有値対が現れる）$r=r_H$ を求めよ．そのときの固有値をすべて求め，対応する振動の周期を求めよ．\n\\item $r=20$ と $r=28$ での $C_\\pm$ の安定性を判定し，$r=20$ と $r=28$ で長時間後の軌道のふるまいがどう異なると予想されるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nabla\\cdot\\boldsymbol v=-(\\sigma+1+b)=-41/3$，$t=\\frac{6\\ln10}{41/3}\\approx1.01$　(2) $\\lambda^3+(\\sigma+b+1)\\lambda^2+b(\\sigma+r)\\lambda+2\\sigma b(r-1)=0$　(3) $r_H=\\frac{\\sigma(\\sigma+b+3)}{\\sigma-b-1}=\\frac{470}{19}\\approx24.74$；$\\lambda=-\\frac{41}3,\\ \\pm i\\sqrt{1760/19}\\approx\\pm9.62i$，周期 $\\approx0.653$　(4) $r=20$：安定（過渡的カオスの後 $C_\\pm$ に落ち着く），$r=28$：不安定（ストレンジアトラクタ）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\nabla\\cdot\\boldsymbol v=\\partial_x\\dot x+\\partial_y\\dot y+\\partial_z\\dot z=-\\sigma-1-b=-\\frac{41}3$（定数）．体積は $V(t)=V_0e^{-41t/3}$ で，$10^{-6}$ 倍になるのは $t=\\frac{3\\cdot6\\ln10}{41}\\approx1.01$．アトラクタの体積は 0 である．\n\n(2) $C_\\pm=(\\pm\\sqrt{b(r-1)},\\pm\\sqrt{b(r-1)},r-1)$．$z=r-1$ より $r-z=1$ で，\n\\[ J=\\begin{pmatrix}-\\sigma&\\sigma&0\\\\1&-1&-x^*\\\\x^*&x^*&-b\\end{pmatrix},\\quad x^{*2}=b(r-1). \\]\n$\\det(\\lambda-J)=\\lambda^3+(\\sigma+b+1)\\lambda^2+b(\\sigma+r)\\lambda+2\\sigma b(r-1)$．\n\n(3) $\\lambda^3+A\\lambda^2+B\\lambda+C=0$ が $\\lambda=i\\omega$ を根に持つ条件は，実部 $-A\\omega^2+C=0$，虚部 $-\\omega^3+B\\omega=0$ より $\\omega^2=B$，$AB=C$．\n\\[ (\\sigma+b+1)b(\\sigma+r)=2\\sigma b(r-1)\\ \\Rightarrow\\ r_H=\\frac{\\sigma(\\sigma+b+3)}{\\sigma-b-1}=\\frac{10\\cdot47/3}{19/3}=\\frac{470}{19}\\approx24.737 . \\]\nこのとき固有方程式は $(\\lambda+A)(\\lambda^2+B)=0$ と分解し，$\\lambda=-A=-\\frac{41}3$，$\\lambda=\\pm i\\sqrt B$，$B=b(\\sigma+r_H)=\\frac83\\cdot\\frac{660}{19}=\\frac{1760}{19}$，$\\omega\\approx9.625$，周期 $2\\pi/\\omega\\approx0.653$．\n（Routh–Hurwitz：$A,B,C>0$ で $AB>C$ なら安定．$AB-C=b[(\\sigma+b+1)(\\sigma+r)-2\\sigma(r-1)]$ は $r$ について減少し $r_H$ で 0．）\n\n(4) $r=20<r_H$ では $AB>C$ で $C_\\pm$ は安定（固有値 $-13.36,\\ -0.155\\pm8.71i$）．ただし原点の不安定多様体からの軌道は長いあいだ両翼を行き来した後（過渡的カオス），どちらかの $C_\\pm$ にゆっくりらせん状に落ち着く．$r=28>r_H$ では固有値 $-13.85,\\ 0.094\\pm10.19i$ で $C_\\pm$ は不安定な焦点になり，不動点に落ち着けない軌道はストレンジアトラクタ上を無限に左右を行き来する．翼の上のらせんの 1 周期がおおよそ $2\\pi/10\\approx0.6$ 程度になるのも (3) の $\\omega$ と整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "$C_\\pm$ の固有方程式が $\\lambda=i\\omega$ を持つ条件 $AB=C$ から Hopf 点 $r_H=470/19$ が厳密に出て，$r=20$ と $r=28$ のふるまいの違いが説明できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Lorenz方程式",
+   "Hopf分岐",
+   "固有方程式",
+   "Routh-Hurwitz",
+   "散逸",
+   "ストレンジアトラクタ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 45,
+  "theme": "減衰 Duffing 振動子の調和バランスと履歴",
+  "topic": "減衰 Duffing 振動子の調和バランスと履歴",
+  "statement": {
+   "tex": "減衰のある強制 Duffing 振動子\n\\[ \\ddot x+c\\dot x+\\alpha x+\\beta x^3=F\\cos\\omega t\\qquad(\\alpha=1,\\ \\beta=0.2,\\ c=0.2,\\ F=1) \\]\nの定常振動を $x\\approx A\\cos(\\omega t-\\varphi)$ で近似する（調和バランス法，$\\cos^3\\theta=\\frac34\\cos\\theta+\\frac14\\cos3\\theta$ の第 3 高調波を無視）．\n\\begin{enumerate}\n\\item 振幅 $A$ と $\\omega$ の関係式（周波数応答式）を導け．\n\\item 応答曲線の最大振幅 $A_{\\max}$ とそのときの $\\omega$ を求めよ．（$dA/d\\omega=0$ の条件を周波数応答式から求める．）\n\\item $A$ が 3 つの正の解を持つ（双安定になる）$\\omega$ の範囲を数値的に求めよ．$\\omega=1.5$ のときの 3 つの振幅を求めよ．\n\\item $\\omega$ をゆっくり増やす場合と減らす場合で，振幅が不連続に跳ぶ $\\omega$ と跳びの前後の振幅を述べ，履歴現象を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A^2\\bigl[(\\alpha-\\omega^2+\\frac34\\beta A^2)^2+c^2\\omega^2\\bigr]=F^2$　(2) $\\omega\\approx1.5760$，$A_{\\max}\\approx3.166$　(3) $1.3936<\\omega<1.5845$；$\\omega=1.5$ で $A\\approx0.847,\\ 2.591,\\ 3.039$（中央は不安定）　(4) 増加時 $\\omega\\approx1.585$ で $3.14\\to0.68$，減少時 $\\omega\\approx1.394$ で $1.55\\to2.79$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\theta=\\omega t-\\varphi$，$x=A\\cos\\theta$ を代入し $\\cos\\theta,\\sin\\theta$ の係数を比べる．$x^3\\approx\\frac34A^3\\cos\\theta$．右辺 $F\\cos(\\theta+\\varphi)=F\\cos\\varphi\\cos\\theta-F\\sin\\varphi\\sin\\theta$．\n\\[ \\cos\\theta:\\ (\\alpha-\\omega^2)A+\\tfrac34\\beta A^3=F\\cos\\varphi,\\qquad \\sin\\theta:\\ -c\\omega A=-F\\sin\\varphi . \\]\n2 乗して加えると $A^2\\bigl[(\\alpha-\\omega^2+kA^2)^2+c^2\\omega^2\\bigr]=F^2$，$k=\\frac34\\beta=0.15$．\n\n(2) $G(A,\\omega)=A^2[(\\alpha-\\omega^2+kA^2)^2+c^2\\omega^2]-F^2=0$ で $dA/d\\omega=0$ ⇔ $\\partial G/\\partial\\omega=0$：\n\\[ 2(\\alpha-\\omega^2+kA^2)(-2\\omega)+2c^2\\omega=0\\ \\Rightarrow\\ \\alpha-\\omega^2+kA^2=\\frac{c^2}2 . \\]\n代入すると $A^2=\\dfrac{F^2}{c^2(\\omega^2+c^2/4)}$．$W=\\omega^2$ として $\\dfrac{kF^2/c^2}{W+c^2/4}=W-\\alpha+\\dfrac{c^2}2$，すなわち $(W+0.01)(W-0.98)=3.75$，$W^2-0.97W-3.7598=0$，$W=2.48376$．よって $\\omega\\approx1.5760$，$A_{\\max}=\\sqrt{25/2.49376}\\approx3.166$．（弱減衰近似 $\\alpha-\\omega^2+kA^2\\approx0$，$A=F/c\\omega$ なら $\\omega=\\sqrt{5/2}$，$A=\\sqrt{10}$ とほぼ一致．）硬化ばね（$\\beta>0$）なので共振ピークは $\\omega=1$ より高周波側に傾く．\n\n(3) $u=A^2$ の 3 次方程式 $k^2u^3+2k(\\alpha-\\omega^2)u^2+[(\\alpha-\\omega^2)^2+c^2\\omega^2]u-F^2=0$ の正の実根の個数を数値的に調べると，3 個になるのは $1.3936<\\omega<1.5845$．$\\omega=1.5$ では $u$ の根から $A=0.8466,\\ 2.5914,\\ 3.0389$．中央の解は不安定（鞍点型）で実現しない．\n数値積分（$t=250$〜$300$ の最大値）では，静止から出発すると $A\\approx0.848$，$(x,\\dot x)=(3,0)$ から出発すると $A\\approx3.086$ に落ち着き，2 つの安定な定常振動が共存する（大振幅側は高調波のため調和バランスより約 1.5\\% 大きい）．\n\n(4) $\\omega$ を小さい方からゆっくり増やすと大振幅の枝をたどって振幅が増え，枝の端 $\\omega\\approx1.585$（$A\\approx3.14$）で枝が消えて小振幅 $A\\approx0.68$ に跳び下がる．逆に大きい $\\omega$ から減らすと小振幅の枝をたどり，$\\omega\\approx1.394$（$A\\approx1.55$）で消えて $A\\approx2.79$ に跳び上がる．$1.394<\\omega<1.585$ ではどちらの振幅になるかは履歴（初期条件）で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "調和バランスの周波数応答式は $A^2$ の 3 次式で，3 実根の区間が双安定・履歴の範囲を与え，その端が跳躍点になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega$：≈1.5760 ; $A_{\\max}$：≈3.166\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Duffing振動子",
+   "調和バランス",
+   "周波数応答",
+   "履歴現象",
+   "双安定",
+   "非線形共振"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 40,
+  "theme": "Duffing 振動子の Poincaré 写像と面積収縮",
+  "topic": "Duffing 振動子の Poincaré 写像と面積収縮",
+  "statement": {
+   "tex": "強制減衰振動子\n\\[ \\ddot x+0.7\\dot x+x^3=0.75\\cos t \\]\nについて，$p=\\dot x$ とし，$t=2\\pi n$ ごとに $(x,p)$ を記録する Poincaré 写像 $P:(x_n,p_n)\\mapsto(x_{n+1},p_{n+1})$ を考える．\n\\begin{enumerate}\n\\item 調和バランス法（$x\\approx A\\cos(t-\\varphi)$，第 3 高調波無視）で定常振幅 $A$ の満たす方程式を求め，正の解がただ 1 つであることを確かめて $A$ を求めよ．\n\\item $P$ のヤコビ行列の行列式が $(x,p)$ によらず一定であることを示し，その値を求めよ．\n\\item 数値計算によると $P$ は固定点 $(x,p)\\approx(-0.239,0.905)$ を持ち，そこでのヤコビ行列の固有値の 1 つは $0.637$ である．もう 1 つの固有値を予言せよ．また，固定点からの小さなずれが $10^{-6}$ 倍になるのに必要な写像の反復回数を見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A^2[(\\frac34A^2-1)^2+0.49]=0.5625$，$A\\approx1.026$（数値積分では $\\approx1.06$）　(2) $\\det DP=e^{-1.4\\pi}\\approx0.0123$　(3) $\\approx0.0193$，約 31 回"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $x=A\\cos\\theta$，$\\theta=t-\\varphi$，$x^3\\approx\\frac34A^3\\cos\\theta$．$\\cos\\theta$ の係数：$-A+\\frac34A^3=0.75\\cos\\varphi$，$\\sin\\theta$ の係数：$-0.7A=-0.75\\sin\\varphi$．2 乗和より\n\\[ A^2\\Bigl[\\Bigl(\\frac34A^2-1\\Bigr)^2+0.49\\Bigr]=0.5625 . \\]\n$u=A^2$ で $\\frac9{16}u^3-\\frac32u^2+1.49u-0.5625=0$．数値的に根は $u=1.0529$ と複素共役対 $0.807\\pm0.547i$ で，正の実根は 1 つ．$A=\\sqrt{1.0529}\\approx1.026$．（数値積分の定常最大振幅は $1.063$ で，高調波の分だけ少し大きい．）共存解がないので履歴は生じず，Poincaré 断面は 1 点に収束する．\n\n(2) 拡大した自励系 $(x,p,\\tau)$，$\\dot x=p$，$\\dot p=-0.7p-x^3+0.75\\cos\\tau$，$\\dot\\tau=1$ の流れの発散は $\\partial\\dot x/\\partial x+\\partial\\dot p/\\partial p=-0.7$（一定）．Liouville の式より，$(x,p)$ 面上の面積要素は時間 $2\\pi$ で $e^{-0.7\\cdot2\\pi}$ 倍になる．したがって\n\\[ \\det DP=e^{-1.4\\pi}\\approx0.01230 \\]\nはどの点でも同じ．\n\n(3) 固有値の積 $=\\det DP$ より，もう 1 つは $0.01230/0.637\\approx0.0193$．（数値微分による計算でも $0.6373$ と $0.0193$．）ずれは遅い方向に $0.637^n$ で縮むので，$n=\\ln10^6/\\ln(1/0.637)\\approx13.82/0.451\\approx30.6$，約 31 回（時間にして $\\approx31\\times2\\pi\\approx190$）．"
+   }
+  ],
+  "idea": {
+   "tex": "発散 $-0.7$ が一定なので Poincaré 写像の面積収縮率は $e^{-1.4\\pi}$ で場所によらず，1 つの固有値から他方が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Duffing振動子",
+   "Poincaré写像",
+   "Liouvilleの定理",
+   "面積収縮",
+   "調和バランス",
+   "固定点"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 45,
+  "theme": "Hénon-Heiles の Poincaré 断面の境界と周期",
+  "topic": "Hénon-Heiles の Poincaré 断面の境界と周期",
+  "statement": {
+   "tex": "無次元化した Hénon-Heiles 系 $H=\\frac12(\\dot x^2+\\dot y^2)+\\frac12(x^2+y^2)+x^2y-\\frac13y^3$ で，エネルギー $E$ の軌道が面 $x=0$ を $\\dot x>0$ で横切る点を $(y,\\dot y)$ 平面にプロットした Poincaré 断面を考える．\n\\begin{enumerate}\n\\item $x\\equiv0,\\ \\dot x\\equiv0$ が運動方程式の解になる（不変な部分空間である）ことを示し，そのときの $y$ の運動方程式を書け．\n\\item 断面上の点が存在しうる領域を求め，その境界曲線が (1) の運動の相軌道そのものであることを示せ．\n\\item $E=1/12$ のとき，この領域の $y$ の範囲を厳密に求めよ．\n\\item 領域の面積 $S(E)$ について $dS/dE$ が (1) の運動の周期 $T(E)$ に等しいことを示せ．$E=1/12$ での $S$ と $T$ を数値的に求め，小振幅（調和近似）の値と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\ddot y=-y+y^2$　(2) $\\frac12\\dot y^2+\\frac12y^2-\\frac13y^3\\le E$ の有界部分；境界は $\\dot x=0$ に対応　(3) $\\frac{1-\\sqrt3}2\\le y\\le\\frac12$　(4) $S\\approx0.5462$（調和近似 $2\\pi E\\approx0.5236$），$T\\approx6.902$（調和近似 $2\\pi$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 運動方程式 $\\ddot x=-x-2xy$，$\\ddot y=-y-x^2+y^2$．$x=\\dot x=0$ なら $\\ddot x=0$ なので $x\\equiv0$ が保たれ，$y$ は $\\ddot y=-y+y^2$（1 次元ポテンシャル $U(y)=\\frac12y^2-\\frac13y^3$）に従う．\n\n(2) $x=0$ でエネルギーは $\\frac12\\dot x^2+\\frac12\\dot y^2+U(y)=E$．$\\dot x^2=2E-\\dot y^2-2U(y)\\ge0$ より $\\frac12\\dot y^2+U(y)\\le E$（$y$ が原点側の有界部分）．境界では $\\dot x=0$ で，その点を初期値とする軌道はまさに (1) の $x\\equiv0$ の運動である．すなわち断面の外枠は，$x\\equiv0$ の周期軌道の $(y,\\dot y)$ 面での相軌道 $\\frac12\\dot y^2+U(y)=E$ に一致する（この軌道自身は $\\dot x>0$ で横切らないので断面上の点にはならない）．\n\n(3) 転回点は $\\frac12y^2-\\frac13y^3=\\frac1{12}$，すなわち $4y^3-6y^2+1=0$．$y=\\frac12$ が根で $(2y-1)(2y^2-2y-1)=0$，他の根 $y=\\frac{1\\pm\\sqrt3}2$．原点を含む区間は $\\frac{1-\\sqrt3}2\\approx-0.366\\le y\\le\\frac12$（$\\frac{1+\\sqrt3}2$ はポテンシャル障壁の外側）．\n\n(4) $S(E)=\\oint\\dot y\\,dy=2\\int_{y_1}^{y_2}\\sqrt{2(E-U)}\\,dy$（1 次元運動の作用変数の $2\\pi$ 倍）．$E$ で微分すると端点の寄与は被積分関数が 0 なので消え，\n\\[ \\frac{dS}{dE}=2\\int_{y_1}^{y_2}\\frac{dy}{\\sqrt{2(E-U)}}=\\oint\\frac{dy}{\\dot y}=T(E). \\]\n数値積分で $E=\\frac1{12}$：$S\\approx0.5462$（調和近似 $U\\approx\\frac12y^2$ なら円で $2\\pi E=0.5236$），$T\\approx6.9016$（調和近似 $2\\pi=6.2832$）．$\\ddot y=-y+y^2$ を $y(0)=\\frac12$，$\\dot y(0)=0$ から直接積分しても周期 $6.90164$ を得る．$E\\to\\frac16$ では境界が鞍点 $(y,\\dot y)=(1,0)$ を通り，$T\\to\\infty$（対数発散）となって境界付近の運動がカオスを起こしやすくなる．"
+   }
+  ],
+  "idea": {
+   "tex": "Poincaré 断面の外枠は不変部分空間 $x\\equiv0$ 上の周期軌道そのもので，その面積の $E$ 微分がその軌道の周期を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\ddot y$：- y + y ^(2)\n(2) 記述\n(3) ((1-sqrt(3))/2)<= y<=1/2\n(4) $S$：≈0.5462 ; $T$：≈6.902"
+  },
+  "methods": [],
+  "tags": [
+   "Hénon-Heiles",
+   "Poincaré断面",
+   "不変部分空間",
+   "作用変数",
+   "周期",
+   "セパラトリクス"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 45,
+  "theme": "周期3の窓の幅：接線分岐から周期倍分岐まで",
+  "topic": "周期3の窓の幅：接線分岐から周期倍分岐まで",
+  "statement": {
+   "tex": "ロジスティック写像 $x\\mapsto ax(1-x)$ の周期 3 軌道の乗数 $\\mu=\\prod_{i=1}^3a(1-2x_i)$ は，$u=a^2-2a$ を用いて\n\\[ \\mu_\\pm=8-u\\pm u\\sqrt{u-7} \\]\nと表されることが知られている（2 つの周期 3 軌道に対応）．\n\\begin{enumerate}\n\\item 周期 3 軌道が生まれる $a$ を求め，そこで起こる分岐の種類を述べよ．どちらの軌道が安定か．\n\\item 安定な周期 3 軌道が超安定（$x=\\frac12$ を含む）になる $a$ が $u^3-8u^2+16u-64=0$ の実根で与えられることを示し，$a$ を数値的に求めよ．\n\\item 安定な周期 3 軌道が周期倍分岐を起こす（周期 6 が生まれる）$a$ を求めよ（$u$ の 3 次方程式を導き，数値で答えよ）．周期 3 軌道が安定な $a$ の幅はいくらか．\n\\item $a<0$ にも同じ窓が存在することを示し，その範囲を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=7$，$a=1+2\\sqrt2\\approx3.82843$，接線（サドル・ノード）分岐；$\\mu_-$ の軌道が安定　(2) $u\\approx7.01951$，$a\\approx3.83187$　(3) $u^3-8u^2+18u-81=0$，$u\\approx7.07412$，$a\\approx3.84150$；幅 $\\approx0.0131$　(4) $a=1-\\sqrt{1+u}$ で $-1.84150<a<-1.82843$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mu_\\pm$ が実数になるのは $u\\ge7$．$u=7$ で $\\mu_+=\\mu_-=1$ となり 2 つの周期 3 軌道が一致して生まれる（乗数 $+1$ の接線分岐）．$a^2-2a=7$ より $a=1+2\\sqrt2\\approx3.82843$．$u>7$ では $\\mu_+>1$（不安定），$\\mu_-<1$ で，$\\mu_->-1$ の間は安定．\n\n(2) 超安定は $\\mu_-=0$：$u\\sqrt{u-7}=8-u$．両辺 2 乗して $u^2(u-7)=(8-u)^2$，すなわち $u^3-8u^2+16u-64=0$．$7<u<8$ の実根は $u\\approx7.01951$（他の 2 根は複素数）．$a=1+\\sqrt{1+u}\\approx3.83187$．実際 $x=\\frac12$ から 3 回反復すると $\\frac12$ に戻る．\n\n(3) $\\mu_-=-1$：$u\\sqrt{u-7}=9-u$，2 乗して $u^3-7u^2=81-18u+u^2$，すなわち $u^3-8u^2+18u-81=0$．実根 $u\\approx7.07412$，$a=1+\\sqrt{1+u}\\approx3.84150$．安定な周期 3 の幅は $3.84150-3.82843\\approx0.0131$．（$a=3.845$ では周期 6 が見えることと整合．）\n\n(4) $u=a^2-2a=(a-1)^2-1$ は $a\\to2-a$ で不変なので，乗数は $a$ と $2-a$ で等しい（実際，両者はアフィン変換で共役である）．$u$ の同じ区間 $7<u<7.07412$ に対し $a=1-\\sqrt{1+u}$ で $-1.84150<a<-1.82843$ に安定な周期 3 の窓がある．"
+   }
+  ],
+  "idea": {
+   "tex": "周期 3 の乗数を $u=a^2-2a$ で書くと，窓の始まり（$\\mu=1$），超安定（$\\mu=0$），終わり（$\\mu=-1$）がすべて $u$ の簡単な方程式になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $u$：≈7.01951 ; $a$：≈3.83187\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ロジスティック写像",
+   "周期3の窓",
+   "接線分岐",
+   "超安定",
+   "周期倍分岐",
+   "乗数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 35,
+  "theme": "分離線近傍の振り子：振動と回転の周期比",
+  "topic": "分離線近傍の振り子：振動と回転の周期比",
+  "statement": {
+   "tex": "長さ $l$ の軽い棒の先に質量 $m$ のおもりをつけた剛体振り子（鉛直面内，摩擦なし）を考える．ふれ角を $\\theta$（最下点で $\\theta=0$），$\\omega_g=\\sqrt{g/l}$ とする．おもりは最下点から初角速度 $\\Omega$ で動き出す．完全楕円積分 $K(k)=\\displaystyle\\int_0^{\\pi/2}\\frac{d\\psi}{\\sqrt{1-k^2\\sin^2\\psi}}$ は $k\\to1$ で $K(k)\\simeq\\ln\\dfrac{4}{\\sqrt{1-k^2}}$ と振る舞うことを用いてよい．\n\\begin{enumerate}\n\\item 振り子が最上点 $\\theta=\\pi$ を越えて回転するための $\\Omega$ の条件を求めよ．臨界値を $\\Omega_{\\rm c}$ とする．\n\\item $\\Omega=\\Omega_{\\rm c}$ のとき $\\sin(\\theta/2)=\\tanh(\\omega_g t)$ となることを示し，$\\theta=\\pi-\\delta$（$0<\\delta\\ll1$）に達する時刻を $\\delta$ で表せ．\n\\item $\\Omega=\\Omega_{\\rm c}(1-\\eta)$（$0<\\eta\\ll1$）のとき，振動の周期 $T_{\\rm osc}$ の主要項を $\\eta$ で表せ．\n\\item $\\Omega=\\Omega_{\\rm c}(1+\\eta)$（$0<\\eta\\ll1$）のとき，1 回転に要する時間 $T_{\\rm rot}$ の主要項を $\\eta$ で表せ．\n\\item $\\eta\\to0$ で $T_{\\rm osc}/T_{\\rm rot}\\to2$ となることを示し，その物理的理由を (2) の結果と関連づけて説明せよ．また $l=1.0\\ \\mathrm{m}$，$g=9.8\\ \\mathrm{m/s^2}$，$\\eta=1.0\\times10^{-3}$ のときの $T_{\\rm osc}$ を求め，微小振動の周期 $2\\pi\\sqrt{l/g}$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Omega>\\Omega_{\\rm c}=2\\omega_g$　(2) $t\\simeq\\omega_g^{-1}\\ln(4/\\delta)$　(3) $T_{\\rm osc}\\simeq\\dfrac{2}{\\omega_g}\\ln\\dfrac8\\eta$　(4) $T_{\\rm rot}\\simeq\\dfrac{1}{\\omega_g}\\ln\\dfrac8\\eta$　(5) 比 $\\to2$；$T_{\\rm osc}\\approx5.74\\ \\mathrm{s}$（微小振動 $2.01\\ \\mathrm{s}$ の約 2.9 倍）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) エネルギー保存 $\\frac12ml^2\\Omega^2=\\frac12ml^2\\dot\\theta^2+mgl(1-\\cos\\theta)$ より\n\\[\n\\dot\\theta^2=\\Omega^2-4\\omega_g^2\\sin^2\\frac\\theta2 .\n\\]\n$\\theta=\\pi$ で $\\dot\\theta^2>0$ が必要なので $\\Omega>2\\omega_g\\equiv\\Omega_{\\rm c}$．\n\n(2) $\\Omega=2\\omega_g$ のとき $\\dot\\theta=2\\omega_g\\cos(\\theta/2)$．$s=\\sin(\\theta/2)$ とおくと $\\dot s=\\frac12\\cos(\\theta/2)\\dot\\theta=\\omega_g(1-s^2)$，$s(0)=0$ から $s=\\tanh(\\omega_g t)$．$\\theta=\\pi-\\delta$ では $s=\\cos(\\delta/2)\\simeq1-\\delta^2/8$．$\\tanh x\\simeq1-2e^{-2x}$ より $2e^{-2\\omega_g t}=\\delta^2/8$，すなわち\n\\[\nt\\simeq\\frac{1}{\\omega_g}\\ln\\frac4\\delta .\n\\]\n最上点には無限の時間をかけて漸近し，その近くで滞在する時間が $\\ln(1/\\delta)$ で増える．\n\n(3) 最大ふれ角 $\\alpha$ は $\\sin(\\alpha/2)=\\Omega/\\Omega_{\\rm c}=1-\\eta\\equiv k_1$．$\\sin(\\theta/2)=k_1\\sin\\phi$ と置換すると $\\omega_g\\,dt=d\\phi/\\sqrt{1-k_1^2\\sin^2\\phi}$ となり，$T_{\\rm osc}=\\dfrac{4}{\\omega_g}K(k_1)$．$1-k_1^2\\simeq2\\eta$ より\n\\[\nT_{\\rm osc}\\simeq\\frac4{\\omega_g}\\ln\\frac{4}{\\sqrt{2\\eta}}=\\frac{2}{\\omega_g}\\ln\\frac8\\eta .\n\\]\n\n(4) $\\dot\\theta=\\Omega\\sqrt{1-k^2\\sin^2(\\theta/2)}$，$k=\\Omega_{\\rm c}/\\Omega=1/(1+\\eta)$．1 回転の時間は\n\\[\nT_{\\rm rot}=\\int_0^{2\\pi}\\frac{d\\theta}{\\Omega\\sqrt{1-k^2\\sin^2(\\theta/2)}}=\\frac{4}{\\Omega}K(k).\n\\]\n$1-k^2\\simeq2\\eta$，$\\Omega\\simeq2\\omega_g$ より $T_{\\rm rot}\\simeq\\dfrac{2}{\\omega_g}\\ln\\dfrac4{\\sqrt{2\\eta}}=\\dfrac1{\\omega_g}\\ln\\dfrac8\\eta$．\n\n(5) (3)(4) より $T_{\\rm osc}/T_{\\rm rot}\\to2$．(2) のとおり，分離線近くの運動では最上点付近での滞在時間が $\\ln(1/\\eta)$ で発散し，周期の大部分を占める．1 回転では最上点付近を 1 回だけ通過するのに対し，振動では 1 周期の間に最上点付近へ 2 回（右側の折り返し点と左側の折り返し点）近づくので，主要項が 2 倍になる．\n\n数値：$\\omega_g=\\sqrt{9.8}=3.130\\ \\mathrm{s^{-1}}$，$\\ln(8000)=8.987$ より $T_{\\rm osc}\\simeq\\frac{2}{3.130}\\times8.987\\approx5.74\\ \\mathrm{s}$（厳密値 $4K/\\omega_g=5.744\\ \\mathrm{s}$）．微小振動の周期 $2\\pi/\\omega_g=2.007\\ \\mathrm{s}$ の約 2.9 倍である．"
+   }
+  ],
+  "idea": {
+   "tex": "分離線近傍では最上点（不安定平衡点）付近の滞在時間が対数発散し，周期を支配する．振動では最上点付近を 1 周期に 2 回訪れ，回転では 1 回なので，周期比は 2 に収束する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "単振り子",
+   "楕円積分",
+   "分離線",
+   "対数発散",
+   "非線形振動",
+   "回転運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 3,
+  "minutes": 40,
+  "theme": "3次・4次非線形振動子と熱膨張",
+  "topic": "3次・4次非線形振動子と熱膨張",
+  "statement": {
+   "tex": "質量 $m$ の粒子が 1 次元のポテンシャル\n\\[\nV(x)=\\frac12m\\omega_0^2x^2-\\frac13m\\alpha x^3+\\frac14m\\beta x^4\n\\]\nの中で運動する（$\\alpha,\\beta$ は小さな定数，振幅 $A$ は $\\alpha A\\ll\\omega_0^2$，$\\beta A^2\\ll\\omega_0^2$ を満たす）．\n\\begin{enumerate}\n\\item $\\beta=0$ とする．初期条件 $x(0)=0$，$\\dot x(0)=A\\omega_0$ のもとで，運動方程式の解を $\\alpha$ の 1 次まで求めよ（振動数のずれは $\\alpha$ の 1 次では生じないことを用いてよい）．また，振動の中心の時間平均 $\\langle x\\rangle_t$ を $A$ の 2 次まで求めよ．\n\\item $\\alpha,\\beta$ がともにあるとき，振幅 $A$ の振動の角振動数 $\\omega$ を $A^2$ の次数まで求めよ．\n\\item 振幅によらず（$A^2$ の次数で）等時性が保たれるための $\\beta$ の条件を求めよ．\n\\item この粒子が温度 $T$ の熱浴と接して古典的カノニカル分布にあるとき，平均位置 $\\langle x\\rangle$ を $T$ の 1 次まで求めよ．$\\beta$ の項がこの次数に寄与しない理由を述べ，結果が (1) の $\\langle x\\rangle_t$ をエネルギー分布で平均したものと一致することを確かめよ．これを固体の原子間相互作用のモデルとみると，熱膨張について何が言えるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x=A\\sin\\omega_0t+\\dfrac{\\alpha A^2}{6\\omega_0^2}\\left(3+\\cos2\\omega_0t-4\\cos\\omega_0t\\right)$，$\\langle x\\rangle_t=\\dfrac{\\alpha A^2}{2\\omega_0^2}$\n(2) $\\omega=\\omega_0+\\left(\\dfrac{3\\beta}{8\\omega_0}-\\dfrac{5\\alpha^2}{12\\omega_0^3}\\right)A^2$\n(3) $\\beta=\\dfrac{10\\alpha^2}{9\\omega_0^2}$\n(4) $\\langle x\\rangle=\\dfrac{\\alpha k_BT}{m\\omega_0^4}$（$T$ に比例 → 熱膨張率は低温の量子効果を除き一定，原因は非対称な 3 次項）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "運動方程式は $\\ddot x+\\omega_0^2x=\\alpha x^2-\\beta x^3$．\n\n(1) $x=x_0+x_1$，$x_0=A\\sin\\omega_0t$ とおくと，$\\alpha$ の 1 次で\n\\[\n\\ddot x_1+\\omega_0^2x_1=\\alpha A^2\\sin^2\\omega_0t=\\frac{\\alpha A^2}2(1-\\cos2\\omega_0t).\n\\]\n特解は $\\dfrac{\\alpha A^2}{2\\omega_0^2}+\\dfrac{\\alpha A^2}{6\\omega_0^2}\\cos2\\omega_0t$．$x_0$ がすでに初期条件を満たすので $x_1(0)=\\dot x_1(0)=0$ が必要で，斉次解 $C\\cos\\omega_0t+D\\sin\\omega_0t$ を加えると $C=-\\dfrac{2\\alpha A^2}{3\\omega_0^2}$，$D=0$．よって\n\\[\nx=A\\sin\\omega_0t+\\frac{\\alpha A^2}{6\\omega_0^2}\\left(3+\\cos2\\omega_0t-4\\cos\\omega_0t\\right).\n\\]\n振動項の時間平均はゼロなので $\\langle x\\rangle_t=\\dfrac{\\alpha A^2}{2\\omega_0^2}$．$\\alpha>0$ ならポテンシャルの緩い側（$x>0$）に中心がずれる．\n\n(2) リンドシュテット法．$\\tau=\\omega t$，$\\omega=\\omega_0+\\omega^{(1)}+\\omega^{(2)}+\\cdots$ として $\\omega^2x''+\\omega_0^2x=\\alpha x^2-\\beta x^3$ を振幅で展開する（$'=d/d\\tau$）．\n\n0 次：$x^{(0)}=A\\cos\\tau$．\n\n1 次（$A^2$）：$\\omega_0^2(x^{(1)\\prime\\prime}+x^{(1)})=2\\omega_0\\omega^{(1)}A\\cos\\tau+\\alpha A^2\\cos^2\\tau$．永年項が消えるため $\\omega^{(1)}=0$，\n\\[\nx^{(1)}=\\frac{\\alpha A^2}{2\\omega_0^2}-\\frac{\\alpha A^2}{6\\omega_0^2}\\cos2\\tau .\n\\]\n2 次（$A^3$）：$\\omega_0^2(x^{(2)\\prime\\prime}+x^{(2)})=2\\omega_0\\omega^{(2)}A\\cos\\tau+2\\alpha x^{(0)}x^{(1)}-\\beta (x^{(0)})^3$．右辺の $\\cos\\tau$ の係数は\n\\[\n2\\omega_0\\omega^{(2)}A+2\\alpha A\\left(\\frac{\\alpha A^2}{2\\omega_0^2}-\\frac{\\alpha A^2}{12\\omega_0^2}\\right)-\\frac34\\beta A^3\n=2\\omega_0\\omega^{(2)}A+\\frac{5\\alpha^2A^3}{6\\omega_0^2}-\\frac34\\beta A^3 .\n\\]\nこれをゼロとおいて\n\\[\n\\omega=\\omega_0+\\left(\\frac{3\\beta}{8\\omega_0}-\\frac{5\\alpha^2}{12\\omega_0^3}\\right)A^2 .\n\\]\n3 次項は $\\alpha$ の符号によらず振動数を下げ（2 次摂動），4 次項は $\\beta>0$ なら上げる（1 次摂動）．\n\n(3) $A^2$ の係数がゼロ：$\\dfrac{3\\beta}{8\\omega_0}=\\dfrac{5\\alpha^2}{12\\omega_0^3}$ より $\\beta=\\dfrac{10\\alpha^2}{9\\omega_0^2}$．\n\n(4) $\\langle x\\rangle=\\dfrac{\\int x\\,e^{-V/k_BT}dx}{\\int e^{-V/k_BT}dx}$．$\\sigma^2=k_BT/(m\\omega_0^2)$ として非調和項を展開すると\n\\[\ne^{-V/k_BT}\\simeq e^{-x^2/2\\sigma^2}\\left(1+\\frac{m\\alpha x^3}{3k_BT}-\\frac{m\\beta x^4}{4k_BT}+\\cdots\\right).\n\\]\nガウス分布で奇数次モーメントはゼロなので，分子に効く最低次は $x\\cdot x^3$ の項で，\n\\[\n\\langle x\\rangle\\simeq\\frac{m\\alpha}{3k_BT}\\langle x^4\\rangle_0=\\frac{m\\alpha}{3k_BT}\\cdot3\\sigma^4=\\frac{\\alpha k_BT}{m\\omega_0^4}.\n\\]\n$x^4$ の項は偶関数で，分子では $x\\cdot x^4$ が奇関数となり消える．$\\beta$ は $\\alpha\\beta$ の形で $T^2$ 以上の次数にしか現れない（対称な非調和性は中心をずらさない）．\n\n整合性：(1) より $\\langle x\\rangle_t=\\dfrac{\\alpha A^2}{2\\omega_0^2}$，最低次で $E=\\frac12m\\omega_0^2A^2$．古典カノニカル分布では 1 自由度の調和振動子のエネルギー分布は $e^{-E/k_BT}dE/k_BT$（位相空間の面積 $2\\pi E/\\omega_0$ が $E$ に比例）なので $\\langle A^2\\rangle=\\dfrac{2\\langle E\\rangle}{m\\omega_0^2}=\\dfrac{2k_BT}{m\\omega_0^2}$，よって $\\dfrac{\\alpha}{2\\omega_0^2}\\cdot\\dfrac{2k_BT}{m\\omega_0^2}=\\dfrac{\\alpha k_BT}{m\\omega_0^4}$ で一致する．\n\n物理的意味：原子間距離の平均の伸びが $T$ に比例するので，線膨張率 $\\dfrac1d\\dfrac{d\\langle x\\rangle}{dT}=\\dfrac{\\alpha k_B}{m\\omega_0^4 d}$（$d$：格子間隔）は温度によらない定数となる（古典領域）．熱膨張はポテンシャルの非対称性（3 次項）によって生じ，調和近似や対称な 4 次項だけでは生じない．低温では量子効果で比熱とともにゼロに向かう．"
+   }
+  ],
+  "idea": {
+   "tex": "3 次非調和項は振動中心をずらし（熱膨張の起源），振動数には 2 次摂動で $-5\\alpha^2/12\\omega_0^3$ の寄与を与えて 4 次項の 1 次寄与と競合する．熱平均でも力学的平均でも同じ $\\alpha k_BT/m\\omega_0^4$ が出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega$：ω_0 +(((3 β)/(8 ω_0))-((5 α ^(2))/(12 ω_0 ^(3)))) A ^(2)\n(3) $\\beta$：((10 α ^(2))/(9 ω_0 ^(2)))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "非線形振動",
+   "摂動論",
+   "リンドシュテット法",
+   "振幅依存振動数",
+   "熱膨張",
+   "カノニカル分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "AM-06-010",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -583,6 +1653,158 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 4,
+  "minutes": 45,
+  "theme": "ばね振り子の2:1内部共鳴とパラメトリック励振",
+  "topic": "ばね振り子の2:1内部共鳴とパラメトリック励振",
+  "statement": {
+   "tex": "自然長 $L_a$，ばね定数 $k$ の質量の無視できるばねの一端を固定点に，他端に質量 $M$ の質点を付け，鉛直面内で運動させる（ばねは曲がらない）．鉛直下向きからの角を $\\theta$，つり合いの長さ $L_0$ からの伸びを $l$ とする．\n\\begin{enumerate}\n\\item ラグランジアンを書き，$\\theta,l$ が微小なときの 2 つの振動の角振動数 $\\omega_k$（伸縮）と $\\omega_g$（振れ）を求めよ．\n\\item 2:1 の内部共鳴 $\\omega_k=2\\omega_g$ が起こる条件を，つり合いでのばねの伸び $L_0-L_a$ と $L_a$ の関係として表せ．\n\\item 共鳴条件が成り立つとき，伸縮振動 $l=A\\cos2\\omega_gt$（$A\\ll L_0$）が先に励起されていて，$\\theta$ の運動が伸縮に反作用を及ぼさないと近似する．$\\theta$ の線形化された方程式を書き，$u=(L_0+l)\\theta$ とおくと $A/L_0$ の 1 次までで\n\\[ \\ddot u+\\omega_g^2\\left(1+h\\cos2\\omega_gt\\right)u=0 \\]\nの形になることを示し，$h$ を求めよ．\n\\item (3) の方程式で $u=a(t)\\cos\\omega_gt+b(t)\\sin\\omega_gt$（$a,b$ はゆっくり変化）とおき，共鳴項だけを残す平均化によって，振れの振幅が指数関数的に成長することを示し，その成長率 $s$ を $A,L_0,\\omega_g$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\frac M2\\{\\dot l^2+(L_0+l)^2\\dot\\theta^2\\}+Mg(L_0+l)\\cos\\theta-\\frac k2\\{l^2+2(L_0-L_a)l\\}$，$\\omega_k=\\sqrt{k/M}$，$\\omega_g=\\sqrt{g/L_0}$　(2) $L_0-L_a=L_a/3$（$L_0=\\frac43L_a$，$kL_a=3Mg$）　(3) $h=3A/L_0$　(4) $s=\\dfrac{h\\omega_g}{4}=\\dfrac{3A\\omega_g}{4L_0}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 質点の位置 $(L_0+l)(\\sin\\theta,\\cos\\theta)$（$z$ 下向き）より\n\\[ L=\\frac M2\\left\\{\\dot l^2+(L_0+l)^2\\dot\\theta^2\\right\\}+Mg(L_0+l)\\cos\\theta-\\frac k2(L_0-L_a+l)^2 \\]\n（定数は省略可）．つり合い $k(L_0-L_a)=Mg$ を用いて線形化すると $M\\ddot l+kl=0$，$L_0\\ddot\\theta+g\\theta=0$．よって $\\omega_k=\\sqrt{k/M}$，$\\omega_g=\\sqrt{g/L_0}$．\n\n(2) $\\omega_k^2=4\\omega_g^2$：$\\dfrac kM=\\dfrac{4g}{L_0}$．$L_0-L_a=Mg/k$ だから $L_0=4(L_0-L_a)$，すなわち $L_0-L_a=\\dfrac{L_a}{3}$（$kL_a=3Mg$）．\n\n(3) $\\theta$ の Lagrange 方程式 $\\dfrac{d}{dt}\\{M(L_0+l)^2\\dot\\theta\\}+Mg(L_0+l)\\sin\\theta=0$ を線形化し $M(L_0+l)$ で割ると\n\\[ (L_0+l)\\ddot\\theta+2\\dot l\\dot\\theta+g\\theta=0 . \\]\n$u=(L_0+l)\\theta$ とすると $\\ddot u=(L_0+l)\\ddot\\theta+2\\dot l\\dot\\theta+\\ddot l\\theta=(\\ddot l-g)\\theta$，したがって\n\\[ \\ddot u+\\frac{g-\\ddot l}{L_0+l}u=0 . \\]\n$l=A\\cos2\\omega_gt$，$\\ddot l=-4\\omega_g^2A\\cos2\\omega_gt$，$g=\\omega_g^2L_0$ を代入し $A/L_0$ の 1 次まで展開すると\n\\[ \\frac{g-\\ddot l}{L_0+l}=\\omega_g^2\\frac{1+4\\frac A{L_0}\\cos2\\omega_gt}{1+\\frac A{L_0}\\cos2\\omega_gt}\\simeq\\omega_g^2\\left(1+\\frac{3A}{L_0}\\cos2\\omega_gt\\right). \\]\nよって $h=3A/L_0$．\n\n(4) $\\omega=\\omega_g$ と書く．$\\ddot u+\\omega^2u=-h\\omega^2\\cos2\\omega t\\,u$ に代入し，$\\ddot a,\\ddot b$ を無視すると左辺は $2\\omega(-\\dot a\\sin\\omega t+\\dot b\\cos\\omega t)$．右辺の $\\cos\\omega t,\\sin\\omega t$ 成分は\n$\\cos2\\omega t\\cos\\omega t\\to\\frac12\\cos\\omega t$，$\\cos2\\omega t\\sin\\omega t\\to-\\frac12\\sin\\omega t$ より $-h\\omega^2\\left(\\frac a2\\cos\\omega t-\\frac b2\\sin\\omega t\\right)$．係数を比べて\n\\[ \\dot b=-\\frac{h\\omega}{4}a,\\qquad \\dot a=-\\frac{h\\omega}{4}b . \\]\n$a-b$ は $\\dfrac{d}{dt}(a-b)=\\dfrac{h\\omega}4(a-b)$ で指数関数的に成長し（$a+b$ は減衰），成長率は\n\\[ s=\\frac{h\\omega_g}{4}=\\frac{3A\\omega_g}{4L_0}. \\]\n伸縮振動のエネルギーが振れの振動へパラメトリックに移る．（実際には反作用で伸縮振幅が減るので，エネルギーは 2 つのモード間を周期的に行き来する．）"
+   }
+  ],
+  "idea": {
+   "tex": "ばね振り子は伸縮と振れの振動数比が 2:1 のとき内部共鳴し，伸縮が振り子長の周期的変調となって振れをパラメトリック励振する．$u=(L_0+l)\\theta$ の変換でマシュー型方程式に帰着し，成長率が求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $h$：3 A / L_0\n(4) $s$：((h ω_g)/(4))"
+  },
+  "methods": [],
+  "tags": [
+   "ばね振り子",
+   "内部共鳴",
+   "パラメトリック共鳴",
+   "マシュー方程式",
+   "平均化法"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 4,
+  "minutes": 60,
+  "theme": "二重井戸 Duffing の Melnikov 判定",
+  "topic": "二重井戸 Duffing の Melnikov 判定",
+  "statement": {
+   "tex": "二重井戸型の強制減衰振動子\n\\[ \\ddot x+\\delta\\dot x-x+x^3=F\\cos\\omega t\\qquad(\\delta,F\\ \\text{は小さい正の定数}) \\]\nを考える．\n\\begin{enumerate}\n\\item $\\delta=F=0$ のとき，鞍点 $x=0$ に出入りするホモクリニック軌道 $x_h(t)$（$x>0$ 側，$x_h(0)$ が最大）を求め，そのエネルギーを求めよ．\n\\item Melnikov 関数 $M(t_0)=\\displaystyle\\int_{-\\infty}^{\\infty}\\dot x_h(t)\\bigl[F\\cos\\omega(t+t_0)-\\delta\\,\\dot x_h(t)\\bigr]dt$ を計算せよ．$\\int_{-\\infty}^{\\infty}\\mathrm{sech}\\,t\\tanh t\\sin\\omega t\\,dt=\\pi\\omega\\,\\mathrm{sech}(\\pi\\omega/2)$ を用いてよい．\n\\item $M(t_0)$ が符号を変える（安定・不安定多様体が横断的に交わり，井戸間を不規則に飛び移る運動が可能になる）ための $F$ の閾値 $F_c$ を求め，$\\omega=1$，$\\delta=0.5$ と $\\delta=0.4$ の場合の数値を求めよ．\n\\item $\\delta=0.5$ で $F_c$ を最小にする $\\omega$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $x_h=\\sqrt2\\,\\mathrm{sech}\\,t$，$E=0$　(2) $M(t_0)=-\\frac43\\delta+\\sqrt2\\pi F\\omega\\,\\mathrm{sech}\\frac{\\pi\\omega}2\\sin\\omega t_0$　(3) $F_c=\\dfrac{4\\delta\\cosh(\\pi\\omega/2)}{3\\sqrt2\\pi\\omega}$；$0.3765$（$\\delta=0.5$），$0.3012$（$\\delta=0.4$）　(4) $\\omega\\approx0.764$（$\\frac{\\pi\\omega}2\\tanh\\frac{\\pi\\omega}2=1$），$F_c\\approx0.356$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) エネルギー $E=\\frac12\\dot x^2-\\frac12x^2+\\frac14x^4$．鞍点 $x=0$ で $E=0$ なので $\\dot x^2=x^2-\\frac12x^4$．$x=\\sqrt2\\,\\mathrm{sech}\\,s$ とおくと $\\dot x=-\\sqrt2\\,\\mathrm{sech}\\,s\\tanh s\\,\\dot s$，$x^2-\\frac12x^4=2\\mathrm{sech}^2s(1-\\mathrm{sech}^2s)=2\\mathrm{sech}^2s\\tanh^2s$ より $\\dot s=1$．\n\\[ x_h(t)=\\sqrt2\\,\\mathrm{sech}\\,t,\\quad \\dot x_h=-\\sqrt2\\,\\mathrm{sech}\\,t\\tanh t,\\quad E=0 . \\]\n\n(2) 減衰項：$\\int\\dot x_h^2dt=2\\int\\mathrm{sech}^2t\\tanh^2t\\,dt=2\\Bigl[\\frac{\\tanh^3t}3\\Bigr]_{-\\infty}^\\infty=\\frac43$．\n強制項：$\\dot x_h$ は奇関数なので $\\cos\\omega(t+t_0)=\\cos\\omega t\\cos\\omega t_0-\\sin\\omega t\\sin\\omega t_0$ のうち $\\sin\\omega t$ だけ残り\n\\[ \\int\\dot x_h\\cos\\omega(t+t_0)\\,dt=-\\sin\\omega t_0\\int(-\\sqrt2\\,\\mathrm{sech}\\,t\\tanh t)\\sin\\omega t\\,dt=\\sqrt2\\pi\\omega\\,\\mathrm{sech}\\frac{\\pi\\omega}2\\sin\\omega t_0 . \\]\nよって $M(t_0)=-\\dfrac43\\delta+\\sqrt2\\pi F\\omega\\,\\mathrm{sech}\\dfrac{\\pi\\omega}2\\sin\\omega t_0$．\n\n(3) $M$ が単純零点を持つ条件は $\\sqrt2\\pi F\\omega\\,\\mathrm{sech}\\frac{\\pi\\omega}2>\\frac43\\delta$，すなわち\n\\[ F>F_c=\\frac{4\\delta\\cosh(\\pi\\omega/2)}{3\\sqrt2\\pi\\omega}. \\]\n$\\omega=1$：$\\cosh(\\pi/2)=2.50918$，$3\\sqrt2\\pi=13.3286$．$\\delta=0.5$ で $F_c=0.3765$，$\\delta=0.4$ で $F_c=0.3012$．（減衰 $0.4$ の数値実験で $F\\approx0.30$〜$0.31$ から両方の井戸を巡る軌道が現れるのとよく一致する．Melnikov 条件は横断的ホモクリニック交差（カオス的な過渡運動）の条件であり，持続的なカオス・アトラクタの出現はこれより少し大きい $F$ になりうる．）\n\n(4) $h(\\omega)=\\cosh(\\pi\\omega/2)/\\omega$ を最小化：$h'=0$ ⇔ $\\frac{\\pi\\omega}2\\tanh\\frac{\\pi\\omega}2=1$．$u=\\pi\\omega/2$ として $u\\tanh u=1$ の解 $u\\approx1.1997$，$\\omega\\approx0.764$．このとき $F_c=\\frac{4\\cdot0.5}{3\\sqrt2\\pi}h(0.764)\\approx0.356$．低周波すぎても高周波すぎても（指数的に）ホモクリニック軌道を揺さぶりにくい．"
+   }
+  ],
+  "idea": {
+   "tex": "ホモクリニック軌道 $\\sqrt2\\,\\mathrm{sech}\\,t$ に沿った Melnikov 積分で，減衰とのつり合いから井戸間カオスの閾値 $F_c\\propto\\delta\\cosh(\\pi\\omega/2)/\\omega$ が解析的に得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $\\omega$：≈0.764 ; $F_c$：≈0.356"
+  },
+  "methods": [],
+  "tags": [
+   "Duffing振動子",
+   "二重井戸",
+   "ホモクリニック軌道",
+   "Melnikov法",
+   "カオスの閾値",
+   "セパラトリクス"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "AM-06-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "AM-90",
+  "level": 4,
+  "minutes": 45,
+  "theme": "軸からずれた支点をもつ回転振り子の不完全分岐",
+  "topic": "軸からずれた支点をもつ回転振り子の不完全分岐",
+  "statement": {
+   "tex": "鉛直な回転軸のまわりに一定の角速度 $\\omega$ で強制的に回される枠がある．枠には回転軸から水平距離 $d\\ (\\ge0)$ の点に水平な支点軸が取り付けられており，長さ $l$ の軽い剛体棒の先に質量 $m$ の質点をつけた振り子が，この支点のまわりに「回転軸と支点を含む鉛直面」（枠とともに回転する）の内部だけで振れる．振り子の鉛直下向きからの傾き角を $\\theta$ とし，質点が回転軸から遠ざかる向きを $\\theta>0$ とする．摩擦は無視し，重力加速度を $g$，$\\omega_0=\\sqrt{g/l}$，$\\delta=d/l$ とおく．\n\\begin{enumerate}\n\\item ラグランジアンと $\\theta$ の運動方程式を求めよ．\n\\item $d=0$ のとき，$\\theta=0$ が不安定になる臨界角速度 $\\omega_c$ と，$\\omega>\\omega_c$ での安定な平衡角を求めよ．$d>0$ では $\\theta=0$ はどの $\\omega$ でも平衡点でないことを示せ．\n\\item $0<\\delta\\ll1$ とする．$\\omega=\\omega_0$ における平衡角 $\\theta^*\\,(>0)$ と，そのまわりの微小振動の角振動数 $\\Omega$ を $\\delta$ の最低次で求めよ．$l=0.50\\ \\mathrm{m}$，$d=0.50\\ \\mathrm{mm}$，$g=9.8\\ \\mathrm{m/s^2}$ のとき $\\theta^*$（度）と $\\Omega$ を数値で求めよ．\n\\item $0<\\delta\\ll1$ のとき，$\\omega$ を大きくしていくと，質点が回転軸の反対側に振れた（$\\theta<0$）平衡点の対がある角速度 $\\omega_s$ で突然現れる．$\\omega_s^2/\\omega_0^2-1$ を $\\delta$ の最低次で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $L=\\tfrac12 m\\{l^2\\dot\\theta^2+\\omega^2(d+l\\sin\\theta)^2\\}+mgl\\cos\\theta$，$l\\ddot\\theta=-g\\sin\\theta+\\omega^2(d+l\\sin\\theta)\\cos\\theta$．\n(2) $\\omega_c=\\sqrt{g/l}$，$\\cos\\theta_0=g/(l\\omega^2)$．$d>0$ では $\\theta=0$ で右辺 $=\\omega^2d\\ne0$．\n(3) $\\theta^*\\simeq(2\\delta)^{1/3}$，$\\Omega\\simeq\\sqrt{\\tfrac32}\\,\\omega_0(2\\delta)^{1/3}$．数値：$\\theta^*\\approx7.2^\\circ$（$0.126$ rad），$\\Omega\\approx0.68\\ \\mathrm{rad/s}$．\n(4) $\\omega_s^2/\\omega_0^2-1\\simeq\\tfrac32\\delta^{2/3}$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 枠とともに回る鉛直面内で，質点の回転軸からの（符号付き）距離は $\\rho=d+l\\sin\\theta$，高さは $-l\\cos\\theta$．慣性系での速度は面内成分 $l\\dot\\theta$ と面に垂直な成分 $\\omega\\rho$ からなるので\n\\[L=\\frac m2\\left\\{l^2\\dot\\theta^2+\\omega^2(d+l\\sin\\theta)^2\\right\\}+mgl\\cos\\theta.\\]\nラグランジュ方程式より\n\\[l\\ddot\\theta=-g\\sin\\theta+\\omega^2(d+l\\sin\\theta)\\cos\\theta.\\]\nこれは有効ポテンシャル $V(\\theta)=-mgl\\cos\\theta-\\tfrac12m\\omega^2(d+l\\sin\\theta)^2$ 中の運動 $ml^2\\ddot\\theta=-V'(\\theta)$ である．\n\n(2) $d=0$：平衡条件は $\\sin\\theta\\,(\\omega^2l\\cos\\theta-g)=0$．$V''(0)=mgl-m\\omega^2l^2$ なので $\\theta=0$ は $\\omega<\\omega_c=\\sqrt{g/l}$ で安定，$\\omega>\\omega_c$ で不安定．$\\omega>\\omega_c$ では $\\cos\\theta_0=g/(l\\omega^2)$ の平衡点が生じ，$V''(\\theta_0)=m l^2\\omega^2\\sin^2\\theta_0>0$ で安定（対称な熊手型分岐）．\n$d>0$：$\\theta=0$ を右辺に代入すると $\\omega^2 d\\ne0$ なので平衡点でない．平衡条件は\n\\[g\\sin\\theta=\\omega^2(d+l\\sin\\theta)\\cos\\theta,\\]\n$\\theta\\to0^+$ で右辺 $>$ 左辺，$\\theta=\\pi/2$ で左辺 $>$ 右辺だから $(0,\\pi/2)$ に必ず解があり，$\\omega$ を増すにつれ連続的に傾きが増す（不完全分岐）．\n\n(3) $\\omega=\\omega_0$ では平衡条件は $\\sin\\theta(1-\\cos\\theta)=\\delta\\cos\\theta$．$\\theta$ 小で左辺 $\\simeq\\theta^3/2$，右辺 $\\simeq\\delta$ より\n\\[\\theta^*\\simeq(2\\delta)^{1/3}.\\]\n$d=0$ なら臨界点で平衡角は 0 だが，わずかなずれ $\\delta$ に対して $\\delta^{1/3}$ という大きな応答が生じる．\n$V''$ を計算すると\n\\[\\frac{V''(\\theta)}{m}=gl\\cos\\theta+\\omega^2l\\sin\\theta(d+l\\sin\\theta)-\\omega^2l^2\\cos^2\\theta,\\]\n$\\omega=\\omega_0$ では $V''/m=gl\\left(\\cos\\theta-\\cos2\\theta+\\delta\\sin\\theta\\right)\\simeq gl\\cdot\\tfrac32\\theta^2$（$\\delta\\sin\\theta=O(\\theta^4)$ は高次）．よって\n\\[\\Omega^2=\\frac{V''(\\theta^*)}{ml^2}\\simeq\\frac32\\omega_0^2\\theta^{*2},\\qquad \\Omega\\simeq\\sqrt{\\frac32}\\,\\omega_0(2\\delta)^{1/3}.\\]\n数値：$\\delta=1.0\\times10^{-3}$，$\\theta^*\\simeq(2\\times10^{-3})^{1/3}=0.126\\ \\mathrm{rad}\\approx7.2^\\circ$．$\\omega_0=\\sqrt{19.6}=4.43\\ \\mathrm{s^{-1}}$ より $\\Omega\\simeq1.225\\times4.43\\times0.126\\approx0.68\\ \\mathrm{rad/s}$．わずか $0.5$ mm のずれで振り子は $7^\\circ$ 傾く．\n\n(4) $\\theta=-\\phi$（$\\phi>0$）と書くと平衡条件は $g\\sin\\phi=\\omega^2(l\\sin\\phi-d)\\cos\\phi$．解があるには $\\sin\\phi>\\delta$ が必要で，\n\\[\\frac{\\omega^2}{\\omega_0^2}=h(\\phi)\\equiv\\frac{\\sin\\phi}{(\\sin\\phi-\\delta)\\cos\\phi}.\\]\n$h$ は $\\sin\\phi\\to\\delta^+$ でも $\\phi\\to\\pi/2$ でも $+\\infty$ となるので最小値 $h_{\\min}$ をもち，$\\omega^2/\\omega_0^2>h_{\\min}$ で解が 2 つ（サドル・ノード分岐）生じる．$\\phi$ 小で $\\ln h\\simeq\\ln\\phi-\\ln(\\phi-\\delta)+\\phi^2/2$，その極値条件\n\\[\\frac1\\phi-\\frac1{\\phi-\\delta}+\\phi=0\\;\\Longrightarrow\\;\\phi^2(\\phi-\\delta)=\\delta\\;\\Longrightarrow\\;\\phi\\simeq\\delta^{1/3}.\\]\nこのとき $h\\simeq\\Bigl(1+\\dfrac\\delta\\phi\\Bigr)\\Bigl(1+\\dfrac{\\phi^2}2\\Bigr)\\simeq1+\\delta^{2/3}+\\tfrac12\\delta^{2/3}$．よって\n\\[\\frac{\\omega_s^2}{\\omega_0^2}-1\\simeq\\frac32\\delta^{2/3}.\\]\n現れる 2 つの平衡点のうち，$|\\theta|$ の大きいほうが安定，小さいほうが不安定である．"
+   }
+  ],
+  "idea": {
+   "tex": "支点のずれ $d$ は熊手型分岐を壊す「不完全性」として働き，臨界点での応答は $\\delta^{1/3}$ と特異的に大きくなる．反対側の分岐はサドル・ノードとして $\\omega_s^2-\\omega_0^2\\propto\\delta^{2/3}$ だけ遅れて現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "回転振り子",
+   "有効ポテンシャル",
+   "分岐",
+   "不完全分岐",
+   "サドル・ノード分岐",
+   "微小振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

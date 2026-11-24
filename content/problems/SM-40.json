@@ -395,6 +395,103 @@
   }
  },
  {
+  "id": "SM-05-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-40",
+  "level": 2,
+  "minutes": 30,
+  "theme": "粒子数のゆらぎと等温圧縮率の関係",
+  "topic": "粒子数のゆらぎと等温圧縮率の関係",
+  "statement": {
+   "tex": "グランドカノニカル分布で $\\langle\\Delta N^2\\rangle=k_BT\\left(\\dfrac{\\partial\\langle N\\rangle}{\\partial\\mu}\\right)_{T,V}$ である．\n\\begin{enumerate}\n\\item これを示せ．\n\\item ギブス＝デュエムの関係を用いて $\\dfrac{\\langle\\Delta N^2\\rangle}{\\langle N\\rangle}=nk_BT\\kappa_T$（$n=N/V$，$\\kappa_T=-\\frac1V\\frac{\\partial V}{\\partial p}$）を示せ．\n\\item 理想気体で値を求め，臨界点で何が起こるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) 証明　(3) $1$（ポアソン分布）；$\\kappa_T\\to\\infty$ でゆらぎが発散（臨界たんぱく光）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\langle N\\rangle=k_BT\\partial_\\mu\\ln\\mathcal Z$ をもう一度 $\\mu$ で微分．\\hfill$\\square$\n\n(2) 温度一定で $N\\,d\\mu=V\\,dp$．$\\left(\\frac{\\partial N}{\\partial\\mu}\\right)_{T,V}=\\frac{N}{V}\\left(\\frac{\\partial N}{\\partial p}\\right)_{T,V}=\\frac{N^2}{V}\\kappa_T$．与式．\\hfill$\\square$\n\n(3) $\\kappa_T=1/p$ で $nk_BT/p=\\boldsymbol1$．臨界点では $\\kappa_T\\to\\infty$ で密度ゆらぎが発散し，光が強く散乱される．"
+   }
+  ],
+  "idea": {
+   "tex": "粒子数のゆらぎは熱力学的な応答（圧縮率）と結びつく（ゆらぎと応答の関係）．原題の理想気体の結果を一般化し，臨界点での発散に結びつけた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "グランドカノニカル分布",
+   "粒子数ゆらぎ",
+   "圧縮率"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SM-05-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SM-40",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ペランの沈降平衡からボルツマン定数とアボガドロ数を求める",
+  "topic": "ペランの沈降平衡からボルツマン定数とアボガドロ数を求める",
+  "statement": {
+   "tex": "半径 $0.21\\ \\mu\\mathrm m$，水との密度差 $200\\ \\mathrm{kg/m^3}$ の球形の粒子が水中に懸濁し，$293\\ \\mathrm K$ で沈降平衡にある．粒子数密度は高さとともに $e^{-z/H}$ で減り，$H=53\\ \\mu\\mathrm m$ が測られた．\n\\begin{enumerate}\n\\item $H$ を有効質量と $k_BT$ で表せ．\n\\item $k_B$ を求め，気体定数 $R=8.314\\ \\mathrm{J/(mol\\,K)}$ からアボガドロ数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $H=\\dfrac{k_BT}{m_{\\rm eff}g}$　(2) $k_B\\approx1.38\\times10^{-23}\\ \\mathrm{J/K}$，$N_A\\approx6.0\\times10^{23}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ボルツマン分布 $e^{-m_{\\rm eff}gz/k_BT}$．$m_{\\rm eff}=\\frac43\\pi r^3\\Delta\\rho$．\n\n(2) $m_{\\rm eff}=7.76\\times10^{-18}\\ \\mathrm{kg}$，$k_B=\\dfrac{m_{\\rm eff}gH}{T}\\approx\\boldsymbol{1.38\\times10^{-23}}$，$N_A=R/k_B\\approx\\boldsymbol{6.0\\times10^{23}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "巨視的な粒子のボルツマン分布を測ると，ボルツマン定数すなわち原子の数がわかる．原題の「$k_B$ を知らずに $N$ を求める」問いに，ペランの実験で具体的に答えさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $k_B$ [J/K]：≈1.38e-23 ; $N_A$：≈6.0e23"
+  },
+  "methods": [],
+  "tags": [
+   "沈降平衡",
+   "ボルツマン分布",
+   "アボガドロ数",
+   "ペラン"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SM-05-011",
   "schema": "lemma.problem/1",
   "kind": "written",

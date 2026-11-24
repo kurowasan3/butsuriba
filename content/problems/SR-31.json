@@ -387,6 +387,1191 @@
   }
  },
  {
+  "id": "SR-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 30,
+  "theme": "4元力の変換と並走する電荷の力",
+  "topic": "4元力の変換と並走する電荷の力",
+  "statement": {
+   "tex": "4 元力 $\\left(\\dfrac{\\boldsymbol F}{\\sqrt{1-u^2/c^2}},\\ \\dfrac{\\boldsymbol F\\cdot\\boldsymbol u}{c\\sqrt{1-u^2/c^2}}\\right)$（$\\boldsymbol u$ は粒子の速度）が $(x,y,z,ct)$ と同じ Lorentz 変換を受けることを用いる．\n\\begin{enumerate}\n\\item 系 $K'$ で静止している粒子に力 $\\boldsymbol F'$ がはたらいている．$K'$ が $K$ に対して $x$ 方向に速度 $V$ で動くとき，$K$ で測った力 $\\boldsymbol F$ の成分を $\\boldsymbol F'$ で表せ．\n\\item 電荷 $q$ の 2 粒子が $y$ 方向に距離 $d$ 離れて並び，ともに $x$ 方向に速さ $V$ で並走している．$K$ 系で測った，一方が他方から受ける力の大きさ $F$ を求めよ（静止系での Coulomb 力を $F_0=q^2/4\\pi\\varepsilon_0d^2$ とする）．\n\\item (2) の結果を，$K$ 系での電場・磁場による Lorentz 力 $q(\\boldsymbol E+\\boldsymbol V\\times\\boldsymbol B)$ から再導出し，$V\\to c$ で何が起こるか説明せよ．ただし $K$ 系で動く点電荷が真横につくる場は $E_\\perp=\\gamma\\,q/4\\pi\\varepsilon_0d^2$，$\\boldsymbol B=\\boldsymbol V\\times\\boldsymbol E/c^2$ である．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F_x=F'_x$，$F_y=F'_y\\sqrt{1-\\beta^2}$，$F_z=F'_z\\sqrt{1-\\beta^2}$　(2) $F=F_0\\sqrt{1-V^2/c^2}$　(3) 電気的反発 $\\gamma F_0$ を磁気的引力 $\\gamma\\beta^2F_0$ が打ち消し，$V\\to c$ で $F\\to0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $K'$ では粒子は静止しているので 4 元力は $(\\boldsymbol F',0)$．$K$ への変換（$x=\\gamma(x'+\\beta\\,ct')$ と同じ形）で\n\\[\nK_x=\\gamma F'_x,\\quad K_y=F'_y,\\quad K_z=F'_z,\\quad K_0=\\gamma\\beta F'_x .\n\\]\n$K$ 系で粒子の速度は $V$ なので $K_i=\\gamma F_i$．よって $F_x=F'_x$，$F_y=F'_y/\\gamma$，$F_z=F'_z/\\gamma$．（第 4 成分 $\\gamma F_xV/c=\\gamma\\beta F'_x$ とも整合する．）\n\n(2) 共通の静止系 $K'$ では Coulomb 力 $F'_y=F_0$ だけがはたらく．$y$ 方向（運動に垂直）なので $F=F_0/\\gamma=F_0\\sqrt{1-V^2/c^2}$．\n\n(3) 一方の電荷が他方の位置につくる場は $E_y=\\gamma F_0/q$，$B_z=VE_y/c^2$．他方の電荷にはたらく力は\n\\[\nF_y=q(E_y-VB_z)=qE_y\\left(1-\\frac{V^2}{c^2}\\right)=\\gamma F_0\\cdot\\frac{1}{\\gamma^2}=\\frac{F_0}{\\gamma}\n\\]\nで (2) と一致する．電気力は $\\gamma$ 倍に強まるが，平行電流の磁気的引力 $\\gamma\\beta^2F_0$ がそれ以上に効き，正味の反発は $1/\\gamma$ に弱まる．$V\\to c$ では電気力と磁気力が完全に打ち消し，ほぼ光速の同符号荷電粒子ビームは自分の反発でほとんど広がらない．"
+   }
+  ],
+  "idea": {
+   "tex": "静止系の力を 4 元力として変換すると運動に垂直な成分が $1/\\gamma$ 倍になる．これを電場と磁場で見ると，電気反発と磁気引力の部分的相殺として現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "特殊相対論",
+   "4元力",
+   "力の変換",
+   "ローレンツ力",
+   "磁気力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "不変量から決まる電場の最小値",
+  "topic": "不変量から決まる電場の最小値",
+  "statement": {
+   "tex": "実験室系 S で一様な直交電磁場 $\\boldsymbol E=(E_0,0,0)$，$\\boldsymbol B=(0,0,B_0)$（$E_0,B_0>0$）がある．あらゆる慣性系に移ったときの場 $\\boldsymbol E',\\boldsymbol B'$ を考える．\n\\begin{enumerate}\n\\item 不変量 $E^2-c^2B^2$ を用いて，$E_0=2cB_0$ のとき，どの慣性系でも $|\\boldsymbol E'|\\ge\\sqrt3\\,cB_0$ であることを示せ．\n\\item 等号が成り立つ系のうち，S に対する速さが最小のものの速度（大きさと向き）を求めよ．また等号が成り立つ系は一つではないことを説明せよ．\n\\item 今度は $E_0=cB_0/2$ とする．$|\\boldsymbol B'|$ の最小値と，それを与える最も遅い系の速度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E'^2=c^2B'^2+3c^2B_0^2\\ge3c^2B_0^2$　(2) $\\boldsymbol v=-(c/2)\\hat{\\boldsymbol y}$（$\\boldsymbol E\\times\\boldsymbol B$ 方向，速さ $c^2B_0/E_0$）．その系から $\\boldsymbol E'$ 方向に動く系もすべて $\\boldsymbol B''=0$　(3) $|\\boldsymbol B'|_{\\min}=\\tfrac{\\sqrt3}{2}B_0$，$\\boldsymbol v=-(c/2)\\hat{\\boldsymbol y}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E^2-c^2B^2$ は Lorentz 不変で，S では $4c^2B_0^2-c^2B_0^2=3c^2B_0^2$．したがって任意の系で $E'^2=c^2B'^2+3c^2B_0^2\\ge3c^2B_0^2$．等号は $\\boldsymbol B'=0$ の系．\n\n(2) $\\boldsymbol v\\perp\\boldsymbol E,\\boldsymbol B$ として $\\boldsymbol B'=\\gamma(\\boldsymbol B-\\boldsymbol v\\times\\boldsymbol E/c^2)=0$ を解く．$\\boldsymbol v=v\\hat{\\boldsymbol n}$ を $\\boldsymbol E\\times\\boldsymbol B$ 方向にとると $|\\boldsymbol v\\times\\boldsymbol E|=vE_0$ で，$v=c^2B_0/E_0=c/2$．$\\boldsymbol E\\times\\boldsymbol B=E_0B_0\\,\\hat{\\boldsymbol x}\\times\\hat{\\boldsymbol z}=-E_0B_0\\hat{\\boldsymbol y}$ なので $\\boldsymbol v=-(c/2)\\hat{\\boldsymbol y}$．（確認：$\\boldsymbol v\\times\\boldsymbol E=-(c/2)E_0\\,\\hat{\\boldsymbol y}\\times\\hat{\\boldsymbol x}=(c/2)E_0\\hat{\\boldsymbol z}$，$/c^2$ で $B_0\\hat{\\boldsymbol z}$．）$\\boldsymbol B=0$ の系で場は純電場 $\\boldsymbol E'$ だけなので，そこからさらに $\\boldsymbol E'$ に平行な方向にブーストしても $\\boldsymbol E'_\\parallel$ は不変，$\\boldsymbol B''_\\parallel=0$，垂直成分は存在しないから $\\boldsymbol B''=0$ のまま．よって最小値を与える系は 1 パラメータの族をなし，$\\boldsymbol E\\times\\boldsymbol B$ 方向の系がその中で最も遅い（速度の $\\boldsymbol E$ 方向成分が 0）．\n\n(3) $c^2B^2-E^2=c^2B_0^2-c^2B_0^2/4=\\tfrac34c^2B_0^2$ が不変なので $c^2B'^2=E'^2+\\tfrac34c^2B_0^2\\ge\\tfrac34c^2B_0^2$，$|\\boldsymbol B'|_{\\min}=\\tfrac{\\sqrt3}2B_0$．$\\boldsymbol E'=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)=0$ より $v=E_0/B_0=c/2$，向きは $\\boldsymbol E\\times\\boldsymbol B$ 方向で $\\boldsymbol v=-(c/2)\\hat{\\boldsymbol y}$．"
+   }
+  ],
+  "idea": {
+   "tex": "$E^2-c^2B^2$ の不変性から $|\\boldsymbol E'|$（または $|\\boldsymbol B'|$）の下限がただちに出る．下限を与える系は一つでなく，純電場（純磁場）の向きへのブーストの自由度が残る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Lorentz不変量",
+   "電磁場の変換",
+   "ExBドリフト",
+   "最小値"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 20,
+  "theme": "光的な場（|E|=c|B|）は消せない",
+  "topic": "光的な場（|E|=c|B|）は消せない",
+  "statement": {
+   "tex": "〔16・3〕型の問題では「$\\boldsymbol E\\perp\\boldsymbol B$ かつ $|\\boldsymbol E|\\neq c|\\boldsymbol B|$ なら純電場または純磁場の系がある」ことが示された．では $|\\boldsymbol E|=c|\\boldsymbol B|$ の場合はどうか．真空中を $+x$ 方向に進む平面波のある点・ある瞬間の場 $\\boldsymbol E=(0,E_0,0)$，$\\boldsymbol B=(0,0,E_0/c)$ を考える．\n\\begin{enumerate}\n\\item $x$ 方向に速度 $v=\\beta c$ で動く系での $\\boldsymbol E',\\boldsymbol B'$ を求め，$|\\boldsymbol E'|=c|\\boldsymbol B'|$ が保たれ，振幅が因子 $\\sqrt{(1-\\beta)/(1+\\beta)}$ 倍されることを示せ．\n\\item どんな有限の速度に移っても $\\boldsymbol E'=0$ や $\\boldsymbol B'=0$ にはできないことを，不変量を用いて説明せよ．\n\\item 振幅を $1/10$ にするには $\\beta$ をいくらにすればよいか．このとき波の角振動数は何倍に見えるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E'_y=\\gamma(1-\\beta)E_0=\\sqrt{\\tfrac{1-\\beta}{1+\\beta}}E_0$，$cB'_z$ も同じ　(2) 両不変量が 0 で，$\\boldsymbol E'=0$ なら $\\boldsymbol B'=0$ となり場全体が消えることになるが，それは線形変換で不可能　(3) $\\beta=99/101$，角振動数も $1/10$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol v=v\\hat{\\boldsymbol x}$ に $\\boldsymbol E,\\boldsymbol B$ はともに垂直なので\n\\[ E'_y=\\gamma(E_y-vB_z)=\\gamma(1-\\beta)E_0,\\qquad B'_z=\\gamma\\left(B_z-\\frac{v}{c^2}E_y\\right)=\\gamma(1-\\beta)\\frac{E_0}{c}. \\]\n$\\gamma(1-\\beta)=\\sqrt{\\dfrac{1-\\beta}{1+\\beta}}$ なので $|\\boldsymbol E'|=c|\\boldsymbol B'|=\\sqrt{\\dfrac{1-\\beta}{1+\\beta}}E_0$．\n\n(2) 不変量は $E^2-c^2B^2=0$，$\\boldsymbol E\\cdot\\boldsymbol B=0$．$\\boldsymbol E'=0$ となる系があれば $c^2B'^2=0$ より $\\boldsymbol B'=0$ でもあり，場テンソル全体が 0 になる．しかし Lorentz 変換は正則な線形変換なので 0 でないテンソルを 0 に写せない．よって $\\boldsymbol E'=0$ も $\\boldsymbol B'=0$ も不可能で，$\\beta\\to1$ の極限で振幅が 0 に近づくだけである．\n\n(3) $\\dfrac{1-\\beta}{1+\\beta}=\\dfrac1{100}$ より $\\beta=\\dfrac{99}{101}\\simeq0.980$．位相 $kx-\\omega t$ は不変で，$(\\omega/c,k)$ は 4 元ベクトルとして変換されるから $\\omega'=\\gamma(\\omega-vk)=\\gamma(1-\\beta)\\omega=\\omega/10$．振幅比と振動数比が等しいのは，平面波では $E/\\omega$ の比（ポテンシャル振幅 $A=E/\\omega$）が不変であることを反映している．"
+   }
+  ],
+  "idea": {
+   "tex": "光的な場（両不変量が 0）は純電場・純磁場にできず，進行方向へのブーストで Doppler 因子 $\\sqrt{(1-\\beta)/(1+\\beta)}$ 倍に縮むだけ．振幅の縮みは振動数の Doppler 偏移と同じ因子．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電磁場の変換",
+   "平面波",
+   "Doppler効果",
+   "Lorentz不変量"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "固有加速度：円運動と双曲線運動",
+  "topic": "固有加速度：円運動と双曲線運動",
+  "statement": {
+   "tex": "4 元加速度の不変な大きさの 2 乗は\n\\[ \\alpha^2=\\frac{\\dot v^2-(\\boldsymbol v\\times\\dot{\\boldsymbol v})^2/c^2}{(1-\\beta^2)^3}\\qquad(\\dot{\\boldsymbol v}=d\\boldsymbol v/dt) \\]\nで，$\\alpha$ は粒子の瞬間静止系で測った加速度（固有加速度）である．\n\\begin{enumerate}\n\\item 半径 $R$ の円を一定の速さ $v$ で回る粒子の固有加速度を求めよ．同じ大きさの 3 次元加速度でも，速度に平行な場合と比べて $\\gamma$ の何乗の違いがあるか．\n\\item $x$ 軸上で静止から出発し，固有加速度が一定値 $g$ に保たれる粒子の $v(t)$，$x(t)$ を求めよ．\n\\item (2) の粒子が $\\beta=0.99$ に達するまでの固有時間 $\\tau$ を $c/g$ を単位として求めよ．また $g=9.8\\ {\\rm m/s^2}$ のとき年単位で答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\alpha=\\gamma^2v^2/R$（平行加速なら $\\gamma^3\\dot v$）　(2) $v=\\dfrac{gt}{\\sqrt{1+(gt/c)^2}}$，$x=\\dfrac{c^2}{g}\\left[\\sqrt{1+(gt/c)^2}-1\\right]$　(3) $\\tau=(c/g)\\,\\mathrm{artanh}\\,0.99\\simeq2.65\\,c/g\\simeq2.6$ 年"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 等速円運動では $\\dot{\\boldsymbol v}\\perp\\boldsymbol v$，$|\\dot{\\boldsymbol v}|=v^2/R$，$|\\boldsymbol v\\times\\dot{\\boldsymbol v}|=v\\dot v$．\n\\[ \\alpha^2=\\frac{\\dot v^2(1-\\beta^2)}{(1-\\beta^2)^3}=\\gamma^4\\dot v^2,\\quad\\alpha=\\gamma^2\\frac{v^2}{R}. \\]\n速度に平行な加速では $\\boldsymbol v\\times\\dot{\\boldsymbol v}=0$ で $\\alpha=\\gamma^3\\dot v$．同じ 3 次元加速度でも平行の方が $\\gamma$ 倍大きい固有加速度に対応する．\n\n(2) 1 次元では $\\alpha=\\gamma^3\\dot v=\\dfrac{d}{dt}(\\gamma v)$．$\\alpha=g$ 一定なら $\\gamma v=gt$，すなわち $v=\\dfrac{gt}{\\sqrt{1+(gt/c)^2}}$．積分して $x=\\dfrac{c^2}{g}\\left[\\sqrt{1+(gt/c)^2}-1\\right]$（双曲線運動）．\n\n(3) $d\\tau=dt/\\gamma$，$\\gamma=\\sqrt{1+(gt/c)^2}$ より $\\tau=\\dfrac cg\\,\\mathrm{arsinh}\\dfrac{gt}{c}$，よって $\\gamma v/c=\\sinh(g\\tau/c)$，$\\beta=\\tanh(g\\tau/c)$．$\\beta=0.99$ で $g\\tau/c=\\mathrm{artanh}\\,0.99=2.647$．$c/g=3.06\\times10^7\\ {\\rm s}=0.969$ 年なので $\\tau\\simeq2.56$ 年．"
+   }
+  ],
+  "idea": {
+   "tex": "不変量 $\\alpha^2$ は速度に垂直な加速で $\\gamma^4$，平行な加速で $\\gamma^6$ 倍される．固有加速度一定の運動ではラピディティが固有時間に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\alpha$：γ ^(2) v ^(2)/ R\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "4元加速度",
+   "固有加速度",
+   "双曲線運動",
+   "ラピディティ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "ラピディティの加法性と加速度変換",
+  "topic": "ラピディティの加法性と加速度変換",
+  "statement": {
+   "tex": "$x$ 方向の特殊 Lorentz 変換（速度 $v$）で，$x$ 方向の速度と加速度は\n\\[ u_x=\\frac{u'_x+v}{1+vu'_x/c^2},\\qquad a_x=\\frac{a'_x}{\\gamma^3(1+vu'_x/c^2)^3} \\]\nと変換される．ラピディティ $\\theta$ を $u=c\\tanh\\theta$ で定義する．\n\\begin{enumerate}\n\\item 速度の合成則は，ラピディティの単純な和 $\\theta=\\theta'+\\theta_v$ と同じであることを示せ．\n\\item ロケットが「その時点での自分の静止系に対して $0.5c$ だけ速度を上げる」操作を繰り返す．最初は静止していたとして，実験室系で $0.99c$ を超えるのは何回目か．\n\\item 加速度の変換式を用いて，粒子の瞬間静止系で測った加速度がつねに $g$ であるとき $\\dfrac{d\\theta}{d\\tau}=\\dfrac gc$（$\\tau$ は固有時間）であることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tanh$ の加法定理　(2) 5 回目（$n\\,\\mathrm{artanh}0.5>\\mathrm{artanh}0.99\\Rightarrow n>4.82$）　(3) $a_x=g/\\gamma^3$ と $du/d\\theta=c/\\cosh^2\\theta$ から"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\tanh(\\theta'+\\theta_v)=\\dfrac{\\tanh\\theta'+\\tanh\\theta_v}{1+\\tanh\\theta'\\tanh\\theta_v}$ に $\\tanh\\theta'=u'_x/c$，$\\tanh\\theta_v=v/c$ を入れると速度合成則そのもの．よって $\\theta=\\theta'+\\theta_v$．\n\n(2) 1 回の操作でラピディティが $\\theta_0=\\mathrm{artanh}\\,0.5=0.5493$ ずつ増え，$n$ 回で $\\beta_n=\\tanh(n\\theta_0)$．$\\mathrm{artanh}\\,0.99=2.6467$ を超えるのは $n>2.6467/0.5493=4.82$ より $n=5$（$\\beta_4=0.988$，$\\beta_5=0.9959$）．ニュートン力学なら 2 回で $c$ に達する．\n\n(3) 瞬間静止系 S$'$（S に対する速度 $v=u$，そこでは $u'_x=0$）で $a'_x=g$ だから $a_x=g/\\gamma^3$，$\\gamma=\\cosh\\theta$．一方 $u=c\\tanh\\theta$ より $a_x=\\dfrac{du}{dt}=\\dfrac{c}{\\cosh^2\\theta}\\dfrac{d\\theta}{dt}$．よって $\\dfrac{d\\theta}{dt}=\\dfrac{g}{c\\cosh\\theta}=\\dfrac{g}{c\\gamma}$，$dt=\\gamma d\\tau$ を用いて $\\dfrac{d\\theta}{d\\tau}=\\dfrac gc$．固有加速度一定ならラピディティは固有時間に比例して増え，(2) の離散的な操作はこれを離散化したものである．"
+   }
+  ],
+  "idea": {
+   "tex": "共線な速度合成はラピディティの和．加速度の $\\gamma^{-3}$ 変換則は「固有時間あたりのラピディティ増加＝固有加速度/$c$」と同値．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "速度の変換",
+   "加速度の変換",
+   "ラピディティ",
+   "固有時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 30,
+  "theme": "電流の流れる中性導線が帯電して見える",
+  "topic": "電流の流れる中性導線が帯電して見える",
+  "statement": {
+   "tex": "実験室系 S で，$x$ 軸に沿う無限に長い導線がある．正イオンは静止して線密度 $\\lambda\\ (>0)$ をもち，伝導電子は線密度 $-\\lambda$（S で測った値）で速度 $u\\hat{\\boldsymbol x}$ で流れている．したがって S では導線は電気的に中性で，電流は $I=-\\lambda u$ である．全電荷の Lorentz 不変性を用いて，以下を近似なしに求めよ．\n\\begin{enumerate}\n\\item S に対して $x$ 方向に速度 $v$ で動く系 S$'$ での導線の線電荷密度 $\\lambda'$ を，$I$ と $v$ で表せ．\n\\item 導線から距離 $r$ のところを速度 $v\\hat{\\boldsymbol x}$ で動く点電荷 $q$ がある．S では磁気力だけ，S$'$（点電荷が静止する系）では電気力だけがはたらく．それぞれの力の大きさ $F$，$F'$ を求め，$F'=\\gamma F$ となること（横向きの力の変換則と整合すること）を確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda'=-\\gamma_v\\dfrac{vI}{c^2}$（$\\gamma_v=1/\\sqrt{1-v^2/c^2}$）　(2) $F=\\dfrac{\\mu_0|qvI|}{2\\pi r}$，$F'=\\gamma_v\\dfrac{\\mu_0|qvI|}{2\\pi r}=\\gamma_vF$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) イオン：静止線密度 $\\lambda$ が S$'$ では Lorentz 収縮により $\\gamma_v\\lambda$．\n\n電子：S で $-\\lambda$ なので電子の静止系での固有線密度は $-\\lambda/\\gamma_u$．S$'$ での電子の速度は $u'=\\dfrac{u-v}{1-uv/c^2}$ で，$\\gamma_{u'}=\\gamma_u\\gamma_v(1-uv/c^2)$．したがって S$'$ での電子線密度は $-\\dfrac{\\lambda}{\\gamma_u}\\gamma_{u'}=-\\lambda\\gamma_v\\left(1-\\dfrac{uv}{c^2}\\right)$．\n\n合計 $\\lambda'=\\gamma_v\\lambda-\\gamma_v\\lambda\\left(1-\\dfrac{uv}{c^2}\\right)=\\gamma_v\\dfrac{\\lambda uv}{c^2}=-\\gamma_v\\dfrac{vI}{c^2}$．（$(c\\rho,\\boldsymbol J)$ の 4 元ベクトルとしての変換 $c\\rho'=\\gamma(c\\rho-\\beta J_x)$ と一致し，近似は不要．）\n\n(2) S：$B=\\dfrac{\\mu_0|I|}{2\\pi r}$，$F=|qvB|=\\dfrac{\\mu_0|qvI|}{2\\pi r}$．\n\nS$'$：電流は $I'$ に変わるが点電荷は静止しているので磁気力は 0．電場 $E'=\\dfrac{|\\lambda'|}{2\\pi\\varepsilon_0r}$（$r$ は横方向なので不変）で\n\\[ F'=\\frac{|q|\\gamma_v vI}{2\\pi\\varepsilon_0c^2r}=\\gamma_v\\frac{\\mu_0|qvI|}{2\\pi r}=\\gamma_vF. \\]\n横向きの力は，粒子の静止系での力 $F'$ と実験室系の力 $F$ の間で $F=F'/\\gamma$（運動量の横成分は不変，時間は $\\gamma$ 倍に延びる）なので整合する．磁気力は電気力を相対論的に見たものにほかならない．"
+   }
+  ],
+  "idea": {
+   "tex": "電荷の不変性とイオン・電子それぞれの Lorentz 収縮から，中性導線が動く系では $\\lambda'=-\\gamma vI/c^2$ に帯電して見える．これは近似なしに成り立ち，磁気力と電気力の対応を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\lambda'$：- γ_v ((v I)/(c ^(2)))\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電荷の不変性",
+   "Lorentz収縮",
+   "電流と線電荷",
+   "磁気力の相対論的起源"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "等時性サイクロトロンの磁場分布",
+  "topic": "等時性サイクロトロンの磁場分布",
+  "statement": {
+   "tex": "一様な磁場 $B$ 中で，速度が磁場に垂直な相対論的荷電粒子（静止質量 $m_0$，電荷 $e$）は角速度 $\\omega=\\dfrac{eB}{\\gamma m_0}$ で円運動する．\n\\begin{enumerate}\n\\item 磁場 $B_0$ が一様なとき，軌道半径 $r$ と角速度 $\\omega$ の関係を $\\omega_0=eB_0/m_0$ を用いて求めよ．\n\\item 加速電圧の周波数を一定に保つ（等時性サイクロトロン）ために，軌道面内の磁場を半径の関数 $B(r)$ としてどのように変化させればよいか．\n\\item 陽子（$m_0c^2=938.3$ MeV）を中心磁場 $B_0=1.5$ T で加速し，運動エネルギー $100$ MeV まで等時性を保つとき，その軌道半径と，そこでの磁場の $B_0$ からの増加率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega=\\dfrac{\\omega_0}{\\sqrt{1+\\omega_0^2r^2/c^2}}$　(2) $B(r)=\\dfrac{B_0}{\\sqrt{1-\\omega_0^2r^2/c^2}}$　(3) $r\\simeq0.89$ m，増加率 $10.7\\%$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $v=\\omega r$，$\\omega=\\dfrac{eB_0}{m_0}\\sqrt{1-\\dfrac{\\omega^2r^2}{c^2}}$．2 乗して $\\omega^2\\left(1+\\dfrac{\\omega_0^2r^2}{c^2}\\right)=\\omega_0^2$ より $\\omega=\\dfrac{\\omega_0}{\\sqrt{1+\\omega_0^2r^2/c^2}}$．外側の軌道ほど回転が遅れ，固定周波数の加速電圧と位相がずれる．\n\n(2) $\\omega=\\omega_0$ を全半径で保つには $\\dfrac{eB(r)}{\\gamma m_0}=\\omega_0$，ただし $v=\\omega_0r$ なので $\\gamma=1/\\sqrt{1-\\omega_0^2r^2/c^2}$．よって $B(r)=\\gamma(r)B_0=\\dfrac{B_0}{\\sqrt{1-\\omega_0^2r^2/c^2}}$．（外側ほど強い磁場は鉛直方向に発散的になるので，実際にはセクター型磁極で収束を補う．）\n\n(3) $\\gamma=1+100/938.3=1.1066$，$\\beta=\\sqrt{1-1/\\gamma^2}=0.428$．$\\omega_0=eB_0/m_p=1.437\\times10^8\\ {\\rm s^{-1}}$，$c/\\omega_0=2.086$ m．$r=\\beta c/\\omega_0=0.893$ m．磁場は $B=\\gamma B_0$ で $10.7\\%$ 増し（$1.66$ T）．"
+   }
+  ],
+  "idea": {
+   "tex": "相対論的質量増加で回転周波数は $\\omega_0/\\sqrt{1+\\omega_0^2r^2/c^2}$ に下がる．周波数を一定に保つには磁場を $B_0\\gamma(r)$ で外側ほど強くすればよい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\omega$：((ω_0)/(sqrt(1+ ω_0 ^(2) r ^(2)/ c ^(2))))\n(2) $B(r)$：((B_0)/(sqrt(1- ω_0 ^(2) r ^(2)/ c ^(2))))\n(3) $r$ [m]：≈0.89 ; 増加率 [%]：≈10.7"
+  },
+  "methods": [],
+  "tags": [
+   "サイクロトロン",
+   "相対論的円運動",
+   "等時性",
+   "磁場分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "平行板間の相対論的通過時間",
+  "topic": "平行板間の相対論的通過時間",
+  "statement": {
+   "tex": "間隔 $d$ の平行平板電極の間に電圧 $V$ をかけ，負極から静止状態の電子（静止質量 $m$，電荷 $-e$）を放つ．極板間の電場は一様とする．\n\\begin{enumerate}\n\\item 電子が正極に達するまでの時間 $T$ を，到達時の運動エネルギー $K=eV$ を用いて相対論的に求めよ．\n\\item 非相対論での値 $T_{\\rm nr}$ との比 $T/T_{\\rm nr}$ を $K/mc^2$ で表せ．\n\\item $V=1$ MV，$d=1$ cm のとき $T$ と $T_{\\rm nr}$ を求めよ（$mc^2=0.511$ MeV）．また $V\\to\\infty$ で $T$ はどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T=\\dfrac{d}{c}\\dfrac{\\sqrt{K^2+2Kmc^2}}{K}$　(2) $T/T_{\\rm nr}=\\sqrt{1+K/(2mc^2)}$　(3) $T=4.74\\times10^{-11}$ s，$T_{\\rm nr}=3.37\\times10^{-11}$ s；$V\\to\\infty$ で $T\\to d/c$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 力は一定値 $eE=eV/d$ なので運動量は $p=eEt$．到達時の運動量 $p_f$ は $p_fc=\\sqrt{K^2+2Kmc^2}$．よって\n\\[ T=\\frac{p_f}{eE}=\\frac{d\\,p_f}{eV}=\\frac{d}{c}\\frac{\\sqrt{K^2+2Kmc^2}}{K}. \\]\n（エネルギー積分 $\\gamma mc^2=mc^2+eEx$ と組み合わせた双曲線運動の結果と一致．）\n\n(2) 非相対論では $T_{\\rm nr}=d\\sqrt{2m/(eV)}=\\dfrac dc\\sqrt{\\dfrac{2mc^2}{K}}$．比は\n\\[ \\frac{T}{T_{\\rm nr}}=\\frac{\\sqrt{K^2+2Kmc^2}}{K}\\sqrt{\\frac{K}{2mc^2}}=\\sqrt{1+\\frac{K}{2mc^2}}. \\]\n\n(3) $K=1$ MeV：$p_fc=\\sqrt{1+1.022}=1.422$ MeV，$T=\\dfrac{0.01}{3.00\\times10^8}\\times1.422=4.74\\times10^{-11}$ s．$T_{\\rm nr}=T/\\sqrt{1+0.978}=3.37\\times10^{-11}$ s．非相対論は $40\\%$ も短く見積もる．$V\\to\\infty$ では $p_fc\\to K$ で $T\\to d/c$（光の通過時間）に近づく．"
+   }
+  ],
+  "idea": {
+   "tex": "一定の力では運動量が時間に比例するので，通過時間は終運動量／力で直ちに出る．相対論補正は $\\sqrt{1+K/2mc^2}$ で，高電圧極限では $d/c$ に飽和する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $T$：((d)/(c))((sqrt(K ^(2)+2 K m c ^(2)))/(K))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "相対論的運動",
+   "エネルギー積分",
+   "平行平板",
+   "通過時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 20,
+  "theme": "振動数が変わらない方向と方向余弦の反転",
+  "topic": "振動数が変わらない方向と方向余弦の反転",
+  "statement": {
+   "tex": "$S$ 系で方向余弦 $(l,m,n)$ の向きに進む振動数 $\\nu$ の平面光波を，$x$ 方向に速さ $V=\\beta c$ で動く $S'$ 系で観測すると，振動数は $\\nu'=\\dfrac{1-l\\beta}{\\sqrt{1-\\beta^2}}\\nu$，$x$ 方向余弦は $l'=\\dfrac{l-\\beta}{1-l\\beta}$ となる．\n\\begin{enumerate}\n\\item 位相 $2\\pi\\{\\nu t-(lx+my+nz)\\nu/c\\}$ が不変であることから，$(\\boldsymbol k,\\omega/c)$ が 4 元ベクトルであることを用いて上の 2 式を導け．\n\\item $\\nu'=\\nu$ となる $l$ を $\\beta$ で表せ．\n\\item そのとき $l'=-l$ となることを示し，その意味を述べよ．\n\\item $\\beta=0.6$ のとき，(2) の $l$ と，$S$ 系でその光が $x$ 軸となす角を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 略（解説参照）　(2) $l=\\dfrac{1-\\sqrt{1-\\beta^2}}{\\beta}$　(3) $l'=-l$：$S$ と $S'$ の「中間の系」から見て対称な配置　(4) $l=1/3$，$\\theta\\approx70.5^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位相 $\\varphi=\\omega t-\\boldsymbol k\\cdot\\boldsymbol x$（$\\omega=2\\pi\\nu$，$\\boldsymbol k=(\\omega/c)(l,m,n)$）はスカラーで，$(\\boldsymbol x,ct)$ が 4 元ベクトルだから $(\\boldsymbol k,\\omega/c)$ も同じ規則で変換する：\n\\[\n\\frac{\\omega'}{c}=\\gamma\\Big(\\frac\\omega c-\\beta k_x\\Big),\\qquad k'_x=\\gamma\\Big(k_x-\\beta\\frac\\omega c\\Big),\\quad k'_y=k_y,\\ k'_z=k_z .\n\\]\n$k_x=\\omega l/c$ を入れて $\\nu'=\\gamma(1-l\\beta)\\nu$，$l'=k'_x/(\\omega'/c)=\\dfrac{l-\\beta}{1-l\\beta}$．\n\n(2) $\\gamma(1-l\\beta)=1$ より $l=\\dfrac{1-1/\\gamma}{\\beta}=\\dfrac{1-\\sqrt{1-\\beta^2}}{\\beta}$．\n\n(3) $l-\\beta=\\dfrac{1-1/\\gamma-\\beta^2}{\\beta}=\\dfrac{1/\\gamma^2-1/\\gamma}{\\beta}=-\\dfrac{l}{\\gamma}$，$1-l\\beta=\\dfrac1\\gamma$ なので $l'=-l$．つまり振動数が両系で等しい光は，運動方向成分の向きが両系で反転して見える．$S$ と $S'$ の中間速度で動く系から見ると，$S$ と $S'$ は互いに逆向きに同じ速さで動いており，$x$ 成分 $0$ の対称な光が両者に同じ Doppler 因子を与える，という対称性の表れである．\n\n(4) $\\sqrt{1-0.36}=0.8$ より $l=0.2/0.6=1/3$，$\\theta=\\arccos(1/3)\\approx70.5^\\circ$．このとき $S'$ では $l'=-1/3$，$\\theta'\\approx109.5^\\circ$．"
+   }
+  ],
+  "idea": {
+   "tex": "波数 4 元ベクトルの変換から，振動数不変の方向では $x$ 方向余弦がちょうど符号反転する．中間系での対称性として理解できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $l$：((1- sqrt(1- β ^(2)))/(β))\n(3) 記述\n(4) $l$：1/3 ; $\\theta$ [°]：≈70.5"
+  },
+  "methods": [],
+  "tags": [
+   "位相の不変性",
+   "4元波数ベクトル",
+   "Doppler効果",
+   "光行差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "横Doppler効果とIves–Stilwellの中点シフト",
+  "topic": "横Doppler効果とIves–Stilwellの中点シフト",
+  "statement": {
+   "tex": "実験室系で $x$ 方向に速さ $v=\\beta c$ で動く原子が，原子の静止系で振動数 $\\nu_0$（波長 $\\lambda_0$）の光を出す．\n\\begin{enumerate}\n\\item 原子の静止系で $x$ 軸に垂直に出た光の，実験室系での振動数と進行方向（$x$ 軸となす角 $\\theta$）を求めよ．\n\\item 実験室系で $x$ 軸に垂直に観測される光の振動数を求めよ．(1) と比べ，赤方偏移か青方偏移かが逆になることを示せ．\n\\item 前方（$\\theta=0$）と後方（$\\theta=\\pi$）に出た光の波長 $\\lambda_f,\\lambda_b$ の算術平均が $\\lambda_0$ からずれる量を $\\beta$ で表せ．また，$\\lambda_0=486.1$ nm，$\\beta=5.0\\times10^{-3}$ の場合に数値を求めよ（Ives–Stilwell の実験）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nu=\\gamma\\nu_0$（青方偏移），$\\cos\\theta=\\beta$　(2) $\\nu=\\nu_0/\\gamma$（赤方偏移）　(3) $\\dfrac{\\lambda_f+\\lambda_b}{2}-\\lambda_0=(\\gamma-1)\\lambda_0\\approx\\dfrac{\\beta^2}{2}\\lambda_0$，約 $6.08\\times10^{-3}$ nm"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "4 元波数 $(\\boldsymbol k,\\omega/c)$ の変換（原子系 $S'$ は実験室系 $S$ に対し $+x$ 方向に $\\beta c$）：\n\\[\n\\frac{\\omega}{c}=\\gamma\\Big(\\frac{\\omega'}{c}+\\beta k'_x\\Big),\\qquad k_x=\\gamma\\Big(k'_x+\\beta\\frac{\\omega'}{c}\\Big),\\qquad k_y=k'_y .\n\\]\n(1) $k'_x=0$ より $\\nu=\\gamma\\nu_0$．$\\cos\\theta=k_x/(\\omega/c)=\\gamma\\beta/\\gamma=\\beta$．\n\n(2) 逆変換 $\\omega'/c=\\gamma(\\omega/c-\\beta k_x)$ で $k_x=0$ とおくと $\\nu_0=\\gamma\\nu$，すなわち $\\nu=\\nu_0/\\gamma$．一般式 $\\nu=\\dfrac{\\sqrt{1-\\beta^2}}{1-\\beta\\cos\\theta}\\nu_0$ からも同じ．どちらも「真横」の光だが，どの系で真横かにより $\\gamma$ 倍と $1/\\gamma$ 倍に分かれる（光行差のため）．\n\n(3) $\\lambda_f=\\lambda_0\\sqrt{\\dfrac{1-\\beta}{1+\\beta}}$，$\\lambda_b=\\lambda_0\\sqrt{\\dfrac{1+\\beta}{1-\\beta}}$．\n\\[\n\\frac{\\lambda_f+\\lambda_b}{2}=\\frac{\\lambda_0}{2}\\cdot\\frac{(1-\\beta)+(1+\\beta)}{\\sqrt{1-\\beta^2}}=\\gamma\\lambda_0 .\n\\]\n1 次の Doppler 効果は相殺し，時間の遅れによる 2 次の効果 $(\\gamma-1)\\lambda_0\\approx\\beta^2\\lambda_0/2$ だけが残る．数値は $\\gamma-1\\approx1.250\\times10^{-5}$ より $\\Delta\\lambda\\approx486.1\\times1.25\\times10^{-5}\\approx6.08\\times10^{-3}$ nm．"
+   }
+  ],
+  "idea": {
+   "tex": "「横方向」はどの系で横かで $\\gamma\\nu_0$ と $\\nu_0/\\gamma$ に分かれる．前後の平均波長をとれば 1 次効果が消え，時間の遅れだけが測れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\nu$：γ ν_0 ; $\\cos\\theta$：β\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "相対論的Doppler効果",
+   "横Doppler効果",
+   "Ives-Stilwell",
+   "時間の遅れ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "光行差の半角公式とヘッドライト効果",
+  "topic": "光行差の半角公式とヘッドライト効果",
+  "statement": {
+   "tex": "$S'$ 系は $S$ 系に対して $x$ 方向に速さ $\\beta c$ で動いている．光の進行方向が $x$ 軸となす角を $S$ 系で $\\theta$，$S'$ 系で $\\theta'$ とすると $\\cos\\theta=\\dfrac{\\cos\\theta'+\\beta}{1+\\beta\\cos\\theta'}$ である．\n\\begin{enumerate}\n\\item 次の半角公式を示せ．\n\\[\n\\tan\\frac\\theta2=\\sqrt{\\frac{1-\\beta}{1+\\beta}}\\ \\tan\\frac{\\theta'}2\n\\]\n\\item $S'$ 系で静止した光源が光子を等方的に放出する．$S$ 系で前方半球（$\\theta<\\pi/2$）に向かう光子の割合を求めよ．\n\\item $S$ 系で，全光子の半数が含まれる前方円錐の半頂角 $\\theta_{1/2}$ を求め，$\\gamma=10$ のときの値を $1/\\gamma$ と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) $\\dfrac{1+\\beta}{2}$　(3) $\\cos\\theta_{1/2}=\\beta$，$\\gamma=10$ で $\\theta_{1/2}\\approx0.1002$ rad（$\\approx1/\\gamma=0.1$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\tan^2\\dfrac\\theta2=\\dfrac{1-\\cos\\theta}{1+\\cos\\theta}$ に $\\cos\\theta$ を代入すると\n\\[\n\\frac{1-\\cos\\theta}{1+\\cos\\theta}=\\frac{(1+\\beta\\cos\\theta')-(\\cos\\theta'+\\beta)}{(1+\\beta\\cos\\theta')+(\\cos\\theta'+\\beta)}=\\frac{(1-\\beta)(1-\\cos\\theta')}{(1+\\beta)(1+\\cos\\theta')}.\n\\]\n$0\\le\\theta,\\theta'\\le\\pi$ で両辺の平方根をとって与式を得る．（$\\tan(\\theta/2)$ がつねに一定倍に縮む，すなわち天球上の写像は等角写像である．）\n\n(2) $\\theta<\\pi/2\\iff\\cos\\theta>0\\iff\\cos\\theta'>-\\beta$．$S'$ で等方なので $\\cos\\theta'$ は $[-1,1]$ で一様分布し，割合は $\\dfrac{1-(-\\beta)}{2}=\\dfrac{1+\\beta}2$．\n\n(3) $S'$ で半数の光子は前方半球 $\\cos\\theta'>0$ にある．$\\cos\\theta'=0$ は $\\cos\\theta=\\beta$ に写り，写像は単調なので $\\theta_{1/2}=\\arccos\\beta$．$\\gamma=10$ では $\\beta=\\sqrt{1-0.01}=0.994987$，$\\theta_{1/2}=0.10017$ rad．$\\sin\\theta_{1/2}=1/\\gamma$ が厳密に成り立つので，大きい $\\gamma$ では $\\theta_{1/2}\\approx1/\\gamma$．"
+   }
+  ],
+  "idea": {
+   "tex": "光行差は $\\tan(\\theta/2)$ を一定倍する等角写像．$\\cos\\theta'=0$ が $\\cos\\theta=\\beta$ に写ることから，半数の光子が角 $1/\\gamma$ 程度の円錐に集中する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ((1+ β)/(2))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "光行差",
+   "ヘッドライト効果",
+   "4元波数ベクトル",
+   "等角写像"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "遠ざかる鏡の反射とエネルギー収支",
+  "topic": "遠ざかる鏡の反射とエネルギー収支",
+  "statement": {
+   "tex": "面積 $A$ の完全反射鏡が，その法線方向（$+x$）に一定の速さ $v=\\beta c$ で遠ざかっている．$+x$ 方向に進む強度 $I_0$，振動数 $\\nu_0$ の平面波が鏡に垂直に入射する．\n\\begin{enumerate}\n\\item 反射波の振動数 $\\nu$ と強度 $I$ を求めよ．\n\\item 鏡が受ける力 $F$ を求めよ（鏡の静止系での放射圧から考えよ）．\n\\item 単位時間に鏡に入射するエネルギーと反射波として出ていくエネルギーの差が，力のする仕事率 $Fv$ に等しいことを確かめよ．\n\\item 入射エネルギーのうち鏡の運動エネルギー（仕事）に変わる割合を求めよ．$\\beta\\to1$ でどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nu=\\nu_0\\dfrac{1-\\beta}{1+\\beta}$，$I=I_0\\Big(\\dfrac{1-\\beta}{1+\\beta}\\Big)^2$　(2) $F=\\dfrac{2I_0A}{c}\\dfrac{1-\\beta}{1+\\beta}$　(3) 両者とも $\\dfrac{2\\beta(1-\\beta)}{1+\\beta}I_0A$　(4) $\\dfrac{2\\beta}{1+\\beta}\\to1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 鏡の静止系 $S'$ で $\\nu'=\\nu_0\\sqrt{\\frac{1-\\beta}{1+\\beta}}$，電場 $E'=\\gamma(1-\\beta)E_0=\\sqrt{\\frac{1-\\beta}{1+\\beta}}E_0$．反射後に $S$ に戻すと同じ因子がもう一度かかり $\\nu=\\nu_0\\frac{1-\\beta}{1+\\beta}$，$E=E_0\\frac{1-\\beta}{1+\\beta}$．強度は $E^2$ に比例するので $I=I_0\\big(\\frac{1-\\beta}{1+\\beta}\\big)^2$．\n\n(2) $S'$ での入射強度は $I'=I_0\\frac{1-\\beta}{1+\\beta}$，完全反射の放射圧は $2I'/c$，力は $F'=2I'A/c$．鏡は $S'$ で静止しており，力は速度方向成分なので $F=F'$：\n\\[\nF=\\frac{2I_0A}{c}\\,\\frac{1-\\beta}{1+\\beta}.\n\\]\n(3) 入射波のエネルギー密度は $I_0/c$，波面と鏡の接近速度は $c-v$ なので入射仕事率は $P_{\\rm in}=I_0A(1-\\beta)$．反射波のエネルギー密度は $I/c$，反射波の占める領域は $c+v$ の割合で増えるので $P_{\\rm out}=IA(1+\\beta)=I_0A\\frac{(1-\\beta)^2}{1+\\beta}$．\n\\[\nP_{\\rm in}-P_{\\rm out}=I_0A(1-\\beta)\\Big(1-\\frac{1-\\beta}{1+\\beta}\\Big)=\\frac{2\\beta(1-\\beta)}{1+\\beta}I_0A=Fv .\n\\]\n(4) $\\dfrac{Fv}{P_{\\rm in}}=\\dfrac{2\\beta}{1+\\beta}$．$\\beta\\to1$ で 1 に近づく（反射光はほとんどエネルギーをもたなくなる）．ただし $P_{\\rm in}$ 自体が $1-\\beta$ に比例して減るため，力も仕事率も 0 に近づく．"
+   }
+  ],
+  "idea": {
+   "tex": "往復の Doppler 因子で振動数は $(1-\\beta)/(1+\\beta)$，強度はその 2 乗．入射・反射の流束は $c\\mp v$ で数える必要があり，そうするとエネルギー保存が正確に成り立つ．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $F$：((2 I_0 A)/(c))((1- β)/(1+ β))\n(3) 両者とも：((2 β (1- β))/(1+ β)) I_0 A\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "運動する鏡",
+   "放射圧",
+   "Doppler効果",
+   "エネルギー保存",
+   "光帆"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "異なる速度で動く2本の線電荷間の力",
+  "topic": "異なる速度で動く2本の線電荷間の力",
+  "statement": {
+   "tex": "間隔 $d$ で平行におかれた無限に長い 2 本の細い帯電線 1, 2 が，ともに線の方向（$x$ 方向）に，それぞれ速度 $v_1,v_2$ で動いている．実験室系で測った線電荷密度を $\\lambda_1,\\lambda_2$ とする．\n\\begin{enumerate}\n\\item 実験室系で，線 2 の単位長さあたりにはたらく力（線 1 から離れる向きを正）を求めよ．\n\\item 線 2 の静止系で同じ力を計算し，(1) と一致することを確かめよ（横向きの力の変換と長さの収縮に注意）．\n\\item 2 本が同じ大きさの速さで逆向きに動く場合（$v_2=-v_1$）と同じ向きに動く場合（$v_2=v_1$）で，力の大きさの比を求めよ．また $\\lambda_1\\lambda_2>0$ のとき，どんな $v_1,v_2$ でも力が引力にならないことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $f=\\dfrac{\\lambda_1\\lambda_2}{2\\pi\\varepsilon_0d}\\Big(1-\\dfrac{v_1v_2}{c^2}\\Big)$　(2) 一致（解説参照）　(3) 比 $\\dfrac{1+\\beta^2}{1-\\beta^2}$；$|v_1v_2|<c^2$ なので $1-v_1v_2/c^2>0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 線 1 が線 2 の位置につくる場は $E=\\dfrac{\\lambda_1}{2\\pi\\varepsilon_0d}$（線 1 から離れる向き），$B=\\dfrac{\\mu_0\\lambda_1v_1}{2\\pi d}$．線 2 の単位長さあたりの力は電気力 $\\lambda_2E$ と磁気力 $-\\lambda_2v_2B$（平行電流は引き合う）の和：\n\\[\nf=\\frac{\\lambda_1\\lambda_2}{2\\pi\\varepsilon_0d}-\\frac{\\mu_0\\lambda_1\\lambda_2v_1v_2}{2\\pi d}=\\frac{\\lambda_1\\lambda_2}{2\\pi\\varepsilon_0d}\\Big(1-\\frac{v_1v_2}{c^2}\\Big).\n\\]\n(2) 固有線密度は $\\lambda_{i0}=\\lambda_i/\\gamma_i$．線 2 の静止系での線 1 の速度は $w=\\dfrac{v_1-v_2}{1-v_1v_2/c^2}$ で，$\\gamma_w=\\gamma_1\\gamma_2(1-v_1v_2/c^2)$．したがって線 1 の密度は $\\lambda'_1=\\gamma_w\\lambda_{10}=\\lambda_1\\gamma_2(1-v_1v_2/c^2)$．この系で線 2 は静止しているので受ける力は電気力のみで，固有長さあたり $f'=\\dfrac{\\lambda_{20}\\lambda'_1}{2\\pi\\varepsilon_0d}$．\n長さ $L_0$（固有長さ）の部分にはたらく横向きの力は実験室系で $F=F'/\\gamma_2=f'L_0/\\gamma_2$，その部分の実験室での長さは $L_0/\\gamma_2$ だから，実験室での単位長さあたりの力は $f=f'$：\n\\[\nf=\\frac{(\\lambda_2/\\gamma_2)\\,\\lambda_1\\gamma_2(1-v_1v_2/c^2)}{2\\pi\\varepsilon_0d}=\\frac{\\lambda_1\\lambda_2}{2\\pi\\varepsilon_0d}\\Big(1-\\frac{v_1v_2}{c^2}\\Big).\n\\]\n(3) $v_2=-v_1$ では因子 $1+\\beta^2$，$v_2=v_1$ では $1-\\beta^2$（$\\beta=v_1/c$）なので比は $\\dfrac{1+\\beta^2}{1-\\beta^2}$．逆向きの電子ビームどうしは静電的斥力より強く反発し合う．$|v_i|<c$ より $v_1v_2<c^2$ で因子は常に正，同符号の線電荷の力は常に斥力（同方向に光速に近づくと 0 に近づくだけ）．"
+   }
+  ],
+  "idea": {
+   "tex": "相対速度の $\\gamma_w=\\gamma_1\\gamma_2(1-v_1v_2/c^2)$ が電荷密度の変換に入り，実験室系の電気力＋磁気力の因子 $1-v_1v_2/c^2$ をちょうど再現する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "線電荷",
+   "電荷密度の変換",
+   "力の変換",
+   "電流間の力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "同じ力で縦加速と横加速の放射を比べる",
+  "topic": "同じ力で縦加速と横加速の放射を比べる",
+  "statement": {
+   "tex": "電荷 $e$，質量 $m$ の粒子が速さ $v=\\beta c$ で運動しているとき，放射の全仕事率は Liénard の式\n\\[\nP=\\frac{e^2\\gamma^6}{6\\pi\\varepsilon_0c^3}\\Big\\{\\dot{\\boldsymbol v}^2-\\frac{(\\boldsymbol v\\times\\dot{\\boldsymbol v})^2}{c^2}\\Big\\}\n\\]\nで与えられる．\n\\begin{enumerate}\n\\item 大きさ $F$ の力が速度に平行にはたらく場合と垂直にはたらく場合，それぞれの加速度の大きさを求めよ．\n\\item それぞれの場合の $P$ を $F$ で表し，比 $P_\\perp/P_\\parallel$ を求めよ．\n\\item 線形加速器で電子が $dE/dx=10$ MeV/m のエネルギー利得を得ている（$\\beta\\approx1$）．放射損失の仕事率と，加速により得る仕事率の比を古典電子半径 $r_e=e^2/(4\\pi\\varepsilon_0mc^2)=2.82\\times10^{-15}$ m を用いて表し，数値を求めよ（$mc^2=0.511$ MeV）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dot v_\\parallel=\\dfrac{F}{\\gamma^3m}$，$\\dot v_\\perp=\\dfrac{F}{\\gamma m}$　(2) $P_\\parallel=\\dfrac{e^2F^2}{6\\pi\\varepsilon_0m^2c^3}$（$\\gamma$ によらない），$P_\\perp=\\gamma^2P_\\parallel$，比 $\\gamma^2$　(3) $\\dfrac{P}{Fv}\\approx\\dfrac23\\dfrac{r_e}{mc^2}\\dfrac{dE}{dx}\\approx3.7\\times10^{-14}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol F=\\dfrac{d}{dt}(\\gamma m\\boldsymbol v)=\\gamma m\\dot{\\boldsymbol v}+\\gamma^3m\\dfrac{(\\boldsymbol v\\cdot\\dot{\\boldsymbol v})}{c^2}\\boldsymbol v$．平行なら $\\boldsymbol F=\\gamma^3m\\dot{\\boldsymbol v}$，垂直なら（$\\gamma$ 一定）$\\boldsymbol F=\\gamma m\\dot{\\boldsymbol v}$．\n\n(2) 平行：$\\boldsymbol v\\times\\dot{\\boldsymbol v}=0$ で $P_\\parallel=\\dfrac{e^2\\gamma^6}{6\\pi\\varepsilon_0c^3}\\dfrac{F^2}{\\gamma^6m^2}=\\dfrac{e^2F^2}{6\\pi\\varepsilon_0m^2c^3}$．\n垂直：$(\\boldsymbol v\\times\\dot{\\boldsymbol v})^2=v^2\\dot v^2$ で $\\{\\cdots\\}=\\dot v^2(1-\\beta^2)=\\dot v^2/\\gamma^2$，\n\\[\nP_\\perp=\\frac{e^2\\gamma^4}{6\\pi\\varepsilon_0c^3}\\frac{F^2}{\\gamma^2m^2}=\\gamma^2P_\\parallel .\n\\]\n同じ力なら横加速（円形加速器）は縦加速（線形加速器）の $\\gamma^2$ 倍放射する．\n\n(3) $F=dE/dx$，$Fv\\approx Fc$ より\n\\[\n\\frac{P_\\parallel}{Fv}=\\frac{e^2F}{6\\pi\\varepsilon_0m^2c^4}=\\frac23\\,r_e\\,\\frac{F}{mc^2}=\\frac23\\times2.82\\times10^{-15}\\ {\\rm m}\\times\\frac{10\\ {\\rm MeV/m}}{0.511\\ {\\rm MeV}}\\approx3.7\\times10^{-14}.\n\\]\n線形加速では放射損失は全く無視できる．"
+   }
+  ],
+  "idea": {
+   "tex": "Liénard の式を力で書き直すと，縦方向は $\\gamma^6$ と $\\gamma^{-6}$ が相殺し $\\gamma$ によらず，横方向は $\\gamma^2$ 倍になる．線形加速器と円形加速器の差の起源．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\dot v_\\parallel$：((F)/(γ ^(3) m)) ; $\\dot v_\\perp$：((F)/(γ m))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Liénardの式",
+   "放射",
+   "Larmorの公式",
+   "線形加速器",
+   "古典電子半径"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "LEPとLHCのシンクロトロン放射損失",
+  "topic": "LEPとLHCのシンクロトロン放射損失",
+  "statement": {
+   "tex": "半径 $\\rho$ の円軌道を回る電荷 $e$，ローレンツ因子 $\\gamma$ の粒子が 1 周あたりに放射で失うエネルギーは\n\\[\n\\Delta E=\\frac{e^2\\gamma^4\\beta^3}{3\\varepsilon_0\\rho}\n\\]\nである（$\\beta\\approx1$ としてよい）．\n\\begin{enumerate}\n\\item 電子を $E=100$ GeV，曲率半径 $\\rho=3100$ m で周回させるとき（LEP 程度），$\\Delta E$ を GeV 単位で求めよ．\n\\item 陽子を $E=7$ TeV，$\\rho=2804$ m で周回させるとき（LHC 程度），$\\Delta E$ を eV 単位で求めよ．また同じエネルギー・同じ半径での電子と陽子の損失の比を求めよ．\n\\item (1) のリングで高周波空洞が 1 周あたり最大 3.0 GeV しか補給できないとき，電子の最大エネルギーを求めよ．\n\\end{enumerate}\nただし $m_ec^2=0.511$ MeV，$m_pc^2=938.3$ MeV．"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta E\\approx2.85$ GeV　(2) $\\Delta E\\approx6.7$ keV；比 $(m_p/m_e)^4\\approx1.1\\times10^{13}$　(3) $E_{\\max}\\approx101$ GeV"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$\\gamma=E/(mc^2)$ とおくと $\\Delta E=\\dfrac{e^2}{3\\varepsilon_0\\rho}\\Big(\\dfrac{E}{mc^2}\\Big)^4$．eV 単位では $\\Delta E[{\\rm eV}]=\\dfrac{e}{3\\varepsilon_0\\rho}\\gamma^4$．\n\n(1) $\\gamma=100/0.000511=1.957\\times10^5$，$\\gamma^4=1.467\\times10^{21}$．$\\dfrac{e}{3\\varepsilon_0\\rho}=\\dfrac{1.602\\times10^{-19}}{3\\times8.854\\times10^{-12}\\times3100}=1.946\\times10^{-12}$ V．$\\Delta E\\approx2.85\\times10^9$ eV $=2.85$ GeV．（電子では $\\Delta E[{\\rm GeV}]\\approx8.85\\times10^{-5}E^4[{\\rm GeV}]/\\rho[{\\rm m}]$．）\n\n(2) $\\gamma=7000/0.9383=7461$，$\\gamma^4=3.10\\times10^{15}$，$\\dfrac{e}{3\\varepsilon_0\\rho}=2.151\\times10^{-12}$ V より $\\Delta E\\approx6.7\\times10^3$ eV．同じ $E,\\rho$ では $\\Delta E\\propto m^{-4}$ なので比は $(938.3/0.511)^4\\approx1.1\\times10^{13}$．\n\n(3) $\\Delta E\\propto E^4$ なので $E_{\\max}=100\\ {\\rm GeV}\\times(3.0/2.85)^{1/4}\\approx101$ GeV．補給能力を 2 倍にしても $2^{1/4}\\approx1.19$ 倍にしかならず，電子円形加速器のエネルギーは $E^4$ 則で頭打ちになる．"
+   }
+  ],
+  "idea": {
+   "tex": "放射損失は $(E/m)^4/\\rho$ に比例するので，電子と陽子では同じエネルギーで $10^{13}$ 倍違い，電子リングの最高エネルギーは $E^4$ 則で強く制限される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta E$ [GeV]：≈2.85\n(2) 記述\n(3) $E_{\\max}$ [GeV]：≈101"
+  },
+  "methods": [],
+  "tags": [
+   "シンクロトロン放射",
+   "円形加速器",
+   "Liénardの式",
+   "LEP",
+   "LHC"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "Maxwell方程式の双対回転不変性",
+  "topic": "Maxwell方程式の双対回転不変性",
+  "statement": {
+   "tex": "源のない真空中の Maxwell 方程式\n\\[\n\\nabla\\cdot\\boldsymbol E=0,\\quad\\nabla\\cdot\\boldsymbol B=0,\\quad\\nabla\\times\\boldsymbol E=-\\frac{\\partial\\boldsymbol B}{\\partial t},\\quad\\nabla\\times\\boldsymbol B=\\frac1{c^2}\\frac{\\partial\\boldsymbol E}{\\partial t}\n\\]\nに対し，実数 $\\alpha$ による変換（双対回転）\n\\[\n\\boldsymbol E'=\\boldsymbol E\\cos\\alpha+c\\boldsymbol B\\sin\\alpha,\\qquad c\\boldsymbol B'=-\\boldsymbol E\\sin\\alpha+c\\boldsymbol B\\cos\\alpha\n\\]\nを考える．\n\\begin{enumerate}\n\\item $(\\boldsymbol E',\\boldsymbol B')$ も同じ方程式を満たすことを示せ．4 元形式では，この変換が $F_{\\mu\\nu}$ とその双対 $\\tilde F_{\\mu\\nu}=\\frac12\\epsilon_{\\mu\\nu\\rho\\sigma}F^{\\rho\\sigma}$ の回転であることを述べよ．\n\\item エネルギー密度 $u=\\frac{\\varepsilon_0}2(\\boldsymbol E^2+c^2\\boldsymbol B^2)$ と Poynting ベクトル $\\boldsymbol S=\\boldsymbol E\\times\\boldsymbol B/\\mu_0$ が不変であることを示せ．\n\\item Lorentz 不変量の組 $(I_1,I_2)=(\\boldsymbol E^2-c^2\\boldsymbol B^2,\\ 2c\\boldsymbol E\\cdot\\boldsymbol B)$ は，双対回転で角 $2\\alpha$ だけ回転することを示せ．複素ベクトル $\\boldsymbol F=\\boldsymbol E+ic\\boldsymbol B$ を用いて説明せよ．\n\\item 電荷源 $\\rho$ があると双対回転不変性は破れる．不変性を回復するには何を仮定すればよいか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) $u'=u$，$\\boldsymbol S'=\\boldsymbol S$　(3) $I_1'+iI_2'=e^{-2i\\alpha}(I_1+iI_2)$　(4) 磁荷（磁気単極子）の密度・流れを導入し，電荷と磁荷も同じ角度で回転させる"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 発散の式は線形なので明らか．回転の式：$\\nabla\\times\\boldsymbol E'=\\cos\\alpha\\,\\nabla\\times\\boldsymbol E+\\sin\\alpha\\,c\\nabla\\times\\boldsymbol B=-\\cos\\alpha\\,\\partial_t\\boldsymbol B+\\sin\\alpha\\,\\frac1c\\partial_t\\boldsymbol E=-\\frac1c\\partial_t(c\\boldsymbol B\\cos\\alpha-\\boldsymbol E\\sin\\alpha)=-\\partial_t\\boldsymbol B'$．\n$\\nabla\\times c\\boldsymbol B'=-\\sin\\alpha\\nabla\\times\\boldsymbol E+\\cos\\alpha\\,c\\nabla\\times\\boldsymbol B=\\sin\\alpha\\,\\partial_t\\boldsymbol B+\\cos\\alpha\\frac1c\\partial_t\\boldsymbol E=\\frac1c\\partial_t\\boldsymbol E'$．\n4 元形式では真空の方程式は $\\partial_\\mu F^{\\mu\\nu}=0$，$\\partial_\\mu\\tilde F^{\\mu\\nu}=0$．$\\tilde F$ は $F$ で $\\boldsymbol E\\to c\\boldsymbol B$，$c\\boldsymbol B\\to-\\boldsymbol E$ と置き換えたもの（符号は規約による）なので，変換は $F'=F\\cos\\alpha-\\tilde F\\sin\\alpha$ 型の線形結合で，両方程式が保たれる．\n\n(2) $\\boldsymbol E'^2+c^2\\boldsymbol B'^2=(\\cos^2\\alpha+\\sin^2\\alpha)(\\boldsymbol E^2+c^2\\boldsymbol B^2)$（交差項は打ち消す）．\n$\\boldsymbol E'\\times c\\boldsymbol B'=(\\boldsymbol E\\cos\\alpha+c\\boldsymbol B\\sin\\alpha)\\times(-\\boldsymbol E\\sin\\alpha+c\\boldsymbol B\\cos\\alpha)=\\cos^2\\alpha\\,\\boldsymbol E\\times c\\boldsymbol B-\\sin^2\\alpha\\,c\\boldsymbol B\\times\\boldsymbol E=\\boldsymbol E\\times c\\boldsymbol B$．\n\n(3) $\\boldsymbol F'=\\boldsymbol E'+ic\\boldsymbol B'=(\\cos\\alpha-i\\sin\\alpha)\\boldsymbol E+(\\sin\\alpha+i\\cos\\alpha)c\\boldsymbol B=e^{-i\\alpha}(\\boldsymbol E+ic\\boldsymbol B)=e^{-i\\alpha}\\boldsymbol F$．\n$\\boldsymbol F\\cdot\\boldsymbol F=\\boldsymbol E^2-c^2\\boldsymbol B^2+2ic\\boldsymbol E\\cdot\\boldsymbol B=I_1+iI_2$ なので $I_1'+iI_2'=e^{-2i\\alpha}(I_1+iI_2)$，すなわち $(I_1,I_2)$ 平面で角 $-2\\alpha$ の回転（$I_1'=I_1\\cos2\\alpha+I_2\\sin2\\alpha$，$I_2'=-I_1\\sin2\\alpha+I_2\\cos2\\alpha$）．$|\\boldsymbol F\\cdot\\boldsymbol F|$ は双対回転でも Lorentz 変換でも不変．\n\n(4) $\\nabla\\cdot\\boldsymbol E=\\rho/\\varepsilon_0$ に対応する $\\nabla\\cdot c\\boldsymbol B$ の源がないため破れる．磁荷密度 $\\rho_m$（と磁流）を導入し，$(\\rho,\\rho_m)$ を同じ角 $\\alpha$ で回転させれば方程式は不変になる．すべての粒子の電荷・磁荷の比が同じなら，回転で磁荷を消せるので，単極子の有無は「比が粒子ごとに違うか」で決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "真空の Maxwell 方程式は $\\boldsymbol E+ic\\boldsymbol B$ の位相回転に不変で，エネルギー・運動量は保たれるが，2 つの Lorentz 不変量は角 $2\\alpha$ で混ざる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Maxwell方程式",
+   "双対テンソル",
+   "双対性",
+   "電磁場の不変量",
+   "磁気単極子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Minkowski力の第0成分と相対論的サイクロトロン運動",
+  "topic": "Minkowski力の第0成分と相対論的サイクロトロン運動",
+  "statement": {
+   "tex": "電荷 $q$，静止質量 $m$ の粒子に電磁ポテンシャル $A^\\mu=(\\phi/c,\\boldsymbol A)$ がはたらくとき，Minkowski 力は\n\\[ K_\\mu=q\\left(\\frac{\\partial(u^\\nu A_\\nu)}{\\partial x^\\mu}-\\frac{dA_\\mu}{d\\tau}\\right) \\]\n（偏微分では 4 元速度 $u^\\nu=(\\gamma c,\\gamma\\boldsymbol v)$ を定数とみなす，計量の符号は $(+,-,-,-)$）で与えられる．\n\\begin{enumerate}\n\\item 第 0 成分から，粒子のエネルギー $\\mathcal E=\\gamma mc^2$ の変化率が $d\\mathcal E/dt=q\\boldsymbol E\\cdot\\boldsymbol v$ となることを示せ（$\\boldsymbol E=-\\nabla\\phi-\\partial\\boldsymbol A/\\partial t$）．\n\\item 一様磁場 $\\boldsymbol B=B\\hat{\\boldsymbol z}$ 中で $\\boldsymbol v\\perp\\boldsymbol B$ の運動をする粒子について，(1) から $\\gamma$ が一定であることを用いて，円運動の角振動数 $\\omega$ と半径 $r$ を運動量 $p$ で表せ．\n\\item 運動エネルギー 1.00 MeV の電子（$mc^2=0.511$ MeV）が $B=0.100$ T の磁場中で円運動するときの半径と周期を求め，非相対論の公式による周期と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $K^0=\\dfrac{\\gamma}{c}q\\boldsymbol E\\cdot\\boldsymbol v$ より $d\\mathcal E/dt=q\\boldsymbol E\\cdot\\boldsymbol v$　(2) $\\omega=\\dfrac{qB}{\\gamma m}$，$r=\\dfrac{p}{qB}$　(3) $r\\approx4.74$ cm，周期 $\\approx1.06$ ns（非相対論公式 $2\\pi m/qB=0.357$ ns の $\\gamma=2.96$ 倍）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u^\\nu A_\\nu=\\gamma c\\cdot\\phi/c-\\gamma\\boldsymbol v\\cdot\\boldsymbol A=\\gamma(\\phi-\\boldsymbol v\\cdot\\boldsymbol A)$，$\\partial/\\partial x^0=(1/c)\\partial/\\partial t$，$A_0=\\phi/c$．$d/d\\tau=\\gamma\\,d/dt$ と $d\\phi/dt=\\partial\\phi/\\partial t+\\boldsymbol v\\cdot\\nabla\\phi$ を用いると\n\\[ K_0=q\\gamma\\left[\\frac1c\\left(\\frac{\\partial\\phi}{\\partial t}-\\boldsymbol v\\cdot\\frac{\\partial\\boldsymbol A}{\\partial t}\\right)-\\frac1c\\left(\\frac{\\partial\\phi}{\\partial t}+\\boldsymbol v\\cdot\\nabla\\phi\\right)\\right]=\\frac{q\\gamma}{c}\\boldsymbol v\\cdot\\left(-\\nabla\\phi-\\frac{\\partial\\boldsymbol A}{\\partial t}\\right)=\\frac{\\gamma}{c}q\\boldsymbol E\\cdot\\boldsymbol v. \\]\n$K^0=K_0$ で，運動方程式 $dp^0/d\\tau=K^0$，$p^0=\\mathcal E/c$ より $\\dfrac{\\gamma}{c}\\dfrac{d\\mathcal E}{dt}=\\dfrac{\\gamma}{c}q\\boldsymbol E\\cdot\\boldsymbol v$，すなわち $d\\mathcal E/dt=q\\boldsymbol E\\cdot\\boldsymbol v$（電場だけが仕事をする）．\n\n(2) 静磁場のみでは $\\boldsymbol E=0$ なので (1) より $\\gamma$ は一定．空間成分はローレンツ力 $d(\\gamma m\\boldsymbol v)/dt=q\\boldsymbol v\\times\\boldsymbol B$ を与え，$\\gamma$ 一定だから $\\gamma m\\,d\\boldsymbol v/dt=q\\boldsymbol v\\times\\boldsymbol B$．これは角振動数 $\\omega=qB/(\\gamma m)$ の等速円運動で，$\\gamma mv^2/r=qvB$ より $r=\\gamma mv/(qB)=p/(qB)$．\n\n(3) $\\mathcal E=1.511$ MeV，$\\gamma=1.511/0.511=2.957$，$pc=\\sqrt{1.511^2-0.511^2}=1.422$ MeV．$p=1.422\\times10^6\\times1.602\\times10^{-19}/2.998\\times10^8=7.60\\times10^{-22}$ kg m/s．\n\\[ r=\\frac{p}{qB}=\\frac{7.60\\times10^{-22}}{1.602\\times10^{-19}\\times0.100}=4.74\\times10^{-2}\\ {\\rm m},\\qquad T=\\frac{2\\pi\\gamma m}{qB}=\\frac{2\\pi\\times2.957\\times9.109\\times10^{-31}}{1.602\\times10^{-20}}=1.06\\times10^{-9}\\ {\\rm s}. \\]\n非相対論の公式 $2\\pi m/(qB)=0.357$ ns の $\\gamma$ 倍に伸びる（サイクロトロンで高エネルギーまで加速すると共鳴がずれる理由）．"
+   }
+  ],
+  "idea": {
+   "tex": "共変な Minkowski 力の第 0 成分は仕事率 $q\\boldsymbol E\\cdot\\boldsymbol v$ を与え，磁場が仕事をしないこと（$\\gamma$ 一定）が分かる．それが相対論的サイクロトロン周波数 $qB/\\gamma m$ に直結する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega$：((q B)/(γ m)) ; $r$：((p)/(q B))\n(3) $r$ [cm]：≈4.74 ; 周期 [ns]：≈1.06"
+  },
+  "methods": [],
+  "tags": [
+   "Minkowski力",
+   "ローレンツ力",
+   "4元ポテンシャル",
+   "サイクロトロン運動",
+   "仕事率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 20,
+  "theme": "磁場中を動く導体板・誘電体板の表面電荷",
+  "topic": "磁場中を動く導体板・誘電体板の表面電荷",
+  "statement": {
+   "tex": "一様磁場 $\\boldsymbol B=B\\hat{\\boldsymbol z}$（$B=50\\ \\mathrm{mT}$）の中を，広い板が $x$ 方向に一定の速さ $v=0.90\\ \\mathrm{m/s}$ で動いている．板の面は $xz$ 面に平行（法線は $y$ 方向）で，板は非強磁性体（透磁率 $\\mu_0$）である．非相対論的に扱い，板の端の影響は無視する．\n\\begin{enumerate}\n\\item 板が導体のとき，板の両面に現れる電荷の面密度を求めよ．\n\\item 板が比誘電率 $\\varepsilon=5.0$ の絶縁体のとき，両面に現れる分極電荷の面密度を求めよ．\n\\item (2) の場合，実験室系で測った板内部の電場の大きさを求めよ．導体の場合と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\pm\\varepsilon_0vB=\\pm0.40\\ \\mathrm{pC/m^2}$　(2) $\\pm\\varepsilon_0\\dfrac{\\varepsilon-1}{\\varepsilon}vB=\\pm0.32\\ \\mathrm{pC/m^2}$　(3) $\\dfrac{\\varepsilon-1}{\\varepsilon}vB=3.6\\times10^{-2}\\ \\mathrm{V/m}$（導体では $vB=4.5\\times10^{-2}\\ \\mathrm{V/m}$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "板の静止系 K$'$ では，板の外の電場は $\\boldsymbol E'_\\text{out}=\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B=\\boldsymbol v\\times\\boldsymbol B=-vB\\hat{\\boldsymbol y}$（実験室系の外部電場は 0）で，板に垂直である．\n\n(1) 導体内部では K$'$ で $\\boldsymbol E'_\\text{in}=0$．板面に垂直な外部電場 $vB$ を打ち消すように表面電荷が並ぶので，$\\sigma=\\pm\\varepsilon_0vB=8.85\\times10^{-12}\\times0.90\\times0.050=4.0\\times10^{-13}\\ \\mathrm{C/m^2}=0.40\\ \\mathrm{pC/m^2}$（$+y$ 側の面が負）．\n\n(2) 絶縁体では K$'$ で $D$ の法線成分が連続：$\\varepsilon\\varepsilon_0E'_\\text{in}=\\varepsilon_0vB$，$E'_\\text{in}=vB/\\varepsilon$．分極 $P=\\varepsilon_0(\\varepsilon-1)E'_\\text{in}$ が分極電荷面密度を与え\n\\[ \\sigma_b=\\pm\\varepsilon_0\\frac{\\varepsilon-1}{\\varepsilon}vB=\\pm0.32\\ \\mathrm{pC/m^2}. \\]\n(3) 実験室系へは $\\boldsymbol E=\\boldsymbol E'-\\boldsymbol v\\times\\boldsymbol B$．内部で $E'_\\text{in}=-\\dfrac{vB}{\\varepsilon}\\hat{\\boldsymbol y}$，$-\\boldsymbol v\\times\\boldsymbol B=+vB\\hat{\\boldsymbol y}$ より\n\\[ E_\\text{in}=vB\\left(1-\\frac1\\varepsilon\\right)=0.045\\times0.80=3.6\\times10^{-2}\\ \\mathrm{V/m}. \\]\n導体では $E_\\text{in}=vB=4.5\\times10^{-2}\\ \\mathrm{V/m}$（$\\varepsilon\\to\\infty$ の極限）．実験室系で外部電場がないのに板内部に電場があるのは，表面電荷がつくる電場だからである．（このように磁場中で動く誘電体が分極する現象はウィルソンの実験で確かめられた．）"
+   }
+  ],
+  "idea": {
+   "tex": "板の静止系では $\\boldsymbol v\\times\\boldsymbol B$ が外部電場として働く．導体は完全に遮蔽し，誘電体は $(\\varepsilon-1)/\\varepsilon$ だけ分極する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "場の変換",
+   "運動する導体",
+   "運動する誘電体",
+   "表面電荷",
+   "ウィルソンの実験"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 20,
+  "theme": "動く2電荷の磁気力と作用反作用の破れ",
+  "topic": "動く2電荷の磁気力と作用反作用の破れ",
+  "statement": {
+   "tex": "非相対論的な速度で動く点電荷 $q$ は，静止系で $\\boldsymbol E=\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{\\boldsymbol r}{r^3}$ をつくる．\n\\begin{enumerate}\n\\item 電荷が速度 $\\boldsymbol v$ で動く系から見た磁束密度を，場の変換式 $\\boldsymbol B'=\\boldsymbol B-\\boldsymbol v_{\\rm frame}\\times\\boldsymbol E/c^2$（$v\\ll c$）を用いて求めよ（$\\boldsymbol r$ は電荷からの位置ベクトル）．\n\\item 時刻 $t=0$ に，電荷 $q_1$ が原点にあって速度 $v\\hat x$ で，電荷 $q_2$ が点 $(0,d,0)$ にあって速度 $v\\hat y$ で動いている．(1) の結果を用いて，$q_1$ が $q_2$ に及ぼす磁気力 $\\boldsymbol F_{21}$ と，$q_2$ が $q_1$ に及ぼす磁気力 $\\boldsymbol F_{12}$ を求めよ．\n\\item (2) の結果は作用・反作用の法則を満たすか．満たさないなら，運動量保存則はどう救われるかを簡潔に述べよ．また $|\\boldsymbol F_{21}|$ とクーロン力の大きさの比を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{q\\,\\boldsymbol v\\times\\boldsymbol r}{r^3}$　(2) $\\boldsymbol F_{21}=\\dfrac{\\mu_0q_1q_2v^2}{4\\pi d^2}\\hat x$，$\\boldsymbol F_{12}=\\boldsymbol 0$　(3) 満たさない．差は電磁場が運動量を担うことで補われる．比は $v^2/c^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 電荷の静止系 K では $\\boldsymbol B=0$．観測者の系は K に対し速度 $-\\boldsymbol v$ で動くので，$\\boldsymbol v_{\\rm frame}=-\\boldsymbol v$ を代入して\n\\[ \\boldsymbol B'=0-(-\\boldsymbol v)\\times\\boldsymbol E/c^2=\\frac{\\boldsymbol v\\times\\boldsymbol E}{c^2}=\\frac{\\mu_0}{4\\pi}\\frac{q\\,\\boldsymbol v\\times\\boldsymbol r}{r^3}\\quad(\\mu_0\\varepsilon_0=1/c^2). \\]\n\n(2) $q_2$ の位置での $q_1$ の場：$\\boldsymbol r=d\\hat y$，$\\boldsymbol v_1\\times\\boldsymbol r=vd\\,\\hat z$ だから $\\boldsymbol B_1=\\dfrac{\\mu_0q_1v}{4\\pi d^2}\\hat z$．\n$\\boldsymbol F_{21}=q_2\\boldsymbol v_2\\times\\boldsymbol B_1=q_2v\\hat y\\times\\dfrac{\\mu_0q_1v}{4\\pi d^2}\\hat z=\\dfrac{\\mu_0q_1q_2v^2}{4\\pi d^2}\\hat x$．\n$q_1$ の位置での $q_2$ の場：$\\boldsymbol r=-d\\hat y$ は $\\boldsymbol v_2=v\\hat y$ と平行なので $\\boldsymbol B_2=0$，よって $\\boldsymbol F_{12}=0$．\n\n(3) $\\boldsymbol F_{12}+\\boldsymbol F_{21}\\neq0$ で作用・反作用の法則は成り立たない（クーロン力の部分は互いに打ち消し合う）．2 粒子の力学的運動量の和は保存しないが，電磁場自身が運動量（密度 $\\varepsilon_0\\boldsymbol E\\times\\boldsymbol B$）を持ち，粒子と場の運動量の総和が保存する．\nクーロン力は $\\dfrac{q_1q_2}{4\\pi\\varepsilon_0d^2}$ だから，比は $\\mu_0\\varepsilon_0v^2=v^2/c^2$ で，非相対論的速度では磁気力は小さな補正にすぎない．"
+   }
+  ],
+  "idea": {
+   "tex": "静止電荷のクーロン場をガリレイ近似の場の変換で移すとビオ・サバール型の磁場が出る．速度の向きの配置次第で磁気力は作用・反作用を破り，場の運動量が必要になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "場の変換",
+   "ビオ・サバールの法則",
+   "作用反作用",
+   "場の運動量",
+   "磁気力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "動く系での力の変換と時間の遅れ",
+  "topic": "動く系での力の変換と時間の遅れ",
+  "statement": {
+   "tex": "慣性系 K で，$z$ 軸に沿った無限に長い直線電荷（線密度 $\\lambda>0$）が静止しており，その場は $\\boldsymbol E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\dfrac{\\boldsymbol r}{r^2}$（$\\boldsymbol r$ は $z$ 軸からの垂直な位置ベクトル）である．$z$ 軸から距離 $r$ の点に点電荷 $q$ が K で静止している．K に対して速度 $v\\hat z$ で動く慣性系 K$'$ を考える．\n\\begin{enumerate}\n\\item K$'$ での電場 $\\boldsymbol E'$ と磁束密度 $\\boldsymbol B'$ を（相対論的に厳密に）求めよ．磁束密度の力線はどんな形か．\n\\item K$'$ で点電荷 $q$ にはたらく力 $\\boldsymbol F'$ を求め，K での力 $\\boldsymbol F$ との比を求めよ．\n\\item (2) の比を，K$'$ で見た $q$ の横方向の運動量の変化率と時間の遅れの観点から説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol E'=\\gamma\\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\dfrac{\\boldsymbol r}{r^2}$，$\\boldsymbol B'=\\gamma\\dfrac{\\mu_0\\lambda}{2\\pi}\\dfrac{\\boldsymbol r\\times\\boldsymbol v}{r^2}$（$z$ 軸を中心とする同心円）　(2) $\\boldsymbol F'=\\boldsymbol F/\\gamma$　(3) 解説参照"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) K では $\\boldsymbol B=0$，$\\boldsymbol E\\perp\\boldsymbol v$．変換則 $\\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)_\\perp$，$\\boldsymbol B'_\\perp=\\gamma(\\boldsymbol B-\\boldsymbol v\\times\\boldsymbol E/c^2)_\\perp$ より\n\\[ \\boldsymbol E'=\\gamma\\boldsymbol E=\\gamma\\frac{\\lambda}{2\\pi\\varepsilon_0}\\frac{\\boldsymbol r}{r^2},\\qquad \\boldsymbol B'=-\\gamma\\frac{\\boldsymbol v\\times\\boldsymbol E}{c^2}=\\gamma\\frac{\\mu_0\\lambda}{2\\pi}\\frac{\\boldsymbol r\\times\\boldsymbol v}{r^2}. \\]\n$\\boldsymbol B'$ は $\\boldsymbol r$ にも $\\hat z$ にも垂直で，大きさは $1/r$ に比例するので，力線は $z$ 軸を中心とする同心円である．K$'$ では直線電荷は線密度 $\\gamma\\lambda$ で $-z$ 向きに動く電流 $\\gamma\\lambda v$ であり，それぞれの場と一致する．\n\n(2) K$'$ で $q$ は速度 $\\boldsymbol u'=-v\\hat z$ で動く．\n\\[ \\boldsymbol u'\\times\\boldsymbol B'=-v\\hat z\\times\\Bigl(-\\gamma\\frac{v\\hat z\\times\\boldsymbol E}{c^2}\\Bigr)=\\gamma\\frac{v^2}{c^2}\\hat z\\times(\\hat z\\times\\boldsymbol E)=-\\gamma\\frac{v^2}{c^2}\\boldsymbol E \\]\n（$\\boldsymbol E\\perp\\hat z$）．よって $\\boldsymbol F'=q(\\boldsymbol E'+\\boldsymbol u'\\times\\boldsymbol B')=q\\gamma\\Bigl(1-\\dfrac{v^2}{c^2}\\Bigr)\\boldsymbol E=\\dfrac{q\\boldsymbol E}{\\gamma}=\\dfrac{\\boldsymbol F}{\\gamma}$．電気力の増加 $\\gamma$ 倍を磁気力が打ち消して，正味 $1/\\gamma$ 倍になる．\n\n(3) 力は運動量の時間変化率である．速度に垂直な運動量成分（ここでは $\\boldsymbol r$ 方向）はローレンツ変換で変わらないから，微小な横運動量変化 $\\Delta p_\\perp$ は両系で等しい．一方その変化に要する時間は，$q$ の静止系 K の固有時 $\\Delta t$ に対して K$'$ では $\\gamma\\Delta t$ に延びる．したがって $F'_\\perp=\\Delta p_\\perp/(\\gamma\\Delta t)=F_\\perp/\\gamma$．"
+   }
+  ],
+  "idea": {
+   "tex": "純粋な静電場を動く系で見ると，電場の $\\gamma$ 倍化と磁気力が組み合わさって横方向の力はちょうど $1/\\gamma$ 倍になる．これは時間の遅れそのものである．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "場の変換",
+   "力の変換",
+   "時間の遅れ",
+   "直線電荷",
+   "磁気力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ガリレイ近似の場の変換の非可逆性",
+  "topic": "ガリレイ近似の場の変換の非可逆性",
+  "statement": {
+   "tex": "慣性系 K の電磁場 $(\\boldsymbol E,\\boldsymbol B)$ と，K に対して速度 $\\boldsymbol v$ で動く系 K$'$ の場 $(\\boldsymbol E',\\boldsymbol B')$ の厳密な関係は，$\\boldsymbol v$ に平行な成分を $\\parallel$，垂直な成分を $\\perp$，$\\gamma=1/\\sqrt{1-v^2/c^2}$ として\n\\[ \\boldsymbol E'_\\parallel=\\boldsymbol E_\\parallel,\\ \\ \\boldsymbol B'_\\parallel=\\boldsymbol B_\\parallel,\\ \\ \\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)_\\perp,\\ \\ \\boldsymbol B'_\\perp=\\gamma\\Bigl(\\boldsymbol B-\\frac{\\boldsymbol v\\times\\boldsymbol E}{c^2}\\Bigr)_\\perp \\]\nである．\n\\begin{enumerate}\n\\item $v\\ll c$ で $v/c$ の 1 次までとると，$\\boldsymbol E'=\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B$，$\\boldsymbol B'=\\boldsymbol B-\\boldsymbol v\\times\\boldsymbol E/c^2$ となることを示せ．\n\\item (1) の近似式で K から K$'$ へ移り，さらに同じ近似式で K$'$ から速度 $-\\boldsymbol v$ で K へ戻ると，得られる電場 $\\boldsymbol E''$ は元の $\\boldsymbol E$ と一致しない．$\\boldsymbol E''-\\boldsymbol E$ を求めよ．特に $\\boldsymbol E\\perp\\boldsymbol v$ のとき $\\boldsymbol E''$ を $\\boldsymbol E$ で表せ．\n\\item 厳密な変換式では往復で元に戻ることを，$\\boldsymbol E_\\perp$ について確かめよ（$\\boldsymbol B''$ も同様）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\boldsymbol E''-\\boldsymbol E=\\boldsymbol v\\times(\\boldsymbol v\\times\\boldsymbol E)/c^2$，$\\boldsymbol E\\perp\\boldsymbol v$ なら $\\boldsymbol E''=(1-v^2/c^2)\\boldsymbol E$　(3) 解説参照（$\\gamma^2(1-v^2/c^2)=1$ により一致）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\gamma=1+O(v^2/c^2)$ なので 1 次までで $\\gamma\\to1$．すると $\\boldsymbol E'=\\boldsymbol E_\\parallel+(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)_\\perp=\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B$（$\\boldsymbol v\\times\\boldsymbol B$ はもともと $\\boldsymbol v$ に垂直）．$\\boldsymbol B'$ も同様．（$\\boldsymbol v\\times\\boldsymbol E/c^2$ は $cB$ と比べて $v/c$ の 1 次の量として残す．）\n\n(2) $\\boldsymbol E'=\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B$，$\\boldsymbol B'=\\boldsymbol B-\\boldsymbol v\\times\\boldsymbol E/c^2$．速度 $-\\boldsymbol v$ で戻すと\n\\[ \\boldsymbol E''=\\boldsymbol E'-\\boldsymbol v\\times\\boldsymbol B'=\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B-\\boldsymbol v\\times\\boldsymbol B+\\frac{\\boldsymbol v\\times(\\boldsymbol v\\times\\boldsymbol E)}{c^2}. \\]\nよって $\\boldsymbol E''-\\boldsymbol E=\\boldsymbol v\\times(\\boldsymbol v\\times\\boldsymbol E)/c^2=\\{\\boldsymbol v(\\boldsymbol v\\cdot\\boldsymbol E)-v^2\\boldsymbol E\\}/c^2$．$\\boldsymbol E\\perp\\boldsymbol v$ なら $\\boldsymbol E''=(1-v^2/c^2)\\boldsymbol E$．誤差は $v^2/c^2$ の 2 次で，近似式は 1 次までしか正しくないことと整合する．（同様に $\\boldsymbol B''-\\boldsymbol B=\\boldsymbol v\\times(\\boldsymbol v\\times\\boldsymbol B)/c^2$．）\n\n(3) $\\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E_\\perp+\\boldsymbol v\\times\\boldsymbol B)$，$\\boldsymbol B'_\\perp=\\gamma(\\boldsymbol B_\\perp-\\boldsymbol v\\times\\boldsymbol E/c^2)$．戻すと\n\\[ \\boldsymbol E''_\\perp=\\gamma(\\boldsymbol E'_\\perp-\\boldsymbol v\\times\\boldsymbol B')=\\gamma^2\\Bigl\\{\\boldsymbol E_\\perp+\\boldsymbol v\\times\\boldsymbol B-\\boldsymbol v\\times\\boldsymbol B+\\frac{\\boldsymbol v\\times(\\boldsymbol v\\times\\boldsymbol E)}{c^2}\\Bigr\\}=\\gamma^2\\Bigl(1-\\frac{v^2}{c^2}\\Bigr)\\boldsymbol E_\\perp=\\boldsymbol E_\\perp \\]\n（$\\boldsymbol v\\times\\boldsymbol B'=\\boldsymbol v\\times\\boldsymbol B'_\\perp$，$\\boldsymbol v\\times(\\boldsymbol v\\times\\boldsymbol E)=-v^2\\boldsymbol E_\\perp$ を用いた）．$\\gamma$ 因子がちょうど 2 次の誤差を補う．"
+   }
+  ],
+  "idea": {
+   "tex": "低速近似の場の変換は群をなさず，往復で $v^2/c^2$ の誤差が生じる．厳密式の $\\gamma^2$ がそれを正確に打ち消す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "場の変換",
+   "ガリレイ近似",
+   "ローレンツ変換",
+   "群の性質"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "一様電場の変換と電場の向きの最大回転角",
+  "topic": "一様電場の変換と電場の向きの最大回転角",
+  "statement": {
+   "tex": "慣性系 K には一様な電場 $\\boldsymbol E$（大きさ $E=8.0\\,\\mathrm{kV/m}$）だけが存在する．K に対して，$\\boldsymbol E$ と角 $\\alpha$ をなす向きに速さ $v=\\beta c$ で動く系 K$'$ を考える．\n\\begin{enumerate}\n\\item K$'$ での電場の大きさ $E'$，$\\boldsymbol E'$ と $\\boldsymbol v$ のなす角 $\\alpha'$，磁束密度の大きさ $B'$ を $E,\\alpha,\\beta$ で表せ．$\\alpha=45^\\circ$，$\\beta=0.60$ の値も求めよ．\n\\item $\\beta=0.60$ を固定して $\\alpha$ を変えるとき，電場の向きの回転角 $\\alpha'-\\alpha$ が最大となる $\\alpha$ と，その最大値を求めよ．\n\\item $E'^2-c^2B'^2$ が $\\alpha,\\beta$ によらないことを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E'=E\\sqrt{\\dfrac{1-\\beta^2\\cos^2\\alpha}{1-\\beta^2}}=9.1\\,\\mathrm{kV/m}$，$\\tan\\alpha'=\\dfrac{\\tan\\alpha}{\\sqrt{1-\\beta^2}}$（$\\alpha'=51^\\circ$），$B'=\\dfrac{\\beta E\\sin\\alpha}{c\\sqrt{1-\\beta^2}}=14\\,\\mu\\mathrm T$　(2) $\\tan\\alpha=1/\\sqrt\\gamma$（$\\alpha=41.8^\\circ$），最大値 $6.4^\\circ$　(3) $E'^2-c^2B'^2=E^2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E_\\parallel=E\\cos\\alpha$，$E_\\perp=E\\sin\\alpha$，$\\boldsymbol B=0$．$\\gamma=1/\\sqrt{1-\\beta^2}$ として $E'_\\parallel=E\\cos\\alpha$，$E'_\\perp=\\gamma E\\sin\\alpha$，$\\boldsymbol B'=-\\gamma\\boldsymbol v\\times\\boldsymbol E/c^2$．よって\n\\[ E'=E\\sqrt{\\cos^2\\alpha+\\gamma^2\\sin^2\\alpha}=E\\sqrt{\\frac{1-\\beta^2\\cos^2\\alpha}{1-\\beta^2}},\\quad \\tan\\alpha'=\\gamma\\tan\\alpha,\\quad B'=\\frac{\\gamma\\beta E\\sin\\alpha}{c}. \\]\n数値：$\\gamma=1.25$，$E'=8.0\\sqrt{0.5+1.5625\\times0.5}=9.1\\,\\mathrm{kV/m}$，$\\alpha'=\\arctan1.25=51.3^\\circ$，$B'=1.25\\times0.60\\times8.0\\times10^3\\times0.707/(3.0\\times10^8)=1.4\\times10^{-5}\\,\\mathrm T$．\n\n(2) $f(\\alpha)=\\arctan(\\gamma\\tan\\alpha)-\\alpha$．$\\tan(\\alpha'-\\alpha)=\\dfrac{(\\gamma-1)\\tan\\alpha}{1+\\gamma\\tan^2\\alpha}$ を $t=\\tan\\alpha$ について最大化すると，$\\dfrac{d}{dt}\\dfrac{t}{1+\\gamma t^2}=\\dfrac{1-\\gamma t^2}{(1+\\gamma t^2)^2}=0$ より $t=1/\\sqrt\\gamma$．このとき $\\tan(\\alpha'-\\alpha)=\\dfrac{\\gamma-1}{2\\sqrt\\gamma}$．\n$\\gamma=1.25$：$\\alpha=\\arctan(0.894)=41.8^\\circ$，$\\tan(\\alpha'-\\alpha)=0.25/(2\\times1.118)=0.112$，最大回転角 $6.4^\\circ$．\n\n(3) $E'^2-c^2B'^2=E^2\\cos^2\\alpha+\\gamma^2E^2\\sin^2\\alpha-\\gamma^2\\beta^2E^2\\sin^2\\alpha=E^2\\cos^2\\alpha+\\gamma^2(1-\\beta^2)E^2\\sin^2\\alpha=E^2$．これはローレンツ不変量である．"
+   }
+  ],
+  "idea": {
+   "tex": "速度に垂直な成分だけが $\\gamma$ 倍になるので電場の向きが速度から離れる向きに回る．回転角は $\\tan\\alpha=1/\\sqrt\\gamma$ で最大になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\tan\\alpha$：1/sqrt(γ) ; 最大値：6.4°\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "場の変換",
+   "一様電場",
+   "ローレンツ不変量",
+   "最大化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 20,
+  "theme": "一様磁場を動く系で見たときの場と不等式",
+  "topic": "一様磁場を動く系で見たときの場と不等式",
+  "statement": {
+   "tex": "慣性系 K には一様な磁場 $\\boldsymbol B$（大きさ $B=0.80\\,\\mathrm T$）だけが存在する．K に対して，$\\boldsymbol B$ と角 $\\alpha$ をなす向きに速さ $v=\\beta c$ で動く系 K$'$ を考える．\n\\begin{enumerate}\n\\item K$'$ での電場の大きさ $E'$ と磁束密度の大きさ $B'$ を $B,\\alpha,\\beta$ で表せ．\n\\item どんな速度で動く系でも $B'\\ge B$ かつ $cB'>E'$ であることを示せ．$B'=B$ となるのはどんな場合か．\n\\item $\\boldsymbol v\\perp\\boldsymbol B$ のとき，K$'$ での電場が $E'=1.0\\times10^8\\,\\mathrm{V/m}$ となる $\\beta$ と，そのときの $B'$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E'=\\dfrac{\\beta cB\\sin\\alpha}{\\sqrt{1-\\beta^2}}$，$B'=B\\sqrt{\\dfrac{1-\\beta^2\\cos^2\\alpha}{1-\\beta^2}}$　(2) 解説参照．$B'=B$ は $\\boldsymbol v\\parallel\\boldsymbol B$（または $v=0$）のとき　(3) $\\beta=0.38$，$B'=0.87\\,\\mathrm T$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\gamma=1/\\sqrt{1-\\beta^2}$．$\\boldsymbol E=0$ なので $\\boldsymbol E'=\\gamma\\boldsymbol v\\times\\boldsymbol B$（大きさ $\\gamma\\beta cB\\sin\\alpha$），$B'_\\parallel=B\\cos\\alpha$，$B'_\\perp=\\gamma B\\sin\\alpha$．\n\\[ E'=\\gamma\\beta cB\\sin\\alpha,\\qquad B'=B\\sqrt{\\cos^2\\alpha+\\gamma^2\\sin^2\\alpha}=B\\sqrt{\\frac{1-\\beta^2\\cos^2\\alpha}{1-\\beta^2}}. \\]\n\n(2) $\\gamma\\ge1$ より $B'^2=B^2(\\cos^2\\alpha+\\gamma^2\\sin^2\\alpha)\\ge B^2$．等号は $\\gamma=1$ または $\\sin\\alpha=0$，すなわち $\\boldsymbol v\\parallel\\boldsymbol B$（または静止）のとき．\nまた $c^2B'^2-E'^2=c^2B^2(\\cos^2\\alpha+\\gamma^2\\sin^2\\alpha-\\gamma^2\\beta^2\\sin^2\\alpha)=c^2B^2>0$ だから $cB'>E'$．これは不変量 $E^2-c^2B^2=-c^2B^2<0$ がどの系でも負であることの表れで，どの系に移っても磁場を消すことも「電場優勢」にすることもできない．\n\n(3) $\\alpha=90^\\circ$ で $E'=\\gamma\\beta cB$．$\\gamma\\beta=\\dfrac{1.0\\times10^8}{0.80\\times3.0\\times10^8}=0.417$，$\\beta=\\dfrac{\\gamma\\beta}{\\sqrt{1+(\\gamma\\beta)^2}}=0.385$，$\\gamma=1.083$，$B'=\\gamma B=0.87\\,\\mathrm T$．（検算：$c^2B'^2-E'^2=(2.60\\times10^8)^2-(1.0\\times10^8)^2=(2.40\\times10^8)^2=(cB)^2$．）"
+   }
+  ],
+  "idea": {
+   "tex": "不変量 $E^2-c^2B^2=-c^2B^2$ が負なので，どの系でも磁場優勢で $B'\\ge B$．純粋な磁場の系は場の大きさが最小になる系である．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\beta$：≈0.38 ; $B'$ [T]：≈0.87"
+  },
+  "methods": [],
+  "tags": [
+   "場の変換",
+   "一様磁場",
+   "ローレンツ不変量",
+   "不等式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 2,
+  "minutes": 25,
+  "theme": "平面電磁波の不変量と振幅のドップラー変換",
+  "topic": "平面電磁波の不変量と振幅のドップラー変換",
+  "statement": {
+   "tex": "慣性系 K に対して $x$ 軸方向に速度 $v=\\beta c$ で動く系 K$'$ への場の変換は\n\\[ E'_x=E_x,\\ E'_y=\\gamma(E_y-vB_z),\\ E'_z=\\gamma(E_z+vB_y),\\quad B'_x=B_x,\\ B'_y=\\gamma\\Bigl(B_y+\\frac{v}{c^2}E_z\\Bigr),\\ B'_z=\\gamma\\Bigl(B_z-\\frac{v}{c^2}E_y\\Bigr) \\]\n（$\\gamma=1/\\sqrt{1-\\beta^2}$）で与えられる．\n\\begin{enumerate}\n\\item $\\boldsymbol E\\cdot\\boldsymbol B$ と $E^2-c^2B^2$ が不変であることを示せ．\n\\item K で $+x$ 方向に進む平面電磁波の，ある点・ある時刻の場が $\\boldsymbol E=E_0\\hat y$，$\\boldsymbol B=(E_0/c)\\hat z$ である．K$'$ での場 $\\boldsymbol E',\\boldsymbol B'$ を求め，振幅が $\\sqrt{(1-\\beta)/(1+\\beta)}$ 倍になることを示せ．\n\\item 平面電磁波の電場を（磁場も含めて）消してしまう慣性系，あるいは純粋な電場だけ・磁場だけに見える慣性系は存在するか．不変量を用いて答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\boldsymbol E'=E_0\\sqrt{\\frac{1-\\beta}{1+\\beta}}\\hat y$，$\\boldsymbol B'=\\frac{E_0}{c}\\sqrt{\\frac{1-\\beta}{1+\\beta}}\\hat z$　(3) 存在しない（両不変量が 0 で，$E'=cB'$ が常に成り立ち，消えるのは $\\beta\\to1$ の極限のみ）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol E'\\cdot\\boldsymbol B'=E_xB_x+\\gamma^2\\{(E_y-vB_z)(B_y+vE_z/c^2)+(E_z+vB_y)(B_z-vE_y/c^2)\\}$．\n括弧内を展開すると交差項 $vE_yE_z/c^2-vB_zB_y+vB_yB_z-vE_zE_y/c^2$ は打ち消し合い，$(E_yB_y+E_zB_z)(1-v^2/c^2)$ が残る．$\\gamma^2(1-\\beta^2)=1$ より $\\boldsymbol E'\\cdot\\boldsymbol B'=\\boldsymbol E\\cdot\\boldsymbol B$．\n同様に $E'^2_y+E'^2_z-c^2(B'^2_y+B'^2_z)=\\gamma^2\\{(E_y-vB_z)^2-c^2(B_z-vE_y/c^2)^2+(E_z+vB_y)^2-c^2(B_y+vE_z/c^2)^2\\}$．交差項 $\\mp2vE_yB_z$，$\\pm2vE_zB_y$ は打ち消し，$\\gamma^2(1-\\beta^2)(E_y^2+E_z^2-c^2B_y^2-c^2B_z^2)$ が残る．$x$ 成分は不変なので $E'^2-c^2B'^2=E^2-c^2B^2$．\n\n(2) $E'_y=\\gamma(E_0-vE_0/c)=\\gamma(1-\\beta)E_0=E_0\\sqrt{\\dfrac{1-\\beta}{1+\\beta}}$，$B'_z=\\gamma(E_0/c-vE_0/c^2)=\\dfrac{E_0}{c}\\sqrt{\\dfrac{1-\\beta}{1+\\beta}}$，その他の成分は 0．進行方向に追いかける観測者には振幅が小さく見え，これは振動数のドップラー因子 $\\sqrt{(1-\\beta)/(1+\\beta)}$ と同じである（エネルギー密度は 2 乗で減る）．\n\n(3) 平面波では $\\boldsymbol E\\cdot\\boldsymbol B=0$，$E^2-c^2B^2=0$．どの系でも $\\boldsymbol E'\\perp\\boldsymbol B'$ かつ $E'=cB'$ なので，電場だけ・磁場だけの系はない（片方が 0 なら他方も 0）．両方 0 にするには (2) の振幅が 0，すなわち $\\beta\\to1$ が必要で，慣性系としては実現できない．"
+   }
+  ],
+  "idea": {
+   "tex": "2 つの不変量がともに 0 の「ヌル場」である平面波は，どの系でも $E=cB$ を保つ．振幅は振動数と同じドップラー因子で変換される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ローレンツ不変量",
+   "平面電磁波",
+   "ドップラー効果",
+   "場の変換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SR-04-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -479,6 +1664,1240 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "電場と磁場が平行に見える慣性系への変換",
+  "topic": "電場と磁場が平行に見える慣性系への変換",
+  "statement": {
+   "tex": "ある慣性系で $\\boldsymbol E=E_0\\hat y$，$c\\boldsymbol B=E_0\\left(\\tfrac12\\hat y+\\tfrac{\\sqrt3}2\\hat z\\right)$ である．\n\\begin{enumerate}\n\\item 2つの不変量 $E^2-c^2B^2$ と $\\boldsymbol E\\cdot c\\boldsymbol B$ を求めよ．\n\\item $x$ 方向の速さ $v$ のブーストで $\\boldsymbol E'\\parallel\\boldsymbol B'$ になる $\\beta=v/c$ を求めよ．\n\\item その系での $E'$ と $cB'$ の大きさを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0$，$\\dfrac{E_0^2}{2}$　(2) $\\beta=\\dfrac{1}{\\sqrt3}$　(3) $E'=cB'=\\dfrac{E_0}{\\sqrt2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E^2-c^2B^2=E_0^2-E_0^2=\\boldsymbol0$，$\\boldsymbol E\\cdot c\\boldsymbol B=\\boldsymbol{E_0^2/2}$．\n\n(2) ブーストの方向は $\\boldsymbol E\\times\\boldsymbol B$（$x$ 方向）．平行になる条件は $\\dfrac{\\beta}{1+\\beta^2}=\\dfrac{|\\boldsymbol E\\times c\\boldsymbol B|}{E^2+c^2B^2}=\\dfrac{\\sqrt3/2}{2}$．$\\beta^2-\\dfrac{4}{\\sqrt3}\\beta+1=0$ の小さい根 $\\boldsymbol{\\beta=1/\\sqrt3}$．\n\n(3) 平行なら $E'^2-c^2B'^2=0$ と $E'cB'=E_0^2/2$ から $\\boldsymbol{E'=cB'=E_0/\\sqrt2}$．（直接の変換 $E'_y=\\gamma(E_y-\\beta cB_z)$ などで確かめられる．）"
+   }
+  ],
+  "idea": {
+   "tex": "$\\boldsymbol E\\cdot\\boldsymbol B\\ne0$ の場は，$\\boldsymbol E\\times\\boldsymbol B$ 方向のブーストで平行にでき，その大きさは2つの不変量だけで決まる．原題の $\\boldsymbol E\\cdot\\boldsymbol B=0$ の場合を，平行にする場合に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\beta$：((1)/(sqrt(3)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電磁場のローレンツ変換",
+   "不変量",
+   "場の平行化",
+   "ブースト"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "近づく鏡で反射したパルスのエネルギーが増える割合",
+  "topic": "近づく鏡で反射したパルスのエネルギーが増える割合",
+  "statement": {
+   "tex": "$x$ 方向に進む入射波 $\\boldsymbol E=\\hat yF(t-x/c)$ が，$x$ 方向に速度 $v$ で動く完全導体の鏡で反射する．反射波は $-\\hat y\\rho^2F\\!\\left(\\rho^2(t+x/c)+\\text{const}\\right)$，$\\rho^2=\\dfrac{c-v}{c+v}$ となる．\n\\begin{enumerate}\n\\item 反射波の周波数と振幅は何倍になるか．\n\\item 鏡が速さ $0.6c$ で入射波に向かって近づくとき，パルスの持続時間，ピークの強度，全エネルギーは何倍になるか．\n\\item 光子の描像で (2) のエネルギー比を説明し，増えたエネルギーの出どころを述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) どちらも $\\rho^2$ 倍　(2) $\\rho^2=4$：持続時間 $\\frac14$，強度 $16$ 倍，エネルギー $4$ 倍　(3) 光子数は保たれ1個のエネルギーが $\\rho^2$ 倍；鏡を押す仕事"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 時間の引数が $\\rho^2$ 倍なので周波数 $\\rho^2$ 倍，振幅も $\\boldsymbol{\\rho^2}$ 倍．\n\n(2) 近づくので $v=-0.6c$，$\\rho^2=\\dfrac{1.6}{0.4}=4$．持続時間 $\\boldsymbol{1/4}$，強度は振幅の2乗で $\\boldsymbol{16}$ 倍，エネルギー $\\propto\\int E^2dt$ は $16\\times\\frac14=\\boldsymbol4$ 倍．\n\n(3) 光子の数は変わらず，各光子のエネルギー（周波数）が $\\rho^2$ 倍．増えた分は，放射圧に逆らって鏡を動かす外力の仕事．"
+   }
+  ],
+  "idea": {
+   "tex": "動く鏡での反射は鏡の静止系で考えてローレンツ変換で戻せばよく，振幅と周波数が同じ $\\rho^2$ 倍になる．原題の一般式の導出を，具体的なパルスのエネルギー収支に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "動く鏡",
+   "ドップラー効果",
+   "ローレンツ変換",
+   "放射圧の仕事"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "動く導体のオームの法則の簡単な形 J = σγ(E + v×B)",
+  "topic": "動く導体のオームの法則の簡単な形 J = σγ(E + v×B)",
+  "statement": {
+   "tex": "導電率 $\\sigma$（ローレンツスカラー）の媒質が速度 $\\boldsymbol v$ で動く．静止系でオームの法則 $\\boldsymbol J'=\\sigma\\boldsymbol E'$ が成り立ち，静止系の電荷密度は $0$ とする．\n\\begin{enumerate}\n\\item 実験室系の電荷密度 $\\rho$ を $\\boldsymbol v\\cdot\\boldsymbol E$ で表せ．\n\\item 実験室系の電流が $\\boldsymbol J=\\sigma\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)$ と簡単になることを示せ．\n\\item 磁場がないとき，電場が $\\boldsymbol v$ に平行な場合と垂直な場合の「実効的な導電率」$J/E$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho=\\dfrac{\\gamma\\sigma\\,\\boldsymbol v\\cdot\\boldsymbol E}{c^2}$　(2) 証明　(3) どちらも $\\gamma\\sigma$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\rho=\\gamma(\\rho'+\\boldsymbol v\\cdot\\boldsymbol J'/c^2)=\\gamma\\sigma\\boldsymbol v\\cdot\\boldsymbol E'/c^2$．平行成分は $E'_\\parallel=E_\\parallel$ なので $\\boldsymbol{\\rho=\\gamma\\sigma\\boldsymbol v\\cdot\\boldsymbol E/c^2}$．\n\n(2) 一般式 $\\boldsymbol J=\\rho\\boldsymbol v+\\sigma\\gamma\\left(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B-\\dfrac{(\\boldsymbol v\\cdot\\boldsymbol E)\\boldsymbol v}{c^2}\\right)$ に (1) を入れると，$\\rho\\boldsymbol v$ と最後の項が打ち消し $\\boldsymbol J=\\sigma\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)$．\\hfill$\\square$\n\n(3) $\\boldsymbol B=0$ なら $\\boldsymbol J=\\sigma\\gamma\\boldsymbol E$ で，向きによらず $\\boldsymbol{\\gamma\\sigma}$．（平行の場合は $\\rho\\boldsymbol v$ の対流電流が，長さの収縮による減少を補う．）"
+   }
+  ],
+  "idea": {
+   "tex": "共変なオームの法則は，静止系の電荷が $0$ という条件のもとで簡単な形になる．原題の一般式の導出に続けて，その簡単化と具体的な意味を考えさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) どちらも：γ σ"
+  },
+  "methods": [],
+  "tags": [
+   "共変なオームの法則",
+   "4元電流",
+   "動く導体",
+   "ローレンツ変換"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "直交ブースト合成とThomas-Wigner回転",
+  "topic": "直交ブースト合成とThomas-Wigner回転",
+  "statement": {
+   "tex": "慣性系 S に対して，S$'$ は $x$ 方向に速さ $v_1=\\beta_1 c$ で運動し（軸は平行，原点は $t=t'=0$ で一致），さらに S$''$ は S$'$ に対して $y'$ 方向に速さ $v_2=\\beta_2 c$ で運動する（S$'$ と S$''$ の軸も平行）．任意方向の速度 $\\boldsymbol v=c\\boldsymbol\\beta$ への純粋な Lorentz 変換（回転を含まないブースト）は\n\\[ ct'=\\gamma(ct-\\boldsymbol\\beta\\cdot\\boldsymbol x),\\quad \\boldsymbol x'=\\boldsymbol x+\\frac{\\gamma-1}{\\beta^2}(\\boldsymbol\\beta\\cdot\\boldsymbol x)\\boldsymbol\\beta-\\gamma\\boldsymbol\\beta ct \\]\nで与えられる．\n\\begin{enumerate}\n\\item S から見た S$''$ の原点の速度 $\\boldsymbol u$ を求めよ．\n\\item S から S$''$ への変換は，速度 $\\boldsymbol u$ の純粋ブーストとは一致せず，それに $z$ 軸まわりの空間回転を合成したものになることを示し，回転角 $\\Theta$ が\n\\[ \\cos\\Theta=\\frac{\\gamma_1+\\gamma_2}{1+\\gamma_1\\gamma_2}\\qquad(\\gamma_i=1/\\sqrt{1-\\beta_i^2}) \\]\nを満たすことを $\\beta_1=0.6$，$\\beta_2=0.8$ の場合に具体的に確かめ，$\\Theta$ を求めよ．\n\\item $\\beta_1,\\beta_2\\ll1$ のとき $\\Theta\\simeq\\beta_1\\beta_2/2$ となることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol u=(v_1,\\ v_2/\\gamma_1,\\ 0)$　(2) $\\cos\\Theta=35/37$，$\\sin\\Theta=12/37$，$\\Theta\\simeq18.9^\\circ$　(3) 展開して $\\Theta\\simeq\\beta_1\\beta_2/2$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) S$''$ の原点は S$'$ で $x'=0,\\ y'=v_2t'$．S$'$ から S への逆変換は $x=\\gamma_1(x'+v_1t')=\\gamma_1v_1t'$，$y=y'=v_2t'$，$t=\\gamma_1 t'$（$x'=0$）．よって $\\boldsymbol u=(v_1,\\ v_2/\\gamma_1,\\ 0)$．（速度の横成分は時間の遅れで $1/\\gamma_1$ 倍になる．）\n\n(2) $\\beta_1=0.6,\\ \\beta_2=0.8$ では $\\gamma_1=5/4,\\ \\gamma_2=5/3$．$(ct,x,y)$ についての行列で\n\\[ L=B_y(\\beta_2)B_x(\\beta_1)=\\begin{pmatrix}\\gamma_2&0&-\\gamma_2\\beta_2\\\\0&1&0\\\\-\\gamma_2\\beta_2&0&\\gamma_2\\end{pmatrix}\\begin{pmatrix}\\gamma_1&-\\gamma_1\\beta_1&0\\\\-\\gamma_1\\beta_1&\\gamma_1&0\\\\0&0&1\\end{pmatrix}\n=\\begin{pmatrix}\\tfrac{25}{12}&-\\tfrac54&-\\tfrac43\\\\-\\tfrac34&\\tfrac54&0\\\\-\\tfrac53&1&\\tfrac53\\end{pmatrix}. \\]\nこの行列は対称でないので，純粋ブースト（必ず対称行列）ではない．$\\boldsymbol\\beta_u=(0.6,\\,0.64,\\,0)$，$\\gamma_u=\\gamma_1\\gamma_2=25/12$ のブースト $B(\\boldsymbol u)$ をつくり $R=L\\,B(\\boldsymbol u)^{-1}$ を計算すると，時間成分は分離し，空間部分は\n\\[ R_{\\rm sp}=\\begin{pmatrix}\\cos\\Theta&-\\sin\\Theta\\\\ \\sin\\Theta&\\cos\\Theta\\end{pmatrix},\\quad \\cos\\Theta=\\frac{35}{37},\\ \\sin\\Theta=\\frac{12}{37} \\]\nとなる（$z$ 軸まわりの回転）．一方 $\\dfrac{\\gamma_1+\\gamma_2}{1+\\gamma_1\\gamma_2}=\\dfrac{5/4+5/3}{1+25/12}=\\dfrac{35/12}{37/12}=\\dfrac{35}{37}$ で一致．$\\Theta=\\arccos(35/37)\\simeq0.330\\ {\\rm rad}\\simeq18.9^\\circ$．\n\n(3) $\\gamma_i\\simeq1+\\beta_i^2/2$ を代入すると\n\\[ \\cos\\Theta\\simeq\\frac{2+(\\beta_1^2+\\beta_2^2)/2}{2+(\\beta_1^2+\\beta_2^2)/2+\\beta_1^2\\beta_2^2/4}\\simeq1-\\frac{\\beta_1^2\\beta_2^2}{8}. \\]\n$\\cos\\Theta\\simeq1-\\Theta^2/2$ と比べて $\\Theta\\simeq\\beta_1\\beta_2/2$．これが Thomas 歳差の起源で，非共線ブーストの合成は群として閉じていない（ブーストだけでは部分群をなさない）ことを示す．"
+   }
+  ],
+  "idea": {
+   "tex": "非共線な二つのブーストの積は対称行列にならず，純粋ブーストと空間回転の積に分解される（Wigner 回転）．回転角は $\\cos\\Theta=(\\gamma_1+\\gamma_2)/(1+\\gamma_1\\gamma_2)$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Lorentz変換",
+   "一般のブースト",
+   "Wigner回転",
+   "Thomas歳差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "電場と磁場が平行に見える系と黄金比",
+  "topic": "電場と磁場が平行に見える系と黄金比",
+  "statement": {
+   "tex": "実験室系 S で一様な電磁場\n\\[ \\boldsymbol E=(0,\\ E_0,\\ 0),\\qquad c\\boldsymbol B=(0,\\ E_0,\\ E_0)\\qquad(E_0>0) \\]\nがある．$\\boldsymbol E$ と $\\boldsymbol B$ は平行でも垂直でもない．速度 $\\boldsymbol v$ で動く系への場の変換は，$\\boldsymbol v$ に平行・垂直な成分に分けて\n$\\boldsymbol E'_\\parallel=\\boldsymbol E_\\parallel,\\ \\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E_\\perp+\\boldsymbol v\\times\\boldsymbol B_\\perp)$，$\\boldsymbol B'_\\parallel=\\boldsymbol B_\\parallel,\\ \\boldsymbol B'_\\perp=\\gamma(\\boldsymbol B_\\perp-\\boldsymbol v\\times\\boldsymbol E_\\perp/c^2)$ である．\n\\begin{enumerate}\n\\item $\\boldsymbol v$ を $\\boldsymbol E\\times\\boldsymbol B$ に平行にとると，$\\boldsymbol E'\\parallel\\boldsymbol B'$ となる条件が\n\\[ \\frac{\\beta}{1+\\beta^2}=\\frac{c|\\boldsymbol E\\times\\boldsymbol B|}{E^2+c^2B^2} \\]\nとなることを示し，この場合の $\\beta=v/c$ を求めよ．\n\\item その系での $|\\boldsymbol E'|$ と $c|\\boldsymbol B'|$ を，Lorentz 不変量 $E^2-c^2B^2$，$\\boldsymbol E\\cdot\\boldsymbol B$ だけを用いて求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\beta=(3-\\sqrt5)/2\\simeq0.382$（$\\boldsymbol v\\parallel+x$）　(2) $|\\boldsymbol E'|=E_0/\\sqrt{\\phi}\\simeq0.786E_0$，$c|\\boldsymbol B'|=\\sqrt{\\phi}\\,E_0\\simeq1.272E_0$（$\\phi=(1+\\sqrt5)/2$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol n=\\boldsymbol v/v$ を $\\boldsymbol E\\times\\boldsymbol B$ 方向にとると，$\\boldsymbol E,\\boldsymbol B$ はともに $\\boldsymbol n$ に垂直なので，$\\boldsymbol E'=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)$，$\\boldsymbol B'=\\gamma(\\boldsymbol B-\\boldsymbol v\\times\\boldsymbol E/c^2)$．$\\boldsymbol E'\\times\\boldsymbol B'=0$ を要求し，$(\\boldsymbol v\\times\\boldsymbol B)\\times(\\boldsymbol v\\times\\boldsymbol E)=v^2\\,\\boldsymbol n\\,[\\boldsymbol n\\cdot(\\boldsymbol B\\times\\boldsymbol E)]$ などを用いると\n\\[ \\boldsymbol E\\times\\boldsymbol B-\\frac{\\boldsymbol E\\times(\\boldsymbol v\\times\\boldsymbol E)}{c^2}+(\\boldsymbol v\\times\\boldsymbol B)\\times\\boldsymbol B-\\frac{(\\boldsymbol v\\times\\boldsymbol B)\\times(\\boldsymbol v\\times\\boldsymbol E)}{c^2}=0 \\]\n$\\to\\ \\boldsymbol E\\times\\boldsymbol B\\,(1+\\beta^2)-\\boldsymbol v\\left(\\dfrac{E^2}{c^2}+B^2\\right)=0$．よって $\\dfrac{\\beta}{1+\\beta^2}=\\dfrac{c|\\boldsymbol E\\times\\boldsymbol B|}{E^2+c^2B^2}$．\n\n本問では $\\boldsymbol E\\times c\\boldsymbol B=(E_0^2,0,0)$，$E^2+c^2B^2=3E_0^2$ なので $\\dfrac{\\beta}{1+\\beta^2}=\\dfrac13$，$\\beta^2-3\\beta+1=0$，$\\beta<1$ の根は $\\beta=\\dfrac{3-\\sqrt5}{2}=1/\\phi^2\\simeq0.382$．速度は $+x$ 方向．\n\n(2) 不変量は $E^2-c^2B^2=E_0^2-2E_0^2=-E_0^2$，$\\boldsymbol E\\cdot c\\boldsymbol B=E_0^2$．平行な系で $|\\boldsymbol E'|=e,\\ c|\\boldsymbol B'|=b$ とすると $e^2-b^2=-E_0^2$，$eb=E_0^2$．$b^2-E_0^4/b^2=E_0^2$ より $b^4-E_0^2b^2-E_0^4=0$，$b^2=\\phi E_0^2$．よって\n\\[ c|\\boldsymbol B'|=\\sqrt\\phi\\,E_0\\simeq1.272E_0,\\qquad|\\boldsymbol E'|=E_0/\\sqrt\\phi\\simeq0.786E_0. \\]\n（直接変換すると $\\boldsymbol E'=E_0(0,\\,0.669,\\,0.413)$，$c\\boldsymbol B'=E_0(0,\\,1.082,\\,0.669)$ で確かに平行．）"
+   }
+  ],
+  "idea": {
+   "tex": "$\\boldsymbol E\\times\\boldsymbol B$ 方向へのブーストで場を平行にできる．速度は $\\beta/(1+\\beta^2)=c|\\boldsymbol E\\times\\boldsymbol B|/(E^2+c^2B^2)$ で決まり，平行系での大きさは二つの不変量だけで決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\beta$：≈0.382\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電磁場の変換",
+   "Lorentz不変量",
+   "平行場の系",
+   "黄金比"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "d³k/ωの不変性と相対論的ビーミング",
+  "topic": "d³k/ωの不変性と相対論的ビーミング",
+  "statement": {
+   "tex": "光子の波数空間の体積要素について $d^3k/\\omega$ が Lorentz 不変であることが知られている．光源の静止系 S$'$ で，光源は角振動数 $\\omega'$ の光子を等方的に毎秒 $N$ 個放出する．S$'$ は実験室系 S に対して $x$ 方向に速度 $\\beta c$ で運動する．$\\theta$ は S での光子の進行方向と $x$ 軸のなす角である．\n\\begin{enumerate}\n\\item $d^3k=\\omega^2d\\omega\\,d\\Omega/c^3$ と，1 本の光子線に沿って Doppler 関係 $\\omega'=\\gamma\\omega(1-\\beta\\cos\\theta)$ が成り立つこと（$d\\omega'/d\\omega$ は方向を固定すれば $\\omega'/\\omega$）を用いて，$d\\Omega'=\\left(\\dfrac{\\omega}{\\omega'}\\right)^2d\\Omega$ を示せ．\n\\item 光子数の角分布 $\\dfrac{dN}{d\\Omega}$ を S で求めよ（光子数そのものは系によらず数えられるとする）．\n\\item S で前方半球（$\\theta<\\pi/2$）に入る光子の割合，および光子の半数が入る円錐の半頂角 $\\theta_{1/2}$ を求めよ．$\\beta=0.8$ のときの値も示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\omega^2d\\omega d\\Omega/\\omega=\\omega'^2d\\omega'd\\Omega'/\\omega'$ と $d\\omega'/\\omega'=d\\omega/\\omega$ より　(2) $\\dfrac{dN}{d\\Omega}=\\dfrac{N}{4\\pi\\gamma^2(1-\\beta\\cos\\theta)^2}$　(3) $(1+\\beta)/2$，$\\cos\\theta_{1/2}=\\beta$；$\\beta=0.8$ で $0.9$，$\\theta_{1/2}=36.9^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $d^3k/\\omega=\\omega\\,d\\omega\\,d\\Omega/c^3$ の不変性より $\\omega\\,d\\omega\\,d\\Omega=\\omega'd\\omega'd\\Omega'$．方向を固定すると $\\omega'\\propto\\omega$ なので $d\\omega'/\\omega'=d\\omega/\\omega$．よって $\\omega^2d\\Omega=\\omega'^2d\\Omega'$，$d\\Omega'=(\\omega/\\omega')^2d\\Omega$．\n\n(2) S$'$ では $dN=\\dfrac{N}{4\\pi}d\\Omega'$（1 秒あたりの扱いの差は全体の規格化で吸収され，割合は同じ）．$\\omega/\\omega'=\\dfrac{1}{\\gamma(1-\\beta\\cos\\theta)}$ を用いて\n\\[ \\frac{dN}{d\\Omega}=\\frac{N}{4\\pi}\\frac{1}{\\gamma^2(1-\\beta\\cos\\theta)^2}. \\]\n全立体角で積分すると $\\dfrac{N}{2\\gamma^2}\\displaystyle\\int_{-1}^1\\frac{d\\mu}{(1-\\beta\\mu)^2}=\\dfrac{N}{2\\gamma^2}\\cdot\\dfrac{2}{1-\\beta^2}=N$ で規格化を満たす．\n\n(3) $\\displaystyle f(\\mu_0)=\\frac{1}{2\\gamma^2}\\int_{\\mu_0}^1\\frac{d\\mu}{(1-\\beta\\mu)^2}=\\frac{1}{2\\gamma^2\\beta}\\left[\\frac1{1-\\beta}-\\frac1{1-\\beta\\mu_0}\\right]$．$\\mu_0=0$ で $f=\\dfrac{1}{2\\gamma^2\\beta}\\cdot\\dfrac{\\beta}{1-\\beta}=\\dfrac{1+\\beta}{2}$．$f=1/2$ を解くと $\\dfrac1{1-\\beta\\mu_0}=\\dfrac{1}{1-\\beta}-\\gamma^2\\beta=\\dfrac{1}{1-\\beta^2}$，$\\mu_0=\\beta$．つまり $\\cos\\theta_{1/2}=\\beta$（$\\sin\\theta_{1/2}=1/\\gamma$）で，これは S$'$ で $\\theta'=90^\\circ$ に出た光子の S での方向（光行差）に一致する．$\\beta=0.8$ で前方半球に $90\\%$，$\\theta_{1/2}=\\arccos0.8=36.9^\\circ$．"
+   }
+  ],
+  "idea": {
+   "tex": "$d^3k/\\omega$ の不変性から立体角は $(\\omega/\\omega')^2$ で変換され，等方放射は前方に $\\gamma^{-2}(1-\\beta\\cos\\theta)^{-2}$ で集中する．半数は $\\sin\\theta=1/\\gamma$ の円錐内に入る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "不変体積要素",
+   "Doppler効果",
+   "光行差",
+   "相対論的ビーミング"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "Heaviside楕円体と遅延・現在位置表示",
+  "topic": "Heaviside楕円体と遅延・現在位置表示",
+  "statement": {
+   "tex": "点電荷 $q$ が $x$ 軸上を一定速度 $v=\\beta c$ で運動し，時刻 $t$ に原点を通過する．時刻 $t$ における観測点 $(x,y,z)$ の電位を考える．\n\\begin{enumerate}\n\\item 電荷の静止系の Coulomb ポテンシャルを Lorentz 変換して，S での電位を時刻 $t$ における電荷の現在位置を基準に\n\\[ \\phi=\\frac{q}{4\\pi\\varepsilon_0}\\frac{\\gamma}{\\sqrt{\\gamma^2(x-vt)^2+y^2+z^2}} \\]\nと表せることを示せ．\n\\item 等電位面の形を述べ，運動方向と横方向の半径の比を求めよ．\n\\item $\\beta=0.6$ のとき，現在位置から距離 $d$ だけ前方の点と，距離 $d$ だけ真横の点の電位の比を求めよ．\n\\item 遅延時刻の位置からの変位 $\\boldsymbol r$ を用いた Liénard--Wiechert の表示 $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0(r-\\boldsymbol r\\cdot\\boldsymbol v/c)}$ と (1) が一致することを，真横の点 $(0,d,0)$，$t=0$ の場合に確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 4 元ポテンシャルの変換 $\\phi=\\gamma\\phi'$ と $x'=\\gamma(x-vt)$　(2) 回転楕円体（偏平），軸比 $1/\\gamma$　(3) 真横/前方 $=\\gamma=1.25$　(4) 遅延位置 $(-\\gamma\\beta d,0,0)$ で $r-\\boldsymbol r\\cdot\\boldsymbol\\beta=d/\\gamma$ となり一致"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 静止系 S$'$ で $\\phi'=\\dfrac{q}{4\\pi\\varepsilon_0r'}$，$\\boldsymbol A'=0$．$(\\phi/c,\\boldsymbol A)$ は 4 元ベクトルで，S は S$'$ に対して $-v$ で動くから $\\phi=\\gamma(\\phi'+vA'_x)=\\gamma\\phi'$．$r'=\\sqrt{x'^2+y'^2+z'^2}$ に $x'=\\gamma(x-vt),y'=y,z'=z$ を代入して与式を得る．（$\\boldsymbol A=\\boldsymbol v\\phi/c^2$ も同時に得られる．）\n\n(2) $\\phi=$ 一定 $\\iff\\gamma^2(x-vt)^2+\\rho^2=$ 一定（$\\rho^2=y^2+z^2$）．電荷の現在位置を中心とし，運動方向の半軸が横方向の $1/\\gamma$ 倍に縮んだ偏平な回転楕円体（Heaviside 楕円体）．\n\n(3) 前方 $(x-vt=d,\\rho=0)$：$\\phi=\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{\\gamma}{\\gamma d}=\\dfrac{q}{4\\pi\\varepsilon_0d}$．真横：$\\phi=\\dfrac{q\\gamma}{4\\pi\\varepsilon_0d}$．比は $\\gamma=1.25$．\n\n(4) 遅延時刻 $t_r<0$ は $c(0-t_r)=\\sqrt{(vt_r)^2+d^2}$ を満たす．$c^2t_r^2(1-\\beta^2)=d^2$ より $t_r=-\\gamma d/c$，電荷の位置 $(-\\gamma\\beta d,0,0)$．$\\boldsymbol r=(\\gamma\\beta d,d,0)$，$r=c|t_r|=\\gamma d$，$\\boldsymbol r\\cdot\\boldsymbol\\beta=\\gamma\\beta^2d$．\n\\[ r-\\boldsymbol r\\cdot\\boldsymbol\\beta=\\gamma d(1-\\beta^2)=d/\\gamma\\ \\Rightarrow\\ \\phi=\\frac{q\\gamma}{4\\pi\\varepsilon_0d}, \\]\n(1) と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "等速運動する電荷の電位は，現在位置を中心とする Heaviside 楕円体を等電位面にもつ．遅延位置で書いた Liénard--Wiechert 表示と現在位置表示は同じものである．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 真横/前方：≈1.25\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Liénard-Wiechertポテンシャル",
+   "4元ポテンシャル",
+   "遅延時刻",
+   "Heaviside楕円体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "同じ力でも縦加速と横加速で放射は大違い",
+  "topic": "同じ力でも縦加速と横加速で放射は大違い",
+  "statement": {
+   "tex": "相対論的な放射率（Liénard の公式）\n\\[ P=\\frac{e^2}{6\\pi\\varepsilon_0c^3}\\,\\gamma^6\\left[\\dot v^2-\\frac{(\\boldsymbol v\\times\\dot{\\boldsymbol v})^2}{c^2}\\right] \\]\nを用いる．質量 $m$，電荷 $e$ の粒子が速さ $v$（$\\gamma$）で運動しているとき，大きさ $F$ の外力を\n(a) 速度に平行に加える場合，(b) 速度に垂直に加える場合を考える．\n\\begin{enumerate}\n\\item それぞれの 3 次元加速度 $\\dot v$ と放射率 $P_\\parallel$，$P_\\perp$ を $F$，$m$，$\\gamma$ で表し，比 $P_\\perp/P_\\parallel$ を求めよ．\n\\item 半径 $R$ の円軌道を回る超相対論的電子（$v\\simeq c$）が 1 周あたりに失うエネルギーが $\\Delta E=\\dfrac{e^2\\gamma^4}{3\\varepsilon_0R}$ となることを示し，エネルギー $3\\ {\\rm GeV}$，$R=10\\ {\\rm m}$ の場合に eV 単位で求めよ（$m_ec^2=0.511\\ {\\rm MeV}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dot v_\\parallel=F/(\\gamma^3m)$，$\\dot v_\\perp=F/(\\gamma m)$；$P_\\parallel=\\dfrac{e^2F^2}{6\\pi\\varepsilon_0m^2c^3}$（$\\gamma$ によらない），$P_\\perp=\\gamma^2P_\\parallel$　(2) $\\Delta E\\simeq7.2\\times10^5\\ {\\rm eV}$（約 $0.72$ MeV）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{d}{dt}(\\gamma m\\boldsymbol v)=\\boldsymbol F$．平行：$\\dfrac{d(\\gamma v)}{dt}=\\gamma^3\\dot v$ より $\\dot v_\\parallel=\\dfrac{F}{\\gamma^3m}$．垂直：$\\gamma$ は一定で $\\dot v_\\perp=\\dfrac{F}{\\gamma m}$．\n\n平行では $\\boldsymbol v\\times\\dot{\\boldsymbol v}=0$：$P_\\parallel=K\\gamma^6\\dfrac{F^2}{\\gamma^6m^2}=K\\dfrac{F^2}{m^2}$（$K=\\dfrac{e^2}{6\\pi\\varepsilon_0c^3}$）．\n\n垂直では $(\\boldsymbol v\\times\\dot{\\boldsymbol v})^2/c^2=\\beta^2\\dot v^2$：$P_\\perp=K\\gamma^6(1-\\beta^2)\\dot v_\\perp^2=K\\gamma^4\\dfrac{F^2}{\\gamma^2m^2}=\\gamma^2K\\dfrac{F^2}{m^2}$．\n\nよって $P_\\perp/P_\\parallel=\\gamma^2$．同じ力でも横から曲げると $\\gamma^2$ 倍放射し，線形加速器での放射損失は（同じ加速勾配なら）エネルギーによらず小さい．\n\n(2) 円運動では $\\dot v=v^2/R\\simeq c^2/R$ で $P=K\\gamma^4c^4/R^2=\\dfrac{e^2c\\gamma^4}{6\\pi\\varepsilon_0R^2}$．周期 $2\\pi R/c$ を掛けて\n\\[ \\Delta E=\\frac{e^2\\gamma^4}{3\\varepsilon_0R}. \\]\n$\\gamma=3000/0.511=5.87\\times10^3$，$\\gamma^4=1.19\\times10^{15}$．eV 単位で $\\Delta E/e=\\dfrac{e\\gamma^4}{3\\varepsilon_0R}=\\dfrac{1.60\\times10^{-19}\\times1.19\\times10^{15}}{3\\times8.85\\times10^{-12}\\times10}\\simeq7.2\\times10^5\\ {\\rm eV}$．（実用式 $\\Delta E[{\\rm keV}]=88.5\\,E^4[{\\rm GeV}]/R[{\\rm m}]=717$ keV と一致．）"
+   }
+  ],
+  "idea": {
+   "tex": "同じ大きさの力に対し，縦加速は $\\dot v\\propto\\gamma^{-3}$，横加速は $\\gamma^{-1}$ なので，Liénard の公式の $\\gamma^6$ と組み合わせると放射は横加速の方が $\\gamma^2$ 倍大きい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta E$ [eV]：≈7.2e5"
+  },
+  "methods": [],
+  "tags": [
+   "Liénardの公式",
+   "シンクロトロン放射",
+   "放射損失",
+   "相対論的運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-048",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "一様電場中の相対論的運動と横方向の対数的変位",
+  "topic": "一様電場中の相対論的運動と横方向の対数的変位",
+  "statement": {
+   "tex": "一様な静電場 $\\boldsymbol E=E\\hat{\\boldsymbol x}$ 中に，静止質量 $m$，電荷 $q\\ (>0)$ の粒子が，時刻 $t=0$ に原点から $y$ 方向の運動量 $p_0$ をもって打ち出される．エネルギー積分 $\\gamma mc^2+q\\phi=$ 一定（$\\phi=-Ex$）と運動方程式 $d\\boldsymbol p/dt=q\\boldsymbol E$ を用いて答えよ．\n\\begin{enumerate}\n\\item $p_x(t)$，$p_y(t)$ と全エネルギー $\\mathcal E(t)$ を求め，$x(t)$ を求めよ．\n\\item $y(t)$ を求め，$t\\to\\infty$ での振る舞いを述べよ．$p_y$ が一定なのに $v_y\\to0$ となるのはなぜか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p_x=qEt$，$p_y=p_0$，$\\mathcal E=\\sqrt{\\mathcal E_0^2+(qEct)^2}$（$\\mathcal E_0^2=m^2c^4+p_0^2c^2$），$x=\\dfrac{\\mathcal E-\\mathcal E_0}{qE}$　(2) $y=\\dfrac{p_0c}{qE}\\,\\mathrm{arsinh}\\dfrac{qEct}{\\mathcal E_0}$，対数的に増加（$v_y\\to0$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dot p_x=qE,\\ \\dot p_y=0$ より $p_x=qEt$，$p_y=p_0$．$\\mathcal E=\\sqrt{m^2c^4+c^2p^2}=\\sqrt{\\mathcal E_0^2+(qEct)^2}$．エネルギー積分 $\\mathcal E-qEx=\\mathcal E_0$ から $x=\\dfrac{\\mathcal E-\\mathcal E_0}{qE}=\\dfrac{1}{qE}\\left[\\sqrt{\\mathcal E_0^2+(qEct)^2}-\\mathcal E_0\\right]$（$\\dot x=c^2p_x/\\mathcal E$ と整合）．\n\n(2) $\\dot y=\\dfrac{c^2p_y}{\\mathcal E}=\\dfrac{c^2p_0}{\\sqrt{\\mathcal E_0^2+(qEct)^2}}$．積分して\n\\[ y=\\frac{p_0c}{qE}\\,\\mathrm{arsinh}\\frac{qEct}{\\mathcal E_0}\\ \\xrightarrow{t\\to\\infty}\\ \\frac{p_0c}{qE}\\ln\\frac{2qEct}{\\mathcal E_0}. \\]\n横方向の変位は時間の対数でしか増えない．$v_y=c^2p_y/\\mathcal E$ で，$p_y$ は一定でもエネルギー（実効的な慣性 $\\mathcal E/c^2$）が際限なく増えるので $v_y\\to0$ となる．速さは $c$ を超えられないので，$v_x\\to c$ になるにつれ $v_y$ が奪われると見てもよい．非相対論ならば $y=p_0t/m$ で直線的に増えるのと対照的．"
+   }
+  ],
+  "idea": {
+   "tex": "相対論では $\\boldsymbol v=c^2\\boldsymbol p/\\mathcal E$．電場方向にエネルギーが増え続けると，保存される横運動量に対応する横速度は減り，横変位は対数的にしか伸びない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "相対論的運動方程式",
+   "エネルギー積分",
+   "一様電場",
+   "双曲線運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-049",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "動くコンデンサーの場のエネルギーはγU₀でない",
+  "topic": "動くコンデンサーの場のエネルギーはγU₀でない",
+  "statement": {
+   "tex": "静止系 S$'$ で，面積 $A_0$，間隔 $a$ の平行平板コンデンサー（端の効果は無視）があり，平面 $y'=0$ の極板に面密度 $-\\sigma_0$，$y'=a$ の極板に $+\\sigma_0$ の電荷がある．このコンデンサーが実験室系 S に対して速度 $v=\\beta c$ で運動する．\n\\begin{enumerate}\n\\item 極板に平行に（$x$ 方向に）運動する場合，S での極板間の電場と磁場（大きさと向き）を求めよ．\n\\item (1) の場合，S での極板間の電磁場エネルギー $U$ と静止系での値 $U_0=\\dfrac{\\sigma_0^2A_0a}{2\\varepsilon_0}$ の比を求めよ．\n\\item 極板に垂直に（$y$ 方向に）運動する場合の $U/U_0$ を求めよ．\n\\item (2)(3) の結果が，静止エネルギー $U_0$ をもつ「物体」のエネルギー $\\gamma U_0$ と一致しない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol E=-\\gamma\\dfrac{\\sigma_0}{\\varepsilon_0}\\hat{\\boldsymbol y}$，$\\boldsymbol B=-\\gamma\\dfrac{v\\sigma_0}{\\varepsilon_0c^2}\\hat{\\boldsymbol z}$　(2) $U/U_0=\\gamma(1+\\beta^2)$　(3) $U/U_0=1/\\gamma$　(4) 極板を支える機械的応力（電場の応力）が運動系のエネルギーに寄与するため"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) S$'$ では $\\boldsymbol E'=-\\dfrac{\\sigma_0}{\\varepsilon_0}\\hat{\\boldsymbol y}$，$\\boldsymbol B'=0$．S は S$'$ に対して $-v\\hat{\\boldsymbol x}$ で動くので，垂直成分は $\\boldsymbol E=\\gamma\\boldsymbol E'$，$\\boldsymbol B=\\gamma\\left(-\\dfrac{(-v\\hat{\\boldsymbol x})\\times\\boldsymbol E'}{c^2}\\right)=\\gamma\\dfrac{v}{c^2}\\hat{\\boldsymbol x}\\times\\boldsymbol E'=-\\gamma\\dfrac{v\\sigma_0}{\\varepsilon_0c^2}\\hat{\\boldsymbol z}$．（極板の面積が $1/\\gamma$ に縮み面密度が $\\gamma\\sigma_0$ になること，上極板の $+x$ 向き面電流 $\\gamma\\sigma_0v$ と下極板の $-x$ 向き電流が極板間に $-z$ 向きの磁場をつくることと整合する．）\n\n(2) エネルギー密度 $u=\\dfrac{\\varepsilon_0E^2}{2}+\\dfrac{B^2}{2\\mu_0}=\\dfrac{\\gamma^2\\sigma_0^2}{2\\varepsilon_0}(1+\\beta^2)$．体積は $A_0a/\\gamma$．\n\\[ U=\\frac{\\gamma\\sigma_0^2A_0a}{2\\varepsilon_0}(1+\\beta^2)=\\gamma(1+\\beta^2)U_0. \\]\n\n(3) 速度が電場に平行なので $\\boldsymbol E=\\boldsymbol E'$，$\\boldsymbol B=0$（極板面積は不変で面密度も不変）．間隔が $a/\\gamma$ に縮むので $U=U_0/\\gamma$．\n\n(4) 電場は極板を引き合わせる応力（Maxwell 応力）をもち，それを支える機械的な支え（あるいは極板内の応力）がある．閉じた系の全エネルギー・運動量は 4 元ベクトルとして変換されるが，電磁場だけを取り出すと $T^{\\mu\\nu}$ の応力成分 $T^{xx}$ や $T^{yy}$ が運動系でのエネルギーに混ざり込む（$U=\\gamma(U_0+\\beta^2\\int T'^{xx}dV')$ の形）．(1) では $T'^{xx}=+u_0$（極板面に平行な方向は圧力），(3) では $T'^{yy}=-u_0$（電場方向は張力）なので，それぞれ $\\gamma(1+\\beta^2)U_0$，$\\gamma(1-\\beta^2)U_0=U_0/\\gamma$ となる．支えの応力を加えて初めて $\\gamma U_0$ に戻る（Trouton--Noble の問題と同根）．"
+   }
+  ],
+  "idea": {
+   "tex": "電磁場だけのエネルギーは 4 元ベクトルの第 0 成分として変換されず，運動方向に応じて $\\gamma(1\\pm\\beta^2)U_0$ となる．差は電場の応力が運動系でエネルギーに寄与することによる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電磁場の変換",
+   "電磁場のエネルギー",
+   "Maxwell応力",
+   "動くコンデンサー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-050",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "運動する磁石が持つ電気双極子モーメント",
+  "topic": "運動する磁石が持つ電気双極子モーメント",
+  "statement": {
+   "tex": "静止系 $S_0$ で一様に磁化（磁化 $\\boldsymbol M_0$，単位 A/m）し，分極をもたない物体（体積 $V_0$，磁気双極子モーメント $\\boldsymbol m_0=\\boldsymbol M_0V_0$）が，実験室系 $S$ で一定速度 $\\boldsymbol u$ で運動している．分極 $\\boldsymbol P$ と磁化 $\\boldsymbol M$ は，電磁場の変換で $\\boldsymbol E\\to-c^2\\boldsymbol P$，$\\boldsymbol B\\to\\boldsymbol M$ と置き換えたものと同じ規則で変換する（すなわち $(-c\\boldsymbol P,\\ \\boldsymbol M)$ が $(\\boldsymbol E/c,\\ \\boldsymbol B)$ と同じ反対称テンソルをつくる）．$S$ 系での全電気双極子モーメント $\\boldsymbol p=\\int\\boldsymbol P\\,dV$，全磁気モーメント $\\boldsymbol m=\\int\\boldsymbol M\\,dV$ を考える（$\\gamma=1/\\sqrt{1-u^2/c^2}$）．\n\\begin{enumerate}\n\\item $\\boldsymbol m_0\\perp\\boldsymbol u$ のとき，$\\boldsymbol p$ と $\\boldsymbol m$ を求めよ．$\\boldsymbol p$ に $\\gamma$ が現れないことに注意せよ．\n\\item $\\boldsymbol m_0\\parallel\\boldsymbol u$ のとき，$\\boldsymbol p$ と $\\boldsymbol m$ を求めよ．\n\\item (1) の結果を，静止系で一辺 $a$ の正方形電流ループ（電流 $I$，$xy$ 面内，$\\boldsymbol m_0=Ia^2\\hat{\\boldsymbol z}$，各辺は $x$ 軸または $y$ 軸に平行，$\\boldsymbol u=u\\hat{\\boldsymbol x}$）について，導線の線電荷密度の変換 $\\lambda=\\gamma(\\lambda_0+uI_x/c^2)$（$I_x$ は導線を $x$ 方向に流れる電流，静止系で導線は中性 $\\lambda_0=0$）から直接確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol p=\\dfrac{\\boldsymbol u\\times\\boldsymbol m_0}{c^2}$，$\\boldsymbol m=\\boldsymbol m_0$　(2) $\\boldsymbol p=\\boldsymbol 0$，$\\boldsymbol m=\\boldsymbol m_0/\\gamma$　(3) 上辺に $-uIa/c^2$，下辺に $+uIa/c^2$ の電荷が現れ $\\boldsymbol p=-\\dfrac{uIa^2}{c^2}\\hat{\\boldsymbol y}=\\dfrac{\\boldsymbol u\\times\\boldsymbol m_0}{c^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "場の変換（$S_0$ から見て $S$ が速度 $-\\boldsymbol u$ で動く）\n\\[\n\\boldsymbol E_\\perp=\\gamma(\\boldsymbol E_0-\\boldsymbol u\\times\\boldsymbol B_0)_\\perp,\\quad \\boldsymbol B_\\perp=\\gamma\\Big(\\boldsymbol B_0+\\frac{\\boldsymbol u\\times\\boldsymbol E_0}{c^2}\\Big)_\\perp,\\quad \\boldsymbol E_\\parallel=\\boldsymbol E_{0\\parallel},\\ \\boldsymbol B_\\parallel=\\boldsymbol B_{0\\parallel}\n\\]\nに $\\boldsymbol E\\to-c^2\\boldsymbol P$，$\\boldsymbol B\\to\\boldsymbol M$ を代入すると\n\\[\n\\boldsymbol P_\\perp=\\gamma\\Big(\\boldsymbol P_0+\\frac{\\boldsymbol u\\times\\boldsymbol M_0}{c^2}\\Big)_\\perp,\\quad \\boldsymbol M_\\perp=\\gamma(\\boldsymbol M_0-\\boldsymbol u\\times\\boldsymbol P_0)_\\perp,\\quad \\boldsymbol P_\\parallel=\\boldsymbol P_{0\\parallel},\\ \\boldsymbol M_\\parallel=\\boldsymbol M_{0\\parallel}.\n\\]\n体積は Lorentz 収縮で $V=V_0/\\gamma$．\n\n(1) $\\boldsymbol P_0=0$，$\\boldsymbol M_0\\perp\\boldsymbol u$ なので $\\boldsymbol P=\\gamma\\,\\boldsymbol u\\times\\boldsymbol M_0/c^2$（$\\boldsymbol u$ に垂直），$\\boldsymbol M=\\gamma\\boldsymbol M_0$．体積をかけると $\\gamma$ が打ち消し合い\n\\[\n\\boldsymbol p=\\frac{\\boldsymbol u\\times\\boldsymbol m_0}{c^2},\\qquad \\boldsymbol m=\\boldsymbol m_0 .\n\\]\n(2) 平行成分は不変なので $\\boldsymbol P=0$，$\\boldsymbol M=\\boldsymbol M_0$．体積だけが縮んで $\\boldsymbol p=0$，$\\boldsymbol m=\\boldsymbol m_0/\\gamma$．\n\n(3) 反時計回り（$\\boldsymbol m_0=+Ia^2\\hat{\\boldsymbol z}$）の電流では，上辺（$y=+a/2$）で $I_x=-I$，下辺（$y=-a/2$）で $I_x=+I$．$x$ 方向の辺の線密度は $\\lambda=\\gamma uI_x/c^2$，長さは $a/\\gamma$ なので電荷は\n\\[\nQ_{\\rm top}=-\\frac{uIa}{c^2},\\qquad Q_{\\rm bottom}=+\\frac{uIa}{c^2}\n\\]\n（$y$ 方向の辺は $I_x=0$ で帯電しない）．双極子モーメントは\n\\[\n\\boldsymbol p=\\Big(Q_{\\rm top}\\frac a2+Q_{\\rm bottom}\\Big(-\\frac a2\\Big)\\Big)\\hat{\\boldsymbol y}=-\\frac{uIa^2}{c^2}\\hat{\\boldsymbol y}.\n\\]\n一方 $\\boldsymbol u\\times\\boldsymbol m_0=uIa^2\\,\\hat{\\boldsymbol x}\\times\\hat{\\boldsymbol z}=-uIa^2\\hat{\\boldsymbol y}$ で (1) と一致する．運動する電流ループは，同時刻の定義のずれ（$\\lambda$ の $uI_x/c^2$ 項）によって電気双極子を帯びる．"
+   }
+  ],
+  "idea": {
+   "tex": "$(-c\\boldsymbol P,\\boldsymbol M)$ は場のテンソルと同じく変換し，体積収縮と組み合わせると $\\boldsymbol p=\\boldsymbol u\\times\\boldsymbol m_0/c^2$ が $\\gamma$ によらず厳密に成り立つ．電流ループでは導線の帯電として目に見える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "分極テンソル",
+   "磁化",
+   "電気双極子",
+   "Lorentz変換",
+   "電流ループ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-051",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "ヌル場の不変性と場のテンソルの固有値",
+  "topic": "ヌル場の不変性と場のテンソルの固有値",
+  "statement": {
+   "tex": "真空中の電磁場について，Lorentz 不変量 $I_1=\\boldsymbol E^2-c^2\\boldsymbol B^2$，$I_2=\\boldsymbol E\\cdot\\boldsymbol B$ を考える．\n\\begin{enumerate}\n\\item $x$ 方向に進む平面電磁波の，ある時空点での場 $\\boldsymbol E=E_0\\hat{\\boldsymbol y}$，$\\boldsymbol B=(E_0/c)\\hat{\\boldsymbol z}$ について $I_1,I_2$ を求めよ．\n\\item この場を $x$ 方向に速さ $\\beta c$ で動く系 $S'$ で見たとき，$|\\boldsymbol E'|$ を求めよ．$\\beta\\to1$ で $|\\boldsymbol E'|\\to0$ となるが，場が完全に消える慣性系は存在しないことを不変量を使って論ぜよ．\n\\item 計量 $\\eta={\\rm diag}(1,-1,-1,-1)$，$x^0=ct$ のもとで場のテンソルを $F^{0i}=-E_i/c$，$F^{ij}=-\\epsilon_{ijk}B_k$ とし，混合テンソル $F^\\mu{}_\\nu=F^{\\mu\\rho}\\eta_{\\rho\\nu}$ の固有値 $\\lambda$ を考える．特性多項式 $\\det(F^\\mu{}_\\nu-\\lambda\\delta^\\mu{}_\\nu)$ が\n\\[\n\\lambda^4-\\frac{I_1}{c^2}\\lambda^2-\\frac{I_2^2}{c^2}\n\\]\nとなることを示し，これが $I_1,I_2$ の不変性の別証明になっている理由を述べよ．\n\\item (3) を用いて，ヌル場（$I_1=I_2=0$）では $F^\\mu{}_\\nu$ の固有値がすべて 0 であることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $I_1=0$，$I_2=0$　(2) $|\\boldsymbol E'|=E_0\\sqrt{\\dfrac{1-\\beta}{1+\\beta}}$．場が消えるには $\\boldsymbol E'=\\boldsymbol B'=0$ だが，$E'$ は $\\beta<1$ で正なので不可能（ヌル性は保たれ，場の大きさを任意に小さくできるだけ）　(3) 相似変換 $F'=\\Lambda F\\Lambda^{-1}$ で特性多項式は不変だから係数 $I_1,I_2^2$ も不変　(4) $\\lambda^4=0$ より全固有値 0（$F$ は冪零）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol E^2=E_0^2$，$c^2\\boldsymbol B^2=E_0^2$ より $I_1=0$．$\\boldsymbol E\\perp\\boldsymbol B$ より $I_2=0$．\n\n(2) $\\boldsymbol V=\\beta c\\hat{\\boldsymbol x}$ として $\\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E+\\boldsymbol V\\times\\boldsymbol B)_\\perp$．$\\boldsymbol V\\times\\boldsymbol B=\\beta c\\cdot\\frac{E_0}{c}\\hat{\\boldsymbol x}\\times\\hat{\\boldsymbol z}=-\\beta E_0\\hat{\\boldsymbol y}$ だから\n\\[\nE'_y=\\gamma(1-\\beta)E_0=E_0\\sqrt{\\frac{1-\\beta}{1+\\beta}},\\qquad cB'_z=\\gamma(E_0-\\beta E_0)=E'_y .\n\\]\n$I_1=I_2=0$ はどの系でも成り立つ（ヌル場はヌル場のまま）．大きさは Doppler 因子だけ縮むが，$\\beta<1$ である限り正で，$\\boldsymbol E'=\\boldsymbol B'=0$ となる系はない．（不変量がともに 0 であっても，場そのものが 0 であることとは別で，$\\boldsymbol E=0$ の系があれば $\\boldsymbol B$ も 0 になるはずだが，Lorentz 変換は線形で可逆なので零でない場は零に写らない．）\n\n(3) $F^\\mu{}_\\nu=F^{\\mu\\rho}\\eta_{\\rho\\nu}$ を書き下すと\n\\[\nF^\\mu{}_\\nu=\\begin{pmatrix}0&E_x/c&E_y/c&E_z/c\\\\ E_x/c&0&B_z&-B_y\\\\ E_y/c&-B_z&0&B_x\\\\ E_z/c&B_y&-B_x&0\\end{pmatrix}.\n\\]\n行列式を展開すると\n\\[\n\\det(F-\\lambda 1)=\\lambda^4+\\Big(\\boldsymbol B^2-\\frac{\\boldsymbol E^2}{c^2}\\Big)\\lambda^2-\\frac{(\\boldsymbol E\\cdot\\boldsymbol B)^2}{c^2}=\\lambda^4-\\frac{I_1}{c^2}\\lambda^2-\\frac{I_2^2}{c^2}\n\\]\n（奇数次の項は反対称性から消える）．Lorentz 変換で $F'^\\mu{}_\\nu=\\Lambda^\\mu{}_\\alpha F^\\alpha{}_\\beta(\\Lambda^{-1})^\\beta{}_\\nu$ は相似変換なので固有値・特性多項式は不変．したがってその係数 $I_1$ と $I_2^2$ は不変量である（$I_2$ の符号は行列式 1 の変換で連続的に保たれる）．\n\n(4) $I_1=I_2=0$ なら特性方程式は $\\lambda^4=0$ で固有値はすべて 0．(2) の場では実際に $F^2\\ne0$，$F^3=0$ の冪零行列になっている．固有値が 0 なのでどんな相似変換でも零行列にはできず，(2) の結論と整合する．"
+   }
+  ],
+  "idea": {
+   "tex": "$F^\\mu{}_\\nu$ の特性多項式の係数が $I_1,I_2^2$ であり，Lorentz 変換は相似変換なので不変．ヌル場は冪零行列に対応し，Doppler 因子で縮むが消えない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $I_1$：0 ; $I_2$：0\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電磁場の不変量",
+   "ヌル場",
+   "平面波",
+   "Doppler",
+   "固有値"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-052",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "交差電磁場中で静止から放した粒子",
+  "topic": "交差電磁場中で静止から放した粒子",
+  "statement": {
+   "tex": "実験室系 $S$ に一様な電場 $\\boldsymbol E=E_0\\hat{\\boldsymbol x}$ と磁場 $\\boldsymbol B=(2E_0/c)\\hat{\\boldsymbol y}$ がある（$E_0>0$）．\n\\begin{enumerate}\n\\item 電場が消える慣性系 $S'$ の速度 $\\boldsymbol V$（$\\boldsymbol E,\\boldsymbol B$ に垂直なものを選ぶ）と，そこでの磁束密度 $B'$ を求めよ．\n\\item 質量 $m$，電荷 $q>0$ の粒子を $S$ 系で静止状態から放す．$S$ 系で粒子が到達する最大の速さを求めよ．\n\\item 粒子が $S$ 系で再び静止する時間間隔 $T$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol V=\\dfrac{\\boldsymbol E\\times\\boldsymbol B}{B^2}=\\dfrac c2\\hat{\\boldsymbol z}$，$B'=\\dfrac{\\sqrt3E_0}{c}$　(2) $v_{\\max}=\\dfrac45c$　(3) $T=\\dfrac{8\\pi mc}{3\\sqrt3\\,qE_0}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E<cB$ なので電場の消える系がある．$\\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E+\\boldsymbol V\\times\\boldsymbol B)=0$ から $\\boldsymbol V=\\boldsymbol E\\times\\boldsymbol B/B^2$．$\\hat{\\boldsymbol x}\\times\\hat{\\boldsymbol y}=\\hat{\\boldsymbol z}$ より $\\boldsymbol V=\\dfrac{E_0\\cdot 2E_0/c}{4E_0^2/c^2}\\hat{\\boldsymbol z}=\\dfrac c2\\hat{\\boldsymbol z}$．不変量 $E'^2-c^2B'^2=E^2-c^2B^2=-3E_0^2$ と $E'=0$ から $B'=\\sqrt3E_0/c$．\n\n(2) $S'$ では粒子は初め速度 $-\\boldsymbol V$（速さ $c/2$）をもち，一様磁場 $B'$ 中で（$\\boldsymbol V\\perp\\boldsymbol B'$ なので）速さ $c/2$ の等速円運動をする．$S$ 系での速さは，$S'$ での速度 $\\boldsymbol w$ と $\\boldsymbol V$ の相対論的合成で決まり，$\\boldsymbol w=+\\boldsymbol V$ 方向のとき最大：\n\\[\nv_{\\max}=\\frac{c/2+c/2}{1+\\frac14}=\\frac45c .\n\\]\n（$\\boldsymbol w=-\\boldsymbol V$ のとき $v=0$ で，これが初期状態．）\n\n(3) $S'$ での円運動の周期は $T'=\\dfrac{2\\pi\\gamma_w m}{qB'}$，$\\gamma_w=1/\\sqrt{1-1/4}=2/\\sqrt3$ だから $T'=\\dfrac{2\\pi(2/\\sqrt3)m}{q\\sqrt3E_0/c}=\\dfrac{4\\pi mc}{3qE_0}$．粒子は $T'$ ごとに $S'$ 系の同じ位置（同じ状態）に戻るので，その 2 事象の $S$ 系での時間間隔は時間の遅れで $T=\\gamma_VT'$，$\\gamma_V=2/\\sqrt3$：\n\\[\nT=\\frac{8\\pi mc}{3\\sqrt3\\,qE_0}.\n\\]"
+   }
+  ],
+  "idea": {
+   "tex": "$\\boldsymbol E$ が消える系に移れば運動は等速円運動．最大速度は速度合成 $2\\beta/(1+\\beta^2)$，周期は円運動の周期に時間の遅れを掛ければよい．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $v_{\\max}$：((4)/(5)) c\n(3) $T$：((8 pi m c)/(3 sqrt(3) q E_0))"
+  },
+  "methods": [],
+  "tags": [
+   "電磁場の変換",
+   "E×Bドリフト",
+   "相対論的速度合成",
+   "時間の遅れ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-053",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "同種電荷対の運動系でのトルクと力の向き",
+  "topic": "同種電荷対の運動系でのトルクと力の向き",
+  "statement": {
+   "tex": "剛体棒（静止系での長さ $l_0$）の両端に同じ電荷 $+q$ を固定する．棒の静止系 $S_0$ で棒は $x$ 軸と角 $\\theta_0$（$0<\\theta_0<\\pi/2$）をなす．この棒が実験室系 $S$ で $x$ 方向に一定の速さ $v=\\beta c$ で並進している（$\\gamma=1/\\sqrt{1-\\beta^2}$）．$k=1/(4\\pi\\varepsilon_0)$ とする．\n\\begin{enumerate}\n\\item $S$ 系で棒が $x$ 軸となす角 $\\theta$ を $\\theta_0$ で表せ．\n\\item $S$ 系で前方の電荷が後方の電荷から受ける電磁力 $\\boldsymbol F$ が $x$ 軸となす角 $\\phi$ を求め，$\\boldsymbol F$ が棒の方向を向かないことを示せ．\n\\item 2 つの力が棒に及ぼすトルク $N_z$（$z$ は $x,y$ と右手系）を求めよ．トルクは棒を速度方向にそろえる向きか，垂直にする向きか．\n\\item $\\theta_0$ を変えたとき $|N_z|$ が最大になるのは，$S$ 系で測った棒の角度 $\\theta$ がどの値のときか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tan\\theta=\\gamma\\tan\\theta_0$　(2) $\\tan\\phi=\\dfrac{\\tan\\theta_0}{\\gamma}$（$\\phi<\\theta_0<\\theta$）　(3) $N_z=-\\beta^2\\dfrac{kq^2}{l_0}\\sin\\theta_0\\cos\\theta_0$（棒を速度方向にそろえる向き）　(4) $\\tan\\theta=\\gamma$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$S_0$ で前方電荷が受ける力は Coulomb 力 $\\boldsymbol F_0=\\dfrac{kq^2}{l_0^2}(\\cos\\theta_0,\\sin\\theta_0)$（棒に沿って斥力）．\n\n(1) $x$ 方向の長さだけ $1/\\gamma$ に縮むので，相対位置ベクトルは $\\boldsymbol r=(l_0\\cos\\theta_0/\\gamma,\\ l_0\\sin\\theta_0)$．$\\tan\\theta=\\gamma\\tan\\theta_0$．\n\n(2) 静止している粒子にはたらく力の変換は $F_\\parallel=F_{0\\parallel}$，$F_\\perp=F_{0\\perp}/\\gamma$（運動する電荷の場 $\\boldsymbol E,\\ \\boldsymbol B=\\boldsymbol v\\times\\boldsymbol E/c^2$ から $q(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)$ を計算しても同じ）．よって\n\\[\n\\boldsymbol F=\\frac{kq^2}{l_0^2}\\Big(\\cos\\theta_0,\\ \\frac{\\sin\\theta_0}{\\gamma}\\Big),\\qquad \\tan\\phi=\\frac{\\tan\\theta_0}{\\gamma}.\n\\]\n$\\gamma>1$ なら $\\phi<\\theta_0<\\theta$ で，力は棒の方向から速度方向側へ傾く．\n\n(3) 後方電荷には $-\\boldsymbol F$ がはたらくので偶力で，$N_z=(\\boldsymbol r\\times\\boldsymbol F)_z=r_xF_y-r_yF_x$：\n\\[\nN_z=\\frac{kq^2}{l_0}\\Big(\\frac{\\cos\\theta_0\\sin\\theta_0}{\\gamma^2}-\\sin\\theta_0\\cos\\theta_0\\Big)=-\\beta^2\\frac{kq^2}{l_0}\\sin\\theta_0\\cos\\theta_0 .\n\\]\n$N_z<0$ は $\\theta$ を減らす向き，すなわち棒を速度方向に平行にそろえる向き（異種電荷の場合と逆向き）．実際には棒の弾性力も同じ規則で変換されて電気的偶力を打ち消すので棒は回らない（Trouton–Noble の帰結）．\n\n(4) $|N_z|\\propto\\sin2\\theta_0$ は $\\theta_0=\\pi/4$ で最大．このとき $\\tan\\theta=\\gamma\\tan\\frac\\pi4=\\gamma$．すなわち実験室で見た角度は $45^\\circ$ ではなく $\\theta=\\arctan\\gamma$（例：$\\beta=0.8$ なら $\\theta\\approx59.0^\\circ$）．"
+   }
+  ],
+  "idea": {
+   "tex": "力の横成分は $1/\\gamma$，棒の縦の長さも $1/\\gamma$ と逆方向に変形するので，力と棒の向きがずれて偶力が生じる．トルクの符号と最大角の実験室での見え方が捻り．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\tan\\theta$：γ tan θ_0\n(2) $\\tan\\phi$：((tan θ_0)/(γ))\n(3) 記述\n(4) $\\tan\\theta$：γ"
+  },
+  "methods": [],
+  "tags": [
+   "Trouton-Noble",
+   "力の変換",
+   "Lorentz収縮",
+   "偶力"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-054",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "遠ざかる鏡で反射光が鏡面に沿う条件",
+  "topic": "遠ざかる鏡で反射光が鏡面に沿う条件",
+  "statement": {
+   "tex": "鏡面を $yz$ 面に平行におき，鏡は $+x$ 方向（鏡面の法線方向）に速さ $V=\\beta c$ で遠ざかっている．角振動数 $\\omega_1$ の光が $xy$ 面内を，$+x$ 軸と角 $\\theta_1$ をなす方向に進んで鏡に当たる（$S$ 系＝実験室系）．反射光の進行方向が $+x$ 軸となす角を $\\theta_2$，角振動数を $\\omega_2$ とする．\n\\begin{enumerate}\n\\item 光が鏡に追いつく条件を $\\theta_1$ と $\\beta$ で表せ．\n\\item 鏡の静止系で反射の法則が成り立つことを用いて，$\\omega_2$ と $\\cos\\theta_2$ を $\\omega_1,\\theta_1,\\beta$ で表せ．\n\\item 実験室系でも $\\omega_1\\sin\\theta_1=\\omega_2\\sin\\theta_2$ が成り立つことを示し，その物理的意味を述べよ．\n\\item 反射光がちょうど鏡面に沿って（$\\theta_2=\\pi/2$）進むための $\\cos\\theta_1$ と，そのときの $\\omega_2/\\omega_1$ を求めよ．$\\beta=0.3$ のときの $\\theta_1$ も求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\cos\\theta_1>\\beta$　(2) $\\omega_2=\\omega_1\\dfrac{1-2\\beta\\cos\\theta_1+\\beta^2}{1-\\beta^2}$，$\\cos\\theta_2=-\\dfrac{(1+\\beta^2)\\cos\\theta_1-2\\beta}{1-2\\beta\\cos\\theta_1+\\beta^2}$　(3) $k_y$ は鏡の運動に垂直で不変かつ反射で保存　(4) $\\cos\\theta_1=\\dfrac{2\\beta}{1+\\beta^2}$，$\\dfrac{\\omega_2}{\\omega_1}=\\dfrac{1-\\beta^2}{1+\\beta^2}$；$\\beta=0.3$ で $\\theta_1\\approx56.6^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 光の $x$ 方向の速さ $c\\cos\\theta_1$ が鏡の速さ $\\beta c$ を超えればよい：$\\cos\\theta_1>\\beta$．\n\n(2) 鏡の静止系 $S'$ への変換（$k=\\omega/c$）：\n\\[\n\\omega'_1=\\gamma\\omega_1(1-\\beta\\cos\\theta_1),\\qquad k'_{1x}=\\gamma\\frac{\\omega_1}{c}(\\cos\\theta_1-\\beta),\\qquad k'_{1y}=\\frac{\\omega_1}{c}\\sin\\theta_1 .\n\\]\n$S'$ では $\\omega'_2=\\omega'_1$，$k'_{2x}=-k'_{1x}$，$k'_{2y}=k'_{1y}$．$S$ に戻すと\n\\[\n\\omega_2=\\gamma(\\omega'_2+\\beta c\\,k'_{2x})=\\gamma^2\\omega_1\\{(1-\\beta\\cos\\theta_1)-\\beta(\\cos\\theta_1-\\beta)\\}=\\omega_1\\frac{1-2\\beta\\cos\\theta_1+\\beta^2}{1-\\beta^2},\n\\]\n\\[\nk_{2x}=\\gamma\\Big(k'_{2x}+\\beta\\frac{\\omega'_2}{c}\\Big)=-\\gamma^2\\frac{\\omega_1}c\\{(1+\\beta^2)\\cos\\theta_1-2\\beta\\}.\n\\]\n$\\cos\\theta_2=ck_{2x}/\\omega_2$ より与式．\n\n(3) $k_y$ は運動方向に垂直なので変換で不変，$S'$ での反射でも保存される．よって $k_{2y}=k_{1y}$，すなわち $\\omega_2\\sin\\theta_2=\\omega_1\\sin\\theta_1$．鏡面に沿う方向に一様な系では，その方向の運動量（光子 1 個あたり $\\hbar k_y$）が保存されるという意味．\n\n(4) $\\cos\\theta_2=0$ より $(1+\\beta^2)\\cos\\theta_1=2\\beta$，$\\cos\\theta_1=\\dfrac{2\\beta}{1+\\beta^2}$（$>\\beta$ なので (1) を満たす）．このとき\n\\[\n\\frac{\\omega_2}{\\omega_1}=\\frac{1-\\frac{4\\beta^2}{1+\\beta^2}+\\beta^2}{1-\\beta^2}=\\frac{(1-\\beta^2)^2}{(1+\\beta^2)(1-\\beta^2)}=\\frac{1-\\beta^2}{1+\\beta^2}.\n\\]\nこれは (3) の $\\omega_2=\\omega_1\\sin\\theta_1$ とも一致する（$\\sin\\theta_1=\\frac{1-\\beta^2}{1+\\beta^2}$）．$\\beta=0.3$：$\\cos\\theta_1=0.6/1.09=0.5505$，$\\theta_1\\approx56.6^\\circ$，$\\omega_2/\\omega_1\\approx0.835$．"
+   }
+  ],
+  "idea": {
+   "tex": "鏡の静止系で反射させて戻す．鏡面方向の波数が保存されることから $\\omega\\sin\\theta$ が不変となり，反射光が鏡面をかすめる臨界入射角が求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\omega_2$：ω_1 ((1-2 β cos θ_1 + β ^(2))/(1- β ^(2))) ; $\\cos\\theta_2$：-(((1+ β ^(2)) cos θ_1 -2 β)/(1-2 β cos θ_1 + β ^(2)))\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "運動する鏡",
+   "反射の法則",
+   "Doppler効果",
+   "4元波数ベクトル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-055",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "分散を含むFresnelの引きずり係数",
+  "topic": "分散を含むFresnelの引きずり係数",
+  "statement": {
+   "tex": "屈折率 $n$ の液体が速さ $v$（$v\\ll c$）で流れており，液体の静止系では屈折率は波長に依存する：$n=n(\\lambda)$（$\\lambda$ は真空中の波長に換算した値）．実験室系で真空中の波長 $\\lambda$ の光を流れと同じ向きに通す．\n\\begin{enumerate}\n\\item 実験室系での光の位相速度を $u=\\dfrac cn+fv$ と書くとき，分散を無視すれば $f=1-1/n^2$ となることを，速度の合成則から示せ．\n\\item 液体の静止系では光の振動数が Doppler 効果で変わることを考慮し，$v$ の 1 次で\n\\[\nf=1-\\frac1{n^2}-\\frac{\\lambda}{n}\\frac{dn}{d\\lambda}\n\\]\nとなることを示せ（Lorentz の補正）．\n\\item 水について $n=1.333$，$dn/d\\lambda=-0.035\\ \\mu{\\rm m}^{-1}$，$\\lambda=0.589\\ \\mu$m として $f$ を求め，分散を無視した値と比べよ．\n\\item 長さ $L=1.5$ m の 2 本の管に水を逆向きに流し（速さ $v=7.0$ m/s），光を 2 つに分けて一方は流れに沿う向きに 2 本の管を順に，他方は逆向きに通して干渉させる（各光とも長さ $2L$ を通過）．流れを止めた状態からの干渉縞の移動数 $N$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) 解説参照　(3) $f\\approx0.453$（分散なしでは $0.437$）　(4) $N=\\dfrac{4Ln^2fv}{\\lambda c}\\approx0.19$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 液体の静止系で光速は $c/n$．速度合成則で\n\\[\nu=\\frac{c/n+v}{1+v/(nc)}\\approx\\Big(\\frac cn+v\\Big)\\Big(1-\\frac{v}{nc}\\Big)\\approx\\frac cn+v\\Big(1-\\frac1{n^2}\\Big).\n\\]\n(2) 実験室の振動数 $\\nu$ の光は，液体の静止系では $\\nu'\\approx\\nu(1-nv/c)$（媒質内の波数 $n\\omega/c$ を用いた Doppler 効果）．その系での屈折率は $n(\\nu')\\approx n-\\dfrac{dn}{d\\nu}\\nu\\dfrac{nv}{c}$．よって\n\\[\n\\frac{c}{n(\\nu')}\\approx\\frac cn+\\frac{c}{n^2}\\frac{dn}{d\\nu}\\frac{\\nu nv}{c}=\\frac cn+\\frac{\\nu}{n}\\frac{dn}{d\\nu}v .\n\\]\nこれを (1) の $c/n$ に置き換えると $u=\\dfrac cn+v\\Big(1-\\dfrac1{n^2}+\\dfrac\\nu n\\dfrac{dn}{d\\nu}\\Big)$．$\\lambda=c/\\nu$ より $\\nu\\dfrac{dn}{d\\nu}=-\\lambda\\dfrac{dn}{d\\lambda}$ なので与式を得る．\n\n(3) $1/n^2=0.5628$ より分散なしは $f_0=0.4372$．補正項 $-\\dfrac{\\lambda}{n}\\dfrac{dn}{d\\lambda}=-\\dfrac{0.589\\times(-0.035)}{1.333}=+0.0155$．$f\\approx0.4527$（約 3.5% 大きい）．\n\n(4) 流れに沿う光と逆らう光の通過時間差は\n\\[\n\\Delta t=2L\\Big(\\frac1{c/n-fv}-\\frac1{c/n+fv}\\Big)\\approx\\frac{4Ln^2fv}{c^2}.\n\\]\n縞の移動数は $N=\\nu\\Delta t=\\dfrac{4Ln^2fv}{\\lambda c}=\\dfrac{4\\times1.5\\times1.777\\times0.4527\\times7.0}{5.89\\times10^{-7}\\times3.00\\times10^8}\\approx0.19$（分散を無視すると $0.185$）．"
+   }
+  ],
+  "idea": {
+   "tex": "流体の静止系では Doppler シフトのため屈折率が別の振動数で評価される．これが引きずり係数に $-(\\lambda/n)dn/d\\lambda$ の補正を加える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $f$：≈0.453\n(4) $N$：≈0.19"
+  },
+  "methods": [],
+  "tags": [
+   "Fizeauの実験",
+   "Fresnelの引きずり係数",
+   "速度の合成",
+   "分散",
+   "Doppler効果"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-056",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "Liénard–Wiechertポテンシャルと等速運動電荷",
+  "topic": "Liénard–Wiechertポテンシャルと等速運動電荷",
+  "statement": {
+   "tex": "Liénard–Wiechert ポテンシャル\n\\[\n\\phi(\\boldsymbol x,t)=\\frac{q}{4\\pi\\varepsilon_0}\\Big[\\frac{1}{(1-\\boldsymbol n\\cdot\\boldsymbol v/c)r}\\Big]_{\\rm ret},\\qquad \\boldsymbol A=\\frac{\\boldsymbol v}{c^2}\\phi\n\\]\n（$r$ は遅延位置から観測点までの距離，$\\boldsymbol n$ はその向きの単位ベクトル）を用いる．\n\\begin{enumerate}\n\\item 電荷が $x$ 軸上を一定速度 $v=\\beta c$ で運動し，時刻 $t$ に原点にあるとする．観測点 $(x,y,0)$ における $\\phi$ が\n\\[\n\\phi=\\frac{q}{4\\pi\\varepsilon_0}\\frac{\\gamma}{\\sqrt{\\gamma^2x^2+y^2}}\n\\]\nとなること，すなわち $(1-\\boldsymbol n\\cdot\\boldsymbol\\beta)r=\\sqrt{x^2+(1-\\beta^2)y^2}$ を示せ．\n\\item 運動の進行方向の軸上（$y=0$）では $\\phi$ が「現在位置からの Coulomb ポテンシャル」と完全に一致することを示せ．真横（$x=0$）ではどうか．\n\\item 半径 $R$ の円周上を一定の速さ $v$ で回る電荷について，円の中心での $\\phi$ と $\\boldsymbol A$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) $y=0$：$\\phi=\\dfrac{q}{4\\pi\\varepsilon_0|x|}$（$\\gamma$ によらない）；$x=0$：$\\phi=\\dfrac{\\gamma q}{4\\pi\\varepsilon_0|y|}$　(3) $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0R}$，$\\boldsymbol A=\\dfrac{\\mu_0q\\boldsymbol v_{\\rm ret}}{4\\pi R}$（遅延時刻 $t-R/c$ の速度）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 遅延時刻 $t'$ での電荷の位置は $(-v(t-t'),0,0)$，$r=c(t-t')$．遅延位置から現在位置までの距離は $v(t-t')=\\beta r$．観測点から見て，$\\boldsymbol r=\\boldsymbol R+\\beta r\\hat{\\boldsymbol x}$（$\\boldsymbol R=(x,y,0)$ は現在位置からのベクトル）．よって\n\\[\n(1-\\boldsymbol n\\cdot\\boldsymbol\\beta)r=r-\\beta r_x=r-\\beta(x+\\beta r)=r(1-\\beta^2)-\\beta x .\n\\]\n一方 $r^2=(x+\\beta r)^2+y^2$ から $(1-\\beta^2)r^2-2\\beta xr-(x^2+y^2)=0$，正の根は\n\\[\nr=\\frac{\\beta x+\\sqrt{\\beta^2x^2+(1-\\beta^2)(x^2+y^2)}}{1-\\beta^2}=\\frac{\\beta x+\\sqrt{x^2+(1-\\beta^2)y^2}}{1-\\beta^2}.\n\\]\nゆえに $(1-\\boldsymbol n\\cdot\\boldsymbol\\beta)r=\\sqrt{x^2+(1-\\beta^2)y^2}=\\dfrac1\\gamma\\sqrt{\\gamma^2x^2+y^2}$ となり与式を得る．\n\n(2) $y=0$ で $\\sqrt{\\gamma^2x^2}=\\gamma|x|$ より $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0|x|}$．遅延位置は遠いが，$1-\\boldsymbol n\\cdot\\boldsymbol\\beta$ の因子がちょうど補う（前方では $1-\\beta$，後方では $1+\\beta$）．$x=0$ では $\\phi=\\dfrac{\\gamma q}{4\\pi\\varepsilon_0|y|}$ と $\\gamma$ 倍に強まる．\n\n(3) 遅延位置から中心までの距離は常に $R$，速度は円の接線方向で $\\boldsymbol n$（動径方向）と直交するから $\\boldsymbol n\\cdot\\boldsymbol v=0$．よって $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0R}$（時間によらない），$\\boldsymbol A=\\dfrac{\\boldsymbol v_{\\rm ret}}{c^2}\\phi=\\dfrac{\\mu_0q\\,\\boldsymbol v(t-R/c)}{4\\pi R}$．$\\boldsymbol A$ は大きさ一定で角速度 $v/R$ で回転し，電場 $-\\partial\\boldsymbol A/\\partial t$ が中心に生じる．"
+   }
+  ],
+  "idea": {
+   "tex": "遅延時刻の 2 次方程式を解くと $(1-\\boldsymbol n\\cdot\\boldsymbol\\beta)r$ は現在位置で表され，Lorentz ブーストした Coulomb ポテンシャルになる．進行軸上では因子が完全に打ち消し合う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Liénard-Wiechertポテンシャル",
+   "遅延ポテンシャル",
+   "等速運動電荷",
+   "円運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-057",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "動くコンデンサーの場のエネルギーと運動量",
+  "topic": "動くコンデンサーの場のエネルギーと運動量",
+  "statement": {
+   "tex": "電磁場のエネルギー・運動量テンソル $T^{\\mu\\nu}$（$x^0=ct$，$T^{00}=u$：エネルギー密度，$T^{0i}=S_i/c$，$T^{ij}=-\\sigma_{ij}$，$\\sigma_{ij}=\\varepsilon_0(E_iE_j-\\frac12\\delta_{ij}E^2)+\\frac1{\\mu_0}(B_iB_j-\\frac12\\delta_{ij}B^2)$ は Maxwell 応力）を用いる．\n平行板コンデンサーの静止系 $S_0$ で，極板間（体積 $V_0$）に一様な電場 $\\boldsymbol E_0=E_0\\hat{\\boldsymbol z}$ があり，場のエネルギーは $U_0=\\frac{\\varepsilon_0}{2}E_0^2V_0$ である（縁の効果は無視）．\n\\begin{enumerate}\n\\item $S_0$ での $T^{\\mu\\nu}$ の成分をすべて求めよ．\n\\item コンデンサーが実験室系で $x$ 方向（電場に垂直）に速さ $\\beta c$ で動くとき，$T^{\\mu\\nu}$ の変換から場のエネルギー密度と運動量密度を求め，場の全エネルギー $U$ と全運動量 $\\boldsymbol P$ を求めよ．\n\\item コンデンサーが $z$ 方向（電場に平行）に動くときの $U$ と $\\boldsymbol P$ を求めよ．\n\\item (2)(3) の結果が $(U/c,\\boldsymbol P)$ が 4 元ベクトル $(\\gamma U_0/c,\\gamma\\boldsymbol\\beta U_0/c)$ として変換する場合と一致しないことを確かめ，その理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $T^{00}=T^{11}=T^{22}=u_0$，$T^{33}=-u_0$，他は 0（$u_0=\\varepsilon_0E_0^2/2$）　(2) $u=\\gamma^2(1+\\beta^2)u_0$，$g=2\\gamma^2\\beta u_0/c$；$U=\\gamma(1+\\beta^2)U_0$，$P=2\\gamma\\beta U_0/c$（$x$ 方向）　(3) $U=U_0/\\gamma$，$\\boldsymbol P=0$　(4) 場だけでは閉じた系でなく（$\\partial_\\mu T^{\\mu\\nu}\\neq0$ の極板上の応力が必要）4 元ベクトルにならない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u_0=\\varepsilon_0E_0^2/2$．$\\sigma_{ij}=\\varepsilon_0(E_iE_j-\\frac12\\delta_{ij}E^2)$ より $\\sigma_{11}=\\sigma_{22}=-u_0$，$\\sigma_{33}=+u_0$．よって $T^{00}=u_0$，$T^{11}=T^{22}=u_0$（側方の圧力），$T^{33}=-u_0$（電気力線方向の張力），$T^{0i}=0$，非対角 0．\n\n(2) 実験室系はコンデンサーの系に対して $-x$ 方向に動くので $T'^{\\mu\\nu}=\\Lambda^\\mu{}_\\alpha\\Lambda^\\nu{}_\\beta T^{\\alpha\\beta}$，$\\Lambda$ は速度 $-\\beta c$ のブースト：\n\\[\nT'^{00}=\\gamma^2(T^{00}+\\beta^2T^{11})=\\gamma^2(1+\\beta^2)u_0,\\qquad T'^{01}=\\gamma^2\\beta(T^{00}+T^{11})=2\\gamma^2\\beta u_0 .\n\\]\n（直接計算：$E'_z=\\gamma E_0$，$B'_y=\\gamma\\beta E_0/c$ より $u=\\frac{\\varepsilon_0}{2}\\gamma^2E_0^2(1+\\beta^2)$ と一致．）運動量密度 $g=T'^{01}/c=2\\gamma^2\\beta u_0/c$（運動方向）．体積は $V_0/\\gamma$ なので\n\\[\nU=\\gamma(1+\\beta^2)U_0,\\qquad P=\\frac{2\\gamma\\beta U_0}{c}.\n\\]\n(3) $z$ 方向のブースト：$T'^{00}=\\gamma^2(T^{00}+\\beta^2T^{33})=\\gamma^2(1-\\beta^2)u_0=u_0$，$T'^{03}=\\gamma^2\\beta(T^{00}+T^{33})=0$．場は $E_z$ のまま変わらず磁場も生じない．体積 $V_0/\\gamma$ より $U=U_0/\\gamma$，$\\boldsymbol P=0$．\n\n(4) 4 元ベクトルなら $U=\\gamma U_0$，$P=\\gamma\\beta U_0/c$ となるはずだが，(2) では $U$ に余分な $\\gamma\\beta^2U_0$，$P$ が 2 倍，(3) では $U$ が $\\gamma^2$ 分の 1 で $P$ が 0．\n$\\int T^{0\\nu}dV$ が 4 元ベクトルになるのは $\\partial_\\mu T^{\\mu\\nu}=0$（閉じた系）のときに限る．ここで場は極板上の電荷から力を受けており $\\partial_\\mu T^{\\mu\\nu}=-F^{\\nu}{}_{\\lambda}J^\\lambda\\neq0$．静止系で $T^{11}=u_0\\neq0$ のような応力（極板を引き合わせる力を支える機械的応力）を含めると $\\int T^{ii}dV$ が打ち消し合い，系全体のエネルギー運動量は 4 元ベクトルになる．運動方向の応力 $T^{11}$ が (2) の余分な寄与 $\\gamma\\beta^2U_0$，$\\gamma\\beta U_0/c$ の正体であり，(3) では $T^{33}=-u_0$ が $-\\gamma\\beta^2U_0$ を与えて $\\gamma U_0-\\gamma\\beta^2U_0=U_0/\\gamma$ となっている．"
+   }
+  ],
+  "idea": {
+   "tex": "$T^{\\mu\\nu}$ を変換すると応力成分がエネルギー・運動量に混ざるため，場だけの全エネルギーは $\\gamma U_0$ にならない（4/3 問題と同種）．閉じた系にして初めて 4 元ベクトルになる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $u$：γ ^(2)(1+ β ^(2)) u_0 ; $g$：2 γ ^(2) β u_0 / c ; $U$：γ (1+ β ^(2)) U_0 ; $P$：2 γ β U_0 / c\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "エネルギー運動量テンソル",
+   "Maxwell応力",
+   "電磁場の運動量",
+   "4/3問題",
+   "Lorentz変換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-058",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "質量項を加えたラグランジアン（Proca場）",
+  "topic": "質量項を加えたラグランジアン（Proca場）",
+  "statement": {
+   "tex": "電磁場のラグランジアン密度に質量項を加えた\n\\[\n\\mathcal L=\\frac{\\varepsilon_0}{2}\\Big(\\boldsymbol E^2-c^2\\boldsymbol B^2\\Big)+\\boldsymbol A\\cdot\\boldsymbol J-\\phi\\rho+\\frac{\\varepsilon_0\\kappa^2}{2}\\Big(\\phi^2-c^2\\boldsymbol A^2\\Big)\n\\]\n（$\\boldsymbol E=-\\nabla\\phi-\\partial_t\\boldsymbol A$，$\\boldsymbol B=\\nabla\\times\\boldsymbol A$，$\\kappa>0$ は定数）を考える．\n\\begin{enumerate}\n\\item $\\phi$ と $\\boldsymbol A$ についての Euler–Lagrange 方程式を求めよ．\n\\item 電荷が保存されている（$\\nabla\\cdot\\boldsymbol J+\\partial_t\\rho=0$）とき，$\\kappa\\neq0$ なら Lorenz 条件 $\\nabla\\cdot\\boldsymbol A+\\frac1{c^2}\\partial_t\\phi=0$ が自動的に成り立つことを示せ．ゲージ不変性との関係を述べよ．\n\\item 原点に静止した点電荷 $q$ のつくる静電ポテンシャルを求めよ．\n\\item 真空中の平面波解 $\\propto e^{i(\\boldsymbol k\\cdot\\boldsymbol x-\\omega t)}$ の分散関係と群速度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nabla\\cdot\\boldsymbol E=\\dfrac{\\rho}{\\varepsilon_0}-\\kappa^2\\phi$，$\\nabla\\times\\boldsymbol B-\\dfrac1{c^2}\\partial_t\\boldsymbol E=\\mu_0\\boldsymbol J-\\kappa^2\\boldsymbol A$　(2) 解説参照（ゲージ不変性は失われ，代わりに Lorenz 条件が運動方程式から従う）　(3) $\\phi=\\dfrac{q\\,e^{-\\kappa r}}{4\\pi\\varepsilon_0r}$（湯川型）　(4) $\\omega^2=c^2(k^2+\\kappa^2)$，$v_g=\\dfrac{c^2k}{\\omega}<c$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) Euler–Lagrange 方程式 $\\partial_t\\dfrac{\\partial\\mathcal L}{\\partial(\\partial_t\\psi)}+\\partial_j\\dfrac{\\partial\\mathcal L}{\\partial(\\partial_j\\psi)}=\\dfrac{\\partial\\mathcal L}{\\partial\\psi}$ を用いる．\n$\\phi$ について：$\\dfrac{\\partial\\mathcal L}{\\partial(\\partial_i\\phi)}=\\varepsilon_0E_j\\dfrac{\\partial E_j}{\\partial(\\partial_i\\phi)}=-\\varepsilon_0E_i$，$\\dfrac{\\partial\\mathcal L}{\\partial\\phi}=-\\rho+\\varepsilon_0\\kappa^2\\phi$ より\n\\[\n-\\varepsilon_0\\nabla\\cdot\\boldsymbol E=-\\rho+\\varepsilon_0\\kappa^2\\phi\\iff\\nabla\\cdot\\boldsymbol E=\\frac{\\rho}{\\varepsilon_0}-\\kappa^2\\phi .\n\\]\n$\\boldsymbol A$ について：$\\dfrac{\\partial\\mathcal L}{\\partial(\\partial_tA_i)}=-\\varepsilon_0E_i$，$-\\dfrac{c^2\\varepsilon_0\\boldsymbol B^2}{2}=-\\dfrac{\\boldsymbol B^2}{2\\mu_0}$ の項からは（$\\kappa=0$ の通常の場合と同様に）$\\partial_j\\dfrac{\\partial\\mathcal L}{\\partial(\\partial_jA_i)}=\\dfrac1{\\mu_0}(\\nabla\\times\\boldsymbol B)_i$，また $\\dfrac{\\partial\\mathcal L}{\\partial A_i}=J_i-\\varepsilon_0\\kappa^2c^2A_i$．よって\n\\[\n-\\varepsilon_0\\partial_t\\boldsymbol E+\\frac1{\\mu_0}\\nabla\\times\\boldsymbol B=\\boldsymbol J-\\varepsilon_0\\kappa^2c^2\\boldsymbol A\\iff\\nabla\\times\\boldsymbol B-\\frac1{c^2}\\partial_t\\boldsymbol E=\\mu_0\\boldsymbol J-\\kappa^2\\boldsymbol A .\n\\]\n（$\\nabla\\cdot\\boldsymbol B=0$，$\\nabla\\times\\boldsymbol E=-\\partial_t\\boldsymbol B$ はポテンシャルの定義から恒等的に成り立つ．）\n\n(2) 第 2 式の発散をとると $\\nabla\\cdot(\\nabla\\times\\boldsymbol B)=0$ より $-\\frac{1}{c^2}\\partial_t\\nabla\\cdot\\boldsymbol E=\\mu_0\\nabla\\cdot\\boldsymbol J-\\kappa^2\\nabla\\cdot\\boldsymbol A$．第 1 式を代入して\n\\[\n-\\frac1{c^2}\\partial_t\\Big(\\frac\\rho{\\varepsilon_0}-\\kappa^2\\phi\\Big)=\\mu_0\\nabla\\cdot\\boldsymbol J-\\kappa^2\\nabla\\cdot\\boldsymbol A\n\\ \\Longrightarrow\\ \\kappa^2\\Big(\\nabla\\cdot\\boldsymbol A+\\frac1{c^2}\\partial_t\\phi\\Big)=\\mu_0(\\nabla\\cdot\\boldsymbol J+\\partial_t\\rho)=0 .\n\\]\n$\\kappa\\ne0$ なら Lorenz 条件が従う．質量項は $\\phi\\to\\phi-\\partial_t\\chi$，$\\boldsymbol A\\to\\boldsymbol A+\\nabla\\chi$ で不変でないので，ポテンシャル自体が観測量になり，ゲージを選ぶ自由はない．\n\n(3) 静的では $\\boldsymbol E=-\\nabla\\phi$ で $\\nabla^2\\phi-\\kappa^2\\phi=-\\rho/\\varepsilon_0$．$\\rho=q\\delta^3(\\boldsymbol x)$ の球対称解は $\\phi=\\dfrac{q\\,e^{-\\kappa r}}{4\\pi\\varepsilon_0r}$（$r\\neq0$ で $\\frac1{r^2}(r^2\\phi')'=\\kappa^2\\phi$，$r\\to0$ で Coulomb に一致）．力は距離 $1/\\kappa$ で遮蔽される．\n\n(4) Lorenz 条件のもとで (1) は $\\Big(\\nabla^2-\\frac1{c^2}\\partial_t^2-\\kappa^2\\Big)(\\phi,\\boldsymbol A)=-(\\rho/\\varepsilon_0,\\mu_0\\boldsymbol J)$．真空で平面波を入れると $-k^2+\\omega^2/c^2-\\kappa^2=0$，$\\omega=c\\sqrt{k^2+\\kappa^2}$．$v_g=d\\omega/dk=c^2k/\\omega<c$（位相速度は $c$ より大，$v_pv_g=c^2$）．光子の質量 $m_\\gamma=\\hbar\\kappa/c$ に相当する．"
+   }
+  ],
+  "idea": {
+   "tex": "質量項はゲージ不変性を壊すが，電荷保存と組み合わせると Lorenz 条件が運動方程式から導かれる．静的解は湯川型に遮蔽される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\phi$：((q e ^(- κ r))/(4 pi ε_0 r))\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ラグランジアン密度",
+   "変分原理",
+   "Proca方程式",
+   "湯川ポテンシャル",
+   "ゲージ不変性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-059",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "直線電流のそばを走る荷電粒子の正準運動量",
+  "topic": "直線電流のそばを走る荷電粒子の正準運動量",
+  "statement": {
+   "tex": "荷電粒子（電荷 $q$，質量 $m$）のラグランジアンは $L=-mc^2\\sqrt{1-v^2/c^2}+q(\\boldsymbol v\\cdot\\boldsymbol A-\\phi)$ である．$z$ 軸上を $+z$ 方向に定常電流 $I$ が流れる無限に長い直線導線があり，その外側のベクトルポテンシャルは $\\boldsymbol A=-\\dfrac{\\mu_0I}{2\\pi}\\ln\\dfrac{\\rho}{\\rho_*}\\ \\hat{\\boldsymbol z}$（$\\rho$ は $z$ 軸からの距離，$\\rho_*$ は定数），$\\phi=0$ とする．\n\\begin{enumerate}\n\\item 正準運動量 $\\boldsymbol p$ とハミルトニアン $H$ を書き，保存量を 3 つ挙げよ．\n\\item 時刻 0 に粒子が $\\rho=\\rho_0$ にあり，速さ $v_0$ で $+z$ 方向に動いている（$qI>0$）．粒子が到達する最小の距離 $\\rho_{\\min}$ を求めよ．\n\\item 陽子（$m=1.673\\times10^{-27}$ kg）を $v_0=0.01c$，$\\rho_0=0.10$ m，$I=1.0\\times10^5$ A として $\\rho_{\\min}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol p=\\gamma m\\boldsymbol v+q\\boldsymbol A$，$H=c\\sqrt{m^2c^2+(\\boldsymbol p-q\\boldsymbol A)^2}$；保存量は $H$（$\\gamma$），$p_z$，$p_\\varphi$（$L_z$ 正準）　(2) $\\rho_{\\min}=\\rho_0\\exp\\Big(-\\dfrac{4\\pi\\gamma_0mv_0}{\\mu_0qI}\\Big)$　(3) $\\rho_{\\min}\\approx4.4\\times10^{-3}$ m"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol p=\\partial L/\\partial\\boldsymbol v=\\gamma m\\boldsymbol v+q\\boldsymbol A$，$H=\\boldsymbol p\\cdot\\boldsymbol v-L=\\gamma mc^2+q\\phi=c\\sqrt{m^2c^2+(\\boldsymbol p-q\\boldsymbol A)^2}+q\\phi$．\n$L$ は $t$ を陽に含まないので $H=\\gamma mc^2$ が保存（磁場は仕事をしないので速さ一定，$\\gamma=\\gamma_0$）．$z$ と $\\varphi$ は循環座標なので $p_z=\\gamma mv_z+qA_z$ と $p_\\varphi=\\gamma m\\rho^2\\dot\\varphi$ が保存．\n\n(2) 初め $\\dot\\varphi=0$ なので $p_\\varphi=0$ で，以後も $\\dot\\varphi=0$（運動は $\\rho z$ 面内）．速さ一定 $v_0$．$K=\\dfrac{\\mu_0I}{2\\pi}$ とおくと\n\\[\n\\gamma_0mv_z-qK\\ln\\frac{\\rho}{\\rho_*}=\\gamma_0mv_0-qK\\ln\\frac{\\rho_0}{\\rho_*}\n\\ \\Longrightarrow\\ \\ln\\frac{\\rho}{\\rho_0}=\\frac{\\gamma_0m(v_z-v_0)}{qK}.\n\\]\n$\\rho$ の折り返し点では $\\dot\\rho=0$ で $|v_z|=v_0$．出発点以外の折り返し点は $v_z=-v_0$ で\n\\[\n\\rho_{\\min}=\\rho_0\\exp\\Big(-\\frac{2\\gamma_0mv_0}{qK}\\Big)=\\rho_0\\exp\\Big(-\\frac{4\\pi\\gamma_0mv_0}{\\mu_0qI}\\Big).\n\\]\n$qI>0$ では電流と同じ向きに動く正電荷は引き寄せられ（平行電流の引力），$v_z$ は $v_0$ から減り，$\\rho$ も減る．$\\rho_{\\min}$ で粒子は逆向き（$-z$）に進んでおり，その後再び離れていく．運動は $z$ 方向へのドリフトを伴う周期運動になる．\n\n(3) $\\gamma_0\\approx1.00005$，$\\dfrac{4\\pi\\gamma_0mv_0}{\\mu_0qI}=\\dfrac{4\\pi\\times1.00005\\times1.673\\times10^{-27}\\times2.998\\times10^6}{4\\pi\\times10^{-7}\\times1.602\\times10^{-19}\\times10^5}\\approx3.13$．$\\rho_{\\min}=0.10\\,e^{-3.13}\\approx4.4\\times10^{-3}$ m．"
+   }
+  ],
+  "idea": {
+   "tex": "ハミルトン形式で循環座標 $z$ の正準運動量 $\\gamma mv_z+qA_z$ が保存し，速さ一定と組み合わせると折り返し点が代数的に求まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\rho_{\\min}$ [m]：≈4.4e-3"
+  },
+  "methods": [],
+  "tags": [
+   "ラグランジアン",
+   "ハミルトニアン",
+   "正準運動量",
+   "ベクトルポテンシャル",
+   "直線電流"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-060",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "場の不変量と純粋場・平行場となる系",
+  "topic": "場の不変量と純粋場・平行場となる系",
+  "statement": {
+   "tex": "慣性系 K に対して速度 $\\boldsymbol v$ で動く慣性系 K$'$ での電磁場は\n\\[ \\boldsymbol E'_\\parallel=\\boldsymbol E_\\parallel,\\ \\ \\boldsymbol B'_\\parallel=\\boldsymbol B_\\parallel,\\ \\ \\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)_\\perp,\\ \\ \\boldsymbol B'_\\perp=\\gamma\\Bigl(\\boldsymbol B-\\frac{\\boldsymbol v\\times\\boldsymbol E}{c^2}\\Bigr)_\\perp \\]\n（$\\parallel,\\perp$ は $\\boldsymbol v$ に平行・垂直な成分，$\\gamma=1/\\sqrt{1-v^2/c^2}$）で与えられる．\n\\begin{enumerate}\n\\item K で電場だけ（または磁場だけ）が存在するとき，任意の K$'$ で $\\boldsymbol E'\\perp\\boldsymbol B'$ となることを示せ．\n\\item 逆に，K で $\\boldsymbol E\\cdot\\boldsymbol B\\neq0$ なら，電場だけ・磁場だけになる慣性系は存在しないことを示せ．（$\\boldsymbol E\\cdot\\boldsymbol B$ が不変量であることは用いてよい．）\n\\item K で $\\boldsymbol E=E_0\\hat x$，$\\boldsymbol B=\\dfrac{E_0}{c}(\\cos60^\\circ\\,\\hat x+\\sin60^\\circ\\,\\hat y)$，$E_0=3.0\\times10^5\\,\\mathrm{V/m}$ とする．$z$ 軸方向に速さ $c/\\sqrt3$ で動く系 K$'$ では $\\boldsymbol E'\\parallel\\boldsymbol B'$ となることを確かめ，そこでの $|\\boldsymbol E'|$，$|\\boldsymbol B'|$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1)(2) 証明（解説参照）　(3) $|\\boldsymbol E'|=E_0/\\sqrt2=2.1\\times10^5\\,\\mathrm{V/m}$，$|\\boldsymbol B'|=E_0/(\\sqrt2c)=0.71\\,\\mathrm{mT}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol B=0$ とすると $\\boldsymbol B'_\\parallel=0$，$\\boldsymbol B'=\\boldsymbol B'_\\perp=-\\gamma\\,\\boldsymbol v\\times\\boldsymbol E/c^2$．これは $\\boldsymbol v$ と $\\boldsymbol E$ の両方に垂直である．$\\boldsymbol E'=\\boldsymbol E_\\parallel+\\gamma\\boldsymbol E_\\perp$ は $\\boldsymbol v$ と $\\boldsymbol E$ の張る平面内にあるので $\\boldsymbol E'\\cdot\\boldsymbol B'=0$．$\\boldsymbol E=0$ の場合も同様に $\\boldsymbol E'=\\gamma\\boldsymbol v\\times\\boldsymbol B$ は $\\boldsymbol v,\\boldsymbol B$ の張る平面に垂直，$\\boldsymbol B'$ はその平面内なので直交する．（K$'$ が K に対して $\\boldsymbol v\\parallel\\boldsymbol E$ で動く場合は $\\boldsymbol B'=0$ で，自明に成り立つ．）\n\n(2) $\\boldsymbol E\\cdot\\boldsymbol B$ はローレンツ変換で不変（実際，上式を代入すると $\\boldsymbol E'\\cdot\\boldsymbol B'=\\boldsymbol E_\\parallel\\cdot\\boldsymbol B_\\parallel+\\gamma^2(\\boldsymbol E_\\perp+\\boldsymbol v\\times\\boldsymbol B)\\cdot(\\boldsymbol B_\\perp-\\boldsymbol v\\times\\boldsymbol E/c^2)=\\boldsymbol E\\cdot\\boldsymbol B$ となる）．ある系で $\\boldsymbol E'=0$ または $\\boldsymbol B'=0$ なら $\\boldsymbol E'\\cdot\\boldsymbol B'=0$ となるので，$\\boldsymbol E\\cdot\\boldsymbol B\\neq0$ ならそのような系は存在しない．\n\n(3) $\\boldsymbol v=\\beta c\\hat z$，$\\beta=1/\\sqrt3$，$\\gamma=\\sqrt{3/2}$．$\\boldsymbol E,\\boldsymbol B$ は $xy$ 面内なのですべて垂直成分．$cB_x=E_0/2$，$cB_y=\\sqrt3E_0/2$ とおく．\n\\[ \\boldsymbol v\\times\\boldsymbol B=\\beta c(-B_y,B_x,0),\\qquad \\boldsymbol v\\times\\boldsymbol E/c^2=\\frac{\\beta}{c}(0,E_0,0) \\]\nより\n\\[ \\boldsymbol E'=\\gamma E_0\\Bigl(1-\\tfrac{\\sqrt3}{2}\\beta,\\ \\tfrac12\\beta,\\ 0\\Bigr)=\\gamma E_0\\Bigl(\\tfrac12,\\ \\tfrac1{2\\sqrt3},0\\Bigr),\\quad c\\boldsymbol B'=\\gamma E_0\\Bigl(\\tfrac12,\\ \\tfrac{\\sqrt3}2-\\beta,0\\Bigr)=\\gamma E_0\\Bigl(\\tfrac12,\\ \\tfrac1{2\\sqrt3},0\\Bigr). \\]\nよって $\\boldsymbol E'=c\\boldsymbol B'$（平行）．大きさは $\\gamma E_0\\sqrt{\\tfrac14+\\tfrac1{12}}=\\sqrt{\\tfrac32}\\cdot\\tfrac1{\\sqrt3}E_0=E_0/\\sqrt2=2.1\\times10^5\\,\\mathrm{V/m}$，$|\\boldsymbol B'|=E_0/(\\sqrt2c)=7.1\\times10^{-4}\\,\\mathrm T$．\n検算：不変量 $E'^2-c^2B'^2=0=E^2-c^2B^2$，$\\boldsymbol E'\\cdot c\\boldsymbol B'=E_0^2/2=\\boldsymbol E\\cdot c\\boldsymbol B$ と一致する．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\boldsymbol E\\cdot\\boldsymbol B$ の不変性から，純粋な電場・磁場の系の存在条件が決まる．$\\boldsymbol E\\cdot\\boldsymbol B\\ne0$ の場合でも $\\boldsymbol E\\times\\boldsymbol B$ 方向に動く系で場を平行にできる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ローレンツ変換",
+   "電磁場の変換",
+   "ローレンツ不変量",
+   "E・B"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-061",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "電流の流れる導線が動く系で帯電して見える理由",
+  "topic": "電流の流れる導線が動く系で帯電して見える理由",
+  "statement": {
+   "tex": "実験室系 K で，$z$ 軸に沿った無限に長い直線導線に $+z$ 向きの電流 $I$ が流れている．導線は K で電気的に中性で，正イオン（線密度 $\\lambda_+$）は静止し，電子は速度 $u\\hat z$ で流れている（$u<0$）．\n\\begin{enumerate}\n\\item K に対して速度 $v\\hat z$（相対論的でもよい）で動く系 K$'$ での電場 $\\boldsymbol E'$ を，場の変換則から導線からの距離 $r$ の関数として求めよ．\n\\item (1) の電場をガウスの法則で解釈し，K$'$ での導線の線電荷密度 $\\lambda'$ を求めよ．\n\\item (2) の $\\lambda'$ を，イオンと電子それぞれの線密度のローレンツ収縮（各電荷の静止系での線密度に，その系での $\\gamma$ 因子を掛けたもの）から直接導き，一致を確かめよ．\n\\item $I=10\\,\\mathrm A$，$v=0.60c$ のとき，$r=1.0\\,\\mathrm{cm}$ での $|\\boldsymbol E'|$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol E'=-\\dfrac{\\gamma\\mu_0Iv}{2\\pi r}\\hat r$（$\\gamma=1/\\sqrt{1-v^2/c^2}$，導線に向かう向き）　(2) $\\lambda'=-\\gamma Iv/c^2$　(3) 解説参照（一致）　(4) $4.5\\times10^4\\,\\mathrm{V/m}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) K では $\\boldsymbol E=0$，$\\boldsymbol B=\\dfrac{\\mu_0I}{2\\pi r}\\hat\\varphi$．$\\boldsymbol B$ は $\\boldsymbol v$ に垂直なので\n\\[ \\boldsymbol E'=\\gamma\\,\\boldsymbol v\\times\\boldsymbol B=\\gamma v\\frac{\\mu_0I}{2\\pi r}(\\hat z\\times\\hat\\varphi)=-\\frac{\\gamma\\mu_0Iv}{2\\pi r}\\hat r. \\]\nこれは $1/r$ に比例する放射状の場で，直線電荷の場と同じ形である．\n\n(2) 直線電荷 $\\lambda'$ の場は $\\dfrac{\\lambda'}{2\\pi\\varepsilon_0r}\\hat r$．比較して $\\lambda'=-\\gamma\\mu_0\\varepsilon_0Iv=-\\gamma Iv/c^2$．\n\n(3) イオン：静止系は K なので K$'$ では $\\lambda_+'=\\gamma\\lambda_+$．\n電子：K での線密度は $\\lambda_-=-\\lambda_+$．電子の静止系での線密度は $\\lambda_-/\\gamma_u$（$\\gamma_u=1/\\sqrt{1-u^2/c^2}$）．K$'$ での電子の速度 $u'=(u-v)/(1-uv/c^2)$ に対し $\\gamma_{u'}=\\gamma\\gamma_u(1-uv/c^2)$ だから\n\\[ \\lambda_-'=\\frac{\\lambda_-}{\\gamma_u}\\gamma_{u'}=\\gamma\\lambda_-\\Bigl(1-\\frac{uv}{c^2}\\Bigr). \\]\n合計 $\\lambda'=\\gamma\\lambda_++\\gamma\\lambda_-(1-uv/c^2)=\\gamma\\lambda_+\\dfrac{uv}{c^2}$．電流は $I=\\lambda_-u=-\\lambda_+u$ なので $\\lambda'=-\\gamma Iv/c^2$ となり (2) と一致する．中性の導線が動く系で帯電して見えるのは，イオンと電子で収縮の度合いが異なるからである．\n\n(4) $\\gamma=1.25$．$\\lambda'=-1.25\\times10\\times0.60/(3.0\\times10^8)=-2.5\\times10^{-8}\\,\\mathrm{C/m}$，$|E'|=\\dfrac{|\\lambda'|}{2\\pi\\varepsilon_0r}=\\dfrac{2.5\\times10^{-8}}{2\\pi\\times8.85\\times10^{-12}\\times0.010}=4.5\\times10^4\\,\\mathrm{V/m}$．"
+   }
+  ],
+  "idea": {
+   "tex": "純粋な磁場（電流）を動く系から見ると放射状の電場が現れる．それは「中性導線が帯電して見える」ことと同値で，イオンと電子のローレンツ収縮の違いから再現できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\lambda'$：- γ I v / c ^(2)\n(3) 記述\n(4) [V/m]：≈4.5e4"
+  },
+  "methods": [],
+  "tags": [
+   "場の変換",
+   "ローレンツ収縮",
+   "線電荷",
+   "直線電流",
+   "電荷の不変性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-062",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "直交電磁場：純磁場系とE×Bドリフト",
+  "topic": "直交電磁場：純磁場系とE×Bドリフト",
+  "statement": {
+   "tex": "慣性系 K に，一様で互いに直交する電場 $\\boldsymbol E=E\\hat x$（$E=40\\,\\mathrm{kV/m}$）と磁場 $\\boldsymbol B=B\\hat z$（$B=0.20\\,\\mathrm{mT}$）がある．\n\\begin{enumerate}\n\\item 磁場だけが存在する慣性系 K$'$ のうち，K に対する速さが最小のものの速度（大きさ・向き）を求めよ．\n\\item K$'$ での磁束密度 $B'$ を求めよ．\n\\item K で時刻 $0$ に原点に静止していた電子は，K$'$ では等速円運動をする．その半径 $R'$ と K$'$ での周期 $T'$ を求めよ．また K での電子の平均速度（1 周期にわたる時間平均）と，$x$ 方向に到達する最大距離を求めよ．（電子：$m=9.11\\times10^{-31}\\,\\mathrm{kg}$，$e=1.60\\times10^{-19}\\,\\mathrm C$）\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\boldsymbol E\\times\\boldsymbol B$ の向き（$-y$ 方向），$v=E/B=2.0\\times10^8\\,\\mathrm{m/s}=0.67c$　(2) $B'=\\sqrt{B^2-E^2/c^2}=0.15\\,\\mathrm{mT}$　(3) $R'=10\\,\\mathrm m$，$T'=0.32\\,\\mu\\mathrm s$，平均速度は $-y$ 向き $2.0\\times10^8\\,\\mathrm{m/s}$，$x$ 方向の最大距離 $2R'=20\\,\\mathrm m$（電子は $-x$ 側へ）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $cB=60\\,\\mathrm{kV/m}>E$ なので $E^2-c^2B^2<0$，$\\boldsymbol E\\cdot\\boldsymbol B=0$ より純粋な磁場の系がある．$\\boldsymbol v=\\boldsymbol E\\times\\boldsymbol B/B^2$ と選ぶと $\\boldsymbol v\\perp\\boldsymbol E,\\boldsymbol B$ で\n\\[ \\boldsymbol E'=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)=\\gamma\\Bigl(\\boldsymbol E+\\frac{(\\boldsymbol E\\times\\boldsymbol B)\\times\\boldsymbol B}{B^2}\\Bigr)=\\gamma(\\boldsymbol E-\\boldsymbol E)=0. \\]\n$\\hat x\\times\\hat z=-\\hat y$ なので向きは $-y$，$v=E/B=2.0\\times10^8\\,\\mathrm{m/s}$（$\\beta=0.667$）．$\\boldsymbol E'=0$ には $\\boldsymbol v_\\perp$（$\\boldsymbol B$ に垂直な成分）がこの値でなければならず，$\\boldsymbol B$ 方向の成分を加えると速さが増すので，これが最小．\n\n(2) 不変量より $-c^2B'^2=E^2-c^2B^2$，$B'=\\sqrt{B^2-E^2/c^2}=B\\sqrt{1-\\beta^2}=0.20\\times0.745=0.149\\,\\mathrm{mT}$．\n\n(3) K$'$ では電子は初速度 $+v\\hat y$（大きさ $v=2.0\\times10^8\\,\\mathrm{m/s}$）をもち，磁場 $B'$ だけを受けるので速さ一定の円運動をする．$\\gamma=1/\\sqrt{1-\\beta^2}=1.342$．\n\\[ R'=\\frac{\\gamma mv}{eB'}=\\frac{1.342\\times9.11\\times10^{-31}\\times2.0\\times10^8}{1.60\\times10^{-19}\\times1.49\\times10^{-4}}=10\\,\\mathrm m,\\quad T'=\\frac{2\\pi\\gamma m}{eB'}=3.2\\times10^{-7}\\,\\mathrm s. \\]\nK$'$ で円運動の中心は静止しているので，K ではその中心が速度 $\\boldsymbol v$ で動く．よって 1 周期平均の速度は $-y$ 向き $2.0\\times10^8\\,\\mathrm{m/s}=E/B$（相対論でも厳密に $E/B$）．$x$ 方向（ブーストに垂直）の座標は両系で等しいので，K での $x$ 方向の最大距離は円の直径 $2R'=20\\,\\mathrm m$．電子は負電荷なので電場と逆向き，$-x$ 側へ振れる．"
+   }
+  ],
+  "idea": {
+   "tex": "直交場で $E<cB$ なら $\\boldsymbol E\\times\\boldsymbol B/B^2$ で動く系では磁場だけになり，粒子の運動は円運動＋一定速度のドリフトに分解される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $B'$ [mT]：≈0.15\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ローレンツ不変量",
+   "直交電磁場",
+   "E×Bドリフト",
+   "サイクロイド運動",
+   "場の変換"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-063",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 30,
+  "theme": "高速運動する電荷の電場の平たさと電束の集中",
+  "topic": "高速運動する電荷の電場の平たさと電束の集中",
+  "statement": {
+   "tex": "点電荷 $q$ が速さ $v=\\beta c$ で等速直線運動している．電荷の位置から見た位置ベクトルを $\\boldsymbol r$，$\\boldsymbol r$ と速度のなす角を $\\theta$ とすると，ある瞬間の電場は\n\\[ \\boldsymbol E=\\frac{q}{4\\pi\\varepsilon_0}\\frac{1-\\beta^2}{(1-\\beta^2\\sin^2\\theta)^{3/2}}\\frac{\\boldsymbol r}{r^3} \\]\nで与えられる．\n\\begin{enumerate}\n\\item この式を，電荷の静止系のクーロン場からローレンツ変換で導け．\n\\item 同じ距離 $r$ での $\\theta=90^\\circ$ と $\\theta=0$ の電場の大きさの比を求めよ．\n\\item 電荷を中心とする半径 $r$ の球面を貫く全電束が $q/\\varepsilon_0$ であることを確かめよ．さらに，全電束の半分が通過する「赤道帯」$|\\cos\\theta|<u$ の $u$ を求め，$\\beta=0.99$ のときの帯の半幅 $\\arcsin u$（度）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) $(1-\\beta^2)^{-3/2}$　(3) $u=\\sqrt{\\dfrac{1-\\beta^2}{4-\\beta^2}}$，$\\beta=0.99$ で約 $4.7^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 電荷は K の $x$ 軸上を正の向きに動き，時刻 $t=0$ に原点を通るとする．静止系 K$'$ では $\\boldsymbol E'=\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{\\boldsymbol r'}{r'^3}$，$\\boldsymbol B'=0$．K での $t=0$ の点 $(x,y)$ は $x'=\\gamma x$，$y'=y$ に対応する．逆変換で $E_x=E'_x$，$E_y=\\gamma E'_y$ なので\n\\[ E_x=\\frac{q}{4\\pi\\varepsilon_0}\\frac{\\gamma x}{r'^3},\\quad E_y=\\frac{q}{4\\pi\\varepsilon_0}\\frac{\\gamma y}{r'^3}\\ \\Rightarrow\\ \\boldsymbol E=\\frac{q\\gamma}{4\\pi\\varepsilon_0}\\frac{\\boldsymbol r}{r'^3}. \\]\n$r'^2=\\gamma^2x^2+y^2=\\gamma^2r^2(\\cos^2\\theta+(1-\\beta^2)\\sin^2\\theta)=\\gamma^2r^2(1-\\beta^2\\sin^2\\theta)$ より $\\boldsymbol E=\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{1-\\beta^2}{(1-\\beta^2\\sin^2\\theta)^{3/2}}\\dfrac{\\boldsymbol r}{r^3}$．電場は $\\boldsymbol r$ に平行（現在位置から放射状）である．\n\n(2) $\\theta=0$：$E\\propto1-\\beta^2$．$\\theta=90^\\circ$：$E\\propto(1-\\beta^2)/(1-\\beta^2)^{3/2}=(1-\\beta^2)^{-1/2}$．比は $(1-\\beta^2)^{-3/2}=\\gamma^3$．\n\n(3) $x=\\cos\\theta$，$a=1-\\beta^2$ とすると，帯 $|\\cos\\theta|<u$ を通る電束は\n\\[ \\Phi(u)=\\frac{q}{4\\pi\\varepsilon_0}\\cdot2\\pi\\int_{-u}^{u}\\frac{a\\,dx}{(a+\\beta^2x^2)^{3/2}}=\\frac{q}{\\varepsilon_0}\\frac{u}{\\sqrt{a+\\beta^2u^2}} \\]\n（$\\frac{d}{dx}\\frac{x}{\\sqrt{a+\\beta^2x^2}}=\\frac{a}{(a+\\beta^2x^2)^{3/2}}$ を用いた．$1-\\beta^2\\sin^2\\theta=a+\\beta^2x^2$）．$u=1$ で $\\Phi=\\dfrac{q}{\\varepsilon_0}\\dfrac{1}{\\sqrt{a+\\beta^2}}=\\dfrac{q}{\\varepsilon_0}$ でガウスの法則と一致．\n半分の条件 $\\dfrac{u}{\\sqrt{a+\\beta^2u^2}}=\\dfrac12$ より $4u^2=1-\\beta^2+\\beta^2u^2$，$u=\\sqrt{\\dfrac{1-\\beta^2}{4-\\beta^2}}$．$\\beta=0.99$：$u=\\sqrt{0.0199/3.0199}=0.0812$，半幅 $\\arcsin u=4.7^\\circ$．電束は進行方向に垂直な薄い円盤状に集中する（幅は $\\sim1/\\gamma$）．"
+   }
+  ],
+  "idea": {
+   "tex": "静止系のクーロン場を変換すると，電場の向きは現在位置から放射状のままだが，大きさが赤道方向に $\\gamma^3$ 倍偏る．全電束は保存しつつ，幅 $\\sim1/\\gamma$ の円盤に集中する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) (1- β ^(2))^(-3/2)\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "運動する電荷の場",
+   "ローレンツ変換",
+   "ガウスの法則",
+   "電束",
+   "ローレンツ収縮"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SR-04-064",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SR-31",
+  "level": 3,
+  "minutes": 35,
+  "theme": "場のローレンツ変換と E∥B となる系",
+  "topic": "場のローレンツ変換と E∥B となる系",
+  "statement": {
+   "tex": "慣性系 K に対して速度 $\\boldsymbol v$ で動く系 K$'$ での電磁場は，$\\gamma=1/\\sqrt{1-v^2/c^2}$ として\n\\[\n\\boldsymbol E'_\\parallel=\\boldsymbol E_\\parallel,\\quad \\boldsymbol B'_\\parallel=\\boldsymbol B_\\parallel,\\quad\n\\boldsymbol E'_\\perp=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)_\\perp,\\quad\n\\boldsymbol B'_\\perp=\\gamma\\!\\left(\\boldsymbol B-\\frac{\\boldsymbol v\\times\\boldsymbol E}{c^2}\\right)_\\perp\n\\]\nで与えられる（$\\parallel,\\perp$ は $\\boldsymbol v$ に平行・垂直な成分）．\n\\begin{enumerate}\n\\item $\\boldsymbol E\\cdot\\boldsymbol B$ と $E^2-c^2B^2$ が不変であることを，$\\boldsymbol v$ が $\\boldsymbol E,\\boldsymbol B$ の両方に垂直な場合について確かめよ．\n\\item K で $\\boldsymbol E=E_0\\hat{\\boldsymbol x}$，$\\boldsymbol B=(2E_0/c)\\hat{\\boldsymbol y}$ である．電場が消える系の速度と，そこでの磁場を求めよ．逆に磁場が消える系は存在するか．\n\\item K で $\\boldsymbol E=E_0\\hat{\\boldsymbol x}$，$\\boldsymbol B=(E_0/c)(\\hat{\\boldsymbol x}+\\hat{\\boldsymbol y})$ である．$z$ 方向に速さ $\\beta c$ で動く系で $\\boldsymbol E'\\parallel\\boldsymbol B'$ となる $\\beta$ を求め，その系での $|\\boldsymbol E'|$ と $c|\\boldsymbol B'|$ を求めよ．\n\\item 静止した点電荷 $q$ の場を，その電荷に対して $-\\boldsymbol v$ で動く観測者の系（電荷が速度 $\\boldsymbol v$ で動いて見える系）に変換し，$v\\ll c$ でビオ–サバールの法則の形の磁場が現れることを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $\\boldsymbol v=(c/2)\\hat{\\boldsymbol z}$，$\\boldsymbol B'=(\\sqrt3E_0/c)\\hat{\\boldsymbol y}$；$E^2-c^2B^2<0$ なので磁場が消える系はない　(3) $\\beta=\\dfrac{3-\\sqrt5}{2}\\approx0.382$，$|\\boldsymbol E'|=E_0/\\sqrt\\varphi\\approx0.786E_0$，$c|\\boldsymbol B'|=\\sqrt\\varphi\\,E_0\\approx1.27E_0$（$\\varphi=\\tfrac{1+\\sqrt5}2$）　(4) $\\boldsymbol B\\simeq\\dfrac{\\mu_0}{4\\pi}\\dfrac{q\\boldsymbol v\\times\\hat{\\boldsymbol r}}{r^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\boldsymbol v=v\\hat{\\boldsymbol z}$，$\\boldsymbol E=(E_x,E_y,0)$，$\\boldsymbol B=(B_x,B_y,0)$ とすると\n$\\boldsymbol E'=\\gamma(E_x-vB_y,\\ E_y+vB_x,\\ 0)$，$\\boldsymbol B'=\\gamma(B_x+vE_y/c^2,\\ B_y-vE_x/c^2,\\ 0)$．\n$\\boldsymbol E'\\cdot\\boldsymbol B'=\\gamma^2[(E_x-vB_y)(B_x+vE_y/c^2)+(E_y+vB_x)(B_y-vE_x/c^2)]=\\gamma^2(1-\\beta^2)(E_xB_x+E_yB_y)=\\boldsymbol E\\cdot\\boldsymbol B$．\n同様に $E'^2-c^2B'^2=\\gamma^2[(E_x-vB_y)^2+(E_y+vB_x)^2-(cB_x+\\beta E_y)^2-(cB_y-\\beta E_x)^2]=\\gamma^2(1-\\beta^2)(E^2-c^2B^2)$．\n\n(2) $\\boldsymbol E\\cdot\\boldsymbol B=0$，$E^2-c^2B^2=-3E_0^2<0$ なので電場を消す系がある．$\\boldsymbol E'=\\gamma(\\boldsymbol E+\\boldsymbol v\\times\\boldsymbol B)=0$ を満たす $\\boldsymbol v\\perp\\boldsymbol B$ は $\\boldsymbol v=\\boldsymbol E\\times\\boldsymbol B/B^2=\\dfrac{E_0\\cdot 2E_0/c}{4E_0^2/c^2}\\hat{\\boldsymbol z}=\\dfrac c2\\hat{\\boldsymbol z}$．$\\gamma=2/\\sqrt3$，$\\boldsymbol v\\times\\boldsymbol E/c^2=(E_0/2c)\\hat{\\boldsymbol y}$ より\n$\\boldsymbol B'=\\gamma\\left(\\dfrac{2E_0}{c}-\\dfrac{E_0}{2c}\\right)\\hat{\\boldsymbol y}=\\dfrac{\\sqrt3E_0}{c}\\hat{\\boldsymbol y}$（不変量 $-c^2B'^2=-3E_0^2$ と一致）．\n磁場が消える系では $E'^2-c^2B'^2=E'^2>0$ となるはずだが，不変量は負なので存在しない．\n\n(3) $\\boldsymbol v\\times\\boldsymbol B=\\beta E_0(\\hat{\\boldsymbol y}-\\hat{\\boldsymbol x})$，$\\boldsymbol v\\times\\boldsymbol E/c^2=(\\beta E_0/c)\\hat{\\boldsymbol y}$ より\n\\[\n\\boldsymbol E'=\\gamma E_0(1-\\beta,\\ \\beta,\\ 0),\\qquad c\\boldsymbol B'=\\gamma E_0(1,\\ 1-\\beta,\\ 0).\n\\]\n平行条件 $(1-\\beta)^2-\\beta=0$，すなわち $\\beta^2-3\\beta+1=0$，$0<\\beta<1$ より $\\beta=\\dfrac{3-\\sqrt5}2\\approx0.382$．\n（一般式 $\\beta/(1+\\beta^2)=c|\\boldsymbol E\\times\\boldsymbol B|/(E^2+c^2B^2)=1/3$ と一致．）\n大きさは不変量から求める：$E'\\cdot cB'=c\\,\\boldsymbol E\\cdot\\boldsymbol B=E_0^2$，$E'^2-c^2B'^2=E_0^2-2E_0^2=-E_0^2$．$X=E'^2$ とおくと $X(X+E_0^2)=E_0^4$，$X=\\dfrac{\\sqrt5-1}{2}E_0^2=E_0^2/\\varphi$．よって $|\\boldsymbol E'|=E_0/\\sqrt\\varphi\\approx0.786E_0$，$c|\\boldsymbol B'|=\\sqrt\\varphi E_0\\approx1.27E_0$（黄金比 $\\varphi$ が現れる）．\n\n(4) 電荷の静止系では $\\boldsymbol E_0=\\dfrac{q\\hat{\\boldsymbol r}}{4\\pi\\varepsilon_0r^2}$，$\\boldsymbol B_0=0$．観測者系は電荷系に対し $-\\boldsymbol v$ で動くので，変換式で $\\boldsymbol v\\to-\\boldsymbol v$ として $\\boldsymbol B_\\perp=\\gamma(\\boldsymbol v\\times\\boldsymbol E_0)_\\perp/c^2$，$\\boldsymbol B_\\parallel=0$．$v\\ll c$ では $\\gamma\\simeq1$，長さの変化も無視でき\n\\[\n\\boldsymbol B\\simeq\\frac{\\boldsymbol v\\times\\boldsymbol E}{c^2}=\\frac{\\mu_0}{4\\pi}\\frac{q\\boldsymbol v\\times\\hat{\\boldsymbol r}}{r^2},\n\\]\n$q\\boldsymbol v\\to I\\,d\\boldsymbol l$ とすればビオ–サバールの法則になる．"
+   }
+  ],
+  "idea": {
+   "tex": "2 つの不変量 $\\boldsymbol E\\cdot\\boldsymbol B$，$E^2-c^2B^2$ が，純磁場・純電場・$E\\parallel B$ となる系の存在と，そこでの場の大きさを決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "場のローレンツ変換",
+   "ローレンツ不変量",
+   "E×Bドリフト系",
+   "ビオ–サバールの法則"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

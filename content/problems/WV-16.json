@@ -195,6 +195,251 @@
   }
  },
  {
+  "id": "WV-05-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 1,
+  "minutes": 15,
+  "theme": "べき型分散則と群速度・位相速度",
+  "topic": "べき型分散則と群速度・位相速度",
+  "statement": {
+   "tex": "位相速度 $v$ が波長 $\\lambda$ や角振動数 $\\omega$ のべきで表される媒質を考える．\n\\begin{enumerate}\n\\item $v=C\\lambda^{\\alpha}$（$C,\\alpha$ は定数）のとき，群速度 $u$ と $v$ の比 $u/v$ を求めよ．群速度が位相速度と逆向きになるのは $\\alpha$ がどの範囲のときか．\n\\item $v=A\\omega^{\\beta}$（$A$ は定数，$\\beta\\neq1$）のとき，$u/v$ を求めよ．\n\\item 水面波の分散関係は $\\omega^2=gk+\\dfrac{\\sigma}{\\rho}k^3$ である（$g=9.8\\ \\mathrm{m/s^2}$，表面張力 $\\sigma=0.073\\ \\mathrm{N/m}$，密度 $\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$）．長波長極限・短波長極限での $u/v$ をそれぞれ求めよ．また $u=v$ となる波長と，そのときの位相速度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u/v=1-\\alpha$，$\\alpha>1$ で逆向き　(2) $u/v=1/(1-\\beta)$　(3) 長波長 $1/2$，短波長 $3/2$；$\\lambda=2\\pi\\sqrt{\\sigma/(\\rho g)}\\approx1.7\\ \\mathrm{cm}$，$v\\approx0.23\\ \\mathrm{m/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) Rayleigh の式 $u=v-\\lambda\\dfrac{dv}{d\\lambda}$ に代入すると $u=C\\lambda^\\alpha-\\alpha C\\lambda^{\\alpha}=(1-\\alpha)v$．よって $u/v=1-\\alpha$．$\\alpha>1$ なら $u$ と $v$ は逆符号（後退波）．\n\n(2) $k=\\omega/v=\\omega^{1-\\beta}/A$ より $\\dfrac{dk}{d\\omega}=\\dfrac{(1-\\beta)\\omega^{-\\beta}}{A}$．よって\n\\[u=\\frac{d\\omega}{dk}=\\frac{A\\omega^{\\beta}}{1-\\beta}=\\frac{v}{1-\\beta}.\\]\n例えば $v\\propto\\omega^{-2}$ なら $u=v/3$，$v\\propto k$（$\\omega\\propto k^2$，$v\\propto\\omega^{1/2}$）なら $u=2v$．\n\n(3) 長波長（$k\\to0$）では $\\omega\\simeq\\sqrt{gk}$，$v\\propto k^{-1/2}\\propto\\lambda^{1/2}$ なので (1) より $u/v=1/2$．短波長では $\\omega\\simeq\\sqrt{\\sigma k^3/\\rho}$，$v\\propto\\lambda^{-1/2}$ で $u/v=3/2$．\n$u=v$ は $\\dfrac{d}{dk}\\left(\\dfrac{\\omega}{k}\\right)=\\dfrac{u-v}{k}=0$，すなわち位相速度 $v(k)=\\sqrt{g/k+\\sigma k/\\rho}$ が極小となる点である．$-g/k^2+\\sigma/\\rho=0$ より $k_*=\\sqrt{\\rho g/\\sigma}=3.66\\times10^2\\ \\mathrm{m^{-1}}$，\n\\[\\lambda_*=\\frac{2\\pi}{k_*}=1.7\\ \\mathrm{cm},\\qquad v_{\\min}=\\sqrt{2g/k_*}=\\left(\\frac{4g\\sigma}{\\rho}\\right)^{1/4}=0.23\\ \\mathrm{m/s}.\\]\nこれより長い波では $u<v$，短い波では $u>v$ となる．"
+   }
+  ],
+  "idea": {
+   "tex": "べき型分散 $v\\propto\\lambda^\\alpha$ では $u/v=1-\\alpha$ が定数．2種の分散が競合すると，位相速度極小点で $u=v$ となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 長波長：1/2 ; 短波長：3/2 ; $\\lambda$ [cm]：≈1.7 ; $v$ [m/s]：≈0.23"
+  },
+  "methods": [],
+  "tags": [
+   "群速度",
+   "位相速度",
+   "Rayleighの式",
+   "分散関係",
+   "表面張力波"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 1,
+  "minutes": 15,
+  "theme": "Cauchy式から群屈折率と群遅延",
+  "topic": "Cauchy式から群屈折率と群遅延",
+  "statement": {
+   "tex": "あるガラスの屈折率は $\\lambda_F=486.1\\ \\mathrm{nm}$ で $n_F=1.5224$，$\\lambda_C=656.3\\ \\mathrm{nm}$ で $n_C=1.5143$ である．屈折率がコーシーの式 $n(\\lambda)=A+B/\\lambda^2$ に従うとする．\n\\begin{enumerate}\n\\item $A,B$ を求めよ．\n\\item $\\lambda=589\\ \\mathrm{nm}$ における位相速度 $v$ と群速度 $u$ を求めよ（群屈折率 $n_g=n-\\lambda\\,dn/d\\lambda$ を $A,B$ で表して用いよ）．\n\\item 長さ $1.0\\ \\mathrm{m}$ のこのガラス棒を $589\\ \\mathrm{nm}$ の短パルスが通過するとき，パルス（包絡線）の通過時間は，位相速度から素朴に計算した時間より何 ps 長いか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $A=1.5045$，$B=4.24\\times10^{3}\\ \\mathrm{nm^2}$　(2) $v=1.98\\times10^8\\ \\mathrm{m/s}$，$u=1.95\\times10^8\\ \\mathrm{m/s}$　(3) 約 $82\\ \\mathrm{ps}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n_F-n_C=B\\left(\\dfrac1{\\lambda_F^2}-\\dfrac1{\\lambda_C^2}\\right)$ より\n\\[B=\\frac{0.0081}{4.232\\times10^{-6}-2.322\\times10^{-6}}\\ \\mathrm{nm^2}=4.24\\times10^3\\ \\mathrm{nm^2},\\qquad A=n_F-\\frac{B}{\\lambda_F^2}=1.5045.\\]\n\n(2) $n=A+B/\\lambda^2=1.5167$．$dn/d\\lambda=-2B/\\lambda^3$ より $n_g=n-\\lambda\\dfrac{dn}{d\\lambda}=A+\\dfrac{3B}{\\lambda^2}=1.5411$．\n\\[v=\\frac{c}{n}=1.98\\times10^8\\ \\mathrm{m/s},\\qquad u=\\frac{c}{n_g}=1.95\\times10^8\\ \\mathrm{m/s}.\\]\n（$u=v-\\lambda'\\,dv/d\\lambda'$（$\\lambda'$ は媒質中の波長）を用いても同じ結果になる．）\n\n(3) $\\Delta t=\\dfrac{L}{u}-\\dfrac{L}{v}=\\dfrac{L(n_g-n)}{c}=\\dfrac{1.0\\times0.0244}{3.0\\times10^8}\\ \\mathrm{s}=8.2\\times10^{-11}\\ \\mathrm{s}\\approx82\\ \\mathrm{ps}.$"
+   }
+  ],
+  "idea": {
+   "tex": "正常分散では $n_g=n-\\lambda\\,dn/d\\lambda>n$．コーシー式では $n_g=A+3B/\\lambda^2$ と簡潔に書ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $A$：≈1.5045 ; $B$ [nm²]：≈4.24e3\n(2) $v$ [m/s]：≈1.98e8 ; $u$ [m/s]：≈1.95e8\n(3) [ps]：≈82"
+  },
+  "methods": [],
+  "tags": [
+   "群屈折率",
+   "コーシーの式",
+   "正常分散",
+   "パルス遅延"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 1,
+  "minutes": 15,
+  "theme": "厚さの異なる2枚から吸収係数と反射率",
+  "topic": "厚さの異なる2枚から吸収係数と反射率",
+  "statement": {
+   "tex": "同じ物質で作った厚さ $d_1=2.0\\ \\mathrm{mm}$ と $d_2=6.0\\ \\mathrm{mm}$ の板に，単色光を垂直に当てたところ，透過率はそれぞれ $\\tau_1=0.88$，$\\tau_2=0.72$ であった．各面の反射率 $\\rho$ は未知だが両板で等しく，板内の多重反射は無視できるとする．\n\\begin{enumerate}\n\\item 線吸収係数 $\\kappa$ を求めよ．\n\\item 面の反射率 $\\rho$ を求めよ．\n\\item 透過率がちょうど $0.50$ になる板の厚さを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\kappa=0.50\\ \\mathrm{cm^{-1}}$　(2) $\\rho=0.014$　(3) $d=1.3\\ \\mathrm{cm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "透過率は $\\tau=(1-\\rho)^2e^{-\\kappa d}$．\n\n(1) 比をとると反射が消える：$\\dfrac{\\tau_1}{\\tau_2}=e^{\\kappa(d_2-d_1)}$．\n\\[\\kappa=\\frac{\\ln(\\tau_1/\\tau_2)}{d_2-d_1}=\\frac{\\ln(0.88/0.72)}{0.40\\ \\mathrm{cm}}=0.50\\ \\mathrm{cm^{-1}}.\\]\n\n(2) $(1-\\rho)^2=\\tau_1e^{\\kappa d_1}=0.88\\,e^{0.1003}=0.973$，$1-\\rho=0.986$，$\\rho=0.014$．\n\n(3) $0.50=(1-\\rho)^2e^{-\\kappa d}$ より $d=\\dfrac1\\kappa\\ln\\dfrac{(1-\\rho)^2}{0.50}=\\dfrac{\\ln1.946}{0.50}\\ \\mathrm{cm}=1.3\\ \\mathrm{cm}$．"
+   }
+  ],
+  "idea": {
+   "tex": "2つの厚さの透過率の比から面の反射損失が打ち消し合い吸収係数が求まる．逆に外挿 $d\\to0$ から反射率がわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\kappa$ [cm⁻¹]：≈0.50\n(2) $\\rho$：≈0.014\n(3) $d$ [cm]：≈1.3"
+  },
+  "methods": [],
+  "tags": [
+   "吸収係数",
+   "ランベルト・ベールの法則",
+   "反射損失"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ガウス型吸収フィルターの通過帯域",
+  "topic": "ガウス型吸収フィルターの通過帯域",
+  "statement": {
+   "tex": "厚さ $d$ の光学フィルターの吸収係数が $\\kappa(\\lambda)=\\alpha(1-\\lambda/\\lambda_0)^2$（$\\alpha,\\lambda_0$ は定数）で与えられる．面での反射率は波長によらないとする．\n\\begin{enumerate}\n\\item 減衰が $\\lambda_0$ での減衰の $\\eta$ 倍になる波長を両端とする通過帯域幅 $\\Delta\\lambda$ を求めよ．帯域幅を半分にするには厚さを何倍にすればよいか．\n\\item スペクトル強度が一様な白色光を入れたとき，透過する全エネルギーは，$\\lambda_0$ での透過率をもつ幅 $\\Delta\\lambda_{\\rm eq}$ の矩形フィルターと等しい．等価帯域幅 $\\Delta\\lambda_{\\rm eq}$ を求めよ（$\\alpha d\\gg1$ とする）．\n\\item $\\lambda_0=550\\ \\mathrm{nm}$，$\\alpha=500\\ \\mathrm{cm^{-1}}$，$d=2.0\\ \\mathrm{mm}$，$\\eta=2$ のとき，$\\Delta\\lambda$ と $\\Delta\\lambda_{\\rm eq}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta\\lambda=2\\lambda_0\\sqrt{\\dfrac{\\ln\\eta}{\\alpha d}}$，4倍　(2) $\\Delta\\lambda_{\\rm eq}=\\lambda_0\\sqrt{\\pi/(\\alpha d)}$　(3) $\\Delta\\lambda=92\\ \\mathrm{nm}$，$\\Delta\\lambda_{\\rm eq}=97\\ \\mathrm{nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "透過率は $\\tau(\\lambda)=(1-\\rho)^2\\exp\\left[-\\alpha d(1-\\lambda/\\lambda_0)^2\\right]$ で，$\\lambda_0$ を中心とするガウス型．\n\n(1) $\\tau(\\lambda_0)/\\tau(\\lambda)=\\eta$ より $\\alpha d(1-\\lambda/\\lambda_0)^2=\\ln\\eta$，$|\\lambda-\\lambda_0|=\\lambda_0\\sqrt{\\ln\\eta/(\\alpha d)}$．\n\\[\\Delta\\lambda=2\\lambda_0\\sqrt{\\frac{\\ln\\eta}{\\alpha d}}.\\]\n$\\Delta\\lambda\\propto d^{-1/2}$ なので，半分にするには厚さを4倍にする．\n\n(2) $\\alpha d\\gg1$ なら積分範囲を $\\pm\\infty$ に広げてよく，\n\\[\\int\\exp\\left[-\\alpha d\\left(\\frac{\\lambda-\\lambda_0}{\\lambda_0}\\right)^2\\right]d\\lambda=\\lambda_0\\sqrt{\\frac{\\pi}{\\alpha d}}\\equiv\\Delta\\lambda_{\\rm eq}.\\]\n$\\eta=2$ のとき $\\Delta\\lambda_{\\rm eq}/\\Delta\\lambda=\\sqrt\\pi/(2\\sqrt{\\ln2})=1.06$ で厚さによらない．\n\n(3) $\\alpha d=100$．$\\Delta\\lambda=2\\times550\\sqrt{0.693/100}=92\\ \\mathrm{nm}$，$\\Delta\\lambda_{\\rm eq}=550\\sqrt{\\pi/100}=97\\ \\mathrm{nm}$．"
+   }
+  ],
+  "idea": {
+   "tex": "吸収係数が中心波長のまわりで2次なら透過スペクトルはガウス型となり，帯域幅は厚さの $-1/2$ 乗に比例する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta\\lambda_{\\rm eq}$：λ_0 sqrt(pi /(α d))\n(3) $\\Delta\\lambda$ [nm]：92 ; $\\Delta\\lambda_{\\rm eq}$ [nm]：97"
+  },
+  "methods": [],
+  "tags": [
+   "光学フィルター",
+   "吸収係数",
+   "通過帯域",
+   "ガウス型"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 1,
+  "minutes": 15,
+  "theme": "半価層数と逆2乗則の組み合わせ",
+  "topic": "半価層数と逆2乗則の組み合わせ",
+  "statement": {
+   "tex": "点状のγ線源から距離 $r$ の位置で強度を測る．遮蔽材は細いビーム近似で扱い，散乱による再生成（ビルドアップ）は無視する．\n\\begin{enumerate}\n\\item 強度を $1/\\eta$ にする遮蔽は半価層何枚分か．1/10 価層の厚さは半価層の何倍か．\n\\item 検出位置を $r$ から $2r$ に移すことは，半価層何枚分の遮蔽に相当するか．\n\\item 線源から $1.0\\ \\mathrm{m}$ の位置での強度を $1/500$ にしたい．位置を $4.0\\ \\mathrm{m}$ まで離せるとき，さらに必要な鉛（半価層 $1.2\\ \\mathrm{cm}$）の厚さを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\log_2\\eta$ 枚，$3.32$ 倍　(2) 2枚分　(3) 約 $6.0\\ \\mathrm{cm}$（半価層 $4.97$ 枚）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 半価層 $N$ 枚で $2^{-N}$ なので $2^{N}=\\eta$，$N=\\log_2\\eta=\\ln\\eta/\\ln2$．1/10価層は $\\log_210=3.32$ 枚分．\n\n(2) 点源の強度は $1/r^2$ に比例するので，$r\\to2r$ で $1/4=2^{-2}$：半価層2枚分．\n\n(3) $4.0\\ \\mathrm{m}$ に離すと $1/16$ になる．残りの減衰は $500/16=31.25$ 倍で，$N=\\log_231.25=4.97$．厚さ $4.97\\times1.2\\ \\mathrm{cm}=6.0\\ \\mathrm{cm}$．"
+   }
+  ],
+  "idea": {
+   "tex": "減衰の度合いを半価層の枚数 $\\log_2\\eta$ で数えると，距離の倍増（逆2乗則）も「半価層2枚」として同じ物差しで扱える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) [cm]：≈6.0"
+  },
+  "methods": [],
+  "tags": [
+   "半価層",
+   "1/10価層",
+   "逆2乗則",
+   "遮蔽"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "WV-05-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -392,6 +637,846 @@
   }
  },
  {
+  "id": "WV-05-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 25,
+  "theme": "並列共振回路を並べた伝送線路の通過帯域",
+  "topic": "並列共振回路を並べた伝送線路の通過帯域",
+  "statement": {
+   "tex": "無限に続く梯子型の回路がある．各区間は，直列に入ったインダクタンス $L$ のコイルと，次の節点から接地へつながる「インダクタンス $L_2$ のコイルと静電容量 $C$ のコンデンサーを並列にした枝」でできている．区間の長さを $a$ とし，節点の電圧が $V_n\\propto e^{i(\\kappa na-\\omega t)}$ の形で伝わる波を考える．\n\\begin{enumerate}\n\\item 分散関係 $\\cos\\kappa a$ を $\\omega$ の関数として求めよ．\n\\item 波が減衰せずに伝わる角振動数の範囲（通過帯域）を求めよ．\n\\item $\\kappa a=\\pi/2$ となる角振動数と，そのときの群速度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\cos\\kappa a=1+\\dfrac{L}{2L_2}-\\dfrac{\\omega^2LC}{2}$　(2) $\\dfrac{1}{\\sqrt{L_2C}}<\\omega<\\sqrt{\\dfrac{1}{L_2C}+\\dfrac{4}{LC}}$　(3) $\\omega=\\sqrt{\\dfrac{2}{LC}+\\dfrac{1}{L_2C}}$，$v_g=\\dfrac{a}{LC\\omega}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 直列のインピーダンスを $Z=-i\\omega L$（$e^{-i\\omega t}$ の規約），並列の枝のアドミタンスを $Y=-i\\omega C+\\dfrac{1}{-i\\omega L_2}=-i\\left(\\omega C-\\dfrac1{\\omega L_2}\\right)$ とする．節点 $n$ でのキルヒホッフの法則は\n\\[\n\\frac{V_{n-1}-V_n}{Z}-\\frac{V_n-V_{n+1}}{Z}=YV_n\n\\quad\\Longrightarrow\\quad\n2\\cos\\kappa a-2=ZY .\n\\]\n$ZY=-\\omega L\\left(\\omega C-\\dfrac{1}{\\omega L_2}\\right)=-\\omega^2LC+\\dfrac{L}{L_2}$ なので\n\\[\n\\boldsymbol{\\cos\\kappa a=1+\\frac{L}{2L_2}-\\frac{\\omega^2LC}{2}}.\n\\]\n\n(2) 減衰しない（$\\kappa$ が実数）条件は $-1\\leqq\\cos\\kappa a\\leqq1$．右側の不等式から $\\omega^2\\geqq\\dfrac{1}{L_2C}$，左側から $\\omega^2\\leqq\\dfrac{4}{LC}+\\dfrac{1}{L_2C}$．よって\n\\[\n\\boldsymbol{\\frac{1}{\\sqrt{L_2C}}<\\omega<\\sqrt{\\frac{1}{L_2C}+\\frac{4}{LC}}}.\n\\]\n並列の枝は低い周波数でコイル $L_2$ により短絡され，波が通らない．ただの $L$–$C$ 梯子（低域通過）と違い，帯域通過になる．\n\n(3) $\\cos\\kappa a=0$ より $\\boldsymbol{\\omega^2=\\dfrac{2}{LC}+\\dfrac{1}{L_2C}}$．分散関係を微分して $-a\\sin\\kappa a\\,d\\kappa=-\\omega LC\\,d\\omega$，\n\\[\nv_g=\\frac{d\\omega}{d\\kappa}=\\frac{a\\sin\\kappa a}{LC\\,\\omega}=\\boldsymbol{\\frac{a}{LC\\,\\omega}}\\quad(\\sin\\kappa a=1).\n\\]"
+   }
+  ],
+  "idea": {
+   "tex": "周期的な梯子回路の分散関係は $2(\\cos\\kappa a-1)=ZY$ で，枝の素子で帯域の形が決まる．並列共振の枝を入れると，低周波側に $1/\\sqrt{L_2C}$ の遮断ができて帯域通過になる．原題は単純な梯子の遮断周波数を問う問題で，捻りでは枝を並列共振回路にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\cos\\kappa a$：1+((L)/(2 L_2))-((ω ^(2) L C)/(2))\n(2) 記述\n(3) $\\omega$：sqrt(((2)/(L C))+((1)/(L_2 C))) ; $v_g$：((a)/(L C ω))"
+  },
+  "methods": [],
+  "tags": [
+   "集中定数回路",
+   "分散関係",
+   "通過帯域",
+   "群速度"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "パルサー信号の分散遅延",
+  "topic": "パルサー信号の分散遅延",
+  "statement": {
+   "tex": "電子密度 $n_0$ の希薄プラズマ中を角振動数 $\\omega$ の電磁波が進む．イオンの影響は無視する．\n\\begin{enumerate}\n\\item 誘電率 $\\varepsilon(\\omega)$ と分散関係 $\\omega^2=\\omega_p^2+c^2k^2$ を導き，位相速度 $v$ と群速度 $u$ が $uv=c^2$ を満たすことを示せ．\n\\item 距離 $L$ 離れたパルサーから，周波数 $f_1$ と $f_2$ のパルスが同時に出た．到着時間差 $\\Delta t$ を $\\omega_p\\ll\\omega$ として求めよ．\n\\item 星間空間の電子密度を $3.0\\times10^{4}\\ \\mathrm{m^{-3}}$，距離を $L=3.1\\times10^{19}\\ \\mathrm m$（$1\\ \\mathrm{kpc}$）とする．$f_1=400\\ \\mathrm{MHz}$，$f_2=1400\\ \\mathrm{MHz}$ のときの $\\Delta t$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\varepsilon=1-\\omega_p^2/\\omega^2$（$\\omega_p^2=n_0e^2/\\varepsilon_0m$），$v=c/\\sqrt{\\varepsilon}$，$u=c\\sqrt{\\varepsilon}$　(2) $\\Delta t=\\dfrac{e^2n_0L}{8\\pi^2\\varepsilon_0mc}\\left(\\dfrac1{f_1^2}-\\dfrac1{f_2^2}\\right)$（低い周波数が遅れる）　(3) $\\Delta t\\approx0.71\\ \\mathrm s$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 自由電子は $m\\ddot x=-eE$ より $x=eE/(m\\omega^2)$ と振動し，分極は $P=-n_0ex=-n_0e^2E/(m\\omega^2)$．よって\n\\[ \\varepsilon=1-\\frac{\\omega_p^2}{\\omega^2},\\qquad \\omega_p^2=\\frac{n_0e^2}{\\varepsilon_0m}. \\]\n$k=\\sqrt\\varepsilon\\,\\omega/c$ から $\\omega^2=\\omega_p^2+c^2k^2$．$v=\\omega/k=c/\\sqrt\\varepsilon$，$u=d\\omega/dk=c^2k/\\omega=c\\sqrt\\varepsilon$，ゆえに $uv=c^2$．\n\n(2) 到着時間は $t=L/u=\\dfrac{L}{c}\\left(1-\\dfrac{\\omega_p^2}{\\omega^2}\\right)^{-1/2}\\approx\\dfrac Lc\\left(1+\\dfrac{\\omega_p^2}{2\\omega^2}\\right)$．\n\\[ \\Delta t=t_1-t_2=\\frac{L\\omega_p^2}{2c}\\left(\\frac1{\\omega_1^2}-\\frac1{\\omega_2^2}\\right)=\\frac{e^2n_0L}{8\\pi^2\\varepsilon_0mc}\\left(\\frac1{f_1^2}-\\frac1{f_2^2}\\right). \\]\n\n(3) 係数は $\\dfrac{(1.60\\times10^{-19})^2\\times3.0\\times10^4\\times3.1\\times10^{19}}{8\\pi^2\\times8.85\\times10^{-12}\\times9.11\\times10^{-31}\\times3.0\\times10^8}\\approx1.24\\times10^{17}\\ \\mathrm{s\\cdot Hz^2}$．$1/f_1^2-1/f_2^2=6.25\\times10^{-18}-5.1\\times10^{-19}=5.74\\times10^{-18}\\ \\mathrm{Hz^{-2}}$ だから，$\\Delta t\\approx0.71\\ \\mathrm s$．\n逆に，$\\Delta t$ の周波数依存性を測ると電子の柱密度 $\\int n_0\\,dl$（分散量度）がわかり，パルサーまでの距離の推定に使われる．"
+   }
+  ],
+  "idea": {
+   "tex": "プラズマ中の群速度は $c\\sqrt{1-\\omega_p^2/\\omega^2}$ で，低い周波数ほど遅い．到着遅延は $f^{-2}$ に比例し，その係数から視線方向の電子の柱密度がわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta t$：((e ^(2) n_0 L)/(8 pi ^(2) ε_0 m c))(((1)/(f_1 ^(2)))-((1)/(f_2 ^(2))))\n(3) $\\Delta t$ [s]：≈0.71"
+  },
+  "methods": [],
+  "tags": [
+   "プラズマ振動数",
+   "群速度",
+   "位相速度",
+   "分散量度",
+   "パルサー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "電離層の臨界周波数と斜め入射の最高使用周波数",
+  "topic": "電離層の臨界周波数と斜め入射の最高使用周波数",
+  "statement": {
+   "tex": "電離層を，自由電子だけを含む水平な層状プラズマとみなす（地球の曲率と磁場は無視）．電子密度は高さとともに増え，最大値 $N_{\\max}$ に達する．\n\\begin{enumerate}\n\\item 真上に向けた電波の観測から，$9.0\\ \\mathrm{MHz}$ 以下の電波は反射され，それより高い周波数は突き抜けることがわかった．$N_{\\max}$ を求めよ．\n\\item 鉛直から $60^\\circ$ の角で電離層に入射する電波が反射されて戻ってくる最高の周波数を求めよ．\n\\item 周波数 $100\\ \\mathrm{MHz}$ の電波に対する，最大密度の高さでの屈折率を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N_{\\max}=\\dfrac{4\\pi^2\\varepsilon_0mf_c^2}{e^2}\\approx1.0\\times10^{12}\\ \\mathrm{m^{-3}}$　(2) $f_c/\\cos60^\\circ=18\\ \\mathrm{MHz}$　(3) $n\\approx0.996$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 屈折率は $n^2=1-f_p^2/f^2$，$f_p^2=\\dfrac{Ne^2}{4\\pi^2\\varepsilon_0m}$．鉛直入射の電波は $n=0$，すなわち $f=f_p(N)$ となる高さで反射される．層の最大密度で $f_p=f_c=9.0\\ \\mathrm{MHz}$ だから\n\\[ N_{\\max}=\\frac{4\\pi^2\\varepsilon_0mf_c^2}{e^2}=\\frac{4\\pi^2\\times8.85\\times10^{-12}\\times9.11\\times10^{-31}\\times(9.0\\times10^6)^2}{(1.60\\times10^{-19})^2}\\approx1.0\\times10^{12}\\ \\mathrm{m^{-3}}. \\]\n\n(2) 水平な層では，スネルの法則 $n(z)\\sin\\theta(z)=\\sin\\theta_0$ が成り立つ．電波が折り返す（$\\theta=90^\\circ$）のは $n=\\sin\\theta_0$，すなわち $f_p^2=f^2\\cos^2\\theta_0$ となる高さである．これが層内で実現する条件は $f\\cos\\theta_0\\le f_c$ なので，\n\\[ f_{\\max}=\\frac{f_c}{\\cos\\theta_0}=\\frac{9.0}{0.5}=18\\ \\mathrm{MHz}. \\]\n（セカント則．斜めに入射させると，鉛直方向より高い周波数でも遠方へ届く．）\n\n(3) $n=\\sqrt{1-(9.0/100)^2}\\approx0.996$．FM・テレビ帯の電波は電離層をほとんど素通りする．"
+   }
+  ],
+  "idea": {
+   "tex": "層状プラズマでは $n\\sin\\theta$ が保存する．斜め入射の波は $n=\\sin\\theta_0$ の高さで折り返すので，反射される最高周波数は $f_c/\\cos\\theta_0$ に上がる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N_{\\max}$ [m⁻³]：≈1.0e12\n(2) 記述\n(3) $n$：≈0.996"
+  },
+  "methods": [],
+  "tags": [
+   "電離層",
+   "プラズマ振動数",
+   "臨界周波数",
+   "セカント則",
+   "全反射"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "X線の全外部反射の臨界角",
+  "topic": "X線の全外部反射の臨界角",
+  "statement": {
+   "tex": "硬 X 線に対しては，物質中の電子をすべて自由電子とみなせる．\n\\begin{enumerate}\n\\item 電子密度 $n_e$ の物質の，波長 $\\lambda$ の X 線に対する屈折率を $n=1-\\delta$ と書くとき，$\\delta$ を古典電子半径 $r_e=\\dfrac{e^2}{4\\pi\\varepsilon_0mc^2}$ を用いて表せ．\n\\item 真空から物質表面すれすれに X 線を入射させると，表面となす角（視射角）がある値 $\\theta_c$ 以下では全反射が起こる．$\\theta_c$ を $\\delta$ で表せ．\n\\item 密度 $2.2\\ \\mathrm{g/cm^3}$ のグラファイト（炭素．原子番号 6，モル質量 $12\\ \\mathrm{g/mol}$）について，波長 $0.154\\ \\mathrm{nm}$ の X 線に対する $\\delta$ と $\\theta_c$（度）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\delta=\\dfrac{n_er_e\\lambda^2}{2\\pi}$　(2) $\\theta_c=\\sqrt{2\\delta}$　(3) $\\delta\\approx7.0\\times10^{-6}$，$\\theta_c\\approx3.8\\times10^{-3}\\ \\mathrm{rad}\\approx0.22^\\circ$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 自由電子の誘電率は $\\varepsilon=1-\\omega_p^2/\\omega^2$．$\\omega_p\\ll\\omega$ なので\n\\[ n\\approx1-\\frac{\\omega_p^2}{2\\omega^2}=1-\\frac{n_ee^2}{2\\varepsilon_0m}\\cdot\\frac{\\lambda^2}{4\\pi^2c^2}=1-\\frac{n_er_e\\lambda^2}{2\\pi}. \\]\n\n(2) $n<1$ なので，真空側から入ると「外部」全反射が起こる．視射角 $\\theta$（入射角 $90^\\circ-\\theta$）に対し，屈折角が $90^\\circ$ になる条件は $\\cos\\theta_c=n=1-\\delta$．$\\theta_c$ は小さいので $1-\\theta_c^2/2=1-\\delta$，$\\theta_c=\\sqrt{2\\delta}$．\n\n(3) 電子密度は\n\\[ n_e=6\\times\\frac{2.2\\times10^{6}\\ \\mathrm{g/m^3}}{12\\ \\mathrm{g/mol}}\\times6.02\\times10^{23}\\approx6.6\\times10^{29}\\ \\mathrm{m^{-3}}. \\]\n\\[ \\delta=\\frac{6.6\\times10^{29}\\times2.82\\times10^{-15}\\times(1.54\\times10^{-10})^2}{2\\pi}\\approx7.0\\times10^{-6}, \\]\n$\\theta_c=\\sqrt{2\\times7.0\\times10^{-6}}\\approx3.75\\times10^{-3}\\ \\mathrm{rad}\\approx0.22^\\circ$．\nX 線の鏡が，すれすれ入射（斜入射）でしか使えないのはこのためである．"
+   }
+  ],
+  "idea": {
+   "tex": "X線の領域では $n$ はわずかに $1$ より小さい．そのため真空側からごく浅い角で入射させると全反射が起こり，臨界角は $\\sqrt{2\\delta}\\propto\\lambda\\sqrt{n_e}$ となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\delta$：((n_e r_e λ ^(2))/(2 pi))\n(2) $\\theta_c$：sqrt(2 δ)\n(3) $\\delta$：≈7.0e-6 ; $\\theta_c$ [rad]：≈3.8e-3"
+  },
+  "methods": [],
+  "tags": [
+   "X線",
+   "屈折率",
+   "全外部反射",
+   "古典電子半径",
+   "プラズマ振動数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "複素屈折率と負の誘電率：吸収とエバネッセント波",
+  "topic": "複素屈折率と負の誘電率：吸収とエバネッセント波",
+  "statement": {
+   "tex": "平面波を $E=E_0e^{i(kx-\\omega t)}$（実部をとる），$k=n'\\omega/c=2\\pi n'/\\lambda_0$ と書く．$\\lambda_0$ は真空中の波長である．\n\\begin{enumerate}\n\\item $n'=n+i\\kappa$（$n,\\kappa>0$）のとき，波を実数形で書き，その物理的意味を述べよ．$\\lambda_0=500\\ \\mathrm{nm}$，$\\kappa=0.010$ のとき，強度が $1/e$ になる距離を求めよ．\n\\item ナトリウムの伝導電子を自由電子気体とみなすと $\\varepsilon=1-(\\lambda_0/\\lambda_p)^2$ で，$\\lambda_p=210\\ \\mathrm{nm}$ である．$\\lambda_0=600\\ \\mathrm{nm}$ の光に対する $n'$ を求め，金属内部での振幅が $1/e$ になる深さを求めよ．\n\\item (2) の場合，真空から垂直入射したときの反射率を求めよ．金属内部で吸収がないのに光が入っていかないことと，どう関係するか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E=E_0e^{-2\\pi\\kappa x/\\lambda_0}\\cos(2\\pi nx/\\lambda_0-\\omega t)$：減衰する進行波（吸収），強度の $1/e$ 長さ $\\lambda_0/(4\\pi\\kappa)\\approx4.0\\ \\mu\\mathrm m$　(2) $n'=i\\kappa$，$\\kappa\\approx2.68$，深さ $\\lambda_0/(2\\pi\\kappa)\\approx36\\ \\mathrm{nm}$　(3) $R=1$（全反射）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $k=2\\pi(n+i\\kappa)/\\lambda_0$ を代入すると\n\\[ E=E_0e^{-2\\pi\\kappa x/\\lambda_0}\\cos\\left(\\frac{2\\pi nx}{\\lambda_0}-\\omega t\\right). \\]\n位相速度 $c/n$ で進みながら，振幅が指数関数的に減る波で，媒質による吸収を表す．強度は $e^{-4\\pi\\kappa x/\\lambda_0}$ で減るので，$1/e$ になる距離は\n\\[ \\frac{\\lambda_0}{4\\pi\\kappa}=\\frac{500\\times10^{-9}}{4\\pi\\times0.010}\\approx4.0\\times10^{-6}\\ \\mathrm m. \\]\n\n(2) $\\varepsilon=1-(600/210)^2=-7.16<0$ なので $n'=\\sqrt\\varepsilon=i\\kappa$，$\\kappa=\\sqrt{7.16}\\approx2.68$．このとき $E=E_0e^{-2\\pi\\kappa x/\\lambda_0}\\cos\\omega t$ となり，各点で同じ位相で振動する．エネルギーを運ばない減衰波（エバネッセント波）である．振幅が $1/e$ になる深さは\n\\[ \\frac{\\lambda_0}{2\\pi\\kappa}=\\frac{600\\ \\mathrm{nm}}{2\\pi\\times2.68}\\approx36\\ \\mathrm{nm}. \\]\n\n(3) 反射係数は $r=\\dfrac{1-n'}{1+n'}=\\dfrac{1-i\\kappa}{1+i\\kappa}$．分子と分母は互いに複素共役なので $|r|=1$，$R=1$．\n$\\varepsilon<0$ の媒質では電場と磁場の位相が $90^\\circ$ ずれ，時間平均のポインティングベクトルが $0$ になる．そのため，吸収がなくても光は内部へエネルギーを運べず，すべて反射される．入射光は表面近くに浸み込むだけである．アルカリ金属が $\\lambda_0<\\lambda_p$（紫外）で透明になるのは，$\\varepsilon>0$ に変わるためである．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\mathrm{Im}\\,n'$ は振幅の減衰を表す．$n'$ が実部をもてば吸収を伴う進行波，純虚数なら（$\\varepsilon<0$）エネルギーを運ばないエバネッセント波になり，光は全反射される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $R$：1"
+  },
+  "methods": [],
+  "tags": [
+   "複素屈折率",
+   "吸収",
+   "エバネッセント波",
+   "プラズマ周波数",
+   "金属の反射"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "レイリーの式と群速度一定の分散則",
+  "topic": "レイリーの式と群速度一定の分散則",
+  "statement": {
+   "tex": "位相速度 $v$ が波長 $\\lambda$（媒質中の波長）の関数として $v(\\lambda)$ で与えられているとする．\n\\begin{enumerate}\n\\item 群速度 $u=d\\omega/dk$ がレイリーの式 $u=v-\\lambda\\dfrac{dv}{d\\lambda}$ で与えられることを示せ．また，$v(\\lambda)$ のグラフで点 $\\lambda$ における接線が縦軸（$\\lambda=0$）を切る値が $u$ に等しいことを示せ．\n\\item 群速度がすべての波長で一定値 $u_0$ となる分散則 $v(\\lambda)$ をすべて求めよ．また，$u=v/2$ がすべての波長で成り立つ分散則を求めよ．\n\\item 透明なガラスの屈折率が，真空中の波長 $\\lambda_0$ についてコーシーの式 $n=A+B/\\lambda_0^2$ で与えられる．群屈折率 $n_g=c/u$ を求め，$A=1.500$，$B=4.0\\times10^{3}\\ \\mathrm{nm^2}$，$\\lambda_0=500\\ \\mathrm{nm}$ での $n$，$n_g$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $v=u_0+C\\lambda$（$C$ は定数），$u=v/2$ なら $v=C\\sqrt\\lambda$（深水波型）　(3) $n_g=A+3B/\\lambda_0^2$，$n=1.516$，$n_g=1.548$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\omega=vk$ より $u=\\dfrac{d\\omega}{dk}=v+k\\dfrac{dv}{dk}$．$k=2\\pi/\\lambda$ から $\\dfrac{dk}{d\\lambda}=-\\dfrac{2\\pi}{\\lambda^2}$ なので $k\\dfrac{dv}{dk}=k\\dfrac{dv}{d\\lambda}\\cdot\\dfrac{d\\lambda}{dk}=-\\lambda\\dfrac{dv}{d\\lambda}$．よって $u=v-\\lambda\\,dv/d\\lambda$．\n点 $(\\lambda_1,v_1)$ での接線は $v=v_1+v'(\\lambda_1)(\\lambda-\\lambda_1)$ で，$\\lambda=0$ での値は $v_1-\\lambda_1v'(\\lambda_1)=u$ である．\n\n(2) $v-\\lambda v'=u_0$ は 1 階線形方程式で，$\\dfrac{d}{d\\lambda}\\left(\\dfrac v\\lambda\\right)=-\\dfrac{u_0}{\\lambda^2}$ と書ける．積分して $v/\\lambda=u_0/\\lambda+C$，すなわち $v=u_0+C\\lambda$．グラフでは，すべての接線が縦軸の同じ点 $u_0$ を通る直線であることに対応する．\n$u=v/2$ なら $\\lambda v'=v/2$ より $v=C\\sqrt\\lambda$．深水の重力波 $v=\\sqrt{g\\lambda/2\\pi}$ がこれに当たる．\n\n(3) $v=c/n$，$\\lambda=\\lambda_0/n$ のままでは扱いにくいので，$\\omega=2\\pi c/\\lambda_0$，$k=2\\pi n/\\lambda_0$ から直接計算する．\n\\[ \\frac{c}{u}=c\\frac{dk}{d\\omega}=\\frac{d(n/\\lambda_0)}{d(1/\\lambda_0)}=n-\\lambda_0\\frac{dn}{d\\lambda_0}. \\]\nコーシーの式では $\\lambda_0\\,dn/d\\lambda_0=-2B/\\lambda_0^2$ なので $n_g=A+3B/\\lambda_0^2$．\n数値：$B/\\lambda_0^2=4000/250000=0.016$ より $n=1.516$，$n_g=1.548$．群速度は位相速度より約 $2\\%$ 遅い．"
+   }
+  ],
+  "idea": {
+   "tex": "群速度は $v(\\lambda)$ のグラフの接線の切片である．$u$ が一定になるのは $v$ が $\\lambda$ の 1 次関数のときに限られる．真空中の波長で書くと，群屈折率は $n-\\lambda_0\\,dn/d\\lambda_0$ となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "群速度",
+   "位相速度",
+   "レイリーの式",
+   "分散",
+   "群屈折率",
+   "コーシーの式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "uv=c²の媒質とパルサー分散遅延",
+  "topic": "uv=c²の媒質とパルサー分散遅延",
+  "statement": {
+   "tex": "ある媒質中の電磁波の群速度 $u$ と位相速度 $v$ が，すべての周波数で $uv=c^2$（$c$ は真空中の光速）を満たしている．\n\\begin{enumerate}\n\\item 誘電率 $\\varepsilon(\\omega)$ の一般形を求めよ．ただし $\\omega\\to\\infty$ で $\\varepsilon\\to1$ とする．\n\\item この媒質が自由電子密度 $n_e$ の希薄プラズマ（$\\varepsilon=1-\\omega_p^2/\\omega^2$，$\\omega_p^2=n_ee^2/(\\varepsilon_0m_e)$）であるとする．距離 $L$ を伝わるパルスの到着時刻は $L/u$ である．$\\omega\\gg\\omega_p$ のとき，角振動数 $\\omega_1<\\omega_2$ の2成分の到着時刻差 $\\Delta t$ を $\\omega_p^2$ の1次まで求めよ．\n\\item 星間空間（$n_e=0.030\\ \\mathrm{cm^{-3}}$）を $L=1.0\\ \\mathrm{kpc}=3.1\\times10^{19}\\ \\mathrm{m}$ 伝わってきたパルサーのパルスについて，$400\\ \\mathrm{MHz}$ 成分は $1400\\ \\mathrm{MHz}$ 成分より何秒遅れて届くか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\varepsilon=1-A/\\omega^2$（$A$ は定数）　(2) $\\Delta t=\\dfrac{L\\omega_p^2}{2c}\\left(\\dfrac1{\\omega_1^2}-\\dfrac1{\\omega_2^2}\\right)$　(3) 約 $0.71\\ \\mathrm{s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $k=n\\omega/c$，$v=\\omega/k$，$u=d\\omega/dk$．$uv=c^2$ は\n\\[\\frac{d\\omega}{dk}\\frac{\\omega}{k}=c^2\\ \\Longrightarrow\\ \\omega\\,d\\omega=c^2k\\,dk\\ \\Longrightarrow\\ \\omega^2=c^2k^2+A.\\]\nよって $\\varepsilon=n^2=\\dfrac{c^2k^2}{\\omega^2}=1-\\dfrac{A}{\\omega^2}$．（$\\omega\\to\\infty$ で 1 になる条件は自動的に満たされる．）$A=\\omega_p^2>0$ がプラズマに当たる．\n\n(2) $u=c^2/v=c\\,n=c\\sqrt{1-\\omega_p^2/\\omega^2}\\simeq c\\left(1-\\dfrac{\\omega_p^2}{2\\omega^2}\\right)$ より\n\\[t(\\omega)=\\frac{L}{u}\\simeq\\frac{L}{c}\\left(1+\\frac{\\omega_p^2}{2\\omega^2}\\right),\\qquad \\Delta t=t(\\omega_1)-t(\\omega_2)=\\frac{L\\omega_p^2}{2c}\\left(\\frac1{\\omega_1^2}-\\frac1{\\omega_2^2}\\right).\\]\n低周波ほど遅れる（$\\Delta t\\propto n_eL$：分散量度）．\n\n(3) $\\omega_p^2=\\dfrac{(3.0\\times10^4)(1.60\\times10^{-19})^2}{(8.85\\times10^{-12})(9.11\\times10^{-31})}=9.5\\times10^{7}\\ \\mathrm{s^{-2}}$．$\\omega_1=2\\pi\\times4.0\\times10^8$，$\\omega_2=2\\pi\\times1.4\\times10^9\\ \\mathrm{s^{-1}}$ を代入して\n\\[\\Delta t=\\frac{(3.1\\times10^{19})(9.5\\times10^7)}{2(3.0\\times10^8)}\\left(1.58\\times10^{-19}-1.29\\times10^{-20}\\right)\\approx0.71\\ \\mathrm{s}.\\]"
+   }
+  ],
+  "idea": {
+   "tex": "$uv=c^2$ は $\\omega^2-c^2k^2=$ 一定という「質量をもつ粒子型」分散と同値で，プラズマの分散そのもの．群遅延の周波数依存から電子柱密度がわかる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta t$：((L ω_p ^(2))/(2 c))(((1)/(ω_1 ^(2)))-((1)/(ω_2 ^(2))))\n(3) [s]：≈0.71"
+  },
+  "methods": [],
+  "tags": [
+   "群速度",
+   "プラズマ振動数",
+   "分散量度",
+   "パルサー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ファラデー回転と吸収の最適長",
+  "topic": "ファラデー回転と吸収の最適長",
+  "statement": {
+   "tex": "直交させた2枚の偏光子の間に，長さ $l$ の液体セルを置き，光軸方向に磁束密度 $B=0.50\\ \\mathrm{T}$ をかける．液体のヴェルデ定数は $V=40\\ \\mathrm{rad/(T\\,m)}$（偏光面の回転角は $\\theta=VBl$），線吸収係数は $\\kappa=5.0\\ \\mathrm{m^{-1}}$ である．強度 $I_0$ の自然光を入射させる．偏光子・セル窓での反射損失は無視する．\n\\begin{enumerate}\n\\item 透過光の強度 $I(l)$ を求めよ．\n\\item $I$ を最大にするセル長 $l$ が満たす条件を導き，その $l$ と $I/I_0$ を求めよ．\n\\item 吸収が無視できる極限での最適長と比べ，吸収があると最適長は長くなるか短くなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $I=\\tfrac12I_0e^{-\\kappa l}\\sin^2(VBl)$　(2) $\\tan(VBl)=2VB/\\kappa$，$l=7.2\\ \\mathrm{cm}$，$I/I_0=0.34$　(3) 短くなる（$\\pi/(2VB)=7.9\\ \\mathrm{cm}$ より短い）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 第1偏光子を出た光は $I_0/2$．セル中で $e^{-\\kappa l}$ に減衰し，偏光面が $\\theta=VBl$ 回転する．直交した第2偏光子を通る成分は $\\sin\\theta$ 倍の振幅なので\n\\[I=\\tfrac12I_0e^{-\\kappa l}\\sin^2(\\varphi l),\\qquad \\varphi\\equiv VB=20\\ \\mathrm{rad/m}.\\]\n\n(2) $\\dfrac{dI}{dl}\\propto e^{-\\kappa l}\\sin(\\varphi l)\\{2\\varphi\\cos(\\varphi l)-\\kappa\\sin(\\varphi l)\\}=0$ より\n\\[\\tan(\\varphi l)=\\frac{2\\varphi}{\\kappa}=8.0,\\qquad l=\\frac{\\arctan 8.0}{\\varphi}=\\frac{1.446}{20}\\ \\mathrm{m}=7.2\\ \\mathrm{cm}.\\]\nこのとき $\\sin^2(\\varphi l)=\\dfrac{64}{65}$，$I/I_0=\\tfrac12e^{-0.362}\\cdot\\dfrac{64}{65}=0.34$．\n\n(3) 吸収がなければ $\\varphi l=\\pi/2$，$l=\\pi/(2\\varphi)=7.9\\ \\mathrm{cm}$ が最適．吸収があると $\\varphi l=\\arctan(2\\varphi/\\kappa)<\\pi/2$ となり，最適長は短くなる（回転を少し犠牲にして吸収を減らすのが得）．"
+   }
+  ],
+  "idea": {
+   "tex": "回転による透過増加 $\\sin^2(\\varphi l)$ と吸収 $e^{-\\kappa l}$ の競合で最適長が決まる：$\\tan(\\varphi l)=2\\varphi/\\kappa$．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ファラデー効果",
+   "ヴェルデ定数",
+   "吸収",
+   "最適化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "多重反射を含む板の山の透過率",
+  "topic": "多重反射を含む板の山の透過率",
+  "statement": {
+   "tex": "各面の反射率が $\\rho$ で吸収のない平行平板がある．板内外での多重反射をすべて考慮し，干渉は起こらない（強度を足し合わせる）とする．\n\\begin{enumerate}\n\\item 1枚の板の透過率 $T_1$ が $\\dfrac{1-\\rho}{1+\\rho}$ となることを示せ．\n\\item 同じ板を $N$ 枚，空気層をはさんで平行に重ねたとき，板どうしの間の多重反射もすべて考慮した透過率が\n\\[T_N=\\frac{1-\\rho}{1+(2N-1)\\rho}\\]\nとなることを示せ．\n\\item $\\rho=0.040$，$N=10$ のとき $T_N$ を求め，多重反射を無視した見積もり $(1-\\rho)^{2N}$ と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) 証明（解説参照）　(3) $T_{10}=0.545$（多重反射無視では $0.442$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 透過光は $(1-\\rho)^2(1+\\rho^2+\\rho^4+\\cdots)=\\dfrac{(1-\\rho)^2}{1-\\rho^2}=\\dfrac{1-\\rho}{1+\\rho}$．\n\n(2) 吸収のない系では反射率 $R$ と透過率 $T$ が $R+T=1$ を満たす．透過率 $T_a,T_b$ の2要素を（インコヒーレントに）重ねると，間での往復を足し合わせて\n\\[T=\\frac{T_aT_b}{1-R_aR_b}=\\frac{T_aT_b}{T_a+T_b-T_aT_b}\\quad\\Longrightarrow\\quad \\frac1T-1=\\left(\\frac1{T_a}-1\\right)+\\left(\\frac1{T_b}-1\\right).\\]\nすなわち $\\dfrac1T-1$ が加算的である．1つの面では $\\dfrac1{1-\\rho}-1=\\dfrac{\\rho}{1-\\rho}$ で，$N$ 枚の板は $2N$ 面なので\n\\[\\frac1{T_N}-1=\\frac{2N\\rho}{1-\\rho}\\ \\Longrightarrow\\ T_N=\\frac{1-\\rho}{1-\\rho+2N\\rho}=\\frac{1-\\rho}{1+(2N-1)\\rho}.\\]\n$N=1$ で (1) に一致する．\n\n(3) $T_{10}=\\dfrac{0.96}{1+19\\times0.040}=\\dfrac{0.96}{1.76}=0.545$．多重反射を無視すると $(0.96)^{20}=0.442$ で，多重反射によって往復した光の一部が戻ってくるため実際の透過率は大きい．$N\\to\\infty$ でも $T_N\\propto1/N$ と緩やかにしか減らない（指数減衰ではない）．"
+   }
+  ],
+  "idea": {
+   "tex": "吸収のない層のインコヒーレントな積み重ねでは $1/T-1$ が加算的になり，透過率は指数でなく $1/N$ 的に減る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 証明\n(3) $T_{10}$：≈0.545"
+  },
+  "methods": [],
+  "tags": [
+   "多重反射",
+   "反射率",
+   "透過率",
+   "板の山"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "板の山によるブルースター偏光子",
+  "topic": "板の山によるブルースター偏光子",
+  "statement": {
+   "tex": "屈折率 $n=1.50$ のガラス板を $N$ 枚平行に重ね，自然光をブルースター角で入射させる．各板内の吸収係数は $\\kappa$，板の厚さは $l$ であり，2次以上の反射は無視する．\n\\begin{enumerate}\n\\item ブルースター角入射での s 偏光の1面あたり反射率 $\\rho_s$ を $n$ で表し，数値を求めよ．\n\\item 透過光の偏光度 $P=\\dfrac{I_p-I_s}{I_p+I_s}$ を $N,\\rho_s$ で表せ．吸収は $P$ に影響するか．\n\\item $P\\geq0.90$ とするには最低何枚の板が必要か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho_s=\\left(\\dfrac{n^2-1}{n^2+1}\\right)^2=0.148$　(2) $P=\\dfrac{1-(1-\\rho_s)^{2N}}{1+(1-\\rho_s)^{2N}}$，影響しない　(3) $N=10$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) ブルースター角では $\\theta_B+\\theta_t=\\pi/2$，$\\tan\\theta_B=n$．フレネルの式 $\\rho_s=\\dfrac{\\sin^2(\\theta_B-\\theta_t)}{\\sin^2(\\theta_B+\\theta_t)}=\\sin^2(\\theta_B-\\theta_t)=\\cos^22\\theta_B$ であり，$\\cos2\\theta_B=\\dfrac{1-\\tan^2\\theta_B}{1+\\tan^2\\theta_B}=\\dfrac{1-n^2}{1+n^2}$．よって\n\\[\\rho_s=\\left(\\frac{n^2-1}{n^2+1}\\right)^2=\\left(\\frac{1.25}{3.25}\\right)^2=0.148.\\]\n\n(2) p 偏光は反射されず（$\\rho_p=0$），s 偏光は $2N$ 面で毎回 $(1-\\rho_s)$ 倍になる．吸収による減衰 $a=e^{-\\kappa Nl'}$（$l'$ は板内の光路長）は両成分に共通なので，\n\\[I_p=\\tfrac12I_0a,\\quad I_s=\\tfrac12I_0a(1-\\rho_s)^{2N},\\quad P=\\frac{1-(1-\\rho_s)^{2N}}{1+(1-\\rho_s)^{2N}}.\\]\n吸収は強度を減らすが $P$ には影響しない．\n\n(3) $P\\ge0.90 \\iff (1-\\rho_s)^{2N}\\le\\dfrac{0.10}{1.90}=0.0526$．$2N\\ge\\dfrac{\\ln0.0526}{\\ln0.852}=18.4$ より $N\\ge9.2$，すなわち $N=10$ 枚（$N=9$ で $P=0.894$，$N=10$ で $P=0.922$）．"
+   }
+  ],
+  "idea": {
+   "tex": "板の山の透過は各面の透過率の積．ブルースター角では p 偏光が無損失なので，s 偏光だけが $(1-\\rho_s)^{2N}$ で減り偏光子として働く．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\rho_s$：≈0.148\n(2) 記述\n(3) $N$：10"
+  },
+  "methods": [],
+  "tags": [
+   "ブルースター角",
+   "板の山",
+   "フレネルの式",
+   "偏光度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "吸収係数が線形に変わる板での吸収分布",
+  "topic": "吸収係数が線形に変わる板での吸収分布",
+  "statement": {
+   "tex": "厚さ $l$ の平行平板の吸収係数が，入射面からの深さ $x$ とともに $\\kappa(x)=\\kappa_m x/l$ と線形に増える（入射面で $0$，出射面で $\\kappa_m$）．各面の反射率は $\\rho$ で，2次以上の反射は無視する．\n\\begin{enumerate}\n\\item 板の透過率を求めよ．光を反対側の面から入射させると透過率は変わるか．\n\\item 単位体積あたりの吸収パワーが最大となる深さ $x^*$ を求め，それが板の内部（$0<x^*<l$）にあるための条件を述べよ．\n\\item $l=1.0\\ \\mathrm{cm}$，$\\kappa_m=4.0\\ \\mathrm{cm^{-1}}$，$\\rho=0.040$ のとき，透過率と $x^*$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tau=(1-\\rho)^2e^{-\\kappa_ml/2}$，変わらない　(2) $x^*=\\sqrt{l/\\kappa_m}$，条件 $\\kappa_ml>1$　(3) $\\tau=0.12$，$x^*=0.50\\ \\mathrm{cm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{dI}{dx}=-\\kappa(x)I$ より $I(x)=I(0)\\exp\\left(-\\displaystyle\\int_0^x\\kappa\\,dx'\\right)=I(0)\\exp\\left(-\\dfrac{\\kappa_mx^2}{2l}\\right)$．\n\\[\\tau=(1-\\rho)^2\\exp\\left(-\\int_0^l\\kappa\\,dx\\right)=(1-\\rho)^2e^{-\\kappa_ml/2}.\\]\n光学的厚さ $\\int\\kappa\\,dx$ は向きによらないので，反対側から入射しても透過率は同じ．\n\n(2) 単位体積あたりの吸収パワーは $p(x)=\\kappa(x)I(x)\\propto x\\exp\\left(-\\dfrac{\\kappa_mx^2}{2l}\\right)$．\n\\[\\frac{dp}{dx}\\propto\\left(1-\\frac{\\kappa_mx^2}{l}\\right)e^{-\\kappa_mx^2/(2l)}=0\\ \\Longrightarrow\\ x^*=\\sqrt{\\frac{l}{\\kappa_m}}.\\]\n$x^*<l \\iff \\kappa_ml>1$．そうでなければ吸収は出射面で最大となる．（反対側から入射させると吸収は入射面付近に集中する．透過率は同じでも，どこが加熱されるかは向きで全く異なる．）\n\n(3) $\\tau=(0.96)^2e^{-2.0}=0.12$，$x^*=\\sqrt{1.0/4.0}\\ \\mathrm{cm}=0.50\\ \\mathrm{cm}$．"
+   }
+  ],
+  "idea": {
+   "tex": "透過率は光学的厚さ $\\int\\kappa dx$ だけで決まり向きによらないが，吸収の空間分布 $\\kappa(x)I(x)$ は向きに強く依存する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "吸収係数",
+   "光学的厚さ",
+   "吸収パワー分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "連続スペクトル光の非指数的減衰",
+  "topic": "連続スペクトル光の非指数的減衰",
+  "statement": {
+   "tex": "波長 $\\lambda_1\\sim\\lambda_2$ の範囲に一様なスペクトル強度をもつ光（全強度 $I_0$）が，厚さ $l$ の透明な平板に垂直に入射する．この範囲で吸収係数は $\\lambda$ の1次関数で，両端で $\\kappa_1$，$\\kappa_2$（$\\kappa_1<\\kappa_2$）である．各面の反射率は $\\rho$ で，2次以上の反射は無視する．\n\\begin{enumerate}\n\\item 透過光の全強度 $I(l)$ を求めよ．\n\\item 有効吸収係数を $\\kappa_{\\rm eff}(l)=-\\dfrac1l\\ln\\dfrac{I}{(1-\\rho)^2I_0}$ で定義する．$l\\to0$ と $l\\to\\infty$ での $\\kappa_{\\rm eff}$ の極限を求めよ．\n\\item $\\kappa_1=0.50\\ \\mathrm{cm^{-1}}$，$\\kappa_2=2.5\\ \\mathrm{cm^{-1}}$，$l=2.0\\ \\mathrm{cm}$ のとき，$I/[(1-\\rho)^2I_0]$ と $\\kappa_{\\rm eff}$ を求め，平均の吸収係数で計算した値と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $I=(1-\\rho)^2I_0\\dfrac{e^{-\\kappa_1l}-e^{-\\kappa_2l}}{(\\kappa_2-\\kappa_1)l}$　(2) $l\\to0$ で $(\\kappa_1+\\kappa_2)/2$，$l\\to\\infty$ で $\\kappa_1$　(3) $0.090$，$\\kappa_{\\rm eff}=1.2\\ \\mathrm{cm^{-1}}$（平均値では $0.050$）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\kappa$ が $\\lambda$ の1次関数で，スペクトル強度が $\\lambda$ について一様なので，$\\kappa$ について一様に分布していると考えてよい：\n\\[I=(1-\\rho)^2\\frac{I_0}{\\kappa_2-\\kappa_1}\\int_{\\kappa_1}^{\\kappa_2}e^{-\\kappa l}d\\kappa=(1-\\rho)^2I_0\\frac{e^{-\\kappa_1l}-e^{-\\kappa_2l}}{(\\kappa_2-\\kappa_1)l}.\\]\n\n(2) $l\\to0$：$e^{-\\kappa l}\\simeq1-\\kappa l$ を平均すると $\\langle e^{-\\kappa l}\\rangle\\simeq1-\\bar\\kappa l$，$\\bar\\kappa=(\\kappa_1+\\kappa_2)/2$．よって $\\kappa_{\\rm eff}\\to\\bar\\kappa$．\n$l\\to\\infty$：$I\\simeq(1-\\rho)^2I_0\\dfrac{e^{-\\kappa_1l}}{(\\kappa_2-\\kappa_1)l}$，$\\kappa_{\\rm eff}=\\kappa_1+\\dfrac{\\ln[(\\kappa_2-\\kappa_1)l]}{l}\\to\\kappa_1$．\n厚くなるほど吸収の弱い成分だけが残り（スペクトルの硬化），ランベルト・ベールの単純な指数則は成り立たない．なお凸関数に対するイェンセンの不等式より，常に $\\langle e^{-\\kappa l}\\rangle\\ge e^{-\\bar\\kappa l}$．\n\n(3) $\\dfrac{e^{-1.0}-e^{-5.0}}{2.0\\times2.0}=\\dfrac{0.3679-0.0067}{4.0}=0.090$，$\\kappa_{\\rm eff}=-\\dfrac{\\ln0.0903}{2.0}=1.2\\ \\mathrm{cm^{-1}}$．平均値 $\\bar\\kappa=1.5\\ \\mathrm{cm^{-1}}$ を使うと $e^{-3.0}=0.050$ となり，実際の透過は約1.8倍大きい．"
+   }
+  ],
+  "idea": {
+   "tex": "吸収係数の異なる成分の重ね合わせでは透過率は指数関数の平均になり，有効吸収係数は厚さとともに最小値 $\\kappa_1$ へ下がる（スペクトル硬化）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $I$：(1- ρ)^(2) I_0 ((e ^(- κ_1 l)- e ^(- κ_2 l))/((κ_2 - κ_1) l))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "吸収係数",
+   "連続スペクトル",
+   "スペクトル硬化",
+   "イェンセンの不等式"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "密度が1/rで減る球殻による吸収",
+  "topic": "密度が1/rで減る球殻による吸収",
+  "statement": {
+   "tex": "光束 $\\Phi$ の単色点光源が，内半径 $a$，外半径 $b$ の球殻の中心にある．球殻物質の線吸収係数は密度に比例し，(i) 一様に $\\kappa_u$ の場合と，(ii) $\\kappa(r)=\\kappa_0a/r$ と中心から離れるほど小さくなる場合を考える．各面の反射率は $\\rho$ で，2次以上の反射は無視する．\n\\begin{enumerate}\n\\item (ii) の場合に球殻を出る光束 $\\Phi'$ を求めよ．\n\\item (i) と (ii) で球殻の全質量が等しいとき，$\\kappa_u$ を $\\kappa_0,a,b$ で表せ．\n\\item $a=1.0\\ \\mathrm{cm}$，$b=3.0\\ \\mathrm{cm}$，$\\kappa_0=1.0\\ \\mathrm{cm^{-1}}$ のとき，(i) と (ii) の透過光束の比 $\\Phi'_{\\rm (i)}/\\Phi'_{\\rm (ii)}$ を求めよ．同じ質量なら，物質を光源近くに集めたほうが遮光に有利か不利か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Phi'=(1-\\rho)^2\\Phi\\,(a/b)^{\\kappa_0a}$　(2) $\\kappa_u=\\dfrac{3\\kappa_0a(b^2-a^2)}{2(b^3-a^3)}$　(3) $1.19$；光源近くに集めたほうが有利"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 光は動径方向に進むので，各方向について $\\dfrac{d\\Phi}{dr}=-\\kappa(r)\\Phi$．光学的厚さは\n\\[\\tau=\\int_a^b\\frac{\\kappa_0a}{r}dr=\\kappa_0a\\ln\\frac ba,\\qquad \\Phi'=(1-\\rho)^2\\Phi e^{-\\tau}=(1-\\rho)^2\\Phi\\left(\\frac ab\\right)^{\\kappa_0a}.\\]\n\n(2) 質量 $\\propto\\displaystyle\\int_a^b\\kappa(r)\\,4\\pi r^2dr$．(ii) では $4\\pi\\kappa_0a\\dfrac{b^2-a^2}{2}$，(i) では $4\\pi\\kappa_u\\dfrac{b^3-a^3}{3}$．等置して\n\\[\\kappa_u=\\frac{3\\kappa_0a(b^2-a^2)}{2(b^3-a^3)}.\\]\n\n(3) $\\tau_{\\rm (ii)}=\\ln3=1.099$．$\\kappa_u=\\dfrac{3\\times8}{2\\times26}=0.462\\ \\mathrm{cm^{-1}}$，$\\tau_{\\rm (i)}=0.462\\times2.0=0.923$．\n\\[\\frac{\\Phi'_{\\rm (i)}}{\\Phi'_{\\rm (ii)}}=e^{\\tau_{\\rm (ii)}-\\tau_{\\rm (i)}}=e^{0.176}=1.19.\\]\n(ii) のほうが透過が少ない．同じ質量でも，内側（表面積の小さい所）に置いた物質ほど少量で大きな光学的厚さを稼げるので，光源近くに集めたほうが遮光に有利である．"
+   }
+  ],
+  "idea": {
+   "tex": "球殻の透過は光学的厚さ $\\int\\kappa\\,dr$ で決まるが質量は $\\int\\kappa r^2dr$ に比例するため，質量を内側に寄せるほど効率よく遮光できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\kappa_u$：((3 κ_0 a (b ^(2)- a ^(2)))/(2(b ^(3)- a ^(3))))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "吸収係数",
+   "光学的厚さ",
+   "球殻",
+   "点光源"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "2成分X線の半価層とビーム硬化",
+  "topic": "2成分X線の半価層とビーム硬化",
+  "statement": {
+   "tex": "波長の異なる2成分を等しい強度で含む細いX線ビームがアルミニウム（密度 $2.70\\ \\mathrm{g/cm^3}$）を通過する．アルミニウムの質量吸収係数は，成分1に対して $3.70\\ \\mathrm{cm^2/g}$，成分2に対して $0.370\\ \\mathrm{cm^2/g}$ である．\n\\begin{enumerate}\n\\item 強度が入射の $1/2$ になる厚さ（第1半価層）$h_1$ を求めよ．\n\\item さらに強度を半分（入射の $1/4$）にするのに追加で必要な厚さ（第2半価層）$h_2$ を求めよ．\n\\item $h_2>h_1$ となる理由を説明せよ．十分厚い層の後ではビームの「半価層」はどの値に近づくか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h_1=0.18\\ \\mathrm{cm}$　(2) $h_2=0.52\\ \\mathrm{cm}$　(3) 吸収の強い成分が先に除かれる（ビーム硬化）；$\\ln2/\\mu_2=0.69\\ \\mathrm{cm}$ に近づく"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "線吸収係数は $\\mu_1=3.70\\times2.70=9.99\\ \\mathrm{cm^{-1}}$，$\\mu_2=0.999\\ \\mathrm{cm^{-1}}$．厚さ $x$ 後の相対強度は\n\\[f(x)=\\tfrac12\\left(e^{-\\mu_1x}+e^{-\\mu_2x}\\right).\\]\n\n(1) $f(h_1)=1/2$，すなわち $e^{-\\mu_1h_1}+e^{-\\mu_2h_1}=1$ を数値的に解くと $h_1=0.180\\ \\mathrm{cm}$．\n（$y=e^{-\\mu_2x}$ とおくと $y^{10}+y=1$ で，$y=0.835$ から $x=-\\ln y/\\mu_2=0.180\\ \\mathrm{cm}$．）\n\n(2) $f(x)=1/4$：$y^{10}+y=1/2$ を解いて $y=0.499$，$x=0.696\\ \\mathrm{cm}$．よって $h_2=0.696-0.180=0.52\\ \\mathrm{cm}$．\n\n(3) 吸収されやすい成分1が最初の層でほとんど除かれ，透過ビームは吸収されにくい成分2の割合が増える（ビーム硬化）．そのため同じ減衰に必要な厚さが増す．十分厚い層の後では成分2だけが残り，半価層は $\\ln2/\\mu_2=0.69\\ \\mathrm{cm}$ に近づく．単一波長なら半価層は何層目でも同じである．"
+   }
+  ],
+  "idea": {
+   "tex": "多色X線では透過とともに硬い成分の比率が増し，半価層が層ごとに大きくなる（ビーム硬化）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h_1$ [cm]：≈0.18\n(2) $h_2$ [cm]：≈0.52\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "X線",
+   "質量吸収係数",
+   "半価層",
+   "ビーム硬化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 15,
+  "theme": "鉛ガラスの鉛含有率と等価遮蔽",
+  "topic": "鉛ガラスの鉛含有率と等価遮蔽",
+  "statement": {
+   "tex": "波長 $62\\ \\mathrm{pm}$ の細いX線ビームに対し，アルミニウム（密度 $2.70\\ \\mathrm{g/cm^3}$）の質量吸収係数は $3.48\\ \\mathrm{cm^2/g}$，鉛は $72.0\\ \\mathrm{cm^2/g}$，ガラス母材（鉛以外の成分）は $4.0\\ \\mathrm{cm^2/g}$ である．化合物・混合物の質量吸収係数は，成分の質量分率による加重平均 $\\mu/\\rho=\\sum_iw_i(\\mu/\\rho)_i$ で与えられる．\n\\begin{enumerate}\n\\item 厚さ $0.50\\ \\mathrm{cm}$ の鉛ガラス（密度 $4.0\\ \\mathrm{g/cm^3}$）が，厚さ $2.6\\ \\mathrm{cm}$ のアルミニウム板と同じだけビームを減衰させるには，鉛の質量分率 $w$ をいくらにすればよいか．\n\\item 同じ減衰を純鉛（密度 $11.3\\ \\mathrm{g/cm^3}$）で得るときの厚さを求め，単位面積あたりの質量で (1) の鉛ガラス，アルミニウム，純鉛を比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $w=0.12$　(2) 純鉛 $0.30\\ \\mathrm{mm}$；面密度はAl $7.0$，鉛ガラス $2.0$，鉛 $0.34\\ \\mathrm{g/cm^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "減衰率 $e^{-(\\mu/\\rho)\\rho x}$ が等しい条件は $(\\mu/\\rho)\\rho x$ が等しいこと．アルミニウムでは\n\\[(\\mu/\\rho)_{\\rm Al}\\rho_{\\rm Al}x_{\\rm Al}=3.48\\times2.70\\times2.6=24.4.\\]\n\n(1) 鉛ガラスで $4.0\\times0.50\\times\\{72.0w+4.0(1-w)\\}=24.4$ より $4.0+68.0w=12.2$，$w=0.12$．\n\n(2) 純鉛：$x=\\dfrac{24.4}{72.0\\times11.3}\\ \\mathrm{cm}=0.030\\ \\mathrm{cm}=0.30\\ \\mathrm{mm}$．\n面密度 $\\rho x$ はアルミニウム $7.0\\ \\mathrm{g/cm^2}$，鉛ガラス $2.0\\ \\mathrm{g/cm^2}$，鉛 $0.34\\ \\mathrm{g/cm^2}$．質量吸収係数の大きい重元素を含むほど，同じ遮蔽に必要な質量が少ない（この波長域では光電吸収が原子番号の高いべきで増えるため）．"
+   }
+  ],
+  "idea": {
+   "tex": "遮蔽能力は面密度×質量吸収係数で決まり，混合物の質量吸収係数は質量分率の加重平均で与えられる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $w$：≈0.12\n(2) 純鉛 [mm]：≈0.30 ; 面密度はAl：≈7.0 ; 鉛ガラス：≈2.0 ; 鉛 [g/cm²]：≈0.34"
+  },
+  "methods": [],
+  "tags": [
+   "X線",
+   "質量吸収係数",
+   "混合則",
+   "遮蔽"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 15,
+  "theme": "半価層と吸収される光子の平均深さ",
+  "topic": "半価層と吸収される光子の平均深さ",
+  "statement": {
+   "tex": "細い単色X線ビームに対するアルミニウム（密度 $2.70\\ \\mathrm{g/cm^3}$）の質量吸収係数を $0.45\\ \\mathrm{cm^2/g}$ とする．\n\\begin{enumerate}\n\\item 半価層 $h$ と，光子の平均自由行程（無限に厚い板の中で光子が吸収されるまでの平均深さ）$\\ell$ を求めよ．\n\\item 厚さがちょうど $h$ の板で吸収された光子について，吸収された深さの平均 $\\langle x\\rangle$ を求め，$h$ の何倍かを答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $h=0.57\\ \\mathrm{cm}$，$\\ell=0.82\\ \\mathrm{cm}$　(2) $\\langle x\\rangle=\\dfrac{1-\\ln2}{\\ln2}h=0.44h=0.25\\ \\mathrm{cm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mu=0.45\\times2.70=1.215\\ \\mathrm{cm^{-1}}$．$h=\\ln2/\\mu=0.57\\ \\mathrm{cm}$．深さ $x\\sim x+dx$ で吸収される確率は $\\mu e^{-\\mu x}dx$ なので $\\ell=\\displaystyle\\int_0^\\infty x\\mu e^{-\\mu x}dx=\\frac1\\mu=0.82\\ \\mathrm{cm}$（$=h/\\ln2$）．\n\n(2) 厚さ $d$ の板で吸収された光子に限ると\n\\[\\langle x\\rangle=\\frac{\\int_0^dx\\mu e^{-\\mu x}dx}{\\int_0^d\\mu e^{-\\mu x}dx}=\\frac1\\mu-\\frac{d}{e^{\\mu d}-1}.\\]\n$d=h$ では $e^{\\mu h}=2$ なので $\\langle x\\rangle=\\dfrac1\\mu-h=\\dfrac{1-\\ln2}{\\mu}=\\dfrac{1-\\ln2}{\\ln2}h=0.44h=0.25\\ \\mathrm{cm}$．\n吸収は入射側に偏るので，板の中央（$0.5h$）より手前になる．"
+   }
+  ],
+  "idea": {
+   "tex": "指数減衰の吸収位置分布から，有限厚の板での平均吸収深さ $1/\\mu-d/(e^{\\mu d}-1)$ が得られる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $h$ [cm]：≈0.57 ; $\\ell$ [cm]：≈0.82\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "X線",
+   "半価層",
+   "平均自由行程",
+   "吸収分布"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 2,
+  "minutes": 20,
+  "theme": "プラズマ中の光の群速度・位相速度",
+  "topic": "プラズマ中の光の群速度・位相速度",
+  "statement": {
+   "tex": "\\begin{enumerate}\n  \\item 電子密度 $n_e$ のプラズマ中を伝わる電磁波の分散関係は $\\omega^2=\\omega_p^2+c^2k^2$（$\\omega_p=\\sqrt{n_ee^2/(\\varepsilon_0m_e)}$）である．位相速度 $v_p$ と群速度 $v_g$ の積を求めよ．また，この分散関係を相対論的粒子の $E^2=p^2c^2+m^2c^4$ と比べたときの光子の「有効質量」$m_{\\rm eff}$ を求め，$n_e=1.0\\times10^{18}\\ \\mathrm{m^{-3}}$ のときの $m_{\\rm eff}c^2$ を eV 単位で求めよ．\n  \\item 自由粒子のド・ブロイ波について，振動数を運動エネルギーだけから $\\hbar\\omega=p^2/2m$ と定めると $v_p=v/2$（$v$ は粒子の速さ）となり，相対論的に全エネルギーから $\\hbar\\omega=E$ と定めると $v_p=c^2/v$ となる．このように $v_p$ はエネルギーの原点の取り方に依存するのに対し，$v_g$ はどちらの定義でも粒子の速さ $v$ に一致することを示せ（相対論的な場合は非相対論的極限で両者を比較せよ）．\n\\end{enumerate}\n物理定数：$e=1.602\\times10^{-19}\\ \\mathrm{C}$，$m_e=9.109\\times10^{-31}\\ \\mathrm{kg}$，$\\varepsilon_0=8.854\\times10^{-12}\\ \\mathrm{F/m}$，$\\hbar=1.055\\times10^{-34}\\ \\mathrm{J\\,s}$．"
+  },
+  "answer": {
+   "tex": "(1) $v_pv_g=c^2$，$m_{\\rm eff}=\\hbar\\omega_p/c^2$，$m_{\\rm eff}c^2\\approx3.7\\times10^{-5}\\ \\mathrm{eV}$　(2) 証明（解説参照）：$v_g=d\\omega/dk=v$ はエネルギーの定数シフトに不変"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\omega=\\sqrt{\\omega_p^2+c^2k^2}$ より\n\\[ v_p=\\frac{\\omega}{k},\\qquad v_g=\\frac{d\\omega}{dk}=\\frac{c^2k}{\\omega},\\qquad v_pv_g=c^2. \\]\n$\\hbar$ を掛けると $(\\hbar\\omega)^2=(\\hbar kc)^2+(\\hbar\\omega_p)^2$ で，$E=\\hbar\\omega$，$p=\\hbar k$ とすれば $E^2=p^2c^2+(m_{\\rm eff}c^2)^2$，$m_{\\rm eff}=\\hbar\\omega_p/c^2$．\n\\[ \\omega_p=\\sqrt{\\frac{1.0\\times10^{18}\\times(1.602\\times10^{-19})^2}{8.854\\times10^{-12}\\times9.109\\times10^{-31}}}=5.64\\times10^{10}\\ \\mathrm{s^{-1}}, \\]\n$m_{\\rm eff}c^2=\\hbar\\omega_p=1.055\\times10^{-34}\\times5.64\\times10^{10}\\ \\mathrm{J}=5.95\\times10^{-24}\\ \\mathrm{J}=3.7\\times10^{-5}\\ \\mathrm{eV}$．（$\\omega<\\omega_p$ の電磁波は伝播できない．これは静止エネルギー未満の粒子が存在しないことに対応する．）\n\n(2) 非相対論：$\\omega=\\hbar k^2/(2m)$ より $v_p=\\omega/k=\\hbar k/(2m)=p/(2m)=v/2$，$v_g=d\\omega/dk=\\hbar k/m=v$．\n相対論：$\\omega=\\sqrt{c^2k^2+m^2c^4/\\hbar^2}$ より $v_g=c^2k/\\omega=pc^2/E=v$（$E=\\gamma mc^2$，$p=\\gamma mv$），$v_p=\\omega/k=E/p=c^2/v$．\n非相対論的極限 $E\\simeq mc^2+p^2/2m$ では $\\hbar\\omega_{\\rm rel}=\\hbar\\omega_{\\rm nr}+mc^2$ で，両者は定数だけ異なる．$v_g=d\\omega/dk$ は定数シフトで変わらないので両定義で一致して $v$ となる．一方 $v_p=\\omega/k$ は定数シフトで $mc^2/(\\hbar k)$ だけ変わり（$c^2/v$ と $v/2$ のように桁違いに異なる），観測量ではない．物理的な意味をもつのは $v_g$ である．"
+   }
+  ],
+  "idea": {
+   "tex": "分散関係 $\\omega^2=\\omega_0^2+c^2k^2$ は常に $v_pv_g=c^2$ を与え，$\\hbar\\omega_0$ が有効質量に相当する．位相速度はエネルギー原点に依存するが群速度は依存しない．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "位相速度",
+   "群速度",
+   "分散関係",
+   "プラズマ振動数",
+   "有効質量",
+   "ド・ブロイ波"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "WV-05-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -484,6 +1569,308 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 3,
+  "minutes": 35,
+  "theme": "箱型吸収帯のKramers–Kronig変換",
+  "topic": "箱型吸収帯のKramers–Kronig変換",
+  "statement": {
+   "tex": "ある媒質の比誘電率 $\\varepsilon_r(\\omega)=\\varepsilon_1(\\omega)+i\\varepsilon_2(\\omega)$ の虚部が，正の定数 $C$ と $0<\\omega_1<\\omega_2$ を用いて\n\\[ \\varepsilon_2(\\omega)=\\begin{cases}C & (\\omega_1<\\omega<\\omega_2)\\\\ -C & (-\\omega_2<\\omega<-\\omega_1)\\\\ 0 & (\\text{それ以外})\\end{cases} \\]\nで与えられるとする（$\\varepsilon_2$ は $\\omega$ の奇関数）．Kramers–Kronig の関係\n\\[ \\varepsilon_1(\\omega)=1+\\frac{1}{\\pi}\\,\\mathrm P\\!\\!\\int_{-\\infty}^{\\infty}\\frac{\\varepsilon_2(\\omega')}{\\omega'-\\omega}\\,d\\omega' \\]\nを用いて次に答えよ．\n\\begin{enumerate}\n\\item $\\varepsilon_1(\\omega)$（$\\omega\\ge0$）を求めよ．吸収帯の端 $\\omega=\\omega_1,\\omega_2$ で何が起こるか．\n\\item 静的誘電率 $\\varepsilon_1(0)$ を求めよ．\n\\item 吸収帯の内部で $\\varepsilon_1=1$ となる角振動数を求めよ．\n\\item $\\omega\\to\\infty$ で $\\varepsilon_1\\simeq1-\\Omega^2/\\omega^2$ の形になることを示し，$\\Omega^2$ を求めよ．これが総和則 $\\int_0^\\infty\\omega\\varepsilon_2\\,d\\omega=\\pi\\Omega^2/2$ と整合することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\varepsilon_1=1+\\dfrac{C}{\\pi}\\ln\\left|\\dfrac{\\omega_2^2-\\omega^2}{\\omega_1^2-\\omega^2}\\right|$；帯端で対数発散（$\\omega_1$ で $+\\infty$，$\\omega_2$ で $-\\infty$）　(2) $1+\\dfrac{2C}{\\pi}\\ln\\dfrac{\\omega_2}{\\omega_1}$　(3) $\\omega=\\sqrt{(\\omega_1^2+\\omega_2^2)/2}$　(4) $\\Omega^2=C(\\omega_2^2-\\omega_1^2)/\\pi$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\varepsilon_2$ が奇関数なので，負の $\\omega'$ の部分を $\\omega'\\to-\\omega'$ で正に移すと\n\\[ \\frac1\\pi\\mathrm P\\!\\!\\int_{-\\infty}^\\infty\\frac{\\varepsilon_2(\\omega')}{\\omega'-\\omega}d\\omega'=\\frac1\\pi\\mathrm P\\!\\!\\int_0^\\infty\\varepsilon_2(\\omega')\\left(\\frac{1}{\\omega'-\\omega}+\\frac{1}{\\omega'+\\omega}\\right)d\\omega'=\\frac2\\pi\\mathrm P\\!\\!\\int_0^\\infty\\frac{\\omega'\\varepsilon_2(\\omega')}{\\omega'^2-\\omega^2}d\\omega'. \\]\n$\\varepsilon_2=C$（$\\omega_1<\\omega'<\\omega_2$）を入れると\n\\[ \\varepsilon_1(\\omega)=1+\\frac{2C}{\\pi}\\cdot\\frac12\\Bigl[\\ln|\\omega'^2-\\omega^2|\\Bigr]_{\\omega_1}^{\\omega_2}=1+\\frac{C}{\\pi}\\ln\\left|\\frac{\\omega_2^2-\\omega^2}{\\omega_1^2-\\omega^2}\\right|. \\]\n（$\\omega$ が帯内にあるときも主値をとれば同じ式．）$\\omega\\to\\omega_1$ で分母 $\\to0$ なので $\\varepsilon_1\\to+\\infty$，$\\omega\\to\\omega_2$ で $\\varepsilon_1\\to-\\infty$ と対数発散する．$\\varepsilon_2$ の不連続な跳びが実部の対数特異点を生む．\n\n(2) $\\omega=0$ で $\\varepsilon_1(0)=1+\\dfrac{C}{\\pi}\\ln\\dfrac{\\omega_2^2}{\\omega_1^2}=1+\\dfrac{2C}{\\pi}\\ln\\dfrac{\\omega_2}{\\omega_1}$．\n\n(3) 帯内で $\\varepsilon_1=1$ となるのは $|\\omega_2^2-\\omega^2|=|\\omega_1^2-\\omega^2|$，すなわち $\\omega_2^2-\\omega^2=\\omega^2-\\omega_1^2$ のときで，$\\omega=\\sqrt{(\\omega_1^2+\\omega_2^2)/2}$．\n\n(4) $\\omega\\gg\\omega_2$ では\n\\[ \\ln\\frac{\\omega^2-\\omega_2^2}{\\omega^2-\\omega_1^2}=\\ln\\left(1-\\frac{\\omega_2^2}{\\omega^2}\\right)-\\ln\\left(1-\\frac{\\omega_1^2}{\\omega^2}\\right)\\simeq-\\frac{\\omega_2^2-\\omega_1^2}{\\omega^2} \\]\nだから $\\varepsilon_1\\simeq1-\\Omega^2/\\omega^2$，$\\Omega^2=\\dfrac{C(\\omega_2^2-\\omega_1^2)}{\\pi}$．一方 $\\displaystyle\\int_0^\\infty\\omega\\varepsilon_2d\\omega=C\\frac{\\omega_2^2-\\omega_1^2}{2}=\\frac\\pi2\\Omega^2$ で整合する．高周波では電子は自由電子のように振る舞い，$\\Omega$ は有効プラズマ振動数である．"
+   }
+  ],
+  "idea": {
+   "tex": "奇関数性を使うと KK 変換は $\\frac2\\pi\\mathrm P\\int_0^\\infty\\omega'\\varepsilon_2/(\\omega'^2-\\omega^2)$ となり，箱型吸収は帯端に対数特異点をもつ分散を生む．高周波漸近形から総和則が再現される．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 1+((2 C)/(pi)) ln ((ω_2)/(ω_1))\n(3) $\\omega$：sqrt((ω_1 ^(2)+ ω_2 ^(2))/2)\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "Kramers-Kronig",
+   "分散関係",
+   "主値積分",
+   "総和則",
+   "異常分散"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 3,
+  "minutes": 40,
+  "theme": "バネ結合振り子列の分散・有限列・エバネッセント波",
+  "topic": "バネ結合振り子列の分散・有限列・エバネッセント波",
+  "statement": {
+   "tex": "長さ $l$ の糸につるした質量 $m$ の振り子 $N$ 個が，間隔 $a$ で一直線に並び，隣り合う振り子どうしが自然長 $a$，ばね定数 $K$ の軽いばねでつながれている（両端の振り子は片側にしかばねがない）．振り子は列を含む鉛直面内で微小振動し，$j$ 番目（$j=0,1,\\dots,N-1$）の振り子の水平変位を $\\varphi_j$ とする．$\\omega_0=\\sqrt{g/l}$ とおく．\n\\begin{enumerate}\n\\item $\\varphi_j$ の運動方程式を書け（端の振り子も）．\n\\item 無限に長い列で $\\varphi_j\\propto e^{i(qja-\\omega t)}$ とおき，分散関係 $\\omega(q)$ を求めよ．波が伝わり得る角振動数の帯域を答えよ．\n\\item 群速度 $v_g=d\\omega/dq$ を求め，帯域の両端で $v_g=0$ となることを示せ．また連続体極限（$qa\\ll1$）で位相速度 $v_p$ と群速度の積が $v_0^2$（$v_0=a\\sqrt{K/m}$）になることを示せ．\n\\item $N$ 個の有限列の基準振動数が $\\omega_n^2=\\omega_0^2+\\dfrac{4K}{m}\\sin^2\\dfrac{n\\pi}{2N}$（$n=0,1,\\dots,N-1$）であることを示せ．$n=0$ のモードはどのような運動か．\n\\item 半無限の列（$j=0,1,2,\\dots$）の端の振り子 $j=0$ を帯域より低い角振動数 $\\omega<\\omega_0$ で強制的に振動させる．定常状態で $\\varphi_j=\\varphi_0\\,r^j$ となる $r$ を求めよ．$m=0.10\\ \\mathrm{kg}$，$l=0.50\\ \\mathrm{m}$，$K=5.0\\ \\mathrm{N/m}$，$g=9.8\\ \\mathrm{m/s^2}$，$\\omega=\\omega_0/2$ のとき $r$ を数値で求めよ．連続体極限での減衰長 $\\Lambda$ も求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $m\\ddot\\varphi_j=K(\\varphi_{j+1}-2\\varphi_j+\\varphi_{j-1})-\\dfrac{mg}{l}\\varphi_j$，端は $m\\ddot\\varphi_0=K(\\varphi_1-\\varphi_0)-\\dfrac{mg}{l}\\varphi_0$ など　(2) $\\omega^2=\\omega_0^2+\\dfrac{4K}{m}\\sin^2\\dfrac{qa}{2}$，$\\omega_0\\le\\omega\\le\\sqrt{\\omega_0^2+4K/m}$　(3) $v_g=\\dfrac{Ka\\sin qa}{m\\omega}$，$v_pv_g=v_0^2$　(4) 証明（解説参照）；$n=0$ は全振り子が同位相・同振幅（ばねが伸びない）で $\\omega=\\omega_0$　(5) $r+\\dfrac1r=2+\\dfrac{m(\\omega_0^2-\\omega^2)}{K}$ の $|r|<1$ の根，$r\\approx0.585$；$\\Lambda=\\dfrac{v_0}{\\sqrt{\\omega_0^2-\\omega^2}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 重力の復元力は微小振動で $-\\frac{mg}{l}\\varphi_j$，ばねの力は $K(\\varphi_{j+1}-\\varphi_j)-K(\\varphi_j-\\varphi_{j-1})$．\n\\[ m\\ddot\\varphi_j=K(\\varphi_{j+1}-2\\varphi_j+\\varphi_{j-1})-\\frac{mg}{l}\\varphi_j\\quad(1\\le j\\le N-2), \\]\n\\[ m\\ddot\\varphi_0=K(\\varphi_1-\\varphi_0)-\\frac{mg}{l}\\varphi_0,\\qquad m\\ddot\\varphi_{N-1}=K(\\varphi_{N-2}-\\varphi_{N-1})-\\frac{mg}{l}\\varphi_{N-1}. \\]\n\n(2) 代入して $-m\\omega^2=K(e^{iqa}-2+e^{-iqa})-m\\omega_0^2=-4K\\sin^2\\frac{qa}{2}-m\\omega_0^2$．\n\\[ \\omega^2=\\omega_0^2+\\frac{4K}{m}\\sin^2\\frac{qa}{2}. \\]\n$q$ を実数として $\\omega_0\\le\\omega\\le\\omega_{\\max}=\\sqrt{\\omega_0^2+4K/m}$ の帯域のみ伝播する．\n\n(3) $2\\omega\\,d\\omega=\\frac{4K}{m}\\cdot2\\sin\\frac{qa}2\\cos\\frac{qa}2\\cdot\\frac a2\\,dq$ より $v_g=\\dfrac{Ka\\sin qa}{m\\omega}$．帯域の下端 $q=0$，上端 $qa=\\pi$ で $\\sin qa=0$，$v_g=0$（定在波でエネルギーが伝わらない）．\n$qa\\ll1$ では $\\omega^2\\simeq\\omega_0^2+v_0^2q^2$（クライン＝ゴルドン型），$v_p=\\omega/q$，$v_g=v_0^2q/\\omega$ なので $v_pv_g=v_0^2$．$v_p>v_0>v_g$ で，$v_p$ は $v_0$ を超えるが信号は $v_g<v_0$ で伝わる．\n\n(4) 端の式は，仮想的な変位 $\\varphi_{-1}=\\varphi_0$，$\\varphi_N=\\varphi_{N-1}$ を置けば内部の式と同形になる．$\\varphi_j=\\cos\\big(qa(j+\\tfrac12)\\big)e^{-i\\omega t}$ は内部の式を (2) の $\\omega(q)$ で満たし，$\\varphi_{-1}=\\cos(-qa/2)=\\varphi_0$ は自動的に成立．$\\varphi_N=\\varphi_{N-1}$ は $\\cos(qa(N+\\frac12))-\\cos(qa(N-\\frac12))=-2\\sin(qaN)\\sin\\frac{qa}2=0$，よって $qaN=n\\pi$．$n=0,\\dots,N-1$ で独立な $N$ 個のモードが得られ，$\\omega_n^2=\\omega_0^2+\\frac{4K}{m}\\sin^2\\frac{n\\pi}{2N}$．$n=0$ は全振り子が同じ変位で振れ，ばねが伸縮しないので単振り子と同じ $\\omega_0$．\n\n(5) $\\varphi_j=\\varphi_0r^je^{-i\\omega t}$ を内部の式に代入：$-m\\omega^2=K(r-2+1/r)-m\\omega_0^2$，\n\\[ r+\\frac1r=2+\\frac{m(\\omega_0^2-\\omega^2)}{K}\\ (>2). \\]\n2 根は互いに逆数で，無限遠で有界な $0<r<1$ を選ぶ（$\\cosh\\kappa a=1+\\frac{m(\\omega_0^2-\\omega^2)}{2K}$，$r=e^{-\\kappa a}$）．数値：$\\omega_0^2=19.6$，$\\omega^2=4.9$，$m(\\omega_0^2-\\omega^2)/K=0.294$，$r+1/r=2.294$ より $r=\\dfrac{2.294-\\sqrt{2.294^2-4}}{2}\\approx0.585$．\n連続体極限では $\\varphi\\propto e^{-x/\\Lambda}$ を $\\ddot\\varphi=v_0^2\\varphi''-\\omega_0^2\\varphi$ に入れて $-\\omega^2=v_0^2/\\Lambda^2-\\omega_0^2$，$\\Lambda=\\dfrac{v_0}{\\sqrt{\\omega_0^2-\\omega^2}}$．帯域外の振動は伝わらず端の近くに局在する（エバネッセント波）．"
+   }
+  ],
+  "idea": {
+   "tex": "振り子列の分散 $\\omega^2=\\omega_0^2+\\frac{4K}{m}\\sin^2\\frac{qa}{2}$ から帯域構造・群速度 0 の帯端・自由端の有限列の基準振動を導き，帯域外の駆動ではエバネッセント波となることを示す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "連成振動",
+   "分散関係",
+   "クライン・ゴルドン方程式",
+   "群速度",
+   "位相速度",
+   "バンド",
+   "エバネッセント波",
+   "基準振動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 3,
+  "minutes": 25,
+  "theme": "強い光の中の自由電子の8の字運動",
+  "topic": "強い光の中の自由電子の8の字運動",
+  "statement": {
+   "tex": "真空中を $+z$ 向きに進む直線偏光の平面波 $E_x=E_0\\cos(\\omega t-kz)$，$B_y=(E_0/c)\\cos(\\omega t-kz)$ の中に，自由電子（電荷 $-e$，質量 $m$）がある．非相対論的に扱い，電子の $z$ 方向の変位は波長に比べて十分小さいとする．\n\\begin{enumerate}\n\\item 電子の速度振幅 $v_0$ を求めよ．磁気力と電気力の振幅の比 $F_B/F_E$ を $v_0/c$ で表せ．\n\\item 磁気力による $z$ 方向の定常振動を求め，その角振動数と振幅 $z_0$ を，$x$ 方向の振幅 $a$ を用いて表せ．電子の軌道の形を述べよ．\n\\item 波長 $800\\ \\mathrm{nm}$ で $v_0=0.10c$ となる強度 $I$（$\\mathrm{W/cm^2}$）を求めよ．そのときの $a$ と $z_0$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $v_0=\\dfrac{eE_0}{m\\omega}$，$F_B/F_E=\\dfrac{v_0}{2c}$　(2) 角振動数 $2\\omega$，$z_0=\\dfrac{a^2\\omega}{8c}=\\dfrac{v_0}{8c}a$，8 の字軌道　(3) $I\\approx2.1\\times10^{16}\\ \\mathrm{W/cm^2}$，$a\\approx13\\ \\mathrm{nm}$，$z_0\\approx0.16\\ \\mathrm{nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $z\\approx0$ として $m\\ddot x=-eE_0\\cos\\omega t$ より，定常解は $x=a\\cos\\omega t$，$a=\\dfrac{eE_0}{m\\omega^2}$，$v_x=-v_0\\sin\\omega t$，$v_0=\\dfrac{eE_0}{m\\omega}$．\n磁気力は $F_z=-e(\\boldsymbol v\\times\\boldsymbol B)_z=-ev_xB_y=\\dfrac{ev_0E_0}{c}\\sin\\omega t\\cos\\omega t=\\dfrac{ev_0E_0}{2c}\\sin2\\omega t$．振幅は $ev_0E_0/2c$ なので，$F_B/F_E=v_0/(2c)$．\n\n(2) $m\\ddot z=\\dfrac{ev_0E_0}{2c}\\sin2\\omega t$ の定常解は\n\\[ z=-\\frac{ev_0E_0}{8mc\\,\\omega^2}\\sin2\\omega t,\\qquad z_0=\\frac{ev_0E_0}{8mc\\omega^2}=\\frac{v_0}{8c}\\cdot\\frac{eE_0}{m\\omega}\\cdot\\frac1\\omega=\\frac{a^2\\omega}{8c}. \\]\n$x$ が角振動数 $\\omega$，$z$ が $2\\omega$ で振動するので，軌道は $xz$ 面内の 8 の字（リサージュ図形）になる．（平均ドリフトは初期条件によるが，ここでは定常振動だけを考えた．）\n\n(3) $\\omega=2\\pi c/\\lambda=2.36\\times10^{15}\\ \\mathrm{s^{-1}}$．$E_0=0.10\\,mc\\omega/e\\approx4.0\\times10^{11}\\ \\mathrm{V/m}$，\n\\[ I=\\tfrac12\\varepsilon_0cE_0^2\\approx2.1\\times10^{20}\\ \\mathrm{W/m^2}=2.1\\times10^{16}\\ \\mathrm{W/cm^2}. \\]\n$a=v_0/\\omega=0.10\\lambda/2\\pi\\approx12.7\\ \\mathrm{nm}$，$z_0=(v_0/8c)a=a/80\\approx0.16\\ \\mathrm{nm}$．これより強い光では $v_0\\sim c$ となって磁気力が電気力と同程度になり，非相対論的扱いは破れる．"
+   }
+  ],
+  "idea": {
+   "tex": "磁気力は $\\boldsymbol v\\times\\boldsymbol B$ で，$\\sin\\omega t\\cos\\omega t$ のため 2 倍の振動数で光の進行方向に電子を揺らす．その大きさは $v_0/c$ のオーダーなので，強い光で初めて効いてくる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $I$ [W/cm²]：≈2.1e16 ; $a$ [nm]：≈13 ; $z_0$ [nm]：≈0.16"
+  },
+  "methods": [],
+  "tags": [
+   "自由電子",
+   "電磁波",
+   "ローレンツ力",
+   "8の字運動",
+   "高強度レーザー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 3,
+  "minutes": 30,
+  "theme": "放射減衰による自然幅と共鳴吸収断面積",
+  "topic": "放射減衰による自然幅と共鳴吸収断面積",
+  "statement": {
+   "tex": "質量 $m$，電荷 $-e$ の電子が，復元力 $-kx$ と抵抗力 $-\\gamma\\dot x$ を受けて振動する（$\\omega_0=\\sqrt{k/m}$，$\\beta=\\gamma/2m\\ll\\omega_0$）．これに電場 $E=E_0\\cos\\omega t$ の光がはたらく（磁場の作用は無視）．\n\\begin{enumerate}\n\\item 電子が吸収する平均電力 $\\langle P\\rangle(\\omega)$ を求め，最大値と，$\\langle P\\rangle$ が最大値の半分になる 2 つの角振動数の間隔 $\\Delta\\omega$（半値全幅）を求めよ．\n\\item 抵抗が放射減衰だけによるとき，実効的な抵抗係数は $\\gamma=\\dfrac{e^2\\omega_0^2}{6\\pi\\varepsilon_0c^3}$ である．吸収線の幅を波長で表した $\\Delta\\lambda$ を求め，それが $\\lambda$ によらない普遍的な長さ（古典電子半径 $r_e=e^2/4\\pi\\varepsilon_0mc^2$ の定数倍）であることを示せ．数値も求めよ．\n\\item (2) の場合の共鳴時の吸収断面積 $\\sigma=\\langle P\\rangle_{\\max}/I$（$I$ は光の強度）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle P\\rangle=\\dfrac{m\\beta(eE_0/m)^2\\omega^2}{(\\omega_0^2-\\omega^2)^2+4\\beta^2\\omega^2}$，最大値 $\\dfrac{e^2E_0^2}{4m\\beta}$（$\\omega=\\omega_0$），$\\Delta\\omega=2\\beta=\\gamma/m$　(2) $\\Delta\\lambda=\\dfrac{4\\pi}{3}r_e\\approx1.18\\times10^{-14}\\ \\mathrm m$　(3) $\\sigma=\\dfrac{3\\lambda^2}{2\\pi}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 運動方程式 $m\\ddot x+\\gamma\\dot x+kx=-eE_0\\cos\\omega t$ の定常解は $x=a\\cos(\\omega t-\\varphi)$ で，\n\\[ a=\\frac{eE_0/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\beta^2\\omega^2}}. \\]\n吸収電力は抵抗力がする仕事の率に等しく，$\\langle P\\rangle=\\gamma\\langle\\dot x^2\\rangle=\\tfrac12\\gamma\\omega^2a^2$ より与式を得る．$\\omega=\\omega_0$ で最大値 $\\dfrac{m\\beta(eE_0/m)^2}{4\\beta^2}=\\dfrac{e^2E_0^2}{4m\\beta}$．\n共鳴付近では $\\omega_0^2-\\omega^2\\approx2\\omega_0(\\omega_0-\\omega)$ と近似でき，$\\langle P\\rangle\\propto\\dfrac1{(\\omega_0-\\omega)^2+\\beta^2}$ のローレンツ型になる．半値は $|\\omega-\\omega_0|=\\beta$ だから $\\Delta\\omega=2\\beta=\\gamma/m$．\n\n(2) $\\Delta\\lambda=\\dfrac{2\\pi c}{\\omega_0^2}\\Delta\\omega=\\dfrac{2\\pi c}{\\omega_0^2}\\cdot\\dfrac{e^2\\omega_0^2}{6\\pi\\varepsilon_0mc^3}=\\dfrac{e^2}{3\\varepsilon_0mc^2}=\\dfrac{4\\pi}{3}r_e$．$\\omega_0$ によらず，\n\\[ \\Delta\\lambda=\\frac{4\\pi}{3}\\times2.82\\times10^{-15}\\ \\mathrm m\\approx1.18\\times10^{-14}\\ \\mathrm m. \\]\n\n(3) $\\langle P\\rangle_{\\max}=\\dfrac{e^2E_0^2}{4m\\beta}=\\dfrac{e^2E_0^2}{2\\gamma}=\\dfrac{3\\pi\\varepsilon_0c^3E_0^2}{\\omega_0^2}$，$I=\\tfrac12\\varepsilon_0cE_0^2$ より\n\\[ \\sigma=\\frac{6\\pi c^2}{\\omega_0^2}=\\frac{3\\lambda^2}{2\\pi}. \\]\n原子の大きさ（$\\sim10^{-10}\\ \\mathrm m$）よりはるかに大きい，波長程度の断面積で共鳴光を吸収・散乱する．"
+   }
+  ],
+  "idea": {
+   "tex": "減衰振動子の吸収はローレンツ型で，幅は $\\gamma/m$ である．放射減衰だけなら波長幅は普遍的な $\\tfrac{4\\pi}{3}r_e$ になり，共鳴時の断面積は $3\\lambda^2/2\\pi$ となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\Delta\\lambda$ [m]：≈1.18e-14\n(3) $\\sigma$：((3 λ ^(2))/(2 pi))"
+  },
+  "methods": [],
+  "tags": [
+   "ローレンツモデル",
+   "共鳴吸収",
+   "放射減衰",
+   "自然幅",
+   "吸収断面積"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 3,
+  "minutes": 25,
+  "theme": "直線密度勾配をもつ電離層の見かけの高さ",
+  "topic": "直線密度勾配をもつ電離層の見かけの高さ",
+  "statement": {
+   "tex": "電離層をサウンディング（鉛直に電波パルスを送り，反射して戻るまでの時間を測る）で調べる．地磁気と衝突は無視する．\n\\begin{enumerate}\n\\item 臨界周波数（これより低い周波数は反射される）が $f_c=8.0\\ \\mathrm{MHz}$ であった．最大電子密度を求めよ．\n\\item 電子密度が，高さ $h_0=100\\ \\mathrm{km}$ で $0$ から始まり，高さとともに直線的に増えて $h_0+D$（$D=100\\ \\mathrm{km}$）で最大値に達するとする．周波数 $f=5.0\\ \\mathrm{MHz}$ のパルスが実際に反射される高さ $h_r$ と，往復時間に $c/2$ を掛けて得られる見かけの高さ $h'$ を求めよ．\n\\item 見かけの高さが真の反射高度より高くなる理由を説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $N_{\\max}\\approx7.9\\times10^{11}\\ \\mathrm{m^{-3}}$　(2) $h_r=h_0+D(f/f_c)^2\\approx139\\ \\mathrm{km}$，$h'=h_0+2D(f/f_c)^2\\approx178\\ \\mathrm{km}$　(3) パルスは群速度 $u=cn<c$ で進むため"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $N_{\\max}=\\dfrac{4\\pi^2\\varepsilon_0mf_c^2}{e^2}=\\dfrac{4\\pi^2\\times8.85\\times10^{-12}\\times9.11\\times10^{-31}\\times(8.0\\times10^6)^2}{(1.60\\times10^{-19})^2}\\approx7.9\\times10^{11}\\ \\mathrm{m^{-3}}$．\n\n(2) 層の底からの高さを $z$ とすると $f_p^2(z)=f_c^2z/D$．反射は $f_p=f$ となる高さで起こるので\n\\[ z_r=D\\left(\\frac f{f_c}\\right)^2=100\\times\\frac{25}{64}\\approx39\\ \\mathrm{km},\\qquad h_r\\approx139\\ \\mathrm{km}. \\]\nパルスは群速度 $u=c\\sqrt{1-f_p^2/f^2}=c\\sqrt{1-z/z_r}$ で進む．片道の時間は\n\\[ \\frac{h_0}{c}+\\int_0^{z_r}\\frac{dz}{c\\sqrt{1-z/z_r}}=\\frac{h_0+2z_r}{c}. \\]\nよって見かけの高さは $h'=h_0+2z_r\\approx178\\ \\mathrm{km}$．\n\n(3) 電離層内では群速度が $c$ より小さく，反射点に近づくほど $0$ に近づく．パルスはそこで大きく遅れるので，$c$ で進んだとして換算した見かけの高さは，真の高度より高くなる．（直線分布では，層内の距離がちょうど 2 倍に見える．）"
+   }
+  ],
+  "idea": {
+   "tex": "サウンディングで測るのは群遅延である．反射点では $u\\to0$ となるが積分は有限で，直線分布なら層内の見かけの厚さはちょうど 2 倍になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $N_{\\max}$ [m⁻³]：≈7.9e11\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電離層",
+   "群速度",
+   "プラズマ振動数",
+   "サウンディング",
+   "見かけの高さ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "WV-05-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "WV-16",
+  "level": 3,
+  "minutes": 25,
+  "theme": "v=a+bλ媒質での波束の周期的復元",
+  "topic": "v=a+bλ媒質での波束の周期的復元",
+  "statement": {
+   "tex": "位相速度が波長の1次関数 $v=a+b\\lambda$（$a,b>0$ は定数）となる媒質を，実数の波形 $f(x,t)$ をもつ任意の光波列（スカラー波とする）が $+x$ 方向に進む．\n\\begin{enumerate}\n\\item 群速度 $u$ を求め，波長によらないことを示せ．\n\\item 分散関係 $\\omega(k)$ を求め，$f(x,t)$ を $t=0$ の波形 $f_0(x)$ を用いて表す方法を考えることで，時間 $\\tau=1/b$ ごとに波形が（平行移動を除いて）完全に元に戻ることを示せ．\n\\item 時刻 $t=1/(2b)$ での波形は $f_0$ とどのような関係にあるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $u=a$　(2) $\\omega=ak+2\\pi b\\,\\mathrm{sgn}(k)$，$f(x,1/b)=f_0(x-a/b)$　(3) $f(x,\\tfrac1{2b})=-f_0\\!\\left(x-\\tfrac{a}{2b}\\right)$（上下反転）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=v-\\lambda\\dfrac{dv}{d\\lambda}=a+b\\lambda-b\\lambda=a$．\n\n(2) $\\omega=vk=(a+2\\pi b/k)k=ak+2\\pi b\\ (k>0)$．実数場では負の $k$ 成分は $\\omega(-k)=-\\omega(k)$ である．$f_0(x)=\\int\\! F(k)e^{ikx}dk$ と展開すると\n\\[f(x,t)=\\int F(k)e^{i(kx-\\omega t)}dk=\\int_{k>0}F(k)e^{ik(x-at)}e^{-2\\pi i bt}dk+\\int_{k<0}F(k)e^{ik(x-at)}e^{+2\\pi ibt}dk.\\]\n$f_0$ の正周波数部分を $f_+$（解析信号の半分），負周波数部分を $f_-=\\overline{f_+}$ とすると\n\\[f(x,t)=e^{-2\\pi ibt}f_+(x-at)+e^{2\\pi ibt}f_-(x-at).\\]\n$t=1/b$ では位相因子がともに $1$ となり $f(x,1/b)=f_0(x-a/b)$．すなわち包絡線は速さ $a$ で剛体的に進み，搬送波の位相だけが一様に $2\\pi bt$ ずれるので，$\\tau=1/b$ ごとに波形が完全に復元される．物理的には，各成分の位相速度は群速度より $b\\lambda$ だけ速いので，群とともに動く系では各成分が時間 $1/b$ の間にちょうど自分の1波長だけ進み，全成分が同時に元の位相に戻る．\n\n(3) $t=1/(2b)$ では位相因子がともに $-1$ となり $f(x,\\tfrac1{2b})=-f_0\\!\\left(x-\\tfrac{a}{2b}\\right)$：波形は上下反転したものになる．（$t=1/(4b)$ では $f_0$ のヒルベルト変換が現れ，一般には形が異なる．）"
+   }
+  ],
+  "idea": {
+   "tex": "分散関係が $\\omega=ak+$ 定数 の形なら，包絡線は歪まず搬送波の位相だけが一様にずれる．周期 $1/b$ で復元し，半周期で符号反転する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $u$：a\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "群速度",
+   "分散関係",
+   "波束",
+   "解析信号"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

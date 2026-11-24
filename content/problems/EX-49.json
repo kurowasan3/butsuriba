@@ -195,6 +195,56 @@
   }
  },
  {
+  "id": "EX-02-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-49",
+  "level": 1,
+  "minutes": 15,
+  "theme": "バックグラウンドと同カウントの正味計数誤差",
+  "topic": "バックグラウンドと同カウントの正味計数誤差",
+  "statement": {
+   "tex": "GM 計数管で，バックグラウンドだけを時間 $T$ 測ると $n$ カウントであった．線源を置くと，同じ $n$ カウントが時間 $T/k$（$k>1$）で得られた．各カウント数はポアソン統計に従うとする．\n\\begin{enumerate}\n\\item 線源による正味の計数率の相対標準偏差を $n,k$ で表せ．\n\\item $n=3600$，$k=4$ のとき，その値を \\% で求めよ．\n\\item $k$ を大きくすると相対標準偏差はどこまで下がるか．また相対標準偏差がちょうど $2/\\sqrt n$ になる $k$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\sqrt{k^2+1}}{(k-1)\\sqrt n}$．(2) 2.29\\%．(3) $k\\to\\infty$ で $1/\\sqrt n$ に単調に近づく；$k=\\dfrac{4+\\sqrt7}{3}\\approx2.22$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 計数率は $r_b=n/T\\pm\\sqrt n/T$，$r_g=kn/T\\pm\\sqrt n\\,k/T$．正味 $r_s=r_g-r_b=(k-1)n/T$．誤差は独立に二乗和で\n\\[\\sigma_s^2=\\frac{nk^2}{T^2}+\\frac{n}{T^2}=\\frac{n(k^2+1)}{T^2},\\qquad\\frac{\\sigma_s}{r_s}=\\frac{\\sqrt{k^2+1}}{(k-1)\\sqrt n}.\\]\n\n(2) $\\dfrac{\\sqrt{17}}{3\\times60}=\\dfrac{4.123}{180}=0.0229$，すなわち 2.29\\%．\n\n(3) $f(k)=\\sqrt{k^2+1}/(k-1)$ は $f'(k)\\propto k(k-1)-(k^2+1)=-(k+1)<0$ で単調減少し，$k\\to\\infty$ で 1．よって相対誤差の下限は $1/\\sqrt n$（線源の $n$ カウントだけの統計誤差）．$f(k)=2$ は $k^2+1=4(k-1)^2$，$3k^2-8k+3=0$，$k>1$ の根 $k=(4+\\sqrt7)/3\\approx2.22$．"
+   }
+  ],
+  "idea": {
+   "tex": "正味計数率の誤差は総計数とバックグラウンドの誤差の二乗和で，同じ計数でも測定時間の比で相対誤差が変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン統計",
+   "誤差伝播",
+   "GM計数管",
+   "バックグラウンド",
+   "正味計数率"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "EX-02-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -390,6 +440,210 @@
   }
  },
  {
+  "id": "EX-02-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-49",
+  "level": 2,
+  "minutes": 30,
+  "theme": "計数データからの半減期と誤差・放射能",
+  "topic": "計数データからの半減期と誤差・放射能",
+  "statement": {
+   "tex": "点状の $\\gamma$ 線源から距離 $30\\ \\mathrm{cm}$ の位置に，面積 $1.0\\ \\mathrm{cm^2}$ の穴をもつ十分厚い鉛の遮蔽板を置き，その穴の真後ろに計数効率 $0.90$ の計数管を置く．$\\gamma$ 線は 1 崩壊あたり 1 本放出され等方的に出るとする．線源をはずした状態で 50 分間計数したら 30000 カウント（バックグラウンド）であった．線源を置き，時刻 $t=0$ から 50 分間計数すると 360000 カウント，$t=300$ 分から 50 分間計数すると 231100 カウントであった．\n\\begin{enumerate}\n\\item 崩壊定数を $\\lambda$ とする．長さ $\\Delta$ の計数区間を時間 $\\tau$ だけずらした 2 区間の正味カウント数の比は，$\\Delta$ によらず正確に $e^{-\\lambda\\tau}$ となることを示せ．\n\\item 半減期を求めよ．\n\\item カウント数の統計的ゆらぎ（ポアソン分布）を考え，2 区間の正味カウント数それぞれの相対誤差と，半減期の誤差を求めよ．\n\\item $t=0$ における線源の放射能（Bq）を求めよ．\n\\item 2 回目の測定と同程度の計数率の試料について，正味計数率の誤差を最小にしたい．試料の測定時間 $t_g$ とバックグラウンド測定時間 $t_b$ の合計を 60 分に固定するとき，最適な $t_g$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明（解説参照）　(2) $T_{1/2}\\approx7.0$ 時間（420 分）　(3) 0.19%，0.25%；$T_{1/2}=7.00\\pm0.04$ 時間　(4) $A_0\\approx1.4\\times10^6\\ \\mathrm{Bq}$　(5) $t_g/t_b=\\sqrt{r_g/r_b}\\approx2.78$ より $t_g\\approx44$ 分（$t_b\\approx16$ 分）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 正味計数率を $n(t)=n_0e^{-\\lambda t}$ とすると，区間 $[t,t+\\Delta]$ の正味カウント数は\n\\[\nC(t)=\\int_t^{t+\\Delta}n_0e^{-\\lambda t'}dt'=\\frac{n_0}{\\lambda}e^{-\\lambda t}\\left(1-e^{-\\lambda\\Delta}\\right).\n\\]\nよって $C(t+\\tau)/C(t)=e^{-\\lambda\\tau}$ で，$\\Delta$ によらない（区間の中央時刻で近似する必要はない）．\n\n(2) バックグラウンドは 50 分あたり 30000 なので正味カウント数は $C_1=330000$，$C_2=201100$．\n\\[\n\\lambda=\\frac{1}{300\\ \\text{分}}\\ln\\frac{330000}{201100}=\\frac{0.4953}{300}=1.651\\times10^{-3}\\ \\text{分}^{-1},\\qquad T_{1/2}=\\frac{\\ln2}{\\lambda}=420\\ \\text{分}\\approx7.0\\ \\text{時間}.\n\\]\n\n(3) 正味カウント $C=G-B$（$G$：全カウント，$B$：バックグラウンド）の標準偏差は $\\sqrt{G+B}$．\n\\[\n\\frac{\\sigma_1}{C_1}=\\frac{\\sqrt{360000+30000}}{330000}=1.9\\times10^{-3},\\qquad \\frac{\\sigma_2}{C_2}=\\frac{\\sqrt{231100+30000}}{201100}=2.5\\times10^{-3}.\n\\]\n$\\lambda=\\tau^{-1}\\ln(C_1/C_2)$ より $\\sigma_\\lambda=\\tau^{-1}\\sqrt{(\\sigma_1/C_1)^2+(\\sigma_2/C_2)^2}=\\dfrac{3.18\\times10^{-3}}{300}=1.06\\times10^{-5}\\ \\text{分}^{-1}$．相対誤差 $\\sigma_\\lambda/\\lambda=0.64\\%$ なので $T_{1/2}=7.00\\pm0.04$ 時間．\n\n(4) 線源から見た穴の立体角の割合は $\\dfrac{\\Omega}{4\\pi}=\\dfrac{1.0}{4\\pi\\times30^2}=8.84\\times10^{-5}$．放射能 $A(t)=A_0e^{-\\lambda t}$ に対し $C_1=0.90\\cdot\\dfrac{\\Omega}{4\\pi}\\displaystyle\\int_0^{\\Delta}A_0e^{-\\lambda t}dt$．$\\lambda=2.75\\times10^{-5}\\ \\mathrm s^{-1}$，$\\Delta=3000\\ \\mathrm s$ で $\\dfrac{1-e^{-\\lambda\\Delta}}{\\lambda}=2.88\\times10^3\\ \\mathrm s$．\n\\[\nA_0=\\frac{330000}{0.90\\times8.84\\times10^{-5}\\times2.88\\times10^3}\\ \\mathrm{Bq}\\approx1.4\\times10^6\\ \\mathrm{Bq}.\n\\]\n\n(5) 全計数率 $r_g$，バックグラウンド計数率 $r_b$ のとき正味計数率の分散は $\\sigma^2=\\dfrac{r_g}{t_g}+\\dfrac{r_b}{t_b}$．$t_g+t_b=T$ の下で最小化すると $-\\dfrac{r_g}{t_g^2}+\\dfrac{r_b}{t_b^2}=0$，すなわち $\\dfrac{t_g}{t_b}=\\sqrt{\\dfrac{r_g}{r_b}}$．$r_g=231100/50=4622\\ \\text{分}^{-1}$，$r_b=600\\ \\text{分}^{-1}$ より比は $2.78$，$t_g=60\\times\\dfrac{2.78}{3.78}\\approx44$ 分，$t_b\\approx16$ 分．"
+   }
+  ],
+  "idea": {
+   "tex": "有限幅の計数区間でも比は厳密に $e^{-\\lambda\\tau}$ であることを押さえ，バックグラウンド差し引きを含むポアソン誤差の伝播・立体角からの放射能の逆算・測定時間の最適配分まで一続きに扱う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) $A_0$ [Bq]：≈1.4e6\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "放射性崩壊",
+   "半減期",
+   "計数統計",
+   "ポアソン分布",
+   "誤差伝播",
+   "バックグラウンド",
+   "立体角",
+   "放射能"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-02-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-49",
+  "level": 2,
+  "minutes": 20,
+  "theme": "測定時間の最適配分と必要総時間",
+  "topic": "測定時間の最適配分と必要総時間",
+  "statement": {
+   "tex": "バックグラウンドの計数率を $b$，線源＋バックグラウンドの計数率を $g$ とし，それぞれ時間 $t_b,t_g$ 測定して線源の正味計数率 $s=g-b$ を求める（ポアソン統計）．\n\\begin{enumerate}\n\\item 総時間 $T=t_b+t_g$ を固定したとき $s$ の分散を最小にする配分が $t_b/t_g=\\sqrt{b/g}$ であることを示し，そのときの最小分散を $T,g,b$ で表せ．\n\\item 相対誤差 $\\varepsilon$ を達成するのに必要な最小総時間 $T_\\text{opt}$ と，等分配（$t_b=t_g$）の場合の総時間 $T_\\text{eq}$ を求め，比 $T_\\text{eq}/T_\\text{opt}$ が常に 1 以上であることを示せ．\n\\item $g=400$ /min，$b=100$ /min，$\\varepsilon=1\\%$ のとき，$T_\\text{opt}$，そのときの $t_b$，$T_\\text{eq}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sigma_{s,\\min}^2=\\dfrac{(\\sqrt g+\\sqrt b)^2}{T}$．(2) $T_\\text{opt}=\\dfrac{(\\sqrt g+\\sqrt b)^2}{\\varepsilon^2(g-b)^2}$，$T_\\text{eq}=\\dfrac{2(g+b)}{\\varepsilon^2(g-b)^2}$，比 $=\\dfrac{2(g+b)}{(\\sqrt g+\\sqrt b)^2}\\ge1$．(3) $T_\\text{opt}=100$ min（$t_b=33.3$ min），$T_\\text{eq}=111$ min．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma_s^2=\\dfrac{g}{t_g}+\\dfrac{b}{t_b}$ を $t_g=T-t_b$ のもとで最小化：$\\dfrac{g}{(T-t_b)^2}-\\dfrac{b}{t_b^2}=0$ より $\\dfrac{t_b}{t_g}=\\sqrt{\\dfrac bg}$．すなわち $t_b=\\dfrac{\\sqrt b}{\\sqrt g+\\sqrt b}T$，$t_g=\\dfrac{\\sqrt g}{\\sqrt g+\\sqrt b}T$．代入して\n\\[\\sigma_{s,\\min}^2=\\frac{\\sqrt g(\\sqrt g+\\sqrt b)}{T}+\\frac{\\sqrt b(\\sqrt g+\\sqrt b)}{T}=\\frac{(\\sqrt g+\\sqrt b)^2}{T}.\\]\n\n(2) $\\sigma_s=\\varepsilon(g-b)$ とおいて $T_\\text{opt}=\\dfrac{(\\sqrt g+\\sqrt b)^2}{\\varepsilon^2(g-b)^2}$．等分配では $\\sigma_s^2=\\dfrac{2(g+b)}{T}$ より $T_\\text{eq}=\\dfrac{2(g+b)}{\\varepsilon^2(g-b)^2}$．比 $\\dfrac{2(g+b)}{(\\sqrt g+\\sqrt b)^2}-1=\\dfrac{(\\sqrt g-\\sqrt b)^2}{(\\sqrt g+\\sqrt b)^2}\\ge0$．等号は $g=b$ のみ．\n\n(3) $(\\sqrt{400}+\\sqrt{100})^2=900$，$\\varepsilon^2(g-b)^2=10^{-4}\\times9\\times10^4=9$ より $T_\\text{opt}=100$ min，$t_b=\\dfrac{10}{30}\\times100=33.3$ min（$t_g=66.7$ min）．$T_\\text{eq}=1000/9=111$ min．最適化で約 10\\% 短縮できる．"
+   }
+  ],
+  "idea": {
+   "tex": "分散 $g/t_g+b/t_b$ の最小化は $t\\propto\\sqrt{\\text{率}}$ の配分を与え，最小分散は $(\\sqrt g+\\sqrt b)^2/T$ という簡潔な形になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポアソン統計",
+   "最適化",
+   "測定時間配分",
+   "誤差伝播",
+   "バックグラウンド"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-02-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-49",
+  "level": 2,
+  "minutes": 20,
+  "theme": "炭素年代測定の必要計数時間",
+  "topic": "炭素年代測定の必要計数時間",
+  "statement": {
+   "tex": "$^{14}$C 年代測定で，現代の炭素試料の正味計数率は $s_0=15$ /min，検出器のバックグラウンドは $b=10$ /min である．$^{14}$C の半減期を 5730 年とする．年代がちょうど半減期の 2 倍の試料を測る．試料（＋バックグラウンド）とバックグラウンドを同じ時間 $t$ ずつ測定する（ポアソン統計）．\n\\begin{enumerate}\n\\item 試料の正味計数率 $s$ と，試料＋バックグラウンドの計数率 $g$ を求めよ．\n\\item 正味計数率を相対精度 5\\% で決めるのに必要な $t$ を求めよ．\n\\item 年代を $\\pm100$ 年の精度で決めるのに必要な $t$ を求めよ（時間単位も）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $s=3.75$ /min，$g=13.75$ /min．(2) $t\\approx676$ min．(3) $t\\approx1.15\\times10^4$ min（約 192 h）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 2 半減期で $s=s_0/4=3.75$ /min，$g=s+b=13.75$ /min．\n\n(2) $s=g-b$ の分散は $\\sigma_s^2=\\dfrac gt+\\dfrac bt=\\dfrac{g+b}{t}$．$\\sigma_s/s=\\varepsilon$ より\n\\[t=\\frac{g+b}{\\varepsilon^2s^2}=\\frac{23.75}{0.0025\\times14.06}=676\\ \\text{min}.\\]\n\n(3) 年代 $\\tau=\\dfrac{T_{1/2}}{\\ln2}\\ln\\dfrac{s_0}{s}$ なので，$s_0$ を既知として $\\sigma_\\tau=\\tau_m\\dfrac{\\sigma_s}{s}$，$\\tau_m=T_{1/2}/\\ln2=8267$ 年（平均寿命）．$\\sigma_\\tau=100$ 年には $\\sigma_s/s=100/8267=0.0121$ が必要で，\n\\[t=\\frac{g+b}{s^2(0.0121)^2}=\\frac{23.75}{14.06\\times1.463\\times10^{-4}}=1.15\\times10^4\\ \\text{min}\\approx192\\ \\text{h}.\\]\n年代の誤差は計数率の相対誤差に平均寿命を掛けたものなので，5\\% の計数精度では年代誤差は約 410 年にもなる．古い試料ほど $s$ が小さくバックグラウンドが支配的になり，必要時間は急増する．"
+   }
+  ],
+  "idea": {
+   "tex": "年代の絶対誤差は計数率の相対誤差 × 平均寿命で決まり，相対精度 5\\% の計数では年代の精度は数百年にとどまる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "炭素年代測定",
+   "ポアソン統計",
+   "誤差伝播",
+   "バックグラウンド",
+   "計数時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-02-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-49",
+  "level": 2,
+  "minutes": 25,
+  "theme": "同軸円筒コンデンサの誤差の最適化",
+  "topic": "同軸円筒コンデンサの誤差の最適化",
+  "statement": {
+   "tex": "同軸円筒コンデンサ（内半径 $a$，外半径 $b$）の単位長さあたりの静電容量は $C=\\dfrac{2\\pi\\varepsilon_0}{\\ln(b/a)}$ である．$a,b$ は独立な標準偏差 $\\sigma_a,\\sigma_b$ で測定される．\n\\begin{enumerate}\n\\item $C$ の相対標準偏差 $\\sigma_C/C$ を求め，$a=10\\pm1$ mm，$b=20\\pm1$ mm の場合の値を求めよ．\n\\item $b=20$ mm，$\\sigma_a=\\sigma_b=0.5$ mm に固定して $a$ を設計で選べるとき，$\\sigma_C/C$ を最小にする $\\rho=b/a$ が満たす方程式を導き，$a$ と最小の $\\sigma_C/C$ を求めよ．\n\\item 定規の目盛りが一様に 2\\% 伸びていて，$a,b$ の測定値がともに同じ比率でずれていた場合，$C$ の値への影響はどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac{\\sigma_C}{C}=\\dfrac{1}{\\ln(b/a)}\\sqrt{\\dfrac{\\sigma_a^2}{a^2}+\\dfrac{\\sigma_b^2}{b^2}}$，0.16．(2) $\\rho^2\\ln\\rho=\\rho^2+1$，$\\rho\\approx3.03$，$a\\approx6.6$ mm，$\\sigma_C/C\\approx0.072$．(3) 影響しない（$C$ は $b/a$ のみに依存）．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\ln C=\\text{const}-\\ln\\ln(b/a)$ より $\\dfrac{dC}{C}=-\\dfrac{1}{\\ln(b/a)}\\left(\\dfrac{db}{b}-\\dfrac{da}{a}\\right)$．独立誤差の二乗和で\n\\[\\frac{\\sigma_C}{C}=\\frac{1}{\\ln(b/a)}\\sqrt{\\frac{\\sigma_a^2}{a^2}+\\frac{\\sigma_b^2}{b^2}}.\\]\n$a=10,b=20$，$\\sigma=1$ mm では $\\sqrt{0.01+0.0025}/\\ln2=0.1118/0.693=0.16$．\n\n(2) $\\sigma_a=\\sigma_b=\\sigma$，$\\rho=b/a$ とおくと $\\dfrac{\\sigma_C}{C}=\\dfrac{\\sigma}{b}\\dfrac{\\sqrt{\\rho^2+1}}{\\ln\\rho}$．$\\rho$ で微分して 0 とおくと\n\\[\\frac{\\rho}{\\sqrt{\\rho^2+1}}\\ln\\rho-\\frac{\\sqrt{\\rho^2+1}}{\\rho}=0\\iff\\rho^2\\ln\\rho=\\rho^2+1.\\]\n数値解は $\\rho\\approx3.031$，$a=20/3.031\\approx6.60$ mm．このとき $\\dfrac{\\sigma_C}{C}=\\dfrac{0.5}{20}\\cdot\\dfrac{\\sqrt{10.19}}{1.109}\\approx0.072$．（$a=10$ mm なら 0.081．）$a$ を小さくしすぎると $\\sigma_a/a$ が，大きくしすぎると $1/\\ln\\rho$ が大きくなるため最適値が存在する．\n\n(3) $a\\to(1+\\epsilon)a$，$b\\to(1+\\epsilon)b$ では $b/a$ が不変なので $C$ は全く変わらない．(1) の式で言えば，$da/a=db/b$ の完全相関誤差は $db/b-da/a$ で打ち消し合う．"
+   }
+  ],
+  "idea": {
+   "tex": "$C$ は比 $b/a$ だけに依存するため，誤差は $\\ln(b/a)$ で増幅される一方，共通の尺度誤差は相殺する．設計で誤差を最小化する最適比が存在する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "誤差伝播",
+   "同軸円筒コンデンサ",
+   "静電容量",
+   "最適設計",
+   "相関誤差",
+   "系統誤差"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "EX-02-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -482,6 +736,57 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-02-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-49",
+  "level": 3,
+  "minutes": 30,
+  "theme": "2カウンター法の統計誤差と最適間隔",
+  "topic": "2カウンター法の統計誤差と最適間隔",
+  "statement": {
+   "tex": "速さ $\\beta c$ で飛ぶ同種の不安定粒子のビームが，距離 $L$ だけ離れた 2 台のカウンターを通る．1 台目で $N_1$ 個，2 台目で $N_2$ 個が数えられ，減少は飛行中の崩壊のみによるとする．\n\\begin{enumerate}\n\\item 粒子の固有平均寿命 $\\tau$ を $L,N_1,N_2,\\gamma$ で表せ．\n\\item 速さ $c\\sqrt8/3$，$L=200\\ \\mathrm{m}$，$N_1=10000$，$N_2=8983$ のとき $\\tau$ を求めよ．さらに，各粒子が 2 台目まで生き残るかどうかを独立な試行（二項分布）とみなして，$\\tau$ の統計誤差を見積もれ（$c=3.0\\times10^8\\ \\mathrm{m/s}$）．\n\\item $N_1$ を固定したとき，$\\tau$ の相対誤差を最小にする $L$ は平均崩壊長 $\\lambda$ の何倍か．(2) の粒子での最適な $L$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\tau=\\dfrac{L}{c\\sqrt{\\gamma^2-1}\\,\\ln(N_1/N_2)}$　(2) $\\tau=(2.20\\pm0.07)\\times10^{-6}\\ \\mathrm{s}$　(3) $L/\\lambda=x_0\\approx1.59$（$x_0e^{x_0}=2(e^{x_0}-1)$ の解），$L\\approx3.0\\ \\mathrm{km}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 飛行時間 $L/(\\beta c)$，実験室での寿命 $\\gamma\\tau$ より $N_2=N_1\\exp\\left(-\\dfrac{L}{\\gamma\\beta c\\tau}\\right)$．$\\gamma\\beta=\\sqrt{\\gamma^2-1}$ を使って\n\\[\\tau=\\frac{L}{c\\sqrt{\\gamma^2-1}\\,\\ln(N_1/N_2)}.\\]\n\n(2) $\\beta^2=8/9$ より $\\gamma=3$，$\\sqrt{\\gamma^2-1}=2\\sqrt2$．$\\ln(10000/8983)=0.1073$ で\n\\[\\tau=\\frac{200}{3.0\\times10^8\\times2.828\\times0.1073}=2.20\\times10^{-6}\\ \\mathrm{s}.\\]\n生存確率 $p=N_2/N_1$ の推定誤差は $\\delta p=\\sqrt{p(1-p)/N_1}$，$\\delta(\\ln p)=\\delta p/p=\\sqrt{\\dfrac{1-p}{pN_1}}=3.37\\times10^{-3}$．$\\tau\\propto1/|\\ln p|$ より相対誤差は $\\dfrac{3.37\\times10^{-3}}{0.1073}=3.1\\%$，$\\delta\\tau=0.07\\times10^{-6}\\ \\mathrm{s}$．\n\n(3) $x=L/\\lambda$（$\\lambda=\\gamma\\beta c\\tau$）とすると $p=e^{-x}$，相対誤差は $\\dfrac{\\sqrt{(e^x-1)/N_1}}{x}$．$f(x)=\\frac12\\ln(e^x-1)-\\ln x$ を最小化して\n\\[\\frac{e^x}{2(e^x-1)}=\\frac1x\\iff xe^x=2(e^x-1),\\]\n数値解 $x_0=1.594$．このとき相対誤差は $1.2\\%$ まで下がる．(2) の粒子では $\\lambda=2.828\\times3.0\\times10^8\\times2.2\\times10^{-6}=1.87\\times10^3\\ \\mathrm{m}$，最適 $L\\approx3.0\\ \\mathrm{km}$．$L$ が短すぎると減少がわずかで比が決まらず，長すぎると $N_2$ が少なくなって統計が悪化する．"
+   }
+  ],
+  "idea": {
+   "tex": "寿命は $\\ln(N_1/N_2)$ から決まり，二項統計の誤差を最小化すると最適な間隔は平均崩壊長の約 1.6 倍になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\tau$：((L)/(c sqrt(γ ^(2)-1) ln (N_1 / N_2)))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "平均寿命",
+   "時間の遅れ",
+   "ミューオン",
+   "統計誤差",
+   "二項分布",
+   "最適化"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

@@ -593,6 +593,57 @@
   }
  },
  {
+  "id": "QF-07-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "QF-118",
+  "level": 3,
+  "minutes": 35,
+  "theme": "共変微分のヤコビ恒等式から同次マクスウェル方程式",
+  "topic": "共変微分のヤコビ恒等式から同次マクスウェル方程式",
+  "statement": {
+   "tex": "四元ポテンシャル $A_\\mu=(\\phi,-A_1,-A_2,-A_3)$，$\\partial_\\mu=(\\frac1c\\partial_t,\\partial_x,\\partial_y,\\partial_z)$ とし，共変微分を $\\hat D_\\mu=\\partial_\\mu+\\frac{ie}{\\hbar c}A_\\mu$ で定める．ゲージ変換は $A_\\mu\\to A_\\mu+\\partial_\\mu\\lambda$，$\\psi\\to e^{-ie\\lambda/\\hbar c}\\psi$ である．\n\\begin{enumerate}\n\\item $[\\hat D_\\mu,\\hat D_\\nu]=\\frac{ie}{\\hbar c}F_{\\mu\\nu}$ となる $F_{\\mu\\nu}$ を求め，$F_{0i}$ と $F_{ij}$ を $\\boldsymbol E=-\\nabla\\phi-\\frac1c\\partial_t\\boldsymbol A$，$\\boldsymbol B=\\nabla\\times\\boldsymbol A$ で表せ．\n\\item $\\hat D_\\mu\\psi$ がゲージ変換で $\\psi$ と同じ位相因子を受けることを示し，それを用いて $F_{\\mu\\nu}$ がゲージ不変であることを示せ．\n\\item ヤコビ恒等式 $[\\hat D_\\lambda,[\\hat D_\\mu,\\hat D_\\nu]]+[\\hat D_\\mu,[\\hat D_\\nu,\\hat D_\\lambda]]+[\\hat D_\\nu,[\\hat D_\\lambda,\\hat D_\\mu]]=0$ から $F_{\\mu\\nu}$ が満たす恒等式を導き，$(\\lambda,\\mu,\\nu)=(1,2,3)$ と $(0,1,2)$ の場合が，それぞれどのマクスウェル方程式になるか示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $F_{\\mu\\nu}=\\partial_\\mu A_\\nu-\\partial_\\nu A_\\mu$，$F_{0i}=E_i$，$F_{ij}=-\\varepsilon_{ijk}B_k$　(2) 証明（解説参照）　(3) $\\partial_\\lambda F_{\\mu\\nu}+\\partial_\\mu F_{\\nu\\lambda}+\\partial_\\nu F_{\\lambda\\mu}=0$；$(1,2,3)$ は $\\nabla\\cdot\\boldsymbol B=0$，$(0,1,2)$ は $(\\nabla\\times\\boldsymbol E)_z+\\frac1c\\partial_tB_z=0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) テスト関数 $f$ に作用させると，$\\partial_\\mu\\partial_\\nu f$ と $A_\\mu A_\\nu f$ の項は打ち消し，\n\\[\n[\\hat D_\\mu,\\hat D_\\nu]f=\\frac{ie}{\\hbar c}\\big(\\partial_\\mu(A_\\nu f)-A_\\nu\\partial_\\mu f-\\partial_\\nu(A_\\mu f)+A_\\mu\\partial_\\nu f\\big)=\\frac{ie}{\\hbar c}(\\partial_\\mu A_\\nu-\\partial_\\nu A_\\mu)f .\n\\]\n$F_{0i}=\\frac1c\\partial_t(-A_i)-\\partial_i\\phi=E_i$．$F_{12}=\\partial_x(-A_y)-\\partial_y(-A_x)=-B_z$ など，$F_{ij}=-\\varepsilon_{ijk}B_k$．\n\n(2) $\\hat D'_\\mu(e^{-iq\\lambda}\\psi)=e^{-iq\\lambda}\\big(\\partial_\\mu-iq\\partial_\\mu\\lambda+iqA_\\mu+iq\\partial_\\mu\\lambda\\big)\\psi=e^{-iq\\lambda}\\hat D_\\mu\\psi$（$q=e/\\hbar c$）．したがって演算子として $\\hat D'_\\mu=e^{-iq\\lambda}\\hat D_\\mu e^{iq\\lambda}$ で，\n\\[\n[\\hat D'_\\mu,\\hat D'_\\nu]=e^{-iq\\lambda}[\\hat D_\\mu,\\hat D_\\nu]e^{iq\\lambda}=e^{-iq\\lambda}\\,iqF_{\\mu\\nu}\\,e^{iq\\lambda}=iqF_{\\mu\\nu}\n\\]\n（$F_{\\mu\\nu}$ は掛け算の関数なので位相因子と可換）．よって $F'_{\\mu\\nu}=F_{\\mu\\nu}$．\n\n(3) $[\\hat D_\\lambda,F_{\\mu\\nu}]f=\\partial_\\lambda(F_{\\mu\\nu}f)-F_{\\mu\\nu}\\partial_\\lambda f=(\\partial_\\lambda F_{\\mu\\nu})f$（$A_\\lambda$ の項は可換で消える）．よってヤコビ恒等式は\n\\[\niq\\big(\\partial_\\lambda F_{\\mu\\nu}+\\partial_\\mu F_{\\nu\\lambda}+\\partial_\\nu F_{\\lambda\\mu}\\big)=0 .\n\\]\n$(1,2,3)$：$\\partial_xF_{23}+\\partial_yF_{31}+\\partial_zF_{12}=-(\\partial_xB_x+\\partial_yB_y+\\partial_zB_z)=0$，すなわち $\\nabla\\cdot\\boldsymbol B=0$．\n\n$(0,1,2)$：$\\frac1c\\partial_tF_{12}+\\partial_xF_{20}+\\partial_yF_{01}=-\\frac1c\\partial_tB_z-\\partial_xE_y+\\partial_yE_x=-\\big[(\\nabla\\times\\boldsymbol E)_z+\\frac1c\\partial_tB_z\\big]=0$，すなわちファラデーの法則の $z$ 成分．他の組で残りの成分が得られる．ポテンシャルで場を表す限り，同次マクスウェル方程式は「微分演算子の結合則」から自動的に従う．"
+   }
+  ],
+  "idea": {
+   "tex": "共変微分の交換子が場の強さを与え，その二重交換子のヤコビ恒等式がビアンキ恒等式＝同次マクスウェル方程式（$\\nabla\\cdot\\boldsymbol B=0$，ファラデー則）になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "共変微分",
+   "ゲージ不変性",
+   "場の強さ",
+   "ビアンキ恒等式",
+   "マクスウェル方程式",
+   "四元ポテンシャル"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "QF-07-013",
   "schema": "lemma.problem/1",
   "kind": "written",

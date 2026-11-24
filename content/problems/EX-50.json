@@ -196,6 +196,57 @@
   }
  },
  {
+  "id": "EX-03-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-50",
+  "level": 1,
+  "minutes": 25,
+  "theme": "放物線の最小二乗当てはめと頂点",
+  "topic": "放物線の最小二乗当てはめと頂点",
+  "statement": {
+   "tex": "一様な斜面を転がる物体のある量 $y$ を $x$ の各値で測り，次のデータを得た．\n\\[\\begin{array}{c|cccccc}x&-2&-1&0&1&2&3\\\\\\hline y&7.9&3.1&0.9&0.6&3.2&8.1\\end{array}\\]\n\\begin{enumerate}\n\\item $y=a_0+a_1x+a_2x^2$ の最小二乗当てはめの正規方程式を書き，$a_0,a_1,a_2$ を求めよ（3 桁）．\n\\item 当てはめた放物線の頂点の座標を求めよ．\n\\item 残差二乗和 $S$ と，測定 1 点あたりの誤差分散の不偏推定値 $S/(N-3)$ を求めよ．分母が $N-3$ である理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a_0=0.729$，$a_1=-1.18$，$a_2=1.21$．(2) $(0.488,\\ 0.440)$．(3) $S=0.0561$，$S/3=0.0187$．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sum x=3,\\ \\sum x^2=19,\\ \\sum x^3=27,\\ \\sum x^4=115,\\ \\sum y=23.8,\\ \\sum xy=12.4,\\ \\sum x^2y=121.0$，$N=6$．正規方程式は\n\\[\\begin{pmatrix}6&3&19\\\\3&19&27\\\\19&27&115\\end{pmatrix}\\begin{pmatrix}a_0\\\\a_1\\\\a_2\\end{pmatrix}=\\begin{pmatrix}23.8\\\\12.4\\\\121.0\\end{pmatrix}.\\]\n解いて $a_0=0.7286$，$a_1=-1.1804$，$a_2=1.2089$．\n\n(2) $x_v=-\\dfrac{a_1}{2a_2}=\\dfrac{1.1804}{2.4179}=0.488$，$y_v=a_0-\\dfrac{a_1^2}{4a_2}=0.7286-0.2881=0.440$．\n\n(3) 当てはめ値 $(7.925,\\ 3.118,\\ 0.729,\\ 0.757,\\ 3.204,\\ 8.068)$ との残差の二乗和は $S=0.0561$．パラメータを 3 個データから決めたため，残差は 3 つの線形拘束（正規方程式）を満たし自由度が $N-3=3$ に減る．よって $\\hat\\sigma^2=S/3=0.0187$（$\\hat\\sigma\\approx0.14$）．"
+   }
+  ],
+  "idea": {
+   "tex": "多項式の最小二乗は正規方程式（線形連立方程式）に帰着し，フィットの自由度 $N-p$ が誤差分散の不偏推定を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "最小二乗法",
+   "正規方程式",
+   "多項式回帰",
+   "残差",
+   "自由度",
+   "不偏分散"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "EX-03-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -392,6 +443,57 @@
   }
  },
  {
+  "id": "EX-03-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-50",
+  "level": 2,
+  "minutes": 25,
+  "theme": "指数減衰の最小二乗：切片を固定するか",
+  "topic": "指数減衰の最小二乗：切片を固定するか",
+  "statement": {
+   "tex": "ある試料の放射能を，初期値を 1 とした相対値で 1 時間ごとに測定し，次の値を得た．\n\\[\\begin{array}{c|ccccc}t\\ (\\text{h})&1&2&3&4&5\\\\\\hline A&0.88&0.70&0.55&0.44&0.35\\end{array}\\]\n$y=\\ln A$ とする（$\\sum t=15$，$\\sum t^2=55$，$\\sum y=-2.953$，$\\sum ty=-11.168$）．\n\\begin{enumerate}\n\\item $A=e^{-\\lambda t}$（$t=0$ で $A=1$ に固定）を仮定して，$y$ の残差二乗和を最小にする $\\lambda$ と半減期を求めよ．\n\\item $A=A_0e^{-\\lambda t}$（$A_0$ も未知）として最小二乗で $\\lambda$，$A_0$，半減期を求めよ．\n\\item 実は $t=0$ の測定は計数率が高く，計数管の不感時間のために過小評価されていた．どちらの半減期を採用すべきか，$A_0$ の値に基づいて述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\lambda=0.203\\ \\text{h}^{-1}$，$T_{1/2}=3.41$ h．(2) $\\lambda=0.231\\ \\text{h}^{-1}$，$A_0=1.11$，$T_{1/2}=3.00$ h．(3) (2) を採用．初期値は約 10\\% 過小評価されていた．"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $S=\\sum(y_n+\\lambda t_n)^2$，$\\partial S/\\partial\\lambda=0$ より $\\lambda=-\\dfrac{\\sum ty}{\\sum t^2}=\\dfrac{11.168}{55}=0.203\\ \\text{h}^{-1}$．$T_{1/2}=\\ln2/\\lambda=3.41$ h．\n\n(2) $y=c-\\lambda t$ の直線回帰．$N=5$ として\n\\[\\lambda=-\\frac{N\\sum ty-\\sum t\\sum y}{N\\sum t^2-(\\sum t)^2}=-\\frac{5(-11.168)-15(-2.953)}{275-225}=\\frac{11.54}{50}=0.231\\ \\text{h}^{-1},\\]\n$c=\\dfrac{\\sum y+\\lambda\\sum t}{N}=\\dfrac{-2.953+3.462}{5}=0.102$，$A_0=e^{c}=1.11$．$T_{1/2}=\\ln2/0.231=3.00$ h．\n\n(3) 切片を自由にした当てはめでは $A_0=1.11$ となり，データ自体が「$t=0$ の真の放射能は基準値より約 11\\% 大きい」ことを示している．基準値（=1）が不感時間で過小評価されていたなら，(1) のように切片を 1 に固定すると直線が無理に原点を通らされ，傾きが緩くなって半減期を長く見積もる．したがって (2) の $T_{1/2}=3.0$ h を採用すべきである．系統誤差を含みうる点に当てはめを拘束してはいけない，というのが教訓．"
+   }
+  ],
+  "idea": {
+   "tex": "片対数プロットの直線当てはめで切片を既知とみなすかどうかで傾きが系統的に変わる．切片を自由にすると基準測定の系統誤差が検出できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "最小二乗法",
+   "指数減衰",
+   "半減期",
+   "線形回帰",
+   "系統誤差",
+   "不感時間"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "EX-03-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -484,6 +586,57 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "EX-03-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "EX-50",
+  "level": 3,
+  "minutes": 45,
+  "theme": "重み付き最小2乗法と最適な測定点配置",
+  "topic": "重み付き最小2乗法と最適な測定点配置",
+  "statement": {
+   "tex": "ある物理量の測定値の誤差は独立なガウス分布に従い，系統誤差はないものとする．\n\\begin{enumerate}\n\\item 同じ量 $X$ を精度の異なる装置で $N$ 回測り，$j$ 回目の測定値 $x_j$ の標準偏差が既知の $\\sigma_j$ であったとする．尤度を最大にする推定値 $\\hat X$ と，その標準偏差 $\\sigma_{\\hat X}$ を求めよ．\n\\item (1) を用いて，重力加速度の 2 つの測定結果 $9.80\\pm0.05$，$9.86\\pm0.10\\ \\mathrm{m/s^2}$ を統合した値と誤差を求めよ．\n\\item 誤差のない設定値 $X_k$（$k=1,\\dots,M$）に対して $Y_k$ を測定し，$Y_k$ の誤差はすべて同じ標準偏差 $\\sigma$ をもつとする．直線 $Y=pX+q$ を最小 2 乗法で当てはめたとき，$\\bar X=\\frac1M\\sum_k X_k$，$S_{xx}=\\sum_k (X_k-\\bar X)^2$ を用いて，推定値 $\\hat p,\\hat q$ の分散 $\\mathrm{Var}(\\hat p)$，$\\mathrm{Var}(\\hat q)$ と共分散 $\\mathrm{Cov}(\\hat p,\\hat q)$ を求めよ．\n\\item 設定値は区間 $0\\le X_k\\le L$ の中で自由に選べ，測定回数 $M$（偶数）は固定とする．$\\mathrm{Var}(\\hat p)$ を最小にする $X_k$ の選び方とその最小値を求めよ．また，$X_k$ を区間に等間隔 $X_k=L(k-1)/(M-1)$ に並べた場合と比べ，$M\\to\\infty$ で分散の比がいくらになるか答えよ．\n\\item (3) の当てはめ直線から，測定範囲外の点 $X^*$ における $Y$ の値を $\\hat Y^*=\\hat pX^*+\\hat q$ と予測する．$\\mathrm{Var}(\\hat Y^*)$ を求め，それが最小になる $X^*$ を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\hat X=\\dfrac{\\sum_j x_j/\\sigma_j^2}{\\sum_j 1/\\sigma_j^2}$，$\\sigma_{\\hat X}=\\Big(\\sum_j\\sigma_j^{-2}\\Big)^{-1/2}$　(2) $9.812\\pm0.045\\ \\mathrm{m/s^2}$　(3) $\\mathrm{Var}(\\hat p)=\\sigma^2/S_{xx}$，$\\mathrm{Var}(\\hat q)=\\sigma^2\\sum X_k^2/(MS_{xx})$，$\\mathrm{Cov}=-\\sigma^2\\bar X/S_{xx}$　(4) 半数を $X=0$，半数を $X=L$ に置く．最小値 $4\\sigma^2/(ML^2)$．等間隔との比は $1/3$（等間隔は 3 倍大きい）　(5) $\\mathrm{Var}(\\hat Y^*)=\\sigma^2\\left[\\dfrac1M+\\dfrac{(X^*-\\bar X)^2}{S_{xx}}\\right]$，$X^*=\\bar X$ で最小"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 尤度は $\\prod_j \\exp[-(x_j-X)^2/2\\sigma_j^2]$ に比例するので，$\\chi^2=\\sum_j (x_j-X)^2/\\sigma_j^2$ を最小化する．$d\\chi^2/dX=0$ より\n\\[\\hat X=\\frac{\\sum_j w_jx_j}{\\sum_j w_j},\\qquad w_j=\\frac1{\\sigma_j^2}.\\]\n$\\hat X$ は $x_j$ の線形結合なので誤差伝播（独立）より\n\\[\\sigma_{\\hat X}^2=\\frac{\\sum_j w_j^2\\sigma_j^2}{(\\sum_j w_j)^2}=\\frac{\\sum_j w_j}{(\\sum_j w_j)^2}=\\frac1{\\sum_j w_j}.\\]\nすべて $\\sigma_j=\\sigma$ なら $\\hat X$ は算術平均，$\\sigma_{\\hat X}=\\sigma/\\sqrt N$ に戻る．\n\n(2) $w_1=400$，$w_2=100$．$\\hat X=(400\\times9.80+100\\times9.86)/500=9.812$，$\\sigma_{\\hat X}=1/\\sqrt{500}=0.0447$．よって $9.812\\pm0.045\\ \\mathrm{m/s^2}$．精度の悪い測定も統合すれば誤差は必ず小さくなる（$0.05\\to0.045$）．\n\n(3) 正規方程式を解くと\n\\[\\hat p=\\frac{\\sum_k (X_k-\\bar X)Y_k}{S_{xx}},\\qquad \\hat q=\\bar Y-\\hat p\\bar X .\\]\n$\\hat p$ は $Y_k$ の線形結合で係数 $c_k=(X_k-\\bar X)/S_{xx}$ なので $\\mathrm{Var}(\\hat p)=\\sigma^2\\sum c_k^2=\\sigma^2/S_{xx}$．\n$\\bar Y$ と $\\hat p$ の共分散は $\\sigma^2\\sum_k \\frac1M c_k=0$ だから\n\\[\\mathrm{Var}(\\hat q)=\\frac{\\sigma^2}{M}+\\bar X^2\\frac{\\sigma^2}{S_{xx}}=\\frac{\\sigma^2(S_{xx}+M\\bar X^2)}{MS_{xx}}=\\frac{\\sigma^2\\sum_kX_k^2}{MS_{xx}},\\]\n\\[\\mathrm{Cov}(\\hat p,\\hat q)=\\mathrm{Cov}(\\hat p,\\bar Y)-\\bar X\\,\\mathrm{Var}(\\hat p)=-\\frac{\\sigma^2\\bar X}{S_{xx}}.\\]\n\n(4) $\\mathrm{Var}(\\hat p)$ を最小にするには $S_{xx}$ を最大にすればよい．区間 $[0,L]$ 内の点では $|X_k-\\bar X|$ を大きくするため，すべての点を両端に置くのが最適で，$M/2$ 個ずつ $0$ と $L$ に置けば $\\bar X=L/2$，$S_{xx}=ML^2/4$（区間内の点では一般に $\\sum (X_k-\\bar X)^2\\le ML^2/4$ が成り立ち，この配置はその上限を達成する）．よって $\\mathrm{Var}(\\hat p)_{\\min}=4\\sigma^2/(ML^2)$．\n\n等間隔の場合 $S_{xx}=\\dfrac{L^2M(M+1)}{12(M-1)}$ なので $\\mathrm{Var}(\\hat p)=\\dfrac{12(M-1)\\sigma^2}{M(M+1)L^2}\\to\\dfrac{12\\sigma^2}{ML^2}$．比は $\\dfrac{4}{12}=\\dfrac13$．ただし両端配置では直線性そのものを検証できないという代償がある．\n\n(5) $\\hat Y^*=\\bar Y+\\hat p(X^*-\\bar X)$ と書け，$\\bar Y$ と $\\hat p$ は無相関なので\n\\[\\mathrm{Var}(\\hat Y^*)=\\frac{\\sigma^2}{M}+\\frac{\\sigma^2(X^*-\\bar X)^2}{S_{xx}}.\\]\n最小は $X^*=\\bar X$（データの重心）で $\\sigma^2/M$．外挿するほど誤差は放物線的に増大する．"
+   }
+  ],
+  "idea": {
+   "tex": "誤差 $1/\\sigma^2$ の重みで最尤推定し，最小2乗推定量が $Y_k$ の線形結合であることから誤差伝播で分散・共分散を出す．傾きの精度は $S_{xx}$ だけで決まり，測定点を両端に集めるのが最適．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "誤差の伝播",
+   "最小2乗法",
+   "重み付き平均",
+   "最尤推定",
+   "実験計画",
+   "外挿"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

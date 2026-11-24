@@ -194,6 +194,351 @@
   }
  },
  {
+  "id": "SS-03-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 1,
+  "minutes": 15,
+  "theme": "フェルミ球内の電子の分布に関する割合",
+  "topic": "フェルミ球内の電子の分布に関する割合",
+  "statement": {
+   "tex": "$T=0$ の金属内の自由電子（3 次元，状態密度 $\\propto\\sqrt E$）について次を求めよ．フェルミエネルギーを $E_F$，フェルミ速度を $v_F$ とする．\n\\begin{enumerate}\n\\item 電子のちょうど半数が $\\eta E_F$ より大きい運動エネルギーをもつような $\\eta$．\n\\item 運動エネルギーが $E_F/2$ を超える電子が，電子気体の全運動エネルギーのうち担う割合．\n\\item 速さが $v_F/2$ を超える電子の割合．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\eta=2^{-2/3}\\approx0.63$　(2) $1-2^{-5/2}\\approx82\\%$　(3) $7/8\\approx88\\%$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$E$ 以下の電子数は $N(E)\\propto E^{3/2}$，全エネルギーは $\\int_0^E E'\\sqrt{E'}dE'\\propto E^{5/2}$．\n\n(1) $\\eta^{3/2}=1/2$ より $\\eta=2^{-2/3}\\approx0.630$．\n\n(2) $E_F/2$ 以下の電子のエネルギーの割合は $(1/2)^{5/2}$ なので，求める割合は $1-2^{-5/2}\\approx0.823$．\n\n(3) 速度空間ではフェルミ球内に一様分布するので，$v<v_F/2$ の割合は体積比 $(1/2)^3=1/8$．よって $7/8=87.5\\%$．（エネルギーでは $E_F/4$ 以上に相当し，$1-(1/4)^{3/2}=7/8$ と一致．）"
+   }
+  ],
+  "idea": {
+   "tex": "$N(<E)\\propto E^{3/2}$，エネルギー $\\propto E^{5/2}$，速度空間では一様分布という 3 つの見方を使い分ける．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\eta$：≈0.63\n(2) [%]：≈82\n(3) [%]：≈88"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ気体",
+   "自由電子",
+   "状態密度",
+   "フェルミ球"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 1,
+  "minutes": 15,
+  "theme": "フェルミ準位から価電子数を推定・圧縮の効果",
+  "topic": "フェルミ準位から価電子数を推定・圧縮の効果",
+  "statement": {
+   "tex": "マグネシウム（密度 $1.74\\ \\mathrm{g/cm^3}$，モル質量 $24.3\\ \\mathrm{g/mol}$）の $T=0$ でのフェルミ準位は自由電子模型で $E_F=7.08\\ \\mathrm{eV}$（伝導帯の底から測る）であるとする．\n\\begin{enumerate}\n\\item 原子 1 個あたりの自由電子の数を求めよ．\n\\item この金属を等方的に圧縮して体積を $1.0\\%$ 減らすと $E_F$ はおよそ何 eV 変化するか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 約 $2.0$ 個　(2) 約 $+0.047\\ \\mathrm{eV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E_F=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}$ より\n\\[\nn=\\frac{1}{3\\pi^2}\\left(\\frac{2mE_F}{\\hbar^2}\\right)^{3/2}=8.55\\times10^{28}\\ \\mathrm{m^{-3}}.\n\\]\n原子数密度は $n_a=\\rho N_A/M=4.31\\times10^{28}\\ \\mathrm{m^{-3}}$．よって $n/n_a\\approx1.98\\approx2$（Mg は 2 価）．\n\n(2) $E_F\\propto n^{2/3}\\propto V^{-2/3}$ より $\\dfrac{\\Delta E_F}{E_F}=-\\dfrac23\\dfrac{\\Delta V}{V}=+0.67\\%$．$\\Delta E_F\\approx0.047\\ \\mathrm{eV}$ 増加する．"
+   }
+  ],
+  "idea": {
+   "tex": "$E_F\\propto n^{2/3}$ を逆に使えば価電子数がわかり，体積変化に対する応答も直ちに出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミエネルギー",
+   "自由電子模型",
+   "価電子数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 1,
+  "minutes": 20,
+  "theme": "フェルミ分布の速度分布と壁への電子流束",
+  "topic": "フェルミ分布の速度分布と壁への電子流束",
+  "statement": {
+   "tex": "$T=0$ の自由電子気体（数密度 $n$，フェルミ速度 $v_F$）について，\n\\begin{enumerate}\n\\item 速さが $v$ と $v+dv$ の間にある電子の数密度 $dn_v$ を $m$，$\\hbar$ で表せ．\n\\item 平均の速さ $\\langle v\\rangle$ と根二乗平均速さ $\\sqrt{\\langle v^2\\rangle}$ を $v_F$ で表せ．\n\\item 金属内の仮想的な平面を単位面積・単位時間に一方向へ横切る電子の数 $J$ を $n$，$v_F$ で表し，銅（$n=8.5\\times10^{22}\\ \\mathrm{cm^{-3}}$）について数値を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $dn_v=\\dfrac{m^3}{\\pi^2\\hbar^3}v^2dv$（$v\\le v_F$）　(2) $\\tfrac34v_F$，$\\sqrt{3/5}\\,v_F\\approx0.77v_F$　(3) $J=\\tfrac{3}{16}nv_F\\approx2.5\\times10^{34}\\ \\mathrm{m^{-2}s^{-1}}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 運動量空間の体積要素 $4\\pi p^2dp$ に $2/(2\\pi\\hbar)^3$ を掛け，$p=mv$ とすると\n\\[\ndn_v=\\frac{2\\cdot4\\pi m^3v^2dv}{(2\\pi\\hbar)^3}=\\frac{m^3}{\\pi^2\\hbar^3}v^2dv\\quad(0\\le v\\le v_F).\n\\]\n(2) $\\langle v\\rangle=\\dfrac{\\int_0^{v_F}v^3dv}{\\int_0^{v_F}v^2dv}=\\dfrac34v_F$，$\\langle v^2\\rangle=\\dfrac{\\int v^4}{\\int v^2}=\\dfrac35v_F^2$．\n\n(3) 等方分布では，速さ $v$ の電子のうち平面の法線と $\\theta$ をなす向きのものの割合は $\\tfrac12\\sin\\theta d\\theta$．単位時間に横切る数は\n\\[\nJ=\\int dn_v\\int_0^{\\pi/2}v\\cos\\theta\\cdot\\tfrac12\\sin\\theta\\,d\\theta=\\frac14n\\langle v\\rangle=\\frac{3}{16}nv_F.\n\\]\n銅では $v_F=\\hbar(3\\pi^2n)^{1/3}/m=1.57\\times10^6\\ \\mathrm{m/s}$，$J=\\tfrac{3}{16}\\times8.5\\times10^{28}\\times1.57\\times10^6\\approx2.5\\times10^{34}\\ \\mathrm{m^{-2}s^{-1}}$（電流密度にすると $eJ\\approx4\\times10^{15}\\ \\mathrm{A/m^2}$ が両向きに打ち消し合っている）．"
+   }
+  ],
+  "idea": {
+   "tex": "フェルミ球内で一様な分布から速度分布 $\\propto v^2$ が得られ，気体分子運動論の $\\frac14n\\langle v\\rangle$ がそのまま使える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $J$ [m⁻²s⁻¹]：≈2.5e34"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ気体",
+   "速度分布",
+   "流束",
+   "自由電子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 1,
+  "minutes": 15,
+  "theme": "ド・ブロイ波長の分布と最短波長",
+  "topic": "ド・ブロイ波長の分布と最短波長",
+  "statement": {
+   "tex": "$T=0$ の金属内の自由電子（数密度 $n$）を，ド・ブロイ波長 $\\lambda$ で分類する．\n\\begin{enumerate}\n\\item 波長が $\\lambda$ と $\\lambda+d\\lambda$ の間にある電子の数密度 $dn_\\lambda$ を求め，波長の下限 $\\lambda_{\\min}$ を $n$ で表せ．\n\\item 波長の平均値 $\\langle\\lambda\\rangle$ を $\\lambda_{\\min}$ で表せ．\n\\item 波長が $\\lambda_{\\min}$ から $2\\lambda_{\\min}$ の間にある電子の割合を求めよ．また銅（$n=8.5\\times10^{22}\\ \\mathrm{cm^{-3}}$）の $\\lambda_{\\min}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $dn_\\lambda=8\\pi\\lambda^{-4}d\\lambda$（$\\lambda\\ge\\lambda_{\\min}$），$\\lambda_{\\min}=2\\pi(3\\pi^2n)^{-1/3}=(8\\pi/3n)^{1/3}$　(2) $\\tfrac32\\lambda_{\\min}$　(3) $7/8$，$\\lambda_{\\min}\\approx0.46\\ \\mathrm{nm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $k=2\\pi/\\lambda$ で，$dn=\\dfrac{2\\cdot4\\pi k^2dk}{(2\\pi)^3}=\\dfrac{k^2dk}{\\pi^2}$．$|dk|=2\\pi d\\lambda/\\lambda^2$ を代入して\n\\[\ndn_\\lambda=\\frac{1}{\\pi^2}\\frac{4\\pi^2}{\\lambda^2}\\frac{2\\pi}{\\lambda^2}d\\lambda=\\frac{8\\pi}{\\lambda^4}d\\lambda .\n\\]\n$k\\le k_F$ より $\\lambda\\ge\\lambda_{\\min}=2\\pi/k_F$．$\\int_{\\lambda_{\\min}}^\\infty dn_\\lambda=\\dfrac{8\\pi}{3\\lambda_{\\min}^3}=n$ からも $\\lambda_{\\min}=(8\\pi/3n)^{1/3}$．\n\n(2) $\\langle\\lambda\\rangle=\\dfrac1n\\displaystyle\\int_{\\lambda_{\\min}}^\\infty\\frac{8\\pi}{\\lambda^3}d\\lambda=\\frac{4\\pi}{n\\lambda_{\\min}^2}=\\frac32\\lambda_{\\min}$．\n\n(3) $\\dfrac1n\\displaystyle\\int_{\\lambda_{\\min}}^{2\\lambda_{\\min}}\\frac{8\\pi}{\\lambda^4}d\\lambda=1-\\frac18=\\frac78$．銅では $\\lambda_{\\min}=(8\\pi/3n)^{1/3}=0.46\\ \\mathrm{nm}$ で，格子定数（$0.36\\ \\mathrm{nm}$）と同程度である．"
+   }
+  ],
+  "idea": {
+   "tex": "分布 $\\propto\\lambda^{-4}$ は波数空間の一様分布の言い換え．波長が短い側に鋭い端 $\\lambda_{\\min}=2\\pi/k_F$ があり，大半の電子はその 2 倍以内に入る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $dn_\\lambda$：8 pi λ ^(-4) d λ ; $\\lambda_{\\min}$：2 pi (3 pi ^(2) n)^(-1/3)\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ド・ブロイ波長",
+   "フェルミ気体",
+   "分布関数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 1,
+  "minutes": 15,
+  "theme": "フェルミ速度・フェルミ波長と相対論の閾値",
+  "topic": "フェルミ速度・フェルミ波長と相対論の閾値",
+  "statement": {
+   "tex": "伝導電子密度 $n=8.5\\times10^{28}\\ \\mathrm{m^{-3}}$ の銅を 3 次元自由電子気体（スピン縮退 2）とみなす．\n\\begin{enumerate}\n\\item フェルミ波数 $k_F$，フェルミ速度 $v_F$ を求めよ．\n\\item フェルミ準位の電子のド・ブロイ波長 $\\lambda_F=2\\pi/k_F$ と平均電子間距離 $n^{-1/3}$ の比が $n$ によらない定数になることを示し，その値を求めよ．\n\\item 電子密度をどこまで上げると $v_F$ が光速の 1/10 に達するか．銅の何倍の密度か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $k_F=1.36\\times10^{10}\\ \\mathrm{m^{-1}}$，$v_F=1.57\\times10^6\\ \\mathrm{m/s}$　(2) $\\lambda_Fn^{1/3}=2\\pi/(3\\pi^2)^{1/3}\\approx2.03$　(3) $n\\approx5.9\\times10^{32}\\ \\mathrm{m^{-3}}$，約 $6.9\\times10^3$ 倍"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $k_F=(3\\pi^2n)^{1/3}=(3\\pi^2\\times8.5\\times10^{28})^{1/3}=1.36\\times10^{10}\\ \\mathrm{m^{-1}}$．\n\\[ v_F=\\frac{\\hbar k_F}{m_e}=\\frac{1.055\\times10^{-34}\\times1.36\\times10^{10}}{9.11\\times10^{-31}}=1.57\\times10^6\\ \\mathrm{m/s} \\]\n（$E_F=\\hbar^2k_F^2/2m_e=7.0$ eV に対応）．\n\n(2) $\\lambda_Fn^{1/3}=\\dfrac{2\\pi n^{1/3}}{(3\\pi^2n)^{1/3}}=\\dfrac{2\\pi}{(3\\pi^2)^{1/3}}\\approx2.03$．密度によらず，フェルミ準位の電子の波長は電子間距離の約 2 倍である．このため伝導電子は古典粒子として扱えず，縮退した量子気体になる．\n\n(3) $v_F=0.1c$ となる $k_F=m_e(0.1c)/\\hbar=2.59\\times10^{11}\\ \\mathrm{m^{-1}}$．\n\\[ n=\\frac{k_F^3}{3\\pi^2}=5.9\\times10^{32}\\ \\mathrm{m^{-3}}, \\]\n銅の約 $6.9\\times10^3$ 倍．$n\\propto v_F^3$ なので，速度を $1.57\\times10^6\\to3\\times10^7$ m/s（約 19 倍）にするには密度を $19^3$ 倍にする必要がある．このような密度は白色矮星内部で実現し，相対論的縮退が重要になる．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\lambda_F n^{1/3}$ は密度によらない普遍定数で，縮退電子気体の本質的な量子性を表す．$v_F\\propto n^{1/3}$ から相対論的になる密度も見積もれる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $k_F$ [m⁻¹]：≈1.36e10 ; $v_F$ [m/s]：≈1.57e6\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ速度",
+   "フェルミ波数",
+   "ド・ブロイ波長",
+   "縮退",
+   "白色矮星"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 1,
+  "minutes": 15,
+  "theme": "エネルギー区間の状態数と量子サイズ効果",
+  "topic": "エネルギー区間の状態数と量子サイズ効果",
+  "statement": {
+   "tex": "伝導電子を 3 次元自由電子気体（質量 $m_e$，スピン縮退 2）とみなす．\n\\begin{enumerate}\n\\item 単位体積あたり，$E=4.00\\ \\mathrm{eV}$ 以下の状態数を求めよ．\n\\item 単位体積あたり，$4.00$〜$4.01\\ \\mathrm{eV}$ にある状態数を，状態密度を使った近似と (1) の公式の差による厳密計算の両方で求めよ．一辺 1 cm の立方体では何個か．\n\\item 一辺 $L$ の立方体の微粒子で，この 0.01 eV の区間に含まれる状態数が平均 1 個になる $L$ を求めよ．これより小さい微粒子で何が起こるか述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3.63\\times10^{28}\\ \\mathrm{m^{-3}}$　(2) $1.36\\times10^{26}\\ \\mathrm{m^{-3}}$（近似・厳密とも，相対差約 $6\\times10^{-4}$），1 cm 立方で $1.36\\times10^{20}$ 個　(3) $L\\approx1.9\\ \\mathrm{nm}$．準位の離散性が顕著になる（量子サイズ効果）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $N(E)/V=\\dfrac{k^3}{3\\pi^2}=\\dfrac{(2m_eE)^{3/2}}{3\\pi^2\\hbar^3}=\\dfrac{8\\pi}{3h^3}(2m_eE)^{3/2}$．$E=4.00$ eV で\n\\[ \\frac{N}{V}=3.63\\times10^{28}\\ \\mathrm{m^{-3}}. \\]\n\n(2) 状態密度 $D(E)=\\dfrac{4\\pi(2m_e)^{3/2}}{h^3}E^{1/2}=\\dfrac32\\dfrac{N(E)}{VE}$．$D(4.00\\,\\mathrm{eV})\\Delta E=\\dfrac32\\times3.63\\times10^{28}\\times\\dfrac{0.01}{4.00}=1.36\\times10^{26}\\ \\mathrm{m^{-3}}$．\n厳密には $\\dfrac{N}{V}\\left[(4.01/4.00)^{3/2}-1\\right]=3.63\\times10^{28}\\times3.75\\times10^{-3}=1.36\\times10^{26}$．差は $\\Delta E/(4E)\\sim6\\times10^{-4}$ 程度の相対誤差のみ．\n一辺 1 cm（$10^{-6}\\ \\mathrm{m^3}$）では $1.36\\times10^{20}$ 個．マクロな試料では準位は事実上連続である．\n\n(3) $1.36\\times10^{26}L^3=1$ より $L=1.9\\times10^{-9}$ m．数 nm 以下の金属微粒子では，フェルミ準位付近の準位間隔が熱エネルギー $k_BT$（室温 0.026 eV）と比べて無視できなくなり，比熱・磁化率・光吸収などが連続準位の予言からずれる（久保効果，量子サイズ効果）．"
+   }
+  ],
+  "idea": {
+   "tex": "状態密度は体積に比例するので，マクロ試料では膨大な状態数があるが，nm サイズでは準位の離散性が表に出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [m⁻³]：≈3.63e28\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "状態密度",
+   "自由電子気体",
+   "状態数",
+   "量子サイズ効果",
+   "ナノ粒子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 1,
+  "minutes": 15,
+  "theme": "フェルミエネルギーから価電子数を決める逆問題",
+  "topic": "フェルミエネルギーから価電子数を決める逆問題",
+  "statement": {
+   "tex": "アルミニウムの軟 X 線放出スペクトルから，伝導帯の幅（＝自由電子模型のフェルミエネルギー）が $E_F=11.7\\ \\mathrm{eV}$ と得られた．アルミニウムの密度は $2.70\\ \\mathrm{g/cm^3}$，原子量は $26.98$ である．\n\\begin{enumerate}\n\\item 自由電子模型を用いて伝導電子密度 $n$ を求めよ．\n\\item 1 原子あたりの伝導電子数（価数）を求めよ．\n\\item フェルミ温度 $T_F$ を求め，室温での伝導電子気体の性質について述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n=1.8\\times10^{29}\\ \\mathrm{m^{-3}}$　(2) 約 3（3.0）　(3) $T_F=1.4\\times10^5\\ \\mathrm K$．室温は $T_F$ の 0.2% で強く縮退"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $E_F=\\dfrac{\\hbar^2}{2m_e}(3\\pi^2n)^{2/3}$ を $n$ について解くと\n\\[ n=\\frac{(2m_eE_F)^{3/2}}{3\\pi^2\\hbar^3}=\\frac{(2\\times9.11\\times10^{-31}\\times11.7\\times1.602\\times10^{-19})^{3/2}}{3\\pi^2(1.055\\times10^{-34})^3}=1.8\\times10^{29}\\ \\mathrm{m^{-3}}. \\]\n\n(2) 原子密度 $n_a=\\dfrac{2.70\\times10^3\\times6.022\\times10^{26}}{26.98}=6.03\\times10^{28}\\ \\mathrm{m^{-3}}$．$n/n_a=3.0$．アルミニウムは $3s^23p^1$ の 3 個を伝導電子として出す 3 価金属である．\n\n(3) $T_F=E_F/k_B=\\dfrac{11.7}{8.617\\times10^{-5}}=1.4\\times10^5$ K．室温 300 K は $T_F$ の約 0.2% にすぎず，電子気体は強く縮退しており，熱的に励起されるのはフェルミ面近傍 $k_BT$ 程度の電子だけである．"
+   }
+  ],
+  "idea": {
+   "tex": "$E_F\\propto n^{2/3}$ を逆に解けば，分光学的に得たバンド幅から伝導電子密度と価数が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $n$ [m⁻³]：≈1.8e29\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミエネルギー",
+   "電子密度",
+   "価数",
+   "フェルミ温度",
+   "アルミニウム",
+   "逆問題"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-03-009",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -388,6 +733,554 @@
   }
  },
  {
+  "id": "SS-03-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 25,
+  "theme": "一般次元・一般分散の状態密度",
+  "topic": "一般次元・一般分散の状態密度",
+  "statement": {
+   "tex": "一辺 $L$ の $d$ 次元立方体に周期境界条件で閉じ込められた自由粒子が，分散関係 $E=Ck^s$（$C,s>0$，$k=|\\boldsymbol k|$）をもつとする．\n\\begin{enumerate}\n\\item エネルギー $E\\sim E+dE$，波数の向きが立体角 $d\\Omega_d$ 内にある状態数を $\\rho(E)\\,dE\\,d\\Omega_d$ と書くとき，$\\rho(E)$ を求めよ．$\\rho$ がエネルギーに依らない定数になる条件を述べ，非相対論的粒子の 2 次元の場合を確かめよ．\n\\item 2 次元の非相対論的電子（質量 $m$，スピン縮退 2）の面密度を $n$ とするとき，絶対零度のフェルミエネルギー $E_F$ を求めよ．\n\\item グラフェンの電子は $E=\\hbar v k$（縮退度 $g=4$：スピン 2 × バレー 2）とみなせる．面密度 $n$ のときの $E_F$ と，単位面積・単位エネルギーあたりの状態密度 $D(E)$（全方向について積分，縮退度込み）を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\rho(E)=\\Big(\\dfrac{L}{2\\pi}\\Big)^d\\dfrac{1}{sC^{d/s}}E^{(d-s)/s}$．$d=s$ で定数；$d=s=2$，$C=\\hbar^2/2m$ で $\\rho=\\dfrac{m}{\\hbar^2}\\Big(\\dfrac{L}{2\\pi}\\Big)^2$　(2) $E_F=\\dfrac{\\pi\\hbar^2n}{m}$　(3) $E_F=\\hbar v\\sqrt{\\pi n}$，$D(E)=\\dfrac{2E}{\\pi\\hbar^2v^2}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 周期境界条件で $\\boldsymbol k=\\frac{2\\pi}{L}(n_1,\\dots,n_d)$，各状態は $k$ 空間の体積 $(2\\pi/L)^d$ を占める．$k^{d-1}dk\\,d\\Omega_d$ の殻に $(L/2\\pi)^dk^{d-1}dk\\,d\\Omega_d$ 個．$dE=sCk^{s-1}dk$ より\n\\[\n\\rho(E)=\\Big(\\frac{L}{2\\pi}\\Big)^d\\frac{k^{d-s}}{sC},\\qquad k=(E/C)^{1/s}\\ \\Rightarrow\\ \\rho(E)=\\Big(\\frac{L}{2\\pi}\\Big)^d\\frac{E^{(d-s)/s}}{sC^{d/s}}.\n\\]\n$d=s$ のとき $E$ に依らない．$d=s=2$，$C=\\hbar^2/2m$ では $\\rho=(L/2\\pi)^2\\,m/\\hbar^2$（$d=3$ なら $(L/2\\pi)^3mk/\\hbar^2$ を再現）．\n\n(2) 全方向で $\\int d\\Omega_2=2\\pi$．$k<k_F$ の状態数は $2\\cdot(L/2\\pi)^2\\pi k_F^2$ だから $n=k_F^2/(2\\pi)$，$k_F=\\sqrt{2\\pi n}$，\n\\[\nE_F=\\frac{\\hbar^2k_F^2}{2m}=\\frac{\\pi\\hbar^2n}{m}.\n\\]\n（状態密度が定数 $m/(\\pi\\hbar^2)$ なので $E_F$ は $n$ に比例する．）\n\n(3) $n=4\\cdot\\dfrac{\\pi k_F^2}{(2\\pi)^2}=\\dfrac{k_F^2}{\\pi}$ より $k_F=\\sqrt{\\pi n}$，$E_F=\\hbar v\\sqrt{\\pi n}$．(1) で $d=2,s=1,C=\\hbar v$ とし，$2\\pi$ と $g=4$ を掛け $L^2$ で割ると\n\\[\nD(E)=\\frac{4\\cdot2\\pi}{(2\\pi)^2}\\frac{E}{\\hbar^2v^2}=\\frac{2E}{\\pi\\hbar^2v^2}.\n\\]\nディラック点 $E=0$ で状態密度が線形にゼロになるのが特徴である．"
+   }
+  ],
+  "idea": {
+   "tex": "状態密度は $k^{d-1}dk/dE$ で決まり $E^{(d-s)/s}$ に比例する．$d=s$ のときだけ一定で，2 次元電子気体の $E_F\\propto n$ とグラフェンの $E_F\\propto\\sqrt n$ の違いもここから出る．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $E_F$：((pi hbar ^(2) n)/(m))\n(3) $E_F$：hbar v sqrt(pi n) ; $D(E)$：((2 E)/(pi hbar ^(2) v ^(2)))"
+  },
+  "methods": [],
+  "tags": [
+   "状態密度",
+   "2次元電子系",
+   "フェルミエネルギー",
+   "グラフェン",
+   "分散関係"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "ドリフトと熱運動・フェルミ運動の比較",
+  "topic": "ドリフトと熱運動・フェルミ運動の比較",
+  "statement": {
+   "tex": "銅線に電流密度 $j=1.0\\ \\mathrm{A/mm^2}$ の電流が流れている．銅原子 1 個あたり 1 個の自由電子があるとし，銅の密度を $8.9\\times10^3\\ \\mathrm{kg/m^3}$，モル質量を $63.5$ g/mol とする．\n\\begin{enumerate}\n\\item 自由電子の数密度 $n$ とドリフト速度 $u$ を求めよ．電子が導線に沿って $10$ mm 進むのにかかる時間はいくらか．\n\\item 電子を古典的な理想気体とみなすと，その間に電子が実際に動き回る道のりはいくらか（$T=300$ K の平均の速さを用いよ）．\n\\item 実際には電子はフェルミ速度 $v_F=\\hbar(3\\pi^2n)^{1/3}/m$ で動いている．$v_F$ を求め，同じ道のりを再評価せよ．地球と月の距離（$3.8\\times10^8$ m）と比べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n=8.4\\times10^{28}\\ \\mathrm{m^{-3}}$，$u=7.4\\times10^{-5}$ m/s，$t=1.4\\times10^2$ s　(2) $\\langle v\\rangle=1.1\\times10^5$ m/s，$s=1.5\\times10^7$ m　(3) $v_F=1.6\\times10^6$ m/s，$s=2.1\\times10^8$ m（地球‐月距離の約半分）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n=\\dfrac{\\rho N_A}{M}=\\dfrac{8.9\\times10^3\\times6.02\\times10^{23}}{63.5\\times10^{-3}}=8.4\\times10^{28}\\ \\mathrm{m^{-3}}$．$u=\\dfrac{j}{ne}=\\dfrac{1.0\\times10^6}{8.4\\times10^{28}\\times1.6\\times10^{-19}}=7.4\\times10^{-5}$ m/s．$t=l/u=0.010/7.4\\times10^{-5}=1.4\\times10^2$ s．\n\n(2) $\\langle v\\rangle=\\sqrt{8kT/\\pi m}=1.08\\times10^5$ m/s．道のり $s=\\langle v\\rangle t=1.5\\times10^7$ m．\n\n(3) $v_F=\\dfrac{1.055\\times10^{-34}(3\\pi^2\\times8.44\\times10^{28})^{1/3}}{9.11\\times10^{-31}}=1.57\\times10^6$ m/s．$s=v_Ft=2.1\\times10^8$ m．わずか 1 cm 進む間に，地球‐月の距離の半分以上を走り回っている．古典的評価より 1 桁以上大きく，金属電子が縮退したフェルミ気体であることを反映している．"
+   }
+  ],
+  "idea": {
+   "tex": "ドリフト速度は熱運動・フェルミ運動に比べて 10 桁小さい．縮退した電子ガスの速さは温度によらずフェルミ速度で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $n$ [m⁻³]：≈8.4e28 ; $u$ [m/s]：≈7.4e-5 ; $t$ [s]：≈1.4e2\n(2) 記述\n(3) $v_F$ [m/s]：≈1.6e6 ; $s$ [m]：≈2.1e8"
+  },
+  "methods": [],
+  "tags": [
+   "ドリフト速度",
+   "自由電子",
+   "フェルミ速度",
+   "熱運動"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "金属ナノ粒子の準位間隔（久保ギャップ）",
+  "topic": "金属ナノ粒子の準位間隔（久保ギャップ）",
+  "statement": {
+   "tex": "体積 $V$ の金属片の自由電子（数密度 $n$，$T=0$）の，フェルミ準位付近で隣り合う（スピン縮退した）エネルギー準位の間隔 $\\Delta E$ を考える．\n\\begin{enumerate}\n\\item $\\Delta E$ を $n$，$V$ と電子の質量 $m$ で表せ．\n\\item 金（$n=5.9\\times10^{22}\\ \\mathrm{cm^{-3}}$）の立方体の微粒子で $\\Delta E$ が $kT$ に等しくなる一辺の長さ $L$ を，$T=4.2\\ \\mathrm K$ と $T=300\\ \\mathrm K$ の場合について求めよ．\n\\item それぞれの場合，微粒子中の原子数はおよそいくらか（1 原子あたり自由電子 1 個とする）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta E=\\dfrac{2\\pi^2\\hbar^2}{mV(3\\pi^2n)^{1/3}}$　(2) $4.2\\ \\mathrm K$：$L\\approx7.0\\ \\mathrm{nm}$，$300\\ \\mathrm K$：$L\\approx1.7\\ \\mathrm{nm}$　(3) 約 $2\\times10^4$ 個，約 $3\\times10^2$ 個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) スピンを含めた状態密度は $g(E)=\\dfrac{V}{2\\pi^2}\\left(\\dfrac{2m}{\\hbar^2}\\right)^{3/2}\\sqrt E$．$E_F$ で $g(E_F)=\\dfrac{mVk_F}{\\pi^2\\hbar^2}$（$k_F=(3\\pi^2n)^{1/3}$）．各軌道準位はスピンで 2 重に縮退するから，異なる準位の間隔は\n\\[\n\\Delta E=\\frac{2}{g(E_F)}=\\frac{2\\pi^2\\hbar^2}{mVk_F}=\\frac{2\\pi^2\\hbar^2}{mV(3\\pi^2n)^{1/3}}.\n\\]\n(2) $\\Delta E=kT$ より $V=\\dfrac{2\\pi^2\\hbar^2}{mk_FkT}$．金では $k_F=1.20\\times10^{10}\\ \\mathrm{m^{-1}}$ で，\n$T=4.2\\ \\mathrm K$：$V=3.5\\times10^{-25}\\ \\mathrm{m^3}$，$L=V^{1/3}\\approx7.0\\ \\mathrm{nm}$．\n$T=300\\ \\mathrm K$：$V=4.8\\times10^{-27}\\ \\mathrm{m^3}$，$L\\approx1.7\\ \\mathrm{nm}$．\n\n(3) $nV$ より，それぞれ約 $2.0\\times10^4$ 個，約 $2.9\\times10^2$ 個．この程度まで小さい粒子では電子準位の離散性が熱的にも見えるようになり，比熱や磁化率がバルクからずれる．（$1\\ \\mathrm{cm^3}$ の金属では $\\Delta E\\sim10^{-22}\\ \\mathrm{eV}$ で完全に連続とみなせる．）"
+   }
+  ],
+  "idea": {
+   "tex": "準位間隔は $1/g(E_F)\\propto1/V$ なので，$kT$ と比べることで量子サイズ効果の現れる粒径が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta E$：((2 pi ^(2) hbar ^(2))/(m V (3 pi ^(2) n)^(1/3)))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "状態密度",
+   "自由電子",
+   "量子サイズ効果",
+   "久保ギャップ",
+   "ナノ粒子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "縮退電子気体の圧力と体積弾性率",
+  "topic": "縮退電子気体の圧力と体積弾性率",
+  "statement": {
+   "tex": "金属ナトリウムの自由電子（数密度 $n=2.5\\times10^{22}\\ \\mathrm{cm^{-3}}$）を $T=0$ の理想フェルミ気体とみなす．\n\\begin{enumerate}\n\\item 全エネルギー $U=\\tfrac35NE_F$ と $E_F\\propto(N/V)^{2/3}$ から，圧力 $p=-(\\partial U/\\partial V)_N$ を $n$，$E_F$ で表し，数値（Pa と atm）を求めよ．\n\\item 体積弾性率 $B=-V(\\partial p/\\partial V)_N$ を $p$ で表し，数値を求めよ．\n\\item 電子気体だけを質量密度 $nm$ の媒質と見たときの音速 $\\sqrt{B/nm}$ を $v_F$ で表せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=\\tfrac25nE_F\\approx5.0\\times10^9\\ \\mathrm{Pa}\\approx5\\times10^4\\ \\mathrm{atm}$　(2) $B=\\tfrac53p\\approx8.3\\ \\mathrm{GPa}$　(3) $v_F/\\sqrt3$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $U\\propto NV^{-2/3}$ より $p=-\\dfrac{\\partial U}{\\partial V}=\\dfrac23\\dfrac UV=\\dfrac25nE_F$．\n$E_F=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}=3.12\\ \\mathrm{eV}$ より\n\\[\np=0.4\\times2.5\\times10^{28}\\times3.12\\times1.60\\times10^{-19}\\approx5.0\\times10^9\\ \\mathrm{Pa}\\approx4.9\\times10^4\\ \\mathrm{atm}.\n\\]\n(2) $p\\propto V^{-5/3}$ より $B=\\dfrac53p=\\dfrac23nE_F\\approx8.3\\ \\mathrm{GPa}$．実測のナトリウムの体積弾性率（約 $6\\ \\mathrm{GPa}$）と同程度で，アルカリ金属の硬さはほぼ電子の縮退圧で説明される（この巨大な圧力はイオンとの静電引力でつり合っている）．\n\n(3) $B/nm=\\dfrac{2E_F}{3m}=\\dfrac{v_F^2}{3}$ より音速は $v_F/\\sqrt3$．"
+   }
+  ],
+  "idea": {
+   "tex": "$U\\propto V^{-2/3}$ から $p=\\frac23U/V$，$B=\\frac53p$．縮退圧が金属の圧縮率を決める．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $p$ [Pa]：≈5.0e9\n(2) $B$ [GPa]：≈8.3\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "縮退圧",
+   "フェルミ気体",
+   "体積弾性率",
+   "自由電子"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "熱電子放出：2 温度測定からの仕事関数とT^2因子",
+  "topic": "熱電子放出：2 温度測定からの仕事関数とT^2因子",
+  "statement": {
+   "tex": "熱陰極の飽和電流密度はリチャードソン＝ダッシュマンの式 $j=AT^2e^{-W/kT}$（$A$ は定数，$W$ は仕事関数）に従う．ある陰極の飽和電流を $T_1=1800\\ \\mathrm K$ と $T_2=2000\\ \\mathrm K$ で測ると，その比は $j_2/j_1=22.5$ であった．\n\\begin{enumerate}\n\\item 仕事関数 $W$ を求めよ．\n\\item 前因子 $T^2$ を無視して $j\\propto e^{-W/kT}$ として解析すると，$W$ をどれだけ過大評価するか．一般式と数値で答えよ．\n\\item 温度を $T$ からわずか $\\Delta T$ だけ上げたときの電流の相対増加 $\\eta=\\Delta j/j$ を用いると，(1) に対応する式はどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $W\\approx4.5\\ \\mathrm{eV}$　(2) $\\Delta W=\\dfrac{2kT_1T_2}{T_2-T_1}\\ln\\dfrac{T_2}{T_1}\\approx0.33\\ \\mathrm{eV}$　(3) $W=kT\\left(\\dfrac{\\eta T}{\\Delta T}-2\\right)$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{j_2}{j_1}=\\left(\\dfrac{T_2}{T_1}\\right)^2\\exp\\left[\\dfrac Wk\\left(\\dfrac1{T_1}-\\dfrac1{T_2}\\right)\\right]$ より\n\\[\nW=\\frac{kT_1T_2}{T_2-T_1}\\left[\\ln\\frac{j_2}{j_1}-2\\ln\\frac{T_2}{T_1}\\right]\n=\\frac{8.617\\times10^{-5}\\times1800\\times2000}{200}\\,(3.114-0.211)\\ \\mathrm{eV}\\approx4.50\\ \\mathrm{eV}.\n\\]\n(2) $T^2$ を無視すると $W'=\\dfrac{kT_1T_2}{T_2-T_1}\\ln\\dfrac{j_2}{j_1}\\approx4.83\\ \\mathrm{eV}$．差は\n\\[\n\\Delta W=\\frac{2kT_1T_2}{T_2-T_1}\\ln\\frac{T_2}{T_1}\\approx2k\\bar T\\approx0.33\\ \\mathrm{eV}\n\\]\n（$\\bar T\\approx1900\\ \\mathrm K$）．$T^2$ 因子は実効的に活性化エネルギーに $2kT$ を加える．\n\n(3) $\\ln j=\\text{const}+2\\ln T-W/kT$ を微分して $\\eta=\\dfrac{\\Delta j}{j}=\\left(\\dfrac2T+\\dfrac W{kT^2}\\right)\\Delta T$．よって $W=kT\\left(\\dfrac{\\eta T}{\\Delta T}-2\\right)$．"
+   }
+  ],
+  "idea": {
+   "tex": "アレニウス解析で前因子 $T^2$ を落とすと活性化エネルギーが $2kT$ ずれる．2 点測定の厳密式と微分形を対比する．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $W$ [eV]：≈4.5\n(2) $\\Delta W$ [eV]：≈0.33\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "熱電子放出",
+   "リチャードソンの式",
+   "仕事関数",
+   "アレニウスプロット"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 25,
+  "theme": "電子の屈折率と光電子の脱出円錐",
+  "topic": "電子の屈折率と光電子の脱出円錐",
+  "statement": {
+   "tex": "金属ナトリウム（自由電子密度 $n=2.5\\times10^{22}\\ \\mathrm{cm^{-3}}$，仕事関数 $2.3\\ \\mathrm{eV}$）の内部では，伝導電子は深さ $U_0=E_F+W$ の一様な井戸型ポテンシャル中にあるとみなす（$E_F$ はフェルミエネルギー）．\n\\begin{enumerate}\n\\item 真空中で運動エネルギー $50\\ \\mathrm{eV}$ をもつ電子に対するこの金属の屈折率を求めよ．\n\\item 金属内部で励起され，外に出れば運動エネルギー $K=1.0\\ \\mathrm{eV}$ をもつはずの電子が，内部で等方的な向きに生じるとする．表面（平面）を通って脱出できる電子の運動方向は，表面法線から角 $\\theta_c$ 以内の円錐に限られる．$\\sin\\theta_c$ を (1) と同様の屈折率 $n_K$ で表し，$\\theta_c$ と，脱出可能な方向の全立体角に対する割合を求めよ（表面での反射は無視）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n\\approx1.05$　(2) $\\sin\\theta_c=1/n_K$，$\\theta_c\\approx23^\\circ$，割合 $\\approx4.1\\%$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$E_F=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}=3.12\\ \\mathrm{eV}$，$U_0=5.42\\ \\mathrm{eV}$．\n\n(1) 波長の比が屈折率：$n=\\dfrac{\\lambda}{\\lambda'}=\\dfrac{p'}{p}=\\sqrt{\\dfrac{K+U_0}{K}}=\\sqrt{1+\\dfrac{5.42}{50}}\\approx1.05$．\n\n(2) 内部での運動エネルギーは $K+U_0$．表面を越えるには法線方向成分が $U_0$ を超える必要があり，$(K+U_0)\\cos^2\\theta>U_0$．よって\n\\[\n\\cos\\theta_c=\\sqrt{\\frac{U_0}{U_0+K}},\\qquad \\sin\\theta_c=\\sqrt{\\frac{K}{U_0+K}}=\\frac{1}{n_K}.\n\\]\nこれは屈折率 $n_K=\\sqrt{1+U_0/K}$ の媒質から真空への全反射の臨界角そのものである．数値は $\\cos\\theta_c=\\sqrt{5.42/6.42}=0.919$，$\\theta_c\\approx23^\\circ$．等方的な向きのうち円錐内に入る割合は\n\\[\n\\frac{2\\pi(1-\\cos\\theta_c)}{4\\pi}=\\frac{1-0.919}{2}\\approx0.041 .\n\\]\n低エネルギー光電子の大部分は表面で「全反射」されて出てこない．"
+   }
+  ],
+  "idea": {
+   "tex": "一様な井戸は電子波に対する屈折率 $\\sqrt{1+U_0/K}$ を与え，脱出条件（法線方向のエネルギー）は全反射の臨界角と同値になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $n$：≈1.05\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "物質波",
+   "屈折率",
+   "仕事関数",
+   "光電子放出",
+   "全反射"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "2次元電子気体のフェルミエネルギー",
+  "topic": "2次元電子気体のフェルミエネルギー",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item 面積 $A$ の 2 次元自由電子気体（面密度 $n_s$，有効質量 $m^*$，スピン縮重 2）の単位面積あたりの状態密度がエネルギーによらず $m^*/(\\pi\\hbar^2)$ であることを示し，絶対零度でのフェルミエネルギーが $E_F=\\pi\\hbar^2n_s/m^*$ となることを導け．\n\\item GaAs/AlGaAs ヘテロ接合界面の 2 次元電子系で $n_s=3.0\\times10^{15}\\,\\mathrm{m^{-2}}$，$m^*=0.067m_e$ のとき，$E_F$（meV）とフェルミ温度 $T_F$ を求めよ．\n\\item $d$ 次元の自由電子気体（状態密度 $\\propto E^{d/2-1}$）では，絶対零度での 1 電子あたりの平均エネルギーが $\\dfrac{d}{d+2}E_F$ であることを示し，$d=1,2,3$ の値を書け．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_F=\\pi\\hbar^2n_s/m^*$　(2) $E_F\\approx10.7\\,\\mathrm{meV}$，$T_F\\approx124\\,\\mathrm{K}$　(3) $d=1:\\frac13E_F$，$d=2:\\frac12E_F$，$d=3:\\frac35E_F$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 周期境界条件で波数空間の 1 状態あたりの面積は $(2\\pi)^2/A$．半径 $k$ の円内の状態数（スピン 2）は $N=2\\cdot\\dfrac{\\pi k^2}{(2\\pi)^2/A}=\\dfrac{Ak^2}{2\\pi}$．$E=\\hbar^2k^2/(2m^*)$ より $N=\\dfrac{Am^*E}{\\pi\\hbar^2}$，よって単位面積あたりの状態密度 $\\dfrac{1}{A}\\dfrac{dN}{dE}=\\dfrac{m^*}{\\pi\\hbar^2}$（一定）．$T=0$ で $E_F$ まで詰めると $n_s=\\dfrac{m^*E_F}{\\pi\\hbar^2}$，すなわち $E_F=\\dfrac{\\pi\\hbar^2n_s}{m^*}$．\n\n(2) \n\\[\nE_F=\\frac{\\pi(1.055\\times10^{-34})^2\\times3.0\\times10^{15}}{0.067\\times9.109\\times10^{-31}}=1.72\\times10^{-21}\\,\\mathrm{J}=10.7\\,\\mathrm{meV},\n\\]\n$T_F=E_F/k\\approx124\\,\\mathrm{K}$．金属（数 eV）より 2〜3 桁小さく，ゲート電圧で $n_s$ を変えれば $E_F$ を線形に制御できる．\n\n(3) 状態密度 $D(E)=CE^{d/2-1}$ として\n\\[\n\\langle E\\rangle=\\frac{\\int_0^{E_F}E\\cdot CE^{d/2-1}dE}{\\int_0^{E_F}CE^{d/2-1}dE}=\\frac{E_F^{d/2+1}/(d/2+1)}{E_F^{d/2}/(d/2)}=\\frac{d}{d+2}E_F.\n\\]\n$d=1,2,3$ でそれぞれ $\\frac13E_F,\\ \\frac12E_F,\\ \\frac35E_F$．"
+   }
+  ],
+  "idea": {
+   "tex": "フェルミエネルギーの導出を 2 次元に移すと状態密度が一定になり $E_F\\propto n_s$ と線形になる．一般次元では平均エネルギーが $d/(d+2)E_F$ となる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $E_F$ [meV]：≈10.7 ; $T_F$ [K]：≈124\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミエネルギー",
+   "2次元電子系",
+   "状態密度",
+   "ヘテロ接合",
+   "自由電子気体"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 25,
+  "theme": "プラズマ端からナトリウムの電子密度と緩和時間",
+  "topic": "プラズマ端からナトリウムの電子密度と緩和時間",
+  "statement": {
+   "tex": "ナトリウム（原子量 23.0，密度 $0.97\\ \\mathrm{g/cm^3}$）の薄膜は，波長が $\\lambda_p=210\\ \\mathrm{nm}$ より短い紫外線に対して透明になる．また直流の電気伝導率は $\\sigma_0=2.17\\times10^7\\ \\Omega^{-1}\\mathrm m^{-1}$ である．自由電子（Drude）模型で考える．\n\\begin{enumerate}\n\\item 透明になる境界がプラズマ角振動数 $\\omega_p=\\sqrt{ne^2/\\varepsilon_0m}$ に対応するとして，伝導電子密度 $n$ を求めよ．原子 1 個あたりの伝導電子数はいくらか．\n\\item $n$ と $\\sigma_0$ から緩和時間 $\\tau$ を求めよ．$\\omega_p\\tau$ の値から，(1) で減衰を無視したことが妥当か判断せよ．\n\\item $200\\ \\mathrm{V/m}$ の直流電場中のドリフト速度を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $n\\approx2.53\\times10^{28}\\ \\mathrm{m^{-3}}$，原子 1 個あたり約 1 個　(2) $\\tau\\approx3.0\\times10^{-14}\\ \\mathrm s$，$\\omega_p\\tau\\approx270\\gg1$ で妥当　(3) $\\approx1.1\\ \\mathrm{m/s}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\omega_p=\\dfrac{2\\pi c}{\\lambda_p}=\\dfrac{2\\pi\\times3.00\\times10^8}{210\\times10^{-9}}=8.97\\times10^{15}\\ \\mathrm{s^{-1}}$．\n\\[\nn=\\frac{\\varepsilon_0m\\omega_p^2}{e^2}=\\frac{8.85\\times10^{-12}\\times9.11\\times10^{-31}\\times(8.97\\times10^{15})^2}{(1.60\\times10^{-19})^2}=2.53\\times10^{28}\\ \\mathrm{m^{-3}}.\n\\]\n原子数密度は $\\dfrac{6.02\\times10^{23}\\times0.97\\times10^6}{23.0}=2.54\\times10^{28}\\ \\mathrm{m^{-3}}$ で，比は $0.995$．1 価金属（原子 1 個あたり伝導電子 1 個）であることが光学測定から確かめられる．\n\n(2) $\\tau=\\dfrac{m\\sigma_0}{ne^2}=\\dfrac{9.11\\times10^{-31}\\times2.17\\times10^7}{2.53\\times10^{28}\\times(1.60\\times10^{-19})^2}=3.0\\times10^{-14}\\ \\mathrm s$．$\\omega_p\\tau=8.97\\times10^{15}\\times3.0\\times10^{-14}\\approx270\\gg1$．Drude の誘電関数 $\\varepsilon(\\omega)=1-\\omega_p^2/(\\omega^2+i\\omega/\\tau)$ で $\\omega\\sim\\omega_p$ では減衰項は $1/(\\omega_p\\tau)\\sim0.4\\%$ の補正にすぎず，境界 $\\varepsilon=0$ は $\\omega=\\omega_p$ でよい．\n\n(3) $v_D=\\dfrac{eE\\tau}{m}=\\dfrac{1.60\\times10^{-19}\\times200\\times3.0\\times10^{-14}}{9.11\\times10^{-31}}=1.1\\ \\mathrm{m/s}$．"
+   }
+  ],
+  "idea": {
+   "tex": "光学的なプラズマ端から電子密度，直流伝導率から緩和時間が独立に決まり，$\\omega_p\\tau\\gg1$ で高周波では金属が透明になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) [m/s]：≈1.1"
+  },
+  "methods": [],
+  "tags": [
+   "Drude模型",
+   "プラズマ振動数",
+   "緩和時間",
+   "アルカリ金属",
+   "ドリフト速度"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "2次元電子ガスの化学ポテンシャル（厳密解）",
+  "topic": "2次元電子ガスの化学ポテンシャル（厳密解）",
+  "statement": {
+   "tex": "GaAs ヘテロ界面の 2 次元電子ガス（面密度 $n_s=3.0\\times10^{15}\\ \\mathrm{m^{-2}}$，有効質量 $m^*=0.067m_e$，スピン縮退 2）を考える．\n\\begin{enumerate}\n\\item 単位面積・単位エネルギーあたりの状態密度 $D$ がエネルギーによらない定数になることを示し，$D$ と $T=0$ のフェルミエネルギー $E_F$（meV 単位）を求めよ．\n\\item 有限温度の化学ポテンシャル $\\mu(T)$ を，$n_s$ を一定として厳密に求めよ．\n\\item $T=4.2\\ \\mathrm K$，$77\\ \\mathrm K$ における $E_F-\\mu$ を求めよ．3 次元自由電子では低温で $E_F-\\mu\\propto T^2$ となることと対比せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $D=m^*/(\\pi\\hbar^2)$，$E_F=\\pi\\hbar^2n_s/m^*=10.7\\ \\mathrm{meV}$　(2) $\\mu=k_BT\\ln\\left(e^{E_F/k_BT}-1\\right)$　(3) 4.2 K: $\\sim5\\times10^{-14}\\ \\mathrm{meV}$（実質 0），77 K: $1.5\\ \\mathrm{meV}$．2次元では低温補正が $e^{-E_F/k_BT}$ 型で指数関数的に小さい"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 面積 $A$ の中で波数 $k$ 以下の状態数は（スピン 2）$N(k)=2\\cdot\\dfrac{\\pi k^2}{(2\\pi)^2}A$．$E=\\hbar^2k^2/(2m^*)$ を代入すると $N=\\dfrac{m^*E}{\\pi\\hbar^2}A$ で $E$ に比例するから\n\\[ D=\\frac1A\\frac{dN}{dE}=\\frac{m^*}{\\pi\\hbar^2}\\quad(\\text{定数}). \\]\n$T=0$ で $n_s=DE_F$ より\n\\[ E_F=\\frac{\\pi\\hbar^2n_s}{m^*}=\\frac{\\pi(1.055\\times10^{-34})^2(3.0\\times10^{15})}{0.067\\times9.11\\times10^{-31}}=1.72\\times10^{-21}\\ \\mathrm J=10.7\\ \\mathrm{meV}. \\]\n\n(2) $n_s=D\\displaystyle\\int_0^\\infty\\frac{dE}{e^{(E-\\mu)/k_BT}+1}=Dk_BT\\ln\\left(1+e^{\\mu/k_BT}\\right)$．$n_s=DE_F$ とおいて解くと\n\\[ \\mu(T)=k_BT\\ln\\left(e^{E_F/k_BT}-1\\right). \\]\n\n(3) $E_F\\gg k_BT$ では $\\mu=E_F+k_BT\\ln(1-e^{-E_F/k_BT})\\simeq E_F-k_BTe^{-E_F/k_BT}$．\n4.2 K（$k_BT=0.362$ meV, $E_F/k_BT=29.6$）：$E_F-\\mu\\approx0.362\\times e^{-29.6}\\approx5\\times10^{-14}$ meV，実質ゼロ．\n77 K（$k_BT=6.64$ meV）：厳密式で $\\mu=9.25$ meV，$E_F-\\mu=1.5$ meV．\n3 次元ではゾンマーフェルト展開で $E_F-\\mu=\\frac{\\pi^2}{12}(k_BT)^2/E_F$ と $T^2$ 補正が生じるが，これは状態密度の $E_F$ での傾き $D'(E_F)$ に比例する項である．2 次元では $D'=0$ なのでべき級数補正がすべて消え，指数関数的に小さい補正しか残らない．"
+   }
+  ],
+  "idea": {
+   "tex": "2 次元では状態密度が一定なのでフェルミ積分が閉じた形で求まり，化学ポテンシャルの温度補正はべきではなく指数関数的になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "状態密度",
+   "2次元電子ガス",
+   "フェルミエネルギー",
+   "化学ポテンシャル",
+   "ゾンマーフェルト展開"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "縮退電子気体の速度分布・圧力・体積弾性率",
+  "topic": "縮退電子気体の速度分布・圧力・体積弾性率",
+  "statement": {
+   "tex": "金の伝導電子（密度 $n=5.90\\times10^{28}\\ \\mathrm{m^{-3}}$，$E_F=5.53\\ \\mathrm{eV}$）を $T=0$ の 3 次元自由電子気体とみなす．\n\\begin{enumerate}\n\\item 電子の速さの平均 $\\langle v\\rangle$ と 2 乗平均平方根 $v_{\\rm rms}=\\sqrt{\\langle v^2\\rangle}$ を $v_F$ で表し，数値を求めよ．\n\\item 電子気体の縮退圧 $P=-(\\partial U/\\partial V)_N$ を $n,E_F$ で表し，数値を求めよ．\n\\item 体積弾性率 $B=-V(\\partial P/\\partial V)_N$ を求め，金の実測値 $1.8\\times10^{11}\\ \\mathrm{Pa}$ と比較せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\langle v\\rangle=\\frac34v_F=1.05\\times10^6\\ \\mathrm{m/s}$，$v_{\\rm rms}=\\sqrt{3/5}\\,v_F=1.08\\times10^6\\ \\mathrm{m/s}$　(2) $P=\\frac25nE_F=2.1\\times10^{10}\\ \\mathrm{Pa}$　(3) $B=\\frac23nE_F=3.5\\times10^{10}\\ \\mathrm{Pa}$（実測の約 1/5）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "$v_F=\\sqrt{2E_F/m_e}=1.39\\times10^6$ m/s．\n\n(1) $T=0$ では運動量空間で半径 $k_F$ の球内が一様に占有されるので，速さの分布は $P(v)\\,dv\\propto v^2dv\\ (0\\le v\\le v_F)$．\n\\[ \\langle v\\rangle=\\frac{\\int_0^{v_F}v^3dv}{\\int_0^{v_F}v^2dv}=\\frac34v_F=1.05\\times10^6\\ \\mathrm{m/s},\\quad \\langle v^2\\rangle=\\frac35v_F^2,\\ v_{\\rm rms}=\\sqrt{\\tfrac35}v_F=1.08\\times10^6\\ \\mathrm{m/s}. \\]\n$v_{\\rm rms}$ は平均エネルギー $\\frac35E_F$ に対応する速さである．\n\n(2) $U=\\frac35NE_F$，$E_F\\propto(N/V)^{2/3}$ より $\\partial E_F/\\partial V=-\\frac23E_F/V$．\n\\[ P=-\\frac{\\partial U}{\\partial V}=\\frac35N\\cdot\\frac23\\frac{E_F}{V}=\\frac25nE_F=\\frac25(5.90\\times10^{28})(5.53\\times1.60\\times10^{-19})=2.1\\times10^{10}\\ \\mathrm{Pa}. \\]\n約 $2\\times10^5$ 気圧に達する．\n\n(3) $P\\propto V^{-5/3}$ より $B=\\frac53P=\\frac23nE_F=3.5\\times10^{10}$ Pa．実測値 $1.8\\times10^{11}$ Pa の約 1/5 であり，金では d 電子殻の重なりによる反発が体積弾性率の大部分を担う（アルカリ金属では自由電子の値がよく合う）．巨大な縮退圧はイオンとの静電引力で釣り合っている．"
+   }
+  ],
+  "idea": {
+   "tex": "$T=0$ でも縮退電子気体は大きな運動エネルギーと圧力 $\\frac25nE_F$ をもつ．速さの分布はフェルミ球の幾何から決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $P$ [Pa]：≈2.1e10\n(3) $B$ [Pa]：≈3.5e10"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミ気体",
+   "平均エネルギー",
+   "縮退圧",
+   "体積弾性率",
+   "金"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 2,
+  "minutes": 20,
+  "theme": "電子比熱から有効質量とフェルミエネルギーを求める",
+  "topic": "電子比熱から有効質量とフェルミエネルギーを求める",
+  "statement": {
+   "tex": "銅（密度 $8.94\\ \\mathrm{g/cm^3}$，原子量 $63.55$，1 原子あたり伝導電子 1 個）の低温比熱を測ると，$C=\\gamma T+AT^3$ の形で電子比熱係数 $\\gamma=0.695\\ \\mathrm{mJ\\,mol^{-1}K^{-2}}$ が得られた．\n\\begin{enumerate}\n\\item 自由電子（質量 $m_e$）としたときのフェルミエネルギー $E_F^{(0)}$ を求めよ．\n\\item 自由電子気体の電子比熱は $C_{\\rm el}=\\dfrac{\\pi^2}{2}Nk_B\\dfrac{k_BT}{E_F}$ である．1 mol あたりの $\\gamma_0$ を求めよ．\n\\item 状態密度が有効質量 $m^*$ に比例することを用いて，測定値から $m^*/m_e$ と，有効質量で補正したフェルミエネルギーを求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $E_F^{(0)}=7.03\\ \\mathrm{eV}$　(2) $\\gamma_0=0.503\\ \\mathrm{mJ\\,mol^{-1}K^{-2}}$　(3) $m^*/m_e\\approx1.38$，$E_F\\approx5.1\\ \\mathrm{eV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $n=\\dfrac{8.94\\times10^3\\times6.022\\times10^{26}}{63.55}=8.47\\times10^{28}\\ \\mathrm{m^{-3}}$．\n\\[ E_F^{(0)}=\\frac{\\hbar^2}{2m_e}(3\\pi^2n)^{2/3}=1.127\\times10^{-18}\\ \\mathrm J=7.03\\ \\mathrm{eV}. \\]\n\n(2) 1 mol で $N=N_A$，$N_Ak_B=R$：\n\\[ \\gamma_0=\\frac{\\pi^2}{2}\\frac{Rk_B}{E_F^{(0)}}=\\frac{\\pi^2}{2}\\times8.314\\times\\frac{8.617\\times10^{-5}}{7.03}=5.03\\times10^{-4}\\ \\mathrm{J\\,mol^{-1}K^{-2}}. \\]\n\n(3) $\\gamma=\\frac{\\pi^2}{3}k_B^2D(E_F)$ は状態密度 $D(E_F)=\\dfrac{3N}{2E_F}\\propto m^*$ に比例する（$n$ 一定で $E_F\\propto1/m^*$）．よって\n\\[ \\frac{m^*}{m_e}=\\frac{\\gamma}{\\gamma_0}=\\frac{0.695}{0.503}=1.38,\\qquad E_F=\\frac{E_F^{(0)}}{1.38}=5.1\\ \\mathrm{eV}. \\]\n比熱の有効質量には，バンド構造の効果に加え電子格子相互作用による質量増強も含まれる．"
+   }
+  ],
+  "idea": {
+   "tex": "電子比熱係数はフェルミ準位の状態密度，すなわち有効質量に比例するので，比熱測定から $m^*$ と実効的な $E_F$ を逆算できる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $E_F^{(0)}$ [eV]：≈7.03\n(2) $\\gamma_0$ [mJ mol⁻¹K⁻²]：≈0.503\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "フェルミエネルギー",
+   "有効質量",
+   "電子比熱",
+   "ゾンマーフェルト係数",
+   "状態密度",
+   "銅"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "SS-03-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -480,6 +1373,159 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 3,
+  "minutes": 35,
+  "theme": "自己束縛（ポーラロン）の次元依存性：1次元・2次元・3次元",
+  "topic": "自己束縛（ポーラロン）の次元依存性：1次元・2次元・3次元",
+  "statement": {
+   "tex": "弾性体（体積弾性率 $B$）の中の電子（質量 $m$）が，大きさ $L$ の領域に局在し，その領域の格子が一様に $\\Delta=\\nabla\\cdot\\boldsymbol U$ だけ変形しているとする．数係数を落として，$d$ 次元での全エネルギーを\n\\[\nE(L,\\Delta)=\\frac{\\hbar^2}{2mL^2}-\\epsilon_0\\Delta+\\frac B2\\Delta^2L^d\n\\]\nとする（第1項は閉じ込めの運動エネルギー，第2項は変形による引力ポテンシャル，第3項は弾性エネルギー）．\n\\begin{enumerate}\n\\item $\\Delta$ について最小化し，$E(L)$ を求めよ．\n\\item $d=1$ のとき，ポーラロンの大きさ $L^*$ とエネルギー $E^*$ を求めよ．\n\\item $d=2$ では $E(L)$ の $L$ 依存性はどうなるか．自己束縛が起こる $\\epsilon_0$ の条件を求め，そのとき大きさが何で決まるかを答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Delta=\\dfrac{\\epsilon_0}{BL^d}$，$E(L)=\\dfrac{\\hbar^2}{2mL^2}-\\dfrac{\\epsilon_0^2}{2BL^d}$　(2) $L^*=\\dfrac{2\\hbar^2B}{m\\epsilon_0^2}$，$E^*=-\\dfrac{m\\epsilon_0^4}{8\\hbar^2B^2}$　(3) $E=\\dfrac{1}{L^2}\\left(\\dfrac{\\hbar^2}{2m}-\\dfrac{\\epsilon_0^2}{2B}\\right)$；$\\epsilon_0>\\hbar\\sqrt{B/m}$ で束縛し，大きさは格子間隔まで縮む"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial E/\\partial\\Delta=-\\epsilon_0+B\\Delta L^d=0$ より $\\boldsymbol{\\Delta=\\dfrac{\\epsilon_0}{BL^d}}$．代入して\n\\[\n\\boldsymbol{E(L)=\\frac{\\hbar^2}{2mL^2}-\\frac{\\epsilon_0^2}{2BL^d}}.\n\\]\n\n(2) $d=1$ では第2項が $1/L$ で，$L\\to\\infty$ で第2項，$L\\to0$ で第1項が勝つ．$E(L)$ は有限の $L$ で負の最小値をとるので，どんなに弱い結合でも自己束縛が起こる．$\\dfrac{dE}{dL}=-\\dfrac{\\hbar^2}{mL^3}+\\dfrac{\\epsilon_0^2}{2BL^2}=0$ より\n\\[\n\\boldsymbol{L^*=\\frac{2\\hbar^2B}{m\\epsilon_0^2}},\\qquad \\boldsymbol{E^*=-\\frac{m\\epsilon_0^4}{8\\hbar^2B^2}}.\n\\]\n\n(3) $d=2$ では2つの項がどちらも $1/L^2$ で\n\\[\n\\boldsymbol{E(L)=\\frac{1}{L^2}\\left(\\frac{\\hbar^2}{2m}-\\frac{\\epsilon_0^2}{2B}\\right)}.\n\\]\n括弧の中が正なら $L\\to\\infty$（広がった状態）が有利で自己束縛は起こらない．負，すなわち $\\boldsymbol{\\epsilon_0>\\hbar\\sqrt{B/m}}$ なら $L$ が小さいほどエネルギーが下がり，連続体の近似が破れる格子間隔 $a$ まで縮む（$d=3$ と同じく小さなポーラロン）．2次元は1次元（常に束縛，大きさ有限）と3次元（強い結合でだけ束縛，大きさは $a$）の境目で，スケール不変になる．"
+   }
+  ],
+  "idea": {
+   "tex": "閉じ込めの運動エネルギー $\\propto L^{-2}$ と変形による利得 $\\propto L^{-d}$ のどちらが勝つかで，自己束縛の有無と大きさが決まる．$d=1$ では常に有限の大きさの束縛，$d=3$ では潰れるか広がるかの2択，$d=2$ はちょうど境目でスケール不変になる．原題は $d=1,3$ の比較で，捻りでは $d=1$ の大きさと $d=2$ の境目を問う．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Delta$：((ε_0)/(B L ^(d))) ; $E(L)$：((hbar ^(2))/(2 m L ^(2)))-((ε_0 ^(2))/(2 B L ^(d)))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポーラロン",
+   "スケーリング",
+   "自己束縛",
+   "次元解析"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 3,
+  "minutes": 35,
+  "theme": "熱電子放出の電子が運び去るエネルギー",
+  "topic": "熱電子放出の電子が運び去るエネルギー",
+  "statement": {
+   "tex": "金属内の伝導電子を自由電子気体とみなす．速度空間での電子数密度は\n\\[dn=2\\left(\\frac{m}{h}\\right)^3\\frac{dv_xdv_ydv_z}{e^{(\\varepsilon-\\mu)/kT}+1},\\qquad \\varepsilon=\\frac m2(v_x^2+v_y^2+v_z^2)\\]\nで与えられる（$\\mu$ は化学ポテンシャル）．金属表面は $x=0$ の平面で，金属は $x<0$ にあり，電子が外へ出るには $\\frac12mv_x^2>U_0$ が必要とする（$U_0$ は障壁の高さ）．仕事関数を $W=U_0-\\mu$ とし，$W\\gg kT$ とする．電子の電荷は $-e$ とする．\n\\begin{enumerate}\n\\item 単位面積から単位時間に放出される電子による電流密度の大きさ $J$ を求めよ．\n\\item 放出された電子が金属外で持つ運動エネルギーの平均値は $2kT$ であることを示せ．これが $\\frac32kT$ と異なる理由を述べよ．\n\\item 放出された電子を補うため，外部回路から化学ポテンシャル $\\mu$ のエネルギーで電子が補給されるとする．熱電子放出によって陰極から単位面積・単位時間あたりに奪われる熱 $P$ を求めよ．\n\\item 電子が2次元（$xy$ 面内）に閉じ込められた電子気体（状態密度の因子は $2(m/h)^2$）が，直線状の端 $x=0$ から熱電子放出する場合，単位長さあたりの電流 $J_{\\rm 2D}$ を求め，温度依存性 $T^{\\,?}e^{-W/kT}$ のべきを答えよ．\n\\item 3次元の陰極で $T_1=2000\\ \\mathrm{K}$ のとき $J_1=22.0\\ \\mathrm{A/m^2}$，$T_2=2500\\ \\mathrm{K}$ のとき $J_2=6.37\\times10^3\\ \\mathrm{A/m^2}$ が測定された．(1) の温度依存性を仮定して $W$ を eV 単位で求めよ（$k=8.617\\times10^{-5}\\ \\mathrm{eV/K}$）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $J=\\dfrac{4\\pi mek^2}{h^3}T^2e^{-W/kT}$　(2) $2kT$（$x$ 方向 $kT$＋横方向 $kT$）　(3) $P=\\dfrac{J}{e}(W+2kT)$　(4) $J_{\\rm 2D}=\\dfrac{2e\\sqrt{2\\pi m}}{h^2}(kT)^{3/2}e^{-W/kT}$，べき $3/2$　(5) $W\\approx4.50\\ \\mathrm{eV}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $W\\gg kT$ より障壁を越える電子では $f\\simeq e^{-(\\varepsilon-\\mu)/kT}$．表面に単位時間・単位面積で到達する電子は $v_x\\,dn$ なので\n\\[\\frac{J}{e}=2\\frac{m^3}{h^3}e^{\\mu/kT}\\int_{v_0}^{\\infty}v_xe^{-mv_x^2/2kT}dv_x\\left(\\int_{-\\infty}^{\\infty}e^{-mv^2/2kT}dv\\right)^2,\\quad v_0=\\sqrt{2U_0/m}.\\]\n$\\int_{v_0}^\\infty v_xe^{-mv_x^2/2kT}dv_x=\\frac{kT}{m}e^{-U_0/kT}$，$\\int e^{-mv^2/2kT}dv=\\sqrt{2\\pi kT/m}$ より\n\\[J=e\\cdot\\frac{2m^3}{h^3}\\cdot\\frac{kT}{m}\\cdot\\frac{2\\pi kT}{m}e^{-(U_0-\\mu)/kT}=\\frac{4\\pi mek^2}{h^3}T^2e^{-W/kT}\\]\n（リチャードソン–ダッシュマンの式，$A=4\\pi mek^2/h^3\\approx1.20\\times10^6\\ \\mathrm{A\\,m^{-2}K^{-2}}$）．\n\n(2) 外での運動エネルギーは $(\\frac12mv_x^2-U_0)+\\frac12m(v_y^2+v_z^2)$．$x$ 成分：$u=\\frac12mv_x^2-U_0$ とおくと流束の重み $v_xe^{-mv_x^2/2kT}dv_x\\propto e^{-u/kT}du$ ($u>0$) で，平均は $\\langle u\\rangle=kT$．$y,z$ 成分は重みに $v_y,v_z$ を含まないマクスウェル分布で各 $\\frac12kT$．合計 $2kT$．気体中の平均 $\\frac32kT$ と違うのは，流束 $v_x\\,dn$ で数えるため速い電子ほど多く出てくる（流束の重みで $x$ 方向の寄与が $\\frac12kT$ から $kT$ に増える）からである．\n\n(3) 1個の電子が出ていくと，補給（エネルギー $\\mu$）との差として，障壁を越えるのに要した $U_0-\\mu=W$ と外で持つ運動エネルギー平均 $2kT$ の和が陰極から失われる．\n\\[P=\\frac{J}{e}\\,(W+2kT).\\]\n\n(4) 2次元では\n\\[\\frac{J_{\\rm 2D}}{e}=2\\frac{m^2}{h^2}e^{\\mu/kT}\\frac{kT}{m}e^{-U_0/kT}\\sqrt{\\frac{2\\pi kT}{m}}=\\frac{2\\sqrt{2\\pi m}}{h^2}(kT)^{3/2}e^{-W/kT}.\\]\nべきは $3/2$．一般に $d$ 次元では $T^{(d+1)/2}$（法線方向から $T^1$，横方向 $d-1$ 個から各 $T^{1/2}$）．\n\n(5) $\\log(J/T^2)=\\log A-W/kT$ より\n\\[W=k\\frac{\\log\\left(\\dfrac{J_2/T_2^2}{J_1/T_1^2}\\right)}{1/T_1-1/T_2}.\\]\n$\\frac{J_2}{J_1}=289.5$，$(T_1/T_2)^2=0.64$ より比の対数 $=\\log185.3=5.222$．$1/T_1-1/T_2=1.000\\times10^{-4}\\ \\mathrm{K^{-1}}$．よって $W=8.617\\times10^{-5}\\times5.222/1.0\\times10^{-4}\\approx4.50\\ \\mathrm{eV}$．（このとき $J_1/(AT_1^2)$ から求めた $A$ も理論値 $1.2\\times10^6\\ \\mathrm{A\\,m^{-2}K^{-2}}$ とよく一致する．）"
+   }
+  ],
+  "idea": {
+   "tex": "熱電子は流束で数えるため法線方向の平均エネルギーが $kT$ に倍増し，放出電子は平均 $2kT$ を運ぶ（陰極冷却 $W+2kT$）．次元を変えると前因子のべきが $T^{(d+1)/2}$ に変わる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 2 k T\n(3) $P$：((J)/(e))(W +2 k T)\n(4) 記述\n(5) $W$ [eV]：≈4.50"
+  },
+  "methods": [],
+  "tags": [
+   "熱電子放出",
+   "リチャードソンの式",
+   "フェルミ分布",
+   "仕事関数",
+   "流束",
+   "2次元電子系",
+   "リチャードソンプロット"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "SS-03-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "SS-55",
+  "level": 3,
+  "minutes": 35,
+  "theme": "金属の低温比熱から有効質量を読む",
+  "topic": "金属の低温比熱から有効質量を読む",
+  "statement": {
+   "tex": "1 価の金属（原子量 $63.55$，伝導電子密度 $n=8.47\\times10^{28}\\ \\mathrm{m^{-3}}$）の 1 mol あたりの定積比熱を低温で測ったところ，\n$T=1.00\\ \\mathrm K$ で $C=0.742\\ \\mathrm{mJ/(mol\\,K)}$，$T=2.00\\ \\mathrm K$ で $C=1.766\\ \\mathrm{mJ/(mol\\,K)}$ であった．低温比熱は $C=\\gamma T+\\beta T^3$ の形とする．$R=8.314\\ \\mathrm{J/(mol\\,K)}$，$k_B=1.381\\times10^{-23}\\ \\mathrm{J/K}$，$\\hbar=1.055\\times10^{-34}\\ \\mathrm{J\\,s}$，電子の質量 $m=9.11\\times10^{-31}\\ \\mathrm{kg}$，$e=1.602\\times10^{-19}\\ \\mathrm C$．\n\\begin{enumerate}\n\\item 十分高温での 1 g あたりの比熱を求めよ．\n\\item $\\gamma$ と $\\beta$ を求めよ．電子比熱と格子比熱が等しくなる温度 $T^*$ を求めよ．\n\\item デバイ模型の低温極限 $C=\\frac{12\\pi^4}{5}R(T/\\Theta_D)^3$ からデバイ温度 $\\Theta_D$ を求めよ．\n\\item 自由電子気体の電子比熱は $C_{\\rm el}=\\frac{\\pi^2}{2}R\\,\\frac{T}{T_F}$（$T_F$：フェルミ温度）である．測定した $\\gamma$ からフェルミエネルギー $E_F^{\\rm (th)}$ を求め，密度 $n$ から自由電子模型で計算したフェルミエネルギー $E_F^{(0)}=\\frac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}$ と比べて，電子の熱的有効質量 $m^*/m$ を求めよ．\n\\item 電子が絶縁体のように比熱に寄与しない場合と比べ，金属の伝導電子の寄与が $R$ よりはるかに小さい理由を簡潔に述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $3R/M\\approx0.393\\ \\mathrm{J/(g\\,K)}$　(2) $\\gamma=0.695\\ \\mathrm{mJ/(mol\\,K^2)}$，$\\beta=0.0470\\ \\mathrm{mJ/(mol\\,K^4)}$，$T^*=\\sqrt{\\gamma/\\beta}\\approx3.8\\ \\mathrm K$　(3) $\\Theta_D\\approx346\\ \\mathrm K$　(4) $T_F\\approx5.9\\times10^4\\ \\mathrm K$，$E_F^{\\rm (th)}\\approx5.1\\ \\mathrm{eV}$，$E_F^{(0)}\\approx7.0\\ \\mathrm{eV}$，$m^*/m\\approx1.38$　(5) 解説参照（フェルミ面付近 $k_BT/E_F$ 程度の電子だけが励起される）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 高温では各原子が 3 次元調和振動子として $3k_BT$ のエネルギーをもち（デュロン‐プティ），1 mol で $3R$．1 g あたり $C=3N_0k/M=3R/M=3\\times8.314/63.55\\approx0.393\\ \\mathrm{J/(g\\,K)}$．\n\n(2) $C/T=\\gamma+\\beta T^2$ より\n$\\gamma+\\beta=0.742$，$\\gamma+4\\beta=1.766/2=0.883$（単位 $\\mathrm{mJ/(mol\\,K^2)}$）．\n差から $3\\beta=0.141$，$\\beta=0.0470\\ \\mathrm{mJ/(mol\\,K^4)}$，$\\gamma=0.695\\ \\mathrm{mJ/(mol\\,K^2)}$．\n$\\gamma T^*=\\beta T^{*3}$ より $T^*=\\sqrt{\\gamma/\\beta}=\\sqrt{14.8}\\approx3.8\\ \\mathrm K$．これより低温では電子比熱が支配的になる．\n\n(3) $\\beta=\\dfrac{12\\pi^4R}{5\\Theta_D^3}$ より\n\\[\n\\Theta_D=\\left(\\frac{12\\pi^4R}{5\\beta}\\right)^{1/3}=\\left(\\frac{1944}{4.70\\times10^{-5}}\\right)^{1/3}\\approx346\\ \\mathrm K.\n\\]\n\n(4) $\\gamma=\\dfrac{\\pi^2R}{2T_F}$ より $T_F=\\dfrac{\\pi^2\\times8.314}{2\\times6.95\\times10^{-4}}\\approx5.90\\times10^4\\ \\mathrm K$，$E_F^{\\rm (th)}=k_BT_F\\approx8.15\\times10^{-19}\\ \\mathrm J\\approx5.09\\ \\mathrm{eV}$．\n一方 $(3\\pi^2n)^{1/3}=1.36\\times10^{10}\\ \\mathrm{m^{-1}}$ より $E_F^{(0)}=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}\\approx1.13\\times10^{-18}\\ \\mathrm J\\approx7.03\\ \\mathrm{eV}$．\n状態密度 $D(E_F)\\propto m$ なので $\\gamma\\propto m^*$，すなわち $E_F\\propto1/m^*$ と読める．よって\n\\[\n\\frac{m^*}{m}=\\frac{E_F^{(0)}}{E_F^{\\rm (th)}}\\approx\\frac{7.03}{5.09}\\approx1.38.\n\\]\nバンド構造，電子‐フォノン相互作用，電子間相互作用による質量の増強を表す．\n\n(5) 電子はフェルミ粒子でパウリの排他律にしたがうので，フェルミ準位より十分下の電子は励起先の状態がすでに占有されていて熱励起されない．励起されうるのはフェルミ面から $k_BT$ 程度の幅にある電子，割合にして $\\sim T/T_F\\sim10^{-4}$ だけで，そのため電子比熱は古典的な $\\frac32R$ よりはるかに小さく，$T$ に比例する．絶縁体ではフェルミ準位がバンドギャップ中にありギャップを越える励起が $e^{-E_g/2k_BT}$ で抑えられるため，電子の寄与は実質ゼロである．"
+   }
+  ],
+  "idea": {
+   "tex": "低温比熱を $C/T=\\gamma+\\beta T^2$ と直線化して電子項と格子項を分離し，$\\beta$ からデバイ温度，$\\gamma$ から状態密度＝熱的有効質量を読み出す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\Theta_D$ [K]：≈346\n(4) 記述\n(5) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "固体比熱",
+   "電子比熱",
+   "デバイ温度",
+   "フェルミエネルギー",
+   "有効質量",
+   "ゾンマーフェルト係数",
+   "デュロン-プティ"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false

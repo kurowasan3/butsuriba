@@ -391,6 +391,941 @@
   }
  },
  {
+  "id": "PP-04-016",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Z崩壊の不可視幅からニュートリノの世代数を求める",
+  "topic": "Z崩壊の不可視幅からニュートリノの世代数を求める",
+  "statement": {
+   "tex": "自然単位 $\\hbar=c=1$ を用いる．$G_F=1.166\\times10^{-5}\\ \\mathrm{GeV^{-2}}$，$M_Z=91.19\\ \\mathrm{GeV}$，$1\\ \\mathrm{GeV^{-2}}=0.3894\\ \\mathrm{mb}$ とする．\n\\begin{enumerate}\n\\item $Z\\to\\nu\\bar\\nu$（1種類）の幅は $\\Gamma_\\nu=\\dfrac{G_FM_Z^3}{12\\sqrt2\\pi}$ である．値を求めよ．\n\\item 測定値 $\\Gamma_Z=2.495\\ \\mathrm{GeV}$，ハドロンへの幅 $\\Gamma_{\\rm had}=1.744\\ \\mathrm{GeV}$，荷電レプトン1種類への幅 $\\Gamma_{\\ell\\ell}=0.0840\\ \\mathrm{GeV}$（3種類）から，見えない崩壊の幅を求め，軽いニュートリノの種類の数 $N_\\nu$ を求めよ．\n\\item $e^+e^-\\to Z\\to$ ハドロンの断面積のピーク値は $\\sigma^0=\\dfrac{12\\pi}{M_Z^2}\\dfrac{\\Gamma_{ee}\\Gamma_{\\rm had}}{\\Gamma_Z^2}$ である．値を $\\mathrm{nb}$ で求めよ（有効数字3桁）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Gamma_\\nu\\approx0.166\\ \\mathrm{GeV}$　(2) $\\Gamma_{\\rm inv}=0.499\\ \\mathrm{GeV}$，$N_\\nu\\approx3.00$　(3) $\\sigma^0\\approx41.5\\ \\mathrm{nb}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $M_Z^3=7.58\\times10^5\\ \\mathrm{GeV^3}$ より\n\\[\n\\Gamma_\\nu=\\frac{1.166\\times10^{-5}\\times7.58\\times10^5}{12\\sqrt2\\pi}=\\frac{8.84}{53.3}\\approx\\boldsymbol{0.166\\ \\mathrm{GeV}}.\n\\]\n\n(2) $\\Gamma_{\\rm inv}=\\Gamma_Z-\\Gamma_{\\rm had}-3\\Gamma_{\\ell\\ell}=2.495-1.744-0.252=\\boldsymbol{0.499\\ \\mathrm{GeV}}$．見えない崩壊がすべて $\\nu\\bar\\nu$ なら\n\\[\n\\boldsymbol{N_\\nu=\\frac{0.499}{0.166}\\approx3.00}.\n\\]\n$M_Z/2$ より軽いニュートリノは3種類で，標準模型の3世代と一致する．\n\n(3) $\\Gamma_{ee}=0.0840\\ \\mathrm{GeV}$ として\n\\[\n\\sigma^0=\\frac{12\\pi\\times0.0840\\times1.744}{91.19^2\\times2.495^2}=1.07\\times10^{-4}\\ \\mathrm{GeV^{-2}}\\approx\\boldsymbol{41.5\\ \\mathrm{nb}}.\n\\]\nニュートリノの種類が1つ増えると $\\Gamma_Z$ が $0.17\\ \\mathrm{GeV}$ 増え，ピークは約 $13\\%$ 下がるので，ピークの高さからも $N_\\nu$ が決まる．"
+   }
+  ],
+  "idea": {
+   "tex": "Z の全幅から見える崩壊の幅を引いた残りは，検出できない $\\nu\\bar\\nu$ への崩壊で，1種類あたりの幅は $G_FM_Z^3/(12\\sqrt2\\pi)$ と計算できる．比をとればニュートリノの種類の数が求まる．原題は幅と断面積の見積もりで，捻りでは測定値から世代数を導かせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Gamma_\\nu$ [GeV]：≈0.166\n(2) $\\Gamma_{\\rm inv}$ [GeV]：≈0.499 ; $N_\\nu$：≈3.00\n(3) $\\sigma^0$ [nb]：≈41.5"
+  },
+  "methods": [],
+  "tags": [
+   "Zボソン",
+   "崩壊幅",
+   "ニュートリノの世代数",
+   "ブライト＝ウィグナー"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-017",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 30,
+  "theme": "Wボソンの崩壊幅とハドロン衝突での生成の運動学",
+  "topic": "Wボソンの崩壊幅とハドロン衝突での生成の運動学",
+  "statement": {
+   "tex": "自然単位を用いる．$G_F=1.166\\times10^{-5}\\ \\mathrm{GeV^{-2}}$，$M_W=80.4\\ \\mathrm{GeV}$，$\\hbar=6.58\\times10^{-25}\\ \\mathrm{GeV\\,s}$ とする．\n\\begin{enumerate}\n\\item $W^+\\to e^+\\nu_e$ の幅は $\\Gamma_{e\\nu}=\\dfrac{G_FM_W^3}{6\\sqrt2\\pi}$ である．全幅を，3種類のレプトンと（トップを除く）2組のクォーク対（色の自由度3）への崩壊の和として求め，$W\\to e\\nu$ の分岐比と寿命を求めよ．\n\\item 重心系のエネルギー $\\sqrt s=540\\ \\mathrm{GeV}$ の陽子・反陽子衝突で，陽子の u クォークが運動量の割合 $x_1$，反陽子の $\\bar d$ が $x_2$ を担って $W^+$ を作る．$x_1x_2$ を求めよ．$W$ が静止して作られるときの $x_1=x_2$ の値を求めよ．\n\\item $x_1=0.30$ のとき，$x_2$ と，$W$ のラピディティ $y=\\frac12\\ln(x_1/x_2)$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Gamma_{e\\nu}\\approx0.227\\ \\mathrm{GeV}$，$\\Gamma_{\\rm tot}=9\\Gamma_{e\\nu}\\approx2.0\\ \\mathrm{GeV}$，分岐比 $\\dfrac19$，寿命 $3.2\\times10^{-25}\\ \\mathrm{s}$　(2) $x_1x_2=\\dfrac{M_W^2}{s}\\approx0.0222$，$x_1=x_2\\approx0.149$　(3) $x_2\\approx0.074$，$y\\approx0.70$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Gamma_{e\\nu}=\\dfrac{1.166\\times10^{-5}\\times80.4^3}{6\\sqrt2\\pi}\\approx\\boldsymbol{0.227\\ \\mathrm{GeV}}$．レプトンは $e,\\mu,\\tau$ の3通り，クォークは $u\\bar d$，$c\\bar s$ の2組がそれぞれ色3通り（カビボ混合の和は1）で，すべて質量を無視すると同じ幅なので\n\\[\n\\Gamma_{\\rm tot}=(3+2\\times3)\\Gamma_{e\\nu}=9\\Gamma_{e\\nu}\\approx\\boldsymbol{2.0\\ \\mathrm{GeV}},\\qquad\\mathrm{BR}(e\\nu)=\\boldsymbol{\\frac19},\\qquad\n\\tau=\\frac{\\hbar}{\\Gamma_{\\rm tot}}\\approx\\boldsymbol{3.2\\times10^{-25}\\ \\mathrm{s}}.\n\\]\n\n(2) 高エネルギーで質量を無視すると，パートンの重心系のエネルギーの2乗は $\\hat s=(x_1p_1+x_2p_2)^2=x_1x_2s$．$\\hat s=M_W^2$ より\n\\[\n\\boldsymbol{x_1x_2=\\frac{M_W^2}{s}=\\frac{80.4^2}{540^2}\\approx0.0222},\\qquad x_1=x_2=\\frac{M_W}{\\sqrt s}\\approx\\boldsymbol{0.149}.\n\\]\n\n(3) $x_2=0.0222/0.30\\approx\\boldsymbol{0.074}$．$W$ は陽子の向きに動き，ラピディティは $y=\\frac12\\ln\\dfrac{0.30}{0.074}\\approx\\boldsymbol{0.70}$．パートンの運動量の割合が非対称なほど，$W$ はビーム方向に大きく飛ぶ．"
+   }
+  ],
+  "idea": {
+   "tex": "W の崩壊幅は，質量を無視できるフェルミオン対ごとに同じ $G_FM_W^3/(6\\sqrt2\\pi)$ で，色を数えると9通りになる．ハドロン衝突ではパートンの運動量の割合の積が $M_W^2/s$ に固定され，比がラピディティを決める．原題は多重度と幅，生成断面積とイベント数で，捻りでは運動学に重点を置いた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Gamma_{e\\nu}$ [GeV]：≈0.227 ; $\\Gamma_{\\rm tot}$ [GeV]：≈2.0 ; 分岐比：((1)/(9)) ; 寿命 [s]：≈3.2e-25\n(2) 記述\n(3) $x_2$：≈0.074 ; $y$：≈0.70"
+  },
+  "methods": [],
+  "tags": [
+   "Wボソン",
+   "崩壊幅",
+   "パートン模型",
+   "ラピディティ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-018",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "定数のゲージ場でも場の強さが0でない：非可換性の効果",
+  "topic": "定数のゲージ場でも場の強さが0でない：非可換性の効果",
+  "statement": {
+   "tex": "$SU(2)$ ゲージ場 $A_\\mu=A_\\mu^aT^a$（$T^a=\\sigma^a/2$），$F_{\\mu\\nu}=\\partial_\\mu A_\\nu-\\partial_\\nu A_\\mu-ig[A_\\mu,A_\\nu]$ を考える．\n\\begin{enumerate}\n\\item 純粋ゲージ $A_\\mu=\\frac ig\\Omega\\partial_\\mu\\Omega^{-1}$ では $F_{\\mu\\nu}=0$ を示せ．\n\\item 定数の配位 $A_x=aT^1$，$A_y=aT^2$（他は $0$）の $F_{xy}$ を求めよ．\n\\item ゲージ不変量 $\\mathrm{Tr}F_{\\mu\\nu}F^{\\mu\\nu}$ の値を求め，この配位がゲージ変換で $0$ にできないことを説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $F_{xy}=ga^2T^3$　(3) $\\mathrm{Tr}F_{\\mu\\nu}F^{\\mu\\nu}=g^2a^4$；$F$ は共変に変換するので不変量が $0$ でない配位は純粋ゲージでない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\partial_\\mu A_\\nu-\\partial_\\nu A_\\mu=\\frac ig(\\partial_\\mu\\Omega\\partial_\\nu\\Omega^{-1}-\\partial_\\nu\\Omega\\partial_\\mu\\Omega^{-1})$，交換子の項が打ち消す（$\\partial\\Omega^{-1}=-\\Omega^{-1}\\partial\\Omega\\,\\Omega^{-1}$ を使う）．\\hfill$\\square$\n\n(2) $-ig[aT^1,aT^2]=-iga^2\\cdot iT^3=\\boldsymbol{ga^2T^3}$．\n\n(3) $F_{xy}F^{xy}+F_{yx}F^{yx}=2F_{xy}^2$，$\\mathrm{Tr}=2g^2a^4\\cdot\\frac12=\\boldsymbol{g^2a^4}$．"
+   }
+  ],
+  "idea": {
+   "tex": "非可換ゲージ理論ではポテンシャルが定数でも場の強さが生じる．原題の変換則の証明に，具体的な配位を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) $F_{xy}$：ga^2T^3\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ヤン＝ミルズ場",
+   "場の強さ",
+   "非可換ゲージ理論",
+   "ゲージ不変量"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-019",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "随伴スカラーによる SU(5) → SU(3)×SU(2)×U(1) の破れ",
+  "topic": "随伴スカラーによる SU(5) → SU(3)×SU(2)×U(1) の破れ",
+  "statement": {
+   "tex": "随伴表現のスカラーの期待値を対角 $\\phi_0=\\mathrm{diag}(v_1,\\ldots,v_N)$ とする．\n\\begin{enumerate}\n\\item 一般に，固有値が $n_1,n_2,\\ldots$ 個ずつ縮退しているとき残る群を答えよ．\n\\item $SU(5)$ で $\\phi_0=v\\,\\mathrm{diag}(2,2,2,-3,-3)$ の残る群と，質量をもつゲージボソンの数を求めよ．\n\\item $SU(3)$ で $\\phi_0=v\\,\\mathrm{diag}(1,1,-2)$ の場合を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S(U(n_1)\\times U(n_2)\\times\\cdots)$　(2) $SU(3)\\times SU(2)\\times U(1)$；$12$ 個　(3) $SU(2)\\times U(1)$；$4$ 個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $[T,\\phi_0]=0$ となる生成子は，同じ固有値のブロック内の回転．\n\n(2) 次元 $8+3+1=12$，$24-12=\\boldsymbol{12}$（$X,Y$ ボソン）．\n\n(3) $3+1=4$，$8-4=\\boldsymbol4$．"
+   }
+  ],
+  "idea": {
+   "tex": "随伴スカラーは階数を保ち，固有値の縮退パターンで破れ方が決まる．原題の一般論を，大統一理論の具体例にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "随伴表現",
+   "対称性の破れ",
+   "大統一理論",
+   "ゲージボソンの質量"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-020",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "U(1) のカイラルな整数電荷：N = 3 は不可能，N = 5 の例",
+  "topic": "U(1) のカイラルな整数電荷：N = 3 は不可能，N = 5 の例",
+  "statement": {
+   "tex": "左巻きワイルフェルミオンの電荷 $q_i\\in\\mathbb Z$ が $\\sum q_i^3=0$ と $\\sum q_i=0$ をみたすとする．\n\\begin{enumerate}\n\\item $N=3$ では，どれかの電荷が $0$ になることを示せ．\n\\item $N=4$ では，電荷が正負の対になる（ベクトル的になる）ことを示せ．\n\\item $N=5$ の候補 $(1,5,-7,-8,9)$ が条件をみたすことを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $a^3+b^3+c^3=3abc$（$a+b+c=0$）　(2) $a^3+b^3+c^3-(a+b+c)^3=-3(a+b)(b+c)(c+a)$　(3) 和 $0$，3乗の和 $1+125-343-512+729=0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $a+b+c=0$ なら $a^3+b^3+c^3=3abc=0$．\n\n(2) $d=-(a+b+c)$ で与式が $0$：どれかの対の和が $0$，残りも対になる．\n\n(3) 和：$1+5-7-8+9=0$．3乗の和 $\\boldsymbol0$．真にカイラルな理論．"
+   }
+  ],
+  "idea": {
+   "tex": "アノマリーの条件はディオファントス方程式になる．原題の $N=4$ の否定に，$N=3$ の場合と具体例の検証を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 和：0 ; 3乗の和：1+125-343-512+729"
+  },
+  "methods": [],
+  "tags": [
+   "ゲージアノマリー",
+   "重力アノマリー",
+   "整数電荷",
+   "カイラル理論"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-021",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "整数の超電荷での標準模型の最小解とクォークの電荷",
+  "topic": "整数の超電荷での標準模型の最小解とクォークの電荷",
+  "statement": {
+   "tex": "超電荷を整数とし，$SU(3)^2U(1)$，$SU(2)^2U(1)$，$U(1)^3$ の条件を課す．\n\\begin{enumerate}\n\\item 標準模型の解 $(q,l,u,d,x)=(1,-3,4,-2,-6)$ がすべての条件と重力アノマリーをみたすことを確かめよ．\n\\item 電荷 $Q=T_3+Y/6$ で各粒子の電荷を求めよ．\n\\item もう1つの解 $u=-d$ の系列ではどうなるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 確認　(2) $u:\\frac23$，$d:-\\frac13$，$\\nu:0$，$e:-1$　(3) $q=l=0$，3乗の条件から $x=0$：クォークの電荷が $SU(2)$ の成分によらない非現実的な解"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $2-4+2=0$，$3-3=0$，$6-54-192+24+216=0$，$6-6-12+6+6=0$．\n\n(2) $Q_L$：$\\pm\\frac12+\\frac16$．$e_R$：$-1$．\n\n(3) $u=-d$ で $q=0$，$l=0$，$x=0$．"
+   }
+  ],
+  "idea": {
+   "tex": "アノマリーの条件だけで超電荷の比が決まり，電荷の量子化が説明される．原題の一意性の証明を，具体解の検証にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "アノマリー相殺",
+   "超電荷の量子化",
+   "整数解"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-022",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "標準模型の大域的対称性とアノマリーで残る組合せ",
+  "topic": "標準模型の大域的対称性とアノマリーで残る組合せ",
+  "statement": {
+   "tex": "右巻きニュートリノのない標準模型を考える．\n\\begin{enumerate}\n\\item 古典的な大域的 $U(1)$ 対称性を挙げよ．\n\\item $SU(2)$ のインスタントン1個で $\\Delta B$，$\\Delta L_e$，$\\Delta L_\\mu$，$\\Delta L_\\tau$ を求めよ．\n\\item 量子的に残る組合せを答えよ．\n\\item 右巻きニュートリノにマヨラナ質量を加えると何が残るか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B$，$L_e$，$L_\\mu$，$L_\\tau$　(2) $3,1,1,1$　(3) $B-L$，$L_e-L_\\mu$，$L_\\mu-L_\\tau$（$B/3-L_i$）　(4) マヨラナ質量で $L$ が破れ，フレーバーの混合も入ると大域的 $U(1)$ は残らない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(2) 各左巻き2重項が1つずつ：クォーク $3$ 世代 $\\times$ 色 $3$ で $\\Delta B=3\\times3\\times\\frac13=3$，レプトン各1．\n\n(3) $\\Delta(B-L)=0$ 等．\n\n(4) $\\Delta L=2$ の項で $B-L$ も破れる．"
+   }
+  ],
+  "idea": {
+   "tex": "古典的な対称性の一部はアノマリーで破れ，$B-L$ だけが残る．原題の分類にインスタントンでの変化量を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "バリオン数",
+   "レプトン数",
+   "アノマリー",
+   "スファレロン"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-023",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "レプトクォーク (1, 3̄)_{1/3} の電荷と許される湯川結合",
+  "topic": "レプトクォーク (1, 3̄)_{1/3} の電荷と許される湯川結合",
+  "statement": {
+   "tex": "新しいスカラー $S$ が $SU(2)\\times SU(3)$ の $(\\boldsymbol1,\\bar{\\boldsymbol3})$，超電荷 $Y=\\frac13$ をもつ（$Q=T_3+Y$）．\n\\begin{enumerate}\n\\item $S$ の電荷を求めよ．\n\\item $S\\,Q_LL_L$（$Q_L:(\\boldsymbol2,\\boldsymbol3)_{1/6}$，$L_L:(\\boldsymbol2,\\boldsymbol1)_{-1/2}$）がゲージ不変であることを確かめよ．\n\\item $S$ がクォークとレプトンを結ぶことで生じる可能性のある現象を挙げよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\frac13$　(2) 色 $\\bar3\\otimes3\\ni1$，$SU(2)$ の反対称積 $2\\otimes2\\ni1$，超電荷 $\\frac13+\\frac16-\\frac12=0$　(3) レプトクォークを介した稀な崩壊，$S\\,QQ$ 結合もあれば陽子崩壊"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $SU(2)$ 1重項で $Q=Y=\\boldsymbol{\\frac13}$．\n\n(2) 確認．\n\n(3) $B$ と $L$ を同時にもつ結合と，$QQ$ との結合が両方あると $B$，$L$ が破れる．"
+   }
+  ],
+  "idea": {
+   "tex": "新粒子の量子数から電荷と許される相互作用が決まる．原題の電荷の計算に，相互作用の可能性を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ((1)/(3))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "レプトクォーク",
+   "超電荷",
+   "電荷",
+   "ゲージ不変性"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-024",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 30,
+  "theme": "U(1) と N_f フレーバーの D 項の平坦方向とメソン",
+  "topic": "U(1) と N_f フレーバーの D 項の平坦方向とメソン",
+  "statement": {
+   "tex": "$U(1)$ ゲージ理論に電荷 $+1$ の $\\phi_i$ と電荷 $-1$ の $\\tilde\\phi_i$（$i=1,\\ldots,N_f$）がある（超ポテンシャルなし）．\n\\begin{enumerate}\n\\item D 項の条件を書け．\n\\item $N_f=1$ のときモジュライ空間をゲージ不変量で表せ．\n\\item 一般の $N_f$ で，メソン $M_{ij}=\\phi_i\\tilde\\phi_j$ のみたす条件と，モジュライ空間の複素次元を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sum|\\phi_i|^2-\\sum|\\tilde\\phi_i|^2=0$　(2) $M=\\phi\\tilde\\phi\\in\\mathbb C$　(3) $\\mathrm{rank}M\\leqq1$；$2N_f-1$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(2) 実自由度 $4-1$（D 項）$-1$（ゲージ）$=2$：複素1次元．\n\n(3) $M=\\boldsymbol\\phi\\tilde{\\boldsymbol\\phi}^T$ は階数1．次元は $2N_f$ から D 項とゲージで $1$ 減る：$\\boldsymbol{2N_f-1}$（階数1の行列の次元と一致）．"
+   }
+  ],
+  "idea": {
+   "tex": "D 項の平坦方向の商はゲージ不変な正則量で表せる．原題の $U(N_c)$ の一般論を，計算しやすい $U(1)$ にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\sum|\\phi_i|^2-\\sum|\\tilde\\phi_i|^2$：0\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "D項",
+   "モジュライ空間",
+   "メソン",
+   "ゲージ不変量"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-025",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "MSSM の SU(3) と SU(2) の1ループ係数 b₀",
+  "topic": "MSSM の SU(3) と SU(2) の1ループ係数 b₀",
+  "statement": {
+   "tex": "超対称ゲージ理論の1ループ係数は $b_0=3T(\\mathrm{adj})-\\sum_{\\rm chiral}T(R_i)$（$T(\\square)=\\frac12$，$T(\\mathrm{adj})=N$）．\n\\begin{enumerate}\n\\item $N_f$ フレーバーの SQCD で $b_0=3N_c-N_f$ を確かめよ．\n\\item MSSM の $SU(3)$（6種のクォーク，各フレーバーは $Q$ と $\\bar Q$ の2つのカイラル超場）の $b_0$ を求めよ．\n\\item MSSM の $SU(2)$（各世代に $Q$ が3色，$L$ が1つの2重項，ヒッグス2重項が2つ）の $b_0$ を求め，漸近的自由かどうか答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 基本・反基本の表現が $2N_f$ 個で $\\sum T=N_f$　(2) $9-6=3$　(3) $6-7=-1$；漸近的自由でない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) フレーバーごとに基本と反基本の2つで $T=1$．\n\n(2) $3\\times3-6=\\boldsymbol3$．\n\n(3) 2重項の数 $3\\times(3+1)+2=14$，$\\frac12\\times14=7$：$6-7=\\boldsymbol{-1}$．"
+   }
+  ],
+  "idea": {
+   "tex": "超対称性はゲージ場の寄与を変え，係数が簡単な形になる．原題の SQCD と $\\mathcal N=4$ に，MSSM の具体例を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 9-6\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ベータ関数",
+   "MSSM",
+   "漸近的自由",
+   "超対称QCD"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-026",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "1729 = 1³ + 12³ = 9³ + 10³ のカイラル理論と重力アノマリー",
+  "topic": "1729 = 1³ + 12³ = 9³ + 10³ のカイラル理論と重力アノマリー",
+  "statement": {
+   "tex": "$U(1)$ に整数電荷の左巻きワイルフェルミオンがある．\n\\begin{enumerate}\n\\item 1729 の2通りの表し方から，$\\sum q^3=0$ をみたす4つの電荷をつくれ．\n\\item この理論は重力と結合できるか（$\\sum q=0$）．\n\\item 2つのフェルミオン $(a,b)$ を加えて両方の条件をみたせないことを示せ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $(1,12,-9,-10)$　(2) $\\sum q=-6\\neq0$：できない　(3) $a+b=6$，$a^3+b^3=0$ は $a=-b$ を要し矛盾"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $1+1728-729-1000=0$．\n\n(2) 和 $-6$．\n\n(3) $a^3+b^3=(a+b)(a^2-ab+b^2)=6(a^2-ab+b^2)=0$ には $a=b=0$ が必要．小さい範囲で3つ加える場合も数値探索で見つからない．"
+   }
+  ],
+  "idea": {
+   "tex": "ラマヌジャンのタクシー数は最も簡単なカイラルな $U(1)$ 理論を与えるが，重力アノマリーは消えない．原題の構成に，修正の難しさを加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) (1, 12, -9, -10)\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ゲージアノマリー",
+   "重力アノマリー",
+   "タクシー数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-027",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "可換な場合のチャーン＝サイモンズ流 F⋆F = 2∂K",
+  "topic": "可換な場合のチャーン＝サイモンズ流 F⋆F = 2∂K",
+  "statement": {
+   "tex": "$U(1)$ ゲージ場で $\\star F^{\\mu\\nu}=\\frac12\\epsilon^{\\mu\\nu\\rho\\sigma}F_{\\rho\\sigma}$ とする．\n\\begin{enumerate}\n\\item $F_{\\mu\\nu}\\star F^{\\mu\\nu}=2\\partial_\\mu K^\\mu$，$K^\\mu=\\epsilon^{\\mu\\nu\\rho\\sigma}A_\\nu\\partial_\\rho A_\\sigma$ を示せ．\n\\item $K^\\mu$ のゲージ変換での変化を求め，全微分であることを示せ．\n\\item θ 項が運動方程式に影響しない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 証明　(2) $\\delta K^\\mu=\\epsilon^{\\mu\\nu\\rho\\sigma}\\partial_\\nu\\alpha\\,\\partial_\\rho A_\\sigma=\\partial_\\nu(\\epsilon^{\\mu\\nu\\rho\\sigma}\\alpha\\partial_\\rho A_\\sigma)$　(3) 全微分なので局所的な変分に寄与しない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\frac12\\epsilon F F=2\\epsilon\\partial_\\mu A_\\nu\\partial_\\rho A_\\sigma=2\\partial_\\mu(\\epsilon A_\\nu\\partial_\\rho A_\\sigma)$（$\\epsilon\\partial_\\mu\\partial_\\rho A_\\sigma=0$）．\n\n(2) $\\delta A=\\partial\\alpha$．\n\n(3) 境界の寄与（位相的な配位）だけが効く．"
+   }
+  ],
+  "idea": {
+   "tex": "θ 項は全微分であり，非可換な場合には巻きつき数を与える．原題の非可換の証明の前に，可換な場合で構造をつかませる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "チャーン＝サイモンズ",
+   "全微分",
+   "θ項",
+   "位相不変量"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-028",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "SU(3) の対称表現と反対称表現（＝反基本表現）のディラックフェルミオン",
+  "topic": "SU(3) の対称表現と反対称表現（＝反基本表現）のディラックフェルミオン",
+  "statement": {
+   "tex": "$SU(N)$ の表現 $R$ のディラックフェルミオン1つで，軸性の離散対称性は $\\mathbb Z_{2I(R)}$ である（$I(\\square)=1$）．$N=3$ とする．\n\\begin{enumerate}\n\\item 対称表現で離散対称性と凝縮による真空の数を求めよ．\n\\item 反対称表現は何の表現と同じか．このときの真空の数を求め，1フレーバーの QCD との関係を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\mathbb Z_{10}$；$5$ 個　(2) 反基本表現；$\\mathbb Z_2$ はフェルミオン数の一部で，真空は $1$ 個（1フレーバー QCD）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $I=N+2=5$．$\\mathbb Z_{10}\\to\\mathbb Z_2$ で $5$ 個．\n\n(2) $SU(3)$ の反対称表現は $\\bar{\\boldsymbol3}$，$I=1$．離散カイラル対称性は実質なく，真空は一意．"
+   }
+  ],
+  "idea": {
+   "tex": "表現の指数が真空の数を決め，小さい $N$ では反対称表現が反基本表現になる．原題の $N>2$ の一般論を $N=3$ で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "離散カイラル対称性",
+   "真空の数",
+   "ディンキン指数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-029",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 25,
+  "theme": "陽子崩壊探索の運動学と事象数",
+  "topic": "陽子崩壊探索の運動学と事象数",
+  "statement": {
+   "tex": "大統一理論が予言する陽子崩壊 $p\\to e^++\\pi^0$ を，大型水チェレンコフ検出器で探す．$m_p=938.27$，$m_{\\pi^0}=134.98$，$m_e=0.511$（MeV/$c^2$），アボガドロ数 $6.022\\times10^{23}$ mol$^{-1}$，水のモル質量 18.0 g/mol とする．\n\\begin{enumerate}\n\\item この崩壊で破れる保存量と，保たれる保存量の組み合わせ（$B$，$L$ に関して）を答えよ．標準模型のゲージ相互作用（強・電磁・弱）では起こらないことも述べよ．\n\\item 静止した陽子が崩壊したときの $e^+$ の運動量と，$\\pi^0\\to\\gamma\\gamma$ の 2 光子のなす角の最小値を求めよ．\n\\item 有効質量 22.5 kt の水に含まれる陽子（酸素核内の陽子も含む）の数を求め，部分寿命が $\\tau/B=2.4\\times10^{34}$ 年のとき，1 年あたりに期待される崩壊数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $B$ と $L$ はそれぞれ 1 ずつ破れ，$B-L$ は保存．標準模型では起こらない．(2) $p_e\\approx459$ MeV/$c$，最小開き角 $\\approx32.7^\\circ$　(3) 陽子数 $\\approx7.5\\times10^{33}$，約 0.31 事象／年"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 始状態 $B=1,\\ L=0$，終状態 $B=0,\\ L=-1$（$e^+$）．よって $\\Delta B=-1$，$\\Delta L=-1$ でバリオン数・レプトン数がともに破れるが，$B-L$ は $1\\to1$ で保存される．電荷・エネルギー・角運動量（$1/2\\to1/2+0$，軌道角運動量を適当にとれる）は保存．標準模型の摂動論的相互作用はすべて $B$ と $L$ を別々に保存するので，この崩壊は強・電磁・弱いずれの相互作用でも起こらない（大統一理論の重いゲージボソン交換などが必要）．\n\n(2) 2 体崩壊の運動量は\n\\[\np=\\frac{\\sqrt{[m_p^2-(m_\\pi+m_e)^2][m_p^2-(m_\\pi-m_e)^2]}}{2m_p}\\approx459\\ \\text{MeV}/c.\n\\]\n$\\pi^0$ のエネルギーは $E_\\pi=\\sqrt{p^2+m_\\pi^2}\\approx479$ MeV．$\\pi^0\\to\\gamma\\gamma$ の開き角 $\\theta$ は 2 光子のエネルギーが等しいとき最小で，$\\sin(\\theta_{\\min}/2)=m_\\pi/E_\\pi$ より\n\\[\n\\theta_{\\min}=2\\arcsin\\frac{134.98}{478.8}\\approx32.7^\\circ.\n\\]\n（電子とほぼ背中合わせに，開いた 2 本の電磁シャワーが見えるのが信号の特徴．）\n\n(3) 水 $2.25\\times10^{10}$ g は $2.25\\times10^{10}/18.0=1.25\\times10^9$ mol．H$_2$O 1 分子あたりの陽子は $2+8=10$ 個なので\n\\[\nN_p=1.25\\times10^9\\times6.022\\times10^{23}\\times10\\approx7.5\\times10^{33}.\n\\]\n$t\\ll\\tau$ なので 1 年あたりの崩壊数は $N_p\\,B/\\tau=7.5\\times10^{33}/2.4\\times10^{34}\\approx0.31$．数年観測しても候補が 1〜2 個しか期待できない，極めて稀な過程を探していることがわかる（実際には事象 0 から寿命の下限が得られている）．"
+   }
+  ],
+  "idea": {
+   "tex": "禁止過程を「どの保存則が破れるか」で分類したうえで，2 体崩壊運動学と崩壊則から検出器で期待される事象数を見積もる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "陽子崩壊",
+   "バリオン数",
+   "レプトン数",
+   "B-L",
+   "大統一理論",
+   "π0崩壊",
+   "開き角"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-030",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 20,
+  "theme": "μ対断面積からの重心エネルギーとR",
+  "topic": "μ対断面積からの重心エネルギーとR",
+  "statement": {
+   "tex": "$e^+e^-\\to\\mu^+\\mu^-$ の全断面積は $\\sigma_{\\mu\\mu}=\\dfrac{4\\pi\\alpha^2(\\hbar c)^2}{3s}$ で与えられる（$\\alpha=1/137$，$(\\hbar c)^2=0.3894\\ \\mathrm{GeV^2\\,mb}$）．\n\\begin{enumerate}\n\\item チャーム生成閾値より下のある重心エネルギーで $\\sigma_{\\mu\\mu}=20$ nb であった．$\\sqrt s$ を求めよ．\n\\item このエネルギーでのハドロン生成断面積を，色の自由度と QCD 補正因子 $(1+\\alpha_s/\\pi)$（$\\alpha_s=0.30$）を含めて見積もれ．\n\\item $\\sqrt s=12$ GeV（b クォーク閾値より上，t 閾値より下）でのハドロン生成断面積を $\\alpha_s=0.17$ として見積もれ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\sqrt s\\approx2.1$ GeV　(2) $\\approx44$ nb　(3) $\\approx2.3$ nb"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\dfrac{4\\pi\\alpha^2}{3}(\\hbar c)^2=86.9\\ \\mathrm{nb\\,GeV^2}$ なので $s=86.9/20=4.34\\ \\mathrm{GeV}^2$，$\\sqrt s=2.08$ GeV．\n\n(2) u, d, s のみ寄与：$R_0=3\\left(\\frac49+\\frac19+\\frac19\\right)=2$．$R=2(1+0.30/\\pi)=2.19$，$\\sigma_{\\rm had}=2.19\\times20=43.8\\approx44$ nb．\n\n(3) $\\sigma_{\\mu\\mu}=86.9/144=0.603$ nb．u, d, s, c, b で $R_0=3\\left(2\\cdot\\frac49+3\\cdot\\frac19\\right)=\\frac{11}3$，$R=\\frac{11}{3}(1+0.17/\\pi)=3.87$．$\\sigma_{\\rm had}=3.87\\times0.603=2.33$ nb．エネルギーが上がると $R$ は増えるが $1/s$ のため断面積自体は 1 桁以上減る．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\sigma_{\\mu\\mu}\\propto1/s$ からエネルギーを逆算でき，ハドロン断面積は $R=N_c\\sum Q_q^2(1+\\alpha_s/\\pi)$ 倍で決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [nb]：≈44\n(3) [nb]：≈2.3"
+  },
+  "methods": [],
+  "tags": [
+   "R比",
+   "電子陽電子消滅",
+   "QCD補正",
+   "断面積"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-031",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 20,
+  "theme": "Zピーク断面積からニュートリノ世代数を決める",
+  "topic": "Zピーク断面積からニュートリノ世代数を決める",
+  "statement": {
+   "tex": "$Z^0$ の質量を $M_Z=91.19\\ \\mathrm{GeV}/c^2$，フェルミ結合定数を $G_F/(\\hbar c)^3=1.166\\times10^{-5}\\ \\mathrm{GeV^{-2}}$，部分幅を $\\Gamma_{ee}=\\Gamma_{\\mu\\mu}=\\Gamma_{\\tau\\tau}=84.0\\ \\mathrm{MeV}$，$\\Gamma_{\\rm had}=1744\\ \\mathrm{MeV}$ とする．$e^+e^-\\to Z^0\\to$ ハドロンのピーク断面積は\n\\[\n\\sigma^0_{\\rm had}=\\frac{12\\pi(\\hbar c)^2}{(M_Zc^2)^2}\\frac{\\Gamma_{ee}\\Gamma_{\\rm had}}{\\Gamma_Z^2},\\qquad (\\hbar c)^2=0.3894\\ \\mathrm{mb\\,GeV^2}\n\\]\nで与えられる（$\\Gamma_Z$ は全幅）．\n\\begin{enumerate}\n\\item ニュートリノ 1 種あたりの幅は $\\Gamma_{\\nu\\bar\\nu}=G_FM_Z^3/(12\\sqrt2\\pi)$（自然単位）である．数値を求めよ．\n\\item 軽いニュートリノが $N_\\nu=3$ 種の場合と $4$ 種の場合で $\\sigma^0_{\\rm had}$ を求め，何％変わるかを答えよ．\n\\item 測定値 $\\sigma^0_{\\rm had}=41.5\\ \\mathrm{nb}$ から $N_\\nu$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $0.166\\ \\mathrm{GeV}$　(2) $N_\\nu=3$: $41.6\\ \\mathrm{nb}$，$N_\\nu=4$: $36.6\\ \\mathrm{nb}$（約 $12\\%$ 減少）　(3) $N_\\nu\\approx3.0$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\Gamma_{\\nu\\bar\\nu}=\\dfrac{1.166\\times10^{-5}\\times91.19^3}{12\\sqrt2\\pi}\\ \\mathrm{GeV}=0.166\\ \\mathrm{GeV}$．\n\n(2) $\\Gamma_Z=\\Gamma_{\\rm had}+3\\Gamma_{\\ell\\ell}+N_\\nu\\Gamma_{\\nu\\bar\\nu}$．$N_\\nu=3$ では $\\Gamma_Z=1.744+0.252+0.498=2.494\\ \\mathrm{GeV}$，\n\\[\n\\sigma^0_{\\rm had}=\\frac{12\\pi\\times0.084\\times1.744}{91.19^2\\times2.494^2}\\times0.3894\\ \\mathrm{mb}=4.16\\times10^{-5}\\ \\mathrm{mb}=41.6\\ \\mathrm{nb}.\n\\]\n$N_\\nu=4$ では $\\Gamma_Z=2.660\\ \\mathrm{GeV}$ で $\\sigma^0_{\\rm had}=41.6\\times(2.494/2.660)^2=36.6\\ \\mathrm{nb}$．約 $12\\%$ の減少．目に見えない崩壊チャンネルが増えると，全幅が増えて見えるチャンネルのピークが下がる．\n\n(3) $\\Gamma_Z=\\sqrt{12\\pi\\Gamma_{ee}\\Gamma_{\\rm had}(\\hbar c)^2/(M_Z^2\\sigma^0_{\\rm had})}=2.496\\ \\mathrm{GeV}$．$N_\\nu=(2.496-1.744-0.252)/0.166=3.0$．"
+   }
+  ],
+  "idea": {
+   "tex": "見えないニュートリノ崩壊は全幅 $\\Gamma_Z$ を通じてハドロンのピーク断面積を $\\Gamma_Z^{-2}$ で下げる．ピーク高さだけで $N_\\nu$ が決まる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) [GeV]：≈0.166\n(2) 記述\n(3) $N_\\nu$：≈3.0"
+  },
+  "methods": [],
+  "tags": [
+   "Zボソン",
+   "崩壊幅",
+   "ニュートリノ世代数",
+   "ブライト・ウィグナー",
+   "ピーク断面積"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-032",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 20,
+  "theme": "W→eν のヤコビアンピークと弱い力の到達距離",
+  "topic": "W→eν のヤコビアンピークと弱い力の到達距離",
+  "statement": {
+   "tex": "陽子・反陽子衝突で生成された $W$ ボソン（質量 $M_W=80.4\\ \\mathrm{GeV}/c^2$）が静止系で $W\\to e\\nu$ と崩壊し，崩壊は等方的であるとする（$W$ 自身の横運動量は無視し，ビーム軸を $z$ 軸とする）．電子の質量は無視する．\n\\begin{enumerate}\n\\item 電子の横運動量 $p_T$ の分布 $\\dfrac{1}{N}\\dfrac{dN}{dp_T}$ を求め，$p_T=M_Wc/2$ に鋭いピーク（ヤコビアンピーク）が現れることを示せ．\n\\item $p_T>35\\ \\mathrm{GeV}/c$ を満たす事象の割合を求めよ．\n\\item $W$ 交換による力の到達距離 $\\hbar/(M_Wc)$ を fm 単位で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\dfrac1N\\dfrac{dN}{dp_T}=\\dfrac{p_T}{p_{\\max}\\sqrt{p_{\\max}^2-p_T^2}}$（$p_{\\max}=M_Wc/2$），$p_T\\to p_{\\max}$ で発散　(2) $0.49$　(3) $2.5\\times10^{-3}\\ \\mathrm{fm}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 静止系で電子の運動量の大きさは $p_{\\max}=M_Wc/2$，$z$ 軸からの角を $\\theta$ とすると $p_T=p_{\\max}\\sin\\theta$．等方的なので $\\cos\\theta$ は $[-1,1]$ で一様．$p_T>p$ となる確率は $|\\cos\\theta|<\\sqrt{1-p^2/p_{\\max}^2}$ の確率だから\n\\[\nP(p_T>p)=\\sqrt{1-\\frac{p^2}{p_{\\max}^2}}\\quad\\Longrightarrow\\quad\n\\frac1N\\frac{dN}{dp_T}=\\frac{p_T}{p_{\\max}\\sqrt{p_{\\max}^2-p_T^2}} .\n\\]\n$p_T\\to p_{\\max}$ で分母が 0 になり分布は（積分可能な形で）発散する．$\\theta=90^\\circ$ 付近で $\\sin\\theta$ が停留するためで，これがヤコビアンピークである．ピーク位置から $M_W=2p_{\\max}/c$ が読み取れる．\n\n(2) $p_{\\max}=40.2\\ \\mathrm{GeV}/c$ なので $P=\\sqrt{1-(35/40.2)^2}=0.49$．\n\n(3) $\\hbar c/(M_Wc^2)=197.3\\ \\mathrm{MeV\\,fm}/80.4\\times10^3\\ \\mathrm{MeV}=2.5\\times10^{-3}\\ \\mathrm{fm}$．核子の大きさよりはるかに短く，低エネルギーでは点状のフェルミ相互作用とみなせる．"
+   }
+  ],
+  "idea": {
+   "tex": "$p_T=p_{\\max}\\sin\\theta$ の停留点がピークを作る．ニュートリノが見えなくても電子の $p_T$ 分布の端から $M_W$ が測れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ≈0.49\n(3) [fm]：≈2.5e-3"
+  },
+  "methods": [],
+  "tags": [
+   "Wボソン",
+   "ヤコビアンピーク",
+   "横運動量",
+   "到達距離",
+   "ハドロンコライダー"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-033",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 20,
+  "theme": "e⁺e⁻→νν̄ と μ⁺μ⁻ の断面積のエネルギー依存",
+  "topic": "e⁺e⁻→νν̄ と μ⁺μ⁻ の断面積のエネルギー依存",
+  "statement": {
+   "tex": "$\\sqrt s\\ll M_Zc^2$ の電子・陽電子衝突で，\n\\[\n\\sigma(e^+e^-\\to\\nu_\\mu\\bar\\nu_\\mu)=\\frac{G_F^2s}{6\\pi}\\left(g_L^2+g_R^2\\right),\\quad\n\\sigma(e^+e^-\\to\\mu^+\\mu^-)=\\frac{4\\pi\\alpha^2}{3s}\n\\]\n（自然単位，$g_L=-\\tfrac12+\\sin^2\\theta_W$，$g_R=\\sin^2\\theta_W$）とする．$G_F=1.166\\times10^{-5}\\ \\mathrm{GeV^{-2}}$，$\\alpha=1/137$，$\\sin^2\\theta_W=0.23$ とする．\n\\begin{enumerate}\n\\item $e^+e^-\\to\\nu_\\mu\\bar\\nu_\\mu$ の最低次のファインマン図は 1 つだけであるが，$e^+e^-\\to\\nu_e\\bar\\nu_e$ では 2 つある．それぞれ説明せよ．\n\\item $\\sqrt s=10\\ \\mathrm{GeV}$ での比 $\\sigma(\\nu_\\mu\\bar\\nu_\\mu)/\\sigma(\\mu^+\\mu^-)$ を求めよ．この比は $\\sqrt s$ の何乗に比例するか．\n\\item 上の 2 式が等しくなる $\\sqrt s$ を求め，その結果が物理的に意味をもたない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\nu_\\mu\\bar\\nu_\\mu$: $s$ チャンネル $Z^0$ のみ．$\\nu_e\\bar\\nu_e$: $Z^0$（$s$）と $W$（$t$ チャンネル）　(2) $4.1\\times10^{-5}$，$\\propto(\\sqrt s)^4$　(3) $\\sqrt s\\approx125\\ \\mathrm{GeV}$（$>M_Z$ なので低エネルギー近似が破綻）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $e^+e^-$ が対消滅して $Z^0$ になり，$Z^0\\to\\nu_\\mu\\bar\\nu_\\mu$（$s$ チャンネル）．$W$ 交換では $e^-\\to\\nu_eW^-$ となり $\\nu_e$ しか出ないので，$\\nu_\\mu$ 対には寄与しない．$\\nu_e\\bar\\nu_e$ では，これに加えて $e^-\\to\\nu_eW^-$，$e^+W^-\\to\\bar\\nu_e$ という $t$ チャンネル $W$ 交換が寄与する．\n\n(2) $g_L^2+g_R^2=0.0729+0.0529=0.1258$．$s=100\\ \\mathrm{GeV^2}$ で\n\\[\n\\sigma_{\\nu\\bar\\nu}=\\frac{(1.166\\times10^{-5})^2\\times100\\times0.1258}{6\\pi}=9.08\\times10^{-11}\\ \\mathrm{GeV^{-2}},\\quad\n\\sigma_{\\mu\\mu}=\\frac{4\\pi}{3\\times137^2\\times100}=2.23\\times10^{-6}\\ \\mathrm{GeV^{-2}}.\n\\]\n比は $4.1\\times10^{-5}$．比 $=G_F^2s^2(g_L^2+g_R^2)/(8\\pi^2\\alpha^2)\\propto s^2=(\\sqrt s)^4$．\n\n(3) 比 $=1$ より $s^2=8\\pi^2\\alpha^2/(G_F^2(g_L^2+g_R^2))$，$\\sqrt s=125\\ \\mathrm{GeV}$．しかしこれは $M_Z=91\\ \\mathrm{GeV}$ を超えており，$Z$ の伝播関数を $1/M_Z^2$ で置き換えた点状（フェルミ型）近似は使えない．実際には $\\sqrt s\\approx M_Z$ で共鳴を経て，弱い断面積の増大は止まる（ユニタリー性の回復）．"
+   }
+  ],
+  "idea": {
+   "tex": "点状の弱い相互作用の断面積は $s$ に比例して増え，電磁断面積は $1/s$ で減る．比は $s^2$ で伸びるが，両者が並ぶ前に $Z$ 共鳴が現れる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "電子陽電子消滅",
+   "ニュートリノ対生成",
+   "中性カレント",
+   "フェルミ理論",
+   "ユニタリー性"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-034",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 2,
+  "minutes": 20,
+  "theme": "R比によるクォークの色の数と強い結合定数",
+  "topic": "R比によるクォークの色の数と強い結合定数",
+  "statement": {
+   "tex": "$e^+e^-\\to q\\bar q$（ハドロン）と $e^+e^-\\to\\mu^+\\mu^-$ はいずれも最低次では $s$ チャンネルの仮想光子 1 個を介する．比 $R=\\sigma(e^+e^-\\to\\text{hadrons})/\\sigma(e^+e^-\\to\\mu^+\\mu^-)$ を考える．$\\sigma(e^+e^-\\to\\mu^+\\mu^-)=86.8\\ \\mathrm{nb}/(s/\\mathrm{GeV^2})$ とする．\n\\begin{enumerate}\n\\item 最低次で $R=N_c\\sum_qQ_q^2$（和は生成可能なクォーク，$N_c$ は色の数）となる理由を述べよ．\n\\item $\\sqrt s=2,\\ 5,\\ 15\\ \\mathrm{GeV}$ のそれぞれでの $R$ の値を $N_c=3$ と $N_c=1$ で求めよ．（開いたチャーム・ボトムの生成しきい値はそれぞれ約 $3.7$，$10.6\\ \\mathrm{GeV}$ とする．）\n\\item QCD の 1 次補正を含めると $R\\to R(1+\\alpha_s/\\pi)$ となる．$\\sqrt s=10\\ \\mathrm{GeV}$，$\\alpha_s=0.18$ でのハドロン生成断面積を求めよ．また $\\sqrt s=15\\ \\mathrm{GeV}$ で $R=3.85$ が測定されたとき $\\alpha_s$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照　(2) $N_c=3$: $2,\\ 10/3,\\ 11/3$；$N_c=1$: $2/3,\\ 10/9,\\ 11/9$　(3) $\\sigma_{\\rm had}\\approx3.1\\ \\mathrm{nb}$，$\\alpha_s\\approx0.16$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 両過程とも $e^+e^-\\to\\gamma^*\\to f\\bar f$ で，違いは終状態の結合 $Q_fe$ のみ．$\\mu$ は $Q=-1$，クォークは $Q_q$ で，振幅比 $Q_q$，断面積比 $Q_q^2$．クォークは 3 色のいずれでも区別可能な終状態として生じるので $N_c$ 倍される．しきい値より十分上で質量を無視できれば $R=N_c\\sum Q_q^2$．\n\n(2) $\\sqrt s=2$：$u,d,s$ で $\\sum Q^2=4/9+1/9+1/9=2/3$．$\\sqrt s=5$：$+c$ で $10/9$．$\\sqrt s=15$：$+b$ で $11/9$．$N_c=3$ では $R=2,\\ 10/3,\\ 11/3$，$N_c=1$ では $2/3,\\ 10/9,\\ 11/9$．実測値は $N_c=3$ を支持する．\n\n(3) $\\sqrt s=10\\ \\mathrm{GeV}$ では $u,d,s,c$ が生成可能（$b$ はしきい値以下）で $R=\\tfrac{10}{3}(1+0.18/\\pi)=3.52$．$\\sigma_{\\mu\\mu}=86.8/100=0.868\\ \\mathrm{nb}$ より $\\sigma_{\\rm had}=3.52\\times0.868=3.1\\ \\mathrm{nb}$．\n$\\sqrt s=15\\ \\mathrm{GeV}$：$\\tfrac{11}{3}(1+\\alpha_s/\\pi)=3.85$ より $\\alpha_s=\\pi(3.85\\times3/11-1)=0.16$．"
+   }
+  ],
+  "idea": {
+   "tex": "$R$ 比は終状態の電荷の 2 乗和と色の数を直接数える．しきい値ごとの段差が色の数の証拠となり，段差からのずれが $\\alpha_s$ を与える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\sigma_{\\rm had}$ [nb]：≈3.1 ; $\\alpha_s$：≈0.16"
+  },
+  "methods": [],
+  "tags": [
+   "R比",
+   "クォークの色",
+   "電子陽電子消滅",
+   "QCD補正",
+   "強い結合定数"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
   "id": "PP-04-011",
   "schema": "lemma.problem/1",
   "kind": "written",
@@ -482,6 +1417,794 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-035",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "125 GeV のヒッグス粒子の崩壊幅と e+e- での直接生成",
+  "topic": "125 GeV のヒッグス粒子の崩壊幅と e+e- での直接生成",
+  "statement": {
+   "tex": "ヒッグス粒子（質量 $m_H=125\\ \\mathrm{GeV}$）がフェルミオン対に崩壊する幅は\n\\[\n\\Gamma(H\\to f\\bar f)=N_c\\frac{G_Fm_f^2m_H}{4\\sqrt2\\pi}\\left(1-\\frac{4m_f^2}{m_H^2}\\right)^{3/2}\n\\]\nである（$N_c$ は色の数）．$G_F=1.166\\times10^{-5}\\ \\mathrm{GeV^{-2}}$，$1\\ \\mathrm{GeV^{-2}}=0.3894\\ \\mathrm{mb}$ とする．\n\\begin{enumerate}\n\\item $\\Gamma(H\\to\\mu^+\\mu^-)/\\Gamma(H\\to\\tau^+\\tau^-)$ を求めよ（$m_\\mu=0.1057$，$m_\\tau=1.777\\ \\mathrm{GeV}$）．\n\\item b クォークの質量を（エネルギー $m_H$ での走る質量として）$2.8\\ \\mathrm{GeV}$ とし，$\\Gamma(H\\to b\\bar b)$ を求めよ．\n\\item $e^+e^-\\to H\\to b\\bar b$ の共鳴のピークでの断面積は $\\sigma=\\dfrac{4\\pi}{m_H^2}\\,\\mathrm{BR}(H\\to e^+e^-)\\,\\mathrm{BR}(H\\to b\\bar b)$ である．全幅 $\\Gamma_H=4.1\\ \\mathrm{MeV}$，$\\mathrm{BR}(b\\bar b)=0.58$，$m_e=0.511\\ \\mathrm{MeV}$ として値を $\\mathrm{fb}$ 単位で求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\left(\\dfrac{m_\\mu}{m_\\tau}\\right)^2\\approx3.5\\times10^{-3}$　(2) $\\approx1.9\\ \\mathrm{MeV}$　(3) $\\approx0.95\\ \\mathrm{fb}$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 位相空間の因子はどちらもほぼ $1$ なので\n\\[\n\\frac{\\Gamma(\\mu\\mu)}{\\Gamma(\\tau\\tau)}=\\left(\\frac{m_\\mu}{m_\\tau}\\right)^2=\\left(\\frac{0.1057}{1.777}\\right)^2\\approx\\boldsymbol{3.5\\times10^{-3}}.\n\\]\nヒッグスの結合が質量に比例することの直接の検証になる．\n\n(2) $\\Gamma(b\\bar b)=3\\times\\dfrac{1.166\\times10^{-5}\\times2.8^2\\times125}{4\\sqrt2\\pi}\\times(1-0.002)^{3/2}\\approx\\boldsymbol{1.9\\ \\mathrm{MeV}}$．全幅 $4.1\\ \\mathrm{MeV}$ の約半分で，最大の崩壊モードである（QCD の補正を入れると約 $2.4\\ \\mathrm{MeV}$）．\n\n(3) $\\Gamma(e^+e^-)=\\dfrac{1.166\\times10^{-5}\\times(5.11\\times10^{-4})^2\\times125}{4\\sqrt2\\pi}=2.1\\times10^{-11}\\ \\mathrm{GeV}$，$\\mathrm{BR}(ee)=5.2\\times10^{-9}$．\n\\[\n\\sigma=\\frac{4\\pi}{125^2}\\times5.2\\times10^{-9}\\times0.58\\ \\mathrm{GeV^{-2}}=2.4\\times10^{-12}\\ \\mathrm{GeV^{-2}}\\approx\\boldsymbol{0.95\\ \\mathrm{fb}}.\n\\]\nしかも共鳴の幅 $4\\ \\mathrm{MeV}$ はビームのエネルギーの広がりよりずっと狭いので，実効的な断面積はさらに小さい．電子の湯川結合が小さすぎるため，$e^+e^-$ の s チャネルでヒッグスを作るのは実際上不可能で，$e^+e^-\\to ZH$ などが使われる．"
+   }
+  ],
+  "idea": {
+   "tex": "ヒッグスとフェルミオンの結合は質量に比例するので，崩壊幅は $m_f^2$ に比例し，重いフェルミオンへの崩壊が支配的になる．同じ理由で電子との結合は極端に小さく，s チャネルの共鳴生成は事実上起こらない．原題は $50\\ \\mathrm{GeV}$ の仮想的なヒッグスで，捻りでは実際の $125\\ \\mathrm{GeV}$ で計算させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) [MeV]：≈1.9\n(3) [fb]：≈0.95"
+  },
+  "methods": [],
+  "tags": [
+   "ヒッグス粒子",
+   "湯川結合",
+   "崩壊幅",
+   "ブライト＝ウィグナー"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-036",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "SU(3) に2つの基本表現のスカラーが凝縮するときのヒッグス機構",
+  "topic": "SU(3) に2つの基本表現のスカラーが凝縮するときのヒッグス機構",
+  "statement": {
+   "tex": "\\begin{enumerate}\n\\item $SU(2)$ ゲージ理論で基本表現のスカラーが $\\phi^\\dagger\\phi=v^2$ に凝縮するとき，ゲージボソンとヒッグス粒子の質量を求めよ（ポテンシャルは $\\frac\\lambda2(\\phi^\\dagger\\phi-v^2)^2$）．\n\\item $SU(N)$ に $k$ 個（$k<N$）の基本表現のスカラーが一次独立な方向に凝縮するとき，残る群と質量をもつゲージボソンの数を求めよ．\n\\item $SU(3)$，$k=2$ の場合，食べられる成分と残るスカラーの数を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $m_A=\\dfrac{gv}{\\sqrt2}$（3個），$m_h=\\sqrt{2\\lambda}\\,v$　(2) $SU(N-k)$；$2Nk-k^2$ 個　(3) 全 $8$ 個が質量をもち，$12$ 成分のうち $8$ が食べられ $4$ が残る"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $|gA\\phi|^2=\\frac{g^2}4A^aA^b\\phi^\\dagger\\sigma^a\\sigma^b\\phi=\\frac{g^2v^2}{4}A^aA^a$，$\\frac12m^2=\\frac{g^2v^2}4$．$\\phi=(0,v+h/\\sqrt2)$ で $V\\approx\\lambda v^2h^2$．\n\n(2) $N^2-1-[(N-k)^2-1]=\\boldsymbol{2Nk-k^2}$．\n\n(3) $SU(1)$ は自明：$\\boldsymbol8$ 個．実成分 $2\\times3\\times2=12$，残り $\\boldsymbol4$．"
+   }
+  ],
+  "idea": {
+   "tex": "ゲージボソンの質量の数は破れた生成子の数で，その分だけスカラーが食べられる．原題の1つの基本表現を複数に増やした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $m_A$：((g v)/(sqrt(2))) ; $m_h$：sqrt(2 λ) v\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ヒッグス機構",
+   "ゲージボソンの質量",
+   "自由度の数え上げ",
+   "SU(N)"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-037",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "インスタントンの作用密度：半径 ρ の内側にちょうど半分",
+  "topic": "インスタントンの作用密度：半径 ρ の内側にちょうど半分",
+  "statement": {
+   "tex": "$SU(2)$ の BPST インスタントンの作用密度は $\\frac12\\mathrm{Tr}F_{\\mu\\nu}F_{\\mu\\nu}\\propto\\dfrac{\\rho^4}{(x^2+\\rho^2)^4}$ で，全作用は $S=\\dfrac{8\\pi^2}{g^2}$ である．\n\\begin{enumerate}\n\\item 作用の何割が $|x|<\\rho$ の内側にあるか求めよ．\n\\item $\\alpha=g^2/4\\pi=0.1$ のとき，トンネル振幅の抑制因子 $e^{-S}$ を求めよ．\n\\item 電弱理論で B+L を破る過程がふつう観測されない理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) ちょうど $\\frac12$　(2) $e^{-2\\pi/\\alpha}=e^{-62.8}\\approx5\\times10^{-28}$　(3) $\\alpha_W\\approx1/30$ で $e^{-2S}\\sim10^{-164}$ ときわめて小さい"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $u=r^2/\\rho^2$：$\\int_0^1\\frac{u\\,du}{(1+u)^4}=\\frac1{12}$，全体 $\\int_0^\\infty=\\frac1{12}+\\frac1{12}=\\frac16$．比 $\\boldsymbol{\\frac12}$．\n\n(2) $S=8\\pi^2/g^2=2\\pi/\\alpha$．\n\n(3) 電弱のインスタントンによる確率は $e^{-4\\pi/\\alpha_W}$ 程度で無視できる（高温ではスファレロンで起こる）．"
+   }
+  ],
+  "idea": {
+   "tex": "インスタントンは大きさ $\\rho$ に局在した有限作用の解で，非摂動的な効果は $e^{-8\\pi^2/g^2}$ で抑えられる．原題の場の強さの計算に，局在と抑制の見積もりを加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) ちょうど：((1)/(2))\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "インスタントン",
+   "ヤン＝ミルズ方程式",
+   "トンネル効果",
+   "作用"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-038",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 35,
+  "theme": "右巻きニュートリノを加えると超電荷に B−L の自由度が残る",
+  "topic": "右巻きニュートリノを加えると超電荷に B−L の自由度が残る",
+  "statement": {
+   "tex": "1世代の標準模型に右巻きニュートリノ $\\nu_R$（$(1,1)_n$）を加える．超電荷 $Q_L:q$，$L_L:l$，$u_R:u$，$d_R:d$，$e_R:x$，$\\nu_R:n$ とする．\n\\begin{enumerate}\n\\item アノマリーの条件（$SU(3)^2U(1)$，$SU(2)^2U(1)$，$U(1)^3$，重力）を書け．\n\\item 標準模型の超電荷 $Y$ と $B-L$ の任意の組合せ $Y+\\epsilon(B-L)$ が解であることを確かめよ．\n\\item $\\nu_R$ がないときに $\\epsilon=0$ に固定される理由を述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2q-u-d=0$，$3q+l=0$，$6q^3+2l^3-3u^3-3d^3-x^3-n^3=0$，$6q+2l-3u-3d-x-n=0$　(2) 確認　(3) $\\nu_R$ がないと $B-L$ が重力・3乗アノマリーをもつ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(2) $q=\\frac16+\\frac\\epsilon3$，$l=-\\frac12-\\epsilon$，$u=\\frac23+\\frac\\epsilon3$，$d=-\\frac13+\\frac\\epsilon3$，$x=-1-\\epsilon$，$n=-\\epsilon$ を代入するとすべて恒等的に $0$（SymPy で確認）．\n\n(3) $B-L$ の重力アノマリーは $\\nu_R$ の寄与 $-(-1)=1$ で消える．$\\nu_R$ なしでは $\\epsilon$ の1次の項が残る．"
+   }
+  ],
+  "idea": {
+   "tex": "右巻きニュートリノがあると $B-L$ がゲージ化でき，超電荷の解が一意でなくなる．原題の1世代の解に，$\\nu_R$ を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "アノマリー相殺",
+   "超電荷",
+   "B−L",
+   "右巻きニュートリノ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-039",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "SU(4) の随伴ワイルフェルミオン：Z₈ と4つの真空",
+  "topic": "SU(4) の随伴ワイルフェルミオン：Z₈ と4つの真空",
+  "statement": {
+   "tex": "$SU(N)$ のヤン＝ミルズ理論に随伴表現のワイルフェルミオン $\\lambda$ が1つある．$N=4$ とする．\n\\begin{enumerate}\n\\item $\\lambda\\to e^{i\\alpha}\\lambda$ で θ がどれだけずれるかを求め，残る離散対称性を答えよ．\n\\item 凝縮 $\\langle\\mathrm{Tr}\\lambda\\lambda\\rangle$ で破れずに残る部分群を求め，真空の数を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\theta\\to\\theta+2N\\alpha$；$\\mathbb Z_{2N}=\\mathbb Z_8$　(2) $\\mathbb Z_2$；$N=4$ 個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $I(\\mathrm{adj})=2N$：$\\alpha\\in\\frac{2\\pi}{2N}\\mathbb Z$ が残る．\n\n(2) $\\lambda\\lambda$ の電荷2：$\\mathbb Z_8\\to\\mathbb Z_2$，$\\boldsymbol4$ つの真空．"
+   }
+  ],
+  "idea": {
+   "tex": "アノマリーが連続的なカイラル対称性を離散的なものに減らし，凝縮でさらに破れて縮退した真空ができる．原題の一般の $N$ を具体化した．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "離散カイラル対称性",
+   "超対称ヤン＝ミルズ",
+   "真空の数",
+   "凝縮"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-040",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "SU(5) の対称表現・反対称表現のディラックフェルミオンの真空の数",
+  "topic": "SU(5) の対称表現・反対称表現のディラックフェルミオンの真空の数",
+  "statement": {
+   "tex": "$SU(N)$ に，表現 $R$ のディラックフェルミオンが1つある．軸性回転 $\\psi\\to e^{i\\alpha\\gamma^5}\\psi$ は θ を $2I(R)\\alpha$ だけずらす．$N=5$ とする．\n\\begin{enumerate}\n\\item 残る離散対称性を，対称表現（$I=N+2$）と反対称表現（$I=N-2$）で求めよ．\n\\item 凝縮 $\\langle\\bar\\psi\\psi\\rangle$ で $\\mathbb Z_2$ が残るとき，真空の数をそれぞれ求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 対称 $\\mathbb Z_{14}$，反対称 $\\mathbb Z_6$　(2) 7個，3個"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\mathbb Z_{2I}$：$I=7$，$3$．\n\n(2) $I$ 個：対称 $\\boldsymbol7$，反対称 $\\boldsymbol3$．"
+   }
+  ],
+  "idea": {
+   "tex": "真空の数はフェルミオンの表現のディンキン指数で決まる．原題の対称表現に，反対称表現を並べて比べさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "離散カイラル対称性",
+   "ディンキン指数",
+   "真空の数"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-041",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "ヒッグスがあるときの α_s と α_W が等しくなるエネルギー",
+  "topic": "ヒッグスがあるときの α_s と α_W が等しくなるエネルギー",
+  "statement": {
+   "tex": "$\\dfrac1{\\alpha(\\mu)}=\\dfrac1{\\alpha(\\mu_0)}+\\dfrac b{2\\pi}\\ln\\dfrac\\mu{\\mu_0}$，$b=\\dfrac{11N_c-2N_f-N_s/2}3$ とする（$N_f$ はディラックフェルミオン換算）．$\\mu_0=100$ GeV で $\\alpha_s=0.1$，$\\alpha_W=1/30$．\n\\begin{enumerate}\n\\item 6種のクォークで $SU(3)$ の $b_3$ を求めよ．\n\\item $SU(2)$ では左巻き2重項12個（$N_f=6$ 相当）とヒッグス2重項1個で $b_2$ を求めよ．\n\\item $\\alpha_s=\\alpha_W$ となる $\\mu$ を求めよ．\n\\item ヒッグスがなければ $SU(2)$ が強結合になる $\\Lambda_{\\rm weak}$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $7$　(2) $\\frac{19}6$　(3) $\\approx1.7\\times10^{16}$ GeV　(4) $100\\,e^{-18\\pi}\\approx3\\times10^{-23}$ GeV"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(33-12)/3=7$．\n\n(2) $(22-12-\\frac12)/3=\\frac{19}6$．\n\n(3) $10+\\frac7{2\\pi}L=30+\\frac{19/6}{2\\pi}L$：$L=32.8$，$\\mu\\approx\\boldsymbol{1.7\\times10^{16}}$ GeV．\n\n(4) $b=\\frac{10}3$：$\\Lambda=100\\exp(-2\\pi\\times30\\times\\frac3{10})\\approx\\boldsymbol{3\\times10^{-23}}$ GeV．"
+   }
+  ],
+  "idea": {
+   "tex": "強い力と弱い力の結合は対数的に近づき，大統一のスケールを示唆する．原題のヒッグスなしの計算にヒッグスの寄与を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 7\n(2) ((19)/(6))\n(3) [GeV]：≈1.7e16\n(4) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "繰り込み群",
+   "大統一",
+   "漸近的自由",
+   "結合定数の走り"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-042",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "GUT 規格化した α₁ と α₂ が交わるエネルギー",
+  "topic": "GUT 規格化した α₁ と α₂ が交わるエネルギー",
+  "statement": {
+   "tex": "超電荷の結合は $\\dfrac1{\\alpha_Y(\\mu)}=\\dfrac1{\\alpha_Y(\\mu_0)}-\\dfrac{S}{6\\pi}\\ln\\dfrac\\mu{\\mu_0}$，$S=2\\sum_{\\rm Weyl}Y^2+\\sum_{\\rm scalar}Y^2$ で走る．$\\alpha_Y(100\\ \\mathrm{GeV})=1/98$．\n\\begin{enumerate}\n\\item 3世代とヒッグスで $S$ を求めよ．\n\\item $SU(5)$ の規格化 $\\alpha_1=\\frac53\\alpha_Y$ を用い，$\\alpha_1=\\alpha_W$ となる $\\mu$ を求めよ（$\\alpha_W$ は前問 (2) の走り）．\n\\item 規格化しないで $\\alpha_Y=\\alpha_W$ とすると何が起こるか．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $S=20.5$　(2) $\\approx6.5\\times10^{12}$ GeV　(3) $\\approx3.6\\times10^{20}$ GeV（プランク・スケールを超え意味がない）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 1世代の $\\sum Y^2=\\frac16+\\frac43+\\frac13+\\frac12+1=\\frac{10}3$，$2\\times10+\\frac12=20.5$．\n\n(2) $\\frac1{\\alpha_1}=58.8-\\frac35\\cdot\\frac{20.5}{6\\pi}L$ と $30+\\frac{19/6}{2\\pi}L$：$L=24.9$．\n\n(3) 規格化を誤ると交点が大きくずれる．標準模型では3つの結合は1点で交わらない（超対称性で改善する）．"
+   }
+  ],
+  "idea": {
+   "tex": "結合定数の統一を議論するには群の埋めこみによる規格化が必要である．原題の超電荷の走りに，GUT 規格化を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $S$：≈20.5\n(2) [GeV]：≈6.5e12\n(3) [GeV]：≈3.6e20"
+  },
+  "methods": [],
+  "tags": [
+   "超電荷",
+   "繰り込み群",
+   "GUT規格化",
+   "大統一"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-043",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "3重項スカラーの期待値と ρ パラメータの制限",
+  "topic": "3重項スカラーの期待値と ρ パラメータの制限",
+  "statement": {
+   "tex": "ヒッグス2重項（$Y=\\frac12$，期待値 $v$）に加え，$SU(2)$ 3重項 $\\Delta$（$Y=1$）が中性成分に期待値 $v_\\Delta$ をもつ．$\\rho=\\dfrac{m_W^2}{m_Z^2\\cos^2\\theta_W}=\\dfrac{\\sum_i[T_i(T_i+1)-Y_i^2]v_i^2}{2\\sum_iY_i^2v_i^2}$．\n\\begin{enumerate}\n\\item $\\Delta$ の成分の電荷を求めよ．\n\\item $\\rho$ を $v$，$v_\\Delta$ で表せ．\n\\item $|\\rho-1|<0.001$ のとき $v_\\Delta$ の上限を求めよ（$v=246$ GeV）．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $2,1,0$　(2) $\\rho=\\dfrac{v^2+2v_\\Delta^2}{v^2+4v_\\Delta^2}$　(3) $v_\\Delta\\lesssim5.5$ GeV"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $T_3=1,0,-1$ に $Y=1$．\n\n(2) 2重項：$\\frac12v^2$ と $\\frac12v^2$．3重項：$(2-1)v_\\Delta^2$ と $2v_\\Delta^2$．\n\n(3) $\\rho-1\\approx-\\frac{2v_\\Delta^2}{v^2}$：$v_\\Delta<246\\sqrt{0.0005}\\approx\\boldsymbol{5.5}$ GeV．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\rho=1$ は2重項の性質で，他の表現の期待値は制限される．原題の第2の2重項（$\\rho=1$ を保つ）を，3重項に変えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) $\\rho$：((v ^(2)+2 v_Δ ^(2))/(v ^(2)+4 v_Δ ^(2)))\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ρパラメータ",
+   "ヒッグス3重項",
+   "Wボソンの質量",
+   "電弱精密測定"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-044",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 35,
+  "theme": "SU(5) 大統一：sin²θ_W = 3/8 と随伴ヒッグスの期待値",
+  "topic": "SU(5) 大統一：sin²θ_W = 3/8 と随伴ヒッグスの期待値",
+  "statement": {
+   "tex": "$SU(5)$ に $\\bar{\\boldsymbol5}$ と $\\boldsymbol{10}$ の左巻きフェルミオンがある．\n\\begin{enumerate}\n\\item $A(\\bar{\\boldsymbol5})+A(\\boldsymbol{10})=0$ を確かめよ（$A(\\text{anti-sym})=N-4$）．\n\\item $\\bar{\\boldsymbol5}=(\\bar{\\boldsymbol3},\\boldsymbol1)_{1/3}\\oplus(\\boldsymbol1,\\boldsymbol2)_{-1/2}$ で $\\mathrm{Tr}\\,T_3^2$ と $\\mathrm{Tr}\\,Y^2$ を計算し，$\\sin^2\\theta_W=\\frac38$ を導け．\n\\item $V=-m^2\\mathrm{Tr}\\phi^2+a\\mathrm{Tr}\\phi^4+b(\\mathrm{Tr}\\phi^2)^2$ を $\\phi=v\\,\\mathrm{diag}(2,2,2,-3,-3)$ で評価し，$v^2$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $-1+1=0$　(2) $\\mathrm{Tr}T_3^2=\\frac12$，$\\mathrm{Tr}Y^2=\\frac56$，$\\sin^2\\theta_W=\\frac{3/5}{1+3/5}=\\frac38$　(3) $v^2=\\dfrac{m^2}{14a+60b}$（$7a+30b>0$ が必要）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(2) $T_3$：2重項の $\\pm\\frac12$ で $\\frac12$．$Y$：$3\\times\\frac19+2\\times\\frac14=\\frac56$．$SU(5)$ の生成子として $g_1=g$，$Y$ の規格化 $\\sqrt{3/5}$：$g'^2=\\frac35g^2$，$\\sin^2\\theta_W=\\frac{g'^2}{g^2+g'^2}=\\boldsymbol{\\frac38}$．\n\n(3) $\\mathrm{Tr}\\phi^2=30v^2$，$\\mathrm{Tr}\\phi^4=210v^4$：$V=-30m^2v^2+(210a+900b)v^4$，最小で $\\boldsymbol{v^2=\\frac{m^2}{14a+60b}}$．"
+   }
+  ],
+  "idea": {
+   "tex": "大統一ではワインバーグ角が群論で決まり，低エネルギーの値は走りで説明される．原題の破れのパターンに，期待値と $\\sin^2\\theta_W$ の計算を加えた．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) -1+1\n(2) $\\mathrm{Tr}T_3^2$：((1)/(2)) ; $\\mathrm{Tr}Y^2$：((5)/(6)) ; $\\sin^2\\theta_W$：((3/5)/(1+3/5))\n(3) $v^2$：((m ^(2))/(14 a +60 b))"
+  },
+  "methods": [],
+  "tags": [
+   "大統一理論",
+   "SU(5)",
+   "ワインバーグ角",
+   "対称性の破れ"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-045",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "インスタントンが保つ超対称性の半分",
+  "topic": "インスタントンが保つ超対称性の半分",
+  "statement": {
+   "tex": "超対称ヤン＝ミルズ理論の変換は $\\delta\\lambda=\\sigma^{\\mu\\nu}\\epsilon F_{\\mu\\nu}$，$\\delta\\bar\\lambda=\\bar\\sigma^{\\mu\\nu}\\bar\\epsilon F_{\\mu\\nu}$ である．ユークリッド空間で $\\sigma^{\\mu\\nu}$ は（規約により）反自己双対，$\\bar\\sigma^{\\mu\\nu}$ は自己双対とする．\n\\begin{enumerate}\n\\item 自己双対な $F$（インスタントン）では $\\sigma^{\\mu\\nu}F_{\\mu\\nu}=0$ を示せ．\n\\item どの超対称性が保たれるか答えよ．\n\\item オンシェルの自由度がボソン2，フェルミオン2であることを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 自己双対と反自己双対の縮約は $0$　(2) $\\epsilon$ の変換（超電荷の半分）が保たれる：BPS 配位　(3) 光的なゲージ場の2つの偏極と，ワイルフェルミオンの2つのヘリシティ"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\sigma^{\\mu\\nu}F_{\\mu\\nu}=\\sigma^{\\mu\\nu}(\\star F)_{\\mu\\nu}=(\\star\\sigma)^{\\mu\\nu}F_{\\mu\\nu}=-\\sigma^{\\mu\\nu}F_{\\mu\\nu}$．\n\n(2) $\\delta\\lambda=0$ なので $\\epsilon$ に関する変換で不変．\n\n(3) 確認．"
+   }
+  ],
+  "idea": {
+   "tex": "自己双対な配位は超対称性の半分を保つ BPS 状態である．原題の作用の不変性の検証を，インスタントンでの超対称性にした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "超対称ヤン＝ミルズ",
+   "インスタントン",
+   "BPS",
+   "自己双対"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-046",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 35,
+  "theme": "N = 1* の SU(3) 版：古典的な真空の数と残るゲージ群",
+  "topic": "N = 1* の SU(3) 版：古典的な真空の数と残るゲージ群",
+  "statement": {
+   "tex": "$SU(3)$ に随伴のカイラル超場3つ，$W=\\mathrm{Tr}\\Phi_1[\\Phi_2,\\Phi_3]-\\frac m2\\sum\\Phi_i^2$ を考える．真空は $[\\phi_i,\\phi_j]=m\\epsilon_{ijk}\\phi_k$（と D 項）をみたす．\n\\begin{enumerate}\n\\item $\\phi_i=-im\\,J_i$（$J_i$ は $\\mathfrak{su}(2)$ の生成子の表現）が解であることを示せ．\n\\item $3$ 次元の $\\mathfrak{su}(2)$ 表現（既約分解）を列挙し，古典的な真空の数を答えよ．\n\\item 各真空で残るゲージ群を答えよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $[J_i,J_j]=i\\epsilon_{ijk}J_k$ を使う　(2) $\\boldsymbol1\\oplus\\boldsymbol1\\oplus\\boldsymbol1$，$\\boldsymbol2\\oplus\\boldsymbol1$，$\\boldsymbol3$ の3つ　(3) $SU(3)$，$U(1)$，なし"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(-im)^2[J_i,J_j]=-m^2i\\epsilon J_k=m\\epsilon(-imJ_k)$．$\\sum[\\phi_i,\\phi_i^\\dagger]=|m|^2\\sum[J_i,J_i]=0$．\n\n(2) 3 の分割：$1+1+1$，$2+1$，$3$．\n\n(3) 自明表現：$\\phi=0$ で $SU(3)$．$\\boldsymbol2\\oplus\\boldsymbol1$：$J$ と可換な $\\mathrm{diag}(1,1,-2)$ の $U(1)$．既約 $\\boldsymbol3$：何も残らない．"
+   }
+  ],
+  "idea": {
+   "tex": "N=1* の真空は $\\mathfrak{su}(2)$ の表現の分類で与えられる．原題の $SU(2)$ を $SU(3)$ にして，分割による分類を体験させる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "N=1*",
+   "F項条件",
+   "SU(2)表現",
+   "真空の分類"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-047",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 30,
+  "theme": "インスタントンのモジュライの数とゲージーノのゼロモード",
+  "topic": "インスタントンのモジュライの数とゲージーノのゼロモード",
+  "statement": {
+   "tex": "$SU(2)$ の BPST インスタントンについて．\n\\begin{enumerate}\n\\item パラメータ（モジュライ）を数えよ．$SU(N)$ の1インスタントンでは $4N$ であることを述べよ．\n\\item 随伴ワイルフェルミオンのゼロモードの数は $2N$ である．これから $U(1)_R$ がどの離散群に破れるか答えよ．\n\\item 作用 $S=8\\pi^2/g^2$ と θ を含む重み $e^{-S+i\\theta}$ から，$R$ 回転が θ をずらすことを説明せよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 位置 $4$，大きさ $1$，向き $3$ で $8=4N$　(2) $\\mathbb Z_{2N}$　(3) ゼロモードの積 $\\lambda^{2N}$ が $e^{2Ni\\alpha}$ で変わり，θ のずれ $2N\\alpha$ と同等"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) 向きは $SU(2)$ の大域回転の3．\n\n(2) $\\lambda^{2N}$ が不変となる $\\alpha=\\frac{2\\pi k}{2N}$．\n\n(3) 確認．"
+   }
+  ],
+  "idea": {
+   "tex": "インスタントンのゼロモードがアノマリーを生む．原題の場の強さの計算（標準模型の講義の類題で扱った）を，モジュライとゼロモードの数え上げにした．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "インスタントン",
+   "モジュライ空間",
+   "フェルミオンのゼロモード",
+   "R対称性"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-048",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 25,
+  "theme": "クォーコニウム崩壊幅とαsの走り",
+  "topic": "クォーコニウム崩壊幅とαsの走り",
+  "statement": {
+   "tex": "オルソ・ポジトロニウム（$e^+e^-$ の ${}^3S_1$ 束縛状態）の $3\\gamma$ 崩壊幅は QED で\n\\[ \\Gamma(3\\gamma)=\\frac{2(\\pi^2-9)}{9\\pi}\\,\\alpha^6\\,m_ec^2 \\]\nと予言される．$\\alpha=1/137.04$，$m_ec^2=0.511\\ \\mathrm{MeV}$，$\\hbar=6.582\\times10^{-22}\\ \\mathrm{MeV\\,s}$ とする．\n\\begin{enumerate}\n\\item オルソ・ポジトロニウムの寿命を求めよ．\n\\item $c\\bar c$ の束縛状態 $J/\\psi$ のハドロン崩壊が 3 グルーオンへの同様の機構で起こり，上式で $\\alpha\\to\\alpha_s$，$m_e\\to m_c$（$m_cc^2=1.55\\ \\mathrm{GeV}$）と置き換えられるとする．$\\Gamma(3g)=80\\ \\mathrm{keV}$ から $\\alpha_s$ を求めよ．\n\\item 同じ式を $b\\bar b$ の束縛状態 $\\Upsilon(9460)$（$m_bc^2=4.72\\ \\mathrm{GeV}$）に適用する．もし $\\alpha_s$ が (2) と同じなら $\\Gamma(\\Upsilon\\to3g)$ はいくらになるか．実測 $\\Gamma(\\Upsilon\\to3g)\\approx44\\ \\mathrm{keV}$ から $\\alpha_s$ を求め，結果を解釈せよ．また $\\Gamma$ が 2 倍不確かであるとき $\\alpha_s$ の不確かさはどの程度か．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $\\Gamma\\approx4.75\\times10^{-9}\\ \\mathrm{eV}$，$\\tau\\approx139\\ \\mathrm{ns}$　(2) $\\alpha_s\\approx0.31$　(3) 予言 $\\approx244\\ \\mathrm{keV}$；実測から $\\alpha_s\\approx0.23$．高いエネルギースケールで結合が弱くなる（漸近的自由性）．$\\Gamma$ が 2 倍違っても $\\alpha_s$ は $2^{1/6}\\approx1.12$ 倍（約 $12\\%$）しか変わらない"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $\\alpha^6=(1/137.04)^6=1.513\\times10^{-13}$，$\\dfrac{2(\\pi^2-9)}{9\\pi}=\\dfrac{2\\times0.8696}{28.27}=0.06152$．\n\\[ \\Gamma=0.06152\\times1.513\\times10^{-13}\\times0.511\\times10^{6}\\ \\mathrm{eV}\\approx4.75\\times10^{-9}\\ \\mathrm{eV}, \\]\n\\[ \\tau=\\hbar/\\Gamma=\\frac{6.582\\times10^{-16}\\ \\mathrm{eV\\,s}}{4.75\\times10^{-9}\\ \\mathrm{eV}}\\approx1.39\\times10^{-7}\\ \\mathrm{s}\\approx139\\ \\mathrm{ns} \\]\n（実測 $142\\ \\mathrm{ns}$，差は高次の放射補正）．\n\n(2) $\\alpha_s^6=\\dfrac{9\\pi\\,\\Gamma(3g)}{2(\\pi^2-9)m_cc^2}=\\dfrac{80\\times10^{-6}\\ \\mathrm{GeV}}{0.06152\\times1.55\\ \\mathrm{GeV}}=8.39\\times10^{-4}$，$\\alpha_s=(8.39\\times10^{-4})^{1/6}\\approx0.31$．\n\n(3) $\\Gamma\\propto\\alpha_s^6m$ なので同じ $\\alpha_s$ なら $\\Gamma(\\Upsilon)=80\\times4.72/1.55\\approx244\\ \\mathrm{keV}$．実測 $44\\ \\mathrm{keV}$ はこれより約 5.5 倍小さい．\n\\[ \\alpha_s(\\Upsilon)=\\Bigl(\\frac{44\\times10^{-6}}{0.06152\\times4.72}\\Bigr)^{1/6}\\approx0.23,\\qquad \\frac{\\alpha_s(\\Upsilon)}{\\alpha_s(J/\\psi)}=\\Bigl(\\frac{44}{244}\\Bigr)^{1/6}\\approx0.75. \\]\n重いクォーコニウムほど小さい距離（大きな運動量スケール $\\sim m_q$）で $q\\bar q$ 消滅が起こるので，$\\alpha_s$ がスケールとともに減少すること（QCD の漸近的自由性）を示している．\n$\\alpha_s\\propto\\Gamma^{1/6}$ なので，$\\Gamma$ が 2 倍不確かでも $\\alpha_s$ は $2^{1/6}=1.12$ 倍，すなわち約 $12\\%$ しか変わらない．このため波動関数の扱いやカラー因子の粗さにもかかわらず，$\\alpha_s$ のおおよその値と走りの傾向は信頼できる．"
+   }
+  ],
+  "idea": {
+   "tex": "ポジトロニウムの崩壊公式をクォーコニウムに読み替えると，$\\Gamma\\propto\\alpha_s^6$ の強い依存性のおかげで $\\alpha_s$ が頑健に求まり，$J/\\psi$ と $\\Upsilon$ の比較から結合定数の走りが見える．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $\\Gamma$ [eV]：≈4.75e-9 ; $\\tau$ [ns]：≈139\n(2) $\\alpha_s$：≈0.31\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "ポジトロニウム",
+   "クォーコニウム",
+   "J/ψ",
+   "Υ",
+   "強い結合定数",
+   "漸近的自由性",
+   "3グルーオン崩壊"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-049",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 25,
+  "theme": "ν–e 散乱における中性カレントと荷電カレントの干渉",
+  "topic": "ν–e 散乱における中性カレントと荷電カレントの干渉",
+  "statement": {
+   "tex": "ニュートリノ–電子弾性散乱を考える．$E_\\nu\\gg m_e c^2$ の低エネルギー（$\\sqrt s\\ll M_Z c^2$）では，有効結合を用いて\n\\[\n\\sigma(\\nu e^-\\to\\nu e^-)=\\frac{2G_F^2m_eE_\\nu}{\\pi}\\left(g_L^2+\\frac{g_R^2}{3}\\right),\\qquad\n\\sigma(\\bar\\nu e^-\\to\\bar\\nu e^-)=\\frac{2G_F^2m_eE_\\nu}{\\pi}\\left(\\frac{g_L^2}{3}+g_R^2\\right)\n\\]\nと書ける（$\\hbar=c=1$）．$Z^0$ 交換だけなら電子の結合は $g_L=-\\tfrac12+\\sin^2\\theta_W$，$g_R=\\sin^2\\theta_W$ である．一方，$W$ 交換が同時に寄与する場合，その寄与は Fierz 変換により $g_L\\to g_L+1$ と置き換える形で取り入れられる．\n\\begin{enumerate}\n\\item $\\nu_\\mu e^-\\to\\nu_\\mu e^-$ は $Z^0$ 交換のみで起こるが，$\\nu_e e^-\\to\\nu_e e^-$ では $W$ 交換も寄与する．最低次のファインマン図（バーテックスでの粒子の入れ替わり）に基づいて理由を説明せよ．\n\\item $\\sin^2\\theta_W=0.23$ として $\\sigma(\\nu_e e^-)/\\sigma(\\nu_\\mu e^-)$ を求めよ．\n\\item ある実験で $R\\equiv\\sigma(\\bar\\nu_\\mu e^-)/\\sigma(\\nu_\\mu e^-)=0.90$ が得られた．$0<\\sin^2\\theta_W<1$ の範囲で $\\sin^2\\theta_W$ を求めよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) 解説参照（$\\nu_\\mu$ が $W$ を放出すると $\\mu$ に変わるため終状態が変わる）　(2) $\\approx 6.1$　(3) $\\sin^2\\theta_W\\approx0.237$"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $W$ 交換のバーテックスでは荷電レプトンと同じ世代のニュートリノが入れ替わる（$\\nu_\\ell\\leftrightarrow\\ell^-$）．$\\nu_\\mu e^-$ で $W$ を交換すると，$\\nu_\\mu\\to\\mu^-W^+$，$e^-W^+\\to\\nu_e$ となり終状態は $\\mu^-\\nu_e$ であって弾性散乱にならない．よって $\\nu_\\mu e^-\\to\\nu_\\mu e^-$ は $Z^0$ 交換（中性カレント）でしか起こらず，観測されればそれ自体が中性カレントの証拠となる．一方 $\\nu_e e^-$ では $e^-\\to\\nu_e W^-$，$\\nu_e W^-\\to e^-$ という $W$ 交換でも終状態が $\\nu_e e^-$ に戻る．したがって中性カレント・荷電カレントの両方が寄与（干渉）し，事象の観測だけでは中性カレントの存在を結論できない．\n\n(2) $s^2\\equiv\\sin^2\\theta_W=0.23$ で $g_L=-0.27$，$g_R=0.23$．\n\\[\n\\nu_\\mu:\\ g_L^2+\\tfrac{g_R^2}{3}=0.0729+0.0176=0.0905,\\qquad\n\\nu_e:\\ (g_L+1)^2+\\tfrac{g_R^2}{3}=0.5329+0.0176=0.5505 .\n\\]\n比は $0.5505/0.0905\\approx6.1$．$W$ 交換との干渉が強め合う向き（$g_L$ が負から正へ大きく変わる）であるため，$\\nu_e$ の断面積は 6 倍にもなる．\n\n(3)\n\\[\nR=\\frac{g_L^2/3+g_R^2}{g_L^2+g_R^2/3},\\quad g_L=s^2-\\tfrac12,\\ g_R=s^2 .\n\\]\n$R=0.9$ とおいて両辺に $3(g_L^2+g_R^2/3)$ を掛けると $g_L^2+3g_R^2=2.7g_L^2+0.9g_R^2$，すなわち $2.1\\,g_R^2=1.7\\,g_L^2$．よって $|g_L|/g_R=\\sqrt{2.1/1.7}=1.1114$．$0<s^2<\\tfrac12$ では $g_L<0$ なので $\\tfrac12-s^2=1.1114\\,s^2$，$s^2=0.5/2.1114=0.237$．（$s^2>\\tfrac12$ の側では $s^2-\\tfrac12=\\pm1.1114s^2$ を満たす解は $(0,1)$ にない．）よって $\\sin^2\\theta_W\\approx0.237$．"
+   }
+  ],
+  "idea": {
+   "tex": "$\\nu_e e$ では $W$ 交換が $Z$ 交換と干渉し実効的に $g_L\\to g_L+1$ となる．$\\nu_\\mu e$ と $\\bar\\nu_\\mu e$ の比は $g_L/g_R$ だけで決まり $\\sin^2\\theta_W$ の測定になる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) ≈6.1\n(3) $\\sin^2\\theta_W$：≈0.237"
+  },
+  "methods": [],
+  "tags": [
+   "中性カレント",
+   "荷電カレント",
+   "ニュートリノ電子散乱",
+   "ワインバーグ角",
+   "干渉"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-050",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 3,
+  "minutes": 25,
+  "theme": "樹木近似の電弱関係式の自己無撞着解",
+  "topic": "樹木近似の電弱関係式の自己無撞着解",
+  "statement": {
+   "tex": "電弱理論の最低次の関係\n\\[\nM_W^2=\\frac{\\pi\\alpha}{\\sqrt2\\,G_F\\sin^2\\theta_W},\\qquad M_W=M_Z\\cos\\theta_W\n\\]\n（自然単位）を考える．$\\alpha=1/128$，$G_F=1.166\\times10^{-5}\\ \\mathrm{GeV^{-2}}$ とする．\n\\begin{enumerate}\n\\item 2 式から $\\theta_W$ を消去し，$M_Z$ を与えたとき $\\sin^2\\theta_W$ が実数解をもつためには $M_Z\\ge M_Z^{\\min}$ でなければならないことを示し，$M_Z^{\\min}$ を求めよ．\n\\item $M_Z=91.19\\ \\mathrm{GeV}$ を入力として $\\sin^2\\theta_W$（$<1/2$ の解）と $M_W$ を求めよ．\n\\item 一方，測定値 $M_W=80.38\\ \\mathrm{GeV}$ と $M_Z$ から $\\sin^2\\theta_W\\equiv1-M_W^2/M_Z^2$ を定め，これを第 1 式に代入すると $M_W$ はいくらと予言されるか．(2) との食い違いの原因を一言で述べよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $M_Z^{\\min}=2\\sqrt{\\pi\\alpha/(\\sqrt2G_F)}\\approx77.1\\ \\mathrm{GeV}$　(2) $\\sin^2\\theta_W\\approx0.233$，$M_W\\approx79.8\\ \\mathrm{GeV}$　(3) $\\sin^2\\theta_W=0.223$，$M_W\\approx81.7\\ \\mathrm{GeV}$（放射補正）"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $A\\equiv\\pi\\alpha/(\\sqrt2G_F)$ とおくと $M_Z^2\\cos^2\\theta_W=A/\\sin^2\\theta_W$，すなわち\n\\[\n\\sin^2\\theta_W\\cos^2\\theta_W=\\frac{A}{M_Z^2}.\n\\]\n$x=\\sin^2\\theta_W$ について $x(1-x)=A/M_Z^2$．左辺の最大値は $1/4$ なので，実数解には $M_Z^2\\ge4A$．$\\sqrt A=\\sqrt{\\pi/(128\\sqrt2\\times1.166\\times10^{-5})}=38.6\\ \\mathrm{GeV}$ より $M_Z^{\\min}=77.1\\ \\mathrm{GeV}$．\n\n(2) $x=\\dfrac{1-\\sqrt{1-4A/M_Z^2}}{2}$．$4A/M_Z^2=4\\times1488/8316=0.7158$ より $x=(1-0.5331)/2=0.233$．$M_W=M_Z\\sqrt{1-x}=91.19\\times0.8756=79.8\\ \\mathrm{GeV}$．\n\n(3) $\\sin^2\\theta_W=1-(80.38/91.19)^2=0.223$．$M_W=\\sqrt{A/0.223}=38.6/0.4723=81.7\\ \\mathrm{GeV}$．同じ量を二通りに定めた値が約 $2\\ \\mathrm{GeV}$ ずれる．これは樹木近似を超える放射補正（特に重いトップクォークのループ）によるもので，このずれがトップ質量の予言に使われた．"
+   }
+  ],
+  "idea": {
+   "tex": "2 式を連立すると $\\sin^2\\theta_W\\cos^2\\theta_W=\\pi\\alpha/(\\sqrt2G_FM_Z^2)$ という 2 次方程式になり，$M_Z$ に下限が生じる．定義の違いによる食い違いは放射補正を映す．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $M_Z^{\\min}$ [GeV]：≈77.1\n(2) $\\sin^2\\theta_W$：≈0.233 ; $M_W$ [GeV]：≈79.8\n(3) $\\sin^2\\theta_W$：≈0.223 ; $M_W$ [GeV]：≈81.7"
+  },
+  "methods": [],
+  "tags": [
+   "電弱統一",
+   "Wボソン質量",
+   "Zボソン質量",
+   "ワインバーグ角",
+   "放射補正"
+  ],
+  "provenance": {
+   "created": "2026-11-23"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
@@ -629,6 +2352,103 @@
    "checks": {
     "dual": false,
     "sympy": false,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-051",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 4,
+  "minutes": 45,
+  "theme": "SU(3) の対称表現＋反基本表現7個の理論での 't Hooft アノマリーの一致",
+  "topic": "SU(3) の対称表現＋反基本表現7個の理論での 't Hooft アノマリーの一致",
+  "statement": {
+   "tex": "$SU(N)$ ゲージ理論に，対称表現の左巻き $\\chi$ 1つと反基本表現の左巻き $\\psi_i$（$i=1,\\ldots,p$）がある．$A(\\mathrm{sym})=N+4$，$I(\\mathrm{sym})=N+2$．$N=3$ とする．\n\\begin{enumerate}\n\\item ゲージアノマリーが消える $p$ を求めよ．\n\\item ABJ アノマリーのない $U(1)$ の電荷 $(q_\\chi,q_\\psi)$ を最小の整数で求めよ．\n\\item 複合フェルミオン $\\lambda_{ij}=\\psi_{[i}\\chi\\psi_{j]}$（$SU(p)$ の反対称表現）の電荷を求め，$U(1)^3$ と $U(1)$–重力のアノマリーが一致することを確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=N+4=7$　(2) $(q_\\chi,q_\\psi)=(7,-5)$　(3) $q_\\lambda=-3$；$U(1)^3$：$-567$，重力：$-63$ が両方で一致"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $(N+4)-p=0$．\n\n(2) $I(\\mathrm{sym})q_\\chi+p\\,I(\\bar\\square)q_\\psi=5q_\\chi+7q_\\psi=0$．\n\n(3) $q_\\lambda=2(-5)+7=-3$．UV：$6\\times343+21\\times(-125)=-567$，$6\\times7+21\\times(-5)=-63$．IR：$21$ 成分で $21\\times(-27)=-567$，$21\\times(-3)=-63$．一致．"
+   }
+  ],
+  "idea": {
+   "tex": "'t Hooft のアノマリーは強結合の低エネルギーの記述でも一致しなければならず，閉じ込めの予想を検証できる．原題の一般の $N$ を $N=3$ にして数値で確かめさせる．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) $p$：7\n(2) 記述\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "トフーフトのアノマリー整合",
+   "カイラルゲージ理論",
+   "閉じ込め",
+   "U(1)電荷"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
+    "human": false
+   },
+   "verified": false
+  }
+ },
+ {
+  "id": "PP-04-052",
+  "schema": "lemma.problem/1",
+  "kind": "written",
+  "field": "PP-69",
+  "level": 4,
+  "minutes": 45,
+  "theme": "N = 4 の対称表現の理論での 't Hooft アノマリーの一致（SU(p)²U(1) を含む）",
+  "topic": "N = 4 の対称表現の理論での 't Hooft アノマリーの一致（SU(p)²U(1) を含む）",
+  "statement": {
+   "tex": "$SU(N)$ に対称表現の $\\chi$ 1つと反基本表現の $\\psi_i$（$i=1,\\ldots,p$）．$N=4$ とする．\n\\begin{enumerate}\n\\item $p$ を求め，アノマリーのない $U(1)$ の電荷を最小の整数で求めよ（$I(\\mathrm{sym})=N+2$）．\n\\item $\\lambda_{ij}$（$SU(p)$ の反対称表現）の電荷を求めよ．\n\\item $U(1)^3$，$U(1)$–重力，$SU(p)^2U(1)$（$I(\\mathrm{antisym})=p-2$）の一致を確かめよ．\n\\end{enumerate}"
+  },
+  "answer": {
+   "tex": "(1) $p=8$；$(q_\\chi,q_\\psi)=(4,-3)$　(2) $-2$　(3) $-224$，$-56$，$-12$ がそれぞれ一致"
+  },
+  "solutions": [
+   {
+    "id": "main",
+    "kind": "main",
+    "tex": "(1) $p=N+4=8$．$6q_\\chi+8q_\\psi=0$．\n\n(2) $2(-3)+4=-2$．\n\n(3) UV：$10\\times64+32\\times(-27)=-224$，$40-96=-56$，$4\\times1\\times(-3)=-12$．IR：$28\\times(-8)=-224$，$28\\times(-2)=-56$，$6\\times(-2)=-12$．"
+   }
+  ],
+  "idea": {
+   "tex": "アノマリーの一致は混合アノマリーまで含めて確かめる．原題の一般の $N$ を $N=4$ にした（$N=3$ の場合は標準模型の講義の類題）．"
+  },
+  "grading": {
+   "format": "lemma-input/1",
+   "spec": "(1) 記述\n(2) -2\n(3) 記述"
+  },
+  "methods": [],
+  "tags": [
+   "トフーフトのアノマリー整合",
+   "カイラルゲージ理論",
+   "閉じ込め"
+  ],
+  "provenance": {
+   "created": "2026-11-24"
+  },
+  "quality": {
+   "status": "published",
+   "checks": {
+    "dual": false,
+    "sympy": true,
     "human": false
    },
    "verified": false
