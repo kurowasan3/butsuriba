@@ -795,16 +795,16 @@
   "theme": "速度の2乗抵抗の落下とtanhの展開",
   "topic": "速度の2乗抵抗の落下とtanhの展開",
   "statement": {
-   "tex": "速さの2乗に比例する空気抵抗を受けて静止状態から鉛直に落下する物体の速さと落下距離は，重力加速度を $g$，終端速度を $v_T$ として\n\\[ v(t)=v_T\\tanh\\frac{gt}{v_T},\\qquad x(t)=\\frac{v_T^2}{g}\\ln\\cosh\\frac{gt}{v_T} \\]\nで与えられる．\n\\begin{enumerate}\n\\item $\\sinh,\\cosh$ の $x=0$ まわりのテイラー展開を用いて，$\\tanh z$ の $z=0$ まわりの展開を $z^5$ の項まで求めよ．\n\\item $v(t)$ を $t^5$ の項まで，$x(t)$ を $t^6$ の項まで展開せよ．\n\\item 抵抗のない自由落下と比べたときの落下距離の不足分の主要項を求め，それが $v_T$ にどう依存するか述べよ．また，この主要項が落下距離 $gt^2/2$ の 1\\% となる時刻を求めよ．\n\\item $v(t)$ の $t$ についての冪級数は，$t$ がある値 $t_c$ を超えると収束しなくなる．実関数 $\\tanh$ はすべての実数で滑らかであるにもかかわらずこうなる理由を説明し，$t_c$ を求めよ．\n\\end{enumerate}"
+   "tex": "速さの2乗に比例する空気抵抗を受けて静止状態から鉛直に落下する物体の速さと落下距離は，重力加速度を $g$，終端速度を $v_T$ として\n\\[ v(t)=v_T\\tanh\\frac{gt}{v_T},\\qquad x(t)=\\frac{v_T^2}{g}\\ln\\cosh\\frac{gt}{v_T} \\]\nで与えられる．\n\\begin{enumerate}\n\\item $\\sinh,\\cosh$ の $x=0$ まわりのテイラー展開を用いて，$\\tanh z$ の $z=0$ まわりの展開を $z^5$ の項まで求めよ．\n\\item $v(t)$ を $t^5$ の項まで，$x(t)$ を $t^6$ の項まで展開せよ．\n\\item 抵抗のない自由落下と比べたときの落下距離の不足分の主要項を求め，それが $v_T$ にどう依存するか述べよ．また，この主要項が落下距離 $gt^2/2$ の割合 $\\epsilon$（$\\epsilon\\ll1$）となる時刻 $t_\\epsilon$ を求めよ．\n\\item $v(t)$ の $t$ についての冪級数は，$t$ がある値 $t_c$ を超えると収束しなくなる．実関数 $\\tanh$ はすべての実数で滑らかであるにもかかわらずこうなる理由を説明し，$t_c$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\tanh z=z-\\frac{z^3}{3}+\\frac{2z^5}{15}+\\cdots$　(2) $v=gt-\\frac{g^3t^3}{3v_T^2}+\\frac{2g^5t^5}{15v_T^4}$，$x=\\frac{gt^2}{2}-\\frac{g^3t^4}{12v_T^2}+\\frac{g^5t^6}{45v_T^4}$　(3) $\\frac{g^3t^4}{12v_T^2}\\propto v_T^{-2}$，$t\\approx\\sqrt{0.06}\\,v_T/g\\approx0.245\\,v_T/g$　(4) $t_c=\\dfrac{\\pi v_T}{2g}$"
+   "tex": "(1) $\\tanh z=z-\\frac{z^3}{3}+\\frac{2z^5}{15}+\\cdots$　(2) $v=gt-\\frac{g^3t^3}{3v_T^2}+\\frac{2g^5t^5}{15v_T^4}$，$x=\\frac{gt^2}{2}-\\frac{g^3t^4}{12v_T^2}+\\frac{g^5t^6}{45v_T^4}$　(3) $\\dfrac{g^3t^4}{12v_T^2}\\propto v_T^{-2}$，$t_\\epsilon=\\dfrac{\\sqrt{6\\epsilon}\\,v_T}{g}$　(4) $t_c=\\dfrac{\\pi v_T}{2g}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\tanh z=\\sinh z/\\cosh z$ を $\\tanh z=a_1z+a_3z^3+a_5z^5+\\cdots$（奇関数）とおき，$\\tanh z\\cosh z=\\sinh z$ の係数を比べる：\n\\[ \\Bigl(a_1z+a_3z^3+a_5z^5\\Bigr)\\Bigl(1+\\frac{z^2}{2}+\\frac{z^4}{24}\\Bigr)=z+\\frac{z^3}{6}+\\frac{z^5}{120}+\\cdots \\]\n$z$：$a_1=1$．$z^3$：$a_3+\\frac12=\\frac16$ より $a_3=-\\frac13$．$z^5$：$a_5+\\frac{a_3}{2}+\\frac{1}{24}=\\frac1{120}$ より $a_5=\\frac1{120}-\\frac1{24}+\\frac16=\\frac{2}{15}$．\n\\[ \\tanh z=z-\\frac{z^3}{3}+\\frac{2}{15}z^5+\\cdots \\]\n\n(2) $z=gt/v_T$ を代入して\n\\[ v=gt-\\frac{g^3t^3}{3v_T^2}+\\frac{2g^5t^5}{15v_T^4}+\\cdots \\]\n$x=\\int_0^t v\\,dt$ を項別積分して（$x(0)=0$）\n\\[ x=\\frac{gt^2}{2}-\\frac{g^3t^4}{12v_T^2}+\\frac{g^5t^6}{45v_T^4}+\\cdots \\]\n\n(3) 不足分の主要項は $\\dfrac{g^3t^4}{12v_T^2}$ で $v_T^{-2}$ に比例（抵抗が弱いほど，すなわち $v_T$ が大きいほど小さい）．$t$ について $t^2$ より 2 次高いので，落下初期には抵抗はほとんど効かない．$\\dfrac{g^3t^4}{12v_T^2}=0.01\\cdot\\dfrac{gt^2}{2}$ より $t^2=0.06\\,v_T^2/g^2$，$t\\approx0.245\\,v_T/g$．\n\n(4) 冪級数の収束半径は，その関数を複素変数に拡張したときの，展開の中心から最も近い特異点までの距離で決まる．$\\tanh z=\\sinh z/\\cosh z$ は $\\cosh z=0$ で極を持ち，$\\cosh(iy)=\\cos y$ だから最も近い極は $z=\\pm i\\pi/2$．よって $\\tanh z$ の展開の収束半径は $\\pi/2$ で，実軸上でも $|z|<\\pi/2$ でしか収束しない．$z=gt/v_T$ より\n\\[ t_c=\\frac{\\pi v_T}{2g}. \\]\n実関数としては滑らかでも，複素平面の特異点が実軸上の級数の収束を制限する．したがってこの級数は終端速度への漸近（$t\\gg v_T/g$）の記述には使えない．"
+    "tex": "(1) $\\tanh z=\\sinh z/\\cosh z$ を $\\tanh z=a_1z+a_3z^3+a_5z^5+\\cdots$（奇関数）とおき，$\\tanh z\\cosh z=\\sinh z$ の係数を比べる：\n\\[ \\Bigl(a_1z+a_3z^3+a_5z^5\\Bigr)\\Bigl(1+\\frac{z^2}{2}+\\frac{z^4}{24}\\Bigr)=z+\\frac{z^3}{6}+\\frac{z^5}{120}+\\cdots \\]\n$z$：$a_1=1$．$z^3$：$a_3+\\frac12=\\frac16$ より $a_3=-\\frac13$．$z^5$：$a_5+\\frac{a_3}{2}+\\frac{1}{24}=\\frac1{120}$ より $a_5=\\frac1{120}-\\frac1{24}+\\frac16=\\frac{2}{15}$．\n\\[ \\tanh z=z-\\frac{z^3}{3}+\\frac{2}{15}z^5+\\cdots \\]\n\n(2) $z=gt/v_T$ を代入して\n\\[ v=gt-\\frac{g^3t^3}{3v_T^2}+\\frac{2g^5t^5}{15v_T^4}+\\cdots \\]\n$x=\\int_0^t v\\,dt$ を項別積分して（$x(0)=0$）\n\\[ x=\\frac{gt^2}{2}-\\frac{g^3t^4}{12v_T^2}+\\frac{g^5t^6}{45v_T^4}+\\cdots \\]\n\n(3) 不足分の主要項は $\\dfrac{g^3t^4}{12v_T^2}$ で $v_T^{-2}$ に比例（抵抗が弱いほど，すなわち $v_T$ が大きいほど小さい）．$t$ について $t^2$ より 2 次高いので，落下初期には抵抗はほとんど効かない．$\\dfrac{g^3t^4}{12v_T^2}=\\epsilon\\cdot\\dfrac{gt^2}{2}$ より $t^2=6\\epsilon\\,v_T^2/g^2$，$\\boldsymbol{t_\\epsilon=\\dfrac{\\sqrt{6\\epsilon}\\,v_T}{g}}$（$\\epsilon=0.01$ なら約 $0.25\\,v_T/g$）．\n\n(4) 冪級数の収束半径は，その関数を複素変数に拡張したときの，展開の中心から最も近い特異点までの距離で決まる．$\\tanh z=\\sinh z/\\cosh z$ は $\\cosh z=0$ で極を持ち，$\\cosh(iy)=\\cos y$ だから最も近い極は $z=\\pm i\\pi/2$．よって $\\tanh z$ の展開の収束半径は $\\pi/2$ で，実軸上でも $|z|<\\pi/2$ でしか収束しない．$z=gt/v_T$ より\n\\[ t_c=\\frac{\\pi v_T}{2g}. \\]\n実関数としては滑らかでも，複素平面の特異点が実軸上の級数の収束を制限する．したがってこの級数は終端速度への漸近（$t\\gg v_T/g$）の記述には使えない．"
    }
   ],
   "idea": {
@@ -812,7 +812,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $t_c$：((pi v_T)/(2 g))"
+   "spec": "(1) 記述\n(2) 記述\n(3) $t_\\epsilon$：sqrt(6ε) v_T/g\n(4) $t_c$：((pi v_T)/(2 g))"
   },
   "methods": [],
   "tags": [
@@ -845,16 +845,16 @@
   "theme": "級数だけから π の範囲と小角近似の精度",
   "topic": "級数だけから π の範囲と小角近似の精度",
   "statement": {
-   "tex": "三角関数を幾何を使わずに，べき級数\n\\[C(t)=\\sum_{n=0}^\\infty\\frac{(-1)^n}{(2n)!}t^{2n},\\qquad S(t)=\\sum_{n=0}^\\infty\\frac{(-1)^n}{(2n+1)!}t^{2n+1}\\]\nで定義する（収束は認めてよい）．\n\\begin{enumerate}\n\\item 項別微分により $C'=-S$，$S'=C$ を示し，これを用いて $C^2+S^2=1$ を示せ．\n\\item 交代級数の性質（項の絶対値が単調減少する交代級数では，部分和で打ち切った誤差は最初に捨てた項の絶対値以下で，その項と同符号）を用いて $C(\\sqrt2)>0$，$C(\\sqrt3)<0$ を示し，$C$ の最小の正の零点を $\\pi/2$ と定義したとき $2\\sqrt2<\\pi<2\\sqrt3$ を導け．\n\\item 振り子の小角近似 $\\sin\\theta\\simeq\\theta$ の相対誤差 $(\\theta-\\sin\\theta)/\\sin\\theta$ を $\\theta$ の最低次で評価し，これが $1\\%$ となる振れ角を度で求めよ．\n\\end{enumerate}"
+   "tex": "三角関数を幾何を使わずに，べき級数\n\\[C(t)=\\sum_{n=0}^\\infty\\frac{(-1)^n}{(2n)!}t^{2n},\\qquad S(t)=\\sum_{n=0}^\\infty\\frac{(-1)^n}{(2n+1)!}t^{2n+1}\\]\nで定義する（収束は認めてよい）．\n\\begin{enumerate}\n\\item 項別微分により $C'=-S$，$S'=C$ を示し，これを用いて $C^2+S^2=1$ を示せ．\n\\item 交代級数の性質（項の絶対値が単調減少する交代級数では，部分和で打ち切った誤差は最初に捨てた項の絶対値以下で，その項と同符号）を用いて $C(\\sqrt2)>0$，$C(\\sqrt3)<0$ を示し，$C$ の最小の正の零点を $\\pi/2$ と定義したとき $2\\sqrt2<\\pi<2\\sqrt3$ を導け．\n\\item 振り子の小角近似 $\\sin\\theta\\simeq\\theta$ の相対誤差 $(\\theta-\\sin\\theta)/\\sin\\theta$ を $\\theta$ の最低次で評価し，これが $\\epsilon$（$\\epsilon\\ll1$）となる振れ角 $\\theta_\\epsilon$（ラジアン）を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\frac{d}{dt}(C^2+S^2)=0$，$t=0$ で 1　(2) $C(\\sqrt2)\\ge 7/45>0$，$C(\\sqrt3)\\le-1/8<0$ より $\\sqrt2<\\pi/2<\\sqrt3$　(3) 相対誤差 $\\simeq\\theta^2/6$，$\\theta=\\sqrt{0.06}\\simeq0.245\\ \\mathrm{rad}\\simeq14^\\circ$"
+   "tex": "(1) $\\frac{d}{dt}(C^2+S^2)=0$，$t=0$ で 1　(2) $C(\\sqrt2)\\ge 7/45>0$，$C(\\sqrt3)\\le-1/8<0$ より $\\sqrt2<\\pi/2<\\sqrt3$　(3) 相対誤差 $\\simeq\\dfrac{\\theta^2}{6}$，$\\theta_\\epsilon=\\sqrt{6\\epsilon}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 項別微分で\n\\[C'(t)=\\sum_{n=1}^\\infty\\frac{(-1)^n}{(2n-1)!}t^{2n-1}=-\\sum_{m=0}^\\infty\\frac{(-1)^m}{(2m+1)!}t^{2m+1}=-S(t)\\quad(n=m+1),\\]\n\\[S'(t)=\\sum_{n=0}^\\infty\\frac{(-1)^n}{(2n)!}t^{2n}=C(t).\\]\nよって $\\frac{d}{dt}(C^2+S^2)=2C(-S)+2SC=0$．$C(0)=1,\\ S(0)=0$ なので $C^2+S^2\\equiv1$．\n\n(2) $t^2\\le3$ では $n\\ge1$ の項の比 $\\dfrac{t^2}{(2n+1)(2n+2)}\\le\\dfrac{3}{12}<1$ なので，第 2 項以降は絶対値が単調減少する交代級数．\n$t^2=2$：$t^6$ の項（負）で打ち切ると誤差は次の正の項以下で正なので\n\\[C(\\sqrt2)>1-\\frac22+\\frac4{24}-\\frac8{720}=\\frac16-\\frac1{90}=\\frac7{45}>0.\\]\n$t^2=3$：$t^4$ の項（正）で打ち切ると，残りは負の項から始まるので\n\\[C(\\sqrt3)<1-\\frac32+\\frac9{24}=-\\frac18<0.\\]\n$C$ は連続なので $(\\sqrt2,\\sqrt3)$ に零点をもつ．また $0\\le t\\le\\sqrt2$ では $C(t)\\ge1-\\frac{t^2}{2}+\\frac{t^4}{24}-\\frac{t^6}{720}>0$（同様の評価）なので，これが最小の正の零点．よって $\\sqrt2<\\pi/2<\\sqrt3$，すなわち $2.83<\\pi<3.46$．\n\n(3) $\\sin\\theta=\\theta-\\theta^3/6+\\cdots$ より\n\\[\\frac{\\theta-\\sin\\theta}{\\sin\\theta}\\simeq\\frac{\\theta^3/6}{\\theta}=\\frac{\\theta^2}{6}.\\]\n$\\theta^2/6=0.01$ から $\\theta=\\sqrt{0.06}\\simeq0.245\\ \\mathrm{rad}\\simeq14^\\circ$．（厳密値でも相対誤差は $1.007\\%$．）"
+    "tex": "(1) 項別微分で\n\\[C'(t)=\\sum_{n=1}^\\infty\\frac{(-1)^n}{(2n-1)!}t^{2n-1}=-\\sum_{m=0}^\\infty\\frac{(-1)^m}{(2m+1)!}t^{2m+1}=-S(t)\\quad(n=m+1),\\]\n\\[S'(t)=\\sum_{n=0}^\\infty\\frac{(-1)^n}{(2n)!}t^{2n}=C(t).\\]\nよって $\\frac{d}{dt}(C^2+S^2)=2C(-S)+2SC=0$．$C(0)=1,\\ S(0)=0$ なので $C^2+S^2\\equiv1$．\n\n(2) $t^2\\le3$ では $n\\ge1$ の項の比 $\\dfrac{t^2}{(2n+1)(2n+2)}\\le\\dfrac{3}{12}<1$ なので，第 2 項以降は絶対値が単調減少する交代級数．\n$t^2=2$：$t^6$ の項（負）で打ち切ると誤差は次の正の項以下で正なので\n\\[C(\\sqrt2)>1-\\frac22+\\frac4{24}-\\frac8{720}=\\frac16-\\frac1{90}=\\frac7{45}>0.\\]\n$t^2=3$：$t^4$ の項（正）で打ち切ると，残りは負の項から始まるので\n\\[C(\\sqrt3)<1-\\frac32+\\frac9{24}=-\\frac18<0.\\]\n$C$ は連続なので $(\\sqrt2,\\sqrt3)$ に零点をもつ．また $0\\le t\\le\\sqrt2$ では $C(t)\\ge1-\\frac{t^2}{2}+\\frac{t^4}{24}-\\frac{t^6}{720}>0$（同様の評価）なので，これが最小の正の零点．よって $\\sqrt2<\\pi/2<\\sqrt3$，すなわち $2.83<\\pi<3.46$．\n\n(3) $\\sin\\theta=\\theta-\\theta^3/6+\\cdots$ より\n\\[\\frac{\\theta-\\sin\\theta}{\\sin\\theta}\\simeq\\frac{\\theta^3/6}{\\theta}=\\frac{\\theta^2}{6}.\\]\n$\\theta^2/6=\\epsilon$ から $\\boldsymbol{\\theta_\\epsilon=\\sqrt{6\\epsilon}}$．$\\epsilon=1\\%$ なら約 $0.245\\ \\mathrm{rad}\\simeq14^\\circ$ で，小角近似はかなり大きな振れ角まで使える．"
    }
   ],
   "idea": {
@@ -862,7 +862,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) 相対誤差：θ^2/6 ; $\\theta_\\epsilon$：sqrt(6ε)"
   },
   "methods": [],
   "tags": [
@@ -3544,16 +3544,16 @@
   "theme": "超幾何級数と振り子の周期・メビウス級数",
   "topic": "超幾何級数と振り子の周期・メビウス級数",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 振幅 $\\theta_0$ の単振り子の周期は，$T_0=2\\pi\\sqrt{l/g}$ として\n\\[\nT=T_0\\sum_{n=0}^\\infty c_n\\,x^n,\\qquad c_n=\\left(\\frac{(2n)!}{4^n(n!)^2}\\right)^2,\\qquad x=\\sin^2\\frac{\\theta_0}{2}\n\\]\nと表される（ガウスの超幾何級数 $F(\\tfrac12,\\tfrac12;1;x)$）．この級数の $x$ についての収束半径を求めよ．\n\\item スターリングの公式を用いて $n\\to\\infty$ で $c_n\\simeq\\dfrac{1}{\\pi n}$ を示し，$x=1$（$\\theta_0=\\pi$）で級数が発散することを確かめよ．物理的には何に対応するか．\n\\item $\\theta_0=60^\\circ$ のとき，$T/T_0$ を級数の最初の3項で計算し，有効数字3桁で答えよ．\n\\item 複素数 $z$ についての級数 $\\displaystyle\\sum_{n=0}^\\infty\\left(\\frac{z-1}{z+1}\\right)^n$ が収束する $z$ の領域と，そこでの和を求めよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 振幅 $\\theta_0$ の単振り子の周期は，$T_0=2\\pi\\sqrt{l/g}$ として\n\\[\nT=T_0\\sum_{n=0}^\\infty c_n\\,x^n,\\qquad c_n=\\left(\\frac{(2n)!}{4^n(n!)^2}\\right)^2,\\qquad x=\\sin^2\\frac{\\theta_0}{2}\n\\]\nと表される（ガウスの超幾何級数 $F(\\tfrac12,\\tfrac12;1;x)$）．この級数の $x$ についての収束半径を求めよ．\n\\item スターリングの公式を用いて $n\\to\\infty$ で $c_n\\simeq\\dfrac{1}{\\pi n}$ を示し，$x=1$（$\\theta_0=\\pi$）で級数が発散することを確かめよ．物理的には何に対応するか．\n\\item $T/T_0$ を級数の最初の 3 項で近似し，$\\theta_0$ で表せ．さらに $\\theta_0\\ll1$ として $\\theta_0^2$ の項までの近似式を求めよ．\n\\item 複素数 $z$ についての級数 $\\displaystyle\\sum_{n=0}^\\infty\\left(\\frac{z-1}{z+1}\\right)^n$ が収束する $z$ の領域と，そこでの和を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1$　(2) $c_n\\sim1/(\\pi n)$ より調和級数的に発散．倒立点に達する振幅で周期が無限大　(3) $1.07$（3項で $1.0712$，厳密値 $1.0732$）　(4) $\\mathrm{Re}\\,z>0$，和 $\\frac{z+1}{2}$"
+   "tex": "(1) $1$　(2) $c_n\\sim1/(\\pi n)$ より調和級数的に発散．倒立点に達する振幅で周期が無限大　(3) $\\dfrac{T}{T_0}\\approx1+\\dfrac14\\sin^2\\dfrac{\\theta_0}{2}+\\dfrac{9}{64}\\sin^4\\dfrac{\\theta_0}{2}$；$\\theta_0\\ll1$ で $1+\\dfrac{\\theta_0^2}{16}$　(4) $\\mathrm{Re}\\,z>0$，和 $\\frac{z+1}{2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{c_n}{c_{n+1}}=\\left(\\dfrac{4(n+1)^2}{(2n+1)(2n+2)}\\right)^2=\\left(\\dfrac{2n+2}{2n+1}\\right)^2\\to1$．収束半径は $1$．（$x=\\sin^2(\\theta_0/2)\\le1$ なので $\\theta_0<\\pi$ では収束．）\n\n(2) $n!\\simeq\\sqrt{2\\pi n}\\,(n/e)^n$ より $\\dfrac{(2n)!}{4^n(n!)^2}\\simeq\\dfrac{\\sqrt{4\\pi n}(2n/e)^{2n}}{4^n\\cdot2\\pi n(n/e)^{2n}}=\\dfrac1{\\sqrt{\\pi n}}$．よって $c_n\\simeq\\dfrac1{\\pi n}$．$x=1$ では $\\sum c_n$ が $\\frac1\\pi\\sum\\frac1n$ と比較でき，比較判定法により発散．比の判定法は $x=1$ では $1$ になり判定できないが，係数の漸近形が決め手になる．物理的には $\\theta_0\\to\\pi$ で振り子が真上の不安定平衡点に近づき，そこに漸近するのに無限の時間がかかるので周期が $\\ln$ 的に発散することに対応する．\n\n(3) $x=\\sin^230^\\circ=\\frac14$．$c_0=1,\\ c_1=\\frac14,\\ c_2=\\frac9{64}$ より\n\\[\n\\frac{T}{T_0}\\approx1+\\frac14\\cdot\\frac14+\\frac9{64}\\cdot\\frac1{16}=1+0.0625+0.00879=1.0713\\approx1.07.\n\\]\n（全項の和は $\\frac2\\pi K(k^2=\\tfrac14)=1.0732$．）\n\n(4) $w=\\dfrac{z-1}{z+1}$ の等比級数なので $|w|<1$ で絶対収束し，$|w|\\ge1$ では項が $0$ に収束しないので発散．$|w|<1\\iff|z-1|<|z+1|$，すなわち $z$ が $1$ と $-1$ の垂直二等分線（虚軸）より $1$ 側にある：$\\mathrm{Re}\\,z>0$．和は\n\\[\n\\frac1{1-w}=\\frac{z+1}{(z+1)-(z-1)}=\\frac{z+1}2.\n\\]\n（$z$ を規格化インピーダンスとみれば，$w$ は反射係数で，収束領域は受動負荷 $\\mathrm{Re}\\,z>0$ に一致する．）"
+    "tex": "(1) $\\dfrac{c_n}{c_{n+1}}=\\left(\\dfrac{4(n+1)^2}{(2n+1)(2n+2)}\\right)^2=\\left(\\dfrac{2n+2}{2n+1}\\right)^2\\to1$．収束半径は $1$．（$x=\\sin^2(\\theta_0/2)\\le1$ なので $\\theta_0<\\pi$ では収束．）\n\n(2) $n!\\simeq\\sqrt{2\\pi n}\\,(n/e)^n$ より $\\dfrac{(2n)!}{4^n(n!)^2}\\simeq\\dfrac{\\sqrt{4\\pi n}(2n/e)^{2n}}{4^n\\cdot2\\pi n(n/e)^{2n}}=\\dfrac1{\\sqrt{\\pi n}}$．よって $c_n\\simeq\\dfrac1{\\pi n}$．$x=1$ では $\\sum c_n$ が $\\frac1\\pi\\sum\\frac1n$ と比較でき，比較判定法により発散．比の判定法は $x=1$ では $1$ になり判定できないが，係数の漸近形が決め手になる．物理的には $\\theta_0\\to\\pi$ で振り子が真上の不安定平衡点に近づき，そこに漸近するのに無限の時間がかかるので周期が $\\ln$ 的に発散することに対応する．\n\n(3) $c_0=1,\\ c_1=\\frac14,\\ c_2=\\frac9{64}$ より\n\\[\n\\boldsymbol{\\frac{T}{T_0}\\approx1+\\frac14\\sin^2\\frac{\\theta_0}{2}+\\frac{9}{64}\\sin^4\\frac{\\theta_0}{2}}.\n\\]\n$\\theta_0\\ll1$ では $\\sin^2\\frac{\\theta_0}2\\simeq\\frac{\\theta_0^2}4$ なので $\\boldsymbol{\\dfrac{T}{T_0}\\simeq1+\\dfrac{\\theta_0^2}{16}}$．（$\\theta_0=60^\\circ$ では 3 項で $1.0713$，全項の和は $1.0732$．）\n\n(4) $w=\\dfrac{z-1}{z+1}$ の等比級数なので $|w|<1$ で絶対収束し，$|w|\\ge1$ では項が $0$ に収束しないので発散．$|w|<1\\iff|z-1|<|z+1|$，すなわち $z$ が $1$ と $-1$ の垂直二等分線（虚軸）より $1$ 側にある：$\\mathrm{Re}\\,z>0$．和は\n\\[\n\\frac1{1-w}=\\frac{z+1}{(z+1)-(z-1)}=\\frac{z+1}2.\n\\]\n（$z$ を規格化インピーダンスとみれば，$w$ は反射係数で，収束領域は受動負荷 $\\mathrm{Re}\\,z>0$ に一致する．）"
    }
   ],
   "idea": {
@@ -3561,7 +3561,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 1\n(2) 記述\n(3) ≈1.07\n(4) 記述"
+   "spec": "(1) 1\n(2) 記述\n(3) 3項：1+sin(θ_0/2)^2/4+9 sin(θ_0/2)^4/64 ; 近似：1+θ_0^2/16\n(4) 記述"
   },
   "methods": [],
   "tags": [
@@ -3998,16 +3998,16 @@
   "theme": "テイラー剰余の評価と相対論的エネルギー",
   "topic": "テイラー剰余の評価と相対論的エネルギー",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item $\\zeta\\neq z,a$ に対して\n\\[ \\frac{1}{\\zeta-z}=\\sum_{k=0}^{n-1}\\frac{(z-a)^k}{(\\zeta-a)^{k+1}}+\\frac{(z-a)^n}{(\\zeta-z)(\\zeta-a)^n} \\]\nを示せ．\n\\item $a$ 中心・半径 $r$ の閉円板を含む領域で $f$ が正則で，円周上 $|f|\\le M$ とする．$|z-a|<r$ のとき，テイラー多項式の剰余 $R_n(z)=f(z)-\\sum_{k=0}^{n-1}\\frac{f^{(k)}(a)}{k!}(z-a)^k$ について\n\\[ |R_n(z)|\\le\\frac{Mr}{r-|z-a|}\\left(\\frac{|z-a|}{r}\\right)^n \\]\nを示せ（コーシーの積分公式を用いてよい）．これから $|z-a|<r$ でテイラー級数が $f(z)$ に収束することを結論せよ．\n\\item 相対論的エネルギー $E=mc^2\\sqrt{1+(p/mc)^2}$ を $z=p/mc$ の関数 $f(z)=\\sqrt{1+z^2}$（主値）とみる．$z=0$ まわりのテイラー級数の収束半径を求め，運動量が $p>mc$ では非相対論的展開が収束しない理由を述べよ．\n\\item $z=\\frac12$ において $f$ を $z^4$ の項まで（$n=5$）で打ち切ったときの誤差について，(2) の評価で $r\\to1$ とした上界を求め，実際の誤差と比較せよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item $\\zeta\\neq z,a$ に対して\n\\[ \\frac{1}{\\zeta-z}=\\sum_{k=0}^{n-1}\\frac{(z-a)^k}{(\\zeta-a)^{k+1}}+\\frac{(z-a)^n}{(\\zeta-z)(\\zeta-a)^n} \\]\nを示せ．\n\\item $a$ 中心・半径 $r$ の閉円板を含む領域で $f$ が正則で，円周上 $|f|\\le M$ とする．$|z-a|<r$ のとき，テイラー多項式の剰余 $R_n(z)=f(z)-\\sum_{k=0}^{n-1}\\frac{f^{(k)}(a)}{k!}(z-a)^k$ について\n\\[ |R_n(z)|\\le\\frac{Mr}{r-|z-a|}\\left(\\frac{|z-a|}{r}\\right)^n \\]\nを示せ（コーシーの積分公式を用いてよい）．これから $|z-a|<r$ でテイラー級数が $f(z)$ に収束することを結論せよ．\n\\item 相対論的エネルギー $E=mc^2\\sqrt{1+(p/mc)^2}$ を $z=p/mc$ の関数 $f(z)=\\sqrt{1+z^2}$（主値）とみる．$z=0$ まわりのテイラー級数の収束半径を求め，運動量が $p>mc$ では非相対論的展開が収束しない理由を述べよ．\n\\item 実数 $z=x$（$0<x<1$）において $f$ を $z^4$ の項まで（$n=5$）で打ち切ったときの誤差について，(2) の評価で $r\\to1$ とした上界 $B(x)$ を求めよ．実際の誤差の主要項（次の項）と比べ，比を $x\\to0$ の最低次で求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1)(2) 証明（解説参照）　(3) 収束半径 1（特異点 $z=\\pm i$，すなわち $p=\\pm imc$）　(4) 上界 $\\sqrt2/16\\approx0.088$，実際の誤差 $\\sqrt5/2-\\frac{143}{128}\\approx8.5\\times10^{-4}$"
+   "tex": "(1)(2) 証明（解説参照）　(3) 収束半径 1（特異点 $z=\\pm i$，すなわち $p=\\pm imc$）　(4) $B(x)=\\dfrac{\\sqrt2\\,x^5}{1-x}$，実際の誤差の主要項 $\\dfrac{x^6}{16}$，比（上界/実際）$\\simeq\\dfrac{16\\sqrt2}{x}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $c=\\dfrac{z-a}{\\zeta-a}\\ (\\neq1)$ とおくと $\\dfrac1{\\zeta-z}=\\dfrac1{(\\zeta-a)(1-c)}$．有限等比級数 $\\dfrac1{1-c}=\\sum_{k=0}^{n-1}c^k+\\dfrac{c^n}{1-c}$ に代入し，$\\dfrac{c^n}{(\\zeta-a)(1-c)}=\\dfrac{(z-a)^n}{(\\zeta-a)^n(\\zeta-z)}$ を用いればよい．\n\n(2) $C:\\ |\\zeta-a|=r$ としてコーシーの積分公式 $f(z)=\\frac1{2\\pi i}\\oint_C\\frac{f(\\zeta)}{\\zeta-z}d\\zeta$ に (1) を代入し，$\\frac1{2\\pi i}\\oint\\frac{f(\\zeta)}{(\\zeta-a)^{k+1}}d\\zeta=\\frac{f^{(k)}(a)}{k!}$ を用いると\n\\[\nR_n(z)=\\frac{(z-a)^n}{2\\pi i}\\oint_C\\frac{f(\\zeta)}{(\\zeta-z)(\\zeta-a)^n}d\\zeta .\n\\]\n$C$ 上 $|\\zeta-z|\\ge r-|z-a|$ より $|R_n|\\le\\dfrac{|z-a|^n}{2\\pi}\\cdot\\dfrac{M\\cdot2\\pi r}{(r-|z-a|)r^n}$．$|z-a|/r<1$ だから $n\\to\\infty$ で $R_n\\to0$，テイラー級数は $f(z)$ に収束する．\n\n(3) $\\sqrt{1+z^2}=1+\\frac{z^2}2-\\frac{z^4}8+\\frac{z^6}{16}-\\cdots$．主値の平方根は $1+z^2=0$，すなわち $z=\\pm i$ で正則でない（分岐点）．$|z|<1$ では $|z^2|<1$ より $1+z^2$ は右半平面にあり $f$ は正則．したがって収束半径は最も近い特異点までの距離 1．実の $p$ に対しては何の異常もないが，複素平面上の分岐点 $p=\\pm imc$ が収束半径 $mc$ を決めるので，$p>mc$ では非相対論的展開 $mc^2+\\frac{p^2}{2m}-\\frac{p^4}{8m^3c^2}+\\cdots$ は発散する．\n\n(4) $r<1$ の円周上 $|1+\\zeta^2|\\le1+r^2$ より $M=\\sqrt{1+r^2}$．$|z|=\\frac12$，$n=5$ で\n\\[\n|R_5|\\le\\frac{\\sqrt{1+r^2}\\,r}{r-\\frac12}\\left(\\frac1{2r}\\right)^5\\xrightarrow{r\\to1}\\frac{\\sqrt2}{1/2}\\cdot\\frac1{32}=\\frac{\\sqrt2}{16}\\approx0.088 .\n\\]\n（各 $r<1$ で成り立つ不等式の極限なので上界として正しい．）実際の誤差は $\\sqrt{5}/2-\\left(1+\\frac18-\\frac1{128}\\right)\\approx1.118034-1.117188=8.5\\times10^{-4}$ で，上界より 2 桁小さい．評価式は奇数次係数が 0 であることや係数の符号の打ち消しを使わず，減衰率 $(|z|/r)^n$ の $r$ が収束半径 1 で頭打ちになるため粗い．実際の誤差はほぼ次の項 $z^6/16=1/1024\\approx9.8\\times10^{-4}$ と同程度である．"
+    "tex": "(1) $c=\\dfrac{z-a}{\\zeta-a}\\ (\\neq1)$ とおくと $\\dfrac1{\\zeta-z}=\\dfrac1{(\\zeta-a)(1-c)}$．有限等比級数 $\\dfrac1{1-c}=\\sum_{k=0}^{n-1}c^k+\\dfrac{c^n}{1-c}$ に代入し，$\\dfrac{c^n}{(\\zeta-a)(1-c)}=\\dfrac{(z-a)^n}{(\\zeta-a)^n(\\zeta-z)}$ を用いればよい．\n\n(2) $C:\\ |\\zeta-a|=r$ としてコーシーの積分公式 $f(z)=\\frac1{2\\pi i}\\oint_C\\frac{f(\\zeta)}{\\zeta-z}d\\zeta$ に (1) を代入し，$\\frac1{2\\pi i}\\oint\\frac{f(\\zeta)}{(\\zeta-a)^{k+1}}d\\zeta=\\frac{f^{(k)}(a)}{k!}$ を用いると\n\\[\nR_n(z)=\\frac{(z-a)^n}{2\\pi i}\\oint_C\\frac{f(\\zeta)}{(\\zeta-z)(\\zeta-a)^n}d\\zeta .\n\\]\n$C$ 上 $|\\zeta-z|\\ge r-|z-a|$ より $|R_n|\\le\\dfrac{|z-a|^n}{2\\pi}\\cdot\\dfrac{M\\cdot2\\pi r}{(r-|z-a|)r^n}$．$|z-a|/r<1$ だから $n\\to\\infty$ で $R_n\\to0$，テイラー級数は $f(z)$ に収束する．\n\n(3) $\\sqrt{1+z^2}=1+\\frac{z^2}2-\\frac{z^4}8+\\frac{z^6}{16}-\\cdots$．主値の平方根は $1+z^2=0$，すなわち $z=\\pm i$ で正則でない（分岐点）．$|z|<1$ では $|z^2|<1$ より $1+z^2$ は右半平面にあり $f$ は正則．したがって収束半径は最も近い特異点までの距離 1．実の $p$ に対しては何の異常もないが，複素平面上の分岐点 $p=\\pm imc$ が収束半径 $mc$ を決めるので，$p>mc$ では非相対論的展開 $mc^2+\\frac{p^2}{2m}-\\frac{p^4}{8m^3c^2}+\\cdots$ は発散する．\n\n(4) $r<1$ の円周上 $|1+\\zeta^2|\\le1+r^2$ より $M=\\sqrt{1+r^2}$．$|z|=x$，$n=5$ で\n\\[\n|R_5|\\le\\frac{\\sqrt{1+r^2}\\,r}{r-x}\\left(\\frac{x}{r}\\right)^5\\xrightarrow{r\\to1}\\boldsymbol{B(x)=\\frac{\\sqrt2\\,x^5}{1-x}} .\n\\]\n（各 $r<1$ で成り立つ不等式の極限なので上界として正しい．）実際の誤差は次の項 $\\boldsymbol{x^6/16}$ でほぼ決まり，比は $\\dfrac{B}{x^6/16}=\\dfrac{16\\sqrt2}{x(1-x)}\\simeq\\boldsymbol{\\dfrac{16\\sqrt2}{x}}$．$x=\\frac12$ でも上界は実際の誤差（約 $8.5\\times10^{-4}$）より 2 桁大きい．評価式は奇数次係数が 0 であることや係数の符号の打ち消しを使わず，減衰率 $(|z|/r)^n$ の $r$ が収束半径 1 で頭打ちになるため粗い．"
    }
   ],
   "idea": {
@@ -4015,7 +4015,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $B(x)$：sqrt(2) x^5/(1-x) ; 主要項：x^6/16 ; 比：16 sqrt(2)/x"
   },
   "methods": [],
   "tags": [
@@ -4597,16 +4597,16 @@
   "theme": "ローラン主要部とテイラー係数の漸近形",
   "topic": "ローラン主要部とテイラー係数の漸近形",
   "statement": {
-   "tex": "$f(z)=\\dfrac{e^{z}}{(z-2)^2}$ について次に答えよ．\n\\begin{enumerate}\n\\item $z=2$ のまわりのローラン展開を求め，主要部と留数を答えよ．\n\\item $f$ の $z=0$ のまわりのテイラー展開 $f(z)=\\sum_{n\\ge0}c_nz^n$ の収束半径を答えよ．さらに，(1) の主要部を差し引いた関数が整関数であることを用いて\n\\[c_n=\\frac{e^2(n-1)}{2^{n+2}}+d_n\\]\nと書けるとき，$d_n$ は任意の $R>0$ に対し $|d_n|R^n\\to0$ を満たすほど速く減衰することを示せ．\n\\item $c_{10}$ の近似値を (2) の主項から有効数字 3 桁で求めよ．\n\\end{enumerate}"
+   "tex": "$a>0$ として $f(z)=\\dfrac{e^{z}}{(z-a)^2}$ について次に答えよ．\n\\begin{enumerate}\n\\item $z=a$ のまわりのローラン展開を求め，主要部と留数を答えよ．\n\\item $f$ の $z=0$ のまわりのテイラー展開 $f(z)=\\sum_{n\\ge0}c_nz^n$ の収束半径を答えよ．さらに，(1) の主要部を差し引いた関数が整関数であることを用いて\n\\[c_n=(\\text{主要部からの寄与})+d_n\\]\nと書くとき，主要部からの寄与を $a,\\ n$ で表し，$d_n$ は任意の $R>0$ に対し $|d_n|R^n\\to0$ を満たすほど速く減衰することを示せ．\n\\item (2) を用いて $\\displaystyle\\lim_{n\\to\\infty}\\frac{c_{n+1}}{c_n}$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $f=\\sum_{k\\ge0}\\dfrac{e^2(z-2)^{k-2}}{k!}$，主要部 $\\dfrac{e^2}{(z-2)^2}+\\dfrac{e^2}{z-2}$，留数 $e^2$．(2) 収束半径 2（証明は解説）．(3) $c_{10}\\approx1.62\\times10^{-2}$．"
+   "tex": "(1) $f=\\sum_{k\\ge0}\\dfrac{e^a(z-a)^{k-2}}{k!}$，主要部 $\\dfrac{e^a}{(z-a)^2}+\\dfrac{e^a}{z-a}$，留数 $e^a$　(2) 収束半径 $a$，主要部からの寄与 $\\dfrac{e^a(n+1-a)}{a^{n+2}}$　(3) $\\dfrac1a$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $w=z-2$ として $e^z=e^2e^w=e^2\\sum_k w^k/k!$．よって\n\\[f=\\frac{e^2}{w^2}+\\frac{e^2}{w}+\\frac{e^2}{2}+\\frac{e^2}{6}w+\\cdots=\\sum_{k=0}^\\infty\\frac{e^2}{k!}(z-2)^{k-2}\\quad(0<|z-2|<\\infty).\\]\n主要部は $e^2/(z-2)^2+e^2/(z-2)$，留数は $e^2$．\n\n(2) 原点に最も近い特異点は $z=2$ なので収束半径は 2．$h(z)=f(z)-\\dfrac{e^2}{(z-2)^2}-\\dfrac{e^2}{z-2}$ は $z=2$ で除去可能で，他に特異点がないから整関数．整関数のテイラー係数 $d_n$ はコーシーの評価 $|d_n|\\le M(R')/R'^n$ が任意の $R'$ で成り立つので，$R'=2R$ とすれば $|d_n|R^n\\le M(2R)2^{-n}\\to0$．\n一方，$|z|<2$ で\n\\[\\frac1{(z-2)^2}=\\frac14\\sum_{n\\ge0}(n+1)\\left(\\frac z2\\right)^n,\\qquad \\frac1{z-2}=-\\frac12\\sum_{n\\ge0}\\left(\\frac z2\\right)^n\\]\nより主要部の係数は $e^2 2^{-n}\\left(\\dfrac{n+1}4-\\dfrac12\\right)=\\dfrac{e^2(n-1)}{2^{n+2}}$．したがって $c_n=\\dfrac{e^2(n-1)}{2^{n+2}}+d_n$．\n\n(3) $c_{10}\\approx\\dfrac{9e^2}{2^{12}}=\\dfrac{9\\times7.389}{4096}=1.62\\times10^{-2}$．（厳密値 $0.0162357\\ldots$ との差は $3\\times10^{-9}$ 程度で，$d_n$ の急速な減衰を反映している．）"
+    "tex": "(1) $w=z-a$ として $e^z=e^ae^w=e^a\\sum_k w^k/k!$．よって\n\\[f=\\frac{e^a}{w^2}+\\frac{e^a}{w}+\\frac{e^a}{2}+\\frac{e^a}{6}w+\\cdots=\\sum_{k=0}^\\infty\\frac{e^a}{k!}(z-a)^{k-2}\\quad(0<|z-a|<\\infty).\\]\n主要部は $\\boldsymbol{e^a/(z-a)^2+e^a/(z-a)}$，留数は $\\boldsymbol{e^a}$．\n\n(2) 原点に最も近い特異点は $z=a$ なので収束半径は $\\boldsymbol a$．$h(z)=f(z)-\\dfrac{e^a}{(z-a)^2}-\\dfrac{e^a}{z-a}$ は $z=a$ で除去可能で，他に特異点がないから整関数．整関数のテイラー係数 $d_n$ はコーシーの評価 $|d_n|\\le M(R')/R'^n$ が任意の $R'$ で成り立つので，$R'=2R$ とすれば $|d_n|R^n\\le M(2R)2^{-n}\\to0$．\n一方，$|z|<a$ で\n\\[\\frac1{(z-a)^2}=\\frac1{a^2}\\sum_{n\\ge0}(n+1)\\left(\\frac za\\right)^n,\\qquad \\frac1{z-a}=-\\frac1a\\sum_{n\\ge0}\\left(\\frac za\\right)^n\\]\nより主要部の係数は $e^a a^{-n}\\left(\\dfrac{n+1}{a^2}-\\dfrac1a\\right)=\\boldsymbol{\\dfrac{e^a(n+1-a)}{a^{n+2}}}$．\n\n(3) $d_n$ は $a^{-n}$ よりはるかに速く減衰するので，$n\\to\\infty$ で\n\\[\\frac{c_{n+1}}{c_n}\\simeq\\frac{1}{a}\\cdot\\frac{n+2-a}{n+1-a}\\to\\boldsymbol{\\frac1a}.\\]\n（$a=2$，$n=10$ では主項 $9e^2/2^{12}\\approx0.0162357$ と厳密値の差は $3\\times10^{-9}$ 程度で，$d_n$ の急速な減衰を反映している．）"
    }
   ],
   "idea": {
@@ -4614,7 +4614,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 収束半径：a ; 主要部からの寄与：e^a (n+1-a)/a^(n+2)\n(3) 1/a"
   },
   "methods": [],
   "tags": [

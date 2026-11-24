@@ -55,19 +55,19 @@
   "field": "SM-38",
   "level": 0,
   "minutes": 8,
-  "theme": "フェルミ分布関数の性質と室温での値",
-  "topic": "フェルミ分布関数の性質と室温での値",
+  "theme": "フェルミ分布関数の性質とボルツマン因子への近似",
+  "topic": "フェルミ分布関数の性質とボルツマン因子への近似",
   "statement": {
-   "tex": "温度 $T$ で，エネルギー $E$ の1つの状態に電子が入っている確率（平均の個数）は，フェルミ分布関数\n\\[ f(E) = \\frac{1}{\\exp\\left(\\dfrac{E - \\mu}{k_BT}\\right) + 1} \\]\nで与えられる（$\\mu$ は化学ポテンシャルという定数）．\n\\begin{enumerate}\n\\item $f(\\mu)$ を求めよ．\n\\item 任意の $\\Delta$ について $f(\\mu + \\Delta) + f(\\mu - \\Delta)$ を求めよ．\n\\item 室温で $k_BT = 0.0259\\,\\mathrm{eV}$ とする．$E - \\mu = 0.100\\,\\mathrm{eV}$ の状態に電子がいる確率を求めよ．\n\\end{enumerate}"
+   "tex": "温度 $T$ で，エネルギー $E$ の1つの状態に電子が入っている確率（平均の個数）は，フェルミ分布関数\n\\[ f(E) = \\frac{1}{\\exp\\left(\\dfrac{E - \\mu}{k_BT}\\right) + 1} \\]\nで与えられる（$\\mu$ は化学ポテンシャルという定数）．\n\\begin{enumerate}\n\\item $f(\\mu)$ を求めよ．\n\\item 任意の $\\Delta$ について $f(\\mu + \\Delta) + f(\\mu - \\Delta)$ を求めよ．\n\\item $E - \\mu = \\varepsilon$（$\\varepsilon>0$）の状態に電子がいる確率を求めよ．また $\\varepsilon\\gg k_BT$ のときの近似式を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\frac{1}{2}$ \\quad (2) $1$ \\quad (3) $\\approx 0.0206$"
+   "tex": "(1) $\\frac{1}{2}$ \\quad (2) $1$ \\quad (3) $\\dfrac{1}{e^{\\varepsilon/k_BT}+1}$，$\\varepsilon\\gg k_BT$ で $e^{-\\varepsilon/k_BT}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $E = \\mu$ では指数が $e^0 = 1$ なので $f(\\mu) = \\boldsymbol{\\dfrac{1}{2}}$．\n\n(2) $x = \\Delta/k_BT$ とおくと\n\\[ f(\\mu+\\Delta) + f(\\mu-\\Delta) = \\frac{1}{e^{x}+1} + \\frac{1}{e^{-x}+1} = \\frac{1}{e^{x}+1} + \\frac{e^{x}}{1+e^{x}} = \\boldsymbol{1}. \\]\n$\\mu$ より $\\Delta$ だけ上の状態に電子がいる確率と，$\\Delta$ だけ下の状態が空いている確率（ホールの確率）が等しい．\n\n(3) $x = 0.100/0.0259 \\approx 3.86$，$f = \\dfrac{1}{e^{3.86}+1} \\approx \\boldsymbol{0.0206}$．\n\n$T \\to 0$ では $f$ は $E<\\mu$ で1，$E>\\mu$ で0の階段になる．有限温度では $\\mu$ のまわり幅 $k_BT$ 程度だけがぼやける．金属の比熱や半導体の電子密度は，このぼやけた部分の電子だけで決まる．次は状態密度とかけて積分し，電子気体の性質を求める．"
+    "tex": "(1) $E = \\mu$ では指数が $e^0 = 1$ なので $f(\\mu) = \\boldsymbol{\\dfrac{1}{2}}$．\n\n(2) $x = \\Delta/k_BT$ とおくと\n\\[ f(\\mu+\\Delta) + f(\\mu-\\Delta) = \\frac{1}{e^{x}+1} + \\frac{1}{e^{-x}+1} = \\frac{1}{e^{x}+1} + \\frac{e^{x}}{1+e^{x}} = \\boldsymbol{1}. \\]\n$\\mu$ より $\\Delta$ だけ上の状態に電子がいる確率と，$\\Delta$ だけ下の状態が空いている確率（ホールの確率）が等しい．\n\n(3) 定義に代入して $f=\\boldsymbol{\\dfrac{1}{e^{\\varepsilon/k_BT}+1}}$．$\\varepsilon\\gg k_BT$ では分母の $1$ が無視できて $f\\simeq\\boldsymbol{e^{-\\varepsilon/k_BT}}$（ボルツマン因子）になる．たとえば室温（$k_BT\\approx0.026\\,\\mathrm{eV}$）で $\\varepsilon=0.1\\,\\mathrm{eV}$ なら約 $2\\%$ である．\n\n$T \\to 0$ では $f$ は $E<\\mu$ で1，$E>\\mu$ で0の階段になる．有限温度では $\\mu$ のまわり幅 $k_BT$ 程度だけがぼやける．金属の比熱や半導体の電子密度は，このぼやけた部分の電子だけで決まる．次は状態密度とかけて積分し，電子気体の性質を求める．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) f(μ)：1/2\n(2) 和：1\n(3) 確率：≈0.0206"
+   "spec": "(1) f(μ)：1/2\n(2) 和：1\n(3) 確率：1/(e^(ε/(k_B T))+1) ; 近似：e^(-ε/(k_B T))"
   },
   "methods": [],
   "tags": [
@@ -252,16 +252,16 @@
   "theme": "光子の占有数のゆらぎ：ボース粒子のゆらぎの増大",
   "topic": "光子の占有数のゆらぎ：ボース粒子のゆらぎの増大",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 理想ボース気体で状態 $r$ の占有数のゆらぎが $\\langle\\Delta n_r^2\\rangle=n_r(1+n_r)$ であることを示せ．\n\\item $\\hbar\\omega=k_BT$ の光子のモードで $n$ と $\\Delta n/n$ を求め，古典的な粒子（ポアソン分布）の値と比べよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 理想ボース気体で状態 $r$ の占有数のゆらぎが $\\langle\\Delta n_r^2\\rangle=n_r(1+n_r)$ であることを示せ．\n\\item 温度 $T$ で角振動数 $\\omega$ の光子のモードについて，平均占有数 $n$ と相対ゆらぎ $\\Delta n/n$ を $x=\\hbar\\omega/k_BT$ で表せ．古典的な粒子（ポアソン分布）の値 $1/\\sqrt n$ との比を求め，常に $1$ より大きいことを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明　(2) $n\\approx0.58$，$\\Delta n/n\\approx1.65$；ポアソンの $1/\\sqrt n=1.31$ より大きい"
+   "tex": "(1) 証明　(2) $n=\\dfrac{1}{e^x-1}$，$\\dfrac{\\Delta n}{n}=e^{x/2}$；ポアソンとの比 $\\dfrac{1}{\\sqrt{1-e^{-x}}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\langle\\Delta n^2\\rangle=k_BT\\partial_\\mu n$，$n=\\frac{1}{e^{\\beta(\\varepsilon-\\mu)}-1}$ で $\\partial_\\mu n=\\beta n(1+n)$．\\hfill$\\square$\n\n(2) $n=\\frac{1}{e-1}=\\boldsymbol{0.58}$，$\\Delta n/n=\\sqrt{(1+n)/n}=\\boldsymbol{1.65}$．ポアソンの $1/\\sqrt n=1.31$ より大きい（光子の群がり：ハンベリー・ブラウン＝トゥイス効果）．"
+    "tex": "(1) $\\langle\\Delta n^2\\rangle=k_BT\\partial_\\mu n$，$n=\\frac{1}{e^{\\beta(\\varepsilon-\\mu)}-1}$ で $\\partial_\\mu n=\\beta n(1+n)$．\n\n(2) $\\boldsymbol{n=\\dfrac{1}{e^x-1}}$，$1+n=\\dfrac{e^x}{e^x-1}$ より\n\\[ \\frac{\\Delta n}{n}=\\sqrt{\\frac{1+n}{n}}=\\boldsymbol{e^{x/2}}. \\]\nポアソン分布では $1/\\sqrt n=\\sqrt{e^x-1}$ なので，比は\n\\[ \\frac{e^{x/2}}{\\sqrt{e^x-1}}=\\boldsymbol{\\frac{1}{\\sqrt{1-e^{-x}}}}>1. \\]\n光子のゆらぎは常に古典的な粒子より大きい（光子の群がり：ハンベリー・ブラウン＝トゥイス効果）．$x\\gg1$（$n\\ll1$）では比は $1$ に近づき粒子的，$x\\ll1$（$n\\gg1$）では比 $\\simeq1/\\sqrt x$ と大きくなり，相対ゆらぎ $\\simeq1$ の古典的な波の強度ゆらぎになる．"
    }
   ],
   "idea": {
@@ -269,7 +269,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述"
+   "spec": "(1) 証明\n(2) $n$：1/(e^x - 1) ; $\\Delta n/n$：e^(x/2) ; 比：1/sqrt(1 - e^(-x))"
   },
   "methods": [],
   "tags": [
@@ -351,16 +351,16 @@
   "theme": "3次元空洞のモード数と可視光",
   "topic": "3次元空洞のモード数と可視光",
   "statement": {
-   "tex": "体積 $V$ の直方体の内部を伝わる横波（伝搬速度 $v$，偏りの向きは独立に 2 つ）を考える．\n\\begin{enumerate}\n\\item 角振動数 $\\omega$ から $\\omega+d\\omega$ の間にある固有振動の数 $dN$ を求めよ．\n\\item 体積 $1\\ \\mathrm{cm^3}$ の空洞内で，波長 $500\\ \\mathrm{nm}$ から $600\\ \\mathrm{nm}$ の間にある電磁波の固有振動の数を求めよ．\n\\item 形が立方体でなく任意の直方体でも (1) の結果が変わらない理由を述べよ．\n\\end{enumerate}"
+   "tex": "体積 $V$ の直方体の内部を伝わる横波（伝搬速度 $v$，偏りの向きは独立に 2 つ）を考える．\n\\begin{enumerate}\n\\item 角振動数 $\\omega$ から $\\omega+d\\omega$ の間にある固有振動の数 $dN$ を求めよ．\n\\item 体積 $V$ の空洞内で，波長 $\\lambda_1$ から $\\lambda_2$（$\\lambda_1<\\lambda_2$）の間にある電磁波の固有振動の数を求めよ．\n\\item 形が立方体でなく任意の直方体でも (1) の結果が変わらない理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $dN=\\dfrac{V\\omega^2}{\\pi^2v^3}d\\omega$　(2) $\\approx2.8\\times10^{13}$ 個　(3) 解説参照"
+   "tex": "(1) $dN=\\dfrac{V\\omega^2}{\\pi^2v^3}d\\omega$　(2) $\\dfrac{8\\pi V}{3}\\left(\\dfrac1{\\lambda_1^3}-\\dfrac1{\\lambda_2^3}\\right)$　(3) 解説参照"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 辺 $a,b,c$ で固定端条件なら波数ベクトル $\\boldsymbol k=(\\pi n_1/a,\\pi n_2/b,\\pi n_3/c)$（$n_i\\ge1$）．$k$ 空間で 1 点あたりの体積は $\\pi^3/V$．$|\\boldsymbol k|<k$ の第1象限の体積は $\\frac18\\cdot\\frac43\\pi k^3$ だから，偏り 2 つを掛けて $N=2\\cdot\\dfrac{\\pi k^3/6}{\\pi^3/V}=\\dfrac{Vk^3}{3\\pi^2}$．$k=\\omega/v$ として $dN=\\dfrac{V\\omega^2}{\\pi^2v^3}d\\omega$．\n\n(2) 波長で表すと $N=\\dfrac{8\\pi V}{3}\\left(\\dfrac1{\\lambda_1^3}-\\dfrac1{\\lambda_2^3}\\right)$．$V=10^{-6}\\ \\mathrm{m^3}$，$\\lambda_1=5.0\\times10^{-7}\\ \\mathrm m$，$\\lambda_2=6.0\\times10^{-7}\\ \\mathrm m$ で\n$N=\\dfrac{8\\pi\\times10^{-6}}{3}(8.00\\times10^{18}-4.63\\times10^{18})=2.8\\times10^{13}$．\n\n(3) $k$ 空間の格子点 1 個あたりの体積は $\\pi^3/(abc)=\\pi^3/V$ で，辺の比によらず体積だけで決まる．$\\omega$ が大きければ球面内の格子点数は体積比で決まるので，形によらない．"
+    "tex": "(1) 辺 $a,b,c$ で固定端条件なら波数ベクトル $\\boldsymbol k=(\\pi n_1/a,\\pi n_2/b,\\pi n_3/c)$（$n_i\\ge1$）．$k$ 空間で 1 点あたりの体積は $\\pi^3/V$．$|\\boldsymbol k|<k$ の第1象限の体積は $\\frac18\\cdot\\frac43\\pi k^3$ だから，偏り 2 つを掛けて $N=2\\cdot\\dfrac{\\pi k^3/6}{\\pi^3/V}=\\dfrac{Vk^3}{3\\pi^2}$．$k=\\omega/v$ として $dN=\\dfrac{V\\omega^2}{\\pi^2v^3}d\\omega$．\n\n(2) (1) より $N(k)=\\dfrac{Vk^3}{3\\pi^2}$ で，$k=2\\pi/\\lambda$ を代入すると $N=\\dfrac{8\\pi V}{3\\lambda^3}$．よって\n\\[ \\boldsymbol{N=\\frac{8\\pi V}{3}\\left(\\frac1{\\lambda_1^3}-\\frac1{\\lambda_2^3}\\right)}. \\]\n$1\\,\\mathrm{cm^3}$ の空洞で可視光の一部（$500$〜$600\\,\\mathrm{nm}$）を考えても $10^{13}$ 個程度のモードがある．\n\n(3) $k$ 空間の格子点 1 個あたりの体積は $\\pi^3/(abc)=\\pi^3/V$ で，辺の比によらず体積だけで決まる．$\\omega$ が大きければ球面内の格子点数は体積比で決まるので，形によらない．"
    }
   ],
   "idea": {
@@ -368,7 +368,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $dN$：((V ω ^(2))/(pi ^(2) v ^(3))) d ω\n(2) 記述\n(3) 記述"
+   "spec": "(1) $dN$：((V ω ^(2))/(pi ^(2) v ^(3))) d ω\n(2) 個数：8 pi V/3 (1/λ_1^3 - 1/λ_2^3)\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -400,16 +400,16 @@
   "theme": "d 次元フェルミ気体のフェルミエネルギーと平均エネルギー",
   "topic": "d 次元フェルミ気体のフェルミエネルギーと平均エネルギー",
   "statement": {
-   "tex": "絶対零度の自由電子気体（スピン縮退 2）を考える．電子の質量を $m$ とする．\n\\begin{enumerate}\n\\item $d$ 次元（$d=1,2,3$）ではエネルギー状態密度が $g(E)\\propto E^{d/2-1}$ となることを用いて，平均運動エネルギー $\\langle E\\rangle$ をフェルミエネルギー $E_F$ で表せ．\n\\item 2 次元電子気体の面密度を $n_s$ として $E_F$ を求めよ．\n\\item GaAs ヘテロ界面の 2 次元電子（有効質量 $0.067m_e$，$n_s=3.0\\times10^{11}\\ \\mathrm{cm^{-2}}$）の $E_F$ を meV で求めよ．\n\\end{enumerate}"
+   "tex": "絶対零度の自由電子気体（スピン縮退 2）を考える．電子の質量を $m$ とする．\n\\begin{enumerate}\n\\item $d$ 次元（$d=1,2,3$）ではエネルギー状態密度が $g(E)\\propto E^{d/2-1}$ となることを用いて，平均運動エネルギー $\\langle E\\rangle$ をフェルミエネルギー $E_F$ で表せ．\n\\item 2 次元電子気体の面密度を $n_s$ として $E_F$ を求めよ．\n\\item 半導体ヘテロ界面の 2 次元電子は有効質量 $m^*=\\alpha m$（$\\alpha<1$）をもつ．面密度 $n_s$ のときのフェルミ温度 $T_F=E_F/k_B$ を求め，同じ $n_s$ で $m^*=m$ の場合の何倍か答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle E\\rangle=\\dfrac{d}{d+2}E_F$（$d=1,2,3$ で $\\tfrac13,\\tfrac12,\\tfrac35$）　(2) $E_F=\\pi\\hbar^2n_s/m$　(3) 約 $11\\ \\mathrm{meV}$"
+   "tex": "(1) $\\langle E\\rangle=\\dfrac{d}{d+2}E_F$（$d=1,2,3$ で $\\tfrac13,\\tfrac12,\\tfrac35$）　(2) $E_F=\\pi\\hbar^2n_s/m$　(3) $T_F=\\dfrac{\\pi\\hbar^2n_s}{\\alpha mk_B}$，$\\dfrac1\\alpha$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\langle E\\rangle=\\dfrac{\\int_0^{E_F}E\\cdot E^{d/2-1}dE}{\\int_0^{E_F}E^{d/2-1}dE}=\\dfrac{d/2}{d/2+1}E_F=\\dfrac{d}{d+2}E_F$．\n\n(2) 面積 $S$ の 2 次元系で波数空間の状態密度は $S/(2\\pi)^2$．スピン 2 を含め $N=2\\cdot\\pi k_F^2\\cdot S/(2\\pi)^2$ より $k_F^2=2\\pi n_s$，\n\\[\nE_F=\\frac{\\hbar^2k_F^2}{2m}=\\frac{\\pi\\hbar^2n_s}{m}.\n\\]\n（$g(E)=mS/\\pi\\hbar^2$ は $E$ によらず一定で，(1) の $d=2$ と整合．）\n\n(3) $n_s=3.0\\times10^{15}\\ \\mathrm{m^{-2}}$，$m=0.067\\times9.11\\times10^{-31}\\ \\mathrm{kg}$ を代入して\n\\[\nE_F=\\frac{\\pi(1.055\\times10^{-34})^2\\times3.0\\times10^{15}}{6.10\\times10^{-32}}=1.72\\times10^{-21}\\ \\mathrm J\\approx10.7\\ \\mathrm{meV}.\n\\]\n$kT$ に換算して約 $124\\ \\mathrm K$ に相当し，液体ヘリウム温度では強く縮退している．"
+    "tex": "(1) $\\langle E\\rangle=\\dfrac{\\int_0^{E_F}E\\cdot E^{d/2-1}dE}{\\int_0^{E_F}E^{d/2-1}dE}=\\dfrac{d/2}{d/2+1}E_F=\\dfrac{d}{d+2}E_F$．\n\n(2) 面積 $S$ の 2 次元系で波数空間の状態密度は $S/(2\\pi)^2$．スピン 2 を含め $N=2\\cdot\\pi k_F^2\\cdot S/(2\\pi)^2$ より $k_F^2=2\\pi n_s$，\n\\[\nE_F=\\frac{\\hbar^2k_F^2}{2m}=\\frac{\\pi\\hbar^2n_s}{m}.\n\\]\n（$g(E)=mS/\\pi\\hbar^2$ は $E$ によらず一定で，(1) の $d=2$ と整合．）\n\n(3) (2) の $m$ を $m^*=\\alpha m$ に置き換えて\n\\[\n\\boldsymbol{T_F=\\frac{\\pi\\hbar^2n_s}{\\alpha mk_B}},\n\\]\n$m^*=m$ の場合の $\\boldsymbol{1/\\alpha}$ 倍．有効質量が小さいほど同じ密度でもフェルミ温度が高い．GaAs（$\\alpha\\approx0.07$，$n_s\\sim10^{15}\\,\\mathrm{m^{-2}}$）では $T_F\\sim10^2\\,\\mathrm K$ となり，液体ヘリウム温度では強く縮退している．"
    }
   ],
   "idea": {
@@ -417,7 +417,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $E_F$：pi hbar ^(2) n_s / m\n(3) [meV]：≈11"
+   "spec": "(1) $\\langle E\\rangle$：d/(d+2) E_F\n(2) $E_F$：pi hbar ^(2) n_s / m\n(3) $T_F$：pi hbar^2 n_s/(α m k_B) ; 倍率：1/α"
   },
   "methods": [],
   "tags": [
@@ -449,16 +449,16 @@
   "theme": "古典気体との比較と縮退温度",
   "topic": "古典気体との比較と縮退温度",
   "statement": {
-   "tex": "銅（密度 $8.96\\ \\mathrm{g/cm^3}$，モル質量 $63.5\\ \\mathrm{g/mol}$，1 原子あたり自由電子 1 個）の伝導電子を考える．\n\\begin{enumerate}\n\\item $T=0$ における電子 1 個の平均運動エネルギーに等しい平均エネルギーを，古典的な理想気体の電子がもつ温度 $T^*$ を求めよ．\n\\item 同じ数密度 $n$ の古典的な電子気体で，熱的ド・ブロイ波長 $\\lambda_T=h/\\sqrt{2\\pi mkT}$ が平均粒子間距離の目安 $n^{-1/3}$ に等しくなる温度 $T_{\\rm deg}$ を求めよ．\n\\item $kT_{\\rm deg}/E_F$ は $n$ によらない定数であることを示し，その値を求めよ．\n\\end{enumerate}"
+   "tex": "密度 $\\rho$，モル質量 $M$ の 1 価金属（1 原子あたり自由電子 1 個）の伝導電子（質量 $m$）を考える．アボガドロ定数を $N_A$，ボルツマン定数を $k$ とする．\n\\begin{enumerate}\n\\item $T=0$ における電子 1 個の平均運動エネルギーに等しい平均エネルギーを，古典的な理想気体の電子がもつ温度 $T^*$ を求めよ．\n\\item 同じ数密度 $n$ の古典的な電子気体で，熱的ド・ブロイ波長 $\\lambda_T=h/\\sqrt{2\\pi mkT}$ が平均粒子間距離の目安 $n^{-1/3}$ に等しくなる温度 $T_{\\rm deg}$ を求めよ．\n\\item $kT_{\\rm deg}/E_F$ は $n$ によらない定数であることを示し，その値を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T^*=2E_F/5k\\approx3.3\\times10^4\\ \\mathrm K$　(2) $T_{\\rm deg}\\approx1.1\\times10^5\\ \\mathrm K$　(3) $4\\pi/(3\\pi^2)^{2/3}\\approx1.31$"
+   "tex": "(1) $T^*=\\dfrac{\\hbar^2}{5mk}\\left(\\dfrac{3\\pi^2\\rho N_A}{M}\\right)^{2/3}$　(2) $T_{\\mathrm{deg}}=\\dfrac{2\\pi\\hbar^2}{mk}\\left(\\dfrac{\\rho N_A}{M}\\right)^{2/3}$　(3) $\\dfrac{4\\pi}{(3\\pi^2)^{2/3}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$n=\\rho N_A/M=8.49\\times10^{28}\\ \\mathrm{m^{-3}}$，$E_F=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}=7.04\\ \\mathrm{eV}$．\n\n(1) $\\tfrac32kT^*=\\tfrac35E_F$ より $T^*=\\dfrac{2E_F}{5k}=3.3\\times10^4\\ \\mathrm K$．\n\n(2) $n\\lambda_T^3=1$ より $kT_{\\rm deg}=\\dfrac{h^2n^{2/3}}{2\\pi m}=\\dfrac{2\\pi\\hbar^2n^{2/3}}{m}$，数値は $T_{\\rm deg}\\approx1.07\\times10^5\\ \\mathrm K$．\n\n(3) $\\dfrac{kT_{\\rm deg}}{E_F}=\\dfrac{2\\pi\\hbar^2n^{2/3}/m}{\\hbar^2(3\\pi^2)^{2/3}n^{2/3}/2m}=\\dfrac{4\\pi}{(3\\pi^2)^{2/3}}\\approx1.31$．\n縮退が解ける温度はフェルミ温度と同程度で，室温の金属電子は完全に縮退している．"
+    "tex": "電子の数密度は $n=\\dfrac{\\rho N_A}{M}$，フェルミエネルギーは $E_F=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}$．\n\n(1) $\\tfrac32kT^*=\\tfrac35E_F$ より\n\\[ T^*=\\frac{2E_F}{5k}=\\boldsymbol{\\frac{\\hbar^2}{5mk}\\left(\\frac{3\\pi^2\\rho N_A}{M}\\right)^{2/3}}. \\]\n\n(2) $n\\lambda_T^3=1$ より $kT_{\\rm deg}=\\dfrac{h^2n^{2/3}}{2\\pi m}=\\dfrac{2\\pi\\hbar^2n^{2/3}}{m}$，すなわち\n\\[ \\boldsymbol{T_{\\rm deg}=\\frac{2\\pi\\hbar^2}{mk}\\left(\\frac{\\rho N_A}{M}\\right)^{2/3}}. \\]\n\n(3) $\\dfrac{kT_{\\rm deg}}{E_F}=\\dfrac{2\\pi\\hbar^2n^{2/3}/m}{\\hbar^2(3\\pi^2)^{2/3}n^{2/3}/2m}=\\boldsymbol{\\dfrac{4\\pi}{(3\\pi^2)^{2/3}}}\\approx1.31$．\n縮退が解ける温度はフェルミ温度と同程度である．銅のような金属では $n\\sim10^{29}\\,\\mathrm{m^{-3}}$ で $T_{\\rm deg}\\sim10^5\\,\\mathrm K$ となり，室温の金属電子は完全に縮退している．"
    }
   ],
   "idea": {
@@ -466,7 +466,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $T_{\\rm deg}$ [K]：≈1.1e5\n(3) ≈1.31"
+   "spec": "(1) $T^*$：hbar^2/(5 m k) (3 pi^2 ρ N_A/M)^(2/3)\n(2) $T_{\\rm deg}$：2 pi hbar^2/(m k) (ρ N_A/M)^(2/3)\n(3) 4 pi/(3 pi^2)^(2/3)"
   },
   "methods": [],
   "tags": [
@@ -550,16 +550,16 @@
   "theme": "フェルミ分布の遷移幅と温度の逆算",
   "topic": "フェルミ分布の遷移幅と温度の逆算",
   "statement": {
-   "tex": "フェルミ＝ディラック分布 $f(E)=\\dfrac1{e^{(E-E_F)/kT}+1}$ について答えよ（$k=8.617\\times10^{-5}\\,\\mathrm{eV/K}$）．\n\\begin{enumerate}\n\\item 占有確率が $0.9$ から $0.1$ まで変わるエネルギー幅を $kT$ 単位で求め，$300\\,\\mathrm{K}$ では何 eV か．\n\\item フェルミ準位より $0.20\\,\\mathrm{eV}$ 上の状態の占有確率がちょうど $1.0\\%$ になる温度を求めよ．\n\\item $-\\partial f/\\partial E$ の積分が 1 であること，最大値が $1/(4kT)$ であることを示し，その半値全幅を $kT$ 単位で求めよ．\n\\end{enumerate}"
+   "tex": "フェルミ＝ディラック分布 $f(E)=\\dfrac1{e^{(E-E_F)/kT}+1}$ について答えよ（$k$ はボルツマン定数）．\n\\begin{enumerate}\n\\item 占有確率が $0.9$ から $0.1$ まで変わるエネルギー幅を $kT$ 単位で求めよ．\n\\item フェルミ準位より $\\varepsilon$ だけ上の状態の占有確率がちょうど $p$（$0<p<1/2$）になる温度 $T$ を求めよ．\n\\item $-\\partial f/\\partial E$ の積分が 1 であること，最大値が $1/(4kT)$ であることを示し，その半値全幅を $kT$ 単位で求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $2\\ln9\\,kT\\approx4.39kT$，$0.114\\,\\mathrm{eV}$　(2) 約 $505\\,\\mathrm{K}$　(3) 半値全幅 $2\\ln(3+2\\sqrt2)\\,kT\\approx3.53kT$"
+   "tex": "(1) $2(\\ln9)kT$　(2) $T=\\dfrac{\\varepsilon}{k\\ln(1/p-1)}$　(3) 半値全幅 $2\\ln(3+2\\sqrt2)\\,kT\\approx3.53kT$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $f=p$ となるのは $x=(E-E_F)/kT=\\ln(1/p-1)$．$p=0.1$ で $x=\\ln9$，$p=0.9$ で $x=-\\ln9$．幅は $2\\ln9\\,kT=4.39kT$．$300\\,\\mathrm{K}$ では $kT=0.02585\\,\\mathrm{eV}$ なので $0.114\\,\\mathrm{eV}$．\n\n(2) $1/(e^{x}+1)=0.01$ より $x=\\ln99=4.595$．$T=\\dfrac{0.20}{k\\ln99}=\\dfrac{0.20}{8.617\\times10^{-5}\\times4.595}\\approx505\\,\\mathrm{K}$．\n\n(3) $-\\dfrac{\\partial f}{\\partial E}=\\dfrac1{kT}\\dfrac{e^x}{(e^x+1)^2}=\\dfrac1{4kT\\cosh^2(x/2)}$．積分は $f(-\\infty)-f(\\infty)=1$．最大は $x=0$ で $1/(4kT)$．半値は $\\cosh^2(x/2)=2$，$x/2=\\pm\\ln(1+\\sqrt2)$，よって半値全幅\n\\[\n\\Delta E=4\\ln(1+\\sqrt2)\\,kT=2\\ln(3+2\\sqrt2)\\,kT\\approx3.53kT.\n\\]\n$-\\partial f/\\partial E$ は低温で $\\delta(E-E_F)$ に近づき，ゾンマーフェルト展開の出発点となる．"
+    "tex": "(1) $f=p$ となるのは $x=(E-E_F)/kT=\\ln(1/p-1)$．$p=0.1$ で $x=\\ln9$，$p=0.9$ で $x=-\\ln9$．幅は $\\boldsymbol{2\\ln9\\,kT}\\approx4.39kT$．室温（$kT\\approx0.026\\,\\mathrm{eV}$）では約 $0.11\\,\\mathrm{eV}$ である．\n\n(2) $1/(e^{x}+1)=p$ より $x=\\varepsilon/kT=\\ln\\left(\\dfrac1p-1\\right)$．よって $\\boldsymbol{T=\\dfrac{\\varepsilon}{k\\ln(1/p-1)}}$．$p$ を小さくするほど温度は低くなるが，$\\ln$ を通してしか効かない．\n\n(3) $-\\dfrac{\\partial f}{\\partial E}=\\dfrac1{kT}\\dfrac{e^x}{(e^x+1)^2}=\\dfrac1{4kT\\cosh^2(x/2)}$．積分は $f(-\\infty)-f(\\infty)=1$．最大は $x=0$ で $1/(4kT)$．半値は $\\cosh^2(x/2)=2$，$x/2=\\pm\\ln(1+\\sqrt2)$，よって半値全幅\n\\[\n\\Delta E=4\\ln(1+\\sqrt2)\\,kT=2\\ln(3+2\\sqrt2)\\,kT\\approx3.53kT.\n\\]\n$-\\partial f/\\partial E$ は低温で $\\delta(E-E_F)$ に近づき，ゾンマーフェルト展開の出発点となる．"
    }
   ],
   "idea": {
@@ -567,7 +567,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [K]：≈505\n(3) 記述"
+   "spec": "(1) 幅：2 ln(9) k T\n(2) $T$：ε/(k ln(1/p - 1))\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -650,16 +650,16 @@
   "theme": "フェルミ分布の対称性と遷移幅",
   "topic": "フェルミ分布の対称性と遷移幅",
   "statement": {
-   "tex": "化学ポテンシャル $\\mu$，温度 $T$ のフェルミ＝ディラック分布 $f(E)=1/(e^{(E-\\mu)/k_BT}+1)$ について答えよ．\n\\begin{enumerate}\n\\item 任意の $\\Delta$ に対し $f(\\mu+\\Delta)+f(\\mu-\\Delta)=1$ を示し，この関係の物理的意味（電子と正孔）を述べよ．\n\\item $\\mu$ より $0.050\\ \\mathrm{eV}$ 高い状態の占有確率がちょうど $1\\%$ になる温度を求めよ．\n\\item $T=300\\ \\mathrm K$ で，占有確率が $0.9$ から $0.1$ まで下がるエネルギー幅と，$E=\\mu$ での傾き $|df/dE|$ を求めよ．\n\\end{enumerate}"
+   "tex": "化学ポテンシャル $\\mu$，温度 $T$ のフェルミ＝ディラック分布 $f(E)=1/(e^{(E-\\mu)/k_BT}+1)$ について答えよ．\n\\begin{enumerate}\n\\item 任意の $\\Delta$ に対し $f(\\mu+\\Delta)+f(\\mu-\\Delta)=1$ を示し，この関係の物理的意味（電子と正孔）を述べよ．\n\\item $\\mu$ より $\\varepsilon$ だけ高い状態の占有確率がちょうど $1\\%$ になる温度 $T_1$ を求めよ．\n\\item 温度 $T$ で，占有確率が $0.9$ から $0.1$ まで下がるエネルギー幅 $W$ と，$E=\\mu$ での傾き $|df/dE|$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）．$\\mu+\\Delta$ の電子の占有確率と $\\mu-\\Delta$ の空席（正孔）確率が等しい　(2) $T\\approx126\\ \\mathrm K$　(3) $2\\ln9\\,k_BT=0.114\\ \\mathrm{eV}$，$1/(4k_BT)=9.7\\ \\mathrm{eV^{-1}}$"
+   "tex": "(1) 証明（解説参照）．$\\mu+\\Delta$ の電子の占有確率と $\\mu-\\Delta$ の空席（正孔）確率が等しい　(2) $T_1=\\dfrac{\\varepsilon}{k_B\\ln99}$　(3) $W=2(\\ln9)k_BT$，$|df/dE|=\\dfrac{1}{4k_BT}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $x=\\Delta/k_BT$ とおくと\n\\[ f(\\mu+\\Delta)+f(\\mu-\\Delta)=\\frac1{e^x+1}+\\frac1{e^{-x}+1}=\\frac1{e^x+1}+\\frac{e^x}{1+e^x}=1. \\]\nすなわち $f(\\mu+\\Delta)=1-f(\\mu-\\Delta)$：$\\mu$ より $\\Delta$ 上の状態に電子がいる確率は，$\\Delta$ 下の状態が空いている（正孔がある）確率に等しい．分布は点 $(\\mu,1/2)$ について点対称である．\n\n(2) $f=0.01$ より $e^{\\Delta/k_BT}=99$，$k_BT=\\dfrac{0.050}{\\ln99}=0.01088$ eV，$T=\\dfrac{0.01088}{8.617\\times10^{-5}}=126$ K．\n\n(3) $f=0.9$ で $E-\\mu=-k_BT\\ln9$，$f=0.1$ で $E-\\mu=+k_BT\\ln9$．幅は $2\\ln9\\,k_BT=4.39k_BT=4.39\\times0.02585=0.114$ eV．\n$\\dfrac{df}{dE}=-\\dfrac1{k_BT}\\dfrac{e^x}{(e^x+1)^2}$ は $x=0$ で $-\\dfrac1{4k_BT}$．$|df/dE|=\\dfrac1{4\\times0.02585}=9.7\\ \\mathrm{eV^{-1}}$．傾き一定で直線近似すると遷移幅は $4k_BT$ で，(3) の $4.39k_BT$ に近い．"
+    "tex": "(1) $x=\\Delta/k_BT$ とおくと\n\\[ f(\\mu+\\Delta)+f(\\mu-\\Delta)=\\frac1{e^x+1}+\\frac1{e^{-x}+1}=\\frac1{e^x+1}+\\frac{e^x}{1+e^x}=1. \\]\nすなわち $f(\\mu+\\Delta)=1-f(\\mu-\\Delta)$：$\\mu$ より $\\Delta$ 上の状態に電子がいる確率は，$\\Delta$ 下の状態が空いている（正孔がある）確率に等しい．分布は点 $(\\mu,1/2)$ について点対称である．\n\n(2) $f=0.01$ より $e^{\\varepsilon/k_BT_1}=99$，よって $\\boldsymbol{T_1=\\dfrac{\\varepsilon}{k_B\\ln99}}$．$\\ln99\\approx4.6$ なので，$k_BT_1$ は $\\varepsilon$ の約 $1/4.6$ である．\n\n(3) $f=0.9$ で $E-\\mu=-k_BT\\ln9$，$f=0.1$ で $E-\\mu=+k_BT\\ln9$．幅は $\\boldsymbol{W=2\\ln9\\,k_BT}\\approx4.39k_BT$．\n$\\dfrac{df}{dE}=-\\dfrac1{k_BT}\\dfrac{e^x}{(e^x+1)^2}$ は $x=0$ で $-\\dfrac1{4k_BT}$．$\\boldsymbol{|df/dE|=\\dfrac1{4k_BT}}$．傾き一定で直線近似すると遷移幅は $4k_BT$ で，(3) の $4.39k_BT$ に近い．"
    }
   ],
   "idea": {
@@ -667,7 +667,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $T$ [K]：≈126\n(3) 記述"
+   "spec": "(1) 記述\n(2) $T_1$：ε/(k_B ln(99))\n(3) $W$：2 ln(9) k_B T ; $|df/dE|$：1/(4 k_B T)"
   },
   "methods": [],
   "tags": [
@@ -749,16 +749,16 @@
   "theme": "自由電子気体のパウリ常磁性",
   "topic": "自由電子気体のパウリ常磁性",
   "statement": {
-   "tex": "$N$ 個の自由電子（スピン $1/2$，フェルミエネルギー $E_F$）が絶対零度にある．電子の磁気モーメントの大きさを $\\mu$ とし，磁束密度 $B$ の中ではスピンの向きにより1電子のエネルギーが $\\mp\\mu B$ だけずれる．両スピンを合わせた状態密度を $D(E)$ とし，$\\mu B\\ll E_F$ とする．\n\\begin{enumerate}\n\\item 磁場に平行な電子と反平行な電子の数の差 $N_+-N_-$ を $D(E_F)$ を用いて表せ．\n\\item 3次元の自由電子では $D(E_F)=\\dfrac{3N}{2E_F}$ である．帯磁率 $\\chi=M/B$（$M=\\mu(N_+-N_-)$）を求めよ．\n\\item 局在スピンのキュリー帯磁率 $\\chi_C=N\\mu^2/k_BT$ との比 $\\chi/\\chi_C$ を，ナトリウム（$E_F=3.2\\,\\mathrm{eV}$）について $T=300\\,\\mathrm{K}$（$k_BT=0.02585\\,\\mathrm{eV}$）で求めよ．\n\\end{enumerate}"
+   "tex": "$N$ 個の自由電子（スピン $1/2$，フェルミエネルギー $E_F$）が絶対零度にある．電子の磁気モーメントの大きさを $\\mu$ とし，磁束密度 $B$ の中ではスピンの向きにより1電子のエネルギーが $\\mp\\mu B$ だけずれる．両スピンを合わせた状態密度を $D(E)$ とし，$\\mu B\\ll E_F$ とする．\n\\begin{enumerate}\n\\item 磁場に平行な電子と反平行な電子の数の差 $N_+-N_-$ を $D(E_F)$ を用いて表せ．\n\\item 3次元の自由電子では $D(E_F)=\\dfrac{3N}{2E_F}$ である．帯磁率 $\\chi=M/B$（$M=\\mu(N_+-N_-)$）を求めよ．\n\\item 局在スピンのキュリー帯磁率 $\\chi_C=N\\mu^2/k_BT$ との比 $\\chi/\\chi_C$ を温度 $T$ で求め，$k_BT\\ll E_F$ の金属でどうなるか述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $N_+-N_-=D(E_F)\\mu B$ \\quad (2) $\\chi=\\dfrac{3N\\mu^2}{2E_F}$ \\quad (3) $\\approx0.012$"
+   "tex": "(1) $N_+-N_-=D(E_F)\\mu B$ \\quad (2) $\\chi=\\dfrac{3N\\mu^2}{2E_F}$ \\quad (3) $\\dfrac{\\chi}{\\chi_C}=\\dfrac{3k_BT}{2E_F}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 各スピンの状態密度は $D/2$．平行スピンのバンドは $\\mu B$ 下がり，反平行は $\\mu B$ 上がる．共通のフェルミ準位まで詰めると，$N_+$ は $\\frac{1}{2}D(E_F)\\mu B$ 増え，$N_-$ は同じだけ減る．$\\boldsymbol{N_+-N_-=D(E_F)\\mu B}$．\n\n(2) $M=\\mu^2D(E_F)B$ より $\\boldsymbol{\\chi=\\dfrac{3N\\mu^2}{2E_F}}$．温度にほとんどよらない（パウリ常磁性）．\n\n(3) $\\dfrac{\\chi}{\\chi_C}=\\dfrac{3k_BT}{2E_F}=\\dfrac{3\\times0.02585}{2\\times3.2}\\approx\\boldsymbol{0.012}$．フェルミ面付近の $k_BT/E_F$ 程度の割合の電子しかスピンを反転できないため，局在スピンよりはるかに小さい．同じ理由で電子比熱も古典値より小さい．"
+    "tex": "(1) 各スピンの状態密度は $D/2$．平行スピンのバンドは $\\mu B$ 下がり，反平行は $\\mu B$ 上がる．共通のフェルミ準位まで詰めると，$N_+$ は $\\frac{1}{2}D(E_F)\\mu B$ 増え，$N_-$ は同じだけ減る．$\\boldsymbol{N_+-N_-=D(E_F)\\mu B}$．\n\n(2) $M=\\mu^2D(E_F)B$ より $\\boldsymbol{\\chi=\\dfrac{3N\\mu^2}{2E_F}}$．温度にほとんどよらない（パウリ常磁性）．\n\n(3) $\\boldsymbol{\\dfrac{\\chi}{\\chi_C}=\\dfrac{3k_BT}{2E_F}}$．金属では $k_BT\\ll E_F$（室温のナトリウムで約 $10^{-2}$）なので $\\chi\\ll\\chi_C$ である．フェルミ面付近の $k_BT/E_F$ 程度の割合の電子しかスピンを反転できないため，局在スピンよりはるかに小さい．同じ理由で電子比熱も古典値より小さい．"
    }
   ],
   "idea": {
@@ -766,7 +766,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) N_+ - N_-：D(E_F) mu B\n(2) χ：3 N mu^2/(2 E_F)\n(3) χ/χ_C：≈0.012"
+   "spec": "(1) N_+ - N_-：D(E_F) mu B\n(2) χ：3 N mu^2/(2 E_F)\n(3) χ/χ_C：3 k_B T/(2 E_F)"
   },
   "methods": [],
   "tags": [
@@ -798,16 +798,16 @@
   "theme": "理想ボース気体のボース＝アインシュタイン凝縮",
   "topic": "理想ボース気体のボース＝アインシュタイン凝縮",
   "statement": {
-   "tex": "質量 $m$，スピン $0$ の理想ボース気体（数密度 $n$）を考える．凝縮が始まる温度 $T_c$ は\n\\[ n\\lambda_T^3=\\zeta(3/2)\\approx2.612,\\qquad \\lambda_T=\\frac{2\\pi\\hbar}{\\sqrt{2\\pi mk_BT}} \\]\nで決まる．\n\\begin{enumerate}\n\\item $m=1.443\\times10^{-25}\\,\\mathrm{kg}$（${}^{87}\\mathrm{Rb}$），$n=1.0\\times10^{20}\\,\\mathrm{m^{-3}}$ のとき $T_c$ を求めよ（$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$k_B=1.381\\times10^{-23}\\,\\mathrm{J/K}$）．\n\\item $T=T_c/2$ における凝縮体の割合 $N_0/N$ を求めよ．\n\\item $T<T_c$ で熱容量は $C\\propto T^p$ となる．$p$ を求めよ．\n\\end{enumerate}"
+   "tex": "質量 $m$，スピン $0$ の理想ボース気体（数密度 $n$）を考える．凝縮が始まる温度 $T_c$ は\n\\[ n\\lambda_T^3=\\zeta(3/2)\\approx2.612,\\qquad \\lambda_T=\\frac{2\\pi\\hbar}{\\sqrt{2\\pi mk_BT}} \\]\nで決まる．\n\\begin{enumerate}\n\\item $T_c$ を $m,n,\\hbar,k_B$ で表せ．$n$ を $8$ 倍にすると $T_c$ は何倍になるか．\n\\item $T=T_c/2$ における凝縮体の割合 $N_0/N$ を求めよ．\n\\item $T<T_c$ で熱容量は $C\\propto T^p$ となる．$p$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T_c\\approx398\\,\\mathrm{nK}$ (2) $\\dfrac{N_0}{N}=1-\\dfrac{\\sqrt{2}}{4}$ (3) $p=\\dfrac{3}{2}$"
+   "tex": "(1) $T_c=\\dfrac{2\\pi\\hbar^2}{mk_B}\\left(\\dfrac{n}{2.612}\\right)^{2/3}$，$4$ 倍 (2) $\\dfrac{N_0}{N}=1-\\dfrac{\\sqrt{2}}{4}$ (3) $p=\\dfrac{3}{2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 条件式を $T$ について解くと\n\\[ T_c=\\frac{2\\pi\\hbar^2}{mk_B}\\left(\\frac{n}{2.612}\\right)^{2/3}. \\]\n数値を入れると $\\dfrac{2\\pi\\hbar^2}{mk_B}=3.50\\times10^{-12}\\,\\mathrm{K\\,m^2}$，$(n/2.612)^{2/3}=1.14\\times10^{5}\\,\\mathrm{m^{-2}}$ より $\\boldsymbol{T_c\\approx398\\,\\mathrm{nK}}$．\n\n(2) $T<T_c$ では化学ポテンシャルが $\\mu=0$ に張り付き，励起状態にいる粒子数は $N_{\\mathrm{ex}}=V\\zeta(3/2)/\\lambda_T^3\\propto T^{3/2}$．$T_c$ で $N_{\\mathrm{ex}}=N$ なので $N_0/N=1-(T/T_c)^{3/2}$．$T=T_c/2$ では\n\\[ \\boldsymbol{\\frac{N_0}{N}=1-\\frac{\\sqrt{2}}{4}}\\approx0.65. \\]\n\n(3) $\\mu=0$ のときエネルギーは $E=\\dfrac{3}{2}k_BT\\dfrac{V}{\\lambda_T^3}\\zeta(5/2)\\propto T^{5/2}$ なので $C\\propto T^{3/2}$，$\\boldsymbol{p=\\dfrac{3}{2}}$．"
+    "tex": "(1) 条件式を $T$ について解くと\n\\[ T_c=\\frac{2\\pi\\hbar^2}{mk_B}\\left(\\frac{n}{2.612}\\right)^{2/3}. \\]\nすなわち $\\boldsymbol{T_c=\\dfrac{2\\pi\\hbar^2}{mk_B}\\left(\\dfrac{n}{2.612}\\right)^{2/3}}$．$T_c\\propto n^{2/3}$ なので，$n$ を $8$ 倍にすると $T_c$ は $\\boldsymbol{4}$ 倍．${}^{87}\\mathrm{Rb}$ の希薄気体（$n\\sim10^{20}\\,\\mathrm{m^{-3}}$）では $T_c$ は数百 nK になる．\n\n(2) $T<T_c$ では化学ポテンシャルが $\\mu=0$ に張り付き，励起状態にいる粒子数は $N_{\\mathrm{ex}}=V\\zeta(3/2)/\\lambda_T^3\\propto T^{3/2}$．$T_c$ で $N_{\\mathrm{ex}}=N$ なので $N_0/N=1-(T/T_c)^{3/2}$．$T=T_c/2$ では\n\\[ \\boldsymbol{\\frac{N_0}{N}=1-\\frac{\\sqrt{2}}{4}}\\approx0.65. \\]\n\n(3) $\\mu=0$ のときエネルギーは $E=\\dfrac{3}{2}k_BT\\dfrac{V}{\\lambda_T^3}\\zeta(5/2)\\propto T^{5/2}$ なので $C\\propto T^{3/2}$，$\\boldsymbol{p=\\dfrac{3}{2}}$．"
    }
   ],
   "idea": {
@@ -815,7 +815,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) T_c [nK]：≈398\n(2) N_0/N：1 - sqrt(2)/4\n(3) p：3/2"
+   "spec": "(1) $T_c$：2 pi hbar^2/(m k_B) (n/2.612)^(2/3) ; 倍率：4\n(2) N_0/N：1 - sqrt(2)/4\n(3) p：3/2"
   },
   "methods": [],
   "tags": [
@@ -847,16 +847,16 @@
   "theme": "ゾンマーフェルト展開と電子比熱",
   "topic": "ゾンマーフェルト展開と電子比熱",
   "statement": {
-   "tex": "スピン $1/2$ の自由電子 $N$ 個（フェルミエネルギー $E_F$）が低温 $k_BT\\ll E_F$ にある．状態密度は $D(E)\\propto E^{1/2}$ である．\n\\begin{enumerate}\n\\item フェルミ面での状態密度 $D(E_F)$ を $N,\\,E_F$ で表せ．\n\\item 電子系の熱容量 $C$ を $T$ の1次まで求めよ（$\\int_{-\\infty}^{\\infty}\\frac{x^2e^x}{(e^x+1)^2}dx=\\frac{\\pi^2}{3}$）．\n\\item 銅（$E_F=7.00\\,\\mathrm{eV}$）で，$T=300\\,\\mathrm{K}$ のときの $C/(Nk_B)$ を求めよ（$k_B=8.617\\times10^{-5}\\,\\mathrm{eV/K}$）．\n\\item 化学ポテンシャル $\\mu$ を $T^2$ の次数まで求めよ．\n\\end{enumerate}"
+   "tex": "スピン $1/2$ の自由電子 $N$ 個（フェルミエネルギー $E_F$）が低温 $k_BT\\ll E_F$ にある．状態密度は $D(E)\\propto E^{1/2}$ である．\n\\begin{enumerate}\n\\item フェルミ面での状態密度 $D(E_F)$ を $N,\\,E_F$ で表せ．\n\\item 電子系の熱容量 $C$ を $T$ の1次まで求めよ（$\\int_{-\\infty}^{\\infty}\\frac{x^2e^x}{(e^x+1)^2}dx=\\frac{\\pi^2}{3}$）．\n\\item (2) の $C$ と，古典的な理想気体の熱容量 $\\frac32Nk_B$ との比を求めよ．\n\\item 化学ポテンシャル $\\mu$ を $T^2$ の次数まで求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $D(E_F)=\\dfrac{3N}{2E_F}$ (2) $C=\\dfrac{\\pi^2Nk_B^2T}{2E_F}$ (3) $\\dfrac{C}{Nk_B}\\approx0.0182$ (4) $\\mu=E_F\\left[1-\\dfrac{\\pi^2}{12}\\left(\\dfrac{k_BT}{E_F}\\right)^2\\right]$"
+   "tex": "(1) $D(E_F)=\\dfrac{3N}{2E_F}$ (2) $C=\\dfrac{\\pi^2Nk_B^2T}{2E_F}$ (3) $\\dfrac{\\pi^2k_BT}{3E_F}$ (4) $\\mu=E_F\\left[1-\\dfrac{\\pi^2}{12}\\left(\\dfrac{k_BT}{E_F}\\right)^2\\right]$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $D(E)=AE^{1/2}$ とすると $N=\\int_0^{E_F}D\\,dE=\\frac{2}{3}AE_F^{3/2}$．よって $\\boldsymbol{D(E_F)=AE_F^{1/2}=\\dfrac{3N}{2E_F}}$．\n\n(2) ゾンマーフェルト展開 $\\displaystyle\\int_0^\\infty g(E)f(E)\\,dE\\simeq\\int_0^\\mu g\\,dE+\\frac{\\pi^2}{6}(k_BT)^2g'(\\mu)$ を使う．エネルギーの増加は $\\Delta E=\\frac{\\pi^2}{6}(k_BT)^2D(E_F)$（$\\mu$ のずれの寄与は $N$ 一定の条件で打ち消し合う）なので\n\\[ C=\\frac{\\pi^2}{3}k_B^2TD(E_F)=\\boldsymbol{\\frac{\\pi^2Nk_B^2T}{2E_F}}. \\]\nフェルミ面から $k_BT$ 程度の範囲の電子だけが熱を受け取るため，古典値 $\\frac{3}{2}Nk_B$ に比べて $k_BT/E_F$ の程度に小さい．\n\n(3) $\\dfrac{C}{Nk_B}=\\dfrac{\\pi^2}{2}\\cdot\\dfrac{8.617\\times10^{-5}\\times300}{7.00}=4.935\\times3.69\\times10^{-3}\\approx\\boldsymbol{0.0182}$．\n\n(4) $N=\\int_0^\\mu D\\,dE+\\frac{\\pi^2}{6}(k_BT)^2D'(\\mu)$ を $N$ 一定で解くと $D(E_F)(\\mu-E_F)\\simeq-\\frac{\\pi^2}{6}(k_BT)^2D'(E_F)$．$D'/D=1/(2E_F)$ より\n\\[ \\boldsymbol{\\mu=E_F\\left[1-\\frac{\\pi^2}{12}\\left(\\frac{k_BT}{E_F}\\right)^2\\right]}. \\]"
+    "tex": "(1) $D(E)=AE^{1/2}$ とすると $N=\\int_0^{E_F}D\\,dE=\\frac{2}{3}AE_F^{3/2}$．よって $\\boldsymbol{D(E_F)=AE_F^{1/2}=\\dfrac{3N}{2E_F}}$．\n\n(2) ゾンマーフェルト展開 $\\displaystyle\\int_0^\\infty g(E)f(E)\\,dE\\simeq\\int_0^\\mu g\\,dE+\\frac{\\pi^2}{6}(k_BT)^2g'(\\mu)$ を使う．エネルギーの増加は $\\Delta E=\\frac{\\pi^2}{6}(k_BT)^2D(E_F)$（$\\mu$ のずれの寄与は $N$ 一定の条件で打ち消し合う）なので\n\\[ C=\\frac{\\pi^2}{3}k_B^2TD(E_F)=\\boldsymbol{\\frac{\\pi^2Nk_B^2T}{2E_F}}. \\]\nフェルミ面から $k_BT$ 程度の範囲の電子だけが熱を受け取るため，古典値 $\\frac{3}{2}Nk_B$ に比べて $k_BT/E_F$ の程度に小さい．\n\n(3) $\\dfrac{C}{\\frac32Nk_B}=\\dfrac{\\pi^2k_B^2T/(2E_F)}{\\frac32k_B}=\\boldsymbol{\\dfrac{\\pi^2k_BT}{3E_F}}$．金属では $E_F$ が数 eV，室温の $k_BT$ は約 $0.026\\,\\mathrm{eV}$ なので，この比は $10^{-2}$ 程度にすぎない．\n\n(4) $N=\\int_0^\\mu D\\,dE+\\frac{\\pi^2}{6}(k_BT)^2D'(\\mu)$ を $N$ 一定で解くと $D(E_F)(\\mu-E_F)\\simeq-\\frac{\\pi^2}{6}(k_BT)^2D'(E_F)$．$D'/D=1/(2E_F)$ より\n\\[ \\boldsymbol{\\mu=E_F\\left[1-\\frac{\\pi^2}{12}\\left(\\frac{k_BT}{E_F}\\right)^2\\right]}. \\]"
    }
   ],
   "idea": {
@@ -864,7 +864,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) D(E_F)：3N/(2 E_F)\n(2) C：pi^2 N k_B^2 T/(2 E_F)\n(3) C/(N k_B)：≈0.0182\n(4) μ：E_F (1 - pi^2/12 (k_B T/E_F)^2)"
+   "spec": "(1) D(E_F)：3N/(2 E_F)\n(2) C：pi^2 N k_B^2 T/(2 E_F)\n(3) 比：pi^2 k_B T/(3 E_F)\n(4) μ：E_F (1 - pi^2/12 (k_B T/E_F)^2)"
   },
   "methods": [],
   "tags": [
@@ -1087,27 +1087,27 @@
   "field": "SM-38",
   "level": 2,
   "minutes": 30,
-  "theme": "箱の中の Rb 原子：転移温度と第1励起状態の占有数",
-  "topic": "箱の中の Rb 原子：転移温度と第1励起状態の占有数",
+  "theme": "箱の中の原子：転移温度と第1励起状態の占有数",
+  "topic": "箱の中の原子：転移温度と第1励起状態の占有数",
   "statement": {
-   "tex": "$N=10^5$ 個の ${}^{87}$Rb 原子が1辺 $L=10\\ \\mu\\mathrm m$ の箱に入っている．\n\\begin{enumerate}\n\\item 転移温度 $T_c=\\dfrac{2\\pi\\hbar^2}{mk_B}\\left(\\dfrac{n}{2.612}\\right)^{2/3}$ を求めよ．\n\\item 基底状態と第1励起状態のエネルギー差を温度単位で求めよ．\n\\item $T=T_c/2$ で第1励起状態の占有数を $k_BT/\\Delta E$ で見積もり，$N$ と比べよ．\n\\end{enumerate}"
+   "tex": "質量 $m$ のボース原子 $N$ 個が 1 辺 $L$ の立方体の箱に入っている．\n\\begin{enumerate}\n\\item 転移温度 $T_c=\\dfrac{2\\pi\\hbar^2}{mk_B}\\left(\\dfrac{n}{2.612}\\right)^{2/3}$ を $N,L,m$ と定数で表せ．\n\\item 基底状態と第1励起状態のエネルギー差 $\\Delta E$ を求めよ．\n\\item $T=T_c/2$ で第1励起状態の占有数 $n_1$ を $k_BT/\\Delta E$ で見積もり，$N$ で表せ．$N\\gg1$ で $n_1/N$ はどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\approx0.40\\ \\mu\\mathrm K$　(2) $\\approx0.83\\ \\mathrm{nK}$　(3) $\\approx240$（$N$ よりずっと小さい）"
+   "tex": "(1) $T_c=\\dfrac{2\\pi\\hbar^2}{mk_B}\\left(\\dfrac{N}{2.612L^3}\\right)^{2/3}$　(2) $\\Delta E=\\dfrac{3\\pi^2\\hbar^2}{2mL^2}$　(3) $n_1=\\dfrac{2}{3\\pi}\\left(\\dfrac{N}{2.612}\\right)^{2/3}$，$n_1/N\\propto N^{-1/3}\\to0$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n=10^{20}\\ \\mathrm{m^{-3}}$ で $\\boldsymbol{T_c\\approx0.40\\ \\mu\\mathrm K}$．\n\n(2) $\\Delta E=\\dfrac{3\\pi^2\\hbar^2}{2mL^2}$（$(1,1,1)\\to(2,1,1)$），$\\Delta E/k_B\\approx\\boldsymbol{0.83\\ \\mathrm{nK}}$．\n\n(3) $\\mu\\approx E_0$ で $n_1\\approx\\dfrac{k_BT}{\\Delta E}\\approx\\boldsymbol{240}$．大きいが $N$ の $10^{-3}$ 程度で，巨視的な占有は基底状態だけ．"
+    "tex": "(1) $n=N/L^3$ を代入して $\\boldsymbol{T_c=\\dfrac{2\\pi\\hbar^2}{mk_B}\\left(\\dfrac{N}{2.612L^3}\\right)^{2/3}}$．\n\n(2) 固定端の箱では $E=\\dfrac{\\pi^2\\hbar^2}{2mL^2}(n_x^2+n_y^2+n_z^2)$（$n_i\\ge1$）．基底状態 $(1,1,1)$ から第1励起状態 $(2,1,1)$ への差は\n\\[ \\boldsymbol{\\Delta E=\\frac{3\\pi^2\\hbar^2}{2mL^2}}. \\]\n\n(3) $\\mu\\approx E_0$ で $n_1=\\dfrac{1}{e^{\\Delta E/k_BT}-1}\\approx\\dfrac{k_BT}{\\Delta E}$．$k_BT=k_BT_c/2=\\dfrac{\\pi\\hbar^2}{mL^2}\\left(\\dfrac{N}{2.612}\\right)^{2/3}$ を代入して\n\\[ \\boldsymbol{n_1\\approx\\frac{2}{3\\pi}\\left(\\frac{N}{2.612}\\right)^{2/3}}. \\]\n大きな数だが $n_1/N\\propto N^{-1/3}$ で $N\\to\\infty$ では $0$ になる．巨視的な（$N$ に比例する）占有は基底状態だけである（$N=10^5$ でも $n_1/N\\sim10^{-3}$）．"
    }
   ],
   "idea": {
-   "tex": "有限の系では励起状態の占有数も大きいが，基底状態の巨視的な占有とは区別される．原題のスケーリングの議論を，実験の数値にした．"
+   "tex": "有限の系では励起状態の占有数も大きいが，$N^{2/3}$ にしか比例せず，基底状態の巨視的な占有とは区別される．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) [μK]：≈0.40\n(2) [nK]：≈0.83\n(3) ≈240"
+   "spec": "(1) $T_c$：2 pi hbar^2/(m k_B) (N/(2.612 L^3))^(2/3)\n(2) $\\Delta E$：3 pi^2 hbar^2/(2 m L^2)\n(3) $n_1$：2/(3 pi) (N/2.612)^(2/3)"
   },
   "methods": [],
   "tags": [
@@ -1139,16 +1139,16 @@
   "theme": "調和トラップの中のボース凝縮：3次元と2次元",
   "topic": "調和トラップの中のボース凝縮：3次元と2次元",
   "statement": {
-   "tex": "状態密度 $g(E)=CE^{\\alpha-1}$ のボース気体では $N=C\\Gamma(\\alpha)\\zeta(\\alpha)(k_BT_c)^\\alpha$ で転移が起こる．\n\\begin{enumerate}\n\\item 3次元の等方的な調和トラップ（$g=E^2/2(\\hbar\\omega)^3$）の $T_c$ と凝縮率 $N_0/N$ を求めよ．\n\\item $N=10^6$，$\\omega=2\\pi\\times100\\ \\mathrm{Hz}$ の Rb 原子で $T_c$ を求めよ．\n\\item 2次元の調和トラップでは凝縮が起こることを示し，$T_c$ を求めよ．\n\\end{enumerate}"
+   "tex": "状態密度 $g(E)=CE^{\\alpha-1}$ のボース気体では $N=C\\Gamma(\\alpha)\\zeta(\\alpha)(k_BT_c)^\\alpha$ で転移が起こる（$\\zeta(3)=1.202$）．\n\\begin{enumerate}\n\\item 3次元の等方的な調和トラップ（$g=E^2/2(\\hbar\\omega)^3$）の $T_c$ と凝縮率 $N_0/N$ を求めよ．\n\\item (1) の $T_c$ で，粒子数を $2$ 倍にすると $T_c$ は何倍になるか．$\\omega$ を $2$ 倍にした場合はどうか．\n\\item 2次元の調和トラップでは凝縮が起こることを示し，$T_c$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $k_BT_c=\\hbar\\omega(N/\\zeta(3))^{1/3}$，$N_0/N=1-(T/T_c)^3$　(2) $\\approx450\\ \\mathrm{nK}$　(3) $k_BT_c=\\hbar\\omega(N/\\zeta(2))^{1/2}$"
+   "tex": "(1) $T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{1.202}\\right)^{1/3}$，$N_0/N=1-(T/T_c)^3$　(2) $N$ を 2 倍で $2^{1/3}$ 倍，$\\omega$ を 2 倍で $2$ 倍　(3) $k_BT_c=\\hbar\\omega(N/\\zeta(2))^{1/2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\alpha=3$，$C=1/2(\\hbar\\omega)^3$ で $N=\\zeta(3)(k_BT_c/\\hbar\\omega)^3$．$T<T_c$ で励起状態は $N(T/T_c)^3$．\n\n(2) $(10^6/1.202)^{1/3}=94$，$T_c=\\dfrac{\\hbar\\omega\\times94}{k_B}\\approx\\boldsymbol{450\\ \\mathrm{nK}}$．\n\n(3) $g=E/(\\hbar\\omega)^2$，$\\alpha=2>1$ で積分が収束し凝縮が起こる．$\\boldsymbol{k_BT_c=\\hbar\\omega\\sqrt{N/\\zeta(2)}}$（箱の2次元と違う）．"
+    "tex": "(1) $\\alpha=3$，$C=1/2(\\hbar\\omega)^3$ で $N=\\zeta(3)(k_BT_c/\\hbar\\omega)^3$．$T<T_c$ で励起状態は $N(T/T_c)^3$．\n\n(2) $T_c\\propto\\omega N^{1/3}$ なので，$N$ を $2$ 倍にすると $\\boldsymbol{2^{1/3}}$ 倍，$\\omega$ を $2$ 倍にすると $\\boldsymbol{2}$ 倍．粒子数より閉じ込めの強さの方が効く（$N\\sim10^6$，$\\omega\\sim2\\pi\\times100\\,\\mathrm{s^{-1}}$ の冷却原子では数百 nK）．\n\n(3) $g=E/(\\hbar\\omega)^2$，$\\alpha=2>1$ で積分が収束し凝縮が起こる．$\\boldsymbol{k_BT_c=\\hbar\\omega\\sqrt{N/\\zeta(2)}}$（箱の2次元と違う）．"
    }
   ],
   "idea": {
@@ -1156,7 +1156,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [nK]：≈450\n(3) 記述"
+   "spec": "(1) $T_c$：hbar ω/k_B (N/1.202)^(1/3) ; $N_0/N$：1-(T/T_c)^3\n(2) $N$ を2倍：2^(1/3) ; $\\omega$ を2倍：2\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -1333,16 +1333,16 @@
   "theme": "液体ヘリウムの量子縮退温度の評価",
   "topic": "液体ヘリウムの量子縮退温度の評価",
   "statement": {
-   "tex": "液体ヘリウム 4 の数密度を $n=1/(5\\times10^{-29}\\ {\\rm m^3})$，原子質量を $m=4.00\\ {\\rm u}$ とする．\n\\begin{enumerate}\n\\item 熱的 de Broglie 波長 $\\lambda_T=h/\\sqrt{2\\pi mk_BT}$ を用いた理想 Bose 気体の BEC 条件 $n\\lambda_T^3=2.612$ から転移温度 $T_c$ を求めよ．\n\\item その温度での平均分子間距離 $d=n^{-1/3}$ と，平均運動エネルギー $\\tfrac32k_BT$ に対応する de Broglie 波長 $\\lambda=h/\\sqrt{3mk_BT}$ との比 $\\lambda/d$ を求めよ．\n\\item 「(2) の $\\lambda$ が分子間距離の $1/10$ になる温度」を求めよ．この温度と (1) の $T_c$ のどちらが，実際の超流動転移温度 $2.17\\ {\\rm K}$ の見積もりとして妥当かを論ぜよ．\n\\end{enumerate}"
+   "tex": "液体ヘリウム 4 を，数密度 $n$，原子質量 $m$ の理想ボース気体とみなして量子縮退の温度を評価する．\n\\begin{enumerate}\n\\item 熱的 de Broglie 波長 $\\lambda_T=h/\\sqrt{2\\pi mk_BT}$ を用いた理想 Bose 気体の BEC 条件 $n\\lambda_T^3=2.612$ から転移温度 $T_c$ を求めよ．\n\\item その温度での平均分子間距離 $d=n^{-1/3}$ と，平均運動エネルギー $\\tfrac32k_BT$ に対応する de Broglie 波長 $\\lambda=h/\\sqrt{3mk_BT}$ との比 $\\lambda/d$ を求めよ（$n,m$ によらない数になる）．\n\\item 「(2) の $\\lambda$ が分子間距離の $1/10$ になる温度」$T'$ を $n,m$ で表し，$T'/T_c$ を求めよ．実際の超流動転移温度の見積もりとして，$T'$ と $T_c$ のどちらが妥当かを論ぜよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T_c\\approx2.96\\ {\\rm K}$　(2) $d\\approx3.68$ Å，$\\lambda/d\\approx2.0$　(3) $T=100h^2/(3mk_Bd^2)\\approx1.2\\times10^3\\ {\\rm K}$．巨視的量子現象の温度とは 3 桁ずれ，BEC 条件の $T_c\\approx3$ K の方が実測 $2.17$ K に近い"
+   "tex": "(1) $T_c=\\dfrac{2\\pi\\hbar^2}{mk_B}\\left(\\dfrac{n}{2.612}\\right)^{2/3}$　(2) $\\dfrac{\\lambda}{d}=(2.612)^{1/3}\\sqrt{\\dfrac{2\\pi}{3}}\\approx2.0$　(3) $T'=\\dfrac{100h^2n^{2/3}}{3mk_B}$，$\\dfrac{T'}{T_c}=\\dfrac{200\\pi}{3}(2.612)^{2/3}\\approx4\\times10^2$；$T_c$ の方が妥当"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n\\lambda_T^3=2.612$ より\n\\[T_c=\\frac{2\\pi\\hbar^2}{mk_B}\\left(\\frac{n}{2.612}\\right)^{2/3}.\\]\n$m=6.65\\times10^{-27}$ kg，$n=2.0\\times10^{28}\\ {\\rm m^{-3}}$ を代入して $T_c\\approx2.96\\ {\\rm K}$．\n\n(2) $d=(5\\times10^{-29})^{1/3}=3.68\\times10^{-10}$ m．$T=2.96$ K で $\\lambda=h/\\sqrt{3mk_BT}=7.3\\times10^{-10}$ m，$\\lambda/d\\approx2.0$．すなわち縮退温度では波長は分子間距離の約 2 倍であり，$1/10$ どころではない．\n\n(3) $\\lambda=h/\\sqrt{3mk_BT}=d/10$ を解くと\n\\[T=\\frac{100\\,h^2}{3mk_Bd^2}.\\]\n$h^2/(3mk_Bd^2)=11.8$ K（これは $\\lambda=d$ となる温度）なので $T\\approx1.2\\times10^{3}\\ {\\rm K}$．この基準は「量子効果が無視できなくなり始める」温度の目安にはなっても，超流動のような巨視的量子現象の温度とは 3 桁ずれる．$\\lambda\\propto T^{-1/2}$ なので，$\\lambda$ を $20$ 倍（$d/10\\to2d$）にするには温度を $1/400$ にする必要があり，$1.2\\times10^3/400\\approx3$ K で (1) に戻る．実測の $2.17$ K と比較すべきは BEC 条件による $T_c\\approx3$ K で，理想気体近似ながら因子 1.4 程度で一致する（差は原子間相互作用による）．"
+    "tex": "(1) $n\\lambda_T^3=2.612$ より\n\\[\\boldsymbol{T_c=\\frac{2\\pi\\hbar^2}{mk_B}\\left(\\frac{n}{2.612}\\right)^{2/3}}.\\]\n液体 He（$n\\approx2\\times10^{28}\\,\\mathrm{m^{-3}}$）では約 $3\\,\\mathrm K$ になる．\n\n(2) $\\lambda=h/\\sqrt{3mk_BT}=\\lambda_T\\sqrt{2\\pi/3}$．$T=T_c$ では $\\lambda_T=(2.612/n)^{1/3}=2.612^{1/3}d$ なので\n\\[\\boldsymbol{\\frac{\\lambda}{d}=\\sqrt{\\frac{2\\pi}{3}}\\,(2.612)^{1/3}}\\approx2.0.\\]\n縮退温度では波長は分子間距離の約 2 倍であり，$1/10$ どころではない．\n\n(3) $\\lambda=h/\\sqrt{3mk_BT'}=d/10$ を解くと\n\\[\\boldsymbol{T'=\\frac{100\\,h^2}{3mk_Bd^2}=\\frac{100h^2n^{2/3}}{3mk_B}}.\\]\n$\\lambda\\propto T^{-1/2}$ なので $T'/T_c=\\left(\\dfrac{\\lambda(T_c)/d}{1/10}\\right)^2=100\\cdot\\dfrac{2\\pi}{3}(2.612)^{2/3}$，すなわち\n\\[\\boldsymbol{\\frac{T'}{T_c}=\\frac{200\\pi}{3}(2.612)^{2/3}}\\approx4\\times10^2.\\]\nこの基準は「量子効果が無視できなくなり始める」温度の目安にはなっても，超流動のような巨視的量子現象の温度とは 2〜3 桁ずれる．実測の $2.17\\,\\mathrm K$ と比較すべきは BEC 条件による $T_c\\approx3\\,\\mathrm K$ で，理想気体近似ながら因子 1.4 程度で一致する（差は原子間相互作用による）．"
    }
   ],
   "idea": {
@@ -1350,7 +1350,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $T_c$ [K]：≈2.96\n(2) 記述\n(3) 記述"
+   "spec": "(1) $T_c$：2 pi hbar^2/(m k_B) (n/2.612)^(2/3)\n(2) $\\lambda/d$：sqrt(2 pi/3) 2.612^(1/3)\n(3) $T'$：100 h^2 n^(2/3)/(3 m k_B) ; $T'/T_c$：200 pi/3 2.612^(2/3)"
   },
   "methods": [],
   "tags": [
@@ -1786,16 +1786,16 @@
   "theme": "振動数表示と波長表示のプランク分布のピーク",
   "topic": "振動数表示と波長表示のプランク分布のピーク",
   "statement": {
-   "tex": "温度 $T$ の空洞放射（光子気体）の単位体積当たりの内部エネルギーは，光子の状態密度 $D(\\varepsilon)=\\dfrac{8\\pi V}{(hc)^3}\\varepsilon^2$ と化学ポテンシャル $0$ のボーズ分布で与えられる．\n\\begin{enumerate}\n\\item 単位体積・単位振動数当たりのエネルギー密度 $u_\\nu(\\nu)$（$U/V=\\int_0^\\infty u_\\nu d\\nu$）と，単位体積・単位波長当たりの $u_\\lambda(\\lambda)$（$U/V=\\int_0^\\infty u_\\lambda d\\lambda$）を求めよ．\n\\item $u_\\nu$ が最大になる振動数 $\\nu_{\\max}$ と，$u_\\lambda$ が最大になる波長 $\\lambda_{\\max}$ は，それぞれ $x=h\\nu/k_{\\mathrm B}T$ の超越方程式の解 $x_\\nu,x_\\lambda$ で決まる．方程式を導き，数値解を小数第3位まで求めよ．\n\\item 積 $\\nu_{\\max}\\lambda_{\\max}$ を $c$ を用いて表し，$c$ と一致しない理由を説明せよ．\n\\item 太陽の表面温度を $T=5800\\ \\mathrm K$ とすると，$\\lambda_{\\max}$ と $c/\\nu_{\\max}$ はそれぞれ何 nm か（有効数字3桁）．「太陽光のスペクトルのピークは緑色」という言明は何を前提にしているか．\n\\end{enumerate}"
+   "tex": "温度 $T$ の空洞放射（光子気体）の単位体積当たりの内部エネルギーは，光子の状態密度 $D(\\varepsilon)=\\dfrac{8\\pi V}{(hc)^3}\\varepsilon^2$ と化学ポテンシャル $0$ のボーズ分布で与えられる．\n\\begin{enumerate}\n\\item 単位体積・単位振動数当たりのエネルギー密度 $u_\\nu(\\nu)$（$U/V=\\int_0^\\infty u_\\nu d\\nu$）と，単位体積・単位波長当たりの $u_\\lambda(\\lambda)$（$U/V=\\int_0^\\infty u_\\lambda d\\lambda$）を求めよ．\n\\item $u_\\nu$ が最大になる振動数 $\\nu_{\\max}$ と，$u_\\lambda$ が最大になる波長 $\\lambda_{\\max}$ は，それぞれ $x=h\\nu/k_{\\mathrm B}T$ の超越方程式の解 $x_\\nu,x_\\lambda$ で決まる．方程式を導き，数値解を小数第3位まで求めよ．\n\\item 積 $\\nu_{\\max}\\lambda_{\\max}$ を $c$ を用いて表し，$c$ と一致しない理由を説明せよ．\n\\item 表面温度 $T$ の恒星について，$\\lambda_{\\max}$ と $c/\\nu_{\\max}$ を $x_\\nu,x_\\lambda$ と定数で表し，その比を求めよ．「太陽光のスペクトルのピークは緑色」という言明は何を前提にしているか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $u_\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac{1}{e^{h\\nu/k_{\\mathrm B}T}-1}$，$u_\\lambda=\\dfrac{8\\pi hc}{\\lambda^5}\\dfrac{1}{e^{hc/\\lambda k_{\\mathrm B}T}-1}$　(2) $x=3(1-e^{-x})$：$x_\\nu=2.821$；$x=5(1-e^{-x})$：$x_\\lambda=4.965$　(3) $\\nu_{\\max}\\lambda_{\\max}=(x_\\nu/x_\\lambda)c\\approx0.568c$　(4) $\\lambda_{\\max}\\approx500\\ \\mathrm{nm}$，$c/\\nu_{\\max}\\approx879\\ \\mathrm{nm}$"
+   "tex": "(1) $u_\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac{1}{e^{h\\nu/k_{\\mathrm B}T}-1}$，$u_\\lambda=\\dfrac{8\\pi hc}{\\lambda^5}\\dfrac{1}{e^{hc/\\lambda k_{\\mathrm B}T}-1}$　(2) $x=3(1-e^{-x})$：$x_\\nu=2.821$；$x=5(1-e^{-x})$：$x_\\lambda=4.965$　(3) $\\nu_{\\max}\\lambda_{\\max}=(x_\\nu/x_\\lambda)c\\approx0.568c$　(4) $\\lambda_{\\max}=\\dfrac{hc}{x_\\lambda k_{\\mathrm B}T}$，$\\dfrac{c}{\\nu_{\\max}}=\\dfrac{hc}{x_\\nu k_{\\mathrm B}T}$，比 $\\dfrac{x_\\lambda}{x_\\nu}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $U=\\int_0^\\infty D(\\varepsilon)\\dfrac{\\varepsilon}{e^{\\beta\\varepsilon}-1}d\\varepsilon$ に $\\varepsilon=h\\nu$ を代入すると\n\\[ \\frac UV=\\int_0^\\infty\\frac{8\\pi}{(hc)^3}\\frac{(h\\nu)^3}{e^{\\beta h\\nu}-1}h\\,d\\nu\\quad\\Rightarrow\\quad u_\\nu=\\frac{8\\pi h\\nu^3}{c^3}\\frac{1}{e^{\\beta h\\nu}-1}. \\]\n$\\nu=c/\\lambda$，$|d\\nu|=c\\,d\\lambda/\\lambda^2$ で変数変換すると $u_\\lambda=u_\\nu\\dfrac{c}{\\lambda^2}=\\dfrac{8\\pi hc}{\\lambda^5}\\dfrac{1}{e^{\\beta hc/\\lambda}-1}$．\n\n(2) $u_\\nu\\propto x^3/(e^x-1)$：$\\dfrac{d}{dx}\\ln=\\dfrac3x-\\dfrac{e^x}{e^x-1}=0$ より $x=3(1-e^{-x})$，数値解 $x_\\nu=2.821$．\n$u_\\lambda\\propto x^5/(e^x-1)$（$x=hc/\\lambda k_{\\mathrm B}T$）：同様に $x=5(1-e^{-x})$，$x_\\lambda=4.965$．（反復 $x\\leftarrow n(1-e^{-x})$ で収束する．）\n\n(3) $\\nu_{\\max}=x_\\nu k_{\\mathrm B}T/h$，$\\lambda_{\\max}=hc/(x_\\lambda k_{\\mathrm B}T)$ より $\\nu_{\\max}\\lambda_{\\max}=\\dfrac{x_\\nu}{x_\\lambda}c\\approx0.568c$．分布「密度」は変数のとり方に依存する：$u_\\lambda=u_\\nu|d\\nu/d\\lambda|=u_\\nu c/\\lambda^2$ のヤコビアン $\\lambda^{-2}$ が短波長側に重みを移すので，最大の位置が変わる．密度関数のピークは座標変換で不変ではない（積分量 $U$ は不変）．\n\n(4) $\\lambda_{\\max}=\\dfrac{hc}{x_\\lambda k_{\\mathrm B}T}=\\dfrac{6.626\\times10^{-34}\\times2.998\\times10^8}{4.965\\times1.381\\times10^{-23}\\times5800}\\approx5.00\\times10^{-7}\\ \\mathrm m=500\\ \\mathrm{nm}$．\n$c/\\nu_{\\max}=\\dfrac{hc}{x_\\nu k_{\\mathrm B}T}=500\\times\\dfrac{4.965}{2.821}\\approx879\\ \\mathrm{nm}$（近赤外）．「ピークは緑（約 500 nm）」は単位波長当たりで測ったスペクトルを前提にしており，単位振動数当たり（あるいは $\\ln\\lambda$ 当たり）で測れば別の位置にピークが来る．"
+    "tex": "(1) $U=\\int_0^\\infty D(\\varepsilon)\\dfrac{\\varepsilon}{e^{\\beta\\varepsilon}-1}d\\varepsilon$ に $\\varepsilon=h\\nu$ を代入すると\n\\[ \\frac UV=\\int_0^\\infty\\frac{8\\pi}{(hc)^3}\\frac{(h\\nu)^3}{e^{\\beta h\\nu}-1}h\\,d\\nu\\quad\\Rightarrow\\quad u_\\nu=\\frac{8\\pi h\\nu^3}{c^3}\\frac{1}{e^{\\beta h\\nu}-1}. \\]\n$\\nu=c/\\lambda$，$|d\\nu|=c\\,d\\lambda/\\lambda^2$ で変数変換すると $u_\\lambda=u_\\nu\\dfrac{c}{\\lambda^2}=\\dfrac{8\\pi hc}{\\lambda^5}\\dfrac{1}{e^{\\beta hc/\\lambda}-1}$．\n\n(2) $u_\\nu\\propto x^3/(e^x-1)$：$\\dfrac{d}{dx}\\ln=\\dfrac3x-\\dfrac{e^x}{e^x-1}=0$ より $x=3(1-e^{-x})$，数値解 $x_\\nu=2.821$．\n$u_\\lambda\\propto x^5/(e^x-1)$（$x=hc/\\lambda k_{\\mathrm B}T$）：同様に $x=5(1-e^{-x})$，$x_\\lambda=4.965$．（反復 $x\\leftarrow n(1-e^{-x})$ で収束する．）\n\n(3) $\\nu_{\\max}=x_\\nu k_{\\mathrm B}T/h$，$\\lambda_{\\max}=hc/(x_\\lambda k_{\\mathrm B}T)$ より $\\nu_{\\max}\\lambda_{\\max}=\\dfrac{x_\\nu}{x_\\lambda}c\\approx0.568c$．分布「密度」は変数のとり方に依存する：$u_\\lambda=u_\\nu|d\\nu/d\\lambda|=u_\\nu c/\\lambda^2$ のヤコビアン $\\lambda^{-2}$ が短波長側に重みを移すので，最大の位置が変わる．密度関数のピークは座標変換で不変ではない（積分量 $U$ は不変）．\n\n(4) $\\boldsymbol{\\lambda_{\\max}=\\dfrac{hc}{x_\\lambda k_{\\mathrm B}T}}$，$\\boldsymbol{\\dfrac{c}{\\nu_{\\max}}=\\dfrac{hc}{x_\\nu k_{\\mathrm B}T}}$ で，比は $\\dfrac{c/\\nu_{\\max}}{\\lambda_{\\max}}=\\boldsymbol{\\dfrac{x_\\lambda}{x_\\nu}}\\approx1.76$．太陽（約 $5800\\,\\mathrm K$）では $\\lambda_{\\max}\\approx500\\,\\mathrm{nm}$（緑）だが，$c/\\nu_{\\max}\\approx880\\,\\mathrm{nm}$（近赤外）である．「ピークは緑（約 500 nm）」は単位波長当たりで測ったスペクトルを前提にしており，単位振動数当たり（あるいは $\\ln\\lambda$ 当たり）で測れば別の位置にピークが来る．"
    }
   ],
   "idea": {
@@ -1803,7 +1803,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $\\nu_{\\max}\\lambda_{\\max}$：(x_ν / x_λ) c\n(4) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\nu_{\\max}\\lambda_{\\max}$：(x_ν / x_λ) c\n(4) $\\lambda_{\\max}$：h c/(x_λ k_B T) ; $c/\\nu_{\\max}$：h c/(x_ν k_B T) ; 比：x_λ/x_ν"
   },
   "methods": [],
   "tags": [
@@ -1836,16 +1836,16 @@
   "theme": "アインシュタイン模型の高温補正と比熱半減温度",
   "topic": "アインシュタイン模型の高温補正と比熱半減温度",
   "statement": {
-   "tex": "$N$ 個の格子点からなる3次元結晶で，$3N$ 個の振動モードが全て同じエネルギー量子 $\\varepsilon_0$ をもつとする（アインシュタイン模型）．フォノンの状態密度は $D(\\epsilon)=3N\\delta(\\epsilon-\\varepsilon_0)$，化学ポテンシャルは $0$ とし，零点エネルギーは含めない．$x=\\varepsilon_0/k_{\\mathrm B}T$ とする．\n\\begin{enumerate}\n\\item 内部エネルギー $U$ と比熱 $C=dU/dT$ を求めよ．\n\\item 高温 $x\\ll1$ で $U$ を $x$ の 1 次（$1/T$ の項）まで，$C$ を $x^2$ の項まで展開せよ．$U$ の展開に現れる定数項の物理的意味を，零点エネルギー $\\frac12\\varepsilon_0$ を含めた場合と比較して述べよ．\n\\item 比熱が古典値 $3Nk_{\\mathrm B}$ のちょうど半分になる温度 $T_{1/2}$ を $\\varepsilon_0/k_{\\mathrm B}$ の何倍か有効数字3桁で求めよ．\n\\item 低温 $x\\gg1$ での $C$ の漸近形を求め，同じ低温でのデバイ模型の $C\\propto T^3$ と比べて，どちらが速く 0 に近づくか，その理由とともに述べよ．\n\\end{enumerate}"
+   "tex": "$N$ 個の格子点からなる3次元結晶で，$3N$ 個の振動モードが全て同じエネルギー量子 $\\varepsilon_0$ をもつとする（アインシュタイン模型）．フォノンの状態密度は $D(\\epsilon)=3N\\delta(\\epsilon-\\varepsilon_0)$，化学ポテンシャルは $0$ とし，零点エネルギーは含めない．$x=\\varepsilon_0/k_{\\mathrm B}T$ とする．\n\\begin{enumerate}\n\\item 内部エネルギー $U$ と比熱 $C=dU/dT$ を求めよ．\n\\item 高温 $x\\ll1$ で $U$ を $x$ の 1 次（$1/T$ の項）まで，$C$ を $x^2$ の項まで展開せよ．$U$ の展開に現れる定数項の物理的意味を，零点エネルギー $\\frac12\\varepsilon_0$ を含めた場合と比較して述べよ．\n\\item 比熱が古典値 $3Nk_{\\mathrm B}$ より相対的に $\\delta$（$0<\\delta\\ll1$）だけ小さくなる温度 $T_\\delta$ を，(2) の展開を用いて求めよ．\n\\item 低温 $x\\gg1$ での $C$ の漸近形を求め，同じ低温でのデバイ模型の $C\\propto T^3$ と比べて，どちらが速く 0 に近づくか，その理由とともに述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $U=\\dfrac{3N\\varepsilon_0}{e^x-1}$，$C=3Nk_{\\mathrm B}\\dfrac{x^2e^x}{(e^x-1)^2}$　(2) $U=3N\\left(k_{\\mathrm B}T-\\frac{\\varepsilon_0}{2}+\\frac{\\varepsilon_0^2}{12k_{\\mathrm B}T}\\right)$，$C=3Nk_{\\mathrm B}\\left(1-\\frac{x^2}{12}\\right)$　(3) $T_{1/2}\\approx0.335\\,\\varepsilon_0/k_{\\mathrm B}$　(4) $C\\simeq3Nk_{\\mathrm B}x^2e^{-x}$（指数的に速く 0）"
+   "tex": "(1) $U=\\dfrac{3N\\varepsilon_0}{e^x-1}$，$C=3Nk_{\\mathrm B}\\dfrac{x^2e^x}{(e^x-1)^2}$　(2) $U=3N\\left(k_{\\mathrm B}T-\\frac{\\varepsilon_0}{2}+\\frac{\\varepsilon_0^2}{12k_{\\mathrm B}T}\\right)$，$C=3Nk_{\\mathrm B}\\left(1-\\frac{x^2}{12}\\right)$　(3) $T_\\delta=\\dfrac{\\varepsilon_0}{k_{\\mathrm B}\\sqrt{12\\delta}}$　(4) $C\\simeq3Nk_{\\mathrm B}x^2e^{-x}$（指数的に速く 0）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $U=\\int D(\\epsilon)\\dfrac{\\epsilon}{e^{\\beta\\epsilon}-1}d\\epsilon=\\dfrac{3N\\varepsilon_0}{e^{x}-1}$．$dx/dT=-x/T$ より\n\\[ C=\\frac{dU}{dT}=3N\\varepsilon_0\\frac{e^x}{(e^x-1)^2}\\frac{x}{T}=3Nk_{\\mathrm B}\\frac{x^2e^x}{(e^x-1)^2}. \\]\n\n(2) $\\dfrac{1}{e^x-1}=\\dfrac1x-\\dfrac12+\\dfrac{x}{12}+O(x^3)$ より\n\\[ U=3N\\varepsilon_0\\left(\\frac1x-\\frac12+\\frac x{12}\\right)=3N\\left(k_{\\mathrm B}T-\\frac{\\varepsilon_0}2+\\frac{\\varepsilon_0^2}{12k_{\\mathrm B}T}\\right). \\]\n$C=dU/dT=3N\\left(k_{\\mathrm B}-\\dfrac{\\varepsilon_0^2}{12k_{\\mathrm B}T^2}\\right)=3Nk_{\\mathrm B}\\left(1-\\dfrac{x^2}{12}\\right)$．\n定数項 $-\\frac12\\varepsilon_0$（モード当たり）は，零点エネルギーを除いたために古典値 $k_{\\mathrm B}T$ から差し引かれた分である．零点エネルギー $\\frac12\\varepsilon_0$ を含めると $U=3N(k_{\\mathrm B}T+\\varepsilon_0^2/12k_{\\mathrm B}T+\\cdots)$ となり，高温極限で古典値に定数のずれなく漸近する．比熱は定数項によらない．\n\n(3) $f(x)=\\dfrac{x^2e^x}{(e^x-1)^2}=\\dfrac12$ を数値的に解くと $x\\approx2.983$．よって $T_{1/2}=\\dfrac{\\varepsilon_0}{2.983k_{\\mathrm B}}\\approx0.335\\,\\dfrac{\\varepsilon_0}{k_{\\mathrm B}}$．比熱はエネルギー量子の約 1/3 の温度ですでに半分まで落ちる．\n\n(4) $x\\gg1$ で $(e^x-1)^2\\simeq e^{2x}$，$C\\simeq3Nk_{\\mathrm B}x^2e^{-x}$．活性化型（ボルツマン因子 $e^{-\\varepsilon_0/k_{\\mathrm B}T}$）なのでどんな冪 $T^n$ よりも速く 0 に近づく．アインシュタイン模型ではエネルギーギャップ $\\varepsilon_0$ 以下の励起が存在しないのに対し，実際の結晶（デバイ模型）では $\\varepsilon\\to0$ の音響フォノンがあり，$k_{\\mathrm B}T$ 以下の励起が常に $T^3$ に比例する数だけ熱励起されるため，冪的にしか減少しない．"
+    "tex": "(1) $U=\\int D(\\epsilon)\\dfrac{\\epsilon}{e^{\\beta\\epsilon}-1}d\\epsilon=\\dfrac{3N\\varepsilon_0}{e^{x}-1}$．$dx/dT=-x/T$ より\n\\[ C=\\frac{dU}{dT}=3N\\varepsilon_0\\frac{e^x}{(e^x-1)^2}\\frac{x}{T}=3Nk_{\\mathrm B}\\frac{x^2e^x}{(e^x-1)^2}. \\]\n\n(2) $\\dfrac{1}{e^x-1}=\\dfrac1x-\\dfrac12+\\dfrac{x}{12}+O(x^3)$ より\n\\[ U=3N\\varepsilon_0\\left(\\frac1x-\\frac12+\\frac x{12}\\right)=3N\\left(k_{\\mathrm B}T-\\frac{\\varepsilon_0}2+\\frac{\\varepsilon_0^2}{12k_{\\mathrm B}T}\\right). \\]\n$C=dU/dT=3N\\left(k_{\\mathrm B}-\\dfrac{\\varepsilon_0^2}{12k_{\\mathrm B}T^2}\\right)=3Nk_{\\mathrm B}\\left(1-\\dfrac{x^2}{12}\\right)$．\n定数項 $-\\frac12\\varepsilon_0$（モード当たり）は，零点エネルギーを除いたために古典値 $k_{\\mathrm B}T$ から差し引かれた分である．零点エネルギー $\\frac12\\varepsilon_0$ を含めると $U=3N(k_{\\mathrm B}T+\\varepsilon_0^2/12k_{\\mathrm B}T+\\cdots)$ となり，高温極限で古典値に定数のずれなく漸近する．比熱は定数項によらない．\n\n(3) (2) より $1-\\dfrac{C}{3Nk_{\\mathrm B}}\\simeq\\dfrac{x^2}{12}=\\delta$，$x=\\sqrt{12\\delta}$．よって\n\\[ \\boldsymbol{T_\\delta=\\frac{\\varepsilon_0}{k_{\\mathrm B}\\sqrt{12\\delta}}}. \\]\nたとえば $\\delta=0.01$ でも $T_\\delta\\approx2.9\\,\\varepsilon_0/k_{\\mathrm B}$ で，比熱が古典値に十分近づくにはエネルギー量子の数倍の温度が必要である．\n\n(4) $x\\gg1$ で $(e^x-1)^2\\simeq e^{2x}$，$C\\simeq3Nk_{\\mathrm B}x^2e^{-x}$．活性化型（ボルツマン因子 $e^{-\\varepsilon_0/k_{\\mathrm B}T}$）なのでどんな冪 $T^n$ よりも速く 0 に近づく．アインシュタイン模型ではエネルギーギャップ $\\varepsilon_0$ 以下の励起が存在しないのに対し，実際の結晶（デバイ模型）では $\\varepsilon\\to0$ の音響フォノンがあり，$k_{\\mathrm B}T$ 以下の励起が常に $T^3$ に比例する数だけ熱励起されるため，冪的にしか減少しない．"
    }
   ],
   "idea": {
@@ -1853,7 +1853,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $U$：((3 N ε_0)/(e ^(x)-1)) ; $C$：3 N k_B ((x ^(2) e ^(x))/((e ^(x)-1)^(2)))\n(2) $U$：3 N (k_B T -((ε_0)/(2))+((ε_0 ^(2))/(12 k_B T))) ; $C$：3 N k_B (1-((x ^(2))/(12)))\n(3) 記述\n(4) 記述"
+   "spec": "(1) $U$：((3 N ε_0)/(e ^(x)-1)) ; $C$：3 N k_B ((x ^(2) e ^(x))/((e ^(x)-1)^(2)))\n(2) $U$：3 N (k_B T -((ε_0)/(2))+((ε_0 ^(2))/(12 k_B T))) ; $C$：3 N k_B (1-((x ^(2))/(12)))\n(3) $T_\\delta$：ε_0/(k_B sqrt(12 δ))\n(4) $C$：3 N k_B x^2 e^(-x)"
   },
   "methods": [],
   "tags": [
@@ -1886,16 +1886,16 @@
   "theme": "プランク分布：ピークの非対応と1次元線路の熱雑音",
   "topic": "プランク分布：ピークの非対応と1次元線路の熱雑音",
   "statement": {
-   "tex": "温度 $T$ の熱放射を考える．$x=h\\nu/(k_BT)$ とおく．\n\\begin{enumerate}\n\\item 体積 $V=L^3$ の立方体に周期的境界条件を課すと，波数は $\\boldsymbol k=\\frac{2\\pi}{L}(n_x,n_y,n_z)$（$n_i$ は整数）となる．偏光の自由度 2 を考慮し，振動数が $\\nu$ 以下のモードの数 $\\mathcal N(\\nu)$ と，振動数 $\\nu\\sim\\nu+d\\nu$ のモード数を求めよ（$L\\gg$ 波長）．\n\\item 1 つのモードのエネルギーが $nh\\nu$（$n=0,1,2,\\dots$）に量子化されカノニカル分布に従うとして，平均エネルギーを求め，エネルギー密度のスペクトル $u_\\nu(T)$ を導け．\n\\item $u_\\nu$ が最大となる振動数 $\\nu_{\\rm m}$ と，波長あたりのスペクトル $u_\\lambda$ が最大となる波長 $\\lambda_{\\rm m}$ を，それぞれ $x$ に関する超越方程式で特徴づけよ．数値解が $x\\approx2.821$ と $x\\approx4.965$ であることを用いて $\\nu_{\\rm m}\\lambda_{\\rm m}/c$ を求め，$c$ にならない理由を説明せよ．\n\\item 1 次元の場合として，長さ $L$ の無損失伝送線路（波の速さ $v$，偏光は 1 つ，周期的境界条件）を考える．線路上を一方向に流れる熱放射のパワーの帯域 $d\\nu$ あたりの値 $P_\\nu\\,d\\nu$ を求め，$h\\nu\\ll k_BT$ で $k_BT\\,d\\nu$（ナイキストの熱雑音）になることを示せ．$T=300$ K でこの古典近似が 1\\% ずれる振動数の目安を求めよ（$k_B=1.381\\times10^{-23}$ J/K，$h=6.626\\times10^{-34}$ J s）．\n\\item (4) の線路で一方向に流れる全パワーの温度依存性を求め，3 次元の $T^4$ 則と比較せよ．必要なら $\\int_0^\\infty\\frac{x\\,dx}{e^x-1}=\\frac{\\pi^2}{6}$ を用いよ．\n\\end{enumerate}"
+   "tex": "温度 $T$ の熱放射を考える．$x=h\\nu/(k_BT)$ とおく．\n\\begin{enumerate}\n\\item 体積 $V=L^3$ の立方体に周期的境界条件を課すと，波数は $\\boldsymbol k=\\frac{2\\pi}{L}(n_x,n_y,n_z)$（$n_i$ は整数）となる．偏光の自由度 2 を考慮し，振動数が $\\nu$ 以下のモードの数 $\\mathcal N(\\nu)$ と，振動数 $\\nu\\sim\\nu+d\\nu$ のモード数を求めよ（$L\\gg$ 波長）．\n\\item 1 つのモードのエネルギーが $nh\\nu$（$n=0,1,2,\\dots$）に量子化されカノニカル分布に従うとして，平均エネルギーを求め，エネルギー密度のスペクトル $u_\\nu(T)$ を導け．\n\\item $u_\\nu$ が最大となる振動数 $\\nu_{\\rm m}$ と，波長あたりのスペクトル $u_\\lambda$ が最大となる波長 $\\lambda_{\\rm m}$ を，それぞれ $x$ に関する超越方程式で特徴づけよ．数値解が $x\\approx2.821$ と $x\\approx4.965$ であることを用いて $\\nu_{\\rm m}\\lambda_{\\rm m}/c$ を求め，$c$ にならない理由を説明せよ．\n\\item 1 次元の場合として，長さ $L$ の無損失伝送線路（波の速さ $v$，偏光は 1 つ，周期的境界条件）を考える．線路上を一方向に流れる熱放射のパワーの帯域 $d\\nu$ あたりの値 $P_\\nu\\,d\\nu$ を求め，$h\\nu\\ll k_BT$ で $k_BT\\,d\\nu$（ナイキストの熱雑音）になることを示せ．古典近似からの相対的なずれが $\\delta$（$0<\\delta\\ll1$）になる振動数の目安 $\\nu_\\delta$ を求めよ．\n\\item (4) の線路で一方向に流れる全パワーの温度依存性を求め，3 次元の $T^4$ 則と比較せよ．必要なら $\\int_0^\\infty\\frac{x\\,dx}{e^x-1}=\\frac{\\pi^2}{6}$ を用いよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\mathcal N(\\nu)=\\dfrac{8\\pi V\\nu^3}{3c^3}$，$\\dfrac{8\\pi V\\nu^2}{c^3}d\\nu$　(2) $\\langle\\varepsilon\\rangle=\\dfrac{h\\nu}{e^x-1}$，$u_\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac1{e^x-1}$　(3) $x=3(1-e^{-x})$，$x=5(1-e^{-x})$；$\\nu_{\\rm m}\\lambda_{\\rm m}/c\\approx0.568$　(4) $P_\\nu d\\nu=\\dfrac{h\\nu\\,d\\nu}{e^x-1}\\to k_BT\\,d\\nu$；約 $1.25\\times10^{11}$ Hz　(5) $P=\\dfrac{\\pi^2k_B^2T^2}{6h}\\propto T^2$"
+   "tex": "(1) $\\mathcal N(\\nu)=\\dfrac{8\\pi V\\nu^3}{3c^3}$，$\\dfrac{8\\pi V\\nu^2}{c^3}d\\nu$　(2) $\\langle\\varepsilon\\rangle=\\dfrac{h\\nu}{e^x-1}$，$u_\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac1{e^x-1}$　(3) $x=3(1-e^{-x})$，$x=5(1-e^{-x})$；$\\nu_{\\mathrm{m}}\\lambda_{\\mathrm{m}}/c\\approx0.568$　(4) $P_\\nu d\\nu=\\dfrac{h\\nu\\,d\\nu}{e^x-1}\\to k_BT\\,d\\nu$；$\\nu_\\delta\\simeq\\dfrac{2\\delta k_BT}{h}$　(5) $P=\\dfrac{\\pi^2k_B^2T^2}{6h}\\propto T^2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $|\\boldsymbol k|=2\\pi\\nu/c$．$\\boldsymbol n$ 空間で半径 $R=L\\nu/c$ の球内の格子点数は $\\frac43\\pi R^3$．偏光 2 を掛けて\n\\[\n\\mathcal N(\\nu)=2\\cdot\\frac{4\\pi}{3}\\left(\\frac{L\\nu}{c}\\right)^3=\\frac{8\\pi V\\nu^3}{3c^3},\\qquad d\\mathcal N=\\frac{8\\pi V\\nu^2}{c^3}d\\nu .\n\\]\n\n(2) $r=e^{-x}$ として $Z=\\sum_nr^n=\\dfrac1{1-r}$，$\\sum nr^n=r\\dfrac{d}{dr}\\dfrac1{1-r}=\\dfrac{r}{(1-r)^2}$．\n\\[\n\\langle\\varepsilon\\rangle=h\\nu\\frac{\\sum nr^n}{\\sum r^n}=\\frac{h\\nu\\,r}{1-r}=\\frac{h\\nu}{e^x-1}.\n\\]\nこれにモード密度を掛けて $V$ で割ると $u_\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac{1}{e^{h\\nu/k_BT}-1}$．\n\n(3) $u_\\nu\\propto x^3/(e^x-1)$ の極大：$\\dfrac{d}{dx}\\log=\\dfrac3x-\\dfrac{e^x}{e^x-1}=0$ より $x=3(1-e^{-x})$，$x_\\nu\\approx2.821$．\n$u_\\lambda=u_\\nu|d\\nu/d\\lambda|$ で $\\nu=c/\\lambda$ より $u_\\lambda\\propto\\lambda^{-5}/(e^{hc/\\lambda k_BT}-1)\\propto x^5/(e^x-1)$．同様に $x=5(1-e^{-x})$，$x_\\lambda\\approx4.965$．\n\\[\n\\nu_{\\rm m}=\\frac{x_\\nu k_BT}{h},\\quad \\lambda_{\\rm m}=\\frac{hc}{x_\\lambda k_BT}\\quad\\Longrightarrow\\quad \\frac{\\nu_{\\rm m}\\lambda_{\\rm m}}{c}=\\frac{x_\\nu}{x_\\lambda}\\approx0.568 .\n\\]\nスペクトル「密度」は変数の取り方で重み $|d\\nu/d\\lambda|=c/\\lambda^2\\propto\\nu^2$ が変わるので，極大の位置は変数変換で対応しない．$\\lambda_{\\rm m}$ の光は $\\nu_{\\rm m}$ の光より約 1.76 倍振動数が低い．\n\n(4) 1 次元では $k=\\frac{2\\pi}{L}n$（$n$ は正負の整数）で，$\\nu\\sim\\nu+d\\nu$ には正負の向きそれぞれ $\\dfrac{L}{v}d\\nu$ 個のモードがある．一方向に進むモードのエネルギーは $\\dfrac{L}{v}\\dfrac{h\\nu}{e^x-1}d\\nu$，その線密度 $\\dfrac1v\\dfrac{h\\nu}{e^x-1}d\\nu$ が速さ $v$ で流れるので\n\\[\nP_\\nu d\\nu=\\frac{h\\nu}{e^x-1}d\\nu=k_BT\\left(1-\\frac x2+\\frac{x^2}{12}-\\cdots\\right)d\\nu .\n\\]\n$h\\nu\\ll k_BT$ で $k_BT\\,d\\nu$（線路の特性インピーダンスや $v$ によらない）．1\\% のずれは $x/2\\approx0.01$，$x\\approx0.020$．$k_BT/h=6.25\\times10^{12}$ Hz（300 K）より $\\nu\\approx0.020\\times6.25\\times10^{12}\\approx1.25\\times10^{11}$ Hz（約 125 GHz）．\n\n(5) $P=\\displaystyle\\int_0^\\infty\\frac{h\\nu\\,d\\nu}{e^{h\\nu/k_BT}-1}=\\frac{(k_BT)^2}{h}\\int_0^\\infty\\frac{x\\,dx}{e^x-1}=\\frac{\\pi^2k_B^2T^2}{6h}\\propto T^2$．\n$d$ 次元ではモード密度 $\\propto\\nu^{d-1}$ なので全エネルギー $\\propto T^{d+1}$ となり，3 次元の $T^4$（シュテファン＝ボルツマン則）と 1 次元の $T^2$ はその特別な場合である．"
+    "tex": "(1) $|\\boldsymbol k|=2\\pi\\nu/c$．$\\boldsymbol n$ 空間で半径 $R=L\\nu/c$ の球内の格子点数は $\\frac43\\pi R^3$．偏光 2 を掛けて\n\\[\n\\mathcal N(\\nu)=2\\cdot\\frac{4\\pi}{3}\\left(\\frac{L\\nu}{c}\\right)^3=\\frac{8\\pi V\\nu^3}{3c^3},\\qquad d\\mathcal N=\\frac{8\\pi V\\nu^2}{c^3}d\\nu .\n\\]\n\n(2) $r=e^{-x}$ として $Z=\\sum_nr^n=\\dfrac1{1-r}$，$\\sum nr^n=r\\dfrac{d}{dr}\\dfrac1{1-r}=\\dfrac{r}{(1-r)^2}$．\n\\[\n\\langle\\varepsilon\\rangle=h\\nu\\frac{\\sum nr^n}{\\sum r^n}=\\frac{h\\nu\\,r}{1-r}=\\frac{h\\nu}{e^x-1}.\n\\]\nこれにモード密度を掛けて $V$ で割ると $u_\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac{1}{e^{h\\nu/k_BT}-1}$．\n\n(3) $u_\\nu\\propto x^3/(e^x-1)$ の極大：$\\dfrac{d}{dx}\\log=\\dfrac3x-\\dfrac{e^x}{e^x-1}=0$ より $x=3(1-e^{-x})$，$x_\\nu\\approx2.821$．\n$u_\\lambda=u_\\nu|d\\nu/d\\lambda|$ で $\\nu=c/\\lambda$ より $u_\\lambda\\propto\\lambda^{-5}/(e^{hc/\\lambda k_BT}-1)\\propto x^5/(e^x-1)$．同様に $x=5(1-e^{-x})$，$x_\\lambda\\approx4.965$．\n\\[\n\\nu_{\\rm m}=\\frac{x_\\nu k_BT}{h},\\quad \\lambda_{\\rm m}=\\frac{hc}{x_\\lambda k_BT}\\quad\\Longrightarrow\\quad \\frac{\\nu_{\\rm m}\\lambda_{\\rm m}}{c}=\\frac{x_\\nu}{x_\\lambda}\\approx0.568 .\n\\]\nスペクトル「密度」は変数の取り方で重み $|d\\nu/d\\lambda|=c/\\lambda^2\\propto\\nu^2$ が変わるので，極大の位置は変数変換で対応しない．$\\lambda_{\\rm m}$ の光は $\\nu_{\\rm m}$ の光より約 1.76 倍振動数が低い．\n\n(4) 1 次元では $k=\\frac{2\\pi}{L}n$（$n$ は正負の整数）で，$\\nu\\sim\\nu+d\\nu$ には正負の向きそれぞれ $\\dfrac{L}{v}d\\nu$ 個のモードがある．一方向に進むモードのエネルギーは $\\dfrac{L}{v}\\dfrac{h\\nu}{e^x-1}d\\nu$，その線密度 $\\dfrac1v\\dfrac{h\\nu}{e^x-1}d\\nu$ が速さ $v$ で流れるので\n\\[\nP_\\nu d\\nu=\\frac{h\\nu}{e^x-1}d\\nu=k_BT\\left(1-\\frac x2+\\frac{x^2}{12}-\\cdots\\right)d\\nu .\n\\]\n$h\\nu\\ll k_BT$ で $k_BT\\,d\\nu$（線路の特性インピーダンスや $v$ によらない）．相対的なずれ $\\delta$ は $x/2\\approx\\delta$，すなわち $\\boldsymbol{\\nu_\\delta\\simeq\\dfrac{2\\delta k_BT}{h}}$．室温で $\\delta=0.01$ なら約 $10^{11}$ Hz で，マイクロ波帯まではナイキストの式がよく成り立つ．\n\n(5) $P=\\displaystyle\\int_0^\\infty\\frac{h\\nu\\,d\\nu}{e^{h\\nu/k_BT}-1}=\\frac{(k_BT)^2}{h}\\int_0^\\infty\\frac{x\\,dx}{e^x-1}=\\frac{\\pi^2k_B^2T^2}{6h}\\propto T^2$．\n$d$ 次元ではモード密度 $\\propto\\nu^{d-1}$ なので全エネルギー $\\propto T^{d+1}$ となり，3 次元の $T^4$（シュテファン＝ボルツマン則）と 1 次元の $T^2$ はその特別な場合である．"
    }
   ],
   "idea": {
@@ -1903,7 +1903,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+   "spec": "(1) $\\mathcal N(\\nu)$：8 pi V ν^3/(3 c^3)\n(2) $u_\\nu$：8 pi h ν^3/c^3 1/(e^x - 1)\n(3) $\\nu_{\\rm m}\\lambda_{\\rm m}/c$：≈0.568\n(4) $\\nu_\\delta$：2 δ k_B T/h\n(5) $P$：pi^2 k_B^2 T^2/(6 h)"
   },
   "methods": [],
   "tags": [
@@ -1937,16 +1937,16 @@
   "theme": "熱的ド・ブロイ波長と量子縮退の温度",
   "topic": "熱的ド・ブロイ波長と量子縮退の温度",
   "statement": {
-   "tex": "温度 $T$ の理想気体の分子（質量 $m$）が最確速さ $v_p=\\sqrt{2kT/m}$ で運動するときのド・ブロイ波長を $\\lambda_T$ とする．\n\\begin{enumerate}\n\\item $\\lambda_T$ を $m,T$ で表し，$300\\ \\mathrm{K}$ の水素分子（$2.02\\ \\mathrm{u}$）について値を求めよ．\n\\item 圧力 $p$ の気体の平均分子間距離を $n^{-1/3}$（$n$ は数密度）とする．$\\lambda_T=n^{-1/3}$ となる温度 $T_q$ を $h,m,k,p$ で表せ．\n\\item $p=1.013\\times10^5\\ \\mathrm{Pa}$ のヘリウム 4（$4.00\\ \\mathrm{u}$）について $T_q$ と，そのときの $\\lambda_T$ を求めよ（理想気体と仮定）．\n\\end{enumerate}"
+   "tex": "温度 $T$ の理想気体の分子（質量 $m$）が最確速さ $v_p=\\sqrt{2kT/m}$ で運動するときのド・ブロイ波長を $\\lambda_T$ とする．\n\\begin{enumerate}\n\\item $\\lambda_T$ を $h,m,k,T$ で表せ．\n\\item 圧力 $p$ の気体の平均分子間距離を $n^{-1/3}$（$n$ は数密度）とする．$\\lambda_T=n^{-1/3}$ となる温度 $T_q$ を $h,m,k,p$ で表せ．\n\\item $T=T_q$ での $\\lambda_T$ を $h,m,p$ で表せ．また同じ圧力で，分子の質量が半分の気体の $T_q$ は何倍か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\lambda_T=\\dfrac{h}{\\sqrt{2mkT}}$，$0.13\\ \\mathrm{nm}$（$126\\ \\mathrm{pm}$）　(2) $T_q=\\left(\\dfrac{h^6p^2}{8m^3k^5}\\right)^{1/5}$　(3) $T_q\\approx3.7\\ \\mathrm{K}$，$\\lambda_T\\approx0.80\\ \\mathrm{nm}$"
+   "tex": "(1) $\\lambda_T=\\dfrac{h}{\\sqrt{2mkT}}$　(2) $T_q=\\left(\\dfrac{h^6p^2}{8m^3k^5}\\right)^{1/5}$　(3) $\\lambda_T=\\left(\\dfrac{h^2}{2mp}\\right)^{1/5}$，$2^{3/5}$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\lambda_T=\\dfrac{h}{mv_p}=\\dfrac{h}{\\sqrt{2mkT}}$．$m=3.35\\times10^{-27}\\ \\mathrm{kg}$，$kT=4.14\\times10^{-21}\\ \\mathrm{J}$ を代入して $\\lambda_T=1.26\\times10^{-10}\\ \\mathrm{m}$．\n\n(2) $n=p/(kT)$ より $n^{-1/3}=(kT/p)^{1/3}$．$\\dfrac{h}{\\sqrt{2mkT}}=\\left(\\dfrac{kT}{p}\\right)^{1/3}$ の両辺を 6 乗して\n\\[\\frac{h^6}{8m^3k^3T^3}=\\frac{k^2T^2}{p^2}\\quad\\Rightarrow\\quad T_q^5=\\frac{h^6p^2}{8m^3k^5}.\\]\n\n(3) $m=6.65\\times10^{-27}\\ \\mathrm{kg}$ を代入すると $T_q=3.7\\ \\mathrm{K}$，$\\lambda_T=(kT_q/p)^{1/3}=0.80\\ \\mathrm{nm}$．室温では $\\lambda_T$ は分子間距離（約 $3\\ \\mathrm{nm}$）よりずっと短く古典統計でよいが，数 K まで冷やすと波束が重なり量子統計が必要になる（実際のヘリウムは $4.2\\ \\mathrm{K}$ で液化し，$2.2\\ \\mathrm{K}$ で超流動になる）．"
+    "tex": "(1) $\\lambda_T=\\dfrac{h}{mv_p}=\\dfrac{h}{\\sqrt{2mkT}}$．室温の水素分子では約 $0.1\\ \\mathrm{nm}$ で，分子間距離（約 $3\\ \\mathrm{nm}$）よりずっと短い．\n\n(2) $n=p/(kT)$ より $n^{-1/3}=(kT/p)^{1/3}$．$\\dfrac{h}{\\sqrt{2mkT}}=\\left(\\dfrac{kT}{p}\\right)^{1/3}$ の両辺を 6 乗して\n\\[\\frac{h^6}{8m^3k^3T^3}=\\frac{k^2T^2}{p^2}\\quad\\Rightarrow\\quad T_q^5=\\frac{h^6p^2}{8m^3k^5}.\\]\n\n(3) $\\lambda_T=(kT_q/p)^{1/3}$ に (2) を代入すると $\\dfrac{kT_q}{p}=\\left(\\dfrac{h^6p^2k^5}{8m^3k^5p^5}\\right)^{1/5}=\\left(\\dfrac{h^6}{8m^3p^3}\\right)^{1/5}$ より\n\\[ \\boldsymbol{\\lambda_T=\\left(\\frac{h^2}{2mp}\\right)^{1/5}}. \\]\n$T_q\\propto m^{-3/5}$ なので，質量が半分なら $T_q$ は $\\boldsymbol{2^{3/5}}$ 倍（約 $1.5$ 倍）．1 気圧のヘリウム 4 では $T_q$ は数 K，$\\lambda_T$ は $1\\ \\mathrm{nm}$ 弱になる．室温では $\\lambda_T$ は分子間距離（約 $3\\ \\mathrm{nm}$）よりずっと短く古典統計でよいが，数 K まで冷やすと波束が重なり量子統計が必要になる（実際のヘリウムは $4.2\\ \\mathrm{K}$ で液化し，$2.2\\ \\mathrm{K}$ で超流動になる）．"
    }
   ],
   "idea": {
@@ -1954,7 +1954,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\lambda_T$：((h)/(sqrt(2 m k T))) ; [nm]：≈0.13\n(2) $T_q$：(((h ^(6) p ^(2))/(8 m ^(3) k ^(5))))^(1/5)\n(3) $T_q$ [K]：≈3.7 ; $\\lambda_T$ [nm]：≈0.80"
+   "spec": "(1) $\\lambda_T$：((h)/(sqrt(2 m k T)))\n(2) $T_q$：(((h ^(6) p ^(2))/(8 m ^(3) k ^(5))))^(1/5)\n(3) $\\lambda_T$：(h^2/(2 m p))^(1/5) ; 倍率：2^(3/5)"
   },
   "methods": [],
   "tags": [
@@ -2035,16 +2035,16 @@
   "theme": "空洞内の狭帯域モード数と光子数",
   "topic": "空洞内の狭帯域モード数と光子数",
   "statement": {
-   "tex": "体積 $V=1.0\\ \\mathrm{cm^3}$ の空洞が温度 $T=5000\\ \\mathrm K$ の熱平衡にある．空洞内の電磁波の単位体積・単位振動数あたりのモード数（2 偏光込み）は $8\\pi\\nu^2/c^3$ である．\n\\begin{enumerate}\n\\item 波長 $499$–$501\\ \\mathrm{nm}$ の範囲にある空洞のモード数 $N_m$ を求めよ．\n\\item 波長 $500\\ \\mathrm{nm}$ のモード 1 つあたりの平均光子数（占有数）$\\bar n$ を求めよ．\n\\item この波長範囲にある光子の総数を求めよ．また $\\bar n\\ll1$ であることから，この波長域で光の「波としての」古典的記述（Rayleigh–Jeans）と「粒子としての」記述のどちらが適切か論ぜよ．\n\\end{enumerate}\n$h=6.626\\times10^{-34}\\ \\mathrm{J\\,s}$，$k=1.381\\times10^{-23}\\ \\mathrm{J/K}$，$c=2.998\\times10^8\\ \\mathrm{m/s}$ とする．"
+   "tex": "体積 $V$ の空洞が温度 $T$ の熱平衡にある．空洞内の電磁波の単位体積・単位振動数あたりのモード数（2 偏光込み）は $8\\pi\\nu^2/c^3$ である．$h$ はプランク定数，$k$ はボルツマン定数である．\n\\begin{enumerate}\n\\item 波長 $\\lambda$ を中心とする幅 $\\Delta\\lambda$（$\\Delta\\lambda\\ll\\lambda$）の範囲にある空洞のモード数 $N_m$ を求めよ．\n\\item 波長 $\\lambda$ のモード 1 つあたりの平均光子数（占有数）$\\bar n$ を求めよ．\n\\item この波長範囲にある光子の総数を求め，$hc/\\lambda\\gg kT$ のときの近似式を示せ．またこのとき $\\bar n\\ll1$ であることから，この波長域で光の「波としての」古典的記述（Rayleigh–Jeans）と「粒子としての」記述のどちらが適切か論ぜよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $N_m\\approx8.0\\times10^{11}$　(2) $\\bar n\\approx3.2\\times10^{-3}$　(3) 約 $2.6\\times10^{9}$ 個；粒子的（Wien 領域）"
+   "tex": "(1) $N_m=\\dfrac{8\\pi V\\Delta\\lambda}{\\lambda^4}$　(2) $\\bar n=\\dfrac{1}{e^{hc/(\\lambda kT)}-1}$　(3) $\\dfrac{8\\pi V\\Delta\\lambda}{\\lambda^4}\\dfrac{1}{e^{hc/(\\lambda kT)}-1}\\simeq\\dfrac{8\\pi V\\Delta\\lambda}{\\lambda^4}e^{-hc/(\\lambda kT)}$；粒子的（Wien 領域）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\nu=c/\\lambda$，$|d\\nu|=c\\,d\\lambda/\\lambda^2$ より波長あたりのモード密度は $8\\pi/\\lambda^4$．\n\\[\nN_m=V\\frac{8\\pi\\,\\Delta\\lambda}{\\lambda^4}=10^{-6}\\times\\frac{8\\pi\\times2\\times10^{-9}}{(5.00\\times10^{-7})^4}\\approx8.0\\times10^{11}.\n\\]\n\n(2) $x=\\dfrac{hc}{\\lambda kT}=\\dfrac{6.626\\times10^{-34}\\times2.998\\times10^8}{5.00\\times10^{-7}\\times1.381\\times10^{-23}\\times5000}=5.75$，\n$\\bar n=\\dfrac1{e^x-1}\\approx3.2\\times10^{-3}$．\n\n(3) 光子数 $=N_m\\bar n\\approx8.0\\times10^{11}\\times3.18\\times10^{-3}\\approx2.6\\times10^9$．\n占有数が 1 よりずっと小さいので，ほとんどのモードは空（光子 0 個）で，ときどき 1 個の光子がいるという状態である．古典的な波の描像（各モードに $kT$，すなわち $\\bar n\\approx kT/h\\nu\\gg1$）は成り立たず，粒子的（Boltzmann 的）な Wien 領域の記述が適切である．"
+    "tex": "(1) $\\nu=c/\\lambda$，$|d\\nu|=c\\,d\\lambda/\\lambda^2$ より波長あたりのモード密度は $8\\pi/\\lambda^4$．\n\\[\n\\boldsymbol{N_m=\\frac{8\\pi V\\Delta\\lambda}{\\lambda^4}}.\n\\]\n$1\\,\\mathrm{cm^3}$ の空洞で $\\lambda=500\\,\\mathrm{nm}$，$\\Delta\\lambda=2\\,\\mathrm{nm}$ でも $10^{12}$ 程度になる．\n\n(2) モードのエネルギー量子は $h\\nu=hc/\\lambda$ なので $\\boldsymbol{\\bar n=\\dfrac1{e^{hc/(\\lambda kT)}-1}}$．\n\n(3) 光子数 $=N_m\\bar n=\\boldsymbol{\\dfrac{8\\pi V\\Delta\\lambda}{\\lambda^4}\\dfrac{1}{e^{hc/(\\lambda kT)}-1}}$．$hc/\\lambda\\gg kT$ では $\\simeq\\boldsymbol{\\dfrac{8\\pi V\\Delta\\lambda}{\\lambda^4}e^{-hc/(\\lambda kT)}}$．\nこのとき占有数が 1 よりずっと小さいので，ほとんどのモードは空（光子 0 個）で，ときどき 1 個の光子がいるという状態である（たとえば $5000\\,\\mathrm K$ の空洞の可視光で $\\bar n\\sim10^{-3}$）．古典的な波の描像（各モードに $kT$，すなわち $\\bar n\\approx kT/h\\nu\\gg1$）は成り立たず，粒子的（Boltzmann 的）な Wien 領域の記述が適切である．"
    }
   ],
   "idea": {
@@ -2052,7 +2052,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $N_m$：≈8.0e11\n(2) $\\bar n$：≈3.2e-3\n(3) 記述"
+   "spec": "(1) $N_m$：8 pi V Δλ/λ^4\n(2) $\\bar n$：1/(e^(h c/(λ k T)) - 1)\n(3) 光子数：8 pi V Δλ/λ^4 /(e^(h c/(λ k T)) - 1) ; 近似：8 pi V Δλ/λ^4 e^(-h c/(λ k T))"
   },
   "methods": [],
   "tags": [
@@ -2085,16 +2085,16 @@
   "theme": "化学ポテンシャルの温度変化と占有確率",
   "topic": "化学ポテンシャルの温度変化と占有確率",
   "statement": {
-   "tex": "銀の伝導電子（$T=0$ のフェルミエネルギー $E_F=5.52\\ \\mathrm{eV}$）を 3 次元自由電子気体とみなす．有限温度の化学ポテンシャルはゾンマーフェルト展開により\n\\[ \\mu(T)\\simeq E_F\\left[1-\\frac{\\pi^2}{12}\\left(\\frac{k_BT}{E_F}\\right)^2\\right]. \\]\n\\begin{enumerate}\n\\item $T=800\\ \\mathrm K$ で $E_F-\\mu$ を求めよ．\n\\item $T=800\\ \\mathrm K$ で占有確率がちょうど 90% になる状態のエネルギーを求めよ．\n\\item $\\mu$ が $E_F$ から 1% ずれる温度を見積もれ．なぜ 3 次元では $\\mu$ が温度とともに下がるのかを状態密度の形から説明せよ．\n\\end{enumerate}"
+   "tex": "金属の伝導電子（$T=0$ のフェルミエネルギー $E_F$）を 3 次元自由電子気体とみなす．有限温度の化学ポテンシャルはゾンマーフェルト展開により\n\\[ \\mu(T)\\simeq E_F\\left[1-\\frac{\\pi^2}{12}\\left(\\frac{k_BT}{E_F}\\right)^2\\right]. \\]\n\\begin{enumerate}\n\\item 温度 $T$ で $E_F-\\mu$ を求めよ．\n\\item 温度 $T$ で占有確率がちょうど 90% になる状態のエネルギー $E$ を求めよ．\n\\item $\\mu$ が $E_F$ から相対的に $\\delta$ だけずれる温度 $T_\\delta$ を求めよ．なぜ 3 次元では $\\mu$ が温度とともに下がるのかを状態密度の形から説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $7.1\\times10^{-4}\\ \\mathrm{eV}$　(2) $E\\approx5.37\\ \\mathrm{eV}$　(3) $T\\approx7.1\\times10^3\\ \\mathrm K$．$D(E)\\propto\\sqrt E$ が増加関数のため"
+   "tex": "(1) $E_F-\\mu=\\dfrac{\\pi^2(k_BT)^2}{12E_F}$　(2) $E=E_F-\\dfrac{\\pi^2(k_BT)^2}{12E_F}-(\\ln9)k_BT$　(3) $T_\\delta=\\dfrac{E_F\\sqrt{12\\delta}}{\\pi k_B}$．$D(E)\\propto\\sqrt E$ が増加関数のため"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $k_BT=8.617\\times10^{-5}\\times800=0.0689$ eV．\n\\[ E_F-\\mu=\\frac{\\pi^2}{12}\\frac{(0.0689)^2}{5.52}=7.1\\times10^{-4}\\ \\mathrm{eV}. \\]\n\n(2) $f=0.9$ より $e^{(E-\\mu)/k_BT}=1/9$，$E=\\mu-k_BT\\ln9=5.5193-0.0689\\times2.197=5.37$ eV．\n化学ポテンシャルのずれ（0.7 meV）は $k_BT\\ln9=0.15$ eV に比べ無視できる．（ボルツマン定数を正しく $8.617\\times10^{-5}$ eV/K とすることが重要で，ここを誤ると 0.15 eV の幅を見誤る．）\n\n(3) $\\dfrac{\\pi^2}{12}\\left(\\dfrac{k_BT}{E_F}\\right)^2=0.01$ より $k_BT=E_F\\sqrt{0.12/\\pi^2}=0.110E_F=0.609$ eV，$T\\approx7.1\\times10^3$ K（銀の沸点を超え，固体ではまず到達しない）．\n粒子数 $N=\\int D(E)f(E)\\,dE$ を一定に保つ．温度が上がると $\\mu$ の上下 $k_BT$ 程度の範囲で電子が上へ移るが，$D(E)\\propto\\sqrt E$ は $\\mu$ の上側のほうが大きいので，$\\mu$ を固定したままだと $\\mu$ より上で増える電子数が下で減る数を上回ってしまう．数を保つため $\\mu$ が下がる．（2 次元の一定状態密度ではこの $T^2$ 補正は消える．）"
+    "tex": "(1) 与式より $\\boldsymbol{E_F-\\mu=\\dfrac{\\pi^2(k_BT)^2}{12E_F}}$．\n\n(2) $f=0.9$ より $e^{(E-\\mu)/k_BT}=1/9$，\n\\[ \\boldsymbol{E=\\mu-k_BT\\ln9=E_F-\\frac{\\pi^2(k_BT)^2}{12E_F}-k_BT\\ln9}. \\]\n金属では $k_BT\\ll E_F$ なので，化学ポテンシャルのずれ（第 2 項）は第 3 項に比べ $k_BT/E_F$ 倍小さく無視できる（銀で $800\\,\\mathrm K$ なら 1 meV 弱と 0.15 eV）．\n\n(3) $\\dfrac{\\pi^2}{12}\\left(\\dfrac{k_BT}{E_F}\\right)^2=\\delta$ より $\\boldsymbol{T_\\delta=\\dfrac{E_F\\sqrt{12\\delta}}{\\pi k_B}}$．$\\delta=0.01$ でも $k_BT\\approx0.11E_F$ で，$E_F$ が数 eV の金属では数千 K となり，固体ではまず到達しない．\n粒子数 $N=\\int D(E)f(E)\\,dE$ を一定に保つ．温度が上がると $\\mu$ の上下 $k_BT$ 程度の範囲で電子が上へ移るが，$D(E)\\propto\\sqrt E$ は $\\mu$ の上側のほうが大きいので，$\\mu$ を固定したままだと $\\mu$ より上で増える電子数が下で減る数を上回ってしまう．数を保つため $\\mu$ が下がる．（2 次元の一定状態密度ではこの $T^2$ 補正は消える．）"
    }
   ],
   "idea": {
@@ -2102,7 +2102,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) [eV]：≈7.1e-4\n(2) $E$ [eV]：≈5.37\n(3) 記述"
+   "spec": "(1) $E_F-\\mu$：pi^2 (k_B T)^2/(12 E_F)\n(2) $E$：E_F - pi^2 (k_B T)^2/(12 E_F) - k_B T ln(9)\n(3) $T_\\delta$：E_F sqrt(12 δ)/(pi k_B)"
   },
   "methods": [],
   "tags": [
@@ -2135,16 +2135,16 @@
   "theme": "調和ポテンシャル中のボース＝アインシュタイン凝縮",
   "topic": "調和ポテンシャル中のボース＝アインシュタイン凝縮",
   "statement": {
-   "tex": "等方的な3次元調和ポテンシャル（角振動数 $\\omega$）に捕捉された，スピン $0$ の理想ボース粒子 $N$ 個を考える．1粒子の準位は（零点エネルギーを除いて）$\\varepsilon=\\hbar\\omega(n_x+n_y+n_z)$ である．$k_BT\\gg\\hbar\\omega$ とし，準位の和を積分で近似する．$\\int_0^\\infty\\dfrac{x^2}{e^x-1}dx=2\\zeta(3)$，$\\zeta(3)=1.202$ を使ってよい．\n\\begin{enumerate}\n\\item エネルギーが $\\varepsilon$ と $\\varepsilon+d\\varepsilon$ の間にある準位の数 $g(\\varepsilon)\\,d\\varepsilon$ の $g(\\varepsilon)$ を求めよ（$\\varepsilon\\gg\\hbar\\omega$）．\n\\item 凝縮温度 $T_c$ を $N,\\,\\omega$ で表せ．\n\\item $T<T_c$ での凝縮体の割合 $N_0/N$ を求めよ．\n\\item $N=1.0\\times10^6$，$\\omega=2\\pi\\times100\\,\\mathrm{s^{-1}}$ のときの $T_c$ を求めよ（$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$k_B=1.381\\times10^{-23}\\,\\mathrm{J/K}$）．\n\\end{enumerate}"
+   "tex": "等方的な3次元調和ポテンシャル（角振動数 $\\omega$）に捕捉された，スピン $0$ の理想ボース粒子 $N$ 個を考える．1粒子の準位は（零点エネルギーを除いて）$\\varepsilon=\\hbar\\omega(n_x+n_y+n_z)$ である．$k_BT\\gg\\hbar\\omega$ とし，準位の和を積分で近似する．$\\int_0^\\infty\\dfrac{x^2}{e^x-1}dx=2\\zeta(3)$，$\\zeta(3)=1.202$ を使ってよい．\n\\begin{enumerate}\n\\item エネルギーが $\\varepsilon$ と $\\varepsilon+d\\varepsilon$ の間にある準位の数 $g(\\varepsilon)\\,d\\varepsilon$ の $g(\\varepsilon)$ を求めよ（$\\varepsilon\\gg\\hbar\\omega$）．\n\\item 凝縮温度 $T_c$ を $N,\\,\\omega$ で表せ．\n\\item $T<T_c$ での凝縮体の割合 $N_0/N$ を求めよ．\n\\item 凝縮体の割合がちょうど $1/2$ になる温度を $T_c$ で表せ．一様な箱の中の気体（$N_0/N=1-(T/T_c)^{3/2}$）の場合と比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}$ \\quad (2) $T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{1.202}\\right)^{1/3}$ \\quad (3) $\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3$ \\quad (4) $\\approx4.5\\times10^{2}\\,\\mathrm{nK}$"
+   "tex": "(1) $g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}$ \\quad (2) $T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{1.202}\\right)^{1/3}$ \\quad (3) $\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3$ \\quad (4) $T=2^{-1/3}T_c$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n_x+n_y+n_z\\le\\varepsilon/\\hbar\\omega$ を満たす非負整数の組の数は，大きな $\\varepsilon$ では四面体の体積 $\\dfrac{1}{6}\\left(\\dfrac{\\varepsilon}{\\hbar\\omega}\\right)^3$．微分して $\\boldsymbol{g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}}$．\n\n(2) $T_c$ では化学ポテンシャルが $0$ に達し，励起状態の粒子数が $N$ に等しい：\n\\[ N=\\int_0^\\infty\\frac{\\varepsilon^2}{2(\\hbar\\omega)^3}\\frac{d\\varepsilon}{e^{\\varepsilon/k_BT_c}-1}=\\zeta(3)\\left(\\frac{k_BT_c}{\\hbar\\omega}\\right)^3. \\]\nよって $\\boldsymbol{T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{\\zeta(3)}\\right)^{1/3}}$．\n\n(3) $T<T_c$ でも $\\mu=0$ で，励起状態の粒子数は $\\zeta(3)(k_BT/\\hbar\\omega)^3=N(T/T_c)^3$．残りが凝縮して $\\boldsymbol{\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3}$．一様な箱の場合の $1-(T/T_c)^{3/2}$ とは指数が違う（状態密度が $\\varepsilon^{1/2}$ でなく $\\varepsilon^2$ のため）．\n\n(4) $\\dfrac{\\hbar\\omega}{k_B}=\\dfrac{1.055\\times10^{-34}\\times628.3}{1.381\\times10^{-23}}=4.80\\times10^{-9}\\,\\mathrm{K}$，$(10^6/1.202)^{1/3}=94.0$ より $T_c\\approx\\boldsymbol{4.5\\times10^2\\,\\mathrm{nK}}$．冷却原子の実験で実際に観測される温度領域である．"
+    "tex": "(1) $n_x+n_y+n_z\\le\\varepsilon/\\hbar\\omega$ を満たす非負整数の組の数は，大きな $\\varepsilon$ では四面体の体積 $\\dfrac{1}{6}\\left(\\dfrac{\\varepsilon}{\\hbar\\omega}\\right)^3$．微分して $\\boldsymbol{g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}}$．\n\n(2) $T_c$ では化学ポテンシャルが $0$ に達し，励起状態の粒子数が $N$ に等しい：\n\\[ N=\\int_0^\\infty\\frac{\\varepsilon^2}{2(\\hbar\\omega)^3}\\frac{d\\varepsilon}{e^{\\varepsilon/k_BT_c}-1}=\\zeta(3)\\left(\\frac{k_BT_c}{\\hbar\\omega}\\right)^3. \\]\nよって $\\boldsymbol{T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{\\zeta(3)}\\right)^{1/3}}$．\n\n(3) $T<T_c$ でも $\\mu=0$ で，励起状態の粒子数は $\\zeta(3)(k_BT/\\hbar\\omega)^3=N(T/T_c)^3$．残りが凝縮して $\\boldsymbol{\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3}$．一様な箱の場合の $1-(T/T_c)^{3/2}$ とは指数が違う（状態密度が $\\varepsilon^{1/2}$ でなく $\\varepsilon^2$ のため）．\n\n(4) $1-(T/T_c)^3=\\frac12$ より $\\boldsymbol{T=2^{-1/3}T_c}\\approx0.79T_c$．一様な箱では $(T/T_c)^{3/2}=\\frac12$ より $T=2^{-2/3}T_c\\approx0.63T_c$．トラップ中の気体の方が $T_c$ の下で速く凝縮が進む．なお冷却原子の実験（$N\\sim10^6$，$\\omega\\sim2\\pi\\times100\\,\\mathrm{s^{-1}}$）では $T_c$ は数百 nK になる．"
    }
   ],
   "idea": {
@@ -2152,7 +2152,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) g(ε)：ε^2/(2 (hbar omega)^3)\n(2) T_c：hbar omega/k_B (N/1.202)^(1/3)\n(3) N_0/N：1 - (T/T_c)^3\n(4) T_c [nK]：≈451"
+   "spec": "(1) g(ε)：ε^2/(2 (hbar omega)^3)\n(2) T_c：hbar omega/k_B (N/1.202)^(1/3)\n(3) N_0/N：1 - (T/T_c)^3\n(4) $T$：2^(-1/3) T_c"
   },
   "methods": [],
   "tags": [
@@ -2334,16 +2334,16 @@
   "theme": "古典極限への第一量子補正（第2ビリアル係数）",
   "topic": "古典極限への第一量子補正（第2ビリアル係数）",
   "statement": {
-   "tex": "体積 $V$ の容器中の，質量 $m$，内部縮退度 $g$ の自由粒子 $N$ 個からなる理想量子気体（$\\sigma=+1$ ボーズ，$\\sigma=-1$ フェルミ）を考える．フガシティー $z=e^{\\beta\\mu}$，熱的ド・ブロイ波長 $\\lambda=h/\\sqrt{2\\pi mk_{\\mathrm B}T}$ を用いると，\n\\[ \\frac{N}{V}=\\frac{g}{\\lambda^3}\\sum_{l=1}^\\infty\\frac{\\sigma^{l-1}z^l}{l^{3/2}},\\qquad \\frac{P}{k_{\\mathrm B}T}=\\frac{g}{\\lambda^3}\\sum_{l=1}^\\infty\\frac{\\sigma^{l-1}z^l}{l^{5/2}} \\]\nが成り立つ（$z<1$ で収束）．$n=N/V$ とする．\n\\begin{enumerate}\n\\item 分布関数 $\\bar n(\\varepsilon)=1/(z^{-1}e^{\\beta\\varepsilon}-\\sigma)$ が全ての $\\varepsilon\\ge0$ でマクスウェル・ボルツマン分布 $ze^{-\\beta\\varepsilon}$ に近づくための条件を $z$ について述べ，それが $n\\lambda^3\\ll g$ と同値であることを示せ．「高温」が十分条件でも必要条件でもなく，本質は密度と温度の組合せであることを説明せよ．\n\\item $n\\lambda^3/g$ の 1 次まで $z$ を求め，状態方程式が\n\\[ \\frac{PV}{Nk_{\\mathrm B}T}=1-\\sigma\\frac{n\\lambda^3}{2^{5/2}g}+O\\!\\left((n\\lambda^3)^2\\right) \\]\nとなることを示せ．ボーズ粒子とフェルミ粒子で補正の符号が異なる意味を述べよ．\n\\item 温度 $4.2\\ \\mathrm K$，圧力 $1.013\\times10^5\\ \\mathrm{Pa}$ のヘリウム4気体（$g=1$，原子質量 $4.003\\ \\mathrm u$）について $n\\lambda^3$ と，量子統計による $PV/(Nk_{\\mathrm B}T)$ の 1 からのずれを有効数字2桁で求めよ（$n$ は古典近似 $n=P/k_{\\mathrm B}T$ で評価してよい）．\n\\end{enumerate}"
+   "tex": "体積 $V$ の容器中の，質量 $m$，内部縮退度 $g$ の自由粒子 $N$ 個からなる理想量子気体（$\\sigma=+1$ ボーズ，$\\sigma=-1$ フェルミ）を考える．フガシティー $z=e^{\\beta\\mu}$，熱的ド・ブロイ波長 $\\lambda=h/\\sqrt{2\\pi mk_{\\mathrm B}T}$ を用いると，\n\\[ \\frac{N}{V}=\\frac{g}{\\lambda^3}\\sum_{l=1}^\\infty\\frac{\\sigma^{l-1}z^l}{l^{3/2}},\\qquad \\frac{P}{k_{\\mathrm B}T}=\\frac{g}{\\lambda^3}\\sum_{l=1}^\\infty\\frac{\\sigma^{l-1}z^l}{l^{5/2}} \\]\nが成り立つ（$z<1$ で収束）．$n=N/V$ とする．\n\\begin{enumerate}\n\\item 分布関数 $\\bar n(\\varepsilon)=1/(z^{-1}e^{\\beta\\varepsilon}-\\sigma)$ が全ての $\\varepsilon\\ge0$ でマクスウェル・ボルツマン分布 $ze^{-\\beta\\varepsilon}$ に近づくための条件を $z$ について述べ，それが $n\\lambda^3\\ll g$ と同値であることを示せ．「高温」が十分条件でも必要条件でもなく，本質は密度と温度の組合せであることを説明せよ．\n\\item $n\\lambda^3/g$ の 1 次まで $z$ を求め，状態方程式が\n\\[ \\frac{PV}{Nk_{\\mathrm B}T}=1-\\sigma\\frac{n\\lambda^3}{2^{5/2}g}+O\\!\\left((n\\lambda^3)^2\\right) \\]\nとなることを示せ．ボーズ粒子とフェルミ粒子で補正の符号が異なる意味を述べよ．\n\\item 温度 $T$，圧力 $P$ のヘリウム4気体（$g=1$，原子質量 $m$）について $n\\lambda^3$ と，量子統計による $PV/(Nk_{\\mathrm B}T)$ の 1 からのずれ $\\Delta$ を $P,T,m$ と定数で表せ（$n$ は古典近似 $n=P/k_{\\mathrm B}T$ で評価してよい）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $z\\ll1$；$z\\simeq n\\lambda^3/g$　(2) $z=\\dfrac{n\\lambda^3}{g}-\\sigma\\dfrac{1}{2^{3/2}}\\left(\\dfrac{n\\lambda^3}{g}\\right)^2$，ボーズは圧力減少・フェルミは増加　(3) $n\\lambda^3\\approx0.13$，ずれ $\\approx-0.024$（約 $2.4\\%$ 減）"
+   "tex": "(1) $z\\ll1$；$z\\simeq n\\lambda^3/g$　(2) $z=\\dfrac{n\\lambda^3}{g}-\\sigma\\dfrac{1}{2^{3/2}}\\left(\\dfrac{n\\lambda^3}{g}\\right)^2$，ボーズは圧力減少・フェルミは増加　(3) $n\\lambda^3=\\dfrac{P}{k_{\\mathrm B}T}\\left(\\dfrac{h^2}{2\\pi mk_{\\mathrm B}T}\\right)^{3/2}$，$\\Delta=-\\dfrac{P}{2^{5/2}k_{\\mathrm B}T}\\left(\\dfrac{h^2}{2\\pi mk_{\\mathrm B}T}\\right)^{3/2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\bar n=\\dfrac{ze^{-\\beta\\varepsilon}}{1-\\sigma ze^{-\\beta\\varepsilon}}$．全ての $\\varepsilon\\ge0$ で分母の $\\sigma ze^{-\\beta\\varepsilon}$ が無視できる条件は，最も厳しい $\\varepsilon=0$ で $z\\ll1$ である．このとき密度の式の第1項が支配的で $n\\lambda^3/g\\simeq z$，よって $z\\ll1\\iff n\\lambda^3\\ll g$．$\\lambda\\propto T^{-1/2}$ なので条件は $n\\ll g(2\\pi mk_{\\mathrm B}T)^{3/2}/h^3$，すなわち「平均粒子間距離 $\\gg$ 熱的ド・ブロイ波長」．高温でも密度が非常に高ければ破れ（例：白色矮星の電子），低温でも十分希薄なら成り立つ．\n\n(2) $\\zeta\\equiv n\\lambda^3/g$ とする．$\\zeta=z+\\sigma z^2/2^{3/2}+\\cdots$ を逆に解いて $z=\\zeta-\\sigma\\zeta^2/2^{3/2}+O(\\zeta^3)$．これを圧力の式に代入して\n\\[ \\frac{P\\lambda^3}{gk_{\\mathrm B}T}=z+\\frac{\\sigma z^2}{2^{5/2}}=\\zeta-\\frac{\\sigma\\zeta^2}{2^{3/2}}+\\frac{\\sigma\\zeta^2}{2^{5/2}}=\\zeta-\\frac{\\sigma\\zeta^2}{2^{5/2}}. \\]\n両辺を $\\zeta$ で割ると $\\dfrac{P}{nk_{\\mathrm B}T}=1-\\sigma\\dfrac{\\zeta}{2^{5/2}}$．ボーズ粒子（$\\sigma=+1$）では圧力が古典値より小さく，実効的な引力があるように振る舞う（同じ状態に集まりやすい）．フェルミ粒子では圧力が大きく，パウリ原理による実効的な斥力（統計的斥力）が現れる．相互作用がなくても統計性だけで第2ビリアル係数 $B_2=-\\sigma\\lambda^3/(2^{5/2}g)$ が生じる．\n\n(3) $m=4.003\\times1.6605\\times10^{-27}=6.647\\times10^{-27}\\ \\mathrm{kg}$．\n\\[ \\lambda=\\frac{h}{\\sqrt{2\\pi mk_{\\mathrm B}T}}=\\frac{6.626\\times10^{-34}}{\\sqrt{2\\pi\\cdot6.647\\times10^{-27}\\cdot1.381\\times10^{-23}\\cdot4.2}}\\approx4.26\\times10^{-10}\\ \\mathrm m, \\]\n$n=P/k_{\\mathrm B}T=1.013\\times10^5/(1.381\\times10^{-23}\\times4.2)\\approx1.75\\times10^{27}\\ \\mathrm{m^{-3}}$．よって $n\\lambda^3\\approx0.13$ で，ずれは $-0.135/2^{5/2}\\approx-0.024$．沸点近くのヘリウム気体でも量子統計補正は約 $2\\%$ にとどまる（実在気体では原子間力による補正も同程度以上ある）．"
+    "tex": "(1) $\\bar n=\\dfrac{ze^{-\\beta\\varepsilon}}{1-\\sigma ze^{-\\beta\\varepsilon}}$．全ての $\\varepsilon\\ge0$ で分母の $\\sigma ze^{-\\beta\\varepsilon}$ が無視できる条件は，最も厳しい $\\varepsilon=0$ で $z\\ll1$ である．このとき密度の式の第1項が支配的で $n\\lambda^3/g\\simeq z$，よって $z\\ll1\\iff n\\lambda^3\\ll g$．$\\lambda\\propto T^{-1/2}$ なので条件は $n\\ll g(2\\pi mk_{\\mathrm B}T)^{3/2}/h^3$，すなわち「平均粒子間距離 $\\gg$ 熱的ド・ブロイ波長」．高温でも密度が非常に高ければ破れ（例：白色矮星の電子），低温でも十分希薄なら成り立つ．\n\n(2) $\\zeta\\equiv n\\lambda^3/g$ とする．$\\zeta=z+\\sigma z^2/2^{3/2}+\\cdots$ を逆に解いて $z=\\zeta-\\sigma\\zeta^2/2^{3/2}+O(\\zeta^3)$．これを圧力の式に代入して\n\\[ \\frac{P\\lambda^3}{gk_{\\mathrm B}T}=z+\\frac{\\sigma z^2}{2^{5/2}}=\\zeta-\\frac{\\sigma\\zeta^2}{2^{3/2}}+\\frac{\\sigma\\zeta^2}{2^{5/2}}=\\zeta-\\frac{\\sigma\\zeta^2}{2^{5/2}}. \\]\n両辺を $\\zeta$ で割ると $\\dfrac{P}{nk_{\\mathrm B}T}=1-\\sigma\\dfrac{\\zeta}{2^{5/2}}$．ボーズ粒子（$\\sigma=+1$）では圧力が古典値より小さく，実効的な引力があるように振る舞う（同じ状態に集まりやすい）．フェルミ粒子では圧力が大きく，パウリ原理による実効的な斥力（統計的斥力）が現れる．相互作用がなくても統計性だけで第2ビリアル係数 $B_2=-\\sigma\\lambda^3/(2^{5/2}g)$ が生じる．\n\n(3) $\\lambda^3=\\left(\\dfrac{h^2}{2\\pi mk_{\\mathrm B}T}\\right)^{3/2}$，$n=P/k_{\\mathrm B}T$ より\n\\[ \\boldsymbol{n\\lambda^3=\\frac{P}{k_{\\mathrm B}T}\\left(\\frac{h^2}{2\\pi mk_{\\mathrm B}T}\\right)^{3/2}}, \\]\nボーズ粒子（$\\sigma=+1$，$g=1$）のずれは $-n\\lambda^3/2^{5/2}$ なので\n\\[ \\boldsymbol{\\Delta=-\\frac{P}{2^{5/2}k_{\\mathrm B}T}\\left(\\frac{h^2}{2\\pi mk_{\\mathrm B}T}\\right)^{3/2}}. \\]\n$\\Delta\\propto PT^{-5/2}m^{-3/2}$ で，軽く低温・高圧ほど大きい．沸点（$4.2\\,\\mathrm K$，1 気圧）のヘリウム気体でも $n\\lambda^3\\approx0.13$，ずれは約 $2\\%$ にとどまる（実在気体では原子間力による補正も同程度以上ある）．"
    }
   ],
   "idea": {
@@ -2351,7 +2351,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $n\\lambda^3$：≈0.13 ; ずれ：≈-0.024"
+   "spec": "(1) 記述\n(2) 記述\n(3) $n\\lambda^3$：P/(k_B T) (h^2/(2 pi m k_B T))^(3/2) ; $\\Delta$：-P/(2^(5/2) k_B T) (h^2/(2 pi m k_B T))^(3/2)"
   },
   "methods": [],
   "tags": [
@@ -2535,16 +2535,16 @@
   "theme": "光子数密度・光子1個あたりの平均エネルギーとエントロピー",
   "topic": "光子数密度・光子1個あたりの平均エネルギーとエントロピー",
   "statement": {
-   "tex": "温度 $T$ の空洞放射について，Planck 分布 $u_\\nu\\,d\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac{d\\nu}{e^{h\\nu/kT}-1}$ を用いる．積分 $\\displaystyle\\int_0^\\infty\\frac{x^3dx}{e^x-1}=\\frac{\\pi^4}{15}$，$\\displaystyle\\int_0^\\infty\\frac{x^2dx}{e^x-1}=2\\zeta(3)$，$\\zeta(3)=1.202$ を用いてよい．\n\\begin{enumerate}\n\\item 光子数密度 $n$ を $T$ の関数として求めよ．\n\\item 光子 1 個あたりの平均エネルギー $u/n$ を $kT$ の何倍か求めよ．また光子 1 個あたりのエントロピー $s/n$（$s$ はエントロピー密度）を $k$ の何倍か求めよ．\n\\item 宇宙背景放射（$T=2.725\\ \\mathrm K$）の光子数密度を $\\mathrm{m^{-3}}$ 単位で求めよ．$h=6.626\\times10^{-34}\\ \\mathrm{J\\,s}$，$k=1.381\\times10^{-23}\\ \\mathrm{J/K}$，$c=2.998\\times10^8\\ \\mathrm{m/s}$．\n\\end{enumerate}"
+   "tex": "温度 $T$ の空洞放射について，Planck 分布 $u_\\nu\\,d\\nu=\\dfrac{8\\pi h\\nu^3}{c^3}\\dfrac{d\\nu}{e^{h\\nu/kT}-1}$ を用いる．積分 $\\displaystyle\\int_0^\\infty\\frac{x^3dx}{e^x-1}=\\frac{\\pi^4}{15}$，$\\displaystyle\\int_0^\\infty\\frac{x^2dx}{e^x-1}=2\\zeta(3)$，$\\zeta(3)=1.202$ を用いてよい．\n\\begin{enumerate}\n\\item 光子数密度 $n$ を $T$ の関数として求めよ．\n\\item 光子 1 個あたりの平均エネルギー $u/n$ を $kT$ の何倍か求めよ．また光子 1 個あたりのエントロピー $s/n$（$s$ はエントロピー密度）を $k$ の何倍か求めよ．\n\\item 熱放射の光子数密度を測定したところ $n_1$ であった．この放射の温度 $T_1$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $n=16\\pi\\zeta(3)\\left(\\dfrac{kT}{hc}\\right)^3$　(2) $u/n=\\dfrac{\\pi^4}{30\\zeta(3)}kT\\approx2.70kT$，$s/n=\\dfrac{2\\pi^4}{45\\zeta(3)}k\\approx3.60k$　(3) $n\\approx4.1\\times10^8\\ \\mathrm{m^{-3}}$"
+   "tex": "(1) $n=16\\pi\\zeta(3)\\left(\\dfrac{kT}{hc}\\right)^3$　(2) $u/n=\\dfrac{\\pi^4}{30\\zeta(3)}kT\\approx2.70kT$，$s/n=\\dfrac{2\\pi^4}{45\\zeta(3)}k\\approx3.60k$　(3) $T_1=\\dfrac{hc}{k}\\left(\\dfrac{n_1}{16\\pi\\times1.202}\\right)^{1/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n=\\displaystyle\\int_0^\\infty\\frac{u_\\nu}{h\\nu}d\\nu=\\frac{8\\pi}{c^3}\\int_0^\\infty\\frac{\\nu^2d\\nu}{e^{h\\nu/kT}-1}=8\\pi\\left(\\frac{kT}{hc}\\right)^3\\int_0^\\infty\\frac{x^2dx}{e^x-1}=16\\pi\\zeta(3)\\left(\\frac{kT}{hc}\\right)^3.$\n\n(2) $u=\\displaystyle\\frac{8\\pi h}{c^3}\\left(\\frac{kT}{h}\\right)^4\\frac{\\pi^4}{15}=\\frac{8\\pi^5k^4T^4}{15h^3c^3}$．よって\n\\[\n\\frac un=\\frac{8\\pi^5/15}{16\\pi\\zeta(3)}kT=\\frac{\\pi^4}{30\\zeta(3)}kT\\approx2.70\\,kT .\n\\]\n光子気体は化学ポテンシャルが 0 なので $Ts=u+P=\\frac43u$．よって\n\\[\n\\frac sn=\\frac43\\frac{u}{nT}=\\frac{2\\pi^4}{45\\zeta(3)}k\\approx3.60\\,k .\n\\]\n光子 1 個あたりのエントロピーは温度によらず一定であり，断熱膨張（宇宙膨張）で光子数が保存されることと整合する．\n\n(3) $kT/(hc)=\\dfrac{1.381\\times10^{-23}\\times2.725}{6.626\\times10^{-34}\\times2.998\\times10^8}=189.4\\ \\mathrm{m^{-1}}$．\n$n=16\\pi\\times1.202\\times(189.4)^3\\approx4.1\\times10^8\\ \\mathrm{m^{-3}}$（1 cm$^3$ あたり約 410 個）．"
+    "tex": "(1) $n=\\displaystyle\\int_0^\\infty\\frac{u_\\nu}{h\\nu}d\\nu=\\frac{8\\pi}{c^3}\\int_0^\\infty\\frac{\\nu^2d\\nu}{e^{h\\nu/kT}-1}=8\\pi\\left(\\frac{kT}{hc}\\right)^3\\int_0^\\infty\\frac{x^2dx}{e^x-1}=16\\pi\\zeta(3)\\left(\\frac{kT}{hc}\\right)^3.$\n\n(2) $u=\\displaystyle\\frac{8\\pi h}{c^3}\\left(\\frac{kT}{h}\\right)^4\\frac{\\pi^4}{15}=\\frac{8\\pi^5k^4T^4}{15h^3c^3}$．よって\n\\[\n\\frac un=\\frac{8\\pi^5/15}{16\\pi\\zeta(3)}kT=\\frac{\\pi^4}{30\\zeta(3)}kT\\approx2.70\\,kT .\n\\]\n光子気体は化学ポテンシャルが 0 なので $Ts=u+P=\\frac43u$．よって\n\\[\n\\frac sn=\\frac43\\frac{u}{nT}=\\frac{2\\pi^4}{45\\zeta(3)}k\\approx3.60\\,k .\n\\]\n光子 1 個あたりのエントロピーは温度によらず一定であり，断熱膨張（宇宙膨張）で光子数が保存されることと整合する．\n\n(3) (1) を $T$ について解いて\n\\[ \\boldsymbol{T_1=\\frac{hc}{k}\\left(\\frac{n_1}{16\\pi\\zeta(3)}\\right)^{1/3}}. \\]\n$T\\propto n^{1/3}$ なので，数密度から温度がよい精度で決まる．宇宙背景放射（$T\\approx2.7\\,\\mathrm K$）では $n_1$ は 1 cm$^3$ あたり約 410 個である．"
    }
   ],
   "idea": {
@@ -2552,7 +2552,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $n$：16 pi ζ (3)(((k T)/(h c)))^(3)\n(2) 記述\n(3) $n$ [m⁻³]：≈4.1e8"
+   "spec": "(1) $n$：16 pi ζ (3)(((k T)/(h c)))^(3)\n(2) 記述\n(3) $T_1$：h c/k (n_1/(16 pi*1.202))^(1/3)"
   },
   "methods": [],
   "tags": [
@@ -2786,16 +2786,16 @@
   "theme": "音速の異なる3分枝と2次元膜の屈曲フォノン",
   "topic": "音速の異なる3分枝と2次元膜の屈曲フォノン",
   "statement": {
-   "tex": "化学ポテンシャル $0$ のフォノン気体の低温比熱を考える．$\\hbar$，$k_{\\mathrm B}$ を用い，低温では各分枝の波数の上限（デバイ切断）は無視してよい．必要なら $\\int_0^\\infty\\frac{u^3}{e^u-1}du=\\frac{\\pi^4}{15}$，$\\int_0^\\infty\\frac{u^2}{e^u-1}du=2\\zeta(3)$，$\\int_0^\\infty\\frac{u}{e^u-1}du=\\frac{\\pi^2}{6}$ を用いよ．\n\\begin{enumerate}\n\\item 3次元結晶（体積 $V$）で，縦波1分枝 $\\varepsilon=\\hbar c_\\ell k$ と横波2分枝 $\\varepsilon=\\hbar c_{\\mathrm t}k$ が異なる音速をもつとする．低温の比熱 $C$ を求め，$C$ が全ての分枝の音速を共通の値 $\\bar c$ にした場合と一致するように $\\bar c$ を定めよ．$c_{\\mathrm t}=c_\\ell/2$ のとき $\\bar c/c_\\ell$ を有効数字3桁で求めよ．\n\\item 面積 $A$ の2次元結晶膜（グラフェンのような原子1層の膜）では，面内の縦波・横波が $\\varepsilon=\\hbar c_\\ell k,\\ \\hbar c_{\\mathrm t}k$ であるのに対し，面外の屈曲振動は $\\varepsilon=\\alpha k^2$（$\\alpha>0$ は定数）という2乗の分散をもつ．各分枝の低温比熱を求めよ．\n\\item (2) の膜で，十分低温では比熱がどの分枝に支配され，温度の何乗に比例するか．面内2分枝の寄与と屈曲分枝の寄与が等しくなる温度 $T^*$ を $c_\\ell,c_{\\mathrm t},\\alpha$ で表せ．\n\\end{enumerate}"
+   "tex": "化学ポテンシャル $0$ のフォノン気体の低温比熱を考える．$\\hbar$，$k_{\\mathrm B}$ を用い，低温では各分枝の波数の上限（デバイ切断）は無視してよい．必要なら $\\int_0^\\infty\\frac{u^3}{e^u-1}du=\\frac{\\pi^4}{15}$，$\\int_0^\\infty\\frac{u^2}{e^u-1}du=2\\zeta(3)$，$\\int_0^\\infty\\frac{u}{e^u-1}du=\\frac{\\pi^2}{6}$ を用いよ．\n\\begin{enumerate}\n\\item 3次元結晶（体積 $V$）で，縦波1分枝 $\\varepsilon=\\hbar c_\\ell k$ と横波2分枝 $\\varepsilon=\\hbar c_{\\mathrm t}k$ が異なる音速をもつとする．低温の比熱 $C$ を求め，$C$ が全ての分枝の音速を共通の値 $\\bar c$ にした場合と一致するように $\\bar c$ を定めよ．$c_{\\mathrm t}=c_\\ell/r$（$r>1$）のとき $\\bar c/c_\\ell$ を $r$ で表せ．\n\\item 面積 $A$ の2次元結晶膜（グラフェンのような原子1層の膜）では，面内の縦波・横波が $\\varepsilon=\\hbar c_\\ell k,\\ \\hbar c_{\\mathrm t}k$ であるのに対し，面外の屈曲振動は $\\varepsilon=\\alpha k^2$（$\\alpha>0$ は定数）という2乗の分散をもつ．各分枝の低温比熱を求めよ．\n\\item (2) の膜で，十分低温では比熱がどの分枝に支配され，温度の何乗に比例するか．面内2分枝の寄与と屈曲分枝の寄与が等しくなる温度 $T^*$ を $c_\\ell,c_{\\mathrm t},\\alpha$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $C=\\dfrac{2\\pi^2k_{\\mathrm B}^4VT^3}{15\\hbar^3}\\left(\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}\\right)$，$\\dfrac{3}{\\bar c^3}=\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}$，$\\bar c/c_\\ell\\approx0.561$　(2) 線形分枝1本当たり $C=\\dfrac{3\\zeta(3)Ak_{\\mathrm B}^3T^2}{\\pi\\hbar^2c^2}$，屈曲分枝 $C=\\dfrac{\\pi Ak_{\\mathrm B}^2T}{12\\alpha}$　(3) 屈曲分枝が支配，$C\\propto T$；$T^*=\\dfrac{\\pi^2\\hbar^2}{36\\zeta(3)\\alpha k_{\\mathrm B}}\\left(\\dfrac1{c_\\ell^2}+\\dfrac1{c_{\\mathrm t}^2}\\right)^{-1}$"
+   "tex": "(1) $C=\\dfrac{2\\pi^2k_{\\mathrm B}^4VT^3}{15\\hbar^3}\\left(\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}\\right)$，$\\dfrac{3}{\\bar c^3}=\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}$，$\\dfrac{\\bar c}{c_\\ell}=\\left(\\dfrac{3}{1+2r^3}\\right)^{1/3}$　(2) 線形分枝1本当たり $C=\\dfrac{3\\zeta(3)Ak_{\\mathrm B}^3T^2}{\\pi\\hbar^2c^2}$，屈曲分枝 $C=\\dfrac{\\pi Ak_{\\mathrm B}^2T}{12\\alpha}$　(3) 屈曲分枝が支配，$C\\propto T$；$T^*=\\dfrac{\\pi^2\\hbar^2}{36\\zeta(3)\\alpha k_{\\mathrm B}}\\left(\\dfrac1{c_\\ell^2}+\\dfrac1{c_{\\mathrm t}^2}\\right)^{-1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 3次元で分散 $\\varepsilon=\\hbar ck$ の1分枝の状態密度は $D=\\dfrac{V}{2\\pi^2}k^2\\dfrac{dk}{d\\varepsilon}=\\dfrac{V\\varepsilon^2}{2\\pi^2(\\hbar c)^3}$．\n\\[ U_1=\\frac{V}{2\\pi^2(\\hbar c)^3}\\int_0^\\infty\\frac{\\varepsilon^3}{e^{\\beta\\varepsilon}-1}d\\varepsilon=\\frac{V}{2\\pi^2(\\hbar c)^3}\\frac{\\pi^4}{15}(k_{\\mathrm B}T)^4=\\frac{\\pi^2V(k_{\\mathrm B}T)^4}{30(\\hbar c)^3}, \\]\n$C_1=\\dfrac{2\\pi^2k_{\\mathrm B}^4VT^3}{15\\hbar^3c^3}$．3分枝を足して $C=\\dfrac{2\\pi^2k_{\\mathrm B}^4VT^3}{15\\hbar^3}\\left(\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}\\right)$．共通音速 $\\bar c$ で $3/\\bar c^3$ になるので $\\dfrac3{\\bar c^3}=\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}$（音速の $-3$ 乗の平均）．$c_{\\mathrm t}=c_\\ell/2$ なら $3/\\bar c^3=(1+16)/c_\\ell^3$，$\\bar c/c_\\ell=(3/17)^{1/3}\\approx0.561$．\n\n(2) 2次元では $\\sum_{\\boldsymbol k}\\to\\dfrac{A}{(2\\pi)^2}\\int2\\pi k\\,dk$，$D(\\varepsilon)=\\dfrac{A}{2\\pi}k\\dfrac{dk}{d\\varepsilon}$．\n線形分枝：$D=\\dfrac{A\\varepsilon}{2\\pi\\hbar^2c^2}$，$U=\\dfrac{A}{2\\pi\\hbar^2c^2}\\cdot2\\zeta(3)(k_{\\mathrm B}T)^3=\\dfrac{\\zeta(3)A(k_{\\mathrm B}T)^3}{\\pi\\hbar^2c^2}$，$C=\\dfrac{3\\zeta(3)Ak_{\\mathrm B}^3T^2}{\\pi\\hbar^2c^2}$．\n屈曲分枝：$k\\,dk=d\\varepsilon/(2\\alpha)$ より $D=\\dfrac{A}{4\\pi\\alpha}$（定数）．$U=\\dfrac{A}{4\\pi\\alpha}\\dfrac{\\pi^2}{6}(k_{\\mathrm B}T)^2=\\dfrac{\\pi A(k_{\\mathrm B}T)^2}{24\\alpha}$，$C=\\dfrac{\\pi Ak_{\\mathrm B}^2T}{12\\alpha}$．\n\n(3) $T\\to0$ では $T^1$ の屈曲分枝が $T^2$ の面内分枝に勝つので $C\\propto T$（2乗分散で状態密度が $\\varepsilon\\to0$ で有限になるため）．等号条件\n\\[ \\frac{\\pi Ak_{\\mathrm B}^2T^*}{12\\alpha}=\\frac{3\\zeta(3)Ak_{\\mathrm B}^3T^{*2}}{\\pi\\hbar^2}\\left(\\frac1{c_\\ell^2}+\\frac1{c_{\\mathrm t}^2}\\right)\\ \\Rightarrow\\ T^*=\\frac{\\pi^2\\hbar^2}{36\\zeta(3)\\alpha k_{\\mathrm B}}\\left(\\frac1{c_\\ell^2}+\\frac1{c_{\\mathrm t}^2}\\right)^{-1}. \\]\n$T<T^*$ で屈曲分枝が支配的．「全分枝が線形分散なら $d$ 次元で $C\\propto T^d$」というデバイ則は，分散の冪が変わると破れる．"
+    "tex": "(1) 3次元で分散 $\\varepsilon=\\hbar ck$ の1分枝の状態密度は $D=\\dfrac{V}{2\\pi^2}k^2\\dfrac{dk}{d\\varepsilon}=\\dfrac{V\\varepsilon^2}{2\\pi^2(\\hbar c)^3}$．\n\\[ U_1=\\frac{V}{2\\pi^2(\\hbar c)^3}\\int_0^\\infty\\frac{\\varepsilon^3}{e^{\\beta\\varepsilon}-1}d\\varepsilon=\\frac{V}{2\\pi^2(\\hbar c)^3}\\frac{\\pi^4}{15}(k_{\\mathrm B}T)^4=\\frac{\\pi^2V(k_{\\mathrm B}T)^4}{30(\\hbar c)^3}, \\]\n$C_1=\\dfrac{2\\pi^2k_{\\mathrm B}^4VT^3}{15\\hbar^3c^3}$．3分枝を足して $C=\\dfrac{2\\pi^2k_{\\mathrm B}^4VT^3}{15\\hbar^3}\\left(\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}\\right)$．共通音速 $\\bar c$ で $3/\\bar c^3$ になるので $\\dfrac3{\\bar c^3}=\\dfrac1{c_\\ell^3}+\\dfrac2{c_{\\mathrm t}^3}$（音速の $-3$ 乗の平均）．$c_{\\mathrm t}=c_\\ell/r$ なら $3/\\bar c^3=(1+2r^3)/c_\\ell^3$，$\\boldsymbol{\\bar c/c_\\ell=\\left(\\dfrac{3}{1+2r^3}\\right)^{1/3}}$．$r=2$ で約 $0.561$ で，遅い横波が比熱を支配する．\n\n(2) 2次元では $\\sum_{\\boldsymbol k}\\to\\dfrac{A}{(2\\pi)^2}\\int2\\pi k\\,dk$，$D(\\varepsilon)=\\dfrac{A}{2\\pi}k\\dfrac{dk}{d\\varepsilon}$．\n線形分枝：$D=\\dfrac{A\\varepsilon}{2\\pi\\hbar^2c^2}$，$U=\\dfrac{A}{2\\pi\\hbar^2c^2}\\cdot2\\zeta(3)(k_{\\mathrm B}T)^3=\\dfrac{\\zeta(3)A(k_{\\mathrm B}T)^3}{\\pi\\hbar^2c^2}$，$C=\\dfrac{3\\zeta(3)Ak_{\\mathrm B}^3T^2}{\\pi\\hbar^2c^2}$．\n屈曲分枝：$k\\,dk=d\\varepsilon/(2\\alpha)$ より $D=\\dfrac{A}{4\\pi\\alpha}$（定数）．$U=\\dfrac{A}{4\\pi\\alpha}\\dfrac{\\pi^2}{6}(k_{\\mathrm B}T)^2=\\dfrac{\\pi A(k_{\\mathrm B}T)^2}{24\\alpha}$，$C=\\dfrac{\\pi Ak_{\\mathrm B}^2T}{12\\alpha}$．\n\n(3) $T\\to0$ では $T^1$ の屈曲分枝が $T^2$ の面内分枝に勝つので $C\\propto T$（2乗分散で状態密度が $\\varepsilon\\to0$ で有限になるため）．等号条件\n\\[ \\frac{\\pi Ak_{\\mathrm B}^2T^*}{12\\alpha}=\\frac{3\\zeta(3)Ak_{\\mathrm B}^3T^{*2}}{\\pi\\hbar^2}\\left(\\frac1{c_\\ell^2}+\\frac1{c_{\\mathrm t}^2}\\right)\\ \\Rightarrow\\ T^*=\\frac{\\pi^2\\hbar^2}{36\\zeta(3)\\alpha k_{\\mathrm B}}\\left(\\frac1{c_\\ell^2}+\\frac1{c_{\\mathrm t}^2}\\right)^{-1}. \\]\n$T<T^*$ で屈曲分枝が支配的．「全分枝が線形分散なら $d$ 次元で $C\\propto T^d$」というデバイ則は，分散の冪が変わると破れる．"
    }
   ],
   "idea": {
@@ -2803,7 +2803,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 線形分枝1本当たり $C$：((3 ζ (3) A k_B ^(3) T ^(2))/(pi hbar ^(2) c ^(2))) ; 屈曲分枝 $C$：((pi A k_B ^(2) T)/(12 α))\n(3) 記述"
+   "spec": "(1) $\\bar c/c_\\ell$：(3/(1+2 r^3))^(1/3)\n(2) 線形分枝1本当たり $C$：((3 ζ (3) A k_B ^(3) T ^(2))/(pi hbar ^(2) c ^(2))) ; 屈曲分枝 $C$：((pi A k_B ^(2) T)/(12 α))\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -2987,16 +2987,16 @@
   "theme": "電子・陽電子対の化学平衡",
   "topic": "電子・陽電子対の化学平衡",
   "statement": {
-   "tex": "温度 $T$ の熱平衡にある空間で，反応 $\\gamma+\\gamma\\rightleftarrows e^-+e^+$ により電子・陽電子対が生成・消滅している．電子と陽電子（質量 $m$，スピン $1/2$）はともに非縮退で $k_BT\\ll mc^2$ とし，それぞれの数密度は静止エネルギーを含めて\n\\[ n_\\mp=2\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{(\\mu_\\mp-mc^2)/k_BT} \\]\nで与えられる（$\\mu_\\mp$ は電子・陽電子の化学ポテンシャル）．光子の化学ポテンシャルは $0$ である．\n\\begin{enumerate}\n\\item 化学平衡の条件から $\\mu_-+\\mu_+$ の値を求めよ．\n\\item 積 $n_-n_+$ を $T$ の関数として求めよ．\n\\item 電荷の保存により $n_--n_+=n_0\\ (>0)$ が一定のとき，陽電子の数密度 $n_+$ を求めよ．\n\\item $n_0=0$，$k_BT=0.1\\,mc^2$ のとき，$n_+$ は $(mc/\\hbar)^3$ の何倍か．\n\\end{enumerate}"
+   "tex": "温度 $T$ の熱平衡にある空間で，反応 $\\gamma+\\gamma\\rightleftarrows e^-+e^+$ により電子・陽電子対が生成・消滅している．電子と陽電子（質量 $m$，スピン $1/2$）はともに非縮退で $k_BT\\ll mc^2$ とし，それぞれの数密度は静止エネルギーを含めて\n\\[ n_\\mp=2\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{(\\mu_\\mp-mc^2)/k_BT} \\]\nで与えられる（$\\mu_\\mp$ は電子・陽電子の化学ポテンシャル）．光子の化学ポテンシャルは $0$ である．\n\\begin{enumerate}\n\\item 化学平衡の条件から $\\mu_-+\\mu_+$ の値を求めよ．\n\\item 積 $n_-n_+$ を $T$ の関数として求めよ．\n\\item 電荷の保存により $n_--n_+=n_0\\ (>0)$ が一定のとき，陽電子の数密度 $n_+$ を求めよ．\n\\item $n_0=0$ のとき，$n_+$ を $\\theta=k_BT/mc^2$ と $(mc/\\hbar)^3$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\mu_-+\\mu_+=0$ \\quad (2) $n_-n_+=4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}$ \\quad (3) $n_+=-\\dfrac{n_0}{2}+\\sqrt{\\dfrac{n_0^2}{4}+4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}$ \\quad (4) $\\approx1.8\\times10^{-7}$"
+   "tex": "(1) $\\mu_-+\\mu_+=0$ \\quad (2) $n_-n_+=4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}$ \\quad (3) $n_+=-\\dfrac{n_0}{2}+\\sqrt{\\dfrac{n_0^2}{4}+4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}$ \\quad (4) $n_+=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 反応の平衡条件は $2\\mu_\\gamma=\\mu_-+\\mu_+$，光子は数が保存しないので $\\mu_\\gamma=0$．$\\boldsymbol{\\mu_-+\\mu_+=0}$．\n\n(2) 積をとると $\\mu$ が消えて\n\\[ \\boldsymbol{n_-n_+=4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}. \\]\n化学反応の質量作用の法則（サハの式と同じ形）で，右辺は温度だけで決まる．\n\n(3) $n_-=n_++n_0$ を代入し $n_+^2+n_0n_+-K=0$（$K$ は (2) の右辺）を解いて正の根をとる：\n\\[ \\boldsymbol{n_+=-\\frac{n_0}{2}+\\sqrt{\\frac{n_0^2}{4}+4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}}. \\]\n$n_0^2\\gg K$ なら $n_+\\simeq K/n_0$ で，余分な電子があると陽電子は抑えられる．\n\n(4) $n_0=0$ では $n_+=\\sqrt{K}=2\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{-mc^2/k_BT}=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3$（$\\theta=k_BT/mc^2$）．$\\theta=0.1$ で $2\\times(0.01592)^{3/2}\\times e^{-10}=2\\times2.008\\times10^{-3}\\times4.54\\times10^{-5}\\approx\\boldsymbol{1.8\\times10^{-7}}$．\n\n電子では $(mc/\\hbar)^3\\approx1.7\\times10^{37}\\,\\mathrm{m^{-3}}$ なので，$k_BT\\approx51\\,\\mathrm{keV}$ で $n_+\\approx3\\times10^{30}\\,\\mathrm{m^{-3}}$．初期宇宙で $k_BT$ が $mc^2$ を下回ると対が急速に消滅し，わずかな過剰電子だけが残った．"
+    "tex": "(1) 反応の平衡条件は $2\\mu_\\gamma=\\mu_-+\\mu_+$，光子は数が保存しないので $\\mu_\\gamma=0$．$\\boldsymbol{\\mu_-+\\mu_+=0}$．\n\n(2) 積をとると $\\mu$ が消えて\n\\[ \\boldsymbol{n_-n_+=4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}. \\]\n化学反応の質量作用の法則（サハの式と同じ形）で，右辺は温度だけで決まる．\n\n(3) $n_-=n_++n_0$ を代入し $n_+^2+n_0n_+-K=0$（$K$ は (2) の右辺）を解いて正の根をとる：\n\\[ \\boldsymbol{n_+=-\\frac{n_0}{2}+\\sqrt{\\frac{n_0^2}{4}+4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}}. \\]\n$n_0^2\\gg K$ なら $n_+\\simeq K/n_0$ で，余分な電子があると陽電子は抑えられる．\n\n(4) $n_0=0$ では $n_+=\\sqrt{K}=2\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{-mc^2/k_BT}=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3$（$\\theta=k_BT/mc^2$）．すなわち $\\boldsymbol{n_+=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3}$．$\\theta=0.1$ でも係数は $2\\times10^{-7}$ 程度と小さい．\n\n電子では $(mc/\\hbar)^3\\approx1.7\\times10^{37}\\,\\mathrm{m^{-3}}$ なので，$k_BT\\approx51\\,\\mathrm{keV}$（$\\theta=0.1$）で $n_+\\approx3\\times10^{30}\\,\\mathrm{m^{-3}}$．初期宇宙で $k_BT$ が $mc^2$ を下回ると対が急速に消滅し，わずかな過剰電子だけが残った．"
    }
   ],
   "idea": {
@@ -3004,7 +3004,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) μ_- + μ_+：0\n(2) n_- n_+：4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T))\n(3) n_+：-n_0/2 + sqrt(n_0^2/4 + 4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T)))\n(4) ≈1.8e-7"
+   "spec": "(1) μ_- + μ_+：0\n(2) n_- n_+：4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T))\n(3) n_+：-n_0/2 + sqrt(n_0^2/4 + 4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T)))\n(4) $n_+$：2 (θ/(2 pi))^(3/2) e^(-1/θ) (m c/hbar)^3"
   },
   "methods": [],
   "tags": [

@@ -57,16 +57,16 @@
   "theme": "第1励起状態と分子振動の赤外吸収",
   "topic": "第1励起状態と分子振動の赤外吸収",
   "statement": {
-   "tex": "質量 $m$，角振動数 $\\omega$ の調和振動子のエネルギー固有値 $E$ と波動関数 $\\psi(x)$ は\n\\[ -\\frac{\\hbar^2}{2m}\\frac{d^2\\psi}{dx^2}+\\frac12m\\omega^2x^2\\psi=E\\psi \\]\nで決まる．$b=\\sqrt{\\hbar/(m\\omega)}$ とおく．\n\\begin{enumerate}\n\\item $\\psi(x)=x\\exp\\left(-\\dfrac{x^2}{2b^2}\\right)$ がこの方程式を満たすことを確かめ，$E$ を求めよ．\n\\item エネルギー準位は $E_n=\\hbar\\omega(n+\\tfrac12)$（$n=0,1,2,\\dots$）である．HCl 分子の振動を，ばね定数 $K=480\\,\\mathrm{N/m}$，換算質量 $\\mu=1.63\\times10^{-27}\\,\\mathrm{kg}$ の振動子（$\\omega=\\sqrt{K/\\mu}$）とみなす．$n=0\\to1$ の遷移で吸収される光の波長を求めよ．光速は $c=3.00\\times10^8\\,\\mathrm{m/s}$，光のエネルギーは $\\hbar\\omega_{\\text{光}}$，波長は $2\\pi c/\\omega_{\\text{光}}$ である．\n\\end{enumerate}"
+   "tex": "質量 $m$，角振動数 $\\omega$ の調和振動子のエネルギー固有値 $E$ と波動関数 $\\psi(x)$ は\n\\[ -\\frac{\\hbar^2}{2m}\\frac{d^2\\psi}{dx^2}+\\frac12m\\omega^2x^2\\psi=E\\psi \\]\nで決まる．$b=\\sqrt{\\hbar/(m\\omega)}$ とおく．\n\\begin{enumerate}\n\\item $\\psi(x)=x\\exp\\left(-\\dfrac{x^2}{2b^2}\\right)$ がこの方程式を満たすことを確かめ，$E$ を求めよ．\n\\item エネルギー準位は $E_n=\\hbar\\omega(n+\\tfrac12)$（$n=0,1,2,\\dots$）である．HCl 分子の振動を，ばね定数 $K$，換算質量 $\\mu$ の振動子（$\\omega=\\sqrt{K/\\mu}$）とみなす．$n=0\\to1$ の遷移で吸収される光の波長 $\\lambda$ を $K,\\mu,c$ で表せ．$c$ は光速，光のエネルギーは $\\hbar\\omega_{\\text{光}}$，波長は $2\\pi c/\\omega_{\\text{光}}$ である．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E=\\dfrac{3}{2}\\hbar\\omega$ (2) $\\lambda\\approx3.47\\times10^{-6}\\,\\mathrm{m}$"
+   "tex": "(1) $E=\\dfrac{3}{2}\\hbar\\omega$ (2) $\\lambda=2\\pi c\\sqrt{\\dfrac{\\mu}{K}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\psi'=\\left(1-\\dfrac{x^2}{b^2}\\right)e^{-x^2/2b^2}$，$\\psi''=\\left(-\\dfrac{3x}{b^2}+\\dfrac{x^3}{b^4}\\right)e^{-x^2/2b^2}$．$b^4=\\hbar^2/(m\\omega)^2$ を使うと\n\\[ -\\frac{\\hbar^2}{2m}\\psi''=\\frac{3}{2}\\hbar\\omega\\,\\psi-\\frac12m\\omega^2x^2\\psi \\]\nとなり，$x^2$ の項が位置エネルギーの項と打ち消し合う．よって $\\boldsymbol{E=\\tfrac32\\hbar\\omega}$（$n=1$）．\n\n(2) 吸収される光のエネルギーは $E_1-E_0=\\hbar\\omega$ なので，光の角振動数は振動子の $\\omega$ に等しい．$\\omega=\\sqrt{480/1.63\\times10^{-27}}=5.43\\times10^{14}\\,\\mathrm{s^{-1}}$，\n\\[ \\lambda=\\frac{2\\pi c}{\\omega}\\approx\\boldsymbol{3.47\\times10^{-6}\\,\\mathrm{m}} \\]\n（赤外線．実測の HCl の吸収 $3.46\\,\\mu\\mathrm{m}$ とよく合う．）\n\n次は，昇降演算子 $a,a^\\dagger$ を使って全ての固有関数を系統的に作る方法を学ぶ．"
+    "tex": "(1) $\\psi'=\\left(1-\\dfrac{x^2}{b^2}\\right)e^{-x^2/2b^2}$，$\\psi''=\\left(-\\dfrac{3x}{b^2}+\\dfrac{x^3}{b^4}\\right)e^{-x^2/2b^2}$．$b^4=\\hbar^2/(m\\omega)^2$ を使うと\n\\[ -\\frac{\\hbar^2}{2m}\\psi''=\\frac{3}{2}\\hbar\\omega\\,\\psi-\\frac12m\\omega^2x^2\\psi \\]\nとなり，$x^2$ の項が位置エネルギーの項と打ち消し合う．よって $\\boldsymbol{E=\\tfrac32\\hbar\\omega}$（$n=1$）．\n\n(2) 吸収される光のエネルギーは $E_1-E_0=\\hbar\\omega$ なので，光の角振動数は振動子の $\\omega$ に等しい．$\\omega=\\sqrt{K/\\mu}$ より\n\\[ \\lambda=\\frac{2\\pi c}{\\omega}=\\boldsymbol{2\\pi c\\sqrt{\\frac{\\mu}{K}}}. \\]\nHCl の値（$K\\approx480$ N/m，$\\mu\\approx1.6\\times10^{-27}$ kg）を入れると数 $\\mu$m の赤外線となり，実測の吸収（約 $3.5\\,\\mu$m）とよく合う．\n\n次は，昇降演算子 $a,a^\\dagger$ を使って全ての固有関数を系統的に作る方法を学ぶ．"
    }
   ],
   "idea": {
@@ -74,7 +74,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 3/2 hbar omega\n(2) λ [m]：≈3.47e-6"
+   "spec": "(1) 3/2 hbar omega\n(2) $\\lambda$：2 pi c sqrt(μ/K)"
   },
   "methods": [],
   "tags": [
@@ -200,27 +200,27 @@
   "field": "QM-42",
   "level": 1,
   "minutes": 20,
-  "theme": "10 T のランダウ準位の縮退度と充填率",
-  "topic": "10 T のランダウ準位の縮退度と充填率",
+  "theme": "ランダウ準位の縮退度と充填率",
+  "topic": "ランダウ準位の縮退度と充填率",
   "statement": {
-   "tex": "案内中心の座標は $[X,Y]=-il_B^2$（$l_B^2=\\hbar/qB$）をみたす．\n\\begin{enumerate}\n\\item 不確定性関係から，面積 $A$ あたりの状態数が $\\dfrac{qB}{h}A$ となることを説明せよ．\n\\item $B=10\\ \\mathrm T$ で電子の1つのランダウ準位の状態の面密度を求めよ．\n\\item 電子密度 $3.0\\times10^{11}\\ \\mathrm{cm^{-2}}$ の2次元電子系の充填率 $\\nu$ を求めよ．\n\\end{enumerate}"
+   "tex": "案内中心の座標は $[X,Y]=-il_B^2$（$l_B^2=\\hbar/qB$）をみたす．$q$ は電子の電荷の大きさ，$B$ は磁束密度である．\n\\begin{enumerate}\n\\item 不確定性関係から，面積 $A$ あたりの状態数が $\\dfrac{qB}{2\\pi\\hbar}A$ となることを説明せよ．\n\\item 電子の1つのランダウ準位の状態の面密度 $n_B$ を $q,B,\\hbar$ で表せ．\n\\item 面密度 $n$ の2次元電子系の充填率 $\\nu=n/n_B$ を求めよ．磁場 $B$ を 2 倍にすると $\\nu$ は何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 説明　(2) $2.4\\times10^{11}\\ \\mathrm{cm^{-2}}$　(3) $\\nu\\approx1.24$"
+   "tex": "(1) 説明　(2) $n_B=\\dfrac{qB}{2\\pi\\hbar}$　(3) $\\nu=\\dfrac{2\\pi\\hbar n}{qB}$，$\\dfrac12$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $X,Y$ は正準共役（$\\hbar\\to l_B^2$）で，1状態が占める面積は $2\\pi l_B^2=h/qB$．\\hfill\n\n(2) $\\dfrac{eB}{h}=\\dfrac{1.6\\times10^{-19}\\times10}{6.63\\times10^{-34}}=2.4\\times10^{15}\\ \\mathrm{m^{-2}}=\\boldsymbol{2.4\\times10^{11}\\ \\mathrm{cm^{-2}}}$．\n\n(3) $\\nu=\\dfrac{3.0}{2.42}\\approx\\boldsymbol{1.24}$（スピンを区別した準位で数える）．"
+    "tex": "(1) $X,Y$ は正準共役（$\\hbar\\to l_B^2$）で，位相空間の 1 状態が占める面積 $2\\pi\\hbar$ に対応して，1 状態が占める面積は $2\\pi l_B^2=2\\pi\\hbar/qB$．よって面積 $A$ あたり $\\dfrac{qB}{2\\pi\\hbar}A$ 個．\n\n(2) $n_B=\\dfrac{1}{2\\pi l_B^2}=\\boldsymbol{\\dfrac{qB}{2\\pi\\hbar}}$（スピンを区別した準位 1 つあたり）．$B=10$ T では $10^{11}\\ \\mathrm{cm^{-2}}$ 程度で，半導体の 2 次元電子系の典型的な密度と同程度になる．\n\n(3) $\\nu=\\dfrac{n}{n_B}=\\boldsymbol{\\dfrac{2\\pi\\hbar n}{qB}}$．$\\nu\\propto1/B$ なので $B$ を 2 倍にすると $\\boldsymbol{\\dfrac12}$ 倍．磁場を強くするほど 1 準位に入る電子が増え，占有される準位の数が減る（量子ホール効果で $\\nu$ が整数となる磁場でホール抵抗がプラトーを示す）．"
    }
   ],
   "idea": {
-   "tex": "案内中心の非可換性から1準位の状態の密度が決まり，充填率が量子ホール効果の鍵になる．原題の見積もりを，実験の典型的な数値で計算させる．"
+   "tex": "案内中心の 2 成分が非可換で，1 状態が面積 $2\\pi l_B^2$ を占める．ランダウ準位の縮退度は磁束量子 $2\\pi\\hbar/q$ の数に等しく，充填率は $1/B$ に比例する．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [cm⁻²]：≈2.4e11\n(3) $\\nu$：≈1.24"
+   "spec": "(1) 記述\n(2) $n_B$：q B/(2 pi hbar)\n(3) $\\nu$：2 pi hbar n/(q B) ; 倍率：1/2"
   },
   "methods": [],
   "tags": [
@@ -1243,16 +1243,16 @@
   "theme": "べき型ポテンシャルの無次元化とスケーリング則",
   "topic": "べき型ポテンシャルの無次元化とスケーリング則",
   "statement": {
-   "tex": "質量 $m$ の粒子がポテンシャル $V(x)=g|x|^{\\nu}$（$g>0$，$\\nu>0$）に束縛されている．\n\\begin{enumerate}\n\\item $x=\\ell\\xi$ とおいてシュレディンガー方程式を無次元化し，$-u''(\\xi)+|\\xi|^{\\nu}u(\\xi)=\\epsilon\\,u(\\xi)$ の形にするための長さ $\\ell$ とエネルギーの単位を求めよ．これより $E_n$ の $\\hbar,m,g$ 依存性を求めよ．\n\\item $\\nu=2$，$g=\\frac12m\\omega^2$ のとき (1) の結果が $E_n=\\hbar\\omega(n+\\frac12)$ と整合することを確かめよ（無次元方程式の固有値が $\\epsilon_n=2n+1$ であることを用いてよい）．\n\\item $\\nu=4$ のとき，無次元方程式の基底固有値は $\\epsilon_0=1.0604$ である．$E_0$ を $\\hbar,m,g$ で表せ．\n\\item $E_n$ の $g$ 依存性とヘルマン‐ファインマンの定理 $\\dfrac{\\partial E_n}{\\partial g}=\\left\\langle\\dfrac{\\partial \\hat H}{\\partial g}\\right\\rangle$ を用いて，固有状態での $\\langle V\\rangle/E_n$ を $\\nu$ で表せ．\n\\item $V(x)=V_0|x/b|^{\\nu}$ と書き直して $\\nu\\to\\infty$ とすると，(1) のスケーリングは幅 $2b$ の無限井戸の $E_n$ の依存性と整合することを示せ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の粒子がポテンシャル $V(x)=g|x|^{\\nu}$（$g>0$，$\\nu>0$）に束縛されている．\n\\begin{enumerate}\n\\item $x=\\ell\\xi$ とおいてシュレディンガー方程式を無次元化し，$-u''(\\xi)+|\\xi|^{\\nu}u(\\xi)=\\epsilon\\,u(\\xi)$ の形にするための長さ $\\ell$ とエネルギーの単位を求めよ．これより $E_n$ の $\\hbar,m,g$ 依存性を求めよ．\n\\item $\\nu=2$，$g=\\frac12m\\omega^2$ のとき (1) の結果が $E_n=\\hbar\\omega(n+\\frac12)$ と整合することを確かめよ（無次元方程式の固有値が $\\epsilon_n=2n+1$ であることを用いてよい）．\n\\item $\\nu=4$ のとき，無次元方程式の基底固有値を $\\epsilon_0$（数値計算で求まる純粋な数）とする．$E_0$ を $\\epsilon_0,\\hbar,m,g$ で表せ．\n\\item $E_n$ の $g$ 依存性とヘルマン‐ファインマンの定理 $\\dfrac{\\partial E_n}{\\partial g}=\\left\\langle\\dfrac{\\partial \\hat H}{\\partial g}\\right\\rangle$ を用いて，固有状態での $\\langle V\\rangle/E_n$ を $\\nu$ で表せ．\n\\item $V(x)=V_0|x/b|^{\\nu}$ と書き直して $\\nu\\to\\infty$ とすると，(1) のスケーリングは幅 $2b$ の無限井戸の $E_n$ の依存性と整合することを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\ell=\\left(\\dfrac{\\hbar^2}{2mg}\\right)^{1/(\\nu+2)}$，単位 $g\\ell^\\nu=\\dfrac{\\hbar^2}{2m\\ell^2}$；$E_n=\\epsilon_n\\,g^{2/(\\nu+2)}\\left(\\dfrac{\\hbar^2}{2m}\\right)^{\\nu/(\\nu+2)}$\n(2) $\\ell=\\sqrt{\\hbar/m\\omega}$，$E_n=\\epsilon_n\\hbar\\omega/2$\n(3) $E_0=1.0604\\left(\\dfrac{\\hbar^4g}{4m^2}\\right)^{1/3}$\n(4) $\\langle V\\rangle/E_n=\\dfrac{2}{\\nu+2}$\n(5) $E_n\\propto\\hbar^2/(mb^2)$ となり無限井戸と一致"
+   "tex": "(1) $\\ell=\\left(\\dfrac{\\hbar^2}{2mg}\\right)^{1/(\\nu+2)}$，単位 $g\\ell^\\nu=\\dfrac{\\hbar^2}{2m\\ell^2}$；$E_n=\\epsilon_n\\,g^{2/(\\nu+2)}\\left(\\dfrac{\\hbar^2}{2m}\\right)^{\\nu/(\\nu+2)}$\n(2) $\\ell=\\sqrt{\\hbar/m\\omega}$，$E_n=\\epsilon_n\\hbar\\omega/2$\n(3) $E_0=\\epsilon_0\\left(\\dfrac{\\hbar^4g}{4m^2}\\right)^{1/3}$\n(4) $\\langle V\\rangle/E_n=\\dfrac{2}{\\nu+2}$\n(5) $E_n\\propto\\hbar^2/(mb^2)$ となり無限井戸と一致"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $x=\\ell\\xi$ とすると\n\\[ -\\frac{\\hbar^2}{2m\\ell^2}u''+g\\ell^\\nu|\\xi|^\\nu u=Eu . \\]\n$\\frac{\\hbar^2}{2m\\ell^2}=g\\ell^\\nu$ と選ぶと $\\ell^{\\nu+2}=\\frac{\\hbar^2}{2mg}$．両辺をこの共通のエネルギー単位 $\\varepsilon_*=g\\ell^\\nu$ で割ると $-u''+|\\xi|^\\nu u=\\epsilon u$，$\\epsilon=E/\\varepsilon_*$．\n\\[ \\varepsilon_*=g\\left(\\frac{\\hbar^2}{2mg}\\right)^{\\nu/(\\nu+2)}=g^{2/(\\nu+2)}\\left(\\frac{\\hbar^2}{2m}\\right)^{\\nu/(\\nu+2)}, \\]\nよって $E_n=\\epsilon_n\\varepsilon_*$．$\\epsilon_n$ は純粋な数で，パラメータ依存性はすべて $\\varepsilon_*$ に入る．\n\n(2) $\\nu=2$，$g=\\frac12m\\omega^2$：$\\ell^4=\\frac{\\hbar^2}{m^2\\omega^2}$，$\\ell=\\sqrt{\\hbar/m\\omega}$．$\\varepsilon_*=\\frac12m\\omega^2\\cdot\\frac{\\hbar}{m\\omega}=\\frac{\\hbar\\omega}2$．$E_n=(2n+1)\\frac{\\hbar\\omega}{2}=\\hbar\\omega(n+\\frac12)$ で整合する．\n\n(3) $\\nu=4$：$\\varepsilon_*=g^{1/3}(\\hbar^2/2m)^{2/3}=\\left(\\frac{\\hbar^4g}{4m^2}\\right)^{1/3}$．$E_0=1.0604\\left(\\dfrac{\\hbar^4 g}{4m^2}\\right)^{1/3}$．\n\n(4) $\\hat H=\\hat p^2/2m+g|x|^\\nu$ より $\\partial\\hat H/\\partial g=|x|^\\nu$，$\\langle V\\rangle=g\\,\\partial E_n/\\partial g$．$E_n\\propto g^{2/(\\nu+2)}$ なので\n\\[ \\langle V\\rangle=g\\cdot\\frac{2}{\\nu+2}\\frac{E_n}{g}=\\frac{2}{\\nu+2}E_n. \\]\n（$\\nu=2$ で $1/2$，$\\nu=4$ で $1/3$．ビリアル定理 $2\\langle T\\rangle=\\nu\\langle V\\rangle$ と同値．）\n\n(5) $g=V_0b^{-\\nu}$ を代入すると $\\varepsilon_*=V_0^{2/(\\nu+2)}b^{-2\\nu/(\\nu+2)}(\\hbar^2/2m)^{\\nu/(\\nu+2)}\\to\\dfrac{\\hbar^2}{2mb^2}$（$\\nu\\to\\infty$）．$V_0$ 依存性が消え，$E_n\\propto\\hbar^2/(mb^2)$ となる．実際 $\\nu\\to\\infty$ で $V$ は $|x|<b$ で $0$，$|x|>b$ で $\\infty$ の幅 $2b$ の無限井戸になり，$E_n=\\frac{\\hbar^2\\pi^2(n+1)^2}{8mb^2}$ と整合する（このとき $\\epsilon_n\\to\\pi^2(n+1)^2/4$，$\\langle V\\rangle/E\\to0$）．"
+    "tex": "(1) $x=\\ell\\xi$ とすると\n\\[ -\\frac{\\hbar^2}{2m\\ell^2}u''+g\\ell^\\nu|\\xi|^\\nu u=Eu . \\]\n$\\frac{\\hbar^2}{2m\\ell^2}=g\\ell^\\nu$ と選ぶと $\\ell^{\\nu+2}=\\frac{\\hbar^2}{2mg}$．両辺をこの共通のエネルギー単位 $\\varepsilon_*=g\\ell^\\nu$ で割ると $-u''+|\\xi|^\\nu u=\\epsilon u$，$\\epsilon=E/\\varepsilon_*$．\n\\[ \\varepsilon_*=g\\left(\\frac{\\hbar^2}{2mg}\\right)^{\\nu/(\\nu+2)}=g^{2/(\\nu+2)}\\left(\\frac{\\hbar^2}{2m}\\right)^{\\nu/(\\nu+2)}, \\]\nよって $E_n=\\epsilon_n\\varepsilon_*$．$\\epsilon_n$ は純粋な数で，パラメータ依存性はすべて $\\varepsilon_*$ に入る．\n\n(2) $\\nu=2$，$g=\\frac12m\\omega^2$：$\\ell^4=\\frac{\\hbar^2}{m^2\\omega^2}$，$\\ell=\\sqrt{\\hbar/m\\omega}$．$\\varepsilon_*=\\frac12m\\omega^2\\cdot\\frac{\\hbar}{m\\omega}=\\frac{\\hbar\\omega}2$．$E_n=(2n+1)\\frac{\\hbar\\omega}{2}=\\hbar\\omega(n+\\frac12)$ で整合する．\n\n(3) $\\nu=4$：$\\varepsilon_*=g^{1/3}(\\hbar^2/2m)^{2/3}=\\left(\\frac{\\hbar^4g}{4m^2}\\right)^{1/3}$．$\\boldsymbol{E_0=\\epsilon_0\\left(\\dfrac{\\hbar^4 g}{4m^2}\\right)^{1/3}}$（$\\epsilon_0\\approx1.06$）．\n\n(4) $\\hat H=\\hat p^2/2m+g|x|^\\nu$ より $\\partial\\hat H/\\partial g=|x|^\\nu$，$\\langle V\\rangle=g\\,\\partial E_n/\\partial g$．$E_n\\propto g^{2/(\\nu+2)}$ なので\n\\[ \\langle V\\rangle=g\\cdot\\frac{2}{\\nu+2}\\frac{E_n}{g}=\\frac{2}{\\nu+2}E_n. \\]\n（$\\nu=2$ で $1/2$，$\\nu=4$ で $1/3$．ビリアル定理 $2\\langle T\\rangle=\\nu\\langle V\\rangle$ と同値．）\n\n(5) $g=V_0b^{-\\nu}$ を代入すると $\\varepsilon_*=V_0^{2/(\\nu+2)}b^{-2\\nu/(\\nu+2)}(\\hbar^2/2m)^{\\nu/(\\nu+2)}\\to\\dfrac{\\hbar^2}{2mb^2}$（$\\nu\\to\\infty$）．$V_0$ 依存性が消え，$E_n\\propto\\hbar^2/(mb^2)$ となる．実際 $\\nu\\to\\infty$ で $V$ は $|x|<b$ で $0$，$|x|>b$ で $\\infty$ の幅 $2b$ の無限井戸になり，$E_n=\\frac{\\hbar^2\\pi^2(n+1)^2}{8mb^2}$ と整合する（このとき $\\epsilon_n\\to\\pi^2(n+1)^2/4$，$\\langle V\\rangle/E\\to0$）．"
    }
   ],
   "idea": {
@@ -1260,7 +1260,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $E_0$：1.0604(((hbar ^(4) g)/(4 m ^(2))))^(1/3)\n(4) 記述\n(5) 記述"
+   "spec": "(1) $\\ell$：(hbar^2/(2 m g))^(1/(ν+2))\n(2) 記述\n(3) $E_0$：ε_0 (hbar^4 g/(4 m^2))^(1/3)\n(4) $\\langle V\\rangle/E_n$：2/(ν+2)\n(5) 記述"
   },
   "methods": [],
   "tags": [
@@ -1596,16 +1596,16 @@
   "theme": "直線3原子分子の基準振動と量子化",
   "topic": "直線3原子分子の基準振動と量子化",
   "statement": {
-   "tex": "一直線上を運動する 3 つの粒子（質量 $m,M,m$，座標 $x_1,x_2,x_3$）が，ポテンシャル\n\\[ V=\\frac k2(x_2-x_1-b)^2+\\frac k2(x_3-x_2-b)^2 \\]\nで結ばれている（CO$_2$ の伸縮振動の模型）．\n\\begin{enumerate}\n\\item 重心運動を分離し，残る 2 つの基準振動の角振動数 $\\omega_s$（対称伸縮），$\\omega_a$（反対称伸縮）を求めよ．それぞれの振動の様子を述べよ．\n\\item 量子化したときのエネルギー準位（重心運動を除く）と零点エネルギーを書け．\n\\item $m=16$，$M=12$（原子質量単位）のとき $\\omega_a/\\omega_s$ を求めよ．\n\\item 準位 $(n_s,n_a)=(2,0)$ と $(0,1)$ がちょうど縮退するのは $M/m$ がいくらのときか．\n\\end{enumerate}"
+   "tex": "一直線上を運動する 3 つの粒子（質量 $m,M,m$，座標 $x_1,x_2,x_3$）が，ポテンシャル\n\\[ V=\\frac k2(x_2-x_1-b)^2+\\frac k2(x_3-x_2-b)^2 \\]\nで結ばれている（CO$_2$ の伸縮振動の模型）．\n\\begin{enumerate}\n\\item 重心運動を分離し，残る 2 つの基準振動の角振動数 $\\omega_s$（対称伸縮），$\\omega_a$（反対称伸縮）を求めよ．それぞれの振動の様子を述べよ．\n\\item 量子化したときのエネルギー準位（重心運動を除く）と零点エネルギーを書け．\n\\item $m:M=4:3$（O と C の質量比）のとき $\\omega_a/\\omega_s$ を根号を用いて求めよ．\n\\item 準位 $(n_s,n_a)=(2,0)$ と $(0,1)$ がちょうど縮退するのは $M/m$ がいくらのときか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega_s=\\sqrt{k/m}$（中央静止，両端が逆向き），$\\omega_a=\\sqrt{\\dfrac km\\left(1+\\dfrac{2m}M\\right)}$（両端が同じ向き，中央が逆向き）\n(2) $E=\\hbar\\omega_s(n_s+\\frac12)+\\hbar\\omega_a(n_a+\\frac12)$，零点 $\\frac12\\hbar(\\omega_s+\\omega_a)$\n(3) $\\sqrt{11/3}\\approx1.915$\n(4) $M/m=2/3$"
+   "tex": "(1) $\\omega_s=\\sqrt{k/m}$（中央静止，両端が逆向き），$\\omega_a=\\sqrt{\\dfrac km\\left(1+\\dfrac{2m}M\\right)}$（両端が同じ向き，中央が逆向き）\n(2) $E=\\hbar\\omega_s(n_s+\\frac12)+\\hbar\\omega_a(n_a+\\frac12)$，零点 $\\frac12\\hbar(\\omega_s+\\omega_a)$\n(3) $\\sqrt{11/3}$\n(4) $M/m=2/3$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 平衡からの変位 $u_i$ を用いると $V=\\frac k2[(u_2-u_1)^2+(u_3-u_2)^2]$．運動方程式は\n\\[ m\\ddot u_1=k(u_2-u_1),\\quad M\\ddot u_2=k(u_1-2u_2+u_3),\\quad m\\ddot u_3=k(u_2-u_3). \\]\n重心 $X=\\frac{m(u_1+u_3)+Mu_2}{2m+M}$ は等速運動（固有振動数 $0$）．\n対称伸縮：$u_1=-u_3$，$u_2=0$ とすると $m\\ddot u_1=-ku_1$，$\\omega_s=\\sqrt{k/m}$．中央の原子は静止し，両端が逆向きに振動する（重心は動かない）．\n反対称伸縮：$u_1=u_3=a$，重心静止より $u_2=-\\frac{2m}{M}a$．$m\\ddot a=k(u_2-a)=-k\\left(1+\\frac{2m}M\\right)a$，$\\omega_a=\\sqrt{\\frac km\\left(1+\\frac{2m}M\\right)}$．\n（一般に固有値問題 $\\det(K-\\omega^2\\mathsf M)=0$ の 3 根が $0,\\omega_s^2,\\omega_a^2$．）\n\n(2) 基準座標でハミルトニアンは重心の自由運動と独立な 2 つの調和振動子の和になるので\n\\[ E=\\frac{P^2}{2(2m+M)}+\\hbar\\omega_s\\left(n_s+\\frac12\\right)+\\hbar\\omega_a\\left(n_a+\\frac12\\right), \\]\n零点エネルギーは $\\frac12\\hbar(\\omega_s+\\omega_a)$．\n\n(3) $\\omega_a/\\omega_s=\\sqrt{1+2m/M}=\\sqrt{1+32/12}=\\sqrt{11/3}\\approx1.915$．（実測の CO$_2$ では約 $1.7$ で，模型は曲げ振動や結合間の相互作用を無視している．）\n\n(4) $2\\hbar\\omega_s=\\hbar\\omega_a$，すなわち $1+\\frac{2m}{M}=4$，$\\frac Mm=\\frac23$．（実際の CO$_2$ では対称伸縮と曲げ振動の 2 倍音がほぼ縮退してフェルミ共鳴を起こすことが知られる．）"
+    "tex": "(1) 平衡からの変位 $u_i$ を用いると $V=\\frac k2[(u_2-u_1)^2+(u_3-u_2)^2]$．運動方程式は\n\\[ m\\ddot u_1=k(u_2-u_1),\\quad M\\ddot u_2=k(u_1-2u_2+u_3),\\quad m\\ddot u_3=k(u_2-u_3). \\]\n重心 $X=\\frac{m(u_1+u_3)+Mu_2}{2m+M}$ は等速運動（固有振動数 $0$）．\n対称伸縮：$u_1=-u_3$，$u_2=0$ とすると $m\\ddot u_1=-ku_1$，$\\omega_s=\\sqrt{k/m}$．中央の原子は静止し，両端が逆向きに振動する（重心は動かない）．\n反対称伸縮：$u_1=u_3=a$，重心静止より $u_2=-\\frac{2m}{M}a$．$m\\ddot a=k(u_2-a)=-k\\left(1+\\frac{2m}M\\right)a$，$\\omega_a=\\sqrt{\\frac km\\left(1+\\frac{2m}M\\right)}$．\n（一般に固有値問題 $\\det(K-\\omega^2\\mathsf M)=0$ の 3 根が $0,\\omega_s^2,\\omega_a^2$．）\n\n(2) 基準座標でハミルトニアンは重心の自由運動と独立な 2 つの調和振動子の和になるので\n\\[ E=\\frac{P^2}{2(2m+M)}+\\hbar\\omega_s\\left(n_s+\\frac12\\right)+\\hbar\\omega_a\\left(n_a+\\frac12\\right), \\]\n零点エネルギーは $\\frac12\\hbar(\\omega_s+\\omega_a)$．\n\n(3) $\\omega_a/\\omega_s=\\sqrt{1+2m/M}=\\sqrt{1+8/3}=\\boldsymbol{\\sqrt{11/3}}$（約 1.9）．（実測の CO$_2$ では約 $1.7$ で，模型は曲げ振動や結合間の相互作用を無視している．）\n\n(4) $2\\hbar\\omega_s=\\hbar\\omega_a$，すなわち $1+\\frac{2m}{M}=4$，$\\boldsymbol{\\frac Mm=\\frac23}$．（実際の CO$_2$ では対称伸縮と曲げ振動の 2 倍音がほぼ縮退してフェルミ共鳴を起こすことが知られる．）"
    }
   ],
   "idea": {
@@ -1613,7 +1613,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\omega_s$：sqrt(k / m) ; $\\omega_a$：sqrt(((k)/(m))(1+((2 m)/(M))))\n(2) $E$：hbar ω_s (n_s +((1)/(2)))+ hbar ω_a (n_a +((1)/(2))) ; 零点：((1)/(2)) hbar (ω_s + ω_a)\n(3) ≈1.915\n(4) 記述"
+   "spec": "(1) $\\omega_s$：sqrt(k / m) ; $\\omega_a$：sqrt(((k)/(m))(1+((2 m)/(M))))\n(2) $E$：hbar ω_s (n_s +((1)/(2)))+ hbar ω_a (n_a +((1)/(2))) ; 零点：((1)/(2)) hbar (ω_s + ω_a)\n(3) sqrt(11/3)\n(4) $M/m$：2/3"
   },
   "methods": [],
   "tags": [
@@ -1899,16 +1899,16 @@
   "theme": "重ね合わせ状態の呼吸振動と幅の絞り",
   "topic": "重ね合わせ状態の呼吸振動と幅の絞り",
   "statement": {
-   "tex": "調和振動子（質量 $m$，角振動数 $\\omega$）の時刻 $t=0$ の状態が\n\\[\n|\\Psi(0)\\rangle=\\cos\\theta\\,|0\\rangle+\\sin\\theta\\,|2\\rangle\\qquad(0\\le\\theta\\le\\pi/2)\n\\]\nで与えられる．$L=\\hbar/2m\\omega$ とおく．\n\\begin{enumerate}\n\\item $|\\Psi(t)\\rangle$ を求め，$\\langle\\hat x\\rangle_t$ と $\\langle\\hat p\\rangle_t$ を求めよ．\n\\item $\\langle\\hat x^2\\rangle_t$ と $\\langle\\hat p^2\\rangle_t$ を求めよ．波束の幅はどんな角振動数で振動するか．\n\\item $\\theta$ と $t$ を動かしたとき $\\langle\\hat x^2\\rangle_t$ の取りうる最小値を求め，基底状態の値 $L$ と比べよ．\n\\item (3) の最小を実現する $\\theta$ と時刻において，$(\\Delta x)^2(\\Delta p)^2$ とエネルギー期待値を求め，不確定性関係と矛盾しないことを確かめよ．\n\\end{enumerate}"
+   "tex": "調和振動子（質量 $m$，角振動数 $\\omega$）の時刻 $t=0$ の状態が\n\\[\n|\\Psi(0)\\rangle=\\cos\\theta\\,|0\\rangle+\\sin\\theta\\,|2\\rangle\\qquad(0\\le\\theta\\le\\pi/2)\n\\]\nで与えられる．$L=\\hbar/2m\\omega$ とおく．\n\\begin{enumerate}\n\\item $|\\Psi(t)\\rangle$ を求め，$\\langle\\hat x\\rangle_t$ と $\\langle\\hat p\\rangle_t$ を求めよ．\n\\item $\\langle\\hat x^2\\rangle_t$ と $\\langle\\hat p^2\\rangle_t$ を求めよ．波束の幅はどんな角振動数で振動するか．\n\\item $\\theta$ と $t$ を動かしたとき $\\langle\\hat x^2\\rangle_t$ の取りうる最小値を $L$ で表し，基底状態の値 $L$ と比べよ．\n\\item (3) の最小を実現する $\\theta$ と時刻において，$(\\Delta x)^2(\\Delta p)^2$ とエネルギー期待値を求め，不確定性関係と矛盾しないことを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $|\\Psi(t)\\rangle=\\cos\\theta\\,e^{-i\\omega t/2}|0\\rangle+\\sin\\theta\\,e^{-5i\\omega t/2}|2\\rangle$，$\\langle\\hat x\\rangle=\\langle\\hat p\\rangle=0$　(2) $\\langle\\hat x^2\\rangle=L(3-2\\cos2\\theta+\\sqrt2\\sin2\\theta\\cos2\\omega t)$，$\\langle\\hat p^2\\rangle=\\dfrac{m\\hbar\\omega}{2}(3-2\\cos2\\theta-\\sqrt2\\sin2\\theta\\cos2\\omega t)$，角振動数 $2\\omega$　(3) $(3-\\sqrt6)L\\approx0.551L$　(4) $(\\Delta x)^2(\\Delta p)^2=\\dfrac{\\hbar^2}{4}(11-4\\sqrt6)\\approx1.20\\dfrac{\\hbar^2}{4}$，$\\langle E\\rangle=\\hbar\\omega\\left(\\dfrac32-\\dfrac{\\sqrt6}{3}\\right)$"
+   "tex": "(1) $|\\Psi(t)\\rangle=\\cos\\theta\\,e^{-i\\omega t/2}|0\\rangle+\\sin\\theta\\,e^{-5i\\omega t/2}|2\\rangle$，$\\langle\\hat x\\rangle=\\langle\\hat p\\rangle=0$　(2) $\\langle\\hat x^2\\rangle=L(3-2\\cos2\\theta+\\sqrt2\\sin2\\theta\\cos2\\omega t)$，$\\langle\\hat p^2\\rangle=\\dfrac{m\\hbar\\omega}{2}(3-2\\cos2\\theta-\\sqrt2\\sin2\\theta\\cos2\\omega t)$，角振動数 $2\\omega$　(3) $(3-\\sqrt6)L$　(4) $(\\Delta x)^2(\\Delta p)^2=\\dfrac{\\hbar^2}{4}(11-4\\sqrt6)$，$\\langle E\\rangle=\\hbar\\omega\\left(\\dfrac32-\\dfrac{\\sqrt6}{3}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$\\alpha=\\cos\\theta$，$\\beta=\\sin\\theta$，$\\hat X=\\hat a+\\hat a^\\dagger$ とする．\n\n(1) $E_n=\\hbar\\omega(n+\\frac12)$ より $|\\Psi(t)\\rangle=\\alpha e^{-i\\omega t/2}|0\\rangle+\\beta e^{-5i\\omega t/2}|2\\rangle$．$\\hat x,\\hat p$ は $n$ を $\\pm1$ 変えるので $|0\\rangle,|2\\rangle$ の間の行列要素はすべて 0．よって $\\langle\\hat x\\rangle=\\langle\\hat p\\rangle=0$（重心は動かない）．\n\n(2) $\\hat X^2=\\hat a^2+\\hat a^{\\dagger2}+2\\hat a^\\dagger\\hat a+1$ より $\\langle0|\\hat X^2|0\\rangle=1$，$\\langle2|\\hat X^2|2\\rangle=5$，$\\langle0|\\hat X^2|2\\rangle=\\langle0|\\hat a^2|2\\rangle=\\sqrt2$．\n\\[\n\\langle\\hat x^2\\rangle_t=L\\left\\{\\alpha^2+5\\beta^2+2\\sqrt2\\alpha\\beta\\cos2\\omega t\\right\\}=L(3-2\\cos2\\theta+\\sqrt2\\sin2\\theta\\cos2\\omega t).\n\\]\n$\\hat p^2=-\\frac{m\\hbar\\omega}{2}(\\hat a^\\dagger-\\hat a)^2=\\frac{m\\hbar\\omega}{2}(2\\hat a^\\dagger\\hat a+1-\\hat a^2-\\hat a^{\\dagger2})$ だから非対角項の符号が反転し\n\\[\n\\langle\\hat p^2\\rangle_t=\\frac{m\\hbar\\omega}{2}(3-2\\cos2\\theta-\\sqrt2\\sin2\\theta\\cos2\\omega t).\n\\]\n幅は角振動数 $2\\omega$（周期 $\\pi/\\omega$）で「呼吸」する．\n\n(3) $\\theta\\in[0,\\pi/2]$ では $\\sin2\\theta\\ge0$ なので $t$ についての最小は $\\cos2\\omega t=-1$ で $L(3-2\\cos2\\theta-\\sqrt2\\sin2\\theta)$．$2\\cos2\\theta+\\sqrt2\\sin2\\theta$ の最大値は $\\sqrt{4+2}=\\sqrt6$（$\\cos2\\theta=2/\\sqrt6$，$\\sin2\\theta=\\sqrt2/\\sqrt6$）．よって\n\\[\n\\langle\\hat x^2\\rangle_{\\min}=(3-\\sqrt6)L\\approx0.551L,\n\\]\n基底状態より約 45\\% 狭い．励起状態を混ぜたのに位置の広がりが零点ゆらぎより小さくなる．\n\n(4) その時刻では $\\langle\\hat p^2\\rangle=\\frac{m\\hbar\\omega}{2}(3-2\\cos2\\theta+\\sqrt2\\sin2\\theta)=\\frac{m\\hbar\\omega}{2}\\left(3-\\frac{4}{\\sqrt6}+\\frac{2}{\\sqrt6}\\right)=\\frac{m\\hbar\\omega}{2}\\left(3-\\frac{\\sqrt6}{3}\\right)$．$\\Delta x^2=\\langle\\hat x^2\\rangle$，$\\Delta p^2=\\langle\\hat p^2\\rangle$ だから\n\\[\n(\\Delta x)^2(\\Delta p)^2=\\frac{\\hbar^2}{4}(3-\\sqrt6)\\left(3-\\frac{\\sqrt6}{3}\\right)=\\frac{\\hbar^2}{4}(11-4\\sqrt6)\\approx1.20\\cdot\\frac{\\hbar^2}{4}\\ge\\frac{\\hbar^2}{4}.\n\\]\n運動量の広がりが増えて不確定性関係は守られる．エネルギーは保存し $\\langle E\\rangle=\\hbar\\omega\\left(\\frac{\\alpha^2}2+\\frac{5\\beta^2}2\\right)=\\frac{\\hbar\\omega}{2}(3-2\\cos2\\theta)=\\hbar\\omega\\left(\\frac32-\\frac{\\sqrt6}3\\right)\\approx0.684\\hbar\\omega$．"
+    "tex": "$\\alpha=\\cos\\theta$，$\\beta=\\sin\\theta$，$\\hat X=\\hat a+\\hat a^\\dagger$ とする．\n\n(1) $E_n=\\hbar\\omega(n+\\frac12)$ より $|\\Psi(t)\\rangle=\\alpha e^{-i\\omega t/2}|0\\rangle+\\beta e^{-5i\\omega t/2}|2\\rangle$．$\\hat x,\\hat p$ は $n$ を $\\pm1$ 変えるので $|0\\rangle,|2\\rangle$ の間の行列要素はすべて 0．よって $\\langle\\hat x\\rangle=\\langle\\hat p\\rangle=0$（重心は動かない）．\n\n(2) $\\hat X^2=\\hat a^2+\\hat a^{\\dagger2}+2\\hat a^\\dagger\\hat a+1$ より $\\langle0|\\hat X^2|0\\rangle=1$，$\\langle2|\\hat X^2|2\\rangle=5$，$\\langle0|\\hat X^2|2\\rangle=\\langle0|\\hat a^2|2\\rangle=\\sqrt2$．\n\\[\n\\langle\\hat x^2\\rangle_t=L\\left\\{\\alpha^2+5\\beta^2+2\\sqrt2\\alpha\\beta\\cos2\\omega t\\right\\}=L(3-2\\cos2\\theta+\\sqrt2\\sin2\\theta\\cos2\\omega t).\n\\]\n$\\hat p^2=-\\frac{m\\hbar\\omega}{2}(\\hat a^\\dagger-\\hat a)^2=\\frac{m\\hbar\\omega}{2}(2\\hat a^\\dagger\\hat a+1-\\hat a^2-\\hat a^{\\dagger2})$ だから非対角項の符号が反転し\n\\[\n\\langle\\hat p^2\\rangle_t=\\frac{m\\hbar\\omega}{2}(3-2\\cos2\\theta-\\sqrt2\\sin2\\theta\\cos2\\omega t).\n\\]\n幅は角振動数 $2\\omega$（周期 $\\pi/\\omega$）で「呼吸」する．\n\n(3) $\\theta\\in[0,\\pi/2]$ では $\\sin2\\theta\\ge0$ なので $t$ についての最小は $\\cos2\\omega t=-1$ で $L(3-2\\cos2\\theta-\\sqrt2\\sin2\\theta)$．$2\\cos2\\theta+\\sqrt2\\sin2\\theta$ の最大値は $\\sqrt{4+2}=\\sqrt6$（$\\cos2\\theta=2/\\sqrt6$，$\\sin2\\theta=\\sqrt2/\\sqrt6$）．よって\n\\[\n\\langle\\hat x^2\\rangle_{\\min}=\\boldsymbol{(3-\\sqrt6)L},\n\\]\n基底状態より約 45\\% 狭い．励起状態を混ぜたのに位置の広がりが零点ゆらぎより小さくなる．\n\n(4) その時刻では $\\langle\\hat p^2\\rangle=\\frac{m\\hbar\\omega}{2}(3-2\\cos2\\theta+\\sqrt2\\sin2\\theta)=\\frac{m\\hbar\\omega}{2}\\left(3-\\frac{4}{\\sqrt6}+\\frac{2}{\\sqrt6}\\right)=\\frac{m\\hbar\\omega}{2}\\left(3-\\frac{\\sqrt6}{3}\\right)$．$\\Delta x^2=\\langle\\hat x^2\\rangle$，$\\Delta p^2=\\langle\\hat p^2\\rangle$ だから\n\\[\n(\\Delta x)^2(\\Delta p)^2=\\frac{\\hbar^2}{4}(3-\\sqrt6)\\left(3-\\frac{\\sqrt6}{3}\\right)=\\boldsymbol{\\frac{\\hbar^2}{4}(11-4\\sqrt6)}\\ge\\frac{\\hbar^2}{4}.\n\\]\n運動量の広がりが増えて不確定性関係は守られる．エネルギーは保存し $\\langle E\\rangle=\\hbar\\omega\\left(\\frac{\\alpha^2}2+\\frac{5\\beta^2}2\\right)=\\frac{\\hbar\\omega}{2}(3-2\\cos2\\theta)=\\boldsymbol{\\hbar\\omega\\left(\\frac32-\\frac{\\sqrt6}3\\right)}$．"
    }
   ],
   "idea": {
@@ -1916,7 +1916,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+   "spec": "(1) $\\langle\\hat x\\rangle$：0 ; $\\langle\\hat p\\rangle$：0\n(2) $\\langle\\hat x^2\\rangle$：L (3 - 2 cos(2θ) + sqrt(2) sin(2θ) cos(2 ω t)) ; 角振動数：2 ω\n(3) (3 - sqrt(6)) L\n(4) $(\\Delta x)^2(\\Delta p)^2$：(hbar^2/4)(11 - 4 sqrt(6)) ; $\\langle E\\rangle$：hbar ω (3/2 - sqrt(6)/3)"
   },
   "methods": [],
   "tags": [
@@ -2649,16 +2649,16 @@
   "theme": "古典的禁止領域の確率：1次元励起状態と3次元",
   "topic": "古典的禁止領域の確率：1次元励起状態と3次元",
   "statement": {
-   "tex": "調和振動子 $V=\\frac12m\\omega^2x^2$ を考え，$a=\\sqrt{\\hbar/m\\omega}$ とする．誤差関数 $\\mathrm{erfc}(z)=\\frac2{\\sqrt\\pi}\\int_z^\\infty e^{-t^2}dt$ を用いてよい（$\\mathrm{erfc}(1)=0.1573$，$\\mathrm{erfc}(\\sqrt3)=0.01431$）．\n\\begin{enumerate}\n\\item 1 次元の第 1 励起状態 $\\psi_1=\\left(\\frac{4}{\\pi a^2}\\right)^{1/4}\\frac xa e^{-x^2/2a^2}$ について，粒子が古典的禁止領域に見いだされる確率を求めよ．基底状態の値 $\\mathrm{erfc}(1)\\approx0.157$ と比べよ．\n\\item 3 次元等方調和振動子 $V=\\frac12m\\omega^2r^2$ の基底状態について，古典的禁止領域（$V>E$）に見いだされる確率を求めよ．\n\\item (1) と (2) の答えが一致する理由を説明せよ．\n\\end{enumerate}"
+   "tex": "調和振動子 $V=\\frac12m\\omega^2x^2$ を考え，$a=\\sqrt{\\hbar/m\\omega}$ とする．誤差関数 $\\mathrm{erfc}(z)=\\frac2{\\sqrt\\pi}\\int_z^\\infty e^{-t^2}dt$ を用い，$\\gamma\\equiv\\mathrm{erfc}(\\sqrt3)$ とおく．\n\\begin{enumerate}\n\\item 1 次元の第 1 励起状態 $\\psi_1=\\left(\\frac{4}{\\pi a^2}\\right)^{1/4}\\frac xa e^{-x^2/2a^2}$ について，粒子が古典的禁止領域に見いだされる確率 $P_1$ を $\\gamma$ を用いて表せ．基底状態の値 $\\mathrm{erfc}(1)$ と比べてどちらが大きいか（数表の値を用いてよい）．\n\\item 3 次元等方調和振動子 $V=\\frac12m\\omega^2r^2$ の基底状態について，古典的禁止領域（$V>E$）に見いだされる確率 $P_3$ を $\\gamma$ を用いて表せ．\n\\item (1) と (2) の答えが一致する理由を説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\mathrm{erfc}(\\sqrt3)+2\\sqrt{3/\\pi}\\,e^{-3}\\approx0.112$（基底状態より小さい）　(2) 同じく $\\approx0.112$　(3) 動径分布 $\\propto r^2e^{-r^2/a^2}$ が $|\\psi_1|^2\\propto x^2e^{-x^2/a^2}$ と同形で，転回点も同じ $\\sqrt3a$ だから"
+   "tex": "(1) $P_1=\\gamma+2\\sqrt{\\dfrac{3}{\\pi}}e^{-3}$（基底状態より小さい）　(2) $P_3=\\gamma+2\\sqrt{\\dfrac{3}{\\pi}}e^{-3}$　(3) 動径分布 $\\propto r^2e^{-r^2/a^2}$ が $|\\psi_1|^2\\propto x^2e^{-x^2/a^2}$ と同形で，転回点も同じ $\\sqrt3a$ だから"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $E_1=\\frac32\\hbar\\omega$ より転回点 $\\frac12m\\omega^2x_t^2=\\frac32\\hbar\\omega$，$x_t=\\sqrt3a$．$u=x/a$ として\n\\[ P=2\\int_{\\sqrt3}^\\infty\\frac{2}{\\sqrt\\pi}u^2e^{-u^2}du. \\]\n部分積分 $\\int_z^\\infty u^2e^{-u^2}du=\\frac z2e^{-z^2}+\\frac12\\int_z^\\infty e^{-u^2}du$ より\n\\[ P=\\frac{4}{\\sqrt\\pi}\\left[\\frac{\\sqrt3}{2}e^{-3}+\\frac{\\sqrt\\pi}{4}\\mathrm{erfc}(\\sqrt3)\\right]=\\mathrm{erfc}(\\sqrt3)+2\\sqrt{\\frac3\\pi}e^{-3}=0.0143+0.0975=0.112. \\]\n基底状態の $0.157$ より小さく，$n$ が大きくなるにつれて古典的な分布に近づく傾向と整合する．\n\n(2) 3 次元基底状態 $\\psi=(\\pi a^2)^{-3/4}e^{-r^2/2a^2}$，$E=\\frac32\\hbar\\omega$，転回半径 $r_t=\\sqrt3a$．\n\\[ P=\\int_{\\sqrt3a}^\\infty4\\pi r^2\\frac{e^{-r^2/a^2}}{\\pi^{3/2}a^3}dr=\\frac{4}{\\sqrt\\pi}\\int_{\\sqrt3}^\\infty u^2e^{-u^2}du=0.112. \\]\n1 次元基底状態（$0.157$）より小さくなる．\n\n(3) (1) の被積分関数 $2\\cdot\\frac{2}{\\sqrt\\pi}u^2e^{-u^2}$（$u>0$ に折り返したもの）と (2) の動径分布 $\\frac{4}{\\sqrt\\pi}u^2e^{-u^2}$ は全く同じ関数であり，さらに両者のエネルギーがともに $\\frac32\\hbar\\omega$ なので転回点も $\\sqrt3a$ で一致する．3 次元の $l=0$ の動径関数 $u(r)=r\\psi$ は，$u(0)=0$ の条件のもとで 1 次元振動子の奇の解と同じ方程式を満たすことの帰結である．"
+    "tex": "(1) $E_1=\\frac32\\hbar\\omega$ より転回点 $\\frac12m\\omega^2x_t^2=\\frac32\\hbar\\omega$，$x_t=\\sqrt3a$．$u=x/a$ として\n\\[ P=2\\int_{\\sqrt3}^\\infty\\frac{2}{\\sqrt\\pi}u^2e^{-u^2}du. \\]\n部分積分 $\\int_z^\\infty u^2e^{-u^2}du=\\frac z2e^{-z^2}+\\frac12\\int_z^\\infty e^{-u^2}du$ より\n\\[ P=\\frac{4}{\\sqrt\\pi}\\left[\\frac{\\sqrt3}{2}e^{-3}+\\frac{\\sqrt\\pi}{4}\\mathrm{erfc}(\\sqrt3)\\right]=\\boldsymbol{\\gamma+2\\sqrt{\\frac3\\pi}e^{-3}}. \\]\n数表の値（$\\gamma\\approx0.014$，$\\mathrm{erfc}(1)\\approx0.157$）を入れると約 $0.11$ で，基底状態より小さく，$n$ が大きくなるにつれて古典的な分布に近づく傾向と整合する．\n\n(2) 3 次元基底状態 $\\psi=(\\pi a^2)^{-3/4}e^{-r^2/2a^2}$，$E=\\frac32\\hbar\\omega$，転回半径 $r_t=\\sqrt3a$．\n\\[ P=\\int_{\\sqrt3a}^\\infty4\\pi r^2\\frac{e^{-r^2/a^2}}{\\pi^{3/2}a^3}dr=\\frac{4}{\\sqrt\\pi}\\int_{\\sqrt3}^\\infty u^2e^{-u^2}du=\\boldsymbol{\\gamma+2\\sqrt{\\frac3\\pi}e^{-3}}. \\]\n(1) と同じ値で，1 次元基底状態の $\\mathrm{erfc}(1)$ より小さくなる．\n\n(3) (1) の被積分関数 $2\\cdot\\frac{2}{\\sqrt\\pi}u^2e^{-u^2}$（$u>0$ に折り返したもの）と (2) の動径分布 $\\frac{4}{\\sqrt\\pi}u^2e^{-u^2}$ は全く同じ関数であり，さらに両者のエネルギーがともに $\\frac32\\hbar\\omega$ なので転回点も $\\sqrt3a$ で一致する．3 次元の $l=0$ の動径関数 $u(r)=r\\psi$ は，$u(0)=0$ の条件のもとで 1 次元振動子の奇の解と同じ方程式を満たすことの帰結である．"
    }
   ],
   "idea": {
@@ -2666,7 +2666,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 同じく：≈0.112\n(3) 記述"
+   "spec": "(1) $P_1$：γ + 2 sqrt(3/pi) e^(-3) ; 比較：記述\n(2) $P_3$：γ + 2 sqrt(3/pi) e^(-3)\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -2799,16 +2799,16 @@
   "theme": "重ね合わせ状態の不確定性積の時間変化",
   "topic": "重ね合わせ状態の不確定性積の時間変化",
   "statement": {
-   "tex": "調和振動子（角振動数 $\\omega$）の状態が $t=0$ で\n\\[ \\Psi(x,0)=\\frac{1}{\\sqrt2}\\left[\\psi_0(x)+\\psi_1(x)\\right] \\]\nである（$\\psi_0,\\psi_1$ は実の規格化された固有関数）．$x_0=\\sqrt{\\hbar/m\\omega}$ とする．\n\\begin{enumerate}\n\\item 固有状態 $\\psi_n$ での $\\Delta x\\,\\Delta p$ を求めよ．\n\\item 状態 $\\Psi(x,t)$ での $\\langle x\\rangle$，$\\langle p\\rangle$，$\\Delta x$，$\\Delta p$ を $t$ の関数として求めよ．\n\\item $\\Delta x\\,\\Delta p$ の最小値と最大値を求め，それぞれ $\\omega t$ がいくらのときか答えよ．固有状態 $\\psi_0,\\psi_1$ の値とも比べよ．\n\\end{enumerate}"
+   "tex": "調和振動子（角振動数 $\\omega$）の状態が $t=0$ で\n\\[ \\Psi(x,0)=\\frac{1}{\\sqrt2}\\left[\\psi_0(x)+\\psi_1(x)\\right] \\]\nである（$\\psi_0,\\psi_1$ は実の規格化された固有関数）．$x_0=\\sqrt{\\hbar/m\\omega}$ とする．\n\\begin{enumerate}\n\\item 固有状態 $\\psi_n$ での $\\Delta x\\,\\Delta p$ を求めよ．\n\\item 状態 $\\Psi(x,t)$ での $\\langle x\\rangle$，$\\langle p\\rangle$，$\\Delta x$，$\\Delta p$ を $t$ の関数として求めよ．\n\\item $\\Delta x\\,\\Delta p$ の最小値と最大値を $\\hbar$ で表し，それぞれ $\\omega t$ がいくらのときか答えよ．固有状態 $\\psi_0,\\psi_1$ の値とも比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $(n+\\frac12)\\hbar$　(2) $\\langle x\\rangle=\\frac{x_0}{\\sqrt2}\\cos\\omega t$，$\\langle p\\rangle=-\\frac{\\hbar}{\\sqrt2x_0}\\sin\\omega t$，$\\Delta x^2=\\frac{x_0^2}{2}(2-\\cos^2\\omega t)$，$\\Delta p^2=\\frac{\\hbar^2}{2x_0^2}(2-\\sin^2\\omega t)$　(3) $\\Delta x\\Delta p=\\frac\\hbar2\\sqrt{2+\\frac14\\sin^22\\omega t}$，最小 $\\frac{\\hbar}{\\sqrt2}\\approx0.707\\hbar$（$\\omega t=k\\pi/2$），最大 $0.75\\hbar$（$\\omega t=\\pi/4+k\\pi/2$）"
+   "tex": "(1) $(n+\\frac12)\\hbar$　(2) $\\langle x\\rangle=\\frac{x_0}{\\sqrt2}\\cos\\omega t$，$\\langle p\\rangle=-\\frac{\\hbar}{\\sqrt2x_0}\\sin\\omega t$，$\\Delta x^2=\\frac{x_0^2}{2}(2-\\cos^2\\omega t)$，$\\Delta p^2=\\frac{\\hbar^2}{2x_0^2}(2-\\sin^2\\omega t)$　(3) $\\Delta x\\Delta p=\\frac{\\hbar}{2}\\sqrt{2+\\frac14\\sin^22\\omega t}$，最小 $\\dfrac{\\hbar}{\\sqrt2}$（$\\omega t=k\\pi/2$），最大 $\\dfrac{3\\hbar}{4}$（$\\omega t=\\pi/4+k\\pi/2$）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$x=\\frac{x_0}{\\sqrt2}(a+a^\\dagger)$，$p=\\frac{i\\hbar}{\\sqrt2x_0}(a^\\dagger-a)$．\n\n(1) $\\langle n|x^2|n\\rangle=(n+\\frac12)x_0^2$，$\\langle n|p^2|n\\rangle=(n+\\frac12)\\hbar^2/x_0^2$，$\\langle x\\rangle=\\langle p\\rangle=0$ より $\\Delta x\\Delta p=(n+\\frac12)\\hbar$．\n\n(2) 全体位相を除いて $\\Psi=\\frac1{\\sqrt2}(\\psi_0+e^{-i\\omega t}\\psi_1)$．$\\langle a\\rangle=\\frac12e^{-i\\omega t}$ より\n\\[ \\langle x\\rangle=\\frac{x_0}{\\sqrt2}\\cdot2\\mathrm{Re}\\langle a\\rangle=\\frac{x_0}{\\sqrt2}\\cos\\omega t,\\qquad \\langle p\\rangle=\\frac{i\\hbar}{\\sqrt2x_0}(\\langle a\\rangle^*-\\langle a\\rangle)=-\\frac{\\hbar}{\\sqrt2x_0}\\sin\\omega t. \\]\n$\\langle a^2\\rangle=0$（$\\psi_2$ を含まない）なので $\\langle x^2\\rangle=\\frac{x_0^2}{2}\\langle2N+1\\rangle=\\frac{x_0^2}{2}\\cdot2=x_0^2$，同様に $\\langle p^2\\rangle=\\hbar^2/x_0^2$．よって\n\\[ \\Delta x^2=x_0^2-\\frac{x_0^2}{2}\\cos^2\\omega t=\\frac{x_0^2}{2}(2-\\cos^2\\omega t),\\qquad \\Delta p^2=\\frac{\\hbar^2}{2x_0^2}(2-\\sin^2\\omega t). \\]\n\n(3) $(2-c^2)(2-s^2)=4-2(c^2+s^2)+c^2s^2=2+\\frac14\\sin^22\\omega t$ なので\n\\[ \\Delta x\\Delta p=\\frac\\hbar2\\sqrt{2+\\tfrac14\\sin^22\\omega t}. \\]\n最小は $\\sin2\\omega t=0$（$\\omega t=k\\pi/2$）で $\\frac{\\sqrt2}{2}\\hbar=0.707\\hbar$，最大は $\\sin^22\\omega t=1$（$\\omega t=\\frac\\pi4+\\frac{k\\pi}2$）で $\\frac\\hbar2\\cdot\\frac32=0.75\\hbar$．\nいずれも $\\psi_0$ の $0.5\\hbar$ より大きく，$\\psi_1$ の $1.5\\hbar$ より小さい．重ね合わせ状態の不確定性積は時間とともに角振動数 $4\\omega$ で振動する．"
+    "tex": "$x=\\frac{x_0}{\\sqrt2}(a+a^\\dagger)$，$p=\\frac{i\\hbar}{\\sqrt2x_0}(a^\\dagger-a)$．\n\n(1) $\\langle n|x^2|n\\rangle=(n+\\frac12)x_0^2$，$\\langle n|p^2|n\\rangle=(n+\\frac12)\\hbar^2/x_0^2$，$\\langle x\\rangle=\\langle p\\rangle=0$ より $\\Delta x\\Delta p=(n+\\frac12)\\hbar$．\n\n(2) 全体位相を除いて $\\Psi=\\frac1{\\sqrt2}(\\psi_0+e^{-i\\omega t}\\psi_1)$．$\\langle a\\rangle=\\frac12e^{-i\\omega t}$ より\n\\[ \\langle x\\rangle=\\frac{x_0}{\\sqrt2}\\cdot2\\mathrm{Re}\\langle a\\rangle=\\frac{x_0}{\\sqrt2}\\cos\\omega t,\\qquad \\langle p\\rangle=\\frac{i\\hbar}{\\sqrt2x_0}(\\langle a\\rangle^*-\\langle a\\rangle)=-\\frac{\\hbar}{\\sqrt2x_0}\\sin\\omega t. \\]\n$\\langle a^2\\rangle=0$（$\\psi_2$ を含まない）なので $\\langle x^2\\rangle=\\frac{x_0^2}{2}\\langle2N+1\\rangle=\\frac{x_0^2}{2}\\cdot2=x_0^2$，同様に $\\langle p^2\\rangle=\\hbar^2/x_0^2$．よって\n\\[ \\Delta x^2=x_0^2-\\frac{x_0^2}{2}\\cos^2\\omega t=\\frac{x_0^2}{2}(2-\\cos^2\\omega t),\\qquad \\Delta p^2=\\frac{\\hbar^2}{2x_0^2}(2-\\sin^2\\omega t). \\]\n\n(3) $(2-c^2)(2-s^2)=4-2(c^2+s^2)+c^2s^2=2+\\frac14\\sin^22\\omega t$ なので\n\\[ \\Delta x\\Delta p=\\frac\\hbar2\\sqrt{2+\\tfrac14\\sin^22\\omega t}. \\]\n最小は $\\sin2\\omega t=0$（$\\omega t=k\\pi/2$）で $\\boldsymbol{\\frac{\\sqrt2}{2}\\hbar}$，最大は $\\sin^22\\omega t=1$（$\\omega t=\\frac\\pi4+\\frac{k\\pi}2$）で $\\frac\\hbar2\\cdot\\frac32=\\boldsymbol{\\frac34\\hbar}$．\nいずれも $\\psi_0$ の $\\frac12\\hbar$ より大きく，$\\psi_1$ の $\\frac32\\hbar$ より小さい．重ね合わせ状態の不確定性積は時間とともに角振動数 $4\\omega$ で振動する．"
    }
   ],
   "idea": {
@@ -2816,7 +2816,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) (n +((1)/(2))) hbar\n(2) 記述\n(3) 記述"
+   "spec": "(1) (n +((1)/(2))) hbar\n(2) $\\langle x\\rangle$：(x_0/sqrt(2)) cos(ω t) ; $\\Delta x^2$：(x_0^2/2)(2 - cos(ω t)^2)\n(3) 最小：hbar/sqrt(2) ; 最大：3 hbar/4"
   },
   "methods": [],
   "tags": [
@@ -2849,10 +2849,10 @@
   "theme": "d次元・非等方振動子の縮退度",
   "topic": "d次元・非等方振動子の縮退度",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item $d$ 次元等方調和振動子のエネルギーは $E=(N+\\frac d2)\\hbar\\omega$，$N=n_1+\\dots+n_d$ である．準位 $N$ の縮退度 $g_d(N)$ を求め，$d=3$ の場合を確かめよ．\n\\item 角振動数が $\\omega_x=\\omega_y=\\omega$，$\\omega_z=2\\omega$ の非等方振動子を考える．エネルギーを $E=(M+2)\\hbar\\omega$ と書いたとき，$M=n_x+n_y+2n_z$ となる．準位 $M$ の縮退度を $M$ が偶数・奇数の場合に分けて求めよ．\n\\item (2) で $M=4$（$E=6\\hbar\\omega$）の準位の縮退度を求めよ．等方振動子（$\\omega_z=\\omega$）にエネルギー $6\\hbar\\omega$ の準位はあるか．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item $d$ 次元等方調和振動子のエネルギーは $E=(N+\\frac d2)\\hbar\\omega$，$N=n_1+\\dots+n_d$ である．準位 $N$ の縮退度 $g_d(N)$ を求め，$d=3$ の場合を $N$ の多項式で表せ．\n\\item 角振動数が $\\omega_x=\\omega_y=\\omega$，$\\omega_z=2\\omega$ の非等方振動子を考える．エネルギーを $E=(M+2)\\hbar\\omega$ と書いたとき，$M=n_x+n_y+2n_z$ となる．準位 $M$ の縮退度を $M=2k$（偶数）・$M=2k+1$（奇数）の場合に分けて $k$ で表せ．\n\\item (2) で $M=4$（$E=6\\hbar\\omega$）の準位の縮退度を求めよ．等方振動子（$\\omega_z=\\omega$）にエネルギー $6\\hbar\\omega$ の準位はあるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $g_d(N)=\\dbinom{N+d-1}{d-1}$，$d=3$ で $\\frac{(N+1)(N+2)}2$　(2) $M=2k$：$(k+1)^2$，$M=2k+1$：$(k+1)(k+2)$　(3) 非等方は 9 重．等方では $E=6\\hbar\\omega$ の準位は存在しない（近い $N=4$，$E=5.5\\hbar\\omega$ は 15 重）"
+   "tex": "(1) $g_d(N)=\\dbinom{N+d-1}{d-1}$，$d=3$ で $\\dfrac{(N+1)(N+2)}{2}$　(2) $M=2k$：$(k+1)^2$，$M=2k+1$：$(k+1)(k+2)$　(3) 非等方は $9$ 重．等方では $E=6\\hbar\\omega$ の準位は存在しない（近い $N=4$ は 15 重）"
   },
   "solutions": [
    {
@@ -2866,7 +2866,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $g_3(N)$：(N+1)(N+2)/2\n(2) $M=2k$：(k+1)^2 ; $M=2k+1$：(k+1)(k+2)\n(3) 縮退度：9 ; 等方：記述"
   },
   "methods": [],
   "tags": [
@@ -2949,16 +2949,16 @@
   "theme": "3準位重ね合わせのエネルギー分散と⟨x⟩振動",
   "topic": "3準位重ね合わせのエネルギー分散と⟨x⟩振動",
   "statement": {
-   "tex": "調和振動子（角振動数 $\\omega$，$x_0=\\sqrt{\\hbar/m\\omega}$）の状態が\n\\[ \\Psi(x,0)=\\frac1{\\sqrt2}\\psi_0+\\frac1{\\sqrt3}\\psi_1+\\frac1{\\sqrt6}\\psi_2 \\]\nである（$\\psi_n$ は実の規格化された固有関数）．\n\\begin{enumerate}\n\\item エネルギーの期待値 $\\langle E\\rangle$ と標準偏差 $\\Delta E$ を求めよ．\n\\item $\\langle x\\rangle(t)$ を求めよ．\n\\item $\\hbar/\\Delta E$ を計算し，$\\langle x\\rangle$ の振動の周期 $2\\pi/\\omega$ と比較して，エネルギー・時間の不確定性関係の観点から論ぜよ．\n\\end{enumerate}"
+   "tex": "調和振動子（角振動数 $\\omega$，$x_0=\\sqrt{\\hbar/m\\omega}$）の状態が\n\\[ \\Psi(x,0)=\\frac1{\\sqrt2}\\psi_0+\\frac1{\\sqrt3}\\psi_1+\\frac1{\\sqrt6}\\psi_2 \\]\nである（$\\psi_n$ は実の規格化された固有関数）．\n\\begin{enumerate}\n\\item エネルギーの期待値 $\\langle E\\rangle$ と標準偏差 $\\Delta E$ を $\\hbar\\omega$ で表せ．\n\\item $\\langle x\\rangle(t)$ を求めよ．\n\\item $\\hbar/\\Delta E$ を $\\omega$ で表し，$\\langle x\\rangle$ の振動の周期 $2\\pi/\\omega$ と比較して，エネルギー・時間の不確定性関係の観点から論ぜよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle E\\rangle=\\frac76\\hbar\\omega$，$\\Delta E=\\frac{\\sqrt5}{3}\\hbar\\omega\\approx0.745\\hbar\\omega$　(2) $\\langle x\\rangle=\\left(\\frac1{\\sqrt3}+\\frac{\\sqrt2}3\\right)x_0\\cos\\omega t\\approx1.05\\,x_0\\cos\\omega t$　(3) $\\hbar/\\Delta E=1.34/\\omega$ は周期 $6.28/\\omega$ より短い"
+   "tex": "(1) $\\langle E\\rangle=\\dfrac{7}{6}\\hbar\\omega$，$\\Delta E=\\dfrac{\\sqrt5}{3}\\hbar\\omega$　(2) $\\langle x\\rangle=\\left(\\dfrac{1}{\\sqrt3}+\\dfrac{\\sqrt2}{3}\\right)x_0\\cos\\omega t$　(3) $\\hbar/\\Delta E=\\dfrac{3}{\\sqrt5\\,\\omega}$ は周期 $\\dfrac{2\\pi}{\\omega}$ より短い"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 確率は $\\frac12,\\frac13,\\frac16$（和 1）．$E_n=(n+\\frac12)\\hbar\\omega$ より\n\\[ \\langle E\\rangle=\\left(\\frac12\\cdot\\frac12+\\frac13\\cdot\\frac32+\\frac16\\cdot\\frac52\\right)\\hbar\\omega=\\frac76\\hbar\\omega, \\]\n\\[ \\langle E^2\\rangle=\\left(\\frac12\\cdot\\frac14+\\frac13\\cdot\\frac94+\\frac16\\cdot\\frac{25}4\\right)\\hbar^2\\omega^2=\\frac{23}{12}\\hbar^2\\omega^2,\\qquad \\Delta E^2=\\frac{23}{12}-\\frac{49}{36}=\\frac59\\ \\Rightarrow\\ \\Delta E=\\frac{\\sqrt5}3\\hbar\\omega. \\]\n\n(2) $\\langle x\\rangle=\\sqrt2x_0\\,\\mathrm{Re}\\langle a\\rangle$．$a\\psi_n=\\sqrt n\\psi_{n-1}$ より\n\\[ \\langle a\\rangle=\\left(c_0c_1\\cdot1+c_1c_2\\sqrt2\\right)e^{-i\\omega t}=\\left(\\frac1{\\sqrt6}+\\frac{\\sqrt2}{\\sqrt{18}}\\right)e^{-i\\omega t}=\\left(\\frac1{\\sqrt6}+\\frac13\\right)e^{-i\\omega t}. \\]\nよって $\\langle x\\rangle=\\sqrt2\\left(\\frac1{\\sqrt6}+\\frac13\\right)x_0\\cos\\omega t=\\left(\\frac{1}{\\sqrt3}+\\frac{\\sqrt2}{3}\\right)x_0\\cos\\omega t=1.05\\,x_0\\cos\\omega t$．\n隣り合う準位の対（0,1）と（1,2）の干渉が同じ角振動数 $\\omega$ で同位相に寄与する（等間隔準位の特徴）．\n\n(3) $\\hbar/\\Delta E=\\dfrac{3}{\\sqrt5\\,\\omega}=\\dfrac{1.34}{\\omega}$，周期 $2\\pi/\\omega=6.28/\\omega$．$\\langle x\\rangle$ が目に見えて変化する時間スケール（周期の数分の 1）は $\\hbar/\\Delta E$ と同程度であり，エネルギーの広がりが大きいほど状態は速く変化するという不確定性関係の内容と整合する．"
+    "tex": "(1) 確率は $\\frac12,\\frac13,\\frac16$（和 1）．$E_n=(n+\\frac12)\\hbar\\omega$ より\n\\[ \\langle E\\rangle=\\left(\\frac12\\cdot\\frac12+\\frac13\\cdot\\frac32+\\frac16\\cdot\\frac52\\right)\\hbar\\omega=\\frac76\\hbar\\omega, \\]\n\\[ \\langle E^2\\rangle=\\left(\\frac12\\cdot\\frac14+\\frac13\\cdot\\frac94+\\frac16\\cdot\\frac{25}4\\right)\\hbar^2\\omega^2=\\frac{23}{12}\\hbar^2\\omega^2,\\qquad \\Delta E^2=\\frac{23}{12}-\\frac{49}{36}=\\frac59\\ \\Rightarrow\\ \\Delta E=\\frac{\\sqrt5}3\\hbar\\omega. \\]\n\n(2) $\\langle x\\rangle=\\sqrt2x_0\\,\\mathrm{Re}\\langle a\\rangle$．$a\\psi_n=\\sqrt n\\psi_{n-1}$ より\n\\[ \\langle a\\rangle=\\left(c_0c_1\\cdot1+c_1c_2\\sqrt2\\right)e^{-i\\omega t}=\\left(\\frac1{\\sqrt6}+\\frac{\\sqrt2}{\\sqrt{18}}\\right)e^{-i\\omega t}=\\left(\\frac1{\\sqrt6}+\\frac13\\right)e^{-i\\omega t}. \\]\nよって $\\langle x\\rangle=\\sqrt2\\left(\\frac1{\\sqrt6}+\\frac13\\right)x_0\\cos\\omega t=\\left(\\frac{1}{\\sqrt3}+\\frac{\\sqrt2}{3}\\right)x_0\\cos\\omega t$（振幅は $x_0$ 程度）．\n隣り合う準位の対（0,1）と（1,2）の干渉が同じ角振動数 $\\omega$ で同位相に寄与する（等間隔準位の特徴）．\n\n(3) $\\hbar/\\Delta E=\\boldsymbol{\\dfrac{3}{\\sqrt5\\,\\omega}}$ で，周期 $2\\pi/\\omega$ の約 $1/5$ である．$\\langle x\\rangle$ が目に見えて変化する時間スケール（周期の数分の 1）は $\\hbar/\\Delta E$ と同程度であり，エネルギーの広がりが大きいほど状態は速く変化するという不確定性関係の内容と整合する．"
    }
   ],
   "idea": {
@@ -2966,7 +2966,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\langle E\\rangle$：7 hbar ω/6 ; $\\Delta E$：sqrt(5) hbar ω/3\n(2) $\\langle x\\rangle$：(1/sqrt(3) + sqrt(2)/3) x_0 cos(ω t)\n(3) $\\hbar/\\Delta E$：3/(sqrt(5) ω) ; 考察：記述"
   },
   "methods": [],
   "tags": [
@@ -2999,16 +2999,16 @@
   "theme": "第1励起状態と半調和振動子の基底状態",
   "topic": "第1励起状態と半調和振動子の基底状態",
   "statement": {
-   "tex": "$a=\\sqrt{\\hbar/m\\omega}$ とし，$\\psi_1(x)=Bx\\,e^{-x^2/2a^2}$ を考える．\n\\begin{enumerate}\n\\item $\\psi_1$ が $V=\\frac12m\\omega^2x^2$ のシュレーディンガー方程式をエネルギー $\\frac32\\hbar\\omega$ で満たすことを示せ．\n\\item $x\\le0$ に無限に高い壁を置いた半調和振動子（$x>0$ で $V=\\frac12m\\omega^2x^2$）の基底状態は $x>0$ に制限した $\\psi_1$ であることを説明し，$x>0$ で規格化したときの $\\langle x\\rangle$，$\\Delta x$ を求めよ．\n\\item この基底状態で $\\langle p\\rangle$，$\\Delta p$ を求め，$\\Delta x\\,\\Delta p$ を $\\hbar$ 単位で数値で答えよ．\n\\end{enumerate}"
+   "tex": "$a=\\sqrt{\\hbar/m\\omega}$ とし，$\\psi_1(x)=Bx\\,e^{-x^2/2a^2}$ を考える．\n\\begin{enumerate}\n\\item $\\psi_1$ が $V=\\frac12m\\omega^2x^2$ のシュレーディンガー方程式をエネルギー $\\frac32\\hbar\\omega$ で満たすことを示せ．\n\\item $x\\le0$ に無限に高い壁を置いた半調和振動子（$x>0$ で $V=\\frac12m\\omega^2x^2$）の基底状態は $x>0$ に制限した $\\psi_1$ であることを説明し，$x>0$ で規格化したときの $\\langle x\\rangle$，$\\Delta x$ を求めよ．\n\\item この基底状態で $\\langle p\\rangle$，$\\Delta p$ を求め，$\\Delta x\\,\\Delta p$ を $\\hbar$ を用いて厳密に表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $\\langle x\\rangle=\\dfrac{2a}{\\sqrt\\pi}\\approx1.13a$，$\\Delta x=a\\sqrt{\\dfrac32-\\dfrac4\\pi}\\approx0.476a$　(3) $\\langle p\\rangle=0$，$\\Delta p=\\sqrt{\\tfrac32}\\,\\hbar/a$，$\\Delta x\\Delta p\\approx0.583\\hbar$"
+   "tex": "(1) 証明（解説参照）　(2) $\\langle x\\rangle=\\dfrac{2a}{\\sqrt\\pi}$，$\\Delta x=a\\sqrt{\\dfrac32-\\dfrac4\\pi}$　(3) $\\langle p\\rangle=0$，$\\Delta p=\\dfrac{\\sqrt{6}\\hbar}{2a}$，$\\Delta x\\Delta p=\\hbar\\sqrt{\\dfrac32\\left(\\dfrac32-\\dfrac4\\pi\\right)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\psi_1'=B(1-x^2/a^2)e^{-x^2/2a^2}$，$\\psi_1''=B\\left(\\dfrac{x^3}{a^4}-\\dfrac{3x}{a^2}\\right)e^{-x^2/2a^2}$．\n\\[ -\\frac{\\hbar^2}{2m}\\psi_1''+\\frac12m\\omega^2x^2\\psi_1=\\left[\\frac{3\\hbar^2}{2ma^2}-\\frac{\\hbar^2x^2}{2ma^4}+\\frac12m\\omega^2x^2\\right]\\psi_1. \\]\n$a^4=\\hbar^2/m^2\\omega^2$ で $x^2$ の項は打ち消し，$\\dfrac{3\\hbar^2}{2ma^2}=\\dfrac32\\hbar\\omega$．\n\n(2) 壁で $\\psi(0)=0$ が必要で，$\\psi_1(0)=0$ を満たす．$x>0$ で節をもたない解なので基底状態（$\\psi_0$ は $\\psi(0)\\neq0$ なので不適）．エネルギー $\\frac32\\hbar\\omega$．\n$u=x/a$ で $\\int_0^\\infty u^2e^{-u^2}du=\\frac{\\sqrt\\pi}4$，$\\int_0^\\infty u^3e^{-u^2}du=\\frac12$，$\\int_0^\\infty u^4e^{-u^2}du=\\frac{3\\sqrt\\pi}8$ より\n\\[ \\langle x\\rangle=a\\frac{1/2}{\\sqrt\\pi/4}=\\frac{2a}{\\sqrt\\pi},\\qquad\\langle x^2\\rangle=a^2\\frac{3\\sqrt\\pi/8}{\\sqrt\\pi/4}=\\frac32a^2, \\]\n\\[ \\Delta x=a\\sqrt{\\frac32-\\frac4\\pi}=0.476a. \\]\n\n(3) 実の束縛状態なので $\\langle p\\rangle=-i\\hbar\\int\\psi\\psi'dx=-\\frac{i\\hbar}{2}[\\psi^2]_0^\\infty=0$．\n$\\langle p^2\\rangle=\\hbar^2\\int_0^\\infty|\\psi'|^2dx$（境界項 $\\psi\\psi'$ は $x=0$，$\\infty$ で 0）．あるいはビリアル定理 $\\langle T\\rangle=\\langle V\\rangle=\\frac34\\hbar\\omega$（壁での $\\psi'(0)\\ne0$ の寄与は $x\\,|\\psi'|^2$ に比例し $x=0$ で 0）より $\\langle p^2\\rangle=\\frac32m\\hbar\\omega=\\frac32\\hbar^2/a^2$．\n\\[ \\Delta x\\Delta p=\\hbar\\sqrt{\\frac32\\left(\\frac32-\\frac4\\pi\\right)}=0.583\\hbar\\ (>0.5\\hbar). \\]\n全空間の $\\psi_1$ では $\\Delta x\\Delta p=1.5\\hbar$ だが，半分に制限すると $\\langle x\\rangle\\ne0$ となって $\\Delta x$ が大きく減り，最小不確定に近づく．"
+    "tex": "(1) $\\psi_1'=B(1-x^2/a^2)e^{-x^2/2a^2}$，$\\psi_1''=B\\left(\\dfrac{x^3}{a^4}-\\dfrac{3x}{a^2}\\right)e^{-x^2/2a^2}$．\n\\[ -\\frac{\\hbar^2}{2m}\\psi_1''+\\frac12m\\omega^2x^2\\psi_1=\\left[\\frac{3\\hbar^2}{2ma^2}-\\frac{\\hbar^2x^2}{2ma^4}+\\frac12m\\omega^2x^2\\right]\\psi_1. \\]\n$a^4=\\hbar^2/m^2\\omega^2$ で $x^2$ の項は打ち消し，$\\dfrac{3\\hbar^2}{2ma^2}=\\dfrac32\\hbar\\omega$．\n\n(2) 壁で $\\psi(0)=0$ が必要で，$\\psi_1(0)=0$ を満たす．$x>0$ で節をもたない解なので基底状態（$\\psi_0$ は $\\psi(0)\\neq0$ なので不適）．エネルギー $\\frac32\\hbar\\omega$．\n$u=x/a$ で $\\int_0^\\infty u^2e^{-u^2}du=\\frac{\\sqrt\\pi}4$，$\\int_0^\\infty u^3e^{-u^2}du=\\frac12$，$\\int_0^\\infty u^4e^{-u^2}du=\\frac{3\\sqrt\\pi}8$ より\n\\[ \\langle x\\rangle=a\\frac{1/2}{\\sqrt\\pi/4}=\\frac{2a}{\\sqrt\\pi},\\qquad\\langle x^2\\rangle=a^2\\frac{3\\sqrt\\pi/8}{\\sqrt\\pi/4}=\\frac32a^2, \\]\n\\[ \\Delta x=\\boldsymbol{a\\sqrt{\\frac32-\\frac4\\pi}}. \\]\n\n(3) 実の束縛状態なので $\\langle p\\rangle=-i\\hbar\\int\\psi\\psi'dx=-\\frac{i\\hbar}{2}[\\psi^2]_0^\\infty=0$．\n$\\langle p^2\\rangle=\\hbar^2\\int_0^\\infty|\\psi'|^2dx$（境界項 $\\psi\\psi'$ は $x=0$，$\\infty$ で 0）．あるいはビリアル定理 $\\langle T\\rangle=\\langle V\\rangle=\\frac34\\hbar\\omega$（壁での $\\psi'(0)\\ne0$ の寄与は $x\\,|\\psi'|^2$ に比例し $x=0$ で 0）より $\\langle p^2\\rangle=\\frac32m\\hbar\\omega=\\frac32\\hbar^2/a^2$．\n\\[ \\Delta x\\Delta p=\\boldsymbol{\\hbar\\sqrt{\\frac32\\left(\\frac32-\\frac4\\pi\\right)}}\\ (\\approx0.58\\hbar>0.5\\hbar). \\]\n全空間の $\\psi_1$ では $\\Delta x\\Delta p=1.5\\hbar$ だが，半分に制限すると $\\langle x\\rangle\\ne0$ となって $\\Delta x$ が大きく減り，最小不確定に近づく．"
    }
   ],
   "idea": {
@@ -3016,7 +3016,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+   "spec": "(1) 証明\n(2) $\\langle x\\rangle$：2 a/sqrt(pi) ; $\\Delta x$：a sqrt(3/2 - 4/pi)\n(3) $\\langle p\\rangle$：0 ; $\\Delta p$：sqrt(6) hbar/(2 a) ; $\\Delta x\\Delta p$：hbar sqrt((3/2)(3/2 - 4/pi))"
   },
   "methods": [],
   "tags": [
@@ -3295,16 +3295,16 @@
   "theme": "TRK総和則の無限井戸での検証と第2総和則",
   "topic": "TRK総和則の無限井戸での検証と第2総和則",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item ハミルトニアン $H=p^2/2m+V(x)$ の固有状態 $|n\\rangle$（エネルギー $E_n$）について，交換子 $[x,[H,x]]$ を計算し，Thomas–Reiche–Kuhn 総和則\n\\[\\sum_n\\frac{2m}{\\hbar^2}(E_n-E_a)|x_{na}|^2=1\\quad(x_{na}=\\langle n|x|a\\rangle)\\]\nを導け．さらに $[H,x]$ を用いて第 2 の総和則 $\\sum_n(E_n-E_a)^2|x_{na}|^2=\\dfrac{\\hbar^2}{m^2}\\langle a|p^2|a\\rangle$ を導け．\n\\item 幅 $L$ の無限井戸（$0<x<L$）の基底状態 $a=1$ について，$n$ が偶数のとき $x_{n1}=-\\dfrac{8nL}{\\pi^2(n^2-1)^2}$，$n$ が 1 以外の奇数のとき $x_{n1}=0$ となることを用いて，TRK 総和則が級数恒等式\n\\[\\sum_{n=2,4,6,\\dots}\\frac{n^2}{(n^2-1)^3}=\\frac{\\pi^2}{64}\\]\nと同値であることを示せ．また $n=2$ の項だけで総和の何 % を占めるか答えよ．\n\\item 第 2 の総和則も同じ井戸で成り立つことを数値的に確かめるには，どの級数を計算すればよいか．その級数の値を答えよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item ハミルトニアン $H=p^2/2m+V(x)$ の固有状態 $|n\\rangle$（エネルギー $E_n$）について，交換子 $[x,[H,x]]$ を計算し，Thomas–Reiche–Kuhn 総和則\n\\[\\sum_n\\frac{2m}{\\hbar^2}(E_n-E_a)|x_{na}|^2=1\\quad(x_{na}=\\langle n|x|a\\rangle)\\]\nを導け．さらに $[H,x]$ を用いて第 2 の総和則 $\\sum_n(E_n-E_a)^2|x_{na}|^2=\\dfrac{\\hbar^2}{m^2}\\langle a|p^2|a\\rangle$ を導け．\n\\item 幅 $L$ の無限井戸（$0<x<L$）の基底状態 $a=1$ について，$n$ が偶数のとき $x_{n1}=-\\dfrac{8nL}{\\pi^2(n^2-1)^2}$，$n$ が 1 以外の奇数のとき $x_{n1}=0$ となることを用いて，TRK 総和則が級数恒等式\n\\[\\sum_{n=2,4,6,\\dots}\\frac{n^2}{(n^2-1)^3}=\\frac{\\pi^2}{64}\\]\nと同値であることを示せ．また $n=2$ の項だけで総和の何割を占めるか，その割合を $\\pi$ を用いて表せ．\n\\item 第 2 の総和則も同じ井戸で成り立つことを数値的に確かめるには，どの級数を計算すればよいか．その級数の値を $\\pi$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $[x,[H,x]]=\\hbar^2/m$ から TRK；$[H,x]=-i\\hbar p/m$ から第 2 総和則　(2) $n=2$ で約 $96.1\\%$　(3) $\\sum_{n=2,4,\\dots}\\frac{n^2}{(n^2-1)^2}=\\frac{\\pi^2}{16}\\approx0.617$ を確かめればよい"
+   "tex": "(1) $[x,[H,x]]=\\hbar^2/m$ から TRK；$[H,x]=-i\\hbar p/m$ から第 2 総和則　(2) 割合 $\\dfrac{256}{27\\pi^2}$　(3) $\\sum_{n=2,4,\\dots}\\frac{n^2}{(n^2-1)^2}=\\dfrac{\\pi^2}{16}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $[H,x]=\\frac{1}{2m}[p^2,x]=-\\frac{i\\hbar}{m}p$，$[x,[H,x]]=-\\frac{i\\hbar}{m}[x,p]=\\frac{\\hbar^2}{m}$．\n$\\langle a|[x,[H,x]]|a\\rangle=\\langle a|xHx-Hx^2-x^2H+xHx|a\\rangle=2\\langle a|xHx|a\\rangle-2E_a\\langle a|x^2|a\\rangle$．完全系 $\\sum|n\\rangle\\langle n|=1$ を挿入すると $2\\sum_n(E_n-E_a)|x_{na}|^2=\\hbar^2/m$．よって TRK 総和則．\n第 2：$\\langle n|[H,x]|a\\rangle=(E_n-E_a)x_{na}$ なので $\\sum_n(E_n-E_a)^2|x_{na}|^2=\\sum_n|\\langle n|[H,x]|a\\rangle|^2=\\langle a|[H,x]^\\dagger[H,x]|a\\rangle=\\frac{\\hbar^2}{m^2}\\langle a|p^2|a\\rangle$．\n\n(2) $E_n-E_1=\\frac{\\pi^2\\hbar^2}{2mL^2}(n^2-1)$．\n\\[\\sum_n\\frac{2m}{\\hbar^2}(E_n-E_1)|x_{n1}|^2=\\sum_{n\\,{\\rm even}}\\frac{\\pi^2(n^2-1)}{L^2}\\cdot\\frac{64n^2L^2}{\\pi^4(n^2-1)^4}=\\frac{64}{\\pi^2}\\sum_{n\\,{\\rm even}}\\frac{n^2}{(n^2-1)^3}.\\]\nこれが 1 なので級数は $\\pi^2/64\\ (=0.15421)$．$n=2$ の項は $4/27$ で，その割合は $\\frac{64}{\\pi^2}\\cdot\\frac4{27}\\approx0.961$，すなわち約 96.1%．振動子強度のほとんどが最低励起への遷移に集中する．\n\n(3) $\\langle1|p^2|1\\rangle=\\pi^2\\hbar^2/L^2$．左辺は $\\sum_{n\\,{\\rm even}}\\left(\\frac{\\pi^2\\hbar^2(n^2-1)}{2mL^2}\\right)^2\\frac{64n^2L^2}{\\pi^4(n^2-1)^4}=\\frac{16\\hbar^4}{m^2L^2}\\sum_{n\\,{\\rm even}}\\frac{n^2}{(n^2-1)^2}$．これが $\\frac{\\hbar^4\\pi^2}{m^2L^2}$ に等しいので $\\sum_{n\\,{\\rm even}}\\frac{n^2}{(n^2-1)^2}=\\frac{\\pi^2}{16}\\approx0.6169$．（各項 $\\sim1/n^2$ で収束は遅い．）"
+    "tex": "(1) $[H,x]=\\frac{1}{2m}[p^2,x]=-\\frac{i\\hbar}{m}p$，$[x,[H,x]]=-\\frac{i\\hbar}{m}[x,p]=\\frac{\\hbar^2}{m}$．\n$\\langle a|[x,[H,x]]|a\\rangle=\\langle a|xHx-Hx^2-x^2H+xHx|a\\rangle=2\\langle a|xHx|a\\rangle-2E_a\\langle a|x^2|a\\rangle$．完全系 $\\sum|n\\rangle\\langle n|=1$ を挿入すると $2\\sum_n(E_n-E_a)|x_{na}|^2=\\hbar^2/m$．よって TRK 総和則．\n第 2：$\\langle n|[H,x]|a\\rangle=(E_n-E_a)x_{na}$ なので $\\sum_n(E_n-E_a)^2|x_{na}|^2=\\sum_n|\\langle n|[H,x]|a\\rangle|^2=\\langle a|[H,x]^\\dagger[H,x]|a\\rangle=\\frac{\\hbar^2}{m^2}\\langle a|p^2|a\\rangle$．\n\n(2) $E_n-E_1=\\frac{\\pi^2\\hbar^2}{2mL^2}(n^2-1)$．\n\\[\\sum_n\\frac{2m}{\\hbar^2}(E_n-E_1)|x_{n1}|^2=\\sum_{n\\,{\\rm even}}\\frac{\\pi^2(n^2-1)}{L^2}\\cdot\\frac{64n^2L^2}{\\pi^4(n^2-1)^4}=\\frac{64}{\\pi^2}\\sum_{n\\,{\\rm even}}\\frac{n^2}{(n^2-1)^3}.\\]\nこれが 1 なので級数は $\\pi^2/64$．$n=2$ の項は $4/27$ で，その割合は $\\frac{64}{\\pi^2}\\cdot\\frac4{27}=\\boldsymbol{\\frac{256}{27\\pi^2}}$，すなわち約 96\\%．振動子強度のほとんどが最低励起への遷移に集中する．\n\n(3) $\\langle1|p^2|1\\rangle=\\pi^2\\hbar^2/L^2$．左辺は $\\sum_{n\\,{\\rm even}}\\left(\\frac{\\pi^2\\hbar^2(n^2-1)}{2mL^2}\\right)^2\\frac{64n^2L^2}{\\pi^4(n^2-1)^4}=\\frac{16\\hbar^4}{m^2L^2}\\sum_{n\\,{\\rm even}}\\frac{n^2}{(n^2-1)^2}$．これが $\\frac{\\hbar^4\\pi^2}{m^2L^2}$ に等しいので $\\sum_{n\\,{\\rm even}}\\frac{n^2}{(n^2-1)^2}=\\boldsymbol{\\frac{\\pi^2}{16}}$．（各項 $\\sim1/n^2$ で収束は遅い．）"
    }
   ],
   "idea": {
@@ -3312,7 +3312,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 割合：256/(27 pi^2)\n(3) 値：pi^2/16"
   },
   "methods": [],
   "tags": [
@@ -4146,10 +4146,10 @@
   "theme": "シュレディンガーの猫状態の運動量スクイーズ",
   "topic": "シュレディンガーの猫状態の運動量スクイーズ",
   "statement": {
-   "tex": "調和振動子（質量 $m$，角振動数 $\\omega$）のコヒーレント状態 $|\\lambda\\rangle$（$\\hat a|\\lambda\\rangle=\\lambda|\\lambda\\rangle$，$\\langle\\lambda|\\lambda\\rangle=1$）を考える．$\\hat x=\\sqrt{\\frac{\\hbar}{2m\\omega}}(\\hat a+\\hat a^\\dagger)$，$\\hat p=i\\sqrt{\\frac{m\\hbar\\omega}{2}}(\\hat a^\\dagger-\\hat a)$ である．また $\\langle\\mu|\\lambda\\rangle=\\exp\\left(-\\frac{|\\mu|^2+|\\lambda|^2}{2}+\\mu^*\\lambda\\right)$ を用いてよい．\n\\begin{enumerate}\n\\item 任意の $\\lambda$ について $\\Delta x$，$\\Delta p$ を求め，$\\Delta x\\Delta p$ を計算せよ．\n\\item 実数 $\\alpha>0$ に対し，偶の猫状態 $|C\\rangle=\\mathcal N(|\\alpha\\rangle+|-\\alpha\\rangle)$ の規格化定数 $\\mathcal N>0$ と $\\langle C|\\hat a^\\dagger\\hat a|C\\rangle$ を求めよ．\n\\item $|C\\rangle$ における $(\\Delta x)^2$，$(\\Delta p)^2$ を $u=\\alpha^2$ で表せ．\n\\item $(\\Delta p)^2$ は基底状態の値 $m\\hbar\\omega/2$ より小さくなることを示し，その比を最小にする $u$ が満たす方程式を書け（数値的には $u\\approx0.64$，比の最小値 $\\approx0.44$）．\n\\end{enumerate}"
+   "tex": "調和振動子（質量 $m$，角振動数 $\\omega$）のコヒーレント状態 $|\\lambda\\rangle$（$\\hat a|\\lambda\\rangle=\\lambda|\\lambda\\rangle$，$\\langle\\lambda|\\lambda\\rangle=1$）を考える．$\\hat x=\\sqrt{\\frac{\\hbar}{2m\\omega}}(\\hat a+\\hat a^\\dagger)$，$\\hat p=i\\sqrt{\\frac{m\\hbar\\omega}{2}}(\\hat a^\\dagger-\\hat a)$ である．また $\\langle\\mu|\\lambda\\rangle=\\exp\\left(-\\frac{|\\mu|^2+|\\lambda|^2}{2}+\\mu^*\\lambda\\right)$ を用いてよい．\n\\begin{enumerate}\n\\item 任意の $\\lambda$ について $\\Delta x$，$\\Delta p$ を求め，$\\Delta x\\Delta p$ を計算せよ．\n\\item 実数 $\\alpha>0$ に対し，偶の猫状態 $|C\\rangle=\\mathcal N(|\\alpha\\rangle+|-\\alpha\\rangle)$ の規格化定数 $\\mathcal N>0$ と $\\langle C|\\hat a^\\dagger\\hat a|C\\rangle$ を求めよ．\n\\item $|C\\rangle$ における $(\\Delta x)^2$，$(\\Delta p)^2$ を $u=\\alpha^2$ で表せ．\n\\item $(\\Delta p)^2$ は基底状態の値 $m\\hbar\\omega/2$ より小さくなることを示し，その比 $g(u)$ を求め，$g$ を最小にする $u$ が満たす方程式を書け．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta x=\\sqrt{\\dfrac{\\hbar}{2m\\omega}}$，$\\Delta p=\\sqrt{\\dfrac{m\\hbar\\omega}{2}}$，$\\Delta x\\Delta p=\\dfrac\\hbar2$（$\\lambda$ によらない）　(2) $\\mathcal N=\\{2(1+e^{-2\\alpha^2})\\}^{-1/2}$，$\\langle\\hat n\\rangle=\\alpha^2\\tanh\\alpha^2$　(3) $(\\Delta x)^2=\\dfrac{\\hbar}{2m\\omega}\\{1+2u(1+\\tanh u)\\}$，$(\\Delta p)^2=\\dfrac{m\\hbar\\omega}{2}\\{1-2u(1-\\tanh u)\\}$　(4) 比 $=1-2u(1-\\tanh u)<1$，最小条件 $1-\\tanh u=u\\,\\mathrm{sech}^2u$（$u\\approx0.639$，比 $\\approx0.443$）"
+   "tex": "(1) $\\Delta x=\\sqrt{\\dfrac{\\hbar}{2m\\omega}}$，$\\Delta p=\\sqrt{\\dfrac{m\\hbar\\omega}{2}}$，$\\Delta x\\Delta p=\\dfrac{\\hbar}{2}$（$\\lambda$ によらない）　(2) $\\mathcal N=\\{2(1+e^{-2\\alpha^2})\\}^{-1/2}$，$\\langle\\hat n\\rangle=\\alpha^2\\tanh\\alpha^2$　(3) $(\\Delta x)^2=\\dfrac{\\hbar}{2m\\omega}\\{1+2u(1+\\tanh u)\\}$，$(\\Delta p)^2=\\dfrac{m\\hbar\\omega}{2}\\{1-2u(1-\\tanh u)\\}$　(4) $g(u)=1-2u(1-\\tanh u)<1$，最小条件 $1-\\tanh u=u\\,\\mathrm{sech}^2u$"
   },
   "solutions": [
    {
@@ -4163,7 +4163,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $(\\Delta x)^2$：((hbar)/(2 m ω))(1+2 u (1+ tanh u)) ; $(\\Delta p)^2$：((m hbar ω)/(2))(1-2 u (1- tanh u))\n(4) 記述"
+   "spec": "(1) $\\Delta x$：sqrt(hbar/(2 m ω)) ; $\\Delta p$：sqrt(m hbar ω/2) ; $\\Delta x\\Delta p$：hbar/2\n(2) $\\langle\\hat a^\\dagger\\hat a\\rangle$：α^2 tanh(α^2)\n(3) $(\\Delta x)^2$：((hbar)/(2 m ω))(1+2 u (1+ tanh u)) ; $(\\Delta p)^2$：((m hbar ω)/(2))(1-2 u (1- tanh u))\n(4) $g(u)$：1 - 2 u (1 - tanh(u)) ; 最小条件：記述"
   },
   "methods": [],
   "tags": [
@@ -4858,16 +4858,16 @@
   "theme": "二重交換子とTRK総和則",
   "topic": "二重交換子とTRK総和則",
   "statement": {
-   "tex": "質量 $\\mu$ の粒子のハミルトニアンを $H=\\dfrac{p^2}{2\\mu}+V(x)$，固有状態を $|n\\rangle$（エネルギー $E_n$，$n=0$ が基底状態）とする．\n\\begin{enumerate}\n\\item $[[x,H],x]=\\hbar^2/\\mu$ を示せ．\n\\item (1) の基底状態期待値をとり，トーマス・ライヒェ・クーン（TRK）総和則\n\\[\n\\sum_n(E_n-E_0)|\\langle n|x|0\\rangle|^2=\\frac{\\hbar^2}{2\\mu}\n\\]\nを導け．これを用いて，第 1 励起エネルギー $\\Delta=E_1-E_0$ と基底状態の位置の広がり $\\Delta x$ の間に $\\Delta\\cdot(\\Delta x)^2\\le\\hbar^2/2\\mu$ が成り立つことを示せ．\n\\item 幅 $L$ の無限井戸（$0\\le x\\le L$）の基底状態について $(\\Delta x)^2=L^2\\left(\\dfrac1{12}-\\dfrac1{2\\pi^2}\\right)$ である．$\\Delta\\cdot(\\Delta x)^2$ を $\\hbar^2/2\\mu$ を単位として数値で求め，(2) の不等式を確かめよ．調和振動子ではこの比はいくらか．\n\\end{enumerate}"
+   "tex": "質量 $\\mu$ の粒子のハミルトニアンを $H=\\dfrac{p^2}{2\\mu}+V(x)$，固有状態を $|n\\rangle$（エネルギー $E_n$，$n=0$ が基底状態）とする．\n\\begin{enumerate}\n\\item $[[x,H],x]=\\hbar^2/\\mu$ を示せ．\n\\item (1) の基底状態期待値をとり，トーマス・ライヒェ・クーン（TRK）総和則\n\\[\n\\sum_n(E_n-E_0)|\\langle n|x|0\\rangle|^2=\\frac{\\hbar^2}{2\\mu}\n\\]\nを導け．これを用いて，第 1 励起エネルギー $\\Delta=E_1-E_0$ と基底状態の位置の広がり $\\Delta x$ の間に $\\Delta\\cdot(\\Delta x)^2\\le\\hbar^2/2\\mu$ が成り立つことを示せ．\n\\item 幅 $L$ の無限井戸（$0\\le x\\le L$）の基底状態について $(\\Delta x)^2=L^2\\left(\\dfrac1{12}-\\dfrac1{2\\pi^2}\\right)$ である．比 $\\Delta\\cdot(\\Delta x)^2\\big/(\\hbar^2/2\\mu)$ を厳密に求め，(2) の不等式を確かめよ．調和振動子ではこの比はいくらか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1)(2) 証明（解説参照）　(3) 無限井戸：$\\dfrac{\\pi^2}{4}-\\dfrac32\\approx0.967$（$\\le1$），調和振動子：ちょうど 1"
+   "tex": "(1)(2) 証明（解説参照）　(3) 無限井戸：$\\dfrac{\\pi^2}{4}-\\dfrac32$（$\\le1$），調和振動子：ちょうど $1$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $[x,H]=\\dfrac{1}{2\\mu}[x,p^2]=\\dfrac{1}{2\\mu}(p[x,p]+[x,p]p)=\\dfrac{i\\hbar}{\\mu}p$．よって $[[x,H],x]=\\dfrac{i\\hbar}{\\mu}[p,x]=\\dfrac{i\\hbar}{\\mu}(-i\\hbar)=\\dfrac{\\hbar^2}{\\mu}$．\n\n(2) $\\langle0|[[x,H],x]|0\\rangle=\\langle0|xHx-Hx^2-x^2H+xHx|0\\rangle=2\\langle0|xHx|0\\rangle-2E_0\\langle0|x^2|0\\rangle$．完全系 $\\sum_n|n\\rangle\\langle n|=1$ を挿入すると\n\\[\n2\\sum_n(E_n-E_0)|\\langle n|x|0\\rangle|^2=\\frac{\\hbar^2}{\\mu}\n\\]\nで TRK 総和則が得られる．$n=0$ の項は 0，$n\\ge1$ では $E_n-E_0\\ge\\Delta$ なので\n\\[\n\\frac{\\hbar^2}{2\\mu}\\ge\\Delta\\sum_{n\\ge1}|\\langle n|x|0\\rangle|^2=\\Delta\\left(\\langle0|x^2|0\\rangle-\\langle0|x|0\\rangle^2\\right)=\\Delta(\\Delta x)^2 .\n\\]\n狭く閉じ込めた系ほど励起エネルギーは大きくなり得る，という関係が厳密な上限として出る．\n\n(3) 無限井戸：$E_n=\\dfrac{n^2\\pi^2\\hbar^2}{2\\mu L^2}$ より $\\Delta=\\dfrac{3\\pi^2\\hbar^2}{2\\mu L^2}$．\n\\[\n\\Delta(\\Delta x)^2=\\frac{\\hbar^2}{2\\mu}\\cdot3\\pi^2\\left(\\frac1{12}-\\frac1{2\\pi^2}\\right)=\\frac{\\hbar^2}{2\\mu}\\left(\\frac{\\pi^2}{4}-\\frac32\\right)\\approx0.967\\,\\frac{\\hbar^2}{2\\mu}.\n\\]\n不等式を満たし，しかも上限にかなり近い（総和則の約 97% を $n=2$ への遷移が担う）．調和振動子では $x$ は $|0\\rangle$ を $|1\\rangle$ にしか移さないので和は 1 項だけで，$\\Delta=\\hbar\\omega$，$(\\Delta x)^2=\\hbar/2\\mu\\omega$ より $\\Delta(\\Delta x)^2=\\hbar^2/2\\mu$，比はちょうど 1（等号）．"
+    "tex": "(1) $[x,H]=\\dfrac{1}{2\\mu}[x,p^2]=\\dfrac{1}{2\\mu}(p[x,p]+[x,p]p)=\\dfrac{i\\hbar}{\\mu}p$．よって $[[x,H],x]=\\dfrac{i\\hbar}{\\mu}[p,x]=\\dfrac{i\\hbar}{\\mu}(-i\\hbar)=\\dfrac{\\hbar^2}{\\mu}$．\n\n(2) $\\langle0|[[x,H],x]|0\\rangle=\\langle0|xHx-Hx^2-x^2H+xHx|0\\rangle=2\\langle0|xHx|0\\rangle-2E_0\\langle0|x^2|0\\rangle$．完全系 $\\sum_n|n\\rangle\\langle n|=1$ を挿入すると\n\\[\n2\\sum_n(E_n-E_0)|\\langle n|x|0\\rangle|^2=\\frac{\\hbar^2}{\\mu}\n\\]\nで TRK 総和則が得られる．$n=0$ の項は 0，$n\\ge1$ では $E_n-E_0\\ge\\Delta$ なので\n\\[\n\\frac{\\hbar^2}{2\\mu}\\ge\\Delta\\sum_{n\\ge1}|\\langle n|x|0\\rangle|^2=\\Delta\\left(\\langle0|x^2|0\\rangle-\\langle0|x|0\\rangle^2\\right)=\\Delta(\\Delta x)^2 .\n\\]\n狭く閉じ込めた系ほど励起エネルギーは大きくなり得る，という関係が厳密な上限として出る．\n\n(3) 無限井戸：$E_n=\\dfrac{n^2\\pi^2\\hbar^2}{2\\mu L^2}$ より $\\Delta=\\dfrac{3\\pi^2\\hbar^2}{2\\mu L^2}$．\n\\[\n\\Delta(\\Delta x)^2=\\frac{\\hbar^2}{2\\mu}\\cdot3\\pi^2\\left(\\frac1{12}-\\frac1{2\\pi^2}\\right)=\\frac{\\hbar^2}{2\\mu}\\boldsymbol{\\left(\\frac{\\pi^2}{4}-\\frac32\\right)}.\n\\]\n$\\pi^2<10$ より比は 1 未満で不等式を満たし，しかも上限にかなり近い（総和則の約 97% を $n=2$ への遷移が担う）．調和振動子では $x$ は $|0\\rangle$ を $|1\\rangle$ にしか移さないので和は 1 項だけで，$\\Delta=\\hbar\\omega$，$(\\Delta x)^2=\\hbar/2\\mu\\omega$ より $\\Delta(\\Delta x)^2=\\hbar^2/2\\mu$，比はちょうど 1（等号）．"
    }
   ],
   "idea": {
@@ -4875,7 +4875,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) 無限井戸：pi^2/4 - 3/2 ; 調和振動子：1"
   },
   "methods": [],
   "tags": [

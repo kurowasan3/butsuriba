@@ -6,12 +6,13 @@
   "level": 1,
   "theme": "静止した粒子の2体崩壊",
   "minutes": 10,
-  "q": "自然単位系（$c=1$）を用いる．質量 $M$ の粒子が静止状態から質量 $m$ の粒子と質量ゼロのニュートリノに崩壊する（$M>m$）．\n\\begin{enumerate}\n\\item 娘粒子の運動量の大きさ $p$ を $M,\\ m$ で表せ．\n\\item $\\pi^+\\to\\mu^+\\nu_\\mu$ について，$M=m_\\pi=139.57\\,\\mathrm{MeV}$，$m=m_\\mu=105.66\\,\\mathrm{MeV}$ として $p$ の値を求めよ．\n\\item (2) のミューオンの運動エネルギー $T_\\mu$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $p=\\dfrac{M^2-m^2}{2M}$ (2) $p\\approx 29.8\\,\\mathrm{MeV}$ (3) $T_\\mu\\approx 4.12\\,\\mathrm{MeV}$",
-  "solution": "運動量保存より娘粒子どうしの運動量は大きさ $p$ で逆向きである．エネルギー保存は\n\\[ M=\\sqrt{p^2+m^2}+p . \\]\n$\\sqrt{p^2+m^2}=M-p$ を2乗すると $m^2=M^2-2Mp$ となり，\n\\[ \\boldsymbol{p=\\dfrac{M^2-m^2}{2M}} . \\]\n\n数値を代入すると $p=(139.57^2-105.66^2)/(2\\times 139.57)\\,\\mathrm{MeV}\\approx\\boldsymbol{29.8\\,\\mathrm{MeV}}$．\n\nミューオンのエネルギーは $E_\\mu=M-p=(M^2+m^2)/(2M)\\approx 109.78\\,\\mathrm{MeV}$ なので，$T_\\mu=E_\\mu-m\\approx\\boldsymbol{4.12\\,\\mathrm{MeV}}$．単色の（エネルギーが一定の）ミューオンが出ることが2体崩壊の特徴である．",
+  "q": "自然単位系（$c=1$）を用いる．質量 $M$ の粒子が静止状態から質量 $m$ の粒子と質量ゼロのニュートリノに崩壊する（$M>m$）．\n\\begin{enumerate}\n\\item 娘粒子の運動量の大きさ $p$ を $M,\\ m$ で表せ．\n\\item 質量 $m$ の娘粒子の全エネルギー $E$ を $M,\\ m$ で表せ．\n\\item 娘粒子の運動エネルギー $T$ を $M,\\ m$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $p=\\dfrac{M^2-m^2}{2M}$ (2) $E=\\dfrac{M^2+m^2}{2M}$ (3) $T=\\dfrac{(M-m)^2}{2M}$",
+  "solution": "運動量保存より娘粒子どうしの運動量は大きさ $p$ で逆向きである．エネルギー保存は\n\\[ M=\\sqrt{p^2+m^2}+p . \\]\n$\\sqrt{p^2+m^2}=M-p$ を2乗すると $m^2=M^2-2Mp$ となり，\n\\[ \\boldsymbol{p=\\dfrac{M^2-m^2}{2M}} . \\]\n\n娘粒子のエネルギーは $E=M-p=\\boldsymbol{\\dfrac{M^2+m^2}{2M}}$．\n\n運動エネルギーは $T=E-m=\\dfrac{M^2-2Mm+m^2}{2M}=\\boldsymbol{\\dfrac{(M-m)^2}{2M}}$．$M-m\\ll M$（$\\pi^+\\to\\mu^+\\nu_\\mu$ など）では $T$ は小さく，エネルギーの大部分はニュートリノが持ち去る．単色の（エネルギーが一定の）ミューオンが出ることが2体崩壊の特徴である．",
   "idea": "静止系の2体崩壊では娘粒子のエネルギー・運動量は質量だけで決まる．$E=M-p$ を2乗して $p$ を消去なく解くのが近道．",
   "tags": "2体崩壊,パイ中間子,運動学",
-  "input": "(1) p：(M^2-m^2)/(2M)\n(2) p [MeV]：≈29.8\n(3) T [MeV]：≈4.12"
+  "input": "(1) p：(M^2-m^2)/(2M)\n(2) E：(M^2+m^2)/(2M)\n(3) T：(M-m)^2/(2M)",
+  "id": "PP-01-001"
  },
  {
   "tid": "PP-02",
@@ -20,12 +21,13 @@
   "level": 2,
   "theme": "反陽子生成のしきい値：固定標的と衝突型",
   "minutes": 15,
-  "q": "自然単位系を用いる．陽子の質量を $m=0.938\\,\\mathrm{GeV}$ とし，反応 $pp\\to ppp\\bar p$ を考える．\n\\begin{enumerate}\n\\item 静止した陽子標的に陽子を当てるとき，反応が起こるための入射陽子の全エネルギーの最小値 $E$ を $m$ で表せ．\n\\item (1) のときの入射陽子の運動エネルギー $T$ を GeV 単位で求めよ．\n\\item 同じエネルギーの陽子どうしを正面衝突させる場合，反応に必要な各ビームの運動エネルギーの最小値を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $E=7m$ (2) $T=6m\\approx 5.63\\,\\mathrm{GeV}$ (3) $T=m\\approx 0.938\\,\\mathrm{GeV}$",
-  "solution": "ローレンツ不変量 $s=(p_1+p_2)^2$ を使う．しきい値では終状態の4粒子が重心系で静止するので $\\sqrt{s}=4m$．\n\n固定標的では $s=(E+m)^2-p^2=2m^2+2mE$．$2m^2+2mE=16m^2$ より\n\\[ \\boldsymbol{E=7m} . \\]\n\nしたがって $T=E-m=6m\\approx\\boldsymbol{5.63\\,\\mathrm{GeV}}$．歴史的に Bevatron（約 $6\\,\\mathrm{GeV}$）がこの値を目標に設計された．\n\n衝突型では重心系＝実験室系なので $\\sqrt{s}=2E_{\\mathrm{beam}}=4m$，$E_{\\mathrm{beam}}=2m$，すなわち $T=m\\approx\\boldsymbol{0.938\\,\\mathrm{GeV}}$．固定標的では入射エネルギーの多くが重心の運動に使われてしまう．",
+  "q": "自然単位系を用いる．陽子の質量を $m$ とし，反応 $pp\\to ppp\\bar p$ を考える．\n\\begin{enumerate}\n\\item 静止した陽子標的に陽子を当てるとき，反応が起こるための入射陽子の全エネルギーの最小値 $E$ を $m$ で表せ．\n\\item (1) のときの入射陽子の運動エネルギー $T$ を $m$ で表せ．\n\\item 同じエネルギーの陽子どうしを正面衝突させる場合，反応に必要な各ビームの運動エネルギーの最小値を $m$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $E=7m$ (2) $T=6m$ (3) $T=m$",
+  "solution": "ローレンツ不変量 $s=(p_1+p_2)^2$ を使う．しきい値では終状態の4粒子が重心系で静止するので $\\sqrt{s}=4m$．\n\n固定標的では $s=(E+m)^2-p^2=2m^2+2mE$．$2m^2+2mE=16m^2$ より\n\\[ \\boldsymbol{E=7m} . \\]\n\nしたがって $T=E-m=\\boldsymbol{6m}$（陽子の静止エネルギーの 6 倍，約 $5.6\\,\\mathrm{GeV}$）．歴史的に Bevatron がこの値を目標に設計された．\n\n衝突型では重心系＝実験室系なので $\\sqrt{s}=2E_{\\mathrm{beam}}=4m$，$E_{\\mathrm{beam}}=2m$，すなわち $\\boldsymbol{T=m}$．固定標的では入射エネルギーの多くが重心の運動に使われてしまう．",
   "idea": "しきい値は不変質量 $\\sqrt{s}$ が終状態の質量和に等しいことで決まる．固定標的では $s=2m^2+2mE$．",
   "tags": "不変質量,しきい値,反陽子",
-  "input": "(1) E：7m\n(2) T [GeV]：≈5.63\n(3) T [GeV]：≈0.938"
+  "input": "(1) E：7m\n(2) T：6m\n(3) T：m",
+  "id": "PP-01-002"
  },
  {
   "tid": "PP-03",
@@ -34,12 +36,13 @@
   "level": 2,
   "theme": "中性パイ中間子の2光子崩壊の運動学",
   "minutes": 15,
-  "q": "自然単位系を用いる．質量 $m=134.98\\,\\mathrm{MeV}$ の $\\pi^0$ が全エネルギー $E=1000\\,\\mathrm{MeV}$ で飛行し，$\\pi^0\\to\\gamma\\gamma$ と崩壊する．\n\\begin{enumerate}\n\\item $\\pi^0$ の静止系での光子1個のエネルギーを求めよ．\n\\item 実験室系での光子のエネルギーの最大値 $E_{\\max}$ と最小値 $E_{\\min}$ を求めよ．\n\\item 実験室系での2光子の開き角 $\\theta$ の最小値を度で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\dfrac{m}{2}\\approx 67.5\\,\\mathrm{MeV}$ (2) $E_{\\max}\\approx 995\\,\\mathrm{MeV}$，$E_{\\min}\\approx 4.58\\,\\mathrm{MeV}$ (3) $\\theta_{\\min}\\approx 15.5^\\circ$",
-  "solution": "静止系では2光子は逆向きに同じエネルギーで出るので，それぞれ $m/2\\approx\\boldsymbol{67.5\\,\\mathrm{MeV}}$．\n\n$\\gamma=E/m$，$\\beta=\\sqrt{1-m^2/E^2}\\approx 0.99085$．静止系で運動方向と角 $\\theta^*$ をなす光子の実験室エネルギーは $E_\\gamma=\\gamma\\dfrac{m}{2}(1+\\beta\\cos\\theta^*)$．$\\cos\\theta^*=\\pm 1$ で\n\\[ E_{\\max}=\\dfrac{E}{2}(1+\\beta)\\approx\\boldsymbol{995\\,\\mathrm{MeV}},\\qquad E_{\\min}=\\dfrac{E}{2}(1-\\beta)\\approx\\boldsymbol{4.58\\,\\mathrm{MeV}} . \\]\n\n2光子の不変質量は $m^2=2E_1E_2(1-\\cos\\theta)=4E_1E_2\\sin^2(\\theta/2)$．$E_1+E_2=E$ のもとで $E_1E_2$ は $E_1=E_2=E/2$ で最大なので，開き角は対称崩壊で最小となり\n\\[ \\sin\\dfrac{\\theta_{\\min}}{2}=\\dfrac{m}{E},\\qquad \\theta_{\\min}\\approx\\boldsymbol{15.5^\\circ} . \\]",
+  "q": "自然単位系を用いる．質量 $m$ の $\\pi^0$ が全エネルギー $E$ で飛行し，$\\pi^0\\to\\gamma\\gamma$ と崩壊する．\n\\begin{enumerate}\n\\item $\\pi^0$ の静止系での光子1個のエネルギーを求めよ．\n\\item 実験室系での光子のエネルギーの最大値 $E_{\\max}$ と最小値 $E_{\\min}$ を $E,\\ m$ で表せ．\n\\item 実験室系での2光子の開き角 $\\theta$ の最小値 $\\theta_m$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\dfrac{m}{2}$ (2) $E_{\\max}=\\dfrac{E+\\sqrt{E^2-m^2}}{2}$，$E_{\\min}=\\dfrac{E-\\sqrt{E^2-m^2}}{2}$ (3) $\\theta_m=2\\arcsin\\dfrac{m}{E}$",
+  "solution": "静止系では2光子は逆向きに同じエネルギーで出るので，それぞれ $\\boldsymbol{m/2}$．\n\n$\\gamma=E/m$，$\\beta=\\sqrt{1-m^2/E^2}$．静止系で運動方向と角 $\\theta^*$ をなす光子の実験室エネルギーは $E_\\gamma=\\gamma\\dfrac{m}{2}(1+\\beta\\cos\\theta^*)$．$\\cos\\theta^*=\\pm 1$ で\n\\[ E_{\\max}=\\dfrac{E}{2}(1+\\beta)=\\boldsymbol{\\dfrac{E+\\sqrt{E^2-m^2}}{2}},\\qquad E_{\\min}=\\dfrac{E}{2}(1-\\beta)=\\boldsymbol{\\dfrac{E-\\sqrt{E^2-m^2}}{2}} . \\]\n\n2光子の不変質量は $m^2=2E_1E_2(1-\\cos\\theta)=4E_1E_2\\sin^2(\\theta/2)$．$E_1+E_2=E$ のもとで $E_1E_2$ は $E_1=E_2=E/2$ で最大なので，開き角は対称崩壊で最小となり\n\\[ \\sin\\dfrac{\\theta_m}{2}=\\dfrac{m}{E},\\qquad \\theta_m=\\boldsymbol{2\\arcsin\\dfrac{m}{E}} . \\]\n\n$E\\gg m$ では $E_{\\min}\\simeq\\dfrac{m^2}{4E}$ と非常に小さく，$\\theta_m\\simeq2m/E$ と開き角も小さくなる．",
   "idea": "光子エネルギーの分布はドップラー因子で決まり，開き角は2光子の不変質量 $m^2=2E_1E_2(1-\\cos\\theta)$ から求める．",
   "tags": "π0崩壊,ローレンツ変換,不変質量",
-  "input": "(1) E [MeV]：≈67.5\n(2) E_max [MeV]：≈995 ; E_min [MeV]：≈4.58\n(3) θ [°]：≈15.5"
+  "input": "(1) m/2\n(2) $E_{\\max}$：(E+sqrt(E^2-m^2))/2 ; $E_{\\min}$：(E-sqrt(E^2-m^2))/2\n(3) θ：2 arcsin(m/E)",
+  "id": "PP-01-003"
  },
  {
   "tid": "PP-04",
@@ -48,12 +51,13 @@
   "level": 3,
   "theme": "Λ粒子の飛行距離と崩壊陽子の最大放出角",
   "minutes": 25,
-  "q": "自然単位系を用いる．$\\Lambda$ 粒子（質量 $1115.68\\,\\mathrm{MeV}$，$c\\tau=7.89\\,\\mathrm{cm}$）が運動量 $2000\\,\\mathrm{MeV}$ で飛行し，$\\Lambda\\to p\\pi^-$ と崩壊する．陽子と $\\pi^-$ の質量はそれぞれ $938.27\\,\\mathrm{MeV}$，$139.57\\,\\mathrm{MeV}$ である．\n\\begin{enumerate}\n\\item 実験室系での平均崩壊距離を求めよ．\n\\item $\\Lambda$ が $30\\,\\mathrm{cm}$ 以上飛んでから崩壊する確率を求めよ．\n\\item $\\Lambda$ の静止系での陽子の運動量 $p^*$ を求めよ．\n\\item 実験室系で陽子が $\\Lambda$ の飛行方向となす角の最大値を度で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $L\\approx 14.1\\,\\mathrm{cm}$ (2) $P\\approx 0.120$ (3) $p^*\\approx 101\\,\\mathrm{MeV}$ (4) $\\theta_{\\max}\\approx 3.43^\\circ$",
-  "solution": "平均崩壊距離は $L=\\beta\\gamma c\\tau=(p/M)c\\tau=(2000/1115.68)\\times 7.89\\,\\mathrm{cm}\\approx\\boldsymbol{14.1\\,\\mathrm{cm}}$．\n\n崩壊距離は指数分布なので $P=e^{-30/L}\\approx\\boldsymbol{0.120}$．\n\n静止系の2体崩壊の運動量は\n\\[ p^*=\\dfrac{\\sqrt{[M^2-(m_p+m_\\pi)^2][M^2-(m_p-m_\\pi)^2]}}{2M}\\approx\\boldsymbol{101\\,\\mathrm{MeV}} . \\]\n（$Q$ 値はわずか $37.8\\,\\mathrm{MeV}$ である．）\n\n静止系で陽子の速さは $\\beta^*=p^*/E^*\\approx 0.107$，$\\Lambda$ の速さは $\\beta=p/E\\approx 0.873$．$\\beta>\\beta^*$ なので陽子はすべて前方に出て，放出角に最大値がある．実験室系で $p_T=p^*\\sin\\theta^*$，$p_L=\\gamma(p^*\\cos\\theta^*+\\beta E^*)$ であり，$\\tan\\theta=p_T/p_L$ を $\\theta^*$ について最大化すると $\\cos\\theta^*=-\\beta^*/\\beta$ で\n\\[ \\sin\\theta_{\\max}=\\dfrac{\\beta^*\\gamma^*}{\\beta\\gamma}=\\dfrac{p^*/m_p}{p/M} . \\]\n数値を入れると $\\sin\\theta_{\\max}\\approx 0.0598$，$\\theta_{\\max}\\approx\\boldsymbol{3.43^\\circ}$．陽子は $\\Lambda$ の方向にほぼそろって出るため，V字形の飛跡は細く開いた形になる．",
+  "q": "自然単位系（$c=1$）を用いる．$\\Lambda$ 粒子（質量 $M$，平均寿命 $\\tau$）が運動量 $p$ で飛行し，$\\Lambda\\to p\\pi^-$ と崩壊する．陽子と $\\pi^-$ の質量をそれぞれ $m_p$，$m$ とする．\n\\begin{enumerate}\n\\item 実験室系での平均崩壊距離 $L$ を求めよ．\n\\item $\\Lambda$ が距離 $l$ 以上飛んでから崩壊する確率を求めよ．\n\\item $\\Lambda$ の静止系での陽子の運動量 $p^*$ を $M,m_p,m$ で表せ．\n\\item 実験室系で陽子が $\\Lambda$ の飛行方向となす角の最大値 $\\theta_{\\max}$ について，$\\sin\\theta_{\\max}$ を $M,m_p,m,p$ で表せ（$\\Lambda$ の速さは静止系での陽子の速さより大きいとする）．\n\\end{enumerate}",
+  "answer": "(1) $L=\\dfrac{p\\tau}{M}$ (2) $\\exp\\left(-\\dfrac{lM}{p\\tau}\\right)$ (3) $p^*=\\dfrac{\\sqrt{[M^2-(m_p+m)^2][M^2-(m_p-m)^2]}}{2M}$ (4) $\\sin\\theta_{\\max}=\\dfrac{\\sqrt{[M^2-(m_p+m)^2][M^2-(m_p-m)^2]}}{2m_pp}$",
+  "solution": "平均崩壊距離は $L=\\beta\\gamma\\tau=(p/M)\\tau$ より $\\boldsymbol{L=p\\tau/M}$．\n\n崩壊距離は指数分布なので，距離 $l$ 以上飛ぶ確率は $\\boldsymbol{e^{-l/L}=\\exp(-lM/(p\\tau))}$．\n\n静止系の 2 体崩壊の運動量は，エネルギー保存 $\\sqrt{p^{*2}+m_p^2}+\\sqrt{p^{*2}+m^2}=M$ を解いて\n\\[ \\boldsymbol{p^*=\\dfrac{\\sqrt{[M^2-(m_p+m)^2][M^2-(m_p-m)^2]}}{2M}} . \\]\n（$\\Lambda\\to p\\pi^-$ では $Q$ 値が約 38 MeV と小さく，$p^*\\approx100$ MeV にすぎない．）\n\n静止系で陽子の速さを $\\beta^*$，$\\Lambda$ の速さを $\\beta$ とする．$\\beta>\\beta^*$ なら陽子はすべて前方に出て，放出角に最大値がある．実験室系で $p_T=p^*\\sin\\theta^*$，$p_L=\\gamma(p^*\\cos\\theta^*+\\beta E^*)$ であり，$\\tan\\theta=p_T/p_L$ を $\\theta^*$ について最大化すると $\\cos\\theta^*=-\\beta^*/\\beta$ で\n\\[ \\sin\\theta_{\\max}=\\dfrac{\\beta^*\\gamma^*}{\\beta\\gamma}=\\dfrac{p^*/m_p}{p/M}=\\boldsymbol{\\dfrac{\\sqrt{[M^2-(m_p+m)^2][M^2-(m_p-m)^2]}}{2m_pp}} . \\]\n$p$ が $M$ 程度以上なら $\\theta_{\\max}$ は数度にすぎず，陽子は $\\Lambda$ の方向にほぼそろって出るため，V字形の飛跡は細く開いた形になる．",
   "idea": "娘粒子の静止系での速さ $\\beta^*$ が親の速さ $\\beta$ より小さいと，実験室系で放出角に上限 $\\sin\\theta_{\\max}=\\beta^*\\gamma^*/(\\beta\\gamma)$ が生じる．",
   "tags": "Λ粒子,崩壊長,ローレンツ変換,最大放出角",
-  "input": "(1) L [cm]：≈14.1\n(2) P：≈0.120\n(3) p [MeV]：≈101\n(4) θ [°]：≈3.43"
+  "input": "(1) $L$：p τ/M\n(2) exp(-l M/(p τ))\n(3) $p^*$：sqrt((M^2-(m_p+m)^2)(M^2-(m_p-m)^2))/(2M)\n(4) $\\sin\\theta_{\\max}$：sqrt((M^2-(m_p+m)^2)(M^2-(m_p-m)^2))/(2m_p p)",
+  "id": "PP-01-004"
  },
  {
   "tid": "PP-05",
@@ -62,12 +66,13 @@
   "level": 4,
   "theme": "GZK 限界：宇宙背景放射による超高エネルギー陽子の減衰",
   "minutes": 30,
-  "q": "自然単位系を用いる．超高エネルギーの陽子（質量 $m_p=938.27\\,\\mathrm{MeV}$）が宇宙マイクロ波背景放射の光子（典型的エネルギー $\\varepsilon=6.3\\times 10^{-4}\\,\\mathrm{eV}$）と衝突して $p\\gamma\\to p\\pi^0$（$m_\\pi=134.98\\,\\mathrm{MeV}$）を起こす過程を考える．陽子は超相対論的とする．\n\\begin{enumerate}\n\\item 陽子のエネルギーを $E$，光子との衝突角（両者の運動方向のなす角）を $\\alpha$ とする．$s$ を $E,\\ \\varepsilon,\\ \\alpha,\\ m_p$ で表し，正面衝突（$\\alpha=\\pi$）でのしきい値エネルギーの式を導け．\n\\item 正面衝突でのしきい値エネルギー $E$ を eV 単位で求めよ．\n\\item しきい値ちょうどで反応したとき，$\\pi^0$ が持ち去るエネルギーは陽子の入射エネルギーの何割か．\n\\item 反応断面積を $\\sigma=5\\times 10^{-28}\\,\\mathrm{cm^2}$，背景放射の光子数密度を $n=411\\,\\mathrm{cm^{-3}}$ として平均自由行程を Mpc 単位で求めよ（$1\\,\\mathrm{Mpc}=3.086\\times 10^{24}\\,\\mathrm{cm}$）．\n\\end{enumerate}",
-  "answer": "(1) $s=m_p^2+2E\\varepsilon(1-\\cos\\alpha)$，$E_{\\mathrm{th}}=\\dfrac{(m_p+m_\\pi)^2-m_p^2}{4\\varepsilon}$ (2) $E\\approx 1.08\\times 10^{20}\\,\\mathrm{eV}$ (3) $\\dfrac{m_\\pi}{m_p+m_\\pi}\\approx 0.126$ (4) $\\lambda\\approx 1.58\\,\\mathrm{Mpc}$",
-  "solution": "陽子の4元運動量 $(E,\\boldsymbol{p})$，光子 $(\\varepsilon,\\boldsymbol{k})$ で $s=m_p^2+2(E\\varepsilon-|\\boldsymbol{p}||\\boldsymbol{k}|\\cos\\alpha)$．超相対論的なので $|\\boldsymbol{p}|\\simeq E$ とおいて\n\\[ \\boldsymbol{s=m_p^2+2E\\varepsilon(1-\\cos\\alpha)} . \\]\nしきい値は $s=(m_p+m_\\pi)^2$．正面衝突 $\\alpha=\\pi$ で $1-\\cos\\alpha=2$ だから\n\\[ \\boldsymbol{E_{\\mathrm{th}}=\\dfrac{(m_p+m_\\pi)^2-m_p^2}{4\\varepsilon}=\\dfrac{m_\\pi(2m_p+m_\\pi)}{4\\varepsilon}} . \\]\n\n数値は $m_\\pi(2m_p+m_\\pi)=2.715\\times 10^{5}\\,\\mathrm{MeV^2}=2.715\\times 10^{17}\\,\\mathrm{eV^2}$ より $E_{\\mathrm{th}}\\approx\\boldsymbol{1.08\\times 10^{20}\\,\\mathrm{eV}}$．実際には光子のエネルギー分布の高い側の寄与で，$5\\times 10^{19}\\,\\mathrm{eV}$ 程度から減衰が効く（GZK 限界）．\n\nしきい値では終状態の $p$ と $\\pi^0$ が重心系で静止しているので，実験室系では同じ速度で動く．エネルギーは質量に比例して分配され，$\\pi^0$ の割合は\n\\[ \\dfrac{m_\\pi}{m_p+m_\\pi}\\approx\\boldsymbol{0.126} . \\]\n\n平均自由行程は $\\lambda=1/(n\\sigma)=1/(411\\times 5\\times 10^{-28})\\,\\mathrm{cm}\\approx 4.87\\times 10^{24}\\,\\mathrm{cm}\\approx\\boldsymbol{1.58\\,\\mathrm{Mpc}}$．1回で約13% を失うので，数十 Mpc 進むうちにエネルギーはしきい値付近まで下がる．遠方（$\\gtrsim 100\\,\\mathrm{Mpc}$）からこれを超える陽子は届きにくい．",
+  "q": "自然単位系を用いる．超高エネルギーの陽子（質量 $m_p$）が宇宙マイクロ波背景放射の光子（エネルギー $\\varepsilon$）と衝突して $p\\gamma\\to p\\pi^0$（$\\pi^0$ の質量 $m$）を起こす過程を考える．陽子は超相対論的とする．\n\\begin{enumerate}\n\\item 陽子のエネルギーを $E$，光子との衝突角（両者の運動方向のなす角）を $\\alpha$ とする．$s$ を $E,\\ \\varepsilon,\\ \\alpha,\\ m_p$ で表せ．\n\\item 衝突角 $\\alpha$ でのしきい値エネルギー $E_{\\mathrm{th}}$ を求めよ．正面衝突（$\\alpha=\\pi$）ではどうなるか．\n\\item しきい値ちょうどで反応したとき，$\\pi^0$ が持ち去るエネルギーは陽子の入射エネルギーの何倍か．\n\\item 反応断面積を $\\sigma$，背景放射の光子数密度を $n$ として平均自由行程 $\\lambda$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $s=m_p^2+2E\\varepsilon(1-\\cos\\alpha)$ (2) $E_{\\mathrm{th}}=\\dfrac{m(2m_p+m)}{2\\varepsilon(1-\\cos\\alpha)}$，正面衝突では $\\dfrac{m(2m_p+m)}{4\\varepsilon}$ (3) $\\dfrac{m}{m_p+m}$ (4) $\\lambda=\\dfrac{1}{n\\sigma}$",
+  "solution": "陽子の4元運動量 $(E,\\boldsymbol{p})$，光子 $(\\varepsilon,\\boldsymbol{k})$ で $s=m_p^2+2(E\\varepsilon-|\\boldsymbol{p}||\\boldsymbol{k}|\\cos\\alpha)$．超相対論的なので $|\\boldsymbol{p}|\\simeq E$ とおいて\n\\[ \\boldsymbol{s=m_p^2+2E\\varepsilon(1-\\cos\\alpha)} . \\]\n\nしきい値は $s=(m_p+m)^2$ だから\n\\[ \\boldsymbol{E_{\\mathrm{th}}=\\dfrac{(m_p+m)^2-m_p^2}{2\\varepsilon(1-\\cos\\alpha)}=\\dfrac{m(2m_p+m)}{2\\varepsilon(1-\\cos\\alpha)}} . \\]\n正面衝突 $\\alpha=\\pi$ で $1-\\cos\\alpha=2$ だから $\\boldsymbol{E_{\\mathrm{th}}=\\dfrac{m(2m_p+m)}{4\\varepsilon}}$ が最小のしきい値である．背景放射の典型値 $\\varepsilon\\approx6\\times10^{-4}$ eV では約 $10^{20}$ eV になり，光子のエネルギー分布の高い側の寄与で $5\\times 10^{19}\\,\\mathrm{eV}$ 程度から減衰が効く（GZK 限界）．\n\nしきい値では終状態の $p$ と $\\pi^0$ が重心系で静止しているので，実験室系では同じ速度で動く．エネルギーは質量に比例して分配され，$\\pi^0$ の割合は\n\\[ \\boldsymbol{\\dfrac{m}{m_p+m}} . \\]\n\n平均自由行程は $\\boldsymbol{\\lambda=1/(n\\sigma)}$．$n\\approx411\\,\\mathrm{cm^{-3}}$，$\\sigma\\approx5\\times10^{-28}\\,\\mathrm{cm^2}$ なら数 Mpc である．1回で約13% を失うので，数十 Mpc 進むうちにエネルギーはしきい値付近まで下がる．遠方（$\\gtrsim 100\\,\\mathrm{Mpc}$）からこれを超える陽子は届きにくい．",
   "idea": "不変量 $s$ は実験室系の量 $E\\varepsilon(1-\\cos\\alpha)$ で書ける．しきい値では終状態が一体となって動くので，エネルギーは質量比で分配される．",
   "tags": "GZK限界,しきい値,宇宙線,平均自由行程",
-  "input": "(1) 記述：s=m_p^2+2Eε(1-cosα)，E_th=((m_p+m_π)^2-m_p^2)/(4ε)\n(2) E [eV]：≈1.08e20\n(3) 割合：≈0.126\n(4) λ [Mpc]：≈1.58"
+  "input": "(1) $s$：m_p^2+2E ε (1-cos(α))\n(2) $E_{\\mathrm{th}}$：m (2m_p+m)/(2ε (1-cos(α))) ; 正面衝突：m (2m_p+m)/(4ε)\n(3) m/(m_p+m)\n(4) $\\lambda$：1/(n σ)",
+  "id": "PP-01-005"
  },
  {
   "tid": "PP-06",
@@ -81,7 +86,8 @@
   "solution": "$\\Omega^-$ は $\\boldsymbol{sss}$ で，ストレンジネスは $\\boldsymbol{S=-3}$．電荷 $3\\times(-1/3)=-1$ と合う．\n\n$\\Xi^0=uss$ では $B=1$，$S=-2$．$Q=I_3+(B+S)/2=1/2+(1-2)/2=\\boldsymbol{0}$．クォークの電荷の和 $2/3-1/3-1/3=0$ とも一致する．\n\n3種類から重複を許して3つ選ぶ組合せの数は $\\binom{3+3-1}{3}=\\boldsymbol{10}$ で，これが完全対称表現の次元である．$3\\otimes 3\\otimes 3=10\\oplus 8\\oplus 8\\oplus 1$ のうちの $10$ にあたり，$\\Delta$（4個），$\\Sigma^*$（3個），$\\Xi^*$（2個），$\\Omega^-$（1個）からなる．",
   "idea": "ハドロンの量子数はクォークの量子数の和．完全対称な3体状態の数は重複組合せで数えられる．",
   "tags": "クォーク模型,ストレンジネス,ゲルマン＝西島,バリオン十重項",
-  "input": "(1) S：-3\n(2) Q：0\n(3) 10"
+  "input": "(1) S：-3\n(2) Q：0\n(3) 10",
+  "id": "PP-02-001"
  },
  {
   "tid": "PP-07",
@@ -95,7 +101,8 @@
   "solution": "クレブシュ＝ゴルダン係数で $\\pi N$ 状態を全アイソスピンで分解する：\n\\[ |\\pi^+p\\rangle=|\\tfrac32,\\tfrac32\\rangle,\\qquad |\\pi^-p\\rangle=\\sqrt{\\tfrac13}\\,|\\tfrac32,-\\tfrac12\\rangle-\\sqrt{\\tfrac23}\\,|\\tfrac12,-\\tfrac12\\rangle,\\qquad |\\pi^0n\\rangle=\\sqrt{\\tfrac23}\\,|\\tfrac32,-\\tfrac12\\rangle+\\sqrt{\\tfrac13}\\,|\\tfrac12,-\\tfrac12\\rangle . \\]\n$I=3/2$ の振幅を $A$ とすると，$\\pi^+p\\to\\pi^+p$ の振幅は $A$，$\\pi^-p\\to\\pi^-p$ は $A/3$，$\\pi^-p\\to\\pi^0n$ は $\\sqrt2A/3$．\n\n$\\sigma(\\pi^-p)$ は $|A|^2(1/9+2/9)=|A|^2/3$ なので，$\\sigma(\\pi^+p):\\sigma(\\pi^-p)=\\boldsymbol{3:1}$．実験でも $\\Delta$ ピークの高さはほぼ $3:1$ である．\n\n$\\sigma(\\pi^0n):\\sigma(\\pi^-p)_{\\mathrm{el}}=2/9:1/9=\\boldsymbol{2:1}$．\n\n終状態 $d\\pi$ は $I=1$．$pp=|1,1\\rangle$ は純粋に $I=1$，$np=(|1,0\\rangle+|0,0\\rangle)/\\sqrt2$ は $I=1$ 成分の振幅が $1/\\sqrt2$．したがって断面積比は $\\boldsymbol{2}$．",
   "idea": "始状態をアイソスピン固有状態に分解し，保存則から共鳴に寄与する成分だけの振幅を比べる．",
   "tags": "アイソスピン,クレブシュ＝ゴルダン係数,Δ共鳴",
-  "input": "(1) 3:1\n(2) 2:1\n(3) 2"
+  "input": "(1) 3:1\n(2) 2:1\n(3) 2",
+  "id": "PP-02-002"
  },
  {
   "tid": "PP-08",
@@ -104,12 +111,13 @@
   "level": 2,
   "theme": "クォーク模型によるバリオンの磁気モーメント",
   "minutes": 20,
-  "q": "構成子クォークの磁気モーメントを $\\mu_q=\\dfrac{e_q}{2m_q}$（$e_q$ はクォークの電荷）とする．陽子の波動関数のスピン・フレーバー部分から\n\\[ \\mu_p=\\dfrac{4\\mu_u-\\mu_d}{3},\\qquad \\mu_n=\\dfrac{4\\mu_d-\\mu_u}{3} \\]\nが得られる．核磁子を $\\mu_N=e/(2m_p)$，$m_p=938.27\\,\\mathrm{MeV}$ とする．\n\\begin{enumerate}\n\\item $m_u=m_d$ のとき，比 $\\mu_p/\\mu_n$ を求めよ．\n\\item $m_u=m_d=336\\,\\mathrm{MeV}$ として $\\mu_p$ を $\\mu_N$ 単位で求めよ．\n\\item $\\Lambda$（$uds$）では $ud$ 対がスピン $0$ を組むので $\\mu_\\Lambda=\\mu_s$ となる．$m_s=510\\,\\mathrm{MeV}$ として $\\mu_\\Lambda$ を $\\mu_N$ 単位で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $-\\dfrac{3}{2}$ (2) $\\mu_p/\\mu_N\\approx 2.79$ (3) $\\mu_\\Lambda/\\mu_N\\approx -0.613$",
-  "solution": "$m_u=m_d$ なら $\\mu_d=-\\mu_u/2$．すると $\\mu_p=(4\\mu_u+\\mu_u/2)/3=\\tfrac32\\mu_u$，$\\mu_n=(-2\\mu_u-\\mu_u)/3=-\\mu_u$ で\n\\[ \\dfrac{\\mu_p}{\\mu_n}=\\boldsymbol{-\\dfrac{3}{2}} . \\]\n実験値 $-1.46$ とよく合い，クォーク模型の初期の成功例となった．\n\n$\\mu_u=\\dfrac{2}{3}\\dfrac{m_p}{m_u}\\mu_N\\approx 1.862\\,\\mu_N$ より $\\mu_p=\\tfrac32\\mu_u\\approx\\boldsymbol{2.79\\,\\mu_N}$（実験値 $2.793\\,\\mu_N$）．\n\n$\\mu_\\Lambda=\\mu_s=-\\dfrac13\\dfrac{m_p}{m_s}\\mu_N\\approx\\boldsymbol{-0.613\\,\\mu_N}$（実験値 $-0.613\\,\\mu_N$）．",
+  "q": "構成子クォーク $i$ の磁気モーメントを $\\mu_i=\\dfrac{Q_iq}{2m_i}$（$Q_i$ はクォークの電荷を電気素量 $q$ 単位で表したもの，$m_i$ はクォークの質量）とする．陽子の波動関数のスピン・フレーバー部分から\n\\[ \\mu_p=\\dfrac{4\\mu_u-\\mu_d}{3},\\qquad \\mu_n=\\dfrac{4\\mu_d-\\mu_u}{3} \\]\nが得られる．核磁子を $\\mu_N=q/(2m_p)$（$m_p$ は陽子の質量）とする．\n\\begin{enumerate}\n\\item $m_u=m_d$ のとき，比 $\\mu_p/\\mu_n$ を求めよ．\n\\item $m_u=m_d$ として $\\mu_p/\\mu_N$ を $m_p,m_u$ で表せ．\n\\item $\\Lambda$（$uds$）では $ud$ 対がスピン $0$ を組むので $\\mu_\\Lambda=\\mu_s$ となる．$\\mu_\\Lambda/\\mu_N$ を $m_p,m_s$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $-\\dfrac{3}{2}$ (2) $\\dfrac{\\mu_p}{\\mu_N}=\\dfrac{m_p}{m_u}$ (3) $\\dfrac{\\mu_\\Lambda}{\\mu_N}=-\\dfrac{m_p}{3m_s}$",
+  "solution": "$m_u=m_d$ なら $\\mu_d=-\\mu_u/2$．すると $\\mu_p=(4\\mu_u+\\mu_u/2)/3=\\tfrac32\\mu_u$，$\\mu_n=(-2\\mu_u-\\mu_u)/3=-\\mu_u$ で\n\\[ \\dfrac{\\mu_p}{\\mu_n}=\\boldsymbol{-\\dfrac{3}{2}} . \\]\n実験値 $-1.46$ とよく合い，クォーク模型の初期の成功例となった．\n\n$\\mu_u=\\dfrac{2}{3}\\dfrac{q}{2m_u}=\\dfrac{2}{3}\\dfrac{m_p}{m_u}\\mu_N$ より $\\mu_p=\\tfrac32\\mu_u=\\boldsymbol{\\dfrac{m_p}{m_u}\\mu_N}$．$m_u\\approx m_p/3\\approx336$ MeV とすれば実験値 $2.79\\,\\mu_N$ が再現される．\n\n$\\mu_\\Lambda=\\mu_s=-\\dfrac13\\dfrac{q}{2m_s}=\\boldsymbol{-\\dfrac{m_p}{3m_s}\\mu_N}$．$m_s\\approx510$ MeV で実験値 $-0.613\\,\\mu_N$ と合う．",
   "idea": "バリオンの磁気モーメントはスピン・フレーバー波動関数で重みづけたクォークの磁気モーメントの和．$\\mu_d=-\\mu_u/2$ が鍵．",
   "tags": "クォーク模型,磁気モーメント,構成子クォーク",
-  "input": "(1) 比：-3/2\n(2) μ_p [μ_N]：≈2.79\n(3) μ_Λ [μ_N]：≈-0.613"
+  "input": "(1) 比：-3/2\n(2) $\\mu_p/\\mu_N$：m_p/m_u\n(3) $\\mu_\\Lambda/\\mu_N$：-m_p/(3m_s)",
+  "id": "PP-02-003"
  },
  {
   "tid": "PP-09",
@@ -118,12 +126,13 @@
   "level": 3,
   "theme": "質量公式とΩ粒子の予言",
   "minutes": 20,
-  "q": "SU(3) の破れを1次まで考えると，バリオン多重項の質量はストレンジネスについて線形に変わる．\n\\begin{enumerate}\n\\item 十重項の $\\Delta(1232)$，$\\Sigma^*(1385)$，$\\Xi^*(1533)$（括弧内は MeV 単位の質量）を用いる．ストレンジネスが1減るごとの質量の増加を $\\Delta$ と $\\Xi^*$ の差から平均で求め，$\\Omega^-$ の質量を予言せよ．\n\\item 八重項のゲルマン＝大久保の質量公式 $2(m_N+m_\\Xi)=3m_\\Lambda+m_\\Sigma$ を用い，$m_N=939$，$m_\\Xi=1318$，$m_\\Sigma=1193$（MeV）から $m_\\Lambda$ を求めよ．\n\\item $\\Omega^-$ の質量を $1672.45\\,\\mathrm{MeV}$ とする．強い相互作用による崩壊 $\\Omega^-\\to\\Xi^0K^-$（$m_\\Xi=1314.86\\,\\mathrm{MeV}$，$m_K=493.68\\,\\mathrm{MeV}$）の $Q$ 値を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $m_\\Omega\\approx 1683.5\\,\\mathrm{MeV}$ (2) $m_\\Lambda=1107\\,\\mathrm{MeV}$ (3) $Q\\approx -136\\,\\mathrm{MeV}$",
-  "solution": "$\\Delta$ から $\\Xi^*$ まででストレンジネスは2減り，質量は $1533-1232=301\\,\\mathrm{MeV}$ 増える．1段あたり $150.5\\,\\mathrm{MeV}$ なので\n\\[ m_\\Omega\\approx 1533+150.5=\\boldsymbol{1683.5\\,\\mathrm{MeV}} . \\]\nこの予言（1962年）の後，1964年に $1672\\,\\mathrm{MeV}$ の $\\Omega^-$ が発見された．\n\n$m_\\Lambda=\\dfrac{2(939+1318)-1193}{3}=\\boldsymbol{1107\\,\\mathrm{MeV}}$（実験値 $1116\\,\\mathrm{MeV}$，1% 以内）．\n\n$Q=m_\\Omega-m_\\Xi-m_K=1672.45-1314.86-493.68\\approx\\boldsymbol{-136\\,\\mathrm{MeV}}$．$S=-3$ を保ったまま崩壊できる最も軽い終状態でもエネルギーが足りないので，$\\Omega^-$ は強い崩壊ができず，ストレンジネスを1変える弱い崩壊で $10^{-10}\\,\\mathrm{s}$ 程度の寿命をもつ．",
+  "q": "SU(3) の破れを1次まで考えると，バリオン多重項の質量はストレンジネスについて線形に変わる．\n\\begin{enumerate}\n\\item 十重項の $\\Delta$，$\\Sigma^*$，$\\Xi^*$ の質量を $m_1,m_2,m_3$ とする．ストレンジネスが1減るごとの質量の増加を $\\Delta$ と $\\Xi^*$ の差から平均で求め，$\\Omega^-$ の質量を $m_1,m_3$ で予言せよ．\n\\item 八重項のゲルマン＝大久保の質量公式 $2(m_N+m_\\Xi)=3m_\\Lambda+m_\\Sigma$ を用い，$m_\\Lambda$ を求めよ．ただし $\\Xi$ の質量 $m_\\Xi$ を $m_X$ と書いて答えよ．\n\\item $\\Omega^-$ の質量を $1672.45\\,\\mathrm{MeV}$ とする．強い相互作用による崩壊 $\\Omega^-\\to\\Xi^0K^-$（$m_{\\Xi^0}=1314.86\\,\\mathrm{MeV}$，$m_K=493.68\\,\\mathrm{MeV}$）の $Q$ 値を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $m_\\Omega=\\dfrac{3m_3-m_1}{2}$ (2) $m_\\Lambda=\\dfrac{2(m_N+m_X)-m_\\Sigma}{3}$ (3) $Q\\approx -136\\,\\mathrm{MeV}$",
+  "solution": "$\\Delta$ から $\\Xi^*$ まででストレンジネスは2減り，質量は $m_3-m_1$ 増える．1段あたり $(m_3-m_1)/2$ なので\n\\[ m_\\Omega\\approx m_3+\\frac{m_3-m_1}{2}=\\boldsymbol{\\frac{3m_3-m_1}{2}} . \\]\n$m_1=1232$，$m_3=1533$ MeV なら約 1683.5 MeV．この予言（1962年）の後，1964年に $1672\\,\\mathrm{MeV}$ の $\\Omega^-$ が発見された．\n\nゲルマン＝大久保の公式を解いて $\\boldsymbol{m_\\Lambda=\\dfrac{2(m_N+m_X)-m_\\Sigma}{3}}$．$m_N=939$，$m_X=1318$，$m_\\Sigma=1193$ MeV なら 1107 MeV で，実験値 $1116\\,\\mathrm{MeV}$ と 1% 以内で一致する．\n\n$Q=m_\\Omega-m_{\\Xi^0}-m_K=1672.45-1314.86-493.68\\approx\\boldsymbol{-136\\,\\mathrm{MeV}}$．$S=-3$ を保ったまま崩壊できる最も軽い終状態でもエネルギーが足りないので，$\\Omega^-$ は強い崩壊ができず，ストレンジネスを1変える弱い崩壊で $10^{-10}\\,\\mathrm{s}$ 程度の寿命をもつ．",
   "idea": "SU(3) の破れは $s$ クォークの重さ由来でストレンジネスに比例する．$\\Omega^-$ の長い寿命はストレンジネス保存と質量の関係から説明される．",
   "tags": "SU(3),ゲルマン＝大久保質量公式,Ω粒子",
-  "input": "(1) m_Ω [MeV]：≈1683.5\n(2) m_Λ [MeV]：1107\n(3) Q [MeV]：≈-136"
+  "input": "(1) $m_\\Omega$：(3m_3-m_1)/2\n(2) $m_\\Lambda$：(2(m_N+m_X)-m_Σ)/3\n(3) Q [MeV]：≈-136",
+  "id": "PP-02-004"
  },
  {
   "tid": "PP-10",
@@ -132,12 +141,13 @@
   "level": 4,
   "theme": "擬スカラー中間子の η–η′ 混合",
   "minutes": 30,
-  "q": "SU(3) 八重項と一重項の擬スカラー状態 $\\eta_8=(u\\bar u+d\\bar d-2s\\bar s)/\\sqrt6$，$\\eta_1=(u\\bar u+d\\bar d+s\\bar s)/\\sqrt3$ が混合して物理的な粒子\n\\[ \\eta=\\cos\\theta\\,\\eta_8-\\sin\\theta\\,\\eta_1,\\qquad \\eta'=\\sin\\theta\\,\\eta_8+\\cos\\theta\\,\\eta_1 \\]\nになるとする．中間子については質量の2乗に対するゲルマン＝大久保公式 $m_8^2=(4m_K^2-m_\\pi^2)/3$ を用いる（$m_8^2=\\langle\\eta_8|M^2|\\eta_8\\rangle$）．$m_K=495.6$，$m_\\pi=137.3$，$m_\\eta=547.9$，$m_{\\eta'}=957.8$（MeV）とする．\n\\begin{enumerate}\n\\item $m_8$ を求めよ．\n\\item 質量2乗行列が $\\eta,\\ \\eta'$ で対角化されることから，$\\tan^2\\theta=\\dfrac{m_8^2-m_\\eta^2}{m_{\\eta'}^2-m_8^2}$ を示せ．\n\\item 混合角の大きさ $|\\theta|$ を度で求めよ．\n\\item 上の定義で $\\eta$ が（符号を除いて）純粋な $s\\bar s$ 状態になる混合角 $\\theta$（$0<\\theta<90^\\circ$）を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $m_8\\approx 567\\,\\mathrm{MeV}$ (2) 解説参照 (3) $|\\theta|\\approx 10.6^\\circ$ (4) $\\theta=\\arctan\\dfrac{1}{\\sqrt2}\\approx 35.3^\\circ$",
-  "solution": "$m_8^2=(4\\times 495.6^2-137.3^2)/3\\approx 3.212\\times 10^5\\,\\mathrm{MeV^2}$ より $m_8\\approx\\boldsymbol{567\\,\\mathrm{MeV}}$．\n\n逆変換は $\\eta_8=\\cos\\theta\\,\\eta+\\sin\\theta\\,\\eta'$．$M^2$ は $\\eta,\\ \\eta'$ で対角（固有値 $m_\\eta^2,\\ m_{\\eta'}^2$）なので\n\\[ m_8^2=\\langle\\eta_8|M^2|\\eta_8\\rangle=\\cos^2\\theta\\,m_\\eta^2+\\sin^2\\theta\\,m_{\\eta'}^2 . \\]\n両辺を $\\cos^2\\theta$ で割り $1/\\cos^2\\theta=1+\\tan^2\\theta$ を使うと $m_8^2(1+\\tan^2\\theta)=m_\\eta^2+\\tan^2\\theta\\,m_{\\eta'}^2$，すなわち\n\\[ \\tan^2\\theta=\\dfrac{m_8^2-m_\\eta^2}{m_{\\eta'}^2-m_8^2} . \\]\n\n数値は $\\tan^2\\theta=(3.212-3.002)/(9.174-3.212)\\approx 0.0352$，$|\\theta|\\approx\\boldsymbol{10.6^\\circ}$．（線形質量公式を使うと約 $24^\\circ$ となり，公式の選び方に敏感である．現在の現象論的な値は $-10^\\circ\\sim -20^\\circ$ 程度．）\n\n$s\\bar s=\\dfrac{1}{\\sqrt3}\\eta_1-\\sqrt{\\dfrac23}\\,\\eta_8$ なので，$\\eta\\propto s\\bar s$ となるには $\\cos\\theta:\\sin\\theta=\\sqrt{2/3}:\\sqrt{1/3}$，すなわち\n\\[ \\tan\\theta=\\dfrac{1}{\\sqrt2},\\qquad \\theta\\approx\\boldsymbol{35.3^\\circ} \\]\n（理想混合角）．ベクトル中間子 $\\omega$–$\\phi$ はほぼ理想混合であるのに対し，擬スカラーは軸性異常のため $\\eta'$ が重く，混合が小さい．",
+  "q": "SU(3) 八重項と一重項の擬スカラー状態 $\\eta_8=(u\\bar u+d\\bar d-2s\\bar s)/\\sqrt6$，$\\eta_1=(u\\bar u+d\\bar d+s\\bar s)/\\sqrt3$ が混合して物理的な粒子\n\\[ \\eta=\\cos\\theta\\,\\eta_8-\\sin\\theta\\,\\eta_1,\\qquad \\eta'=\\sin\\theta\\,\\eta_8+\\cos\\theta\\,\\eta_1 \\]\nになるとする．中間子については質量の2乗に対するゲルマン＝大久保公式 $m_8^2=(4m_K^2-\\mu^2)/3$ を用いる（$m_8^2=\\langle\\eta_8|M^2|\\eta_8\\rangle$）．$K$，$\\pi$，$\\eta$，$\\eta'$ の質量を $m_K,\\mu,m_1,m_2$ と書く．\n\\begin{enumerate}\n\\item $m_8$ を $m_K,\\mu$ で表せ．\n\\item 質量2乗行列が $\\eta,\\ \\eta'$ で対角化されることから，$\\tan^2\\theta=\\dfrac{m_8^2-m_1^2}{m_2^2-m_8^2}$ を示せ．\n\\item 混合角の大きさ $|\\theta|$ を $m_K,\\mu,m_1,m_2$ で表せ．\n\\item 上の定義で $\\eta$ が（符号を除いて）純粋な $s\\bar s$ 状態になる混合角 $\\theta$（$0<\\theta<90^\\circ$）を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $m_8=\\sqrt{\\dfrac{4m_K^2-\\mu^2}{3}}$ (2) 解説参照 (3) $|\\theta|=\\arctan\\sqrt{\\dfrac{4m_K^2-\\mu^2-3m_1^2}{3m_2^2-4m_K^2+\\mu^2}}$ (4) $\\theta=\\arctan\\dfrac{1}{\\sqrt2}$",
+  "solution": "ゲルマン＝大久保公式より $\\boldsymbol{m_8=\\sqrt{\\dfrac{4m_K^2-\\mu^2}{3}}}$（実際の値で約 567 MeV）．\n\n逆変換は $\\eta_8=\\cos\\theta\\,\\eta+\\sin\\theta\\,\\eta'$．$M^2$ は $\\eta,\\ \\eta'$ で対角（固有値 $m_1^2,\\ m_2^2$）なので\n\\[ m_8^2=\\langle\\eta_8|M^2|\\eta_8\\rangle=\\cos^2\\theta\\,m_1^2+\\sin^2\\theta\\,m_2^2 . \\]\n両辺を $\\cos^2\\theta$ で割り $1/\\cos^2\\theta=1+\\tan^2\\theta$ を使うと $m_8^2(1+\\tan^2\\theta)=m_1^2+\\tan^2\\theta\\,m_2^2$，すなわち\n\\[ \\tan^2\\theta=\\dfrac{m_8^2-m_1^2}{m_2^2-m_8^2} . \\]\n\n(1) の $m_8^2$ を代入して分子分母を 3 倍すると\n\\[ \\boldsymbol{|\\theta|=\\arctan\\sqrt{\\frac{4m_K^2-\\mu^2-3m_1^2}{3m_2^2-4m_K^2+\\mu^2}}}. \\]\n実際の質量では約 $10.6^\\circ$．（線形質量公式を使うと約 $24^\\circ$ となり，公式の選び方に敏感である．現在の現象論的な値は $-10^\\circ\\sim -20^\\circ$ 程度．）\n\n$s\\bar s=\\dfrac{1}{\\sqrt3}\\eta_1-\\sqrt{\\dfrac23}\\,\\eta_8$ なので，$\\eta\\propto s\\bar s$ となるには $\\cos\\theta:\\sin\\theta=\\sqrt{2/3}:\\sqrt{1/3}$，すなわち\n\\[ \\tan\\theta=\\dfrac{1}{\\sqrt2},\\qquad \\boldsymbol{\\theta=\\arctan\\frac{1}{\\sqrt2}}\\approx35.3^\\circ \\]\n（理想混合角）．ベクトル中間子 $\\omega$–$\\phi$ はほぼ理想混合であるのに対し，擬スカラーは軸性異常のため $\\eta'$ が重く，混合が小さい．",
   "idea": "八重項状態の質量2乗期待値を物理状態の固有値の加重平均として書くと，混合角が質量だけで決まる．",
   "tags": "η中間子,混合角,ゲルマン＝大久保質量公式,理想混合",
-  "input": "(1) m_8 [MeV]：≈567\n(2) 記述：m_8^2=cos^2θ m_η^2+sin^2θ m_η'^2 から\n(3) θ [°]：≈10.6\n(4) θ [°]：≈35.3"
+  "input": "(1) $m_8$：sqrt((4m_K^2-μ^2)/3)\n(2) 記述：m_8^2=cos^2θ m_1^2+sin^2θ m_2^2 から\n(3) $|\\theta|$：arctan(sqrt((4m_K^2-μ^2-3m_1^2)/(3m_2^2-4m_K^2+μ^2)))\n(4) $\\theta$：arctan(1/sqrt(2))",
+  "id": "PP-02-005"
  },
  {
   "tid": "PP-11",
@@ -146,12 +156,13 @@
   "level": 1,
   "theme": "フェルミ理論によるミューオンとタウの寿命",
   "minutes": 10,
-  "q": "ミューオン崩壊 $\\mu^-\\to e^-\\bar\\nu_e\\nu_\\mu$ の崩壊幅はフェルミ理論で（電子の質量を無視して）\n\\[ \\Gamma=\\dfrac{G_F^2m^5}{192\\pi^3} \\]\nで与えられる．$G_F=1.1664\\times 10^{-5}\\,\\mathrm{GeV^{-2}}$，$\\hbar=6.582\\times 10^{-25}\\,\\mathrm{GeV\\,s}$ とする．\n\\begin{enumerate}\n\\item $m_\\mu=0.10566\\,\\mathrm{GeV}$ としてミューオンの寿命を求めよ．\n\\item $\\tau$ レプトン（$m_\\tau=1.777\\,\\mathrm{GeV}$）の $\\tau\\to e\\bar\\nu\\nu$ の分岐比を $0.178$ とする．同じ式で部分幅を計算し，$\\tau$ の寿命を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\tau_\\mu\\approx 2.19\\times 10^{-6}\\,\\mathrm{s}$ (2) $\\tau_\\tau\\approx 2.89\\times 10^{-13}\\,\\mathrm{s}$",
-  "solution": "$\\Gamma_\\mu=G_F^2m_\\mu^5/(192\\pi^3)\\approx 3.01\\times 10^{-19}\\,\\mathrm{GeV}$ なので $\\tau_\\mu=\\hbar/\\Gamma_\\mu\\approx\\boldsymbol{2.19\\times 10^{-6}\\,\\mathrm{s}}$（実験値 $2.197\\,\\mu\\mathrm{s}$）．\n\n$\\tau$ の電子モードの部分幅は質量の5乗で増え，$\\Gamma(\\tau\\to e\\nu\\bar\\nu)=\\Gamma_\\mu(m_\\tau/m_\\mu)^5$．全幅は $\\Gamma_\\tau=\\Gamma(\\tau\\to e\\nu\\bar\\nu)/0.178$ なので\n\\[ \\tau_\\tau=0.178\\,\\tau_\\mu\\left(\\dfrac{m_\\mu}{m_\\tau}\\right)^5\\approx\\boldsymbol{2.89\\times 10^{-13}\\,\\mathrm{s}} \\]\n（実験値 $2.90\\times 10^{-13}\\,\\mathrm{s}$）．レプトン普遍性の検証になっている．",
+  "q": "ミューオン崩壊 $\\mu^-\\to e^-\\bar\\nu_e\\nu_\\mu$ の崩壊幅はフェルミ理論で（電子の質量を無視して）\n\\[ \\Gamma=\\dfrac{G_F^2m^5}{192\\pi^3} \\]\nで与えられる（自然単位，$m$ は崩壊するレプトンの質量）．\n\\begin{enumerate}\n\\item ミューオンの質量を $m_\\mu$ として，ミューオンの寿命を $G_F,m_\\mu,\\hbar$ で表せ（$\\tau=\\hbar/\\Gamma$）．\n\\item $\\tau$ レプトン（質量 $m_\\tau$）の $\\tau\\to e\\bar\\nu\\nu$ の分岐比を $B$ とする．同じ式で部分幅を計算し，$\\tau$ の寿命を $G_F,m_\\tau,B,\\hbar$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\tau_\\mu=\\dfrac{192\\pi^3\\hbar}{G_F^2m_\\mu^5}$ (2) $\\tau_\\tau=\\dfrac{192\\pi^3\\hbar B}{G_F^2m_\\tau^5}$",
+  "solution": "$\\Gamma_\\mu=G_F^2m_\\mu^5/(192\\pi^3)$ なので\n\\[ \\boldsymbol{\\tau_\\mu=\\frac{\\hbar}{\\Gamma_\\mu}=\\frac{192\\pi^3\\hbar}{G_F^2m_\\mu^5}} \\]\n（$G_F=1.166\\times10^{-5}\\,\\mathrm{GeV^{-2}}$，$m_\\mu=0.1057$ GeV で約 $2.19\\,\\mu\\mathrm{s}$，実験値 $2.197\\,\\mu\\mathrm{s}$）．\n\n$\\tau$ の電子モードの部分幅は質量の5乗で増え，$\\Gamma(\\tau\\to e\\nu\\bar\\nu)=G_F^2m_\\tau^5/(192\\pi^3)$．全幅は $\\Gamma_\\tau=\\Gamma(\\tau\\to e\\nu\\bar\\nu)/B$ なので\n\\[ \\boldsymbol{\\tau_\\tau=\\frac{192\\pi^3\\hbar B}{G_F^2m_\\tau^5}}=B\\,\\tau_\\mu\\left(\\dfrac{m_\\mu}{m_\\tau}\\right)^5 \\]\n（$B=0.178$，$m_\\tau=1.777$ GeV で約 $2.89\\times 10^{-13}\\,\\mathrm{s}$，実験値 $2.90\\times 10^{-13}\\,\\mathrm{s}$）．レプトン普遍性の検証になっている．",
   "idea": "フェルミ理論の崩壊幅は次元解析から $G_F^2m^5$ に比例し，寿命は質量の5乗に反比例する．",
   "tags": "フェルミ理論,ミューオン崩壊,レプトン普遍性",
-  "input": "(1) τ_μ [s]：≈2.19e-6\n(2) τ_τ [s]：≈2.89e-13"
+  "input": "(1) $\\tau_\\mu$：192π^3 ħ/(G_F^2 m_μ^5)\n(2) $\\tau_\\tau$：192π^3 ħ B/(G_F^2 m_τ^5)",
+  "id": "PP-03-001"
  },
  {
   "tid": "PP-12",
@@ -160,12 +171,13 @@
   "level": 2,
   "theme": "ヘリシティ抑制：荷電パイ中間子の崩壊比",
   "minutes": 20,
-  "q": "$V-A$ 相互作用によると，擬スカラー中間子 $P$（質量 $M$）のレプトン崩壊幅は\n\\[ \\Gamma(P\\to\\ell\\bar\\nu)\\propto m_\\ell^2\\left(1-\\dfrac{m_\\ell^2}{M^2}\\right)^2 M \\]\nとなる（比例係数は $\\ell$ によらない）．$m_e=0.511$，$m_\\mu=105.66$，$m_\\pi=139.57$，$m_K=493.68$（MeV）とする．\n\\begin{enumerate}\n\\item 崩壊幅が $m_\\ell^2$ に比例する（$m_\\ell\\to 0$ で消える）理由を，角運動量とヘリシティから説明せよ．\n\\item $R_\\pi=\\Gamma(\\pi\\to e\\nu)/\\Gamma(\\pi\\to\\mu\\nu)$ を求めよ．\n\\item $R_K=\\Gamma(K\\to e\\nu)/\\Gamma(K\\to\\mu\\nu)$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) 解説参照 (2) $R_\\pi\\approx 1.28\\times 10^{-4}$ (3) $R_K\\approx 2.57\\times 10^{-5}$",
-  "solution": "スピン $0$ の $\\pi^-$ の静止系で $\\ell^-$ と $\\bar\\nu$ は逆向きに出る．$\\bar\\nu$ は右巻き（ヘリシティ $+1/2$）なので，角運動量 $0$ のためには $\\ell^-$ もヘリシティ $+1/2$ でなければならない．ところが $V-A$ で生成される $\\ell^-$ は左巻きカイラリティで，その右巻きヘリシティ成分の振幅は $m_\\ell/E$ 程度に抑えられる．したがって幅は $m_\\ell^2$ に比例する．\n\n比は\n\\[ R=\\left(\\dfrac{m_e}{m_\\mu}\\right)^2\\left(\\dfrac{M^2-m_e^2}{M^2-m_\\mu^2}\\right)^2 . \\]\n$\\pi$ では $R_\\pi\\approx\\boldsymbol{1.28\\times 10^{-4}}$（実験値 $1.23\\times 10^{-4}$，差は放射補正）．位相空間だけなら電子の方が有利なのに，ヘリシティ抑制で4桁小さくなる．\n\n$K$ では $R_K\\approx\\boldsymbol{2.57\\times 10^{-5}}$（実験値 $2.49\\times 10^{-5}$）．$K$ は重いので位相空間因子の差が小さく，$\\pi$ より比はさらに小さい．",
+  "q": "$V-A$ 相互作用によると，擬スカラー中間子 $P$（質量 $M$）のレプトン崩壊幅は\n\\[ \\Gamma(P\\to\\ell\\bar\\nu)\\propto m_\\ell^2\\left(1-\\dfrac{m_\\ell^2}{M^2}\\right)^2 M \\]\nとなる（比例係数は $\\ell$ によらない）．電子とミューオンの質量を $m_e,m_\\mu$，$\\pi$ と $K$ の質量を $M_1,M_2$ とする．\n\\begin{enumerate}\n\\item 崩壊幅が $m_\\ell^2$ に比例する（$m_\\ell\\to 0$ で消える）理由を，角運動量とヘリシティから説明せよ．\n\\item $R_\\pi=\\Gamma(\\pi\\to e\\nu)/\\Gamma(\\pi\\to\\mu\\nu)$ を $m_e,m_\\mu,M_1$ で表せ．\n\\item 比 $R_K/R_\\pi$ を求めよ．ただし $R_K=\\Gamma(K\\to e\\nu)/\\Gamma(K\\to\\mu\\nu)$ である．\n\\end{enumerate}",
+  "answer": "(1) 解説参照 (2) $R_\\pi=\\dfrac{m_e^2}{m_\\mu^2}\\left(\\dfrac{M_1^2-m_e^2}{M_1^2-m_\\mu^2}\\right)^2$ (3) $\\dfrac{R_K}{R_\\pi}=\\left(\\dfrac{(M_2^2-m_e^2)(M_1^2-m_\\mu^2)}{(M_2^2-m_\\mu^2)(M_1^2-m_e^2)}\\right)^2$",
+  "solution": "スピン $0$ の $\\pi^-$ の静止系で $\\ell^-$ と $\\bar\\nu$ は逆向きに出る．$\\bar\\nu$ は右巻き（ヘリシティ $+1/2$）なので，角運動量 $0$ のためには $\\ell^-$ もヘリシティ $+1/2$ でなければならない．ところが $V-A$ で生成される $\\ell^-$ は左巻きカイラリティで，その右巻きヘリシティ成分の振幅は $m_\\ell/E$ 程度に抑えられる．したがって幅は $m_\\ell^2$ に比例する．\n\n比は\n\\[ \\boldsymbol{R_\\pi=\\frac{m_e^2}{m_\\mu^2}\\left(\\frac{M_1^2-m_e^2}{M_1^2-m_\\mu^2}\\right)^2} . \\]\n実際の値では約 $1.28\\times 10^{-4}$（実験値 $1.23\\times 10^{-4}$，差は放射補正）．位相空間だけなら電子の方が有利なのに，ヘリシティ抑制で4桁小さくなる．\n\n$K$ では $M_1\\to M_2$ とすればよいので\n\\[ \\boldsymbol{\\frac{R_K}{R_\\pi}=\\left(\\frac{(M_2^2-m_e^2)(M_1^2-m_\\mu^2)}{(M_2^2-m_\\mu^2)(M_1^2-m_e^2)}\\right)^2}. \\]\n$M_1$ は $m_\\mu$ に近いので $M_1^2-m_\\mu^2$ が小さく，$\\pi$ ではミューオンモードの位相空間が狭い．$K$ は重いのでこの効果が弱く，比は約 0.2 で $R_K\\approx2.6\\times10^{-5}$ となる（実験値 $2.49\\times 10^{-5}$）．",
   "idea": "スピン0の崩壊では終状態レプトンが「間違った」ヘリシティを要求され，その振幅は質量に比例する．",
   "tags": "V-A,ヘリシティ抑制,パイ中間子崩壊",
-  "input": "(1) 記述：ν̄が右巻きで角運動量0から ℓ も右巻きヘリシティが必要，振幅∝m_ℓ\n(2) R_π：≈1.28e-4\n(3) R_K：≈2.57e-5"
+  "input": "(1) 記述：ν̄が右巻きで角運動量0から ℓ も右巻きヘリシティが必要，振幅∝m_ℓ\n(2) $R_\\pi$：(m_e^2/m_μ^2) ((M_1^2-m_e^2)/(M_1^2-m_μ^2))^2\n(3) ((M_2^2-m_e^2)(M_1^2-m_μ^2)/((M_2^2-m_μ^2)(M_1^2-m_e^2)))^2",
+  "id": "PP-03-002"
  },
  {
   "tid": "PP-13",
@@ -174,12 +186,13 @@
   "level": 2,
   "theme": "カビボ角とW粒子の崩壊分岐比",
   "minutes": 15,
-  "q": "クォークの荷電カレントはカビボ角 $\\theta_C=13.0^\\circ$ で混合した $d'=d\\cos\\theta_C+s\\sin\\theta_C$ と $u$ の間にはたらくとする（第3世代は無視する）．\n\\begin{enumerate}\n\\item チャームの崩壊で，$c\\to d$ 型と $c\\to s$ 型の振幅の2乗の比（カビボ抑制の度合い）を求めよ．\n\\item $D^0\\to K^+\\pi^-$ のように崩壊の両端の頂点がともにカビボ抑制される「二重カビボ抑制」の過程は，カビボ許容の過程に比べて何倍程度か．$\\tan^4\\theta_C$ で見積もれ．\n\\item $W^+$ の崩壊を，レプトン3種（$e\\nu,\\ \\mu\\nu,\\ \\tau\\nu$）とクォーク2種（$u\\bar d',\\ c\\bar s'$，各3色，QCD 補正因子 $1+\\alpha_s/\\pi$）で考える．$\\alpha_s=0.118$，各粒子の質量を無視して，分岐比 $\\mathrm{BR}(W\\to e\\nu)$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\tan^2\\theta_C\\approx 0.0533$ (2) $\\tan^4\\theta_C\\approx 2.84\\times 10^{-3}$ (3) $\\mathrm{BR}\\approx 0.108$",
-  "solution": "$c$ は $s'=-d\\sin\\theta_C+s\\cos\\theta_C$ と組むので，$c\\to d$ の振幅は $\\sin\\theta_C$，$c\\to s$ は $\\cos\\theta_C$ に比例する．比は $\\tan^2\\theta_C\\approx\\boldsymbol{0.0533}$．\n\n$D^0(c\\bar u)\\to K^+\\pi^-$ は $c\\to d$ と $W^+\\to u\\bar s$ の両方で $\\sin\\theta_C$ が出るので，許容過程 $D^0\\to K^-\\pi^+$ に対して $\\tan^4\\theta_C\\approx\\boldsymbol{2.84\\times 10^{-3}}$ 程度（実験値 $\\sim 3.4\\times 10^{-3}$）．\n\nユニタリー性から $u\\bar d'$，$c\\bar s'$ はそれぞれ1つのチャネルとして数えられ，各3色・QCD 補正つきで重み $3(1+\\alpha_s/\\pi)$．レプトンは各1．\n\\[ \\mathrm{BR}(W\\to e\\nu)=\\dfrac{1}{3+6(1+\\alpha_s/\\pi)}\\approx\\boldsymbol{0.108} \\]\n（実験値 $0.1071$）．$t$ クォークは $W$ より重いので崩壊先に入らない．",
+  "q": "クォークの荷電カレントはカビボ角 $\\theta_C$ で混合した $d'=d\\cos\\theta_C+s\\sin\\theta_C$ と $u$ の間にはたらくとする（第3世代は無視する）．\n\\begin{enumerate}\n\\item チャームの崩壊で，$c\\to d$ 型と $c\\to s$ 型の振幅の2乗の比（カビボ抑制の度合い）を $\\theta_C$ で表せ．\n\\item $D^0\\to K^+\\pi^-$ のように崩壊の両端の頂点がともにカビボ抑制される「二重カビボ抑制」の過程は，カビボ許容の過程に比べて何倍程度か．$\\theta_C$ で表せ．\n\\item $W^+$ の崩壊を，レプトン3種（$e\\nu,\\ \\mu\\nu,\\ \\tau\\nu$）とクォーク2種（$u\\bar d',\\ c\\bar s'$，各3色，QCD 補正因子 $1+\\alpha_s/\\pi$）で考える．各粒子の質量を無視して，分岐比 $\\mathrm{BR}(W\\to e\\nu)$ を $\\alpha_s$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\tan^2\\theta_C$ (2) $\\tan^4\\theta_C$ (3) $\\mathrm{BR}=\\dfrac{1}{3+6(1+\\alpha_s/\\pi)}$",
+  "solution": "$c$ は $s'=-d\\sin\\theta_C+s\\cos\\theta_C$ と組むので，$c\\to d$ の振幅は $\\sin\\theta_C$，$c\\to s$ は $\\cos\\theta_C$ に比例する．比は $\\boldsymbol{\\tan^2\\theta_C}$（$\\theta_C\\approx13^\\circ$ で約 0.053）．\n\n$D^0(c\\bar u)\\to K^+\\pi^-$ は $c\\to d$ と $W^+\\to u\\bar s$ の両方で $\\sin\\theta_C$ が出るので，許容過程 $D^0\\to K^-\\pi^+$ に対して $\\boldsymbol{\\tan^4\\theta_C}$ 程度（約 $2.8\\times 10^{-3}$，実験値 $\\sim 3.4\\times 10^{-3}$）．\n\nユニタリー性から $u\\bar d'$，$c\\bar s'$ はそれぞれ1つのチャネルとして数えられ，各3色・QCD 補正つきで重み $3(1+\\alpha_s/\\pi)$．レプトンは各1．\n\\[ \\boldsymbol{\\mathrm{BR}(W\\to e\\nu)=\\dfrac{1}{3+6(1+\\alpha_s/\\pi)}} \\]\n（$\\alpha_s=0.118$ で約 0.108，実験値 $0.1071$）．$t$ クォークは $W$ より重いので崩壊先に入らない．",
   "idea": "混合は振幅に $\\sin\\theta_C,\\ \\cos\\theta_C$ を掛けるだけ．$W$ の分岐比はチャネル数（色の自由度込み）の数え上げで決まる．",
   "tags": "カビボ角,CKM行列,W粒子,分岐比",
-  "input": "(1) 比：≈0.0533\n(2) 比：≈2.84e-3\n(3) BR：≈0.108"
+  "input": "(1) 比：tan(θ_C)^2\n(2) 比：tan(θ_C)^4\n(3) BR：1/(3+6(1+α_s/π))",
+  "id": "PP-03-003"
  },
  {
   "tid": "PP-14",
@@ -188,12 +201,13 @@
   "level": 3,
   "theme": "中間子のレプトン崩壊から |V_us| を決める",
   "minutes": 25,
-  "q": "擬スカラー中間子 $P$（質量 $M$，崩壊定数 $f_P$）のレプトン崩壊幅は\n\\[ \\Gamma(P\\to\\mu\\nu)=\\dfrac{G_F^2}{8\\pi}|V|^2f_P^2\\,m_\\mu^2M\\left(1-\\dfrac{m_\\mu^2}{M^2}\\right)^2 \\]\nである．$\\pi^+$ では $V=V_{ud}$，$K^+$ では $V=V_{us}$．データは次の通り：$\\tau_\\pi=2.603\\times 10^{-8}\\,\\mathrm{s}$，$\\mathrm{BR}(\\pi\\to\\mu\\nu)=0.99988$，$\\tau_K=1.238\\times 10^{-8}\\,\\mathrm{s}$，$\\mathrm{BR}(K\\to\\mu\\nu)=0.6356$，$m_\\pi=139.57$，$m_K=493.68$，$m_\\mu=105.66$（MeV），格子 QCD の値 $f_K/f_\\pi=1.193$．\n\\begin{enumerate}\n\\item 部分幅の比 $\\Gamma(K\\to\\mu\\nu)/\\Gamma(\\pi\\to\\mu\\nu)$ を求めよ．\n\\item $|V_{us}|/|V_{ud}|$ を求めよ．\n\\item 第1行のユニタリー性 $|V_{ud}|^2+|V_{us}|^2=1$（$|V_{ub}|$ は無視）を仮定して $|V_{us}|$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\dfrac{\\Gamma_K}{\\Gamma_\\pi}\\approx 1.34$ (2) $\\dfrac{|V_{us}|}{|V_{ud}|}\\approx 0.231$ (3) $|V_{us}|\\approx 0.225$",
-  "solution": "部分幅は $\\mathrm{BR}/\\tau$ なので\n\\[ \\dfrac{\\Gamma_K}{\\Gamma_\\pi}=\\dfrac{0.6356/1.238}{0.99988/2.603}\\approx\\boldsymbol{1.34} . \\]\n\n公式の比をとると $G_F$ と $m_\\mu^2$ が消えて\n\\[ \\dfrac{\\Gamma_K}{\\Gamma_\\pi}=\\left|\\dfrac{V_{us}}{V_{ud}}\\right|^2\\left(\\dfrac{f_K}{f_\\pi}\\right)^2\\dfrac{m_K}{m_\\pi}\\left(\\dfrac{1-m_\\mu^2/m_K^2}{1-m_\\mu^2/m_\\pi^2}\\right)^2 . \\]\n運動学因子は $(m_K/m_\\pi)(0.9542/0.4269)^2\\approx 17.67$．よって\n\\[ \\left|\\dfrac{V_{us}}{V_{ud}}\\right|=\\sqrt{\\dfrac{1.337}{1.193^2\\times 17.67}}\\approx\\boldsymbol{0.231} . \\]\n\n$x=|V_{us}/V_{ud}|$ とおくと $|V_{us}|^2(1+1/x^2)=1$ より $|V_{us}|=x/\\sqrt{1+x^2}\\approx\\boldsymbol{0.225}$（PDG 値 $0.2243$ 程度）．比をとることで $G_F$ の放射補正やハドロンの不定性の多くが打ち消し合うのが要点である（実際の解析では電磁補正の比も入れる）．",
-  "idea": "比をとると共通因子が消え，ハドロン因子は格子 QCD の $f_K/f_\\pi$ だけに集約される．ユニタリー性で比から絶対値に直す．",
+  "q": "擬スカラー中間子 $P$（質量 $M$，崩壊定数 $f_P$）のレプトン崩壊幅は\n\\[ \\Gamma(P\\to\\mu\\nu)=\\dfrac{G_F^2}{8\\pi}|V|^2f_P^2\\,m_\\mu^2M\\left(1-\\dfrac{m_\\mu^2}{M^2}\\right)^2 \\]\nである．$\\pi^+$ では $V=V_{ud}$，$K^+$ では $V=V_{us}$．$\\pi^+$，$K^+$ の寿命をそれぞれ $\\tau_1,\\ \\tau_2$，$\\mu\\nu$ への分岐比を $B_1,\\ B_2$，質量を $m_1,\\ m_2$（添字 $1$ が $\\pi^+$，$2$ が $K^+$），ミューオンの質量を $m_\\mu$，崩壊定数の比（格子 QCD の値）を $r=f_K/f_\\pi$ とする．\n\\begin{enumerate}\n\\item 部分幅の比 $R=\\Gamma(K\\to\\mu\\nu)/\\Gamma(\\pi\\to\\mu\\nu)$ を $\\tau_1,\\ \\tau_2,\\ B_1,\\ B_2$ で表せ．\n\\item $x=|V_{us}|/|V_{ud}|$ を $R,\\ r,\\ m_1,\\ m_2,\\ m_\\mu$ で表せ．\n\\item 第1行のユニタリー性 $|V_{ud}|^2+|V_{us}|^2=1$（$|V_{ub}|$ は無視）を仮定して $|V_{us}|$ を $x$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $R=\\dfrac{B_2\\tau_1}{B_1\\tau_2}$　(2) $x=\\dfrac{m_1^2-m_\\mu^2}{r(m_2^2-m_\\mu^2)}\\sqrt{\\dfrac{Rm_2^3}{m_1^3}}$　(3) $|V_{us}|=\\dfrac{x}{\\sqrt{1+x^2}}$",
+  "solution": "(1) 部分幅は（分岐比）/（寿命）なので\n\\[ \\boldsymbol{R=\\dfrac{B_2/\\tau_2}{B_1/\\tau_1}=\\dfrac{B_2\\tau_1}{B_1\\tau_2}} . \\]\n\n(2) 公式の比をとると $G_F$ と $m_\\mu^2$ が消えて\n\\[ R=x^2r^2\\dfrac{m_2}{m_1}\\left(\\dfrac{1-m_\\mu^2/m_2^2}{1-m_\\mu^2/m_1^2}\\right)^2=x^2r^2\\dfrac{m_1^3(m_2^2-m_\\mu^2)^2}{m_2^3(m_1^2-m_\\mu^2)^2} . \\]\nよって\n\\[ \\boldsymbol{x=\\dfrac{m_1^2-m_\\mu^2}{r(m_2^2-m_\\mu^2)}\\sqrt{\\dfrac{Rm_2^3}{m_1^3}}} . \\]\n\n(3) $|V_{ud}|=|V_{us}|/x$ を代入すると $|V_{us}|^2(1+1/x^2)=1$ より\n\\[ \\boldsymbol{|V_{us}|=\\dfrac{x}{\\sqrt{1+x^2}}} . \\]\n実測値（$\\tau_1=2.603\\times10^{-8}\\,\\mathrm{s}$，$\\tau_2=1.238\\times10^{-8}\\,\\mathrm{s}$，$B_1=0.99988$，$B_2=0.6356$，$r=1.193$ など）を入れると $R\\approx1.34$，$x\\approx0.231$，$|V_{us}|\\approx0.225$ となる（PDG 値 $0.2243$ 程度）．比をとることで $G_F$ の放射補正やハドロンの不定性の多くが打ち消し合うのが要点である（実際の解析では電磁補正の比も入れる）．",
+  "idea": "比をとると共通因子 $G_F,\\ m_\\mu^2$ が消え，ハドロン因子は格子 QCD の $f_K/f_\\pi$ だけに集約される．ユニタリー性で比から絶対値に直す．",
   "tags": "CKM行列,崩壊定数,ユニタリー性,K中間子",
-  "input": "(1) 比：≈1.34\n(2) 比：≈0.231\n(3) |V_us|：≈0.225"
+  "input": "(1) R：B_2 τ_1/(B_1 τ_2)\n(2) x：(m_1^2-m_μ^2)/(r (m_2^2-m_μ^2)) sqrt(R m_2^3/m_1^3)\n(3) |V_us|：x/sqrt(1+x^2)",
+  "id": "PP-03-004"
  },
  {
   "tid": "PP-15",
@@ -202,12 +216,13 @@
   "level": 4,
   "theme": "ニュートリノ振動と MSW 共鳴",
   "minutes": 35,
-  "q": "2世代のニュートリノ混合を考える．フレーバー固有状態は質量固有状態 $\\nu_1,\\ \\nu_2$ を角 $\\theta$ で回転したもの $\\nu_e=\\cos\\theta\\,\\nu_1+\\sin\\theta\\,\\nu_2$，$\\nu_\\mu=-\\sin\\theta\\,\\nu_1+\\cos\\theta\\,\\nu_2$ である．$\\Delta m^2=m_2^2-m_1^2$ とする．\n\\begin{enumerate}\n\\item 真空中でエネルギー $E$ の $\\nu_\\mu$ が距離 $L$ 進んだあと $\\nu_e$ として観測される確率が $P=\\sin^22\\theta\\,\\sin^2\\!\\left(\\dfrac{\\Delta m^2L}{4E}\\right)$（$\\hbar=c=1$）となることを示せ．\n\\item 実用単位では位相は $1.27\\,\\Delta m^2[\\mathrm{eV^2}]\\,L[\\mathrm{km}]/E[\\mathrm{GeV}]$ になる．$L=295\\,\\mathrm{km}$，$\\Delta m^2=2.5\\times 10^{-3}\\,\\mathrm{eV^2}$ のとき，第1振動極大を与えるエネルギー $E$ を求めよ．\n\\item 物質中の $\\nu_e$ は電子との荷電カレント散乱により有効ポテンシャル $V=\\sqrt2G_FN_e$ を受ける．共鳴条件 $2\\sqrt2G_FN_eE=\\Delta m^2\\cos2\\theta$ が成り立つ電子数密度 $N_e$ を $\\mathrm{cm^{-3}}$ 単位で求めよ．ただし $\\Delta m^2=7.5\\times 10^{-5}\\,\\mathrm{eV^2}$，$\\theta=33.4^\\circ$，$E=10\\,\\mathrm{MeV}$，$G_F=1.1664\\times 10^{-5}\\,\\mathrm{GeV^{-2}}$，$\\hbar c=1.973\\times 10^{-14}\\,\\mathrm{GeV\\,cm}$ とする．\n\\item 共鳴点での物質中の有効混合 $\\sin^22\\theta_m$ の値を求めよ．\n\\end{enumerate}",
-  "answer": "(1) 解説参照 (2) $E\\approx 0.595\\,\\mathrm{GeV}$ (3) $N_e\\approx 1.17\\times 10^{25}\\,\\mathrm{cm^{-3}}$ (4) $\\sin^22\\theta_m=1$",
-  "solution": "$\\nu_\\mu$ の時間発展は $|\\nu(t)\\rangle=-\\sin\\theta\\,e^{-iE_1t}|\\nu_1\\rangle+\\cos\\theta\\,e^{-iE_2t}|\\nu_2\\rangle$．$\\langle\\nu_e|\\nu(t)\\rangle=\\sin\\theta\\cos\\theta\\,(e^{-iE_2t}-e^{-iE_1t})$ で，\n\\[ P=\\sin^22\\theta\\,\\sin^2\\dfrac{(E_2-E_1)t}{2} . \\]\n同じ運動量で $E_i\\simeq p+m_i^2/(2p)$，$t\\simeq L$ とすれば $(E_2-E_1)t/2=\\Delta m^2L/(4E)$ となり，与式を得る．\n\n第1極大は位相が $\\pi/2$：$1.27\\,\\Delta m^2L/E=\\pi/2$ より\n\\[ E=\\dfrac{2\\times 1.27\\,\\Delta m^2L}{\\pi}\\approx\\boldsymbol{0.595\\,\\mathrm{GeV}} . \\]\nT2K 実験のビームエネルギー（約 $0.6\\,\\mathrm{GeV}$）はこの値に合わせてある．\n\n自然単位では $N_e=\\dfrac{\\Delta m^2\\cos2\\theta}{2\\sqrt2G_FE}$．$\\Delta m^2=7.5\\times 10^{-23}\\,\\mathrm{GeV^2}$，$\\cos 66.8^\\circ=0.394$，$E=0.010\\,\\mathrm{GeV}$ を入れると $N_e\\approx 3.58\\times 10^{-17}\\,\\mathrm{GeV^3}$．$(\\hbar c)^3$ で割って\n\\[ N_e\\approx\\boldsymbol{1.17\\times 10^{25}\\,\\mathrm{cm^{-3}}}\\ (\\approx 19\\,N_A\\,\\mathrm{cm^{-3}}) . \\]\n太陽中心の電子密度は約 $100\\,N_A\\,\\mathrm{cm^{-3}}$ なので，高エネルギーの太陽ニュートリノは太陽内部で共鳴点を通過する．\n\n物質中では $\\tan2\\theta_m=\\dfrac{\\Delta m^2\\sin2\\theta}{\\Delta m^2\\cos2\\theta-2\\sqrt2G_FN_eE}$．共鳴点では分母が $0$ になるので $\\theta_m=45^\\circ$，$\\sin^22\\theta_m=\\boldsymbol{1}$（最大混合）．",
+  "q": "2世代のニュートリノ混合を考える．フレーバー固有状態は質量固有状態 $\\nu_1,\\ \\nu_2$ を角 $\\theta$ で回転したもの $\\nu_e=\\cos\\theta\\,\\nu_1+\\sin\\theta\\,\\nu_2$，$\\nu_\\mu=-\\sin\\theta\\,\\nu_1+\\cos\\theta\\,\\nu_2$ である．$\\Delta m^2=m_2^2-m_1^2$ とし，$\\hbar=c=1$ とする．\n\\begin{enumerate}\n\\item 真空中でエネルギー $E$ の $\\nu_\\mu$ が距離 $L$ 進んだあと $\\nu_e$ として観測される確率が $P=\\sin^22\\theta\\,\\sin^2\\!\\left(\\dfrac{\\Delta m^2L}{4E}\\right)$ となることを示せ．\n\\item 基線長 $L$ の実験で，第1振動極大（最初に $P$ が最大になる点）を与えるエネルギー $E$ を $\\Delta m^2,\\ L$ で表せ．\n\\item 物質中の $\\nu_e$ は電子との荷電カレント散乱により有効ポテンシャル $V=\\sqrt2G_FN_e$ を受ける．共鳴条件 $2\\sqrt2G_FN_eE=\\Delta m^2\\cos2\\theta$ が成り立つ電子数密度 $N_e$ を $\\Delta m^2,\\ \\theta,\\ G_F,\\ E$ で表せ．\n\\item 共鳴点での物質中の有効混合 $\\sin^22\\theta_m$ の値を求めよ．\n\\end{enumerate}",
+  "answer": "(1) 解説参照 (2) $E=\\dfrac{\\Delta m^2L}{2\\pi}$ (3) $N_e=\\dfrac{\\Delta m^2\\cos2\\theta}{2\\sqrt2G_FE}$ (4) $\\sin^22\\theta_m=1$",
+  "solution": "(1) $\\nu_\\mu$ の時間発展は $|\\nu(t)\\rangle=-\\sin\\theta\\,e^{-iE_1t}|\\nu_1\\rangle+\\cos\\theta\\,e^{-iE_2t}|\\nu_2\\rangle$．$\\langle\\nu_e|\\nu(t)\\rangle=\\sin\\theta\\cos\\theta\\,(e^{-iE_2t}-e^{-iE_1t})$ で，\n\\[ P=\\sin^22\\theta\\,\\sin^2\\dfrac{(E_2-E_1)t}{2} . \\]\n同じ運動量で $E_i\\simeq p+m_i^2/(2p)$，$t\\simeq L$ とすれば $(E_2-E_1)t/2=\\Delta m^2L/(4E)$ となり，与式を得る．\n\n(2) 第1極大は位相が $\\pi/2$：$\\Delta m^2L/(4E)=\\pi/2$ より\n\\[ \\boldsymbol{E=\\dfrac{\\Delta m^2L}{2\\pi}} . \\]\n実用単位では位相は $1.27\\,\\Delta m^2[\\mathrm{eV^2}]\\,L[\\mathrm{km}]/E[\\mathrm{GeV}]$ で，$L=295\\,\\mathrm{km}$，$\\Delta m^2=2.5\\times10^{-3}\\,\\mathrm{eV^2}$ なら $E\\approx0.6\\,\\mathrm{GeV}$．T2K 実験のビームエネルギーはこの値に合わせてある．\n\n(3) 共鳴条件を $N_e$ について解いて\n\\[ \\boldsymbol{N_e=\\dfrac{\\Delta m^2\\cos2\\theta}{2\\sqrt2G_FE}} . \\]\n太陽ニュートリノの値（$\\Delta m^2=7.5\\times10^{-5}\\,\\mathrm{eV^2}$，$\\theta=33.4^\\circ$，$E=10\\,\\mathrm{MeV}$）を入れて $(\\hbar c)^3$ で普通の単位に直すと $N_e\\approx1.2\\times10^{25}\\,\\mathrm{cm^{-3}}$（$\\approx19\\,N_A\\,\\mathrm{cm^{-3}}$）．太陽中心の電子密度は約 $100\\,N_A\\,\\mathrm{cm^{-3}}$ なので，高エネルギーの太陽ニュートリノは太陽内部で共鳴点を通過する．$E$ が小さいほど共鳴に必要な密度が高い．\n\n(4) 物質中では $\\tan2\\theta_m=\\dfrac{\\Delta m^2\\sin2\\theta}{\\Delta m^2\\cos2\\theta-2\\sqrt2G_FN_eE}$．共鳴点では分母が $0$ になるので $\\theta_m=45^\\circ$，$\\sin^22\\theta_m=\\boldsymbol{1}$（最大混合）．",
   "idea": "振動は質量固有状態間の位相差 $\\Delta m^2L/(4E)$ で起こる．物質効果は $\\nu_e$ の対角成分だけをずらし，対角成分がそろう点で最大混合になる．",
   "tags": "ニュートリノ振動,MSW効果,太陽ニュートリノ",
-  "input": "(1) 記述：P=sin^2 2θ sin^2(Δm^2 L/(4E))\n(2) E [GeV]：≈0.595\n(3) N_e [cm^-3]：≈1.17e25\n(4) 1"
+  "input": "(1) 記述：P=sin^2 2θ sin^2(Δm^2 L/(4E))\n(2) E：Δm^2 L/(2pi)\n(3) N_e：Δm^2 cos(2θ)/(2 sqrt(2) G_F E)\n(4) 1",
+  "id": "PP-03-005"
  },
  {
   "tid": "PP-16",
@@ -216,12 +231,13 @@
   "level": 1,
   "theme": "電弱パラメータから W・Z の質量を求める",
   "minutes": 10,
-  "q": "電弱理論の木のレベルの関係\n\\[ \\dfrac{G_F}{\\sqrt2}=\\dfrac{g^2}{8m_W^2},\\qquad e=g\\sin\\theta_W,\\qquad m_Z=\\dfrac{m_W}{\\cos\\theta_W},\\qquad v=\\left(\\sqrt2G_F\\right)^{-1/2} \\]\nを用いる．$G_F=1.1664\\times 10^{-5}\\,\\mathrm{GeV^{-2}}$，$\\alpha=e^2/(4\\pi)=1/128$（$m_Z$ でのはしり結合定数），$\\sin^2\\theta_W=0.231$ とする．\n\\begin{enumerate}\n\\item $m_W$ を求めよ．\n\\item $m_Z$ を求めよ．\n\\item ヒッグス場の真空期待値 $v$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $m_W\\approx 80.3\\,\\mathrm{GeV}$ (2) $m_Z\\approx 91.5\\,\\mathrm{GeV}$ (3) $v\\approx 246\\,\\mathrm{GeV}$",
-  "solution": "$g^2=e^2/\\sin^2\\theta_W=4\\pi\\alpha/\\sin^2\\theta_W$ を代入すると\n\\[ m_W^2=\\dfrac{\\sqrt2g^2}{8G_F}=\\dfrac{\\pi\\alpha}{\\sqrt2G_F\\sin^2\\theta_W} . \\]\n数値を入れて $m_W\\approx\\boldsymbol{80.3\\,\\mathrm{GeV}}$（実験値 $80.37\\,\\mathrm{GeV}$）．\n\n$m_Z=m_W/\\sqrt{1-0.231}\\approx\\boldsymbol{91.5\\,\\mathrm{GeV}}$（実験値 $91.19\\,\\mathrm{GeV}$．差は高次補正）．\n\n$v=(\\sqrt2G_F)^{-1/2}\\approx\\boldsymbol{246\\,\\mathrm{GeV}}$．$m_W=gv/2$ とも整合する．",
+  "q": "電弱理論の木のレベルの関係\n\\[ \\dfrac{G_F}{\\sqrt2}=\\dfrac{g^2}{8m_W^2},\\qquad e=g\\sin\\theta_W,\\qquad m_Z=\\dfrac{m_W}{\\cos\\theta_W},\\qquad v=\\left(\\sqrt2G_F\\right)^{-1/2} \\]\nを用いる．微細構造定数を $\\alpha=e^2/(4\\pi)$ とする（自然単位）．\n\\begin{enumerate}\n\\item $m_W$ を $\\alpha,\\ G_F,\\ \\theta_W$ で表せ．\n\\item $m_Z$ を $\\alpha,\\ G_F,\\ \\theta_W$ で表せ．\n\\item ヒッグス場の真空期待値 $v$ を $m_W$ と $g$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $m_W=\\sqrt{\\dfrac{\\pi\\alpha}{\\sqrt2G_F}}\\dfrac{1}{\\sin\\theta_W}$ (2) $m_Z=\\sqrt{\\dfrac{\\pi\\alpha}{\\sqrt2G_F}}\\dfrac{1}{\\sin\\theta_W\\cos\\theta_W}$ (3) $v=\\dfrac{2m_W}{g}$",
+  "solution": "(1) $g^2=e^2/\\sin^2\\theta_W=4\\pi\\alpha/\\sin^2\\theta_W$ を代入すると\n\\[ m_W^2=\\dfrac{\\sqrt2g^2}{8G_F}=\\dfrac{\\pi\\alpha}{\\sqrt2G_F\\sin^2\\theta_W},\\qquad \\boldsymbol{m_W=\\sqrt{\\frac{\\pi\\alpha}{\\sqrt2G_F}}\\frac{1}{\\sin\\theta_W}} . \\]\n\n(2) $m_Z=m_W/\\cos\\theta_W$ より\n\\[ \\boldsymbol{m_Z=\\sqrt{\\frac{\\pi\\alpha}{\\sqrt2G_F}}\\frac{1}{\\sin\\theta_W\\cos\\theta_W}} . \\]\n\n(3) $v^2=\\dfrac{1}{\\sqrt2G_F}=\\dfrac{8m_W^2}{2g^2}=\\dfrac{4m_W^2}{g^2}$ より\n\\[ \\boldsymbol{v=\\frac{2m_W}{g}} \\]\n（すなわち $m_W=gv/2$）．\n\n$G_F=1.1664\\times10^{-5}\\,\\mathrm{GeV^{-2}}$，$\\alpha=1/128$（$m_Z$ でのはしり結合定数），$\\sin^2\\theta_W=0.231$ を入れると $m_W\\approx80.3\\,\\mathrm{GeV}$，$m_Z\\approx91.5\\,\\mathrm{GeV}$，$v=(\\sqrt2G_F)^{-1/2}\\approx246\\,\\mathrm{GeV}$ となり，実験値（$80.37$，$91.19\\,\\mathrm{GeV}$）とよく合う（差は高次補正）．",
   "idea": "低エネルギーの $G_F$ と電磁結合・ワインバーグ角から，$W$・$Z$ の質量がほぼ決まってしまう．",
   "tags": "W粒子,Z粒子,ワインバーグ角,フェルミ定数",
-  "input": "(1) m_W [GeV]：≈80.3\n(2) m_Z [GeV]：≈91.5\n(3) v [GeV]：≈246"
+  "input": "(1) m_W：sqrt(pi α/(sqrt(2) G_F))/sin(θ_W)\n(2) m_Z：sqrt(pi α/(sqrt(2) G_F))/(sin(θ_W) cos(θ_W))\n(3) v：2 m_W/g",
+  "id": "PP-04-001"
  },
  {
   "tid": "PP-17",
@@ -230,12 +246,13 @@
   "level": 2,
   "theme": "Z 粒子の不可視幅とニュートリノの世代数",
   "minutes": 20,
-  "q": "$Z$ のフェルミオン対への部分幅は（色の因子と質量を無視して）\n\\[ \\Gamma(Z\\to f\\bar f)=\\dfrac{G_Fm_Z^3}{6\\sqrt2\\,\\pi}\\left(g_V^2+g_A^2\\right),\\qquad g_V=T_3-2Q\\sin^2\\theta_W,\\quad g_A=T_3 \\]\nである．$G_F=1.1664\\times 10^{-5}\\,\\mathrm{GeV^{-2}}$，$m_Z=91.19\\,\\mathrm{GeV}$，$\\sin^2\\theta_W=0.231$ とする．\n\\begin{enumerate}\n\\item ニュートリノ1種あたりの部分幅 $\\Gamma(Z\\to\\nu\\bar\\nu)$ を MeV 単位で求めよ．\n\\item $\\Gamma(Z\\to e^+e^-)$ を MeV 単位で求めよ．\n\\item LEP で測定された不可視幅 $\\Gamma_{\\mathrm{inv}}=499.0\\,\\mathrm{MeV}$ から，軽いニュートリノの種類数 $N_\\nu$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\Gamma_\\nu\\approx 166\\,\\mathrm{MeV}$ (2) $\\Gamma_e\\approx 83.4\\,\\mathrm{MeV}$ (3) $N_\\nu\\approx 3.01$",
-  "solution": "ニュートリノは $T_3=1/2$，$Q=0$ なので $g_V=g_A=1/2$，$g_V^2+g_A^2=1/2$．\n\\[ \\Gamma_\\nu=\\dfrac{G_Fm_Z^3}{12\\sqrt2\\,\\pi}\\approx\\boldsymbol{166\\,\\mathrm{MeV}} . \\]\n\n電子は $T_3=-1/2$，$Q=-1$ で $g_V=-1/2+2\\times 0.231=-0.038$，$g_A=-1/2$．$g_V^2+g_A^2\\approx 0.2514$ なので $\\Gamma_e=\\Gamma_\\nu\\times 0.2514/0.5\\approx\\boldsymbol{83.4\\,\\mathrm{MeV}}$（実験値 $83.9\\,\\mathrm{MeV}$）．$\\sin^2\\theta_W$ が $1/4$ に近いため $g_V$ は非常に小さい．\n\n$N_\\nu=\\Gamma_{\\mathrm{inv}}/\\Gamma_\\nu=499.0/165.9\\approx\\boldsymbol{3.01}$．質量が $m_Z/2$ より軽く，$Z$ と標準的に結合するニュートリノはちょうど3世代である．",
+  "q": "$Z$ のフェルミオン対への部分幅は（色の因子と質量を無視して，自然単位で）\n\\[ \\Gamma(Z\\to f\\bar f)=\\dfrac{G_Fm_Z^3}{6\\sqrt2\\,\\pi}\\left(g_V^2+g_A^2\\right),\\qquad g_V=T_3-2Q\\sin^2\\theta_W,\\quad g_A=T_3 \\]\nである．$s=\\sin^2\\theta_W$ とおく．\n\\begin{enumerate}\n\\item ニュートリノ1種あたりの部分幅 $\\Gamma_\\nu=\\Gamma(Z\\to\\nu\\bar\\nu)$ を $G_F,\\ m_Z$ で表せ．\n\\item $\\Gamma_e=\\Gamma(Z\\to e^+e^-)$ を $G_F,\\ m_Z,\\ s$ で表せ．\n\\item LEP で測定された不可視幅 $\\Gamma_0$ から，軽いニュートリノの種類数 $N_\\nu$ を求める式を $\\Gamma_0,\\ G_F,\\ m_Z$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\Gamma_\\nu=\\dfrac{G_Fm_Z^3}{12\\sqrt2\\,\\pi}$ (2) $\\Gamma_e=\\dfrac{G_Fm_Z^3}{6\\sqrt2\\,\\pi}\\left(\\left(2s-\\dfrac12\\right)^2+\\dfrac14\\right)$ (3) $N_\\nu=\\dfrac{12\\sqrt2\\,\\pi\\Gamma_0}{G_Fm_Z^3}$",
+  "solution": "(1) ニュートリノは $T_3=1/2$，$Q=0$ なので $g_V=g_A=1/2$，$g_V^2+g_A^2=1/2$．\n\\[ \\boldsymbol{\\Gamma_\\nu=\\dfrac{G_Fm_Z^3}{12\\sqrt2\\,\\pi}} . \\]\n\n(2) 電子は $T_3=-1/2$，$Q=-1$ で $g_V=-\\dfrac12+2s$，$g_A=-\\dfrac12$．\n\\[ \\boldsymbol{\\Gamma_e=\\dfrac{G_Fm_Z^3}{6\\sqrt2\\,\\pi}\\left(\\left(2s-\\frac12\\right)^2+\\frac14\\right)} . \\]\n$s=0.231$ は $1/4$ に近いため $g_V$ は非常に小さく，$\\Gamma_e\\approx\\Gamma_\\nu/2$ となる．\n\n(3) 不可視幅をすべてニュートリノ対とすれば $\\Gamma_0=N_\\nu\\Gamma_\\nu$ なので\n\\[ \\boldsymbol{N_\\nu=\\dfrac{12\\sqrt2\\,\\pi\\Gamma_0}{G_Fm_Z^3}} . \\]\n$G_F=1.1664\\times10^{-5}\\,\\mathrm{GeV^{-2}}$，$m_Z=91.19\\,\\mathrm{GeV}$ では $\\Gamma_\\nu\\approx166\\,\\mathrm{MeV}$，$\\Gamma_e\\approx83\\,\\mathrm{MeV}$（実験値 $83.9\\,\\mathrm{MeV}$）．測定値 $\\Gamma_0=499.0\\,\\mathrm{MeV}$ から $N_\\nu\\approx3.01$ が得られ，質量が $m_Z/2$ より軽く $Z$ と標準的に結合するニュートリノはちょうど3世代である．",
   "idea": "$Z$ の幅は結合定数 $g_V,\\ g_A$ の数え上げ．見えない崩壊幅をニュートリノ1種の幅で割ると世代数が出る．",
   "tags": "Z粒子,崩壊幅,ニュートリノ世代数,LEP",
-  "input": "(1) Γ [MeV]：≈166\n(2) Γ [MeV]：≈83.4\n(3) N：≈3.01"
+  "input": "(1) Γ_ν：G_F m_Z^3/(12 sqrt(2) pi)\n(2) Γ_e：G_F m_Z^3/(6 sqrt(2) pi) ((2s-1/2)^2+1/4)\n(3) N：12 sqrt(2) pi Γ_0/(G_F m_Z^3)",
+  "id": "PP-04-002"
  },
  {
   "tid": "PP-18",
@@ -244,12 +261,13 @@
   "level": 2,
   "theme": "R 比とクォークの色の数",
   "minutes": 15,
-  "q": "電子・陽電子消滅 $e^+e^-\\to\\mu^+\\mu^-$ の全断面積は，質量を無視すると $\\sigma_{\\mu\\mu}=\\dfrac{4\\pi\\alpha^2}{3s}$ である．$\\alpha=1/137.036$，$(\\hbar c)^2=0.3894\\,\\mathrm{mb\\,GeV^2}$ とする．\n\\begin{enumerate}\n\\item $\\sqrt{s}=5\\,\\mathrm{GeV}$ での $\\sigma_{\\mu\\mu}$ を nb 単位で求めよ．\n\\item $R=\\sigma(e^+e^-\\to\\mathrm{hadrons})/\\sigma_{\\mu\\mu}$ を，クォークの色の数を $3$ として，$u,\\ d,\\ s,\\ c$ が生成可能なエネルギー領域（約 $4\\sim 10\\,\\mathrm{GeV}$）で求めよ（QCD 補正は無視）．\n\\item $b$ クォーク対の生成しきい値より上（$t$ の生成しきい値より下）での $R$ を求めよ．\n\\item (1)(2) から $\\sqrt{s}=5\\,\\mathrm{GeV}$ でのハドロン生成断面積を nb 単位で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\sigma_{\\mu\\mu}\\approx 3.47\\,\\mathrm{nb}$ (2) $R=\\dfrac{10}{3}$ (3) $R=\\dfrac{11}{3}$ (4) $\\sigma\\approx 11.6\\,\\mathrm{nb}$",
-  "solution": "$\\sigma_{\\mu\\mu}=\\dfrac{4\\pi\\alpha^2}{3s}(\\hbar c)^2=\\dfrac{86.8\\,\\mathrm{nb\\,GeV^2}}{s}$．$s=25\\,\\mathrm{GeV^2}$ で $\\sigma_{\\mu\\mu}\\approx\\boldsymbol{3.47\\,\\mathrm{nb}}$．\n\nクォーク対の断面積は電荷 $Q_q$ の2乗と色の数 $N_c$ に比例するので $R=N_c\\sum_qQ_q^2$．$u,d,s,c$ では $3\\left(\\tfrac49+\\tfrac19+\\tfrac19+\\tfrac49\\right)=\\boldsymbol{\\dfrac{10}{3}}$．\n\n$b$ が加わると $\\tfrac19$ だけ増えて $R=3\\times\\tfrac{11}{9}=\\boldsymbol{\\dfrac{11}{3}}$．測定値（QCD 補正 $1+\\alpha_s/\\pi$ で約 4% 大きい）とよく合い，$N_c=3$ の直接的な証拠となる．\n\n$\\sigma_{\\mathrm{had}}=R\\,\\sigma_{\\mu\\mu}=\\tfrac{10}{3}\\times 3.47\\,\\mathrm{nb}\\approx\\boldsymbol{11.6\\,\\mathrm{nb}}$．",
+  "q": "電子・陽電子消滅 $e^+e^-\\to\\mu^+\\mu^-$ の全断面積は，質量を無視すると $\\sigma_{\\mu\\mu}=\\dfrac{4\\pi\\alpha^2}{3s}$ である（自然単位．$s$ は重心系のエネルギーの2乗，$\\alpha$ は微細構造定数）．\n\\begin{enumerate}\n\\item 重心系のエネルギー $\\sqrt s$ を 2 倍にすると $\\sigma_{\\mu\\mu}$ は何倍になるか．\n\\item $R=\\sigma(e^+e^-\\to\\mathrm{hadrons})/\\sigma_{\\mu\\mu}$ を，クォークの色の数を $3$ として，$u,\\ d,\\ s,\\ c$ が生成可能なエネルギー領域（約 $4\\sim 10\\,\\mathrm{GeV}$）で求めよ（QCD 補正は無視）．\n\\item $b$ クォーク対の生成しきい値より上（$t$ の生成しきい値より下）での $R$ を求めよ．\n\\item (2) のエネルギー領域でのハドロン生成断面積を $\\alpha,\\ s$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\dfrac14$ (2) $R=\\dfrac{10}{3}$ (3) $R=\\dfrac{11}{3}$ (4) $\\sigma=\\dfrac{40\\pi\\alpha^2}{9s}$",
+  "solution": "(1) $\\sigma_{\\mu\\mu}\\propto1/s=1/(\\sqrt s)^2$ なので $\\boldsymbol{\\dfrac14}$ 倍．断面積は「波長の2乗」$\\sim1/s$ で小さくなる．\n\n(2) クォーク対の断面積は電荷 $Q_q$ の2乗と色の数 $N_c$ に比例するので $R=N_c\\sum_qQ_q^2$．$u,d,s,c$ では $3\\left(\\tfrac49+\\tfrac19+\\tfrac19+\\tfrac49\\right)=\\boldsymbol{\\dfrac{10}{3}}$．\n\n(3) $b$ が加わると $\\tfrac19$ だけ増えて $R=3\\times\\tfrac{11}{9}=\\boldsymbol{\\dfrac{11}{3}}$．測定値（QCD 補正 $1+\\alpha_s/\\pi$ で約 4% 大きい）とよく合い，$N_c=3$ の直接的な証拠となる．\n\n(4) $\\sigma_{\\mathrm{had}}=R\\,\\sigma_{\\mu\\mu}=\\dfrac{10}{3}\\cdot\\dfrac{4\\pi\\alpha^2}{3s}=\\boldsymbol{\\dfrac{40\\pi\\alpha^2}{9s}}$．$(\\hbar c)^2=0.3894\\,\\mathrm{mb\\,GeV^2}$ で普通の単位に直すと，$\\sqrt s=5\\,\\mathrm{GeV}$ では $\\sigma_{\\mu\\mu}\\approx3.5\\,\\mathrm{nb}$，$\\sigma_{\\mathrm{had}}\\approx12\\,\\mathrm{nb}$ である．",
   "idea": "ハドロン生成はクォーク対生成で近似でき，各クォークは電荷の2乗×色の数で効く．",
   "tags": "R比,色の自由度,電子陽電子消滅",
-  "input": "(1) σ [nb]：≈3.47\n(2) R：10/3\n(3) R：11/3\n(4) σ [nb]：≈11.6"
+  "input": "(1) 1/4\n(2) R：10/3\n(3) R：11/3\n(4) σ：40 pi α^2/(9s)",
+  "id": "PP-04-003"
  },
  {
   "tid": "PP-19",
@@ -258,12 +276,13 @@
   "level": 3,
   "theme": "ヒッグスポテンシャルと湯川結合",
   "minutes": 25,
-  "q": "ヒッグス2重項 $\\phi$ のポテンシャルを $V=-\\mu^2\\phi^\\dagger\\phi+\\lambda(\\phi^\\dagger\\phi)^2$（$\\mu^2>0,\\ \\lambda>0$）とし，ユニタリーゲージで $\\phi=\\dfrac{1}{\\sqrt2}\\begin{pmatrix}0\\\\ v+h\\end{pmatrix}$ と書く．\n\\begin{enumerate}\n\\item $v$ と，ヒッグス粒子 $h$ の質量 $m_H$ を $\\mu$ で表せ（$v$ は $\\mu,\\ \\lambda$ で表す）．$m_H$ についての答えを入力せよ．\n\\item $m_H=125.1\\,\\mathrm{GeV}$，$v=246.2\\,\\mathrm{GeV}$ として $\\lambda$ を求めよ．\n\\item 湯川相互作用からフェルミオン質量は $m_f=y_fv/\\sqrt2$ となる．$m_t=172.7\\,\\mathrm{GeV}$ としてトップの湯川結合 $y_t$ を求めよ．\n\\item $h\\to f\\bar f$ の崩壊幅は $N_cm_f^2$ に比例する（位相空間の差は無視）．$m_b=2.8\\,\\mathrm{GeV}$（$m_H$ スケールでの値），$m_\\tau=1.777\\,\\mathrm{GeV}$ として $\\Gamma(h\\to b\\bar b)/\\Gamma(h\\to\\tau^+\\tau^-)$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $v=\\dfrac{\\mu}{\\sqrt{\\lambda}}$，$m_H=\\sqrt{2}\\mu$ (2) $\\lambda\\approx 0.129$ (3) $y_t\\approx 0.992$ (4) $\\approx 7.45$",
-  "solution": "$\\phi^\\dagger\\phi=(v+h)^2/2$ を代入すると $V=-\\dfrac{\\mu^2}{2}(v+h)^2+\\dfrac{\\lambda}{4}(v+h)^4$．$h$ の1次の項が消える条件は $-\\mu^2v+\\lambda v^3=0$ で $\\boldsymbol{v=\\mu/\\sqrt{\\lambda}}$．$h^2$ の係数は $-\\mu^2/2+\\tfrac{3}{2}\\lambda v^2=\\mu^2$ で，これが $m_H^2/2$ に等しいので\n\\[ \\boldsymbol{m_H=\\sqrt{2}\\,\\mu},\\qquad m_H^2=2\\lambda v^2 . \\]\n\n$\\lambda=m_H^2/(2v^2)=125.1^2/(2\\times 246.2^2)\\approx\\boldsymbol{0.129}$．ヒッグス質量の測定によって初めて自己結合が決まった．\n\n$y_t=\\sqrt2m_t/v\\approx\\boldsymbol{0.992}$．トップの湯川結合がほぼ $1$ であることは，真空の安定性の議論などで重要になる．\n\n$\\dfrac{\\Gamma(b\\bar b)}{\\Gamma(\\tau\\tau)}=3\\left(\\dfrac{m_b}{m_\\tau}\\right)^2\\approx\\boldsymbol{7.45}$（実際の分岐比は $0.58/0.063\\approx 9$ で，QCD 補正などが効く）．ここで $m_b$ に $m_H$ スケールのはしり質量を使うのが要点で，$4.2\\,\\mathrm{GeV}$ を使うと大きく過大評価する．",
+  "q": "ヒッグス2重項 $\\phi$ のポテンシャルを $V=-\\mu^2\\phi^\\dagger\\phi+\\lambda(\\phi^\\dagger\\phi)^2$（$\\mu^2>0,\\ \\lambda>0$）とし，ユニタリーゲージで $\\phi=\\dfrac{1}{\\sqrt2}\\begin{pmatrix}0\\\\ v+h\\end{pmatrix}$ と書く．\n\\begin{enumerate}\n\\item $v$ と，ヒッグス粒子 $h$ の質量 $m_H$ を $\\mu$ で表せ（$v$ は $\\mu,\\ \\lambda$ で表す）．$m_H$ についての答えを入力せよ．\n\\item 自己結合 $\\lambda$ を $m_H,\\ v$ で表せ．\n\\item 湯川相互作用からフェルミオン質量は $m_f=y_fv/\\sqrt2$ となる．トップの質量を $m_t$ として湯川結合 $y_t$ を $m_t,\\ v$ で表せ．\n\\item $h\\to f\\bar f$ の崩壊幅は $N_cm_f^2$ に比例する（$N_c$ は色の数．位相空間の差は無視）．$b$ クォークの質量（$m_H$ スケールでの値）を $m_b$，$\\tau$ の質量を $m_\\tau$ として $\\Gamma(h\\to b\\bar b)/\\Gamma(h\\to\\tau^+\\tau^-)$ を表せ．\n\\end{enumerate}",
+  "answer": "(1) $v=\\dfrac{\\mu}{\\sqrt{\\lambda}}$，$m_H=\\sqrt{2}\\mu$ (2) $\\lambda=\\dfrac{m_H^2}{2v^2}$ (3) $y_t=\\dfrac{\\sqrt2m_t}{v}$ (4) $\\dfrac{3m_b^2}{m_\\tau^2}$",
+  "solution": "(1) $\\phi^\\dagger\\phi=(v+h)^2/2$ を代入すると $V=-\\dfrac{\\mu^2}{2}(v+h)^2+\\dfrac{\\lambda}{4}(v+h)^4$．$h$ の1次の項が消える条件は $-\\mu^2v+\\lambda v^3=0$ で $\\boldsymbol{v=\\mu/\\sqrt{\\lambda}}$．$h^2$ の係数は $-\\mu^2/2+\\tfrac{3}{2}\\lambda v^2=\\mu^2$ で，これが $m_H^2/2$ に等しいので\n\\[ \\boldsymbol{m_H=\\sqrt{2}\\,\\mu},\\qquad m_H^2=2\\lambda v^2 . \\]\n\n(2) $\\boldsymbol{\\lambda=\\dfrac{m_H^2}{2v^2}}$．$m_H=125.1\\,\\mathrm{GeV}$，$v=246.2\\,\\mathrm{GeV}$ では $\\lambda\\approx0.13$．ヒッグス質量の測定によって初めて自己結合が決まった．\n\n(3) $\\boldsymbol{y_t=\\dfrac{\\sqrt2m_t}{v}}$．$m_t=172.7\\,\\mathrm{GeV}$ では $y_t\\approx0.99$．トップの湯川結合がほぼ $1$ であることは，真空の安定性の議論などで重要になる．\n\n(4) $b$ は $N_c=3$，$\\tau$ は $N_c=1$ なので\n\\[ \\frac{\\Gamma(b\\bar b)}{\\Gamma(\\tau\\tau)}=\\boldsymbol{\\frac{3m_b^2}{m_\\tau^2}} . \\]\n$m_b=2.8\\,\\mathrm{GeV}$，$m_\\tau=1.777\\,\\mathrm{GeV}$ では約 $7.4$（実際の分岐比は $0.58/0.063\\approx9$ で，QCD 補正などが効く）．ここで $m_b$ に $m_H$ スケールのはしり質量を使うのが要点で，$4.2\\,\\mathrm{GeV}$ を使うと大きく過大評価する．",
   "idea": "ポテンシャルを真空のまわりで展開し，1次項が消える条件で $v$，2次項から質量が出る．ヒッグスとの結合はすべて質量に比例する．",
   "tags": "ヒッグス機構,自発的対称性の破れ,湯川結合",
-  "input": "(1) m_H：sqrt(2) μ\n(2) λ：≈0.129\n(3) y_t：≈0.992\n(4) 比：≈7.45"
+  "input": "(1) m_H：sqrt(2) μ\n(2) λ：m_H^2/(2v^2)\n(3) y_t：sqrt(2) m_t/v\n(4) 比：3 m_b^2/m_τ^2",
+  "id": "PP-04-004"
  },
  {
   "tid": "PP-20",
@@ -277,6 +296,7 @@
   "solution": "$[\\mathrm{SU}(2)]^2\\mathrm{U}(1)$ には SU(2) 2重項だけが寄与する．$Q_L$ は3色あるので\n\\[ 3Y_Q+Y_L=0,\\qquad Y_L=\\boldsymbol{-\\dfrac{1}{2}} . \\]\n\n$[\\mathrm{SU}(3)]^2\\mathrm{U}(1)$：色3重項は $Q_L$（2成分），$u_R,\\ d_R$ なので $2Y_Q-Y_u-Y_d=0$，すなわち $Y_u+Y_d=1/3$．重力混合異常は全ワイル場の $Y$ の和：\n\\[ 6Y_Q+2Y_L-3Y_u-3Y_d-Y_e=0 . \\]\n$6Y_Q=1$，$2Y_L=-1$，$3(Y_u+Y_d)=1$ を入れて $Y_e=\\boldsymbol{-1}$．\n\n$[\\mathrm{U}(1)]^3$：$6Y_Q^3+2Y_L^3-3(Y_u^3+Y_d^3)-Y_e^3=0$ より $\\dfrac{1}{36}-\\dfrac14-3(Y_u^3+Y_d^3)+1=0$，$Y_u^3+Y_d^3=\\dfrac{7}{27}$．$s=Y_u+Y_d=1/3$，$p=Y_uY_d$ とすると $s^3-3ps=7/27$ から $p=-2/9$．$t^2-t/3-2/9=0$ を解いて\n\\[ (Y_u,Y_d)=\\boldsymbol{\\left(\\dfrac23,\\ -\\dfrac13\\right)} . \\]\n\n$Q=T_3+Y$ から $Q_u=1/2+1/6=2/3$，$Q_d=-1/2+1/6=-1/3$（右巻きの値と一致し，電荷がカイラリティによらない），$Q_e=-1$．陽子の電荷は $2\\cdot\\tfrac23-\\tfrac13=1$ なので陽子と電子の電荷の和は $\\boldsymbol{0}$．原子が電気的に中性であることが，量子的整合性（異常の相殺）から導かれる．",
   "idea": "三角異常の相殺は各ゲージ群の組ごとの1次式・3次式の条件を与え，1世代のハイパーチャージを（規格化を除いて）一意に決める．",
   "tags": "ゲージ異常,ハイパーチャージ,電荷の量子化,標準模型",
-  "input": "(1) Y_L：-1/2\n(2) Y_e：-1\n(3) (2/3, -1/3)\n(4) 0"
+  "input": "(1) Y_L：-1/2\n(2) Y_e：-1\n(3) (2/3, -1/3)\n(4) 0",
+  "id": "PP-04-005"
  }
 ]

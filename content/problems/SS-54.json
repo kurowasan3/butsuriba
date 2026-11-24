@@ -9,24 +9,24 @@
   "theme": "デュロン＝プティの法則とダイヤモンドの小さな比熱",
   "topic": "デュロン＝プティの法則とダイヤモンドの小さな比熱",
   "statement": {
-   "tex": "固体の原子は格子点のまわりで3方向に振動しており，1モルの固体は $3N_A$ 個の調和振動子とみなせる．古典論では振動子1個の平均エネルギーは $k_BT$ であるが，振動子のエネルギーが $\\hbar\\omega$ 単位でとびとびであることを考えると（アインシュタイン模型），1個あたりの平均エネルギーは $\\bar E=\\dfrac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}$ となる．このとき1モルの比熱は\n\\[ C=3R\\,\\frac{x^2e^x}{(e^x-1)^2},\\qquad x=\\frac{\\hbar\\omega}{k_BT} \\]\nである．気体定数は $R=8.31\\,\\mathrm{J/(mol\\,K)}$ とする．\n\\begin{enumerate}\n\\item 古典論での1モルの比熱 $C=dE/dT$ を数値で求めよ．\n\\item $k_BT=\\hbar\\omega$ のとき，$C/(3R)$ を求めよ．\n\\item ダイヤモンドは $\\hbar\\omega/k_B=1300\\,\\mathrm{K}$ である．$T=300\\,\\mathrm{K}$ での比熱を求めよ．\n\\end{enumerate}"
+   "tex": "固体の原子は格子点のまわりで3方向に振動しており，1モルの固体は $3N_A$ 個の調和振動子とみなせる．古典論では振動子1個の平均エネルギーは $k_BT$ であるが，振動子のエネルギーが $\\hbar\\omega$ 単位でとびとびであることを考えると（アインシュタイン模型），1個あたりの平均エネルギーは $\\bar E=\\dfrac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}$ となる．このとき1モルの比熱は\n\\[ C=3R\\,\\frac{x^2e^x}{(e^x-1)^2},\\qquad x=\\frac{\\hbar\\omega}{k_BT}=\\frac{T_E}{T} \\]\nである．ここで $R$ は気体定数，$T_E=\\hbar\\omega/k_B$ はアインシュタイン温度である．\n\\begin{enumerate}\n\\item 古典論での1モルの比熱 $C=dE/dT$ を $R$ で表せ．\n\\item $k_BT=\\hbar\\omega$ のとき，$C/(3R)$ を求めよ．\n\\item 低温 $T\\ll T_E$ での比熱の近似式を $R,T_E,T$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $C=3R\\approx24.9\\,\\mathrm{J/(mol\\,K)}$ (2) $\\dfrac{e}{(e-1)^2}$ (3) $C\\approx6.3\\,\\mathrm{J/(mol\\,K)}$"
+   "tex": "(1) $C=3R$ (2) $\\dfrac{e}{(e-1)^2}$ (3) $C\\approx3R\\left(\\dfrac{T_E}{T}\\right)^2e^{-T_E/T}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $E=3N_Ak_BT=3RT$ より $C=3R\\approx\\boldsymbol{24.9\\,\\mathrm{J/(mol\\,K)}}$（デュロン＝プティの法則）．多くの金属で室温の比熱はこの値に近い．\n\n(2) $x=1$ を代入して $\\boldsymbol{\\dfrac{e}{(e-1)^2}}\\approx0.92$．$k_BT$ が $\\hbar\\omega$ と同じくらいなら古典値の9割程度である．\n\n(3) $x=1300/300=4.33$．$\\dfrac{x^2e^x}{(e^x-1)^2}=0.253$ なので $C\\approx3\\times8.31\\times0.253\\approx\\boldsymbol{6.3\\,\\mathrm{J/(mol\\,K)}}$．\n\nダイヤモンドは原子が軽く結合が強いので $\\omega$ が大きく，室温でも振動が十分に励起されない（量子力学的な「凍結」）．これが室温でデュロン＝プティの法則が破れる理由である．次は，振動数の分布を考えて低温で $C\\propto T^3$ を導くデバイ模型を学ぶ．"
+    "tex": "(1) $E=3N_Ak_BT=3RT$ より $\\boldsymbol{C=3R}$（デュロン＝プティの法則）．多くの金属で室温の比熱はこの値に近い．\n\n(2) $x=1$ を代入して $\\boldsymbol{\\dfrac{e}{(e-1)^2}}$．これは 1 より少し小さく，$k_BT$ が $\\hbar\\omega$ と同じくらいなら古典値の9割程度である．\n\n(3) $T\\ll T_E$ では $x\\gg1$ なので $e^x-1\\approx e^x$ とでき，\n\\[ C\\approx3R\\,\\frac{x^2e^x}{e^{2x}}=\\boldsymbol{3R\\left(\\frac{T_E}{T}\\right)^2e^{-T_E/T}}. \\]\n指数関数 $e^{-T_E/T}$ のために，$T$ が $T_E$ より十分低いと比熱は古典値 $3R$ よりずっと小さくなる．\n\nダイヤモンドは原子が軽く結合が強いので $\\omega$ が大きく（$T_E$ が室温より数倍高い），室温でも振動が十分に励起されない（量子力学的な「凍結」）．これが室温でデュロン＝プティの法則が破れる理由である．次は，振動数の分布を考えて低温で $C\\propto T^3$ を導くデバイ模型を学ぶ．"
    }
   ],
   "idea": {
-   "tex": "$k_BT\\gg\\hbar\\omega$ なら古典的な $3R$，$k_BT\\lesssim\\hbar\\omega$ では振動が励起されにくく比熱が下がる．"
+   "tex": "$k_BT\\gg\\hbar\\omega$ なら古典的な $3R$，$k_BT\\ll\\hbar\\omega$ では振動が励起されにくく比熱が $e^{-T_E/T}$ で小さくなる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) C [J/(mol K)]：≈24.9\n(2) e/(e-1)^2\n(3) C [J/(mol K)]：≈6.3 (3%)"
+   "spec": "(1) C：3R\n(2) e/(e-1)^2\n(3) C：3R (T_E/T)^2 exp(-T_E/T)"
   },
   "methods": [],
   "tags": [
@@ -57,16 +57,16 @@
   "theme": "モードの数え上げと音速から求めるデバイ温度",
   "topic": "モードの数え上げと音速から求めるデバイ温度",
   "statement": {
-   "tex": "体積 $V$ の結晶中を伝わる音波（格子振動）を考える．波数ベクトル $\\boldsymbol{k}$ の許される値は，$\\boldsymbol{k}$ 空間で体積 $(2\\pi)^3/V$ に1つずつある．各 $\\boldsymbol{k}$ に偏りの違う3つの波があり，振動のモードの総数は原子数 $N$ の3倍でなければならない．そこで $|\\boldsymbol{k}|<k_D$ の球の内側だけにモードがあるとして $k_D$ を決める（デバイ模型）．\n\\begin{enumerate}\n\\item 原子の数密度 $n=N/V$ を用いて $k_D$ を表せ．\n\\item 音速 $v$ を一定とし，最大の振動数 $\\omega_D=vk_D$ に対してデバイ温度 $\\Theta_D=\\hbar\\omega_D/k_B$ を求めよ．$n=8.5\\times10^{28}\\,\\mathrm{m^{-3}}$，$v=3.0\\times10^3\\,\\mathrm{m/s}$，$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$k_B=1.381\\times10^{-23}\\,\\mathrm{J/K}$ とする．\n\\end{enumerate}"
+   "tex": "体積 $V$ の結晶中を伝わる音波（格子振動）を考える．波数ベクトル $\\boldsymbol{k}$ の許される値は，$\\boldsymbol{k}$ 空間で体積 $(2\\pi)^3/V$ に1つずつある．各 $\\boldsymbol{k}$ に偏りの違う3つの波があり，振動のモードの総数は原子数 $N$ の3倍でなければならない．そこで $|\\boldsymbol{k}|<k_D$ の球の内側だけにモードがあるとして $k_D$ を決める（デバイ模型）．\n\\begin{enumerate}\n\\item 原子の数密度 $n=N/V$ を用いて $k_D$ を表せ．\n\\item 音速 $v$ を一定とし，最大の振動数 $\\omega_D=vk_D$ に対してデバイ温度 $\\Theta_D=\\hbar\\omega_D/k_B$ を $n,v,\\hbar,k_B$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $k_D=(6\\pi^2n)^{1/3}$ (2) $\\Theta_D\\approx393\\,\\mathrm{K}$"
+   "tex": "(1) $k_D=(6\\pi^2n)^{1/3}$ (2) $\\Theta_D=\\dfrac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 球の内側の $\\boldsymbol{k}$ の数は $\\dfrac{4\\pi k_D^3/3}{(2\\pi)^3/V}=\\dfrac{Vk_D^3}{6\\pi^2}$．これに3を掛けて $3N$ に等しいとおくと\n\\[ k_D^3=6\\pi^2\\frac NV\\quad\\Rightarrow\\quad\\boldsymbol{k_D=(6\\pi^2n)^{1/3}} \\]\n\n(2) $k_D=(6\\pi^2\\times8.5\\times10^{28})^{1/3}=1.71\\times10^{10}\\,\\mathrm{m^{-1}}$．\n\\[ \\Theta_D=\\frac{\\hbar vk_D}{k_B}=\\frac{1.055\\times10^{-34}\\times3.0\\times10^3\\times1.71\\times10^{10}}{1.381\\times10^{-23}}\\approx\\boldsymbol{393\\,\\mathrm{K}} \\]\n（銅の実測値 $343\\,\\mathrm{K}$ と同程度．）\n\n$k_D$ は原子間隔 $\\sim n^{-1/3}$ の逆数程度で，波長が原子間隔より短い波はないことを表している．次は，このモード分布を使って比熱を計算し，低温で $C\\propto T^3$ となることを学ぶ．"
+    "tex": "(1) 球の内側の $\\boldsymbol{k}$ の数は $\\dfrac{4\\pi k_D^3/3}{(2\\pi)^3/V}=\\dfrac{Vk_D^3}{6\\pi^2}$．これに3を掛けて $3N$ に等しいとおくと\n\\[ k_D^3=6\\pi^2\\frac NV\\quad\\Rightarrow\\quad\\boldsymbol{k_D=(6\\pi^2n)^{1/3}} \\]\n\n(2) $\\omega_D=vk_D$ を代入して\n\\[ \\Theta_D=\\frac{\\hbar vk_D}{k_B}=\\boldsymbol{\\frac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}}. \\]\n音速が速い（結合が強く原子が軽い）ほど，また原子が密に詰まっているほどデバイ温度は高い．金属の典型的な値（$n\\sim10^{29}\\,\\mathrm{m^{-3}}$，$v\\sim\\mathrm{km/s}$）を入れると数百 K になる．\n\n$k_D$ は原子間隔 $\\sim n^{-1/3}$ の逆数程度で，波長が原子間隔より短い波はないことを表している．次は，このモード分布を使って比熱を計算し，低温で $C\\propto T^3$ となることを学ぶ．"
    }
   ],
   "idea": {
@@ -74,7 +74,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) (6pi^2 n)^(1/3)\n(2) Θ_D [K]：≈393"
+   "spec": "(1) (6pi^2 n)^(1/3)\n(2) Θ_D：hbar v (6pi^2 n)^(1/3)/k_B"
   },
   "methods": [],
   "tags": [
@@ -105,16 +105,16 @@
   "theme": "フォノン気体の熱伝導と平均自由行程",
   "topic": "フォノン気体の熱伝導と平均自由行程",
   "statement": {
-   "tex": "絶縁体の熱は，格子振動の波（フォノン）が運ぶ．フォノンを気体分子のような粒子とみなすと，熱伝導率 $\\kappa$（熱流の大きさ $=\\kappa\\times$ 温度勾配）は\n\\[ \\kappa=\\frac{1}{3}Cv\\ell \\]\nと表される．ここで $C$ は単位体積あたりの熱容量，$v$ はフォノンの速さ（音速），$\\ell$ はフォノンが散乱されるまでに進む平均の距離（平均自由行程）である．\n\\begin{enumerate}\n\\item 室温のケイ素で $\\kappa=150\\,\\mathrm{W/(m\\cdot K)}$，$C=1.66\\times10^6\\,\\mathrm{J/(m^3\\cdot K)}$，$v=6.4\\times10^3\\,\\mathrm{m/s}$ である．$\\ell$ を求めよ．\n\\item 十分低温では，フォノンどうしの散乱がほとんど起きず，$\\ell$ は試料の大きさ程度で一定になる．一方，熱容量は $C\\propto T^3$ となる．このとき $\\kappa\\propto T^n$ の $n$ を求めよ．\n\\item (1) の $\\ell$ は，格子定数 $0.54\\,\\mathrm{nm}$ の何倍か．\n\\end{enumerate}"
+   "tex": "絶縁体の熱は，格子振動の波（フォノン）が運ぶ．フォノンを気体分子のような粒子とみなすと，熱伝導率 $\\kappa$（熱流の大きさ $=\\kappa\\times$ 温度勾配）は\n\\[ \\kappa=\\frac{1}{3}Cv\\ell \\]\nと表される．ここで $C$ は単位体積あたりの熱容量，$v$ はフォノンの速さ（音速），$\\ell$ はフォノンが散乱されるまでに進む平均の距離（平均自由行程）である．\n\\begin{enumerate}\n\\item 測定された $\\kappa,C,v$ から $\\ell$ を求める式を書け．\n\\item 十分低温では，フォノンどうしの散乱がほとんど起きず，$\\ell$ は試料の大きさ程度で一定になる．一方，熱容量は $C\\propto T^3$ となる．このとき $\\kappa\\propto T^n$ の $n$ を求めよ．\n\\item (1) の $\\ell$ は，格子定数 $a$ の何倍か．$\\kappa,C,v,a$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\ell\\approx4.2\\times10^{-8}\\,\\mathrm{m}$\n(2) $n=3$\n(3) $\\approx78$ 倍"
+   "tex": "(1) $\\ell=\\dfrac{3\\kappa}{Cv}$\n(2) $n=3$\n(3) $\\dfrac{\\ell}{a}=\\dfrac{3\\kappa}{Cva}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\ell=\\dfrac{3\\kappa}{Cv}=\\dfrac{3\\times150}{1.66\\times10^6\\times6.4\\times10^3}\\,\\mathrm{m}\\approx\\boldsymbol{4.2\\times10^{-8}\\,\\mathrm{m}}$（約 $40\\,\\mathrm{nm}$）．\n\n(2) $v$ と $\\ell$ が一定なら $\\kappa\\propto C\\propto T^3$．$\\boldsymbol{n=3}$．\n\n(3) $\\dfrac{4.2\\times10^{-8}}{0.54\\times10^{-9}}\\approx\\boldsymbol{78}$ 倍．フォノンは原子数十個分の距離を進んで散乱される．\n\n温度を上げるとフォノンの数が増え，フォノンどうしの衝突で $\\ell$ が短くなるので，$\\kappa$ は低温で $T^3$ で増えたあと，極大をもって減少する．次は，フォノンの数や熱容量を量子統計（デバイ模型）で計算する方法を学ぶ．"
+    "tex": "(1) $\\kappa=\\frac13Cv\\ell$ を $\\ell$ について解いて $\\boldsymbol{\\ell=\\dfrac{3\\kappa}{Cv}}$．室温のケイ素の値を入れると約 $40\\,\\mathrm{nm}$ になる．\n\n(2) $v$ と $\\ell$ が一定なら $\\kappa\\propto C\\propto T^3$．$\\boldsymbol{n=3}$．\n\n(3) $\\boldsymbol{\\dfrac{\\ell}{a}=\\dfrac{3\\kappa}{Cva}}$．室温のケイ素ではこれが数十になり，フォノンは原子数十個分の距離を進んで散乱される．\n\n温度を上げるとフォノンの数が増え，フォノンどうしの衝突で $\\ell$ が短くなるので，$\\kappa$ は低温で $T^3$ で増えたあと，極大をもって減少する．次は，フォノンの数や熱容量を量子統計（デバイ模型）で計算する方法を学ぶ．"
    }
   ],
   "idea": {
@@ -122,7 +122,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ℓ [m]：≈4.2e-8\n(2) 3\n(3) ≈78"
+   "spec": "(1) ℓ：3κ/(C v)\n(2) 3\n(3) 3κ/(C v a)"
   },
   "methods": [],
   "tags": [
@@ -201,16 +201,16 @@
   "theme": "フォノンの最大エネルギーと擬運動量",
   "topic": "フォノンの最大エネルギーと擬運動量",
   "statement": {
-   "tex": "アルミニウム（密度 $2.70\\ \\mathrm{g/cm^3}$，モル質量 $27.0\\ \\mathrm{g/mol}$，デバイ温度 $\\Theta=428\\ \\mathrm K$）について，デバイ模型（波数空間で半径 $k_D$ の球内に $1$ 原子あたり $1$ つの波数ベクトル）を用いる．\n\\begin{enumerate}\n\\item フォノンの最大エネルギー $\\varepsilon_{\\max}$ と最大擬運動量 $p_{\\max}=\\hbar k_D$ を求めよ．\n\\item 同じエネルギーをもつ光子の運動量と比べて $p_{\\max}$ は何倍か．\n\\item $\\varepsilon_{\\max}=\\bar v\\,p_{\\max}$ で定義される平均音速 $\\bar v$ を求めよ．\n\\end{enumerate}"
+   "tex": "密度 $\\rho$，モル質量 $M$，デバイ温度 $\\Theta$ の単原子金属について，デバイ模型（波数空間で半径 $k_D$ の球内に $1$ 原子あたり $1$ つの波数ベクトル）を用いる．アボガドロ定数を $N_A$，光速を $c$ とする．\n\\begin{enumerate}\n\\item フォノンの最大エネルギー $\\varepsilon_{\\max}$ と最大擬運動量 $p_{\\max}=\\hbar k_D$ を求めよ．\n\\item 同じエネルギーをもつ光子の運動量と比べて $p_{\\max}$ は何倍か．\n\\item $\\varepsilon_{\\max}=\\bar v\\,p_{\\max}$ で定義される平均音速 $\\bar v$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\varepsilon_{\\max}\\approx37\\ \\mathrm{meV}$，$p_{\\max}\\approx1.6\\times10^{-24}\\ \\mathrm{kg\\,m/s}$　(2) 約 $8\\times10^4$ 倍　(3) $\\bar v\\approx3.7\\ \\mathrm{km/s}$"
+   "tex": "(1) $\\varepsilon_{\\max}=k_B\\Theta$，$p_{\\max}=\\hbar\\left(\\dfrac{6\\pi^2\\rho N_A}{M}\\right)^{1/3}$　(2) $\\dfrac{\\hbar c}{k_B\\Theta}\\left(\\dfrac{6\\pi^2\\rho N_A}{M}\\right)^{1/3}$ 倍　(3) $\\bar v=\\dfrac{k_B\\Theta}{\\hbar}\\left(\\dfrac{M}{6\\pi^2\\rho N_A}\\right)^{1/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\varepsilon_{\\max}=k\\Theta=1.381\\times10^{-23}\\times428=5.91\\times10^{-21}\\ \\mathrm J=36.9\\ \\mathrm{meV}$．\n原子数密度 $n=\\rho N_A/M=6.02\\times10^{28}\\ \\mathrm{m^{-3}}$．$\\tfrac{4}{3}\\pi k_D^3\\cdot\\dfrac{V}{(2\\pi)^3}=N$ より $k_D=(6\\pi^2n)^{1/3}=1.53\\times10^{10}\\ \\mathrm{m^{-1}}$，\n\\[\np_{\\max}=\\hbar k_D=1.61\\times10^{-24}\\ \\mathrm{kg\\,m/s}.\n\\]\n(2) 光子の運動量 $\\varepsilon_{\\max}/c=1.97\\times10^{-29}\\ \\mathrm{kg\\,m/s}$．比は $8.2\\times10^4$（$=c/\\bar v$）．フォノンは同じエネルギーでも桁違いに大きな運動量をもつので，中性子散乱などで運動量を大きく変えられる．\n\n(3) $\\bar v=\\varepsilon_{\\max}/p_{\\max}=k\\Theta/(\\hbar k_D)\\approx3.7\\times10^3\\ \\mathrm{m/s}$．"
+    "tex": "(1) $\\boldsymbol{\\varepsilon_{\\max}=k_B\\Theta}$．\n原子数密度は $n=\\rho N_A/M$．$\\tfrac{4}{3}\\pi k_D^3\\cdot\\dfrac{V}{(2\\pi)^3}=N$ より $k_D=(6\\pi^2n)^{1/3}$，\n\\[\n\\boldsymbol{p_{\\max}=\\hbar\\left(\\frac{6\\pi^2\\rho N_A}{M}\\right)^{1/3}}.\n\\]\n(2) 光子の運動量は $\\varepsilon_{\\max}/c=k_B\\Theta/c$．比は\n\\[\n\\frac{p_{\\max}}{k_B\\Theta/c}=\\boldsymbol{\\frac{\\hbar c}{k_B\\Theta}\\left(\\frac{6\\pi^2\\rho N_A}{M}\\right)^{1/3}}=\\frac{c}{\\bar v}.\n\\]\nアルミニウムでは約 $8\\times10^4$ 倍になる．フォノンは同じエネルギーでも桁違いに大きな運動量をもつので，中性子散乱などで運動量を大きく変えられる．\n\n(3) $\\bar v=\\dfrac{\\varepsilon_{\\max}}{p_{\\max}}=\\boldsymbol{\\dfrac{k_B\\Theta}{\\hbar}\\left(\\dfrac{M}{6\\pi^2\\rho N_A}\\right)^{1/3}}$（アルミニウムで約 $3.7\\,\\mathrm{km/s}$）．"
    }
   ],
   "idea": {
@@ -218,7 +218,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\varepsilon_{\\max}$ [meV]：≈37 ; $p_{\\max}$ [kg m/s]：≈1.6e-24\n(2) 記述\n(3) $\\bar v$ [km/s]：≈3.7"
+   "spec": "(1) ε_m：k_B Θ ; p_m：hbar (6pi^2 ρ N_A/M)^(1/3)\n(2) hbar c (6pi^2 ρ N_A/M)^(1/3)/(k_B Θ)\n(3) k_B Θ (M/(6pi^2 ρ N_A))^(1/3)/hbar"
   },
   "methods": [],
   "tags": [
@@ -300,16 +300,16 @@
   "theme": "デバイ温度から音速と最短波長を求める",
   "topic": "デバイ温度から音速と最短波長を求める",
   "statement": {
-   "tex": "鉄のデバイ温度は $\\theta_D=360\\ \\mathrm K$，密度 $7.87\\ \\mathrm{g/cm^3}$，原子量 $55.85$ である．デバイ模型（3 つの音響分枝を共通の平均音速 $v$ で扱い，原子数 $N$ に対して波数空間の球 $k\\le k_D$ に $N$ 個のモードを入れる）を用いる．\n\\begin{enumerate}\n\\item デバイ（最大）振動数 $\\nu_D$ を求めよ．\n\\item $k_D=(6\\pi^2n)^{1/3}$（$n$ は原子数密度）を示し，平均音速 $v$ を見積もれ．\n\\item 最短波長 $\\lambda_{\\min}=2\\pi/k_D$ と原子間隔 $a=n^{-1/3}$ の比を求めよ．この比が物質によらないことを説明せよ．\n\\end{enumerate}"
+   "tex": "デバイ温度 $\\theta_D$，密度 $\\rho$，モル質量 $M$ の単原子金属を考える．デバイ模型（3 つの音響分枝を共通の平均音速 $v$ で扱い，原子数 $N$ に対して波数空間の球 $k\\le k_D$ に $N$ 個のモードを入れる）を用いる．アボガドロ定数を $N_A$，プランク定数を $h$ とする．\n\\begin{enumerate}\n\\item デバイ（最大）振動数 $\\nu_D$ を求めよ．\n\\item $k_D=(6\\pi^2n)^{1/3}$（$n$ は原子数密度）を示し，平均音速 $v$ を $\\theta_D,\\rho,M,N_A,h,k_B$ で表せ．\n\\item 最短波長 $\\lambda_{\\min}=2\\pi/k_D$ と原子間隔 $a=n^{-1/3}$ の比を求めよ．この比が物質によらないことを説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\nu_D=7.5\\times10^{12}\\ \\mathrm{Hz}$　(2) $v\\approx2.8\\times10^3\\ \\mathrm{m/s}$　(3) $\\lambda_{\\min}/a=2\\pi/(6\\pi^2)^{1/3}\\approx1.61$"
+   "tex": "(1) $\\nu_D=\\dfrac{k_B\\theta_D}{h}$　(2) $v=\\dfrac{2\\pi k_B\\theta_D}{h}\\left(\\dfrac{M}{6\\pi^2\\rho N_A}\\right)^{1/3}$　(3) $\\lambda_{\\min}/a=\\dfrac{2\\pi}{(6\\pi^2)^{1/3}}\\approx1.61$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $h\\nu_D=k_B\\theta_D$ より $\\nu_D=\\dfrac{1.381\\times10^{-23}\\times360}{6.626\\times10^{-34}}=7.5\\times10^{12}$ Hz．\n\n(2) 体積 $V$ で波数空間の 1 状態の体積は $(2\\pi)^3/V$．各偏極ごとに $N$ 個のモードを入れる条件 $\\dfrac{4\\pi k_D^3/3}{(2\\pi)^3/V}=N$ より $k_D=(6\\pi^2n)^{1/3}$．\n$n=\\dfrac{7.87\\times10^3\\times6.022\\times10^{26}}{55.85}=8.49\\times10^{28}\\ \\mathrm{m^{-3}}$，$k_D=1.71\\times10^{10}\\ \\mathrm{m^{-1}}$．$\\omega_D=vk_D$ より\n\\[ v=\\frac{2\\pi\\nu_D}{k_D}=\\frac{2\\pi\\times7.5\\times10^{12}}{1.71\\times10^{10}}=2.8\\times10^3\\ \\mathrm{m/s}. \\]\n（鉄の横波音速 3.2 km/s 程度と同程度．デバイ温度を決める平均音速は遅い横波に重みがかかる．）\n\n(3) $\\lambda_{\\min}=2\\pi/k_D=3.7\\times10^{-10}$ m．$\\lambda_{\\min}/a=2\\pi n^{1/3}/(6\\pi^2n)^{1/3}=2\\pi/(6\\pi^2)^{1/3}\\approx1.61$．デバイ球は「モード数＝原子数」で決まるので，最短波長は原子間隔だけで決まり，原子間隔より短い波長の振動は意味をもたない（離散格子の帰結）．"
+    "tex": "(1) $h\\nu_D=k_B\\theta_D$ より $\\boldsymbol{\\nu_D=k_B\\theta_D/h}$（鉄なら $7.5\\times10^{12}\\,\\mathrm{Hz}$ 程度）．\n\n(2) 体積 $V$ で波数空間の 1 状態の体積は $(2\\pi)^3/V$．各偏極ごとに $N$ 個のモードを入れる条件 $\\dfrac{4\\pi k_D^3/3}{(2\\pi)^3/V}=N$ より $k_D=(6\\pi^2n)^{1/3}$．\n原子数密度は $n=\\rho N_A/M$．$\\omega_D=2\\pi\\nu_D=vk_D$ より\n\\[ v=\\frac{2\\pi\\nu_D}{k_D}=\\boldsymbol{\\frac{2\\pi k_B\\theta_D}{h}\\left(\\frac{M}{6\\pi^2\\rho N_A}\\right)^{1/3}}. \\]\n（鉄では約 $2.8\\,\\mathrm{km/s}$ で，横波音速 3.2 km/s 程度と同程度．デバイ温度を決める平均音速は遅い横波に重みがかかる．）\n\n(3) $\\lambda_{\\min}/a=2\\pi n^{1/3}/(6\\pi^2n)^{1/3}=\\boldsymbol{2\\pi/(6\\pi^2)^{1/3}}\\approx1.61$．デバイ球は「モード数＝原子数」で決まるので，最短波長は原子間隔だけで決まり，原子間隔より短い波長の振動は意味をもたない（離散格子の帰結）．"
    }
   ],
   "idea": {
@@ -317,7 +317,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\nu_D$ [Hz]：≈7.5e12\n(2) $v$ [m/s]：≈2.8e3\n(3) 記述"
+   "spec": "(1) ν_D：k_B θ_D/h\n(2) v：2pi k_B θ_D (M/(6pi^2 ρ N_A))^(1/3)/h\n(3) 2pi/(6pi^2)^(1/3)"
   },
   "methods": [],
   "tags": [
@@ -399,16 +399,16 @@
   "theme": "リンデマンの融解則",
   "topic": "リンデマンの融解則",
   "statement": {
-   "tex": "固体の融解の目安として，原子の熱振動の振幅が原子間距離 $a$ のある割合 $x$ に達すると融ける，というリンデマンの規準がある．各原子を質量 $M$，角振動数 $\\omega_E$ の3次元等方調和振動子とみなし（アインシュタイン模型），高温で古典統計が使えるとする．\n\\begin{enumerate}\n\\item 平衡位置からの変位の二乗平均 $\\langle u^2\\rangle$ を $M,\\omega_E,k_B,T$ で表せ．\n\\item $\\sqrt{\\langle u^2\\rangle}=xa$ で融解するとして，融点 $T_m$ を $x,a,M,\\omega_E,k_B$ で表せ．\n\\item 銅について $M=63.5\\,\\mathrm{u}$（$1\\,\\mathrm{u}=1.66\\times10^{-27}\\,\\mathrm{kg}$），$a=0.256\\,\\mathrm{nm}$，アインシュタイン温度 $\\theta_E=\\hbar\\omega_E/k_B=240\\,\\mathrm{K}$，$x=0.09$ として $T_m$ を求めよ（$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\cdot s}$，$k_B=1.38\\times10^{-23}\\,\\mathrm{J/K}$）．\n\\end{enumerate}"
+   "tex": "固体の融解の目安として，原子の熱振動の振幅が原子間距離 $a$ のある割合 $x$ に達すると融ける，というリンデマンの規準がある．各原子を質量 $M$，角振動数 $\\omega_E$ の3次元等方調和振動子とみなし（アインシュタイン模型），高温で古典統計が使えるとする．\n\\begin{enumerate}\n\\item 平衡位置からの変位の二乗平均 $\\langle u^2\\rangle$ を $M,\\omega_E,k_B,T$ で表せ．\n\\item $\\sqrt{\\langle u^2\\rangle}=xa$ で融解するとして，融点 $T_m$ を $x,a,M,\\omega_E,k_B$ で表せ．\n\\item アインシュタイン温度 $\\theta_E=\\hbar\\omega_E/k_B$ を用いて，$T_m$ を $x,a,M,\\theta_E,\\hbar,k_B$ で表せ．融点は $\\theta_E$ の何乗に比例するか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle u^2\\rangle=\\dfrac{3k_BT}{M\\omega_E^2}$\n(2) $T_m=\\dfrac{x^2a^2M\\omega_E^2}{3k_B}$\n(3) $T_m\\approx1.3\\times10^3\\,\\mathrm{K}$"
+   "tex": "(1) $\\langle u^2\\rangle=\\dfrac{3k_BT}{M\\omega_E^2}$\n(2) $T_m=\\dfrac{x^2a^2M\\omega_E^2}{3k_B}$\n(3) $T_m=\\dfrac{x^2a^2Mk_B\\theta_E^2}{3\\hbar^2}$（$\\theta_E^2$ に比例）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 各方向のポテンシャルエネルギーに等分配則を使うと $\\frac{1}{2}M\\omega_E^2\\langle u_x^2\\rangle=\\frac{1}{2}k_BT$．3方向を足して $\\boldsymbol{\\langle u^2\\rangle=3k_BT/(M\\omega_E^2)}$．\n\n(2) $\\dfrac{3k_BT_m}{M\\omega_E^2}=x^2a^2$ より $\\boldsymbol{T_m=\\dfrac{x^2a^2M\\omega_E^2}{3k_B}}$．$\\omega_E=k_B\\theta_E/\\hbar$ で書けば $T_m=\\dfrac{x^2a^2Mk_B\\theta_E^2}{3\\hbar^2}$ で，融点は特性温度の2乗に比例する．逆に融点からデバイ温度を見積もる式としても使われる．\n\n(3) $\\omega_E=\\dfrac{1.38\\times10^{-23}\\times240}{1.055\\times10^{-34}}=3.14\\times10^{13}\\,\\mathrm{s^{-1}}$，$M=1.054\\times10^{-25}\\,\\mathrm{kg}$ より\n\\[ T_m=\\frac{0.0081\\times(0.256\\times10^{-9})^2\\times1.054\\times10^{-25}\\times(3.14\\times10^{13})^2}{3\\times1.38\\times10^{-23}}\\approx\\boldsymbol{1.3\\times10^3\\,\\mathrm{K}}. \\]\n実際の銅の融点 $1358\\,\\mathrm{K}$ に近い．"
+    "tex": "(1) 各方向のポテンシャルエネルギーに等分配則を使うと $\\frac{1}{2}M\\omega_E^2\\langle u_x^2\\rangle=\\frac{1}{2}k_BT$．3方向を足して $\\boldsymbol{\\langle u^2\\rangle=3k_BT/(M\\omega_E^2)}$．\n\n(2) $\\dfrac{3k_BT_m}{M\\omega_E^2}=x^2a^2$ より $\\boldsymbol{T_m=\\dfrac{x^2a^2M\\omega_E^2}{3k_B}}$．\n\n(3) $\\omega_E=k_B\\theta_E/\\hbar$ を代入して\n\\[ \\boldsymbol{T_m=\\frac{x^2a^2Mk_B\\theta_E^2}{3\\hbar^2}}. \\]\n融点は特性温度の2乗に比例する．逆に融点からデバイ温度を見積もる式としても使われる．銅の値（$\\theta_E\\approx240\\,\\mathrm{K}$，$x\\approx0.09$）を入れると約 $1.3\\times10^3\\,\\mathrm{K}$ となり，実際の融点 $1358\\,\\mathrm{K}$ に近い．"
    }
   ],
   "idea": {
@@ -416,7 +416,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 3k_B T/(M ω_E^2)\n(2) x^2 a^2 M ω_E^2/(3k_B)\n(3) T_m [K]：≈1.33e3 (5%)"
+   "spec": "(1) 3k_B T/(M ω_E^2)\n(2) x^2 a^2 M ω_E^2/(3k_B)\n(3) T_m：x^2 a^2 M k_B θ_E^2/(3hbar^2)"
   },
   "methods": [],
   "tags": [
@@ -497,16 +497,16 @@
   "theme": "アインシュタイン模型の比熱",
   "topic": "アインシュタイン模型の比熱",
   "statement": {
-   "tex": "$N$ 個の原子からなる固体の $3N$ 個の振動モードが，すべて同じ角振動数 $\\omega_E$ をもつとする（アインシュタイン模型）．$\\theta_E=\\hbar\\omega_E/k_B$ とおく．\n\\begin{enumerate}\n\\item 高温（$T\\gg\\theta_E$）での定積比熱 $C$ を求めよ．\n\\item $\\theta_E=300\\,\\mathrm{K}$ の固体の $T=150\\,\\mathrm{K}$ での比熱を，(1) の値に対する比 $C/C_{\\infty}$ で数値で求めよ．\n\\item 低温（$T\\ll\\theta_E$）での比熱の漸近形を求めよ．\n\\end{enumerate}"
+   "tex": "$N$ 個の原子からなる固体の $3N$ 個の振動モードが，すべて同じ角振動数 $\\omega_E$ をもつとする（アインシュタイン模型）．$\\theta_E=\\hbar\\omega_E/k_B$ とおく．\n\\begin{enumerate}\n\\item 高温（$T\\gg\\theta_E$）での定積比熱 $C_{\\infty}$ を求めよ．\n\\item $T=\\theta_E/2$ での比熱を，(1) の値に対する比 $C/C_{\\infty}$ で求めよ．\n\\item 低温（$T\\ll\\theta_E$）での比熱の漸近形を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $3Nk_B$ (2) $\\approx 0.724$ (3) $3Nk_B\\left(\\dfrac{\\theta_E}{T}\\right)^2e^{-\\theta_E/T}$"
+   "tex": "(1) $3Nk_B$ (2) $\\dfrac{4e^2}{(e^2-1)^2}$ (3) $3Nk_B\\left(\\dfrac{\\theta_E}{T}\\right)^2e^{-\\theta_E/T}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "1つの調和振動子の平均エネルギーは $\\hbar\\omega_E\\left(\\frac{1}{2}+\\frac{1}{e^{x}-1}\\right)$，$x=\\theta_E/T$．$T$ で微分して $3N$ 倍すると\n\\[\nC=3Nk_B\\frac{x^2e^x}{(e^x-1)^2}\n\\]\nである．\n\n(1) $x\\to0$ で $x^2e^x/(e^x-1)^2\\to1$．$C\\to\\boldsymbol{3Nk_B}$（デュロン＝プティの法則）．\n\n(2) $x=2$ で $\\dfrac{4e^2}{(e^2-1)^2}=\\boldsymbol{0.724}$．\n\n(3) $x\\gg1$ で $e^x-1\\approx e^x$ より $\\boldsymbol{C\\approx 3Nk_B(\\theta_E/T)^2e^{-\\theta_E/T}}$．指数関数的に小さくなるが，実験では $T^3$ 則に従う．これは低エネルギーの音響フォノンを無視したためで，デバイ模型で改善される．"
+    "tex": "1つの調和振動子の平均エネルギーは $\\hbar\\omega_E\\left(\\frac{1}{2}+\\frac{1}{e^{x}-1}\\right)$，$x=\\theta_E/T$．$T$ で微分して $3N$ 倍すると\n\\[\nC=3Nk_B\\frac{x^2e^x}{(e^x-1)^2}\n\\]\nである．\n\n(1) $x\\to0$ で $x^2e^x/(e^x-1)^2\\to1$．$C\\to\\boldsymbol{3Nk_B}$（デュロン＝プティの法則）．\n\n(2) $x=2$ で $\\boldsymbol{\\dfrac{4e^2}{(e^2-1)^2}}\\approx0.72$．特性温度の半分の温度でも古典値の7割程度ある．\n\n(3) $x\\gg1$ で $e^x-1\\approx e^x$ より $\\boldsymbol{C\\approx 3Nk_B(\\theta_E/T)^2e^{-\\theta_E/T}}$．指数関数的に小さくなるが，実験では $T^3$ 則に従う．これは低エネルギーの音響フォノンを無視したためで，デバイ模型で改善される．"
    }
   ],
   "idea": {
@@ -514,7 +514,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 3N k_B\n(2) ≈0.724\n(3) 3N k_B (theta_E/T)^2 exp(-theta_E/T)"
+   "spec": "(1) 3N k_B\n(2) 4e^2/(e^2-1)^2\n(3) 3N k_B (theta_E/T)^2 exp(-theta_E/T)"
   },
   "methods": [],
   "tags": [
@@ -694,16 +694,16 @@
   "theme": "縦波・横波速度の異なる結晶のデバイ温度",
   "topic": "縦波・横波速度の異なる結晶のデバイ温度",
   "statement": {
-   "tex": "鉄（密度 $7.87\\times10^3\\ \\mathrm{kg/m^3}$，モル質量 $55.85\\ \\mathrm{g/mol}$）の縦波・横波の音速はそれぞれ $v_l=5.85\\ \\mathrm{km/s}$，$v_t=3.23\\ \\mathrm{km/s}$ である（横波は 2 つの偏り）．\n\\begin{enumerate}\n\\item デバイ近似（3 つの偏りに共通の $\\omega_{\\max}$）でデバイ温度 $\\Theta$ を求めよ．\n\\item 速度の算術平均 $\\bar v=(v_l+2v_t)/3$ を単一速度の公式 $\\Theta=\\dfrac{\\hbar\\bar v}{k}(6\\pi^2n_0)^{1/3}$ に入れると $\\Theta$ を何%過大評価するか．\n\\item ある振動数（$\\omega<\\omega_{\\max}$）付近のモードのうち横波が占める割合を求めよ．\n\\end{enumerate}"
+   "tex": "原子数密度 $n_0$ の単原子結晶で，縦波・横波の音速がそれぞれ $v_l$，$v_t$ である（横波は 2 つの偏り）．\n\\begin{enumerate}\n\\item デバイ近似（3 つの偏りに共通の $\\omega_{\\max}$）でデバイ温度 $\\Theta$ を $n_0,v_l,v_t,\\hbar,k$ で表せ（$k$ はボルツマン定数）．\n\\item 速度の算術平均 $\\bar v=(v_l+2v_t)/3$ を単一速度の公式 $\\Theta'=\\dfrac{\\hbar\\bar v}{k}(6\\pi^2n_0)^{1/3}$ に入れると，$\\Theta'$ は (1) の $\\Theta$ の何倍になるか．$v_l,v_t$ で表せ．\n\\item ある振動数（$\\omega<\\omega_{\\max}$）付近のモードのうち横波が占める割合を $v_l,v_t$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Theta=\\dfrac{\\hbar}{k}\\left(\\dfrac{18\\pi^2n_0}{v_l^{-3}+2v_t^{-3}}\\right)^{1/3}\\approx4.7\\times10^2\\ \\mathrm K$　(2) 約 14% 過大（$537\\ \\mathrm K$）　(3) 約 92%"
+   "tex": "(1) $\\Theta=\\dfrac{\\hbar}{k}\\left(\\dfrac{18\\pi^2n_0}{v_l^{-3}+2v_t^{-3}}\\right)^{1/3}$　(2) $\\dfrac{\\Theta'}{\\Theta}=\\dfrac{v_l+2v_t}{3}\\left(\\dfrac{v_l^{-3}+2v_t^{-3}}{3}\\right)^{1/3}$　(3) $\\dfrac{2v_t^{-3}}{v_l^{-3}+2v_t^{-3}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$n_0=\\dfrac{7.87\\times10^3}{55.85\\times10^{-3}}\\times6.022\\times10^{23}=8.49\\times10^{28}\\ \\mathrm{m^{-3}}$．\n\n(1) 体積 $V$ で各偏りのモード数は $\\dfrac{V\\omega^3}{6\\pi^2v^3}$．全体 $\\dfrac{V\\omega_{\\max}^3}{6\\pi^2}\\left(\\dfrac1{v_l^3}+\\dfrac2{v_t^3}\\right)=3n_0V$ より\n\\[\n\\omega_{\\max}=\\left(\\frac{18\\pi^2n_0}{v_l^{-3}+2v_t^{-3}}\\right)^{1/3},\\qquad\\Theta=\\frac{\\hbar\\omega_{\\max}}{k}=471\\ \\mathrm K.\n\\]\n\n(2) $\\bar v=4.10\\ \\mathrm{km/s}$，$(6\\pi^2n_0)^{1/3}=1.71\\times10^{10}\\ \\mathrm{m^{-1}}$ より $\\Theta'=537\\ \\mathrm K$．$537/471=1.14$，約 14% 過大．モード数は $v^{-3}$ で効くので遅い横波が支配的になり，実効速度 $\\left[\\frac13(v_l^{-3}+2v_t^{-3})\\right]^{-1/3}=3.60\\ \\mathrm{km/s}$ は算術平均より小さい．\n\n(3) モード密度は各偏りで $\\propto v^{-3}$ なので横波の割合は $\\dfrac{2v_t^{-3}}{v_l^{-3}+2v_t^{-3}}=0.92$．"
+    "tex": "(1) 体積 $V$ で各偏りのモード数は $\\dfrac{V\\omega^3}{6\\pi^2v^3}$．全体 $\\dfrac{V\\omega_{\\max}^3}{6\\pi^2}\\left(\\dfrac1{v_l^3}+\\dfrac2{v_t^3}\\right)=3n_0V$ より\n\\[\n\\omega_{\\max}=\\left(\\frac{18\\pi^2n_0}{v_l^{-3}+2v_t^{-3}}\\right)^{1/3},\\qquad\\boldsymbol{\\Theta=\\frac{\\hbar}{k}\\left(\\frac{18\\pi^2n_0}{v_l^{-3}+2v_t^{-3}}\\right)^{1/3}}.\n\\]\nこれは単一速度の公式で，実効速度を $v_{\\rm eff}=\\left[\\frac13(v_l^{-3}+2v_t^{-3})\\right]^{-1/3}$ としたものに等しい．\n\n(2) $\\Theta'/\\Theta=\\bar v/v_{\\rm eff}$ だから\n\\[\n\\boldsymbol{\\frac{\\Theta'}{\\Theta}=\\frac{v_l+2v_t}{3}\\left(\\frac{v_l^{-3}+2v_t^{-3}}{3}\\right)^{1/3}}.\n\\]\n算術平均は $v^{-3}$ の平均から作った $v_{\\rm eff}$ 以上なので，この比は 1 以上（$v_l=v_t$ のときだけ 1）．モード数は $v^{-3}$ で効くので遅い横波が支配的になり，実効速度は算術平均より小さい．鉄（$v_l\\approx1.8v_t$）では約 14% の過大評価になる．\n\n(3) モード密度は各偏りで $\\propto v^{-3}$ なので横波の割合は\n\\[\n\\boldsymbol{\\frac{2v_t^{-3}}{v_l^{-3}+2v_t^{-3}}}.\n\\]\n鉄では約 92% に達する．"
    }
   ],
   "idea": {
@@ -711,7 +711,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\Theta$ [K]：≈4.7e2\n(2) 記述\n(3) 記述"
+   "spec": "(1) Θ：(hbar/k) (18pi^2 n_0/(v_l^(-3)+2v_t^(-3)))^(1/3)\n(2) ((v_l+2v_t)/3) ((v_l^(-3)+2v_t^(-3))/3)^(1/3)\n(3) 2v_t^(-3)/(v_l^(-3)+2v_t^(-3))"
   },
   "methods": [],
   "tags": [
@@ -743,16 +743,16 @@
   "theme": "デバイ温度から横波音速を予言",
   "topic": "デバイ温度から横波音速を予言",
   "statement": {
-   "tex": "アルミニウム（密度 $2.70\\times10^3\\ \\mathrm{kg/m^3}$，モル質量 $26.98\\ \\mathrm{g/mol}$）のデバイ温度は $\\Theta=396\\ \\mathrm K$ である．\n\\begin{enumerate}\n\\item 縦波・横波の速度が等しいと仮定して音速 $v$ を見積もれ．\n\\item 縦波の速度が $v_l=6.42\\ \\mathrm{km/s}$ と分かっているとき，デバイ模型が整合するために必要な横波の速度 $v_t$ を求め，実測値 $3.04\\ \\mathrm{km/s}$ と比べよ．\n\\end{enumerate}"
+   "tex": "原子数密度 $n_0$ の単原子結晶のデバイ温度が $\\Theta$ である（$\\hbar$，ボルツマン定数 $k$ を用いよ）．\n\\begin{enumerate}\n\\item 縦波・横波の速度が等しいと仮定して音速 $v$ を $\\Theta,n_0$ で表せ．\n\\item 縦波の速度が $v_l$ と分かっているとき，デバイ模型が整合するために必要な横波の速度 $v_t$ を，(1) の $v$ と $v_l$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $v=\\dfrac{k\\Theta}{\\hbar(6\\pi^2n_0)^{1/3}}\\approx3.4\\ \\mathrm{km/s}$　(2) $v_t\\approx3.0\\ \\mathrm{km/s}$（実測とほぼ一致）"
+   "tex": "(1) $v=\\dfrac{k\\Theta}{\\hbar(6\\pi^2n_0)^{1/3}}$　(2) $v_t=\\left(\\dfrac{2}{3v^{-3}-v_l^{-3}}\\right)^{1/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$n_0=\\dfrac{2.70\\times10^3}{26.98\\times10^{-3}}\\times6.022\\times10^{23}=6.03\\times10^{28}\\ \\mathrm{m^{-3}}$，$(6\\pi^2n_0)^{1/3}=1.53\\times10^{10}\\ \\mathrm{m^{-1}}$．\n\n(1) $\\Theta=\\dfrac{\\hbar v}{k}(6\\pi^2n_0)^{1/3}$ より $v=\\dfrac{1.381\\times10^{-23}\\times396}{1.055\\times10^{-34}\\times1.53\\times10^{10}}=3.39\\times10^3\\ \\mathrm{m/s}$．\n\n(2) 速度が異なる場合 $\\dfrac{3}{v^3}=\\dfrac1{v_l^3}+\\dfrac2{v_t^3}$ の $v$ が (1) の値になればよい．\n\\[\nv_t=\\left(\\frac{2}{3v^{-3}-v_l^{-3}}\\right)^{1/3}=3.01\\ \\mathrm{km/s}.\n\\]\n実測 $3.04\\ \\mathrm{km/s}$ と 1% 程度で一致する．(1) の $3.4\\ \\mathrm{km/s}$ は縦波よりも横波に近い値であることに注意．"
+    "tex": "(1) $\\Theta=\\dfrac{\\hbar v}{k}(6\\pi^2n_0)^{1/3}$ より $\\boldsymbol{v=\\dfrac{k\\Theta}{\\hbar(6\\pi^2n_0)^{1/3}}}$．\n\n(2) 速度が異なる場合，モード数は各偏りで $v^{-3}$ に比例するので，$\\dfrac{3}{v^3}=\\dfrac1{v_l^3}+\\dfrac2{v_t^3}$ の $v$ が (1) の値になればよい．\n\\[\n\\boldsymbol{v_t=\\left(\\frac{2}{3v^{-3}-v_l^{-3}}\\right)^{1/3}}.\n\\]\nアルミニウムの値（$\\Theta=396\\,\\mathrm K$，$v_l=6.42\\,\\mathrm{km/s}$）を入れると $v\\approx3.4\\,\\mathrm{km/s}$，$v_t\\approx3.0\\,\\mathrm{km/s}$ となり，実測の横波音速 $3.04\\,\\mathrm{km/s}$ と 1% 程度で一致する．(1) の $v$ は縦波よりも横波に近い値になることに注意．"
    }
   ],
   "idea": {
@@ -760,7 +760,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $v$ [km/s]：≈3.4\n(2) $v_t$ [km/s]：≈3.0"
+   "spec": "(1) v：kΘ/(hbar (6pi^2 n_0)^(1/3))\n(2) v_t：(2/(3v^(-3)-v_l^(-3)))^(1/3)"
   },
   "methods": [],
   "tags": [
@@ -891,16 +891,16 @@
   "theme": "低温比熱から電子比熱とデバイ温度を分離",
   "topic": "低温比熱から電子比熱とデバイ温度を分離",
   "statement": {
-   "tex": "ある金属の低温におけるモル定積比熱を測定したところ，$T_1=2.0\\ \\mathrm{K}$ で $C_1=1.796\\ \\mathrm{mJ/(mol\\cdot K)}$，$T_2=4.0\\ \\mathrm{K}$ で $C_2=5.965\\ \\mathrm{mJ/(mol\\cdot K)}$ であった．この温度域では比熱は伝導電子の寄与 $\\gamma T$ と格子振動のデバイ $T^3$ 則\n\\[\nC_{\\rm lat}=\\frac{12\\pi^4}{5}R\\left(\\frac{T}{\\Theta}\\right)^3\n\\]\nの和で表されるとする（$R=8.314\\ \\mathrm{J/(mol\\cdot K)}$）．\n\\begin{enumerate}\n\\item $\\gamma$ とデバイ温度 $\\Theta$ を求めよ．\n\\item 電子の寄与と格子の寄与が等しくなる温度 $T_\\times$ を求めよ．\n\\item 電子の寄与を無視し，$T_2$ での値だけから $T^3$ 則で $\\Theta$ を推定するとどんな値になるか．\n\\end{enumerate}"
+   "tex": "ある金属の低温におけるモル定積比熱を測定したところ，温度 $T_1$ で $C_1$，温度 $T_2$ で $C_2$ であった．この温度域では比熱は伝導電子の寄与 $\\gamma T$ と格子振動のデバイ $T^3$ 則\n\\[\nC_{\\rm lat}=\\frac{12\\pi^4}{5}R\\left(\\frac{T}{\\Theta}\\right)^3\n\\]\nの和で表されるとする（$R$ は気体定数）．\n\\begin{enumerate}\n\\item $\\gamma$ とデバイ温度 $\\Theta$ を $T_1,C_1,T_2,C_2,R$ で表せ．\n\\item 電子の寄与と格子の寄与が等しくなる温度 $T_\\times$ を $T_1,C_1,T_2,C_2$ で表せ．\n\\item 電子の寄与を無視し，$T_2$ での値 $C_2$ だけから $T^3$ 則で $\\Theta$ を推定すると，どんな値 $\\Theta'$ になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\gamma\\approx0.70\\ \\mathrm{mJ/(mol\\cdot K^2)}$，$\\Theta\\approx340\\ \\mathrm K$　(2) $T_\\times\\approx3.8\\ \\mathrm K$　(3) 約 $275\\ \\mathrm K$（約 2 割の過小評価）"
+   "tex": "(1) $\\gamma=\\dfrac{C_1T_2^3-C_2T_1^3}{T_1T_2(T_2^2-T_1^2)}$，$\\Theta=\\left(\\dfrac{12\\pi^4RT_1T_2(T_2^2-T_1^2)}{5(C_2T_1-C_1T_2)}\\right)^{1/3}$　(2) $T_\\times=\\sqrt{\\dfrac{C_1T_2^3-C_2T_1^3}{C_2T_1-C_1T_2}}$　(3) $\\Theta'=\\left(\\dfrac{12\\pi^4RT_2^3}{5C_2}\\right)^{1/3}$（$\\Theta$ より小さい）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $C/T=\\gamma+AT^2$（$A=12\\pi^4R/5\\Theta^3$）と書けるので，$C/T$ を $T^2$ に対してプロットすれば直線になる．\n\\[\n\\frac{C_1}{T_1}=0.898\\ \\mathrm{mJ/(mol\\,K^2)},\\qquad \\frac{C_2}{T_2}=1.491\\ \\mathrm{mJ/(mol\\,K^2)}\n\\]\nより\n\\[\nA=\\frac{1.491-0.898}{16-4}\\times10^{-3}=4.94\\times10^{-5}\\ \\mathrm{J/(mol\\,K^4)},\\qquad \\gamma=0.898\\times10^{-3}-4A=0.70\\ \\mathrm{mJ/(mol\\,K^2)}.\n\\]\n$\\Theta=\\left(\\dfrac{12\\pi^4R}{5A}\\right)^{1/3}=\\left(\\dfrac{1944}{4.95\\times10^{-5}}\\right)^{1/3}\\approx340\\ \\mathrm K$．$T\\ll\\Theta$ なので $T^3$ 則の適用は妥当である．\n\n(2) $\\gamma T=AT^3$ より $T_\\times=\\sqrt{\\gamma/A}=\\sqrt{0.70\\times10^{-3}/4.95\\times10^{-5}}\\approx3.8\\ \\mathrm K$．これより低温では電子比熱が支配的になる．\n\n(3) $C_2=12\\pi^4R T_2^3/5\\Theta'^3$ とおくと\n\\[\n\\Theta'=\\Theta\\left(\\frac{AT_2^3}{C_2}\\right)^{1/3}=340\\times\\left(\\frac{4.95\\times10^{-5}\\times64}{5.965\\times10^{-3}}\\right)^{1/3}\\approx275\\ \\mathrm K.\n\\]\n$T_2$ でも比熱の約半分が電子によるため，見かけ上格子が「柔らかく」見積もられてしまう．"
+    "tex": "(1) $C/T=\\gamma+AT^2$（$A=12\\pi^4R/5\\Theta^3$）と書けるので，$C/T$ を $T^2$ に対してプロットすれば直線になる．2点を通る直線の傾きと切片は\n\\[\nA=\\frac{C_2/T_2-C_1/T_1}{T_2^2-T_1^2}=\\frac{C_2T_1-C_1T_2}{T_1T_2(T_2^2-T_1^2)},\\qquad\n\\gamma=\\frac{C_1}{T_1}-AT_1^2=\\boldsymbol{\\frac{C_1T_2^3-C_2T_1^3}{T_1T_2(T_2^2-T_1^2)}}.\n\\]\n$\\Theta=\\left(\\dfrac{12\\pi^4R}{5A}\\right)^{1/3}$ より\n\\[\n\\boldsymbol{\\Theta=\\left(\\frac{12\\pi^4RT_1T_2(T_2^2-T_1^2)}{5(C_2T_1-C_1T_2)}\\right)^{1/3}}.\n\\]\n得られた $\\Theta$ が $T_1,T_2$ より十分高ければ $T^3$ 則の適用は妥当である．\n\n(2) $\\gamma T=AT^3$ より\n\\[\nT_\\times=\\sqrt{\\frac{\\gamma}{A}}=\\boldsymbol{\\sqrt{\\frac{C_1T_2^3-C_2T_1^3}{C_2T_1-C_1T_2}}}.\n\\]\nこれより低温では電子比熱が支配的になる．\n\n(3) $C_2=\\dfrac{12\\pi^4R}{5}\\dfrac{T_2^3}{\\Theta'^3}$ とおくと\n\\[\n\\boldsymbol{\\Theta'=\\left(\\frac{12\\pi^4RT_2^3}{5C_2}\\right)^{1/3}}=\\Theta\\left(\\frac{AT_2^3}{C_2}\\right)^{1/3}.\n\\]\n$AT_2^3<C_2$（電子の寄与のぶんだけ大きい）なので $\\Theta'<\\Theta$ となる．電子の寄与を格子のものと見なすため，格子が見かけ上「柔らかく」見積もられてしまう．典型的な金属で $T_2$ が $T_\\times$ 程度なら，2 割程度の過小評価になる．"
    }
   ],
   "idea": {
@@ -908,7 +908,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\gamma$ [mJ/(mol·K²)]：≈0.70 ; $\\Theta$ [K]：≈340\n(2) $T_\\times$ [K]：≈3.8\n(3) [K]：≈275"
+   "spec": "(1) γ：(C_1 T_2^3-C_2 T_1^3)/(T_1 T_2 (T_2^2-T_1^2)) ; Θ：(12pi^4 R T_1 T_2 (T_2^2-T_1^2)/(5(C_2 T_1-C_1 T_2)))^(1/3)\n(2) T_×：sqrt((C_1 T_2^3-C_2 T_1^3)/(C_2 T_1-C_1 T_2))\n(3) Θ'：(12pi^4 R T_2^3/(5C_2))^(1/3)"
   },
   "methods": [],
   "tags": [
@@ -1039,16 +1039,16 @@
   "theme": "(m,n) 型ポテンシャルの平衡・力の定数・非調和性",
   "topic": "(m,n) 型ポテンシャルの平衡・力の定数・非調和性",
   "statement": {
-   "tex": "2 原子間の相互作用エネルギーを $E(r)=-\\dfrac{a}{r^m}+\\dfrac{b}{r^n}$（$n>m>0$，$a,b>0$）とする．平衡距離を $r_0$，解離エネルギーを $D=-E(r_0)$ とする．\n\\begin{enumerate}\n\\item 平衡状態で，引力エネルギーと斥力エネルギーの大きさの比，および $D$ を引力エネルギーで表せ．\n\\item 平衡点でのばね定数 $k=E''(r_0)$ と 3 階微分 $E'''(r_0)$ を $D,r_0,m,n$ で表せ．\n\\item イオン分子（$m=1$，$a=e^2/4\\pi\\varepsilon_0$，$e^2/4\\pi\\varepsilon_0=1.44\\ \\mathrm{eV\\,nm}$）で，$r_0=0.25\\ \\mathrm{nm}$，$k=118\\ \\mathrm{N/m}$ が測定された．$n$ と $D$ を求めよ．\n\\end{enumerate}"
+   "tex": "2 原子間の相互作用エネルギーを $E(r)=-\\dfrac{a}{r^m}+\\dfrac{b}{r^n}$（$n>m>0$，$a,b>0$）とする．平衡距離を $r_0$，解離エネルギーを $D=-E(r_0)$ とする．\n\\begin{enumerate}\n\\item 平衡状態で，引力エネルギーと斥力エネルギーの大きさの比，および $D$ を引力エネルギーで表せ．\n\\item 平衡点でのばね定数 $k=E''(r_0)$ と 3 階微分 $E'''(r_0)$ を $D,r_0,m,n$ で表せ．\n\\item 電荷 $\\pm q$ のイオンからなる分子（$m=1$，$a=q^2/4\\pi\\varepsilon_0$）で，$r_0$ と $k$ が測定された．$n$ と $D$ を $q,\\varepsilon_0,r_0,k$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $|E_A|/|E_R|=n/m$，$D=\\dfrac{a}{r_0^m}\\left(1-\\dfrac mn\\right)$　(2) $k=\\dfrac{mnD}{r_0^2}$，$E'''(r_0)=-\\dfrac{mn(m+n+3)D}{r_0^3}$　(3) $n\\approx9$，$D\\approx5.1\\ \\mathrm{eV}$"
+   "tex": "(1) $|E_A|/|E_R|=n/m$，$D=\\dfrac{a}{r_0^m}\\left(1-\\dfrac mn\\right)$　(2) $k=\\dfrac{mnD}{r_0^2}$，$E'''(r_0)=-\\dfrac{mn(m+n+3)D}{r_0^3}$　(3) $n=1+\\dfrac{4\\pi\\varepsilon_0kr_0^3}{q^2}$，$D=\\dfrac{q^2kr_0^2}{q^2+4\\pi\\varepsilon_0kr_0^3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $E'(r_0)=\\dfrac{ma}{r_0^{m+1}}-\\dfrac{nb}{r_0^{n+1}}=0$ より $\\dfrac{b}{r_0^n}=\\dfrac mn\\dfrac{a}{r_0^m}$．よって $\\dfrac{|E_A|}{|E_R|}=\\dfrac{a/r_0^m}{b/r_0^n}=\\dfrac nm$．（一方，力の大きさは平衡で等しい．）$D=\\dfrac{a}{r_0^m}-\\dfrac{b}{r_0^n}=\\dfrac{a}{r_0^m}\\left(1-\\dfrac mn\\right)$．\n\n(2) $E''(r_0)=-\\dfrac{m(m+1)a}{r_0^{m+2}}+\\dfrac{n(n+1)b}{r_0^{n+2}}=\\dfrac{a}{r_0^{m+2}}\\{-m(m+1)+m(n+1)\\}=\\dfrac{m(n-m)a}{r_0^{m+2}}$．$\\dfrac{a}{r_0^m}=\\dfrac{nD}{n-m}$ を用いて $k=\\dfrac{mnD}{r_0^2}$．同様に\n\\[\nE'''(r_0)=\\frac{a}{r_0^{m+3}}\\{m(m+1)(m+2)-m(n+1)(n+2)\\}=-\\frac{m(n-m)(m+n+3)a}{r_0^{m+3}}=-\\frac{mn(m+n+3)D}{r_0^3}.\n\\]\n$E'''<0$ はポテンシャルが伸びる側に緩やかであること（熱膨張が正になる原因）を表す．\n\n(3) $m=1$ で $k=\\dfrac{nD}{r_0^2}=\\dfrac{(n-1)a}{r_0^3}$．$k=118\\ \\mathrm{N/m}=118/1.602\\times10^{-19}\\times10^{-18}\\ \\mathrm{eV/nm^2}=736.5\\ \\mathrm{eV/nm^2}$．\n\\[\nn-1=\\frac{kr_0^3}{a}=\\frac{736.5\\times0.015625}{1.44}=7.99,\\quad n\\approx9.\n\\]\n$D=\\dfrac{1.44}{0.25}\\left(1-\\dfrac19\\right)=5.12\\ \\mathrm{eV}$．"
+    "tex": "(1) $E'(r_0)=\\dfrac{ma}{r_0^{m+1}}-\\dfrac{nb}{r_0^{n+1}}=0$ より $\\dfrac{b}{r_0^n}=\\dfrac mn\\dfrac{a}{r_0^m}$．よって $\\dfrac{|E_A|}{|E_R|}=\\dfrac{a/r_0^m}{b/r_0^n}=\\dfrac nm$．（一方，力の大きさは平衡で等しい．）$D=\\dfrac{a}{r_0^m}-\\dfrac{b}{r_0^n}=\\dfrac{a}{r_0^m}\\left(1-\\dfrac mn\\right)$．\n\n(2) $E''(r_0)=-\\dfrac{m(m+1)a}{r_0^{m+2}}+\\dfrac{n(n+1)b}{r_0^{n+2}}=\\dfrac{a}{r_0^{m+2}}\\{-m(m+1)+m(n+1)\\}=\\dfrac{m(n-m)a}{r_0^{m+2}}$．$\\dfrac{a}{r_0^m}=\\dfrac{nD}{n-m}$ を用いて $k=\\dfrac{mnD}{r_0^2}$．同様に\n\\[\nE'''(r_0)=\\frac{a}{r_0^{m+3}}\\{m(m+1)(m+2)-m(n+1)(n+2)\\}=-\\frac{m(n-m)(m+n+3)a}{r_0^{m+3}}=-\\frac{mn(m+n+3)D}{r_0^3}.\n\\]\n$E'''<0$ はポテンシャルが伸びる側に緩やかであること（熱膨張が正になる原因）を表す．\n\n(3) $m=1$ で $k=\\dfrac{(n-1)a}{r_0^3}$ より\n\\[\n\\boldsymbol{n=1+\\frac{4\\pi\\varepsilon_0kr_0^3}{q^2}}.\n\\]\n$D=\\dfrac{a}{r_0}\\left(1-\\dfrac1n\\right)=\\dfrac{kr_0^2}{n}$ に代入して\n\\[\n\\boldsymbol{D=\\frac{q^2kr_0^2}{q^2+4\\pi\\varepsilon_0kr_0^3}}.\n\\]\n典型的なイオン分子（$r_0=0.25\\,\\mathrm{nm}$，$k\\approx120\\,\\mathrm{N/m}$）では $n\\approx9$，$D\\approx5\\,\\mathrm{eV}$ となり，振動の測定から斥力の指数が決まる．"
    }
   ],
   "idea": {
@@ -1056,7 +1056,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $k$：((m n D)/(r_0 ^(2))) ; $E'''(r_0)$：-((m n (m + n +3) D)/(r_0 ^(3)))\n(3) $n$：≈9 ; $D$ [eV]：≈5.1"
+   "spec": "(1) 記述\n(2) $k$：((m n D)/(r_0 ^(2))) ; $E'''(r_0)$：-((m n (m + n +3) D)/(r_0 ^(3)))\n(3) n：1+4pi ε_0 k r_0^3/q^2 ; D：q^2 k r_0^2/(q^2+4pi ε_0 k r_0^3)"
   },
   "methods": [],
   "tags": [
@@ -1089,16 +1089,16 @@
   "theme": "Lindemann 則：鉛から銅の融点を推定",
   "topic": "Lindemann 則：鉛から銅の融点を推定",
   "statement": {
-   "tex": "原子を力の定数 $K$ の 1 次元調和振動子とみなし，平均の熱エネルギー $k_BT$ と $\\frac12KA^2$ が等しいとして振動の振幅 $A$ を定義する．$K\\approx Ya$（$Y$：ヤング率，$a$：格子定数）と見積もる．Lindemann 則では，$A$ が最近接原子間距離 $d$ のある一定割合 $x$ に達すると融解が起こる．\n\\begin{enumerate}\n\\item 面心立方金属について，融点が $T_m=\\dfrac{x^2Ya^3}{4k_B}$ と書けることを示せ．\n\\item 鉛（面心立方，$a=4.94\\ \\text{\\AA}$，$Y=1.6\\times10^{10}\\ \\mathrm{N/m^2}$）は $A=0.46\\ \\text{\\AA}$ で融ける．$x$ と（このモデルでの）融点を求めよ．\n\\item 同じ $x$ を用いて銅（面心立方，$a=3.61\\ \\text{\\AA}$，$Y=1.3\\times10^{11}\\ \\mathrm{N/m^2}$）の融点を推定せよ．また鉛について，量子力学的な零点振動の振幅 $A_0$（$\\frac12KA_0^2=\\frac12\\hbar\\omega$，$\\omega=\\sqrt{K/M}$，$M=207\\ \\mathrm u$）を求め，古典的な扱いが妥当か論じよ．\n\\end{enumerate}"
+   "tex": "原子を力の定数 $K$ の 1 次元調和振動子とみなし，平均の熱エネルギー $k_BT$ と $\\frac12KA^2$ が等しいとして振動の振幅 $A$ を定義する．$K\\approx Ya$（$Y$：ヤング率，$a$：格子定数）と見積もる．Lindemann 則では，$A$ が最近接原子間距離 $d$ のある一定割合 $x$ に達すると融解が起こる．\n\\begin{enumerate}\n\\item 面心立方金属について，融点が $T_m=\\dfrac{x^2Ya^3}{4k_B}$ と書けることを示せ．\n\\item 鉛（面心立方，格子定数 $a_1$，ヤング率 $Y_1$）は振幅 $A$ で融ける．$x$ と（このモデルでの）融点 $T_m$ を $a_1,Y_1,A,k_B$ で表せ．\n\\item 同じ $x$ を用いて銅（面心立方，格子定数 $a_2$，ヤング率 $Y_2$）の融点 $T_m'$ を $A,a_1,a_2,Y_2,k_B$ で表せ．また鉛（原子の質量 $M$）について，量子力学的な零点振動の振幅 $A_0$（$\\frac12KA_0^2=\\frac12\\hbar\\omega$，$\\omega=\\sqrt{K/M}$）を $\\hbar,Y_1,a_1,M$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $x\\approx0.132$，$T_m\\approx606\\ \\mathrm K$　(3) $T_m^{\\rm Cu}\\approx1.9\\times10^3\\ \\mathrm K$（実測 1358 K）；$A_0\\approx0.080\\ \\text{\\AA}$，$(A_0/A)^2\\approx0.03$ で古典的扱いで十分"
+   "tex": "(1) 証明（解説参照）　(2) $x=\\dfrac{\\sqrt2A}{a_1}$，$T_m=\\dfrac{Y_1a_1A^2}{2k_B}$　(3) $T_m'=\\dfrac{A^2Y_2a_2^3}{2k_Ba_1^2}$；$A_0=\\left(\\dfrac{\\hbar^2}{Y_1a_1M}\\right)^{1/4}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\frac12KA^2=k_BT$ より $A^2=2k_BT/K$．融解条件 $A=xd$，面心立方の $d=a/\\sqrt2$，$K=Ya$ を入れて\n\\[\nT_m=\\frac{K x^2d^2}{2k_B}=\\frac{Ya\\cdot x^2a^2/2}{2k_B}=\\frac{x^2Ya^3}{4k_B}.\n\\]\n\n(2) $d=4.94/\\sqrt2=3.493\\ \\text{\\AA}$，$x=0.46/3.493=0.132$．$K=Ya=1.6\\times10^{10}\\times4.94\\times10^{-10}=7.9\\ \\mathrm{N/m}$，\n\\[\nT_m=\\frac{KA^2}{2k_B}=\\frac{7.9\\times(0.46\\times10^{-10})^2}{2\\times1.38\\times10^{-23}}=606\\ \\mathrm K\n\\]\n（実測 600 K）．\n\n(3) $T_m^{\\rm Cu}=\\dfrac{(0.132)^2\\times1.3\\times10^{11}\\times(3.61\\times10^{-10})^3}{4\\times1.38\\times10^{-23}}=1.9\\times10^3\\ \\mathrm K$．実測 1358 K より約 4 割大きいが，鉛の 3 倍程度という大小関係は再現する（$K\\approx Ya$ は粗い見積もり）．\n鉛の零点振動：$\\omega=\\sqrt{K/M}=\\sqrt{7.9/(207\\times1.661\\times10^{-27})}=4.79\\times10^{12}\\ \\mathrm{s^{-1}}$，\n\\[\nA_0=\\sqrt{\\frac{\\hbar\\omega}{K}}=\\sqrt{\\frac{1.055\\times10^{-34}\\times4.79\\times10^{12}}{7.9}}=8.0\\times10^{-12}\\ \\mathrm m=0.080\\ \\text{\\AA}.\n\\]\n$(A_0/A)^2=0.03$，すなわち零点エネルギー $\\frac12\\hbar\\omega$ は融点での熱エネルギー $k_BT_m$ の 3% にすぎない（$\\hbar\\omega/k_B\\approx37\\ \\mathrm K\\ll T_m$）．よって古典的な扱いは妥当である．（軽い原子・弱い結合ではこの比が 1 に近づき，ヘリウムのように常圧で固化しない物質が現れる．）"
+    "tex": "(1) $\\frac12KA^2=k_BT$ より $A^2=2k_BT/K$．融解条件 $A=xd$，面心立方の $d=a/\\sqrt2$，$K=Ya$ を入れて\n\\[\nT_m=\\frac{K x^2d^2}{2k_B}=\\frac{Ya\\cdot x^2a^2/2}{2k_B}=\\frac{x^2Ya^3}{4k_B}.\n\\]\n\n(2) $d=a_1/\\sqrt2$ より $\\boldsymbol{x=A/d=\\sqrt2A/a_1}$．$K=Y_1a_1$ だから\n\\[\n\\boldsymbol{T_m=\\frac{KA^2}{2k_B}=\\frac{Y_1a_1A^2}{2k_B}}.\n\\]\n鉛の値（$a_1=4.94\\,\\text{\\AA}$，$Y_1=1.6\\times10^{10}\\,\\mathrm{N/m^2}$，$A=0.46\\,\\text{\\AA}$）では $x\\approx0.13$，$T_m\\approx610\\,\\mathrm K$ となり，実測 600 K に近い．\n\n(3) (1) の式に $x^2=2A^2/a_1^2$ を入れて\n\\[\n\\boldsymbol{T_m'=\\frac{x^2Y_2a_2^3}{4k_B}=\\frac{A^2Y_2a_2^3}{2k_Ba_1^2}},\\qquad \\frac{T_m'}{T_m}=\\frac{Y_2a_2^3}{Y_1a_1^3}.\n\\]\n銅の値を入れると約 $1.9\\times10^3\\,\\mathrm K$ で，実測 1358 K より約 4 割大きいが，鉛の 3 倍程度という大小関係は再現する（$K\\approx Ya$ は粗い見積もり）．\n\n鉛の零点振動：$KA_0^2=\\hbar\\omega=\\hbar\\sqrt{K/M}$ より $A_0^2=\\hbar/\\sqrt{KM}$，\n\\[\n\\boldsymbol{A_0=\\left(\\frac{\\hbar^2}{Y_1a_1M}\\right)^{1/4}}.\n\\]\n$(A_0/A)^2=\\dfrac{\\hbar\\omega}{2k_BT_m}$ は零点エネルギーと融点での熱エネルギーの比で，鉛では約 3% にすぎない（$\\hbar\\omega/k_B\\approx37\\,\\mathrm K\\ll T_m$）．よって古典的な扱いは妥当である．（軽い原子・弱い結合ではこの比が 1 に近づき，ヘリウムのように常圧で固化しない物質が現れる．）"
    }
   ],
   "idea": {
@@ -1106,7 +1106,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) $x$：≈0.132 ; $T_m$ [K]：≈606\n(3) 記述"
+   "spec": "(1) 証明\n(2) x：sqrt(2) A/a_1 ; T_m：Y_1 a_1 A^2/(2k_B)\n(3) T_m'：A^2 Y_2 a_2^3/(2k_B a_1^2) ; A_0：(hbar^2/(Y_1 a_1 M))^(1/4)"
   },
   "methods": [],
   "tags": [
@@ -1139,16 +1139,16 @@
   "theme": "原子振動の熱的振幅・零点振幅とリンデマン則",
   "topic": "原子振動の熱的振幅・零点振幅とリンデマン則",
   "statement": {
-   "tex": "アルミニウム原子（質量 $M=27.0\\ \\mathrm u$）は，ばね定数 $K=20\\ \\mathrm{N/m}$ の 1 次元調和振動子として格子点のまわりで振動するとみなす．$\\langle x^2\\rangle^{1/2}$ を振動の rms 変位とする．\n\\begin{enumerate}\n\\item 古典統計で $T=500\\ \\mathrm K$ の rms 変位を求めよ．\n\\item 量子力学では $\\langle x^2\\rangle=\\dfrac{\\hbar}{2M\\omega}\\coth\\dfrac{\\hbar\\omega}{2k_BT}$（$\\omega=\\sqrt{K/M}$）である．$T=0$ の零点振動の rms 変位と，古典的な熱的値 $k_BT/K$ が零点値 $\\hbar/(2M\\omega)$ に等しくなる温度 $T^*$ を求めよ．また 500 K で量子補正は何 % か．\n\\item リンデマン則「rms 変位が最近接原子間距離 $d=2.86\\ \\text{Å}$ の 10% に達すると融解する」を古典式に適用し，融点を見積もれ．\n\\end{enumerate}"
+   "tex": "金属の原子（質量 $M$）は，ばね定数 $K$ の 1 次元調和振動子として格子点のまわりで振動するとみなす．$\\langle x^2\\rangle^{1/2}$ を振動の rms 変位とする．\n\\begin{enumerate}\n\\item 古典統計で温度 $T$ の rms 変位を求めよ．\n\\item 量子力学では $\\langle x^2\\rangle=\\dfrac{\\hbar}{2M\\omega}\\coth\\dfrac{\\hbar\\omega}{2k_BT}$（$\\omega=\\sqrt{K/M}$）である．$T=0$ の零点振動の rms 変位 $x_0$ と，古典的な熱的値 $k_BT/K$ が零点値 $\\hbar/(2M\\omega)$ に等しくなる温度 $T^*$ を $\\hbar,K,M,k_B$ で表せ．また高温 $T\\gg T^*$ で rms 変位の量子補正（古典値からの相対的な増加）の主要項を求めよ．\n\\item リンデマン則「rms 変位が最近接原子間距離 $d$ の 10% に達すると融解する」を古典式に適用し，融点 $T_m$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1.86\\times10^{-11}\\ \\mathrm m=0.186\\ \\text{Å}$　(2) 零点 rms $7.5\\times10^{-12}\\ \\mathrm m$，$T^*=\\hbar\\omega/2k_B\\approx81\\ \\mathrm K$，補正約 0.4%　(3) $T_m\\approx1.2\\times10^3\\ \\mathrm K$"
+   "tex": "(1) $\\sqrt{\\dfrac{k_BT}{K}}$　(2) $x_0=\\sqrt{\\dfrac{\\hbar}{2\\sqrt{KM}}}$，$T^*=\\dfrac{\\hbar}{2k_B}\\sqrt{\\dfrac KM}$，相対補正 $\\dfrac{\\hbar^2K}{24Mk_B^2T^2}$　(3) $T_m=\\dfrac{Kd^2}{100k_B}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 等分配則 $\\frac12K\\langle x^2\\rangle=\\frac12k_BT$ より\n\\[ x_{\\rm rms}=\\sqrt{\\frac{k_BT}{K}}=\\sqrt{\\frac{1.38\\times10^{-23}\\times500}{20}}=1.86\\times10^{-11}\\ \\mathrm m. \\]\n（振幅 $A$ を全エネルギー $\\frac12KA^2=k_BT$ で定義すると $A=\\sqrt2\\,x_{\\rm rms}=2.6\\times10^{-11}$ m．）\n\n(2) $M=4.48\\times10^{-26}$ kg，$\\omega=\\sqrt{K/M}=2.11\\times10^{13}\\ \\mathrm{s^{-1}}$．$T\\to0$ で $\\coth\\to1$：\n\\[ x_{\\rm rms}(0)=\\sqrt{\\frac{\\hbar}{2M\\omega}}=7.5\\times10^{-12}\\ \\mathrm m. \\]\n$k_BT^*/K=\\hbar/(2M\\omega)$，$K=M\\omega^2$ から $T^*=\\dfrac{\\hbar\\omega}{2k_B}=81$ K．\n高温展開 $\\coth u\\simeq\\frac1u+\\frac u3$（$u=\\hbar\\omega/2k_BT$）より $\\langle x^2\\rangle\\simeq\\frac{k_BT}{K}\\left(1+\\frac{u^2}{3}\\right)$．500 K で $u=0.161$，$\\langle x^2\\rangle$ は $0.87\\%$ 増，rms は約 $0.43\\%$ 増（$1.866\\times10^{-11}$ m）．500 K では古典近似で十分．\n\n(3) $k_BT_m/K=(0.1d)^2$ より\n\\[ T_m=\\frac{K(0.1d)^2}{k_B}=\\frac{20\\times(2.86\\times10^{-11})^2}{1.38\\times10^{-23}}=1.2\\times10^3\\ \\mathrm K. \\]\n実測の融点 933 K と同程度であり，単純な模型としてはよい見積もりである．"
+    "tex": "(1) 等分配則 $\\frac12K\\langle x^2\\rangle=\\frac12k_BT$ より\n\\[ \\boldsymbol{x_{\\rm rms}=\\sqrt{\\frac{k_BT}{K}}}. \\]\n（振幅 $A$ を全エネルギー $\\frac12KA^2=k_BT$ で定義すると $A=\\sqrt2\\,x_{\\rm rms}$．）\n\n(2) $T\\to0$ で $\\coth\\to1$，$M\\omega=\\sqrt{KM}$ より\n\\[ \\boldsymbol{x_0=\\sqrt{\\frac{\\hbar}{2M\\omega}}=\\sqrt{\\frac{\\hbar}{2\\sqrt{KM}}}}. \\]\n$k_BT^*/K=\\hbar/(2M\\omega)$，$K=M\\omega^2$ から $\\boldsymbol{T^*=\\dfrac{\\hbar\\omega}{2k_B}=\\dfrac{\\hbar}{2k_B}\\sqrt{\\dfrac KM}}$．\n高温展開 $\\coth u\\simeq\\frac1u+\\frac u3$（$u=\\hbar\\omega/2k_BT$）より $\\langle x^2\\rangle\\simeq\\frac{k_BT}{K}\\left(1+\\frac{u^2}{3}\\right)$．rms はその平方根なので相対的な増加は $u^2/6$：\n\\[\n\\frac{\\delta x_{\\rm rms}}{x_{\\rm rms}}\\simeq\\frac{u^2}{6}=\\boldsymbol{\\frac{\\hbar^2K}{24Mk_B^2T^2}}.\n\\]\nアルミニウム（$M=27\\,\\mathrm u$，$K=20\\,\\mathrm{N/m}$）では $T^*\\approx80\\,\\mathrm K$ で，500 K での補正は 0.4% 程度にすぎず，古典近似で十分である．\n\n(3) $k_BT_m/K=(0.1d)^2$ より\n\\[ \\boldsymbol{T_m=\\frac{Kd^2}{100k_B}}. \\]\nアルミニウムの値（$d=2.86\\,\\text{\\AA}$）を入れると約 $1.2\\times10^3\\,\\mathrm K$ で，実測の融点 933 K と同程度であり，単純な模型としてはよい見積もりである．"
    }
   ],
   "idea": {
@@ -1156,7 +1156,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $T_m$ [K]：≈1.2e3"
+   "spec": "(1) sqrt(k_B T/K)\n(2) x_0：sqrt(hbar/(2sqrt(K M))) ; T^*：(hbar/(2k_B)) sqrt(K/M) ; 補正：hbar^2 K/(24M k_B^2 T^2)\n(3) T_m：K d^2/(100k_B)"
   },
   "methods": [],
   "tags": [
@@ -1190,16 +1190,16 @@
   "theme": "アインシュタイン比熱の高温補正と低温の破綻",
   "topic": "アインシュタイン比熱の高温補正と低温の破綻",
   "statement": {
-   "tex": "アインシュタイン模型の 1 mol あたりの定積比熱は，$y=\\theta_E/T$ として\n\\[ C_E=3R\\,\\frac{y^2e^y}{(e^y-1)^2}. \\]\n\\begin{enumerate}\n\\item 高温（$y\\ll1$）で $C_E/3R$ を $y^4$ の項まで展開せよ．\n\\item $C_E$ がデュロン＝プティ値 $3R$ から 1% 小さくなる温度を $\\theta_E$ で表せ．\n\\item 銅について $\\theta_E=240\\ \\mathrm K$ とする．$T=10\\ \\mathrm K$ での $C_E$ を求め，デバイの $T^3$ 則 $C_D=\\frac{12\\pi^4}{5}R(T/\\theta_D)^3$（$\\theta_D=343\\ \\mathrm K$）と比較せよ．また $T\\to0$ で $C_E/T^3\\to0$ となることを示せ．\n\\end{enumerate}"
+   "tex": "アインシュタイン模型の 1 mol あたりの定積比熱は，$y=\\theta_E/T$ として\n\\[ C_E=3R\\,\\frac{y^2e^y}{(e^y-1)^2}. \\]\n\\begin{enumerate}\n\\item 高温（$y\\ll1$）で $C_E/3R$ を $y^4$ の項まで展開せよ．\n\\item $C_E$ がデュロン＝プティ値 $3R$ から相対的に $\\delta$（$\\delta\\ll1$）だけ小さくなる温度を，$y^2$ の項までの展開を用いて $\\theta_E,\\delta$ で表せ．\n\\item 低温（$T\\ll\\theta_E$）での $C_E$ の近似式を求め，デバイの $T^3$ 則 $C_D=\\frac{12\\pi^4}{5}R(T/\\theta_D)^3$ との比 $C_E/C_D$ を $\\theta_E,\\theta_D,T$ で表せ．また $T\\to0$ で $C_E/T^3\\to0$ となることを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $C_E/3R=1-\\frac{y^2}{12}+\\frac{y^4}{240}-\\cdots$　(2) $T\\approx\\theta_E/\\sqrt{0.12}\\approx2.9\\,\\theta_E$　(3) $C_E\\approx5.4\\times10^{-7}\\ \\mathrm{J\\,mol^{-1}K^{-1}}$，$C_D\\approx4.8\\times10^{-2}\\ \\mathrm{J\\,mol^{-1}K^{-1}}$（約 $10^5$ 倍の差）．$C_E/T^3\\propto y^5e^{-y}\\to0$"
+   "tex": "(1) $C_E/3R=1-\\frac{y^2}{12}+\\frac{y^4}{240}-\\cdots$　(2) $T=\\dfrac{\\theta_E}{\\sqrt{12\\delta}}$　(3) $C_E\\simeq3R\\left(\\dfrac{\\theta_E}{T}\\right)^2e^{-\\theta_E/T}$，$\\dfrac{C_E}{C_D}=\\dfrac{5\\theta_E^2\\theta_D^3}{4\\pi^4T^5}e^{-\\theta_E/T}$．$C_E/T^3\\propto y^5e^{-y}\\to0$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{y^2e^y}{(e^y-1)^2}=\\dfrac{y^2}{4\\sinh^2(y/2)}$．$\\sinh u=u(1+u^2/6+u^4/120+\\cdots)$ を用いると\n\\[ \\frac{(y/2)^2}{\\sinh^2(y/2)}=1-\\frac{y^2}{12}+\\frac{y^4}{240}-\\cdots, \\]\nよって $C_E/3R=1-\\dfrac{y^2}{12}+\\dfrac{y^4}{240}-\\cdots$．$y\\to0$ で $3R$（デュロン＝プティ則）．\n\n(2) 主要補正 $y^2/12=0.01$ より $y=\\sqrt{0.12}=0.346$，$T=\\theta_E/0.346\\approx2.9\\,\\theta_E$（$y^4$ 項を含めても $C_E/3R=0.9901$ でほぼ一致）．比熱が古典値に近づくには $\\theta_E$ の約 3 倍の温度が要る．\n\n(3) $y=24$：$C_E/3R\\approx y^2e^{-y}=576\\times3.8\\times10^{-11}=2.2\\times10^{-8}$，$C_E=3\\times8.314\\times2.2\\times10^{-8}=5.4\\times10^{-7}$ J mol$^{-1}$K$^{-1}$．\nデバイ則：$C_D=\\frac{12\\pi^4}{5}\\times8.314\\times(10/343)^3=4.8\\times10^{-2}$ J mol$^{-1}$K$^{-1}$．実測もこの程度であり，アインシュタイン模型は 5 桁も過小評価する．\n$T\\to0$ で $C_E\\simeq3Ry^2e^{-y}$，$C_E/T^3=\\dfrac{3R}{\\theta_E^3}y^5e^{-y}\\to0$（$y\\to\\infty$）．どんなべき $T^m$ よりも速く 0 になるのは，全モードが同じ振動数をもち，励起にエネルギーギャップ $h\\nu_E$ が必要なためである．現実の結晶には $\\omega\\to0$ の低エネルギー音響モードがあり，これが $T^3$ 則を生む．"
+    "tex": "(1) $\\dfrac{y^2e^y}{(e^y-1)^2}=\\dfrac{y^2}{4\\sinh^2(y/2)}$．$\\sinh u=u(1+u^2/6+u^4/120+\\cdots)$ を用いると\n\\[ \\frac{(y/2)^2}{\\sinh^2(y/2)}=1-\\frac{y^2}{12}+\\frac{y^4}{240}-\\cdots, \\]\nよって $C_E/3R=1-\\dfrac{y^2}{12}+\\dfrac{y^4}{240}-\\cdots$．$y\\to0$ で $3R$（デュロン＝プティ則）．\n\n(2) 主要補正 $y^2/12=\\delta$ より $y=\\sqrt{12\\delta}$，$\\boldsymbol{T=\\dfrac{\\theta_E}{\\sqrt{12\\delta}}}$．たとえば $\\delta=0.01$ なら $T\\approx2.9\\,\\theta_E$ で，比熱が古典値に近づくには $\\theta_E$ の約 3 倍の温度が要る．\n\n(3) $y\\gg1$ で $e^y-1\\approx e^y$ より $\\boldsymbol{C_E\\simeq3R\\left(\\dfrac{\\theta_E}{T}\\right)^2e^{-\\theta_E/T}}$．デバイ則との比は\n\\[\n\\frac{C_E}{C_D}=\\frac{3R(\\theta_E/T)^2e^{-\\theta_E/T}}{\\frac{12\\pi^4}{5}R(T/\\theta_D)^3}=\\boldsymbol{\\frac{5\\theta_E^2\\theta_D^3}{4\\pi^4T^5}e^{-\\theta_E/T}}.\n\\]\n銅（$\\theta_E\\approx240\\,\\mathrm K$，$\\theta_D\\approx343\\,\\mathrm K$）の $T=10\\,\\mathrm K$ ではこの比は $10^{-5}$ 程度で，実測に近いデバイ則に比べてアインシュタイン模型は 5 桁も過小評価する．\n$T\\to0$ で $C_E/T^3=\\dfrac{3R}{\\theta_E^3}y^5e^{-y}\\to0$（$y\\to\\infty$）．どんなべき $T^m$ よりも速く 0 になるのは，全モードが同じ振動数をもち，励起にエネルギーギャップ $h\\nu_E$ が必要なためである．現実の結晶には $\\omega\\to0$ の低エネルギー音響モードがあり，これが $T^3$ 則を生む．"
    }
   ],
   "idea": {
@@ -1207,7 +1207,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) T：θ_E/sqrt(12δ)\n(3) C_E/C_D：5θ_E^2 θ_D^3 exp(-θ_E/T)/(4pi^4 T^5)"
   },
   "methods": [],
   "tags": [
@@ -1289,16 +1289,16 @@
   "theme": "デバイ温度と低温比熱の T^3 則",
   "topic": "デバイ温度と低温比熱の T^3 則",
   "statement": {
-   "tex": "ある単体金属の原子数密度は $n=8.5\\times10^{28}\\,\\mathrm{m^{-3}}$ で，3つの偏りの音速をすべて $v=3.0\\times10^3\\,\\mathrm{m/s}$ とみなす（デバイ模型）．\n\\begin{enumerate}\n\\item デバイ温度 $\\theta_D=\\dfrac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}$ を数値で求めよ．\n\\item 低温でのデバイ比熱は $C=\\dfrac{12\\pi^4}{5}Nk_B\\left(\\dfrac{T}{\\theta_D}\\right)^3$ である．$T=10\\,\\mathrm{K}$ での比 $C/(3Nk_B)$ を求めよ．\n\\item (2) の $T^3$ 則の式をそのまま高温へ延ばしたとき，デュロン＝プティの値 $3Nk_B$ に達する温度を $\\theta_D$ で表せ．\n\\end{enumerate}"
+   "tex": "ある単体金属の原子数密度を $n$ とし，3つの偏りの音速をすべて $v$ とみなす（デバイ模型）．\n\\begin{enumerate}\n\\item デバイ波数 $k_D$ を「状態数＝原子数」の条件から求め，デバイ温度 $\\theta_D=\\hbar vk_D/k_B$ を $n,v,\\hbar,k_B$ で表せ．\n\\item 低温でのデバイ比熱は $C=\\dfrac{12\\pi^4}{5}Nk_B\\left(\\dfrac{T}{\\theta_D}\\right)^3$ である．温度 $T$ での比 $C/(3Nk_B)$ を $n,v,T,\\hbar,k_B$ で表せ．\n\\item (2) の $T^3$ 則の式をそのまま高温へ延ばしたとき，デュロン＝プティの値 $3Nk_B$ に達する温度を $\\theta_D$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\theta_D\\approx 393\\,\\mathrm{K}$ (2) $\\approx 1.29\\times10^{-3}$ (3) $\\left(\\dfrac{5}{4\\pi^4}\\right)^{1/3}\\theta_D$（$\\approx 0.234\\,\\theta_D$）"
+   "tex": "(1) $\\theta_D=\\dfrac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}$ (2) $\\dfrac{C}{3Nk_B}=\\dfrac{2\\pi^2k_B^3T^3}{15n\\hbar^3v^3}$ (3) $\\left(\\dfrac{5}{4\\pi^4}\\right)^{1/3}\\theta_D$（$\\approx 0.234\\,\\theta_D$）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) デバイ波数は $\\frac{4}{3}\\pi k_D^3/(2\\pi)^3=n$ から $k_D=(6\\pi^2n)^{1/3}=1.714\\times10^{10}\\,\\mathrm{m^{-1}}$．$k_B\\theta_D=\\hbar vk_D$ より\n\\[\n\\theta_D=\\frac{(1.055\\times10^{-34})(3.0\\times10^3)(1.714\\times10^{10})}{1.381\\times10^{-23}}\\approx\\boldsymbol{393\\,\\mathrm{K}}\n\\]\n\n(2) $\\dfrac{C}{3Nk_B}=\\dfrac{4\\pi^4}{5}\\left(\\dfrac{10}{393}\\right)^3=77.9\\times1.65\\times10^{-5}\\approx\\boldsymbol{1.29\\times10^{-3}}$．\n\n(3) $\\frac{12\\pi^4}{5}(T/\\theta_D)^3=3$ を解いて $\\boldsymbol{T=(5/(4\\pi^4))^{1/3}\\theta_D}\\approx0.234\\,\\theta_D$．$T^3$ 則が使えるのはこれよりずっと低い温度（目安は $\\theta_D/50$ 以下）である．"
+    "tex": "(1) デバイ波数は $\\frac{4}{3}\\pi k_D^3/(2\\pi)^3=n$ から $k_D=(6\\pi^2n)^{1/3}$．$k_B\\theta_D=\\hbar vk_D$ より\n\\[\n\\boldsymbol{\\theta_D=\\frac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}}.\n\\]\n典型的な金属（$n\\sim10^{29}\\,\\mathrm{m^{-3}}$，$v\\sim3\\,\\mathrm{km/s}$）で約 400 K になる．\n\n(2) $\\theta_D^3=\\dfrac{6\\pi^2n\\hbar^3v^3}{k_B^3}$ を代入して\n\\[\n\\frac{C}{3Nk_B}=\\frac{4\\pi^4}{5}\\left(\\frac{T}{\\theta_D}\\right)^3=\\frac{4\\pi^4}{5}\\cdot\\frac{k_B^3T^3}{6\\pi^2n\\hbar^3v^3}=\\boldsymbol{\\frac{2\\pi^2k_B^3T^3}{15n\\hbar^3v^3}}.\n\\]\n音速が遅い（柔らかい）物質ほど低温比熱は大きい．$\\theta_D\\approx400\\,\\mathrm K$ の金属では $10\\,\\mathrm K$ で $10^{-3}$ 程度にすぎない．\n\n(3) $\\frac{12\\pi^4}{5}(T/\\theta_D)^3=3$ を解いて $\\boldsymbol{T=(5/(4\\pi^4))^{1/3}\\theta_D}\\approx0.234\\,\\theta_D$．$T^3$ 則が使えるのはこれよりずっと低い温度（目安は $\\theta_D/50$ 以下）である．"
    }
   ],
   "idea": {
@@ -1306,7 +1306,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) θ_D [K]：≈393\n(2) ≈1.29e-3\n(3) (5/(4pi^4))^(1/3) theta_D"
+   "spec": "(1) θ_D：hbar v (6pi^2 n)^(1/3)/k_B\n(2) 2pi^2 k_B^3 T^3/(15n hbar^3 v^3)\n(3) (5/(4pi^4))^(1/3) theta_D"
   },
   "methods": [],
   "tags": [
@@ -1338,24 +1338,24 @@
   "theme": "ガラスの2準位系の比熱：分布の形と格子比熱との交差",
   "topic": "ガラスの2準位系の比熱：分布の形と格子比熱との交差",
   "statement": {
-   "tex": "ガラスの中には，エネルギー差 $E$ の2つの配置をとれる「2準位系」が多数あり，互いに独立とする．1原子あたりの2準位系の数の分布を $P(E)dE$ とする．\n\\begin{enumerate}\n\\item $P(E)=P_0$（一定）のとき，低温での2準位系の比熱（1原子あたり）を求めよ．$\\displaystyle\\int_0^\\infty\\frac{x^2e^x}{(1+e^x)^2}dx=\\frac{\\pi^2}{6}$ を用いよ．\n\\item $P(E)=P_1E$（$E$ に比例）のときの比熱を求めよ．$\\displaystyle\\int_0^\\infty\\frac{x^3e^x}{(1+e^x)^2}dx=\\frac92\\zeta(3)$ を用いよ．\n\\item (1) の2準位系の比熱と，デバイ温度 $\\Theta=300\\ \\mathrm{K}$ のデバイ模型の格子比熱 $\\dfrac{12\\pi^4}{5}k_B\\left(\\dfrac{T}{\\Theta}\\right)^3$（1原子あたり）が等しくなる温度を求めよ．$P_0=1\\ \\mathrm{eV^{-1}}$（1原子あたり），$k_B=8.62\\times10^{-5}\\ \\mathrm{eV/K}$ とする．\n\\end{enumerate}"
+   "tex": "ガラスの中には，エネルギー差 $E$ の2つの配置をとれる「2準位系」が多数あり，互いに独立とする．1原子あたりの2準位系の数の分布を $P(E)dE$ とする．\n\\begin{enumerate}\n\\item $P(E)=P_0$（一定）のとき，低温での2準位系の比熱（1原子あたり）を求めよ．$\\displaystyle\\int_0^\\infty\\frac{x^2e^x}{(1+e^x)^2}dx=\\frac{\\pi^2}{6}$ を用いよ．\n\\item $P(E)=P_1E$（$E$ に比例）のときの比熱を求めよ．$\\displaystyle\\int_0^\\infty\\frac{x^3e^x}{(1+e^x)^2}dx=\\frac92\\zeta(3)$ を用いよ．\n\\item (1) の2準位系の比熱と，デバイ温度 $\\Theta$ のデバイ模型の格子比熱 $\\dfrac{12\\pi^4}{5}k_B\\left(\\dfrac{T}{\\Theta}\\right)^3$（1原子あたり）が等しくなる温度 $T_\\times$ を $P_0,k_B,\\Theta$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $C=\\dfrac{\\pi^2}{6}P_0k_B^2T$　(2) $C=\\dfrac92\\zeta(3)P_1k_B^3T^2$　(3) $T\\approx4.0\\ \\mathrm{K}$"
+   "tex": "(1) $C=\\dfrac{\\pi^2}{6}P_0k_B^2T$　(2) $C=\\dfrac92\\zeta(3)P_1k_B^3T^2$　(3) $T_\\times=\\sqrt{\\dfrac{5P_0k_B\\Theta^3}{72\\pi^2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "エネルギー差 $E$ の2準位系1個の比熱は（ショットキー比熱）\n\\[\nc(E)=k_B\\left(\\frac{E}{k_BT}\\right)^2\\frac{e^{E/k_BT}}{(1+e^{E/k_BT})^2}.\n\\]\n\n(1) $x=E/k_BT$ として\n\\[\nC=\\int_0^\\infty P_0c(E)dE=P_0k_B^2T\\int_0^\\infty\\frac{x^2e^x}{(1+e^x)^2}dx=\\boldsymbol{\\frac{\\pi^2}{6}P_0k_B^2T}.\n\\]\n温度に比例する．低温で励起できるのは $E\\lesssim k_BT$ の2準位系だけで，その数が $T$ に比例するからである．\n\n(2) 同様に\n\\[\nC=P_1k_B^3T^2\\int_0^\\infty\\frac{x^3e^x}{(1+e^x)^2}dx=\\boldsymbol{\\frac92\\zeta(3)P_1k_B^3T^2}.\n\\]\n一般に $P\\propto E^\\alpha$ なら $C\\propto T^{1+\\alpha}$ で，比熱の温度のべきから分布の形がわかる．\n\n(3) $\\dfrac{\\pi^2}{6}P_0k_B^2T=\\dfrac{12\\pi^4}{5}k_B\\dfrac{T^3}{\\Theta^3}$ より\n\\[\nT^2=\\frac{5P_0k_B\\Theta^3}{72\\pi^2}=\\frac{5\\times8.62\\times10^{-5}\\times2.7\\times10^7}{72\\times9.87}\\approx16.4\\ \\mathrm{K^2},\n\\qquad \\boldsymbol{T\\approx4.0\\ \\mathrm{K}}.\n\\]\nこれより低温では2準位系の $T$ に比例する比熱が $T^3$ の格子比熱を上回る（ガラスの低温比熱の異常）．金属の電子比熱 $\\frac{\\pi^2}{3}g(E_F)k_B^2T$ と同じ形で，係数の比較から2準位系の密度を見積もれる．"
+    "tex": "エネルギー差 $E$ の2準位系1個の比熱は（ショットキー比熱）\n\\[\nc(E)=k_B\\left(\\frac{E}{k_BT}\\right)^2\\frac{e^{E/k_BT}}{(1+e^{E/k_BT})^2}.\n\\]\n\n(1) $x=E/k_BT$ として\n\\[\nC=\\int_0^\\infty P_0c(E)dE=P_0k_B^2T\\int_0^\\infty\\frac{x^2e^x}{(1+e^x)^2}dx=\\boldsymbol{\\frac{\\pi^2}{6}P_0k_B^2T}.\n\\]\n温度に比例する．低温で励起できるのは $E\\lesssim k_BT$ の2準位系だけで，その数が $T$ に比例するからである．\n\n(2) 同様に\n\\[\nC=P_1k_B^3T^2\\int_0^\\infty\\frac{x^3e^x}{(1+e^x)^2}dx=\\boldsymbol{\\frac92\\zeta(3)P_1k_B^3T^2}.\n\\]\n一般に $P\\propto E^\\alpha$ なら $C\\propto T^{1+\\alpha}$ で，比熱の温度のべきから分布の形がわかる．\n\n(3) $\\dfrac{\\pi^2}{6}P_0k_B^2T=\\dfrac{12\\pi^4}{5}k_B\\dfrac{T^3}{\\Theta^3}$ より\n\\[\nT_\\times^2=\\frac{5P_0k_B\\Theta^3}{72\\pi^2},\\qquad \\boldsymbol{T_\\times=\\sqrt{\\frac{5P_0k_B\\Theta^3}{72\\pi^2}}}.\n\\]\n$\\Theta=300\\,\\mathrm K$，$P_0=1\\,\\mathrm{eV^{-1}}$ 程度なら $T_\\times\\approx4\\,\\mathrm K$ である．これより低温では2準位系の $T$ に比例する比熱が $T^3$ の格子比熱を上回る（ガラスの低温比熱の異常）．金属の電子比熱 $\\frac{\\pi^2}{3}g(E_F)k_B^2T$ と同じ形で，係数の比較から2準位系の密度を見積もれる．"
    }
   ],
   "idea": {
-   "tex": "エネルギー差が分布した独立な2準位系の比熱は，分布の低エネルギー側の形 $P(E)\\propto E^\\alpha$ で $T^{1+\\alpha}$ になる．平らな分布では電子比熱と同じ $T$ に比例し，デバイの $T^3$ と数 K で交差する．原題は平らな分布での比熱と金属との比較で，捻りでは分布の形を変え，交差温度を数値で求める．"
+   "tex": "エネルギー差が分布した独立な2準位系の比熱は，分布の低エネルギー側の形 $P(E)\\propto E^\\alpha$ で $T^{1+\\alpha}$ になる．平らな分布では電子比熱と同じ $T$ に比例し，デバイの $T^3$ と低温で交差する．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $C$：((pi ^(2))/(6)) P_0 k_B ^(2) T\n(2) $C$：((9)/(2)) ζ (3) P_1 k_B ^(3) T ^(2)\n(3) $T$ [K]：≈4.0"
+   "spec": "(1) $C$：((pi ^(2))/(6)) P_0 k_B ^(2) T\n(2) $C$：((9)/(2)) ζ (3) P_1 k_B ^(3) T ^(2)\n(3) T_×：sqrt(5P_0 k_B Θ^3/(72pi^2))"
   },
   "methods": [],
   "tags": [
@@ -1487,19 +1487,19 @@
   "field": "SS-54",
   "level": 3,
   "minutes": 25,
-  "theme": "銅の零点エネルギーと同位体・高温展開",
-  "topic": "銅の零点エネルギーと同位体・高温展開",
+  "theme": "零点エネルギーと同位体・高温展開",
+  "topic": "零点エネルギーと同位体・高温展開",
   "statement": {
-   "tex": "銅のデバイ温度を $\\Theta=330\\ \\mathrm K$，モル質量を $63.55\\ \\mathrm{g/mol}$ とし，デバイ模型（3 次元）を用いる．\n\\begin{enumerate}\n\\item 1 モルおよび 1 g あたりの零点振動エネルギーを求めよ．\n\\item 力の定数が同位体によらないとき，$^{63}$Cu と $^{65}$Cu の 1 モルあたりの零点エネルギーの差を求めよ．ただし $^{63}$Cu のデバイ温度を $330\\ \\mathrm K$ とする．\n\\item 零点エネルギーを含めた振動エネルギー $U(T)$ を $T\\gg\\Theta$ で展開すると $U=3RT+\\dfrac{\\beta R\\Theta^2}{T}+\\cdots$ となり，$T$ によらない定数項が現れないことを示し，$\\beta$ を求めよ．\n\\end{enumerate}"
+   "tex": "デバイ温度 $\\Theta$，モル質量 $M$ の単原子金属について，デバイ模型（3 次元）を用いる．気体定数を $R$ とする．\n\\begin{enumerate}\n\\item 1 モルおよび単位質量あたりの零点振動エネルギーを求めよ．\n\\item 力の定数が同位体によらないとき，原子の質量が $m_1$ と $m_2$ の 2 つの同位体の 1 モルあたりの零点エネルギーの差（前者 − 後者）を求めよ．ただし質量 $m_1$ の同位体のデバイ温度を $\\Theta$ とする．\n\\item 零点エネルギーを含めた振動エネルギー $U(T)$ を $T\\gg\\Theta$ で展開すると $U=3RT+\\dfrac{\\beta R\\Theta^2}{T}+\\cdots$ となり，$T$ によらない定数項が現れないことを示し，$\\beta$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $U_0=\\dfrac98R\\Theta=3.09\\ \\mathrm{kJ/mol}$，$48.6\\ \\mathrm{J/g}$　(2) 約 $48\\ \\mathrm{J/mol}$（$^{65}$Cu が小さい）　(3) $\\beta=3/20$"
+   "tex": "(1) $U_0=\\dfrac98R\\Theta$（1 モル），$\\dfrac{9R\\Theta}{8M}$（単位質量）　(2) $\\dfrac98R\\Theta\\left(1-\\sqrt{\\dfrac{m_1}{m_2}}\\right)$　(3) $\\beta=3/20$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 3 次元デバイ模型のモード密度 $g(\\omega)=9N_A\\omega^2/\\omega_{\\max}^3$．\n$U_0=\\displaystyle\\int_0^{\\omega_{\\max}}\\frac{\\hbar\\omega}{2}g\\,d\\omega=\\frac98N_A\\hbar\\omega_{\\max}=\\frac98R\\Theta=\\frac98\\times8.314\\times330=3.09\\times10^3\\ \\mathrm{J/mol}$．1 g あたり $3087/63.55=48.6\\ \\mathrm{J/g}$．\n\n(2) $\\omega_{\\max}\\propto\\sqrt{\\kappa/M}$ より $\\Theta\\propto M^{-1/2}$．$\\Theta_{65}=330\\sqrt{63/65}=324.9\\ \\mathrm K$．差 $\\dfrac98R(330-324.9)=48\\ \\mathrm{J/mol}$．（零点エネルギーの差は同位体分別の原因になる．）\n\n(3) $y=\\Theta/T$ とすると $U=\\dfrac98R\\Theta+\\dfrac{9RT}{y^3}\\displaystyle\\int_0^y\\frac{x^3\\,dx}{e^x-1}$．$\\dfrac{x^3}{e^x-1}=x^2-\\dfrac{x^3}2+\\dfrac{x^4}{12}-\\cdots$ を積分して\n\\[\n\\frac{9RT}{y^3}\\left(\\frac{y^3}3-\\frac{y^4}8+\\frac{y^5}{60}-\\cdots\\right)=3RT-\\frac98R\\Theta+\\frac{3}{20}\\frac{R\\Theta^2}{T}+\\cdots.\n\\]\n熱励起部分の $-\\frac98R\\Theta$ が零点エネルギー $\\frac98R\\Theta$ とちょうど打ち消し合うので，$U=3RT+\\dfrac{3}{20}\\dfrac{R\\Theta^2}{T}+\\cdots$．$\\beta=3/20$．高温で古典的エネルギー（定数項なし）に一致するのは零点エネルギーを含めた場合である．"
+    "tex": "(1) 3 次元デバイ模型のモード密度 $g(\\omega)=9N_A\\omega^2/\\omega_{\\max}^3$．\n\\[\nU_0=\\int_0^{\\omega_{\\max}}\\frac{\\hbar\\omega}{2}g\\,d\\omega=\\frac98N_A\\hbar\\omega_{\\max}=\\boldsymbol{\\frac98R\\Theta}.\n\\]\n単位質量あたりはモル質量で割って $\\boldsymbol{\\dfrac{9R\\Theta}{8M}}$．銅（$\\Theta\\approx330\\,\\mathrm K$）では約 $3\\,\\mathrm{kJ/mol}$ になる．\n\n(2) $\\omega_{\\max}\\propto\\sqrt{\\kappa/m}$ より $\\Theta\\propto m^{-1/2}$．質量 $m_2$ の同位体のデバイ温度は $\\Theta\\sqrt{m_1/m_2}$．差は\n\\[\n\\boldsymbol{\\frac98R\\Theta\\left(1-\\sqrt{\\frac{m_1}{m_2}}\\right)}.\n\\]\n$m_2>m_1$ なら正で，重い同位体ほど零点エネルギーが小さい．$^{63}$Cu と $^{65}$Cu では約 $50\\,\\mathrm{J/mol}$ で，零点エネルギーの差は同位体分別の原因になる．\n\n(3) $y=\\Theta/T$ とすると $U=\\dfrac98R\\Theta+\\dfrac{9RT}{y^3}\\displaystyle\\int_0^y\\frac{x^3\\,dx}{e^x-1}$．$\\dfrac{x^3}{e^x-1}=x^2-\\dfrac{x^3}2+\\dfrac{x^4}{12}-\\cdots$ を積分して\n\\[\n\\frac{9RT}{y^3}\\left(\\frac{y^3}3-\\frac{y^4}8+\\frac{y^5}{60}-\\cdots\\right)=3RT-\\frac98R\\Theta+\\frac{3}{20}\\frac{R\\Theta^2}{T}+\\cdots.\n\\]\n熱励起部分の $-\\frac98R\\Theta$ が零点エネルギー $\\frac98R\\Theta$ とちょうど打ち消し合うので，$U=3RT+\\dfrac{3}{20}\\dfrac{R\\Theta^2}{T}+\\cdots$．$\\boldsymbol{\\beta=3/20}$．高温で古典的エネルギー（定数項なし）に一致するのは零点エネルギーを含めた場合である．"
    }
   ],
   "idea": {
@@ -1507,15 +1507,14 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $U_0$ [kJ/mol]：≈3.09 ; [J/g]：≈48.6\n(2) [J/mol]：≈48\n(3) $\\beta$：3/20"
+   "spec": "(1) U_0：9RΘ/8 ; 単位質量あたり：9RΘ/(8M)\n(2) (9/8) R Θ (1-sqrt(m_1/m_2))\n(3) $\\beta$：3/20"
   },
   "methods": [],
   "tags": [
    "デバイ模型",
    "零点エネルギー",
    "同位体効果",
-   "高温展開",
-   "銅"
+   "高温展開"
   ],
   "provenance": {
    "created": "2026-11-23"
@@ -1691,16 +1690,16 @@
   "theme": "格子比熱の高温展開と量子補正",
   "topic": "格子比熱の高温展開と量子補正",
   "statement": {
-   "tex": "角振動数 $\\omega$ の量子調和振動子1個の熱容量は，$x=\\hbar\\omega/k_BT$ として\n\\[ C_1=k_B\\frac{x^2e^x}{(e^x-1)^2} \\]\nである．\n\\begin{enumerate}\n\\item 高温（$x\\ll1$）で $C_1\\approx k_B(1+Ax^2)$ と展開したときの係数 $A$ を求めよ．\n\\item デバイ模型（$N$ 個の原子，状態密度 $D(\\omega)\\propto\\omega^2$，$0<\\omega<\\omega_D$，デバイ温度 $\\theta_D=\\hbar\\omega_D/k_B$）で，高温での熱容量を $T^{-2}$ の項まで求めよ．\n\\item (2) の近似で，熱容量がデュロン＝プティの値 $3Nk_B$ より $1\\%$ 小さくなる温度を $\\theta_D$ で表せ．\n\\item 銅（$\\theta_D=343\\,\\mathrm{K}$）の $T=300\\,\\mathrm{K}$ での $C/(3Nk_B)$ を (2) の近似式で求めよ．\n\\end{enumerate}"
+   "tex": "角振動数 $\\omega$ の量子調和振動子1個の熱容量は，$x=\\hbar\\omega/k_BT$ として\n\\[ C_1=k_B\\frac{x^2e^x}{(e^x-1)^2} \\]\nである．\n\\begin{enumerate}\n\\item 高温（$x\\ll1$）で $C_1\\approx k_B(1+Ax^2)$ と展開したときの係数 $A$ を求めよ．\n\\item デバイ模型（$N$ 個の原子，状態密度 $D(\\omega)\\propto\\omega^2$，$0<\\omega<\\omega_D$，デバイ温度 $\\theta_D=\\hbar\\omega_D/k_B$）で，高温での熱容量を $T^{-2}$ の項まで求めよ．\n\\item (2) の近似で，熱容量がデュロン＝プティの値 $3Nk_B$ より相対的に $\\delta$ だけ小さくなる温度を $\\theta_D,\\delta$ で表せ．\n\\item $T=\\theta_D$ での $C/(3Nk_B)$ を (2) の近似式で求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $A=-\\dfrac{1}{12}$\n(2) $C\\approx3\\left(1-\\dfrac{\\theta_D^2}{20T^2}\\right)Nk_B$\n(3) $T=\\sqrt{5}\\theta_D$\n(4) $\\approx0.935$"
+   "tex": "(1) $A=-\\dfrac{1}{12}$\n(2) $C\\approx3\\left(1-\\dfrac{\\theta_D^2}{20T^2}\\right)Nk_B$\n(3) $T=\\dfrac{\\theta_D}{\\sqrt{20\\delta}}$\n(4) $\\dfrac{19}{20}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{x^2e^x}{(e^x-1)^2}=\\dfrac{x^2}{4\\sinh^2(x/2)}$．$\\sinh y\\approx y(1+y^2/6)$ より $\\dfrac{x^2}{4\\sinh^2(x/2)}\\approx\\left(1+\\dfrac{x^2}{24}\\right)^{-2}\\approx1-\\dfrac{x^2}{12}$．$\\boldsymbol{A=-1/12}$．\n\n(2) $3N$ 個のモードについて足すと\n\\[ C\\approx3Nk_B\\left(1-\\frac{\\hbar^2\\langle\\omega^2\\rangle}{12k_B^2T^2}\\right),\\quad\\langle\\omega^2\\rangle=\\frac{\\int_0^{\\omega_D}\\omega^4d\\omega}{\\int_0^{\\omega_D}\\omega^2d\\omega}=\\frac{3}{5}\\omega_D^2. \\]\nよって $\\boldsymbol{C\\approx3Nk_B\\left(1-\\dfrac{\\theta_D^2}{20T^2}\\right)}$．高温展開の補正はスペクトルの2次モーメント $\\langle\\omega^2\\rangle$ だけで決まり，状態密度の細部によらない．\n\n(3) $\\dfrac{\\theta_D^2}{20T^2}=0.01$ より $\\boldsymbol{T=\\sqrt{5}\\theta_D}\\approx2.24\\theta_D$．\n\n(4) $1-\\dfrac{343^2}{20\\times300^2}=\\boldsymbol{0.935}$．デバイ関数を数値積分した値は $0.938$ で，$T\\approx\\theta_D$ でも高温展開はよい近似である．"
+    "tex": "(1) $\\dfrac{x^2e^x}{(e^x-1)^2}=\\dfrac{x^2}{4\\sinh^2(x/2)}$．$\\sinh y\\approx y(1+y^2/6)$ より $\\dfrac{x^2}{4\\sinh^2(x/2)}\\approx\\left(1+\\dfrac{x^2}{24}\\right)^{-2}\\approx1-\\dfrac{x^2}{12}$．$\\boldsymbol{A=-1/12}$．\n\n(2) $3N$ 個のモードについて足すと\n\\[ C\\approx3Nk_B\\left(1-\\frac{\\hbar^2\\langle\\omega^2\\rangle}{12k_B^2T^2}\\right),\\quad\\langle\\omega^2\\rangle=\\frac{\\int_0^{\\omega_D}\\omega^4d\\omega}{\\int_0^{\\omega_D}\\omega^2d\\omega}=\\frac{3}{5}\\omega_D^2. \\]\nよって $\\boldsymbol{C\\approx3Nk_B\\left(1-\\dfrac{\\theta_D^2}{20T^2}\\right)}$．高温展開の補正はスペクトルの2次モーメント $\\langle\\omega^2\\rangle$ だけで決まり，状態密度の細部によらない．\n\n(3) $\\dfrac{\\theta_D^2}{20T^2}=\\delta$ より $\\boldsymbol{T=\\dfrac{\\theta_D}{\\sqrt{20\\delta}}}$．$\\delta=0.01$ なら $T=\\sqrt5\\,\\theta_D\\approx2.24\\theta_D$．\n\n(4) $1-\\dfrac{1}{20}=\\boldsymbol{\\dfrac{19}{20}}$．デバイ関数を数値積分した値は約 $0.952$ で，$T\\approx\\theta_D$ でも高温展開はよい近似である．"
    }
   ],
   "idea": {
@@ -1708,7 +1707,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) -1/12\n(2) 3N k_B (1-θ_D^2/(20T^2))\n(3) sqrt(5) θ_D\n(4) ≈0.935"
+   "spec": "(1) -1/12\n(2) 3N k_B (1-θ_D^2/(20T^2))\n(3) θ_D/sqrt(20δ)\n(4) 19/20"
   },
   "methods": [],
   "tags": [
@@ -1740,16 +1739,16 @@
   "theme": "グリュナイゼン関係と熱膨張",
   "topic": "グリュナイゼン関係と熱膨張",
   "statement": {
-   "tex": "結晶の自由エネルギーを，静的なエネルギー $\\Phi(V)$ と格子振動の部分の和\n\\[ F=\\Phi(V)+\\sum_i\\left[\\frac{\\hbar\\omega_i}{2}+k_BT\\ln\\left(1-e^{-\\hbar\\omega_i/k_BT}\\right)\\right] \\]\nで表す．すべてのモードの振動数が体積に $\\omega_i\\propto V^{-\\gamma}$ のように依存するとする（$\\gamma$ はグリュナイゼン定数）．\n\\begin{enumerate}\n\\item 格子振動による圧力 $P_{\\mathrm{vib}}=-\\left(\\dfrac{\\partial F_{\\mathrm{vib}}}{\\partial V}\\right)_T$ を，格子振動のエネルギー（零点エネルギーを含む）$U$ と $\\gamma,V$ で表せ．\n\\item 体積弾性率を $B$，定積熱容量を $C_V$ とする．圧力 0 で一定に保つときの体膨張率 $\\beta=\\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial T}\\right)_P$ を $\\gamma,C_V,B,V$ で表せ．\n\\item 銅 $1\\,\\mathrm{mol}$ について $\\gamma=2.0$，$B=137\\,\\mathrm{GPa}$，$V=7.1\\times10^{-6}\\,\\mathrm{m^3}$，$C_V=24.5\\,\\mathrm{J/K}$ として，線膨張率 $\\alpha_L=\\beta/3$ を求めよ．\n\\item 低温（$T\\ll\\theta_D$）で $\\beta\\propto T^n$ となる $n$ を求めよ．\n\\end{enumerate}"
+   "tex": "結晶の自由エネルギーを，静的なエネルギー $\\Phi(V)$ と格子振動の部分の和\n\\[ F=\\Phi(V)+\\sum_i\\left[\\frac{\\hbar\\omega_i}{2}+k_BT\\ln\\left(1-e^{-\\hbar\\omega_i/k_BT}\\right)\\right] \\]\nで表す．すべてのモードの振動数が体積に $\\omega_i\\propto V^{-\\gamma}$ のように依存するとする（$\\gamma$ はグリュナイゼン定数）．\n\\begin{enumerate}\n\\item 格子振動による圧力 $P_{\\mathrm{vib}}=-\\left(\\dfrac{\\partial F_{\\mathrm{vib}}}{\\partial V}\\right)_T$ を，格子振動のエネルギー（零点エネルギーを含む）$U$ と $\\gamma,V$ で表せ．\n\\item 体積弾性率を $B$，定積熱容量を $C_V$ とする．圧力 0 で一定に保つときの体膨張率 $\\beta=\\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial T}\\right)_P$ を $\\gamma,C_V,B,V$ で表せ．\n\\item 等方的な結晶の線膨張率 $\\alpha_L=\\beta/3$ を $\\gamma,C_V,B,V$ で表せ．\n\\item 低温（$T\\ll\\theta_D$）で $\\beta\\propto T^n$ となる $n$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P_{\\mathrm{vib}}=\\dfrac{\\gamma U}{V}$\n(2) $\\beta=\\dfrac{\\gamma C_V}{BV}$\n(3) $\\alpha_L\\approx1.7\\times10^{-5}\\,\\mathrm{K^{-1}}$\n(4) $n=3$"
+   "tex": "(1) $P_{\\mathrm{vib}}=\\dfrac{\\gamma U}{V}$\n(2) $\\beta=\\dfrac{\\gamma C_V}{BV}$\n(3) $\\alpha_L=\\dfrac{\\gamma C_V}{3BV}$\n(4) $n=3$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{\\partial\\omega_i}{\\partial V}=-\\gamma\\dfrac{\\omega_i}{V}$ である．1つのモードについて\n\\[ \\frac{\\partial F_i}{\\partial\\omega_i}=\\frac{\\hbar}{2}+\\frac{\\hbar e^{-\\hbar\\omega_i/k_BT}}{1-e^{-\\hbar\\omega_i/k_BT}}=\\hbar\\left(\\frac{1}{2}+n_i\\right)=\\frac{U_i}{\\omega_i} \\]\n（$n_i$ はボース分布）なので\n\\[ P_{\\mathrm{vib}}=-\\sum_i\\frac{U_i}{\\omega_i}\\cdot\\left(-\\gamma\\frac{\\omega_i}{V}\\right)=\\boldsymbol{\\frac{\\gamma U}{V}}. \\]\nこれをグリュナイゼンの状態方程式という．\n\n(2) 全圧力 $P=-\\Phi'(V)+\\gamma U/V=0$ を $T$ で微分する．定積で $T$ を上げると圧力は $\\gamma C_V/V$ だけ増えるので，熱力学の関係 $\\left(\\frac{\\partial V}{\\partial T}\\right)_P=-\\left(\\frac{\\partial P}{\\partial T}\\right)_V\\Big/\\left(\\frac{\\partial P}{\\partial V}\\right)_T$ と $B=-V(\\partial P/\\partial V)_T$ より\n\\[ \\beta=\\frac{1}{V}\\cdot\\frac{\\gamma C_V/V}{B/V}=\\boldsymbol{\\frac{\\gamma C_V}{BV}}. \\]\n\n(3) $\\beta=\\dfrac{2.0\\times24.5}{137\\times10^9\\times7.1\\times10^{-6}}=5.04\\times10^{-5}\\,\\mathrm{K^{-1}}$，$\\alpha_L=\\boldsymbol{1.7\\times10^{-5}\\,\\mathrm{K^{-1}}}$．実測値（$1.7\\times10^{-5}\\,\\mathrm{K^{-1}}$）とよく合う．\n\n(4) $\\gamma,B,V$ はほぼ一定なので $\\beta\\propto C_V\\propto T^3$（デバイの $T^3$ 則）．$\\boldsymbol{n=3}$．熱膨張率と比熱の比が温度によらないことをグリュナイゼンの法則という．"
+    "tex": "(1) $\\dfrac{\\partial\\omega_i}{\\partial V}=-\\gamma\\dfrac{\\omega_i}{V}$ である．1つのモードについて\n\\[ \\frac{\\partial F_i}{\\partial\\omega_i}=\\frac{\\hbar}{2}+\\frac{\\hbar e^{-\\hbar\\omega_i/k_BT}}{1-e^{-\\hbar\\omega_i/k_BT}}=\\hbar\\left(\\frac{1}{2}+n_i\\right)=\\frac{U_i}{\\omega_i} \\]\n（$n_i$ はボース分布）なので\n\\[ P_{\\mathrm{vib}}=-\\sum_i\\frac{U_i}{\\omega_i}\\cdot\\left(-\\gamma\\frac{\\omega_i}{V}\\right)=\\boldsymbol{\\frac{\\gamma U}{V}}. \\]\nこれをグリュナイゼンの状態方程式という．\n\n(2) 全圧力 $P=-\\Phi'(V)+\\gamma U/V=0$ を $T$ で微分する．定積で $T$ を上げると圧力は $\\gamma C_V/V$ だけ増えるので，熱力学の関係 $\\left(\\frac{\\partial V}{\\partial T}\\right)_P=-\\left(\\frac{\\partial P}{\\partial T}\\right)_V\\Big/\\left(\\frac{\\partial P}{\\partial V}\\right)_T$ と $B=-V(\\partial P/\\partial V)_T$ より\n\\[ \\beta=\\frac{1}{V}\\cdot\\frac{\\gamma C_V/V}{B/V}=\\boldsymbol{\\frac{\\gamma C_V}{BV}}. \\]\n\n(3) $\\boldsymbol{\\alpha_L=\\dfrac{\\gamma C_V}{3BV}}$．銅 1 mol の値（$\\gamma\\approx2$，$B=137\\,\\mathrm{GPa}$，$V=7.1\\times10^{-6}\\,\\mathrm{m^3}$，$C_V\\approx3R$）を入れると $\\alpha_L\\approx1.7\\times10^{-5}\\,\\mathrm{K^{-1}}$ となり，実測値とよく合う．\n\n(4) $\\gamma,B,V$ はほぼ一定なので $\\beta\\propto C_V\\propto T^3$（デバイの $T^3$ 則）．$\\boldsymbol{n=3}$．熱膨張率と比熱の比が温度によらないことをグリュナイゼンの法則という．"
    }
   ],
   "idea": {
@@ -1757,7 +1756,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) γ U/V\n(2) γ C_V/(B V)\n(3) α_L [1/K]：≈1.7e-5\n(4) 3"
+   "spec": "(1) γ U/V\n(2) γ C_V/(B V)\n(3) α_L：γ C_V/(3B V)\n(4) 3"
   },
   "methods": [],
   "tags": [

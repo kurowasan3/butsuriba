@@ -11,7 +11,8 @@
   "solution": "$S=k_B\\ln A+Nk_B\\ln V+\\dfrac{3N}{2}k_B\\ln E$ である．$\\ln$ の微分 $(\\ln x)'=1/x$ を使う．\n\n(1) $\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{3Nk_B}{2E}$ より $\\boldsymbol{E=\\dfrac{3}{2}Nk_BT}$．単原子分子の理想気体の内部エネルギーそのものである．\n\n(2) $\\dfrac{P}{T}=\\dfrac{\\partial S}{\\partial V}=\\dfrac{Nk_B}{V}$ より $\\boldsymbol{P=\\dfrac{Nk_BT}{V}}$．理想気体の状態方程式が「状態の数え上げ」だけから出てきた．\n\n(3) $S=k_B\\ln A'+Nk_B\\ln V+3Nk_B\\ln E$ より $\\dfrac{1}{T}=\\dfrac{3Nk_B}{E}$，すなわち $\\boldsymbol{E=3Nk_BT}$．圧力は (2) と同じ $P=Nk_BT/V$ なので，この気体では $PV=E/3$ となる（光の圧力と同じ関係）．\n\n状態数が $E$ の何乗で増えるかが温度とエネルギーの関係を決めている．次は，この $W$ そのものを位相空間の体積として計算する方法（ミクロカノニカル分布）を学ぶ．",
   "idea": "$S=k_B\\ln W$ を $E$ で微分すると $1/T$，$V$ で微分すると $P/T$ が出る．$W\\propto E^{\\alpha}$ なら $E=\\alpha k_BT$．",
   "tags": "ミクロカノニカル,エントロピー,温度の定義,状態方程式",
-  "input": "(1) E：3/2 N k_B T\n(2) P：N k_B T/V\n(3) E：3 N k_B T"
+  "input": "(1) E：3/2 N k_B T\n(2) P：N k_B T/V\n(3) E：3 N k_B T",
+  "id": "SM-01-008"
  },
  {
   "tid": "T14-02",
@@ -25,7 +26,8 @@
   "solution": "(1) $u_i=p_i/\\sqrt{2m}$，$v_i=\\sqrt{m/2}\\,\\omega x_i$ と変数変換すると，$H\\le E$ は $\\sum(u_i^2+v_i^2)\\le E$，すなわち $2N$ 次元の半径 $\\sqrt{E}$ の球になる．ヤコビアンは $dp_i\\,dx_i=\\dfrac{2}{\\omega}du_i\\,dv_i$ なので，位相空間の体積は $\\left(\\dfrac{2}{\\omega}\\right)^N\\dfrac{\\pi^NE^N}{N!}$．$h^N=(2\\pi\\hbar)^N$ で割って\n\\[ \\boldsymbol{\\Gamma(E)=\\frac{1}{N!}\\left(\\frac{E}{\\hbar\\omega}\\right)^N}. \\]\n振動子は位置で区別できるので，同種粒子の $1/N!$ は付けない（ここの $1/N!$ は球の体積から来たもの）．\n\n(2) $\\ln\\Gamma=N\\ln\\dfrac{E}{\\hbar\\omega}-N\\ln N+N$ より $\\boldsymbol{S=Nk_B\\left(\\ln\\dfrac{E}{N\\hbar\\omega}+1\\right)}$．示量的になっている．\n\n(3) $\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{Nk_B}{E}$ より $\\boldsymbol{E=Nk_BT}$．1振動子あたり $k_BT$（運動・位置エネルギーに $\\frac{1}{2}k_BT$ ずつ）で，エネルギー等分配則と一致する．量子力学的に数えると（アインシュタイン模型），$k_BT\\gg\\hbar\\omega$ でこの結果に戻る．",
   "idea": "変数変換で楕円体を球に直すと位相空間の体積が求まり，$\\Gamma\\propto E^N$ から $E=Nk_BT$ が出る．",
   "tags": "ミクロカノニカル,位相空間,調和振動子,等分配則",
-  "input": "(1) N! Γ：(E/(hbar omega))^N\n(2) S：N k_B (ln(E/(N hbar omega)) + 1)\n(3) E：N k_B T"
+  "input": "(1) N! Γ：(E/(hbar omega))^N\n(2) S：N k_B (ln(E/(N hbar omega)) + 1)\n(3) E：N k_B T",
+  "id": "SM-01-009"
  },
  {
   "tid": "T14-03",
@@ -39,7 +41,8 @@
   "solution": "温度は変わらないので $\\lambda$ は一定である．\n\n(1) A，B はそれぞれ体積 $V$ から $2V$ に広がる．各成分の $\\ln V$ の項だけが変わり，$\\boldsymbol{\\Delta S=2\\times Nk_B\\ln2=2Nk_B\\ln2}$．\n\n(2) 混合後は $2N$ 個が体積 $2V$ にある．$S_{\\rm 後}=2Nk_B\\left[\\ln\\dfrac{2V}{2N\\lambda^3}+\\dfrac{5}{2}\\right]=2S_{\\rm 前,1室}$ なので $\\boldsymbol{\\Delta S=0}$．仕切りを戻せば元に戻る可逆な操作だから当然である．\n\n(3) $S'_{\\rm 後}=2Nk_B\\left[\\ln\\dfrac{2V}{\\lambda^3}+\\dfrac{3}{2}\\right]$，$S'_{\\rm 前}=2Nk_B\\left[\\ln\\dfrac{V}{\\lambda^3}+\\dfrac{3}{2}\\right]$ より $\\boldsymbol{\\Delta S=2Nk_B\\ln2}$．同じ気体でもエントロピーが増えてしまう（ギブスのパラドックス）．$S'$ は示量的でない（$N,V$ を2倍にしても2倍にならない）ことが原因で，$1/N!$ がこれを解消する．\n\n(4) 圧力・温度が等しいので混合後の体積は $3V$．A は $V\\to3V$，B は $2V\\to3V$ に広がり\n\\[ \\boldsymbol{\\Delta S=Nk_B\\ln3+2Nk_B\\ln\\frac{3}{2}}. \\]\nモル分率 $x_A=1/3$，$x_B=2/3$ を使えば $\\Delta S=-3Nk_B(x_A\\ln x_A+x_B\\ln x_B)$ という混合エントロピーの一般形になっている．",
   "idea": "温度一定の混合では各成分の占める体積の変化だけが効く．同種粒子を区別しない $1/N!$ がギブスのパラドックスを解消する．",
   "tags": "ミクロカノニカル,混合エントロピー,ギブスのパラドックス,ザックール＝テトロード",
-  "input": "(1) ΔS：2 N k_B ln 2\n(2) ΔS：0\n(3) ΔS：2 N k_B ln 2\n(4) ΔS：N k_B ln 3 + 2 N k_B ln(3/2)"
+  "input": "(1) ΔS：2 N k_B ln 2\n(2) ΔS：0\n(3) ΔS：2 N k_B ln 2\n(4) ΔS：N k_B ln 3 + 2 N k_B ln(3/2)",
+  "id": "SM-01-010"
  },
  {
   "tid": "T14-04",
@@ -53,7 +56,8 @@
   "solution": "$N=1$ では $\\dfrac{8\\pi}{3!}(E/c)^3=\\dfrac{4\\pi}{3}(E/c)^3$ で確かに球の体積になる．\n\n(1) $\\ln\\Gamma=N\\ln V+N\\ln8\\pi+3N\\ln\\dfrac{E}{hc}-(N\\ln N-N)-(3N\\ln3N-3N)$\n\\[ =N\\left[\\ln\\frac{8\\pi VE^3}{N\\cdot27N^3h^3c^3}+4\\right]. \\]\nよって $\\boldsymbol{S=Nk_B\\left[\\ln\\dfrac{8\\pi VE^3}{27N^4h^3c^3}+4\\right]}$．$V/N$ と $E/N$ の関数なので示量的である．\n\n(2) $\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{3Nk_B}{E}$ より $\\boldsymbol{E=3Nk_BT}$（非相対論の $\\frac{3}{2}Nk_BT$ の2倍）．\n\n(3) $\\dfrac{P}{T}=\\dfrac{\\partial S}{\\partial V}=\\dfrac{Nk_B}{V}$ より $\\boldsymbol{P=\\dfrac{Nk_BT}{V}}$，(2) と合わせて $\\boldsymbol{PV=\\dfrac{E}{3}}$．光子気体と同じ関係である（ただし光子と違い粒子数は保存している）．\n\n(4) $S$ 一定，$N$ 一定では $VE^3$ が一定．$E=3PV$ を代入すると $V\\cdot P^3V^3=P^3V^4$ が一定，すなわち $PV^{4/3}$ が一定で $\\boldsymbol{\\gamma=\\dfrac{4}{3}}$．$C_V=3Nk_B$，$C_P=4Nk_B$ の比とも一致する．",
   "idea": "$\\Gamma\\propto V^NE^{3N}$ の形から，エネルギーと温度・圧力の関係がすべて読み取れる．",
   "tags": "ミクロカノニカル,超相対論的気体,断熱指数,エントロピー",
-  "input": "(1) S：N k_B (ln(8 pi V E^3/(27 N^4 h^3 c^3)) + 4)\n(2) E：3 N k_B T\n(3) P：N k_B T/V ; PV：E/3\n(4) γ：4/3"
+  "input": "(1) S：N k_B (ln(8 pi V E^3/(27 N^4 h^3 c^3)) + 4)\n(2) E：3 N k_B T\n(3) P：N k_B T/V ; PV：E/3\n(4) γ：4/3",
+  "id": "SM-01-011"
  },
  {
   "tid": "T14-05",
@@ -67,7 +71,8 @@
   "solution": "(1) 変換で $H(p,x)=E\\,H(p',x')/E$ となる：$\\dfrac{p_i^2}{2m}=E\\dfrac{p_i'^2}{2m}$，$a|x_i|^s=E\\,a|x_i'|^s$．よって $H\\le E$ は $H(p',x')\\le1$ に移り，体積要素は $dp_i\\,dx_i=E^{1/2+1/s}dp_i'\\,dx_i'$．したがって\n\\[ \\Gamma(E)=E^{N(1/2+1/s)}\\,\\Gamma(1),\\qquad \\boldsymbol{\\alpha=N\\left(\\frac{1}{2}+\\frac{1}{s}\\right)}. \\]\n\n(2) $\\dfrac{1}{T}=k_B\\dfrac{\\alpha}{E}$ より $\\boldsymbol{E=N\\left(\\dfrac{1}{2}+\\dfrac{1}{s}\\right)k_BT}$．\n\n(3) 運動量だけをスケールすると ($x$ は固定)，運動エネルギー部分 $K$ の体積が $K^{N/2}$ に比例することから運動エネルギーの平均は $\\frac{N}{2}k_BT$ になる（(1)(2) で $s$ の項を落としたのと同じ議論）．あるいは一般化された等分配則（ビリアル定理）$\\left\\langle x_i\\dfrac{\\partial H}{\\partial x_i}\\right\\rangle=k_BT$ を使うと $x\\,\\partial_x(a|x|^s)=s\\,a|x|^s$ より\n\\[ \\boldsymbol{\\langle a|x_1|^s\\rangle=\\frac{k_BT}{s}}. \\]\n実際，全エネルギー $\\frac{N}{2}k_BT+N\\frac{k_BT}{s}$ は (2) と一致する．$s=2$（調和振動子）なら $\\frac{1}{2}k_BT$ で通常の等分配則に戻る．\n\n(4) $s\\to\\infty$ で位置エネルギーの寄与は消え $E=\\frac{1}{2}Nk_BT$，$\\boldsymbol{C=\\dfrac{1}{2}Nk_B}$（1次元の自由粒子）．",
   "idea": "ハミルトニアンの各項が変数の同次関数なら，位相空間体積のスケーリングだけで $E(T)$ が決まり，等分配則が一般化される．",
   "tags": "ミクロカノニカル,等分配則,ビリアル定理,スケーリング",
-  "input": "(1) α：N (1/2 + 1/s)\n(2) E：N (1/2 + 1/s) k_B T\n(3) k_B T/s\n(4) C：N k_B/2"
+  "input": "(1) α：N (1/2 + 1/s)\n(2) E：N (1/2 + 1/s) k_B T\n(3) k_B T/s\n(4) C：N k_B/2",
+  "id": "SM-01-012"
  },
  {
   "tid": "T14-06",
@@ -76,12 +81,13 @@
   "level": 3,
   "theme": "熱接触した2つの系のエネルギー分配とゆらぎ",
   "minutes": 25,
-  "q": "エネルギー $0$ と $\\varepsilon$ の2準位をもつ独立な粒子からなる系 1（$N_1$ 個）と系 2（$N_2$ 個）が熱接触し，全体は孤立している．励起した粒子の総数 $M$（全エネルギー $M\\varepsilon$）は一定で，系 1 の励起数が $M_1$ である確率は等重率の原理から\n\\[ P(M_1)\\propto\\binom{N_1}{M_1}\\binom{N_2}{M-M_1} \\]\nとなる．$N=N_1+N_2$ とし，$N_1,\\,N_2,\\,M,\\,N-M$ はすべて十分大きいとする．\n\\begin{enumerate}\n\\item 最も確からしい $M_1$ の値 $M_1^*$ を求めよ．\n\\item $\\ln P$ を $M_1^*$ のまわりで2次まで展開し，$M_1$ の分散 $\\sigma^2$ を求めよ．\n\\item $N_1=N_2=1.0\\times10^{20}$，$M=N/4$ のとき，相対ゆらぎ $\\sigma/M_1^*$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $M_1^*=\\dfrac{N_1M}{N}$ \\quad (2) $\\sigma^2=\\dfrac{N_1N_2M(N-M)}{N^3}$ \\quad (3) $\\dfrac{\\sigma}{M_1^*}\\approx1.2\\times10^{-10}$",
-  "solution": "$\\dfrac{d}{dn}\\ln n!\\simeq\\ln n$ を使う．\n\n(1) $\\dfrac{d\\ln P}{dM_1}=-\\ln M_1+\\ln(N_1-M_1)+\\ln(M-M_1)-\\ln(N_2-M+M_1)=0$ より\n\\[ \\frac{N_1-M_1}{M_1}=\\frac{N_2-M_2}{M_2}\\quad(M_2=M-M_1). \\]\n励起の割合が等しくなる（2準位系で $T$ は励起の割合だけで決まるので，これは温度が等しいという条件）．$\\boldsymbol{M_1^*=\\dfrac{N_1M}{N}}$．\n\n(2) $p=M/N$ とおくと $M_1^*=pN_1$，$M_2^*=pN_2$ で\n\\[ \\frac{d^2\\ln P}{dM_1^2}=-\\frac{1}{M_1}-\\frac{1}{N_1-M_1}-\\frac{1}{M_2}-\\frac{1}{N_2-M_2}=-\\frac{1}{p(1-p)}\\left(\\frac{1}{N_1}+\\frac{1}{N_2}\\right). \\]\n$P\\propto\\exp[-(M_1-M_1^*)^2/2\\sigma^2]$ と比べて\n\\[ \\boldsymbol{\\sigma^2=p(1-p)\\frac{N_1N_2}{N}=\\frac{N_1N_2M(N-M)}{N^3}}. \\]\n\n(3) $p=1/4$，$N_1=N_2$ より $\\dfrac{\\sigma}{M_1^*}=\\sqrt{\\dfrac{1-p}{2pN_1}}=\\sqrt{\\dfrac{0.75}{0.5\\times10^{20}}}\\approx\\boldsymbol{1.2\\times10^{-10}}$．巨視的な系ではエネルギーの分配は事実上確定しており，これが熱平衡が「決まった状態」に見える理由である．",
+  "q": "エネルギー $0$ と $\\varepsilon$ の2準位をもつ独立な粒子からなる系 1（$N_1$ 個）と系 2（$N_2$ 個）が熱接触し，全体は孤立している．励起した粒子の総数 $M$（全エネルギー $M\\varepsilon$）は一定で，系 1 の励起数が $M_1$ である確率は等重率の原理から\n\\[ P(M_1)\\propto\\binom{N_1}{M_1}\\binom{N_2}{M-M_1} \\]\nとなる．$N=N_1+N_2$ とし，$N_1,\\,N_2,\\,M,\\,N-M$ はすべて十分大きいとする．\n\\begin{enumerate}\n\\item 最も確からしい $M_1$ の値 $M_1^*$ を求めよ．\n\\item $\\ln P$ を $M_1^*$ のまわりで2次まで展開し，$M_1$ の分散 $\\sigma^2$ を求めよ．\n\\item $N_1=N_2$，$M=pN$ のとき，相対ゆらぎ $\\sigma/M_1^*$ を $p$ と $N_1$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $M_1^*=\\dfrac{N_1M}{N}$ \\quad (2) $\\sigma^2=\\dfrac{N_1N_2M(N-M)}{N^3}$ \\quad (3) $\\dfrac{\\sigma}{M_1^*}=\\sqrt{\\dfrac{1-p}{2pN_1}}$",
+  "solution": "$\\dfrac{d}{dn}\\ln n!\\simeq\\ln n$ を使う．\n\n(1) $\\dfrac{d\\ln P}{dM_1}=-\\ln M_1+\\ln(N_1-M_1)+\\ln(M-M_1)-\\ln(N_2-M+M_1)=0$ より\n\\[ \\frac{N_1-M_1}{M_1}=\\frac{N_2-M_2}{M_2}\\quad(M_2=M-M_1). \\]\n励起の割合が等しくなる（2準位系で $T$ は励起の割合だけで決まるので，これは温度が等しいという条件）．$\\boldsymbol{M_1^*=\\dfrac{N_1M}{N}}$．\n\n(2) $p=M/N$ とおくと $M_1^*=pN_1$，$M_2^*=pN_2$ で\n\\[ \\frac{d^2\\ln P}{dM_1^2}=-\\frac{1}{M_1}-\\frac{1}{N_1-M_1}-\\frac{1}{M_2}-\\frac{1}{N_2-M_2}=-\\frac{1}{p(1-p)}\\left(\\frac{1}{N_1}+\\frac{1}{N_2}\\right). \\]\n$P\\propto\\exp[-(M_1-M_1^*)^2/2\\sigma^2]$ と比べて\n\\[ \\boldsymbol{\\sigma^2=p(1-p)\\frac{N_1N_2}{N}=\\frac{N_1N_2M(N-M)}{N^3}}. \\]\n\n(3) $N_1=N_2$ では $N_1N_2/N=N_1/2$，$\\sigma^2=p(1-p)N_1/2$，$M_1^*=pN_1$ より\n\\[\\frac{\\sigma}{M_1^*}=\\boldsymbol{\\sqrt{\\frac{1-p}{2pN_1}}}.\\]\n$N_1^{-1/2}$ に比例し，$N_1=10^{20}$ なら $10^{-10}$ 程度にすぎない．巨視的な系ではエネルギーの分配は事実上確定しており，これが熱平衡が「決まった状態」に見える理由である．",
   "idea": "複合系の状態数の積を最大にすると温度の一致が出て，その周りのガウス幅が $\\sqrt{N}$ 程度のゆらぎを与える．",
   "tags": "ミクロカノニカル,熱接触,ゆらぎ,等重率の原理",
-  "input": "(1) M_1^*：N_1 M/N\n(2) σ^2：N_1 N_2 M (N - M)/N^3\n(3) σ/M_1^*：≈1.2e-10"
+  "input": "(1) M_1^*：N_1 M/N\n(2) σ^2：N_1 N_2 M (N - M)/N^3\n(3) $\\sigma/M_1^*$：sqrt((1-p)/(2 p N_1))",
+  "id": "SM-01-013"
  },
  {
   "tid": "T14-07",
@@ -95,7 +101,8 @@
   "solution": "(1) 位置 $r$ で $E$ 以下になる運動量は $|\\boldsymbol{p}|\\le\\sqrt{2m(E+\\alpha/r)}$ の球．よって\n\\[ \\Gamma=\\frac{1}{h^3}\\int_0^{r_0}4\\pi r^2\\,\\frac{4\\pi}{3}\\left[2m\\left(\\frac{\\alpha}{r}-|E|\\right)\\right]^{3/2}dr,\\qquad r_0=\\frac{\\alpha}{|E|}. \\]\n$r=r_0u$ とおくと $r^2(\\alpha/r-|E|)^{3/2}dr=r_0^3|E|^{3/2}u^{1/2}(1-u)^{3/2}du=\\alpha^3|E|^{-3/2}u^{1/2}(1-u)^{3/2}du$ となり，\n\\[ \\boldsymbol{\\Gamma(E)=\\frac{16\\pi^2}{3}\\cdot\\frac{\\pi}{16}\\cdot\\frac{(2m)^{3/2}\\alpha^3}{h^3(-E)^{3/2}}=\\frac{\\pi^3(2m)^{3/2}\\alpha^3}{3h^3(-E)^{3/2}}}. \\]\nエネルギーを下げる（$E\\to-\\infty$）ほど軌道が小さくなり，状態数が減る．\n\n(2) $S=-\\dfrac{3}{2}k_B\\ln(-E)+\\text{const}$ より $\\dfrac{1}{T}=\\dfrac{dS}{dE}=\\dfrac{3k_B}{2(-E)}$，すなわち $\\boldsymbol{T=-\\dfrac{2E}{3k_B}}$．$E=-\\frac{3}{2}k_BT$ なので $\\boldsymbol{C=-\\dfrac{3}{2}k_B}$．エネルギーを失うほど温度が上がる．\n\n(3) $E=K+U=-K=-\\dfrac{3}{2}Nk_BT$ より $\\boldsymbol{C=-\\dfrac{3}{2}Nk_B}$．星団や恒星はエネルギーを放射で失うと収縮して熱くなる．\n\n(4) カノニカル分布では $\\langle(\\Delta E)^2\\rangle=k_BT^2C$ で，左辺は分散なので非負．よって熱浴と平衡にある系では必ず $C\\ge0$．負の熱容量の系を熱浴に接触させると，熱浴より少し熱いときにエネルギーを熱浴に渡すとさらに熱くなり，平衡に落ち着かない（逆も同様）．そのため $S(E)$ が下に凸な領域はカノニカル分布では飛ばされ，ミクロカノニカル分布とカノニカル分布が等価でなくなる．長距離力では系の示量性が破れるのが根本的な原因である．",
   "idea": "引力の系では，エネルギーを下げるほど位相空間が狭くなり速さはかえって増すため，$dS/dE$ の振る舞いから負の熱容量が出る．",
   "tags": "ミクロカノニカル,負の熱容量,ビリアル定理,アンサンブルの等価性",
-  "input": "(1) Γ：pi^3 (2m)^(3/2) alpha^3/(3 h^3 (-E)^(3/2))\n(2) T：-2E/(3 k_B) ; C：-3 k_B/2\n(3) C：-3 N k_B/2\n(4) 記述：カノニカル分布では ⟨(ΔE)^2⟩=k_B T^2 C≧0 なので C<0 の状態は実現しない（熱浴と接すると不安定）"
+  "input": "(1) Γ：pi^3 (2m)^(3/2) alpha^3/(3 h^3 (-E)^(3/2))\n(2) T：-2E/(3 k_B) ; C：-3 k_B/2\n(3) C：-3 N k_B/2\n(4) 記述：カノニカル分布では ⟨(ΔE)^2⟩=k_B T^2 C≧0 なので C<0 の状態は実現しない（熱浴と接すると不安定）",
+  "id": "SM-01-014"
  },
  {
   "tid": "T14-08",
@@ -109,7 +116,8 @@
   "solution": "(1) $y_j=x_j-(j-1)a$ とすると条件は $0\\le y_1\\le y_2\\le\\dots\\le y_N\\le L-Na$．長さ $L-Na$ の区間に順序付きで $N$ 点を置く体積で，$\\boldsymbol{Q=\\dfrac{(L-Na)^N}{N!}}$．棒の長さの分だけ「自由に動ける長さ」が減る．\n\n(2) $S=k_B\\left[N\\ln(L-Na)+\\dfrac{N}{2}\\ln E\\right]+\\text{const}$．$\\dfrac{1}{T}=\\dfrac{\\partial S}{\\partial E}=\\dfrac{Nk_B}{2E}$ より $E=\\frac{1}{2}Nk_BT$．$\\dfrac{P}{T}=\\dfrac{\\partial S}{\\partial L}=\\dfrac{Nk_B}{L-Na}$ より\n\\[ \\boldsymbol{P=\\frac{Nk_BT}{L-Na}}. \\]\nファン・デル・ワールスの排除体積 $b$ が厳密に $Na$ となる（引力項はない）．1次元の短距離相互作用系なので，相転移は起こらない．\n\n(3) $L=Na+\\dfrac{Nk_BT}{P}$ より $\\left(\\dfrac{\\partial L}{\\partial P}\\right)_T=-\\dfrac{Nk_BT}{P^2}$，\n\\[ \\boldsymbol{\\kappa=\\frac{Nk_BT}{LP^2}=\\frac{(L-Na)^2}{Nk_BTL}}. \\]\n密に詰まる $L\\to Na$ で $\\kappa\\to0$（圧縮できない）．\n\n(4) $y$ で見ると，$N+1$ 個のすきま（両端の壁との間を含む）の和が $L'=L-Na$ で，その分配は単体上で一様である．1つのすきまの周辺分布は $p(g)=\\dfrac{N}{L'}\\left(1-\\dfrac{g}{L'}\\right)^{N-1}$ で，$N\\gg1$ では $\\dfrac{N}{L'}e^{-Ng/L'}$．(2) より $N/L'=P/k_BT$ なので\n\\[ \\boldsymbol{p(g)=\\frac{P}{k_BT}e^{-Pg/k_BT}}. \\]\nすきまを $g$ だけ広げるには外力に抗して仕事 $Pg$ が必要で，そのボルツマン因子が現れている（定圧アンサンブルの見方）．",
   "idea": "排除体積は変数変換 $y_j=x_j-(j-1)a$ で取り除け，配置体積が $(L-Na)^N/N!$ と厳密に求まる．",
   "tags": "ミクロカノニカル,剛体棒気体,排除体積,厳密解,状態方程式",
-  "input": "(1) N! Q：(L - N a)^N\n(2) P：N k_B T/(L - N a)\n(3) κ：(L - N a)^2/(N k_B T L)\n(4) p(g)：P/(k_B T) e^(-P g/(k_B T))"
+  "input": "(1) N! Q：(L - N a)^N\n(2) P：N k_B T/(L - N a)\n(3) κ：(L - N a)^2/(N k_B T L)\n(4) p(g)：P/(k_B T) e^(-P g/(k_B T))",
+  "id": "SM-01-015"
  },
  {
   "tid": "T14-09",
@@ -118,12 +126,13 @@
   "level": 0,
   "theme": "ばねにつながれた粒子の熱ゆらぎ（等分配則）",
   "minutes": 10,
-  "q": "温度 $T$ の熱平衡では，エネルギー $E$ の状態の起こりやすさはボルツマン因子 $e^{-E/k_BT}$ に比例する．ばね定数 $K$ のばねにつながれた粒子の変位 $x$ が値 $x$ をとる確率密度は\n\\[ p(x)=\\frac{e^{-Kx^2/2k_BT}}{\\int_{-\\infty}^{\\infty}e^{-Kx^2/2k_BT}dx} \\]\nである．$b>0$ に対する積分公式 $\\int_{-\\infty}^{\\infty}e^{-bx^2}dx=\\sqrt{\\pi/b}$，$\\int_{-\\infty}^{\\infty}x^2e^{-bx^2}dx=\\dfrac{1}{2b}\\sqrt{\\pi/b}$ を使ってよい．\n\\begin{enumerate}\n\\item 変位の2乗の平均 $\\langle x^2\\rangle=\\int x^2p(x)\\,dx$ を求めよ．\n\\item ばねの位置エネルギーの平均 $\\left\\langle\\frac{1}{2}Kx^2\\right\\rangle$ を求めよ．\n\\item 原子間力顕微鏡の探針（$K=0.10\\,\\mathrm{N/m}$）が $T=300\\,\\mathrm{K}$ にあるとき，熱ゆらぎによる変位の大きさ $\\sqrt{\\langle x^2\\rangle}$ を求めよ（$k_B=1.38\\times10^{-23}\\,\\mathrm{J/K}$）．\n\\end{enumerate}",
-  "answer": "(1) $\\langle x^2\\rangle=\\dfrac{k_BT}{K}$ \\quad (2) $\\dfrac{1}{2}k_BT$ \\quad (3) $\\approx2.0\\times10^{-10}\\,\\mathrm{m}$",
-  "solution": "(1) $b=K/2k_BT$ とおくと $\\langle x^2\\rangle=\\dfrac{\\frac{1}{2b}\\sqrt{\\pi/b}}{\\sqrt{\\pi/b}}=\\dfrac{1}{2b}=\\boldsymbol{\\dfrac{k_BT}{K}}$．\n\n(2) $\\left\\langle\\frac{1}{2}Kx^2\\right\\rangle=\\frac{1}{2}K\\cdot\\frac{k_BT}{K}=\\boldsymbol{\\frac{1}{2}k_BT}$．ばね定数によらない．これがエネルギー等分配則で，運動エネルギー $\\frac{1}{2}mv^2$ の平均も同じく $\\frac{1}{2}k_BT$ になる．\n\n(3) $\\sqrt{\\dfrac{1.38\\times10^{-23}\\times300}{0.10}}\\approx\\boldsymbol{2.0\\times10^{-10}\\,\\mathrm{m}}$．原子1個程度の大きさで，これが探針の測定精度の限界の1つになる（逆にこのゆらぎを測ってばね定数を較正する方法もある）．\n\n次は，すべての状態についての和 $Z=\\sum e^{-E/k_BT}$（分配関数）からまとめて平均値を求める方法を学ぶ．",
+  "q": "温度 $T$ の熱平衡では，エネルギー $E$ の状態の起こりやすさはボルツマン因子 $e^{-E/k_BT}$ に比例する．ばね定数 $K$ のばねにつながれた粒子の変位 $x$ が値 $x$ をとる確率密度は\n\\[ p(x)=\\frac{e^{-Kx^2/2k_BT}}{\\int_{-\\infty}^{\\infty}e^{-Kx^2/2k_BT}dx} \\]\nである．$b>0$ に対する積分公式 $\\int_{-\\infty}^{\\infty}e^{-bx^2}dx=\\sqrt{\\pi/b}$，$\\int_{-\\infty}^{\\infty}x^2e^{-bx^2}dx=\\dfrac{1}{2b}\\sqrt{\\pi/b}$ を使ってよい．\n\\begin{enumerate}\n\\item 変位の2乗の平均 $\\langle x^2\\rangle=\\int x^2p(x)\\,dx$ を求めよ．\n\\item ばねの位置エネルギーの平均 $\\left\\langle\\frac{1}{2}Kx^2\\right\\rangle$ を求めよ．\n\\item 熱ゆらぎによる変位の大きさ $\\sqrt{\\langle x^2\\rangle}$ を求めよ．また，同じ温度でばね定数を 4 倍にすると $\\sqrt{\\langle x^2\\rangle}$ は何倍になるか．\n\\end{enumerate}",
+  "answer": "(1) $\\langle x^2\\rangle=\\dfrac{k_BT}{K}$ \\quad (2) $\\dfrac{1}{2}k_BT$ \\quad (3) $\\sqrt{\\dfrac{k_BT}{K}}$，$\\dfrac12$ 倍",
+  "solution": "(1) $b=K/2k_BT$ とおくと $\\langle x^2\\rangle=\\dfrac{\\frac{1}{2b}\\sqrt{\\pi/b}}{\\sqrt{\\pi/b}}=\\dfrac{1}{2b}=\\boldsymbol{\\dfrac{k_BT}{K}}$．\n\n(2) $\\left\\langle\\frac{1}{2}Kx^2\\right\\rangle=\\frac{1}{2}K\\cdot\\frac{k_BT}{K}=\\boldsymbol{\\frac{1}{2}k_BT}$．ばね定数によらない．これがエネルギー等分配則で，運動エネルギー $\\frac{1}{2}mv^2$ の平均も同じく $\\frac{1}{2}k_BT$ になる．\n\n(3) $\\sqrt{\\langle x^2\\rangle}=\\boldsymbol{\\sqrt{\\dfrac{k_BT}{K}}}$．$K$ を 4 倍にすると $\\boldsymbol{\\dfrac12}$ 倍になる．原子間力顕微鏡の探針（$K\\sim0.1$ N/m）では室温で原子1個程度（約 $0.2$ nm）の大きさで，これが探針の測定精度の限界の1つになる（逆にこのゆらぎを測ってばね定数を較正する方法もある）．\n\n次は，すべての状態についての和 $Z=\\sum e^{-E/k_BT}$（分配関数）からまとめて平均値を求める方法を学ぶ．",
   "idea": "2次の形のエネルギーはボルツマン因子でガウス分布になり，その平均は係数によらず $\\frac{1}{2}k_BT$ になる．",
   "tags": "カノニカル,等分配則,熱ゆらぎ,ガウス積分",
-  "input": "(1) ⟨x^2⟩：k_B T/K\n(2) k_B T/2\n(3) [m]：≈2.0e-10"
+  "input": "(1) ⟨x^2⟩：k_B T/K\n(2) k_B T/2\n(3) $\\sqrt{\\langle x^2\\rangle}$：sqrt(k_B T/K) ; 倍率：1/2",
+  "id": "SM-02-008"
  },
  {
   "tid": "T14-10",
@@ -137,7 +146,8 @@
   "solution": "1分子の分配関数の高さ方向の部分は $z_h=A\\int_0^He^{-\\beta mgz}dz=\\dfrac{A}{\\beta mg}\\left(1-e^{-\\beta mgH}\\right)$（$\\beta=1/k_BT$）．\n\n(1) $\\langle mgz\\rangle=-\\dfrac{\\partial\\ln z_h}{\\partial\\beta}=\\dfrac{1}{\\beta}-\\dfrac{mgHe^{-\\beta mgH}}{1-e^{-\\beta mgH}}$，すなわち\n\\[ \\boldsymbol{\\langle mgz\\rangle=k_BT-\\frac{mgH}{e^{mgH/k_BT}-1}}. \\]\n\n(2) $H\\to\\infty$ で第2項は $0$ になり $\\boldsymbol{k_BT}$．大気全体では1分子あたり位置エネルギーが $k_BT$ 蓄えられている．\n\n(3) 全エネルギーは $\\langle E\\rangle=N\\left[\\dfrac{3}{2}k_BT+k_BT-\\dfrac{mgH}{e^x-1}\\right]$．$\\dfrac{dx}{dT}=-\\dfrac{x}{T}$ を使って\n\\[ \\frac{d}{dT}\\frac{mgH}{e^x-1}=\\frac{mgH\\,e^x}{(e^x-1)^2}\\cdot\\frac{x}{T}=k_B\\frac{x^2e^x}{(e^x-1)^2}, \\]\n\\[ \\boldsymbol{C=Nk_B\\left[\\frac{5}{2}-\\frac{x^2e^x}{(e^x-1)^2}\\right]}. \\]\n$x\\to0$（低い容器・高温）では $\\frac{x^2e^x}{(e^x-1)^2}\\to1$ で $C\\to\\frac{3}{2}Nk_B$（重力は効かない），$x\\to\\infty$ では $C\\to\\frac{5}{2}Nk_B$ となる．",
   "idea": "1分子の分配関数のうち高さ方向の積分を有限区間で行い，$-\\partial\\ln z/\\partial\\beta$ で平均エネルギーを出す．",
   "tags": "カノニカル,重力場,分配関数,熱容量",
-  "input": "(1) ⟨mgz⟩：k_B T - m g H/(e^(m g H/(k_B T)) - 1)\n(2) k_B T\n(3) C：N k_B (5/2 - x^2 e^x/(e^x - 1)^2)"
+  "input": "(1) ⟨mgz⟩：k_B T - m g H/(e^(m g H/(k_B T)) - 1)\n(2) k_B T\n(3) C：N k_B (5/2 - x^2 e^x/(e^x - 1)^2)",
+  "id": "SM-02-009"
  },
  {
   "tid": "T14-11",
@@ -151,7 +161,8 @@
   "solution": "(1) $u=\\cos\\theta$ とおくと $z=2\\pi\\int_{-1}^1e^{xu}du=\\boldsymbol{\\dfrac{4\\pi\\sinh x}{x}}$．\n\n(2) $\\langle\\cos\\theta\\rangle=\\dfrac{\\partial\\ln z}{\\partial x}=\\coth x-\\dfrac{1}{x}$（ランジュバン関数 $L(x)$）より $\\boldsymbol{M=N\\mu\\left(\\coth x-\\dfrac{1}{x}\\right)}$．$x\\to\\infty$ で $N\\mu$ に飽和する．\n\n(3) $\\coth x=\\dfrac{1}{x}+\\dfrac{x}{3}-\\cdots$ より $L(x)\\simeq x/3$．$M\\simeq N\\mu\\dfrac{\\mu B}{3k_BT}$ で $\\boldsymbol{\\chi=\\dfrac{N\\mu^2}{3k_BT}}$（キュリー則）．\n\n上向き・下向きの2つしかとれないスピン $1/2$ では $\\chi=N\\mu^2/k_BT$ で，係数 $1/3$ の違いは $\\langle\\cos^2\\theta\\rangle=1/3$（あらゆる向きの平均）から来る．量子力学で角運動量 $J$ を扱うと，$J\\to\\infty$ でこの古典的な結果に近づく．",
   "idea": "向きについての積分 $\\int e^{x\\cos\\theta}d\\Omega$ が分配関数で，その対数微分がランジュバン関数を与える．",
   "tags": "カノニカル,常磁性,ランジュバン関数,キュリー則",
-  "input": "(1) z：4 pi sinh(x)/x\n(2) M：N mu (1/tanh(x) - 1/x)\n(3) χ：N mu^2/(3 k_B T)"
+  "input": "(1) z：4 pi sinh(x)/x\n(2) M：N mu (1/tanh(x) - 1/x)\n(3) χ：N mu^2/(3 k_B T)",
+  "id": "SM-02-010"
  },
  {
   "tid": "T14-12",
@@ -165,7 +176,8 @@
   "solution": "(1) 左から $p$ 個開いた状態（$p=0,1,\\dots,N$）はエネルギー $p\\varepsilon$，縮退度 $G^p$．\n\\[ Z=\\sum_{p=0}^NG^pe^{-p\\varepsilon/k_BT}=\\sum_{p=0}^Nx^p=\\boldsymbol{\\frac{1-x^{N+1}}{1-x}}. \\]\n\n(2) $\\langle p\\rangle=x\\dfrac{\\partial\\ln Z}{\\partial x}$．$N\\to\\infty$，$x<1$ では $Z=1/(1-x)$ で $\\boldsymbol{\\langle p\\rangle=\\dfrac{x}{1-x}}$．$N$ によらない有限の値で，鎖のほとんどは閉じている．\n\n(3) $Ge^{-\\varepsilon/k_BT_m}=1$ より $\\boldsymbol{T_m=\\dfrac{\\varepsilon}{k_B\\ln G}}$（$G>1$ が必要）．\n\n(4) $x=1$ では全状態が等確率で $Z=N+1$，$\\langle p\\rangle=\\dfrac{1}{N+1}\\sum_{p=0}^Np=\\boldsymbol{\\dfrac{N}{2}}$．\n\n$x>1$ では $\\langle p\\rangle\\simeq N-\\dfrac{1}{x-1}$ でほぼ全部開く．$N$ が大きいと，$T_m$ のまわりの幅 $\\sim T_m/N$ 程度の狭い温度範囲で「閉→開」が起こる（融解の鋭さ）．自由度を増やすエントロピー $k_B\\ln G$ とエネルギー $\\varepsilon$ の競合で，$\\varepsilon=k_BT\\ln G$ が境目になっている．",
   "idea": "状態がジッパーの開いた長さ $p$ だけで指定されるので，分配関数は等比級数になる．",
   "tags": "カノニカル,ジッパー模型,DNA,融解,等比級数",
-  "input": "(1) Z：(1 - x^(N+1))/(1 - x)\n(2) ⟨p⟩：x/(1 - x)\n(3) T_m：epsilon/(k_B ln G)\n(4) ⟨p⟩：N/2"
+  "input": "(1) Z：(1 - x^(N+1))/(1 - x)\n(2) ⟨p⟩：x/(1 - x)\n(3) T_m：epsilon/(k_B ln G)\n(4) ⟨p⟩：N/2",
+  "id": "SM-02-011"
  },
  {
   "tid": "T14-13",
@@ -179,7 +191,8 @@
   "solution": "$\\langle x^{2n}\\rangle_0$ を $e^{-\\beta cx^2}$ での平均とすると $\\langle x^2\\rangle_0=\\dfrac{1}{2\\beta c}$，$\\langle x^4\\rangle_0=\\dfrac{3}{4\\beta^2c^2}$，$\\langle x^6\\rangle_0=\\dfrac{15}{8\\beta^3c^3}$．\n\n(1) 奇関数の積分は消え，$\\langle x\\rangle\\simeq\\beta g\\langle x^4\\rangle_0=\\boldsymbol{\\dfrac{3gk_BT}{4c^2}}$．3次の非対称性があると平均の位置が温度に比例してずれる．これが固体の熱膨張（線膨張係数が温度によらない古典的な値）を与える．\n\n(2) 配置の分配関数は\n\\[ Z_x=\\int e^{-\\beta cx^2}\\left(1+\\beta fx^4+\\tfrac{1}{2}\\beta^2g^2x^6\\right)dx=\\sqrt{\\frac{\\pi}{\\beta c}}\\left[1+\\frac{3f}{4\\beta c^2}+\\frac{15g^2}{16\\beta c^3}\\right]. \\]\n$\\langle V\\rangle=-\\dfrac{\\partial\\ln Z_x}{\\partial\\beta}$ で，$\\ln(1+\\epsilon)\\simeq\\epsilon$ として\n\\[ \\boldsymbol{\\langle V\\rangle=\\frac{k_BT}{2}+\\left(\\frac{3f}{4c^2}+\\frac{15g^2}{16c^3}\\right)(k_BT)^2}. \\]\n\n(3) 運動エネルギーの $\\frac{1}{2}k_BT$ を加えて $T$ で微分し\n\\[ \\boldsymbol{C=k_B+\\left(\\frac{3f}{2c^2}+\\frac{15g^2}{8c^3}\\right)k_B^2T}. \\]\nデュロン＝プティの値 $k_B$ から温度に比例してずれる．高温での固体の比熱がデュロン＝プティ則からわずかにずれる原因の1つである．",
   "idea": "非調和項でボルツマン因子を展開し，ガウス分布のモーメント $\\langle x^{2n}\\rangle_0$ で平均を計算する．",
   "tags": "カノニカル,非調和振動子,熱膨張,摂動展開,比熱",
-  "input": "(1) ⟨x⟩：3 g k_B T/(4 c^2)\n(2) ⟨V⟩：k_B T/2 + (3f/(4c^2) + 15 g^2/(16 c^3)) (k_B T)^2\n(3) C：k_B + (3f/(2c^2) + 15 g^2/(8 c^3)) k_B^2 T"
+  "input": "(1) ⟨x⟩：3 g k_B T/(4 c^2)\n(2) ⟨V⟩：k_B T/2 + (3f/(4c^2) + 15 g^2/(16 c^3)) (k_B T)^2\n(3) C：k_B + (3f/(2c^2) + 15 g^2/(8 c^3)) k_B^2 T",
+  "id": "SM-02-012"
  },
  {
   "tid": "T14-14",
@@ -193,7 +206,8 @@
   "solution": "(1) $\\langle E\\rangle=\\dfrac{\\Delta}{e^{\\Delta/k_BT}+1}$ を $T$ で微分して\n\\[ \\boldsymbol{c(\\Delta)=k_B\\left(\\frac{\\Delta}{k_BT}\\right)^2\\frac{e^{\\Delta/k_BT}}{(e^{\\Delta/k_BT}+1)^2}}. \\]\n$\\Delta\\sim k_BT$ の系だけが比熱に寄与する（ショットキー型）．\n\n(2) $x=\\Delta/k_BT$ と置換すると $d\\Delta=k_BT\\,dx$ で\n\\[ C=n_0k_B\\cdot k_BT\\int_0^\\infty\\frac{x^2e^x}{(e^x+1)^2}dx=\\boldsymbol{\\frac{\\pi^2}{6}n_0k_B^2T}. \\]\n$\\Delta\\lesssim k_BT$ の系の数が $T$ に比例して増えるので $C\\propto T$．結晶のフォノン比熱 $\\propto T^3$ よりも低温で優勢になり，実際にガラスの比熱は 1 K 以下でほぼ $T$ に比例する（金属の電子比熱と同じ形で，$\\pi^2/6$ はフェルミ分布の $\\pi^2/3$ のちょうど半分．電子では $\\mu$ の上下両側が効く）．\n\n(3) 同様に $C=bk_B\\,(k_BT)^2\\int_0^\\infty\\dfrac{x^3e^x}{(e^x+1)^2}dx=\\boldsymbol{\\dfrac{9\\zeta(3)}{2}bk_B^3T^2}$．",
   "idea": "個々の2準位系の比熱は $\\Delta\\sim k_BT$ でだけ大きいので，熱容量の温度依存性は準位間隔の分布で決まる．",
   "tags": "カノニカル,2準位系,ガラス,低温比熱,ショットキー比熱",
-  "input": "(1) c(Δ)：k_B (Δ/(k_B T))^2 e^(Δ/(k_B T))/(e^(Δ/(k_B T)) + 1)^2\n(2) C：pi^2/6 n_0 k_B^2 T\n(3) C：9/2*1.202 b k_B^3 T^2"
+  "input": "(1) c(Δ)：k_B (Δ/(k_B T))^2 e^(Δ/(k_B T))/(e^(Δ/(k_B T)) + 1)^2\n(2) C：pi^2/6 n_0 k_B^2 T\n(3) C：9/2*1.202 b k_B^3 T^2",
+  "id": "SM-02-013"
  },
  {
   "tid": "T14-15",
@@ -207,7 +221,8 @@
   "solution": "(1) $\\boldsymbol{S}_{N-1}$ を固定し，それを極軸として $\\boldsymbol{S}_N$ を積分すると $\\int d\\Omega\\,e^{K\\cos\\theta}=\\dfrac{4\\pi\\sinh K}{K}$ で，$\\boldsymbol{S}_{N-1}$ の向きによらない．これを順に繰り返し，最後の $\\boldsymbol{S}_1$ の積分で $4\\pi$ が出て\n\\[ \\boldsymbol{Z=(4\\pi)^N\\left(\\frac{\\sinh K}{K}\\right)^{N-1}}. \\]\n\n(2) $E=-\\dfrac{\\partial\\ln Z}{\\partial\\beta}=-J\\dfrac{\\partial\\ln Z}{\\partial K}=\\boldsymbol{-(N-1)J\\left(\\coth K-\\dfrac{1}{K}\\right)}$．1つの結合あたり $-J\\langle\\cos\\theta\\rangle=-JL(K)$（ランジュバン関数）．\n\n(3) 各結合の相対角は独立に分布する．$\\boldsymbol{S}_{i+r}$ を $\\boldsymbol{S}_{i+r-1}$ のまわりで平均すると，それに垂直な成分は消え平行成分 $u\\,\\boldsymbol{S}_{i+r-1}$ だけが残る（$u=\\langle\\cos\\theta\\rangle=\\coth K-1/K$）．これを繰り返して\n\\[ \\boldsymbol{\\langle\\boldsymbol{S}_i\\cdot\\boldsymbol{S}_{i+r}\\rangle=u^r}. \\]\n\n(4) $K\\gg1$ で $\\coth K\\to1$ なので $u\\simeq1-\\dfrac{1}{K}$，$\\xi=-\\dfrac{1}{\\ln u}\\simeq K=\\boldsymbol{\\dfrac{J}{k_BT}}$．$T\\to0$ でのみ発散し，有限温度では長距離秩序がない（1次元）．$E\\simeq-(N-1)(J-k_BT)$ より $\\boldsymbol{C=(N-1)k_B}$．各結合の相対的な向きの小さな傾き（2自由度の2次形式）に等分配則で $\\frac{1}{2}k_BT\\times2$ が配られている．相関長が $T^{-1}$ で発散するのは，連続対称性をもつ系の低温での特徴である（2次元の場合はマーミン＝ワグナーの定理に関係する）．",
   "idea": "開いた鎖では隣どうしの相対角が独立になり，分配関数も相関関数も1結合の量の積で書ける．",
   "tags": "カノニカル,ハイゼンベルク模型,相関長,1次元系,ランジュバン関数",
-  "input": "(1) Z：(4 pi)^N (sinh(K)/K)^(N-1)\n(2) E：-(N-1) J (1/tanh(K) - 1/K)\n(3) u^r\n(4) ξ：J/(k_B T) ; C：(N-1) k_B"
+  "input": "(1) Z：(4 pi)^N (sinh(K)/K)^(N-1)\n(2) E：-(N-1) J (1/tanh(K) - 1/K)\n(3) u^r\n(4) ξ：J/(k_B T) ; C：(N-1) k_B",
+  "id": "SM-02-014"
  },
  {
   "tid": "T14-16",
@@ -221,7 +236,8 @@
   "solution": "(1) $\\beta=1/k_BT$．$Z=\\mathrm{Tr}\\,e^{-\\beta H}=\\mathrm{Tr}\\,e^{-\\beta H_0}e^{-\\beta(H-H_0)}$（古典系では位相空間積分なのでそのまま分けられる）なので\n\\[ e^{-\\beta F}=e^{-\\beta F_0}\\langle e^{-\\beta(H-H_0)}\\rangle_0\\ge e^{-\\beta F_0}e^{-\\beta\\langle H-H_0\\rangle_0}. \\]\n両辺の対数をとって $-\\beta$ で割ると $\\boldsymbol{F\\le F_0+\\langle H-H_0\\rangle_0}$．不等式は $e^{-X}$ が下に凸であること（イェンセンの不等式）による．\n\n(2) $\\langle x^2\\rangle_0=k_BT/K$，$\\langle\\frac{1}{2}Kx^2\\rangle_0=\\frac{1}{2}k_BT$，$F_0=-k_BT\\ln\\dfrac{k_BT}{\\hbar\\sqrt{K/m}}$ より\n\\[ F_{\\rm var}(K)=-k_BT\\ln\\frac{k_BT}{\\hbar\\sqrt{K/m}}+3\\lambda\\left(\\frac{k_BT}{K}\\right)^2-\\frac{1}{2}k_BT. \\]\n$\\dfrac{dF_{\\rm var}}{dK}=\\dfrac{k_BT}{2K}-\\dfrac{6\\lambda(k_BT)^2}{K^3}=0$ より $\\boldsymbol{K=\\sqrt{12\\lambda k_BT}}$．有効的なばね定数が温度とともに硬くなる．\n\n(3) 運動量部分は共通なので配置部分だけ比べればよい．最適値で $3\\lambda(k_BT/K)^2=\\frac{1}{4}k_BT$ であり\n\\[ \\frac{F_{\\rm var}-F}{k_BT}=\\ln\\frac{\\Gamma(1/4)}{2}-\\ln\\frac{\\sqrt{2\\pi}}{12^{1/4}}-\\frac{1}{4}=\\ln1.8128-\\ln1.3468-0.25\\approx\\boldsymbol{0.047}. \\]\n正であり，(1) の不等式と整合する．温度によらない定数なのは，$\\lambda x^4$ だけの系では $k_BT$ 以外にエネルギーの尺度がないからである．\n\n(4) $\\langle x^2\\rangle_0=\\dfrac{k_BT}{K}=\\dfrac{1}{\\sqrt{12}}\\left(\\dfrac{k_BT}{\\lambda}\\right)^{1/2}$．比は $\\dfrac{1/\\sqrt{12}}{1.2254/3.6256}=\\dfrac{0.2887}{0.3380}\\approx\\boldsymbol{0.854}$．自由エネルギーは5%程度の精度でも，ゆらぎの評価はそれより粗い．この変分法は平均場近似（ボゴリューボフの方法）や自己無撞着調和近似の基礎になる．",
   "idea": "指数関数の凸性から $F\\le F_0+\\langle H-H_0\\rangle_0$ が出て，試行ハミルトニアンのパラメータを最適化すれば自由エネルギーの上限が得られる．",
   "tags": "カノニカル,変分法,ギブス＝ボゴリューボフの不等式,非調和振動子",
-  "input": "(1) 記述：Z=Z_0⟨e^{-β(H-H_0)}⟩_0 にイェンセンの不等式を使い，対数をとって F≦F_0+⟨H-H_0⟩_0\n(2) K：sqrt(12 lambda k_B T)\n(3) ≈0.047\n(4) ≈0.854"
+  "input": "(1) 記述：Z=Z_0⟨e^{-β(H-H_0)}⟩_0 にイェンセンの不等式を使い，対数をとって F≦F_0+⟨H-H_0⟩_0\n(2) K：sqrt(12 lambda k_B T)\n(3) ≈0.047\n(4) ≈0.854",
+  "id": "SM-02-015"
  },
  {
   "tid": "T14-17",
@@ -235,7 +251,8 @@
   "solution": "(1) 初項 $1$，公比 $e^{-y}\\ (<1)$ の無限等比級数で $\\boldsymbol{Z=\\dfrac{1}{1-e^{-y}}}$．\n\n(2) $\\dfrac{dZ}{dy}=-\\dfrac{e^{-y}}{(1-e^{-y})^2}$ より $\\langle n\\rangle=\\dfrac{e^{-y}}{1-e^{-y}}=\\boldsymbol{\\dfrac{1}{e^y-1}}$．これがプランク分布（ボース＝アインシュタイン分布で化学ポテンシャルが $0$ の場合）である．\n\n(3) $e^y-1=1$ より $y=\\ln2$，$\\boldsymbol{T=\\dfrac{h\\nu}{k_B\\ln2}}$．\n\n高温 $y\\ll1$ では $e^y-1\\simeq y$ で $\\langle n\\rangle h\\nu\\simeq k_BT$ となり，古典的な等分配則に戻る．低温では $\\langle n\\rangle\\simeq e^{-y}$ で急に小さくなり，これが紫外発散（レイリー＝ジーンズの破綻）を防いでいる．次は，モードの数を数えて全モードで足し合わせ，黒体放射のエネルギーを求める．",
   "idea": "1つのモードの光子数の分配関数は等比級数で，その対数微分がプランク分布を与える．",
   "tags": "量子統計,プランク分布,光子,等比級数",
-  "input": "(1) Z：1/(1 - e^(-y))\n(2) ⟨n⟩：1/(e^y - 1)\n(3) T：h nu/(k_B ln 2)"
+  "input": "(1) Z：1/(1 - e^(-y))\n(2) ⟨n⟩：1/(e^y - 1)\n(3) T：h nu/(k_B ln 2)",
+  "id": "SM-03-008"
  },
  {
   "tid": "T14-18",
@@ -249,7 +266,8 @@
   "solution": "モードの数は $2\\cdot\\dfrac{V}{(2\\pi)^3}4\\pi k^2dk=\\dfrac{V\\omega^2}{\\pi^2c^3}d\\omega$．\n\n(1) $u=\\int_0^\\infty\\dfrac{\\omega^2}{\\pi^2c^3}\\dfrac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}d\\omega=\\dfrac{(k_BT)^4}{\\pi^2\\hbar^3c^3}\\cdot\\dfrac{\\pi^4}{15}=\\boldsymbol{\\dfrac{\\pi^2(k_BT)^4}{15\\hbar^3c^3}}$（シュテファン＝ボルツマン則）．\n\n(2) $n=\\int_0^\\infty\\dfrac{\\omega^2}{\\pi^2c^3}\\dfrac{d\\omega}{e^{\\hbar\\omega/k_BT}-1}=\\dfrac{2\\zeta(3)}{\\pi^2}\\left(\\dfrac{k_BT}{\\hbar c}\\right)^3$ より $\\boldsymbol{A=\\dfrac{2\\zeta(3)}{\\pi^2}\\approx0.244}$．\n\n(3) $\\dfrac{u}{nk_BT}=\\dfrac{\\pi^4}{30\\zeta(3)}\\approx\\boldsymbol{2.70}$．\n\n(4) $k_BT/\\hbar c=\\dfrac{1.3806\\times10^{-23}\\times2.725}{1.0546\\times10^{-34}\\times2.998\\times10^8}=1.190\\times10^3\\,\\mathrm{m^{-1}}$．$n=0.2436\\times(1.190\\times10^3)^3\\approx\\boldsymbol{4.1\\times10^8\\,\\mathrm{m^{-3}}}$（1 cm$^3$ あたり約 410 個）．宇宙の陽子・中性子の数密度（約 0.25 m$^{-3}$）の約 $10^9$ 倍である．",
   "idea": "モード密度 $\\omega^2/\\pi^2c^3$ にプランク分布をかけて積分する．エネルギーは $T^4$，個数は $T^3$ に比例する．",
   "tags": "量子統計,黒体放射,光子気体,宇宙背景放射",
-  "input": "(1) u：pi^2 (k_B T)^4/(15 hbar^3 c^3)\n(2) A：≈0.244\n(3) ≈2.70\n(4) n [m^-3]：≈4.1e8"
+  "input": "(1) u：pi^2 (k_B T)^4/(15 hbar^3 c^3)\n(2) A：≈0.244\n(3) ≈2.70\n(4) n [m^-3]：≈4.1e8",
+  "id": "SM-03-009"
  },
  {
   "tid": "T14-19",
@@ -258,12 +276,13 @@
   "level": 1,
   "theme": "自由電子気体のパウリ常磁性",
   "minutes": 15,
-  "q": "$N$ 個の自由電子（スピン $1/2$，フェルミエネルギー $E_F$）が絶対零度にある．電子の磁気モーメントの大きさを $\\mu$ とし，磁束密度 $B$ の中ではスピンの向きにより1電子のエネルギーが $\\mp\\mu B$ だけずれる．両スピンを合わせた状態密度を $D(E)$ とし，$\\mu B\\ll E_F$ とする．\n\\begin{enumerate}\n\\item 磁場に平行な電子と反平行な電子の数の差 $N_+-N_-$ を $D(E_F)$ を用いて表せ．\n\\item 3次元の自由電子では $D(E_F)=\\dfrac{3N}{2E_F}$ である．帯磁率 $\\chi=M/B$（$M=\\mu(N_+-N_-)$）を求めよ．\n\\item 局在スピンのキュリー帯磁率 $\\chi_C=N\\mu^2/k_BT$ との比 $\\chi/\\chi_C$ を，ナトリウム（$E_F=3.2\\,\\mathrm{eV}$）について $T=300\\,\\mathrm{K}$（$k_BT=0.02585\\,\\mathrm{eV}$）で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $N_+-N_-=D(E_F)\\mu B$ \\quad (2) $\\chi=\\dfrac{3N\\mu^2}{2E_F}$ \\quad (3) $\\approx0.012$",
-  "solution": "(1) 各スピンの状態密度は $D/2$．平行スピンのバンドは $\\mu B$ 下がり，反平行は $\\mu B$ 上がる．共通のフェルミ準位まで詰めると，$N_+$ は $\\frac{1}{2}D(E_F)\\mu B$ 増え，$N_-$ は同じだけ減る．$\\boldsymbol{N_+-N_-=D(E_F)\\mu B}$．\n\n(2) $M=\\mu^2D(E_F)B$ より $\\boldsymbol{\\chi=\\dfrac{3N\\mu^2}{2E_F}}$．温度にほとんどよらない（パウリ常磁性）．\n\n(3) $\\dfrac{\\chi}{\\chi_C}=\\dfrac{3k_BT}{2E_F}=\\dfrac{3\\times0.02585}{2\\times3.2}\\approx\\boldsymbol{0.012}$．フェルミ面付近の $k_BT/E_F$ 程度の割合の電子しかスピンを反転できないため，局在スピンよりはるかに小さい．同じ理由で電子比熱も古典値より小さい．",
+  "q": "$N$ 個の自由電子（スピン $1/2$，フェルミエネルギー $E_F$）が絶対零度にある．電子の磁気モーメントの大きさを $\\mu$ とし，磁束密度 $B$ の中ではスピンの向きにより1電子のエネルギーが $\\mp\\mu B$ だけずれる．両スピンを合わせた状態密度を $D(E)$ とし，$\\mu B\\ll E_F$ とする．\n\\begin{enumerate}\n\\item 磁場に平行な電子と反平行な電子の数の差 $N_+-N_-$ を $D(E_F)$ を用いて表せ．\n\\item 3次元の自由電子では $D(E_F)=\\dfrac{3N}{2E_F}$ である．帯磁率 $\\chi=M/B$（$M=\\mu(N_+-N_-)$）を求めよ．\n\\item 局在スピンのキュリー帯磁率 $\\chi_C=N\\mu^2/k_BT$ との比 $\\chi/\\chi_C$ を温度 $T$ で求め，$k_BT\\ll E_F$ の金属でどうなるか述べよ．\n\\end{enumerate}",
+  "answer": "(1) $N_+-N_-=D(E_F)\\mu B$ \\quad (2) $\\chi=\\dfrac{3N\\mu^2}{2E_F}$ \\quad (3) $\\dfrac{\\chi}{\\chi_C}=\\dfrac{3k_BT}{2E_F}$",
+  "solution": "(1) 各スピンの状態密度は $D/2$．平行スピンのバンドは $\\mu B$ 下がり，反平行は $\\mu B$ 上がる．共通のフェルミ準位まで詰めると，$N_+$ は $\\frac{1}{2}D(E_F)\\mu B$ 増え，$N_-$ は同じだけ減る．$\\boldsymbol{N_+-N_-=D(E_F)\\mu B}$．\n\n(2) $M=\\mu^2D(E_F)B$ より $\\boldsymbol{\\chi=\\dfrac{3N\\mu^2}{2E_F}}$．温度にほとんどよらない（パウリ常磁性）．\n\n(3) $\\boldsymbol{\\dfrac{\\chi}{\\chi_C}=\\dfrac{3k_BT}{2E_F}}$．金属では $k_BT\\ll E_F$（室温のナトリウムで約 $10^{-2}$）なので $\\chi\\ll\\chi_C$ である．フェルミ面付近の $k_BT/E_F$ 程度の割合の電子しかスピンを反転できないため，局在スピンよりはるかに小さい．同じ理由で電子比熱も古典値より小さい．",
   "idea": "磁場でスピン上下のバンドがずれ，フェルミ面付近の電子だけが向きを変える．帯磁率はフェルミ面の状態密度に比例する．",
   "tags": "量子統計,フェルミ気体,パウリ常磁性,状態密度",
-  "input": "(1) N_+ - N_-：D(E_F) mu B\n(2) χ：3 N mu^2/(2 E_F)\n(3) χ/χ_C：≈0.012"
+  "input": "(1) N_+ - N_-：D(E_F) mu B\n(2) χ：3 N mu^2/(2 E_F)\n(3) χ/χ_C：3 k_B T/(2 E_F)",
+  "id": "SM-03-010"
  },
  {
   "tid": "T14-20",
@@ -272,12 +291,13 @@
   "level": 2,
   "theme": "調和ポテンシャル中のボース＝アインシュタイン凝縮",
   "minutes": 20,
-  "q": "等方的な3次元調和ポテンシャル（角振動数 $\\omega$）に捕捉された，スピン $0$ の理想ボース粒子 $N$ 個を考える．1粒子の準位は（零点エネルギーを除いて）$\\varepsilon=\\hbar\\omega(n_x+n_y+n_z)$ である．$k_BT\\gg\\hbar\\omega$ とし，準位の和を積分で近似する．$\\int_0^\\infty\\dfrac{x^2}{e^x-1}dx=2\\zeta(3)$，$\\zeta(3)=1.202$ を使ってよい．\n\\begin{enumerate}\n\\item エネルギーが $\\varepsilon$ と $\\varepsilon+d\\varepsilon$ の間にある準位の数 $g(\\varepsilon)\\,d\\varepsilon$ の $g(\\varepsilon)$ を求めよ（$\\varepsilon\\gg\\hbar\\omega$）．\n\\item 凝縮温度 $T_c$ を $N,\\,\\omega$ で表せ．\n\\item $T<T_c$ での凝縮体の割合 $N_0/N$ を求めよ．\n\\item $N=1.0\\times10^6$，$\\omega=2\\pi\\times100\\,\\mathrm{s^{-1}}$ のときの $T_c$ を求めよ（$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$k_B=1.381\\times10^{-23}\\,\\mathrm{J/K}$）．\n\\end{enumerate}",
-  "answer": "(1) $g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}$ \\quad (2) $T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{1.202}\\right)^{1/3}$ \\quad (3) $\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3$ \\quad (4) $\\approx4.5\\times10^{2}\\,\\mathrm{nK}$",
-  "solution": "(1) $n_x+n_y+n_z\\le\\varepsilon/\\hbar\\omega$ を満たす非負整数の組の数は，大きな $\\varepsilon$ では四面体の体積 $\\dfrac{1}{6}\\left(\\dfrac{\\varepsilon}{\\hbar\\omega}\\right)^3$．微分して $\\boldsymbol{g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}}$．\n\n(2) $T_c$ では化学ポテンシャルが $0$ に達し，励起状態の粒子数が $N$ に等しい：\n\\[ N=\\int_0^\\infty\\frac{\\varepsilon^2}{2(\\hbar\\omega)^3}\\frac{d\\varepsilon}{e^{\\varepsilon/k_BT_c}-1}=\\zeta(3)\\left(\\frac{k_BT_c}{\\hbar\\omega}\\right)^3. \\]\nよって $\\boldsymbol{T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{\\zeta(3)}\\right)^{1/3}}$．\n\n(3) $T<T_c$ でも $\\mu=0$ で，励起状態の粒子数は $\\zeta(3)(k_BT/\\hbar\\omega)^3=N(T/T_c)^3$．残りが凝縮して $\\boldsymbol{\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3}$．一様な箱の場合の $1-(T/T_c)^{3/2}$ とは指数が違う（状態密度が $\\varepsilon^{1/2}$ でなく $\\varepsilon^2$ のため）．\n\n(4) $\\dfrac{\\hbar\\omega}{k_B}=\\dfrac{1.055\\times10^{-34}\\times628.3}{1.381\\times10^{-23}}=4.80\\times10^{-9}\\,\\mathrm{K}$，$(10^6/1.202)^{1/3}=94.0$ より $T_c\\approx\\boldsymbol{4.5\\times10^2\\,\\mathrm{nK}}$．冷却原子の実験で実際に観測される温度領域である．",
+  "q": "等方的な3次元調和ポテンシャル（角振動数 $\\omega$）に捕捉された，スピン $0$ の理想ボース粒子 $N$ 個を考える．1粒子の準位は（零点エネルギーを除いて）$\\varepsilon=\\hbar\\omega(n_x+n_y+n_z)$ である．$k_BT\\gg\\hbar\\omega$ とし，準位の和を積分で近似する．$\\int_0^\\infty\\dfrac{x^2}{e^x-1}dx=2\\zeta(3)$，$\\zeta(3)=1.202$ を使ってよい．\n\\begin{enumerate}\n\\item エネルギーが $\\varepsilon$ と $\\varepsilon+d\\varepsilon$ の間にある準位の数 $g(\\varepsilon)\\,d\\varepsilon$ の $g(\\varepsilon)$ を求めよ（$\\varepsilon\\gg\\hbar\\omega$）．\n\\item 凝縮温度 $T_c$ を $N,\\,\\omega$ で表せ．\n\\item $T<T_c$ での凝縮体の割合 $N_0/N$ を求めよ．\n\\item 凝縮体の割合がちょうど $1/2$ になる温度を $T_c$ で表せ．一様な箱の中の気体（$N_0/N=1-(T/T_c)^{3/2}$）の場合と比べよ．\n\\end{enumerate}",
+  "answer": "(1) $g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}$ \\quad (2) $T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{1.202}\\right)^{1/3}$ \\quad (3) $\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3$ \\quad (4) $T=2^{-1/3}T_c$",
+  "solution": "(1) $n_x+n_y+n_z\\le\\varepsilon/\\hbar\\omega$ を満たす非負整数の組の数は，大きな $\\varepsilon$ では四面体の体積 $\\dfrac{1}{6}\\left(\\dfrac{\\varepsilon}{\\hbar\\omega}\\right)^3$．微分して $\\boldsymbol{g(\\varepsilon)=\\dfrac{\\varepsilon^2}{2(\\hbar\\omega)^3}}$．\n\n(2) $T_c$ では化学ポテンシャルが $0$ に達し，励起状態の粒子数が $N$ に等しい：\n\\[ N=\\int_0^\\infty\\frac{\\varepsilon^2}{2(\\hbar\\omega)^3}\\frac{d\\varepsilon}{e^{\\varepsilon/k_BT_c}-1}=\\zeta(3)\\left(\\frac{k_BT_c}{\\hbar\\omega}\\right)^3. \\]\nよって $\\boldsymbol{T_c=\\dfrac{\\hbar\\omega}{k_B}\\left(\\dfrac{N}{\\zeta(3)}\\right)^{1/3}}$．\n\n(3) $T<T_c$ でも $\\mu=0$ で，励起状態の粒子数は $\\zeta(3)(k_BT/\\hbar\\omega)^3=N(T/T_c)^3$．残りが凝縮して $\\boldsymbol{\\dfrac{N_0}{N}=1-\\left(\\dfrac{T}{T_c}\\right)^3}$．一様な箱の場合の $1-(T/T_c)^{3/2}$ とは指数が違う（状態密度が $\\varepsilon^{1/2}$ でなく $\\varepsilon^2$ のため）．\n\n(4) $1-(T/T_c)^3=\\frac12$ より $\\boldsymbol{T=2^{-1/3}T_c}\\approx0.79T_c$．一様な箱では $(T/T_c)^{3/2}=\\frac12$ より $T=2^{-2/3}T_c\\approx0.63T_c$．トラップ中の気体の方が $T_c$ の下で速く凝縮が進む．なお冷却原子の実験（$N\\sim10^6$，$\\omega\\sim2\\pi\\times100\\,\\mathrm{s^{-1}}$）では $T_c$ は数百 nK になる．",
   "idea": "調和トラップでは状態密度が $\\varepsilon^2$ に比例し，$\\mu=0$ での励起粒子数が $T^3$ に比例することから $T_c$ と凝縮体の割合が決まる．",
   "tags": "量子統計,ボース＝アインシュタイン凝縮,調和トラップ,冷却原子",
-  "input": "(1) g(ε)：ε^2/(2 (hbar omega)^3)\n(2) T_c：hbar omega/k_B (N/1.202)^(1/3)\n(3) N_0/N：1 - (T/T_c)^3\n(4) T_c [nK]：≈451"
+  "input": "(1) g(ε)：ε^2/(2 (hbar omega)^3)\n(2) T_c：hbar omega/k_B (N/1.202)^(1/3)\n(3) N_0/N：1 - (T/T_c)^3\n(4) $T$：2^(-1/3) T_c",
+  "id": "SM-03-011"
  },
  {
   "tid": "T14-21",
@@ -291,7 +311,8 @@
   "solution": "(1) $2\\cdot\\dfrac{V}{(2\\pi\\hbar)^3}\\cdot\\dfrac{4\\pi}{3}p_F^3=N$ より $\\boldsymbol{p_F=\\hbar(3\\pi^2n)^{1/3}}$（非相対論と同じ．運動量空間の詰め方は分散関係によらない）．\n\n(2) 運動量空間で $p^2dp$ の重みで平均して $\\langle pc\\rangle=\\dfrac{\\int_0^{p_F}p^3dp}{\\int_0^{p_F}p^2dp}c=\\dfrac{3}{4}p_Fc$，$\\boldsymbol{\\langle\\varepsilon\\rangle=\\dfrac{3}{4}E_F}$．\n\n(3) 全エネルギー $E=\\frac{3}{4}NE_F\\propto N^{4/3}V^{-1/3}$ なので $P=-\\left(\\dfrac{\\partial E}{\\partial V}\\right)_N=\\dfrac{E}{3V}=\\dfrac{1}{4}nE_F$．\n\\[ \\boldsymbol{P=\\frac{\\hbar c}{4}(3\\pi^2)^{1/3}n^{4/3}},\\qquad \\boldsymbol{\\gamma=\\frac{4}{3}}. \\]\n非相対論では $P=\\frac{2}{5}nE_F\\propto n^{5/3}$．指数が $5/3$ から $4/3$ に下がると，自己重力に対して星を支えきれなくなる（白色矮星のチャンドラセカール限界）．\n\n(4) $\\hbar(3\\pi^2n_c)^{1/3}=mc$ より $\\boldsymbol{n_c=\\dfrac{1}{3\\pi^2}\\left(\\dfrac{mc}{\\hbar}\\right)^3}$．電子では約 $5.9\\times10^{35}\\,\\mathrm{m^{-3}}$ で，白色矮星の中心密度の程度である．",
   "idea": "フェルミ球の大きさは分散関係によらず，エネルギーの $p$ 依存性だけが変わる．$\\varepsilon\\propto p$ では $E\\propto V^{-1/3}$ から $P=E/3V$ となる．",
   "tags": "量子統計,フェルミ気体,縮退圧,相対論的気体,白色矮星",
-  "input": "(1) p_F：hbar (3 pi^2 n)^(1/3)\n(2) ⟨ε⟩：3/4 E_F\n(3) P：hbar c/4 (3 pi^2)^(1/3) n^(4/3) ; γ：4/3\n(4) n_c：1/(3 pi^2) (m c/hbar)^3"
+  "input": "(1) p_F：hbar (3 pi^2 n)^(1/3)\n(2) ⟨ε⟩：3/4 E_F\n(3) P：hbar c/4 (3 pi^2)^(1/3) n^(4/3) ; γ：4/3\n(4) n_c：1/(3 pi^2) (m c/hbar)^3",
+  "id": "SM-03-012"
  },
  {
   "tid": "T14-22",
@@ -305,7 +326,8 @@
   "solution": "$x=(\\varepsilon-\\mu)/k_BT$ とすると $k_BT\\dfrac{\\partial f}{\\partial\\mu}=-\\dfrac{\\partial f}{\\partial x}$．\n\n(1) $f=(e^x-1)^{-1}$ で $-\\dfrac{\\partial f}{\\partial x}=\\dfrac{e^x}{(e^x-1)^2}=f\\cdot\\dfrac{e^x}{e^x-1}=f(1+f)$．よって $\\boldsymbol{\\langle(\\Delta n)^2\\rangle=f(1+f)}$．\n\n(2) $f=(e^x+1)^{-1}$ で $-\\dfrac{\\partial f}{\\partial x}=\\dfrac{e^x}{(e^x+1)^2}=f(1-f)$．$\\boldsymbol{\\langle(\\Delta n)^2\\rangle=f(1-f)}$．$n$ は $0$ か $1$ しかとらないので $n^2=n$ から直接も出る．完全に詰まった状態（$f=1$）ではゆらがない．\n\n古典（ボルツマン）粒子では $\\langle(\\Delta n)^2\\rangle=f$（ポアソン分布）．ボースの $f^2$ はモードの波としての干渉によるゆらぎ（光ではハンベリー・ブラウン＝トゥイスの効果）を，$f$ は粒子としてのゆらぎを表す．アインシュタインは1909年に黒体放射のゆらぎにこの2つの項が現れることを指摘し，光の粒子性と波動性の両立を論じた．\n\n(3) $C_V=4aVT^3$ より $\\boldsymbol{\\langle(\\Delta E)^2\\rangle=4ak_BVT^5}$．相対ゆらぎは $\\sqrt{\\langle(\\Delta E)^2\\rangle}/E=\\sqrt{4k_B/(aVT^3)}$ で，光子数 $\\sim aVT^3/k_B$ の平方根に反比例する．",
   "idea": "大正準分布では占有数の分散が $k_BT\\,\\partial\\langle n\\rangle/\\partial\\mu$ で与えられ，統計性の違いが $\\pm f^2$ の項に現れる．",
   "tags": "量子統計,ゆらぎ,ボース分布,フェルミ分布,黒体放射",
-  "input": "(1) f (1 + f)\n(2) f (1 - f)\n(3) ⟨(ΔE)^2⟩：4 a k_B V T^5"
+  "input": "(1) f (1 + f)\n(2) f (1 - f)\n(3) ⟨(ΔE)^2⟩：4 a k_B V T^5",
+  "id": "SM-03-013"
  },
  {
   "tid": "T14-23",
@@ -319,7 +341,8 @@
   "solution": "(1) $p_z$ の積分は $\\dfrac{L}{2\\pi\\hbar}\\sqrt{2\\pi mk_BT}$．ランダウ準位の和は $\\sum_ne^{-x(n+1/2)}=\\dfrac{1}{2\\sinh(x/2)}$（$x=\\hbar\\omega_c/k_BT$）．縮退度をかけて\n\\[ \\boldsymbol{Z_1=\\frac{qBV}{2\\pi\\hbar}\\sqrt{\\frac{mk_BT}{2\\pi\\hbar^2}}\\,\\frac{1}{2\\sinh\\frac{\\hbar qB}{2mk_BT}}}. \\]\n$B\\to0$ で $2\\sinh(x/2)\\simeq\\dfrac{\\hbar qB}{mk_BT}$ なので $Z_1\\to V\\dfrac{mk_BT}{2\\pi\\hbar^2}\\sqrt{\\dfrac{mk_BT}{2\\pi\\hbar^2}}$ となり自由粒子に一致する．\n\n(2) $B$ に依存する部分は $\\ln Z_1=\\ln\\dfrac{x/2}{\\sinh(x/2)}+\\text{const}\\simeq-\\dfrac{x^2}{24}+\\text{const}$．$x=\\dfrac{\\hbar qB}{mk_BT}$ より\n\\[ M=Nk_BT\\frac{\\partial}{\\partial B}\\left(-\\frac{x^2}{24}\\right)=-\\frac{N\\hbar^2q^2B}{12m^2k_BT},\\qquad \\boldsymbol{\\chi=-\\frac{Nq^2\\hbar^2}{12m^2k_BT}}. \\]\n負なので反磁性である（ランダウ反磁性）．$\\chi=-\\dfrac{N\\mu_B^2}{3k_BT}$ とも書ける．\n\n(3) $\\boldsymbol{\\chi/\\chi_P=-\\dfrac{1}{3}}$．（縮退した電子気体でも，$T=0$ のパウリ常磁性とランダウ反磁性の比は同じく $-1/3$ になる．）\n\n(4) 古典的な分配関数では運動量を $\\boldsymbol{p}\\to\\boldsymbol{p}+q\\boldsymbol{A}$ とずらす積分変数の変換でベクトルポテンシャルが消えるので，$Z$ は $B$ によらず $\\boldsymbol{\\chi=0}$．ローレンツ力は仕事をしないためである．反磁性は軌道運動の量子化（ランダウ準位の離散性）がもたらす純粋に量子的な効果である．",
   "idea": "ランダウ準位の和が $1/2\\sinh(\\hbar\\omega_c/2k_BT)$ となり，その $B^2$ の補正の符号が反磁性を与える．古典論では $B$ 依存性が消える．",
   "tags": "量子統計,ランダウ反磁性,ランダウ準位,ボーア＝ファン・リューエンの定理",
-  "input": "(1) Z_1：q B V/(2 pi hbar) sqrt(m k_B T/(2 pi hbar^2))/(2 sinh(hbar q B/(2 m k_B T)))\n(2) χ：-N q^2 hbar^2/(12 m^2 k_B T)\n(3) χ/χ_P：-1/3\n(4) χ：0"
+  "input": "(1) Z_1：q B V/(2 pi hbar) sqrt(m k_B T/(2 pi hbar^2))/(2 sinh(hbar q B/(2 m k_B T)))\n(2) χ：-N q^2 hbar^2/(12 m^2 k_B T)\n(3) χ/χ_P：-1/3\n(4) χ：0",
+  "id": "SM-03-014"
  },
  {
   "tid": "T14-24",
@@ -328,12 +351,13 @@
   "level": 4,
   "theme": "電子・陽電子対の化学平衡",
   "minutes": 30,
-  "q": "温度 $T$ の熱平衡にある空間で，反応 $\\gamma+\\gamma\\rightleftarrows e^-+e^+$ により電子・陽電子対が生成・消滅している．電子と陽電子（質量 $m$，スピン $1/2$）はともに非縮退で $k_BT\\ll mc^2$ とし，それぞれの数密度は静止エネルギーを含めて\n\\[ n_\\mp=2\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{(\\mu_\\mp-mc^2)/k_BT} \\]\nで与えられる（$\\mu_\\mp$ は電子・陽電子の化学ポテンシャル）．光子の化学ポテンシャルは $0$ である．\n\\begin{enumerate}\n\\item 化学平衡の条件から $\\mu_-+\\mu_+$ の値を求めよ．\n\\item 積 $n_-n_+$ を $T$ の関数として求めよ．\n\\item 電荷の保存により $n_--n_+=n_0\\ (>0)$ が一定のとき，陽電子の数密度 $n_+$ を求めよ．\n\\item $n_0=0$，$k_BT=0.1\\,mc^2$ のとき，$n_+$ は $(mc/\\hbar)^3$ の何倍か．\n\\end{enumerate}",
-  "answer": "(1) $\\mu_-+\\mu_+=0$ \\quad (2) $n_-n_+=4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}$ \\quad (3) $n_+=-\\dfrac{n_0}{2}+\\sqrt{\\dfrac{n_0^2}{4}+4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}$ \\quad (4) $\\approx1.8\\times10^{-7}$",
-  "solution": "(1) 反応の平衡条件は $2\\mu_\\gamma=\\mu_-+\\mu_+$，光子は数が保存しないので $\\mu_\\gamma=0$．$\\boldsymbol{\\mu_-+\\mu_+=0}$．\n\n(2) 積をとると $\\mu$ が消えて\n\\[ \\boldsymbol{n_-n_+=4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}. \\]\n化学反応の質量作用の法則（サハの式と同じ形）で，右辺は温度だけで決まる．\n\n(3) $n_-=n_++n_0$ を代入し $n_+^2+n_0n_+-K=0$（$K$ は (2) の右辺）を解いて正の根をとる：\n\\[ \\boldsymbol{n_+=-\\frac{n_0}{2}+\\sqrt{\\frac{n_0^2}{4}+4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}}. \\]\n$n_0^2\\gg K$ なら $n_+\\simeq K/n_0$ で，余分な電子があると陽電子は抑えられる．\n\n(4) $n_0=0$ では $n_+=\\sqrt{K}=2\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{-mc^2/k_BT}=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3$（$\\theta=k_BT/mc^2$）．$\\theta=0.1$ で $2\\times(0.01592)^{3/2}\\times e^{-10}=2\\times2.008\\times10^{-3}\\times4.54\\times10^{-5}\\approx\\boldsymbol{1.8\\times10^{-7}}$．\n\n電子では $(mc/\\hbar)^3\\approx1.7\\times10^{37}\\,\\mathrm{m^{-3}}$ なので，$k_BT\\approx51\\,\\mathrm{keV}$ で $n_+\\approx3\\times10^{30}\\,\\mathrm{m^{-3}}$．初期宇宙で $k_BT$ が $mc^2$ を下回ると対が急速に消滅し，わずかな過剰電子だけが残った．",
+  "q": "温度 $T$ の熱平衡にある空間で，反応 $\\gamma+\\gamma\\rightleftarrows e^-+e^+$ により電子・陽電子対が生成・消滅している．電子と陽電子（質量 $m$，スピン $1/2$）はともに非縮退で $k_BT\\ll mc^2$ とし，それぞれの数密度は静止エネルギーを含めて\n\\[ n_\\mp=2\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{(\\mu_\\mp-mc^2)/k_BT} \\]\nで与えられる（$\\mu_\\mp$ は電子・陽電子の化学ポテンシャル）．光子の化学ポテンシャルは $0$ である．\n\\begin{enumerate}\n\\item 化学平衡の条件から $\\mu_-+\\mu_+$ の値を求めよ．\n\\item 積 $n_-n_+$ を $T$ の関数として求めよ．\n\\item 電荷の保存により $n_--n_+=n_0\\ (>0)$ が一定のとき，陽電子の数密度 $n_+$ を求めよ．\n\\item $n_0=0$ のとき，$n_+$ を $\\theta=k_BT/mc^2$ と $(mc/\\hbar)^3$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\mu_-+\\mu_+=0$ \\quad (2) $n_-n_+=4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}$ \\quad (3) $n_+=-\\dfrac{n_0}{2}+\\sqrt{\\dfrac{n_0^2}{4}+4\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}$ \\quad (4) $n_+=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3$",
+  "solution": "(1) 反応の平衡条件は $2\\mu_\\gamma=\\mu_-+\\mu_+$，光子は数が保存しないので $\\mu_\\gamma=0$．$\\boldsymbol{\\mu_-+\\mu_+=0}$．\n\n(2) 積をとると $\\mu$ が消えて\n\\[ \\boldsymbol{n_-n_+=4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}. \\]\n化学反応の質量作用の法則（サハの式と同じ形）で，右辺は温度だけで決まる．\n\n(3) $n_-=n_++n_0$ を代入し $n_+^2+n_0n_+-K=0$（$K$ は (2) の右辺）を解いて正の根をとる：\n\\[ \\boldsymbol{n_+=-\\frac{n_0}{2}+\\sqrt{\\frac{n_0^2}{4}+4\\left(\\frac{mk_BT}{2\\pi\\hbar^2}\\right)^3e^{-2mc^2/k_BT}}}. \\]\n$n_0^2\\gg K$ なら $n_+\\simeq K/n_0$ で，余分な電子があると陽電子は抑えられる．\n\n(4) $n_0=0$ では $n_+=\\sqrt{K}=2\\left(\\dfrac{mk_BT}{2\\pi\\hbar^2}\\right)^{3/2}e^{-mc^2/k_BT}=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3$（$\\theta=k_BT/mc^2$）．すなわち $\\boldsymbol{n_+=2\\left(\\dfrac{\\theta}{2\\pi}\\right)^{3/2}e^{-1/\\theta}\\left(\\dfrac{mc}{\\hbar}\\right)^3}$．$\\theta=0.1$ でも係数は $2\\times10^{-7}$ 程度と小さい．\n\n電子では $(mc/\\hbar)^3\\approx1.7\\times10^{37}\\,\\mathrm{m^{-3}}$ なので，$k_BT\\approx51\\,\\mathrm{keV}$（$\\theta=0.1$）で $n_+\\approx3\\times10^{30}\\,\\mathrm{m^{-3}}$．初期宇宙で $k_BT$ が $mc^2$ を下回ると対が急速に消滅し，わずかな過剰電子だけが残った．",
   "idea": "対生成の平衡では $\\mu_-+\\mu_+=2\\mu_\\gamma=0$．$n_-n_+$ は化学ポテンシャルによらず温度だけで決まる（質量作用の法則）．",
   "tags": "量子統計,化学平衡,対生成,質量作用の法則,初期宇宙",
-  "input": "(1) μ_- + μ_+：0\n(2) n_- n_+：4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T))\n(3) n_+：-n_0/2 + sqrt(n_0^2/4 + 4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T)))\n(4) ≈1.8e-7"
+  "input": "(1) μ_- + μ_+：0\n(2) n_- n_+：4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T))\n(3) n_+：-n_0/2 + sqrt(n_0^2/4 + 4 (m k_B T/(2 pi hbar^2))^3 e^(-2 m c^2/(k_B T)))\n(4) $n_+$：2 (θ/(2 pi))^(3/2) e^(-1/θ) (m c/hbar)^3",
+  "id": "SM-03-015"
  },
  {
   "tid": "T14-25",
@@ -347,7 +371,8 @@
   "solution": "(1) $\\Omega x(1-x)=\\Omega(x-x^2)$ の2階微分は $-2\\Omega$．$(x\\ln x)''=1/x$，$((1-x)\\ln(1-x))''=1/(1-x)$ より\n\\[ \\boldsymbol{f''(x)=-2\\Omega+\\frac{k_BT}{x(1-x)}}. \\]\n\n(2) $x(1-x)$ は $x=1/2$ で最大値 $1/4$ をとるので，$\\dfrac{k_BT}{x(1-x)}$ の最小値は $4k_BT$．$4k_BT>2\\Omega$ なら常に $f''>0$．$\\boldsymbol{T_c=\\dfrac{\\Omega}{2k_B}}$．\n\n(3) $x(1-x)=\\dfrac{k_BT}{2\\Omega}=\\dfrac{3}{16}$ より $16x^2-16x+3=0$，$\\boldsymbol{x=\\dfrac{1}{4},\\ \\dfrac{3}{4}}$．この間の組成では一様な合金が不安定で，自発的に A の多い相と B の多い相に分かれる（スピノーダル分解）．\n\nエネルギー（混ざりたくない）とエントロピー（混ざりたい）の競合で，高温ではエントロピーが勝つ．同じ形の自由エネルギーは磁性体の平均場近似でも現れ，$T_c$ は「臨界温度」と呼ばれる．",
   "idea": "混合のエネルギーとエントロピーの競合．$f''<0$ の領域が現れる温度が臨界温度になる．",
   "tags": "相転移,相分離,正則溶液,臨界温度,スピノーダル",
-  "input": "(1) f''(x)：-2Ω + k_B T/(x (1 - x))\n(2) T_c：Ω/(2 k_B)\n(3) x：{1/4, 3/4}"
+  "input": "(1) f''(x)：-2Ω + k_B T/(x (1 - x))\n(2) T_c：Ω/(2 k_B)\n(3) x：{1/4, 3/4}",
+  "id": "SM-04-008"
  },
  {
   "tid": "T14-26",
@@ -361,7 +386,8 @@
   "solution": "(1) 特性方程式 $\\lambda^2-2e^K\\cosh b\\,\\lambda+e^{2K}-e^{-2K}=0$ より\n\\[ \\boldsymbol{\\lambda_+=e^K\\cosh b+\\sqrt{e^{2K}\\sinh^2b+e^{-2K}}}. \\]\n\n(2) $Z=\\lambda_+^N+\\lambda_-^N\\simeq\\lambda_+^N$ なので $m=\\dfrac{\\partial\\ln\\lambda_+}{\\partial b}$．\n\\[ \\frac{\\partial\\lambda_+}{\\partial b}=e^K\\sinh b+\\frac{e^{2K}\\sinh b\\cosh b}{\\sqrt{e^{2K}\\sinh^2b+e^{-2K}}}=\\frac{e^K\\sinh b}{\\sqrt{e^{2K}\\sinh^2b+e^{-2K}}}\\lambda_+ \\]\nより $\\boldsymbol{m=\\dfrac{\\sinh b}{\\sqrt{\\sinh^2b+e^{-4K}}}}$．\n\n(3) $b\\to0$ で $m\\simeq b\\,e^{2K}$．$b=h/k_BT$ より $\\boldsymbol{\\chi=\\dfrac{e^{2J/k_BT}}{k_BT}}$．\n\n$h=0$ では任意の $T>0$ で $m=0$ で，自発磁化は現れない（1次元では相転移がない）．$\\chi$ は $T\\to0$ で指数関数的に発散するだけで，有限温度で発散する点はない．平均場近似の $\\chi\\propto1/(T-T_c)$ と対照的である．",
   "idea": "分配関数は転送行列の最大固有値で決まり，$\\ln\\lambda_+$ は $T>0$ で解析的なので相転移はない．",
   "tags": "相転移,イジング模型,転送行列,1次元系,帯磁率",
-  "input": "(1) λ_+：e^K cosh(b) + sqrt(e^(2K) sinh(b)^2 + e^(-2K))\n(2) m：sinh(b)/sqrt(sinh(b)^2 + e^(-4K))\n(3) χ：e^(2J/(k_B T))/(k_B T)"
+  "input": "(1) λ_+：e^K cosh(b) + sqrt(e^(2K) sinh(b)^2 + e^(-2K))\n(2) m：sinh(b)/sqrt(sinh(b)^2 + e^(-4K))\n(3) χ：e^(2J/(k_B T))/(k_B T)",
+  "id": "SM-04-009"
  },
  {
   "tid": "T14-27",
@@ -375,7 +401,8 @@
   "solution": "平衡条件は $\\dfrac{\\partial f}{\\partial\\phi}=2a(T-T_c)\\phi+4b\\phi^3-h=0$．$h$ で微分すると $\\left[2a(T-T_c)+12b\\phi^2\\right]\\dfrac{\\partial\\phi}{\\partial h}=1$．\n\n(1) $T>T_c$ では $h=0$ で $\\phi=0$．$\\boldsymbol{\\chi=\\dfrac{1}{2a(T-T_c)}}$（キュリー＝ワイス則）．\n\n(2) $T<T_c$ では $\\phi_0^2=\\dfrac{a(T_c-T)}{2b}$ なので $2a(T-T_c)+12b\\phi_0^2=4a(T_c-T)$．$\\boldsymbol{\\chi=\\dfrac{1}{4a(T_c-T)}}$．同じ $|T-T_c|$ で比べると $\\chi_+/\\chi_-=2$ で，どちら側でも $\\gamma=1$ の発散をする．\n\n(3) $T=T_c$ では $4b\\phi^3=h$ より $\\boldsymbol{\\phi=\\left(\\dfrac{h}{4b}\\right)^{1/3}}$．臨界等温線 $\\phi\\propto h^{1/\\delta}$ の指数は $\\delta=3$（平均場の値．3次元イジングでは約 4.8）．",
   "idea": "平衡条件 $\\partial f/\\partial\\phi=0$ を $h$ で微分すれば応答が出る．秩序相では曲率 $f''(\\phi_0)$ が無秩序相の2倍になる．",
   "tags": "相転移,ランダウ理論,帯磁率,臨界指数",
-  "input": "(1) χ：1/(2 a (T - T_c))\n(2) χ：1/(4 a (T_c - T))\n(3) φ：(h/(4b))^(1/3)"
+  "input": "(1) χ：1/(2 a (T - T_c))\n(2) χ：1/(4 a (T_c - T))\n(3) φ：(h/(4b))^(1/3)",
+  "id": "SM-04-010"
  },
  {
   "tid": "T14-28",
@@ -389,7 +416,8 @@
   "solution": "(1) $h=0$，$m_A=-m_B=m_s$ とすると $m_s=\\tanh\\dfrac{zJm_s}{k_BT}$．強磁性の平均場と同じ形で，$\\dfrac{zJ}{k_BT}>1$ で非自明な解が現れる．$\\boldsymbol{T_N=\\dfrac{zJ}{k_B}}$．\n\n(2) $T>T_N$ では $h\\to0$ で $m_A=m_B=m$ が小さいので線形化して $m=\\dfrac{h-zJm}{k_BT}$．よって $m=\\dfrac{h}{k_BT+zJ}$，\n\\[ \\boldsymbol{\\chi=\\frac{1}{k_B(T+T_N)}}. \\]\nキュリー＝ワイス則 $\\chi\\propto1/(T-\\theta)$ の $\\theta$ が負（$\\theta=-T_N$）になるのが反強磁性体の特徴である．強磁性体と違って一様な帯磁率は $T_N$ で発散しない（発散するのは副格子で符号の変わる「スタッガード」帯磁率）．\n\n(3) $\\boldsymbol{\\chi=\\dfrac{1}{2k_BT_N}=\\dfrac{1}{2zJ}}$．$T<T_N$ では，秩序の向きに平行な帯磁率は $T\\to0$ で $0$ に減る（スピンが逆向きの分子場で固定されるため）．このため $\\chi$ は $T_N$ でカスプ（尖った極大）をもつ．実際の物質では $|\\theta|/T_N$ が1からずれ，次近接相互作用などの情報が得られる．",
   "idea": "副格子ごとに分子場を立てる．一様な応答では相手の副格子からの分子場が外場を打ち消す向きに働き，$T+T_N$ が分母に現れる．",
   "tags": "相転移,平均場近似,反強磁性,ネール温度,キュリー＝ワイス則",
-  "input": "(1) T_N：zJ/k_B\n(2) χ：1/(k_B (T + T_N))\n(3) χ：1/(2zJ)"
+  "input": "(1) T_N：zJ/k_B\n(2) χ：1/(k_B (T + T_N))\n(3) χ：1/(2zJ)",
+  "id": "SM-04-011"
  },
  {
   "tid": "T14-29",
@@ -403,7 +431,8 @@
   "solution": "オイラー＝ラグランジュ方程式は $2c\\phi''=2a(T-T_c)\\phi+4b\\phi^3$．\n\n(1) 線形化して $c\\phi''=a(T-T_c)\\phi$，解は $e^{-|x|/\\xi_+}$ で $\\boldsymbol{\\xi_+=\\sqrt{\\dfrac{c}{a(T-T_c)}}}$．\n\n(2) $A=a(T_c-T)$ とおくと $\\phi_0^2=A/2b$．$\\phi=\\phi_0+\\delta$ として線形化すると $c\\delta''=(-A+6b\\phi_0^2)\\delta=2A\\delta$．$\\boldsymbol{\\xi_-=\\sqrt{\\dfrac{c}{2a(T_c-T)}}}$．同じ $|T-T_c|$ では $\\xi_+/\\xi_-=\\sqrt{2}$，どちらも $|T-T_c|^{-1/2}$（$\\nu=1/2$）で発散する．\n\n(3) 方程式に $\\phi'$ をかけて積分すると「エネルギー保存」$c\\phi'^2=a(T-T_c)\\phi^2+b\\phi^4-(\\text{$\\pm\\phi_0$ での値})=b(\\phi^2-\\phi_0^2)^2$．よって $\\phi'=\\sqrt{b/c}\\,(\\phi_0^2-\\phi^2)$，積分して $\\phi=\\phi_0\\tanh\\left(\\sqrt{b/c}\\,\\phi_0x\\right)$．$\\sqrt{b/c}\\,\\phi_0=\\sqrt{A/2c}=\\dfrac{1}{2\\xi_-}$ より\n\\[ \\boldsymbol{\\phi(x)=\\sqrt{\\frac{a(T_c-T)}{2b}}\\tanh\\left(\\sqrt{\\frac{a(T_c-T)}{2c}}\\,x\\right)}=\\phi_0\\tanh\\frac{x}{2\\xi_-}. \\]\n磁壁の厚さは相関長の程度である．\n\n(4) 一様状態との差の被積分関数は $c\\phi'^2+b(\\phi^2-\\phi_0^2)^2=2c\\phi'^2$．\n\\[ \\sigma=\\int2c\\phi'^2dx=2c\\int_{-\\phi_0}^{\\phi_0}\\phi'\\,d\\phi=2\\sqrt{bc}\\int_{-\\phi_0}^{\\phi_0}(\\phi_0^2-\\phi^2)d\\phi=\\frac{8}{3}\\sqrt{bc}\\,\\phi_0^3. \\]\n$\\phi_0^3=(A/2b)^{3/2}$ を代入して $\\boldsymbol{\\sigma=\\dfrac{2\\sqrt{2}}{3b}\\sqrt{c}\\,\\left(a(T_c-T)\\right)^{3/2}}$．$T_c$ に近づくと $(T_c-T)^{3/2}$ で消える．",
   "idea": "勾配項が相関長を与え，磁壁は「力学のエネルギー保存」に相当する第1積分から tanh 型の解として求まる．",
   "tags": "相転移,ギンツブルク＝ランダウ理論,相関長,ドメイン壁,界面張力",
-  "input": "(1) ξ_+：sqrt(c/(a (T - T_c)))\n(2) ξ_-：sqrt(c/(2 a (T_c - T)))\n(3) φ(x)：sqrt(a (T_c - T)/(2b)) tanh(x sqrt(a (T_c - T)/(2c)))\n(4) σ：2 sqrt(2c)/(3b) (a (T_c - T))^(3/2)"
+  "input": "(1) ξ_+：sqrt(c/(a (T - T_c)))\n(2) ξ_-：sqrt(c/(2 a (T_c - T)))\n(3) φ(x)：sqrt(a (T_c - T)/(2b)) tanh(x sqrt(a (T_c - T)/(2c)))\n(4) σ：2 sqrt(2c)/(3b) (a (T_c - T))^(3/2)",
+  "id": "SM-04-012"
  },
  {
   "tid": "T14-30",
@@ -417,7 +446,8 @@
   "solution": "(1) 反転した境目の1つの結合だけが $-J$ から $+J$ に変わる．$\\boldsymbol{\\Delta E=2J}$．\n\n(2) 磁壁は $N-1$ 本の結合のどこにでも置けるので $\\Delta S=k_B\\ln(N-1)$．\n\\[ \\boldsymbol{\\Delta F=2J-k_BT\\ln(N-1)}. \\]\n任意の $T>0$ で $N\\to\\infty$ とすれば $\\Delta F<0$．磁壁が自発的に生じて秩序は壊れるので，1次元の短距離相互作用系では有限温度の相転移がない（転送行列による厳密解と一致）．\n\n(3) $\\Delta F=2J\\ell-k_BT\\ell\\ln3=\\ell(2J-k_BT\\ln3)$．$\\ell$ に比例するエネルギーとエントロピーが競合するので，$k_BT<2J/\\ln3$ なら大きな磁壁はできず秩序が保たれる．$\\boldsymbol{T_c\\approx\\dfrac{2J}{k_B\\ln3}}\\approx1.82J/k_B$．オンサーガーの厳密解 $k_BT_c=2J/\\ln(1+\\sqrt{2})\\approx2.27J$ と同程度である（自己交差を除くと形の数は $\\mu^\\ell$，$\\mu\\approx2.64$ に減り，見積もりは上がる）．\n\n2次元以上では磁壁のエネルギーが大きさとともに増えるため有限温度の秩序が可能になる．これを厳密にしたのがパイエルスの議論である．",
   "idea": "磁壁を作るエネルギーと置き方のエントロピーの競合．1次元ではエネルギーが一定でエントロピーが勝ち，2次元では両方が長さに比例する．",
   "tags": "相転移,イジング模型,パイエルスの議論,磁壁,低次元系",
-  "input": "(1) ΔE：2J\n(2) ΔF：2J - k_B T ln(N - 1)\n(3) T_c：2J/(k_B ln 3)"
+  "input": "(1) ΔE：2J\n(2) ΔF：2J - k_B T ln(N - 1)\n(3) T_c：2J/(k_B ln 3)",
+  "id": "SM-04-013"
  },
  {
   "tid": "T14-31",
@@ -431,7 +461,8 @@
   "solution": "(1) $\\sum p_a^2=\\dfrac{(1+2m)^2+2(1-m)^2}{9}=\\dfrac{1+2m^2}{3}$ より，エネルギー項は $-\\dfrac{zJ}{6}-\\dfrac{zJ}{3}m^2$．エントロピー項は $p_a=\\frac{1}{3}+\\delta_a$（$\\delta_1=\\frac{2m}{3}$，$\\delta_{2,3}=-\\frac{m}{3}$，$\\sum\\delta_a=0$）として\n\\[ \\sum p_a\\ln p_a=-\\ln3+\\frac{3}{2}\\sum\\delta_a^2-\\frac{3}{2}\\sum\\delta_a^3+\\cdots=-\\ln3+m^2-\\frac{m^3}{3}+\\cdots. \\]\nよって $f(m)-f(0)=\\left(k_BT-\\dfrac{zJ}{3}\\right)m^2-\\dfrac{k_BT}{3}m^3+\\cdots$．$m^2$ の係数 $\\boldsymbol{k_BT-\\dfrac{zJ}{3}}$，$m^3$ の係数 $\\boldsymbol{-\\dfrac{k_BT}{3}}$．\n\n(2) $m^2$ の係数が $0$ になる $\\boldsymbol{T^*=\\dfrac{zJ}{3k_B}}$．\n\n(3) 3次の項があるので，$m^2$ の係数が正のうちに $m>0$ 側に別の極小が下がってきて1次転移が先に起こる（ランダウの議論：対称性が3次の不変量を許すと転移は1次）．$m=1/2$ では $p=(2/3,1/6,1/6)$．\n\\[ f(1/2)-f(0)=-\\frac{zJ}{2}\\left(\\frac{1}{2}-\\frac{1}{3}\\right)+k_BT\\left[\\frac{2}{3}\\ln\\frac{2}{3}+\\frac{1}{3}\\ln\\frac{1}{6}+\\ln3\\right]=-\\frac{zJ}{12}+\\frac{k_BT}{3}\\ln2. \\]\nこれが $0$ となるのは $\\boldsymbol{T_c=\\dfrac{zJ}{4k_B\\ln2}}$．また $f'(m)=-\\dfrac{2zJ}{3}m+\\dfrac{2k_BT}{3}\\ln\\dfrac{1+2m}{1-m}$ より $f'(1/2)=-\\dfrac{zJ}{3}+\\dfrac{2k_BT_c}{3}\\ln4=-\\dfrac{zJ}{3}+\\dfrac{zJ}{3}=0$で確かに極値になっている．秩序変数は $0$ から $1/2$ に不連続に跳ぶ．\n\n(4) $\\dfrac{T_c}{T^*}=\\dfrac{3}{4\\ln2}\\approx\\boldsymbol{1.082}$．$T^*<T<T_c$ の範囲では無秩序相が準安定（過冷却）として残る．一般の $q$ では $k_BT_c=zJ\\dfrac{q-2}{2(q-1)\\ln(q-1)}$ となり，$q=2$（イジング）の極限で $T_c\\to zJ/2k_B=T^*$ の2次転移に戻る．",
   "idea": "3状態ポッツ模型の秩序変数は3次の不変量をもち，ランダウ展開に $m^3$ 項が現れるため平均場では転移が1次になる．",
   "tags": "相転移,平均場近似,ポッツ模型,1次転移,ランダウ理論",
-  "input": "(1) m^2の係数：k_B T - zJ/3 ; m^3の係数：-k_B T/3\n(2) T^*：zJ/(3 k_B)\n(3) T_c：zJ/(4 k_B ln 2)\n(4) T_c/T^*：≈1.082"
+  "input": "(1) m^2の係数：k_B T - zJ/3 ; m^3の係数：-k_B T/3\n(2) T^*：zJ/(3 k_B)\n(3) T_c：zJ/(4 k_B ln 2)\n(4) T_c/T^*：≈1.082",
+  "id": "SM-04-014"
  },
  {
   "tid": "T14-32",
@@ -440,11 +471,12 @@
   "level": 4,
   "theme": "ベーテ近似によるイジング模型の転移温度",
   "minutes": 35,
-  "q": "配位数 $z$ の格子上のイジング模型 $H=-J\\sum_{\\langle ij\\rangle}s_is_j$（$J>0$，外場なし）をベーテ近似で扱う．中心のスピン $s_0$ とその最近接 $z$ 個のスピン $s_1,\\dots,s_z$ からなるクラスターをとり，クラスター内の相互作用は厳密に扱い，外側のスピンの影響は各 $s_j$（$j=1,\\dots,z$）にはたらく有効場 $h'$ で置き換える：\n\\[ H_{\\rm cl}=-Js_0\\sum_{j=1}^zs_j-h'\\sum_{j=1}^zs_j. \\]\n$\\beta=1/k_BT$，$K=\\beta J$ とする．\n\\begin{enumerate}\n\\item クラスターの分配関数 $Z_{\\rm cl}$ を求めよ．\n\\item 自己無撞着条件 $\\langle s_0\\rangle=\\langle s_j\\rangle$ を，$\\beta h'$ についての方程式として書け．\n\\item $h'\\to0$ で線形化し，自発磁化が現れる転移温度 $T_c$ を求めよ．\n\\item 正方格子 $z=4$ での $k_BT_c/J$ を数値で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $Z_{\\rm cl}=\\left[2\\cosh\\beta(J+h')\\right]^z+\\left[2\\cosh\\beta(J-h')\\right]^z$ \\quad (2) $e^{2\\beta h'}=\\left[\\dfrac{\\cosh\\beta(J+h')}{\\cosh\\beta(J-h')}\\right]^{z-1}$ \\quad (3) $T_c=\\dfrac{2J}{k_B\\ln\\frac{z}{z-2}}$ \\quad (4) $\\approx2.885$",
-  "solution": "(1) $s_0=\\pm1$ ごとに $s_j$ の和は独立で，$s_0=+1$ では $\\prod_j\\sum_{s_j}e^{\\beta(J+h')s_j}=[2\\cosh\\beta(J+h')]^z$，$s_0=-1$ では $[2\\cosh\\beta(h'-J)]^z=[2\\cosh\\beta(J-h')]^z$．\n\\[ \\boldsymbol{Z_{\\rm cl}=\\left[2\\cosh\\beta(J+h')\\right]^z+\\left[2\\cosh\\beta(J-h')\\right]^z}. \\]\n\n(2) $C_\\pm=\\cosh\\beta(J\\pm h')$，$g=\\dfrac{1}{2}\\ln\\dfrac{C_+}{C_-}$ とおく．$\\tanh g=\\dfrac{C_+-C_-}{C_++C_-}=\\tanh K\\tanh\\beta h'$ である．$s_j$ をすべて和をとると，$s_0$ には1本の結合あたり（無次元の）有効場 $g$ がはたらき，$\\langle s_0\\rangle=\\tanh(zg)$．\n\n一方，$s_j$ にはたらく有効場は，外側からの $\\beta h'$ と，「他の $z-1$ 個から場 $(z-1)g$ を受けた $s_0$」が結合を通じて伝える場 $\\mathrm{artanh}\\left[\\tanh K\\tanh((z-1)g)\\right]$ の和である．$\\beta h'=(z-1)g$ ならば後者は $\\mathrm{artanh}(\\tanh K\\tanh\\beta h')=g$ となり，$s_j$ の全有効場は $(z-1)g+g=zg$ で $\\langle s_j\\rangle=\\langle s_0\\rangle$ が成り立つ（逆も単調性から成り立つ）．よって自己無撞着条件は $\\beta h'=(z-1)g$，すなわち\n\\[ \\boldsymbol{e^{2\\beta h'}=\\left[\\frac{\\cosh\\beta(J+h')}{\\cosh\\beta(J-h')}\\right]^{z-1}}. \\]\n\n(3) $\\ln\\dfrac{\\cosh\\beta(J+h')}{\\cosh\\beta(J-h')}\\simeq2\\beta h'\\tanh K$ なので，線形化すると $2\\beta h'=(z-1)2\\beta h'\\tanh K$．非自明な解が現れるのは $(z-1)\\tanh K_c=1$ のとき．$\\tanh K_c=\\dfrac{1}{z-1}$ より $K_c=\\dfrac{1}{2}\\ln\\dfrac{z}{z-2}$，\n\\[ \\boldsymbol{T_c=\\frac{2J}{k_B\\ln\\frac{z}{z-2}}}. \\]\n\n(4) $z=4$ で $k_BT_c/J=2/\\ln2\\approx\\boldsymbol{2.885}$．平均場近似の $4$ より厳密値 $2.269$ に近い．$z=2$（1次元）では $T_c=0$ となり，平均場近似と違って「1次元に転移がない」ことを正しく再現する．$z\\to\\infty$ では $k_BT_c\\to zJ$ と平均場近似に一致する．ベーテ近似はケイリー木（ベーテ格子）上では厳密である．",
+  "q": "配位数 $z$ の格子上のイジング模型 $H=-J\\sum_{\\langle ij\\rangle}s_is_j$（$J>0$，外場なし）をベーテ近似で扱う．中心のスピン $s_0$ とその最近接 $z$ 個のスピン $s_1,\\dots,s_z$ からなるクラスターをとり，クラスター内の相互作用は厳密に扱い，外側のスピンの影響は各 $s_j$（$j=1,\\dots,z$）にはたらく有効場 $h'$ で置き換える：\n\\[ H_{\\rm cl}=-Js_0\\sum_{j=1}^zs_j-h'\\sum_{j=1}^zs_j. \\]\n$\\beta=1/k_BT$，$K=\\beta J$ とする．\n\\begin{enumerate}\n\\item クラスターの分配関数 $Z_{\\rm cl}$ を求めよ．\n\\item 自己無撞着条件 $\\langle s_0\\rangle=\\langle s_j\\rangle$ を，$\\beta h'$ についての方程式として書け．\n\\item $h'\\to0$ で線形化し，自発磁化が現れる転移温度 $T_c$ を求めよ．\n\\item 配位数が大きい $z\\gg1$ のとき，$k_BT_c/J$ を $z$ の $0$ 次の項まで求め，平均場近似の $k_BT_c=zJ$ と比べよ．\n\\end{enumerate}",
+  "answer": "(1) $Z_{\\mathrm{cl}}=\\left[2\\cosh\\beta(J+h')\\right]^z+\\left[2\\cosh\\beta(J-h')\\right]^z$ \\quad (2) $e^{2\\beta h'}=\\left[\\dfrac{\\cosh\\beta(J+h')}{\\cosh\\beta(J-h')}\\right]^{z-1}$ \\quad (3) $T_c=\\dfrac{2J}{k_B\\ln\\frac{z}{z-2}}$ \\quad (4) $\\dfrac{k_BT_c}{J}\\simeq z-1$",
+  "solution": "(1) $s_0=\\pm1$ ごとに $s_j$ の和は独立で，$s_0=+1$ では $\\prod_j\\sum_{s_j}e^{\\beta(J+h')s_j}=[2\\cosh\\beta(J+h')]^z$，$s_0=-1$ では $[2\\cosh\\beta(h'-J)]^z=[2\\cosh\\beta(J-h')]^z$．\n\\[ \\boldsymbol{Z_{\\rm cl}=\\left[2\\cosh\\beta(J+h')\\right]^z+\\left[2\\cosh\\beta(J-h')\\right]^z}. \\]\n\n(2) $C_\\pm=\\cosh\\beta(J\\pm h')$，$g=\\dfrac{1}{2}\\ln\\dfrac{C_+}{C_-}$ とおく．$\\tanh g=\\dfrac{C_+-C_-}{C_++C_-}=\\tanh K\\tanh\\beta h'$ である．$s_j$ をすべて和をとると，$s_0$ には1本の結合あたり（無次元の）有効場 $g$ がはたらき，$\\langle s_0\\rangle=\\tanh(zg)$．\n\n一方，$s_j$ にはたらく有効場は，外側からの $\\beta h'$ と，「他の $z-1$ 個から場 $(z-1)g$ を受けた $s_0$」が結合を通じて伝える場 $\\mathrm{artanh}\\left[\\tanh K\\tanh((z-1)g)\\right]$ の和である．$\\beta h'=(z-1)g$ ならば後者は $\\mathrm{artanh}(\\tanh K\\tanh\\beta h')=g$ となり，$s_j$ の全有効場は $(z-1)g+g=zg$ で $\\langle s_j\\rangle=\\langle s_0\\rangle$ が成り立つ（逆も単調性から成り立つ）．よって自己無撞着条件は $\\beta h'=(z-1)g$，すなわち\n\\[ \\boldsymbol{e^{2\\beta h'}=\\left[\\frac{\\cosh\\beta(J+h')}{\\cosh\\beta(J-h')}\\right]^{z-1}}. \\]\n\n(3) $\\ln\\dfrac{\\cosh\\beta(J+h')}{\\cosh\\beta(J-h')}\\simeq2\\beta h'\\tanh K$ なので，線形化すると $2\\beta h'=(z-1)2\\beta h'\\tanh K$．非自明な解が現れるのは $(z-1)\\tanh K_c=1$ のとき．$\\tanh K_c=\\dfrac{1}{z-1}$ より $K_c=\\dfrac{1}{2}\\ln\\dfrac{z}{z-2}$，\n\\[ \\boldsymbol{T_c=\\frac{2J}{k_B\\ln\\frac{z}{z-2}}}. \\]\n\n(4) $\\ln\\dfrac{z}{z-2}=-\\ln\\left(1-\\dfrac2z\\right)=\\dfrac2z+\\dfrac2{z^2}+O(z^{-3})$ より $K_c=\\dfrac1z+\\dfrac1{z^2}+\\cdots$，\n\\[ \\frac{k_BT_c}{J}=\\frac1{K_c}=z\\left(1-\\frac1z+\\cdots\\right)=\\boldsymbol{z-1}+O(z^{-1}). \\]\n平均場近似の $zJ$ より $J$ だけ低い：最近接との相関を取り入れると，ゆらぎの効果で $T_c$ が下がる．正方格子 $z=4$ では $k_BT_c/J=2/\\ln2\\approx2.885$ で，平均場近似の $4$ より厳密値 $2.269$ に近い．$z=2$（1次元）では $T_c=0$ となり，平均場近似と違って「1次元に転移がない」ことを正しく再現する．$z\\to\\infty$ では $k_BT_c\\to zJ$ と平均場近似に一致する．ベーテ近似はケイリー木（ベーテ格子）上では厳密である．",
   "idea": "最近接スピンとの相関をクラスター内で厳密に扱い，外側だけを有効場にする．自己無撞着の線形化から $(z-1)\\tanh K_c=1$ が出る．",
   "tags": "相転移,ベーテ近似,イジング模型,自己無撞着,転移温度",
-  "input": "(1) Z_cl：(2 cosh(β(J + h')))^z + (2 cosh(β(J - h')))^z\n(2) 記述：e^{2βh'}=[cosh β(J+h')/cosh β(J-h')]^{z-1}\n(3) T_c：2J/(k_B ln(z/(z-2)))\n(4) k_B T_c/J：≈2.885"
+  "input": "(1) Z_cl：(2 cosh(β(J + h')))^z + (2 cosh(β(J - h')))^z\n(2) 記述：e^{2βh'}=[cosh β(J+h')/cosh β(J-h')]^{z-1}\n(3) T_c：2J/(k_B ln(z/(z-2)))\n(4) k_B T_c/J：z - 1",
+  "id": "SM-04-015"
  }
 ]

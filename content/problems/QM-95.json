@@ -351,16 +351,16 @@
   "theme": "ゲージ変換と位相：アハラノフ＝ボーム効果の干渉縞のずれ",
   "topic": "ゲージ変換と位相：アハラノフ＝ボーム効果の干渉縞のずれ",
   "statement": {
-   "tex": "磁場が $0$ の領域で $\\boldsymbol A=\\nabla\\chi$ と書けるとき，シュレーディンガー方程式の解は $\\psi=\\psi_0e^{iq\\chi/\\hbar}$（$\\psi_0$ は $\\boldsymbol A=0$ の解）となる．\n\\begin{enumerate}\n\\item これを確かめよ．\n\\item 磁束 $\\Phi$ を閉じ込めた細いソレノイドの両側を通る2つの経路の位相差を求めよ．\n\\item 電子（$q=-e$）の干渉縞が1周期ずれる磁束を求めよ．\n\\end{enumerate}"
+   "tex": "磁場が $0$ の領域で $\\boldsymbol A=\\nabla\\chi$ と書けるとき，電荷 $q$ の粒子のシュレーディンガー方程式の解は $\\psi=\\psi_0e^{iq\\chi/\\hbar}$（$\\psi_0$ は $\\boldsymbol A=0$ の解）となる．\n\\begin{enumerate}\n\\item これを確かめよ．\n\\item 磁束 $\\Phi$ を閉じ込めた細いソレノイドの両側を通る2つの経路の位相差を求めよ．\n\\item 電子（電荷 $-q_e$，$q_e>0$ は電気素量）の干渉縞が1周期ずれる磁束の大きさを求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 確認　(2) $q\\Phi/\\hbar$　(3) $h/e\\approx4.1\\times10^{-15}\\ \\mathrm{Wb}$"
+   "tex": "(1) 確認　(2) $\\dfrac{q\\Phi}{\\hbar}$　(3) $\\Phi=\\dfrac{2\\pi\\hbar}{q_e}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $(\\nabla-\\frac{iq}\\hbar\\boldsymbol A)(\\psi_0e^{iq\\chi/\\hbar})=e^{iq\\chi/\\hbar}\\nabla\\psi_0$ なので，方程式は $\\psi_0$ のものに帰着．\n\n(2) 位相 $\\frac q\\hbar\\int\\boldsymbol A\\cdot d\\boldsymbol l$ の差は閉じた経路の積分 $\\frac q\\hbar\\oint\\boldsymbol A\\cdot d\\boldsymbol l=\\boldsymbol{q\\Phi/\\hbar}$．\n\n(3) $e\\Phi/\\hbar=2\\pi$：$\\boldsymbol{\\Phi=h/e\\approx4.1\\times10^{-15}\\ \\mathrm{Wb}}$．電子は磁場のない所だけを通るのに影響を受ける．"
+    "tex": "(1) $(\\nabla-\\frac{iq}\\hbar\\boldsymbol A)(\\psi_0e^{iq\\chi/\\hbar})=e^{iq\\chi/\\hbar}\\nabla\\psi_0$ なので，方程式は $\\psi_0$ のものに帰着．\n\n(2) 位相 $\\frac q\\hbar\\int\\boldsymbol A\\cdot d\\boldsymbol l$ の差は閉じた経路の積分 $\\frac q\\hbar\\oint\\boldsymbol A\\cdot d\\boldsymbol l=\\boldsymbol{q\\Phi/\\hbar}$．\n\n(3) $q_e\\Phi/\\hbar=2\\pi$：$\\boldsymbol{\\Phi=2\\pi\\hbar/q_e}$（$=h/q_e$，磁束量子の 2 倍）．電子は磁場のない所だけを通るのに影響を受ける．"
    }
   ],
   "idea": {
@@ -368,7 +368,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) qΦ/hbar\n(3) Φ：2pi hbar/q_e"
   },
   "methods": [],
   "tags": [
@@ -400,16 +400,16 @@
   "theme": "2準位系のRabi振動と量子Zeno効果",
   "topic": "2準位系のRabi振動と量子Zeno効果",
   "statement": {
-   "tex": "2 つの状態 $|1\\rangle,|2\\rangle$ だけをもつ系で $\\langle1|H|1\\rangle=E_1$，$\\langle2|H|2\\rangle=E_2$，$\\langle1|H|2\\rangle=V$（実数）とする．$t=0$ で $|1\\rangle$ にある．\n\\begin{enumerate}\n\\item 時刻 $t$ に $|2\\rangle$ に見出す確率 $P_2(t)$ を求めよ．$P_2$ の最大値が 1 になる条件を述べよ．\n\\item $E_1=E_2$ の場合を考える．時刻 $T=\\pi\\hbar/(2|V|)$ まで放置すれば $P_2(T)=1$ である．ところが，この間に等間隔で $N$ 回「系は $|1\\rangle$ にあるか」を射影測定すると，$N$ 回とも $|1\\rangle$ に見出される確率 $Q_N$ はいくらか．$N=10$ の値と $N\\to\\infty$ の極限を求めよ．\n\\item (2) で $N$ が大きいとき $1-Q_N\\approx\\dfrac{\\pi^2}{4N}$ となることを示し，その物理的意味（量子 Zeno 効果）を述べよ．\n\\end{enumerate}"
+   "tex": "2 つの状態 $|1\\rangle,|2\\rangle$ だけをもつ系で $\\langle1|H|1\\rangle=E_1$，$\\langle2|H|2\\rangle=E_2$，$\\langle1|H|2\\rangle=V$（実数）とする．$t=0$ で $|1\\rangle$ にある．\n\\begin{enumerate}\n\\item 時刻 $t$ に $|2\\rangle$ に見出す確率 $P_2(t)$ を求めよ．$P_2$ の最大値が 1 になる条件を述べよ．\n\\item $E_1=E_2$ の場合を考える．時刻 $T=\\pi\\hbar/(2|V|)$ まで放置すれば $P_2(T)=1$ である．ところが，この間に等間隔で $N$ 回「系は $|1\\rangle$ にあるか」を射影測定すると，$N$ 回とも $|1\\rangle$ に見出される確率 $Q_N$ はいくらか．$N$ で表し，$N\\to\\infty$ の極限を求めよ．\n\\item (2) で $N$ が大きいとき $1-Q_N\\approx\\dfrac{\\pi^2}{4N}$ となることを示し，その物理的意味（量子 Zeno 効果）を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P_2=\\dfrac{4V^2}{(E_1-E_2)^2+4V^2}\\sin^2\\dfrac{\\Omega t}{2}$，$\\hbar\\Omega=\\sqrt{(E_1-E_2)^2+4V^2}$；$E_1=E_2$ のとき最大 1　(2) $Q_N=\\cos^{2N}\\dfrac{\\pi}{2N}$，$Q_{10}\\approx0.781$，$Q_\\infty=1$　(3) 本文参照"
+   "tex": "(1) $P_2=\\dfrac{4V^2}{(E_1-E_2)^2+4V^2}\\sin^2\\dfrac{\\Omega t}{2}$，$\\hbar\\Omega=\\sqrt{(E_1-E_2)^2+4V^2}$；$E_1=E_2$ のとき最大 1　(2) $Q_N=\\cos^{2N}\\dfrac{\\pi}{2N}$，$Q_\\infty=1$　(3) 本文参照"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\psi=a|1\\rangle+b|2\\rangle$，$i\\hbar\\dot a=E_1a+Vb$，$i\\hbar\\dot b=Va+E_2b$．固有値 $E_\\pm=\\frac{E_1+E_2}{2}\\pm\\frac12\\sqrt{(E_1-E_2)^2+4V^2}$．$a(0)=1,b(0)=0$ の解を固有状態の重ね合わせで作ると\n\\[|b(t)|^2=\\frac{4V^2}{(E_1-E_2)^2+4V^2}\\sin^2\\frac{(E_+-E_-)t}{2\\hbar}.\\]\n最大値 $4V^2/[(E_1-E_2)^2+4V^2]$ が 1 となるのは $E_1=E_2$（共鳴）のときに限る．\n\n(2) $E_1=E_2$ では $P_2=\\sin^2(|V|t/\\hbar)$，$T=\\pi\\hbar/2|V|$ で 1．間隔 $\\tau=T/N$ の各区間の始めに系は $|1\\rangle$（測定で射影済み）なので，その区間で $|1\\rangle$ に残る確率は $\\cos^2(|V|\\tau/\\hbar)=\\cos^2(\\pi/2N)$．各測定は独立なので\n$Q_N=\\cos^{2N}(\\pi/2N)$．$N=10$：$\\cos^{20}(\\pi/20)\\approx0.781$．$N\\to\\infty$ で $Q_N\\to1$．\n\n(3) $\\ln Q_N=2N\\ln\\cos\\frac{\\pi}{2N}\\approx2N\\left(-\\frac{\\pi^2}{8N^2}\\right)=-\\frac{\\pi^2}{4N}$．よって $1-Q_N\\approx\\pi^2/(4N)\\to0$．短時間では遷移確率が $t^2$ に比例して立ち上がる（線形でない）ため，頻繁に測定すると各区間の遷移確率 $\\propto(T/N)^2$ の和が $\\propto1/N$ となり，遷移が凍結される．これを量子 Zeno 効果という．"
+    "tex": "(1) $\\psi=a|1\\rangle+b|2\\rangle$，$i\\hbar\\dot a=E_1a+Vb$，$i\\hbar\\dot b=Va+E_2b$．固有値 $E_\\pm=\\frac{E_1+E_2}{2}\\pm\\frac12\\sqrt{(E_1-E_2)^2+4V^2}$．$a(0)=1,b(0)=0$ の解を固有状態の重ね合わせで作ると\n\\[|b(t)|^2=\\frac{4V^2}{(E_1-E_2)^2+4V^2}\\sin^2\\frac{(E_+-E_-)t}{2\\hbar}.\\]\n最大値 $4V^2/[(E_1-E_2)^2+4V^2]$ が 1 となるのは $E_1=E_2$（共鳴）のときに限る．\n\n(2) $E_1=E_2$ では $P_2=\\sin^2(|V|t/\\hbar)$，$T=\\pi\\hbar/2|V|$ で 1．間隔 $\\tau=T/N$ の各区間の始めに系は $|1\\rangle$（測定で射影済み）なので，その区間で $|1\\rangle$ に残る確率は $\\cos^2(|V|\\tau/\\hbar)=\\cos^2(\\pi/2N)$．各測定は独立なので\n$\\boldsymbol{Q_N=\\cos^{2N}(\\pi/2N)}$．$N\\to\\infty$ で $\\boldsymbol{Q_N\\to1}$（(3) 参照）．\n\n(3) $\\ln Q_N=2N\\ln\\cos\\frac{\\pi}{2N}\\approx2N\\left(-\\frac{\\pi^2}{8N^2}\\right)=-\\frac{\\pi^2}{4N}$．よって $1-Q_N\\approx\\pi^2/(4N)\\to0$．短時間では遷移確率が $t^2$ に比例して立ち上がる（線形でない）ため，頻繁に測定すると各区間の遷移確率 $\\propto(T/N)^2$ の和が $\\propto1/N$ となり，遷移が凍結される．これを量子 Zeno 効果という．"
    }
   ],
   "idea": {
@@ -417,7 +417,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) Q_N：cos(pi/(2N))^(2N) ; 極限：1\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -648,16 +648,16 @@
   "theme": "二重井戸トンネルと量子ゼノン効果",
   "topic": "二重井戸トンネルと量子ゼノン効果",
   "statement": {
-   "tex": "1 粒子が薄い隔壁で仕切られた箱の右側 $|R\\rangle$ または左側 $|L\\rangle$ にある 2 準位系を考える．トンネル効果を\n\\[\nH=\\Delta\\left(|L\\rangle\\langle R|+|R\\rangle\\langle L|\\right)\\qquad(\\Delta>0)\n\\]\nで記述する．$t=0$ で粒子は確かに右側にある．\n\\begin{enumerate}\n\\item 時刻 $t$ で粒子が右側に見いだされる確率 $P_R(t)$ を求めよ．\n\\item 総時間 $T$ の間に，時間間隔 $\\tau=T/N$ ごとに「左右どちらにいるか」を理想的に測定する（各測定で状態は $|R\\rangle$ か $|L\\rangle$ に射影される）．$N$ 回の測定ですべて右側に見いだされる確率 $Q_N$ を求めよ．\n\\item $N\\to\\infty$ で $Q_N\\to1$ となることを示し，$N$ が大きいときの漸近形を求めよ．\n\\item $T=\\pi\\hbar/(2\\Delta)$ とする．測定しなければ時刻 $T$ で右側にいる確率は $0$ であるが，$N=10$ では $Q_{10}$ はいくらか（有効数字 2 桁）．\n\\end{enumerate}"
+   "tex": "1 粒子が薄い隔壁で仕切られた箱の右側 $|R\\rangle$ または左側 $|L\\rangle$ にある 2 準位系を考える．トンネル効果を\n\\[\nH=\\Delta\\left(|L\\rangle\\langle R|+|R\\rangle\\langle L|\\right)\\qquad(\\Delta>0)\n\\]\nで記述する．$t=0$ で粒子は確かに右側にある．\n\\begin{enumerate}\n\\item 時刻 $t$ で粒子が右側に見いだされる確率 $P_R(t)$ を求めよ．\n\\item 総時間 $T$ の間に，時間間隔 $\\tau=T/N$ ごとに「左右どちらにいるか」を理想的に測定する（各測定で状態は $|R\\rangle$ か $|L\\rangle$ に射影される）．$N$ 回の測定ですべて右側に見いだされる確率 $Q_N$ を求めよ．\n\\item $N\\to\\infty$ で $Q_N\\to1$ となることを示し，$N$ が大きいときの漸近形を求めよ．\n\\item $T=\\pi\\hbar/(2\\Delta)$ とする．測定しなければ時刻 $T$ で右側にいる確率は $0$ である．このときの $Q_N$ を $N$ で表し，大きな $N$ での漸近形も書け．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P_R=\\cos^2(\\Delta t/\\hbar)$ (2) $Q_N=\\cos^{2N}\\!\\left(\\dfrac{\\Delta T}{N\\hbar}\\right)$ (3) $Q_N\\simeq\\exp\\!\\left(-\\dfrac{\\Delta^2T^2}{N\\hbar^2}\\right)\\to1$ (4) $Q_{10}\\approx0.78$"
+   "tex": "(1) $P_R=\\cos^2(\\Delta t/\\hbar)$ (2) $Q_N=\\cos^{2N}\\!\\left(\\dfrac{\\Delta T}{N\\hbar}\\right)$ (3) $Q_N\\simeq\\exp\\!\\left(-\\dfrac{\\Delta^2T^2}{N\\hbar^2}\\right)\\to1$ (4) $Q_N=\\cos^{2N}\\dfrac{\\pi}{2N}\\simeq\\exp\\!\\left(-\\dfrac{\\pi^2}{4N}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $H^2=\\Delta^2I$ より $e^{-iHt/\\hbar}=\\cos\\frac{\\Delta t}\\hbar I-\\frac{i}{\\Delta}\\sin\\frac{\\Delta t}\\hbar H$．$H|R\\rangle=\\Delta|L\\rangle$ なので\n\\[\n|\\psi(t)\\rangle=\\cos\\frac{\\Delta t}\\hbar|R\\rangle-i\\sin\\frac{\\Delta t}\\hbar|L\\rangle,\\qquad P_R(t)=\\cos^2\\frac{\\Delta t}\\hbar .\n\\]\n\n(2) 各測定で右に見いだされると状態は $|R\\rangle$ にリセットされ，その後の時間 $\\tau$ で右に留まる確率は $\\cos^2(\\Delta\\tau/\\hbar)$．各区間は独立なので\n\\[\nQ_N=\\left[\\cos^2\\frac{\\Delta\\tau}\\hbar\\right]^N=\\cos^{2N}\\frac{\\Delta T}{N\\hbar}.\n\\]\n\n(3) $\\ln Q_N=2N\\ln\\cos\\frac{\\Delta T}{N\\hbar}\\simeq2N\\left(-\\frac12\\frac{\\Delta^2T^2}{N^2\\hbar^2}\\right)=-\\frac{\\Delta^2T^2}{N\\hbar^2}$．よって $Q_N\\simeq\\exp(-\\Delta^2T^2/N\\hbar^2)\\to1$．短時間の生存確率が $1-O(\\tau^2)$ と 2 次で減ることが本質で，頻繁な測定が遷移を凍結する（量子ゼノン効果）．\n\n(4) $\\Delta T/\\hbar=\\pi/2$ だから $Q_{10}=\\cos^{20}(\\pi/20)$．$\\cos(\\pi/20)=0.98769$，$\\ln Q_{10}=20\\ln0.98769=-0.2478$，$Q_{10}\\approx0.78$．（漸近形 $e^{-\\pi^2/40}\\approx0.78$ とも一致．）"
+    "tex": "(1) $H^2=\\Delta^2I$ より $e^{-iHt/\\hbar}=\\cos\\frac{\\Delta t}\\hbar I-\\frac{i}{\\Delta}\\sin\\frac{\\Delta t}\\hbar H$．$H|R\\rangle=\\Delta|L\\rangle$ なので\n\\[\n|\\psi(t)\\rangle=\\cos\\frac{\\Delta t}\\hbar|R\\rangle-i\\sin\\frac{\\Delta t}\\hbar|L\\rangle,\\qquad P_R(t)=\\cos^2\\frac{\\Delta t}\\hbar .\n\\]\n\n(2) 各測定で右に見いだされると状態は $|R\\rangle$ にリセットされ，その後の時間 $\\tau$ で右に留まる確率は $\\cos^2(\\Delta\\tau/\\hbar)$．各区間は独立なので\n\\[\nQ_N=\\left[\\cos^2\\frac{\\Delta\\tau}\\hbar\\right]^N=\\cos^{2N}\\frac{\\Delta T}{N\\hbar}.\n\\]\n\n(3) $\\ln Q_N=2N\\ln\\cos\\frac{\\Delta T}{N\\hbar}\\simeq2N\\left(-\\frac12\\frac{\\Delta^2T^2}{N^2\\hbar^2}\\right)=-\\frac{\\Delta^2T^2}{N\\hbar^2}$．よって $Q_N\\simeq\\exp(-\\Delta^2T^2/N\\hbar^2)\\to1$．短時間の生存確率が $1-O(\\tau^2)$ と 2 次で減ることが本質で，頻繁な測定が遷移を凍結する（量子ゼノン効果）．\n\n(4) $\\Delta T/\\hbar=\\pi/2$ だから\n\\[ \\boldsymbol{Q_N=\\cos^{2N}\\frac{\\pi}{2N}}\\simeq\\boldsymbol{\\exp\\left(-\\frac{\\pi^2}{4N}\\right)}. \\]\n測定しなければ必ず左に移っているのに，$N$ 回の測定を挟むと右に留まる確率が $1-\\pi^2/(4N)$ 程度まで大きくなる．"
    }
   ],
   "idea": {
@@ -665,7 +665,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $Q_{10}$：≈0.78"
+   "spec": "(1) P_R：cos(Δ t/hbar)^2\n(2) Q_N：cos(Δ T/(N hbar))^(2N)\n(3) Q_N：exp(-Δ^2 T^2/(N hbar^2))\n(4) Q_N：cos(pi/(2N))^(2N) ; 漸近形：exp(-pi^2/(4N))"
   },
   "methods": [],
   "tags": [
@@ -897,16 +897,16 @@
   "theme": "重力誘起干渉の厳密位相と移動時間による解釈",
   "topic": "重力誘起干渉の厳密位相と移動時間による解釈",
   "statement": {
-   "tex": "中性子（質量 $m$）の干渉計を考える．A で分かれたビームは，経路 I：A$\\to$C（長さ $l_1$ の「底辺」）$\\to$D，経路 II：A$\\to$B（長さ $l_2$ の「側辺」）$\\to$D をたどり D で干渉する．ABDC は長方形で，AC と BD は長さ $l_1$，AB と CD は長さ $l_2$ である．AC を水平に保ったまま，干渉計面を AC のまわりに傾け，面が水平面となす角を $\\delta$ とする（BD は AC より $l_2\\sin\\delta$ 高い）．入射中性子の換算波長は $\\bar\\lambda=\\lambda/2\\pi=1/k_1$ である．\n\\begin{enumerate}\n\\item エネルギー保存から，近似を使わずに位相差 $\\Delta\\phi(\\delta)=\\phi_{\\rm II}-\\phi_{\\rm I}$ を求めよ．\n\\item $\\varepsilon\\equiv 2m^2gl_2\\sin\\delta/(\\hbar^2k_1^2)$ について 2 次まで展開し，1 次の項が $-m^2gl_1l_2\\bar\\lambda\\sin\\delta/\\hbar^2$ となること，および 2 次の補正を求めよ．\n\\item 1 次の位相差を，BD を通過する時間 $\\tau=l_1/v$（$v$：中性子の速さ）を用いて書き直し，その物理的意味を述べよ．また，この位相差は $m$ と $g$ が $mg$ の形で入るのではない（$m^2$ に比例する）ことの意味を簡単に述べよ．\n\\item $\\lambda=2\\pi\\bar\\lambda=1.42$ Å，$l_1l_2=10\\ {\\rm cm}^2$ のとき，$\\delta$ を $-90^\\circ$ から $+90^\\circ$ まで回したときに通過する干渉縞の数を求めよ（$m=1.675\\times10^{-27}$ kg，$g=9.80$ m/s$^2$，$\\hbar=1.055\\times10^{-34}$ J s）．\n\\end{enumerate}"
+   "tex": "中性子（質量 $m$）の干渉計を考える．A で分かれたビームは，経路 I：A$\\to$C（長さ $l_1$ の「底辺」）$\\to$D，経路 II：A$\\to$B（長さ $l_2$ の「側辺」）$\\to$D をたどり D で干渉する．ABDC は長方形で，AC と BD は長さ $l_1$，AB と CD は長さ $l_2$ である．AC を水平に保ったまま，干渉計面を AC のまわりに傾け，面が水平面となす角を $\\delta$ とする（BD は AC より $l_2\\sin\\delta$ 高い）．入射中性子の換算波長は $\\bar\\lambda=\\lambda/2\\pi=1/k_1$ である．\n\\begin{enumerate}\n\\item エネルギー保存から，近似を使わずに位相差 $\\Delta\\phi(\\delta)=\\phi_{\\rm II}-\\phi_{\\rm I}$ を求めよ．\n\\item $\\varepsilon\\equiv 2m^2gl_2\\sin\\delta/(\\hbar^2k_1^2)$ について 2 次まで展開し，1 次の項が $-m^2gl_1l_2\\bar\\lambda\\sin\\delta/\\hbar^2$ となること，および 2 次の補正を求めよ．\n\\item 1 次の位相差を，BD を通過する時間 $\\tau=l_1/v$（$v$：中性子の速さ）を用いて書き直し，その物理的意味を述べよ．また，この位相差は $m$ と $g$ が $mg$ の形で入るのではない（$m^2$ に比例する）ことの意味を簡単に述べよ．\n\\item $\\delta$ を $-90^\\circ$ から $+90^\\circ$ まで回したときに通過する干渉縞の数を，1 次の位相差を用いて $m,g,l_1,l_2,\\hbar$ と波長 $\\lambda=2\\pi\\bar\\lambda$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta\\phi=l_1k_1\\left(\\sqrt{1-\\varepsilon}-1\\right)$　(2) $\\Delta\\phi\\simeq-\\frac{\\varepsilon}{2}k_1l_1-\\frac{\\varepsilon^2}{8}k_1l_1$，1 次 $=-m^2gl_1l_2\\bar\\lambda\\sin\\delta/\\hbar^2$　(3) $\\Delta\\phi=-\\dfrac{(mgl_2\\sin\\delta)\\,\\tau}{\\hbar}$　(4) 約 17.8 本（$\\Delta\\phi(90^\\circ)\\approx-55.9$ rad）"
+   "tex": "(1) $\\Delta\\phi=l_1k_1\\left(\\sqrt{1-\\varepsilon}-1\\right)$　(2) $\\Delta\\phi\\simeq-\\frac{\\varepsilon}{2}k_1l_1-\\frac{\\varepsilon^2}{8}k_1l_1$，1 次 $=-m^2gl_1l_2\\bar\\lambda\\sin\\delta/\\hbar^2$　(3) $\\Delta\\phi=-\\dfrac{(mgl_2\\sin\\delta)\\,\\tau}{\\hbar}$　(4) $\\dfrac{m^2gl_1l_2\\lambda}{2\\pi^2\\hbar^2}$ 本"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 鉛直な辺 AB と CD は同じ高さ変化をたどるので位相は等しく，差は水平な辺 BD と AC から生じる．AC では $\\hbar k_1=\\sqrt{2mE}$，BD では $\\frac{\\hbar^2k_2^2}{2m}+mgl_2\\sin\\delta=E$ より $k_2=k_1\\sqrt{1-\\varepsilon}$．よって\n\\[ \\Delta\\phi=(k_2-k_1)l_1=k_1l_1\\left(\\sqrt{1-\\varepsilon}-1\\right). \\]\n\n(2) $\\sqrt{1-\\varepsilon}=1-\\frac\\varepsilon2-\\frac{\\varepsilon^2}{8}-\\cdots$ より $\\Delta\\phi\\simeq-\\frac{\\varepsilon}{2}k_1l_1-\\frac{\\varepsilon^2}{8}k_1l_1$．1 次項は $-\\frac{m^2gl_2\\sin\\delta}{\\hbar^2k_1}l_1=-\\frac{m^2gl_1l_2\\bar\\lambda\\sin\\delta}{\\hbar^2}$．2 次補正は 1 次に対し相対的に $\\varepsilon/4$ で，$\\varepsilon=2gl_2\\sin\\delta/v^2$ は (4) の条件で $\\sim10^{-7}$ と極めて小さい（補正 $\\sim10^{-6}$ rad）．\n\n(3) $v=\\hbar k_1/m$ より $\\frac{m^2gl_1l_2}{\\hbar^2k_1}=\\frac{mgl_2}{\\hbar}\\cdot\\frac{l_1}{v}$．したがって\n\\[ \\Delta\\phi=-\\frac{(mgl_2\\sin\\delta)\\,\\tau}{\\hbar}. \\]\n上の経路では位置エネルギーが $\\Delta U=mgl_2\\sin\\delta$ だけ高い状態で時間 $\\tau$ を過ごすので，その分 $e^{-i\\Delta U\\tau/\\hbar}$ の位相が遅れる（全エネルギー一定で運動エネルギーが減るため波数が減る，と言っても同じ）．位相は $mg\\tau/\\hbar$ の形で $m/\\hbar$ を含み，$\\tau=l_1m\\bar\\lambda/\\hbar$ を通じて $m^2$ に比例する．古典力学の軌道は質量によらない（等価原理）が，量子干渉の位相は $m/\\hbar$ を通じて質量に依存し，重力が量子力学に「質量入り」で現れる初めての実験的証拠となった．\n\n(4) $\\delta=90^\\circ$ で $|\\Delta\\phi|=\\frac{m^2gl_1l_2\\lambda}{2\\pi\\hbar^2}=\\frac{(1.675\\times10^{-27})^2\\times9.80\\times10^{-3}\\times1.42\\times10^{-10}}{2\\pi\\times(1.055\\times10^{-34})^2}\\approx55.9$ rad．$-90^\\circ\\to90^\\circ$ で位相は $2\\times55.9$ rad 変わるので縞の数は $111.7/2\\pi\\approx17.8$ 本．なお運動エネルギーが負になる高さ $E/mg$ は約 $4\\times10^5$ m で，近似はまったく問題ない．"
+    "tex": "(1) 鉛直な辺 AB と CD は同じ高さ変化をたどるので位相は等しく，差は水平な辺 BD と AC から生じる．AC では $\\hbar k_1=\\sqrt{2mE}$，BD では $\\frac{\\hbar^2k_2^2}{2m}+mgl_2\\sin\\delta=E$ より $k_2=k_1\\sqrt{1-\\varepsilon}$．よって\n\\[ \\Delta\\phi=(k_2-k_1)l_1=k_1l_1\\left(\\sqrt{1-\\varepsilon}-1\\right). \\]\n\n(2) $\\sqrt{1-\\varepsilon}=1-\\frac\\varepsilon2-\\frac{\\varepsilon^2}{8}-\\cdots$ より $\\Delta\\phi\\simeq-\\frac{\\varepsilon}{2}k_1l_1-\\frac{\\varepsilon^2}{8}k_1l_1$．1 次項は $-\\frac{m^2gl_2\\sin\\delta}{\\hbar^2k_1}l_1=-\\frac{m^2gl_1l_2\\bar\\lambda\\sin\\delta}{\\hbar^2}$．2 次補正は 1 次に対し相対的に $\\varepsilon/4$ で，$\\varepsilon=2gl_2\\sin\\delta/v^2$ は熱中性子（$v\\sim10^3\\,$m/s）と cm 程度の干渉計では $\\sim10^{-7}$ と極めて小さい．\n\n(3) $v=\\hbar k_1/m$ より $\\frac{m^2gl_1l_2}{\\hbar^2k_1}=\\frac{mgl_2}{\\hbar}\\cdot\\frac{l_1}{v}$．したがって\n\\[ \\Delta\\phi=-\\frac{(mgl_2\\sin\\delta)\\,\\tau}{\\hbar}. \\]\n上の経路では位置エネルギーが $\\Delta U=mgl_2\\sin\\delta$ だけ高い状態で時間 $\\tau$ を過ごすので，その分 $e^{-i\\Delta U\\tau/\\hbar}$ の位相が遅れる（全エネルギー一定で運動エネルギーが減るため波数が減る，と言っても同じ）．位相は $mg\\tau/\\hbar$ の形で $m/\\hbar$ を含み，$\\tau=l_1m\\bar\\lambda/\\hbar$ を通じて $m^2$ に比例する．古典力学の軌道は質量によらない（等価原理）が，量子干渉の位相は $m/\\hbar$ を通じて質量に依存し，重力が量子力学に「質量入り」で現れる初めての実験的証拠となった．\n\n(4) $\\delta=90^\\circ$ で $|\\Delta\\phi|=\\dfrac{m^2gl_1l_2\\bar\\lambda}{\\hbar^2}=\\dfrac{m^2gl_1l_2\\lambda}{2\\pi\\hbar^2}$．$-90^\\circ\\to90^\\circ$ で位相はその 2 倍変わるので，縞の数は\n\\[ \\frac{2|\\Delta\\phi(90^\\circ)|}{2\\pi}=\\boldsymbol{\\frac{m^2gl_1l_2\\lambda}{2\\pi^2\\hbar^2}}. \\]\n$\\lambda\\approx1.4$ Å，$l_1l_2\\approx10\\,\\mathrm{cm^2}$ の実験（COW 実験）では十数本になり，はっきり観測できる．"
    }
   ],
   "idea": {
@@ -914,7 +914,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $\\Delta\\phi$：-(((m g l_2 sin δ) τ)/(hbar))\n(4) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\Delta\\phi$：-(((m g l_2 sin δ) τ)/(hbar))\n(4) 縞の数：m^2 g l_1 l_2 λ/(2pi^2 hbar^2)"
   },
   "methods": [],
   "tags": [
@@ -1601,16 +1601,16 @@
   "theme": "回転磁場による離調スピン共鳴と回転の向き",
   "topic": "回転磁場による離調スピン共鳴と回転の向き",
   "statement": {
-   "tex": "スピン $\\frac12$ の電子が，磁場 $\\boldsymbol B=(B_1\\cos\\omega t,\\,B_1\\sin\\omega t,\\,B_0)$ 中にあり，ハミルトニアンが\n\\[ \\hat H(t)=\\omega_0\\hat S_z+\\Omega\\left(\\hat S_x\\cos\\omega t+\\hat S_y\\sin\\omega t\\right)\\qquad(\\omega_0,\\Omega,\\omega>0) \\]\nで与えられる．$\\hat S_z$ の固有状態を $|\\uparrow\\rangle,|\\downarrow\\rangle$ とし，時刻 $t=0$ の状態を $|\\phi(0)\\rangle=|\\downarrow\\rangle$ とする．\n\\begin{enumerate}\n\\item $|\\phi(t)\\rangle=e^{-i\\omega t\\hat S_z/\\hbar}|\\chi(t)\\rangle$ とおくと，$|\\chi(t)\\rangle$ は時間によらないハミルトニアン $\\hat H_{\\rm eff}$ にしたがって時間発展することを示し，$\\hat H_{\\rm eff}$ を求めよ．\n\\item 時刻 $t$ に $|\\uparrow\\rangle$ が観測される確率 $P_\\uparrow(t)$ を求めよ．\n\\item $\\omega-\\omega_0=\\sqrt3\\,\\Omega$ のとき，$P_\\uparrow(t)$ の最大値と，それを初めてとる時刻を求めよ．\n\\item 磁場の回転の向きを逆にした場合（$B_y=-B_1\\sin\\omega t$）を考える．$\\omega=\\omega_0$，$\\Omega=\\omega_0/100$ のとき，$P_\\uparrow(t)$ の最大値を求めよ．この結果から，振動磁場 $(2B_1\\cos\\omega t,0,B_0)$ による共鳴について何がいえるか．\n\\end{enumerate}"
+   "tex": "スピン $\\frac12$ の電子が，磁場 $\\boldsymbol B=(B_1\\cos\\omega t,\\,B_1\\sin\\omega t,\\,B_0)$ 中にあり，ハミルトニアンが\n\\[ \\hat H(t)=\\omega_0\\hat S_z+\\Omega\\left(\\hat S_x\\cos\\omega t+\\hat S_y\\sin\\omega t\\right)\\qquad(\\omega_0,\\Omega,\\omega>0) \\]\nで与えられる．$\\hat S_z$ の固有状態を $|\\uparrow\\rangle,|\\downarrow\\rangle$ とし，時刻 $t=0$ の状態を $|\\phi(0)\\rangle=|\\downarrow\\rangle$ とする．\n\\begin{enumerate}\n\\item $|\\phi(t)\\rangle=e^{-i\\omega t\\hat S_z/\\hbar}|\\chi(t)\\rangle$ とおくと，$|\\chi(t)\\rangle$ は時間によらないハミルトニアン $\\hat H_{\\rm eff}$ にしたがって時間発展することを示し，$\\hat H_{\\rm eff}$ を求めよ．\n\\item 時刻 $t$ に $|\\uparrow\\rangle$ が観測される確率 $P_\\uparrow(t)$ を求めよ．\n\\item $\\omega-\\omega_0=\\sqrt3\\,\\Omega$ のとき，$P_\\uparrow(t)$ の最大値と，それを初めてとる時刻を求めよ．\n\\item 磁場の回転の向きを逆にした場合（$B_y=-B_1\\sin\\omega t$）を考える．$\\omega=\\omega_0$ のとき，$P_\\uparrow(t)$ の最大値を $\\Omega,\\omega_0$ で表せ．この結果から，振動磁場 $(2B_1\\cos\\omega t,0,B_0)$ による共鳴について何がいえるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\hat H_{\\rm eff}=(\\omega_0-\\omega)\\hat S_z+\\Omega\\hat S_x$　(2) $P_\\uparrow=\\frac{\\Omega^2}{\\Omega^2+(\\omega-\\omega_0)^2}\\sin^2\\frac{\\sqrt{\\Omega^2+(\\omega-\\omega_0)^2}\\,t}{2}$　(3) 最大値 $\\frac14$，$t=\\frac{\\pi}{2\\Omega}$　(4) $\\frac{1}{40001}\\approx2.5\\times10^{-5}$（逆回転成分はほぼ無効）"
+   "tex": "(1) $\\hat H_{\\rm eff}=(\\omega_0-\\omega)\\hat S_z+\\Omega\\hat S_x$　(2) $P_\\uparrow=\\frac{\\Omega^2}{\\Omega^2+(\\omega-\\omega_0)^2}\\sin^2\\frac{\\sqrt{\\Omega^2+(\\omega-\\omega_0)^2}\\,t}{2}$　(3) 最大値 $\\frac14$，$t=\\frac{\\pi}{2\\Omega}$　(4) $\\dfrac{\\Omega^2}{\\Omega^2+4\\omega_0^2}$（$\\Omega\\ll\\omega_0$ では逆回転成分はほぼ無効）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\hat U=e^{-i\\omega t\\hat S_z/\\hbar}$ とすると $i\\hbar\\frac{d}{dt}(\\hat U|\\chi\\rangle)=\\omega\\hat S_z\\hat U|\\chi\\rangle+\\hat U\\,i\\hbar\\frac{d|\\chi\\rangle}{dt}$．これが $\\hat H\\hat U|\\chi\\rangle$ に等しいので\n\\[ i\\hbar\\frac{d|\\chi\\rangle}{dt}=\\left(\\hat U^\\dagger\\hat H\\hat U-\\omega\\hat S_z\\right)|\\chi\\rangle. \\]\n$\\hat U^\\dagger\\hat S_x\\hat U=\\hat S_x\\cos\\omega t-\\hat S_y\\sin\\omega t$，$\\hat U^\\dagger\\hat S_y\\hat U=\\hat S_y\\cos\\omega t+\\hat S_x\\sin\\omega t$ より $\\hat U^\\dagger(\\hat S_x\\cos\\omega t+\\hat S_y\\sin\\omega t)\\hat U=\\hat S_x$．したがって\n\\[ \\hat H_{\\rm eff}=(\\omega_0-\\omega)\\hat S_z+\\Omega\\hat S_x \\]\nで時間によらない．\n\n(2) $\\Delta=\\omega_0-\\omega$，$\\Omega_R=\\sqrt{\\Omega^2+\\Delta^2}$ とすると $\\hat H_{\\rm eff}=\\frac{\\hbar\\Omega_R}{2}\\boldsymbol n\\cdot\\boldsymbol\\sigma$，$\\boldsymbol n=(\\Omega,0,\\Delta)/\\Omega_R$．$e^{-i\\hat H_{\\rm eff}t/\\hbar}=\\cos\\frac{\\Omega_Rt}{2}-i\\sin\\frac{\\Omega_Rt}{2}\\,\\boldsymbol n\\cdot\\boldsymbol\\sigma$ より\n\\[ \\langle\\uparrow|\\chi(t)\\rangle=-i\\frac{\\Omega}{\\Omega_R}\\sin\\frac{\\Omega_Rt}{2}. \\]\n$\\hat U$ は対角なので確率は変わらず\n\\[ P_\\uparrow(t)=\\frac{\\Omega^2}{\\Omega^2+(\\omega-\\omega_0)^2}\\sin^2\\frac{\\sqrt{\\Omega^2+(\\omega-\\omega_0)^2}\\,t}{2}. \\]\n共鳴 $\\omega=\\omega_0$ でのみ完全反転が起こる（ラビ振動）．\n\n(3) $\\Omega_R=\\sqrt{\\Omega^2+3\\Omega^2}=2\\Omega$．最大値は $\\frac{\\Omega^2}{4\\Omega^2}=\\frac14$，初めてとるのは $\\frac{\\Omega_Rt}{2}=\\frac\\pi2$，$t=\\frac{\\pi}{2\\Omega}$．\n\n(4) 逆回転では $\\hat H'=\\Omega(\\hat S_x\\cos\\omega t-\\hat S_y\\sin\\omega t)$ で，(1)–(2) で $\\omega\\to-\\omega$ としたものになる．実効的な離調は $\\omega_0+\\omega=2\\omega_0$ となり\n\\[ P_\\uparrow^{\\max}=\\frac{\\Omega^2}{\\Omega^2+4\\omega_0^2}=\\frac{10^{-4}}{10^{-4}+4}=\\frac{1}{40001}\\approx2.5\\times10^{-5}. \\]\n振動磁場 $2B_1\\cos\\omega t\\,\\boldsymbol e_x$ は，正方向と逆方向に回転する振幅 $B_1$ の 2 つの回転磁場の和である．$\\Omega\\ll\\omega_0$ では逆回転成分の効果は $(\\Omega/2\\omega_0)^2$ 程度で無視でき，共鳴は正回転成分だけで (2) のように記述できる（回転波近似）．"
+    "tex": "(1) $\\hat U=e^{-i\\omega t\\hat S_z/\\hbar}$ とすると $i\\hbar\\frac{d}{dt}(\\hat U|\\chi\\rangle)=\\omega\\hat S_z\\hat U|\\chi\\rangle+\\hat U\\,i\\hbar\\frac{d|\\chi\\rangle}{dt}$．これが $\\hat H\\hat U|\\chi\\rangle$ に等しいので\n\\[ i\\hbar\\frac{d|\\chi\\rangle}{dt}=\\left(\\hat U^\\dagger\\hat H\\hat U-\\omega\\hat S_z\\right)|\\chi\\rangle. \\]\n$\\hat U^\\dagger\\hat S_x\\hat U=\\hat S_x\\cos\\omega t-\\hat S_y\\sin\\omega t$，$\\hat U^\\dagger\\hat S_y\\hat U=\\hat S_y\\cos\\omega t+\\hat S_x\\sin\\omega t$ より $\\hat U^\\dagger(\\hat S_x\\cos\\omega t+\\hat S_y\\sin\\omega t)\\hat U=\\hat S_x$．したがって\n\\[ \\hat H_{\\rm eff}=(\\omega_0-\\omega)\\hat S_z+\\Omega\\hat S_x \\]\nで時間によらない．\n\n(2) $\\Delta=\\omega_0-\\omega$，$\\Omega_R=\\sqrt{\\Omega^2+\\Delta^2}$ とすると $\\hat H_{\\rm eff}=\\frac{\\hbar\\Omega_R}{2}\\boldsymbol n\\cdot\\boldsymbol\\sigma$，$\\boldsymbol n=(\\Omega,0,\\Delta)/\\Omega_R$．$e^{-i\\hat H_{\\rm eff}t/\\hbar}=\\cos\\frac{\\Omega_Rt}{2}-i\\sin\\frac{\\Omega_Rt}{2}\\,\\boldsymbol n\\cdot\\boldsymbol\\sigma$ より\n\\[ \\langle\\uparrow|\\chi(t)\\rangle=-i\\frac{\\Omega}{\\Omega_R}\\sin\\frac{\\Omega_Rt}{2}. \\]\n$\\hat U$ は対角なので確率は変わらず\n\\[ P_\\uparrow(t)=\\frac{\\Omega^2}{\\Omega^2+(\\omega-\\omega_0)^2}\\sin^2\\frac{\\sqrt{\\Omega^2+(\\omega-\\omega_0)^2}\\,t}{2}. \\]\n共鳴 $\\omega=\\omega_0$ でのみ完全反転が起こる（ラビ振動）．\n\n(3) $\\Omega_R=\\sqrt{\\Omega^2+3\\Omega^2}=2\\Omega$．最大値は $\\frac{\\Omega^2}{4\\Omega^2}=\\frac14$，初めてとるのは $\\frac{\\Omega_Rt}{2}=\\frac\\pi2$，$t=\\frac{\\pi}{2\\Omega}$．\n\n(4) 逆回転では $\\hat H'=\\Omega(\\hat S_x\\cos\\omega t-\\hat S_y\\sin\\omega t)$ で，(1)–(2) で $\\omega\\to-\\omega$ としたものになる．実効的な離調は $\\omega_0+\\omega=2\\omega_0$ となり\n\\[ P_\\uparrow^{\\max}=\\boldsymbol{\\frac{\\Omega^2}{\\Omega^2+4\\omega_0^2}}\\simeq\\left(\\frac{\\Omega}{2\\omega_0}\\right)^2\\quad(\\Omega\\ll\\omega_0). \\]\n例えば $\\Omega=\\omega_0/100$ なら $2.5\\times10^{-5}$ 程度にすぎない．\n振動磁場 $2B_1\\cos\\omega t\\,\\boldsymbol e_x$ は，正方向と逆方向に回転する振幅 $B_1$ の 2 つの回転磁場の和である．$\\Omega\\ll\\omega_0$ では逆回転成分の効果は $(\\Omega/2\\omega_0)^2$ 程度で無視でき，共鳴は正回転成分だけで (2) のように記述できる（回転波近似）．"
    }
   ],
   "idea": {
@@ -1618,7 +1618,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 最大値：((1)/(4)) ; $t$：((pi)/(2 Ω))\n(4) ≈2.5e-5"
+   "spec": "(1) 記述\n(2) 記述\n(3) 最大値：((1)/(4)) ; $t$：((pi)/(2 Ω))\n(4) Ω^2/(Ω^2+4ω_0^2)"
   },
   "methods": [],
   "tags": [
@@ -1651,16 +1651,16 @@
   "theme": "エーレンフェストの定理と波束の拡がり",
   "topic": "エーレンフェストの定理と波束の拡がり",
   "statement": {
-   "tex": "1 次元ハミルトニアン $H=\\dfrac{p^2}{2m}+V(x)$ について考える．\n\\begin{enumerate}\n\\item 任意の演算子 $A$ に対し $\\dfrac{d}{dt}\\langle A\\rangle=\\dfrac{i}{\\hbar}\\langle[H,A]\\rangle$ を用いて，$\\dfrac{d\\langle x\\rangle}{dt}=\\dfrac{\\langle p\\rangle}{m}$，$\\dfrac{d\\langle p\\rangle}{dt}=-\\langle V'(x)\\rangle$ を示せ．$V=\\frac12m\\omega^2x^2+gx^3$ のとき，$\\langle x\\rangle$ の運動方程式が古典的な方程式からずれる項を $\\Delta x$ で表せ．\n\\item 自由粒子について $\\dfrac{d^2\\langle x^2\\rangle}{dt^2}$ を計算し，$\\langle x^2\\rangle$ が $t$ の 2 次式になることを示せ．\n\\item 自由電子の波束が $t=0$ で最小不確定（$\\Delta x\\Delta p=\\hbar/2$，$\\langle xp+px\\rangle=2\\langle x\\rangle\\langle p\\rangle$）で $\\Delta x(0)=0.10\\ \\mathrm{nm}$ のとき，幅が 2 倍になる時刻を求めよ．\n\\end{enumerate}"
+   "tex": "1 次元ハミルトニアン $H=\\dfrac{p^2}{2m}+V(x)$ について考える．\n\\begin{enumerate}\n\\item 任意の演算子 $A$ に対し $\\dfrac{d}{dt}\\langle A\\rangle=\\dfrac{i}{\\hbar}\\langle[H,A]\\rangle$ を用いて，$\\dfrac{d\\langle x\\rangle}{dt}=\\dfrac{\\langle p\\rangle}{m}$，$\\dfrac{d\\langle p\\rangle}{dt}=-\\langle V'(x)\\rangle$ を示せ．$V=\\frac12m\\omega^2x^2+gx^3$ のとき，$\\langle x\\rangle$ の運動方程式が古典的な方程式からずれる項を $\\Delta x$ で表せ．\n\\item 自由粒子について $\\dfrac{d^2\\langle x^2\\rangle}{dt^2}$ を計算し，$\\langle x^2\\rangle$ が $t$ の 2 次式になることを示せ．\n\\item 自由電子の波束が $t=0$ で最小不確定（$\\Delta x\\Delta p=\\hbar/2$，$\\langle xp+px\\rangle=2\\langle x\\rangle\\langle p\\rangle$）で $\\Delta x(0)=\\sigma$ のとき，幅が 2 倍になる時刻を，電子の質量 $m$ と $\\sigma,\\hbar$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）．$m\\ddot{\\langle x\\rangle}=-m\\omega^2\\langle x\\rangle-3g\\langle x\\rangle^2-3g(\\Delta x)^2$，ずれは $-3g(\\Delta x)^2$　(2) $\\dfrac{d^2\\langle x^2\\rangle}{dt^2}=\\dfrac{2\\langle p^2\\rangle}{m^2}$（一定）　(3) $t=\\dfrac{2\\sqrt3m(\\Delta x_0)^2}{\\hbar}\\approx3.0\\times10^{-16}\\ \\mathrm{s}$"
+   "tex": "(1) 証明（解説参照）．$m\\ddot{\\langle x\\rangle}=-m\\omega^2\\langle x\\rangle-3g\\langle x\\rangle^2-3g(\\Delta x)^2$，ずれは $-3g(\\Delta x)^2$　(2) $\\dfrac{d^2\\langle x^2\\rangle}{dt^2}=\\dfrac{2\\langle p^2\\rangle}{m^2}$（一定）　(3) $t=\\dfrac{2\\sqrt3m\\sigma^2}{\\hbar}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $[H,x]=\\dfrac{1}{2m}[p^2,x]=-\\dfrac{i\\hbar}mp$ より $\\dfrac{d\\langle x\\rangle}{dt}=\\dfrac i\\hbar\\cdot\\left(-\\dfrac{i\\hbar}{m}\\right)\\langle p\\rangle=\\dfrac{\\langle p\\rangle}m$．$[H,p]=[V,p]=i\\hbar V'$ より $\\dfrac{d\\langle p\\rangle}{dt}=-\\langle V'\\rangle$．\n$V'=m\\omega^2x+3gx^2$ で，$\\langle x^2\\rangle=\\langle x\\rangle^2+(\\Delta x)^2$ なので\n\\[\nm\\frac{d^2\\langle x\\rangle}{dt^2}=-m\\omega^2\\langle x\\rangle-3g\\langle x\\rangle^2-3g(\\Delta x)^2.\n\\]\n古典的な $-V'(\\langle x\\rangle)$ との差は $-3g(\\Delta x)^2$ で，$V'$ が非線形なら波束の広がりが重心運動に影響する（調和振動子や一様力では厳密に古典的）．\n\n(2) $[H,x^2]=-\\dfrac{i\\hbar}m(xp+px)$ より $\\dfrac{d\\langle x^2\\rangle}{dt}=\\dfrac1m\\langle xp+px\\rangle$．自由粒子では $[p^2,xp+px]=-4i\\hbar p^2$ なので $\\dfrac{d\\langle xp+px\\rangle}{dt}=\\dfrac{i}{\\hbar}\\cdot\\dfrac{-4i\\hbar}{2m}\\langle p^2\\rangle=\\dfrac{2\\langle p^2\\rangle}{m}$．$\\langle p^2\\rangle$ は保存するので $\\dfrac{d^2\\langle x^2\\rangle}{dt^2}=\\dfrac{2\\langle p^2\\rangle}{m^2}=$ 一定．同様に $\\langle x\\rangle=\\langle x\\rangle_0+\\langle p\\rangle t/m$ だから\n\\[\n(\\Delta x)^2(t)=(\\Delta x_0)^2+\\frac tm\\left(\\langle xp+px\\rangle_0-2\\langle x\\rangle_0\\langle p\\rangle\\right)+\\frac{(\\Delta p)^2t^2}{m^2}.\n\\]\n\n(3) 相関項が 0 なので $(\\Delta x)^2=(\\Delta x_0)^2+(\\Delta p)^2t^2/m^2$，$\\Delta p=\\hbar/(2\\Delta x_0)$．$\\Delta x=2\\Delta x_0$ となるのは $\\dfrac{\\Delta p\\,t}{m}=\\sqrt3\\Delta x_0$，すなわち\n\\[\nt=\\frac{2\\sqrt3m(\\Delta x_0)^2}{\\hbar}=\\frac{2\\times1.732\\times9.11\\times10^{-31}\\times10^{-20}}{1.055\\times10^{-34}}=3.0\\times10^{-16}\\ \\mathrm{s}.\n\\]\n原子サイズに局在した電子の波束は 0.3 fs で倍に広がる．"
+    "tex": "(1) $[H,x]=\\dfrac{1}{2m}[p^2,x]=-\\dfrac{i\\hbar}mp$ より $\\dfrac{d\\langle x\\rangle}{dt}=\\dfrac i\\hbar\\cdot\\left(-\\dfrac{i\\hbar}{m}\\right)\\langle p\\rangle=\\dfrac{\\langle p\\rangle}m$．$[H,p]=[V,p]=i\\hbar V'$ より $\\dfrac{d\\langle p\\rangle}{dt}=-\\langle V'\\rangle$．\n$V'=m\\omega^2x+3gx^2$ で，$\\langle x^2\\rangle=\\langle x\\rangle^2+(\\Delta x)^2$ なので\n\\[\nm\\frac{d^2\\langle x\\rangle}{dt^2}=-m\\omega^2\\langle x\\rangle-3g\\langle x\\rangle^2-3g(\\Delta x)^2.\n\\]\n古典的な $-V'(\\langle x\\rangle)$ との差は $-3g(\\Delta x)^2$ で，$V'$ が非線形なら波束の広がりが重心運動に影響する（調和振動子や一様力では厳密に古典的）．\n\n(2) $[H,x^2]=-\\dfrac{i\\hbar}m(xp+px)$ より $\\dfrac{d\\langle x^2\\rangle}{dt}=\\dfrac1m\\langle xp+px\\rangle$．自由粒子では $[p^2,xp+px]=-4i\\hbar p^2$ なので $\\dfrac{d\\langle xp+px\\rangle}{dt}=\\dfrac{i}{\\hbar}\\cdot\\dfrac{-4i\\hbar}{2m}\\langle p^2\\rangle=\\dfrac{2\\langle p^2\\rangle}{m}$．$\\langle p^2\\rangle$ は保存するので $\\dfrac{d^2\\langle x^2\\rangle}{dt^2}=\\dfrac{2\\langle p^2\\rangle}{m^2}=$ 一定．同様に $\\langle x\\rangle=\\langle x\\rangle_0+\\langle p\\rangle t/m$ だから\n\\[\n(\\Delta x)^2(t)=(\\Delta x_0)^2+\\frac tm\\left(\\langle xp+px\\rangle_0-2\\langle x\\rangle_0\\langle p\\rangle\\right)+\\frac{(\\Delta p)^2t^2}{m^2}.\n\\]\n\n(3) 相関項が 0 なので $(\\Delta x)^2=\\sigma^2+(\\Delta p)^2t^2/m^2$，$\\Delta p=\\hbar/(2\\sigma)$．$\\Delta x=2\\sigma$ となるのは $\\dfrac{\\Delta p\\,t}{m}=\\sqrt3\\sigma$，すなわち\n\\[\nt=\\boldsymbol{\\frac{2\\sqrt3m\\sigma^2}{\\hbar}}.\n\\]\n$t\\propto\\sigma^2$ なので，狭く局在させた波束ほど急速に広がる．原子サイズ（$\\sigma\\sim0.1\\,$nm）に局在した電子の波束では $10^{-16}\\,$s 程度で倍になる．"
    }
   ],
   "idea": {
@@ -1668,7 +1668,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $t$ [s]：≈3.0e-16"
+   "spec": "(1) 記述\n(2) 記述\n(3) t：2sqrt(3) m σ^2/hbar"
   },
   "methods": [],
   "tags": [
@@ -1850,16 +1850,16 @@
   "theme": "ストロンチウムの誘導ラマン増幅器：ポンプの枯渇と光子数の保存",
   "topic": "ストロンチウムの誘導ラマン増幅器：ポンプの枯渇と光子数の保存",
   "statement": {
-   "tex": "原子の蒸気の中を，角振動数 $\\omega_p$ のポンプ光と $\\omega_s$ の信号光が $+z$ 方向に進む．誘導ラマン過程（ポンプの光子1個が信号の光子1個と原子の励起に変わる）で，信号の強度は $\\dfrac{dI_s}{dz}=gI_pI_s$ と増える（$g$ はラマン利得の定数）．吸収など他の損失はない．\n\\begin{enumerate}\n\\item 光子数の流束が保存すること $\\dfrac{I_p}{\\hbar\\omega_p}+\\dfrac{I_s}{\\hbar\\omega_s}=$ 一定 を用いて，$I_s(z)$ を $I_s(0),\\ I_p(0)$ で表せ．$I_s(0)\\ll I_p(0)$ で $z$ が小さいときの形を確かめよ．\n\\item $z\\to\\infty$ での信号の強度を求め，ポンプのパワーが信号に移る最大の効率を答えよ．\n\\item ストロンチウム（基底状態 $5s^2\\ {}^1S_0$）で，終状態 $|f\\rangle$ を $5s4d\\ {}^1D_2$（基底状態から $2.498\\ \\mathrm{eV}$）とする．中間状態 $|i\\rangle$，終状態のパリティを答えよ．ポンプの波長が $400\\ \\mathrm{nm}$ のとき，信号の波長を求めよ（$hc=1239.8\\ \\mathrm{eV\\,nm}$）．\n\\end{enumerate}"
+   "tex": "原子の蒸気の中を，角振動数 $\\omega_p$ のポンプ光と $\\omega_s$ の信号光が $+z$ 方向に進む．誘導ラマン過程（ポンプの光子1個が信号の光子1個と原子の励起に変わる）で，信号の強度は $\\dfrac{dI_s}{dz}=gI_pI_s$ と増える（$g$ はラマン利得の定数）．吸収など他の損失はない．\n\\begin{enumerate}\n\\item 光子数の流束が保存すること $\\dfrac{I_p}{\\hbar\\omega_p}+\\dfrac{I_s}{\\hbar\\omega_s}=$ 一定 を用いて，$I_s(z)$ を $I_s(0),\\ I_p(0)$ で表せ．$I_s(0)\\ll I_p(0)$ で $z$ が小さいときの形を確かめよ．\n\\item $z\\to\\infty$ での信号の強度を求め，ポンプのパワーが信号に移る最大の効率を答えよ．\n\\item ストロンチウム（基底状態 $5s^2\\ {}^1S_0$）で，終状態 $|f\\rangle$ を $5s4d\\ {}^1D_2$（基底状態からの励起エネルギー $E_f$）とする．中間状態 $|i\\rangle$，終状態のパリティを答えよ．ポンプの波長が $\\lambda_p$ のとき，信号の波長 $\\lambda_s$ を $E_f,\\lambda_p$，プランク定数 $h$，光速 $c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $I_s(z)=\\dfrac{\\omega_sC}{1+\\left(\\frac{\\omega_sC}{I_s(0)}-1\\right)e^{-g\\omega_pCz}}$（$C=\\dfrac{I_p(0)}{\\omega_p}+\\dfrac{I_s(0)}{\\omega_s}$）；小さい $z$ で $I_s(0)e^{gI_p(0)z}$　(2) $I_s(\\infty)=\\omega_sC\\simeq\\dfrac{\\omega_s}{\\omega_p}I_p(0)$；効率 $\\dfrac{\\omega_s}{\\omega_p}$　(3) $|g\\rangle,\\ |f\\rangle$ は偶，$|i\\rangle$ は奇（例 $5s5p\\ {}^1P_1$）；$\\lambda_s\\approx2.06\\ \\mu\\mathrm{m}$"
+   "tex": "(1) $I_s(z)=\\dfrac{\\omega_sC}{1+\\left(\\frac{\\omega_sC}{I_s(0)}-1\\right)e^{-g\\omega_pCz}}$（$C=\\dfrac{I_p(0)}{\\omega_p}+\\dfrac{I_s(0)}{\\omega_s}$）；小さい $z$ で $I_s(0)e^{gI_p(0)z}$　(2) $I_s(\\infty)=\\omega_sC\\simeq\\dfrac{\\omega_s}{\\omega_p}I_p(0)$；効率 $\\dfrac{\\omega_s}{\\omega_p}$　(3) $|g\\rangle,\\ |f\\rangle$ は偶，$|i\\rangle$ は奇（例 $5s5p\\ {}^1P_1$）；$\\lambda_s=\\dfrac{hc\\lambda_p}{hc-E_f\\lambda_p}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) ポンプの光子1個が信号の光子1個になるので，光子数の流束 $\\dfrac{I}{\\hbar\\omega}$ の和が保存する．$C=\\dfrac{I_p(0)}{\\omega_p}+\\dfrac{I_s(0)}{\\omega_s}$ とおくと $I_p=\\omega_p\\left(C-\\dfrac{I_s}{\\omega_s}\\right)$ で\n\\[\n\\frac{dI_s}{dz}=g\\omega_p\\left(C-\\frac{I_s}{\\omega_s}\\right)I_s .\n\\]\nこれはロジスティック方程式で，\n\\[\n\\boldsymbol{I_s(z)=\\frac{\\omega_sC}{1+\\left(\\frac{\\omega_sC}{I_s(0)}-1\\right)e^{-g\\omega_pCz}}}.\n\\]\n$I_s(0)\\ll I_p(0)$ では $\\omega_pC\\simeq I_p(0)$，$\\dfrac{\\omega_sC}{I_s(0)}\\gg1$ で，分母の $e^{-g I_p(0)z}$ の項が支配的な間は $I_s\\simeq I_s(0)e^{gI_p(0)z}$（ポンプが枯渇しない小信号の指数関数的増幅）．\n\n(2) $z\\to\\infty$ で $I_s\\to\\omega_sC\\simeq\\boldsymbol{\\dfrac{\\omega_s}{\\omega_p}I_p(0)}$．ポンプの光子がすべて信号の光子になっても，1個あたりのエネルギーは $\\hbar\\omega_s$ に減るので，パワーの変換効率の上限は $\\boldsymbol{\\omega_s/\\omega_p}$（マンリー＝ロウの関係）で，差は原子の励起に残る．\n\n(3) ラマン過程は2光子過程で，各段階は電気双極子遷移なのでパリティが反転する．$|g\\rangle=5s^2\\ {}^1S_0$ は\\textbf{偶}，中間の $|i\\rangle$（例えば $5s5p\\ {}^1P_1$）は\\textbf{奇}，$|f\\rangle=5s4d\\ {}^1D_2$ は\\textbf{偶}で，$g$ と $f$ は同じパリティ（1光子遷移では結ばれない）．信号の光子のエネルギーは $\\dfrac{1239.8}{400}-2.498=0.602\\ \\mathrm{eV}$，波長は\n\\[\n\\lambda_s=\\frac{1239.8}{0.602}\\approx\\boldsymbol{2.06\\ \\mu\\mathrm{m}}.\n\\]\nポンプの波長を変えると，信号の波長が同じ差（ラマンシフト）を保って変わるので，赤外で波長可変の光源になる．"
+    "tex": "(1) ポンプの光子1個が信号の光子1個になるので，光子数の流束 $\\dfrac{I}{\\hbar\\omega}$ の和が保存する．$C=\\dfrac{I_p(0)}{\\omega_p}+\\dfrac{I_s(0)}{\\omega_s}$ とおくと $I_p=\\omega_p\\left(C-\\dfrac{I_s}{\\omega_s}\\right)$ で\n\\[\n\\frac{dI_s}{dz}=g\\omega_p\\left(C-\\frac{I_s}{\\omega_s}\\right)I_s .\n\\]\nこれはロジスティック方程式で，\n\\[\n\\boldsymbol{I_s(z)=\\frac{\\omega_sC}{1+\\left(\\frac{\\omega_sC}{I_s(0)}-1\\right)e^{-g\\omega_pCz}}}.\n\\]\n$I_s(0)\\ll I_p(0)$ では $\\omega_pC\\simeq I_p(0)$，$\\dfrac{\\omega_sC}{I_s(0)}\\gg1$ で，分母の $e^{-g I_p(0)z}$ の項が支配的な間は $I_s\\simeq I_s(0)e^{gI_p(0)z}$（ポンプが枯渇しない小信号の指数関数的増幅）．\n\n(2) $z\\to\\infty$ で $I_s\\to\\omega_sC\\simeq\\boldsymbol{\\dfrac{\\omega_s}{\\omega_p}I_p(0)}$．ポンプの光子がすべて信号の光子になっても，1個あたりのエネルギーは $\\hbar\\omega_s$ に減るので，パワーの変換効率の上限は $\\boldsymbol{\\omega_s/\\omega_p}$（マンリー＝ロウの関係）で，差は原子の励起に残る．\n\n(3) ラマン過程は2光子過程で，各段階は電気双極子遷移なのでパリティが反転する．$|g\\rangle=5s^2\\ {}^1S_0$ は\\textbf{偶}，中間の $|i\\rangle$（例えば $5s5p\\ {}^1P_1$）は\\textbf{奇}，$|f\\rangle=5s4d\\ {}^1D_2$ は\\textbf{偶}で，$g$ と $f$ は同じパリティ（1光子遷移では結ばれない）．エネルギー保存より信号の光子のエネルギーは $\\dfrac{hc}{\\lambda_p}-E_f$，波長は\n\\[\n\\lambda_s=\\frac{hc}{hc/\\lambda_p-E_f}=\\boldsymbol{\\frac{hc\\lambda_p}{hc-E_f\\lambda_p}}.\n\\]\n（紫の $\\lambda_p\\approx400\\,$nm のポンプでは，信号は $2\\,\\mu$m 付近の赤外になる．）\nポンプの波長を変えると，信号の波長が同じ差（ラマンシフト）を保って変わるので，赤外で波長可変の光源になる．"
    }
   ],
   "idea": {
@@ -1867,7 +1867,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) λ_s：h c λ_p/(h c-E_f λ_p)"
   },
   "methods": [],
   "tags": [
@@ -2897,16 +2897,16 @@
   "theme": "AB磁束を貫くリングの持続電流と多電子効果",
   "topic": "AB磁束を貫くリングの持続電流と多電子効果",
   "statement": {
-   "tex": "半径 $R$ の細い 1 次元リング上を，質量 $m$，電荷 $e$ の粒子が運動する．リングの中心を貫く細いソレノイドがあり，磁束 $\\Phi$ を閉じ込めている（リング上で磁場はゼロ）．SI 単位系を用い，$\\Phi_0=2\\pi\\hbar/e$，$f=\\Phi/\\Phi_0$ とする．状態のエネルギー $E$ に対して持続電流を $I=-\\partial E/\\partial\\Phi$ で定義する．\n\\begin{enumerate}\n\\item 1 粒子のエネルギー準位 $E_M(\\Phi)$（$M$ は整数）を求めよ．\n\\item 1 粒子の基底状態の持続電流 $I(\\Phi)$ を求め，$\\Phi$ について周期 $\\Phi_0$ ののこぎり波になることを示せ．$R=1\\,\\mu{\\rm m}$ の電子について $|I|$ の最大値を数値で求めよ．\n\\item 互いに相互作用しないスピンのないフェルミ粒子 $N$ 個がこのリングにあるとき，基底状態の全持続電流を $I_1\\equiv e\\hbar/(2\\pi mR^2)$ を単位として，$N$ が奇数のときは $|f|<1/2$，偶数のときは $0<f<1$ の範囲で求めよ．\n\\end{enumerate}"
+   "tex": "半径 $R$ の細い 1 次元リング上を，質量 $m$，電荷 $q$ の粒子が運動する．リングの中心を貫く細いソレノイドがあり，磁束 $\\Phi$ を閉じ込めている（リング上で磁場はゼロ）．SI 単位系を用い，$\\Phi_0=2\\pi\\hbar/q$，$f=\\Phi/\\Phi_0$ とする．状態のエネルギー $E$ に対して持続電流を $I=-\\partial E/\\partial\\Phi$ で定義する．\n\\begin{enumerate}\n\\item 1 粒子のエネルギー準位 $E_M(\\Phi)$（$M$ は整数）を求めよ．\n\\item 1 粒子の基底状態の持続電流 $I(\\Phi)$ を求め，$\\Phi$ について周期 $\\Phi_0$ ののこぎり波になることを示せ．$|I|$ の最大値を $q,\\hbar,m,R$ で表せ．\n\\item 互いに相互作用しないスピンのないフェルミ粒子 $N$ 個がこのリングにあるとき，基底状態の全持続電流を $I_1\\equiv q\\hbar/(2\\pi mR^2)$ を単位として，$N$ が奇数のときは $|f|<1/2$，偶数のときは $0<f<1$ の範囲で求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E_M=\\dfrac{\\hbar^2}{2mR^2}(M-f)^2$　(2) $I=I_1(M_0-f)$（$M_0$ は $f$ に最も近い整数），最大 $I_1/2\\simeq1.48\\times10^{-12}\\,{\\rm A}$　(3) 奇数：$I=-NfI_1$，偶数：$I=N(\\tfrac12-f)I_1$"
+   "tex": "(1) $E_M=\\dfrac{\\hbar^2}{2mR^2}(M-f)^2$　(2) $I=I_1(M_0-f)$（$M_0$ は $f$ に最も近い整数），最大 $\\dfrac{q\\hbar}{4\\pi mR^2}$　(3) 奇数：$I=-NfI_1$，偶数：$I=N(\\tfrac12-f)I_1$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) ベクトルポテンシャルはリング上で $A_\\varphi=\\Phi/(2\\pi R)$．ハミルトニアン $H=\\dfrac{1}{2m}\\left(-\\dfrac{i\\hbar}{R}\\dfrac{d}{d\\varphi}-eA_\\varphi\\right)^2$ に $\\psi=e^{iM\\varphi}/\\sqrt{2\\pi R}$（1 価性より $M$ は整数）を代入して\n\\[ E_M=\\frac{1}{2m}\\left(\\frac{\\hbar M}{R}-\\frac{e\\Phi}{2\\pi R}\\right)^2=\\frac{\\hbar^2}{2mR^2}\\left(M-f\\right)^2. \\]\n粒子は磁場に触れないが，準位は $\\Phi$ に依存し，$\\Phi\\to\\Phi+\\Phi_0$ で $M\\to M+1$ と付け替えれば全体は不変（周期 $\\Phi_0$）．\n\n(2) $I_M=-\\dfrac{\\partial E_M}{\\partial\\Phi}=-\\dfrac{1}{\\Phi_0}\\dfrac{\\partial E_M}{\\partial f}=\\dfrac{\\hbar^2(M-f)}{mR^2\\Phi_0}=\\dfrac{e\\hbar}{2\\pi mR^2}(M-f)=I_1(M-f)$．\n（これは速度 $v=(\\hbar M/R-eA_\\varphi)/m$ の電荷が周長 $2\\pi R$ を回る電流 $ev/2\\pi R$ に一致する．）基底状態は $f$ に最も近い整数 $M_0$ をとるので，$-\\tfrac12<f<\\tfrac12$ で $I=-I_1f$，$f=\\pm1/2$ で $\\mp I_1/2$ の間を不連続に跳び，以後周期 $\\Phi_0$ で繰り返すのこぎり波．最大値は $I_1/2$：\n\\[ \\frac{I_1}{2}=\\frac{e\\hbar}{4\\pi mR^2}=\\frac{(1.602\\times10^{-19})(1.055\\times10^{-34})}{4\\pi(9.109\\times10^{-31})(10^{-12})}\\simeq1.48\\times10^{-12}\\,{\\rm A}. \\]\n\n(3) 全エネルギー $\\sum_{\\rm occ}(M-f)^2$ を最小にするよう，$(M-f)^2$ の小さい順に $N$ 個の $M$ を占有する．全電流は $I=I_1\\sum_{\\rm occ}(M-f)$．\n$N=2p+1$（奇数），$|f|<\\tfrac12$：占有 $M=-p,\\dots,p$．$\\sum M=0$ より $I=-NfI_1$．$f=\\pm\\tfrac12$ で $\\mp\\tfrac N2I_1$ の跳び，振幅は 1 粒子の $N$ 倍．\n$N=2p$（偶数），$0<f<1$：占有 $M=-p+1,\\dots,p$（$f$ を中心に対称）．$\\sum M=p=N/2$ より $I=I_1\\left(\\tfrac N2-Nf\\right)=N\\left(\\tfrac12-f\\right)I_1$．$f=0$（無磁束）で既に $\\pm\\tfrac N2I_1$ の跳びがあり，奇数の場合と比べてのこぎり波が半周期ずれる（$f=0$ で基底状態が縮退するため）．粒子数の偶奇で応答の符号が反転するのが特徴．"
+    "tex": "(1) ベクトルポテンシャルはリング上で $A_\\varphi=\\Phi/(2\\pi R)$．ハミルトニアン $H=\\dfrac{1}{2m}\\left(-\\dfrac{i\\hbar}{R}\\dfrac{d}{d\\varphi}-qA_\\varphi\\right)^2$ に $\\psi=e^{iM\\varphi}/\\sqrt{2\\pi R}$（1 価性より $M$ は整数）を代入して\n\\[ E_M=\\frac{1}{2m}\\left(\\frac{\\hbar M}{R}-\\frac{q\\Phi}{2\\pi R}\\right)^2=\\boldsymbol{\\frac{\\hbar^2}{2mR^2}\\left(M-f\\right)^2}. \\]\n粒子は磁場に触れないが，準位は $\\Phi$ に依存し，$\\Phi\\to\\Phi+\\Phi_0$ で $M\\to M+1$ と付け替えれば全体は不変（周期 $\\Phi_0$）．\n\n(2) $I_M=-\\dfrac{\\partial E_M}{\\partial\\Phi}=-\\dfrac{1}{\\Phi_0}\\dfrac{\\partial E_M}{\\partial f}=\\dfrac{\\hbar^2(M-f)}{mR^2\\Phi_0}=\\dfrac{q\\hbar}{2\\pi mR^2}(M-f)=I_1(M-f)$．\n（これは速度 $v=(\\hbar M/R-qA_\\varphi)/m$ の電荷が周長 $2\\pi R$ を回る電流 $qv/2\\pi R$ に一致する．）基底状態は $f$ に最も近い整数 $M_0$ をとるので，$-\\tfrac12<f<\\tfrac12$ で $I=-I_1f$，$f=\\pm1/2$ で $\\mp I_1/2$ の間を不連続に跳び，以後周期 $\\Phi_0$ で繰り返すのこぎり波．最大値は\n\\[ \\frac{I_1}{2}=\\boldsymbol{\\frac{q\\hbar}{4\\pi mR^2}}. \\]\n$R^{-2}$ に比例するので，メゾスコピックな小さいリングでないと観測できない（電子で $R=1\\,\\mu$m なら pA 程度）．\n\n(3) 全エネルギー $\\sum_{\\rm occ}(M-f)^2$ を最小にするよう，$(M-f)^2$ の小さい順に $N$ 個の $M$ を占有する．全電流は $I=I_1\\sum_{\\rm occ}(M-f)$．\n$N=2p+1$（奇数），$|f|<\\tfrac12$：占有 $M=-p,\\dots,p$．$\\sum M=0$ より $\\boldsymbol{I=-NfI_1}$．$f=\\pm\\tfrac12$ で $\\mp\\tfrac N2I_1$ の跳び，振幅は 1 粒子の $N$ 倍．\n$N=2p$（偶数），$0<f<1$：占有 $M=-p+1,\\dots,p$（$f$ を中心に対称）．$\\sum M=p=N/2$ より $I=I_1\\left(\\tfrac N2-Nf\\right)=\\boldsymbol{N\\left(\\tfrac12-f\\right)I_1}$．$f=0$（無磁束）で既に $\\pm\\tfrac N2I_1$ の跳びがあり，奇数の場合と比べてのこぎり波が半周期ずれる（$f=0$ で基底状態が縮退するため）．粒子数の偶奇で応答の符号が反転するのが特徴．"
    }
   ],
   "idea": {
@@ -2914,7 +2914,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $E_M$：((hbar ^(2))/(2 m R ^(2)))(M - f)^(2)\n(2) 記述\n(3) 記述"
+   "spec": "(1) $E_M$：((hbar ^(2))/(2 m R ^(2)))(M - f)^(2)\n(2) 最大値：q hbar/(4pi m R^2)\n(3) 奇数：-N f I_1 ; 偶数：N(1/2-f) I_1"
   },
   "methods": [],
   "tags": [
@@ -3404,16 +3404,16 @@
   "theme": "中性子干渉計のスピン回転と可視度・出口の入れ替わり",
   "topic": "中性子干渉計のスピン回転と可視度・出口の入れ替わり",
   "statement": {
-   "tex": "マッハ・ツェンダー型中性子干渉計を考える．入射状態 $|\\alpha\\rangle$（スピン状態）の中性子は第 1 ビームスプリッターで経路 A，B に $\\frac1{\\sqrt2}(|A\\rangle+|B\\rangle)$ と分かれる．経路 A には可変の位相 $e^{i\\chi}$ が，経路 B には $z$ 方向の磁場によるスピン回転 $U(\\theta)=\\exp(-i\\theta\\sigma_z/2)$ が加わる．第 2 ビームスプリッターは $|A\\rangle\\to\\frac1{\\sqrt2}(|{\\rm I}\\rangle+|{\\rm II}\\rangle)$，$|B\\rangle\\to\\frac1{\\sqrt2}(|{\\rm I}\\rangle-|{\\rm II}\\rangle)$ と作用し，出口 I，II で中性子を数える．\n\\begin{enumerate}\n\\item 出口 I での検出確率 $P_{\\rm I}(\\chi)$ を $\\langle\\alpha|U(\\theta)|\\alpha\\rangle$ を用いて表せ．\n\\item 入射スピンが (a) $+z$ 向き，(b) $+x$ 向きに完全偏極しているとき，$\\chi$ を走査したときの干渉縞の可視度 $V=(P_{\\max}-P_{\\min})/(P_{\\max}+P_{\\min})$ を $\\theta$ の関数として求めよ．(b) で $V=0$ となる $\\theta$ について，その理由を述べよ．\n\\item $\\theta=2\\pi$ のとき，$\\chi=0$ で中性子はどちらの出口に出るか．$\\theta=4\\pi$ ではどうか．\n\\item (a) の場合に，干渉縞が 1 周期ずれるのに必要な磁場の変化 $\\Delta B$ を求めよ．中性子の磁気回転比を $|\\gamma_n|=1.832\\times10^8$ rad s$^{-1}$T$^{-1}$（$\\theta=|\\gamma_n|B\\tau$，$\\tau$ は磁場領域の通過時間），波長 $\\lambda=1.8$ Å，磁場中の経路長 $l=2.0$ cm とし，SI 単位で数値を答えよ（$h=6.626\\times10^{-34}$ J s，$m_n=1.675\\times10^{-27}$ kg）．\n\\end{enumerate}"
+   "tex": "マッハ・ツェンダー型中性子干渉計を考える．入射状態 $|\\alpha\\rangle$（スピン状態）の中性子は第 1 ビームスプリッターで経路 A，B に $\\frac1{\\sqrt2}(|A\\rangle+|B\\rangle)$ と分かれる．経路 A には可変の位相 $e^{i\\chi}$ が，経路 B には $z$ 方向の磁場によるスピン回転 $U(\\theta)=\\exp(-i\\theta\\sigma_z/2)$ が加わる．第 2 ビームスプリッターは $|A\\rangle\\to\\frac1{\\sqrt2}(|{\\rm I}\\rangle+|{\\rm II}\\rangle)$，$|B\\rangle\\to\\frac1{\\sqrt2}(|{\\rm I}\\rangle-|{\\rm II}\\rangle)$ と作用し，出口 I，II で中性子を数える．\n\\begin{enumerate}\n\\item 出口 I での検出確率 $P_{\\rm I}(\\chi)$ を $\\langle\\alpha|U(\\theta)|\\alpha\\rangle$ を用いて表せ．\n\\item 入射スピンが (a) $+z$ 向き，(b) $+x$ 向きに完全偏極しているとき，$\\chi$ を走査したときの干渉縞の可視度 $V=(P_{\\max}-P_{\\min})/(P_{\\max}+P_{\\min})$ を $\\theta$ の関数として求めよ．(b) で $V=0$ となる $\\theta$ について，その理由を述べよ．\n\\item $\\theta=2\\pi$ のとき，$\\chi=0$ で中性子はどちらの出口に出るか．$\\theta=4\\pi$ ではどうか．\n\\item (a) の場合に，干渉縞が 1 周期ずれるのに必要な磁場の変化 $\\Delta B$ を求めよ．中性子の磁気回転比の大きさを $\\gamma$（$\\theta=\\gamma B\\tau$，$\\tau$ は磁場領域の通過時間），質量を $m$，ド・ブロイ波長を $\\lambda$，磁場中の経路長を $l$，プランク定数を $h$ とし，$\\Delta B$ をこれらで表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P_{\\rm I}=\\frac12\\left[1+{\\rm Re}\\left(e^{-i\\chi}\\langle\\alpha|U|\\alpha\\rangle\\right)\\right]$　(2) (a) $V=1$（縞が $\\theta/2$ だけずれる）　(b) $V=|\\cos(\\theta/2)|$；$\\theta=\\pi$（および奇数倍）で $V=0$：スピンが経路情報を記録　(3) $\\theta=2\\pi$：出口 II（I は 0）．$\\theta=4\\pi$：出口 I　(4) $\\Delta B=\\dfrac{4\\pi}{|\\gamma_n|\\tau}$，$\\tau=lm_n\\lambda/h$ より $\\Delta B\\approx7.5\\times10^{-3}$ T（約 75 G）"
+   "tex": "(1) $P_{\\rm I}=\\frac12\\left[1+{\\rm Re}\\left(e^{-i\\chi}\\langle\\alpha|U|\\alpha\\rangle\\right)\\right]$　(2) (a) $V=1$（縞が $\\theta/2$ だけずれる）　(b) $V=|\\cos(\\theta/2)|$；$\\theta=\\pi$（および奇数倍）で $V=0$：スピンが経路情報を記録　(3) $\\theta=2\\pi$：出口 II（I は 0）．$\\theta=4\\pi$：出口 I　(4) $\\Delta B=\\dfrac{4\\pi h}{\\gamma lm\\lambda}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 第 2 スプリッター後の出口 I の成分は $\\frac12\\left(e^{i\\chi}|\\alpha\\rangle+U|\\alpha\\rangle\\right)$．ノルムの 2 乗をとると\n\\[ P_{\\rm I}=\\frac14\\left(2+2{\\rm Re}\\,e^{-i\\chi}\\langle\\alpha|U|\\alpha\\rangle\\right)=\\frac12\\left[1+{\\rm Re}\\left(e^{-i\\chi}\\langle\\alpha|U(\\theta)|\\alpha\\rangle\\right)\\right],\\quad P_{\\rm II}=1-P_{\\rm I}. \\]\n\n(2) $\\langle\\alpha|U|\\alpha\\rangle=|\\langle U\\rangle|e^{i\\arg}$ と書けば $P_{\\rm I}=\\frac12[1+|\\langle U\\rangle|\\cos(\\chi-\\arg)]$ なので $V=|\\langle\\alpha|U|\\alpha\\rangle|$．\n(a) $+z$：$\\langle U\\rangle=e^{-i\\theta/2}$，$V=1$，縞は $\\chi\\to\\chi+\\theta/2$ とずれるだけ．\n(b) $+x$：$|\\alpha\\rangle=(|{+}\\rangle+|{-}\\rangle)/\\sqrt2$ で $\\langle U\\rangle=\\frac12(e^{-i\\theta/2}+e^{i\\theta/2})=\\cos\\frac\\theta2$，$V=|\\cos(\\theta/2)|$．\n$\\theta=\\pi$ では $U|\\alpha\\rangle=-i|{-}x\\rangle$ となり経路 B のスピンが経路 A のスピン（$+x$）と直交する．スピンを測れば通った経路がわかるので干渉は消える（$P_{\\rm I}=\\frac12$ で一定）．一般に偏極ベクトル $\\boldsymbol n$ なら $V=\\sqrt{\\cos^2(\\theta/2)+n_z^2\\sin^2(\\theta/2)}$．\n\n(3) $\\theta=2\\pi$ では $U=-1$（スピノルの $2\\pi$ 回転での符号反転）で，任意の $|\\alpha\\rangle$ に対し $P_{\\rm I}=\\frac12(1-\\cos\\chi)$．$\\chi=0$ では $P_{\\rm I}=0$，$P_{\\rm II}=1$：中性子は消えたのではなく，すべてもう一方の出口 II に出る．$\\theta=4\\pi$ で $U=+1$ となり元に戻り，すべて出口 I．\n\n(4) (a) では位相 $\\theta/2$ が $2\\pi$ 変わると縞が 1 周期ずれるので $\\Delta\\theta=4\\pi$，すなわち $\\Delta B=\\frac{4\\pi}{|\\gamma_n|\\tau}$．$v=h/(m_n\\lambda)=\\frac{6.626\\times10^{-34}}{1.675\\times10^{-27}\\times1.8\\times10^{-10}}\\approx2.20\\times10^3$ m/s，$\\tau=l/v\\approx9.10\\times10^{-6}$ s．\n\\[ \\Delta B=\\frac{4\\pi}{1.832\\times10^8\\times9.10\\times10^{-6}}\\approx7.5\\times10^{-3}\\ {\\rm T}. \\]\n（ガウス単位で書けば $\\Delta B=\\frac{4\\pi\\hbar c}{|e g_n|\\bar\\lambda l}$ と同じ式．）"
+    "tex": "(1) 第 2 スプリッター後の出口 I の成分は $\\frac12\\left(e^{i\\chi}|\\alpha\\rangle+U|\\alpha\\rangle\\right)$．ノルムの 2 乗をとると\n\\[ P_{\\rm I}=\\frac14\\left(2+2{\\rm Re}\\,e^{-i\\chi}\\langle\\alpha|U|\\alpha\\rangle\\right)=\\frac12\\left[1+{\\rm Re}\\left(e^{-i\\chi}\\langle\\alpha|U(\\theta)|\\alpha\\rangle\\right)\\right],\\quad P_{\\rm II}=1-P_{\\rm I}. \\]\n\n(2) $\\langle\\alpha|U|\\alpha\\rangle=|\\langle U\\rangle|e^{i\\arg}$ と書けば $P_{\\rm I}=\\frac12[1+|\\langle U\\rangle|\\cos(\\chi-\\arg)]$ なので $V=|\\langle\\alpha|U|\\alpha\\rangle|$．\n(a) $+z$：$\\langle U\\rangle=e^{-i\\theta/2}$，$V=1$，縞は $\\chi\\to\\chi+\\theta/2$ とずれるだけ．\n(b) $+x$：$|\\alpha\\rangle=(|{+}\\rangle+|{-}\\rangle)/\\sqrt2$ で $\\langle U\\rangle=\\frac12(e^{-i\\theta/2}+e^{i\\theta/2})=\\cos\\frac\\theta2$，$V=|\\cos(\\theta/2)|$．\n$\\theta=\\pi$ では $U|\\alpha\\rangle=-i|{-}x\\rangle$ となり経路 B のスピンが経路 A のスピン（$+x$）と直交する．スピンを測れば通った経路がわかるので干渉は消える（$P_{\\rm I}=\\frac12$ で一定）．一般に偏極ベクトル $\\boldsymbol n$ なら $V=\\sqrt{\\cos^2(\\theta/2)+n_z^2\\sin^2(\\theta/2)}$．\n\n(3) $\\theta=2\\pi$ では $U=-1$（スピノルの $2\\pi$ 回転での符号反転）で，任意の $|\\alpha\\rangle$ に対し $P_{\\rm I}=\\frac12(1-\\cos\\chi)$．$\\chi=0$ では $P_{\\rm I}=0$，$P_{\\rm II}=1$：中性子は消えたのではなく，すべてもう一方の出口 II に出る．$\\theta=4\\pi$ で $U=+1$ となり元に戻り，すべて出口 I．\n\n(4) (a) では位相 $\\theta/2$ が $2\\pi$ 変わると縞が 1 周期ずれるので $\\Delta\\theta=4\\pi$，すなわち $\\Delta B=\\frac{4\\pi}{\\gamma\\tau}$．速さは $v=h/(m\\lambda)$，通過時間は $\\tau=l/v=lm\\lambda/h$ なので\n\\[ \\Delta B=\\boldsymbol{\\frac{4\\pi h}{\\gamma lm\\lambda}}. \\]\n$2\\pi$ ではなく $4\\pi$ の回転で縞が 1 周期ずれることが，スピノルの $4\\pi$ 周期性の実験的検証になる（典型的な熱中性子と cm 程度の磁場領域で数 mT）．"
    }
   ],
   "idea": {
@@ -3421,7 +3421,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) ΔB：4pi h/(γ l m λ)"
   },
   "methods": [],
   "tags": [
@@ -4367,16 +4367,16 @@
   "theme": "一様場中の粒子とエネルギー・運動量の不確定性",
   "topic": "一様場中の粒子とエネルギー・運動量の不確定性",
   "statement": {
-   "tex": "質量 $m$ の粒子が 1 次元で $H=\\dfrac{p^2}{2m}+V(x)$ に従う．\n\\begin{enumerate}\n\\item $[H,p]=i\\hbar V'(x)$ を示し，これから $\\dfrac{d\\langle p\\rangle}{dt}$ を求めよ．エネルギーと運動量を同時に確定できるのはどんな場合か．\n\\item 一様な力 $F$ がはたらく $V(x)=-Fx$ の場合，任意の規格化可能な状態について $\\Delta E\\,\\Delta p\\ge\\hbar|F|/2$ が成り立つことを示せ．このことから $H$ について何が結論できるか．\n\\item $E=1.0\\times10^6\\ \\mathrm{V/m}$ の一様電場中の電子が $\\Delta p=1.0\\times10^{-25}\\ \\mathrm{kg\\,m/s}$ の状態にあるとき，$\\Delta E$ の下限を eV で求めよ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の粒子が 1 次元で $H=\\dfrac{p^2}{2m}+V(x)$ に従う．\n\\begin{enumerate}\n\\item $[H,p]=i\\hbar V'(x)$ を示し，これから $\\dfrac{d\\langle p\\rangle}{dt}$ を求めよ．エネルギーと運動量を同時に確定できるのはどんな場合か．\n\\item 一様な力 $F$ がはたらく $V(x)=-Fx$ の場合，任意の規格化可能な状態について $\\Delta E\\,\\Delta p\\ge\\hbar|F|/2$ が成り立つことを示せ．このことから $H$ について何が結論できるか．\n\\item 強さ $\\epsilon$ の一様電場中の電子（電荷 $-q$）が運動量の不確かさ $\\Delta p=\\sigma$ の状態にあるとき，$\\Delta E$ の下限を $\\hbar,q,\\epsilon,\\sigma$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $d\\langle p\\rangle/dt=-\\langle V'\\rangle$．$V'=0$（自由粒子）の場合のみ　(2) $[H,p]=-i\\hbar F$ が定数なのでロバートソン不等式から従う．$H$ は規格化可能な固有状態をもたない（スペクトルは連続）　(3) $\\Delta E\\ge5.3\\times10^{-4}\\ \\mathrm{eV}$"
+   "tex": "(1) $d\\langle p\\rangle/dt=-\\langle V'\\rangle$．$V'=0$（自由粒子）の場合のみ　(2) $[H,p]=-i\\hbar F$ が定数なのでロバートソン不等式から従う．$H$ は規格化可能な固有状態をもたない（スペクトルは連続）　(3) $\\Delta E\\ge\\dfrac{\\hbar q\\epsilon}{2\\sigma}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $[H,p]=[V,p]$．任意の $\\psi$ に対し $[V,p]\\psi=-i\\hbar V\\psi'+i\\hbar(V\\psi)'=i\\hbar V'\\psi$．よって $[H,p]=i\\hbar V'$．ハイゼンベルク方程式 $\\dfrac{d\\langle p\\rangle}{dt}=\\dfrac{i}{\\hbar}\\langle[H,p]\\rangle=-\\langle V'\\rangle$（エーレンフェストの定理）．$E$ と $p$ を同時に確定させるには同時固有状態が必要で，(完全系としては) $[H,p]=0$ すなわち $V'=0$ の場合（自由粒子）に限られる．\n\n(2) $V=-Fx$ なら $V'=-F$ で $[H,p]=-i\\hbar F$（c 数）．ロバートソンの不等式より\n\\[\n\\Delta E\\,\\Delta p\\ge\\frac12|\\langle[H,p]\\rangle|=\\frac{\\hbar|F|}{2}.\n\\]\nこれは $[x,p]=i\\hbar$ と同型の関係で，任意の規格化可能な状態に成り立つ．もし規格化可能なエネルギー固有状態があれば $\\Delta E=0$ となり，$\\Delta p$ は有限（$\\langle p^2\\rangle<\\infty$）なので左辺が 0 になって矛盾する．したがって一様場中の粒子には束縛状態がなく，エネルギースペクトルは連続（固有関数はエアリー関数で規格化不能）である．\n\n(3) $F=eE=1.602\\times10^{-19}\\times1.0\\times10^6=1.602\\times10^{-13}\\ \\mathrm N$．\n\\[\n\\Delta E\\ge\\frac{\\hbar F}{2\\Delta p}=\\frac{1.055\\times10^{-34}\\times1.602\\times10^{-13}}{2\\times1.0\\times10^{-25}}\\ \\mathrm J=8.45\\times10^{-23}\\ \\mathrm J\\approx5.3\\times10^{-4}\\ \\mathrm{eV}.\n\\]"
+    "tex": "(1) $[H,p]=[V,p]$．任意の $\\psi$ に対し $[V,p]\\psi=-i\\hbar V\\psi'+i\\hbar(V\\psi)'=i\\hbar V'\\psi$．よって $[H,p]=i\\hbar V'$．ハイゼンベルク方程式 $\\dfrac{d\\langle p\\rangle}{dt}=\\dfrac{i}{\\hbar}\\langle[H,p]\\rangle=-\\langle V'\\rangle$（エーレンフェストの定理）．$E$ と $p$ を同時に確定させるには同時固有状態が必要で，(完全系としては) $[H,p]=0$ すなわち $V'=0$ の場合（自由粒子）に限られる．\n\n(2) $V=-Fx$ なら $V'=-F$ で $[H,p]=-i\\hbar F$（c 数）．ロバートソンの不等式より\n\\[\n\\Delta E\\,\\Delta p\\ge\\frac12|\\langle[H,p]\\rangle|=\\frac{\\hbar|F|}{2}.\n\\]\nこれは $[x,p]=i\\hbar$ と同型の関係で，任意の規格化可能な状態に成り立つ．もし規格化可能なエネルギー固有状態があれば $\\Delta E=0$ となり，$\\Delta p$ は有限（$\\langle p^2\\rangle<\\infty$）なので左辺が 0 になって矛盾する．したがって一様場中の粒子には束縛状態がなく，エネルギースペクトルは連続（固有関数はエアリー関数で規格化不能）である．\n\n(3) 電子にはたらく力の大きさは $|F|=q\\epsilon$．(2) より\n\\[\n\\Delta E\\ge\\frac{\\hbar|F|}{2\\Delta p}=\\boldsymbol{\\frac{\\hbar q\\epsilon}{2\\sigma}}.\n\\]\n運動量を精密に決めた（$\\sigma$ が小さい）状態ほど，エネルギーの広がりは大きくなる．"
    }
   ],
   "idea": {
@@ -4384,7 +4384,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) ΔE：hbar q ε/(2σ)"
   },
   "methods": [],
   "tags": [
@@ -4569,16 +4569,16 @@
   "theme": "量子ゼノン効果",
   "topic": "量子ゼノン効果",
   "statement": {
-   "tex": "2準位系 $\\{|1\\rangle,|2\\rangle\\}$ のハミルトニアンを $H=\\dfrac{\\hbar\\Omega}{2}\\sigma_x$（$\\Omega>0$，$\\sigma_x$ は $|1\\rangle\\leftrightarrow|2\\rangle$ を入れ替えるパウリ行列）とする．$t=0$ に $|1\\rangle$ にあるとする．\n\\begin{enumerate}\n\\item $|1\\rangle$ でのエネルギーの標準偏差 $\\Delta H$ を求めよ．\n\\item 時間 $T=\\pi/\\Omega$ の間に，等間隔に $N$ 回「$|1\\rangle$ にあるか」を測定する（各測定で $|1\\rangle$ が得られれば状態は $|1\\rangle$ に戻る）．$N$ 回すべてで $|1\\rangle$ が得られる確率 $P_N$ を求めよ．\n\\item $N\\gg1$ のとき，$P_N$ を $1/N$ の1次まで求めよ．\n\\item $N=10$ のときの $P_N$ の値を求めよ．\n\\end{enumerate}"
+   "tex": "2準位系 $\\{|1\\rangle,|2\\rangle\\}$ のハミルトニアンを $H=\\dfrac{\\hbar\\Omega}{2}\\sigma_x$（$\\Omega>0$，$\\sigma_x$ は $|1\\rangle\\leftrightarrow|2\\rangle$ を入れ替えるパウリ行列）とする．$t=0$ に $|1\\rangle$ にあるとする．\n\\begin{enumerate}\n\\item $|1\\rangle$ でのエネルギーの標準偏差 $\\Delta H$ を求めよ．\n\\item 時間 $T=\\pi/\\Omega$ の間に，等間隔に $N$ 回「$|1\\rangle$ にあるか」を測定する（各測定で $|1\\rangle$ が得られれば状態は $|1\\rangle$ に戻る）．$N$ 回すべてで $|1\\rangle$ が得られる確率 $P_N$ を求めよ．\n\\item $N\\gg1$ のとき，$P_N$ を $1/N$ の1次まで求めよ．\n\\item 測定の間隔を $\\tau=T/N$ とする．$N\\gg1$ のとき，$1-P_N$ を $\\Omega,T,\\tau$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{\\hbar\\Omega}{2}$\n(2) $\\cos^{2N}\\dfrac{\\pi}{2N}$\n(3) $1-\\dfrac{\\pi^2}{4N}$\n(4) $0.78$"
+   "tex": "(1) $\\dfrac{\\hbar\\Omega}{2}$\n(2) $\\cos^{2N}\\dfrac{\\pi}{2N}$\n(3) $1-\\dfrac{\\pi^2}{4N}$\n(4) $\\dfrac{\\Omega^2T\\tau}{4}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\langle1|H|1\\rangle=0$，$\\langle1|H^2|1\\rangle=\\hbar^2\\Omega^2/4$（$\\sigma_x^2=1$）より $\\Delta H=\\boldsymbol{\\hbar\\Omega/2}$．\n\n(2) $e^{-iHt/\\hbar}=\\cos\\dfrac{\\Omega t}{2}-i\\sigma_x\\sin\\dfrac{\\Omega t}{2}$ なので，測定しなければ $|1\\rangle$ に残る確率は $\\cos^2(\\Omega t/2)$ で，$T=\\pi/\\Omega$ には完全に $|2\\rangle$ に移る．間隔 $T/N$ ごとに測ると各回の残留確率は $\\cos^2\\dfrac{\\pi}{2N}$ で，\n\\[ P_N=\\boldsymbol{\\cos^{2N}\\frac{\\pi}{2N}} \\]\n\n(3) 短い時間では $\\cos^2(\\Omega t/2)\\approx1-\\dfrac{(\\Delta H)^2t^2}{\\hbar^2}$ と時間の2乗でしか減らない．$P_N\\approx\\left(1-\\dfrac{\\pi^2}{4N^2}\\right)^N\\approx\\boldsymbol{1-\\dfrac{\\pi^2}{4N}}$．\n\n(4) $\\cos^{20}(\\pi/20)\\approx\\boldsymbol{0.78}$（数値計算で確認．(3) の近似では $0.75$）．\n\n$N\\to\\infty$ で $P_N\\to1$ となり，頻繁な測定が遷移を止める（量子ゼノン効果）．短時間での減衰が $t$ ではなく $t^2$ に比例することが本質で，これはユニタリな時間発展の一般的な性質である．イオントラップの実験（Itano ら，1990）で観測された．"
+    "tex": "(1) $\\langle1|H|1\\rangle=0$，$\\langle1|H^2|1\\rangle=\\hbar^2\\Omega^2/4$（$\\sigma_x^2=1$）より $\\Delta H=\\boldsymbol{\\hbar\\Omega/2}$．\n\n(2) $e^{-iHt/\\hbar}=\\cos\\dfrac{\\Omega t}{2}-i\\sigma_x\\sin\\dfrac{\\Omega t}{2}$ なので，測定しなければ $|1\\rangle$ に残る確率は $\\cos^2(\\Omega t/2)$ で，$T=\\pi/\\Omega$ には完全に $|2\\rangle$ に移る．間隔 $T/N$ ごとに測ると各回の残留確率は $\\cos^2\\dfrac{\\pi}{2N}$ で，\n\\[ P_N=\\boldsymbol{\\cos^{2N}\\frac{\\pi}{2N}} \\]\n\n(3) 短い時間では $\\cos^2(\\Omega t/2)\\approx1-\\dfrac{(\\Delta H)^2t^2}{\\hbar^2}$ と時間の2乗でしか減らない．$P_N\\approx\\left(1-\\dfrac{\\pi^2}{4N^2}\\right)^N\\approx\\boldsymbol{1-\\dfrac{\\pi^2}{4N}}$．\n\n(4) (3) に $N=T/\\tau$，$\\pi=\\Omega T$ を代入して\n\\[ 1-P_N\\approx\\frac{\\pi^2}{4N}=\\frac{\\Omega^2T^2}{4}\\cdot\\frac{\\tau}{T}=\\boldsymbol{\\frac{\\Omega^2T\\tau}{4}}=\\frac{(\\Delta H)^2}{\\hbar^2}T\\tau. \\]\n全時間 $T$ を固定したまま測定間隔 $\\tau$ を短くすると，遷移確率は $\\tau$ に比例して 0 に近づく．\n\n$N\\to\\infty$ で $P_N\\to1$ となり，頻繁な測定が遷移を止める（量子ゼノン効果）．短時間での減衰が $t$ ではなく $t^2$ に比例することが本質で，これはユニタリな時間発展の一般的な性質である．イオントラップの実験（Itano ら，1990）で観測された．"
    }
   ],
   "idea": {
@@ -4586,7 +4586,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) hbar Omega/2\n(2) cos(pi/(2N))^(2N)\n(3) 1-pi^2/(4N)\n(4) ≈0.78"
+   "spec": "(1) hbar Omega/2\n(2) cos(pi/(2N))^(2N)\n(3) 1-pi^2/(4N)\n(4) Omega^2 T τ/4"
   },
   "methods": [],
   "tags": [

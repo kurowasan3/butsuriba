@@ -202,24 +202,24 @@
   "theme": "弾むボールが止まるまでの時間と距離（等比級数）",
   "topic": "弾むボールが止まるまでの時間と距離（等比級数）",
   "statement": {
-   "tex": "高さ $h$ から静かに落としたボールが，反発係数 $e$（$0<e<1$）で床と衝突をくり返す．\n\\begin{enumerate}\n\\item $n$ 回目の衝突の直後の速さを求めよ．\n\\item 止まるまでの全時間 $T$ を求めよ（無限回はねるのに有限）．\n\\item 止まるまでに動く全距離 $D$ を求めよ．$h=1.0\\ \\mathrm{m}$，$e=0.80$，$g=9.8\\ \\mathrm{m/s^2}$ での $T$ と $D$ を求めよ．\n\\end{enumerate}"
+   "tex": "高さ $h$ から静かに落としたボールが，反発係数 $r$（$0<r<1$）で床と衝突をくり返す（重力加速度 $g$）．\n\\begin{enumerate}\n\\item $n$ 回目の衝突の直後の速さを求めよ．\n\\item 止まるまでの全時間 $T$ を求めよ（無限回はねるのに有限）．\n\\item 止まるまでに動く全距離 $D$ を求めよ．また，全時間 $T$ のあいだの平均の速さ $D/T$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $e^n\\sqrt{2gh}$　(2) $T=\\sqrt{\\dfrac{2h}{g}}\\dfrac{1+e}{1-e}$　(3) $D=h\\dfrac{1+e^2}{1-e^2}$；$T\\approx4.1\\ \\mathrm{s}$，$D\\approx4.6\\ \\mathrm{m}$"
+   "tex": "(1) $r^n\\sqrt{2gh}$　(2) $T=\\sqrt{\\dfrac{2h}{g}}\\dfrac{1+r}{1-r}$　(3) $D=h\\dfrac{1+r^2}{1-r^2}$，$\\dfrac DT=\\sqrt{\\dfrac{gh}{2}}\\dfrac{1+r^2}{(1+r)^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 最初の衝突の直前の速さは $v_0=\\sqrt{2gh}$ で，衝突ごとに $e$ 倍：$\\boldsymbol{e^n\\sqrt{2gh}}$．\n\n(2) 落下時間は $t_0=\\sqrt{2h/g}$，$n$ 回目の衝突の後の往復時間は $2e^nt_0$．\n\\[\nT=t_0+2t_0\\sum_{n=1}^\\infty e^n=t_0\\left(1+\\frac{2e}{1-e}\\right)=\\boldsymbol{\\sqrt{\\frac{2h}{g}}\\frac{1+e}{1-e}}.\n\\]\n\n(3) $n$ 回目の後の高さは $e^{2n}h$．$D=h+2h\\sum e^{2n}=\\boldsymbol{h\\dfrac{1+e^2}{1-e^2}}$．数値は $T=0.452\\times9=\\boldsymbol{4.1\\ \\mathrm{s}}$，$D=1.64/0.36\\approx\\boldsymbol{4.6\\ \\mathrm{m}}$．"
+    "tex": "(1) 最初の衝突の直前の速さは $v_0=\\sqrt{2gh}$ で，衝突ごとに $r$ 倍：$\\boldsymbol{r^n\\sqrt{2gh}}$．\n\n(2) 落下時間は $t_0=\\sqrt{2h/g}$，$n$ 回目の衝突の後の往復時間は $2r^nt_0$．\n\\[\nT=t_0+2t_0\\sum_{n=1}^\\infty r^n=t_0\\left(1+\\frac{2r}{1-r}\\right)=\\boldsymbol{\\sqrt{\\frac{2h}{g}}\\frac{1+r}{1-r}}.\n\\]\n\n(3) $n$ 回目の後の高さは $r^{2n}h$．$D=h+2h\\sum r^{2n}=\\boldsymbol{h\\dfrac{1+r^2}{1-r^2}}$．\n\\[ \\frac DT=h\\frac{1+r^2}{(1-r)(1+r)}\\sqrt{\\frac{g}{2h}}\\frac{1-r}{1+r}=\\boldsymbol{\\sqrt{\\frac{gh}{2}}\\frac{1+r^2}{(1+r)^2}}. \\]\n$r\\to1$ では $\\frac12\\sqrt{gh/2}$，すなわち最初の落下の平均の速さ $\\sqrt{gh/2}$ の半分に近づく．"
    }
   ],
   "idea": {
-   "tex": "ゼノンのパラドックスと同じく，無限回の事象の時間が等比級数の和として有限になる．時間は $e$，距離は $e^2$ の比の級数になる違いがポイントである．"
+   "tex": "ゼノンのパラドックスと同じく，無限回の事象の時間が等比級数の和として有限になる．時間は $r$，距離は $r^2$ の比の級数になる違いがポイントである．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) e ^(n) sqrt(2 g h)\n(2) $T$：sqrt(((2 h)/(g)))((1+ e)/(1- e))\n(3) 記述"
+   "spec": "(1) r^n sqrt(2 g h)\n(2) $T$：sqrt(2h/g) (1+r)/(1-r)\n(3) $D$：h (1+r^2)/(1-r^2) ; $D/T$：sqrt(g h/2) (1+r^2)/(1+r)^2"
   },
   "methods": [],
   "tags": [
@@ -300,16 +300,16 @@
   "theme": "Bessel 漸化式による数値計算と零点の性質",
   "topic": "Bessel 漸化式による数値計算と零点の性質",
   "statement": {
-   "tex": "Bessel 関数の漸化式\n\\[ J_{n-1}(x)-J_{n+1}(x)=2J_n'(x),\\qquad J_{n-1}(x)+J_{n+1}(x)=\\frac{2n}{x}J_n(x) \\]\nを用いる．\n\\begin{enumerate}\n\\item $J_0(2)=0.22389$，$J_1(2)=0.57672$ から $J_2(2)$，$J_3(2)$，$J_1'(2)$ を求めよ．\n\\item $J_n$ の正の零点 $x=j$ において $J_{n-1}(j)=-J_{n+1}(j)=J_n'(j)$ が成り立つことを示せ．\n\\end{enumerate}"
+   "tex": "Bessel 関数の漸化式\n\\[ J_{n-1}(x)-J_{n+1}(x)=2J_n'(x),\\qquad J_{n-1}(x)+J_{n+1}(x)=\\frac{2n}{x}J_n(x) \\]\nを用いる．\n\\begin{enumerate}\n\\item ある $x=x_0$ での値 $J_0(x_0)=A$，$J_1(x_0)=B$ から，$J_2(x_0)$，$J_3(x_0)$，$J_1'(x_0)$ を $A,\\ B,\\ x_0$ で表せ．\n\\item $J_n$ の正の零点 $x=j$ において $J_{n-1}(j)=-J_{n+1}(j)=J_n'(j)$ が成り立つことを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $J_2(2)\\approx0.3528$，$J_3(2)\\approx0.1289$，$J_1'(2)\\approx-0.0645$　(2) 証明（解説参照）"
+   "tex": "(1) $J_2(x_0)=\\dfrac{2B}{x_0}-A$，$J_3(x_0)=\\left(\\dfrac{8}{x_0^2}-1\\right)B-\\dfrac{4A}{x_0}$，$J_1'(x_0)=A-\\dfrac{B}{x_0}$　(2) 証明（解説参照）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 第 2 式で $n=1,x=2$：$J_2=\\dfrac{2}{2}J_1-J_0=0.57672-0.22389=0.35283$．\n$n=2$：$J_3=\\dfrac{4}{2}J_2-J_1=0.70566-0.57672=0.12894$．\n第 1 式で $n=1$：$J_1'(2)=\\dfrac{J_0-J_2}{2}=\\dfrac{0.22389-0.35283}{2}=-0.06447$．\n\n(2) $J_n(j)=0$ なら第 2 式より $J_{n-1}(j)+J_{n+1}(j)=0$，すなわち $J_{n+1}(j)=-J_{n-1}(j)$．これを第 1 式に代入して $2J_n'(j)=J_{n-1}(j)-J_{n+1}(j)=2J_{n-1}(j)$．よって $J_{n-1}(j)=-J_{n+1}(j)=J_n'(j)$．"
+    "tex": "(1) 第 2 式で $n=1$：$J_2=\\dfrac{2}{x_0}J_1-J_0=\\boldsymbol{\\dfrac{2B}{x_0}-A}$．\n$n=2$：$J_3=\\dfrac{4}{x_0}J_2-J_1=\\dfrac{8B}{x_0^2}-\\dfrac{4A}{x_0}-B=\\boldsymbol{\\left(\\dfrac{8}{x_0^2}-1\\right)B-\\dfrac{4A}{x_0}}$．\n第 1 式で $n=1$：$J_1'=\\dfrac{J_0-J_2}{2}=\\boldsymbol{A-\\dfrac{B}{x_0}}$．\n（$x_0=2$，$A=0.22389$，$B=0.57672$ なら $J_2\\approx0.3528$，$J_3\\approx0.1289$，$J_1'\\approx-0.0645$．なお $J_1'=J_0-J_1/x$ は一般に成り立つ公式である．）\n\n(2) $J_n(j)=0$ なら第 2 式より $J_{n-1}(j)+J_{n+1}(j)=0$，すなわち $J_{n+1}(j)=-J_{n-1}(j)$．これを第 1 式に代入して $2J_n'(j)=J_{n-1}(j)-J_{n+1}(j)=2J_{n-1}(j)$．よって $J_{n-1}(j)=-J_{n+1}(j)=J_n'(j)$．"
    }
   ],
   "idea": {
@@ -317,7 +317,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $J_2(2)$：≈0.3528 ; $J_3(2)$：≈0.1289 ; $J_1'(2)$：≈-0.0645\n(2) 証明"
+   "spec": "(1) $J_2(x_0)$：2B/x_0-A ; $J_3(x_0)$：(8/x_0^2-1) B-4A/x_0 ; $J_1'(x_0)$：A-B/x_0\n(2) 証明"
   },
   "methods": [],
   "tags": [
@@ -398,16 +398,16 @@
   "theme": "正方形領域のラプラス方程式とフーリエ級数",
   "topic": "正方形領域のラプラス方程式とフーリエ級数",
   "statement": {
-   "tex": "正方形 $0<x<a$，$0<y<a$ の内部で $\\nabla^2u=0$ を考える．境界条件は上辺 $y=a$ で $u=V_0$，他の3辺で $u=0$ とする．\n\\begin{enumerate}\n\\item 変数分離で $u=\\displaystyle\\sum_{n=1}^\\infty c_n\\sin\\frac{n\\pi x}{a}\\sinh\\frac{n\\pi y}{a}$ とおく．$n$ が奇数のときの $c_n$ を求めよ（偶数では $c_n=0$）．\n\\item 正方形の中心での値 $u(a/2,a/2)$ を，重ね合わせと対称性を用いて求めよ．\n\\item (1) の級数の $n=1$ の項だけで中心の値を見積もると $V_0$ の何倍か．\n\\end{enumerate}"
+   "tex": "正方形 $0<x<a$，$0<y<a$ の内部で $\\nabla^2u=0$ を考える．境界条件は上辺 $y=a$ で $u=V_0$，他の3辺で $u=0$ とする．\n\\begin{enumerate}\n\\item 変数分離で $u=\\displaystyle\\sum_{n=1}^\\infty c_n\\sin\\frac{n\\pi x}{a}\\sinh\\frac{n\\pi y}{a}$ とおく．$n$ が奇数のときの $c_n$ を求めよ（偶数では $c_n=0$）．\n\\item 正方形の中心での値 $u(a/2,a/2)$ を，重ね合わせと対称性を用いて求めよ．\n\\item (1) の級数の $n=1$ の項だけで中心の値を見積もった値を $V_0$ で表し，(2) と比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $c_n=\\frac{4V_0}{n\\pi\\sinh n\\pi}$ (2) $\\frac{V_0}{4}$ (3) $\\frac{2}{\\pi\\cosh(\\pi/2)}\\approx0.254$"
+   "tex": "(1) $c_n=\\frac{4V_0}{n\\pi\\sinh n\\pi}$ (2) $\\frac{V_0}{4}$ (3) $\\dfrac{2V_0}{\\pi\\cosh(\\pi/2)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$\\sin(n\\pi x/a)$ は $x=0,a$ で，$\\sinh(n\\pi y/a)$ は $y=0$ で $0$ になり，各項は調和である．$y=a$ で\n\\[ \\sum c_n\\sinh(n\\pi)\\sin\\frac{n\\pi x}a=V_0. \\]\n定数 $V_0$ のフーリエ正弦係数は $\\dfrac2a\\displaystyle\\int_0^aV_0\\sin\\frac{n\\pi x}adx=\\frac{2V_0}{n\\pi}(1-(-1)^n)$ なので，奇数 $n$ で $\\boldsymbol{c_n=\\dfrac{4V_0}{n\\pi\\sinh n\\pi}}$．\n\n4辺のそれぞれだけを $V_0$ にした4つの問題の解を足すと，境界がすべて $V_0$ の問題の解 $u\\equiv V_0$ になる．中心は4つの問題で対称に同等なので，各問題の中心の値は $\\boldsymbol{V_0/4}$．\n\n$n=1$ の項は $\\dfrac{4V_0}{\\pi}\\dfrac{\\sinh(\\pi/2)}{\\sinh\\pi}=\\dfrac{2V_0}{\\pi\\cosh(\\pi/2)}\\approx\\boldsymbol{0.254\\,V_0}$．$\\sinh$ の比で高次の項は指数関数的に小さくなり（$n=3$ の項は約 $-0.004\\,V_0$），1項で既に $1.5\\%$ の精度である．"
+    "tex": "$\\sin(n\\pi x/a)$ は $x=0,a$ で，$\\sinh(n\\pi y/a)$ は $y=0$ で $0$ になり，各項は調和である．$y=a$ で\n\\[ \\sum c_n\\sinh(n\\pi)\\sin\\frac{n\\pi x}a=V_0. \\]\n定数 $V_0$ のフーリエ正弦係数は $\\dfrac2a\\displaystyle\\int_0^aV_0\\sin\\frac{n\\pi x}adx=\\frac{2V_0}{n\\pi}(1-(-1)^n)$ なので，奇数 $n$ で $\\boldsymbol{c_n=\\dfrac{4V_0}{n\\pi\\sinh n\\pi}}$．\n\n4辺のそれぞれだけを $V_0$ にした4つの問題の解を足すと，境界がすべて $V_0$ の問題の解 $u\\equiv V_0$ になる．中心は4つの問題で対称に同等なので，各問題の中心の値は $\\boldsymbol{V_0/4}$．\n\n$n=1$ の項は $\\sinh\\pi=2\\sinh\\frac\\pi2\\cosh\\frac\\pi2$ を用いて $\\dfrac{4V_0}{\\pi}\\dfrac{\\sinh(\\pi/2)}{\\sinh\\pi}=\\boldsymbol{\\dfrac{2V_0}{\\pi\\cosh(\\pi/2)}}$（約 $0.254\\,V_0$）で，(2) の $V_0/4$ にほぼ等しい．$\\sinh$ の比で高次の項は指数関数的に小さくなり（$n=3$ の項は約 $-0.004\\,V_0$），1項で既に $1.5\\%$ の精度である．"
    }
   ],
   "idea": {
@@ -415,7 +415,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 4V_0/(n pi sinh(n pi))\n(2) V_0/4\n(3) ≈0.254"
+   "spec": "(1) 4V_0/(n pi sinh(n pi))\n(2) V_0/4\n(3) 2V_0/(pi cosh(pi/2))"
   },
   "methods": [],
   "tags": [
@@ -642,16 +642,16 @@
   "theme": "プランク分布の積分とゼータ関数：光子の平均エネルギー",
   "topic": "プランク分布の積分とゼータ関数：光子の平均エネルギー",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item $\\dfrac{1}{e^x-1}=\\displaystyle\\sum_{k=1}^\\infty e^{-kx}$（$x>0$）を用いて，$\\displaystyle\\int_0^\\infty\\frac{x^{s-1}}{e^x-1}dx=\\Gamma(s)\\zeta(s)$（$s>1$）を示せ．\n\\item $\\zeta(4)=\\dfrac{\\pi^4}{90}$ を用いて $\\displaystyle\\int_0^\\infty\\frac{x^3}{e^x-1}dx$ を求めよ．\n\\item 黒体放射の光子の平均エネルギーは $k_BT\\dfrac{\\int x^3/(e^x-1)dx}{\\int x^2/(e^x-1)dx}$ である．$\\zeta(3)=1.2021$ として値を $k_BT$ 単位で求めよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item $\\dfrac{1}{e^x-1}=\\displaystyle\\sum_{k=1}^\\infty e^{-kx}$（$x>0$）を用いて，$\\displaystyle\\int_0^\\infty\\frac{x^{s-1}}{e^x-1}dx=\\Gamma(s)\\zeta(s)$（$s>1$）を示せ．\n\\item $\\zeta(4)=\\dfrac{\\pi^4}{90}$ を用いて $\\displaystyle\\int_0^\\infty\\frac{x^3}{e^x-1}dx$ を求めよ．\n\\item 黒体放射の光子の平均エネルギーは $k_BT\\dfrac{\\int x^3/(e^x-1)dx}{\\int x^2/(e^x-1)dx}$ である．$\\zeta(3)$ を $\\zeta_3$ と書いて，平均エネルギーを $k_B,\\ T,\\ \\zeta_3$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明　(2) $\\dfrac{\\pi^4}{15}$　(3) $\\approx2.70k_BT$"
+   "tex": "(1) 証明　(2) $\\dfrac{\\pi^4}{15}$　(3) $\\dfrac{\\pi^4k_BT}{30\\zeta_3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 項別に積分すると（正の項なので交換してよい）$\\int_0^\\infty x^{s-1}e^{-kx}dx=\\dfrac{\\Gamma(s)}{k^s}$．$k$ について和をとって $\\Gamma(s)\\zeta(s)$．\\hfill$\\square$\n\n(2) $s=4$：$\\Gamma(4)\\zeta(4)=6\\cdot\\dfrac{\\pi^4}{90}=\\boldsymbol{\\dfrac{\\pi^4}{15}}\\approx6.494$（シュテファン＝ボルツマンの法則の係数のもと）．\n\n(3) 分母は $\\Gamma(3)\\zeta(3)=2\\times1.2021=2.404$．平均エネルギーは $\\dfrac{6.494}{2.404}k_BT\\approx\\boldsymbol{2.70k_BT}$．"
+    "tex": "(1) 項別に積分すると（正の項なので交換してよい）$\\int_0^\\infty x^{s-1}e^{-kx}dx=\\dfrac{\\Gamma(s)}{k^s}$．$k$ について和をとって $\\Gamma(s)\\zeta(s)$．\\hfill$\\square$\n\n(2) $s=4$：$\\Gamma(4)\\zeta(4)=6\\cdot\\dfrac{\\pi^4}{90}=\\boldsymbol{\\dfrac{\\pi^4}{15}}\\approx6.494$（シュテファン＝ボルツマンの法則の係数のもと）．\n\n(3) 分母は $\\Gamma(3)\\zeta(3)=2\\zeta_3$．平均エネルギーは $\\dfrac{\\pi^4/15}{2\\zeta_3}k_BT=\\boldsymbol{\\dfrac{\\pi^4k_BT}{30\\zeta_3}}$（$\\zeta_3\\approx1.202$ で約 $2.70k_BT$）．光子 1 個はおよそ $3k_BT$ のエネルギーをもつ．"
    }
   ],
   "idea": {
@@ -659,7 +659,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) ((pi ^(4))/(15))\n(3) 記述"
+   "spec": "(1) 証明\n(2) ((pi ^(4))/(15))\n(3) pi^4 k_B T/(30 ζ_3)"
   },
   "methods": [],
   "tags": [
@@ -789,16 +789,16 @@
   "theme": "半無限の帯での放物線型の境界値と，環状領域の cos3θ の問題",
   "topic": "半無限の帯での放物線型の境界値と，環状領域の cos3θ の問題",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 領域 $0<x<a$，$y>0$ で $\\nabla^2\\psi=0$，$\\psi(0,y)=\\psi(a,y)=0$，$\\psi(x,0)=\\lambda x(a-x)$，$y\\to\\infty$ で $\\psi\\to0$ をみたす解を求めよ．$y=a$ で第2項と第1項の比を見積もれ．\n\\item $a<r<b$ で $\\nabla^2\\psi=0$，$\\partial_r\\psi(a,\\theta)=0$，$\\psi(b,\\theta)=\\lambda\\cos3\\theta$ をみたす解を求めよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 領域 $0<x<a$，$y>0$ で $\\nabla^2\\psi=0$，$\\psi(0,y)=\\psi(a,y)=0$，$\\psi(x,0)=\\lambda x(a-x)$，$y\\to\\infty$ で $\\psi\\to0$ をみたす解を求めよ．高さ $y$ で第 2 項（$n=3$）と第 1 項（$n=1$）の振幅の比を求めよ．\n\\item $a<r<b$ で $\\nabla^2\\psi=0$，$\\partial_r\\psi(a,\\theta)=0$，$\\psi(b,\\theta)=\\lambda\\cos3\\theta$ をみたす解を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\psi=\\displaystyle\\sum_{n\\ \\text{奇数}}\\frac{8\\lambda a^2}{\\pi^3n^3}\\sin\\frac{n\\pi x}{a}e^{-n\\pi y/a}$；$\\dfrac{e^{-2\\pi}}{27}\\approx7\\times10^{-5}$　(2) $\\psi=\\dfrac{\\lambda(r^3+a^6r^{-3})}{b^3+a^6b^{-3}}\\cos3\\theta$"
+   "tex": "(1) $\\psi=\\displaystyle\\sum_{n\\ \\text{奇数}}\\frac{8\\lambda a^2}{\\pi^3n^3}\\sin\\frac{n\\pi x}{a}e^{-n\\pi y/a}$；比 $\\dfrac{e^{-2\\pi y/a}}{27}$　(2) $\\psi=\\dfrac{\\lambda(r^3+a^6r^{-3})}{b^3+a^6b^{-3}}\\cos3\\theta$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 各項 $\\sin\\frac{n\\pi x}a e^{-n\\pi y/a}$．$x(a-x)$ のフーリエ係数は $\\frac{8a^2}{\\pi^3n^3}$（$n$ 奇数）．$y=a$ での比は $\\frac1{27}e^{-2\\pi}\\approx\\boldsymbol{7\\times10^{-5}}$（高次の項はすぐ消える）．\n\n(2) $\\psi=(Ar^3+Br^{-3})\\cos3\\theta$．$\\partial_r\\psi(a)=0$ より $B=Aa^6$，$\\psi(b)=\\lambda\\cos3\\theta$ から $A$．与式．"
+    "tex": "(1) 各項 $\\sin\\frac{n\\pi x}a e^{-n\\pi y/a}$．$x(a-x)$ のフーリエ係数は $\\frac{8a^2}{\\pi^3n^3}$（$n$ 奇数）．$n=3$ と $n=1$ の振幅の比は $\\boldsymbol{\\dfrac{1}{27}e^{-2\\pi y/a}}$．$y=a$ では約 $7\\times10^{-5}$ で，高次の項はすぐ消える．\n\n(2) $\\psi=(Ar^3+Br^{-3})\\cos3\\theta$．$\\partial_r\\psi(a)=0$ より $B=Aa^6$，$\\psi(b)=\\lambda\\cos3\\theta$ から $A$．与式．"
    }
   ],
   "idea": {
@@ -806,7 +806,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\psi$：((λ (r ^(3)+ a ^(6) r ^(-3)))/(b ^(3)+ a ^(6) b ^(-3))) cos 3 θ"
+   "spec": "(1) 比：exp(-2 pi y/a)/27\n(2) $\\psi$：((λ (r ^(3)+ a ^(6) r ^(-3)))/(b ^(3)+ a ^(6) b ^(-3))) cos 3 θ"
   },
   "methods": [],
   "tags": [
@@ -1031,16 +1031,16 @@
   "theme": "ガウス積分の上下界と1σ確率",
   "topic": "ガウス積分の上下界と1σ確率",
   "statement": {
-   "tex": "$G(a)=\\displaystyle\\int_0^a e^{-x^2}dx$（$a>0$）とする．\n\\begin{enumerate}\n\\item $G(a)^2$ を $xy$ 平面の正方形 $[0,a]\\times[0,a]$ 上の $e^{-(x^2+y^2)}$ の2重積分として表し，この正方形を内側と外側から挟む2つの四分円を用いて\n\\[ \\frac{\\pi}{4}\\left(1-e^{-a^2}\\right)\\le G(a)^2\\le\\frac{\\pi}{4}\\left(1-e^{-2a^2}\\right) \\]\nを示せ．\n\\item (1) から $\\displaystyle\\int_0^\\infty e^{-x^2}dx$ の値を求めよ．\n\\item 標準偏差 $\\sigma$ の正規分布 $p(X)=\\dfrac{1}{\\sqrt{2\\pi}\\,\\sigma}e^{-X^2/(2\\sigma^2)}$ に従う量（例えば熱平衡にある気体分子の速度の1成分）が $|X|<k\\sigma$ となる確率を $P_k$ とする．$P_k$ を $G$ で表し，(1) を用いて $P_k$ の上下界を $k$ の初等関数で与えよ．$k=1$ のときの上下界を小数第2位まで求め，実際の値 $P_1\\approx0.683$ を挟むことを確かめよ．\n\\end{enumerate}"
+   "tex": "$G(a)=\\displaystyle\\int_0^a e^{-x^2}dx$（$a>0$）とする．\n\\begin{enumerate}\n\\item $G(a)^2$ を $xy$ 平面の正方形 $[0,a]\\times[0,a]$ 上の $e^{-(x^2+y^2)}$ の2重積分として表し，この正方形を内側と外側から挟む2つの四分円を用いて\n\\[ \\frac{\\pi}{4}\\left(1-e^{-a^2}\\right)\\le G(a)^2\\le\\frac{\\pi}{4}\\left(1-e^{-2a^2}\\right) \\]\nを示せ．\n\\item (1) から $\\displaystyle\\int_0^\\infty e^{-x^2}dx$ の値を求めよ．\n\\item 標準偏差 $\\sigma$ の正規分布 $p(X)=\\dfrac{1}{\\sqrt{2\\pi}\\,\\sigma}e^{-X^2/(2\\sigma^2)}$ に従う量（例えば熱平衡にある気体分子の速度の1成分）が $|X|<k\\sigma$ となる確率を $P_k$ とする．$P_k$ を $G$ で表し，(1) を用いて $P_k$ の上下界を $k$ の初等関数で与えよ．$k\\to\\infty$ で上下界がともに 1 に近づくことを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $\\dfrac{\\sqrt\\pi}{2}$　(3) $P_k=\\dfrac{2}{\\sqrt\\pi}G\\!\\left(\\dfrac{k}{\\sqrt2}\\right)$，$\\sqrt{1-e^{-k^2/2}}\\le P_k\\le\\sqrt{1-e^{-k^2}}$；$k=1$ で $0.63\\le P_1\\le0.80$"
+   "tex": "(1) 証明（解説参照）　(2) $\\dfrac{\\sqrt\\pi}{2}$　(3) $P_k=\\dfrac{2}{\\sqrt\\pi}G\\!\\left(\\dfrac{k}{\\sqrt2}\\right)$，$\\sqrt{1-e^{-k^2/2}}\\le P_k\\le\\sqrt{1-e^{-k^2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $G(a)^2=\\displaystyle\\int_0^a e^{-x^2}dx\\int_0^a e^{-y^2}dy=\\iint_{[0,a]^2}e^{-(x^2+y^2)}dx\\,dy$．\n被積分関数は正なので，積分領域を広げれば値は増える．第1象限の半径 $a$ の四分円 $D_a$ は正方形に含まれ，正方形は半径 $\\sqrt2 a$ の四分円 $D_{\\sqrt2a}$ に含まれる．極座標（ヤコビアン $r$）で\n\\[ \\iint_{D_\\rho}e^{-(x^2+y^2)}dx\\,dy=\\int_0^{\\pi/2}\\!d\\theta\\int_0^\\rho e^{-r^2}r\\,dr=\\frac{\\pi}{2}\\cdot\\frac{1-e^{-\\rho^2}}{2}=\\frac{\\pi}{4}\\left(1-e^{-\\rho^2}\\right). \\]\n$\\rho=a,\\ \\sqrt2a$ を代入して\n\\[ \\frac{\\pi}{4}(1-e^{-a^2})\\le G(a)^2\\le\\frac{\\pi}{4}(1-e^{-2a^2}). \\]\n(2) $a\\to\\infty$ で上下界がともに $\\pi/4$ に収束するので（はさみうち），$G(\\infty)^2=\\pi/4$．$G>0$ より $\\displaystyle\\int_0^\\infty e^{-x^2}dx=\\frac{\\sqrt\\pi}{2}$．\n\n(3) $X=\\sqrt2\\sigma x$ と置換すると\n\\[ P_k=\\int_{-k\\sigma}^{k\\sigma}\\frac{e^{-X^2/2\\sigma^2}}{\\sqrt{2\\pi}\\sigma}dX=\\frac{2}{\\sqrt\\pi}\\int_0^{k/\\sqrt2}e^{-x^2}dx=\\frac{2}{\\sqrt\\pi}G\\!\\left(\\frac{k}{\\sqrt2}\\right). \\]\n$P_k^2=\\dfrac{4}{\\pi}G(k/\\sqrt2)^2$ に (1) を $a=k/\\sqrt2$ で用いると $1-e^{-k^2/2}\\le P_k^2\\le 1-e^{-k^2}$，すなわち\n\\[ \\sqrt{1-e^{-k^2/2}}\\le P_k\\le\\sqrt{1-e^{-k^2}}. \\]\n$k=1$：$\\sqrt{1-e^{-1/2}}\\approx0.627$，$\\sqrt{1-e^{-1}}\\approx0.795$ で，$0.63\\le P_1\\approx0.683\\le0.80$ を確かに満たす．\n補足：正方形と同じ面積の四分円（半径 $2a/\\sqrt\\pi$）で置き換えると近似式 $P_k\\approx\\sqrt{1-e^{-2k^2/\\pi}}$（$k=1$ で $0.686$）が得られ，非常によい近似になる．"
+    "tex": "(1) $G(a)^2=\\displaystyle\\int_0^a e^{-x^2}dx\\int_0^a e^{-y^2}dy=\\iint_{[0,a]^2}e^{-(x^2+y^2)}dx\\,dy$．\n被積分関数は正なので，積分領域を広げれば値は増える．第1象限の半径 $a$ の四分円 $D_a$ は正方形に含まれ，正方形は半径 $\\sqrt2 a$ の四分円 $D_{\\sqrt2a}$ に含まれる．極座標（ヤコビアン $r$）で\n\\[ \\iint_{D_\\rho}e^{-(x^2+y^2)}dx\\,dy=\\int_0^{\\pi/2}\\!d\\theta\\int_0^\\rho e^{-r^2}r\\,dr=\\frac{\\pi}{2}\\cdot\\frac{1-e^{-\\rho^2}}{2}=\\frac{\\pi}{4}\\left(1-e^{-\\rho^2}\\right). \\]\n$\\rho=a,\\ \\sqrt2a$ を代入して\n\\[ \\frac{\\pi}{4}(1-e^{-a^2})\\le G(a)^2\\le\\frac{\\pi}{4}(1-e^{-2a^2}). \\]\n(2) $a\\to\\infty$ で上下界がともに $\\pi/4$ に収束するので（はさみうち），$G(\\infty)^2=\\pi/4$．$G>0$ より $\\displaystyle\\int_0^\\infty e^{-x^2}dx=\\frac{\\sqrt\\pi}{2}$．\n\n(3) $X=\\sqrt2\\sigma x$ と置換すると\n\\[ P_k=\\int_{-k\\sigma}^{k\\sigma}\\frac{e^{-X^2/2\\sigma^2}}{\\sqrt{2\\pi}\\sigma}dX=\\frac{2}{\\sqrt\\pi}\\int_0^{k/\\sqrt2}e^{-x^2}dx=\\frac{2}{\\sqrt\\pi}G\\!\\left(\\frac{k}{\\sqrt2}\\right). \\]\n$P_k^2=\\dfrac{4}{\\pi}G(k/\\sqrt2)^2$ に (1) を $a=k/\\sqrt2$ で用いると $1-e^{-k^2/2}\\le P_k^2\\le 1-e^{-k^2}$，すなわち\n\\[ \\sqrt{1-e^{-k^2/2}}\\le P_k\\le\\sqrt{1-e^{-k^2}}. \\]\n$k\\to\\infty$ では $e^{-k^2/2},e^{-k^2}\\to0$ で上下界はともに 1 に近づく（全確率）．$k=1$ でも上下界は約 $0.63$ と $0.80$ で，実際の値 $P_1\\approx0.683$ を挟む．\n補足：正方形と同じ面積の四分円（半径 $2a/\\sqrt\\pi$）で置き換えると近似式 $P_k\\approx\\sqrt{1-e^{-2k^2/\\pi}}$（$k=1$ で $0.686$）が得られ，非常によい近似になる．"
    }
   ],
   "idea": {
@@ -1048,7 +1048,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) ((sqrt(pi))/(2))\n(3) 記述"
+   "spec": "(1) 証明\n(2) ((sqrt(pi))/(2))\n(3) $P_k$ の下界：sqrt(1-exp(-k^2/2)) ; 上界：sqrt(1-exp(-k^2))"
   },
   "methods": [],
   "tags": [
@@ -1378,16 +1378,16 @@
   "theme": "スターリング公式と2準位スピン系の状態数",
   "topic": "スターリング公式と2準位スピン系の状態数",
   "statement": {
-   "tex": "$N$ 個の独立なスピン（各々上向きか下向き）からなる系で，上向きスピンが $n$ 個の状態数は $W(N,n)=\\dbinom Nn$ である．スターリングの公式 $\\ln\\Gamma(x+1)\\simeq\\left(x+\\frac12\\right)\\ln x-x+\\frac12\\ln2\\pi$（$x\\gg1$）を用いよ．\n\\begin{enumerate}\n\\item $n=Np$（$0<p<1$ 固定），$N\\gg1$ として $\\ln W$ を $\\ln N$ の項まで求めよ．最高次の項は $N$ にどう比例するか．\n\\item $N$ が偶数のとき，全状態のうち上下が同数の状態の割合 $W(N,N/2)/2^N$ の漸近形を求め，$N=100$ のときの近似値を求めよ（厳密値は $0.07959$）．\n\\item $n=N/2+s$（$|s|\\ll N$）とするとき，$W(N,N/2+s)/W(N,N/2)$ を $s$ のガウス関数で近似せよ．\n\\end{enumerate}"
+   "tex": "$N$ 個の独立なスピン（各々上向きか下向き）からなる系で，上向きスピンが $n$ 個の状態数は $W(N,n)=\\dbinom Nn$ である．スターリングの公式 $\\ln\\Gamma(x+1)\\simeq\\left(x+\\frac12\\right)\\ln x-x+\\frac12\\ln2\\pi$（$x\\gg1$）を用いよ．\n\\begin{enumerate}\n\\item $n=Np$（$0<p<1$ 固定），$N\\gg1$ として $\\ln W$ を $\\ln N$ の項まで求めよ．最高次の項は $N$ にどう比例するか．\n\\item $N$ が偶数のとき，全状態のうち上下が同数の状態の割合 $W(N,N/2)/2^N$ の漸近形を求めよ．また $\\ln N!\\simeq N\\ln N-N$ だけを用いるとどうなるか．\n\\item $n=N/2+s$（$|s|\\ll N$）とするとき，$W(N,N/2+s)/W(N,N/2)$ を $s$ のガウス関数で近似せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\ln W\\simeq NH(p)-\\frac12\\ln\\{2\\pi Np(1-p)\\}$，$H(p)=-p\\ln p-(1-p)\\ln(1-p)$　(2) $\\sqrt{2/(\\pi N)}$，$N=100$ で $0.07979$　(3) $e^{-2s^2/N}$"
+   "tex": "(1) $\\ln W\\simeq NH(p)-\\frac12\\ln\\{2\\pi Np(1-p)\\}$，$H(p)=-p\\ln p-(1-p)\\ln(1-p)$　(2) $\\sqrt{\\dfrac{2}{\\pi N}}$（主要項だけでは 1 となり誤る）　(3) $e^{-2s^2/N}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\ln W=\\ln\\Gamma(N+1)-\\ln\\Gamma(Np+1)-\\ln\\Gamma(Nq+1)$（$q=1-p$）にスターリングを代入する．$-x$ の項は $-N+Np+Nq=0$ で消える．\n\\[ \\left(N+\\tfrac12\\right)\\ln N-\\left(Np+\\tfrac12\\right)(\\ln N+\\ln p)-\\left(Nq+\\tfrac12\\right)(\\ln N+\\ln q)-\\tfrac12\\ln2\\pi \\]\n\\[ =-Np\\ln p-Nq\\ln q-\\tfrac12\\ln N-\\tfrac12\\ln(pq)-\\tfrac12\\ln2\\pi=NH(p)-\\tfrac12\\ln\\{2\\pi Npq\\}. \\]\n最高次は $N$ に比例（示量的なエントロピー $S=k_B\\ln W\\simeq Nk_BH(p)$）．\n\n(2) $p=\\frac12$：$H=\\ln2$，$\\ln W\\simeq N\\ln2-\\frac12\\ln(\\pi N/2)$．よって $W/2^N\\simeq\\sqrt{\\dfrac{2}{\\pi N}}$．$N=100$ で $\\sqrt{2/(100\\pi)}=0.07979$（厳密値 $0.07959$ と相対誤差 $0.25\\%$，誤差は $O(1/N)$）．\nもし $\\ln N!\\simeq N\\ln N-N$ だけを使うと $W/2^N\\simeq1$ となり完全に誤る：割合を問うときは $\\frac12\\ln$ の項が主役になる．\n\n(3) (1) で $p=\\frac12+s/N$ とし，$H(p)$ を $p=\\frac12$ のまわりで展開：$H'(\\tfrac12)=0$，$H''(p)=-\\dfrac1{p(1-p)}=-4$．よって $NH\\simeq N\\ln2-\\frac N2\\cdot4\\left(\\frac sN\\right)^2=N\\ln2-\\dfrac{2s^2}{N}$．$\\frac12\\ln$ の項の変化は高次なので\n\\[ \\frac{W(N,N/2+s)}{W(N,N/2)}\\simeq e^{-2s^2/N}. \\]\n（分散 $N/4$ のガウス分布．磁化のゆらぎは $\\sqrt N$ に比例する．）"
+    "tex": "(1) $\\ln W=\\ln\\Gamma(N+1)-\\ln\\Gamma(Np+1)-\\ln\\Gamma(Nq+1)$（$q=1-p$）にスターリングを代入する．$-x$ の項は $-N+Np+Nq=0$ で消える．\n\\[ \\left(N+\\tfrac12\\right)\\ln N-\\left(Np+\\tfrac12\\right)(\\ln N+\\ln p)-\\left(Nq+\\tfrac12\\right)(\\ln N+\\ln q)-\\tfrac12\\ln2\\pi \\]\n\\[ =-Np\\ln p-Nq\\ln q-\\tfrac12\\ln N-\\tfrac12\\ln(pq)-\\tfrac12\\ln2\\pi=NH(p)-\\tfrac12\\ln\\{2\\pi Npq\\}. \\]\n最高次は $N$ に比例（示量的なエントロピー $S=k_B\\ln W\\simeq Nk_BH(p)$）．\n\n(2) $p=\\frac12$：$H=\\ln2$，$\\ln W\\simeq N\\ln2-\\frac12\\ln(\\pi N/2)$．よって $W/2^N\\simeq\\boldsymbol{\\sqrt{\\dfrac{2}{\\pi N}}}$（$N=100$ でも厳密値との相対誤差は $0.25\\%$ 程度，誤差は $O(1/N)$）．\nもし $\\ln N!\\simeq N\\ln N-N$ だけを使うと $W/2^N\\simeq1$ となり完全に誤る：割合を問うときは $\\frac12\\ln$ の項が主役になる．\n\n(3) (1) で $p=\\frac12+s/N$ とし，$H(p)$ を $p=\\frac12$ のまわりで展開：$H'(\\tfrac12)=0$，$H''(p)=-\\dfrac1{p(1-p)}=-4$．よって $NH\\simeq N\\ln2-\\frac N2\\cdot4\\left(\\frac sN\\right)^2=N\\ln2-\\dfrac{2s^2}{N}$．$\\frac12\\ln$ の項の変化は高次なので\n\\[ \\frac{W(N,N/2+s)}{W(N,N/2)}\\simeq e^{-2s^2/N}. \\]\n（分散 $N/4$ のガウス分布．磁化のゆらぎは $\\sqrt N$ に比例する．）"
    }
   ],
   "idea": {
@@ -1395,7 +1395,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) e ^(-2 s ^(2)/ N)"
+   "spec": "(1) 記述\n(2) $W/2^N$：sqrt(2/(pi N))\n(3) e ^(-2 s ^(2)/ N)"
   },
   "methods": [],
   "tags": [
@@ -1428,16 +1428,16 @@
   "theme": "高次元球の体積と表面集中",
   "topic": "高次元球の体積と表面集中",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item ガウス積分 $\\displaystyle\\int_{\\mathbb R^d}e^{-r^2}d^dx=\\pi^{d/2}$ を，極座標で $\\displaystyle\\int_0^\\infty e^{-r^2}S_{d-1}r^{d-1}dr$（$S_{d-1}$ は単位球面の面積）と書き直すことにより，$S_{d-1}$ と半径 $R$ の $d$ 次元球の体積 $V_d(R)$ をガンマ関数で表せ．\n\\item 単位球（$R=1$）の体積 $V_d(1)$ が最大となる整数 $d$ とそのときの体積を求めよ．また $d\\to\\infty$ での $V_d(1)$ の振る舞いを述べよ．\n\\item $d=100$ のとき，単位球の体積のうち外側の厚さ $1\\%$ の殻 $0.99<r<1$ に含まれる割合を求めよ．$d=3N$ の運動量空間で考える理想気体のミクロカノニカル集団で，「エネルギー $\\le E$ の状態数」と「エネルギーが $E$ 近傍の状態数」がほぼ同じに扱える理由をこれと関連させて述べよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item ガウス積分 $\\displaystyle\\int_{\\mathbb R^d}e^{-r^2}d^dx=\\pi^{d/2}$ を，極座標で $\\displaystyle\\int_0^\\infty e^{-r^2}S_{d-1}r^{d-1}dr$（$S_{d-1}$ は単位球面の面積）と書き直すことにより，$S_{d-1}$ と半径 $R$ の $d$ 次元球の体積 $V_d(R)$ をガンマ関数で表せ．\n\\item 単位球（$R=1$）の体積 $V_d(1)$ が最大となる整数 $d$ とそのときの体積を求めよ．また $d\\to\\infty$ での $V_d(1)$ の振る舞いを述べよ．\n\\item 単位球の体積のうち外側の厚さ $\\epsilon$ の殻 $1-\\epsilon<r<1$ に含まれる割合 $f$ を $d,\\ \\epsilon$ で表せ．$d\\epsilon\\gg1$ のときどうなるか．$d=3N$ の運動量空間で考える理想気体のミクロカノニカル集団で，「エネルギー $\\le E$ の状態数」と「エネルギーが $E$ 近傍の状態数」がほぼ同じに扱える理由をこれと関連させて述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $S_{d-1}=\\dfrac{2\\pi^{d/2}}{\\Gamma(d/2)}$，$V_d(R)=\\dfrac{\\pi^{d/2}}{\\Gamma(d/2+1)}R^d$　(2) $d=5$，$V_5=\\dfrac{8\\pi^2}{15}\\approx5.264$；$d\\to\\infty$ で $0$ に収束　(3) $1-0.99^{100}\\approx0.634$"
+   "tex": "(1) $S_{d-1}=\\dfrac{2\\pi^{d/2}}{\\Gamma(d/2)}$，$V_d(R)=\\dfrac{\\pi^{d/2}}{\\Gamma(d/2+1)}R^d$　(2) $d=5$，$V_5=\\dfrac{8\\pi^2}{15}$；$d\\to\\infty$ で $0$ に収束　(3) $f=1-(1-\\epsilon)^d\\simeq1-e^{-d\\epsilon}$，$d\\epsilon\\gg1$ でほぼ 1"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\displaystyle\\int_0^\\infty e^{-r^2}r^{d-1}dr=\\frac12\\Gamma\\!\\left(\\frac d2\\right)$（$u=r^2$）．よって $\\pi^{d/2}=S_{d-1}\\cdot\\frac12\\Gamma(d/2)$，$S_{d-1}=2\\pi^{d/2}/\\Gamma(d/2)$．\n$V_d(R)=\\displaystyle\\int_0^RS_{d-1}r^{d-1}dr=\\frac{S_{d-1}R^d}{d}=\\frac{\\pi^{d/2}}{\\frac d2\\Gamma(d/2)}R^d=\\frac{\\pi^{d/2}}{\\Gamma(d/2+1)}R^d$．（$d=2$：$\\pi R^2$，$d=3$：$\\frac43\\pi R^3$．）\n\n(2) $V_{d+2}/V_d=\\dfrac{\\pi}{d/2+1}=\\dfrac{2\\pi}{d+2}$ は $d>2\\pi-2\\approx4.28$ で $1$ 未満．具体値：$V_1=2$，$V_2=\\pi\\approx3.142$，$V_3\\approx4.189$，$V_4=\\pi^2/2\\approx4.935$，$V_5=8\\pi^2/15\\approx5.264$，$V_6=\\pi^3/6\\approx5.168$，$V_7\\approx4.725$．よって最大は $d=5$．$d\\to\\infty$ ではスターリング公式より $V_d\\sim\\dfrac{1}{\\sqrt{\\pi d}}\\left(\\dfrac{2\\pi e}{d}\\right)^{d/2}\\to0$（辺 2 の外接立方体の体積 $2^d$ に比べ極端に小さい）．\n\n(3) $V_d\\propto R^d$ より割合は $1-0.99^{100}=0.634$．$d$ が大きいと体積のほとんどが表面直下にある．$d=3N\\sim10^{23}$ では $1-(1-\\epsilon)^{3N}\\simeq1$ がごく小さい $\\epsilon$ でも成り立つので，$E$ 以下の全状態数と $E$ 近傍の薄い殻内の状態数は対数をとるとほぼ等しく，エントロピーはどちらで数えても（示量的な精度で）同じになる．"
+    "tex": "(1) $\\displaystyle\\int_0^\\infty e^{-r^2}r^{d-1}dr=\\frac12\\Gamma\\!\\left(\\frac d2\\right)$（$u=r^2$）．よって $\\pi^{d/2}=S_{d-1}\\cdot\\frac12\\Gamma(d/2)$，$S_{d-1}=2\\pi^{d/2}/\\Gamma(d/2)$．\n$V_d(R)=\\displaystyle\\int_0^RS_{d-1}r^{d-1}dr=\\frac{S_{d-1}R^d}{d}=\\frac{\\pi^{d/2}}{\\frac d2\\Gamma(d/2)}R^d=\\frac{\\pi^{d/2}}{\\Gamma(d/2+1)}R^d$．（$d=2$：$\\pi R^2$，$d=3$：$\\frac43\\pi R^3$．）\n\n(2) $V_{d+2}/V_d=\\dfrac{\\pi}{d/2+1}=\\dfrac{2\\pi}{d+2}$ は $d>2\\pi-2\\approx4.28$ で $1$ 未満．具体値：$V_1=2$，$V_2=\\pi\\approx3.142$，$V_3\\approx4.189$，$V_4=\\pi^2/2\\approx4.935$，$V_5=8\\pi^2/15\\approx5.264$，$V_6=\\pi^3/6\\approx5.168$，$V_7\\approx4.725$．よって最大は $d=5$．$d\\to\\infty$ ではスターリング公式より $V_d\\sim\\dfrac{1}{\\sqrt{\\pi d}}\\left(\\dfrac{2\\pi e}{d}\\right)^{d/2}\\to0$（辺 2 の外接立方体の体積 $2^d$ に比べ極端に小さい）．\n\n(3) $V_d\\propto R^d$ より割合は $\\boldsymbol{f=1-(1-\\epsilon)^d}\\simeq1-e^{-d\\epsilon}$．$d\\epsilon\\gg1$ ではほぼ 1 で，体積のほとんどが表面直下にある（$d=100$，$\\epsilon=0.01$ でも約 63%）．$d=3N\\sim10^{23}$ では $1-(1-\\epsilon)^{3N}\\simeq1$ がごく小さい $\\epsilon$ でも成り立つので，$E$ 以下の全状態数と $E$ 近傍の薄い殻内の状態数は対数をとるとほぼ等しく，エントロピーはどちらで数えても（示量的な精度で）同じになる．"
    }
   ],
   "idea": {
@@ -1445,7 +1445,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) ≈0.634"
+   "spec": "(1) 記述\n(2) 記述\n(3) $f$：1-(1-ε)^d"
   },
   "methods": [],
   "tags": [
@@ -1778,16 +1778,16 @@
   "theme": "ベータ関数で求める超楕円の面積",
   "topic": "ベータ関数で求める超楕円の面積",
   "statement": {
-   "tex": "ベータ関数 $B(m,n)=\\displaystyle\\int_0^1x^{m-1}(1-x)^{n-1}dx=\\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$（$m,n>0$）を用いる．$p>0$ に対し，平面上の領域 $D_p:\\ |x|^p+|y|^p\\le1$ を考える．\n\\begin{enumerate}\n\\item $D_p$ の面積 $A(p)$ が\n\\[ A(p)=\\frac{4\\,\\Gamma(1+1/p)^2}{\\Gamma(1+2/p)} \\]\nであることを示せ．\n\\item $p=1,2$ の結果を図形的に確かめ，$p\\to\\infty$ の極限値を求め，その意味を述べよ．\n\\item 同じ方法で 3 次元領域 $|x|^p+|y|^p+|z|^p\\le1$ の体積 $V(p)$ を求め，$p=4$ の値を有効数字 3 桁で答えよ．\n\\end{enumerate}"
+   "tex": "ベータ関数 $B(m,n)=\\displaystyle\\int_0^1x^{m-1}(1-x)^{n-1}dx=\\frac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$（$m,n>0$）を用いる．$p>0$ に対し，平面上の領域 $D_p:\\ |x|^p+|y|^p\\le1$ を考える．\n\\begin{enumerate}\n\\item $D_p$ の面積 $A(p)$ が\n\\[ A(p)=\\frac{4\\,\\Gamma(1+1/p)^2}{\\Gamma(1+2/p)} \\]\nであることを示せ．\n\\item $p=1,2$ の結果を図形的に確かめ，$p\\to\\infty$ の極限値を求め，その意味を述べよ．\n\\item 同じ方法で 3 次元領域 $|x|^p+|y|^p+|z|^p\\le1$ の体積 $V(p)$ を求め，$p=4$ の値を $\\Gamma(1/4)$ と $\\pi$ で表せ（相反公式 $\\Gamma(z)\\Gamma(1-z)=\\dfrac{\\pi}{\\sin\\pi z}$ を用いてよい）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $A(1)=2$，$A(2)=\\pi$，$A(p)\\to4$　(3) $V(p)=\\dfrac{8\\Gamma(1+1/p)^3}{\\Gamma(1+3/p)}$，$V(4)\\approx6.48$"
+   "tex": "(1) 証明（解説参照）　(2) $A(1)=2$，$A(2)=\\pi$，$A(p)\\to4$　(3) $V(p)=\\dfrac{8\\Gamma(1+1/p)^3}{\\Gamma(1+3/p)}$，$V(4)=\\dfrac{\\Gamma(1/4)^4}{6\\sqrt2\\,\\pi}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 対称性から第 1 象限の 4 倍．$u=x^p$，$v=y^p$ と置換すると $dx\\,dy=\\dfrac1{p^2}u^{1/p-1}v^{1/p-1}du\\,dv$，領域は $u,v\\ge0$，$u+v\\le1$．\n\\[ A=\\frac4{p^2}\\int_0^1u^{1/p-1}\\left[\\int_0^{1-u}v^{1/p-1}dv\\right]du=\\frac4{p^2}\\cdot p\\int_0^1u^{1/p-1}(1-u)^{1/p}du=\\frac4pB\\!\\left(\\frac1p,\\frac1p+1\\right). \\]\n$B\\!\\left(\\frac1p,\\frac1p+1\\right)=\\dfrac{\\Gamma(1/p)\\Gamma(1+1/p)}{\\Gamma(1+2/p)}$，$\\dfrac1p\\Gamma(1/p)=\\Gamma(1+1/p)$ より\n$A(p)=\\dfrac{4\\Gamma(1+1/p)^2}{\\Gamma(1+2/p)}$．\n\n(2) $p=1$：$4\\Gamma(2)^2/\\Gamma(3)=4/2=2$．これは頂点 $(\\pm1,0),(0,\\pm1)$ の正方形（対角線 2）の面積に一致．\n$p=2$：$4\\Gamma(3/2)^2/\\Gamma(2)=4\\cdot\\pi/4=\\pi$，単位円の面積．\n$p\\to\\infty$：$\\Gamma(1+1/p)\\to\\Gamma(1)=1$，$\\Gamma(1+2/p)\\to1$ より $A\\to4$．領域は $\\max(|x|,|y|)\\le1$ の正方形（一辺 2）に近づく．\n\n(3) 同様に $u=x^p,v=y^p,w=z^p$ とおくとディリクレ積分\n\\[ \\int_{u+v+w\\le1}u^{a-1}v^{b-1}w^{c-1}=\\frac{\\Gamma(a)\\Gamma(b)\\Gamma(c)}{\\Gamma(a+b+c+1)} \\]\n（ベータ関数を 2 回用いて得られる）に $a=b=c=1/p$ を代入して\n\\[ V(p)=\\frac8{p^3}\\frac{\\Gamma(1/p)^3}{\\Gamma(3/p+1)}=\\frac{8\\Gamma(1+1/p)^3}{\\Gamma(1+3/p)}. \\]\n（$p=2$ で $8(\\sqrt\\pi/2)^3/\\Gamma(5/2)=4\\pi/3$ を再現．）$p=4$：$\\Gamma(5/4)\\approx0.9064$，$\\Gamma(7/4)\\approx0.9191$ より $V(4)\\approx8\\times0.7446/0.9191\\approx6.48$．"
+    "tex": "(1) 対称性から第 1 象限の 4 倍．$u=x^p$，$v=y^p$ と置換すると $dx\\,dy=\\dfrac1{p^2}u^{1/p-1}v^{1/p-1}du\\,dv$，領域は $u,v\\ge0$，$u+v\\le1$．\n\\[ A=\\frac4{p^2}\\int_0^1u^{1/p-1}\\left[\\int_0^{1-u}v^{1/p-1}dv\\right]du=\\frac4{p^2}\\cdot p\\int_0^1u^{1/p-1}(1-u)^{1/p}du=\\frac4pB\\!\\left(\\frac1p,\\frac1p+1\\right). \\]\n$B\\!\\left(\\frac1p,\\frac1p+1\\right)=\\dfrac{\\Gamma(1/p)\\Gamma(1+1/p)}{\\Gamma(1+2/p)}$，$\\dfrac1p\\Gamma(1/p)=\\Gamma(1+1/p)$ より\n$A(p)=\\dfrac{4\\Gamma(1+1/p)^2}{\\Gamma(1+2/p)}$．\n\n(2) $p=1$：$4\\Gamma(2)^2/\\Gamma(3)=4/2=2$．これは頂点 $(\\pm1,0),(0,\\pm1)$ の正方形（対角線 2）の面積に一致．\n$p=2$：$4\\Gamma(3/2)^2/\\Gamma(2)=4\\cdot\\pi/4=\\pi$，単位円の面積．\n$p\\to\\infty$：$\\Gamma(1+1/p)\\to\\Gamma(1)=1$，$\\Gamma(1+2/p)\\to1$ より $A\\to4$．領域は $\\max(|x|,|y|)\\le1$ の正方形（一辺 2）に近づく．\n\n(3) 同様に $u=x^p,v=y^p,w=z^p$ とおくとディリクレ積分\n\\[ \\int_{u+v+w\\le1}u^{a-1}v^{b-1}w^{c-1}=\\frac{\\Gamma(a)\\Gamma(b)\\Gamma(c)}{\\Gamma(a+b+c+1)} \\]\n（ベータ関数を 2 回用いて得られる）に $a=b=c=1/p$ を代入して\n\\[ V(p)=\\frac8{p^3}\\frac{\\Gamma(1/p)^3}{\\Gamma(3/p+1)}=\\frac{8\\Gamma(1+1/p)^3}{\\Gamma(1+3/p)}. \\]\n（$p=2$ で $8(\\sqrt\\pi/2)^3/\\Gamma(5/2)=4\\pi/3$ を再現．）$p=4$：$\\Gamma(5/4)=\\dfrac14\\Gamma(1/4)$，$\\Gamma(7/4)=\\dfrac34\\Gamma(3/4)=\\dfrac34\\cdot\\dfrac{\\pi}{\\sin(\\pi/4)\\,\\Gamma(1/4)}=\\dfrac{3\\sqrt2\\,\\pi}{4\\Gamma(1/4)}$ より\n\\[ V(4)=\\frac{8\\Gamma(1/4)^3/64}{3\\sqrt2\\,\\pi/(4\\Gamma(1/4))}=\\boldsymbol{\\frac{\\Gamma(1/4)^4}{6\\sqrt2\\,\\pi}}. \\]"
    }
   ],
   "idea": {
@@ -1795,7 +1795,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) $V(p)$：((8 Γ (1+1/ p)^(3))/(Γ (1+3/ p))) ; $V(4)$：≈6.48"
+   "spec": "(1) 証明\n(2) 記述\n(3) $V(p)$：((8 Γ (1+1/ p)^(3))/(Γ (1+3/ p))) ; $V(4)$：Γ(1/4)^4/(6 sqrt(2) pi)"
   },
   "methods": [],
   "tags": [
@@ -1929,16 +1929,16 @@
   "theme": "Bessel 関数の微分公式と円形膜の平均変位",
   "topic": "Bessel 関数の微分公式と円形膜の平均変位",
   "statement": {
-   "tex": "Bessel 関数の公式 $\\dfrac{d}{dx}\\left[x^nJ_n(x)\\right]=x^nJ_{n-1}(x)$ を用いて次の問いに答えよ．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_0^a rJ_0(kr)\\,dr=\\frac{a}{k}J_1(ka)$ を示せ．\n\\item 半径 $a$ の円形膜の基本振動モードの変位は $u(r)=u_0J_0(j_{01}r/a)$（$j_{01}\\approx2.4048$ は $J_0$ の最小の正の零点，$J_1(j_{01})\\approx0.5191$）である．膜全体で平均した変位 $\\bar u$ を $u_0$ の何倍か数値で求めよ．\n\\item $\\displaystyle\\int_0^a r^3J_0(kr)\\,dr$ を $J_1,J_2$ を用いて表せ．\n\\end{enumerate}"
+   "tex": "Bessel 関数の公式 $\\dfrac{d}{dx}\\left[x^nJ_n(x)\\right]=x^nJ_{n-1}(x)$ を用いて次の問いに答えよ．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_0^a rJ_0(kr)\\,dr=\\frac{a}{k}J_1(ka)$ を示せ．\n\\item 半径 $a$ の円形膜の基本振動モードの変位は $u(r)=u_0J_0(\\alpha r/a)$（$\\alpha$ は $J_0$ の最小の正の零点）である．$\\beta=J_1(\\alpha)$ とおく．膜全体で平均した変位 $\\bar u$ を $u_0,\\alpha,\\beta$ で表せ．\n\\item $\\displaystyle\\int_0^a r^3J_0(kr)\\,dr$ を $J_1,J_2$ を用いて表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $\\bar u=\\dfrac{2J_1(j_{01})}{j_{01}}u_0\\approx0.432\\,u_0$　(3) $\\dfrac{a^3}{k}J_1(ka)-\\dfrac{2a^2}{k^2}J_2(ka)$"
+   "tex": "(1) 証明（解説参照）　(2) $\\bar u=\\dfrac{2\\beta}{\\alpha}u_0$　(3) $\\dfrac{a^3}{k}J_1(ka)-\\dfrac{2a^2}{k^2}J_2(ka)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n=1$ で $\\dfrac{d}{dx}[xJ_1(x)]=xJ_0(x)$．$x=kr$ とおくと $\\displaystyle\\int_0^arJ_0(kr)dr=\\frac1{k^2}\\int_0^{ka}xJ_0(x)dx=\\frac1{k^2}\\left[xJ_1(x)\\right]_0^{ka}=\\frac{a}{k}J_1(ka)$．\n\n(2) $\\bar u=\\dfrac{1}{\\pi a^2}\\displaystyle\\int_0^a u\\,2\\pi r\\,dr=\\frac{2u_0}{a^2}\\cdot\\frac{a}{k}J_1(ka)$，$k=j_{01}/a$ より\n\\[ \\bar u=\\frac{2J_1(j_{01})}{j_{01}}u_0\\approx\\frac{2\\times0.5191}{2.4048}u_0\\approx0.432\\,u_0. \\]\n\n(3) $x=kr$ として $\\int_0^{ka}x^3J_0dx=\\int x^2\\cdot xJ_0\\,dx$．$xJ_0=(xJ_1)'$ で部分積分：\n\\[ \\int_0^{X}x^3J_0dx=X^3J_1(X)-2\\int_0^Xx^2J_1dx. \\]\n$n=2$ の公式 $(x^2J_2)'=x^2J_1$ より $\\int_0^Xx^2J_1dx=X^2J_2(X)$．よって $\\int_0^Xx^3J_0dx=X^3J_1(X)-2X^2J_2(X)$．$X=ka$ で $k^4$ で割って\n\\[ \\int_0^ar^3J_0(kr)dr=\\frac{a^3}{k}J_1(ka)-\\frac{2a^2}{k^2}J_2(ka). \\]"
+    "tex": "(1) $n=1$ で $\\dfrac{d}{dx}[xJ_1(x)]=xJ_0(x)$．$x=kr$ とおくと $\\displaystyle\\int_0^arJ_0(kr)dr=\\frac1{k^2}\\int_0^{ka}xJ_0(x)dx=\\frac1{k^2}\\left[xJ_1(x)\\right]_0^{ka}=\\frac{a}{k}J_1(ka)$．\n\n(2) $\\bar u=\\dfrac{1}{\\pi a^2}\\displaystyle\\int_0^a u\\,2\\pi r\\,dr=\\frac{2u_0}{a^2}\\cdot\\frac{a}{k}J_1(ka)$，$k=\\alpha/a$ より\n\\[ \\bar u=\\frac{2J_1(\\alpha)}{\\alpha}u_0=\\boldsymbol{\\frac{2\\beta}{\\alpha}u_0}. \\]\n（膜の縁近くは変位が小さいので，平均は中心の変位 $u_0$ の半分以下になる．）\n\n(3) $x=kr$ として $\\int_0^{ka}x^3J_0dx=\\int x^2\\cdot xJ_0\\,dx$．$xJ_0=(xJ_1)'$ で部分積分：\n\\[ \\int_0^{X}x^3J_0dx=X^3J_1(X)-2\\int_0^Xx^2J_1dx. \\]\n$n=2$ の公式 $(x^2J_2)'=x^2J_1$ より $\\int_0^Xx^2J_1dx=X^2J_2(X)$．よって $\\int_0^Xx^3J_0dx=X^3J_1(X)-2X^2J_2(X)$．$X=ka$ で $k^4$ で割って\n\\[ \\int_0^ar^3J_0(kr)dr=\\frac{a^3}{k}J_1(ka)-\\frac{2a^2}{k^2}J_2(ka). \\]"
    }
   ],
   "idea": {
@@ -1946,7 +1946,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) ((a ^(3))/(k)) J_1 (k a)-((2 a ^(2))/(k ^(2))) J_2 (k a)"
+   "spec": "(1) 証明\n(2) $\\bar u$：2 β u_0/α\n(3) ((a ^(3))/(k)) J_1 (k a)-((2 a ^(2))/(k ^(2))) J_2 (k a)"
   },
   "methods": [],
   "tags": [
@@ -1978,16 +1978,16 @@
   "theme": "半整数次 Bessel 関数と球形井戸の l=1 準位",
   "topic": "半整数次 Bessel 関数と球形井戸の l=1 準位",
   "statement": {
-   "tex": "$J_{1/2}(x)=\\sqrt{\\dfrac{2}{\\pi x}}\\sin x$，$J_{-1/2}(x)=\\sqrt{\\dfrac{2}{\\pi x}}\\cos x$ と，漸化式 $J_{n-1}+J_{n+1}=\\dfrac{2n}{x}J_n$ を用いる．\n\\begin{enumerate}\n\\item $J_{3/2}(x)$ を初等関数で表せ．また $x\\to0$ での主要項が級数 $J_\\nu(x)\\simeq\\dfrac{(x/2)^\\nu}{\\Gamma(\\nu+1)}$ と一致することを確かめよ．\n\\item 半径 $R$ の無限に深い球形井戸に閉じこめられた質量 $m$ の粒子の $l=1$ の動径関数は $R(r)\\propto r^{-1/2}J_{3/2}(kr)$ である．$l=1$ の最低エネルギーを決める方程式を導き，その値を $\\dfrac{\\hbar^2}{2mR^2}$ を単位として数値で求めよ．\n\\end{enumerate}"
+   "tex": "$J_{1/2}(x)=\\sqrt{\\dfrac{2}{\\pi x}}\\sin x$，$J_{-1/2}(x)=\\sqrt{\\dfrac{2}{\\pi x}}\\cos x$ と，漸化式 $J_{n-1}+J_{n+1}=\\dfrac{2n}{x}J_n$ を用いる．\n\\begin{enumerate}\n\\item $J_{3/2}(x)$ を初等関数で表せ．また $x\\to0$ での主要項が級数 $J_\\nu(x)\\simeq\\dfrac{(x/2)^\\nu}{\\Gamma(\\nu+1)}$ と一致することを確かめよ．\n\\item 半径 $R$ の無限に深い球形井戸に閉じこめられた質量 $m$ の粒子の $l=1$ の動径関数は $R(r)\\propto r^{-1/2}J_{3/2}(kr)$ である．$l=1$ の最低エネルギーを決める方程式を導け．また，その方程式の（$0$ を除く）最小の正の解を $x_1$ として，$l=1$ の最低エネルギー $E$ を $x_1$ を用いて表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $J_{3/2}=\\sqrt{\\dfrac{2}{\\pi x}}\\left(\\dfrac{\\sin x}{x}-\\cos x\\right)$　(2) $\\tan kR=kR$，$kR\\approx4.493$，$E\\approx20.19\\,\\dfrac{\\hbar^2}{2mR^2}$"
+   "tex": "(1) $J_{3/2}=\\sqrt{\\dfrac{2}{\\pi x}}\\left(\\dfrac{\\sin x}{x}-\\cos x\\right)$　(2) $\\tan kR=kR$，$E=\\dfrac{\\hbar^2x_1^2}{2mR^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n=\\frac12$ で $J_{-1/2}+J_{3/2}=\\dfrac1xJ_{1/2}$ より\n\\[ J_{3/2}=\\frac{1}{x}J_{1/2}-J_{-1/2}=\\sqrt{\\frac2{\\pi x}}\\left(\\frac{\\sin x}{x}-\\cos x\\right). \\]\n$x\\to0$ で $\\dfrac{\\sin x}{x}-\\cos x=\\left(1-\\dfrac{x^2}6\\right)-\\left(1-\\dfrac{x^2}2\\right)+\\cdots=\\dfrac{x^2}{3}+\\cdots$ だから $J_{3/2}\\simeq\\sqrt{\\dfrac{2}{\\pi}}\\dfrac{x^{3/2}}{3}$．一方 $\\Gamma(5/2)=\\dfrac{3\\sqrt\\pi}{4}$ より $\\dfrac{(x/2)^{3/2}}{\\Gamma(5/2)}=\\dfrac{x^{3/2}}{2\\sqrt2}\\cdot\\dfrac{4}{3\\sqrt\\pi}=\\sqrt{\\dfrac2\\pi}\\dfrac{x^{3/2}}{3}$ で一致する．\n\n(2) 境界条件 $R(R)=0$ より $J_{3/2}(kR)=0$，すなわち $\\dfrac{\\sin x}{x}=\\cos x$，$\\tan x=x$（$x=kR$）．$x=0$ を除く最小の正の解は $x\\approx4.4934$（$\\pi<x<3\\pi/2$ にある）．エネルギーは\n\\[ E=\\frac{\\hbar^2k^2}{2m}=\\frac{x^2\\hbar^2}{2mR^2}\\approx20.19\\,\\frac{\\hbar^2}{2mR^2}. \\]\n（$l=0$ の最低準位 $\\pi^2\\approx9.87$ の約 2.05 倍．）"
+    "tex": "(1) $n=\\frac12$ で $J_{-1/2}+J_{3/2}=\\dfrac1xJ_{1/2}$ より\n\\[ J_{3/2}=\\frac{1}{x}J_{1/2}-J_{-1/2}=\\sqrt{\\frac2{\\pi x}}\\left(\\frac{\\sin x}{x}-\\cos x\\right). \\]\n$x\\to0$ で $\\dfrac{\\sin x}{x}-\\cos x=\\left(1-\\dfrac{x^2}6\\right)-\\left(1-\\dfrac{x^2}2\\right)+\\cdots=\\dfrac{x^2}{3}+\\cdots$ だから $J_{3/2}\\simeq\\sqrt{\\dfrac{2}{\\pi}}\\dfrac{x^{3/2}}{3}$．一方 $\\Gamma(5/2)=\\dfrac{3\\sqrt\\pi}{4}$ より $\\dfrac{(x/2)^{3/2}}{\\Gamma(5/2)}=\\dfrac{x^{3/2}}{2\\sqrt2}\\cdot\\dfrac{4}{3\\sqrt\\pi}=\\sqrt{\\dfrac2\\pi}\\dfrac{x^{3/2}}{3}$ で一致する．\n\n(2) 境界条件 $R(R)=0$ より $J_{3/2}(kR)=0$，すなわち $\\dfrac{\\sin x}{x}=\\cos x$，$\\tan x=x$（$x=kR$）．$x=0$ を除く最小の正の解 $x_1$ は $\\pi<x_1<3\\pi/2$ にある（$\\tan x$ と $x$ のグラフの交点）．$k=x_1/R$ だからエネルギーは\n\\[ E=\\frac{\\hbar^2k^2}{2m}=\\boldsymbol{\\frac{\\hbar^2x_1^2}{2mR^2}}. \\]\n（$x_1>\\pi$ なので，$l=0$ の最低準位 $\\dfrac{\\hbar^2\\pi^2}{2mR^2}$ より高い．）"
    }
   ],
   "idea": {
@@ -1995,7 +1995,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述"
+   "spec": "(1) 記述\n(2) $E$：hbar^2 x_1^2/(2 m R^2)"
   },
   "methods": [],
   "tags": [
@@ -2176,16 +2176,16 @@
   "theme": "円形膜の振動とベッセル関数",
   "topic": "円形膜の振動とベッセル関数",
   "statement": {
-   "tex": "周囲を固定した半径 $a$ の円形の膜が，波動方程式 $\\dfrac{\\partial^2u}{\\partial t^2}=c^2\\nabla^2u$ に従って振動する．$u=J_m(kr)\\cos m\\varphi\\,\\cos\\omega t$ の形の基準振動を考える．$J_0$ の最小の正の零点は $j_{0,1}=2.405$，$J_1$ の最小の正の零点は $j_{1,1}=3.832$ である．\n\\begin{enumerate}\n\\item $J_0(x)$ はベッセル方程式 $x^2y''+xy'+x^2y=0$ の $x=0$ で正則な解（$J_0(0)=1$）である．級数展開 $J_0(x)=1-\\dfrac{x^2}{4}+c_4x^4+\\cdots$ の $c_4$ を求めよ．\n\\item 最も低い基準振動の角振動数 $\\omega$ について，$\\omega a/c$ の値を求めよ．\n\\item $m=1$ の最低モードと (2) のモードの振動数の比を求めよ．\n\\end{enumerate}"
+   "tex": "周囲を固定した半径 $a$ の円形の膜が，波動方程式 $\\dfrac{\\partial^2u}{\\partial t^2}=c^2\\nabla^2u$ に従って振動する．$u=J_m(kr)\\cos m\\varphi\\,\\cos\\omega t$ の形の基準振動を考える．$J_0$ の最小の正の零点を $\\alpha$，$J_1$ の最小の正の零点を $\\beta$ とする．\n\\begin{enumerate}\n\\item $J_0(x)$ はベッセル方程式 $x^2y''+xy'+x^2y=0$ の $x=0$ で正則な解（$J_0(0)=1$）である．級数展開 $J_0(x)=1-\\dfrac{x^2}{4}+c_4x^4+\\cdots$ の $c_4$ を求めよ．\n\\item 最も低い基準振動の角振動数 $\\omega$ を求めよ．\n\\item $m=1$ の最低モードと (2) のモードの振動数の比を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $c_4=\\frac{1}{64}$ (2) $\\frac{\\omega a}{c}=j_{0,1}\\approx 2.405$ (3) $\\frac{j_{1,1}}{j_{0,1}}\\approx 1.593$"
+   "tex": "(1) $c_4=\\frac{1}{64}$ (2) $\\omega=\\frac{\\alpha c}{a}$ (3) $\\frac{\\beta}{\\alpha}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$y=\\sum a_nx^n$ を代入すると $n^2a_n=-a_{n-2}$．$a_2=-\\frac14$，$a_4=-\\frac{a_2}{16}=\\boldsymbol{\\dfrac{1}{64}}$．一般に $J_0=\\sum\\dfrac{(-1)^k}{(k!)^2}\\left(\\dfrac x2\\right)^{2k}$．\n\n変数分離で $\\omega=ck$，境界条件 $J_0(ka)=0$ より $ka=j_{0,1}$．よって $\\boldsymbol{\\omega a/c\\approx2.405}$．\n\n$m=1$ では $J_1(ka)=0$ より $ka=3.832$．比は $\\boldsymbol{3.832/2.405\\approx1.593}$．弦と違って倍音が整数比にならないため，太鼓の音には明確な音程がない．"
+    "tex": "$y=\\sum a_nx^n$ を代入すると $n^2a_n=-a_{n-2}$．$a_2=-\\frac14$，$a_4=-\\frac{a_2}{16}=\\boldsymbol{\\dfrac{1}{64}}$．一般に $J_0=\\sum\\dfrac{(-1)^k}{(k!)^2}\\left(\\dfrac x2\\right)^{2k}$．\n\n変数分離で $\\omega=ck$，境界条件 $J_0(ka)=0$ より $ka=\\alpha$．よって $\\boldsymbol{\\omega=\\alpha c/a}$．\n\n$m=1$ では $J_1(ka)=0$ より $ka=\\beta$．振動数は $k$ に比例するので比は $\\boldsymbol{\\beta/\\alpha}$．ベッセル関数の零点の比は整数にならず，弦と違って倍音が整数比にならないため，太鼓の音には明確な音程がない．"
    }
   ],
   "idea": {
@@ -2193,7 +2193,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 1/64\n(2) ≈2.405\n(3) ≈1.593"
+   "spec": "(1) 1/64\n(2) α c/a\n(3) β/α"
   },
   "methods": [],
   "tags": [
@@ -2274,16 +2274,16 @@
   "theme": "D ∝ C の非線形拡散（バレンブラット解）の前線の位置",
   "topic": "D ∝ C の非線形拡散（バレンブラット解）の前線の位置",
   "statement": {
-   "tex": "$\\partial_tC=\\partial_x(kC\\,\\partial_xC)$，$\\int C\\,dx=N$ の原点から広がる解は $C=\\eta F(\\xi)$，$\\xi=\\dfrac{x}{(kNt)^{1/3}}$，$\\eta=\\left(\\dfrac{N^2}{kt}\\right)^{1/3}$，$F=\\left[A-\\dfrac{\\xi^2}6\\right]_+$ である．\n\\begin{enumerate}\n\\item 規格化から $A$ を求めよ．\n\\item 前線の位置 $x_0(t)$ を求めよ．\n\\item 線形の拡散と比べて，前線の性質の違いを述べよ．\n\\end{enumerate}"
+   "tex": "$\\partial_tC=\\partial_x(kC\\,\\partial_xC)$，$\\int C\\,dx=N$ の原点から広がる解は $C=\\eta F(\\xi)$，$\\xi=\\dfrac{x}{(kNt)^{1/3}}$，$\\eta=\\left(\\dfrac{N^2}{kt}\\right)^{1/3}$，$F=\\left[A-\\dfrac{\\xi^2}6\\right]_+$ である．\n\\begin{enumerate}\n\\item 規格化から $A$ を求めよ（累乗根を用いた厳密な形で答えよ）．\n\\item 前線の位置 $x_0(t)$ を求めよ．\n\\item 線形の拡散と比べて，前線の性質の違いを述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $A=\\left(\\dfrac{3}{4\\sqrt6}\\right)^{2/3}\\approx0.454$　(2) $x_0^3=\\frac92kNt$　(3) 有限の位置に鋭い前線があり $t^{1/3}$ で進む"
+   "tex": "(1) $A=\\left(\\dfrac{3}{32}\\right)^{1/3}$　(2) $x_0^3=\\frac92kNt$　(3) 有限の位置に鋭い前線があり $t^{1/3}$ で進む"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\int F\\,d\\xi=\\frac43A\\sqrt{6A}=1$ より $\\boldsymbol{A\\approx0.454}$．\n\n(2) $\\xi_0=\\sqrt{6A}$，$\\xi_0^3=6^{3/2}A^{3/2}=\\frac92$：$\\boldsymbol{x_0^3=\\frac92kNt}$．\n\n(3) 線形の拡散では瞬時に無限遠まで広がるが，非線形では濃度 $0$ で拡散係数が消え，前線が有限の速さで進む．"
+    "tex": "(1) $F>0$ の範囲は $|\\xi|<\\sqrt{6A}$ で，$\\int F\\,d\\xi=\\frac43A\\sqrt{6A}=\\frac{4\\sqrt6}{3}A^{3/2}=1$．よって $A^{3/2}=\\dfrac{3}{4\\sqrt6}$，2 乗して $A^3=\\dfrac{9}{96}=\\dfrac{3}{32}$，$\\boldsymbol{A=\\left(\\dfrac{3}{32}\\right)^{1/3}}$．\n\n(2) $\\xi_0=\\sqrt{6A}$，$\\xi_0^3=6^{3/2}A^{3/2}=\\frac92$：$\\boldsymbol{x_0^3=\\frac92kNt}$．\n\n(3) 線形の拡散では瞬時に無限遠まで広がるが，非線形では濃度 $0$ で拡散係数が消え，前線が有限の速さで進む．"
    }
   ],
   "idea": {
@@ -2291,7 +2291,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $A$：≈0.454\n(2) $x_0^3$：((9)/(2)) k N t\n(3) 記述"
+   "spec": "(1) $A$：(3/32)^(1/3)\n(2) $x_0^3$：((9)/(2)) k N t\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -2422,16 +2422,16 @@
   "theme": "ガウスの極限公式の収束の速さ",
   "topic": "ガウスの極限公式の収束の速さ",
   "statement": {
-   "tex": "$n$ を自然数，$\\mathrm{Re}\\,z>0$ として\n\\[ \\Gamma_n(z)=\\int_0^n\\left(1-\\frac tn\\right)^nt^{z-1}dt \\]\nとおく．$n\\to\\infty$ で $(1-t/n)^n\\to e^{-t}$ なので $\\Gamma_n(z)\\to\\Gamma(z)$ である．\n\\begin{enumerate}\n\\item $\\Gamma_n(z)=\\dfrac{n!\\,n^z}{z(z+1)\\cdots(z+n)}$ を示せ．\n\\item これより $\\dfrac{\\Gamma_n(z)}{\\Gamma(z)}=\\dfrac{n^z\\,\\Gamma(n+1)}{\\Gamma(n+z+1)}$ を示し，$n\\gg1$ で\n\\[ \\frac{\\Gamma_n(z)}{\\Gamma(z)}=1-\\frac{z(z+1)}{2n}+O(n^{-2}) \\]\nとなることを示せ．（スターリング公式 $\\ln\\Gamma(x+1)=\\left(x+\\frac12\\right)\\ln x-x+\\frac12\\ln2\\pi+\\frac1{12x}+O(x^{-3})$ を用いてよい．）\n\\item $z=\\frac12$，$n=100$ のとき，$\\Gamma_n(z)$ の相対誤差の予測値を求めよ．\n\\end{enumerate}"
+   "tex": "$n$ を自然数，$\\mathrm{Re}\\,z>0$ として\n\\[ \\Gamma_n(z)=\\int_0^n\\left(1-\\frac tn\\right)^nt^{z-1}dt \\]\nとおく．$n\\to\\infty$ で $(1-t/n)^n\\to e^{-t}$ なので $\\Gamma_n(z)\\to\\Gamma(z)$ である．\n\\begin{enumerate}\n\\item $\\Gamma_n(z)=\\dfrac{n!\\,n^z}{z(z+1)\\cdots(z+n)}$ を示せ．\n\\item これより $\\dfrac{\\Gamma_n(z)}{\\Gamma(z)}=\\dfrac{n^z\\,\\Gamma(n+1)}{\\Gamma(n+z+1)}$ を示し，$n\\gg1$ で\n\\[ \\frac{\\Gamma_n(z)}{\\Gamma(z)}=1-\\frac{z(z+1)}{2n}+O(n^{-2}) \\]\nとなることを示せ．（スターリング公式 $\\ln\\Gamma(x+1)=\\left(x+\\frac12\\right)\\ln x-x+\\frac12\\ln2\\pi+\\frac1{12x}+O(x^{-3})$ を用いてよい．）\n\\item $z=\\frac12$ のとき，$\\Gamma_n(z)$ の相対誤差 $\\Gamma_n(z)/\\Gamma(z)-1$ の主要項を $n$ で表せ．また，相対誤差の大きさを $\\delta\\ (\\ll1)$ 以下にするのに必要な $n$ の目安を $\\delta$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $t=ns$ とおきベータ関数にする　(2) 証明（解説参照）　(3) $-z(z+1)/2n=-0.00375$（実際は $-0.00373$）"
+   "tex": "(1) $t=ns$ とおきベータ関数にする　(2) 証明（解説参照）　(3) $-\\dfrac{3}{8n}$，$n\\ge\\dfrac{3}{8\\delta}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $t=ns$ とおくと $\\Gamma_n(z)=n^z\\displaystyle\\int_0^1(1-s)^ns^{z-1}ds=n^zB(z,n+1)=n^z\\frac{\\Gamma(z)\\Gamma(n+1)}{\\Gamma(z+n+1)}$．$\\Gamma(z+n+1)=(z+n)(z+n-1)\\cdots z\\,\\Gamma(z)$ を使うと $\\Gamma_n(z)=\\dfrac{n!\\,n^z}{z(z+1)\\cdots(z+n)}$．（部分積分を $n$ 回繰り返しても得られる．）\n\n(2) 上の式から直ちに $\\Gamma_n/\\Gamma=n^z\\Gamma(n+1)/\\Gamma(n+z+1)$．対数をとり，$x=n$ と $x=n+z$ にスターリングを適用：\n\\[ \\ln\\frac{\\Gamma(n+1)}{\\Gamma(n+z+1)}=\\left(n+\\tfrac12\\right)\\ln n-\\left(n+z+\\tfrac12\\right)\\ln(n+z)+z+\\frac1{12n}-\\frac1{12(n+z)}+\\cdots \\]\n$\\ln(n+z)=\\ln n+\\dfrac zn-\\dfrac{z^2}{2n^2}+\\cdots$ より\n\\[ -\\left(n+z+\\tfrac12\\right)\\ln(n+z)=-\\left(n+z+\\tfrac12\\right)\\ln n-z-\\frac{z^2}{n}-\\frac{z}{2n}+\\frac{z^2}{2n}+O(n^{-2}). \\]\n$1/12$ の項の差は $O(n^{-2})$．まとめると\n\\[ \\ln\\frac{\\Gamma_n(z)}{\\Gamma(z)}=z\\ln n-z\\ln n-\\frac{z^2}{2n}-\\frac z{2n}+O(n^{-2})=-\\frac{z(z+1)}{2n}+O(n^{-2}). \\]\n指数をとって $\\Gamma_n/\\Gamma=1-\\dfrac{z(z+1)}{2n}+O(n^{-2})$．\n\n(3) $-\\dfrac{(1/2)(3/2)}{200}=-0.00375$．数値計算すると $-0.003731$ で，差は $O(n^{-2})$ の項による．収束は $1/n$ と遅く，無限乗積は実用的な数値計算には不向きである．"
+    "tex": "(1) $t=ns$ とおくと $\\Gamma_n(z)=n^z\\displaystyle\\int_0^1(1-s)^ns^{z-1}ds=n^zB(z,n+1)=n^z\\frac{\\Gamma(z)\\Gamma(n+1)}{\\Gamma(z+n+1)}$．$\\Gamma(z+n+1)=(z+n)(z+n-1)\\cdots z\\,\\Gamma(z)$ を使うと $\\Gamma_n(z)=\\dfrac{n!\\,n^z}{z(z+1)\\cdots(z+n)}$．（部分積分を $n$ 回繰り返しても得られる．）\n\n(2) 上の式から直ちに $\\Gamma_n/\\Gamma=n^z\\Gamma(n+1)/\\Gamma(n+z+1)$．対数をとり，$x=n$ と $x=n+z$ にスターリングを適用：\n\\[ \\ln\\frac{\\Gamma(n+1)}{\\Gamma(n+z+1)}=\\left(n+\\tfrac12\\right)\\ln n-\\left(n+z+\\tfrac12\\right)\\ln(n+z)+z+\\frac1{12n}-\\frac1{12(n+z)}+\\cdots \\]\n$\\ln(n+z)=\\ln n+\\dfrac zn-\\dfrac{z^2}{2n^2}+\\cdots$ より\n\\[ -\\left(n+z+\\tfrac12\\right)\\ln(n+z)=-\\left(n+z+\\tfrac12\\right)\\ln n-z-\\frac{z^2}{n}-\\frac{z}{2n}+\\frac{z^2}{2n}+O(n^{-2}). \\]\n$1/12$ の項の差は $O(n^{-2})$．まとめると\n\\[ \\ln\\frac{\\Gamma_n(z)}{\\Gamma(z)}=z\\ln n-z\\ln n-\\frac{z^2}{2n}-\\frac z{2n}+O(n^{-2})=-\\frac{z(z+1)}{2n}+O(n^{-2}). \\]\n指数をとって $\\Gamma_n/\\Gamma=1-\\dfrac{z(z+1)}{2n}+O(n^{-2})$．\n\n(3) $z=\\frac12$ で $-\\dfrac{z(z+1)}{2n}=-\\dfrac{(1/2)(3/2)}{2n}=\\boldsymbol{-\\dfrac{3}{8n}}$．大きさを $\\delta$ 以下にするには $\\dfrac{3}{8n}\\le\\delta$，すなわち $\\boldsymbol{n\\gtrsim\\dfrac{3}{8\\delta}}$．誤差は $1/n$ でしか減らないので，精度を 1 桁上げるには $n$ を 10 倍にする必要があり，無限乗積は実用的な数値計算には不向きである．"
    }
   ],
   "idea": {
@@ -2439,7 +2439,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+   "spec": "(1) 記述\n(2) 証明\n(3) 相対誤差：-3/(8 n) ; $n$：3/(8 δ)"
   },
   "methods": [],
   "tags": [
@@ -2828,16 +2828,16 @@
   "theme": "一様な球の冷却：球対称な熱伝導方程式",
   "topic": "一様な球の冷却：球対称な熱伝導方程式",
   "statement": {
-   "tex": "半径 $a$ の一様な球（熱拡散率 $D$）が初め一様な温度 $T_0$ にあり，時刻 $t=0$ から表面を温度 $0$ に保つ．球内の温度 $u(r,t)$ は\n\\[ \\frac{\\partial u}{\\partial t}=D\\frac{1}{r}\\frac{\\partial^2(ru)}{\\partial r^2} \\]\nに従う．$w=ru$ とおくと $w$ は1次元の熱伝導方程式に従い，$w(0,t)=w(a,t)=0$ を満たす．\n\\begin{enumerate}\n\\item 解を $u=\\displaystyle\\sum_nb_n\\frac{\\sin(n\\pi r/a)}{r}e^{-t/\\tau_n}$ と展開する．最も遅く減衰するモードの時定数 $\\tau_1$ を求めよ．\n\\item 中心の温度を $u(0,t)=\\displaystyle\\sum_nA_ne^{-t/\\tau_n}$ と書いたときの $A_n$ を求めよ．\n\\item $n=1$ の項だけで近似して，中心の温度が $T_0/2$ になる時刻を求めよ．また $a=5\\,\\mathrm{cm}$，$D=1.4\\times10^{-7}\\,\\mathrm{m^2/s}$ のときの値を数値で答えよ．\n\\end{enumerate}"
+   "tex": "半径 $a$ の一様な球（熱拡散率 $D$）が初め一様な温度 $T_0$ にあり，時刻 $t=0$ から表面を温度 $0$ に保つ．球内の温度 $u(r,t)$ は\n\\[ \\frac{\\partial u}{\\partial t}=D\\frac{1}{r}\\frac{\\partial^2(ru)}{\\partial r^2} \\]\nに従う．$w=ru$ とおくと $w$ は1次元の熱伝導方程式に従い，$w(0,t)=w(a,t)=0$ を満たす．\n\\begin{enumerate}\n\\item 解を $u=\\displaystyle\\sum_nb_n\\frac{\\sin(n\\pi r/a)}{r}e^{-t/\\tau_n}$ と展開する．最も遅く減衰するモードの時定数 $\\tau_1$ を求めよ．\n\\item 中心の温度を $u(0,t)=\\displaystyle\\sum_nA_ne^{-t/\\tau_n}$ と書いたときの $A_n$ を求めよ．\n\\item $n=1$ の項だけで近似して，中心の温度が $T_0/2$ になる時刻を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\tau_1=\\frac{a^2}{\\pi^2D}$ (2) $A_n=2(-1)^{n+1}T_0$ (3) $t=\\frac{a^2\\ln4}{\\pi^2D}$，$\\approx2.5\\times10^3\\,\\mathrm{s}$"
+   "tex": "(1) $\\tau_1=\\frac{a^2}{\\pi^2D}$ (2) $A_n=2(-1)^{n+1}T_0$ (3) $t=\\frac{a^2\\ln4}{\\pi^2D}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$w_n=\\sin(n\\pi r/a)e^{-Dk_n^2t}$，$k_n=n\\pi/a$ なので $\\tau_n=\\dfrac{a^2}{n^2\\pi^2D}$．最も遅いのは $\\boldsymbol{\\tau_1=\\dfrac{a^2}{\\pi^2D}}$．\n\n初期条件 $w(r,0)=T_0r$ を正弦級数に展開する：\n\\[ b_n=\\frac2a\\int_0^aT_0r\\sin\\frac{n\\pi r}{a}dr=\\frac{2aT_0(-1)^{n+1}}{n\\pi}. \\]\n$r\\to0$ で $\\dfrac{\\sin(n\\pi r/a)}{r}\\to\\dfrac{n\\pi}{a}$ なので $\\boldsymbol{A_n=2(-1)^{n+1}T_0}$．\n\n$2T_0e^{-t/\\tau_1}=T_0/2$ より $\\boldsymbol{t=\\tau_1\\ln4=\\dfrac{a^2\\ln4}{\\pi^2D}}$．数値は $\\dfrac{(0.05)^2\\times1.386}{9.87\\times1.4\\times10^{-7}}\\approx\\boldsymbol{2.5\\times10^3\\,\\mathrm{s}}$（約42分）．$n=2$ の項は $e^{-4t/\\tau_1}$ で，この時刻では $1$ 項目の $1/64$ 程度に小さいので，近似は約 $1\\%$ の精度である．時間が半径の2乗に比例することは，大きな食材を加熱するときの経験とも合う．"
+    "tex": "$w_n=\\sin(n\\pi r/a)e^{-Dk_n^2t}$，$k_n=n\\pi/a$ なので $\\tau_n=\\dfrac{a^2}{n^2\\pi^2D}$．最も遅いのは $\\boldsymbol{\\tau_1=\\dfrac{a^2}{\\pi^2D}}$．\n\n初期条件 $w(r,0)=T_0r$ を正弦級数に展開する：\n\\[ b_n=\\frac2a\\int_0^aT_0r\\sin\\frac{n\\pi r}{a}dr=\\frac{2aT_0(-1)^{n+1}}{n\\pi}. \\]\n$r\\to0$ で $\\dfrac{\\sin(n\\pi r/a)}{r}\\to\\dfrac{n\\pi}{a}$ なので $\\boldsymbol{A_n=2(-1)^{n+1}T_0}$．\n\n$2T_0e^{-t/\\tau_1}=T_0/2$ より $\\boldsymbol{t=\\tau_1\\ln4=\\dfrac{a^2\\ln4}{\\pi^2D}}$．$n=2$ の項は $e^{-4t/\\tau_1}$ で，この時刻では $1$ 項目の $1/64$ 程度に小さいので，近似は約 $1\\%$ の精度である．時間が半径の2乗に比例することは，大きな食材を加熱するときの経験とも合う．"
    }
   ],
   "idea": {
@@ -2845,7 +2845,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) a^2/(pi^2 D)\n(2) 2(-1)^(n+1) T_0\n(3) 時刻：a^2 ln(4)/(pi^2 D) ; 数値 [s]：≈2.5e3"
+   "spec": "(1) a^2/(pi^2 D)\n(2) 2(-1)^(n+1) T_0\n(3) a^2 ln(4)/(pi^2 D)"
   },
   "methods": [],
   "tags": [
@@ -2928,16 +2928,16 @@
   "theme": "球形の井戸と球ベッセル関数",
   "topic": "球形の井戸と球ベッセル関数",
   "statement": {
-   "tex": "質量 $m$ の粒子が半径 $a$ の無限に深い球形の井戸（$r<a$ で $V=0$，$r\\ge a$ で $V=\\infty$）に閉じ込められている．動径方程式の正則解は球ベッセル関数 $j_l(kr)$ で，$E=\\dfrac{\\hbar^2k^2}{2m}$ である．\n\\begin{enumerate}\n\\item $l=0$ では $j_0(x)=\\dfrac{\\sin x}{x}$ である．$l=0$ のエネルギー準位 $E_n$（$n=1,2,\\dots$）を求めよ．\n\\item $j_1(x)=\\dfrac{\\sin x}{x^2}-\\dfrac{\\cos x}{x}$ の零点の条件を $\\tan x$ を用いて書き，最小の正の零点 $x_1$ を数値で求めよ．\n\\item $l=1$ の最低準位と $l=0$ の最低準位のエネルギー比を求めよ．\n\\item $j_1$ が球ベッセル方程式 $\\dfrac{d}{dx}\\left(x^2\\dfrac{dy}{dx}\\right)+\\{x^2-l(l+1)\\}y=0$（$l=1$）を満たすことを確かめよ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の粒子が半径 $a$ の無限に深い球形の井戸（$r<a$ で $V=0$，$r\\ge a$ で $V=\\infty$）に閉じ込められている．動径方程式の正則解は球ベッセル関数 $j_l(kr)$ で，$E=\\dfrac{\\hbar^2k^2}{2m}$ である．\n\\begin{enumerate}\n\\item $l=0$ では $j_0(x)=\\dfrac{\\sin x}{x}$ である．$l=0$ のエネルギー準位 $E_n$（$n=1,2,\\dots$）を求めよ．\n\\item $j_1(x)=\\dfrac{\\sin x}{x^2}-\\dfrac{\\cos x}{x}$ の零点の条件を $\\tan x$ を用いて書き，最小の正の零点 $x_1$ がどの範囲にあるかを述べよ．以下，$x_1$ はこの零点を表す．\n\\item $l=1$ の最低準位と $l=0$ の最低準位のエネルギー比を $x_1$ を用いて表せ．\n\\item $j_1$ が球ベッセル方程式 $\\dfrac{d}{dx}\\left(x^2\\dfrac{dy}{dx}\\right)+\\{x^2-l(l+1)\\}y=0$（$l=1$）を満たすことを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E_n=\\frac{\\hbar^2\\pi^2n^2}{2ma^2}$ (2) $\\tan x=x$，$x_1\\approx 4.493$ (3) $\\left(\\frac{x_1}{\\pi}\\right)^2\\approx 2.046$ (4) 代入して確かめる．"
+   "tex": "(1) $E_n=\\frac{\\hbar^2\\pi^2n^2}{2ma^2}$ (2) $\\tan x=x$，$\\pi<x_1<\\frac{3\\pi}{2}$ (3) $\\left(\\frac{x_1}{\\pi}\\right)^2$ (4) 代入して確かめる．"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$u=rR$ とおくと $l=0$ では1次元の箱と同じで，$\\sin(ka)=0$．$ka=n\\pi$ より $\\boldsymbol{E_n=\\dfrac{\\hbar^2\\pi^2n^2}{2ma^2}}$．\n\n$j_1=0\\iff\\sin x=x\\cos x\\iff\\boldsymbol{\\tan x=x}$．$\\pi<x<3\\pi/2$ の解を数値的に求めて $\\boldsymbol{x_1\\approx4.493}$．\n\n$E\\propto k^2$ なので比は $\\boldsymbol{(4.493/\\pi)^2\\approx2.046}$．1次元の箱と違い $1p$ 準位は $1s$ と $2s$（比 $4$）の間に来る．原子核の殻模型で準位の順序（$1s,1p,1d,2s,\\dots$）を決める基本になる．\n\n$y=j_1$ を代入すると左辺が恒等的に $0$ になる（sympy でも確認できる）．"
+    "tex": "$u=rR$ とおくと $l=0$ では1次元の箱と同じで，$\\sin(ka)=0$．$ka=n\\pi$ より $\\boldsymbol{E_n=\\dfrac{\\hbar^2\\pi^2n^2}{2ma^2}}$．\n\n$j_1=0\\iff\\sin x=x\\cos x\\iff\\boldsymbol{\\tan x=x}$．$x>0$ で $\\tan x$ と $x$ のグラフを描くと，$0<x<\\pi/2$ では $\\tan x>x$ で交わらず，最初の交点は $\\tan x$ が正になる区間 $\\boldsymbol{\\pi<x_1<3\\pi/2}$ にある．\n\n$l=1$ の最低準位は $k=x_1/a$，$l=0$ の最低準位は $k=\\pi/a$．$E\\propto k^2$ なので比は $\\boldsymbol{(x_1/\\pi)^2}$．$\\pi<x_1<3\\pi/2<2\\pi$ だから比は $1$ と $4$ の間にあり，1次元の箱と違い $1p$ 準位は $1s$ と $2s$（比 $4$）の間に来る．原子核の殻模型で準位の順序（$1s,1p,1d,2s,\\dots$）を決める基本になる．\n\n$y=j_1$ を代入すると左辺が恒等的に $0$ になる（sympy でも確認できる）．"
    }
   ],
   "idea": {
@@ -2945,7 +2945,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) hbar^2 pi^2 n^2/(2m a^2)\n(2) ≈4.493\n(3) ≈2.046\n(4) 記述：代入すると恒等的に 0"
+   "spec": "(1) hbar^2 pi^2 n^2/(2m a^2)\n(2) 記述：tan x = x，π<x_1<3π/2\n(3) (x_1/pi)^2\n(4) 記述：代入すると恒等的に 0"
   },
   "methods": [],
   "tags": [

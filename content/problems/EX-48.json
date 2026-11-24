@@ -9,16 +9,16 @@
   "theme": "多数周期の測定で反応時間の誤差を減らす",
   "topic": "多数周期の測定で反応時間の誤差を減らす",
   "statement": {
-   "tex": "振り子の周期をストップウォッチで測る．押す瞬間のずれによる誤差は，1回の時間測定あたり $0.2\\,\\mathrm{s}$ 程度で，測る時間の長さによらないとする．\n\\begin{enumerate}\n\\item 20周期分の時間を測ったところ $35.8\\,\\mathrm{s}$ であった．周期 $T$ を求めよ．\n\\item このときの周期の誤差 $\\delta T$ を求めよ．\n\\item 周期の相対誤差を $0.1\\,\\%$ 以下にするには，最低何周期分をまとめて測ればよいか．周期は (1) の値とする．\n\\end{enumerate}"
+   "tex": "振り子の周期をストップウォッチで測る．押す瞬間のずれによる誤差は，1回の時間測定あたり $\\varepsilon$ 程度で，測る時間の長さによらないとする．\n\\begin{enumerate}\n\\item $N$ 周期分の時間を測ったところ $t$ であった．周期 $T$ を求めよ．\n\\item このときの周期の誤差 $\\delta T$ を求めよ．\n\\item 周期の相対誤差を $r$ 以下にするには，最低何周期分をまとめて測ればよいか．$\\varepsilon,r,T$ で表せ（整数への切り上げは考えなくてよい）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T = 1.79\\,\\mathrm{s}$ \\quad (2) $\\delta T = 0.01\\,\\mathrm{s}$ \\quad (3) $112$ 周期"
+   "tex": "(1) $T=\\dfrac{t}{N}$ \\quad (2) $\\delta T=\\dfrac{\\varepsilon}{N}$ \\quad (3) $\\dfrac{\\varepsilon}{rT}$ 周期"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $T = 35.8/20 = \\boldsymbol{1.79\\,\\mathrm{s}}$．\n\n(2) 誤差 $0.2\\,\\mathrm{s}$ は全体の時間に1回分だけ入るので，周期あたりでは $\\delta T = 0.2/20 = \\boldsymbol{0.01\\,\\mathrm{s}}$．1周期だけ測ると誤差は $0.2\\,\\mathrm{s}$（相対誤差11%）だが，20周期まとめると20分の1になる．\n\n(3) $N$ 周期まとめると相対誤差は $\\dfrac{0.2}{1.79N}$．これが $0.001$ 以下となるのは $N \\geq 111.7$，すなわち $\\boldsymbol{112}$ 周期以上．\n\n「測りたい量をたくさん重ねて，固定の誤差を薄める」のは実験の基本技術である（紙の厚さを100枚まとめて測るのも同じ）．ただし周期が長い間に振幅が減って周期が変わるなど，別の誤差（系統誤差）が入らないかにも注意が要る．次は，独立な誤差どうしをどう合成するか（誤差の伝播）を学ぶ．"
+    "tex": "(1) $N$ 周期分が $t$ なので $\\boldsymbol{T=t/N}$．\n\n(2) 誤差 $\\varepsilon$ は全体の時間に1回分だけ入るので，周期あたりでは $\\boldsymbol{\\delta T=\\varepsilon/N}$．1周期だけ測ると誤差は $\\varepsilon$ だが，$N$ 周期まとめると $N$ 分の1になる．\n\n(3) $N$ 周期まとめると相対誤差は $\\dfrac{\\delta T}{T}=\\dfrac{\\varepsilon}{NT}$．これが $r$ 以下となるのは\n\\[ N\\ge\\boldsymbol{\\frac{\\varepsilon}{rT}} . \\]\nたとえば $\\varepsilon=0.2\\ \\mathrm s$，$T\\approx1.8\\ \\mathrm s$，$r=0.1\\%$ なら約 110 周期以上が必要になる．\n\n「測りたい量をたくさん重ねて，固定の誤差を薄める」のは実験の基本技術である（紙の厚さを100枚まとめて測るのも同じ）．ただし周期が長い間に振幅が減って周期が変わるなど，別の誤差（系統誤差）が入らないかにも注意が要る．次は，独立な誤差どうしをどう合成するか（誤差の伝播）を学ぶ．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) T [s]：1.79\n(2) δT [s]：0.01\n(3) 周期数：112"
+   "spec": "(1) $T$：t/N\n(2) $\\delta T$：ε/N\n(3) 周期数：ε/(r T)"
   },
   "methods": [],
   "tags": [
@@ -58,16 +58,16 @@
   "theme": "デジタル表示の分解能による標準偏差",
   "topic": "デジタル表示の分解能による標準偏差",
   "statement": {
-   "tex": "最小桁が $0.01\\,\\mathrm{V}$ のデジタル電圧計が $1.23\\,\\mathrm{V}$ と表示した．真の値は $1.225\\,\\mathrm{V}$ から $1.235\\,\\mathrm{V}$ の間のどこにでも同じ確からしさであるとする．一般に，幅 $a$ の区間 $-\\frac{a}{2} \\leq x \\leq \\frac{a}{2}$ に一様に分布する量の分散は\n\\[ \\sigma^2 = \\frac{1}{a}\\int_{-a/2}^{a/2} x^2\\,dx \\]\nで与えられる．\n\\begin{enumerate}\n\\item $\\sigma^2$ を $a$ で表せ．\n\\item この電圧計の表示の分解能による標準偏差 $\\sigma$ を求めよ．\n\\item 電圧そのものにも標準偏差 $0.0040\\,\\mathrm{V}$ の独立な雑音があるとき，合成の標準偏差 $\\sqrt{\\sigma^2 + (0.0040)^2}$ を求めよ．\n\\end{enumerate}"
+   "tex": "最小桁が $d$ のデジタル電圧計がある値を表示した．真の値は表示値 $\\pm d/2$ の区間のどこにでも同じ確からしさであるとする．一般に，幅 $a$ の区間 $-\\frac{a}{2} \\leq x \\leq \\frac{a}{2}$ に一様に分布する量の分散は\n\\[ \\sigma^2 = \\frac{1}{a}\\int_{-a/2}^{a/2} x^2\\,dx \\]\nで与えられる．\n\\begin{enumerate}\n\\item $\\sigma^2$ を $a$ で表せ．\n\\item この電圧計の表示の分解能による標準偏差 $\\sigma$ を $d$ で表せ．\n\\item 電圧そのものにも標準偏差 $s$ の独立な雑音があるとき，合成の標準偏差 $\\sigma_{\\rm tot}$ を $d,s$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sigma^2 = \\frac{a^2}{12}$ \\quad (2) $\\sigma \\approx 2.9\\times10^{-3}\\,\\mathrm{V}$ \\quad (3) $\\approx 4.9\\times10^{-3}\\,\\mathrm{V}$"
+   "tex": "(1) $\\sigma^2 = \\dfrac{a^2}{12}$ \\quad (2) $\\sigma=\\dfrac{d}{\\sqrt{12}}$ \\quad (3) $\\sigma_{\\rm tot}=\\sqrt{\\dfrac{d^2}{12}+s^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{1}{a}\\left[\\dfrac{x^3}{3}\\right]_{-a/2}^{a/2} = \\dfrac{1}{a}\\cdot\\dfrac{2}{3}\\cdot\\dfrac{a^3}{8} = \\boldsymbol{\\dfrac{a^2}{12}}$．\n\n(2) $a = 0.01\\,\\mathrm{V}$ なので $\\sigma = \\dfrac{0.01}{\\sqrt{12}} \\approx \\boldsymbol{2.9\\times10^{-3}\\,\\mathrm{V}}$．「最小桁の半分（$0.005\\,\\mathrm{V}$）」をそのまま誤差とするより小さい．これは真の値が端に来ることは少ないことを反映している．\n\n(3) $\\sqrt{(0.0029)^2 + (0.0040)^2} \\approx \\boldsymbol{4.9\\times10^{-3}\\,\\mathrm{V}}$．独立な誤差は2乗して足してから平方根をとる．大きいほうの誤差が全体をほぼ決めるので，改善するなら雑音のほうを減らすのが効果的である．\n\n結果は $1.230 \\pm 0.005\\,\\mathrm{V}$ のように，誤差の桁にそろえて書く．次は，このような誤差が計算結果にどう伝わるか（誤差の伝播）を学ぶ．"
+    "tex": "(1) $\\dfrac{1}{a}\\left[\\dfrac{x^3}{3}\\right]_{-a/2}^{a/2} = \\dfrac{1}{a}\\cdot\\dfrac{2}{3}\\cdot\\dfrac{a^3}{8} = \\boldsymbol{\\dfrac{a^2}{12}}$．\n\n(2) $a=d$ なので $\\boldsymbol{\\sigma=\\dfrac{d}{\\sqrt{12}}}\\approx0.29d$．「最小桁の半分（$0.5d$）」をそのまま誤差とするより小さい．これは真の値が端に来ることは少ないことを反映している．\n\n(3) 独立な誤差は2乗して足してから平方根をとる：\n\\[ \\boldsymbol{\\sigma_{\\rm tot}=\\sqrt{\\frac{d^2}{12}+s^2}} . \\]\n大きいほうの誤差が全体をほぼ決めるので，たとえば $s>d/\\sqrt{12}$ なら改善するには雑音のほうを減らすのが効果的である．\n\n結果は誤差の桁にそろえて書く．次は，このような誤差が計算結果にどう伝わるか（誤差の伝播）を学ぶ．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) σ^2：a^2/12\n(2) σ [V]：≈2.9e-3 (3%)\n(3) 合成 [V]：≈4.9e-3"
+   "spec": "(1) σ^2：a^2/12\n(2) σ：d/sqrt(12)\n(3) $\\sigma_{\\rm tot}$：sqrt(d^2/12+s^2)"
   },
   "methods": [],
   "tags": [
@@ -253,16 +253,16 @@
   "theme": "ノギスの副尺の原理と読み取り・零点補正",
   "topic": "ノギスの副尺の原理と読み取り・零点補正",
   "statement": {
-   "tex": "ノギスの主尺は $1\\,\\mathrm{mm}$ 目盛りで，副尺は $39\\,\\mathrm{mm}$ を $20$ 等分した目盛りをもつ．副尺の目盛りは主尺の $2\\,\\mathrm{mm}$ ごとの目盛りと比べて読む．\n\\begin{enumerate}\n\\item このノギスで読み取れる最小の長さ（最小読み取り値）を求めよ．\n\\item ある物体をはさむと，副尺の $0$ 目盛りは主尺の $23\\,\\mathrm{mm}$ と $24\\,\\mathrm{mm}$ の間にあり，副尺の第 $7$ 目盛りが主尺の目盛りとちょうど一致した．読み取り値を求めよ．\n\\item ジョウ（はさむ部分）を閉じたとき，副尺の $0$ 目盛りは主尺の $0$ よりわずかに右にあり，副尺の第 $2$ 目盛りが主尺の目盛りと一致していた．零点を補正した物体の長さを求めよ．\n\\end{enumerate}"
+   "tex": "ノギスの主尺は $1\\,\\mathrm{mm}$ 目盛りで，副尺は $(2n-1)\\,\\mathrm{mm}$ を $n$ 等分した目盛りをもつ．副尺の目盛りは主尺の $2\\,\\mathrm{mm}$ ごとの目盛りと比べて読む．\n\\begin{enumerate}\n\\item このノギスで読み取れる最小の長さ（最小読み取り値）$\\Delta$ を $n$ で表せ（単位 mm）．\n\\item ある物体をはさむと，副尺の $0$ 目盛りは主尺の $m\\,\\mathrm{mm}$ と $(m+1)\\,\\mathrm{mm}$ の間にあり，副尺の第 $k$ 目盛りが主尺の目盛りとちょうど一致した．読み取り値 $x$ を求めよ（単位 mm）．\n\\item ジョウ（はさむ部分）を閉じたとき，副尺の $0$ 目盛りは主尺の $0$ よりわずかに右にあり，副尺の第 $j$ 目盛りが主尺の目盛りと一致していた．零点を補正した物体の長さ $\\ell$ を求めよ（単位 mm）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $0.05\\,\\mathrm{mm}$\n(2) $23.35\\,\\mathrm{mm}$\n(3) $23.25\\,\\mathrm{mm}$"
+   "tex": "(1) $\\Delta=\\dfrac1n$\n(2) $x=m+\\dfrac kn$\n(3) $\\ell=m+\\dfrac{k-j}{n}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 副尺1目盛りは $39/20 = 1.95\\,\\mathrm{mm}$ で，主尺の $2\\,\\mathrm{mm}$ より $0.05\\,\\mathrm{mm}$ 短い．副尺の第 $k$ 目盛りが主尺の目盛りと一致しているとき，副尺の $0$ は直前の主尺目盛りから $k \\times 0.05\\,\\mathrm{mm}$ だけずれている．よって最小読み取り値は $\\boldsymbol{0.05\\,\\mathrm{mm}}$．\n\n(2) $23 + 7 \\times 0.05 = \\boldsymbol{23.35\\,\\mathrm{mm}}$．\n\n(3) 閉じたときの読み（零点）は $+2\\times0.05 = +0.10\\,\\mathrm{mm}$．すべての読みがこの分だけ大きく出る系統誤差なので，差し引いて $23.35 - 0.10 = \\boldsymbol{23.25\\,\\mathrm{mm}}$．\n\n副尺は「わずかに長さの違う2つの目盛りのずれ」を拡大して読む仕組み（バーニヤの原理）であり，$1\\,\\mathrm{mm}$ 目盛りの $1/20$ を読める．$39\\,\\mathrm{mm}$ を $20$ 等分した副尺は目盛り間隔が広く読みやすい．零点のずれは繰り返し測っても平均で消えない系統誤差なので，測定前に必ず確認して補正する．"
+    "tex": "(1) 副尺1目盛りは $(2n-1)/n=2-1/n\\ \\mathrm{mm}$ で，主尺の $2\\,\\mathrm{mm}$ より $1/n\\ \\mathrm{mm}$ 短い．副尺の第 $k$ 目盛りが主尺の目盛りと一致しているとき，副尺の $0$ は直前の主尺目盛りから $k\\times(1/n)\\ \\mathrm{mm}$ だけずれている．よって最小読み取り値は $\\boldsymbol{\\Delta=1/n\\ \\mathrm{mm}}$（$n=20$ なら $0.05\\ \\mathrm{mm}$）．\n\n(2) $\\boldsymbol{x=m+\\dfrac kn}\\ \\mathrm{mm}$．\n\n(3) 閉じたときの読み（零点）は $+j/n\\ \\mathrm{mm}$．すべての読みがこの分だけ大きく出る系統誤差なので，差し引いて $\\boldsymbol{\\ell=m+\\dfrac{k-j}{n}}\\ \\mathrm{mm}$．\n\n副尺は「わずかに長さの違う2つの目盛りのずれ」を拡大して読む仕組み（バーニヤの原理）であり，$1\\,\\mathrm{mm}$ 目盛りの $1/n$ を読める．$(2n-1)\\,\\mathrm{mm}$ を $n$ 等分した副尺は，$(n-1)\\,\\mathrm{mm}$ を $n$ 等分するものより目盛り間隔が広く読みやすい．零点のずれは繰り返し測っても平均で消えない系統誤差なので，測定前に必ず確認して補正する．"
    }
   ],
   "idea": {
@@ -270,7 +270,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 最小読み取り値 [mm]：0.05\n(2) 読み [mm]：23.35\n(3) 長さ [mm]：23.25"
+   "spec": "(1) Δ [mm]：1/n\n(2) $x$ [mm]：m+k/n\n(3) $\\ell$ [mm]：m+(k-j)/n"
   },
   "methods": [],
   "tags": [
@@ -350,16 +350,16 @@
   "theme": "系統誤差と偶然誤差：熱膨張の補正と繰り返し測定",
   "topic": "系統誤差と偶然誤差：熱膨張の補正と繰り返し測定",
   "statement": {
-   "tex": "20$^\\circ$C で目盛りが校正された鋼製巻尺（線膨張率 $\\alpha = 1.2\\times 10^{-5}\\,\\mathrm{K^{-1}}$）を用いて，35$^\\circ$C の室内で棒の長さを10回測定した．読みの平均は $2.4500\\,\\mathrm{m}$，1回の読みの標準偏差は $0.3\\,\\mathrm{mm}$ であった．\n\\begin{enumerate}\n\\item 巻尺の熱膨張を補正した棒の長さ $L$ を求めよ．\n\\item 10回の平均の標準誤差（偶然誤差）を mm 単位で求めよ．\n\\item 偶然誤差を $0.05\\,\\mathrm{mm}$ 以下にするには何回以上測定すればよいか．また，熱膨張を補正しないことによる誤差を測定回数を増やして減らせない理由を述べよ．\n\\end{enumerate}"
+   "tex": "温度 $\\theta_0$ で目盛りが校正された鋼製巻尺（線膨張率 $\\alpha$）を用いて，温度 $\\theta_0+\\Delta\\theta$ の室内で棒の長さを $n$ 回測定した．読みの平均は $L_0$，1回の読みの標準偏差は $\\sigma$ であった．\n\\begin{enumerate}\n\\item 巻尺の熱膨張を補正した棒の長さ $L$ を求めよ．補正量 $L-L_0$ はいくらか．\n\\item $n$ 回の平均の標準誤差（偶然誤差）を求めよ．\n\\item 偶然誤差を $\\varepsilon$ 以下にするには何回以上測定すればよいか．また，熱膨張を補正しないことによる誤差を測定回数を増やして減らせない理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $L = 2.45044\\,\\mathrm{m}$\n(2) $0.095\\,\\mathrm{mm}$\n(3) $36$ 回以上．補正しない誤差は系統誤差で，平均をとっても減らない．"
+   "tex": "(1) $L=L_0(1+\\alpha\\Delta\\theta)$，補正量 $\\alpha L_0\\Delta\\theta$\n(2) $\\dfrac{\\sigma}{\\sqrt n}$\n(3) $\\dfrac{\\sigma^2}{\\varepsilon^2}$ 回以上．補正しない誤差は系統誤差で，平均をとっても減らない．"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 35$^\\circ$C では巻尺の目盛り間隔が $1+\\alpha\\Delta T$ 倍に伸びている（$\\Delta T = 15\\,\\mathrm{K}$）．伸びた目盛りで読むと実際より短く読めるので，真の長さは\n\\[ L = 2.4500 \\times (1 + 1.2\\times10^{-5}\\times 15) = 2.4500\\times 1.00018 = \\boldsymbol{2.45044\\,\\mathrm{m}}. \\]\n補正量は $0.44\\,\\mathrm{mm}$ である．\n\n(2) $\\sigma/\\sqrt{n} = 0.3/\\sqrt{10} = \\boldsymbol{0.095\\,\\mathrm{mm}}$．\n\n(3) $0.3/\\sqrt{n} \\le 0.05$ より $n \\ge 36$，すなわち $\\boldsymbol{36}$ 回以上．熱膨張による $0.44\\,\\mathrm{mm}$ のずれはどの測定にも同じ向き・同じ大きさで入る系統誤差であり，平均をとっても打ち消し合わない．(2) の偶然誤差よりずっと大きいので，補正なしに測定回数だけ増やしても正確さは良くならない．"
+    "tex": "(1) 温度 $\\theta_0+\\Delta\\theta$ では巻尺の目盛り間隔が $1+\\alpha\\Delta\\theta$ 倍に伸びている．伸びた目盛りで読むと実際より短く読めるので，真の長さは\n\\[ \\boldsymbol{L=L_0(1+\\alpha\\Delta\\theta)},\\qquad L-L_0=\\boldsymbol{\\alpha L_0\\Delta\\theta} . \\]\n（たとえば $L_0\\approx2.45\\ \\mathrm m$，$\\alpha=1.2\\times10^{-5}\\ \\mathrm{K^{-1}}$，$\\Delta\\theta=15\\ \\mathrm K$ なら補正量は約 $0.44\\ \\mathrm{mm}$．）\n\n(2) 平均値のばらつきは1回の $1/\\sqrt n$ なので $\\boldsymbol{\\sigma/\\sqrt n}$．\n\n(3) $\\sigma/\\sqrt{n}\\le\\varepsilon$ より $\\boldsymbol{n\\ge\\sigma^2/\\varepsilon^2}$ 回．熱膨張によるずれ $\\alpha L_0\\Delta\\theta$ はどの測定にも同じ向き・同じ大きさで入る系統誤差であり，平均をとっても打ち消し合わない．これが偶然誤差より大きければ，補正なしに測定回数だけ増やしても正確さは良くならない．"
    }
   ],
   "idea": {
@@ -367,7 +367,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) L [m]：≈2.45044 (0.001%)\n(2) 標準誤差 [mm]：≈0.095\n(3) 回数：36"
+   "spec": "(1) $L$：L_0 (1+α Δθ) ; 補正量：α L_0 Δθ\n(2) 標準誤差：σ/sqrt(n)\n(3) 回数：σ^2/ε^2"
   },
   "methods": [],
   "tags": [
@@ -399,16 +399,16 @@
   "theme": "計器の確度仕様から標準不確かさ（タイプB）を求める",
   "topic": "計器の確度仕様から標準不確かさ（タイプB）を求める",
   "statement": {
-   "tex": "デジタルマルチメータの直流電圧レンジの確度は「$\\pm$（読みの $0.5\\%$ $+$ 2 digit）」と仕様書にある．分解能は $0.001\\,\\mathrm{V}$ である．ある電圧を何度か測り，読みの平均 $1.234\\,\\mathrm{V}$，平均値の標準誤差（タイプA）$0.003\\,\\mathrm{V}$ を得た．\n\\begin{enumerate}\n\\item 仕様書の確度の幅 $a$（$\\pm a$）を求めよ．\n\\item 真の値がこの幅 $\\pm a$ の中に一様に分布すると考えて，タイプBの標準不確かさ $u_B$ を求めよ．\n\\item タイプAとタイプBを合成した標準不確かさ $u_c$ を求めよ．\n\\end{enumerate}"
+   "tex": "デジタルマルチメータの直流電圧レンジの確度は「$\\pm$（読みの $p$ 倍 $+$ $k$ digit）」と仕様書にある（$p$ は小さな数）．分解能（1 digit）は $\\delta$ である．ある電圧を何度か測り，読みの平均 $V$，平均値の標準誤差（タイプA）$u_A$ を得た．\n\\begin{enumerate}\n\\item 仕様書の確度の幅 $a$（$\\pm a$）を求めよ．\n\\item 真の値がこの幅 $\\pm a$ の中に一様に分布すると考えて，タイプBの標準不確かさ $u_B$ を $a$ で表せ．\n\\item タイプAとタイプBを合成した標準不確かさ $u_c$ を $u_A,a$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $a = 0.00817\\,\\mathrm{V}$\n(2) $u_B = 0.0047\\,\\mathrm{V}$\n(3) $u_c = 0.0056\\,\\mathrm{V}$"
+   "tex": "(1) $a=pV+k\\delta$\n(2) $u_B=\\dfrac{a}{\\sqrt3}$\n(3) $u_c=\\sqrt{u_A^2+\\dfrac{a^2}{3}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 読み $1.234\\,\\mathrm{V}$ の $0.5\\%$ は $0.00617\\,\\mathrm{V}$，2 digit は最小桁2つ分で $0.002\\,\\mathrm{V}$．よって $a = \\boldsymbol{0.00817\\,\\mathrm{V}}$．\n\n(2) 幅 $[-a, a]$ の一様分布の分散は\n\\[ \\frac{1}{2a}\\int_{-a}^{a} x^2\\,dx = \\frac{a^2}{3} \\]\nなので $u_B = a/\\sqrt{3} = \\boldsymbol{0.0047\\,\\mathrm{V}}$．\n\n(3) 独立な不確かさは2乗和で合成する：\n\\[ u_c = \\sqrt{0.003^2 + 0.0047^2} = \\boldsymbol{0.0056\\,\\mathrm{V}}. \\]\nこの場合は計器の確度が支配的で，繰り返し回数を増やしても $u_c$ は $u_B$ より小さくならない．"
+    "tex": "(1) 読みの $p$ 倍は $pV$，$k$ digit は最小桁 $k$ 個分で $k\\delta$．よって $\\boldsymbol{a=pV+k\\delta}$．\n\n(2) 幅 $[-a, a]$ の一様分布の分散は\n\\[ \\frac{1}{2a}\\int_{-a}^{a} x^2\\,dx = \\frac{a^2}{3} \\]\nなので $\\boldsymbol{u_B=a/\\sqrt{3}}$．\n\n(3) 独立な不確かさは2乗和で合成する：\n\\[ \\boldsymbol{u_c=\\sqrt{u_A^2+\\frac{a^2}{3}}} . \\]\n$u_A$ は繰り返し回数を増やせば小さくなるが，$u_B$ は減らないので，$u_c$ は $a/\\sqrt3$ より小さくならない．たとえば読み $1.234\\ \\mathrm V$，$p=0.5\\%$，$k=2$，$\\delta=1\\ \\mathrm{mV}$ なら $a\\approx8\\ \\mathrm{mV}$，$u_B\\approx5\\ \\mathrm{mV}$ で，計器の確度が支配的になりやすい．"
    }
   ],
   "idea": {
@@ -416,7 +416,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) a [V]：≈0.00817\n(2) u_B [V]：≈0.0047\n(3) u_c [V]：≈0.0056"
+   "spec": "(1) $a$：p V+k δ\n(2) $u_B$：a/sqrt(3)\n(3) $u_c$：sqrt(u_A^2+a^2/3)"
   },
   "methods": [],
   "tags": [
@@ -547,16 +547,16 @@
   "theme": "ガウスの二重秤量：天秤の腕の長さの不等による系統誤差の消去",
   "topic": "ガウスの二重秤量：天秤の腕の長さの不等による系統誤差の消去",
   "statement": {
-   "tex": "等腕のはずの天秤の左右の腕の長さ $l_1$，$l_2$ がわずかに異なる．質量 $M$ の物体を左の皿にのせると右の皿の分銅 $m_1$ でつり合い，右の皿にのせると左の皿の分銅 $m_2$ でつり合った．\n\\begin{enumerate}\n\\item $M$ を $m_1$，$m_2$ で表せ．\n\\item $m_1 = 100.24\\,\\mathrm{g}$，$m_2 = 99.86\\,\\mathrm{g}$ のとき $M$ を求めよ．\n\\item 腕の長さの比 $l_1/l_2$ を求めよ．\n\\item $M$ の代わりに算術平均 $(m_1+m_2)/2$ を使うときの偏り $(m_1+m_2)/2 - M$ を，$m_1 - m_2$ が小さいとして主要項で求め，値を答えよ．\n\\end{enumerate}"
+   "tex": "等腕のはずの天秤の左右の腕の長さ $l_1$，$l_2$ がわずかに異なる．質量 $M$ の物体を左の皿にのせると右の皿の分銅 $m_1$ でつり合い，右の皿にのせると左の皿の分銅 $m_2$ でつり合った．\n\\begin{enumerate}\n\\item $M$ を $m_1$，$m_2$ で表せ．\n\\item 腕の長さの比 $l_1/l_2$ を $m_1$，$m_2$ で表せ．\n\\item $M$ の代わりに算術平均 $(m_1+m_2)/2$ を使うときの偏り $(m_1+m_2)/2 - M$ を，$m_1 - m_2$ が小さいとして主要項で求めよ．\n\\item 分銅の最小単位を $\\delta$ とする．算術平均で十分（偏りが $\\delta$ より小さい）といえる $|m_1-m_2|$ の上限を $M,\\delta$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $M = \\sqrt{m_1 m_2}$\n(2) $M = 100.0498\\,\\mathrm{g}$\n(3) $l_1/l_2 = 1.0019$\n(4) $\\dfrac{(m_1-m_2)^2}{8M} = 1.8\\times10^{-4}\\,\\mathrm{g}$"
+   "tex": "(1) $M = \\sqrt{m_1 m_2}$\n(2) $\\dfrac{l_1}{l_2}=\\sqrt{\\dfrac{m_1}{m_2}}$\n(3) $\\dfrac{(m_1-m_2)^2}{8M}$\n(4) $\\sqrt{8M\\delta}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) てこのつり合いから $Ml_1 = m_1l_2$，$m_2l_1 = Ml_2$．辺々かけて $l_1l_2$ を消すと $M^2 = m_1m_2$，すなわち $\\boldsymbol{M = \\sqrt{m_1m_2}}$．腕の長さが未知でも系統誤差が消える．\n\n(2) $M = \\sqrt{100.24\\times99.86} = \\boldsymbol{100.0498\\,\\mathrm{g}}$．\n\n(3) 辺々割ると $(l_1/l_2)^2 = m_1/m_2$ なので $l_1/l_2 = \\sqrt{100.24/99.86} = \\boldsymbol{1.0019}$．\n\n(4) $m_1m_2 = M^2$ を満たすように $m_1 = Me^{\\eta}$，$m_2 = Me^{-\\eta}$ とおけば\n\\[ \\frac{m_1+m_2}{2} = M\\cosh\\eta \\approx M\\left(1+\\frac{\\eta^2}{2}\\right),\\quad m_1 - m_2 \\approx 2M\\eta. \\]\nよって偏りは $M\\eta^2/2 = \\boldsymbol{\\dfrac{(m_1-m_2)^2}{8M}} = 0.38^2/800 = \\boldsymbol{1.8\\times10^{-4}\\,\\mathrm{g}}$．\n\n偏りは $m_1-m_2$ の2乗に比例するので，腕の不等による $0.4\\%$ 程度の差（1次の系統誤差）は二重秤量で消え，算術平均を使っても $0.2\\,\\mathrm{mg}$ の誤差しか残らない．分銅の分解能が $1\\,\\mathrm{mg}$ なら算術平均で十分である．測定の順序や配置を入れ替えて系統誤差を1次で打ち消すのは，精密測定の基本的な手法である．"
+    "tex": "(1) てこのつり合いから $Ml_1 = m_1l_2$，$m_2l_1 = Ml_2$．辺々かけて $l_1l_2$ を消すと $M^2 = m_1m_2$，すなわち $\\boldsymbol{M = \\sqrt{m_1m_2}}$．腕の長さが未知でも系統誤差が消える．\n\n(2) 辺々割ると $(l_1/l_2)^2 = m_1/m_2$ なので $\\boldsymbol{l_1/l_2 = \\sqrt{m_1/m_2}}$．\n\n(3) $m_1m_2 = M^2$ を満たすように $m_1 = Me^{\\eta}$，$m_2 = Me^{-\\eta}$ とおけば\n\\[ \\frac{m_1+m_2}{2} = M\\cosh\\eta \\approx M\\left(1+\\frac{\\eta^2}{2}\\right),\\quad m_1 - m_2 \\approx 2M\\eta. \\]\nよって偏りは $M\\eta^2/2 = \\boldsymbol{\\dfrac{(m_1-m_2)^2}{8M}}$．\n\n(4) $\\dfrac{(m_1-m_2)^2}{8M}<\\delta$ より $|m_1-m_2|<\\boldsymbol{\\sqrt{8M\\delta}}$．たとえば $M=100\\ \\mathrm g$，$\\delta=1\\ \\mathrm{mg}$ なら $|m_1-m_2|<0.9\\ \\mathrm g$ であり，腕の不等による $0.4\\%$ 程度の差（1次の系統誤差）は二重秤量で消え，算術平均を使っても問題ない．\n\n偏りは $m_1-m_2$ の2乗に比例する．測定の順序や配置を入れ替えて系統誤差を1次で打ち消すのは，精密測定の基本的な手法である．"
    }
   ],
   "idea": {
@@ -564,7 +564,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) M：sqrt(m_1 m_2)\n(2) M [g]：≈100.0498 (0.0005%)\n(3) l_1/l_2：≈1.0019 (0.01%)\n(4) 偏り [g]：≈1.8e-4 (5%)"
+   "spec": "(1) M：sqrt(m_1 m_2)\n(2) l_1/l_2：sqrt(m_1/m_2)\n(3) 偏り：(m_1-m_2)^2/(8 M)\n(4) 上限：sqrt(8 M δ)"
   },
   "methods": [],
   "tags": [
@@ -596,16 +596,16 @@
   "theme": "ABBA 法（交互測定）による線形ドリフトの消去",
   "topic": "ABBA 法（交互測定）による線形ドリフトの消去",
   "statement": {
-   "tex": "基準試料 A と被測定試料 B を同じ電圧計で交互に測り，A，B の差 $x_B - x_A$ を求めたい．電圧計の読みには時間とともにゆっくり変わるドリフトが加わる．測定は等間隔の時刻 $t = 0, 1, 2, 3$（単位は1回の測定間隔）に A，B，B，A の順で行う（ABBA 法）．\n次の読みを得た：$A_1 = 10.012$，$B_1 = 10.105$，$B_2 = 10.113$，$A_2 = 10.030$（単位 $\\mathrm{mV}$）．\n\\begin{enumerate}\n\\item $D = \\dfrac{B_1+B_2}{2} - \\dfrac{A_1+A_2}{2}$ を求めよ．\n\\item ドリフトが $dt$（$d$ は定数）のとき，A，B を1回ずつ測る方法（時刻 $0$ に A，$1$ に B）による差 $B_1 - A_1$ の偏り（真の差からのずれ）を求めよ．\n\\item ドリフトが $ct^2$（$c$ は定数）のとき，$D$ の偏りを求めよ．\n\\item ドリフトのほかに，各読みに独立な偶然誤差（標準偏差 $\\sigma$）があるとき，$D$ の標準偏差を求めよ．\n\\end{enumerate}"
+   "tex": "基準試料 A と被測定試料 B を同じ電圧計で交互に測り，A，B の真の差 $\\Delta$ を求めたい．電圧計の読みには時間とともにゆっくり変わるドリフトが加わる．測定は等間隔の時刻 $t = 0, 1, 2, 3$（単位は1回の測定間隔）に A，B，B，A の順で行い（ABBA 法），読み $A_1,B_1,B_2,A_2$ を得る．$D = \\dfrac{B_1+B_2}{2} - \\dfrac{A_1+A_2}{2}$ とする．\n\\begin{enumerate}\n\\item ドリフトが $dt$（$d$ は定数）のとき，$D$ の偏り $D-\\Delta$ を求めよ．\n\\item 同じドリフトのとき，A，B を1回ずつ測る方法（時刻 $0$ に A，$1$ に B）による差 $B_1 - A_1$ の偏りを求めよ．\n\\item ドリフトが $ct^2$（$c$ は定数）のとき，$D$ の偏りを求めよ．\n\\item ドリフトのほかに，各読みに独立な偶然誤差（標準偏差 $\\sigma$）があるとき，$D$ の標準偏差を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $D = 0.088\\,\\mathrm{mV}$\n(2) $d$\n(3) $-2c$\n(4) $\\sigma$"
+   "tex": "(1) $0$\n(2) $d$\n(3) $-2c$\n(4) $\\sigma$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $D = (10.105+10.113)/2 - (10.012+10.030)/2 = 10.109 - 10.021 = \\boldsymbol{0.088\\,\\mathrm{mV}}$．\n\n(2) $B_1 - A_1$ にはドリフトの差 $d\\cdot1 - d\\cdot0 = \\boldsymbol{d}$ が加わる．データからは A の2回の差から $d \\approx (10.030-10.012)/3 = 0.006\\,\\mathrm{mV}$ と見積もられ，実際 $B_1 - A_1 = 0.093\\,\\mathrm{mV}$ は $D$ より約 $d$ だけ大きい．\n\nABBA 法では，B の時刻の平均 $(1+2)/2$ と A の時刻の平均 $(0+3)/2$ が一致するので，線形ドリフトは $D$ から完全に消える．\n\n(3) $D$ に加わるのは $c\\dfrac{1^2+2^2}{2} - c\\dfrac{0^2+3^2}{2} = c\\left(\\dfrac52 - \\dfrac92\\right) = \\boldsymbol{-2c}$．2次のドリフトは消えず，消すには ABBABAAB のように時刻の2乗の平均もそろえる並べ方が必要である．\n\n(4) $D = \\frac12(B_1+B_2-A_1-A_2)$ なので $\\sigma_D = \\frac12\\sqrt{4\\sigma^2} = \\boldsymbol{\\sigma}$．\n\n交互測定はドリフト（ゆっくり変わる系統誤差）を時刻の対称性で打ち消す方法で，天秤による質量比較，ブリッジ測定，望遠鏡の観測など広く使われる．"
+    "tex": "(1) $D$ に加わるドリフトは $d\\dfrac{1+2}{2}-d\\dfrac{0+3}{2}=\\boldsymbol{0}$．ABBA 法では，B の時刻の平均 $(1+2)/2$ と A の時刻の平均 $(0+3)/2$ が一致するので，線形ドリフトは $D$ から完全に消える．\n\n(2) $B_1 - A_1$ にはドリフトの差 $d\\cdot1 - d\\cdot0 = \\boldsymbol{d}$ が加わる．実際のデータでは，A の2回の読みの差 $(A_2-A_1)/3$ から $d$ を見積もれる．\n\n(3) $D$ に加わるのは $c\\dfrac{1^2+2^2}{2} - c\\dfrac{0^2+3^2}{2} = c\\left(\\dfrac52 - \\dfrac92\\right) = \\boldsymbol{-2c}$．2次のドリフトは消えず，消すには ABBABAAB のように時刻の2乗の平均もそろえる並べ方が必要である．\n\n(4) $D = \\frac12(B_1+B_2-A_1-A_2)$ なので $\\sigma_D = \\frac12\\sqrt{4\\sigma^2} = \\boldsymbol{\\sigma}$．\n\n交互測定はドリフト（ゆっくり変わる系統誤差）を時刻の対称性で打ち消す方法で，天秤による質量比較，ブリッジ測定，望遠鏡の観測など広く使われる．"
    }
   ],
   "idea": {
@@ -613,7 +613,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) D [mV]：≈0.088\n(2) 偏り：d\n(3) 偏り：-2c\n(4) 標準偏差：σ"
+   "spec": "(1) 偏り：0\n(2) 偏り：d\n(3) 偏り：-2c\n(4) 標準偏差：σ"
   },
   "methods": [],
   "tags": [
@@ -645,16 +645,16 @@
   "theme": "A/D 変換の量子化誤差・SN 比とディザリング",
   "topic": "A/D 変換の量子化誤差・SN 比とディザリング",
   "statement": {
-   "tex": "入力範囲 $0$〜$2\\,\\mathrm{V}$ の $N$ ビット A/D 変換器を考える（$2^N$ 段階）．\n\\begin{enumerate}\n\\item $N = 12$ のとき，1段階の幅（LSB）$\\Delta$ を mV 単位で求めよ．\n\\item 量子化誤差が $[-\\Delta/2, \\Delta/2]$ に一様分布するとして，その標準偏差 $\\Delta/\\sqrt{12}$ を mV 単位で求めよ．\n\\item 入力範囲いっぱいの正弦波（振幅 $2^N\\Delta/2$）を入れたときの，信号の実効値と量子化雑音の実効値の比を dB で表すと $6.02N + 1.76\\,\\mathrm{dB}$ となることを示し，$N = 12$ での値を求めよ．\n\\item 一定の電圧を測るとき，入力に標準偏差 $2\\Delta$ のアナログ雑音が乗っていれば，400回の読みを平均することで，平均値のばらつきを $\\Delta$ より小さくできる．平均値の標準偏差を $\\Delta$ 単位で求めよ（雑音は各読みで独立とする）．また，雑音がまったくないと平均しても分解能が上がらない理由を述べよ．\n\\end{enumerate}"
+   "tex": "入力範囲 $0$〜$V_r$ の $N$ ビット A/D 変換器を考える（$2^N$ 段階）．\n\\begin{enumerate}\n\\item 1段階の幅（LSB）$\\Delta$ を $V_r,N$ で表せ．\n\\item 量子化誤差が $[-\\Delta/2, \\Delta/2]$ に一様分布するとして，その標準偏差を $V_r,N$ で表せ．\n\\item 入力範囲いっぱいの正弦波（振幅 $2^N\\Delta/2$）を入れたときの，信号の実効値と量子化雑音の実効値の比 $S$ を $N$ で表し，dB で表すと $6.02N + 1.76\\,\\mathrm{dB}$ となることを示せ．\n\\item 一定の電圧を測るとき，入力に標準偏差 $a\\Delta$（$a\\gtrsim1$）のアナログ雑音が乗っていれば，$M$ 回の読みを平均することで，平均値のばらつきを $\\Delta$ より小さくできる．平均値の標準偏差を求めよ（雑音は各読みで独立とし，各読みの量子化誤差も独立な一様分布とみなす）．また，雑音がまったくないと平均しても分解能が上がらない理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta = 0.488\\,\\mathrm{mV}$\n(2) $0.141\\,\\mathrm{mV}$\n(3) $74.0\\,\\mathrm{dB}$\n(4) 平均値の標準偏差は $\\Delta$ の $0.101$ 倍．雑音がないと毎回同じ値が出るので，平均しても量子化誤差（系統的なずれ）は減らない．"
+   "tex": "(1) $\\Delta=\\dfrac{V_r}{2^N}$\n(2) $\\dfrac{V_r}{2^N\\sqrt{12}}$\n(3) $S=2^N\\sqrt{\\dfrac32}$\n(4) $\\Delta\\sqrt{\\dfrac{a^2+1/12}{M}}$．雑音がないと毎回同じ値が出るので，平均しても量子化誤差（系統的なずれ）は減らない．"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\Delta = 2/2^{12} = 4.88\\times 10^{-4}\\,\\mathrm{V} = \\boldsymbol{0.488\\,\\mathrm{mV}}$．\n\n(2) 一様分布の分散は $\\Delta^2/12$ なので $\\Delta/\\sqrt{12} = \\boldsymbol{0.141\\,\\mathrm{mV}}$．\n\n(3) 振幅 $A = 2^{N-1}\\Delta$ の正弦波の実効値は $A/\\sqrt2 = 2^{N-1}\\Delta/\\sqrt2$．雑音の実効値 $\\Delta/\\sqrt{12}$ との比は\n\\[ \\frac{2^{N-1}\\Delta/\\sqrt2}{\\Delta/\\sqrt{12}} = 2^{N}\\sqrt{\\tfrac{3}{2}}, \\]\ndB にすると $20\\log_{10}(2^N\\sqrt{3/2}) = 20N\\log_{10}2 + 10\\log_{10}1.5 = 6.02N + 1.76$．$N=12$ で $\\boldsymbol{74.0\\,\\mathrm{dB}}$．\n\n(4) アナログ雑音が量子化幅より十分大きいと，読みの量子化誤差は各読みでほぼ独立な一様分布とみなせる．1回の読みの分散は $(2\\Delta)^2 + \\Delta^2/12$ なので，400回平均の標準偏差は\n\\[ \\frac{\\sqrt{4 + 1/12}}{\\sqrt{400}}\\,\\Delta = \\boldsymbol{0.101\\,\\Delta}. \\]\n雑音がないと，同じ電圧に対して毎回同じコードが出て，量子化によるずれはどの読みにも同じ向きに入る系統誤差になる．そのため平均しても減らない．わざと雑音を加えて量子化誤差をランダムにする手法をディザリングという．"
+    "tex": "(1) $\\boldsymbol{\\Delta=V_r/2^N}$（$V_r=2\\ \\mathrm V$，$N=12$ なら $0.49\\ \\mathrm{mV}$）．\n\n(2) 一様分布の分散は $\\Delta^2/12$ なので標準偏差は $\\Delta/\\sqrt{12}=\\boldsymbol{\\dfrac{V_r}{2^N\\sqrt{12}}}$．\n\n(3) 振幅 $A = 2^{N-1}\\Delta$ の正弦波の実効値は $A/\\sqrt2 = 2^{N-1}\\Delta/\\sqrt2$．雑音の実効値 $\\Delta/\\sqrt{12}$ との比は\n\\[ S=\\frac{2^{N-1}\\Delta/\\sqrt2}{\\Delta/\\sqrt{12}} = \\boldsymbol{2^{N}\\sqrt{\\tfrac{3}{2}}}, \\]\ndB にすると $20\\log_{10}(2^N\\sqrt{3/2}) = 20N\\log_{10}2 + 10\\log_{10}1.5 = 6.02N + 1.76$（$N=12$ で約 $74\\ \\mathrm{dB}$）．\n\n(4) アナログ雑音が量子化幅程度以上あると，読みの量子化誤差は各読みでほぼ独立な一様分布とみなせる．1回の読みの分散は $(a\\Delta)^2 + \\Delta^2/12$ なので，$M$ 回平均の標準偏差は\n\\[ \\boldsymbol{\\Delta\\sqrt{\\frac{a^2+1/12}{M}}} . \\]\n$M$ を大きくすれば $\\Delta$ より小さくできる（$a=2$，$M=400$ で約 $0.1\\Delta$）．雑音がないと，同じ電圧に対して毎回同じコードが出て，量子化によるずれはどの読みにも同じ向きに入る系統誤差になる．そのため平均しても減らない．わざと雑音を加えて量子化誤差をランダムにする手法をディザリングという．"
    }
   ],
   "idea": {
@@ -662,7 +662,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) Δ [mV]：≈0.488\n(2) 標準偏差 [mV]：≈0.141\n(3) SN比 [dB]：≈74.0 (0.5%)\n(4) 標準偏差 [Δ]：≈0.101 ; 記述 雑音がないと量子化誤差が系統誤差になり平均で減らない"
+   "spec": "(1) Δ：V_r/2^N\n(2) 標準偏差：V_r/(2^N sqrt(12))\n(3) $S$：2^N sqrt(3/2)\n(4) 標準偏差：Δ sqrt((a^2+1/12)/M)"
   },
   "methods": [],
   "tags": [
@@ -694,16 +694,16 @@
   "theme": "測定回数の最適配分：限られた時間で合成不確かさを最小にする",
   "topic": "測定回数の最適配分：限られた時間で合成不確かさを最小にする",
   "statement": {
-   "tex": "円柱形の試料の密度を $\\rho=\\dfrac{4m}{\\pi d^2h}$ で求める．質量 $m$，直径 $d$，高さ $h$ を何回もくり返し測って平均する．1回の測定の相対標準偏差をそれぞれ $r_m,r_d,r_h$，1回の測定にかかる時間を $t_m,t_d,t_h$ とし，それぞれ $n_m,n_d,n_h$ 回測る．測定は互いに独立で，系統誤差は無視する．総測定時間 $T=n_mt_m+n_dt_d+n_ht_h$ は一定とし，$n$ は連続変数として扱ってよい．\n\\begin{enumerate}\n\\item $\\rho$ の相対不確かさの2乗 $u^2$ を $n_m,n_d,n_h$ で表し，$T$ 一定のもとで $u^2$ を最小にする配分（ラグランジュの未定乗数法）での比 $n_d/n_h$ を求めよ．\n\\item 最適配分での最小の相対不確かさ $u_{\\min}$ を $r$，$t$，$T$ で表せ．\n\\item $r_m=2\\times10^{-4}$，$t_m=30\\,\\mathrm{s}$，$r_d=3\\times10^{-3}$，$t_d=20\\,\\mathrm{s}$，$r_h=4\\times10^{-3}$，$t_h=10\\,\\mathrm{s}$，$T=900\\,\\mathrm{s}$ とする．$u_{\\min}$ と，3つの量を同じ回数ずつ（各15回）測ったときの $u$ を求めよ．\n\\item (3) の条件で，相対不確かさを $1.0\\times10^{-3}$ にするのに必要な最短の総測定時間を求めよ．\n\\end{enumerate}"
+   "tex": "円柱形の試料の密度を $\\rho=\\dfrac{4m}{\\pi d^2h}$ で求める．質量 $m$，直径 $d$，高さ $h$ を何回もくり返し測って平均する．1回の測定の相対標準偏差をそれぞれ $r_m,r_d,r_h$，1回の測定にかかる時間を $t_m,t_d,t_h$ とし，それぞれ $n_m,n_d,n_h$ 回測る．測定は互いに独立で，系統誤差は無視する．総測定時間 $T=n_mt_m+n_dt_d+n_ht_h$ は一定とし，$n$ は連続変数として扱ってよい．\n\\begin{enumerate}\n\\item $\\rho$ の相対不確かさの2乗 $u^2$ を $n_m,n_d,n_h$ で表し，$T$ 一定のもとで $u^2$ を最小にする配分（ラグランジュの未定乗数法）での比 $n_d/n_h$ を求めよ．\n\\item 最適配分での最小の相対不確かさ $u_{\\min}$ を $r$，$t$，$T$ で表せ．\n\\item 比較のため，同じ総時間 $T$ で3つの量を同じ回数ずつ測ったときの相対不確かさ $u_{\\rm eq}$ を求めよ．\n\\item 最適配分で相対不確かさを $u_0$ にするのに必要な最短の総測定時間 $T_0$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $u^2=\\dfrac{r_m^2}{n_m}+\\dfrac{4r_d^2}{n_d}+\\dfrac{r_h^2}{n_h}$，$\\dfrac{n_d}{n_h}=\\dfrac{2r_d\\sqrt{t_h}}{r_h\\sqrt{t_d}}$\n(2) $u_{\\min}=\\dfrac{r_m\\sqrt{t_m}+2r_d\\sqrt{t_d}+r_h\\sqrt{t_h}}{\\sqrt{T}}$\n(3) $u_{\\min}\\approx1.35\\times10^{-3}$，$u\\approx1.86\\times10^{-3}$\n(4) $T\\approx1.65\\times10^{3}\\,\\mathrm{s}$"
+   "tex": "(1) $u^2=\\dfrac{r_m^2}{n_m}+\\dfrac{4r_d^2}{n_d}+\\dfrac{r_h^2}{n_h}$，$\\dfrac{n_d}{n_h}=\\dfrac{2r_d\\sqrt{t_h}}{r_h\\sqrt{t_d}}$\n(2) $u_{\\min}=\\dfrac{r_m\\sqrt{t_m}+2r_d\\sqrt{t_d}+r_h\\sqrt{t_h}}{\\sqrt{T}}$\n(3) $u_{\\rm eq}=\\sqrt{\\dfrac{(r_m^2+4r_d^2+r_h^2)(t_m+t_d+t_h)}{T}}$\n(4) $T_0=\\dfrac{(r_m\\sqrt{t_m}+2r_d\\sqrt{t_d}+r_h\\sqrt{t_h})^2}{u_0^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\ln\\rho=\\ln4+\\ln m-2\\ln d-\\ln h-\\ln\\pi$ より相対誤差の係数は $1,2,1$．平均の相対標準偏差は $r/\\sqrt n$ なので\n\\[ \\boldsymbol{u^2=\\frac{r_m^2}{n_m}+\\frac{4r_d^2}{n_d}+\\frac{r_h^2}{n_h}}. \\]\n$F=u^2+\\mu\\left(\\sum n_it_i-T\\right)$ を $n_i$ で微分して $0$ とおくと $-\\dfrac{c_i^2r_i^2}{n_i^2}+\\mu t_i=0$（$c_m=c_h=1$，$c_d=2$），すなわち\n\\[ n_i\\propto\\frac{c_ir_i}{\\sqrt{t_i}}. \\]\nよって $\\boldsymbol{\\dfrac{n_d}{n_h}=\\dfrac{2r_d\\sqrt{t_h}}{r_h\\sqrt{t_d}}}$．\n\n(2) $n_i=K\\dfrac{c_ir_i}{\\sqrt{t_i}}$ とおくと，$T=K\\sum c_ir_i\\sqrt{t_i}$，$u^2=\\dfrac1K\\sum c_ir_i\\sqrt{t_i}$．$K$ を消去して\n\\[ \\boldsymbol{u_{\\min}=\\frac{r_m\\sqrt{t_m}+2r_d\\sqrt{t_d}+r_h\\sqrt{t_h}}{\\sqrt T}}. \\]\n各量に割く時間 $n_it_i$ は $c_ir_i\\sqrt{t_i}$ に比例する（「寄与の標準偏差 × 1回の時間の平方根」の大きいものに時間をかける）．\n\n(3) $r_m\\sqrt{t_m}=1.10\\times10^{-3}$，$2r_d\\sqrt{t_d}=2.68\\times10^{-2}$，$r_h\\sqrt{t_h}=1.26\\times10^{-2}$，和は $4.06\\times10^{-2}$．\n\\[ u_{\\min}=\\frac{4.06\\times10^{-2}}{30}\\approx\\boldsymbol{1.35\\times10^{-3}}. \\]\nこのとき時間の配分は $d$ に約66%，$h$ に約31%，$m$ に約3%（$n_m\\approx0.8$，つまり質量は1回測れば十分）．\n\n同じ回数ずつだと $n=900/(30+20+10)=15$ 回で\n\\[ u=\\sqrt{\\frac{(2\\times10^{-4})^2+4(3\\times10^{-3})^2+(4\\times10^{-3})^2}{15}}\\approx\\boldsymbol{1.86\\times10^{-3}}. \\]\n精度のよい天秤で何度も測るのは時間の無駄で，最適化で不確かさが約3割小さくなる（同じ $u$ を得る時間なら約半分）．\n\n(4) $T=\\dfrac{(\\sum c_ir_i\\sqrt{t_i})^2}{u^2}=\\dfrac{(4.06\\times10^{-2})^2}{1.0\\times10^{-6}}\\approx\\boldsymbol{1.65\\times10^3\\,\\mathrm{s}}$（約27分）．\n\n不確かさは $1/\\sqrt T$ でしか減らないので，さらに1桁よくするには100倍の時間が要る．その場合は測定器（ここではマイクロメーターの $r_d$）を改善する方が効率的である．"
+    "tex": "(1) $\\ln\\rho=\\ln4+\\ln m-2\\ln d-\\ln h-\\ln\\pi$ より相対誤差の係数は $1,2,1$．平均の相対標準偏差は $r/\\sqrt n$ なので\n\\[ \\boldsymbol{u^2=\\frac{r_m^2}{n_m}+\\frac{4r_d^2}{n_d}+\\frac{r_h^2}{n_h}}. \\]\n$F=u^2+\\mu\\left(\\sum n_it_i-T\\right)$ を $n_i$ で微分して $0$ とおくと $-\\dfrac{c_i^2r_i^2}{n_i^2}+\\mu t_i=0$（$c_m=c_h=1$，$c_d=2$），すなわち\n\\[ n_i\\propto\\frac{c_ir_i}{\\sqrt{t_i}}. \\]\nよって $\\boldsymbol{\\dfrac{n_d}{n_h}=\\dfrac{2r_d\\sqrt{t_h}}{r_h\\sqrt{t_d}}}$．\n\n(2) $n_i=K\\dfrac{c_ir_i}{\\sqrt{t_i}}$ とおくと，$T=K\\sum c_ir_i\\sqrt{t_i}$，$u^2=\\dfrac1K\\sum c_ir_i\\sqrt{t_i}$．$K$ を消去して\n\\[ \\boldsymbol{u_{\\min}=\\frac{r_m\\sqrt{t_m}+2r_d\\sqrt{t_d}+r_h\\sqrt{t_h}}{\\sqrt T}}. \\]\n各量に割く時間 $n_it_i$ は $c_ir_i\\sqrt{t_i}$ に比例する（「寄与の標準偏差 × 1回の時間の平方根」の大きいものに時間をかける）．\n\n(3) 同じ回数 $n$ ずつなら $n(t_m+t_d+t_h)=T$ で\n\\[ \\boldsymbol{u_{\\rm eq}=\\sqrt{\\frac{r_m^2+4r_d^2+r_h^2}{n}}=\\sqrt{\\frac{(r_m^2+4r_d^2+r_h^2)(t_m+t_d+t_h)}{T}}} . \\]\nCauchy–Schwarz の不等式 $\\left(\\sum c_ir_i\\sqrt{t_i}\\right)^2\\le\\sum c_i^2r_i^2\\sum t_i$ より $u_{\\min}\\le u_{\\rm eq}$ で，等号は $c_ir_i\\propto\\sqrt{t_i}$ のときに限る．たとえば $r_m=2\\times10^{-4}$，$t_m=30\\ \\mathrm s$，$r_d=3\\times10^{-3}$，$t_d=20\\ \\mathrm s$，$r_h=4\\times10^{-3}$，$t_h=10\\ \\mathrm s$，$T=900\\ \\mathrm s$ では $u_{\\min}\\approx1.35\\times10^{-3}$，$u_{\\rm eq}\\approx1.86\\times10^{-3}$ で，精度のよい天秤で何度も測るのは時間の無駄になる．\n\n(4) (2) を $T$ について解いて\n\\[ \\boldsymbol{T_0=\\frac{(r_m\\sqrt{t_m}+2r_d\\sqrt{t_d}+r_h\\sqrt{t_h})^2}{u_0^2}} . \\]\n不確かさは $1/\\sqrt T$ でしか減らないので，さらに1桁よくするには100倍の時間が要る．その場合は測定器（たとえば直径を測るマイクロメーターの $r_d$）を改善する方が効率的である．"
    }
   ],
   "idea": {
@@ -711,7 +711,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) r_m^2/n_m + 4r_d^2/n_d + r_h^2/n_h ; 2r_d sqrt(t_h)/(r_h sqrt(t_d))\n(2) (r_m sqrt(t_m) + 2r_d sqrt(t_d) + r_h sqrt(t_h))/sqrt(T)\n(3) u_min：≈1.35e-3 ; 同数のとき：≈1.86e-3\n(4) T [s]：≈1.65e3"
+   "spec": "(1) $u^2$：r_m^2/n_m+4 r_d^2/n_d+r_h^2/n_h ; $n_d/n_h$：2 r_d sqrt(t_h)/(r_h sqrt(t_d))\n(2) $u_{\\min}$：(r_m sqrt(t_m)+2 r_d sqrt(t_d)+r_h sqrt(t_h))/sqrt(T)\n(3) $u_{\\rm eq}$：sqrt((r_m^2+4 r_d^2+r_h^2)(t_m+t_d+t_h)/T)\n(4) $T_0$：(r_m sqrt(t_m)+2 r_d sqrt(t_d)+r_h sqrt(t_h))^2/u_0^2"
   },
   "methods": [],
   "tags": [
@@ -744,16 +744,16 @@
   "theme": "標本標準偏差の偏り：χ 分布による補正係数 c₄",
   "topic": "標本標準偏差の偏り：χ 分布による補正係数 c₄",
   "statement": {
-   "tex": "平均 $\\mu$，分散 $\\sigma^2$ の正規分布から $n$ 個の独立な値 $x_i$ をとり，$\\bar x = \\frac1n\\sum x_i$，$s^2 = \\frac{1}{n-1}\\sum (x_i-\\bar x)^2$ とする．\n\\begin{enumerate}\n\\item $\\langle s^2\\rangle = \\sigma^2$（不偏性）を示せ．\n\\item $n = 2$ のとき $\\langle s\\rangle$ を $\\sigma$ で表せ．$x_1 - x_2$ は平均 $0$，分散 $2\\sigma^2$ の正規分布に従い，平均 $0$，分散 $v$ の正規分布の $\\langle |z| \\rangle = \\sqrt{2v/\\pi}$ である．\n\\item 一般に $u = (n-1)s^2/\\sigma^2$ は自由度 $k = n-1$ の $\\chi^2$ 分布\n\\[ f(u) = \\frac{u^{k/2-1}e^{-u/2}}{2^{k/2}\\Gamma(k/2)} \\]\nに従う．$\\langle s\\rangle = c_4\\sigma$ と書くとき，$n = 5$ の $c_4$ を求めよ（$\\Gamma(2) = 1$，$\\Gamma(5/2) = 3\\sqrt\\pi/4$）．\n\\item $n = 5$ の測定で $s = 0.47$ を得た．偏りを補正した $\\sigma$ の推定値 $s/c_4$ を求めよ．\n\\end{enumerate}"
+   "tex": "平均 $\\mu$，分散 $\\sigma^2$ の正規分布から $n$ 個の独立な値 $x_i$ をとり，$\\bar x = \\frac1n\\sum x_i$，$s^2 = \\frac{1}{n-1}\\sum (x_i-\\bar x)^2$ とする．\n\\begin{enumerate}\n\\item $\\langle s^2\\rangle = \\sigma^2$（不偏性）を示せ．\n\\item $n = 2$ のとき $\\langle s\\rangle$ を $\\sigma$ で表せ．$x_1 - x_2$ は平均 $0$，分散 $2\\sigma^2$ の正規分布に従い，平均 $0$，分散 $v$ の正規分布の $\\langle |z| \\rangle = \\sqrt{2v/\\pi}$ である．\n\\item 一般に $u = (n-1)s^2/\\sigma^2$ は自由度 $k = n-1$ の $\\chi^2$ 分布\n\\[ f(u) = \\frac{u^{k/2-1}e^{-u/2}}{2^{k/2}\\Gamma(k/2)} \\]\nに従う．$\\langle s\\rangle = c_4\\sigma$ と書くとき，$n = 5$ の $c_4$ を厳密に求めよ（$\\Gamma(2) = 1$，$\\Gamma(5/2) = 3\\sqrt\\pi/4$）．\n\\item $n = 5$ の測定で標本標準偏差 $s$ を得た．偏りを補正した $\\sigma$ の推定値 $\\hat\\sigma=s/c_4$ を $s$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 記述（$\\sum(x_i-\\bar x)^2$ の期待値が $(n-1)\\sigma^2$）\n(2) $\\sqrt{\\frac{2}{\\pi}}\\sigma$\n(3) $c_4 = 0.940$\n(4) $0.500$"
+   "tex": "(1) 記述（$\\sum(x_i-\\bar x)^2$ の期待値が $(n-1)\\sigma^2$）\n(2) $\\sqrt{\\frac{2}{\\pi}}\\sigma$\n(3) $c_4 = \\dfrac{3\\sqrt{2\\pi}}{8}$\n(4) $\\hat\\sigma=\\dfrac{8s}{3\\sqrt{2\\pi}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\sum(x_i-\\bar x)^2 = \\sum(x_i-\\mu)^2 - n(\\bar x-\\mu)^2$．期待値は $n\\sigma^2 - n\\cdot\\sigma^2/n = (n-1)\\sigma^2$．よって $\\langle s^2\\rangle = \\sigma^2$．平均を同じデータから決めたことで自由度が1つ減る．\n\n(2) $n=2$ では $\\bar x = (x_1+x_2)/2$，$s^2 = (x_1-x_2)^2/2$，$s = |x_1-x_2|/\\sqrt2$．$v = 2\\sigma^2$ として $\\langle|x_1-x_2|\\rangle = \\sqrt{4\\sigma^2/\\pi} = 2\\sigma/\\sqrt\\pi$．よって $\\boldsymbol{\\langle s\\rangle = \\sqrt{2/\\pi}\\,\\sigma \\approx 0.798\\sigma}$．$\\langle s^2\\rangle = \\sigma^2$ でも $\\langle s\\rangle < \\sigma$ である（平方根が凹関数なので）．\n\n(3) $s = \\sigma\\sqrt{u/k}$ なので\n\\[ \\langle\\sqrt u\\rangle = \\int_0^\\infty \\frac{u^{(k+1)/2-1}e^{-u/2}}{2^{k/2}\\Gamma(k/2)}du = \\frac{2^{(k+1)/2}\\Gamma\\left(\\frac{k+1}{2}\\right)}{2^{k/2}\\Gamma\\left(\\frac k2\\right)} = \\sqrt2\\,\\frac{\\Gamma\\left(\\frac{k+1}{2}\\right)}{\\Gamma\\left(\\frac k2\\right)}. \\]\nよって $c_4 = \\sqrt{\\dfrac{2}{n-1}}\\dfrac{\\Gamma(n/2)}{\\Gamma((n-1)/2)}$．$n=5$ で $c_4 = \\sqrt{\\dfrac12}\\cdot\\dfrac{3\\sqrt\\pi/4}{1} = \\boldsymbol{0.940}$．（$n=2$ では (2) と一致する．）\n\n(4) $0.47/0.940 = \\boldsymbol{0.500}$．\n\n$c_4 \\approx 1 - \\dfrac{1}{4n}$ なので偏りは $n$ が大きければ小さい．少数回の測定から管理図（品質管理）や誤差の評価をするときにこの補正を使う．"
+    "tex": "(1) $\\sum(x_i-\\bar x)^2 = \\sum(x_i-\\mu)^2 - n(\\bar x-\\mu)^2$．期待値は $n\\sigma^2 - n\\cdot\\sigma^2/n = (n-1)\\sigma^2$．よって $\\langle s^2\\rangle = \\sigma^2$．平均を同じデータから決めたことで自由度が1つ減る．\n\n(2) $n=2$ では $\\bar x = (x_1+x_2)/2$，$s^2 = (x_1-x_2)^2/2$，$s = |x_1-x_2|/\\sqrt2$．$v = 2\\sigma^2$ として $\\langle|x_1-x_2|\\rangle = \\sqrt{4\\sigma^2/\\pi} = 2\\sigma/\\sqrt\\pi$．よって $\\boldsymbol{\\langle s\\rangle = \\sqrt{2/\\pi}\\,\\sigma \\approx 0.798\\sigma}$．$\\langle s^2\\rangle = \\sigma^2$ でも $\\langle s\\rangle < \\sigma$ である（平方根が凹関数なので）．\n\n(3) $s = \\sigma\\sqrt{u/k}$ なので\n\\[ \\langle\\sqrt u\\rangle = \\int_0^\\infty \\frac{u^{(k+1)/2-1}e^{-u/2}}{2^{k/2}\\Gamma(k/2)}du = \\frac{2^{(k+1)/2}\\Gamma\\left(\\frac{k+1}{2}\\right)}{2^{k/2}\\Gamma\\left(\\frac k2\\right)} = \\sqrt2\\,\\frac{\\Gamma\\left(\\frac{k+1}{2}\\right)}{\\Gamma\\left(\\frac k2\\right)}. \\]\nよって $c_4 = \\sqrt{\\dfrac{2}{n-1}}\\dfrac{\\Gamma(n/2)}{\\Gamma((n-1)/2)}$．$n=5$ で $c_4 = \\sqrt{\\dfrac12}\\cdot\\dfrac{3\\sqrt\\pi/4}{1} = \\boldsymbol{\\dfrac{3\\sqrt{2\\pi}}{8}}\\approx0.940$．（$n=2$ では (2) と一致する．）\n\n(4) $\\hat\\sigma=s/c_4=\\boldsymbol{\\dfrac{8s}{3\\sqrt{2\\pi}}}\\approx1.064\\,s$．5回の測定から求めた $s$ は平均して約6%小さめに出る．\n\n$c_4 \\approx 1 - \\dfrac{1}{4n}$ なので偏りは $n$ が大きければ小さい．少数回の測定から管理図（品質管理）や誤差の評価をするときにこの補正を使う．"
    }
   ],
   "idea": {
@@ -761,7 +761,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述：Σ(x_i-x̄)^2 の期待値が (n-1)σ^2\n(2) ⟨s⟩：sqrt(2/pi) σ\n(3) c_4：≈0.940 (0.5%)\n(4) 推定値：≈0.500"
+   "spec": "(1) 記述：Σ(x_i-x̄)^2 の期待値が (n-1)σ^2\n(2) ⟨s⟩：sqrt(2/pi) σ\n(3) c_4：3 sqrt(2 pi)/8\n(4) 推定値：8 s/(3 sqrt(2 pi))"
   },
   "methods": [],
   "tags": [

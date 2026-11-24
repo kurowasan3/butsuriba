@@ -58,16 +58,16 @@
   "theme": "静的な解の到達距離と中間子の質量",
   "topic": "静的な解の到達距離と中間子の質量",
   "statement": {
-   "tex": "時間によらない場合，1次元のクライン＝ゴルドン方程式は\n\\[ \\frac{d^2\\phi}{dx^2} = \\frac{m^2c^2}{\\hbar^2}\\phi \\qquad (x \\neq 0) \\]\nとなる．湯川秀樹は，核力が質量 $m$ の粒子（中間子）の場 $\\phi$ によって伝わると考えた．このとき $\\phi$ が届く距離が力の到達距離になる．\n\\begin{enumerate}\n\\item $\\phi = e^{-|x|/a}$（$a > 0$）がこの方程式を満たすような $a$ を $m, c, \\hbar$ で表せ．\n\\item パイ中間子の静止エネルギーを $mc^2 = 140\\,\\mathrm{MeV}$，$\\hbar c = 197\\,\\mathrm{MeV\\cdot fm}$ として，$a$ を $\\mathrm{fm}$ 単位で求めよ．\n\\item 到達距離が $a = 0.25\\,\\mathrm{fm}$ の力を伝える粒子の静止エネルギー $mc^2$ を求めよ．\n\\end{enumerate}"
+   "tex": "時間によらない場合，1次元のクライン＝ゴルドン方程式は\n\\[ \\frac{d^2\\phi}{dx^2} = \\frac{m^2c^2}{\\hbar^2}\\phi \\qquad (x \\neq 0) \\]\nとなる．湯川秀樹は，核力が質量 $m$ の粒子（中間子）の場 $\\phi$ によって伝わると考えた．このとき $\\phi$ が届く距離が力の到達距離になる．\n\\begin{enumerate}\n\\item $\\phi = e^{-|x|/a}$（$a > 0$）がこの方程式を満たすような $a$ を $m, c, \\hbar$ で表せ．\n\\item 素粒子物理では，エネルギーと長さの積 $\\hbar c$ と静止エネルギー $E_0=mc^2$ を使うと便利である．$a$ を $\\hbar c$ と $E_0$ で表せ．\n\\item 静止エネルギー $E_A$ の粒子 A が伝える力の到達距離が $a_A$ であった．到達距離が $a_B$ の力を伝える粒子 B の静止エネルギー $E_B$ を $E_A,a_A,a_B$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $a = \\dfrac{\\hbar}{mc}$\n(2) $a \\approx 1.41\\,\\mathrm{fm}$\n(3) $mc^2 \\approx 788\\,\\mathrm{MeV}$"
+   "tex": "(1) $a = \\dfrac{\\hbar}{mc}$\n(2) $a=\\dfrac{\\hbar c}{E_0}$\n(3) $E_B=\\dfrac{E_Aa_A}{a_B}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $x > 0$ では $\\phi = e^{-x/a}$ で，$\\dfrac{d^2\\phi}{dx^2} = \\dfrac{1}{a^2}\\phi$．これが $\\dfrac{m^2c^2}{\\hbar^2}\\phi$ に等しいから $\\boldsymbol{a = \\dfrac{\\hbar}{mc}}$（$x < 0$ でも同じ）．\n\n(2) 分母分子に $c$ をかけて $a = \\dfrac{\\hbar c}{mc^2} = \\dfrac{197}{140}\\,\\mathrm{fm} \\approx \\boldsymbol{1.41\\,\\mathrm{fm}}$．核力の到達距離（約 $1\\sim 2\\,\\mathrm{fm}$）と合う．湯川は逆にこの関係から中間子の質量を予言した．\n\n(3) $mc^2 = \\dfrac{\\hbar c}{a} = \\dfrac{197}{0.25}\\,\\mathrm{MeV} \\approx \\boldsymbol{788\\,\\mathrm{MeV}}$．重い粒子が伝える力ほど短距離でしか届かない．\n\n質量 $0$ の粒子（光子）なら $a \\to \\infty$ となり，電磁気力が遠くまで届くことと対応する．次は3次元で同じことを考え，湯川ポテンシャル $\\dfrac{e^{-r/a}}{r}$ を導く．"
+    "tex": "(1) $x > 0$ では $\\phi = e^{-x/a}$ で，$\\dfrac{d^2\\phi}{dx^2} = \\dfrac{1}{a^2}\\phi$．これが $\\dfrac{m^2c^2}{\\hbar^2}\\phi$ に等しいから $\\boldsymbol{a = \\dfrac{\\hbar}{mc}}$（$x < 0$ でも同じ）．\n\n(2) 分母分子に $c$ をかけて $\\boldsymbol{a = \\dfrac{\\hbar c}{E_0}}$．たとえばパイ中間子では $E_0\\approx140\\,\\mathrm{MeV}$，$\\hbar c\\approx197\\,\\mathrm{MeV\\cdot fm}$ から $a\\approx1.4\\,\\mathrm{fm}$ となり，核力の到達距離（約 $1\\sim 2\\,\\mathrm{fm}$）と合う．湯川は逆にこの関係から中間子の質量を予言した．\n\n(3) (2) より $E_0a=\\hbar c$ はどの粒子でも同じ値なので $E_Aa_A=E_Ba_B$．よって $\\boldsymbol{E_B=\\dfrac{E_Aa_A}{a_B}}$．到達距離が短い力ほど重い粒子が伝える．\n\n質量 $0$ の粒子（光子）なら $a \\to \\infty$ となり，電磁気力が遠くまで届くことと対応する．次は3次元で同じことを考え，湯川ポテンシャル $\\dfrac{e^{-r/a}}{r}$ を導く．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) hbar/(m c)\n(2) a [fm]：≈1.41\n(3) mc^2 [MeV]：≈788"
+   "spec": "(1) hbar/(m c)\n(2) $a$：hbar c/E_0\n(3) $E_B$：E_A a_A/a_B"
   },
   "methods": [],
   "tags": [
@@ -302,16 +302,16 @@
   "theme": "箱の中のクライン＝ゴルドン粒子",
   "topic": "箱の中のクライン＝ゴルドン粒子",
   "statement": {
-   "tex": "区間 $0<x<L$ に閉じ込められた質量 $m$ のスカラー粒子を考える．定常解 $\\phi=e^{-iEt/\\hbar}u(x)$ はクライン＝ゴルドン方程式\n\\[ -\\hbar^2c^2u''+m^2c^4u=E^2u,\\qquad u(0)=u(L)=0 \\]\nを満たす．\n\\begin{enumerate}\n\\item 正のエネルギー準位 $E_n$（$n=1,2,\\dots$）を求めよ．\n\\item $\\hbar\\pi/L\\ll mc$ のとき，$E_n$ を $mc^2$ と次の項まで展開せよ．\n\\item π 中間子（$mc^2=140\\,\\mathrm{MeV}$）を $L=1.0\\,\\mathrm{fm}$ に閉じ込めたときの $E_1$ を求めよ（$\\hbar c=197.3\\,\\mathrm{MeV\\cdot fm}$）．\n\\end{enumerate}"
+   "tex": "区間 $0<x<L$ に閉じ込められた質量 $m$ のスカラー粒子を考える．定常解 $\\phi=e^{-iEt/\\hbar}u(x)$ はクライン＝ゴルドン方程式\n\\[ -\\hbar^2c^2u''+m^2c^4u=E^2u,\\qquad u(0)=u(L)=0 \\]\nを満たす．\n\\begin{enumerate}\n\\item 正のエネルギー準位 $E_n$（$n=1,2,\\dots$）を求めよ．\n\\item $\\hbar\\pi/L\\ll mc$ のとき，$E_n$ を $mc^2$ と次の項まで展開せよ．\n\\item 箱の大きさを，閉じ込めのエネルギー $\\pi\\hbar c/L$ がちょうど $mc^2$ に等しくなるように選んだ．このときの $E_1$ と，(2) の近似式による値 $E_1'$ を $mc^2$ で表して比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E_n=\\sqrt{\\left(\\dfrac{n\\pi\\hbar c}{L}\\right)^2+m^2c^4}$ (2) $E_n\\approx mc^2+\\dfrac{n^2\\pi^2\\hbar^2}{2mL^2}$ (3) $E_1\\approx636\\,\\mathrm{MeV}$"
+   "tex": "(1) $E_n=\\sqrt{\\left(\\dfrac{n\\pi\\hbar c}{L}\\right)^2+m^2c^4}$ (2) $E_n\\approx mc^2+\\dfrac{n^2\\pi^2\\hbar^2}{2mL^2}$ (3) $E_1=\\sqrt2\\,mc^2$，$E_1'=\\dfrac32mc^2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $u=\\sin(k_nx)$，$k_n=n\\pi/L$ より $E_n^2=\\hbar^2c^2k_n^2+m^2c^4$．\n\\[ \\boldsymbol{E_n=\\sqrt{\\left(\\frac{n\\pi\\hbar c}{L}\\right)^2+m^2c^4}}. \\]\n\n(2) $\\sqrt{m^2c^4+X}\\approx mc^2+\\dfrac{X}{2mc^2}$ より $\\boldsymbol{E_n\\approx mc^2+\\frac{n^2\\pi^2\\hbar^2}{2mL^2}}$．静止エネルギー＋シュレーディンガー方程式の箱の準位．\n\n(3) $\\pi\\hbar c/L=620\\,\\mathrm{MeV}$，$E_1=\\sqrt{620^2+140^2}\\approx\\boldsymbol{636\\,\\mathrm{MeV}}$．非相対論近似では $1.5\\,\\mathrm{GeV}$ となり全く合わない．閉じ込めのエネルギーが $mc^2$ を超えると，対生成が可能になり1粒子描像そのものが破綻する．"
+    "tex": "(1) $u=\\sin(k_nx)$，$k_n=n\\pi/L$ より $E_n^2=\\hbar^2c^2k_n^2+m^2c^4$．\n\\[ \\boldsymbol{E_n=\\sqrt{\\left(\\frac{n\\pi\\hbar c}{L}\\right)^2+m^2c^4}}. \\]\n\n(2) $\\sqrt{m^2c^4+X}\\approx mc^2+\\dfrac{X}{2mc^2}$ より $\\boldsymbol{E_n\\approx mc^2+\\frac{n^2\\pi^2\\hbar^2}{2mL^2}}$．静止エネルギー＋シュレーディンガー方程式の箱の準位．\n\n(3) $\\pi\\hbar c/L=mc^2$ を (1) に入れると $E_1=\\sqrt{m^2c^4+m^2c^4}=\\boldsymbol{\\sqrt2\\,mc^2}$．(2) では $\\dfrac{\\pi^2\\hbar^2}{2mL^2}=\\dfrac{(\\pi\\hbar c/L)^2}{2mc^2}=\\dfrac{mc^2}2$ より $E_1'=\\boldsymbol{\\dfrac32mc^2}$．運動エネルギー部分で比べると $(\\sqrt2-1)mc^2\\approx0.41mc^2$ に対し近似は $0.5mc^2$ で，20\\% 以上ずれる．さらに強く閉じ込めると（たとえば π 中間子を 1 fm に閉じ込めると）非相対論近似は全く合わない．閉じ込めのエネルギーが $mc^2$ を超えると，対生成が可能になり1粒子描像そのものが破綻する．"
    }
   ],
   "idea": {
@@ -319,7 +319,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) sqrt((n pi hbar c/L)^2+m^2 c^4)\n(2) m c^2+n^2 pi^2 hbar^2/(2m L^2)\n(3) E_1 [MeV]：≈636"
+   "spec": "(1) sqrt((n pi hbar c/L)^2+m^2 c^4)\n(2) m c^2+n^2 pi^2 hbar^2/(2m L^2)\n(3) $E_1$：sqrt(2) m c^2 ; $E_1'$：3 m c^2/2"
   },
   "methods": [],
   "tags": [
@@ -495,16 +495,16 @@
   "theme": "湯川ポテンシャルの体積積分と伝播関数",
   "topic": "湯川ポテンシャルの体積積分と伝播関数",
   "statement": {
-   "tex": "質量 $\\mu_0$ のスカラー場 $\\phi$ に対する静的なクライン－ゴルドン方程式は，点源 $g\\,\\delta^3(\\boldsymbol r)$ があるとき\n\\[ (\\nabla^2-\\mu^2)\\phi=-g\\,\\delta^3(\\boldsymbol r),\\qquad \\mu=\\frac{\\mu_0c}{\\hbar} \\]\nとなる．\n\\begin{enumerate}\n\\item $\\phi=\\dfrac{g\\,e^{-\\mu r}}{4\\pi r}$ が解であることを示せ（$r>0$ での方程式と，原点近傍の振る舞いの両方を確認せよ）．\n\\item $\\displaystyle\\int\\phi\\,d^3r$ を求め，そのうち $r>R=1/\\mu$ の領域からの寄与の割合を求めよ．クーロン型 $\\mu=0$ との違いを述べよ．\n\\item $\\phi$ のフーリエ変換 $\\tilde\\phi(\\boldsymbol q)=\\int\\phi\\,e^{-i\\boldsymbol q\\cdot\\boldsymbol r}d^3r$ を求め，交換される粒子の 4 元運動量の 2 乗が $\\hbar^2\\boldsymbol q^2>0$（空間的）であることと関連づけよ．また，$\\pi$ 中間子（$139.6\\ \\mathrm{MeV}/c^2$）と $W$ ボソン（$80.4\\ \\mathrm{GeV}/c^2$）の交換による力の到達距離 $1/\\mu$ を求めよ（$\\hbar c=197.3\\ \\mathrm{MeV\\,fm}$）．\n\\end{enumerate}"
+   "tex": "質量 $\\mu_0$ のスカラー場 $\\phi$ に対する静的なクライン－ゴルドン方程式は，点源 $g\\,\\delta^3(\\boldsymbol r)$ があるとき\n\\[ (\\nabla^2-\\mu^2)\\phi=-g\\,\\delta^3(\\boldsymbol r),\\qquad \\mu=\\frac{\\mu_0c}{\\hbar} \\]\nとなる．\n\\begin{enumerate}\n\\item $\\phi=\\dfrac{g\\,e^{-\\mu r}}{4\\pi r}$ が解であることを示せ（$r>0$ での方程式と，原点近傍の振る舞いの両方を確認せよ）．\n\\item $\\displaystyle\\int\\phi\\,d^3r$ を求め，そのうち $r>R=1/\\mu$ の領域からの寄与の割合を求めよ．クーロン型 $\\mu=0$ との違いを述べよ．\n\\item $\\phi$ のフーリエ変換 $\\tilde\\phi(\\boldsymbol q)=\\int\\phi\\,e^{-i\\boldsymbol q\\cdot\\boldsymbol r}d^3r$ を求め，交換される粒子の 4 元運動量の 2 乗が $\\hbar^2\\boldsymbol q^2>0$（空間的）であることと関連づけよ．また，質量 $m_1$ の粒子と質量 $m_2$ の粒子の交換による力の到達距離 $1/\\mu$ の比 $R_1/R_2$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $g/\\mu^2$，割合 $2/e\\approx0.74$　(3) $\\tilde\\phi=\\dfrac{g}{q^2+\\mu^2}$，到達距離 $\\pi$：$1.41\\ \\mathrm{fm}$，$W$：$2.5\\times10^{-3}\\ \\mathrm{fm}$"
+   "tex": "(1) 証明（解説参照）　(2) $\\dfrac{g}{\\mu^2}$，割合 $\\dfrac2e$　(3) $\\tilde\\phi=\\dfrac{g}{q^2+\\mu^2}$，$\\dfrac{R_1}{R_2}=\\dfrac{m_2}{m_1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $r>0$ では $\\nabla^2\\phi=\\dfrac1r\\dfrac{d^2}{dr^2}(r\\phi)=\\dfrac1r\\dfrac{g}{4\\pi}\\mu^2e^{-\\mu r}=\\mu^2\\phi$ なので $(\\nabla^2-\\mu^2)\\phi=0$．原点近傍では $\\phi\\simeq\\dfrac{g}{4\\pi r}$ であり，$\\nabla^2\\dfrac1r=-4\\pi\\delta^3$ より $\\nabla^2\\phi\\simeq-g\\delta^3$．$\\mu^2\\phi$ は原点で積分可能（$\\int\\mu^2\\phi\\,d^3r$ は小球で 0 に収束）なので右辺の $\\delta$ 関数を再現する．（小球 $r<\\epsilon$ にガウスの定理を使い $\\oint\\nabla\\phi\\cdot d\\boldsymbol S=-g(1+\\mu\\epsilon)e^{-\\mu\\epsilon}\\to-g$ と確かめてもよい．）\n\n(2) $\\displaystyle\\int\\phi\\,d^3r=\\int_0^\\infty4\\pi r^2\\frac{ge^{-\\mu r}}{4\\pi r}dr=g\\int_0^\\infty re^{-\\mu r}dr=\\frac{g}{\\mu^2}.$\n$r>R$ からの寄与は $g\\displaystyle\\int_R^\\infty re^{-\\mu r}dr=\\frac{g}{\\mu^2}(1+\\mu R)e^{-\\mu R}$，$R=1/\\mu$ で割合 $2e^{-1}=0.74$．体積積分の約 3/4 は到達距離より外から来ている（$r^2$ の体積要素のため）．$\\mu\\to0$ のクーロン型では積分は発散し，有限の到達距離をもたない．\n\n(3) 球対称なので $\\tilde\\phi=\\displaystyle\\int_0^\\infty4\\pi r^2\\phi\\frac{\\sin qr}{qr}dr=\\frac{g}{q}\\int_0^\\infty e^{-\\mu r}\\sin qr\\,dr=\\frac{g}{q^2+\\mu^2}.$\n（$q=0$ で (2) の値に一致する．）これは交換粒子の伝播関数 $1/(q^2+\\mu^2)$ であり，静的な散乱では運動量移行 $\\hbar\\boldsymbol q$ のみでエネルギー移行は 0 だから，交換粒子の 4 元運動量の 2 乗（$|\\boldsymbol p|^2-E^2/c^2$ の符号規約）は $\\hbar^2q^2>0$ で空間的である．自由粒子なら $-\\mu_0^2c^2<0$（時間的）なので，交換粒子は質量殻にない仮想粒子である．$q^2=-\\mu^2$（質量殻）が伝播関数の極にあたる．\n到達距離：$\\pi$ 中間子 $1/\\mu=\\hbar c/(\\mu_0c^2)=197.3/139.6=1.41\\ \\mathrm{fm}$，$W$ ボソン $197.3/80400=2.45\\times10^{-3}\\ \\mathrm{fm}$．"
+    "tex": "(1) $r>0$ では $\\nabla^2\\phi=\\dfrac1r\\dfrac{d^2}{dr^2}(r\\phi)=\\dfrac1r\\dfrac{g}{4\\pi}\\mu^2e^{-\\mu r}=\\mu^2\\phi$ なので $(\\nabla^2-\\mu^2)\\phi=0$．原点近傍では $\\phi\\simeq\\dfrac{g}{4\\pi r}$ であり，$\\nabla^2\\dfrac1r=-4\\pi\\delta^3$ より $\\nabla^2\\phi\\simeq-g\\delta^3$．$\\mu^2\\phi$ は原点で積分可能（$\\int\\mu^2\\phi\\,d^3r$ は小球で 0 に収束）なので右辺の $\\delta$ 関数を再現する．（小球 $r<\\epsilon$ にガウスの定理を使い $\\oint\\nabla\\phi\\cdot d\\boldsymbol S=-g(1+\\mu\\epsilon)e^{-\\mu\\epsilon}\\to-g$ と確かめてもよい．）\n\n(2) $\\displaystyle\\int\\phi\\,d^3r=\\int_0^\\infty4\\pi r^2\\frac{ge^{-\\mu r}}{4\\pi r}dr=g\\int_0^\\infty re^{-\\mu r}dr=\\boldsymbol{\\frac{g}{\\mu^2}}.$\n$r>R$ からの寄与は $g\\displaystyle\\int_R^\\infty re^{-\\mu r}dr=\\frac{g}{\\mu^2}(1+\\mu R)e^{-\\mu R}$，$R=1/\\mu$ で割合 $\\boldsymbol{2e^{-1}}$（約 0.74）．体積積分の約 3/4 は到達距離より外から来ている（$r^2$ の体積要素のため）．$\\mu\\to0$ のクーロン型では積分は発散し，有限の到達距離をもたない．\n\n(3) 球対称なので $\\tilde\\phi=\\displaystyle\\int_0^\\infty4\\pi r^2\\phi\\frac{\\sin qr}{qr}dr=\\frac{g}{q}\\int_0^\\infty e^{-\\mu r}\\sin qr\\,dr=\\boldsymbol{\\frac{g}{q^2+\\mu^2}}.$\n（$q=0$ で (2) の値に一致する．）これは交換粒子の伝播関数 $1/(q^2+\\mu^2)$ であり，静的な散乱では運動量移行 $\\hbar\\boldsymbol q$ のみでエネルギー移行は 0 だから，交換粒子の 4 元運動量の 2 乗（$|\\boldsymbol p|^2-E^2/c^2$ の符号規約）は $\\hbar^2q^2>0$ で空間的である．自由粒子なら $-\\mu_0^2c^2<0$（時間的）なので，交換粒子は質量殻にない仮想粒子である．$q^2=-\\mu^2$（質量殻）が伝播関数の極にあたる．\n到達距離は $1/\\mu=\\hbar/(\\mu_0c)$ で質量に反比例するから $\\boldsymbol{\\dfrac{R_1}{R_2}=\\dfrac{m_2}{m_1}}$．たとえば π 中間子（約 140 MeV）では約 1.4 fm，その約 580 倍重い $W$ ボソンでは $2.5\\times10^{-3}$ fm 程度になる．"
    }
   ],
   "idea": {
@@ -512,7 +512,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+   "spec": "(1) 証明\n(2) 積分：g/μ^2 ; 割合：2/e\n(3) $\\tilde\\phi$：g/(q^2+μ^2) ; $R_1/R_2$：m_2/m_1"
   },
   "methods": [],
   "tags": [
@@ -594,24 +594,24 @@
   "theme": "静的クライン＝ゴルドン方程式と湯川ポテンシャル",
   "topic": "静的クライン＝ゴルドン方程式と湯川ポテンシャル",
   "statement": {
-   "tex": "自然単位系（$\\hbar=c=1$）を用い，計量は $(+,-,-,-)$ とする．質量 $\\mu$ のスカラー場 $\\phi$ が原点の点源と結合し，静的な場が\n\\[(\\nabla^2-\\mu^2)\\phi(\\boldsymbol{r})=-g\\,\\delta^3(\\boldsymbol{r})\\]\nに従うとする（$g$ は結合定数）．\n\\begin{enumerate}\n\\item フーリエ変換 $\\phi(\\boldsymbol{r})=\\int\\frac{d^3k}{(2\\pi)^3}\\tilde\\phi(\\boldsymbol{k})e^{i\\boldsymbol{k}\\cdot\\boldsymbol{r}}$ の $\\tilde\\phi(\\boldsymbol{k})$ を $k=|\\boldsymbol{k}|$ で表せ．\n\\item $\\phi$ を $r=|\\boldsymbol{r}|$ の関数として求めよ．\n\\item 媒介粒子を $\\pi$ 中間子（$\\mu c^2=139.6\\,\\mathrm{MeV}$）として，力の到達距離 $1/\\mu$（SI では $\\hbar/(\\mu c)$）を fm 単位で求めよ．$\\hbar c=197.3\\,\\mathrm{MeV\\,fm}$ とする．\n\\end{enumerate}"
+   "tex": "自然単位系（$\\hbar=c=1$）を用い，計量は $(+,-,-,-)$ とする．質量 $\\mu$ のスカラー場 $\\phi$ が原点の点源と結合し，静的な場が\n\\[(\\nabla^2-\\mu^2)\\phi(\\boldsymbol{r})=-g\\,\\delta^3(\\boldsymbol{r})\\]\nに従うとする（$g$ は結合定数）．\n\\begin{enumerate}\n\\item フーリエ変換 $\\phi(\\boldsymbol{r})=\\int\\frac{d^3k}{(2\\pi)^3}\\tilde\\phi(\\boldsymbol{k})e^{i\\boldsymbol{k}\\cdot\\boldsymbol{r}}$ の $\\tilde\\phi(\\boldsymbol{k})$ を $k=|\\boldsymbol{k}|$ で表せ．\n\\item $\\phi$ を $r=|\\boldsymbol{r}|$ の関数として求めよ．\n\\item 原点を中心とする半径 $R$ の球面を外向きに貫く $-\\nabla\\phi$ の流束 $\\Phi(R)=-\\oint\\nabla\\phi\\cdot d\\boldsymbol S$ を求めよ．$R\\ll1/\\mu$ と $R\\gg1/\\mu$ でのふるまいを調べ，力の到達距離が $1/\\mu$（SI では $\\hbar/(\\mu c)$）であることを説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\tilde\\phi=\\frac{g}{k^2+\\mu^2}$ (2) $\\phi=\\frac{g e^{-\\mu r}}{4\\pi r}$ (3) $1.41\\,\\mathrm{fm}$"
+   "tex": "(1) $\\tilde\\phi=\\frac{g}{k^2+\\mu^2}$ (2) $\\phi=\\frac{g e^{-\\mu r}}{4\\pi r}$ (3) $\\Phi(R)=g(1+\\mu R)e^{-\\mu R}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "両辺をフーリエ変換すると $(-k^2-\\mu^2)\\tilde\\phi=-g$ より $\\boldsymbol{\\tilde\\phi=\\frac{g}{k^2+\\mu^2}}$．\n\n角度積分を行うと\n\\[\\phi=\\frac{g}{2\\pi^2 r}\\int_0^\\infty\\frac{k\\sin kr}{k^2+\\mu^2}dk=\\frac{g}{4\\pi^2 i r}\\int_{-\\infty}^{\\infty}\\frac{k e^{ikr}}{k^2+\\mu^2}dk.\\]\n上半面の極 $k=i\\mu$ の留数から $\\boldsymbol{\\phi=\\frac{g e^{-\\mu r}}{4\\pi r}}$（湯川ポテンシャル）．$\\mu\\to0$ でクーロン型に戻る．\n\n到達距離は $\\hbar c/(\\mu c^2)=197.3/139.6\\approx\\boldsymbol{1.41\\,\\mathrm{fm}}$ で，核力の到達距離と同程度である．"
+    "tex": "両辺をフーリエ変換すると $(-k^2-\\mu^2)\\tilde\\phi=-g$ より $\\boldsymbol{\\tilde\\phi=\\frac{g}{k^2+\\mu^2}}$．\n\n角度積分を行うと\n\\[\\phi=\\frac{g}{2\\pi^2 r}\\int_0^\\infty\\frac{k\\sin kr}{k^2+\\mu^2}dk=\\frac{g}{4\\pi^2 i r}\\int_{-\\infty}^{\\infty}\\frac{k e^{ikr}}{k^2+\\mu^2}dk.\\]\n上半面の極 $k=i\\mu$ の留数から $\\boldsymbol{\\phi=\\frac{g e^{-\\mu r}}{4\\pi r}}$（湯川ポテンシャル）．$\\mu\\to0$ でクーロン型に戻る．\n\n(3) $-\\dfrac{d\\phi}{dr}=\\dfrac{g}{4\\pi}\\dfrac{(1+\\mu r)e^{-\\mu r}}{r^2}$ なので\n\\[\\Phi(R)=4\\pi R^2\\cdot\\frac{g}{4\\pi}\\frac{(1+\\mu R)e^{-\\mu R}}{R^2}=\\boldsymbol{g(1+\\mu R)e^{-\\mu R}}.\\]\n$R\\ll1/\\mu$ では $\\Phi\\simeq g$ でクーロン型と同じ（ガウスの法則で源の強さ $g$ がそのまま見える）．$R\\gg1/\\mu$ では $\\Phi\\simeq g\\mu Re^{-\\mu R}\\to0$ と指数関数的に消え，場は源を「遮蔽」する．したがって力が届くのは $r\\lesssim1/\\mu$，SI では $\\hbar/(\\mu c)$ である．媒介粒子を π 中間子とすると約 1.4 fm で，核力の到達距離と同程度である．"
    }
   ],
   "idea": {
-   "tex": "質量項がプロパゲーター $1/(k^2+\\mu^2)$ の極を虚軸にずらし，指数関数的減衰を生む．"
+   "tex": "質量項がプロパゲーター $1/(k^2+\\mu^2)$ の極を虚軸にずらし，指数関数的減衰を生む．流束 $g(1+\\mu R)e^{-\\mu R}$ が $R\\sim1/\\mu$ を境に消えることが到達距離の意味である．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) g/(k^2+mu^2)\n(2) g exp(-mu r)/(4 pi r)\n(3) 到達距離 [fm]：≈1.41"
+   "spec": "(1) g/(k^2+mu^2)\n(2) g exp(-mu r)/(4 pi r)\n(3) $\\Phi(R)$：g (1+μ R) e^(-μ R)"
   },
   "methods": [],
   "tags": [
@@ -642,24 +642,24 @@
   "theme": "クライン・パラドックス（スカラー粒子）",
   "topic": "クライン・パラドックス（スカラー粒子）",
   "statement": {
-   "tex": "自然単位系（$\\hbar=c=1$）を用い，計量は $(+,-,-,-)$ とする．1次元で電荷を持つスカラー粒子が，ポテンシャルエネルギーの段差 $V(z)=0\\ (z<0)$，$V(z)=V_0\\ (z>0)$ に左から入射する．クライン＝ゴルドン方程式は $\\left[(E-V)^2+\\partial_z^2-m^2\\right]\\phi=0$，カレントは $j=-i(\\phi^*\\partial_z\\phi-\\phi\\,\\partial_z\\phi^*)$ とする．$E=2m$，$V_0=5m$ とし，$z<0$ の波数を $k=\\sqrt{E^2-m^2}$ とする．\n\\begin{enumerate}\n\\item $z>0$ の解 $e^{iqz}$ の波数 $q$ を，群速度 $\\partial E/\\partial q$ が正（右向き）になるように選べ．\n\\item 反射率 $R=|j_{\\mathrm{ref}}/j_{\\mathrm{in}}|$ を求めよ．\n\\item 透過率 $T=j_{\\mathrm{tr}}/j_{\\mathrm{in}}$（符号つき）を求めよ．\n\\end{enumerate}"
+   "tex": "自然単位系（$\\hbar=c=1$）を用い，計量は $(+,-,-,-)$ とする．1次元で電荷を持つスカラー粒子（質量 $m$，エネルギー $E>m$）が，ポテンシャルエネルギーの段差 $V(z)=0\\ (z<0)$，$V(z)=V_0\\ (z>0)$ に左から入射する．ただし $V_0>E+m$ とする．クライン＝ゴルドン方程式は $\\left[(E-V)^2+\\partial_z^2-m^2\\right]\\phi=0$，カレントは $j=-i(\\phi^*\\partial_z\\phi-\\phi\\,\\partial_z\\phi^*)$ とする．$z<0$ の波数を $k=\\sqrt{E^2-m^2}$，$p=\\sqrt{(V_0-E)^2-m^2}$ とおく．\n\\begin{enumerate}\n\\item $z>0$ の解 $e^{iqz}$ の波数 $q$ を，群速度 $\\partial E/\\partial q$ が正（右向き）になるように選べ．\n\\item 反射率 $R=|j_{\\mathrm{ref}}/j_{\\mathrm{in}}|$ を $k,p$ で求めよ．\n\\item 透過率 $T=j_{\\mathrm{tr}}/j_{\\mathrm{in}}$（符号つき）を $k,p$ で求め，$R+T$ を計算せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $q=-2\\sqrt{2}m$ (2) $R=\\frac{217+88\\sqrt{6}}{25}\\approx 17.3$ (3) $T=-\\frac{192+88\\sqrt{6}}{25}\\approx -16.3$"
+   "tex": "(1) $q=-p$ (2) $R=\\left(\\dfrac{k+p}{k-p}\\right)^2$ (3) $T=-\\dfrac{4kp}{(k-p)^2}$，$R+T=1$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$z>0$ では $(E-V_0)^2=q^2+m^2$ より $|q|=\\sqrt{9m^2-m^2}=2\\sqrt2m$．$E=V_0-\\sqrt{q^2+m^2}$ の分枝なので $\\partial E/\\partial q=-q/\\sqrt{q^2+m^2}$．これが正になるのは $q<0$ で，$\\boldsymbol{q=-2\\sqrt2m}$（位相速度と群速度が逆向き：反粒子の運動）．\n\n$\\phi=e^{ikz}+re^{-ikz}\\ (z<0)$，$\\phi=te^{iqz}\\ (z>0)$ とし，$z=0$ で $\\phi,\\partial_z\\phi$ を連続にすると $1+r=t$，$k(1-r)=qt$ から\n\\[r=\\frac{k-q}{k+q},\\quad t=\\frac{2k}{k+q}.\\]\n$k=\\sqrt3m$ を代入すると $R=\\left(\\frac{\\sqrt3+2\\sqrt2}{\\sqrt3-2\\sqrt2}\\right)^2=\\frac{(\\sqrt3+2\\sqrt2)^4}{25}=\\boldsymbol{\\frac{217+88\\sqrt6}{25}\\approx 17.3}$．\n\n$T=\\frac{q|t|^2}{k}=\\frac{4kq}{(k+q)^2}=\\boldsymbol{-\\frac{192+88\\sqrt6}{25}\\approx -16.3}$．$R+T=1$ は満たすが $R>1$，$T<0$：段差で粒子・反粒子対が生成され，$z>0$ へ反粒子が流れ込む（負の電荷流）と解釈される．"
+    "tex": "$z>0$ では $(E-V_0)^2=q^2+m^2$ より $|q|=\\sqrt{(V_0-E)^2-m^2}=p$．$E<V_0-m$ なので $E=V_0-\\sqrt{q^2+m^2}$ の分枝で，$\\partial E/\\partial q=-q/\\sqrt{q^2+m^2}$．これが正になるのは $q<0$ で，$\\boldsymbol{q=-p}$（位相速度と群速度が逆向き：反粒子の運動）．\n\n$\\phi=e^{ikz}+re^{-ikz}\\ (z<0)$，$\\phi=te^{iqz}\\ (z>0)$ とし，$z=0$ で $\\phi,\\partial_z\\phi$ を連続にすると $1+r=t$，$k(1-r)=qt$ から\n\\[r=\\frac{k-q}{k+q}=\\frac{k+p}{k-p},\\quad t=\\frac{2k}{k+q}=\\frac{2k}{k-p}.\\]\nよって $R=|r|^2=\\boldsymbol{\\left(\\dfrac{k+p}{k-p}\\right)^2}$．$k,p>0$ なので $R>1$ である．\n\n$T=\\dfrac{q|t|^2}{k}=\\dfrac{4kq}{(k+q)^2}=\\boldsymbol{-\\dfrac{4kp}{(k-p)^2}}<0$．\n\\[R+T=\\frac{(k+p)^2-4kp}{(k-p)^2}=\\boldsymbol{1}\\]\nで流れの保存は満たすが $R>1$，$T<0$：段差で粒子・反粒子対が生成され，$z>0$ へ反粒子が流れ込む（負の電荷流）と解釈される．（例：$E=2m$，$V_0=5m$ では $R\\approx17.3$，$T\\approx-16.3$．）"
    }
   ],
   "idea": {
-   "tex": "$V_0>E+m$ では段差の内側に反粒子の連続状態があり，群速度で境界条件を選ぶと $R>1$ となる．"
+   "tex": "$V_0>E+m$ では段差の内側に反粒子の連続状態があり，群速度で境界条件を選ぶと $q=-p$ となって $R=\\left(\\frac{k+p}{k-p}\\right)^2>1$ となる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) -2 sqrt(2) m\n(2) (217+88sqrt(6))/25\n(3) -(192+88sqrt(6))/25"
+   "spec": "(1) -p\n(2) ((k+p)/(k-p))^2\n(3) $T$：-4 k p/(k-p)^2 ; $R+T$：1"
   },
   "methods": [],
   "tags": [

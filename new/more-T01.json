@@ -11,7 +11,8 @@
   "solution": "面 $x=1$ では $\\boldsymbol{F}\\cdot\\boldsymbol{n}=F_x=1^2=1$ で，面積 $1$ なので流束は $\\boldsymbol{1}$．面 $x=0$ では $\\boldsymbol{F}\\cdot\\boldsymbol{n}=-F_x=-0^2=0$ なので流束は $\\boldsymbol{0}$．\n\n$y,z$ 方向の面も同じ形なので，各方向から $1$ ずつ，合計 $\\boldsymbol{3}$ が外へ出ていく．\n\n$\\nabla\\cdot\\boldsymbol{F}=\\boldsymbol{2x+2y+2z}$．体積積分は\n\\[\\int_0^1\\!\\!\\int_0^1\\!\\!\\int_0^1(2x+2y+2z)\\,dx\\,dy\\,dz=1+1+1=\\boldsymbol{3}.\\]\n(2) と一致する．これは「閉曲面から出る流束 $=$ 内部の発散の体積積分」というガウスの発散定理の一例で，電磁気学のガウスの法則 $\\displaystyle\\oint\\boldsymbol{E}\\cdot\\boldsymbol{n}\\,dS=Q/\\varepsilon_0$ の数学的な土台である．\n\n次は，閉曲線に沿った線積分と回転 $\\nabla\\times\\boldsymbol{F}$ を結ぶストークスの定理へ進むとよい．",
   "idea": "発散は「単位体積あたりの湧き出し」．表面での流束の合計は内部の湧き出しの合計に等しい（ガウスの発散定理）．",
   "tags": "流束,発散,ガウスの発散定理,面積分",
-  "input": "(1) x=1：1 ; x=0：0\n(2) 3\n(3) 発散：2x+2y+2z ; 体積積分：3"
+  "input": "(1) x=1：1 ; x=0：0\n(2) 3\n(3) 発散：2x+2y+2z ; 体積積分：3",
+  "id": "PM-01-008"
  },
  {
   "tid": "T01-02",
@@ -25,7 +26,8 @@
   "solution": "$(\\nabla\\times\\boldsymbol{F})_z=\\partial_xF_y-\\partial_yF_x=3x^2+3y^2$，すなわち $\\boldsymbol{3(x^2+y^2)}$．\n\n$d\\boldsymbol{r}=a(-\\sin\\theta,\\cos\\theta)\\,d\\theta$ より\n\\[\\boldsymbol{F}\\cdot d\\boldsymbol{r}=a^4(\\sin^4\\theta+\\cos^4\\theta)\\,d\\theta.\\]\n$\\displaystyle\\int_0^{2\\pi}\\cos^4\\theta\\,d\\theta=\\int_0^{2\\pi}\\sin^4\\theta\\,d\\theta=\\frac{3\\pi}{4}$ なので，$\\boldsymbol{\\dfrac{3\\pi a^4}{2}}$．\n\n極座標で $\\displaystyle\\int_0^{2\\pi}\\!\\!\\int_0^a3r^2\\cdot r\\,dr\\,d\\varphi=2\\pi\\cdot\\frac{3a^4}{4}=\\boldsymbol{\\dfrac{3\\pi a^4}{2}}$ となり一致する．",
   "idea": "閉曲線に沿った循環は，その曲線が張る面を貫く回転（渦度）の流束に等しい．線積分と面積分のどちらか易しい方で計算できる．",
   "tags": "ストークスの定理,回転,線積分,循環",
-  "input": "(1) 3x^2+3y^2\n(2) 3pi a^4/2\n(3) 3pi a^4/2"
+  "input": "(1) 3x^2+3y^2\n(2) 3pi a^4/2\n(3) 3pi a^4/2",
+  "id": "PM-01-009"
  },
  {
   "tid": "T01-03",
@@ -39,7 +41,8 @@
   "solution": "$r v_\\varphi=\\dfrac{\\kappa r^2}{2\\pi a^2}$ を微分して $r$ で割ると $\\boldsymbol{\\dfrac{\\kappa}{\\pi a^2}}$（一様な渦度，剛体回転）．\n\n$r v_\\varphi=\\dfrac{\\kappa}{2\\pi}$ は定数なので渦度は $\\boldsymbol{0}$（渦なしの流れ）．\n\n$\\displaystyle\\oint\\boldsymbol{v}\\cdot d\\boldsymbol{r}=2\\pi R\\cdot\\frac{\\kappa}{2\\pi R}=\\boldsymbol{\\kappa}$ で，$R$ によらない．これはストークスの定理で，渦度の総量 $\\dfrac{\\kappa}{\\pi a^2}\\cdot\\pi a^2=\\kappa$ に等しい．\n\n$a\\to0$ でも渦度の面積分は $\\kappa$ のまま，台は原点に縮むので $\\omega_z=\\kappa\\,\\delta^2(\\boldsymbol{r})$，すなわち $\\boldsymbol{c=\\kappa}$．",
   "idea": "曲線座標の回転の公式で渦度を求める．渦なしの領域の循環は，囲んだ渦度の総量（ストークスの定理）で決まり，点渦ではそれがデルタ関数になる．",
   "tags": "円筒座標,回転,渦度,循環,ストークスの定理",
-  "input": "(1) kappa/(pi a^2)\n(2) 0\n(3) kappa\n(4) kappa"
+  "input": "(1) kappa/(pi a^2)\n(2) 0\n(3) kappa\n(4) kappa",
+  "id": "PM-01-010"
  },
  {
   "tid": "T01-04",
@@ -53,7 +56,8 @@
   "solution": "$\\partial\\boldsymbol{r}/\\partial\\xi=(\\eta\\cos\\varphi,\\ \\eta\\sin\\varphi,\\ \\xi)$ の大きさから $\\boldsymbol{h_\\xi=\\sqrt{\\xi^2+\\eta^2}}$．同様に $\\partial\\boldsymbol{r}/\\partial\\eta=(\\xi\\cos\\varphi,\\xi\\sin\\varphi,-\\eta)$ で $h_\\eta=h_\\xi$．$\\partial\\boldsymbol{r}/\\partial\\varphi=(-\\xi\\eta\\sin\\varphi,\\xi\\eta\\cos\\varphi,0)$ より $\\boldsymbol{h_\\varphi=\\xi\\eta}$．3つの接ベクトルの内積はすべて $0$（直交）．\n\n$J=h_\\xi h_\\eta h_\\varphi=\\boldsymbol{\\xi\\eta(\\xi^2+\\eta^2)}$．\n\n$r^2=\\xi^2\\eta^2+\\dfrac{(\\xi^2-\\eta^2)^2}{4}=\\dfrac{(\\xi^2+\\eta^2)^2}{4}$ より $\\boldsymbol{r=\\dfrac{\\xi^2+\\eta^2}{2}}$．したがって $\\xi^2=r+z$，$\\eta^2=r-z$ で，等 $\\xi$ 面・等 $\\eta$ 面は原点を焦点とする回転放物面である．\n\n$\\nabla f=\\dfrac{1}{h_\\xi}\\cdot2\\xi\\,\\boldsymbol{e}_\\xi$ より $|\\nabla f|=\\boldsymbol{\\dfrac{2\\xi}{\\sqrt{\\xi^2+\\eta^2}}}$．（$\\xi^2=r+z$ を直交座標で微分しても同じ結果になる．）この座標はクーロン散乱やシュタルク効果で変数分離に使われる．",
   "idea": "位置ベクトルを各座標で偏微分した接ベクトルの大きさがスケール因子．体積要素・勾配・ラプラシアンはすべてスケール因子で書ける．",
   "tags": "直交曲線座標,スケール因子,放物線座標,ヤコビアン",
-  "input": "(1) h_ξ：sqrt(ξ^2+η^2) ; h_φ：ξ η\n(2) ξ η (ξ^2+η^2)\n(3) (ξ^2+η^2)/2\n(4) 2ξ/sqrt(ξ^2+η^2)"
+  "input": "(1) h_ξ：sqrt(ξ^2+η^2) ; h_φ：ξ η\n(2) ξ η (ξ^2+η^2)\n(3) (ξ^2+η^2)/2\n(4) 2ξ/sqrt(ξ^2+η^2)",
+  "id": "PM-01-011"
  },
  {
   "tid": "T01-05",
@@ -67,7 +71,8 @@
   "solution": "$n_in_i=1$ より $\\displaystyle\\int d\\Omega=4\\pi=3A$，よって $\\boldsymbol{A=\\dfrac{4\\pi}{3}}$．\n\n$k=l$ で縮約すると左辺は $\\int n_in_j\\,d\\Omega=A\\delta_{ij}$，右辺は $B(3\\delta_{ij}+\\delta_{ij}+\\delta_{ij})=5B\\delta_{ij}$．よって $B=A/5=\\boldsymbol{\\dfrac{4\\pi}{15}}$．\n\n$a_ia_ja_ka_l$ を掛けて和をとると，3項がどれも $a^4$ を与えるので $3Ba^4=\\boldsymbol{\\dfrac{4\\pi a^4}{5}}$．（$\\boldsymbol{a}$ を $z$ 軸に選べば $\\int\\cos^4\\theta\\,d\\Omega=4\\pi/5$ で一致する．）\n\n$\\int\\cos^4\\theta\\,d\\Omega=\\dfrac{4\\pi}{5}$，$\\int\\cos^2\\theta\\,d\\Omega=\\dfrac{4\\pi}{3}$ より\n\\[9\\cdot\\frac{4\\pi}{5}-6\\cdot\\frac{4\\pi}{3}+4\\pi=\\boldsymbol{\\frac{16\\pi}{5}}.\\]\n四重極放射の全強度や，等方的な系での平均 $\\langle n_in_j\\rangle=\\delta_{ij}/3$ など，このテンソル積分は随所で使われる．",
   "idea": "回転で不変なテンソルは $\\delta_{ij}$ の積の組合せしかない．係数は縮約をとってスカラーの積分に帰着させれば決まる．",
   "tags": "等方テンソル,クロネッカーのデルタ,立体角積分,縮約",
-  "input": "(1) 4pi/3\n(2) 4pi/15\n(3) 4pi a^4/5\n(4) 16pi/5"
+  "input": "(1) 4pi/3\n(2) 4pi/15\n(3) 4pi a^4/5\n(4) 16pi/5",
+  "id": "PM-01-012"
  },
  {
   "tid": "T01-06",
@@ -81,7 +86,8 @@
   "solution": "$\\nabla\\cdot\\boldsymbol{v}=k-k=\\boldsymbol{0}$（非圧縮），$(\\nabla\\times\\boldsymbol{v})_z=\\partial_x(-ky)-\\partial_y(kx)=\\boldsymbol{0}$（渦なし）．\n\n$(\\boldsymbol{v}\\cdot\\nabla)v_x=kx\\,\\partial_x(kx)+(-ky)\\partial_y(kx)=\\boldsymbol{k^2x}$．同様に $y$ 成分は $k^2y$．\n\n渦なしなので恒等式の右辺は $\\nabla(v^2/2)=\\nabla\\left(\\tfrac12k^2(x^2+y^2)\\right)=k^2(x,y,0)$ で (2) と一致する．オイラー方程式は $\\nabla\\left(p+\\tfrac12\\rho v^2\\right)=0$ となり\n\\[\\boldsymbol{p=p_0-\\frac12\\rho k^2(x^2+y^2)}.\\]\nよどみ点（原点）で圧力が最大になる．\n\n一般には $\\nabla\\left(p+\\tfrac12\\rho v^2\\right)=\\rho\\,\\boldsymbol{v}\\times\\boldsymbol{\\omega}$（$\\boldsymbol{\\omega}=\\nabla\\times\\boldsymbol{v}$）．右辺は $\\boldsymbol{v}$ に垂直なので，$\\boldsymbol{v}$ 方向の微分（流線に沿った変化）だけが消える．よって $p+\\tfrac12\\rho v^2$ は\\textbf{各流線に沿って}一定で，流線ごとに値が異なり得る．渦なしなら全空間で一定になる．",
   "idea": "$(\\boldsymbol{v}\\cdot\\nabla)\\boldsymbol{v}$ を運動エネルギーの勾配とラム・ベクトルに分けると，渦なし流ではオイラー方程式がすぐに積分でき，ベルヌーイの定理が出る．",
   "tags": "ベクトル恒等式,オイラー方程式,ベルヌーイの定理,渦度",
-  "input": "(1) 発散：0 ; 回転：0\n(2) k^2 x\n(3) p_0 - ρ k^2 (x^2+y^2)/2\n(4) 記述：p+ρv²/2 は各流線に沿って一定（v×ω は v に垂直）．渦なしなら全空間で一定"
+  "input": "(1) 発散：0 ; 回転：0\n(2) k^2 x\n(3) p_0 - ρ k^2 (x^2+y^2)/2\n(4) 記述：p+ρv²/2 は各流線に沿って一定（v×ω は v に垂直）．渦なしなら全空間で一定",
+  "id": "PM-01-013"
  },
  {
   "tid": "T01-07",
@@ -95,7 +101,8 @@
   "solution": "計量は対角で $g=r^4\\sin^2\\theta$，よって $\\boldsymbol{\\sqrt{g}=r^2\\sin\\theta}$．公式に入れると見慣れた極座標のラプラシアンになる．\n\n単位球面では $\\sqrt g=\\sin\\theta$，$g^{\\theta\\theta}=1$，$g^{\\varphi\\varphi}=1/\\sin^2\\theta$ なので\n\\[\\Delta f=\\frac{1}{\\sin\\theta}\\partial_\\theta(\\sin\\theta\\,\\partial_\\theta f)+\\frac{1}{\\sin^2\\theta}\\partial_\\varphi^2f.\\]\n$f=\\sin^2\\theta\\cos2\\varphi$ では，第1項 $=\\dfrac{1}{\\sin\\theta}\\partial_\\theta(2\\sin^2\\theta\\cos\\theta)\\cos2\\varphi=(4\\cos^2\\theta-2\\sin^2\\theta)\\cos2\\varphi$，第2項 $=-4\\cos2\\varphi$．和は $(4-6\\sin^2\\theta-4)\\cos2\\varphi=-6f$．よって $\\boldsymbol{\\lambda=-6}$．\n\n$-l(l+1)=-6$ より $\\boldsymbol{l=2}$．実際 $f\\propto\\mathrm{Re}\\,(x+iy)^2$ で，$Y_{2,\\pm2}$ の組合せである．\n\n$\\sqrt g=\\sinh r$，$g^{rr}=1$ より $\\Delta(\\cosh r)=\\dfrac{1}{\\sinh r}\\dfrac{d}{dr}(\\sinh r\\cdot\\sinh r)=\\boldsymbol{2\\cosh r}$．$\\cosh r$ は双曲面 $X_0^2-X_1^2-X_2^2=1$ の埋め込み座標 $X_0$ で，球面上の $\\cos\\theta$（固有値 $-2$）に対応する．符号が逆なのは曲率が負だからである．",
   "idea": "曲がった空間のラプラシアンは計量の行列式と逆行列だけで決まる．球面調和関数は球面上のラプラシアンの固有関数である．",
   "tags": "ラプラス＝ベルトラミ演算子,計量,球面調和関数,双曲面",
-  "input": "(1) r^2 sin(θ)\n(2) -6\n(3) 2\n(4) 2cosh(r)"
+  "input": "(1) r^2 sin(θ)\n(2) -6\n(3) 2\n(4) 2cosh(r)",
+  "id": "PM-01-014"
  },
  {
   "tid": "T01-08",
@@ -109,7 +116,8 @@
   "solution": "$\\partial_z r^{-1}=-zr^{-3}$，$\\partial_z^2r^{-1}=-r^{-3}+3z^2r^{-5}=\\boldsymbol{\\dfrac{3z^2-r^2}{r^5}}$．\n\nトレースをとると左辺は $\\nabla^2(1/r)=-4\\pi\\delta^3$．右辺の第1項は $\\dfrac{3r^2-3r^2}{r^5}=0$，第2項は $3D\\delta^3$．よって $\\boldsymbol{D=-\\dfrac{4\\pi}{3}}$．\n\nデルタ関数の項は $\\dfrac{\\mu_0}{4\\pi}\\left(m_iD+4\\pi m_i\\right)\\delta^3=\\dfrac{\\mu_0}{4\\pi}\\cdot\\dfrac{8\\pi}{3}m_i\\delta^3$，すなわち $\\boldsymbol{K=\\dfrac{2\\mu_0}{3}}$．残りは通常の双極子場 $\\dfrac{\\mu_0}{4\\pi}\\dfrac{3\\boldsymbol{n}(\\boldsymbol{n}\\cdot\\boldsymbol{m})-\\boldsymbol{m}}{r^3}$ である．\n\n双極子場の部分は角度平均が $0$ なので球内の積分に寄与せず，デルタ関数だけが残る：$\\boldsymbol{K'=\\dfrac{2\\mu_0}{3}}$．これは「球内の電流がつくる磁場の体積積分 $=\\frac{2\\mu_0}{3}\\boldsymbol{m}$」という一般的な結果と一致し，水素原子の超微細構造（21 cm 線）を与えるフェルミ接触相互作用の起源である．",
   "idea": "$\\partial_i\\partial_j(1/r)$ は原点で特異で，トレースが $\\nabla^2(1/r)=-4\\pi\\delta^3$ を再現するようにデルタ関数の項を補う必要がある．",
   "tags": "デルタ関数,ラプラシアン,磁気双極子,超微細構造",
-  "input": "(1) (3z^2-r^2)/r^5\n(2) -4pi/3\n(3) 2mu_0/3\n(4) 2mu_0/3"
+  "input": "(1) (3z^2-r^2)/r^5\n(2) -4pi/3\n(3) 2mu_0/3\n(4) 2mu_0/3",
+  "id": "PM-01-015"
  },
  {
   "tid": "T01-09",
@@ -123,7 +131,8 @@
   "solution": "$LP(a)=\\begin{pmatrix}1&a\\\\-1/f&1-a/f\\end{pmatrix}$，さらに左から $P(b)$ を掛けると\n\\[M=\\begin{pmatrix}1-b/f&a+b-ab/f\\\\-1/f&1-a/f\\end{pmatrix}.\\]\nよって $\\boldsymbol{B=a+b-\\dfrac{ab}{f}}$．\n\n$B=0$ を両辺 $ab$ で割ると $\\dfrac1a+\\dfrac1b=\\dfrac1f$（レンズの公式）．よって $\\boldsymbol{b=\\dfrac{af}{a-f}}$．\n\n$A=1-\\dfrac bf=1-\\dfrac{a}{a-f}=\\boldsymbol{-\\dfrac{f}{a-f}}$（$=-b/a$，負号は倒立像）．なお $\\det P=\\det L=1$ なので $\\det M=AD-BC=1$ である．\n\n行列の積で光学系を組み立てる考え方は，レーザー共振器の安定条件（$|A+D|<2$）や，量子力学の転送行列法へとつながる．",
   "idea": "光学素子を行列で表すと，複数の素子の組合せは行列の積になる．結像条件は「出口の高さが入口の傾きによらない」こと．",
   "tags": "行列,光線行列,薄レンズ,結像",
-  "input": "(1) a+b-a b/f\n(2) a f/(a-f)\n(3) -f/(a-f)"
+  "input": "(1) a+b-a b/f\n(2) a f/(a-f)\n(3) -f/(a-f)",
+  "id": "PM-02-008"
  },
  {
   "tid": "T01-10",
@@ -137,7 +146,8 @@
   "solution": "特性方程式 $(E_1-\\lambda)(E_2-\\lambda)-V^2=0$ より\n\\[\\boldsymbol{\\lambda_\\pm=\\frac{E_1+E_2}{2}\\pm\\sqrt{\\frac{(E_1-E_2)^2}{4}+V^2}}.\\]\n\n$R(\\vartheta)=\\begin{pmatrix}\\cos\\vartheta&-\\sin\\vartheta\\\\\\sin\\vartheta&\\cos\\vartheta\\end{pmatrix}$ に対し $R^{T}HR$ の非対角成分は\n\\[\\frac{E_2-E_1}{2}\\sin2\\vartheta+V\\cos2\\vartheta.\\]\nこれを $0$ にして $\\boldsymbol{\\tan2\\vartheta=\\dfrac{2V}{E_1-E_2}}$．\n\n$E_1=E_2$ では $\\vartheta=\\pi/4$（完全な混合）で，固有値は $E_1\\pm V$，分裂幅は $\\boldsymbol{2V}$．これは二原子分子の結合・反結合軌道や，ニュートリノ振動の混合角と同じ構造である．$V\\neq0$ なら2準位は決して交差しない（準位反発）．",
   "idea": "実対称 $2\\times2$ 行列は回転行列1つで対角化でき，回転角は非対角成分と対角成分の差の比で決まる．",
   "tags": "エルミート行列,対角化,混合角,準位反発",
-  "input": "(1) {(E_1+E_2)/2+sqrt((E_1-E_2)^2/4+V^2), (E_1+E_2)/2-sqrt((E_1-E_2)^2/4+V^2)}\n(2) 2V/(E_1-E_2)\n(3) 2V"
+  "input": "(1) {(E_1+E_2)/2+sqrt((E_1-E_2)^2/4+V^2), (E_1+E_2)/2-sqrt((E_1-E_2)^2/4+V^2)}\n(2) 2V/(E_1-E_2)\n(3) 2V",
+  "id": "PM-02-009"
  },
  {
   "tid": "T01-11",
@@ -151,7 +161,8 @@
   "solution": "$\\langle x^2,x\\rangle=0$，$\\langle x^2,1\\rangle=\\dfrac23$，$\\langle1,1\\rangle=2$ なので，$x^2$ から $1$ 方向の成分 $\\dfrac{2/3}{2}=\\dfrac13$ を引いて $\\boldsymbol{x^2-\\dfrac13}$．これは $\\dfrac23P_2(x)$ で，ルジャンドル多項式が得られている．\n\n$\\displaystyle\\int_{-1}^1\\left(x^4-\\frac23x^2+\\frac19\\right)dx=\\frac25-\\frac49+\\frac29=\\boldsymbol{\\frac{8}{45}}$．\n\n$x^3$ は奇関数なので $1$ と $x^2-\\frac13$ とは直交し，$x$ 成分だけが残る：$\\dfrac{\\langle x^3,x\\rangle}{\\langle x,x\\rangle}x=\\dfrac{2/5}{2/3}x=\\boldsymbol{\\dfrac{3x}{5}}$．\n\n有限次元の線形代数の操作（内積・直交化・射影）が関数空間でもそのまま使え，直交多項式の系列（ルジャンドル，エルミート，ラゲール）は内積の重みの違いとして統一的に理解できる．",
   "idea": "関数を内積空間のベクトルとみなせば，グラム＝シュミット法で直交多項式が，直交射影で最小2乗近似が得られる．",
   "tags": "グラム＝シュミットの直交化,内積空間,ルジャンドル多項式,直交射影",
-  "input": "(1) x^2-1/3\n(2) 8/45\n(3) 3x/5"
+  "input": "(1) x^2-1/3\n(2) 8/45\n(3) 3x/5",
+  "id": "PM-02-010"
  },
  {
   "tid": "T01-12",
@@ -165,7 +176,8 @@
   "solution": "固有値は $\\boldsymbol{1,\\ 3}$，固有ベクトルは $(1,-1)/\\sqrt2$，$(1,1)/\\sqrt2$．射影演算子は\n\\[P_1=\\frac12\\begin{pmatrix}1&-1\\\\-1&1\\end{pmatrix},\\qquad P_3=\\frac12\\begin{pmatrix}1&1\\\\1&1\\end{pmatrix}\\]\nで，$P_1+P_3=I$，$P_1P_3=0$，$P_i^2=P_i$．\n\nスペクトル分解から $f(A)=f(1)P_1+f(3)P_3$．$A^n=P_1+3^nP_3$ の $(1,1)$ 成分は $\\boldsymbol{\\dfrac{3^n+1}{2}}$．\n\n$\\sqrt A=P_1+\\sqrt3P_3$ の $(1,2)$ 成分は $\\boldsymbol{\\dfrac{\\sqrt3-1}{2}}$（$B^2=P_1+3P_3=A$ を確認できる）．\n\n$\\ln A=0\\cdot P_1+\\ln3\\cdot P_3$，$\\mathrm{tr}P_3=1$ より $\\boldsymbol{\\ln3}$．これは $\\ln\\det A$ に等しい（$\\mathrm{tr}\\ln A=\\ln\\det A$）．",
   "idea": "エルミート行列は固有値と射影演算子で $A=\\sum\\lambda P_\\lambda$ と分解でき，関数は $f(A)=\\sum f(\\lambda)P_\\lambda$ で定義・計算できる．",
   "tags": "スペクトル分解,射影演算子,行列の関数,固有値",
-  "input": "(1) {1, 3}\n(2) (3^n+1)/2\n(3) (sqrt(3)-1)/2\n(4) ln(3)"
+  "input": "(1) {1, 3}\n(2) (3^n+1)/2\n(3) (sqrt(3)-1)/2\n(4) ln(3)",
+  "id": "PM-02-011"
  },
  {
   "tid": "T01-13",
@@ -179,7 +191,8 @@
   "solution": "特性多項式は $-\\lambda^3+2\\lambda=0$，よって $\\boldsymbol{0,\\ \\pm\\sqrt2}$．\n\n内部の点では $\\psi_{j-1}+\\psi_{j+1}=2\\cos\\dfrac{k\\pi}{N+1}\\psi_j$．端 $j=1,N$ では存在しない $\\psi_0$，$\\psi_{N+1}$ が必要だが，$\\sin0=\\sin k\\pi=0$ なので境界条件が自動的に満たされる．よって $\\boldsymbol{\\lambda_k=2\\cos\\dfrac{k\\pi}{N+1}}$．(1) は $2\\cos\\frac{\\pi}{4},2\\cos\\frac{\\pi}{2},2\\cos\\frac{3\\pi}{4}$ で一致する．\n\n$N=4$：$2\\cos\\dfrac{\\pi}{5}=\\boldsymbol{\\dfrac{1+\\sqrt5}{2}}$（黄金比）．\n\n$\\sum_k\\lambda_k^2=\\mathrm{tr}\\,T_N^2$ で，$T_N^2$ の対角成分は各点の隣の数（端は1，内部は2）．和は $\\boldsymbol{2(N-1)}$．\n\n周期境界（環）では $e^{ikj}$ が固有ベクトルだったが，開いた境界では左右の進行波を重ねた定在波 $\\sin$ になり，波数が $\\pi/(N+1)$ 刻みに量子化される．",
   "idea": "差分方程式の解を指数関数（ここでは $\\sin$）で仮定し，端の条件を「仮想的な端の外の値が $0$」と読み替えると固有値が求まる．",
   "tags": "三重対角行列,固有値,強束縛模型,定在波",
-  "input": "(1) {0, sqrt(2), -sqrt(2)}\n(2) 2cos(k pi/(N+1))\n(3) (1+sqrt(5))/2\n(4) 2(N-1)"
+  "input": "(1) {0, sqrt(2), -sqrt(2)}\n(2) 2cos(k pi/(N+1))\n(3) (1+sqrt(5))/2\n(4) 2(N-1)",
+  "id": "PM-02-012"
  },
  {
   "tid": "T01-14",
@@ -193,7 +206,8 @@
   "solution": "$\\det A=8$ なので $Z=\\dfrac{2\\pi}{\\sqrt8}=\\boldsymbol{\\dfrac{\\pi}{\\sqrt2}}$．（直交変換で対角化すると1次元のガウス積分の積になり，$\\prod\\sqrt{2\\pi/\\lambda_i}$ となる．）\n\n$A^{-1}=\\dfrac18\\begin{pmatrix}3&-1\\\\-1&3\\end{pmatrix}$ より $\\boldsymbol{\\langle x_1^2\\rangle=\\dfrac38}$，$\\boldsymbol{\\langle x_1x_2\\rangle=-\\dfrac18}$．\n\n$\\langle x_1x_1x_2x_2\\rangle=\\langle x_1^2\\rangle\\langle x_2^2\\rangle+2\\langle x_1x_2\\rangle^2=\\dfrac{9}{64}+\\dfrac{2}{64}=\\boldsymbol{\\dfrac{11}{64}}$．\n\n$\\langle u^2\\rangle=\\dfrac38+\\dfrac38-\\dfrac28=\\boldsymbol{\\dfrac12}$．$u$ 方向 $(1,1)$ は $A$ の固有値 $4$ の固有ベクトルで，$(1,1)A^{-1}(1,1)^T=2/4$ と一致する．\n\nこの構造（伝播関数 $=A^{-1}$，高次の相関はその積の和）は，場の理論の摂動展開やガウス過程にそのまま一般化される．",
   "idea": "多変数ガウス積分は行列の対角化で1次元の積に帰着し，2次の相関は逆行列，高次の相関はウィックの定理で2次の積に分解される．",
   "tags": "ガウス積分,逆行列,行列式,ウィックの定理",
-  "input": "(1) pi/sqrt(2)\n(2) ⟨x_1^2⟩：3/8 ; ⟨x_1x_2⟩：-1/8\n(3) 11/64\n(4) 1/2"
+  "input": "(1) pi/sqrt(2)\n(2) ⟨x_1^2⟩：3/8 ; ⟨x_1x_2⟩：-1/8\n(3) 11/64\n(4) 1/2",
+  "id": "PM-02-013"
  },
  {
   "tid": "T01-15",
@@ -207,7 +221,8 @@
   "solution": "$H^2=|h|^2I$ なので固有値は $\\pm|h(k)|$．$|h|^2=v^2+w^2+2vw\\cos k$ より $\\boldsymbol{E_\\pm=\\pm\\sqrt{v^2+w^2+2vw\\cos k}}$．\n\n$|h|$ は $k=\\pi$ で最小値 $|v-w|$ をとるので，ギャップは $\\boldsymbol{2|v-w|}$．$v=w$ でギャップが閉じる．\n\n$h(k)$ は中心 $v$，半径 $w$ の円を1周する．$w>v$ なら円は原点を囲み $\\boldsymbol{\\nu=1}$，$v>w$ なら囲まず $\\boldsymbol{\\nu=0}$．\n\n$\\nu$ はギャップが開いている限り連続変形で変わらない整数（トポロジカル不変量）で，$\\nu=1$ の相では開いた鎖の両端にエネルギー $0$ の端状態が現れる．相を移るには必ず $v=w$ でギャップを閉じる必要がある．",
   "idea": "並進対称性で行列をブロック対角化し，各ブロックの非対角成分 $h(k)$ が複素平面上に描く閉曲線の巻き付き数が相を分類する．",
   "tags": "SSH模型,ブロッホの定理,巻き付き数,トポロジカル相",
-  "input": "(1) {sqrt(v^2+w^2+2v w cos(k)), -sqrt(v^2+w^2+2v w cos(k))}\n(2) 2abs(v-w)\n(3) 1\n(4) 0"
+  "input": "(1) {sqrt(v^2+w^2+2v w cos(k)), -sqrt(v^2+w^2+2v w cos(k))}\n(2) 2abs(v-w)\n(3) 1\n(4) 0",
+  "id": "PM-02-014"
  },
  {
   "tid": "T01-16",
@@ -221,7 +236,8 @@
   "solution": "特性方程式 $(\\omega_0-\\lambda)^2+\\gamma^2-g^2=0$ より $\\boldsymbol{\\lambda=\\omega_0\\pm\\sqrt{g^2-\\gamma^2}}$．\n\n$g>\\gamma$ で実（振動），$g<\\gamma$ で純虚数の差（増幅と減衰）．境目は $\\boldsymbol{g_c=\\gamma}$．\n\n$N=\\gamma\\begin{pmatrix}i&1\\\\1&-i\\end{pmatrix}$ で，$N^2=\\gamma^2\\begin{pmatrix}i^2+1&i-i\\\\1\\cdot i-i&1+i^2\\end{pmatrix}=\\boldsymbol{O}$．$N\\neq O$ かつ $N^2=O$ なので $H$ は対角化できず（ジョルダン細胞），固有値 $\\omega_0$ の固有ベクトルは $(1,-i)^T$ の $\\boldsymbol{1}$ 個だけ．2つの固有ベクトルが合体している．\n\n$N^2=O$ より $e^{-iHt}=e^{-i\\omega_0t}(I-iNt)$ と級数が切れる．\n\\[\\psi(t)=e^{-i\\omega_0t}\\begin{pmatrix}1+\\gamma t\\\\-i\\gamma t\\end{pmatrix}\\]\nから $\\|\\psi\\|^2=\\boldsymbol{1+2\\gamma t+2\\gamma^2t^2}$．固有値は実数なのに，例外点ではノルムが指数ではなく $t^2$ で増える．これは対角化できない行列に特有の振る舞いである．",
   "idea": "非エルミート行列では，パラメータを変えると2つの固有値と固有ベクトルが同時に合体する例外点があり，そこでは行列はジョルダン標準形になる．",
   "tags": "非エルミート行列,例外点,ジョルダン標準形,PT対称性",
-  "input": "(1) {omega_0+sqrt(g^2-gamma^2), omega_0-sqrt(g^2-gamma^2)}\n(2) gamma\n(3) N^2：0 ; 固有ベクトルの個数：1\n(4) 1+2gamma t+2gamma^2 t^2"
+  "input": "(1) {omega_0+sqrt(g^2-gamma^2), omega_0-sqrt(g^2-gamma^2)}\n(2) gamma\n(3) N^2：0 ; 固有ベクトルの個数：1\n(4) 1+2gamma t+2gamma^2 t^2",
+  "id": "PM-02-015"
  },
  {
   "tid": "T01-17",
@@ -235,7 +251,8 @@
   "solution": "$g-kv_\\infty^2=0$ より $\\boldsymbol{v_\\infty=\\sqrt{\\dfrac gk}}$．\n\n$v=v_\\infty\\tanh\\beta t$ を代入すると，左辺 $=v_\\infty\\beta(1-\\tanh^2\\beta t)$，右辺 $=g-kv_\\infty^2\\tanh^2\\beta t=g(1-\\tanh^2\\beta t)$．よって $v_\\infty\\beta=g$，$\\boldsymbol{\\beta=\\dfrac{g}{v_\\infty}=\\sqrt{gk}}$．$v(0)=0$ も満たす．\n\n$\\tanh\\beta t=\\dfrac12$ より $\\beta t=\\dfrac12\\ln3$，$\\boldsymbol{t=\\dfrac{\\ln3}{2\\sqrt{gk}}}$．\n\n変数分離 $\\dfrac{dv}{g-kv^2}=dt$ と部分分数分解でも同じ解が得られる．次は，線形でない微分方程式の一般的な扱い方（相平面での解析）へ進むとよい．",
   "idea": "右辺が $0$ になる速度が終端速度．解の形が分かれば，代入して係数を合わせるだけで解ける．",
   "tags": "変数分離形,終端速度,双曲線関数,空気抵抗",
-  "input": "(1) sqrt(g/k)\n(2) sqrt(g k)\n(3) ln(3)/(2sqrt(g k))"
+  "input": "(1) sqrt(g/k)\n(2) sqrt(g k)\n(3) ln(3)/(2sqrt(g k))",
+  "id": "PM-03-008"
  },
  {
   "tid": "T01-18",
@@ -249,7 +266,8 @@
   "solution": "変換すると $(Ls+R)\\tilde I=\\dfrac{\\alpha}{s^2}$ なので $\\boldsymbol{\\tilde I=\\dfrac{\\alpha}{s^2(Ls+R)}}$．\n\n$\\tau_0=L/R$ として $\\dfrac{1}{s^2(Ls+R)}=\\dfrac1R\\left(\\dfrac{1}{s^2}-\\dfrac{\\tau_0}{s}+\\dfrac{\\tau_0}{s+1/\\tau_0}\\right)$．逆変換して\n\\[\\boldsymbol{I(t)=\\frac{\\alpha}{R}t-\\frac{\\alpha L}{R^2}\\left(1-e^{-Rt/L}\\right)}.\\]\n\n$e^{-Rt/L}\\to0$ で $I\\approx\\dfrac{\\alpha}{R}\\left(t-\\dfrac LR\\right)$，よって $\\boldsymbol{\\tau=\\dfrac LR}$．電流はオームの法則の値 $\\alpha t/R$ を時定数だけ遅れて追いかける．\n\nラプラス変換は初期条件を最初から取り込み，微分方程式を代数方程式に変える．",
   "idea": "ラプラス変換で微分を $s$ 倍に変え，有理関数の部分分数分解から逆変換する．",
   "tags": "ラプラス変換,部分分数分解,RL回路,過渡応答",
-  "input": "(1) alpha/(s^2(L s+R))\n(2) alpha t/R - alpha L(1-exp(-R t/L))/R^2\n(3) L/R"
+  "input": "(1) alpha/(s^2(L s+R))\n(2) alpha t/R - alpha L(1-exp(-R t/L))/R^2\n(3) L/R",
+  "id": "PM-03-009"
  },
  {
   "tid": "T01-19",
@@ -263,7 +281,8 @@
   "solution": "代入すると $(s(s-1)+s-n^2)x^s=0$，すなわち $s^2=n^2$，$\\boldsymbol{s=\\pm n}$．\n\n$n=0$ では重根になる．$x=e^u$ とおくと $x\\dfrac{d}{dx}=\\dfrac{d}{du}$ なので方程式は $\\dfrac{d^2y}{du^2}=0$，解は $1$ と $u=\\boldsymbol{\\ln x}$．\n\n$\\phi=A+B\\ln r$ に境界条件を課して $\\phi=V\\dfrac{\\ln(b/r)}{\\ln(b/a)}$．$r=\\sqrt{ab}$ では $\\ln(b/r)=\\frac12\\ln(b/a)$ なので $\\boldsymbol{\\dfrac V2}$（対数の意味でちょうど中間）．\n\n$n>0$ の解 $r^{\\pm n}$ は，$\\cos n\\varphi$ を掛けて2次元ラプラス方程式の一般解（多重極展開）を作る．",
   "idea": "等次元の方程式は $x^s$ の代入（または $x=e^u$）で定数係数の方程式に帰着し，重根では $\\ln x$ が現れる．",
   "tags": "オイラー型方程式,等次元方程式,重根,ラプラス方程式",
-  "input": "(1) {n, -n}\n(2) ln(x)\n(3) V/2"
+  "input": "(1) {n, -n}\n(2) ln(x)\n(3) V/2",
+  "id": "PM-03-010"
  },
  {
   "tid": "T01-20",
@@ -277,7 +296,8 @@
   "solution": "$\\sin x\\approx x$ で $M=\\begin{pmatrix}0&1\\\\-\\omega^2&-2\\gamma\\end{pmatrix}$．特性方程式 $\\lambda^2+2\\gamma\\lambda+\\omega^2=0$ より $\\boldsymbol{\\lambda=-\\gamma\\pm\\sqrt{\\gamma^2-\\omega^2}}$．\n\n固有値が複素数で実部が負なら渦状点：$\\boldsymbol{0<\\gamma<\\omega}$（減衰振動）．$\\gamma>\\omega$ では安定結節点（過減衰）．\n\n$x=\\pi+u$ とすると $\\sin(\\pi+u)\\approx-u$ で $\\ddot u+2\\gamma\\dot u-\\omega^2u=0$．$\\boldsymbol{\\lambda=-\\gamma\\pm\\sqrt{\\gamma^2+\\omega^2}}$．\n\n積は $\\det M=\\boldsymbol{-\\omega^2}<0$．固有値は実数で符号が逆なので鞍点（1方向から近づき，別の方向へ離れる）．一般に $\\mathrm{tr}M$ と $\\det M$ の符号と $(\\mathrm{tr}M)^2-4\\det M$ の符号で，固定点は結節点・渦状点・鞍点・中心に分類される．",
   "idea": "非線形の方程式でも，平衡点の近くでは線形化した行列の固有値（トレースと行列式）で解の振る舞いが分類できる．",
   "tags": "相平面,線形化,固定点の安定性,鞍点",
-  "input": "(1) {-gamma+sqrt(gamma^2-omega^2), -gamma-sqrt(gamma^2-omega^2)}\n(2) 0<gamma<omega\n(3) {-gamma+sqrt(gamma^2+omega^2), -gamma-sqrt(gamma^2+omega^2)}\n(4) -omega^2"
+  "input": "(1) {-gamma+sqrt(gamma^2-omega^2), -gamma-sqrt(gamma^2-omega^2)}\n(2) 0<gamma<omega\n(3) {-gamma+sqrt(gamma^2+omega^2), -gamma-sqrt(gamma^2+omega^2)}\n(4) -omega^2",
+  "id": "PM-03-011"
  },
  {
   "tid": "T01-21",
@@ -291,7 +311,8 @@
   "solution": "$y_1=x$ を代入すると $0-x(x+2)+(x+2)x=0$．標準形で $p=-\\dfrac{x+2}{x}=-1-\\dfrac2x$ なので $W=C\\exp\\left(x+2\\ln x\\right)=Cx^2e^x$，すなわち $\\boldsymbol{W=x^2e^x}$．\n\n$\\left(\\dfrac{y_2}{x}\\right)'=e^x$ より $y_2/x=e^x$，$\\boldsymbol{y_2=xe^x}$．\n\n標準形の右辺は $f=x$．定数変化法の公式\n\\[y_p=-y_1\\int\\frac{y_2f}{W}dx+y_2\\int\\frac{y_1f}{W}dx\\]\nで，$\\dfrac{y_2f}{W}=1$，$\\dfrac{y_1f}{W}=e^{-x}$ なので $y_p=-x\\cdot x+xe^x\\cdot(-e^{-x})=-x^2-x$．$-x$ は斉次解なので除いて $\\boldsymbol{y_p=-x^2}$．代入すると $-2x^2+2x^3+4x^2-x^3-2x^2=x^3$ で確かに満たす．",
   "idea": "1つの解が分かれば，ロンスキアン（アーベルの公式）から階数を下げて2つ目の解が得られ，さらに定数変化法で非斉次方程式も解ける．",
   "tags": "ロンスキアン,アーベルの公式,階数低下法,定数変化法",
-  "input": "(1) x^2 exp(x)\n(2) x exp(x)\n(3) -x^2"
+  "input": "(1) x^2 exp(x)\n(2) x exp(x)\n(3) -x^2",
+  "id": "PM-03-012"
  },
  {
   "tid": "T01-22",
@@ -305,7 +326,8 @@
   "solution": "$y(0)=y''(0)=0$ から $B=D=0$，$y(L)=y''(L)=0$ から $C=0$ かつ $A\\sin kL=0$．最小の $kL=\\pi$ より $\\boldsymbol{P_1=\\dfrac{\\pi^2EI}{L^2}}$．\n\n$x=L$ の自由端の第2条件は $EI(y^{(3)}+k^2y')=EIk^2C=0$ なので $C=0$．$y(0)=0$ から $B+D=0$，$y'(0)=0$ から $Ak=0$．$y''(L)=-Bk^2\\cos kL=0$ より $\\cos kL=0$，最小の $kL=\\pi/2$ で $\\boldsymbol{P_2=\\dfrac{\\pi^2EI}{4L^2}}$．\n\n$y=A\\sin kx+B\\cos kx+Cx+D$ に $y(0)=y'(0)=0$：$D=-B$，$C=-Ak$．$y''(L)=0$：$A\\sin kL+B\\cos kL=0$．$y(L)=0$：$A(\\sin kL-kL)+B(\\cos kL-1)=0$．非自明解の条件の行列式から $\\sin kL-kL\\cos kL=0$，すなわち $\\tan kL=kL$．最小の正の解 $kL\\approx4.4934$ より $c=(kL)^2\\approx\\boldsymbol{20.19}$．\n\n座屈は「固有値問題」で，境界条件が強いほど（拘束が多いほど）座屈荷重は大きくなる：$P_2<P_1<P_3$．",
   "idea": "座屈は斉次の境界値問題で非自明解が存在する条件（係数行列の行列式 $=0$）として固有値問題になる．",
   "tags": "境界値問題,固有値問題,座屈,超越方程式",
-  "input": "(1) pi^2 E I/L^2\n(2) pi^2 E I/(4L^2)\n(3) ≈20.19"
+  "input": "(1) pi^2 E I/L^2\n(2) pi^2 E I/(4L^2)\n(3) ≈20.19",
+  "id": "PM-03-013"
  },
  {
   "tid": "T01-23",
@@ -319,7 +341,8 @@
   "solution": "$y'+y=0$，$y(1)=1$ より $\\boldsymbol{y_{\\mathrm{out}}=e^{1-x}}$．$x=0$ では $e\\neq0$ なので，境界条件 $y(0)=0$ を満たすには急激に変化する層が必要．\n\n$x=\\varepsilon X$ で $\\dfrac{1}{\\varepsilon}(Y''+Y')+Y=0$，最低次は $Y''+Y'=0$，$Y=A+Be^{-X}$．$Y(0)=0$ より $B=-A$，整合条件 $Y(\\infty)=y_{\\mathrm{out}}(0)=e$ より $\\boldsymbol{Y=e(1-e^{-X})}$．層の厚さは $O(\\varepsilon)$．\n\n共通部分は $e$ なので，外部解 $+$ 内部解 $-$ 共通部分 $=e^{1-x}+e(1-e^{-x/\\varepsilon})-e$，すなわち $\\boldsymbol{y\\approx e^{1-x}-e^{1-x/\\varepsilon}}$．（$e\\cdot e^{-x/\\varepsilon}=e^{1-x/\\varepsilon}$．）\n\n$y'(0)\\approx-e+\\dfrac{e}{\\varepsilon}\\approx\\boldsymbol{\\dfrac{e}{\\varepsilon}}$．$\\varepsilon=0.01$ の厳密解は $y'(0)\\approx269$ で，$e/\\varepsilon\\approx272$ とよく合う（差は $O(1)$）．\n\n最高階の微分に小さな係数が掛かる特異摂動では，境界層の位置（ここでは $x=0$）は外部解の減衰方向から決まる．粘性流体のプラントル境界層が代表例である．",
   "idea": "最高階微分の係数が小さいとき，大部分では低階の方程式（外部解）が成り立ち，境界の近くの薄い層で引き伸ばした変数の内部解が境界条件を満たす．両者は整合条件でつなぐ．",
   "tags": "特異摂動,境界層,接合漸近展開,外部解と内部解",
-  "input": "(1) exp(1-x)\n(2) e(1-exp(-X))\n(3) exp(1-x)-exp(1-x/epsilon)\n(4) e/epsilon"
+  "input": "(1) exp(1-x)\n(2) e(1-exp(-X))\n(3) exp(1-x)-exp(1-x/epsilon)\n(4) e/epsilon",
+  "id": "PM-03-014"
  },
  {
   "tid": "T01-24",
@@ -333,7 +356,8 @@
   "solution": "2つの解 $x_1,x_2$ のロンスキアン $x_1\\dot x_2-\\dot x_1x_2$ は，$\\dot x$ の項がないので一定．$\\mathcal{M}$ の列を $t=0$ で $(1,0),(0,1)$ から出発した解の $t=T$ の値にとると，$\\det\\mathcal{M}=W(T)/W(0)=\\boldsymbol{1}$．固有値（フロケ乗数）$\\mu_1\\mu_2=1$ で，$|\\mu|>1$ の乗数があれば不安定．\n\n$\\cos\\gamma t\\cos\\frac{\\gamma t}{2}=\\frac12\\left(\\cos\\frac{3\\gamma t}{2}+\\cos\\frac{\\gamma t}{2}\\right)$ などで共鳴項だけを残すと\n\\[\\dot a=-\\left(\\frac{h\\omega_0}{4}+\\frac{\\epsilon}{2}\\right)b,\\qquad \\dot b=-\\left(\\frac{h\\omega_0}{4}-\\frac{\\epsilon}{2}\\right)a\\]\n（$\\gamma\\approx2\\omega_0$ の近似）．$e^{st}$ を代入して与えられた $s^2$ を得る．$\\epsilon=0$ で $\\boldsymbol{s=\\dfrac{h\\omega_0}{4}}$．\n\n$s^2>0$ となるのは $\\boldsymbol{|\\epsilon|<\\dfrac{h\\omega_0}{2}}$．数値積分（$\\omega_0=1$，$h=0.1$）でも増大率 $0.0250$，不安定帯の幅 $|\\epsilon|<0.050$ が確かめられる．\n\nこれはマシュー方程式の第1不安定領域で，振動数の2倍で変調すると最も効率よく励振される．イオントラップやパラメトリック増幅器の原理である．",
   "idea": "周期係数の線形方程式は1周期の時間発展行列（フロケ理論）で安定性が決まり，固有振動数の2倍付近での変調はゆっくり変化する振幅の方程式で解析できる．",
   "tags": "パラメータ共鳴,フロケ理論,マシュー方程式,多重尺度法",
-  "input": "(1) 1\n(2) h omega_0/4\n(3) abs(epsilon)<h omega_0/2"
+  "input": "(1) 1\n(2) h omega_0/4\n(3) abs(epsilon)<h omega_0/2",
+  "id": "PM-03-015"
  },
  {
   "tid": "T01-25",
@@ -347,7 +371,8 @@
   "solution": "$\\dfrac{1}{i\\omega C}=-\\dfrac{i}{\\omega C}$ なので $Z=R+i\\left(\\omega L-\\dfrac{1}{\\omega C}\\right)$．複素数の絶対値から\n\\[\\boldsymbol{|Z|=\\sqrt{R^2+\\left(\\omega L-\\frac{1}{\\omega C}\\right)^2}}.\\]\n\n$|Z|$ が最小（$=R$）になるのは虚部が $0$ のとき：$\\boldsymbol{\\omega=\\dfrac{1}{\\sqrt{LC}}}$（共振）．\n\n$\\tan\\varphi=\\dfrac{\\omega L-1/(\\omega C)}{R}$．$\\omega L=2\\sqrt{L/C}$，$\\dfrac{1}{\\omega C}=\\dfrac12\\sqrt{L/C}$ なので $\\tan\\varphi=\\boldsymbol{\\dfrac32}$．$V=|Z|e^{i\\varphi}I$ なので，電流は電圧より $\\varphi$ だけ遅れる（コイルが優勢）．\n\n微分方程式 $L\\ddot q+R\\dot q+q/C=V$ の特解を，複素数で一気に求めていることになる．次は，$Z(\\omega)$ を複素数 $\\omega$ の関数とみて，その零点や極から回路の応答を調べる方法（複素関数論）へ進むとよい．",
   "idea": "$e^{i\\omega t}$ で振動する量は微分が $i\\omega$ 倍になるので，交流回路は複素数の掛け算・割り算で解ける．",
   "tags": "複素インピーダンス,フェーザー,共振,オイラーの公式",
-  "input": "(1) sqrt(R^2+(omega L-1/(omega C))^2)\n(2) 1/sqrt(L C)\n(3) 3/2"
+  "input": "(1) sqrt(R^2+(omega L-1/(omega C))^2)\n(2) 1/sqrt(L C)\n(3) 3/2",
+  "id": "PM-04-008"
  },
  {
   "tid": "T01-26",
@@ -361,7 +386,8 @@
   "solution": "$e^{1/z}=1+\\dfrac1z+\\dfrac{1}{2z^2}+\\cdots$（真性特異点）．$z^{-1}$ の係数 $\\boldsymbol{1}$ が留数．\n\n$\\dfrac{1}{z^2\\sin z}=\\dfrac{1}{z^3}+\\dfrac{1}{6z}+O(z)$ より留数は $\\boldsymbol{\\dfrac16}$（3位の極）．\n\n$|z|>1$ では $\\dfrac{1}{z(z-1)}=\\dfrac{1}{z^2}\\cdot\\dfrac{1}{1-1/z}=\\dfrac{1}{z^2}+\\dfrac{1}{z^3}+\\cdots$．係数は $\\boldsymbol{1}$．同じ関数でも展開する領域によってローラン展開は異なる．\n\n$|z|=2$ の外側の展開は $z^{-1}$ の項をもたないので $\\boldsymbol{0}$．（内部の留数 $-1$ と $+1$ の和が $0$ であることと同じ．無限遠点の留数を使う考え方である．）",
   "idea": "留数はローラン展開の $z^{-1}$ の係数．大きな円を回る積分は，無限遠での展開の $z^{-1}$ の係数で決まる．",
   "tags": "ローラン展開,留数,真性特異点,無限遠点",
-  "input": "(1) 1\n(2) 1/6\n(3) 1\n(4) 0"
+  "input": "(1) 1\n(2) 1/6\n(3) 1\n(4) 0",
+  "id": "PM-04-009"
  },
  {
   "tid": "T01-27",
@@ -375,7 +401,8 @@
   "solution": "$f=e^{2z}$，$n=3$：$\\dfrac{I}{2\\pi i}=\\dfrac{f^{(3)}(0)}{3!}=\\dfrac{8}{6}=\\boldsymbol{\\dfrac43}$．\n\n部分分数 $\\dfrac{z}{(z-1)(z-2)}=\\dfrac{-1}{z-1}+\\dfrac{2}{z-2}$．両方の極が円内にあるので $\\dfrac{I}{2\\pi i}=-1+2=\\boldsymbol{1}$．\n\n$\\displaystyle\\oint\\frac{e^z}{z}dz=2\\pi i\\,e^0=2\\pi i$．一方 $dz=ie^{i\\theta}d\\theta$ より左辺 $=i\\displaystyle\\int_0^{2\\pi}e^{e^{i\\theta}}d\\theta$．よって $\\displaystyle\\int_0^{2\\pi}e^{\\cos\\theta+i\\sin\\theta}d\\theta=2\\pi$，実部をとって $\\boldsymbol{2\\pi}$．これは「正則関数の円周上の平均は中心の値に等しい」という平均値の性質である．",
   "idea": "コーシーの積分公式は，閉路上の値から内部の値・微分係数を決める．逆に，円周上の三角関数の積分を中心での値として求められる．",
   "tags": "コーシーの積分公式,平均値の性質,複素積分",
-  "input": "(1) 4/3\n(2) 1\n(3) 2pi"
+  "input": "(1) 4/3\n(2) 1\n(3) 2pi",
+  "id": "PM-04-010"
  },
  {
   "tid": "T01-28",
@@ -389,7 +416,8 @@
   "solution": "閉路内に特異点はないので積分は $0$．斜辺上で $z=re^{i\\pi/4}$ とすると $iz^2=-r^2$ なので\n\\[\\int_0^\\infty e^{ix^2}dx=e^{i\\pi/4}\\int_0^\\infty e^{-r^2}dr=\\frac{1+i}{\\sqrt2}\\cdot\\frac{\\sqrt\\pi}{2}.\\]\n円弧上は $|e^{iz^2}|=e^{-R^2\\sin2\\theta}$ でジョルダンの補題と同様に $0$．実部から $\\boldsymbol{\\dfrac{\\sqrt{2\\pi}}{4}}$．\n\n虚部から同じく $\\boldsymbol{\\dfrac{\\sqrt{2\\pi}}{4}}$．\n\n上半平面の大きな半円と原点をよける小さな半円（時計回り）からなる閉路の内部に極はない．小半円の寄与は $-\\pi i\\,\\mathrm{Res}_{z=0}=-\\pi i$．よって主値 $\\mathrm{P}\\displaystyle\\int_{-\\infty}^\\infty\\frac{e^{ix}}{x}dx=\\pi i$，虚部の半分で $\\boldsymbol{\\dfrac\\pi2}$．\n\n$\\displaystyle\\int_0^\\infty\\frac{\\sin^2x}{x^2}dx=\\left[-\\frac{\\sin^2x}{x}\\right]_0^\\infty+\\int_0^\\infty\\frac{2\\sin x\\cos x}{x}dx=\\int_0^\\infty\\frac{\\sin2x}{x}dx=\\boldsymbol{\\frac\\pi2}$．これは単スリットの回折強度の積分で，光学でよく現れる．",
   "idea": "被積分関数が振動して実軸上で直接積分しにくいとき，減衰する方向に積分路を回転させる（扇形閉路）．実軸上の極は小さな半円でよけ，半分の留数を拾う．",
   "tags": "フレネル積分,積分路の変形,主値積分,ジョルダンの補題",
-  "input": "(1) sqrt(2pi)/4\n(2) sqrt(2pi)/4\n(3) pi/2\n(4) pi/2"
+  "input": "(1) sqrt(2pi)/4\n(2) sqrt(2pi)/4\n(3) pi/2\n(4) pi/2",
+  "id": "PM-04-011"
  },
  {
   "tid": "T01-29",
@@ -403,7 +431,8 @@
   "solution": "$f'(x)=N/x-1=0$ より $\\boldsymbol{x_0=N}$．\n\n$f''(x)=-N/x^2$ より $\\boldsymbol{f''(x_0)=-\\dfrac1N}$．ピークの幅は $\\sqrt N$ で，$x_0=N$ に比べて相対的に狭い．\n\n$f(x)\\approx N\\ln N-N-\\dfrac{(x-N)^2}{2N}$ より\n\\[N!\\approx e^{N\\ln N-N}\\int_{-\\infty}^{\\infty}e^{-u^2/(2N)}du=\\boldsymbol{\\sqrt{2\\pi N}\\,N^Ne^{-N}}.\\]\n$N=50$ で相対誤差 $0.17\\%$（補正は $1+\\frac{1}{12N}$）．\n\n$\\theta=0$ が最大点で $N\\cos\\theta\\approx N-\\dfrac N2\\theta^2$．よって $\\boldsymbol{e^N\\sqrt{\\dfrac{2\\pi}{N}}}$．統計力学のエントロピーの計算や，経路積分の古典近似は同じ考え方である．",
   "idea": "大きなパラメータ $N$ を含む指数関数の積分は，指数の最大点（鞍点）のまわりで2次まで展開したガウス積分で近似できる．",
   "tags": "鞍点法,ラプラス法,スターリングの公式,ガンマ関数",
-  "input": "(1) N\n(2) -1/N\n(3) sqrt(2pi N) N^N exp(-N)\n(4) exp(N) sqrt(2pi/N)"
+  "input": "(1) N\n(2) -1/N\n(3) sqrt(2pi N) N^N exp(-N)\n(4) exp(N) sqrt(2pi/N)",
+  "id": "PM-04-012"
  },
  {
   "tid": "T01-30",
@@ -417,7 +446,8 @@
   "solution": "$\\arg z$ は $\\ln z=\\ln r+i\\arg z$ の虚部なので調和関数で，$\\arg z=0$（$x>0$）で $0$，$\\arg z=\\pi$（$x<0$）で $V$．$z=1+\\sqrt3i$ では $\\arg z=\\pi/3$ なので $\\boldsymbol{\\dfrac V3}$．\n\n$w=z^2$ で $\\arg w=2\\arg z$．$x$ 軸は正の実軸へ，$y$ 軸（$\\arg z=\\pi/2$）は負の実軸へ移るので，(1) の解を引き戻して $\\phi=\\dfrac V\\pi\\arg w=\\dfrac{2V}{\\pi}\\arg z$．$z=1+\\sqrt3i$ では $\\arg z=\\pi/3$ なので $\\boldsymbol{\\dfrac{2V}{3}}$．\n\n$|E|=|\\nabla\\phi|\\propto r^{\\pi/\\alpha-1}$．$\\alpha=3\\pi/2$ では $\\pi/\\alpha=2/3$ なので $\\boldsymbol{p=-\\dfrac13}$．電場は頂点で発散する（避雷針の原理）．逆に凹んだ角（$\\alpha<\\pi$）では $p>0$ で電場は $0$ になる．$\\alpha=2\\pi$（薄い板の端）では $p=-1/2$ である．",
   "idea": "2次元のラプラス方程式は正則関数で解け，等角写像で複雑な境界を簡単な境界（上半平面）に移せる．角の近くの場は $z^{\\pi/\\alpha}$ のべきで決まる．",
   "tags": "等角写像,調和関数,2次元静電場,楔形領域",
-  "input": "(1) V/3\n(2) 2V/3\n(3) -1/3"
+  "input": "(1) V/3\n(2) 2V/3\n(3) -1/3",
+  "id": "PM-04-013"
  },
  {
   "tid": "T01-31",
@@ -431,7 +461,8 @@
   "solution": "分母の複素共役を掛けて $\\boldsymbol{\\mathrm{Im}\\,\\chi=\\dfrac{\\gamma\\omega}{(\\omega_0^2-\\omega^2)^2+\\gamma^2\\omega^2}}$．$\\omega$ について奇関数である．\n\n$\\omega=0$ で $\\mathrm{Re}\\,\\chi(0)=\\dfrac{1}{\\omega_0^2}=\\dfrac2\\pi\\displaystyle\\int_0^\\infty\\frac{\\mathrm{Im}\\chi}{\\omega'}d\\omega'$．よって $\\boldsymbol{\\dfrac{\\pi}{2\\omega_0^2}}$（静的な感受率は吸収スペクトルの $1/\\omega$ 重みの積分で決まる）．\n\n$\\omega\\to\\infty$ で $\\chi\\approx-\\dfrac{1}{\\omega^2}$．比べると $\\displaystyle\\int_0^\\infty\\omega\\,\\mathrm{Im}\\chi\\,d\\omega=\\boldsymbol{\\dfrac\\pi2}$．数値積分（$\\omega_0=2,\\gamma=0.7$）でも $1.5708$ となり，(2) の積分の $2/\\pi$ 倍も $0.25=1/\\omega_0^2$ と一致する．\n\n高周波の外力に対しては，ばねも摩擦も追いつかず粒子は自由粒子として $m\\ddot x=F$ で応答し，$\\chi\\to-1/(m\\omega^2)$（ここでは $m=1$）．この係数は粒子の質量と電荷だけで決まり，因果律（クラマース＝クローニッヒ）を通して吸収スペクトル全体の重み $\\int\\omega\\,\\mathrm{Im}\\chi$ を固定する．これが光学の $f$ 総和則（トーマス＝ライヒェ＝クーンの総和則）である．",
   "idea": "因果律から応答関数は上半平面で正則になり，実部と虚部が主値積分で結ばれる．低周波と高周波の極限をとると吸収スペクトルの積分（総和則）が得られる．",
   "tags": "クラマース＝クローニッヒの関係,因果律,総和則,線形応答",
-  "input": "(1) gamma omega/((omega_0^2-omega^2)^2+gamma^2 omega^2)\n(2) pi/(2omega_0^2)\n(3) pi/2\n(4) 記述：高周波では自由粒子の慣性応答 χ≈−1/(mω²) だけが残り，その係数（質量・電荷のみで決まる）が吸収の総量を固定する"
+  "input": "(1) gamma omega/((omega_0^2-omega^2)^2+gamma^2 omega^2)\n(2) pi/(2omega_0^2)\n(3) pi/2\n(4) 記述：高周波では自由粒子の慣性応答 χ≈−1/(mω²) だけが残り，その係数（質量・電荷のみで決まる）が吸収の総量を固定する",
+  "id": "PM-04-014"
  },
  {
   "tid": "T01-32",
@@ -445,6 +476,7 @@
   "solution": "被積分関数は $s=-a$ に1位の極をもち，$t>0$ では左半平面の大きな円弧の寄与が消える．留数から $\\boldsymbol{e^{-at}}$．\n\n$\\displaystyle\\int_0^\\infty u^{-1/2}e^{-ut}du=\\Gamma\\!\\left(\\tfrac12\\right)t^{-1/2}=\\sqrt{\\pi/t}$ より $\\boldsymbol{f=\\dfrac{1}{\\sqrt{\\pi t}}}$．（切断の上下で $\\sqrt s=\\pm i\\sqrt u$ と符号が変わり，その差が係数 $1/\\pi$ を与える．）\n\n$\\dfrac{x}{2\\sqrt{Dt}}=0.4769$ より $x\\approx\\boldsymbol{0.954\\sqrt{Dt}}$．拡散の到達距離は $\\sqrt t$ に比例する．\n\n$\\partial_x\\tilde u=-\\sqrt{s/D}\\,\\tilde u$ より $\\widetilde J=D\\sqrt{\\dfrac sD}\\cdot\\dfrac1s=\\dfrac{\\sqrt D}{\\sqrt s}$．(2) から $\\boldsymbol{J=\\sqrt{\\dfrac{D}{\\pi t}}}$．流入量は $t^{-1/2}$ で減り，総流入量は $2\\sqrt{Dt/\\pi}$ で増える．$\\mathrm{erfc}$ の微分からも同じ結果になる．",
   "idea": "逆ラプラス変換は複素積分で，極は指数関数を，分岐切断は $t^{-1/2}$ のようなべきを与える．拡散方程式では $\\sqrt s$ が自然に現れる．",
   "tags": "ブロムウィッチ積分,逆ラプラス変換,分岐切断,拡散方程式",
-  "input": "(1) exp(-a t)\n(2) 1/sqrt(pi t)\n(3) ≈0.954 sqrt(D t)\n(4) sqrt(D/(pi t))"
+  "input": "(1) exp(-a t)\n(2) 1/sqrt(pi t)\n(3) ≈0.954 sqrt(D t)\n(4) sqrt(D/(pi t))",
+  "id": "PM-04-015"
  }
 ]

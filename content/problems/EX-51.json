@@ -58,16 +58,16 @@
   "theme": "ポアソン分布：放射線の計数",
   "topic": "ポアソン分布：放射線の計数",
   "statement": {
-   "tex": "放射線の検出器が1秒あたり平均 $\\lambda = 2.0$ 回の割合でランダムに信号を数えるとき，1秒間の計数が $n$ 回である確率はポアソン分布\n\\[ P(n) = \\frac{\\lambda^{n}e^{-\\lambda}}{n!} \\]\nで与えられる．ポアソン分布の平均と分散はともに $\\lambda$ に等しい．\n\\begin{enumerate}\n\\item 1秒間に1回も数えない確率 $P(0)$ を求めよ．\n\\item 1秒間に2回以上数える確率を求めよ．\n\\item 100秒間数えたときの計数の相対誤差（標準偏差÷平均）を求めよ．\n\\end{enumerate}"
+   "tex": "放射線の検出器が1秒あたり平均 $\\lambda$ 回の割合でランダムに信号を数えるとき，1秒間の計数が $n$ 回である確率はポアソン分布\n\\[ P(n) = \\frac{\\lambda^{n}e^{-\\lambda}}{n!} \\]\nで与えられる．ポアソン分布の平均と分散は等しい（1秒間の計数ならともに $\\lambda$）．\n\\begin{enumerate}\n\\item 1秒間に1回も数えない確率 $P(0)$ を求めよ．\n\\item 1秒間に2回以上数える確率を求めよ．\n\\item $T$ 秒間数えたときの計数の相対誤差（標準偏差÷平均）を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\approx 0.135$ \\quad (2) $\\approx 0.594$ \\quad (3) $\\approx 0.071$"
+   "tex": "(1) $e^{-\\lambda}$ \\quad (2) $1-(1+\\lambda)e^{-\\lambda}$ \\quad (3) $\\dfrac{1}{\\sqrt{\\lambda T}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $P(0) = e^{-2.0} \\approx \\boldsymbol{0.135}$．\n\n(2) $P(0) + P(1) = e^{-2}(1 + 2) = 3e^{-2} \\approx 0.406$ なので $1 - 0.406 \\approx \\boldsymbol{0.594}$．\n\n(3) 100秒間の計数は平均 $\\lambda' = 200$ のポアソン分布にしたがう．標準偏差は $\\sqrt{200} \\approx 14.1$ なので，相対誤差は $\\dfrac{1}{\\sqrt{200}} \\approx \\boldsymbol{0.071}$（7.1%）．\n\n計数 $N$ の誤差は $\\sqrt{N}$ と見積もれる．相対誤差を半分にするには4倍長く数える必要がある．次は，バックグラウンドを差し引いたときの誤差や，計数が多いときにポアソン分布が正規分布に近づくことを学ぶ．"
+    "tex": "(1) $P(0) = \\lambda^0e^{-\\lambda}/0! = \\boldsymbol{e^{-\\lambda}}$．\n\n(2) $P(0) + P(1) = e^{-\\lambda}(1 + \\lambda)$ なので，2回以上の確率は $\\boldsymbol{1-(1+\\lambda)e^{-\\lambda}}$（$\\lambda=2$ なら約 $0.59$）．\n\n(3) $T$ 秒間の計数は平均 $\\lambda T$ のポアソン分布にしたがう．標準偏差は $\\sqrt{\\lambda T}$ なので，相対誤差は $\\dfrac{\\sqrt{\\lambda T}}{\\lambda T}=\\boldsymbol{\\dfrac{1}{\\sqrt{\\lambda T}}}$．\n\n計数 $N$ の誤差は $\\sqrt{N}$ と見積もれる．相対誤差を半分にするには4倍長く数える必要がある．次は，バックグラウンドを差し引いたときの誤差や，計数が多いときにポアソン分布が正規分布に近づくことを学ぶ．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) P(0)：≈0.135\n(2) 確率：≈0.594\n(3) 相対誤差：≈0.071"
+   "spec": "(1) P(0)：exp(-λ)\n(2) 確率：1-(1+λ) exp(-λ)\n(3) 相対誤差：1/sqrt(λ T)"
   },
   "methods": [],
   "tags": [
@@ -107,16 +107,16 @@
   "theme": "指数分布：放射性崩壊の待ち時間と無記憶性",
   "topic": "指数分布：放射性崩壊の待ち時間と無記憶性",
   "statement": {
-   "tex": "不安定な原子核が崩壊するまでの時間 $t$ は，確率密度 $f(t) = \\lambda e^{-\\lambda t}$（$t \\ge 0$，$\\lambda$ は崩壊定数）の指数分布に従う．$t$ が区間 $[t_1, t_2]$ に入る確率は $\\displaystyle\\int_{t_1}^{t_2} f(t)\\,dt$ である．\n\\begin{enumerate}\n\\item 時間 $T$ が経っても崩壊していない確率 $P(t > T)$ を $\\lambda$，$T$ で表せ．\n\\item 崩壊までの平均時間 $\\langle t\\rangle = \\displaystyle\\int_0^\\infty t f(t)\\,dt$ を $\\lambda$ で表せ（部分積分を用いよ）．\n\\item $\\lambda = 0.020\\,\\mathrm{s^{-1}}$ とする．すでに $100\\,\\mathrm{s}$ 崩壊しなかった原子核が，さらに $50\\,\\mathrm{s}$ 崩壊しない確率 $P(t > 150 \\mid t > 100) = \\dfrac{P(t>150)}{P(t>100)}$ を求めよ．\n\\end{enumerate}"
+   "tex": "不安定な原子核が崩壊するまでの時間 $t$ は，確率密度 $f(t) = \\lambda e^{-\\lambda t}$（$t \\ge 0$，$\\lambda$ は崩壊定数）の指数分布に従う．$t$ が区間 $[t_1, t_2]$ に入る確率は $\\displaystyle\\int_{t_1}^{t_2} f(t)\\,dt$ である．\n\\begin{enumerate}\n\\item 時間 $T$ が経っても崩壊していない確率 $P(t > T)$ を $\\lambda$，$T$ で表せ．\n\\item 崩壊までの平均時間 $\\langle t\\rangle = \\displaystyle\\int_0^\\infty t f(t)\\,dt$ を $\\lambda$ で表せ（部分積分を用いよ）．\n\\item すでに時間 $T_1$ 崩壊しなかった原子核が，さらに時間 $T_2$ 崩壊しない確率 $P(t > T_1+T_2 \\mid t > T_1) = \\dfrac{P(t>T_1+T_2)}{P(t>T_1)}$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $e^{-\\lambda T}$\n(2) $\\dfrac1\\lambda$\n(3) $e^{-1} \\approx 0.368$"
+   "tex": "(1) $e^{-\\lambda T}$\n(2) $\\dfrac1\\lambda$\n(3) $e^{-\\lambda T_2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $P(t>T) = \\displaystyle\\int_T^\\infty\\lambda e^{-\\lambda t}dt = \\left[-e^{-\\lambda t}\\right]_T^\\infty = \\boldsymbol{e^{-\\lambda T}}$．\n\n(2) $\\displaystyle\\int_0^\\infty t\\lambda e^{-\\lambda t}dt = \\left[-te^{-\\lambda t}\\right]_0^\\infty + \\int_0^\\infty e^{-\\lambda t}dt = 0 + \\frac1\\lambda = \\boldsymbol{\\frac1\\lambda}$．これが平均寿命 $\\tau$ である．\n\n(3) $\\dfrac{e^{-150\\lambda}}{e^{-100\\lambda}} = e^{-50\\lambda} = e^{-1} = \\boldsymbol{0.368}$．これは「新しい原子核が $50\\,\\mathrm{s}$ 崩壊しない確率」$P(t>50)$ と同じである．\n\n原子核は「年をとらない」：それまでどれだけ待ったかに関係なく，これからの崩壊確率は同じである（無記憶性）．指数分布はこの性質をもつ唯一の連続分布である．放射線の計数では，ランダムな事象の時間間隔もこの分布に従い，一定時間内の個数はポアソン分布に従う．"
+    "tex": "(1) $P(t>T) = \\displaystyle\\int_T^\\infty\\lambda e^{-\\lambda t}dt = \\left[-e^{-\\lambda t}\\right]_T^\\infty = \\boldsymbol{e^{-\\lambda T}}$．\n\n(2) $\\displaystyle\\int_0^\\infty t\\lambda e^{-\\lambda t}dt = \\left[-te^{-\\lambda t}\\right]_0^\\infty + \\int_0^\\infty e^{-\\lambda t}dt = 0 + \\frac1\\lambda = \\boldsymbol{\\frac1\\lambda}$．これが平均寿命 $\\tau$ である．\n\n(3) $\\dfrac{e^{-\\lambda(T_1+T_2)}}{e^{-\\lambda T_1}} = \\boldsymbol{e^{-\\lambda T_2}}$．これは「新しい原子核が時間 $T_2$ 崩壊しない確率」$P(t>T_2)$ と同じで，$T_1$ によらない．\n\n原子核は「年をとらない」：それまでどれだけ待ったかに関係なく，これからの崩壊確率は同じである（無記憶性）．指数分布はこの性質をもつ唯一の連続分布である．放射線の計数では，ランダムな事象の時間間隔もこの分布に従い，一定時間内の個数はポアソン分布に従う．"
    }
   ],
   "idea": {
@@ -124,7 +124,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) P：exp(-λ T)\n(2) 平均：1/λ\n(3) 確率：≈0.368"
+   "spec": "(1) P：exp(-λ T)\n(2) 平均：1/λ\n(3) 確率：exp(-λ T_2)"
   },
   "methods": [],
   "tags": [
@@ -156,16 +156,16 @@
   "theme": "ポアソン計数の誤差とバックグラウンドの差し引き",
   "topic": "ポアソン計数の誤差とバックグラウンドの差し引き",
   "statement": {
-   "tex": "放射線源を置いて検出器で $100\\,\\mathrm{s}$ 数えると $400$ カウント，線源を取り除いて同じく $100\\,\\mathrm{s}$ 数えると（バックグラウンド）$100$ カウントであった．\n\\begin{enumerate}\n\\item 線源による正味の計数率 $r$ を求めよ．\n\\item カウント数がポアソン分布に従うことから，$r$ の標準誤差を求めよ．\n\\item 線源ありとなしの測定時間をともに $t$ にして，正味の計数率の相対誤差を $2\\%$ にしたい．$t$ をいくらにすればよいか（計数率は上と同じとする）．\n\\end{enumerate}"
+   "tex": "放射線源を置いて検出器で時間 $t_0$ 数えると $N_g$ カウント，線源を取り除いて同じく時間 $t_0$ 数えると（バックグラウンド）$N_b$ カウントであった（$N_g>N_b$）．\n\\begin{enumerate}\n\\item 線源による正味の計数率 $r$ を求めよ．\n\\item カウント数がポアソン分布に従うことから，$r$ の標準誤差 $\\sigma_r$ を求めよ．\n\\item 線源ありとなしの測定時間をともに $t$ にして，正味の計数率の相対誤差を $\\varepsilon$ にしたい．$t$ をいくらにすればよいか（計数率は上と同じとする）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $r = 3.00\\,\\mathrm{s^{-1}}$\n(2) $\\sigma_r = 0.22\\,\\mathrm{s^{-1}}$\n(3) $t = 1.39\\times10^{3}\\,\\mathrm{s}$"
+   "tex": "(1) $r=\\dfrac{N_g-N_b}{t_0}$\n(2) $\\sigma_r=\\dfrac{\\sqrt{N_g+N_b}}{t_0}$\n(3) $t=\\dfrac{t_0(N_g+N_b)}{\\varepsilon^2(N_g-N_b)^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $r = (400-100)/100 = \\boldsymbol{3.00\\,\\mathrm{s^{-1}}}$．\n\n(2) ポアソン分布では分散が平均に等しいので，$N$ カウントの誤差は $\\sqrt N$．差の誤差は2乗和で合成する：\n\\[ \\sigma_r = \\frac{\\sqrt{400 + 100}}{100} = \\boldsymbol{0.22\\,\\mathrm{s^{-1}}}. \\]\n\n(3) 線源ありの計数率は $4\\,\\mathrm{s^{-1}}$，なしは $1\\,\\mathrm{s^{-1}}$．時間 $t$ ではカウントの分散が $4t$，$t$ なので\n\\[ \\sigma_r = \\frac{\\sqrt{4t + t}}{t} = \\sqrt{\\frac{5}{t}} \\le 0.02\\times3.00 \\]\nより $t \\ge 5/0.06^2 = \\boldsymbol{1.39\\times10^{3}\\,\\mathrm{s}}$．相対誤差は $1/\\sqrt t$ でしか減らないので，精度を5倍にするには時間が25倍要る．"
+    "tex": "(1) $\\boldsymbol{r = \\dfrac{N_g-N_b}{t_0}}$．\n\n(2) ポアソン分布では分散が平均に等しいので，$N$ カウントの誤差は $\\sqrt N$．差の誤差は2乗和で合成する：\n\\[ \\boldsymbol{\\sigma_r = \\frac{\\sqrt{N_g + N_b}}{t_0}}. \\]\n\n(3) 線源ありの計数率は $g=N_g/t_0$，なしは $b=N_b/t_0$．時間 $t$ ではカウントの分散が $gt$，$bt$ なので\n\\[ \\sigma_r = \\frac{\\sqrt{gt + bt}}{t} = \\sqrt{\\frac{g+b}{t}} = \\varepsilon(g-b) \\]\nより\n\\[ t=\\frac{g+b}{\\varepsilon^2(g-b)^2}=\\boldsymbol{\\frac{t_0(N_g+N_b)}{\\varepsilon^2(N_g-N_b)^2}} . \\]\n（たとえば $t_0=100\\ \\mathrm s$，$N_g=400$，$N_b=100$，$\\varepsilon=2\\%$ なら約 $1.4\\times10^3\\ \\mathrm s$．）相対誤差は $1/\\sqrt t$ でしか減らないので，精度を5倍にするには時間が25倍要る．"
    }
   ],
   "idea": {
@@ -173,7 +173,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) r [1/s]：≈3.00\n(2) σ_r [1/s]：≈0.22\n(3) t [s]：≈1390"
+   "spec": "(1) r：(N_g-N_b)/t_0\n(2) σ_r：sqrt(N_g+N_b)/t_0\n(3) t：t_0 (N_g+N_b)/(ε^2 (N_g-N_b)^2)"
   },
   "methods": [],
   "tags": [
@@ -255,16 +255,16 @@
   "theme": "放射線計数の統計：ポアソン分布と正規近似",
   "topic": "放射線計数の統計：ポアソン分布と正規近似",
   "statement": {
-   "tex": "ある放射性線源からの $\\alpha$ 粒子の真の計数率は $1.00\\times10^4\\,\\mathrm{s^{-1}}$ で一定とし，計数はポアソン分布に従うとする．\n\\begin{enumerate}\n\\item 計数の相対統計誤差（標準偏差/平均）を $0.10\\%$ にするには，何秒間計数すればよいか．\n\\item 10 ms の時間窓で計数する（平均 100）．計数が 90 以上 110 以下になる確率を，連続補正つきの正規近似で求めよ．ポアソン分布による厳密値は $0.7065$ である．\n\\item 0.10 ms の時間窓で 1 個も計数されない確率を求めよ．同じ量を平均 1，標準偏差 1 の正規近似（連続補正つき）で求めるとどうなるか．\n\\end{enumerate}"
+   "tex": "ある放射性線源からの $\\alpha$ 粒子の真の計数率は $r$ で一定とし，計数はポアソン分布に従うとする．\n\\begin{enumerate}\n\\item 計数の相対統計誤差（標準偏差/平均）を $\\varepsilon$ にするには，何秒間計数すればよいか．\n\\item $r=1.00\\times10^4\\,\\mathrm{s^{-1}}$ のとき，10 ms の時間窓で計数する（平均 100）．計数が 90 以上 110 以下になる確率を，連続補正つきの正規近似で求めよ．ポアソン分布による厳密値は $0.7065$ である．\n\\item 時間窓 $\\tau$ で 1 個も計数されない確率を $r,\\tau$ で表せ．$r\\tau=1$ のとき，同じ量を平均 1，標準偏差 1 の正規近似（連続補正つき）で求めると約 $0.31$ になる．これと比べて，正規近似が使えるかを述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $100\\,\\mathrm{s}$　(2) 約 $0.706$　(3) $e^{-1}\\approx0.368$（正規近似では約 $0.31$ で不適）"
+   "tex": "(1) $\\dfrac{1}{r\\varepsilon^2}$　(2) 約 $0.706$　(3) $e^{-r\\tau}$（$r\\tau=1$ で $e^{-1}\\approx0.37$．正規近似の約 $0.31$ は不適）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) ポアソン分布では平均 $\\bar N$ に対し $\\sigma=\\sqrt{\\bar N}$，相対誤差 $1/\\sqrt{\\bar N}=10^{-3}$ より $\\bar N=10^6$．計数率 $10^4\\,\\mathrm{s^{-1}}$ なので $100\\,\\mathrm{s}$．\n\n(2) 平均 $100$，$\\sigma=10$．連続補正で $89.5<x<110.5$ とすると $z=\\pm1.05$：\n\\[\nP=2\\Phi(1.05)-1=0.706.\n\\]\n厳密値 $0.7065$ とよく一致する（連続補正をしないで $z=\\pm1$ とすると $0.683$ となりずれる）．\n\n(3) 平均 $\\lambda=10^4\\times10^{-4}=1$．ポアソン分布で $P(0)=e^{-1}=0.368$．正規近似（平均 1，$\\sigma=1$）で $x<0.5$ の確率は $\\Phi(-0.5)=0.309$ となり 16% も小さい．さらに正規分布は負の計数にも確率を与えてしまう．平均が小さいとポアソン分布は非対称で，正規近似は使えない．"
+    "tex": "(1) ポアソン分布では平均 $\\bar N$ に対し $\\sigma=\\sqrt{\\bar N}$，相対誤差 $1/\\sqrt{\\bar N}=\\varepsilon$ より $\\bar N=1/\\varepsilon^2$．計数率 $r$ なので $\\boldsymbol{t=\\dfrac{1}{r\\varepsilon^2}}$（$r=10^4\\ \\mathrm{s^{-1}}$，$\\varepsilon=0.1\\%$ なら $100\\ \\mathrm s$）．\n\n(2) 平均 $100$，$\\sigma=10$．連続補正で $89.5<x<110.5$ とすると $z=\\pm1.05$：\n\\[\nP=2\\Phi(1.05)-1=0.706.\n\\]\n厳密値 $0.7065$ とよく一致する（連続補正をしないで $z=\\pm1$ とすると $0.683$ となりずれる）．\n\n(3) 時間窓 $\\tau$ の計数は平均 $r\\tau$ のポアソン分布に従うので $P(0)=\\boldsymbol{e^{-r\\tau}}$．$r\\tau=1$ では $e^{-1}=0.368$．正規近似（平均 1，$\\sigma=1$）で $x<0.5$ の確率は $\\Phi(-0.5)=0.309$ となり 16% も小さい．さらに正規分布は負の計数にも確率を与えてしまう．平均が小さいとポアソン分布は非対称で，正規近似は使えない．"
    }
   ],
   "idea": {
@@ -272,7 +272,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) [s]：100\n(2) ≈0.706\n(3) 記述"
+   "spec": "(1) 時間：1/(r ε^2)\n(2) ≈0.706\n(3) 確率：exp(-r τ)"
   },
   "methods": [],
   "tags": [
@@ -354,16 +354,16 @@
   "theme": "中心極限定理：一様乱数の和の分布",
   "topic": "中心極限定理：一様乱数の和の分布",
   "statement": {
-   "tex": "区間 $[0, 1)$ の一様乱数 $u$ を $12$ 個独立に発生させ，その和 $S$ をつくる．\n\\begin{enumerate}\n\\item 1個の一様乱数 $u$ の平均と分散を求めよ．\n\\item $S$ の平均と標準偏差を求めよ．\n\\item 中心極限定理により $S$ は正規分布で近似できる．標準正規分布で $Z > 2$ となる確率が $0.0228$ であることを用いて，$P(S > 8)$ を求めよ．\n\\end{enumerate}"
+   "tex": "区間 $[0, 1)$ の一様乱数 $u$ を $n$ 個独立に発生させ，その和 $S$ をつくる．\n\\begin{enumerate}\n\\item 1個の一様乱数 $u$ の平均と分散を求めよ．\n\\item $S$ の平均と標準偏差を $n$ で表せ．\n\\item 中心極限定理により $S$ は正規分布で近似できる．標準正規分布で $Z > 2$ となる確率が $0.0228$ であることを用いて，$n=12$ のときの $P(S > 8)$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 平均 $\\dfrac12$，分散 $\\dfrac1{12}$\n(2) 平均 $6$，標準偏差 $1$\n(3) $0.0228$"
+   "tex": "(1) 平均 $\\dfrac12$，分散 $\\dfrac1{12}$\n(2) 平均 $\\dfrac n2$，標準偏差 $\\sqrt{\\dfrac{n}{12}}$\n(3) $0.0228$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\langle u\\rangle = \\displaystyle\\int_0^1u\\,du = \\boldsymbol{\\frac12}$，$\\langle u^2\\rangle = \\dfrac13$ より分散は $\\dfrac13 - \\dfrac14 = \\boldsymbol{\\dfrac1{12}}$．\n\n(2) 独立な量の和では平均も分散も足し合わされるので，平均 $12\\times\\frac12 = \\boldsymbol{6}$，分散 $12\\times\\frac1{12} = 1$，標準偏差 $\\boldsymbol{1}$．\n\n(3) $S$ はほぼ $N(6, 1)$ に従うので $P(S>8) = P(Z>2) = \\boldsymbol{0.0228}$．\n\n一様分布のように正規分布と形の違う分布でも，独立な量を多数足すと和は正規分布に近づく（中心極限定理）．$S - 6$ は「標準正規乱数」の簡便な作り方として昔から使われた（ただし $|S-6| \\le 6$ なので裾は再現されない）．測定誤差が正規分布に近いことが多いのも，多数の小さな独立な要因の和だからである．"
+    "tex": "(1) $\\langle u\\rangle = \\displaystyle\\int_0^1u\\,du = \\boldsymbol{\\frac12}$，$\\langle u^2\\rangle = \\dfrac13$ より分散は $\\dfrac13 - \\dfrac14 = \\boldsymbol{\\dfrac1{12}}$．\n\n(2) 独立な量の和では平均も分散も足し合わされるので，平均 $\\boldsymbol{n/2}$，分散 $n/12$，標準偏差 $\\boldsymbol{\\sqrt{n/12}}$．\n\n(3) $n=12$ では平均 $6$，標準偏差 $1$ で，$S$ はほぼ $N(6, 1)$ に従うので $P(S>8) = P(Z>2) = \\boldsymbol{0.0228}$．\n\n一様分布のように正規分布と形の違う分布でも，独立な量を多数足すと和は正規分布に近づく（中心極限定理）．$n=12$ では標準偏差がちょうど1になるので，$S - 6$ は「標準正規乱数」の簡便な作り方として昔から使われた（ただし $|S-6| \\le 6$ なので裾は再現されない）．測定誤差が正規分布に近いことが多いのも，多数の小さな独立な要因の和だからである．"
    }
   ],
   "idea": {
@@ -371,7 +371,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 平均：1/2 ; 分散：1/12\n(2) 平均：6 ; 標準偏差：1\n(3) 確率：≈0.0228"
+   "spec": "(1) 平均：1/2 ; 分散：1/12\n(2) 平均：n/2 ; 標準偏差：sqrt(n/12)\n(3) 確率：≈0.0228"
   },
   "methods": [],
   "tags": [
@@ -601,16 +601,16 @@
   "theme": "ポアソン分布の正規近似と歪みの補正",
   "topic": "ポアソン分布の正規近似と歪みの補正",
   "statement": {
-   "tex": "平均 $m$ のポアソン分布 $P_x=e^{-m}m^x/x!$ を $m\\gg1$ で考える．$x=m+\\delta$（$|\\delta|\\ll m$）とおく．\n\\begin{enumerate}\n\\item スターリングの公式 $x!\\simeq\\sqrt{2\\pi x}\\,x^xe^{-x}$ を用いて\n\\[\\ln P_x\\simeq-\\frac12\\ln(2\\pi m)-\\frac{\\delta^2}{2m}+\\frac{\\delta^3}{6m^2}-\\frac{\\delta}{2m}\\]\nを示せ（$\\delta^4/m^3$，$\\delta^2/m^2$ 程度の項は無視）．\n\\item $m=100$ のとき，$x=110$ と $x=90$ に対する $P_x$ を，(a) 正規分布 $\\dfrac{1}{\\sqrt{2\\pi m}}e^{-\\delta^2/2m}$ と (b) (1) の補正込みの式で計算せよ．厳密値はそれぞれ $0.02342$，$0.02504$ である．\n\\item 正規近似では $x=110$ と $x=90$ の確率が等しくなるが，実際には $P_{90}>P_{110}$ である．この非対称の起源を (1) の式の各補正項に即して説明せよ．\n\\end{enumerate}"
+   "tex": "平均 $m$ のポアソン分布 $P_x=e^{-m}m^x/x!$ を $m\\gg1$ で考える．$x=m+\\delta$（$|\\delta|\\ll m$）とおく．\n\\begin{enumerate}\n\\item スターリングの公式 $x!\\simeq\\sqrt{2\\pi x}\\,x^xe^{-x}$ を用いて\n\\[\\ln P_x\\simeq-\\frac12\\ln(2\\pi m)-\\frac{\\delta^2}{2m}+\\frac{\\delta^3}{6m^2}-\\frac{\\delta}{2m}\\]\nを示せ（$\\delta^4/m^3$，$\\delta^2/m^2$ 程度の項は無視）．\n\\item 正規分布 $\\dfrac{1}{\\sqrt{2\\pi m}}e^{-\\delta^2/2m}$ では $P_{m+\\delta}=P_{m-\\delta}$ である．(1) の補正込みの式で比 $P_{m-\\delta}/P_{m+\\delta}$ を $m,\\delta$ で表せ．（$m=100$，$\\delta=10$ での厳密値は $1.069$ である．）\n\\item 正規近似では $x=m+\\delta$ と $x=m-\\delta$ の確率が等しくなるが，実際には $\\delta$ が大きすぎなければ $P_{m-\\delta}>P_{m+\\delta}$ である．この非対称の起源を (1) の式の各補正項に即して説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）．(2) (a) 両方 0.0242；(b) $P_{110}\\approx0.0234$，$P_{90}\\approx0.0250$．(3) 歪度 $1/\\sqrt m$ の $\\delta^3$ 項と，前因子 $1/\\sqrt{2\\pi x}$ から来る $-\\delta/2m$ 項による．"
+   "tex": "(1) 証明（解説参照）．(2) $\\dfrac{P_{m-\\delta}}{P_{m+\\delta}}=\\exp\\left(\\dfrac{\\delta}{m}-\\dfrac{\\delta^3}{3m^2}\\right)$．(3) 歪度 $1/\\sqrt m$ の $\\delta^3$ 項と，前因子 $1/\\sqrt{2\\pi x}$ から来る $-\\delta/2m$ 項による．"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\ln P_x=-m+x\\ln m-\\ln x!\\simeq-m+x\\ln m-x\\ln x+x-\\frac12\\ln(2\\pi x)$．$x=m+\\delta$ を代入すると\n\\[\\ln P_x\\simeq\\delta-(m+\\delta)\\ln\\left(1+\\frac\\delta m\\right)-\\frac12\\ln(2\\pi m)-\\frac12\\ln\\left(1+\\frac\\delta m\\right).\\]\n$(m+\\delta)\\ln(1+\\delta/m)=(m+\\delta)\\left(\\frac\\delta m-\\frac{\\delta^2}{2m^2}+\\frac{\\delta^3}{3m^3}\\right)+\\cdots=\\delta+\\frac{\\delta^2}{2m}-\\frac{\\delta^3}{6m^2}+\\cdots$，$\\frac12\\ln(1+\\delta/m)\\simeq\\frac{\\delta}{2m}$ より与式を得る．\n\n(2) (a) $\\dfrac{1}{\\sqrt{200\\pi}}e^{-100/200}=0.03989\\times0.6065=0.02420$（$\\pm10$ で共通）．\n(b) 補正因子 $\\exp\\left(\\dfrac{\\delta^3}{6m^2}-\\dfrac{\\delta}{2m}\\right)$：$\\delta=10$ で $\\exp(0.01667-0.05)=e^{-0.0333}=0.9672$，$P_{110}\\approx0.02340$．$\\delta=-10$ で $e^{+0.0333}=1.0339$，$P_{90}\\approx0.02502$．厳密値と 0.1\\% 程度で一致する（正規近似は 3\\% 程度ずれる）．\n\n(3) ポアソン分布は 3 次キュムラントが $m$ で歪度 $m/m^{3/2}=1/\\sqrt m>0$ をもち，右に裾を引く．$\\delta^3/6m^2$ 項はこの歪みを表し，$\\delta>0$ 側をわずかに持ち上げる．一方 $-\\delta/2m$ 項は規格化前因子 $1/\\sqrt{2\\pi x}$ が $x$ とともに減ることに由来し，$\\delta>0$ 側を下げる．$|\\delta|<\\sqrt{3m}$ では後者が勝つため，平均の少し下側（最頻値側）の確率が大きく，$P_{90}>P_{110}$ となる．"
+    "tex": "(1) $\\ln P_x=-m+x\\ln m-\\ln x!\\simeq-m+x\\ln m-x\\ln x+x-\\frac12\\ln(2\\pi x)$．$x=m+\\delta$ を代入すると\n\\[\\ln P_x\\simeq\\delta-(m+\\delta)\\ln\\left(1+\\frac\\delta m\\right)-\\frac12\\ln(2\\pi m)-\\frac12\\ln\\left(1+\\frac\\delta m\\right).\\]\n$(m+\\delta)\\ln(1+\\delta/m)=(m+\\delta)\\left(\\frac\\delta m-\\frac{\\delta^2}{2m^2}+\\frac{\\delta^3}{3m^3}\\right)+\\cdots=\\delta+\\frac{\\delta^2}{2m}-\\frac{\\delta^3}{6m^2}+\\cdots$，$\\frac12\\ln(1+\\delta/m)\\simeq\\frac{\\delta}{2m}$ より与式を得る．\n\n(2) (1) の式で $\\delta\\to-\\delta$ とした差をとると，偶関数の項は消えて\n\\[ \\ln P_{m-\\delta}-\\ln P_{m+\\delta}=-\\frac{2\\delta^3}{6m^2}+\\frac{2\\delta}{2m}=\\frac{\\delta}{m}-\\frac{\\delta^3}{3m^2}, \\]\n\\[ \\boldsymbol{\\frac{P_{m-\\delta}}{P_{m+\\delta}}=\\exp\\left(\\frac{\\delta}{m}-\\frac{\\delta^3}{3m^2}\\right)} . \\]\n$m=100$，$\\delta=10$ では $\\exp(0.1-0.0333)=1.069$ となり，厳密値と一致する（正規近似では1）．\n\n(3) ポアソン分布は 3 次キュムラントが $m$ で歪度 $m/m^{3/2}=1/\\sqrt m>0$ をもち，右に裾を引く．$\\delta^3/6m^2$ 項はこの歪みを表し，$\\delta>0$ 側をわずかに持ち上げる．一方 $-\\delta/2m$ 項は規格化前因子 $1/\\sqrt{2\\pi x}$ が $x$ とともに減ることに由来し，$\\delta>0$ 側を下げる．(2) の指数が正になる $|\\delta|<\\sqrt{3m}$ では後者が勝つため，平均の少し下側（最頻値側）の確率が大きく，$P_{m-\\delta}>P_{m+\\delta}$ となる．"
    }
   ],
   "idea": {
@@ -618,7 +618,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 比：exp(δ/m-δ^3/(3 m^2))\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -753,16 +753,16 @@
   "theme": "レイリー分布：2成分の雑音の振幅と誤検出確率",
   "topic": "レイリー分布：2成分の雑音の振幅と誤検出確率",
   "statement": {
-   "tex": "ロックイン検出器の2つの出力 $X$，$Y$ が，信号がないとき独立に平均 $0$，標準偏差 $\\sigma$ の正規分布に従うとする．振幅 $R = \\sqrt{X^2+Y^2}$ の分布を考える．\n\\begin{enumerate}\n\\item $(X, Y)$ の同時確率密度を極座標 $(R, \\theta)$ で書き，$\\theta$ について積分して $R$ の確率密度 $p(R)$ を求めよ．\n\\item $P(R > r_0)$ を求めよ．\n\\item $R$ の平均 $\\langle R\\rangle$ を求めよ（$\\int_0^\\infty x^2e^{-x^2/2}dx = \\sqrt{\\pi/2}$）．\n\\item $\\sigma = 1.0\\,\\mathrm{\\mu V}$ のとき，雑音だけで $R > 3.0\\,\\mathrm{\\mu V}$ となる確率を求めよ．\n\\end{enumerate}"
+   "tex": "ロックイン検出器の2つの出力 $X$，$Y$ が，信号がないとき独立に平均 $0$，標準偏差 $\\sigma$ の正規分布に従うとする．振幅 $R = \\sqrt{X^2+Y^2}$ の分布を考える．\n\\begin{enumerate}\n\\item $(X, Y)$ の同時確率密度を極座標 $(R, \\theta)$ で書き，$\\theta$ について積分して $R$ の確率密度 $p(R)$ を求めよ．\n\\item $P(R > r_0)$ を求めよ．\n\\item $R$ の平均 $\\langle R\\rangle$ を求めよ（$\\int_0^\\infty x^2e^{-x^2/2}dx = \\sqrt{\\pi/2}$）．\n\\item 雑音だけで $R>r_0$ となる確率（誤検出確率）を $p$ にしたい．しきい値 $r_0$ を $\\sigma,p$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $p(R) = \\dfrac{R}{\\sigma^2}e^{-R^2/2\\sigma^2}$\n(2) $e^{-r_0^2/2\\sigma^2}$\n(3) $\\sqrt{\\frac{\\pi}{2}}\\sigma$\n(4) $0.0111$"
+   "tex": "(1) $p(R) = \\dfrac{R}{\\sigma^2}e^{-R^2/2\\sigma^2}$\n(2) $e^{-r_0^2/2\\sigma^2}$\n(3) $\\sqrt{\\frac{\\pi}{2}}\\sigma$\n(4) $r_0=\\sigma\\sqrt{2\\ln(1/p)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 同時確率密度は $\\dfrac{1}{2\\pi\\sigma^2}e^{-(X^2+Y^2)/2\\sigma^2}$，面積要素は $dXdY = RdRd\\theta$．$\\theta$ で積分して\n\\[ \\boldsymbol{p(R) = \\frac{R}{\\sigma^2}e^{-R^2/2\\sigma^2}} \\quad (R \\ge 0). \\]\n\n(2) $\\displaystyle\\int_{r_0}^\\infty p(R)dR = \\boldsymbol{e^{-r_0^2/2\\sigma^2}}$．\n\n(3) $\\langle R\\rangle = \\displaystyle\\int_0^\\infty\\frac{R^2}{\\sigma^2}e^{-R^2/2\\sigma^2}dR = \\sigma\\sqrt{\\frac\\pi2} \\approx \\boldsymbol{1.25\\sigma}$．\n\n(4) $e^{-9/2} = \\boldsymbol{0.0111}$．\n\n雑音だけでも振幅 $R$ は $0$ にならず，平均 $1.25\\sigma$ の正の値をとる．振幅の小さな信号を測るとき，この「雑音による底上げ」を差し引かないと振幅を過大評価する．また1成分の正規分布で $3\\sigma$ を超える確率（片側 $0.00135$）に比べ，$R > 3\\sigma$ の確率は約8倍大きい．しきい値を決めるときは分布の形の違いに注意する．"
+    "tex": "(1) 同時確率密度は $\\dfrac{1}{2\\pi\\sigma^2}e^{-(X^2+Y^2)/2\\sigma^2}$，面積要素は $dXdY = RdRd\\theta$．$\\theta$ で積分して\n\\[ \\boldsymbol{p(R) = \\frac{R}{\\sigma^2}e^{-R^2/2\\sigma^2}} \\quad (R \\ge 0). \\]\n\n(2) $\\displaystyle\\int_{r_0}^\\infty p(R)dR = \\boldsymbol{e^{-r_0^2/2\\sigma^2}}$．\n\n(3) $\\langle R\\rangle = \\displaystyle\\int_0^\\infty\\frac{R^2}{\\sigma^2}e^{-R^2/2\\sigma^2}dR = \\sigma\\sqrt{\\frac\\pi2} \\approx \\boldsymbol{1.25\\sigma}$．\n\n(4) $e^{-r_0^2/2\\sigma^2}=p$ より $\\boldsymbol{r_0=\\sigma\\sqrt{2\\ln(1/p)}}$．たとえば $r_0=3\\sigma$ なら $p=e^{-9/2}\\approx0.011$ である．\n\n雑音だけでも振幅 $R$ は $0$ にならず，平均 $1.25\\sigma$ の正の値をとる．振幅の小さな信号を測るとき，この「雑音による底上げ」を差し引かないと振幅を過大評価する．また1成分の正規分布で $3\\sigma$ を超える確率（片側 $0.00135$）に比べ，$R > 3\\sigma$ の確率は約8倍大きい．しきい値を決めるときは分布の形の違いに注意する．"
    }
   ],
   "idea": {
@@ -770,7 +770,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) p(R)：(R/σ^2) exp(-R^2/(2σ^2))\n(2) P：exp(-r_0^2/(2σ^2))\n(3) ⟨R⟩：sqrt(pi/2) σ\n(4) 確率：≈0.0111"
+   "spec": "(1) p(R)：(R/σ^2) exp(-R^2/(2σ^2))\n(2) P：exp(-r_0^2/(2σ^2))\n(3) ⟨R⟩：sqrt(pi/2) σ\n(4) $r_0$：σ sqrt(2 ln(1/p))"
   },
   "methods": [],
   "tags": [
@@ -802,24 +802,24 @@
   "theme": "二項分布による検出効率と信頼限界",
   "topic": "二項分布による検出効率と信頼限界",
   "statement": {
-   "tex": "検出器の検出効率 $\\epsilon$ を，確実に通過したとわかっている粒子を数えて測る．\n\\begin{enumerate}\n\\item $n = 100$ 個のうち $k = 90$ 個を検出した．$\\hat\\epsilon = k/n$ と，二項分布による標準誤差 $\\sqrt{\\hat\\epsilon(1-\\hat\\epsilon)/n}$ を求めよ．また，誤って $\\sqrt{k}/n$（ポアソン誤差）とした値も求めよ．\n\\item 別の測定で $n = 20$ 個すべてを検出した（$k = n$）．このとき (1) の式では標準誤差が $0$ になってしまう．代わりに「真の効率が $\\epsilon$ なら $20$ 個すべて検出する確率は $\\epsilon^{20}$」を用い，$\\epsilon^{20} = 0.10$ となる $\\epsilon$（$90\\%$ 信頼下限）を求めよ．\n\\item すべて検出したときに $90\\%$ 信頼下限で $\\epsilon > 0.95$ と言うには，少なくとも何個の粒子を通せばよいか．\n\\end{enumerate}"
+   "tex": "検出器の検出効率 $\\epsilon$ を，確実に通過したとわかっている粒子を数えて測る．\n\\begin{enumerate}\n\\item $n$ 個のうち $k$ 個を検出した．$\\hat\\epsilon = k/n$ と，二項分布による標準誤差 $\\sqrt{\\hat\\epsilon(1-\\hat\\epsilon)/n}$ を $n,\\ k$ で表せ．また，誤って $\\sqrt{k}/n$（ポアソン誤差）とした値との比（ポアソン誤差／二項誤差）を求めよ．\n\\item 別の測定で $n$ 個すべてを検出した（$k = n$）．このとき (1) の式では標準誤差が $0$ になってしまう．代わりに「真の効率が $\\epsilon$ なら $n$ 個すべて検出する確率は $\\epsilon^{n}$」を用い，$\\epsilon^{n} = \\beta$（$0<\\beta<1$）となる $\\epsilon$（信頼度 $1-\\beta$ の信頼下限）を求めよ．\n\\item すべて検出したときに信頼度 $1-\\beta$ の信頼下限で $\\epsilon > \\epsilon_0$ と言うには，通す粒子の個数 $n$ がどんな条件を満たせばよいか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\hat\\epsilon = 0.90$，二項誤差 $0.030$，ポアソン誤差 $0.095$\n(2) $\\epsilon = 0.891$\n(3) $45$ 個"
+   "tex": "(1) $\\hat\\epsilon = \\dfrac{k}{n}$，二項誤差 $\\sqrt{\\dfrac{k(n-k)}{n^3}}$，比 $\\sqrt{\\dfrac{n}{n-k}}$\n(2) $\\epsilon = \\beta^{1/n}$\n(3) $n \\ge \\dfrac{\\ln\\beta}{\\ln\\epsilon_0}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\hat\\epsilon = \\boldsymbol{0.90}$．$k$ は二項分布に従い分散 $n\\epsilon(1-\\epsilon)$ なので\n\\[ \\sigma_{\\hat\\epsilon} = \\sqrt{\\frac{0.9\\times0.1}{100}} = \\boldsymbol{0.030}. \\]\nポアソン誤差 $\\sqrt{90}/100 = \\boldsymbol{0.095}$ は3倍以上の過大評価である．試行回数 $n$ が決まっているので「検出されなかった数」も $k$ と負の相関をもって揺らぎ，$\\epsilon$ が1に近いと揺らぎは小さくなる．ポアソン近似は $\\epsilon \\ll 1$ のときにだけ使える．\n\n(2) $\\epsilon^{20} = 0.10$ より $\\epsilon = 0.1^{1/20} = \\exp(\\ln0.1/20) = \\boldsymbol{0.891}$．これより効率が低ければ，20個すべて検出することは $10\\%$ 未満の確率でしか起きない．\n\n(3) $0.95^{n} \\le 0.10$ より $n \\ge \\ln0.1/\\ln0.95 = 44.9$，すなわち $\\boldsymbol{45}$ 個．"
+    "tex": "(1) $\\hat\\epsilon = \\boldsymbol{k/n}$．$k$ は二項分布に従い分散 $n\\epsilon(1-\\epsilon)$ なので\n\\[ \\sigma_{\\hat\\epsilon} = \\sqrt{\\frac{\\hat\\epsilon(1-\\hat\\epsilon)}{n}} = \\sqrt{\\frac{(k/n)(1-k/n)}{n}} = \\boldsymbol{\\sqrt{\\frac{k(n-k)}{n^3}}}. \\]\nポアソン誤差 $\\sqrt{k}/n$ との比は\n\\[ \\frac{\\sqrt{k}/n}{\\sqrt{k(n-k)/n^3}} = \\boldsymbol{\\sqrt{\\frac{n}{n-k}}} = \\frac{1}{\\sqrt{1-\\hat\\epsilon}} \\]\nで，$\\hat\\epsilon$ が $1$ に近いほどポアソン誤差は大きな過大評価になる．試行回数 $n$ が決まっているので「検出されなかった数」も $k$ と負の相関をもって揺らぎ，$\\epsilon$ が1に近いと揺らぎは小さくなる．ポアソン近似は $\\epsilon \\ll 1$ のときにだけ使える．\n\n(2) $\\epsilon^{n} = \\beta$ より $\\boldsymbol{\\epsilon = \\beta^{1/n}} = \\exp\\left(\\dfrac{\\ln\\beta}{n}\\right)$．これより効率が低ければ，$n$ 個すべて検出することは確率 $\\beta$ 未満でしか起きない．\n\n(3) 信頼下限 $\\beta^{1/n}$ が $\\epsilon_0$ を超えればよいので $\\epsilon_0^{\\,n} \\le \\beta$．両辺の対数をとり，$\\ln\\epsilon_0<0$ で割ると不等号が逆転して\n\\[ \\boldsymbol{n \\ge \\frac{\\ln\\beta}{\\ln\\epsilon_0}} \\]\n（これを満たす最小の整数個）．$\\epsilon_0$ が $1$ に近いと $\\ln\\epsilon_0\\approx-(1-\\epsilon_0)$ なので $n\\approx\\ln(1/\\beta)/(1-\\epsilon_0)$ 個が必要になる．"
    }
   ],
   "idea": {
-   "tex": "検出効率は二項分布で，誤差は $\\sqrt{\\epsilon(1-\\epsilon)/n}$．$k=n$ のような端では正規近似をやめて確率から信頼限界を出す．"
+   "tex": "検出効率は二項分布で，誤差は $\\sqrt{\\epsilon(1-\\epsilon)/n}$．$k=n$ のような端では正規近似をやめて確率 $\\epsilon^n$ から信頼限界を出す．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 効率：≈0.90 ; 二項誤差：≈0.030 ; ポアソン誤差：≈0.095\n(2) ε：≈0.891 (0.3%)\n(3) 個数：45"
+   "spec": "(1) 効率：k/n ; 二項誤差：sqrt(k(n-k)/n^3) ; 比：sqrt(n/(n-k))\n(2) ε：β^(1/n)\n(3) 記述：n ≥ ln β/ln ε_0（を満たす最小の整数）"
   },
   "methods": [],
   "tags": [
@@ -899,16 +899,16 @@
   "theme": "多重検定とルック・エルスウェア効果：局所 p 値と大域 p 値",
   "topic": "多重検定とルック・エルスウェア効果：局所 p 値と大域 p 値",
   "statement": {
-   "tex": "質量スペクトルを互いに独立な $N = 200$ 個の区間に分け，どこかに背景を超える「ピーク」がないか探す．ある区間で，背景だけのときにその超過以上が起こる確率（局所 $p$ 値）が $p = 1.35\\times10^{-3}$（片側 $3\\sigma$ に相当）であった．\n\\begin{enumerate}\n\\item 背景だけのとき，$200$ 区間のうち\\emph{少なくとも1つ}で $p$ 以下の超過が起こる確率（大域 $p$ 値）を求めよ．\n\\item $Np \\ll 1$ のときの近似（ボンフェローニ補正）$p_{\\mathrm{global}} \\approx Np$ による値を求めよ．\n\\item 大域 $p$ 値を $1.35\\times10^{-3}$ にするには，局所 $p$ 値がいくら以下であればよいか．\n\\end{enumerate}"
+   "tex": "質量スペクトルを互いに独立な $N$ 個の区間に分け，どこかに背景を超える「ピーク」がないか探す．ある区間で，背景だけのときにその超過以上が起こる確率（局所 $p$ 値）が $p$ であった．\n\\begin{enumerate}\n\\item 背景だけのとき，$N$ 区間のうち\\emph{少なくとも1つ}で $p$ 以下の超過が起こる確率（大域 $p$ 値）を求めよ．\n\\item $Np \\ll 1$ のとき，(1) の結果を $p$ について1次まで展開した近似（ボンフェローニ補正）を求めよ．\n\\item 大域 $p$ 値を $p_0$ にするには，局所 $p$ 値がいくら以下であればよいか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1-(1-p)^{200} = 0.237$\n(2) $0.27$\n(3) $6.75\\times10^{-6}$"
+   "tex": "(1) $1-(1-p)^{N}$\n(2) $Np$\n(3) $1-(1-p_0)^{1/N}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 各区間で超過しない確率は $1-p$ で独立なので，$p_{\\mathrm{global}} = 1 - (1-p)^{200} = \\boldsymbol{0.237}$．局所的には $3\\sigma$ でも，どこかに $3\\sigma$ が出ることは $4$ 回に $1$ 回程度ある．\n\n(2) $200\\times1.35\\times10^{-3} = \\boldsymbol{0.27}$．$Np$ が $1$ に比べて小さくないので近似は粗い（上から抑える評価になる）．\n\n(3) $1 - (1-p)^{200} = 1.35\\times10^{-3}$ より $p = 1 - (1-1.35\\times10^{-3})^{1/200} = \\boldsymbol{6.75\\times10^{-6}}$（正規分布の片側で約 $4.4\\sigma$ に相当）．\n\n探す場所が多いほど，偶然の揺らぎが「発見」に見える確率は大きくなる（ルック・エルスウェア効果）．素粒子物理の発見に局所 $5\\sigma$ が要求される一因である．実際の解析では区間が独立でないので，擬似実験で有効な試行数を見積もる．"
+    "tex": "(1) 各区間で超過しない確率は $1-p$ で独立なので，$p_{\\mathrm{global}} = \\boldsymbol{1 - (1-p)^{N}}$．たとえば局所 $3\\sigma$（$p\\approx1.35\\times10^{-3}$）でも $N=200$ なら大域 $p$ 値は約 $0.24$ で，どこかに $3\\sigma$ が出ることは $4$ 回に $1$ 回程度ある．\n\n(2) $(1-p)^N = 1 - Np + \\dfrac{N(N-1)}{2}p^2 - \\cdots$ なので，$Np\\ll1$ では $p_{\\mathrm{global}} \\approx \\boldsymbol{Np}$．2次の項は正なので，この近似は大域 $p$ 値を上から抑える評価になる．\n\n(3) $1 - (1-p)^{N} = p_0$ を $p$ について解いて\n\\[ p = \\boldsymbol{1 - (1-p_0)^{1/N}} \\approx \\frac{p_0}{N}. \\]\n探す区間の数 $N$ に反比例して，局所的にはずっと厳しい基準が必要になる．\n\n探す場所が多いほど，偶然の揺らぎが「発見」に見える確率は大きくなる（ルック・エルスウェア効果）．素粒子物理の発見に局所 $5\\sigma$ が要求される一因である．実際の解析では区間が独立でないので，擬似実験で有効な試行数を見積もる．"
    }
   ],
   "idea": {
@@ -916,7 +916,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 大域p値：≈0.237\n(2) 近似：0.27\n(3) 局所p値：≈6.75e-6"
+   "spec": "(1) 大域p値：1-(1-p)^N\n(2) 近似：N p\n(3) 局所p値：1-(1-p_0)^(1/N)"
   },
   "methods": [],
   "tags": [

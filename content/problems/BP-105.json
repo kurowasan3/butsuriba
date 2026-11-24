@@ -9,16 +9,16 @@
   "theme": "自由連結鎖の末端間距離（DNA の大きさ）",
   "topic": "自由連結鎖の末端間距離（DNA の大きさ）",
   "statement": {
-   "tex": "DNA やタンパク質のような長い鎖状分子（高分子）を，長さ $b$ の線分（セグメント）$N$ 本がつながったものとみなす．各セグメントのベクトルを $\\vec b_1,\\vec b_2,\\dots,\\vec b_N$（$|\\vec b_i|=b$）とし，それぞれの向きはまったく自由で互いに無関係である（自由連結鎖）．このとき，異なるセグメントの内積の平均は $\\langle\\vec b_i\\cdot\\vec b_j\\rangle=0\\ (i\\neq j)$ である．鎖の一端から他端へのベクトルを $\\vec R=\\vec b_1+\\vec b_2+\\cdots+\\vec b_N$ とする．\n\\begin{enumerate}\n\\item $\\langle|\\vec R|^2\\rangle$ を $N,\\,b$ で表せ．\n\\item ある DNA 分子は $b=100\\,\\mathrm{nm}$，全長 $Nb=16\\,\\mathrm{\\mu m}$ の自由連結鎖とみなせる．末端間距離の2乗平均平方根 $\\sqrt{\\langle|\\vec R|^2\\rangle}$ は何 $\\mathrm{\\mu m}$ か．\n\\item 同じ種類の高分子で長さ（$N$）を4倍にすると，$\\sqrt{\\langle|\\vec R|^2\\rangle}$ は何倍になるか．\n\\end{enumerate}"
+   "tex": "DNA やタンパク質のような長い鎖状分子（高分子）を，長さ $b$ の線分（セグメント）$N$ 本がつながったものとみなす．各セグメントのベクトルを $\\vec b_1,\\vec b_2,\\dots,\\vec b_N$（$|\\vec b_i|=b$）とし，それぞれの向きはまったく自由で互いに無関係である（自由連結鎖）．このとき，異なるセグメントの内積の平均は $\\langle\\vec b_i\\cdot\\vec b_j\\rangle=0\\ (i\\neq j)$ である．鎖の一端から他端へのベクトルを $\\vec R=\\vec b_1+\\vec b_2+\\cdots+\\vec b_N$ とする．\n\\begin{enumerate}\n\\item $\\langle|\\vec R|^2\\rangle$ を $N,\\,b$ で表せ．\n\\item ある DNA 分子は全長 $L=Nb$ の自由連結鎖とみなせる．末端間距離の2乗平均平方根 $\\sqrt{\\langle|\\vec R|^2\\rangle}$ を $L, b$ で表せ．\n\\item 同じ種類の高分子で長さ（$N$）を4倍にすると，$\\sqrt{\\langle|\\vec R|^2\\rangle}$ は何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle|\\vec R|^2\\rangle=Nb^2$ (2) $\\approx1.26\\,\\mathrm{\\mu m}$ (3) $2$ 倍"
+   "tex": "(1) $\\langle|\\vec R|^2\\rangle=Nb^2$ (2) $\\sqrt{Lb}$ (3) $2$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 展開すると\n\\[ |\\vec R|^2=\\sum_{i}|\\vec b_i|^2+\\sum_{i\\neq j}\\vec b_i\\cdot\\vec b_j \\]\nである．第1項は $Nb^2$，第2項は平均すると $0$ なので\n\\[ \\boldsymbol{\\langle|\\vec R|^2\\rangle=Nb^2}. \\]\nこれはランダムウォークで「$N$ 歩後の距離が $\\sqrt N$ 歩分にしかならない」のと同じ結果である．\n\n(2) $\\sqrt{Nb^2}=\\sqrt{(Nb)\\,b}=\\sqrt{16\\,\\mathrm{\\mu m}\\times0.1\\,\\mathrm{\\mu m}}=\\sqrt{1.6}\\,\\mathrm{\\mu m}\\approx\\boldsymbol{1.26\\,\\mathrm{\\mu m}}$．全長 $16\\,\\mathrm{\\mu m}$ の分子が，その $1/13$ ほどの大きさの糸玉に丸まっている．\n\n(3) $\\sqrt{\\langle|\\vec R|^2\\rangle}\\propto\\sqrt N$ なので $\\sqrt4=\\boldsymbol{2}$ 倍．\n\nこの分野では次に，鎖の曲げにくさを取り入れた「みみず鎖」や，鎖どうしが重ならない効果（排除体積）を学ぶ．"
+    "tex": "(1) 展開すると\n\\[ |\\vec R|^2=\\sum_{i}|\\vec b_i|^2+\\sum_{i\\neq j}\\vec b_i\\cdot\\vec b_j \\]\nである．第1項は $Nb^2$，第2項は平均すると $0$ なので\n\\[ \\boldsymbol{\\langle|\\vec R|^2\\rangle=Nb^2}. \\]\nこれはランダムウォークで「$N$ 歩後の距離が $\\sqrt N$ 歩分にしかならない」のと同じ結果である．\n\n(2) $\\sqrt{Nb^2}=\\sqrt{(Nb)\\,b}=\\boldsymbol{\\sqrt{Lb}}$．全長 $L$ とセグメント長 $b$ の幾何平均である．$b=100\\,\\mathrm{nm}$，$L=16\\,\\mathrm{\\mu m}$ なら約 $1.26\\,\\mathrm{\\mu m}$ で，全長の $1/13$ ほどの大きさの糸玉に丸まっている．\n\n(3) $\\sqrt{\\langle|\\vec R|^2\\rangle}\\propto\\sqrt N$ なので $\\sqrt4=\\boldsymbol{2}$ 倍．\n\nこの分野では次に，鎖の曲げにくさを取り入れた「みみず鎖」や，鎖どうしが重ならない効果（排除体積）を学ぶ．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) <R^2>：N b^2\n(2) R [μm]：≈1.26\n(3) 2"
+   "spec": "(1) <R^2>：N b^2\n(2) R：sqrt(L b)\n(3) 2"
   },
   "methods": [],
   "tags": [
@@ -58,16 +58,16 @@
   "theme": "タンパク質の折り畳みの2状態モデルと変性温度",
   "topic": "タンパク質の折り畳みの2状態モデルと変性温度",
   "statement": {
-   "tex": "タンパク質は，決まった立体構造に折り畳まれた状態（天然状態 N）と，ほどけてさまざまな形をとる状態（変性状態 U）の間を行き来する．簡単なモデルとして，天然状態は形が1通りでエネルギー $-\\varepsilon\\ (\\varepsilon>0)$，変性状態は形が $\\Omega$ 通りあってどれもエネルギー $0$ とする．温度 $T$ で，エネルギー $E$ の1つの形が実現する確率はボルツマン因子 $e^{-E/(k_BT)}$ に比例する（$k_B$ はボルツマン定数）．\n\\begin{enumerate}\n\\item タンパク質が変性状態 U にある確率 $P_U$ を $\\varepsilon,\\,\\Omega,\\,k_B,\\,T$ で表せ．\n\\item $P_U=1/2$ となる温度（変性温度）$T_m$ を求めよ．\n\\item アミノ酸 $100$ 個からなるタンパク質で，変性状態では各アミノ酸が独立に3通りの形をとる（$\\Omega=3^{100}$）とする．$\\varepsilon=5.0\\times10^{-19}\\,\\mathrm{J}$，$k_B=1.38\\times10^{-23}\\,\\mathrm{J/K}$ として $T_m$ を求めよ．\n\\end{enumerate}"
+   "tex": "タンパク質は，決まった立体構造に折り畳まれた状態（天然状態 N）と，ほどけてさまざまな形をとる状態（変性状態 U）の間を行き来する．簡単なモデルとして，天然状態は形が1通りでエネルギー $-\\varepsilon\\ (\\varepsilon>0)$，変性状態は形が $\\Omega$ 通りあってどれもエネルギー $0$ とする．温度 $T$ で，エネルギー $E$ の1つの形が実現する確率はボルツマン因子 $e^{-E/(k_BT)}$ に比例する（$k_B$ はボルツマン定数）．\n\\begin{enumerate}\n\\item タンパク質が変性状態 U にある確率 $P_U$ を $\\varepsilon,\\,\\Omega,\\,k_B,\\,T$ で表せ．\n\\item $P_U=1/2$ となる温度（変性温度）$T_m$ を求めよ．\n\\item アミノ酸 $n$ 個からなるタンパク質で，変性状態では各アミノ酸が独立に3通りの形をとる（$\\Omega=3^{n}$）とする．$T_m$ を $\\varepsilon, k_B, n$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P_U=\\dfrac{\\Omega e^{-\\varepsilon/(k_BT)}}{1+\\Omega e^{-\\varepsilon/(k_BT)}}$ (2) $T_m=\\dfrac{\\varepsilon}{k_B\\ln\\Omega}$ (3) $T_m\\approx330\\,\\mathrm{K}$"
+   "tex": "(1) $P_U=\\dfrac{\\Omega e^{-\\varepsilon/(k_BT)}}{1+\\Omega e^{-\\varepsilon/(k_BT)}}$ (2) $T_m=\\dfrac{\\varepsilon}{k_B\\ln\\Omega}$ (3) $T_m=\\dfrac{\\varepsilon}{nk_B\\ln3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 天然状態の重みは $e^{\\varepsilon/(k_BT)}$（1通り），変性状態の重みは $\\Omega\\times e^{0}=\\Omega$ である．確率は重みの比なので\n\\[ P_U=\\frac{\\Omega}{e^{\\varepsilon/(k_BT)}+\\Omega}=\\boldsymbol{\\frac{\\Omega e^{-\\varepsilon/(k_BT)}}{1+\\Omega e^{-\\varepsilon/(k_BT)}}}. \\]\n\n(2) $P_U=1/2$ は $\\Omega e^{-\\varepsilon/(k_BT_m)}=1$，すなわち\n\\[ \\boldsymbol{T_m=\\frac{\\varepsilon}{k_B\\ln\\Omega}}. \\]\n低温ではエネルギーの低い天然状態が，高温では「形の数」の多い変性状態が勝つ．$k_B\\ln\\Omega$ は変性状態のエントロピーで，$T_m$ はエネルギーとエントロピーが釣り合う温度である．\n\n(3) $\\ln\\Omega=100\\ln3\\approx109.9$ なので $T_m=\\dfrac{5.0\\times10^{-19}}{1.38\\times10^{-23}\\times109.9}\\approx\\boldsymbol{330\\,\\mathrm{K}}$（約 $57^\\circ\\mathrm{C}$）．\n\n$P_U$ を $T$ の関数として描くと，$\\varepsilon$ と $k_B\\ln\\Omega$ が大きいため $T_m$ 付近で急に $0$ から $1$ へ変わる．次は熱量測定（比熱のピーク）から2状態モデルを検証する方法を学ぶ．"
+    "tex": "(1) 天然状態の重みは $e^{\\varepsilon/(k_BT)}$（1通り），変性状態の重みは $\\Omega\\times e^{0}=\\Omega$ である．確率は重みの比なので\n\\[ P_U=\\frac{\\Omega}{e^{\\varepsilon/(k_BT)}+\\Omega}=\\boldsymbol{\\frac{\\Omega e^{-\\varepsilon/(k_BT)}}{1+\\Omega e^{-\\varepsilon/(k_BT)}}}. \\]\n\n(2) $P_U=1/2$ は $\\Omega e^{-\\varepsilon/(k_BT_m)}=1$，すなわち\n\\[ \\boldsymbol{T_m=\\frac{\\varepsilon}{k_B\\ln\\Omega}}. \\]\n低温ではエネルギーの低い天然状態が，高温では「形の数」の多い変性状態が勝つ．$k_B\\ln\\Omega$ は変性状態のエントロピーで，$T_m$ はエネルギーとエントロピーが釣り合う温度である．\n\n(3) $\\ln\\Omega=n\\ln3$ なので $\\boldsymbol{T_m=\\dfrac{\\varepsilon}{nk_B\\ln3}}$．$n=100$，$\\varepsilon=5.0\\times10^{-19}\\,\\mathrm J$ なら約 $330\\,\\mathrm K$（約 $57^\\circ\\mathrm{C}$）．$\\varepsilon$ も $n$ にほぼ比例するので，$T_m$ はタンパク質の大きさにあまりよらない．\n\n$P_U$ を $T$ の関数として描くと，$\\varepsilon$ と $k_B\\ln\\Omega$ が大きいため $T_m$ 付近で急に $0$ から $1$ へ変わる．次は熱量測定（比熱のピーク）から2状態モデルを検証する方法を学ぶ．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) P_U：Ω e^(-epsilon/(k_B T))/(1+Ω e^(-epsilon/(k_B T)))\n(2) T_m：epsilon/(k_B ln Ω)\n(3) T_m [K]：≈330"
+   "spec": "(1) P_U：Ω e^(-epsilon/(k_B T))/(1+Ω e^(-epsilon/(k_B T)))\n(2) T_m：epsilon/(k_B ln Ω)\n(3) T_m：epsilon/(n k_B ln(3))"
   },
   "methods": [],
   "tags": [
@@ -107,16 +107,16 @@
   "theme": "格子模型による受容体とリガンドの結合と解離定数",
   "topic": "格子模型による受容体とリガンドの結合と解離定数",
   "statement": {
-   "tex": "細胞の受容体（タンパク質）1個と，それに結合する小さな分子（リガンド）$L$ 個が体積 $V$ の溶液中にある．溶液を体積 $v$ の小部屋 $\\Omega=V/v$ 個に分け，各リガンドはどれか1つの部屋に入る（1部屋に1個まで，$L\\ll\\Omega$）．リガンドは溶液中にいるときより受容体に結合したときのほうがエネルギーが $\\varepsilon\\ (>0)$ だけ低い．温度 $T$ で，ある配置が実現する確率は $e^{-(\\text{全エネルギー})/(k_BT)}$ に比例する．区別できない $n$ 個のリガンドを $\\Omega$ 個の部屋に入れる方法の数は $\\dfrac{\\Omega!}{n!\\,(\\Omega-n)!}\\simeq\\dfrac{\\Omega^n}{n!}$ と近似してよい．\n\\begin{enumerate}\n\\item 「受容体にリガンドが結合している」状態と「結合していない」状態の確率の比 $p_{\\mathrm{b}}/p_{\\mathrm{u}}$ を $L,\\,\\Omega,\\,\\varepsilon,\\,k_BT$ で表せ．\n\\item リガンドの濃度を $c=L/V$ とする．結合している確率 $p_{\\mathrm{b}}$ が $1/2$ となる濃度（解離定数）$K_d$ を $v,\\,\\varepsilon,\\,k_BT$ で表せ．\n\\item $v=1.0\\,\\mathrm{nm^3}$，$\\varepsilon=12k_BT$ のとき $K_d$ を $\\mathrm{mol/L}$ 単位で求めよ．アボガドロ定数は $6.02\\times10^{23}\\,\\mathrm{/mol}$，$e^{-12}=6.14\\times10^{-6}$，$1\\,\\mathrm{L}=10^{24}\\,\\mathrm{nm^3}$ とする．\n\\end{enumerate}"
+   "tex": "細胞の受容体（タンパク質）1個と，それに結合する小さな分子（リガンド）$L$ 個が体積 $V$ の溶液中にある．溶液を体積 $v$ の小部屋 $\\Omega=V/v$ 個に分け，各リガンドはどれか1つの部屋に入る（1部屋に1個まで，$L\\ll\\Omega$）．リガンドは溶液中にいるときより受容体に結合したときのほうがエネルギーが $\\varepsilon\\ (>0)$ だけ低い．温度 $T$ で，ある配置が実現する確率は $e^{-(\\text{全エネルギー})/(k_BT)}$ に比例する．区別できない $n$ 個のリガンドを $\\Omega$ 個の部屋に入れる方法の数は $\\dfrac{\\Omega!}{n!\\,(\\Omega-n)!}\\simeq\\dfrac{\\Omega^n}{n!}$ と近似してよい．\n\\begin{enumerate}\n\\item 「受容体にリガンドが結合している」状態と「結合していない」状態の確率の比 $p_{\\mathrm{b}}/p_{\\mathrm{u}}$ を $L,\\,\\Omega,\\,\\varepsilon,\\,k_BT$ で表せ．\n\\item リガンドの濃度を $c=L/V$ とする．結合している確率 $p_{\\mathrm{b}}$ が $1/2$ となる濃度（解離定数）$K_d$ を $v,\\,\\varepsilon,\\,k_BT$ で表せ．\n\\item $\\varepsilon=nk_BT$ のとき，モル濃度で表した $K_d$ を $v, n$ とアボガドロ定数 $N_A$ で表せ．また，結合エネルギーが $k_BT$ だけ大きくなると $K_d$ は何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{p_{\\mathrm{b}}}{p_{\\mathrm{u}}}=\\dfrac{L}{\\Omega}e^{\\varepsilon/(k_BT)}$ (2) $K_d=\\dfrac{e^{-\\varepsilon/(k_BT)}}{v}$ (3) $K_d\\approx1.0\\times10^{-5}\\,\\mathrm{mol/L}$"
+   "tex": "(1) $\\dfrac{p_{\\mathrm{b}}}{p_{\\mathrm{u}}}=\\dfrac{L}{\\Omega}e^{\\varepsilon/(k_BT)}$ (2) $K_d=\\dfrac{e^{-\\varepsilon/(k_BT)}}{v}$ (3) $K_d=\\dfrac{e^{-n}}{N_Av}$，$e^{-1}$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 溶液中のリガンドのエネルギーを $0$ とする．結合していない状態では $L$ 個すべてが溶液中にあり，配置の数は $\\Omega^L/L!$，エネルギーは $0$．結合した状態では1個が受容体に付き（エネルギー $-\\varepsilon$），残り $L-1$ 個の配置の数は $\\Omega^{L-1}/(L-1)!$．よって\n\\[ \\frac{p_{\\mathrm{b}}}{p_{\\mathrm{u}}}=\\frac{\\Omega^{L-1}/(L-1)!}{\\Omega^L/L!}e^{\\varepsilon/(k_BT)}=\\boldsymbol{\\frac{L}{\\Omega}e^{\\varepsilon/(k_BT)}}. \\]\n\n(2) $L/\\Omega=Lv/V=cv$ なので $p_{\\mathrm{b}}=\\dfrac{cve^{\\varepsilon/(k_BT)}}{1+cve^{\\varepsilon/(k_BT)}}=\\dfrac{c/K_d}{1+c/K_d}$ の形になり，\n\\[ \\boldsymbol{K_d=\\frac{e^{-\\varepsilon/(k_BT)}}{v}}. \\]\n結合が強い（$\\varepsilon$ が大きい）ほど，低い濃度で結合する．\n\n(3) $K_d=\\dfrac{6.14\\times10^{-6}}{1.0\\,\\mathrm{nm^3}}=6.14\\times10^{-6}\\,\\mathrm{nm^{-3}}=6.14\\times10^{18}\\,\\mathrm{L^{-1}}$．アボガドロ定数で割って\n\\[ K_d=\\frac{6.14\\times10^{18}}{6.02\\times10^{23}}\\,\\mathrm{mol/L}\\approx\\boldsymbol{1.0\\times10^{-5}\\,\\mathrm{mol/L}}\\ (10\\,\\mathrm{\\mu M}). \\]\n\nこの $p_{\\mathrm b}=\\dfrac{c/K_d}{1+c/K_d}$ は化学平衡の質量作用の法則から得られる式と同じ形である．次は，結合部位が複数あって互いに影響し合う「協同的な結合」（ヒル係数）を学ぶ．"
+    "tex": "(1) 溶液中のリガンドのエネルギーを $0$ とする．結合していない状態では $L$ 個すべてが溶液中にあり，配置の数は $\\Omega^L/L!$，エネルギーは $0$．結合した状態では1個が受容体に付き（エネルギー $-\\varepsilon$），残り $L-1$ 個の配置の数は $\\Omega^{L-1}/(L-1)!$．よって\n\\[ \\frac{p_{\\mathrm{b}}}{p_{\\mathrm{u}}}=\\frac{\\Omega^{L-1}/(L-1)!}{\\Omega^L/L!}e^{\\varepsilon/(k_BT)}=\\boldsymbol{\\frac{L}{\\Omega}e^{\\varepsilon/(k_BT)}}. \\]\n\n(2) $L/\\Omega=Lv/V=cv$ なので $p_{\\mathrm{b}}=\\dfrac{cve^{\\varepsilon/(k_BT)}}{1+cve^{\\varepsilon/(k_BT)}}=\\dfrac{c/K_d}{1+c/K_d}$ の形になり，\n\\[ \\boldsymbol{K_d=\\frac{e^{-\\varepsilon/(k_BT)}}{v}}. \\]\n結合が強い（$\\varepsilon$ が大きい）ほど，低い濃度で結合する．\n\n(3) 個数濃度 $e^{-n}/v$ をアボガドロ定数で割って $\\boldsymbol{K_d=\\dfrac{e^{-n}}{N_Av}}$．$n$ が $1$ 増えると $\\boldsymbol{e^{-1}}$ 倍（約 $0.37$ 倍）になる．$v=1.0\\,\\mathrm{nm^3}$，$n=12$ なら約 $1.0\\times10^{-5}\\,\\mathrm{mol/L}$（$10\\,\\mathrm{\\mu M}$）で，結合エネルギーが $k_BT$ の数倍変わるだけで $K_d$ は桁で変わる．\n\nこの $p_{\\mathrm b}=\\dfrac{c/K_d}{1+c/K_d}$ は化学平衡の質量作用の法則から得られる式と同じ形である．次は，結合部位が複数あって互いに影響し合う「協同的な結合」（ヒル係数）を学ぶ．"
    }
   ],
   "idea": {
@@ -124,7 +124,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) p_b/p_u：L/Ω e^(epsilon/(k_B T))\n(2) K_d：e^(-epsilon/(k_B T))/v\n(3) K_d [mol/L]：≈1.0e-5"
+   "spec": "(1) p_b/p_u：L/Ω e^(epsilon/(k_B T))\n(2) K_d：e^(-epsilon/(k_B T))/v\n(3) K_d：e^(-n)/(N_A v) ; 倍率：e^(-1)"
   },
   "methods": [],
   "tags": [
@@ -156,16 +156,16 @@
   "theme": "ガウス鎖のエントロピー弾性と最も確からしい末端間距離",
   "topic": "ガウス鎖のエントロピー弾性と最も確からしい末端間距離",
   "statement": {
-   "tex": "セグメント長 $b$，セグメント数 $N\\ (\\gg1)$ の自由連結鎖の末端間ベクトル $\\vec R$ は，3次元のガウス分布\n\\[ P(\\vec R)=\\left(\\frac{3}{2\\pi Nb^2}\\right)^{3/2}\\exp\\left(-\\frac{3|\\vec R|^2}{2Nb^2}\\right) \\]\nに従う．鎖のエネルギーは $\\vec R$ によらないとし，温度を $T$ とする．\n\\begin{enumerate}\n\\item 末端間距離 $r=|\\vec R|$ の確率密度が最大となる $r$ を求めよ．\n\\item 末端を $\\vec R=(x,0,0)$ に固定したときのエントロピー $S(x)=k_B\\ln P+\\text{const}$ から自由エネルギー $F=-TS$ を作り，末端を保つのに必要な力 $f=\\partial F/\\partial x$ を $f=kx$ と書くときのばね定数 $k$ を求めよ．\n\\item $b=100\\,\\mathrm{nm}$，$Nb=16\\,\\mathrm{\\mu m}$ の DNA の末端を $x=1.0\\,\\mathrm{\\mu m}$ だけ引き離して保つのに必要な力は何 $\\mathrm{pN}$ か．$k_BT=4.1\\,\\mathrm{pN\\cdot nm}$ とする．\n\\end{enumerate}"
+   "tex": "セグメント長 $b$，セグメント数 $N\\ (\\gg1)$ の自由連結鎖の末端間ベクトル $\\vec R$ は，3次元のガウス分布\n\\[ P(\\vec R)=\\left(\\frac{3}{2\\pi Nb^2}\\right)^{3/2}\\exp\\left(-\\frac{3|\\vec R|^2}{2Nb^2}\\right) \\]\nに従う．鎖のエネルギーは $\\vec R$ によらないとし，温度を $T$ とする．\n\\begin{enumerate}\n\\item 末端間距離 $r=|\\vec R|$ の確率密度が最大となる $r$ を求めよ．\n\\item 末端を $\\vec R=(x,0,0)$ に固定したときのエントロピー $S(x)=k_B\\ln P+\\text{const}$ から自由エネルギー $F=-TS$ を作り，末端を保つのに必要な力 $f=\\partial F/\\partial x$ を $f=kx$ と書くときのばね定数 $k$ を求めよ．\n\\item 全長 $L=Nb$ の DNA の末端を距離 $x$ だけ引き離して保つのに必要な力 $f$ を $k_B, T, x, L, b$ で表せ．また，同じ $x$ で比べると，全長が2倍の DNA では力は何倍か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $r=\\sqrt{\\dfrac{2N}{3}}\\,b$ (2) $k=\\dfrac{3k_BT}{Nb^2}$ (3) $f\\approx7.7\\times10^{-3}\\,\\mathrm{pN}$"
+   "tex": "(1) $r=\\sqrt{\\dfrac{2N}{3}}\\,b$ (2) $k=\\dfrac{3k_BT}{Nb^2}$ (3) $f=\\dfrac{3k_BTx}{Lb}$，$\\dfrac12$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 長さ $r$ の殻の体積 $4\\pi r^2dr$ を掛けて，$r$ の分布は $p(r)\\propto r^2e^{-3r^2/(2Nb^2)}$．$\\ln p=2\\ln r-\\dfrac{3r^2}{2Nb^2}+\\text{const}$ を微分して $0$ とおくと $\\dfrac{2}{r}=\\dfrac{3r}{Nb^2}$，\n\\[ \\boldsymbol{r=\\sqrt{\\frac{2N}{3}}\\,b}. \\]\n$\\vec R$ の分布そのものは $\\vec R=\\vec 0$ で最大だが，距離 $r$ については球殻の体積因子 $r^2$ のため有限の値で最大になる．\n\n(2) $S(x)=\\text{const}-\\dfrac{3k_Bx^2}{2Nb^2}$，$F=\\text{const}+\\dfrac{3k_BT}{2Nb^2}x^2$．よって $f=\\dfrac{3k_BT}{Nb^2}x$，\n\\[ \\boldsymbol{k=\\frac{3k_BT}{Nb^2}}. \\]\nエネルギーは変わらないのに，伸ばすと取りうる形の数（エントロピー）が減るため，縮もうとする力が生じる（エントロピー弾性）．ばね定数は $T$ に比例し，鎖が長いほど柔らかい．\n\n(3) $Nb^2=(16\\times10^3\\,\\mathrm{nm})(100\\,\\mathrm{nm})=1.6\\times10^6\\,\\mathrm{nm^2}$ なので\n\\[ f=\\frac{3\\times4.1\\times1000}{1.6\\times10^6}\\,\\mathrm{pN}\\approx\\boldsymbol{7.7\\times10^{-3}\\,\\mathrm{pN}}. \\]\n光ピンセットで測れる最小の力（$\\sim0.01\\,\\mathrm{pN}$）程度であり，DNA は小さな力でも大きく伸びる．ガウス近似は $x\\ll Nb$ のときだけ正しい．"
+    "tex": "(1) 長さ $r$ の殻の体積 $4\\pi r^2dr$ を掛けて，$r$ の分布は $p(r)\\propto r^2e^{-3r^2/(2Nb^2)}$．$\\ln p=2\\ln r-\\dfrac{3r^2}{2Nb^2}+\\text{const}$ を微分して $0$ とおくと $\\dfrac{2}{r}=\\dfrac{3r}{Nb^2}$，\n\\[ \\boldsymbol{r=\\sqrt{\\frac{2N}{3}}\\,b}. \\]\n$\\vec R$ の分布そのものは $\\vec R=\\vec 0$ で最大だが，距離 $r$ については球殻の体積因子 $r^2$ のため有限の値で最大になる．\n\n(2) $S(x)=\\text{const}-\\dfrac{3k_Bx^2}{2Nb^2}$，$F=\\text{const}+\\dfrac{3k_BT}{2Nb^2}x^2$．よって $f=\\dfrac{3k_BT}{Nb^2}x$，\n\\[ \\boldsymbol{k=\\frac{3k_BT}{Nb^2}}. \\]\nエネルギーは変わらないのに，伸ばすと取りうる形の数（エントロピー）が減るため，縮もうとする力が生じる（エントロピー弾性）．ばね定数は $T$ に比例し，鎖が長いほど柔らかい．\n\n(3) $Nb^2=Lb$ なので $\\boldsymbol{f=\\dfrac{3k_BTx}{Lb}}$．$L$ に反比例するので，全長が2倍なら $\\boldsymbol{1/2}$ 倍．$b=100\\,\\mathrm{nm}$，$L=16\\,\\mathrm{\\mu m}$，$x=1.0\\,\\mathrm{\\mu m}$，$k_BT=4.1\\,\\mathrm{pN\\,nm}$ なら約 $7.7\\times10^{-3}\\,\\mathrm{pN}$ で，\n光ピンセットで測れる最小の力（$\\sim0.01\\,\\mathrm{pN}$）程度である．DNA は小さな力でも大きく伸びる．ガウス近似は $x\\ll Nb$ のときだけ正しい．"
    }
   ],
   "idea": {
@@ -173,7 +173,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) r：sqrt(2N/3) b\n(2) k：3 k_B T/(N b^2)\n(3) f [pN]：≈7.7e-3"
+   "spec": "(1) r：sqrt(2N/3) b\n(2) k：3 k_B T/(N b^2)\n(3) f：3 k_B T x/(L b) ; 1/2"
   },
   "methods": [],
   "tags": [
@@ -205,16 +205,16 @@
   "theme": "みみず鎖モデルの末端間距離と持続長",
   "topic": "みみず鎖モデルの末端間距離と持続長",
   "statement": {
-   "tex": "DNA のように曲げにくい鎖を，長さ $L$ のなめらかな曲線とみなす（みみず鎖）．曲線に沿った長さ $s$ の点での単位接ベクトルを $\\vec t(s)$ とすると，熱ゆらぎによる向きの相関は\n\\[ \\langle\\vec t(s)\\cdot\\vec t(s')\\rangle=e^{-|s-s'|/\\xi} \\]\nで与えられる．$\\xi$ を持続長という．末端間ベクトルは $\\vec R=\\int_0^L\\vec t(s)\\,ds$ である．\n\\begin{enumerate}\n\\item $\\langle|\\vec R|^2\\rangle$ を $L,\\,\\xi$ で表せ．\n\\item $L\\gg\\xi$ で $\\langle|\\vec R|^2\\rangle$ を自由連結鎖の $\\langle|\\vec R|^2\\rangle=Lb$（$b$ はセグメント長，$N=L/b$）と比べる．対応するセグメント長（クーン長）$b$ を $\\xi$ で表せ．\n\\item 持続長 $\\xi=50\\,\\mathrm{nm}$ の DNA で $L=150\\,\\mathrm{nm}$ のとき，$\\sqrt{\\langle|\\vec R|^2\\rangle}$ を求めよ．\n\\end{enumerate}"
+   "tex": "DNA のように曲げにくい鎖を，長さ $L$ のなめらかな曲線とみなす（みみず鎖）．曲線に沿った長さ $s$ の点での単位接ベクトルを $\\vec t(s)$ とすると，熱ゆらぎによる向きの相関は\n\\[ \\langle\\vec t(s)\\cdot\\vec t(s')\\rangle=e^{-|s-s'|/\\xi} \\]\nで与えられる．$\\xi$ を持続長という．末端間ベクトルは $\\vec R=\\int_0^L\\vec t(s)\\,ds$ である．\n\\begin{enumerate}\n\\item $\\langle|\\vec R|^2\\rangle$ を $L,\\,\\xi$ で表せ．\n\\item $L\\gg\\xi$ で $\\langle|\\vec R|^2\\rangle$ を自由連結鎖の $\\langle|\\vec R|^2\\rangle=Lb$（$b$ はセグメント長，$N=L/b$）と比べる．対応するセグメント長（クーン長）$b$ を $\\xi$ で表せ．\n\\item $L=3\\xi$ のとき，$\\sqrt{\\langle|\\vec R|^2\\rangle}$ を $\\xi$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle|\\vec R|^2\\rangle=2\\xi L-2\\xi^2\\left(1-e^{-L/\\xi}\\right)$ (2) $b=2\\xi$ (3) $\\approx101\\,\\mathrm{nm}$"
+   "tex": "(1) $\\langle|\\vec R|^2\\rangle=2\\xi L-2\\xi^2\\left(1-e^{-L/\\xi}\\right)$ (2) $b=2\\xi$ (3) $\\xi\\sqrt{4+2e^{-3}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) \n\\[ \\langle|\\vec R|^2\\rangle=\\int_0^L\\!\\!\\int_0^L e^{-|s-s'|/\\xi}\\,ds\\,ds'=2\\int_0^L ds\\int_0^{s}e^{-(s-s')/\\xi}ds'=2\\xi\\int_0^L\\left(1-e^{-s/\\xi}\\right)ds \\]\nより\n\\[ \\boldsymbol{\\langle|\\vec R|^2\\rangle=2\\xi L-2\\xi^2\\left(1-e^{-L/\\xi}\\right)}. \\]\n$L\\ll\\xi$ では展開して $\\langle R^2\\rangle\\simeq L^2$（棒），$L\\gg\\xi$ では $\\simeq2\\xi L$（ランダムコイル）となる．\n\n(2) $2\\xi L=Lb$ より $\\boldsymbol{b=2\\xi}$．持続長の2倍の長さを1つの「自由に向きを変える線分」とみなせば，長い鎖は自由連結鎖と同じになる．\n\n(3) $L/\\xi=3$ を代入して $\\langle R^2\\rangle=L^2\\left[\\dfrac23-\\dfrac29(1-e^{-3})\\right]\\approx0.4555L^2$，\n\\[ \\sqrt{\\langle R^2\\rangle}\\approx0.675\\times150\\,\\mathrm{nm}\\approx\\boldsymbol{101\\,\\mathrm{nm}}. \\]\n約 $440$ 塩基対の DNA は，棒でもコイルでもない中間の形をとる．"
+    "tex": "(1) \n\\[ \\langle|\\vec R|^2\\rangle=\\int_0^L\\!\\!\\int_0^L e^{-|s-s'|/\\xi}\\,ds\\,ds'=2\\int_0^L ds\\int_0^{s}e^{-(s-s')/\\xi}ds'=2\\xi\\int_0^L\\left(1-e^{-s/\\xi}\\right)ds \\]\nより\n\\[ \\boldsymbol{\\langle|\\vec R|^2\\rangle=2\\xi L-2\\xi^2\\left(1-e^{-L/\\xi}\\right)}. \\]\n$L\\ll\\xi$ では展開して $\\langle R^2\\rangle\\simeq L^2$（棒），$L\\gg\\xi$ では $\\simeq2\\xi L$（ランダムコイル）となる．\n\n(2) $2\\xi L=Lb$ より $\\boldsymbol{b=2\\xi}$．持続長の2倍の長さを1つの「自由に向きを変える線分」とみなせば，長い鎖は自由連結鎖と同じになる．\n\n(3) $L=3\\xi$ を代入して $\\langle R^2\\rangle=6\\xi^2-2\\xi^2(1-e^{-3})=(4+2e^{-3})\\xi^2$，\n\\[ \\boldsymbol{\\sqrt{\\langle R^2\\rangle}=\\xi\\sqrt{4+2e^{-3}}}\\approx2.02\\xi . \\]\n全長 $3\\xi$ の約 $0.67$ 倍で，棒（$1$ 倍）よりかなり縮んでいるが，$\\sqrt{\\langle R^2\\rangle}\\simeq\\sqrt{2\\xi L}$ が成り立つ長い鎖の極限にはまだ達していない．DNA（$\\xi=50\\,\\mathrm{nm}$）では $L=150\\,\\mathrm{nm}$（約 $440$ 塩基対）で約 $101\\,\\mathrm{nm}$ になり，棒でもコイルでもない中間の形をとる．"
    }
   ],
   "idea": {
@@ -222,7 +222,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) <R^2>：2 xi L - 2 xi^2 (1-e^(-L/xi))\n(2) b：2xi\n(3) R [nm]：≈101"
+   "spec": "(1) <R^2>：2 xi L - 2 xi^2 (1-e^(-L/xi))\n(2) b：2xi\n(3) R：xi sqrt(4+2e^(-3))"
   },
   "methods": [],
   "tags": [
@@ -254,16 +254,16 @@
   "theme": "2状態転移のファントホッフ解析と熱量測定のピーク",
   "topic": "2状態転移のファントホッフ解析と熱量測定のピーク",
   "statement": {
-   "tex": "タンパク質の変性を2状態（天然 N ⇄ 変性 U）の化学平衡とみなす．変性に伴う1モルあたりのエンタルピー変化 $h\\ (>0)$ とエントロピー変化 $s\\ (>0)$ は温度によらないとし，平衡定数を $K=e^{-(h-Ts)/(RT)}$（$R$ は気体定数），変性している割合を $f=K/(1+K)$ とする．\n\\begin{enumerate}\n\\item $f=1/2$ となる温度 $T_m$ を求めよ．\n\\item $T=T_m$ での傾き $df/dT$ を $h,\\,R,\\,T_m$ で表せ．\n\\item 1モルあたりの平均のエンタルピーは $\\langle H\\rangle=H_N+fh$ である．変性に伴う過剰な熱容量 $C=d\\langle H\\rangle/dT$ の $T=T_m$ での値を $h,\\,R,\\,T_m$ で表せ．\n\\item $h=400\\,\\mathrm{kJ/mol}$，$T_m=333\\,\\mathrm{K}$，$R=8.314\\,\\mathrm{J/(mol\\cdot K)}$ のとき (3) の値を $\\mathrm{kJ/(mol\\cdot K)}$ 単位で求めよ．\n\\end{enumerate}"
+   "tex": "タンパク質の変性を2状態（天然 N ⇄ 変性 U）の化学平衡とみなす．変性に伴う1モルあたりのエンタルピー変化 $h\\ (>0)$ とエントロピー変化 $s\\ (>0)$ は温度によらないとし，平衡定数を $K=e^{-(h-Ts)/(RT)}$（$R$ は気体定数），変性している割合を $f=K/(1+K)$ とする．\n\\begin{enumerate}\n\\item $f=1/2$ となる温度 $T_m$ を求めよ．\n\\item $T=T_m$ での傾き $df/dT$ を $h,\\,R,\\,T_m$ で表せ．\n\\item 1モルあたりの平均のエンタルピーは $\\langle H\\rangle=H_N+fh$ である．変性に伴う過剰な熱容量 $C=d\\langle H\\rangle/dT$ の $T=T_m$ での値を $h,\\,R,\\,T_m$ で表せ．\n\\item 示差走査熱量計で，$T=T_m$ での過剰な熱容量のピークの高さ $C_0$ が測られた．2状態転移を仮定して，$h$ を $C_0, R, T_m$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T_m=\\dfrac{h}{s}$ (2) $\\dfrac{df}{dT}=\\dfrac{h}{4RT_m^2}$ (3) $C=\\dfrac{h^2}{4RT_m^2}$ (4) $\\approx43\\,\\mathrm{kJ/(mol\\cdot K)}$"
+   "tex": "(1) $T_m=\\dfrac{h}{s}$ (2) $\\dfrac{df}{dT}=\\dfrac{h}{4RT_m^2}$ (3) $C=\\dfrac{h^2}{4RT_m^2}$ (4) $h=2T_m\\sqrt{RC_0}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $K=1$，すなわち $h-T_ms=0$ より $\\boldsymbol{T_m=h/s}$．\n\n(2) $\\ln K=-\\dfrac{h}{RT}+\\dfrac{s}{R}$ より $\\dfrac{d\\ln K}{dT}=\\dfrac{h}{RT^2}$（ファントホッフの式）．$f=K/(1+K)$ から $\\dfrac{df}{dT}=f(1-f)\\dfrac{d\\ln K}{dT}$ なので，$f=1/2$ で\n\\[ \\boldsymbol{\\frac{df}{dT}=\\frac{h}{4RT_m^2}}. \\]\n転移が鋭いほど $h$ が大きい．融解曲線の傾きから求めた $h$ をファントホッフ・エンタルピーという．\n\n(3) $C=h\\,\\dfrac{df}{dT}$ より $\\boldsymbol{C=\\dfrac{h^2}{4RT_m^2}}$．\n\n(4) $C=\\dfrac{(4.0\\times10^5)^2}{4\\times8.314\\times333^2}\\,\\mathrm{J/(mol\\cdot K)}\\approx4.3\\times10^4\\,\\mathrm{J/(mol\\cdot K)}=\\boldsymbol{43\\,\\mathrm{kJ/(mol\\cdot K)}}$．\n\n示差走査熱量計（DSC）では，ピークの面積から熱量測定によるエンタルピー $h_{\\mathrm{cal}}$ が，ピークの高さと (3) から $h_{\\mathrm{vH}}$ が求まる．両者が一致することが「中間状態のない2状態転移」の実験的な証拠になる．"
+    "tex": "(1) $K=1$，すなわち $h-T_ms=0$ より $\\boldsymbol{T_m=h/s}$．\n\n(2) $\\ln K=-\\dfrac{h}{RT}+\\dfrac{s}{R}$ より $\\dfrac{d\\ln K}{dT}=\\dfrac{h}{RT^2}$（ファントホッフの式）．$f=K/(1+K)$ から $\\dfrac{df}{dT}=f(1-f)\\dfrac{d\\ln K}{dT}$ なので，$f=1/2$ で\n\\[ \\boldsymbol{\\frac{df}{dT}=\\frac{h}{4RT_m^2}}. \\]\n転移が鋭いほど $h$ が大きい．融解曲線の傾きから求めた $h$ をファントホッフ・エンタルピーという．\n\n(3) $C=h\\,\\dfrac{df}{dT}$ より $\\boldsymbol{C=\\dfrac{h^2}{4RT_m^2}}$．\n\n(4) $C_0=\\dfrac{h^2}{4RT_m^2}$ を解いて $\\boldsymbol{h=2T_m\\sqrt{RC_0}}$．$h=400\\,\\mathrm{kJ/mol}$，$T_m=333\\,\\mathrm K$ ならピークは約 $43\\,\\mathrm{kJ/(mol\\cdot K)}$ である．\n\n示差走査熱量計（DSC）では，ピークの面積から熱量測定によるエンタルピー $h_{\\mathrm{cal}}$ が，ピークの高さと (4) の式から $h_{\\mathrm{vH}}$ が求まる．両者が一致することが「中間状態のない2状態転移」の実験的な証拠になる．"
    }
   ],
   "idea": {
@@ -271,7 +271,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) T_m：h/s\n(2) df/dT：h/(4R T_m^2)\n(3) C：h^2/(4R T_m^2)\n(4) C [kJ/(mol K)]：≈43"
+   "spec": "(1) T_m：h/s\n(2) df/dT：h/(4R T_m^2)\n(3) C：h^2/(4R T_m^2)\n(4) h：2 T_m sqrt(R C_0)"
   },
   "methods": [],
   "tags": [
@@ -303,16 +303,16 @@
   "theme": "光ピンセットで引っ張る自由連結鎖の力－伸長曲線",
   "topic": "光ピンセットで引っ張る自由連結鎖の力－伸長曲線",
   "statement": {
-   "tex": "セグメント長 $b$，セグメント数 $N$ の自由連結鎖（3次元）の一端を固定し，他端に $z$ 方向の一定の力 $f$ を光ピンセットで加える．各セグメントの向きは独立で，$z$ 軸となす角を $\\theta$ とすると，そのセグメントのエネルギーは $-fb\\cos\\theta$ である．温度を $T$，$\\beta=1/(k_BT)$ とする．\n\\begin{enumerate}\n\\item 平均の伸び $\\langle z\\rangle$ を $N,\\,b,\\,\\beta f$ で表せ．\n\\item 力が小さい（$\\beta fb\\ll1$）とき $\\langle z\\rangle\\simeq f/k$ と書ける．$k$ を求めよ．\n\\item 力が大きい（$\\beta fb\\gg1$）とき，$1-\\dfrac{\\langle z\\rangle}{Nb}$ の主要項を求めよ．\n\\item $b=100\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\cdot nm}$，$f=0.10\\,\\mathrm{pN}$ のとき $\\langle z\\rangle/(Nb)$ を求めよ．\n\\end{enumerate}"
+   "tex": "セグメント長 $b$，セグメント数 $N$ の自由連結鎖（3次元）の一端を固定し，他端に $z$ 方向の一定の力 $f$ を光ピンセットで加える．各セグメントの向きは独立で，$z$ 軸となす角を $\\theta$ とすると，そのセグメントのエネルギーは $-fb\\cos\\theta$ である．温度を $T$，$\\beta=1/(k_BT)$ とする．\n\\begin{enumerate}\n\\item 平均の伸び $\\langle z\\rangle$ を $N,\\,b,\\,\\beta f$ で表せ．\n\\item 力が小さい（$\\beta fb\\ll1$）とき $\\langle z\\rangle\\simeq f/k$ と書ける．$k$ を求めよ．\n\\item 力が大きい（$\\beta fb\\gg1$）とき，$1-\\dfrac{\\langle z\\rangle}{Nb}$ の主要項を求めよ．\n\\item 力の大きさがちょうど $f=k_BT/b$ のとき，$\\langle z\\rangle/(Nb)$ を求めよ（$e$ を用いて表せ）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle z\\rangle=Nb\\left(\\dfrac{1}{\\tanh(\\beta fb)}-\\dfrac{1}{\\beta fb}\\right)$ (2) $k=\\dfrac{3}{\\beta Nb^2}$ (3) $\\dfrac{1}{\\beta fb}$ (4) $\\approx0.61$"
+   "tex": "(1) $\\langle z\\rangle=Nb\\left(\\dfrac{1}{\\tanh(\\beta fb)}-\\dfrac{1}{\\beta fb}\\right)$ (2) $k=\\dfrac{3}{\\beta Nb^2}$ (3) $\\dfrac{1}{\\beta fb}$ (4) $\\dfrac{2}{e^2-1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 1セグメントの分配関数は\n\\[ z_1=\\int_0^{2\\pi}\\!\\!d\\phi\\int_0^\\pi e^{\\beta fb\\cos\\theta}\\sin\\theta\\,d\\theta=\\frac{4\\pi\\sinh(\\beta fb)}{\\beta fb}. \\]\n$\\langle b\\cos\\theta\\rangle=\\dfrac{\\partial\\ln z_1}{\\partial(\\beta f)}$ なので\n\\[ \\boldsymbol{\\langle z\\rangle=Nb\\left(\\coth(\\beta fb)-\\frac{1}{\\beta fb}\\right)}. \\]\n括弧内はランジュバン関数 $\\mathcal L(u)=\\coth u-1/u$ である．\n\n(2) $\\coth u\\simeq\\dfrac1u+\\dfrac u3$ より $\\langle z\\rangle\\simeq\\dfrac{N\\beta fb^2}{3}$，$\\boldsymbol{k=\\dfrac{3}{\\beta Nb^2}=\\dfrac{3k_BT}{Nb^2}}$．ガウス鎖のエントロピーばねと一致する．\n\n(3) $\\coth u\\to1$ より $1-\\dfrac{\\langle z\\rangle}{Nb}\\simeq\\boldsymbol{\\dfrac{1}{\\beta fb}}=\\dfrac{k_BT}{fb}$．全長に近づく速さは $1/f$ である．\n\n(4) $\\beta fb=\\dfrac{0.10\\times100}{4.1}=2.44$，$\\coth2.44\\approx1.015$ なので $\\langle z\\rangle/(Nb)\\approx1.015-0.410\\approx\\boldsymbol{0.61}$．力の目安 $k_BT/b\\approx0.04\\,\\mathrm{pN}$ を超えると線形応答が破れる．\n\n実際の DNA では，大きな力での伸びは (3) の $1/f$ ではなく $1/\\sqrt f$ で全長に近づき，自由連結鎖では説明できない．これはみみず鎖モデルで説明される．"
+    "tex": "(1) 1セグメントの分配関数は\n\\[ z_1=\\int_0^{2\\pi}\\!\\!d\\phi\\int_0^\\pi e^{\\beta fb\\cos\\theta}\\sin\\theta\\,d\\theta=\\frac{4\\pi\\sinh(\\beta fb)}{\\beta fb}. \\]\n$\\langle b\\cos\\theta\\rangle=\\dfrac{\\partial\\ln z_1}{\\partial(\\beta f)}$ なので\n\\[ \\boldsymbol{\\langle z\\rangle=Nb\\left(\\coth(\\beta fb)-\\frac{1}{\\beta fb}\\right)}. \\]\n括弧内はランジュバン関数 $\\mathcal L(u)=\\coth u-1/u$ である．\n\n(2) $\\coth u\\simeq\\dfrac1u+\\dfrac u3$ より $\\langle z\\rangle\\simeq\\dfrac{N\\beta fb^2}{3}$，$\\boldsymbol{k=\\dfrac{3}{\\beta Nb^2}=\\dfrac{3k_BT}{Nb^2}}$．ガウス鎖のエントロピーばねと一致する．\n\n(3) $\\coth u\\to1$ より $1-\\dfrac{\\langle z\\rangle}{Nb}\\simeq\\boldsymbol{\\dfrac{1}{\\beta fb}}=\\dfrac{k_BT}{fb}$．全長に近づく速さは $1/f$ である．\n\n(4) $\\beta fb=1$ なので $\\coth1-1=\\dfrac{e^2+1}{e^2-1}-1=\\boldsymbol{\\dfrac{2}{e^2-1}}\\approx0.31$．線形応答の値 $\\beta fb/3\\approx0.33$ からすでにずれ始めている．DNA（$b=100\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\,nm}$）では $k_BT/b\\approx0.04\\,\\mathrm{pN}$ で，これを超えると線形応答が破れる．\n\n実際の DNA では，大きな力での伸びは (3) の $1/f$ ではなく $1/\\sqrt f$ で全長に近づき，自由連結鎖では説明できない．これはみみず鎖モデルで説明される．"
    }
   ],
   "idea": {
@@ -320,7 +320,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) <z>：N b (1/tanh(beta f b) - 1/(beta f b))\n(2) k：3/(beta N b^2)\n(3) 1/(beta f b)\n(4) ≈0.61"
+   "spec": "(1) <z>：N b (1/tanh(beta f b) - 1/(beta f b))\n(2) k：3/(beta N b^2)\n(3) 1/(beta f b)\n(4) 2/(e^2-1)"
   },
   "methods": [],
   "tags": [
@@ -402,16 +402,16 @@
   "theme": "排除体積効果とフローリー指数",
   "topic": "排除体積効果とフローリー指数",
   "statement": {
-   "tex": "良溶媒中の高分子（セグメント長 $b$，セグメント数 $N$）では，セグメントどうしが重なれない（排除体積）ため鎖が広がる．大きさ $R$ の鎖の自由エネルギーを，フローリーにならって\n\\[ \\frac{F(R)}{k_BT}=\\frac{3R^2}{2Nb^2}+\\frac{vN^2}{2R^3} \\]\nと見積もる．第1項はエントロピー弾性，第2項はセグメントの衝突の数（$v>0$ は排除体積）による．\n\\begin{enumerate}\n\\item $F$ を最小にする $R$ を $N,\\,b,\\,v$ で表せ．\n\\item $d$ 次元空間では第2項が $\\dfrac{vN^2}{2R^d}$ となる．$R\\propto N^\\nu$ と書くときの指数 $\\nu$ を $d$ で表せ．\n\\item $\\nu$ が理想鎖の値 $1/2$ に等しくなる次元 $d$ を求めよ．\n\\item 3次元で，同じ高分子の長さを10倍にすると $R$ は何倍になるか．\n\\end{enumerate}"
+   "tex": "良溶媒中の高分子（セグメント長 $b$，セグメント数 $N$）では，セグメントどうしが重なれない（排除体積）ため鎖が広がる．大きさ $R$ の鎖の自由エネルギーを，フローリーにならって\n\\[ \\frac{F(R)}{k_BT}=\\frac{3R^2}{2Nb^2}+\\frac{vN^2}{2R^3} \\]\nと見積もる．第1項はエントロピー弾性，第2項はセグメントの衝突の数（$v>0$ は排除体積）による．\n\\begin{enumerate}\n\\item $F$ を最小にする $R$ を $N,\\,b,\\,v$ で表せ．\n\\item $d$ 次元空間では第2項が $\\dfrac{vN^2}{2R^d}$ となる．$R\\propto N^\\nu$ と書くときの指数 $\\nu$ を $d$ で表せ．\n\\item $\\nu$ が理想鎖の値 $1/2$ に等しくなる次元 $d$ を求めよ．\n\\item 3次元で，同じ高分子の長さ（$N$）を $k$ 倍にすると $R$ は何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $R=\\left(\\dfrac{vb^2N^3}{2}\\right)^{1/5}$ (2) $\\nu=\\dfrac{3}{d+2}$ (3) $d=4$ (4) $10^{3/5}\\approx3.98$ 倍"
+   "tex": "(1) $R=\\left(\\dfrac{vb^2N^3}{2}\\right)^{1/5}$ (2) $\\nu=\\dfrac{3}{d+2}$ (3) $d=4$ (4) $k^{3/5}$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{1}{k_BT}\\dfrac{dF}{dR}=\\dfrac{3R}{Nb^2}-\\dfrac{3vN^2}{2R^4}=0$ より $R^5=\\dfrac{vb^2N^3}{2}$，\n\\[ \\boldsymbol{R=\\left(\\frac{vb^2N^3}{2}\\right)^{1/5}}\\propto N^{3/5}. \\]\n\n(2) $\\dfrac{3R}{Nb^2}=\\dfrac{dvN^2}{2R^{d+1}}$ より $R^{d+2}\\propto N^3$，$\\boldsymbol{\\nu=\\dfrac{3}{d+2}}$．\n\n(3) $\\dfrac{3}{d+2}=\\dfrac12$ より $\\boldsymbol{d=4}$．4次元以上ではランダムウォークが自分自身とほとんど交わらないため，排除体積は効かない（上部臨界次元）．\n\n(4) $10^{3/5}\\approx\\boldsymbol{3.98}$ 倍（理想鎖なら $\\sqrt{10}\\approx3.16$ 倍）．\n\nフローリーの $\\nu=3/5$ は，精密な値 $\\nu\\approx0.588$ に非常に近い（2つの項の誤差が打ち消し合うため）．$d=1$ では $\\nu=1$（まっすぐ伸びる）で厳密に正しく，$d=2$ の $\\nu=3/4$ も厳密値と一致する．変性したタンパク質の大きさも $R\\propto N^{0.59}$ に従うことが知られている．"
+    "tex": "(1) $\\dfrac{1}{k_BT}\\dfrac{dF}{dR}=\\dfrac{3R}{Nb^2}-\\dfrac{3vN^2}{2R^4}=0$ より $R^5=\\dfrac{vb^2N^3}{2}$，\n\\[ \\boldsymbol{R=\\left(\\frac{vb^2N^3}{2}\\right)^{1/5}}\\propto N^{3/5}. \\]\n\n(2) $\\dfrac{3R}{Nb^2}=\\dfrac{dvN^2}{2R^{d+1}}$ より $R^{d+2}\\propto N^3$，$\\boldsymbol{\\nu=\\dfrac{3}{d+2}}$．\n\n(3) $\\dfrac{3}{d+2}=\\dfrac12$ より $\\boldsymbol{d=4}$．4次元以上ではランダムウォークが自分自身とほとんど交わらないため，排除体積は効かない（上部臨界次元）．\n\n(4) $R\\propto N^{3/5}$ より $\\boldsymbol{k^{3/5}}$ 倍（理想鎖なら $k^{1/2}$ 倍）．$k=10$ なら約 $3.98$ 倍で，理想鎖の $3.16$ 倍より大きい．\n\nフローリーの $\\nu=3/5$ は，精密な値 $\\nu\\approx0.588$ に非常に近い（2つの項の誤差が打ち消し合うため）．$d=1$ では $\\nu=1$（まっすぐ伸びる）で厳密に正しく，$d=2$ の $\\nu=3/4$ も厳密値と一致する．変性したタンパク質の大きさも $R\\propto N^{0.59}$ に従うことが知られている．"
    }
   ],
   "idea": {
@@ -419,7 +419,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) R：(v b^2 N^3/2)^(1/5)\n(2) ν：3/(d+2)\n(3) d：4\n(4) ≈3.98"
+   "spec": "(1) R：(v b^2 N^3/2)^(1/5)\n(2) ν：3/(d+2)\n(3) d：4\n(4) k^(3/5)"
   },
   "methods": [],
   "tags": [
@@ -451,16 +451,16 @@
   "theme": "強く引っ張ったみみず鎖：DNA の力－伸長曲線（マルコ＝シッジャ）",
   "topic": "強く引っ張ったみみず鎖：DNA の力－伸長曲線（マルコ＝シッジャ）",
   "statement": {
-   "tex": "長さ $L$ のみみず鎖を $z$ 方向の力 $f$ で引く．単位接ベクトル $\\vec t(s)$ の配置のエネルギーは\n\\[ E=\\frac{\\kappa}{2}\\int_0^L\\left|\\frac{d\\vec t}{ds}\\right|^2ds-f\\int_0^Lt_z\\,ds \\]\nで，$\\kappa$ は曲げ剛性，持続長は $\\xi=\\kappa/(k_BT)$ である．力が強いと $\\vec t\\simeq\\hat z$ で，横成分 $t_x,t_y$ は小さく $t_z\\simeq1-\\frac12(t_x^2+t_y^2)$ と近似できる．$L$ は十分長く，$t_x(s)=\\frac{1}{\\sqrt L}\\sum_q\\tilde t_x(q)e^{iqs}$（$q=2\\pi m/L$）とフーリエ展開してよい．\n\\begin{enumerate}\n\\item エネルギーの等分配則を用いて $\\langle t_x^2\\rangle$ を $k_BT,\\,\\kappa,\\,f$ で表せ．ただし $L\\to\\infty$ で $\\frac1L\\sum_q\\to\\int\\frac{dq}{2\\pi}$，$\\int_{-\\infty}^{\\infty}\\dfrac{dq}{2\\pi}\\dfrac{1}{\\kappa q^2+f}=\\dfrac{1}{2\\sqrt{\\kappa f}}$ である．\n\\item 相対的な縮み $1-\\langle z\\rangle/L$ を $k_BT,\\,f,\\,\\xi$ で表せ．\n\\item $\\xi=50\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\cdot nm}$ の DNA を全長の $95\\%$ まで伸ばすのに必要な力は何 $\\mathrm{pN}$ か．\n\\item 同じ DNA をクーン長 $b=2\\xi$ の自由連結鎖とみなすと，(3) の力での $1-\\langle z\\rangle/L$ はいくらと予測されるか（大きな力の近似 $1-\\langle z\\rangle/L\\simeq k_BT/(fb)$ を用いよ）．\n\\end{enumerate}"
+   "tex": "長さ $L$ のみみず鎖を $z$ 方向の力 $f$ で引く．単位接ベクトル $\\vec t(s)$ の配置のエネルギーは\n\\[ E=\\frac{\\kappa}{2}\\int_0^L\\left|\\frac{d\\vec t}{ds}\\right|^2ds-f\\int_0^Lt_z\\,ds \\]\nで，$\\kappa$ は曲げ剛性，持続長は $\\xi=\\kappa/(k_BT)$ である．力が強いと $\\vec t\\simeq\\hat z$ で，横成分 $t_x,t_y$ は小さく $t_z\\simeq1-\\frac12(t_x^2+t_y^2)$ と近似できる．$L$ は十分長く，$t_x(s)=\\frac{1}{\\sqrt L}\\sum_q\\tilde t_x(q)e^{iqs}$（$q=2\\pi m/L$）とフーリエ展開してよい．\n\\begin{enumerate}\n\\item エネルギーの等分配則を用いて $\\langle t_x^2\\rangle$ を $k_BT,\\,\\kappa,\\,f$ で表せ．ただし $L\\to\\infty$ で $\\frac1L\\sum_q\\to\\int\\frac{dq}{2\\pi}$，$\\int_{-\\infty}^{\\infty}\\dfrac{dq}{2\\pi}\\dfrac{1}{\\kappa q^2+f}=\\dfrac{1}{2\\sqrt{\\kappa f}}$ である．\n\\item 相対的な縮み $1-\\langle z\\rangle/L$ を $k_BT,\\,f,\\,\\xi$ で表せ．\n\\item DNA を全長の $1-\\delta$ 倍（$\\delta\\ll1$）まで伸ばすのに必要な力 $f$ を $k_BT, \\xi, \\delta$ で表せ．\n\\item 同じ DNA をクーン長 $b=2\\xi$ の自由連結鎖とみなすと，(3) の力での $1-\\langle z\\rangle/L$ はいくらと予測されるか．$\\delta$ で表せ（大きな力の近似 $1-\\langle z\\rangle/L\\simeq k_BT/(fb)$ を用いよ）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle t_x^2\\rangle=\\dfrac{k_BT}{2\\sqrt{\\kappa f}}$ (2) $1-\\dfrac{\\langle z\\rangle}{L}=\\dfrac12\\sqrt{\\dfrac{k_BT}{f\\xi}}$ (3) $f\\approx8.2\\,\\mathrm{pN}$ (4) $\\approx0.005$"
+   "tex": "(1) $\\langle t_x^2\\rangle=\\dfrac{k_BT}{2\\sqrt{\\kappa f}}$ (2) $1-\\dfrac{\\langle z\\rangle}{L}=\\dfrac12\\sqrt{\\dfrac{k_BT}{f\\xi}}$ (3) $f=\\dfrac{k_BT}{4\\xi\\delta^2}$ (4) $2\\delta^2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 定数項を除くと $E=\\frac12\\int_0^L\\left[\\kappa(t_x'^2+t_y'^2)+f(t_x^2+t_y^2)\\right]ds$．フーリエ成分で書くと $E=\\frac12\\sum_q(\\kappa q^2+f)\\left(|\\tilde t_x(q)|^2+|\\tilde t_y(q)|^2\\right)$ となり，各モードは独立な調和振動子である．等分配則から $\\langle|\\tilde t_x(q)|^2\\rangle=\\dfrac{k_BT}{\\kappa q^2+f}$ で，\n\\[ \\langle t_x^2\\rangle=\\frac1L\\sum_q\\frac{k_BT}{\\kappa q^2+f}\\to\\int\\frac{dq}{2\\pi}\\frac{k_BT}{\\kappa q^2+f}=\\boldsymbol{\\frac{k_BT}{2\\sqrt{\\kappa f}}}. \\]\n主に波長 $\\sim\\sqrt{\\kappa/f}$ より長いゆらぎが効いている．\n\n(2) $\\langle t_z\\rangle=1-\\frac12\\langle t_x^2+t_y^2\\rangle=1-\\langle t_x^2\\rangle$ なので，$\\kappa=\\xi k_BT$ を使って\n\\[ \\boldsymbol{1-\\frac{\\langle z\\rangle}{L}=\\frac{k_BT}{2\\sqrt{\\kappa f}}=\\frac12\\sqrt{\\frac{k_BT}{f\\xi}}}. \\]\n\n(3) $\\dfrac12\\sqrt{\\dfrac{k_BT}{f\\xi}}=0.05$ より $f=\\dfrac{k_BT}{4\\xi(0.05)^2}=\\dfrac{4.1}{4\\times50\\times0.0025}\\,\\mathrm{pN}\\approx\\boldsymbol{8.2\\,\\mathrm{pN}}$．\n\n(4) $\\dfrac{k_BT}{fb}=\\dfrac{4.1}{8.2\\times100}\\approx\\boldsymbol{0.005}$．自由連結鎖は縮みを10倍も過小に見積もる．\n\nみみず鎖では縮みが $f^{-1/2}$ で減る（自由連結鎖は $f^{-1}$）．これは連続的な曲げのゆらぎが，大きな力でもなかなか伸び切らないためであり，光ピンセットによる DNA の測定結果はみみず鎖とよく一致する．"
+    "tex": "(1) 定数項を除くと $E=\\frac12\\int_0^L\\left[\\kappa(t_x'^2+t_y'^2)+f(t_x^2+t_y^2)\\right]ds$．フーリエ成分で書くと $E=\\frac12\\sum_q(\\kappa q^2+f)\\left(|\\tilde t_x(q)|^2+|\\tilde t_y(q)|^2\\right)$ となり，各モードは独立な調和振動子である．等分配則から $\\langle|\\tilde t_x(q)|^2\\rangle=\\dfrac{k_BT}{\\kappa q^2+f}$ で，\n\\[ \\langle t_x^2\\rangle=\\frac1L\\sum_q\\frac{k_BT}{\\kappa q^2+f}\\to\\int\\frac{dq}{2\\pi}\\frac{k_BT}{\\kappa q^2+f}=\\boldsymbol{\\frac{k_BT}{2\\sqrt{\\kappa f}}}. \\]\n主に波長 $\\sim\\sqrt{\\kappa/f}$ より長いゆらぎが効いている．\n\n(2) $\\langle t_z\\rangle=1-\\frac12\\langle t_x^2+t_y^2\\rangle=1-\\langle t_x^2\\rangle$ なので，$\\kappa=\\xi k_BT$ を使って\n\\[ \\boldsymbol{1-\\frac{\\langle z\\rangle}{L}=\\frac{k_BT}{2\\sqrt{\\kappa f}}=\\frac12\\sqrt{\\frac{k_BT}{f\\xi}}}. \\]\n\n(3) $\\dfrac12\\sqrt{\\dfrac{k_BT}{f\\xi}}=\\delta$ より $\\boldsymbol{f=\\dfrac{k_BT}{4\\xi\\delta^2}}$．$\\xi=50\\,\\mathrm{nm}$，$k_BT=4.1\\,\\mathrm{pN\\,nm}$，$\\delta=0.05$ なら約 $8.2\\,\\mathrm{pN}$．\n\n(4) $\\dfrac{k_BT}{fb}=\\dfrac{k_BT\\cdot4\\xi\\delta^2}{k_BT\\cdot2\\xi}=\\boldsymbol{2\\delta^2}$．$\\delta=0.05$ なら $0.005$ で，自由連結鎖は縮みを $1/(2\\delta)=10$ 倍も過小に見積もる．\n\nみみず鎖では縮みが $f^{-1/2}$ で減る（自由連結鎖は $f^{-1}$）．これは連続的な曲げのゆらぎが，大きな力でもなかなか伸び切らないためであり，光ピンセットによる DNA の測定結果はみみず鎖とよく一致する．"
    }
   ],
   "idea": {
@@ -468,7 +468,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) <t_x^2>：k_B T/(2 sqrt(kappa f))\n(2) 1/2 sqrt(k_B T/(f xi))\n(3) f [pN]：≈8.2\n(4) ≈0.005"
+   "spec": "(1) <t_x^2>：k_B T/(2 sqrt(kappa f))\n(2) 1/2 sqrt(k_B T/(f xi))\n(3) f：k_B T/(4 xi δ^2)\n(4) 2δ^2"
   },
   "methods": [],
   "tags": [
@@ -602,24 +602,24 @@
   "theme": "協同的2状態転移の幅と van't Hoff エンタルピー",
   "topic": "協同的2状態転移の幅と van't Hoff エンタルピー",
   "statement": {
-   "tex": "鎖状高分子 1 分子は $N$ 個のユニットからなり，次の 2 種類の構造をとるとする（圧力一定，体積変化は無視する）．\n・低温構造：ただ 1 通りの状態で，エンタルピーを基準 $0$ とする．\n・ランダム構造：各ユニットが独立に $n$ 通りの状態をとれるため全部で $n^N$ 通りの状態があり，どの状態もエンタルピー $N\\varepsilon$（$\\varepsilon>0$）をもつ．\n分子どうしは独立とし，ボルツマン定数を $k_{\\rm B}$，気体定数を $R$ とする．\n\\begin{enumerate}\\item 1 分子当たりの転移のギブズ自由エネルギー変化 $\\Delta g(T)$ を求め，2 つの構造が等確率で現れる転移温度 $T_{\\rm m}$ を $\\varepsilon,n,k_{\\rm B}$ で表せ．\n\\item 1 分子の分配関数を $Z=1+n^N e^{-N\\varepsilon/k_{\\rm B}T}$ とし，1 分子当たりのギブズ自由エネルギーを $g=-k_{\\rm B}T\\ln Z$ とする．ランダム構造にある分子の割合を $\\theta(T)$ とするとき，ギブズ–ヘルムホルツの式 $h=-T^2\\left(\\partial (g/T)/\\partial T\\right)_p$ から平均エンタルピーが $h=N\\varepsilon\\,\\theta$ となることを示し，1 モル当たりの定圧熱容量が\n\\[ C_p=\\frac{(\\Delta H)^2}{RT^2}\\,\\theta(1-\\theta),\\qquad \\Delta H=N_{\\rm A}N\\varepsilon \\]\nとなることを示せ．\n\\item $\\Delta H$ と $T_{\\rm m}$ を用いて，$\\theta$ が $0.1$ から $0.9$ まで変わる温度幅 $\\delta T$ を $\\delta T\\ll T_{\\rm m}$ の近似で求め，さらに $N,n,T_{\\rm m}$ だけで表せ．$N=100$，$n=10$，$T_{\\rm m}=363\\,\\mathrm{K}$ として $\\delta T$，$\\Delta H$，熱容量のピーク値 $C_p(T_{\\rm m})$ を数値で求めよ（$R=8.31\\,\\mathrm{J\\,K^{-1}mol^{-1}}$，$\\ln 10=2.30$，$\\ln 9=2.20$）．\n\\item 実験では見かけの平衡定数 $K=\\theta/(1-\\theta)$ の温度依存性から van't Hoff エンタルピー $\\Delta H_{\\rm vH}\\equiv -R\\,d\\ln K/d(1/T)$ を求め，熱量計で測る全吸熱量 $\\Delta H_{\\rm cal}$ と比べることがある．いまの模型で $\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}$ を示せ．\n\\item 実は同じ鎖が $m$ 個の互いに独立な「ドメイン」（各 $N/m$ ユニット，各ドメインは上と同じ 2 状態的な転移をする）からなっていたとする．$\\theta$ をランダム構造にあるユニットの割合とすると，$T_{\\rm m}$，$\\Delta H_{\\rm cal}$，$\\Delta H_{\\rm vH}$，$\\delta T$ はそれぞれどうなるか．比 $\\Delta H_{\\rm vH}/\\Delta H_{\\rm cal}$ が何を測っているかを述べよ．\n\\end{enumerate}"
+   "tex": "鎖状高分子 1 分子は $N$ 個のユニットからなり，次の 2 種類の構造をとるとする（圧力一定，体積変化は無視する）．\n・低温構造：ただ 1 通りの状態で，エンタルピーを基準 $0$ とする．\n・ランダム構造：各ユニットが独立に $n$ 通りの状態をとれるため全部で $n^N$ 通りの状態があり，どの状態もエンタルピー $N\\varepsilon$（$\\varepsilon>0$）をもつ．\n分子どうしは独立とし，ボルツマン定数を $k_B$，気体定数を $R$ とする．\n\\begin{enumerate}\\item 1 分子当たりの転移のギブズ自由エネルギー変化 $\\Delta g(T)$ を求め，2 つの構造が等確率で現れる転移温度 $T_m$ を $\\varepsilon,n,k_B$ で表せ．\n\\item 1 分子の分配関数を $Z=1+n^N e^{-N\\varepsilon/k_BT}$ とし，1 分子当たりのギブズ自由エネルギーを $g=-k_BT\\ln Z$ とする．ランダム構造にある分子の割合を $\\theta(T)$ とするとき，ギブズ–ヘルムホルツの式 $h=-T^2\\left(\\partial (g/T)/\\partial T\\right)_p$ から平均エンタルピーが $h=N\\varepsilon\\,\\theta$ となることを示し，1 モル当たりの定圧熱容量が\n\\[ C_p=\\frac{(\\Delta H)^2}{RT^2}\\,\\theta(1-\\theta),\\qquad \\Delta H=N_AN\\varepsilon \\]\nとなることを示せ．\n\\item $\\theta$ が $0.1$ から $0.9$ まで変わる温度幅 $\\delta T$ を $\\delta T\\ll T_m$ の近似で求め，$N,n,T_m$ だけで表せ．また $\\Delta H$ と熱容量のピーク値 $C_p(T_m)$ を $R, N, n, T_m$ で表せ．\n\\item 実験では見かけの平衡定数 $K=\\theta/(1-\\theta)$ の温度依存性から van't Hoff エンタルピー $\\Delta H_{\\rm vH}\\equiv -R\\,d\\ln K/d(1/T)$ を求め，熱量計で測る全吸熱量 $\\Delta H_{\\rm cal}$ と比べることがある．いまの模型で $\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}$ を示せ．\n\\item 実は同じ鎖が $m$ 個の互いに独立な「ドメイン」（各 $N/m$ ユニット，各ドメインは上と同じ 2 状態的な転移をする）からなっていたとする．$\\theta$ をランダム構造にあるユニットの割合とすると，$T_m$，$\\Delta H_{\\rm cal}$，$\\Delta H_{\\rm vH}$，$\\delta T$ はそれぞれどうなるか．比 $\\Delta H_{\\rm vH}/\\Delta H_{\\rm cal}$ が何を測っているかを述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta g=N\\varepsilon-Nk_{\\rm B}T\\ln n$，$T_{\\rm m}=\\varepsilon/(k_{\\rm B}\\ln n)$　(2) 証明（解説参照）　(3) $\\delta T\\simeq 2\\ln 9\\,RT_{\\rm m}^2/\\Delta H=2\\ln9\\,T_{\\rm m}/(N\\ln n)\\approx 6.9\\,\\mathrm{K}$，$\\Delta H\\approx 6.9\\times10^5\\,\\mathrm{J/mol}$，$C_p(T_{\\rm m})=(\\Delta H)^2/(4RT_{\\rm m}^2)\\approx 1.1\\times10^5\\,\\mathrm{J\\,K^{-1}mol^{-1}}$　(4) 証明（解説参照）　(5) $T_{\\rm m}$・$\\Delta H_{\\rm cal}$ は不変，$\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}/m$，$\\delta T$ は $m$ 倍．比は協同単位の大きさ（$1/m$）を測る"
+   "tex": "(1) $\\Delta g=N\\varepsilon-Nk_BT\\ln n$，$T_m=\\dfrac{\\varepsilon}{k_B\\ln n}$　(2) 証明（解説参照）　(3) $\\delta T=\\dfrac{2T_m\\ln 9}{N\\ln n}$，$\\Delta H=RNT_m\\ln n$，$C_p(T_m)=\\dfrac{RN^2(\\ln n)^2}{4}$　(4) 証明（解説参照）　(5) $T_m$・$\\Delta H_{\\rm cal}$ は不変，$\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}/m$，$\\delta T$ は $m$ 倍．比は協同単位の大きさ（$1/m$）を測る"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) ボルツマンの関係式より，ランダム構造と低温構造のエントロピー差は $\\Delta s=k_{\\rm B}\\ln n^N-k_{\\rm B}\\ln 1=Nk_{\\rm B}\\ln n$．エンタルピー差は $N\\varepsilon$ なので\n\\[ \\Delta g(T)=N\\varepsilon-TNk_{\\rm B}\\ln n . \\]\n2 構造が等確率となるのは $\\Delta g=0$，すなわち $T_{\\rm m}=\\varepsilon/(k_{\\rm B}\\ln n)$．これは $\\Delta H=T_{\\rm m}\\Delta S$（1 次転移の関係）にほかならない．\n\n(2) $Z=1+e^{-\\Delta g/k_{\\rm B}T}$ であり，$\\theta=e^{-\\Delta g/k_{\\rm B}T}/Z=n^Ne^{-\\beta N\\varepsilon}/Z$（$\\beta=1/k_{\\rm B}T$）．$g/T=-k_{\\rm B}\\ln Z$ より\n\\[ h=-T^2\\frac{\\partial}{\\partial T}\\left(-k_{\\rm B}\\ln Z\\right)=k_{\\rm B}T^2\\frac{1}{Z}\\frac{\\partial Z}{\\partial T}=k_{\\rm B}T^2\\cdot\\frac{n^Ne^{-\\beta N\\varepsilon}}{Z}\\cdot\\frac{N\\varepsilon}{k_{\\rm B}T^2}=N\\varepsilon\\,\\theta . \\]\nまた $\\theta=1/(1+e^{x})$，$x=\\Delta g/k_{\\rm B}T=N\\varepsilon/k_{\\rm B}T-N\\ln n$ とおくと $d\\theta/dT=-\\theta(1-\\theta)\\,dx/dT=\\theta(1-\\theta)N\\varepsilon/(k_{\\rm B}T^2)$．よって 1 モル当たり\n\\[ C_p=N_{\\rm A}N\\varepsilon\\frac{d\\theta}{dT}=\\frac{(N_{\\rm A}N\\varepsilon)^2}{N_{\\rm A}k_{\\rm B}T^2}\\theta(1-\\theta)=\\frac{(\\Delta H)^2}{RT^2}\\theta(1-\\theta). \\]\n\n(3) $\\ln\\dfrac{\\theta}{1-\\theta}=-x=-\\dfrac{\\Delta H}{R}\\left(\\dfrac1T-\\dfrac1{T_{\\rm m}}\\right)$（$\\Delta H/R=N\\varepsilon/k_{\\rm B}$，$N\\ln n=\\Delta H/(RT_{\\rm m})$ を用いた）．$\\theta=0.1,0.9$ は $\\ln\\frac{\\theta}{1-\\theta}=\\mp\\ln 9$ に対応し，$T=T_{\\rm m}+\\Delta$ で $\\frac1T-\\frac1{T_{\\rm m}}\\simeq-\\Delta/T_{\\rm m}^2$ と近似すると $\\Delta=\\pm\\ln9\\,RT_{\\rm m}^2/\\Delta H$．したがって\n\\[ \\delta T\\simeq\\frac{2\\ln 9\\,RT_{\\rm m}^2}{\\Delta H}=\\frac{2\\ln 9\\,T_{\\rm m}}{N\\ln n}. \\]\n数値：$\\delta T=2\\times2.20\\times363/(100\\times2.30)\\approx 6.9\\,\\mathrm{K}$．$\\Delta H=RNT_{\\rm m}\\ln n=8.31\\times100\\times363\\times2.30\\approx 6.9\\times10^5\\,\\mathrm{J/mol}$．ピークは $\\theta=1/2$ の $T_{\\rm m}$ で $C_p(T_{\\rm m})=(\\Delta H)^2/(4RT_{\\rm m}^2)\\approx 1.1\\times10^5\\,\\mathrm{J\\,K^{-1}mol^{-1}}$．ユニット数 $N$ が大きいほど転移は鋭く（幅 $\\propto1/N$），ピークは高く（$\\propto N^2$）なり，$N\\to\\infty$ で真の 1 次転移に近づく．\n\n(4) $\\ln K=-\\dfrac{\\Delta H}{R}\\left(\\dfrac1T-\\dfrac1{T_{\\rm m}}\\right)$ より $-R\\,d\\ln K/d(1/T)=\\Delta H$．一方，熱量計で測る全吸熱は $\\int C_p\\,dT=\\Delta H\\,[\\theta]_{0}^{1}=\\Delta H$．よって $\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}$（厳密な 2 状態系の判定基準）．\n\n(5) 各ドメインは $N/m$ ユニットの 2 状態系で，転移のエンタルピー $\\Delta H/m$，エントロピー $\\Delta S/m$ をもつから転移温度 $T_{\\rm m}=\\varepsilon/(k_{\\rm B}\\ln n)$ は不変．ドメインは独立なので，ランダム化したユニットの割合は 1 ドメインがランダム化している確率に等しく，$\\ln K=-\\frac{\\Delta H}{mR}\\left(\\frac1T-\\frac1{T_{\\rm m}}\\right)$．よって $\\Delta H_{\\rm vH}=\\Delta H/m$．全吸熱は全ユニットがランダム化するのに必要な熱なので $\\Delta H_{\\rm cal}=\\Delta H$ のまま．幅は (3) の式で $\\Delta H\\to\\Delta H/m$ として $\\delta T$ が $m$ 倍に広がる．比 $\\Delta H_{\\rm vH}/\\Delta H_{\\rm cal}=1/m$ は「一斉に転移する協同単位の大きさ」の全体に対する割合を表し，1 なら全体が一つの協同単位，1 より小さければ複数の独立なドメインがあることを示す．"
+    "tex": "(1) ボルツマンの関係式より，ランダム構造と低温構造のエントロピー差は $\\Delta s=k_B\\ln n^N-k_B\\ln 1=Nk_B\\ln n$．エンタルピー差は $N\\varepsilon$ なので\n\\[ \\Delta g(T)=N\\varepsilon-TNk_B\\ln n . \\]\n2 構造が等確率となるのは $\\Delta g=0$，すなわち $T_m=\\varepsilon/(k_B\\ln n)$．これは $\\Delta H=T_m\\Delta S$（1 次転移の関係）にほかならない．\n\n(2) $Z=1+e^{-\\Delta g/k_BT}$ であり，$\\theta=e^{-\\Delta g/k_BT}/Z=n^Ne^{-\\beta N\\varepsilon}/Z$（$\\beta=1/k_BT$）．$g/T=-k_B\\ln Z$ より\n\\[ h=-T^2\\frac{\\partial}{\\partial T}\\left(-k_B\\ln Z\\right)=k_BT^2\\frac{1}{Z}\\frac{\\partial Z}{\\partial T}=k_BT^2\\cdot\\frac{n^Ne^{-\\beta N\\varepsilon}}{Z}\\cdot\\frac{N\\varepsilon}{k_BT^2}=N\\varepsilon\\,\\theta . \\]\nまた $\\theta=1/(1+e^{x})$，$x=\\Delta g/k_BT=N\\varepsilon/k_BT-N\\ln n$ とおくと $d\\theta/dT=-\\theta(1-\\theta)\\,dx/dT=\\theta(1-\\theta)N\\varepsilon/(k_BT^2)$．よって 1 モル当たり\n\\[ C_p=N_AN\\varepsilon\\frac{d\\theta}{dT}=\\frac{(N_AN\\varepsilon)^2}{N_Ak_BT^2}\\theta(1-\\theta)=\\frac{(\\Delta H)^2}{RT^2}\\theta(1-\\theta). \\]\n\n(3) $\\ln\\dfrac{\\theta}{1-\\theta}=-x=-\\dfrac{\\Delta H}{R}\\left(\\dfrac1T-\\dfrac1{T_m}\\right)$（$\\Delta H/R=N\\varepsilon/k_B$，$N\\ln n=\\Delta H/(RT_m)$ を用いた）．$\\theta=0.1,0.9$ は $\\ln\\frac{\\theta}{1-\\theta}=\\mp\\ln 9$ に対応し，$T=T_m+\\Delta$ で $\\frac1T-\\frac1{T_m}\\simeq-\\Delta/T_m^2$ と近似すると $\\Delta=\\pm\\ln9\\,RT_m^2/\\Delta H$．したがって\n\\[ \\delta T\\simeq\\frac{2\\ln 9\\,RT_m^2}{\\Delta H}=\\frac{2\\ln 9\\,T_m}{N\\ln n}. \\]\nまた $\\Delta H=N_AN\\varepsilon=RNT_m\\ln n$．ピークは $\\theta=1/2$ の $T_m$ で $C_p(T_m)=\\dfrac{(\\Delta H)^2}{4RT_m^2}=\\dfrac{RN^2(\\ln n)^2}{4}$．$N=100$，$n=10$，$T_m=363\\,\\mathrm K$ なら $\\delta T\\approx6.9\\,\\mathrm K$，$\\Delta H\\approx6.9\\times10^5\\,\\mathrm{J/mol}$，$C_p(T_m)\\approx1.1\\times10^5\\,\\mathrm{J\\,K^{-1}mol^{-1}}$．ユニット数 $N$ が大きいほど転移は鋭く（幅 $\\propto1/N$），ピークは高く（$\\propto N^2$）なり，$N\\to\\infty$ で真の 1 次転移に近づく．\n\n(4) $\\ln K=-\\dfrac{\\Delta H}{R}\\left(\\dfrac1T-\\dfrac1{T_m}\\right)$ より $-R\\,d\\ln K/d(1/T)=\\Delta H$．一方，熱量計で測る全吸熱は $\\int C_p\\,dT=\\Delta H\\,[\\theta]_{0}^{1}=\\Delta H$．よって $\\Delta H_{\\rm vH}=\\Delta H_{\\rm cal}$（厳密な 2 状態系の判定基準）．\n\n(5) 各ドメインは $N/m$ ユニットの 2 状態系で，転移のエンタルピー $\\Delta H/m$，エントロピー $\\Delta S/m$ をもつから転移温度 $T_m=\\varepsilon/(k_B\\ln n)$ は不変．ドメインは独立なので，ランダム化したユニットの割合は 1 ドメインがランダム化している確率に等しく，$\\ln K=-\\frac{\\Delta H}{mR}\\left(\\frac1T-\\frac1{T_m}\\right)$．よって $\\Delta H_{\\rm vH}=\\Delta H/m$．全吸熱は全ユニットがランダム化するのに必要な熱なので $\\Delta H_{\\rm cal}=\\Delta H$ のまま．幅は (3) の式で $\\Delta H\\to\\Delta H/m$ として $\\delta T$ が $m$ 倍に広がる．比 $\\Delta H_{\\rm vH}/\\Delta H_{\\rm cal}=1/m$ は「一斉に転移する協同単位の大きさ」の全体に対する割合を表し，1 なら全体が一つの協同単位，1 より小さければ複数の独立なドメインがあることを示す．"
    }
   ],
   "idea": {
-   "tex": "状態数 $n^N$ によるエントロピーとギブズ–ヘルムホルツ式から 2 状態系の熱容量ピークを出し，転移幅 $\\propto RT_{\\rm m}^2/\\Delta H$ を使って van't Hoff エンタルピーと熱量計エンタルピーの比で協同単位の大きさを読む．"
+   "tex": "状態数 $n^N$ によるエントロピーとギブズ–ヘルムホルツ式から 2 状態系の熱容量ピークを出し，転移幅 $\\propto RT_m^2/\\Delta H$ を使って van't Hoff エンタルピーと熱量計エンタルピーの比で協同単位の大きさを読む．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 証明\n(3) $\\delta T$ [K]：≈6.9 ; $\\Delta H$ [J/mol]：≈6.9e5 ; $C_p(T_{\\rm m})$ [J K⁻¹mol⁻¹]：≈1.1e5\n(4) 証明\n(5) 記述"
+   "spec": "(1) Δg：N ε-N k_B T ln(n) ; T_m：ε/(k_B ln(n))\n(2) 証明\n(3) δT：2 T_m ln(9)/(N ln(n)) ; ΔH：R N T_m ln(n) ; C_p：R N^2 (ln(n))^2/4\n(4) 証明\n(5) 記述"
   },
   "methods": [],
   "tags": [
@@ -755,16 +755,16 @@
   "theme": "狭い空間に閉じ込めた高分子の自由エネルギー",
   "topic": "狭い空間に閉じ込めた高分子の自由エネルギー",
   "statement": {
-   "tex": "DNA を細いナノ流路やウイルスの殻に閉じ込めるときの自由エネルギーを考える．セグメント長 $b$，セグメント数 $N$ のガウス鎖で，一端を $\\vec r_0$ に固定したとき他端が $\\vec r$ にある重み $G(\\vec r,N)$ は拡散方程式\n\\[ \\frac{\\partial G}{\\partial N}=\\frac{b^2}{6}\\nabla^2G \\]\nに従い，鎖が入れない壁の上では $G=0$ である．分配関数は $Z=\\int G\\,d^3r$ で，閉じ込めによる自由エネルギーの増加は $\\Delta F=-k_BT\\ln(Z/Z_{\\mathrm{free}})$ である．\n\\begin{enumerate}\n\\item 鎖を間隔 $D$ の2枚の平板 $0<z<D$ の間に閉じ込める．$Nb^2\\gg D^2$ のとき，$G$ の $z$ 依存性は最も減衰の遅い固有関数 $\\sin(\\pi z/D)$ が支配する．$\\Delta F$ の主要項を $N,\\,b,\\,D,\\,k_BT$ で表せ．\n\\item 鎖が平板を押し広げる力 $f=-\\partial\\Delta F/\\partial D$ を求めよ．\n\\item 半径 $a$ の円筒の中に閉じ込めた場合の $\\Delta F$ の主要項を求めよ．2次元のヘルムホルツ方程式 $\\nabla^2\\psi=-k^2\\psi$ の円内で $\\psi=0$（周上）を満たす最小の $k$ は $k=j/a$（$j\\approx2.405$ はベッセル関数 $J_0$ の最初の零点）である．\n\\item $b=100\\,\\mathrm{nm}$，$Nb=16\\,\\mathrm{\\mu m}$ の DNA を $D=1.0\\,\\mathrm{\\mu m}$ の平板間に閉じ込めたときの $\\Delta F/(k_BT)$ を求めよ．\n\\end{enumerate}"
+   "tex": "DNA を細いナノ流路やウイルスの殻に閉じ込めるときの自由エネルギーを考える．セグメント長 $b$，セグメント数 $N$ のガウス鎖で，一端を $\\vec r_0$ に固定したとき他端が $\\vec r$ にある重み $G(\\vec r,N)$ は拡散方程式\n\\[ \\frac{\\partial G}{\\partial N}=\\frac{b^2}{6}\\nabla^2G \\]\nに従い，鎖が入れない壁の上では $G=0$ である．分配関数は $Z=\\int G\\,d^3r$ で，閉じ込めによる自由エネルギーの増加は $\\Delta F=-k_BT\\ln(Z/Z_{\\mathrm{free}})$ である．\n\\begin{enumerate}\n\\item 鎖を間隔 $D$ の2枚の平板 $0<z<D$ の間に閉じ込める．$Nb^2\\gg D^2$ のとき，$G$ の $z$ 依存性は最も減衰の遅い固有関数 $\\sin(\\pi z/D)$ が支配する．$\\Delta F$ の主要項を $N,\\,b,\\,D,\\,k_BT$ で表せ．\n\\item 鎖が平板を押し広げる力 $f=-\\partial\\Delta F/\\partial D$ を求めよ．\n\\item 半径 $a$ の円筒の中に閉じ込めた場合の $\\Delta F$ の主要項を求めよ．2次元のヘルムホルツ方程式 $\\nabla^2\\psi=-k^2\\psi$ の円内で $\\psi=0$（周上）を満たす最小の $k$ は $k=j/a$（$j\\approx2.405$ はベッセル関数 $J_0$ の最初の零点）である．\n\\item 同じ鎖を，間隔 $D$ の平板間に閉じ込めたときと半径 $a$ の円筒に閉じ込めたときで $\\Delta F$ が等しくなる $a$ を $D, j$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta F=\\dfrac{\\pi^2Nb^2k_BT}{6D^2}$ (2) $f=\\dfrac{\\pi^2Nb^2k_BT}{3D^3}$ (3) $\\Delta F=\\dfrac{j^2Nb^2k_BT}{6a^2}$ (4) $\\approx2.6$"
+   "tex": "(1) $\\Delta F=\\dfrac{\\pi^2Nb^2k_BT}{6D^2}$ (2) $f=\\dfrac{\\pi^2Nb^2k_BT}{3D^3}$ (3) $\\Delta F=\\dfrac{j^2Nb^2k_BT}{6a^2}$ (4) $a=\\dfrac{jD}{\\pi}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $G=\\sum_n c_n\\sin\\dfrac{n\\pi z}{D}\\,e^{-\\frac{b^2}{6}\\left(\\frac{n\\pi}{D}\\right)^2N}\\times(\\text{$x,y$ 方向の自由な拡散})$ と展開でき，$Nb^2\\gg D^2$ では $n=1$ の項だけが残る．$x,y$ 方向の積分は自由な鎖と同じなので，\n\\[ \\frac{Z}{Z_{\\mathrm{free}}}\\simeq(\\text{$N$ によらない係数})\\times\\exp\\left(-\\frac{\\pi^2Nb^2}{6D^2}\\right), \\]\n\\[ \\boldsymbol{\\Delta F\\simeq\\frac{\\pi^2Nb^2k_BT}{6D^2}}. \\]\n$N$ に比例する（示量的な）項が主要項で，係数の対数は $N$ によらない補正である．\n\n(2) $\\boldsymbol{f=\\dfrac{\\pi^2Nb^2k_BT}{3D^3}}$．閉じ込められた鎖は壁を押し広げようとする（エントロピー的な圧力）．\n\n(3) 断面の固有値 $k^2=j^2/a^2$ が $(\\pi/D)^2$ の代わりに入り，\n\\[ \\boldsymbol{\\Delta F\\simeq\\frac{j^2Nb^2k_BT}{6a^2}}\\approx\\frac{0.96\\,Nb^2k_BT}{a^2}. \\]\n\n(4) $Nb^2=1.6\\times10^6\\,\\mathrm{nm^2}$，$D^2=10^6\\,\\mathrm{nm^2}$ より $\\dfrac{\\Delta F}{k_BT}=\\dfrac{\\pi^2\\times1.6}{6}\\approx\\boldsymbol{2.6}$．\n\n鎖の自由度を「虚時間の量子力学」と見ると，(1) は箱の中の粒子の基底エネルギー（$\\hbar^2/2m\\leftrightarrow b^2/6$）に当たる．$D$ が持続長に近いほど狭くなると，みみず鎖の曲げの効果が効いて $\\Delta F\\propto N D^{-2/3}$（オダイク領域）に変わる．"
+    "tex": "(1) $G=\\sum_n c_n\\sin\\dfrac{n\\pi z}{D}\\,e^{-\\frac{b^2}{6}\\left(\\frac{n\\pi}{D}\\right)^2N}\\times(\\text{$x,y$ 方向の自由な拡散})$ と展開でき，$Nb^2\\gg D^2$ では $n=1$ の項だけが残る．$x,y$ 方向の積分は自由な鎖と同じなので，\n\\[ \\frac{Z}{Z_{\\mathrm{free}}}\\simeq(\\text{$N$ によらない係数})\\times\\exp\\left(-\\frac{\\pi^2Nb^2}{6D^2}\\right), \\]\n\\[ \\boldsymbol{\\Delta F\\simeq\\frac{\\pi^2Nb^2k_BT}{6D^2}}. \\]\n$N$ に比例する（示量的な）項が主要項で，係数の対数は $N$ によらない補正である．\n\n(2) $\\boldsymbol{f=\\dfrac{\\pi^2Nb^2k_BT}{3D^3}}$．閉じ込められた鎖は壁を押し広げようとする（エントロピー的な圧力）．\n\n(3) 断面の固有値 $k^2=j^2/a^2$ が $(\\pi/D)^2$ の代わりに入り，\n\\[ \\boldsymbol{\\Delta F\\simeq\\frac{j^2Nb^2k_BT}{6a^2}}\\approx\\frac{0.96\\,Nb^2k_BT}{a^2}. \\]\n\n(4) $\\dfrac{\\pi^2}{D^2}=\\dfrac{j^2}{a^2}$ より $\\boldsymbol{a=\\dfrac{jD}{\\pi}}\\approx0.77D$．円筒は2方向から閉じ込めるので，同じ自由エネルギーなら平板間隔より細くてよい（直径 $2a\\approx1.5D$）．なお $b=100\\,\\mathrm{nm}$，$Nb=16\\,\\mathrm{\\mu m}$ の DNA を $D=1.0\\,\\mathrm{\\mu m}$ の平板間に閉じ込めると $\\Delta F\\approx2.6k_BT$ である．\n\n鎖の自由度を「虚時間の量子力学」と見ると，(1) は箱の中の粒子の基底エネルギー（$\\hbar^2/2m\\leftrightarrow b^2/6$）に当たる．$D$ が持続長に近いほど狭くなると，みみず鎖の曲げの効果が効いて $\\Delta F\\propto N D^{-2/3}$（オダイク領域）に変わる．"
    }
   ],
   "idea": {
@@ -772,7 +772,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ΔF：pi^2 N b^2 k_B T/(6D^2)\n(2) f：pi^2 N b^2 k_B T/(3D^3)\n(3) ΔF：j^2 N b^2 k_B T/(6a^2)\n(4) ≈2.6"
+   "spec": "(1) ΔF：pi^2 N b^2 k_B T/(6D^2)\n(2) f：pi^2 N b^2 k_B T/(3D^3)\n(3) ΔF：j^2 N b^2 k_B T/(6a^2)\n(4) a：j D/π"
   },
   "methods": [],
   "tags": [

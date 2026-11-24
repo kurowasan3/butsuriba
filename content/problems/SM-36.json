@@ -9,16 +9,16 @@
   "theme": "箱の左右に分かれる分子の数え上げとボルツマンのエントロピー",
   "topic": "箱の左右に分かれる分子の数え上げとボルツマンのエントロピー",
   "statement": {
-   "tex": "箱を仮想的に左右半分に分け，$N$ 個の気体分子がそれぞれ独立に左右どちらかに等確率でいるとする．左に $n$ 個いる配置の数（微視的状態の数）は $W(n) = {}_N\\mathrm{C}_n$ である．ボルツマンはエントロピーを $S = k_B\\ln W$（$k_B$：ボルツマン定数）と定義した．\n\\begin{enumerate}\n\\item $N = 4$ のとき，左右に2個ずつ分かれる配置の数 $W(2)$ を求めよ．\n\\item $N = 100$ のとき，全分子が左半分に集まる確率を求めよ．\n\\item はじめ左半分に閉じ込めた $N$ 個の分子を，仕切りを外して箱全体に広げる．1分子のとれる位置の数が2倍になるとして，エントロピーの増加 $\\Delta S$ を求めよ．\n\\end{enumerate}"
+   "tex": "箱を仮想的に左右半分に分け，$N$ 個の気体分子がそれぞれ独立に左右どちらかに等確率でいるとする．左に $n$ 個いる配置の数（微視的状態の数）は $W(n) = {}_N\\mathrm{C}_n$ である．ボルツマンはエントロピーを $S = k_B\\ln W$（$k_B$：ボルツマン定数）と定義した．\n\\begin{enumerate}\n\\item 左にちょうど 1 個いる配置の数 $W(1)$ と，左にちょうど 2 個いる配置の数 $W(2)$ を $N$ で表せ．\n\\item 全分子が左半分に集まる確率 $P$ を $N$ で表せ．\n\\item はじめ左半分に閉じ込めた $N$ 個の分子を，仕切りを外して箱全体に広げる．1分子のとれる位置の数が2倍になるとして，エントロピーの増加 $\\Delta S$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $W(2) = 6$ \\quad (2) $\\approx 7.9\\times10^{-31}$ \\quad (3) $\\Delta S = Nk_B\\ln 2$"
+   "tex": "(1) $W(1)=N$，$W(2)=\\dfrac{N(N-1)}{2}$ \\quad (2) $P=\\dfrac{1}{2^N}$ \\quad (3) $\\Delta S = Nk_B\\ln 2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $W(2) = {}_4\\mathrm{C}_2 = \\boldsymbol{6}$．配置の総数は $2^4 = 16$ なので，半々になる確率は $6/16$ で最も大きい．\n\n(2) 各分子が左にいる確率は $\\frac{1}{2}$ なので $\\left(\\frac{1}{2}\\right)^{100} \\approx \\boldsymbol{7.9\\times10^{-31}}$．宇宙の年齢を秒で数えても $10^{18}$ 程度なので，実際にはまず起こらない．\n\n(3) 各分子の位置の数が2倍になるので，全体の状態数は $2^N$ 倍になる：\n\\[ \\Delta S = k_B\\ln(2^N W) - k_B\\ln W = \\boldsymbol{Nk_B\\ln 2}. \\]\n1モルなら $N k_B = R$ で $\\Delta S = R\\ln 2$．これは熱力学で計算した自由膨張のエントロピー変化と一致する．\n\n「エントロピー＝状態の数の対数」とみると，エントロピー増大は「起こりやすい（状態数の多い）配置に移る」ことだとわかる．次はエネルギーが決まった系で状態数を数え，そこから温度を定義する．"
+    "tex": "(1) $N$ 個から左に置く分子を選ぶので $W(1)={}_N\\mathrm{C}_1=\\boldsymbol{N}$，$W(2) = {}_N\\mathrm{C}_2 = \\boldsymbol{\\dfrac{N(N-1)}{2}}$．たとえば $N=4$ なら $W(2)=6$ で，配置の総数 $2^4 = 16$ のうち半々になる配置が最も多い．\n\n(2) 各分子が左にいる確率は $\\frac{1}{2}$ で独立なので $P=\\left(\\frac{1}{2}\\right)^N=\\boldsymbol{\\dfrac{1}{2^N}}$．$N=100$ でも $10^{-30}$ 程度で，宇宙の年齢を秒で数えても $10^{18}$ 程度なので，実際にはまず起こらない．\n\n(3) 各分子の位置の数が2倍になるので，全体の状態数は $2^N$ 倍になる：\n\\[ \\Delta S = k_B\\ln(2^N W) - k_B\\ln W = \\boldsymbol{Nk_B\\ln 2}. \\]\n1モルなら $N k_B = R$ で $\\Delta S = R\\ln 2$．これは熱力学で計算した自由膨張のエントロピー変化と一致する．\n\n「エントロピー＝状態の数の対数」とみると，エントロピー増大は「起こりやすい（状態数の多い）配置に移る」ことだとわかる．次はエネルギーが決まった系で状態数を数え，そこから温度を定義する．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) W(2)：6\n(2) 確率：≈7.9e-31\n(3) ΔS：N k_B ln 2"
+   "spec": "(1) $W(1)$：N ; $W(2)$：N (N-1)/2\n(2) 確率：1/2^N\n(3) ΔS：N k_B ln 2"
   },
   "methods": [],
   "tags": [
@@ -204,16 +204,16 @@
   "theme": "スピン1常磁性体の磁化とCurie定数",
   "topic": "スピン1常磁性体の磁化とCurie定数",
   "statement": {
-   "tex": "単位体積当たり $N_0$ 個の互いに独立な磁性原子が磁場 $B$ 中にあり，温度 $T$ の平衡状態にある．各原子は磁場方向の磁気モーメントとして $m\\mu_0$（$m=1,0,-1$）の 3 つの値をとることができ，エネルギーは $-m\\mu_0B$ である．$x=\\mu_0B/k_BT$ とおく．\n\\begin{enumerate}\n\\item 磁化 $M_0$ を $x$ の関数として求めよ．\n\\item 高温での磁化率 $\\chi=M_0/B$ を求め，同じ飽和磁化 $N_0\\mu_0$ をもつスピン $1/2$ 系（モーメント $\\pm\\mu_0$）の Curie 定数と比べよ．\n\\item 磁化が飽和値の半分になる $x$ を，スピン 1 とスピン $1/2$ の両方について数値で求めよ．\n\\item $B=0$ での 1 原子当たりのエントロピーをそれぞれ求め，(2)(3) の違いとの関係を述べよ．\n\\end{enumerate}"
+   "tex": "単位体積当たり $N_0$ 個の互いに独立な磁性原子が磁場 $B$ 中にあり，温度 $T$ の平衡状態にある．各原子は磁場方向の磁気モーメントとして $m\\mu_0$（$m=1,0,-1$）の 3 つの値をとることができ，エネルギーは $-m\\mu_0B$ である．$x=\\mu_0B/k_BT$ とおく．\n\\begin{enumerate}\n\\item 磁化 $M_0$ を $x$ の関数として求めよ．\n\\item 高温での磁化率 $\\chi=M_0/B$ を求め，同じ飽和磁化 $N_0\\mu_0$ をもつスピン $1/2$ 系（モーメント $\\pm\\mu_0$）の Curie 定数と比べよ．\n\\item 磁化が飽和値の半分になる $x$ を，スピン 1 とスピン $1/2$ の両方について閉じた式で求めよ（スピン 1 では $y=e^x$ とおくとよい）．\n\\item $B=0$ での 1 原子当たりのエントロピーをそれぞれ求め，(2)(3) の違いとの関係を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $M_0=N_0\\mu_0\\dfrac{2\\sinh x}{1+2\\cosh x}$　(2) $\\chi=\\dfrac23\\dfrac{N_0\\mu_0^2}{k_BT}$（スピン 1/2 の $2/3$ 倍）　(3) スピン 1：$x\\approx0.834$，スピン 1/2：$x=\\tanh^{-1}\\frac12\\approx0.549$　(4) $k_B\\log3$，$k_B\\log2$"
+   "tex": "(1) $M_0=N_0\\mu_0\\dfrac{2\\sinh x}{1+2\\cosh x}$　(2) $\\chi=\\dfrac23\\dfrac{N_0\\mu_0^2}{k_BT}$（スピン 1/2 の $2/3$ 倍）　(3) スピン 1：$x=\\ln\\dfrac{1+\\sqrt{13}}{2}$，スピン 1/2：$x=\\dfrac12\\ln3$　(4) $k_B\\ln3$，$k_B\\ln2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 各状態の確率は $e^{mx}/Z$，$Z=1+2\\cosh x$．平均モーメント $\\mu_0\\sum_m me^{mx}/Z=\\mu_0\\dfrac{2\\sinh x}{1+2\\cosh x}$．よって\n\\[\nM_0=N_0\\mu_0\\frac{2\\sinh x}{1+2\\cosh x}.\n\\]\n(2) $x\\ll1$ で $\\dfrac{2\\sinh x}{1+2\\cosh x}=\\dfrac{2x}{3}-\\dfrac{x^3}{9}+\\cdots$．よって\n\\[\n\\chi=\\frac{M_0}{B}=\\frac23\\frac{N_0\\mu_0^2}{k_BT}.\n\\]\nスピン $1/2$（$M_0=N_0\\mu_0\\tanh x$）では $\\chi=N_0\\mu_0^2/k_BT$ なので Curie 定数は $2/3$ 倍．一般に Curie 定数は $\\overline{m^2}$（$B=0$ での平均）に比例し，スピン 1 では $\\overline{m^2}=2/3$，スピン $1/2$ では $1$．\n\n(3) スピン 1：$\\dfrac{2\\sinh x}{1+2\\cosh x}=\\dfrac12$ すなわち $4\\sinh x-2\\cosh x=1$ を数値的に解いて $x\\approx0.834$．スピン $1/2$：$\\tanh x=\\frac12$ より $x=\\frac12\\log3\\approx0.549$．同じ飽和値に対して，スピン 1 は約 $1.5$ 倍の強い磁場（または低い温度）が必要．\n\n(4) $B=0$ では全状態が等確率なので $s=k_B\\log3$（スピン 1），$k_B\\log2$（スピン $1/2$）．スピン 1 には磁場に応答しない $m=0$ 状態があり，その分だけ「無秩序」の余地が大きく，整列させにくい．これが Curie 定数が小さく，半飽和に大きな $x$ を要する理由である．"
+    "tex": "(1) 各状態の確率は $e^{mx}/Z$，$Z=1+2\\cosh x$．平均モーメント $\\mu_0\\sum_m me^{mx}/Z=\\mu_0\\dfrac{2\\sinh x}{1+2\\cosh x}$．よって\n\\[\nM_0=\\boldsymbol{N_0\\mu_0\\frac{2\\sinh x}{1+2\\cosh x}}.\n\\]\n(2) $x\\ll1$ で $\\dfrac{2\\sinh x}{1+2\\cosh x}=\\dfrac{2x}{3}-\\dfrac{x^3}{9}+\\cdots$．よって\n\\[\n\\chi=\\frac{M_0}{B}=\\boldsymbol{\\frac23\\frac{N_0\\mu_0^2}{k_BT}}.\n\\]\nスピン $1/2$（$M_0=N_0\\mu_0\\tanh x$）では $\\chi=N_0\\mu_0^2/k_BT$ なので Curie 定数は $2/3$ 倍．一般に Curie 定数は $\\overline{m^2}$（$B=0$ での平均）に比例し，スピン 1 では $\\overline{m^2}=2/3$，スピン $1/2$ では $1$．\n\n(3) スピン 1：$\\dfrac{2\\sinh x}{1+2\\cosh x}=\\dfrac12$ すなわち $4\\sinh x-2\\cosh x=1$．$y=e^x$ とおくと $2(y-y^{-1})-(y+y^{-1})=1$，$y^2-y-3=0$，$y=\\frac{1+\\sqrt{13}}{2}$（正の根）．よって $x=\\boldsymbol{\\ln\\dfrac{1+\\sqrt{13}}{2}}\\approx0.83$．\nスピン $1/2$：$\\tanh x=\\frac12$ より $x=\\boldsymbol{\\frac12\\ln3}\\approx0.55$．同じ飽和値に対して，スピン 1 は約 $1.5$ 倍の強い磁場（または低い温度）が必要．\n\n(4) $B=0$ では全状態が等確率なので $s=\\boldsymbol{k_B\\ln3}$（スピン 1），$\\boldsymbol{k_B\\ln2}$（スピン $1/2$）．スピン 1 には磁場に応答しない $m=0$ 状態があり，その分だけ「無秩序」の余地が大きく，整列させにくい．これが Curie 定数が小さく，半飽和に大きな $x$ を要する理由である．"
    }
   ],
   "idea": {
@@ -221,7 +221,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\chi$：((2)/(3))((N_0 μ_0 ^(2))/(k_B T))\n(3) 記述\n(4) 記述"
+   "spec": "(1) $M_0$：N_0 μ_0 2 sinh(x)/(1+2 cosh(x))\n(2) $\\chi$：((2)/(3))((N_0 μ_0 ^(2))/(k_B T))\n(3) スピン1：ln((1+sqrt(13))/2) ; スピン1/2：ln(3)/2\n(4) スピン1：k_B ln 3 ; スピン1/2：k_B ln 2"
   },
   "methods": [],
   "tags": [
@@ -254,24 +254,24 @@
   "theme": "エネルギー付加による状態数の増大",
   "topic": "エネルギー付加による状態数の増大",
   "statement": {
-   "tex": "室温 $T=300\\,$K にある巨視的な物体を考える．\n\\begin{enumerate}\n\\item 物体のエネルギーをわずかに増やして状態数をちょうど 2 倍にするには，何 eV のエネルギーを加えればよいか（物体の温度変化は無視せよ）．\n\\item 熱容量 $C=4.18\\,$J/K の物体（水 1 g 程度）に $1\\,$J の熱を加える．温度変化を考慮して状態数が何倍になるかを $\\log_{10}(W_2/W_1)$ の値で答えよ．\n\\item (2) を温度変化を無視した式 $\\log(W_2/W_1)\\simeq Q/k_BT$ で見積もると相対誤差はいくらか．その大きさを $Q/(CT)$ で説明せよ．\n\\end{enumerate}"
+   "tex": "温度 $T$ にある巨視的な物体を考える．ボルツマン定数を $k_B$ とする．\n\\begin{enumerate}\n\\item 物体のエネルギーをわずかに増やして状態数をちょうど 2 倍にするには，どれだけのエネルギー $\\delta E$ を加えればよいか（物体の温度変化は無視せよ）．\n\\item 熱容量 $C$（一定）の物体に熱 $Q$ を加える．温度変化を考慮して，状態数の比の対数 $\\ln(W_2/W_1)$ を $C,Q,T,k_B$ で表せ．\n\\item (2) を温度変化を無視した式 $\\ln(W_2/W_1)\\simeq Q/k_BT$ で見積もると，相対誤差は $u=Q/(CT)$ の 1 次でいくらか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $k_BT\\log2\\approx0.0179\\,$eV　(2) $\\log_{10}(W_2/W_1)\\approx1.048\\times10^{20}$　(3) 約 $4\\times10^{-4}$（$\\simeq Q/2CT$）"
+   "tex": "(1) $\\delta E=k_BT\\ln2$　(2) $\\ln\\dfrac{W_2}{W_1}=\\dfrac{C}{k_B}\\ln\\left(1+\\dfrac{Q}{CT}\\right)$　(3) $\\dfrac{Q}{2CT}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\partial\\log W/\\partial E=1/k_BT$ が一定とみなせるので $W(E+\\delta E)=W(E)e^{\\delta E/k_BT}$．$e^{\\delta E/k_BT}=2$ より\n\\[\n\\delta E=k_BT\\log2=(1.381\\times10^{-23}\\times300\\times0.6931)\\,\\mathrm J=2.87\\times10^{-21}\\,\\mathrm J=0.0179\\,\\mathrm{eV}.\n\\]\n(2) $\\log W_2-\\log W_1=\\Delta S/k_B$，$\\Delta S=\\int dQ/T=C\\log(T_2/T_1)$，$T_2=300+1/4.18=300.239\\,$K．\n\\[\n\\Delta S=4.18\\log\\frac{300.239}{300}=3.332\\times10^{-3}\\,\\mathrm{J/K},\\quad \\frac{\\Delta S}{k_B}=2.413\\times10^{20}.\n\\]\n$\\log_{10}(W_2/W_1)=2.413\\times10^{20}/2.3026=1.048\\times10^{20}$．状態数は $10^{10^{20}}$ 倍という途方もない比率で増える．\n\n(3) 近似値 $Q/k_BT=1/(1.381\\times10^{-23}\\times300)=2.4143\\times10^{20}$．相対誤差 $\\approx4.0\\times10^{-4}$．$C\\log(1+u)\\simeq Cu(1-u/2)$，$u=Q/CT=7.97\\times10^{-4}$ より相対誤差は $u/2\\approx4.0\\times10^{-4}$ で一致する．巨視的な熱量 1 J でも温度はほとんど変わらないので $dS=d'Q/T$ がよい近似になる．"
+    "tex": "(1) $\\partial\\ln W/\\partial E=1/k_BT$ が一定とみなせるので $W(E+\\delta E)=W(E)e^{\\delta E/k_BT}$．$e^{\\delta E/k_BT}=2$ より\n\\[\n\\delta E=\\boldsymbol{k_BT\\ln2}.\n\\]\n室温では約 0.018 eV にすぎない．\n\n(2) $\\ln W_2-\\ln W_1=\\Delta S/k_B$，$\\Delta S=\\int dQ/T=C\\ln(T_2/T)$，$T_2=T+Q/C$．\n\\[\n\\ln\\frac{W_2}{W_1}=\\boldsymbol{\\frac{C}{k_B}\\ln\\left(1+\\frac{Q}{CT}\\right)}.\n\\]\n水 1 g に 1 J を加えると $\\ln(W_2/W_1)\\approx2.4\\times10^{20}$，状態数は $10^{10^{20}}$ 倍という途方もない比率で増える．\n\n(3) $C\\ln(1+u)\\simeq Cu(1-u/2)$ なので，近似値 $Q/k_BT=Cu/k_B$ は厳密値より $u/2$ の割合だけ大きい．相対誤差は $\\boldsymbol{\\dfrac{Q}{2CT}}$．巨視的な熱量でも温度はほとんど変わらない（$u\\ll1$）ので $dS=d'Q/T$ がよい近似になる．"
    }
   ],
   "idea": {
-   "tex": "$W\\propto e^{S/k_B}$ なので，$k_BT$ 程度の微小なエネルギーで状態数は倍になり，1 J の熱では $10^{10^{20}}$ 倍になる．"
+   "tex": "$W\\propto e^{S/k_B}$ なので，$k_BT\\ln2$ 程度の微小なエネルギーで状態数は倍になり，巨視的な熱では状態数は $e^{Q/k_BT}$ 倍という途方もない比率で増える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $k_BT\\log2$ [eV]：≈0.0179\n(2) 記述\n(3) ≈4e-4"
+   "spec": "(1) $\\delta E$：k_B T ln 2\n(2) $\\ln(W_2/W_1)$：(C/k_B) ln(1+Q/(C T))\n(3) 相対誤差：Q/(2 C T)"
   },
   "methods": [],
   "tags": [
@@ -303,16 +303,16 @@
   "theme": "電子スピンと核スピンの偏極",
   "topic": "電子スピンと核スピンの偏極",
   "statement": {
-   "tex": "スピン $1/2$ の粒子の集団を磁場 $B$ 中で温度 $T$ に保つ．磁場に平行な数 $n_+$ と反平行な数 $n_-$ から偏極率 $P=(n_+-n_-)/(n_++n_-)$ を定める．電子の磁気モーメントを $\\mu_e=9.274\\times10^{-24}\\,$J/T，陽子の磁気モーメントを $\\mu_p=1.411\\times10^{-26}\\,$J/T とする．\n\\begin{enumerate}\n\\item $P$ を $\\mu,B,T$ で表せ．\n\\item $B=3.35\\,$T，$T=1.2\\,$K で電子と陽子の偏極率をそれぞれ求めよ．その比は $\\mu_e/\\mu_p$ と一致するか．\n\\item 陽子の偏極率を $P=1/2$（平行が反平行の 3 倍）にしたい．$B=10\\,$T なら温度を何 mK 以下に，$T=10\\,$mK なら磁場を何 T 以上にすればよいか．\n\\end{enumerate}"
+   "tex": "スピン $1/2$ の粒子の集団を磁場 $B$ 中で温度 $T$ に保つ．磁場に平行な数 $n_+$ と反平行な数 $n_-$ から偏極率 $P=(n_+-n_-)/(n_++n_-)$ を定める．電子の磁気モーメントを $\\mu_e$，陽子の磁気モーメントを $\\mu_p$（$\\mu_p\\ll\\mu_e$）とし，ボルツマン定数を $k_B$ とする．\n\\begin{enumerate}\n\\item 磁気モーメント $\\mu$ の粒子について $P$ を $\\mu,B,T$ で表せ．\n\\item 陽子では $\\mu_pB\\ll k_BT$ とみなせるとして，陽子の偏極率 $P_p$ を $\\mu_pB/k_BT$ の 1 次で近似し，電子との比 $P_e/P_p$ を求めよ．比が $\\mu_e/\\mu_p$ に一致するのはどのような条件のときか．\n\\item 陽子の偏極率を $P=1/2$（平行が反平行の 3 倍）にしたい．磁場 $B$ が与えられたときに必要な温度の上限 $T_m$ と，温度 $T$ が与えられたときに必要な磁場の下限 $B_m$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P=\\tanh(\\mu B/k_BT)$　(2) $P_e\\approx0.954$，$P_p\\approx2.85\\times10^{-3}$，比 $\\approx334$（$\\mu_e/\\mu_p\\approx657$ と一致しない）　(3) $T\\lesssim18.6\\,$mK；$B\\gtrsim5.38\\,$T"
+   "tex": "(1) $P=\\tanh\\dfrac{\\mu B}{k_BT}$　(2) $P_p\\simeq\\dfrac{\\mu_pB}{k_BT}$，$\\dfrac{P_e}{P_p}=\\dfrac{k_BT}{\\mu_pB}\\tanh\\dfrac{\\mu_eB}{k_BT}$（$\\mu_eB\\ll k_BT$ のときだけ $\\mu_e/\\mu_p$）　(3) $T_m=\\dfrac{2\\mu_pB}{k_B\\ln3}$，$B_m=\\dfrac{k_BT\\ln3}{2\\mu_p}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n_\\pm\\propto e^{\\pm\\mu B/k_BT}$ より $P=\\tanh(\\mu B/k_BT)$．\n\n(2) $k_BT=1.381\\times10^{-23}\\times1.2=1.657\\times10^{-23}\\,$J．\n電子：$\\mu_eB/k_BT=3.107\\times10^{-23}/1.657\\times10^{-23}=1.875$，$P_e=\\tanh1.875=0.954$．\n陽子：$\\mu_pB/k_BT=2.852\\times10^{-3}$，$P_p\\simeq2.85\\times10^{-3}$．\n比は $P_e/P_p\\approx334$ で $\\mu_e/\\mu_p\\approx657$ の約半分．電子はすでに飽和領域（$\\tanh$ が線形でない）にあるためで，両者が線形領域にあるときだけ比は $\\mu_e/\\mu_p$ になる．（この大きな差を利用して電子の偏極を核に移すのが動的核偏極である．）\n\n(3) $\\tanh y=\\frac12$ より $y=\\frac12\\log3=0.5493$．\n$B=10\\,$T：$T=\\dfrac{\\mu_pB}{0.5493k_B}=\\dfrac{1.411\\times10^{-25}}{0.5493\\times1.381\\times10^{-23}}=1.86\\times10^{-2}\\,$K $=18.6\\,$mK 以下．\n$T=10\\,$mK：$B=\\dfrac{0.5493k_BT}{\\mu_p}=\\dfrac{0.5493\\times1.381\\times10^{-25}}{1.411\\times10^{-26}}=5.38\\,$T 以上．\n電子なら同じ条件が $B=10\\,$T で $T\\approx12\\,$K と容易なのに対し，核スピンの「力ずくの偏極」には希釈冷凍機の温度域が必要になる．"
+    "tex": "(1) $n_\\pm\\propto e^{\\pm\\mu B/k_BT}$ より $P=\\boldsymbol{\\tanh\\dfrac{\\mu B}{k_BT}}$．\n\n(2) $\\tanh y\\simeq y$ より $P_p\\simeq\\boldsymbol{\\dfrac{\\mu_pB}{k_BT}}$．したがって\n\\[\\frac{P_e}{P_p}=\\boldsymbol{\\frac{k_BT}{\\mu_pB}\\tanh\\frac{\\mu_eB}{k_BT}}.\\]\n電子も線形領域（$\\mu_eB\\ll k_BT$）にあれば $\\tanh$ を外せて比は $\\mu_e/\\mu_p$ になるが，強磁場・低温（たとえば 3.35 T，1.2 K）では電子はすでに飽和領域にあり（$P_e\\approx0.95$），比は $\\mu_e/\\mu_p$ の約半分にとどまる．（この大きな差を利用して電子の偏極を核に移すのが動的核偏極である．）\n\n(3) $\\tanh y=\\frac12$ より $y=\\frac12\\ln3$．$\\dfrac{\\mu_pB}{k_BT}\\ge\\frac12\\ln3$ が条件なので\n\\[T\\le T_m=\\boldsymbol{\\frac{2\\mu_pB}{k_B\\ln3}},\\qquad B\\ge B_m=\\boldsymbol{\\frac{k_BT\\ln3}{2\\mu_p}}.\\]\n陽子では 10 T でも $T_m\\approx19$ mK で，核スピンの「力ずくの偏極」には希釈冷凍機の温度域が必要になる．電子なら同じ条件が約 12 K と容易である．"
    }
   ],
   "idea": {
@@ -320,7 +320,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $P_e$：≈0.954 ; $P_p$：≈2.85e-3 ; 比：≈334\n(3) 記述"
+   "spec": "(1) $P$：tanh(μ B/(k_B T))\n(2) $P_p$：μ_p B/(k_B T) ; $P_e/P_p$：k_B T tanh(μ_e B/(k_B T))/(μ_p B)\n(3) $T_m$：2 μ_p B/(k_B ln(3)) ; $B_m$：k_B T ln(3)/(2 μ_p)"
   },
   "methods": [],
   "tags": [
@@ -746,16 +746,16 @@
   "theme": "粒子数が揺らぐスピン系の磁気モーメント",
   "topic": "粒子数が揺らぐスピン系の磁気モーメント",
   "statement": {
-   "tex": "磁気モーメント $\\mu_0$ をもつスピン $1/2$ の粒子が，ある領域に入っている．各粒子は独立に確率 $p$ で上向き，$q=1-p$ で下向きである．ただし領域内の粒子数 $N$ 自体が揺らいでいて，平均 $\\lambda$ の Poisson 分布 $P(N)=e^{-\\lambda}\\lambda^N/N!$ に従うとする．全磁気モーメントを $M=\\mu_0(n_+-n_-)$ とする（$n_\\pm$ は上向き・下向きの粒子数）．\n\\begin{enumerate}\n\\item $n_+$ と $n_-$ はそれぞれ独立な Poisson 分布に従うことを示し，その平均を求めよ．\n\\item $\\overline M$ と $\\overline{(\\Delta M)^2}$ を求めよ．\n\\item 粒子数が $N=\\lambda$ に固定されている場合の分散と比べ，その比を $p$ で表せ．$p=0.9$ のときの比の値はいくらか．\n\\end{enumerate}"
+   "tex": "磁気モーメント $\\mu_0$ をもつスピン $1/2$ の粒子が，ある領域に入っている．各粒子は独立に確率 $p$ で上向き，$q=1-p$ で下向きである．ただし領域内の粒子数 $N$ 自体が揺らいでいて，平均 $\\lambda$ の Poisson 分布 $P(N)=e^{-\\lambda}\\lambda^N/N!$ に従うとする．全磁気モーメントを $M=\\mu_0(n_+-n_-)$ とする（$n_\\pm$ は上向き・下向きの粒子数）．\n\\begin{enumerate}\n\\item $n_+$ と $n_-$ はそれぞれ独立な Poisson 分布に従うことを示し，その平均を求めよ．\n\\item $\\overline M$ と $\\overline{(\\Delta M)^2}$ を求めよ．\n\\item 粒子数が $N=\\lambda$ に固定されている場合の分散と比べ，その比（Poisson／固定）を $p,q$ で表せ．$p\\to1$ でこの比はどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 平均 $\\lambda p$，$\\lambda q$ の独立な Poisson 分布　(2) $\\overline M=\\lambda\\mu_0(p-q)$，$\\overline{(\\Delta M)^2}=\\lambda\\mu_0^2$（$p$ によらない）　(3) 比（Poisson/固定）$=1/(4pq)$，$p=0.9$ で $1/0.36\\approx2.78$"
+   "tex": "(1) 平均 $\\lambda p$，$\\lambda q$ の独立な Poisson 分布　(2) $\\overline M=\\lambda\\mu_0(p-q)$，$\\overline{(\\Delta M)^2}=\\lambda\\mu_0^2$（$p$ によらない）　(3) 比 $=\\dfrac{1}{4pq}$，$p\\to1$ で発散"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 同時確率は\n\\[\nP(n_+,n_-)=e^{-\\lambda}\\frac{\\lambda^{N}}{N!}\\cdot\\frac{N!}{n_+!\\,n_-!}p^{n_+}q^{n_-}\n=\\left[e^{-\\lambda p}\\frac{(\\lambda p)^{n_+}}{n_+!}\\right]\\left[e^{-\\lambda q}\\frac{(\\lambda q)^{n_-}}{n_-!}\\right]\n\\]\n（$N=n_++n_-$，$e^{-\\lambda}=e^{-\\lambda p}e^{-\\lambda q}$）と積に分かれる．よって独立な Poisson 分布で，平均は $\\lambda p,\\ \\lambda q$．\n\n(2) Poisson 分布は平均＝分散なので\n\\[\n\\overline M=\\mu_0(\\lambda p-\\lambda q)=\\lambda\\mu_0(p-q),\\qquad\n\\overline{(\\Delta M)^2}=\\mu_0^2\\left(\\mathrm{Var}\\,n_++\\mathrm{Var}\\,n_-\\right)=\\mu_0^2(\\lambda p+\\lambda q)=\\lambda\\mu_0^2.\n\\]\n母関数でも確かめられる：$\\langle e^{tM/\\mu_0}\\rangle=\\exp[\\lambda(pe^t+qe^{-t}-1)]$ を $t$ で 2 回微分して $t=0$ とおけば同じ結果を得る．\n\n(3) $N$ 固定なら〔2〕と同様に $\\overline{(\\Delta M)^2}=4Npq\\mu_0^2$．$N=\\lambda$ として比は\n\\[\n\\frac{\\lambda\\mu_0^2}{4\\lambda pq\\mu_0^2}=\\frac1{4pq}\\ \\ge 1 .\n\\]\n$p=q=\\frac12$ のときだけ一致する．$p=0.9$ では $1/0.36\\approx 2.78$ 倍．強く偏極した系では，揺らぎの大部分が「向きの揺らぎ」ではなく「粒子数の揺らぎ」から来る．"
+    "tex": "(1) 同時確率は\n\\[\nP(n_+,n_-)=e^{-\\lambda}\\frac{\\lambda^{N}}{N!}\\cdot\\frac{N!}{n_+!\\,n_-!}p^{n_+}q^{n_-}\n=\\left[e^{-\\lambda p}\\frac{(\\lambda p)^{n_+}}{n_+!}\\right]\\left[e^{-\\lambda q}\\frac{(\\lambda q)^{n_-}}{n_-!}\\right]\n\\]\n（$N=n_++n_-$，$e^{-\\lambda}=e^{-\\lambda p}e^{-\\lambda q}$）と積に分かれる．よって独立な Poisson 分布で，平均は $\\boldsymbol{\\lambda p,\\ \\lambda q}$．\n\n(2) Poisson 分布は平均＝分散なので\n\\[\n\\overline M=\\mu_0(\\lambda p-\\lambda q)=\\boldsymbol{\\lambda\\mu_0(p-q)},\\qquad\n\\overline{(\\Delta M)^2}=\\mu_0^2\\left(\\mathrm{Var}\\,n_++\\mathrm{Var}\\,n_-\\right)=\\mu_0^2(\\lambda p+\\lambda q)=\\boldsymbol{\\lambda\\mu_0^2}.\n\\]\n母関数でも確かめられる：$\\langle e^{tM/\\mu_0}\\rangle=\\exp[\\lambda(pe^t+qe^{-t}-1)]$ を $t$ で 2 回微分して $t=0$ とおけば同じ結果を得る．\n\n(3) $N$ 固定なら 2 項分布で $\\overline{(\\Delta M)^2}=4Npq\\mu_0^2$．$N=\\lambda$ として比は\n\\[\n\\frac{\\lambda\\mu_0^2}{4\\lambda pq\\mu_0^2}=\\boldsymbol{\\frac1{4pq}}\\ \\ge 1 .\n\\]\n$p=q=\\frac12$ のときだけ一致し，$p\\to1$ では \\textbf{発散}する（$p=0.9$ でも約 2.8 倍）．強く偏極した系では，揺らぎの大部分が「向きの揺らぎ」ではなく「粒子数の揺らぎ」から来る．"
    }
   ],
   "idea": {
@@ -763,7 +763,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\overline M$：λ μ_0 (p - q) ; $\\overline{(\\Delta M)^2}$：λ μ_0 ^(2)\n(3) 記述"
+   "spec": "(1) $n_+$ の平均：λ p ; $n_-$ の平均：λ q\n(2) $\\overline M$：λ μ_0 (p - q) ; $\\overline{(\\Delta M)^2}$：λ μ_0 ^(2)\n(3) 比：1/(4 p q)"
   },
   "methods": [],
   "tags": [
@@ -796,16 +796,16 @@
   "theme": "全磁化を固定した系の部分系のゆらぎ",
   "topic": "全磁化を固定した系の部分系のゆらぎ",
   "statement": {
-   "tex": "磁場中に，磁気モーメント $\\mu_0$ のスピン $1/2$ 粒子が 10 個あり，全体は孤立していて全磁気モーメントが $4\\mu_0$（上向き 7 個，下向き 3 個）に固定されている．許される微視的状態はすべて等確率とする．このうち特定の 4 個の粒子からなる部分系 A を考え，その磁気モーメントを $M_A$ とする．\n\\begin{enumerate}\n\\item A の 4 個がすべて上向きである確率を求めよ．\n\\item $\\overline{M_A}$ を求めよ．\n\\item $M_A$ の分散を求め，各粒子が独立に確率 $0.7$ で上向きとした場合の分散と比較せよ．比はどのような簡単な形に書けるか．\n\\end{enumerate}"
+   "tex": "磁場中に，磁気モーメント $\\mu_0$ のスピン $1/2$ 粒子が $N$ 個あり，全体は孤立していて上向きの数が $K$ 個（下向き $N-K$ 個）に固定されている．許される微視的状態はすべて等確率とする．このうち特定の $m$ 個の粒子からなる部分系 A を考え，その磁気モーメントを $M_A$ とする．\n\\begin{enumerate}\n\\item A の特定の 1 個が上向きである確率 $p_1$ と，A の特定の 2 個がともに上向きである確率 $p_2$ を求めよ．\n\\item $\\overline{M_A}$ を求めよ．\n\\item $M_A$ の分散を求め，各粒子が独立に確率 $K/N$ で上向きとした場合の分散と比較せよ．比はどのような簡単な形に書けるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1/6$　(2) $\\overline{M_A}=1.6\\mu_0$　(3) $2.24\\mu_0^2$．独立なら $3.36\\mu_0^2$，比 $=\\dfrac{N-m}{N-1}=\\dfrac23$"
+   "tex": "(1) $p_1=\\dfrac KN$，$p_2=\\dfrac{K(K-1)}{N(N-1)}$　(2) $\\overline{M_A}=m\\mu_0\\left(\\dfrac{2K}{N}-1\\right)$　(3) $4m\\mu_0^2\\dfrac KN\\left(1-\\dfrac KN\\right)\\dfrac{N-m}{N-1}$，比 $=\\dfrac{N-m}{N-1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 全状態数は下向き 3 個の位置の選び方 $\\binom{10}{3}=120$．A の 4 個がすべて上向きなら下向き 3 個は残り 6 個から選ぶので $\\binom63=20$．確率 $20/120=1/6$．（あるいは A の上向き数 $j$ は超幾何分布 $P(j)=\\binom7j\\binom3{4-j}/\\binom{10}4$ に従い，$P(4)=35/210=1/6$．）\n\n(2) 各粒子が上向きである確率は対称性から $7/10$．$M_A=\\mu_0(2j-4)$，$\\bar j=4\\times0.7=2.8$ より $\\overline{M_A}=\\mu_0(5.6-4)=1.6\\mu_0$．\n\n(3) 超幾何分布の分散は $\\mathrm{Var}\\,j=m\\frac KN\\left(1-\\frac KN\\right)\\frac{N-m}{N-1}$（$N=10,K=7,m=4$）$=4\\cdot0.21\\cdot\\frac69=0.56$．よって\n\\[\n\\mathrm{Var}\\,M_A=4\\mu_0^2\\,\\mathrm{Var}\\,j=2.24\\mu_0^2 .\n\\]\n独立（2 項分布）なら $\\mathrm{Var}\\,j=4\\cdot0.21=0.84$，$\\mathrm{Var}M_A=3.36\\mu_0^2$．比は\n\\[\n\\frac{N-m}{N-1}=\\frac{6}{9}=\\frac23 .\n\\]\n全体の磁化が固定されているため，A が上向きを多くとると残りが下向きを多くとらねばならず，部分系の揺らぎが有限サイズ因子 $(N-m)/(N-1)$ だけ抑えられる．$N\\to\\infty$（残りが熱浴）でこの因子は $1$ になり，独立な（正準的な）結果に戻る．"
+    "tex": "(1) 対称性から各粒子が上向きである確率は $p_1=\\boldsymbol{\\dfrac KN}$．2 個がともに上向きなのは，1 個目が上向き（$K/N$）で，残り $N-1$ 個中 $K-1$ 個の上向きから 2 個目が選ばれる場合なので $p_2=\\boldsymbol{\\dfrac{K(K-1)}{N(N-1)}}$．$p_2<p_1^2$ で，上向き同士は負の相関をもつ．\n\n(2) A の上向き数を $j=\\sum_{i\\in A}\\sigma_i$（$\\sigma_i=1$ が上向き）とすると $\\bar j=mK/N$．$M_A=\\mu_0(2j-m)$ より\n\\[\\overline{M_A}=\\boldsymbol{m\\mu_0\\left(\\frac{2K}{N}-1\\right)}.\\]\n\n(3) $\\overline{j^2}=\\sum_i\\overline{\\sigma_i}+\\sum_{i\\ne k}\\overline{\\sigma_i\\sigma_k}=mp_1+m(m-1)p_2$ より\n\\[\\mathrm{Var}\\,j=mp_1+m(m-1)p_2-m^2p_1^2=m\\frac KN\\left(1-\\frac KN\\right)\\frac{N-m}{N-1}\\]\n（超幾何分布の分散）．よって\n\\[\n\\mathrm{Var}\\,M_A=4\\mu_0^2\\,\\mathrm{Var}\\,j=\\boldsymbol{4m\\mu_0^2\\frac KN\\left(1-\\frac KN\\right)\\frac{N-m}{N-1}} .\n\\]\n独立（2 項分布）なら $\\mathrm{Var}\\,M_A=4m\\mu_0^2\\frac KN(1-\\frac KN)$ なので，比は\n\\[\n\\boldsymbol{\\frac{N-m}{N-1}}\n\\]\n（$N=10$，$K=7$，$m=4$ なら $2/3$）．全体の磁化が固定されているため，A が上向きを多くとると残りが下向きを多くとらねばならず，部分系の揺らぎが有限サイズ因子 $(N-m)/(N-1)$ だけ抑えられる．$N\\to\\infty$（残りが熱浴）でこの因子は $1$ になり，独立な（正準的な）結果に戻る．"
    }
   ],
   "idea": {
@@ -813,7 +813,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 1/6\n(2) $\\overline{M_A}$：1.6 μ_0\n(3) 記述"
+   "spec": "(1) $p_1$：K/N ; $p_2$：K (K-1)/(N (N-1))\n(2) $\\overline{M_A}$：m μ_0 (2 K/N-1)\n(3) 分散：4 m μ_0^2 (K/N) (1-K/N) (N-m)/(N-1) ; 比：(N-m)/(N-1)"
   },
   "methods": [],
   "tags": [
@@ -846,16 +846,16 @@
   "theme": "2項分布のガウス近似の精度と破綻",
   "topic": "2項分布のガウス近似の精度と破綻",
   "statement": {
-   "tex": "$N$ 個のスピン $1/2$ 粒子が独立に確率 $p$ で上向き，$q=1-p$ で下向きのとき，上向きの数 $n$ の分布 $P(n)$ を考える．$\\bar n=Np$．\n\\begin{enumerate}\n\\item Stirling 公式の主要部 $\\log n!\\simeq n\\log n-n$ を用いて $\\log P(n)$ を $n-\\bar n$ について 3 次まで展開し，3 次の係数を求めよ．$p=q$ のときこれが消えることを確かめ，分布の非対称性（歪度）との関係を述べよ．\n\\item $p=q=\\frac12$，$N$ 偶数のとき，中央の確率 $P(N/2)$ を $\\log n!\\simeq n\\log n-n+\\frac12\\log(2\\pi n)+\\frac1{12n}$ を用いて $1/N$ の 1 次まで求めよ．$N=100$ の値を数値で比較せよ．\n\\item 同じく $N=100$，$p=\\frac12$ で，全部が上向きになる確率 $P(N)$ を，正確な値とガウス近似 $P(n)\\simeq(2\\pi Npq)^{-1/2}e^{-(n-\\bar n)^2/2Npq}$ で比べよ．比 $P_\\text{正確}/P_\\text{ガウス}$ はおよそいくらか．\n\\end{enumerate}"
+   "tex": "$N$ 個のスピン $1/2$ 粒子が独立に確率 $p$ で上向き，$q=1-p$ で下向きのとき，上向きの数 $n$ の分布 $P(n)$ を考える．$\\bar n=Np$．\n\\begin{enumerate}\n\\item Stirling 公式の主要部 $\\log n!\\simeq n\\log n-n$ を用いて $\\log P(n)$ を $n-\\bar n$ について 3 次まで展開し，3 次の係数を求めよ．$p=q$ のときこれが消えることを確かめ，分布の非対称性（歪度）との関係を述べよ．\n\\item $p=q=\\frac12$，$N$ 偶数のとき，中央の確率 $P(N/2)$ を $\\log n!\\simeq n\\log n-n+\\frac12\\log(2\\pi n)+\\frac1{12n}$ を用いて $1/N$ の 1 次まで求めよ．ガウス近似の値 $\\sqrt{2/(\\pi N)}$ に対する相対的な補正はいくらか．\n\\item 同じく $p=\\frac12$ で，全部が上向きになる確率 $P(N)$ を，正確な値とガウス近似 $P(n)\\simeq(2\\pi Npq)^{-1/2}e^{-(n-\\bar n)^2/2Npq}$ で比べよ．比 $P_\\text{正確}/P_\\text{ガウス}$ を $N$ で表し，$N$ が大きいときのふるまいを述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 3 次の係数 $\\dfrac{q-p}{6N^2p^2q^2}$　(2) $P(N/2)\\simeq\\sqrt{\\dfrac{2}{\\pi N}}\\left(1-\\dfrac1{4N}\\right)$，$N=100$ で $0.0795890$（正確値 $0.0795892$，ガウス $0.0797885$）　(3) 比 $\\approx5\\times10^{-8}$"
+   "tex": "(1) 3 次の係数 $\\dfrac{q-p}{6N^2p^2q^2}$　(2) $P(N/2)\\simeq\\sqrt{\\dfrac{2}{\\pi N}}\\left(1-\\dfrac1{4N}\\right)$，相対補正 $-\\dfrac{1}{4N}$　(3) $\\dfrac{P_\\text{正確}}{P_\\text{ガウス}}=\\sqrt{\\dfrac{\\pi N}{2}}\\left(\\dfrac{\\sqrt e}{2}\\right)^N$（$N$ とともに指数関数的に 0 へ）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\log P=\\text{const}-(N-n)\\log(N-n)-n\\log n+n\\log p+(N-n)\\log q$．\n\\[\n\\frac{d^2\\log P}{dn^2}=-\\frac1n-\\frac1{N-n},\\qquad \\frac{d^3\\log P}{dn^3}=\\frac1{n^2}-\\frac1{(N-n)^2}.\n\\]\n$n=Np$ で 3 階微分は $\\dfrac{1}{N^2}\\left(\\dfrac1{p^2}-\\dfrac1{q^2}\\right)=\\dfrac{q^2-p^2}{N^2p^2q^2}=\\dfrac{q-p}{N^2p^2q^2}$．よって\n\\[\n\\log P(n)\\simeq\\log P(\\bar n)-\\frac{(n-\\bar n)^2}{2Npq}+\\frac{q-p}{6N^2p^2q^2}(n-\\bar n)^3+\\cdots .\n\\]\n$p=q$ で 3 次項は消える．$n-\\bar n\\sim\\sqrt{Npq}$ で 3 次項の大きさは $\\sim(q-p)/\\sqrt{Npq}$ で，これは 2 項分布の歪度 $(q-p)/\\sqrt{Npq}$ と同じオーダー．$N\\to\\infty$ で $N^{-1/2}$ のように消え，ガウス近似が正当化される．\n\n(2) $P(N/2)=\\dfrac{N!}{[(N/2)!]^2}2^{-N}$．補正つき Stirling を代入すると $n\\log n-n$ の部分と $2^{-N}$ が打ち消し，\n\\[\n\\log P=\\frac12\\log(2\\pi N)-\\log(\\pi N)+\\frac1{12N}-\\frac{2}{12(N/2)}=\\frac12\\log\\frac{2}{\\pi N}-\\frac1{4N}.\n\\]\nよって $P(N/2)\\simeq\\sqrt{2/(\\pi N)}\\,(1-1/4N)$．$N=100$：ガウス近似 $\\sqrt{2/100\\pi}=0.0797885$，補正後 $0.0795890$，正確値 $\\binom{100}{50}2^{-100}=0.0795892$．ガウス近似の相対誤差 $0.25\\%$ が $1/(4N)$ でほぼ完全に説明される．\n\n(3) 正確値は $2^{-100}=7.9\\times10^{-31}$．ガウス近似は $n-\\bar n=50$，$Npq=25$ で $0.0798\\,e^{-50}=1.54\\times10^{-23}$．\n\\[\n\\log\\frac{P_\\text{正確}}{P_\\text{ガウス}}=-100\\log2-\\log0.07979+50\\approx-16.79,\\quad \\frac{P_\\text{正確}}{P_\\text{ガウス}}\\approx5\\times10^{-8}.\n\\]\n中心から $\\sqrt N$ より遠く離れた裾では 3 次以上の項が無視できず，ガウス近似は桁違いに過大評価する．裾の正しい形は $\\log P\\simeq-N\\,D(n/N\\|p)$（相対エントロピー）で与えられる（大偏差）．"
+    "tex": "(1) $\\log P=\\text{const}-(N-n)\\log(N-n)-n\\log n+n\\log p+(N-n)\\log q$．\n\\[\n\\frac{d^2\\log P}{dn^2}=-\\frac1n-\\frac1{N-n},\\qquad \\frac{d^3\\log P}{dn^3}=\\frac1{n^2}-\\frac1{(N-n)^2}.\n\\]\n$n=Np$ で 3 階微分は $\\dfrac{1}{N^2}\\left(\\dfrac1{p^2}-\\dfrac1{q^2}\\right)=\\dfrac{q^2-p^2}{N^2p^2q^2}=\\dfrac{q-p}{N^2p^2q^2}$．よって\n\\[\n\\log P(n)\\simeq\\log P(\\bar n)-\\frac{(n-\\bar n)^2}{2Npq}+\\boldsymbol{\\frac{q-p}{6N^2p^2q^2}}(n-\\bar n)^3+\\cdots .\n\\]\n$p=q$ で 3 次項は消える．$n-\\bar n\\sim\\sqrt{Npq}$ で 3 次項の大きさは $\\sim(q-p)/\\sqrt{Npq}$ で，これは 2 項分布の歪度 $(q-p)/\\sqrt{Npq}$ と同じオーダー．$N\\to\\infty$ で $N^{-1/2}$ のように消え，ガウス近似が正当化される．\n\n(2) $P(N/2)=\\dfrac{N!}{[(N/2)!]^2}2^{-N}$．補正つき Stirling を代入すると $n\\log n-n$ の部分と $2^{-N}$ が打ち消し，\n\\[\n\\log P=\\frac12\\log(2\\pi N)-\\log(\\pi N)+\\frac1{12N}-\\frac{2}{12(N/2)}=\\frac12\\log\\frac{2}{\\pi N}-\\frac1{4N}.\n\\]\nよって $P(N/2)\\simeq\\boldsymbol{\\sqrt{\\dfrac{2}{\\pi N}}\\left(1-\\dfrac1{4N}\\right)}$，ガウス近似に対する相対補正は $\\boldsymbol{-\\dfrac1{4N}}$．$N=100$ ではガウス近似の誤差 0.25\\% がこの補正でほぼ完全に説明される．\n\n(3) 正確値は $P(N)=2^{-N}$．ガウス近似は $n-\\bar n=N/2$，$Npq=N/4$ で $\\sqrt{\\dfrac{2}{\\pi N}}e^{-N/2}$．比は\n\\[\n\\frac{P_\\text{正確}}{P_\\text{ガウス}}=\\boldsymbol{\\sqrt{\\frac{\\pi N}{2}}\\left(\\frac{\\sqrt e}{2}\\right)^N}.\n\\]\n$\\sqrt e/2\\approx0.82<1$ なので $N$ が大きいと指数関数的に 0 に近づく（$N=100$ で約 $5\\times10^{-8}$）．中心から $\\sqrt N$ より遠く離れた裾では 3 次以上の項が無視できず，ガウス近似は桁違いに過大評価する．裾の正しい形は $\\log P\\simeq-N\\,D(n/N\\|p)$（相対エントロピー）で与えられる（大偏差）．"
    }
   ],
   "idea": {
@@ -863,7 +863,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 比：≈5e-8"
+   "spec": "(1) 3次の係数：(q-p)/(6 N^2 p^2 q^2)\n(2) $P(N/2)$：sqrt(2/(pi N)) (1-1/(4 N)) ; 相対補正：-1/(4 N)\n(3) 比：sqrt(pi N/2) (sqrt(e)/2)^N"
   },
   "methods": [],
   "tags": [
@@ -896,16 +896,16 @@
   "theme": "量子振動子系での温度とエネルギーの関係",
   "topic": "量子振動子系での温度とエネルギーの関係",
   "statement": {
-   "tex": "振動数 $\\omega$ の 1 次元調和振動子 $N$ 個からなる系（Einstein 固体）を考える．エネルギーを基底状態から測り $E=M\\hbar\\omega$（$M$ は全量子数）とすると，状態数は $W(E)=\\dfrac{(M+N-1)!}{M!\\,(N-1)!}$ である．$M,N\\gg1$ とする．\n\\begin{enumerate}\n\\item Stirling の公式を用いて $\\log W$ を求め，統計力学的温度 $T$ を $E/N$ の関数として表せ．$T$ が $E$ の単調増加関数であることを確かめよ．\n\\item 高温 $k_BT\\gg\\hbar\\omega$ で $E/N$ を $k_BT$ について $\\hbar\\omega/k_BT$ の 1 次まで展開せよ．「$k_BT$ が 1 振動子あたりのエネルギーに比例する」という関係が厳密に成り立つためには，エネルギーの原点をどこに選べばよいか．\n\\item 低温で $E/N=0.01\\hbar\\omega$ のとき，$k_BT$ は $E/N$ の何倍か．\n\\end{enumerate}"
+   "tex": "振動数 $\\omega$ の 1 次元調和振動子 $N$ 個からなる系（Einstein 固体）を考える．エネルギーを基底状態から測り $E=M\\hbar\\omega$（$M$ は全量子数）とすると，状態数は $W(E)=\\dfrac{(M+N-1)!}{M!\\,(N-1)!}$ である．$M,N\\gg1$ とする．\n\\begin{enumerate}\n\\item Stirling の公式を用いて $\\log W$ を求め，統計力学的温度 $T$ を $E/N$ の関数として表せ．$T$ が $E$ の単調増加関数であることを確かめ，$E/N$ を $T$ で表せ．\n\\item 高温 $k_BT\\gg\\hbar\\omega$ で $E/N$ を $k_BT$ について $\\hbar\\omega/k_BT$ の 1 次まで展開せよ．「$k_BT$ が 1 振動子あたりのエネルギーに比例する」という関係が厳密に成り立つためには，エネルギーの原点をどこに選べばよいか．\n\\item 低温で $E/N=\\eta\\hbar\\omega$（$\\eta\\ll1$）のとき，$k_BT$ は $E/N$ の何倍か．$\\eta$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac1{k_BT}=\\dfrac1{\\hbar\\omega}\\log\\left(1+\\dfrac{N\\hbar\\omega}{E}\\right)$，すなわち $\\dfrac EN=\\dfrac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}$　(2) $\\dfrac EN\\simeq k_BT-\\dfrac{\\hbar\\omega}2+\\dfrac{(\\hbar\\omega)^2}{12k_BT}$．原点を基底状態より $N\\hbar\\omega/2$ 下（古典的な最低点＝ポテンシャルの底）に選ぶ：$E+\\frac N2\\hbar\\omega\\simeq Nk_BT$　(3) 約 $21.7$ 倍"
+   "tex": "(1) $\\dfrac1{k_BT}=\\dfrac1{\\hbar\\omega}\\log\\left(1+\\dfrac{N\\hbar\\omega}{E}\\right)$，すなわち $\\dfrac EN=\\dfrac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}$　(2) $\\dfrac EN\\simeq k_BT-\\dfrac{\\hbar\\omega}2+\\dfrac{(\\hbar\\omega)^2}{12k_BT}$．原点を基底状態より $N\\hbar\\omega/2$ 下（古典的な最低点＝ポテンシャルの底）に選ぶ　(3) $\\dfrac{1}{\\eta\\ln(1+1/\\eta)}$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) Stirling 公式（$N-1\\simeq N$）より\n\\[\n\\log W\\simeq(M+N)\\log(M+N)-M\\log M-N\\log N .\n\\]\n$\\dfrac{\\partial\\log W}{\\partial E}=\\dfrac1{\\hbar\\omega}\\dfrac{\\partial\\log W}{\\partial M}=\\dfrac1{\\hbar\\omega}\\log\\dfrac{M+N}{M}$．よって\n\\[\n\\frac1{k_BT}=\\frac1{\\hbar\\omega}\\log\\left(1+\\frac{N}{M}\\right),\\qquad \\frac EN=\\frac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}.\n\\]\n$E$ が増すと $\\log(1+N/M)$ は減少するので $T$ は単調増加．$\\partial^2\\log W/\\partial E^2=-\\dfrac{N}{(\\hbar\\omega)^2M(M+N)}<0$ で，エントロピーは上に凸．\n\n(2) $x=\\hbar\\omega/k_BT\\ll1$ で $\\dfrac{1}{e^x-1}=\\dfrac1x-\\dfrac12+\\dfrac{x}{12}+O(x^3)$．よって\n\\[\n\\frac EN\\simeq k_BT-\\frac{\\hbar\\omega}{2}+\\frac{(\\hbar\\omega)^2}{12k_BT}.\n\\]\n1 次までの精度で $\\dfrac{E+N\\hbar\\omega/2}{N}=k_BT$．すなわちエネルギーを基底状態からではなく，ゼロ点エネルギー $\\frac12\\hbar\\omega$ だけ下（古典振動子の最低エネルギー＝ポテンシャルの底）から測れば，$\\log W\\simeq N\\log(E-E_0)$，$E_0=-\\frac N2\\hbar\\omega$ の形になり $k_BT=(E-E_0)/N$ が成り立つ．〔10〕の $E_0$ は「基底エネルギー」ではなく「古典的極限での最低エネルギー」と読むべきことがわかる．\n\n(3) $M/N=0.01$ より $\\dfrac{k_BT}{\\hbar\\omega}=\\dfrac1{\\log101}=0.2167$．$k_BT/(E/N)=21.7$．低温では $k_BT\\simeq\\hbar\\omega/\\log(N\\hbar\\omega/E)$ で，$T$ は $E$ に比例せず対数的にしか依存しない．"
+    "tex": "(1) Stirling 公式（$N-1\\simeq N$）より\n\\[\n\\log W\\simeq(M+N)\\log(M+N)-M\\log M-N\\log N .\n\\]\n$\\dfrac{\\partial\\log W}{\\partial E}=\\dfrac1{\\hbar\\omega}\\dfrac{\\partial\\log W}{\\partial M}=\\dfrac1{\\hbar\\omega}\\log\\dfrac{M+N}{M}$．よって\n\\[\n\\frac1{k_BT}=\\frac1{\\hbar\\omega}\\log\\left(1+\\frac{N}{M}\\right),\\qquad \\frac EN=\\boldsymbol{\\frac{\\hbar\\omega}{e^{\\hbar\\omega/k_BT}-1}}.\n\\]\n$E$ が増すと $\\log(1+N/M)$ は減少するので $T$ は単調増加．$\\partial^2\\log W/\\partial E^2=-\\dfrac{N}{(\\hbar\\omega)^2M(M+N)}<0$ で，エントロピーは上に凸．\n\n(2) $x=\\hbar\\omega/k_BT\\ll1$ で $\\dfrac{1}{e^x-1}=\\dfrac1x-\\dfrac12+\\dfrac{x}{12}+O(x^3)$．よって\n\\[\n\\frac EN\\simeq\\boldsymbol{k_BT-\\frac{\\hbar\\omega}{2}+\\frac{(\\hbar\\omega)^2}{12k_BT}}.\n\\]\n1 次までの精度で $\\dfrac{E+N\\hbar\\omega/2}{N}=k_BT$．すなわちエネルギーを基底状態からではなく，ゼロ点エネルギー $\\frac12\\hbar\\omega$ だけ下（古典振動子の最低エネルギー＝ポテンシャルの底）から測れば，$\\log W\\simeq N\\log(E-E_0)$，$E_0=-\\frac N2\\hbar\\omega$ の形になり $k_BT=(E-E_0)/N$ が成り立つ．$E_0$ は「基底エネルギー」ではなく「古典的極限での最低エネルギー」と読むべきことがわかる．\n\n(3) $M/N=\\eta$ より $\\dfrac{k_BT}{\\hbar\\omega}=\\dfrac1{\\ln(1+1/\\eta)}$．したがって\n\\[\\frac{k_BT}{E/N}=\\boldsymbol{\\frac{1}{\\eta\\ln(1+1/\\eta)}}\\]\n（$\\eta=0.01$ で約 22 倍）．低温では $k_BT\\simeq\\hbar\\omega/\\ln(N\\hbar\\omega/E)$ で，$T$ は $E$ に比例せず対数的にしか依存しない．"
    }
   ],
   "idea": {
@@ -913,7 +913,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $E/N$：hbar ω/(e^(hbar ω/(k_B T))-1)\n(2) $E/N$：k_B T-hbar ω/2+(hbar ω)^2/(12 k_B T)\n(3) 倍率：1/(η ln(1+1/η))"
   },
   "methods": [],
   "tags": [
@@ -946,16 +946,16 @@
   "theme": "有限な物体の吸熱とエントロピーの2次補正",
   "topic": "有限な物体の吸熱とエントロピーの2次補正",
   "statement": {
-   "tex": "状態数が $W(E)\\propto(E-E_0)^f$ で与えられる物体（$f\\gg1$）を考える．平均エネルギー $\\bar E$ のとき温度は $k_BT=(\\bar E-E_0)/f$，熱容量は $C=fk_B$ である．\n\\begin{enumerate}\n\\item 物体が熱量 $Q$ を吸収したときの統計力学的エントロピーの変化 $\\Delta S$ を厳密に求めよ．\n\\item $\\Delta S$ を $Q$ について 2 次まで展開し，$\\Delta S\\simeq\\dfrac QT-\\dfrac{Q^2}{2CT^2}$ となることを示せ．\n\\item 同じ熱容量 $C$ をもつ 2 物体（温度 $T_A=400\\,$K，$T_B=300\\,$K）の間で A から B に熱 $Q$ が移る．(2) の近似で全エントロピー変化を $Q$ の 2 次式として書き，それを最大にする $Q$ を求めよ．厳密な平衡での移動熱量 $Q_\\text{eq}$ およびそのときの全エントロピー変化と比較せよ（$C$ を単位として数値で答えよ）．\n\\end{enumerate}"
+   "tex": "状態数が $W(E)\\propto(E-E_0)^f$ で与えられる物体（$f\\gg1$）を考える．平均エネルギー $\\bar E$ のとき温度は $k_BT=(\\bar E-E_0)/f$，熱容量は $C=fk_B$ である．\n\\begin{enumerate}\n\\item 物体が熱量 $Q$ を吸収したときの統計力学的エントロピーの変化 $\\Delta S$ を厳密に求め，$C,Q,T$ で表せ．\n\\item $\\Delta S$ を $Q$ について 2 次まで展開し，$\\Delta S\\simeq\\dfrac QT-\\dfrac{Q^2}{2CT^2}$ となることを示せ．\n\\item 同じ熱容量 $C$ をもつ 2 物体（温度 $T_A>T_B$）の間で A から B に熱 $Q$ が移る．(2) の近似で全エントロピー変化を $Q$ の 2 次式として書き，それを最大にする $Q^*$ とその最大値 $\\Delta S^*$ を求めよ．厳密な平衡での移動熱量 $Q_e$ およびそのときの全エントロピー変化 $\\Delta S_e$ も求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta S=fk_B\\log\\left(1+\\dfrac{Q}{\\bar E-E_0}\\right)=C\\log\\left(1+\\dfrac Q{CT}\\right)$　(3) 近似：$Q^*=48C\\,$（$\\Delta S_{\\rm tot}=0.0200C$），厳密：$Q_\\text{eq}=50C\\,$（$\\Delta S_{\\rm tot}=C\\log\\frac{350^2}{400\\cdot300}=0.0206C$）"
+   "tex": "(1) $\\Delta S=C\\log\\left(1+\\dfrac Q{CT}\\right)$　(2) 略　(3) $Q^*=\\dfrac{CT_AT_B(T_A-T_B)}{T_A^2+T_B^2}$，$\\Delta S^*=\\dfrac{C(T_A-T_B)^2}{2(T_A^2+T_B^2)}$；$Q_e=\\dfrac{C(T_A-T_B)}{2}$，$\\Delta S_e=C\\log\\dfrac{(T_A+T_B)^2}{4T_AT_B}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $S=k_B\\log W=fk_B\\log(E-E_0)+\\text{const.}$ より\n\\[\n\\Delta S=fk_B\\log\\frac{\\bar E+Q-E_0}{\\bar E-E_0}=C\\log\\left(1+\\frac{Q}{CT}\\right).\n\\]\n(2) $u=Q/(CT)$ として $\\log(1+u)=u-u^2/2+\\cdots$．\n\\[\n\\Delta S\\simeq C\\left(\\frac Q{CT}-\\frac{Q^2}{2C^2T^2}\\right)=\\frac QT-\\frac{Q^2}{2CT^2}.\n\\]\n第 1 項が熱力学の $dS=d'Q/T$，第 2 項は吸熱中に温度が $\\Delta T=Q/C$ 上がることの補正（$\\int dQ/T(Q)$ の 2 次項）．$|Q|\\ll CT=\\bar E-E_0$ なら無視できる．\n\n(3) A は $-Q$，B は $+Q$ を吸収するので\n\\[\n\\Delta S_{\\rm tot}\\simeq Q\\left(\\frac1{T_B}-\\frac1{T_A}\\right)-\\frac{Q^2}{2C}\\left(\\frac1{T_A^2}+\\frac1{T_B^2}\\right).\n\\]\n$Q$ で微分して $0$ とおくと\n\\[\nQ^*=C\\frac{1/T_B-1/T_A}{1/T_A^2+1/T_B^2}=C\\frac{1/1200}{1/160000+1/90000}=48C\\ (\\mathrm{K}),\n\\]\n$\\Delta S_{\\rm tot}(Q^*)=48C/1200-\\frac{48^2C}{2}\\cdot1.736\\times10^{-5}=0.0200C$．\n厳密には熱容量一定で共通温度 $350\\,$K となり，$Q_\\text{eq}=C(400-350)=50C$，\n$\\Delta S_{\\rm tot}=C\\left(\\log\\frac{350}{400}+\\log\\frac{350}{300}\\right)=C\\log\\frac{122500}{120000}=0.0206C$．\n2 次近似は温度差 $25\\%$ でも移動熱量を $4\\%$，エントロピー生成を $3\\%$ 程度の誤差で与える．エントロピー最大が熱平衡を決めるという原理が，2 次近似のレベルですでに機能している．"
+    "tex": "(1) $S=k_B\\log W=fk_B\\log(E-E_0)+\\text{const.}$ より\n\\[\n\\Delta S=fk_B\\log\\frac{\\bar E+Q-E_0}{\\bar E-E_0}=\\boldsymbol{C\\log\\left(1+\\frac{Q}{CT}\\right)}.\n\\]\n(2) $u=Q/(CT)$ として $\\log(1+u)=u-u^2/2+\\cdots$．\n\\[\n\\Delta S\\simeq C\\left(\\frac Q{CT}-\\frac{Q^2}{2C^2T^2}\\right)=\\frac QT-\\frac{Q^2}{2CT^2}.\n\\]\n第 1 項が熱力学の $dS=d'Q/T$，第 2 項は吸熱中に温度が $\\Delta T=Q/C$ 上がることの補正（$\\int dQ/T(Q)$ の 2 次項）．$|Q|\\ll CT=\\bar E-E_0$ なら無視できる．\n\n(3) A は $-Q$，B は $+Q$ を吸収するので\n\\[\n\\Delta S_{\\rm tot}\\simeq Q\\left(\\frac1{T_B}-\\frac1{T_A}\\right)-\\frac{Q^2}{2C}\\left(\\frac1{T_A^2}+\\frac1{T_B^2}\\right).\n\\]\n$Q$ で微分して $0$ とおくと\n\\[\nQ^*=C\\frac{1/T_B-1/T_A}{1/T_A^2+1/T_B^2}=\\boldsymbol{\\frac{CT_AT_B(T_A-T_B)}{T_A^2+T_B^2}},\n\\]\n最大値は $\\Delta S^*=\\frac12Q^*\\left(\\frac1{T_B}-\\frac1{T_A}\\right)=\\boldsymbol{\\dfrac{C(T_A-T_B)^2}{2(T_A^2+T_B^2)}}$．\n厳密には熱容量一定で共通温度 $(T_A+T_B)/2$ となり，$Q_e=\\boldsymbol{\\dfrac{C(T_A-T_B)}{2}}$，\n\\[\\Delta S_e=C\\left(\\log\\frac{T_A+T_B}{2T_A}+\\log\\frac{T_A+T_B}{2T_B}\\right)=\\boldsymbol{C\\log\\frac{(T_A+T_B)^2}{4T_AT_B}}.\\]\n$Q^*/Q_e=\\frac{2T_AT_B}{T_A^2+T_B^2}$ は温度差が小さいと 1 に近い（$T_A=400$ K，$T_B=300$ K でも 0.96）．エントロピー最大が熱平衡を決めるという原理が，2 次近似のレベルですでに機能している．"
    }
   ],
   "idea": {
@@ -963,7 +963,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\Delta S$：C ln(1+Q/(C T))\n(2) 記述\n(3) $Q^*$：C T_A T_B (T_A-T_B)/(T_A^2+T_B^2) ; $\\Delta S^*$：C (T_A-T_B)^2/(2 (T_A^2+T_B^2)) ; $Q_e$：C (T_A-T_B)/2 ; $\\Delta S_e$：C ln((T_A+T_B)^2/(4 T_A T_B))"
   },
   "methods": [],
   "tags": [
@@ -996,24 +996,24 @@
   "theme": "有限な熱浴によるBoltzmann因子の補正",
   "topic": "有限な熱浴によるBoltzmann因子の補正",
   "statement": {
-   "tex": "エネルギー準位 $0$ と $\\varepsilon$（縮退なし）をもつ系 A が，状態数 $W'(E')\\propto E'^{f'}$ の理想気体 A$'$（熱浴）と熱接触している．A+A$'$ は孤立していて全エネルギーは $E^*$（$E^*\\gg\\varepsilon$）である．\n\\begin{enumerate}\n\\item A がエネルギー $\\varepsilon$ の状態にある確率 $P_1$ と $0$ の状態にある確率 $P_0$ の比を厳密に求めよ．\n\\item $\\beta\\equiv[\\partial\\log W'/\\partial E']_{E'=E^*}=f'/E^*$ とおく．$\\beta$ を一定にして $f'\\to\\infty$ とすると Boltzmann 因子 $e^{-\\beta\\varepsilon}$ に帰着することを示し，$\\log(P_1/P_0)$ の $1/f'$ の 1 次の補正を求めよ．\n\\item $f'=10$，$E^*=10\\varepsilon$ のとき，$P_1/P_0$ の厳密値と $e^{-\\beta\\varepsilon}$ を比べよ．\n\\end{enumerate}"
+   "tex": "エネルギー準位 $0$ と $\\varepsilon$（縮退なし）をもつ系 A が，状態数 $W'(E')\\propto E'^{f}$ の理想気体 A$'$（熱浴）と熱接触している．A+A$'$ は孤立していて全エネルギーは $E_t$（$E_t\\gg\\varepsilon$）である．\n\\begin{enumerate}\n\\item A がエネルギー $\\varepsilon$ の状態にある確率 $P_1$ と $0$ の状態にある確率 $P_0$ の比を厳密に求めよ．\n\\item $\\beta\\equiv[\\partial\\log W'/\\partial E']_{E'=E_t}=f/E_t$ とおく．$\\beta$ を一定にして $f\\to\\infty$ とすると Boltzmann 因子 $e^{-\\beta\\varepsilon}$ に帰着することを示し，$\\log(P_1/P_0)$ の $1/f$ の 1 次の補正を求めよ．\n\\item $\\beta\\varepsilon=1$（$E_t=f\\varepsilon$）のとき，厳密な $P_1/P_0$ と Boltzmann 因子 $e^{-1}$ の比 $r$ を $f$ で表し，$1/f$ の 1 次まで展開せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P_1/P_0=(1-\\varepsilon/E^*)^{f'}$　(2) $\\log\\dfrac{P_1}{P_0}=-\\beta\\varepsilon-\\dfrac{(\\beta\\varepsilon)^2}{2f'}+O(f'^{-2})$　(3) 厳密 $0.9^{10}=0.3487$，Boltzmann $e^{-1}=0.3679$"
+   "tex": "(1) $P_1/P_0=(1-\\varepsilon/E_t)^{f}$　(2) $\\log\\dfrac{P_1}{P_0}=-\\beta\\varepsilon-\\dfrac{(\\beta\\varepsilon)^2}{2f}+O(f^{-2})$　(3) $r=e\\left(1-\\dfrac1{f}\\right)^{f}\\simeq1-\\dfrac{1}{2f}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) A が状態 $r$ にあるとき熱浴のエネルギーは $E^*-E_r$ で，等確率の原理から $P_r\\propto W'(E^*-E_r)$．\n\\[\n\\frac{P_1}{P_0}=\\frac{(E^*-\\varepsilon)^{f'}}{E^{*f'}}=\\left(1-\\frac{\\varepsilon}{E^*}\\right)^{f'}.\n\\]\n(2) $\\varepsilon/E^*=\\beta\\varepsilon/f'$ より\n\\[\n\\log\\frac{P_1}{P_0}=f'\\log\\left(1-\\frac{\\beta\\varepsilon}{f'}\\right)=-\\beta\\varepsilon-\\frac{(\\beta\\varepsilon)^2}{2f'}-\\frac{(\\beta\\varepsilon)^3}{3f'^2}-\\cdots .\n\\]\n$f'\\to\\infty$ で $P_1/P_0\\to e^{-\\beta\\varepsilon}$（〔12〕の結果）．1 次の補正 $-(\\beta\\varepsilon)^2/2f'$ は $\\log W'$ の 2 階微分 $\\partial^2\\log W'/\\partial E'^2=-\\beta^2/f'$ から来ており，熱浴の熱容量 $C'=f'k_B$ が有限であることの効果．励起状態は Boltzmann 因子より常に出にくい（熱浴がエネルギーを渡すと冷えるため）．\n\n(3) $\\beta\\varepsilon=1$：厳密値 $0.9^{10}=0.3487$，Boltzmann 因子 $e^{-1}=0.3679$．1 次補正を含めると $e^{-1-1/20}=0.350$ で，厳密値をよく再現する．"
+    "tex": "(1) A が状態 $r$ にあるとき熱浴のエネルギーは $E_t-E_r$ で，等確率の原理から $P_r\\propto W'(E_t-E_r)$．\n\\[\n\\frac{P_1}{P_0}=\\frac{(E_t-\\varepsilon)^{f}}{E_t^{f}}=\\boldsymbol{\\left(1-\\frac{\\varepsilon}{E_t}\\right)^{f}}.\n\\]\n(2) $\\varepsilon/E_t=\\beta\\varepsilon/f$ より\n\\[\n\\log\\frac{P_1}{P_0}=f\\log\\left(1-\\frac{\\beta\\varepsilon}{f}\\right)=\\boldsymbol{-\\beta\\varepsilon-\\frac{(\\beta\\varepsilon)^2}{2f}}-\\frac{(\\beta\\varepsilon)^3}{3f^2}-\\cdots .\n\\]\n$f\\to\\infty$ で $P_1/P_0\\to e^{-\\beta\\varepsilon}$．1 次の補正 $-(\\beta\\varepsilon)^2/2f$ は $\\log W'$ の 2 階微分 $\\partial^2\\log W'/\\partial E'^2=-\\beta^2/f$ から来ており，熱浴の熱容量 $C'=fk_B$ が有限であることの効果．励起状態は Boltzmann 因子より常に出にくい（熱浴がエネルギーを渡すと冷えるため）．\n\n(3) $P_1/P_0=(1-1/f)^{f}$ なので $r=\\boldsymbol{e\\left(1-\\dfrac1{f}\\right)^{f}}$．(2) より $\\log r\\simeq-\\frac{1}{2f}$，すなわち\n\\[r\\simeq\\boldsymbol{1-\\frac{1}{2f}}.\\]\n$f=10$ でも厳密値 $0.9^{10}\\approx0.349$ と $e^{-1}\\approx0.368$ の差は 5\\% 程度で，1 次補正でほぼ再現される．"
    }
   ],
   "idea": {
-   "tex": "Boltzmann 因子は $\\log W'(E^*-E_r)$ を 1 次で打ち切った結果であり，有限熱浴では 2 次の項 $-\\beta^2E_r^2/(2f')$ が補正として現れる．"
+   "tex": "Boltzmann 因子は $\\log W'(E_t-E_r)$ を 1 次で打ち切った結果であり，有限熱浴では 2 次の項 $-\\beta^2E_r^2/(2f)$ が補正として現れる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $P_1/P_0$：(1-ε/E_t)^(f)\n(2) 記述\n(3) $r$：e (1-1/f)^(f) ; 近似：1-1/(2 f)"
   },
   "methods": [],
   "tags": [
@@ -1196,16 +1196,16 @@
   "theme": "負温度のスピン系と正温度のスピン系の接触",
   "topic": "負温度のスピン系と正温度のスピン系の接触",
   "statement": {
-   "tex": "前問と同じスピン 1/2 常磁性体（モーメント $\\mu_0$，磁場 $B$）を 2 つ用意する．系 A は $N$ 個のスピンからなり，磁場を急に反転させて $\\beta_A\\mu_0B=-1$（負温度）にしてある．系 B は $2N$ 個のスピンからなり，$\\beta_B\\mu_0B=+1$ である．両者を同じ磁場 $B$ の中で熱的に接触させ（全エネルギー保存），新しい平衡に達させる．\n\\begin{enumerate}\n  \\item 接触直後，エネルギーはどちらからどちらへ流れるか．$\\partial S/\\partial E$ を用いて理由を述べよ．\n  \\item 最終状態の共通の $x_f=\\beta_f\\mu_0B$ をみたす式を求め，数値で答えよ．最終温度は正か負か．\n  \\item 全エントロピーの増加 $\\Delta S/Nk_B$ を数値で求めよ．\n  \\item 系 B のスピン数も $N$ だったら最終温度はどうなるか．\n\\end{enumerate}"
+   "tex": "スピン 1/2 常磁性体（モーメント $\\mu_0$，磁場 $B$）を 2 つ用意する．$N$ 個のスピンの系のエネルギーは $E=-N\\mu_0B\\tanh x$（$x=\\beta\\mu_0B$）である．系 A は $N$ 個のスピンからなり，磁場を急に反転させて $\\beta_A\\mu_0B=-a$（$a>0$，負温度）にしてある．系 B は $2N$ 個のスピンからなり，$\\beta_B\\mu_0B=+a$ である．両者を同じ磁場 $B$ の中で熱的に接触させ（全エネルギー保存），新しい平衡に達させる．\n\\begin{enumerate}\n  \\item 接触直後，エネルギーはどちらからどちらへ流れるか．$\\partial S/\\partial E$ を用いて理由を述べよ．\n  \\item 最終状態の共通の $x_f=\\beta_f\\mu_0B$ について $\\tanh x_f$ を $a$ で表せ．最終温度は正か負か．\n  \\item 1 スピンあたりのエントロピーを $s(x)/k_B=\\log(2\\cosh x)-x\\tanh x$ と書くとき，全エントロピーの増加 $\\Delta S$ を $s$ を用いて表し，正であることを説明せよ．\n  \\item 系 B のスピン数も $N$ だったら最終の $x_f$ はどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) A（負温度）から B へ　(2) $\\tanh x_f=\\tfrac13\\tanh1$，$x_f\\simeq0.260$，正の温度　(3) $\\Delta S/Nk_B\\simeq0.886$　(4) $x_f=0$，すなわち $T_f=\\pm\\infty$（$E=0$）"
+   "tex": "(1) A（負温度）から B へ　(2) $\\tanh x_f=\\tfrac13\\tanh a$，正の温度　(3) $\\Delta S=3N[s(x_f)-s(a)]>0$　(4) $x_f=0$，すなわち $T_f=\\pm\\infty$（$E=0$）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 全エントロピー $S_A+S_B$ の変化は $dS=(\\beta_A-\\beta_B)k_B\\,dE_A$ である（$dE_B=-dE_A$）．$\\beta_A<0<\\beta_B$ なので $dS>0$ となるのは $dE_A<0$，すなわち A から B へエネルギーが流れる．負温度の系は任意の正温度の系より「熱い」．\n\n(2) スピン $N$ 個の系のエネルギーは $E=-N\\mu_0B\\tanh x$．初めの全エネルギーは\n\\[\nE=-N\\mu_0B\\tanh(-1)-2N\\mu_0B\\tanh1=-N\\mu_0B\\tanh1 .\n\\]\n最終状態では $3N$ 個のスピンが共通の $x_f$ をもつから $-3N\\mu_0B\\tanh x_f=-N\\mu_0B\\tanh1$，\n\\[\n\\tanh x_f=\\tfrac13\\tanh1=0.2539,\\qquad x_f=0.2595 .\n\\]\n$x_f>0$ なので最終温度は正（$k_BT_f\\simeq3.85\\,\\mu_0B$）．\n\n(3) $s(x)=\\log(2\\cosh x)-x\\tanh x$ として，$s$ は偶関数で $s(\\pm1)=0.3653$，$s(0.2595)=0.6606$．\n\\[\n\\frac{\\Delta S}{Nk_B}=3s(x_f)-s(-1)-2s(1)=1.9817-1.0960=0.886>0 .\n\\]\n\n(4) 全エネルギーが $N\\mu_0B\\tanh1-N\\mu_0B\\tanh1=0$ となり $\\tanh x_f=0$．$\\beta_f=0$，すなわち $T_f=+\\infty=-\\infty$ の状態（上下のスピンが同数）に落ち着く．"
+    "tex": "(1) 全エントロピー $S_A+S_B$ の変化は $dS=(\\beta_A-\\beta_B)k_B\\,dE_A$ である（$dE_B=-dE_A$）．$\\beta_A<0<\\beta_B$ なので $dS>0$ となるのは $dE_A<0$，すなわち \\textbf{A から B へ}エネルギーが流れる．負温度の系は任意の正温度の系より「熱い」．\n\n(2) 初めの全エネルギーは\n\\[\nE=-N\\mu_0B\\tanh(-a)-2N\\mu_0B\\tanh a=-N\\mu_0B\\tanh a .\n\\]\n最終状態では $3N$ 個のスピンが共通の $x_f$ をもつから $-3N\\mu_0B\\tanh x_f=-N\\mu_0B\\tanh a$，\n\\[\n\\tanh x_f=\\boldsymbol{\\tfrac13\\tanh a} .\n\\]\n$x_f>0$ なので最終温度は\\textbf{正}．（$a=1$ なら $x_f\\approx0.26$．）\n\n(3) $s$ は偶関数なので $s(-a)=s(a)$．\n\\[\n\\Delta S=3Ns(x_f)-Ns(-a)-2Ns(a)=\\boldsymbol{3N[s(x_f)-s(a)]} .\n\\]\n$s(x)$ は $x>0$ で単調減少（$ds/dx=-k_Bx/\\cosh^2x$）であり，$0<x_f<a$ なので $\\Delta S>0$．（$a=1$ では $\\Delta S\\approx0.89Nk_B$．）\n\n(4) 全エネルギーが $N\\mu_0B\\tanh a-N\\mu_0B\\tanh a=0$ となり $\\tanh x_f=0$，$x_f=\\boldsymbol{0}$．$\\beta_f=0$，すなわち $T_f=+\\infty=-\\infty$ の状態（上下のスピンが同数）に落ち着く．"
    }
   ],
   "idea": {
@@ -1213,7 +1213,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+   "spec": "(1) 記述\n(2) $\\tanh x_f$：tanh(a)/3\n(3) 記述\n(4) $x_f$：0"
   },
   "methods": [],
   "tags": [
@@ -1347,16 +1347,16 @@
   "theme": "密度の異なる同種気体の混合と逆過程の確率",
   "topic": "密度の異なる同種気体の混合と逆過程の確率",
   "statement": {
-   "tex": "容器が仕切りで体積 $V_1,V_2$ の 2 室に分けられ，同種の理想気体の分子がそれぞれ $N_1,N_2$ 個，同じ温度で入っている．仕切りを取り除くと気体は体積 $V=V_1+V_2$ 全体に広がる（$N=N_1+N_2$）．\n\\begin{enumerate}\n  \\item 分子が区別できないことを考慮して（$N!$ の補正をして）状態数の比を考え，エントロピーの増加 $\\Delta S$ を求めよ．$\\Delta S\\ge0$ であり，等号は $N_1/V_1=N_2/V_2$ のときに限ることを示せ．\n  \\item 混合後の平衡状態で，ある瞬間に体積 $V_1$ の部分にちょうど $N_1$ 個の分子が見出される確率 $P$ を求め，$N_1,N_2\\gg1$ のとき $\\log P\\simeq-\\Delta S/k_B$ となることを示せ．\n  \\item $V_1=V_2$，$N_1=600$，$N_2=400$ のとき $\\Delta S/k_B$ と $P$ を数値で求めよ．\n\\end{enumerate}"
+   "tex": "容器が仕切りで体積 $V_1,V_2$ の 2 室に分けられ，同種の理想気体の分子がそれぞれ $N_1,N_2$ 個，同じ温度で入っている．仕切りを取り除くと気体は体積 $V=V_1+V_2$ 全体に広がる（$N=N_1+N_2$）．\n\\begin{enumerate}\n  \\item 分子が区別できないことを考慮して（$N!$ の補正をして）状態数の比を考え，エントロピーの増加 $\\Delta S$ を求めよ．$\\Delta S\\ge0$ であり，等号は $N_1/V_1=N_2/V_2$ のときに限ることを示せ．\n  \\item 混合後の平衡状態で，ある瞬間に体積 $V_1$ の部分にちょうど $N_1$ 個の分子が見出される確率 $P$ を求め，$N_1,N_2\\gg1$ のとき $\\log P\\simeq-\\Delta S/k_B$ となることを示せ．\n  \\item $V_1=V_2$，$N_1=p_1N$ のとき $\\Delta S/k_B$ を $N,p_1$ で表せ．さらに $p_1=\\frac12+\\delta$（$|\\delta|\\ll1$）として $\\delta$ の 2 次まで展開せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta S=k_B\\left[N_1\\log\\dfrac{N_1/V_1}{N/V}+N_2\\log\\dfrac{N_2/V_2}{N/V}\\right]$　(2) $P=\\binom{N}{N_1}\\left(\\dfrac{V_1}{V}\\right)^{N_1}\\left(\\dfrac{V_2}{V}\\right)^{N_2}$　(3) $\\Delta S/k_B\\simeq20.1$，$P\\simeq4.6\\times10^{-11}$"
+   "tex": "(1) $\\Delta S=k_B\\left[N_1\\log\\dfrac{N_1/V_1}{N/V}+N_2\\log\\dfrac{N_2/V_2}{N/V}\\right]$　(2) $P=\\binom{N}{N_1}\\left(\\dfrac{V_1}{V}\\right)^{N_1}\\left(\\dfrac{V_2}{V}\\right)^{N_2}$　(3) $\\dfrac{\\Delta S}{k_B}=N\\left[p_1\\log(2p_1)+(1-p_1)\\log(2(1-p_1))\\right]\\simeq2N\\delta^2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 同じエネルギー幅での状態数は，理想気体では $W\\propto V^N/N!$（1 分子の状態数が体積に比例，[22][23]）．温度が等しく混合でエネルギーは変わらないので\n\\[\n\\frac{W}{W_1W_2}=\\frac{V^N/N!}{(V_1^{N_1}/N_1!)(V_2^{N_2}/N_2!)} .\n\\]\nStirling の公式 $\\log N!\\simeq N\\log N-N$ を使うと\n\\[\n\\frac{\\Delta S}{k_B}=N_1\\log\\frac{VN_1}{V_1N}+N_2\\log\\frac{VN_2}{V_2N}=N\\sum_{i}p_i\\log\\frac{p_i}{v_i},\n\\]\nただし $p_i=N_i/N$，$v_i=V_i/V$．これは相対エントロピー（Kullback–Leibler 量）で，$\\log x\\le x-1$ より $\\sum p_i\\log(v_i/p_i)\\le\\sum(v_i-p_i)=0$．よって $\\Delta S\\ge0$，等号は $p_i=v_i$，すなわち $N_1/V_1=N_2/V_2$ のときに限る（このときは仕切りを戻せば元に戻る可逆な変化）．\n\n(2) 各分子は独立に確率 $V_1/V$ で $V_1$ の部分にあるから二項分布で\n\\[\nP=\\binom{N}{N_1}\\left(\\frac{V_1}{V}\\right)^{N_1}\\left(\\frac{V_2}{V}\\right)^{N_2}.\n\\]\nStirling の公式で $\\log\\binom{N}{N_1}\\simeq-N_1\\log p_1-N_2\\log p_2$ だから $\\log P\\simeq-N_1\\log\\dfrac{p_1}{v_1}-N_2\\log\\dfrac{p_2}{v_2}=-\\Delta S/k_B$．元の状態に戻る確率は $e^{-\\Delta S/k_B}$ 程度で，これが不可逆性の統計的な意味である（より精密には $\\sqrt{2\\pi Np_1p_2}$ 程度の前因子がつく）．\n\n(3) $p_1=0.6,\\ v_1=0.5$：$\\Delta S/k_B=600\\log1.2+400\\log0.8=109.39-89.26=20.14$．$P=\\binom{1000}{600}2^{-1000}=4.6\\times10^{-11}$（$\\log P=-23.80$；$-\\Delta S/k_B-\\tfrac12\\log(2\\pi\\cdot1000\\cdot0.24)=-23.79$ と一致）．"
+    "tex": "(1) 同じエネルギー幅での状態数は，理想気体では $W\\propto V^N/N!$（1 分子の状態数が体積に比例）．温度が等しく混合でエネルギーは変わらないので\n\\[\n\\frac{W}{W_1W_2}=\\frac{V^N/N!}{(V_1^{N_1}/N_1!)(V_2^{N_2}/N_2!)} .\n\\]\nStirling の公式 $\\log N!\\simeq N\\log N-N$ を使うと\n\\[\n\\frac{\\Delta S}{k_B}=N_1\\log\\frac{VN_1}{V_1N}+N_2\\log\\frac{VN_2}{V_2N}=N\\sum_{i}p_i\\log\\frac{p_i}{v_i},\n\\]\nただし $p_i=N_i/N$，$v_i=V_i/V$．これは相対エントロピー（Kullback–Leibler 量）で，$\\log x\\le x-1$ より $\\sum p_i\\log(v_i/p_i)\\le\\sum(v_i-p_i)=0$．よって $\\Delta S\\ge0$，等号は $p_i=v_i$，すなわち $N_1/V_1=N_2/V_2$ のときに限る（このときは仕切りを戻せば元に戻る可逆な変化）．\n\n(2) 各分子は独立に確率 $V_1/V$ で $V_1$ の部分にあるから二項分布で\n\\[\nP=\\boldsymbol{\\binom{N}{N_1}\\left(\\frac{V_1}{V}\\right)^{N_1}\\left(\\frac{V_2}{V}\\right)^{N_2}}.\n\\]\nStirling の公式で $\\log\\binom{N}{N_1}\\simeq-N_1\\log p_1-N_2\\log p_2$ だから $\\log P\\simeq-N_1\\log\\dfrac{p_1}{v_1}-N_2\\log\\dfrac{p_2}{v_2}=-\\Delta S/k_B$．元の状態に戻る確率は $e^{-\\Delta S/k_B}$ 程度で，これが不可逆性の統計的な意味である（より精密には $\\sqrt{2\\pi Np_1p_2}$ 程度の前因子がつく）．\n\n(3) $v_1=v_2=\\frac12$ なので\n\\[\n\\frac{\\Delta S}{k_B}=\\boldsymbol{N\\left[p_1\\log(2p_1)+(1-p_1)\\log(2(1-p_1))\\right]}.\n\\]\n$p_1=\\frac12+\\delta$ とおくと $2p_1=1+2\\delta$，$2(1-p_1)=1-2\\delta$ で，$\\log(1\\pm2\\delta)\\simeq\\pm2\\delta-2\\delta^2$ より\n\\[\n\\frac{\\Delta S}{k_B}\\simeq N\\left[\\left(\\tfrac12+\\delta\\right)(2\\delta-2\\delta^2)+\\left(\\tfrac12-\\delta\\right)(-2\\delta-2\\delta^2)\\right]=\\boldsymbol{2N\\delta^2}.\n\\]\n密度の偏りが小さければエントロピー増加は偏りの 2 乗に比例する．$N=1000$，$\\delta=0.1$ でも $\\Delta S/k_B\\approx20$ となり，元に戻る確率は $10^{-9}$ 以下である．"
    }
   ],
   "idea": {
@@ -1364,7 +1364,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\Delta S$：k_B (N_1 ln(N_1 V/(V_1 N))+N_2 ln(N_2 V/(V_2 N)))\n(2) 記述\n(3) $\\Delta S/k_B$：N (p_1 ln(2 p_1)+(1-p_1) ln(2 (1-p_1))) ; 近似：2 N δ^2"
   },
   "methods": [],
   "tags": [
@@ -1398,16 +1398,16 @@
   "theme": "臨界点に近づくvan der Waals気体の体積ゆらぎ",
   "topic": "臨界点に近づくvan der Waals気体の体積ゆらぎ",
   "statement": {
-   "tex": "ゆらぎの起こる確率を温度と体積の変分で表すと $w\\propto\\exp\\left[\\left(-\\dfrac{C_V}{T}\\delta T^2+\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T\\delta V^2\\right)\\Big/(2k_BT)\\right]$ となる．\n\\begin{enumerate}\n  \\item この式から，$\\delta T$ と $\\delta V$ のゆらぎは統計的に独立であることを述べ，$\\overline{\\delta V^2}$ を $(\\partial p/\\partial V)_T$ で表せ．\n  \\item $N$ 分子の van der Waals 気体（$(p+aN^2/V^2)(V-Nb)=Nk_BT$，$C_V=\\frac32Nk_B$）の部分系について，臨界体積 $V=V_c=3Nb$ に保った状態（臨界等容線上，$T>T_c$）での相対ゆらぎ $\\overline{\\delta V^2}/V^2$ を $T/T_c$ と $N$ で表せ．\n  \\item 同じ条件で相対的な温度ゆらぎ $\\overline{\\delta T^2}/T^2$ を求め，$T\\to T_c$ での (2) との違いを述べよ．\n  \\item $N=10^6$ の部分系で，$\\overline{\\delta V^2}/V^2$ が理想気体の値の 100 倍になるのは $T/T_c$ がいくらのときか．\n\\end{enumerate}"
+   "tex": "ゆらぎの起こる確率を温度と体積の変分で表すと $w\\propto\\exp\\left[\\left(-\\dfrac{C_V}{T}\\delta T^2+\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T\\delta V^2\\right)\\Big/(2k_BT)\\right]$ となる．\n\\begin{enumerate}\n  \\item この式から，$\\delta T$ と $\\delta V$ のゆらぎは統計的に独立であることを述べ，$\\overline{\\delta V^2}$ を $(\\partial p/\\partial V)_T$ で表せ．\n  \\item $N$ 分子の van der Waals 気体（$(p+aN^2/V^2)(V-Nb)=Nk_BT$，$C_V=\\frac32Nk_B$）の部分系について，臨界体積 $V=V_c=3Nb$ に保った状態（臨界等容線上，$T>T_c$）での相対ゆらぎ $\\overline{\\delta V^2}/V^2$ を $T,T_c$ と $N$ で表せ．\n  \\item 同じ条件で相対的な温度ゆらぎ $\\overline{\\delta T^2}/T^2$ を求め，$T\\to T_c$ での (2) との違いを述べよ．\n  \\item 同じ条件で，$\\overline{\\delta V^2}/V^2$ が理想気体の値 $1/N$ の $r$ 倍（$r>4/9$）になるのは $T/T_c$ がいくらのときか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\overline{\\delta V^2}=-k_BT/(\\partial p/\\partial V)_T$　(2) $\\dfrac{\\overline{\\delta V^2}}{V^2}=\\dfrac{4}{9N}\\dfrac{T}{T-T_c}$　(3) $\\dfrac{2}{3N}$（有限のまま）　(4) $T/T_c=225/224\\simeq1.0045$（$N$ によらない）"
+   "tex": "(1) $\\overline{\\delta V^2}=-k_BT/(\\partial p/\\partial V)_T$　(2) $\\dfrac{\\overline{\\delta V^2}}{V^2}=\\dfrac{4}{9N}\\dfrac{T}{T-T_c}$　(3) $\\dfrac{2}{3N}$（有限のまま）　(4) $\\dfrac{T}{T_c}=\\dfrac{9r}{9r-4}$（$N$ によらない）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 指数に $\\delta T\\,\\delta V$ の交差項がないので，$w$ は $\\delta T$ のガウス分布と $\\delta V$ のガウス分布の積になり，両者は独立（$\\overline{\\delta T\\delta V}=0$）．$\\overline{x^2}=1/(2\\alpha)$（$w\\propto e^{-\\alpha x^2}$）より\n\\[\n\\overline{\\delta V^2}=-\\frac{k_BT}{(\\partial p/\\partial V)_T},\\qquad \\overline{\\delta T^2}=\\frac{k_BT^2}{C_V}.\n\\]\n\n(2) $\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T=-\\dfrac{Nk_BT}{(V-Nb)^2}+\\dfrac{2aN^2}{V^3}$．$V=3Nb$ で\n\\[\n\\left(\\frac{\\partial p}{\\partial V}\\right)_T=-\\frac{k_BT}{4Nb^2}+\\frac{2a}{27Nb^3}=-\\frac{k_B(T-T_c)}{4Nb^2}\\qquad\\left(k_BT_c=\\frac{8a}{27b}\\right).\n\\]\nよって $\\overline{\\delta V^2}=\\dfrac{4Nb^2T}{T-T_c}$，$\\dfrac{\\overline{\\delta V^2}}{V^2}=\\dfrac{4}{9N}\\dfrac{T}{T-T_c}$．$T\\to T_c$ で $(T-T_c)^{-1}$ で発散する（臨界たんぱく光の原因）．$T\\gg T_c$ では $4/(9N)$ となるが，これは排除体積のため理想気体の $1/N$ より小さい．\n\n(3) $\\overline{\\delta T^2}/T^2=k_B/C_V=\\dfrac{2}{3N}$．$C_V$ は臨界点でも有限（van der Waals 模型では一定）なので温度ゆらぎは発散せず，臨界点で異常に大きくなるのは体積（密度）ゆらぎだけである．\n\n(4) 理想気体では $\\overline{\\delta V^2}/V^2=1/N$．$\\dfrac{4}{9}\\dfrac{T}{T-T_c}=100$ より $\\dfrac{T-T_c}{T}=\\dfrac{4}{900}$，$\\dfrac{T}{T_c}=\\dfrac{1}{1-1/225}=\\dfrac{225}{224}\\simeq1.0045$．比は $N$ によらない（$N$ は理想気体の値との比で約分される）．"
+    "tex": "(1) 指数に $\\delta T\\,\\delta V$ の交差項がないので，$w$ は $\\delta T$ のガウス分布と $\\delta V$ のガウス分布の積になり，両者は独立（$\\overline{\\delta T\\delta V}=0$）．$\\overline{x^2}=1/(2\\alpha)$（$w\\propto e^{-\\alpha x^2}$）より\n\\[\n\\overline{\\delta V^2}=\\boldsymbol{-\\frac{k_BT}{(\\partial p/\\partial V)_T}},\\qquad \\overline{\\delta T^2}=\\frac{k_BT^2}{C_V}.\n\\]\n\n(2) $\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T=-\\dfrac{Nk_BT}{(V-Nb)^2}+\\dfrac{2aN^2}{V^3}$．$V=3Nb$ で\n\\[\n\\left(\\frac{\\partial p}{\\partial V}\\right)_T=-\\frac{k_BT}{4Nb^2}+\\frac{2a}{27Nb^3}=-\\frac{k_B(T-T_c)}{4Nb^2}\\qquad\\left(k_BT_c=\\frac{8a}{27b}\\right).\n\\]\nよって $\\overline{\\delta V^2}=\\dfrac{4Nb^2T}{T-T_c}$，$\\dfrac{\\overline{\\delta V^2}}{V^2}=\\boldsymbol{\\dfrac{4}{9N}\\dfrac{T}{T-T_c}}$．$T\\to T_c$ で $(T-T_c)^{-1}$ で発散する（臨界たんぱく光の原因）．$T\\gg T_c$ では $4/(9N)$ となるが，これは排除体積のため理想気体の $1/N$ より小さい．\n\n(3) $\\overline{\\delta T^2}/T^2=k_B/C_V=\\boldsymbol{\\dfrac{2}{3N}}$．$C_V$ は臨界点でも有限（van der Waals 模型では一定）なので温度ゆらぎは発散せず，臨界点で異常に大きくなるのは体積（密度）ゆらぎだけである．\n\n(4) $\\dfrac{4}{9}\\dfrac{T}{T-T_c}=r$ より $\\dfrac{T-T_c}{T}=\\dfrac{4}{9r}$，\n\\[\\frac{T}{T_c}=\\frac{1}{1-4/(9r)}=\\boldsymbol{\\frac{9r}{9r-4}}.\\]\n比は $N$ によらない（$N$ は理想気体の値との比で約分される）．$r=100$ なら $T/T_c=225/224\\simeq1.0045$ で，臨界温度の 0.5\\% 以内に近づくとゆらぎが 2 桁増える．"
    }
   ],
   "idea": {
@@ -1415,7 +1415,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) ((2)/(3 N))\n(4) 記述"
+   "spec": "(1) 記述\n(2) $\\overline{\\delta V^2}/V^2$：4 T/(9 N (T-T_c))\n(3) ((2)/(3 N))\n(4) $T/T_c$：9 r/(9 r-4)"
   },
   "methods": [],
   "tags": [
@@ -1549,16 +1549,16 @@
   "theme": "ガウス積分による n 次元球の体積と高次元の幾何",
   "topic": "ガウス積分による n 次元球の体積と高次元の幾何",
   "statement": {
-   "tex": "ガウス積分 $\\int_{-\\infty}^{\\infty}e^{-x^2}dx=\\sqrt\\pi$ は既知とする．$n$ 次元空間の半径 $R$ の球の体積を $V_n(R)=C_nR^n$，単位球面の表面積を $\\Omega_n$（$V_n'(R)=\\Omega_nR^{n-1}$）とする．ガンマ関数 $\\Gamma(s)=\\int_0^\\infty t^{s-1}e^{-t}dt$ を用いてよい．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_{\\mathbb R^n}e^{-(x_1^2+\\cdots+x_n^2)}d^nx$ を直交座標と極座標の 2 通りで計算し，$\\Omega_n=\\dfrac{2\\pi^{n/2}}{\\Gamma(n/2)}$ を示せ．\n\\item $C_n=\\dfrac{\\pi^{n/2}}{\\Gamma(n/2+1)}$ を導き，$n=2,3,4$ の値を書け．また単位球の体積 $C_n$ が最大となる整数 $n$ を求めよ．\n\\item 単原子理想気体 $N=10^{23}$ 個の運動量空間は $n=3N$ 次元である．エネルギーが $E$ 以下の領域（半径 $R\\propto\\sqrt E$ の球）の体積のうち，$E(1-10^{-20})\\le$（エネルギー）$\\le E$ の殻に含まれない割合を求めよ．この結果は，ミクロカノニカル集団において「エネルギー $E$ 以下の状態数」と「$E$ 近傍の薄い殻の状態数」のどちらを数えてもエントロピーが実質的に変わらないことと，どう関係するか．\n\\end{enumerate}"
+   "tex": "ガウス積分 $\\int_{-\\infty}^{\\infty}e^{-x^2}dx=\\sqrt\\pi$ は既知とする．$n$ 次元空間の半径 $R$ の球の体積を $V_n(R)=C_nR^n$，単位球面の表面積を $\\Omega_n$（$V_n'(R)=\\Omega_nR^{n-1}$）とする．ガンマ関数 $\\Gamma(s)=\\int_0^\\infty t^{s-1}e^{-t}dt$ を用いてよい．\n\\begin{enumerate}\n\\item $\\displaystyle\\int_{\\mathbb R^n}e^{-(x_1^2+\\cdots+x_n^2)}d^nx$ を直交座標と極座標の 2 通りで計算し，$\\Omega_n=\\dfrac{2\\pi^{n/2}}{\\Gamma(n/2)}$ を示せ．\n\\item $C_n=\\dfrac{\\pi^{n/2}}{\\Gamma(n/2+1)}$ を導き，$n=2,3,4$ の値を書け．また単位球の体積 $C_n$ が最大となる整数 $n$ を求めよ．\n\\item 単原子理想気体 $N$ 個の運動量空間は $n=3N$ 次元である．エネルギーが $E$ 以下の領域（半径 $R\\propto\\sqrt E$ の球）の体積のうち，$E(1-\\varepsilon)\\le$（エネルギー）$\\le E$ の薄い殻に含まれない割合 $r$ を $N,\\varepsilon$ で求め，$\\varepsilon\\ll1$ での近似形を示せ．この結果は，ミクロカノニカル集団において「エネルギー $E$ 以下の状態数」と「$E$ 近傍の薄い殻の状態数」のどちらを数えてもエントロピーが実質的に変わらないことと，どう関係するか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 略　(2) $C_2=\\pi$，$C_3=\\frac43\\pi$，$C_4=\\frac{\\pi^2}{2}$；最大は $n=5$（$C_5=\\frac{8\\pi^2}{15}\\approx5.26$）　(3) $(1-10^{-20})^{3N/2}\\approx e^{-1500}$"
+   "tex": "(1) 略　(2) $C_2=\\pi$，$C_3=\\frac43\\pi$，$C_4=\\frac{\\pi^2}{2}$；最大は $n=5$（$C_5=\\frac{8\\pi^2}{15}$）　(3) $r=(1-\\varepsilon)^{3N/2}\\approx e^{-3N\\varepsilon/2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 直交座標では積分は $1$ 次元ガウス積分の $n$ 乗で $\\pi^{n/2}$．極座標では $d^nx=\\Omega_nr^{n-1}dr$ だから\n\\[\n\\Omega_n\\int_0^\\infty r^{n-1}e^{-r^2}dr=\\Omega_n\\cdot\\frac12\\int_0^\\infty t^{n/2-1}e^{-t}dt=\\frac{\\Omega_n}{2}\\Gamma(n/2)\\quad(t=r^2).\n\\]\n等置して $\\Omega_n=2\\pi^{n/2}/\\Gamma(n/2)$．\n\n(2) $V_n(R)=\\int_0^R\\Omega_nr^{n-1}dr=\\Omega_nR^n/n$ より\n\\[\nC_n=\\frac{2\\pi^{n/2}}{n\\Gamma(n/2)}=\\frac{\\pi^{n/2}}{\\Gamma(n/2+1)} .\n\\]\n$\\Gamma(2)=1$，$\\Gamma(5/2)=\\frac34\\sqrt\\pi$，$\\Gamma(3)=2$ より $C_2=\\pi$，$C_3=\\frac43\\pi$，$C_4=\\pi^2/2$．\n$C_{n+2}/C_n=\\dfrac{\\pi}{n/2+1}=\\dfrac{2\\pi}{n+2}$ は $n+2<2\\pi$ すなわち $n\\le4$ で $1$ より大きく，$n\\ge5$ で $1$ より小さい．よって奇数列は $C_1<C_3<C_5>C_7>\\cdots$，偶数列は $C_2<C_4<C_6>C_8>\\cdots$ で，候補は $C_5=8\\pi^2/15\\approx5.264$ と $C_6=\\pi^3/6\\approx5.168$．したがって最大は $n=5$（その後 $C_n\\to0$）．\n\n(3) $R\\propto\\sqrt E$ なので $E\\to E(1-\\varepsilon)$ で $R\\to R(1-\\varepsilon)^{1/2}$．殻の外（内側の球）の体積の割合は\n\\[\n\\frac{V_n(R\\sqrt{1-\\varepsilon})}{V_n(R)}=(1-\\varepsilon)^{n/2}=(1-10^{-20})^{1.5\\times10^{23}}\\approx\\exp(-1.5\\times10^{3})=e^{-1500}\\approx10^{-651}.\n\\]\nすなわち体積のほぼ全部が相対幅 $10^{-20}$ という極めて薄い表面殻に集中する．したがって「$E$ 以下の全状態数 $\\Sigma(E)$」と「殻内の状態数 $\\Omega(E)\\delta E$」は $\\ln$ をとった $O(N)$ の量としては差が $O(\\ln N)$ 程度しかなく，エントロピー $k_{\\rm B}\\ln W$ の示量的な部分は数え方によらない．"
+    "tex": "(1) 直交座標では積分は $1$ 次元ガウス積分の $n$ 乗で $\\pi^{n/2}$．極座標では $d^nx=\\Omega_nr^{n-1}dr$ だから\n\\[\n\\Omega_n\\int_0^\\infty r^{n-1}e^{-r^2}dr=\\Omega_n\\cdot\\frac12\\int_0^\\infty t^{n/2-1}e^{-t}dt=\\frac{\\Omega_n}{2}\\Gamma(n/2)\\quad(t=r^2).\n\\]\n等置して $\\Omega_n=2\\pi^{n/2}/\\Gamma(n/2)$．\n\n(2) $V_n(R)=\\int_0^R\\Omega_nr^{n-1}dr=\\Omega_nR^n/n$ より\n\\[\nC_n=\\frac{2\\pi^{n/2}}{n\\Gamma(n/2)}=\\frac{\\pi^{n/2}}{\\Gamma(n/2+1)} .\n\\]\n$\\Gamma(2)=1$，$\\Gamma(5/2)=\\frac34\\sqrt\\pi$，$\\Gamma(3)=2$ より $C_2=\\boldsymbol{\\pi}$，$C_3=\\boldsymbol{\\frac43\\pi}$，$C_4=\\boldsymbol{\\pi^2/2}$．\n$C_{n+2}/C_n=\\dfrac{\\pi}{n/2+1}=\\dfrac{2\\pi}{n+2}$ は $n+2<2\\pi$ すなわち $n\\le4$ で $1$ より大きく，$n\\ge5$ で $1$ より小さい．よって奇数列は $C_1<C_3<C_5>C_7>\\cdots$，偶数列は $C_2<C_4<C_6>C_8>\\cdots$ で，候補は $C_5=8\\pi^2/15$ と $C_6=\\pi^3/6$．$C_5/C_6=16/(5\\pi)>1$ なので最大は $\\boldsymbol{n=5}$（その後 $C_n\\to0$）．\n\n(3) $R\\propto\\sqrt E$ なので $E\\to E(1-\\varepsilon)$ で $R\\to R(1-\\varepsilon)^{1/2}$．殻の外（内側の球）の体積の割合は\n\\[\nr=\\frac{V_n(R\\sqrt{1-\\varepsilon})}{V_n(R)}=\\boldsymbol{(1-\\varepsilon)^{3N/2}}\\approx\\boldsymbol{e^{-3N\\varepsilon/2}}.\n\\]\n$\\varepsilon$ が $1/N$ よりずっと大きければ $r$ は事実上 0 である（$N=10^{23}$，$\\varepsilon=10^{-20}$ でも $e^{-1500}$）．すなわち体積のほぼ全部が極めて薄い表面殻に集中する．したがって「$E$ 以下の全状態数 $\\Sigma(E)$」と「殻内の状態数 $\\Omega(E)\\delta E$」は $\\ln$ をとった $O(N)$ の量としては差が $O(\\ln N)$ 程度しかなく，エントロピー $k_{\\rm B}\\ln W$ の示量的な部分は数え方によらない．"
    }
   ],
   "idea": {
@@ -1566,7 +1566,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) $C_2$：pi ; $C_3$：((4)/(3)) pi ; $C_4$：((pi ^(2))/(2)) ; 最大は $n$：5\n(3) 記述"
+   "spec": "(1) 証明\n(2) $C_2$：pi ; $C_3$：((4)/(3)) pi ; $C_4$：((pi ^(2))/(2)) ; 最大は $n$：5\n(3) $r$：(1-ε)^(3 N/2) ; 近似：e^(-3 N ε/2)"
   },
   "methods": [],
   "tags": [
@@ -1649,16 +1649,16 @@
   "theme": "箱の急激な拡張と固有状態への射影",
   "topic": "箱の急激な拡張と固有状態への射影",
   "statement": {
-   "tex": "質量 $m$ の粒子が，$0\\le x\\le L$ を除いてポテンシャルが無限大である一次元の箱に閉じ込められている．\n\\begin{enumerate}\n\\item 幅 $a$ の箱（$0\\le x\\le a$ で $V=0$，他は $\\infty$）に対するシュレーディンガー方程式を解き，規格化された固有関数 $\\phi^{(a)}_n(x)$ と固有値 $\\varepsilon^{(a)}_n$ を求めよ．\n\\item 粒子は幅 $L$ の箱の基底状態にある．時刻 $t=0$ に右の壁が瞬間的に $x=2L$ まで移動した（波動関数は変化する暇がない）．拡張後の箱の第 $n$ 固有状態に見いだされる確率 $P_n$ をすべての $n$ について求めよ．\n\\item $P_1$，$P_2$ の数値を求め，$\\sum_n P_n=1$ と整合することを $P_n$ の形から確かめよ（具体的な和の値は用いてよい：$\\sum_{k=0}^{\\infty}\\frac{1}{(2k+1)^2}=\\frac{\\pi^2}{8}$ 等）．\n\\item 拡張直後のエネルギー期待値 $\\langle E\\rangle$ を，拡張後の箱の基底エネルギー $\\varepsilon^{(2L)}_1$ を単位として求めよ．また拡張後の箱の固有状態の和 $\\sum_n P_n\\varepsilon^{(2L)}_n$ がどのように収束するかを述べよ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の粒子が，$0\\le x\\le L$ を除いてポテンシャルが無限大である一次元の箱に閉じ込められている．\n\\begin{enumerate}\n\\item 幅 $a$ の箱（$0\\le x\\le a$ で $V=0$，他は $\\infty$）に対するシュレーディンガー方程式を解き，規格化された固有関数 $\\phi^{(a)}_n(x)$ と固有値 $\\varepsilon^{(a)}_n$ を求めよ．\n\\item 粒子は幅 $L$ の箱の基底状態にある．時刻 $t=0$ に右の壁が瞬間的に $x=2L$ まで移動した（波動関数は変化する暇がない）．拡張後の箱の第 $n$ 固有状態に見いだされる確率 $P_n$ をすべての $n$ について求めよ．\n\\item $P_1$，$P_2$，$P_3$ を $\\pi$ を用いた閉じた形で書き，$\\sum_n P_n=1$ と整合することを $P_n$ の形から確かめよ（具体的な和の値は用いてよい：$\\sum_{k=0}^{\\infty}\\frac{1}{(2k+1)^2}=\\frac{\\pi^2}{8}$ 等）．\n\\item 拡張直後のエネルギー期待値 $\\langle E\\rangle$ を，拡張後の箱の基底エネルギー $\\varepsilon^{(2L)}_1$ を単位として求めよ．また拡張後の箱の固有状態の和 $\\sum_n P_n\\varepsilon^{(2L)}_n$ がどのように収束するかを述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\phi^{(a)}_n=\\sqrt{2/a}\\,\\sin(n\\pi x/a)$，$\\varepsilon^{(a)}_n=\\dfrac{\\hbar^2\\pi^2n^2}{2ma^2}$ $(n=1,2,\\dots)$　(2) $P_2=\\tfrac12$，$n$ 奇数で $P_n=\\dfrac{32}{\\pi^2(n^2-4)^2}$，$n\\ne2$ の偶数で $P_n=0$　(3) $P_1=32/(9\\pi^2)\\approx0.360$，$P_2=0.5$　(4) $\\langle E\\rangle=4\\varepsilon^{(2L)}_1$（もとのエネルギーのまま）．$\\sum_nP_nn^2=4$ で，奇数項が $P_nn^2\\sim n^{-2}$ と遅く減衰するためゆっくり収束する．"
+   "tex": "(1) $\\phi^{(a)}_n=\\sqrt{2/a}\\,\\sin(n\\pi x/a)$，$\\varepsilon^{(a)}_n=\\dfrac{\\hbar^2\\pi^2n^2}{2ma^2}$ $(n=1,2,\\dots)$　(2) $P_2=\\tfrac12$，$n$ 奇数で $P_n=\\dfrac{32}{\\pi^2(n^2-4)^2}$，$n\\ne2$ の偶数で $P_n=0$　(3) $P_1=\\dfrac{32}{9\\pi^2}$，$P_2=\\dfrac12$，$P_3=\\dfrac{32}{25\\pi^2}$　(4) $\\langle E\\rangle=4\\varepsilon^{(2L)}_1$（もとのエネルギーのまま）．$\\sum_nP_nn^2=4$ で，奇数項が $P_nn^2\\sim n^{-2}$ と遅く減衰するためゆっくり収束する．"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 箱の内部では $\\phi''+k^2\\phi=0$（$k=\\sqrt{2m\\varepsilon}/\\hbar$）．境界条件 $\\phi(0)=\\phi(a)=0$ より $\\phi=A\\sin kx$，$ka=n\\pi$．規格化 $|A|^2a/2=1$ より\n\\[\\phi^{(a)}_n(x)=\\sqrt{\\tfrac{2}{a}}\\sin\\frac{n\\pi x}{a},\\qquad \\varepsilon^{(a)}_n=\\frac{\\hbar^2\\pi^2n^2}{2ma^2}\\quad(n=1,2,\\dots).\\]\n$n$ と $-n$ は位相が違うだけなので $n>0$ に限る．\n\n(2) 波動関数は $\\psi(x)=\\sqrt{2/L}\\sin(\\pi x/L)$（$0\\le x\\le L$），$L<x\\le 2L$ で $0$ のまま．振幅は\n\\[c_n=\\int_0^L\\sqrt{\\tfrac2L}\\sin\\frac{\\pi x}{L}\\sqrt{\\tfrac1L}\\sin\\frac{n\\pi x}{2L}\\,dx=\\frac{\\sqrt2}{\\pi}\\int_0^\\pi\\sin u\\,\\sin\\frac{nu}{2}\\,du\\quad(u=\\pi x/L).\\]\n$n=2$ のときは $\\int_0^\\pi\\sin^2u\\,du=\\pi/2$ より $c_2=1/\\sqrt2$，$P_2=1/2$．$n\\neq2$ のとき積和公式で\n\\[\\int_0^\\pi\\sin u\\sin\\frac{nu}{2}du=\\frac12\\left[\\frac{\\sin(1-\\frac n2)u}{1-\\frac n2}-\\frac{\\sin(1+\\frac n2)u}{1+\\frac n2}\\right]_0^\\pi .\\]\n$n$ が偶数なら $\\sin$ はすべて $0$ で $c_n=0$．$n$ が奇数なら $\\sin\\big((1\\mp\\tfrac n2)\\pi\\big)=\\sin\\frac{n\\pi}{2}\\cdot(\\pm1)$ の形となり，整理すると $\\int=\\dfrac{4\\sin(n\\pi/2)}{4-n^2}$ ．よって\n\\[c_n=\\frac{4\\sqrt2\\,\\sin(n\\pi/2)}{\\pi(4-n^2)},\\qquad P_n=\\frac{32}{\\pi^2(n^2-4)^2}\\quad(n\\ \\text{奇数}).\\]\n\n(3) $P_1=32/(9\\pi^2)\\approx0.360$，$P_2=0.5$，$P_3=32/(25\\pi^2)\\approx0.130$．古い基底状態の形は新しい箱の $n=2$ 状態の左半分と一致するので，ちょうど半分の確率が $n=2$ に行く．奇数 $n$ の和は，部分分数 $\\frac{1}{(n^2-4)^2}$ を用いた和 $\\sum_{n\\,\\text{odd}}\\frac{32}{\\pi^2(n^2-4)^2}=\\frac12$ となり（数値でも確認できる），$\\sum P_n=1$ と整合する．\n\n(4) 瞬間的な変化では波動関数が変わらないので，$\\langle E\\rangle$ はもとの状態のエネルギー $\\varepsilon^{(L)}_1=\\frac{\\hbar^2\\pi^2}{2mL^2}=4\\cdot\\frac{\\hbar^2\\pi^2}{2m(2L)^2}=4\\varepsilon^{(2L)}_1$．展開で書くと $\\langle E\\rangle=\\sum_nP_n\\varepsilon^{(2L)}_1n^2$ で，奇数 $n$ の項は $P_nn^2\\sim 32/(\\pi^2n^2)$ とゆっくりしか減らない．これは $x=L$ で波動関数の傾きが不連続（角がある）ため，高エネルギー成分の寄与が遅く減衰することによる．$P_2\\cdot4=2$ と奇数項の総和 $2$ を合わせて $4$ となる．"
+    "tex": "(1) 箱の内部では $\\phi''+k^2\\phi=0$（$k=\\sqrt{2m\\varepsilon}/\\hbar$）．境界条件 $\\phi(0)=\\phi(a)=0$ より $\\phi=A\\sin kx$，$ka=n\\pi$．規格化 $|A|^2a/2=1$ より\n\\[\\phi^{(a)}_n(x)=\\sqrt{\\tfrac{2}{a}}\\sin\\frac{n\\pi x}{a},\\qquad \\varepsilon^{(a)}_n=\\frac{\\hbar^2\\pi^2n^2}{2ma^2}\\quad(n=1,2,\\dots).\\]\n$n$ と $-n$ は位相が違うだけなので $n>0$ に限る．\n\n(2) 波動関数は $\\psi(x)=\\sqrt{2/L}\\sin(\\pi x/L)$（$0\\le x\\le L$），$L<x\\le 2L$ で $0$ のまま．振幅は\n\\[c_n=\\int_0^L\\sqrt{\\tfrac2L}\\sin\\frac{\\pi x}{L}\\sqrt{\\tfrac1L}\\sin\\frac{n\\pi x}{2L}\\,dx=\\frac{\\sqrt2}{\\pi}\\int_0^\\pi\\sin u\\,\\sin\\frac{nu}{2}\\,du\\quad(u=\\pi x/L).\\]\n$n=2$ のときは $\\int_0^\\pi\\sin^2u\\,du=\\pi/2$ より $c_2=1/\\sqrt2$，$P_2=1/2$．$n\\neq2$ のとき積和公式で\n\\[\\int_0^\\pi\\sin u\\sin\\frac{nu}{2}du=\\frac12\\left[\\frac{\\sin(1-\\frac n2)u}{1-\\frac n2}-\\frac{\\sin(1+\\frac n2)u}{1+\\frac n2}\\right]_0^\\pi .\\]\n$n$ が偶数なら $\\sin$ はすべて $0$ で $c_n=0$．$n$ が奇数なら整理すると $\\int=\\dfrac{4\\sin(n\\pi/2)}{4-n^2}$ ．よって\n\\[c_n=\\frac{4\\sqrt2\\,\\sin(n\\pi/2)}{\\pi(4-n^2)},\\qquad P_n=\\frac{32}{\\pi^2(n^2-4)^2}\\quad(n\\ \\text{奇数}).\\]\n\n(3) $P_1=\\boldsymbol{\\dfrac{32}{9\\pi^2}}$（約 0.36），$P_2=\\boldsymbol{\\dfrac12}$，$P_3=\\boldsymbol{\\dfrac{32}{25\\pi^2}}$（約 0.13）．古い基底状態の形は新しい箱の $n=2$ 状態の左半分と一致するので，ちょうど半分の確率が $n=2$ に行く．奇数 $n$ の和は，部分分数 $\\frac{1}{(n^2-4)^2}$ を用いた和 $\\sum_{n\\,\\text{odd}}\\frac{32}{\\pi^2(n^2-4)^2}=\\frac12$ となり，$\\sum P_n=1$ と整合する．\n\n(4) 瞬間的な変化では波動関数が変わらないので，$\\langle E\\rangle$ はもとの状態のエネルギー $\\varepsilon^{(L)}_1=\\frac{\\hbar^2\\pi^2}{2mL^2}=4\\cdot\\frac{\\hbar^2\\pi^2}{2m(2L)^2}=\\boldsymbol{4\\varepsilon^{(2L)}_1}$．展開で書くと $\\langle E\\rangle=\\sum_nP_n\\varepsilon^{(2L)}_1n^2$ で，奇数 $n$ の項は $P_nn^2\\sim 32/(\\pi^2n^2)$ とゆっくりしか減らない．これは $x=L$ で波動関数の傾きが不連続（角がある）ため，高エネルギー成分の寄与が遅く減衰することによる．$P_2\\cdot4=2$ と奇数項の総和 $2$ を合わせて $4$ となる．"
    }
   ],
   "idea": {
@@ -1666,7 +1666,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $P_1$：≈0.360 ; $P_2$：≈0.5\n(4) 記述"
+   "spec": "(1) 記述\n(2) $P_2$：1/2 ; 奇数 $n$ の $P_n$：32/(pi^2 (n^2-4)^2)\n(3) $P_1$：32/(9 pi^2) ; $P_2$：1/2 ; $P_3$：32/(25 pi^2)\n(4) $\\langle E\\rangle/\\varepsilon^{(2L)}_1$：4"
   },
   "methods": [],
   "tags": [
@@ -1798,16 +1798,16 @@
   "theme": "多谷・異方性有効質量の状態密度質量",
   "topic": "多谷・異方性有効質量の状態密度質量",
   "statement": {
-   "tex": "シリコンの伝導帯の電子は，$\\boldsymbol k$ 空間に同等な谷が $6$ 個あり，各谷の底のまわりでエネルギーが\n\\[\\varepsilon_{\\boldsymbol k}=\\frac{\\hbar^2k_1^2}{2m_l}+\\frac{\\hbar^2k_2^2}{2m_t}+\\frac{\\hbar^2k_3^2}{2m_t}\\]\n（$k_i$ は各谷の主軸方向の成分，底をエネルギー原点とする）と表される．一辺 $L$ の立方体（体積 $V=L^3$）に周期的境界条件を課す．スピン縮退 $2$ も考慮する．\n\\begin{enumerate}\n\\item 一つの谷・一つのスピン向きについて，エネルギー $\\epsilon$ 以下の状態数 $\\mathcal N_1(\\epsilon)$ を求めよ．\n\\item 全状態密度 $D(\\epsilon)$ が，ある質量 $m_d$（状態密度有効質量）を用いて等方的な自由電子と同じ形\n\\[D(\\epsilon)=\\frac{V}{2\\pi^2}\\left(\\frac{2m_d}{\\hbar^2}\\right)^{3/2}\\sqrt\\epsilon\\,\\theta(\\epsilon)\\]\nに書けることを示し，$m_d$ を $m_l,m_t$ で表せ．\n\\item $m_l=0.98\\,m_e$，$m_t=0.19\\,m_e$ のとき $m_d/m_e$ を数値で求めよ．\n\\item 異方性を保ったまま $m_l\\to\\infty$ とすると $D(\\epsilon)$ はどうなるか．物理的に解釈せよ．\n\\end{enumerate}"
+   "tex": "シリコンの伝導帯の電子は，$\\boldsymbol k$ 空間に同等な谷が $6$ 個あり，各谷の底のまわりでエネルギーが\n\\[\\varepsilon_{\\boldsymbol k}=\\frac{\\hbar^2k_1^2}{2m_l}+\\frac{\\hbar^2k_2^2}{2m_t}+\\frac{\\hbar^2k_3^2}{2m_t}\\]\n（$k_i$ は各谷の主軸方向の成分，底をエネルギー原点とする）と表される．一辺 $L$ の立方体（体積 $V=L^3$）に周期的境界条件を課す．スピン縮退 $2$ も考慮する．\n\\begin{enumerate}\n\\item 一つの谷・一つのスピン向きについて，エネルギー $\\epsilon$ 以下の状態数 $\\mathcal N_1(\\epsilon)$ を求めよ．\n\\item 全状態密度 $D(\\epsilon)$ が，ある質量 $m_d$（状態密度有効質量）を用いて等方的な自由電子と同じ形\n\\[D(\\epsilon)=\\frac{V}{2\\pi^2}\\left(\\frac{2m_d}{\\hbar^2}\\right)^{3/2}\\sqrt\\epsilon\\,\\theta(\\epsilon)\\]\nに書けることを示し，$m_d$ を $m_l,m_t$ で表せ．\n\\item 質量の比を $m_l=r\\,m_t$ とするとき，$m_d/m_t$ を $r$ で表せ．\n\\item 異方性を保ったまま $m_l\\to\\infty$ とすると $D(\\epsilon)$ はどうなるか．物理的に解釈せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\mathcal N_1=\\dfrac{V}{6\\pi^2}\\dfrac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\epsilon^{3/2}$　(2) $m_d=6^{2/3}(m_lm_t^2)^{1/3}$　(3) $m_d\\approx1.08\\,m_e$　(4) $D\\propto m_l^{1/2}\\to\\infty$（$k_1$ 方向に分散がなくなり，二次元的な層の集まりとして各エネルギーに無数の状態が集まる）"
+   "tex": "(1) $\\mathcal N_1=\\dfrac{V}{6\\pi^2}\\dfrac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\epsilon^{3/2}$　(2) $m_d=6^{2/3}(m_lm_t^2)^{1/3}$　(3) $\\dfrac{m_d}{m_t}=6^{2/3}r^{1/3}$　(4) $D\\propto m_l^{1/2}\\to\\infty$（$k_1$ 方向に分散がなくなり，二次元的な層の集まりとして各エネルギーに無数の状態が集まる）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $q_1=\\sqrt{m/m_l}\\,k_1$，$q_{2,3}=\\sqrt{m/m_t}\\,k_{2,3}$ と変数変換すれば $\\varepsilon=\\hbar^2q^2/2m$ となる（$m$ は任意の基準質量）．$\\epsilon$ 以下の領域は $\\boldsymbol k$ 空間で半軸 $\\sqrt{2m_l\\epsilon}/\\hbar$，$\\sqrt{2m_t\\epsilon}/\\hbar$，$\\sqrt{2m_t\\epsilon}/\\hbar$ の楕円体で，体積は $\\frac{4\\pi}{3}\\frac{(2m_l\\epsilon)^{1/2}(2m_t\\epsilon)}{\\hbar^3}$．周期境界条件で一状態あたり $\\boldsymbol k$ 空間体積 $(2\\pi)^3/V$ なので\n\\[\\mathcal N_1(\\epsilon)=\\frac{V}{(2\\pi)^3}\\frac{4\\pi}{3}\\frac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\epsilon^{3/2}=\\frac{V}{6\\pi^2}\\frac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\epsilon^{3/2}.\\]\n\n(2) 谷 6，スピン 2 を掛けて微分すると\n\\[D(\\epsilon)=12\\cdot\\frac{V}{4\\pi^2}\\frac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\sqrt\\epsilon=\\frac{V}{2\\pi^2}\\cdot\\frac{6\\,(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\sqrt\\epsilon .\\]\nこれを $\\frac{V}{2\\pi^2}\\frac{(2m_d)^{3/2}}{\\hbar^3}\\sqrt\\epsilon$ と比べて $m_d^{3/2}=6\\,m_l^{1/2}m_t$，すなわち\n\\[m_d=6^{2/3}(m_lm_t^2)^{1/3}.\\]\n（等方的な自由電子の式 $\\frac{V}{2\\pi^2}(2m/\\hbar^2)^{3/2}\\sqrt\\epsilon$ はスピン 2 を含む．）\n\n(3) $(0.98\\times0.19^2)^{1/3}=0.3282$，$6^{2/3}=3.302$ より $m_d\\approx1.08\\,m_e$．個々の有効質量は $m_e$ より小さいのに，谷の数のため状態密度は自由電子並みになる．\n\n(4) $D\\propto m_l^{1/2}$ で発散する．$m_l\\to\\infty$ では $k_1$ 方向にエネルギーが変化しなくなり，各 $k_1$ ごとに二次元電子系（状態密度一定）が独立に並ぶ．$k_1$ の取り得る値は $L/a$ 程度の数ではなく制限がない（連続体模型では無限個）ので，有限エネルギー幅に無限の状態が入る．実際の結晶ではブリルアン域で $k_1$ が有限個に制限され，準二次元的な状態密度（階段状）となる．"
+    "tex": "(1) $q_1=\\sqrt{m/m_l}\\,k_1$，$q_{2,3}=\\sqrt{m/m_t}\\,k_{2,3}$ と変数変換すれば $\\varepsilon=\\hbar^2q^2/2m$ となる（$m$ は任意の基準質量）．$\\epsilon$ 以下の領域は $\\boldsymbol k$ 空間で半軸 $\\sqrt{2m_l\\epsilon}/\\hbar$，$\\sqrt{2m_t\\epsilon}/\\hbar$，$\\sqrt{2m_t\\epsilon}/\\hbar$ の楕円体で，体積は $\\frac{4\\pi}{3}\\frac{(2m_l\\epsilon)^{1/2}(2m_t\\epsilon)}{\\hbar^3}$．周期境界条件で一状態あたり $\\boldsymbol k$ 空間体積 $(2\\pi)^3/V$ なので\n\\[\\mathcal N_1(\\epsilon)=\\frac{V}{(2\\pi)^3}\\frac{4\\pi}{3}\\frac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\epsilon^{3/2}=\\boldsymbol{\\frac{V}{6\\pi^2}\\frac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\epsilon^{3/2}}.\\]\n\n(2) 谷 6，スピン 2 を掛けて微分すると\n\\[D(\\epsilon)=12\\cdot\\frac{V}{4\\pi^2}\\frac{(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\sqrt\\epsilon=\\frac{V}{2\\pi^2}\\cdot\\frac{6\\,(2m_l)^{1/2}(2m_t)}{\\hbar^3}\\sqrt\\epsilon .\\]\nこれを $\\frac{V}{2\\pi^2}\\frac{(2m_d)^{3/2}}{\\hbar^3}\\sqrt\\epsilon$ と比べて $m_d^{3/2}=6\\,m_l^{1/2}m_t$，すなわち\n\\[m_d=\\boldsymbol{6^{2/3}(m_lm_t^2)^{1/3}}.\\]\n（等方的な自由電子の式 $\\frac{V}{2\\pi^2}(2m/\\hbar^2)^{3/2}\\sqrt\\epsilon$ はスピン 2 を含む．）\n\n(3) $m_lm_t^2=rm_t^3$ より $\\dfrac{m_d}{m_t}=\\boldsymbol{6^{2/3}r^{1/3}}$．シリコン（$m_l\\approx0.98m_e$，$m_t\\approx0.19m_e$，$r\\approx5.2$）では $m_d\\approx1.08m_e$ となる．個々の有効質量は $m_e$ より小さいのに，谷の数のため状態密度は自由電子並みになる．\n\n(4) $D\\propto m_l^{1/2}$ で発散する．$m_l\\to\\infty$ では $k_1$ 方向にエネルギーが変化しなくなり，各 $k_1$ ごとに二次元電子系（状態密度一定）が独立に並ぶ．$k_1$ の取り得る値に制限がない（連続体模型では無限個）ので，有限エネルギー幅に無限の状態が入る．実際の結晶ではブリルアン域で $k_1$ が有限個に制限され，準二次元的な状態密度（階段状）となる．"
    }
   ],
   "idea": {
@@ -1815,7 +1815,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\mathcal N_1$：((V)/(6 pi ^(2)))(((2 m_l)^(1/2)(2 m_t))/(hbar ^(3))) ε ^(3/2)\n(2) $m_d$：6^(2/3)(m_l m_t ^(2))^(1/3)\n(3) 記述\n(4) 記述"
+   "spec": "(1) $\\mathcal N_1$：((V)/(6 pi ^(2)))(((2 m_l)^(1/2)(2 m_t))/(hbar ^(3))) ε ^(3/2)\n(2) $m_d$：6^(2/3)(m_l m_t ^(2))^(1/3)\n(3) $m_d/m_t$：6^(2/3) r^(1/3)\n(4) 記述"
   },
   "methods": [],
   "tags": [
@@ -1848,24 +1848,24 @@
   "theme": "状態数の増加に必要な熱と熱浴近似の破れ",
   "topic": "状態数の増加に必要な熱と熱浴近似の破れ",
   "statement": {
-   "tex": "$k=8.617\\times10^{-5}\\,\\mathrm{eV/K}=1.381\\times10^{-23}\\,\\mathrm{J/K}$ とする．\n\\begin{enumerate}\n\\item $300\\,\\mathrm{K}$ の大きな熱浴に熱 $Q$ を加えて，熱浴の到達可能な状態数を $10^8$ 倍にしたい．$Q$ を eV 単位で求めよ．\n\\item 熱浴の代わりに，$N$ 個の単原子理想気体（体積一定，状態数 $\\Omega\\propto E^{3N/2}$，初めのエネルギー $E=\\frac32NkT$，$T=300\\,\\mathrm{K}$）に熱を加えて状態数を $10^8$ 倍にする．$N=10$ のときに必要な熱を求め，$N\\to\\infty$ で (1) の結果に一致することを示せ．\n\\item $301\\,\\mathrm{K}$ の物体から $300\\,\\mathrm{K}$ の物体へ $1.0\\,\\mu\\mathrm{J}$ の熱が移った．両物体を合わせた系の状態数は何倍になるか（$10$ の何乗かで答えよ）．\n\\end{enumerate}"
+   "tex": "ボルツマン定数を $k$ とする．\n\\begin{enumerate}\n\\item 温度 $T$ の大きな熱浴に熱 $Q$ を加えて，熱浴の到達可能な状態数を $r$ 倍にしたい．$Q$ を求めよ．\n\\item 熱浴の代わりに，$N$ 個の単原子理想気体（体積一定，状態数 $\\Omega\\propto E^{3N/2}$，初めのエネルギー $E=\\frac32NkT$）に熱を加えて状態数を $r$ 倍にする．必要な熱 $Q_N$ を求め，$N\\to\\infty$ で (1) の結果に一致することを示せ．\n\\item 温度 $T_1$ の物体から温度 $T_2$（$T_2<T_1$）の物体へ熱 $Q$ が移った．両物体は十分大きく温度は変わらないとして，両物体を合わせた系の状態数の比の対数 $\\ln(\\Omega_f/\\Omega_i)$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $Q=kT\\ln10^8\\approx0.476\\,\\mathrm{eV}$　(2) $Q\\approx0.94\\,\\mathrm{eV}$（$\\approx36kT$）　(3) 約 $10^{3.5\\times10^{11}}$ 倍"
+   "tex": "(1) $Q=kT\\ln r$　(2) $Q_N=\\dfrac32NkT\\left(r^{2/(3N)}-1\\right)$　(3) $\\ln\\dfrac{\\Omega_f}{\\Omega_i}=\\dfrac Qk\\left(\\dfrac1{T_2}-\\dfrac1{T_1}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 熱浴では $\\Delta S=Q/T=k\\ln(\\Omega_f/\\Omega_i)$．$Q=kT\\ln10^8=0.02585\\times18.42=0.476\\,\\mathrm{eV}$．\n\n(2) $\\Omega\\propto E^{3N/2}$ より $\\Omega_f/\\Omega_i=(E_f/E_i)^{3N/2}=10^8$，$E_f/E_i=10^{16/(3N)}$．\n\\[\nQ=E_i\\left(10^{16/(3N)}-1\\right)=\\frac32NkT\\left(10^{16/(3N)}-1\\right).\n\\]\n$N=10$：$10^{0.5333}=3.415$，$Q=15kT\\times2.415=36.2kT=0.936\\,\\mathrm{eV}$．小さな系では加熱で温度が上がり，1 単位の熱あたりの状態数の増え方（$1/kT$）が落ちるため，熱浴の場合の約 2 倍の熱が要る．\n$N\\to\\infty$ では $10^{16/(3N)}-1\\simeq\\dfrac{16\\ln10}{3N}$ なので $Q\\to\\frac32NkT\\cdot\\dfrac{16\\ln10}{3N}=8\\ln10\\,kT=kT\\ln10^8$ となり (1) に一致する．\n\n(3) 全エントロピー変化 $\\Delta S=Q\\left(\\dfrac1{300}-\\dfrac1{301}\\right)=10^{-6}\\times1.107\\times10^{-5}=1.107\\times10^{-11}\\,\\mathrm{J/K}$．\n\\[\n\\ln\\frac{\\Omega_f}{\\Omega_i}=\\frac{\\Delta S}{k}=8.0\\times10^{11},\\qquad\\frac{\\Omega_f}{\\Omega_i}=10^{8.0\\times10^{11}/2.303}=10^{3.5\\times10^{11}}.\n\\]\nわずか 1 K の差でも，逆向きの熱移動が起こる確率は $10^{-3.5\\times10^{11}}$ 程度で，事実上ゼロである．"
+    "tex": "(1) 熱浴では $\\Delta S=Q/T=k\\ln(\\Omega_f/\\Omega_i)$．$Q=\\boldsymbol{kT\\ln r}$．室温で $r=10^8$ なら 0.5 eV 程度にすぎない．\n\n(2) $\\Omega\\propto E^{3N/2}$ より $\\Omega_f/\\Omega_i=(E_f/E_i)^{3N/2}=r$，$E_f/E_i=r^{2/(3N)}$．\n\\[\nQ_N=E_i\\left(r^{2/(3N)}-1\\right)=\\boldsymbol{\\frac32NkT\\left(r^{2/(3N)}-1\\right)}.\n\\]\n小さな系では加熱で温度が上がり，1 単位の熱あたりの状態数の増え方（$1/kT$）が落ちるため，熱浴の場合より多くの熱が要る（$N=10$，$r=10^8$ で約 2 倍）．\n$N\\to\\infty$ では $r^{2/(3N)}-1=e^{2\\ln r/(3N)}-1\\simeq\\dfrac{2\\ln r}{3N}$ なので $Q_N\\to\\frac32NkT\\cdot\\dfrac{2\\ln r}{3N}=kT\\ln r$ となり (1) に一致する．\n\n(3) 全エントロピー変化は $\\Delta S=-\\dfrac{Q}{T_1}+\\dfrac{Q}{T_2}$ なので\n\\[\n\\ln\\frac{\\Omega_f}{\\Omega_i}=\\frac{\\Delta S}{k}=\\boldsymbol{\\frac Qk\\left(\\frac1{T_2}-\\frac1{T_1}\\right)}>0.\n\\]\n$T_1=301$ K，$T_2=300$ K，$Q=1\\,\\mu$J でも約 $8\\times10^{11}$ となり，状態数は $10^{3.5\\times10^{11}}$ 倍になる．逆向きの熱移動が起こる確率はその逆数で，事実上ゼロである．"
    }
   ],
   "idea": {
-   "tex": "$\\Delta Q=kT\\ln(\\Omega_f/\\Omega_i)$ は温度が一定の熱浴でのみ正しい．有限系では加熱で温度が上がるので補正が必要となり，$N\\to\\infty$ で熱浴の結果に戻る．"
+   "tex": "$Q=kT\\ln(\\Omega_f/\\Omega_i)$ は温度が一定の熱浴でのみ正しい．有限系では加熱で温度が上がるので補正が必要となり，$N\\to\\infty$ で熱浴の結果に戻る．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $Q$ [eV]：≈0.94\n(3) 記述"
+   "spec": "(1) $Q$：k T ln(r)\n(2) $Q_N$：3 N k T (r^(2/(3 N))-1)/2\n(3) $\\ln(\\Omega_f/\\Omega_i)$：(Q/k) (1/T_2-1/T_1)"
   },
   "methods": [],
   "tags": [
@@ -1948,16 +1948,16 @@
   "theme": "フレンケル欠陥の熱平衡濃度",
   "topic": "フレンケル欠陥の熱平衡濃度",
   "statement": {
-   "tex": "$N$ 個の原子が格子点を占める結晶に，原子が入りうる格子間位置が $N_i$ 個ある．格子点の原子が格子間位置に移ると（フレンケル欠陥），空孔と格子間原子が1組でき，エネルギーが $\\varepsilon$ だけ増える．欠陥が $n$ 組ある状態を考え，$1\\ll n\\ll N,\\,N_i$ とする．\n\\begin{enumerate}\n\\item 欠陥が $n$ 組ある状態の数 $W(n)$ を書け．\n\\item ミクロカノニカル分布で温度 $T$ を定め，$n$ を $N,\\,N_i,\\,\\varepsilon,\\,T$ で表せ．\n\\item $N_i=N$，$\\varepsilon=1.0\\,\\mathrm{eV}$，$T=1000\\,\\mathrm{K}$ のとき $n/N$ を求めよ（$k_B=8.617\\times10^{-5}\\,\\mathrm{eV/K}$）．\n\\item 欠陥による熱容量 $C=d(n\\varepsilon)/dT$ を (2) の結果から求めよ．\n\\end{enumerate}"
+   "tex": "$N$ 個の原子が格子点を占める結晶に，原子が入りうる格子間位置が $N_i$ 個ある．格子点の原子が格子間位置に移ると（フレンケル欠陥），空孔と格子間原子が1組でき，エネルギーが $\\varepsilon$ だけ増える．欠陥が $n$ 組ある状態を考え，$1\\ll n\\ll N,\\,N_i$ とする．\n\\begin{enumerate}\n\\item 欠陥が $n$ 組ある状態の数 $W(n)$ を書け．\n\\item ミクロカノニカル分布で温度 $T$ を定め，$n$ を $N,\\,N_i,\\,\\varepsilon,\\,T$ で表せ．\n\\item $N_i=N$ のとき，温度を $T$ から $2T$ に上げると欠陥の数 $n$ は何倍になるか．\n\\item 欠陥による熱容量 $C=d(n\\varepsilon)/dT$ を (2) の結果から求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $W(n)=\\dfrac{N!}{n!\\,(N-n)!}\\cdot\\dfrac{N_i!}{n!\\,(N_i-n)!}$ (2) $n=\\sqrt{NN_i}\\,e^{-\\varepsilon/2k_BT}$ (3) $n/N\\approx3.0\\times10^{-3}$ (4) $C=\\dfrac{\\sqrt{NN_i}\\,\\varepsilon^2}{2k_BT^2}e^{-\\varepsilon/2k_BT}$"
+   "tex": "(1) $W(n)=\\dfrac{N!}{n!\\,(N-n)!}\\cdot\\dfrac{N_i!}{n!\\,(N_i-n)!}$ (2) $n=\\sqrt{NN_i}\\,e^{-\\varepsilon/2k_BT}$ (3) $e^{\\varepsilon/4k_BT}$ 倍 (4) $C=\\dfrac{\\sqrt{NN_i}\\,\\varepsilon^2}{2k_BT^2}e^{-\\varepsilon/2k_BT}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 空孔になる格子点の選び方と，格子間原子が入る位置の選び方は独立なので\n\\[ \\boldsymbol{W(n)=\\frac{N!}{n!\\,(N-n)!}\\cdot\\frac{N_i!}{n!\\,(N_i-n)!}}. \\]\n\n(2) $S=k_B\\ln W$，$E=n\\varepsilon$ として $\\dfrac{1}{T}=\\dfrac{1}{\\varepsilon}\\dfrac{\\partial S}{\\partial n}$．スターリングの公式から\n\\[ \\frac{\\partial S}{\\partial n}=k_B\\ln\\frac{(N-n)(N_i-n)}{n^2}=\\frac{\\varepsilon}{T}. \\]\n$n\\ll N,\\,N_i$ なら $n^2\\simeq NN_i\\,e^{-\\varepsilon/k_BT}$，よって\n\\[ \\boldsymbol{n=\\sqrt{NN_i}\\,e^{-\\varepsilon/2k_BT}}. \\]\n指数に $1/2$ が付くのは，欠陥1組ごとに独立な組合せの因子が2つあるからである（ショットキー欠陥なら $n=Ne^{-\\varepsilon/k_BT}$）．\n\n(3) $\\dfrac{\\varepsilon}{2k_BT}=\\dfrac{1.0}{2\\times8.617\\times10^{-5}\\times1000}=5.80$ より $\\boldsymbol{n/N=e^{-5.80}\\approx3.0\\times10^{-3}}$．\n\n(4) $\\dfrac{dn}{dT}=n\\cdot\\dfrac{\\varepsilon}{2k_BT^2}$ より\n\\[ \\boldsymbol{C=\\frac{\\sqrt{NN_i}\\,\\varepsilon^2}{2k_BT^2}e^{-\\varepsilon/2k_BT}}. \\]\n低温で指数関数的に小さくなる（ショットキー型の熱容量の低温側）．"
+    "tex": "(1) 空孔になる格子点の選び方と，格子間原子が入る位置の選び方は独立なので\n\\[ \\boldsymbol{W(n)=\\frac{N!}{n!\\,(N-n)!}\\cdot\\frac{N_i!}{n!\\,(N_i-n)!}}. \\]\n\n(2) $S=k_B\\ln W$，$E=n\\varepsilon$ として $\\dfrac{1}{T}=\\dfrac{1}{\\varepsilon}\\dfrac{\\partial S}{\\partial n}$．スターリングの公式から\n\\[ \\frac{\\partial S}{\\partial n}=k_B\\ln\\frac{(N-n)(N_i-n)}{n^2}=\\frac{\\varepsilon}{T}. \\]\n$n\\ll N,\\,N_i$ なら $n^2\\simeq NN_i\\,e^{-\\varepsilon/k_BT}$，よって\n\\[ \\boldsymbol{n=\\sqrt{NN_i}\\,e^{-\\varepsilon/2k_BT}}. \\]\n指数に $1/2$ が付くのは，欠陥1組ごとに独立な組合せの因子が2つあるからである（ショットキー欠陥なら $n=Ne^{-\\varepsilon/k_BT}$）．\n\n(3) $N_i=N$ では $n/N=e^{-\\varepsilon/2k_BT}$．$2T$ では $e^{-\\varepsilon/4k_BT}$ なので，比は\n\\[\\frac{e^{-\\varepsilon/4k_BT}}{e^{-\\varepsilon/2k_BT}}=\\boldsymbol{e^{\\varepsilon/4k_BT}}\\ \\text{倍}.\\]\n$\\varepsilon=1$ eV，$T=1000$ K なら $n/N\\approx3\\times10^{-3}$ で，$2000$ K では約 18 倍に増える．欠陥濃度は温度に非常に敏感である．\n\n(4) $\\dfrac{dn}{dT}=n\\cdot\\dfrac{\\varepsilon}{2k_BT^2}$ より\n\\[ \\boldsymbol{C=\\frac{\\sqrt{NN_i}\\,\\varepsilon^2}{2k_BT^2}e^{-\\varepsilon/2k_BT}}. \\]\n低温で指数関数的に小さくなる（ショットキー型の熱容量の低温側）．"
    }
   ],
   "idea": {
@@ -1965,7 +1965,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述：W(n) = [N!/(n!(N-n)!)]·[N_i!/(n!(N_i-n)!)]\n(2) n：sqrt(N N_i) e^(-epsilon/(2 k_B T))\n(3) n/N：≈3.0e-3\n(4) C：sqrt(N N_i) epsilon^2/(2 k_B T^2) e^(-epsilon/(2 k_B T))"
+   "spec": "(1) 記述：W(n) = [N!/(n!(N-n)!)]·[N_i!/(n!(N_i-n)!)]\n(2) n：sqrt(N N_i) e^(-epsilon/(2 k_B T))\n(3) 倍率：e^(epsilon/(4 k_B T))\n(4) C：sqrt(N N_i) epsilon^2/(2 k_B T^2) e^(-epsilon/(2 k_B T))"
   },
   "methods": [],
   "tags": [
@@ -2145,16 +2145,16 @@
   "theme": "2準位スピン系の負温度と熱接触",
   "topic": "2準位スピン系の負温度と熱接触",
   "statement": {
-   "tex": "磁場 $B$ 中のスピン $1/2$ 粒子（磁気モーメント $\\mu_0$）$N$ 個の系で，磁場に平行なスピンのエネルギーを $-\\mu_0B$，反平行を $+\\mu_0B$ とする．全エネルギーを $E=xN\\mu_0B$（$-1<x<1$）と書く．$N\\gg1$ とし Stirling の公式を用いよ．\n\\begin{enumerate}\n\\item エントロピー $S(E)$ を求め，統計力学的温度 $T$ を $x$ の関数として表せ．$x>0$ で $T<0$ となることを示せ．\n\\item 同種の系 1（$N$ 個，$x_1=+\\frac12$）と系 2（$3N$ 個，$x_2=-\\frac12$）を熱接触させ，全体を孤立させて平衡に達させる．はじめの $k_BT_1,k_BT_2$ と平衡温度 $k_BT_f$ を $\\mu_0B$ 単位で求めよ．\n\\item エネルギーはどちら向きに流れたか．エントロピー増加 $\\Delta S/(Nk_B)$ を数値で求め，「負の温度は無限大の温度より熱い」ことを説明せよ．\n\\end{enumerate}"
+   "tex": "磁場 $B$ 中のスピン $1/2$ 粒子（磁気モーメント $\\mu_0$）$N$ 個の系で，磁場に平行なスピンのエネルギーを $-\\mu_0B$，反平行を $+\\mu_0B$ とする．全エネルギーを $E=xN\\mu_0B$（$-1<x<1$）と書く．$N\\gg1$ とし Stirling の公式を用いよ．\n\\begin{enumerate}\n\\item エントロピー $S(E)$ を求め，統計力学的温度 $T$ を $x$ の関数として表せ．$x>0$ で $T<0$ となることを示せ．\n\\item 同種の系 1（$N$ 個，$x_1=+a$）と系 2（$3N$ 個，$x_2=-a$）（$0<a<1$）を熱接触させ，全体を孤立させて平衡に達させる．平衡での $x_f$ と，はじめの $k_BT_1,k_BT_2$ および平衡温度 $k_BT_f$ を $\\mu_0B$ と $a$ で表せ．\n\\item エネルギーはどちら向きにどれだけ流れたか．1 スピンあたりのエントロピーを $s(x)$ として，エントロピー増加 $\\Delta S$ を $s$ で表し，「負の温度は無限大の温度より熱い」ことを説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $S=-Nk_B\\left[\\frac{1-x}2\\log\\frac{1-x}2+\\frac{1+x}2\\log\\frac{1+x}2\\right]$，$\\dfrac1{k_BT}=\\dfrac1{2\\mu_0B}\\log\\dfrac{1-x}{1+x}$　(2) $k_BT_1=-1.820\\mu_0B$，$k_BT_2=+1.820\\mu_0B$，$k_BT_f=2\\mu_0B/\\log(5/3)=3.915\\mu_0B$　(3) 系1→系2 に $0.75N\\mu_0B$，$\\Delta S\\approx0.397Nk_B$"
+   "tex": "(1) $S=-Nk_B\\left[\\frac{1-x}2\\log\\frac{1-x}2+\\frac{1+x}2\\log\\frac{1+x}2\\right]$，$\\dfrac1{k_BT}=\\dfrac1{2\\mu_0B}\\log\\dfrac{1-x}{1+x}$　(2) $x_f=-\\dfrac a2$，$k_BT_1=\\dfrac{2\\mu_0B}{\\log\\frac{1-a}{1+a}}<0$，$k_BT_2=\\dfrac{2\\mu_0B}{\\log\\frac{1+a}{1-a}}$，$k_BT_f=\\dfrac{2\\mu_0B}{\\log\\frac{2+a}{2-a}}$　(3) 系1→系2 に $\\dfrac32aN\\mu_0B$，$\\Delta S=4N[s(a/2)-s(a)]>0$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 平行スピン数 $n_+=\\frac{N}2(1-x)$，反平行 $n_-=\\frac N2(1+x)$（$E=\\mu_0B(n_--n_+)$）．$W=N!/(n_+!n_-!)$ に Stirling 公式を用いて\n\\[\nS=k_B\\log W=-Nk_B\\left[\\tfrac{1-x}2\\log\\tfrac{1-x}2+\\tfrac{1+x}2\\log\\tfrac{1+x}2\\right].\n\\]\n$dx/dE=1/(N\\mu_0B)$ より\n\\[\n\\frac1T=\\frac{\\partial S}{\\partial E}=\\frac{k_B}{2\\mu_0B}\\log\\frac{1-x}{1+x}.\n\\]\n$x>0$（反平行が多い，ポピュレーション反転）では対数が負で $T<0$．$x\\to0^\\pm$ で $T\\to\\pm\\infty$．\n\n(2) $x_1=\\frac12$：$k_BT_1=2\\mu_0B/\\log(1/3)=-1.820\\mu_0B$．$x_2=-\\frac12$：$k_BT_2=+1.820\\mu_0B$．\n平衡では $1/T$ が等しい $\\Rightarrow$ $x$ が等しい．エネルギー保存から $Nx_f+3Nx_f=N\\cdot\\frac12+3N\\cdot(-\\frac12)$，$x_f=-\\frac14$．\n\\[\nk_BT_f=\\frac{2\\mu_0B}{\\log(5/3)}=3.915\\,\\mu_0B .\n\\]\n(3) 系 1 のエネルギーは $\\frac12N\\mu_0B\\to-\\frac14N\\mu_0B$ と $0.75N\\mu_0B$ 減り，そのぶん系 2 が得た．負温度の系から正温度の系へエネルギーが流れ，系 2 の温度は $1.82\\to3.92$ に上がった．エントロピー変化（1 スピンあたりのエントロピー $s(x)/k_B$ を用いて）\n\\[\n\\frac{\\Delta S}{Nk_B}=4s(-\\tfrac14)-s(\\tfrac12)-3s(-\\tfrac12)\\approx 2.6463-0.5623-1.6870=0.397>0 .\n\\]\nエネルギーの流れの向きを決めるのは $1/T$ であり，$1/T$ の小さい側から大きい側へ流れる．$1/T$ は $+\\infty$（$T=0^+$）$\\to0$（$T=\\pm\\infty$）$\\to-\\infty$（$T=0^-$）の順に「熱く」なるので，負温度は任意の正温度・無限大温度より熱い．"
+    "tex": "(1) 平行スピン数 $n_+=\\frac{N}2(1-x)$，反平行 $n_-=\\frac N2(1+x)$（$E=\\mu_0B(n_--n_+)$）．$W=N!/(n_+!n_-!)$ に Stirling 公式を用いて\n\\[\nS=k_B\\log W=-Nk_B\\left[\\tfrac{1-x}2\\log\\tfrac{1-x}2+\\tfrac{1+x}2\\log\\tfrac{1+x}2\\right].\n\\]\n$dx/dE=1/(N\\mu_0B)$ より\n\\[\n\\frac1T=\\frac{\\partial S}{\\partial E}=\\frac{k_B}{2\\mu_0B}\\log\\frac{1-x}{1+x}.\n\\]\n$x>0$（反平行が多い，ポピュレーション反転）では対数が負で $T<0$．$x\\to0^\\pm$ で $T\\to\\pm\\infty$．\n\n(2) (1) より $k_BT_1=\\boldsymbol{\\dfrac{2\\mu_0B}{\\log\\frac{1-a}{1+a}}}<0$，$k_BT_2=\\boldsymbol{\\dfrac{2\\mu_0B}{\\log\\frac{1+a}{1-a}}}>0$（$|T_1|=T_2$）．\n平衡では $1/T$ が等しい $\\Rightarrow$ $x$ が等しい．エネルギー保存から $Nx_f+3Nx_f=Na+3N(-a)$，$x_f=\\boldsymbol{-\\dfrac a2}$．\n\\[\nk_BT_f=\\frac{2\\mu_0B}{\\log\\frac{1+a/2}{1-a/2}}=\\boldsymbol{\\frac{2\\mu_0B}{\\log\\frac{2+a}{2-a}}}>0 .\n\\]\n（$a=\\frac12$ なら $k_BT_1\\approx-1.82\\mu_0B$，$k_BT_f\\approx3.9\\mu_0B$．）\n\n(3) 系 1 のエネルギーは $aN\\mu_0B\\to-\\frac a2N\\mu_0B$ と $\\boldsymbol{\\frac32aN\\mu_0B}$ 減り，そのぶん系 2 が得た．負温度の系から正温度の系へエネルギーが流れ，系 2 の温度は上がった．$s$ は偶関数なので\n\\[\n\\Delta S=4Ns(-\\tfrac a2)-Ns(a)-3Ns(-a)=\\boldsymbol{4N\\left[s\\left(\\tfrac a2\\right)-s(a)\\right]}>0\n\\]\n（$s(x)$ は $|x|$ について単調減少）．\nエネルギーの流れの向きを決めるのは $1/T$ であり，$1/T$ の小さい側から大きい側へ流れる．$1/T$ は $+\\infty$（$T=0^+$）$\\to0$（$T=\\pm\\infty$）$\\to-\\infty$（$T=0^-$）の順に「熱く」なるので，負温度は任意の正温度・無限大温度より熱い．"
    }
   ],
   "idea": {
@@ -2162,7 +2162,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) $x_f$：-a/2 ; $k_BT_1$：2 μ_0 B/ln((1-a)/(1+a)) ; $k_BT_2$：2 μ_0 B/ln((1+a)/(1-a)) ; $k_BT_f$：2 μ_0 B/ln((2+a)/(2-a))\n(3) 移動したエネルギー：3 a N μ_0 B/2"
   },
   "methods": [],
   "tags": [
@@ -2245,16 +2245,16 @@
   "theme": "加算器（ランダムウォーク）の原点回帰",
   "topic": "加算器（ランダムウォーク）の原点回帰",
   "statement": {
-   "tex": "右のボタンで $+1$，左のボタンで $-1$ する加算器があり，表示は $0$ から始まる．各回独立に確率 $p$ で右，$q=1-p$ で左を押す．\n\\begin{enumerate}\n\\item $p=q=\\frac12$ のとき，$2m$ 回押す間に表示が一度も負にならない確率は $\\binom{2m}{m}2^{-2m}$ であることを示せ（鏡像法を用いよ）．$m=3$ の値を求めよ．\n\\item $p=q=\\frac12$ のとき，$2m$ 回目にはじめて表示が $0$ に戻る確率 $f_{2m}$ を求め，$m=3$ の値を求めよ．\n\\item 一般の $p$ のとき，表示がいつか（無限回押す間に）再び $0$ に戻る確率は $1-|p-q|$ であることを示せ．$p=0.7$ ではいくらか．\n\\end{enumerate}"
+   "tex": "右のボタンで $+1$，左のボタンで $-1$ する加算器があり，表示は $0$ から始まる．各回独立に確率 $p$ で右，$q=1-p$ で左を押す．\n\\begin{enumerate}\n\\item $p=q=\\frac12$ のとき，$2m$ 回押す間に表示が一度も負にならない確率は $u_m=\\binom{2m}{m}2^{-2m}$ であることを示せ（鏡像法を用いよ）．また比 $u_{m+1}/u_m$ を $m$ で表せ．\n\\item $p=q=\\frac12$ のとき，$2m$ 回目にはじめて表示が $0$ に戻る確率 $f_{2m}$ を求め，比 $f_{2m}/u_m$ を $m$ で表せ．\n\\item 一般の $p$ のとき，表示がいつか（無限回押す間に）再び $0$ に戻る確率は $1-|p-q|$ であることを示せ．$p>\\frac12$ のとき，この確率を $p$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $m=3$ で $5/16$　(2) $f_{2m}=\\dfrac{1}{2m-1}\\binom{2m}{m}2^{-2m}$，$m=3$ で $1/16$　(3) $p=0.7$ で $0.6$"
+   "tex": "(1) $\\dfrac{u_{m+1}}{u_m}=\\dfrac{2m+1}{2m+2}$　(2) $f_{2m}=\\dfrac{1}{2m-1}\\binom{2m}{m}2^{-2m}$，$\\dfrac{f_{2m}}{u_m}=\\dfrac{1}{2m-1}$　(3) $2(1-p)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 終点が $2k\\ (k\\ge0)$ で一度も負にならない経路の数を数える．$(0,0)$ から $(2m,2k)$ への経路で高さ $-1$ に触れるものは，最初に触れた点以前を $-1$ に関して折り返すと $(0,-2)$ から $(2m,2k)$ への経路と 1 対 1 に対応し，その数は $\\binom{2m}{m+k+1}$．したがって良い経路は $\\binom{2m}{m+k}-\\binom{2m}{m+k+1}$ 本．$k=0,1,\\dots,m$ で和をとると望遠鏡和となり $\\binom{2m}{m}$ が残る．確率は $\\binom{2m}m2^{-2m}$．$m=3$：$20/64=5/16$．\n\n(2) $u_{2m}=\\binom{2m}m(pq)^m$（$2m$ 回目に $0$ にいる確率）と $f_{2m}$ の母関数 $U(s)=\\sum_{m\\ge0}u_{2m}s^{2m}$，$F(s)=\\sum_{m\\ge1}f_{2m}s^{2m}$ には，最初の回帰で分解する更新方程式 $U=1+FU$ が成り立つ．$U(s)=(1-4pqs^2)^{-1/2}$ より\n\\[\nF(s)=1-\\frac1{U(s)}=1-\\sqrt{1-4pqs^2}.\n\\]\n展開すると $f_{2m}=\\dfrac{1}{2m-1}\\binom{2m}m(pq)^m$．$p=q=\\frac12$ で $f_{2m}=\\dfrac{1}{2m-1}\\binom{2m}{m}2^{-2m}$，$m=3$：$\\dfrac15\\cdot\\dfrac{20}{64}=\\dfrac1{16}$．\n（確認：$(+,+,+,-,-,-)$ と $(+,+,-,+,-,-)$ およびその符号反転，計 4 本で $4/64$．）\n\n(3) いつか戻る確率は $F(1)=1-\\sqrt{1-4pq}=1-\\sqrt{(p+q)^2-4pq}=1-|p-q|$．$p=0.7$：$1-0.4=0.6$．$p=q$ のときだけ確率 $1$ で戻る（1 次元対称ランダムウォークの再帰性）．"
+    "tex": "(1) 終点が $2k\\ (k\\ge0)$ で一度も負にならない経路の数を数える．$(0,0)$ から $(2m,2k)$ への経路で高さ $-1$ に触れるものは，最初に触れた点以前を $-1$ に関して折り返すと $(0,-2)$ から $(2m,2k)$ への経路と 1 対 1 に対応し，その数は $\\binom{2m}{m+k+1}$．したがって良い経路は $\\binom{2m}{m+k}-\\binom{2m}{m+k+1}$ 本．$k=0,1,\\dots,m$ で和をとると望遠鏡和となり $\\binom{2m}{m}$ が残る．確率は $\\binom{2m}m2^{-2m}$．\n比は\n\\[\\frac{u_{m+1}}{u_m}=\\frac{(2m+2)(2m+1)}{(m+1)^2}\\cdot\\frac14=\\boldsymbol{\\frac{2m+1}{2m+2}}\\]\nで，$u_m$ はゆっくり（$\\propto m^{-1/2}$）減少する．\n\n(2) $U_{2m}=\\binom{2m}m(pq)^m$（$2m$ 回目に $0$ にいる確率）と $f_{2m}$ の母関数 $U(s)=\\sum_{m\\ge0}U_{2m}s^{2m}$，$F(s)=\\sum_{m\\ge1}f_{2m}s^{2m}$ には，最初の回帰で分解する更新方程式 $U=1+FU$ が成り立つ．$U(s)=(1-4pqs^2)^{-1/2}$ より\n\\[\nF(s)=1-\\frac1{U(s)}=1-\\sqrt{1-4pqs^2}.\n\\]\n展開すると $f_{2m}=\\dfrac{1}{2m-1}\\binom{2m}m(pq)^m$．$p=q=\\frac12$ で $f_{2m}=\\boldsymbol{\\dfrac{1}{2m-1}\\binom{2m}{m}2^{-2m}}$，すなわち $\\dfrac{f_{2m}}{u_m}=\\boldsymbol{\\dfrac{1}{2m-1}}$．\n（確認：$m=3$ では $(+,+,+,-,-,-)$ と $(+,+,-,+,-,-)$ およびその符号反転，計 4 本で $4/64=\\frac15\\cdot\\frac{20}{64}$．）\n\n(3) いつか戻る確率は $F(1)=1-\\sqrt{1-4pq}=1-\\sqrt{(p+q)^2-4pq}=1-|p-q|$．$p>\\frac12$ では $|p-q|=2p-1$ より $\\boldsymbol{2(1-p)}$（$=2q$）．$p=q$ のときだけ確率 $1$ で戻る（1 次元対称ランダムウォークの再帰性）．"
    }
   ],
   "idea": {
@@ -2262,7 +2262,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $u_{m+1}/u_m$：(2 m+1)/(2 m+2)\n(2) $f_{2m}/u_m$：1/(2 m-1)\n(3) 確率：2 (1-p)"
   },
   "methods": [],
   "tags": [
@@ -2498,16 +2498,16 @@
   "theme": "ゆらぎの相関と光子気体のエネルギーゆらぎ",
   "topic": "ゆらぎの相関と光子気体のエネルギーゆらぎ",
   "statement": {
-   "tex": "前問の $(T,V)$ 表示のゆらぎの確率を用いる．\n\\begin{enumerate}\n  \\item 一般に $\\overline{\\delta U\\,\\delta V}=\\left[T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p\\right]k_BT\\,V\\kappa_T$ となることを示せ（$\\kappa_T=-\\frac1V(\\partial V/\\partial p)_T$）．理想気体と van der Waals 気体 $(p+aN^2/V^2)(V-Nb)=Nk_BT$ についてそれぞれ $\\overline{\\delta U\\delta V}$ を求め，符号の物理的意味を述べよ．\n  \\item 単原子理想気体の部分系で $\\overline{\\delta S\\,\\delta T}$，$\\overline{\\delta S\\,\\delta V}$，$\\overline{\\delta U^2}/\\bar U^2$ を求めよ．\n  \\item 空洞放射（光子気体，$U=aVT^4$，$p=aT^4/3$）に (1) の公式を適用するとどうなるか．その理由を述べよ．\n  \\item 光子気体を体積 $V$ 一定の空洞に入れ，壁と熱平衡にあるとき，エネルギーの相対ゆらぎ $\\sqrt{\\overline{\\delta U^2}}/U$ を求め，$V=1\\ \\mathrm{cm}^3$，$T=300\\ \\mathrm K$ で数値を求めよ（$a=7.57\\times10^{-16}\\ \\mathrm{J\\,m^{-3}K^{-4}}$）．\n\\end{enumerate}"
+   "tex": "ゆらぎの起こる確率を温度と体積の変分で表すと $w\\propto\\exp\\left[\\left(-\\dfrac{C_V}{T}\\delta T^2+\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T\\delta V^2\\right)\\Big/(2k_BT)\\right]$ となる（$\\delta T$ と $\\delta V$ は独立で，$\\overline{\\delta T^2}=k_BT^2/C_V$，$\\overline{\\delta V^2}=k_BTV\\kappa_T$）．\n\\begin{enumerate}\n  \\item 一般に $\\overline{\\delta U\\,\\delta V}=\\left[T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p\\right]k_BT\\,V\\kappa_T$ となることを示せ（$\\kappa_T=-\\frac1V(\\partial V/\\partial p)_T$）．理想気体と van der Waals 気体 $(p+aN^2/V^2)(V-Nb)=Nk_BT$ についてそれぞれ $\\overline{\\delta U\\delta V}$ を求め，符号の物理的意味を述べよ．\n  \\item 単原子理想気体（$N$ 分子）の部分系で $\\overline{\\delta S\\,\\delta T}$，$\\overline{\\delta S\\,\\delta V}$，$\\overline{\\delta U^2}/\\bar U^2$ を求めよ．\n  \\item 空洞放射（光子気体，$U=AVT^4$，$p=AT^4/3$，$A$ は定数）に (1) の公式を適用するとどうなるか．その理由を述べよ．\n  \\item 光子気体を体積 $V$ 一定の空洞に入れ，壁と熱平衡にあるとき，エネルギーの相対ゆらぎ $\\sqrt{\\overline{\\delta U^2}}/U$ を $k_B,A,V,T$ で求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 理想気体 $0$，van der Waals 気体 $\\dfrac{aN^2}{V^2}\\cdot\\dfrac{k_BT}{-(\\partial p/\\partial V)_T}>0$　(2) $k_BT$，$k_BV$，$\\dfrac{2}{3N}$　(3) $(\\partial p/\\partial V)_T=0$ で $\\kappa_T=\\infty$，体積ゆらぎが発散（公式が使えない）　(4) $\\sqrt{4k_B/(aVT^3)}\\simeq5.2\\times10^{-5}$"
+   "tex": "(1) 理想気体 $0$，van der Waals 気体 $\\dfrac{aN^2}{V^2}\\cdot\\dfrac{k_BT}{-(\\partial p/\\partial V)_T}>0$　(2) $k_BT$，$k_BV$，$\\dfrac{2}{3N}$　(3) $(\\partial p/\\partial V)_T=0$ で $\\kappa_T=\\infty$，体積ゆらぎが発散（公式が使えない）　(4) $\\sqrt{\\dfrac{4k_B}{AVT^3}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $U(T,V)$ と見て $\\delta U=C_V\\delta T+\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T\\delta V$，熱力学の関係 $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p$．$\\overline{\\delta T\\delta V}=0$，$\\overline{\\delta V^2}=k_BTV\\kappa_T$ より\n\\[\n\\overline{\\delta U\\delta V}=\\left[T\\left(\\frac{\\partial p}{\\partial T}\\right)_V-p\\right]k_BTV\\kappa_T .\n\\]\n理想気体では $T(\\partial p/\\partial T)_V-p=0$ で $\\overline{\\delta U\\delta V}=0$．van der Waals 気体では $T(\\partial p/\\partial T)_V-p=\\dfrac{aN^2}{V^2}$ なので $\\overline{\\delta U\\delta V}=\\dfrac{aN^2}{V^2}\\cdot\\dfrac{k_BT}{-(\\partial p/\\partial V)_T}>0$（安定領域）．引力があるので，体積がゆらいで膨らむと分子間の位置エネルギーが上がり $U$ も増える，という正の相関．\n\n(2) $\\delta S=\\dfrac{C_V}{T}\\delta T+\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V\\delta V$ より $\\overline{\\delta S\\delta T}=\\dfrac{C_V}{T}\\overline{\\delta T^2}=k_BT$，$\\overline{\\delta S\\delta V}=\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V\\overline{\\delta V^2}=\\dfrac{Nk_B}{V}\\cdot\\dfrac{k_BTV}{p}=k_BV$．\n$\\overline{\\delta U^2}=C_V^2\\overline{\\delta T^2}=k_BC_VT^2=\\frac32Nk_B^2T^2$，$\\bar U=\\frac32Nk_BT$ より $\\overline{\\delta U^2}/\\bar U^2=\\dfrac{2}{3N}$．\n\n(3) $p=aT^4/3$ は $V$ によらないので $(\\partial p/\\partial V)_T=0$，$\\kappa_T=\\infty$ で $\\overline{\\delta V^2}=\\infty$ となり公式は意味を失う．光子数は保存せず，一定温度の熱浴の中で「圧力一定・温度一定」の部分系の体積を決める力がない（化学ポテンシャル 0 で，粒子数が自由に変われるため）．ゆらぎが正しく扱えるのは体積を固定した場合である．\n\n(4) $V$ 一定ならエネルギーゆらぎは $\\overline{\\delta U^2}=k_BT^2C_V$，$C_V=4aVT^3$ より\n\\[\n\\frac{\\overline{\\delta U^2}}{U^2}=\\frac{4k_BaVT^5}{a^2V^2T^8}=\\frac{4k_B}{aVT^3}.\n\\]\n数値：$\\dfrac{4\\times1.381\\times10^{-23}}{7.57\\times10^{-16}\\times10^{-6}\\times2.7\\times10^{7}}=2.70\\times10^{-9}$，相対ゆらぎ $5.2\\times10^{-5}$．平均光子数 $\\simeq5.5\\times10^8$ に対し $1/\\sqrt{\\bar N}\\simeq4.3\\times10^{-5}$ と同程度である．"
+    "tex": "(1) $U(T,V)$ と見て $\\delta U=C_V\\delta T+\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T\\delta V$，熱力学の関係 $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p$．$\\overline{\\delta T\\delta V}=0$，$\\overline{\\delta V^2}=k_BTV\\kappa_T$ より\n\\[\n\\overline{\\delta U\\delta V}=\\left[T\\left(\\frac{\\partial p}{\\partial T}\\right)_V-p\\right]k_BTV\\kappa_T .\n\\]\n理想気体では $T(\\partial p/\\partial T)_V-p=0$ で $\\overline{\\delta U\\delta V}=0$．van der Waals 気体では $T(\\partial p/\\partial T)_V-p=\\dfrac{aN^2}{V^2}$ なので $\\overline{\\delta U\\delta V}=\\dfrac{aN^2}{V^2}\\cdot\\dfrac{k_BT}{-(\\partial p/\\partial V)_T}>0$（安定領域）．引力があるので，体積がゆらいで膨らむと分子間の位置エネルギーが上がり $U$ も増える，という正の相関．\n\n(2) $\\delta S=\\dfrac{C_V}{T}\\delta T+\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V\\delta V$ より $\\overline{\\delta S\\delta T}=\\dfrac{C_V}{T}\\overline{\\delta T^2}=\\boldsymbol{k_BT}$，$\\overline{\\delta S\\delta V}=\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V\\overline{\\delta V^2}=\\dfrac{Nk_B}{V}\\cdot\\dfrac{k_BTV}{p}=\\boldsymbol{k_BV}$．\n$\\overline{\\delta U^2}=C_V^2\\overline{\\delta T^2}=k_BC_VT^2=\\frac32Nk_B^2T^2$，$\\bar U=\\frac32Nk_BT$ より $\\overline{\\delta U^2}/\\bar U^2=\\boldsymbol{\\dfrac{2}{3N}}$．\n\n(3) $p=AT^4/3$ は $V$ によらないので $(\\partial p/\\partial V)_T=0$，$\\kappa_T=\\infty$ で $\\overline{\\delta V^2}=\\infty$ となり公式は意味を失う．光子数は保存せず，一定温度の熱浴の中で「圧力一定・温度一定」の部分系の体積を決める力がない（化学ポテンシャル 0 で，粒子数が自由に変われるため）．ゆらぎが正しく扱えるのは体積を固定した場合である．\n\n(4) $V$ 一定ならエネルギーゆらぎは $\\overline{\\delta U^2}=k_BT^2C_V$，$C_V=4AVT^3$ より\n\\[\n\\frac{\\overline{\\delta U^2}}{U^2}=\\frac{4k_BAVT^5}{A^2V^2T^8}=\\frac{4k_B}{AVT^3},\\qquad \\frac{\\sqrt{\\overline{\\delta U^2}}}{U}=\\boldsymbol{\\sqrt{\\frac{4k_B}{AVT^3}}}.\n\\]\n$V=1$ cm$^3$，$T=300$ K では約 $5\\times10^{-5}$ で，平均光子数 $\\bar N$（約 $5\\times10^8$）に対する $1/\\sqrt{\\bar N}$ と同程度である．"
    }
   ],
   "idea": {
@@ -2515,7 +2515,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+   "spec": "(1) 記述\n(2) $\\overline{\\delta S\\delta T}$：k_B T ; $\\overline{\\delta S\\delta V}$：k_B V ; $\\overline{\\delta U^2}/\\bar U^2$：2/(3 N)\n(3) 記述\n(4) 相対ゆらぎ：sqrt(4 k_B/(A V T^3))"
   },
   "methods": [],
   "tags": [
@@ -2700,16 +2700,16 @@
   "theme": "熱接触した2つの系のエネルギー分配とゆらぎ",
   "topic": "熱接触した2つの系のエネルギー分配とゆらぎ",
   "statement": {
-   "tex": "エネルギー $0$ と $\\varepsilon$ の2準位をもつ独立な粒子からなる系 1（$N_1$ 個）と系 2（$N_2$ 個）が熱接触し，全体は孤立している．励起した粒子の総数 $M$（全エネルギー $M\\varepsilon$）は一定で，系 1 の励起数が $M_1$ である確率は等重率の原理から\n\\[ P(M_1)\\propto\\binom{N_1}{M_1}\\binom{N_2}{M-M_1} \\]\nとなる．$N=N_1+N_2$ とし，$N_1,\\,N_2,\\,M,\\,N-M$ はすべて十分大きいとする．\n\\begin{enumerate}\n\\item 最も確からしい $M_1$ の値 $M_1^*$ を求めよ．\n\\item $\\ln P$ を $M_1^*$ のまわりで2次まで展開し，$M_1$ の分散 $\\sigma^2$ を求めよ．\n\\item $N_1=N_2=1.0\\times10^{20}$，$M=N/4$ のとき，相対ゆらぎ $\\sigma/M_1^*$ を求めよ．\n\\end{enumerate}"
+   "tex": "エネルギー $0$ と $\\varepsilon$ の2準位をもつ独立な粒子からなる系 1（$N_1$ 個）と系 2（$N_2$ 個）が熱接触し，全体は孤立している．励起した粒子の総数 $M$（全エネルギー $M\\varepsilon$）は一定で，系 1 の励起数が $M_1$ である確率は等重率の原理から\n\\[ P(M_1)\\propto\\binom{N_1}{M_1}\\binom{N_2}{M-M_1} \\]\nとなる．$N=N_1+N_2$ とし，$N_1,\\,N_2,\\,M,\\,N-M$ はすべて十分大きいとする．\n\\begin{enumerate}\n\\item 最も確からしい $M_1$ の値 $M_1^*$ を求めよ．\n\\item $\\ln P$ を $M_1^*$ のまわりで2次まで展開し，$M_1$ の分散 $\\sigma^2$ を求めよ．\n\\item $N_1=N_2$，$M=pN$ のとき，相対ゆらぎ $\\sigma/M_1^*$ を $p$ と $N_1$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $M_1^*=\\dfrac{N_1M}{N}$ \\quad (2) $\\sigma^2=\\dfrac{N_1N_2M(N-M)}{N^3}$ \\quad (3) $\\dfrac{\\sigma}{M_1^*}\\approx1.2\\times10^{-10}$"
+   "tex": "(1) $M_1^*=\\dfrac{N_1M}{N}$ \\quad (2) $\\sigma^2=\\dfrac{N_1N_2M(N-M)}{N^3}$ \\quad (3) $\\dfrac{\\sigma}{M_1^*}=\\sqrt{\\dfrac{1-p}{2pN_1}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$\\dfrac{d}{dn}\\ln n!\\simeq\\ln n$ を使う．\n\n(1) $\\dfrac{d\\ln P}{dM_1}=-\\ln M_1+\\ln(N_1-M_1)+\\ln(M-M_1)-\\ln(N_2-M+M_1)=0$ より\n\\[ \\frac{N_1-M_1}{M_1}=\\frac{N_2-M_2}{M_2}\\quad(M_2=M-M_1). \\]\n励起の割合が等しくなる（2準位系で $T$ は励起の割合だけで決まるので，これは温度が等しいという条件）．$\\boldsymbol{M_1^*=\\dfrac{N_1M}{N}}$．\n\n(2) $p=M/N$ とおくと $M_1^*=pN_1$，$M_2^*=pN_2$ で\n\\[ \\frac{d^2\\ln P}{dM_1^2}=-\\frac{1}{M_1}-\\frac{1}{N_1-M_1}-\\frac{1}{M_2}-\\frac{1}{N_2-M_2}=-\\frac{1}{p(1-p)}\\left(\\frac{1}{N_1}+\\frac{1}{N_2}\\right). \\]\n$P\\propto\\exp[-(M_1-M_1^*)^2/2\\sigma^2]$ と比べて\n\\[ \\boldsymbol{\\sigma^2=p(1-p)\\frac{N_1N_2}{N}=\\frac{N_1N_2M(N-M)}{N^3}}. \\]\n\n(3) $p=1/4$，$N_1=N_2$ より $\\dfrac{\\sigma}{M_1^*}=\\sqrt{\\dfrac{1-p}{2pN_1}}=\\sqrt{\\dfrac{0.75}{0.5\\times10^{20}}}\\approx\\boldsymbol{1.2\\times10^{-10}}$．巨視的な系ではエネルギーの分配は事実上確定しており，これが熱平衡が「決まった状態」に見える理由である．"
+    "tex": "$\\dfrac{d}{dn}\\ln n!\\simeq\\ln n$ を使う．\n\n(1) $\\dfrac{d\\ln P}{dM_1}=-\\ln M_1+\\ln(N_1-M_1)+\\ln(M-M_1)-\\ln(N_2-M+M_1)=0$ より\n\\[ \\frac{N_1-M_1}{M_1}=\\frac{N_2-M_2}{M_2}\\quad(M_2=M-M_1). \\]\n励起の割合が等しくなる（2準位系で $T$ は励起の割合だけで決まるので，これは温度が等しいという条件）．$\\boldsymbol{M_1^*=\\dfrac{N_1M}{N}}$．\n\n(2) $p=M/N$ とおくと $M_1^*=pN_1$，$M_2^*=pN_2$ で\n\\[ \\frac{d^2\\ln P}{dM_1^2}=-\\frac{1}{M_1}-\\frac{1}{N_1-M_1}-\\frac{1}{M_2}-\\frac{1}{N_2-M_2}=-\\frac{1}{p(1-p)}\\left(\\frac{1}{N_1}+\\frac{1}{N_2}\\right). \\]\n$P\\propto\\exp[-(M_1-M_1^*)^2/2\\sigma^2]$ と比べて\n\\[ \\boldsymbol{\\sigma^2=p(1-p)\\frac{N_1N_2}{N}=\\frac{N_1N_2M(N-M)}{N^3}}. \\]\n\n(3) $N_1=N_2$ では $N_1N_2/N=N_1/2$，$\\sigma^2=p(1-p)N_1/2$，$M_1^*=pN_1$ より\n\\[\\frac{\\sigma}{M_1^*}=\\boldsymbol{\\sqrt{\\frac{1-p}{2pN_1}}}.\\]\n$N_1^{-1/2}$ に比例し，$N_1=10^{20}$ なら $10^{-10}$ 程度にすぎない．巨視的な系ではエネルギーの分配は事実上確定しており，これが熱平衡が「決まった状態」に見える理由である．"
    }
   ],
   "idea": {
@@ -2717,7 +2717,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) M_1^*：N_1 M/N\n(2) σ^2：N_1 N_2 M (N - M)/N^3\n(3) σ/M_1^*：≈1.2e-10"
+   "spec": "(1) M_1^*：N_1 M/N\n(2) σ^2：N_1 N_2 M (N - M)/N^3\n(3) $\\sigma/M_1^*$：sqrt((1-p)/(2 p N_1))"
   },
   "methods": [],
   "tags": [

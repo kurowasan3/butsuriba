@@ -302,16 +302,16 @@
   "theme": "方形波電圧の電力スペクトル",
   "topic": "方形波電圧の電力スペクトル",
   "statement": {
-   "tex": "周期 $T$ の電圧 $V(t)$ が，$-T/2<t<0$ で $0$，$0<t<T/2$ で $V_0$ をとる方形波である（$\\omega_0=2\\pi/T$）．\n\\begin{enumerate}\n\\item $V(t)$ のフーリエ級数を求めよ．\n\\item この電圧を抵抗 $R$ に加えたときの平均電力のうち，直流成分による分と基本波（角周波数 $\\omega_0$）成分による分をそれぞれ求めよ．交流成分の電力のうち基本波が占める割合を有効数字 3 桁で答えよ．\n\\item パーセバルの等式から $\\displaystyle\\sum_{k=1}^\\infty\\frac{1}{(2k-1)^2}$ を求めよ．\n\\end{enumerate}"
+   "tex": "周期 $T$ の電圧 $V(t)$ が，$-T/2<t<0$ で $0$，$0<t<T/2$ で $V_0$ をとる方形波である（$\\omega_0=2\\pi/T$）．\n\\begin{enumerate}\n\\item $V(t)$ のフーリエ級数を求めよ．\n\\item この電圧を抵抗 $R$ に加えたときの平均電力のうち，直流成分による分と基本波（角周波数 $\\omega_0$）成分による分をそれぞれ求めよ．交流成分の電力のうち基本波が占める割合 $\\eta$ を求めよ．\n\\item パーセバルの等式から $\\displaystyle\\sum_{k=1}^\\infty\\frac{1}{(2k-1)^2}$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $V=\\dfrac{V_0}2+\\dfrac{2V_0}{\\pi}\\sum_{k\\ge1}\\dfrac{\\sin(2k-1)\\omega_0t}{2k-1}$　(2) 直流 $\\dfrac{V_0^2}{4R}$，基本波 $\\dfrac{2V_0^2}{\\pi^2R}$，割合 $\\dfrac8{\\pi^2}\\approx0.811$　(3) $\\dfrac{\\pi^2}8$"
+   "tex": "(1) $V=\\dfrac{V_0}2+\\dfrac{2V_0}{\\pi}\\sum_{k\\ge1}\\dfrac{\\sin(2k-1)\\omega_0t}{2k-1}$　(2) 直流 $\\dfrac{V_0^2}{4R}$，基本波 $\\dfrac{2V_0^2}{\\pi^2R}$，割合 $\\eta=\\dfrac8{\\pi^2}$　(3) $\\dfrac{\\pi^2}8$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $a_0/2=\\langle V\\rangle=V_0/2$．$a_n=\\frac2T\\int_0^{T/2}V_0\\cos n\\omega_0t\\,dt=0$．$b_n=\\frac2T\\int_0^{T/2}V_0\\sin n\\omega_0t\\,dt=\\frac{V_0}{n\\pi}(1-\\cos n\\pi)$，すなわち奇数 $n$ で $\\frac{2V_0}{n\\pi}$，偶数で $0$．\n\n(2) 平均電力は $\\langle V^2\\rangle/R$．直流分：$(V_0/2)^2/R=V_0^2/(4R)$．基本波：振幅 $2V_0/\\pi$ の正弦波の 2 乗平均は $\\frac12(2V_0/\\pi)^2=2V_0^2/\\pi^2$ なので $\\frac{2V_0^2}{\\pi^2R}$．全電力 $\\langle V^2\\rangle/R=\\frac{V_0^2}{2R}$ だから交流分は $\\frac{V_0^2}{4R}$．割合は $\\frac{2/\\pi^2}{1/4}=\\frac8{\\pi^2}\\approx0.811$．\n\n(3) 交流分の電力を全高調波で書くと $\\sum_k\\frac12\\left(\\frac{2V_0}{(2k-1)\\pi}\\right)^2=\\frac{2V_0^2}{\\pi^2}\\sum_k\\frac1{(2k-1)^2}=\\frac{V_0^2}4$．よって $\\sum\\frac1{(2k-1)^2}=\\frac{\\pi^2}8$．"
+    "tex": "(1) $a_0/2=\\langle V\\rangle=V_0/2$．$a_n=\\frac2T\\int_0^{T/2}V_0\\cos n\\omega_0t\\,dt=0$．$b_n=\\frac2T\\int_0^{T/2}V_0\\sin n\\omega_0t\\,dt=\\frac{V_0}{n\\pi}(1-\\cos n\\pi)$，すなわち奇数 $n$ で $\\frac{2V_0}{n\\pi}$，偶数で $0$．\n\n(2) 平均電力は $\\langle V^2\\rangle/R$．直流分：$(V_0/2)^2/R=V_0^2/(4R)$．基本波：振幅 $2V_0/\\pi$ の正弦波の 2 乗平均は $\\frac12(2V_0/\\pi)^2=2V_0^2/\\pi^2$ なので $\\frac{2V_0^2}{\\pi^2R}$．全電力 $\\langle V^2\\rangle/R=\\frac{V_0^2}{2R}$ だから交流分は $\\frac{V_0^2}{4R}$．割合は $\\eta=\\frac{2/\\pi^2}{1/4}=\\boldsymbol{\\frac8{\\pi^2}}$ で，交流電力の約 8 割を基本波が担う．\n\n(3) 交流分の電力を全高調波で書くと $\\sum_k\\frac12\\left(\\frac{2V_0}{(2k-1)\\pi}\\right)^2=\\frac{2V_0^2}{\\pi^2}\\sum_k\\frac1{(2k-1)^2}=\\frac{V_0^2}4$．よって $\\sum\\frac1{(2k-1)^2}=\\frac{\\pi^2}8$．"
    }
   ],
   "idea": {
@@ -319,7 +319,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 直流：((V_0 ^(2))/(4 R)) ; 基本波：((2 V_0 ^(2))/(pi ^(2) R)) ; 割合：≈0.811\n(3) ((pi ^(2))/(8))"
+   "spec": "(1) 記述\n(2) 直流：((V_0 ^(2))/(4 R)) ; 基本波：((2 V_0 ^(2))/(pi ^(2) R)) ; 割合：8/pi^2\n(3) ((pi ^(2))/(8))"
   },
   "methods": [],
   "tags": [
@@ -1098,16 +1098,16 @@
   "theme": "最小二乗近似としてのフーリエ係数",
   "topic": "最小二乗近似としてのフーリエ係数",
   "statement": {
-   "tex": "周期 $2\\pi$ の電圧信号 $f(\\theta)$（$\\theta=\\omega t$）を，$N$ 個の発振器の出力の和\n\\[ S_N(\\theta)=a_0+\\sum_{n=1}^{N}\\left(a_n\\cos n\\theta+b_n\\sin n\\theta\\right) \\]\nで近似したい．係数 $a_0,a_n,b_n$ は自由に調整でき，近似の良さを 1 周期あたりの二乗誤差\n\\[ E_N=\\int_{-\\pi}^{\\pi}\\left\\{f(\\theta)-S_N(\\theta)\\right\\}^2d\\theta \\]\nで測る．三角関数の直交関係 $\\int_{-\\pi}^{\\pi}\\cos n\\theta\\cos m\\theta\\,d\\theta=\\int_{-\\pi}^{\\pi}\\sin n\\theta\\sin m\\theta\\,d\\theta=\\pi\\delta_{nm}$，$\\int_{-\\pi}^{\\pi}\\cos n\\theta\\sin m\\theta\\,d\\theta=0$（$n,m\\ge1$）は用いてよい．\n\\begin{enumerate}\n\\item $E_N$ を最小にする係数を求め，それがフーリエ係数の公式に一致することを示せ．\n\\item 最小値が $E_N^{\\min}=\\displaystyle\\int_{-\\pi}^{\\pi}f^2d\\theta-2\\pi a_0^2-\\pi\\sum_{n=1}^{N}(a_n^2+b_n^2)$ となることを示せ．\n\\item のこぎり波 $f(\\theta)=\\theta$（$-\\pi<\\theta<\\pi$）について $E_1^{\\min}$，$E_2^{\\min}$ を求めよ．\n\\item (2) で $E_N^{\\min}\\ge0$ であることを用いて，$\\displaystyle\\sum_{n=1}^{\\infty}\\frac1{n^2}\\le\\frac{\\pi^2}{6}$ を示せ．\n\\end{enumerate}"
+   "tex": "周期 $2\\pi$ の電圧信号 $f(\\theta)$（$\\theta=\\omega t$）を，$N$ 個の発振器の出力の和\n\\[ S_N(\\theta)=a_0+\\sum_{n=1}^{N}\\left(a_n\\cos n\\theta+b_n\\sin n\\theta\\right) \\]\nで近似したい．係数 $a_0,a_n,b_n$ は自由に調整でき，近似の良さを 1 周期あたりの二乗誤差\n\\[ E_N=\\int_{-\\pi}^{\\pi}\\left\\{f(\\theta)-S_N(\\theta)\\right\\}^2d\\theta \\]\nで測る．三角関数の直交関係 $\\int_{-\\pi}^{\\pi}\\cos n\\theta\\cos m\\theta\\,d\\theta=\\int_{-\\pi}^{\\pi}\\sin n\\theta\\sin m\\theta\\,d\\theta=\\pi\\delta_{nm}$，$\\int_{-\\pi}^{\\pi}\\cos n\\theta\\sin m\\theta\\,d\\theta=0$（$n,m\\ge1$）は用いてよい．\n\\begin{enumerate}\n\\item $E_N$ を最小にする係数を求め，それがフーリエ係数の公式に一致することを示せ．\n\\item 最小値が $E_N^{\\min}=\\displaystyle\\int_{-\\pi}^{\\pi}f^2d\\theta-2\\pi a_0^2-\\pi\\sum_{n=1}^{N}(a_n^2+b_n^2)$ となることを示せ．\n\\item のこぎり波 $f(\\theta)=\\theta$（$-\\pi<\\theta<\\pi$）について $E_1^{\\min}$，$E_2^{\\min}$ を求め，一般の $N$ での $E_N^{\\min}$ を和の形で書け．\n\\item (2) で $E_N^{\\min}\\ge0$ であることを用いて，$\\displaystyle\\sum_{n=1}^{\\infty}\\frac1{n^2}\\le\\frac{\\pi^2}{6}$ を示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $a_0=\\frac1{2\\pi}\\int f$，$a_n=\\frac1\\pi\\int f\\cos n\\theta$，$b_n=\\frac1\\pi\\int f\\sin n\\theta$　(2) 証明（解説参照）　(3) $E_1^{\\min}=\\frac{2\\pi^3}{3}-4\\pi\\approx8.10$，$E_2^{\\min}=\\frac{2\\pi^3}{3}-5\\pi\\approx4.96$　(4) 証明（$b_n=2(-1)^{n+1}/n$ をベッセルの不等式に代入）"
+   "tex": "(1) $a_0=\\frac1{2\\pi}\\int f$，$a_n=\\frac1\\pi\\int f\\cos n\\theta$，$b_n=\\frac1\\pi\\int f\\sin n\\theta$　(2) 証明（解説参照）　(3) $E_1^{\\min}=\\dfrac{2\\pi^3}{3}-4\\pi$，$E_2^{\\min}=\\dfrac{2\\pi^3}{3}-5\\pi$，$E_N^{\\min}=\\dfrac{2\\pi^3}{3}-4\\pi\\sum_{n=1}^N\\dfrac1{n^2}$　(4) 証明（$b_n=2(-1)^{n+1}/n$ をベッセルの不等式に代入）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $E_N$ は係数の 2 次式である．展開すると\n\\[ E_N=\\int f^2-2\\int fS_N+\\int S_N^2 . \\]\n直交関係より $\\int_{-\\pi}^{\\pi}S_N^2d\\theta=2\\pi a_0^2+\\pi\\sum_{n=1}^N(a_n^2+b_n^2)$（交差項は全て 0）．また $\\alpha_0=\\int f\\,d\\theta$，$\\alpha_n=\\int f\\cos n\\theta\\,d\\theta$，$\\beta_n=\\int f\\sin n\\theta\\,d\\theta$ とおくと $\\int fS_N=a_0\\alpha_0+\\sum(a_n\\alpha_n+b_n\\beta_n)$．よって\n\\[ E_N=\\int f^2-2a_0\\alpha_0+2\\pi a_0^2+\\sum_{n=1}^N\\left\\{\\pi a_n^2-2a_n\\alpha_n+\\pi b_n^2-2b_n\\beta_n\\right\\}. \\]\n各係数について独立な 2 次関数なので，平方完成して\n\\[ E_N=\\int f^2+2\\pi\\left(a_0-\\frac{\\alpha_0}{2\\pi}\\right)^2-\\frac{\\alpha_0^2}{2\\pi}+\\sum_{n=1}^N\\left\\{\\pi\\left(a_n-\\frac{\\alpha_n}{\\pi}\\right)^2+\\pi\\left(b_n-\\frac{\\beta_n}{\\pi}\\right)^2-\\frac{\\alpha_n^2+\\beta_n^2}{\\pi}\\right\\}. \\]\n最小となるのは $a_0=\\dfrac{1}{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f\\,d\\theta$，$a_n=\\dfrac1\\pi\\displaystyle\\int_{-\\pi}^{\\pi}f\\cos n\\theta\\,d\\theta$，$b_n=\\dfrac1\\pi\\displaystyle\\int_{-\\pi}^{\\pi}f\\sin n\\theta\\,d\\theta$ のときで，これはフーリエ係数の公式そのものである．特に，最適な $a_n$ は $N$ によらない（項を増やしても既存の係数を調整し直す必要がない）．これは基底の直交性の帰結である．\n\n(2) 最適値を代入すると $\\alpha_0=2\\pi a_0$，$\\alpha_n=\\pi a_n$，$\\beta_n=\\pi b_n$ なので\n\\[ E_N^{\\min}=\\int f^2-\\frac{(2\\pi a_0)^2}{2\\pi}-\\sum\\frac{\\pi^2(a_n^2+b_n^2)}{\\pi}=\\int_{-\\pi}^{\\pi}f^2d\\theta-2\\pi a_0^2-\\pi\\sum_{n=1}^N(a_n^2+b_n^2). \\]\n\n(3) $f=\\theta$ は奇関数なので $a_0=a_n=0$．部分積分で\n\\[ b_n=\\frac1\\pi\\int_{-\\pi}^{\\pi}\\theta\\sin n\\theta\\,d\\theta=\\frac2\\pi\\left[-\\frac{\\theta\\cos n\\theta}{n}\\right]_0^\\pi+\\frac{2}{\\pi n}\\int_0^\\pi\\cos n\\theta\\,d\\theta=\\frac{2(-1)^{n+1}}{n}. \\]\n$\\int_{-\\pi}^{\\pi}\\theta^2d\\theta=\\dfrac{2\\pi^3}{3}$ だから\n\\[ E_1^{\\min}=\\frac{2\\pi^3}{3}-4\\pi\\approx8.10,\\qquad E_2^{\\min}=\\frac{2\\pi^3}{3}-4\\pi-\\pi=\\frac{2\\pi^3}{3}-5\\pi\\approx4.96 . \\]\n\n(4) $E_N^{\\min}\\ge0$ より $\\pi\\sum_{n=1}^N\\dfrac{4}{n^2}\\le\\dfrac{2\\pi^3}{3}$，すなわち $\\sum_{n=1}^N\\dfrac1{n^2}\\le\\dfrac{\\pi^2}{6}$ が任意の $N$ で成り立つ．$N\\to\\infty$ として示された（実際には等号が成立する：パーセバルの等式）．"
+    "tex": "(1) $E_N$ は係数の 2 次式である．展開すると\n\\[ E_N=\\int f^2-2\\int fS_N+\\int S_N^2 . \\]\n直交関係より $\\int_{-\\pi}^{\\pi}S_N^2d\\theta=2\\pi a_0^2+\\pi\\sum_{n=1}^N(a_n^2+b_n^2)$（交差項は全て 0）．また $\\alpha_0=\\int f\\,d\\theta$，$\\alpha_n=\\int f\\cos n\\theta\\,d\\theta$，$\\beta_n=\\int f\\sin n\\theta\\,d\\theta$ とおくと $\\int fS_N=a_0\\alpha_0+\\sum(a_n\\alpha_n+b_n\\beta_n)$．よって\n\\[ E_N=\\int f^2-2a_0\\alpha_0+2\\pi a_0^2+\\sum_{n=1}^N\\left\\{\\pi a_n^2-2a_n\\alpha_n+\\pi b_n^2-2b_n\\beta_n\\right\\}. \\]\n各係数について独立な 2 次関数なので，平方完成して\n\\[ E_N=\\int f^2+2\\pi\\left(a_0-\\frac{\\alpha_0}{2\\pi}\\right)^2-\\frac{\\alpha_0^2}{2\\pi}+\\sum_{n=1}^N\\left\\{\\pi\\left(a_n-\\frac{\\alpha_n}{\\pi}\\right)^2+\\pi\\left(b_n-\\frac{\\beta_n}{\\pi}\\right)^2-\\frac{\\alpha_n^2+\\beta_n^2}{\\pi}\\right\\}. \\]\n最小となるのは $a_0=\\dfrac{1}{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f\\,d\\theta$，$a_n=\\dfrac1\\pi\\displaystyle\\int_{-\\pi}^{\\pi}f\\cos n\\theta\\,d\\theta$，$b_n=\\dfrac1\\pi\\displaystyle\\int_{-\\pi}^{\\pi}f\\sin n\\theta\\,d\\theta$ のときで，これはフーリエ係数の公式そのものである．特に，最適な $a_n$ は $N$ によらない（項を増やしても既存の係数を調整し直す必要がない）．これは基底の直交性の帰結である．\n\n(2) 最適値を代入すると $\\alpha_0=2\\pi a_0$，$\\alpha_n=\\pi a_n$，$\\beta_n=\\pi b_n$ なので\n\\[ E_N^{\\min}=\\int f^2-\\frac{(2\\pi a_0)^2}{2\\pi}-\\sum\\frac{\\pi^2(a_n^2+b_n^2)}{\\pi}=\\int_{-\\pi}^{\\pi}f^2d\\theta-2\\pi a_0^2-\\pi\\sum_{n=1}^N(a_n^2+b_n^2). \\]\n\n(3) $f=\\theta$ は奇関数なので $a_0=a_n=0$．部分積分で\n\\[ b_n=\\frac1\\pi\\int_{-\\pi}^{\\pi}\\theta\\sin n\\theta\\,d\\theta=\\frac2\\pi\\left[-\\frac{\\theta\\cos n\\theta}{n}\\right]_0^\\pi+\\frac{2}{\\pi n}\\int_0^\\pi\\cos n\\theta\\,d\\theta=\\frac{2(-1)^{n+1}}{n}. \\]\n$\\int_{-\\pi}^{\\pi}\\theta^2d\\theta=\\dfrac{2\\pi^3}{3}$ だから\n\\[ \\boldsymbol{E_1^{\\min}=\\frac{2\\pi^3}{3}-4\\pi},\\qquad \\boldsymbol{E_2^{\\min}=\\frac{2\\pi^3}{3}-4\\pi-\\pi=\\frac{2\\pi^3}{3}-5\\pi},\\qquad \\boldsymbol{E_N^{\\min}=\\frac{2\\pi^3}{3}-4\\pi\\sum_{n=1}^N\\frac1{n^2}} . \\]\n項を 1 つ増やすごとに誤差は $4\\pi/N^2$ ずつ減る（$E_1^{\\min}\\approx8.1$，$E_2^{\\min}\\approx5.0$）．\n\n(4) $E_N^{\\min}\\ge0$ より $\\pi\\sum_{n=1}^N\\dfrac{4}{n^2}\\le\\dfrac{2\\pi^3}{3}$，すなわち $\\sum_{n=1}^N\\dfrac1{n^2}\\le\\dfrac{\\pi^2}{6}$ が任意の $N$ で成り立つ．$N\\to\\infty$ として示された（実際には等号が成立する：パーセバルの等式）．"
    }
   ],
   "idea": {
@@ -1115,7 +1115,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 証明\n(3) $E_1^{\\min}$：≈8.10 ; $E_2^{\\min}$：≈4.96\n(4) 記述"
+   "spec": "(1) 記述\n(2) 証明\n(3) $E_1^{\\min}$：2pi^3/3-4pi ; $E_2^{\\min}$：2pi^3/3-5pi ; $E_N^{\\min}$：記述\n(4) 記述"
   },
   "methods": [],
   "tags": [
@@ -2146,16 +2146,16 @@
   "theme": "二重スリットのフーリエ変換と欠ける次数",
   "topic": "二重スリットのフーリエ変換と欠ける次数",
   "statement": {
-   "tex": "フーリエ変換を $F(u)=\\dfrac1{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{iux}dx$ で定義する．開口関数\n\\[f(x)=\\begin{cases}1,&d-\\frac w2<|x|<d+\\frac w2\\\\0,&\\text{それ以外}\\end{cases}\\qquad(d>w/2>0)\\]\nは，幅 $w$，中心間隔 $2d$ の二重スリットを表す．\n\\begin{enumerate}\n\\item $F(u)$ を求め，単スリットの変換と干渉因子の積に分解せよ．\n\\item フラウンホーファー回折強度 $I(u)\\propto|F(u)|^2$ の干渉極大は $ud=m\\pi$（$m$ は整数）に現れる．$2d=3w$ のとき，現れない（欠ける）次数 $m$ をすべて答え，$m=1,2$ の強度の $m=0$ に対する比を求めよ．\n\\item パーセバルの等式 $\\int|F|^2du=\\int|f|^2dx$ の両辺の値を求めよ．\n\\end{enumerate}"
+   "tex": "フーリエ変換を $F(u)=\\dfrac1{\\sqrt{2\\pi}}\\displaystyle\\int_{-\\infty}^{\\infty}f(x)e^{iux}dx$ で定義する．開口関数\n\\[f(x)=\\begin{cases}1,&d-\\frac w2<|x|<d+\\frac w2\\\\0,&\\text{それ以外}\\end{cases}\\qquad(d>w/2>0)\\]\nは，幅 $w$，中心間隔 $2d$ の二重スリットを表す．\n\\begin{enumerate}\n\\item $F(u)$ を求め，単スリットの変換と干渉因子の積に分解せよ．\n\\item フラウンホーファー回折強度 $I(u)\\propto|F(u)|^2$ の干渉極大は $ud=m\\pi$（$m$ は整数）に現れる．$2d=pw$（$p\\ge2$ は整数）のとき，現れない（欠ける）次数 $m$ をすべて答え，第 $m$ 次の極大の強度 $I_m$ の $m=0$ に対する比を $p,\\ m$ で表せ．\n\\item パーセバルの等式 $\\int|F|^2du=\\int|f|^2dx$ の両辺の値を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $F=\\sqrt{\\dfrac2\\pi}\\cdot\\dfrac{2\\sin(uw/2)}{u}\\cos ud$　(2) $m=\\pm3,\\pm6,\\ldots$（3 の倍数，$0$ 以外）が欠ける．$I_1/I_0=\\dfrac{27}{4\\pi^2}\\approx0.684$，$I_2/I_0=\\dfrac{27}{16\\pi^2}\\approx0.171$　(3) どちらも $2w$"
+   "tex": "(1) $F=\\sqrt{\\dfrac2\\pi}\\cdot\\dfrac{2\\sin(uw/2)}{u}\\cos ud$　(2) $m=\\pm p,\\pm2p,\\ldots$（$p$ の倍数，$0$ 以外）が欠ける．$\\dfrac{I_m}{I_0}=\\left(\\dfrac{p\\sin(m\\pi/p)}{m\\pi}\\right)^2$　(3) どちらも $2w$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 幅 $w$ の単スリット（中心 $0$）の変換は $\\frac1{\\sqrt{2\\pi}}\\int_{-w/2}^{w/2}e^{iux}dx=\\frac1{\\sqrt{2\\pi}}\\frac{2\\sin(uw/2)}{u}$．中心を $\\pm d$ にずらすと $e^{\\pm iud}$ がかかり，和は $2\\cos ud$．よって\n\\[F(u)=\\frac1{\\sqrt{2\\pi}}\\frac{2\\sin(uw/2)}{u}\\cdot2\\cos ud=\\sqrt{\\frac2\\pi}\\,\\frac{2\\sin(uw/2)}u\\cos ud.\\]\n\n(2) $I\\propto\\left(\\frac{\\sin(uw/2)}{uw/2}\\right)^2\\cos^2ud$．極大 $u=m\\pi/d$ で回折因子の引数は $\\frac{uw}2=\\frac{m\\pi w}{2d}=\\frac{m\\pi}3$．これが $\\pi$ の整数倍になる $m=3,6,\\ldots$（および負）で強度 $0$，欠ける．\n$m=1$：$\\left(\\frac{\\sin(\\pi/3)}{\\pi/3}\\right)^2=\\left(\\frac{3\\sqrt3}{2\\pi}\\right)^2=\\frac{27}{4\\pi^2}\\approx0.684$．$m=2$：$\\left(\\frac{\\sin(2\\pi/3)}{2\\pi/3}\\right)^2=\\frac{27}{16\\pi^2}\\approx0.171$．\n\n(3) $\\int|f|^2dx=2w$．パーセバルより $\\int|F|^2du=2w$（$|F|^2=\\frac{8}{\\pi}\\frac{\\sin^2(uw/2)\\cos^2ud}{u^2}$ の積分．$\\cos^2ud=\\frac12(1+\\cos2ud)$ で，$\\cos 2ud$ の項は $2d>w$ のとき $0$ になり，残りは $\\frac4\\pi\\int\\frac{\\sin^2(uw/2)}{u^2}du=\\frac4\\pi\\cdot\\frac{\\pi w}{2}=2w$ と直接も確かめられる）．"
+    "tex": "(1) 幅 $w$ の単スリット（中心 $0$）の変換は $\\frac1{\\sqrt{2\\pi}}\\int_{-w/2}^{w/2}e^{iux}dx=\\frac1{\\sqrt{2\\pi}}\\frac{2\\sin(uw/2)}{u}$．中心を $\\pm d$ にずらすと $e^{\\pm iud}$ がかかり，和は $2\\cos ud$．よって\n\\[F(u)=\\frac1{\\sqrt{2\\pi}}\\frac{2\\sin(uw/2)}{u}\\cdot2\\cos ud=\\sqrt{\\frac2\\pi}\\,\\frac{2\\sin(uw/2)}u\\cos ud.\\]\n\n(2) $I\\propto\\left(\\frac{\\sin(uw/2)}{uw/2}\\right)^2\\cos^2ud$．極大 $u=m\\pi/d$ で $\\cos^2ud=1$，回折因子の引数は $\\frac{uw}2=\\frac{m\\pi w}{2d}=\\frac{m\\pi}p$．これが $\\pi$ の整数倍になる $\\boldsymbol{m=\\pm p,\\pm2p,\\ldots}$ で強度 $0$，欠ける．$u\\to0$ で回折因子は 1 なので\n\\[ \\boldsymbol{\\frac{I_m}{I_0}=\\left(\\frac{\\sin(m\\pi/p)}{m\\pi/p}\\right)^2=\\left(\\frac{p\\sin(m\\pi/p)}{m\\pi}\\right)^2}. \\]\nたとえば $p=3$ なら $I_1/I_0=\\frac{27}{4\\pi^2}\\approx0.68$，$I_2/I_0=\\frac{27}{16\\pi^2}\\approx0.17$．\n\n(3) $\\int|f|^2dx=2w$．パーセバルより $\\int|F|^2du=2w$（$|F|^2=\\frac{8}{\\pi}\\frac{\\sin^2(uw/2)\\cos^2ud}{u^2}$ の積分．$\\cos^2ud=\\frac12(1+\\cos2ud)$ で，$\\cos 2ud$ の項は $2d>w$ のとき $0$ になり，残りは $\\frac4\\pi\\int\\frac{\\sin^2(uw/2)}{u^2}du=\\frac4\\pi\\cdot\\frac{\\pi w}{2}=2w$ と直接も確かめられる）．"
    }
   ],
   "idea": {
@@ -2163,7 +2163,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $F$：sqrt(((2)/(pi)))*((2 sin (u w /2))/(u)) cos u d\n(2) 記述\n(3) どちらも：2 w"
+   "spec": "(1) $F$：sqrt(((2)/(pi)))*((2 sin (u w /2))/(u)) cos u d\n(2) $I_m/I_0$：(p sin(m pi/p)/(m pi))^2\n(3) どちらも：2 w"
   },
   "methods": [],
   "tags": [
@@ -3196,16 +3196,16 @@
   "theme": "ポアソン和公式とテータ関数",
   "topic": "ポアソン和公式とテータ関数",
   "statement": {
-   "tex": "ポアソン和公式 $\\displaystyle\\sum_{n=-\\infty}^{\\infty}f(n)=\\sum_{m=-\\infty}^{\\infty}\\tilde f(2\\pi m)$（$\\tilde f(k)=\\int f(x)e^{-ikx}dx$）を使う．$a>0$ とする．\n\\begin{enumerate}\n\\item $\\displaystyle\\sum_n\\delta(x-n)=\\sum_m e^{2\\pi imx}$ を用いてポアソン和公式を導け．\n\\item $f(x)=e^{-ax^2}$ に適用して $\\displaystyle\\sum_{n}e^{-an^2}=\\sqrt{\\frac{\\pi}{a}}\\sum_m e^{-\\pi^2m^2/a}$ を示し，$a$ が小さいときの $\\displaystyle\\sum_n e^{-an^2}$ を $m=0,\\pm1$ の項まで残した式で表せ．\n\\item $\\displaystyle\\sum_n e^{-an^2}$ を $\\sqrt{\\pi/a}$ で近似したときの相対誤差を，$a=1$ について求めよ．\n\\end{enumerate}"
+   "tex": "ポアソン和公式 $\\displaystyle\\sum_{n=-\\infty}^{\\infty}f(n)=\\sum_{m=-\\infty}^{\\infty}\\tilde f(2\\pi m)$（$\\tilde f(k)=\\int f(x)e^{-ikx}dx$）を使う．$a>0$ とする．\n\\begin{enumerate}\n\\item $\\displaystyle\\sum_n\\delta(x-n)=\\sum_m e^{2\\pi imx}$ を用いてポアソン和公式を導け．\n\\item $f(x)=e^{-ax^2}$ に適用して $\\displaystyle\\sum_{n}e^{-an^2}=\\sqrt{\\frac{\\pi}{a}}\\sum_m e^{-\\pi^2m^2/a}$ を示し，$a$ が小さいときの $\\displaystyle\\sum_n e^{-an^2}$ を $m=0,\\pm1$ の項まで残した式で表せ．\n\\item $\\displaystyle\\sum_n e^{-an^2}$ を $\\sqrt{\\pi/a}$ で近似したときの相対誤差 $\\epsilon$ を $a$ の最低次で表せ．$\\epsilon$ を $\\epsilon_0$ 以下にするための $a$ の条件を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 周期的デルタ関数のフーリエ級数を $f$ と積分する． (2) $\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\frac{\\pi^2}{a}}\\right)$ (3) $2e^{-\\pi^2}\\approx 1.03\\times 10^{-4}$"
+   "tex": "(1) 周期的デルタ関数のフーリエ級数を $f$ と積分する． (2) $\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\frac{\\pi^2}{a}}\\right)$ (3) $\\epsilon=2e^{-\\pi^2/a}$，$a\\le\\dfrac{\\pi^2}{\\ln(2/\\epsilon_0)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "周期1のくし形関数 $\\sum_n\\delta(x-n)$ をフーリエ級数に展開すると係数はすべて $1$ で，$\\sum_me^{2\\pi imx}$．両辺に $f(x)$ を掛けて積分すると $\\sum_nf(n)=\\sum_m\\int f(x)e^{2\\pi imx}dx=\\sum_m\\tilde f(-2\\pi m)$．$m\\to-m$ として公式を得る．\n\n$\\tilde f(k)=\\sqrt{\\pi/a}\\,e^{-k^2/4a}$ なので $\\tilde f(2\\pi m)=\\sqrt{\\pi/a}\\,e^{-\\pi^2m^2/a}$．$a$ が小さいと $m\\neq0$ の項は急速に小さく，\n\\[\\sum_ne^{-an^2}\\approx\\boldsymbol{\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\pi^2/a}\\right)}.\\]\n左辺の和は $a\\to0$ でゆっくりしか収束しないが，右辺は1項でほぼ正確である．\n\n相対誤差は $2e^{-\\pi^2/a}$ で，$a=1$ でも $\\boldsymbol{2e^{-\\pi^2}\\approx1.03\\times10^{-4}}$．（直接和 $1.7726\\ldots$ と $\\sqrt\\pi=1.7725\\ldots$ の比較で確認できる．）統計力学では，リング上の粒子や回転子の分配関数を高温で古典近似に置き換えると，誤差が指数関数的に小さいことを意味する．"
+    "tex": "周期1のくし形関数 $\\sum_n\\delta(x-n)$ をフーリエ級数に展開すると係数はすべて $1$ で，$\\sum_me^{2\\pi imx}$．両辺に $f(x)$ を掛けて積分すると $\\sum_nf(n)=\\sum_m\\int f(x)e^{2\\pi imx}dx=\\sum_m\\tilde f(-2\\pi m)$．$m\\to-m$ として公式を得る．\n\n$\\tilde f(k)=\\sqrt{\\pi/a}\\,e^{-k^2/4a}$ なので $\\tilde f(2\\pi m)=\\sqrt{\\pi/a}\\,e^{-\\pi^2m^2/a}$．$a$ が小さいと $m\\neq0$ の項は急速に小さく，\n\\[\\sum_ne^{-an^2}\\approx\\boldsymbol{\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\pi^2/a}\\right)}.\\]\n左辺の和は $a\\to0$ でゆっくりしか収束しないが，右辺は1項でほぼ正確である．\n\n相対誤差は $\\boldsymbol{\\epsilon=2e^{-\\pi^2/a}}$．$2e^{-\\pi^2/a}\\le\\epsilon_0$ を解いて $\\boldsymbol{a\\le\\dfrac{\\pi^2}{\\ln(2/\\epsilon_0)}}$．$a=1$ でも $\\epsilon=2e^{-\\pi^2}\\approx10^{-4}$ と非常に小さい．統計力学では，リング上の粒子や回転子の分配関数を高温で古典近似に置き換えると，誤差が指数関数的に小さいことを意味する．"
    }
   ],
   "idea": {
@@ -3213,7 +3213,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述：Σδ(x-n)=Σe^{2πimx} に f を掛けて積分する\n(2) sqrt(pi/a)(1+2exp(-pi^2/a))\n(3) ≈1.03e-4 (5%)"
+   "spec": "(1) 記述：Σδ(x-n)=Σe^{2πimx} に f を掛けて積分する\n(2) sqrt(pi/a)(1+2exp(-pi^2/a))\n(3) $\\epsilon$：2 exp(-pi^2/a) ; $a$ の条件：a<=pi^2/ln(2/ε_0)"
   },
   "methods": [],
   "tags": [

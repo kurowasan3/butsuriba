@@ -9,16 +9,16 @@
   "theme": "球面三角形の内角の和で曲率を測る",
   "topic": "球面三角形の内角の和で曲率を測る",
   "statement": {
-   "tex": "半径 $a$ の球面上で，3点を最短の曲線（大円の弧）で結んだ三角形を考える．その内角を $\\alpha, \\beta, \\gamma$，面積を $A$ とすると\n\\[ \\alpha + \\beta + \\gamma - \\pi = \\frac{A}{a^2} \\]\nが成り立つ（左辺を角過剰という）．平面なら左辺は $0$ である．\n\\begin{enumerate}\n\\item 北極点と，赤道上の経度 $0^\\circ$ の点と経度 $90^\\circ$ の点を頂点とする三角形の内角の和を求めよ．\n\\item (1) の三角形の面積を $a$ で表せ．\n\\item 球の半径を知らない測量者が，面積 $A = 1.0\\times 10^{4}\\,\\mathrm{km^2}$ の三角形を測ったところ，角過剰が $2.46\\times 10^{-4}\\,\\mathrm{rad}$ だった．球の半径 $a$ を求めよ．\n\\end{enumerate}"
+   "tex": "半径 $a$ の球面上で，3点を最短の曲線（大円の弧）で結んだ三角形を考える．その内角を $\\alpha, \\beta, \\gamma$，面積を $A$ とすると\n\\[ \\alpha + \\beta + \\gamma - \\pi = \\frac{A}{a^2} \\]\nが成り立つ（左辺を角過剰という）．平面なら左辺は $0$ である．\n\\begin{enumerate}\n\\item 北極点と，赤道上の経度 $0^\\circ$ の点と経度 $90^\\circ$ の点を頂点とする三角形の内角の和を求めよ．\n\\item (1) の三角形の面積を $a$ で表せ．\n\\item 球の半径を知らない測量者が，面積 $S$ の三角形を測ったところ，角過剰が $\\delta$（ラジアン）だった．球の半径 $a$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{3\\pi}{2}$\n(2) $A = \\dfrac{\\pi a^2}{2}$\n(3) $a \\approx 6.4\\times 10^{3}\\,\\mathrm{km}$"
+   "tex": "(1) $\\dfrac{3\\pi}{2}$\n(2) $A = \\dfrac{\\pi a^2}{2}$\n(3) $a = \\sqrt{\\dfrac{S}{\\delta}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 経線は赤道と直角に交わり，北極点で2本の経線のなす角は $90^\\circ$．内角はすべて $\\dfrac{\\pi}{2}$ で，和は $\\boldsymbol{\\dfrac{3\\pi}{2}}$．\n\n(2) 角過剰は $\\dfrac{3\\pi}{2} - \\pi = \\dfrac{\\pi}{2}$ だから $A = \\boldsymbol{\\dfrac{\\pi a^2}{2}}$．球の表面積 $4\\pi a^2$ の $\\dfrac{1}{8}$（北半球の4分の1）で，確かに一致する．\n\n(3) $a^2 = \\dfrac{A}{\\text{角過剰}} = \\dfrac{1.0\\times 10^{4}}{2.46\\times 10^{-4}}\\,\\mathrm{km^2} \\approx 4.07\\times 10^{7}\\,\\mathrm{km^2}$ より $a \\approx \\boldsymbol{6.4\\times 10^{3}\\,\\mathrm{km}}$（地球の半径）．\n\n$\\dfrac{1}{a^2}$ は曲面のガウス曲率で，曲面の中だけの測量（角度と面積）から決まる．アインシュタインはこのような「内側から測れる曲がり」で重力を記述した．次は，曲率を計量から計算するリーマン曲率テンソルを学ぶ．"
+    "tex": "(1) 経線は赤道と直角に交わり，北極点で2本の経線のなす角は $90^\\circ$．内角はすべて $\\dfrac{\\pi}{2}$ で，和は $\\boldsymbol{\\dfrac{3\\pi}{2}}$．\n\n(2) 角過剰は $\\dfrac{3\\pi}{2} - \\pi = \\dfrac{\\pi}{2}$ だから $A = \\boldsymbol{\\dfrac{\\pi a^2}{2}}$．球の表面積 $4\\pi a^2$ の $\\dfrac{1}{8}$（北半球の4分の1）で，確かに一致する．\n\n(3) $\\delta=S/a^2$ より $a = \\boldsymbol{\\sqrt{S/\\delta}}$．たとえば地球上で一辺 100 km 程度の三角形を測れば，角過剰は $10^{-4}$ rad ほどになり，地球の半径が求まる．\n\n$\\dfrac{1}{a^2}$ は曲面のガウス曲率で，曲面の中だけの測量（角度と面積）から決まる．アインシュタインはこのような「内側から測れる曲がり」で重力を記述した．次は，曲率を計量から計算するリーマン曲率テンソルを学ぶ．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 3pi/2\n(2) pi a^2/2\n(3) a [km]：≈6.4e3"
+   "spec": "(1) 3pi/2\n(2) pi a^2/2\n(3) a：sqrt(S/δ)"
   },
   "methods": [],
   "tags": [
@@ -58,16 +58,16 @@
   "theme": "潮汐力は時空の曲率である",
   "topic": "潮汐力は時空の曲率である",
   "statement": {
-   "tex": "一般相対論では，自由落下する観測者には重力そのものは感じられないが，近くの2つの自由落下物体の間の相対加速度（潮汐力）は消せない．これが時空の曲率の現れである．ここではニュートン重力でその大きさを求める．質量 $M$ の天体の中心から距離 $r$ での重力加速度の大きさは $g(r) = \\dfrac{GM}{r^2}$ である．\n\\begin{enumerate}\n\\item 中心から距離 $r$ と $r + l$（$l \\ll r$）の位置で同じ鉛直線上に並んで自由落下する2物体の，加速度の差の大きさを近似 $g(r + l) \\approx g(r) + g'(r)\\,l$ を用いて $G, M, r, l$ で表せ．\n\\item 同じ高さ $r$ で水平に距離 $l$ 離れて自由落下する2物体は，どちらも中心に向かって落ちるので互いに近づく．その相対加速度の大きさを $G, M, r, l$ で表せ（2つの加速度ベクトルのなす角は $l/r$ で近似できる）．\n\\item 地球（$GM = 3.99\\times 10^{14}\\,\\mathrm{m^3/s^2}$，$r = 6.37\\times 10^{6}\\,\\mathrm{m}$）の表面で，鉛直に $l = 2.0\\,\\mathrm{m}$ 離れた2物体の相対加速度を求めよ．\n\\end{enumerate}"
+   "tex": "一般相対論では，自由落下する観測者には重力そのものは感じられないが，近くの2つの自由落下物体の間の相対加速度（潮汐力）は消せない．これが時空の曲率の現れである．ここではニュートン重力でその大きさを求める．質量 $M$ の天体の中心から距離 $r$ での重力加速度の大きさは $g(r) = \\dfrac{GM}{r^2}$ である．\n\\begin{enumerate}\n\\item 中心から距離 $r$ と $r + l$（$l \\ll r$）の位置で同じ鉛直線上に並んで自由落下する2物体の，加速度の差の大きさを近似 $g(r + l) \\approx g(r) + g'(r)\\,l$ を用いて $G, M, r, l$ で表せ．\n\\item 同じ高さ $r$ で水平に距離 $l$ 離れて自由落下する2物体は，どちらも中心に向かって落ちるので互いに近づく．その相対加速度の大きさを $G, M, r, l$ で表せ（2つの加速度ベクトルのなす角は $l/r$ で近似できる）．\n\\item 半径 $R$ の地球の表面で，鉛直に $l$ 離れた2物体の相対加速度の大きさを，地表の重力加速度の大きさ $g$ と $R$，$l$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{2GMl}{r^3}$\n(2) $\\dfrac{GMl}{r^3}$\n(3) $\\approx 6.2\\times 10^{-6}\\,\\mathrm{m/s^2}$"
+   "tex": "(1) $\\dfrac{2GMl}{r^3}$\n(2) $\\dfrac{GMl}{r^3}$\n(3) $\\dfrac{2gl}{R}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $g'(r) = -\\dfrac{2GM}{r^3}$ だから，加速度の差の大きさは $\\boldsymbol{\\dfrac{2GMl}{r^3}}$．下の物体のほうが強く引かれるので，2物体は鉛直方向に引き離される．\n\n(2) 2つの加速度は大きさ $g$ で，なす角が $\\dfrac{l}{r}$．差のベクトルの大きさは $g\\times\\dfrac{l}{r} = \\boldsymbol{\\dfrac{GMl}{r^3}}$ で，互いに近づく向き．\n\n(3) $\\dfrac{2\\times 3.99\\times 10^{14}\\times 2.0}{(6.37\\times 10^{6})^3} \\approx \\boldsymbol{6.2\\times 10^{-6}\\,\\mathrm{m/s^2}}$．\n\n自由落下するエレベーターの中では重力は消えるが，このような「鉛直に伸び，水平に縮む」相対加速度は残る．一般相対論では，これを測地線偏差の式で表し，係数がリーマン曲率テンソルになる．海の潮の満ち引きも月によるこの効果である．次は，曲率と物質の関係を与えるアインシュタイン方程式を学ぶ．"
+    "tex": "(1) $g'(r) = -\\dfrac{2GM}{r^3}$ だから，加速度の差の大きさは $\\boldsymbol{\\dfrac{2GMl}{r^3}}$．下の物体のほうが強く引かれるので，2物体は鉛直方向に引き離される．\n\n(2) 2つの加速度は大きさ $g$ で，なす角が $\\dfrac{l}{r}$．差のベクトルの大きさは $g\\times\\dfrac{l}{r} = \\boldsymbol{\\dfrac{GMl}{r^3}}$ で，互いに近づく向き．\n\n(3) $g = \\dfrac{GM}{R^2}$ を使うと，(1) で $r = R$ として $\\dfrac{2GMl}{R^3} = \\boldsymbol{\\dfrac{2gl}{R}}$．重力加速度 $g$ の $\\dfrac{2l}{R}$ 倍しかなく，数 m の距離では $g$ の $10^{-6}$ 倍程度のごく小さな量である．\n\n自由落下するエレベーターの中では重力は消えるが，このような「鉛直に伸び，水平に縮む」相対加速度は残る．一般相対論では，これを測地線偏差の式で表し，係数がリーマン曲率テンソルになる．海の潮の満ち引きも月によるこの効果である．次は，曲率と物質の関係を与えるアインシュタイン方程式を学ぶ．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 2 G M l/r^3\n(2) G M l/r^3\n(3) [m/s^2]：≈6.2e-6"
+   "spec": "(1) 2 G M l/r^3\n(2) G M l/r^3\n(3) 2 g l/R"
   },
   "methods": [],
   "tags": [
@@ -1288,16 +1288,16 @@
   "theme": "平行移動のホロノミー：緯線一周での回転角",
   "topic": "平行移動のホロノミー：緯線一周での回転角",
   "statement": {
-   "tex": "単位球面 $ds^2=d\\theta^2+\\sin^2\\theta\\,d\\varphi^2$ 上で，緯線 $\\theta=\\theta_0$ に沿ってベクトル $A^\\mu$ を $\\varphi=0$ から $2\\pi$ まで平行移動する（$dA^\\lambda=-\\Gamma^\\lambda{}_{\\mu\\nu}A^\\mu dx^\\nu$）．初めのベクトルは $A^\\theta=1,\\ A^\\varphi=0$ とする．\n\\begin{enumerate}\n\\item $A^\\theta(\\varphi),\\ A^\\varphi(\\varphi)$ の満たす連立微分方程式を書き，解け．\n\\item 一周後のベクトルは初めのベクトルからどれだけ回転しているか．正規直交成分 $(A^{\\hat\\theta},A^{\\hat\\varphi})=(A^\\theta,\\sin\\theta_0A^\\varphi)$ で答えよ．\n\\item 回転角を緯線が囲む極側の面積 $S$ と比べよ．また $\\theta_0\\to0$ で，微小ループの公式 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ と整合することを確かめよ．\n\\item 緯度 $35^\\circ$ で Foucault の振り子の振動面が1恒星日に回転する角を，この結果から求めよ．\n\\end{enumerate}"
+   "tex": "単位球面 $ds^2=d\\theta^2+\\sin^2\\theta\\,d\\varphi^2$ 上で，緯線 $\\theta=\\theta_0$ に沿ってベクトル $A^\\mu$ を $\\varphi=0$ から $2\\pi$ まで平行移動する（$dA^\\lambda=-\\Gamma^\\lambda{}_{\\mu\\nu}A^\\mu dx^\\nu$）．初めのベクトルは $A^\\theta=1,\\ A^\\varphi=0$ とする．\n\\begin{enumerate}\n\\item $A^\\theta(\\varphi),\\ A^\\varphi(\\varphi)$ の満たす連立微分方程式を書き，解け．\n\\item 一周後のベクトルは初めのベクトルからどれだけ回転しているか．正規直交成分 $(A^{\\hat\\theta},A^{\\hat\\varphi})=(A^\\theta,\\sin\\theta_0A^\\varphi)$ で答えよ．\n\\item 回転角を緯線が囲む極側の面積 $S$ と比べよ．また $\\theta_0\\to0$ で，微小ループの公式 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ と整合することを確かめよ．\n\\item 緯度 $\\lambda$ で Foucault の振り子の振動面が1恒星日に（地面に対して）回転する角を，この結果から求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $A^\\theta=\\cos(\\varphi\\cos\\theta_0)$，$A^\\varphi=-\\dfrac{\\sin(\\varphi\\cos\\theta_0)}{\\sin\\theta_0}$　(2) 一周で $2\\pi\\cos\\theta_0$ 回転（$2\\pi$ を法として $2\\pi(1-\\cos\\theta_0)$）　(3) 回転角 $=S=2\\pi(1-\\cos\\theta_0)$（曲率 $1$ × 面積）　(4) $360^\\circ\\times\\sin35^\\circ\\approx206^\\circ$"
+   "tex": "(1) $A^\\theta=\\cos(\\varphi\\cos\\theta_0)$，$A^\\varphi=-\\dfrac{\\sin(\\varphi\\cos\\theta_0)}{\\sin\\theta_0}$　(2) 一周で $2\\pi\\cos\\theta_0$ 回転（$2\\pi$ を法として $2\\pi(1-\\cos\\theta_0)$）　(3) 回転角 $=S=2\\pi(1-\\cos\\theta_0)$（曲率 $1$ × 面積）　(4) $2\\pi\\sin\\lambda$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 0 でない Christoffel 記号は $\\Gamma^\\theta{}_{\\varphi\\varphi}=-\\sin\\theta\\cos\\theta$，$\\Gamma^\\varphi{}_{\\theta\\varphi}=\\cot\\theta$．$dx^\\varphi=d\\varphi$ のみなので\n\\[\n\\frac{dA^\\theta}{d\\varphi}=\\sin\\theta_0\\cos\\theta_0\\,A^\\varphi,\\qquad\\frac{dA^\\varphi}{d\\varphi}=-\\cot\\theta_0\\,A^\\theta .\n\\]\n$\\ddot A^\\theta=-\\cos^2\\theta_0A^\\theta$ より，$k=\\cos\\theta_0$ として $A^\\theta=\\cos k\\varphi$，$A^\\varphi=\\dfrac{\\dot A^\\theta}{\\sin\\theta_0\\cos\\theta_0}=-\\dfrac{\\sin k\\varphi}{\\sin\\theta_0}$．\n\n(2) 正規直交成分は $(A^{\\hat\\theta},A^{\\hat\\varphi})=(\\cos k\\varphi,-\\sin k\\varphi)$ で長さ $1$ を保つ．局所基底 $(\\hat\\theta,\\hat\\varphi)$ に対して角 $k\\varphi$ だけ（$\\hat\\varphi$ から $\\hat\\theta$ へ向かう向きに）回る．一周 $\\varphi=2\\pi$ で $2\\pi\\cos\\theta_0$．局所基底自身も一周で元に戻るので，ベクトルの正味の回転は $2\\pi\\cos\\theta_0\\equiv-2\\pi(1-\\cos\\theta_0)\\pmod{2\\pi}$，大きさ $2\\pi(1-\\cos\\theta_0)$（ループの向き $+\\varphi$ と同じ向き）．\n\n(3) 極側の面積は $S=\\int_0^{2\\pi}\\!\\!\\int_0^{\\theta_0}\\sin\\theta\\,d\\theta d\\varphi=2\\pi(1-\\cos\\theta_0)$．回転角はちょうど $S$（Gauss 曲率 $K=1$ の積分 $\\int K\\,dS$）に等しい（Gauss–Bonnet）．$\\theta_0\\to0$ では $S\\simeq\\pi\\theta_0^2$ で，微小ループでの変化 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ の大きさは $K\\times$（面積）$\\times|A|$ なので，回転角 $\\delta\\alpha=K\\,S$ と整合する．赤道 $\\theta_0=\\pi/2$ では $S=2\\pi$（半球）で回転は $2\\pi\\equiv0$：大円は測地線であり，ベクトルは回転しない．\n\n(4) Foucault 振り子の振動面は，地球自転で緯線上を運ばれる平行移動とみなせる．緯度 $\\lambda=35^\\circ$ は $\\theta_0=90^\\circ-35^\\circ$，一恒星日の回転角は（地面に対して）$2\\pi\\cos\\theta_0=2\\pi\\sin\\lambda=360^\\circ\\times0.574\\approx206^\\circ$．"
+    "tex": "(1) 0 でない Christoffel 記号は $\\Gamma^\\theta{}_{\\varphi\\varphi}=-\\sin\\theta\\cos\\theta$，$\\Gamma^\\varphi{}_{\\theta\\varphi}=\\cot\\theta$．$dx^\\varphi=d\\varphi$ のみなので\n\\[\n\\frac{dA^\\theta}{d\\varphi}=\\sin\\theta_0\\cos\\theta_0\\,A^\\varphi,\\qquad\\frac{dA^\\varphi}{d\\varphi}=-\\cot\\theta_0\\,A^\\theta .\n\\]\n$\\ddot A^\\theta=-\\cos^2\\theta_0A^\\theta$ より，$k=\\cos\\theta_0$ として $A^\\theta=\\cos k\\varphi$，$A^\\varphi=\\dfrac{\\dot A^\\theta}{\\sin\\theta_0\\cos\\theta_0}=-\\dfrac{\\sin k\\varphi}{\\sin\\theta_0}$．\n\n(2) 正規直交成分は $(A^{\\hat\\theta},A^{\\hat\\varphi})=(\\cos k\\varphi,-\\sin k\\varphi)$ で長さ $1$ を保つ．局所基底 $(\\hat\\theta,\\hat\\varphi)$ に対して角 $k\\varphi$ だけ（$\\hat\\varphi$ から $\\hat\\theta$ へ向かう向きに）回る．一周 $\\varphi=2\\pi$ で $2\\pi\\cos\\theta_0$．局所基底自身も一周で元に戻るので，ベクトルの正味の回転は $2\\pi\\cos\\theta_0\\equiv-2\\pi(1-\\cos\\theta_0)\\pmod{2\\pi}$，大きさ $2\\pi(1-\\cos\\theta_0)$（ループの向き $+\\varphi$ と同じ向き）．\n\n(3) 極側の面積は $S=\\int_0^{2\\pi}\\!\\!\\int_0^{\\theta_0}\\sin\\theta\\,d\\theta d\\varphi=2\\pi(1-\\cos\\theta_0)$．回転角はちょうど $S$（Gauss 曲率 $K=1$ の積分 $\\int K\\,dS$）に等しい（Gauss–Bonnet）．$\\theta_0\\to0$ では $S\\simeq\\pi\\theta_0^2$ で，微小ループでの変化 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ の大きさは $K\\times$（面積）$\\times|A|$ なので，回転角 $\\delta\\alpha=K\\,S$ と整合する．赤道 $\\theta_0=\\pi/2$ では $S=2\\pi$（半球）で回転は $2\\pi\\equiv0$：大円は測地線であり，ベクトルは回転しない．\n\n(4) Foucault 振り子の振動面は，地球自転で緯線上を運ばれる平行移動とみなせる．緯度 $\\lambda$ は $\\theta_0=\\pi/2-\\lambda$ なので，一恒星日の回転角は（地面に対して）$2\\pi\\cos\\theta_0=\\boldsymbol{2\\pi\\sin\\lambda}$．北極では $2\\pi$（1日で一回転），赤道では $0$ となる．"
    }
   ],
   "idea": {
@@ -1305,7 +1305,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $A^\\theta$：cos (φ cos θ_0) ; $A^\\varphi$：-((sin (φ cos θ_0))/(sin θ_0))\n(2) 記述\n(3) 記述\n(4) $360^\\circ\\times\\sin35^\\circ$ [°]：≈206"
+   "spec": "(1) $A^\\theta$：cos (φ cos θ_0) ; $A^\\varphi$：-((sin (φ cos θ_0))/(sin θ_0))\n(2) 記述\n(3) 記述\n(4) 回転角：2 pi sin(λ)"
   },
   "methods": [],
   "tags": [

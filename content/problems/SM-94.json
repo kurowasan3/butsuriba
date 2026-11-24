@@ -9,16 +9,16 @@
   "theme": "待ち行列のマスター方程式と定常分布",
   "topic": "待ち行列のマスター方程式と定常分布",
   "statement": {
-   "tex": "窓口が1つの店に，客が単位時間あたり平均 $\\lambda$ 人の割合でランダムに到着する．窓口に客がいるとき，1人の応対は単位時間あたり $\\mu$ の割合でランダムに終わる（$\\lambda<\\mu$）．時刻 $t$ に店にいる客（応対中を含む）が $n$ 人である確率を $P_n(t)$ とすると，次の方程式（マスター方程式）が成り立つ．\n\\[\\frac{dP_0}{dt}=\\mu P_1-\\lambda P_0,\\qquad\\frac{dP_n}{dt}=\\lambda P_{n-1}+\\mu P_{n+1}-(\\lambda+\\mu)P_n\\quad(n\\ge1).\\]\n\\begin{enumerate}\n\\item 時間が十分たって $P_n$ が変化しなくなった状態（定常状態）を考える．$P_n=\\rho^nP_0$（$\\rho=\\lambda/\\mu$）であることを確かめ，$\\sum_{n=0}^{\\infty}P_n=1$ から $P_0$ を $\\lambda,\\mu$ で表せ．\n\\item 定常状態での客の数の平均 $\\langle n\\rangle$ を $\\lambda,\\mu$ で表せ．必要なら $\\sum_{n=0}^{\\infty}nx^n=\\dfrac{x}{(1-x)^2}$（$|x|<1$）を使え．\n\\item $\\lambda=0.8$ 人/分，$\\mu=1.0$ 人/分のとき，$\\langle n\\rangle$ と，店にいる客が3人以上である確率を求めよ．\n\\end{enumerate}"
+   "tex": "窓口が1つの店に，客が単位時間あたり平均 $\\lambda$ 人の割合でランダムに到着する．窓口に客がいるとき，1人の応対は単位時間あたり $\\mu$ の割合でランダムに終わる（$\\lambda<\\mu$）．時刻 $t$ に店にいる客（応対中を含む）が $n$ 人である確率を $P_n(t)$ とすると，次の方程式（マスター方程式）が成り立つ．\n\\[\\frac{dP_0}{dt}=\\mu P_1-\\lambda P_0,\\qquad\\frac{dP_n}{dt}=\\lambda P_{n-1}+\\mu P_{n+1}-(\\lambda+\\mu)P_n\\quad(n\\ge1).\\]\n\\begin{enumerate}\n\\item 時間が十分たって $P_n$ が変化しなくなった状態（定常状態）を考える．$P_n=\\rho^nP_0$（$\\rho=\\lambda/\\mu$）であることを確かめ，$\\sum_{n=0}^{\\infty}P_n=1$ から $P_0$ を $\\lambda,\\mu$ で表せ．\n\\item 定常状態での客の数の平均 $\\langle n\\rangle$ を $\\lambda,\\mu$ で表せ．必要なら $\\sum_{n=0}^{\\infty}nx^n=\\dfrac{x}{(1-x)^2}$（$|x|<1$）を使え．\n\\item 定常状態で，店にいる客が $k$ 人以上である確率を $\\lambda,\\mu,k$ で表せ．また $\\lambda=0.8\\mu$ のときの $\\langle n\\rangle$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $P_0=1-\\dfrac{\\lambda}{\\mu}$ \\quad (2) $\\langle n\\rangle=\\dfrac{\\lambda}{\\mu-\\lambda}$ \\quad (3) $\\langle n\\rangle=4$，確率 $0.512$"
+   "tex": "(1) $P_0=1-\\dfrac{\\lambda}{\\mu}$ \\quad (2) $\\langle n\\rangle=\\dfrac{\\lambda}{\\mu-\\lambda}$ \\quad (3) $\\left(\\dfrac{\\lambda}{\\mu}\\right)^k$，$\\langle n\\rangle=4$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 定常状態では左辺が $0$．第1式から $P_1=(\\lambda/\\mu)P_0=\\rho P_0$．$P_n=\\rho^nP_0$ を第2式の右辺に入れると\n\\[P_0\\left(\\lambda\\rho^{n-1}+\\mu\\rho^{n+1}-(\\lambda+\\mu)\\rho^n\\right)=P_0\\rho^{n}\\left(\\mu+\\lambda-\\lambda-\\mu\\right)=0\\]\n（$\\lambda/\\rho=\\mu$，$\\mu\\rho=\\lambda$ を使った）となり確かに成り立つ．等比級数の和 $\\sum\\rho^n=1/(1-\\rho)$ より\n\\[P_0=1-\\rho=\\boldsymbol{1-\\frac{\\lambda}{\\mu}}.\\]\nこれは窓口が空いている確率である．\n\n(2) $\\langle n\\rangle=\\sum nP_n=(1-\\rho)\\dfrac{\\rho}{(1-\\rho)^2}=\\dfrac{\\rho}{1-\\rho}=\\boldsymbol{\\dfrac{\\lambda}{\\mu-\\lambda}}$．\n\n(3) $\\rho=0.8$ なので $\\langle n\\rangle=0.8/0.2=\\boldsymbol{4}$．3人以上の確率は\n\\[\\sum_{n\\ge3}(1-\\rho)\\rho^n=\\rho^3=\\boldsymbol{0.512}.\\]\n応対の能力の8割しか使っていないのに，平均4人が並ぶ．$\\rho\\to1$ で $\\langle n\\rangle$ は発散し，「少しの余裕」が行列の長さに大きく効くことがわかる．\n\nこの定常状態では，$n$ と $n+1$ の間の流れ $\\lambda P_n$ と $\\mu P_{n+1}$ が1つずつつり合っている（詳細つり合い）．統計力学ではこれをボルツマン分布を実現する確率過程の条件として使う．"
+    "tex": "(1) 定常状態では左辺が $0$．第1式から $P_1=(\\lambda/\\mu)P_0=\\rho P_0$．$P_n=\\rho^nP_0$ を第2式の右辺に入れると\n\\[P_0\\left(\\lambda\\rho^{n-1}+\\mu\\rho^{n+1}-(\\lambda+\\mu)\\rho^n\\right)=P_0\\rho^{n}\\left(\\mu+\\lambda-\\lambda-\\mu\\right)=0\\]\n（$\\lambda/\\rho=\\mu$，$\\mu\\rho=\\lambda$ を使った）となり確かに成り立つ．等比級数の和 $\\sum\\rho^n=1/(1-\\rho)$ より\n\\[P_0=1-\\rho=\\boldsymbol{1-\\frac{\\lambda}{\\mu}}.\\]\nこれは窓口が空いている確率である．\n\n(2) $\\langle n\\rangle=\\sum nP_n=(1-\\rho)\\dfrac{\\rho}{(1-\\rho)^2}=\\dfrac{\\rho}{1-\\rho}=\\boldsymbol{\\dfrac{\\lambda}{\\mu-\\lambda}}$．\n\n(3) $k$ 人以上の確率は等比級数の和で\n\\[\\sum_{n\\ge k}(1-\\rho)\\rho^n=\\rho^k=\\boldsymbol{\\left(\\frac{\\lambda}{\\mu}\\right)^k}.\\]\n$\\lambda=0.8\\mu$ なら $\\rho=0.8$ で $\\langle n\\rangle=0.8/0.2=\\boldsymbol{4}$（3人以上の確率は約 $0.51$）．\n応対の能力の8割しか使っていないのに，平均4人が並ぶ．$\\rho\\to1$ で $\\langle n\\rangle$ は発散し，「少しの余裕」が行列の長さに大きく効くことがわかる．\n\nこの定常状態では，$n$ と $n+1$ の間の流れ $\\lambda P_n$ と $\\mu P_{n+1}$ が1つずつつり合っている（詳細つり合い）．統計力学ではこれをボルツマン分布を実現する確率過程の条件として使う．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 1-lambda/mu\n(2) lambda/(mu-lambda)\n(3) ⟨n⟩：4 ; 確率：0.512"
+   "spec": "(1) 1-lambda/mu\n(2) lambda/(mu-lambda)\n(3) 確率：(lambda/mu)^k ; ⟨n⟩：4"
   },
   "methods": [],
   "tags": [
@@ -256,16 +256,16 @@
   "theme": "沈降平衡とフォッカー＝プランク方程式",
   "topic": "沈降平衡とフォッカー＝プランク方程式",
   "statement": {
-   "tex": "溶液中の微粒子（浮力を差し引いた有効質量 $m$，摩擦係数 $\\gamma$，拡散係数 $D$）が重力を受け，床 $z=0$ より上（$z>0$）を過減衰運動する．粒子の確率密度 $P(z,t)$ は\n\\[ \\frac{\\partial P}{\\partial t}=-\\frac{\\partial J}{\\partial z},\\qquad J=-\\frac{mg}{\\gamma}P-D\\frac{\\partial P}{\\partial z} \\]\nに従う（$J$ は確率流，第1項は終端速度 $mg/\\gamma$ での沈降）．\n\\begin{enumerate}\n\\item 床を通り抜ける流れはないので，定常状態では $J=0$ である．このとき $P\\propto e^{-z/l}$ となる長さ $l$ を $m,g,\\gamma,D$ で表せ．\n\\item 定常分布がボルツマン分布 $e^{-mgz/(k_BT)}$ に一致することから $D$ を求めよ．\n\\item $m=1.0\\times10^{-17}\\,\\mathrm{kg}$，$T=300\\,\\mathrm{K}$，$g=9.8\\,\\mathrm{m/s^2}$，$k_B=1.38\\times10^{-23}\\,\\mathrm{J/K}$ のとき，粒子の密度が床での値の半分になる高さを求めよ．\n\\end{enumerate}"
+   "tex": "溶液中の微粒子（浮力を差し引いた有効質量 $m$，摩擦係数 $\\gamma$，拡散係数 $D$）が重力を受け，床 $z=0$ より上（$z>0$）を過減衰運動する．粒子の確率密度 $P(z,t)$ は\n\\[ \\frac{\\partial P}{\\partial t}=-\\frac{\\partial J}{\\partial z},\\qquad J=-\\frac{mg}{\\gamma}P-D\\frac{\\partial P}{\\partial z} \\]\nに従う（$J$ は確率流，第1項は終端速度 $mg/\\gamma$ での沈降）．\n\\begin{enumerate}\n\\item 床を通り抜ける流れはないので，定常状態では $J=0$ である．このとき $P\\propto e^{-z/l}$ となる長さ $l$ を $m,g,\\gamma,D$ で表せ．\n\\item 定常分布がボルツマン分布 $e^{-mgz/(k_BT)}$ に一致することから $D$ を求めよ．\n\\item 温度 $T$ で，粒子の密度が床での値の半分になる高さ $h$ を $m,g,k_B,T$ で表せ（$k_B$ はボルツマン定数）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $l=\\dfrac{\\gamma D}{mg}$ (2) $D=\\dfrac{k_BT}{\\gamma}$ (3) $\\approx2.9\\times10^{-5}\\,\\mathrm{m}$"
+   "tex": "(1) $l=\\dfrac{\\gamma D}{mg}$ (2) $D=\\dfrac{k_BT}{\\gamma}$ (3) $h=\\dfrac{k_BT\\ln2}{mg}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $J=0$ より $\\dfrac{dP}{dz}=-\\dfrac{mg}{\\gamma D}P$，よって $P\\propto e^{-z/l}$，$l=\\boldsymbol{\\dfrac{\\gamma D}{mg}}$．\n\n(2) $l=k_BT/(mg)$ と比べて $D=\\boldsymbol{\\dfrac{k_BT}{\\gamma}}$（アインシュタインの関係）．沈降の流れと拡散の流れのつり合いが熱平衡を与える．\n\n(3) 半分になる高さは $l\\ln2=\\dfrac{k_BT}{mg}\\ln2=\\dfrac{4.14\\times10^{-21}}{9.8\\times10^{-17}}\\times0.693\\approx\\boldsymbol{2.9\\times10^{-5}\\,\\mathrm{m}}$（約 $29\\,\\mu\\mathrm{m}$）．\n\nペランはこの種の測定から $k_B$（したがってアボガドロ数）を決め，原子の実在を示した．"
+    "tex": "(1) $J=0$ より $\\dfrac{dP}{dz}=-\\dfrac{mg}{\\gamma D}P$，よって $P\\propto e^{-z/l}$，$l=\\boldsymbol{\\dfrac{\\gamma D}{mg}}$．\n\n(2) $l=k_BT/(mg)$ と比べて $D=\\boldsymbol{\\dfrac{k_BT}{\\gamma}}$（アインシュタインの関係）．沈降の流れと拡散の流れのつり合いが熱平衡を与える．\n\n(3) $e^{-h/l}=\\frac12$ より $h=l\\ln2=\\boldsymbol{\\dfrac{k_BT\\ln2}{mg}}$．室温で $m=10^{-17}\\,\\mathrm{kg}$ なら約 $30\\,\\mu\\mathrm{m}$ で，顕微鏡で観察できる高さになる．\n\nペランはこの種の測定から $k_B$（したがってアボガドロ数）を決め，原子の実在を示した．"
    }
   ],
   "idea": {
@@ -273,7 +273,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) l：gamma D/(m g)\n(2) D：k_B T/gamma\n(3) 高さ [m]：≈2.9e-5"
+   "spec": "(1) l：gamma D/(m g)\n(2) D：k_B T/gamma\n(3) $h$：k_B T ln(2)/(m g)"
   },
   "methods": [],
   "tags": [

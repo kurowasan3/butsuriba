@@ -298,16 +298,16 @@
   "theme": "べき関数族による自由落下の変分近似",
   "topic": "べき関数族による自由落下の変分近似",
   "statement": {
-   "tex": "一様重力場中の自由落下（鉛直下向きに $y$，ラグランジアン $L=\\frac12m\\dot y^2+mgy$）で，$y(0)=0$，$y(t_0)=y_0=\\frac12gt_0^2$ が与えられているとする．運動の形を知らないものとして，試行関数を\n\\[ y(t)=y_0\\left(\\frac{t}{t_0}\\right)^n\\qquad(n>\\tfrac12) \\]\nとおき，作用 $I(n)=\\int_0^{t_0}L\\,dt$ を $n$ の関数として調べる．\n\\begin{enumerate}\n\\item $I(n)$ を $m,g,t_0,n$ で表せ．\n\\item $dI/dn=0$ を $n$ の4次方程式に直し，$n>\\frac12$ の範囲の停留点は $n=2$ だけであることを示せ．\n\\item $n=2$ での $I$ の値と2階微分の符号を求め，作用が最小であることを確かめよ．また $n\\to\\frac12$，$n\\to\\infty$ での振る舞いを述べよ．\n\\end{enumerate}"
+   "tex": "一様重力場中の自由落下（鉛直下向きに $y$，ラグランジアン $L=\\frac12m\\dot y^2+mgy$）で，$y(0)=0$，$y(t_0)=y_0=\\frac12gt_0^2$ が与えられているとする．運動の形を知らないものとして，試行関数を\n\\[ y(t)=y_0\\left(\\frac{t}{t_0}\\right)^n\\qquad(n>\\tfrac12) \\]\nとおき，作用 $I(n)=\\int_0^{t_0}L\\,dt$ を $n$ の関数として調べる．\n\\begin{enumerate}\n\\item $I(n)$ を $m,g,t_0,n$ で表せ．\n\\item $dI/dn=0$ を $n$ の4次方程式に直し，$n>\\frac12$ の範囲の停留点は $n=2$ だけであることを示せ．\n\\item $n=2$ での $I$ の値と2階微分 $I(2)$ を $m,g,t_0$ で表し，作用が最小であることを確かめよ．また $n\\to\\frac12$，$n\\to\\infty$ での振る舞いを述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $I(n)=mg^2t_0^3\\left[\\dfrac{n^2}{8(2n-1)}+\\dfrac{1}{2(n+1)}\\right]$　(2) $(n-2)(n^3+3n^2-3n+1)=0$，3次式の実根は $n\\approx-3.85$ のみ　(3) $I(2)=\\frac13mg^2t_0^3$，$I''(2)=\\frac{5}{108}mg^2t_0^3>0$；両端で $I\\to+\\infty$"
+   "tex": "(1) $I(n)=mg^2t_0^3\\left[\\dfrac{n^2}{8(2n-1)}+\\dfrac{1}{2(n+1)}\\right]$　(2) $(n-2)(n^3+3n^2-3n+1)=0$，3次式は $n>\\frac12$ に実根をもたない　(3) $I(2)=\\frac13mg^2t_0^3$，$I''(2)=\\frac{5}{108}mg^2t_0^3>0$；両端で $I\\to+\\infty$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dot y=y_0nt^{n-1}/t_0^n$．\n\\[ \\int_0^{t_0}\\dot y^2dt=\\frac{y_0^2n^2}{t_0^{2n}}\\frac{t_0^{2n-1}}{2n-1}=\\frac{y_0^2n^2}{(2n-1)t_0},\\qquad \\int_0^{t_0}y\\,dt=\\frac{y_0t_0}{n+1} \\]\n（$n>\\frac12$ で収束）．$y_0=\\frac12gt_0^2$ を代入して\n\\[ I(n)=\\frac{m}{2}\\frac{g^2t_0^3n^2}{4(2n-1)}+\\frac{mg^2t_0^3}{2(n+1)}=mg^2t_0^3\\left[\\frac{n^2}{8(2n-1)}+\\frac1{2(n+1)}\\right]. \\]\n\n(2) $\\dfrac{d}{dn}\\dfrac{n^2}{8(2n-1)}=\\dfrac{n(n-1)}{4(2n-1)^2}$，$\\dfrac{d}{dn}\\dfrac{1}{2(n+1)}=-\\dfrac{1}{2(n+1)^2}$．$dI/dn=0$ は\n\\[ n(n-1)(n+1)^2=2(2n-1)^2\\iff n^4+n^3-9n^2+7n-2=0\\iff(n-2)(n^3+3n^2-3n+1)=0 . \\]\n3次式 $h(n)=n^3+3n^2-3n+1$ は $h'(n)=3(n^2+2n-1)$ より $n=\\sqrt2-1$ で極小となり，その値は $(\\sqrt2-1)^3+3(\\sqrt2-1)^2-3(\\sqrt2-1)+1=6-4\\sqrt2>0$．したがって $n>-1-\\sqrt2$ で $h>0$ となり，実根は $n\\approx-3.85$ の1つだけ．よって $n>\\frac12$ の停留点は $n=2$ のみで，これは正しい解 $y=\\frac12gt^2$ である．\n\n(3) $I(2)=mg^2t_0^3\\left(\\frac{4}{24}+\\frac16\\right)=\\frac13mg^2t_0^3$．\n$I''(n)=mg^2t_0^3\\left[\\frac{d}{dn}\\frac{n(n-1)}{4(2n-1)^2}+\\frac{1}{(n+1)^3}\\right]$，$\\frac{d}{dn}\\frac{n(n-1)}{4(2n-1)^2}=\\frac{(2n-1)^2(2n-1)-4n(n-1)(2n-1)}{4(2n-1)^4}=\\frac{1}{4(2n-1)^3}$ より $I''(2)=mg^2t_0^3\\left(\\frac1{108}+\\frac1{27}\\right)=\\frac{5}{108}mg^2t_0^3>0$．最小．\n$n\\to\\frac12+0$ では運動エネルギー項 $\\propto1/(2n-1)\\to\\infty$（出発直後の速度が発散），$n\\to\\infty$ では $n^2/(16n)\\to\\infty$（終端直前で急加速）．いずれも作用は $+\\infty$ に発散し，$n=2$ が唯一の最小である．"
+    "tex": "(1) $\\dot y=y_0nt^{n-1}/t_0^n$．\n\\[ \\int_0^{t_0}\\dot y^2dt=\\frac{y_0^2n^2}{t_0^{2n}}\\frac{t_0^{2n-1}}{2n-1}=\\frac{y_0^2n^2}{(2n-1)t_0},\\qquad \\int_0^{t_0}y\\,dt=\\frac{y_0t_0}{n+1} \\]\n（$n>\\frac12$ で収束）．$y_0=\\frac12gt_0^2$ を代入して\n\\[ I(n)=\\frac{m}{2}\\frac{g^2t_0^3n^2}{4(2n-1)}+\\frac{mg^2t_0^3}{2(n+1)}=mg^2t_0^3\\left[\\frac{n^2}{8(2n-1)}+\\frac1{2(n+1)}\\right]. \\]\n\n(2) $\\dfrac{d}{dn}\\dfrac{n^2}{8(2n-1)}=\\dfrac{n(n-1)}{4(2n-1)^2}$，$\\dfrac{d}{dn}\\dfrac{1}{2(n+1)}=-\\dfrac{1}{2(n+1)^2}$．$dI/dn=0$ は\n\\[ n(n-1)(n+1)^2=2(2n-1)^2\\iff n^4+n^3-9n^2+7n-2=0\\iff(n-2)(n^3+3n^2-3n+1)=0 . \\]\n3次式 $h(n)=n^3+3n^2-3n+1$ は $h'(n)=3(n^2+2n-1)$ より $n=\\sqrt2-1$ で極小となり，その値は $(\\sqrt2-1)^3+3(\\sqrt2-1)^2-3(\\sqrt2-1)+1=6-4\\sqrt2>0$．したがって $n>-1-\\sqrt2$ で $h>0$ となり，実根は $n<-1-\\sqrt2$ にある1つだけ．よって $n>\\frac12$ の停留点は $n=2$ のみで，これは正しい解 $y=\\frac12gt^2$ である．\n\n(3) $I(2)=mg^2t_0^3\\left(\\frac{4}{24}+\\frac16\\right)=\\boldsymbol{\\frac13mg^2t_0^3}$．\n$I''(n)=mg^2t_0^3\\left[\\frac{d}{dn}\\frac{n(n-1)}{4(2n-1)^2}+\\frac{1}{(n+1)^3}\\right]$，$\\frac{d}{dn}\\frac{n(n-1)}{4(2n-1)^2}=\\frac{(2n-1)^2(2n-1)-4n(n-1)(2n-1)}{4(2n-1)^4}=\\frac{1}{4(2n-1)^3}$ より $I''(2)=mg^2t_0^3\\left(\\frac1{108}+\\frac1{27}\\right)=\\boldsymbol{\\frac{5}{108}mg^2t_0^3}>0$．最小．\n$n\\to\\frac12+0$ では運動エネルギー項 $\\propto1/(2n-1)\\to\\infty$（出発直後の速度が発散），$n\\to\\infty$ では $n^2/(16n)\\to\\infty$（終端直前で急加速）．いずれも作用は $+\\infty$ に発散し，$n=2$ が唯一の最小である．"
    }
   ],
   "idea": {
@@ -315,7 +315,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $I(n)$：m g^2 t_0^3 (n^2/(8(2n-1))+1/(2(n+1)))\n(2) 記述\n(3) $I(2)$：m g^2 t_0^3/3 ; $I''(2)$：5 m g^2 t_0^3/108"
   },
   "methods": [],
   "tags": [
@@ -446,16 +446,16 @@
   "theme": "速さが高さに比例する媒質中の最短時間経路",
   "topic": "速さが高さに比例する媒質中の最短時間経路",
   "statement": {
-   "tex": "$xy$ 平面の上半分（$y>0$）で，点の速さが位置に応じて $v(y)=v_0\\,y/a$（$v_0,a$ は正の定数）で与えられる．点 $A(-a,a)$ から点 $B(a,a)$ へ移動する時間 $T=\\int ds/v$ を最小にする経路 $y(x)$ を求めたい．\n\\begin{enumerate}\n\\item $T$ の被積分関数が $x$ を陽に含まないことを用いて，経路が満たす第1積分を書け．\n\\item 最短時間の経路は円の一部になる．その中心の座標と半径を求めよ．\n\\item そのときの所要時間 $T$ を求めよ．\n\\item 直線 $y=a$ に沿って進んだときの所要時間に対する，(3) の時間の比を求めよ．\n\\end{enumerate}"
+   "tex": "$xy$ 平面の上半分（$y>0$）で，点の速さが位置に応じて $v(y)=v_0\\,y/a$（$v_0,a$ は正の定数）で与えられる．点 $A(-a,a)$ から点 $B(a,a)$ へ移動する時間 $T=\\int ds/v$ を最小にする経路 $y(x)$ を求めたい．\n\\begin{enumerate}\n\\item $T$ の被積分関数が $x$ を陽に含まないことを用いて，経路が満たす第1積分を書け．\n\\item 最短時間の経路は円の一部になる．その中心の座標と半径を求めよ．\n\\item そのときの所要時間 $T$ を求めよ．\n\\item 直線 $y=a$ に沿って進んだときの所要時間に対する，(3) の時間の比を厳密に求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $y\\sqrt{1+y'^2}=C$（$C$ は定数）\n(2) 中心 $(0,0)$，半径 $\\sqrt{2}a$\n(3) $T=\\frac{2a\\ln(1+\\sqrt{2})}{v_0}$\n(4) $\\ln(1+\\sqrt{2})\\approx0.881$"
+   "tex": "(1) $y\\sqrt{1+y'^2}=C$（$C$ は定数）\n(2) 中心 $(0,0)$，半径 $\\sqrt{2}a$\n(3) $T=\\frac{2a\\ln(1+\\sqrt{2})}{v_0}$\n(4) $\\ln(1+\\sqrt{2})$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$T=\\frac{a}{v_0}\\int\\frac{\\sqrt{1+y'^2}}{y}\\,dx$．被積分関数 $f(y,y')$ が $x$ を含まないので，ベルトラミの公式 $f-y'\\partial f/\\partial y'=\\mathrm{const}$ が成り立つ：\n\\[\\frac{\\sqrt{1+y'^2}}{y}-\\frac{y'^2}{y\\sqrt{1+y'^2}}=\\frac{1}{y\\sqrt{1+y'^2}}=\\mathrm{const}\\quad\\Rightarrow\\quad \\boldsymbol{y\\sqrt{1+y'^2}=C}.\\]\n\n$y'=\\frac{\\sqrt{C^2-y^2}}{y}$ を積分すると $(x-x_0)^2+y^2=C^2$：中心が $x$ 軸上にある円．$A,B$ が $y$ 軸について対称なので $x_0=0$，$a^2+a^2=C^2$．よって \\textbf{中心} $\\boldsymbol{(0,0)}$，\\textbf{半径} $\\boldsymbol{\\sqrt{2}a}$．\n\n円上で $x=\\sqrt{2}a\\cos\\varphi$，$y=\\sqrt{2}a\\sin\\varphi$ とおくと $ds=\\sqrt{2}a\\,d\\varphi$，$\\varphi$ は $3\\pi/4$ から $\\pi/4$ まで動く：\n\\[T=\\frac{a}{v_0}\\int_{\\pi/4}^{3\\pi/4}\\frac{d\\varphi}{\\sin\\varphi}=\\frac{a}{v_0}\\left[\\ln\\tan\\frac{\\varphi}{2}\\right]_{\\pi/4}^{3\\pi/4}=\\frac{a}{v_0}\\ln\\frac{\\tan(3\\pi/8)}{\\tan(\\pi/8)} .\\]\n$\\tan(3\\pi/8)=1+\\sqrt{2}$，$\\tan(\\pi/8)=\\sqrt{2}-1=1/(1+\\sqrt{2})$ なので $\\boldsymbol{T=\\frac{2a\\ln(1+\\sqrt{2})}{v_0}}$．\n\n直線 $y=a$ では速さ $v_0$ で距離 $2a$ なので $2a/v_0$．比は $\\boldsymbol{\\ln(1+\\sqrt{2})\\approx0.881}$ で，速い（高い）ところを通って回り道する方が早い．（この計量 $ds^2/y^2$ は双曲平面のポアンカレ上半平面模型であり，測地線は $x$ 軸に中心をもつ半円になる．）"
+    "tex": "$T=\\frac{a}{v_0}\\int\\frac{\\sqrt{1+y'^2}}{y}\\,dx$．被積分関数 $f(y,y')$ が $x$ を含まないので，ベルトラミの公式 $f-y'\\partial f/\\partial y'=\\mathrm{const}$ が成り立つ：\n\\[\\frac{\\sqrt{1+y'^2}}{y}-\\frac{y'^2}{y\\sqrt{1+y'^2}}=\\frac{1}{y\\sqrt{1+y'^2}}=\\mathrm{const}\\quad\\Rightarrow\\quad \\boldsymbol{y\\sqrt{1+y'^2}=C}.\\]\n\n$y'=\\frac{\\sqrt{C^2-y^2}}{y}$ を積分すると $(x-x_0)^2+y^2=C^2$：中心が $x$ 軸上にある円．$A,B$ が $y$ 軸について対称なので $x_0=0$，$a^2+a^2=C^2$．よって \\textbf{中心} $\\boldsymbol{(0,0)}$，\\textbf{半径} $\\boldsymbol{\\sqrt{2}a}$．\n\n円上で $x=\\sqrt{2}a\\cos\\varphi$，$y=\\sqrt{2}a\\sin\\varphi$ とおくと $ds=\\sqrt{2}a\\,d\\varphi$，$\\varphi$ は $3\\pi/4$ から $\\pi/4$ まで動く：\n\\[T=\\frac{a}{v_0}\\int_{\\pi/4}^{3\\pi/4}\\frac{d\\varphi}{\\sin\\varphi}=\\frac{a}{v_0}\\left[\\ln\\tan\\frac{\\varphi}{2}\\right]_{\\pi/4}^{3\\pi/4}=\\frac{a}{v_0}\\ln\\frac{\\tan(3\\pi/8)}{\\tan(\\pi/8)} .\\]\n$\\tan(3\\pi/8)=1+\\sqrt{2}$，$\\tan(\\pi/8)=\\sqrt{2}-1=1/(1+\\sqrt{2})$ なので $\\boldsymbol{T=\\frac{2a\\ln(1+\\sqrt{2})}{v_0}}$．\n\n直線 $y=a$ では速さ $v_0$ で距離 $2a$ なので $2a/v_0$．比は $\\boldsymbol{\\ln(1+\\sqrt{2})}$ で（$1+\\sqrt2<e$ なので 1 より小さい），速い（高い）ところを通って回り道する方が早い．（この計量 $ds^2/y^2$ は双曲平面のポアンカレ上半平面模型であり，測地線は $x$ 軸に中心をもつ半円になる．）"
    }
   ],
   "idea": {
@@ -839,16 +839,16 @@
   "theme": "調和振動子のRitz近似と共役点",
   "topic": "調和振動子のRitz近似と共役点",
   "statement": {
-   "tex": "ラグランジアン $L=\\frac12m\\dot x^2-\\frac12m\\omega^2x^2$ の調和振動子が，$x(0)=0$，$x(T)=X$ を満たして運動する．試行関数\n\\[ x(t)=X\\frac tT+C\\,t(T-t) \\]\n（$C$ は定数）を作用 $I[C]=\\int_0^TL\\,dt$ に代入する．\n\\begin{enumerate}\n\\item $I[C]$ を $C$ の2次式として求め，$I$ を停留させる $C=C^*$ を求めよ．\n\\item $C^*$ で $I$ が**最小**となるための $\\omega T$ の条件を求め，厳密解が存在しなくなる（あるいは一意でなくなる）条件 $\\omega T=\\pi$ と比較せよ．\n\\item $\\omega T=1$ のとき，中間時刻 $t=T/2$ での近似値 $x(T/2)$ を厳密解と比較し相対誤差を求めよ．\n\\end{enumerate}"
+   "tex": "ラグランジアン $L=\\frac12m\\dot x^2-\\frac12m\\omega^2x^2$ の調和振動子が，$x(0)=0$，$x(T)=X$ を満たして運動する．試行関数\n\\[ x(t)=X\\frac tT+C\\,t(T-t) \\]\n（$C$ は定数）を作用 $I[C]=\\int_0^TL\\,dt$ に代入する．\n\\begin{enumerate}\n\\item $I[C]$ を $C$ の2次式として求め，$I$ を停留させる $C=C^*$ を求めよ．\n\\item $C^*$ で $I$ が**最小**となるための $\\omega T$ の条件を求め，厳密解が存在しなくなる（あるいは一意でなくなる）条件 $\\omega T=\\pi$ と比較せよ．\n\\item 中間時刻 $t=T/2$ での近似値 $x(T/2)$ を $X,\\omega T$ で表せ．また，$\\omega T\\ll1$ のとき厳密解に対する相対誤差を $\\omega T$ の最低次で求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $I=\\dfrac{mT^3}{60}(10-\\omega^2T^2)C^2-\\dfrac{m\\omega^2XT^3}{12}C+(\\text{定数})$，$C^*=\\dfrac{5\\omega^2X}{2(10-\\omega^2T^2)}$　(2) $\\omega T<\\sqrt{10}\\approx3.162$（厳密な共役点 $\\pi\\approx3.142$ に近い）　(3) 近似 $\\frac{41}{72}X=0.56944X$，厳密 $\\frac{X}{2\\cos(1/2)}=0.56975X$，相対誤差約 $-5.3\\times10^{-4}$"
+   "tex": "(1) $I=\\dfrac{mT^3}{60}(10-\\omega^2T^2)C^2-\\dfrac{m\\omega^2XT^3}{12}C+(\\text{定数})$，$C^*=\\dfrac{5\\omega^2X}{2(10-\\omega^2T^2)}$　(2) $\\omega T<\\sqrt{10}$（厳密な共役点 $\\pi$ に近い）　(3) $x(T/2)=\\dfrac{(\\omega^2T^2+40)X}{8(10-\\omega^2T^2)}$，相対誤差 $-\\dfrac{(\\omega T)^4}{1920}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dot x=X/T+C(T-2t)$．\n運動エネルギー項：$\\int_0^T(T-2t)\\,dt=0$，$\\int_0^T(T-2t)^2dt=T^3/3$ より $\\frac m2\\int\\dot x^2dt=\\frac m2\\left(\\frac{X^2}{T}+\\frac{T^3}{3}C^2\\right)$．\nポテンシャル項：$\\int_0^Tt^2dt=\\frac{T^3}3$，$\\int_0^Tt^2(T-t)dt=\\frac{T^4}{12}$，$\\int_0^Tt^2(T-t)^2dt=\\frac{T^5}{30}$ より\n\\[ \\frac{m\\omega^2}{2}\\int x^2dt=\\frac{m\\omega^2}{2}\\left(\\frac{X^2T}{3}+\\frac{XT^3}{6}C+\\frac{T^5}{30}C^2\\right). \\]\nしたがって\n\\[ I=\\frac{mT^3}{60}(10-\\omega^2T^2)C^2-\\frac{m\\omega^2XT^3}{12}C+\\frac{mX^2}{2T}-\\frac{m\\omega^2X^2T}{6}. \\]\n$dI/dC=0$ より\n\\[ C^*=\\frac{m\\omega^2XT^3/12}{2\\cdot mT^3(10-\\omega^2T^2)/60}=\\frac{5\\omega^2X}{2(10-\\omega^2T^2)} . \\]\n\n(2) $C^2$ の係数が正，すなわち $\\omega T<\\sqrt{10}\\approx3.162$ のとき最小．$\\omega T>\\sqrt{10}$ では停留点は最大（$C$ 方向に作用が下に有界でない）．厳密解 $x=X\\sin\\omega t/\\sin\\omega T$ は $\\omega T=\\pi$ で存在しなくなり，$\\omega T>\\pi$ では真の軌道でも作用は最小でなくなる（$t=0$ の共役点が区間内に入る）．1パラメータの試行関数でもこの臨界値 $\\pi$ を $\\sqrt{10}$ と 0.7\\% の精度で捉えている（$\\int_0^T\\dot\\eta^2dt\\ge(\\pi/T)^2\\int_0^T\\eta^2dt$ に対する Rayleigh 商 $10/T^2$ が $\\pi^2/T^2$ の上からの近似になっていることに対応）．\n\n(3) $x(T/2)=\\frac X2+C^*\\frac{T^2}{4}=X\\frac{\\omega^2T^2+40}{8(10-\\omega^2T^2)}$．$\\omega T=1$ で $\\frac{41}{72}X=0.569444X$．\n厳密解 $x(T/2)=X\\dfrac{\\sin(\\omega T/2)}{\\sin\\omega T}=\\dfrac{X}{2\\cos(\\omega T/2)}=0.569747X$．相対誤差 $\\approx-5.3\\times10^{-4}$．"
+    "tex": "(1) $\\dot x=X/T+C(T-2t)$．\n運動エネルギー項：$\\int_0^T(T-2t)\\,dt=0$，$\\int_0^T(T-2t)^2dt=T^3/3$ より $\\frac m2\\int\\dot x^2dt=\\frac m2\\left(\\frac{X^2}{T}+\\frac{T^3}{3}C^2\\right)$．\nポテンシャル項：$\\int_0^Tt^2dt=\\frac{T^3}3$，$\\int_0^Tt^2(T-t)dt=\\frac{T^4}{12}$，$\\int_0^Tt^2(T-t)^2dt=\\frac{T^5}{30}$ より\n\\[ \\frac{m\\omega^2}{2}\\int x^2dt=\\frac{m\\omega^2}{2}\\left(\\frac{X^2T}{3}+\\frac{XT^3}{6}C+\\frac{T^5}{30}C^2\\right). \\]\nしたがって\n\\[ I=\\frac{mT^3}{60}(10-\\omega^2T^2)C^2-\\frac{m\\omega^2XT^3}{12}C+\\frac{mX^2}{2T}-\\frac{m\\omega^2X^2T}{6}. \\]\n$dI/dC=0$ より\n\\[ C^*=\\frac{m\\omega^2XT^3/12}{2\\cdot mT^3(10-\\omega^2T^2)/60}=\\frac{5\\omega^2X}{2(10-\\omega^2T^2)} . \\]\n\n(2) $C^2$ の係数が正，すなわち $\\boldsymbol{\\omega T<\\sqrt{10}}$ のとき最小．$\\omega T>\\sqrt{10}$ では停留点は最大（$C$ 方向に作用が下に有界でない）．厳密解 $x=X\\sin\\omega t/\\sin\\omega T$ は $\\omega T=\\pi$ で存在しなくなり，$\\omega T>\\pi$ では真の軌道でも作用は最小でなくなる（$t=0$ の共役点が区間内に入る）．1パラメータの試行関数でもこの臨界値 $\\pi$ を $\\sqrt{10}$ でよく近似している（$\\int_0^T\\dot\\eta^2dt\\ge(\\pi/T)^2\\int_0^T\\eta^2dt$ に対する Rayleigh 商 $10/T^2$ が $\\pi^2/T^2$ の上からの近似になっていることに対応）．\n\n(3) $x(T/2)=\\dfrac X2+C^*\\dfrac{T^2}{4}$ に $C^*$ を代入して\n\\[ \\boldsymbol{x(T/2)=\\frac{(\\omega^2T^2+40)X}{8(10-\\omega^2T^2)}}. \\]\n厳密解は $x(T/2)=X\\dfrac{\\sin(\\omega T/2)}{\\sin\\omega T}=\\dfrac{X}{2\\cos(\\omega T/2)}$．$u=\\omega T$ として展開すると\n\\[ \\frac{40+u^2}{8(10-u^2)}=\\frac12\\left(1+\\frac{u^2}{8}+\\frac{u^4}{80}+\\cdots\\right),\\qquad \\frac{1}{2\\cos(u/2)}=\\frac12\\left(1+\\frac{u^2}{8}+\\frac{5u^4}{384}+\\cdots\\right). \\]\n$u^2$ の項までは一致し，相対誤差は $\\left(\\dfrac1{80}-\\dfrac5{384}\\right)u^4=\\boldsymbol{-\\dfrac{(\\omega T)^4}{1920}}$．近似はわずかに小さめで，誤差は $\\omega T$ の4乗で小さくなる．"
    }
   ],
   "idea": {
@@ -856,7 +856,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $C^*$：5ω^2 X/(2(10-ω^2 T^2))\n(2) $\\omega T$ の上限：sqrt(10)\n(3) $x(T/2)$：(ω^2 T^2+40)X/(8(10-ω^2 T^2)) ; 相対誤差：-(ω T)^4/1920"
   },
   "methods": [],
   "tags": [

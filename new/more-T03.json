@@ -11,7 +11,8 @@
   "solution": "(1) $R$ は角 $2\\pi/3$ の回転だから，$R^n$ は角 $2\\pi n/3$ の回転である．これが $I$（角 $0$ の回転）になる最小の $n$ は $\\boldsymbol{3}$．\n\n(2) 実際に計算すると，$c=\\cos\\frac{2\\pi}{3}=-\\frac12$，$s=\\sin\\frac{2\\pi}{3}=\\frac{\\sqrt3}{2}$ として\n\\[ SRS=\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}\\begin{pmatrix}c&-s\\\\ s&c\\end{pmatrix}\\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix}=\\begin{pmatrix}c&s\\\\ -s&c\\end{pmatrix}, \\]\nこれは角 $-2\\pi/3$ の回転，すなわち $R^{-1}=R^2$ である．よって $\\boldsymbol{k=2}$．「折り返して回してまた折り返す」と回転の向きが逆になる．\n\n(3) 回転の部分 $R^a$ は $3$ 通り，折り返しの有無 $S^b$ は $2$ 通りで，$R^aS^b$ はすべて異なる（$b=1$ のものは行列式が $-1$，$b=0$ のものは $+1$ なので混ざらない）．したがって $\\boldsymbol{6}$ 種類．(2) の関係を使えば，どの2つの積も再びこの形に直せるので，この $6$ 個は積について閉じた集まり（群）をなす．これを $D_3$（$C_{3v}$）という．\n\n次は，このような群の元を行列で表す「表現」と，その対角和（指標）を使って分子や結晶の対称性を調べる方法を学ぶとよい．",
   "idea": "対称操作を行列で表すと，操作の合成が行列の積になり，回転の位数や $SRS=R^{-1}$ のような関係が計算で確かめられる．",
   "tags": "対称操作,二面体群,回転行列,群の位数",
-  "input": "(1) 3\n(2) 2\n(3) 6"
+  "input": "(1) 3\n(2) 2\n(3) 6",
+  "id": "PM-08-001"
  },
  {
   "tid": "T03-02",
@@ -25,7 +26,8 @@
   "solution": "(1) 等比数列の和の公式から\n\\[ 1+\\omega+\\cdots+\\omega^{n-1}=\\frac{\\omega^n-1}{\\omega-1}=\\boldsymbol{0} \\]\n（$\\omega\\ne1$，$\\omega^n=1$）．正 $n$ 角形の頂点を表すベクトルの和が $0$ になる，という図形的な意味もある．\n\n(2) $(\\omega^8)^m=e^{2\\pi i\\cdot 8m/12}=1$ となるのは $8m$ が $12$ の倍数のとき，すなわち $2m$ が $3$ の倍数のとき．最小の $m$ は $\\boldsymbol{3}$．実際 $\\omega^8=e^{4\\pi i/3}$ は $120^\\circ$ の回転にあたる．\n\n(3) $\\omega^k$ の位数は $12/\\gcd(k,12)$ である．これが $12$ になるのは $k$ と $12$ が互いに素なとき，すなわち $k=1,5,7,11$ の $\\boldsymbol{4}$ 個．これらはどれも，その累乗だけで群の全部の元をつくる「生成元」である．\n\n次は，巡回群の各元に複素数 $\\omega^{jk}$ を対応させる1次元の表現（指標）を学ぶとよい．これは結晶中の電子のブロッホ波 $e^{ikx}$ の離散版である．",
   "idea": "1 の $n$ 乗根は巡回群をなし，その和が $0$ になることや元の位数は，指数の整数の性質だけで決まる．",
   "tags": "巡回群,1のn乗根,位数,生成元",
-  "input": "(1) 0\n(2) 3\n(3) 4"
+  "input": "(1) 0\n(2) 3\n(3) 4",
+  "id": "PM-08-002"
  },
  {
   "tid": "T03-03",
@@ -39,7 +41,8 @@
   "solution": "(1) $3$ 個の並べ方の数だから $3!=\\boldsymbol{6}$．\n\n(2) 恒等置換（互換 $0$ 回），および巡回置換 $1\\to2\\to3\\to1$ と $1\\to3\\to2\\to1$ が偶置換である．巡回置換 $(1\\,2\\,3)$ は「$1$ と $2$ を入れ替えてから $1$ と $3$ を入れ替える」のように互換 $2$ 個で書ける．残りの $3$ 個（互換そのもの）は奇置換．よって偶置換は $\\boldsymbol{3}$ 個で，ちょうど半分である．\n\n(3) $(x_1,x_2,x_3,x_4)\\to(x_2,x_3,x_4,x_1)$ は $4$ 個を1つずつずらす巡回置換で，隣どうしの入れ替えを $3$ 回行えば実現できる（$x_1$ を右へ $3$ 回ずらす）．奇置換なので $\\boldsymbol{c=-1}$．一般に $N$ 個の巡回置換の符号は $(-1)^{N-1}$ である．\n\n次は，対称群の表現（ヤング図形）を使って，多電子系のスピンと空間部分の対称性の組み合わせ方を学ぶとよい．",
   "idea": "置換は互換の積に分解でき，その個数の偶奇（符号）がフェルミ粒子の波動関数に掛かる符号を決める．",
   "tags": "対称群,置換,偶置換,フェルミ粒子",
-  "input": "(1) 6\n(2) 3\n(3) c：-1"
+  "input": "(1) 6\n(2) 3\n(3) c：-1",
+  "id": "PM-08-003"
  },
  {
   "tid": "T03-04",
@@ -53,7 +56,8 @@
   "solution": "(1) 置換を表す行列の対角和は，動かない原子の数に等しい．$E$ では $3$ 個すべて，$C_3$ では $0$ 個，$\\sigma_v$ では鏡映面上の $1$ 個が動かないので $\\boldsymbol{\\chi^\\Gamma=(3,0,1)}$．\n\n(2) $|G|=6$ として\n\\[ n_{A_1}=\\tfrac16(3+0+3)=1,\\quad n_{A_2}=\\tfrac16(3+0-3)=0,\\quad n_E=\\tfrac16(6+0+0)=1 . \\]\nよって $\\boldsymbol{\\Gamma=A_1\\oplus E}$（次元 $1+2=3$ で合っている）．\n\n(3) シューアの補題により，対称なハミルトニアンは異なる既約表現を混ぜず，同じ既約表現の中では定数倍になる．$A_1$（$\\phi_1+\\phi_2+\\phi_3$）が $1$ 準位，$E$ が $2$ 重縮退の $1$ 準位をつくるので $\\boldsymbol{2}$ 種類．",
   "idea": "置換表現の指標は「動かない原子の数」で，指標の直交性から既約表現の内訳が直ちに求まる．",
   "tags": "指標表,点群,既約表現の分解,分子軌道",
-  "input": "(1) (3, 0, 1)\n(2) A_1：1 ; A_2：0 ; E：1\n(3) 2"
+  "input": "(1) (3, 0, 1)\n(2) A_1：1 ; A_2：0 ; E：1\n(3) 2",
+  "id": "PM-08-004"
  },
  {
   "tid": "T03-05",
@@ -67,7 +71,8 @@
   "solution": "成分で書くと\n\\[ L_x=\\begin{pmatrix}0&0&0\\\\0&0&-i\\\\0&i&0\\end{pmatrix},\\ L_y=\\begin{pmatrix}0&0&i\\\\0&0&0\\\\-i&0&0\\end{pmatrix},\\ L_z=\\begin{pmatrix}0&-i&0\\\\ i&0&0\\\\0&0&0\\end{pmatrix}. \\]\n\n(1) 行列の積を計算すると $[L_x,L_y]=iL_z$，よって $\\boldsymbol{c=i}$．これは量子力学の角運動量の交換関係（$\\hbar=1$）と同じ形である．\n\n(2) $L_x^2=\\mathrm{diag}(0,1,1)$ など，足し合わせて $2I$．$\\boldsymbol{\\lambda=2}$ で，$j(j+1)=2$ から $\\boldsymbol{j=1}$．3次元のベクトルは角運動量 $1$ の表現である．\n\n(3) $L_z$ の特性方程式は $-\\mu(\\mu^2-1)=0$，固有値は $\\boldsymbol{-1,0,1}$（$m=-1,0,1$）．\n\n(4) $e^{-i\\theta L_z}$ は $xy$ 面内の角 $\\theta$ の回転で $z$ を変えないから $\\boldsymbol{\\mathrm{Tr}=1+2\\cos\\theta}$．固有値で書けば $e^{-i\\theta}+1+e^{i\\theta}$ で，これがスピン $j=1$ の指標 $\\sum_{m=-1}^{1}e^{-im\\theta}$ である．",
   "idea": "回転行列の無限小生成子は角運動量の交換関係を満たし，ベクトル表現は $j=1$ の既約表現である．",
   "tags": "回転群,リー代数,生成子,角運動量",
-  "input": "(1) c：i\n(2) λ：2 ; j：1\n(3) {-1, 0, 1}\n(4) 1+2cos(θ)"
+  "input": "(1) c：i\n(2) λ：2 ; j：1\n(3) {-1, 0, 1}\n(4) 1+2cos(θ)",
+  "id": "PM-08-005"
  },
  {
   "tid": "T03-06",
@@ -81,7 +86,8 @@
   "solution": "$\\sigma_z$ は対角なので $U(\\theta)=\\mathrm{diag}(e^{-i\\theta/2},\\,e^{i\\theta/2})$．\n\n(1) $\\mathrm{Tr}\\,U=e^{-i\\theta/2}+e^{i\\theta/2}=\\boldsymbol{2\\cos(\\theta/2)}$．\n\n(2) $\\theta=2\\pi$ で $e^{\\mp i\\pi}=-1$ だから $\\boldsymbol{a=-1}$．$360^\\circ$ 回してもスピノルは元に戻らず符号が反転する．\n\n(3) $e^{\\mp i\\theta/2}=1$ となる最小の $\\theta>0$ は $\\boldsymbol{4\\pi}$．$SU(2)$ の $U$ と $-U$ は同じ3次元回転を表し，$SU(2)\\to SO(3)$ は $2$ 対 $1$ の対応になっている．この符号は単独では観測できないが，中性子干渉計で片方の経路のスピンだけを磁場で $2\\pi$ 回すと干渉縞が反転することで確かめられている．",
   "idea": "スピン $1/2$ の回転は角の半分 $\\theta/2$ で効くので，$2\\pi$ 回転で $-1$，$4\\pi$ 回転ではじめて恒等になる．",
   "tags": "SU(2),スピノル,2π回転,パウリ行列",
-  "input": "(1) 2cos(θ/2)\n(2) a：-1\n(3) 4pi"
+  "input": "(1) 2cos(θ/2)\n(2) a：-1\n(3) 4pi",
+  "id": "PM-08-006"
  },
  {
   "tid": "T03-07",
@@ -95,7 +101,8 @@
   "solution": "(1) $\\chi_{1/2}=e^{-i\\theta/2}+e^{i\\theta/2}=\\boldsymbol{2\\cos(\\theta/2)}$．\n\n(2) $c=\\cos(\\theta/2)$ とおく．$\\chi_{3/2}=2\\cos(3\\theta/2)+2\\cos(\\theta/2)=2(4c^3-3c)+2c=8c^3-4c$．一方 $\\chi_{1/2}^3=8c^3$ なので\n\\[ \\chi_{1/2}^3=\\chi_{3/2}+2\\chi_{1/2}, \\]\nすなわち $\\frac12\\otimes\\frac12\\otimes\\frac12=\\boldsymbol{\\frac32\\oplus\\frac12\\oplus\\frac12}$．次元も $2^3=4+2+2$ で合う．\n\n(3) 2つの合成 $1\\otimes1=2\\oplus1\\oplus0$（クレブシュ＝ゴルダンの規則 $|j_1-j_2|\\le J\\le j_1+j_2$）に，もう1つの $1$ を掛ける：\n\\[ 2\\otimes1=3\\oplus2\\oplus1,\\quad 1\\otimes1=2\\oplus1\\oplus0,\\quad 0\\otimes1=1 . \\]\n合計して $\\boldsymbol{3\\oplus2\\cdot2\\oplus3\\cdot1\\oplus0}$．指標でも $\\chi_1^3=\\chi_3+2\\chi_2+3\\chi_1+\\chi_0$ が恒等的に成り立つことが確かめられる．次元は $27=7+2\\cdot5+3\\cdot3+1$．（$J=0$ の1回は，3つのベクトルの三重積 $\\boldsymbol{a}\\cdot(\\boldsymbol{b}\\times\\boldsymbol{c})$ に対応する．）",
   "idea": "テンソル積の指標は指標の積なので，角運動量の合成は $\\cos(\\theta/2)$ の多項式の分解に帰着する．",
   "tags": "角運動量の合成,指標,テンソル積,クレブシュ＝ゴルダン",
-  "input": "(1) 2cos(θ/2)\n(2) J=3/2の回数：1 ; J=1/2の回数：2\n(3) J=3：1 ; J=2：2 ; J=1：3 ; J=0：1"
+  "input": "(1) 2cos(θ/2)\n(2) J=3/2の回数：1 ; J=1/2の回数：2\n(3) J=3：1 ; J=2：2 ; J=1：3 ; J=0：1",
+  "id": "PM-08-007"
  },
  {
   "tid": "T03-08",
@@ -109,7 +116,8 @@
   "solution": "(1) $E$ では $3$ 原子すべて不動で $9$．$C_2$ では O だけが不動で $-1$．$\\sigma_v(xz)$ は2つの H を入れ替えるので O だけが不動で $1$．$\\sigma_v'(yz)$ は分子面そのものなので $3$ 原子が不動で $3$．よって $\\boldsymbol{\\Gamma_{3N}=(9,-1,1,3)}$．\n\n(2) 指標の直交性 $n_\\alpha=\\frac14\\sum\\chi^{(\\alpha)}\\chi$ から\n\\[ n_{A_1}=\\tfrac14(9-1+1+3)=3,\\ n_{A_2}=\\tfrac14(9-1-1-3)=1,\\ n_{B_1}=\\tfrac14(9+1+1-3)=2,\\ n_{B_2}=\\tfrac14(9+1-1+3)=3 . \\]\n並進 $(x,y,z)$ は $A_1+B_1+B_2$，回転 $(R_x,R_y,R_z)$ は $A_2+B_1+B_2$ なので\n\\[ \\Gamma_{\\rm vib}=3A_1+A_2+2B_1+3B_2-(A_1+B_1+B_2)-(A_2+B_1+B_2)=\\boldsymbol{2A_1+B_2}. \\]\n$3N-6=3$ 個と合っている．$A_1$ の2つは対称伸縮と変角，$B_2$ は逆対称伸縮である．\n\n(3) $A_1$（$z$）と $B_2$（$y$）はどちらも双極子モーメントの成分と同じ表現なので，$\\boldsymbol{3}$ 個すべて赤外活性である．",
   "idea": "不動な原子だけが指標に寄与するので $\\Gamma_{3N}$ はすぐ求まり，並進・回転を差し引けば振動の対称性が決まる．",
   "tags": "点群,基準振動,赤外活性,指標表",
-  "input": "(1) (9, -1, 1, 3)\n(2) A_1：2 ; A_2：0 ; B_1：0 ; B_2：1\n(3) 3"
+  "input": "(1) (9, -1, 1, 3)\n(2) A_1：2 ; A_2：0 ; B_1：0 ; B_2：1\n(3) 3",
+  "id": "PM-08-008"
  },
  {
   "tid": "T03-09",
@@ -123,7 +131,8 @@
   "solution": "(1) $\\boldsymbol{2\\cos(2\\pi/n)}$．\n\n(2) 格子の基底では対角和が整数なので，$2\\cos(2\\pi/n)\\in\\{-2,-1,0,1,2\\}$．それぞれ $\\cos(2\\pi/n)=-1,-\\frac12,0,\\frac12,1$ で，$n=2,3,4,6,1$ に対応する．よって $\\boldsymbol{n=1,2,3,4,6}$ に限られる（結晶学的制限）．3次元でも対角和は $1+2\\cos\\theta$ となり，同じ結論になる．\n\n(3) $2\\cos72^\\circ=\\boldsymbol{\\dfrac{\\sqrt5-1}{2}}\\approx0.618$（黄金比 $-1$）で整数でない．したがって $5$ 回対称の周期的結晶は存在しない．$5$ 回対称の回折像を示す物質（準結晶）は，周期性をもたない秩序構造である．",
   "idea": "回転行列の対角和は基底によらないので，格子基底で整数であることから回転角が強く制限される．",
   "tags": "結晶学的制限,回転対称性,準結晶,ブラベー格子",
-  "input": "(1) 2cos(2pi/n)\n(2) {1, 2, 3, 4, 6}\n(3) (sqrt(5)-1)/2"
+  "input": "(1) 2cos(2pi/n)\n(2) {1, 2, 3, 4, 6}\n(3) (sqrt(5)-1)/2",
+  "id": "PM-08-009"
  },
  {
   "tid": "T03-10",
@@ -137,7 +146,8 @@
   "solution": "(1) $\\chi_2(2\\pi/3)=\\dfrac{\\sin(5\\pi/3)}{\\sin(\\pi/3)}=\\boldsymbol{-1}$，$\\chi_2(\\pi/2)=\\dfrac{\\sin(5\\pi/4)}{\\sin(\\pi/4)}=\\boldsymbol{-1}$．\n\n(2) さらに $\\chi_2(\\pi)=\\sin(5\\pi/2)/\\sin(\\pi/2)=1$．$l=2$ の指標は $(5,-1,1,-1,1)$．$n_\\alpha=\\frac1{24}\\sum(\\text{類の大きさ})\\chi^{(\\alpha)}\\chi$ で\n\\[ n_E=\\tfrac1{24}(10-8+6+0+0)=1,\\quad n_{T_2}=\\tfrac1{24}(15+0-3+6+6)=1, \\]\n他は $0$．よって $\\boldsymbol{E\\oplus T_2}$，すなわち $2$ 重（$e_g$）と $3$ 重（$t_{2g}$）に分裂する．\n\n(3) $l=3$ では $\\chi_3(2\\pi/3)=\\sin(7\\pi/3)/\\sin(\\pi/3)=1$，$\\chi_3(\\pi)=\\sin(7\\pi/2)=-1$，$\\chi_3(\\pi/2)=\\sin(7\\pi/4)/\\sin(\\pi/4)=-1$．指標 $(7,1,-1,-1,-1)$ から\n\\[ n_{A_2}=\\tfrac1{24}(7+8-3+6+6)=1,\\ n_{T_1}=\\tfrac1{24}(21+0+3-6+6)=1,\\ n_{T_2}=\\tfrac1{24}(21+0+3+6-6)=1, \\]\nよって $\\boldsymbol{A_2\\oplus T_1\\oplus T_2}$，縮退度 $1,3,3$ の $3$ 準位に分かれる．（$O_h$ では $l$ の偶奇が反転の固有値を決めるだけで，分裂のしかたは変わらない．）",
   "idea": "球対称のときの既約表現 $l$ を，部分群 $O$ に制限して指標で分解すれば，結晶場分裂のパターンが計算なしで決まる．",
   "tags": "結晶場分裂,点群O,部分群への制限,d軌道,院試",
-  "input": "(1) χ_2(2π/3)：-1 ; χ_2(π/2)：-1\n(2) (2, 3)\n(3) (1, 3, 3)"
+  "input": "(1) χ_2(2π/3)：-1 ; χ_2(π/2)：-1\n(2) (2, 3)\n(3) (1, 3, 3)",
+  "id": "PM-08-010"
  },
  {
   "tid": "T03-11",
@@ -151,7 +161,8 @@
   "solution": "(1) $K$ が $\\sigma_y$ を通り抜けるとき $\\sigma_y^*=-\\sigma_y$ になるので，$(-i\\sigma_y)^*=-i\\sigma_y$ に注意して\n\\[ \\Theta^2=(-i\\sigma_y)K(-i\\sigma_y)K=(-i\\sigma_y)(-i\\sigma_y)^*=(-i\\sigma_y)^2=-\\sigma_y^2=-I . \\]\n$\\boldsymbol{a=-1}$．\n\n(2) $-i\\sigma_y=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}$ なので $\\Theta|{\\uparrow}\\rangle=|{\\downarrow}\\rangle$，$\\Theta|{\\downarrow}\\rangle=-|{\\uparrow}\\rangle$．$\\boldsymbol{b=-1}$．（$\\Theta^2|{\\uparrow}\\rangle=-|{\\uparrow}\\rangle$ とも整合する．）\n\n(3) 各因子が独立にはたらくので $\\Theta^2=(-1)^N$，すなわち $\\boldsymbol{(-1)^N}$．\n\n(4) $[H,\\Theta]=0$ なら $|\\psi\\rangle$ と $\\Theta|\\psi\\rangle$ は同じエネルギーをもつ．もし両者が同じ状態（$\\Theta|\\psi\\rangle=c|\\psi\\rangle$）なら $\\Theta^2|\\psi\\rangle=|c|^2|\\psi\\rangle$ となり，$\\Theta^2=-1$ と矛盾する．実際，反ユニタリ性から $\\langle\\psi|\\Theta\\psi\\rangle=\\langle\\Theta^2\\psi|\\Theta\\psi\\rangle=-\\langle\\psi|\\Theta\\psi\\rangle$ で両者は直交する．$N=3$ は奇数で $\\Theta^2=-1$ だから，どの準位も少なくとも $\\boldsymbol{2}$ 重に縮退する（クラマース縮退）．磁場をかけると時間反転対称性が破れ，この縮退は解ける．",
   "idea": "時間反転は反ユニタリで，半整数スピンでは $\\Theta^2=-1$ になるため，$\\psi$ と $\\Theta\\psi$ が直交して必ず2重縮退が生じる．",
   "tags": "時間反転,反ユニタリ演算子,クラマース縮退,院試",
-  "input": "(1) a：-1\n(2) b：-1\n(3) (-1)^N\n(4) 2"
+  "input": "(1) a：-1\n(2) b：-1\n(3) (-1)^N\n(4) 2",
+  "id": "PM-08-011"
  },
  {
   "tid": "T03-12",
@@ -165,7 +176,8 @@
   "solution": "(1) 既約表現は $5$ 個で，$d_1^2+\\cdots+d_5^2=24$．$d=1$ が少なくとも $2$ つあるので残り $3$ つの $2$ 乗和は $22$．$22$ を $3$ つの平方数の和で書く方法は $4+9+9$ だけ（$16+4+\\cdot$ では $2$ が残り不可，$1$ を使うと $21$ が2つの平方数の和にならない）．よって次元は $\\boldsymbol{1,1,2,3,3}$．\n\n(2) 不動な水素の数を数える．$E$：$4$．$C_3$（C–H 結合のまわり）：その H だけで $1$．$C_2$：$0$．$S_4$：$0$．$\\sigma_d$（2つの H を含む面）：$2$．$\\boldsymbol{\\Gamma=(4,1,0,0,2)}$．\n\n(3) $n_{A_1}=\\frac1{24}(4+8+0+0+12)=1$，$n_{T_2}=\\frac1{24}(12+0+0+0+12)=1$．$\\boldsymbol{\\Gamma=A_1\\oplus T_2}$（次元 $1+3=4$）．炭素の $2s$ は $A_1$，$2p$ は $T_2$ に属するので，それぞれが水素の組み合わせと結合をつくる．これが $sp^3$ 混成の群論的な根拠であり，光電子分光で $\\mathrm{CH_4}$ の価電子帯が $1$ 重と $3$ 重の $2$ つのピークを示すことと対応する．",
   "idea": "既約表現の数と次元は「類の数」と「次元の2乗和＝位数」でほぼ決まり，置換表現の指標から分子軌道の対称性が分かる．",
   "tags": "既約表現,正四面体群,置換表現,メタン,院試",
-  "input": "(1) (1, 1, 2, 3, 3)\n(2) (4, 1, 0, 0, 2)\n(3) A_1：1 ; T_2：1"
+  "input": "(1) (1, 1, 2, 3, 3)\n(2) (4, 1, 0, 0, 2)\n(3) A_1：1 ; T_2：1",
+  "id": "PM-08-012"
  },
  {
   "tid": "T03-13",
@@ -179,7 +191,8 @@
   "solution": "(1) 反対称行列は対角成分が $0$ で，上三角の成分が独立だから $\\boldsymbol{N(N-1)/2}$．\n\n(2) 破れていない $SO(N-1)$ の生成子は $(N-1)(N-2)/2$ 個．差は\n\\[ \\frac{N(N-1)}{2}-\\frac{(N-1)(N-2)}{2}=\\boldsymbol{N-1}. \\]\n真空の多様体 $|\\boldsymbol{\\phi}|=v$ は球面 $S^{N-1}$ で，その接方向 $N-1$ 個が質量 $0$ のゆらぎになる．実際，$\\phi_a$（$a<N$）方向の2階微分は $\\lambda(\\boldsymbol{\\phi}^2-v^2)=0$ で消える．\n\n(3) $\\phi_a=0$（$a<N$）上で $V=\\frac\\lambda4(\\phi_N^2-v^2)^2$，$V''=\\lambda(3\\phi_N^2-v^2)$．$\\phi_N=v$ で\n\\[ \\boldsymbol{m_h^2=2\\lambda v^2} . \\]\n\n(4) $\\dim G=8+8=16$，$\\dim H=8$ なので $\\boldsymbol{8}$ 個．これが $\\pi^{\\pm},\\pi^0,K^{\\pm},K^0,\\bar K^0,\\eta$ の擬スカラー中間子八重項である（クォーク質量による明示的な破れのため，厳密には質量 $0$ ではない）．",
   "idea": "南部＝ゴールドストーン粒子の数は破れた生成子の数 $\\dim G-\\dim H$ で，真空の多様体の接方向に対応する．",
   "tags": "自発的対称性の破れ,ゴールドストーンの定理,リー群,カイラル対称性,院試",
-  "input": "(1) N(N-1)/2\n(2) N-1\n(3) 2λ v^2\n(4) 8"
+  "input": "(1) N(N-1)/2\n(2) N-1\n(3) 2λ v^2\n(4) 8",
+  "id": "PM-08-013"
  },
  {
   "tid": "T03-14",
@@ -193,7 +206,8 @@
   "solution": "(1) $K_x$，$K_y$ を書いて積を計算すると $K_xK_y-K_yK_x$ は空間の $xy$ ブロックに $\\begin{pmatrix}0&1\\\\-1&0\\end{pmatrix}$ を持つ行列で，これは $-iJ_z$ に等しい．$\\boldsymbol{c=-i}$．2つのブーストの交換子が回転になり，符号が回転の場合と逆である（ウィグナー回転の起源）．\n\n(2) $[N_i^+,N_j^+]=\\frac14\\left([J_i,J_j]+i[J_i,K_j]+i[K_i,J_j]-[K_i,K_j]\\right)=\\frac14\\left(i\\varepsilon_{ijk}J_k-\\varepsilon_{ijk}K_k-\\varepsilon_{ijk}K_k+i\\varepsilon_{ijk}J_k\\right)=i\\varepsilon_{ijk}N_k^+$ ($[K_i,J_j]=i\\varepsilon_{ijk}K_k$ を使った)．同様に $[N_i^+,N_j^-]=0$．よって表現は $SU(2)\\times SU(2)$ の表現の積で，次元は $\\boldsymbol{(2A+1)(2B+1)}$．\n\n(3) $\\boldsymbol{J}=\\boldsymbol{N}^++\\boldsymbol{N}^-$ は2つの角運動量の和なので，$\\frac12\\otimes\\frac12=\\boldsymbol{0\\oplus1}$．時間成分 $ct$ がスピン $0$，空間成分がスピン $1$ である．実際，ベクトル表現で $(\\boldsymbol{N}^+)^2=\\frac34 I$ となることが確かめられる．\n\n(4) $3+3=\\boldsymbol{6}$．$F^{\\mu\\nu}$ は $4\\times4$ 反対称で独立成分 $6$ 個（$\\boldsymbol{E}$ と $\\boldsymbol{B}$）と一致する．$\\boldsymbol{E}\\pm i\\boldsymbol{B}$ がそれぞれ $(1,0)$，$(0,1)$ に属し，これが自己双対・反自己双対部分である．ディラック場は $(\\frac12,0)\\oplus(0,\\frac12)$（次元 $4$）である．",
   "idea": "ローレンツ代数は複素化すると2つの $su(2)$ の直和になり，有限次元表現は2つのスピン $(A,B)$ で分類される．",
   "tags": "ローレンツ群,リー代数,表現論,スピノル,院試",
-  "input": "(1) c：-i\n(2) (2A+1)(2B+1)\n(3) {0, 1}\n(4) 6"
+  "input": "(1) c：-i\n(2) (2A+1)(2B+1)\n(3) {0, 1}\n(4) 6",
+  "id": "PM-08-014"
  },
  {
   "tid": "T03-15",
@@ -207,7 +221,8 @@
   "solution": "(1) $\\langle l',m'|[L_z,r_q]|l,m\\rangle=(m'-m)\\hbar\\langle l',m'|r_q|l,m\\rangle=q\\hbar\\langle l',m'|r_q|l,m\\rangle$．行列要素が $0$ でないなら $\\boldsymbol{m'=m+q}$．\n\n(2) $x+iy=-\\sqrt2\\,r_{+1}$ なので $|\\langle1,1|x+iy|0,0\\rangle|^2=2|\\langle1,1|r_{+1}|0,0\\rangle|^2=2|\\langle1\\|r\\|0\\rangle|^2$．一方 $|\\langle1,0|z|0,0\\rangle|^2=|\\langle1\\|r\\|0\\rangle|^2$．比は $\\boldsymbol{2}$．（$\\sigma^+$ 偏光の遷移が $\\pi$ 偏光の2倍に見えるのは，$x+iy$ の規格化の分だけである．）\n\n(3) クレブシュ＝ゴルダン係数の2乗の比 $\\dfrac{1^2}{(1/\\sqrt2)^2}=\\boldsymbol{2}$．\n\n(4) $z=r_0$ なので比は $\\dfrac{\\langle1\\,0;1\\,0|2\\,0\\rangle^2}{\\langle1\\,1;1\\,0|2\\,1\\rangle^2}=\\dfrac{2/3}{1/2}=\\boldsymbol{\\dfrac43}$．\n\nこのように，同じ多重項間の遷移の相対強度は対称性（クレブシュ＝ゴルダン係数）だけで決まり，動径積分 $\\langle l'\\|r\\|l\\rangle$ の計算は1回で済む．$m$ について和をとった全遷移強度が始状態の $m$ によらないこと（和則）もこの定理から従う．",
   "idea": "球テンソル演算子の行列要素は「クレブシュ＝ゴルダン係数×換算行列要素」に分かれ，強度比と選択則は対称性だけで決まる．",
   "tags": "ウィグナー＝エッカルトの定理,球テンソル,選択則,クレブシュ＝ゴルダン係数,院試",
-  "input": "(1) m+q\n(2) 2\n(3) 2\n(4) 4/3"
+  "input": "(1) m+q\n(2) 2\n(3) 2\n(4) 4/3",
+  "id": "PM-08-015"
  },
  {
   "tid": "T03-16",
@@ -216,12 +231,13 @@
   "level": 0,
   "theme": "放物運動で届く範囲（安全放物線）",
   "minutes": 10,
-  "q": "原点から，水平となす角 $\\theta$（$0<\\theta<\\pi/2$）の向きに速さ $v_0$ で小球を投げる．重力加速度を $g$ とし，空気抵抗は無視する．水平右向きに $x$ 軸，鉛直上向きに $y$ 軸をとると，軌道は\n\\[ y=x\\tan\\theta-\\frac{gx^2}{2v_0^2}\\left(1+\\tan^2\\theta\\right) \\]\nである（$1/\\cos^2\\theta=1+\\tan^2\\theta$ を使った）．\n\\begin{enumerate}\n\\item $y=0$ の地面上で，最も遠くに届く水平距離を求めよ．\n\\item 点 $(x,y)$（$x>0$）に小球が届くような $\\theta$ が存在するためには，$y$ がある値 $Y(x)$ 以下でなければならない．上の式を $u=\\tan\\theta$ の2次方程式とみて，$Y(x)$ を求めよ．\n\\item $v_0=20\\,\\mathrm{m/s}$，$g=9.8\\,\\mathrm{m/s^2}$ のとき，水平距離 $30\\,\\mathrm{m}$ の位置にある壁のどの高さまで小球を当てられるか．\n\\end{enumerate}",
-  "answer": "(1) $\\dfrac{v_0^2}{g}$\n(2) $Y(x)=\\dfrac{v_0^2}{2g}-\\dfrac{gx^2}{2v_0^2}$\n(3) $\\approx 9.38\\,\\mathrm{m}$",
-  "solution": "(1) $y=0$ とおくと $x=\\dfrac{2v_0^2\\tan\\theta}{g(1+\\tan^2\\theta)}=\\dfrac{v_0^2\\sin2\\theta}{g}$．$\\theta=45^\\circ$ で最大 $\\boldsymbol{v_0^2/g}$．\n\n(2) $u=\\tan\\theta$ について整理すると\n\\[ \\frac{gx^2}{2v_0^2}u^2-xu+\\left(y+\\frac{gx^2}{2v_0^2}\\right)=0 . \\]\n実数解をもつ条件（判別式 $\\ge0$）は $x^2-4\\cdot\\dfrac{gx^2}{2v_0^2}\\left(y+\\dfrac{gx^2}{2v_0^2}\\right)\\ge0$，すなわち\n\\[ y\\le\\boldsymbol{Y(x)=\\frac{v_0^2}{2g}-\\frac{gx^2}{2v_0^2}} . \\]\nこの放物線は，いろいろな $\\theta$ の軌道すべてに接する曲線（包絡線）で，「安全放物線」とよばれる．$x=0$ で真上に投げたときの最高点 $v_0^2/2g$，$y=0$ で (1) の最大距離を与える．\n\n(3) $Y=\\dfrac{400}{19.6}-\\dfrac{9.8\\times900}{800}=20.41-11.03\\approx\\boldsymbol{9.38\\,\\mathrm{m}}$．このとき $\\tan\\theta=v_0^2/(gx)\\approx1.36$ である．\n\n次は，空気抵抗がある場合の運動を微分方程式として解く方法を学ぶとよい．",
+  "q": "原点から，水平となす角 $\\theta$（$0<\\theta<\\pi/2$）の向きに速さ $v_0$ で小球を投げる．重力加速度を $g$ とし，空気抵抗は無視する．水平右向きに $x$ 軸，鉛直上向きに $y$ 軸をとると，軌道は\n\\[ y=x\\tan\\theta-\\frac{gx^2}{2v_0^2}\\left(1+\\tan^2\\theta\\right) \\]\nである（$1/\\cos^2\\theta=1+\\tan^2\\theta$ を使った）．\n\\begin{enumerate}\n\\item $y=0$ の地面上で，最も遠くに届く水平距離を求めよ．\n\\item 点 $(x,y)$（$x>0$）に小球が届くような $\\theta$ が存在するためには，$y$ がある値 $Y(x)$ 以下でなければならない．上の式を $u=\\tan\\theta$ の2次方程式とみて，$Y(x)$ を求めよ．\n\\item 水平距離 $L$ の位置にある鉛直な壁に，当てられる最も高い点 $(L,\\,Y(L))$ に当てるときの $\\tan\\theta$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\dfrac{v_0^2}{g}$\n(2) $Y(x)=\\dfrac{v_0^2}{2g}-\\dfrac{gx^2}{2v_0^2}$\n(3) $\\tan\\theta=\\dfrac{v_0^2}{gL}$",
+  "solution": "(1) $y=0$ とおくと $x=\\dfrac{2v_0^2\\tan\\theta}{g(1+\\tan^2\\theta)}=\\dfrac{v_0^2\\sin2\\theta}{g}$．$\\theta=45^\\circ$ で最大 $\\boldsymbol{v_0^2/g}$．\n\n(2) $u=\\tan\\theta$ について整理すると\n\\[ \\frac{gx^2}{2v_0^2}u^2-xu+\\left(y+\\frac{gx^2}{2v_0^2}\\right)=0 . \\]\n実数解をもつ条件（判別式 $\\ge0$）は $x^2-4\\cdot\\dfrac{gx^2}{2v_0^2}\\left(y+\\dfrac{gx^2}{2v_0^2}\\right)\\ge0$，すなわち\n\\[ y\\le\\boldsymbol{Y(x)=\\frac{v_0^2}{2g}-\\frac{gx^2}{2v_0^2}} . \\]\nこの放物線は，いろいろな $\\theta$ の軌道すべてに接する曲線（包絡線）で，「安全放物線」とよばれる．$x=0$ で真上に投げたときの最高点 $v_0^2/2g$，$y=0$ で (1) の最大距離を与える．\n\n(3) $y=Y(L)$ では判別式が $0$ で，2次方程式は重解 $u=\\dfrac{x}{2\\cdot\\frac{gx^2}{2v_0^2}}=\\dfrac{v_0^2}{gx}$ をもつ．$x=L$ として $\\boldsymbol{\\tan\\theta=\\dfrac{v_0^2}{gL}}$．$L\\to0$ で真上，$L=v_0^2/g$（最大距離）で $\\tan\\theta=1$（$45^\\circ$）となる．\n\n次は，空気抵抗がある場合の運動を微分方程式として解く方法を学ぶとよい．",
   "idea": "届く・届かないの境目は，$\\tan\\theta$ についての2次方程式の判別式が $0$ になるところで，それが全軌道の包絡線になる．",
   "tags": "放物運動,包絡線,判別式,最大到達距離",
-  "input": "(1) v_0^2/g\n(2) v_0^2/(2g) - g x^2/(2v_0^2)\n(3) 高さ [m]：≈9.38"
+  "input": "(1) v_0^2/g\n(2) v_0^2/(2g) - g x^2/(2v_0^2)\n(3) tanθ：v_0^2/(g L)",
+  "id": "ME-01-008"
  },
  {
   "tid": "T03-17",
@@ -230,12 +246,13 @@
   "level": 1,
   "theme": "動摩擦のあるばね振動（クーロン摩擦による減衰）",
   "minutes": 15,
-  "q": "あらい水平面上で，ばね定数 $k$ のばねにつながれた質量 $m$ の物体が運動する．ばねが自然長のときの位置を $x=0$ とし，物体を $x=A$（$A>0$）で静かに放す．動摩擦係数と静止摩擦係数はともに $\\mu$，重力加速度を $g$ とし，$A>3\\mu mg/k$ とする．\n\\begin{enumerate}\n\\item 物体が左向きに動いている間，運動はある点 $x=x_c$ を中心とする単振動になる．$x_c$ を求めよ．\n\\item 放してから最初に速度が $0$ になる位置を求めよ．\n\\item $m=0.50\\,\\mathrm{kg}$，$k=50\\,\\mathrm{N/m}$，$\\mu=0.10$，$g=9.8\\,\\mathrm{m/s^2}$，$A=0.20\\,\\mathrm{m}$ のとき，物体が完全に止まるまでに折り返す（速度が $0$ になる）のは何回目か．止まる瞬間も1回と数える．\n\\item (3) の条件で，物体が最終的に止まる位置 $x$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $x_c=\\dfrac{\\mu mg}{k}$\n(2) $x=-\\left(A-\\dfrac{2\\mu mg}{k}\\right)$\n(3) $10$ 回目\n(4) $x\\approx 4.0\\times10^{-3}\\,\\mathrm{m}$",
-  "solution": "$d=\\mu mg/k$ とおく．\n\n(1) 左向きに動くとき摩擦力は右向き $+\\mu mg$ で，$m\\ddot x=-kx+\\mu mg=-k(x-d)$．中心は $\\boldsymbol{x_c=\\mu mg/k}$．\n\n(2) 中心 $d$ のまわりの振幅 $A-d$ の単振動の半周期で，反対側 $x=d-(A-d)=\\boldsymbol{-(A-2d)}$ に達して止まる．右向きに動くときは中心が $-d$ になり，同様に考えると，折り返すたびに振幅（$|x|$）が $2d$ ずつ減る．$n$ 回目の折り返し点は $x_n=(-1)^n(A-2nd)$ である．半周期はどれも $\\pi\\sqrt{m/k}$ で変わらない（指数的でなく1次関数的に減衰する）．\n\n(3) 折り返し点で $k|x_n|\\le\\mu mg$，すなわち $|x_n|\\le d$ なら静止摩擦で止まったままになる．$d=0.10\\times0.50\\times9.8/50=9.8\\times10^{-3}\\,\\mathrm{m}$．$A-2nd\\le d$ より $n\\ge(A/d-1)/2=9.70$，よって $\\boldsymbol{10}$ 回目．\n\n(4) $x_{10}=+(0.20-20\\times0.0098)=\\boldsymbol{4.0\\times10^{-3}\\,\\mathrm{m}}$．ばねが少し伸びたまま，静止摩擦でつり合って止まる．",
+  "q": "あらい水平面上で，ばね定数 $k$ のばねにつながれた質量 $m$ の物体が運動する．ばねが自然長のときの位置を $x=0$ とし，物体を $x=A$（$A>0$）で静かに放す．動摩擦係数と静止摩擦係数はともに $\\mu$，重力加速度を $g$ とし，$A>3\\mu mg/k$ とする．\n\\begin{enumerate}\n\\item 物体が左向きに動いている間，運動はある点 $x=x_c$ を中心とする単振動になる．$x_c$ を求めよ．\n\\item 放してから最初に速度が $0$ になる位置を求めよ．\n\\item 途中で止まらないとして，$n$ 回目に速度が $0$ になる位置 $x_n$ を求めよ．\n\\item $A=\\left(2N+\\dfrac12\\right)\\dfrac{\\mu mg}{k}$（$N$ は $2$ 以上の整数）のとき，物体が最終的に止まる位置 $x$ と，放してから止まるまでの時間を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $x_c=\\dfrac{\\mu mg}{k}$\n(2) $x=-\\left(A-\\dfrac{2\\mu mg}{k}\\right)$\n(3) $x_n=(-1)^n\\left(A-\\dfrac{2n\\mu mg}{k}\\right)$\n(4) $x=(-1)^N\\dfrac{\\mu mg}{2k}$，時間 $N\\pi\\sqrt{\\dfrac{m}{k}}$",
+  "solution": "$d=\\mu mg/k$ とおく．\n\n(1) 左向きに動くとき摩擦力は右向き $+\\mu mg$ で，$m\\ddot x=-kx+\\mu mg=-k(x-d)$．中心は $\\boldsymbol{x_c=\\mu mg/k}$．\n\n(2) 中心 $d$ のまわりの振幅 $A-d$ の単振動の半周期で，反対側 $x=d-(A-d)=\\boldsymbol{-(A-2d)}$ に達して止まる．右向きに動くときは中心が $-d$ になり，同様に考えると，折り返すたびに振幅（$|x|$）が $2d$ ずつ減る．$n$ 回目の折り返し点は $x_n=(-1)^n(A-2nd)$ である．半周期はどれも $\\pi\\sqrt{m/k}$ で変わらない（指数的でなく1次関数的に減衰する）．\n\n(3) 上で見たように $\\boldsymbol{x_n=(-1)^n\\left(A-\\dfrac{2n\\mu mg}{k}\\right)}$．\n\n(4) 折り返し点で $k|x_n|\\le\\mu mg$，すなわち $|x_n|\\le d$ なら静止摩擦で止まったままになる．$A=(2N+\\frac12)d$ では $|x_n|=(2N-2n+\\frac12)d$ で，これが $d$ 以下になる最初の $n$ は $n=N$（$|x_N|=d/2$）．よって止まる位置は $\\boldsymbol{x=(-1)^N\\dfrac{\\mu mg}{2k}}$．ばねが少し伸び（または縮み）たまま，静止摩擦でつり合って止まる．半周期 $\\pi\\sqrt{m/k}$ を $N$ 回くり返すので，止まるまでの時間は $\\boldsymbol{N\\pi\\sqrt{m/k}}$．",
   "idea": "摩擦力の向きが半周期ごとに入れ替わるので，運動は中心が $\\pm\\mu mg/k$ にずれた単振動のつなぎ合わせになり，振幅は等差数列的に減る．",
   "tags": "クーロン摩擦,単振動,減衰,ばね",
-  "input": "(1) μ m g/k\n(2) -(A-2μ m g/k)\n(3) 10\n(4) x [m]：≈4.0e-3"
+  "input": "(1) μ m g/k\n(2) -(A-2μ m g/k)\n(3) x_n：(-1)^n (A - 2 n μ m g/k)\n(4) x：(-1)^N μ m g/(2 k) ; 時間：N pi sqrt(m/k)",
+  "id": "ME-01-009"
  },
  {
   "tid": "T03-18",
@@ -244,12 +261,13 @@
   "level": 1,
   "theme": "地球を貫くトンネルの中の単振動",
   "minutes": 12,
-  "q": "地球を半径 $R$，密度一様の球とし，地表での重力加速度を $g$ とする．中心から距離 $r$（$r<R$）の点では，半径 $r$ より内側の質量だけが引力をおよぼし，それは中心に全質量（$R^3$ に比例する量の $r^3/R^3$ 倍）が集まった場合と同じである．地球を貫く直線のトンネルを掘り，摩擦や空気抵抗なしに物体を落とす．地球の自転は無視する．\n\\begin{enumerate}\n\\item 中心から $r$ の点で質量 $m$ の物体が受ける引力の大きさを $m,g,r,R$ で表せ．\n\\item トンネルの中心からの距離が $d$（$0\\le d<R$）の弦に沿うトンネルで，物体の運動はトンネルに沿った単振動になる．その角振動数を求めよ．\n\\item $R=6.4\\times10^6\\,\\mathrm{m}$，$g=9.8\\,\\mathrm{m/s^2}$ として，地表から反対側の地表に着くまでの時間を分単位で求めよ．\n\\item (2) のトンネルで，地表から静かに落としたときの最大の速さを求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\dfrac{mgr}{R}$\n(2) $\\sqrt{\\dfrac{g}{R}}$\n(3) $\\approx 42.3\\,\\mathrm{min}$\n(4) $\\sqrt{\\dfrac{g\\left(R^2-d^2\\right)}{R}}$",
-  "solution": "(1) 内側の質量は $M r^3/R^3$ で，引力は $\\dfrac{GMm}{R^3}r$．地表で $GMm/R^2=mg$ なので $\\boldsymbol{F=mgr/R}$（中心からの距離に比例）．\n\n(2) トンネルに沿った座標を $s$（トンネルの中点から測る）とすると $r^2=d^2+s^2$ で，引力のトンネル方向成分は $-\\dfrac{mgr}{R}\\cdot\\dfrac{s}{r}=-\\dfrac{mg}{R}s$．よって $m\\ddot s=-\\dfrac{mg}{R}s$，角振動数 $\\boldsymbol{\\omega=\\sqrt{g/R}}$ で $d$ によらない．\n\n(3) 片道は半周期 $\\pi\\sqrt{R/g}=\\pi\\sqrt{6.4\\times10^6/9.8}\\approx2.54\\times10^3\\,\\mathrm{s}\\approx\\boldsymbol{42.3\\,\\mathrm{min}}$．どの弦でも同じ時間で，これは地表すれすれを回る人工衛星の周期の半分に等しい．\n\n(4) 振幅は弦の半分 $\\sqrt{R^2-d^2}$ なので，最大の速さ（中点）は $\\omega\\sqrt{R^2-d^2}=\\boldsymbol{\\sqrt{g(R^2-d^2)/R}}$．",
+  "q": "地球を半径 $R$，密度一様の球とし，地表での重力加速度を $g$ とする．中心から距離 $r$（$r<R$）の点では，半径 $r$ より内側の質量だけが引力をおよぼし，それは中心に全質量（$R^3$ に比例する量の $r^3/R^3$ 倍）が集まった場合と同じである．地球を貫く直線のトンネルを掘り，摩擦や空気抵抗なしに物体を落とす．地球の自転は無視する．\n\\begin{enumerate}\n\\item 中心から $r$ の点で質量 $m$ の物体が受ける引力の大きさを $m,g,r,R$ で表せ．\n\\item トンネルの中心からの距離が $d$（$0\\le d<R$）の弦に沿うトンネルで，物体の運動はトンネルに沿った単振動になる．その角振動数を求めよ．\n\\item 地表から静かに落とした物体が反対側の地表に着くまでの時間を $g,R$ で表せ．\n\\item (2) のトンネルで，地表から静かに落としたときの最大の速さを求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\dfrac{mgr}{R}$\n(2) $\\sqrt{\\dfrac{g}{R}}$\n(3) $\\pi\\sqrt{\\dfrac{R}{g}}$\n(4) $\\sqrt{\\dfrac{g\\left(R^2-d^2\\right)}{R}}$",
+  "solution": "(1) 内側の質量は $M r^3/R^3$ で，引力は $\\dfrac{GMm}{R^3}r$．地表で $GMm/R^2=mg$ なので $\\boldsymbol{F=mgr/R}$（中心からの距離に比例）．\n\n(2) トンネルに沿った座標を $s$（トンネルの中点から測る）とすると $r^2=d^2+s^2$ で，引力のトンネル方向成分は $-\\dfrac{mgr}{R}\\cdot\\dfrac{s}{r}=-\\dfrac{mg}{R}s$．よって $m\\ddot s=-\\dfrac{mg}{R}s$，角振動数 $\\boldsymbol{\\omega=\\sqrt{g/R}}$ で $d$ によらない．\n\n(3) 片道は半周期 $\\boldsymbol{\\pi\\sqrt{R/g}}$（地球の値では約 42 分）．どの弦でも同じ時間で，これは地表すれすれを回る人工衛星の周期の半分に等しい．\n\n(4) 振幅は弦の半分 $\\sqrt{R^2-d^2}$ なので，最大の速さ（中点）は $\\omega\\sqrt{R^2-d^2}=\\boldsymbol{\\sqrt{g(R^2-d^2)/R}}$．",
   "idea": "一様な球の内部では引力が距離に比例するので，どの弦に沿っても同じ角振動数 $\\sqrt{g/R}$ の単振動になる．",
   "tags": "単振動,万有引力,一様球,周期",
-  "input": "(1) m g r/R\n(2) sqrt(g/R)\n(3) 時間 [min]：≈42.3\n(4) sqrt(g(R^2-d^2)/R)"
+  "input": "(1) m g r/R\n(2) sqrt(g/R)\n(3) 時間：pi sqrt(R/g)\n(4) sqrt(g(R^2-d^2)/R)",
+  "id": "ME-01-010"
  },
  {
   "tid": "T03-19",
@@ -258,12 +276,13 @@
   "level": 2,
   "theme": "べき型ポテンシャルの振動周期と振幅依存性",
   "minutes": 20,
-  "q": "質量 $m$ の質点が1次元のポテンシャル $V(x)$ の中で，$x=A>0$ から静かに放されて振動する．エネルギー保存 $\\frac12m\\dot x^2+V(x)=V(A)$ を用いる．\n\\begin{enumerate}\n\\item $V(x)=F|x|$（$F>0$）のとき，周期 $T$ を $m,A,F$ で表せ．\n\\item $V(x)=c|x|^n$（$c>0$，$n>0$）のとき，周期は $T\\propto A^p$ の形になる．$p$ を $n$ で表せ．\n\\item $V(x)=cx^4$ のとき，$T=K\\sqrt{m/c}\\,/A$ と書ける．数係数 $K$ を数値で求めよ．必要なら $\\displaystyle\\int_0^1\\frac{du}{\\sqrt{1-u^4}}\\approx1.3110$ を用いよ．\n\\end{enumerate}",
-  "answer": "(1) $T=4\\sqrt{\\dfrac{2mA}{F}}$\n(2) $p=1-\\dfrac{n}{2}$\n(3) $K\\approx3.708$",
-  "solution": "(1) $x>0$ では一定の力 $-F$ がはたらく等加速度運動である．$A$ から $0$ までの時間 $t_1$ は $A=\\frac12\\frac{F}{m}t_1^2$ より $t_1=\\sqrt{2mA/F}$．対称性より周期はその $4$ 倍で $\\boldsymbol{T=4\\sqrt{2mA/F}}$．\n\n(2) 一般に\n\\[ T=4\\int_0^A\\frac{dx}{\\sqrt{\\frac{2}{m}\\left(V(A)-V(x)\\right)}} . \\]\n$x=Au$ とおくと $V(A)-V(x)=cA^n(1-u^n)$ で\n\\[ T=4\\sqrt{\\frac{m}{2c}}\\,A^{1-n/2}\\int_0^1\\frac{du}{\\sqrt{1-u^n}} . \\]\nよって $\\boldsymbol{p=1-n/2}$．$n=2$ で $p=0$（調和振動子の等時性），$n=1$ で $p=1/2$（(1) と一致）．$n>2$ では振幅が大きいほど周期が短い．（次元解析だけからも，$m,c,A$ で時間をつくると $T\\propto\\sqrt{m/c}\\,A^{1-n/2}$ が出る．）\n\n(3) $n=4$ で $T=4\\sqrt{\\dfrac{m}{2c}}\\dfrac{1}{A}\\times1.3110$，よって $K=\\dfrac{4\\times1.3110}{\\sqrt2}\\approx\\boldsymbol{3.708}$．（数値積分で運動方程式を解いても同じ周期が得られる．）",
+  "q": "質量 $m$ の質点が1次元のポテンシャル $V(x)$ の中で，$x=A>0$ から静かに放されて振動する．エネルギー保存 $\\frac12m\\dot x^2+V(x)=V(A)$ を用いる．\n\\begin{enumerate}\n\\item $V(x)=F|x|$（$F>0$）のとき，周期 $T$ を $m,A,F$ で表せ．\n\\item $V(x)=c|x|^n$（$c>0$，$n>0$）のとき，周期は $T\\propto A^p$ の形になる．$p$ を $n$ で表せ．\n\\item $V(x)=cx^4$ のとき，$T=K\\sqrt{m/c}\\,/A$ と書ける．数係数 $K$ を，定積分 $I=\\displaystyle\\int_0^1\\frac{du}{\\sqrt{1-u^4}}$ を用いて表せ．\n\\end{enumerate}",
+  "answer": "(1) $T=4\\sqrt{\\dfrac{2mA}{F}}$\n(2) $p=1-\\dfrac{n}{2}$\n(3) $K=2\\sqrt2\\,I$",
+  "solution": "(1) $x>0$ では一定の力 $-F$ がはたらく等加速度運動である．$A$ から $0$ までの時間 $t_1$ は $A=\\frac12\\frac{F}{m}t_1^2$ より $t_1=\\sqrt{2mA/F}$．対称性より周期はその $4$ 倍で $\\boldsymbol{T=4\\sqrt{2mA/F}}$．\n\n(2) 一般に\n\\[ T=4\\int_0^A\\frac{dx}{\\sqrt{\\frac{2}{m}\\left(V(A)-V(x)\\right)}} . \\]\n$x=Au$ とおくと $V(A)-V(x)=cA^n(1-u^n)$ で\n\\[ T=4\\sqrt{\\frac{m}{2c}}\\,A^{1-n/2}\\int_0^1\\frac{du}{\\sqrt{1-u^n}} . \\]\nよって $\\boldsymbol{p=1-n/2}$．$n=2$ で $p=0$（調和振動子の等時性），$n=1$ で $p=1/2$（(1) と一致）．$n>2$ では振幅が大きいほど周期が短い．（次元解析だけからも，$m,c,A$ で時間をつくると $T\\propto\\sqrt{m/c}\\,A^{1-n/2}$ が出る．）\n\n(3) $n=4$ で $T=4\\sqrt{\\dfrac{m}{2c}}\\dfrac{1}{A}\\,I$，よって $K=\\dfrac{4I}{\\sqrt2}=\\boldsymbol{2\\sqrt2\\,I}$．（$I$ は完全楕円積分で表され，約 1.31．）",
   "idea": "エネルギー保存から周期を積分で書き，$x=Au$ と尺度変換すると振幅依存性が指数 $1-n/2$ として分離する．",
   "tags": "エネルギー保存,周期,非調和振動,次元解析",
-  "input": "(1) 4sqrt(2m A/F)\n(2) 1-n/2\n(3) K：≈3.708"
+  "input": "(1) 4sqrt(2m A/F)\n(2) 1-n/2\n(3) K：2 sqrt(2) I",
+  "id": "ME-01-011"
  },
  {
   "tid": "T03-20",
@@ -272,12 +291,13 @@
   "level": 3,
   "theme": "単振り子の周期の振幅依存性",
   "minutes": 25,
-  "q": "長さ $l$ の単振り子を振れ角 $\\theta_0$ から静かに放す．重力加速度を $g$，微小振動の周期を $T_0=2\\pi\\sqrt{l/g}$ とする．エネルギー保存と置換 $\\sin(\\theta/2)=k\\sin\\varphi$（$k=\\sin(\\theta_0/2)$）により，周期は\n\\[ T=4\\sqrt{\\frac{l}{g}}\\int_0^{\\pi/2}\\frac{d\\varphi}{\\sqrt{1-k^2\\sin^2\\varphi}} \\]\nと書ける．必要なら $\\displaystyle\\int_0^{\\pi/2}\\sin^2\\varphi\\,d\\varphi=\\frac\\pi4$，$\\displaystyle\\int_0^{\\pi/2}\\sin^4\\varphi\\,d\\varphi=\\frac{3\\pi}{16}$ を用いよ．\n\\begin{enumerate}\n\\item $T/T_0=1+a\\theta_0^2+b\\theta_0^4+\\cdots$ と展開したとき，$a$ を求めよ．\n\\item $b$ を求めよ．\n\\item $\\theta_0=90^\\circ$ のとき $T/T_0$ を数値で求めよ．$\\displaystyle\\int_0^{\\pi/2}\\frac{d\\varphi}{\\sqrt{1-\\frac12\\sin^2\\varphi}}\\approx1.8541$ とする．\n\\item $\\theta_0^2$ の項までの近似で，周期が $T_0$ より $1\\%$ 長くなる振れ角 $\\theta_0$（ラジアン）を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $a=\\dfrac{1}{16}$\n(2) $b=\\dfrac{11}{3072}$\n(3) $\\approx1.180$\n(4) $\\theta_0\\approx0.40\\,\\mathrm{rad}$",
-  "solution": "被積分関数を展開すると $(1-k^2\\sin^2\\varphi)^{-1/2}=1+\\frac12k^2\\sin^2\\varphi+\\frac38k^4\\sin^4\\varphi+\\cdots$．積分して\n\\[ \\frac{T}{T_0}=\\frac{2}{\\pi}\\left(\\frac\\pi2+\\frac{\\pi}{8}k^2+\\frac{9\\pi}{128}k^4+\\cdots\\right)=1+\\frac{k^2}{4}+\\frac{9k^4}{64}+\\cdots . \\]\n\n(1) $k^2=\\sin^2(\\theta_0/2)\\approx\\dfrac{\\theta_0^2}{4}$ なので $\\boldsymbol{a=1/16}$．\n\n(2) $k^2=\\sin^2\\frac{\\theta_0}{2}=\\frac{\\theta_0^2}{4}-\\frac{\\theta_0^4}{48}+\\cdots$，$k^4\\approx\\frac{\\theta_0^4}{16}$．$\\theta_0^4$ の係数は\n\\[ -\\frac{1}{4\\cdot48}+\\frac{9}{64\\cdot16}=-\\frac{16}{3072}+\\frac{27}{3072}=\\boldsymbol{\\frac{11}{3072}} . \\]\n\n(3) $k^2=1/2$ なので $T/T_0=\\dfrac{2}{\\pi}\\times1.8541\\approx\\boldsymbol{1.180}$．$90^\\circ$ でも周期は $18\\%$ しか長くならない．（2次までの近似では $1+\\pi^2/64\\approx1.154$，4次まで入れると $1.176$ と真の値に近づく．）\n\n(4) $\\theta_0^2/16=0.01$ より $\\boldsymbol{\\theta_0\\approx0.40\\,\\mathrm{rad}}$（約 $23^\\circ$）．厳密な式で解くと $0.398\\,\\mathrm{rad}$ で，この近似は十分よい．",
+  "q": "長さ $l$ の単振り子を振れ角 $\\theta_0$ から静かに放す．重力加速度を $g$，微小振動の周期を $T_0=2\\pi\\sqrt{l/g}$ とする．エネルギー保存と置換 $\\sin(\\theta/2)=k\\sin\\varphi$（$k=\\sin(\\theta_0/2)$）により，周期は\n\\[ T=4\\sqrt{\\frac{l}{g}}\\int_0^{\\pi/2}\\frac{d\\varphi}{\\sqrt{1-k^2\\sin^2\\varphi}} \\]\nと書ける．必要なら $\\displaystyle\\int_0^{\\pi/2}\\sin^2\\varphi\\,d\\varphi=\\frac\\pi4$，$\\displaystyle\\int_0^{\\pi/2}\\sin^4\\varphi\\,d\\varphi=\\frac{3\\pi}{16}$ を用いよ．\n\\begin{enumerate}\n\\item $T/T_0=1+a\\theta_0^2+b\\theta_0^4+\\cdots$ と展開したとき，$a$ を求めよ．\n\\item $b$ を求めよ．\n\\item $\\theta_0=90^\\circ$ のとき $T/T_0$ を数値で求めよ．$\\displaystyle\\int_0^{\\pi/2}\\frac{d\\varphi}{\\sqrt{1-\\frac12\\sin^2\\varphi}}\\approx1.8541$ とする．\n\\item $\\theta_0^2$ の項までの近似で，周期が $T_0$ より割合 $\\varepsilon$ だけ長くなる（$T=(1+\\varepsilon)T_0$，$0<\\varepsilon\\ll1$）振れ角 $\\theta_0$（ラジアン）を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $a=\\dfrac{1}{16}$\n(2) $b=\\dfrac{11}{3072}$\n(3) $\\approx1.180$\n(4) $\\theta_0=4\\sqrt{\\varepsilon}$",
+  "solution": "被積分関数を展開すると $(1-k^2\\sin^2\\varphi)^{-1/2}=1+\\frac12k^2\\sin^2\\varphi+\\frac38k^4\\sin^4\\varphi+\\cdots$．積分して\n\\[ \\frac{T}{T_0}=\\frac{2}{\\pi}\\left(\\frac\\pi2+\\frac{\\pi}{8}k^2+\\frac{9\\pi}{128}k^4+\\cdots\\right)=1+\\frac{k^2}{4}+\\frac{9k^4}{64}+\\cdots . \\]\n\n(1) $k^2=\\sin^2(\\theta_0/2)\\approx\\dfrac{\\theta_0^2}{4}$ なので $\\boldsymbol{a=1/16}$．\n\n(2) $k^2=\\sin^2\\frac{\\theta_0}{2}=\\frac{\\theta_0^2}{4}-\\frac{\\theta_0^4}{48}+\\cdots$，$k^4\\approx\\frac{\\theta_0^4}{16}$．$\\theta_0^4$ の係数は\n\\[ -\\frac{1}{4\\cdot48}+\\frac{9}{64\\cdot16}=-\\frac{16}{3072}+\\frac{27}{3072}=\\boldsymbol{\\frac{11}{3072}} . \\]\n\n(3) $k^2=1/2$ なので $T/T_0=\\dfrac{2}{\\pi}\\times1.8541\\approx\\boldsymbol{1.180}$．$90^\\circ$ でも周期は $18\\%$ しか長くならない．（2次までの近似では $1+\\pi^2/64\\approx1.154$，4次まで入れると $1.176$ と真の値に近づく．）\n\n(4) $\\theta_0^2/16=\\varepsilon$ より $\\boldsymbol{\\theta_0=4\\sqrt\\varepsilon}$．たとえば $\\varepsilon=0.01$（1\\%）なら $\\theta_0=0.40\\,\\mathrm{rad}$（約 $23^\\circ$）で，厳密な式で解いた $0.398\\,\\mathrm{rad}$ とよく合う．次の項を入れた補正の相対的な大きさは $(b/a)\\theta_0^2=\\frac{11}{192}\\theta_0^2\\approx0.9\\varepsilon$ 程度である．",
   "idea": "周期を第1種完全楕円積分で表し，$k^2$ で展開してから $k=\\sin(\\theta_0/2)$ を $\\theta_0$ で展開し直す．",
   "tags": "単振り子,楕円積分,非線形振動,振幅依存性,院試",
-  "input": "(1) a：1/16\n(2) b：11/3072\n(3) T/T_0：≈1.180\n(4) θ_0 [rad]：≈0.40"
+  "input": "(1) a：1/16\n(2) b：11/3072\n(3) T/T_0：≈1.180\n(4) θ_0：4 sqrt(ε)",
+  "id": "ME-01-012"
  },
  {
   "tid": "T03-21",
@@ -291,7 +311,8 @@
   "solution": "(1) $dx/d\\varphi=a(1+\\cos\\varphi)$，$dy/d\\varphi=a\\sin\\varphi$ より\n\\[ \\frac{ds}{d\\varphi}=a\\sqrt{(1+\\cos\\varphi)^2+\\sin^2\\varphi}=a\\sqrt{2+2\\cos\\varphi}=2a\\cos\\frac\\varphi2 . \\]\n積分して $\\boldsymbol{s=4a\\sin(\\varphi/2)}$．\n\n(2) $y=a(1-\\cos\\varphi)=2a\\sin^2\\dfrac\\varphi2=\\boldsymbol{\\dfrac{s^2}{8a}}$．\n\n(3) 曲線に沿った運動方程式は $m\\ddot s=-mg\\dfrac{dy}{ds}=-\\dfrac{mg}{4a}s$．振幅によらず厳密に単振動で，$\\omega=\\sqrt{g/4a}$，$\\boldsymbol{T=4\\pi\\sqrt{a/g}}$．\n\n(4) どこから放しても $1/4$ 周期で最下点に着くので $\\boldsymbol{\\pi\\sqrt{a/g}}$（等時性）．ホイヘンスは，糸をサイクロイド形の2枚の板の間につるすと（伸開線の性質により）おもりがサイクロイドを描くことを示し，振幅によらない振り子時計を考案した．このサイクロイドは2点間の最速降下曲線でもある．",
   "idea": "弧長で測るとポテンシャルが $s^2$ に厳密に比例するので，大振幅でも周期が変わらない．",
   "tags": "サイクロイド,等時性,弧長,束縛運動,院試",
-  "input": "(1) 4a sin(φ/2)\n(2) s^2/(8a)\n(3) 4pi sqrt(a/g)\n(4) pi sqrt(a/g)"
+  "input": "(1) 4a sin(φ/2)\n(2) s^2/(8a)\n(3) 4pi sqrt(a/g)\n(4) pi sqrt(a/g)",
+  "id": "ME-01-013"
  },
  {
   "tid": "T03-22",
@@ -305,7 +326,8 @@
   "solution": "(1) $\\ddot s=0$ より $\\dfrac{h^2}{s_0^3\\sin^2\\alpha}=g\\cos\\alpha$，$\\boldsymbol{s_0=\\left(\\dfrac{h^2}{g\\cos\\alpha\\sin^2\\alpha}\\right)^{1/3}}$．\n\n(2) $s=s_0+\\xi$ として1次まで展開すると $\\ddot\\xi=-\\dfrac{3h^2}{s_0^4\\sin^2\\alpha}\\xi$．(1) を使うと\n\\[ \\omega_s^2=\\frac{3h^2}{s_0^4\\sin^2\\alpha}=\\frac{3g\\cos\\alpha}{s_0},\\qquad\\boldsymbol{\\omega_s=\\sqrt{\\frac{3g\\cos\\alpha}{s_0}}} . \\]\n有効ポテンシャル $U(s)=\\dfrac{h^2}{2s^2\\sin^2\\alpha}+gs\\cos\\alpha$ の極小なので，円軌道は常に安定である．\n\n(3) 円運動の角速度は $\\Omega=\\dfrac{h}{s_0^2\\sin^2\\alpha}$，$\\Omega^2=\\dfrac{g\\cos\\alpha}{s_0\\sin^2\\alpha}$．近点から遠点までは $s$ の振動の半周期 $\\pi/\\omega_s$ なので\n\\[ \\Delta\\phi=\\Omega\\frac{\\pi}{\\omega_s}=\\frac{\\pi}{\\sqrt3\\sin\\alpha} . \\]\n$\\boldsymbol{\\Delta\\phi=\\pi/(\\sqrt3\\sin\\alpha)}$ は一般に $\\pi$ の有理数倍でなく，軌道は閉じずに近点が回転する．\n\n(4) 近点が1周に1回なら $2\\Delta\\phi=2\\pi$，$\\sqrt3\\sin\\alpha=1$，$\\boldsymbol{\\sin\\alpha=1/\\sqrt3}$（$\\alpha\\approx35.3^\\circ$）．このとき小さくずれた軌道はケプラーの楕円軌道と同様に閉じる．（ケプラー問題では $\\omega_s=\\Omega$ が任意の半径で成り立つが，円錐ではこの特別な角でしか成り立たない．$\\alpha\\to\\pi/2$ では平面上の $h^2/s^2$ 型の運動に近づき，$\\Delta\\phi\\to\\pi/\\sqrt3$．）",
   "idea": "保存する角運動量で方位角を消去すると1次元の有効ポテンシャル問題になり，動径振動数と公転角速度の比が近点の移動を決める．",
   "tags": "有効ポテンシャル,円軌道の安定性,近点移動,束縛運動,院試",
-  "input": "(1) (h^2/(g cos(α) sin(α)^2))^(1/3)\n(2) sqrt(3g cos(α)/s_0)\n(3) pi/(sqrt(3) sin(α))\n(4) sinα：1/sqrt(3)"
+  "input": "(1) (h^2/(g cos(α) sin(α)^2))^(1/3)\n(2) sqrt(3g cos(α)/s_0)\n(3) pi/(sqrt(3) sin(α))\n(4) sinα：1/sqrt(3)",
+  "id": "ME-01-014"
  },
  {
   "tid": "T03-23",
@@ -319,7 +341,8 @@
   "solution": "(1) $\\theta=0$ で $k(l-a)=mg$，$\\boldsymbol{l=a+mg/k}$．\n\n(2) 2次の項は $L_2=\\frac m2\\dot\\xi^2-\\frac k2\\xi^2+\\frac m2l^2\\dot\\theta^2-\\frac12mgl\\theta^2$（定数を除く．$\\xi$ の1次の項は (1) で消える）．よって $\\boldsymbol{\\omega_r=\\sqrt{k/m}}$，$\\boldsymbol{\\omega_\\theta=\\sqrt{g/l}}$．\n\n(3) $\\dfrac km=\\dfrac{4g}{l}$ より $l=\\dfrac{4mg}{k}$，$a=l-\\dfrac{mg}{k}=\\boldsymbol{\\dfrac{3mg}{k}}$．\n\n(4) $\\frac m2(l+\\xi)^2\\dot\\theta^2$ から $ml\\,\\xi\\dot\\theta^2$，$mg(l+\\xi)\\cos\\theta\\approx mg(l+\\xi)(1-\\theta^2/2)$ から $-\\frac12mg\\,\\xi\\theta^2$．$\\boldsymbol{P=ml}$，$\\boldsymbol{Q=-mg/2}$．\n\nこれらの項は，$\\theta\\propto\\cos\\omega_\\theta t$ の振り子振動が $\\xi$ の方程式に $\\theta^2,\\dot\\theta^2$ を通じて角振動数 $2\\omega_\\theta$ の力を加えることを意味する．$\\omega_r=2\\omega_\\theta$ ではこれが共鳴的にはたらき，伸縮振動と振り子振動の間でエネルギーが周期的にやりとりされる（はじめ上下だけに振らせても，やがて左右の振り子運動が育つ）．大気中の波の3波共鳴や，CO$_2$ 分子のフェルミ共鳴と同じしくみである．",
   "idea": "2つの基準振動の振動数が $2:1$ のとき，3次の非線形項が一方の2倍振動数の外力として共鳴的にはたらき，エネルギーが交換される．",
   "tags": "ばね振り子,内部共鳴,非線形振動,ラグランジアン,院試",
-  "input": "(1) a + m g/k\n(2) ω_r：sqrt(k/m) ; ω_θ：sqrt(g/l)\n(3) 3m g/k\n(4) P：m l ; Q：-m g/2"
+  "input": "(1) a + m g/k\n(2) ω_r：sqrt(k/m) ; ω_θ：sqrt(g/l)\n(3) 3m g/k\n(4) P：m l ; Q：-m g/2",
+  "id": "ME-01-015"
  },
  {
   "tid": "T03-24",
@@ -333,7 +356,8 @@
   "solution": "(1) 床での速さ $v_0=\\sqrt{2gh}$ が $ev_0$ になり，上がる高さは $\\dfrac{(ev_0)^2}{2g}=\\boldsymbol{e^2h}$．同様に $n$ 回目の衝突後の高さは $e^{2n}h$．\n\n(2) 最初の $h$ に，各回の上り下り $2e^{2n}h$ を足して\n\\[ h+2h(e^2+e^4+\\cdots)=h+\\frac{2e^2h}{1-e^2}=\\boldsymbol{\\frac{1+e^2}{1-e^2}h} . \\]\n\n(3) $t_0=\\sqrt{2h/g}$ とすると，高さ $e^{2n}h$ の上り下りにかかる時間は $2e^nt_0$．合計は\n\\[ t_0+2t_0(e+e^2+\\cdots)=t_0\\left(1+\\frac{2e}{1-e}\\right)=\\boldsymbol{\\frac{1+e}{1-e}\\sqrt{\\frac{2h}{g}}} . \\]\n衝突は無限回起こるが，有限の時間で止まる．例えば $e=0.8$，$h=1.25\\,\\mathrm{m}$ なら約 $4.5\\,\\mathrm{s}$．\n\n次は，衝突で失われる力学的エネルギーを重心系で考える方法を学ぶとよい．",
   "idea": "反発係数で速さが等比的に減るので，高さも時間も等比級数になり，無限回の衝突でも合計は有限になる．",
   "tags": "反発係数,等比級数,自由落下,衝突",
-  "input": "(1) e^2 h\n(2) (1+e^2)h/(1-e^2)\n(3) ((1+e)/(1-e))sqrt(2h/g)"
+  "input": "(1) e^2 h\n(2) (1+e^2)h/(1-e^2)\n(3) ((1+e)/(1-e))sqrt(2h/g)",
+  "id": "ME-02-008"
  },
  {
   "tid": "T03-25",
@@ -347,7 +371,8 @@
   "solution": "(1) ボートの速度を $V$ とすると人の速度は $V+u$．運動量保存 $MV+m(V+u)=0$ より $\\boldsymbol{V=-\\dfrac{mu}{M+m}}$．\n\n(2) (1) を時間で積分すると，相対変位 $L$ に対しボートの変位は $-\\dfrac{mL}{M+m}$．大きさ $\\boldsymbol{\\dfrac{mL}{M+m}}$．歩き方（速さの変化）によらず，重心が動かないことからも直ちに分かる．\n\n(3) 人の速度は $V+u=u-\\dfrac{mu}{M+m}=\\boldsymbol{\\dfrac{Mu}{M+m}}$．\n\n(4) 運動量の大きさが等しいので，運動エネルギー $p^2/2(\\text{質量})$ は質量に反比例し，$\\boldsymbol{m/M}$ 倍．人が足で生み出したエネルギーは，軽いほうに多く配分される．",
   "idea": "外力のない系では全運動量が保存し重心が動かないので，相対運動の量からそれぞれの変位・速度が決まる．",
   "tags": "運動量保存,重心,相対速度,運動エネルギーの配分",
-  "input": "(1) -m u/(M+m)\n(2) m L/(M+m)\n(3) M u/(M+m)\n(4) m/M"
+  "input": "(1) -m u/(M+m)\n(2) m L/(M+m)\n(3) M u/(M+m)\n(4) m/M",
+  "id": "ME-02-009"
  },
  {
   "tid": "T03-26",
@@ -356,12 +381,13 @@
   "level": 1,
   "theme": "交差点での2次元の完全非弾性衝突",
   "minutes": 12,
-  "q": "質量 $1500\\,\\mathrm{kg}$ の自動車 A が東向きに $20\\,\\mathrm{m/s}$，質量 $1000\\,\\mathrm{kg}$ の自動車 B が北向きに $25\\,\\mathrm{m/s}$ で交差点に進入し，衝突して一体となった．路面の摩擦は衝突の間は無視できるとする．東向きを $x$，北向きを $y$ とする．\n\\begin{enumerate}\n\\item 衝突直後の速度 $(v_x,v_y)$ を求めよ．\n\\item 衝突直後の速さと，その向きが東向きからなす角（北向きを正，度）を求めよ．\n\\item 衝突で失われた運動エネルギーは，はじめの運動エネルギーの何割か．\n\\end{enumerate}",
-  "answer": "(1) $(12,\\ 10)\\,\\mathrm{m/s}$\n(2) 速さ $\\approx15.6\\,\\mathrm{m/s}$，角 $\\approx39.8^\\circ$\n(3) $\\approx0.502$",
-  "solution": "(1) 運動量保存を成分ごとに書くと\n\\[ 2500v_x=1500\\times20,\\qquad 2500v_y=1000\\times25, \\]\n$\\boldsymbol{(v_x,v_y)=(12,\\ 10)\\,\\mathrm{m/s}}$．\n\n(2) 速さ $\\sqrt{12^2+10^2}=\\sqrt{244}\\approx\\boldsymbol{15.6\\,\\mathrm{m/s}}$，角 $\\arctan(10/12)\\approx\\boldsymbol{39.8^\\circ}$．事故調査では，スリップ痕の向きと長さからこの逆算を行う．\n\n(3) はじめ $\\frac12\\cdot1500\\cdot400+\\frac12\\cdot1000\\cdot625=6.125\\times10^5\\,\\mathrm{J}$，あと $\\frac12\\cdot2500\\cdot244=3.05\\times10^5\\,\\mathrm{J}$．失われた割合 $\\approx\\boldsymbol{0.502}$．一般に完全非弾性衝突では重心運動のエネルギーだけが残り，相対運動のエネルギー $\\frac12\\mu|\\boldsymbol{v}_A-\\boldsymbol{v}_B|^2$（$\\mu$ は換算質量）がすべて失われる．実際 $\\frac12\\cdot600\\cdot(400+625)=3.075\\times10^5\\,\\mathrm{J}$ で一致する．",
+  "q": "質量 $M$ の自動車 A が東向きに速さ $u$，質量 $m$ の自動車 B が北向きに速さ $v$ で交差点に進入し，衝突して一体となった．路面の摩擦は衝突の間は無視できるとする．東向きを $x$，北向きを $y$ とする．\n\\begin{enumerate}\n\\item 衝突直後の速度 $(v_x,v_y)$ を求めよ．\n\\item 衝突直後の速さと，その向きが東向きからなす角（北向きを正）を求めよ．\n\\item 衝突で失われた運動エネルギーは，はじめの運動エネルギーの何割か．\n\\end{enumerate}",
+  "answer": "(1) $\\left(\\dfrac{Mu}{M+m},\\ \\dfrac{mv}{M+m}\\right)$\n(2) 速さ $\\dfrac{\\sqrt{M^2u^2+m^2v^2}}{M+m}$，角 $\\arctan\\dfrac{mv}{Mu}$\n(3) $\\dfrac{Mm(u^2+v^2)}{(M+m)(Mu^2+mv^2)}$",
+  "solution": "(1) 運動量保存を成分ごとに書くと\n\\[ (M+m)v_x=Mu,\\qquad (M+m)v_y=mv, \\]\n$\\boldsymbol{(v_x,v_y)=\\left(\\dfrac{Mu}{M+m},\\ \\dfrac{mv}{M+m}\\right)}$．\n\n(2) 速さ $\\boldsymbol{\\dfrac{\\sqrt{M^2u^2+m^2v^2}}{M+m}}$，角 $\\boldsymbol{\\arctan\\dfrac{mv}{Mu}}$（運動量の比で決まる）．事故調査では，スリップ痕の向きと長さからこの逆算を行う．\n\n(3) 完全非弾性衝突では重心運動のエネルギーだけが残り，相対運動のエネルギー $\\frac12\\mu|\\boldsymbol{v}_A-\\boldsymbol{v}_B|^2$（$\\mu=\\dfrac{Mm}{M+m}$ は換算質量）がすべて失われる．$|\\boldsymbol v_A-\\boldsymbol v_B|^2=u^2+v^2$，はじめの運動エネルギーは $\\frac12(Mu^2+mv^2)$ なので\n\\[ \\frac{\\Delta K}{K}=\\boldsymbol{\\frac{Mm(u^2+v^2)}{(M+m)(Mu^2+mv^2)}}. \\]\n（直接計算しても，あとの運動エネルギー $\\dfrac{M^2u^2+m^2v^2}{2(M+m)}$ を引いて同じ結果になる．）たとえば $M=1.5m$，$u=0.8v$ なら約 5 割が失われる．",
   "idea": "運動量はベクトルとして成分ごとに保存し，完全非弾性衝突では相対運動のエネルギーがすべて失われる．",
   "tags": "運動量保存,完全非弾性衝突,2次元衝突,換算質量",
-  "input": "(1) 速度 [m/s]：(12, 10)\n(2) 速さ [m/s]：≈15.6 ; 角度 [°]：≈39.8\n(3) ≈0.502"
+  "input": "(1) 速度：(M u/(M+m), m v/(M+m))\n(2) 速さ：sqrt(M^2 u^2+m^2 v^2)/(M+m) ; 角度：arctan(m v/(M u))\n(3) M m (u^2+v^2)/((M+m) (M u^2+m v^2))",
+  "id": "ME-02-010"
  },
  {
   "tid": "T03-27",
@@ -375,7 +401,8 @@
   "solution": "(1) ベルトと砂を合わせた系の水平方向の運動量は，単位時間に $\\lambda v$ ずつ増える．これを与えるのが外力なので $\\boldsymbol{F=\\lambda v}$．\n\n(2) $\\boldsymbol{P=Fv=\\lambda v^2}$．\n\n(3) 運動エネルギーは単位時間に $\\boldsymbol{\\frac12\\lambda v^2}$ 増える．残りの $\\boldsymbol{\\frac12\\lambda v^2}$ が熱になる．実際，質量 $\\delta m$ の砂は加速度 $\\mu g$ で時間 $v/(\\mu g)$ 滑り，その間のベルトに対する滑り距離は $\\dfrac{v^2}{2\\mu g}$，発熱は $\\mu g\\,\\delta m\\times\\dfrac{v^2}{2\\mu g}=\\frac12\\delta m\\,v^2$ で，$\\mu$ によらない．\n\n(4) 砂1粒が滑っている時間は $v/(\\mu g)$ なので，滑っている砂の質量は $\\lambda\\times\\dfrac{v}{\\mu g}=\\boldsymbol{\\dfrac{\\lambda v}{\\mu g}}$．摩擦力の合計 $\\mu g\\times\\dfrac{\\lambda v}{\\mu g}=\\lambda v$ が (1) の $F$ と一致する．",
   "idea": "質量が加わる系では運動量の流入が力を決め，与えた仕事の半分は摩擦の詳細によらず必ず熱になる．",
   "tags": "可変質量系,運動量保存,エネルギー散逸,摩擦",
-  "input": "(1) λ v\n(2) λ v^2\n(3) 運動エネルギーの増加：λ v^2/2 ; 熱：λ v^2/2\n(4) λ v/(μ g)"
+  "input": "(1) λ v\n(2) λ v^2\n(3) 運動エネルギーの増加：λ v^2/2 ; 熱：λ v^2/2\n(4) λ v/(μ g)",
+  "id": "ME-02-011"
  },
  {
   "tid": "T03-28",
@@ -389,7 +416,8 @@
   "solution": "(1) 落下中の部分は自由落下なので $v=\\boldsymbol{\\sqrt{2gx}}$．\n\n(2) 時間 $dt$ の間に質量 $\\lambda v\\,dt$ が速さ $v$ から $0$ になる．運動量の変化率から，皿が受ける力は $\\lambda v^2=\\boldsymbol{2\\lambda gx}$．\n\n(3) すでに積み重なった部分の重さ $\\lambda gx$ を加えて $\\boldsymbol{N=3\\lambda gx}$．落下の最後の瞬間には $N=3\\lambda gL$ で，鎖全体の重さの $3$ 倍になる．\n\n(4) 最終的にすべて静止するので，失われるのは重心の位置エネルギーの減少分 $\\lambda L\\cdot g\\cdot\\dfrac L2=\\boldsymbol{\\dfrac{\\lambda gL^2}{2}}$．各瞬間の散逸率は（衝突で止まる質量の運動エネルギー）$\\frac12\\lambda v^3$ で，これを $dt=dx/v$ で積分しても $\\int_0^L\\lambda gx\\,dx$ と同じ結果になる．",
   "idea": "皿に着く部分の運動量の変化率が「重さ」に上乗せされ，読みは積もった重さの3倍になる．",
   "tags": "可変質量系,運動量の変化率,鎖,エネルギー散逸,院試",
-  "input": "(1) sqrt(2g x)\n(2) 2λ g x\n(3) 3λ g x\n(4) λ g L^2/2"
+  "input": "(1) sqrt(2g x)\n(2) 2λ g x\n(3) 3λ g x\n(4) λ g L^2/2",
+  "id": "ME-02-012"
  },
  {
   "tid": "T03-29",
@@ -398,12 +426,13 @@
   "level": 3,
   "theme": "多段ロケットの利点と構造質量",
   "minutes": 25,
-  "q": "重力と空気抵抗のない空間で，ロケットは燃料を噴射速度 $u$（ロケットに対する速さ，一定）で後方に噴き出して加速する．\n\\begin{enumerate}\n\\item 質量が $M_0$ から $M_1$ に減る間の速度の増加 $\\Delta v$ を求めよ．\n\\item 全質量 $100$（単位は任意），うち燃料 $81$，構造 $9$，ペイロード $10$ の1段式ロケットについて，$\\Delta v/u$ を求めよ．\n\\item 同じ全質量で2段式にする．1段目は燃料 $54$・構造 $6$，2段目は燃料 $27$・構造 $3$，ペイロード $10$ とし，1段目の燃料を使い切ったら1段目の構造を切り離す．最終的な $\\Delta v/u$ を求めよ．\n\\item 段数を無限に増やした極限を考える．燃料を $dm_f$ 消費するごとに，構造の質量 $\\frac{1}{9}dm_f$ を（ロケットに対して速度 $0$ で）捨てていくとして，ペイロードだけになったときの $\\Delta v/u$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\Delta v=u\\ln\\dfrac{M_0}{M_1}$\n(2) $\\approx1.66$\n(3) $\\approx1.90$\n(4) $\\approx2.07$",
-  "solution": "(1) 時間 $dt$ に質量 $-dM$ をロケットに対し速さ $u$ で後方に出すと，運動量保存から $M\\,dv=-u\\,dM$．積分して $\\boldsymbol{\\Delta v=u\\ln(M_0/M_1)}$（ツィオルコフスキーの式）．\n\n(2) $M_0=100$，$M_1=19$ で $\\ln(100/19)\\approx\\boldsymbol{1.66}$．\n\n(3) 1段目：$100\\to46$，切り離し後 $40$．2段目：$40\\to13$．\n\\[ \\frac{\\Delta v}{u}=\\ln\\frac{100}{46}+\\ln\\frac{40}{13}\\approx0.777+1.124\\approx\\boldsymbol{1.90} . \\]\n同じ燃料・構造の量でも，空になった構造を途中で捨てることで速度が上がる．\n\n(4) 構造を相対速度 $0$ で捨てても運動量は変わらないので，推力は燃料の分だけ：$M\\,dv=-u\\,dm_f$．一方 $dM=-\\dfrac{10}{9}dm_f$．よって $dv=-\\dfrac{9}{10}u\\dfrac{dM}{M}$，$M:100\\to10$ で\n\\[ \\frac{\\Delta v}{u}=0.9\\ln10\\approx\\boldsymbol{2.07} . \\]\nこれが同じ構造比で到達できる上限で，有限の段数はこれに下から近づく．",
-  "idea": "空になったタンクを捨てると，同じ燃料でも加速すべき質量が減るので有利になる．連続的に捨てる極限では構造比が対数の前の係数として効く．",
+  "q": "重力と空気抵抗のない空間で，ロケットは燃料を噴射速度 $u$（ロケットに対する速さ，一定）で後方に噴き出して加速する．\n\\begin{enumerate}\n\\item 質量が $M_0$ から $M_1$ に減る間の速度の増加 $\\Delta v$ を求めよ．\n\\item ペイロード（荷）の質量 $m_p$，燃料の質量 $m_f$，構造（タンクなど）の質量 $\\sigma m_f$ の 1 段式ロケットについて，燃料を使い切ったときの $\\Delta v/u$ を求めよ．\n\\item 同じ量で 2 段式にする．燃料を $m_f=m_1+m_2$ と分け，1 段目は燃料 $m_1$・構造 $\\sigma m_1$，2 段目は燃料 $m_2$・構造 $\\sigma m_2$ とし，1 段目の燃料を使い切ったら 1 段目の構造を切り離す．最終的な $\\Delta v/u$ を求めよ．\n\\item 段数を無限に増やした極限を考える．燃料を $dm_f$ 消費するごとに，構造の質量 $\\sigma\\,dm_f$ を（ロケットに対して速度 $0$ で）捨てていくとして，ペイロードだけになったときの $\\Delta v/u$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\Delta v=u\\ln\\dfrac{M_0}{M_1}$\n(2) $\\dfrac{\\Delta v}{u}=\\ln\\dfrac{m_p+(1+\\sigma)m_f}{m_p+\\sigma m_f}$\n(3) $\\dfrac{\\Delta v}{u}=\\ln\\dfrac{m_p+(1+\\sigma)m_f}{m_p+(1+\\sigma)m_f-m_1}+\\ln\\dfrac{m_p+(1+\\sigma)m_2}{m_p+\\sigma m_2}$\n(4) $\\dfrac{\\Delta v}{u}=\\dfrac{1}{1+\\sigma}\\ln\\dfrac{m_p+(1+\\sigma)m_f}{m_p}$",
+  "solution": "(1) 時間 $dt$ に質量 $-dM$ をロケットに対し速さ $u$ で後方に出すと，運動量保存から $M\\,dv=-u\\,dM$．積分して $\\boldsymbol{\\Delta v=u\\ln(M_0/M_1)}$（ツィオルコフスキーの式）．\n\n(2) 全質量 $M_0=m_p+(1+\\sigma)m_f$，燃料を使い切ると $M_1=m_p+\\sigma m_f$ なので\n\\[ \\frac{\\Delta v}{u}=\\boldsymbol{\\ln\\frac{m_p+(1+\\sigma)m_f}{m_p+\\sigma m_f}} . \\]\n\n(3) 1 段目：$M_0\\to M_0-m_1$，切り離し後 $m_p+(1+\\sigma)m_2$．2 段目：$m_p+(1+\\sigma)m_2\\to m_p+\\sigma m_2$．\n\\[ \\frac{\\Delta v}{u}=\\boldsymbol{\\ln\\frac{m_p+(1+\\sigma)m_f}{m_p+(1+\\sigma)m_f-m_1}+\\ln\\frac{m_p+(1+\\sigma)m_2}{m_p+\\sigma m_2}} . \\]\n同じ燃料・構造の量でも，空になった構造を途中で捨てることで加速すべき質量が減り，速度が上がる．たとえば $m_p=10$，$m_f=81$，$\\sigma=\\frac19$，$m_1=54$，$m_2=27$ では (2) が $\\ln\\frac{100}{19}\\approx1.66$，(3) が $\\ln\\frac{100}{46}+\\ln\\frac{40}{13}\\approx1.90$ となる．\n\n(4) 構造を相対速度 $0$ で捨てても運動量は変わらないので，推力は燃料の分だけ：$M\\,dv=-u\\,dm_f$．一方 $dM=-(1+\\sigma)dm_f$．よって $dv=-\\dfrac{u}{1+\\sigma}\\dfrac{dM}{M}$，$M:m_p+(1+\\sigma)m_f\\to m_p$ で\n\\[ \\frac{\\Delta v}{u}=\\boldsymbol{\\frac{1}{1+\\sigma}\\ln\\frac{m_p+(1+\\sigma)m_f}{m_p}} . \\]\nこれが同じ構造比で到達できる上限で，有限の段数はこれに下から近づく（上の例では $0.9\\ln10\\approx2.07$）．",
+  "idea": "空になったタンクを捨てると，同じ燃料でも加速すべき質量が減るので有利になる．連続的に捨てる極限では構造比が対数の前の係数 $1/(1+\\sigma)$ として効く．",
   "tags": "ロケット方程式,可変質量系,多段ロケット,運動量保存,院試",
-  "input": "(1) u ln(M_0/M_1)\n(2) Δv/u：≈1.66\n(3) Δv/u：≈1.90\n(4) Δv/u：≈2.07"
+  "input": "(1) u ln(M_0/M_1)\n(2) Δv/u：ln((m_p+(1+σ)m_f)/(m_p+σ m_f))\n(3) Δv/u：ln((m_p+(1+σ)m_f)/(m_p+(1+σ)m_f-m_1))+ln((m_p+(1+σ)m_2)/(m_p+σ m_2))\n(4) Δv/u：ln((m_p+(1+σ)m_f)/m_p)/(1+σ)",
+  "id": "ME-02-013"
  },
  {
   "tid": "T03-30",
@@ -412,12 +441,13 @@
   "level": 4,
   "theme": "ばねでつながれた2物体への衝突と2回目の衝突の条件",
   "minutes": 40,
-  "q": "なめらかな水平直線上に，質量 $m$ の2つの物体 1，2 をばね定数 $k$ の軽いばねでつないだもの（物体1が左）が自然長で静止している．左から質量 $M$ の球が速さ $v_0$ で物体1に弾性衝突する．衝突は瞬間的で，その間ばねの力は無視できる．右向きを正とする．\n\\begin{enumerate}\n\\item 衝突直後の球の速度 $v_b$ と物体1の速度 $w$ を求めよ．\n\\item 衝突後，ばねの伸縮振動の角振動数 $\\omega$ を求めよ．\n\\item 衝突直後の全運動エネルギーのうち，ばねの伸縮振動（重心運動を除いた相対運動）のエネルギーの割合を，はじめの運動エネルギー $\\frac12Mv_0^2$ に対する比で求めよ．\n\\item 球と物体1の2回目の衝突が起こるのは $M/m$ がある値より大きいときである．その値を数値で求めよ．必要なら，方程式 $\\tan s=s$ の最小の正の解が $s_*\\approx4.4934$，$\\sin s_*\\approx-0.97612$ であることを用いよ．\n\\end{enumerate}",
-  "answer": "(1) $v_b=\\dfrac{M-m}{M+m}v_0$，$w=\\dfrac{2M}{M+m}v_0$\n(2) $\\omega=\\sqrt{\\dfrac{2k}{m}}$\n(3) $\\dfrac{2mM}{(M+m)^2}$\n(4) $\\approx4.60$",
-  "solution": "(1) 衝突の瞬間は球と物体1だけの1次元弾性衝突なので\n\\[ \\boldsymbol{v_b=\\frac{M-m}{M+m}v_0},\\qquad\\boldsymbol{w=\\frac{2M}{M+m}v_0} . \\]\n\n(2) 相対座標の換算質量は $m/2$ なので $\\boldsymbol{\\omega=\\sqrt{2k/m}}$．\n\n(3) 衝突直後，物体1，2の速度は $w,0$．重心速度 $w/2$，相対運動のエネルギーは $\\frac12\\cdot\\frac m2w^2=\\frac14mw^2$．はじめの運動エネルギーとの比は\n\\[ \\frac{mw^2/4}{Mv_0^2/2}=\\frac{m}{2M}\\cdot\\frac{4M^2}{(M+m)^2}=\\boldsymbol{\\frac{2mM}{(M+m)^2}} . \\]\n\n(4) 衝突後の物体1の位置は（衝突点を原点として）$x_1=\\dfrac w2t+\\dfrac{w}{2\\omega}\\sin\\omega t$，球は $x_b=v_bt$．間隔は\n\\[ x_1-x_b=\\left(\\frac w2-v_b\\right)t+\\frac{w}{2\\omega}\\sin\\omega t=\\frac{v_0}{(M+m)\\omega}\\left(m\\,s+M\\sin s\\right)\\qquad(s=\\omega t). \\]\n2回目の衝突は $m s+M\\sin s=0$ となる $s>0$ があるとき，すなわち直線 $-\\frac mMs$ が $\\sin s$ と交わるときに起こる．境目は直線が $\\sin s$ に接するときで，$\\cos s=-m/M$ かつ $\\sin s=-\\frac mMs$ より $\\tan s=s$．$s_*\\approx4.4934$ で $m/M=-\\sin s_*/s_*\\approx0.2172$．よって $\\boldsymbol{M/m>4.60}$ で2回目の衝突が起こる．このとき物体1が振動で一時的に引き戻され，後ろから来る重い球に追いつかれる．（数値的に運動を追っても $M/m=4.5$ では衝突せず，$4.7$ では衝突する．）",
+  "q": "なめらかな水平直線上に，質量 $m$ の2つの物体 1，2 をばね定数 $k$ の軽いばねでつないだもの（物体1が左）が自然長で静止している．左から質量 $M$ の球が速さ $v_0$ で物体1に弾性衝突する．衝突は瞬間的で，その間ばねの力は無視できる．右向きを正とする．\n\\begin{enumerate}\n\\item 衝突直後の球の速度 $v_b$ と物体1の速度 $w$ を求めよ．\n\\item 衝突後，ばねの伸縮振動の角振動数 $\\omega$ を求めよ．\n\\item 衝突直後の全運動エネルギーのうち，ばねの伸縮振動（重心運動を除いた相対運動）のエネルギーの割合を，はじめの運動エネルギー $\\frac12Mv_0^2$ に対する比で求めよ．\n\\item 球と物体1の2回目の衝突が起こるのは $M/m$ がある値より大きいときである．方程式 $\\tan s=s$ の最小の正の解を $s_0$（$\\pi<s_0<\\frac{3\\pi}{2}$）として，その値を $s_0$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $v_b=\\dfrac{M-m}{M+m}v_0$，$w=\\dfrac{2M}{M+m}v_0$\n(2) $\\omega=\\sqrt{\\dfrac{2k}{m}}$\n(3) $\\dfrac{2mM}{(M+m)^2}$\n(4) $-\\dfrac{s_0}{\\sin s_0}=\\sqrt{1+s_0^2}$",
+  "solution": "(1) 衝突の瞬間は球と物体1だけの1次元弾性衝突なので\n\\[ \\boldsymbol{v_b=\\frac{M-m}{M+m}v_0},\\qquad\\boldsymbol{w=\\frac{2M}{M+m}v_0} . \\]\n\n(2) 相対座標の換算質量は $m/2$ なので $\\boldsymbol{\\omega=\\sqrt{2k/m}}$．\n\n(3) 衝突直後，物体1，2の速度は $w,0$．重心速度 $w/2$，相対運動のエネルギーは $\\frac12\\cdot\\frac m2w^2=\\frac14mw^2$．はじめの運動エネルギーとの比は\n\\[ \\frac{mw^2/4}{Mv_0^2/2}=\\frac{m}{2M}\\cdot\\frac{4M^2}{(M+m)^2}=\\boldsymbol{\\frac{2mM}{(M+m)^2}} . \\]\n\n(4) 衝突後の物体1の位置は（衝突点を原点として）$x_1=\\dfrac w2t+\\dfrac{w}{2\\omega}\\sin\\omega t$，球は $x_b=v_bt$．間隔は\n\\[ x_1-x_b=\\left(\\frac w2-v_b\\right)t+\\frac{w}{2\\omega}\\sin\\omega t=\\frac{v_0}{(M+m)\\omega}\\left(m\\,s+M\\sin s\\right)\\qquad(s=\\omega t). \\]\n2回目の衝突は $m s+M\\sin s=0$ となる $s>0$ があるとき，すなわち直線 $-\\frac mMs$ が $\\sin s$ と交わるときに起こる．境目は直線が $\\sin s$ に接するときで，$\\cos s=-m/M$ かつ $\\sin s=-\\frac mMs$ より $\\tan s=s$，$s=s_0$．このとき $m/M=-\\sin s_0/s_0$ で，$\\cos s_0=-1/\\sqrt{1+s_0^2}$，$\\sin s_0=-s_0/\\sqrt{1+s_0^2}$ より\n\\[ \\frac Mm>\\boldsymbol{-\\frac{s_0}{\\sin s_0}=\\sqrt{1+s_0^2}} \\]\nで2回目の衝突が起こる（$s_0\\approx4.493$ より約 $4.60$）．このとき物体1が振動で一時的に引き戻され，後ろから来る重い球に追いつかれる．",
   "idea": "衝突後の運動を重心運動と内部振動に分けると，2回目の衝突の有無は「直線と正弦曲線が交わるか」という接線条件 $\\tan s=s$ に帰着する．",
   "tags": "弾性衝突,重心運動,内部自由度,換算質量,院試",
-  "input": "(1) v_b：(M-m)v_0/(M+m) ; w：2M v_0/(M+m)\n(2) sqrt(2k/m)\n(3) 2m M/(M+m)^2\n(4) M/m：≈4.60"
+  "input": "(1) v_b：(M-m)v_0/(M+m) ; w：2M v_0/(M+m)\n(2) sqrt(2k/m)\n(3) 2m M/(M+m)^2\n(4) M/m：sqrt(1+s_0^2)",
+  "id": "ME-02-014"
  },
  {
   "tid": "T03-31",
@@ -431,6 +461,7 @@
   "solution": "(1) 衝突直前，下の球は上向き $v$，小球は下向き $v$（上向きを正として $-v$）．1次元弾性衝突の公式から小球の衝突後の速度は\n\\[ v'=\\frac{(m-M)(-v)+2Mv}{M+m}=\\boldsymbol{\\frac{3M-m}{M+m}v} . \\]\n\n(2) $M\\gg m$ では $v'\\to3v$．高さは速さの2乗に比例するので $\\boldsymbol{9}$ 倍．重い球の重心系で見ると，小球は相対速さ $2v$ で近づき $2v$ で跳ね返るので，床に対しては $v+2v=3v$ になる．\n\n(3) 下の球の衝突後の速度は $\\dfrac{(M-m)v+2m(-v)}{M+m}=\\dfrac{M-3m}{M+m}v$．これが $0$ になるのは $\\boldsymbol{M/m=3}$．このとき $v'=\\dfrac{9m-m}{4m}v=2v$ で，高さは $\\boldsymbol{4}$ 倍．はじめの全運動エネルギー $\\frac12(M+m)v^2=2mv^2$ がすべて小球に移っている．\n\n(4) $k$ 番目（下から）の球が上向き $v_k$ で，すぐ上の十分軽い球（下向き $v$）と衝突すると，(2) と同じ考えで上の球は $v_{k+1}=2v_k+v$ になる．$v_1=v$ から $v_k+v=2^k v$，すなわち $v_n=(2^n-1)v$．高さは $\\boldsymbol{(2^n-1)^2}$ 倍（$n=3$ で $49$ 倍）．超新星爆発で外層が高速で吹き飛ぶしくみのモデルとしても知られる．",
   "idea": "重い物体の重心系で見ると軽い物体は相対速度を反転させるだけなので，地上系では速度が $2V+v$ と足し上がっていく．",
   "tags": "弾性衝突,重心系,エネルギー移動,運動量保存,院試",
-  "input": "(1) (3M-m)v/(M+m)\n(2) 9\n(3) M/m：3 ; 高さの倍率：4\n(4) (2^n-1)^2"
+  "input": "(1) (3M-m)v/(M+m)\n(2) 9\n(3) M/m：3 ; 高さの倍率：4\n(4) (2^n-1)^2",
+  "id": "ME-02-015"
  }
 ]

@@ -58,16 +58,16 @@
   "theme": "オイラーの座屈荷重",
   "topic": "オイラーの座屈荷重",
   "statement": {
-   "tex": "長さ $L$ の細い柱（ヤング率 $E$，断面二次モーメント $I$）の両端を回転自由に支え，両端から軸方向に圧縮力 $P$ を加える．柱がわずかに曲がって横に $y(x)$ だけずれたとき，\n\\[ EI\\frac{d^2y}{dx^2}=-Py,\\qquad y(0)=y(L)=0 \\]\nが成り立つ．\n\\begin{enumerate}\n\\item $y=A\\sin kx$（$A\\neq0$，$k>0$）がこの方程式を満たすための $k$ を $P,\\ E,\\ I$ で表せ．\n\\item 境界条件 $y(L)=0$ を満たす $A\\neq0$ の解があるための $P$ の最小値（座屈荷重）$P_c$ を求めよ．\n\\item 半径 $r=5.0\\,\\mathrm{mm}$ の円形断面（$I=\\pi r^4/4$），長さ $L=1.0\\,\\mathrm{m}$，$E=2.0\\times10^{11}\\,\\mathrm{Pa}$ の鋼の棒について $P_c$ を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $L$ の細い柱（ヤング率 $E$，断面二次モーメント $I$）の両端を回転自由に支え，両端から軸方向に圧縮力 $P$ を加える．柱がわずかに曲がって横に $y(x)$ だけずれたとき，\n\\[ EI\\frac{d^2y}{dx^2}=-Py,\\qquad y(0)=y(L)=0 \\]\nが成り立つ．\n\\begin{enumerate}\n\\item $y=A\\sin kx$（$A\\neq0$，$k>0$）がこの方程式を満たすための $k$ を $P,\\ E,\\ I$ で表せ．\n\\item 境界条件 $y(L)=0$ を満たす $A\\neq0$ の解があるための $P$ の最小値（座屈荷重）$P_c$ を求めよ．\n\\item 半径 $r$ の円形断面（$I=\\pi r^4/4$）の棒について $P_c$ を $E,\\ r,\\ L$ で表せ．また，半径を $2$ 倍にすると $P_c$ は何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $k=\\sqrt{\\dfrac{P}{EI}}$ (2) $P_c=\\dfrac{\\pi^2EI}{L^2}$ (3) $P_c\\approx9.7\\times10^{2}\\,\\mathrm{N}$"
+   "tex": "(1) $k=\\sqrt{\\dfrac{P}{EI}}$ (2) $P_c=\\dfrac{\\pi^2EI}{L^2}$ (3) $P_c=\\dfrac{\\pi^3Er^4}{4L^2}$，$16$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$y''=-Ak^2\\sin kx$ を代入すると $-EIk^2=-P$ なので $\\boldsymbol{k=\\sqrt{P/(EI)}}$．$y(0)=0$ は自動的に満たされる．\n\n$y(L)=A\\sin kL=0$ で $A\\neq0$ なら $kL=n\\pi$（$n=1,2,\\dots$）．つまり $P=n^2\\pi^2EI/L^2$ のときだけ曲がった形でつりあえる．最小は $n=1$ で\n\\[ \\boldsymbol{P_c=\\frac{\\pi^2EI}{L^2}}. \\]\n$P<P_c$ ではまっすぐな状態しかつりあいがなく，$P$ が $P_c$ に達すると柱は急に横へ曲がる（座屈）．\n\n$I=\\pi(5.0\\times10^{-3})^4/4=4.91\\times10^{-10}\\,\\mathrm{m^4}$．よって\n\\[ P_c=\\frac{\\pi^2\\times2.0\\times10^{11}\\times4.91\\times10^{-10}}{1.0^2}\\approx\\boldsymbol{9.7\\times10^{2}\\,\\mathrm{N}}. \\]\n約 $100\\,\\mathrm{kg}$ 重で座屈する．同じ棒を引っ張って破断させるには数万 N が必要で，細長い部材は「強さ」より先に「座屈」で壊れる．\n\n座屈は，固有値問題（境界条件を満たす解が特別なパラメータでだけ存在する）の典型例である．次は，端の条件を変えた座屈や，はりの振動を学ぶとよい．"
+    "tex": "$y''=-Ak^2\\sin kx$ を代入すると $-EIk^2=-P$ なので $\\boldsymbol{k=\\sqrt{P/(EI)}}$．$y(0)=0$ は自動的に満たされる．\n\n$y(L)=A\\sin kL=0$ で $A\\neq0$ なら $kL=n\\pi$（$n=1,2,\\dots$）．つまり $P=n^2\\pi^2EI/L^2$ のときだけ曲がった形でつりあえる．最小は $n=1$ で\n\\[ \\boldsymbol{P_c=\\frac{\\pi^2EI}{L^2}}. \\]\n$P<P_c$ ではまっすぐな状態しかつりあいがなく，$P$ が $P_c$ に達すると柱は急に横へ曲がる（座屈）．\n\n$I=\\pi r^4/4$ を代入して\n\\[ \\boldsymbol{P_c=\\frac{\\pi^3Er^4}{4L^2}}. \\]\n$P_c\\propto r^4$ なので，半径を $2$ 倍にすると $\\boldsymbol{16}$ 倍．一方，引張で破断する荷重は断面積 $\\propto r^2$ に比例するので，細長い部材ほど「強さ」より先に「座屈」で壊れる（半径 $5\\,\\mathrm{mm}$，長さ $1\\,\\mathrm m$ の鋼の棒は約 $100\\,\\mathrm{kg}$ 重で座屈するが，引張では数万 N に耐える）．\n\n座屈は，固有値問題（境界条件を満たす解が特別なパラメータでだけ存在する）の典型例である．次は，端の条件を変えた座屈や，はりの振動を学ぶとよい．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) k：sqrt(P/(E I))\n(2) P_c：pi^2 E I/L^2\n(3) P_c [N]：≈969"
+   "spec": "(1) k：sqrt(P/(E I))\n(2) P_c：pi^2 E I/L^2\n(3) P_c：pi^3 E r^4/(4 L^2) ; 倍率：16"
   },
   "methods": [],
   "tags": [
@@ -107,16 +107,16 @@
   "theme": "断面二次モーメント：板を寝かせるか立てるか",
   "topic": "断面二次モーメント：板を寝かせるか立てるか",
   "statement": {
-   "tex": "幅 $b$，厚さ $h$ の長方形断面をもつ板を片持ちばりとして使う．板の面に垂直な向きに曲げるとき，曲がりにくさは断面二次モーメント $I=\\dfrac{bh^3}{12}$（$b$ は曲げの軸に平行な辺の長さ，$h$ は曲がる向きの厚さ）で決まり，長さ $L$ の片持ちばりの先端に力 $P$ をかけたときの先端のたわみは\n\\[ \\delta=\\frac{PL^3}{3EI} \\]\nである（$E$ はヤング率）．幅 $6.0\\,\\mathrm{cm}$，厚さ $1.0\\,\\mathrm{cm}$ の木の板（$E=1.0\\times10^{10}\\,\\mathrm{Pa}$），長さ $L=1.0\\,\\mathrm{m}$，$P=10\\,\\mathrm{N}$ とする．\n\\begin{enumerate}\n\\item 板を寝かせて（厚さ $1.0\\,\\mathrm{cm}$ の向きに曲げる）使うときと，立てて（厚さ $6.0\\,\\mathrm{cm}$ の向きに曲げる）使うときの $I$ をそれぞれ $\\mathrm{m^4}$ 単位で求めよ．\n\\item 寝かせたときのたわみは，立てたときの何倍か．\n\\item 寝かせたときの先端のたわみ $\\delta$ を求めよ．\n\\end{enumerate}"
+   "tex": "幅 $b$，厚さ $h$（$b>h$）の長方形断面をもつ板を片持ちばりとして使う．板の面に垂直な向きに曲げるとき，曲がりにくさは断面二次モーメント $I=\\dfrac{b'h'^3}{12}$（$b'$ は曲げの軸に平行な辺の長さ，$h'$ は曲がる向きの厚さ）で決まり，長さ $L$ の片持ちばりの先端に力 $P$ をかけたときの先端のたわみは\n\\[ \\delta=\\frac{PL^3}{3EI} \\]\nである（$E$ はヤング率）．\n\\begin{enumerate}\n\\item 板を寝かせて（厚さ $h$ の向きに曲げる）使うときの $I_1$ と，立てて（幅 $b$ の向きに曲げる）使うときの $I_2$ をそれぞれ求めよ．\n\\item 寝かせたときのたわみは，立てたときの何倍か．\n\\item 寝かせたときの先端のたわみ $\\delta$ を $P,\\ L,\\ E,\\ b,\\ h$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 寝かせる：$I=5.0\\times10^{-9}\\,\\mathrm{m^4}$，立てる：$I=1.8\\times10^{-7}\\,\\mathrm{m^4}$ (2) $36$ 倍 (3) $\\delta\\approx6.7\\times10^{-2}\\,\\mathrm{m}$"
+   "tex": "(1) 寝かせる：$I_1=\\dfrac{bh^3}{12}$，立てる：$I_2=\\dfrac{hb^3}{12}$ (2) $\\dfrac{b^2}{h^2}$ 倍 (3) $\\delta=\\dfrac{4PL^3}{Ebh^3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "寝かせると $b=0.060\\,\\mathrm{m}$，$h=0.010\\,\\mathrm{m}$ で\n\\[ I=\\frac{0.060\\times(0.010)^3}{12}=\\boldsymbol{5.0\\times10^{-9}\\,\\mathrm{m^4}}. \\]\n立てると $b=0.010\\,\\mathrm{m}$，$h=0.060\\,\\mathrm{m}$ で\n\\[ I=\\frac{0.010\\times(0.060)^3}{12}=\\boldsymbol{1.8\\times10^{-7}\\,\\mathrm{m^4}}. \\]\n\nたわみは $I$ に反比例するので，比は $1.8\\times10^{-7}/5.0\\times10^{-9}=\\boldsymbol{36}$ 倍（$=6^2$）．断面積は同じなのに，曲がる向きの厚さの3乗が効くためである．\n\n\\[ \\delta=\\frac{10\\times1.0^3}{3\\times1.0\\times10^{10}\\times5.0\\times10^{-9}}=\\frac{10}{150}\\approx\\boldsymbol{6.7\\times10^{-2}\\,\\mathrm{m}}. \\]\n立てれば約 $1.9\\,\\mathrm{mm}$ で済む．床の根太やI形鋼が縦長の断面なのはこのためである．次は，曲げモーメントとたわみの関係 $EIw''=-M$ から，この公式を自分で導くとよい．"
+    "tex": "寝かせると曲げの軸に平行な辺が $b$，曲がる向きの厚さが $h$ なので $\\boldsymbol{I_1=\\dfrac{bh^3}{12}}$．立てると逆になり $\\boldsymbol{I_2=\\dfrac{hb^3}{12}}$．\n\nたわみは $I$ に反比例するので，比は $\\dfrac{I_2}{I_1}=\\boldsymbol{\\dfrac{b^2}{h^2}}$ 倍．断面積は同じなのに，曲がる向きの厚さの3乗が効くためである．たとえば幅 $6\\,\\mathrm{cm}$，厚さ $1\\,\\mathrm{cm}$ の板なら $36$ 倍も違う．\n\n\\[ \\delta=\\frac{PL^3}{3E\\cdot bh^3/12}=\\boldsymbol{\\frac{4PL^3}{Ebh^3}}. \\]\n床の根太やI形鋼が縦長の断面なのはこのためである．次は，曲げモーメントとたわみの関係 $EIw''=-M$ から，この公式を自分で導くとよい．"
    }
   ],
   "idea": {
@@ -124,7 +124,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 寝かせる [m^4]：≈5.0e-9 ; 立てる [m^4]：≈1.8e-7\n(2) 36\n(3) δ [m]：≈6.67e-2"
+   "spec": "(1) 寝かせる：b h^3/12 ; 立てる：h b^3/12\n(2) b^2/h^2\n(3) δ：4 P L^3/(E b h^3)"
   },
   "methods": [],
   "tags": [
@@ -253,16 +253,16 @@
   "theme": "中央集中荷重の単純支持ばり：たわみと曲げ応力",
   "topic": "中央集中荷重の単純支持ばり：たわみと曲げ応力",
   "statement": {
-   "tex": "長さ $L$，ヤング率 $E$，幅 $b$，高さ $h$ の長方形断面（$I=bh^3/12$）の単純支持ばりの中央に，下向きの集中荷重 $P$ がかかる．\n\\begin{enumerate}\n\\item 最大曲げモーメント $M_{\\max}$ を求めよ．\n\\item 中央のたわみ $\\delta$ を求めよ．\n\\item 最大曲げ応力 $\\sigma_{\\max}$ を $P,\\ L,\\ b,\\ h$ で表せ．\n\\item $P=1.0\\,\\mathrm{kN}$，$L=2.0\\,\\mathrm{m}$，$b=5.0\\,\\mathrm{cm}$，$h=10\\,\\mathrm{cm}$，$E=1.0\\times10^{10}\\,\\mathrm{Pa}$ のとき，$\\delta$ と $\\sigma_{\\max}$ を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $L$，ヤング率 $E$，幅 $b$，高さ $h$ の長方形断面（$I=bh^3/12$）の単純支持ばりの中央に，下向きの集中荷重 $P$ がかかる．\n\\begin{enumerate}\n\\item 最大曲げモーメント $M_{\\max}$ を求めよ．\n\\item 中央のたわみ $\\delta$ を求めよ．\n\\item 最大曲げ応力 $\\sigma_{\\max}$ を $P,\\ L,\\ b,\\ h$ で表せ．\n\\item 同じ断面積のまま，$b$ を半分にして $h$ を $2$ 倍にすると，$\\delta$ と $\\sigma_{\\max}$ はそれぞれ何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $M_{\\max}=\\dfrac{PL}{4}$ (2) $\\delta=\\dfrac{PL^3}{48EI}$ (3) $\\sigma_{\\max}=\\dfrac{3PL}{2bh^2}$ (4) $\\delta=4.0\\times10^{-3}\\,\\mathrm{m}$，$\\sigma_{\\max}=6.0\\times10^{6}\\,\\mathrm{Pa}$"
+   "tex": "(1) $M_{\\max}=\\dfrac{PL}{4}$ (2) $\\delta=\\dfrac{PL^3}{48EI}$ (3) $\\sigma_{\\max}=\\dfrac{3PL}{2bh^2}$ (4) $\\delta$ は $\\dfrac14$ 倍，$\\sigma_{\\max}$ は $\\dfrac12$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "両支点の反力は $P/2$．左半分 $0\\le x\\le L/2$ で $M(x)=Px/2$，中央で最大 $\\boldsymbol{M_{\\max}=PL/4}$．\n\n$EIv''=-Px/2$（$v$ は下向き正，下に凸で $v''<0$ となる向きに符号をとる）．対称性から $v'(L/2)=0$，$v(0)=0$：\n\\[ EIv=-\\frac{P}{12}x^3+\\frac{PL^2}{16}x. \\]\n$x=L/2$ で $EI\\delta=-\\dfrac{PL^3}{96}+\\dfrac{PL^3}{32}=\\dfrac{PL^3}{48}$，よって $\\boldsymbol{\\delta=\\dfrac{PL^3}{48EI}}$．\n\n曲げ応力は中立軸からの距離に比例し，最大は上下の縁 $y=\\pm h/2$：\n\\[ \\sigma_{\\max}=\\frac{M_{\\max}(h/2)}{I}=\\frac{(PL/4)(h/2)}{bh^3/12}=\\boldsymbol{\\frac{3PL}{2bh^2}}. \\]\n\n$I=0.050\\times0.10^3/12\\approx4.17\\times10^{-6}\\,\\mathrm{m^4}$ より\n\\[ \\delta=\\frac{1.0\\times10^{3}\\times8.0}{48\\times1.0\\times10^{10}\\times4.17\\times10^{-6}}=\\boldsymbol{4.0\\times10^{-3}\\,\\mathrm{m}},\\qquad \\sigma_{\\max}=\\frac{3\\times10^{3}\\times2.0}{2\\times0.050\\times0.010}=\\boldsymbol{6.0\\times10^{6}\\,\\mathrm{Pa}}. \\]"
+    "tex": "両支点の反力は $P/2$．左半分 $0\\le x\\le L/2$ で $M(x)=Px/2$，中央で最大 $\\boldsymbol{M_{\\max}=PL/4}$．\n\n$EIv''=-Px/2$（$v$ は下向き正，下に凸で $v''<0$ となる向きに符号をとる）．対称性から $v'(L/2)=0$，$v(0)=0$：\n\\[ EIv=-\\frac{P}{12}x^3+\\frac{PL^2}{16}x. \\]\n$x=L/2$ で $EI\\delta=-\\dfrac{PL^3}{96}+\\dfrac{PL^3}{32}=\\dfrac{PL^3}{48}$，よって $\\boldsymbol{\\delta=\\dfrac{PL^3}{48EI}}$．\n\n曲げ応力は中立軸からの距離に比例し，最大は上下の縁 $y=\\pm h/2$：\n\\[ \\sigma_{\\max}=\\frac{M_{\\max}(h/2)}{I}=\\frac{(PL/4)(h/2)}{bh^3/12}=\\boldsymbol{\\frac{3PL}{2bh^2}}. \\]\n\n$\\delta\\propto\\dfrac{1}{bh^3}$，$\\sigma_{\\max}\\propto\\dfrac{1}{bh^2}$ なので，$b\\to b/2$，$h\\to2h$ では\n\\[ \\delta:\\ \\frac{1}{(1/2)\\cdot8}=\\boldsymbol{\\frac14}\\ \\text{倍},\\qquad \\sigma_{\\max}:\\ \\frac{1}{(1/2)\\cdot4}=\\boldsymbol{\\frac12}\\ \\text{倍}. \\]\n同じ材料の量でも，はりは縦長に使うほどたわみにくく，壊れにくい．"
    }
   ],
   "idea": {
@@ -270,7 +270,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) M_max：P L/4\n(2) δ：P L^3/(48E I)\n(3) σ_max：3P L/(2b h^2)\n(4) δ [m]：≈4.0e-3 ; σ_max [Pa]：≈6.0e6"
+   "spec": "(1) M_max：P L/4\n(2) δ：P L^3/(48E I)\n(3) σ_max：3P L/(2b h^2)\n(4) δ：1/4 ; σ_max：1/2"
   },
   "methods": [],
   "tags": [
@@ -302,16 +302,16 @@
   "theme": "片持ちばりの曲げ振動と曲げ波の分散",
   "topic": "片持ちばりの曲げ振動と曲げ波の分散",
   "statement": {
-   "tex": "一様なはり（ヤング率 $E$，断面二次モーメント $I$，密度 $\\rho$，断面積 $A$）の横方向の変位 $y(x,t)$ は\n\\[ EI\\frac{\\partial^4y}{\\partial x^4}+\\rho A\\frac{\\partial^2y}{\\partial t^2}=0 \\]\nに従う．長さ $L$ の片持ちばり（$x=0$ で固定，$x=L$ で自由）の振動を考える．\n\\begin{enumerate}\n\\item $y=Y(x)\\cos\\omega t$ とおくと $Y''''=\\beta^4Y$ となる．$\\omega$ を $\\beta,\\ E,\\ I,\\ \\rho,\\ A$ で表せ．\n\\item 境界条件は固定端で $Y=Y'=0$，自由端で $Y''=Y'''=0$ である．$Y=C_1\\cos\\beta x+C_2\\sin\\beta x+C_3\\cosh\\beta x+C_4\\sinh\\beta x$ とおいて，振動数方程式 $1+\\cos\\beta L\\cosh\\beta L=0$ を導け．\n\\item 最小の根は $\\beta_1L=1.875$ である．長さ $L=0.30\\,\\mathrm{m}$，厚さ $1.0\\,\\mathrm{mm}$ の鋼の定規（$E=2.0\\times10^{11}\\,\\mathrm{Pa}$，$\\rho=7.9\\times10^{3}\\,\\mathrm{kg/m^3}$，長方形断面で $I/A=(\\text{厚さ})^2/12$）の基本振動数 $f_1$ を求めよ．\n\\item 無限に長いはりを進む曲げ波 $y\\propto e^{i(kx-\\omega t)}$ について，群速度は位相速度の何倍か．\n\\end{enumerate}"
+   "tex": "一様なはり（ヤング率 $E$，断面二次モーメント $I$，密度 $\\rho$，断面積 $A$）の横方向の変位 $y(x,t)$ は\n\\[ EI\\frac{\\partial^4y}{\\partial x^4}+\\rho A\\frac{\\partial^2y}{\\partial t^2}=0 \\]\nに従う．長さ $L$ の片持ちばり（$x=0$ で固定，$x=L$ で自由）の振動を考える．\n\\begin{enumerate}\n\\item $y=Y(x)\\cos\\omega t$ とおくと $Y''''=\\beta^4Y$ となる．$\\omega$ を $\\beta,\\ E,\\ I,\\ \\rho,\\ A$ で表せ．\n\\item 境界条件は固定端で $Y=Y'=0$，自由端で $Y''=Y'''=0$ である．$Y=C_1\\cos\\beta x+C_2\\sin\\beta x+C_3\\cosh\\beta x+C_4\\sinh\\beta x$ とおいて，振動数方程式 $1+\\cos\\beta L\\cosh\\beta L=0$ を導け．\n\\item 最小の根は $\\beta_1L=1.875$ である．長さ $L$，厚さ $t$ の長方形断面の定規（$I/A=t^2/12$）の基本振動数 $f_1$ を $E,\\ \\rho,\\ t,\\ L$ で表せ．また，机から出す長さを半分にすると $f_1$ は何倍になるか．\n\\item 無限に長いはりを進む曲げ波 $y\\propto e^{i(kx-\\omega t)}$ について，群速度は位相速度の何倍か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega=\\beta^2\\sqrt{\\dfrac{EI}{\\rho A}}$ (2) 記述 (3) $f_1\\approx9.0\\,\\mathrm{Hz}$ (4) $2$ 倍"
+   "tex": "(1) $\\omega=\\beta^2\\sqrt{\\dfrac{EI}{\\rho A}}$ (2) 記述 (3) $f_1=\\dfrac{1.875^2t}{2\\pi L^2}\\sqrt{\\dfrac{E}{12\\rho}}$，$4$ 倍 (4) $2$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "代入すると $EIY''''=\\rho A\\omega^2Y$．$\\beta^4=\\rho A\\omega^2/(EI)$ より $\\boldsymbol{\\omega=\\beta^2\\sqrt{EI/(\\rho A)}}$．\n\n$Y(0)=0$ から $C_1+C_3=0$，$Y'(0)=0$ から $C_2+C_4=0$．よって $Y=C_1(\\cos\\beta x-\\cosh\\beta x)+C_2(\\sin\\beta x-\\sinh\\beta x)$．自由端の2条件は\n\\[ \\begin{aligned} -C_1(\\cos\\beta L+\\cosh\\beta L)-C_2(\\sin\\beta L+\\sinh\\beta L)&=0,\\\\ C_1(\\sin\\beta L-\\sinh\\beta L)-C_2(\\cos\\beta L+\\cosh\\beta L)&=0. \\end{aligned} \\]\n非自明解の条件（係数行列式 $=0$）は\n\\[ (\\cos\\beta L+\\cosh\\beta L)^2+(\\sin\\beta L+\\sinh\\beta L)(\\sin\\beta L-\\sinh\\beta L)=0. \\]\n$\\cos^2+\\sin^2=1$，$\\cosh^2-\\sinh^2=1$ を使うと $2+2\\cos\\beta L\\cosh\\beta L=0$，すなわち $\\boldsymbol{1+\\cos\\beta L\\cosh\\beta L=0}$．\n\n$f_1=\\dfrac{\\omega_1}{2\\pi}=\\dfrac{(\\beta_1L)^2}{2\\pi L^2}\\sqrt{\\dfrac{E}{\\rho}\\cdot\\dfrac{I}{A}}$．$\\sqrt{\\dfrac{2.0\\times10^{11}\\times(1.0\\times10^{-3})^2}{12\\times7.9\\times10^{3}}}=1.45\\,\\mathrm{m^2/s}$ なので\n\\[ f_1=\\frac{3.516}{2\\pi\\times0.090}\\times1.45\\approx\\boldsymbol{9.0\\,\\mathrm{Hz}}. \\]\n机の端から出した定規をはじいたときの「ビーン」という振動である．\n\n曲げ波の分散関係は $\\omega=\\sqrt{EI/(\\rho A)}\\,k^2$．位相速度 $\\omega/k\\propto k$，群速度 $d\\omega/dk=2\\sqrt{EI/(\\rho A)}\\,k$ で，群速度は位相速度の $\\boldsymbol{2}$ 倍．曲げ波は分散性で，高い振動数ほど速く伝わる．"
+    "tex": "代入すると $EIY''''=\\rho A\\omega^2Y$．$\\beta^4=\\rho A\\omega^2/(EI)$ より $\\boldsymbol{\\omega=\\beta^2\\sqrt{EI/(\\rho A)}}$．\n\n$Y(0)=0$ から $C_1+C_3=0$，$Y'(0)=0$ から $C_2+C_4=0$．よって $Y=C_1(\\cos\\beta x-\\cosh\\beta x)+C_2(\\sin\\beta x-\\sinh\\beta x)$．自由端の2条件は\n\\[ \\begin{aligned} -C_1(\\cos\\beta L+\\cosh\\beta L)-C_2(\\sin\\beta L+\\sinh\\beta L)&=0,\\\\ C_1(\\sin\\beta L-\\sinh\\beta L)-C_2(\\cos\\beta L+\\cosh\\beta L)&=0. \\end{aligned} \\]\n非自明解の条件（係数行列式 $=0$）は\n\\[ (\\cos\\beta L+\\cosh\\beta L)^2+(\\sin\\beta L+\\sinh\\beta L)(\\sin\\beta L-\\sinh\\beta L)=0. \\]\n$\\cos^2+\\sin^2=1$，$\\cosh^2-\\sinh^2=1$ を使うと $2+2\\cos\\beta L\\cosh\\beta L=0$，すなわち $\\boldsymbol{1+\\cos\\beta L\\cosh\\beta L=0}$．\n\n$f_1=\\dfrac{\\omega_1}{2\\pi}=\\dfrac{(\\beta_1L)^2}{2\\pi L^2}\\sqrt{\\dfrac{E}{\\rho}\\cdot\\dfrac{I}{A}}$ に $I/A=t^2/12$ を入れて\n\\[ \\boldsymbol{f_1=\\frac{1.875^2\\,t}{2\\pi L^2}\\sqrt{\\frac{E}{12\\rho}}}. \\]\n$f_1\\propto L^{-2}$ なので，長さを半分にすると $\\boldsymbol{4}$ 倍．机の端から出した定規をはじいたときの「ビーン」という振動で，出す長さを短くすると音が急に高くなる（厚さ $1\\,\\mathrm{mm}$，長さ $30\\,\\mathrm{cm}$ の鋼の定規で約 $9\\,\\mathrm{Hz}$）．\n\n曲げ波の分散関係は $\\omega=\\sqrt{EI/(\\rho A)}\\,k^2$．位相速度 $\\omega/k\\propto k$，群速度 $d\\omega/dk=2\\sqrt{EI/(\\rho A)}\\,k$ で，群速度は位相速度の $\\boldsymbol{2}$ 倍．曲げ波は分散性で，高い振動数ほど速く伝わる．"
    }
   ],
   "idea": {
@@ -319,7 +319,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ω：beta^2 sqrt(E I/(rho A))\n(2) 記述：固定端で C_3=-C_1, C_4=-C_2，自由端2条件の行列式 = 0\n(3) f_1 [Hz]：≈9.03\n(4) 2"
+   "spec": "(1) ω：beta^2 sqrt(E I/(rho A))\n(2) 記述：固定端で C_3=-C_1, C_4=-C_2，自由端2条件の行列式 = 0\n(3) f_1：1.875^2 t sqrt(E/(12 rho))/(2 pi L^2) ; 倍率：4\n(4) 2"
   },
   "methods": [],
   "tags": [
@@ -550,16 +550,16 @@
   "theme": "自重でたわむ片持ち梁の曲率と限界長さ",
   "topic": "自重でたわむ片持ち梁の曲率と限界長さ",
   "statement": {
-   "tex": "厚さ $h$，幅 $b$ の長方形断面をもつ一様な鋼の梁の一端を壁に水平に埋め込み，長さ $l$ の部分を突き出させた．梁は自重でわずかにたわむ．壁から梁に沿って測った距離を $x$ とし，梁の曲げは中立面の曲率半径 $R$ と曲げモーメント $N$ の関係 $1/R=N/(EI)$（$I=bh^3/12$）に従うものとする．鋼のヤング率 $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$，密度 $\\rho=7.8\\times10^{3}\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 中立面の曲率半径 $R(x)$ を求めよ．\n\\item 梁の表面に生じる伸び（ひずみ）の最大値 $\\varepsilon_{\\max}$ を求め，それが幅 $b$ によらないことを確かめよ．\n\\item $h=10\\,\\mathrm{cm}$ のとき，$\\varepsilon_{\\max}$ が $1.0\\times10^{-3}$ を超えない最大の突き出し長さ $l$ を求めよ．\n\\end{enumerate}"
+   "tex": "厚さ $h$，幅 $b$ の長方形断面をもつ一様な鋼の梁の一端を壁に水平に埋め込み，長さ $l$ の部分を突き出させた．梁は自重でわずかにたわむ．壁から梁に沿って測った距離を $x$ とし，梁の曲げは中立面の曲率半径 $R$ と曲げモーメント $N$ の関係 $1/R=N/(EI)$（$I=bh^3/12$）に従うものとする．鋼のヤング率を $E$，密度を $\\rho$，重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 中立面の曲率半径 $R(x)$ を求めよ．\n\\item 梁の表面に生じる伸び（ひずみ）の最大値 $\\varepsilon_{\\max}$ を求め，それが幅 $b$ によらないことを確かめよ．\n\\item $\\varepsilon_{\\max}$ が許容ひずみ $\\varepsilon_0$ を超えない最大の突き出し長さ $l_m$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $R(x)=\\dfrac{Eh^2}{6\\rho g(l-x)^2}$　(2) $\\varepsilon_{\\max}=\\dfrac{3\\rho g l^2}{Eh}$（壁の付け根の上下表面）　(3) $l\\approx 9.3\\,\\mathrm{m}$"
+   "tex": "(1) $R(x)=\\dfrac{Eh^2}{6\\rho g(l-x)^2}$　(2) $\\varepsilon_{\\max}=\\dfrac{3\\rho g l^2}{Eh}$（壁の付け根の上下表面）　(3) $l_m=\\sqrt{\\dfrac{\\varepsilon_0Eh}{3\\rho g}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 位置 $x$ より先の部分（長さ $l-x$，質量 $\\rho bh(l-x)$）の重力が断面に及ぼすモーメントは\n\\[ N(x)=\\rho g b h\\,\\frac{(l-x)^2}{2}. \\]\nよって\n\\[ \\frac1R=\\frac{N}{EI}=\\frac{12\\rho g bh(l-x)^2}{2Ebh^3}=\\frac{6\\rho g(l-x)^2}{Eh^2},\\qquad R(x)=\\frac{Eh^2}{6\\rho g(l-x)^2}. \\]\n曲率は付け根 $x=0$ で最大，先端で $0$ になる．\n\n(2) 中立面から $z$ 離れた繊維のひずみは $z/R$ なので，表面 $z=h/2$ で最大：\n\\[ \\varepsilon_{\\max}=\\frac{h}{2R(0)}=\\frac{3\\rho g l^2}{Eh}. \\]\n$b$ は自重（$\\propto b$）と曲げ剛性（$\\propto b$）で打ち消し合い，現れない．\n\n(3) $\\varepsilon_{\\max}\\le\\varepsilon_0$ より\n\\[ l\\le\\sqrt{\\frac{\\varepsilon_0 E h}{3\\rho g}}=\\sqrt{\\frac{10^{-3}\\cdot2.0\\times10^{11}\\cdot0.10}{3\\cdot7.8\\times10^3\\cdot9.8}}\\approx9.3\\,\\mathrm{m}. \\]\n（付け根の曲率半径 $R(0)=h/(2\\varepsilon_0)=50\\,\\mathrm{m}$ に対応．）"
+    "tex": "(1) 位置 $x$ より先の部分（長さ $l-x$，質量 $\\rho bh(l-x)$）の重力が断面に及ぼすモーメントは\n\\[ N(x)=\\rho g b h\\,\\frac{(l-x)^2}{2}. \\]\nよって\n\\[ \\frac1R=\\frac{N}{EI}=\\frac{12\\rho g bh(l-x)^2}{2Ebh^3}=\\frac{6\\rho g(l-x)^2}{Eh^2},\\qquad R(x)=\\frac{Eh^2}{6\\rho g(l-x)^2}. \\]\n曲率は付け根 $x=0$ で最大，先端で $0$ になる．\n\n(2) 中立面から $z$ 離れた繊維のひずみは $z/R$ なので，表面 $z=h/2$ で最大：\n\\[ \\varepsilon_{\\max}=\\frac{h}{2R(0)}=\\frac{3\\rho g l^2}{Eh}. \\]\n$b$ は自重（$\\propto b$）と曲げ剛性（$\\propto b$）で打ち消し合い，現れない．\n\n(3) $\\varepsilon_{\\max}\\le\\varepsilon_0$ より\n\\[ l\\le\\boldsymbol{l_m=\\sqrt{\\frac{\\varepsilon_0 E h}{3\\rho g}}}. \\]\n（付け根の曲率半径 $R(0)=h/(2\\varepsilon_0)$ に対応．）$l_m\\propto\\sqrt h$ なので，厚い梁ほど長く突き出せる．鋼で $h=10\\,\\mathrm{cm}$，$\\varepsilon_0=10^{-3}$ なら約 $9\\,\\mathrm m$ である．"
    }
   ],
   "idea": {
@@ -567,7 +567,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $R(x)$：((E h ^(2))/(6 ρ g (l - x)^(2)))\n(2) $\\varepsilon_{\\max}$：((3 ρ g l ^(2))/(E h))\n(3) $l$ [m]：≈9.3"
+   "spec": "(1) R(x)：E h^2/(6 rho g (l - x)^2)\n(2) ε_max：3 rho g l^2/(E h)\n(3) l_m：sqrt(epsilon_0 E h/(3 rho g))"
   },
   "methods": [],
   "tags": [
@@ -698,16 +698,16 @@
   "theme": "帯鋼を多重に巻くときの仕事と限界巻き数",
   "topic": "帯鋼を多重に巻くときの仕事と限界巻き数",
   "statement": {
-   "tex": "長さ $l=2.0\\,\\mathrm{m}$，幅 $h=6.0\\,\\mathrm{cm}$，厚さ $\\delta=0.50\\,\\mathrm{mm}$ のまっすぐなばね鋼の帯を，幅の方向を軸として曲げ，同じ半径の円を $n$ 回巻いた形（厚さを無視した $n$ 重の輪）にする．ヤング率 $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，この鋼が弾性を保つ最大ひずみは $5.0\\times10^{-3}$ とする．\n\\begin{enumerate}\n\\item 必要な仕事 $A_n$ を $n$ の関数として求めよ．\n\\item 弾性の範囲で巻ける最大の巻き数 $n$ と，そのときの仕事を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $l$，幅 $h$，厚さ $\\delta$ のまっすぐなばね鋼の帯を，幅の方向を軸として曲げ，同じ半径の円を $n$ 回巻いた形（厚さを無視した $n$ 重の輪）にする．ヤング率を $E$，この鋼が弾性を保つ最大ひずみを $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 必要な仕事 $A_n$ を $n$ の関数として求めよ．\n\\item 弾性の範囲で巻ける巻き数の上限 $n_m$（整数とは限らない値）を求めよ．また，ちょうど $n=n_m$ まで巻いたときの仕事 $A_m$ を $E,\\ h,\\ \\delta,\\ l,\\ \\varepsilon_0$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $A_n=\\dfrac{\\pi^2Eh\\delta^3}{6l}n^2\\approx1.23n^2\\,\\mathrm{J}$　(2) $n=6$，$A_6\\approx44\\,\\mathrm{J}$"
+   "tex": "(1) $A_n=\\dfrac{\\pi^2Eh\\delta^3}{6l}n^2$　(2) $n_m=\\dfrac{\\varepsilon_0l}{\\pi\\delta}$，$A_m=\\dfrac{Eh\\delta l\\varepsilon_0^2}{6}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 曲率半径 $R$ で一様に曲げた長さ $l$ の帯のエネルギーは，$1/R=N/(EI)$ より\n\\[ U=\\frac{EI\\,l}{2R^2},\\qquad I=\\frac{h\\delta^3}{12}. \\]\n（中立面から $z$ の繊維のひずみ $z/R$ のエネルギー密度 $E z^2/(2R^2)$ を断面で積分しても同じ．）\n$n$ 回巻きでは $2\\pi Rn=l$，$R=l/(2\\pi n)$．\n\\[ A_n=\\frac{Eh\\delta^3}{12}\\cdot\\frac{l\\cdot4\\pi^2n^2}{2l^2}=\\frac{\\pi^2Eh\\delta^3}{6l}n^2=\\frac{\\pi^2\\cdot2.0\\times10^{11}\\cdot0.060\\cdot(5.0\\times10^{-4})^3}{6\\cdot2.0}n^2\\approx1.23\\,n^2\\,\\mathrm{J}. \\]\n\n(2) 表面のひずみ $\\varepsilon=\\dfrac{\\delta}{2R}=\\dfrac{\\pi n\\delta}{l}\\le5.0\\times10^{-3}$ より $n\\le\\dfrac{5.0\\times10^{-3}\\cdot2.0}{\\pi\\cdot5.0\\times10^{-4}}=6.37$．よって $n=6$，$A_6=36\\times1.23\\approx44\\,\\mathrm{J}$．"
+    "tex": "(1) 曲率半径 $R$ で一様に曲げた長さ $l$ の帯のエネルギーは，$1/R=N/(EI)$ より\n\\[ U=\\frac{EI\\,l}{2R^2},\\qquad I=\\frac{h\\delta^3}{12}. \\]\n（中立面から $z$ の繊維のひずみ $z/R$ のエネルギー密度 $E z^2/(2R^2)$ を断面で積分しても同じ．）\n$n$ 回巻きでは $2\\pi Rn=l$，$R=l/(2\\pi n)$．\n\\[ A_n=\\frac{Eh\\delta^3}{12}\\cdot\\frac{l\\cdot4\\pi^2n^2}{2l^2}=\\boldsymbol{\\frac{\\pi^2Eh\\delta^3}{6l}n^2}. \\]\n\n(2) 表面のひずみ $\\varepsilon=\\dfrac{\\delta}{2R}=\\dfrac{\\pi n\\delta}{l}\\le\\varepsilon_0$ より $\\boldsymbol{n_m=\\dfrac{\\varepsilon_0l}{\\pi\\delta}}$（実際に巻ける回数はこれを超えない最大の整数）．このとき\n\\[ A_m=\\frac{\\pi^2Eh\\delta^3}{6l}\\cdot\\frac{\\varepsilon_0^2l^2}{\\pi^2\\delta^2}=\\boldsymbol{\\frac{Eh\\delta l\\varepsilon_0^2}{6}}. \\]\n帯の体積 $hl\\delta$ に $E\\varepsilon_0^2/6$ をかけたもので，一様に引っ張って蓄えられる上限 $E\\varepsilon_0^2/2$ の $1/3$ である（曲げでは中立面付近がエネルギーを蓄えない）．"
    }
   ],
   "idea": {
@@ -715,7 +715,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $A_n$：((pi ^(2) E h δ ^(3))/(6 l)) n ^(2)\n(2) $n$：6 ; $A_6$ [J]：≈44"
+   "spec": "(1) A_n：pi^2 E h delta^3 n^2/(6 l)\n(2) n_m：epsilon_0 l/(pi delta) ; A_m：E h delta l epsilon_0^2/6"
   },
   "methods": [],
   "tags": [
@@ -846,24 +846,24 @@
   "theme": "頂部を横ばねで支えた柱の座屈荷重",
   "topic": "頂部を横ばねで支えた柱の座屈荷重",
   "statement": {
-   "tex": "長さ $l$，曲げ剛性 $EI$ の一様な柱の下端 $x=0$ を地面に鉛直に固定（変位も傾きも 0）し，上端 $x=l$ に鉛直下向きの荷重 $W$ をのせる．上端は自由に回転できるが，水平方向にはばね定数 $K$ の水平ばねでつながれており，上端の水平変位を $y_1$ とすると上端には水平復元力 $-Ky_1$ がはたらく．柱の自重は無視し，たわみ $y(x)$ は微小とする．\n\\begin{enumerate}\n\\item 高さ $x$ の断面より上の部分にはたらく力のモーメントのつり合いから，$y(x)$ の満たす微分方程式を書け．\n\\item $\\omega^2=W/EI$，$z=\\omega l$，$\\kappa=Kl^3/EI$ とおく．たわみ $y_1\\neq0$ が可能になる条件が\n\\[ \\tan z = z-\\frac{z^3}{\\kappa} \\]\nで与えられることを示せ．\n\\item $K\\to0$ と $K\\to\\infty$ の極限で最小の座屈荷重 $W_{\\rm c}$ を求め，それぞれどのような支持条件の柱に対応するか述べよ（$\\tan z=z$ の最小正根は $z\\simeq4.493$ を用いてよい）．\n\\item 座屈荷重がちょうど $W_{\\rm c}=\\pi^2EI/l^2$ になるためのばね定数 $K$ を求めよ．また，そのとき $z=\\pi$ が実際に最小の根であることを確かめよ．\n\\end{enumerate}"
+   "tex": "長さ $l$，曲げ剛性 $EI$ の一様な柱の下端 $x=0$ を地面に鉛直に固定（変位も傾きも 0）し，上端 $x=l$ に鉛直下向きの荷重 $W$ をのせる．上端は自由に回転できるが，水平方向にはばね定数 $K$ の水平ばねでつながれており，上端の水平変位を $y_1$ とすると上端には水平復元力 $-Ky_1$ がはたらく．柱の自重は無視し，たわみ $y(x)$ は微小とする．\n\\begin{enumerate}\n\\item 高さ $x$ の断面より上の部分にはたらく力のモーメントのつり合いから，$y(x)$ の満たす微分方程式を書け．\n\\item $\\omega^2=W/EI$，$z=\\omega l$，$\\kappa=Kl^3/EI$ とおく．たわみ $y_1\\neq0$ が可能になる条件が\n\\[ \\tan z = z-\\frac{z^3}{\\kappa} \\]\nで与えられることを示せ．\n\\item $K\\to0$ と $K\\to\\infty$ の極限で最小の座屈荷重 $W_{\\rm c}$ を求め，それぞれどのような支持条件の柱に対応するか述べよ（$\\tan z=z$ の最小の正の根を $z_1$ とせよ）．\n\\item 座屈荷重がちょうど $W_{\\rm c}=\\pi^2EI/l^2$ になるためのばね定数 $K$ を求めよ．また，そのとき $z=\\pi$ が実際に最小の根であることを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $EI\\,y''=W(y_1-y)-Ky_1(l-x)$　(2) 本文の式　(3) $K\\to0$: $W_{\\rm c}=\\pi^2EI/4l^2$（一端固定・他端自由），$K\\to\\infty$: $W_{\\rm c}\\simeq20.19\\,EI/l^2$（一端固定・他端ピン）　(4) $K=\\pi^2EI/l^3$"
+   "tex": "(1) $EI\\,y''=W(y_1-y)-Ky_1(l-x)$　(2) 本文の式　(3) $K\\to0$: $W_{\\rm c}=\\dfrac{\\pi^2EI}{4l^2}$（一端固定・他端自由），$K\\to\\infty$: $W_{\\rm c}=\\dfrac{z_1^2EI}{l^2}$（一端固定・他端ピン）　(4) $K=\\dfrac{\\pi^2EI}{l^3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 高さ $x$ の点 P より上の部分には，上端で鉛直荷重 $W$（P に対する腕の長さ $y_1-y$）と水平力 $-Ky_1$（腕の長さ $l-x$）がはたらく．これと曲げモーメント $EI\\,y''$ のつり合いより\n\\[ EI\\,y''=W(y_1-y)-Ky_1(l-x). \\]\n\n(2) $\\omega^2=W/EI$ とおくと $y''+\\omega^2y=\\omega^2y_1-\\dfrac{K y_1}{EI}(l-x)$．特解は $y_1-\\dfrac{Ky_1}{W}(l-x)$ なので\n\\[ y=A\\sin\\omega x+B\\cos\\omega x+y_1-\\frac{Ky_1}{W}(l-x). \\]\n境界条件：$y(0)=0$ より $B=y_1\\left(\\dfrac{Kl}{W}-1\\right)$．$y'(0)=0$ より $A\\omega+\\dfrac{Ky_1}{W}=0$，$A=-\\dfrac{Ky_1}{W\\omega}$．$y(l)=y_1$ より $A\\sin\\omega l+B\\cos\\omega l=0$．代入して $y_1$ で割ると\n\\[ -\\frac{K}{W\\omega}\\sin\\omega l+\\left(\\frac{Kl}{W}-1\\right)\\cos\\omega l=0\n\\ \\Longrightarrow\\ \\tan\\omega l=\\omega l-\\frac{W\\omega}{K}. \\]\n$W\\omega/K=EI\\omega^3/K=z^3/\\kappa$ だから $\\tan z=z-z^3/\\kappa$．$y_1\\neq0$ はこの条件のときに限り可能．\n\n(3) $K\\to0$（$\\kappa\\to0$）：右辺 $\\to-\\infty$ となるので根は $\\cos z\\to0$，最小は $z=\\pi/2$，$W_{\\rm c}=\\pi^2EI/(4l^2)$．上端完全自由の片持ち柱（元の問題の結果 $W<\\pi^2EI/4l^2$ に一致）．\n$K\\to\\infty$：$\\tan z=z$，最小正根 $z\\simeq4.493$，$W_{\\rm c}\\simeq20.19\\,EI/l^2$．上端の水平変位が禁止され回転は自由，すなわち一端固定・他端ピン支持の柱．\n\n(4) $z=\\pi$ が根であるには $\\tan\\pi=0=\\pi-\\pi^3/\\kappa$，よって $\\kappa=\\pi^2$，すなわち $K=\\pi^2EI/l^3$．\n最小性：$0<z<\\pi/2$ では $\\tan z>z>z-z^3/\\kappa$ なので根なし．$\\pi/2<z<\\pi$ では $\\tan z<0$ だが $z-z^3/\\pi^2=z(1-z^2/\\pi^2)>0$ なので根なし．$z=\\pi/2$ は $\\cos z=0$ で条件式 $\\sin z=(z-z^3/\\kappa)\\cos z$ を満たさない．ゆえに $z=\\pi$ が最小根．\n\n注：ばねを強くしても座屈荷重は $20.19EI/l^2$ で頭打ちになる．ばね定数 $\\pi^2EI/l^3$ ですでに両端ピン柱と同じ $\\pi^2EI/l^2$ に達する．"
+    "tex": "(1) 高さ $x$ の点 P より上の部分には，上端で鉛直荷重 $W$（P に対する腕の長さ $y_1-y$）と水平力 $-Ky_1$（腕の長さ $l-x$）がはたらく．これと曲げモーメント $EI\\,y''$ のつり合いより\n\\[ EI\\,y''=W(y_1-y)-Ky_1(l-x). \\]\n\n(2) $\\omega^2=W/EI$ とおくと $y''+\\omega^2y=\\omega^2y_1-\\dfrac{K y_1}{EI}(l-x)$．特解は $y_1-\\dfrac{Ky_1}{W}(l-x)$ なので\n\\[ y=A\\sin\\omega x+B\\cos\\omega x+y_1-\\frac{Ky_1}{W}(l-x). \\]\n境界条件：$y(0)=0$ より $B=y_1\\left(\\dfrac{Kl}{W}-1\\right)$．$y'(0)=0$ より $A\\omega+\\dfrac{Ky_1}{W}=0$，$A=-\\dfrac{Ky_1}{W\\omega}$．$y(l)=y_1$ より $A\\sin\\omega l+B\\cos\\omega l=0$．代入して $y_1$ で割ると\n\\[ -\\frac{K}{W\\omega}\\sin\\omega l+\\left(\\frac{Kl}{W}-1\\right)\\cos\\omega l=0\n\\ \\Longrightarrow\\ \\tan\\omega l=\\omega l-\\frac{W\\omega}{K}. \\]\n$W\\omega/K=EI\\omega^3/K=z^3/\\kappa$ だから $\\tan z=z-z^3/\\kappa$．$y_1\\neq0$ はこの条件のときに限り可能．\n\n(3) $K\\to0$（$\\kappa\\to0$）：右辺 $\\to-\\infty$ となるので根は $\\cos z\\to0$，最小は $z=\\pi/2$，$\\boldsymbol{W_{\\rm c}=\\pi^2EI/(4l^2)}$．上端完全自由の片持ち柱（元の問題の結果 $W<\\pi^2EI/4l^2$ に一致）．\n$K\\to\\infty$：$\\tan z=z$，最小正根 $z=z_1$ より $\\boldsymbol{W_{\\rm c}=z_1^2EI/l^2}$（$z_1\\simeq4.493$ なので $\\simeq20.2\\,EI/l^2$）．上端の水平変位が禁止され回転は自由，すなわち一端固定・他端ピン支持の柱．\n\n(4) $z=\\pi$ が根であるには $\\tan\\pi=0=\\pi-\\pi^3/\\kappa$，よって $\\kappa=\\pi^2$，すなわち $\\boldsymbol{K=\\pi^2EI/l^3}$．\n最小性：$0<z<\\pi/2$ では $\\tan z>z>z-z^3/\\kappa$ なので根なし．$\\pi/2<z<\\pi$ では $\\tan z<0$ だが $z-z^3/\\pi^2=z(1-z^2/\\pi^2)>0$ なので根なし．$z=\\pi/2$ は $\\cos z=0$ で条件式 $\\sin z=(z-z^3/\\kappa)\\cos z$ を満たさない．ゆえに $z=\\pi$ が最小根．\n\n注：ばねを強くしても座屈荷重は $z_1^2EI/l^2$ で頭打ちになる．ばね定数 $\\pi^2EI/l^3$ ですでに両端ピン柱と同じ $\\pi^2EI/l^2$ に達する．"
    }
   ],
   "idea": {
-   "tex": "上端の水平ばねが座屈条件を $\\tan z=z-z^3/\\kappa$ に変え，片持ち柱 ($\\pi/2$) と固定–ピン柱 ($4.493$) を連続的につなぐ．特別な $\\kappa=\\pi^2$ で Euler の基本荷重が現れる．"
+   "tex": "上端の水平ばねが座屈条件を $\\tan z=z-z^3/\\kappa$ に変え，片持ち柱 ($z=\\pi/2$) と固定–ピン柱 ($\\tan z=z$ の根 $z_1$) を連続的につなぐ．特別な $\\kappa=\\pi^2$ で Euler の基本荷重が現れる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $K$：pi ^(2) E I / l ^(3)"
+   "spec": "(1) 記述\n(2) 記述\n(3) K→0：pi^2 E I/(4 l^2) ; K→∞：z_1^2 E I/l^2\n(4) K：pi^2 E I/l^3"
   },
   "methods": [],
   "tags": [
@@ -896,16 +896,16 @@
   "theme": "自重で張り出す梁の最適支点（エアリー点）",
   "topic": "自重で張り出す梁の最適支点（エアリー点）",
   "statement": {
-   "tex": "長さ $L$，単位長さあたりの重さ $w$，曲げ剛性 $EI$ の一様な梁を，両端から等しい距離 $a$ の2点（$x=a$，$x=L-a$）で単純支持する．たわみは小さく，下向きたわみ $v$ は $EI\\,v''=-N(x)$（$N$ は梁を下に凸に曲げる向きを正とする曲げモーメント）に従う．\n\\begin{enumerate}\n\\item 両端の断面が鉛直のまま（端での傾き $v'=0$）となる $a/L$ を求めよ（精密な基準尺を支える「エアリー点」）．\n\\item 自重によるたわみについて，梁の両端の高さと中央の高さが等しくなる $a/L$ を有効数字3桁で求めよ．\n\\item $a=0$（両端支持）のとき中央のたわみを求め，$L$ を一定にして梁の厚さ $h$（長方形断面）を2倍にするとたわみが何倍になるか答えよ．\n\\end{enumerate}"
+   "tex": "長さ $L$，単位長さあたりの重さ $w$，曲げ剛性 $EI$ の一様な梁を，両端から等しい距離 $a$ の2点（$x=a$，$x=L-a$）で単純支持する．たわみは小さく，下向きたわみ $v$ は $EI\\,v''=-N(x)$（$N$ は梁を下に凸に曲げる向きを正とする曲げモーメント）に従う．\n\\begin{enumerate}\n\\item 両端の断面が鉛直のまま（端での傾き $v'=0$）となる $a/L$ を求めよ（精密な基準尺を支える「エアリー点」）．\n\\item 自重によるたわみについて，梁の両端の高さと中央の高さが等しくなる条件を，$u=a/L$ の満たす方程式として導け．\n\\item $a=0$（両端支持）のとき中央のたわみ $\\lambda$ を $w,\\ L,\\ EI$ で表し，$L$ を一定にして梁の厚さ $h$（長方形断面）を2倍にするとたわみが何倍になるか答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $a/L=\\dfrac12\\left(1-\\dfrac1{\\sqrt3}\\right)\\approx0.211$　(2) $32u^3-24u+5=0$ の根 $u=a/L\\approx0.223$　(3) $\\lambda=\\dfrac{5wL^4}{384EI}$，$1/4$ 倍"
+   "tex": "(1) $\\dfrac{a}{L}=\\dfrac12\\left(1-\\dfrac1{\\sqrt3}\\right)$　(2) $32u^3-24u+5=0$　(3) $\\lambda=\\dfrac{5wL^4}{384EI}$，$\\dfrac14$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "対称性から各支点反力は $wL/2$．左半分 $0\\le x\\le L/2$ で\n\\[ N(x)=-\\frac{wx^2}{2}+\\frac{wL}{2}(x-a)\\,\\theta(x-a) \\]\n（$\\theta$ は階段関数）．対称性より $v'(L/2)=0$ なので，$EI\\,v'(x)=\\displaystyle\\int_x^{L/2}N(s)\\,ds$．\n\n(1) $v'(0)=0$ $\\iff$ $\\displaystyle\\int_0^{L/2}N\\,dx=-\\frac{wL^3}{48}+\\frac{wL}{4}\\left(\\frac L2-a\\right)^2=0$．\nよって $\\left(\\dfrac L2-a\\right)^2=\\dfrac{L^2}{12}$，$a=\\dfrac L2\\left(1-\\dfrac1{\\sqrt3}\\right)\\approx0.2113L$．\n\n(2) $v(0)-v(L/2)=-\\displaystyle\\int_0^{L/2}v'(x)\\,dx=-\\frac1{EI}\\int_0^{L/2}sN(s)\\,ds$（積分順序の交換）．これを $0$ とおく：\n\\[ -\\frac w2\\cdot\\frac{L^4}{64}+\\frac{wL}{2}\\int_a^{L/2}s(s-a)\\,ds=0,\\qquad \\int_a^{L/2}s(s-a)\\,ds=\\frac{L^3}{24}-\\frac{aL^2}{8}+\\frac{a^3}{6}. \\]\n$u=a/L$ として $\\dfrac1{24}-\\dfrac u8+\\dfrac{u^3}{6}=\\dfrac1{64}$，すなわち\n\\[ 32u^3-24u+5=0. \\]\n$0<u<1/2$ の根は $u\\approx0.223$．(1) の値とわずかに異なり，目的（端面の向きか，高さの揃い方か）によって最適支点は変わる．\n\n(3) $a=0$ では $N=\\frac w2x(L-x)$ で，$v(0)=0$ より $\\lambda=v(L/2)=\\dfrac1{EI}\\displaystyle\\int_0^{L/2}s\\cdot\\frac w2 s(L-s)\\,ds=\\frac{w}{2EI}\\left(\\frac{L^4}{24}-\\frac{L^4}{64}\\right)=\\frac{5wL^4}{384EI}$．長方形断面では $w\\propto h$，$I\\propto h^3$ なので $\\lambda\\propto h^{-2}$，厚さ2倍でたわみは $1/4$ 倍．"
+    "tex": "対称性から各支点反力は $wL/2$．左半分 $0\\le x\\le L/2$ で\n\\[ N(x)=-\\frac{wx^2}{2}+\\frac{wL}{2}(x-a)\\,\\theta(x-a) \\]\n（$\\theta$ は階段関数）．対称性より $v'(L/2)=0$ なので，$EI\\,v'(x)=\\displaystyle\\int_x^{L/2}N(s)\\,ds$．\n\n(1) $v'(0)=0$ $\\iff$ $\\displaystyle\\int_0^{L/2}N\\,dx=-\\frac{wL^3}{48}+\\frac{wL}{4}\\left(\\frac L2-a\\right)^2=0$．\nよって $\\left(\\dfrac L2-a\\right)^2=\\dfrac{L^2}{12}$，$\\boldsymbol{\\dfrac aL=\\dfrac12\\left(1-\\dfrac1{\\sqrt3}\\right)}$．\n\n(2) $v(0)-v(L/2)=-\\displaystyle\\int_0^{L/2}v'(x)\\,dx=-\\frac1{EI}\\int_0^{L/2}sN(s)\\,ds$（積分順序の交換）．これを $0$ とおく：\n\\[ -\\frac w2\\cdot\\frac{L^4}{64}+\\frac{wL}{2}\\int_a^{L/2}s(s-a)\\,ds=0,\\qquad \\int_a^{L/2}s(s-a)\\,ds=\\frac{L^3}{24}-\\frac{aL^2}{8}+\\frac{a^3}{6}. \\]\n$u=a/L$ として $\\dfrac1{24}-\\dfrac u8+\\dfrac{u^3}{6}=\\dfrac1{64}$，すなわち\n\\[ \\boldsymbol{32u^3-24u+5=0}. \\]\n$0<u<1/2$ の根は (1) の値 $\\frac12(1-1/\\sqrt3)$ とわずかに異なり（代入すると左辺は $0$ にならない），目的（端面の向きか，高さの揃い方か）によって最適支点は変わる．\n\n(3) $a=0$ では $N=\\frac w2x(L-x)$ で，$v(0)=0$ より $\\lambda=v(L/2)=\\dfrac1{EI}\\displaystyle\\int_0^{L/2}s\\cdot\\frac w2 s(L-s)\\,ds=\\frac{w}{2EI}\\left(\\frac{L^4}{24}-\\frac{L^4}{64}\\right)=\\boldsymbol{\\frac{5wL^4}{384EI}}$．長方形断面では $w\\propto h$，$I\\propto h^3$ なので $\\lambda\\propto h^{-2}$，厚さ2倍でたわみは $\\boldsymbol{1/4}$ 倍．"
    }
   ],
   "idea": {
@@ -913,7 +913,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) a/L：(1-1/sqrt(3))/2\n(2) 記述：32u^3-24u+5=0\n(3) λ：5 w L^4/(384 E I) ; 倍率：1/4"
   },
   "methods": [],
   "tags": [
@@ -946,16 +946,16 @@
   "theme": "角加速度で回転する平板の慣性力によるたわみ",
   "topic": "角加速度で回転する平板の慣性力によるたわみ",
   "statement": {
-   "tex": "長さ $l$（回転軸から先端までの距離），幅 $b$，厚さ $h\\ (h\\ll b,l)$ の長方形の鋼板の一辺（幅 $b$ の辺）を鉛直な回転軸に固定し，板面が軸を含むようにする．軸を一定の角加速度 $\\beta$ で回し始めると，板は慣性力で板面に垂直にわずかにたわむ（重力の影響は考えない）．鋼のヤング率 $E=2.0\\times10^{11}\\,\\mathrm{Pa}$，剛性率 $G=8.0\\times10^{10}\\,\\mathrm{Pa}$，密度 $\\rho=7.8\\times10^{3}\\,\\mathrm{kg/m^3}$，$g=9.8\\,\\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 板の先端のたわみ $\\lambda$ を求め，幅 $b$ によらないことを示せ．\n\\item 曲げによる表面ひずみの最大値 $\\varepsilon_{\\max}$ を求めよ．\n\\item $l=0.50\\,\\mathrm{m}$，$h=2.0\\,\\mathrm{mm}$ のとき，$\\varepsilon_{\\max}\\le1.0\\times10^{-3}$ となる最大の $\\beta$ と，そのときの $\\lambda$ を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $l$（回転軸から先端までの距離），幅 $b$，厚さ $h\\ (h\\ll b,l)$ の長方形の鋼板の一辺（幅 $b$ の辺）を鉛直な回転軸に固定し，板面が軸を含むようにする．軸を一定の角加速度 $\\beta$ で回し始めると，板は慣性力で板面に垂直にわずかにたわむ（重力の影響は考えない）．板のヤング率を $E$，密度を $\\rho$ とする．\n\\begin{enumerate}\n\\item 板の先端のたわみ $\\lambda$ を求め，幅 $b$ によらないことを示せ．\n\\item 曲げによる表面ひずみの最大値 $\\varepsilon_{\\max}$ を求めよ．\n\\item 表面ひずみを許容値 $\\varepsilon_0$ 以下に保つ（$\\varepsilon_{\\max}\\le\\varepsilon_0$）ための最大の角加速度 $\\beta_0$ と，そのときの先端のたわみ $\\lambda$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\lambda=\\dfrac{11\\rho\\beta l^5}{10Eh^2}$　(2) $\\varepsilon_{\\max}=\\dfrac{2\\rho\\beta l^3}{Eh}$（軸の付け根）　(3) $\\beta\\approx2.1\\times10^2\\,\\mathrm{rad/s^2}$，$\\lambda\\approx6.9\\,\\mathrm{cm}$"
+   "tex": "(1) $\\lambda=\\dfrac{11\\rho\\beta l^5}{10Eh^2}$　(2) $\\varepsilon_{\\max}=\\dfrac{2\\rho\\beta l^3}{Eh}$（軸の付け根）　(3) $\\beta_0=\\dfrac{\\varepsilon_0Eh}{2\\rho l^3}$，$\\lambda=\\dfrac{11\\varepsilon_0l^2}{20h}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "軸からの距離 $\\xi$ の部分は加速度 $\\beta\\xi$ で運動するので，板には軸方向単位長さあたり $q(\\xi)=\\rho hb\\beta\\xi$ の慣性力（に相当する曲げ荷重）が働く．位置 $x$ の断面の曲げモーメント：\n\\[ N(x)=\\int_x^l q(\\xi)(\\xi-x)\\,d\\xi=\\rho hb\\beta\\left(\\frac{l^3}{3}-\\frac{l^2x}{2}+\\frac{x^3}{6}\\right). \\]\n$I=bh^3/12$．\n\n(1) $y''=N/(EI)$，$y(0)=y'(0)=0$ より $\\lambda=\\displaystyle\\int_0^l(l-x)\\frac{N(x)}{EI}dx$．\n\\[ \\int_0^l(l-x)\\left(\\frac{l^3}{3}-\\frac{l^2x}{2}+\\frac{x^3}{6}\\right)dx=\\left(\\frac16-\\frac1{12}+\\frac1{120}\\right)l^5=\\frac{11}{120}l^5. \\]\n\\[ \\lambda=\\frac{12\\rho\\beta}{Eh^2}\\cdot\\frac{11l^5}{120}=\\frac{11\\rho\\beta l^5}{10Eh^2}. \\]\n荷重も曲げ剛性も $b$ に比例するので $b$ は消える．\n\n(2) 最大モーメントは付け根 $N(0)=\\rho hb\\beta l^3/3$．$\\varepsilon_{\\max}=\\dfrac{h}{2}\\dfrac{N(0)}{EI}=\\dfrac{2\\rho\\beta l^3}{Eh}$．\n\n(3) $\\beta_{\\max}=\\dfrac{\\varepsilon_0Eh}{2\\rho l^3}=\\dfrac{10^{-3}\\cdot2.0\\times10^{11}\\cdot2.0\\times10^{-3}}{2\\cdot7.8\\times10^3\\cdot0.125}\\approx2.05\\times10^2\\,\\mathrm{rad/s^2}$．\nこのとき $\\lambda=\\dfrac{11\\rho\\beta l^5}{10Eh^2}\\approx0.069\\,\\mathrm{m}$（$l$ の約14\\%で，「小さなたわみ」の近似はぎりぎりである）．"
+    "tex": "軸からの距離 $\\xi$ の部分は加速度 $\\beta\\xi$ で運動するので，板には軸方向単位長さあたり $q(\\xi)=\\rho hb\\beta\\xi$ の慣性力（に相当する曲げ荷重）が働く．位置 $x$ の断面の曲げモーメント：\n\\[ N(x)=\\int_x^l q(\\xi)(\\xi-x)\\,d\\xi=\\rho hb\\beta\\left(\\frac{l^3}{3}-\\frac{l^2x}{2}+\\frac{x^3}{6}\\right). \\]\n$I=bh^3/12$．\n\n(1) $y''=N/(EI)$，$y(0)=y'(0)=0$ より $\\lambda=\\displaystyle\\int_0^l(l-x)\\frac{N(x)}{EI}dx$．\n\\[ \\int_0^l(l-x)\\left(\\frac{l^3}{3}-\\frac{l^2x}{2}+\\frac{x^3}{6}\\right)dx=\\left(\\frac16-\\frac1{12}+\\frac1{120}\\right)l^5=\\frac{11}{120}l^5. \\]\n\\[ \\lambda=\\frac{12\\rho\\beta}{Eh^2}\\cdot\\frac{11l^5}{120}=\\boldsymbol{\\frac{11\\rho\\beta l^5}{10Eh^2}}. \\]\n荷重も曲げ剛性も $b$ に比例するので $b$ は消える．\n\n(2) 最大モーメントは付け根 $N(0)=\\rho hb\\beta l^3/3$．$\\varepsilon_{\\max}=\\dfrac{h}{2}\\dfrac{N(0)}{EI}=\\boldsymbol{\\dfrac{2\\rho\\beta l^3}{Eh}}$．\n\n(3) $\\varepsilon_{\\max}=\\varepsilon_0$ とおいて\n\\[ \\beta_0=\\boldsymbol{\\frac{\\varepsilon_0Eh}{2\\rho l^3}}. \\]\nこれを (1) に代入すると\n\\[ \\lambda=\\frac{11\\rho l^5}{10Eh^2}\\cdot\\frac{\\varepsilon_0Eh}{2\\rho l^3}=\\boldsymbol{\\frac{11\\varepsilon_0l^2}{20h}}. \\]\n$\\lambda/l=\\frac{11}{20}\\varepsilon_0\\,(l/h)$ で，$\\varepsilon_0$ が小さくても $l/h$ が大きい薄板ではたわみが長さに比べて無視できなくなり，「小さなたわみ」の近似が破れうる．"
    }
   ],
   "idea": {
@@ -963,7 +963,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\lambda$：((11 ρ β l ^(5))/(10 E h ^(2)))\n(2) $\\varepsilon_{\\max}$：((2 ρ β l ^(3))/(E h))\n(3) $\\beta$ [rad/s²]：≈2.1e2 ; $\\lambda$ [cm]：≈6.9"
+   "spec": "(1) λ：11 ρ β l^5/(10 E h^2)\n(2) ε_m：2 ρ β l^3/(E h)\n(3) β_0：ε_0 E h/(2 ρ l^3) ; λ：11 ε_0 l^2/(20 h)"
   },
   "methods": [],
   "tags": [
@@ -996,16 +996,16 @@
   "theme": "軸圧縮と横荷重を同時に受けるはり（ビーム・コラム）",
   "topic": "軸圧縮と横荷重を同時に受けるはり（ビーム・コラム）",
   "statement": {
-   "tex": "長さ $L$，曲げ剛性 $EI$ の両端単純支持ばりが，両端で軸方向の圧縮力 $N$ を受けている．$k=\\sqrt{N/EI}$，$u=kL/2$，オイラーの座屈荷重を $N_E=\\pi^2EI/L^2$ とする．\n\\begin{enumerate}\n\\item はりにもともと $w_0(x)=a\\sin(\\pi x/L)$ の初期たわみがあるとき，圧縮後の全たわみの中央の値を $a,\\ N,\\ N_E$ で表せ．曲げモーメントは $EI(w-w_0)''=-Nw$ で決まる．\n\\item 初期たわみはなく，中央に横荷重 $Q$ がかかる場合，中央のたわみ $\\delta$ を $Q,\\ N,\\ k,\\ u$ で表せ．\n\\item (2) の $\\delta$ と，軸力がないときのたわみ $\\delta_0=QL^3/(48EI)$ との比を $\\chi(u)$ とする．$\\chi$ を $u$ で表し，$N=N_E/2$ での値を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $L$，曲げ剛性 $EI$ の両端単純支持ばりが，両端で軸方向の圧縮力 $N$ を受けている．$k=\\sqrt{N/EI}$，$u=kL/2$，オイラーの座屈荷重を $N_E=\\pi^2EI/L^2$ とする．\n\\begin{enumerate}\n\\item はりにもともと $w_0(x)=a\\sin(\\pi x/L)$ の初期たわみがあるとき，圧縮後の全たわみの中央の値を $a,\\ N,\\ N_E$ で表せ．曲げモーメントは $EI(w-w_0)''=-Nw$ で決まる．\n\\item 初期たわみはなく，中央に横荷重 $Q$ がかかる場合，中央のたわみ $\\delta$ を $Q,\\ N,\\ k,\\ u$ で表せ．\n\\item (2) の $\\delta$ と，軸力がないときのたわみ $\\delta_0=QL^3/(48EI)$ との比を $\\chi(u)$ とする．$\\chi$ を $u$ で表せ．また $u\\ll1$ のとき $\\chi$ を $u^2$ の項まで展開し，$1/(1-N/N_E)$ の展開と比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{a}{1-N/N_E}$ (2) $\\delta=\\dfrac{Q(\\tan u-u)}{2kN}$ (3) $\\chi=\\dfrac{3(\\tan u-u)}{u^3}$，$N=N_E/2$ で $\\chi\\approx1.99$"
+   "tex": "(1) $\\dfrac{a}{1-N/N_E}$ (2) $\\delta=\\dfrac{Q(\\tan u-u)}{2kN}$ (3) $\\chi=\\dfrac{3(\\tan u-u)}{u^3}$，$\\chi\\simeq1+\\dfrac{2u^2}{5}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$w=A\\sin(\\pi x/L)$ とおくと $-EI(\\pi/L)^2(A-a)=-NA$，すなわち $N_E(A-a)=NA$ で\n\\[ A=\\boldsymbol{\\frac{a}{1-N/N_E}}. \\]\n$N\\to N_E$ でわずかな初期不整も発散的に増幅される．\n\n左半分 $0\\le x\\le L/2$ で $EIw''+Nw=-Qx/2$（$w$ は荷重の向きを正）．一般解は $w=C_1\\sin kx+C_2\\cos kx-\\dfrac{Qx}{2N}$．$w(0)=0$ より $C_2=0$，対称性 $w'(L/2)=0$ より $C_1k\\cos u=\\dfrac{Q}{2N}$．よって\n\\[ \\delta=w(L/2)=\\frac{Q}{2N}\\left(\\frac{\\tan u}{k}-\\frac{L}{2}\\right)=\\boldsymbol{\\frac{Q(\\tan u-u)}{2kN}}. \\]\n\n$N=EIk^2$，$L=2u/k$ より $\\delta_0=\\dfrac{Q\\cdot8u^3}{48EIk^3}=\\dfrac{Qu^3}{6kN}$．したがって\n\\[ \\boldsymbol{\\chi(u)=\\frac{3(\\tan u-u)}{u^3}}. \\]\n$\\tan u\\approx u+u^3/3+2u^5/15$ より $u\\to0$ で $\\chi\\to1$．$N=N_E/2$ では $u=\\tfrac{\\pi}{2}\\sqrt{1/2}\\approx1.111$，$\\tan u\\approx2.017$ で\n\\[ \\chi\\approx\\frac{3(2.017-1.111)}{1.371}\\approx\\boldsymbol{1.99}. \\]\n近似式 $1/(1-N/N_E)=2$ とよく一致する．軸圧縮下のはりでは，横荷重によるたわみが $1/(1-N/N_E)$ 倍程度に増幅される．"
+    "tex": "$w=A\\sin(\\pi x/L)$ とおくと $-EI(\\pi/L)^2(A-a)=-NA$，すなわち $N_E(A-a)=NA$ で\n\\[ A=\\boldsymbol{\\frac{a}{1-N/N_E}}. \\]\n$N\\to N_E$ でわずかな初期不整も発散的に増幅される．\n\n左半分 $0\\le x\\le L/2$ で $EIw''+Nw=-Qx/2$（$w$ は荷重の向きを正）．一般解は $w=C_1\\sin kx+C_2\\cos kx-\\dfrac{Qx}{2N}$．$w(0)=0$ より $C_2=0$，対称性 $w'(L/2)=0$ より $C_1k\\cos u=\\dfrac{Q}{2N}$．よって\n\\[ \\delta=w(L/2)=\\frac{Q}{2N}\\left(\\frac{\\tan u}{k}-\\frac{L}{2}\\right)=\\boldsymbol{\\frac{Q(\\tan u-u)}{2kN}}. \\]\n\n$N=EIk^2$，$L=2u/k$ より $\\delta_0=\\dfrac{Q\\cdot8u^3}{48EIk^3}=\\dfrac{Qu^3}{6kN}$．したがって\n\\[ \\boldsymbol{\\chi(u)=\\frac{3(\\tan u-u)}{u^3}}. \\]\n$\\tan u\\approx u+u^3/3+2u^5/15$ より\n\\[ \\chi\\simeq\\frac{3(u^3/3+2u^5/15)}{u^3}=\\boldsymbol{1+\\frac{2u^2}{5}}. \\]\n一方 $N/N_E=\\dfrac{k^2L^2}{\\pi^2}=\\dfrac{4u^2}{\\pi^2}$ なので $\\dfrac{1}{1-N/N_E}\\simeq1+\\dfrac{4u^2}{\\pi^2}\\approx1+0.405u^2$ で，係数 $2/5=0.4$ とほとんど一致する．実際 $N=N_E/2$ でも $\\chi\\approx1.99$ で，近似式の $2$ とよく合う．軸圧縮下のはりでは，横荷重によるたわみが $1/(1-N/N_E)$ 倍程度に増幅される．"
    }
   ],
   "idea": {
@@ -1013,7 +1013,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) a/(1-N/N_E)\n(2) δ：Q(tan(u)-u)/(2k N)\n(3) χ：3(tan(u)-u)/u^3 ; χ(N=N_E/2)：≈1.99"
+   "spec": "(1) a/(1-N/N_E)\n(2) δ：Q(tan(u)-u)/(2k N)\n(3) χ：3(tan(u)-u)/u^3 ; 展開：1 + 2 u^2/5"
   },
   "methods": [],
   "tags": [
@@ -1045,16 +1045,16 @@
   "theme": "正弦分布荷重を受ける周辺単純支持の長方形板（ナビエの解）",
   "topic": "正弦分布荷重を受ける周辺単純支持の長方形板（ナビエの解）",
   "statement": {
-   "tex": "辺の長さ $a$（$x$ 方向），$b$（$y$ 方向），厚さ $h$ の長方形の薄板（ヤング率 $E$，ポアソン比 $\\nu$，曲げ剛性 $D=Eh^3/[12(1-\\nu^2)]$）の4辺を単純支持し，分布荷重\n\\[ q(x,y)=q_0\\sin\\frac{\\pi x}{a}\\sin\\frac{\\pi y}{b} \\]\nを加える．たわみ $w$ は $D\\nabla^4w=q$ を満たし，曲げモーメントは $M_x=-D\\left(\\dfrac{\\partial^2w}{\\partial x^2}+\\nu\\dfrac{\\partial^2w}{\\partial y^2}\\right)$ である．\n\\begin{enumerate}\n\\item $w=W\\sin\\dfrac{\\pi x}{a}\\sin\\dfrac{\\pi y}{b}$ とおいて振幅 $W$ を求めよ．\n\\item 正方形板（$a=b$）のとき，中央の曲げモーメント $M_x$ を $q_0,\\ a,\\ \\nu$ で表せ．\n\\item 鋼板（$E=2.0\\times10^{11}\\,\\mathrm{Pa}$，$\\nu=0.30$），$a=b=1.0\\,\\mathrm{m}$，$h=1.0\\,\\mathrm{cm}$，$q_0=1.0\\times10^{3}\\,\\mathrm{Pa}$ のとき，中央のたわみ $W$ と，板の表面の最大曲げ応力 $\\sigma=6M_x/h^2$ を求めよ．\n\\end{enumerate}"
+   "tex": "辺の長さ $a$（$x$ 方向），$b$（$y$ 方向），厚さ $h$ の長方形の薄板（ヤング率 $E$，ポアソン比 $\\nu$，曲げ剛性 $D=Eh^3/[12(1-\\nu^2)]$）の4辺を単純支持し，分布荷重\n\\[ q(x,y)=q_0\\sin\\frac{\\pi x}{a}\\sin\\frac{\\pi y}{b} \\]\nを加える．たわみ $w$ は $D\\nabla^4w=q$ を満たし，曲げモーメントは $M_x=-D\\left(\\dfrac{\\partial^2w}{\\partial x^2}+\\nu\\dfrac{\\partial^2w}{\\partial y^2}\\right)$ である．\n\\begin{enumerate}\n\\item $w=W\\sin\\dfrac{\\pi x}{a}\\sin\\dfrac{\\pi y}{b}$ とおいて振幅 $W$ を求めよ．\n\\item 正方形板（$a=b$）のとき，中央の曲げモーメント $M_x$ を $q_0,\\ a,\\ \\nu$ で表せ．\n\\item 正方形板（$a=b$）の中央のたわみ $W$ と，板の表面の最大曲げ応力 $\\sigma=6M_x/h^2$ を $q_0,\\ a,\\ h,\\ E,\\ \\nu$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $W=\\dfrac{q_0}{\\pi^4D\\left(\\dfrac{1}{a^2}+\\dfrac{1}{b^2}\\right)^2}$ (2) $M_x=\\dfrac{(1+\\nu)q_0a^2}{4\\pi^2}$ (3) $W\\approx1.4\\times10^{-4}\\,\\mathrm{m}$，$\\sigma\\approx2.0\\times10^{6}\\,\\mathrm{Pa}$"
+   "tex": "(1) $W=\\dfrac{q_0}{\\pi^4D\\left(\\dfrac{1}{a^2}+\\dfrac{1}{b^2}\\right)^2}$ (2) $M_x=\\dfrac{(1+\\nu)q_0a^2}{4\\pi^2}$ (3) $W=\\dfrac{3(1-\\nu^2)q_0a^4}{\\pi^4Eh^3}$，$\\sigma=\\dfrac{3(1+\\nu)q_0a^2}{2\\pi^2h^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$\\nabla^2w=-\\pi^2(1/a^2+1/b^2)w$ なので $\\nabla^4w=\\pi^4(1/a^2+1/b^2)^2w$．$D\\nabla^4w=q$ より\n\\[ \\boldsymbol{W=\\frac{q_0}{\\pi^4D\\left(1/a^2+1/b^2\\right)^2}}. \\]\nこの $w$ は4辺で $w=0$，$\\partial^2w/\\partial n^2=0$（モーメント $0$）を満たし，単純支持の条件をすべて満たす．一般の荷重は2重フーリエ級数に展開して各項を重ね合わせればよい（ナビエの解）．\n\n$a=b$ では $W=q_0a^4/(4\\pi^4D)$．中央で $\\partial^2w/\\partial x^2=\\partial^2w/\\partial y^2=-(\\pi/a)^2W$ なので\n\\[ M_x=D\\frac{\\pi^2}{a^2}(1+\\nu)W=\\boldsymbol{\\frac{(1+\\nu)q_0a^2}{4\\pi^2}}. \\]\n\n$D=\\dfrac{2.0\\times10^{11}\\times10^{-6}}{12\\times0.91}\\approx1.83\\times10^{4}\\,\\mathrm{N\\,m}$．\n\\[ W=\\frac{1.0\\times10^{3}}{4\\pi^4\\times1.83\\times10^{4}}\\approx\\boldsymbol{1.4\\times10^{-4}\\,\\mathrm{m}},\\qquad M_x=\\frac{1.3\\times10^{3}}{4\\pi^2}\\approx32.9\\,\\mathrm{N}, \\]\n\\[ \\sigma=\\frac{6\\times32.9}{(0.010)^2}\\approx\\boldsymbol{2.0\\times10^{6}\\,\\mathrm{Pa}}. \\]"
+    "tex": "$\\nabla^2w=-\\pi^2(1/a^2+1/b^2)w$ なので $\\nabla^4w=\\pi^4(1/a^2+1/b^2)^2w$．$D\\nabla^4w=q$ より\n\\[ \\boldsymbol{W=\\frac{q_0}{\\pi^4D\\left(1/a^2+1/b^2\\right)^2}}. \\]\nこの $w$ は4辺で $w=0$，$\\partial^2w/\\partial n^2=0$（モーメント $0$）を満たし，単純支持の条件をすべて満たす．一般の荷重は2重フーリエ級数に展開して各項を重ね合わせればよい（ナビエの解）．\n\n$a=b$ では $W=q_0a^4/(4\\pi^4D)$．中央で $\\partial^2w/\\partial x^2=\\partial^2w/\\partial y^2=-(\\pi/a)^2W$ なので\n\\[ M_x=D\\frac{\\pi^2}{a^2}(1+\\nu)W=\\boldsymbol{\\frac{(1+\\nu)q_0a^2}{4\\pi^2}}. \\]\n\n(3) $a=b$ のとき $W=\\dfrac{q_0a^4}{4\\pi^4D}$ に $D=\\dfrac{Eh^3}{12(1-\\nu^2)}$ を代入して\n\\[ W=\\boldsymbol{\\frac{3(1-\\nu^2)q_0a^4}{\\pi^4Eh^3}}. \\]\n応力は (2) の $M_x$ を使って\n\\[ \\sigma=\\frac{6M_x}{h^2}=\\boldsymbol{\\frac{3(1+\\nu)q_0a^2}{2\\pi^2h^2}}. \\]\nたわみは $(a/h)^3$，応力は $(a/h)^2$ に比例して大きくなり，薄くて広い板ほど急激に弱くなる．"
    }
   ],
   "idea": {
@@ -1062,7 +1062,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) W：q_0/(pi^4 D (1/a^2+1/b^2)^2)\n(2) M_x：(1+ν)q_0 a^2/(4pi^2)\n(3) W [m]：≈1.40e-4 ; σ [Pa]：≈1.98e6"
+   "spec": "(1) W：q_0/(pi^4 D (1/a^2+1/b^2)^2)\n(2) M_x：(1+ν)q_0 a^2/(4pi^2)\n(3) W：3(1-ν^2)q_0 a^4/(pi^4 E h^3) ; σ：3(1+ν)q_0 a^2/(2pi^2 h^2)"
   },
   "methods": [],
   "tags": [
@@ -1094,24 +1094,24 @@
   "theme": "自重による柱の座屈（レイリーの方法と厳密解）",
   "topic": "自重による柱の座屈（レイリーの方法と厳密解）",
   "statement": {
-   "tex": "長さ $L$ のまっすぐな柱（曲げ剛性 $EI$，単位長さあたりの重さ $q$）を，下端 $x=0$ を地面に垂直に固定して立てる．上端 $x=L$ は自由である．柱が長すぎると，自重だけで横に曲がる（座屈する）．横方向のずれを $y(x)$ とする．\n\\begin{enumerate}\n\\item 柱がわずかに曲がると，高さ $x$ の微小部分 $dx$ の傾き $y'$ のために，それより上の部分（重さ $q(L-x)$）は $\\tfrac12y'^2dx$ だけ下がる．これを用いて，曲げに伴う重力のする仕事が\n\\[ W=\\frac{q}{2}\\int_0^L(L-x)\\,y'^2\\,dx \\]\nとなることを示せ．\n\\item 曲げのエネルギー $U=\\dfrac{EI}{2}\\displaystyle\\int_0^Ly''^2dx$ と $W$ が等しくなる条件で座屈が起こる．試行関数 $y=\\delta\\left(1-\\cos\\dfrac{\\pi x}{2L}\\right)$ を用いて，臨界値 $\\dfrac{qL^3}{EI}$ の近似値（レイリーの方法）を厳密な形で求めよ．\n\\item 厳密な扱いでは，傾き $\\theta=y'$ を上端からの距離 $\\xi=L-x$ の関数とみると\n\\[ EI\\frac{d^2\\theta}{d\\xi^2}+q\\xi\\theta=0,\\qquad \\frac{d\\theta}{d\\xi}(0)=0,\\qquad \\theta(L)=0 \\]\nとなり，第1の条件を満たす解は $\\theta=\\sqrt\\xi\\,J_{-1/3}\\!\\left(\\dfrac23\\sqrt{\\dfrac{q}{EI}}\\,\\xi^{3/2}\\right)$（$J_{-1/3}$ はベッセル関数）である．$J_{-1/3}(z)$ の最小の正の零点が $z=1.866$ であることを用いて，臨界値 $\\dfrac{qL^3}{EI}$ を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $L$ のまっすぐな柱（曲げ剛性 $EI$，単位長さあたりの重さ $q$）を，下端 $x=0$ を地面に垂直に固定して立てる．上端 $x=L$ は自由である．柱が長すぎると，自重だけで横に曲がる（座屈する）．横方向のずれを $y(x)$ とする．\n\\begin{enumerate}\n\\item 柱がわずかに曲がると，高さ $x$ の微小部分 $dx$ の傾き $y'$ のために，それより上の部分（重さ $q(L-x)$）は $\\tfrac12y'^2dx$ だけ下がる．これを用いて，曲げに伴う重力のする仕事が\n\\[ W=\\frac{q}{2}\\int_0^L(L-x)\\,y'^2\\,dx \\]\nとなることを示せ．\n\\item 曲げのエネルギー $U=\\dfrac{EI}{2}\\displaystyle\\int_0^Ly''^2dx$ と $W$ が等しくなる条件で座屈が起こる．試行関数 $y=\\delta\\left(1-\\cos\\dfrac{\\pi x}{2L}\\right)$ を用いて，臨界値 $\\dfrac{qL^3}{EI}$ の近似値（レイリーの方法）を厳密な形で求めよ．\n\\item 厳密な扱いでは，傾き $\\theta=y'$ を上端からの距離 $\\xi=L-x$ の関数とみると\n\\[ EI\\frac{d^2\\theta}{d\\xi^2}+q\\xi\\theta=0,\\qquad \\frac{d\\theta}{d\\xi}(0)=0,\\qquad \\theta(L)=0 \\]\nとなり，第1の条件を満たす解は $\\theta=\\sqrt\\xi\\,J_{-1/3}\\!\\left(\\dfrac23\\sqrt{\\dfrac{q}{EI}}\\,\\xi^{3/2}\\right)$（$J_{-1/3}$ はベッセル関数）である．$J_{-1/3}(z)$ の最小の正の零点を $j$ として，臨界値 $\\dfrac{qL^3}{EI}$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 記述 (2) $\\dfrac{qL^3}{EI}=\\dfrac{\\pi^4}{2(\\pi^2-4)}\\approx8.30$ (3) $\\dfrac{qL^3}{EI}\\approx7.84$"
+   "tex": "(1) 記述 (2) $\\dfrac{qL^3}{EI}=\\dfrac{\\pi^4}{2(\\pi^2-4)}$ (3) $\\dfrac{qL^3}{EI}=\\dfrac{9j^2}{4}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "高さ $x$ の要素 $dx$ が傾き $y'$ をもつと，その鉛直方向の長さは $dx\\sqrt{1-y'^2}\\approx dx(1-\\tfrac12y'^2)$ に縮み，それより上の部分はすべて $\\tfrac12y'^2dx$ だけ下がる．上の部分の重さは $q(L-x)$ なので，重力のする仕事は\n\\[ W=\\int_0^Lq(L-x)\\cdot\\frac12y'^2\\,dx=\\boldsymbol{\\frac q2\\int_0^L(L-x)\\,y'^2\\,dx}. \\]\n\n試行関数は固定端条件 $y(0)=y'(0)=0$ と自由端の条件 $y''(L)=0$ を満たす．$\\kappa=\\pi/(2L)$ として $y'=\\delta\\kappa\\sin\\kappa x$，$y''=\\delta\\kappa^2\\cos\\kappa x$．\n\\[ \\int_0^Ly''^2dx=\\delta^2\\kappa^4\\frac L2,\\qquad \\int_0^L(L-x)\\sin^2\\kappa x\\,dx=L^2\\left(\\frac14-\\frac{1}{\\pi^2}\\right). \\]\n$U=W$ より $EI\\kappa^4L/2=q\\kappa^2L^2(\\pi^2-4)/(4\\pi^2)$，整理して\n\\[ \\boldsymbol{\\frac{qL^3}{EI}=\\frac{\\pi^4}{2(\\pi^2-4)}\\approx8.30}. \\]\n\n$\\theta(L)=0$ より $\\dfrac23\\sqrt{\\dfrac{q}{EI}}L^{3/2}=1.866$，すなわち\n\\[ \\frac{qL^3}{EI}=\\left(\\frac32\\times1.866\\right)^2\\approx\\boldsymbol{7.84}. \\]\n（$\\sqrt\\xi J_{-1/3}$ は $\\xi\\to0$ で $\\xi^{0}$ から始まる級数で，$d\\theta/d\\xi(0)=0$ を満たす．$J_{1/3}$ の解は $\\theta(0)=0$ 側を満たし，ここでは不適．）\n\nレイリーの方法の値は厳密値より約 $6\\%$ 大きい．試行関数で計算した $U/W$ は真の固有値の上界を与えるからである（レイリー商の変分原理）．鋼管で見積もると，自重座屈の長さは数十 m から百 m 程度になる．"
+    "tex": "高さ $x$ の要素 $dx$ が傾き $y'$ をもつと，その鉛直方向の長さは $dx\\sqrt{1-y'^2}\\approx dx(1-\\tfrac12y'^2)$ に縮み，それより上の部分はすべて $\\tfrac12y'^2dx$ だけ下がる．上の部分の重さは $q(L-x)$ なので，重力のする仕事は\n\\[ W=\\int_0^Lq(L-x)\\cdot\\frac12y'^2\\,dx=\\boldsymbol{\\frac q2\\int_0^L(L-x)\\,y'^2\\,dx}. \\]\n\n試行関数は固定端条件 $y(0)=y'(0)=0$ と自由端の条件 $y''(L)=0$ を満たす．$\\kappa=\\pi/(2L)$ として $y'=\\delta\\kappa\\sin\\kappa x$，$y''=\\delta\\kappa^2\\cos\\kappa x$．\n\\[ \\int_0^Ly''^2dx=\\delta^2\\kappa^4\\frac L2,\\qquad \\int_0^L(L-x)\\sin^2\\kappa x\\,dx=L^2\\left(\\frac14-\\frac{1}{\\pi^2}\\right). \\]\n$U=W$ より $EI\\kappa^4L/2=q\\kappa^2L^2(\\pi^2-4)/(4\\pi^2)$，整理して\n\\[ \\boldsymbol{\\frac{qL^3}{EI}=\\frac{\\pi^4}{2(\\pi^2-4)}}. \\]\n\n$\\theta(L)=0$ より $\\dfrac23\\sqrt{\\dfrac{q}{EI}}L^{3/2}=j$，すなわち\n\\[ \\frac{qL^3}{EI}=\\left(\\frac{3j}{2}\\right)^2=\\boldsymbol{\\frac{9j^2}{4}}. \\]\n（$\\sqrt\\xi J_{-1/3}$ は $\\xi\\to0$ で $\\xi^{0}$ から始まる級数で，$d\\theta/d\\xi(0)=0$ を満たす．$J_{1/3}$ の解は $\\theta(0)=0$ 側を満たし，ここでは不適．）\n\n$j\\simeq1.866$ なので厳密値は $\\simeq7.84$，レイリーの方法の値 $\\pi^4/[2(\\pi^2-4)]\\simeq8.30$ はこれより約 $6\\%$ 大きい．試行関数で計算した $U/W$ は真の固有値の上界を与えるからである（レイリー商の変分原理）．鋼管で見積もると，自重座屈の長さは数十 m から百 m 程度になる．"
    }
   ],
   "idea": {
-   "tex": "臨界条件は「曲げのエネルギー＝重力のする仕事」．試行関数でレイリー商を計算すると上界 $8.30$，厳密にはエアリー型方程式のベッセル関数解で $7.84$．"
+   "tex": "臨界条件は「曲げのエネルギー＝重力のする仕事」．試行関数でレイリー商を計算すると上界 $\\pi^4/[2(\\pi^2-4)]$，厳密にはエアリー型方程式のベッセル関数解で $9j^2/4$．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述：要素 dx の傾きでそれより上の重さ q(L-x) が y'^2 dx/2 下がる\n(2) qL^3/(EI)：pi^4/(2(pi^2-4))\n(3) qL^3/(EI)：≈7.84"
+   "spec": "(1) 記述：要素 dx の傾きでそれより上の重さ q(L-x) が y'^2 dx/2 下がる\n(2) qL^3/(EI)：pi^4/(2(pi^2-4))\n(3) qL^3/(EI)：9j^2/4"
   },
   "methods": [],
   "tags": [
@@ -1193,16 +1193,16 @@
   "theme": "エラスティカ：座屈後の大たわみと荷重の増加",
   "topic": "エラスティカ：座屈後の大たわみと荷重の増加",
   "statement": {
-   "tex": "長さ $L$，曲げ剛性 $EI$ の伸びない細い柱の両端をピン支持し，圧縮力 $P$ を加える．座屈荷重 $P_{\\mathrm{cr}}=\\pi^2EI/L^2$ を超えると柱は大きくたわむ．弧長 $s$ に沿った柱の傾き角 $\\theta(s)$ は\n\\[ EI\\frac{d^2\\theta}{ds^2}+P\\sin\\theta=0 \\]\nを満たし，端で $\\theta=\\theta_0$，中央で $\\theta=0$ となる．$\\lambda=\\sqrt{P/EI}$，$k=\\sin(\\theta_0/2)$，第1種完全楕円積分を $K(k)=\\displaystyle\\int_0^{\\pi/2}\\frac{d\\phi}{\\sqrt{1-k^2\\sin^2\\phi}}$ とする．\n\\begin{enumerate}\n\\item 第1積分を $\\left(\\dfrac{d\\theta}{ds}\\right)^2=G(\\theta)$ の形に書いたとき，$G(\\theta)$ を $\\lambda,\\ \\theta,\\ \\theta_0$ で表せ．\n\\item 置換 $\\sin(\\theta/2)=k\\sin\\phi$ を用いると，端から中央までの長さが $L/2=K(k)/\\lambda$ となることを示し，$P/P_{\\mathrm{cr}}$ を $K=K(k)$ で表せ．\n\\item $K(k)\\approx\\dfrac{\\pi}{2}\\left(1+\\dfrac{k^2}{4}\\right)$ を用いて，$P/P_{\\mathrm{cr}}$ を $\\theta_0$ の2次まで求めよ．\n\\item 中央のたわみ $\\delta$ は $2k/\\lambda$ で与えられる．$\\theta_0=30^\\circ$ のとき，$P/P_{\\mathrm{cr}}$ と $\\delta/L$ を数値で求めよ（$K(\\sin15^\\circ)\\approx1.598$）．\n\\end{enumerate}"
+   "tex": "長さ $L$，曲げ剛性 $EI$ の伸びない細い柱の両端をピン支持し，圧縮力 $P$ を加える．座屈荷重 $P_{\\mathrm{cr}}=\\pi^2EI/L^2$ を超えると柱は大きくたわむ．弧長 $s$ に沿った柱の傾き角 $\\theta(s)$ は\n\\[ EI\\frac{d^2\\theta}{ds^2}+P\\sin\\theta=0 \\]\nを満たし，端で $\\theta=\\theta_0$，中央で $\\theta=0$ となる．$\\lambda=\\sqrt{P/EI}$，$k=\\sin(\\theta_0/2)$，第1種完全楕円積分を $K(k)=\\displaystyle\\int_0^{\\pi/2}\\frac{d\\phi}{\\sqrt{1-k^2\\sin^2\\phi}}$ とする．\n\\begin{enumerate}\n\\item 第1積分を $\\left(\\dfrac{d\\theta}{ds}\\right)^2=G(\\theta)$ の形に書いたとき，$G(\\theta)$ を $\\lambda,\\ \\theta,\\ \\theta_0$ で表せ．\n\\item 置換 $\\sin(\\theta/2)=k\\sin\\phi$ を用いると，端から中央までの長さが $L/2=K(k)/\\lambda$ となることを示し，$P/P_{\\mathrm{cr}}$ を $K=K(k)$ で表せ．\n\\item $K(k)\\approx\\dfrac{\\pi}{2}\\left(1+\\dfrac{k^2}{4}\\right)$ を用いて，$P/P_{\\mathrm{cr}}$ を $\\theta_0$ の2次まで求めよ．\n\\item 中央のたわみ $\\delta$ は $2k/\\lambda$ で与えられる．$\\delta/L$ を $k,\\ K$ で表せ．また $\\theta_0$ が小さいとき，$\\delta/L$ を $\\theta_0$ の1次まで求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $G(\\theta)=2\\lambda^2(\\cos\\theta-\\cos\\theta_0)$ (2) $\\dfrac{P}{P_{\\mathrm{cr}}}=\\left(\\dfrac{2K}{\\pi}\\right)^2$ (3) $\\dfrac{P}{P_{\\mathrm{cr}}}\\approx1+\\dfrac{\\theta_0^2}{8}$ (4) $P/P_{\\mathrm{cr}}\\approx1.035$，$\\delta/L\\approx0.162$"
+   "tex": "(1) $G(\\theta)=2\\lambda^2(\\cos\\theta-\\cos\\theta_0)$ (2) $\\dfrac{P}{P_{\\mathrm{cr}}}=\\left(\\dfrac{2K}{\\pi}\\right)^2$ (3) $\\dfrac{P}{P_{\\mathrm{cr}}}\\approx1+\\dfrac{\\theta_0^2}{8}$ (4) $\\dfrac{\\delta}{L}=\\dfrac{k}{K}$，$\\dfrac{\\delta}{L}\\approx\\dfrac{\\theta_0}{\\pi}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "方程式に $d\\theta/ds$ をかけて積分し，$\\theta=\\theta_0$ で $d\\theta/ds=0$（端はピンで曲げモーメント $0$）を使うと\n\\[ \\boldsymbol{\\left(\\frac{d\\theta}{ds}\\right)^2=2\\lambda^2(\\cos\\theta-\\cos\\theta_0)}=4\\lambda^2\\left(k^2-\\sin^2\\frac{\\theta}{2}\\right). \\]\n\n$\\sin(\\theta/2)=k\\sin\\phi$ とおくと $\\tfrac12\\cos(\\theta/2)d\\theta=k\\cos\\phi\\,d\\phi$，$\\sqrt{k^2-\\sin^2(\\theta/2)}=k\\cos\\phi$．よって\n\\[ ds=\\frac{d\\theta}{2\\lambda k\\cos\\phi}=\\frac{d\\phi}{\\lambda\\cos(\\theta/2)}=\\frac{d\\phi}{\\lambda\\sqrt{1-k^2\\sin^2\\phi}}. \\]\n$\\theta:\\theta_0\\to0$ は $\\phi:\\pi/2\\to0$ に対応するので $L/2=K(k)/\\lambda$．$P=\\lambda^2EI=4K^2EI/L^2$ より\n\\[ \\boldsymbol{\\frac{P}{P_{\\mathrm{cr}}}=\\left(\\frac{2K(k)}{\\pi}\\right)^2}. \\]\n$k\\to0$ で $K\\to\\pi/2$，$P\\to P_{\\mathrm{cr}}$ となり線形座屈に戻る．\n\n$P/P_{\\mathrm{cr}}\\approx(1+k^2/4)^2\\approx1+k^2/2$，$k\\approx\\theta_0/2$ より $\\boldsymbol{P/P_{\\mathrm{cr}}\\approx1+\\theta_0^2/8}$．座屈後も荷重はわずかに増え続ける（安定な分岐）．\n\n$\\theta_0=30^\\circ$：$k=\\sin15^\\circ\\approx0.2588$，$K\\approx1.598$．\n\\[ \\frac{P}{P_{\\mathrm{cr}}}=\\left(\\frac{2\\times1.598}{\\pi}\\right)^2\\approx\\boldsymbol{1.035},\\qquad \\frac{\\delta}{L}=\\frac{2k/\\lambda}{2K/\\lambda}=\\frac{k}{K}\\approx\\boldsymbol{0.162}. \\]\n近似式は $1+(\\pi/6)^2/8\\approx1.034$．荷重を $3.5\\%$ 増やすだけで，たわみは柱の長さの $16\\%$ にも達する．座屈後の柱がほとんど荷重を増やせないことがわかる．"
+    "tex": "方程式に $d\\theta/ds$ をかけて積分し，$\\theta=\\theta_0$ で $d\\theta/ds=0$（端はピンで曲げモーメント $0$）を使うと\n\\[ \\boldsymbol{\\left(\\frac{d\\theta}{ds}\\right)^2=2\\lambda^2(\\cos\\theta-\\cos\\theta_0)}=4\\lambda^2\\left(k^2-\\sin^2\\frac{\\theta}{2}\\right). \\]\n\n$\\sin(\\theta/2)=k\\sin\\phi$ とおくと $\\tfrac12\\cos(\\theta/2)d\\theta=k\\cos\\phi\\,d\\phi$，$\\sqrt{k^2-\\sin^2(\\theta/2)}=k\\cos\\phi$．よって\n\\[ ds=\\frac{d\\theta}{2\\lambda k\\cos\\phi}=\\frac{d\\phi}{\\lambda\\cos(\\theta/2)}=\\frac{d\\phi}{\\lambda\\sqrt{1-k^2\\sin^2\\phi}}. \\]\n$\\theta:\\theta_0\\to0$ は $\\phi:\\pi/2\\to0$ に対応するので $L/2=K(k)/\\lambda$．$P=\\lambda^2EI=4K^2EI/L^2$ より\n\\[ \\boldsymbol{\\frac{P}{P_{\\mathrm{cr}}}=\\left(\\frac{2K(k)}{\\pi}\\right)^2}. \\]\n$k\\to0$ で $K\\to\\pi/2$，$P\\to P_{\\mathrm{cr}}$ となり線形座屈に戻る．\n\n$P/P_{\\mathrm{cr}}\\approx(1+k^2/4)^2\\approx1+k^2/2$，$k\\approx\\theta_0/2$ より $\\boldsymbol{P/P_{\\mathrm{cr}}\\approx1+\\theta_0^2/8}$．座屈後も荷重はわずかに増え続ける（安定な分岐）．\n\n$L=2K/\\lambda$ なので\n\\[ \\frac{\\delta}{L}=\\frac{2k/\\lambda}{2K/\\lambda}=\\boldsymbol{\\frac{k}{K}}. \\]\n$\\theta_0$ が小さいと $k\\approx\\theta_0/2$，$K\\approx\\pi/2$ より $\\boldsymbol{\\delta/L\\approx\\theta_0/\\pi}$．\n\n(3) と合わせると $P/P_{\\mathrm{cr}}-1\\approx\\frac{\\pi^2}{8}(\\delta/L)^2$ である．荷重の増加はたわみの2乗でしか効かないので，荷重をわずかに増やすだけでたわみは柱の長さの何割にも達する（例えば $\\theta_0=30^\\circ$ で荷重の増加は約 $3.5\\%$ だが $\\delta/L\\approx0.16$）．座屈後の柱はほとんど荷重を増やせない．"
    }
   ],
   "idea": {
@@ -1210,7 +1210,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) G(θ)：2λ^2(cos(θ)-cos(θ_0))\n(2) P/P_cr：(2K/pi)^2\n(3) P/P_cr：1+θ_0^2/8\n(4) P/P_cr：≈1.035 ; δ/L：≈0.162"
+   "spec": "(1) G(θ)：2λ^2(cos(θ)-cos(θ_0))\n(2) P/P_cr：(2K/pi)^2\n(3) P/P_cr：1+θ_0^2/8\n(4) δ/L：k/K ; δ/L：θ_0/pi"
   },
   "methods": [],
   "tags": [

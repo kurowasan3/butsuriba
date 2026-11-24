@@ -11,7 +11,8 @@
   "solution": "(1) $L$ を $\\dot r$，$\\dot\\theta$ で偏微分して $p_r=m\\dot r$，$p_\\theta=mr^2\\dot\\theta$．よって $\\boldsymbol{\\dot r=p_r/m}$，$\\boldsymbol{\\dot\\theta=p_\\theta/(mr^2)}$．$p_\\theta$ は角運動量である．\n\n(2) $\\dot r=p_r/m$，$\\dot\\theta=p_\\theta/(mr^2)$ を代入すると\n\\[H=\\frac{p_r^2}{m}+\\frac{p_\\theta^2}{mr^2}-\\frac{p_r^2}{2m}-\\frac{p_\\theta^2}{2mr^2}+\\frac12kr^2=\\boldsymbol{\\frac{p_r^2}{2m}+\\frac{p_\\theta^2}{2mr^2}+\\frac{1}{2}kr^2}.\\]\n第2項は回転による運動エネルギーで，$r$ を小さくすると大きくなる（遠心力のポテンシャル）．\n\n(3) $p_r=0$，$p_\\theta=M$ として $f(r)=\\dfrac{M^2}{2mr^2}+\\dfrac12kr^2$ を最小にする：\n\\[f'(r)=-\\frac{M^2}{mr^3}+kr=0\\quad\\Rightarrow\\quad \\boldsymbol{r_0=\\left(\\frac{M^2}{mk}\\right)^{1/4}}.\\]\n角速度は $\\dot\\theta=\\dfrac{M}{mr_0^2}=\\dfrac{M}{m}\\sqrt{\\dfrac{mk}{M^2}}=\\boldsymbol{\\sqrt{\\dfrac{k}{m}}}$ で，角運動量によらない．これは等方的なばねでは $x$，$y$ 方向がどちらも角振動数 $\\sqrt{k/m}$ で単振動することと一致する．\n\n次は，正準方程式 $\\dot q=\\partial H/\\partial p$，$\\dot p=-\\partial H/\\partial q$ を使って，円運動のまわりの小さな振動を調べるとよい．",
   "idea": "ハミルトニアンに含まれない座標（循環座標）に共役な運動量は保存する．回転のエネルギーは $r$ の関数（遠心力ポテンシャル）として扱える．",
   "tags": "ハミルトニアン,極座標,循環座標,円運動",
-  "input": "(1) dr/dt：p_r/m ; dθ/dt：p_θ/(m r^2)\n(2) p_r^2/(2m) + p_θ^2/(2m r^2) + k r^2/2\n(3) r_0：(M^2/(m k))^(1/4) ; 角速度：sqrt(k/m)"
+  "input": "(1) dr/dt：p_r/m ; dθ/dt：p_θ/(m r^2)\n(2) p_r^2/(2m) + p_θ^2/(2m r^2) + k r^2/2\n(3) r_0：(M^2/(m k))^(1/4) ; 角速度：sqrt(k/m)",
+  "id": "AM-03-008"
  },
  {
   "tid": "T08-02",
@@ -25,7 +26,8 @@
   "solution": "(1) $\\boldsymbol{p=mR^2\\dot\\theta}$．$H=p\\dot\\theta-L$ に $\\dot\\theta=p/(mR^2)$ を代入して\n\\[\\boldsymbol{H=\\frac{p^2}{2mR^2}-\\frac12mR^2\\Omega^2\\sin^2\\theta-mgR\\cos\\theta}.\\]\n\n(2) 実験室系の運動エネルギーは $T=\\frac12mR^2(\\dot\\theta^2+\\Omega^2\\sin^2\\theta)$，$V=-mgR\\cos\\theta$ なので\n\\[E-H=\\frac12mR^2\\Omega^2\\sin^2\\theta-\\left(-\\frac12mR^2\\Omega^2\\sin^2\\theta\\right)=\\boldsymbol{mR^2\\Omega^2\\sin^2\\theta}.\\]\n$H$ は時間を陽に含まないので $dH/dt=\\partial H/\\partial t=0$ で $\\boldsymbol{H}$ が保存する．$E$ は保存しない（輪を一定の角速度で回す外部の駆動が仕事をする）．$H$ は回転系でのエネルギー（ヤコビ積分）である．\n\n(3) $H$ の $\\theta$ 依存部分 $U(\\theta)=-\\frac12mR^2\\Omega^2\\sin^2\\theta-mgR\\cos\\theta$ の極値：\n\\[U'(\\theta)=mR\\sin\\theta\\,(g-R\\Omega^2\\cos\\theta)=0.\\]\n$\\sin\\theta\\neq0$ の解は $\\boldsymbol{\\cos\\theta_0=\\dfrac{g}{R\\Omega^2}}$ で，$\\cos\\theta_0<1$ より $\\boldsymbol{\\Omega>\\sqrt{g/R}}$ が条件．\n\n(4) $U''(\\theta_0)=-mR^2\\Omega^2\\cos2\\theta_0+mgR\\cos\\theta_0=mR^2\\Omega^2(1-\\cos^2\\theta_0)$．正準方程式 $\\ddot\\theta=-U'(\\theta)/(mR^2)$ を線形化して\n\\[\\omega^2=\\frac{U''(\\theta_0)}{mR^2}=\\Omega^2\\sin^2\\theta_0=\\Omega^2-\\frac{g^2}{R^2\\Omega^2},\\qquad \\boldsymbol{\\omega=\\sqrt{\\Omega^2-\\frac{g^2}{R^2\\Omega^2}}}.\\]\nこのとき $\\theta=0$ は $U''(0)=mR(g-R\\Omega^2)<0$ で不安定になっている．",
   "idea": "拘束が時間に依存すると $H\\ne E$ になりうる．$H$ が時間を陽に含まなければ保存するのは $H$ であり，その $\\theta$ 依存部分が有効ポテンシャルになる．",
   "tags": "ハミルトニアン,ヤコビ積分,回転系,分岐",
-  "input": "(1) dθ/dt：p/(m R^2) ; H：p^2/(2m R^2) - m R^2 Ω^2 sin(θ)^2/2 - m g R cos(θ)\n(2) E-H：m R^2 Ω^2 sin(θ)^2 ; 記述：保存するのは H\n(3) Ω > sqrt(g/R) ; cos(θ_0)：g/(R Ω^2)\n(4) sqrt(Ω^2 - g^2/(R^2 Ω^2))"
+  "input": "(1) dθ/dt：p/(m R^2) ; H：p^2/(2m R^2) - m R^2 Ω^2 sin(θ)^2/2 - m g R cos(θ)\n(2) E-H：m R^2 Ω^2 sin(θ)^2 ; 記述：保存するのは H\n(3) Ω > sqrt(g/R) ; cos(θ_0)：g/(R Ω^2)\n(4) sqrt(Ω^2 - g^2/(R^2 Ω^2))",
+  "id": "AM-03-009"
  },
  {
   "tid": "T08-03",
@@ -39,7 +41,8 @@
   "solution": "(1) $p_\\theta=ml^2\\dot\\theta$，$p_\\phi=ml^2\\sin^2\\theta\\,\\dot\\phi$．$H=p_\\theta\\dot\\theta+p_\\phi\\dot\\phi-L$ より\n\\[\\boldsymbol{H=\\frac{p_\\theta^2}{2ml^2}+\\frac{p_\\phi^2}{2ml^2\\sin^2\\theta}-mgl\\cos\\theta}.\\]\n\n(2) $H$ は $\\phi$ を含まないので $\\dot p_\\phi=-\\partial H/\\partial\\phi=0$．$\\boldsymbol{p_\\phi}$（鉛直軸まわりの角運動量）が保存する．\n\n(3) $p_\\phi$ を定数とみると，$\\theta$ の運動は有効ポテンシャル $U(\\theta)=\\dfrac{p_\\phi^2}{2ml^2\\sin^2\\theta}-mgl\\cos\\theta$ の中の1次元運動．$U'(\\theta_0)=0$：\n\\[-\\frac{p_\\phi^2\\cos\\theta_0}{ml^2\\sin^3\\theta_0}+mgl\\sin\\theta_0=0\\quad\\Rightarrow\\quad \\boldsymbol{p_\\phi=m\\sqrt{\\frac{gl^3}{\\cos\\theta_0}}\\sin^2\\theta_0}.\\]\nこのとき $\\dot\\phi=p_\\phi/(ml^2\\sin^2\\theta_0)=\\sqrt{g/(l\\cos\\theta_0)}$ で，円錐振り子の周知の結果に一致する．\n\n(4) $U''(\\theta_0)=\\dfrac{p_\\phi^2}{ml^2}\\cdot\\dfrac{1+2\\cos^2\\theta_0}{\\sin^4\\theta_0}+mgl\\cos\\theta_0$ に (3) を代入すると\n\\[U''(\\theta_0)=\\frac{mgl}{\\cos\\theta_0}\\left(1+2\\cos^2\\theta_0\\right)+mgl\\cos\\theta_0=\\frac{mgl(1+3\\cos^2\\theta_0)}{\\cos\\theta_0}.\\]\n角振動数は $\\sqrt{U''/(ml^2)}=\\boldsymbol{\\sqrt{\\dfrac{g(1+3\\cos^2\\theta_0)}{l\\cos\\theta_0}}}$．$\\theta_0\\to0$ で $2\\sqrt{g/l}$ となり，$\\dot\\phi\\to\\sqrt{g/l}$ の2倍である（平面振り子を2つの円運動の重ね合わせとみると，楕円軌道の中心が原点にあることに対応）．一般には振動数と回転数の比が無理数で，軌道は閉じずに歳差する．",
   "idea": "循環座標の運動量を定数とみなすと，残りの自由度は有効ポテンシャル中の1次元運動になる．その極小が定常運動，2階微分が微小振動を与える．",
   "tags": "ハミルトニアン,循環座標,球面振り子,有効ポテンシャル",
-  "input": "(1) p_θ^2/(2m l^2) + p_φ^2/(2m l^2 sin(θ)^2) - m g l cos(θ)\n(2) 記述：φ が循環座標なので p_φ（鉛直軸まわりの角運動量）が保存\n(3) m sqrt(g l^3/cos(θ_0)) sin(θ_0)^2\n(4) sqrt(g(1+3cos(θ_0)^2)/(l cos(θ_0)))"
+  "input": "(1) p_θ^2/(2m l^2) + p_φ^2/(2m l^2 sin(θ)^2) - m g l cos(θ)\n(2) 記述：φ が循環座標なので p_φ（鉛直軸まわりの角運動量）が保存\n(3) m sqrt(g l^3/cos(θ_0)) sin(θ_0)^2\n(4) sqrt(g(1+3cos(θ_0)^2)/(l cos(θ_0)))",
+  "id": "AM-03-010"
  },
  {
   "tid": "T08-04",
@@ -53,7 +56,8 @@
   "solution": "(1) $\\boldsymbol{p=me^{\\gamma t}\\dot q}$．$\\dot q=e^{-\\gamma t}p/m$ を $H=p\\dot q-L$ に代入して\n\\[\\boldsymbol{H=e^{-\\gamma t}\\frac{p^2}{2m}+e^{\\gamma t}\\frac{kq^2}{2}}.\\]\n\n(2) $\\dot q=\\partial H/\\partial p=e^{-\\gamma t}p/m$，$\\dot p=-\\partial H/\\partial q=-e^{\\gamma t}kq$．$p=me^{\\gamma t}\\dot q$ を時間微分すると $\\dot p=me^{\\gamma t}(\\ddot q+\\gamma\\dot q)$ なので\n\\[\\boldsymbol{m\\ddot q+m\\gamma\\dot q+kq=0}\\]\n（減衰振動の方程式）．摩擦のある系も，時間に依存するハミルトニアンで書ける（カルディローラ＝金井のハミルトニアン）．\n\n(3) 正準方程式が成り立つとき $dH/dt=\\partial H/\\partial t$ なので\n\\[\\boldsymbol{\\frac{dH}{dt}=-\\frac{\\gamma p^2}{2m}e^{-\\gamma t}+\\frac{\\gamma kq^2}{2}e^{\\gamma t}}.\\]\n$H$ は保存しない．\n\n(4) どんなハミルトニアン（時間依存でもよい）の流れも相空間の体積を保つ（リウヴィルの定理）．実際，$\\partial\\dot q/\\partial q+\\partial\\dot p/\\partial p=0$ である．よって $(q,p)$ 平面での面積は $\\boldsymbol{A_0}$ のまま．$(q,m\\dot q)=(q,e^{-\\gamma t}p)$ は $p$ 方向を $e^{-\\gamma t}$ 倍に縮める写像なので，面積は $\\boldsymbol{A_0e^{-\\gamma t}}$．物理的な速度の空間では集団は縮み（散逸），正準変数の空間では保たれる．",
   "idea": "$dH/dt=\\partial H/\\partial t$．リウヴィルの定理が保証するのは正準変数 $(q,p)$ での体積保存であり，$(q,m\\dot q)$ では成り立たないこともある．",
   "tags": "ハミルトニアン,時間依存,リウヴィルの定理,減衰振動",
-  "input": "(1) dq/dt：p e^(-γ t)/m ; H：e^(-γ t) p^2/(2m) + e^(γ t) k q^2/2\n(2) 記述：m q'' + m γ q' + k q = 0\n(3) -γ p^2 e^(-γ t)/(2m) + γ k q^2 e^(γ t)/2\n(4) (q,p)：A_0 ; (q,m dq/dt)：A_0 e^(-γ t)"
+  "input": "(1) dq/dt：p e^(-γ t)/m ; H：e^(-γ t) p^2/(2m) + e^(γ t) k q^2/2\n(2) 記述：m q'' + m γ q' + k q = 0\n(3) -γ p^2 e^(-γ t)/(2m) + γ k q^2 e^(γ t)/2\n(4) (q,p)：A_0 ; (q,m dq/dt)：A_0 e^(-γ t)",
+  "id": "AM-03-011"
  },
  {
   "tid": "T08-05",
@@ -67,7 +71,8 @@
   "solution": "(1) $\\boldsymbol{p}-q\\boldsymbol{A}=(p_x,\\,p_y-qBx,\\,p_z)$ より\n\\[\\boldsymbol{H=\\frac{p_x^2+(p_y-qBx)^2+p_z^2}{2m}-qEx}.\\]\n$y,z$ を含まないので $\\boldsymbol{p_y,\\ p_z}$ が保存する（$H$ 自身も保存）．ここで $p_y$ は運動学的運動量 $m\\dot y$ ではないことに注意．\n\n(2) $x$ の部分は\n\\[\\frac{(p_y-qBx)^2}{2m}-qEx=\\frac{q^2B^2}{2m}(x-x_0)^2+(\\text{定数}),\\qquad \\boldsymbol{x_0=\\frac{p_y}{qB}+\\frac{mE}{qB^2}}\\]\nと平方完成できる．$\\dfrac{q^2B^2}{2m}=\\dfrac12m\\omega^2$ より角振動数は $\\boldsymbol{\\omega=qB/m}$（サイクロトロン角振動数）．\n\n(3) $\\dot y=\\partial H/\\partial p_y=(p_y-qBx)/m$．$x$ は $x_0$ のまわりに単振動するので時間平均は $\\langle x\\rangle=x_0$ で\n\\[\\langle\\dot y\\rangle=\\frac{p_y-qBx_0}{m}=\\boldsymbol{-\\frac{E}{B}}.\\]\nこれは $\\boldsymbol{E}\\times\\boldsymbol{B}/B^2=(0,-E/B,0)$ のドリフトで，電荷にも質量にもよらない．\n\n(4) $p_y=m\\dot y+qBx=0$（初期条件から）．$x_0=mE/(qB^2)$．原点で $\\dot x=0$ なので原点が単振動の端で，振幅は $x_0$．最大値は $\\boldsymbol{2x_0=\\dfrac{2mE}{qB^2}}$（サイクロイド運動）．",
   "idea": "ゲージを選ぶと循環座標ができ，その運動量で振動の中心が決まる．中心の位置で $\\dot y$ を平均すると $E\\times B$ ドリフトが出る．",
   "tags": "荷電粒子,ベクトルポテンシャル,ドリフト,循環座標",
-  "input": "(1) H：(p_x^2 + (p_y - q B x)^2 + p_z^2)/(2m) - q E x ; 保存量：{p_y, p_z}\n(2) x_0：p_y/(q B) + m E/(q B^2) ; 角振動数：q B/m\n(3) -E/B\n(4) 2m E/(q B^2)"
+  "input": "(1) H：(p_x^2 + (p_y - q B x)^2 + p_z^2)/(2m) - q E x ; 保存量：{p_y, p_z}\n(2) x_0：p_y/(q B) + m E/(q B^2) ; 角振動数：q B/m\n(3) -E/B\n(4) 2m E/(q B^2)",
+  "id": "AM-03-012"
  },
  {
   "tid": "T08-06",
@@ -81,7 +86,8 @@
   "solution": "(1) $\\boldsymbol{p_x=m(\\dot x-\\Omega y)}$，$\\boldsymbol{p_y=m(\\dot y+\\Omega x)}$．これは静止系での運動量（$m\\times$ 静止系の速度）の回転系成分に等しい．\n\n(2) $\\dot x=p_x/m+\\Omega y$，$\\dot y=p_y/m-\\Omega x$ を $H=p_x\\dot x+p_y\\dot y-L$ に代入：\n\\[H=\\frac{p_x^2+p_y^2}{m}+\\Omega(yp_x-xp_y)-\\frac{p_x^2+p_y^2}{2m}+\\frac k2r^2=\\frac{p_x^2+p_y^2}{2m}+\\frac k2r^2-\\Omega(xp_y-yp_x).\\]\nよって $\\boldsymbol{J_z=xp_y-yp_x}$（角運動量）．\n\n(3) 正準方程式から $m\\ddot x-2m\\Omega\\dot y-m\\Omega^2x=-kx$，$m\\ddot y+2m\\Omega\\dot x-m\\Omega^2y=-ky$（コリオリ力・遠心力が現れる）．$z=x+iy\\propto e^{-i\\lambda t}$ とおくと\n\\[\\lambda^2-2\\Omega\\lambda+\\Omega^2-\\omega_0^2=0\\ \\ \\Rightarrow\\ \\ \\lambda=\\Omega\\pm\\omega_0 .\\]\n固有角振動数は $\\boldsymbol{\\omega_0+\\Omega}$ と $\\boldsymbol{\\omega_0-\\Omega}$．静止系では右回り・左回りの円運動がどちらも $\\omega_0$ で回り，回転系ではそれぞれ $\\Omega$ だけずれて見える．\n\n(4) 静止系のエネルギーは $E_{\\mathrm{in}}=\\dfrac{p_x^2+p_y^2}{2m}+\\dfrac k2r^2$（$p$ は静止系の運動量なので）．よって $\\boldsymbol{E_{\\mathrm{in}}-H=\\Omega J_z}$．$H$ と $J_z$ がどちらも保存するので $E_{\\mathrm{in}}$ も保存し，矛盾はない．量子力学では $H=\\hbar\\omega_0(n+1)-\\Omega J_z$ の準位が $J_z$ により分裂する（ゼーマン効果と同じ構造）．",
   "idea": "回転系のハミルトニアンは $H=H_{\\text{静止}}-\\Omega J_z$．回転の向きの異なる円運動の振動数が $\\pm\\Omega$ ずれる．",
   "tags": "回転座標系,コリオリ力,角運動量,ハミルトニアン",
-  "input": "(1) dx/dt：p_x/m + Ω y ; dy/dt：p_y/m - Ω x\n(2) x p_y - y p_x\n(3) {ω_0 + Ω, ω_0 - Ω}\n(4) Ω J_z"
+  "input": "(1) dx/dt：p_x/m + Ω y ; dy/dt：p_y/m - Ω x\n(2) x p_y - y p_x\n(3) {ω_0 + Ω, ω_0 - Ω}\n(4) Ω J_z",
+  "id": "AM-03-013"
  },
  {
   "tid": "T08-07",
@@ -95,7 +101,8 @@
   "solution": "(1) $\\int_0^l\\sin\\frac{n\\pi x}{l}\\sin\\frac{n'\\pi x}{l}dx=\\frac l2\\delta_{nn'}$，$\\int_0^l\\cos\\frac{n\\pi x}{l}\\cos\\frac{n'\\pi x}{l}dx=\\frac l2\\delta_{nn'}$ より\n\\[L=\\sum_n\\left[\\frac{\\rho l}{4}\\dot q_n^2-\\frac{Tl}{4}\\left(\\frac{n\\pi}{l}\\right)^2q_n^2\\right].\\]\n$p_n=\\partial L/\\partial\\dot q_n=\\frac{\\rho l}2\\dot q_n$ で，$H=\\sum_n\\left[\\dfrac{p_n^2}{\\rho l}+\\dfrac{Tl}4\\left(\\dfrac{n\\pi}l\\right)^2q_n^2\\right]$．よって $\\boldsymbol{\\mu=\\rho l/2}$．場のハミルトニアンは独立な調和振動子の和に分解される．\n\n(2) $\\frac12\\mu\\omega_n^2=\\frac{Tl}4\\left(\\frac{n\\pi}l\\right)^2$ より $\\boldsymbol{\\omega_n=\\dfrac{n\\pi}{l}\\sqrt{\\dfrac T\\rho}}$．\n\n(3) $t=0$ で $q_n=0$，$\\dot q_n(0)=\\dfrac2l\\displaystyle\\int_0^lv_0\\sin\\frac{n\\pi x}{l}dx=\\dfrac{2v_0}{n\\pi}\\left(1-(-1)^n\\right)$．奇数 $n$ では $\\dot q_n(0)=\\dfrac{4v_0}{n\\pi}$ で\n\\[E_n=\\frac12\\mu\\dot q_n(0)^2=\\frac{\\rho l}{4}\\cdot\\frac{16v_0^2}{n^2\\pi^2}=\\boldsymbol{\\frac{4\\rho lv_0^2}{n^2\\pi^2}}.\\]\n偶数 $n$ は励起されない（$E_n=0$）．\n\n(4) $E_3/E_1=\\boldsymbol{1/9}$．全エネルギーは\n\\[\\sum_{n\\,\\text{奇数}}\\frac{4\\rho lv_0^2}{n^2\\pi^2}=\\frac{4\\rho lv_0^2}{\\pi^2}\\cdot\\frac{\\pi^2}8=\\frac12\\rho lv_0^2\\]\nで，はじめに与えた運動エネルギー $\\int_0^l\\frac12\\rho v_0^2dx$ と一致する．各基準振動のエネルギーは個別に保存する．",
   "idea": "連続体のハミルトニアンは，基準振動で展開すると独立な調和振動子の和になる（場の量子化の出発点）．",
   "tags": "連続体,場のハミルトニアン,基準振動,弦",
-  "input": "(1) ρ l/2\n(2) n π sqrt(T/ρ)/l\n(3) 4ρ l v_0^2/(n^2 π^2)\n(4) 1/9"
+  "input": "(1) ρ l/2\n(2) n π sqrt(T/ρ)/l\n(3) 4ρ l v_0^2/(n^2 π^2)\n(4) 1/9",
+  "id": "AM-03-014"
  },
  {
   "tid": "T08-08",
@@ -109,7 +116,8 @@
   "solution": "(1) $q_{n+1}=(1-h^2k/m)q_n+(h/m)p_n$，$p_{n+1}=-hkq_n+p_n$ より\n\\[M=\\begin{pmatrix}1-h^2\\omega^2 & h/m\\\\ -hk & 1\\end{pmatrix},\\qquad \\det M=1-h^2\\omega^2+\\frac{h^2k}{m}=\\boldsymbol{1}.\\]\n1自由度の線形写像は $\\det M=1$（$\\{Q,P\\}=1$）なら正準変換で，相空間の面積を保つ．\\textbf{正準変換である}．（$p$ と $q$ を同時に更新する通常のオイラー法では $\\det=1+h^2\\omega^2$ となり，エネルギーが増え続ける．）\n\n(2) $\\mathrm{tr}M=\\boldsymbol{2-h^2\\omega^2}$．$\\det M=1$ の固有値は $\\lambda+1/\\lambda=\\mathrm{tr}M$ を満たし，$|\\mathrm{tr}M|<2$ なら $e^{\\pm i\\theta}$ の形で有界，$|\\mathrm{tr}M|>2$ なら絶対値が1より大きい固有値を持ち発散する．$|2-h^2\\omega^2|<2$ より $\\boldsymbol{0<h<2/\\omega}$．\n\n(3) $2\\cos\\theta=2-h^2\\omega^2$ より $\\boldsymbol{\\tilde\\omega=\\dfrac1h\\arccos\\left(1-\\dfrac{h^2\\omega^2}2\\right)}$．$h\\omega\\ll1$ では $\\tilde\\omega\\approx\\omega(1+h^2\\omega^2/24)$ で，振動数の誤差は $O(h^2)$．\n\n(4) $\\tilde H(q_{n+1},p_{n+1})-\\tilde H(q_n,p_n)$ を展開し，$q_n^2$，$q_np_n$，$p_n^2$ の係数がすべて $0$ になる条件を求めると $\\boldsymbol{a=-\\dfrac{hk}{2m}}$（sympy で確認）．$\\tilde H=H-\\frac{h\\omega^2}{2}qp$ は $H$ と $O(h)$ しか違わないので，エネルギー誤差は長時間たっても有界にとどまる．これがシンプレクティック積分法の利点である．",
   "idea": "正準変換になっている差分法は相空間の面積を保ち，$H$ に近い「修正ハミルトニアン」を厳密に保存する．安定性は $|\\mathrm{tr}M|<2$ で決まる．",
   "tags": "シンプレクティック積分,正準変換,数値計算,安定性",
-  "input": "(1) 行列式：1 ; 記述：正準変換である\n(2) トレース：2 - h^2 ω^2 ; 0<h<2/ω\n(3) arccos(1 - h^2 ω^2/2)/h\n(4) -h k/(2m)"
+  "input": "(1) 行列式：1 ; 記述：正準変換である\n(2) トレース：2 - h^2 ω^2 ; 0<h<2/ω\n(3) arccos(1 - h^2 ω^2/2)/h\n(4) -h k/(2m)",
+  "id": "AM-03-015"
  },
  {
   "tid": "T08-09",
@@ -123,7 +131,8 @@
   "solution": "(1) $\\dfrac{\\partial x}{\\partial x}=1$，$\\dfrac{\\partial H}{\\partial p}=\\dfrac pm$ より $\\boldsymbol{\\{x,H\\}=p/m}$．$\\{p,H\\}=-\\dfrac{\\partial p}{\\partial p}\\dfrac{\\partial H}{\\partial x}=\\boldsymbol{-mg}$．これは $\\dot x=p/m$，$\\dot p=-mg$ にほかならない．\n\n(2) $\\dfrac{df}{dt}=\\{p,H\\}+c=-mg+c=0$ より $\\boldsymbol{c=mg}$．$p+mgt$ は初速度に対応する運動量 $p(0)$ である．\n\n(3) $\\{G,H\\}=m\\{x,H\\}-t\\{p,H\\}=p+mgt$，$\\dfrac{\\partial G}{\\partial t}=-p+2\\alpha t$．和が $0$ になるには $mg+2\\alpha=0$，$\\boldsymbol{\\alpha=-mg/2}$．$G=mx-pt-\\frac12mgt^2$ は $t=0$ での値 $mx(0)$，つまり初期位置を表す保存量である．実際，$x(t)=x(0)+\\frac{p}{m}t+\\frac12gt^2$（$p=p(t)$ で書いた形）と一致する．\n\n保存量が時間を陽に含んでもよいこと，そして保存量が「初期条件」そのものであることがわかる．次は，保存量どうしのポアソン括弧もまた保存量になる（ポアソンの定理）ことを学ぶとよい．",
   "idea": "時間を陽に含む量の時間変化は $\\{f,H\\}+\\partial f/\\partial t$．初期位置・初速度も時間に依存する保存量として書ける．",
   "tags": "ポアソン括弧,保存量,一様重力,時間依存",
-  "input": "(1) {x,H}：p/m ; {p,H}：-m g\n(2) c：m g\n(3) α：-m g/2"
+  "input": "(1) {x,H}：p/m ; {p,H}：-m g\n(2) c：m g\n(3) α：-m g/2",
+  "id": "AM-04-008"
  },
  {
   "tid": "T08-10",
@@ -137,7 +146,8 @@
   "solution": "(1) $\\{x,J_z\\}=\\partial J_z/\\partial p_x=-y$，$\\{y,J_z\\}=\\partial J_z/\\partial p_y=x$．よって $\\boldsymbol{\\delta x=-\\varepsilon y,\\ \\delta y=\\varepsilon x}$（角度 $\\varepsilon$ の回転）．\n\n(2) $\\{p_x,J_z\\}=-\\partial J_z/\\partial x=-p_y$，$\\{p_y,J_z\\}=-\\partial J_z/\\partial y=p_x$．$\\boldsymbol{\\delta p_x=-\\varepsilon p_y,\\ \\delta p_y=\\varepsilon p_x}$．運動量も同じ角度だけ回る．\n\n(3) $\\{x,J_z\\}=-y$，$\\{-y,J_z\\}=-x$，$\\{-x,J_z\\}=y$，… と4回で元に戻る．よって\n\\[x-\\theta y-\\frac{\\theta^2}{2!}x+\\frac{\\theta^3}{3!}y+\\cdots=\\boldsymbol{x\\cos\\theta-y\\sin\\theta}.\\]\n無限小変換を指数関数のように積み重ねると有限の回転になる．\n\n(4) 運動エネルギーは回転で不変なので，ポテンシャル部分だけが寄与する：\n\\[\\{J_z,V\\}=-x\\frac{\\partial V}{\\partial y}+y\\frac{\\partial V}{\\partial x}=-x(2ky)+y(kx)=\\boldsymbol{-kxy}.\\]\n$dJ_z/dt=\\{J_z,H\\}$ はトルクに等しい．ポテンシャルが等方的でないので $J_z$ は保存しない．逆に $\\{J_z,H\\}=0$ なら $H$ は回転で不変で，$J_z$ が保存する（ネーターの定理のハミルトン形式版）．",
   "idea": "$G$ が生成する変換は $\\delta f=\\varepsilon\\{f,G\\}$．角運動量は回転を生成し，$\\{G,H\\}=0$ は「$H$ が対称」と「$G$ が保存」を同時に意味する．",
   "tags": "ポアソン括弧,生成子,角運動量,回転",
-  "input": "(1) δx：-ε y ; δy：ε x\n(2) δp_x：-ε p_y ; δp_y：ε p_x\n(3) x cos(θ) - y sin(θ)\n(4) -k x y"
+  "input": "(1) δx：-ε y ; δy：ε x\n(2) δp_x：-ε p_y ; δp_y：ε p_x\n(3) x cos(θ) - y sin(θ)\n(4) -k x y",
+  "id": "AM-04-009"
  },
  {
   "tid": "T08-11",
@@ -151,7 +161,8 @@
   "solution": "(1) $\\{Q,P\\}=\\dfrac{\\partial Q}{\\partial q}\\dfrac{\\partial P}{\\partial p}-\\dfrac{\\partial Q}{\\partial p}\\dfrac{\\partial P}{\\partial q}=\\boldsymbol{ad-bc}$．線形変換が正準 $\\iff$ 行列式が $1$．\n\n(2) $\\{Q,P\\}=\\cos\\alpha\\cdot\\cos\\alpha-\\dfrac{\\sin\\alpha}{m\\omega}\\cdot(-m\\omega\\sin\\alpha)=\\boldsymbol{1}$．\n\n(3) 調和振動子の解は $q(t)=q\\cos\\omega t+\\dfrac{p}{m\\omega}\\sin\\omega t$，$p(t)=-m\\omega q\\sin\\omega t+p\\cos\\omega t$ なので $\\boldsymbol{\\alpha=\\omega t}$．時間発展そのものが正準変換の1パラメータ族になっている（ハミルトニアンが時間発展の生成子）．\n\n(4) $\\alpha=\\pi/2$ では $Q=p/(m\\omega)$，$P=-m\\omega q$（座標と運動量の入れ替え）．$p=m\\omega Q$，$P=-m\\omega q$ を満たす $F_1$ は $\\boldsymbol{F_1=m\\omega qQ}$：実際 $\\partial F_1/\\partial q=m\\omega Q=p$，$-\\partial F_1/\\partial Q=-m\\omega q=P$．$\\alpha=0$（恒等変換）は $q=Q$ となり第1種母関数では書けないので，$F_2=qP$ を使う．母関数の種類は変換に応じて選ぶ必要がある．",
   "idea": "1自由度の線形変換は行列式が1なら正準．ハミルトン系の時間発展は正準変換で，調和振動子では相空間の回転になる．",
   "tags": "正準変換,母関数,調和振動子,時間発展",
-  "input": "(1) a d - b c\n(2) 1\n(3) ω t\n(4) m ω q Q"
+  "input": "(1) a d - b c\n(2) 1\n(3) ω t\n(4) m ω q Q",
+  "id": "AM-04-010"
  },
  {
   "tid": "T08-12",
@@ -165,7 +176,8 @@
   "solution": "(1) $\\pi_x=p_x+\\frac{qB}2y$，$\\pi_y=p_y-\\frac{qB}2x$．\n\\[\\{\\pi_x,\\pi_y\\}=\\{p_x,-\\tfrac{qB}2x\\}+\\{\\tfrac{qB}2y,p_y\\}=\\frac{qB}2+\\frac{qB}2=\\boldsymbol{qB}.\\]\n一般のゲージでも $\\{\\pi_x,\\pi_y\\}=q(\\partial_xA_y-\\partial_yA_x)=qB_z$ で，ゲージに依存しない．\n\n(2) $\\{x,\\pi_x\\}=1$，$\\{x,\\pi_y\\}=0$ と (1) から\n\\[\\{X,\\pi_x\\}=1+\\frac{\\{\\pi_y,\\pi_x\\}}{qB}=1-1=\\boldsymbol{0},\\qquad \\{X,\\pi_y\\}=0+\\frac{\\{\\pi_y,\\pi_y\\}}{qB}=\\boldsymbol{0}.\\]\n同様に $\\{Y,\\pi_x\\}=\\{Y,\\pi_y\\}=0$．\n\n(3) $\\{x,y\\}=0$，$\\{x,\\pi_x\\}=1$，$\\{\\pi_y,y\\}=-1$ を使って\n\\[\\{X,Y\\}=-\\frac{\\{x,\\pi_x\\}}{qB}+\\frac{\\{\\pi_y,y\\}}{qB}-\\frac{\\{\\pi_y,\\pi_x\\}}{(qB)^2}=-\\frac1{qB}-\\frac1{qB}+\\frac1{qB}=\\boldsymbol{-\\frac{1}{qB}}.\\]\n案内中心の2つの座標は互いに共役な正準変数の組のようにふるまう（量子力学ではランダウ準位の縮退の起源）．\n\n(4) $H$ は $\\pi_x,\\pi_y$ だけの関数なので，(2) より $\\{X,H\\}=\\{Y,H\\}=0$，よって $X,Y$ は保存する（円運動の中心）．粒子までの距離は\n\\[\\sqrt{(x-X)^2+(y-Y)^2}=\\frac{\\sqrt{\\pi_x^2+\\pi_y^2}}{qB}=\\boldsymbol{\\frac{\\sqrt{2mE}}{qB}}\\]\nで，ラーモア半径 $mv/(qB)$ に一致する．",
   "idea": "磁場中では運動学的運動量どうしが可換でない：$\\{\\pi_x,\\pi_y\\}=qB$．それと可換な組合せが案内中心で，これが保存量になる．",
   "tags": "ポアソン括弧,磁場,案内中心,ゲージ",
-  "input": "(1) q B\n(2) {X,π_x}：0 ; {X,π_y}：0\n(3) -1/(q B)\n(4) sqrt(2m E)/(q B)"
+  "input": "(1) q B\n(2) {X,π_x}：0 ; {X,π_y}：0\n(3) -1/(q B)\n(4) sqrt(2m E)/(q B)",
+  "id": "AM-04-011"
  },
  {
   "tid": "T08-13",
@@ -179,7 +191,8 @@
   "solution": "(1) $\\partial L_1/\\partial L_i=\\delta_{i1}$，$\\partial H/\\partial L_j=L_j/I_j$ より\n\\[\\{L_1,H\\}=-\\sum_{j,k}\\varepsilon_{1jk}L_k\\frac{L_j}{I_j}=-\\left(\\frac{L_2L_3}{I_2}-\\frac{L_3L_2}{I_3}\\right)=\\boldsymbol{\\frac{(I_2-I_3)L_2L_3}{I_2I_3}}.\\]\n$L_i=I_i\\omega_i$ と書けば $I_1\\dot\\omega_1=(I_2-I_3)\\omega_2\\omega_3$ で，オイラー方程式である．\n\n(2) $\\partial\\boldsymbol{L}^2/\\partial L_i=2L_i$ なので $\\{\\boldsymbol{L}^2,L_1\\}=-2\\sum_k\\varepsilon_{i1k}L_kL_i=-2(\\varepsilon_{213}L_3L_2+\\varepsilon_{312}L_2L_3)=\\boldsymbol{0}$．$\\boldsymbol{L}^2$ はすべての $L_i$ と可換（カシミール量）で，どんな $H$ に対しても保存する．運動は球面 $\\boldsymbol{L}^2=$ 一定と楕円面 $H=$ 一定の交線上に限られる．\n\n(3) $L_2\\simeq L$ として線形化：$\\dot L_1=\\dfrac{(I_2-I_3)L}{I_2I_3}L_3$，$\\dot L_3=\\dfrac{(I_1-I_2)L}{I_1I_2}L_1$．\n\\[\\lambda^2=\\frac{L^2(I_2-I_3)(I_1-I_2)}{I_1I_2^2I_3}=\\frac{L^2(I_3-I_2)(I_2-I_1)}{I_1I_2^2I_3}>0,\\qquad \\boldsymbol{\\lambda=\\frac{L}{I_2}\\sqrt{\\frac{(I_2-I_1)(I_3-I_2)}{I_1I_3}}}.\\]\n中間軸まわりの回転は不安定である（テニスラケットの定理）．\n\n(4) $L_1\\simeq L$：$\\dot L_2=\\dfrac{(I_3-I_1)L}{I_3I_1}L_3$，$\\dot L_3=\\dfrac{(I_1-I_2)L}{I_1I_2}L_2$．係数の積が負なので振動し，角振動数は\n\\[\\boldsymbol{\\frac{L}{I_1}\\sqrt{\\frac{(I_2-I_1)(I_3-I_1)}{I_2I_3}}}.\\]\n第3軸まわりも同様に安定である．",
   "idea": "剛体の運動は角運動量のリー＝ポアソン括弧で書ける．$\\boldsymbol{L}^2$ はカシミール量．軌道は球面と楕円面の交線で，中間軸の近くでは交線が鞍点を通るので不安定．",
   "tags": "ポアソン括弧,剛体,オイラー方程式,安定性",
-  "input": "(1) (I_2 - I_3) L_2 L_3/(I_2 I_3)\n(2) 0\n(3) (L/I_2) sqrt((I_2 - I_1)(I_3 - I_2)/(I_1 I_3))\n(4) (L/I_1) sqrt((I_2 - I_1)(I_3 - I_1)/(I_2 I_3))"
+  "input": "(1) (I_2 - I_3) L_2 L_3/(I_2 I_3)\n(2) 0\n(3) (L/I_2) sqrt((I_2 - I_1)(I_3 - I_2)/(I_1 I_3))\n(4) (L/I_1) sqrt((I_2 - I_1)(I_3 - I_1)/(I_2 I_3))",
+  "id": "AM-04-012"
  },
  {
   "tid": "T08-14",
@@ -193,7 +206,8 @@
   "solution": "(1) $\\left\\{\\frac{q^2}2,\\frac{p^2}2\\right\\}=q\\cdot p-0=\\boldsymbol{qp}$．同様に $\\{qp,q^2/2\\}=-q^2$，$\\{qp,p^2/2\\}=p^2$ で，$q^2/2,\\ p^2/2,\\ qp/2$ はポアソン括弧について閉じた代数（$\\mathfrak{sl}(2,\\mathbb R)$）をなす．調和振動子・自由粒子・逆さ振り子のハミルトニアンはこの代数の元である．\n\n(2) $\\{q,qp\\}=q$，$\\{p,qp\\}=-p$ より $\\boldsymbol{q(s)=qe^{s},\\ p(s)=pe^{-s}}$．$q$ を引き伸ばし $p$ を縮める「スクイーズ」で，$qp$ と面積は保たれる．\n\n(3) $\\{Q,P\\}=\\frac12\\left(\\frac{\\partial(q+p)}{\\partial q}\\frac{\\partial(p-q)}{\\partial p}-\\frac{\\partial(q+p)}{\\partial p}\\frac{\\partial(p-q)}{\\partial q}\\right)=\\frac12(1+1)=1$ で正準．$QP=\\frac12(q+p)(p-q)=\\frac12(p^2-q^2)$ より $\\boldsymbol{H=QP}$．\n\n(4) (2) と同じ形なので $Q(t)=Q(0)e^{t}$，$P(t)=P(0)e^{-t}$．初期値は $Q(0)=0$，$P(0)=\\sqrt2a$．よって $q=(Q-P)/\\sqrt2$ より\n\\[\\boldsymbol{q(t)=-ae^{-t}}.\\]\n$H=0$（安定多様体上）の初期条件なので，振り子は頂点 $q=0$ に無限の時間をかけて近づく．$Q(0)$ がわずかでもずれると $e^{t}$ で離れていく（リアプノフ指数 $1$）．",
   "idea": "2次の関数のポアソン括弧は閉じた代数をなす．逆さ振り子は正準変換で $H=QP$（双曲型）になり，$q$・$p$ の伸縮として解ける．",
   "tags": "ポアソン括弧,正準変換,逆さ振り子,リー代数",
-  "input": "(1) q p\n(2) q(s)：q e^s ; p(s)：p e^(-s)\n(3) Q P\n(4) -a e^(-t)"
+  "input": "(1) q p\n(2) q(s)：q e^s ; p(s)：p e^(-s)\n(3) Q P\n(4) -a e^(-t)",
+  "id": "AM-04-013"
  },
  {
   "tid": "T08-15",
@@ -207,7 +221,8 @@
   "solution": "(1) $\\{\\pi_x,\\pi_y\\}=qB_z=\\boldsymbol{\\dfrac{qgz}{r^3}}$．$\\{\\pi_i,\\pi_j\\}$ が $\\boldsymbol r$ に依存するので，$\\boldsymbol r\\times\\boldsymbol\\pi$ は角運動量の代数を満たさない．\n\n(2) \\[\\frac{d}{dt}(\\boldsymbol r\\times m\\dot{\\boldsymbol r})=\\boldsymbol r\\times q(\\dot{\\boldsymbol r}\\times\\boldsymbol B)=\\dfrac{qg}{r^3}\\boldsymbol r\\times(\\dot{\\boldsymbol r}\\times\\boldsymbol r)=\\dfrac{qg}{r^3}\\left(r^2\\dot{\\boldsymbol r}-(\\boldsymbol r\\cdot\\dot{\\boldsymbol r})\\boldsymbol r\\right)=qg\\dfrac{d\\hat{\\boldsymbol r}}{dt}.\\]\nよって $\\boldsymbol r\\times\\boldsymbol\\pi-qg\\hat{\\boldsymbol r}$ が保存し，$\\boldsymbol{\\kappa=-qg}$．電磁場自身が角運動量 $-qg\\hat{\\boldsymbol r}$ を担っていると解釈できる．$\\boldsymbol J$ のポアソン括弧は $\\{J_i,J_j\\}=\\varepsilon_{ijk}J_k$ を満たし，$\\boldsymbol J$ が回転の生成子になる．\n\n(3) $\\boldsymbol r\\times\\boldsymbol\\pi\\perp\\hat{\\boldsymbol r}$ なので $\\boldsymbol J\\cdot\\hat{\\boldsymbol r}=-qg$．$\\boldsymbol{\\cos\\beta=-qg/J}$ は一定で，粒子は $\\boldsymbol J$ を軸とする円錐面上を運動する（ポアンカレの円錐）．\n\n(4) 磁気力は仕事をしないので速さ $v$ は一定．また $|\\boldsymbol r\\times\\boldsymbol\\pi|^2=J^2-(qg)^2$ も一定である．遠方では $|\\boldsymbol r\\times\\boldsymbol\\pi|=mvb$．最接近点では $\\boldsymbol r\\cdot\\dot{\\boldsymbol r}=0$ で $|\\boldsymbol r\\times\\boldsymbol\\pi|=mvr_{\\min}$．したがって最接近距離は $\\boldsymbol{b}$ で，単極子の強さによらない（軌道は円錐を平面に展開したときの直線）．",
   "idea": "単極子場では $\\boldsymbol r\\times m\\dot{\\boldsymbol r}$ は保存しないが，場の角運動量 $-qg\\hat{\\boldsymbol r}$ を加えた $\\boldsymbol J$ が保存し，運動は円錐面上の測地線になる．",
   "tags": "磁気単極子,ポアソン括弧,角運動量,保存量",
-  "input": "(1) q g z/r^3\n(2) -q g\n(3) -q g/J\n(4) b"
+  "input": "(1) q g z/r^3\n(2) -q g\n(3) -q g/J\n(4) b",
+  "id": "AM-04-014"
  },
  {
   "tid": "T08-16",
@@ -221,7 +236,8 @@
   "solution": "(1) $\\dot\\rho=\\ddot\\rho=0$ として $\\omega^2\\rho=\\rho^{-3}$，$\\boldsymbol{\\rho_0=\\omega^{-1/2}}$．\n\n(2) $I=\\frac12\\left(\\omega q^2+\\frac{p^2}{\\omega}\\right)=\\boldsymbol{\\dfrac{H}{\\omega}}$．これは作用変数そのもので，$\\omega$ がゆっくり変わるときの断熱不変量 $E/\\omega$ の厳密な拡張になっている．\n\n(3) $\\{I,H\\}=\\dfrac{\\partial I}{\\partial q}p-\\dfrac{\\partial I}{\\partial p}\\omega^2q$．$u=\\rho p-\\dot\\rho q$ とおくと $\\partial I/\\partial q=q/\\rho^2-\\dot\\rho u$，$\\partial I/\\partial p=\\rho u$．また $\\partial I/\\partial t=-q^2\\dot\\rho/\\rho^3+u(\\dot\\rho p-\\ddot\\rho q)$．和をとると\n\\[\\frac{dI}{dt}=\\frac{qp}{\\rho^2}-\\frac{q^2\\dot\\rho}{\\rho^3}+u\\left[-\\dot\\rho p-\\rho\\omega^2q+\\dot\\rho p-\\ddot\\rho q\\right].\\]\n第1・2項は $\\dfrac{q}{\\rho^3}(\\rho p-\\dot\\rho q)=\\dfrac{qu}{\\rho^3}$，第3項は $-uq(\\ddot\\rho+\\omega^2\\rho)=-\\dfrac{uq}{\\rho^3}$（補助方程式を使った）．よって $\\dfrac{dI}{dt}=0$（sympy でも確認）．$I$ は $\\omega(t)$ の変化の速さによらない厳密な保存量（ルイス不変量）である．\n\n(4) $\\{Q,P\\}=\\dfrac{\\partial Q}{\\partial q}\\dfrac{\\partial P}{\\partial p}-\\dfrac{\\partial Q}{\\partial p}\\dfrac{\\partial P}{\\partial q}=\\dfrac1\\rho\\cdot\\rho-0=\\boldsymbol{1}$．$(Q,P)$ は（時間に依存する）正準変数で，$I$ はその平面での半径の2乗の半分．$Q,P$ は位相 $\\int dt/\\rho^2$ で回転し，$q(t)=\\sqrt{2I}\\rho(t)\\cos\\left(\\int_0^t\\frac{dt'}{\\rho^2}+\\delta\\right)$ が一般解を与える．",
   "idea": "時間依存する振動子でも，補助方程式（エルマコフ方程式）の解 $\\rho$ を使った正準変換で $I=\\frac12(Q^2+P^2)$ が厳密な保存量になる．$\\omega$ 一定なら $I=E/\\omega$．",
   "tags": "ポアソン括弧,正準変換,時間依存振動子,ルイス不変量",
-  "input": "(1) 1/sqrt(ω)\n(2) H/ω\n(3) 記述：{I,H}+∂I/∂t を計算し，補助方程式を使うと 0\n(4) 1"
+  "input": "(1) 1/sqrt(ω)\n(2) H/ω\n(3) 記述：{I,H}+∂I/∂t を計算し，補助方程式を使うと 0\n(4) 1",
+  "id": "AM-04-015"
  },
  {
   "tid": "T08-17",
@@ -235,7 +251,8 @@
   "solution": "(1) 運動量の大きさは $\\sqrt{2mE}$ で一定．行きと帰りでそれぞれ $\\sqrt{2mE}\\,L$ ずつ寄与するので $\\boldsymbol{J=2L\\sqrt{2mE}}$．$(x,p)$ 平面で軌道が囲む長方形の面積に等しい．\n\n(2) $\\sqrt{2mE}=J/(2L)$ より $\\boldsymbol{E=\\dfrac{J^2}{8mL^2}}$．なお $dE/dJ=J/(4mL^2)=v/(2L)$ は1秒あたりの往復回数（振動数）になっている．\n\n(3) $J=nh$ を代入して $\\boldsymbol{E_n=\\dfrac{n^2h^2}{8mL^2}}$．これはシュレーディンガー方程式で求めた箱の中の粒子のエネルギー準位と完全に一致する．\n\n(4) $J$ 一定なら $E\\propto1/L^2$ なので $\\boldsymbol{1/4}$ 倍．壁が遠ざかる向きに動くと，壁で跳ね返るたびに粒子は少し減速する．このように，ゆっくりした変化で保たれる量を断熱不変量という．気体を断熱膨張させると冷えることのミクロな説明になっている．\n\n次は，作用変数を一般のポテンシャルで計算し，ハミルトン＝ヤコビ方程式との関係を学ぶとよい．",
   "idea": "作用変数 $J=\\oint p\\,dx$ は相空間の軌道が囲む面積．$J=nh$ が前期量子論の量子化条件で，ゆっくりした変化では $J$ が保存する．",
   "tags": "作用変数,量子化条件,断熱不変量,箱の中の粒子",
-  "input": "(1) 2L sqrt(2m E)\n(2) J^2/(8m L^2)\n(3) n^2 h^2/(8m L^2)\n(4) 1/4倍"
+  "input": "(1) 2L sqrt(2m E)\n(2) J^2/(8m L^2)\n(3) n^2 h^2/(8m L^2)\n(4) 1/4倍",
+  "id": "AM-05-008"
  },
  {
   "tid": "T08-18",
@@ -249,7 +266,8 @@
   "solution": "(1) 代入すると $\\dfrac1{2m}\\left[W'^2+\\alpha^2\\right]+V=E$．よって $x<0$ で $\\boldsymbol{W'=\\sqrt{2mE-\\alpha^2}}$，$x>0$ で $\\boldsymbol{W'=\\sqrt{2m(E-V_0)-\\alpha^2}}$．\n\n(2) $p_y=\\partial S/\\partial y=\\alpha$ はどちらの領域でも同じ（$y$ が循環座標）．運動量の大きさは $p_1=\\sqrt{2mE}$，$p_2=\\sqrt{2m(E-V_0)}$．$\\sin\\theta=p_y/p$ なので\n\\[\\frac{\\sin\\theta_2}{\\sin\\theta_1}=\\frac{p_1}{p_2}=\\boldsymbol{\\sqrt{\\frac{E}{E-V_0}}}>1.\\]\n粒子は法線から離れる向きに曲がる．光のスネルの法則 $n_1\\sin\\theta_1=n_2\\sin\\theta_2$ で屈折率を $n\\propto p$ とおいたものと同じで，$S=$ 一定の面が波面，$\\boldsymbol p=\\nabla S$ が光線にあたる．\n\n(3) $\\sin\\theta_2=1$ となる入射角が臨界角：$\\boldsymbol{\\sin\\theta_c=\\sqrt{\\dfrac{E-V_0}{E}}}$．これは $\\alpha^2>2m(E-V_0)$，すなわち (1) の $W'$ が $x>0$ で実数でなくなる条件と同じ．",
   "idea": "境界に平行な運動量（分離定数）は保存し，運動量の大きさだけが変わる．ハミルトン＝ヤコビ理論は幾何光学（スネルの法則）と同じ構造をもつ．",
   "tags": "ハミルトン＝ヤコビ方程式,変数分離,屈折,幾何光学",
-  "input": "(1) x<0：sqrt(2m E - α^2) ; x>0：sqrt(2m(E - V_0) - α^2)\n(2) sqrt(E/(E - V_0))\n(3) sqrt((E - V_0)/E)"
+  "input": "(1) x<0：sqrt(2m E - α^2) ; x>0：sqrt(2m(E - V_0) - α^2)\n(2) sqrt(E/(E - V_0))\n(3) sqrt((E - V_0)/E)",
+  "id": "AM-05-009"
  },
  {
   "tid": "T08-19",
@@ -263,7 +281,8 @@
   "solution": "(1) $W_r=\\displaystyle\\int\\sqrt{2mE-M^2/r^2}\\,dr$ なので\n\\[\\frac{\\partial W}{\\partial M}=\\phi-\\int\\frac{M\\,dr}{r^2\\sqrt{2mE-M^2/r^2}}=\\phi-\\arccos\\frac{M}{r\\sqrt{2mE}}=\\phi_0.\\]\nよって $r\\cos(\\phi-\\phi_0)=M/\\sqrt{2mE}$ で直線．$\\boldsymbol{d=M/\\sqrt{2mE}}$ は原点から直線までの距離（衝突径数）で，$M=pd$ と一致する．\n\n(2) $M^2$ を $s^2=M^2+2m\\kappa$ に置き換えればよい：$W_r=\\int\\sqrt{2mE-s^2/r^2}\\,dr$．$p_r=0$ となる点が最接近点で $\\boldsymbol{r_{\\min}=\\sqrt{\\dfrac{M^2+2m\\kappa}{2mE}}}$．\n\n(3) $\\partial s/\\partial M=M/s$ に注意して\n\\[\\frac{\\partial W}{\\partial M}=\\phi-\\frac{M}{s}\\arccos\\frac{s}{r\\sqrt{2mE}}=\\phi_0 .\\]\n$r$ が $\\infty$ から $r_{\\min}$ まで動くと $\\arccos$ は $\\pi/2$ から $0$ まで変わるので，$\\phi$ の変化は $\\frac Ms\\cdot\\frac\\pi2$．往復で $\\Delta\\phi=\\pi M/s$．直進なら $\\Delta\\phi=\\pi$ なので，散乱角は\n\\[\\boldsymbol{\\Theta=\\pi\\left(1-\\frac{M}{\\sqrt{M^2+2m\\kappa}}\\right)}.\\]",
   "idea": "ヤコビの定理：完全解 $W(q;\\alpha)$ を分離定数 $\\alpha$ で微分したものが一定，という式がそのまま軌道の方程式になる．",
   "tags": "ハミルトン＝ヤコビ方程式,ヤコビの定理,変数分離,散乱",
-  "input": "(1) M/sqrt(2m E)\n(2) sqrt((M^2 + 2m κ)/(2m E))\n(3) π(1 - M/sqrt(M^2 + 2m κ))"
+  "input": "(1) M/sqrt(2m E)\n(2) sqrt((M^2 + 2m κ)/(2m E))\n(3) π(1 - M/sqrt(M^2 + 2m κ))",
+  "id": "AM-05-010"
  },
  {
   "tid": "T08-20",
@@ -277,7 +296,8 @@
   "solution": "(1) $p_r=\\sqrt{2mE-M^2/r^2-m^2\\omega^2r^2}$．$u=r^2$（$dr=du/(2\\sqrt u)$）とおくと\n\\[J_r=2\\int p_r\\,dr=\\int_{u_1}^{u_2}\\frac{\\sqrt{2mEu-M^2-m^2\\omega^2u^2}}{u}\\,du=m\\omega\\int_{u_1}^{u_2}\\frac{\\sqrt{(u_2-u)(u-u_1)}}{u}\\,du.\\]\n$u_1+u_2=\\frac{2E}{m\\omega^2}$，$u_1u_2=\\frac{M^2}{m^2\\omega^2}$ より $(\\sqrt{u_2}-\\sqrt{u_1})^2=\\frac{2E}{m\\omega^2}-\\frac{2M}{m\\omega}$．よって\n\\[\\boldsymbol{J_r=\\pi\\left(\\frac E\\omega-M\\right)}.\\]\n\n(2) $M=J_\\phi/(2\\pi)$ を代入して $\\boldsymbol{E=\\dfrac{\\omega}{2\\pi}(2J_r+J_\\phi)}$．\n\n(3) $\\boldsymbol{\\omega_r=2\\omega}$，$\\boldsymbol{\\omega_\\phi=\\omega}$．比が整数（$2:1$）なので軌道は閉じる：動径が2回往復する間に1周する，原点を中心とする楕円である．$E$ が $2J_r+J_\\phi$ の組合せにしかよらないのが縮退の表れで，ケプラー問題（$J_r+J_\\phi$ の関数，$\\omega_r=\\omega_\\phi$）と並ぶ閉じた軌道の例（ベルトランの定理）．\n\n(4) $\\boldsymbol{E=\\hbar\\omega(2n_r+n_\\phi)}$．量子力学の正しい結果 $\\hbar\\omega(2n_r+|m|+1)$ とは零点エネルギーの分だけずれる（マスロフ補正で解消される）が，準位の縮退の構造は再現している．",
   "idea": "作用変数で $E$ を表せば，偏微分で各方向の振動数がわかる．$E$ が作用変数の特定の組合せにしかよらないとき振動数が通約的になり，軌道が閉じる．",
   "tags": "作用変数,変数分離,縮退,振動数",
-  "input": "(1) π(E/ω - M)\n(2) ω(2J_r + J_φ)/(2π)\n(3) ω_r：2ω ; ω_φ：ω\n(4) hbar ω(2n_r + n_φ)"
+  "input": "(1) π(E/ω - M)\n(2) ω(2J_r + J_φ)/(2π)\n(3) ω_r：2ω ; ω_φ：ω\n(4) hbar ω(2n_r + n_φ)",
+  "id": "AM-05-011"
  },
  {
   "tid": "T08-21",
@@ -291,7 +311,8 @@
   "solution": "(1) $\\dfrac{p^2}{2m}+\\dfrac12m\\omega^2q^2=\\omega J(\\cos^2w+\\sin^2w)=\\boldsymbol{\\omega J}$．\n\n(2) $\\langle\\sin^4w\\rangle=\\frac38$ より\n\\[\\langle\\lambda q^4\\rangle=\\lambda\\frac{4J^2}{m^2\\omega^2}\\cdot\\frac38=\\boldsymbol{\\frac{3\\lambda J^2}{2m^2\\omega^2}}.\\]\n\n(3) $E(J)=\\omega J+\\dfrac{3\\lambda J^2}{2m^2\\omega^2}$．$\\boldsymbol{\\Omega=\\omega+\\dfrac{3\\lambda J}{m^2\\omega^2}}$．角変数に依存する残りの部分は，母関数 $F=Jw'+\\lambda G(J,w)$ の正準変換で $O(\\lambda^2)$ に押し下げられる（$G$ は $\\omega\\,\\partial G/\\partial w=\\langle\\lambda q^4\\rangle-\\lambda q^4$ から決まる）．\n\n(4) 振幅 $A$ のとき，0次では $J=\\frac12m\\omega A^2$ なので $\\Omega\\approx\\omega+\\dfrac{3\\lambda A^2}{2m\\omega}$，$\\boldsymbol{c=\\dfrac{3\\lambda}{2m\\omega}}$．$\\lambda>0$（硬いばね）なら振幅が大きいほど振動数が上がる．これはリンドシュテット法の結果と一致し，数値計算（$m=\\omega=1$，$\\lambda=0.002$，$A=1$ で $\\Omega=1.00300$）でも確かめられる．",
   "idea": "作用・角変数で書き，摂動を角変数で平均すると，1次のエネルギー $E(J)$ が得られる．振動数は $\\partial E/\\partial J$．",
   "tags": "正準摂動論,作用・角変数,非調和振動子,振動数",
-  "input": "(1) ω J\n(2) 3λ J^2/(2m^2 ω^2)\n(3) ω + 3λ J/(m^2 ω^2)\n(4) 3λ/(2m ω)"
+  "input": "(1) ω J\n(2) 3λ J^2/(2m^2 ω^2)\n(3) ω + 3λ J/(m^2 ω^2)\n(4) 3λ/(2m ω)",
+  "id": "AM-05-012"
  },
  {
   "tid": "T08-22",
@@ -305,7 +326,8 @@
   "solution": "(1) 微小振動では $H=\\dfrac{p_\\theta^2}{2ml^2}+\\dfrac12mgl\\theta^2$．相空間の軌道は半軸 $\\sqrt{2ml^2E}$ と $\\sqrt{2E/(mgl)}$ の楕円で，面積は\n\\[J=\\pi\\sqrt{2ml^2E}\\sqrt{\\frac{2E}{mgl}}=2\\pi E\\sqrt{\\frac lg}=\\boldsymbol{\\frac{2\\pi E}{\\omega}}.\\]\n\n(2) 断熱変化では $J$ が保存するので $E\\propto\\omega\\propto l^{-1/2}$．$E=\\frac12mgl\\theta_0^2$ より $\\theta_0^2\\propto l^{-3/2}$，$\\boldsymbol{\\nu=-3/4}$．\n\n(3) $(1/4)^{-3/4}=4^{3/4}=\\boldsymbol{2\\sqrt2}$ 倍．ただし振り子の振れ幅（長さ）$l\\theta_0\\propto l^{1/4}$ は小さくなる．\n\n(4) $E\\propto l^{-1/2}$ なので $E$ は2倍になり，増加量ははじめのエネルギーに等しい：$\\boldsymbol{\\dfrac12mgl\\theta_0^2}$．このエネルギーは糸を引く力の仕事から来る．張力は振動に同期して変化し，$\\theta$ が小さいとき（おもりが速いとき）に大きい．糸を引く仕事を時間平均すると，おもりを持ち上げる分 $mg\\cdot\\frac34l$ に加えて，この分だけ余分になる．",
   "idea": "ゆっくりした変化では作用変数 $J=2\\pi E/\\omega$ が保存する．$E/\\omega$ 一定から振幅の変化がわかる．",
   "tags": "断熱不変量,作用変数,振り子",
-  "input": "(1) 2π E/ω\n(2) -3/4\n(3) 2sqrt(2)倍\n(4) m g l θ_0^2/2"
+  "input": "(1) 2π E/ω\n(2) -3/4\n(3) 2sqrt(2)倍\n(4) m g l θ_0^2/2",
+  "id": "AM-05-013"
  },
  {
   "tid": "T08-23",
@@ -319,7 +341,8 @@
   "solution": "(1) $H=E$ より $\\boldsymbol p^2c^2=(E+k/r)^2-m^2c^4$．$\\boldsymbol p^2=p_r^2+M^2/r^2$ なので\n\\[\\boldsymbol{p_r^2=\\frac{(E+k/r)^2}{c^2}-m^2c^2-\\frac{M^2}{r^2}}=\\frac{E^2-m^2c^4}{c^2}+\\frac{2Ek}{c^2r}-\\frac{M^2-k^2/c^2}{r^2}.\\]\n（ハミルトン＝ヤコビ方程式 $(\\partial_tS-k/r)^2/c^2=\\ldots$ に $S=W_r+M\\phi-Et$ を入れても同じ．）\n\n(2) $A=\\frac{E^2-m^2c^4}{c^2}$，$B=\\frac{Ek}{c^2}$，$C=M^2-\\frac{k^2}{c^2}$ とおき，$u=1/r$ に変数変換すると $\\phi=-\\int\\frac{M\\,du}{\\sqrt{A+2Bu-Cu^2}}$．1往復で $\\phi$ は $2M\\pi/\\sqrt C$ 増える．よって\n\\[\\boldsymbol{\\Delta\\phi=\\frac{2\\pi M}{\\sqrt{M^2-k^2/c^2}}-2\\pi}>0.\\]\nニュートン力学（$c\\to\\infty$）では $C=M^2$ で $\\Delta\\phi=0$（閉じた楕円）．\n\n(3) $\\left(1-\\frac{k^2}{c^2M^2}\\right)^{-1/2}\\approx1+\\frac{k^2}{2c^2M^2}$ より $\\boldsymbol{\\Delta\\phi\\approx\\dfrac{\\pi k^2}{c^2M^2}}$（順行する近日点移動）．\n\n(4) $N=\\frac{J_r}{2\\pi}+\\sqrt C=\\frac{B}{\\sqrt{-A}}$．両辺を2乗して $N^2(m^2c^2-E^2/c^2)=E^2k^2/c^4$，すなわち $E^2(N^2+k^2/c^2)=m^2c^4N^2$．\n\\[\\boldsymbol{E=\\frac{mc^2}{\\sqrt{1+\\dfrac{k^2}{c^2N^2}}},\\qquad N=\\frac{J_r}{2\\pi}+\\sqrt{M^2-\\frac{k^2}{c^2}}}.\\]\n$J_r=n_rh$，$M=n_\\phi\\hbar$，$k=e^2/(4\\pi\\varepsilon_0)$ とおけば，水素原子の微細構造を与えるゾンマーフェルトの公式になる（ディラック方程式の厳密解と，$n_\\phi\\to j+\\frac12$ の読み替えで一致する）．",
   "idea": "相対論的効果で遠心力項の係数が $M^2\\to M^2-k^2/c^2$ に変わり，動径と角度の振動数がずれて近日点が移動する．作用変数で書けば前期量子論の微細構造公式が得られる．",
   "tags": "ハミルトン＝ヤコビ方程式,相対論,近日点移動,作用変数",
-  "input": "(1) (E + k/r)^2/c^2 - m^2 c^2 - M^2/r^2\n(2) 2π M/sqrt(M^2 - k^2/c^2) - 2π\n(3) π k^2/(c^2 M^2)\n(4) m c^2/sqrt(1 + k^2/(c^2 (J_r/(2π) + sqrt(M^2 - k^2/c^2))^2))"
+  "input": "(1) (E + k/r)^2/c^2 - m^2 c^2 - M^2/r^2\n(2) 2π M/sqrt(M^2 - k^2/c^2) - 2π\n(3) π k^2/(c^2 M^2)\n(4) m c^2/sqrt(1 + k^2/(c^2 (J_r/(2π) + sqrt(M^2 - k^2/c^2))^2))",
+  "id": "AM-05-014"
  },
  {
   "tid": "T08-24",
@@ -333,6 +356,7 @@
   "solution": "(1) $\\partial_x\\psi=(A'+\\frac i\\hbar AS')e^{iS/\\hbar}$，$\\partial_x^2\\psi=\\left(A''+\\frac{2i}\\hbar A'S'+\\frac i\\hbar AS''-\\frac{1}{\\hbar^2}AS'^2\\right)e^{iS/\\hbar}$，$i\\hbar\\partial_t\\psi=(i\\hbar\\dot A-A\\dot S)e^{iS/\\hbar}$．実部を比べ $A$ で割ると\n\\[\\dot S+\\frac{S'^2}{2m}+V-\\frac{\\hbar^2}{2m}\\frac{A''}{A}=0,\\qquad \\boldsymbol{Q=-\\frac{\\hbar^2}{2mA}\\frac{\\partial^2A}{\\partial x^2}}\\]\n（ボームの量子ポテンシャル）．$\\hbar\\to0$ で $S$ はハミルトンの主関数になる．\n\n(2) 定常状態では $\\frac{d}{dx}(A^2p/m)=0$ より $A^2p=$ 一定，$A\\propto p^{-1/2}$，$\\boldsymbol{\\nu=-1/2}$．$|\\psi|^2\\propto1/p\\propto1/v$ は，粒子がその場所にいる時間に比例する古典的な確率密度である．\n\n(3) $\\oint p\\,dx=2\\int_{-a}^{a}\\sqrt{2m(E-\\lambda x^4)}\\,dx$，$a=(E/\\lambda)^{1/4}$．$x=au$ とおくと $\\propto\\sqrt E\\cdot E^{1/4}=E^{3/4}$．よって $E_n\\propto(n+\\frac12)^{4/3}$ で\n\\[\\frac{E_1}{E_0}=\\left(\\frac{3/2}{1/2}\\right)^{4/3}=\\boldsymbol{3^{4/3}}\\approx4.33.\\]\n数値的に厳密に解いた値は約 $3.58$ で，WKB は低い準位では粗いが $n$ が大きいほど正確になる．\n\n(4) $J(E)=\\oint p\\,dx$ とすると $dJ/dE=\\oint\\frac{dx}{v}=T(E)$．$J(E_{n+1})-J(E_n)=2\\pi\\hbar$ より $\\boldsymbol{E_{n+1}-E_n\\approx\\dfrac{2\\pi\\hbar}{T}=\\hbar\\omega_{\\mathrm{cl}}}$．準位間隔は古典的な振動の角振動数に $\\hbar$ をかけたもの（対応原理）．",
   "idea": "$\\psi=Ae^{iS/\\hbar}$ とおくと，シュレーディンガー方程式は「ハミルトン＝ヤコビ方程式＋量子ポテンシャル」と連続の式に分かれる．$\\hbar\\to0$ で古典力学に戻り，作用変数の量子化が WKB 量子化条件になる．",
   "tags": "ハミルトン＝ヤコビ方程式,WKB近似,量子化条件,古典極限",
-  "input": "(1) 記述：Q = -(ħ^2/2m)(A''/A)（量子ポテンシャル）\n(2) -1/2\n(3) 3^(4/3)\n(4) 2π hbar/T"
+  "input": "(1) 記述：Q = -(ħ^2/2m)(A''/A)（量子ポテンシャル）\n(2) -1/2\n(3) 3^(4/3)\n(4) 2π hbar/T",
+  "id": "AM-05-015"
  }
 ]

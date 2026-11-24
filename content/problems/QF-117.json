@@ -107,24 +107,24 @@
   "theme": "1次元イジング鎖の間引き（デシメーション）とくりこみ群の流れ",
   "topic": "1次元イジング鎖の間引き（デシメーション）とくりこみ群の流れ",
   "statement": {
-   "tex": "スピン $s_i=\\pm1$ が1列に並び，隣り合う組ごとにボルツマン因子 $e^{Ks_is_{i+1}}$（$K=J/k_BT>0$）がかかる1次元イジング模型を考える．1つおきのスピン（$s_2,s_4,\\ldots$）について和をとって消すと，残ったスピンだけの同じ形の模型になる：\n\\[\\sum_{s_2=\\pm1}e^{Ks_2(s_1+s_3)}=A\\,e^{K's_1s_3}\\]\n（$A$ は $s_1,s_3$ によらない定数）．格子間隔は2倍になる．この操作をくりこみ群変換という．\n\\begin{enumerate}\n\\item $s_1=s_3$ の場合と $s_1=-s_3$ の場合の比をとり，$K'$ を $K$ で表せ．\n\\item 元の模型では，距離 $r$ だけ離れたスピンの相関は $\\langle s_0s_r\\rangle=(\\tanh K)^r=e^{-r/\\xi}$ である（$\\xi$ は格子間隔を単位とする相関長）．$\\xi$ を $K$ で表し，$K=1$ での値を求めよ．\n\\item (1) の結果は $\\tanh K'=(\\tanh K)^2$ と書き直せる．$t=\\tanh K$（$0\\leq t\\leq1$）の写像 $t\\to t^2$ の固定点をすべて求めよ．\n\\end{enumerate}"
+   "tex": "スピン $s_i=\\pm1$ が1列に並び，隣り合う組ごとにボルツマン因子 $e^{Ks_is_{i+1}}$（$K=J/k_BT>0$）がかかる1次元イジング模型を考える．1つおきのスピン（$s_2,s_4,\\ldots$）について和をとって消すと，残ったスピンだけの同じ形の模型になる：\n\\[\\sum_{s_2=\\pm1}e^{Ks_2(s_1+s_3)}=A\\,e^{K's_1s_3}\\]\n（$A$ は $s_1,s_3$ によらない定数）．格子間隔は2倍になる．この操作をくりこみ群変換という．\n\\begin{enumerate}\n\\item $s_1=s_3$ の場合と $s_1=-s_3$ の場合の比をとり，$K'$ を $K$ で表せ．\n\\item 元の模型では，距離 $r$ だけ離れたスピンの相関は $\\langle s_0s_r\\rangle=(\\tanh K)^r=e^{-r/\\xi}$ である（$\\xi$ は格子間隔を単位とする相関長）．$\\xi$ を $K$ で表せ．また，(1) の結果が $\\tanh K'=(\\tanh K)^2$ と書き直せることを使い，変換後の模型の相関長 $\\xi'$（新しい格子間隔を単位とする）を $\\xi$ で表せ．\n\\item $t=\\tanh K$（$0\\leq t\\leq1$）の写像 $t\\to t^2$ の固定点をすべて求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $K'=\\frac{1}{2}\\ln\\cosh 2K$\n(2) $\\xi=-\\frac{1}{\\ln\\tanh K}$，$K=1$ で $\\xi\\approx3.67$\n(3) $t=0,\\ 1$"
+   "tex": "(1) $K'=\\frac{1}{2}\\ln\\cosh 2K$\n(2) $\\xi=-\\frac{1}{\\ln\\tanh K}$，$\\xi'=\\dfrac{\\xi}{2}$\n(3) $t=0,\\ 1$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $s_1=s_3$ のとき左辺は $e^{2K}+e^{-2K}=2\\cosh2K=Ae^{K'}$，$s_1=-s_3$ のとき $2=Ae^{-K'}$．比をとって $e^{2K'}=\\cosh2K$，\n\\[\\boldsymbol{K'=\\frac12\\ln\\cosh2K}.\\]\n\n(2) $(\\tanh K)^r=e^{r\\ln\\tanh K}$ より $\\boldsymbol{\\xi=-\\dfrac{1}{\\ln\\tanh K}}$．$K=1$ で $\\tanh1=0.7616$，$\\xi=1/0.2723\\approx\\boldsymbol{3.67}$．\n\n変換後は格子間隔が2倍なので，同じ物理的長さを新しい単位で測ると $\\xi'=\\xi/2$ になるはずである．実際 $\\tanh K'=\\tanh^2K$ から $\\ln\\tanh K'=2\\ln\\tanh K$，$\\xi'=\\xi/2$ となり整合する．\n\n(3) $t^2=t$ より $\\boldsymbol{t=0,\\ 1}$．$t=0$（$K=0$，高温）は $\\xi=0$，$t=1$（$K=\\infty$，絶対零度）は $\\xi=\\infty$ の固定点である．$0<t<1$ から出発すると $t\\to t^2\\to t^4\\to\\cdots$ と $0$ に流れるので，有限温度ではつねに無秩序（1次元では相転移がない）．\n\nウィルソンのくりこみ群では，粗視化で結合定数が流れる様子と，その固定点（$\\xi=0$ か $\\infty$）を調べて臨界現象を理解する．次は，場の理論の結合定数の流れを表す $\\beta$ 関数を学ぶ．"
+    "tex": "(1) $s_1=s_3$ のとき左辺は $e^{2K}+e^{-2K}=2\\cosh2K=Ae^{K'}$，$s_1=-s_3$ のとき $2=Ae^{-K'}$．比をとって $e^{2K'}=\\cosh2K$，\n\\[\\boldsymbol{K'=\\frac12\\ln\\cosh2K}.\\]\n\n(2) $(\\tanh K)^r=e^{r\\ln\\tanh K}$ より $\\boldsymbol{\\xi=-\\dfrac{1}{\\ln\\tanh K}}$（たとえば $K=1$ で約 $3.67$）．\n$\\tanh K'=\\tanh^2K$ から $\\ln\\tanh K'=2\\ln\\tanh K$ なので\n\\[\\xi'=-\\frac{1}{\\ln\\tanh K'}=\\boldsymbol{\\frac{\\xi}{2}}.\\]\n変換後は格子間隔が2倍なので，同じ物理的長さを新しい単位で測ると半分になる．くりこみ群変換で物理（相関の長さ）は変わらず，それを測る物差しだけが変わったことと整合する．\n\n(3) $t^2=t$ より $\\boldsymbol{t=0,\\ 1}$．$t=0$（$K=0$，高温）は $\\xi=0$，$t=1$（$K=\\infty$，絶対零度）は $\\xi=\\infty$ の固定点である．$0<t<1$ から出発すると $t\\to t^2\\to t^4\\to\\cdots$ と $0$ に流れるので，有限温度ではつねに無秩序（1次元では相転移がない）．\n\nウィルソンのくりこみ群では，粗視化で結合定数が流れる様子と，その固定点（$\\xi=0$ か $\\infty$）を調べて臨界現象を理解する．次は，場の理論の結合定数の流れを表す $\\beta$ 関数を学ぶ．"
    }
   ],
   "idea": {
-   "tex": "自由度を間引いて同じ形の模型に戻すと結合定数が $K\\to K'$ と流れる．固定点は相関長が $0$ か $\\infty$ の点である．"
+   "tex": "自由度を間引いて同じ形の模型に戻すと結合定数が $K\\to K'$ と流れ，相関長は格子単位で半分になる．固定点は相関長が $0$ か $\\infty$ の点である．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) (1/2)ln(cosh(2K))\n(2) ξ：-1/ln(tanh(K)) ; K=1：≈3.67\n(3) {0, 1}"
+   "spec": "(1) (1/2)ln(cosh(2K))\n(2) ξ：-1/ln(tanh(K)) ; ξ'：ξ/2\n(3) {0, 1}"
   },
   "methods": [],
   "tags": [
@@ -304,16 +304,16 @@
   "theme": "φ⁴ 理論の1ループ β 関数とランダウ極",
   "topic": "φ⁴ 理論の1ループ β 関数とランダウ極",
   "statement": {
-   "tex": "$\\mathcal L=\\frac12(\\partial\\phi)^2-\\frac12m^2\\phi^2-\\frac{\\lambda}{4!}\\phi^4$ の4点関数を1ループで考える．次元正則化（$d=4-\\varepsilon$）と最小引き算（MS）を用いる．1ループの図は $s,\\ t,\\ u$ の3つのチャンネルにあり，各チャンネルの図の発散部分は（対称因子 $\\frac12$ を含めて）$\\dfrac{i\\lambda^2}{16\\pi^2\\varepsilon}$ である．4点の対向項の頂点を $-i\\delta_\\lambda$ とし，裸の結合は $\\lambda_0=\\mu^{\\varepsilon}(\\lambda+\\delta_\\lambda)$ と書ける（$\\mu$ はくりこみスケール．1ループでは場のくりこみは不要）．\n\\begin{enumerate}\n\\item 発散を打ち消す $\\delta_\\lambda$ を $\\lambda,\\ \\varepsilon$ で表せ．\n\\item $\\lambda_0$ が $\\mu$ によらないことから $\\beta(\\lambda)=\\mu\\dfrac{d\\lambda}{d\\mu}$ を $\\lambda^2$ の次数まで求め，$\\varepsilon\\to0$ での値を答えよ．\n\\item $\\mu=\\mu_0$ で $\\lambda=\\lambda_0$ として (2) を解き，$\\lambda(\\mu)$ を求めよ（ここでの $\\lambda_0$ は $\\mu_0$ でのくりこまれた結合を表す）．\n\\item (3) の $\\lambda(\\mu)$ が発散する $\\mu$（ランダウ極）を $\\mu_L$ とする．$\\lambda_0=1$ のとき $\\log_{10}(\\mu_L/\\mu_0)$ を求めよ．\n\\end{enumerate}"
+   "tex": "$\\mathcal L=\\frac12(\\partial\\phi)^2-\\frac12m^2\\phi^2-\\frac{\\lambda}{4!}\\phi^4$ の4点関数を1ループで考える．次元正則化（$d=4-\\varepsilon$）と最小引き算（MS）を用いる．1ループの図は $s,\\ t,\\ u$ の3つのチャンネルにあり，各チャンネルの図の発散部分は（対称因子 $\\frac12$ を含めて）$\\dfrac{i\\lambda^2}{16\\pi^2\\varepsilon}$ である．4点の対向項の頂点を $-i\\delta_\\lambda$ とし，裸の結合は $\\lambda_0=\\mu^{\\varepsilon}(\\lambda+\\delta_\\lambda)$ と書ける（$\\mu$ はくりこみスケール．1ループでは場のくりこみは不要）．\n\\begin{enumerate}\n\\item 発散を打ち消す $\\delta_\\lambda$ を $\\lambda,\\ \\varepsilon$ で表せ．\n\\item $\\lambda_0$ が $\\mu$ によらないことから $\\beta(\\lambda)=\\mu\\dfrac{d\\lambda}{d\\mu}$ を $\\lambda^2$ の次数まで求め，$\\varepsilon\\to0$ での値を答えよ．\n\\item $\\mu=\\mu_0$ で $\\lambda=\\lambda_0$ として (2) を解き，$\\lambda(\\mu)$ を求めよ（ここでの $\\lambda_0$ は $\\mu_0$ でのくりこまれた結合を表す）．\n\\item (3) の $\\lambda(\\mu)$ が発散する $\\mu$（ランダウ極）を $\\mu_L$ とする．$\\mu_L/\\mu_0$ を $\\lambda_0$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\delta_\\lambda=\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}$\n(2) $\\beta=\\frac{3\\lambda^2}{16\\pi^2}$\n(3) $\\lambda(\\mu)=\\frac{\\lambda_0}{1-\\frac{3\\lambda_0}{16\\pi^2}\\ln\\frac{\\mu}{\\mu_0}}$\n(4) $\\approx22.9$"
+   "tex": "(1) $\\delta_\\lambda=\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}$\n(2) $\\beta=\\frac{3\\lambda^2}{16\\pi^2}$\n(3) $\\lambda(\\mu)=\\frac{\\lambda_0}{1-\\frac{3\\lambda_0}{16\\pi^2}\\ln\\frac{\\mu}{\\mu_0}}$\n(4) $\\dfrac{\\mu_L}{\\mu_0}=\\exp\\left(\\dfrac{16\\pi^2}{3\\lambda_0}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 3チャンネルの発散の和は $\\dfrac{3i\\lambda^2}{16\\pi^2\\varepsilon}$．これを $-i\\delta_\\lambda$ で打ち消すので\n\\[\\boldsymbol{\\delta_\\lambda=\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}}.\\]\n\n(2) $\\ln\\lambda_0=\\varepsilon\\ln\\mu+\\ln\\left(\\lambda+\\dfrac{3\\lambda^2}{16\\pi^2\\varepsilon}\\right)$ を $\\ln\\mu$ で微分して $0$ とおく：\n\\[0=\\varepsilon\\left(\\lambda+\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}\\right)+\\beta\\left(1+\\frac{6\\lambda}{16\\pi^2\\varepsilon}\\right).\\]\n$\\lambda^2$ の次数まで $\\beta=-\\varepsilon\\lambda+\\dfrac{3\\lambda^2}{16\\pi^2}$．$\\varepsilon\\to0$ で $\\boldsymbol{\\beta=\\dfrac{3\\lambda^2}{16\\pi^2}}$．\n\n(3) $\\dfrac{d\\lambda}{\\lambda^2}=\\dfrac{3}{16\\pi^2}d\\ln\\mu$ を積分して $\\dfrac1{\\lambda_0}-\\dfrac1\\lambda=\\dfrac{3}{16\\pi^2}\\ln\\dfrac{\\mu}{\\mu_0}$，\n\\[\\boldsymbol{\\lambda(\\mu)=\\frac{\\lambda_0}{1-\\dfrac{3\\lambda_0}{16\\pi^2}\\ln\\dfrac{\\mu}{\\mu_0}}}.\\]\n\n(4) 分母 $=0$ より $\\ln\\dfrac{\\mu_L}{\\mu_0}=\\dfrac{16\\pi^2}{3\\lambda_0}=52.64$，$\\log_{10}\\dfrac{\\mu_L}{\\mu_0}=\\dfrac{52.64}{2.303}\\approx\\boldsymbol{22.9}$．\n\n$\\beta>0$ なので結合は高エネルギーで強くなる．ランダウ極は1ループの近似を極端に外挿した結果で，実際には $\\lambda$ が大きくなると摂動論は使えない．4次元の $\\phi^4$ 理論は連続極限で自由場になる（自明性）と考えられており，有限のカットオフをもつ有効理論として理解される．"
+    "tex": "(1) 3チャンネルの発散の和は $\\dfrac{3i\\lambda^2}{16\\pi^2\\varepsilon}$．これを $-i\\delta_\\lambda$ で打ち消すので\n\\[\\boldsymbol{\\delta_\\lambda=\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}}.\\]\n\n(2) $\\ln\\lambda_0=\\varepsilon\\ln\\mu+\\ln\\left(\\lambda+\\dfrac{3\\lambda^2}{16\\pi^2\\varepsilon}\\right)$ を $\\ln\\mu$ で微分して $0$ とおく：\n\\[0=\\varepsilon\\left(\\lambda+\\frac{3\\lambda^2}{16\\pi^2\\varepsilon}\\right)+\\beta\\left(1+\\frac{6\\lambda}{16\\pi^2\\varepsilon}\\right).\\]\n$\\lambda^2$ の次数まで $\\beta=-\\varepsilon\\lambda+\\dfrac{3\\lambda^2}{16\\pi^2}$．$\\varepsilon\\to0$ で $\\boldsymbol{\\beta=\\dfrac{3\\lambda^2}{16\\pi^2}}$．\n\n(3) $\\dfrac{d\\lambda}{\\lambda^2}=\\dfrac{3}{16\\pi^2}d\\ln\\mu$ を積分して $\\dfrac1{\\lambda_0}-\\dfrac1\\lambda=\\dfrac{3}{16\\pi^2}\\ln\\dfrac{\\mu}{\\mu_0}$，\n\\[\\boldsymbol{\\lambda(\\mu)=\\frac{\\lambda_0}{1-\\dfrac{3\\lambda_0}{16\\pi^2}\\ln\\dfrac{\\mu}{\\mu_0}}}.\\]\n\n(4) 分母 $=0$ より $\\ln\\dfrac{\\mu_L}{\\mu_0}=\\dfrac{16\\pi^2}{3\\lambda_0}$，\n\\[\\boldsymbol{\\frac{\\mu_L}{\\mu_0}=\\exp\\left(\\frac{16\\pi^2}{3\\lambda_0}\\right)}.\\]\n$\\lambda_0=1$ でも $\\ln(\\mu_L/\\mu_0)\\approx52.6$，すなわち $\\mu_L/\\mu_0\\approx10^{23}$ と途方もなく大きい．結合が小さいほどランダウ極は指数関数的に遠ざかる．\n\n$\\beta>0$ なので結合は高エネルギーで強くなる．ランダウ極は1ループの近似を極端に外挿した結果で，実際には $\\lambda$ が大きくなると摂動論は使えない．4次元の $\\phi^4$ 理論は連続極限で自由場になる（自明性）と考えられており，有限のカットオフをもつ有効理論として理解される．"
    }
   ],
   "idea": {
@@ -321,7 +321,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 3λ^2/(16pi^2 ε)\n(2) 3λ^2/(16pi^2)\n(3) λ_0/(1-3λ_0 ln(μ/μ_0)/(16pi^2))\n(4) ≈22.9"
+   "spec": "(1) 3λ^2/(16pi^2 ε)\n(2) 3λ^2/(16pi^2)\n(3) λ_0/(1-3λ_0 ln(μ/μ_0)/(16pi^2))\n(4) exp(16 pi^2/(3λ_0))"
   },
   "methods": [],
   "tags": [
@@ -354,16 +354,16 @@
   "theme": "QED の β 関数：ワード恒等式と光子の場のくりこみ",
   "topic": "QED の β 関数：ワード恒等式と光子の場のくりこみ",
   "statement": {
-   "tex": "QED を次元正則化（$d=4-\\varepsilon$）と MS スキームでくりこむ．頂点・電子の場・光子の場のくりこみ定数を $Z_1,\\ Z_2,\\ Z_3$ とすると，裸の電荷は\n\\[e_0=\\mu^{\\varepsilon/2}Z_1Z_2^{-1}Z_3^{-1/2}\\,e\\]\nである．ワード＝高橋恒等式により $Z_1=Z_2$ が成り立つ．電荷 $e$ のディラック粒子1種類の真空偏極から $Z_3=1-\\dfrac{e^2}{6\\pi^2\\varepsilon}$ が得られる．\n\\begin{enumerate}\n\\item $\\beta(e)=\\mu\\dfrac{de}{d\\mu}$ を $e^3$ の次数まで求め，$\\varepsilon\\to0$ での値を答えよ．\n\\item 微細構造定数 $\\alpha=\\dfrac{e^2}{4\\pi}$ について $\\mu\\dfrac{d\\alpha}{d\\mu}$ を $\\alpha$ で表せ．\n\\item 荷電粒子がディラック粒子でなく電荷 $e$ の複素スカラー粒子のときは $Z_3=1-\\dfrac{e^2}{24\\pi^2\\varepsilon}$ となる．このときの $\\beta(e)$（$\\varepsilon\\to0$）を求めよ．\n\\item (2) を積分すると $\\dfrac{1}{\\alpha(\\mu)}=\\dfrac{1}{\\alpha(\\mu_0)}-\\dfrac{2}{3\\pi}\\ln\\dfrac{\\mu}{\\mu_0}$ となる．$\\mu_0=0.511\\,\\mathrm{MeV}$ で $1/\\alpha=137.04$ とし，電子だけが寄与するとして $\\mu=91.19\\,\\mathrm{GeV}$ での $1/\\alpha$ を求めよ．\n\\end{enumerate}"
+   "tex": "QED を次元正則化（$d=4-\\varepsilon$）と MS スキームでくりこむ．頂点・電子の場・光子の場のくりこみ定数を $Z_1,\\ Z_2,\\ Z_3$ とすると，裸の電荷は\n\\[e_0=\\mu^{\\varepsilon/2}Z_1Z_2^{-1}Z_3^{-1/2}\\,e\\]\nである．ワード＝高橋恒等式により $Z_1=Z_2$ が成り立つ．電荷 $e$ のディラック粒子1種類の真空偏極から $Z_3=1-\\dfrac{e^2}{6\\pi^2\\varepsilon}$ が得られる．\n\\begin{enumerate}\n\\item $\\beta(e)=\\mu\\dfrac{de}{d\\mu}$ を $e^3$ の次数まで求め，$\\varepsilon\\to0$ での値を答えよ．\n\\item 微細構造定数 $\\alpha=\\dfrac{e^2}{4\\pi}$ について $\\mu\\dfrac{d\\alpha}{d\\mu}$ を $\\alpha$ で表せ．\n\\item 荷電粒子がディラック粒子でなく電荷 $e$ の複素スカラー粒子のときは $Z_3=1-\\dfrac{e^2}{24\\pi^2\\varepsilon}$ となる．このときの $\\beta(e)$（$\\varepsilon\\to0$）を求めよ．\n\\item (2) を積分すると $\\dfrac{1}{\\alpha(\\mu)}=\\dfrac{1}{\\alpha(\\mu_0)}-\\dfrac{2}{3\\pi}\\ln\\dfrac{\\mu}{\\mu_0}$ となる．電子だけが寄与するとして，$1/\\alpha(\\mu)$ が $0$ になる（結合が発散する）$\\mu$（ランダウ極）を $\\mu_0$ と $\\alpha_0=\\alpha(\\mu_0)$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\beta(e)=\\frac{e^3}{12\\pi^2}$\n(2) $\\frac{2\\alpha^2}{3\\pi}$\n(3) $\\beta(e)=\\frac{e^3}{48\\pi^2}$\n(4) $\\approx134.5$"
+   "tex": "(1) $\\beta(e)=\\frac{e^3}{12\\pi^2}$\n(2) $\\frac{2\\alpha^2}{3\\pi}$\n(3) $\\beta(e)=\\frac{e^3}{48\\pi^2}$\n(4) $\\mu=\\mu_0\\exp\\left(\\dfrac{3\\pi}{2\\alpha_0}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $Z_1=Z_2$ より $e_0=\\mu^{\\varepsilon/2}Z_3^{-1/2}e$．$\\ln e_0=\\dfrac\\varepsilon2\\ln\\mu+\\ln e+\\dfrac{e^2}{12\\pi^2\\varepsilon}+\\cdots$ を $\\ln\\mu$ で微分して\n\\[0=\\frac\\varepsilon2+\\frac{\\beta}{e}+\\frac{e\\beta}{6\\pi^2\\varepsilon},\\qquad \\beta=-\\frac{\\varepsilon e}{2}\\left(1+\\frac{e^2}{6\\pi^2\\varepsilon}\\right)^{-1}\\approx-\\frac{\\varepsilon e}{2}+\\frac{e^3}{12\\pi^2}.\\]\n$\\varepsilon\\to0$ で $\\boldsymbol{\\beta(e)=\\dfrac{e^3}{12\\pi^2}}$．電荷のくりこみは光子の場のくりこみ $Z_3$ だけで決まり，どの荷電粒子にも共通（電荷の普遍性）である．\n\n(2) $\\mu\\dfrac{d\\alpha}{d\\mu}=\\dfrac{2e}{4\\pi}\\beta=\\dfrac{e^4}{24\\pi^3}=\\boldsymbol{\\dfrac{2\\alpha^2}{3\\pi}}$．\n\n(3) (1) の計算で $Z_3$ の係数 $\\dfrac{1}{6\\pi^2}$ が $\\dfrac{1}{24\\pi^2}$ に変わるだけである．一般に $Z_3=1-\\dfrac{ce^2}{\\varepsilon}$ なら $\\beta=\\dfrac{c}{2}e^3$ なので $\\boldsymbol{\\beta=\\dfrac{e^3}{48\\pi^2}}$（ディラック粒子の $\\frac14$）．\n\n(4) $\\ln\\dfrac{91.19\\times10^3}{0.511}=12.09$，$\\dfrac{2}{3\\pi}\\times12.09=2.566$．$1/\\alpha=137.04-2.57\\approx\\boldsymbol{134.5}$．\n\n実際にはミューオン・タウ・クォークも寄与し $1/\\alpha(m_Z)\\approx128$ になる．$\\beta>0$ は真空偏極による電荷の遮蔽を表す．"
+    "tex": "(1) $Z_1=Z_2$ より $e_0=\\mu^{\\varepsilon/2}Z_3^{-1/2}e$．$\\ln e_0=\\dfrac\\varepsilon2\\ln\\mu+\\ln e+\\dfrac{e^2}{12\\pi^2\\varepsilon}+\\cdots$ を $\\ln\\mu$ で微分して\n\\[0=\\frac\\varepsilon2+\\frac{\\beta}{e}+\\frac{e\\beta}{6\\pi^2\\varepsilon},\\qquad \\beta=-\\frac{\\varepsilon e}{2}\\left(1+\\frac{e^2}{6\\pi^2\\varepsilon}\\right)^{-1}\\approx-\\frac{\\varepsilon e}{2}+\\frac{e^3}{12\\pi^2}.\\]\n$\\varepsilon\\to0$ で $\\boldsymbol{\\beta(e)=\\dfrac{e^3}{12\\pi^2}}$．電荷のくりこみは光子の場のくりこみ $Z_3$ だけで決まり，どの荷電粒子にも共通（電荷の普遍性）である．\n\n(2) $\\mu\\dfrac{d\\alpha}{d\\mu}=\\dfrac{2e}{4\\pi}\\beta=\\dfrac{e^4}{24\\pi^3}=\\boldsymbol{\\dfrac{2\\alpha^2}{3\\pi}}$．\n\n(3) (1) の計算で $Z_3$ の係数 $\\dfrac{1}{6\\pi^2}$ が $\\dfrac{1}{24\\pi^2}$ に変わるだけである．一般に $Z_3=1-\\dfrac{ce^2}{\\varepsilon}$ なら $\\beta=\\dfrac{c}{2}e^3$ なので $\\boldsymbol{\\beta=\\dfrac{e^3}{48\\pi^2}}$（ディラック粒子の $\\frac14$）．\n\n(4) $\\dfrac{1}{\\alpha_0}=\\dfrac{2}{3\\pi}\\ln\\dfrac{\\mu}{\\mu_0}$ より\n\\[\\boldsymbol{\\mu=\\mu_0\\exp\\left(\\frac{3\\pi}{2\\alpha_0}\\right)}.\\]\n$\\mu_0=0.511\\,\\mathrm{MeV}$，$1/\\alpha_0=137$ では指数が約 $646$ で，宇宙のどんなエネルギーよりもはるかに大きい．現実的なエネルギーでは $\\alpha$ の変化はわずかで，たとえば $\\mu=91.19\\,\\mathrm{GeV}$ では電子だけの寄与で $1/\\alpha\\approx134.5$ になる．実際にはミューオン・タウ・クォークも寄与し $1/\\alpha(m_Z)\\approx128$ になる．$\\beta>0$ は真空偏極による電荷の遮蔽を表す．"
    }
   ],
   "idea": {
@@ -371,7 +371,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) e^3/(12pi^2)\n(2) 2α^2/(3pi)\n(3) e^3/(48pi^2)\n(4) ≈134.5"
+   "spec": "(1) e^3/(12pi^2)\n(2) 2α^2/(3pi)\n(3) e^3/(48pi^2)\n(4) μ：μ_0 exp(3 pi/(2 α_0))"
   },
   "methods": [],
   "tags": [

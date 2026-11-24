@@ -58,16 +58,16 @@
   "theme": "ヘルムホルツ自由エネルギーと取り出せる最大仕事",
   "topic": "ヘルムホルツ自由エネルギーと取り出せる最大仕事",
   "statement": {
-   "tex": "ヘルムホルツの自由エネルギー $F = U - TS$ は，微小変化について $dF = -S\\,dT - p\\,dV$ を満たす．したがって $p = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_T$ である．また，温度一定の過程で系が外部にできる仕事の最大値は $-\\Delta F$（自由エネルギーの減少量）に等しい．\n\n$n\\,\\mathrm{mol}$ の理想気体の自由エネルギーは\n\\[ F(T, V) = -nRT\\ln\\frac{V}{V_1} + g(T) \\]\nと書ける（$V_1$ は定数，$g(T)$ は $T$ だけの関数）．\n\\begin{enumerate}\n\\item $p = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_T$ を計算し，状態方程式を確かめよ．\n\\item 温度 $T$ のまま体積を $V_0$ から $2V_0$ にしたときの $\\Delta F$ を求めよ．\n\\item $n = 1.00\\,\\mathrm{mol}$，$T = 300\\,\\mathrm{K}$，$R = 8.31\\,\\mathrm{J/(mol\\,K)}$ のとき，この膨張で取り出せる仕事の最大値を求めよ．\n\\end{enumerate}"
+   "tex": "ヘルムホルツの自由エネルギー $F = U - TS$ は，微小変化について $dF = -S\\,dT - p\\,dV$ を満たす．したがって $p = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_T$ である．また，温度一定の過程で系が外部にできる仕事の最大値は $-\\Delta F$（自由エネルギーの減少量）に等しい．\n\n$n\\,\\mathrm{mol}$ の理想気体の自由エネルギーは\n\\[ F(T, V) = -nRT\\ln\\frac{V}{V_1} + g(T) \\]\nと書ける（$V_1$ は定数，$g(T)$ は $T$ だけの関数，$R$ は気体定数）．\n\\begin{enumerate}\n\\item $p = -\\left(\\dfrac{\\partial F}{\\partial V}\\right)_T$ を計算し，状態方程式を確かめよ．\n\\item 温度 $T$ のまま体積を $V_0$ から $2V_0$ にしたときの $\\Delta F$ を求めよ．\n\\item 温度 $T$ のまま体積を $V_0$ から $3V_0$ まで膨張させるとき，取り出せる仕事の最大値を $n,\\ R,\\ T$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $p = \\frac{nRT}{V}$ \\quad (2) $\\Delta F = -nRT\\ln 2$ \\quad (3) $\\approx 1.73\\times10^{3}\\,\\mathrm{J}$"
+   "tex": "(1) $p = \\frac{nRT}{V}$ \\quad (2) $\\Delta F = -nRT\\ln 2$ \\quad (3) $nRT\\ln3$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{\\partial}{\\partial V}\\ln\\dfrac{V}{V_1} = \\dfrac{1}{V}$ なので $p = \\boldsymbol{\\dfrac{nRT}{V}}$．理想気体の状態方程式が出てくる．\n\n(2) $g(T)$ は温度一定なら変わらないので\n\\[ \\Delta F = -nRT\\ln\\frac{2V_0}{V_1} + nRT\\ln\\frac{V_0}{V_1} = \\boldsymbol{-nRT\\ln 2}. \\]\n\n(3) 最大仕事は $-\\Delta F = nRT\\ln 2 = 1.00\\times8.31\\times300\\times0.693 \\approx \\boldsymbol{1.73\\times10^{3}\\,\\mathrm{J}}$．これは等温準静的膨張の仕事 $\\int p\\,dV = nRT\\ln 2$ と一致する．\n\n「温度一定なら，使えるエネルギーは $U$ ではなく $F$ の減少分」というのが自由エネルギーの意味である．次は $F$ や $G$ の2階偏微分の対称性からマクスウェルの関係式を導く．"
+    "tex": "(1) $\\dfrac{\\partial}{\\partial V}\\ln\\dfrac{V}{V_1} = \\dfrac{1}{V}$ なので $p = \\boldsymbol{\\dfrac{nRT}{V}}$．理想気体の状態方程式が出てくる．\n\n(2) $g(T)$ は温度一定なら変わらないので\n\\[ \\Delta F = -nRT\\ln\\frac{2V_0}{V_1} + nRT\\ln\\frac{V_0}{V_1} = \\boldsymbol{-nRT\\ln 2}. \\]\n\n(3) 同様に $\\Delta F=-nRT\\ln\\dfrac{3V_0}{V_0}=-nRT\\ln3$ なので，最大仕事は $-\\Delta F = \\boldsymbol{nRT\\ln 3}$．これは等温準静的膨張の仕事 $\\displaystyle\\int_{V_0}^{3V_0} p\\,dV = nRT\\ln 3$ と一致する．$V_1$ や $g(T)$ のように決まっていない部分は差をとると消える．\n\n「温度一定なら，使えるエネルギーは $U$ ではなく $F$ の減少分」というのが自由エネルギーの意味である．次は $F$ や $G$ の2階偏微分の対称性からマクスウェルの関係式を導く．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) p：n R T/V\n(2) ΔF：-n R T ln 2\n(3) 最大仕事 [J]：≈1.73e3"
+   "spec": "(1) p：n R T/V\n(2) ΔF：-n R T ln 2\n(3) 最大仕事：n R T ln 3"
   },
   "methods": [],
   "tags": [
@@ -107,16 +107,16 @@
   "theme": "等温圧縮率・断熱圧縮率と音速",
   "topic": "等温圧縮率・断熱圧縮率と音速",
   "statement": {
-   "tex": "物質の体積が圧力によってどれだけ縮みやすいかを表す量を圧縮率という．温度を一定に保って圧縮したときの等温圧縮率と，熱の出入りなしに圧縮したときの断熱圧縮率を\n\\[ \\kappa_T = -\\frac{1}{V}\\left(\\frac{\\partial V}{\\partial p}\\right)_T, \\qquad \\kappa_S = -\\frac{1}{V}\\left(\\frac{\\partial V}{\\partial p}\\right)_S \\]\nで定義する（$(\\partial V/\\partial p)_T$ は温度を一定に保ったまま $V$ を $p$ で微分したもの．添字 $S$ は断熱変化を表す）．\n\n理想気体は，等温変化では $pV = \\text{一定}$，断熱変化では $pV^{\\gamma} = \\text{一定}$（$\\gamma$ は比熱比）にしたがう．\n\\begin{enumerate}\n\\item $\\kappa_T$ と $\\kappa_S$ をそれぞれ $p,\\ \\gamma$ で表せ．\n\\item 比 $\\kappa_T/\\kappa_S$ を求めよ．\n\\item 音波の圧縮・膨張は速すぎて熱が移動する時間がないので断熱的であり，音速は $c = 1/\\sqrt{\\rho\\,\\kappa_S}$（$\\rho$ は密度）で与えられる．空気（$p = 1.013\\times10^{5}\\,\\mathrm{Pa}$，$\\rho = 1.20\\,\\mathrm{kg/m^3}$，$\\gamma = 1.40$）の音速を求めよ．\n\\end{enumerate}"
+   "tex": "物質の体積が圧力によってどれだけ縮みやすいかを表す量を圧縮率という．温度を一定に保って圧縮したときの等温圧縮率と，熱の出入りなしに圧縮したときの断熱圧縮率を\n\\[ \\kappa_T = -\\frac{1}{V}\\left(\\frac{\\partial V}{\\partial p}\\right)_T, \\qquad \\kappa_S = -\\frac{1}{V}\\left(\\frac{\\partial V}{\\partial p}\\right)_S \\]\nで定義する（$(\\partial V/\\partial p)_T$ は温度を一定に保ったまま $V$ を $p$ で微分したもの．添字 $S$ は断熱変化を表す）．\n\n理想気体は，等温変化では $pV = \\text{一定}$，断熱変化では $pV^{\\gamma} = \\text{一定}$（$\\gamma$ は比熱比）にしたがう．\n\\begin{enumerate}\n\\item $\\kappa_T$ と $\\kappa_S$ をそれぞれ $p,\\ \\gamma$ で表せ．\n\\item 比 $\\kappa_T/\\kappa_S$ を求めよ．\n\\item 音波の圧縮・膨張は速すぎて熱が移動する時間がないので断熱的であり，音速は $c = 1/\\sqrt{\\rho\\,\\kappa_S}$（$\\rho$ は密度）で与えられる．圧力 $p$，密度 $\\rho$，比熱比 $\\gamma$ の気体の音速 $c$ を求めよ．また，誤って等温圧縮率を使った場合の音速 $c_T$ との比 $c/c_T$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\kappa_T = \\frac{1}{p}$，$\\kappa_S = \\frac{1}{\\gamma p}$ \\quad (2) $\\gamma$ \\quad (3) $c \\approx 344\\,\\mathrm{m/s}$"
+   "tex": "(1) $\\kappa_T = \\frac{1}{p}$，$\\kappa_S = \\frac{1}{\\gamma p}$ \\quad (2) $\\gamma$ \\quad (3) $c=\\sqrt{\\dfrac{\\gamma p}{\\rho}}$，$c/c_T=\\sqrt{\\gamma}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "等温変化では $V = \\text{一定}/p$ なので $\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T = -\\dfrac{V}{p}$，よって $\\kappa_T = \\boldsymbol{\\dfrac{1}{p}}$．\n\n断熱変化では $V = (\\text{一定})\\,p^{-1/\\gamma}$ なので $\\left(\\dfrac{\\partial V}{\\partial p}\\right)_S = -\\dfrac{V}{\\gamma p}$，よって $\\kappa_S = \\boldsymbol{\\dfrac{1}{\\gamma p}}$．\n\n比は $\\kappa_T/\\kappa_S = \\boldsymbol{\\gamma}$．断熱圧縮では気体の温度が上がって押し返す力が増すので，等温圧縮より縮みにくい．\n\n音速は $c = \\sqrt{\\dfrac{\\gamma p}{\\rho}} = \\sqrt{\\dfrac{1.40\\times1.013\\times10^{5}}{1.20}} \\approx \\boldsymbol{344\\,\\mathrm{m/s}}$．ニュートンは等温圧縮率を使って約 $290\\,\\mathrm{m/s}$ と見積もり，実測と合わなかった（ラプラスが断熱であることに気づいて解決した）．\n\n一般の物質でも $\\kappa_T/\\kappa_S = C_p/C_V$ が成り立つことを，マクスウェルの関係式やヤコビアンを使って示せる．これが次の段階である．"
+    "tex": "等温変化では $V = \\text{一定}/p$ なので $\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T = -\\dfrac{V}{p}$，よって $\\kappa_T = \\boldsymbol{\\dfrac{1}{p}}$．\n\n断熱変化では $V = (\\text{一定})\\,p^{-1/\\gamma}$ なので $\\left(\\dfrac{\\partial V}{\\partial p}\\right)_S = -\\dfrac{V}{\\gamma p}$，よって $\\kappa_S = \\boldsymbol{\\dfrac{1}{\\gamma p}}$．\n\n比は $\\kappa_T/\\kappa_S = \\boldsymbol{\\gamma}$．断熱圧縮では気体の温度が上がって押し返す力が増すので，等温圧縮より縮みにくい．\n\n音速は $c = 1/\\sqrt{\\rho\\kappa_S}=\\boldsymbol{\\sqrt{\\dfrac{\\gamma p}{\\rho}}}$．等温圧縮率を使うと $c_T=\\sqrt{p/\\rho}$ なので $c/c_T=\\boldsymbol{\\sqrt{\\gamma}}$．空気（$\\gamma=1.40$）では約 1.18 倍で，ニュートンは等温圧縮率を使って約 $290\\,\\mathrm{m/s}$ と見積もり，実測（約 $340\\,\\mathrm{m/s}$）と合わなかった（ラプラスが断熱であることに気づいて解決した）．\n\n一般の物質でも $\\kappa_T/\\kappa_S = C_p/C_V$ が成り立つことを，マクスウェルの関係式やヤコビアンを使って示せる．これが次の段階である．"
    }
   ],
   "idea": {
@@ -124,7 +124,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) κ_T：1/p ; κ_S：1/(γ p)\n(2) γ\n(3) c [m/s]：≈344"
+   "spec": "(1) κ_T：1/p ; κ_S：1/(γ p)\n(2) γ\n(3) $c$：sqrt(γ p/ρ) ; $c/c_T$：sqrt(γ)"
   },
   "methods": [],
   "tags": [
@@ -252,24 +252,24 @@
   "theme": "銅の定圧比熱と定積比熱の差",
   "topic": "銅の定圧比熱と定積比熱の差",
   "statement": {
-   "tex": "$C_p-C_V=\\dfrac{TV\\alpha^2}{\\kappa_T}$（$\\alpha$ は体膨張率，$\\kappa_T$ は等温圧縮率）である．\n\\begin{enumerate}\n\\item $C_p-C_V=-T\\left(\\frac{\\partial V}{\\partial T}\\right)_p^2\\left(\\frac{\\partial p}{\\partial V}\\right)_T$ からこの式を導け．\n\\item 銅（$\\alpha=5.0\\times10^{-5}\\ \\mathrm{K^{-1}}$，$\\kappa_T=7.3\\times10^{-12}\\ \\mathrm{Pa^{-1}}$，モル体積 $7.1\\times10^{-6}\\ \\mathrm{m^3}$）の $300\\ \\mathrm K$ での差を求め，$C_p\\approx24.4\\ \\mathrm{J/(mol\\,K)}$ と比べよ．\n\\item $4^\\circ$C の水で $C_p=C_V$ となる理由を述べよ．\n\\end{enumerate}"
+   "tex": "$C_p-C_V=\\dfrac{TV\\alpha^2}{\\kappa_T}$（$\\alpha$ は体膨張率，$\\kappa_T$ は等温圧縮率）である．\n\\begin{enumerate}\n\\item $C_p-C_V=-T\\left(\\frac{\\partial V}{\\partial T}\\right)_p^2\\left(\\frac{\\partial p}{\\partial V}\\right)_T$ からこの式を導け．\n\\item モル体積 $v$，体膨張率 $\\alpha$，等温圧縮率 $\\kappa_T$ の固体（銅など）が温度 $T$ にある．定積モル比熱がデュロン＝プティの値 $C_V=3R$ に等しいとして，比 $(C_p-C_V)/C_V$ を求めよ．\n\\item $4^\\circ$C の水で $C_p=C_V$ となる理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 導出　(2) $0.73\\ \\mathrm{J/(mol\\,K)}$（約3\\%）　(3) $\\alpha=0$"
+   "tex": "(1) 導出　(2) $\\dfrac{Tv\\alpha^2}{3R\\kappa_T}$（銅の室温では約3\\%）　(3) $\\alpha=0$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\left(\\frac{\\partial V}{\\partial T}\\right)_p=V\\alpha$，$\\left(\\frac{\\partial p}{\\partial V}\\right)_T=-\\frac{1}{V\\kappa_T}$．\n\n(2) $\\dfrac{300\\times7.1\\times10^{-6}\\times2.5\\times10^{-9}}{7.3\\times10^{-12}}\\approx\\boldsymbol{0.73}$，固体ではほぼ等しい．\n\n(3) 密度が最大で $\\boldsymbol{\\alpha=0}$．"
+    "tex": "(1) $\\left(\\frac{\\partial V}{\\partial T}\\right)_p=V\\alpha$，$\\left(\\frac{\\partial p}{\\partial V}\\right)_T=-\\frac{1}{V\\kappa_T}$ を代入すると $C_p-C_V=TV^2\\alpha^2\\cdot\\dfrac{1}{V\\kappa_T}=\\dfrac{TV\\alpha^2}{\\kappa_T}$．\n\n(2) 1 mol あたり $C_p-C_V=\\dfrac{Tv\\alpha^2}{\\kappa_T}$ なので\n\\[\\frac{C_p-C_V}{C_V}=\\boldsymbol{\\frac{Tv\\alpha^2}{3R\\kappa_T}}.\\]\n固体では $\\alpha$ が小さく（$\\alpha^2$ で効く）この比は小さい．例えば銅（$\\alpha\\approx5\\times10^{-5}\\ \\mathrm{K^{-1}}$，$\\kappa_T\\approx7\\times10^{-12}\\ \\mathrm{Pa^{-1}}$，$v\\approx7\\times10^{-6}\\ \\mathrm{m^3}$）の室温では約 3\\% で，固体では $C_p\\approx C_V$ とみなせる．\n\n(3) 密度が最大で $\\boldsymbol{\\alpha=0}$．"
    }
   ],
   "idea": {
-   "tex": "比熱の差は熱膨張と圧縮率という測定しやすい量で決まる．原題の恒等式の導出を，固体の数値の評価にした．"
+   "tex": "比熱の差は熱膨張と圧縮率という測定しやすい量で決まる．固体では α^2 が小さいため C_p と C_V はほぼ等しい．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [J/(mol K)]：≈0.73\n(3) $\\alpha$：0"
+   "spec": "(1) 記述\n(2) $(C_p-C_V)/C_V$：T v α^2/(3 R κ_T)\n(3) $\\alpha$：0"
   },
   "methods": [],
   "tags": [
@@ -301,16 +301,16 @@
   "theme": "噴霧に必要な表面エネルギーと液滴径",
   "topic": "噴霧に必要な表面エネルギーと液滴径",
   "statement": {
-   "tex": "水を細かい液滴に分ける（噴霧する）ことを考える．水の密度 $\\rho=1.0\\times10^3\\ \\mathrm{kg/m^3}$，表面張力 $\\sigma=0.073$ N/m とする．\n\\begin{enumerate}\n\\item 質量 $1.0$ kg の水を等温で直径 $d=10\\ \\mu$m の液滴に分けたとき，液滴の総表面積 $A$ と，必要な最小の仕事 $W$ を求めよ．\n\\item ノズルから速さ $v=10$ m/s で噴き出した水の運動エネルギーがすべて表面エネルギーに変わるとしたとき，得られる液滴の直径の下限 $d_{\\min}$ を求めよ．\n\\end{enumerate}"
+   "tex": "水を細かい液滴に分ける（噴霧する）ことを考える．水の密度を $\\rho$，表面張力を $\\sigma$ とする．\n\\begin{enumerate}\n\\item 質量 $m$ の水を等温で直径 $d$ の液滴に分けたとき，液滴の総表面積 $A$ と，必要な最小の仕事 $W$ を求めよ（元の水の表面積は無視する）．\n\\item ノズルから速さ $v$ で噴き出した水の運動エネルギーがすべて表面エネルギーに変わるとしたとき，得られる液滴の直径の下限 $d_{\\min}$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $A=600\\ \\mathrm{m^2}$，$W=44$ J　(2) $d_{\\min}=\\dfrac{12\\sigma}{\\rho v^2}=8.8\\ \\mu$m"
+   "tex": "(1) $A=\\dfrac{6m}{\\rho d}$，$W=\\dfrac{6\\sigma m}{\\rho d}$　(2) $d_{\\min}=\\dfrac{12\\sigma}{\\rho v^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 直径 $d$ の液滴 1 個の体積は $\\pi d^3/6$，表面積は $\\pi d^2$ なので，単位体積あたりの表面積は $6/d$．\n\\[\nA=\\frac{6m}{\\rho d}=\\frac{6(1.0)}{(1000)(1.0\\times10^{-5})}=600\\ \\mathrm{m^2}.\n\\]\n等温可逆過程での最小仕事は表面の自由エネルギーの増加に等しく（元の水の表面積は無視），$W=\\sigma A=44$ J．\n\n(2) 単位質量あたりの運動エネルギー $v^2/2$ と，単位質量あたりの表面エネルギー $6\\sigma/(\\rho d)$ を比べ，$6\\sigma/(\\rho d)\\le v^2/2$ より\n\\[\nd\\ge d_{\\min}=\\frac{12\\sigma}{\\rho v^2}=\\frac{12(0.073)}{(1000)(10)^2}=8.8\\times10^{-6}\\ \\mathrm m.\n\\]\nこれはウェーバー数 $\\rho v^2d/\\sigma\\sim12$ に相当し，実際の微粒化ではさらに大きな液滴になる．"
+    "tex": "(1) 直径 $d$ の液滴 1 個の体積は $\\pi d^3/6$，表面積は $\\pi d^2$ なので，単位体積あたりの表面積は $6/d$．水の体積は $m/\\rho$ だから\n\\[\nA=\\boldsymbol{\\frac{6m}{\\rho d}}.\n\\]\n等温可逆過程での最小仕事は表面の自由エネルギーの増加に等しく（元の水の表面積は無視），$W=\\sigma A=\\boldsymbol{\\dfrac{6\\sigma m}{\\rho d}}$．$d$ が小さいほど $1/d$ に比例して大きくなる（例えば水 1 kg を直径 $10\\ \\mu$m にすると $A=600\\ \\mathrm{m^2}$，$W\\approx44$ J）．\n\n(2) 単位質量あたりの運動エネルギー $v^2/2$ と，単位質量あたりの表面エネルギー $6\\sigma/(\\rho d)$ を比べ，$6\\sigma/(\\rho d)\\le v^2/2$ より\n\\[\nd\\ge d_{\\min}=\\boldsymbol{\\frac{12\\sigma}{\\rho v^2}}.\n\\]\nこれはウェーバー数 $\\rho v^2d/\\sigma\\sim12$ に相当し，実際の微粒化ではさらに大きな液滴になる．"
    }
   ],
   "idea": {
@@ -318,7 +318,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $A$ [m²]：600 ; $W$ [J]：44\n(2) $d_{\\min}$：((12 σ)/(ρ v ^(2)))"
+   "spec": "(1) $A$：6m/(ρ d) ; $W$：6 σ m/(ρ d)\n(2) $d_{\\min}$：((12 σ)/(ρ v ^(2)))"
   },
   "methods": [],
   "tags": [
@@ -350,16 +350,16 @@
   "theme": "固体の C_P−C_V と熱膨張・体積弾性率",
   "topic": "固体の C_P−C_V と熱膨張・体積弾性率",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式を用いて $C_P-C_V=TVE_T\\alpha^2$ を示せ．ここで $E_T=-V(\\partial P/\\partial V)_T$ は等温体積弾性率，$\\alpha$ は体膨張率である．この式から $C_P\\ge C_V$ が常に成り立つことを説明し，理想気体では $C_P-C_V=R$ に帰着することを確かめよ（1 mol）．\n\\item 300 K の銅（体膨張率 $\\alpha=5.0\\times10^{-5}\\ \\mathrm{K^{-1}}$，$E_T=1.4\\times10^{11}$ Pa，モル体積 $7.11\\times10^{-6}\\ \\mathrm{m^3/mol}$，$C_P=24.4\\ \\mathrm{J\\,mol^{-1}K^{-1}}$）について $C_P-C_V$，$C_V$，$\\gamma=C_P/C_V$ を求めよ．\n\\item 4℃ の水では $C_P$ と $C_V$ の関係はどうなるか．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式を用いて $C_P-C_V=TVE_T\\alpha^2$ を示せ．ここで $E_T=-V(\\partial P/\\partial V)_T$ は等温体積弾性率，$\\alpha$ は体膨張率である．この式から $C_P\\ge C_V$ が常に成り立つことを説明し，理想気体では $C_P-C_V=R$ に帰着することを確かめよ（1 mol）．\n\\item 温度 $T$ の固体（体膨張率 $\\alpha$，等温体積弾性率 $E_T$，モル体積 $v$，定圧モル比熱 $C_P$）について，$C_P-C_V$，$C_V$，比熱比 $\\gamma=C_P/C_V$ を求めよ．\n\\item 4℃ の水では $C_P$ と $C_V$ の関係はどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $C_P-C_V\\approx0.75$ J/(mol K)，$C_V\\approx23.7$ J/(mol K)，$\\gamma\\approx1.03$　(3) $\\alpha=0$ なので $C_P=C_V$"
+   "tex": "(1) 証明（解説参照）　(2) $C_P-C_V=TvE_T\\alpha^2$，$C_V=C_P-TvE_T\\alpha^2$，$\\gamma=\\dfrac{C_P}{C_P-TvE_T\\alpha^2}$　(3) $\\alpha=0$ なので $C_P=C_V$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $C_P-C_V=T(\\partial P/\\partial T)_V(\\partial V/\\partial T)_P$（$S(T,V)$ を $P$ 一定で微分し，$(\\partial S/\\partial V)_T=(\\partial P/\\partial T)_V$ を使う）．循環関係 $(\\partial P/\\partial T)_V=-(\\partial P/\\partial V)_T(\\partial V/\\partial T)_P=\\dfrac{E_T}{V}\\cdot V\\alpha=E_T\\alpha$ より\n\\[ C_P-C_V=T\\cdot E_T\\alpha\\cdot V\\alpha=TVE_T\\alpha^2. \\]\n力学的安定性から $E_T>0$，さらに $\\alpha^2\\ge0$ なので $C_P\\ge C_V$．理想気体では $\\alpha=1/T$，$E_T=P$ なので $C_P-C_V=TVP/T^2=PV/T=R$．\n\n(2) $C_P-C_V=300\\times7.11\\times10^{-6}\\times1.4\\times10^{11}\\times(5.0\\times10^{-5})^2\\approx0.75$ J/(mol K)．\n$C_V=24.4-0.75\\approx23.7$ J/(mol K)（デュロン・プティ値 $3R=24.9$ に近い），$\\gamma\\approx1.03$．固体では差は 3% 程度．\n\n(3) 水は 4℃ で密度最大，$\\alpha=0$ なので $C_P=C_V$（$\\gamma=1$）．"
+    "tex": "(1) $C_P-C_V=T(\\partial P/\\partial T)_V(\\partial V/\\partial T)_P$（$S(T,V)$ を $P$ 一定で微分し，$(\\partial S/\\partial V)_T=(\\partial P/\\partial T)_V$ を使う）．循環関係 $(\\partial P/\\partial T)_V=-(\\partial P/\\partial V)_T(\\partial V/\\partial T)_P=\\dfrac{E_T}{V}\\cdot V\\alpha=E_T\\alpha$ より\n\\[ C_P-C_V=T\\cdot E_T\\alpha\\cdot V\\alpha=TVE_T\\alpha^2. \\]\n力学的安定性から $E_T>0$，さらに $\\alpha^2\\ge0$ なので $C_P\\ge C_V$．理想気体では $\\alpha=1/T$，$E_T=P$ なので $C_P-C_V=TVP/T^2=PV/T=R$．\n\n(2) 1 mol あたり $C_P-C_V=\\boldsymbol{TvE_T\\alpha^2}$，したがって\n\\[ C_V=\\boldsymbol{C_P-TvE_T\\alpha^2},\\qquad \\gamma=\\boldsymbol{\\frac{C_P}{C_P-TvE_T\\alpha^2}}. \\]\n固体では $\\alpha$ が小さいので差は小さい．例えば 300 K の銅（$\\alpha=5.0\\times10^{-5}\\ \\mathrm{K^{-1}}$，$E_T=1.4\\times10^{11}$ Pa，$v=7.11\\times10^{-6}\\ \\mathrm{m^3/mol}$，$C_P=24.4\\ \\mathrm{J\\,mol^{-1}K^{-1}}$）では $C_P-C_V\\approx0.75$ J/(mol K)，$\\gamma\\approx1.03$ で，差は 3% 程度である．\n\n(3) 水は 4℃ で密度最大，$\\alpha=0$ なので $C_P=C_V$（$\\gamma=1$）．"
    }
   ],
   "idea": {
@@ -367,7 +367,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+   "spec": "(1) 証明\n(2) $C_P-C_V$：T v E_T α^2 ; $C_V$：C_P - T v E_T α^2 ; $\\gamma$：C_P/(C_P - T v E_T α^2)\n(3) 記述：α=0 なので C_P=C_V"
   },
   "methods": [],
   "tags": [
@@ -400,16 +400,16 @@
   "theme": "エネルギー方程式とファン・デル・ワールス気体のジュール膨張",
   "topic": "エネルギー方程式とファン・デル・ワールス気体のジュール膨張",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式から $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial P}{\\partial T}\\right)_V-P$ を導き，理想気体では 0 となることを示せ．\n\\item 1 mol のファン・デル・ワールス気体 $\\left(P+\\dfrac a{V^2}\\right)(V-b)=RT$ について $(\\partial U/\\partial V)_T$ を求めよ．また $(\\partial C_V/\\partial V)_T=0$ を示し，$U(T,V)$ の形を決めよ．\n\\item 1 mol の CO$_2$（$a=0.364\\ \\mathrm{Pa\\,m^6/mol^2}$，$C_V=28.5\\ \\mathrm{J\\,mol^{-1}K^{-1}}$ 一定）を断熱容器内で 1.00 L から 2.00 L へ真空中に自由膨張（ジュール膨張）させたときの温度変化を求めよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式から $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial P}{\\partial T}\\right)_V-P$ を導き，理想気体では 0 となることを示せ．\n\\item 1 mol のファン・デル・ワールス気体 $\\left(P+\\dfrac a{V^2}\\right)(V-b)=RT$ について $(\\partial U/\\partial V)_T$ を求めよ．また $(\\partial C_V/\\partial V)_T=0$ を示し，$U(T,V)$ の形を決めよ．\n\\item この気体 1 mol（定積モル比熱 $C_V$ は一定）を断熱容器内で体積 $V_1$ から $2V_1$ へ真空中に自由膨張（ジュール膨張）させたときの温度変化 $\\Delta T$ を $a,\\ C_V,\\ V_1$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $(\\partial U/\\partial V)_T=a/V^2$，$U=\\int C_V(T)dT-a/V$　(3) 約 $-6.4$ K"
+   "tex": "(1) 証明（解説参照）　(2) $(\\partial U/\\partial V)_T=a/V^2$，$U=\\int C_V(T)dT-a/V$　(3) $\\Delta T=-\\dfrac{a}{2C_VV_1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $dU=T\\,dS-P\\,dV$ より $(\\partial U/\\partial V)_T=T(\\partial S/\\partial V)_T-P=T(\\partial P/\\partial T)_V-P$．理想気体 $P=RT/V$ では $T\\cdot R/V-P=0$．\n\n(2) $P=\\dfrac{RT}{V-b}-\\dfrac a{V^2}$，$T(\\partial P/\\partial T)_V=\\dfrac{RT}{V-b}$ より $(\\partial U/\\partial V)_T=\\dfrac a{V^2}$．\n$\\left(\\dfrac{\\partial C_V}{\\partial V}\\right)_T=\\dfrac{\\partial^2U}{\\partial T\\partial V}=\\dfrac{\\partial}{\\partial T}\\left(\\dfrac a{V^2}\\right)=0$（一般には $T(\\partial^2P/\\partial T^2)_V$ で，$P$ が $T$ の 1 次式なので 0）．よって $C_V=C_V(T)$，$U=\\displaystyle\\int C_V(T)\\,dT-\\frac aV+\\text{const}$．\n\n(3) 自由膨張では $Q=0$，$W=0$ なので $U$ 一定．$C_V\\Delta T-a\\left(\\dfrac1{V_2}-\\dfrac1{V_1}\\right)=0$ より\n\\[ \\Delta T=-\\frac a{C_V}\\left(\\frac1{V_1}-\\frac1{V_2}\\right)=-\\frac{0.364}{28.5}(1000-500)\\approx-6.4\\ \\mathrm K. \\]\n引力に逆らって分子間距離を広げるのに運動エネルギーが使われるため冷える．"
+    "tex": "(1) $dU=T\\,dS-P\\,dV$ より $(\\partial U/\\partial V)_T=T(\\partial S/\\partial V)_T-P=T(\\partial P/\\partial T)_V-P$．理想気体 $P=RT/V$ では $T\\cdot R/V-P=0$．\n\n(2) $P=\\dfrac{RT}{V-b}-\\dfrac a{V^2}$，$T(\\partial P/\\partial T)_V=\\dfrac{RT}{V-b}$ より $(\\partial U/\\partial V)_T=\\boldsymbol{\\dfrac a{V^2}}$．\n$\\left(\\dfrac{\\partial C_V}{\\partial V}\\right)_T=\\dfrac{\\partial^2U}{\\partial T\\partial V}=\\dfrac{\\partial}{\\partial T}\\left(\\dfrac a{V^2}\\right)=0$（一般には $T(\\partial^2P/\\partial T^2)_V$ で，$P$ が $T$ の 1 次式なので 0）．よって $C_V=C_V(T)$，$U=\\displaystyle\\int C_V(T)\\,dT-\\frac aV+\\text{const}$．\n\n(3) 自由膨張では $Q=0$，$W=0$ なので $U$ 一定．$C_V\\Delta T-a\\left(\\dfrac1{2V_1}-\\dfrac1{V_1}\\right)=0$ より\n\\[ \\Delta T=-\\frac a{C_V}\\left(\\frac1{V_1}-\\frac1{2V_1}\\right)=\\boldsymbol{-\\frac{a}{2C_VV_1}}. \\]\n引力に逆らって分子間距離を広げるのに運動エネルギーが使われるため冷える（CO$_2$ を 1 L から 2 L にすると約 $-6$ K）．"
    }
   ],
   "idea": {
@@ -417,7 +417,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) [K]：≈-6.4"
+   "spec": "(1) 証明\n(2) $(\\partial U/\\partial V)_T$：a/V^2\n(3) $\\Delta T$：-a/(2 C_V V_1)"
   },
   "methods": [],
   "tags": [
@@ -548,24 +548,24 @@
   "theme": "定圧比熱と定積比熱の差の一般式",
   "topic": "定圧比熱と定積比熱の差の一般式",
   "statement": {
-   "tex": "物質 $1\\,\\mathrm{mol}$ について，体膨張率 $\\alpha = \\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$，等温圧縮率 $\\kappa_T = -\\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T$ とする．\n\\begin{enumerate}\n\\item $S(T, V)$ を経由して $C_p - C_V = T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$ を示し，さらに $C_p - C_V = \\dfrac{TV\\alpha^2}{\\kappa_T}$ を導け．\n\\item 理想気体（気体定数 $R$）について $C_p - C_V$ を求めよ．\n\\item $25\\,^{\\circ}\\mathrm{C}$（$T = 298.15\\,\\mathrm{K}$）の水では，モル体積 $V = 1.807\\times 10^{-5}\\,\\mathrm{m^3/mol}$，$\\alpha = 2.57\\times 10^{-4}\\,\\mathrm{K^{-1}}$，$\\kappa_T = 4.52\\times 10^{-10}\\,\\mathrm{Pa^{-1}}$ である．$C_p - C_V$ を求めよ．\n\\end{enumerate}"
+   "tex": "物質 $1\\,\\mathrm{mol}$ について，体膨張率 $\\alpha = \\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$，等温圧縮率 $\\kappa_T = -\\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T$ とする．\n\\begin{enumerate}\n\\item $S(T, V)$ を経由して $C_p - C_V = T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$ を示し，さらに $C_p - C_V = \\dfrac{TV\\alpha^2}{\\kappa_T}$ を導け．\n\\item 理想気体（気体定数 $R$）について $C_p - C_V$ を求めよ．\n\\item 温度 $T$ の液体（モル体積 $V$，体膨張率 $\\alpha$，等温圧縮率 $\\kappa_T$，定圧モル比熱 $C_p$）について，比 $(C_p - C_V)/C_p$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 記述 \\quad (2) $C_p - C_V = R$ \\quad (3) $C_p - C_V \\approx 0.787\\,\\mathrm{J\\ K^{-1}\\ mol^{-1}}$"
+   "tex": "(1) 記述 \\quad (2) $C_p - C_V = R$ \\quad (3) $\\dfrac{TV\\alpha^2}{\\kappa_TC_p}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$dS = \\left(\\dfrac{\\partial S}{\\partial T}\\right)_V dT + \\left(\\dfrac{\\partial S}{\\partial V}\\right)_T dV$ を $p$ 一定で $T$ で割り，$T$ を掛けると\n\\[ C_p = C_V + T\\left(\\frac{\\partial S}{\\partial V}\\right)_T\\left(\\frac{\\partial V}{\\partial T}\\right)_p. \\]\nマクスウェルの関係式 $(\\partial S/\\partial V)_T = (\\partial p/\\partial T)_V$ を使えば前半の式になる．さらに循環関係 $\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V = -\\dfrac{(\\partial V/\\partial T)_p}{(\\partial V/\\partial p)_T} = \\dfrac{\\alpha}{\\kappa_T}$ より $C_p - C_V = \\dfrac{TV\\alpha^2}{\\kappa_T}$．\n\n理想気体では $\\alpha = 1/T$，$\\kappa_T = 1/p$ なので $C_p - C_V = \\dfrac{TV}{T^2}p = \\dfrac{pV}{T} = \\boldsymbol{R}$（マイヤーの関係）．\n\n水では\n\\[ C_p - C_V = \\frac{298.15\\times 1.807\\times 10^{-5}\\times(2.57\\times 10^{-4})^2}{4.52\\times 10^{-10}} \\approx \\boldsymbol{0.787\\,\\mathrm{J/(K\\,mol)}}. \\]\n水の $C_p \\approx 75.3\\,\\mathrm{J/(K\\,mol)}$ に比べて約 $1\\%$ で，液体・固体では $C_p \\approx C_V$ とみなせる．"
+    "tex": "$dS = \\left(\\dfrac{\\partial S}{\\partial T}\\right)_V dT + \\left(\\dfrac{\\partial S}{\\partial V}\\right)_T dV$ を $p$ 一定で $T$ で割り，$T$ を掛けると\n\\[ C_p = C_V + T\\left(\\frac{\\partial S}{\\partial V}\\right)_T\\left(\\frac{\\partial V}{\\partial T}\\right)_p. \\]\nマクスウェルの関係式 $(\\partial S/\\partial V)_T = (\\partial p/\\partial T)_V$ を使えば前半の式になる．さらに循環関係 $\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V = -\\dfrac{(\\partial V/\\partial T)_p}{(\\partial V/\\partial p)_T} = \\dfrac{\\alpha}{\\kappa_T}$ より $C_p - C_V = \\dfrac{TV\\alpha^2}{\\kappa_T}$．\n\n理想気体では $\\alpha = 1/T$，$\\kappa_T = 1/p$ なので $C_p - C_V = \\dfrac{TV}{T^2}p = \\dfrac{pV}{T} = \\boldsymbol{R}$（マイヤーの関係）．\n\n液体では\n\\[ \\frac{C_p - C_V}{C_p} = \\boldsymbol{\\frac{TV\\alpha^2}{\\kappa_TC_p}}. \\]\n$25\\,^{\\circ}\\mathrm{C}$ の水（$V = 1.807\\times 10^{-5}\\,\\mathrm{m^3/mol}$，$\\alpha = 2.57\\times 10^{-4}\\,\\mathrm{K^{-1}}$，$\\kappa_T = 4.52\\times 10^{-10}\\,\\mathrm{Pa^{-1}}$，$C_p\\approx75.3\\,\\mathrm{J/(K\\,mol)}$）では約 $1\\%$ で，液体・固体では $\\alpha$ が小さいため $C_p \\approx C_V$ とみなせる．"
    }
   ],
   "idea": {
-   "tex": "$S(T,V)$ の全微分を定圧で読み，マクスウェルの関係式と循環関係で測定可能な量 $\\alpha, \\kappa_T$ に直す．"
+   "tex": "$S(T,V)$ の全微分を定圧で読み，マクスウェルの関係式と循環関係で測定可能な量 $\\alpha, \\kappa_T$ に直す．液体では α^2 が小さく比熱差はわずか．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) R\n(3) C_p - C_V [J/(K mol)]：≈0.787"
+   "spec": "(1) 記述\n(2) R\n(3) $(C_p-C_V)/C_p$：T V α^2/(κ_T C_p)"
   },
   "methods": [],
   "tags": [
@@ -597,16 +597,16 @@
   "theme": "ファンデルワールス気体のジュール膨張",
   "topic": "ファンデルワールス気体のジュール膨張",
   "statement": {
-   "tex": "$1\\,\\mathrm{mol}$ のファンデルワールス気体 $\\left(p + \\dfrac{a}{V^2}\\right)(V - b) = RT$ を考える．定積モル比熱 $C_V$ は一定とする．\n\\begin{enumerate}\n\\item $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T = T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V - p$ を使って，ジュール係数 $\\left(\\dfrac{\\partial T}{\\partial V}\\right)_U$ を $a, C_V, V$ で表せ．\n\\item 体積 $V_1$ から $V_2$ への断熱自由膨張（ジュール膨張）による温度変化 $\\Delta T$ を求めよ．\n\\item 窒素（$a = 0.137\\,\\mathrm{Pa\\,m^6/mol^2}$，$C_V = \\frac{5}{2}R$，$R = 8.314\\,\\mathrm{J/(mol\\,K)}$）が $V_1 = 1.00\\times 10^{-3}\\,\\mathrm{m^3}$ から $V_2 = 2.00\\times 10^{-3}\\,\\mathrm{m^3}$ へジュール膨張したときの $\\Delta T$ を求めよ．\n\\end{enumerate}"
+   "tex": "$1\\,\\mathrm{mol}$ のファンデルワールス気体 $\\left(p + \\dfrac{a}{V^2}\\right)(V - b) = RT$ を考える．定積モル比熱 $C_V$ は一定とする．\n\\begin{enumerate}\n\\item $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T = T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V - p$ を使って，ジュール係数 $\\left(\\dfrac{\\partial T}{\\partial V}\\right)_U$ を $a, C_V, V$ で表せ．\n\\item 体積 $V_1$ から $V_2$ への断熱自由膨張（ジュール膨張）による温度変化 $\\Delta T$ を求めよ．\n\\item 2 原子分子気体（$C_V = \\frac{5}{2}R$）が $V_1$ から $3V_1$ へジュール膨張したときの $\\Delta T$ を $a,\\ R,\\ V_1$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\left(\\frac{\\partial T}{\\partial V}\\right)_U = -\\frac{a}{C_VV^2}$ \\quad (2) $\\Delta T = \\frac{a}{C_V}\\left(\\frac{1}{V_2} - \\frac{1}{V_1}\\right)$ \\quad (3) $\\Delta T \\approx -3.30\\,\\mathrm{K}$"
+   "tex": "(1) $\\left(\\frac{\\partial T}{\\partial V}\\right)_U = -\\frac{a}{C_VV^2}$ \\quad (2) $\\Delta T = \\frac{a}{C_V}\\left(\\frac{1}{V_2} - \\frac{1}{V_1}\\right)$ \\quad (3) $\\Delta T = -\\frac{4a}{15RV_1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "ファンデルワールス気体では $(\\partial U/\\partial V)_T = a/V^2$ である．$U$ 一定の条件 $dU = C_V\\,dT + \\dfrac{a}{V^2}dV = 0$ より\n\\[ \\left(\\frac{\\partial T}{\\partial V}\\right)_U = \\boldsymbol{-\\frac{a}{C_VV^2}}. \\]\n\n自由膨張では $U$ が一定なので，これを積分して\n\\[ \\Delta T = -\\frac{a}{C_V}\\int_{V_1}^{V_2}\\frac{dV}{V^2} = \\boldsymbol{\\frac{a}{C_V}\\left(\\frac{1}{V_2} - \\frac{1}{V_1}\\right)}. \\]\n\n数値を代入すると\n\\[ \\Delta T = \\frac{0.137}{20.79}\\times(500 - 1000) \\approx \\boldsymbol{-3.30\\,\\mathrm{K}}. \\]\n理想気体では温度は変わらないが，引力があると膨張で位置エネルギーが上がる分だけ運動エネルギーが減り，冷える．"
+    "tex": "ファンデルワールス気体では $(\\partial U/\\partial V)_T = a/V^2$ である．$U$ 一定の条件 $dU = C_V\\,dT + \\dfrac{a}{V^2}dV = 0$ より\n\\[ \\left(\\frac{\\partial T}{\\partial V}\\right)_U = \\boldsymbol{-\\frac{a}{C_VV^2}}. \\]\n\n自由膨張では $U$ が一定なので，これを積分して\n\\[ \\Delta T = -\\frac{a}{C_V}\\int_{V_1}^{V_2}\\frac{dV}{V^2} = \\boldsymbol{\\frac{a}{C_V}\\left(\\frac{1}{V_2} - \\frac{1}{V_1}\\right)}. \\]\n\n$C_V=\\frac52R$，$V_2=3V_1$ を代入すると\n\\[ \\Delta T = \\frac{2a}{5R}\\left(\\frac{1}{3V_1} - \\frac{1}{V_1}\\right)= \\boldsymbol{-\\frac{4a}{15RV_1}}. \\]\n理想気体では温度は変わらないが，引力があると膨張で位置エネルギーが上がる分だけ運動エネルギーが減り，冷える．"
    }
   ],
   "idea": {
@@ -614,7 +614,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) -a/(C_V V^2)\n(2) (a/C_V) (1/V_2 - 1/V_1)\n(3) ΔT [K]：≈-3.30"
+   "spec": "(1) -a/(C_V V^2)\n(2) (a/C_V) (1/V_2 - 1/V_1)\n(3) ΔT：-4a/(15 R V_1)"
   },
   "methods": [],
   "tags": [
@@ -1042,16 +1042,16 @@
   "theme": "2 物体からの最大仕事：熱容量が T に比例する場合",
   "topic": "2 物体からの最大仕事：熱容量が T に比例する場合",
   "statement": {
-   "tex": "温度 $T_1,T_2$（$T_1>T_2$）の 2 つの物体があり，外界との熱のやりとりはなく，体積も一定とする．両者の間で熱機関を働かせ，最終的に共通の温度 $T_f$ になるまでに外部へ取り出せる仕事を考える．\n\\begin{enumerate}\n\\item 取り出す仕事 $|W|$ は終状態の全エントロピー $S$ の減少関数であり，$d|W|/dS=-T_f$ となることを示せ．\n\\item 2 物体の熱容量がともに一定値 $C$ のとき，最大仕事と $T_f$ を求めよ．\n\\item 熱容量が $C=\\gamma T$（$\\gamma>0$．金属の電子比熱など）のとき，最大仕事と $T_f$ を求めよ．また，熱機関を使わずに直接接触させた場合の最終温度とエントロピー生成 $\\Delta S$ を求め，$T_1=400$ K，$T_2=100$ K，$\\gamma=1$ J/K$^2$ のとき最大仕事と $\\Delta S$ の値を求めよ．\n\\end{enumerate}"
+   "tex": "温度 $T_1,T_2$（$T_1>T_2$）の 2 つの物体があり，外界との熱のやりとりはなく，体積も一定とする．両者の間で熱機関を働かせ，最終的に共通の温度 $T_f$ になるまでに外部へ取り出せる仕事を考える．\n\\begin{enumerate}\n\\item 取り出す仕事 $|W|$ は終状態の全エントロピー $S$ の減少関数であり，$d|W|/dS=-T_f$ となることを示せ．\n\\item 2 物体の熱容量がともに一定値 $C$ のとき，最大仕事と $T_f$ を求めよ．\n\\item 熱容量が $C=\\gamma T$（$\\gamma>0$．金属の電子比熱など）のとき，最大仕事と $T_f$ を求めよ．また，熱機関を使わずに直接接触させた場合の最終温度 $T'$ とエントロピー生成 $\\Delta S$ を求め，$T_1=4T_2$ のとき最大仕事と $\\Delta S$ を $\\gamma,\\ T_2$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $|W|=U_0-U(S)$，$d|W|/dS=-T_f$　(2) $T_f=\\sqrt{T_1T_2}$，$|W|_{\\max}=C(\\sqrt{T_1}-\\sqrt{T_2})^2$　(3) $T_f=\\dfrac{T_1+T_2}2$，$|W|_{\\max}=\\dfrac\\gamma4(T_1-T_2)^2$；直接接触では $T'=\\sqrt{(T_1^2+T_2^2)/2}$，$\\Delta S=\\gamma\\left(\\sqrt{2(T_1^2+T_2^2)}-T_1-T_2\\right)$；数値は $22.5$ kJ，$83.1$ J/K"
+   "tex": "(1) $|W|=U_0-U(S)$，$d|W|/dS=-T_f$　(2) $T_f=\\sqrt{T_1T_2}$，$|W|_{\\max}=C(\\sqrt{T_1}-\\sqrt{T_2})^2$　(3) $T_f=\\dfrac{T_1+T_2}2$，$|W|_{\\max}=\\dfrac\\gamma4(T_1-T_2)^2$；$T'=\\sqrt{(T_1^2+T_2^2)/2}$，$\\Delta S=\\gamma\\left(\\sqrt{2(T_1^2+T_2^2)}-T_1-T_2\\right)$；$T_1=4T_2$ で $|W|_{\\max}=\\dfrac94\\gamma T_2^2$，$\\Delta S=(\\sqrt{34}-5)\\gamma T_2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 全系は孤立で体積一定なので第 1 法則より $|W|=U_0-U$．終状態は共通温度 $T_f$ の平衡状態で，$U$ はその全エントロピー $S$ の関数．$(\\partial U/\\partial S)_V=T_f$ より $d|W|/dS=-T_f<0$．エントロピーは減少しえないので（$S\\ge S_0$），$|W|$ は $S=S_0$（可逆）のとき最大．\n\n(2) 可逆条件 $C\\ln\\dfrac{T_f}{T_1}+C\\ln\\dfrac{T_f}{T_2}=0$ より $T_f=\\sqrt{T_1T_2}$．$|W|_{\\max}=C(T_1+T_2-2T_f)=C(\\sqrt{T_1}-\\sqrt{T_2})^2$．\n\n(3) $U=\\tfrac12\\gamma T^2$，$S=\\gamma T$（$+$定数）．可逆条件 $\\gamma(T_f-T_1)+\\gamma(T_f-T_2)=0$ から $T_f=\\dfrac{T_1+T_2}2$（算術平均！）．\n\\[ |W|_{\\max}=\\frac\\gamma2(T_1^2+T_2^2)-\\gamma T_f^2=\\frac\\gamma4(T_1-T_2)^2. \\]\n直接接触ではエネルギー保存 $\\tfrac12\\gamma(T_1^2+T_2^2)=\\gamma T'^2$ から $T'=\\sqrt{(T_1^2+T_2^2)/2}$（2 乗平均）．\n\\[ \\Delta S=2\\gamma T'-\\gamma(T_1+T_2)=\\gamma\\left(\\sqrt{2(T_1^2+T_2^2)}-T_1-T_2\\right)\\ge0. \\]\n（2 乗平均 $\\ge$ 算術平均より正．）数値：$|W|_{\\max}=\\tfrac14\\cdot300^2=2.25\\times10^4$ J，$T'=\\sqrt{85000}=291.5$ K，$\\Delta S=2\\times291.5-500=83.1$ J/K．\n定熱容量では「可逆→幾何平均，直接接触→算術平均」だが，$C\\propto T$ では「可逆→算術平均，直接接触→2 乗平均」となり，平均の種類が 1 段ずれる．"
+    "tex": "(1) 全系は孤立で体積一定なので第 1 法則より $|W|=U_0-U$．終状態は共通温度 $T_f$ の平衡状態で，$U$ はその全エントロピー $S$ の関数．$(\\partial U/\\partial S)_V=T_f$ より $d|W|/dS=-T_f<0$．エントロピーは減少しえないので（$S\\ge S_0$），$|W|$ は $S=S_0$（可逆）のとき最大．\n\n(2) 可逆条件 $C\\ln\\dfrac{T_f}{T_1}+C\\ln\\dfrac{T_f}{T_2}=0$ より $T_f=\\boldsymbol{\\sqrt{T_1T_2}}$．$|W|_{\\max}=C(T_1+T_2-2T_f)=\\boldsymbol{C(\\sqrt{T_1}-\\sqrt{T_2})^2}$．\n\n(3) $U=\\tfrac12\\gamma T^2$，$S=\\gamma T$（$+$定数）．可逆条件 $\\gamma(T_f-T_1)+\\gamma(T_f-T_2)=0$ から $T_f=\\boldsymbol{\\dfrac{T_1+T_2}2}$（算術平均！）．\n\\[ |W|_{\\max}=\\frac\\gamma2(T_1^2+T_2^2)-\\gamma T_f^2=\\boldsymbol{\\frac\\gamma4(T_1-T_2)^2}. \\]\n直接接触ではエネルギー保存 $\\tfrac12\\gamma(T_1^2+T_2^2)=\\gamma T'^2$ から $T'=\\boldsymbol{\\sqrt{(T_1^2+T_2^2)/2}}$（2 乗平均）．\n\\[ \\Delta S=2\\gamma T'-\\gamma(T_1+T_2)=\\boldsymbol{\\gamma\\left(\\sqrt{2(T_1^2+T_2^2)}-T_1-T_2\\right)}\\ge0. \\]\n（2 乗平均 $\\ge$ 算術平均より正．）$T_1=4T_2$ では\n\\[ |W|_{\\max}=\\frac\\gamma4(3T_2)^2=\\boldsymbol{\\frac94\\gamma T_2^2},\\qquad \\Delta S=\\gamma\\bigl(\\sqrt{34}\\,T_2-5T_2\\bigr)=\\boldsymbol{(\\sqrt{34}-5)\\gamma T_2}\\ (\\approx0.83\\,\\gamma T_2). \\]\n定熱容量では「可逆→幾何平均，直接接触→算術平均」だが，$C\\propto T$ では「可逆→算術平均，直接接触→2 乗平均」となり，平均の種類が 1 段ずれる．"
    }
   ],
   "idea": {
@@ -1059,7 +1059,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) $T_f$：sqrt(T_1 T_2) ; $|W|_{\\max}$：C (sqrt(T_1)-sqrt(T_2))^2\n(3) $T_f$：(T_1+T_2)/2 ; $|W|_{\\max}$：(γ/4)(T_1-T_2)^2 ; $T'$：sqrt((T_1^2+T_2^2)/2) ; $\\Delta S$：γ (sqrt(2 (T_1^2+T_2^2)) - T_1 - T_2) ; $T_1=4T_2$ の最大仕事：(9/4) γ T_2^2 ; $T_1=4T_2$ の $\\Delta S$：(sqrt(34)-5) γ T_2"
   },
   "methods": [],
   "tags": [
@@ -1092,16 +1092,16 @@
   "theme": "圧縮ガスのエクセルギー（最小仕事）",
   "topic": "圧縮ガスのエクセルギー（最小仕事）",
   "statement": {
-   "tex": "温度 $T_0$，圧力 $p_0$ の大気（媒質）中に，体積 $V_1$ の容器に入った理想気体が温度 $T_0$，圧力 $p_1\\,(>p_0)$ で蓄えられている．気体は大気とは混ざらないものとし，最終的に $T_0,\\ p_0$ で媒質と平衡になるまでに取り出せる有効仕事を考える．\n\\begin{enumerate}\n\\item 系を状態 1 から媒質と平衡な状態 0 に変化させるのに必要な最小の仕事は $R_{\\min}=\\Delta(U-T_0S+p_0V)$ で与えられる．これを用いて，気体から取り出せる最大の有効仕事（エクセルギー）$W_{\\max}$ を $p_0,p_1,V_1$ で表せ．\n\\item $W_{\\max}$ が単純な等温膨張の仕事 $p_1V_1\\ln(p_1/p_0)$ より小さい理由を説明し，その差を求めよ．\n\\item $V_1=0.050$ m$^3$，$p_1=2.0\\times10^7$ Pa，$p_0=1.0\\times10^5$ Pa のとき，$W_{\\max}$ と (2) の差の値を求めよ．逆に大気からこの容器を満たすのに必要な最小仕事はいくらか．\n\\end{enumerate}"
+   "tex": "温度 $T_0$，圧力 $p_0$ の大気（媒質）中に，体積 $V_1$ の容器に入った理想気体が温度 $T_0$，圧力 $p_1\\,(>p_0)$ で蓄えられている．気体は大気とは混ざらないものとし，最終的に $T_0,\\ p_0$ で媒質と平衡になるまでに取り出せる有効仕事を考える．\n\\begin{enumerate}\n\\item 系を状態 1 から媒質と平衡な状態 0 に変化させるのに必要な最小の仕事は $R_{\\min}=\\Delta(U-T_0S+p_0V)$ で与えられる．これを用いて，気体から取り出せる最大の有効仕事（エクセルギー）$W_{\\max}$ を $p_0,p_1,V_1$ で表せ．\n\\item $W_{\\max}$ が単純な等温膨張の仕事 $p_1V_1\\ln(p_1/p_0)$ より小さい理由を説明し，その差を求めよ．\n\\item 圧力差が小さい（$p_1-p_0\\ll p_0$）とき，$W_{\\max}$ の主要項を $p_0,p_1,V_1$ で表せ．また，逆に大気からこの容器を（圧力 $p_1$ まで）満たすのに必要な最小仕事を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $W_{\\max}=p_1V_1\\ln\\dfrac{p_1}{p_0}-(p_1-p_0)V_1$　(2) 差は大気を押しのける仕事 $p_0(V_0-V_1)=(p_1-p_0)V_1$　(3) $W_{\\max}\\approx4.30$ MJ，差 $\\approx0.995$ MJ，充填の最小仕事も $4.30$ MJ"
+   "tex": "(1) $W_{\\max}=p_1V_1\\ln\\dfrac{p_1}{p_0}-(p_1-p_0)V_1$　(2) 差は大気を押しのける仕事 $p_0(V_0-V_1)=(p_1-p_0)V_1$　(3) $W_{\\max}\\simeq\\dfrac{(p_1-p_0)^2V_1}{2p_0}$；充填の最小仕事は $p_1V_1\\ln\\dfrac{p_1}{p_0}-(p_1-p_0)V_1$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 状態 1 → 0 の変化で，$U$ は温度 $T_0$ のまま変わらない（理想気体）．$S_0-S_1=nR\\ln(p_1/p_0)$，$V_0=p_1V_1/p_0$（$nRT_0=p_1V_1$）．1 → 0 に必要な最小仕事は\n\\[ R_{\\min}=\\Delta U-T_0\\Delta S+p_0\\Delta V=0-T_0nR\\ln\\frac{p_1}{p_0}+p_0\\left(\\frac{p_1V_1}{p_0}-V_1\\right)=-p_1V_1\\ln\\frac{p_1}{p_0}+(p_1-p_0)V_1. \\]\nこれが負なので，逆に外部へ取り出せる最大の有効仕事は\n\\[ W_{\\max}=-R_{\\min}=p_1V_1\\ln\\frac{p_1}{p_0}-(p_1-p_0)V_1. \\]\n\n(2) 気体が等温で $V_1$ から $V_0$ まで膨張する仕事は $p_1V_1\\ln(p_1/p_0)$ だが，そのうち $p_0(V_0-V_1)=(p_1-p_0)V_1$ は大気を押しのけるのに使われ，有効な仕事として取り出せない．\n\n(3) $p_1V_1=1.0\\times10^6$ J，$\\ln200=5.298$ より等温仕事 $5.298$ MJ．差 $(p_1-p_0)V_1=1.99\\times10^7\\times0.050=0.995$ MJ．よって $W_{\\max}=4.30$ MJ．\n充填は逆過程で，可逆に行えば最小仕事は $R_{\\min}(0\\to1)=+W_{\\max}=4.30$ MJ．"
+    "tex": "(1) 状態 1 → 0 の変化で，$U$ は温度 $T_0$ のまま変わらない（理想気体）．$S_0-S_1=nR\\ln(p_1/p_0)$，$V_0=p_1V_1/p_0$（$nRT_0=p_1V_1$）．1 → 0 に必要な最小仕事は\n\\[ R_{\\min}=\\Delta U-T_0\\Delta S+p_0\\Delta V=0-T_0nR\\ln\\frac{p_1}{p_0}+p_0\\left(\\frac{p_1V_1}{p_0}-V_1\\right)=-p_1V_1\\ln\\frac{p_1}{p_0}+(p_1-p_0)V_1. \\]\nこれが負なので，逆に外部へ取り出せる最大の有効仕事は\n\\[ W_{\\max}=-R_{\\min}=\\boldsymbol{p_1V_1\\ln\\frac{p_1}{p_0}-(p_1-p_0)V_1}. \\]\n\n(2) 気体が等温で $V_1$ から $V_0$ まで膨張する仕事は $p_1V_1\\ln(p_1/p_0)$ だが，そのうち $p_0(V_0-V_1)=\\boldsymbol{(p_1-p_0)V_1}$ は大気を押しのけるのに使われ，有効な仕事として取り出せない．\n\n(3) $\\delta=p_1-p_0$ とおくと $\\ln\\dfrac{p_1}{p_0}=\\dfrac{\\delta}{p_0}-\\dfrac{\\delta^2}{2p_0^2}+\\cdots$ なので\n\\[ W_{\\max}=(p_0+\\delta)V_1\\Bigl(\\frac{\\delta}{p_0}-\\frac{\\delta^2}{2p_0^2}\\Bigr)-\\delta V_1+\\cdots=\\boldsymbol{\\frac{(p_1-p_0)^2V_1}{2p_0}}+\\cdots. \\]\n1 次の項は等温膨張の仕事と大気を押しのける仕事で打ち消し合い，エクセルギーは圧力差の 2 乗で効く．\n充填は逆過程で，可逆に行えば最小仕事は $R_{\\min}(0\\to1)=+W_{\\max}=\\boldsymbol{p_1V_1\\ln\\dfrac{p_1}{p_0}-(p_1-p_0)V_1}$．（例えば $V_1=0.050$ m$^3$，$p_1=200p_0=2.0\\times10^7$ Pa では約 4.3 MJ．）"
    }
   ],
   "idea": {
@@ -1109,7 +1109,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $W_{\\max}$ [MJ]：≈4.30 ; 差 [MJ]：≈0.995 ; 充填の最小仕事も [MJ]：≈4.30"
+   "spec": "(1) $W_{\\max}$：p_1 V_1 ln(p_1/p_0) - (p_1-p_0) V_1\n(2) 差：(p_1-p_0) V_1\n(3) $W_{\\max}$：(p_1-p_0)^2 V_1/(2 p_0) ; 充填の最小仕事：p_1 V_1 ln(p_1/p_0) - (p_1-p_0) V_1"
   },
   "methods": [],
   "tags": [
@@ -1142,16 +1142,16 @@
   "theme": "熱源を段階的に変えたときのエントロピー生成",
   "topic": "熱源を段階的に変えたときのエントロピー生成",
   "statement": {
-   "tex": "熱容量 $C$（一定），温度 $T_i$ の物体 A を，温度 $T'$ の熱源 A$'$ に接触させて平衡にする（体積変化はない）．\n\\begin{enumerate}\n\\item 全系のエントロピー変化 $\\Delta S^*$ を求め，$\\Delta S^*\\ge0$ を示せ．さらに $T'\\Delta S^*=-\\Delta\\tilde F$（$\\tilde F\\equiv U-T'S$ は A の量）が成り立つことを確かめよ．\n\\item A を温度 $T_k=T_ir^k$（$k=1,2,\\dots,N$，$r=(T'/T_i)^{1/N}$）の熱源に順に接触させて $T'$ まで温めるとき，全エントロピー生成 $\\Delta S^*_N$ を求め，$N\\gg1$ での主要項を求めよ．\n\\item $C=1$ J/K，$T_i=300$ K，$T'=600$ K のとき，$N=1$ と $N=10$ の $\\Delta S^*_N$ を数値で求めよ．\n\\end{enumerate}"
+   "tex": "熱容量 $C$（一定），温度 $T_i$ の物体 A を，温度 $T'$ の熱源 A$'$ に接触させて平衡にする（体積変化はない）．\n\\begin{enumerate}\n\\item 全系のエントロピー変化 $\\Delta S^*$ を求め，$\\Delta S^*\\ge0$ を示せ．さらに $T'\\Delta S^*=-\\Delta\\tilde F$（$\\tilde F\\equiv U-T'S$ は A の量）が成り立つことを確かめよ．\n\\item A を温度 $T_k=T_ir^k$（$k=1,2,\\dots,N$，$r=(T'/T_i)^{1/N}$）の熱源に順に接触させて $T'$ まで温めるとき，全エントロピー生成 $\\Delta S^*_N$ を求め，$N\\gg1$ での主要項を求めよ．\n\\item $T'=2T_i$ のとき，$N=1$ と $N=10$ の $\\Delta S^*_N$ を $C$ で表し，$N=10$ について (2) の主要項と比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta S^*=C\\left[\\ln\\dfrac{T'}{T_i}+\\dfrac{T_i}{T'}-1\\right]\\ge0$　(2) $\\Delta S^*_N=C\\left[\\ln\\dfrac{T'}{T_i}+N(r^{-1}-1)\\right]\\simeq\\dfrac C{2N}\\left(\\ln\\dfrac{T'}{T_i}\\right)^2$　(3) $N=1$：$0.193$ J/K，$N=10$：$0.0235$ J/K（近似式 $0.0240$）"
+   "tex": "(1) $\\Delta S^*=C\\left[\\ln\\dfrac{T'}{T_i}+\\dfrac{T_i}{T'}-1\\right]\\ge0$　(2) $\\Delta S^*_N=C\\left[\\ln\\dfrac{T'}{T_i}+N(r^{-1}-1)\\right]\\simeq\\dfrac C{2N}\\left(\\ln\\dfrac{T'}{T_i}\\right)^2$　(3) $N=1$：$C\\left(\\ln2-\\dfrac12\\right)$，$N=10$：$C\\left(\\ln2+10(2^{-1/10}-1)\\right)$（主要項 $\\dfrac{C(\\ln2)^2}{20}$）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) A のエントロピー変化は $C\\ln(T'/T_i)$．熱源は熱 $Q=C(T'-T_i)$ を失い $-Q/T'$．\n\\[ \\Delta S^*=C\\left[\\ln\\frac{T'}{T_i}-1+\\frac{T_i}{T'}\\right]. \\]\n$f(y)=\\ln y-1+1/y$（$y=T'/T_i>0$）は $f(1)=0$，$f'(y)=(y-1)/y^2$ で $y=1$ が最小，よって $\\Delta S^*\\ge0$．\nまた $\\Delta\\tilde F=\\Delta U-T'\\Delta S_A=C(T'-T_i)-T'C\\ln(T'/T_i)=-T'\\Delta S^*$．すなわちエントロピー増大は $\\tilde F=U-T'S$ の減少と同値で，$\\tilde F$ は $T=T'$ で最小となる．\n\n(2) $k$ 段目では A のエントロピー $C\\ln r$，熱源 $-C(T_k-T_{k-1})/T_k=-C(1-r^{-1})$．$N$ 段合計で\n\\[ \\Delta S^*_N=N\\,C\\left(\\ln r+r^{-1}-1\\right)=C\\left[\\ln\\frac{T'}{T_i}+N(r^{-1}-1)\\right]. \\]\n$\\ell=\\ln(T'/T_i)$ とおくと $\\ln r=\\ell/N$，$r^{-1}-1=-\\ell/N+\\ell^2/(2N^2)-\\cdots$ より $\\Delta S^*_N\\simeq C\\ell^2/(2N)\\to0$（$N\\to\\infty$ で可逆過程に近づく）．\n\n(3) $N=1$：$\\ln2-1/2=0.193$ J/K．$N=10$：$r=2^{0.1}=1.07177$，$10(r^{-1}-1)=-0.6697$，$\\Delta S^*_{10}=0.6931-0.6697=0.0235$ J/K（近似式 $(\\ln2)^2/20=0.0240$）．"
+    "tex": "(1) A のエントロピー変化は $C\\ln(T'/T_i)$．熱源は熱 $Q=C(T'-T_i)$ を失い $-Q/T'$．\n\\[ \\Delta S^*=\\boldsymbol{C\\left[\\ln\\frac{T'}{T_i}-1+\\frac{T_i}{T'}\\right]}. \\]\n$f(y)=\\ln y-1+1/y$（$y=T'/T_i>0$）は $f(1)=0$，$f'(y)=(y-1)/y^2$ で $y=1$ が最小，よって $\\Delta S^*\\ge0$．\nまた $\\Delta\\tilde F=\\Delta U-T'\\Delta S_A=C(T'-T_i)-T'C\\ln(T'/T_i)=-T'\\Delta S^*$．すなわちエントロピー増大は $\\tilde F=U-T'S$ の減少と同値で，$\\tilde F$ は $T=T'$ で最小となる．\n\n(2) $k$ 段目では A のエントロピー $C\\ln r$，熱源 $-C(T_k-T_{k-1})/T_k=-C(1-r^{-1})$．$N$ 段合計で\n\\[ \\Delta S^*_N=N\\,C\\left(\\ln r+r^{-1}-1\\right)=\\boldsymbol{C\\left[\\ln\\frac{T'}{T_i}+N(r^{-1}-1)\\right]}. \\]\n$\\ell=\\ln(T'/T_i)$ とおくと $\\ln r=\\ell/N$，$r^{-1}-1=-\\ell/N+\\ell^2/(2N^2)-\\cdots$ より $\\Delta S^*_N\\simeq\\boldsymbol{C\\ell^2/(2N)}\\to0$（$N\\to\\infty$ で可逆過程に近づく）．\n\n(3) $N=1$：$\\Delta S^*_1=\\boldsymbol{C\\left(\\ln2-\\dfrac12\\right)}\\ (\\approx0.193\\,C)$．$N=10$：$r=2^{1/10}$ なので\n\\[ \\Delta S^*_{10}=\\boldsymbol{C\\left(\\ln2+10(2^{-1/10}-1)\\right)}\\ (\\approx0.0235\\,C), \\]\n主要項 $C(\\ln2)^2/20\\approx0.0240\\,C$ とよく一致する．段数を 10 倍にするとエントロピー生成はほぼ 1/10 になる．"
    }
   ],
   "idea": {
@@ -1159,7 +1159,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\Delta S^*$：C (ln(T'/T_i) + T_i/T' - 1)\n(2) $\\Delta S^*_N$：C (ln(T'/T_i) + N (1/r - 1)) ; 主要項：C (ln(T'/T_i))^2/(2 N)\n(3) $N=1$：C (ln 2 - 1/2) ; $N=10$：C (ln 2 + 10 (2^(-1/10) - 1)) ; 主要項：C (ln 2)^2/20"
   },
   "methods": [],
   "tags": [
@@ -1539,16 +1539,16 @@
   "theme": "ファンデルワールス気体の自由エネルギーと自由膨張",
   "topic": "ファンデルワールス気体の自由エネルギーと自由膨張",
   "statement": {
-   "tex": "$n$ モルの気体が状態方程式 $P=\\dfrac{nRT}{V-nb}-\\dfrac{an^2}{V^2}$ に従い，エントロピーが\n\\[ S(T,V)=nc\\ln T+nR\\ln(V-nb)+s_0\\qquad(c,\\ s_0\\ \\text{は定数}) \\]\nで与えられるとする．\n\\begin{enumerate}\n\\item $dF=-S\\,dT-P\\,dV$ を積分してヘルムホルツ自由エネルギー $F(T,V)$ を求めよ（加法定数 $F_0$ は残してよい）．\n\\item $U=F+TS$ を求め，定積モル比熱が $c$ であること，および $U$ が体積に依存することを確かめよ．\n\\item 断熱容器内で，この気体が体積 $V_1$ から $V_2\\ (>V_1)$ へ真空中に自由膨張する．はじめの温度を $T_1$ とするとき，終状態の温度変化 $\\Delta T$ を求めよ．\n\\item $n=1\\,\\mathrm{mol}$，$a=0.364\\,\\mathrm{Pa\\,m^6/mol^2}$，$c=28.5\\,\\mathrm{J/(mol\\,K)}$，$V_1=1.0\\times10^{-3}\\,\\mathrm{m^3}$，$V_2=2.0\\times10^{-3}\\,\\mathrm{m^3}$ のとき $\\Delta T$ を数値で求めよ．\n\\end{enumerate}"
+   "tex": "$n$ モルの気体が状態方程式 $P=\\dfrac{nRT}{V-nb}-\\dfrac{an^2}{V^2}$ に従い，エントロピーが\n\\[ S(T,V)=nc\\ln T+nR\\ln(V-nb)+s_0\\qquad(c,\\ s_0\\ \\text{は定数}) \\]\nで与えられるとする．\n\\begin{enumerate}\n\\item $dF=-S\\,dT-P\\,dV$ を積分してヘルムホルツ自由エネルギー $F(T,V)$ を求めよ（加法定数 $F_0$ は残してよい）．\n\\item $U=F+TS$ を求め，定積モル比熱が $c$ であること，および $U$ が体積に依存することを確かめよ．\n\\item 断熱容器内で，この気体が体積 $V_1$ から $V_2\\ (>V_1)$ へ真空中に自由膨張する．はじめの温度を $T_1$ とするとき，終状態の温度変化 $\\Delta T$ を求めよ．\n\\item 体積が 2 倍（$V_2=2V_1$）になる場合の $\\Delta T$ を $a,\\ n,\\ c,\\ V_1$ で表し，$b$ や $T_1$ によらないことを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $F=nc\\,T(1-\\ln T)-nRT\\ln(V-nb)-\\dfrac{an^2}{V}-s_0T+F_0$　(2) $U=ncT-\\dfrac{an^2}{V}+F_0$　(3) $\\Delta T=-\\dfrac{an}{c}\\Bigl(\\dfrac1{V_1}-\\dfrac1{V_2}\\Bigr)$　(4) $\\Delta T\\approx-6.4\\,\\mathrm K$"
+   "tex": "(1) $F=nc\\,T(1-\\ln T)-nRT\\ln(V-nb)-\\dfrac{an^2}{V}-s_0T+F_0$　(2) $U=ncT-\\dfrac{an^2}{V}+F_0$　(3) $\\Delta T=-\\dfrac{an}{c}\\Bigl(\\dfrac1{V_1}-\\dfrac1{V_2}\\Bigr)$　(4) $\\Delta T=-\\dfrac{an}{2cV_1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) まず $V$ を固定して $(\\partial F/\\partial T)_V=-S$ を $T$ で積分する．$\\int\\ln T\\,dT=T\\ln T-T$ より\n\\[ F=-nc(T\\ln T-T)-nRT\\ln(V-nb)-s_0T+f(V). \\]\n次に $(\\partial F/\\partial V)_T=-P$ を課すと $-\\dfrac{nRT}{V-nb}+f'(V)=-\\dfrac{nRT}{V-nb}+\\dfrac{an^2}{V^2}$，よって $f'(V)=an^2/V^2$，$f(V)=-an^2/V+F_0$．したがって\n\\[ F=nc\\,T(1-\\ln T)-nRT\\ln(V-nb)-\\frac{an^2}{V}-s_0T+F_0. \\]\n（$T$ や $V-nb$ の対数の中の単位は $s_0$，$F_0$ に吸収されている．）\n\n(2) $TS=ncT\\ln T+nRT\\ln(V-nb)+s_0T$ を加えて $U=ncT-\\dfrac{an^2}{V}+F_0$．$C_V=(\\partial U/\\partial T)_V=nc$ なので定積モル比熱は $c$．$(\\partial U/\\partial V)_T=an^2/V^2>0$：分子間引力のため，体積を増すと位置エネルギーが上がる．\n\n(3) 自由膨張では外部との熱・仕事のやり取りがないので $U$ が保存する：$ncT_2-an^2/V_2=ncT_1-an^2/V_1$．よって\n\\[ \\Delta T=T_2-T_1=-\\frac{an}{c}\\Bigl(\\frac1{V_1}-\\frac1{V_2}\\Bigr)<0. \\]\n理想気体（$a=0$）では温度は変わらないが，引力があると冷える．$b$ は結果に現れない．\n\n(4) $\\Delta T=-\\dfrac{0.364\\times1}{28.5}\\times(1000-500)\\approx-6.4\\,\\mathrm K$．"
+    "tex": "(1) まず $V$ を固定して $(\\partial F/\\partial T)_V=-S$ を $T$ で積分する．$\\int\\ln T\\,dT=T\\ln T-T$ より\n\\[ F=-nc(T\\ln T-T)-nRT\\ln(V-nb)-s_0T+f(V). \\]\n次に $(\\partial F/\\partial V)_T=-P$ を課すと $-\\dfrac{nRT}{V-nb}+f'(V)=-\\dfrac{nRT}{V-nb}+\\dfrac{an^2}{V^2}$，よって $f'(V)=an^2/V^2$，$f(V)=-an^2/V+F_0$．したがって\n\\[ F=\\boldsymbol{nc\\,T(1-\\ln T)-nRT\\ln(V-nb)-\\frac{an^2}{V}-s_0T+F_0}. \\]\n（$T$ や $V-nb$ の対数の中の単位は $s_0$，$F_0$ に吸収されている．）\n\n(2) $TS=ncT\\ln T+nRT\\ln(V-nb)+s_0T$ を加えて $U=\\boldsymbol{ncT-\\dfrac{an^2}{V}+F_0}$．$C_V=(\\partial U/\\partial T)_V=nc$ なので定積モル比熱は $c$．$(\\partial U/\\partial V)_T=an^2/V^2>0$：分子間引力のため，体積を増すと位置エネルギーが上がる．\n\n(3) 自由膨張では外部との熱・仕事のやり取りがないので $U$ が保存する：$ncT_2-an^2/V_2=ncT_1-an^2/V_1$．よって\n\\[ \\Delta T=T_2-T_1=\\boldsymbol{-\\frac{an}{c}\\Bigl(\\frac1{V_1}-\\frac1{V_2}\\Bigr)}<0. \\]\n理想気体（$a=0$）では温度は変わらないが，引力があると冷える．\n\n(4) $V_2=2V_1$ では $\\dfrac1{V_1}-\\dfrac1{2V_1}=\\dfrac1{2V_1}$ なので\n\\[ \\Delta T=\\boldsymbol{-\\frac{an}{2cV_1}}. \\]\n$b$ も $T_1$ も現れない（$U$ が $b$ を含まず，$C_V$ が一定のため）．CO$_2$ 1 mol を 1 L から 2 L にすると約 $-6$ K になる．"
    }
   ],
   "idea": {
@@ -1556,7 +1556,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $\\Delta T$：-((a n)/(c))(((1)/(V_1))-((1)/(V_2)))\n(4) $\\Delta T$ [K]：≈-6.4"
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\Delta T$：-((a n)/(c))(((1)/(V_1))-((1)/(V_2)))\n(4) $\\Delta T$：-a n/(2 c V_1)"
   },
   "methods": [],
   "tags": [
@@ -1588,16 +1588,16 @@
   "theme": "ギブス自由エネルギーと大気の重力分離",
   "topic": "ギブス自由エネルギーと大気の重力分離",
   "statement": {
-   "tex": "$n$ モルの理想気体のエントロピーが $(T,P)$ の関数として $S=nC_P\\ln T-nR\\ln P+s_0$（$C_P$，$s_0$ は定数）で与えられるとする．\n\\begin{enumerate}\n\\item $dG=-S\\,dT+V\\,dP$ を積分してギブス自由エネルギー $G(T,P)$ を求めよ（加法定数は $G_0$ とせよ）．また 1 モル当たりの化学ポテンシャルが $\\mu(T,P)=\\mu^\\circ(T)+RT\\ln P$ の形になることを示せ．\n\\item 重力加速度 $g$ の一様な重力場中で，温度 $T$ が高さによらない静止した大気を考える．混合理想気体では成分 $j$ の化学ポテンシャルは分圧 $p_j$ を用いて $\\mu_j=\\mu_j^\\circ(T)+RT\\ln p_j$ である．高さ $z$ での平衡条件が「$\\mu_j+M_jgz$ が高さによらない」（$M_j$ はモル質量）であることを用いて $p_j(z)$ を求めよ．\n\\item 対流による混合がないとすると，酸素と窒素の分圧比 $p_{\\mathrm{O_2}}/p_{\\mathrm{N_2}}$ は高さとともにどう変化するか．地表での値の $90\\%$ になる高さを求めよ．$T=300\\,\\mathrm K$，$M_{\\mathrm{O_2}}=0.032\\,\\mathrm{kg/mol}$，$M_{\\mathrm{N_2}}=0.028\\,\\mathrm{kg/mol}$，$g=9.8\\,\\mathrm{m/s^2}$，$R=8.314\\,\\mathrm{J/(mol\\,K)}$．\n\\end{enumerate}"
+   "tex": "$n$ モルの理想気体のエントロピーが $(T,P)$ の関数として $S=nC_P\\ln T-nR\\ln P+s_0$（$C_P$，$s_0$ は定数）で与えられるとする．\n\\begin{enumerate}\n\\item $dG=-S\\,dT+V\\,dP$ を積分してギブス自由エネルギー $G(T,P)$ を求めよ（加法定数は $G_0$ とせよ）．また 1 モル当たりの化学ポテンシャルが $\\mu(T,P)=\\mu^\\circ(T)+RT\\ln P$ の形になることを示せ．\n\\item 重力加速度 $g$ の一様な重力場中で，温度 $T$ が高さによらない静止した大気を考える．混合理想気体では成分 $j$ の化学ポテンシャルは分圧 $p_j$ を用いて $\\mu_j=\\mu_j^\\circ(T)+RT\\ln p_j$ である．高さ $z$ での平衡条件が「$\\mu_j+M_jgz$ が高さによらない」（$M_j$ はモル質量）であることを用いて $p_j(z)$ を求めよ．\n\\item 対流による混合がないとすると，酸素（モル質量 $M_1$）と窒素（モル質量 $M_2<M_1$）の分圧比 $p_{\\mathrm{O_2}}/p_{\\mathrm{N_2}}$ は高さとともにどう変化するか．比が地表での値の $f$ 倍（$0<f<1$）になる高さ $z$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $G=nC_PT(1-\\ln T)+nRT\\ln P-s_0T+G_0$，$\\mu=G/n$ は $\\mu^\\circ(T)+RT\\ln P$ の形　(2) $p_j(z)=p_j(0)\\exp(-M_jgz/RT)$　(3) 比は $\\exp\\{-(M_{\\mathrm{O_2}}-M_{\\mathrm{N_2}})gz/RT\\}$ で減少，$z\\approx6.7\\times10^3\\,\\mathrm m$"
+   "tex": "(1) $G=nC_PT(1-\\ln T)+nRT\\ln P-s_0T+G_0$，$\\mu=G/n$ は $\\mu^\\circ(T)+RT\\ln P$ の形　(2) $p_j(z)=p_j(0)\\exp(-M_jgz/RT)$　(3) 比は $\\exp\\{-(M_1-M_2)gz/RT\\}$ で減少，$z=\\dfrac{RT\\ln(1/f)}{(M_1-M_2)g}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $P$ を固定して $(\\partial G/\\partial T)_P=-S$ を積分すると $G=-nC_P(T\\ln T-T)+nRT\\ln P-s_0T+h(P)$．$(\\partial G/\\partial P)_T=nRT/P+h'(P)=V=nRT/P$ より $h'=0$，$h=G_0$．よって\n\\[ G=nC_PT(1-\\ln T)+nRT\\ln P-s_0T+G_0 . \\]\n$G_0=n g_0$ と示量的に選ぶと $\\mu=G/n=\\underbrace{C_PT(1-\\ln T)-(s_0/n)T+g_0}_{\\mu^\\circ(T)}+RT\\ln P$．\n\n(2) $RT\\ln p_j(z)+M_jgz=RT\\ln p_j(0)$ より $p_j(z)=p_j(0)\\exp\\!\\left(-\\dfrac{M_jgz}{RT}\\right)$．各成分が自分のモル質量で決まるスケールハイト $RT/(M_jg)$ をもつ．\n\n(3) $\\dfrac{p_{\\mathrm{O_2}}(z)}{p_{\\mathrm{N_2}}(z)}=\\dfrac{p_{\\mathrm{O_2}}(0)}{p_{\\mathrm{N_2}}(0)}\\exp\\!\\left\\{-\\dfrac{(M_{\\mathrm{O_2}}-M_{\\mathrm{N_2}})gz}{RT}\\right\\}$ となり，重い酸素の割合が高さとともに減る（重力分離）．$90\\%$ となる高さは\n\\[ z=\\frac{RT\\ln(1/0.9)}{(M_{\\mathrm{O_2}}-M_{\\mathrm{N_2}})g}=\\frac{8.314\\times300\\times0.1054}{0.004\\times9.8}\\approx6.7\\times10^3\\,\\mathrm m. \\]\n実際の対流圏では対流による混合のため組成はほぼ一定であり，この分離が見えるのはおよそ 100 km 以上の上層大気である．"
+    "tex": "(1) $P$ を固定して $(\\partial G/\\partial T)_P=-S$ を積分すると $G=-nC_P(T\\ln T-T)+nRT\\ln P-s_0T+h(P)$．$(\\partial G/\\partial P)_T=nRT/P+h'(P)=V=nRT/P$ より $h'=0$，$h=G_0$．よって\n\\[ G=\\boldsymbol{nC_PT(1-\\ln T)+nRT\\ln P-s_0T+G_0} . \\]\n$G_0=n g_0$ と示量的に選ぶと $\\mu=G/n=\\underbrace{C_PT(1-\\ln T)-(s_0/n)T+g_0}_{\\mu^\\circ(T)}+RT\\ln P$．\n\n(2) $RT\\ln p_j(z)+M_jgz=RT\\ln p_j(0)$ より $p_j(z)=\\boldsymbol{p_j(0)\\exp\\!\\left(-\\dfrac{M_jgz}{RT}\\right)}$．各成分が自分のモル質量で決まるスケールハイト $RT/(M_jg)$ をもつ．\n\n(3) $\\dfrac{p_{\\mathrm{O_2}}(z)}{p_{\\mathrm{N_2}}(z)}=\\dfrac{p_{\\mathrm{O_2}}(0)}{p_{\\mathrm{N_2}}(0)}\\exp\\!\\left\\{-\\dfrac{(M_1-M_2)gz}{RT}\\right\\}$ となり，重い酸素の割合が高さとともに減る（重力分離）．比が $f$ 倍となる高さは $\\exp\\{-(M_1-M_2)gz/RT\\}=f$ より\n\\[ z=\\boldsymbol{\\frac{RT\\ln(1/f)}{(M_1-M_2)g}}. \\]\n分母がモル質量の「差」なので，スケールハイトより 1 桁長い距離が必要になる（$T=300$ K，$f=0.9$ で約 7 km）．実際の対流圏では対流による混合のため組成はほぼ一定であり，この分離が見えるのはおよそ 100 km 以上の上層大気である．"
    }
   ],
   "idea": {
@@ -1605,7 +1605,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) $z$：R T ln(1/f)/((M_1-M_2) g)"
   },
   "methods": [],
   "tags": [
@@ -1840,16 +1840,16 @@
   "theme": "比熱差の一般式と混合気体のポリトロープ変化",
   "topic": "比熱差の一般式と混合気体のポリトロープ変化",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 一般の物質について，定圧熱容量と定積熱容量の差が\n\\[\nC_p-C_V=\\frac{TV\\alpha^2}{\\kappa_T},\\qquad \\alpha=\\frac1V\\left(\\frac{\\partial V}{\\partial T}\\right)_p,\\ \\ \\kappa_T=-\\frac1V\\left(\\frac{\\partial V}{\\partial p}\\right)_T\n\\]\nとなることを示せ．これを理想気体 $n$ モルに適用し，$C_p-C_V=nR$ を導け．\n\\item ヘリウム 1 mol と窒素 2 mol の理想混合気体がある（窒素は回転は励起されるが振動は励起されない温度とする）．混合気体全体の $C_V$，$C_p$ を ${\\rm J\\,K^{-1}}$ 単位で有効数字 4 桁で求め，実効的な比熱比 $\\gamma$ を既約分数で求めよ（$R=8.314\\ {\\rm J\\,mol^{-1}K^{-1}}$）．\n\\item この混合気体が準静的断熱変化するとき，$pV^{\\gamma}=$ 一定（$\\gamma$ は (2) の値）が成り立つことを示せ．\n\\item この混合気体に $pV^{k}=$ 一定（$k$ は定数）の準静的変化（ポリトロープ変化）をさせる．この変化に沿った混合気体全体の熱容量 $C_k=d'Q/dT$ を $C_V,\\gamma,k$ で表せ．$k=1.2$ のときの値を求め，その符号の物理的意味を述べよ．また $C_k<0$ となる $k$ の範囲を答えよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 一般の物質について，定圧熱容量と定積熱容量の差が\n\\[\nC_p-C_V=\\frac{TV\\alpha^2}{\\kappa_T},\\qquad \\alpha=\\frac1V\\left(\\frac{\\partial V}{\\partial T}\\right)_p,\\ \\ \\kappa_T=-\\frac1V\\left(\\frac{\\partial V}{\\partial p}\\right)_T\n\\]\nとなることを示せ．これを理想気体 $n$ モルに適用し，$C_p-C_V=nR$ を導け．\n\\item ヘリウム 1 mol と窒素 2 mol の理想混合気体がある（窒素は回転は励起されるが振動は励起されない温度とする）．混合気体全体の $C_V$，$C_p$ を気体定数 $R$ で表し，実効的な比熱比 $\\gamma$ を既約分数で求めよ．\n\\item この混合気体が準静的断熱変化するとき，$pV^{\\gamma}=$ 一定（$\\gamma$ は (2) の値）が成り立つことを示せ．\n\\item この混合気体に $pV^{k}=$ 一定（$k$ は定数）の準静的変化（ポリトロープ変化）をさせる．この変化に沿った混合気体全体の熱容量 $C_k=d'Q/dT$ を $C_V,\\gamma,k$ で表せ．$k=6/5$ のときの値を $R$ で表し，その符号の物理的意味を述べよ．また $C_k<0$ となる $k$ の範囲を答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照），理想気体では $\\alpha=1/T$，$\\kappa_T=1/p$ より $nR$　(2) $C_V=\\frac{13}{2}R=54.04\\ {\\rm J/K}$，$C_p=\\frac{19}{2}R=78.98\\ {\\rm J/K}$，$\\gamma=19/13$　(3) 証明（解説参照）　(4) $C_k=C_V\\dfrac{k-\\gamma}{k-1}$，$k=1.2$ で $-\\frac{17}{2}R\\approx-70.67\\ {\\rm J/K}$（熱を吸収しながら温度が下がる），$1<k<\\gamma$"
+   "tex": "(1) 証明（解説参照），理想気体では $\\alpha=1/T$，$\\kappa_T=1/p$ より $nR$　(2) $C_V=\\frac{13}{2}R$，$C_p=\\frac{19}{2}R$，$\\gamma=\\frac{19}{13}$　(3) 証明（解説参照）　(4) $C_k=C_V\\dfrac{k-\\gamma}{k-1}$，$k=6/5$ で $-\\frac{17}{2}R$（熱を吸収しながら温度が下がる），$1<k<\\gamma$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $S(T,V)$ と $S(T,p)$ を比べる．$T\\,dS=C_VdT+T(\\partial S/\\partial V)_TdV$ で，$p$ 一定の下で $dT$ で割ると\n\\[\nC_p=C_V+T\\left(\\frac{\\partial S}{\\partial V}\\right)_T\\left(\\frac{\\partial V}{\\partial T}\\right)_p=C_V+T\\left(\\frac{\\partial p}{\\partial T}\\right)_V\\left(\\frac{\\partial V}{\\partial T}\\right)_p\n\\]\n（マクスウェルの関係式 $(\\partial S/\\partial V)_T=(\\partial p/\\partial T)_V$ を用いた）．循環関係 $(\\partial p/\\partial T)_V=-(\\partial V/\\partial T)_p/(\\partial V/\\partial p)_T=\\alpha/\\kappa_T$ より\n\\[\nC_p-C_V=T\\cdot\\frac{\\alpha}{\\kappa_T}\\cdot V\\alpha=\\frac{TV\\alpha^2}{\\kappa_T}.\n\\]\n理想気体 $pV=nRT$ では $\\alpha=1/T$，$\\kappa_T=1/p$ なので $C_p-C_V=TV p/T^2=pV/T=nR$．\n\n(2) エネルギー等分配により He は $\\frac32R$/mol，回転まで励起された N$_2$ は $\\frac52R$/mol．理想混合気体の内部エネルギーは成分の和なので\n$C_V=\\frac32R\\cdot1+\\frac52R\\cdot2=\\frac{13}{2}R=54.04\\ {\\rm J/K}$．\n全モル数 3 で $C_p=C_V+3R=\\frac{19}{2}R=78.98\\ {\\rm J/K}$．$\\gamma=C_p/C_V=19/13\\approx1.462$．\n\n(3) 断熱条件 $0=C_VdT+p\\,dV$ に $p=nRT/V$（$n=3$）を代入：$C_V\\,dT/T+nR\\,dV/V=0$．(1) より $nR=C_p-C_V$ なので $TV^{\\gamma-1}=$ 一定，$pV=nRT$ と合わせて $pV^{\\gamma}=$ 一定．混合気体は全体の $C_V$ をもつ単一の理想気体と同じように振る舞う．\n\n(4) $pV^k=$ 一定と $pV=nRT$ から $TV^{k-1}=$ 一定，すなわち $dV/V=-dT/[(k-1)T]$．\n\\[\nd'Q=C_VdT+p\\,dV=C_VdT+nRT\\frac{dV}{V}=\\left(C_V-\\frac{nR}{k-1}\\right)dT .\n\\]\n$nR=(\\gamma-1)C_V$ を用いて $C_k=C_V\\left(1-\\dfrac{\\gamma-1}{k-1}\\right)=C_V\\dfrac{k-\\gamma}{k-1}$．\n$k=1.2$：$C_k=\\frac{13}{2}R\\cdot\\frac{1.2-19/13}{0.2}=\\frac{13}{2}R\\cdot\\left(-\\frac{17}{13}\\right)=-\\frac{17}{2}R\\approx-70.67\\ {\\rm J/K}$．\n負の熱容量とは，熱を吸収しながら温度が下がる（膨張の向き）ことを意味する．吸収した熱以上の仕事を外にするため内部エネルギーが減る．$C_k<0$ となるのは $(k-\\gamma)/(k-1)<0$，すなわち $1<k<\\gamma$（等温と断熱の間のポリトロープ）である．"
+    "tex": "(1) $S(T,V)$ と $S(T,p)$ を比べる．$T\\,dS=C_VdT+T(\\partial S/\\partial V)_TdV$ で，$p$ 一定の下で $dT$ で割ると\n\\[\nC_p=C_V+T\\left(\\frac{\\partial S}{\\partial V}\\right)_T\\left(\\frac{\\partial V}{\\partial T}\\right)_p=C_V+T\\left(\\frac{\\partial p}{\\partial T}\\right)_V\\left(\\frac{\\partial V}{\\partial T}\\right)_p\n\\]\n（マクスウェルの関係式 $(\\partial S/\\partial V)_T=(\\partial p/\\partial T)_V$ を用いた）．循環関係 $(\\partial p/\\partial T)_V=-(\\partial V/\\partial T)_p/(\\partial V/\\partial p)_T=\\alpha/\\kappa_T$ より\n\\[\nC_p-C_V=T\\cdot\\frac{\\alpha}{\\kappa_T}\\cdot V\\alpha=\\frac{TV\\alpha^2}{\\kappa_T}.\n\\]\n理想気体 $pV=nRT$ では $\\alpha=1/T$，$\\kappa_T=1/p$ なので $C_p-C_V=TV p/T^2=pV/T=nR$．\n\n(2) エネルギー等分配により He は $\\frac32R$/mol，回転まで励起された N$_2$ は $\\frac52R$/mol．理想混合気体の内部エネルギーは成分の和なので\n$C_V=\\frac32R\\cdot1+\\frac52R\\cdot2=\\boldsymbol{\\frac{13}{2}R}$．\n全モル数 3 で $C_p=C_V+3R=\\boldsymbol{\\frac{19}{2}R}$．$\\gamma=C_p/C_V=\\boldsymbol{19/13}\\approx1.462$．\n\n(3) 断熱条件 $0=C_VdT+p\\,dV$ に $p=nRT/V$（$n=3$）を代入：$C_V\\,dT/T+nR\\,dV/V=0$．(1) より $nR=C_p-C_V$ なので $TV^{\\gamma-1}=$ 一定，$pV=nRT$ と合わせて $pV^{\\gamma}=$ 一定．混合気体は全体の $C_V$ をもつ単一の理想気体と同じように振る舞う．\n\n(4) $pV^k=$ 一定と $pV=nRT$ から $TV^{k-1}=$ 一定，すなわち $dV/V=-dT/[(k-1)T]$．\n\\[\nd'Q=C_VdT+p\\,dV=C_VdT+nRT\\frac{dV}{V}=\\left(C_V-\\frac{nR}{k-1}\\right)dT .\n\\]\n$nR=(\\gamma-1)C_V$ を用いて $C_k=C_V\\left(1-\\dfrac{\\gamma-1}{k-1}\\right)=\\boldsymbol{C_V\\dfrac{k-\\gamma}{k-1}}$．\n$k=6/5$：$C_k=\\frac{13}{2}R\\cdot\\frac{6/5-19/13}{1/5}=\\frac{13}{2}R\\cdot\\left(-\\frac{17}{13}\\right)=\\boldsymbol{-\\frac{17}{2}R}$．\n負の熱容量とは，熱を吸収しながら温度が下がる（膨張の向き）ことを意味する．吸収した熱以上の仕事を外にするため内部エネルギーが減る．$C_k<0$ となるのは $(k-\\gamma)/(k-1)<0$，すなわち $\\boldsymbol{1<k<\\gamma}$（等温と断熱の間のポリトロープ）である．"
    }
   ],
   "idea": {
@@ -1857,7 +1857,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 証明\n(4) 記述"
+   "spec": "(1) 記述\n(2) $C_V$：13R/2 ; $C_p$：19R/2 ; $\\gamma$：19/13\n(3) 証明\n(4) $C_k$：C_V (k-γ)/(k-1) ; $k=6/5$ のとき：-17R/2 ; 範囲：1<k<γ"
   },
   "methods": [],
   "tags": [
@@ -1892,16 +1892,16 @@
   "theme": "表面張力の温度則と表面の内部エネルギー",
   "topic": "表面張力の温度則と表面の内部エネルギー",
   "statement": {
-   "tex": "ある液体の表面張力が，臨界温度 $T_c$ を用いて $\\sigma(T)=\\sigma_0\\left(1-T/T_c\\right)^{11/9}$ で表されるとする．この液体の膜（表裏 2 面）を温度 $T$ で等温的に面積 $\\Delta A$ だけ伸ばす．\n\\begin{enumerate}\n\\item 外部がする仕事 $W$，吸収される熱 $Q$，表面層の内部エネルギーの増加 $\\Delta U$，エントロピーの増加 $\\Delta S$ を求めよ．\n\\item $Q/W$ が $t=T/T_c$ だけで決まることを示し，$Q=W$ となる $t$ を求めよ．また $T\\to T_c$ で $\\Delta U/\\Delta A\\to0$ となることを確かめよ．\n\\item $T_c=500$ K，$T=300$ K，$\\sigma(300\\ \\mathrm K)=0.025$ N/m，$\\Delta A=10\\ \\mathrm{cm^2}$ のとき $W,Q,\\Delta U,\\Delta S$ を求めよ．\n\\end{enumerate}"
+   "tex": "ある液体の表面張力が，臨界温度 $T_c$ を用いて $\\sigma(T)=\\sigma_0\\left(1-T/T_c\\right)^{11/9}$ で表されるとする．この液体の膜（表裏 2 面）を温度 $T$ で等温的に面積 $\\Delta A$ だけ伸ばす．$t=T/T_c$ とする．\n\\begin{enumerate}\n\\item 外部がする仕事 $W$，吸収される熱 $Q$，表面層の内部エネルギーの増加 $\\Delta U$，エントロピーの増加 $\\Delta S$ を求めよ．\n\\item $Q/W$ が $t=T/T_c$ だけで決まることを示し，$Q=W$ となる $t$ を求めよ．また $T\\to T_c$ で $\\Delta U/\\Delta A\\to0$ となることを確かめよ．\n\\item $T=\\frac35T_c$ でのその温度の表面張力を $\\sigma_1$ とする．$W,\\ Q,\\ \\Delta U,\\ \\Delta S$ を $\\sigma_1,\\ \\Delta A,\\ T_c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $W=2\\sigma\\Delta A$，$Q=-2T\\sigma'\\Delta A=\\dfrac{22}{9}\\dfrac{t}{1-t}\\sigma\\Delta A$，$\\Delta U=2\\sigma_0(1-t)^{2/9}\\left(1+\\dfrac{2t}{9}\\right)\\Delta A$，$\\Delta S=Q/T$　(2) $Q/W=\\dfrac{11t}{9(1-t)}$，$t=9/20$　(3) $W=5.0\\times10^{-5}$ J，$Q=9.2\\times10^{-5}$ J，$\\Delta U=1.4\\times10^{-4}$ J，$\\Delta S=3.1\\times10^{-7}$ J/K"
+   "tex": "(1) $W=2\\sigma\\Delta A$，$Q=-2T\\sigma'\\Delta A=\\dfrac{22}{9}\\dfrac{t}{1-t}\\sigma\\Delta A$，$\\Delta U=2\\sigma_0(1-t)^{2/9}\\left(1+\\dfrac{2t}{9}\\right)\\Delta A$，$\\Delta S=Q/T$　(2) $Q/W=\\dfrac{11t}{9(1-t)}$，$t=9/20$　(3) $W=2\\sigma_1\\Delta A$，$Q=\\dfrac{11}{3}\\sigma_1\\Delta A$，$\\Delta U=\\dfrac{17}{3}\\sigma_1\\Delta A$，$\\Delta S=\\dfrac{55\\sigma_1\\Delta A}{9T_c}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\sigma'=d\\sigma/dT=-\\dfrac{11}{9}\\dfrac{\\sigma_0}{T_c}(1-t)^{2/9}=-\\dfrac{11}{9}\\dfrac{\\sigma}{T_c(1-t)}$．\n等温で $W=2\\sigma\\Delta A$．面積あたりのエントロピーは $-2\\sigma'$（$F=2\\sigma A$ より $S=-\\partial F/\\partial T$）なので\n\\[\n\\Delta S=-2\\sigma'\\Delta A,\\qquad Q=T\\Delta S=-2T\\sigma'\\Delta A=\\frac{22}{9}\\frac{t}{1-t}\\sigma\\Delta A,\n\\]\n\\[\n\\Delta U=W+Q=2(\\sigma-T\\sigma')\\Delta A=2\\sigma_0(1-t)^{2/9}\\left[(1-t)+\\frac{11}{9}t\\right]\\Delta A=2\\sigma_0(1-t)^{2/9}\\left(1+\\frac{2t}9\\right)\\Delta A .\n\\]\n\n(2) $\\dfrac QW=\\dfrac{-T\\sigma'}{\\sigma}=\\dfrac{11}{9}\\dfrac{t}{1-t}$．$=1$ より $11t=9-9t$，$t=9/20$．\n$T\\to T_c$ で $(1-t)^{2/9}\\to0$ だから表面の内部エネルギーも 0 になる（臨界点で界面が消える）．\n\n(3) $t=0.6$．$W=2(0.025)(1.0\\times10^{-3})=5.0\\times10^{-5}$ J．$Q/W=\\dfrac{11(0.6)}{9(0.4)}=1.83$ より $Q=9.2\\times10^{-5}$ J．$\\Delta U=W+Q=1.4\\times10^{-4}$ J，$\\Delta S=Q/T=3.1\\times10^{-7}$ J/K．"
+    "tex": "(1) $\\sigma'=d\\sigma/dT=-\\dfrac{11}{9}\\dfrac{\\sigma_0}{T_c}(1-t)^{2/9}=-\\dfrac{11}{9}\\dfrac{\\sigma}{T_c(1-t)}$．\n等温で $W=\\boldsymbol{2\\sigma\\Delta A}$．面積あたりのエントロピーは $-2\\sigma'$（$F=2\\sigma A$ より $S=-\\partial F/\\partial T$）なので\n\\[\n\\Delta S=-2\\sigma'\\Delta A,\\qquad Q=T\\Delta S=-2T\\sigma'\\Delta A=\\boldsymbol{\\frac{22}{9}\\frac{t}{1-t}\\sigma\\Delta A},\n\\]\n\\[\n\\Delta U=W+Q=2(\\sigma-T\\sigma')\\Delta A=2\\sigma_0(1-t)^{2/9}\\left[(1-t)+\\frac{11}{9}t\\right]\\Delta A=\\boldsymbol{2\\sigma_0(1-t)^{2/9}\\left(1+\\frac{2t}9\\right)\\Delta A} .\n\\]\n\n(2) $\\dfrac QW=\\dfrac{-T\\sigma'}{\\sigma}=\\boldsymbol{\\dfrac{11}{9}\\dfrac{t}{1-t}}$．$=1$ より $11t=9-9t$，$t=\\boldsymbol{9/20}$．\n$T\\to T_c$ で $(1-t)^{2/9}\\to0$ だから表面の内部エネルギーも 0 になる（臨界点で界面が消える）．\n\n(3) $t=3/5$ で $\\sigma=\\sigma_1$．$W=\\boldsymbol{2\\sigma_1\\Delta A}$．$Q/W=\\dfrac{11\\cdot3/5}{9\\cdot2/5}=\\dfrac{11}{6}$ より $Q=\\boldsymbol{\\dfrac{11}{3}\\sigma_1\\Delta A}$．\n$\\Delta U=W+Q=\\boldsymbol{\\dfrac{17}{3}\\sigma_1\\Delta A}$，$\\Delta S=\\dfrac{Q}{T}=\\dfrac{11\\sigma_1\\Delta A/3}{3T_c/5}=\\boldsymbol{\\dfrac{55\\sigma_1\\Delta A}{9T_c}}$．\nこの温度では吸収される熱が仕事の約 1.8 倍で，内部エネルギーの増加の大部分は熱でまかなわれる．"
    }
   ],
   "idea": {
@@ -1909,7 +1909,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $W$ [J]：≈5.0e-5 ; $Q$ [J]：≈9.2e-5 ; $\\Delta U$ [J]：≈1.4e-4 ; $\\Delta S$ [J/K]：≈3.1e-7"
+   "spec": "(1) 記述\n(2) $Q/W$：11t/(9(1-t)) ; $t$：9/20\n(3) $W$：2 σ_1 ΔA ; $Q$：(11/3) σ_1 ΔA ; $\\Delta U$：(17/3) σ_1 ΔA ; $\\Delta S$：55 σ_1 ΔA/(9 T_c)"
   },
   "methods": [],
   "tags": [
@@ -2041,16 +2041,16 @@
   "theme": "断熱圧縮の温度変化：大気減率と深海",
   "topic": "断熱圧縮の温度変化：大気減率と深海",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式 $\\left(\\dfrac{\\partial T}{\\partial P}\\right)_S=\\left(\\dfrac{\\partial V}{\\partial S}\\right)_P$ を用いて，単位質量あたり $\\left(\\dfrac{\\partial T}{\\partial P}\\right)_S=\\dfrac{T\\alpha}{\\rho c_p}$ を示せ．ここで $\\alpha=\\frac1V(\\partial V/\\partial T)_P$ は体膨張率，$\\rho$ は密度，$c_p$ は定圧比熱である．\n\\item 乾燥空気（理想気体，$c_p=1005\\ \\mathrm{J\\,kg^{-1}K^{-1}}$）の塊が静水圧平衡にある大気中を断熱的に上昇するとき，高さ $z$ に対する温度勾配 $dT/dz$ を求め，数値を K/km で答えよ（$g=9.81\\ \\mathrm{m/s^2}$）．\n\\item 20℃ の海水（純水で近似：$\\alpha=2.07\\times10^{-4}\\ \\mathrm{K^{-1}}$，$\\rho=998\\ \\mathrm{kg/m^3}$，$c_p=4182\\ \\mathrm{J\\,kg^{-1}K^{-1}}$）を深さ 1000 m まで断熱的に沈めたときの温度上昇を求めよ（係数は一定とせよ）．また 2℃ の淡水を同様に沈めると温度はどうなるか，理由とともに答えよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式 $\\left(\\dfrac{\\partial T}{\\partial P}\\right)_S=\\left(\\dfrac{\\partial V}{\\partial S}\\right)_P$ を用いて，単位質量あたり $\\left(\\dfrac{\\partial T}{\\partial P}\\right)_S=\\dfrac{T\\alpha}{\\rho c_p}$ を示せ．ここで $\\alpha=\\frac1V(\\partial V/\\partial T)_P$ は体膨張率，$\\rho$ は密度，$c_p$ は定圧比熱である．\n\\item 乾燥空気（理想気体，定圧比熱 $c_p$）の塊が静水圧平衡にある大気中を断熱的に上昇するとき，高さ $z$ に対する温度勾配 $dT/dz$ を重力加速度 $g$ と $c_p$ で表せ．\n\\item 温度 $T$ の水（体膨張率 $\\alpha$，定圧比熱 $c_p$，密度一定とみなす）を深さ $h$ まで断熱的に沈めたときの温度上昇 $\\Delta T$ を求めよ（係数は一定とせよ）．また 2℃ の淡水を同様に沈めると温度はどうなるか，理由とともに答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $dT/dz=-g/c_p\\approx-9.8$ K/km　(3) 約 $0.14$ K 上昇．2℃ の淡水は $\\alpha<0$ なので断熱圧縮でわずかに冷える"
+   "tex": "(1) 証明（解説参照）　(2) $dT/dz=-\\dfrac{g}{c_p}$　(3) $\\Delta T=\\dfrac{T\\alpha gh}{c_p}$．2℃ の淡水は $\\alpha<0$ なので断熱圧縮でわずかに冷える"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 単位質量で考え $v=1/\\rho$．\n\\[ \\left(\\frac{\\partial V}{\\partial S}\\right)_P=\\frac{(\\partial V/\\partial T)_P}{(\\partial S/\\partial T)_P}=\\frac{v\\alpha}{c_p/T}=\\frac{T\\alpha}{\\rho c_p}. \\]\nマクスウェルの関係式より左辺 $(\\partial T/\\partial P)_S$ に等しい．\n\n(2) 理想気体では $\\alpha=1/T$ なので $(\\partial T/\\partial P)_S=1/(\\rho c_p)$．静水圧平衡 $dP/dz=-\\rho g$ と組み合わせて\n\\[ \\frac{dT}{dz}=\\left(\\frac{\\partial T}{\\partial P}\\right)_S\\frac{dP}{dz}=-\\frac{g}{c_p}=-\\frac{9.81}{1005}\\ \\mathrm{K/m}\\approx-9.8\\ \\mathrm{K/km}. \\]\n（乾燥断熱減率．密度・分子量によらない．）\n\n(3) $\\Delta P=\\rho g h=998\\times9.81\\times1000\\approx9.79\\times10^6$ Pa．\n\\[ \\Delta T=\\frac{T\\alpha}{\\rho c_p}\\Delta P=\\frac{293\\times2.07\\times10^{-4}}{998\\times4182}\\times9.79\\times10^6\\approx0.14\\ \\mathrm{K}. \\]\n水の $\\alpha$ は 4℃ で 0，それより低温では負になる．2℃ の淡水では $\\alpha<0$ なので $(\\partial T/\\partial P)_S<0$，断熱圧縮でわずかに温度が下がる（4℃ ちょうどなら変化しない）．"
+    "tex": "(1) 単位質量で考え $v=1/\\rho$．\n\\[ \\left(\\frac{\\partial V}{\\partial S}\\right)_P=\\frac{(\\partial V/\\partial T)_P}{(\\partial S/\\partial T)_P}=\\frac{v\\alpha}{c_p/T}=\\frac{T\\alpha}{\\rho c_p}. \\]\nマクスウェルの関係式より左辺 $(\\partial T/\\partial P)_S$ に等しい．\n\n(2) 理想気体では $\\alpha=1/T$ なので $(\\partial T/\\partial P)_S=1/(\\rho c_p)$．静水圧平衡 $dP/dz=-\\rho g$ と組み合わせて\n\\[ \\frac{dT}{dz}=\\left(\\frac{\\partial T}{\\partial P}\\right)_S\\frac{dP}{dz}=\\boldsymbol{-\\frac{g}{c_p}}. \\]\n（乾燥断熱減率．密度・分子量によらない．$c_p\\approx1005\\ \\mathrm{J\\,kg^{-1}K^{-1}}$ で約 $-9.8$ K/km．）\n\n(3) 深さ $h$ での圧力増加は $\\Delta P=\\rho gh$ なので\n\\[ \\Delta T=\\frac{T\\alpha}{\\rho c_p}\\Delta P=\\boldsymbol{\\frac{T\\alpha gh}{c_p}}. \\]\n密度は約分されて消える．20℃ の水を 1000 m 沈めると約 0.14 K 上昇する程度である．\n水の $\\alpha$ は 4℃ で 0，それより低温では負になる．2℃ の淡水では $\\alpha<0$ なので $(\\partial T/\\partial P)_S<0$，断熱圧縮でわずかに温度が下がる（4℃ ちょうどなら変化しない）．"
    }
   ],
   "idea": {
@@ -2058,7 +2058,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+   "spec": "(1) 証明\n(2) $dT/dz$：-g/c_p\n(3) $\\Delta T$：T α g h/c_p ; 2℃ の淡水：記述"
   },
   "methods": [],
   "tags": [
@@ -2141,16 +2141,16 @@
   "theme": "T dS 第1式と拘束された固体の熱応力",
   "topic": "T dS 第1式と拘束された固体の熱応力",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item $S=S(T,V)$ としてマクスウェルの関係式を用い，$T\\,dS=C_V\\,dT+T\\alpha E_T\\,dV$ を導け（$\\alpha$：体膨張率，$E_T=-V(\\partial P/\\partial V)_T$：等温体積弾性率）．\n\\item 銅のブロック（$\\alpha=5.0\\times10^{-5}\\ \\mathrm{K^{-1}}$，$E_T=1.4\\times10^{11}$ Pa）を剛体容器に体積が変わらないよう閉じ込めて 10 K 加熱したとき，容器壁が受ける圧力の上昇を見積もれ（係数は一定とせよ）．\n\\item 温度 $T$ の物質を等温で体積 $V_1$ から $V_2$ へ膨張させるとき吸収する熱を (1) の式で書き，1 mol の理想気体の場合に $RT\\ln(V_2/V_1)$ になることを確かめよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item $S=S(T,V)$ としてマクスウェルの関係式を用い，$T\\,dS=C_V\\,dT+T\\alpha E_T\\,dV$ を導け（$\\alpha$：体膨張率，$E_T=-V(\\partial P/\\partial V)_T$：等温体積弾性率）．\n\\item 体膨張率 $\\alpha$，等温体積弾性率 $E_T$ の固体のブロックを剛体容器に体積が変わらないよう閉じ込めて，温度を $T_1$ から $T_2$ に上げたとき，容器壁が受ける圧力の上昇 $\\Delta P$ を求めよ（係数は一定とせよ）．\n\\item 温度 $T$ の物質を等温で体積 $V_1$ から $V_2$ へ膨張させるとき吸収する熱を (1) の式で書き，1 mol の理想気体の場合に $RT\\ln(V_2/V_1)$ になることを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $\\Delta P=\\alpha E_T\\Delta T\\approx7\\times10^7$ Pa（約 700 気圧）　(3) $Q=T\\int_{V_1}^{V_2}\\alpha E_T\\,dV$，理想気体で $RT\\ln(V_2/V_1)$"
+   "tex": "(1) 証明（解説参照）　(2) $\\Delta P=\\alpha E_T(T_2-T_1)$　(3) $Q=T\\int_{V_1}^{V_2}\\alpha E_T\\,dV$，理想気体で $RT\\ln(V_2/V_1)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $T\\,dS=T\\left(\\dfrac{\\partial S}{\\partial T}\\right)_VdT+T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_TdV=C_V\\,dT+T\\left(\\dfrac{\\partial P}{\\partial T}\\right)_VdV$．\n循環関係から $(\\partial P/\\partial T)_V=-(\\partial P/\\partial V)_T(\\partial V/\\partial T)_P=\\alpha E_T$．よって $T\\,dS=C_V\\,dT+T\\alpha E_T\\,dV$．\n\n(2) 体積一定なので $dP=(\\partial P/\\partial T)_VdT=\\alpha E_TdT$．\n\\[ \\Delta P=5.0\\times10^{-5}\\times1.4\\times10^{11}\\times10=7.0\\times10^7\\ \\mathrm{Pa}\\approx690\\ \\mathrm{atm}. \\]\nわずかな加熱でも拘束された固体には巨大な熱応力が生じる．\n\n(3) $T$ 一定で $Q=\\int T\\,dS=T\\int_{V_1}^{V_2}\\alpha E_T\\,dV$．理想気体では $\\alpha E_T=(1/T)\\cdot P=R/V$ なので $Q=RT\\ln(V_2/V_1)$．"
+    "tex": "(1) $T\\,dS=T\\left(\\dfrac{\\partial S}{\\partial T}\\right)_VdT+T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_TdV=C_V\\,dT+T\\left(\\dfrac{\\partial P}{\\partial T}\\right)_VdV$．\n循環関係から $(\\partial P/\\partial T)_V=-(\\partial P/\\partial V)_T(\\partial V/\\partial T)_P=\\alpha E_T$．よって $T\\,dS=C_V\\,dT+T\\alpha E_T\\,dV$．\n\n(2) 体積一定なので $dP=(\\partial P/\\partial T)_VdT=\\alpha E_TdT$．積分して\n\\[ \\Delta P=\\boldsymbol{\\alpha E_T(T_2-T_1)}. \\]\n例えば銅（$\\alpha=5.0\\times10^{-5}\\ \\mathrm{K^{-1}}$，$E_T=1.4\\times10^{11}$ Pa）を 10 K 加熱すると $7\\times10^7$ Pa（約 700 気圧）にもなる．わずかな加熱でも拘束された固体には巨大な熱応力が生じる．\n\n(3) $T$ 一定で $Q=\\int T\\,dS=T\\int_{V_1}^{V_2}\\alpha E_T\\,dV$．理想気体では $\\alpha E_T=(1/T)\\cdot P=R/V$ なので $Q=RT\\ln(V_2/V_1)$．"
    }
   ],
   "idea": {
@@ -2158,7 +2158,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) $\\Delta P$ [Pa]：≈7e7\n(3) 記述"
+   "spec": "(1) 証明\n(2) $\\Delta P$：α E_T (T_2-T_1)\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -2191,16 +2191,16 @@
   "theme": "T dS 第2式の応用：針金の熱弾性効果",
   "topic": "T dS 第2式の応用：針金の熱弾性効果",
   "statement": {
-   "tex": "一様な断面の針金に一軸の引張応力 $\\sigma$ をかける．単位体積（基準体積 $V_0$ 一定とみなす）あたりの微小仕事は $V_0\\sigma\\,d\\varepsilon$（$\\varepsilon$ はひずみ）である．\n\\begin{enumerate}\n\\item 気体の $T\\,dS=C_P\\,dT-TV\\alpha\\,dP$ に対応して，針金について\n\\[ T\\,dS=C_\\sigma\\,dT+TV_0\\alpha_L\\,d\\sigma \\]\nを導け．$C_\\sigma$ は応力一定の熱容量，$\\alpha_L=(\\partial\\varepsilon/\\partial T)_\\sigma$ は線膨張率である．\n\\item 300 K の鋼の針金（$\\alpha_L=1.2\\times10^{-5}\\ \\mathrm{K^{-1}}$，密度 $7850\\ \\mathrm{kg/m^3}$，比熱 $460\\ \\mathrm{J\\,kg^{-1}K^{-1}}$）に断熱的に $\\sigma=0$ から $200$ MPa まで急に張力をかけたときの温度変化を求めよ．\n\\item ゴムを断熱的に急に引き伸ばすと温まる．(1) の式から，ゴムの $\\alpha_L$ の符号について何がいえるか．\n\\end{enumerate}"
+   "tex": "一様な断面の針金に一軸の引張応力 $\\sigma$ をかける．単位体積（基準体積 $V_0$ 一定とみなす）あたりの微小仕事は $V_0\\sigma\\,d\\varepsilon$（$\\varepsilon$ はひずみ）である．\n\\begin{enumerate}\n\\item 気体の $T\\,dS=C_P\\,dT-TV\\alpha\\,dP$ に対応して，針金について\n\\[ T\\,dS=C_\\sigma\\,dT+TV_0\\alpha_L\\,d\\sigma \\]\nを導け．$C_\\sigma$ は応力一定の熱容量，$\\alpha_L=(\\partial\\varepsilon/\\partial T)_\\sigma$ は線膨張率である．\n\\item 温度 $T$ の金属の針金（線膨張率 $\\alpha_L$，密度 $\\rho$，比熱 $c$，いずれも一定）に断熱的に $\\sigma=0$ から $\\sigma_1$ まで急に張力をかけたときの温度変化 $\\Delta T$ を求めよ（$\\Delta T\\ll T$ とする）．\n\\item ゴムを断熱的に急に引き伸ばすと温まる．(1) の式から，ゴムの $\\alpha_L$ の符号について何がいえるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) 約 $-0.20$ K（冷える）　(3) $\\alpha_L<0$（張力一定で加熱すると縮む）"
+   "tex": "(1) 証明（解説参照）　(2) $\\Delta T=-\\dfrac{T\\alpha_L\\sigma_1}{\\rho c}$（$\\alpha_L>0$ なら冷える）　(3) $\\alpha_L<0$（張力一定で加熱すると縮む）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 単位の取り方として $dU=T\\,dS+V_0\\sigma\\,d\\varepsilon$．ギブズ関数 $G=U-TS-V_0\\sigma\\varepsilon$ について $dG=-S\\,dT-V_0\\varepsilon\\,d\\sigma$．2 階微分の交換から\n\\[ \\left(\\frac{\\partial S}{\\partial\\sigma}\\right)_T=V_0\\left(\\frac{\\partial\\varepsilon}{\\partial T}\\right)_\\sigma=V_0\\alpha_L. \\]\n$S=S(T,\\sigma)$ として $T\\,dS=C_\\sigma\\,dT+TV_0\\alpha_L\\,d\\sigma$．（気体の $P$ が $-\\sigma$ に，$V\\alpha$ が $V_0\\alpha_L$ に対応．）\n\n(2) 断熱 $dS=0$ より $dT=-\\dfrac{TV_0\\alpha_L}{C_\\sigma}d\\sigma=-\\dfrac{T\\alpha_L}{\\rho c}d\\sigma$．\n\\[ \\Delta T=-\\frac{300\\times1.2\\times10^{-5}\\times2.0\\times10^8}{7850\\times460}\\approx-0.20\\ \\mathrm K. \\]\n金属は引っ張ると冷える（ケルビンの熱弾性効果）．\n\n(3) 断熱で $d\\sigma>0$ のとき $dT>0$ となるには $\\alpha_L<0$．実際ゴムは張力をかけたまま加熱すると縮む（エントロピー弾性）．"
+    "tex": "(1) 単位の取り方として $dU=T\\,dS+V_0\\sigma\\,d\\varepsilon$．ギブズ関数 $G=U-TS-V_0\\sigma\\varepsilon$ について $dG=-S\\,dT-V_0\\varepsilon\\,d\\sigma$．2 階微分の交換から\n\\[ \\left(\\frac{\\partial S}{\\partial\\sigma}\\right)_T=V_0\\left(\\frac{\\partial\\varepsilon}{\\partial T}\\right)_\\sigma=V_0\\alpha_L. \\]\n$S=S(T,\\sigma)$ として $T\\,dS=C_\\sigma\\,dT+TV_0\\alpha_L\\,d\\sigma$．（気体の $P$ が $-\\sigma$ に，$V\\alpha$ が $V_0\\alpha_L$ に対応．）\n\n(2) 断熱 $dS=0$ より $dT=-\\dfrac{TV_0\\alpha_L}{C_\\sigma}d\\sigma=-\\dfrac{T\\alpha_L}{\\rho c}d\\sigma$（$C_\\sigma=\\rho cV_0$）．$\\Delta T\\ll T$ なので $T$ を一定とみなして積分し\n\\[ \\Delta T=\\boldsymbol{-\\frac{T\\alpha_L\\sigma_1}{\\rho c}}. \\]\n金属は $\\alpha_L>0$ なので引っ張ると冷える（ケルビンの熱弾性効果）．鋼を室温で 200 MPa まで引くと約 $-0.2$ K である．\n\n(3) 断熱で $d\\sigma>0$ のとき $dT>0$ となるには $\\alpha_L<0$．実際ゴムは張力をかけたまま加熱すると縮む（エントロピー弾性）．"
    }
   ],
   "idea": {
@@ -2208,7 +2208,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) [K]：≈-0.20\n(3) 記述"
+   "spec": "(1) 証明\n(2) $\\Delta T$：-T α_L σ_1/(ρ c)\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -2241,16 +2241,16 @@
   "theme": "第2ビリアル係数とヘリウムのJT効果",
   "topic": "第2ビリアル係数とヘリウムのJT効果",
   "statement": {
-   "tex": "低密度の 1 mol の気体の状態方程式を $V=\\dfrac{RT}{P}+B(T)$（$B$ は第 2 ビリアル係数）とする．\n\\begin{enumerate}\n\\item ジュール・トムソン係数が $\\mu_{JT}=\\dfrac{TB'(T)-B(T)}{C_P}$ となることを示せ．理想気体では 0 になることも確かめよ．\n\\item $B(T)=b-\\dfrac a{RT}$ とする．ボイル温度 $T_B$（$B=0$）と逆転温度 $T_i$ を求め，その比を答えよ．ヘリウム（$a=3.46\\times10^{-3}\\ \\mathrm{Pa\\,m^6/mol^2}$，$b=2.37\\times10^{-5}\\ \\mathrm{m^3/mol}$）の値を数値で求めよ．\n\\item 300 K のヘリウム（$C_P=20.8\\ \\mathrm{J\\,mol^{-1}K^{-1}}$）を 100 atm から 1 atm へ絞り膨張させたときの温度変化を，$\\mu_{JT}$ を一定とみなして見積もれ（1 atm $=1.013\\times10^5$ Pa）．\n\\end{enumerate}"
+   "tex": "低密度の 1 mol の気体の状態方程式を $V=\\dfrac{RT}{P}+B(T)$（$B$ は第 2 ビリアル係数）とする．\n\\begin{enumerate}\n\\item ジュール・トムソン係数が $\\mu_{JT}=\\dfrac{TB'(T)-B(T)}{C_P}$ となることを示せ．理想気体では 0 になることも確かめよ．\n\\item $B(T)=b-\\dfrac a{RT}$ とする．ボイル温度 $T_B$（$B=0$）と逆転温度 $T_i$ を求め，その比を答えよ．\n\\item 温度 $T$ のこの気体（定圧モル比熱 $C_P$）を圧力 $P_1$ から $P_2\\ (<P_1)$ へ絞り膨張させたときの温度変化 $\\Delta T$ を，$\\mu_{JT}$ を一定とみなして求めよ．$T>T_i$ のとき気体は温まるか冷えるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $T_B=\\dfrac a{Rb}\\approx17.6$ K，$T_i=\\dfrac{2a}{Rb}\\approx35.1$ K，$T_i/T_B=2$　(3) 約 $+10$ K（温まる）"
+   "tex": "(1) 証明（解説参照）　(2) $T_B=\\dfrac a{Rb}$，$T_i=\\dfrac{2a}{Rb}$，$T_i/T_B=2$　(3) $\\Delta T=\\dfrac{1}{C_P}\\left(\\dfrac{2a}{RT}-b\\right)(P_2-P_1)$；$T>T_i$ では温まる"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\mu_{JT}=\\dfrac{T(\\partial V/\\partial T)_P-V}{C_P}$（$dH=C_PdT-[T(\\partial V/\\partial T)_P-V]dP=0$ より）．$(\\partial V/\\partial T)_P=R/P+B'$ だから\n\\[ T\\left(\\frac{\\partial V}{\\partial T}\\right)_P-V=\\frac{RT}P+TB'-\\frac{RT}P-B=TB'-B. \\]\n理想気体は $B\\equiv0$ なので $\\mu_{JT}=0$．\n\n(2) $TB'=\\dfrac a{RT}$，$TB'-B=\\dfrac{2a}{RT}-b$．\nボイル温度：$B=0\\Rightarrow T_B=\\dfrac a{Rb}$．逆転温度：$TB'-B=0\\Rightarrow T_i=\\dfrac{2a}{Rb}=2T_B$．\nヘリウム：$T_B=\\dfrac{3.46\\times10^{-3}}{8.314\\times2.37\\times10^{-5}}\\approx17.6$ K，$T_i\\approx35.1$ K．（実測の逆転温度は約 40 K で，このモデルは大まかに再現する．）\n\n(3) $\\mu_{JT}=\\dfrac{1}{20.8}\\left(\\dfrac{2\\times3.46\\times10^{-3}}{8.314\\times300}-2.37\\times10^{-5}\\right)=\\dfrac{2.77\\times10^{-6}-2.37\\times10^{-5}}{20.8}\\approx-1.01\\times10^{-6}$ K/Pa．\n$\\Delta P=-99\\times1.013\\times10^5$ Pa より $\\Delta T=\\mu_{JT}\\Delta P\\approx+10$ K．室温のヘリウムは逆転温度よりはるかに高いので，絞り膨張で温まる（液化には予冷が必須）．"
+    "tex": "(1) $\\mu_{JT}=\\dfrac{T(\\partial V/\\partial T)_P-V}{C_P}$（$dH=C_PdT-[T(\\partial V/\\partial T)_P-V]dP=0$ より）．$(\\partial V/\\partial T)_P=R/P+B'$ だから\n\\[ T\\left(\\frac{\\partial V}{\\partial T}\\right)_P-V=\\frac{RT}P+TB'-\\frac{RT}P-B=TB'-B. \\]\n理想気体は $B\\equiv0$ なので $\\mu_{JT}=0$．\n\n(2) $TB'=\\dfrac a{RT}$，$TB'-B=\\dfrac{2a}{RT}-b$．\nボイル温度：$B=0\\Rightarrow T_B=\\boldsymbol{\\dfrac a{Rb}}$．逆転温度：$TB'-B=0\\Rightarrow T_i=\\boldsymbol{\\dfrac{2a}{Rb}}=2T_B$，比は $\\boldsymbol{2}$．\n（ヘリウムでは $T_i\\approx35$ K で，実測の逆転温度約 40 K を大まかに再現する．）\n\n(3) $\\mu_{JT}=\\dfrac{1}{C_P}\\left(\\dfrac{2a}{RT}-b\\right)$ を一定として\n\\[ \\Delta T=\\mu_{JT}(P_2-P_1)=\\boldsymbol{\\frac{1}{C_P}\\Bigl(\\frac{2a}{RT}-b\\Bigr)(P_2-P_1)}. \\]\n$T>T_i$ では $\\dfrac{2a}{RT}<b$ で $\\mu_{JT}<0$，$P_2-P_1<0$ なので $\\Delta T>0$：絞り膨張で\\textbf{温まる}．室温のヘリウムはこの場合で（100 atm から 1 atm で約 +10 K），液化には逆転温度以下への予冷が必須である．"
    }
   ],
   "idea": {
@@ -2258,7 +2258,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+   "spec": "(1) 証明\n(2) $T_B$：a/(R b) ; $T_i$：2a/(R b) ; $T_i/T_B$：2\n(3) $\\Delta T$：(2a/(R T) - b)(P_2-P_1)/C_P ; 温まるか冷えるか：記述"
   },
   "methods": [],
   "tags": [
@@ -2391,16 +2391,16 @@
   "theme": "断熱圧力係数とアルミの断熱加熱",
   "topic": "断熱圧力係数とアルミの断熱加熱",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式 $\\left(\\dfrac{\\partial P}{\\partial T}\\right)_S=\\left(\\dfrac{\\partial S}{\\partial V}\\right)_P$ を用いて $\\left(\\dfrac{\\partial P}{\\partial T}\\right)_S=\\dfrac{C_P}{TV\\alpha}$ を示し，さらに定積圧力係数 $(\\partial P/\\partial T)_V=\\alpha E_T$ との比が $\\dfrac{\\gamma}{\\gamma-1}$ になることを示せ（$C_P-C_V=TVE_T\\alpha^2$ は用いてよい）．\n\\item 300 K のアルミニウム 1 mol（$\\alpha=6.9\\times10^{-5}\\ \\mathrm{K^{-1}}$，$E_T=7.6\\times10^{10}$ Pa，$V=1.0\\times10^{-5}\\ \\mathrm{m^3}$，$C_P=24.2\\ \\mathrm{J\\,mol^{-1}K^{-1}}$）について，$(\\partial P/\\partial T)_S$，$(\\partial P/\\partial T)_V$，$\\gamma$ を求め，比が $\\gamma/(\\gamma-1)$ と一致することを確かめよ．\n\\item アルミニウムを断熱的に急速圧縮して温度を 1 K 上げるには，およそ何 Pa の加圧が必要か．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item マクスウェルの関係式 $\\left(\\dfrac{\\partial P}{\\partial T}\\right)_S=\\left(\\dfrac{\\partial S}{\\partial V}\\right)_P$ を用いて $\\left(\\dfrac{\\partial P}{\\partial T}\\right)_S=\\dfrac{C_P}{TV\\alpha}$ を示し，さらに定積圧力係数 $(\\partial P/\\partial T)_V=\\alpha E_T$ との比が $\\dfrac{\\gamma}{\\gamma-1}$ になることを示せ（$C_P-C_V=TVE_T\\alpha^2$ は用いてよい）．\n\\item 温度 $T$ の固体 1 mol（体膨張率 $\\alpha$，等温体積弾性率 $E_T$，モル体積 $V$，定圧モル比熱 $C_P$）について，$(\\partial P/\\partial T)_S$，$(\\partial P/\\partial T)_V$，比熱比 $\\gamma$ を求めよ．\n\\item この固体を断熱的に急速圧縮して温度を微小量 $\\theta$ だけ上げるには，およそどれだけの加圧 $\\Delta P$ が必要か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $(\\partial P/\\partial T)_S\\approx1.17\\times10^8$ Pa/K，$(\\partial P/\\partial T)_V\\approx5.2\\times10^6$ Pa/K，$\\gamma\\approx1.047$，比 $\\approx22.3=\\gamma/(\\gamma-1)$　(3) 約 $1.2\\times10^8$ Pa（約 1.2 kbar）"
+   "tex": "(1) 証明（解説参照）　(2) $(\\partial P/\\partial T)_S=\\dfrac{C_P}{TV\\alpha}$，$(\\partial P/\\partial T)_V=\\alpha E_T$，$\\gamma=\\dfrac{C_P}{C_P-TVE_T\\alpha^2}$　(3) $\\Delta P\\approx\\dfrac{C_P\\theta}{TV\\alpha}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\left(\\dfrac{\\partial S}{\\partial V}\\right)_P=\\dfrac{(\\partial S/\\partial T)_P}{(\\partial V/\\partial T)_P}=\\dfrac{C_P/T}{V\\alpha}$．よって $(\\partial P/\\partial T)_S=\\dfrac{C_P}{TV\\alpha}$．\n\\[ \\frac{(\\partial P/\\partial T)_S}{(\\partial P/\\partial T)_V}=\\frac{C_P}{TV\\alpha\\cdot\\alpha E_T}=\\frac{C_P}{C_P-C_V}=\\frac{\\gamma}{\\gamma-1}. \\]\n\n(2) $(\\partial P/\\partial T)_S=\\dfrac{24.2}{300\\times1.0\\times10^{-5}\\times6.9\\times10^{-5}}\\approx1.17\\times10^8$ Pa/K．\n$(\\partial P/\\partial T)_V=6.9\\times10^{-5}\\times7.6\\times10^{10}\\approx5.24\\times10^6$ Pa/K．\n$C_P-C_V=300\\times1.0\\times10^{-5}\\times7.6\\times10^{10}\\times(6.9\\times10^{-5})^2\\approx1.09$ J/(mol K)，$\\gamma=24.2/23.1\\approx1.047$，$\\gamma/(\\gamma-1)\\approx22.3$．実際 $1.17\\times10^8/5.24\\times10^6\\approx22.3$ で一致する．\n\n(3) $\\Delta P\\approx(\\partial P/\\partial T)_S\\Delta T\\approx1.2\\times10^8$ Pa．固体は断熱圧縮してもほとんど温まらない．"
+    "tex": "(1) $\\left(\\dfrac{\\partial S}{\\partial V}\\right)_P=\\dfrac{(\\partial S/\\partial T)_P}{(\\partial V/\\partial T)_P}=\\dfrac{C_P/T}{V\\alpha}$．よって $(\\partial P/\\partial T)_S=\\dfrac{C_P}{TV\\alpha}$．\n\\[ \\frac{(\\partial P/\\partial T)_S}{(\\partial P/\\partial T)_V}=\\frac{C_P}{TV\\alpha\\cdot\\alpha E_T}=\\frac{C_P}{C_P-C_V}=\\frac{\\gamma}{\\gamma-1}. \\]\n\n(2) (1) より $(\\partial P/\\partial T)_S=\\boldsymbol{\\dfrac{C_P}{TV\\alpha}}$，$(\\partial P/\\partial T)_V=\\boldsymbol{\\alpha E_T}$．$C_V=C_P-TVE_T\\alpha^2$ なので\n\\[ \\gamma=\\boldsymbol{\\frac{C_P}{C_P-TVE_T\\alpha^2}}. \\]\n固体では $TVE_T\\alpha^2\\ll C_P$ なので $\\gamma\\approx1$ で，$\\gamma/(\\gamma-1)$ は非常に大きい（300 K のアルミニウムでは $\\gamma\\approx1.05$，比は約 22）．\n\n(3) $\\Delta P\\approx(\\partial P/\\partial T)_S\\,\\theta=\\boldsymbol{\\dfrac{C_P\\theta}{TV\\alpha}}$．アルミニウムでは 1 K 上げるのに約 $1.2\\times10^8$ Pa（約 1.2 kbar）が必要で，固体は断熱圧縮してもほとんど温まらない．"
    }
   ],
   "idea": {
@@ -2408,7 +2408,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) [Pa]：≈1.2e8"
+   "spec": "(1) 証明\n(2) $(\\partial P/\\partial T)_S$：C_P/(T V α) ; $(\\partial P/\\partial T)_V$：α E_T ; $\\gamma$：C_P/(C_P - T V E_T α^2)\n(3) $\\Delta P$：C_P θ/(T V α)"
   },
   "methods": [],
   "tags": [
@@ -2541,16 +2541,16 @@
   "theme": "ジュール＝トムソン係数と逆転温度",
   "topic": "ジュール＝トムソン係数と逆転温度",
   "statement": {
-   "tex": "気体を多孔質の栓を通して断熱的に高圧側から低圧側へ定常的に流す（ジュール＝トムソン過程）．$1\\,\\mathrm{mol}$ あたりの定圧モル比熱を $C_p$，気体定数を $R$ とする．\n\\begin{enumerate}\n\\item この過程でエンタルピー $H$ が保存されることを用い，ジュール＝トムソン係数が $\\mu_{\\mathrm{JT}} = \\left(\\dfrac{\\partial T}{\\partial p}\\right)_H = \\dfrac{1}{C_p}\\left[T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p - V\\right]$ となることを示せ．\n\\item 低密度のファンデルワールス気体では状態方程式が $V \\approx \\dfrac{RT}{p} + b - \\dfrac{a}{RT}$ と近似できる．$\\mu_{\\mathrm{JT}}$ を $a, b, R, T, C_p$ で表せ．\n\\item 逆転温度 $T_{\\mathrm{inv}}$（$\\mu_{\\mathrm{JT}} = 0$ となる温度）を求めよ．\n\\item 窒素（$a = 0.137\\,\\mathrm{Pa\\,m^6/mol^2}$，$b = 3.87\\times 10^{-5}\\,\\mathrm{m^3/mol}$，$R = 8.314\\,\\mathrm{J/(mol\\,K)}$）の $T_{\\mathrm{inv}}$ を求めよ．\n\\end{enumerate}"
+   "tex": "気体を多孔質の栓を通して断熱的に高圧側から低圧側へ定常的に流す（ジュール＝トムソン過程）．$1\\,\\mathrm{mol}$ あたりの定圧モル比熱を $C_p$，気体定数を $R$ とする．\n\\begin{enumerate}\n\\item この過程でエンタルピー $H$ が保存されることを用い，ジュール＝トムソン係数が $\\mu_{\\mathrm{JT}} = \\left(\\dfrac{\\partial T}{\\partial p}\\right)_H = \\dfrac{1}{C_p}\\left[T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p - V\\right]$ となることを示せ．\n\\item 低密度のファンデルワールス気体では状態方程式が $V \\approx \\dfrac{RT}{p} + b - \\dfrac{a}{RT}$ と近似できる．$\\mu_{\\mathrm{JT}}$ を $a, b, R, T, C_p$ で表せ．\n\\item 逆転温度 $T_{\\mathrm{inv}}$（$\\mu_{\\mathrm{JT}} = 0$ となる温度）を求めよ．\n\\item 逆転温度の半分の温度 $T=T_{\\mathrm{inv}}/2$ での $\\mu_{\\mathrm{JT}}$ を $b,\\ C_p$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 記述 \\quad (2) $\\mu_{\\mathrm{JT}} = \\frac{1}{C_p}\\left(\\frac{2a}{RT} - b\\right)$ \\quad (3) $T_{\\mathrm{inv}} = \\frac{2a}{Rb}$ \\quad (4) $T_{\\mathrm{inv}} \\approx 852\\,\\mathrm{K}$"
+   "tex": "(1) 記述 \\quad (2) $\\mu_{\\mathrm{JT}} = \\frac{1}{C_p}\\left(\\frac{2a}{RT} - b\\right)$ \\quad (3) $T_{\\mathrm{inv}} = \\frac{2a}{Rb}$ \\quad (4) $\\mu_{\\mathrm{JT}} = \\frac{b}{C_p}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "栓の前後で $p_1V_1$ の仕事を受け，$p_2V_2$ の仕事をするので $U_1 + p_1V_1 = U_2 + p_2V_2$，すなわち $H$ が保存される．$dH = T\\,dS + V\\,dp$ に $dS = \\dfrac{C_p}{T}dT - \\left(\\dfrac{\\partial V}{\\partial T}\\right)_p dp$（マクスウェルの関係式 $(\\partial S/\\partial p)_T = -(\\partial V/\\partial T)_p$）を入れると\n\\[ dH = C_p\\,dT - \\left[T\\left(\\frac{\\partial V}{\\partial T}\\right)_p - V\\right]dp. \\]\n$dH = 0$ とおけば与式を得る．\n\n与えられた $V$ では $T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p = \\dfrac{RT}{p} + \\dfrac{a}{RT}$ なので\n\\[ \\mu_{\\mathrm{JT}} = \\boldsymbol{\\frac{1}{C_p}\\left(\\frac{2a}{RT} - b\\right)}. \\]\n\n$\\mu_{\\mathrm{JT}} = 0$ より $T_{\\mathrm{inv}} = \\boldsymbol{\\dfrac{2a}{Rb}}$．これより低温では $\\mu_{\\mathrm{JT}} > 0$（膨張で冷える）．\n\n窒素では $T_{\\mathrm{inv}} = \\dfrac{2\\times 0.137}{8.314\\times 3.87\\times 10^{-5}} \\approx \\boldsymbol{852\\,\\mathrm{K}}$．室温の窒素はジュール＝トムソン膨張で冷える（気体の液化に使われる）．"
+    "tex": "栓の前後で $p_1V_1$ の仕事を受け，$p_2V_2$ の仕事をするので $U_1 + p_1V_1 = U_2 + p_2V_2$，すなわち $H$ が保存される．$dH = T\\,dS + V\\,dp$ に $dS = \\dfrac{C_p}{T}dT - \\left(\\dfrac{\\partial V}{\\partial T}\\right)_p dp$（マクスウェルの関係式 $(\\partial S/\\partial p)_T = -(\\partial V/\\partial T)_p$）を入れると\n\\[ dH = C_p\\,dT - \\left[T\\left(\\frac{\\partial V}{\\partial T}\\right)_p - V\\right]dp. \\]\n$dH = 0$ とおけば与式を得る．\n\n与えられた $V$ では $T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p = \\dfrac{RT}{p} + \\dfrac{a}{RT}$ なので\n\\[ \\mu_{\\mathrm{JT}} = \\boldsymbol{\\frac{1}{C_p}\\left(\\frac{2a}{RT} - b\\right)}. \\]\n\n$\\mu_{\\mathrm{JT}} = 0$ より $T_{\\mathrm{inv}} = \\boldsymbol{\\dfrac{2a}{Rb}}$．これより低温では $\\mu_{\\mathrm{JT}} > 0$（膨張で冷える）．窒素では約 850 K となり，室温の窒素はジュール＝トムソン膨張で冷える（気体の液化に使われる）．\n\n$T=T_{\\mathrm{inv}}/2=\\dfrac{a}{Rb}$ では $\\dfrac{2a}{RT}=2b$ なので\n\\[ \\mu_{\\mathrm{JT}}=\\frac{2b-b}{C_p}=\\boldsymbol{\\frac{b}{C_p}}>0. \\]\n冷却の大きさは排除体積 $b$ の大きさで決まる．"
    }
   ],
   "idea": {
@@ -2558,7 +2558,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) (2a/(R T) - b)/C_p\n(3) 2a/(R b)\n(4) T_inv [K]：≈852"
+   "spec": "(1) 記述\n(2) (2a/(R T) - b)/C_p\n(3) 2a/(R b)\n(4) $\\mu_{\\mathrm{JT}}$：b/C_p"
   },
   "methods": [],
   "tags": [
@@ -2740,16 +2740,16 @@
   "theme": "最小仕事とエントロピー減少から体積ゆらぎへ",
   "topic": "最小仕事とエントロピー減少から体積ゆらぎへ",
   "statement": {
-   "tex": "温度 $T_0$，圧力 $p_0$ の大きな媒質中にある，粒子数一定の小部分系を考える．部分系が平衡状態から少しずれた状態にあるとき，全系のエントロピーは平衡値から $\\delta S^*=-R_{\\min}/T_0$ だけ小さい（$R_{\\min}$ はその状態をつくるのに必要な最小仕事）．Einstein のゆらぎの公式によれば，そのような状態の出現確率は $w\\propto\\exp(\\delta S^*/k)$ である．\n\\begin{enumerate}\n\\item 部分系の温度は $T_0$ に保たれたまま体積だけが平衡値 $V$ から $\\Delta V$ ずれた状態について，$R_{\\min}$ を $\\Delta V$ の 2 次まで求めよ．\n\\item 体積ゆらぎの 2 乗平均 $\\langle(\\Delta V)^2\\rangle$ を $(\\partial V/\\partial p)_T$ で表せ．理想気体（粒子数 $N$）では $\\langle(\\Delta V)^2\\rangle/V^2$ はいくらか．\n\\item $300$ K，$1.013\\times10^5$ Pa の空気の $1\\ \\mu\\text{m}^3$ の部分について，体積の相対ゆらぎ $\\sqrt{\\langle(\\Delta V)^2\\rangle}/V$ を数値で求めよ．また臨界点ではどうなるか．\n\\end{enumerate}"
+   "tex": "温度 $T_0$，圧力 $p_0$ の大きな媒質中にある，粒子数一定の小部分系を考える．部分系が平衡状態から少しずれた状態にあるとき，全系のエントロピーは平衡値から $\\delta S^*=-R_{\\min}/T_0$ だけ小さい（$R_{\\min}$ はその状態をつくるのに必要な最小仕事）．Einstein のゆらぎの公式によれば，そのような状態の出現確率は $w\\propto\\exp(\\delta S^*/k)$ である（$k$ はボルツマン定数）．\n\\begin{enumerate}\n\\item 部分系の温度は $T_0$ に保たれたまま体積だけが平衡値 $V$ から $\\Delta V$ ずれた状態について，$R_{\\min}$ を $\\Delta V$ の 2 次まで求めよ．\n\\item 体積ゆらぎの 2 乗平均 $\\langle(\\Delta V)^2\\rangle$ を $(\\partial V/\\partial p)_T$ で表せ．理想気体（粒子数 $N$）では $\\langle(\\Delta V)^2\\rangle/V^2$ はいくらか．\n\\item 媒質が理想気体のとき，体積 $V$ の部分の体積の相対ゆらぎ $\\sqrt{\\langle(\\Delta V)^2\\rangle}/V$ を $k,\\ T_0,\\ p_0,\\ V$ で表せ．また臨界点ではどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $R_{\\min}=-\\tfrac12\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T(\\Delta V)^2$　(2) $\\langle(\\Delta V)^2\\rangle=-kT_0\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T$；理想気体で $1/N$　(3) $N\\approx2.45\\times10^7$，相対ゆらぎ $\\approx2.0\\times10^{-4}$；臨界点では $(\\partial p/\\partial V)_T=0$ で発散"
+   "tex": "(1) $R_{\\min}=-\\tfrac12\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T(\\Delta V)^2$　(2) $\\langle(\\Delta V)^2\\rangle=-kT_0\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T$；理想気体で $1/N$　(3) $\\sqrt{\\dfrac{kT_0}{p_0V}}$；臨界点では $(\\partial p/\\partial V)_T=0$ で発散"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 部分系に対する最小仕事は $R_{\\min}=\\Delta U-T_0\\Delta S+p_0\\Delta V$．温度が $T_0$ のままなら $\\Delta U-T_0\\Delta S=\\Delta F$ で\n\\[ \\Delta F=F(V+\\Delta V)-F(V)=-p_0\\Delta V-\\frac12\\left(\\frac{\\partial p}{\\partial V}\\right)_T(\\Delta V)^2+\\cdots \\]\n（$(\\partial F/\\partial V)_T=-p$，平衡では $p=p_0$）．よって $R_{\\min}=-\\tfrac12(\\partial p/\\partial V)_T(\\Delta V)^2>0$．\n\n(2) $w\\propto\\exp\\left[\\dfrac{(\\partial p/\\partial V)_T(\\Delta V)^2}{2kT_0}\\right]$ は Gauss 分布で，分散は\n\\[ \\langle(\\Delta V)^2\\rangle=-\\frac{kT_0}{(\\partial p/\\partial V)_T}=-kT_0\\left(\\frac{\\partial V}{\\partial p}\\right)_T=kT_0V\\kappa_T. \\]\n理想気体では $(\\partial V/\\partial p)_T=-V/p$ で $\\langle(\\Delta V)^2\\rangle=kT_0V/p=V^2/N$，すなわち $\\langle(\\Delta V)^2\\rangle/V^2=1/N$．\n\n(3) $N=pV/(kT)=\\dfrac{1.013\\times10^5\\times10^{-18}}{1.381\\times10^{-23}\\times300}=2.45\\times10^7$．相対ゆらぎ $1/\\sqrt N=2.0\\times10^{-4}$．\n臨界点では $(\\partial p/\\partial V)_T=0$ なので $\\langle(\\Delta V)^2\\rangle$（したがって密度ゆらぎ）が発散し，光が強く散乱される（臨界タンパク光）．なお，このとき 2 次の展開では足りず，高次の項が分布を決める．"
+    "tex": "(1) 部分系に対する最小仕事は $R_{\\min}=\\Delta U-T_0\\Delta S+p_0\\Delta V$．温度が $T_0$ のままなら $\\Delta U-T_0\\Delta S=\\Delta F$ で\n\\[ \\Delta F=F(V+\\Delta V)-F(V)=-p_0\\Delta V-\\frac12\\left(\\frac{\\partial p}{\\partial V}\\right)_T(\\Delta V)^2+\\cdots \\]\n（$(\\partial F/\\partial V)_T=-p$，平衡では $p=p_0$）．よって $R_{\\min}=\\boldsymbol{-\\tfrac12(\\partial p/\\partial V)_T(\\Delta V)^2}>0$．\n\n(2) $w\\propto\\exp\\left[\\dfrac{(\\partial p/\\partial V)_T(\\Delta V)^2}{2kT_0}\\right]$ は Gauss 分布で，分散は\n\\[ \\langle(\\Delta V)^2\\rangle=-\\frac{kT_0}{(\\partial p/\\partial V)_T}=\\boldsymbol{-kT_0\\left(\\frac{\\partial V}{\\partial p}\\right)_T}=kT_0V\\kappa_T. \\]\n理想気体では $(\\partial V/\\partial p)_T=-V/p$ で $\\langle(\\Delta V)^2\\rangle=kT_0V/p=V^2/N$，すなわち $\\langle(\\Delta V)^2\\rangle/V^2=\\boldsymbol{1/N}$．\n\n(3) 部分の粒子数は $N=p_0V/(kT_0)$ なので\n\\[ \\frac{\\sqrt{\\langle(\\Delta V)^2\\rangle}}{V}=\\frac{1}{\\sqrt N}=\\boldsymbol{\\sqrt{\\frac{kT_0}{p_0V}}}. \\]\n例えば室温・1 気圧の空気の $1\\ \\mu\\mathrm{m}^3$ の部分では $N\\approx2.4\\times10^7$，相対ゆらぎは約 $2\\times10^{-4}$ である．\n臨界点では $(\\partial p/\\partial V)_T=0$ なので $\\langle(\\Delta V)^2\\rangle$（したがって密度ゆらぎ）が発散し，光が強く散乱される（臨界タンパク光）．なお，このとき 2 次の展開では足りず，高次の項が分布を決める．"
    }
   ],
   "idea": {
@@ -2757,7 +2757,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) 相対ゆらぎ：sqrt(k T_0/(p_0 V)) ; 臨界点：記述"
   },
   "methods": [],
   "tags": [
@@ -3041,16 +3041,16 @@
   "theme": "排除体積をもつ気体の比熱と断熱圧縮",
   "topic": "排除体積をもつ気体の比熱と断熱圧縮",
   "statement": {
-   "tex": "$n$ モルの気体が状態方程式\n\\[\np\\,(V-nb)=nRT\\qquad(b>0\\ \\text{は定数})\n\\]\nに従うとする（分子の大きさだけを考慮し，分子間引力を無視したモデル）．定積モル比熱 $c_V$ は温度によらない定数であるとし，以下の設問に答えよ．ただし $R$ は気体定数である．\n\\begin{enumerate}\n\\item ヘルムホルツの自由エネルギーの全微分 $dF=-S\\,dT-p\\,dV$ を用いて $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p$ を示し，この気体の内部エネルギーが温度だけの関数であることを示せ．\n\\item この気体の定圧モル比熱 $c_p$ と $c_V$ の差を求めよ．\n\\item 準静的断熱変化において $p\\,(V-nb)^{\\gamma}$（$\\gamma=c_p/c_V$）が一定に保たれることを示せ．\n\\item ディーゼル機関のシリンダ内でこの気体を準静的断熱圧縮し，温度を $T_1=300\\ \\mathrm{K}$ から $T_2=900\\ \\mathrm{K}$ に上げたい．$c_V=\\frac52R$，圧縮前の体積 $V_1$ に対し $nb/V_1=0.020$ とする．必要な圧縮比 $V_1/V_2$ を有効数字 3 桁で求め，理想気体（$b=0$）の場合と比較せよ．また，この圧縮に要する仕事は $b$ に依存するか答えよ．\n\\end{enumerate}"
+   "tex": "$n$ モルの気体が状態方程式\n\\[\np\\,(V-nb)=nRT\\qquad(b>0\\ \\text{は定数})\n\\]\nに従うとする（分子の大きさだけを考慮し，分子間引力を無視したモデル）．定積モル比熱 $c_V$ は温度によらない定数であるとし，以下の設問に答えよ．ただし $R$ は気体定数である．\n\\begin{enumerate}\n\\item ヘルムホルツの自由エネルギーの全微分 $dF=-S\\,dT-p\\,dV$ を用いて $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p$ を示し，この気体の内部エネルギーが温度だけの関数であることを示せ．\n\\item この気体の定圧モル比熱 $c_p$ と $c_V$ の差を求めよ．\n\\item 準静的断熱変化において $p\\,(V-nb)^{\\gamma}$（$\\gamma=c_p/c_V$）が一定に保たれることを示せ．\n\\item ディーゼル機関のシリンダ内でこの気体を準静的断熱圧縮し，温度を $T_1$ から $T_2=3T_1$ に上げたい．$c_V=\\frac52R$，圧縮前の体積 $V_1$ に対し $nb/V_1=\\beta$ とする．必要な圧縮比 $V_1/V_2$ を $\\beta$ で表し，理想気体（$b=0$）の場合と比較せよ．また，この圧縮に要する仕事 $W$ を $n,\\ R,\\ T_1$ で表し，$b$ に依存するか答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $(\\partial U/\\partial V)_T=0$（証明は解説参照）　(2) $c_p-c_V=R$（理想気体と同じ）　(3) 証明（解説参照）　(4) $V_1/V_2=\\left[0.02+0.98\\cdot3^{-5/2}\\right]^{-1}\\simeq12.1$（理想気体では $9\\sqrt3\\simeq15.6$）．仕事 $W=nc_V(T_2-T_1)$ は $b$ によらない"
+   "tex": "(1) $(\\partial U/\\partial V)_T=0$（証明は解説参照）　(2) $c_p-c_V=R$（理想気体と同じ）　(3) 証明（解説参照）　(4) $\\dfrac{V_1}{V_2}=\\dfrac{1}{\\beta+(1-\\beta)3^{-5/2}}$（理想気体では $9\\sqrt3$），$W=5nRT_1$ で $b$ によらない"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $U=F+TS$ より $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=\\left(\\dfrac{\\partial F}{\\partial V}\\right)_T+T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T=-p+T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T$．$dF=-SdT-pdV$ の 2 階微分の交換からマクスウェルの関係式 $\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T=\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V$ が成り立つので\n\\[\n\\left(\\frac{\\partial U}{\\partial V}\\right)_T=T\\left(\\frac{\\partial p}{\\partial T}\\right)_V-p .\n\\]\nいま $p=\\dfrac{nRT}{V-nb}$ だから $T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V=\\dfrac{nRT}{V-nb}=p$．よって $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=0$ であり，$U=U(T)$．\n\n(2) 第 1 法則 $\\delta Q=dU+pdV$ と $U=U(T)$ より $\\delta Q=nc_VdT+pdV$．定圧では状態方程式から $V=nb+\\dfrac{nRT}{p}$，$\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p=\\dfrac{nR}{p}$．したがって\n\\[\nc_p=\\frac1n\\left(\\frac{\\delta Q}{dT}\\right)_p=c_V+\\frac{p}{n}\\cdot\\frac{nR}{p}=c_V+R .\n\\]\n排除体積があってもマイヤーの関係式は変わらない．\n\n(3) 断熱 $\\delta Q=0$ より $nc_VdT+\\dfrac{nRT}{V-nb}dV=0$，すなわち $c_V\\dfrac{dT}{T}+R\\dfrac{dV}{V-nb}=0$．積分して $T(V-nb)^{R/c_V}=$ 一定．$T=p(V-nb)/(nR)$ を代入すると $p(V-nb)^{1+R/c_V}=p(V-nb)^{\\gamma}=$ 一定．\n\n(4) (3) より $T_1(V_1-nb)^{2/5}=T_2(V_2-nb)^{2/5}$，すなわち $V_2-nb=(V_1-nb)(T_1/T_2)^{5/2}$．$\\beta=nb/V_1=0.020$ とおくと\n\\[\n\\frac{V_2}{V_1}=\\beta+(1-\\beta)\\,3^{-5/2}=0.020+0.98\\times0.06415=0.08287,\n\\]\nよって $V_1/V_2\\simeq12.1$．理想気体では $3^{5/2}=9\\sqrt3\\simeq15.6$ なので，排除体積があると「有効体積」$V-nb$ だけが圧縮に効くため，より小さい圧縮比で点火温度に達する．\n仕事は断熱なので $W=\\Delta U=nc_V(T_2-T_1)$ であり，$U$ が $T$ のみの関数で $c_V$ も同じだから $b$ には依存しない（途中の圧力は理想気体より高いが，必要な体積変化が小さいことで相殺される）．"
+    "tex": "(1) $U=F+TS$ より $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=\\left(\\dfrac{\\partial F}{\\partial V}\\right)_T+T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T=-p+T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T$．$dF=-SdT-pdV$ の 2 階微分の交換からマクスウェルの関係式 $\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T=\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V$ が成り立つので\n\\[\n\\left(\\frac{\\partial U}{\\partial V}\\right)_T=T\\left(\\frac{\\partial p}{\\partial T}\\right)_V-p .\n\\]\nいま $p=\\dfrac{nRT}{V-nb}$ だから $T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V=\\dfrac{nRT}{V-nb}=p$．よって $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=0$ であり，$U=U(T)$．\n\n(2) 第 1 法則 $\\delta Q=dU+pdV$ と $U=U(T)$ より $\\delta Q=nc_VdT+pdV$．定圧では状態方程式から $V=nb+\\dfrac{nRT}{p}$，$\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p=\\dfrac{nR}{p}$．したがって\n\\[\nc_p=\\frac1n\\left(\\frac{\\delta Q}{dT}\\right)_p=c_V+\\frac{p}{n}\\cdot\\frac{nR}{p}=\\boldsymbol{c_V+R} .\n\\]\n排除体積があってもマイヤーの関係式は変わらない．\n\n(3) 断熱 $\\delta Q=0$ より $nc_VdT+\\dfrac{nRT}{V-nb}dV=0$，すなわち $c_V\\dfrac{dT}{T}+R\\dfrac{dV}{V-nb}=0$．積分して $T(V-nb)^{R/c_V}=$ 一定．$T=p(V-nb)/(nR)$ を代入すると $p(V-nb)^{1+R/c_V}=p(V-nb)^{\\gamma}=$ 一定．\n\n(4) (3) より $T_1(V_1-nb)^{2/5}=T_2(V_2-nb)^{2/5}$，すなわち $V_2-nb=(V_1-nb)(T_1/T_2)^{5/2}=(V_1-nb)\\,3^{-5/2}$．両辺を $V_1$ で割ると\n\\[\n\\frac{V_2}{V_1}=\\beta+(1-\\beta)\\,3^{-5/2},\\qquad \\frac{V_1}{V_2}=\\boldsymbol{\\frac{1}{\\beta+(1-\\beta)3^{-5/2}}}.\n\\]\n理想気体では $3^{5/2}=\\boldsymbol{9\\sqrt3}\\ (\\approx15.6)$．$\\beta>0$ なら分母が大きくなり（例えば $\\beta=0.02$ で約 12.1），排除体積があると「有効体積」$V-nb$ だけが圧縮に効くため，より小さい圧縮比で点火温度に達する．\n仕事は断熱なので $W=\\Delta U=nc_V(T_2-T_1)=\\frac52nR\\cdot2T_1=\\boldsymbol{5nRT_1}$ であり，$U$ が $T$ のみの関数で $c_V$ も同じだから $b$ には依存しない（途中の圧力は理想気体より高いが，必要な体積変化が小さいことで相殺される）．"
    }
   ],
   "idea": {
@@ -3058,7 +3058,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 証明\n(4) 記述"
+   "spec": "(1) 記述\n(2) $c_p-c_V$：R\n(3) 証明\n(4) $V_1/V_2$：1/(β + (1-β) 3^(-5/2)) ; 理想気体：9 sqrt(3) ; $W$：5 n R T_1"
   },
   "methods": [],
   "tags": [
@@ -3145,16 +3145,16 @@
   "theme": "$C_p-C_V$：気体の臨界点と水の4°C",
   "topic": "$C_p-C_V$：気体の臨界点と水の4°C",
   "statement": {
-   "tex": "1 mol の物質の定圧モル比熱 $C_p$ と定積モル比熱 $C_V$ について考える．\n\\begin{enumerate}\n\\item $C_p-C_V=TV\\dfrac{\\alpha^2}{\\kappa_T}$ を示せ．ただし $\\alpha=\\dfrac1V\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$（体膨張率），$\\kappa_T=-\\dfrac1V\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T$（等温圧縮率）．\n\\item 状態方程式 $\\left(p+\\dfrac a{V^2}\\right)(V-b)=RT$ に従う気体について，$C_p-C_V$ を $T,V$ の関数として求めよ．\n\\item (2) の結果が臨界点（$T_{\\rm c}=\\dfrac{8a}{27Rb}$，$V_{\\rm c}=3b$）で発散することを示せ．\n\\item $a=0.364\\ \\mathrm{Pa\\,m^6\\,mol^{-2}}$，$b=4.27\\times10^{-5}\\ \\mathrm{m^3\\,mol^{-1}}$，$T=300\\ \\mathrm K$，$V=1.00\\times10^{-3}\\ \\mathrm{m^3/mol}$ のとき，$C_p-C_V$ を求め，理想気体の値 $R=8.314\\ \\mathrm{J\\,K^{-1}mol^{-1}}$ と比べよ．\n\\item 1 気圧の水は約 4°C で密度が最大になる．この温度で $C_p$ と $C_V$ の関係はどうなるか．また 20°C の水（$\\alpha=2.07\\times10^{-4}\\ \\mathrm{K^{-1}}$，$\\kappa_T=4.59\\times10^{-10}\\ \\mathrm{Pa^{-1}}$，$V=1.807\\times10^{-5}\\ \\mathrm{m^3/mol}$）の $C_p-C_V$ を求めよ．\n\\end{enumerate}"
+   "tex": "1 mol の物質の定圧モル比熱 $C_p$ と定積モル比熱 $C_V$ について考える．\n\\begin{enumerate}\n\\item $C_p-C_V=TV\\dfrac{\\alpha^2}{\\kappa_T}$ を示せ．ただし $\\alpha=\\dfrac1V\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$（体膨張率），$\\kappa_T=-\\dfrac1V\\left(\\dfrac{\\partial V}{\\partial p}\\right)_T$（等温圧縮率）．\n\\item 状態方程式 $\\left(p+\\dfrac a{V^2}\\right)(V-b)=RT$ に従う気体について，$C_p-C_V$ を $T,V$ の関数として求めよ．\n\\item (2) の結果が臨界点（$T_c=\\dfrac{8a}{27Rb}$，$V_c=3b$）で発散することを示せ．\n\\item 臨界体積 $V=3b$ に沿って温度 $T\\ (>T_c)$ を変えるとき，$C_p-C_V$ を $R,\\ T,\\ T_c$ で表せ．\n\\item 1 気圧の水は約 4°C（温度 $T_m$）で密度が最大になる．この温度で $C_p$ と $C_V$ の関係はどうなるか．また $T_m$ の近くで体膨張率が $\\alpha\\approx\\beta(T-T_m)$（$\\beta$ は定数）と近似できるとき，$C_p-C_V$ を $T,\\ T_m,\\ V,\\ \\kappa_T,\\ \\beta$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $C_p-C_V=\\dfrac{R}{1-\\dfrac{2a(V-b)^2}{RTV^3}}$　(3) 分母が $0$ になる（解説参照）　(4) 約 $11.3\\ \\mathrm{J\\,K^{-1}mol^{-1}}$（$R$ の約 1.37 倍）　(5) 4°C で $C_p=C_V$；20°C で約 $0.49\\ \\mathrm{J\\,K^{-1}mol^{-1}}$"
+   "tex": "(1) 証明（解説参照）　(2) $C_p-C_V=\\dfrac{R}{1-\\dfrac{2a(V-b)^2}{RTV^3}}$　(3) 分母が $0$ になる（解説参照）　(4) $\\dfrac{RT}{T-T_c}$　(5) $T_m$ で $C_p=C_V$；$C_p-C_V\\approx\\dfrac{TV\\beta^2(T-T_m)^2}{\\kappa_T}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $S(T,p)=S(T,V(T,p))$ より $\\left(\\dfrac{\\partial S}{\\partial T}\\right)_p=\\left(\\dfrac{\\partial S}{\\partial T}\\right)_V+\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$．$C=T(\\partial S/\\partial T)$ とマクスウェルの関係式 $(\\partial S/\\partial V)_T=(\\partial p/\\partial T)_V$ から\n\\[ C_p-C_V=T\\left(\\frac{\\partial p}{\\partial T}\\right)_V\\left(\\frac{\\partial V}{\\partial T}\\right)_p. \\]\n循環関係式 $(\\partial p/\\partial T)_V=-(\\partial V/\\partial T)_p/(\\partial V/\\partial p)_T=\\alpha/\\kappa_T$ を用いて $C_p-C_V=TV\\alpha^2/\\kappa_T$．\n\n(2) $\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V=\\dfrac R{V-b}$，$\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T=-\\dfrac{RT}{(V-b)^2}+\\dfrac{2a}{V^3}$．$C_p-C_V=-T\\dfrac{(\\partial p/\\partial T)_V^2}{(\\partial p/\\partial V)_T}$ より\n\\[ C_p-C_V=\\frac{TR^2/(V-b)^2}{\\dfrac{RT}{(V-b)^2}-\\dfrac{2a}{V^3}}=\\frac{R}{1-\\dfrac{2a(V-b)^2}{RTV^3}}. \\]\n\n(3) $T=T_{\\rm c}$，$V=3b$ で $\\dfrac{2a(2b)^2}{R\\cdot\\frac{8a}{27Rb}\\cdot27b^3}=\\dfrac{8ab^2}{8ab^2}=1$．分母が $0$，すなわち $(\\partial p/\\partial V)_T=0$（$\\kappa_T\\to\\infty$）で $C_p-C_V\\to\\infty$．臨界点では等圧で温めると体積がいくらでも増え，それに熱が吸収される．\n\n(4) $\\dfrac{2a(V-b)^2}{RTV^3}=\\dfrac{2\\times0.364\\times(9.573\\times10^{-4})^2}{8.314\\times300\\times10^{-9}}\\approx0.2675$．\n\\[ C_p-C_V=\\frac{8.314}{0.7325}\\approx11.3\\ \\mathrm{J\\,K^{-1}mol^{-1}}. \\]\n臨界点に近い（$T\\approx0.98T_{\\rm c}$）ため理想気体の $R$ より大きく，約 1.37 倍．\n\n(5) 密度最大の点では $\\alpha=0$．$\\kappa_T>0$ は有限なので $C_p-C_V=0$，すなわち $C_p=C_V$．\n20°C：$C_p-C_V=293.15\\times1.807\\times10^{-5}\\times\\dfrac{(2.07\\times10^{-4})^2}{4.59\\times10^{-10}}\\approx0.49\\ \\mathrm{J\\,K^{-1}mol^{-1}}$．$C_p\\approx75.3\\ \\mathrm{J\\,K^{-1}mol^{-1}}$ の 1\\% 未満で，液体では両者の差が小さい．"
+    "tex": "(1) $S(T,p)=S(T,V(T,p))$ より $\\left(\\dfrac{\\partial S}{\\partial T}\\right)_p=\\left(\\dfrac{\\partial S}{\\partial T}\\right)_V+\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$．$C=T(\\partial S/\\partial T)$ とマクスウェルの関係式 $(\\partial S/\\partial V)_T=(\\partial p/\\partial T)_V$ から\n\\[ C_p-C_V=T\\left(\\frac{\\partial p}{\\partial T}\\right)_V\\left(\\frac{\\partial V}{\\partial T}\\right)_p. \\]\n循環関係式 $(\\partial p/\\partial T)_V=-(\\partial V/\\partial T)_p/(\\partial V/\\partial p)_T=\\alpha/\\kappa_T$ を用いて $C_p-C_V=TV\\alpha^2/\\kappa_T$．\n\n(2) $\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V=\\dfrac R{V-b}$，$\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T=-\\dfrac{RT}{(V-b)^2}+\\dfrac{2a}{V^3}$．$C_p-C_V=-T\\dfrac{(\\partial p/\\partial T)_V^2}{(\\partial p/\\partial V)_T}$ より\n\\[ C_p-C_V=\\frac{TR^2/(V-b)^2}{\\dfrac{RT}{(V-b)^2}-\\dfrac{2a}{V^3}}=\\boldsymbol{\\frac{R}{1-\\dfrac{2a(V-b)^2}{RTV^3}}}. \\]\n\n(3) $T=T_c$，$V=3b$ で $\\dfrac{2a(2b)^2}{R\\cdot\\frac{8a}{27Rb}\\cdot27b^3}=\\dfrac{8ab^2}{8ab^2}=1$．分母が $0$，すなわち $(\\partial p/\\partial V)_T=0$（$\\kappa_T\\to\\infty$）で $C_p-C_V\\to\\infty$．臨界点では等圧で温めると体積がいくらでも増え，それに熱が吸収される．\n\n(4) $V=3b$ では $\\dfrac{2a(2b)^2}{RT\\cdot27b^3}=\\dfrac{8a}{27RbT}=\\dfrac{T_c}{T}$ なので\n\\[ C_p-C_V=\\frac{R}{1-T_c/T}=\\boldsymbol{\\frac{RT}{T-T_c}}. \\]\n$T\\to T_c+0$ で $(T-T_c)^{-1}$ のように発散し，臨界点から離れると理想気体の値 $R$ に近づく．\n\n(5) 密度最大の点では $\\alpha=0$．$\\kappa_T>0$ は有限なので $C_p-C_V=0$，すなわち $\\boldsymbol{C_p=C_V}$．\nその近くでは $\\alpha\\approx\\beta(T-T_m)$ を代入して\n\\[ C_p-C_V\\approx\\boldsymbol{\\frac{TV\\beta^2(T-T_m)^2}{\\kappa_T}}, \\]\n$T_m$ からのずれの 2 乗で増える．20°C の水でも約 $0.5\\ \\mathrm{J\\,K^{-1}mol^{-1}}$ で $C_p\\approx75\\ \\mathrm{J\\,K^{-1}mol^{-1}}$ の 1\\% 未満にすぎず，液体では両者の差が小さい．"
    }
   ],
   "idea": {
@@ -3162,7 +3162,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) [J K⁻¹mol⁻¹]：≈11.3\n(5) 記述"
+   "spec": "(1) 証明\n(2) $C_p-C_V$：R/(1 - 2a (V-b)^2/(R T V^3))\n(3) 記述\n(4) $C_p-C_V$：R T/(T-T_c)\n(5) $T_m$ で：記述 ; $C_p-C_V$：T V β^2 (T-T_m)^2/κ_T"
   },
   "methods": [],
   "tags": [
@@ -3196,16 +3196,16 @@
   "theme": "ファン・デル・ワールス気体の逆転曲線全体",
   "topic": "ファン・デル・ワールス気体の逆転曲線全体",
   "statement": {
-   "tex": "1 mol の気体のジュール・トムソン係数は，定圧モル比熱を $C_p$ として\n\\[\n\\mu_J=\\left(\\frac{\\partial T}{\\partial p}\\right)_H=\\frac{1}{C_p}\\left[T\\left(\\frac{\\partial V}{\\partial T}\\right)_p-V\\right]\n\\]\nで与えられる．気体がファン・デル・ワールスの状態方程式 $p=\\dfrac{RT}{V-b}-\\dfrac{a}{V^2}$ に従うとする．臨界点は $T_c=\\dfrac{8a}{27Rb}$，$V_c=3b$，$p_c=\\dfrac{a}{27b^2}$ であり，換算変数 $\\tilde T=T/T_c$，$\\tilde V=V/V_c$，$\\tilde p=p/p_c$ を用いる．\n\\begin{enumerate}\n\\item $\\mu_J=0$ の条件が $T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V+V\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T=0$ と同値であることを示せ．\n\\item 逆転曲線（$\\mu_J=0$ となる点の集合）を $\\tilde V$ を媒介変数として $\\tilde T(\\tilde V)$，$\\tilde p(\\tilde V)$ で表せ．さらに $\\tilde V$ を消去して $\\tilde p=24\\sqrt{3\\tilde T}-12\\tilde T-27$ となることを示せ．\n\\item 正の圧力で冷却（$\\mu_J>0$）が起こりうる温度範囲と，冷却が可能な最大の圧力 $\\tilde p_{\\max}$ およびそのときの $\\tilde T$ を求めよ．低圧極限での上限温度が，ボイル温度 $T_B=a/(Rb)$ の何倍かも答えよ．\n\\item 臨界温度 $126\\ \\mathrm K$，臨界圧力 $3.39\\ \\mathrm{MPa}$ の気体についてこのモデルを用いると，最大逆転温度と，ジュール・トムソン冷却が可能な最大圧力はいくらか．\n\\end{enumerate}"
+   "tex": "1 mol の気体のジュール・トムソン係数は，定圧モル比熱を $C_p$ として\n\\[\n\\mu_J=\\left(\\frac{\\partial T}{\\partial p}\\right)_H=\\frac{1}{C_p}\\left[T\\left(\\frac{\\partial V}{\\partial T}\\right)_p-V\\right]\n\\]\nで与えられる．気体がファン・デル・ワールスの状態方程式 $p=\\dfrac{RT}{V-b}-\\dfrac{a}{V^2}$ に従うとする．臨界点は $T_c=\\dfrac{8a}{27Rb}$，$V_c=3b$，$p_c=\\dfrac{a}{27b^2}$ であり，換算変数 $\\tilde T=T/T_c$，$\\tilde V=V/V_c$，$\\tilde p=p/p_c$ を用いる．\n\\begin{enumerate}\n\\item $\\mu_J=0$ の条件が $T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V+V\\left(\\dfrac{\\partial p}{\\partial V}\\right)_T=0$ と同値であることを示せ．\n\\item 逆転曲線（$\\mu_J=0$ となる点の集合）を $\\tilde V$ を媒介変数として $\\tilde T(\\tilde V)$，$\\tilde p(\\tilde V)$ で表せ．さらに $\\tilde V$ を消去して $\\tilde p=24\\sqrt{3\\tilde T}-12\\tilde T-27$ となることを示せ．\n\\item 正の圧力で冷却（$\\mu_J>0$）が起こりうる温度範囲と，冷却が可能な最大の圧力 $\\tilde p_{\\max}$ およびそのときの $\\tilde T$ を求めよ．低圧極限での上限温度が，ボイル温度 $T_B=a/(Rb)$ の何倍かも答えよ．\n\\item 臨界温度 $T_c$，臨界圧力 $p_c$ の気体についてこのモデルを用いると，最大逆転温度 $T_{\\max}$ と，ジュール・トムソン冷却が可能な最大圧力 $p_{\\max}$ はいくらか．$T_c,\\ p_c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 解説参照　(2) $\\tilde T=\\dfrac{3(3\\tilde V-1)^2}{4\\tilde V^2}$，$\\tilde p=\\dfrac{9(2\\tilde V-1)}{\\tilde V^2}$　(3) $\\tfrac34<\\tilde T<\\tfrac{27}{4}$，$\\tilde p_{\\max}=9$（$\\tilde T=3$），上限温度は $2T_B$　(4) 約 $850\\ \\mathrm K$，約 $31\\ \\mathrm{MPa}$"
+   "tex": "(1) 解説参照　(2) $\\tilde T=\\dfrac{3(3\\tilde V-1)^2}{4\\tilde V^2}$，$\\tilde p=\\dfrac{9(2\\tilde V-1)}{\\tilde V^2}$　(3) $\\tfrac34<\\tilde T<\\tfrac{27}{4}$，$\\tilde p_{\\max}=9$（$\\tilde T=3$），上限温度は $2T_B$　(4) $T_{\\max}=\\dfrac{27}{4}T_c$，$p_{\\max}=9p_c$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 循環関係 $\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p=-\\dfrac{(\\partial p/\\partial T)_V}{(\\partial p/\\partial V)_T}$ より\n\\[\nT\\left(\\frac{\\partial V}{\\partial T}\\right)_p-V=-\\frac{T(\\partial p/\\partial T)_V+V(\\partial p/\\partial V)_T}{(\\partial p/\\partial V)_T}.\n\\]\n安定な状態では $(\\partial p/\\partial V)_T<0$ で有限なので，$\\mu_J=0$ は分子が 0 であることと同値．\n\n(2) $T\\dfrac{R}{V-b}+V\\left[-\\dfrac{RT}{(V-b)^2}+\\dfrac{2a}{V^3}\\right]=0$ を整理すると $-\\dfrac{RTb}{(V-b)^2}+\\dfrac{2a}{V^2}=0$，すなわち\n\\[\nRT=\\frac{2a}{b}\\left(1-\\frac bV\\right)^2 .\n\\]\n$V=3b\\tilde V$，$RT_c=8a/(27b)$ を入れて $\\tilde T=\\dfrac{27}{4}\\left(1-\\dfrac1{3\\tilde V}\\right)^2=\\dfrac{3(3\\tilde V-1)^2}{4\\tilde V^2}$．\nこれを状態方程式に代入すると $p=\\dfrac{2a(V-b)}{V^2b}-\\dfrac a{V^2}=\\dfrac{a(2V-3b)}{bV^2}$，換算して $\\tilde p=\\dfrac{9(2\\tilde V-1)}{\\tilde V^2}$．\n消去：$s=\\dfrac1{3\\tilde V}$ とおくと $\\sqrt{\\tilde T}=\\dfrac{3\\sqrt3}{2}(1-s)$，$\\tilde p=9(6s-9s^2)=27(2s-3s^2)$．$s=1-\\dfrac{2}{3\\sqrt3}\\sqrt{\\tilde T}$ を代入して整理すると\n$\\tilde p=24\\sqrt{3\\tilde T}-12\\tilde T-27$．\n\n(3) $\\tilde p\\ge0$ を解くと $\\sqrt{\\tilde T}=x$ として $12x^2-24\\sqrt3x+27\\le0$，$(2x-\\sqrt3)(2x-3\\sqrt3)\\le0$ より $\\tfrac34\\le\\tilde T\\le\\tfrac{27}{4}$．曲線の内側（$\\tilde p$ が逆転曲線より低い側）で $\\mu_J>0$．例えば低圧極限では $\\mu_J\\to\\dfrac1{C_p}\\left(\\dfrac{2a}{RT}-b\\right)$ で，$T<2a/(Rb)$ で正．\n$d\\tilde p/d\\tilde T=12\\sqrt3/\\sqrt{\\tilde T}-12=0$ より $\\tilde T=3$，$\\tilde p_{\\max}=24\\cdot3-36-27=9$．\n上限 $\\tilde T=27/4$ は $T=\\dfrac{27}{4}\\cdot\\dfrac{8a}{27Rb}=\\dfrac{2a}{Rb}=2T_B$．\n\n(4) $T_{\\max}=\\tfrac{27}{4}\\times126\\approx850\\ \\mathrm K$，$p_{\\max}=9\\times3.39\\approx30.5\\ \\mathrm{MPa}$．（実在の窒素では上限逆転温度は約 620 K で，ファン・デル・ワールス模型は定性的な目安にとどまる．）"
+    "tex": "(1) 循環関係 $\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p=-\\dfrac{(\\partial p/\\partial T)_V}{(\\partial p/\\partial V)_T}$ より\n\\[\nT\\left(\\frac{\\partial V}{\\partial T}\\right)_p-V=-\\frac{T(\\partial p/\\partial T)_V+V(\\partial p/\\partial V)_T}{(\\partial p/\\partial V)_T}.\n\\]\n安定な状態では $(\\partial p/\\partial V)_T<0$ で有限なので，$\\mu_J=0$ は分子が 0 であることと同値．\n\n(2) $T\\dfrac{R}{V-b}+V\\left[-\\dfrac{RT}{(V-b)^2}+\\dfrac{2a}{V^3}\\right]=0$ を整理すると $-\\dfrac{RTb}{(V-b)^2}+\\dfrac{2a}{V^2}=0$，すなわち\n\\[\nRT=\\frac{2a}{b}\\left(1-\\frac bV\\right)^2 .\n\\]\n$V=3b\\tilde V$，$RT_c=8a/(27b)$ を入れて $\\tilde T=\\dfrac{27}{4}\\left(1-\\dfrac1{3\\tilde V}\\right)^2=\\boldsymbol{\\dfrac{3(3\\tilde V-1)^2}{4\\tilde V^2}}$．\nこれを状態方程式に代入すると $p=\\dfrac{2a(V-b)}{V^2b}-\\dfrac a{V^2}=\\dfrac{a(2V-3b)}{bV^2}$，換算して $\\tilde p=\\boldsymbol{\\dfrac{9(2\\tilde V-1)}{\\tilde V^2}}$．\n消去：$s=\\dfrac1{3\\tilde V}$ とおくと $\\sqrt{\\tilde T}=\\dfrac{3\\sqrt3}{2}(1-s)$，$\\tilde p=9(6s-9s^2)=27(2s-3s^2)$．$s=1-\\dfrac{2}{3\\sqrt3}\\sqrt{\\tilde T}$ を代入して整理すると\n$\\tilde p=24\\sqrt{3\\tilde T}-12\\tilde T-27$．\n\n(3) $\\tilde p\\ge0$ を解くと $\\sqrt{\\tilde T}=x$ として $12x^2-24\\sqrt3x+27\\le0$，$(2x-\\sqrt3)(2x-3\\sqrt3)\\le0$ より $\\tfrac34\\le\\tilde T\\le\\tfrac{27}{4}$．曲線の内側（$\\tilde p$ が逆転曲線より低い側）で $\\mu_J>0$．例えば低圧極限では $\\mu_J\\to\\dfrac1{C_p}\\left(\\dfrac{2a}{RT}-b\\right)$ で，$T<2a/(Rb)$ で正．\n$d\\tilde p/d\\tilde T=12\\sqrt3/\\sqrt{\\tilde T}-12=0$ より $\\tilde T=3$，$\\tilde p_{\\max}=24\\cdot3-36-27=\\boldsymbol{9}$．\n上限 $\\tilde T=27/4$ は $T=\\dfrac{27}{4}\\cdot\\dfrac{8a}{27Rb}=\\dfrac{2a}{Rb}=\\boldsymbol{2T_B}$．\n\n(4) (3) を次元のある量に戻すと $T_{\\max}=\\boldsymbol{\\dfrac{27}{4}T_c}$，$p_{\\max}=\\boldsymbol{9p_c}$．このモデルでは物質によらず臨界定数の定数倍になる（対応状態の原理）．窒素（$T_c=126$ K，$p_c=3.39$ MPa）なら約 850 K，約 31 MPa となるが，実在の窒素の上限逆転温度は約 620 K で，ファン・デル・ワールス模型は定性的な目安にとどまる．"
    }
   ],
   "idea": {
@@ -3213,7 +3213,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) [K]：≈850 ; [MPa]：≈31"
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $T_{\\max}$：27 T_c/4 ; $p_{\\max}$：9 p_c"
   },
   "methods": [],
   "tags": [
@@ -3247,16 +3247,16 @@
   "theme": "第2ビリアル係数と内部エネルギーの密度補正",
   "topic": "第2ビリアル係数と内部エネルギーの密度補正",
   "statement": {
-   "tex": "1 mol の気体の状態方程式が，低密度で $p=\\dfrac{RT}{V}\\left[1+\\dfrac{B(T)}{V}\\right]$（$1/V$ の 2 次以上は無視）と書けるとする．\n\\begin{enumerate}\n\\item 熱力学の関係式 $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p$ を証明せよ．\n\\item この気体の内部エネルギーが $U(T,V)=U_0(T)-\\dfrac{RT^2B'(T)}{V}$ と書けることを示せ（$U_0$ は理想気体部分）．\n\\item 分子間ポテンシャルを，直径 $\\sigma$ の剛体芯の外側 $\\sigma<r<\\lambda\\sigma$ に深さ $\\varepsilon$ の井戸をもつ「井戸型ポテンシャル」とすると，\n\\[\nB(T)=b_0\\left[1-(\\lambda^3-1)\\left(e^{\\varepsilon/k_BT}-1\\right)\\right],\\qquad b_0=\\frac{2\\pi}{3}N_A\\sigma^3\n\\]\nとなる．ボイル温度 $T_B$（$B(T_B)=0$）を求め，$\\lambda=1.5$ のとき $k_BT_B/\\varepsilon$ を数値で求めよ．$T<T_B$ で $B<0$ となることの分子論的な意味を述べよ．\n\\item (3) の模型で $U-U_0$ を求め，その符号と，$T\\to\\infty$ での振る舞いを述べよ．\n\\item 定積モル比熱 $\\frac32R$ のこの気体を，体積 $V$ から $2V$ へ真空中に自由膨張させる．温度変化を $1/V$ の 1 次まで求め，冷えるか温まるかを答えよ．\n\\end{enumerate}"
+   "tex": "1 mol の気体の状態方程式が，低密度で $p=\\dfrac{RT}{V}\\left[1+\\dfrac{B(T)}{V}\\right]$（$1/V$ の 2 次以上は無視）と書けるとする．\n\\begin{enumerate}\n\\item 熱力学の関係式 $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p$ を証明せよ．\n\\item この気体の内部エネルギーが $U(T,V)=U_0(T)-\\dfrac{RT^2B'(T)}{V}$ と書けることを示せ（$U_0$ は理想気体部分）．\n\\item 分子間ポテンシャルを，直径 $\\sigma$ の剛体芯の外側 $\\sigma<r<\\lambda\\sigma$ に深さ $\\varepsilon$ の井戸をもつ「井戸型ポテンシャル」とすると，\n\\[\nB(T)=b_0\\left[1-(\\lambda^3-1)\\left(e^{\\varepsilon/k_BT}-1\\right)\\right],\\qquad b_0=\\frac{2\\pi}{3}N_A\\sigma^3\n\\]\nとなる．ボイル温度 $T_B$（$B(T_B)=0$）を求め，$\\lambda=3/2$ のとき $k_BT_B/\\varepsilon$ を厳密な形で求めよ．$T<T_B$ で $B<0$ となることの分子論的な意味を述べよ．\n\\item (3) の模型で $U-U_0$ を求め，その符号と，$T\\to\\infty$ での振る舞いを述べよ．\n\\item 定積モル比熱 $\\frac32R$ のこの気体を，体積 $V$ から $2V$ へ真空中に自由膨張させる．温度変化を $1/V$ の 1 次まで求め，冷えるか温まるかを答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) 解説参照　(3) $k_BT_B=\\dfrac{\\varepsilon}{\\log\\frac{\\lambda^3}{\\lambda^3-1}}$，$\\lambda=1.5$ で $k_BT_B/\\varepsilon\\approx2.85$　(4) $U-U_0=-\\dfrac{N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}}{V}<0$，$T\\to\\infty$ で $-N_Ab_0(\\lambda^3-1)\\varepsilon/V$ に近づく　(5) $\\Delta T\\simeq-\\dfrac{N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}}{3RV}$（冷える）"
+   "tex": "(1) 証明（解説参照）　(2) 解説参照　(3) $k_BT_B=\\dfrac{\\varepsilon}{\\log\\frac{\\lambda^3}{\\lambda^3-1}}$，$\\lambda=3/2$ で $\\dfrac{k_BT_B}{\\varepsilon}=\\dfrac{1}{\\log\\frac{27}{19}}$　(4) $U-U_0=-\\dfrac{N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}}{V}<0$，$T\\to\\infty$ で $-N_Ab_0(\\lambda^3-1)\\varepsilon/V$ に近づく　(5) $\\Delta T\\simeq-\\dfrac{N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}}{3RV}$（冷える）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $dU=T\\,dS-p\\,dV$ から $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T-p$．ヘルムホルツ自由エネルギー $F=U-TS$ の $dF=-S\\,dT-p\\,dV$ からマクスウェルの関係 $\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T=\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V$．代入して示される．\n\n(2) $T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p=\\dfrac{RT}{V}\\left(1+\\dfrac BV\\right)+\\dfrac{RT^2B'}{V^2}-\\dfrac{RT}{V}\\left(1+\\dfrac BV\\right)=\\dfrac{RT^2B'(T)}{V^2}$．\n$V$ で積分し，$V\\to\\infty$ で理想気体 $U_0(T)$ になるように定数を選べば $U=U_0(T)-\\dfrac{RT^2B'(T)}{V}$．\n\n(3) $B=0$ より $e^{\\varepsilon/k_BT_B}-1=\\dfrac1{\\lambda^3-1}$，$e^{\\varepsilon/k_BT_B}=\\dfrac{\\lambda^3}{\\lambda^3-1}$，よって $k_BT_B=\\varepsilon\\big/\\log\\dfrac{\\lambda^3}{\\lambda^3-1}$．$\\lambda=1.5$：$\\lambda^3=3.375$，$\\log(3.375/2.375)=0.351$ で $k_BT_B/\\varepsilon\\approx2.85$．\n$b_0>0$ は剛体芯の排除体積による正の寄与（圧力を上げる），第 2 項は引力井戸による負の寄与．低温ではボルツマン因子 $e^{\\varepsilon/k_BT}$ により引力領域にいる確率が増え，引力の効果が勝って $B<0$（圧力が理想気体より低い）となる．\n\n(4) $B'(T)=b_0(\\lambda^3-1)e^{\\varepsilon/k_BT}\\dfrac{\\varepsilon}{k_BT^2}$ より，$R=N_Ak_B$ を用いて\n\\[\nU-U_0=-\\frac{RT^2B'}{V}=-\\frac{N_Ab_0(\\lambda^3-1)\\,\\varepsilon\\,e^{\\varepsilon/k_BT}}{V}<0 .\n\\]\n引力の位置エネルギー（負）の平均にあたる．剛体芯は $B$ に温度によらない寄与しか与えないので $U$ に寄与しない．$T\\to\\infty$ でも 0 にはならず $-N_Ab_0(\\lambda^3-1)\\varepsilon/V$（井戸の体積 × 深さに比例する平均場の値）に近づく．\n\n(5) $U(T,V)=\\frac32RT+\\dfrac{c(T)}{V}$，$c(T)=-N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}$．自由膨張では $U$ が保存されるので $\\frac32RT_f+\\dfrac{c(T_f)}{2V}=\\frac32RT+\\dfrac{c(T)}{V}$．$1/V$ の 1 次では $c(T_f)\\simeq c(T)$ としてよく\n\\[\n\\Delta T=T_f-T\\simeq\\frac{c(T)}{2V}\\cdot\\frac{2}{3R}=-\\frac{N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}}{3RV}<0 .\n\\]\n引力に逆らって分子間距離が広がる分だけ運動エネルギーが減るので冷える（ジュール効果）．"
+    "tex": "(1) $dU=T\\,dS-p\\,dV$ から $\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T=T\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T-p$．ヘルムホルツ自由エネルギー $F=U-TS$ の $dF=-S\\,dT-p\\,dV$ からマクスウェルの関係 $\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T=\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V$．代入して示される．\n\n(2) $T\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V-p=\\dfrac{RT}{V}\\left(1+\\dfrac BV\\right)+\\dfrac{RT^2B'}{V^2}-\\dfrac{RT}{V}\\left(1+\\dfrac BV\\right)=\\dfrac{RT^2B'(T)}{V^2}$．\n$V$ で積分し，$V\\to\\infty$ で理想気体 $U_0(T)$ になるように定数を選べば $U=U_0(T)-\\dfrac{RT^2B'(T)}{V}$．\n\n(3) $B=0$ より $e^{\\varepsilon/k_BT_B}-1=\\dfrac1{\\lambda^3-1}$，$e^{\\varepsilon/k_BT_B}=\\dfrac{\\lambda^3}{\\lambda^3-1}$，よって $k_BT_B=\\boldsymbol{\\varepsilon\\Big/\\log\\dfrac{\\lambda^3}{\\lambda^3-1}}$．$\\lambda=3/2$ では $\\lambda^3=27/8$，$\\lambda^3-1=19/8$ なので\n\\[ \\frac{k_BT_B}{\\varepsilon}=\\boldsymbol{\\frac{1}{\\log\\frac{27}{19}}}\\ (\\approx2.85). \\]\n$b_0>0$ は剛体芯の排除体積による正の寄与（圧力を上げる），第 2 項は引力井戸による負の寄与．低温ではボルツマン因子 $e^{\\varepsilon/k_BT}$ により引力領域にいる確率が増え，引力の効果が勝って $B<0$（圧力が理想気体より低い）となる．\n\n(4) $B'(T)=b_0(\\lambda^3-1)e^{\\varepsilon/k_BT}\\dfrac{\\varepsilon}{k_BT^2}$ より，$R=N_Ak_B$ を用いて\n\\[\nU-U_0=-\\frac{RT^2B'}{V}=\\boldsymbol{-\\frac{N_Ab_0(\\lambda^3-1)\\,\\varepsilon\\,e^{\\varepsilon/k_BT}}{V}}<0 .\n\\]\n引力の位置エネルギー（負）の平均にあたる．剛体芯は $B$ に温度によらない寄与しか与えないので $U$ に寄与しない．$T\\to\\infty$ でも 0 にはならず $-N_Ab_0(\\lambda^3-1)\\varepsilon/V$（井戸の体積 × 深さに比例する平均場の値）に近づく．\n\n(5) $U(T,V)=\\frac32RT+\\dfrac{c(T)}{V}$，$c(T)=-N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}$．自由膨張では $U$ が保存されるので $\\frac32RT_f+\\dfrac{c(T_f)}{2V}=\\frac32RT+\\dfrac{c(T)}{V}$．$1/V$ の 1 次では $c(T_f)\\simeq c(T)$ としてよく\n\\[\n\\Delta T=T_f-T\\simeq\\frac{c(T)}{2V}\\cdot\\frac{2}{3R}=\\boldsymbol{-\\frac{N_Ab_0(\\lambda^3-1)\\varepsilon e^{\\varepsilon/k_BT}}{3RV}}<0 .\n\\]\n引力に逆らって分子間距離が広がる分だけ運動エネルギーが減るので冷える（ジュール効果）．"
    }
   ],
   "idea": {
@@ -3264,7 +3264,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述\n(5) 記述"
+   "spec": "(1) 証明\n(2) 記述\n(3) $k_BT_B/\\varepsilon$：1/ln(27/19) ; 意味：記述\n(4) 記述\n(5) 記述"
   },
   "methods": [],
   "tags": [
@@ -3299,16 +3299,16 @@
   "theme": "液膜のカルノーサイクルと断熱伸張による冷却",
   "topic": "液膜のカルノーサイクルと断熱伸張による冷却",
   "statement": {
-   "tex": "石けん膜（表裏 2 面）の表面張力 $\\sigma$ は温度 $T$ だけの関数とする．\n\\begin{enumerate}\n\\item 温度 $T$ と $T-dT$ の間で膜を等温伸張・断熱伸張・等温収縮・断熱収縮させる微小なカルノーサイクルを考え，温度 $T$ で膜の面積を等温で単位面積だけ増やすのに吸収される熱が $q=-2T\\,\\dfrac{d\\sigma}{dT}$ であることを示せ．\n\\item 膜（液体の質量 $m$，比熱 $c$，一定とする）を断熱的・可逆的に面積 $\\Delta A$ だけ伸ばしたときの温度変化 $\\Delta T$ を求めよ（$|\\Delta T|\\ll T$）．\n\\item 面積 $10\\ \\mathrm{cm^2}$，厚さ $2.0\\ \\mu$m の水の膜（$c=4.2\\times10^3$ J/(kg·K)）を $T=300$ K で断熱的に $10\\ \\mathrm{cm^2}$ 伸ばす．$d\\sigma/dT=-1.5\\times10^{-4}$ N/(m·K) として $\\Delta T$ を求めよ．\n\\end{enumerate}"
+   "tex": "石けん膜（表裏 2 面）の表面張力 $\\sigma$ は温度 $T$ だけの関数とする．\n\\begin{enumerate}\n\\item 温度 $T$ と $T-dT$ の間で膜を等温伸張・断熱伸張・等温収縮・断熱収縮させる微小なカルノーサイクルを考え，温度 $T$ で膜の面積を等温で単位面積だけ増やすのに吸収される熱が $q=-2T\\,\\dfrac{d\\sigma}{dT}$ であることを示せ．\n\\item 膜（液体の質量 $m$，比熱 $c$，一定とする）を断熱的・可逆的に面積 $\\Delta A$ だけ伸ばしたときの温度変化 $\\Delta T$ を求めよ（$|\\Delta T|\\ll T$）．\n\\item 面積 $A_0$，厚さ $d$，密度 $\\rho$ の水の膜（比熱 $c$）を温度 $T$ で断熱的に面積 $A_0$ だけ伸ばす（面積を 2 倍にする）．$d\\sigma/dT=-\\beta$（$\\beta>0$ は定数）として $\\Delta T$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) $\\Delta T=\\dfrac{2T}{mc}\\dfrac{d\\sigma}{dT}\\Delta A$（$d\\sigma/dT<0$ なら冷える）　(3) $\\Delta T\\approx-1.1\\times10^{-2}$ K"
+   "tex": "(1) 証明（解説参照）　(2) $\\Delta T=\\dfrac{2T}{mc}\\dfrac{d\\sigma}{dT}\\Delta A$（$d\\sigma/dT<0$ なら冷える）　(3) $\\Delta T=-\\dfrac{2T\\beta}{\\rho cd}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 膜の面積を $dA$ 増やすとき外部が膜にする仕事は $2\\sigma\\,dA$（表裏 2 面）．次のサイクルを考える：温度 $T$ で面積を $\\Delta A$ だけ等温伸張（吸熱 $q\\Delta A$）→ わずかに断熱伸張して温度を $T-dT$ に下げる → 温度 $T-dT$ で $\\Delta A$ だけ等温収縮（放熱）→ 断熱収縮で元に戻す．断熱過程での面積変化は微小（$dT$ の 1 次）なので，その仕事は 2 次の微小量である．外部が膜にする正味の仕事は\n\\[\n2\\sigma(T)\\Delta A-2\\sigma(T-dT)\\Delta A=2\\frac{d\\sigma}{dT}dT\\,\\Delta A,\n\\]\nしたがって膜が外部にする正味の仕事は $\\delta W=-2\\dfrac{d\\sigma}{dT}dT\\,\\Delta A$（$d\\sigma/dT<0$ なら正）．これは高温 $T$ で熱 $q\\Delta A$ を受け取る可逆機関なので，効率はカルノー効率 $dT/T$ に等しい：\n\\[\n\\frac{\\delta W}{q\\Delta A}=\\frac{dT}{T}\\quad\\Longrightarrow\\quad q=-2T\\frac{d\\sigma}{dT}.\n\\]\n\n(2) 膜のエントロピー $S(T,A)$ について，$dF=-S\\,dT+2\\sigma\\,dA$ のマクスウェルの関係から $(\\partial S/\\partial A)_T=-2\\,d\\sigma/dT$（(1) の $q/T$ と同じ）．断熱可逆なら\n\\[\ndS=\\frac{mc}{T}dT-2\\frac{d\\sigma}{dT}dA=0\\quad\\Longrightarrow\\quad\\Delta T=\\frac{2T}{mc}\\frac{d\\sigma}{dT}\\Delta A .\n\\]\n$d\\sigma/dT<0$ なので伸ばすと冷える（ゴムとは逆）．\n\n(3) $m=\\rho\\times(10\\times10^{-4})(2.0\\times10^{-6})=2.0\\times10^{-6}$ kg．\n\\[\n\\Delta T=\\frac{2(300)(-1.5\\times10^{-4})(10\\times10^{-4})}{(2.0\\times10^{-6})(4.2\\times10^3)}=-1.1\\times10^{-2}\\ \\mathrm K.\n\\]"
+    "tex": "(1) 膜の面積を $dA$ 増やすとき外部が膜にする仕事は $2\\sigma\\,dA$（表裏 2 面）．次のサイクルを考える：温度 $T$ で面積を $\\Delta A$ だけ等温伸張（吸熱 $q\\Delta A$）→ わずかに断熱伸張して温度を $T-dT$ に下げる → 温度 $T-dT$ で $\\Delta A$ だけ等温収縮（放熱）→ 断熱収縮で元に戻す．断熱過程での面積変化は微小（$dT$ の 1 次）なので，その仕事は 2 次の微小量である．外部が膜にする正味の仕事は\n\\[\n2\\sigma(T)\\Delta A-2\\sigma(T-dT)\\Delta A=2\\frac{d\\sigma}{dT}dT\\,\\Delta A,\n\\]\nしたがって膜が外部にする正味の仕事は $\\delta W=-2\\dfrac{d\\sigma}{dT}dT\\,\\Delta A$（$d\\sigma/dT<0$ なら正）．これは高温 $T$ で熱 $q\\Delta A$ を受け取る可逆機関なので，効率はカルノー効率 $dT/T$ に等しい：\n\\[\n\\frac{\\delta W}{q\\Delta A}=\\frac{dT}{T}\\quad\\Longrightarrow\\quad q=-2T\\frac{d\\sigma}{dT}.\n\\]\n\n(2) 膜のエントロピー $S(T,A)$ について，$dF=-S\\,dT+2\\sigma\\,dA$ のマクスウェルの関係から $(\\partial S/\\partial A)_T=-2\\,d\\sigma/dT$（(1) の $q/T$ と同じ）．断熱可逆なら\n\\[\ndS=\\frac{mc}{T}dT-2\\frac{d\\sigma}{dT}dA=0\\quad\\Longrightarrow\\quad\\Delta T=\\boldsymbol{\\frac{2T}{mc}\\frac{d\\sigma}{dT}\\Delta A} .\n\\]\n$d\\sigma/dT<0$ なので伸ばすと冷える（ゴムとは逆）．\n\n(3) 膜の質量は $m=\\rho A_0d$，$\\Delta A=A_0$，$d\\sigma/dT=-\\beta$ を (2) に代入して\n\\[\n\\Delta T=\\frac{2T(-\\beta)A_0}{\\rho A_0d\\,c}=\\boldsymbol{-\\frac{2T\\beta}{\\rho cd}}.\n\\]\n面積によらず，膜が薄いほど大きく冷える．厚さ $2\\ \\mu$m の水の膜を室温で 2 倍に伸ばしても約 $-0.01$ K にすぎない．"
    }
   ],
   "idea": {
@@ -3316,7 +3316,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) $\\Delta T$ [K]：≈-1.1e-2"
+   "spec": "(1) 証明\n(2) 記述：ΔT=(2T/(mc))(dσ/dT)ΔA\n(3) $\\Delta T$：-2 T β/(ρ c d)"
   },
   "methods": [],
   "tags": [
@@ -3548,16 +3548,16 @@
   "theme": "有限の圧力降下での積分JT冷却",
   "topic": "有限の圧力降下での積分JT冷却",
   "statement": {
-   "tex": "窒素を，線形化したファン・デル・ワールス近似 $\\left(\\dfrac{\\partial T}{\\partial P}\\right)_H=\\dfrac1{C_P}\\left(\\dfrac{2a}{RT}-b\\right)$ に従う気体とみなす（$a=0.137\\ \\mathrm{Pa\\,m^6/mol^2}$，$b=3.87\\times10^{-5}\\ \\mathrm{m^3/mol}$，$C_P=\\frac72R$，$R=8.314\\ \\mathrm{J\\,mol^{-1}K^{-1}}$）．\n\\begin{enumerate}\n\\item 等エンタルピー曲線を $T$–$P$ 平面に描くとき，冷却が起こる領域と逆転温度 $T_i$ の関係を説明し，$T_i$ を求めよ．\n\\item 300 K，200 atm の窒素を 1 atm まで絞り膨張させる．$\\mu_{JT}$ を入口温度の値で一定とみなしたときの温度変化を求めよ．\n\\item 温度変化に伴う $\\mu_{JT}$ の変化まで考慮して微分方程式を積分し，出口温度を与える式を導いて数値を求めよ（1 atm $=1.013\\times10^5$ Pa）．(2) より冷却が大きくなる理由を述べよ．\n\\end{enumerate}"
+   "tex": "気体を，線形化したファン・デル・ワールス近似 $\\left(\\dfrac{\\partial T}{\\partial P}\\right)_H=\\dfrac1{C_P}\\left(\\dfrac{2a}{RT}-b\\right)$ に従うとみなす（$a,\\ b$ は定数，$C_P$ は定圧モル比熱で一定，$R$ は気体定数）．\n\\begin{enumerate}\n\\item 等エンタルピー曲線を $T$–$P$ 平面に描くとき，冷却が起こる領域と逆転温度 $T_i$ の関係を説明し，$T_i$ を求めよ．\n\\item 温度 $T_1$，圧力 $P_1$ の気体を圧力 $P_2\\ (<P_1)$ まで絞り膨張させる．$\\mu_{JT}$ を入口温度の値で一定とみなしたときの温度変化 $\\Delta T$ を求めよ．\n\\item 温度変化に伴う $\\mu_{JT}$ の変化まで考慮して微分方程式を積分し，出口温度 $T_2$ を決める式を導け（$A=2a/R$ とおけ）．(2) より冷却が大きくなる理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T<T_i$ で冷却，$T_i=2a/(Rb)\\approx852$ K　(2) 約 $-49$ K　(3) $C_P\\left[\\frac{T_1-T_2}{b}+\\frac{A}{b^2}\\ln\\frac{A-bT_1}{A-bT_2}\\right]=P_1-P_2$（$A=2a/R$），$T_2\\approx243$ K（約 $-57$ K）"
+   "tex": "(1) $T<T_i$ で冷却，$T_i=\\dfrac{2a}{Rb}$　(2) $\\Delta T=\\dfrac{1}{C_P}\\left(\\dfrac{2a}{RT_1}-b\\right)(P_2-P_1)$　(3) $C_P\\left[\\frac{T_1-T_2}{b}+\\frac{A}{b^2}\\ln\\frac{A-bT_1}{A-bT_2}\\right]=P_1-P_2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 等エンタルピー曲線 $T(P)$ の傾きが $\\mu_{JT}$．$\\mu_{JT}>0$ の領域では圧力を下げると温度が下がる．この近似では $\\mu_{JT}>0\\Leftrightarrow T<T_i=\\dfrac{2a}{Rb}$．各等エンタルピー曲線は $T=T_i$ で極大をとり，その左（低温側）が冷却領域となる．\n\\[ T_i=\\frac{2\\times0.137}{8.314\\times3.87\\times10^{-5}}\\approx852\\ \\mathrm K. \\]\n（実測の窒素の逆転温度は約 620 K で，モデルは過大評価する．）\n\n(2) $C_P=29.1$ J/(mol K)，$\\mu_{JT}(300\\ \\mathrm K)=\\dfrac{1}{29.1}\\left(\\dfrac{2\\times0.137}{8.314\\times300}-3.87\\times10^{-5}\\right)\\approx2.45\\times10^{-6}$ K/Pa．\n$\\Delta T=\\mu_{JT}\\Delta P=2.45\\times10^{-6}\\times(-199\\times1.013\\times10^5)\\approx-49$ K．\n\n(3) $A=2a/R$ とおくと $C_P\\dfrac{dT}{dP}=\\dfrac{A-bT}{T}$，変数分離して $C_P\\dfrac{T\\,dT}{A-bT}=dP$．$\\dfrac{T}{A-bT}=-\\dfrac1b+\\dfrac{A/b}{A-bT}$ より\n\\[ C_P\\left[-\\frac Tb-\\frac A{b^2}\\ln(A-bT)\\right]_{T_1}^{T_2}=P_2-P_1, \\]\nすなわち $C_P\\left[\\dfrac{T_1-T_2}{b}+\\dfrac{A}{b^2}\\ln\\dfrac{A-bT_1}{A-bT_2}\\right]=P_1-P_2$．\n$A=0.03296\\ \\mathrm{m^3K/mol}$，$T_1=300$ K，$P_1-P_2=199\\times1.013\\times10^5$ Pa を代入して数値的に解くと $T_2\\approx243$ K（$\\Delta T\\approx-57$ K）．\n冷えるほど $2a/RT$ が大きくなり $\\mu_{JT}$ が増すため，膨張の後半ほど冷却効率が上がる．これが線形近似 (2) より冷却が大きい理由で，予冷して絞るほど有利というリンデ液化の原理にもつながる．"
+    "tex": "(1) 等エンタルピー曲線 $T(P)$ の傾きが $\\mu_{JT}$．$\\mu_{JT}>0$ の領域では圧力を下げると温度が下がる．この近似では $\\mu_{JT}>0\\Leftrightarrow T<T_i=\\boldsymbol{\\dfrac{2a}{Rb}}$．各等エンタルピー曲線は $T=T_i$ で極大をとり，その左（低温側）が冷却領域となる．\n（窒素ではこのモデルで約 850 K だが，実測の逆転温度は約 620 K で，モデルは過大評価する．）\n\n(2) $\\mu_{JT}(T_1)=\\dfrac{1}{C_P}\\left(\\dfrac{2a}{RT_1}-b\\right)$ を一定として\n\\[ \\Delta T=\\mu_{JT}(T_1)(P_2-P_1)=\\boldsymbol{\\frac{1}{C_P}\\Bigl(\\frac{2a}{RT_1}-b\\Bigr)(P_2-P_1)}. \\]\n$T_1<T_i$ なら $\\Delta T<0$ で冷える（300 K，200 atm の窒素を 1 atm にすると約 $-49$ K）．\n\n(3) $A=2a/R$ とおくと $C_P\\dfrac{dT}{dP}=\\dfrac{A-bT}{T}$，変数分離して $C_P\\dfrac{T\\,dT}{A-bT}=dP$．$\\dfrac{T}{A-bT}=-\\dfrac1b+\\dfrac{A/b}{A-bT}$ より\n\\[ C_P\\left[-\\frac Tb-\\frac A{b^2}\\ln(A-bT)\\right]_{T_1}^{T_2}=P_2-P_1, \\]\nすなわち\n\\[ \\boldsymbol{C_P\\left[\\frac{T_1-T_2}{b}+\\frac{A}{b^2}\\ln\\frac{A-bT_1}{A-bT_2}\\right]=P_1-P_2}. \\]\nこれは $T_2$ についての超越方程式で，数値的に解く（上の窒素の例では $T_2\\approx243$ K，$\\Delta T\\approx-57$ K）．\n冷えるほど $2a/RT$ が大きくなり $\\mu_{JT}$ が増すため，膨張の後半ほど冷却効率が上がる．これが線形近似 (2) より冷却が大きい理由で，予冷して絞るほど有利というリンデ液化の原理にもつながる．"
    }
   ],
   "idea": {
@@ -3565,7 +3565,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [K]：≈-49\n(3) 記述"
+   "spec": "(1) $T_i$：2a/(R b)\n(2) $\\Delta T$：(2a/(R T_1) - b)(P_2-P_1)/C_P\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -3697,16 +3697,16 @@
   "theme": "固体の断熱圧縮による温度上昇",
   "topic": "固体の断熱圧縮による温度上昇",
   "statement": {
-   "tex": "物質 $1\\,\\mathrm{mol}$ のモル体積を $V$，体膨張率を $\\alpha = \\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$，定圧モル比熱を $C_p$ とする．\n\\begin{enumerate}\n\\item ギブズの自由エネルギーから得られるマクスウェルの関係式を用いて，$\\left(\\dfrac{\\partial T}{\\partial p}\\right)_S$ を $T,\\ V,\\ \\alpha,\\ C_p$ で表せ．\n\\item 温度 $T$ で圧力を $\\Delta p$ だけ等温的に増やすとき，物質が吸収する熱 $Q$ を $T,\\ V,\\ \\alpha,\\ \\Delta p$ で表せ（$\\Delta p$ は小さく，$V,\\alpha$ は一定とみなす）．\n\\item 銅（$T = 300\\,\\mathrm{K}$，$V = 7.1\\times10^{-6}\\,\\mathrm{m^3/mol}$，$\\alpha = 5.0\\times10^{-5}\\,\\mathrm{K^{-1}}$，$C_p = 24.4\\,\\mathrm{J/(mol\\,K)}$）に $\\Delta p = 1.0\\times10^{8}\\,\\mathrm{Pa}$ を断熱的に加えたときの温度変化 $\\Delta T$ と，同じ圧力を等温的に加えたときの吸熱 $Q$ を求めよ．\n\\item $0\\,\\mathrm{^\\circ C}$ と $4\\,\\mathrm{^\\circ C}$ の間の水を断熱圧縮すると温度はどうなるか．理由とともに述べよ．\n\\end{enumerate}"
+   "tex": "物質 $1\\,\\mathrm{mol}$ のモル体積を $V$，体膨張率を $\\alpha = \\dfrac{1}{V}\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p$，定圧モル比熱を $C_p$ とする．\n\\begin{enumerate}\n\\item ギブズの自由エネルギーから得られるマクスウェルの関係式を用いて，$\\left(\\dfrac{\\partial T}{\\partial p}\\right)_S$ を $T,\\ V,\\ \\alpha,\\ C_p$ で表せ．\n\\item 温度 $T$ で圧力を $\\Delta p$ だけ等温的に増やすとき，物質が吸収する熱 $Q$ を $T,\\ V,\\ \\alpha,\\ \\Delta p$ で表せ（$\\Delta p$ は小さく，$V,\\alpha$ は一定とみなす）．\n\\item 固体に圧力 $\\Delta p$ を断熱的に加えたときの温度変化 $\\Delta T$ を求め，(2) の $Q$ との間に $Q=-C_p\\Delta T$ の関係があることを確かめよ．その物理的な意味を述べよ．\n\\item $0\\,\\mathrm{^\\circ C}$ と $4\\,\\mathrm{^\\circ C}$ の間の水を断熱圧縮すると温度はどうなるか．理由とともに述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\left(\\frac{\\partial T}{\\partial p}\\right)_S = \\frac{TV\\alpha}{C_p}$ \\quad (2) $Q = -TV\\alpha\\Delta p$ \\quad (3) $\\Delta T \\approx 0.436\\,\\mathrm{K}$，$Q \\approx -10.7\\,\\mathrm{J/mol}$ \\quad (4) 記述"
+   "tex": "(1) $\\left(\\frac{\\partial T}{\\partial p}\\right)_S = \\frac{TV\\alpha}{C_p}$ \\quad (2) $Q = -TV\\alpha\\Delta p$ \\quad (3) $\\Delta T = \\frac{TV\\alpha\\Delta p}{C_p}$ \\quad (4) 記述"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$S = S(T, p)$ として $dS = \\dfrac{C_p}{T}dT + \\left(\\dfrac{\\partial S}{\\partial p}\\right)_T dp$．$dG = -S\\,dT + V\\,dp$ から $\\left(\\dfrac{\\partial S}{\\partial p}\\right)_T = -\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p = -V\\alpha$．$dS = 0$ とおけば\n\\[ \\left(\\frac{\\partial T}{\\partial p}\\right)_S = \\boldsymbol{\\frac{TV\\alpha}{C_p}}. \\]\n\n等温では $Q = T\\Delta S = T\\left(\\dfrac{\\partial S}{\\partial p}\\right)_T\\Delta p = \\boldsymbol{-TV\\alpha\\Delta p}$（$\\alpha > 0$ なら圧縮で熱を放出する）．\n\n銅では\n\\[ \\Delta T = \\frac{300\\times7.1\\times10^{-6}\\times5.0\\times10^{-5}\\times1.0\\times10^{8}}{24.4} \\approx \\boldsymbol{0.436\\,\\mathrm{K}}, \\qquad Q = -300\\times7.1\\times10^{-6}\\times5.0\\times10^{-5}\\times10^{8} \\approx \\boldsymbol{-10.7\\,\\mathrm{J/mol}}. \\]\n$1000$ 気圧でも $0.4\\,\\mathrm{K}$ ほどしか上がらない．固体の $\\alpha$ が小さいためで，気体の断熱圧縮とは桁が違う．\n\n$0$〜$4\\,\\mathrm{^\\circ C}$ の水は温めると縮む（$\\alpha < 0$）ので，$\\left(\\dfrac{\\partial T}{\\partial p}\\right)_S < 0$ となり，\\textbf{断熱圧縮すると温度が下がる}．"
+    "tex": "$S = S(T, p)$ として $dS = \\dfrac{C_p}{T}dT + \\left(\\dfrac{\\partial S}{\\partial p}\\right)_T dp$．$dG = -S\\,dT + V\\,dp$ から $\\left(\\dfrac{\\partial S}{\\partial p}\\right)_T = -\\left(\\dfrac{\\partial V}{\\partial T}\\right)_p = -V\\alpha$．$dS = 0$ とおけば\n\\[ \\left(\\frac{\\partial T}{\\partial p}\\right)_S = \\boldsymbol{\\frac{TV\\alpha}{C_p}}. \\]\n\n等温では $Q = T\\Delta S = T\\left(\\dfrac{\\partial S}{\\partial p}\\right)_T\\Delta p = \\boldsymbol{-TV\\alpha\\Delta p}$（$\\alpha > 0$ なら圧縮で熱を放出する）．\n\n断熱では\n\\[ \\Delta T = \\boldsymbol{\\frac{TV\\alpha\\Delta p}{C_p}},\\qquad Q=-TV\\alpha\\Delta p=-C_p\\Delta T. \\]\n等温圧縮で外に逃がす熱は，断熱圧縮で物質にこもって温度を上げる熱と同じ量である（同じ $\\Delta S$ を熱の出入りで打ち消すか，温度上昇で打ち消すかの違い）．固体では $\\alpha$ が小さいので，銅に $1000$ 気圧を加えても $0.4\\,\\mathrm{K}$ ほどしか上がらず，気体の断熱圧縮とは桁が違う．\n\n$0$〜$4\\,\\mathrm{^\\circ C}$ の水は温めると縮む（$\\alpha < 0$）ので，$\\left(\\dfrac{\\partial T}{\\partial p}\\right)_S < 0$ となり，\\textbf{断熱圧縮すると温度が下がる}．"
    }
   ],
   "idea": {
@@ -3714,7 +3714,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) T V α/C_p\n(2) -T V α Δp\n(3) ΔT [K]：≈0.436 ; Q [J/mol]：≈-10.7\n(4) 記述：α<0 なので (∂T/∂p)_S<0，断熱圧縮で温度が下がる"
+   "spec": "(1) T V α/C_p\n(2) -T V α Δp\n(3) $\\Delta T$：T V α Δp/C_p\n(4) 記述：α<0 なので (∂T/∂p)_S<0，断熱圧縮で温度が下がる"
   },
   "methods": [],
   "tags": [

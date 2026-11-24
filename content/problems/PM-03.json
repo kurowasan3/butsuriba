@@ -9,16 +9,16 @@
   "theme": "ニュートンの冷却法則",
   "topic": "ニュートンの冷却法則",
   "statement": {
-   "tex": "室温 $T_s$ の部屋に置いた飲み物の温度 $T(t)$ は，ニュートンの冷却法則\n\\[ \\frac{dT}{dt}=-k\\,(T-T_s)\\qquad(k>0\\ \\text{は定数}) \\]\nにしたがうとする．\n\\begin{enumerate}\n\\item $T(0)=T_0$ のとき，$T(t)$ を求めよ．\n\\item 室温 $20\\,^\\circ\\mathrm{C}$ で，$90\\,^\\circ\\mathrm{C}$ のコーヒーが $10$ 分後に $60\\,^\\circ\\mathrm{C}$ になった．$k$ を（$1/$分 の単位で）求めよ．\n\\item このコーヒーが $40\\,^\\circ\\mathrm{C}$ になるのは，冷め始めてから何分後か．\n\\end{enumerate}\n必要なら $\\ln 2=0.693$，$\\ln 7=1.946$ を用いよ．"
+   "tex": "室温 $T_s$ の部屋に置いた飲み物の温度 $T(t)$ は，ニュートンの冷却法則\n\\[ \\frac{dT}{dt}=-k\\,(T-T_s)\\qquad(k>0\\ \\text{は定数}) \\]\nにしたがうとする．\n\\begin{enumerate}\n\\item $T(0)=T_0$ のとき，$T(t)$ を求めよ．\n\\item 温度 $T_0$ のコーヒーが，時間 $t_1$ 後に温度 $T_1$（$T_s<T_1<T_0$）になった．$k$ を求めよ．\n\\item このコーヒーが温度 $T_2$（$T_s<T_2<T_1$）になるのは，冷め始めてから何時間後か．$T_0,\\ T_1,\\ T_2,\\ T_s,\\ t_1$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T(t)=T_s+(T_0-T_s)e^{-kt}$ (2) $k=\\dfrac{1}{10}\\ln\\dfrac{7}{4}\\approx 0.0560\\,\\mathrm{min^{-1}}$ (3) $t\\approx 22.4\\,\\mathrm{min}$"
+   "tex": "(1) $T(t)=T_s+(T_0-T_s)e^{-kt}$ (2) $k=\\dfrac{1}{t_1}\\ln\\dfrac{T_0-T_s}{T_1-T_s}$ (3) $t=t_1\\dfrac{\\ln\\frac{T_0-T_s}{T_2-T_s}}{\\ln\\frac{T_0-T_s}{T_1-T_s}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$u=T-T_s$ とおくと $\\dfrac{du}{dt}=-ku$．$\\dfrac{1}{u}\\dfrac{du}{dt}=-k$ を積分して $\\ln|u|=-kt+(\\text{定数})$，よって $u=u_0e^{-kt}$．したがって\n\\[ \\boldsymbol{T(t)=T_s+(T_0-T_s)e^{-kt}}. \\]\n\n$60-20=(90-20)e^{-10k}$ より $e^{10k}=70/40=7/4$．\n\\[ k=\\frac{\\ln 7-2\\ln 2}{10}=\\frac{1.946-1.386}{10}\\approx\\boldsymbol{0.0560\\ /\\text{分}}. \\]\n\n$40-20=70e^{-kt}$ より $kt=\\ln(7/2)=1.946-0.693=1.253$．\n\\[ t=\\frac{1.253}{0.0560}\\approx\\boldsymbol{22.4\\ \\text{分}}. \\]\n温度差が一定の割合で減るので，$90\\to60$ に $10$ 分かかっても $60\\to40$（差 $40\\to20$，半分になるまで）には $12.4$ 分ほどかかる．\n\n次は，右辺が $T$ について1次でない場合や，2階の微分方程式（振動）の解き方へ進むとよい．"
+    "tex": "(1) $u=T-T_s$ とおくと $\\dfrac{du}{dt}=-ku$．$\\dfrac{1}{u}\\dfrac{du}{dt}=-k$ を積分して $\\ln|u|=-kt+(\\text{定数})$，よって $u=u_0e^{-kt}$．したがって\n\\[ \\boldsymbol{T(t)=T_s+(T_0-T_s)e^{-kt}}. \\]\n\n(2) $T_1-T_s=(T_0-T_s)e^{-kt_1}$ より\n\\[ \\boldsymbol{k=\\frac{1}{t_1}\\ln\\frac{T_0-T_s}{T_1-T_s}}. \\]\n\n(3) $T_2-T_s=(T_0-T_s)e^{-kt}$ より $kt=\\ln\\dfrac{T_0-T_s}{T_2-T_s}$．(2) を代入して\n\\[ \\boldsymbol{t=t_1\\,\\frac{\\ln\\frac{T_0-T_s}{T_2-T_s}}{\\ln\\frac{T_0-T_s}{T_1-T_s}}}. \\]\n温度差が一定の割合で減るので，同じだけ温度を下げるのにも，室温に近いほど時間がかかる（たとえば室温 $20\\,^\\circ\\mathrm{C}$ で $90\\to60\\,^\\circ\\mathrm{C}$ に $10$ 分なら，$60\\to40\\,^\\circ\\mathrm{C}$ には約 $12$ 分かかる）．\n\n次は，右辺が $T$ について1次でない場合や，2階の微分方程式（振動）の解き方へ進むとよい．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) T_s+(T_0-T_s)exp(-k t)\n(2) k [1/min]：≈0.0560\n(3) t [min]：≈22.4"
+   "spec": "(1) T_s+(T_0-T_s)exp(-k t)\n(2) $k$：ln((T_0-T_s)/(T_1-T_s))/t_1\n(3) $t$：t_1 ln((T_0-T_s)/(T_2-T_s))/ln((T_0-T_s)/(T_1-T_s))"
   },
   "methods": [],
   "tags": [
@@ -201,27 +201,27 @@
   "field": "PM-03",
   "level": 1,
   "minutes": 20,
-  "theme": "競争するロトカ＝ヴォルテラ系の共存平衡の具体値",
-  "topic": "競争するロトカ＝ヴォルテラ系の共存平衡の具体値",
+  "theme": "競争するロトカ＝ヴォルテラ系の共存と競争排除",
+  "topic": "競争するロトカ＝ヴォルテラ系の共存と競争排除",
   "statement": {
-   "tex": "無次元化した競争系 $\\dot u_1=u_1(1-u_1-b_1u_2)$，$\\dot u_2=\\rho u_2(1-u_2-b_2u_1)$ を考える．\n\\begin{enumerate}\n\\item 共存平衡点を求め，安定である条件を述べよ．\n\\item $b_1=0.5$，$b_2=0.8$ での共存平衡点を求めよ．\n\\item $b_1=1.5$，$b_2=0.8$ では長時間後にどうなるか．\n\\end{enumerate}"
+   "tex": "無次元化した競争系 $\\dot u_1=u_1(1-u_1-b_1u_2)$，$\\dot u_2=\\rho u_2(1-u_2-b_2u_1)$（$b_1,b_2,\\rho>0$）を考える．\n\\begin{enumerate}\n\\item 共存平衡点 $(u_1^*,u_2^*)$ を求め，安定である条件を述べよ．\n\\item $b_1>1$，$b_2<1$ のとき，長時間後に系はどの平衡点に近づくか．\n\\item $b_1>1$，$b_2>1$ のとき，長時間後のふるまいを述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $u_1^*=\\dfrac{1-b_1}{1-b_1b_2}$，$u_2^*=\\dfrac{1-b_2}{1-b_1b_2}$；$b_1<1$ かつ $b_2<1$　(2) $(0.83,0.33)$　(3) 種1が絶滅し $(0,1)$"
+   "tex": "(1) $u_1^*=\\dfrac{1-b_1}{1-b_1b_2}$，$u_2^*=\\dfrac{1-b_2}{1-b_1b_2}$；$b_1<1$ かつ $b_2<1$　(2) 種1が絶滅し $(0,1)$　(3) 共存点は鞍点で，初期値によって $(1,0)$ か $(0,1)$ のどちらかに近づく（双安定）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 2つの直線の交点で与式．$b_1,b_2<1$ で正で安定（種内競争が種間競争より強い）．\n\n(2) $1-b_1b_2=0.6$：$\\boldsymbol{(0.833,\\ 0.333)}$．\n\n(3) $u_1^*<0$ で共存点はない．$(0,1)$ で $u_1$ の成長率 $1-b_1=-0.5<0$，種2が勝つ（競争排除）．"
+    "tex": "(1) $1-u_1-b_1u_2=0$，$1-u_2-b_2u_1=0$ の交点で\n\\[ \\boldsymbol{u_1^*=\\frac{1-b_1}{1-b_1b_2},\\quad u_2^*=\\frac{1-b_2}{1-b_1b_2}}. \\]\nヤコビ行列は $\\begin{pmatrix}-u_1^*&-b_1u_1^*\\\\-\\rho b_2u_2^*&-\\rho u_2^*\\end{pmatrix}$ で，トレース $<0$，行列式 $\\rho u_1^*u_2^*(1-b_1b_2)$．$u_1^*,u_2^*>0$ のもとで安定なのは $\\boldsymbol{b_1<1}$ かつ $\\boldsymbol{b_2<1}$ のとき（種内競争が種間競争より強い）．\n\n(2) $b_1>1,b_2<1$ では $u_1^*<0$ となり共存点は第 1 象限にない．$(0,1)$ で $u_1$ の成長率は $1-b_1<0$，$u_2$ 方向は $-\\rho<0$ で安定．一方 $(1,0)$ では $u_2$ の成長率 $\\rho(1-b_2)>0$ で不安定．したがって $\\boldsymbol{(0,1)}$ に近づき，種 1 が絶滅する（競争排除）．\n\n(3) $b_1,b_2>1$ では $u_1^*,u_2^*>0$ だが $1-b_1b_2<0$ で行列式が負，共存点は鞍点．$(1,0)$ と $(0,1)$ はともに安定で，鞍点の安定多様体（分離線）のどちら側から出発するかによって勝者が決まる（双安定）．"
    }
   ],
   "idea": {
-   "tex": "競争系の結果は種間と種内の競争の強さの比で決まる．原題の一般的な分類を，具体的な数値での判定にした．"
+   "tex": "競争系の結果は種間と種内の競争の強さの比 $b_1,b_2$ と 1 の大小で決まり，共存・競争排除・双安定の 3 通りに分かれる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) (0.83, 0.33)\n(3) 記述"
+   "spec": "(1) $u_1^*$：(1-b_1)/(1-b_1 b_2) ; $u_2^*$：(1-b_2)/(1-b_1 b_2)\n(2) (0, 1)\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -402,16 +402,16 @@
   "theme": "気温減率のある大気の気圧分布",
   "topic": "気温減率のある大気の気圧分布",
   "statement": {
-   "tex": "静水圧平衡にある理想気体の大気では，高度 $z$ の気圧 $p(z)$ は\n\\[ \\frac{dp}{dz}+\\frac{Mg}{RT(z)}\\,p=0 \\]\nに従う（$M$：モル質量，$R$：気体定数）．対流圏では気温が $T(z)=T_0-\\Gamma z$（$\\Gamma>0$ は一定の気温減率）と近似できる．\n\\begin{enumerate}\n\\item $p(0)=p_0$ として $p(z)$ を求めよ．また $\\Gamma\\to0$ の極限で等温大気の結果に戻ることを確かめよ．\n\\item 一般の $T(z)>0$ に対して，$p(z)/p_0$ は高度 $0$ から $z$ までの気温のある平均値 $\\bar T$ をもつ等温大気の式 $e^{-Mgz/(R\\bar T)}$ と厳密に一致する．$\\bar T$ はどのような平均か．\n\\item $M=0.029\\ \\mathrm{kg/mol}$，$g=9.8\\ \\mathrm{m/s^2}$，$R=8.314\\ \\mathrm{J/(mol\\,K)}$，$T_0=288\\ \\mathrm K$，$\\Gamma=6.5\\ \\mathrm{K/km}$ として，$z=10\\ \\mathrm{km}$ での $p/p_0$ を求め，地表気温のままの等温大気の値と比較せよ．\n\\end{enumerate}"
+   "tex": "静水圧平衡にある理想気体の大気では，高度 $z$ の気圧 $p(z)$ は\n\\[ \\frac{dp}{dz}+\\frac{Mg}{RT(z)}\\,p=0 \\]\nに従う（$M$：モル質量，$R$：気体定数）．対流圏では気温が $T(z)=T_0-\\Gamma z$（$\\Gamma>0$ は一定の気温減率）と近似できる．\n\\begin{enumerate}\n\\item $p(0)=p_0$ として $p(z)$ を求めよ．また $\\Gamma\\to0$ の極限で等温大気の結果に戻ることを確かめよ．\n\\item 一般の $T(z)>0$ に対して，$p(z)/p_0$ は高度 $0$ から $z$ までの気温のある平均値 $\\bar T$ をもつ等温大気の式 $e^{-Mgz/(R\\bar T)}$ と厳密に一致する．$\\bar T$ はどのような平均か．\n\\item $T(z)=T_0-\\Gamma z$ のとき，高度 $0$ から $z$ までの $\\bar T$ を求めよ．$\\bar T<T_0$ であることから，地表気温のままの等温大気と比べて気圧の減り方はどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $p=p_0\\left(1-\\dfrac{\\Gamma z}{T_0}\\right)^{Mg/(R\\Gamma)}$　(2) 調和平均 $\\bar T=z\\Big/\\!\\int_0^z\\frac{dz'}{T(z')}$　(3) 指数 $\\approx5.26$，$p/p_0\\approx0.26$（$\\bar T\\approx254\\ \\mathrm K$）；等温 288 K なら $\\approx0.305$"
+   "tex": "(1) $p=p_0\\left(1-\\dfrac{\\Gamma z}{T_0}\\right)^{Mg/(R\\Gamma)}$　(2) 調和平均 $\\bar T=z\\Big/\\!\\int_0^z\\frac{dz'}{T(z')}$　(3) $\\bar T=\\dfrac{\\Gamma z}{\\ln\\frac{T_0}{T_0-\\Gamma z}}$．$\\bar T<T_0$ なので等温大気より速く気圧が下がる"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 変数分離して $\\ln\\dfrac{p}{p_0}=-\\dfrac{Mg}{R}\\displaystyle\\int_0^z\\frac{dz'}{T_0-\\Gamma z'}=\\frac{Mg}{R\\Gamma}\\ln\\left(1-\\frac{\\Gamma z}{T_0}\\right)$．よって\n\\[ p(z)=p_0\\left(1-\\frac{\\Gamma z}{T_0}\\right)^{Mg/(R\\Gamma)}. \\]\n$\\Gamma\\to0$ では $\\left(1-\\dfrac{\\Gamma z}{T_0}\\right)^{Mg/(R\\Gamma)}\\to\\exp\\left(-\\dfrac{Mgz}{RT_0}\\right)$ で等温大気の式に一致する．\n\n(2) 一般に $\\ln\\dfrac{p}{p_0}=-\\dfrac{Mg}{R}\\displaystyle\\int_0^z\\frac{dz'}{T(z')}$．これを $-\\dfrac{Mgz}{R\\bar T}$ と等しくおくと\n\\[ \\frac{1}{\\bar T}=\\frac1z\\int_0^z\\frac{dz'}{T(z')}, \\]\nすなわち $\\bar T$ は温度の（高度についての）調和平均である．\n\n(3) $\\dfrac{Mg}{R\\Gamma}=\\dfrac{0.029\\times9.8}{8.314\\times0.0065}\\approx5.26$，$1-\\dfrac{\\Gamma z}{T_0}=1-\\dfrac{65}{288}\\approx0.774$．よって $p/p_0\\approx0.774^{5.26}\\approx0.260$．このとき調和平均 $\\bar T\\approx254\\ \\mathrm K$．地表気温 288 K の等温大気なら $e^{-Mgz/(RT_0)}\\approx0.305$ で，上空が冷たいぶん実際の気圧は速く下がる．"
+    "tex": "(1) 変数分離して $\\ln\\dfrac{p}{p_0}=-\\dfrac{Mg}{R}\\displaystyle\\int_0^z\\frac{dz'}{T_0-\\Gamma z'}=\\frac{Mg}{R\\Gamma}\\ln\\left(1-\\frac{\\Gamma z}{T_0}\\right)$．よって\n\\[ p(z)=p_0\\left(1-\\frac{\\Gamma z}{T_0}\\right)^{Mg/(R\\Gamma)}. \\]\n$\\Gamma\\to0$ では $\\left(1-\\dfrac{\\Gamma z}{T_0}\\right)^{Mg/(R\\Gamma)}\\to\\exp\\left(-\\dfrac{Mgz}{RT_0}\\right)$ で等温大気の式に一致する．\n\n(2) 一般に $\\ln\\dfrac{p}{p_0}=-\\dfrac{Mg}{R}\\displaystyle\\int_0^z\\frac{dz'}{T(z')}$．これを $-\\dfrac{Mgz}{R\\bar T}$ と等しくおくと\n\\[ \\frac{1}{\\bar T}=\\frac1z\\int_0^z\\frac{dz'}{T(z')}, \\]\nすなわち $\\bar T$ は温度の（高度についての）調和平均である．\n\n(3) $\\displaystyle\\int_0^z\\frac{dz'}{T_0-\\Gamma z'}=\\frac1\\Gamma\\ln\\frac{T_0}{T_0-\\Gamma z}$ より\n\\[ \\boldsymbol{\\bar T=\\frac{\\Gamma z}{\\ln\\frac{T_0}{T_0-\\Gamma z}}}. \\]\n$T(z')\\le T_0$ なので $1/T$ の平均は $1/T_0$ より大きく，$\\bar T<T_0$．$p/p_0=e^{-Mgz/(R\\bar T)}$ は $e^{-Mgz/(RT_0)}$ より小さく，上空が冷たいぶん実際の気圧は等温大気より速く下がる（対流圏の典型値で $z=10$ km なら $\\bar T\\approx254$ K，$p/p_0\\approx0.26$ に対し，等温 288 K では約 0.31）．"
    }
   ],
   "idea": {
@@ -419,7 +419,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) $\\bar T$：Γ z/ln(T_0/(T_0-Γ z))"
   },
   "methods": [],
   "tags": [
@@ -552,16 +552,16 @@
   "theme": "部分分数で解く2次反応の速度式",
   "topic": "部分分数で解く2次反応の速度式",
   "statement": {
-   "tex": "化学反応 $\\mathrm A+\\mathrm B\\to\\mathrm P$ の速度は $\\dfrac{dx}{dt}=k(a-x)(b-x)$ に従う．ここで $x$ は時刻 $t$ までに反応した量（モル濃度），$a,b$ は A，B の初濃度，$k$ は速度定数である．$x(0)=0$ とする．\n\\begin{enumerate}\n\\item $a\\ne b$ のとき部分分数分解を用いて $t$ を $x$ の関数として求めよ．\n\\item $a=2.0\\ \\mathrm{mol/L}$，$b=1.0\\ \\mathrm{mol/L}$，$k=0.50\\ \\mathrm{L\\,mol^{-1}s^{-1}}$ のとき，B の半分が反応するまでの時間を求めよ．\n\\item $b\\to a$ の極限で (1) の結果がどうなるかを求め，直接 $\\dfrac{dx}{dt}=k(a-x)^2$ を解いた結果と一致することを確かめよ．\n\\end{enumerate}"
+   "tex": "化学反応 $\\mathrm A+\\mathrm B\\to\\mathrm P$ の速度は $\\dfrac{dx}{dt}=k(a-x)(b-x)$ に従う．ここで $x$ は時刻 $t$ までに反応した量（モル濃度），$a,b$ は A，B の初濃度，$k$ は速度定数である．$x(0)=0$ とする．\n\\begin{enumerate}\n\\item $a\\ne b$ のとき部分分数分解を用いて $t$ を $x$ の関数として求めよ．\n\\item $a>b$ のとき，B の半分が反応するまでの時間 $t_{1/2}$ を $a,\\ b,\\ k$ で表せ．\n\\item $b\\to a$ の極限で (1) の結果がどうなるかを求め，直接 $\\dfrac{dx}{dt}=k(a-x)^2$ を解いた結果と一致することを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $t=\\dfrac{1}{k(a-b)}\\ln\\dfrac{b(a-x)}{a(b-x)}$　(2) $t=2\\ln1.5\\approx0.81\\ \\mathrm s$　(3) $t=\\dfrac{x}{ka(a-x)}$"
+   "tex": "(1) $t=\\dfrac{1}{k(a-b)}\\ln\\dfrac{b(a-x)}{a(b-x)}$　(2) $t_{1/2}=\\dfrac{1}{k(a-b)}\\ln\\dfrac{2a-b}{a}$　(3) $t=\\dfrac{x}{ka(a-x)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 変数分離して $\\displaystyle\\int_0^x\\frac{dx'}{(a-x')(b-x')}=kt$．部分分数\n\\[ \\frac{1}{(a-x)(b-x)}=\\frac{1}{a-b}\\left(\\frac1{b-x}-\\frac1{a-x}\\right) \\]\n（右辺を通分すると分子 $(a-x)-(b-x)=a-b$）を使うと\n\\[ kt=\\frac1{a-b}\\Big[-\\ln(b-x)+\\ln(a-x)\\Big]_0^x=\\frac1{a-b}\\ln\\frac{b(a-x)}{a(b-x)}. \\]\nよって $t=\\dfrac{1}{k(a-b)}\\ln\\dfrac{b(a-x)}{a(b-x)}$．\n\n(2) $x=b/2=0.50$：$t=\\dfrac1{0.50\\times1.0}\\ln\\dfrac{1.0\\times1.5}{2.0\\times0.50}=2\\ln1.5\\approx0.81\\ \\mathrm s$．\n\n(3) $b=a-\\delta$ とおくと $\\dfrac{b(a-x)}{a(b-x)}=\\dfrac{(1-\\delta/a)}{1-\\delta/(a-x)}$．$\\ln$ を $\\delta$ について 1 次まで展開すると $-\\dfrac\\delta a+\\dfrac{\\delta}{a-x}=\\dfrac{\\delta x}{a(a-x)}$．$a-b=\\delta$ で割り $\\delta\\to0$ として\n\\[ t=\\frac{x}{ka(a-x)}. \\]\n直接解くと $\\displaystyle\\int_0^x\\frac{dx'}{(a-x')^2}=\\frac1{a-x}-\\frac1a=\\frac{x}{a(a-x)}=kt$ となり一致する．部分分数分解は根が重なると使えなくなるが，結果は極限として連続につながる．"
+    "tex": "(1) 変数分離して $\\displaystyle\\int_0^x\\frac{dx'}{(a-x')(b-x')}=kt$．部分分数\n\\[ \\frac{1}{(a-x)(b-x)}=\\frac{1}{a-b}\\left(\\frac1{b-x}-\\frac1{a-x}\\right) \\]\n（右辺を通分すると分子 $(a-x)-(b-x)=a-b$）を使うと\n\\[ kt=\\frac1{a-b}\\Big[-\\ln(b-x)+\\ln(a-x)\\Big]_0^x=\\frac1{a-b}\\ln\\frac{b(a-x)}{a(b-x)}. \\]\nよって $t=\\dfrac{1}{k(a-b)}\\ln\\dfrac{b(a-x)}{a(b-x)}$．\n\n(2) $x=b/2$ を代入して $\\dfrac{b(a-b/2)}{a\\cdot b/2}=\\dfrac{2a-b}{a}$ より $\\boldsymbol{t_{1/2}=\\dfrac{1}{k(a-b)}\\ln\\dfrac{2a-b}{a}}$．$a\\gg b$ では $\\ln(2-b/a)\\simeq\\ln2$ で，B についての擬 1 次反応（速度定数 $ka$）の半減期 $\\dfrac{\\ln2}{ka}$ に近づく．\n\n(3) $b=a-\\delta$ とおくと $\\dfrac{b(a-x)}{a(b-x)}=\\dfrac{(1-\\delta/a)}{1-\\delta/(a-x)}$．$\\ln$ を $\\delta$ について 1 次まで展開すると $-\\dfrac\\delta a+\\dfrac{\\delta}{a-x}=\\dfrac{\\delta x}{a(a-x)}$．$a-b=\\delta$ で割り $\\delta\\to0$ として\n\\[ t=\\frac{x}{ka(a-x)}. \\]\n直接解くと $\\displaystyle\\int_0^x\\frac{dx'}{(a-x')^2}=\\frac1{a-x}-\\frac1a=\\frac{x}{a(a-x)}=kt$ となり一致する．部分分数分解は根が重なると使えなくなるが，結果は極限として連続につながる．"
    }
   ],
   "idea": {
@@ -569,7 +569,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $t$：((1)/(k (a - b))) ln ((b (a - x))/(a (b - x)))\n(2) $t$ [s]：≈0.81\n(3) $t$：((x)/(k a (a - x)))"
+   "spec": "(1) $t$：((1)/(k (a - b))) ln ((b (a - x))/(a (b - x)))\n(2) $t_{1/2}$：ln((2a-b)/a)/(k (a-b))\n(3) $t$：((x)/(k a (a - x)))"
   },
   "methods": [],
   "tags": [
@@ -703,16 +703,16 @@
   "theme": "原点で正則な解を選ぶ1階線形微分方程式",
   "topic": "原点で正則な解を選ぶ1階線形微分方程式",
   "statement": {
-   "tex": "$x>0$ で定義された微分方程式\n\\[ x\\frac{dy}{dx}+(x+1)\\,y=9x \\]\nを考える．\n\\begin{enumerate}\n\\item 積分因子を求め，一般解を書け．\n\\item 一般解のうち，$x\\to+0$ で有限にとどまるものはただ 1 つであることを示し，それを求めよ．\n\\item (2) の解について $\\displaystyle\\lim_{x\\to+0}y$ と $\\displaystyle\\lim_{x\\to+0}\\frac{dy}{dx}$ を求めよ．また $x\\to\\infty$ での漸近形を $1/x$ の項まで書け．\n\\end{enumerate}"
+   "tex": "$x>0$ で定義された微分方程式\n\\[ x\\frac{dy}{dx}+(x+1)\\,y=ax\\qquad(a\\ne0\\ \\text{は定数}) \\]\nを考える．\n\\begin{enumerate}\n\\item 積分因子を求め，一般解を書け．\n\\item 一般解のうち，$x\\to+0$ で有限にとどまるものはただ 1 つであることを示し，それを求めよ．\n\\item (2) の解について $\\displaystyle\\lim_{x\\to+0}y$ と $\\displaystyle\\lim_{x\\to+0}\\frac{dy}{dx}$ を求めよ．また $x\\to\\infty$ での漸近形を $1/x$ の項まで書け．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $y=9-\\dfrac9x+\\dfrac{Ce^{-x}}{x}$　(2) $C=9$，$y=9\\left(1-\\dfrac{1-e^{-x}}{x}\\right)$　(3) $y\\to0$，$y'\\to\\dfrac92$；$y\\simeq9-\\dfrac9x$"
+   "tex": "(1) $y=a-\\dfrac ax+\\dfrac{Ce^{-x}}{x}$　(2) $C=a$，$y=a\\left(1-\\dfrac{1-e^{-x}}{x}\\right)$　(3) $0$，$\\dfrac a2$；$a-\\dfrac ax$（順に $\\lim y$，$\\lim y'$，漸近形）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 両辺を $x$ で割ると $y'+\\left(1+\\dfrac1x\\right)y=9$．積分因子は $\\exp\\displaystyle\\int\\left(1+\\frac1x\\right)dx=xe^x$ で，\n\\[ \\frac{d}{dx}\\left(xe^xy\\right)=9xe^x \\;\\Longrightarrow\\; xe^xy=9(x-1)e^x+C. \\]\nよって $y=9-\\dfrac9x+\\dfrac{Ce^{-x}}{x}$．\n\n(2) $x\\to+0$ で $-\\dfrac9x+\\dfrac{Ce^{-x}}{x}=\\dfrac{C-9}{x}+O(1)$ だから，有限にとどまるのは $C=9$ のときに限る．このとき\n\\[ y=9-\\frac{9(1-e^{-x})}{x}=9\\left(1-\\frac{1-e^{-x}}{x}\\right). \\]\n\n(3) $\\dfrac{1-e^{-x}}{x}=1-\\dfrac x2+\\dfrac{x^2}{6}-\\cdots$ より $y=\\dfrac{9x}{2}-\\dfrac{3x^2}{2}+\\cdots$．したがって $y\\to0$，$y'\\to\\dfrac92$．$x\\to\\infty$ では $e^{-x}$ が指数的に小さいので $y\\simeq9-\\dfrac9x$．"
+    "tex": "(1) 両辺を $x$ で割ると $y'+\\left(1+\\dfrac1x\\right)y=a$．積分因子は $\\exp\\displaystyle\\int\\left(1+\\frac1x\\right)dx=xe^x$ で，\n\\[ \\frac{d}{dx}\\left(xe^xy\\right)=axe^x \\;\\Longrightarrow\\; xe^xy=a(x-1)e^x+C. \\]\nよって $\\boldsymbol{y=a-\\dfrac ax+\\dfrac{Ce^{-x}}{x}}$．\n\n(2) $x\\to+0$ で $-\\dfrac ax+\\dfrac{Ce^{-x}}{x}=\\dfrac{C-a}{x}+O(1)$ だから，有限にとどまるのは $\\boldsymbol{C=a}$ のときに限る．このとき\n\\[ \\boldsymbol{y=a-\\frac{a(1-e^{-x})}{x}=a\\left(1-\\frac{1-e^{-x}}{x}\\right)}. \\]\n\n(3) $\\dfrac{1-e^{-x}}{x}=1-\\dfrac x2+\\dfrac{x^2}{6}-\\cdots$ より $y=\\dfrac{ax}{2}-\\dfrac{ax^2}{6}+\\cdots$．したがって $\\boldsymbol{y\\to0}$，$\\boldsymbol{y'\\to\\dfrac a2}$．$x\\to\\infty$ では $e^{-x}$ が指数的に小さいので $\\boldsymbol{y\\simeq a-\\dfrac ax}$．"
    }
   ],
   "idea": {
@@ -720,7 +720,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $y$：9-((9)/(x))+((C e ^(- x))/(x))\n(2) $C$：9 ; $y$：9(1-((1- e ^(- x))/(x)))\n(3) 記述"
+   "spec": "(1) $y$：a-a/x+C e^(-x)/x\n(2) $C$：a ; $y$：a (1-(1-e^(-x))/x)\n(3) $\\lim y$：0 ; $\\lim y'$：a/2 ; 漸近形：a-a/x"
   },
   "methods": [],
   "tags": [
@@ -996,16 +996,16 @@
   "theme": "速度の2乗に比例する空気抵抗を受ける投げ上げ",
   "topic": "速度の2乗に比例する空気抵抗を受ける投げ上げ",
   "statement": {
-   "tex": "質量 $m$ の小球を初速 $v_0$ で鉛直に投げ上げる．空気抵抗は速度と逆向きで大きさ $kv^2$ とし，終端速度を $v_t=\\sqrt{mg/k}$ とする．\n\\begin{enumerate}\n\\item 最高点に達するまでの時間を求めよ．\n\\item 最高点の高さを求めよ（$v\\dfrac{dv}{dy}$ を使え）．\n\\item 投げ上げた点に戻ってきたときの速さを $v_0,\\ v_t$ で表せ．$v_0=20\\ \\mathrm{m/s}$，$v_t=10\\ \\mathrm{m/s}$ のときの値を求めよ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の小球を初速 $v_0$ で鉛直に投げ上げる．空気抵抗は速度と逆向きで大きさ $kv^2$ とし，終端速度を $v_t=\\sqrt{mg/k}$ とする．\n\\begin{enumerate}\n\\item 最高点に達するまでの時間を求めよ（重力加速度を $g$ とする）．\n\\item 最高点の高さを求めよ（$v\\dfrac{dv}{dy}$ を使え）．\n\\item 投げ上げた点に戻ってきたときの速さ $v_1$ を $v_0,\\ v_t$ で表せ．$v_0\\to\\infty$ の極限ではどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{v_t}{g}\\arctan\\dfrac{v_0}{v_t}$　(2) $\\dfrac{v_t^2}{2g}\\ln\\left(1+\\dfrac{v_0^2}{v_t^2}\\right)$　(3) $\\dfrac{v_0v_t}{\\sqrt{v_0^2+v_t^2}}$，$8.9\\ \\mathrm{m/s}$"
+   "tex": "(1) $\\dfrac{v_t}{g}\\arctan\\dfrac{v_0}{v_t}$　(2) $\\dfrac{v_t^2}{2g}\\ln\\left(1+\\dfrac{v_0^2}{v_t^2}\\right)$　(3) $v_1=\\dfrac{v_0v_t}{\\sqrt{v_0^2+v_t^2}}$，$v_0\\to\\infty$ で $v_t$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 上昇中 $\\dfrac{dv}{dt}=-g\\left(1+\\dfrac{v^2}{v_t^2}\\right)$．変数分離して積分すると $\\dfrac{v_t}{g}\\left[\\arctan\\dfrac{v}{v_t}\\right]_0^{v_0}$ より $\\boldsymbol{t=\\dfrac{v_t}{g}\\arctan\\dfrac{v_0}{v_t}}$．\n\n(2) $v\\dfrac{dv}{dy}=-g\\left(1+\\dfrac{v^2}{v_t^2}\\right)$ より $\\dfrac{v\\,dv}{v_t^2+v^2}=-\\dfrac{g}{v_t^2}dy$，\n\\[\n\\boldsymbol{h=\\frac{v_t^2}{2g}\\ln\\left(1+\\frac{v_0^2}{v_t^2}\\right)}.\n\\]\n\n(3) 下降中は抵抗が上向きで $v\\dfrac{dv}{dy'}=g\\left(1-\\dfrac{v^2}{v_t^2}\\right)$（$y'$ は落下距離）．$\\ln\\dfrac{v_t^2}{v_t^2-v^2}=\\dfrac{2gh}{v_t^2}=\\ln\\left(1+\\dfrac{v_0^2}{v_t^2}\\right)$ より\n\\[\n\\boldsymbol{v=\\frac{v_0v_t}{\\sqrt{v_0^2+v_t^2}}}.\n\\]\n数値は $\\dfrac{200}{\\sqrt{500}}\\approx\\boldsymbol{8.9\\ \\mathrm{m/s}}$．$v_0$ をどれだけ大きくしても戻りの速さは $v_t$ を超えない．"
+    "tex": "(1) 上昇中 $\\dfrac{dv}{dt}=-g\\left(1+\\dfrac{v^2}{v_t^2}\\right)$．変数分離して積分すると $\\dfrac{v_t}{g}\\left[\\arctan\\dfrac{v}{v_t}\\right]_0^{v_0}$ より $\\boldsymbol{t=\\dfrac{v_t}{g}\\arctan\\dfrac{v_0}{v_t}}$．\n\n(2) $v\\dfrac{dv}{dy}=-g\\left(1+\\dfrac{v^2}{v_t^2}\\right)$ より $\\dfrac{v\\,dv}{v_t^2+v^2}=-\\dfrac{g}{v_t^2}dy$，\n\\[\n\\boldsymbol{h=\\frac{v_t^2}{2g}\\ln\\left(1+\\frac{v_0^2}{v_t^2}\\right)}.\n\\]\n\n(3) 下降中は抵抗が上向きで $v\\dfrac{dv}{dy'}=g\\left(1-\\dfrac{v^2}{v_t^2}\\right)$（$y'$ は落下距離）．$\\ln\\dfrac{v_t^2}{v_t^2-v^2}=\\dfrac{2gh}{v_t^2}=\\ln\\left(1+\\dfrac{v_0^2}{v_t^2}\\right)$ より\n\\[\n\\boldsymbol{v_1=\\frac{v_0v_t}{\\sqrt{v_0^2+v_t^2}}}.\n\\]\n$v_0\\to\\infty$ では $\\boldsymbol{v_1\\to v_t}$．$v_0$ をどれだけ大きくしても戻りの速さは $v_t$ を超えない．また $\\dfrac1{v_1^2}=\\dfrac1{v_0^2}+\\dfrac1{v_t^2}$ と書けるので，つねに $v_1<v_0$ でもある．"
    }
   ],
   "idea": {
@@ -1013,7 +1013,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ((v_t)/(g)) arctan ((v_0)/(v_t))\n(2) ((v_t ^(2))/(2 g)) ln (1+((v_0 ^(2))/(v_t ^(2))))\n(3) 記述"
+   "spec": "(1) ((v_t)/(g)) arctan ((v_0)/(v_t))\n(2) ((v_t ^(2))/(2 g)) ln (1+((v_0 ^(2))/(v_t ^(2))))\n(3) $v_1$：v_0 v_t/sqrt(v_0^2+v_t^2) ; 極限：v_t"
   },
   "methods": [],
   "tags": [
@@ -1045,16 +1045,16 @@
   "theme": "水位が一定の速さで下がる水時計の形",
   "topic": "水位が一定の速さで下がる水時計の形",
   "statement": {
-   "tex": "鉛直な軸をもつ回転体の容器の底に断面積 $s$ の小さな穴があり，水はトリチェリの定理に従い速さ $\\sqrt{2gh}$（$h$ は水深）で流れ出る．水深 $h$ での水面の半径を $r(h)$ とする．\n\\begin{enumerate}\n\\item 水深の変化 $\\dfrac{dh}{dt}$ を $r(h),\\ s,\\ g,\\ h$ で表せ．\n\\item 水面が一定の速さ $u$ で下がる（水時計になる）ための $r(h)$ を求めよ．\n\\item 頂点を下にした半頂角 $30^\\circ$ の円錐の容器に深さ $H=30\\ \\mathrm{cm}$ まで水を入れ，$s=1.0\\ \\mathrm{cm^2}$ の穴から流す．空になるまでの時間を求めよ（$g=9.8\\ \\mathrm{m/s^2}$，有効数字2桁）．\n\\end{enumerate}"
+   "tex": "鉛直な軸をもつ回転体の容器の底に断面積 $s$ の小さな穴があり，水はトリチェリの定理に従い速さ $\\sqrt{2gh}$（$h$ は水深）で流れ出る．水深 $h$ での水面の半径を $r(h)$ とする．\n\\begin{enumerate}\n\\item 水深の変化 $\\dfrac{dh}{dt}$ を $r(h),\\ s,\\ g,\\ h$ で表せ．\n\\item 水面が一定の速さ $u$ で下がる（水時計になる）ための $r(h)$ を求めよ．\n\\item 頂点を下にした半頂角 $\\theta$ の円錐の容器に深さ $H$ まで水を入れ，頂点の断面積 $s$ の穴から流す．空になるまでの時間 $T$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{dh}{dt}=-\\dfrac{s\\sqrt{2gh}}{\\pi r(h)^2}$　(2) $r=\\left(\\dfrac{2gs^2}{\\pi^2u^2}\\right)^{1/4}h^{1/4}$　(3) 約 $47\\ \\mathrm{s}$"
+   "tex": "(1) $\\dfrac{dh}{dt}=-\\dfrac{s\\sqrt{2gh}}{\\pi r(h)^2}$　(2) $r=\\left(\\dfrac{2gs^2}{\\pi^2u^2}\\right)^{1/4}h^{1/4}$　(3) $T=\\dfrac{2\\pi(\\tan\\theta)^2H^{5/2}}{5s\\sqrt{2g}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 水面の面積は $\\pi r^2$ なので $\\pi r^2\\dfrac{dh}{dt}=-s\\sqrt{2gh}$，$\\boldsymbol{\\dfrac{dh}{dt}=-\\dfrac{s\\sqrt{2gh}}{\\pi r^2}}$．\n\n(2) $\\dfrac{dh}{dt}=-u$ とおくと $\\pi r^2u=s\\sqrt{2gh}$，\n\\[\n\\boldsymbol{r=\\left(\\frac{2gs^2}{\\pi^2u^2}\\right)^{1/4}h^{1/4}}.\n\\]\n断面が $z\\propto r^4$ の4次曲線の容器が水時計になる．\n\n(3) $r=h\\tan30^\\circ$ を代入して $\\pi\\tan^2\\!30^\\circ\\,h^{3/2}dh=-s\\sqrt{2g}\\,dt$．$h=H$ から $0$ まで積分して\n\\[\nT=\\frac{2\\pi\\tan^2\\!30^\\circ\\,H^{5/2}}{5s\\sqrt{2g}}=\\frac{2\\pi\\times\\frac13\\times(0.30)^{5/2}}{5\\times10^{-4}\\times4.43}\\approx\\boldsymbol{47\\ \\mathrm{s}}.\n\\]"
+    "tex": "(1) 水面の面積は $\\pi r^2$ なので $\\pi r^2\\dfrac{dh}{dt}=-s\\sqrt{2gh}$，$\\boldsymbol{\\dfrac{dh}{dt}=-\\dfrac{s\\sqrt{2gh}}{\\pi r^2}}$．\n\n(2) $\\dfrac{dh}{dt}=-u$ とおくと $\\pi r^2u=s\\sqrt{2gh}$，\n\\[\n\\boldsymbol{r=\\left(\\frac{2gs^2}{\\pi^2u^2}\\right)^{1/4}h^{1/4}}.\n\\]\n断面が $z\\propto r^4$ の4次曲線の容器が水時計になる．\n\n(3) $r=h\\tan\\theta$ を代入して $\\pi\\tan^2\\theta\\,h^{3/2}dh=-s\\sqrt{2g}\\,dt$．$h=H$ から $0$ まで積分して\n\\[\n\\boldsymbol{T=\\frac{2\\pi\\tan^2\\theta\\,H^{5/2}}{5s\\sqrt{2g}}}.\n\\]\n$T\\propto H^{5/2}$ なので，深さを 2 倍にすると空になるまでの時間は約 5.7 倍になる．"
    }
   ],
   "idea": {
@@ -1062,7 +1062,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $r$：(((2 g s ^(2))/(pi ^(2) u ^(2))))^(1/4) h ^(1/4)\n(3) [s]：≈47"
+   "spec": "(1) 記述\n(2) $r$：(((2 g s ^(2))/(pi ^(2) u ^(2))))^(1/4) h ^(1/4)\n(3) $T$：2 pi tan(θ)^2 H^(5/2)/(5 s sqrt(2g))"
   },
   "methods": [],
   "tags": [
@@ -1189,19 +1189,19 @@
   "field": "PM-03",
   "level": 2,
   "minutes": 25,
-  "theme": "放射平衡：Mo-99 から Tc-99m への娘核の最大量",
-  "topic": "放射平衡：Mo-99 から Tc-99m への娘核の最大量",
+  "theme": "放射平衡：親核から取り出す娘核が最大になる時刻",
+  "topic": "放射平衡：親核から取り出す娘核が最大になる時刻",
   "statement": {
-   "tex": "親核（崩壊定数 $\\lambda_1$）が娘核（崩壊定数 $\\lambda_2$）に崩壊する．$t=0$ で親核が $N_0$ 個，娘核は $0$ 個とする．\n\\begin{enumerate}\n\\item 娘核の数 $N_2(t)$ を求めよ（$\\lambda_1\\ne\\lambda_2$）．\n\\item $N_2$ が最大になる時刻 $t_m$ を求め，$\\lambda_2\\to\\lambda_1$ の極限を求めよ．\n\\item ${}^{99}\\mathrm{Mo}$（半減期 $66\\ \\mathrm{h}$）から ${}^{99m}\\mathrm{Tc}$（半減期 $6.0\\ \\mathrm{h}$）を取り出す装置で，娘核が最大になる時刻を求めよ（有効数字2桁）．\n\\end{enumerate}"
+   "tex": "親核（崩壊定数 $\\lambda_1$）が娘核（崩壊定数 $\\lambda_2$）に崩壊する．$t=0$ で親核が $N_0$ 個，娘核は $0$ 個とする．\n\\begin{enumerate}\n\\item 娘核の数 $N_2(t)$ を求めよ（$\\lambda_1\\ne\\lambda_2$）．\n\\item $N_2$ が最大になる時刻 $t_m$ を求め，$\\lambda_2\\to\\lambda_1$ の極限を求めよ．\n\\item 親核と娘核の半減期をそれぞれ $T_1,\\ T_2$（$T_1\\ne T_2$）とするとき，$t_m$ を $T_1,\\ T_2$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $N_2=\\dfrac{\\lambda_1N_0}{\\lambda_2-\\lambda_1}\\left(e^{-\\lambda_1t}-e^{-\\lambda_2t}\\right)$　(2) $t_m=\\dfrac{\\ln(\\lambda_1/\\lambda_2)}{\\lambda_1-\\lambda_2}$，極限 $1/\\lambda_1$　(3) 約 $23\\ \\mathrm{h}$"
+   "tex": "(1) $N_2=\\dfrac{\\lambda_1N_0}{\\lambda_2-\\lambda_1}\\left(e^{-\\lambda_1t}-e^{-\\lambda_2t}\\right)$　(2) $t_m=\\dfrac{\\ln(\\lambda_1/\\lambda_2)}{\\lambda_1-\\lambda_2}$，極限 $\\dfrac{1}{\\lambda_1}$　(3) $t_m=\\dfrac{T_1T_2\\ln(T_1/T_2)}{(T_1-T_2)\\ln 2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dot N_1=-\\lambda_1N_1$，$\\dot N_2=\\lambda_1N_1-\\lambda_2N_2$．$N_1=N_0e^{-\\lambda_1t}$ を代入し，積分因子 $e^{\\lambda_2t}$ で解くと\n\\[\n\\boldsymbol{N_2=\\frac{\\lambda_1N_0}{\\lambda_2-\\lambda_1}\\left(e^{-\\lambda_1t}-e^{-\\lambda_2t}\\right)}.\n\\]\n\n(2) $\\dot N_2=0$ より $\\lambda_1e^{-\\lambda_1t}=\\lambda_2e^{-\\lambda_2t}$，$\\boldsymbol{t_m=\\dfrac{\\ln(\\lambda_1/\\lambda_2)}{\\lambda_1-\\lambda_2}}$．$\\lambda_2=\\lambda_1(1+\\epsilon)$ として $\\epsilon\\to0$ では $\\dfrac{-\\ln(1+\\epsilon)}{-\\lambda_1\\epsilon}\\to\\boldsymbol{\\dfrac1{\\lambda_1}}$（このとき $N_2=\\lambda_1N_0te^{-\\lambda_1t}$）．\n\n(3) $\\lambda_1=\\ln2/66$，$\\lambda_2=\\ln2/6.0\\ \\mathrm{h^{-1}}$ より $t_m=\\dfrac{\\ln(6/66)}{\\ln2\\,(1/66-1/6)}\\approx\\boldsymbol{23\\ \\mathrm{h}}$．病院では約1日ごとに Tc を取り出すのが効率的である．"
+    "tex": "(1) $\\dot N_1=-\\lambda_1N_1$，$\\dot N_2=\\lambda_1N_1-\\lambda_2N_2$．$N_1=N_0e^{-\\lambda_1t}$ を代入し，積分因子 $e^{\\lambda_2t}$ で解くと\n\\[\n\\boldsymbol{N_2=\\frac{\\lambda_1N_0}{\\lambda_2-\\lambda_1}\\left(e^{-\\lambda_1t}-e^{-\\lambda_2t}\\right)}.\n\\]\n\n(2) $\\dot N_2=0$ より $\\lambda_1e^{-\\lambda_1t}=\\lambda_2e^{-\\lambda_2t}$，$\\boldsymbol{t_m=\\dfrac{\\ln(\\lambda_1/\\lambda_2)}{\\lambda_1-\\lambda_2}}$．$\\lambda_2=\\lambda_1(1+\\epsilon)$ として $\\epsilon\\to0$ では $\\dfrac{-\\ln(1+\\epsilon)}{-\\lambda_1\\epsilon}\\to\\boldsymbol{\\dfrac1{\\lambda_1}}$（このとき $N_2=\\lambda_1N_0te^{-\\lambda_1t}$）．\n\n(3) $\\lambda_i=\\ln2/T_i$ を代入すると $\\ln(\\lambda_1/\\lambda_2)=\\ln(T_2/T_1)$，$\\lambda_1-\\lambda_2=\\ln2\\,\\dfrac{T_2-T_1}{T_1T_2}$ より\n\\[ \\boldsymbol{t_m=\\frac{T_1T_2\\ln(T_1/T_2)}{(T_1-T_2)\\ln2}}. \\]\n${}^{99}\\mathrm{Mo}$（$T_1=66$ h）から ${}^{99m}\\mathrm{Tc}$（$T_2=6.0$ h）を取り出す装置では約 23 h となり，病院では約 1 日ごとに Tc を取り出すのが効率的である．"
    }
   ],
   "idea": {
@@ -1209,7 +1209,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $N_2$：((λ_1 N_0)/(λ_2 - λ_1))(e ^(- λ_1 t)- e ^(- λ_2 t))\n(2) 記述\n(3) [h]：≈23"
+   "spec": "(1) $N_2$：((λ_1 N_0)/(λ_2 - λ_1))(e ^(- λ_1 t)- e ^(- λ_2 t))\n(2) $t_m$：ln(λ_1/λ_2)/(λ_1-λ_2) ; 極限：1/λ_1\n(3) $t_m$：T_1 T_2 ln(T_1/T_2)/((T_1-T_2) ln(2))"
   },
   "methods": [],
   "tags": [
@@ -1241,16 +1241,16 @@
   "theme": "強制振動の振幅共鳴と速度共鳴の違い",
   "topic": "強制振動の振幅共鳴と速度共鳴の違い",
   "statement": {
-   "tex": "$\\ddot x+2\\gamma\\dot x+\\omega_0^2x=\\dfrac{F}{m}\\cos\\omega t$（$0<\\gamma<\\omega_0/\\sqrt2$）の定常解を考える．\n\\begin{enumerate}\n\\item 定常解の振幅 $A(\\omega)$ を求めよ．\n\\item $A$ が最大になる $\\omega$ と，速度の振幅 $\\omega A$ が最大になる $\\omega$ を求めよ．\n\\item $A$ の最大値と $A(\\omega_0)$ の比を求めよ．$Q=\\omega_0/(2\\gamma)=5$ のときの値を求めよ．\n\\end{enumerate}"
+   "tex": "$\\ddot x+2\\gamma\\dot x+\\omega_0^2x=\\dfrac{F}{m}\\cos\\omega t$（$0<\\gamma<\\omega_0/\\sqrt2$）の定常解を考える．\n\\begin{enumerate}\n\\item 定常解の振幅 $A(\\omega)$ を求めよ．\n\\item $A$ が最大になる $\\omega$ と，速度の振幅 $\\omega A$ が最大になる $\\omega$ を求めよ．\n\\item $A$ の最大値と $A(\\omega_0)$ の比を求めよ．また，その比を $Q=\\omega_0/(2\\gamma)$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $A=\\dfrac{F/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\gamma^2\\omega^2}}$　(2) 振幅：$\\sqrt{\\omega_0^2-2\\gamma^2}$，速度：$\\omega_0$　(3) $\\dfrac{\\omega_0}{\\sqrt{\\omega_0^2-\\gamma^2}}$，$1.005$"
+   "tex": "(1) $A=\\dfrac{F/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\gamma^2\\omega^2}}$　(2) 振幅：$\\sqrt{\\omega_0^2-2\\gamma^2}$，速度：$\\omega_0$　(3) $\\dfrac{\\omega_0}{\\sqrt{\\omega_0^2-\\gamma^2}}=\\dfrac{2Q}{\\sqrt{4Q^2-1}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $x=\\mathrm{Re}\\,\\tilde Ae^{i\\omega t}$ とおくと $\\tilde A=\\dfrac{F/m}{\\omega_0^2-\\omega^2+2i\\gamma\\omega}$，\n\\[\n\\boldsymbol{A=\\frac{F/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\gamma^2\\omega^2}}}.\n\\]\n\n(2) 分母の中 $g(u)=(\\omega_0^2-u)^2+4\\gamma^2u$（$u=\\omega^2$）を最小にして $u=\\omega_0^2-2\\gamma^2$，振幅の共鳴は $\\boldsymbol{\\omega=\\sqrt{\\omega_0^2-2\\gamma^2}}$．速度振幅は $\\dfrac{F/m}{\\sqrt{(\\omega_0^2/\\omega-\\omega)^2+4\\gamma^2}}$ で，$\\boldsymbol{\\omega=\\omega_0}$ でちょうど最大（吸収パワーも同じ）．\n\n(3) $A_{\\max}=\\dfrac{F/m}{2\\gamma\\sqrt{\\omega_0^2-\\gamma^2}}$，$A(\\omega_0)=\\dfrac{F/m}{2\\gamma\\omega_0}$ より比は $\\boldsymbol{\\dfrac{\\omega_0}{\\sqrt{\\omega_0^2-\\gamma^2}}}$．$Q=5$（$\\gamma=0.1\\omega_0$）で $\\dfrac{1}{\\sqrt{0.99}}\\approx\\boldsymbol{1.005}$．減衰が小さければ両者の違いは無視できる．"
+    "tex": "(1) $x=\\mathrm{Re}\\,\\tilde Ae^{i\\omega t}$ とおくと $\\tilde A=\\dfrac{F/m}{\\omega_0^2-\\omega^2+2i\\gamma\\omega}$，\n\\[\n\\boldsymbol{A=\\frac{F/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\gamma^2\\omega^2}}}.\n\\]\n\n(2) 分母の中 $g(u)=(\\omega_0^2-u)^2+4\\gamma^2u$（$u=\\omega^2$）を最小にして $u=\\omega_0^2-2\\gamma^2$，振幅の共鳴は $\\boldsymbol{\\omega=\\sqrt{\\omega_0^2-2\\gamma^2}}$．速度振幅は $\\dfrac{F/m}{\\sqrt{(\\omega_0^2/\\omega-\\omega)^2+4\\gamma^2}}$ で，$\\boldsymbol{\\omega=\\omega_0}$ でちょうど最大（吸収パワーも同じ）．\n\n(3) $A_{\\max}=\\dfrac{F/m}{2\\gamma\\sqrt{\\omega_0^2-\\gamma^2}}$，$A(\\omega_0)=\\dfrac{F/m}{2\\gamma\\omega_0}$ より比は $\\boldsymbol{\\dfrac{\\omega_0}{\\sqrt{\\omega_0^2-\\gamma^2}}}$．$\\gamma=\\omega_0/(2Q)$ を代入して $\\boldsymbol{\\dfrac{2Q}{\\sqrt{4Q^2-1}}}\\simeq1+\\dfrac{1}{8Q^2}$．$Q=5$ でも比は約 $1.005$ で，減衰が小さければ両者の違いは無視できる．"
    }
   ],
   "idea": {
@@ -1258,7 +1258,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $A$：((F / m)/(sqrt((ω_0 ^(2)- ω ^(2))^(2)+4 γ ^(2) ω ^(2))))\n(2) 記述\n(3) 記述"
+   "spec": "(1) $A$：((F / m)/(sqrt((ω_0 ^(2)- ω ^(2))^(2)+4 γ ^(2) ω ^(2))))\n(2) 振幅：sqrt(ω_0^2-2γ^2) ; 速度：ω_0\n(3) 比：ω_0/sqrt(ω_0^2-γ^2) ; $Q$ で：2Q/sqrt(4Q^2-1)"
   },
   "methods": [],
   "tags": [
@@ -1434,27 +1434,27 @@
   "field": "PM-03",
   "level": 2,
   "minutes": 25,
-  "theme": "植物プランクトンと動物プランクトンの共存平衡点の値",
-  "topic": "植物プランクトンと動物プランクトンの共存平衡点の値",
+  "theme": "植物プランクトンと動物プランクトンの共存平衡点",
+  "topic": "植物プランクトンと動物プランクトンの共存平衡点",
   "statement": {
-   "tex": "$\\dot x=bx(1-x)-y\\dfrac{x^2}{\\alpha^2+x^2}$，$\\dot y=cy\\dfrac{x^2}{\\alpha^2+x^2}-y$ を考える．\n\\begin{enumerate}\n\\item 共存平衡点の $x^*$ を求めよ．\n\\item $c=3$，$\\alpha=0.5$ のとき $x^*$ と $y^*/b$ を求めよ．\n\\item $b$ が大きくなると $y^*$ はどうなるか．\n\\end{enumerate}"
+   "tex": "$\\dot x=bx(1-x)-y\\dfrac{x^2}{\\alpha^2+x^2}$，$\\dot y=cy\\dfrac{x^2}{\\alpha^2+x^2}-y$（$b,\\alpha>0$，$c>1$）を考える．\n\\begin{enumerate}\n\\item 共存平衡点の $x^*$ を求めよ．\n\\item 共存平衡点の $y^*$ を $b,\\ c,\\ \\alpha$ で表せ．$y^*>0$ となる条件も答えよ．\n\\item $b$ が大きくなると $x^*$ と $y^*$ はどうなるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $x^*=\\dfrac{\\alpha}{\\sqrt{c-1}}$　(2) $x^*\\approx0.354$，$y^*=cbx^*(1-x^*)\\approx0.686b$　(3) 比例して増える（$x^*$ は変わらない）"
+   "tex": "(1) $x^*=\\dfrac{\\alpha}{\\sqrt{c-1}}$　(2) $y^*=\\dfrac{bc\\,\\alpha\\left(\\sqrt{c-1}-\\alpha\\right)}{c-1}$，条件 $\\alpha<\\sqrt{c-1}$　(3) $x^*$ は変わらず，$y^*$ は $b$ に比例して増える"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dot y=0$：$\\dfrac{cx^2}{\\alpha^2+x^2}=1$，$\\boldsymbol{x^*=\\alpha/\\sqrt{c-1}}$．\n\n(2) $x^*=0.354$，$\\dot x=0$ と $\\dfrac{x^{*2}}{\\alpha^2+x^{*2}}=\\dfrac1c$ から $y^*=c\\,b\\,x^*(1-x^*)\\approx\\boldsymbol{0.686b}$．\n\n(3) 植物プランクトンの平衡は捕食者の条件で決まり，増えた生産はすべて捕食者に回る（富栄養化のパラドックスに通じる）．"
+    "tex": "(1) $\\dot y=0$（$y\\ne0$）：$\\dfrac{cx^2}{\\alpha^2+x^2}=1$，$\\boldsymbol{x^*=\\alpha/\\sqrt{c-1}}$．\n\n(2) $\\dot x=0$ と $\\dfrac{x^{*2}}{\\alpha^2+x^{*2}}=\\dfrac1c$ から $y^*=c\\,b\\,x^*(1-x^*)$．$x^*$ を代入して\n\\[ \\boldsymbol{y^*=\\frac{bc\\,\\alpha\\left(\\sqrt{c-1}-\\alpha\\right)}{c-1}}. \\]\n$y^*>0$ には $x^*<1$，すなわち $\\boldsymbol{\\alpha<\\sqrt{c-1}}$ が必要．\n\n(3) $x^*$ は捕食者の平衡条件だけで決まり $b$ によらない．$y^*\\propto b$ で，増えた生産はすべて捕食者に回る（富栄養化のパラドックスに通じる）．"
    }
   ],
   "idea": {
-   "tex": "捕食者の平衡条件が被食者の量を決め，被食者の成長率は捕食者の量だけを変える．原題の定性的な議論を，具体的な平衡値の計算にした．"
+   "tex": "捕食者の平衡条件が被食者の量を決め，被食者の成長率は捕食者の量だけを変える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $x^*$：α/sqrt(c-1)\n(2) $y^*$：b c α (sqrt(c-1)-α)/(c-1) ; 条件：α<sqrt(c-1)\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -1486,24 +1486,24 @@
   "theme": "赤血球の差分模型：補充率がわずかに大きいときの増加",
   "topic": "赤血球の差分模型：補充率がわずかに大きいときの増加",
   "statement": {
-   "tex": "赤血球の数 $R_n$ と骨髄の生産 $M_n$ が $R_{n+1}=(1-f)R_n+M_n$，$M_{n+1}=\\gamma fR_n$ に従う．\n\\begin{enumerate}\n\\item $R_n=A\\lambda_+^n+B\\lambda_-^n$ の $\\lambda_\\pm$ を求めよ．\n\\item $f=0.01$，$\\gamma=1.02$ のとき $\\lambda_+$ を求め，赤血球の数が2倍になる日数を見積もれ．\n\\item $\\lambda_-$ の符号から何がわかるか．\n\\end{enumerate}"
+   "tex": "赤血球の数 $R_n$ と骨髄の生産 $M_n$ が $R_{n+1}=(1-f)R_n+M_n$，$M_{n+1}=\\gamma fR_n$ に従う（$0<f<1$，$\\gamma>0$，$n$ は日数）．\n\\begin{enumerate}\n\\item $R_n=A\\lambda_+^n+B\\lambda_-^n$ の $\\lambda_\\pm$ を求めよ．\n\\item $\\gamma=1+\\epsilon$（$0<\\epsilon\\ll1$）のとき，$\\lambda_+$ を $\\epsilon$ の 1 次まで求め，赤血球の数が 2 倍になる日数 $n_2$ を見積もれ．\n\\item $f\\ll1$ のとき $\\lambda_-$ を $f$ の 1 次まで求め，その符号から何がわかるか述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\lambda_\\pm=\\dfrac{1-f\\pm\\sqrt{(1-f)^2+4\\gamma f}}{2}$　(2) $1.000198$；約 $3500$ 日　(3) 負で絶対値が小さく，1日おきの小さな振動がすぐ消える"
+   "tex": "(1) $\\lambda_\\pm=\\dfrac{1-f\\pm\\sqrt{(1-f)^2+4\\gamma f}}{2}$　(2) $\\lambda_+\\simeq1+\\dfrac{f\\epsilon}{1+f}$，$n_2\\simeq\\dfrac{(1+f)\\ln2}{f\\epsilon}$　(3) $\\lambda_-\\simeq-\\gamma f$．負で絶対値が小さく，1日おきの小さな振動がすぐ消える"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $R_{n+2}=(1-f)R_{n+1}+\\gamma fR_n$ の特性方程式．\n\n(2) $\\lambda_+\\approx\\boldsymbol{1.000198}$，$\\dfrac{\\ln2}{\\ln\\lambda_+}\\approx\\boldsymbol{3500}$ 日．\n\n(3) $\\lambda_-\\approx-0.0102$：交互に符号が変わる成分が急速に減衰．"
+    "tex": "(1) $M_n$ を消去すると $R_{n+2}=(1-f)R_{n+1}+\\gamma fR_n$．特性方程式 $\\lambda^2-(1-f)\\lambda-\\gamma f=0$ より\n\\[ \\boldsymbol{\\lambda_\\pm=\\frac{1-f\\pm\\sqrt{(1-f)^2+4\\gamma f}}{2}}. \\]\n\n(2) $p(\\lambda)=\\lambda^2-(1-f)\\lambda-\\gamma f$ とおくと $p(1)=f(1-\\gamma)=-f\\epsilon$，$p'(1)=1+f$．$\\lambda_+=1+\\delta$ として 1 次まで $p(1)+p'(1)\\delta=0$ より\n\\[ \\boldsymbol{\\lambda_+\\simeq1+\\frac{f\\epsilon}{1+f}}. \\]\n$\\lambda_+^{n_2}=2$ より $n_2=\\dfrac{\\ln2}{\\ln\\lambda_+}\\simeq\\boldsymbol{\\dfrac{(1+f)\\ln2}{f\\epsilon}}$．たとえば $f=0.01$，$\\epsilon=0.02$ なら約 3500 日で，わずかな補充の過剰でもゆっくりした増加になる．\n\n(3) 根の積 $\\lambda_+\\lambda_-=-\\gamma f$ と $\\lambda_+\\simeq1$ から $\\boldsymbol{\\lambda_-\\simeq-\\gamma f}$．負で $|\\lambda_-|\\ll1$ なので，交互に符号が変わる成分（1 日おきの小さな振動）は急速に減衰する．"
    }
   ],
   "idea": {
-   "tex": "線形の差分方程式の振る舞いは特性根で決まり，わずかな補充の過剰がゆっくりした増加になる．原題の $\\gamma=1$ の議論を，わずかにずれた場合の数値にした．"
+   "tex": "線形の差分方程式の振る舞いは特性根で決まり，$\\lambda_+$ の 1 からのずれ $f\\epsilon/(1+f)$ がわずかな補充の過剰によるゆっくりした増加を与える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) $\\lambda_+$：1+f ε/(1+f) ; $n_2$：(1+f) ln(2)/(f ε)\n(3) $\\lambda_-$：-γ f"
   },
   "methods": [],
   "tags": [
@@ -3137,16 +3137,16 @@
   "theme": "減衰のある弦の変数分離と過減衰モード",
   "topic": "減衰のある弦の変数分離と過減衰モード",
   "statement": {
-   "tex": "両端 $x=0,L$ を固定した弦が，速度に比例する空気抵抗を受けて振動する．変位 $u(x,t)$ は\n\\[\n\\frac{\\partial^2u}{\\partial t^2}+\\gamma\\frac{\\partial u}{\\partial t}=v^2\\frac{\\partial^2u}{\\partial x^2},\\qquad u(0,t)=u(L,t)=0\n\\]\n（$v,\\gamma>0$ は定数）に従う．\n\\begin{enumerate}\n\\item $u=X(x)T(t)$ と変数分離し，分離定数を $-k^2$ として $X,T$ が従う常微分方程式を導け．\n\\item 境界条件から許される $k$ を求め，第 $n$ モードの $T_n(t)$ が従う方程式を書け．\n\\item 第 $n$ モードが過減衰（振動しない）となる条件を $n$ について求めよ．$\\gamma=5\\pi v/L$ のとき過減衰となるモードをすべて挙げよ．\n\\item $\\gamma=5\\pi v/L$ のとき，各モードの振幅の（$t\\to\\infty$ での）減衰率を求め，最も長く生き残るモードとその減衰率を答えよ．減衰が強いほど遅く減衰するモードがあるという一見逆説的な事実を説明せよ．\n\\end{enumerate}"
+   "tex": "両端 $x=0,L$ を固定した弦が，速度に比例する空気抵抗を受けて振動する．変位 $u(x,t)$ は\n\\[\n\\frac{\\partial^2u}{\\partial t^2}+\\gamma\\frac{\\partial u}{\\partial t}=v^2\\frac{\\partial^2u}{\\partial x^2},\\qquad u(0,t)=u(L,t)=0\n\\]\n（$v,\\gamma>0$ は定数）に従う．\n\\begin{enumerate}\n\\item $u=X(x)T(t)$ と変数分離し，分離定数を $-k^2$ として $X,T$ が従う常微分方程式を導け．\n\\item 境界条件から許される $k$ を求め，第 $n$ モードの $T_n(t)$ が従う方程式を書け．\n\\item 第 $n$ モードが過減衰（振動しない）となる条件を $n$ について求めよ．\n\\item 過減衰の第 $n$ モードの振幅の（$t\\to\\infty$ での）減衰率 $\\Gamma_n$ と，振動するモードの減衰率を求めよ．$\\gamma\\gg\\omega_n$ での $\\Gamma_n$ の近似式を求め，減衰が強いほど遅く減衰するモードがあるという一見逆説的な事実を説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $X''=-k^2X$，$T''+\\gamma T'+v^2k^2T=0$　(2) $k_n=n\\pi/L$，$T_n''+\\gamma T_n'+\\omega_n^2T_n=0$（$\\omega_n=n\\pi v/L$）　(3) $n<\\gamma L/(2\\pi v)$；$n=1,2$　(4) 減衰率 $n=1$：$\\frac{5-\\sqrt{21}}2\\frac{\\pi v}L\\approx0.209\\frac{\\pi v}L$，$n=2$：$\\frac{\\pi v}L$，$n\\ge3$：$\\frac52\\frac{\\pi v}L$；最長は $n=1$"
+   "tex": "(1) $X''=-k^2X$，$T''+\\gamma T'+v^2k^2T=0$　(2) $k_n=n\\pi/L$，$T_n''+\\gamma T_n'+\\omega_n^2T_n=0$（$\\omega_n=n\\pi v/L$）　(3) $n<\\dfrac{\\gamma L}{2\\pi v}$　(4) $\\Gamma_n=\\dfrac\\gamma2-\\sqrt{\\dfrac{\\gamma^2}4-\\dfrac{n^2\\pi^2v^2}{L^2}}$，振動モードは $\\dfrac\\gamma2$；$\\gamma\\gg\\omega_n$ で $\\Gamma_n\\simeq\\dfrac{n^2\\pi^2v^2}{\\gamma L^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 代入して $XT''+\\gamma XT'=v^2X''T$．$v^2XT$ で割ると\n\\[\n\\frac{X''}{X}=\\frac{T''+\\gamma T'}{v^2T}.\n\\]\n左辺は $x$ のみ，右辺は $t$ のみの関数なので共通の定数 $-k^2$ に等しい：$X''=-k^2X$，$T''+\\gamma T'+v^2k^2T=0$．\n\n(2) $X(0)=X(L)=0$ を満たす非自明解は $X_n=\\sin(n\\pi x/L)$，$k_n=n\\pi/L\\ (n=1,2,\\dots)$．（分離定数が正だと $X$ は $\\sinh,\\cosh$ の結合になり，両端で $0$ にできない．）$T_n''+\\gamma T_n'+\\omega_n^2T_n=0$，$\\omega_n=n\\pi v/L$．\n\n(3) 特性方程式 $s^2+\\gamma s+\\omega_n^2=0$ の根 $s=-\\dfrac\\gamma2\\pm\\sqrt{\\dfrac{\\gamma^2}4-\\omega_n^2}$ が実数（相異なる）となる条件 $\\gamma>2\\omega_n$，すなわち $n<\\dfrac{\\gamma L}{2\\pi v}$．$\\gamma=5\\pi v/L$ なら $n<2.5$ で $n=1,2$ が過減衰．\n\n(4) $\\pi v/L$ を単位とすると $\\gamma/2=5/2$，$\\omega_n=n$．\n$n=1$：$s=-\\tfrac52\\pm\\tfrac{\\sqrt{21}}2$，遅いほうの減衰率 $\\tfrac{5-\\sqrt{21}}2\\approx0.209$．\n$n=2$：$s=-\\tfrac52\\pm\\tfrac32=-1,-4$，減衰率 $1$．\n$n\\ge3$：複素根で実部 $-\\tfrac52$，減衰率 $\\tfrac52$（$n$ によらない）．\nよって最も長く生き残るのは基本モード $n=1$ で，減衰率 $\\dfrac{5-\\sqrt{21}}2\\dfrac{\\pi v}L\\approx0.209\\,\\dfrac{\\pi v}L$．\n過減衰モードの遅い減衰率は $\\dfrac\\gamma2-\\sqrt{\\dfrac{\\gamma^2}4-\\omega_n^2}\\simeq\\dfrac{\\omega_n^2}\\gamma$（$\\gamma\\gg\\omega_n$）で，$\\gamma$ が大きいほど小さくなる．強い抵抗の中では弦は振動せず，復元力 $\\omega_n^2u$ と抵抗 $\\gamma\\dot u$ の釣り合い $\\gamma\\dot u\\approx-\\omega_n^2u$ でゆっくり平衡に戻る（粘性の強い液体中でばねがゆっくり戻るのと同じ）ので，抵抗を増すとかえって戻りが遅くなる．"
+    "tex": "(1) 代入して $XT''+\\gamma XT'=v^2X''T$．$v^2XT$ で割ると\n\\[\n\\frac{X''}{X}=\\frac{T''+\\gamma T'}{v^2T}.\n\\]\n左辺は $x$ のみ，右辺は $t$ のみの関数なので共通の定数 $-k^2$ に等しい：$X''=-k^2X$，$T''+\\gamma T'+v^2k^2T=0$．\n\n(2) $X(0)=X(L)=0$ を満たす非自明解は $X_n=\\sin(n\\pi x/L)$，$k_n=n\\pi/L\\ (n=1,2,\\dots)$．（分離定数が正だと $X$ は $\\sinh,\\cosh$ の結合になり，両端で $0$ にできない．）$T_n''+\\gamma T_n'+\\omega_n^2T_n=0$，$\\omega_n=n\\pi v/L$．\n\n(3) 特性方程式 $s^2+\\gamma s+\\omega_n^2=0$ の根 $s=-\\dfrac\\gamma2\\pm\\sqrt{\\dfrac{\\gamma^2}4-\\omega_n^2}$ が実数（相異なる）となる条件 $\\gamma>2\\omega_n$，すなわち $\\boldsymbol{n<\\dfrac{\\gamma L}{2\\pi v}}$．波数の小さいモードから過減衰になる．\n\n(4) 過減衰モードの 2 根のうち，長時間後に残るのは絶対値の小さい根なので\n\\[ \\boldsymbol{\\Gamma_n=\\frac\\gamma2-\\sqrt{\\frac{\\gamma^2}4-\\frac{n^2\\pi^2v^2}{L^2}}}. \\]\n振動するモード（複素根）の減衰率は実部の $\\boldsymbol{\\gamma/2}$ で $n$ によらない．$\\Gamma_n<\\gamma/2$ なので，最も長く生き残るのは基本モード $n=1$ である．\n$\\gamma\\gg\\omega_n$ では $\\sqrt{\\frac{\\gamma^2}4-\\omega_n^2}\\simeq\\frac\\gamma2-\\frac{\\omega_n^2}{\\gamma}$ より\n\\[ \\boldsymbol{\\Gamma_n\\simeq\\frac{\\omega_n^2}{\\gamma}=\\frac{n^2\\pi^2v^2}{\\gamma L^2}}, \\]\n$\\gamma$ が大きいほど小さくなる．強い抵抗の中では弦は振動せず，復元力 $\\omega_n^2u$ と抵抗 $\\gamma\\dot u$ の釣り合い $\\gamma\\dot u\\approx-\\omega_n^2u$ でゆっくり平衡に戻る（粘性の強い液体中でばねがゆっくり戻るのと同じ）ので，抵抗を増すとかえって戻りが遅くなる．"
    }
   ],
   "idea": {
@@ -3154,7 +3154,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) $n$ の条件：n<γ L/(2 pi v)\n(4) $\\Gamma_n$：γ/2-sqrt(γ^2/4-n^2 pi^2 v^2/L^2) ; 振動モード：γ/2 ; 近似：n^2 pi^2 v^2/(γ L^2)"
   },
   "methods": [],
   "tags": [
@@ -3440,16 +3440,16 @@
   "theme": "強制振動の初期値問題と共鳴極限・うなり",
   "topic": "強制振動の初期値問題と共鳴極限・うなり",
   "statement": {
-   "tex": "$m>0,\\ a>0,\\ a\\ne m$ とし，\n\\[y''+m^2y=\\cos ax,\\qquad y(0)=0,\\ y'(0)=0\\]\nを考える．\n\\begin{enumerate}\n\\item 解を求め，2 つの正弦の積の形に書け．\n\\item $a\\to m$ の極限で解がどうなるか求めよ．\n\\item $a=0.9m$ のとき，$|y|$ の最大値（包絡線の最大値）を求め，$a\\to m$ でそれが発散する理由を説明せよ．\n\\end{enumerate}"
+   "tex": "$m>0,\\ a>0,\\ a\\ne m$ とし，\n\\[y''+m^2y=\\cos ax,\\qquad y(0)=0,\\ y'(0)=0\\]\nを考える．\n\\begin{enumerate}\n\\item 解を求め，2 つの正弦の積の形に書け．\n\\item $a\\to m$ の極限で解がどうなるか求めよ．\n\\item $a$ が $m$ に近いとき，$|y|$ の包絡線の最大値と，それに初めて達する $x$ を求めよ．$a\\to m$ でそれが発散する理由を説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $y=\\dfrac{\\cos ax-\\cos mx}{m^2-a^2}=\\dfrac{2}{m^2-a^2}\\sin\\dfrac{(m+a)x}{2}\\sin\\dfrac{(m-a)x}{2}$　(2) $y=\\dfrac{x\\sin mx}{2m}$　(3) $\\dfrac{2}{m^2-a^2}=\\dfrac{2}{0.19m^2}\\approx\\dfrac{10.5}{m^2}$"
+   "tex": "(1) $y=\\dfrac{\\cos ax-\\cos mx}{m^2-a^2}=\\dfrac{2}{m^2-a^2}\\sin\\dfrac{(m+a)x}{2}\\sin\\dfrac{(m-a)x}{2}$　(2) $y=\\dfrac{x\\sin mx}{2m}$　(3) 最大値 $\\dfrac{2}{|m^2-a^2|}$，$x=\\dfrac{\\pi}{|m-a|}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 特解を $V=C\\cos ax$ とおくと $C(m^2-a^2)=1$．一般解 $y=C_1\\sin mx+C_2\\cos mx+\\dfrac{\\cos ax}{m^2-a^2}$．$y(0)=0$ より $C_2=-\\frac1{m^2-a^2}$，$y'(0)=0$ より $C_1=0$．\n\\[y=\\frac{\\cos ax-\\cos mx}{m^2-a^2}=\\frac{2}{m^2-a^2}\\sin\\frac{(m+a)x}{2}\\sin\\frac{(m-a)x}{2}.\\]\n(2) $a\\to m$ で分子・分母とも 0．ロピタルの定理（$a$ で微分）で\n\\[\\lim_{a\\to m}\\frac{\\cos ax-\\cos mx}{m^2-a^2}=\\lim_{a\\to m}\\frac{-x\\sin ax}{-2a}=\\frac{x\\sin mx}{2m}.\\]\n振幅が $x$ に比例して増大する共鳴解であり，$y''+m^2y=\\cos mx$ の解であることも直接確かめられる．\n(3) (1) の形より $|y|\\le\\dfrac{2}{m^2-a^2}$ で，速い振動 $\\sin\\frac{(m+a)x}2$ と遅い包絡線 $\\sin\\frac{(m-a)x}{2}$ の積（うなり）．$a=0.9m$ では包絡線の最大値は $\\dfrac{2}{0.19m^2}\\approx\\dfrac{10.5}{m^2}$（ほぼ同時に両方の正弦が $\\pm1$ になる点で到達）．$a\\to m$ ではうなりの周期 $4\\pi/(m-a)$ が無限大になり，その間振幅が線形に成長し続けるので最大値 $\\propto1/(m^2-a^2)$ が発散する．"
+    "tex": "(1) 特解を $V=C\\cos ax$ とおくと $C(m^2-a^2)=1$．一般解 $y=C_1\\sin mx+C_2\\cos mx+\\dfrac{\\cos ax}{m^2-a^2}$．$y(0)=0$ より $C_2=-\\frac1{m^2-a^2}$，$y'(0)=0$ より $C_1=0$．\n\\[y=\\frac{\\cos ax-\\cos mx}{m^2-a^2}=\\frac{2}{m^2-a^2}\\sin\\frac{(m+a)x}{2}\\sin\\frac{(m-a)x}{2}.\\]\n(2) $a\\to m$ で分子・分母とも 0．ロピタルの定理（$a$ で微分）で\n\\[\\lim_{a\\to m}\\frac{\\cos ax-\\cos mx}{m^2-a^2}=\\lim_{a\\to m}\\frac{-x\\sin ax}{-2a}=\\frac{x\\sin mx}{2m}.\\]\n振幅が $x$ に比例して増大する共鳴解であり，$y''+m^2y=\\cos mx$ の解であることも直接確かめられる．\n(3) (1) の形より，速い振動 $\\sin\\frac{(m+a)x}2$ と遅い包絡線 $\\dfrac{2}{m^2-a^2}\\sin\\frac{(m-a)x}{2}$ の積（うなり）．包絡線の最大値は $\\boldsymbol{\\dfrac{2}{|m^2-a^2|}}$ で，初めて達するのは $\\frac{|m-a|x}{2}=\\frac\\pi2$，すなわち $\\boldsymbol{x=\\dfrac{\\pi}{|m-a|}}$（$a$ が $m$ に近ければ速い振動の山もほぼそこで重なる）．$a\\to m$ ではうなりの周期 $4\\pi/(m-a)$ が無限大になり，その間振幅が線形に成長し続けるので最大値 $\\propto1/(m^2-a^2)$ が発散する．"
    }
   ],
   "idea": {
@@ -3457,7 +3457,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $y$：((cos a x - cos m x)/(m ^(2)- a ^(2)))\n(2) $y$：((x sin m x)/(2 m))\n(3) 記述"
+   "spec": "(1) $y$：((cos a x - cos m x)/(m ^(2)- a ^(2)))\n(2) $y$：((x sin m x)/(2 m))\n(3) 最大値：2/abs(m^2-a^2) ; $x$：pi/abs(m-a)"
   },
   "methods": [],
   "tags": [
@@ -3539,16 +3539,16 @@
   "theme": "減衰振動子の解を求めずに積分量を出す",
   "topic": "減衰振動子の解を求めずに積分量を出す",
   "statement": {
-   "tex": "減衰振動子 $\\ddot x+2\\dot x+5x=0$ が初期条件 $x(0)=5,\\ \\dot x(0)=-3$ で運動する．\n\\begin{enumerate}\n\\item 方程式の解を求めることなく，$\\displaystyle\\int_0^{\\infty}x(t)\\,dt$ の値を求めよ．\n\\item 同様に，$\\dot x$ を掛けて積分することにより $\\displaystyle\\int_0^\\infty\\dot x(t)^2dt$ を求めよ．\n\\item 実際に解を求め，それを $x=Re^{-t}\\cos(2t-\\varphi)$ の形に書け．また $x$ が初めて 0 になる時刻を求めよ．\n\\end{enumerate}"
+   "tex": "減衰振動子 $\\ddot x+2\\gamma\\dot x+\\omega_0^2x=0$（$\\gamma>0$）が初期条件 $x(0)=x_0,\\ \\dot x(0)=v_0$ で運動する．\n\\begin{enumerate}\n\\item 方程式の解を求めることなく，$\\displaystyle\\int_0^{\\infty}x(t)\\,dt$ の値を求めよ．\n\\item 同様に，$\\dot x$ を掛けて積分することにより $\\displaystyle\\int_0^\\infty\\dot x(t)^2dt$ を求めよ．\n\\item $\\omega_0>\\gamma$ として実際に解を求め，それを $x=Re^{-\\gamma t}\\cos(\\Omega t-\\varphi)$（$\\Omega=\\sqrt{\\omega_0^2-\\gamma^2}$）の形に書いたときの $R$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac75$　(2) $\\dfrac{67}{2}$　(3) $x=e^{-t}(5\\cos2t+\\sin2t)=\\sqrt{26}\\,e^{-t}\\cos(2t-\\varphi)$，$\\tan\\varphi=\\frac15$；$t_0=\\frac12\\big(\\frac\\pi2+\\tan^{-1}\\frac15\\big)\\approx0.884$"
+   "tex": "(1) $\\dfrac{v_0+2\\gamma x_0}{\\omega_0^2}$　(2) $\\dfrac{v_0^2+\\omega_0^2x_0^2}{4\\gamma}$　(3) $x=e^{-\\gamma t}\\left(x_0\\cos\\Omega t+\\dfrac{v_0+\\gamma x_0}{\\Omega}\\sin\\Omega t\\right)$，$R=\\sqrt{x_0^2+\\dfrac{(v_0+\\gamma x_0)^2}{\\omega_0^2-\\gamma^2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "特性根は $-1\\pm2i$ で実部が負なので $x,\\dot x\\to0$（$t\\to\\infty$），以下の積分は収束する．\n(1) 方程式を $0$ から $\\infty$ まで積分：\n\\[[\\dot x]_0^\\infty+2[x]_0^\\infty+5\\int_0^\\infty x\\,dt=0\\ \\Rightarrow\\ 3-10+5\\int_0^\\infty x\\,dt=0,\\]\nよって $\\int_0^\\infty x\\,dt=\\dfrac75$．\n(2) $\\dot x$ を掛けると $\\dfrac{d}{dt}\\Big(\\dfrac12\\dot x^2+\\dfrac52x^2\\Big)=-2\\dot x^2$．積分して\n\\[2\\int_0^\\infty\\dot x^2dt=\\frac12\\cdot9+\\frac52\\cdot25=67\\ \\Rightarrow\\ \\int_0^\\infty\\dot x^2dt=\\frac{67}{2}.\\]\n（散逸した全エネルギー＝初期エネルギー．）\n(3) $x=e^{-t}(C\\cos2t+D\\sin2t)$，$x(0)=C=5$，$\\dot x(0)=-C+2D=-3$ より $D=1$．\n\\[x=e^{-t}(5\\cos2t+\\sin2t)=\\sqrt{26}\\,e^{-t}\\cos(2t-\\varphi),\\quad \\tan\\varphi=\\frac15 .\\]\n初めての零点は $2t-\\varphi=\\frac\\pi2$，$t_0=\\frac12\\big(\\frac\\pi2+\\tan^{-1}\\frac15\\big)\\approx0.884$．\n（検算：$\\int_0^\\infty e^{-t}(5\\cos2t+\\sin2t)dt=5\\cdot\\frac15+\\frac25=\\frac75$．）"
+    "tex": "特性根の実部は $-\\gamma<0$ なので $x,\\dot x\\to0$（$t\\to\\infty$），以下の積分は収束する．\n\n(1) 方程式を $0$ から $\\infty$ まで積分：\n\\[[\\dot x]_0^\\infty+2\\gamma[x]_0^\\infty+\\omega_0^2\\int_0^\\infty x\\,dt=0\\ \\Rightarrow\\ -v_0-2\\gamma x_0+\\omega_0^2\\int_0^\\infty x\\,dt=0,\\]\nよって $\\boldsymbol{\\displaystyle\\int_0^\\infty x\\,dt=\\frac{v_0+2\\gamma x_0}{\\omega_0^2}}$．\n\n(2) $\\dot x$ を掛けると $\\dfrac{d}{dt}\\Big(\\dfrac12\\dot x^2+\\dfrac{\\omega_0^2}2x^2\\Big)=-2\\gamma\\dot x^2$．積分して\n\\[2\\gamma\\int_0^\\infty\\dot x^2dt=\\frac12v_0^2+\\frac{\\omega_0^2}2x_0^2\\ \\Rightarrow\\ \\boldsymbol{\\int_0^\\infty\\dot x^2dt=\\frac{v_0^2+\\omega_0^2x_0^2}{4\\gamma}}.\\]\n（散逸した全エネルギー＝初期エネルギー．）\n\n(3) $x=e^{-\\gamma t}(C\\cos\\Omega t+D\\sin\\Omega t)$，$x(0)=C=x_0$，$\\dot x(0)=-\\gamma C+\\Omega D=v_0$ より $D=\\dfrac{v_0+\\gamma x_0}{\\Omega}$．\n\\[x=e^{-\\gamma t}\\left(x_0\\cos\\Omega t+\\frac{v_0+\\gamma x_0}{\\Omega}\\sin\\Omega t\\right),\\qquad \\boldsymbol{R=\\sqrt{C^2+D^2}=\\sqrt{x_0^2+\\frac{(v_0+\\gamma x_0)^2}{\\omega_0^2-\\gamma^2}}},\\quad\\tan\\varphi=\\frac DC.\\]\n（検算：$\\int_0^\\infty e^{-\\gamma t}\\cos\\Omega t\\,dt=\\frac{\\gamma}{\\omega_0^2}$，$\\int_0^\\infty e^{-\\gamma t}\\sin\\Omega t\\,dt=\\frac{\\Omega}{\\omega_0^2}$ より $\\int_0^\\infty x\\,dt=\\frac{\\gamma x_0+v_0+\\gamma x_0}{\\omega_0^2}$ で (1) と一致．）"
    }
   ],
   "idea": {
@@ -3556,7 +3556,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ((7)/(5))\n(2) ((67)/(2))\n(3) 記述"
+   "spec": "(1) (v_0+2γ x_0)/ω_0^2\n(2) (v_0^2+ω_0^2 x_0^2)/(4γ)\n(3) $R$：sqrt(x_0^2+(v_0+γ x_0)^2/(ω_0^2-γ^2))"
   },
   "methods": [],
   "tags": [
@@ -3689,16 +3689,16 @@
   "theme": "過減衰振動子が平衡点を横切る条件",
   "topic": "過減衰振動子が平衡点を横切る条件",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 微分方程式 $x\\,y'-2y=x^{-2}$（$x>0$）の階数を答え，同次か非同次かを判定せよ．さらに $x\\to\\infty$ で $y\\to0$ となる解を求めよ．\n\\item 過減衰振動子 $\\ddot u+5\\dot u+4u=0$ を考える．初期条件 $u(0)=u_0>0$，$\\dot u(0)=v_0$ のもとで，$t>0$ に $u=0$ を（一度だけ）横切るための $v_0$ の条件と，横切る時刻 $t^*$ を求めよ．\n\\item (2) で $u_0=1$，$v_0=-6$ のとき $t^*$ を数値で求めよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 微分方程式 $x\\,y'-2y=x^{-2}$（$x>0$）の階数を答え，同次か非同次かを判定せよ．さらに $x\\to\\infty$ で $y\\to0$ となる解を求めよ．\n\\item 過減衰振動子 $\\ddot u+5\\dot u+4u=0$ を考える．初期条件 $u(0)=u_0>0$，$\\dot u(0)=v_0$ のもとで，$t>0$ に $u=0$ を（一度だけ）横切るための $v_0$ の条件と，横切る時刻 $t^*$ を求めよ．\n\\item (2) の $t^*$ について，$v_0\\to-\\infty$ と $v_0\\to-4u_0$（$v_0<-4u_0$ の側から）の極限を求め，それぞれの意味を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 1階・非同次，$y=-\\dfrac1{4x^2}$　(2) $v_0<-4u_0$，$t^*=\\dfrac13\\ln\\dfrac{u_0+v_0}{4u_0+v_0}$　(3) $t^*=\\frac13\\ln2.5\\approx0.305$"
+   "tex": "(1) 1階・非同次，$y=-\\dfrac1{4x^2}$　(2) $v_0<-4u_0$，$t^*=\\dfrac13\\ln\\dfrac{u_0+v_0}{4u_0+v_0}$　(3) $v_0\\to-\\infty$ で $t^*\\to0$，$v_0\\to-4u_0$ で $t^*\\to\\infty$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 1 階線形で右辺 $x^{-2}\\neq0$ なので非同次．$y'-\\dfrac2xy=x^{-3}$ の積分因子 $x^{-2}$ を掛けて $(x^{-2}y)'=x^{-5}$，$x^{-2}y=-\\dfrac1{4x^4}+C$，$y=Cx^2-\\dfrac1{4x^2}$．$x\\to\\infty$ で 0 に近づくのは $C=0$ のとき：$y=-\\dfrac1{4x^2}$．\n\n(2) 特性根は $D^2+5D+4=(D+1)(D+4)=0$ より $-1,-4$．$u=Ae^{-t}+Be^{-4t}$ で，$A+B=u_0$，$-A-4B=v_0$ から\n\\[ A=\\frac{4u_0+v_0}{3},\\qquad B=-\\frac{u_0+v_0}{3}. \\]\n$u=0$ は $e^{3t}=-B/A=\\dfrac{u_0+v_0}{4u_0+v_0}$ と同値．$t>0$ の解には右辺 $>1$ が必要．$4u_0+v_0>0$ なら $u_0+v_0<4u_0+v_0$ だから比は 1 未満（または負）で不可．$4u_0+v_0<0$ なら $u_0+v_0<0$ でもあり，比 $=\\dfrac{-(u_0+v_0)}{-(4u_0+v_0)}>1$（分子の方が $3u_0$ だけ大きい）．よって条件は $v_0<-4u_0$，そのとき\n\\[ t^*=\\frac13\\ln\\frac{u_0+v_0}{4u_0+v_0}. \\]\n$e^{3t}$ は単調なので横切るのは高々 1 回．\n\n(3) $t^*=\\frac13\\ln\\dfrac{-5}{-2}=\\frac13\\ln2.5\\approx0.305$．"
+    "tex": "(1) 1 階線形で右辺 $x^{-2}\\neq0$ なので非同次．$y'-\\dfrac2xy=x^{-3}$ の積分因子 $x^{-2}$ を掛けて $(x^{-2}y)'=x^{-5}$，$x^{-2}y=-\\dfrac1{4x^4}+C$，$y=Cx^2-\\dfrac1{4x^2}$．$x\\to\\infty$ で 0 に近づくのは $C=0$ のとき：$y=-\\dfrac1{4x^2}$．\n\n(2) 特性根は $D^2+5D+4=(D+1)(D+4)=0$ より $-1,-4$．$u=Ae^{-t}+Be^{-4t}$ で，$A+B=u_0$，$-A-4B=v_0$ から\n\\[ A=\\frac{4u_0+v_0}{3},\\qquad B=-\\frac{u_0+v_0}{3}. \\]\n$u=0$ は $e^{3t}=-B/A=\\dfrac{u_0+v_0}{4u_0+v_0}$ と同値．$t>0$ の解には右辺 $>1$ が必要．$4u_0+v_0>0$ なら $u_0+v_0<4u_0+v_0$ だから比は 1 未満（または負）で不可．$4u_0+v_0<0$ なら $u_0+v_0<0$ でもあり，比 $=\\dfrac{-(u_0+v_0)}{-(4u_0+v_0)}>1$（分子の方が $3u_0$ だけ大きい）．よって条件は $v_0<-4u_0$，そのとき\n\\[ t^*=\\frac13\\ln\\frac{u_0+v_0}{4u_0+v_0}. \\]\n$e^{3t}$ は単調なので横切るのは高々 1 回．\n\n(3) $\\dfrac{u_0+v_0}{4u_0+v_0}=1+\\dfrac{3u_0}{-(4u_0+v_0)}$ と書ける．\n$v_0\\to-\\infty$ では比 $\\to1$ で $t^*\\to0$：強く押し込むほどすぐに平衡点を横切る．\n$v_0\\to-4u_0$ では比 $\\to+\\infty$ で $t^*\\to\\infty$：遅いモード $e^{-t}$ の係数 $A=\\frac{4u_0+v_0}{3}$ が 0 に近づき，速いモード $e^{-4t}$ と遅いモードの競り合いの決着が無限に先送りされる．ちょうど $v_0=-4u_0$ では $u=u_0e^{-4t}$ となり，横切らずに平衡点に近づく．"
    }
   ],
   "idea": {
@@ -3706,7 +3706,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) 記述：v_0→−∞ で t*→0，v_0→−4u_0 で t*→∞"
   },
   "methods": [],
   "tags": [
@@ -3738,16 +3738,16 @@
   "theme": "共鳴の線形成長とわずかな離調によるうなり",
   "topic": "共鳴の線形成長とわずかな離調によるうなり",
   "statement": {
-   "tex": "減衰のない振動子 $\\ddot x+4x=2\\cos(\\omega t)$ を，$x(0)=0$，$\\dot x(0)=0$ から出発させる．\n\\begin{enumerate}\n\\item $\\omega=2$（共鳴）のときの解を求めよ．\n\\item $\\omega\\neq2$ のときの解を求め，それが「速い振動 × ゆっくり変化する包絡線」の形に書けることを示せ．包絡線の最大値と，それに初めて達する時刻を求めよ．\n\\item $\\omega=2.02$ のとき，(2) の最大振幅と到達時刻を数値で求めよ．また $t\\ll1/|\\omega-2|$ では (2) の解が (1) の解に近づくことを示せ．\n\\end{enumerate}"
+   "tex": "減衰のない振動子 $\\ddot x+4x=2\\cos(\\omega t)$ を，$x(0)=0$，$\\dot x(0)=0$ から出発させる．\n\\begin{enumerate}\n\\item $\\omega=2$（共鳴）のときの解を求めよ．\n\\item $\\omega\\neq2$ のときの解を求め，それが「速い振動 × ゆっくり変化する包絡線」の形に書けることを示せ．包絡線の最大値と，それに初めて達する時刻を求めよ．\n\\item $\\omega=2+\\delta$（$0<\\delta\\ll1$）のとき，(2) の最大振幅と到達時刻を $\\delta$ の最低次で求めよ．また $t\\ll1/\\delta$ では (2) の解が (1) の解に近づくことを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $x=\\dfrac t2\\sin2t$　(2) $x=\\dfrac{4}{\\omega^2-4}\\sin\\dfrac{(\\omega-2)t}{2}\\sin\\dfrac{(\\omega+2)t}{2}$，最大 $\\dfrac{4}{|4-\\omega^2|}$，時刻 $\\dfrac{\\pi}{|\\omega-2|}$　(3) 約 $49.8$，$t\\approx157$"
+   "tex": "(1) $x=\\dfrac t2\\sin2t$　(2) $x=\\dfrac{4}{\\omega^2-4}\\sin\\dfrac{(\\omega-2)t}{2}\\sin\\dfrac{(\\omega+2)t}{2}$，最大 $\\dfrac{4}{|4-\\omega^2|}$，時刻 $\\dfrac{\\pi}{|\\omega-2|}$　(3) 最大振幅 $\\simeq\\dfrac1\\delta$，時刻 $\\dfrac\\pi\\delta$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 同次解は $\\cos2t,\\sin2t$．強制項が共鳴するので特解を $x_p=t(a\\cos2t+b\\sin2t)$ とおくと $\\ddot x_p+4x_p=-4a\\sin2t+4b\\cos2t$．これが $2\\cos2t$ に等しいので $a=0,\\ b=\\frac12$．初期条件から同次解の係数は 0 となり $x=\\dfrac t2\\sin2t$．\n\n(2) 特解 $\\dfrac{2\\cos\\omega t}{4-\\omega^2}$ に同次解を加え，$x(0)=0,\\dot x(0)=0$ を満たすようにすると\n\\[ x=\\frac{2(\\cos\\omega t-\\cos2t)}{4-\\omega^2}=\\frac{4}{\\omega^2-4}\\sin\\frac{(\\omega-2)t}{2}\\,\\sin\\frac{(\\omega+2)t}{2}. \\]\n$\\omega\\approx2$ では $\\sin\\frac{(\\omega+2)t}2$ が速い振動，$\\left|\\dfrac{4}{\\omega^2-4}\\sin\\dfrac{(\\omega-2)t}{2}\\right|$ が包絡線．最大値は $\\dfrac{4}{|4-\\omega^2|}$ で，初めて達するのは $\\dfrac{|\\omega-2|t}{2}=\\dfrac\\pi2$，すなわち $t=\\dfrac{\\pi}{|\\omega-2|}$．\n\n(3) $4-\\omega^2=-0.0804$ より最大振幅 $4/0.0804\\approx49.8$，時刻 $\\pi/0.02\\approx157$．\n$|\\omega-2|t\\ll1$ では $\\sin\\frac{(\\omega-2)t}2\\approx\\frac{(\\omega-2)t}2$，$\\omega^2-4=(\\omega-2)(\\omega+2)$ より\n\\[ x\\approx\\frac{4}{(\\omega-2)(\\omega+2)}\\cdot\\frac{(\\omega-2)t}{2}\\sin\\frac{(\\omega+2)t}2=\\frac{2t}{\\omega+2}\\sin\\frac{(\\omega+2)t}{2}\\;\\xrightarrow{\\ \\omega\\to2\\ }\\;\\frac t2\\sin2t \\]\nとなり (1) を再現する．"
+    "tex": "(1) 同次解は $\\cos2t,\\sin2t$．強制項が共鳴するので特解を $x_p=t(a\\cos2t+b\\sin2t)$ とおくと $\\ddot x_p+4x_p=-4a\\sin2t+4b\\cos2t$．これが $2\\cos2t$ に等しいので $a=0,\\ b=\\frac12$．初期条件から同次解の係数は 0 となり $x=\\dfrac t2\\sin2t$．\n\n(2) 特解 $\\dfrac{2\\cos\\omega t}{4-\\omega^2}$ に同次解を加え，$x(0)=0,\\dot x(0)=0$ を満たすようにすると\n\\[ x=\\frac{2(\\cos\\omega t-\\cos2t)}{4-\\omega^2}=\\frac{4}{\\omega^2-4}\\sin\\frac{(\\omega-2)t}{2}\\,\\sin\\frac{(\\omega+2)t}{2}. \\]\n$\\omega\\approx2$ では $\\sin\\frac{(\\omega+2)t}2$ が速い振動，$\\left|\\dfrac{4}{\\omega^2-4}\\sin\\dfrac{(\\omega-2)t}{2}\\right|$ が包絡線．最大値は $\\dfrac{4}{|4-\\omega^2|}$ で，初めて達するのは $\\dfrac{|\\omega-2|t}{2}=\\dfrac\\pi2$，すなわち $t=\\dfrac{\\pi}{|\\omega-2|}$．\n\n(3) $\\omega^2-4=\\delta(4+\\delta)\\simeq4\\delta$ より最大振幅は $\\dfrac{4}{\\delta(4+\\delta)}\\simeq\\boldsymbol{\\dfrac1\\delta}$，時刻は $\\boldsymbol{\\dfrac\\pi\\delta}$．共鳴解 $\\frac t2\\sin2t$ の振幅 $t/2$ を $t=\\pi/\\delta$ まで伸ばした値 $\\pi/(2\\delta)$ と同程度で頭打ちになる．\n$\\delta t\\ll1$ では $\\sin\\frac{(\\omega-2)t}2\\approx\\frac{(\\omega-2)t}2$，$\\omega^2-4=(\\omega-2)(\\omega+2)$ より\n\\[ x\\approx\\frac{4}{(\\omega-2)(\\omega+2)}\\cdot\\frac{(\\omega-2)t}{2}\\sin\\frac{(\\omega+2)t}2=\\frac{2t}{\\omega+2}\\sin\\frac{(\\omega+2)t}{2}\\;\\xrightarrow{\\ \\omega\\to2\\ }\\;\\frac t2\\sin2t \\]\nとなり (1) を再現する．"
    }
   ],
   "idea": {
@@ -3755,7 +3755,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $x$：((t)/(2)) sin 2 t\n(2) 記述\n(3) 記述"
+   "spec": "(1) $x$：((t)/(2)) sin 2 t\n(2) 記述\n(3) 最大振幅：1/δ ; 時刻：pi/δ"
   },
   "methods": [],
   "tags": [
@@ -3788,24 +3788,24 @@
   "theme": "体積が増える混合槽の濃度",
   "topic": "体積が増える混合槽の濃度",
   "statement": {
-   "tex": "はじめ純水 $V_0=100\\ \\mathrm{L}$ が入ったタンクに，濃度 $c_{\\rm in}$ の食塩水を流量 $q_{\\rm in}=4\\ \\mathrm{L/min}$ で注ぎ，よくかき混ぜながら流量 $q_{\\rm out}=3\\ \\mathrm{L/min}$ で排出する．タンク内の食塩の量を $Q(t)$，水の体積を $V(t)$ とする．\n\\begin{enumerate}\n\\item $Q(t)$ の満たす微分方程式を書き，$V$ を独立変数にとり直して，タンク内の濃度 $c=Q/V$ が\n\\[ c=c_{\\rm in}\\left[1-\\left(\\frac{V_0}{V}\\right)^{n}\\right] \\]\nとなることを示し，指数 $n$ を求めよ．\n\\item 濃度が $0.9\\,c_{\\rm in}$ に達する時刻を求めよ．\n\\item 一般の流量 $q_{\\rm in}>q_{\\rm out}$ に対して指数 $n$ を求めよ．$q_{\\rm out}\\to q_{\\rm in}$ の極限で結果がどうなるか述べよ．\n\\end{enumerate}"
+   "tex": "はじめ純水 $V_0$ が入ったタンクに，濃度 $c_0$ の食塩水を流量 $q_1$ で注ぎ，よくかき混ぜながら流量 $q_2$（$q_2<q_1$）で排出する．タンク内の食塩の量を $Q(t)$，水の体積を $V(t)$ とする．\n\\begin{enumerate}\n\\item $Q(t)$ の満たす微分方程式を書き，$V$ を独立変数にとり直して，タンク内の濃度 $c=Q/V$ が\n\\[ c=c_0\\left[1-\\left(\\frac{V_0}{V}\\right)^{n}\\right] \\]\nとなることを示し，指数 $n$ を求めよ．\n\\item 濃度が $\\alpha c_0$（$0<\\alpha<1$）に達する時刻 $t_\\alpha$ を求めよ．\n\\item $q_2\\to q_1$ の極限で $c(t)$ がどうなるか求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $n=4$　(2) 約 $78\\ \\mathrm{min}$（$V=100\\times10^{1/4}\\,\\mathrm L$）　(3) $n=\\dfrac{q_{\\rm in}}{q_{\\rm in}-q_{\\rm out}}$；$c\\to c_{\\rm in}(1-e^{-q_{\\rm in}t/V_0})$"
+   "tex": "(1) $n=\\dfrac{q_1}{q_1-q_2}$　(2) $t_\\alpha=\\dfrac{V_0}{q_1-q_2}\\left[(1-\\alpha)^{-(q_1-q_2)/q_1}-1\\right]$　(3) $c=c_0\\left(1-e^{-q_1t/V_0}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $V=V_0+(q_{\\rm in}-q_{\\rm out})t=100+t$．食塩の収支は\n\\[ \\frac{dQ}{dt}=c_{\\rm in}q_{\\rm in}-q_{\\rm out}\\frac{Q}{V}=4c_{\\rm in}-\\frac{3Q}{t+100}. \\]\nこれは 1 階線形で，積分因子 $(t+100)^3$ により $\\dfrac{d}{dt}\\left[(t+100)^3Q\\right]=4c_{\\rm in}(t+100)^3$，\n\\[ (t+100)^3Q=c_{\\rm in}(t+100)^4+K. \\]\n$Q(0)=0$ より $K=-c_{\\rm in}\\cdot100^4$．よって $c=Q/V=c_{\\rm in}\\left[1-\\left(\\dfrac{100}{V}\\right)^4\\right]$，$n=4$．\n\n(2) $(V_0/V)^4=0.1$ より $V=100\\times10^{1/4}\\approx177.8\\ \\mathrm L$，$t=V-100\\approx77.8\\ \\mathrm{min}$．\n\n(3) 一般に $\\Delta=q_{\\rm in}-q_{\\rm out}$，$dV/dt=\\Delta$．$Q=cV$ を代入すると $\\dot cV+c\\Delta=c_{\\rm in}q_{\\rm in}-q_{\\rm out}c$，すなわち $\\dot c\\,V=q_{\\rm in}(c_{\\rm in}-c)$．$dt=dV/\\Delta$ を用いて\n\\[ \\frac{dc}{c_{\\rm in}-c}=\\frac{q_{\\rm in}}{\\Delta}\\frac{dV}{V}\\;\\Longrightarrow\\;c_{\\rm in}-c=c_{\\rm in}\\left(\\frac{V_0}{V}\\right)^{q_{\\rm in}/\\Delta}. \\]\nよって $n=q_{\\rm in}/(q_{\\rm in}-q_{\\rm out})$（いまは $4/1=4$）．$\\Delta\\to0$ では $(V_0/V)^{q_{\\rm in}/\\Delta}=(1+\\Delta t/V_0)^{-q_{\\rm in}/\\Delta}\\to e^{-q_{\\rm in}t/V_0}$ となり，体積一定の混合槽の指数関数的な接近に移行する．"
+    "tex": "(1) $\\Delta=q_1-q_2$ とおくと $V=V_0+\\Delta t$．食塩の収支は\n\\[ \\frac{dQ}{dt}=c_0q_1-q_2\\frac{Q}{V}. \\]\n$Q=cV$ を代入すると $\\dot cV+c\\Delta=c_0q_1-q_2c$，すなわち $\\dot c\\,V=q_1(c_0-c)$．$dt=dV/\\Delta$ を用いて\n\\[ \\frac{dc}{c_0-c}=\\frac{q_1}{\\Delta}\\frac{dV}{V}\\;\\Longrightarrow\\;c_0-c=c_0\\left(\\frac{V_0}{V}\\right)^{q_1/\\Delta} \\]\n（$c(V_0)=0$ を用いた）．よって $\\boldsymbol{n=\\dfrac{q_1}{q_1-q_2}}$．\n\n(2) $(V_0/V)^n=1-\\alpha$ より $V=V_0(1-\\alpha)^{-1/n}$，$t=(V-V_0)/\\Delta$ なので\n\\[ \\boldsymbol{t_\\alpha=\\frac{V_0}{q_1-q_2}\\left[(1-\\alpha)^{-(q_1-q_2)/q_1}-1\\right]}. \\]\n（たとえば $V_0=100$ L，$q_1=4$，$q_2=3$ L/min，$\\alpha=0.9$ なら約 78 分．）\n\n(3) $\\Delta\\to0$ では $(V_0/V)^{q_1/\\Delta}=(1+\\Delta t/V_0)^{-q_1/\\Delta}\\to e^{-q_1t/V_0}$ となり，$\\boldsymbol{c=c_0\\left(1-e^{-q_1t/V_0}\\right)}$．体積一定の混合槽の指数関数的な接近に移行する．(2) も $\\Delta\\to0$ で $t_\\alpha\\to\\dfrac{V_0}{q_1}\\ln\\dfrac1{1-\\alpha}$ となる．"
    }
   ],
   "idea": {
-   "tex": "変数係数の 1 階線形方程式 $\\dot Q+\\frac{3}{t+t_0}Q=\\cdots$ は混合槽の収支式そのもの．濃度で書くと体積比のべき乗則になり，体積一定の極限で指数関数に戻る．"
+   "tex": "混合槽の収支式は変数係数の 1 階線形方程式．濃度で書くと体積比のべき乗則になり，体積一定の極限で指数関数に戻る．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $n$：4\n(2) [min]：≈78\n(3) 記述"
+   "spec": "(1) $n$：q_1/(q_1-q_2)\n(2) $t_\\alpha$：V_0 ((1-α)^(-(q_1-q_2)/q_1)-1)/(q_1-q_2)\n(3) $c$：c_0 (1-exp(-q_1 t/V_0))"
   },
   "methods": [],
   "tags": [

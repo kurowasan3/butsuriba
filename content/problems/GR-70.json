@@ -598,24 +598,24 @@
   "theme": "メスバウアーの温度シフトとパウンド＝レブカ，GPS衛星の時計",
   "topic": "メスバウアーの温度シフトとパウンド＝レブカ，GPS衛星の時計",
   "statement": {
-   "tex": "時計の進み方のずれを，$v\\ll c$，弱い重力場の最低次で考える．$k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$，$1\\ \\mathrm{u}=1.66\\times10^{-27}\\ \\mathrm{kg}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$，$g=9.8\\ \\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 結晶中の ${}^{57}\\mathrm{Fe}$ 原子核（質量 $57\\ \\mathrm{u}$）は熱振動しており，古典的に $\\langle v^2\\rangle=3k_BT/m$ とする．メスバウアー線の振動数の，温度 $1\\ \\mathrm{K}$ あたりの相対的なずれ（2次のドップラー効果）を求めよ（有効数字2桁）．\n\\item 高さ $22.5\\ \\mathrm{m}$ の塔の上下での重力による振動数の相対的なずれを求め，それと同じずれを (1) の効果で作るのに必要な線源と吸収体の温度差を求めよ．\n\\item 地球（質量 $M$，半径 $R$，自転は無視）の表面の時計に対し，半径 $r$ の円軌道を回る衛星の時計の進み方の相対的なずれを $GM/(Rc^2)$ と $r/R$ で表せ．ずれが $0$ になる軌道半径と，GPS 衛星（$r=4.17R$）の時計が1日に進む時間を求めよ（$GM/(Rc^2)=6.96\\times10^{-10}$）．\n\\end{enumerate}"
+   "tex": "時計の進み方のずれを，$v\\ll c$，弱い重力場の最低次で考える．ボルツマン定数を $k_B$，光速を $c$，重力加速度の大きさを $g$，万有引力定数を $G$ とする．\n\\begin{enumerate}\n\\item 結晶中の ${}^{57}\\mathrm{Fe}$ 原子核（質量 $m$）は温度 $T$ で熱振動しており，古典的に $\\langle v^2\\rangle=3k_BT/m$ とする．メスバウアー線の振動数の相対的なずれ $\\Delta\\nu/\\nu$（2次のドップラー効果）を求めよ．\n\\item 高さ $H$ の塔の上下での重力による振動数の相対的なずれの大きさを求め，それと同じ大きさのずれを (1) の効果で作るのに必要な線源と吸収体の温度差 $\\Delta T$ を求めよ．\n\\item 地球（質量 $M$，半径 $R$，自転は無視）の表面の時計に対し，半径 $r$ の円軌道を回る衛星の時計の進み方の相対的なずれ $\\Delta\\tau/\\tau$ を求めよ．ずれが $0$ になる軌道半径と，地上の時計で時間 $t_0$ が経つ間に衛星の時計が地上の時計より進む時間を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $-\\dfrac{3k_B}{2mc^2}\\approx-2.4\\times10^{-15}\\ \\mathrm{K^{-1}}$　(2) $\\dfrac{gH}{c^2}\\approx2.5\\times10^{-15}$，約 $1.0\\ \\mathrm{K}$　(3) $\\dfrac{\\Delta\\tau}{\\tau}=\\dfrac{GM}{Rc^2}\\left(1-\\dfrac{3R}{2r}\\right)$；$r=\\dfrac32R$；約 $38\\ \\mu\\mathrm{s}$ 進む"
+   "tex": "(1) $\\dfrac{\\Delta\\nu}{\\nu}=-\\dfrac{3k_BT}{2mc^2}$　(2) $\\dfrac{gH}{c^2}$；$\\Delta T=\\dfrac{2mgH}{3k_B}$　(3) $\\dfrac{\\Delta\\tau}{\\tau}=\\dfrac{GM}{Rc^2}\\left(1-\\dfrac{3R}{2r}\\right)$；$r=\\dfrac{3R}{2}$；$\\dfrac{GMt_0}{Rc^2}\\left(1-\\dfrac{3R}{2r}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 運動する原子核の固有時間は $d\\tau=dt\\sqrt{1-v^2/c^2}\\simeq\\left(1-\\dfrac{v^2}{2c^2}\\right)dt$ で，振動数は平均して $\\dfrac{\\Delta\\nu}{\\nu}=-\\dfrac{\\langle v^2\\rangle}{2c^2}=-\\dfrac{3k_BT}{2mc^2}$ だけずれる（1次のドップラー効果は平均で消える）．$1\\ \\mathrm{K}$ あたり\n\\[\n\\frac{3k_B}{2mc^2}=\\frac{3\\times1.38\\times10^{-23}}{2\\times57\\times1.66\\times10^{-27}\\times9.0\\times10^{16}}\\approx\\boldsymbol{2.4\\times10^{-15}\\ \\mathrm{K^{-1}}}\n\\]\n（温度が高いほど振動数が下がる）．\n\n(2) 重力によるずれは $\\dfrac{\\Delta\\nu}{\\nu}=\\dfrac{gH}{c^2}=\\dfrac{9.8\\times22.5}{9.0\\times10^{16}}\\approx\\boldsymbol{2.5\\times10^{-15}}$．(1) と比べて，線源と吸収体の温度差 $\\boldsymbol{\\approx1.0\\ \\mathrm{K}}$ で同じ大きさのずれが生じる．パウンド＝レブカの実験では，温度を $0.1\\ \\mathrm{K}$ 程度まで管理する必要があった．\n\n(3) 遠方の時計に対する進み方は $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{GM}{rc^2}-\\dfrac{v^2}{2c^2}$．円軌道では $v^2=GM/r$ なので衛星は $1-\\dfrac{3GM}{2rc^2}$，地表は $1-\\dfrac{GM}{Rc^2}$．差は\n\\[\n\\boldsymbol{\\frac{\\Delta\\tau}{\\tau}=\\frac{GM}{Rc^2}\\left(1-\\frac{3R}{2r}\\right)}.\n\\]\n$\\boldsymbol{r=\\frac32R}$（高度 $R/2\\approx3200\\ \\mathrm{km}$）で $0$．GPS では $6.96\\times10^{-10}\\times(1-0.360)=4.46\\times10^{-10}$ で，1日（$86400\\ \\mathrm{s}$）に $\\boldsymbol{\\approx38\\ \\mu\\mathrm{s}}$ 地上より進む（重力で $+46\\ \\mu\\mathrm{s}$，速度で $-7\\ \\mu\\mathrm{s}$）．"
+    "tex": "(1) 運動する原子核の固有時間は $d\\tau=dt\\sqrt{1-v^2/c^2}\\simeq\\left(1-\\dfrac{v^2}{2c^2}\\right)dt$ で，振動数は平均して\n\\[\n\\boldsymbol{\\frac{\\Delta\\nu}{\\nu}=-\\frac{\\langle v^2\\rangle}{2c^2}=-\\frac{3k_BT}{2mc^2}}\n\\]\nだけずれる（1次のドップラー効果は平均で消える）．温度が高いほど振動数が下がる．\n\n(2) 重力によるずれは $\\dfrac{\\Delta\\nu}{\\nu}=\\boldsymbol{\\dfrac{gH}{c^2}}$．(1) より温度差 $\\Delta T$ によるずれは $\\dfrac{3k_B\\Delta T}{2mc^2}$ なので，等しいとおいて\n\\[\n\\boldsymbol{\\Delta T=\\frac{2mgH}{3k_B}}.\n\\]\n$c^2$ が両辺で消えるので，比べているのは熱エネルギー $\\frac32k_B\\Delta T$ と位置エネルギー $mgH$ である．${}^{57}\\mathrm{Fe}$ と数十 m の塔では $\\Delta T$ は 1 K 程度になり，パウンド＝レブカの実験では温度を細かく管理する必要があった．\n\n(3) 遠方の時計に対する進み方は $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{GM}{rc^2}-\\dfrac{v^2}{2c^2}$．円軌道では $v^2=GM/r$ なので衛星は $1-\\dfrac{3GM}{2rc^2}$，地表は $1-\\dfrac{GM}{Rc^2}$．差は\n\\[\n\\boldsymbol{\\frac{\\Delta\\tau}{\\tau}=\\frac{GM}{Rc^2}\\left(1-\\frac{3R}{2r}\\right)}.\n\\]\n$\\boldsymbol{r=\\frac32R}$（高度 $R/2$）で $0$ になる．これより高い軌道では重力の効果が勝って衛星の時計が進み，時間 $t_0$ の間に\n\\[\n\\boldsymbol{\\frac{GMt_0}{Rc^2}\\left(1-\\frac{3R}{2r}\\right)}\n\\]\nだけ地上より進む．重力の寄与 $\\frac{GMt_0}{c^2}\\left(\\frac1R-\\frac1r\\right)$（進む）と速度の寄与 $-\\frac{GMt_0}{2rc^2}$（遅れる）の和である．"
    }
   ],
   "idea": {
-   "tex": "時計の進み方は $1-\\Phi/c^2-v^2/2c^2$ でまとめて書ける．熱運動の $\\langle v^2\\rangle$ は温度に比例するので，メスバウアー線では $1\\ \\mathrm{K}$ の温度差が $20\\ \\mathrm{m}$ ほどの高さの差と同じずれを生む．衛星では重力と速度の効果が逆符号で，$r=3R/2$ で打ち消し合う．原題は5つの状況のずれの式を答える問題で，捻りでは効果どうしの大きさを比べさせる．"
+   "tex": "時計の進み方は $1-\\Phi/c^2-v^2/2c^2$ でまとめて書ける．熱運動の $\\langle v^2\\rangle$ は温度に比例するので，温度差 $\\Delta T=2mgH/(3k_B)$ が高さ $H$ の差と同じずれを生む．衛星では重力と速度の効果が逆符号で，$r=3R/2$ で打ち消し合う．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) Δν/ν：-3 k_B T/(2 m c^2)\n(2) ずれ：g H/c^2 ; ΔT：2 m g H/(3 k_B)\n(3) Δτ/τ：G M/(R c^2) (1 - 3 R/(2 r)) ; r：3 R/2 ; 進む時間：G M t_0/(R c^2) (1 - 3 R/(2 r))"
   },
   "methods": [],
   "tags": [
@@ -1082,16 +1082,16 @@
   "theme": "変分原理による測地線：双曲平面",
   "topic": "変分原理による測地線：双曲平面",
   "statement": {
-   "tex": "上半平面 $y>0$ に計量 $ds^2=\\dfrac{dx^2+dy^2}{y^2}$（Poincaré 双曲平面）を入れる．\n\\begin{enumerate}\n\\item $L=\\tfrac12g_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu$（$\\dot{}=d/ds$）に Euler–Lagrange 方程式を適用して測地線方程式を書き，0 でない Christoffel 記号をすべて読み取れ．\n\\item 円 $x^2+y^2=R^2$（$y>0$ の部分）が測地線であることを示せ．\n\\item 2点 $(-1,1)$ と $(1,1)$ を結ぶ測地線の長さを求め，直線 $y=1$ に沿った長さ $2$ と比較せよ．\n\\end{enumerate}"
+   "tex": "上半平面 $y>0$ に計量 $ds^2=\\dfrac{dx^2+dy^2}{y^2}$（Poincaré 双曲平面）を入れる．\n\\begin{enumerate}\n\\item $L=\\tfrac12g_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu$（$\\dot{}=d/ds$）に Euler–Lagrange 方程式を適用して測地線方程式を書き，0 でない Christoffel 記号をすべて読み取れ．\n\\item 円 $x^2+y^2=R^2$（$y>0$ の部分）が測地線であることを示せ．\n\\item 2点 $(-a,b)$ と $(a,b)$（$a>0$，$b>0$）を結ぶ測地線の長さを求め，直線 $y=b$ に沿った長さと比較せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\ddot x-\\dfrac{2}{y}\\dot x\\dot y=0$，$\\ddot y+\\dfrac{1}{y}(\\dot x^2-\\dot y^2)=0$；$\\Gamma^x{}_{xy}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$　(2) 略（解説参照）　(3) $2\\ln(1+\\sqrt2)\\approx1.763<2$"
+   "tex": "(1) $\\ddot x-\\dfrac{2}{y}\\dot x\\dot y=0$，$\\ddot y+\\dfrac{1}{y}(\\dot x^2-\\dot y^2)=0$；$\\Gamma^x{}_{xy}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$　(2) 略（解説参照）　(3) $2\\ln\\dfrac{a+\\sqrt{a^2+b^2}}{b}$；直線に沿うと $\\dfrac{2a}{b}$（測地線の方が短い）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $L=\\dfrac{\\dot x^2+\\dot y^2}{2y^2}$．\n$x$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot x}{y^2}\\Bigr)=0\\Rightarrow\\ddot x-\\dfrac{2\\dot x\\dot y}{y}=0$．\n$y$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot y}{y^2}\\Bigr)=-\\dfrac{\\dot x^2+\\dot y^2}{y^3}\\Rightarrow\\ddot y+\\dfrac{\\dot x^2-\\dot y^2}{y}=0$．\n$\\ddot x^\\lambda+\\Gamma^\\lambda{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$ と比べ，$\\Gamma^x{}_{xy}=\\Gamma^x{}_{yx}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$．\n\n(2) $x$ の式から $\\dot x=Cy^2$（第1積分）．また $L=\\tfrac12$（弧長パラメータ）より $\\dot x^2+\\dot y^2=y^2$．円上で $x=R\\cos\\theta$, $y=R\\sin\\theta$ とおくと $ds=\\sqrt{dx^2+dy^2}/y=d\\theta/\\sin\\theta$ なので $\\dot\\theta=\\sin\\theta$．このとき $\\dot x=-R\\sin\\theta\\,\\dot\\theta=-R\\sin^2\\theta=-y^2/R$ で $C=-1/R$ の定数，また $\\dot y=R\\cos\\theta\\sin\\theta$ より $\\dot x^2+\\dot y^2=R^2\\sin^2\\theta(\\sin^2\\theta+\\cos^2\\theta)=y^2$ も成り立つ．$L=$ 一定の式を $s$ で微分して $x$ の式を使うと $\\dot y\\,[\\,y$ の式$\\,]=0$ となるので，$\\dot y\\ne0$ の点で $y$ の式も満たされ（連続性により全体で成立），円は測地線である．\n\n(3) 両点を通り中心が $x$ 軸上にある円は $x^2+y^2=2$（$R=\\sqrt2$）で，$\\theta$ は $3\\pi/4$ から $\\pi/4$ まで．\n\\[\ns=\\int_{\\pi/4}^{3\\pi/4}\\frac{d\\theta}{\\sin\\theta}=\\Bigl[\\ln\\tan\\frac\\theta2\\Bigr]_{\\pi/4}^{3\\pi/4}=2\\ln\\cot\\frac{\\pi}{8}=2\\ln(1+\\sqrt2)\\approx1.763 .\n\\]\n直線 $y=1$ に沿えば $\\int_{-1}^1dx/1=2$．「上へ膨らんだ」円弧の方が短い．$y$ が大きいほど距離が縮むため，測地線は $y$ の大きい方へ迂回する．"
+    "tex": "(1) $L=\\dfrac{\\dot x^2+\\dot y^2}{2y^2}$．\n$x$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot x}{y^2}\\Bigr)=0\\Rightarrow\\ddot x-\\dfrac{2\\dot x\\dot y}{y}=0$．\n$y$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot y}{y^2}\\Bigr)=-\\dfrac{\\dot x^2+\\dot y^2}{y^3}\\Rightarrow\\ddot y+\\dfrac{\\dot x^2-\\dot y^2}{y}=0$．\n$\\ddot x^\\lambda+\\Gamma^\\lambda{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$ と比べ，$\\Gamma^x{}_{xy}=\\Gamma^x{}_{yx}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$．\n\n(2) $x$ の式から $\\dot x=Cy^2$（第1積分）．また $L=\\tfrac12$（弧長パラメータ）より $\\dot x^2+\\dot y^2=y^2$．円上で $x=R\\cos\\theta$, $y=R\\sin\\theta$ とおくと $ds=\\sqrt{dx^2+dy^2}/y=d\\theta/\\sin\\theta$ なので $\\dot\\theta=\\sin\\theta$．このとき $\\dot x=-R\\sin\\theta\\,\\dot\\theta=-R\\sin^2\\theta=-y^2/R$ で $C=-1/R$ の定数，また $\\dot y=R\\cos\\theta\\sin\\theta$ より $\\dot x^2+\\dot y^2=R^2\\sin^2\\theta(\\sin^2\\theta+\\cos^2\\theta)=y^2$ も成り立つ．$L=$ 一定の式を $s$ で微分して $x$ の式を使うと $\\dot y\\,[\\,y$ の式$\\,]=0$ となるので，$\\dot y\\ne0$ の点で $y$ の式も満たされ（連続性により全体で成立），円は測地線である．\n\n(3) 両点を通り中心が $x$ 軸上にある円は $x^2+y^2=R^2$，$R=\\sqrt{a^2+b^2}$ で，$\\theta$ は $\\pi-\\theta_0$ から $\\theta_0$ まで（$\\sin\\theta_0=b/R$，$\\cos\\theta_0=a/R$）．\n\\[\ns=\\int_{\\theta_0}^{\\pi-\\theta_0}\\frac{d\\theta}{\\sin\\theta}=\\Bigl[\\ln\\tan\\frac\\theta2\\Bigr]_{\\theta_0}^{\\pi-\\theta_0}=2\\ln\\cot\\frac{\\theta_0}{2}=2\\ln\\frac{1+\\cos\\theta_0}{\\sin\\theta_0}=\\boldsymbol{2\\ln\\frac{a+\\sqrt{a^2+b^2}}{b}} .\n\\]\n直線 $y=b$ に沿えば $\\int_{-a}^{a}dx/b=\\boldsymbol{2a/b}$．$u=a/b$ とおくと $s=2\\,\\mathrm{arsinh}\\,u<2u$ なので，「上へ膨らんだ」円弧の方が短い．$y$ が大きいほど距離が縮むため，測地線は $y$ の大きい方へ迂回する．"
    }
   ],
   "idea": {
@@ -1099,7 +1099,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 証明\n(3) 記述"
+   "spec": "(1) 記述\n(2) 証明\n(3) 測地線の長さ：2 ln((a+sqrt(a^2+b^2))/b) ; 直線に沿った長さ：2 a/b"
   },
   "methods": [],
   "tags": [
@@ -1182,24 +1182,24 @@
   "theme": "GPS衛星時計の相対論的ずれ",
   "topic": "GPS衛星時計の相対論的ずれ",
   "statement": {
-   "tex": "重力場中を運動する時計の固有時は，弱い場で $d\\tau=dt\\sqrt{1+2\\chi/c^2-v^2/c^2}$（$\\chi$：Newton ポテンシャル，$t$：無限遠の静止時計の時間）で与えられる．地球を質量 $M$ の球とし，$GM=3.986\\times10^{14}\\ {\\rm m^3/s^2}$，地球半径 $R=6.371\\times10^6$ m，自転角速度 $\\Omega=7.292\\times10^{-5}\\ {\\rm rad/s}$，$c=2.998\\times10^8$ m/s とする．\n\\begin{enumerate}\n\\item 半径 $r$ の円軌道を回る衛星の時計の進み方 $d\\tau/dt$ を $c^{-2}$ の1次で $GM,r$ だけで表せ．\n\\item GPS 衛星（$r=2.656\\times10^7$ m）の時計は，赤道上の地上時計に対して1日（86400 s）あたり何 $\\mu$s 進む（遅れる）か．重力による寄与，衛星の速度による寄与，地上時計の自転速度による寄与に分けて答えよ．補正しないと1日で測位誤差はおよそ何 km になるか．\n\\item 衛星の時計と赤道上の地上時計の進み方が一致する円軌道の半径を $R$ を単位として求めよ（自転の寄与を無視した場合と含めた場合）．\n\\end{enumerate}"
+   "tex": "重力場中を運動する時計の固有時は，弱い場で $d\\tau=dt\\sqrt{1+2\\chi/c^2-v^2/c^2}$（$\\chi$：Newton ポテンシャル，$t$：無限遠の静止時計の時間）で与えられる．地球を質量 $M$，半径 $R$ の球とし，自転角速度を $\\Omega$，万有引力定数を $G$，光速を $c$ とする．\n\\begin{enumerate}\n\\item 半径 $r$ の円軌道を回る衛星の時計の進み方 $d\\tau/dt$ を $c^{-2}$ の1次で $G,M,r,c$ で表せ．\n\\item 軌道半径 $r$ の GPS 衛星の時計は，赤道上の地上時計に対して，時間 $T$ の間にどれだけ進むか．重力による寄与，衛星の速度による寄与，地上時計の自転速度による寄与に分けて，$c^{-2}$ の1次で答えよ．また，補正しないと時間 $T$ の間に生じる測位誤差（時計のずれ×光速）を求めよ．\n\\item 衛星の時計と赤道上の地上時計の進み方が一致する円軌道の半径を，自転の寄与を無視した場合と含めた場合について求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{3GM}{2c^2r}$　(2) 重力 $+45.7$，衛星速度 $-7.2$，地上自転 $+0.10$，合計 約 $+38.6\\ \\mu$s/日（衛星が進む）；誤差 約 12 km/日　(3) 無視：$r=1.5R$，含める：$r\\approx1.497R$（高度約 3170 km）"
+   "tex": "(1) $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{3GM}{2c^2r}$　(2) 重力 $\\dfrac{GMT}{c^2}\\left(\\dfrac1R-\\dfrac1r\\right)$，衛星速度 $-\\dfrac{GMT}{2c^2r}$，地上自転 $\\dfrac{\\Omega^2R^2T}{2c^2}$；測位誤差 $\\dfrac{T}{c}\\left(\\dfrac{GM}{R}-\\dfrac{3GM}{2r}+\\dfrac{\\Omega^2R^2}{2}\\right)$　(3) 無視：$r=\\dfrac{3R}{2}$，含める：$r=\\dfrac{3GMR}{2GM+\\Omega^2R^3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\chi=-GM/r$，円軌道で $v^2=GM/r$．\n\\[\n\\frac{d\\tau}{dt}\\simeq1+\\frac{\\chi}{c^2}-\\frac{v^2}{2c^2}=1-\\frac{GM}{c^2r}-\\frac{GM}{2c^2r}=1-\\frac{3GM}{2c^2r}.\n\\]\n(2) 地上時計：$\\dfrac{d\\tau_0}{dt}\\simeq1-\\dfrac{GM}{c^2R}-\\dfrac{\\Omega^2R^2}{2c^2}$．差 $\\dfrac{d\\tau_s-d\\tau_0}{dt}$ の各寄与に $86400$ s を掛ける．\n・重力：$\\dfrac{GM}{c^2}\\Bigl(\\dfrac1R-\\dfrac1r\\Bigr)\\times86400=\\dfrac{3.986\\times10^{14}}{8.988\\times10^{16}}(1.5696-0.3765)\\times10^{-7}\\times86400\\approx+45.7\\ \\mu{\\rm s}$．\n・衛星速度：$-\\dfrac{GM}{2c^2r}\\times86400\\approx-7.2\\ \\mu{\\rm s}$（$v=3.87$ km/s）．\n・地上の自転速度（地上時計が遅れる分，相対的に衛星が進む）：$+\\dfrac{\\Omega^2R^2}{2c^2}\\times86400\\approx+0.10\\ \\mu{\\rm s}$．\n合計約 $+38.6\\ \\mu$s/日．光速を掛けると $3.0\\times10^8\\times38.6\\times10^{-6}\\approx1.2\\times10^4$ m，すなわち 1 日で約 12 km の誤差が蓄積する．\n\n(3) 自転を無視すると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}\\Rightarrow r=\\dfrac32R$．自転を含めると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}+\\dfrac{\\Omega^2R^2}{2}$ より\n\\[\nr=\\frac{3R}{2}\\Bigl(1+\\frac{\\Omega^2R^3}{2GM}\\Bigr)^{-1}\\approx1.497R ,\n\\]\n高度は約 3170 km．これより低い軌道（ISS など）では速度効果が勝って衛星時計は遅れ，高い軌道では重力効果が勝って進む．"
+    "tex": "(1) $\\chi=-GM/r$，円軌道で $v^2=GM/r$．\n\\[\n\\frac{d\\tau}{dt}\\simeq1+\\frac{\\chi}{c^2}-\\frac{v^2}{2c^2}=1-\\frac{GM}{c^2r}-\\frac{GM}{2c^2r}=\\boldsymbol{1-\\frac{3GM}{2c^2r}}.\n\\]\n(2) 地上時計：$\\dfrac{d\\tau_0}{dt}\\simeq1-\\dfrac{GM}{c^2R}-\\dfrac{\\Omega^2R^2}{2c^2}$．差 $\\dfrac{d\\tau_s-d\\tau_0}{dt}$ の各寄与に $T$ を掛ける（$c^{-2}$ の1次では $T$ をどちらの時計で測っても同じ）．\n・重力：$\\boldsymbol{\\dfrac{GMT}{c^2}\\Bigl(\\dfrac1R-\\dfrac1r\\Bigr)}$（$r>R$ なので衛星が進む）．\n・衛星速度：$\\boldsymbol{-\\dfrac{GMT}{2c^2r}}$（衛星が遅れる）．\n・地上の自転速度（地上時計が遅れる分，相対的に衛星が進む）：$\\boldsymbol{+\\dfrac{\\Omega^2R^2T}{2c^2}}$．\n合計に光速を掛けたものが測位誤差：\n\\[\n\\boldsymbol{\\frac{T}{c}\\Bigl(\\frac{GM}{R}-\\frac{3GM}{2r}+\\frac{\\Omega^2R^2}{2}\\Bigr)}.\n\\]\n実際の GPS 軌道では重力の寄与が速度の寄与の 6 倍ほどあり，全体で衛星の時計が 1 日に数十 $\\mu$s 進む．光速を掛けると 1 日で 10 km 程度の誤差になるので補正が欠かせない．\n\n(3) 自転を無視すると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}\\Rightarrow \\boldsymbol{r=\\dfrac32R}$．自転を含めると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}+\\dfrac{\\Omega^2R^2}{2}$ より\n\\[\n\\boldsymbol{r=\\frac{3GMR}{2GM+\\Omega^2R^3}}=\\frac{3R}{2}\\Bigl(1+\\frac{\\Omega^2R^3}{2GM}\\Bigr)^{-1},\n\\]\n自転の分だけわずかに $\\frac32R$ より小さい．これより低い軌道（ISS など）では速度効果が勝って衛星時計は遅れ，高い軌道では重力効果が勝って進む．"
    }
   ],
   "idea": {
-   "tex": "重力場中の時計の式を，重力による進みと運動による遅れの競合として読み，GPS の 38 μs/日と，両効果が打ち消し合う「中立軌道」(r=1.5R) を導く．"
+   "tex": "重力場中の時計の式を，重力による進みと運動による遅れの競合として読み，GPS 衛星の時計の進みと，両効果が打ち消し合う「中立軌道」($r\\simeq1.5R$) を導く．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) dτ/dt：1 - 3 G M/(2 c^2 r)\n(2) 重力：G M T/c^2 (1/R - 1/r) ; 衛星速度：-G M T/(2 c^2 r) ; 地上自転：Ω^2 R^2 T/(2 c^2) ; 測位誤差：T/c (G M/R - 3 G M/(2 r) + Ω^2 R^2/2)\n(3) 無視：3 R/2 ; 含める：3 G M R/(2 G M + Ω^2 R^3)"
   },
   "methods": [],
   "tags": [
@@ -1628,16 +1628,16 @@
   "theme": "回転系の計量・Coriolis力とSagnac効果",
   "topic": "回転系の計量・Coriolis力とSagnac効果",
   "statement": {
-   "tex": "慣性系の円柱座標 $(t,\\rho,\\varphi_I,z)$ での計量 $ds^2=-c^2dt^2+d\\rho^2+\\rho^2d\\varphi_I^2+dz^2$ から，$z$ 軸のまわりに角速度 $\\omega$ で回転する座標 $\\varphi=\\varphi_I-\\omega t$ に移る．\n\\begin{enumerate}\n\\item 回転座標 $(t,\\rho,\\varphi,z)$ での計量成分 $g_{tt},\\,g_{t\\varphi}$ を求めよ．\n\\item Christoffel 記号 $\\Gamma^\\rho{}_{tt},\\ \\Gamma^\\rho{}_{t\\varphi},\\ \\Gamma^\\rho{}_{\\varphi\\varphi}$ を求め，速さが $c$ に比べて小さいときの測地線方程式の $\\rho$ 成分から，遠心力と Coriolis 力に対応する項を読み取れ．\n\\item 回転座標で静止した半径 $R$ のリング状光ファイバーに沿って，光を $+\\varphi$ 向きと $-\\varphi$ 向きに一周させる．$ds^2=0$ を用いて，リング上に静止した時計で測った到着時刻の差 $\\Delta\\tau$ を厳密に求めよ．\n\\item 面積 $A=0.010\\ {\\rm m^2}$ のコイルを $N=1000$ 回巻いた光ファイバージャイロが地球自転（$\\omega=7.29\\times10^{-5}\\ {\\rm rad/s}$，回転軸に垂直に設置）を検出するときの $\\Delta\\tau$ を，$\\omega R\\ll c$ として数値で求めよ．\n\\end{enumerate}"
+   "tex": "慣性系の円柱座標 $(t,\\rho,\\varphi_I,z)$ での計量 $ds^2=-c^2dt^2+d\\rho^2+\\rho^2d\\varphi_I^2+dz^2$ から，$z$ 軸のまわりに角速度 $\\omega$ で回転する座標 $\\varphi=\\varphi_I-\\omega t$ に移る．\n\\begin{enumerate}\n\\item 回転座標 $(t,\\rho,\\varphi,z)$ での計量成分 $g_{tt},\\,g_{t\\varphi}$ を求めよ．\n\\item Christoffel 記号 $\\Gamma^\\rho{}_{tt},\\ \\Gamma^\\rho{}_{t\\varphi},\\ \\Gamma^\\rho{}_{\\varphi\\varphi}$ を求め，速さが $c$ に比べて小さいときの測地線方程式の $\\rho$ 成分から，遠心力と Coriolis 力に対応する項を読み取れ．\n\\item 回転座標で静止した半径 $R$ のリング状光ファイバーに沿って，光を $+\\varphi$ 向きと $-\\varphi$ 向きに一周させる．$ds^2=0$ を用いて，リング上に静止した時計で測った到着時刻の差 $\\Delta\\tau$ を厳密に求めよ．\n\\item 面積 $A$ のコイルを $N$ 回巻いた光ファイバージャイロ（コイル面を回転軸に垂直に設置）が角速度 $\\omega$ の回転を検出するときの $\\Delta\\tau$ を，$\\omega R\\ll c$ として $N,A,\\omega,c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$　(2) $\\Gamma^\\rho{}_{tt}=-\\omega^2\\rho$，$\\Gamma^\\rho{}_{t\\varphi}=-\\omega\\rho$，$\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho$；$\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi$　(3) $\\Delta\\tau=\\dfrac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}}$　(4) $\\Delta\\tau\\approx4NA\\omega/c^2\\approx3.2\\times10^{-20}\\ {\\rm s}$"
+   "tex": "(1) $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$　(2) $\\Gamma^\\rho{}_{tt}=-\\omega^2\\rho$，$\\Gamma^\\rho{}_{t\\varphi}=-\\omega\\rho$，$\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho$；$\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi$　(3) $\\Delta\\tau=\\dfrac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}}$　(4) $\\Delta\\tau=\\dfrac{4NA\\omega}{c^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $d\\varphi_I=d\\varphi+\\omega dt$ を代入すると\n\\[\nds^2=-(c^2-\\omega^2\\rho^2)dt^2+2\\omega\\rho^2\\,d\\varphi\\,dt+d\\rho^2+\\rho^2d\\varphi^2+dz^2 .\n\\]\nよって $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$，$g_{\\rho\\rho}=g_{zz}=1$，$g_{\\varphi\\varphi}=\\rho^2$．\n\n(2) $g_{\\rho\\rho}=1$ で $g_{\\rho\\mu}=0\\ (\\mu\\ne\\rho)$ だから $\\Gamma^\\rho{}_{\\mu\\nu}=-\\tfrac12\\partial_\\rho g_{\\mu\\nu}$．\n\\[\n\\Gamma^\\rho{}_{tt}=-\\tfrac12\\partial_\\rho(-c^2+\\omega^2\\rho^2)=-\\omega^2\\rho,\\quad\n\\Gamma^\\rho{}_{t\\varphi}=-\\tfrac12\\partial_\\rho(\\omega\\rho^2)=-\\omega\\rho,\\quad\n\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho .\n\\]\n低速では $d\\tau\\simeq dt$ として測地線方程式 $\\ddot x^\\rho+\\Gamma^\\rho{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$（$\\dot{}=d/dt$, $\\dot t=1$）より\n\\[\n\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi .\n\\]\n第1項は極座標の通常の遠心項，$\\omega^2\\rho$ が回転系の遠心力，$2\\omega\\rho\\dot\\varphi$ が Coriolis 力（$-2\\boldsymbol\\omega\\times\\boldsymbol v$ の動径成分）である．すなわち慣性力は $g_{tt}$ の $\\rho$ 依存（遠心力）と非対角成分 $g_{t\\varphi}$（Coriolis 力）から生じる．\n\n(3) $\\rho=R$, $dz=0$ で $ds^2=0$：\n\\[\n(c^2-\\omega^2R^2)dt^2-2\\omega R^2\\,d\\varphi\\,dt-R^2d\\varphi^2=0\n\\Rightarrow dt=\\frac{\\omega R^2d\\varphi\\pm Rc\\,|d\\varphi|}{c^2-\\omega^2R^2}.\n\\]\n$dt>0$ をとると $+\\varphi$ 向きでは $dt=\\dfrac{R\\,d\\varphi}{c-\\omega R}$，$-\\varphi$ 向きでは $dt=\\dfrac{R\\,|d\\varphi|}{c+\\omega R}$．一周の座標時の差は\n\\[\n\\Delta t=2\\pi R\\Bigl(\\frac1{c-\\omega R}-\\frac1{c+\\omega R}\\Bigr)=\\frac{4\\pi R^2\\omega}{c^2-\\omega^2R^2}.\n\\]\nリング上の静止時計は $d\\tau=\\sqrt{-g_{tt}}\\,dt/c=\\sqrt{1-\\omega^2R^2/c^2}\\,dt$ なので\n\\[\n\\Delta\\tau=\\frac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}} .\n\\]\n(4) $\\omega R\\ll c$ で $\\Delta\\tau\\simeq4(\\pi R^2)\\omega/c^2$，一般の閉曲線では $4A\\omega/c^2$．$N$ 巻きで\n\\[\n\\Delta\\tau=\\frac{4NA\\omega}{c^2}=\\frac{4\\times1000\\times0.010\\times7.29\\times10^{-5}}{(3.00\\times10^8)^2}\\approx3.2\\times10^{-20}\\ {\\rm s}.\n\\]"
+    "tex": "(1) $d\\varphi_I=d\\varphi+\\omega dt$ を代入すると\n\\[\nds^2=-(c^2-\\omega^2\\rho^2)dt^2+2\\omega\\rho^2\\,d\\varphi\\,dt+d\\rho^2+\\rho^2d\\varphi^2+dz^2 .\n\\]\nよって $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$，$g_{\\rho\\rho}=g_{zz}=1$，$g_{\\varphi\\varphi}=\\rho^2$．\n\n(2) $g_{\\rho\\rho}=1$ で $g_{\\rho\\mu}=0\\ (\\mu\\ne\\rho)$ だから $\\Gamma^\\rho{}_{\\mu\\nu}=-\\tfrac12\\partial_\\rho g_{\\mu\\nu}$．\n\\[\n\\Gamma^\\rho{}_{tt}=-\\tfrac12\\partial_\\rho(-c^2+\\omega^2\\rho^2)=-\\omega^2\\rho,\\quad\n\\Gamma^\\rho{}_{t\\varphi}=-\\tfrac12\\partial_\\rho(\\omega\\rho^2)=-\\omega\\rho,\\quad\n\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho .\n\\]\n低速では $d\\tau\\simeq dt$ として測地線方程式 $\\ddot x^\\rho+\\Gamma^\\rho{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$（$\\dot{}=d/dt$, $\\dot t=1$）より\n\\[\n\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi .\n\\]\n第1項は極座標の通常の遠心項，$\\omega^2\\rho$ が回転系の遠心力，$2\\omega\\rho\\dot\\varphi$ が Coriolis 力（$-2\\boldsymbol\\omega\\times\\boldsymbol v$ の動径成分）である．すなわち慣性力は $g_{tt}$ の $\\rho$ 依存（遠心力）と非対角成分 $g_{t\\varphi}$（Coriolis 力）から生じる．\n\n(3) $\\rho=R$, $dz=0$ で $ds^2=0$：\n\\[\n(c^2-\\omega^2R^2)dt^2-2\\omega R^2\\,d\\varphi\\,dt-R^2d\\varphi^2=0\n\\Rightarrow dt=\\frac{\\omega R^2d\\varphi\\pm Rc\\,|d\\varphi|}{c^2-\\omega^2R^2}.\n\\]\n$dt>0$ をとると $+\\varphi$ 向きでは $dt=\\dfrac{R\\,d\\varphi}{c-\\omega R}$，$-\\varphi$ 向きでは $dt=\\dfrac{R\\,|d\\varphi|}{c+\\omega R}$．一周の座標時の差は\n\\[\n\\Delta t=2\\pi R\\Bigl(\\frac1{c-\\omega R}-\\frac1{c+\\omega R}\\Bigr)=\\frac{4\\pi R^2\\omega}{c^2-\\omega^2R^2}.\n\\]\nリング上の静止時計は $d\\tau=\\sqrt{-g_{tt}}\\,dt/c=\\sqrt{1-\\omega^2R^2/c^2}\\,dt$ なので\n\\[\n\\Delta\\tau=\\frac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}} .\n\\]\n(4) $\\omega R\\ll c$ で $\\Delta\\tau\\simeq4(\\pi R^2)\\omega/c^2$，一般の閉曲線では $4A\\omega/c^2$（$g_{t\\varphi}$ の周回積分が囲む面積に比例する）．$N$ 巻きでは光が $N$ 周するので\n\\[\n\\boldsymbol{\\Delta\\tau=\\frac{4NA\\omega}{c^2}} .\n\\]\n地球自転程度の角速度では $\\Delta\\tau$ は $10^{-20}\\ \\mathrm{s}$ 程度ときわめて小さく，実際のジャイロでは時間差を光の位相差 $2\\pi c\\Delta\\tau/\\lambda$ として干渉で検出する．"
    }
   ],
   "idea": {
@@ -1645,7 +1645,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $g_{tt}$：-(c ^(2)- ω ^(2) ρ ^(2)) ; $g_{t\\varphi}$：ω ρ ^(2)\n(2) 記述\n(3) $\\Delta\\tau$：((4 pi R ^(2) ω)/(c ^(2) sqrt(1- ω ^(2) R ^(2)/ c ^(2))))\n(4) $\\Delta\\tau$ [s]：≈3.2e-20"
+   "spec": "(1) $g_{tt}$：-(c ^(2)- ω ^(2) ρ ^(2)) ; $g_{t\\varphi}$：ω ρ ^(2)\n(2) 記述\n(3) $\\Delta\\tau$：((4 pi R ^(2) ω)/(c ^(2) sqrt(1- ω ^(2) R ^(2)/ c ^(2))))\n(4) $\\Delta\\tau$：4 N A ω/c^2"
   },
   "methods": [],
   "tags": [
@@ -1828,16 +1828,16 @@
   "theme": "加速ロケットの時計と投下した探査機の固有時",
   "topic": "加速ロケットの時計と投下した探査機の固有時",
   "statement": {
-   "tex": "慣性系に対して一定の固有加速度 $g$ で $+x$ 方向に加速するロケットの後端を原点とする座標では\n\\[\nds^2=dx^2+dy^2+dz^2-c^2\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2dt^2\n\\]\nであり（$t$ は後端の時計の時間），この座標で静止した点は剛体的に加速する．このとき自由粒子の運動は $\\dfrac{d^2x}{dt^2}-\\dfrac{2g/c^2}{1+gx/c^2}\\Bigl(\\dfrac{dx}{dt}\\Bigr)^2+g\\Bigl(1+\\dfrac{gx}{c^2}\\Bigr)=0$ に従う．\n\\begin{enumerate}\n\\item ロケットの前端（$x=L$）と後端に置いた時計の進み方の比を求めよ．$g=9.8\\ {\\rm m/s^2}$，$L=100$ m のとき，1年（$3.16\\times10^7$ s）で生じるずれはいくらか．\n\\item 時刻 $t=0$ に後端（$x=0$）で探査機を静かに放す．その後の $x(t)$ が $x=\\dfrac{c^2}{g}\\Bigl(\\dfrac{1}{\\cosh(gt/c)}-1\\Bigr)$ であることを確かめ，探査機の固有時 $\\tau(t)$ を求めよ．\n\\item $t\\to\\infty$ で探査機はどこに近づき，そのとき探査機の固有時はいくらに近づくか．$g=9.8\\ {\\rm m/s^2}$ で数値を答えよ．ロケットから見た探査機と，探査機自身の経験の違いを説明せよ．\n\\item 慣性系の立場（探査機は静止，ロケットの同時刻面は地平線の事象を通る直線）から (2) の $\\tau(t)$ を導け．\n\\end{enumerate}"
+   "tex": "慣性系に対して一定の固有加速度 $g$ で $+x$ 方向に加速するロケットの後端を原点とする座標では\n\\[\nds^2=dx^2+dy^2+dz^2-c^2\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2dt^2\n\\]\nであり（$t$ は後端の時計の時間），この座標で静止した点は剛体的に加速する．このとき自由粒子の運動は $\\dfrac{d^2x}{dt^2}-\\dfrac{2g/c^2}{1+gx/c^2}\\Bigl(\\dfrac{dx}{dt}\\Bigr)^2+g\\Bigl(1+\\dfrac{gx}{c^2}\\Bigr)=0$ に従う．\n\\begin{enumerate}\n\\item ロケットの前端（$x=L$）と後端に置いた時計の進み方の比を求めよ．後端の時計で時間 $T$ が経つ間に，前端の時計は後端の時計よりどれだけ進むか．\n\\item 時刻 $t=0$ に後端（$x=0$）で探査機を静かに放す．その後の $x(t)$ が $x=\\dfrac{c^2}{g}\\Bigl(\\dfrac{1}{\\cosh(gt/c)}-1\\Bigr)$ であることを確かめ，探査機の固有時 $\\tau(t)$ を求めよ．\n\\item $t\\to\\infty$ で探査機はどこに近づき，そのとき探査機の固有時はいくらに近づくか．$g,c$ で答えよ．ロケットから見た探査機と，探査機自身の経験の違いを説明せよ．\n\\item 慣性系の立場（探査機は静止，ロケットの同時刻面は地平線の事象を通る直線）から (2) の $\\tau(t)$ を導け．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1+gL/c^2$；$\\approx1.09\\times10^{-14}$，1年で約 $0.34\\ \\mu$s 前端が進む　(2) $\\tau=\\dfrac{c}{g}\\tanh\\dfrac{gt}{c}$　(3) $x\\to-c^2/g\\approx-0.97$ 光年（地平線），$\\tau\\to c/g\\approx0.97$ 年　(4) 略（解説参照）"
+   "tex": "(1) $1+\\dfrac{gL}{c^2}$；$\\dfrac{gLT}{c^2}$ だけ前端が進む　(2) $\\tau=\\dfrac{c}{g}\\tanh\\dfrac{gt}{c}$　(3) $x=-\\dfrac{c^2}{g}$（地平線），$\\tau=\\dfrac{c}{g}$ に近づく　(4) 略（解説参照）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 静止時計は $d\\tau=(1+gx/c^2)dt$．比は $d\\tau_L/d\\tau_0=1+gL/c^2$．$gL/c^2=980/(9.0\\times10^{16})\\approx1.09\\times10^{-14}$，1年で $3.16\\times10^7\\times1.09\\times10^{-14}\\approx3.4\\times10^{-7}$ s．前端の時計が進む（等価原理による重力赤方偏移と同じ）．\n\n(2) $\\xi=1+gx/c^2=1/\\cosh(gt/c)$ とおくと運動方程式は $\\ddot\\xi-2\\dot\\xi^2/\\xi+(g^2/c^2)\\xi=0$．$u=1/\\xi=\\cosh(gt/c)$ とすると $\\ddot\\xi-2\\dot\\xi^2/\\xi=-\\ddot u/u^2$ なので方程式は $\\ddot u=(g/c)^2u$ となり，$u=\\cosh(gt/c)$ は初期条件 $u(0)=1,\\ \\dot u(0)=0$（$x=0,\\ \\dot x=0$）を満たす．\n速度は $v=\\dot x=-c\\,\\dfrac{\\tanh(gt/c)}{\\cosh(gt/c)}$．固有時は\n\\[\n\\frac{d\\tau}{dt}=\\sqrt{\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2-\\frac{v^2}{c^2}}=\\frac{\\sqrt{1-\\tanh^2(gt/c)}}{\\cosh(gt/c)}=\\frac{1}{\\cosh^2(gt/c)}\n\\]\nより $\\tau=\\dfrac cg\\tanh\\dfrac{gt}{c}$．\n\n(3) $t\\to\\infty$ で $x\\to-c^2/g$，$\\tau\\to c/g$．$c/g=3.0\\times10^8/9.8=3.06\\times10^7$ s $\\approx0.97$ 年，$c^2/g\\approx0.97$ 光年．ロケットから見ると探査機は永遠に落下し続けて地平線 $x=-c^2/g$ に漸近し，その時計はどんどん遅れて $\\tau=c/g$ の手前で凍りつくように見える．しかし探査機自身は単に慣性系で静止しているだけで，$\\tau=c/g$ を過ぎても普通に時を刻む．その後の事象からの光はロケットに追いつけない（地平線の向こう側）．\n\n(4) 慣性系 $(X,T)$ で，ロケット後端は $(X+c^2/g)^2-c^2T^2=(c^2/g)^2$，探査機は $X=0$ に静止し，その固有時は $T$ そのもの．後端の時刻 $t$ での同時刻面はラピディティ $\\phi=gt/c$ をもつ直線で，地平線の事象 $(X,T)=(-c^2/g,0)$ を通る（〔62〕(3)）：\n\\[\ncT=\\tanh\\phi\\,\\Bigl(X+\\frac{c^2}{g}\\Bigr).\n\\]\n$X=0$ を代入して $T=\\dfrac cg\\tanh\\dfrac{gt}{c}$，すなわち $\\tau(t)=\\dfrac cg\\tanh\\dfrac{gt}{c}$ で (2) と一致する．"
+    "tex": "(1) 静止時計は $d\\tau=(1+gx/c^2)dt$．比は $\\boldsymbol{d\\tau_L/d\\tau_0=1+gL/c^2}$．後端の時間 $T$ の間に前端は $\\boldsymbol{gLT/c^2}$ だけ進む（等価原理による重力赤方偏移と同じ：$gL$ は前後の「重力ポテンシャル」の差）．$g$ が地上の重力加速度，$L$ が 100 m 程度なら $gL/c^2\\sim10^{-14}$ で，1 年で $1\\ \\mu$s に満たない．\n\n(2) $\\xi=1+gx/c^2=1/\\cosh(gt/c)$ とおくと運動方程式は $\\ddot\\xi-2\\dot\\xi^2/\\xi+(g^2/c^2)\\xi=0$．$u=1/\\xi=\\cosh(gt/c)$ とすると $\\ddot\\xi-2\\dot\\xi^2/\\xi=-\\ddot u/u^2$ なので方程式は $\\ddot u=(g/c)^2u$ となり，$u=\\cosh(gt/c)$ は初期条件 $u(0)=1,\\ \\dot u(0)=0$（$x=0,\\ \\dot x=0$）を満たす．\n速度は $v=\\dot x=-c\\,\\dfrac{\\tanh(gt/c)}{\\cosh(gt/c)}$．固有時は\n\\[\n\\frac{d\\tau}{dt}=\\sqrt{\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2-\\frac{v^2}{c^2}}=\\frac{\\sqrt{1-\\tanh^2(gt/c)}}{\\cosh(gt/c)}=\\frac{1}{\\cosh^2(gt/c)}\n\\]\nより $\\tau=\\dfrac cg\\tanh\\dfrac{gt}{c}$．\n\n(3) $t\\to\\infty$ で $\\boldsymbol{x\\to-c^2/g}$，$\\boldsymbol{\\tau\\to c/g}$．地上の重力加速度程度の $g$ なら $c/g$ は約 1 年，$c^2/g$ は約 1 光年である．ロケットから見ると探査機は永遠に落下し続けて地平線 $x=-c^2/g$ に漸近し，その時計はどんどん遅れて $\\tau=c/g$ の手前で凍りつくように見える．しかし探査機自身は単に慣性系で静止しているだけで，$\\tau=c/g$ を過ぎても普通に時を刻む．その後の事象からの光はロケットに追いつけない（地平線の向こう側）．\n\n(4) 慣性系 $(X,T)$ で，ロケット後端は $(X+c^2/g)^2-c^2T^2=(c^2/g)^2$，探査機は $X=0$ に静止し，その固有時は $T$ そのもの．後端の時刻 $t$ での同時刻面はラピディティ $\\phi=gt/c$ をもつ直線で，地平線の事象 $(X,T)=(-c^2/g,0)$ を通る（〔62〕(3)）：\n\\[\ncT=\\tanh\\phi\\,\\Bigl(X+\\frac{c^2}{g}\\Bigr).\n\\]\n$X=0$ を代入して $T=\\dfrac cg\\tanh\\dfrac{gt}{c}$，すなわち $\\tau(t)=\\dfrac cg\\tanh\\dfrac{gt}{c}$ で (2) と一致する．"
    }
   ],
   "idea": {
@@ -1845,7 +1845,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\tau$：((c)/(g)) tanh ((g t)/(c))\n(3) 記述\n(4) 証明"
+   "spec": "(1) 比：1 + g L/c^2 ; 進む時間：g L T/c^2\n(2) $\\tau$：((c)/(g)) tanh ((g t)/(c))\n(3) x：-c^2/g ; τ：c/g\n(4) 証明"
   },
   "methods": [],
   "tags": [
@@ -1879,24 +1879,24 @@
   "theme": "パウンド–レブカ実験の向きと熱的系統誤差",
   "topic": "パウンド–レブカ実験の向きと熱的系統誤差",
   "statement": {
-   "tex": "高さ $H=22.6\\ \\mathrm{m}$ の塔の**下端**に 14.4 keV の ${}^{57}\\mathrm{Fe}$ メスバウアー線源，**上端**に吸収体を置き，重力赤方偏移を測定する（$g=9.80\\ \\mathrm{m/s^2}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$）．\n\\begin{enumerate}\n\\item 吸収体に届いた光子の相対的な振動数変化 $\\Delta\\nu/\\nu$ を求め，その符号を答えよ．\n\\item 共鳴を回復するには吸収体をどちら向きにどれだけの速さで動かせばよいか（mm/s 単位）．\n\\item 線源と吸収体の温度がわずかに異なると，二次のドップラー効果（時間の遅れ）$\\Delta\\nu/\\nu=-\\langle v^2\\rangle/2c^2$ によっても振動数がずれる．(1) と同じ大きさのずれを生む温度差 $\\Delta T$ を求めよ．原子 1 個の運動エネルギーを $\\frac32k_{\\mathrm B}T$ とし，${}^{57}\\mathrm{Fe}$ 原子の質量 $M=9.45\\times10^{-26}\\ \\mathrm{kg}$，$k_{\\mathrm B}=1.38\\times10^{-23}\\ \\mathrm{J/K}$ とする．\n\\end{enumerate}"
+   "tex": "高さ $H$ の塔の\\textbf{下端}に ${}^{57}\\mathrm{Fe}$ メスバウアー線源，\\textbf{上端}に吸収体を置き，重力赤方偏移を測定する（重力加速度の大きさ $g$，光速 $c$）．\n\\begin{enumerate}\n\\item 吸収体に届いた光子の相対的な振動数変化 $\\Delta\\nu/\\nu$ を求め，その符号を答えよ．\n\\item 共鳴を回復するには吸収体をどちら向きにどれだけの速さで動かせばよいか．\n\\item 線源と吸収体の温度がわずかに異なると，二次のドップラー効果（時間の遅れ）$\\Delta\\nu/\\nu=-\\langle v^2\\rangle/2c^2$ によっても振動数がずれる．(1) と同じ大きさのずれを生む温度差 $\\Delta T$ を求めよ．原子 1 個の運動エネルギーを $\\frac32k_BT$ とし，${}^{57}\\mathrm{Fe}$ 原子の質量を $M$，ボルツマン定数を $k_B$ とする．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta\\nu/\\nu=-gH/c^2=-2.46\\times10^{-15}$（赤方偏移）　(2) 下向き（線源に近づく向き）に $7.4\\times10^{-4}\\ \\mathrm{mm/s}$　(3) $\\Delta T=2MgH/3k_{\\mathrm B}\\approx1.0\\ \\mathrm K$"
+   "tex": "(1) $\\Delta\\nu/\\nu=-\\dfrac{gH}{c^2}$（赤方偏移）　(2) 下向き（線源に近づく向き）に $\\dfrac{gH}{c}$　(3) $\\Delta T=\\dfrac{2MgH}{3k_B}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 光子は重力ポテンシャルを $gH$ だけ登るので，エネルギー $h\\nu$ に対し $h\\nu\\cdot gH/c^2$ を失う：\n\\[ \\frac{\\Delta\\nu}{\\nu}=-\\frac{gH}{c^2}=-\\frac{9.80\\times22.6}{(3.00\\times10^8)^2}=-2.46\\times10^{-15}. \\]\n吸収体の共鳴振動数より低い（赤方偏移）．\n\n(2) 吸収体から見た光子の振動数を上げるには，吸収体を線源に**近づける**向き，すなわち下向きに動かす．$v/c=gH/c^2$ より\n\\[ v=\\frac{gH}{c}=\\frac{9.80\\times22.6}{3.00\\times10^8}=7.4\\times10^{-7}\\ \\mathrm{m/s}=7.4\\times10^{-4}\\ \\mathrm{mm/s}. \\]\n\n(3) $\\langle v^2\\rangle=3k_{\\mathrm B}T/M$ より二次ドップラーシフトは $-3k_{\\mathrm B}T/2Mc^2$．温度差 $\\Delta T$ による相対ずれ $3k_{\\mathrm B}\\Delta T/2Mc^2$ が $gH/c^2$ に等しいとおくと\n\\[ \\Delta T=\\frac{2MgH}{3k_{\\mathrm B}}=\\frac{2\\times9.45\\times10^{-26}\\times9.80\\times22.6}{3\\times1.38\\times10^{-23}}=1.0\\ \\mathrm K. \\]\nわずか 1 K の温度差で効果と同程度の系統誤差が生じるため，実際の実験では線源と吸収体の温度を厳密に管理し，両者の上下を入れ替えた測定の差をとった．"
+    "tex": "(1) 光子は重力ポテンシャルを $gH$ だけ登るので，エネルギー $h\\nu$ に対し $h\\nu\\cdot gH/c^2$ を失う：\n\\[ \\boldsymbol{\\frac{\\Delta\\nu}{\\nu}=-\\frac{gH}{c^2}}. \\]\n吸収体の共鳴振動数より低い（赤方偏移）．\n\n(2) 吸収体から見た光子の振動数を上げるには，吸収体を線源に\\textbf{近づける}向き，すなわち下向きに動かす．1次のドップラー効果 $v/c=gH/c^2$ より\n\\[ \\boldsymbol{v=\\frac{gH}{c}}. \\]\n数十 m の塔では $\\mu$m/s 以下というごくゆっくりした速さである．\n\n(3) $\\langle v^2\\rangle=3k_BT/M$ より二次ドップラーシフトは $-3k_BT/2Mc^2$．温度差 $\\Delta T$ による相対ずれ $3k_B\\Delta T/2Mc^2$ が $gH/c^2$ に等しいとおくと\n\\[ \\boldsymbol{\\Delta T=\\frac{2MgH}{3k_B}}. \\]\n熱エネルギーの差 $\\frac32k_B\\Delta T$ と位置エネルギー $MgH$ が等しくなる温度差で，実際の実験（$H\\approx23$ m）ではわずか 1 K 程度になる．効果と同程度の系統誤差が生じるため，線源と吸収体の温度を厳密に管理し，両者の上下を入れ替えた測定の差をとった．"
    }
   ],
   "idea": {
-   "tex": "重力赤方偏移は $gH/c^2$ で，補償には吸収体を線源へ近づける．二次ドップラー効果では約 1 K の温度差が同じ大きさのずれを生む．"
+   "tex": "重力赤方偏移は $gH/c^2$ で，補償には吸収体を線源へ近づける．二次ドップラー効果では $\\frac32k_B\\Delta T=MgH$ となる温度差が同じ大きさのずれを生む．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 下向きに [mm/s]：≈7.4e-4\n(3) $\\Delta T$ [K]：≈1.0"
+   "spec": "(1) Δν/ν：-g H/c^2\n(2) 下向きの速さ：g H/c\n(3) $\\Delta T$：2 M g H/(3 k_B)"
   },
   "methods": [],
   "tags": [

@@ -9,16 +9,16 @@
   "theme": "フーリエの法則と多層壁の熱抵抗",
   "topic": "フーリエの法則と多層壁の熱抵抗",
   "statement": {
-   "tex": "厚さ $d$，面積 $S$ の板の両面に温度差 $\\Delta T$ があるとき，板を単位時間に通り抜ける熱は $Q = kS\\dfrac{\\Delta T}{d}$ である（フーリエの法則，$k$ は熱伝導率）．これを $Q = \\Delta T/R$ と書き，$R = \\dfrac{d}{kS}$ を熱抵抗という．\n面積 $10\\,\\mathrm{m^2}$ の壁が，室内側から順に断熱材（厚さ $0.050\\,\\mathrm{m}$，$k = 0.040\\,\\mathrm{W/(m\\,K)}$）とれんが（厚さ $0.20\\,\\mathrm{m}$，$k = 0.80\\,\\mathrm{W/(m\\,K)}$）の2層でできている．室内側の表面は $20\\,\\mathrm{^\\circ C}$，屋外側の表面は $0\\,\\mathrm{^\\circ C}$ で一定とする．\n\\begin{enumerate}\n\\item 定常状態では，2つの層を流れる熱流は等しい．このことから，2層の全熱抵抗が $R_1 + R_2$ となることを用いて，壁を通る熱流 $Q$ を求めよ．\n\\item 断熱材とれんがの境界の温度を求めよ．\n\\item 断熱材がない場合の熱流を求めよ．\n\\end{enumerate}"
+   "tex": "厚さ $d$，面積 $S$ の板の両面に温度差 $\\Delta T$ があるとき，板を単位時間に通り抜ける熱は $Q = kS\\dfrac{\\Delta T}{d}$ である（フーリエの法則，$k$ は熱伝導率）．これを $Q = \\Delta T/R$ と書き，$R = \\dfrac{d}{kS}$ を熱抵抗という．\n面積 $S$ の壁が，室内側から順に断熱材（厚さ $d_1$，熱伝導率 $k_1$）とれんが（厚さ $d_2$，熱伝導率 $k_2$）の2層でできている．室内側の表面は温度 $T_1$，屋外側の表面は温度 $T_2$（$T_1>T_2$）で一定とする．\n\\begin{enumerate}\n\\item 定常状態では，2つの層を流れる熱流は等しい．このことから，2層の全熱抵抗が $R_1 + R_2$ となることを用いて，壁を通る熱流 $Q$ を求めよ．\n\\item 断熱材とれんがの境界の温度 $T_m$ を求めよ．\n\\item 断熱材がない場合の熱流 $Q'$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $Q \\approx 133\\,\\mathrm{W}$ \\quad (2) $\\approx 3.33\\,\\mathrm{^\\circ C}$ \\quad (3) $800\\,\\mathrm{W}$"
+   "tex": "(1) $Q=\\dfrac{S(T_1-T_2)}{\\dfrac{d_1}{k_1}+\\dfrac{d_2}{k_2}}$ \\quad (2) $T_m=T_2+\\dfrac{(T_1-T_2)\\,d_2/k_2}{\\dfrac{d_1}{k_1}+\\dfrac{d_2}{k_2}}$ \\quad (3) $Q'=\\dfrac{k_2S(T_1-T_2)}{d_2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "断熱材の熱抵抗は $R_1 = \\dfrac{0.050}{0.040\\times10} = 0.125\\,\\mathrm{K/W}$，れんがは $R_2 = \\dfrac{0.20}{0.80\\times10} = 0.025\\,\\mathrm{K/W}$．電気回路の直列抵抗と同じく，全体は $R_1 + R_2 = 0.150\\,\\mathrm{K/W}$ なので\n\\[ Q = \\frac{20}{0.150} \\approx \\boldsymbol{133\\,\\mathrm{W}}. \\]\n\nれんがの両面の温度差は $QR_2 = 133\\times0.025 \\approx 3.33\\,\\mathrm{K}$ なので，境界の温度は $\\boldsymbol{3.33\\,\\mathrm{^\\circ C}}$．温度差のほとんどは断熱材の中で生じる．\n\n断熱材がなければ $Q = 20/0.025 = \\boldsymbol{800\\,\\mathrm{W}}$．薄い断熱材で熱損失が6分の1になる．\n\n次は，温度が時間とともに変わる場合に，熱の流れと温度変化を結ぶ「熱伝導方程式」$\\partial T/\\partial t = \\kappa\\,\\partial^2 T/\\partial x^2$ を学ぶ．"
+    "tex": "断熱材の熱抵抗は $R_1 = \\dfrac{d_1}{k_1S}$，れんがは $R_2 = \\dfrac{d_2}{k_2S}$．電気回路の直列抵抗と同じく，全体は $R_1 + R_2$ なので\n\\[ Q = \\frac{T_1-T_2}{R_1+R_2}=\\boldsymbol{\\frac{S(T_1-T_2)}{\\dfrac{d_1}{k_1}+\\dfrac{d_2}{k_2}}}. \\]\n\nれんがの両面の温度差は $QR_2$ なので，境界の温度は\n\\[ T_m=T_2+QR_2=\\boldsymbol{T_2+\\frac{(T_1-T_2)\\,d_2/k_2}{\\dfrac{d_1}{k_1}+\\dfrac{d_2}{k_2}}}. \\]\n温度差は熱抵抗の比で分配される．断熱材の $d_1/k_1$ がれんがの $d_2/k_2$ より大きければ，温度差のほとんどは断熱材の中で生じる．\n\n断熱材がなければ\n\\[ Q' = \\frac{T_1-T_2}{R_2}=\\boldsymbol{\\frac{k_2S(T_1-T_2)}{d_2}}. \\]\n$Q/Q'=\\dfrac{d_2/k_2}{d_1/k_1+d_2/k_2}$ なので，熱伝導率の小さい薄い断熱材でも熱損失を大きく減らせる（例えば $d_1=5\\,\\mathrm{cm}$，$k_1=0.04$，$d_2=20\\,\\mathrm{cm}$，$k_2=0.8\\,\\mathrm{W/(m\\,K)}$ なら 6 分の 1）．\n\n次は，温度が時間とともに変わる場合に，熱の流れと温度変化を結ぶ「熱伝導方程式」$\\partial T/\\partial t = \\kappa\\,\\partial^2 T/\\partial x^2$ を学ぶ．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) Q [W]：≈133\n(2) 境界温度 [℃]：≈3.33\n(3) Q [W]：800"
+   "spec": "(1) $Q$：S (T_1 - T_2)/(d_1/k_1 + d_2/k_2)\n(2) $T_m$：T_2 + (T_1 - T_2) (d_2/k_2)/(d_1/k_1 + d_2/k_2)\n(3) $Q'$：k_2 S (T_1 - T_2)/d_2"
   },
   "methods": [],
   "tags": [
@@ -58,16 +58,16 @@
   "theme": "ランダムウォークと拡散時間",
   "topic": "ランダムウォークと拡散時間",
   "statement": {
-   "tex": "1次元の数直線上で，粒子が時間 $\\tau$ ごとに確率 $1/2$ ずつで右か左に距離 $a$ だけ跳ぶ（ランダムウォーク）．$N$ 回跳んだ後の位置を $x = s_1 + s_2 + \\cdots + s_N$（各 $s_i$ は $+a$ か $-a$）とする．\n\\begin{enumerate}\n\\item $x^2$ を展開すると $s_i^2$ の項と $s_is_j\\ (i \\ne j)$ の項が出てくる．$s_is_j$ の平均が $0$ であることを用いて，$x^2$ の平均 $\\langle x^2\\rangle$ を $N, a$ で表せ．\n\\item 時刻 $t = N\\tau$ での $\\langle x^2\\rangle$ を $\\langle x^2\\rangle = 2Dt$ と書いたときの拡散係数 $D$ を $a, \\tau$ で表せ．\n\\item 水中のショ糖分子の拡散係数は $D = 5.0\\times10^{-10}\\,\\mathrm{m^2/s}$ である．$\\sqrt{\\langle x^2\\rangle}$ が $1\\,\\mathrm{mm}$ になるまでの時間と，$1\\,\\mathrm{m}$ になるまでの時間をそれぞれ求めよ．\n\\end{enumerate}"
+   "tex": "1次元の数直線上で，粒子が時間 $\\tau$ ごとに確率 $1/2$ ずつで右か左に距離 $a$ だけ跳ぶ（ランダムウォーク）．$N$ 回跳んだ後の位置を $x = s_1 + s_2 + \\cdots + s_N$（各 $s_i$ は $+a$ か $-a$）とする．\n\\begin{enumerate}\n\\item $x^2$ を展開すると $s_i^2$ の項と $s_is_j\\ (i \\ne j)$ の項が出てくる．$s_is_j$ の平均が $0$ であることを用いて，$x^2$ の平均 $\\langle x^2\\rangle$ を $N, a$ で表せ．\n\\item 時刻 $t = N\\tau$ での $\\langle x^2\\rangle$ を $\\langle x^2\\rangle = 2Dt$ と書いたときの拡散係数 $D$ を $a, \\tau$ で表せ．\n\\item 拡散係数 $D$ の分子について，$\\sqrt{\\langle x^2\\rangle}$ が $l$ になるまでの時間 $t$ を求めよ．また，距離 $l$ を $1000$ 倍にすると，かかる時間は何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle x^2\\rangle = Na^2$ \\quad (2) $D = \\frac{a^2}{2\\tau}$ \\quad (3) $1.0\\times10^{3}\\,\\mathrm{s}$，$1.0\\times10^{9}\\,\\mathrm{s}$"
+   "tex": "(1) $\\langle x^2\\rangle = Na^2$ \\quad (2) $D = \\dfrac{a^2}{2\\tau}$ \\quad (3) $t=\\dfrac{l^2}{2D}$，$10^6$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$x^2 = \\sum_i s_i^2 + \\sum_{i \\ne j}s_is_j$．$s_i^2 = a^2$ はいつも同じで，$s_is_j$ は $+a^2$ と $-a^2$ が等確率なので平均 $0$．よって $\\langle x^2\\rangle = \\boldsymbol{Na^2}$．\n\n$N = t/\\tau$ を入れると $\\langle x^2\\rangle = \\dfrac{a^2}{\\tau}t$ なので $D = \\boldsymbol{\\dfrac{a^2}{2\\tau}}$．\n\n距離 $\\ell$ まで広がる時間は $t = \\dfrac{\\ell^2}{2D}$．$\\ell = 1\\,\\mathrm{mm}$ で $t = \\dfrac{10^{-6}}{1.0\\times10^{-9}} = \\boldsymbol{1.0\\times10^{3}\\,\\mathrm{s}}$（約17分），$\\ell = 1\\,\\mathrm{m}$ では $\\boldsymbol{1.0\\times10^{9}\\,\\mathrm{s}}$（約30年）．\n\n距離が1000倍になると時間は100万倍になる．紅茶の砂糖が混ざるのは拡散ではなく，かき混ぜる流れ（対流）のおかげである．一方，細胞の中（$10\\,\\mu\\mathrm{m}$ 程度）なら拡散は $0.1\\,\\mathrm{s}$ ほどで済む．\n\n多数の粒子の濃度 $n(x,t)$ で考えると，この運動は拡散方程式 $\\partial n/\\partial t = D\\,\\partial^2 n/\\partial x^2$ にしたがう．"
+    "tex": "$x^2 = \\sum_i s_i^2 + \\sum_{i \\ne j}s_is_j$．$s_i^2 = a^2$ はいつも同じで，$s_is_j$ は $+a^2$ と $-a^2$ が等確率なので平均 $0$．よって $\\langle x^2\\rangle = \\boldsymbol{Na^2}$．\n\n$N = t/\\tau$ を入れると $\\langle x^2\\rangle = \\dfrac{a^2}{\\tau}t$ なので $D = \\boldsymbol{\\dfrac{a^2}{2\\tau}}$．\n\n$2Dt=l^2$ より\n\\[ \\boldsymbol{t = \\frac{l^2}{2D}}. \\]\n時間は距離の 2 乗に比例するので，距離が $1000$ 倍になると時間は $\\boldsymbol{10^6}$ 倍になる．水中のショ糖（$D = 5.0\\times10^{-10}\\,\\mathrm{m^2/s}$）なら $1\\,\\mathrm{mm}$ に約 17 分，$1\\,\\mathrm{m}$ には約 30 年かかる．紅茶の砂糖が混ざるのは拡散ではなく，かき混ぜる流れ（対流）のおかげである．一方，細胞の中（$10\\,\\mu\\mathrm{m}$ 程度）なら拡散は $0.1\\,\\mathrm{s}$ ほどで済む．\n\n多数の粒子の濃度 $n(x,t)$ で考えると，この運動は拡散方程式 $\\partial n/\\partial t = D\\,\\partial^2 n/\\partial x^2$ にしたがう．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) N a^2\n(2) a^2/(2τ)\n(3) 1 mm [s]：≈1.0e3 ; 1 m [s]：≈1.0e9"
+   "spec": "(1) N a^2\n(2) a^2/(2τ)\n(3) $t$：l^2/(2 D) ; 倍率：10^6"
   },
   "methods": [],
   "tags": [
@@ -107,16 +107,16 @@
   "theme": "ニュートンの冷却則",
   "topic": "ニュートンの冷却則",
   "statement": {
-   "tex": "熱いコーヒーの温度 $T$ は，室温 $T_a$ との差に比例する速さで下がるとする（ニュートンの冷却則）：\n\\[ \\frac{dT}{dt} = -\\frac{T - T_a}{\\tau} \\]\n（$\\tau$ は正の定数）．時刻 $0$ での温度を $T_0$ とする．\n\\begin{enumerate}\n\\item $T(t)$ を $T_a, T_0, t, \\tau$ で表せ．\n\\item 室温 $20\\,\\mathrm{^\\circ C}$ で，$90\\,\\mathrm{^\\circ C}$ のコーヒーが $10$ 分後に $60\\,\\mathrm{^\\circ C}$ になった．$\\tau$ を分の単位で求めよ．\n\\item このコーヒーが $40\\,\\mathrm{^\\circ C}$ になるのは最初から何分後か．\n\\end{enumerate}"
+   "tex": "熱いコーヒーの温度 $T$ は，室温 $T_a$ との差に比例する速さで下がるとする（ニュートンの冷却則）：\n\\[ \\frac{dT}{dt} = -\\frac{T - T_a}{\\tau} \\]\n（$\\tau$ は正の定数）．時刻 $0$ での温度を $T_0$ とする．\n\\begin{enumerate}\n\\item $T(t)$ を $T_a, T_0, t, \\tau$ で表せ．\n\\item 時刻 $t_1$ に温度が $T_1$ になった．$\\tau$ を $T_a,T_0,T_1,t_1$ で表せ．\n\\item このコーヒーが温度 $T_2$（$T_a<T_2<T_0$）になる時刻 $t_2$ を $T_a,T_0,T_1,T_2,t_1$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T = T_a + (T_0 - T_a)e^{-t/\\tau}$ \\quad (2) $\\tau \\approx 17.9\\,\\mathrm{min}$ \\quad (3) $\\approx 22.4\\,\\mathrm{min}$"
+   "tex": "(1) $T = T_a + (T_0 - T_a)e^{-t/\\tau}$ \\quad (2) $\\tau=\\dfrac{t_1}{\\ln\\dfrac{T_0-T_a}{T_1-T_a}}$ \\quad (3) $t_2=t_1\\dfrac{\\ln\\dfrac{T_0-T_a}{T_2-T_a}}{\\ln\\dfrac{T_0-T_a}{T_1-T_a}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$\\theta = T - T_a$ とおくと $d\\theta/dt = -\\theta/\\tau$ なので $\\theta = \\theta_0e^{-t/\\tau}$．よって\n\\[ T = \\boldsymbol{T_a + (T_0 - T_a)e^{-t/\\tau}}. \\]\n\n$60 - 20 = (90 - 20)e^{-10/\\tau}$ より $e^{-10/\\tau} = 4/7$，\n\\[ \\tau = \\frac{10}{\\ln(7/4)} \\approx \\boldsymbol{17.9\\,\\mathrm{min}}. \\]\n\n$40 - 20 = 70e^{-t/\\tau}$ より $t = \\tau\\ln3.5 \\approx 17.9\\times1.253 \\approx \\boldsymbol{22.4\\,\\mathrm{min}}$．\n\n温度差は一定の時間ごとに同じ割合で減る（指数関数的減衰）．$\\tau$ はカップの熱容量 $C$ と表面から熱が逃げる熱伝達のしやすさ $G$ を使って $\\tau = C/G$ と書ける．コーヒーの内部の温度むらまで考えるには熱伝導方程式が必要になる．"
+    "tex": "$\\theta = T - T_a$ とおくと $d\\theta/dt = -\\theta/\\tau$ なので $\\theta = \\theta_0e^{-t/\\tau}$．よって\n\\[ T = \\boldsymbol{T_a + (T_0 - T_a)e^{-t/\\tau}}. \\]\n\n$T_1 - T_a = (T_0 - T_a)e^{-t_1/\\tau}$ より\n\\[ \\tau = \\boldsymbol{\\frac{t_1}{\\ln\\dfrac{T_0-T_a}{T_1-T_a}}}. \\]\n\n同様に $t_2=\\tau\\ln\\dfrac{T_0-T_a}{T_2-T_a}$ なので\n\\[ t_2 = \\boldsymbol{t_1\\frac{\\ln\\dfrac{T_0-T_a}{T_2-T_a}}{\\ln\\dfrac{T_0-T_a}{T_1-T_a}}}. \\]\n例えば室温 $20\\,\\mathrm{^\\circ C}$ で $90\\,\\mathrm{^\\circ C}$ のコーヒーが 10 分後に $60\\,\\mathrm{^\\circ C}$ になったなら，$40\\,\\mathrm{^\\circ C}$ になるのは約 22 分後である．\n\n温度差は一定の時間ごとに同じ割合で減る（指数関数的減衰）．$\\tau$ はカップの熱容量 $C$ と表面から熱が逃げる熱伝達のしやすさ $G$ を使って $\\tau = C/G$ と書ける．コーヒーの内部の温度むらまで考えるには熱伝導方程式が必要になる．"
    }
   ],
   "idea": {
@@ -124,7 +124,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) T_a + (T_0 - T_a) exp(-t/τ)\n(2) τ [min]：≈17.9\n(3) t [min]：≈22.4"
+   "spec": "(1) T_a + (T_0 - T_a) exp(-t/τ)\n(2) $\\tau$：t_1/ln((T_0 - T_a)/(T_1 - T_a))\n(3) $t_2$：t_1 ln((T_0 - T_a)/(T_2 - T_a))/ln((T_0 - T_a)/(T_1 - T_a))"
   },
   "methods": [],
   "tags": [
@@ -155,16 +155,16 @@
   "theme": "d 次元の点源からの拡散：平均2乗距離 2dDt",
   "topic": "d 次元の点源からの拡散：平均2乗距離 2dDt",
   "statement": {
-   "tex": "$d$ 次元で，時刻 $0$ に原点に量 $M$ を置いた拡散の解は $C=\\dfrac{M}{(4\\pi Dt)^{d/2}}e^{-r^2/4Dt}$ である．\n\\begin{enumerate}\n\\item $d=2,3$ でこれが原題の相似解の形 $\\eta F(\\xi)$ に一致することを確かめよ．\n\\item $\\langle r^2\\rangle$ を求めよ．\n\\item 3次元で $D=1\\times10^{-9}\\ \\mathrm{m^2/s}$ の分子の根平均2乗距離が $1\\ \\mathrm{mm}$ になる時間を求めよ．\n\\end{enumerate}"
+   "tex": "$d$ 次元で，時刻 $0$ に原点に量 $M$ を置いた拡散の解は $C=\\dfrac{M}{(4\\pi Dt)^{d/2}}e^{-r^2/4Dt}$ である．\n\\begin{enumerate}\n\\item $d=2,3$ でこれが原題の相似解の形 $\\eta F(\\xi)$ に一致することを確かめよ．\n\\item $\\langle r^2\\rangle$ を求めよ．\n\\item 3次元で拡散係数 $D$ の分子の根平均2乗距離が $l$ になる時間 $t$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 確認　(2) $2dDt$　(3) $\\approx170\\ \\mathrm s$"
+   "tex": "(1) 確認　(2) $\\langle r^2\\rangle=2\\,d\\,D\\,t$　(3) $t=\\dfrac{l^2}{6D}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $d=2$ で $\\eta=M/Dt$，$d=3$ で $\\eta=M/(Dt)^{3/2}$，$\\xi=r/\\sqrt{Dt}$ の関数．\n\n(2) 各方向の分散 $2Dt$ で $\\boldsymbol{2dDt}$．\n\n(3) $6Dt=10^{-6}$：$\\boldsymbol{t\\approx170\\ \\mathrm s}$（細胞の大きさ $10\\ \\mu$m なら $0.02$ s）．"
+    "tex": "(1) $d=2$ で $\\eta=M/Dt$，$d=3$ で $\\eta=M/(Dt)^{3/2}$，$\\xi=r/\\sqrt{Dt}$ の関数．\n\n(2) 解は各方向に独立なガウス分布の積で，各方向の分散は $2Dt$．$r^2=x_1^2+\\cdots+x_d^2$ なので $\\langle r^2\\rangle=\\boldsymbol{2dDt}$．\n\n(3) $6Dt=l^2$ より $\\boldsymbol{t=\\dfrac{l^2}{6D}}$．$D=1\\times10^{-9}\\ \\mathrm{m^2/s}$ の分子なら $l=1\\ \\mathrm{mm}$ で約 $170\\ \\mathrm s$，細胞の大きさ $10\\ \\mu$m なら $0.02$ s である．"
    }
   ],
   "idea": {
@@ -172,7 +172,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) [s]：≈170"
+   "spec": "(1) 記述\n(2) 2 d D t\n(3) $t$：l^2/(6 D)"
   },
   "methods": [],
   "tags": [
@@ -253,16 +253,16 @@
   "theme": "円筒・球殻の定常熱伝導と臨界断熱半径",
   "topic": "円筒・球殻の定常熱伝導と臨界断熱半径",
   "statement": {
-   "tex": "熱伝導率 $k$ の物質で，内半径 $a$，外半径 $b$ の殻を考える．内面の温度を $T_1$，外面を $T_2$（$T_1 > T_2$）とし，定常状態とする．\n\\begin{enumerate}\n\\item 長さ $L$ の円筒殻で，半径 $r$ の円筒面を通る熱流 $Q$ は $r$ によらない．フーリエの法則 $Q = -k\\cdot2\\pi rL\\dfrac{dT}{dr}$ を積分して $Q$ を求めよ．\n\\item 球殻について同様に $Q$ を求めよ．\n\\item 半径 $a$ の管に熱伝導率 $k$ の断熱材を外半径 $r$ まで巻く．断熱材の外面から空気へは，単位面積あたり $h(T_{\\mathrm{surf}} - T_{\\mathrm{air}})$ の熱が逃げる．管表面と空気の間の全熱抵抗 $R(r) = \\dfrac{\\ln(r/a)}{2\\pi kL} + \\dfrac{1}{2\\pi rL h}$ を最小にする $r$（臨界断熱半径）を求めよ．\n\\item $k = 0.050\\,\\mathrm{W/(m\\,K)}$，$h = 10\\,\\mathrm{W/(m^2\\,K)}$ のとき臨界断熱半径を求めよ．\n\\end{enumerate}"
+   "tex": "熱伝導率 $k$ の物質で，内半径 $a$，外半径 $b$ の殻を考える．内面の温度を $T_1$，外面を $T_2$（$T_1 > T_2$）とし，定常状態とする．\n\\begin{enumerate}\n\\item 長さ $L$ の円筒殻で，半径 $r$ の円筒面を通る熱流 $Q$ は $r$ によらない．フーリエの法則 $Q = -k\\cdot2\\pi rL\\dfrac{dT}{dr}$ を積分して $Q$ を求めよ．\n\\item 球殻について同様に $Q$ を求めよ．\n\\item 半径 $a$ の管に熱伝導率 $k$ の断熱材を外半径 $r$ まで巻く．断熱材の外面から空気へは，単位面積あたり $h(T_{\\mathrm{surf}} - T_{\\mathrm{air}})$ の熱が逃げる．管表面と空気の間の全熱抵抗 $R(r) = \\dfrac{\\ln(r/a)}{2\\pi kL} + \\dfrac{1}{2\\pi rL h}$ を最小にする $r$（臨界断熱半径）を求めよ．\n\\item $a<k/h$ のとき，断熱材を巻かない場合（$r=a$）と比べ，臨界断熱半径まで巻いたときの全熱抵抗の変化 $R(k/h)-R(a)$ を求め，その符号を答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $Q = \\frac{2\\pi (T_1 - T_2)kL}{\\ln(b/a)}$ \\quad (2) $Q = \\frac{4\\pi (T_1 - T_2)kab}{b - a}$ \\quad (3) $r = \\frac{k}{h}$ \\quad (4) $5.0\\times10^{-3}\\,\\mathrm{m}$"
+   "tex": "(1) $Q = \\frac{2\\pi (T_1 - T_2)kL}{\\ln(b/a)}$ \\quad (2) $Q = \\frac{4\\pi (T_1 - T_2)kab}{b - a}$ \\quad (3) $r = \\frac{k}{h}$ \\quad (4) $\\dfrac{1}{2\\pi kL}\\left[\\ln\\dfrac{k}{ha}+1-\\dfrac{k}{ha}\\right]$（負）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$dT = -\\dfrac{Q}{2\\pi kL}\\dfrac{dr}{r}$ を $a$ から $b$ まで積分して $T_1 - T_2 = \\dfrac{Q}{2\\pi kL}\\ln\\dfrac{b}{a}$，\n\\[ Q = \\boldsymbol{\\frac{2\\pi kL(T_1 - T_2)}{\\ln(b/a)}}. \\]\n\n球殻では $Q = -k\\cdot4\\pi r^2\\dfrac{dT}{dr}$ より $T_1 - T_2 = \\dfrac{Q}{4\\pi k}\\left(\\dfrac{1}{a} - \\dfrac{1}{b}\\right)$，\n\\[ Q = \\boldsymbol{\\frac{4\\pi kab(T_1 - T_2)}{b - a}}. \\]\n$b \\to \\infty$ でも $Q \\to 4\\pi ka(T_1 - T_2)$ と有限にとどまる（3次元では無限遠への熱抵抗が有限）．\n\n$\\dfrac{dR}{dr} = \\dfrac{1}{2\\pi L}\\left(\\dfrac{1}{kr} - \\dfrac{1}{hr^2}\\right) = 0$ より $r = \\boldsymbol{\\dfrac{k}{h}}$（ここで $R$ は最小）．$a < k/h$ の細い管では，断熱材を $k/h$ まで巻くとかえって熱が逃げやすくなる（表面積が増える効果が勝つ）．\n\n$r = 0.050/10 = \\boldsymbol{5.0\\times10^{-3}\\,\\mathrm{m}}$．電線の被覆はこの効果で放熱を助けている．"
+    "tex": "$dT = -\\dfrac{Q}{2\\pi kL}\\dfrac{dr}{r}$ を $a$ から $b$ まで積分して $T_1 - T_2 = \\dfrac{Q}{2\\pi kL}\\ln\\dfrac{b}{a}$，\n\\[ Q = \\boldsymbol{\\frac{2\\pi kL(T_1 - T_2)}{\\ln(b/a)}}. \\]\n\n球殻では $Q = -k\\cdot4\\pi r^2\\dfrac{dT}{dr}$ より $T_1 - T_2 = \\dfrac{Q}{4\\pi k}\\left(\\dfrac{1}{a} - \\dfrac{1}{b}\\right)$，\n\\[ Q = \\boldsymbol{\\frac{4\\pi kab(T_1 - T_2)}{b - a}}. \\]\n$b \\to \\infty$ でも $Q \\to 4\\pi ka(T_1 - T_2)$ と有限にとどまる（3次元では無限遠への熱抵抗が有限）．\n\n$\\dfrac{dR}{dr} = \\dfrac{1}{2\\pi L}\\left(\\dfrac{1}{kr} - \\dfrac{1}{hr^2}\\right) = 0$ より $r = \\boldsymbol{\\dfrac{k}{h}}$（ここで $R$ は最小）．$a < k/h$ の細い管では，断熱材を $k/h$ まで巻くとかえって熱が逃げやすくなる（表面積が増える効果が勝つ）．\n\n$R(a)=\\dfrac{1}{2\\pi aLh}$，$R(k/h)=\\dfrac{\\ln(k/(ha))}{2\\pi kL}+\\dfrac{1}{2\\pi kL}$ より，$x=\\dfrac{k}{ha}>1$ とおくと\n\\[ R\\!\\left(\\frac kh\\right)-R(a)=\\boldsymbol{\\frac{1}{2\\pi kL}\\left[\\ln\\frac{k}{ha}+1-\\frac{k}{ha}\\right]}=\\frac{\\ln x+1-x}{2\\pi kL}. \\]\n$g(x)=\\ln x+1-x$ は $g(1)=0$，$g'(x)=1/x-1<0$（$x>1$）なので\\textbf{負}．断熱材を巻いたのに熱抵抗が下がり，熱が逃げやすくなる．$k=0.05\\,\\mathrm{W/(m\\,K)}$，$h=10\\,\\mathrm{W/(m^2\\,K)}$ なら $k/h=5\\,\\mathrm{mm}$ で，細い電線の被覆はこの効果で放熱を助けている．"
    }
   ],
   "idea": {
@@ -270,7 +270,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 2π k L (T_1 - T_2)/ln(b/a)\n(2) 4π k a b (T_1 - T_2)/(b - a)\n(3) k/h\n(4) r [m]：≈5.0e-3"
+   "spec": "(1) 2π k L (T_1 - T_2)/ln(b/a)\n(2) 4π k a b (T_1 - T_2)/(b - a)\n(3) k/h\n(4) (ln(k/(h a)) + 1 - k/(h a))/(2π k L)"
   },
   "methods": [],
   "tags": [
@@ -400,24 +400,24 @@
   "theme": "両端を閉じた管の濃度が平均に近づくまでの時間",
   "topic": "両端を閉じた管の濃度が平均に近づくまでの時間",
   "statement": {
-   "tex": "長さ $L$ の管で，$C(x,0)=C_0+(C_1-C_0)x/L$ から両端を閉じた後の濃度は\n\\[\nC=C_0+(C_1-C_0)\\left[\\frac12-\\sum_{n\\ \\text{奇数}}\\frac{4}{n^2\\pi^2}\\cos\\frac{n\\pi x}{L}e^{-n^2\\pi^2Dt/L^2}\\right]\n\\]\nである．\n\\begin{enumerate}\n\\item 端 $x=0$ での平均からのずれが $(C_1-C_0)$ の $1\\%$ 以下になる時間を，最初の項だけで見積もれ．\n\\item $L=1\\ \\mathrm{mm}$，$D=1\\times10^{-9}\\ \\mathrm{m^2/s}$ の値を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $L$ の管で，$C(x,0)=C_0+(C_1-C_0)x/L$ から両端を閉じた後の濃度は（$D$ は拡散係数）\n\\[\nC=C_0+(C_1-C_0)\\left[\\frac12-\\sum_{n\\ \\text{奇数}}\\frac{4}{n^2\\pi^2}\\cos\\frac{n\\pi x}{L}e^{-n^2\\pi^2Dt/L^2}\\right]\n\\]\nである．\n\\begin{enumerate}\n\\item 端 $x=0$ での平均からのずれが $(C_1-C_0)$ の $\\varepsilon$ 倍（$\\varepsilon\\ll1$）以下になる時間 $t_1$ を，最初の項だけで見積もれ．\n\\item 時刻 $t_1$ で，$n=3$ の項の大きさは $n=1$ の項の何倍か．$\\varepsilon$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $t\\approx\\dfrac{L^2}{\\pi^2D}\\ln\\dfrac{4}{0.01\\pi^2}\\approx0.375\\dfrac{L^2}{D}$　(2) $\\approx375\\ \\mathrm s$"
+   "tex": "(1) $t_1=\\dfrac{L^2}{\\pi^2D}\\ln\\dfrac{4}{\\pi^2\\varepsilon}$　(2) $\\dfrac19\\left(\\dfrac{\\pi^2\\varepsilon}{4}\\right)^8$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{4}{\\pi^2}e^{-\\pi^2Dt/L^2}=0.01$ より $\\boldsymbol{t=0.375L^2/D}$．\n\n(2) $\\boldsymbol{375\\ \\mathrm s}$（約6分）．高次の項は $e^{-9\\pi^2Dt/L^2}$ でずっと速く消える．"
+    "tex": "(1) 最初の項は $x=0$ で $\\dfrac{4}{\\pi^2}e^{-\\pi^2Dt/L^2}(C_1-C_0)$．これが $\\varepsilon(C_1-C_0)$ になる時刻は\n\\[ \\boldsymbol{t_1=\\frac{L^2}{\\pi^2D}\\ln\\frac{4}{\\pi^2\\varepsilon}}. \\]\n緩和の時間尺度は最も遅いモードの $L^2/(\\pi^2D)$ で，要求精度には対数でしか依存しない（$\\varepsilon=0.01$ なら $t_1\\approx0.375L^2/D$，$L=1\\,\\mathrm{mm}$，$D=10^{-9}\\,\\mathrm{m^2/s}$ で約 6 分）．\n\n(2) $n=3$ の項と $n=1$ の項の比は $\\dfrac19e^{-8\\pi^2Dt/L^2}$．$e^{-\\pi^2Dt_1/L^2}=\\dfrac{\\pi^2\\varepsilon}{4}$ なので\n\\[ \\boldsymbol{\\frac19\\left(\\frac{\\pi^2\\varepsilon}{4}\\right)^8}. \\]\n$\\varepsilon=0.01$ でも $10^{-10}$ 程度で，高次の項はずっと速く消えるので最初の項だけの見積もりで十分である．"
    }
   ],
   "idea": {
-   "tex": "拡散の緩和は最も遅いモードで決まり，時間尺度は $L^2/\\pi^2D$ である．原題の解の導出を，緩和時間の見積もりにした．"
+   "tex": "拡散の緩和は最も遅いモードで決まり，時間尺度は $L^2/\\pi^2D$ である．高次モードは $e^{-n^2\\pi^2Dt/L^2}$ でずっと速く消える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [s]：≈375"
+   "spec": "(1) $t_1$：L^2/(π^2 D) ln(4/(π^2 ε))\n(2) 1/9 (π^2 ε/4)^8"
   },
   "methods": [],
   "tags": [
@@ -449,16 +449,16 @@
   "theme": "通電線の内部温度分布とBiot数",
   "topic": "通電線の内部温度分布とBiot数",
   "statement": {
-   "tex": "半径 $r_0$，抵抗率 $\\rho$，熱伝導率 $\\kappa$ の長い円柱導線に一様な電流密度で電流 $I$ を流す．表面からの放熱は単位面積・単位温度差あたり $\\nu$ で，周囲温度を $\\theta_0$ とする．定常状態を考える．\n\\begin{enumerate}\n\\item 表面温度の上昇 $\\theta_s-\\theta_0$ を求めよ．\n\\item 導線内部の温度分布 $\\theta(r)$ を求め，中心と表面の温度差を求めよ．\n\\item 中心–表面の温度差と表面–周囲の温度差の比を求め，銅線（$r_0=1\\ \\mathrm{mm}$，$\\kappa=400\\ \\mathrm{W/(m\\,K)}$，$\\nu=10\\ \\mathrm{W/(m^2K)}$）でその値を評価せよ．\n\\end{enumerate}"
+   "tex": "半径 $r_0$，抵抗率 $\\rho$，熱伝導率 $\\kappa$ の長い円柱導線に一様な電流密度で電流 $I$ を流す．表面からの放熱は単位面積・単位温度差あたり $\\nu$ で，周囲温度を $\\theta_0$，導線の表面温度を $\\theta_s$ とする．定常状態を考える．\n\\begin{enumerate}\n\\item 表面温度の上昇 $\\theta_s-\\theta_0$ を求めよ．\n\\item 導線内部の温度分布 $\\theta(r)$ を $\\theta_s$ を用いて表し，中心と表面の温度差を求めよ．\n\\item 中心–表面の温度差と表面–周囲の温度差の比を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\theta_s-\\theta_0=\\dfrac{I^2\\rho}{2\\pi^2r_0^3\\nu}$　(2) $\\theta(r)=\\theta_s+\\dfrac{q}{4\\kappa}(r_0^2-r^2)$，$q=\\dfrac{I^2\\rho}{\\pi^2r_0^4}$；中心–表面差 $\\dfrac{I^2\\rho}{4\\pi^2\\kappa r_0^2}$　(3) $\\dfrac{r_0\\nu}{2\\kappa}=1.25\\times10^{-5}$"
+   "tex": "(1) $\\theta_s-\\theta_0=\\dfrac{I^2\\rho}{2\\pi^2r_0^3\\nu}$　(2) $\\theta(r)=\\theta_s+\\dfrac{I^2\\rho}{4\\pi^2\\kappa r_0^4}(r_0^2-r^2)$；中心–表面差 $\\dfrac{I^2\\rho}{4\\pi^2\\kappa r_0^2}$　(3) $\\dfrac{r_0\\nu}{2\\kappa}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "単位体積の発熱 $q=\\rho J^2=\\dfrac{\\rho I^2}{\\pi^2r_0^4}$．\n\n(1) 単位長さで $q\\pi r_0^2=2\\pi r_0\\nu(\\theta_s-\\theta_0)$ より $\\theta_s-\\theta_0=\\dfrac{qr_0}{2\\nu}=\\dfrac{I^2\\rho}{2\\pi^2r_0^3\\nu}$（〔32・3〕と同じ）．\n\n(2) 半径 $r$ の円柱内の発熱が外へ伝導される：$-\\kappa\\dfrac{d\\theta}{dr}2\\pi r=q\\pi r^2$，$\\dfrac{d\\theta}{dr}=-\\dfrac{qr}{2\\kappa}$．積分して $\\theta=\\theta_s+\\dfrac{q}{4\\kappa}(r_0^2-r^2)$．中心–表面差 $\\dfrac{qr_0^2}{4\\kappa}=\\dfrac{I^2\\rho}{4\\pi^2\\kappa r_0^2}$．\n\n(3) 比 $=\\dfrac{qr_0^2/4\\kappa}{qr_0/2\\nu}=\\dfrac{r_0\\nu}{2\\kappa}$（Biot 数の半分）．$=\\dfrac{10^{-3}\\times10}{800}=1.25\\times10^{-5}$．金属線では内部はほぼ一様温度で，温度上昇は表面の放熱だけで決まる．"
+    "tex": "単位体積の発熱 $q=\\rho J^2=\\dfrac{\\rho I^2}{\\pi^2r_0^4}$．\n\n(1) 単位長さで $q\\pi r_0^2=2\\pi r_0\\nu(\\theta_s-\\theta_0)$ より\n\\[ \\boldsymbol{\\theta_s-\\theta_0=\\frac{qr_0}{2\\nu}=\\frac{I^2\\rho}{2\\pi^2r_0^3\\nu}}. \\]\n\n(2) 半径 $r$ の円柱内の発熱が外へ伝導される：$-\\kappa\\dfrac{d\\theta}{dr}2\\pi r=q\\pi r^2$，$\\dfrac{d\\theta}{dr}=-\\dfrac{qr}{2\\kappa}$．積分して\n\\[ \\boldsymbol{\\theta(r)=\\theta_s+\\frac{q}{4\\kappa}(r_0^2-r^2)=\\theta_s+\\frac{I^2\\rho}{4\\pi^2\\kappa r_0^4}(r_0^2-r^2)}. \\]\n中心–表面差は $\\dfrac{qr_0^2}{4\\kappa}=\\boldsymbol{\\dfrac{I^2\\rho}{4\\pi^2\\kappa r_0^2}}$．\n\n(3) \n\\[ \\frac{qr_0^2/4\\kappa}{qr_0/2\\nu}=\\boldsymbol{\\frac{r_0\\nu}{2\\kappa}} \\]\n（Biot 数 $r_0\\nu/\\kappa$ の半分）．銅線（$r_0=1\\,\\mathrm{mm}$，$\\kappa=400\\,\\mathrm{W/(m\\,K)}$，$\\nu=10\\,\\mathrm{W/(m^2K)}$）では約 $10^{-5}$ と非常に小さい．金属線では内部はほぼ一様温度で，温度上昇は表面の放熱だけで決まる．"
    }
   ],
   "idea": {
@@ -466,7 +466,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\theta(r)$：θ_s +((q)/(4 κ))(r_0 ^(2)- r ^(2)) ; $q$：((I ^(2) ρ)/(pi ^(2) r_0 ^(4))) ; 中心–表面差：((I ^(2) ρ)/(4 pi ^(2) κ r_0 ^(2)))\n(3) 記述"
+   "spec": "(1) $\\theta_s-\\theta_0$：I^2 ρ/(2 π^2 r_0^3 ν)\n(2) $\\theta(r)$：θ_s + I^2 ρ (r_0^2 - r^2)/(4 π^2 κ r_0^4) ; 中心–表面差：I^2 ρ/(4 π^2 κ r_0^2)\n(3) r_0 ν/(2 κ)"
   },
   "methods": [],
   "tags": [
@@ -547,16 +547,16 @@
   "theme": "Newtonの冷却則の誤差評価と厳密な放射冷却",
   "topic": "Newtonの冷却則の誤差評価と厳密な放射冷却",
   "statement": {
-   "tex": "熱容量 $C$，表面積 $A$ の黒体が，温度 $T_0$ の周囲（黒体放射とみなす）の中で放射だけで冷える．$\\sigma=5.67\\times10^{-8}\\ \\mathrm{W\\,m^{-2}\\,K^{-4}}$ とする．\n\\begin{enumerate}\n\\item 温度差 $\\Delta T=T-T_0$ が小さいとき冷却は Newton の冷却則 $dQ/dt=hA\\,\\Delta T$ に従う．放射による熱伝達係数 $h$ を $T_0$ で表し，$T_0=300\\ \\mathrm K$ での数値を求めよ．\n\\item 厳密な放射の正味損失率と (1) の線形近似の比を $x=\\Delta T/T_0$ の多項式で表せ．$T_0=300\\ \\mathrm K$ のとき，線形近似が正味損失率を 10\\% 過小評価するのは $\\Delta T$ がいくらのときか．\n\\item 物体が $2T_0$ から $1.5T_0$ まで冷えるのに要する時間を，厳密な式と Newton の冷却則（$h$ は (1) のもの）とでそれぞれ $\\tau=C/(4\\sigma AT_0^3)$ を単位として求めよ．\n\\end{enumerate}"
+   "tex": "熱容量 $C$，表面積 $A$ の黒体が，温度 $T_0$ の周囲（黒体放射とみなす）の中で放射だけで冷える．シュテファン＝ボルツマン定数を $\\sigma$ とする．\n\\begin{enumerate}\n\\item 温度差 $\\Delta T=T-T_0$ が小さいとき冷却は Newton の冷却則 $dQ/dt=hA\\,\\Delta T$ に従う．放射による熱伝達係数 $h$ を $\\sigma,T_0$ で表せ．\n\\item 厳密な放射の正味損失率と (1) の線形近似の比を $x=\\Delta T/T_0$ の多項式で表せ．$x\\ll1$ として，線形近似の相対誤差（比 $-1$）が $\\varepsilon$ になる温度差 $\\Delta T$ を $x$ の 1 次の範囲で求めよ．\n\\item 物体が $2T_0$ から $1.5T_0$ まで冷えるのに要する時間を，厳密な式と Newton の冷却則（$h$ は (1) のもの）とでそれぞれ $\\tau=C/(4\\sigma AT_0^3)$ を用いて表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $h=4\\sigma T_0^3\\approx6.1\\ \\mathrm{W\\,m^{-2}K^{-1}}$　(2) 比 $=1+\\frac32x+x^2+\\frac14x^3$，$\\Delta T\\approx19\\ \\mathrm K$　(3) 厳密 $\\approx0.262\\tau$，Newton $=\\ln2\\,\\tau\\approx0.693\\tau$"
+   "tex": "(1) $h=4\\sigma T_0^3$　(2) 比 $=1+\\frac32x+x^2+\\frac14x^3$，$\\Delta T\\approx\\dfrac{2\\varepsilon T_0}{3}$　(3) 厳密 $\\tau\\left[\\ln\\dfrac53-2\\left(\\arctan2-\\arctan\\dfrac32\\right)\\right]$，Newton $\\tau\\ln2$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $dQ/dt=\\sigma A(T^4-T_0^4)=\\sigma A(T-T_0)(T+T_0)(T^2+T_0^2)\\approx4\\sigma T_0^3A\\,\\Delta T$．よって $h=4\\sigma T_0^3=4(5.67\\times10^{-8})(300)^3\\approx6.1\\ \\mathrm{W\\,m^{-2}K^{-1}}$．\n\n(2) $T=T_0(1+x)$ として\n\\[\n\\frac{T^4-T_0^4}{4T_0^3\\Delta T}=\\frac{(1+x)^4-1}{4x}=1+\\frac32x+x^2+\\frac14x^3 .\n\\]\n線形近似が真の値の 90\\% となる（真の値の 10\\% 分を過小評価する）条件として $\\frac32x+x^2+\\frac14x^3=0.1$ を解くと $x\\approx0.0639$，$\\Delta T\\approx19\\ \\mathrm K$．室温付近でも十数 K の温度差で 1 割の誤差になる．\n\n(3) 厳密には $C\\,dT/dt=-\\sigma A(T^4-T_0^4)$．$y=T/T_0$ とおくと\n\\[\nt_{\\text{厳密}}=\\frac{C}{\\sigma AT_0^3}\\int_{1.5}^{2}\\frac{dy}{y^4-1}=4\\tau\\int_{1.5}^{2}\\frac{dy}{y^4-1}.\n\\]\n$\\displaystyle\\int\\frac{dy}{y^4-1}=\\frac14\\ln\\frac{y-1}{y+1}-\\frac12\\arctan y$ を用いて $\\int_{1.5}^2=0.06553$，よって $t_{\\text{厳密}}\\approx0.262\\tau$．\n\nNewton 則では $\\Delta T$ が $T_0$ から $0.5T_0$ に半減するので $t_{\\text N}=\\tau\\ln2\\approx0.693\\tau$．高温では放射が $T^4$ で強まるため，実際の冷却は Newton 則の予測の約 0.38 倍の時間で済む．"
+    "tex": "(1) $dQ/dt=\\sigma A(T^4-T_0^4)=\\sigma A(T-T_0)(T+T_0)(T^2+T_0^2)\\approx4\\sigma T_0^3A\\,\\Delta T$．よって $\\boldsymbol{h=4\\sigma T_0^3}$（$T_0=300\\,\\mathrm K$ で約 $6\\,\\mathrm{W\\,m^{-2}K^{-1}}$）．\n\n(2) $T=T_0(1+x)$ として\n\\[\n\\frac{T^4-T_0^4}{4T_0^3\\Delta T}=\\frac{(1+x)^4-1}{4x}=\\boldsymbol{1+\\frac32x+x^2+\\frac14x^3} .\n\\]\n$x\\ll1$ では相対誤差は $\\frac32x$ なので，$\\frac32\\dfrac{\\Delta T}{T_0}=\\varepsilon$ より\n\\[ \\boldsymbol{\\Delta T\\approx\\frac{2\\varepsilon T_0}{3}}. \\]\n室温付近（$T_0=300\\,\\mathrm K$）でも十数 K の温度差で 1 割の誤差になる．\n\n(3) 厳密には $C\\,dT/dt=-\\sigma A(T^4-T_0^4)$．$y=T/T_0$ とおくと\n\\[\nt_{\\text{厳密}}=\\frac{C}{\\sigma AT_0^3}\\int_{1.5}^{2}\\frac{dy}{y^4-1}=4\\tau\\int_{1.5}^{2}\\frac{dy}{y^4-1}.\n\\]\n$\\displaystyle\\int\\frac{dy}{y^4-1}=\\frac14\\ln\\frac{y-1}{y+1}-\\frac12\\arctan y$ を用いて\n\\[ t_{\\text{厳密}}=4\\tau\\left[\\frac14\\ln\\frac{1/3}{1/5}-\\frac12\\left(\\arctan2-\\arctan\\frac32\\right)\\right]=\\boldsymbol{\\tau\\left[\\ln\\frac53-2\\left(\\arctan2-\\arctan\\frac32\\right)\\right]}\\approx0.262\\tau. \\]\nNewton 則では $C\\,d\\Delta T/dt=-4\\sigma AT_0^3\\Delta T$ で $\\Delta T$ が $T_0$ から $0.5T_0$ に半減するので $\\boldsymbol{t_{\\text N}=\\tau\\ln2}\\approx0.693\\tau$．高温では放射が $T^4$ で強まるため，実際の冷却は Newton 則の予測の約 0.38 倍の時間で済む．"
    }
   ],
   "idea": {
@@ -564,7 +564,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $h$ [W m⁻²K⁻¹]：≈6.1\n(2) 記述\n(3) 記述"
+   "spec": "(1) $h$：4 σ T_0^3\n(2) $\\Delta T$：2 ε T_0/3\n(3) 厳密：τ (ln(5/3) - 2 (arctan(2) - arctan(3/2))) ; Newton：τ ln(2)"
   },
   "methods": [],
   "tags": [
@@ -597,16 +597,16 @@
   "theme": "大小の球の放射冷却と温度の逆転",
   "topic": "大小の球の放射冷却と温度の逆転",
   "statement": {
-   "tex": "同じ材質（密度 $\\rho_m$，比熱 $c_p$，一定とする）で表面が黒体の 2 つの球がある．小球の半径は $a$，大球の半径は $4a$ である．時刻 $t=0$ に小球の温度は $2T_0$，大球の温度は $T_0$ であった．各球は内部で温度が一様に保たれ，放射によってのみ熱を失い，周囲からの吸収は無視できるとする．\n\\begin{enumerate}\n\\item 半径 $R$ の球の温度変化率を $\\dfrac{dT}{dt}=-\\dfrac{\\kappa T^4}{R}$ と書くとき，$\\kappa$ を求めよ．また $t=0$ における小球と大球の冷却速度の比を求めよ．\n\\item 2 球の温度が等しくなる時刻 $t^*$ と，そのときの温度 $T^*$ を求めよ．\n\\item $a=1.0\\ \\mathrm{cm}$，$T_0=800\\ \\mathrm K$，$\\rho_m=7.87\\times10^3\\ \\mathrm{kg/m^3}$，$c_p=450\\ \\mathrm{J\\,kg^{-1}K^{-1}}$，$\\sigma=5.67\\times10^{-8}\\ \\mathrm{W\\,m^{-2}K^{-4}}$ として $t^*$ と $T^*$ の数値を求めよ．\n\\end{enumerate}"
+   "tex": "同じ材質（密度 $\\rho_m$，比熱 $c_p$，一定とする）で表面が黒体の 2 つの球がある．小球の半径は $a$，大球の半径は $4a$ である．時刻 $t=0$ に小球の温度は $2T_0$，大球の温度は $T_0$ であった．各球は内部で温度が一様に保たれ，放射によってのみ熱を失い，周囲からの吸収は無視できるとする．シュテファン＝ボルツマン定数を $\\sigma$ とする．\n\\begin{enumerate}\n\\item 半径 $R$ の球の温度変化率を $\\dfrac{dT}{dt}=-\\dfrac{\\kappa T^4}{R}$ と書くとき，$\\kappa$ を求めよ．また $t=0$ における小球と大球の冷却速度の比を求めよ．\n\\item 2 球の温度が等しくなる時刻 $t^*$ を $a,\\kappa,T_0$ で，そのときの温度 $T^*$ を $T_0$ で表せ．\n\\item $t^*$ を $a,T_0,\\rho_m,c_p,\\sigma$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\kappa=\\dfrac{3\\sigma}{\\rho_mc_p}$，比 $64$　(2) $t^*=\\dfrac{7a}{18\\kappa T_0^3}$，$T^*=\\left(\\dfrac{24}{31}\\right)^{1/3}T_0$　(3) $t^*\\approx1.6\\times10^2\\ \\mathrm s$，$T^*\\approx735\\ \\mathrm K$"
+   "tex": "(1) $\\kappa=\\dfrac{3\\sigma}{\\rho_mc_p}$，比 $64$　(2) $t^*=\\dfrac{7a}{18\\kappa T_0^3}$，$T^*=\\left(\\dfrac{24}{31}\\right)^{1/3}T_0$　(3) $t^*=\\dfrac{7a\\rho_mc_p}{54\\sigma T_0^3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\rho_m\\frac43\\pi R^3c_p\\dfrac{dT}{dt}=-4\\pi R^2\\sigma T^4$ より $\\dfrac{dT}{dt}=-\\dfrac{3\\sigma}{\\rho_mc_p}\\dfrac{T^4}{R}$，$\\kappa=3\\sigma/(\\rho_mc_p)$．\n$t=0$ での比は $\\dfrac{(2T_0)^4/a}{T_0^4/(4a)}=64$．\n\n(2) $\\dfrac{d}{dt}\\dfrac1{T^3}=\\dfrac{3\\kappa}{R}$ より $\\dfrac1{T^3}=\\dfrac1{T_i^3}+\\dfrac{3\\kappa t}{R}$．\n\\[\n\\text{小球: }\\frac1{8T_0^3}+\\frac{3\\kappa t}{a},\\qquad\n\\text{大球: }\\frac1{T_0^3}+\\frac{3\\kappa t}{4a}.\n\\]\n等しいとおくと $\\dfrac94\\dfrac{\\kappa t}{a}=\\dfrac7{8T_0^3}$，$t^*=\\dfrac{7a}{18\\kappa T_0^3}$．このとき\n\\[\n\\frac1{T^{*3}}=\\frac1{T_0^3}+\\frac{3}{4a}\\cdot\\frac{7a}{18T_0^3}=\\frac{31}{24T_0^3},\\qquad T^*=\\left(\\frac{24}{31}\\right)^{1/3}T_0 .\n\\]\n以後は小球のほうが低温になる（温度の逆転）．\n\n(3) $\\kappa=3(5.67\\times10^{-8})/(7.87\\times10^3\\times450)=4.80\\times10^{-14}\\ \\mathrm{m\\,K^{-3}s^{-1}}$．\n$t^*=\\dfrac{7\\times0.010}{18\\times4.80\\times10^{-14}\\times(800)^3}\\approx1.6\\times10^2\\ \\mathrm s$，$T^*=800\\times(24/31)^{1/3}\\approx735\\ \\mathrm K$．"
+    "tex": "(1) $\\rho_m\\frac43\\pi R^3c_p\\dfrac{dT}{dt}=-4\\pi R^2\\sigma T^4$ より $\\dfrac{dT}{dt}=-\\dfrac{3\\sigma}{\\rho_mc_p}\\dfrac{T^4}{R}$，$\\boldsymbol{\\kappa=3\\sigma/(\\rho_mc_p)}$．\n$t=0$ での比は $\\dfrac{(2T_0)^4/a}{T_0^4/(4a)}=\\boldsymbol{64}$．\n\n(2) $\\dfrac{d}{dt}\\dfrac1{T^3}=\\dfrac{3\\kappa}{R}$ より $\\dfrac1{T^3}=\\dfrac1{T_i^3}+\\dfrac{3\\kappa t}{R}$．\n\\[\n\\text{小球: }\\frac1{8T_0^3}+\\frac{3\\kappa t}{a},\\qquad\n\\text{大球: }\\frac1{T_0^3}+\\frac{3\\kappa t}{4a}.\n\\]\n等しいとおくと $\\dfrac94\\dfrac{\\kappa t}{a}=\\dfrac7{8T_0^3}$，$\\boldsymbol{t^*=\\dfrac{7a}{18\\kappa T_0^3}}$．このとき\n\\[\n\\frac1{T^{*3}}=\\frac1{T_0^3}+\\frac{3}{4a}\\cdot\\frac{7a}{18T_0^3}=\\frac{31}{24T_0^3},\\qquad \\boldsymbol{T^*=\\left(\\frac{24}{31}\\right)^{1/3}T_0} .\n\\]\n以後は小球のほうが低温になる（温度の逆転）．\n\n(3) (1) の $\\kappa$ を代入して\n\\[ \\boldsymbol{t^*=\\frac{7a\\rho_mc_p}{54\\sigma T_0^3}}. \\]\n鉄球（$a=1\\,\\mathrm{cm}$，$T_0=800\\,\\mathrm K$）では約 $1.6\\times10^2\\,\\mathrm s$ である．"
    }
   ],
   "idea": {
@@ -614,7 +614,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\kappa$：((3 σ)/(ρ_m c_p)) ; 比：64\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\kappa$：3 σ/(ρ_m c_p) ; 比：64\n(2) $t^*$：7 a/(18 κ T_0^3) ; $T^*$：(24/31)^(1/3) T_0\n(3) $t^*$：7 a ρ_m c_p/(54 σ T_0^3)"
   },
   "methods": [],
   "tags": [
@@ -647,16 +647,16 @@
   "theme": "有限の棒の温度緩和（フーリエ級数）",
   "topic": "有限の棒の温度緩和（フーリエ級数）",
   "statement": {
-   "tex": "長さ $L$ の細い棒（熱拡散率 $\\kappa$）の温度 $T(x, t)$ が $\\dfrac{\\partial T}{\\partial t} = \\kappa\\dfrac{\\partial^2 T}{\\partial x^2}$ にしたがう．はじめ棒全体が温度 $T_0$ で，時刻 $0$ から両端 $x = 0, L$ を温度 $0$ に保つ．側面からの熱の出入りはない．\n\\begin{enumerate}\n\\item 解を $T = \\displaystyle\\sum_{n=1}^{\\infty}b_n\\sin\\frac{n\\pi x}{L}\\,e^{-t/\\tau_n}$ と書くとき，$\\tau_n$ を求めよ．\n\\item 奇数の $n$ に対する係数 $b_n$ を求めよ（偶数の $n$ では $0$ となる）．\n\\item 十分時間がたった後の中央 $x = L/2$ の温度は $T \\approx \\dfrac{4T_0}{\\pi}e^{-t/\\tau_1}$ となる．鋼の棒（$L = 0.50\\,\\mathrm{m}$，$\\kappa = 1.2\\times10^{-5}\\,\\mathrm{m^2/s}$）について $\\tau_1$ を求めよ．\n\\item この棒の中央の温度が $0.10\\,T_0$ になる時刻を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $L$ の細い棒（熱拡散率 $\\kappa$）の温度 $T(x, t)$ が $\\dfrac{\\partial T}{\\partial t} = \\kappa\\dfrac{\\partial^2 T}{\\partial x^2}$ にしたがう．はじめ棒全体が温度 $T_0$ で，時刻 $0$ から両端 $x = 0, L$ を温度 $0$ に保つ．側面からの熱の出入りはない．\n\\begin{enumerate}\n\\item 解を $T = \\displaystyle\\sum_{n=1}^{\\infty}b_n\\sin\\frac{n\\pi x}{L}\\,e^{-t/\\tau_n}$ と書くとき，$\\tau_n$ を求めよ．\n\\item 奇数の $n$ に対する係数 $b_n$ を求めよ（偶数の $n$ では $0$ となる）．\n\\item 十分時間がたった後の中央 $x = L/2$ の温度は $T \\approx \\dfrac{4T_0}{\\pi}e^{-t/\\tau_1}$ となる．$\\tau_1$ を $L,\\kappa$ で表せ．\n\\item この棒の中央の温度が $0.10\\,T_0$ になる時刻を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\tau_n = \\frac{L^2}{n^2\\pi^2\\kappa}$ \\quad (2) $b_n = \\frac{4T_0}{n\\pi}$ \\quad (3) $\\tau_1 \\approx 2.11\\times10^{3}\\,\\mathrm{s}$ \\quad (4) $\\approx 5.37\\times10^{3}\\,\\mathrm{s}$"
+   "tex": "(1) $\\tau_n = \\frac{L^2}{n^2\\pi^2\\kappa}$ \\quad (2) $b_n = \\frac{4T_0}{n\\pi}$ \\quad (3) $\\tau_1 = \\dfrac{L^2}{\\pi^2\\kappa}$ \\quad (4) $t=\\dfrac{L^2}{\\pi^2\\kappa}\\ln\\dfrac{40}{\\pi}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$\\sin(n\\pi x/L)\\,e^{-t/\\tau_n}$ を方程式に入れると $-\\dfrac{1}{\\tau_n} = -\\kappa\\dfrac{n^2\\pi^2}{L^2}$，\n\\[ \\tau_n = \\boldsymbol{\\frac{L^2}{n^2\\pi^2\\kappa}}. \\]\n短い波長のむらほど速く消える（$\\tau_n \\propto 1/n^2$）．\n\n$t = 0$ で $T_0 = \\sum b_n\\sin(n\\pi x/L)$．直交性から\n\\[ b_n = \\frac{2}{L}\\int_0^L T_0\\sin\\frac{n\\pi x}{L}dx = \\frac{2T_0}{n\\pi}\\left(1 - \\cos n\\pi\\right), \\]\n奇数 $n$ で $b_n = \\boldsymbol{\\dfrac{4T_0}{n\\pi}}$．\n\n$\\tau_1 = \\dfrac{0.50^2}{\\pi^2\\times1.2\\times10^{-5}} \\approx \\boldsymbol{2.11\\times10^{3}\\,\\mathrm{s}}$（約35分）．\n\n$\\dfrac{4}{\\pi}e^{-t/\\tau_1} = 0.10$ より $t = \\tau_1\\ln\\dfrac{40}{\\pi} \\approx 2.544\\tau_1 \\approx \\boldsymbol{5.37\\times10^{3}\\,\\mathrm{s}}$．このとき $n = 3$ の項は $e^{-9\\times2.544}$ 倍で完全に無視できる．"
+    "tex": "$\\sin(n\\pi x/L)\\,e^{-t/\\tau_n}$ を方程式に入れると $-\\dfrac{1}{\\tau_n} = -\\kappa\\dfrac{n^2\\pi^2}{L^2}$，\n\\[ \\tau_n = \\boldsymbol{\\frac{L^2}{n^2\\pi^2\\kappa}}. \\]\n短い波長のむらほど速く消える（$\\tau_n \\propto 1/n^2$）．\n\n$t = 0$ で $T_0 = \\sum b_n\\sin(n\\pi x/L)$．直交性から\n\\[ b_n = \\frac{2}{L}\\int_0^L T_0\\sin\\frac{n\\pi x}{L}dx = \\frac{2T_0}{n\\pi}\\left(1 - \\cos n\\pi\\right), \\]\n奇数 $n$ で $b_n = \\boldsymbol{\\dfrac{4T_0}{n\\pi}}$．\n\n$n=1$ として\n\\[ \\tau_1 = \\boldsymbol{\\frac{L^2}{\\pi^2\\kappa}}. \\]\n（鋼の棒 $L=0.50\\,\\mathrm{m}$，$\\kappa=1.2\\times10^{-5}\\,\\mathrm{m^2/s}$ なら約 35 分．）\n\n$\\dfrac{4}{\\pi}e^{-t/\\tau_1} = \\dfrac{1}{10}$ より\n\\[ t = \\tau_1\\ln\\frac{40}{\\pi}=\\boldsymbol{\\frac{L^2}{\\pi^2\\kappa}\\ln\\frac{40}{\\pi}}\\approx 2.54\\tau_1. \\]\nこのとき $n = 3$ の項は $e^{-9\\times2.54}$ 倍で完全に無視できる．"
    }
   ],
   "idea": {
@@ -664,7 +664,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) L^2/(n^2 π^2 κ)\n(2) 4T_0/(n π)\n(3) τ_1 [s]：≈2.11e3\n(4) t [s]：≈5.37e3"
+   "spec": "(1) L^2/(n^2 π^2 κ)\n(2) 4T_0/(n π)\n(3) $\\tau_1$：L^2/(π^2 κ)\n(4) $t$：L^2/(π^2 κ) ln(40/π)"
   },
   "methods": [],
   "tags": [
@@ -696,16 +696,16 @@
   "theme": "地中の温度波（周期的な表面温度）",
   "topic": "地中の温度波（周期的な表面温度）",
   "statement": {
-   "tex": "地面（$x \\ge 0$，$x$ は深さ）の温度が熱伝導方程式 $\\dfrac{\\partial T}{\\partial t} = \\kappa\\dfrac{\\partial^2 T}{\\partial x^2}$ にしたがい，地表の温度が $T(0, t) = \\bar T + \\Delta T\\cos\\omega t$ で周期的に変化している．\n\\begin{enumerate}\n\\item 解を $T = \\bar T + \\Delta T\\,e^{-x/\\delta}\\cos\\left(\\omega t - \\dfrac{x}{\\delta}\\right)$ とおくとき，$\\delta$ を $\\kappa, \\omega$ で表せ．\n\\item 年周変化（周期 $1$ 年 $= 3.156\\times10^{7}\\,\\mathrm{s}$）について，$\\kappa = 1.0\\times10^{-6}\\,\\mathrm{m^2/s}$ として $\\delta$ を求めよ．\n\\item 地表と季節が逆転する（位相が $\\pi$ ずれる）深さを求めよ．また，その深さでの振幅は地表の何倍か．\n\\item 日周変化（周期 $1$ 日 $= 8.64\\times10^{4}\\,\\mathrm{s}$）の $\\delta$ を求めよ．\n\\end{enumerate}"
+   "tex": "地面（$x \\ge 0$，$x$ は深さ）の温度が熱伝導方程式 $\\dfrac{\\partial T}{\\partial t} = \\kappa\\dfrac{\\partial^2 T}{\\partial x^2}$ にしたがい，地表の温度が $T(0, t) = \\bar T + \\Delta T\\cos\\omega t$ で周期的に変化している．\n\\begin{enumerate}\n\\item 解を $T = \\bar T + \\Delta T\\,e^{-x/\\delta}\\cos\\left(\\omega t - \\dfrac{x}{\\delta}\\right)$ とおくとき，$\\delta$ を $\\kappa, \\omega$ で表せ．\n\\item 地表温度の変化の周期を $P$ とするとき，$\\delta$ を $\\kappa, P$ で表せ．\n\\item 地表と季節が逆転する（位相が $\\pi$ ずれる）最も浅い深さ $x_1$ を $\\kappa,\\omega$ で求めよ．また，その深さでの振幅は地表の何倍か．\n\\item 日周変化（周期 1 日）と年周変化（周期 365 日）の浸透の深さの比 $\\delta_{\\text{日}}/\\delta_{\\text{年}}$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\delta = \\sqrt{\\frac{2\\kappa}{\\omega}}$ \\quad (2) $\\delta \\approx 3.17\\,\\mathrm{m}$ \\quad (3) $\\approx 9.96\\,\\mathrm{m}$，$e^{-\\pi} \\approx 0.0432$ 倍 \\quad (4) $\\approx 0.166\\,\\mathrm{m}$"
+   "tex": "(1) $\\delta = \\sqrt{\\dfrac{2\\kappa}{\\omega}}$ \\quad (2) $\\delta=\\sqrt{\\dfrac{\\kappa P}{\\pi}}$ \\quad (3) $x_1=\\pi\\sqrt{\\dfrac{2\\kappa}{\\omega}}$，$e^{-\\pi}$ 倍 \\quad (4) $\\dfrac{1}{\\sqrt{365}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "複素数で $T - \\bar T = \\mathrm{Re}\\,\\Delta T\\,e^{i\\omega t - \\beta x}$ とおくと，方程式から $i\\omega = \\kappa\\beta^2$，$\\beta = \\sqrt{i\\omega/\\kappa} = (1 + i)\\sqrt{\\omega/2\\kappa}$（$x \\to \\infty$ で減衰する根）．よって $\\beta = (1 + i)/\\delta$ で\n\\[ \\delta = \\boldsymbol{\\sqrt{\\frac{2\\kappa}{\\omega}}}. \\]\n振幅は $e^{-x/\\delta}$ で減り，位相は $x/\\delta$ だけ遅れる．\n\n$\\omega = 2\\pi/(3.156\\times10^{7}) = 1.991\\times10^{-7}\\,\\mathrm{s^{-1}}$ より $\\delta = \\sqrt{2\\times10^{-6}/1.991\\times10^{-7}} \\approx \\boldsymbol{3.17\\,\\mathrm{m}}$．\n\n$x/\\delta = \\pi$ で位相が半周期ずれ，$x = \\pi\\delta \\approx \\boldsymbol{9.96\\,\\mathrm{m}}$．振幅は $e^{-\\pi} \\approx \\boldsymbol{0.0432}$ 倍．この深さでは夏に最も冷たく冬に最も暖かいが，変化幅は地表の $4\\,\\%$ ほどで，ほぼ年平均気温に保たれる（ワインの地下貯蔵庫・氷室）．\n\n日周変化では $\\omega$ が $365$ 倍なので $\\delta$ は $1/\\sqrt{365}$ 倍，$\\delta \\approx \\boldsymbol{0.166\\,\\mathrm{m}}$．昼夜の温度差は地下数十 cm で消える．"
+    "tex": "複素数で $T - \\bar T = \\mathrm{Re}\\,\\Delta T\\,e^{i\\omega t - \\beta x}$ とおくと，方程式から $i\\omega = \\kappa\\beta^2$，$\\beta = \\sqrt{i\\omega/\\kappa} = (1 + i)\\sqrt{\\omega/2\\kappa}$（$x \\to \\infty$ で減衰する根）．よって $\\beta = (1 + i)/\\delta$ で\n\\[ \\delta = \\boldsymbol{\\sqrt{\\frac{2\\kappa}{\\omega}}}. \\]\n振幅は $e^{-x/\\delta}$ で減り，位相は $x/\\delta$ だけ遅れる．\n\n$\\omega = 2\\pi/P$ より\n\\[ \\delta = \\boldsymbol{\\sqrt{\\frac{\\kappa P}{\\pi}}}. \\]\n周期の平方根に比例する．\n\n$x/\\delta = \\pi$ で位相が半周期ずれるので $x_1 = \\pi\\delta=\\boldsymbol{\\pi\\sqrt{2\\kappa/\\omega}}$．振幅は $\\boldsymbol{e^{-\\pi}}\\approx0.043$ 倍．年周変化（$\\kappa\\approx10^{-6}\\,\\mathrm{m^2/s}$ で $\\delta\\approx3\\,\\mathrm{m}$，$x_1\\approx10\\,\\mathrm m$）では，この深さで夏に最も冷たく冬に最も暖かいが，変化幅は地表の $4\\,\\%$ ほどで，ほぼ年平均気温に保たれる（ワインの地下貯蔵庫・氷室）．\n\n(2) より $\\delta\\propto\\sqrt P$ なので\n\\[ \\frac{\\delta_{\\text{日}}}{\\delta_{\\text{年}}}=\\boldsymbol{\\frac{1}{\\sqrt{365}}}\\approx0.052. \\]\n昼夜の温度差は地下数十 cm で消える．"
    }
   ],
   "idea": {
@@ -713,7 +713,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) sqrt(2κ/ω)\n(2) δ [m]：≈3.17\n(3) 深さ [m]：≈9.96 ; 振幅比：≈0.0432\n(4) δ [m]：≈0.166"
+   "spec": "(1) sqrt(2κ/ω)\n(2) $\\delta$：sqrt(κ P/π)\n(3) $x_1$：π sqrt(2κ/ω) ; 振幅比：exp(-π)\n(4) 1/sqrt(365)"
   },
   "methods": [],
   "tags": [
@@ -794,16 +794,16 @@
   "theme": "交流加熱法（ACカロリメトリー）による熱容量測定",
   "topic": "交流加熱法（ACカロリメトリー）による熱容量測定",
   "statement": {
-   "tex": "熱容量 $C$ の試料 S が，熱コンダクタンス $K$（単位温度差あたりの熱流，$K=\\lambda A/l$）の細線で温度 $T_0$ の熱浴につながれている．S の内部は常に一様な温度 $T_{\\rm S}(t)$ をもち，線の熱容量・放射・対流は無視する．S に取り付けた抵抗 $r$ のヒーターに電流 $I(t)=I_0\\cos\\omega t$ を流す．$P_0=rI_0^2$ とおく．\n\\begin{enumerate}\n\\item $\\theta(t)=T_{\\rm S}(t)-T_0$ が満たす微分方程式を書け．\n\\item 十分時間が経過した定常状態で，$\\theta(t)=\\bar\\theta+\\theta_{\\rm ac}\\cos(2\\omega t-\\varphi)$ と書けることを示し，$\\bar\\theta,\\ \\theta_{\\rm ac},\\ \\tan\\varphi$ を求めよ．\n\\item $\\theta_{\\rm ac}$ と $\\varphi$ の測定から $C$ と $K$ をそれぞれ求める式を示せ．とくに $2\\omega C\\gg K$ のとき，$C$ が $K$ を知らなくても決まることを示せ．\n\\item $P_0=10.0\\ \\mathrm{mW}$，$\\omega=1.00\\ \\mathrm{rad/s}$ で，$\\bar\\theta=0.500\\ \\mathrm K$，位相の遅れ $\\varphi=45^\\circ$ であった．$K$ と $C$ を求め，$\\theta_{\\rm ac}$ を予言せよ．また，ヒーターを切ったあと温度差が $1/e$ になるまでの時間を求めよ．\n\\end{enumerate}"
+   "tex": "熱容量 $C$ の試料 S が，熱コンダクタンス $K$（単位温度差あたりの熱流，$K=\\lambda A/l$）の細線で温度 $T_0$ の熱浴につながれている．S の内部は常に一様な温度 $T_{\\rm S}(t)$ をもち，線の熱容量・放射・対流は無視する．S に取り付けた抵抗 $r$ のヒーターに電流 $I(t)=I_0\\cos\\omega t$ を流す．$P_0=rI_0^2$ とおく．\n\\begin{enumerate}\n\\item $\\theta(t)=T_{\\rm S}(t)-T_0$ が満たす微分方程式を書け．\n\\item 十分時間が経過した定常状態で，$\\theta(t)=\\bar\\theta+\\theta_{\\rm ac}\\cos(2\\omega t-\\varphi)$ と書けることを示し，$\\bar\\theta,\\ \\theta_{\\rm ac},\\ \\tan\\varphi$ を求めよ．\n\\item $\\theta_{\\rm ac}$ と $\\varphi$ の測定から $C$ と $K$ をそれぞれ求める式を示せ．とくに $2\\omega C\\gg K$ のとき，$C$ が $K$ を知らなくても決まることを示せ．\n\\item 測定の結果，温度差の時間平均が $\\bar\\theta=\\theta_1$，位相の遅れが $\\varphi=45^\\circ$ であった．$K$ と $C$ を $P_0,\\omega,\\theta_1$ で表し，$\\theta_{\\rm ac}$ を予言せよ．また，ヒーターを切ったあと温度差が $1/e$ になるまでの時間 $\\tau$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $C\\dot\\theta=-K\\theta+P_0\\cos^2\\omega t$　(2) $\\bar\\theta=\\dfrac{P_0}{2K}$，$\\theta_{\\rm ac}=\\dfrac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}$，$\\tan\\varphi=\\dfrac{2\\omega C}{K}$　(3) $C=\\dfrac{P_0\\sin\\varphi}{4\\omega\\theta_{\\rm ac}}$，$K=\\dfrac{P_0\\cos\\varphi}{2\\theta_{\\rm ac}}$；$2\\omega C\\gg K$ で $C\\approx\\dfrac{P_0}{4\\omega\\theta_{\\rm ac}}$　(4) $K=1.00\\times10^{-2}\\ \\mathrm{W/K}$，$C=5.00\\times10^{-3}\\ \\mathrm{J/K}$，$\\theta_{\\rm ac}\\approx0.354\\ \\mathrm K$，緩和時間 $C/K=0.50\\ \\mathrm s$"
+   "tex": "(1) $C\\dot\\theta=-K\\theta+P_0\\cos^2\\omega t$　(2) $\\bar\\theta=\\dfrac{P_0}{2K}$，$\\theta_{\\rm ac}=\\dfrac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}$，$\\tan\\varphi=\\dfrac{2\\omega C}{K}$　(3) $C=\\dfrac{P_0\\sin\\varphi}{4\\omega\\theta_{\\rm ac}}$，$K=\\dfrac{P_0\\cos\\varphi}{2\\theta_{\\rm ac}}$；$2\\omega C\\gg K$ で $C\\approx\\dfrac{P_0}{4\\omega\\theta_{\\rm ac}}$　(4) $K=\\dfrac{P_0}{2\\theta_1}$，$C=\\dfrac{P_0}{4\\omega\\theta_1}$，$\\theta_{\\rm ac}=\\dfrac{\\theta_1}{\\sqrt2}$，$\\tau=\\dfrac{1}{2\\omega}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) ジュール熱 $rI^2=P_0\\cos^2\\omega t$，線を通じた熱流出 $K\\theta$ より\n\\[ C\\frac{d\\theta}{dt}=-K\\theta+P_0\\cos^2\\omega t=-K\\theta+\\frac{P_0}2+\\frac{P_0}2\\cos2\\omega t. \\]\n電流の周波数 $\\omega$ に対し，加熱は $2\\omega$ で振動することに注意．\n\n(2) 線形方程式なので，過渡項 $\\propto e^{-Kt/C}$ が減衰したあとの特解を求める．定数部分：$\\bar\\theta=P_0/(2K)$．振動部分は複素数 $\\tilde\\theta e^{2i\\omega t}$ として\n\\[ (2i\\omega C+K)\\tilde\\theta=\\frac{P_0}2\\ \\Longrightarrow\\ \\tilde\\theta=\\frac{P_0}{2(K+2i\\omega C)}=\\frac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}e^{-i\\varphi},\\ \\tan\\varphi=\\frac{2\\omega C}{K}. \\]\nよって $\\theta_{\\rm ac}=\\dfrac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}$．\n\n(3) $\\theta_{\\rm ac}=\\dfrac{P_0\\cos\\varphi}{2K}=\\dfrac{P_0\\sin\\varphi}{4\\omega C}$ より\n\\[ C=\\frac{P_0\\sin\\varphi}{4\\omega\\theta_{\\rm ac}},\\qquad K=\\frac{P_0\\cos\\varphi}{2\\theta_{\\rm ac}}. \\]\n$2\\omega C\\gg K$ では $\\varphi\\to\\pi/2$，$\\theta_{\\rm ac}\\approx P_0/(4\\omega C)$ で，$K$ によらず $C$ が求まる（試料と熱浴との結合の詳細に鈍感な測定法）．\n\n(4) $K=P_0/(2\\bar\\theta)=0.0100/1.00=1.00\\times10^{-2}\\ \\mathrm{W/K}$．$\\tan45^\\circ=1$ より $C=K/(2\\omega)=5.00\\times10^{-3}\\ \\mathrm{J/K}$．\n\\[ \\theta_{\\rm ac}=\\frac{0.0100}{2\\sqrt{2}\\times0.0100}=\\frac{1}{2\\sqrt2}\\approx0.354\\ \\mathrm K. \\]\nヒーターを切ると $C\\dot\\theta=-K\\theta$ より $\\theta\\propto e^{-Kt/C}$，緩和時間 $\\tau=C/K=0.50\\ \\mathrm s$．"
+    "tex": "(1) ジュール熱 $rI^2=P_0\\cos^2\\omega t$，線を通じた熱流出 $K\\theta$ より\n\\[ C\\frac{d\\theta}{dt}=-K\\theta+P_0\\cos^2\\omega t=-K\\theta+\\frac{P_0}2+\\frac{P_0}2\\cos2\\omega t. \\]\n電流の周波数 $\\omega$ に対し，加熱は $2\\omega$ で振動することに注意．\n\n(2) 線形方程式なので，過渡項 $\\propto e^{-Kt/C}$ が減衰したあとの特解を求める．定数部分：$\\bar\\theta=P_0/(2K)$．振動部分は複素数 $\\tilde\\theta e^{2i\\omega t}$ として\n\\[ (2i\\omega C+K)\\tilde\\theta=\\frac{P_0}2\\ \\Longrightarrow\\ \\tilde\\theta=\\frac{P_0}{2(K+2i\\omega C)}=\\frac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}e^{-i\\varphi},\\ \\tan\\varphi=\\frac{2\\omega C}{K}. \\]\nよって $\\theta_{\\rm ac}=\\dfrac{P_0}{2\\sqrt{K^2+4\\omega^2C^2}}$．\n\n(3) $\\theta_{\\rm ac}=\\dfrac{P_0\\cos\\varphi}{2K}=\\dfrac{P_0\\sin\\varphi}{4\\omega C}$ より\n\\[ C=\\frac{P_0\\sin\\varphi}{4\\omega\\theta_{\\rm ac}},\\qquad K=\\frac{P_0\\cos\\varphi}{2\\theta_{\\rm ac}}. \\]\n$2\\omega C\\gg K$ では $\\varphi\\to\\pi/2$，$\\theta_{\\rm ac}\\approx P_0/(4\\omega C)$ で，$K$ によらず $C$ が求まる（試料と熱浴との結合の詳細に鈍感な測定法）．\n\n(4) $\\bar\\theta=P_0/(2K)=\\theta_1$ より $\\boldsymbol{K=\\dfrac{P_0}{2\\theta_1}}$．$\\tan45^\\circ=1$ より $2\\omega C=K$，$\\boldsymbol{C=\\dfrac{K}{2\\omega}=\\dfrac{P_0}{4\\omega\\theta_1}}$．\n\\[ \\theta_{\\rm ac}=\\frac{P_0}{2\\sqrt{K^2+K^2}}=\\frac{P_0}{2\\sqrt2K}=\\boldsymbol{\\frac{\\theta_1}{\\sqrt2}}. \\]\nヒーターを切ると $C\\dot\\theta=-K\\theta$ より $\\theta\\propto e^{-Kt/C}$，緩和時間 $\\boldsymbol{\\tau=C/K=\\dfrac{1}{2\\omega}}$．位相の遅れ $45^\\circ$ は，加熱の角振動数 $2\\omega$ が緩和率 $K/C$ にちょうど等しいことを意味する．"
    }
   ],
   "idea": {
@@ -811,7 +811,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\bar\\theta$：((P_0)/(2 K)) ; $\\theta_{\\rm ac}$：((P_0)/(2 sqrt(K ^(2)+4 ω ^(2) C ^(2)))) ; $\\tan\\varphi$：((2 ω C)/(K))\n(3) 記述\n(4) 記述"
+   "spec": "(1) 記述\n(2) $\\bar\\theta$：P_0/(2 K) ; $\\theta_{\\rm ac}$：P_0/(2 sqrt(K^2 + 4 ω^2 C^2)) ; $\\tan\\varphi$：2 ω C/K\n(3) 記述\n(4) $K$：P_0/(2 θ_1) ; $C$：P_0/(4 ω θ_1) ; $\\theta_{\\rm ac}$：θ_1/sqrt(2) ; $\\tau$：1/(2 ω)"
   },
   "methods": [],
   "tags": [
@@ -845,16 +845,16 @@
   "theme": "熱伝導しない天体の平均温度と多層温室モデル",
   "topic": "熱伝導しない天体の平均温度と多層温室モデル",
   "statement": {
-   "tex": "太陽を有効温度 $T_\\odot=5772\\ {\\rm K}$，半径 $R_\\odot=6.957\\times10^8\\ {\\rm m}$ の黒体とし，太陽からの距離 $r$ にある小さな球形天体（自転なし）を考える．天体からの放射は熱放射のみとし，1 AU $=1.496\\times10^{11}\\ {\\rm m}$ とする．\n\\begin{enumerate}\n\\item 天体が熱伝導のよい黒体球（表面温度一様）のとき，平衡温度 $T_{\\rm eq}$ を $T_\\odot,R_\\odot,r$ で表し，$r=1\\ {\\rm AU}$ での値を求めよ．\n\\item 天体が熱を全く伝えない黒体球で，表面の各点が入射とその点の放射だけでつり合う場合，太陽直下点からの角度 $\\theta$ の点の温度 $T(\\theta)$ を求めよ（夜側は $0\\ {\\rm K}$ とせよ）．太陽直下点の温度は $T_{\\rm eq}$ の何倍か．\n\\item (2) の天体の全表面での平均温度 $\\langle T\\rangle$ を $T_{\\rm eq}$ で表し，$r=1\\ {\\rm AU}$ での値を求めよ．吸収・放射するエネルギーの総量は (1) と同じなのに $\\langle T\\rangle$ が $T_{\\rm eq}$ と異なる理由を，一般的な不等式で説明せよ．\n\\item 熱伝導のよい惑星（アルベド $A$）を，可視光には透明で赤外線を完全に吸収・放射する薄い大気層 $N$ 枚が覆っているとする（各層は上下両面から黒体放射する）．地表温度 $T_s$ が $(N+1)^{1/4}T_e$ になることを示せ．ここで $T_e$ はアルベドを考慮した大気のない場合の平衡温度である．金星（$r=0.723\\ {\\rm AU}$，$A=0.77$）の $T_e$ を求め，実際の地表温度約 $737\\ {\\rm K}$ を説明するのに必要な $N$ を見積もれ．\n\\end{enumerate}"
+   "tex": "太陽を表面温度 $T_S$，半径 $R_S$ の黒体とし，太陽からの距離 $r$ にある小さな球形天体（自転なし）を考える．天体からの放射は熱放射のみとする．\n\\begin{enumerate}\n\\item 天体が熱伝導のよい黒体球（表面温度一様）のとき，平衡温度 $T_{\\rm eq}$ を $T_S,R_S,r$ で表せ．\n\\item 天体が熱を全く伝えない黒体球で，表面の各点が入射とその点の放射だけでつり合う場合，太陽直下点からの角度 $\\theta$ の点の温度 $T(\\theta)$ を求めよ（夜側は $0\\ {\\rm K}$ とせよ）．太陽直下点の温度は $T_{\\rm eq}$ の何倍か．\n\\item (2) の天体の全表面での平均温度 $\\langle T\\rangle$ を $T_{\\rm eq}$ で表せ．吸収・放射するエネルギーの総量は (1) と同じなのに $\\langle T\\rangle$ が $T_{\\rm eq}$ と異なる理由を，一般的な不等式で説明せよ．\n\\item 熱伝導のよい惑星（アルベド $A$）を，可視光には透明で赤外線を完全に吸収・放射する薄い大気層 $N$ 枚が覆っているとする（各層は上下両面から黒体放射する）．地表温度 $T_g$ が $(N+1)^{1/4}T_e$ になることを示せ．ここで $T_e$ はアルベドを考慮した大気のない場合の平衡温度である．$T_e$ を $T_S,R_S,r,A$ で表し，地表温度 $T_g$ を説明するのに必要な $N$ を $T_g,T_e$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $T_{\\rm eq}=T_\\odot\\sqrt{R_\\odot/2r}\\approx278\\ {\\rm K}$　(2) $T(\\theta)=\\sqrt2\\,T_{\\rm eq}\\cos^{1/4}\\theta$（$\\theta<\\pi/2$），直下点は $\\sqrt2$ 倍（$\\approx394\\ {\\rm K}$）　(3) $\\langle T\\rangle=\\frac{2\\sqrt2}{5}T_{\\rm eq}\\approx0.566\\,T_{\\rm eq}\\approx157\\ {\\rm K}$（べき平均の不等式 $\\langle T\\rangle\\le\\langle T^4\\rangle^{1/4}$）　(4) $T_e\\approx227\\ {\\rm K}$，$N\\approx110$"
+   "tex": "(1) $T_{\\rm eq}=T_S\\sqrt{\\dfrac{R_S}{2r}}$　(2) $T(\\theta)=T_S\\sqrt{\\dfrac{R_S}{r}}\\cos^{1/4}\\theta$（$\\theta<\\pi/2$，$=\\sqrt2\\,T_{\\rm eq}\\cos^{1/4}\\theta$），直下点は $\\sqrt2$ 倍　(3) $\\langle T\\rangle=\\dfrac{2\\sqrt2}{5}T_{\\rm eq}$（べき平均の不等式 $\\langle T\\rangle\\le\\langle T^4\\rangle^{1/4}$）　(4) $T_e=T_S\\sqrt{\\dfrac{R_S}{2r}}(1-A)^{1/4}$， $N=\\dfrac{4r^2T_g^4}{R_S^2T_S^4(1-A)}-1$（$=T_g^4/T_e^4-1$）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 天体の位置での太陽放射強度は $\\sigma T_\\odot^4(R_\\odot/r)^2$．半径 $a$ の球が受けるのは断面積 $\\pi a^2$ 分，放射は全表面 $4\\pi a^2$ から：\n\\[\n\\sigma T_\\odot^4\\left(\\frac{R_\\odot}r\\right)^2\\pi a^2=4\\pi a^2\\sigma T_{\\rm eq}^4\\ \\Rightarrow\\ T_{\\rm eq}=T_\\odot\\sqrt{\\frac{R_\\odot}{2r}}.\n\\]\n$r=1\\ {\\rm AU}$：$T_{\\rm eq}=5772\\times\\sqrt{6.957\\times10^8/2.992\\times10^{11}}\\approx278\\ {\\rm K}$．\n\n(2) 太陽直下点から角度 $\\theta$ の面素は単位面積当たり $\\sigma T_\\odot^4(R_\\odot/r)^2\\cos\\theta$ を受け，それを $\\sigma T^4$ で放射する：\n\\[\nT(\\theta)=T_\\odot\\sqrt{\\frac{R_\\odot}{r}}\\cos^{1/4}\\theta=\\sqrt2\\,T_{\\rm eq}\\cos^{1/4}\\theta\\quad(0\\le\\theta<\\pi/2).\n\\]\n直下点は $\\sqrt2\\,T_{\\rm eq}\\approx394\\ {\\rm K}$．\n\n(3) $\\mu=\\cos\\theta$ とすると，全球面での面積平均は $\\dfrac1{4\\pi}\\displaystyle\\int_0^1\\sqrt2T_{\\rm eq}\\mu^{1/4}\\,2\\pi\\,d\\mu=\\frac{\\sqrt2T_{\\rm eq}}2\\cdot\\frac45=\\frac{2\\sqrt2}{5}T_{\\rm eq}\\approx0.566\\,T_{\\rm eq}\\approx157\\ {\\rm K}$．\n全放射量は同じなので $\\langle T^4\\rangle=T_{\\rm eq}^4$ はどちらでも成り立つ．しかし $t\\mapsto t^4$ は凸関数なので，べき平均の不等式（イェンセンの不等式）より $\\langle T\\rangle\\le\\langle T^4\\rangle^{1/4}=T_{\\rm eq}$ で，等号は温度一様のときに限る．温度の不均一が大きいほど平均温度は下がる（月の平均温度が低いのはこのため）．\n\n(4) 上から順に層 $1,\\dots,N$ とし温度を $T_1,\\dots,T_N$ とする．定常状態では各高さで正味の上向きエネルギー流は吸収した太陽放射 $\\sigma T_e^4$（単位面積・全球平均）に等しい．最上層の上では $\\sigma T_1^4=\\sigma T_e^4$．層 $k$ と $k+1$ の間では上向き $\\sigma T_{k+1}^4$，下向き $\\sigma T_k^4$ で，$\\sigma(T_{k+1}^4-T_k^4)=\\sigma T_e^4$．よって $T_k^4=kT_e^4$，地表と層 $N$ の間で $T_s^4-T_N^4=T_e^4$ より\n\\[\nT_s=(N+1)^{1/4}T_e .\n\\]\n金星：$T_e=T_\\odot\\sqrt{R_\\odot/2r}\\,(1-A)^{1/4}=5772\\times\\sqrt{6.957\\times10^8/(2\\times1.082\\times10^{11})}\\times0.23^{1/4}\\approx227\\ {\\rm K}$．\n$(737/227)^4\\approx112$ より $N\\approx110$．薄い吸収層が 100 枚以上分の赤外の光学的厚さが必要であり，金星の大気が極めて厚い CO$_2$ 大気であることに対応している．"
+    "tex": "(1) 天体の位置での太陽放射強度は $\\sigma T_S^4(R_S/r)^2$．半径 $a$ の球が受けるのは断面積 $\\pi a^2$ 分，放射は全表面 $4\\pi a^2$ から：\n\\[\n\\sigma T_S^4\\left(\\frac{R_S}r\\right)^2\\pi a^2=4\\pi a^2\\sigma T_{\\rm eq}^4\\ \\Rightarrow\\ \\boldsymbol{T_{\\rm eq}=T_S\\sqrt{\\frac{R_S}{2r}}}.\n\\]\n（1 AU では約 $278\\ {\\rm K}$．）\n\n(2) 太陽直下点から角度 $\\theta$ の面素は単位面積当たり $\\sigma T_S^4(R_S/r)^2\\cos\\theta$ を受け，それを $\\sigma T^4$ で放射する：\n\\[\nT(\\theta)=T_S\\sqrt{\\frac{R_S}{r}}\\cos^{1/4}\\theta=\\boldsymbol{\\sqrt2\\,T_{\\rm eq}\\cos^{1/4}\\theta}\\quad(0\\le\\theta<\\pi/2).\n\\]\n直下点は $\\boldsymbol{\\sqrt2}$ 倍．\n\n(3) $\\mu=\\cos\\theta$ とすると，全球面での面積平均は\n\\[ \\langle T\\rangle=\\frac1{4\\pi}\\int_0^1\\sqrt2T_{\\rm eq}\\mu^{1/4}\\,2\\pi\\,d\\mu=\\frac{\\sqrt2T_{\\rm eq}}2\\cdot\\frac45=\\boldsymbol{\\frac{2\\sqrt2}{5}T_{\\rm eq}}\\approx0.566\\,T_{\\rm eq}. \\]\n全放射量は同じなので $\\langle T^4\\rangle=T_{\\rm eq}^4$ はどちらでも成り立つ．しかし $t\\mapsto t^4$ は凸関数なので，べき平均の不等式（イェンセンの不等式）より $\\langle T\\rangle\\le\\langle T^4\\rangle^{1/4}=T_{\\rm eq}$ で，等号は温度一様のときに限る．温度の不均一が大きいほど平均温度は下がる（月の平均温度が低いのはこのため）．\n\n(4) 上から順に層 $1,\\dots,N$ とし温度を $T_1,\\dots,T_N$ とする．定常状態では各高さで正味の上向きエネルギー流は吸収した太陽放射 $\\sigma T_e^4$（単位面積・全球平均）に等しい．最上層の上では $\\sigma T_1^4=\\sigma T_e^4$．層 $k$ と $k+1$ の間では上向き $\\sigma T_{k+1}^4$，下向き $\\sigma T_k^4$ で，$\\sigma(T_{k+1}^4-T_k^4)=\\sigma T_e^4$．よって $T_k^4=kT_e^4$，地表と層 $N$ の間で $T_g^4-T_N^4=T_e^4$ より\n\\[\nT_g=(N+1)^{1/4}T_e .\n\\]\nアルベド $A$ の惑星は入射の $1-A$ だけを吸収するので，(1) の $T^4$ が $1-A$ 倍になり\n\\[ \\boldsymbol{T_e=T_S\\sqrt{\\frac{R_S}{2r}}(1-A)^{1/4}},\\qquad \\boldsymbol{N=\\frac{T_g^4}{T_e^4}-1}. \\]\n金星（$r=0.723\\ {\\rm AU}$，$A=0.77$）では $T_e\\approx227\\ {\\rm K}$，実際の地表温度約 $737\\ {\\rm K}$ から $N\\approx110$．薄い吸収層が 100 枚以上分の赤外の光学的厚さが必要であり，金星の大気が極めて厚い CO$_2$ 大気であることに対応している．"
    }
   ],
   "idea": {
@@ -862,7 +862,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述\n(4) $T_e$ [K]：≈227 ; $N$：≈110"
+   "spec": "(1) $T_{\\rm eq}$：T_S sqrt(R_S/(2 r))\n(2) $T(\\theta)$：T_S sqrt(R_S/r) cos(θ)^(1/4) ; 倍率：sqrt(2)\n(3) 記述\n(4) $T_e$：T_S sqrt(R_S/(2 r)) (1 - A)^(1/4) ; $N$：4 r^2 T_g^4/(R_S^2 T_S^4 (1 - A)) - 1"
   },
   "methods": [],
   "tags": [
@@ -947,16 +947,16 @@
   "theme": "沈降平衡とアインシュタインの関係式",
   "topic": "沈降平衡とアインシュタインの関係式",
   "statement": {
-   "tex": "温度 $T$ の液体中に浮かぶ半径 $a$ の微粒子（液体との密度差 $\\Delta\\rho > 0$）を考える．鉛直上向きに $z$ 軸をとり，粒子の数密度を $n(z)$ とする．粒子には浮力を差し引いた重力 $m'g$（$m' = \\dfrac{4}{3}\\pi a^3\\Delta\\rho$）がはたらき，力 $F$ を受けた粒子は速度 $v = \\mu F$（$\\mu$：移動度）で動く．また拡散による粒子流束は $-D\\dfrac{dn}{dz}$ である．\n\\begin{enumerate}\n\\item 平衡状態で全流束が $0$ になることと，平衡分布がボルツマン分布 $n \\propto \\exp\\left(-\\dfrac{m'gz}{k_BT}\\right)$ であることから，$D$ を $\\mu, k_B, T$ で表せ．\n\\item ストークスの法則より $\\mu = \\dfrac{1}{6\\pi\\eta a}$（$\\eta$：粘性率）である．$T = 293\\,\\mathrm{K}$ の水（$\\eta = 1.0\\times10^{-3}\\,\\mathrm{Pa\\,s}$）中で $a = 0.50\\,\\mu\\mathrm{m}$ の粒子の $D$ を求めよ（$k_B = 1.38\\times10^{-23}\\,\\mathrm{J/K}$）．\n\\item $\\Delta\\rho = 50\\,\\mathrm{kg/m^3}$，$g = 9.8\\,\\mathrm{m/s^2}$ のとき，数密度が $1/e$ になる高さ $\\ell = \\dfrac{k_BT}{m'g}$ を求めよ．\n\\end{enumerate}"
+   "tex": "温度 $T$ の液体（密度 $\\rho_l$）中に浮かぶ半径 $a$，密度 $\\rho_p$（$\\rho_p>\\rho_l$）の微粒子を考える．鉛直上向きに $z$ 軸をとり，粒子の数密度を $n(z)$ とする．粒子には浮力を差し引いた重力 $m'g$（$m' = \\dfrac{4}{3}\\pi a^3(\\rho_p-\\rho_l)$）がはたらき，力 $F$ を受けた粒子は速度 $v = \\mu F$（$\\mu$：移動度）で動く．また拡散による粒子流束は $-D\\dfrac{dn}{dz}$ である．ボルツマン定数を $k_B$ とする．\n\\begin{enumerate}\n\\item 平衡状態で全流束が $0$ になることと，平衡分布がボルツマン分布 $n \\propto \\exp\\left(-\\dfrac{m'gz}{k_BT}\\right)$ であることから，$D$ を $\\mu, k_B, T$ で表せ．\n\\item ストークスの法則より $\\mu = \\dfrac{1}{6\\pi\\eta a}$（$\\eta$：粘性率）である．$D$ を $k_B,T,\\eta,a$ で表せ．\n\\item 数密度が $1/e$ になる高さ $h=\\dfrac{k_BT}{m'g}$ を $k_B,T,a,\\rho_p,\\rho_l,g$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $D = \\mu k_BT$ \\quad (2) $D \\approx 4.3\\times10^{-13}\\,\\mathrm{m^2/s}$ \\quad (3) $\\ell \\approx 1.6\\times10^{-5}\\,\\mathrm{m}$"
+   "tex": "(1) $D = \\mu k_BT$ \\quad (2) $D=\\dfrac{k_BT}{6\\pi\\eta a}$ \\quad (3) $h=\\dfrac{3k_BT}{4\\pi a^3(\\rho_p-\\rho_l)g}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "全流束 $j = -D\\dfrac{dn}{dz} - \\mu m'g\\,n = 0$（沈降流と拡散流のつりあい）．ボルツマン分布では $\\dfrac{dn}{dz} = -\\dfrac{m'g}{k_BT}n$ なので\n\\[ \\frac{Dm'g}{k_BT}n = \\mu m'g\\,n \\quad\\Rightarrow\\quad D = \\boldsymbol{\\mu k_BT}. \\]\nこれがアインシュタインの関係式（揺動散逸定理の最も簡単な例）で，拡散（ゆらぎ）と抵抗（散逸）が同じ起源をもつことを表す．\n\n$D = \\dfrac{k_BT}{6\\pi\\eta a} = \\dfrac{1.38\\times10^{-23}\\times293}{6\\pi\\times1.0\\times10^{-3}\\times5.0\\times10^{-7}} \\approx \\boldsymbol{4.3\\times10^{-13}\\,\\mathrm{m^2/s}}$（ストークス＝アインシュタインの式）．\n\n$m' = \\dfrac{4}{3}\\pi(5.0\\times10^{-7})^3\\times50 \\approx 2.62\\times10^{-17}\\,\\mathrm{kg}$ で\n\\[ \\ell = \\frac{1.38\\times10^{-23}\\times293}{2.62\\times10^{-17}\\times9.8} \\approx \\boldsymbol{1.6\\times10^{-5}\\,\\mathrm{m}}. \\]\n顕微鏡で数十 $\\mu\\mathrm{m}$ の範囲の分布を数えれば $k_B$（したがってアボガドロ数）が求まる．ペランはこの方法で原子の実在を示した．"
+    "tex": "全流束 $j = -D\\dfrac{dn}{dz} - \\mu m'g\\,n = 0$（沈降流と拡散流のつりあい）．ボルツマン分布では $\\dfrac{dn}{dz} = -\\dfrac{m'g}{k_BT}n$ なので\n\\[ \\frac{Dm'g}{k_BT}n = \\mu m'g\\,n \\quad\\Rightarrow\\quad D = \\boldsymbol{\\mu k_BT}. \\]\nこれがアインシュタインの関係式（揺動散逸定理の最も簡単な例）で，拡散（ゆらぎ）と抵抗（散逸）が同じ起源をもつことを表す．\n\n\\[ D = \\boldsymbol{\\frac{k_BT}{6\\pi\\eta a}} \\]\n（ストークス＝アインシュタインの式）．室温の水中で $a=0.5\\,\\mu\\mathrm{m}$ なら約 $4\\times10^{-13}\\,\\mathrm{m^2/s}$ である．\n\n$m'$ を代入して\n\\[ h = \\frac{k_BT}{m'g}=\\boldsymbol{\\frac{3k_BT}{4\\pi a^3(\\rho_p-\\rho_l)g}}. \\]\n$a=0.5\\,\\mu\\mathrm m$，$\\rho_p-\\rho_l=50\\,\\mathrm{kg/m^3}$ では $h\\approx16\\,\\mu\\mathrm m$ となり，顕微鏡で数十 $\\mu\\mathrm{m}$ の範囲の分布を数えれば，逆にこの式から $k_B$（したがってアボガドロ数）が求まる．ペランはこの方法で原子の実在を示した．"
    }
   ],
   "idea": {
@@ -964,7 +964,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) μ k_B T\n(2) D [m^2/s]：≈4.3e-13\n(3) ℓ [m]：≈1.6e-5"
+   "spec": "(1) μ k_B T\n(2) $D$：k_B T/(6 π η a)\n(3) $h$：3 k_B T/(4 π a^3 (ρ_p - ρ_l) g)"
   },
   "methods": [],
   "tags": [
@@ -997,16 +997,16 @@
   "theme": "冷却フィン：側面から放熱する棒の熱伝導",
   "topic": "冷却フィン：側面から放熱する棒の熱伝導",
   "statement": {
-   "tex": "断面積 $A$，周長 $P$，熱伝導率 $k$ の細長い棒の一端 $x = 0$ が温度 $T_0$ に保たれ，棒は温度 $T_a$ の空気中に置かれている．側面からは単位面積あたり $h(T - T_a)$ の熱が逃げる．棒の断面内の温度は一様とし，定常状態を考える．$\\theta = T - T_a$，$\\theta_0 = T_0 - T_a$ とおく．\n\\begin{enumerate}\n\\item 長さ $dx$ の部分の熱収支から，$\\dfrac{d^2\\theta}{dx^2} = m^2\\theta$ となることを示し，$m$ を $h, P, k, A$ で表せ．\n\\item 棒が十分長い（$x \\to \\infty$ で $\\theta \\to 0$）とき，$x = 0$ から棒に流れ込む熱流 $Q_\\infty$ を求めよ．\n\\item 長さ $L$ で先端 $x = L$ が断熱されている場合（$\\theta'(L) = 0$）の熱流 $Q$ を求めよ．\n\\item 半径 $5.0\\,\\mathrm{mm}$ の銅の丸棒（$k = 400\\,\\mathrm{W/(m\\,K)}$），$h = 10\\,\\mathrm{W/(m^2\\,K)}$，$\\theta_0 = 80\\,\\mathrm{K}$ のとき，$m$ と $Q_\\infty$ を求めよ．\n\\end{enumerate}"
+   "tex": "断面積 $A$，周長 $P$，熱伝導率 $k$ の細長い棒の一端 $x = 0$ が温度 $T_0$ に保たれ，棒は温度 $T_a$ の空気中に置かれている．側面からは単位面積あたり $h(T - T_a)$ の熱が逃げる．棒の断面内の温度は一様とし，定常状態を考える．$\\theta = T - T_a$，$\\theta_0 = T_0 - T_a$ とおく．\n\\begin{enumerate}\n\\item 長さ $dx$ の部分の熱収支から，$\\dfrac{d^2\\theta}{dx^2} = m^2\\theta$ となることを示し，$m$ を $h, P, k, A$ で表せ．\n\\item 棒が十分長い（$x \\to \\infty$ で $\\theta \\to 0$）とき，$x = 0$ から棒に流れ込む熱流 $Q_\\infty$ を求めよ．\n\\item 長さ $L$ で先端 $x = L$ が断熱されている場合（$\\theta'(L) = 0$）の熱流 $Q$ を求めよ．\n\\item 棒が半径 $r$ の丸棒のとき，$m$ と $Q_\\infty$ を $h,k,r,\\theta_0$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $m = \\sqrt{\\frac{hP}{kA}}$ \\quad (2) $Q_\\infty = \\theta_0\\sqrt{hPkA}$ \\quad (3) $Q = \\theta_0\\sqrt{hPkA}\\tanh(mL)$ \\quad (4) $m \\approx 3.16\\,\\mathrm{m^{-1}}$，$Q_\\infty \\approx 7.95\\,\\mathrm{W}$"
+   "tex": "(1) $m = \\sqrt{\\frac{hP}{kA}}$ \\quad (2) $Q_\\infty = \\theta_0\\sqrt{hPkA}$ \\quad (3) $Q = \\theta_0\\sqrt{hPkA}\\tanh(mL)$ \\quad (4) $m=\\sqrt{\\dfrac{2h}{kr}}$，$Q_\\infty=\\pi\\theta_0\\sqrt{2hkr^3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$x$ と $x + dx$ の断面を通る熱流の差が側面からの放熱に等しい：\n\\[ -kA\\theta'(x) + kA\\theta'(x + dx) = hP\\,dx\\,\\theta \\quad\\Rightarrow\\quad \\theta'' = \\frac{hP}{kA}\\theta,\\quad m = \\boldsymbol{\\sqrt{\\frac{hP}{kA}}}. \\]\n\n長い棒では $\\theta = \\theta_0e^{-mx}$．$Q_\\infty = -kA\\theta'(0) = kAm\\theta_0 = \\boldsymbol{\\sqrt{hPkA}\\,\\theta_0}$．\n\n先端断熱では $\\theta = \\theta_0\\dfrac{\\cosh m(L - x)}{\\cosh mL}$ で，$Q = -kA\\theta'(0) = \\boldsymbol{\\sqrt{hPkA}\\,\\theta_0\\tanh mL}$．$mL \\gtrsim 2$ でほぼ $Q_\\infty$ に達するので，$1/m$ の数倍より長いフィンは無駄になる．\n\n丸棒では $P = 2\\pi r$，$A = \\pi r^2$ で $m = \\sqrt{\\dfrac{2h}{kr}} = \\sqrt{\\dfrac{20}{400\\times0.005}} \\approx \\boldsymbol{3.16\\,\\mathrm{m^{-1}}}$．\n$\\sqrt{hPkA} = \\sqrt{10\\times0.0314\\times400\\times7.85\\times10^{-5}} \\approx 0.0993\\,\\mathrm{W/K}$ なので $Q_\\infty \\approx \\boldsymbol{7.95\\,\\mathrm{W}}$．"
+    "tex": "$x$ と $x + dx$ の断面を通る熱流の差が側面からの放熱に等しい：\n\\[ -kA\\theta'(x) + kA\\theta'(x + dx) = hP\\,dx\\,\\theta \\quad\\Rightarrow\\quad \\theta'' = \\frac{hP}{kA}\\theta,\\quad m = \\boldsymbol{\\sqrt{\\frac{hP}{kA}}}. \\]\n\n長い棒では $\\theta = \\theta_0e^{-mx}$．$Q_\\infty = -kA\\theta'(0) = kAm\\theta_0 = \\boldsymbol{\\sqrt{hPkA}\\,\\theta_0}$．\n\n先端断熱では $\\theta = \\theta_0\\dfrac{\\cosh m(L - x)}{\\cosh mL}$ で，$Q = -kA\\theta'(0) = \\boldsymbol{\\sqrt{hPkA}\\,\\theta_0\\tanh mL}$．$mL \\gtrsim 2$ でほぼ $Q_\\infty$ に達するので，$1/m$ の数倍より長いフィンは無駄になる．\n\n丸棒では $P = 2\\pi r$，$A = \\pi r^2$ で\n\\[ m = \\boldsymbol{\\sqrt{\\frac{2h}{kr}}},\\qquad Q_\\infty=\\theta_0\\sqrt{h\\cdot2\\pi r\\cdot k\\cdot\\pi r^2}=\\boldsymbol{\\pi\\theta_0\\sqrt{2hkr^3}}. \\]\n半径 $5\\,\\mathrm{mm}$ の銅棒（$k=400\\,\\mathrm{W/(m\\,K)}$）で $h=10\\,\\mathrm{W/(m^2\\,K)}$ なら $1/m\\approx0.3\\,\\mathrm m$ で，それより数倍長いフィンは無駄になる．"
    }
   ],
   "idea": {
@@ -1014,7 +1014,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) sqrt(h P/(k A))\n(2) sqrt(h P k A) θ_0\n(3) sqrt(h P k A) θ_0 tanh(m L)\n(4) m [1/m]：≈3.16 ; Q [W]：≈7.95"
+   "spec": "(1) sqrt(h P/(k A))\n(2) sqrt(h P k A) θ_0\n(3) sqrt(h P k A) θ_0 tanh(m L)\n(4) $m$：sqrt(2 h/(k r)) ; $Q_\\infty$：π θ_0 sqrt(2 h k r^3)"
   },
   "methods": [],
   "tags": [
@@ -1047,16 +1047,16 @@
   "theme": "湖の氷の成長（ステファン問題の準定常近似）",
   "topic": "湖の氷の成長（ステファン問題の準定常近似）",
   "statement": {
-   "tex": "気温が $0\\,\\mathrm{^\\circ C}$ より $\\Delta T$ だけ低い日が続き，湖面の氷が厚くなっていく．氷の上面の温度は $-\\Delta T$，下面（水との境界）は $0\\,\\mathrm{^\\circ C}$ に保たれる．氷の熱伝導率を $k$，密度を $\\rho$，融解熱（単位質量あたり）を $L$ とし，氷の中の温度分布は各時刻で直線（準定常）とみなす．時刻 $0$ で氷の厚さは $0$ とする．\n\\begin{enumerate}\n\\item 氷の厚さ $h$ の成長速度 $\\dfrac{dh}{dt}$ を，氷の中を上へ流れる熱流と下面で凍る水の潜熱のつりあいから求め，$h(t)$ を求めよ．\n\\item $k = 2.2\\,\\mathrm{W/(m\\,K)}$，$\\rho = 917\\,\\mathrm{kg/m^3}$，$L = 3.34\\times10^{5}\\,\\mathrm{J/kg}$，$\\Delta T = 10\\,\\mathrm{K}$ のとき，1日（$8.64\\times10^{4}\\,\\mathrm{s}$）後の厚さを求めよ．\n\\item 厚さが $0.30\\,\\mathrm{m}$ になるのは何日後か．\n\\item 準定常近似が良いことの目安は，氷の比熱 $c = 2.1\\times10^{3}\\,\\mathrm{J/(kg\\,K)}$ を用いたステファン数 $\\mathrm{St} = c\\Delta T/L$ が小さいことである．$\\mathrm{St}$ を求めよ．\n\\end{enumerate}"
+   "tex": "気温が $0\\,\\mathrm{^\\circ C}$ より $\\theta$ だけ低い日が続き，湖面の氷が厚くなっていく．氷の上面の温度は $-\\theta$，下面（水との境界）は $0\\,\\mathrm{^\\circ C}$ に保たれる．氷の熱伝導率を $k$，密度を $\\rho$，融解熱（単位質量あたり）を $L$ とし，氷の中の温度分布は各時刻で直線（準定常）とみなす．時刻 $0$ で氷の厚さは $0$ とする．\n\\begin{enumerate}\n\\item 氷の厚さ $h$ の成長速度 $\\dfrac{dh}{dt}$ を，氷の中を上へ流れる熱流と下面で凍る水の潜熱のつりあいから求め，$h(t)$ を求めよ．\n\\item 厚さが $H$ になる時刻 $t_H$ を求めよ．\n\\item 厚さを 3 倍にするには何倍の時間がかかるか．\n\\item 準定常近似が良いことの目安を調べる．氷の比熱を $c$ とし，厚さ $h$ の氷の温度を（平均として）$\\theta/2$ だけ下げるのに必要な熱と，その厚さの氷ができるときに出る潜熱の比を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $h = \\sqrt{\\frac{2k\\Delta T t}{\\rho L}}$ \\quad (2) $\\approx 0.111\\,\\mathrm{m}$ \\quad (3) $\\approx 7.25$ 日 \\quad (4) $\\approx 0.063$"
+   "tex": "(1) $h = \\sqrt{\\dfrac{2k\\theta t}{\\rho L}}$ \\quad (2) $t_H=\\dfrac{\\rho LH^2}{2k\\theta}$ \\quad (3) $9$ 倍 \\quad (4) $\\dfrac{c\\theta}{2L}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "氷の中の熱流束は $k\\Delta T/h$．時間 $dt$ に厚さが $dh$ 増えると，単位面積あたり $\\rho L\\,dh$ の潜熱が出る．これが氷を通って上へ逃げるので\n\\[ \\rho L\\frac{dh}{dt} = \\frac{k\\Delta T}{h} \\quad\\Rightarrow\\quad h = \\boldsymbol{\\sqrt{\\frac{2k\\Delta T t}{\\rho L}}}. \\]\n氷が厚くなるほど断熱効果で成長が遅くなり，$\\sqrt{t}$ に比例する．\n\n1日後：$h = \\sqrt{\\dfrac{2\\times2.2\\times10\\times86400}{917\\times3.34\\times10^{5}}} \\approx \\boldsymbol{0.111\\,\\mathrm{m}}$．\n\n$t = \\dfrac{\\rho Lh^2}{2k\\Delta T} = \\dfrac{917\\times3.34\\times10^{5}\\times0.09}{44} \\approx 6.27\\times10^{5}\\,\\mathrm{s} \\approx \\boldsymbol{7.25}$ 日．厚さを3倍にするには9倍の時間がかかる．\n\n$\\mathrm{St} = \\dfrac{2.1\\times10^{3}\\times10}{3.34\\times10^{5}} \\approx \\boldsymbol{0.063}$．氷自体の温度を変えるのに必要な熱が潜熱に比べて小さいので，温度分布は境界の移動に即座に追随し，準定常近似がよく成り立つ．（厳密解では $h = 2\\lambda\\sqrt{\\kappa t}$ で $\\lambda$ は超越方程式で決まるが，$\\mathrm{St} \\ll 1$ では上の結果に一致する．）"
+    "tex": "氷の中の熱流束は $k\\theta/h$．時間 $dt$ に厚さが $dh$ 増えると，単位面積あたり $\\rho L\\,dh$ の潜熱が出る．これが氷を通って上へ逃げるので\n\\[ \\rho L\\frac{dh}{dt} = \\frac{k\\theta}{h} \\quad\\Rightarrow\\quad h = \\boldsymbol{\\sqrt{\\frac{2k\\theta t}{\\rho L}}}. \\]\n氷が厚くなるほど断熱効果で成長が遅くなり，$\\sqrt{t}$ に比例する．\n\n$h=H$ とおいて\n\\[ t_H = \\boldsymbol{\\frac{\\rho LH^2}{2k\\theta}}. \\]\n\n$t_H\\propto H^2$ なので，厚さを 3 倍にするには $\\boldsymbol{9}$ 倍の時間がかかる．（$\\theta=10\\,\\mathrm K$ では 1 日で約 $11\\,\\mathrm{cm}$，$30\\,\\mathrm{cm}$ には約 7 日．）\n\n単位面積あたり，氷を冷やす熱は $\\rho hc\\,\\theta/2$，潜熱は $\\rho Lh$ なので，比は\n\\[ \\boldsymbol{\\frac{c\\theta}{2L}}=\\frac{\\mathrm{St}}{2},\\qquad \\mathrm{St}=\\frac{c\\theta}{L}\\ \\text{（ステファン数）}. \\]\n氷では $\\theta=10\\,\\mathrm K$ でも $\\mathrm{St}\\approx0.06$ と小さい．氷自体の温度を変えるのに必要な熱が潜熱に比べて小さいので，温度分布は境界の移動に即座に追随し，準定常近似がよく成り立つ．（厳密解では $h = 2\\lambda\\sqrt{\\kappa t}$ で $\\lambda$ は超越方程式で決まるが，$\\mathrm{St} \\ll 1$ では上の結果に一致する．）"
    }
   ],
   "idea": {
@@ -1064,7 +1064,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) sqrt(2k ΔT t/(ρ L))\n(2) h [m]：≈0.111\n(3) 日数：≈7.25\n(4) St：≈0.063"
+   "spec": "(1) sqrt(2 k θ t/(ρ L))\n(2) $t_H$：ρ L H^2/(2 k θ)\n(3) 9\n(4) c θ/(2 L)"
   },
   "methods": [],
   "tags": [
@@ -1195,16 +1195,16 @@
   "theme": "反応拡散方程式：臨界サイズとフィッシャー波の速度",
   "topic": "反応拡散方程式：臨界サイズとフィッシャー波の速度",
   "statement": {
-   "tex": "ある生物の個体数密度 $u(x, t)$ が，拡散と増殖を表す方程式\n\\[ \\frac{\\partial u}{\\partial t} = D\\frac{\\partial^2 u}{\\partial x^2} + ru\\left(1 - \\frac{u}{K}\\right) \\]\n（$D, r, K > 0$）にしたがう（フィッシャー＝KPP方程式）．$u \\ll K$ では右辺の最後の項を $ru$ と線形化してよい．\n\\begin{enumerate}\n\\item 長さ $L$ の生息地 $0 < x < L$ の外側は生存不可能で $u(0) = u(L) = 0$ とする．線形化した方程式でモード $\\sin(n\\pi x/L)\\,e^{\\lambda_nt}$ の成長率 $\\lambda_n$ を求め，個体群が定着できる最小の長さ $L_c$ を求めよ．\n\\item 無限の生息地で，$u = K$ の領域が $u = 0$ の領域へ侵入していく進行波を考える．前線の先端（$u \\ll K$）で $u \\propto e^{-q(x - vt)}$（$q > 0$）とおくとき，$v$ を $q$ の関数として求めよ．\n\\item 局在した初期分布からは，(2) の $v(q)$ の最小値の速度の前線が選ばれる．その速度 $v_{\\min}$ と，そのときの $q$ を求めよ．\n\\item $D = 10\\,\\mathrm{km^2/yr}$，$r = 0.50\\,\\mathrm{yr^{-1}}$ のとき，$L_c$ と $v_{\\min}$ を求めよ．\n\\end{enumerate}"
+   "tex": "ある生物の個体数密度 $u(x, t)$ が，拡散と増殖を表す方程式\n\\[ \\frac{\\partial u}{\\partial t} = D\\frac{\\partial^2 u}{\\partial x^2} + ru\\left(1 - \\frac{u}{K}\\right) \\]\n（$D, r, K > 0$）にしたがう（フィッシャー＝KPP方程式）．$u \\ll K$ では右辺の最後の項を $ru$ と線形化してよい．\n\\begin{enumerate}\n\\item 長さ $L$ の生息地 $0 < x < L$ の外側は生存不可能で $u(0) = u(L) = 0$ とする．線形化した方程式でモード $\\sin(n\\pi x/L)\\,e^{\\lambda_nt}$ の成長率 $\\lambda_n$ を求め，個体群が定着できる最小の長さ $L_c$ を求めよ．\n\\item 無限の生息地で，$u = K$ の領域が $u = 0$ の領域へ侵入していく進行波を考える．前線の先端（$u \\ll K$）で $u \\propto e^{-q(x - vt)}$（$q > 0$）とおくとき，$v$ を $q$ の関数として求めよ．\n\\item 局在した初期分布からは，(2) の $v(q)$ の最小値の速度の前線が選ばれる．その速度 $v_{\\min}$ と，そのときの $q$ を求めよ．\n\\item 速さ $v_{\\min}$ の前線が長さ $L_c$ の距離を進むのにかかる時間 $t_c$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\lambda_n = r - \\frac{Dn^2\\pi^2}{L^2}$，$L_c = \\pi\\sqrt{\\frac{D}{r}}$ \\quad (2) $v = Dq + \\frac{r}{q}$ \\quad (3) $v_{\\min} = 2\\sqrt{rD}$，$q = \\sqrt{\\frac{r}{D}}$ \\quad (4) $L_c \\approx 14.0\\,\\mathrm{km}$，$v_{\\min} \\approx 4.47\\,\\mathrm{km/yr}$"
+   "tex": "(1) $\\lambda_n = r - \\frac{Dn^2\\pi^2}{L^2}$，$L_c = \\pi\\sqrt{\\frac{D}{r}}$ \\quad (2) $v = Dq + \\frac{r}{q}$ \\quad (3) $v_{\\min} = 2\\sqrt{rD}$，$q = \\sqrt{\\frac{r}{D}}$ \\quad (4) $t_c=\\dfrac{\\pi}{2r}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "代入して $\\lambda_n = \\boldsymbol{r - \\dfrac{Dn^2\\pi^2}{L^2}}$．最もゆっくり減衰する $n = 1$ が成長する（$\\lambda_1 > 0$）条件は $L > \\pi\\sqrt{D/r}$，すなわち\n\\[ L_c = \\boldsymbol{\\pi\\sqrt{\\frac{D}{r}}}. \\]\nこれより狭いと境界からの流出（拡散）が増殖に勝って絶滅する（KISS問題．原子炉の臨界サイズと同じ構造）．\n\n$u = e^{-q(x - vt)}$ を線形化方程式に入れると $qv = Dq^2 + r$，\n\\[ v = \\boldsymbol{Dq + \\frac{r}{q}}. \\]\n\n相加相乗平均より $v \\ge 2\\sqrt{rD}$，等号は $q = \\boldsymbol{\\sqrt{r/D}}$ のとき．$v_{\\min} = \\boldsymbol{2\\sqrt{rD}}$．増殖（時間スケール $1/r$）と拡散が組み合わさり，純粋な拡散（$\\sqrt{t}$）と違って一定速度で広がる．\n\n$L_c = \\pi\\sqrt{10/0.50} \\approx \\boldsymbol{14.0\\,\\mathrm{km}}$，$v_{\\min} = 2\\sqrt{0.50\\times10} \\approx \\boldsymbol{4.47\\,\\mathrm{km/yr}}$．スケラムはこの式でヨーロッパのマスクラットの分布拡大速度を説明した．"
+    "tex": "代入して $\\lambda_n = \\boldsymbol{r - \\dfrac{Dn^2\\pi^2}{L^2}}$．最もゆっくり減衰する $n = 1$ が成長する（$\\lambda_1 > 0$）条件は $L > \\pi\\sqrt{D/r}$，すなわち\n\\[ L_c = \\boldsymbol{\\pi\\sqrt{\\frac{D}{r}}}. \\]\nこれより狭いと境界からの流出（拡散）が増殖に勝って絶滅する（KISS問題．原子炉の臨界サイズと同じ構造）．\n\n$u = e^{-q(x - vt)}$ を線形化方程式に入れると $qv = Dq^2 + r$，\n\\[ v = \\boldsymbol{Dq + \\frac{r}{q}}. \\]\n\n相加相乗平均より $v \\ge 2\\sqrt{rD}$，等号は $q = \\boldsymbol{\\sqrt{r/D}}$ のとき．$v_{\\min} = \\boldsymbol{2\\sqrt{rD}}$．増殖（時間スケール $1/r$）と拡散が組み合わさり，純粋な拡散（$\\sqrt{t}$）と違って一定速度で広がる．\n\n\\[ t_c=\\frac{L_c}{v_{\\min}}=\\frac{\\pi\\sqrt{D/r}}{2\\sqrt{rD}}=\\boldsymbol{\\frac{\\pi}{2r}}. \\]\n$D$ によらず，増殖の時間スケール $1/r$ の程度になる．どちらの長さ・速さも $\\sqrt{D/r}$ と $\\sqrt{rD}$ の組合せで決まるからである．スケラムは $v_{\\min}=2\\sqrt{rD}$ でヨーロッパのマスクラットの分布拡大速度を説明した（$D=10\\,\\mathrm{km^2/yr}$，$r=0.5\\,\\mathrm{yr^{-1}}$ で約 $4.5\\,\\mathrm{km/yr}$）．"
    }
   ],
   "idea": {
@@ -1212,7 +1212,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) λ_n：r - D n^2 π^2/L^2 ; L_c：π sqrt(D/r)\n(2) D q + r/q\n(3) v_min：2 sqrt(r D) ; q：sqrt(r/D)\n(4) L_c [km]：≈14.0 ; v [km/yr]：≈4.47"
+   "spec": "(1) λ_n：r - D n^2 π^2/L^2 ; L_c：π sqrt(D/r)\n(2) D q + r/q\n(3) v_min：2 sqrt(r D) ; q：sqrt(r/D)\n(4) $t_c$：π/(2 r)"
   },
   "methods": [],
   "tags": [

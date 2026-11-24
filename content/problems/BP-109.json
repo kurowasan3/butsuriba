@@ -58,16 +58,16 @@
   "theme": "細胞内の分子数のポアソンゆらぎ",
   "topic": "細胞内の分子数のポアソンゆらぎ",
   "statement": {
-   "tex": "大腸菌の体積は約 $V=1\\,\\mathrm{\\mu m^3}=1\\times10^{-15}\\,\\mathrm{L}$ である．アボガドロ定数を $N_A=6.0\\times10^{23}\\,\\mathrm{mol^{-1}}$ とする．細胞内の分子はそれぞれ独立にランダムに出入りしているとし，ある分子の個数 $n$ は平均 $\\lambda$ のポアソン分布\n\\[ P(n)=\\frac{\\lambda^n e^{-\\lambda}}{n!}\\qquad(n=0,1,2,\\dots) \\]\nに従うとする．ポアソン分布の分散は平均に等しく $\\lambda$ である．\n\\begin{enumerate}\n\\item 濃度 $1\\,\\mathrm{nM}$（$=1\\times10^{-9}\\,\\mathrm{mol/L}$）は，この細胞あたり平均何個の分子にあたるか．\n\\item (1) の平均個数のとき，細胞の中にその分子が $1$ 個もない確率を求めよ．\n\\item 個数の標準偏差を平均で割った値（変動係数）を $0.10$ 以下にしたい．必要な濃度は何 $\\mathrm{nM}$ 以上か．\n\\end{enumerate}"
+   "tex": "体積 $V$ の細胞を考える．アボガドロ定数を $N_A$ とする．細胞内の分子はそれぞれ独立にランダムに出入りしているとし，ある分子の個数 $n$ は平均 $\\lambda$ のポアソン分布\n\\[ P(n)=\\frac{\\lambda^n e^{-\\lambda}}{n!}\\qquad(n=0,1,2,\\dots) \\]\nに従うとする．ポアソン分布の分散は平均に等しく $\\lambda$ である．\n\\begin{enumerate}\n\\item モル濃度 $c$ は，この細胞あたり平均何個の分子にあたるか．\n\\item (1) の平均個数のとき，細胞の中にその分子が $1$ 個もない確率を求めよ．\n\\item 個数の標準偏差を平均で割った値（変動係数）を $\\epsilon$ 以下にしたい．必要な濃度の下限 $c_m$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\lambda=0.60$ 個 (2) $P(0)=e^{-0.60}\\approx0.55$ (3) $\\approx1.7\\times10^{2}\\,\\mathrm{nM}$"
+   "tex": "(1) $\\lambda=cVN_A$　(2) $P(0)=e^{-cVN_A}$　(3) $c_m=\\dfrac{1}{\\epsilon^2VN_A}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 分子数は 濃度 $\\times$ 体積 $\\times N_A$ である：\n\\[ \\lambda=(1\\times10^{-9})\\times(1\\times10^{-15})\\times(6.0\\times10^{23})=\\boldsymbol{0.60}. \\]\n「$1\\,\\mathrm{nM}$ は大腸菌1個あたりおよそ1分子」という覚えやすい目安になる．\n\n(2) $P(0)=e^{-\\lambda}=e^{-0.60}\\approx\\boldsymbol{0.55}$．半分以上の細胞にはその分子が1個もない．転写因子のように数の少ない分子では，平均値だけで細胞の振る舞いを語れない．\n\n(3) 標準偏差は $\\sqrt\\lambda$ なので変動係数は $\\sqrt\\lambda/\\lambda=1/\\sqrt\\lambda$．$1/\\sqrt\\lambda\\le0.10$ より $\\lambda\\ge100$．必要な濃度は\n\\[ c=\\frac{100}{(1\\times10^{-15})\\times(6.0\\times10^{23})}\\,\\mathrm{mol/L}=1.7\\times10^{-7}\\,\\mathrm{mol/L}\\approx\\boldsymbol{1.7\\times10^{2}\\,\\mathrm{nM}}. \\]\nゆらぎは個数の平方根に比例してしか小さくならない．次は，分子の生成と分解を確率過程として扱い，ポアソン分布からのずれ（ファノ因子）を調べる．"
+    "tex": "(1) 分子数は 濃度 $\\times$ 体積 $\\times N_A$ である：$\\boldsymbol{\\lambda=cVN_A}$．\n大腸菌（$V\\approx1\\,\\mathrm{\\mu m^3}=10^{-15}\\,\\mathrm{L}$）では $c=1\\,\\mathrm{nM}$ で $\\lambda\\approx0.6$ となり，「$1\\,\\mathrm{nM}$ は大腸菌1個あたりおよそ1分子」という覚えやすい目安になる．\n\n(2) $\\boldsymbol{P(0)=e^{-\\lambda}=e^{-cVN_A}}$．$\\lambda\\lesssim1$ なら半分近くの細胞にはその分子が1個もない．転写因子のように数の少ない分子では，平均値だけで細胞の振る舞いを語れない．\n\n(3) 標準偏差は $\\sqrt\\lambda$ なので変動係数は $\\sqrt\\lambda/\\lambda=1/\\sqrt\\lambda$．$1/\\sqrt\\lambda\\le\\epsilon$ より $\\lambda\\ge1/\\epsilon^2$．必要な濃度は\n\\[ \\boldsymbol{c_m=\\frac{1}{\\epsilon^2VN_A}}. \\]\nゆらぎは個数の平方根に比例してしか小さくならず，変動係数を10分の1にするには濃度を100倍にしなければならない．次は，分子の生成と分解を確率過程として扱い，ポアソン分布からのずれ（ファノ因子）を調べる．"
    }
   ],
   "idea": {
@@ -75,7 +75,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ≈0.60\n(2) ≈0.55\n(3) 濃度 [nM]：≈1.7e2"
+   "spec": "(1) λ：c V N_A\n(2) P(0)：e^(-c V N_A)\n(3) c_m：1/(epsilon^2 V N_A)"
   },
   "methods": [],
   "tags": [
@@ -107,16 +107,16 @@
   "theme": "mRNA とタンパク質の生成・分解と定常量",
   "topic": "mRNA とタンパク質の生成・分解と定常量",
   "statement": {
-   "tex": "遺伝子から mRNA が一定の速さ $k_m$（個/分）でつくられ，mRNA 1個あたり単位時間に $\\gamma_m$ の割合で分解される．タンパク質は mRNA 1個あたり速さ $k_p$（個/分）で翻訳され，割合 $\\gamma_p$ で分解（または細胞分裂で薄まる）される．mRNA の個数 $m$ とタンパク質の個数 $p$ の平均は\n\\[ \\frac{dm}{dt}=k_m-\\gamma_m m,\\qquad \\frac{dp}{dt}=k_p m-\\gamma_p p \\]\nに従う．\n\\begin{enumerate}\n\\item 定常状態の $m$ と $p$ を求めよ．\n\\item 時刻 $0$ に mRNA の合成を止めると，$m$ は $e^{-\\gamma_m t}$ に比例して減る．$m$ が半分になる時間（半減期）$t_{1/2}$ を $\\gamma_m$ で表せ．\n\\item $k_m=0.50$ 個/分，mRNA の半減期 $3.0$ 分，$k_p=10$ 個/分，タンパク質の半減期 $30$ 分のとき，定常状態のタンパク質の個数を求めよ（$\\ln2=0.693$）．\n\\end{enumerate}"
+   "tex": "遺伝子から mRNA が一定の速さ $k_m$（個/分）でつくられ，mRNA 1個あたり単位時間に $\\gamma_m$ の割合で分解される．タンパク質は mRNA 1個あたり速さ $k_p$（個/分）で翻訳され，割合 $\\gamma_p$ で分解（または細胞分裂で薄まる）される．mRNA の個数 $m$ とタンパク質の個数 $p$ の平均は\n\\[ \\frac{dm}{dt}=k_m-\\gamma_m m,\\qquad \\frac{dp}{dt}=k_p m-\\gamma_p p \\]\nに従う．\n\\begin{enumerate}\n\\item 定常状態の $m$ と $p$ を求めよ．\n\\item 時刻 $0$ に mRNA の合成を止めると，$m$ は $e^{-\\gamma_m t}$ に比例して減る．$m$ が半分になる時間（半減期）$t_{1/2}$ を $\\gamma_m$ で表せ．\n\\item mRNA の半減期が $T_m$，タンパク質の半減期が $T_p$ のとき，定常状態のタンパク質の個数を $k_m,\\,k_p,\\,T_m,\\,T_p$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $m=\\dfrac{k_m}{\\gamma_m}$，$p=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}$ (2) $t_{1/2}=\\dfrac{\\ln2}{\\gamma_m}$ (3) $\\approx9.4\\times10^{2}$ 個"
+   "tex": "(1) $m=\\dfrac{k_m}{\\gamma_m}$，$p=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}$ (2) $t_{1/2}=\\dfrac{\\ln2}{\\gamma_m}$ (3) $p=\\dfrac{k_mk_pT_mT_p}{(\\ln2)^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $dm/dt=0$ より $\\boldsymbol{m=k_m/\\gamma_m}$．これを $dp/dt=0$ に代入して $\\boldsymbol{p=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}}$．\n\n(2) $e^{-\\gamma_mt_{1/2}}=\\dfrac12$ より $\\boldsymbol{t_{1/2}=\\dfrac{\\ln2}{\\gamma_m}}$．\n\n(3) $\\gamma_m=0.693/3.0=0.231\\,/$分，$\\gamma_p=0.693/30=0.0231\\,/$分．よって $m=0.50/0.231=2.16$ 個，\n\\[ p=\\frac{10\\times2.16}{0.0231}\\approx\\boldsymbol{9.4\\times10^{2}} \\text{ 個}. \\]\nmRNA は平均2個ほどしかないのに，1個の mRNA が寿命の間に $k_p/\\gamma_m\\approx43$ 個のタンパク質をつくり，それが長く残るので数百個になる．mRNA が少ないことはタンパク質数の大きなゆらぎ（バースト）の原因になる．次は，個数のゆらぎを確率過程（マスター方程式）として扱う．"
+    "tex": "(1) $dm/dt=0$ より $\\boldsymbol{m=k_m/\\gamma_m}$．これを $dp/dt=0$ に代入して $\\boldsymbol{p=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}}$．\n\n(2) $e^{-\\gamma_mt_{1/2}}=\\dfrac12$ より $\\boldsymbol{t_{1/2}=\\dfrac{\\ln2}{\\gamma_m}}$．\n\n(3) (2) より $\\gamma_m=\\dfrac{\\ln2}{T_m}$，同様に $\\gamma_p=\\dfrac{\\ln2}{T_p}$．(1) に代入して\n\\[ \\boldsymbol{p=\\frac{k_mk_pT_mT_p}{(\\ln2)^2}}. \\]\n$p=m\\times\\dfrac{k_p}{\\gamma_m}\\times\\dfrac{\\gamma_m}{\\gamma_p}$ と分けると，1個の mRNA が寿命の間に $k_p/\\gamma_m$ 個のタンパク質をつくり，それが長く残る．典型的には mRNA は平均数個しかないのに，タンパク質は数百個になる．mRNA が少ないことはタンパク質数の大きなゆらぎ（バースト）の原因になる．次は，個数のゆらぎを確率過程（マスター方程式）として扱う．"
    }
   ],
   "idea": {
@@ -124,7 +124,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) m：k_m/gamma_m ; p：k_m k_p/(gamma_m gamma_p)\n(2) t_{1/2}：ln 2/gamma_m\n(3) タンパク質の数：≈9.4e2"
+   "spec": "(1) m：k_m/gamma_m ; p：k_m k_p/(gamma_m gamma_p)\n(2) t_{1/2}：ln 2/gamma_m\n(3) p：k_m k_p T_m T_p/(ln 2)^2"
   },
   "methods": [],
   "tags": [
@@ -205,16 +205,16 @@
   "theme": "協同的結合とヒル関数",
   "topic": "協同的結合とヒル関数",
   "statement": {
-   "tex": "結合部位を $n$ 個もつタンパク質 P に，リガンド L が「全部同時に結合するか，まったく結合しないか」のどちらかとして結合するモデル P$+n$L $\\rightleftarrows$ PL$_n$ を考える．平衡では $[\\mathrm{P}][\\mathrm{L}]^n/[\\mathrm{PL}_n]=K^n$（$K>0$）が成り立つ．リガンド濃度を $x$ とする．\n\\begin{enumerate}\n\\item リガンドが結合しているタンパク質の割合 $\\theta=[\\mathrm{PL}_n]/([\\mathrm{P}]+[\\mathrm{PL}_n])$ を $x,\\,K,\\,n$ で表せ．\n\\item $\\theta=0.9$ となる濃度と $\\theta=0.1$ となる濃度の比 $x_{0.9}/x_{0.1}$ を $n$ で表せ．\n\\item ヘモグロビンの酸素結合は実効的に $n=2.8$ のヒル関数でよく表される．このとき $x_{0.9}/x_{0.1}$ の値を求めよ．\n\\end{enumerate}"
+   "tex": "結合部位を $n$ 個もつタンパク質 P に，リガンド L が「全部同時に結合するか，まったく結合しないか」のどちらかとして結合するモデル P$+n$L $\\rightleftarrows$ PL$_n$ を考える．平衡では $[\\mathrm{P}][\\mathrm{L}]^n/[\\mathrm{PL}_n]=K^n$（$K>0$）が成り立つ．リガンド濃度を $x$ とする．\n\\begin{enumerate}\n\\item リガンドが結合しているタンパク質の割合 $\\theta=[\\mathrm{PL}_n]/([\\mathrm{P}]+[\\mathrm{PL}_n])$ を $x,\\,K,\\,n$ で表せ．\n\\item $\\theta=0.9$ となる濃度と $\\theta=0.1$ となる濃度の比 $x_{0.9}/x_{0.1}$ を $n$ で表せ．\n\\item ある結合タンパク質で $x_{0.9}/x_{0.1}=\\rho$ と測定された．実効的なヒル係数 $n$ を $\\rho$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\theta=\\dfrac{x^n}{K^n+x^n}$ (2) $81^{1/n}$ (3) $\\approx4.8$"
+   "tex": "(1) $\\theta=\\dfrac{x^n}{K^n+x^n}$ (2) $81^{1/n}$ (3) $n=\\dfrac{4\\ln3}{\\ln\\rho}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $[\\mathrm{PL}_n]=[\\mathrm{P}]x^n/K^n$ より\n\\[ \\boldsymbol{\\theta=\\frac{x^n/K^n}{1+x^n/K^n}=\\frac{x^n}{K^n+x^n}} \\]\n（ヒル関数）．$\\ln\\dfrac{\\theta}{1-\\theta}=n\\ln x-n\\ln K$ なので，両対数のヒル・プロットの傾きが $n$（ヒル係数）を与える．\n\n(2) $\\dfrac{\\theta}{1-\\theta}=\\left(\\dfrac xK\\right)^n$ より，$\\theta=0.9$ で $(x/K)^n=9$，$\\theta=0.1$ で $(x/K)^n=1/9$．比をとって $(x_{0.9}/x_{0.1})^n=81$，\n\\[ \\boldsymbol{\\frac{x_{0.9}}{x_{0.1}}=81^{1/n}}. \\]\n\n(3) $81^{1/2.8}=e^{(\\ln81)/2.8}=e^{1.569}\\approx\\boldsymbol{4.8}$．協同性のない $n=1$ では $81$ 倍の濃度変化が必要なのに対し，ヘモグロビンは酸素分圧が5倍ほど変わるだけで，ほぼ満杯からほぼ空まで変わる．肺で酸素を積み，組織で降ろすのに都合がよい．"
+    "tex": "(1) $[\\mathrm{PL}_n]=[\\mathrm{P}]x^n/K^n$ より\n\\[ \\boldsymbol{\\theta=\\frac{x^n/K^n}{1+x^n/K^n}=\\frac{x^n}{K^n+x^n}} \\]\n（ヒル関数）．$\\ln\\dfrac{\\theta}{1-\\theta}=n\\ln x-n\\ln K$ なので，両対数のヒル・プロットの傾きが $n$（ヒル係数）を与える．\n\n(2) $\\dfrac{\\theta}{1-\\theta}=\\left(\\dfrac xK\\right)^n$ より，$\\theta=0.9$ で $(x/K)^n=9$，$\\theta=0.1$ で $(x/K)^n=1/9$．比をとって $(x_{0.9}/x_{0.1})^n=81$，\n\\[ \\boldsymbol{\\frac{x_{0.9}}{x_{0.1}}=81^{1/n}}. \\]\n\n(3) $\\rho=81^{1/n}$ より $\\ln\\rho=\\dfrac{\\ln81}{n}$，$\\boldsymbol{n=\\dfrac{\\ln81}{\\ln\\rho}=\\dfrac{4\\ln3}{\\ln\\rho}}$．協同性のない $n=1$ では $\\rho=81$ 倍の濃度変化が必要である．ヘモグロビンの酸素結合では $\\rho\\approx5$（$n\\approx2.8$）で，酸素分圧が5倍ほど変わるだけで，ほぼ満杯からほぼ空まで変わる．肺で酸素を積み，組織で降ろすのに都合がよい．"
    }
   ],
   "idea": {
@@ -222,7 +222,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) θ：x^n/(K^n+x^n)\n(2) 81^(1/n)\n(3) ≈4.8"
+   "spec": "(1) θ：x^n/(K^n+x^n)\n(2) 81^(1/n)\n(3) n：4 ln 3/ln(rho)"
   },
   "methods": [],
   "tags": [
@@ -254,16 +254,16 @@
   "theme": "ギレスピー法：次の反応までの時間と反応の選び方",
   "topic": "ギレスピー法：次の反応までの時間と反応の選び方",
   "statement": {
-   "tex": "分子 X が生成反応 $\\varnothing\\to\\mathrm{X}$（単位時間あたりの起こりやすさ $k$）と分解反応 $\\mathrm{X}\\to\\varnothing$（$n$ 個あるとき $\\gamma n$）で増減する．確率的シミュレーション（ギレスピー法）では，現在の個数 $n$ のもとで「次にどちらかの反応が起こるまでの待ち時間」と「どちらの反応が起こるか」を乱数で決める．各反応は互いに独立に，単位時間あたり上の率で起こるとする．\n\\begin{enumerate}\n\\item 待ち時間 $\\tau$ が $t$ を超える確率は $e^{-a_0t}$（$a_0$ は2つの率の和）である．待ち時間の平均を求めよ．\n\\item 次に起こる反応が分解である確率を求めよ．\n\\item 待ち時間は，$(0,1)$ の一様乱数 $r_1$ を用いて $\\tau=\\dfrac{1}{a_0}\\ln\\dfrac{1}{r_1}$ と生成する．反応は，別の一様乱数 $r_2$ が $r_2<k/a_0$ なら生成，そうでなければ分解とする．$k=2.0\\,\\mathrm{s^{-1}}$，$\\gamma=0.50\\,\\mathrm{s^{-1}}$，$n=4$，$r_1=0.50$，$r_2=0.30$ のとき，$\\tau$ と反応後の個数を求めよ．\n\\end{enumerate}"
+   "tex": "分子 X が生成反応 $\\varnothing\\to\\mathrm{X}$（単位時間あたりの起こりやすさ $k$）と分解反応 $\\mathrm{X}\\to\\varnothing$（$n$ 個あるとき $\\gamma n$）で増減する．確率的シミュレーション（ギレスピー法）では，現在の個数 $n$ のもとで「次にどちらかの反応が起こるまでの待ち時間」と「どちらの反応が起こるか」を乱数で決める．各反応は互いに独立に，単位時間あたり上の率で起こるとする．\n\\begin{enumerate}\n\\item 待ち時間 $\\tau$ が $t$ を超える確率は $e^{-a_0t}$（$a_0$ は2つの率の和）である．待ち時間の平均を求めよ．\n\\item 次に起こる反応が分解である確率を求めよ．\n\\item 待ち時間は，$(0,1)$ の一様乱数 $r_1$ を用いて $\\tau=\\dfrac{1}{a_0}\\ln\\dfrac{1}{r_1}$ と生成する．反応は，別の一様乱数 $r_2$ が $r_2<k/a_0$ なら生成，そうでなければ分解とする．次の反応までの $\\tau$ を $k,\\,\\gamma,\\,n,\\,r_1$ で表せ．また，生成が選ばれるのは $n$ がある値 $n_c$ より小さいときである．$n_c$ を $k,\\,\\gamma,\\,r_2$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{1}{k+\\gamma n}$ (2) $\\dfrac{\\gamma n}{k+\\gamma n}$ (3) $\\tau\\approx0.17\\,\\mathrm{s}$，反応後の個数 $5$"
+   "tex": "(1) $\\dfrac{1}{k+\\gamma n}$ (2) $\\dfrac{\\gamma n}{k+\\gamma n}$ (3) $\\tau=\\dfrac{1}{k+\\gamma n}\\ln\\dfrac{1}{r_1}$，$n_c=\\dfrac{k(1-r_2)}{\\gamma r_2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $a_0=k+\\gamma n$．$\\tau$ は率 $a_0$ の指数分布に従い，密度は $a_0e^{-a_0t}$ なので\n\\[ \\langle\\tau\\rangle=\\int_0^\\infty t\\,a_0e^{-a_0t}\\,dt=\\boldsymbol{\\frac{1}{k+\\gamma n}}. \\]\n\n(2) 短い時間 $dt$ の間に生成が起こる確率は $k\\,dt$，分解は $\\gamma n\\,dt$ である．どちらかが起こったという条件のもとで分解である確率は $\\boldsymbol{\\dfrac{\\gamma n}{k+\\gamma n}}$．\n\n(3) $a_0=2.0+0.50\\times4=4.0\\,\\mathrm{s^{-1}}$．$\\tau=\\dfrac{\\ln2}{4.0}\\approx\\boldsymbol{0.17\\,\\mathrm{s}}$．$k/a_0=0.50$ で $r_2=0.30<0.50$ なので生成が起こり，個数は $\\boldsymbol{5}$ になる．\n\n$\\tau=-\\ln r_1/a_0$ は逆関数法で，$P(\\tau>t)=P(r_1<e^{-a_0t})=e^{-a_0t}$ を満たす．これを繰り返せばマスター方程式の厳密な標本経路が得られる．この例の定常分布は平均 $k/\\gamma=4$ のポアソン分布である．"
+    "tex": "(1) $a_0=k+\\gamma n$．$\\tau$ は率 $a_0$ の指数分布に従い，密度は $a_0e^{-a_0t}$ なので\n\\[ \\langle\\tau\\rangle=\\int_0^\\infty t\\,a_0e^{-a_0t}\\,dt=\\boldsymbol{\\frac{1}{k+\\gamma n}}. \\]\n\n(2) 短い時間 $dt$ の間に生成が起こる確率は $k\\,dt$，分解は $\\gamma n\\,dt$ である．どちらかが起こったという条件のもとで分解である確率は $\\boldsymbol{\\dfrac{\\gamma n}{k+\\gamma n}}$．\n\n(3) $a_0=k+\\gamma n$ なので $\\boldsymbol{\\tau=\\dfrac{1}{k+\\gamma n}\\ln\\dfrac{1}{r_1}}$．生成が選ばれる条件 $r_2<\\dfrac{k}{k+\\gamma n}$ を $n$ について解くと $r_2\\gamma n<k(1-r_2)$，すなわち\n\\[ n<\\boldsymbol{n_c=\\frac{k(1-r_2)}{\\gamma r_2}}. \\]\n個数が少ないほど生成が選ばれやすく，個数は平均 $k/\\gamma$ のまわりにとどまる．\n\n$\\tau=-\\ln r_1/a_0$ は逆関数法で，$P(\\tau>t)=P(r_1<e^{-a_0t})=e^{-a_0t}$ を満たす．これを繰り返せばマスター方程式の厳密な標本経路が得られる．この例の定常分布は平均 $k/\\gamma$ のポアソン分布である．"
    }
   ],
   "idea": {
@@ -271,7 +271,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ⟨τ⟩：1/(k+gamma n)\n(2) gamma n/(k+gamma n)\n(3) τ [s]：≈0.173 ; 個数：5"
+   "spec": "(1) ⟨τ⟩：1/(k+gamma n)\n(2) gamma n/(k+gamma n)\n(3) τ：ln(1/r_1)/(k+gamma n) ; n_c：k (1 - r_2)/(gamma r_2)"
   },
   "methods": [],
   "tags": [
@@ -303,16 +303,16 @@
   "theme": "mRNA とタンパク質の2段階モデルのファノ因子",
   "topic": "mRNA とタンパク質の2段階モデルのファノ因子",
   "statement": {
-   "tex": "mRNA（個数 $m$）は率 $k_m$ で生成され，1個あたり率 $\\gamma_m$ で分解される．タンパク質（個数 $p$）は mRNA 1個あたり率 $k_p$ で翻訳され，1個あたり率 $\\gamma_p$ で分解される．これらを確率過程（マスター方程式）として扱う．反応がすべて1次以下なのでモーメントの方程式は閉じ，たとえば\n\\[ \\frac{d\\langle mp\\rangle}{dt}=k_m\\langle p\\rangle+k_p\\langle m^2\\rangle-(\\gamma_m+\\gamma_p)\\langle mp\\rangle, \\]\n\\[ \\frac{d\\langle p^2\\rangle}{dt}=2k_p\\langle mp\\rangle+k_p\\langle m\\rangle-2\\gamma_p\\langle p^2\\rangle+\\gamma_p\\langle p\\rangle \\]\nが成り立つ．mRNA だけを見ると1段階の生成消滅過程で，定常分布はポアソン分布である．\n\\begin{enumerate}\n\\item 定常状態の $\\langle p\\rangle$ を求めよ．\n\\item 定常状態の共分散 $\\langle mp\\rangle-\\langle m\\rangle\\langle p\\rangle$ を求めよ．\n\\item タンパク質のファノ因子 $F=(\\langle p^2\\rangle-\\langle p\\rangle^2)/\\langle p\\rangle$ を求めよ．\n\\item $\\gamma_m=0.20\\,/\\mathrm{min}$，$\\gamma_p=0.020\\,/\\mathrm{min}$，$k_p=4.0\\,/\\mathrm{min}$ のとき $F$ の値を求めよ．\n\\end{enumerate}"
+   "tex": "mRNA（個数 $m$）は率 $k_m$ で生成され，1個あたり率 $\\gamma_m$ で分解される．タンパク質（個数 $p$）は mRNA 1個あたり率 $k_p$ で翻訳され，1個あたり率 $\\gamma_p$ で分解される．これらを確率過程（マスター方程式）として扱う．反応がすべて1次以下なのでモーメントの方程式は閉じ，たとえば\n\\[ \\frac{d\\langle mp\\rangle}{dt}=k_m\\langle p\\rangle+k_p\\langle m^2\\rangle-(\\gamma_m+\\gamma_p)\\langle mp\\rangle, \\]\n\\[ \\frac{d\\langle p^2\\rangle}{dt}=2k_p\\langle mp\\rangle+k_p\\langle m\\rangle-2\\gamma_p\\langle p^2\\rangle+\\gamma_p\\langle p\\rangle \\]\nが成り立つ．mRNA だけを見ると1段階の生成消滅過程で，定常分布はポアソン分布である．\n\\begin{enumerate}\n\\item 定常状態の $\\langle p\\rangle$ を求めよ．\n\\item 定常状態の共分散 $\\langle mp\\rangle-\\langle m\\rangle\\langle p\\rangle$ を求めよ．\n\\item タンパク質のファノ因子 $F=(\\langle p^2\\rangle-\\langle p\\rangle^2)/\\langle p\\rangle$ を求めよ．\n\\item タンパク質の寿命が mRNA の寿命よりずっと長い（$\\gamma_p\\ll\\gamma_m$）とき，$F$ をバーストサイズ $b=k_p/\\gamma_m$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\langle p\\rangle=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}$ (2) $\\dfrac{k_mk_p}{\\gamma_m(\\gamma_m+\\gamma_p)}$ (3) $F=1+\\dfrac{k_p}{\\gamma_m+\\gamma_p}$ (4) $F\\approx19$"
+   "tex": "(1) $\\langle p\\rangle=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}$ (2) $\\dfrac{k_mk_p}{\\gamma_m(\\gamma_m+\\gamma_p)}$ (3) $F=1+\\dfrac{k_p}{\\gamma_m+\\gamma_p}$ (4) $F\\simeq1+b$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 平均の式 $d\\langle m\\rangle/dt=k_m-\\gamma_m\\langle m\\rangle$，$d\\langle p\\rangle/dt=k_p\\langle m\\rangle-\\gamma_p\\langle p\\rangle$ より $\\langle m\\rangle=k_m/\\gamma_m$，$\\boldsymbol{\\langle p\\rangle=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}}$．\n\n(2) mRNA はポアソン分布なので $\\langle m^2\\rangle=\\langle m\\rangle^2+\\langle m\\rangle$．1つ目の式を $0$ とおき，$k_m=\\gamma_m\\langle m\\rangle$，$k_p\\langle m\\rangle=\\gamma_p\\langle p\\rangle$ を使うと\n\\[ (\\gamma_m+\\gamma_p)\\langle mp\\rangle=\\gamma_m\\langle m\\rangle\\langle p\\rangle+\\gamma_p\\langle m\\rangle\\langle p\\rangle+k_p\\langle m\\rangle \\]\nしたがって\n\\[ \\langle mp\\rangle-\\langle m\\rangle\\langle p\\rangle=\\frac{k_p\\langle m\\rangle}{\\gamma_m+\\gamma_p}=\\boldsymbol{\\frac{k_mk_p}{\\gamma_m(\\gamma_m+\\gamma_p)}}. \\]\n\n(3) 2つ目の式を $0$ とおくと $2\\gamma_p\\langle p^2\\rangle=2k_p\\langle mp\\rangle+2\\gamma_p\\langle p\\rangle$（$k_p\\langle m\\rangle=\\gamma_p\\langle p\\rangle$ を使った）．(2) を代入して\n\\[ \\langle p^2\\rangle=\\langle p\\rangle^2+\\langle p\\rangle+\\frac{k_p}{\\gamma_p}\\cdot\\frac{k_p\\langle m\\rangle}{\\gamma_m+\\gamma_p}=\\langle p\\rangle^2+\\langle p\\rangle\\left(1+\\frac{k_p}{\\gamma_m+\\gamma_p}\\right). \\]\nよって $\\boldsymbol{F=1+\\dfrac{k_p}{\\gamma_m+\\gamma_p}}$．$\\gamma_p\\ll\\gamma_m$ なら $F\\simeq1+b$，$b=k_p/\\gamma_m$ は mRNA 1個が寿命の間につくるタンパク質の数（バーストサイズ）である．\n\n(4) $F=1+\\dfrac{4.0}{0.22}\\approx\\boldsymbol{19}$．ポアソン分布（$F=1$）よりはるかに広い分布になる．タンパク質の数が多くても，mRNA の少なさに由来するゆらぎは平均化されない．"
+    "tex": "(1) 平均の式 $d\\langle m\\rangle/dt=k_m-\\gamma_m\\langle m\\rangle$，$d\\langle p\\rangle/dt=k_p\\langle m\\rangle-\\gamma_p\\langle p\\rangle$ より $\\langle m\\rangle=k_m/\\gamma_m$，$\\boldsymbol{\\langle p\\rangle=\\dfrac{k_mk_p}{\\gamma_m\\gamma_p}}$．\n\n(2) mRNA はポアソン分布なので $\\langle m^2\\rangle=\\langle m\\rangle^2+\\langle m\\rangle$．1つ目の式を $0$ とおき，$k_m=\\gamma_m\\langle m\\rangle$，$k_p\\langle m\\rangle=\\gamma_p\\langle p\\rangle$ を使うと\n\\[ (\\gamma_m+\\gamma_p)\\langle mp\\rangle=\\gamma_m\\langle m\\rangle\\langle p\\rangle+\\gamma_p\\langle m\\rangle\\langle p\\rangle+k_p\\langle m\\rangle \\]\nしたがって\n\\[ \\langle mp\\rangle-\\langle m\\rangle\\langle p\\rangle=\\frac{k_p\\langle m\\rangle}{\\gamma_m+\\gamma_p}=\\boldsymbol{\\frac{k_mk_p}{\\gamma_m(\\gamma_m+\\gamma_p)}}. \\]\n\n(3) 2つ目の式を $0$ とおくと $2\\gamma_p\\langle p^2\\rangle=2k_p\\langle mp\\rangle+2\\gamma_p\\langle p\\rangle$（$k_p\\langle m\\rangle=\\gamma_p\\langle p\\rangle$ を使った）．(2) を代入して\n\\[ \\langle p^2\\rangle=\\langle p\\rangle^2+\\langle p\\rangle+\\frac{k_p}{\\gamma_p}\\cdot\\frac{k_p\\langle m\\rangle}{\\gamma_m+\\gamma_p}=\\langle p\\rangle^2+\\langle p\\rangle\\left(1+\\frac{k_p}{\\gamma_m+\\gamma_p}\\right). \\]\nよって $\\boldsymbol{F=1+\\dfrac{k_p}{\\gamma_m+\\gamma_p}}$．\n\n(4) $\\gamma_m+\\gamma_p\\simeq\\gamma_m$ なので $\\boldsymbol{F\\simeq1+b}$．$b=k_p/\\gamma_m$ は mRNA 1個が寿命の間につくるタンパク質の数（バーストサイズ）で，典型的には $10$ 以上ある．ポアソン分布（$F=1$）よりはるかに広い分布になる．タンパク質の数が多くても，mRNA の少なさに由来するゆらぎは平均化されない．"
    }
   ],
   "idea": {
@@ -320,7 +320,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ⟨p⟩：k_m k_p/(gamma_m gamma_p)\n(2) 共分散：k_m k_p/(gamma_m (gamma_m+gamma_p))\n(3) F：1+k_p/(gamma_m+gamma_p)\n(4) F：≈19.2"
+   "spec": "(1) ⟨p⟩：k_m k_p/(gamma_m gamma_p)\n(2) 共分散：k_m k_p/(gamma_m (gamma_m+gamma_p))\n(3) F：1+k_p/(gamma_m+gamma_p)\n(4) F：1 + b"
   },
   "methods": [],
   "tags": [
@@ -401,16 +401,16 @@
   "theme": "遺伝子トグルスイッチの双安定性",
   "topic": "遺伝子トグルスイッチの双安定性",
   "statement": {
-   "tex": "2つの遺伝子が互いの発現を抑制し合う回路（トグルスイッチ）を考える．無次元化したタンパク質濃度 $u,\\,v$ が\n\\[ \\frac{du}{dt}=\\frac{\\alpha}{1+v^n}-u,\\qquad \\frac{dv}{dt}=\\frac{\\alpha}{1+u^n}-v\\qquad(\\alpha>0) \\]\nに従う．はじめ $n=2$ とする．\n\\begin{enumerate}\n\\item $\\alpha=10$ のとき，$u=v$ の対称な固定点 $u^*$ を求めよ．\n\\item (1) の固定点での線形化行列の固有値を求めよ．\n\\item 対称な固定点が不安定になり，2つの安定状態（$u\\gg v$ と $u\\ll v$）が生まれる $\\alpha$ の値 $\\alpha_c$ を求めよ（$n=2$）．\n\\item 一般の $n\\ (>1)$ について同じ分岐点 $\\alpha_c$ を求め，$n=3$ の値を答えよ．\n\\end{enumerate}"
+   "tex": "2つの遺伝子が互いの発現を抑制し合う回路（トグルスイッチ）を考える．無次元化したタンパク質濃度 $u,\\,v$ が\n\\[ \\frac{du}{dt}=\\frac{\\alpha}{1+v^n}-u,\\qquad \\frac{dv}{dt}=\\frac{\\alpha}{1+u^n}-v\\qquad(\\alpha>0) \\]\nに従う．はじめ $n=2$ とする．\n\\begin{enumerate}\n\\item $u=v$ の対称な固定点を $u=v=u_s$ とする．$\\alpha$ を $u_s$ で表せ．\n\\item (1) の固定点での線形化行列の固有値を $u_s$ で表せ．\n\\item 対称な固定点が不安定になり，2つの安定状態（$u\\gg v$ と $u\\ll v$）が生まれる $\\alpha$ の値 $\\alpha_c$ を求めよ（$n=2$）．\n\\item 一般の $n\\ (>1)$ について同じ分岐点 $\\alpha_c$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $u^*=2$ (2) $\\dfrac35,\\ -\\dfrac{13}{5}$ (3) $\\alpha_c=2$ (4) $\\alpha_c=\\dfrac{n}{n-1}(n-1)^{-1/n}$，$n=3$ で $\\dfrac{3}{2^{4/3}}\\approx1.19$"
+   "tex": "(1) $\\alpha=u_s(1+u_s^2)$ (2) $\\dfrac{u_s^2-1}{u_s^2+1},\\ -\\dfrac{3u_s^2+1}{u_s^2+1}$ (3) $\\alpha_c=2$ (4) $\\alpha_c=\\dfrac{n}{n-1}(n-1)^{-1/n}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $u^*(1+u^{*2})=10$ の実数解は $\\boldsymbol{u^*=2}$（$u^3+u-10=(u-2)(u^2+2u+5)$）．\n\n(2) $f(x)=\\alpha/(1+x^n)$ とおくと，線形化行列は $\\begin{pmatrix}-1&f'(u^*)\\\\ f'(u^*)&-1\\end{pmatrix}$ で，固有値は $-1\\pm f'(u^*)$．$f'(x)=-\\dfrac{2\\alpha x}{(1+x^2)^2}$ より $f'(2)=-\\dfrac{40}{25}=-\\dfrac85$．固有値は $\\boldsymbol{3/5,\\ -13/5}$ で，対称な固定点は鞍点（不安定）．固有値 $3/5$ の固有ベクトルは $(1,-1)$ 方向で，$u$ と $v$ の差が増幅されて片方の状態へ落ちる．\n\n(3) 不安定化の条件は $|f'(u^*)|=1$．固定点の条件 $\\alpha=u(1+u^2)$ を使うと $|f'|=\\dfrac{2u^2}{1+u^2}$ なので，$|f'|=1$ は $u=1$，すなわち $\\boldsymbol{\\alpha_c=2}$（ピッチフォーク分岐）．\n\n(4) $\\alpha=u(1+u^n)$ を使うと $|f'|=\\dfrac{n\\alpha u^{n-1}}{(1+u^n)^2}=\\dfrac{nu^n}{1+u^n}$．これが $1$ になるのは $u^n=\\dfrac{1}{n-1}$ のときで\n\\[ \\boldsymbol{\\alpha_c=u(1+u^n)=\\frac{n}{n-1}(n-1)^{-1/n}}. \\]\n$n=3$ では $\\dfrac32\\cdot2^{-1/3}=\\dfrac{3}{2^{4/3}}\\approx\\boldsymbol{1.19}$．$n\\le1$ では $|f'|<1$ で双安定にならない．相互抑制だけでなく，応答の協同性（$n>1$）が記憶をもつスイッチに必要である．"
+    "tex": "(1) $u_s=\\dfrac{\\alpha}{1+u_s^2}$ より $\\boldsymbol{\\alpha=u_s(1+u_s^2)}$．右辺は $u_s$ の単調増加関数なので，各 $\\alpha$ に対して対称な固定点はただ1つある．\n\n(2) $f(x)=\\alpha/(1+x^2)$ とおくと，線形化行列は $\\begin{pmatrix}-1&f'(u_s)\\\\ f'(u_s)&-1\\end{pmatrix}$ で，固有値は $-1\\pm f'(u_s)$．$f'(x)=-\\dfrac{2\\alpha x}{(1+x^2)^2}$ に (1) を代入すると $f'(u_s)=-\\dfrac{2u_s^2}{1+u_s^2}$．固有値は\n\\[ \\boldsymbol{\\frac{u_s^2-1}{u_s^2+1},\\qquad-\\frac{3u_s^2+1}{u_s^2+1}}. \\]\n$u_s>1$ なら1つ目が正で，対称な固定点は鞍点（不安定）．この固有値の固有ベクトルは $(1,-1)$ 方向で，$u$ と $v$ の差が増幅されて片方の状態へ落ちる．\n\n(3) 不安定化の条件は $|f'(u_s)|=1$，すなわち $\\dfrac{2u_s^2}{1+u_s^2}=1$ より $u_s=1$，$\\boldsymbol{\\alpha_c=2}$（ピッチフォーク分岐）．\n\n(4) $\\alpha=u(1+u^n)$ を使うと $|f'|=\\dfrac{n\\alpha u^{n-1}}{(1+u^n)^2}=\\dfrac{nu^n}{1+u^n}$．これが $1$ になるのは $u^n=\\dfrac{1}{n-1}$ のときで\n\\[ \\boldsymbol{\\alpha_c=u(1+u^n)=\\frac{n}{n-1}(n-1)^{-1/n}}. \\]\n$n=2$ で (3) の $2$ に一致する．$n\\le1$ では $|f'|<1$ で双安定にならない．相互抑制だけでなく，応答の協同性（$n>1$）が記憶をもつスイッチに必要である．"
    }
   ],
   "idea": {
@@ -418,7 +418,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) u*：2\n(2) {3/5, -13/5}\n(3) α_c：2\n(4) α_c：≈1.19"
+   "spec": "(1) α：u_s (1 + u_s^2)\n(2) {(u_s^2 - 1)/(u_s^2 + 1), -(3 u_s^2 + 1)/(u_s^2 + 1)}\n(3) α_c：2\n(4) α_c：n/(n-1) (n-1)^(-1/n)"
   },
   "methods": [],
   "tags": [
@@ -649,16 +649,16 @@
   "theme": "内因性ノイズと外因性ノイズの分離（2レポーター法）",
   "topic": "内因性ノイズと外因性ノイズの分離（2レポーター法）",
   "statement": {
-   "tex": "同じ細胞の中に，同じプロモーターをもつ2つのレポーター遺伝子（発現量 $n_1,\\,n_2$）を入れる．細胞ごとに生成率 $k$ が異なり（外因性のゆらぎ），その細胞集団での平均は $\\mu$，分散は $\\sigma_k^2$ である．$k$ が与えられた細胞の中では，$n_1,\\,n_2$ はそれぞれ独立に，生成率 $k$，分解率 $\\gamma$（1個あたり）の生成消滅過程に従い，平均 $k/\\gamma$ のポアソン分布になる．はじめ $k$ は時間変化しないとする．$\\langle n\\rangle=\\langle n_1\\rangle=\\langle n_2\\rangle$ と書き，ノイズを $\\eta^2=$（分散）$/\\langle n\\rangle^2$ で測る．\n\\begin{enumerate}\n\\item 全ノイズ $\\eta_{\\mathrm{tot}}^2=(\\langle n_1^2\\rangle-\\langle n_1\\rangle^2)/\\langle n\\rangle^2$ を $\\mu,\\,\\sigma_k,\\,\\gamma$ で表せ．\n\\item 外因性ノイズ $\\eta_{\\mathrm{ext}}^2=(\\langle n_1n_2\\rangle-\\langle n_1\\rangle\\langle n_2\\rangle)/\\langle n\\rangle^2$ と内因性ノイズ $\\eta_{\\mathrm{int}}^2=\\langle(n_1-n_2)^2\\rangle/(2\\langle n\\rangle^2)$ を求め，$\\eta_{\\mathrm{tot}}^2=\\eta_{\\mathrm{int}}^2+\\eta_{\\mathrm{ext}}^2$ を確かめよ．$\\eta_{\\mathrm{ext}}^2$ と $\\eta_{\\mathrm{int}}^2$ を答えよ（どちらも $\\mu,\\,\\sigma_k,\\,\\gamma$ で表す）．\n\\item 測定で $\\langle n\\rangle=50$，$\\eta_{\\mathrm{tot}}^2=0.060$ を得た．生成率の変動係数 $\\sigma_k/\\mu$ を求めよ．\n\\item 生成率が時間的にもゆらぎ，$k(t)-\\mu$ が相関関数 $\\sigma_k^2e^{-|t-t'|/\\tau_c}$ をもつ定常過程であるとする．$n$ の平均の動きは $\\dfrac{d\\bar n}{dt}=k(t)-\\gamma\\bar n$ に従う．$\\eta_{\\mathrm{ext}}^2$ を $\\sigma_k,\\,\\mu,\\,\\gamma,\\,\\tau_c$ で表せ．\n\\end{enumerate}"
+   "tex": "同じ細胞の中に，同じプロモーターをもつ2つのレポーター遺伝子（発現量 $n_1,\\,n_2$）を入れる．細胞ごとに生成率 $k$ が異なり（外因性のゆらぎ），その細胞集団での平均は $\\mu$，分散は $\\sigma_k^2$ である．$k$ が与えられた細胞の中では，$n_1,\\,n_2$ はそれぞれ独立に，生成率 $k$，分解率 $\\gamma$（1個あたり）の生成消滅過程に従い，平均 $k/\\gamma$ のポアソン分布になる．はじめ $k$ は時間変化しないとする．$\\langle n\\rangle=\\langle n_1\\rangle=\\langle n_2\\rangle$ と書き，ノイズを $\\eta^2=$（分散）$/\\langle n\\rangle^2$ で測る．\n\\begin{enumerate}\n\\item 全ノイズ $\\eta_{\\mathrm{tot}}^2=(\\langle n_1^2\\rangle-\\langle n_1\\rangle^2)/\\langle n\\rangle^2$ を $\\mu,\\,\\sigma_k,\\,\\gamma$ で表せ．\n\\item 外因性ノイズ $\\eta_{\\mathrm{ext}}^2=(\\langle n_1n_2\\rangle-\\langle n_1\\rangle\\langle n_2\\rangle)/\\langle n\\rangle^2$ と内因性ノイズ $\\eta_{\\mathrm{int}}^2=\\langle(n_1-n_2)^2\\rangle/(2\\langle n\\rangle^2)$ を求め，$\\eta_{\\mathrm{tot}}^2=\\eta_{\\mathrm{int}}^2+\\eta_{\\mathrm{ext}}^2$ を確かめよ．$\\eta_{\\mathrm{ext}}^2$ と $\\eta_{\\mathrm{int}}^2$ を答えよ（どちらも $\\mu,\\,\\sigma_k,\\,\\gamma$ で表す）．\n\\item 測定で $\\langle n\\rangle=\\nu$，$\\eta_{\\mathrm{tot}}^2=h$ を得た．生成率の変動係数 $\\sigma_k/\\mu$ を $\\nu,\\,h$ で表せ．\n\\item 生成率が時間的にもゆらぎ，$k(t)-\\mu$ が相関関数 $\\sigma_k^2e^{-|t-t'|/\\tau_c}$ をもつ定常過程であるとする．$n$ の平均の動きは $\\dfrac{d\\bar n}{dt}=k(t)-\\gamma\\bar n$ に従う．$\\eta_{\\mathrm{ext}}^2$ を $\\sigma_k,\\,\\mu,\\,\\gamma,\\,\\tau_c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\eta_{\\mathrm{tot}}^2=\\dfrac{\\gamma}{\\mu}+\\dfrac{\\sigma_k^2}{\\mu^2}$ (2) $\\eta_{\\mathrm{ext}}^2=\\dfrac{\\sigma_k^2}{\\mu^2}$，$\\eta_{\\mathrm{int}}^2=\\dfrac{\\gamma}{\\mu}$ (3) $0.20$ (4) $\\eta_{\\mathrm{ext}}^2=\\dfrac{\\sigma_k^2}{\\mu^2}\\cdot\\dfrac{\\gamma\\tau_c}{1+\\gamma\\tau_c}$"
+   "tex": "(1) $\\eta_{\\mathrm{tot}}^2=\\dfrac{\\gamma}{\\mu}+\\dfrac{\\sigma_k^2}{\\mu^2}$ (2) $\\eta_{\\mathrm{ext}}^2=\\dfrac{\\sigma_k^2}{\\mu^2}$，$\\eta_{\\mathrm{int}}^2=\\dfrac{\\gamma}{\\mu}$ (3) $\\dfrac{\\sigma_k}{\\mu}=\\sqrt{h-\\dfrac{1}{\\nu}}$ (4) $\\eta_{\\mathrm{ext}}^2=\\dfrac{\\sigma_k^2}{\\mu^2}\\cdot\\dfrac{\\gamma\\tau_c}{1+\\gamma\\tau_c}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 全分散の公式（条件付き分散の平均 $+$ 条件付き平均の分散）を使う．$k$ を固定するとポアソン分布なので $\\mathrm{Var}(n|k)=k/\\gamma$，平均 $k/\\gamma$．\n\\[ \\mathrm{Var}(n_1)=\\frac{\\mu}{\\gamma}+\\frac{\\sigma_k^2}{\\gamma^2},\\qquad \\langle n\\rangle=\\frac{\\mu}{\\gamma} \\]\nより $\\boldsymbol{\\eta_{\\mathrm{tot}}^2=\\dfrac{\\gamma}{\\mu}+\\dfrac{\\sigma_k^2}{\\mu^2}}$．\n\n(2) $k$ を固定すると $n_1,\\,n_2$ は独立なので $\\langle n_1n_2|k\\rangle=(k/\\gamma)^2$．したがって共分散は $\\sigma_k^2/\\gamma^2$，$\\boldsymbol{\\eta_{\\mathrm{ext}}^2=\\sigma_k^2/\\mu^2}$．また $\\langle(n_1-n_2)^2\\rangle=2\\mathrm{Var}(n_1)-2\\,\\mathrm{Cov}(n_1,n_2)=2\\mu/\\gamma$ だから $\\boldsymbol{\\eta_{\\mathrm{int}}^2=\\dfrac{\\gamma}{\\mu}}$．和は (1) に一致する．2つのレポーターが「同じ向きに」ずれる部分が外因性，「ばらばらに」ずれる部分が内因性である．\n\n(3) $\\eta_{\\mathrm{int}}^2=1/50=0.020$，$\\eta_{\\mathrm{ext}}^2=0.060-0.020=0.040$．$\\sigma_k/\\mu=\\sqrt{0.040}=\\boldsymbol{0.20}$．\n\n(4) $\\delta\\bar n(t)=\\int_0^\\infty e^{-\\gamma s}\\,\\delta k(t-s)\\,ds$ なので\n\\[ \\mathrm{Var}(\\bar n)=\\sigma_k^2\\int_0^\\infty\\!\\!\\int_0^\\infty e^{-\\gamma(s_1+s_2)}e^{-|s_1-s_2|/\\tau_c}\\,ds_1ds_2=\\frac{\\sigma_k^2}{\\gamma(\\gamma+1/\\tau_c)}. \\]\n（$s_1>s_2$ の部分は $\\int_0^\\infty ds_2\\,e^{-2\\gamma s_2}\\int_0^\\infty e^{-(\\gamma+1/\\tau_c)x}dx=\\dfrac{1}{2\\gamma(\\gamma+1/\\tau_c)}$ で，その2倍．）これが2つのレポーターの共分散になるので\n\\[ \\boldsymbol{\\eta_{\\mathrm{ext}}^2=\\frac{\\sigma_k^2}{\\mu^2}\\cdot\\frac{\\gamma\\tau_c}{1+\\gamma\\tau_c}}. \\]\n生成率のゆらぎがタンパク質の寿命 $1/\\gamma$ より速ければ（$\\gamma\\tau_c\\ll1$）平均化されて外因性ノイズは小さくなり，遅ければ（$\\gamma\\tau_c\\gg1$）静的な (2) の値に近づく．内因性ノイズは $1/\\langle n\\rangle$ のままである．"
+    "tex": "(1) 全分散の公式（条件付き分散の平均 $+$ 条件付き平均の分散）を使う．$k$ を固定するとポアソン分布なので $\\mathrm{Var}(n|k)=k/\\gamma$，平均 $k/\\gamma$．\n\\[ \\mathrm{Var}(n_1)=\\frac{\\mu}{\\gamma}+\\frac{\\sigma_k^2}{\\gamma^2},\\qquad \\langle n\\rangle=\\frac{\\mu}{\\gamma} \\]\nより $\\boldsymbol{\\eta_{\\mathrm{tot}}^2=\\dfrac{\\gamma}{\\mu}+\\dfrac{\\sigma_k^2}{\\mu^2}}$．\n\n(2) $k$ を固定すると $n_1,\\,n_2$ は独立なので $\\langle n_1n_2|k\\rangle=(k/\\gamma)^2$．したがって共分散は $\\sigma_k^2/\\gamma^2$，$\\boldsymbol{\\eta_{\\mathrm{ext}}^2=\\sigma_k^2/\\mu^2}$．また $\\langle(n_1-n_2)^2\\rangle=2\\mathrm{Var}(n_1)-2\\,\\mathrm{Cov}(n_1,n_2)=2\\mu/\\gamma$ だから $\\boldsymbol{\\eta_{\\mathrm{int}}^2=\\dfrac{\\gamma}{\\mu}}$．和は (1) に一致する．2つのレポーターが「同じ向きに」ずれる部分が外因性，「ばらばらに」ずれる部分が内因性である．\n\n(3) $\\langle n\\rangle=\\mu/\\gamma=\\nu$ なので $\\eta_{\\mathrm{int}}^2=\\gamma/\\mu=1/\\nu$．$\\eta_{\\mathrm{ext}}^2=h-1/\\nu$ より $\\boldsymbol{\\dfrac{\\sigma_k}{\\mu}=\\sqrt{h-\\dfrac1\\nu}}$．内因性ノイズは平均個数だけで決まるので，1つのレポーターの全ノイズからでも差し引いて外因性ノイズを推定できる（ただし生成消滅がポアソン的であるという仮定に頼る．2レポーター法はこの仮定なしに分離できる）．\n\n(4) $\\delta\\bar n(t)=\\int_0^\\infty e^{-\\gamma s}\\,\\delta k(t-s)\\,ds$ なので\n\\[ \\mathrm{Var}(\\bar n)=\\sigma_k^2\\int_0^\\infty\\!\\!\\int_0^\\infty e^{-\\gamma(s_1+s_2)}e^{-|s_1-s_2|/\\tau_c}\\,ds_1ds_2=\\frac{\\sigma_k^2}{\\gamma(\\gamma+1/\\tau_c)}. \\]\n（$s_1>s_2$ の部分は $\\int_0^\\infty ds_2\\,e^{-2\\gamma s_2}\\int_0^\\infty e^{-(\\gamma+1/\\tau_c)x}dx=\\dfrac{1}{2\\gamma(\\gamma+1/\\tau_c)}$ で，その2倍．）これが2つのレポーターの共分散になるので\n\\[ \\boldsymbol{\\eta_{\\mathrm{ext}}^2=\\frac{\\sigma_k^2}{\\mu^2}\\cdot\\frac{\\gamma\\tau_c}{1+\\gamma\\tau_c}}. \\]\n生成率のゆらぎがタンパク質の寿命 $1/\\gamma$ より速ければ（$\\gamma\\tau_c\\ll1$）平均化されて外因性ノイズは小さくなり，遅ければ（$\\gamma\\tau_c\\gg1$）静的な (2) の値に近づく．内因性ノイズは $1/\\langle n\\rangle$ のままである．"
    }
   ],
   "idea": {
@@ -666,7 +666,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) gamma/μ+σ_k^2/μ^2\n(2) η_ext^2：σ_k^2/μ^2 ; η_int^2：gamma/μ\n(3) 0.20\n(4) σ_k^2/μ^2 gamma τ_c/(1+gamma τ_c)"
+   "spec": "(1) gamma/μ+σ_k^2/μ^2\n(2) η_ext^2：σ_k^2/μ^2 ; η_int^2：gamma/μ\n(3) sqrt(h - 1/nu)\n(4) σ_k^2/μ^2 gamma τ_c/(1+gamma τ_c)"
   },
   "methods": [],
   "tags": [
@@ -699,16 +699,16 @@
   "theme": "共有結合修飾サイクルのゼロ次超感受性（ゴールドベーター＝コシュランド）",
   "topic": "共有結合修飾サイクルのゼロ次超感受性（ゴールドベーター＝コシュランド）",
   "statement": {
-   "tex": "タンパク質 W（総濃度 $W_T$）がキナーゼ E$_1$ によってリン酸化されて W$^*$ になり，ホスファターゼ E$_2$ によって W に戻る．どちらの反応もミカエリス＝メンテン型で，速度はそれぞれ\n\\[ v_1=\\frac{V_1[\\mathrm W]}{K_1+[\\mathrm W]},\\qquad v_2=\\frac{V_2[\\mathrm W^*]}{K_2+[\\mathrm W^*]} \\]\nである（酵素と結合した W の量は無視する）．リン酸化された割合を $x=[\\mathrm W^*]/W_T$，規格化したミカエリス定数を $\\kappa_1=K_1/W_T$，$\\kappa_2=K_2/W_T$ とする．以下 $\\kappa_1=\\kappa_2=\\kappa$ とする．\n\\begin{enumerate}\n\\item 定常状態 $v_1=v_2$ を満たすときのキナーゼとホスファターゼの活性の比 $\\rho=V_1/V_2$ を $x,\\,\\kappa$ で表せ．\n\\item $x=0.9$ となる $\\rho$ と $x=0.1$ となる $\\rho$ の比 $R$ を $\\kappa$ で表せ．\n\\item $\\kappa=0.01$ のとき $R$ の値と，同じ $R$ を与えるヒル関数（$R=81^{1/n_H}$）の実効的なヒル係数 $n_H$ を求めよ．\n\\item $x=1/2$ における感度 $dx/d\\rho$ を $\\kappa$ で表せ．\n\\end{enumerate}"
+   "tex": "タンパク質 W（総濃度 $W_T$）がキナーゼ E$_1$ によってリン酸化されて W$^*$ になり，ホスファターゼ E$_2$ によって W に戻る．どちらの反応もミカエリス＝メンテン型で，速度はそれぞれ\n\\[ v_1=\\frac{V_1[\\mathrm W]}{K_1+[\\mathrm W]},\\qquad v_2=\\frac{V_2[\\mathrm W^*]}{K_2+[\\mathrm W^*]} \\]\nである（酵素と結合した W の量は無視する）．リン酸化された割合を $x=[\\mathrm W^*]/W_T$，規格化したミカエリス定数を $\\kappa_1=K_1/W_T$，$\\kappa_2=K_2/W_T$ とする．以下 $\\kappa_1=\\kappa_2=\\kappa$ とする．\n\\begin{enumerate}\n\\item 定常状態 $v_1=v_2$ を満たすときのキナーゼとホスファターゼの活性の比 $\\rho=V_1/V_2$ を $x,\\,\\kappa$ で表せ．\n\\item $x=0.9$ となる $\\rho$ と $x=0.1$ となる $\\rho$ の比 $R$ を $\\kappa$ で表せ．\n\\item $\\kappa\\ll1$ のとき，$R$ を $\\kappa$ の1次まで求めよ．また，同じ $R$ を与えるヒル関数（$R=81^{1/n_H}$）の実効的なヒル係数 $n_H$ の主要項を求めよ．\n\\item $x=1/2$ における感度 $dx/d\\rho$ を $\\kappa$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\rho=\\dfrac{x(\\kappa+1-x)}{(1-x)(\\kappa+x)}$ (2) $R=\\dfrac{81(10\\kappa+1)^2}{(10\\kappa+9)^2}$ (3) $R\\approx1.18$，$n_H\\approx26$ (4) $\\dfrac{1+2\\kappa}{8\\kappa}$"
+   "tex": "(1) $\\rho=\\dfrac{x(\\kappa+1-x)}{(1-x)(\\kappa+x)}$ (2) $R=\\dfrac{81(10\\kappa+1)^2}{(10\\kappa+9)^2}$ (3) $R\\simeq1+\\dfrac{160\\kappa}{9}$，$n_H\\simeq\\dfrac{9\\ln3}{40\\kappa}$ (4) $\\dfrac{1+2\\kappa}{8\\kappa}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $[\\mathrm W]=W_T(1-x)$，$[\\mathrm W^*]=W_Tx$ を代入して $V_1\\dfrac{1-x}{\\kappa+1-x}=V_2\\dfrac{x}{\\kappa+x}$．よって\n\\[ \\boldsymbol{\\rho=\\frac{x(\\kappa+1-x)}{(1-x)(\\kappa+x)}}. \\]\n\n(2) $x=0.9$：$\\rho=\\dfrac{0.9(\\kappa+0.1)}{0.1(\\kappa+0.9)}$，$x=0.1$：$\\rho=\\dfrac{0.1(\\kappa+0.9)}{0.9(\\kappa+0.1)}$．比は\n\\[ \\boldsymbol{R=81\\left(\\frac{\\kappa+0.1}{\\kappa+0.9}\\right)^2=\\frac{81(10\\kappa+1)^2}{(10\\kappa+9)^2}}. \\]\n$\\kappa\\to\\infty$（酵素が不飽和）では $R\\to81$ で，$n=1$ のヒル関数と同じなだらかな応答．\n\n(3) $R=81\\times(0.11/0.91)^2\\approx\\boldsymbol{1.18}$，$n_H=\\dfrac{\\ln81}{\\ln1.18}\\approx\\boldsymbol{26}$．活性の比をわずか $18\\,\\%$ 変えるだけで，ほとんど修飾されていない状態からほとんど修飾された状態へ切り替わる．協同的な結合部位がなくても，両方の酵素が基質で飽和している（反応速度が基質濃度によらないゼロ次反応）ことで鋭いスイッチが生まれる．\n\n(4) $\\dfrac{d\\rho}{dx}$ を $x=1/2$ で計算する．$\\ln\\rho=\\ln x+\\ln(\\kappa+1-x)-\\ln(1-x)-\\ln(\\kappa+x)$ を微分すると，$x=1/2$（$\\rho=1$）で\n\\[ \\frac{d\\rho}{dx}=2+2-\\frac{2}{\\kappa+1/2}=4-\\frac{4}{2\\kappa+1}=\\frac{8\\kappa}{2\\kappa+1}. \\]\nよって $\\boldsymbol{\\dfrac{dx}{d\\rho}=\\dfrac{1+2\\kappa}{8\\kappa}}$．$\\kappa\\to0$ で $1/(8\\kappa)$ と発散し，$\\rho=1$ で $x$ が $0$ から $1$ へ跳ぶ．"
+    "tex": "(1) $[\\mathrm W]=W_T(1-x)$，$[\\mathrm W^*]=W_Tx$ を代入して $V_1\\dfrac{1-x}{\\kappa+1-x}=V_2\\dfrac{x}{\\kappa+x}$．よって\n\\[ \\boldsymbol{\\rho=\\frac{x(\\kappa+1-x)}{(1-x)(\\kappa+x)}}. \\]\n\n(2) $x=0.9$：$\\rho=\\dfrac{0.9(\\kappa+0.1)}{0.1(\\kappa+0.9)}$，$x=0.1$：$\\rho=\\dfrac{0.1(\\kappa+0.9)}{0.9(\\kappa+0.1)}$．比は\n\\[ \\boldsymbol{R=81\\left(\\frac{\\kappa+0.1}{\\kappa+0.9}\\right)^2=\\frac{81(10\\kappa+1)^2}{(10\\kappa+9)^2}}. \\]\n$\\kappa\\to\\infty$（酵素が不飽和）では $R\\to81$ で，$n=1$ のヒル関数と同じなだらかな応答．\n\n(3) $R=\\dfrac{(1+10\\kappa)^2}{(1+10\\kappa/9)^2}\\simeq(1+20\\kappa)\\left(1-\\dfrac{20\\kappa}{9}\\right)\\simeq\\boldsymbol{1+\\dfrac{160\\kappa}{9}}$．$\\ln R\\simeq\\dfrac{160\\kappa}{9}$ なので\n\\[ n_H=\\frac{\\ln81}{\\ln R}\\simeq\\boldsymbol{\\frac{9\\ln3}{40\\kappa}}. \\]\nたとえば $\\kappa=0.01$ なら $R\\approx1.2$，$n_H\\approx25$ 程度で，活性の比を2割ほど変えるだけで，ほとんど修飾されていない状態からほとんど修飾された状態へ切り替わる．協同的な結合部位がなくても，両方の酵素が基質で飽和している（反応速度が基質濃度によらないゼロ次反応）ことで鋭いスイッチが生まれる．\n\n(4) $\\dfrac{d\\rho}{dx}$ を $x=1/2$ で計算する．$\\ln\\rho=\\ln x+\\ln(\\kappa+1-x)-\\ln(1-x)-\\ln(\\kappa+x)$ を微分すると，$x=1/2$（$\\rho=1$）で\n\\[ \\frac{d\\rho}{dx}=2+2-\\frac{2}{\\kappa+1/2}=4-\\frac{4}{2\\kappa+1}=\\frac{8\\kappa}{2\\kappa+1}. \\]\nよって $\\boldsymbol{\\dfrac{dx}{d\\rho}=\\dfrac{1+2\\kappa}{8\\kappa}}$．$\\kappa\\to0$ で $1/(8\\kappa)$ と発散し，$\\rho=1$ で $x$ が $0$ から $1$ へ跳ぶ．"
    }
   ],
   "idea": {
@@ -716,7 +716,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ρ：x (κ+1-x)/((1-x)(κ+x))\n(2) R：81(10κ+1)^2/(10κ+9)^2\n(3) R：≈1.18 ; n_H：≈26\n(4) (1+2κ)/(8κ)"
+   "spec": "(1) ρ：x (κ+1-x)/((1-x)(κ+x))\n(2) R：81(10κ+1)^2/(10κ+9)^2\n(3) R：1 + 160κ/9 ; n_H：9 ln 3/(40κ)\n(4) (1+2κ)/(8κ)"
   },
   "methods": [],
   "tags": [

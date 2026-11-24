@@ -9,16 +9,16 @@
   "theme": "ハッブルの法則と銀河の赤方偏移",
   "topic": "ハッブルの法則と銀河の赤方偏移",
   "statement": {
-   "tex": "遠くの銀河は，距離 $d$ に比例する速さ $v = H_0 d$ で私たちから遠ざかっている（ハッブルの法則）．$H_0 = 70\\,\\mathrm{km/s/Mpc}$ とする（$\\mathrm{Mpc}$ はメガパーセク）．速さ $v$ が光速 $c = 3.0\\times 10^{5}\\,\\mathrm{km/s}$ より十分小さいとき，銀河からの光の波長は $1 + \\dfrac{v}{c}$ 倍にのびて観測される．$\\dfrac{v}{c}$ を赤方偏移 $z$ という．\n\\begin{enumerate}\n\\item $z = 0.010$ の銀河の後退速度を $\\mathrm{km/s}$ 単位で求めよ．\n\\item この銀河までの距離を $\\mathrm{Mpc}$ 単位で求めよ．\n\\item 距離 $100\\,\\mathrm{Mpc}$ の銀河から，水素の出す波長 $656.3\\,\\mathrm{nm}$ の光（$\\mathrm{H}\\alpha$ 線）は何 $\\mathrm{nm}$ に観測されるか．\n\\end{enumerate}"
+   "tex": "遠くの銀河は，距離 $d$ に比例する速さ $v = H_0 d$ で私たちから遠ざかっている（ハッブルの法則，$H_0$ はハッブル定数）．速さ $v$ が光速 $c$ より十分小さいとき，銀河からの光の波長は $1 + \\dfrac{v}{c}$ 倍にのびて観測される．$\\dfrac{v}{c}$ を赤方偏移 $z$ という．\n\\begin{enumerate}\n\\item 赤方偏移 $z$ の銀河の後退速度 $v$ を $z, c$ で表せ．\n\\item この銀河までの距離 $d$ を $z, c, H_0$ で表せ．\n\\item 距離 $d$ の銀河から，水素の出す波長 $\\lambda_0$ の光（$\\mathrm{H}\\alpha$ 線）が届く．観測される波長 $\\lambda$ を $\\lambda_0, H_0, d, c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $v = 3.0\\times 10^{3}\\,\\mathrm{km/s}$\n(2) $d \\approx 43\\,\\mathrm{Mpc}$\n(3) $\\approx 671.6\\,\\mathrm{nm}$"
+   "tex": "(1) $v = zc$\n(2) $d = \\dfrac{zc}{H_0}$\n(3) $\\lambda=\\lambda_0\\left(1+\\dfrac{H_0d}{c}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $v = zc = 0.010\\times 3.0\\times 10^{5} = \\boldsymbol{3.0\\times 10^{3}\\,\\mathrm{km/s}}$．\n\n(2) $d = \\dfrac{v}{H_0} = \\dfrac{3000}{70}\\,\\mathrm{Mpc} \\approx \\boldsymbol{43\\,\\mathrm{Mpc}}$．\n\n(3) $v = 70\\times 100 = 7000\\,\\mathrm{km/s}$，$z = \\dfrac{7000}{3.0\\times 10^{5}} \\approx 0.0233$．\n\\[ \\lambda = 656.3\\times 1.0233\\,\\mathrm{nm} \\approx \\boldsymbol{671.6\\,\\mathrm{nm}}. \\]\n\nスペクトル線のずれ（赤方偏移）は測りやすいので，ハッブルの法則を使って銀河までの距離を求められる．逆に距離が別の方法でわかる天体を使うと $H_0$ が決まる．次は，宇宙の膨張を表すスケール因子 $a(t)$ と，その時間変化を決めるフリードマン方程式を学ぶ．"
+    "tex": "(1) $z=v/c$ より $\\boldsymbol{v = zc}$．\n\n(2) $d = \\dfrac{v}{H_0}$ より $\\boldsymbol{d=\\dfrac{zc}{H_0}}$．\n\n(3) 後退速度は $v=H_0d$，赤方偏移は $z=H_0d/c$ なので\n\\[ \\boldsymbol{\\lambda = \\lambda_0\\left(1+\\frac{H_0d}{c}\\right)}. \\]\n\nスペクトル線のずれ（赤方偏移）は測りやすいので，ハッブルの法則を使って銀河までの距離を求められる．逆に距離が別の方法でわかる天体を使うと $H_0$ が決まる．次は，宇宙の膨張を表すスケール因子 $a(t)$ と，その時間変化を決めるフリードマン方程式を学ぶ．"
    }
   ],
   "idea": {
@@ -26,7 +26,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) v [km/s]：3.0e3\n(2) d [Mpc]：≈43\n(3) λ [nm]：≈671.6"
+   "spec": "(1) z c\n(2) z c/H_0\n(3) λ_0 (1+H_0 d/c)"
   },
   "methods": [],
   "tags": [
@@ -57,24 +57,24 @@
   "theme": "宇宙背景放射の温度と宇宙の晴れ上がり",
   "topic": "宇宙背景放射の温度と宇宙の晴れ上がり",
   "statement": {
-   "tex": "宇宙が膨張して長さのスケールが $s$ 倍になると，光の波長も $s$ 倍にのび，黒体放射の温度は $\\dfrac{1}{s}$ 倍になる．宇宙が今の $\\dfrac{1}{1+z}$ の大きさだった時代を「赤方偏移 $z$ の時代」という．現在の宇宙背景放射の温度は $2.725\\,\\mathrm{K}$ である．ウィーンの変位則 $\\lambda_{\\max}T = 2.90\\times 10^{-3}\\,\\mathrm{m\\cdot K}$，ボルツマン定数 $k_B = 8.62\\times 10^{-5}\\,\\mathrm{eV/K}$ とする．\n\\begin{enumerate}\n\\item 宇宙の温度が $3000\\,\\mathrm{K}$ だった時代の $1 + z$ を求めよ．\n\\item 現在の宇宙背景放射の強度が最大になる波長を求めよ．\n\\item 温度 $3000\\,\\mathrm{K}$ での典型的な熱エネルギー $k_BT$ を $\\mathrm{eV}$ 単位で求めよ．また，水素原子のイオン化エネルギー $13.6\\,\\mathrm{eV}$ はその何倍か．\n\\end{enumerate}"
+   "tex": "宇宙が膨張して長さのスケールが $s$ 倍になると，光の波長も $s$ 倍にのび，黒体放射の温度は $\\dfrac{1}{s}$ 倍になる．宇宙が今の $\\dfrac{1}{1+z}$ の大きさだった時代を「赤方偏移 $z$ の時代」という．現在の宇宙背景放射の温度を $T_0$ とする．ウィーンの変位則を $\\lambda_{\\max}T = b$（$b$ は定数），ボルツマン定数を $k_B$ とする．\n\\begin{enumerate}\n\\item 宇宙の温度が $T$ だった時代の $1 + z$ を $T, T_0$ で表せ．\n\\item 現在の宇宙背景放射の強度が最大になる波長 $\\lambda_{\\max}$ を $b, T_0$ で表せ．\n\\item 水素原子のイオン化エネルギーを $I$ とする．温度 $T$ での典型的な熱エネルギー $k_BT$ に対する $I$ の比を $I, k_B, T$ で表せ．また，比が $N$ になる時代の $1+z$ を $I, k_B, T_0, N$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1 + z \\approx 1.10\\times 10^{3}$\n(2) $\\lambda_{\\max} \\approx 1.06\\times 10^{-3}\\,\\mathrm{m}$\n(3) $k_BT \\approx 0.259\\,\\mathrm{eV}$，$\\approx 52.6$ 倍"
+   "tex": "(1) $1 + z = \\dfrac{T}{T_0}$\n(2) $\\lambda_{\\max} = \\dfrac{b}{T_0}$\n(3) $\\dfrac{I}{k_BT}$，$1+z=\\dfrac{I}{Nk_BT_0}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 温度は大きさに反比例するので $1 + z = \\dfrac{3000}{2.725} \\approx \\boldsymbol{1.10\\times 10^{3}}$．宇宙が今の約1100分の1の大きさだったころである．\n\n(2) $\\lambda_{\\max} = \\dfrac{2.90\\times 10^{-3}}{2.725}\\,\\mathrm{m} \\approx \\boldsymbol{1.06\\times 10^{-3}\\,\\mathrm{m}}$（約 $1\\,\\mathrm{mm}$，マイクロ波）．\n\n(3) $k_BT = 8.62\\times 10^{-5}\\times 3000 \\approx \\boldsymbol{0.259\\,\\mathrm{eV}}$，$\\dfrac{13.6}{0.259} \\approx \\boldsymbol{52.6}$ 倍．\n\n平均の熱エネルギーはイオン化エネルギーよりずっと小さいのに，それでも $3000\\,\\mathrm{K}$ 程度までは水素は電離していた．光子の数が原子の数の約10億倍もあり，分布の裾の高エネルギー光子が十分にあるためである．温度がこれより下がると電子と陽子が結合して原子になり，光がまっすぐ進めるようになった（宇宙の晴れ上がり）．そのときの光が今，マイクロ波として見えている．次は，これをサハの式で定量的に扱う．"
+    "tex": "(1) 温度は大きさに反比例するので，大きさが今の $\\dfrac{1}{1+z}$ のとき温度は $T_0(1+z)$ である．よって $\\boldsymbol{1 + z = \\dfrac{T}{T_0}}$．$T_0\\approx2.7\\,\\mathrm{K}$，$T\\approx3000\\,\\mathrm{K}$ なら約 $1100$ で，宇宙が今の約1100分の1の大きさだったころである．\n\n(2) $\\boldsymbol{\\lambda_{\\max} = \\dfrac{b}{T_0}}$．$T_0\\approx2.7\\,\\mathrm{K}$ では約 $1\\,\\mathrm{mm}$（マイクロ波）である．\n\n(3) 比は $\\boldsymbol{\\dfrac{I}{k_BT}}$．これが $N$ になる温度は $T=\\dfrac{I}{Nk_B}$ なので，(1) より $\\boldsymbol{1+z=\\dfrac{I}{Nk_BT_0}}$．\n\n$T\\approx3000\\,\\mathrm{K}$ では $k_BT\\approx0.26\\,\\mathrm{eV}$ で，$I=13.6\\,\\mathrm{eV}$ の約50分の1にすぎない．平均の熱エネルギーはイオン化エネルギーよりずっと小さいのに，それでもこの温度までは水素は電離していた．光子の数が原子の数の約10億倍もあり，分布の裾の高エネルギー光子が十分にあるためである．温度がこれより下がると電子と陽子が結合して原子になり，光がまっすぐ進めるようになった（宇宙の晴れ上がり）．そのときの光が今，マイクロ波として見えている．次は，これをサハの式で定量的に扱う．"
    }
   ],
   "idea": {
-   "tex": "放射の温度は宇宙の大きさに反比例して下がり，晴れ上がりの $3000\\,\\mathrm{K}$ の光は現在 $2.7\\,\\mathrm{K}$ のマイクロ波として届く．"
+   "tex": "放射の温度は宇宙の大きさに反比例して下がり（$T=T_0(1+z)$），晴れ上がりの約 $3000\\,\\mathrm{K}$ の光は現在 $2.7\\,\\mathrm{K}$ のマイクロ波として届く．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 1+z：≈1.10e3\n(2) λ_max [m]：≈1.06e-3\n(3) k_B T [eV]：≈0.259 ; 倍率：≈52.6"
+   "spec": "(1) 1+z：T/T_0\n(2) λ_max：b/T_0\n(3) I/(k_B T) ; 1+z：I/(N k_B T_0)"
   },
   "methods": [],
   "tags": [
@@ -106,16 +106,16 @@
   "theme": "Ia型超新星を標準光源にしたハッブル定数の決定",
   "topic": "Ia型超新星を標準光源にしたハッブル定数の決定",
   "statement": {
-   "tex": "Ia 型超新星は，最も明るいときの光度がほぼ一定 $L=4.0\\times10^{36}\\,\\mathrm{W}$ なので，距離を測る「標準光源」に使える．ある銀河の Ia 型超新星を観測すると，最大光度時の流束（単位面積・単位時間に届くエネルギー）が $F=4.5\\times10^{-14}\\,\\mathrm{W/m^2}$，銀河の赤方偏移が $z=0.020$ であった．光は等方的に広がり $F=\\dfrac{L}{4\\pi d^2}$ とする．$z\\ll1$ では後退速度は $v=cz$（$c=3.0\\times10^{5}\\,\\mathrm{km/s}$）である．$1\\,\\mathrm{Mpc}=3.09\\times10^{22}\\,\\mathrm{m}$，$1\\,\\mathrm{yr}=3.15\\times10^{7}\\,\\mathrm{s}$ とする．\n\\begin{enumerate}\n\\item 銀河までの距離 $d$ を $\\mathrm{Mpc}$ で求めよ．\n\\item ハッブルの法則 $v=H_0d$ からハッブル定数 $H_0$ を $\\mathrm{km/s/Mpc}$ で求めよ．\n\\item この超新星の光が地球に届くまでにかかった時間を年で求めよ（光速は $3.0\\times10^{8}\\,\\mathrm{m/s}$）．\n\\end{enumerate}"
+   "tex": "Ia 型超新星は，最も明るいときの光度がほぼ一定値 $L$ なので，距離を測る「標準光源」に使える．ある銀河の Ia 型超新星を観測すると，最大光度時の流束（単位面積・単位時間に届くエネルギー）が $F$，銀河の赤方偏移が $z$ であった．光は等方的に広がり $F=\\dfrac{L}{4\\pi d^2}$ とする．$z\\ll1$ では後退速度は $v=cz$（$c$ は光速）である．\n\\begin{enumerate}\n\\item 銀河までの距離 $d$ を $L, F$ で表せ．\n\\item ハッブルの法則 $v=H_0d$ からハッブル定数 $H_0$ を $c, z, L, F$ で表せ．\n\\item この超新星の光が地球に届くまでにかかった時間 $t$ を $L, F, c$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $d\\approx86\\,\\mathrm{Mpc}$ (2) $H_0\\approx70\\,\\mathrm{km/s/Mpc}$ (3) $\\approx2.8\\times10^{8}\\,\\mathrm{yr}$"
+   "tex": "(1) $d=\\sqrt{\\dfrac{L}{4\\pi F}}$ (2) $H_0=cz\\sqrt{\\dfrac{4\\pi F}{L}}$ (3) $t=\\dfrac{1}{c}\\sqrt{\\dfrac{L}{4\\pi F}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $d=\\sqrt{\\dfrac{L}{4\\pi F}}=\\sqrt{\\dfrac{4.0\\times10^{36}}{4\\pi\\times4.5\\times10^{-14}}}\\approx2.66\\times10^{24}\\,\\mathrm{m}\\approx\\boldsymbol{86\\,\\mathrm{Mpc}}$．\n\n(2) $v=cz=3.0\\times10^{5}\\times0.020=6.0\\times10^{3}\\,\\mathrm{km/s}$．$H_0=v/d=6000/86\\approx\\boldsymbol{70\\,\\mathrm{km/s/Mpc}}$．\n\n(3) $d/c=2.66\\times10^{24}/(3.0\\times10^{8})\\approx8.9\\times10^{15}\\,\\mathrm{s}\\approx\\boldsymbol{2.8\\times10^{8}\\,\\mathrm{yr}}$．恐竜が現れる前に出た光を見ていることになる．\n\nさらに遠い（$z\\sim1$ の）超新星が，減速膨張の予想より暗く見えたことから宇宙の加速膨張が発見された．次は，膨張する宇宙での「距離」の定義（光度距離・角径距離）を学ぶ．"
+    "tex": "(1) $F=\\dfrac{L}{4\\pi d^2}$ を解いて $\\boldsymbol{d=\\sqrt{\\dfrac{L}{4\\pi F}}}$．\n\n(2) $H_0=\\dfrac{v}{d}=cz\\Big/\\sqrt{\\dfrac{L}{4\\pi F}}$ より $\\boldsymbol{H_0=cz\\sqrt{\\dfrac{4\\pi F}{L}}}$．$L=4.0\\times10^{36}\\,\\mathrm{W}$，$F=4.5\\times10^{-14}\\,\\mathrm{W/m^2}$，$z=0.020$ なら $d\\approx86\\,\\mathrm{Mpc}$，$H_0\\approx70\\,\\mathrm{km/s/Mpc}$ になる．\n\n(3) $\\boldsymbol{t=\\dfrac{d}{c}=\\dfrac{1}{c}\\sqrt{\\dfrac{L}{4\\pi F}}}$．上の数値では約 $2.8\\times10^{8}$ 年で，恐竜が現れる前に出た光を見ていることになる．\n\nさらに遠い（$z\\sim1$ の）超新星が，減速膨張の予想より暗く見えたことから宇宙の加速膨張が発見された．次は，膨張する宇宙での「距離」の定義（光度距離・角径距離）を学ぶ．"
    }
   ],
   "idea": {
@@ -123,7 +123,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 距離 [Mpc]：≈86\n(2) H_0 [km/s/Mpc]：≈70\n(3) 時間 [yr]：≈2.8e8"
+   "spec": "(1) sqrt(L/(4π F))\n(2) c z sqrt(4π F/L)\n(3) sqrt(L/(4π F))/c"
   },
   "methods": [],
   "tags": [
@@ -155,16 +155,16 @@
   "theme": "臨界密度とハッブル時間",
   "topic": "臨界密度とハッブル時間",
   "statement": {
-   "tex": "ハッブル定数を $H_0=70\\,\\mathrm{km/s/Mpc}$ とする．$1\\,\\mathrm{Mpc}=3.09\\times10^{22}\\,\\mathrm{m}$，$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$m_p=1.67\\times10^{-27}\\,\\mathrm{kg}$，$1\\,\\mathrm{yr}=3.15\\times10^{7}\\,\\mathrm{s}$ とする．\n\\begin{enumerate}\n\\item 平坦な宇宙を与える臨界密度 $\\rho_c$ をフリードマン方程式 $H^2=8\\pi G\\rho/3$ から $H_0, G$ で表し，数値を求めよ．\n\\item $\\rho_c$ は $1\\,\\mathrm{m^3}$ あたり陽子何個分の質量か．\n\\item ハッブル時間 $1/H_0$ を年で求めよ．\n\\end{enumerate}"
+   "tex": "ハッブル定数を $H_0$，万有引力定数を $G$，陽子の質量を $m_p$ とする．\n\\begin{enumerate}\n\\item 平坦な宇宙を与える臨界密度 $\\rho_c$ をフリードマン方程式 $H^2=8\\pi G\\rho/3$ から $H_0, G$ で表せ．\n\\item $\\rho_c$ は単位体積あたり陽子何個分の質量か．$H_0, G, m_p$ で表せ．\n\\item ハッブル時間 $t_H=1/H_0$ を用いて，$\\rho_c$ を $G, t_H$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\rho_c=\\dfrac{3H_0^2}{8\\pi G}$，$\\rho_c\\approx 9.2\\times10^{-27}\\,\\mathrm{kg/m^3}$ (2) $\\approx 5.5$ 個 (3) $1/H_0\\approx 1.4\\times10^{10}\\,\\mathrm{yr}$"
+   "tex": "(1) $\\rho_c=\\dfrac{3H_0^2}{8\\pi G}$ (2) $\\dfrac{3H_0^2}{8\\pi Gm_p}$ (3) $\\rho_c=\\dfrac{3}{8\\pi Gt_H^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $H_0=7.0\\times10^4/(3.09\\times10^{22})\\,\\mathrm{s^{-1}}\\approx2.27\\times10^{-18}\\,\\mathrm{s^{-1}}$．$\\rho_c=3H_0^2/(8\\pi G)$ より $\\boldsymbol{\\rho_c\\approx9.2\\times10^{-27}\\,\\mathrm{kg/m^3}}$．\n\n(2) $\\rho_c/m_p\\approx\\boldsymbol{5.5}$ 個．地上の最高の真空と比べても桁違いに希薄である．\n\n(3) $1/H_0\\approx4.4\\times10^{17}\\,\\mathrm{s}\\approx\\boldsymbol{1.4\\times10^{10}\\,\\mathrm{yr}}$．宇宙年齢の目安になる．"
+    "tex": "(1) $H=H_0$ のとき平坦（$\\rho=\\rho_c$）なので $\\boldsymbol{\\rho_c=\\dfrac{3H_0^2}{8\\pi G}}$．$H_0=70\\,\\mathrm{km/s/Mpc}\\approx2.27\\times10^{-18}\\,\\mathrm{s^{-1}}$ なら $\\rho_c\\approx9.2\\times10^{-27}\\,\\mathrm{kg/m^3}$ である．\n\n(2) $\\rho_c/m_p=\\boldsymbol{\\dfrac{3H_0^2}{8\\pi Gm_p}}$．上の値では $1\\,\\mathrm{m^3}$ あたり陽子約 $5.5$ 個分で，地上の最高の真空と比べても桁違いに希薄である．\n\n(3) $H_0=1/t_H$ を代入して $\\boldsymbol{\\rho_c=\\dfrac{3}{8\\pi Gt_H^2}}$．$t_H\\approx1.4\\times10^{10}\\,\\mathrm{yr}$ は宇宙年齢の目安で，臨界密度は「自由落下時間がハッブル時間程度になる密度」と言い換えられる．"
    }
   ],
   "idea": {
@@ -172,7 +172,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 3 H_0^2/(8 pi G) ; 臨界密度 [kg/m^3]：≈9.2e-27\n(2) ≈5.5\n(3) 時間 [yr]：≈1.4e10"
+   "spec": "(1) 3 H_0^2/(8 pi G)\n(2) 3 H_0^2/(8 pi G m_p)\n(3) 3/(8 pi G t_H^2)"
   },
   "methods": [],
   "tags": [
@@ -251,16 +251,16 @@
   "theme": "今日の宇宙背景ニュートリノの数密度",
   "topic": "今日の宇宙背景ニュートリノの数密度",
   "statement": {
-   "tex": "超相対論的な粒子で $n_F=\\frac34n_B$（自由度あたり）である．\n\\begin{enumerate}\n\\item 積分 $\\int\\frac{x^2}{e^x+1}$ と $\\int\\frac{x^2}{e^x-1}$ の関係からこれを示せ．\n\\item 光子の数密度 $411\\ \\mathrm{cm^{-3}}$，$T_\\nu^3/T_\\gamma^3=4/11$ を用いて，1つの世代のニュートリノと反ニュートリノの数密度の合計を求めよ．\n\\end{enumerate}"
+   "tex": "超相対論的な粒子で $n_F=\\frac34n_B$（自由度あたり）である．\n\\begin{enumerate}\n\\item 積分 $\\int\\frac{x^2}{e^x+1}$ と $\\int\\frac{x^2}{e^x-1}$ の関係からこれを示せ．\n\\item 光子の数密度を $n_\\gamma$，$T_\\nu^3/T_\\gamma^3=4/11$ として，1つの世代のニュートリノと反ニュートリノの数密度の合計を $n_\\gamma$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明　(2) $\\approx112\\ \\mathrm{cm^{-3}}$"
+   "tex": "(1) 証明　(2) $\\dfrac{3}{11}n_\\gamma$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\frac{1}{e^x+1}=\\frac{1}{e^x-1}-\\frac{2}{e^{2x}-1}$ を積分すると，フェルミの積分はボースの積分の $1-\\frac{2}{2^3}=\\frac34$．\\hfill$\\square$\n\n(2) 光子は自由度2，ニュートリノと反ニュートリノで自由度2：$\\frac34\\times\\frac4{11}\\times411\\approx\\boldsymbol{112\\ \\mathrm{cm^{-3}}}$．"
+    "tex": "(1) $\\frac{1}{e^x+1}=\\frac{1}{e^x-1}-\\frac{2}{e^{2x}-1}$ を積分すると，フェルミの積分はボースの積分の $1-\\frac{2}{2^3}=\\frac34$．\\hfill$\\square$\n\n(2) 光子は自由度2，ニュートリノと反ニュートリノで自由度2．数密度は $T^3$ に比例するので $\\frac34\\times\\frac4{11}\\times n_\\gamma=\\boldsymbol{\\frac{3}{11}n_\\gamma}$．$n_\\gamma=411\\,\\mathrm{cm^{-3}}$ なら約 $112\\,\\mathrm{cm^{-3}}$ である．"
    }
   ],
   "idea": {
@@ -268,7 +268,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) [cm⁻³]：≈112"
+   "spec": "(1) 証明\n(2) 3 n_γ/11"
   },
   "methods": [],
   "tags": [
@@ -300,16 +300,16 @@
   "theme": "放射優勢期の膨張と温度・時間の関係",
   "topic": "放射優勢期の膨張と温度・時間の関係",
   "statement": {
-   "tex": "初期宇宙は放射が優勢で，平坦な宇宙のフリードマン方程式 $H^2=\\left(\\dfrac{\\dot a}{a}\\right)^2=\\dfrac{8\\pi G}{3}\\rho$ の密度は $\\rho c^2=a_rT^4$（$a_r$ は放射定数，光子のみを考える）である．温度は $T\\propto1/a$ で下がる．\n\\begin{enumerate}\n\\item $a\\propto t^{n}$ となる $n$ を求めよ．\n\\item 宇宙の年齢 $t$ を温度 $T$ と $G, c, a_r$ で表せ．\n\\item $T=1.0\\times10^{10}\\,\\mathrm{K}$ および $T=1.0\\times10^{9}\\,\\mathrm{K}$ のときの $t$ を秒で求めよ．$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$，$a_r=7.57\\times10^{-16}\\,\\mathrm{J/(m^3\\,K^4)}$ とする．\n\\end{enumerate}"
+   "tex": "初期宇宙は放射が優勢で，平坦な宇宙のフリードマン方程式 $H^2=\\left(\\dfrac{\\dot a}{a}\\right)^2=\\dfrac{8\\pi G}{3}\\rho$ の密度は $\\rho c^2=a_rT^4$（$a_r$ は放射定数，光子のみを考える）である．温度は $T\\propto1/a$ で下がる．\n\\begin{enumerate}\n\\item $a\\propto t^{n}$ となる $n$ を求めよ．\n\\item 宇宙の年齢 $t$ を温度 $T$ と $G, c, a_r$ で表せ．\n\\item 温度が $T_1$ から $T_1/10$ に下がる間に，宇宙の年齢は何倍になるか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $n=\\dfrac{1}{2}$ (2) $t=\\sqrt{\\dfrac{3c^2}{32\\pi G a_r T^4}}$ (3) $\\approx2.3\\,\\mathrm{s}$，$\\approx2.3\\times10^{2}\\,\\mathrm{s}$"
+   "tex": "(1) $n=\\dfrac{1}{2}$ (2) $t=\\sqrt{\\dfrac{3c^2}{32\\pi G a_r T^4}}$ (3) $100$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\rho\\propto T^4\\propto a^{-4}$ より $\\dot a^2\\propto a^{-2}$，$a\\,da\\propto dt$，$a\\propto t^{1/2}$．$\\boldsymbol{n=1/2}$．\n\n(2) $H=\\dot a/a=1/(2t)$ を代入して $\\dfrac{1}{4t^2}=\\dfrac{8\\pi Ga_rT^4}{3c^2}$，\n\\[ \\boldsymbol{t=\\sqrt{\\frac{3c^2}{32\\pi Ga_rT^4}}}\\propto T^{-2} . \\]\n\n(3) $32\\pi Ga_r=5.08\\times10^{-24}$ より，$T=10^{10}\\,\\mathrm{K}$ で $t=\\sqrt{2.7\\times10^{17}/(5.08\\times10^{16})}\\approx\\boldsymbol{2.3\\,\\mathrm{s}}$，$T=10^{9}\\,\\mathrm{K}$ ではその $100$ 倍で $\\boldsymbol{2.3\\times10^{2}\\,\\mathrm{s}}$．\n\nニュートリノや電子・陽電子も放射として寄与すると $\\rho$ は数倍になり，$t\\approx1\\,\\mathrm{s}\\,(T/10^{10}\\,\\mathrm{K})^{-2}$ 程度になる．$T\\sim10^{9}\\,\\mathrm{K}$ の数分間に元素合成が起こる．"
+    "tex": "(1) $\\rho\\propto T^4\\propto a^{-4}$ より $\\dot a^2\\propto a^{-2}$，$a\\,da\\propto dt$，$a\\propto t^{1/2}$．$\\boldsymbol{n=1/2}$．\n\n(2) $H=\\dot a/a=1/(2t)$ を代入して $\\dfrac{1}{4t^2}=\\dfrac{8\\pi Ga_rT^4}{3c^2}$，\n\\[ \\boldsymbol{t=\\sqrt{\\frac{3c^2}{32\\pi Ga_rT^4}}}\\propto T^{-2} . \\]\n\n(3) $t\\propto T^{-2}$ なので，温度が $1/10$ になると年齢は $\\boldsymbol{100}$ 倍．光子だけを考えると $T=10^{10}\\,\\mathrm{K}$ で $t\\approx2.3\\,\\mathrm{s}$，$T=10^{9}\\,\\mathrm{K}$ で $t\\approx2.3\\times10^{2}\\,\\mathrm{s}$ である．\n\nニュートリノや電子・陽電子も放射として寄与すると $\\rho$ は数倍になり，$t\\approx1\\,\\mathrm{s}\\,(T/10^{10}\\,\\mathrm{K})^{-2}$ 程度になる．$T\\sim10^{9}\\,\\mathrm{K}$ の数分間に元素合成が起こる．"
    }
   ],
   "idea": {
@@ -317,7 +317,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 1/2\n(2) sqrt(3 c^2/(32 pi G a_r T^4))\n(3) 時間 [s]：≈2.3 ; ≈2.3e2"
+   "spec": "(1) 1/2\n(2) sqrt(3 c^2/(32 pi G a_r T^4))\n(3) 倍率：100"
   },
   "methods": [],
   "tags": [
@@ -349,16 +349,16 @@
   "theme": "粒子地平線とCMBの地平線問題",
   "topic": "粒子地平線とCMBの地平線問題",
   "statement": {
-   "tex": "時刻 $t$ までに光が届きうる最大の距離（粒子地平線の固有距離）は，スケール因子 $a(t)$ を用いて\n\\[ d_H(t)=a(t)\\int_0^t\\frac{c\\,dt'}{a(t')} \\]\nである．\n\\begin{enumerate}\n\\item 物質優勢（$a\\propto t^{2/3}$）のとき $d_H$ を $c, t$ で表せ．\n\\item 放射優勢（$a\\propto t^{1/2}$）のとき $d_H$ を $c, t$ で表せ．\n\\item アインシュタイン＝ド・ジッター宇宙（$H=H_0(1+z)^{3/2}$，$t=\\tfrac{2}{3H}$）で，赤方偏移 $z$ の時刻の地平線の共動サイズ $(1+z)d_H$ を $c, H_0, z$ で表せ．\n\\item 同じ宇宙で赤方偏移 $z$ の天体までの共動距離は $\\dfrac{2c}{H_0}\\left(1-\\dfrac{1}{\\sqrt{1+z}}\\right)$ である．晴れ上がり（$z=1100$）の時刻の地平線が，現在の空で張る角度を度で求めよ．\n\\end{enumerate}"
+   "tex": "時刻 $t$ までに光が届きうる最大の距離（粒子地平線の固有距離）は，スケール因子 $a(t)$ と光速 $c$ を用いて\n\\[ d_H(t)=a(t)\\int_0^t\\frac{c\\,dt'}{a(t')} \\]\nである．\n\\begin{enumerate}\n\\item 物質優勢（$a\\propto t^{2/3}$）のとき $d_H$ を $c, t$ で表せ．\n\\item 放射優勢（$a\\propto t^{1/2}$）のとき $d_H$ を $c, t$ で表せ．\n\\item アインシュタイン＝ド・ジッター宇宙（$H=H_0(1+z)^{3/2}$，$t=\\tfrac{2}{3H}$）で，赤方偏移 $z$ の時刻の地平線の共動サイズ $(1+z)d_H$ を $c, H_0, z$ で表せ．\n\\item 同じ宇宙で赤方偏移 $z$ の天体までの共動距離は $\\dfrac{2c}{H_0}\\left(1-\\dfrac{1}{\\sqrt{1+z}}\\right)$ である．赤方偏移 $z$ の時刻の地平線が，現在の空で張る角度 $\\theta$（ラジアン）を $z$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $d_H=3ct$ (2) $d_H=2ct$ (3) $\\dfrac{2c}{H_0\\sqrt{1+z}}$ (4) $\\approx1.8^\\circ$"
+   "tex": "(1) $d_H=3ct$ (2) $d_H=2ct$ (3) $\\dfrac{2c}{H_0\\sqrt{1+z}}$ (4) $\\theta=\\dfrac{1}{\\sqrt{1+z}-1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $a=Ct^{2/3}$ として $d_H=t^{2/3}\\displaystyle\\int_0^t c\\,t'^{-2/3}dt'=t^{2/3}\\cdot3ct^{1/3}=\\boldsymbol{3ct}$．\n\n(2) 同様に $d_H=t^{1/2}\\cdot2ct^{1/2}=\\boldsymbol{2ct}$．膨張のため，地平線は $ct$ より大きい．\n\n(3) $d_H=3ct=\\dfrac{2c}{H}=\\dfrac{2c}{H_0}(1+z)^{-3/2}$．共動サイズは $(1+z)$ 倍して $\\boldsymbol{\\dfrac{2c}{H_0\\sqrt{1+z}}}$．\n\n(4) 角度は（共動サイズ）/（共動距離）なので\n\\[ \\theta=\\frac{(1+z)^{-1/2}}{1-(1+z)^{-1/2}}=\\frac{1}{\\sqrt{1+z}-1}=\\frac{1}{33.2-1}\\approx0.031\\,\\mathrm{rad}\\approx\\boldsymbol{1.8^\\circ} . \\]\n空の $2^\\circ$ 以上離れた CMB の2点は，晴れ上がりまでに因果的に接触できなかったはずなのに，温度は $10^{-5}$ の精度で等しい．これが地平線問題で，インフレーションの動機の一つである．"
+    "tex": "(1) $a=Ct^{2/3}$ として $d_H=t^{2/3}\\displaystyle\\int_0^t c\\,t'^{-2/3}dt'=t^{2/3}\\cdot3ct^{1/3}=\\boldsymbol{3ct}$．\n\n(2) 同様に $d_H=t^{1/2}\\cdot2ct^{1/2}=\\boldsymbol{2ct}$．膨張のため，地平線は $ct$ より大きい．\n\n(3) $d_H=3ct=\\dfrac{2c}{H}=\\dfrac{2c}{H_0}(1+z)^{-3/2}$．共動サイズは $(1+z)$ 倍して $\\boldsymbol{\\dfrac{2c}{H_0\\sqrt{1+z}}}$．\n\n(4) 角度は（共動サイズ）/（共動距離）なので\n\\[ \\theta=\\frac{(1+z)^{-1/2}}{1-(1+z)^{-1/2}}=\\boldsymbol{\\frac{1}{\\sqrt{1+z}-1}} . \\]\n晴れ上がり（$z\\approx1100$）では $\\theta\\approx1/32\\approx0.031\\,\\mathrm{rad}\\approx1.8^\\circ$ である．空の $2^\\circ$ 以上離れた CMB の2点は，晴れ上がりまでに因果的に接触できなかったはずなのに，温度は $10^{-5}$ の精度で等しい．これが地平線問題で，インフレーションの動機の一つである．"
    }
   ],
   "idea": {
@@ -366,7 +366,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 3 c t\n(2) 2 c t\n(3) 2 c/(H_0 sqrt(1+z))\n(4) 角度 [°]：≈1.78"
+   "spec": "(1) 3 c t\n(2) 2 c t\n(3) 2 c/(H_0 sqrt(1+z))\n(4) θ：1/(sqrt(1+z)-1)"
   },
   "methods": [],
   "tags": [
@@ -398,16 +398,16 @@
   "theme": "アインシュタイン＝ド・ジッター宇宙の年齢",
   "topic": "アインシュタイン＝ド・ジッター宇宙の年齢",
   "statement": {
-   "tex": "物質だけを含む平坦な宇宙（アインシュタイン＝ド・ジッター宇宙）のフリードマン方程式は，スケール因子 $a$（現在 $a=1$）を用いて\n\\[\\left(\\frac{\\dot a}{a}\\right)^2=H_0^2a^{-3}\\]\nとなる．\n\\begin{enumerate}\n\\item $a\\propto t^{\\,q}$ と書くとき指数 $q$ を求めよ．\n\\item 現在の宇宙年齢 $t_0$ を $H_0$ で表せ．\n\\item $H_0=70\\,\\mathrm{km/s/Mpc}$（$1/H_0=1.40\\times10^{10}\\,\\mathrm{yr}$）として $t_0$ を年で求めよ．\n\\item 赤方偏移 $z=3$ の銀河から光が出た時刻（ビッグバンからの経過時間）を年で求めよ．$1+z=1/a$ である．\n\\end{enumerate}"
+   "tex": "物質だけを含む平坦な宇宙（アインシュタイン＝ド・ジッター宇宙）のフリードマン方程式は，スケール因子 $a$（現在 $a=1$）を用いて\n\\[\\left(\\frac{\\dot a}{a}\\right)^2=H_0^2a^{-3}\\]\nとなる．\n\\begin{enumerate}\n\\item $a\\propto t^{\\,q}$ と書くとき指数 $q$ を求めよ．\n\\item 現在の宇宙年齢 $t_0$ を $H_0$ で表せ．\n\\item 宇宙年齢は最も古い星（年齢 $t_s$）より長くなければならない．このモデルで $H_0$ がとりうる範囲を $t_s$ で表せ．\n\\item 赤方偏移 $z$ の銀河から光が出た時刻（ビッグバンからの経過時間）$t$ を $H_0, z$ で表せ．$1+z=1/a$ である．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $q=\\dfrac{2}{3}$ (2) $t_0=\\dfrac{2}{3H_0}$ (3) $t_0\\approx 9.3\\times10^{9}\\,\\mathrm{yr}$ (4) $t\\approx 1.17\\times10^{9}\\,\\mathrm{yr}$"
+   "tex": "(1) $q=\\dfrac{2}{3}$ (2) $t_0=\\dfrac{2}{3H_0}$ (3) $H_0<\\dfrac{2}{3t_s}$ (4) $t=\\dfrac{2}{3H_0(1+z)^{3/2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dot a=H_0a^{-1/2}$ より $a^{1/2}da=H_0dt$，積分して $\\tfrac{2}{3}a^{3/2}=H_0t$．よって $a=(3H_0t/2)^{2/3}$ で $\\boldsymbol{q=2/3}$．\n\n(2) $a=1$ とおいて $\\boldsymbol{t_0=2/(3H_0)}$．\n\n(3) $t_0=\\tfrac{2}{3}\\times1.40\\times10^{10}\\,\\mathrm{yr}\\approx\\boldsymbol{9.3\\times10^{9}\\,\\mathrm{yr}}$．球状星団の年齢（$\\gtrsim1.2\\times10^{10}\\,\\mathrm{yr}$）より短く，これは「年齢問題」として宇宙項の必要性を示唆した．\n\n(4) $t=t_0a^{3/2}=t_0(1+z)^{-3/2}=t_0/8\\approx\\boldsymbol{1.17\\times10^{9}\\,\\mathrm{yr}}$．"
+    "tex": "(1) $\\dot a=H_0a^{-1/2}$ より $a^{1/2}da=H_0dt$，積分して $\\tfrac{2}{3}a^{3/2}=H_0t$．よって $a=(3H_0t/2)^{2/3}$ で $\\boldsymbol{q=2/3}$．\n\n(2) $a=1$ とおいて $\\boldsymbol{t_0=2/(3H_0)}$．\n\n(3) $t_0>t_s$ より $\\boldsymbol{H_0<\\dfrac{2}{3t_s}}$．$H_0=70\\,\\mathrm{km/s/Mpc}$ では $t_0\\approx9.3\\times10^{9}\\,\\mathrm{yr}$ で，球状星団の年齢（$\\gtrsim1.2\\times10^{10}\\,\\mathrm{yr}$）より短い．これは「年齢問題」として宇宙項の必要性を示唆した．\n\n(4) $t=t_0a^{3/2}=t_0(1+z)^{-3/2}$ より $\\boldsymbol{t=\\dfrac{2}{3H_0(1+z)^{3/2}}}$．たとえば $z=3$ では $t_0/8$ である．"
    }
   ],
   "idea": {
@@ -415,7 +415,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 2/3\n(2) 2/(3 H_0)\n(3) 年齢 [yr]：≈9.3e9\n(4) 時刻 [yr]：≈1.17e9"
+   "spec": "(1) 2/3\n(2) 2/(3 H_0)\n(3) H_0<2/(3 t_s)\n(4) 2/(3 H_0 (1+z)^(3/2))"
   },
   "methods": [],
   "tags": [
@@ -446,16 +446,16 @@
   "theme": "宇宙背景放射と等密度時",
   "topic": "宇宙背景放射と等密度時",
   "statement": {
-   "tex": "宇宙背景放射（CMB）は黒体放射で，その温度は $T\\propto 1/a=1+z$ で変化する．現在の温度を $T_0=2.73\\,\\mathrm{K}$ とする．\n\\begin{enumerate}\n\\item 水素が中性化して光子が自由に進めるようになる（晴れ上がり）温度を $3000\\,\\mathrm{K}$ とする．晴れ上がりの赤方偏移 $z_{\\mathrm{dec}}$ を求めよ．\n\\item 現在の物質と放射の密度パラメータを $\\Omega_m=0.31$，$\\Omega_r=9.0\\times10^{-5}$ とする．物質密度は $a^{-3}$，放射のエネルギー密度は $a^{-4}$ に比例する．両者が等しくなる赤方偏移 $z_{\\mathrm{eq}}$ を求めよ．\n\\item $z_{\\mathrm{eq}}$ における CMB の温度を求めよ．\n\\end{enumerate}"
+   "tex": "宇宙背景放射（CMB）は黒体放射で，その温度は $T\\propto 1/a=1+z$ で変化する．現在の温度を $T_0$ とする．\n\\begin{enumerate}\n\\item 水素が中性化して光子が自由に進めるようになる（晴れ上がり）温度を $T_d$ とする．晴れ上がりの赤方偏移 $z_d$ を $T_d, T_0$ で表せ．\n\\item 現在の物質と放射の密度パラメータを $\\Omega_m$，$\\Omega_r$ とする．物質密度は $a^{-3}$，放射のエネルギー密度は $a^{-4}$ に比例する．両者が等しくなる赤方偏移 $z_e$ を $\\Omega_m, \\Omega_r$ で表せ．\n\\item $z_e$ における CMB の温度 $T_e$ を $T_0, \\Omega_m, \\Omega_r$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $z_{\\mathrm{dec}}\\approx 1.1\\times10^{3}$ (2) $z_{\\mathrm{eq}}=\\dfrac{\\Omega_m}{\\Omega_r}-1\\approx 3.4\\times10^{3}$ (3) $T\\approx 9.4\\times10^{3}\\,\\mathrm{K}$"
+   "tex": "(1) $z_d=\\dfrac{T_d}{T_0}-1$ (2) $z_e=\\dfrac{\\Omega_m}{\\Omega_r}-1$ (3) $T_e=\\dfrac{\\Omega_m}{\\Omega_r}T_0$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $1+z_{\\mathrm{dec}}=3000/2.73\\approx1099$ より $\\boldsymbol{z_{\\mathrm{dec}}\\approx1.1\\times10^{3}}$．\n\n(2) $\\Omega_m a^{-3}=\\Omega_r a^{-4}$ より $1+z_{\\mathrm{eq}}=1/a=\\Omega_m/\\Omega_r\\approx3444$，$\\boldsymbol{z_{\\mathrm{eq}}\\approx3.4\\times10^{3}}$．晴れ上がりより前に物質優勢期に入っている．\n\n(3) $T=T_0(1+z_{\\mathrm{eq}})=2.73\\times3444\\approx\\boldsymbol{9.4\\times10^{3}\\,\\mathrm{K}}$．"
+    "tex": "(1) $1+z_d=T_d/T_0$ より $\\boldsymbol{z_d=\\dfrac{T_d}{T_0}-1}$．$T_d=3000\\,\\mathrm{K}$，$T_0=2.73\\,\\mathrm{K}$ なら $z_d\\approx1.1\\times10^{3}$．\n\n(2) $\\Omega_m a^{-3}=\\Omega_r a^{-4}$ より $1+z_e=1/a=\\Omega_m/\\Omega_r$，$\\boldsymbol{z_e=\\dfrac{\\Omega_m}{\\Omega_r}-1}$．$\\Omega_m=0.31$，$\\Omega_r=9.0\\times10^{-5}$ なら $z_e\\approx3.4\\times10^{3}$ で，晴れ上がりより前に物質優勢期に入っている．\n\n(3) $T_e=T_0(1+z_e)=\\boldsymbol{\\dfrac{\\Omega_m}{\\Omega_r}T_0}$．上の数値では約 $9.4\\times10^{3}\\,\\mathrm{K}$ である．"
    }
   ],
   "idea": {
@@ -463,7 +463,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ≈1.1e3\n(2) ≈3.4e3\n(3) 温度 [K]：≈9.4e3"
+   "spec": "(1) T_d/T_0-1\n(2) Ω_m/Ω_r-1\n(3) Ω_m T_0/Ω_r"
   },
   "methods": [],
   "tags": [
@@ -495,16 +495,16 @@
   "theme": "宇宙膨張で放射は 1/a，非相対論的な気体は 1/a² で冷える",
   "topic": "宇宙膨張で放射は 1/a，非相対論的な気体は 1/a² で冷える",
   "statement": {
-   "tex": "宇宙がスケール因子 $a$ でゆっくり膨張する．\n\\begin{enumerate}\n\\item 黒体放射の温度が $T\\propto1/a$ となることを，各モードの光子数が保たれることから示せ．\n\\item 衝突のない非相対論的な粒子の運動量は $1/a$ に比例して減る．その「温度」が $1/a^2$ に比例することを示せ．\n\\item 再結合（$z\\approx1100$）の時の放射の温度を，現在の $2.725\\ \\mathrm K$ から求めよ．\n\\end{enumerate}"
+   "tex": "宇宙がスケール因子 $a$ でゆっくり膨張する．\n\\begin{enumerate}\n\\item 黒体放射の温度が $T\\propto1/a$ となることを，各モードの光子数が保たれることから示せ．\n\\item 衝突のない非相対論的な粒子の運動量は $1/a$ に比例して減る．その「温度」が $1/a^2$ に比例することを示せ．\n\\item 現在の放射の温度を $T_0$ とする．赤方偏移 $z$（$1+z=1/a$，現在 $a=1$）の時代の放射の温度 $T$ を $T_0, z$ で表せ．また，同じ時代に放射と同じ温度 $T$ だった非相対論的な気体が，その後衝突なしに膨張したとき，現在の温度 $T_m$ を $T_0, z$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明　(2) 証明　(3) $\\approx3000\\ \\mathrm K$"
+   "tex": "(1) 証明　(2) 証明　(3) $T=T_0(1+z)$，$T_m=\\dfrac{T_0}{1+z}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 断熱変化ではモードの占有数 $1/(e^{\\hbar\\omega/k_BT}-1)$ が変わらず，$\\omega\\propto1/a$ なので $T\\propto1/a$．\n\n(2) $k_BT\\sim p^2/m\\propto a^{-2}$．（エントロピー $\\propto\\ln(VT^{3/2})$ 一定からも．）\n\n(3) $T=2.725\\times1101\\approx\\boldsymbol{3000\\ \\mathrm K}$（水素が中性になる温度）．"
+    "tex": "(1) 断熱変化ではモードの占有数 $1/(e^{\\hbar\\omega/k_BT}-1)$ が変わらず，$\\omega\\propto1/a$ なので $T\\propto1/a$．\n\n(2) $k_BT\\sim p^2/m\\propto a^{-2}$．（エントロピー $\\propto\\ln(VT^{3/2})$ 一定からも．）\n\n(3) $T\\propto1/a=1+z$ より $\\boldsymbol{T=T_0(1+z)}$．気体の温度は $a^{-2}$ に比例するので，$a$ が $1/(1+z)$ から $1$ になる間に $(1+z)^{-2}$ 倍になり\n\\[ T_m=T_0(1+z)\\cdot(1+z)^{-2}=\\boldsymbol{\\frac{T_0}{1+z}} . \\]\n再結合（$z\\approx1100$）の時代には放射は $T_0=2.725\\,\\mathrm K$ の約 $1100$ 倍，約 $3000\\,\\mathrm K$（水素が中性になる温度）であった．実際には再結合後もしばらく残った電子が光子と熱を交換するので，物質はすぐには $a^{-2}$ で冷えない．"
    }
   ],
   "idea": {
@@ -512,7 +512,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 証明\n(3) [K]：≈3000"
+   "spec": "(1) 証明\n(2) 証明\n(3) T：T_0 (1+z) ; T_m：T_0/(1+z)"
   },
   "methods": [],
   "tags": [
@@ -543,24 +543,24 @@
   "theme": "宇宙の年齢が有限なら夜空はどれだけ暗いか（オルバースのパラドックス）",
   "topic": "宇宙の年齢が有限なら夜空はどれだけ暗いか（オルバースのパラドックス）",
   "statement": {
-   "tex": "半径 $R=7\\times10^8\\ \\mathrm m$，質量 $2\\times10^{30}\\ \\mathrm{kg}$ の太陽のような星が，平均密度 $1.7\\times10^{-27}\\ \\mathrm{kg/m^3}$ で一様に分布している．\n\\begin{enumerate}\n\\item 視線が星に当たるまでの平均距離 $d\\sim\\dfrac{1}{n_\\star\\pi R^2}$ を（$\\pi$ を省いて）$l^3/R^2$ として求めよ．\n\\item 宇宙の年齢を $t_0=4.4\\times10^{17}\\ \\mathrm s$ とすると，見える範囲は $ct_0$ 程度である．空のうち星の表面で覆われる割合を見積もれ．\n\\item 夜空が暗い理由を述べよ．\n\\end{enumerate}"
+   "tex": "半径 $R$，質量 $M$ の太陽のような星が，宇宙の平均（質量）密度 $\\rho$ で一様に分布している．\n\\begin{enumerate}\n\\item 星の数密度を $n=\\rho/M$ とすると，視線が星に当たるまでの平均距離は $d\\sim\\dfrac{1}{n\\pi R^2}$ である．$\\pi$ を省いた見積もり $d\\sim\\dfrac{1}{nR^2}$ を $M, \\rho, R$ で表せ．\n\\item 宇宙の年齢を $t_0$ とすると，見える範囲は $ct_0$ 程度である（$c$ は光速）．空のうち星の表面で覆われる割合 $f\\sim ct_0/d$ を $c, t_0, \\rho, R, M$ で表せ．\n\\item $R=7\\times10^8\\,\\mathrm m$，$M=2\\times10^{30}\\,\\mathrm{kg}$，$\\rho=1.7\\times10^{-27}\\,\\mathrm{kg/m^3}$，$t_0=4.4\\times10^{17}\\,\\mathrm s$ では $f\\sim5\\times10^{-14}$ になる．これをもとに，夜空が暗い理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $d\\approx2.4\\times10^{39}\\ \\mathrm m$　(2) $\\approx5\\times10^{-14}$　(3) 宇宙の年齢（と膨張）が有限で，視線が星に当たる前に見える範囲が終わる"
+   "tex": "(1) $d\\sim\\dfrac{M}{\\rho R^2}$　(2) $f\\sim\\dfrac{ct_0\\rho R^2}{M}$　(3) 宇宙の年齢（と膨張）が有限で，視線が星に当たる前に見える範囲が終わる"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $n_\\star=\\dfrac{1.7\\times10^{-27}}{2\\times10^{30}}=8.5\\times10^{-58}\\ \\mathrm{m^{-3}}$，$l^3=1/n_\\star$，$d=\\dfrac{l^3}{R^2}\\approx\\boldsymbol{2.4\\times10^{39}\\ \\mathrm m}$．\n\n(2) $\\dfrac{ct_0}{d}=\\dfrac{1.3\\times10^{26}}{2.4\\times10^{39}}\\approx\\boldsymbol{5\\times10^{-14}}$．\n\n(3) 視線が星に当たるには $10^{39}$ m 先まで見る必要があるが，宇宙の年齢の範囲（$10^{26}$ m）では空のごく一部しか覆われない．赤方偏移も明るさを下げる．"
+    "tex": "(1) $n=\\rho/M$ を代入して $\\boldsymbol{d\\sim\\dfrac{M}{\\rho R^2}}$．問題の数値では $d\\approx2.4\\times10^{39}\\,\\mathrm m$ である．\n\n(2) $f\\sim\\dfrac{ct_0}{d}=\\boldsymbol{\\dfrac{ct_0\\rho R^2}{M}}$．\n\n(3) 視線が星に当たるには $10^{39}\\,\\mathrm m$ 先まで見る必要があるが，宇宙の年齢の範囲（$ct_0\\sim10^{26}\\,\\mathrm m$）では空のごく一部（$f\\sim5\\times10^{-14}$）しか覆われない．赤方偏移も明るさを下げる．"
    }
   ],
   "idea": {
-   "tex": "オルバースのパラドックスの解決は，宇宙の年齢が星までの平均距離に比べて短いことにある．原題の定性的な議論を，覆われる割合の数値にした．"
+   "tex": "オルバースのパラドックスの解決は，宇宙の年齢が星までの平均距離に比べて短いことにある．覆われる割合 $ct_0\\rho R^2/M$ が極めて小さい．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $d$ [m]：≈2.4e39\n(2) ≈5e-14\n(3) 記述"
+   "spec": "(1) d：M/(ρ R^2)\n(2) f：c t_0 ρ R^2/M\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -591,24 +591,24 @@
   "theme": "分子雲の自由落下時間と半径が半分になるまでの時間",
   "topic": "分子雲の自由落下時間と半径が半分になるまでの時間",
   "statement": {
-   "tex": "圧力のない一様な球が静止から自分の重力で収縮する．崩壊時間は $t_{\\rm col}=\\sqrt{\\dfrac{3\\pi}{32G\\rho_0}}$ である．\n\\begin{enumerate}\n\\item 水素分子の数密度 $10^{10}\\ \\mathrm{m^{-3}}$（$m_{\\rm H_2}=3.35\\times10^{-27}\\ \\mathrm{kg}$）の分子雲の崩壊時間を年で求めよ．\n\\item 半径が初めの半分になるまでの時間は $t_{\\rm col}$ の何倍か．\n\\item 圧力のない仮定が破れる要因を1つ挙げよ．\n\\end{enumerate}"
+   "tex": "圧力のない一様な球が静止から自分の重力で収縮する．初めの密度を $\\rho_0$，万有引力定数を $G$ とすると，崩壊時間は $t_c=\\sqrt{\\dfrac{3\\pi}{32G\\rho_0}}$ である．\n\\begin{enumerate}\n\\item 水素分子の数密度 $n$，水素分子1個の質量 $m$ の分子雲の崩壊時間 $t_c$ を $G, n, m$ で表せ．\n\\item 半径が初めの半分になるまでの時間は $t_c$ の何倍か．\n\\item 圧力のない仮定が破れる要因を1つ挙げよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\approx3.6\\times10^5$ 年　(2) $\\dfrac12+\\dfrac1\\pi\\approx0.82$　(3) 収縮による加熱，回転，磁場など"
+   "tex": "(1) $t_c=\\sqrt{\\dfrac{3\\pi}{32Gnm}}$　(2) $\\dfrac12+\\dfrac1\\pi$　(3) 収縮による加熱，回転，磁場など"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\rho_0=3.35\\times10^{-17}\\ \\mathrm{kg/m^3}$，$t_{\\rm col}\\approx1.15\\times10^{13}\\ \\mathrm s\\approx\\boldsymbol{3.6\\times10^5}$ 年．\n\n(2) $r=R\\cos^2\\theta$，$\\theta+\\frac12\\sin2\\theta=At$．$r=R/2$ は $\\theta=\\pi/4$，$\\dfrac{\\pi/4+1/2}{\\pi/2}=\\boldsymbol{0.82}$（最後に急に落ちる）．\n\n(3) 収縮で解放される重力エネルギーで温まり，圧力が収縮を止める（放射で冷えなければ）．角運動量や磁場も．"
+    "tex": "(1) $\\rho_0=nm$ より $\\boldsymbol{t_c=\\sqrt{\\dfrac{3\\pi}{32Gnm}}}$．$n=10^{10}\\,\\mathrm{m^{-3}}$ の典型的な分子雲では約 $3.6\\times10^5$ 年になる．\n\n(2) $r=R\\cos^2\\theta$，$\\theta+\\frac12\\sin2\\theta=At$ とおける（$\\theta=\\pi/2$ が崩壊）．$r=R/2$ は $\\theta=\\pi/4$ なので $\\dfrac{\\pi/4+1/2}{\\pi/2}=\\boldsymbol{\\dfrac12+\\dfrac1\\pi}\\approx0.82$ 倍（最後に急に落ちる）．\n\n(3) 収縮で解放される重力エネルギーで温まり，圧力が収縮を止める（放射で冷えなければ）．角運動量や磁場も．"
    }
   ],
   "idea": {
-   "tex": "重力崩壊は密度だけで決まる時間尺度をもち，最後の段階で急に進む．原題の銀河の見積もりを，星の誕生の場である分子雲に変えた．"
+   "tex": "重力崩壊は密度だけで決まる時間尺度 $\\sim(G\\rho)^{-1/2}$ をもち，最後の段階で急に進む．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) ≈0.82\n(3) 記述"
+   "spec": "(1) sqrt(3π/(32 G n m))\n(2) 1/2+1/π\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -687,24 +687,24 @@
   "theme": "平坦性問題：今日の曲率の上限を初期宇宙にさかのぼる",
   "topic": "平坦性問題：今日の曲率の上限を初期宇宙にさかのぼる",
   "statement": {
-   "tex": "$\\dfrac{d\\Omega}{d\\ln a}=(1+3w)\\Omega(\\Omega-1)$ である．\n\\begin{enumerate}\n\\item $\\Omega\\approx1$ の近くで $|\\Omega-1|$ が物質優勢期に $a$，放射優勢期に $a^2$ に比例して増えることを示せ．\n\\item 今日 $|\\Omega-1|<5\\times10^{-3}$，物質と放射の等密度が $a_{\\rm eq}=3\\times10^{-4}$ のとき，$a=10^{-10}$（元素合成の頃）での上限を求めよ（宇宙定数は無視する）．\n\\end{enumerate}"
+   "tex": "密度パラメータ $\\Omega$ は，状態方程式 $p=w\\rho c^2$ の成分が優勢な時期に $\\dfrac{d\\Omega}{d\\ln a}=(1+3w)\\Omega(\\Omega-1)$ に従う．\n\\begin{enumerate}\n\\item $\\Omega\\approx1$ の近くで $|\\Omega-1|$ が物質優勢期に $a$，放射優勢期に $a^2$ に比例して増えることを示せ．\n\\item 今日（$a=1$）$|\\Omega-1|<\\varepsilon$，物質と放射の等密度が $a=a_e$ のとき，放射優勢期の $a=a_1$（$a_1<a_e$）での $|\\Omega-1|$ の上限を $\\varepsilon, a_e, a_1$ で表せ（宇宙定数は無視する）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明　(2) $\\sim2\\times10^{-19}$"
+   "tex": "(1) 証明　(2) $\\dfrac{\\varepsilon a_1^2}{a_e}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\epsilon=\\Omega-1$ で $\\dfrac{d\\epsilon}{d\\ln a}\\approx(1+3w)\\epsilon$，$\\epsilon\\propto a^{1+3w}$：$w=0$ で $a$，$w=\\frac13$ で $a^2$．\\hfill$\\square$\n\n(2) $5\\times10^{-3}\\times3\\times10^{-4}\\times\\left(\\dfrac{10^{-10}}{3\\times10^{-4}}\\right)^2\\approx\\boldsymbol{2\\times10^{-19}}$．初期条件の極端な微調整が必要（インフレーションの動機）．"
+    "tex": "(1) $\\epsilon=\\Omega-1$ で $\\dfrac{d\\epsilon}{d\\ln a}\\approx(1+3w)\\epsilon$，$\\epsilon\\propto a^{1+3w}$：$w=0$ で $a$，$w=\\frac13$ で $a^2$．\\hfill$\\square$\n\n(2) 物質優勢期に $a_e$ から $1$ へ戻すと $\\varepsilon a_e$，放射優勢期に $a_1$ まで戻すと $(a_1/a_e)^2$ 倍：\n\\[ |\\Omega-1|<\\varepsilon a_e\\left(\\frac{a_1}{a_e}\\right)^2=\\boldsymbol{\\frac{\\varepsilon a_1^2}{a_e}} . \\]\n$\\varepsilon=5\\times10^{-3}$，$a_e=3\\times10^{-4}$，$a_1=10^{-10}$（元素合成の頃）では $\\sim2\\times10^{-19}$ となり，初期条件の極端な微調整が必要（インフレーションの動機）．"
    }
   ],
   "idea": {
-   "tex": "平坦な宇宙は減速膨張では不安定で，今日の近い平坦さは初期に極端な平坦さを要求する．原題の安定性の議論を，数値的な平坦性問題にした．"
+   "tex": "平坦な宇宙は減速膨張では不安定で，今日の近い平坦さは初期に極端な平坦さを要求する．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) ≈2e-19"
+   "spec": "(1) 証明\n(2) ε a_1^2/a_e"
   },
   "methods": [],
   "tags": [
@@ -832,24 +832,24 @@
   "theme": "加速膨張が始まった赤方偏移と，距離と赤方偏移の2次の関係",
   "topic": "加速膨張が始まった赤方偏移と，距離と赤方偏移の2次の関係",
   "statement": {
-   "tex": "平坦で $\\Omega_m=0.3$，$\\Omega_\\Lambda=0.7$ の宇宙を考える．減速パラメータは $q=\\frac12\\Omega_m(z)-\\Omega_\\Lambda(z)$ である．\n\\begin{enumerate}\n\\item 今日の $q_0$ を求めよ．\n\\item 加速膨張が始まった赤方偏移を求めよ．\n\\item 近くの天体の光度距離が $d_L\\approx\\dfrac{c}{H_0}\\left[z+\\frac12(1-q_0)z^2\\right]$ と書けることを用いて，$z=0.1$ で $q_0=0$ の場合との違いを相対的に求めよ．\n\\end{enumerate}"
+   "tex": "平坦で，現在の物質と宇宙定数の密度パラメータが $\\Omega_m$，$\\Omega_\\Lambda$（$\\Omega_m+\\Omega_\\Lambda=1$）の宇宙を考える．減速パラメータは $q=\\frac12\\Omega_m(z)-\\Omega_\\Lambda(z)$ である（$\\Omega_m(z)$，$\\Omega_\\Lambda(z)$ は赤方偏移 $z$ での値）．\n\\begin{enumerate}\n\\item 今日の $q_0$ を $\\Omega_m, \\Omega_\\Lambda$ で表せ．\n\\item 加速膨張が始まった赤方偏移 $z_a$ を $\\Omega_m, \\Omega_\\Lambda$ で表せ．\n\\item 近くの天体の光度距離が $d_L\\approx\\dfrac{c}{H_0}\\left[z+\\frac12(1-q_0)z^2\\right]$ と書けることを用いて，同じ $z$ で $q_0=0$ とした場合に対する $d_L$ の相対的な違い $\\delta=\\dfrac{d_L}{d_L(q_0=0)}-1$ を $q_0, z$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $-0.55$　(2) $z\\approx0.67$　(3) $\\approx2.6\\%$ 大きい"
+   "tex": "(1) $q_0=\\dfrac{\\Omega_m}{2}-\\Omega_\\Lambda$　(2) $z_a=\\left(\\dfrac{2\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1$　(3) $\\delta=-\\dfrac{q_0z}{2+z}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $q_0=0.15-0.7=\\boldsymbol{-0.55}$．\n\n(2) $\\frac12\\Omega_m(1+z)^3=\\Omega_\\Lambda$：$(1+z)^3=\\frac{1.4}{0.3}$，$\\boldsymbol{z\\approx0.67}$．\n\n(3) $\\dfrac{0.1+0.5\\times1.55\\times0.01}{0.1+0.5\\times0.01}=\\dfrac{0.10775}{0.105}\\approx1.026$．（$q_0=0$ の場合に比べ約 $2.6\\%$；$q_0=+0.5$ に比べると約 $5\\%$．）"
+    "tex": "(1) $z=0$ とおいて $\\boldsymbol{q_0=\\dfrac{\\Omega_m}{2}-\\Omega_\\Lambda}$．$\\Omega_m=0.3$，$\\Omega_\\Lambda=0.7$ なら $q_0=-0.55$．\n\n(2) 物質密度は $(1+z)^3$ に比例し宇宙定数は一定なので，$q=0$ の条件は $\\frac12\\Omega_m(1+z)^3=\\Omega_\\Lambda$．\n\\[ \\boldsymbol{z_a=\\left(\\frac{2\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1} . \\]\n上の数値では $z_a\\approx0.67$．\n\n(3) \n\\[ \\delta=\\frac{z+\\frac12(1-q_0)z^2}{z+\\frac12z^2}-1=\\frac{-\\frac12q_0z^2}{z+\\frac12z^2}=\\boldsymbol{-\\frac{q_0z}{2+z}} . \\]\n$q_0=-0.55$，$z=0.1$ で約 $2.6\\%$ 大きい（遠くに＝暗く見える）．\n"
    }
   ],
   "idea": {
-   "tex": "減速パラメータは距離と赤方偏移の関係の2次の項に現れ，超新星の観測で加速膨張が発見された．原題の展開を，具体的な数値と加速の開始時期に応用した．"
+   "tex": "減速パラメータは距離と赤方偏移の関係の2次の項に現れ，超新星の観測で加速膨張が発見された．加速の開始は $\\frac12\\Omega_m(1+z)^3=\\Omega_\\Lambda$ で決まる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ≈-0.55\n(2) $z$：≈0.67\n(3) 記述"
+   "spec": "(1) Ω_m/2-Ω_Λ\n(2) (2Ω_Λ/Ω_m)^(1/3)-1\n(3) δ：-q_0 z/(2+z)"
   },
   "methods": [],
   "tags": [
@@ -881,24 +881,24 @@
   "theme": "ΛCDM 宇宙の年齢・加速の開始・スケール因子が2倍になる時刻",
   "topic": "ΛCDM 宇宙の年齢・加速の開始・スケール因子が2倍になる時刻",
   "statement": {
-   "tex": "平坦な物質＋宇宙定数の宇宙では $a(t)=\\left(\\dfrac{\\Omega_m}{\\Omega_\\Lambda}\\right)^{1/3}\\sinh^{2/3}\\left(\\dfrac32\\sqrt{\\Omega_\\Lambda}H_0t\\right)$ である．$\\Omega_m=0.3$，$\\Omega_\\Lambda=0.7$，$H_0^{-1}=14\\ \\mathrm{Gyr}$ とする．\n\\begin{enumerate}\n\\item 現在の年齢を求めよ．\n\\item 加速膨張が始まった時刻（$\\sinh^2x=\\frac12$）を求めよ．\n\\item スケール因子が今の2倍になる時刻を求めよ．\n\\end{enumerate}"
+   "tex": "平坦な物質＋宇宙定数の宇宙では $a(t)=\\left(\\dfrac{\\Omega_m}{\\Omega_\\Lambda}\\right)^{1/3}\\sinh^{2/3}\\left(\\dfrac32\\sqrt{\\Omega_\\Lambda}H_0t\\right)$ である（現在 $a=1$，$H_0$ はハッブル定数）．$\\sinh^{-1}x=\\ln\\left(x+\\sqrt{x^2+1}\\right)$ を用いてよい．\n\\begin{enumerate}\n\\item 現在の年齢 $t_0$ を $\\Omega_m, \\Omega_\\Lambda, H_0$ で表せ．\n\\item 加速膨張が始まった時刻 $t_a$（$\\sinh^2x=\\frac12$ となるとき）を $\\Omega_\\Lambda, H_0$ で表せ．\n\\item スケール因子が今の2倍になる時刻 $t_2$ を $\\Omega_m, \\Omega_\\Lambda, H_0$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $13.5\\ \\mathrm{Gyr}$　(2) $7.3\\ \\mathrm{Gyr}$　(3) $24.2\\ \\mathrm{Gyr}$"
+   "tex": "(1) $t_0=\\dfrac{2}{3\\sqrt{\\Omega_\\Lambda}H_0}\\ln\\left(\\sqrt{\\dfrac{\\Omega_\\Lambda}{\\Omega_m}}+\\sqrt{\\dfrac{\\Omega_\\Lambda}{\\Omega_m}+1}\\right)$　(2) $t_a=\\dfrac{2}{3\\sqrt{\\Omega_\\Lambda}H_0}\\ln\\dfrac{1+\\sqrt3}{\\sqrt2}$　(3) $t_2=\\dfrac{2}{3\\sqrt{\\Omega_\\Lambda}H_0}\\ln\\left(\\sqrt{\\dfrac{8\\Omega_\\Lambda}{\\Omega_m}}+\\sqrt{\\dfrac{8\\Omega_\\Lambda}{\\Omega_m}+1}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$x=\\frac32\\sqrt{\\Omega_\\Lambda}H_0t$，$t=\\dfrac{2x}{3\\sqrt{\\Omega_\\Lambda}}H_0^{-1}=11.16x$ Gyr．\n\n(1) $a=1$：$\\sinh x=\\sqrt{7/3}$，$x=1.210$，$\\boldsymbol{13.5\\ \\mathrm{Gyr}}$．\n\n(2) $x=\\mathrm{arsinh}(1/\\sqrt2)=0.658$，$\\boldsymbol{7.3\\ \\mathrm{Gyr}}$．\n\n(3) $\\sinh x=2^{3/2}\\sqrt{7/3}=4.32$，$x=2.17$，$\\boldsymbol{24.2\\ \\mathrm{Gyr}}$（その後は指数関数的に膨張）．"
+    "tex": "$x=\\frac32\\sqrt{\\Omega_\\Lambda}H_0t$ とおくと $t=\\dfrac{2x}{3\\sqrt{\\Omega_\\Lambda}H_0}$．\n\n(1) $a=1$：$\\sinh^{2/3}x=(\\Omega_\\Lambda/\\Omega_m)^{1/3}$ より $\\sinh x=\\sqrt{\\Omega_\\Lambda/\\Omega_m}$．\n\\[ \\boldsymbol{t_0=\\frac{2}{3\\sqrt{\\Omega_\\Lambda}H_0}\\ln\\left(\\sqrt{\\frac{\\Omega_\\Lambda}{\\Omega_m}}+\\sqrt{\\frac{\\Omega_\\Lambda}{\\Omega_m}+1}\\right)} . \\]\n$\\Omega_m=0.3$，$\\Omega_\\Lambda=0.7$，$H_0^{-1}=14\\,\\mathrm{Gyr}$ では $13.5\\,\\mathrm{Gyr}$．\n\n(2) $\\sinh x=1/\\sqrt2$ より $x=\\ln\\left(\\tfrac{1}{\\sqrt2}+\\sqrt{\\tfrac32}\\right)=\\ln\\dfrac{1+\\sqrt3}{\\sqrt2}$．\n\\[ \\boldsymbol{t_a=\\frac{2}{3\\sqrt{\\Omega_\\Lambda}H_0}\\ln\\frac{1+\\sqrt3}{\\sqrt2}} . \\]\n上の数値では $7.3\\,\\mathrm{Gyr}$．$\\Omega_m$ によらないのは，加速の開始が $\\Omega_\\Lambda$ と物質密度の比で決まり，その比は $\\sinh^2x$ だけで表せるからである．\n\n(3) $a=2$：$\\sinh x=2^{3/2}\\sqrt{\\Omega_\\Lambda/\\Omega_m}=\\sqrt{8\\Omega_\\Lambda/\\Omega_m}$．\n\\[ \\boldsymbol{t_2=\\frac{2}{3\\sqrt{\\Omega_\\Lambda}H_0}\\ln\\left(\\sqrt{\\frac{8\\Omega_\\Lambda}{\\Omega_m}}+\\sqrt{\\frac{8\\Omega_\\Lambda}{\\Omega_m}+1}\\right)} . \\]\n上の数値では $24.2\\,\\mathrm{Gyr}$（その後は指数関数的に膨張）．"
    }
   ],
   "idea": {
-   "tex": "ΛCDM の解析解から，宇宙の歴史の節目の時刻が計算できる．原題の年齢と加速の開始に，将来の膨張の問いを加えた．"
+   "tex": "ΛCDM の解析解から，宇宙の歴史の節目の時刻が $\\sinh^{-1}$ で閉じた式として求まる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) [Gyr]：≈13.5\n(2) [Gyr]：≈7.3\n(3) [Gyr]：≈24.2"
+   "spec": "(1) 2/(3 sqrt(Ω_Λ) H_0) ln(sqrt(Ω_Λ/Ω_m)+sqrt(Ω_Λ/Ω_m+1))\n(2) 2/(3 sqrt(Ω_Λ) H_0) ln((1+sqrt(3))/sqrt(2))\n(3) 2/(3 sqrt(Ω_Λ) H_0) ln(sqrt(8Ω_Λ/Ω_m)+sqrt(8Ω_Λ/Ω_m+1))"
   },
   "methods": [],
   "tags": [
@@ -1076,24 +1076,24 @@
   "theme": "60 e-folds に必要なインフラトンの初期値：φ² と φ⁴ の比較",
   "topic": "60 e-folds に必要なインフラトンの初期値：φ² と φ⁴ の比較",
   "statement": {
-   "tex": "スローロール近似 $H^2\\approx\\dfrac{V}{3M^2}$，$3H\\dot\\phi\\approx-V'$ を用いる．e-folding 数は $N=\\dfrac{1}{M^2}\\displaystyle\\int_{\\phi_e}^{\\phi_i}\\frac{V}{V'}d\\phi$ である．\n\\begin{enumerate}\n\\item $V=\\frac12m^2\\phi^2$ で $N$ を $\\phi_i,\\phi_e$ で表し，$\\epsilon=\\frac{M^2}2(V'/V)^2=1$ で終わるとして，$N=60$ に必要な $\\phi_i/M$ を求めよ．\n\\item $V=\\frac14\\lambda\\phi^4$ で同じことを行え．\n\\end{enumerate}"
+   "tex": "スローロール近似 $H^2\\approx\\dfrac{V}{3M^2}$，$3H\\dot\\phi\\approx-V'$ を用いる（$M$ は換算プランク質量）．e-folding 数は $N=\\dfrac{1}{M^2}\\displaystyle\\int_{\\phi_e}^{\\phi_i}\\frac{V}{V'}d\\phi$ である．インフレーションはスローロール・パラメータ $\\epsilon=\\frac{M^2}2(V'/V)^2$ が $1$ になったときに終わるとする．\n\\begin{enumerate}\n\\item $V=\\frac12m^2\\phi^2$ で $N$ を $\\phi_i,\\phi_e,M$ で表せ．また，終わりの場の値 $\\phi_e$ と，e-folding 数 $N$ を得るのに必要な初期値 $\\phi_i$ を $N, M$ で表せ．\n\\item $V=\\frac14\\lambda\\phi^4$ で同じことを行え．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $N=\\dfrac{\\phi_i^2-\\phi_e^2}{4M^2}$，$\\phi_e=\\sqrt2M$，$\\phi_i\\approx15.6M$　(2) $N=\\dfrac{\\phi_i^2-\\phi_e^2}{8M^2}$，$\\phi_e=\\sqrt8M$，$\\phi_i\\approx22.1M$"
+   "tex": "(1) $N=\\dfrac{\\phi_i^2-\\phi_e^2}{4M^2}$，$\\phi_e=\\sqrt2M$，$\\phi_i=\\sqrt{4N+2}\\,M$　(2) $N=\\dfrac{\\phi_i^2-\\phi_e^2}{8M^2}$，$\\phi_e=2\\sqrt2M$，$\\phi_i=\\sqrt{8N+8}\\,M$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $V/V'=\\phi/2$，$N=\\dfrac{\\phi_i^2-\\phi_e^2}{4M^2}$．$\\epsilon=\\dfrac{2M^2}{\\phi^2}=1$ で $\\phi_e=\\sqrt2M$．$\\phi_i=\\sqrt{242}M\\approx\\boldsymbol{15.6M}$．\n\n(2) $V/V'=\\phi/4$，$N=\\dfrac{\\phi_i^2-\\phi_e^2}{8M^2}$，$\\epsilon=\\dfrac{8M^2}{\\phi^2}=1$ で $\\phi_e=\\sqrt8M$．$\\phi_i=\\sqrt{488}M\\approx\\boldsymbol{22.1M}$．\n\nどちらもプランク質量より大きな場の値が必要（大きな場のインフレーション）．"
+    "tex": "(1) $V/V'=\\phi/2$，$N=\\boldsymbol{\\dfrac{\\phi_i^2-\\phi_e^2}{4M^2}}$．$\\epsilon=\\dfrac{2M^2}{\\phi^2}=1$ で $\\boldsymbol{\\phi_e=\\sqrt2M}$．よって $\\phi_i^2=4NM^2+2M^2$，$\\boldsymbol{\\phi_i=\\sqrt{4N+2}\\,M}$．$N=60$ なら $\\phi_i\\approx15.6M$．\n\n(2) $V/V'=\\phi/4$，$N=\\boldsymbol{\\dfrac{\\phi_i^2-\\phi_e^2}{8M^2}}$，$\\epsilon=\\dfrac{8M^2}{\\phi^2}=1$ で $\\boldsymbol{\\phi_e=2\\sqrt2M}$．$\\phi_i^2=8NM^2+8M^2$，$\\boldsymbol{\\phi_i=\\sqrt{8N+8}\\,M}$．$N=60$ なら $\\phi_i\\approx22.1M$．\n\nどちらも $N\\sim60$ ではプランク質量より大きな場の値が必要（大きな場のインフレーション）．"
    }
   ],
   "idea": {
-   "tex": "スローロールの e-folding 数は $V/V'$ の積分で，必要な場の値がプランク質量を超える．原題の $a(t)$ の計算を，60 e-folds の条件に変えた．"
+   "tex": "スローロールの e-folding 数は $V/V'$ の積分で，$\\phi^n$ 型では $\\phi_i\\sim\\sqrt{2nN}\\,M$ とプランク質量を超える．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述"
+   "spec": "(1) N：(φ_i^2-φ_e^2)/(4M^2) ; φ_e：sqrt(2) M ; φ_i：sqrt(4N+2) M\n(2) N：(φ_i^2-φ_e^2)/(8M^2) ; φ_e：2 sqrt(2) M ; φ_i：sqrt(8N+8) M"
   },
   "methods": [],
   "tags": [
@@ -1124,24 +1124,24 @@
   "theme": "宇宙背景ニュートリノの今日の平均運動量",
   "topic": "宇宙背景ニュートリノの今日の平均運動量",
   "statement": {
-   "tex": "ニュートリノは相対論的な時期に熱平衡から外れ，その後は運動量が $p\\propto1/a$ で減る．\n\\begin{enumerate}\n\\item 分離後もフェルミ＝ディラックの形 $\\dfrac{1}{e^{pc/k_BT_\\nu}+1}$ が $T_\\nu\\propto1/a$ で保たれることを示せ．ニュートリノが今は非相対論的でも成り立つか．\n\\item 今日 $T_\\nu=1.95\\ \\mathrm K$ のとき，平均運動量 $\\langle p\\rangle c\\approx3.15k_BT_\\nu$ を eV で求めよ．\n\\end{enumerate}"
+   "tex": "ニュートリノは相対論的な時期に熱平衡から外れ，その後は運動量が $p\\propto1/a$ で減る（$a$ はスケール因子，現在 $a=1$，$1+z=1/a$）．\n\\begin{enumerate}\n\\item 分離後もフェルミ＝ディラックの形 $\\dfrac{1}{e^{pc/k_BT_\\nu}+1}$ が $T_\\nu\\propto1/a$ で保たれることを示せ．ニュートリノが今は非相対論的でも成り立つか．\n\\item 今日のニュートリノ温度を $T_\\nu$ とすると，平均運動量は $\\langle p\\rangle c\\approx3.15k_BT_\\nu$ である．質量 $m$ のニュートリノが非相対論的になった（$\\langle p\\rangle c=mc^2$ となった）赤方偏移 $z$ を $m, c, k_B, T_\\nu$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明；成り立つ（運動量の分布として）　(2) $\\approx5.3\\times10^{-4}\\ \\mathrm{eV}$"
+   "tex": "(1) 証明；成り立つ（運動量の分布として）　(2) $z=\\dfrac{mc^2}{3.15k_BT_\\nu}-1$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 各粒子の $p$ が $1/a$ で減り，位相空間の分布関数は保存する．$pc/k_BT_\\nu$ が一定なら形は変わらない．質量があってもこれは運動量の分布の形で，エネルギーの分布は熱的でない．\n\n(2) $3.15\\times8.62\\times10^{-5}\\times1.95\\approx\\boldsymbol{5.3\\times10^{-4}\\ \\mathrm{eV}}$（質量 $0.05$ eV のニュートリノは非相対論的）．"
+    "tex": "(1) 各粒子の $p$ が $1/a$ で減り，位相空間の分布関数は保存する．$pc/k_BT_\\nu$ が一定なら形は変わらない．質量があってもこれは運動量の分布の形で，エネルギーの分布は熱的でない．\n\n(2) 赤方偏移 $z$ の時代の平均運動量は $\\langle p\\rangle c=3.15k_BT_\\nu(1+z)$．これが $mc^2$ に等しいとして\n\\[ \\boldsymbol{z=\\frac{mc^2}{3.15k_BT_\\nu}-1} . \\]\n$T_\\nu=1.95\\,\\mathrm K$ では今日の $\\langle p\\rangle c\\approx5.3\\times10^{-4}\\,\\mathrm{eV}$ なので，$mc^2=0.05\\,\\mathrm{eV}$ のニュートリノは $z\\approx90$ で非相対論的になり，今は非相対論的である．"
    }
   ],
   "idea": {
-   "tex": "分離した粒子の分布は運動量の赤方偏移で形を保つが，非相対論的になるとエネルギーの分布は熱的でなくなる．原題の非相対論的な気体を，相対論的に分離したニュートリノに変えた．"
+   "tex": "分離した粒子の分布は運動量の赤方偏移で形を保つが，非相対論的になるとエネルギーの分布は熱的でなくなる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) [eV]：≈5.3e-4"
+   "spec": "(1) 証明\n(2) m c^2/(3.15 k_B T_ν)-1"
   },
   "methods": [],
   "tags": [
@@ -1172,24 +1172,24 @@
   "theme": "CMB の双極子から太陽系の速さ，さらに運動学的な四重極を求める",
   "topic": "CMB の双極子から太陽系の速さ，さらに運動学的な四重極を求める",
   "statement": {
-   "tex": "速さ $v$ で動く観測者が見る CMB の温度は $T'(\\theta)=\\dfrac{T}{\\gamma(1-\\beta\\cos\\theta)}$ である．\n\\begin{enumerate}\n\\item $\\beta$ の2次まで展開し，$T'=T[1+\\beta\\cos\\theta+\\beta^2(\\cos^2\\theta-\\frac12)+\\cdots]$ を示せ．\n\\item 双極子の振幅 $T\\beta=3.36\\ \\mathrm{mK}$，$T=2.725\\ \\mathrm K$ から $v$ を求めよ．\n\\item 運動による四重極の振幅 $T\\beta^2$ を求めよ．\n\\end{enumerate}"
+   "tex": "静止系の温度 $T$ の CMB を，速さ $v=\\beta c$ で動く観測者が見ると，その温度は運動方向から角 $\\theta$ の向きで $T'(\\theta)=\\dfrac{T}{\\gamma(1-\\beta\\cos\\theta)}$ である（$\\gamma=1/\\sqrt{1-\\beta^2}$）．\n\\begin{enumerate}\n\\item $\\beta$ の2次まで展開し，$T'=T[1+\\beta\\cos\\theta+\\beta^2(\\cos^2\\theta-\\frac12)+\\cdots]$ を示せ．\n\\item 双極子の振幅 $T\\beta$ を $D$ と書く．観測された $D, T$ から速さ $v$ を $c, D, T$ で表せ．\n\\item 運動による四重極の振幅 $T\\beta^2$ を $D, T$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明　(2) $\\approx370\\ \\mathrm{km/s}$　(3) $\\approx4\\ \\mu\\mathrm K$"
+   "tex": "(1) 証明　(2) $v=\\dfrac{cD}{T}$　(3) $\\dfrac{D^2}{T}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\gamma^{-1}\\approx1-\\frac{\\beta^2}2$，$(1-\\beta\\cos)^{-1}\\approx1+\\beta\\cos+\\beta^2\\cos^2$．積をとって与式．\\hfill$\\square$\n\n(2) $\\beta=\\dfrac{3.36\\times10^{-3}}{2.725}=1.23\\times10^{-3}$，$\\boldsymbol{v\\approx370\\ \\mathrm{km/s}}$．\n\n(3) $2.725\\times(1.23\\times10^{-3})^2\\approx\\boldsymbol{4\\ \\mu\\mathrm K}$（宇宙論的な揺らぎ $\\sim30\\ \\mu$K と比べて小さい）．"
+    "tex": "(1) $\\gamma^{-1}\\approx1-\\frac{\\beta^2}2$，$(1-\\beta\\cos\\theta)^{-1}\\approx1+\\beta\\cos\\theta+\\beta^2\\cos^2\\theta$．積をとって与式．\\hfill$\\square$\n\n(2) $\\beta=D/T$ より $\\boldsymbol{v=\\dfrac{cD}{T}}$．$D=3.36\\,\\mathrm{mK}$，$T=2.725\\,\\mathrm K$ なら $\\beta\\approx1.23\\times10^{-3}$，$v\\approx370\\,\\mathrm{km/s}$．\n\n(3) $T\\beta^2=T(D/T)^2=\\boldsymbol{\\dfrac{D^2}{T}}$．上の数値では約 $4\\,\\mu\\mathrm K$ で，宇宙論的な揺らぎ $\\sim30\\,\\mu\\mathrm K$ と比べて小さい．"
    }
   ],
   "idea": {
-   "tex": "動く観測者の CMB は方向ごとに温度の違う黒体放射で，双極子から速さがわかる．原題の双極子に2次の四重極を加えた．"
+   "tex": "動く観測者の CMB は方向ごとに温度の違う黒体放射で，双極子から速さがわかり，四重極は $D^2/T$ と2次の小ささになる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) [km/s]：≈370\n(3) [μK]：≈4"
+   "spec": "(1) 証明\n(2) v：c D/T\n(3) D^2/T"
   },
   "methods": [],
   "tags": [
@@ -1221,24 +1221,24 @@
   "theme": "高エネルギーの光子を数える再結合温度の見積もり（η = 6×10⁻¹⁰）",
   "topic": "高エネルギーの光子を数える再結合温度の見積もり（η = 6×10⁻¹⁰）",
   "statement": {
-   "tex": "エネルギー $E_b=13.6\\ \\mathrm{eV}$ 以上の光子の割合は $\\dfrac{n_{\\rm en}}{n_\\gamma}\\approx\\dfrac{(\\beta E_b)^2}{2\\zeta(3)}e^{-\\beta E_b}$ である．再結合は高エネルギーの光子がバリオン1個あたり1個を下回るときに起こるとする．\n\\begin{enumerate}\n\\item $\\eta=n_B/n_\\gamma=6\\times10^{-10}$ として再結合の温度と赤方偏移を求めよ．\n\\item $k_BT$ が $E_b$ よりずっと低い理由を述べよ．\n\\end{enumerate}"
+   "tex": "束縛エネルギー $E_b$ 以上のエネルギーをもつ光子の割合は，$\\beta=1/k_BT$ として $\\dfrac{n_{e}}{n_\\gamma}\\approx\\dfrac{(\\beta E_b)^2}{2\\zeta(3)}e^{-\\beta E_b}$ である．再結合は高エネルギーの光子がバリオン1個あたり1個を下回るときに起こるとする．バリオンと光子の数の比を $\\eta=n_B/n_\\gamma$，現在の CMB の温度を $T_0$ とする．\n\\begin{enumerate}\n\\item 再結合の条件を $y=\\beta E_b$ の方程式として書け．その解を $y_0$ とするとき，再結合の温度 $T$ と赤方偏移 $z$ を $E_b, k_B, y_0, T_0$ で表せ．\n\\item $\\eta=6\\times10^{-10}$ では $y_0\\approx27$ になる．$k_BT$ が $E_b$ よりずっと低い理由を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\approx5900\\ \\mathrm K$，$z\\approx2100$　(2) 光子がバリオンより $10^9$ 倍多い"
+   "tex": "(1) $\\dfrac{y^2}{2\\zeta(3)}e^{-y}=\\eta$，$T=\\dfrac{E_b}{k_By_0}$，$z=\\dfrac{E_b}{k_By_0T_0}-1$　(2) 光子がバリオンより $10^9$ 倍多い"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{y^2}{2\\zeta(3)}e^{-y}=\\eta$ の解 $y=\\beta E_b\\approx27$．$T\\approx\\dfrac{13.6}{27\\times8.62\\times10^{-5}}\\approx\\boldsymbol{5900\\ \\mathrm K}$，$z=\\frac{5900}{2.725}-1\\approx\\boldsymbol{2100}$．\n\n(2) 光子が圧倒的に多いので，分布の裾のわずかな割合でも電離を保てる．（サハの式ではさらに低く約 $3800$ K．）"
+    "tex": "(1) $n_e=n_B$ より $\\boldsymbol{\\dfrac{y^2}{2\\zeta(3)}e^{-y}=\\eta}$．解 $y_0=E_b/k_BT$ から $\\boldsymbol{T=\\dfrac{E_b}{k_By_0}}$，$1+z=T/T_0$ より $\\boldsymbol{z=\\dfrac{E_b}{k_By_0T_0}-1}$．\n\n(2) $E_b=13.6\\,\\mathrm{eV}$，$y_0\\approx27$ なら $T\\approx5900\\,\\mathrm K$，$z\\approx2100$．$\\eta$ が非常に小さい（光子が圧倒的に多い）ので，分布の裾のわずかな割合 $e^{-y}$ でも電離を保てる．そのため $y_0$ は $\\ln(1/\\eta)\\sim20$ 程度の大きな値になり，$k_BT$ は $E_b$ の数十分の1になる．（サハの式ではさらに低く約 $3800\\,\\mathrm K$．）"
    }
   ],
   "idea": {
-   "tex": "再結合の温度は束縛エネルギーよりずっと低く，その理由はバリオンと光子の数の比にある．原題の粗い見積もりを，$\\eta$ の値を変えて計算させる．"
+   "tex": "再結合の温度は $k_BT\\approx E_b/\\ln(1/\\eta)$ 程度と束縛エネルギーよりずっと低く，その理由はバリオンと光子の数の比にある．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) [K]：≈5900 ; $z$：≈2100\n(2) 記述"
+   "spec": "(1) 記述：y^2 e^(-y)/(2ζ(3))=η ; T：E_b/(k_B y_0) ; z：E_b/(k_B y_0 T_0)-1\n(2) 記述"
   },
   "methods": [],
   "tags": [
@@ -1270,24 +1270,24 @@
   "theme": "中性子の凍結と崩壊からヘリウムの質量比を見積もる",
   "topic": "中性子の凍結と崩壊からヘリウムの質量比を見積もる",
   "statement": {
-   "tex": "中性子と陽子の比は弱い相互作用が凍結する温度 $T_f$ で $e^{-Q/k_BT_f}$（$Q=1.293\\ \\mathrm{MeV}$）に固定され，その後は中性子の崩壊（寿命 $880\\ \\mathrm s$）で減る．元素合成でほぼすべての中性子がヘリウム4に入る．\n\\begin{enumerate}\n\\item $k_BT_f=0.75\\ \\mathrm{MeV}$，元素合成の時刻 $t=200\\ \\mathrm s$ として，ヘリウムの質量比 $Y=\\dfrac{2(n/p)}{1+n/p}$ を求めよ．\n\\item 相対論的な粒子の種類が増えると $Y$ は増えるか減るか，理由とともに答えよ．\n\\end{enumerate}"
+   "tex": "中性子と陽子の数の比は，弱い相互作用が凍結する温度 $T_f$ で $e^{-Q/k_BT_f}$（$Q$ は中性子と陽子の質量差のエネルギー，$k_B$ はボルツマン定数）に固定され，その後は中性子の崩壊（寿命 $\\tau$）で減る．元素合成でほぼすべての中性子がヘリウム4に入る．\n\\begin{enumerate}\n\\item 元素合成の時刻を（凍結から測って）$t$ とする．そのときの中性子と陽子の比を $x=n/p$ と近似的に $x=e^{-Q/k_BT_f}e^{-t/\\tau}$ とおき，ヘリウムの質量比 $Y=\\dfrac{2x}{1+x}$ を $Q, k_B, T_f, t, \\tau$ で表せ．\n\\item 相対論的な粒子の種類が増えると $Y$ は増えるか減るか，理由とともに答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $n/p\\approx0.142$，$Y\\approx0.25$　(2) 増える"
+   "tex": "(1) $Y=\\dfrac{2}{1+e^{Q/k_BT_f+t/\\tau}}$　(2) 増える"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $e^{-1.724}=0.178$，崩壊で $\\times e^{-200/880}=0.797$，$n/p=0.142$．$Y=\\boldsymbol{0.25}$．\n\n(2) $H\\propto\\sqrt{g_*}T^2$ が大きくなり，弱い相互作用がより高温で凍結し，元素合成までの時間も短い：$n/p$ が大きく $Y$ が\\textbf{増える}（$N_{\\rm eff}$ の制限になる）．"
+    "tex": "(1) $x=e^{-Q/k_BT_f-t/\\tau}$ を代入し，分母分子を $x$ で割って\n\\[ Y=\\frac{2x}{1+x}=\\boldsymbol{\\frac{2}{1+e^{Q/k_BT_f+t/\\tau}}} . \\]\n$Q=1.293\\,\\mathrm{MeV}$，$k_BT_f=0.75\\,\\mathrm{MeV}$，$t=200\\,\\mathrm s$，$\\tau=880\\,\\mathrm s$ なら $x\\approx0.142$，$Y\\approx0.25$ となり，観測値と合う．\n\n(2) $H\\propto\\sqrt{g_*}T^2$ が大きくなり，弱い相互作用がより高温で凍結し（$T_f$ が上がる），元素合成までの時間 $t$ も短い：$n/p$ が大きく $Y$ が\\textbf{増える}（$N_{\\rm eff}$ の制限になる）．"
    }
   ],
   "idea": {
-   "tex": "ヘリウムの量は弱い相互作用の凍結と中性子の崩壊の競合で決まり，宇宙の膨張速度に敏感である．原題の定性的な問いを，数値の見積もりにした．"
+   "tex": "ヘリウムの量は弱い相互作用の凍結（$e^{-Q/k_BT_f}$）と中性子の崩壊（$e^{-t/\\tau}$）の競合で決まり，宇宙の膨張速度に敏感である．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述"
+   "spec": "(1) Y：2/(1+exp(Q/(k_B T_f)+t/τ))\n(2) 記述"
   },
   "methods": [],
   "tags": [
@@ -1318,24 +1318,24 @@
   "theme": "再結合直後のバリオンのジーンズ質量",
   "topic": "再結合直後のバリオンのジーンズ質量",
   "statement": {
-   "tex": "圧力をもつ一様な物質の摂動は，波数がジーンズ波数 $k_J^2=4\\pi G\\bar\\rho/c_s^2$ より小さいと成長する．\n\\begin{enumerate}\n\\item 再結合直後（$z=1100$，$T=3000\\ \\mathrm K$）のバリオン（$\\Omega_b=0.049$，$\\rho_{c,0}=8.6\\times10^{-27}\\ \\mathrm{kg/m^3}$）の密度と音速（$c_s^2=\\frac53k_BT/m_p$）を求めよ．\n\\item ジーンズ長 $\\lambda_J=c_s\\sqrt{\\pi/G\\rho}$ とジーンズ質量 $M_J=\\frac\\pi6\\rho\\lambda_J^3$ を求めよ．\n\\end{enumerate}"
+   "tex": "圧力をもつ一様な物質（密度 $\\rho$，音速 $c_s$）の摂動は，波数がジーンズ波数 $k_J^2=4\\pi G\\rho/c_s^2$ より小さいと成長する（$G$ は万有引力定数）．\n\\begin{enumerate}\n\\item 再結合直後（赤方偏移 $z$，温度 $T$）のバリオンを考える．現在の臨界密度を $\\rho_0$，バリオンの密度パラメータを $\\Omega_b$ として，当時のバリオン密度 $\\rho$ と音速 $c_s$（$c_s^2=\\frac53k_BT/m_p$，$m_p$ は陽子質量）を表せ．\n\\item ジーンズ長 $\\lambda_J=c_s\\sqrt{\\pi/(G\\rho)}$ とジーンズ質量 $M_J=\\frac\\pi6\\rho\\lambda_J^3$ を $c_s, G, \\rho$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\rho\\approx5.6\\times10^{-19}\\ \\mathrm{kg/m^3}$，$c_s\\approx6.4\\ \\mathrm{km/s}$　(2) $\\lambda_J\\approx1.9\\times10^{18}\\ \\mathrm m$，$M_J\\approx1\\times10^6M_\\odot$"
+   "tex": "(1) $\\rho=\\Omega_b\\rho_0(1+z)^3$，$c_s=\\sqrt{\\dfrac{5k_BT}{3m_p}}$　(2) $\\lambda_J=c_s\\sqrt{\\dfrac{\\pi}{G\\rho}}$，$M_J=\\dfrac{\\pi^{5/2}c_s^3}{6G^{3/2}\\rho^{1/2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\rho=0.049\\times8.6\\times10^{-27}\\times1101^3\\approx\\boldsymbol{5.6\\times10^{-19}}$．$c_s\\approx\\boldsymbol{6.4\\ \\mathrm{km/s}}$．\n\n(2) $\\lambda_J\\approx\\boldsymbol{1.9\\times10^{18}\\ \\mathrm m}$（60 pc），$M_J\\approx1.9\\times10^{36}\\ \\mathrm{kg}\\approx\\boldsymbol{10^6M_\\odot}$（球状星団の質量程度）．"
+    "tex": "(1) 物質密度は $a^{-3}=(1+z)^3$ に比例するので $\\boldsymbol{\\rho=\\Omega_b\\rho_0(1+z)^3}$，$\\boldsymbol{c_s=\\sqrt{\\dfrac{5k_BT}{3m_p}}}$．\n\n(2) $\\boldsymbol{\\lambda_J=c_s\\sqrt{\\dfrac{\\pi}{G\\rho}}}$．\n\\[ M_J=\\frac\\pi6\\rho\\,c_s^3\\left(\\frac{\\pi}{G\\rho}\\right)^{3/2}=\\boldsymbol{\\frac{\\pi^{5/2}c_s^3}{6G^{3/2}\\rho^{1/2}}} . \\]\n$z=1100$，$T=3000\\,\\mathrm K$，$\\Omega_b=0.049$，$\\rho_0=8.6\\times10^{-27}\\,\\mathrm{kg/m^3}$ では $\\rho\\approx5.6\\times10^{-19}\\,\\mathrm{kg/m^3}$，$c_s\\approx6.4\\,\\mathrm{km/s}$，$\\lambda_J\\approx60\\,\\mathrm{pc}$，$M_J\\approx10^6M_\\odot$（球状星団の質量程度）となる．"
    }
   ],
   "idea": {
-   "tex": "再結合で光子の圧力から解放されたバリオンのジーンズ質量は急に下がり，小さな構造が作れるようになる．原題の摂動方程式の導出を，具体的なジーンズ質量の計算にした．"
+   "tex": "再結合で光子の圧力から解放されたバリオンのジーンズ質量 $M_J\\propto c_s^3/\\sqrt{G^3\\rho}$ は急に下がり，小さな構造が作れるようになる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\rho$ [kg/m³]：≈5.6e-19 ; $c_s$ [km/s]：≈6.4\n(2) 記述"
+   "spec": "(1) ρ：Ω_b ρ_0 (1+z)^3 ; c_s：sqrt(5 k_B T/(3 m_p))\n(2) λ_J：c_s sqrt(π/(G ρ)) ; M_J：π^(5/2) c_s^3/(6 G^(3/2) ρ^(1/2))"
   },
   "methods": [],
   "tags": [
@@ -1367,24 +1367,24 @@
   "theme": "放射優勢期にゆらぎがほとんど成長しない（メサロシュ効果）",
   "topic": "放射優勢期にゆらぎがほとんど成長しない（メサロシュ効果）",
   "statement": {
-   "tex": "物質と放射の平坦な宇宙で，物質の摂動は $x=a/a_{\\rm eq}$ について $\\delta''+\\left(\\dfrac1x+\\dfrac{1}{2(1+x)}\\right)\\delta'=\\dfrac32\\dfrac{\\delta}{x(1+x)}$ をみたし，成長解は $\\delta_1=1+\\frac32x$ である．\n\\begin{enumerate}\n\\item $\\delta_1$ が解であることを確かめよ．\n\\item $x\\to0$ から $x=1$ までに成長解は何倍になるか．その後 $x=1$ から $x=1000$ までには何倍になるか．\n\\item 結果の意味を述べよ．\n\\end{enumerate}"
+   "tex": "物質と放射の平坦な宇宙で，物質の摂動 $\\delta$ は $x=a/a_e$（$a_e$ は物質と放射の等密度時のスケール因子）について $\\delta''+\\left(\\dfrac1x+\\dfrac{1}{2(1+x)}\\right)\\delta'=\\dfrac32\\dfrac{\\delta}{x(1+x)}$ をみたし，成長解は $\\delta_1=1+\\frac32x$ である．\n\\begin{enumerate}\n\\item $\\delta_1$ が解であることを確かめよ．\n\\item $x\\to0$ から $x=1$ までに成長解は何倍になるか．また，$x=1$ から $x=X$ までには何倍になるか．\n\\item 結果の意味を述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 確認　(2) $2.5$ 倍；約 $600$ 倍　(3) 放射優勢期には膨張が速く成長がほぼ止まる"
+   "tex": "(1) 確認　(2) $\\dfrac52$ 倍；$\\dfrac{2+3X}{5}$ 倍　(3) 放射優勢期には膨張が速く成長がほぼ止まる"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\delta'=\\frac32$，$\\delta''=0$：左辺 $\\frac32\\cdot\\frac{3x+2}{2x(1+x)}$，右辺 $\\frac32\\cdot\\frac{1+\\frac32x}{x(1+x)}$ で一致．\n\n(2) $\\delta_1(1)/\\delta_1(0)=\\boldsymbol{2.5}$．$\\delta_1(1000)/\\delta_1(1)=1501/2.5\\approx\\boldsymbol{600}$（$\\delta\\propto a$）．\n\n(3) 放射優勢期には膨張がゆらぎの自己重力に勝ち，対数的にしか成長しない．構造は等密度の後に成長する．"
+    "tex": "(1) $\\delta'=\\frac32$，$\\delta''=0$：左辺 $\\frac32\\cdot\\frac{3x+2}{2x(1+x)}$，右辺 $\\frac32\\cdot\\frac{1+\\frac32x}{x(1+x)}$ で一致．\n\n(2) $\\delta_1(1)/\\delta_1(0)=\\boldsymbol{5/2}$．$\\delta_1(X)/\\delta_1(1)=\\dfrac{1+\\frac32X}{5/2}=\\boldsymbol{\\dfrac{2+3X}{5}}$．$X\\gg1$ では $\\delta\\propto a$ で成長し，$X=1000$ なら約 $600$ 倍．\n\n(3) 放射優勢期には膨張がゆらぎの自己重力に勝ち，（この成長解では）高々 $2.5$ 倍にしか成長しない．構造は等密度の後に成長する．"
    }
   ],
   "idea": {
-   "tex": "放射優勢期の物質ゆらぎの成長の停滞（メサロシュ効果）は，ゆらぎのスペクトルの折れ曲がりを生む．原題の解の検証を，成長の倍率の比較にした．"
+   "tex": "放射優勢期の物質ゆらぎの成長の停滞（メサロシュ効果）は，ゆらぎのスペクトルの折れ曲がりを生む．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述\n(2) 5/2 ; (2+3X)/5\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -1513,16 +1513,16 @@
   "theme": "ΛCDM 宇宙の加速膨張",
   "topic": "ΛCDM 宇宙の加速膨張",
   "statement": {
-   "tex": "物質と宇宙項からなる平坦な宇宙のハッブルパラメータは\n\\[H(a)^2=H_0^2\\left(\\Omega_m a^{-3}+\\Omega_\\Lambda\\right),\\qquad \\Omega_m+\\Omega_\\Lambda=1\\]\nである（現在 $a=1$，$1+z=1/a$）．減速パラメータを $q=-\\ddot a a/\\dot a^2$ と定義する．$\\Omega_m=0.30$，$\\Omega_\\Lambda=0.70$，$H_0=70\\,\\mathrm{km/s/Mpc}$ とする．\n\\begin{enumerate}\n\\item 加速度方程式 $\\ddot a/a=-\\tfrac{1}{2}H_0^2\\Omega_m a^{-3}+H_0^2\\Omega_\\Lambda$ を用いて，現在の減速パラメータ $q_0$ を求めよ．\n\\item 膨張が減速から加速に転じた赤方偏移 $z_{\\mathrm{acc}}$ を求めよ．\n\\item 物質と宇宙項のエネルギー密度が等しかった赤方偏移を求めよ．\n\\item 遠い未来 $a\\to\\infty$ でのハッブルパラメータ $H_\\infty$ を $\\mathrm{km/s/Mpc}$ 単位で求めよ．\n\\end{enumerate}"
+   "tex": "物質と宇宙項からなる平坦な宇宙のハッブルパラメータは\n\\[H(a)^2=H_0^2\\left(\\Omega_m a^{-3}+\\Omega_\\Lambda\\right),\\qquad \\Omega_m+\\Omega_\\Lambda=1\\]\nである（現在 $a=1$，$1+z=1/a$）．減速パラメータを $q=-\\ddot a a/\\dot a^2$ と定義する．\n\\begin{enumerate}\n\\item 加速度方程式 $\\ddot a/a=-\\tfrac{1}{2}H_0^2\\Omega_m a^{-3}+H_0^2\\Omega_\\Lambda$ を用いて，現在の減速パラメータ $q_0$ を $\\Omega_m, \\Omega_\\Lambda$ で表せ．\n\\item 膨張が減速から加速に転じた赤方偏移 $z_a$ を $\\Omega_m, \\Omega_\\Lambda$ で表せ．\n\\item 物質と宇宙項のエネルギー密度が等しかった赤方偏移 $z_e$ を $\\Omega_m, \\Omega_\\Lambda$ で表し，$z_a>z_e$ であることを示せ．\n\\item 遠い未来 $a\\to\\infty$ でのハッブルパラメータ $H_\\infty$ を $H_0, \\Omega_\\Lambda$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $q_0=\\dfrac{\\Omega_m}{2}-\\Omega_\\Lambda=-0.55$ (2) $z_{\\mathrm{acc}}=\\left(\\dfrac{2\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1\\approx 0.67$ (3) $z\\approx 0.33$ (4) $H_\\infty\\approx 59\\,\\mathrm{km/s/Mpc}$"
+   "tex": "(1) $q_0=\\dfrac{\\Omega_m}{2}-\\Omega_\\Lambda$ (2) $z_a=\\left(\\dfrac{2\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1$ (3) $z_e=\\left(\\dfrac{\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1$ (4) $H_\\infty=H_0\\sqrt{\\Omega_\\Lambda}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $a=1$ で $q_0=-(\\ddot a/a)/H_0^2=\\Omega_m/2-\\Omega_\\Lambda=\\boldsymbol{-0.55}$．負なので現在は加速膨張している．\n\n(2) $\\ddot a=0$ となるのは $\\Omega_m a^{-3}=2\\Omega_\\Lambda$，すなわち $1+z_{\\mathrm{acc}}=(2\\Omega_\\Lambda/\\Omega_m)^{1/3}=(14/3)^{1/3}\\approx1.67$ で $\\boldsymbol{z_{\\mathrm{acc}}\\approx0.67}$．\n\n(3) $\\Omega_m a^{-3}=\\Omega_\\Lambda$ より $1+z=(7/3)^{1/3}\\approx1.33$，$\\boldsymbol{z\\approx0.33}$．加速の開始は等密度より前（$z$ が大きい）である．物質の重力は密度の $1/2$ の重みで効く（$\\rho+3p$）のに対し，宇宙項は $\\rho+3p=-2\\rho_\\Lambda$ で効くためである．\n\n(4) $H_\\infty=H_0\\sqrt{\\Omega_\\Lambda}=70\\sqrt{0.7}\\approx\\boldsymbol{59\\,\\mathrm{km/s/Mpc}}$．以後は指数膨張（ド・ジッター宇宙）になる．"
+    "tex": "(1) $a=1$ で $q_0=-(\\ddot a/a)/H_0^2=\\boldsymbol{\\Omega_m/2-\\Omega_\\Lambda}$．$\\Omega_m=0.30$，$\\Omega_\\Lambda=0.70$ なら $-0.55$ で，負なので現在は加速膨張している．\n\n(2) $\\ddot a=0$ となるのは $\\Omega_m a^{-3}=2\\Omega_\\Lambda$，すなわち $\\boldsymbol{z_a=(2\\Omega_\\Lambda/\\Omega_m)^{1/3}-1}$．上の数値では約 $0.67$．\n\n(3) $\\Omega_m a^{-3}=\\Omega_\\Lambda$ より $\\boldsymbol{z_e=(\\Omega_\\Lambda/\\Omega_m)^{1/3}-1}$（上の数値では約 $0.33$）．$1+z_a=2^{1/3}(1+z_e)>1+z_e$ なので，加速の開始は等密度より前（$z$ が大きい）である．物質の重力は密度の $1/2$ の重みで効く（$\\rho+3p$）のに対し，宇宙項は $\\rho+3p=-2\\rho_\\Lambda$ で効くためである．\n\n(4) $a^{-3}\\to0$ より $\\boldsymbol{H_\\infty=H_0\\sqrt{\\Omega_\\Lambda}}$（$H_0=70\\,\\mathrm{km/s/Mpc}$ なら約 $59\\,\\mathrm{km/s/Mpc}$）．以後は指数膨張（ド・ジッター宇宙）になる．"
    }
   ],
   "idea": {
@@ -1530,7 +1530,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) -0.55\n(2) ≈0.67\n(3) ≈0.33\n(4) H [km/s/Mpc]：≈59"
+   "spec": "(1) Ω_m/2-Ω_Λ\n(2) (2Ω_Λ/Ω_m)^(1/3)-1\n(3) (Ω_Λ/Ω_m)^(1/3)-1\n(4) H_0 sqrt(Ω_Λ)"
   },
   "methods": [],
   "tags": [
@@ -1610,24 +1610,24 @@
   "theme": "光子だけの平坦な宇宙での地平線問題",
   "topic": "光子だけの平坦な宇宙での地平線問題",
   "statement": {
-   "tex": "光子の気体（エネルギー密度 $u=aT^4$，$a=7.57\\times10^{-16}\\ \\mathrm{J\\,m^{-3}K^{-4}}$）だけを含む平坦な宇宙を考える．フリードマン方程式は $H^2=\\left(\\dfrac{\\dot R}{R}\\right)^2=\\dfrac{8\\pi G}{3c^2}u$ で，膨張は断熱的（$RT$ が一定）とする．\n\\begin{enumerate}\n\\item $R(t)\\propto t^{1/2}$ を示し，ハッブル定数 $H_0$ から現在の宇宙年齢 $t_0$ と温度 $T_0$ を求める式を書け．$H_0=70\\ \\mathrm{km\\,s^{-1}Mpc^{-1}}$（$1\\ \\mathrm{Mpc}=3.09\\times10^{22}\\ \\mathrm{m}$）のとき $T_0$ を求めよ．\n\\item 現在の半径 $ct_0$ の領域は，温度 $T_1$ の時刻 $t_1$ には半径 $L_1$ であった．$L_1$ の中にある，互いに因果関係をもちうる領域（半径 $2ct_1$）の数 $N=\\left(\\dfrac{L_1}{2ct_1}\\right)^3$ を $T_1/T_0$ だけで表せ．\n\\item $k_BT_1=10^{15}\\ \\mathrm{GeV}$ のとき，$\\log_{10}N$ を求めよ．この一様性を説明するために，その後の時期にエントロピーが何倍以上に増えればよいか．\n\\end{enumerate}"
+   "tex": "光子の気体（エネルギー密度 $u=aT^4$，$a$ は放射定数）だけを含む平坦な宇宙を考える．フリードマン方程式は $H^2=\\left(\\dfrac{\\dot R}{R}\\right)^2=\\dfrac{8\\pi G}{3c^2}u$ で（$R$ はスケール因子），膨張は断熱的（$RT$ が一定）とする．\n\\begin{enumerate}\n\\item $R(t)\\propto t^{1/2}$ を示し，ハッブル定数 $H_0$ から現在の宇宙年齢 $t_0$ と温度 $T_0$ を表せ．\n\\item 現在の半径 $ct_0$ の領域は，温度 $T_1$ の時刻 $t_1$ には半径 $L_1$ であった．$L_1$ の中にある，互いに因果関係をもちうる領域（半径 $2ct_1$）の数 $N=\\left(\\dfrac{L_1}{2ct_1}\\right)^3$ を $T_1/T_0$ だけで表せ．\n\\item $k_BT_1=E$ とする．$t_1$ の後で断熱性が破れて（インフレーション後の再加熱など）エントロピーが $Z$ 倍に増えたとすると，この一様性を説明するために必要な $Z$ の下限を $E, k_B, T_0$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $t_0=\\dfrac{1}{2H_0}$，$T_0=\\left(\\dfrac{3c^2H_0^2}{8\\pi Ga}\\right)^{1/4}\\approx32\\ \\mathrm{K}$　(2) $N=\\dfrac18\\left(\\dfrac{T_1}{T_0}\\right)^3$　(3) $\\log_{10}N\\approx79$，$N$ 倍（約 $10^{79}$ 倍）以上"
+   "tex": "(1) $t_0=\\dfrac{1}{2H_0}$，$T_0=\\left(\\dfrac{3c^2H_0^2}{8\\pi Ga}\\right)^{1/4}$　(2) $N=\\dfrac18\\left(\\dfrac{T_1}{T_0}\\right)^3$　(3) $Z\\geqq\\dfrac{E^3}{8k_B^3T_0^3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $RT$ 一定より $u\\propto R^{-4}$，$\\dot R^2\\propto R^{-2}$，$R\\,dR\\propto dt$ で $\\boldsymbol{R\\propto t^{1/2}}$．このとき $H=\\dfrac{1}{2t}$ なので $\\boldsymbol{t_0=\\dfrac1{2H_0}}$．フリードマン方程式に現在の値を入れて\n\\[\n\\boldsymbol{T_0=\\left(\\frac{3c^2H_0^2}{8\\pi Ga}\\right)^{1/4}}.\n\\]\n$H_0=70\\times10^3/(3.09\\times10^{22})=2.27\\times10^{-18}\\ \\mathrm{s^{-1}}$ を入れると $\\boldsymbol{T_0\\approx32\\ \\mathrm{K}}$（物質を無視した模型なので実際の $2.7\\ \\mathrm{K}$ より高い）．\n\n(2) $R\\propto1/T$ なので $L_1=ct_0\\dfrac{T_0}{T_1}$．また $T\\propto t^{-1/2}$ より $\\dfrac{t_0}{t_1}=\\left(\\dfrac{T_1}{T_0}\\right)^2$．よって\n\\[\n\\frac{L_1}{2ct_1}=\\frac{t_0}{2t_1}\\cdot\\frac{T_0}{T_1}=\\frac12\\frac{T_1}{T_0},\\qquad \\boldsymbol{N=\\frac18\\left(\\frac{T_1}{T_0}\\right)^3}.\n\\]\n（粒子の地平線 $2ct$ は，$R\\propto t^{1/2}$ で光が進む固有距離 $R(t)\\int_0^tc\\,dt'/R(t')=2ct$．）\n\n(3) $T_1=\\dfrac{10^{15}\\times1.60\\times10^{-10}\\ \\mathrm{J}}{1.38\\times10^{-23}\\ \\mathrm{J/K}}=1.16\\times10^{28}\\ \\mathrm{K}$．$\\dfrac{T_1}{T_0}=3.6\\times10^{26}$ で $N=5.8\\times10^{78}$，$\\boldsymbol{\\log_{10}N\\approx79}$．今見えている宇宙は，当時は約 $10^{79}$ 個の因果的につながっていない領域から成っていたのに一様である．$t_1$ の後で断熱性が破れて（インフレーション後の再加熱など）エントロピー $S\\propto(LT)^3$ が $Z$ 倍になれば，同じ現在の領域が当時は $Z^{-1/3}$ 倍小さかったことになるので，$Z\\geqq N$，すなわち $\\boldsymbol{10^{79}}$ \\textbf{倍以上}が必要．"
+    "tex": "(1) $RT$ 一定より $u\\propto R^{-4}$，$\\dot R^2\\propto R^{-2}$，$R\\,dR\\propto dt$ で $\\boldsymbol{R\\propto t^{1/2}}$．このとき $H=\\dfrac{1}{2t}$ なので $\\boldsymbol{t_0=\\dfrac1{2H_0}}$．フリードマン方程式に現在の値を入れて\n\\[\n\\boldsymbol{T_0=\\left(\\frac{3c^2H_0^2}{8\\pi Ga}\\right)^{1/4}}.\n\\]\n$H_0=70\\ \\mathrm{km\\,s^{-1}Mpc^{-1}}$ を入れると $T_0\\approx32\\ \\mathrm{K}$（物質を無視した模型なので実際の $2.7\\ \\mathrm{K}$ より高い）．\n\n(2) $R\\propto1/T$ なので $L_1=ct_0\\dfrac{T_0}{T_1}$．また $T\\propto t^{-1/2}$ より $\\dfrac{t_0}{t_1}=\\left(\\dfrac{T_1}{T_0}\\right)^2$．よって\n\\[\n\\frac{L_1}{2ct_1}=\\frac{t_0}{2t_1}\\cdot\\frac{T_0}{T_1}=\\frac12\\frac{T_1}{T_0},\\qquad \\boldsymbol{N=\\frac18\\left(\\frac{T_1}{T_0}\\right)^3}.\n\\]\n（粒子の地平線 $2ct$ は，$R\\propto t^{1/2}$ で光が進む固有距離 $R(t)\\int_0^tc\\,dt'/R(t')=2ct$．）\n\n(3) エントロピー $S\\propto(LT)^3$ が $Z$ 倍になれば，同じ現在の領域が当時は $Z^{-1/3}$ 倍小さかったことになり，因果的につながらない領域の数は $N/Z$ になる．これが $1$ 以下であればよいので $Z\\geqq N$，$T_1=E/k_B$ を代入して\n\\[ \\boldsymbol{Z\\geqq\\frac{E^3}{8k_B^3T_0^3}} . \\]\n$E=10^{15}\\,\\mathrm{GeV}$，$T_0=32\\,\\mathrm K$ では $T_1/T_0\\approx3.6\\times10^{26}$ で，$Z\\gtrsim10^{79}$ が必要になる．"
    }
   ],
   "idea": {
-   "tex": "放射優勢の宇宙では $R\\propto t^{1/2}$，$T\\propto t^{-1/2}$ なので，現在の領域を昔に戻した大きさと当時の地平線の比が温度比だけで表せる．因果的につながらない領域の数は $(T_1/T_0)^3/8$ で，これを打ち消すのに必要なエントロピーの増加も同じ数になる．原題は閉じた宇宙で $q_0$ を含む計算で，捻りでは平坦な宇宙にして式を温度比だけにまとめた．"
+   "tex": "放射優勢の宇宙では $R\\propto t^{1/2}$，$T\\propto t^{-1/2}$ なので，現在の領域を昔に戻した大きさと当時の地平線の比が温度比だけで表せる．因果的につながらない領域の数は $(T_1/T_0)^3/8$ で，これを打ち消すのに必要なエントロピーの増加も同じ数になる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $t_0$：((1)/(2 H_0)) ; $T_0$ [K]：≈32\n(2) $N$：((1)/(8))(((T_1)/(T_0)))^(3)\n(3) 記述"
+   "spec": "(1) t_0：1/(2 H_0) ; T_0：(3 c^2 H_0^2/(8π G a))^(1/4)\n(2) N：(T_1/T_0)^3/8\n(3) Z：Z>=E^3/(8 k_B^3 T_0^3)"
   },
   "methods": [],
   "tags": [
@@ -1853,24 +1853,24 @@
   "theme": "標準模型以前に分離した軽い粒子の今日の温度と ΔN_eff",
   "topic": "標準模型以前に分離した軽い粒子の今日の温度と ΔN_eff",
   "statement": {
-   "tex": "分離した種の温度は $g_{*s}T^3$ の保存から決まる．\n\\begin{enumerate}\n\\item 電子と陽電子の対消滅で光子が温められ，$T_\\nu/T_\\gamma=(4/11)^{1/3}$ となることを示し，今日の $T_\\nu$ を求めよ．\n\\item ニュートリノのエネルギー密度と光子のエネルギー密度の比を求めよ（3世代）．\n\\item $g_*=106.75$ の時期に分離したワイルフェルミ粒子（自由度2）の今日のニュートリノに対する温度比と，有効ニュートリノ数への寄与 $\\Delta N_{\\rm eff}$ を求めよ．\n\\end{enumerate}"
+   "tex": "分離した種の温度は $g_{*s}T^3$ の保存から決まる（$g_{*s}$ はエントロピーの有効自由度）．現在の光子の温度を $T_\\gamma$ とする．\n\\begin{enumerate}\n\\item 電子と陽電子の対消滅で光子が温められ，$T_\\nu/T_\\gamma=(4/11)^{1/3}$ となることを示し，今日のニュートリノの温度 $T_\\nu$ を $T_\\gamma$ で表せ．\n\\item ニュートリノのエネルギー密度と光子のエネルギー密度の比を求めよ（3世代）．\n\\item 有効自由度が $g_*=g_1$ の時期に分離したワイルフェルミ粒子（自由度2）を考える．ニュートリノが分離したときの有効自由度を $g_2$ とすると，今日のこの粒子の温度 $T_x$ のニュートリノに対する比 $T_x/T_\\nu$ と，有効ニュートリノ数への寄与 $\\Delta N_{\\rm eff}$ を $g_1, g_2$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1.95\\ \\mathrm K$　(2) $0.681$　(3) $T_x/T_\\nu\\approx0.465$，$\\Delta N_{\\rm eff}\\approx0.047$"
+   "tex": "(1) $T_\\nu=\\left(\\dfrac{4}{11}\\right)^{1/3}T_\\gamma$　(2) $\\dfrac{21}{8}\\left(\\dfrac{4}{11}\\right)^{4/3}$　(3) $\\dfrac{T_x}{T_\\nu}=\\left(\\dfrac{g_2}{g_1}\\right)^{1/3}$，$\\Delta N_{\\rm eff}=\\left(\\dfrac{g_2}{g_1}\\right)^{4/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 対消滅の前 $g_{*s}=2+\\frac78\\times4=\\frac{11}2$，後 $2$：$T$ は $(11/4)^{1/3}$ 倍．$T_\\nu=2.725\\times(4/11)^{1/3}=\\boldsymbol{1.95\\ \\mathrm K}$．\n\n(2) $3\\times\\frac78\\times(4/11)^{4/3}=\\boldsymbol{0.681}$．\n\n(3) 分離後に $g_*$ が $10.75$（ニュートリノ分離時）まで減る間，粒子は温められない：$T_x/T_\\nu=(10.75/106.75)^{1/3}=\\boldsymbol{0.465}$．$\\Delta N_{\\rm eff}=(0.465)^4\\approx\\boldsymbol{0.047}$．"
+    "tex": "(1) 対消滅の前 $g_{*s}=2+\\frac78\\times4=\\frac{11}2$，後 $2$：光子の $T$ は $(11/4)^{1/3}$ 倍に温められる．$\\boldsymbol{T_\\nu=(4/11)^{1/3}T_\\gamma}$．$T_\\gamma=2.725\\,\\mathrm K$ なら $1.95\\,\\mathrm K$．\n\n(2) $3\\times\\frac78\\times(4/11)^{4/3}=\\boldsymbol{\\dfrac{21}{8}\\left(\\dfrac{4}{11}\\right)^{4/3}}\\approx0.681$．\n\n(3) 分離後に $g_*$ が $g_2$ まで減る間，粒子は温められない：$\\boldsymbol{T_x/T_\\nu=(g_2/g_1)^{1/3}}$．自由度2のフェルミ粒子はニュートリノ1世代（$\\nu+\\bar\\nu$）と同じ自由度なので，$\\boldsymbol{\\Delta N_{\\rm eff}=(T_x/T_\\nu)^4=(g_2/g_1)^{4/3}}$．$g_1=106.75$，$g_2=10.75$ では $T_x/T_\\nu\\approx0.465$，$\\Delta N_{\\rm eff}\\approx0.047$．"
    }
   ],
   "idea": {
-   "tex": "早く分離した種ほど後のエントロピーの移動で相対的に冷え，有効ニュートリノ数への寄与が小さい．原題の重力子の温度の見積もりを，新粒子の観測可能性の問題にした．"
+   "tex": "早く分離した種ほど後のエントロピーの移動で相対的に冷え，有効ニュートリノ数への寄与 $(g_2/g_1)^{4/3}$ が小さい．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) [K]：≈1.95\n(2) ≈0.681\n(3) 記述"
+   "spec": "(1) T_ν：(4/11)^(1/3) T_γ\n(2) 21/8 (4/11)^(4/3)\n(3) T_x/T_ν：(g_2/g_1)^(1/3) ; ΔN_eff：(g_2/g_1)^(4/3)"
   },
   "methods": [],
   "tags": [
@@ -1951,16 +1951,16 @@
   "theme": "線形密度ゆらぎの成長",
   "topic": "線形密度ゆらぎの成長",
   "statement": {
-   "tex": "膨張宇宙で非相対論的物質の密度ゆらぎ $\\delta=\\delta\\rho/\\bar\\rho$ が十分大きなスケールにあるとき，その線形成長は\n\\[ \\ddot\\delta+2H\\dot\\delta=4\\pi G\\bar\\rho\\,\\delta \\]\nに従う（$H=\\dot a/a$，$\\bar\\rho$ は物質の平均密度）．\n\\begin{enumerate}\n\\item アインシュタイン＝ド・ジッター宇宙（$a\\propto t^{2/3}$，$H^2=\\tfrac{8\\pi G}{3}\\bar\\rho$）で $\\delta\\propto t^{k}$ の形の解を探し，$k$ の値を求めよ．\n\\item 成長モードが $a^{j}$ に比例するとき，$j$ を求めよ．\n\\item 晴れ上がり（$1+z=1100$）でのゆらぎが $\\delta=1.0\\times10^{-5}$ のとき，(2) に従って成長した現在（$z=0$）の値を求めよ．\n\\item 宇宙項が優勢になり $H=$ 一定，$4\\pi G\\bar\\rho\\delta$ の項が無視できるとき，$\\delta$ の一般解を $H$ と定数 $C_1, C_2$ で表せ．\n\\end{enumerate}"
+   "tex": "膨張宇宙で非相対論的物質の密度ゆらぎ $\\delta=\\delta\\rho/\\bar\\rho$ が十分大きなスケールにあるとき，その線形成長は\n\\[ \\ddot\\delta+2H\\dot\\delta=4\\pi G\\bar\\rho\\,\\delta \\]\nに従う（$H=\\dot a/a$，$\\bar\\rho$ は物質の平均密度）．\n\\begin{enumerate}\n\\item アインシュタイン＝ド・ジッター宇宙（$a\\propto t^{2/3}$，$H^2=\\tfrac{8\\pi G}{3}\\bar\\rho$）で $\\delta\\propto t^{k}$ の形の解を探し，$k$ の値を求めよ．\n\\item 成長モードが $a^{j}$ に比例するとき，$j$ を求めよ．\n\\item 晴れ上がり（赤方偏移 $z_d$）でのゆらぎが $\\delta_d$ のとき，(2) に従って成長した現在（$z=0$）の値 $\\delta_0$ を $\\delta_d, z_d$ で表せ．\n\\item 宇宙項が優勢になり $H=$ 一定，$4\\pi G\\bar\\rho\\delta$ の項が無視できるとき，$\\delta$ の一般解を $H$ と定数 $C_1, C_2$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $k=\\dfrac{2}{3},\\,-1$ (2) $j=1$ (3) $\\delta\\approx1.1\\times10^{-2}$ (4) $\\delta=C_1+C_2e^{-2Ht}$"
+   "tex": "(1) $k=\\dfrac{2}{3},\\,-1$ (2) $j=1$ (3) $\\delta_0=\\delta_d(1+z_d)$ (4) $\\delta=C_1+C_2e^{-2Ht}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $H=\\dfrac{2}{3t}$，$4\\pi G\\bar\\rho=\\tfrac32H^2=\\dfrac{2}{3t^2}$．$\\delta=t^k$ を代入すると\n\\[ k(k-1)+\\frac43k-\\frac23=0\\iff 3k^2+k-2=0\\iff(3k-2)(k+1)=0 . \\]\nよって $\\boldsymbol{k=2/3}$（成長モード），$\\boldsymbol{k=-1}$（減衰モード）．\n\n(2) $a\\propto t^{2/3}$ なので成長モードは $\\delta\\propto t^{2/3}\\propto\\boldsymbol{a}$．\n\n(3) $\\delta_0=1.0\\times10^{-5}\\times1100\\approx\\boldsymbol{1.1\\times10^{-2}}$．これでは現在 $\\delta\\gg1$ の銀河や銀河団はできない．バリオンだけでなく，晴れ上がり以前から放射と相互作用せずに成長していた暗黒物質のゆらぎが必要になる（CMB の小さなゆらぎと現在の構造をつなぐ論拠）．\n\n(4) $\\ddot\\delta+2H\\dot\\delta=0$ より $\\dot\\delta\\propto e^{-2Ht}$，\n\\[ \\boldsymbol{\\delta=C_1+C_2e^{-2Ht}} . \\]\n宇宙項が優勢になるとゆらぎは成長を止める（凍結）．膨張による「摩擦」$2H\\dot\\delta$ が重力による成長に勝つためである．"
+    "tex": "(1) $H=\\dfrac{2}{3t}$，$4\\pi G\\bar\\rho=\\tfrac32H^2=\\dfrac{2}{3t^2}$．$\\delta=t^k$ を代入すると\n\\[ k(k-1)+\\frac43k-\\frac23=0\\iff 3k^2+k-2=0\\iff(3k-2)(k+1)=0 . \\]\nよって $\\boldsymbol{k=2/3}$（成長モード），$\\boldsymbol{k=-1}$（減衰モード）．\n\n(2) $a\\propto t^{2/3}$ なので成長モードは $\\delta\\propto t^{2/3}\\propto\\boldsymbol{a}$．\n\n(3) $a$ は $1/(1+z_d)$ から $1$ まで $(1+z_d)$ 倍になるので $\\boldsymbol{\\delta_0=\\delta_d(1+z_d)}$．$\\delta_d=10^{-5}$，$1+z_d=1100$ では $\\delta_0\\approx10^{-2}$ にすぎず，現在 $\\delta\\gg1$ の銀河や銀河団はできない．バリオンだけでなく，晴れ上がり以前から放射と相互作用せずに成長していた暗黒物質のゆらぎが必要になる（CMB の小さなゆらぎと現在の構造をつなぐ論拠）．\n\n(4) $\\ddot\\delta+2H\\dot\\delta=0$ より $\\dot\\delta\\propto e^{-2Ht}$，\n\\[ \\boldsymbol{\\delta=C_1+C_2e^{-2Ht}} . \\]\n宇宙項が優勢になるとゆらぎは成長を止める（凍結）．膨張による「摩擦」$2H\\dot\\delta$ が重力による成長に勝つためである．"
    }
   ],
   "idea": {
@@ -1968,7 +1968,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) {2/3, -1}\n(2) 1\n(3) ≈1.1e-2\n(4) C_1+C_2 exp(-2 H t)"
+   "spec": "(1) {2/3, -1}\n(2) 1\n(3) δ_d (1+z_d)\n(4) C_1+C_2 exp(-2 H t)"
   },
   "methods": [],
   "tags": [
@@ -2000,16 +2000,16 @@
   "theme": "ビッグバン元素合成とヘリウム質量比",
   "topic": "ビッグバン元素合成とヘリウム質量比",
   "statement": {
-   "tex": "初期宇宙では弱い相互作用 $n+\\nu_e\\leftrightarrow p+e^-$ などにより中性子と陽子が平衡にあり，数の比は $n/p=\\exp(-Q/k_BT)$（$Q=(m_n-m_p)c^2=1.29\\,\\mathrm{MeV}$）である．反応率が膨張率を下回る温度 $k_BT_f=0.80\\,\\mathrm{MeV}$ で比が凍結し，その後は自由中性子が寿命 $\\tau=880\\,\\mathrm{s}$ で崩壊する．凍結から重水素の生成が進むまでの時間を $t=180\\,\\mathrm{s}$ とし，その時点の中性子がすべて $^4$He に取り込まれるとする．\n\\begin{enumerate}\n\\item 全バリオン質量に占める中性子の割合（数の割合で近似してよい）を $X_n$ とするとき，$^4$He の質量比 $Y$ を $X_n$ で表せ．\n\\item 凍結時の $n/p$ を求めよ．\n\\item 中性子の崩壊を無視したときの $Y$ を求めよ．\n\\item 中性子の崩壊を考慮したときの $Y$ を求めよ．\n\\end{enumerate}"
+   "tex": "初期宇宙では弱い相互作用 $n+\\nu_e\\leftrightarrow p+e^-$ などにより中性子と陽子が平衡にあり，数の比は $n/p=\\exp(-Q/k_BT)$（$Q=(m_n-m_p)c^2$）である．反応率が膨張率を下回る温度 $T_f$ で比が凍結し，その後は自由中性子が寿命 $\\tau$ で崩壊する．凍結から重水素の生成が進むまでの時間を $t$ とし，その時点の中性子がすべて $^4$He に取り込まれるとする．\n\\begin{enumerate}\n\\item 全バリオン質量に占める中性子の割合（数の割合で近似してよい）を $X_n$ とするとき，$^4$He の質量比 $Y$ を $X_n$ で表せ．\n\\item 凍結時の $n/p$ を $Q, k_B, T_f$ で表せ．\n\\item 中性子の崩壊を無視したときの $Y$ を $Q, k_B, T_f$ で表せ．\n\\item 中性子の崩壊を考慮したときの $Y$ を $Q, k_B, T_f, t, \\tau$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $Y=2X_n$ (2) $n/p\\approx 0.20$ (3) $Y\\approx 0.33$ (4) $Y\\approx 0.27$"
+   "tex": "(1) $Y=2X_n$ (2) $n/p=e^{-Q/k_BT_f}$ (3) $Y=\\dfrac{2}{1+e^{Q/k_BT_f}}$ (4) $Y=\\dfrac{2e^{-t/\\tau}}{1+e^{Q/k_BT_f}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $^4$He は中性子2個・陽子2個からなるので，中性子1個につき質量 $2$ 単位分のバリオンが He になる．よって $\\boldsymbol{Y=2X_n}$．\n\n(2) $n/p=\\exp(-1.29/0.80)=e^{-1.61}\\approx\\boldsymbol{0.20}$．\n\n(3) $X_n=(n/p)/(1+n/p)\\approx0.166$ より $Y\\approx\\boldsymbol{0.33}$．\n\n(4) $X_n\\to0.166\\,e^{-180/880}\\approx0.135$，$Y\\approx\\boldsymbol{0.27}$．観測値 $Y\\approx0.25$ に近い．凍結温度は $Q$ とほぼ同じなので，$Y$ は $T_f$ や（$T_f$ を決める）ニュートリノの種類数に敏感であり，これが世代数の制限に使われた．"
+    "tex": "(1) $^4$He は中性子2個・陽子2個からなるので，中性子1個につき質量 $2$ 単位分のバリオンが He になる．よって $\\boldsymbol{Y=2X_n}$．\n\n(2) $\\boldsymbol{n/p=e^{-Q/k_BT_f}}$．$Q=1.29\\,\\mathrm{MeV}$，$k_BT_f=0.80\\,\\mathrm{MeV}$ なら約 $0.20$．\n\n(3) $X_n=\\dfrac{n/p}{1+n/p}=\\dfrac{1}{1+e^{Q/k_BT_f}}$ より $\\boldsymbol{Y=\\dfrac{2}{1+e^{Q/k_BT_f}}}$（上の数値で約 $0.33$）．\n\n(4) 時間 $t$ の間に中性子は $e^{-t/\\tau}$ 倍に減る（崩壊でできた陽子を含めてもバリオンの総数は変わらない）ので $X_n\\to X_ne^{-t/\\tau}$，\n\\[ \\boldsymbol{Y=\\frac{2e^{-t/\\tau}}{1+e^{Q/k_BT_f}}} . \\]\n$t=180\\,\\mathrm s$，$\\tau=880\\,\\mathrm s$ では約 $0.27$ で，観測値 $Y\\approx0.25$ に近い．凍結温度は $Q$ とほぼ同じなので，$Y$ は $T_f$ や（$T_f$ を決める）ニュートリノの種類数に敏感であり，これが世代数の制限に使われた．"
    }
   ],
   "idea": {
@@ -2017,7 +2017,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 2 X_n\n(2) ≈0.20\n(3) ≈0.33\n(4) ≈0.27"
+   "spec": "(1) 2 X_n\n(2) exp(-Q/(k_B T_f))\n(3) 2/(1+exp(Q/(k_B T_f)))\n(4) 2 exp(-t/τ)/(1+exp(Q/(k_B T_f)))"
   },
   "methods": [],
   "tags": [
@@ -2049,16 +2049,16 @@
   "theme": "スローロール・インフレーションの観測量",
   "topic": "スローロール・インフレーションの観測量",
   "statement": {
-   "tex": "スカラー場 $\\phi$（インフラトン）のポテンシャル $V(\\phi)$ によるインフレーションを，換算プランク質量 $M$ を単位とする自然単位系で考える．スローロール・パラメータは\n\\[ \\epsilon=\\frac{M^2}{2}\\left(\\frac{V'}{V}\\right)^2,\\qquad \\eta=M^2\\frac{V''}{V} \\]\nで，$\\epsilon=1$ でインフレーションが終わる．場の値 $\\phi$ から終わり $\\phi_e$ までの膨張の e-fold 数は $N=\\dfrac{1}{M^2}\\displaystyle\\int_{\\phi_e}^{\\phi}\\frac{V}{V'}d\\phi$ である．観測量はスペクトル指数 $n_s=1-6\\epsilon+2\\eta$ とテンソル・スカラー比 $r=16\\epsilon$ で，これらは $N$ が約 $60$ の時点で評価される．\n以下 $V=\\tfrac12m^2\\phi^2$（$\\phi>0$）とする．\n\\begin{enumerate}\n\\item $\\epsilon$ と $\\eta$ を $M, \\phi$ で表せ．\n\\item インフレーションが終わる場の値 $\\phi_e$ を求めよ．\n\\item $N$ を $\\phi, M$ で表せ．\n\\item $N=60$ のときの $n_s$ と $r$ を求めよ．\n\\end{enumerate}"
+   "tex": "スカラー場 $\\phi$（インフラトン）のポテンシャル $V(\\phi)$ によるインフレーションを，換算プランク質量 $M$ を単位とする自然単位系で考える．スローロール・パラメータは\n\\[ \\epsilon=\\frac{M^2}{2}\\left(\\frac{V'}{V}\\right)^2,\\qquad \\eta=M^2\\frac{V''}{V} \\]\nで，$\\epsilon=1$ でインフレーションが終わる．場の値 $\\phi$ から終わり $\\phi_e$ までの膨張の e-fold 数は $N=\\dfrac{1}{M^2}\\displaystyle\\int_{\\phi_e}^{\\phi}\\frac{V}{V'}d\\phi$ である．観測量はスペクトル指数 $n_s=1-6\\epsilon+2\\eta$ とテンソル・スカラー比 $r=16\\epsilon$ で，これらは終わりの $N$ e-fold 前（$N$ は約 $60$）の時点で評価される．\n以下 $V=\\tfrac12m^2\\phi^2$（$\\phi>0$）とする．\n\\begin{enumerate}\n\\item $\\epsilon$ と $\\eta$ を $M, \\phi$ で表せ．\n\\item インフレーションが終わる場の値 $\\phi_e$ を求めよ．\n\\item $N$ を $\\phi, M$ で表せ．\n\\item $n_s$ と $r$ を $N$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\epsilon=\\dfrac{2M^2}{\\phi^2}$，$\\eta=\\dfrac{2M^2}{\\phi^2}$ (2) $\\phi_e=\\sqrt{2}M$ (3) $N=\\dfrac{\\phi^2-2M^2}{4M^2}$ (4) $n_s\\approx0.967$，$r\\approx0.132$"
+   "tex": "(1) $\\epsilon=\\dfrac{2M^2}{\\phi^2}$，$\\eta=\\dfrac{2M^2}{\\phi^2}$ (2) $\\phi_e=\\sqrt{2}M$ (3) $N=\\dfrac{\\phi^2-2M^2}{4M^2}$ (4) $n_s=1-\\dfrac{4}{2N+1}$，$r=\\dfrac{16}{2N+1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $V'/V=2/\\phi$，$V''/V=2/\\phi^2$ より $\\boldsymbol{\\epsilon=\\eta=2M^2/\\phi^2}$．\n\n(2) $\\epsilon=1$ より $\\boldsymbol{\\phi_e=\\sqrt2M}$．場は $\\phi\\gg M$ から転がり落ち，$\\phi\\sim M$ で減速しなくなって振動を始める（再加熱）．\n\n(3) $V/V'=\\phi/2$ より\n\\[ N=\\frac{1}{M^2}\\int_{\\phi_e}^{\\phi}\\frac{\\phi'}{2}d\\phi'=\\frac{\\phi^2-\\phi_e^2}{4M^2}=\\boldsymbol{\\frac{\\phi^2-2M^2}{4M^2}} . \\]\n\n(4) $\\phi^2/M^2=4N+2=242$ より $\\epsilon=\\eta=2/242\\approx8.26\\times10^{-3}$．\n\\[ n_s=1-4\\epsilon=1-\\frac{4}{2N+1}\\approx\\boldsymbol{0.967},\\qquad r=\\frac{16}{2N+1}\\approx\\boldsymbol{0.132} . \\]\n$n_s$ は Planck の観測値（$\\approx0.965$）とよく合うが，$r$ は観測上限（$r\\lesssim0.04$）を超えるため，この単純なモデルは現在では棄却されている．$n_s-1\\approx-2/N$ のように観測量が $N$ だけで決まる点が大事である．"
+    "tex": "(1) $V'/V=2/\\phi$，$V''/V=2/\\phi^2$ より $\\boldsymbol{\\epsilon=\\eta=2M^2/\\phi^2}$．\n\n(2) $\\epsilon=1$ より $\\boldsymbol{\\phi_e=\\sqrt2M}$．場は $\\phi\\gg M$ から転がり落ち，$\\phi\\sim M$ で減速しなくなって振動を始める（再加熱）．\n\n(3) $V/V'=\\phi/2$ より\n\\[ N=\\frac{1}{M^2}\\int_{\\phi_e}^{\\phi}\\frac{\\phi'}{2}d\\phi'=\\frac{\\phi^2-\\phi_e^2}{4M^2}=\\boldsymbol{\\frac{\\phi^2-2M^2}{4M^2}} . \\]\n\n(4) $\\phi^2/M^2=4N+2$ より $\\epsilon=\\eta=\\dfrac{1}{2N+1}$．\n\\[ \\boldsymbol{n_s=1-4\\epsilon=1-\\frac{4}{2N+1}},\\qquad \\boldsymbol{r=\\frac{16}{2N+1}} . \\]\n$N=60$ では $n_s\\approx0.967$，$r\\approx0.132$．$n_s$ は Planck の観測値（$\\approx0.965$）とよく合うが，$r$ は観測上限（$r\\lesssim0.04$）を超えるため，この単純なモデルは現在では棄却されている．$n_s-1\\approx-2/N$ のように観測量が $N$ だけで決まる点が大事である．"
    }
   ],
   "idea": {
@@ -2066,7 +2066,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 2 M^2/φ^2 ; 2 M^2/φ^2\n(2) sqrt(2) M\n(3) (φ^2-2 M^2)/(4 M^2)\n(4) n_s：≈0.967 ; r：≈0.132"
+   "spec": "(1) 2 M^2/φ^2 ; 2 M^2/φ^2\n(2) sqrt(2) M\n(3) (φ^2-2 M^2)/(4 M^2)\n(4) n_s：1-4/(2N+1) ; r：16/(2N+1)"
   },
   "methods": [],
   "tags": [

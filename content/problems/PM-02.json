@@ -205,24 +205,24 @@
   "theme": "異方的な導電率テンソル：電流と電場のなす角",
   "topic": "異方的な導電率テンソル：電流と電場のなす角",
   "statement": {
-   "tex": "導電率テンソルを $\\sigma_{ij}=\\begin{pmatrix}2&1&1\\\\1&2&1\\\\1&1&2\\end{pmatrix}$ とする．\n\\begin{enumerate}\n\\item 固有値と固有ベクトルを求めよ．一定の大きさの電場で電流が最大になる向きを答えよ．\n\\item 電場が $x$ 方向のとき，電流と電場のなす角を求めよ．\n\\end{enumerate}"
+   "tex": "導電率テンソルを $\\sigma_{ij}=\\begin{pmatrix}\\alpha+\\beta&\\beta&\\beta\\\\\\beta&\\alpha+\\beta&\\beta\\\\\\beta&\\beta&\\alpha+\\beta\\end{pmatrix}$（$\\alpha,\\beta>0$）とする．\n\\begin{enumerate}\n\\item 固有値と固有ベクトルを求めよ．一定の大きさの電場で電流が最大になる向きを答えよ．\n\\item 電場が $x$ 方向のとき，電流と電場のなす角 $\\theta$ について $\\cos\\theta$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $4$（$(1,1,1)$），$1$（それに垂直な平面）；$(1,1,1)$ 方向　(2) $\\approx35.3^\\circ$"
+   "tex": "(1) $\\alpha+3\\beta$（$(1,1,1)$），$\\alpha$（それに垂直な平面）；$(1,1,1)$ 方向　(2) $\\cos\\theta=\\dfrac{\\alpha+\\beta}{\\sqrt{(\\alpha+\\beta)^2+2\\beta^2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\sigma=I+\\boldsymbol1\\boldsymbol1^T$ なので固有値 $\\boldsymbol{4}$（$(1,1,1)$）と $\\boldsymbol1$（2重）．最大は $\\boldsymbol{(1,1,1)}$ 方向．\n\n(2) $\\boldsymbol J=(2,1,1)$，$\\cos=\\dfrac{2}{\\sqrt6}$，$\\boldsymbol{35.3^\\circ}$．"
+    "tex": "(1) $\\sigma=\\alpha I+\\beta\\boldsymbol1\\boldsymbol1^T$（$\\boldsymbol1=(1,1,1)^T$）なので，$\\sigma\\boldsymbol1=(\\alpha+3\\beta)\\boldsymbol1$，$\\boldsymbol1$ に垂直なベクトル $\\boldsymbol u$ には $\\sigma\\boldsymbol u=\\alpha\\boldsymbol u$．固有値は $\\boldsymbol{\\alpha+3\\beta}$（固有ベクトル $(1,1,1)$）と $\\boldsymbol\\alpha$（2 重，$(1,1,1)$ に垂直な平面）．$\\beta>0$ より最大は $\\boldsymbol{(1,1,1)}$ 方向．\n\n(2) $\\boldsymbol E=(E,0,0)$ で $\\boldsymbol J=E(\\alpha+\\beta,\\beta,\\beta)$．\n\\[ \\cos\\theta=\\frac{\\boldsymbol J\\cdot\\boldsymbol E}{|\\boldsymbol J||\\boldsymbol E|}=\\boldsymbol{\\frac{\\alpha+\\beta}{\\sqrt{(\\alpha+\\beta)^2+2\\beta^2}}}. \\]\n$\\beta\\to0$（等方的）で $\\theta\\to0$，$\\beta$ が大きいほど電流は $(1,1,1)$ 方向に引き寄せられる（$\\alpha=\\beta$ なら約 $35^\\circ$）．"
    }
   ],
   "idea": {
-   "tex": "異方的な媒質では電流と電場が平行とは限らず，主軸の方向でだけ平行になる．原題の電流が流れない方向の行列を，正定値の行列に変えた．"
+   "tex": "異方的な媒質では電流と電場が平行とは限らず，主軸の方向でだけ平行になる．$\\alpha I+\\beta\\boldsymbol1\\boldsymbol1^T$ の形なら固有値は見ただけでわかる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [°]：≈35.3"
+   "spec": "(1) 記述\n(2) $\\cos\\theta$：(α+β)/sqrt((α+β)^2+2β^2)"
   },
   "methods": [],
   "tags": [

@@ -6,12 +6,13 @@
   "level": 1,
   "theme": "静水圧平衡による中心圧力・中心温度のオーダー評価",
   "minutes": 10,
-  "q": "質量 $M$，半径 $R$ の恒星が静水圧平衡\n\\[\\frac{dP}{dr}=-\\frac{G M(r)\\rho}{r^2}\\]\nにあるとする．微分を $dP/dr\\sim -P_c/R$，密度を $\\rho\\sim M/R^3$，$M(r)\\sim M$，$r\\sim R$ と粗く置き換えて評価せよ（数係数は $1$ とする）．\n\\begin{enumerate}\n\\item 中心圧力 $P_c$ を $G, M, R$ で表せ．\n\\item 太陽（$M=2.0\\times10^{30}\\,\\mathrm{kg}$，$R=7.0\\times10^{8}\\,\\mathrm{m}$）について $P_c$ を数値で求めよ．$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$ とする．\n\\item 中心のガスを平均分子量 $\\mu$ の理想気体 $P=\\rho k_B T/(\\mu m_p)$ とみなし，(1) と同じ粗さで中心温度 $T_c$ を $G, M, R, \\mu, m_p, k_B$ で表せ．さらに $\\mu=0.6$，$m_p=1.67\\times10^{-27}\\,\\mathrm{kg}$，$k_B=1.38\\times10^{-23}\\,\\mathrm{J/K}$ として太陽の $T_c$ を数値で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $P_c\\approx\\dfrac{GM^2}{R^4}$ (2) $P_c\\approx 1.1\\times10^{15}\\,\\mathrm{Pa}$ (3) $T_c\\approx\\dfrac{G M\\mu m_p}{k_B R}$，$T_c\\approx 1.4\\times10^{7}\\,\\mathrm{K}$",
-  "solution": "(1) $P_c/R\\sim G M (M/R^3)/R^2$ より $\\boldsymbol{P_c\\approx GM^2/R^4}$ である．\n\n(2) $GM^2/R^4=6.67\\times10^{-11}\\times(2.0\\times10^{30})^2/(7.0\\times10^{8})^4\\approx\\boldsymbol{1.1\\times10^{15}\\,\\mathrm{Pa}}$．標準太陽モデルの値 $2\\times10^{16}\\,\\mathrm{Pa}$ より1桁ほど小さいが，これは中心集中（中心密度が平均の約100倍）を無視したためである．\n\n(3) $P_c=\\rho k_B T_c/(\\mu m_p)$ に $P_c\\sim GM\\rho/R$ を入れると $\\rho$ が消えて\n\\[T_c\\approx\\frac{G M\\mu m_p}{k_B R}\\]\nを得る．数値は $\\boldsymbol{T_c\\approx 1.4\\times10^{7}\\,\\mathrm{K}}$ で，水素燃焼に必要な $10^7\\,\\mathrm{K}$ 程度を正しく与える．温度は密度によらず $M/R$ だけで決まる（ビリアル温度）点が重要である．",
+  "q": "質量 $M$，半径 $R$ の恒星が静水圧平衡\n\\[\\frac{dP}{dr}=-\\frac{G M(r)\\rho}{r^2}\\]\nにあるとする．微分を $dP/dr\\sim -P_c/R$，密度を $\\rho\\sim M/R^3$，$M(r)\\sim M$，$r\\sim R$ と粗く置き換えて評価せよ（数係数は $1$ とする）．\n\\begin{enumerate}\n\\item 中心圧力 $P_c$ を $G, M, R$ で表せ．\n\\item 平均密度の目安を $\\rho_0\\equiv M/R^3$ とおく．$P_c$ を $G,M,\\rho_0$ で表せ．質量が同じなら，平均密度が 8 倍の星の $P_c$ は何倍か．\n\\item 中心のガスを平均分子量 $\\mu$ の理想気体 $P=\\rho k_B T/(\\mu m_p)$ とみなし，(1) と同じ粗さで中心温度 $T_c$ を $G, M, R, \\mu, m_p, k_B$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $P_c\\approx\\dfrac{GM^2}{R^4}$ (2) $P_c\\approx GM^{2/3}\\rho_0^{4/3}$，$16$ 倍 (3) $T_c\\approx\\dfrac{G M\\mu m_p}{k_B R}$",
+  "solution": "(1) $P_c/R\\sim G M (M/R^3)/R^2$ より $\\boldsymbol{P_c\\approx GM^2/R^4}$ である．\n\n(2) $R=(M/\\rho_0)^{1/3}$ を代入して $\\boldsymbol{P_c\\approx GM^{2/3}\\rho_0^{4/3}}$．質量一定で $\\rho_0$ が 8 倍（半径が半分）なら $8^{4/3}=\\boldsymbol{16}$ 倍．太陽の値を入れると $10^{15}\\,\\mathrm{Pa}$ 程度になり，標準太陽モデルの値より1桁ほど小さいが，これは中心集中（中心密度が平均の約100倍）を無視したためである．\n\n(3) $P_c=\\rho k_B T_c/(\\mu m_p)$ に $P_c\\sim GM\\rho/R$ を入れると $\\rho$ が消えて\n\\[\\boldsymbol{T_c\\approx\\frac{G M\\mu m_p}{k_B R}}\\]\nを得る．太陽の値を入れると $10^7\\,\\mathrm{K}$ 程度となり，水素燃焼に必要な温度を正しく与える．温度は密度によらず $M/R$ だけで決まる（ビリアル温度）点が重要である．",
   "idea": "静水圧平衡を次元解析で読むと $P_c\\sim GM^2/R^4$，理想気体と組み合わせると $k_BT_c\\sim GM\\mu m_p/R$（ビリアル温度）になる．",
   "tags": "静水圧平衡,オーダー評価,ビリアル温度",
-  "input": "(1) G M^2/R^4\n(2) 中心圧力 [Pa]：≈1.1e15\n(3) G M μ m_p/(k_B R) ; 中心温度 [K]：≈1.4e7"
+  "input": "(1) G M^2/R^4\n(2) $P_c$：G M^(2/3) ρ_0^(4/3) ; 倍率：16\n(3) G M μ m_p/(k_B R)",
+  "id": "AS-01-001"
  },
  {
   "tid": "AS-02",
@@ -20,12 +21,13 @@
   "level": 2,
   "theme": "恒星の3つの時間尺度",
   "minutes": 15,
-  "q": "太陽（質量 $M=2.0\\times10^{30}\\,\\mathrm{kg}$，半径 $R=7.0\\times10^{8}\\,\\mathrm{m}$，光度 $L=3.8\\times10^{26}\\,\\mathrm{W}$）について，次の時間尺度をオーダー評価せよ．$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$，$1\\,\\mathrm{yr}=3.15\\times10^{7}\\,\\mathrm{s}$ とし，数係数は問題で指定したもの以外は $1$ とする．\n\\begin{enumerate}\n\\item 力学的時間（自由落下時間）$t_{\\mathrm{dyn}}=\\sqrt{R^3/(GM)}$ を秒で求めよ．\n\\item 重力エネルギー $GM^2/R$ を光度 $L$ で放出し続けられる時間（ケルビン＝ヘルムホルツ時間）$t_{\\mathrm{KH}}$ を年で求めよ．\n\\item 全質量の $10\\%$ の水素がヘリウムに変わり，そのとき静止質量の $0.7\\%$ がエネルギーになるとして，核融合で光度 $L$ を保てる時間 $t_{\\mathrm{nuc}}$ を年で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $t_{\\mathrm{dyn}}\\approx 1.6\\times10^{3}\\,\\mathrm{s}$ (2) $t_{\\mathrm{KH}}\\approx 3.2\\times10^{7}\\,\\mathrm{yr}$ (3) $t_{\\mathrm{nuc}}\\approx 1.05\\times10^{10}\\,\\mathrm{yr}$",
-  "solution": "(1) $R^3/(GM)=(7.0\\times10^8)^3/(6.67\\times10^{-11}\\times2.0\\times10^{30})\\approx2.6\\times10^{6}\\,\\mathrm{s^2}$ より $\\boldsymbol{t_{\\mathrm{dyn}}\\approx1.6\\times10^{3}\\,\\mathrm{s}}$（約30分）．\n\n(2) $t_{\\mathrm{KH}}=GM^2/(RL)\\approx1.0\\times10^{15}\\,\\mathrm{s}\\approx\\boldsymbol{3.2\\times10^{7}\\,\\mathrm{yr}}$．地質学的な地球の年齢（$\\sim 4.6\\times10^9\\,\\mathrm{yr}$）より遥かに短く，重力収縮だけでは太陽は輝き続けられない．\n\n(3) $t_{\\mathrm{nuc}}=0.007\\times0.1\\,Mc^2/L\\approx3.3\\times10^{17}\\,\\mathrm{s}\\approx\\boldsymbol{1.05\\times10^{10}\\,\\mathrm{yr}}$．\n\n$t_{\\mathrm{dyn}}\\ll t_{\\mathrm{KH}}\\ll t_{\\mathrm{nuc}}$ という階層のおかげで，主系列星は静水圧平衡・熱平衡にあるとみなせる．",
+  "q": "質量 $M$，半径 $R$，光度 $L$ の恒星について，次の時間尺度をオーダー評価せよ．重力定数を $G$，光速を $c$ とし，数係数は問題で指定したもの以外は $1$ とする．\n\\begin{enumerate}\n\\item 力学的時間（自由落下時間）$t_{\\mathrm{dyn}}$ を，$R^3/(GM)$ から次元解析で求めよ．\n\\item 重力エネルギー $GM^2/R$ を光度 $L$ で放出し続けられる時間（ケルビン＝ヘルムホルツ時間）$t_{\\mathrm{KH}}$ を求めよ．\n\\item 全質量のうち割合 $x$ の水素がヘリウムに変わり，そのとき静止質量のうち割合 $f$ がエネルギーになるとして，核融合で光度 $L$ を保てる時間 $t_{\\mathrm{nuc}}$ を求めよ．また $t_{\\mathrm{nuc}}/t_{\\mathrm{KH}}$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $t_{\\mathrm{dyn}}=\\sqrt{\\dfrac{R^3}{GM}}$ (2) $t_{\\mathrm{KH}}=\\dfrac{GM^2}{RL}$ (3) $t_{\\mathrm{nuc}}=\\dfrac{fxMc^2}{L}$，$\\dfrac{t_{\\mathrm{nuc}}}{t_{\\mathrm{KH}}}=\\dfrac{fxc^2R}{GM}$",
+  "solution": "(1) $R^3/(GM)$ は時間の2乗の次元をもつので $\\boldsymbol{t_{\\mathrm{dyn}}=\\sqrt{R^3/(GM)}}$．太陽では約30分である．\n\n(2) $\\boldsymbol{t_{\\mathrm{KH}}=\\dfrac{GM^2}{RL}}$．太陽では数千万年で，地質学的な地球の年齢（数十億年）より遥かに短く，重力収縮だけでは太陽は輝き続けられない．\n\n(3) 放出できるエネルギーは $fxMc^2$ なので $\\boldsymbol{t_{\\mathrm{nuc}}=\\dfrac{fxMc^2}{L}}$．比は\n\\[ \\boldsymbol{\\frac{t_{\\mathrm{nuc}}}{t_{\\mathrm{KH}}}=\\frac{fxc^2R}{GM}} \\]\nで，$GM/(c^2R)$（太陽で $10^{-6}$ 程度）が小さいため，$f,x$ が小さくても $t_{\\mathrm{nuc}}\\gg t_{\\mathrm{KH}}$ となる．太陽では約100億年である．\n\n$t_{\\mathrm{dyn}}\\ll t_{\\mathrm{KH}}\\ll t_{\\mathrm{nuc}}$ という階層のおかげで，主系列星は静水圧平衡・熱平衡にあるとみなせる．",
   "idea": "力学・熱・核の3つの時間尺度の大小関係が，恒星を準静的な平衡の列として扱える根拠である．",
   "tags": "時間尺度,ケルビン＝ヘルムホルツ時間,核融合,オーダー評価",
-  "input": "(1) 時間 [s]：≈1.6e3\n(2) 時間 [yr]：≈3.2e7\n(3) 時間 [yr]：≈1.05e10"
+  "input": "(1) sqrt(R^3/(G M))\n(2) G M^2/(R L)\n(3) $t_{\\mathrm{nuc}}$：f x M c^2/L ; 比：f x c^2 R/(G M)",
+  "id": "AS-01-002"
  },
  {
   "tid": "AS-03",
@@ -34,12 +36,13 @@
   "level": 2,
   "theme": "質量光度関係と主系列寿命",
   "minutes": 10,
-  "q": "主系列星の光度は質量光度関係 $L\\propto M^{3.5}$ に従い，主系列寿命 $t$ は核燃料の量（$\\propto M$）を光度で割ったものに比例するとする．太陽（$M_\\odot$）の主系列寿命を $1.0\\times10^{10}\\,\\mathrm{yr}$ とする．\n\\begin{enumerate}\n\\item $t\\propto M^{\\,p}$ と書くとき，指数 $p$ を求めよ．\n\\item 質量 $10\\,M_\\odot$ の星の主系列寿命を年で求めよ．\n\\item ある散開星団で，主系列から離れ始めている星（転向点）の質量が $M$ であった．星団の年齢が $1.0\\times10^{8}\\,\\mathrm{yr}$ のとき，$M/M_\\odot$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $p=-\\dfrac{5}{2}$ (2) $t\\approx 3.2\\times10^{7}\\,\\mathrm{yr}$ (3) $M/M_\\odot=100^{0.4}\\approx 6.3$",
-  "solution": "(1) $t\\propto M/L\\propto M^{1-3.5}$ より $\\boldsymbol{p=-5/2}$．\n\n(2) $t=1.0\\times10^{10}\\times10^{-2.5}\\,\\mathrm{yr}\\approx\\boldsymbol{3.2\\times10^{7}\\,\\mathrm{yr}}$．重い星ほど燃料は多いが，それ以上に速く燃やすので短命になる．\n\n(3) $(M/M_\\odot)^{-2.5}=10^{8}/10^{10}=10^{-2}$ より $M/M_\\odot=10^{0.8}=100^{0.4}\\approx\\boldsymbol{6.3}$．転向点の質量が星団の年齢計になる．",
+  "q": "主系列星の光度は質量光度関係 $L\\propto M^{3.5}$ に従い，主系列寿命 $t$ は核燃料の量（$\\propto M$）を光度で割ったものに比例するとする．太陽（質量 $M_\\odot$）の主系列寿命を $t_0$ とする．\n\\begin{enumerate}\n\\item $t\\propto M^{\\,p}$ と書くとき，指数 $p$ を求めよ．\n\\item 質量 $kM_\\odot$ の星の主系列寿命を $t_0,k$ で表せ．\n\\item ある散開星団で，主系列から離れ始めている星（転向点）の質量が $M$ であった．星団の年齢が $\\tau$ のとき，$M/M_\\odot$ を $t_0,\\tau$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $p=-\\dfrac{5}{2}$ (2) $t=t_0k^{-5/2}$ (3) $\\dfrac{M}{M_\\odot}=\\left(\\dfrac{t_0}{\\tau}\\right)^{2/5}$",
+  "solution": "(1) $t\\propto M/L\\propto M^{1-3.5}$ より $\\boldsymbol{p=-5/2}$．\n\n(2) $\\boldsymbol{t=t_0k^{-5/2}}$．たとえば $k=10$ なら寿命は太陽の約 $1/300$．重い星ほど燃料は多いが，それ以上に速く燃やすので短命になる．\n\n(3) 転向点の星はちょうど寿命を迎えているので $t_0(M/M_\\odot)^{-5/2}=\\tau$，すなわち\n\\[ \\boldsymbol{\\frac{M}{M_\\odot}=\\left(\\frac{t_0}{\\tau}\\right)^{2/5}} . \\]\n転向点の質量が星団の年齢計になる．",
   "idea": "寿命 $\\propto$ 燃料／消費率 $\\propto M/L$ と質量光度関係から $t\\propto M^{-2.5}$．逆に解けば転向点質量から年齢が出る．",
   "tags": "質量光度関係,主系列寿命,転向点",
-  "input": "(1) -5/2\n(2) 寿命 [yr]：≈3.2e7\n(3) ≈6.3"
+  "input": "(1) -5/2\n(2) $t$：t_0 k^(-5/2)\n(3) (t_0/τ)^(2/5)",
+  "id": "AS-01-003"
  },
  {
   "tid": "AS-04",
@@ -48,12 +51,13 @@
   "level": 3,
   "theme": "エディントン光度と恒星質量の上限",
   "minutes": 20,
-  "q": "質量 $M$ の天体が光度 $L$ で等方的に放射している．周囲は完全電離した水素で，光子は電子とトムソン散乱（断面積 $\\sigma_T$）し，電子と陽子（質量 $m_p$）はクーロン力で一体となって運動するとする．\n\\begin{enumerate}\n\\item 距離 $r$ で陽子1個あたり（電子1個を伴う）に働く放射圧の力が重力とつり合う光度（エディントン光度）$L_E$ を $G, M, m_p, c, \\sigma_T$ で表せ．\n\\item $M=2.0\\times10^{30}\\,\\mathrm{kg}$（$1\\,M_\\odot$）のとき $L_E$ を数値で求めよ．$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$m_p=1.67\\times10^{-27}\\,\\mathrm{kg}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$，$\\sigma_T=6.65\\times10^{-29}\\,\\mathrm{m^2}$ とする．\n\\item 大質量星の光度を $L=L_\\odot(M/M_\\odot)^3$（$L_\\odot=3.8\\times10^{26}\\,\\mathrm{W}$）と近似する．$L=L_E$ となる質量 $M/M_\\odot$ を求めよ（これより重い星は外層を吹き飛ばし安定に存在しにくい）．\n\\end{enumerate}",
-  "answer": "(1) $L_E=\\dfrac{4\\pi G M m_p c}{\\sigma_T}$ (2) $L_E\\approx 1.26\\times10^{31}\\,\\mathrm{W}$ (3) $M/M_\\odot\\approx 1.8\\times10^{2}$",
-  "solution": "(1) 光子のエネルギー流束 $L/(4\\pi r^2)$ が運ぶ運動量流束は $L/(4\\pi r^2c)$ で，電子1個が受ける力は $\\sigma_T L/(4\\pi r^2 c)$．これが陽子への重力 $GMm_p/r^2$ と等しいとき\n\\[\\boldsymbol{L_E=\\frac{4\\pi G M m_p c}{\\sigma_T}}\\]\nとなる．両辺とも $r^{-2}$ なので $r$ によらない．\n\n(2) 数値を代入して $\\boldsymbol{L_E\\approx1.26\\times10^{31}\\,\\mathrm{W}}$（$\\approx3.3\\times10^4 L_\\odot$）．\n\n(3) $L_E\\propto M$ なので $L_\\odot (M/M_\\odot)^3=L_E(M_\\odot)\\,(M/M_\\odot)$．よって $M/M_\\odot=\\sqrt{L_E(M_\\odot)/L_\\odot}=\\sqrt{3.3\\times10^4}\\approx\\boldsymbol{1.8\\times10^{2}}$．観測される最大の恒星質量（$100$〜$200\\,M_\\odot$）と同程度である．",
+  "q": "質量 $M$ の天体が光度 $L$ で等方的に放射している．周囲は完全電離した水素で，光子は電子とトムソン散乱（断面積 $\\sigma_T$）し，電子と陽子（質量 $m_p$）はクーロン力で一体となって運動するとする．\n\\begin{enumerate}\n\\item 距離 $r$ で陽子1個あたり（電子1個を伴う）に働く放射圧の力が重力とつり合う光度（エディントン光度）$L_E$ を $G, M, m_p, c, \\sigma_T$ で表せ．\n\\item 安定に存在する天体の光度と質量の比 $L/M$ には上限がある．その上限を $G,m_p,c,\\sigma_T$ で表せ．\n\\item 大質量星の光度を $L=L_s(M/M_s)^3$（$L_s,M_s$ は太陽の光度と質量）と近似する．$L=L_E$ となる質量 $M/M_s$ を求めよ（これより重い星は外層を吹き飛ばし安定に存在しにくい）．\n\\end{enumerate}",
+  "answer": "(1) $L_E=\\dfrac{4\\pi G M m_p c}{\\sigma_T}$ (2) $\\dfrac{L}{M}<\\dfrac{4\\pi G m_p c}{\\sigma_T}$ (3) $\\dfrac{M}{M_s}=\\sqrt{\\dfrac{4\\pi GM_sm_pc}{\\sigma_TL_s}}$",
+  "solution": "(1) 光子のエネルギー流束 $L/(4\\pi r^2)$ が運ぶ運動量流束は $L/(4\\pi r^2c)$ で，電子1個が受ける力は $\\sigma_T L/(4\\pi r^2 c)$．これが陽子への重力 $GMm_p/r^2$ と等しいとき\n\\[\\boldsymbol{L_E=\\frac{4\\pi G M m_p c}{\\sigma_T}}\\]\nとなる．両辺とも $r^{-2}$ なので $r$ によらない．\n\n(2) $L>L_E$ では外層のガスが外向きに加速されて吹き飛ぶので，安定な天体では $L<L_E$，すなわち\n\\[ \\boldsymbol{\\frac{L}{M}<\\frac{4\\pi Gm_pc}{\\sigma_T}} . \\]\n太陽の質量では $L_E$ は太陽光度の約 $3\\times10^4$ 倍である．\n\n(3) $L_E\\propto M$ なので $L_s(M/M_s)^3=L_E(M_s)\\,(M/M_s)$．よって\n\\[ \\boldsymbol{\\frac{M}{M_s}=\\sqrt{\\frac{L_E(M_s)}{L_s}}=\\sqrt{\\frac{4\\pi GM_sm_pc}{\\sigma_TL_s}}} . \\]\n実際の値では約 $200$ となり，観測される最大の恒星質量（$100$〜$200\\,M_\\odot$）と同程度である．",
   "idea": "放射圧（電子が受ける）と重力（陽子が受ける）がともに $r^{-2}$ で，比が $r$ によらない．$L\\propto M^3$ と $L_E\\propto M$ の交点が質量上限を与える．",
   "tags": "エディントン光度,トムソン散乱,放射圧,恒星質量の上限",
-  "input": "(1) 4 pi G M m_p c/σ_T\n(2) 光度 [W]：≈1.26e31\n(3) ≈1.8e2"
+  "input": "(1) 4 pi G M m_p c/σ_T\n(2) 上限：4 pi G m_p c/σ_T\n(3) sqrt(4 pi G M_s m_p c/(σ_T L_s))",
+  "id": "AS-01-004"
  },
  {
   "tid": "AS-05",
@@ -62,12 +66,13 @@
   "level": 3,
   "theme": "チャンドラセカール質量のオーダー評価",
   "minutes": 20,
-  "q": "白色矮星（質量 $M$，半径 $R$）を，電子 $N_e$ 個と，電子1個あたり質量 $2m_p$ の原子核からなる球とする（$N_e=M/(2m_p)$）．電子は超相対論的に縮退しているとし，数係数はすべて $1$ として評価せよ．\n\\begin{enumerate}\n\\item 電子数密度を $n\\approx N_e/R^3$，フェルミ運動量を $p_F\\approx\\hbar n^{1/3}$ と見積もる．電子1個のフェルミエネルギー $E_F$ を $\\hbar, c, N_e, R$ で表せ．\n\\item 電子1個あたりの重力エネルギーを $-G M(2m_p)/R$ とする．(1) と合わせた電子1個あたりのエネルギーはどちらも $1/R$ に比例するので，その係数が $0$ となる質量が安定性の境目になる．この臨界質量 $M_{\\mathrm{Ch}}$ を $\\hbar, c, G, m_p$ で表せ．\n\\item $\\hbar=1.05\\times10^{-34}\\,\\mathrm{J\\,s}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$，$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$m_p=1.67\\times10^{-27}\\,\\mathrm{kg}$ として $M_{\\mathrm{Ch}}$ を太陽質量 $M_\\odot=2.0\\times10^{30}\\,\\mathrm{kg}$ を単位として求めよ．\n\\end{enumerate}",
-  "answer": "(1) $E_F\\approx\\dfrac{\\hbar c N_e^{1/3}}{R}$ (2) $M_{\\mathrm{Ch}}\\approx\\dfrac{1}{4 m_p^2}\\left(\\dfrac{\\hbar c}{G}\\right)^{3/2}$ (3) $M_{\\mathrm{Ch}}/M_\\odot\\approx 0.46$",
-  "solution": "(1) 超相対論的なので $E_F\\approx p_Fc=\\hbar c\\,n^{1/3}$，$n\\approx N_e/R^3$ を入れて $\\boldsymbol{E_F\\approx\\hbar c N_e^{1/3}/R}$．\n\n(2) 電子1個あたりのエネルギーは\n\\[E(R)\\approx\\frac{\\hbar c N_e^{1/3}-2GMm_p}{R}\\]\nで，分子が負なら $R\\to0$ へ潰れ，正なら膨張して電子が非相対論的になり平衡に落ち着く．境目は $\\hbar c N_e^{1/3}=2GMm_p$．$N_e=M/(2m_p)$ を入れると $M^{2/3}=\\hbar c/(G(2m_p)^{4/3})$，すなわち\n\\[\\boldsymbol{M_{\\mathrm{Ch}}\\approx\\frac{1}{4m_p^2}\\left(\\frac{\\hbar c}{G}\\right)^{3/2}}\\]\n\n(3) $(\\hbar c/G)^{3/2}\\approx1.0\\times10^{-11}\\,\\mathrm{kg^3}$ より $M_{\\mathrm{Ch}}\\approx9.2\\times10^{29}\\,\\mathrm{kg}\\approx\\boldsymbol{0.46\\,M_\\odot}$．正確な計算（ポリトロープ $n=3$）では $1.44\\,M_\\odot$ で，係数を除けばオーダーは正しい．$G$，$\\hbar$，$c$，$m_p$ だけで恒星質量の目安が決まる点が本質である．",
+  "q": "白色矮星（質量 $M$，半径 $R$）を，電子 $N_e$ 個と，電子1個あたり質量 $2m_p$ の原子核からなる球とする（$N_e=M/(2m_p)$）．電子は超相対論的に縮退しているとし，数係数はすべて $1$ として評価せよ．\n\\begin{enumerate}\n\\item 電子数密度を $n\\approx N_e/R^3$，フェルミ運動量を $p_F\\approx\\hbar n^{1/3}$ と見積もる．電子1個のフェルミエネルギー $E_F$ を $\\hbar, c, N_e, R$ で表せ．\n\\item 電子1個あたりの重力エネルギーを $-G M(2m_p)/R$ とする．(1) と合わせた電子1個あたりのエネルギーはどちらも $1/R$ に比例するので，その係数が $0$ となる質量が安定性の境目になる．この臨界質量 $M_{\\mathrm{Ch}}$ を $\\hbar, c, G, m_p$ で表せ．\n\\item 臨界質量の白色矮星に含まれる電子数 $N_e$ を $\\hbar,c,G,m_p$ で表せ．また，$\\left(\\dfrac{\\hbar c}{Gm_p^2}\\right)$ が重力と量子力学の強さの比を表す無次元数であることに注意して，$N_e$ をこの無次元数のべきで表せ．\n\\end{enumerate}",
+  "answer": "(1) $E_F\\approx\\dfrac{\\hbar c N_e^{1/3}}{R}$ (2) $M_{\\mathrm{Ch}}\\approx\\dfrac{1}{4 m_p^2}\\left(\\dfrac{\\hbar c}{G}\\right)^{3/2}$ (3) $N_e\\approx\\dfrac{1}{8m_p^3}\\left(\\dfrac{\\hbar c}{G}\\right)^{3/2}$，$N_e\\approx\\dfrac18\\left(\\dfrac{\\hbar c}{Gm_p^2}\\right)^{3/2}$",
+  "solution": "(1) 超相対論的なので $E_F\\approx p_Fc=\\hbar c\\,n^{1/3}$，$n\\approx N_e/R^3$ を入れて $\\boldsymbol{E_F\\approx\\hbar c N_e^{1/3}/R}$．\n\n(2) 電子1個あたりのエネルギーは\n\\[E(R)\\approx\\frac{\\hbar c N_e^{1/3}-2GMm_p}{R}\\]\nで，分子が負なら $R\\to0$ へ潰れ，正なら膨張して電子が非相対論的になり平衡に落ち着く．境目は $\\hbar c N_e^{1/3}=2GMm_p$．$N_e=M/(2m_p)$ を入れると $M^{2/3}=\\hbar c/(G(2m_p)^{4/3})$，すなわち\n\\[\\boldsymbol{M_{\\mathrm{Ch}}\\approx\\frac{1}{4m_p^2}\\left(\\frac{\\hbar c}{G}\\right)^{3/2}}\\]\n\n(3) $N_e=M_{\\mathrm{Ch}}/(2m_p)$ より\n\\[ \\boldsymbol{N_e\\approx\\frac{1}{8m_p^3}\\left(\\frac{\\hbar c}{G}\\right)^{3/2}=\\frac18\\left(\\frac{\\hbar c}{Gm_p^2}\\right)^{3/2}} . \\]\n$\\hbar c/(Gm_p^2)\\sim10^{38}$ なので $N_e\\sim10^{56}$，質量にして太陽質量の程度になる．正確な計算（ポリトロープ $n=3$）では $1.44\\,M_\\odot$ で，係数を除けばオーダーは正しい．$G$，$\\hbar$，$c$，$m_p$ だけで恒星質量の目安が決まる点が本質である．",
   "idea": "超相対論的縮退圧のエネルギーも重力エネルギーも $1/R$ に比例するので，半径の調節で釣り合いを取り直せない．係数の符号が変わる質量が上限になる．",
   "tags": "白色矮星,チャンドラセカール質量,縮退圧,オーダー評価",
-  "input": "(1) hbar c N_e^(1/3)/R\n(2) (hbar c/G)^(3/2)/(4 m_p^2)\n(3) ≈0.46"
+  "input": "(1) hbar c N_e^(1/3)/R\n(2) (hbar c/G)^(3/2)/(4 m_p^2)\n(3) $N_e$：(hbar c/G)^(3/2)/(8 m_p^3) ; $N_e$：(1/8)(hbar c/(G m_p^2))^(3/2)",
+  "id": "AS-01-005"
  },
  {
   "tid": "AS-06",
@@ -81,7 +86,8 @@
   "solution": "(1) $\\xi^2\\theta'=\\xi\\cos\\xi-\\sin\\xi$ より $(\\xi^2\\theta')'=-\\xi\\sin\\xi$，よって左辺 $=-\\sin\\xi/\\xi=-\\theta$ で $n=1$ の方程式を満たす．$\\theta(0)=1$，$\\theta'(0)=0$ も満たす．$\\sin\\xi=0$ の最小の正根は $\\boldsymbol{\\xi_1=\\pi}$．\n\n(2) $\\theta'(\\pi)=(\\pi\\cos\\pi-\\sin\\pi)/\\pi^2=-1/\\pi$．平均密度は\n\\[\\bar\\rho=\\frac{M}{\\frac{4}{3}\\pi(\\alpha\\xi_1)^3}=\\frac{3\\rho_c|\\theta'(\\xi_1)|}{\\xi_1}=\\frac{3\\rho_c}{\\pi^2}\\]\nよって $\\boldsymbol{\\rho_c/\\bar\\rho=\\pi^2/3}\\approx3.3$．\n\n(3) $n=1$ では $\\alpha^2=2K/(4\\pi G)=K/(2\\pi G)$ で $\\rho_c$ によらない．$R=\\pi\\alpha$ より\n\\[\\boldsymbol{R=\\sqrt{\\frac{\\pi K}{2G}}}\\]\n質量を増やしても半径は変わらない．これは中性子星の状態方程式を硬いポリトロープで近似したときの「半径がほぼ一定」という性質の簡単なモデルになっている．",
   "idea": "$n=1$ ではレーン＝エムデン方程式が線形になり $\\sin\\xi/\\xi$ で解ける．$\\alpha$ が $\\rho_c$ を含まないので半径は質量によらない．",
   "tags": "ポリトロープ,レーン＝エムデン方程式,中心集中度",
-  "input": "(1) pi\n(2) pi^2/3\n(3) sqrt(pi K/(2G))"
+  "input": "(1) pi\n(2) pi^2/3\n(3) sqrt(pi K/(2G))",
+  "id": "AS-01-006"
  },
  {
   "tid": "AS-07",
@@ -90,12 +96,13 @@
   "level": 1,
   "theme": "臨界密度とハッブル時間",
   "minutes": 10,
-  "q": "ハッブル定数を $H_0=70\\,\\mathrm{km/s/Mpc}$ とする．$1\\,\\mathrm{Mpc}=3.09\\times10^{22}\\,\\mathrm{m}$，$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$m_p=1.67\\times10^{-27}\\,\\mathrm{kg}$，$1\\,\\mathrm{yr}=3.15\\times10^{7}\\,\\mathrm{s}$ とする．\n\\begin{enumerate}\n\\item 平坦な宇宙を与える臨界密度 $\\rho_c$ をフリードマン方程式 $H^2=8\\pi G\\rho/3$ から $H_0, G$ で表し，数値を求めよ．\n\\item $\\rho_c$ は $1\\,\\mathrm{m^3}$ あたり陽子何個分の質量か．\n\\item ハッブル時間 $1/H_0$ を年で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\rho_c=\\dfrac{3H_0^2}{8\\pi G}$，$\\rho_c\\approx 9.2\\times10^{-27}\\,\\mathrm{kg/m^3}$ (2) $\\approx 5.5$ 個 (3) $1/H_0\\approx 1.4\\times10^{10}\\,\\mathrm{yr}$",
-  "solution": "(1) $H_0=7.0\\times10^4/(3.09\\times10^{22})\\,\\mathrm{s^{-1}}\\approx2.27\\times10^{-18}\\,\\mathrm{s^{-1}}$．$\\rho_c=3H_0^2/(8\\pi G)$ より $\\boldsymbol{\\rho_c\\approx9.2\\times10^{-27}\\,\\mathrm{kg/m^3}}$．\n\n(2) $\\rho_c/m_p\\approx\\boldsymbol{5.5}$ 個．地上の最高の真空と比べても桁違いに希薄である．\n\n(3) $1/H_0\\approx4.4\\times10^{17}\\,\\mathrm{s}\\approx\\boldsymbol{1.4\\times10^{10}\\,\\mathrm{yr}}$．宇宙年齢の目安になる．",
+  "q": "ハッブル定数を $H_0$，万有引力定数を $G$，陽子の質量を $m_p$ とする．\n\\begin{enumerate}\n\\item 平坦な宇宙を与える臨界密度 $\\rho_c$ をフリードマン方程式 $H^2=8\\pi G\\rho/3$ から $H_0, G$ で表せ．\n\\item $\\rho_c$ は単位体積あたり陽子何個分の質量か．$H_0, G, m_p$ で表せ．\n\\item ハッブル時間 $t_H=1/H_0$ を用いて，$\\rho_c$ を $G, t_H$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\rho_c=\\dfrac{3H_0^2}{8\\pi G}$ (2) $\\dfrac{3H_0^2}{8\\pi Gm_p}$ (3) $\\rho_c=\\dfrac{3}{8\\pi Gt_H^2}$",
+  "solution": "(1) $H=H_0$ のとき平坦（$\\rho=\\rho_c$）なので $\\boldsymbol{\\rho_c=\\dfrac{3H_0^2}{8\\pi G}}$．$H_0=70\\,\\mathrm{km/s/Mpc}\\approx2.27\\times10^{-18}\\,\\mathrm{s^{-1}}$ なら $\\rho_c\\approx9.2\\times10^{-27}\\,\\mathrm{kg/m^3}$ である．\n\n(2) $\\rho_c/m_p=\\boldsymbol{\\dfrac{3H_0^2}{8\\pi Gm_p}}$．上の値では $1\\,\\mathrm{m^3}$ あたり陽子約 $5.5$ 個分で，地上の最高の真空と比べても桁違いに希薄である．\n\n(3) $H_0=1/t_H$ を代入して $\\boldsymbol{\\rho_c=\\dfrac{3}{8\\pi Gt_H^2}}$．$t_H\\approx1.4\\times10^{10}\\,\\mathrm{yr}$ は宇宙年齢の目安で，臨界密度は「自由落下時間がハッブル時間程度になる密度」と言い換えられる．",
   "idea": "フリードマン方程式で $H$ と密度が結びつき，$H_0$ だけで臨界密度と時間尺度が決まる．",
   "tags": "臨界密度,ハッブル定数,フリードマン方程式",
-  "input": "(1) 3 H_0^2/(8 pi G) ; 臨界密度 [kg/m^3]：≈9.2e-27\n(2) ≈5.5\n(3) 時間 [yr]：≈1.4e10"
+  "input": "(1) 3 H_0^2/(8 pi G)\n(2) 3 H_0^2/(8 pi G m_p)\n(3) 3/(8 pi G t_H^2)",
+  "id": "AS-02-001"
  },
  {
   "tid": "AS-08",
@@ -104,12 +111,13 @@
   "level": 2,
   "theme": "アインシュタイン＝ド・ジッター宇宙の年齢",
   "minutes": 15,
-  "q": "物質だけを含む平坦な宇宙（アインシュタイン＝ド・ジッター宇宙）のフリードマン方程式は，スケール因子 $a$（現在 $a=1$）を用いて\n\\[\\left(\\frac{\\dot a}{a}\\right)^2=H_0^2a^{-3}\\]\nとなる．\n\\begin{enumerate}\n\\item $a\\propto t^{\\,q}$ と書くとき指数 $q$ を求めよ．\n\\item 現在の宇宙年齢 $t_0$ を $H_0$ で表せ．\n\\item $H_0=70\\,\\mathrm{km/s/Mpc}$（$1/H_0=1.40\\times10^{10}\\,\\mathrm{yr}$）として $t_0$ を年で求めよ．\n\\item 赤方偏移 $z=3$ の銀河から光が出た時刻（ビッグバンからの経過時間）を年で求めよ．$1+z=1/a$ である．\n\\end{enumerate}",
-  "answer": "(1) $q=\\dfrac{2}{3}$ (2) $t_0=\\dfrac{2}{3H_0}$ (3) $t_0\\approx 9.3\\times10^{9}\\,\\mathrm{yr}$ (4) $t\\approx 1.17\\times10^{9}\\,\\mathrm{yr}$",
-  "solution": "(1) $\\dot a=H_0a^{-1/2}$ より $a^{1/2}da=H_0dt$，積分して $\\tfrac{2}{3}a^{3/2}=H_0t$．よって $a=(3H_0t/2)^{2/3}$ で $\\boldsymbol{q=2/3}$．\n\n(2) $a=1$ とおいて $\\boldsymbol{t_0=2/(3H_0)}$．\n\n(3) $t_0=\\tfrac{2}{3}\\times1.40\\times10^{10}\\,\\mathrm{yr}\\approx\\boldsymbol{9.3\\times10^{9}\\,\\mathrm{yr}}$．球状星団の年齢（$\\gtrsim1.2\\times10^{10}\\,\\mathrm{yr}$）より短く，これは「年齢問題」として宇宙項の必要性を示唆した．\n\n(4) $t=t_0a^{3/2}=t_0(1+z)^{-3/2}=t_0/8\\approx\\boldsymbol{1.17\\times10^{9}\\,\\mathrm{yr}}$．",
+  "q": "物質だけを含む平坦な宇宙（アインシュタイン＝ド・ジッター宇宙）のフリードマン方程式は，スケール因子 $a$（現在 $a=1$）を用いて\n\\[\\left(\\frac{\\dot a}{a}\\right)^2=H_0^2a^{-3}\\]\nとなる．\n\\begin{enumerate}\n\\item $a\\propto t^{\\,q}$ と書くとき指数 $q$ を求めよ．\n\\item 現在の宇宙年齢 $t_0$ を $H_0$ で表せ．\n\\item 宇宙年齢は最も古い星（年齢 $t_s$）より長くなければならない．このモデルで $H_0$ がとりうる範囲を $t_s$ で表せ．\n\\item 赤方偏移 $z$ の銀河から光が出た時刻（ビッグバンからの経過時間）$t$ を $H_0, z$ で表せ．$1+z=1/a$ である．\n\\end{enumerate}",
+  "answer": "(1) $q=\\dfrac{2}{3}$ (2) $t_0=\\dfrac{2}{3H_0}$ (3) $H_0<\\dfrac{2}{3t_s}$ (4) $t=\\dfrac{2}{3H_0(1+z)^{3/2}}$",
+  "solution": "(1) $\\dot a=H_0a^{-1/2}$ より $a^{1/2}da=H_0dt$，積分して $\\tfrac{2}{3}a^{3/2}=H_0t$．よって $a=(3H_0t/2)^{2/3}$ で $\\boldsymbol{q=2/3}$．\n\n(2) $a=1$ とおいて $\\boldsymbol{t_0=2/(3H_0)}$．\n\n(3) $t_0>t_s$ より $\\boldsymbol{H_0<\\dfrac{2}{3t_s}}$．$H_0=70\\,\\mathrm{km/s/Mpc}$ では $t_0\\approx9.3\\times10^{9}\\,\\mathrm{yr}$ で，球状星団の年齢（$\\gtrsim1.2\\times10^{10}\\,\\mathrm{yr}$）より短い．これは「年齢問題」として宇宙項の必要性を示唆した．\n\n(4) $t=t_0a^{3/2}=t_0(1+z)^{-3/2}$ より $\\boldsymbol{t=\\dfrac{2}{3H_0(1+z)^{3/2}}}$．たとえば $z=3$ では $t_0/8$ である．",
   "idea": "$\\dot a\\propto a^{-1/2}$ を変数分離で積分する．$t\\propto a^{3/2}=(1+z)^{-3/2}$ で過去の時刻も出る．",
   "tags": "フリードマン方程式,宇宙年齢,赤方偏移",
-  "input": "(1) 2/3\n(2) 2/(3 H_0)\n(3) 年齢 [yr]：≈9.3e9\n(4) 時刻 [yr]：≈1.17e9"
+  "input": "(1) 2/3\n(2) 2/(3 H_0)\n(3) H_0<2/(3 t_s)\n(4) 2/(3 H_0 (1+z)^(3/2))",
+  "id": "AS-02-002"
  },
  {
   "tid": "AS-09",
@@ -118,12 +126,13 @@
   "level": 2,
   "theme": "宇宙背景放射と等密度時",
   "minutes": 12,
-  "q": "宇宙背景放射（CMB）は黒体放射で，その温度は $T\\propto 1/a=1+z$ で変化する．現在の温度を $T_0=2.73\\,\\mathrm{K}$ とする．\n\\begin{enumerate}\n\\item 水素が中性化して光子が自由に進めるようになる（晴れ上がり）温度を $3000\\,\\mathrm{K}$ とする．晴れ上がりの赤方偏移 $z_{\\mathrm{dec}}$ を求めよ．\n\\item 現在の物質と放射の密度パラメータを $\\Omega_m=0.31$，$\\Omega_r=9.0\\times10^{-5}$ とする．物質密度は $a^{-3}$，放射のエネルギー密度は $a^{-4}$ に比例する．両者が等しくなる赤方偏移 $z_{\\mathrm{eq}}$ を求めよ．\n\\item $z_{\\mathrm{eq}}$ における CMB の温度を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $z_{\\mathrm{dec}}\\approx 1.1\\times10^{3}$ (2) $z_{\\mathrm{eq}}=\\dfrac{\\Omega_m}{\\Omega_r}-1\\approx 3.4\\times10^{3}$ (3) $T\\approx 9.4\\times10^{3}\\,\\mathrm{K}$",
-  "solution": "(1) $1+z_{\\mathrm{dec}}=3000/2.73\\approx1099$ より $\\boldsymbol{z_{\\mathrm{dec}}\\approx1.1\\times10^{3}}$．\n\n(2) $\\Omega_m a^{-3}=\\Omega_r a^{-4}$ より $1+z_{\\mathrm{eq}}=1/a=\\Omega_m/\\Omega_r\\approx3444$，$\\boldsymbol{z_{\\mathrm{eq}}\\approx3.4\\times10^{3}}$．晴れ上がりより前に物質優勢期に入っている．\n\n(3) $T=T_0(1+z_{\\mathrm{eq}})=2.73\\times3444\\approx\\boldsymbol{9.4\\times10^{3}\\,\\mathrm{K}}$．",
+  "q": "宇宙背景放射（CMB）は黒体放射で，その温度は $T\\propto 1/a=1+z$ で変化する．現在の温度を $T_0$ とする．\n\\begin{enumerate}\n\\item 水素が中性化して光子が自由に進めるようになる（晴れ上がり）温度を $T_d$ とする．晴れ上がりの赤方偏移 $z_d$ を $T_d, T_0$ で表せ．\n\\item 現在の物質と放射の密度パラメータを $\\Omega_m$，$\\Omega_r$ とする．物質密度は $a^{-3}$，放射のエネルギー密度は $a^{-4}$ に比例する．両者が等しくなる赤方偏移 $z_e$ を $\\Omega_m, \\Omega_r$ で表せ．\n\\item $z_e$ における CMB の温度 $T_e$ を $T_0, \\Omega_m, \\Omega_r$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $z_d=\\dfrac{T_d}{T_0}-1$ (2) $z_e=\\dfrac{\\Omega_m}{\\Omega_r}-1$ (3) $T_e=\\dfrac{\\Omega_m}{\\Omega_r}T_0$",
+  "solution": "(1) $1+z_d=T_d/T_0$ より $\\boldsymbol{z_d=\\dfrac{T_d}{T_0}-1}$．$T_d=3000\\,\\mathrm{K}$，$T_0=2.73\\,\\mathrm{K}$ なら $z_d\\approx1.1\\times10^{3}$．\n\n(2) $\\Omega_m a^{-3}=\\Omega_r a^{-4}$ より $1+z_e=1/a=\\Omega_m/\\Omega_r$，$\\boldsymbol{z_e=\\dfrac{\\Omega_m}{\\Omega_r}-1}$．$\\Omega_m=0.31$，$\\Omega_r=9.0\\times10^{-5}$ なら $z_e\\approx3.4\\times10^{3}$ で，晴れ上がりより前に物質優勢期に入っている．\n\n(3) $T_e=T_0(1+z_e)=\\boldsymbol{\\dfrac{\\Omega_m}{\\Omega_r}T_0}$．上の数値では約 $9.4\\times10^{3}\\,\\mathrm{K}$ である．",
   "idea": "温度・密度の $a$ 依存性（放射 $a^{-4}$，物質 $a^{-3}$）を比べるだけで宇宙の熱史の節目が決まる．",
   "tags": "宇宙背景放射,赤方偏移,等密度時,晴れ上がり",
-  "input": "(1) ≈1.1e3\n(2) ≈3.4e3\n(3) 温度 [K]：≈9.4e3"
+  "input": "(1) T_d/T_0-1\n(2) Ω_m/Ω_r-1\n(3) Ω_m T_0/Ω_r",
+  "id": "AS-02-003"
  },
  {
   "tid": "AS-10",
@@ -132,12 +141,13 @@
   "level": 3,
   "theme": "ΛCDM 宇宙の加速膨張",
   "minutes": 20,
-  "q": "物質と宇宙項からなる平坦な宇宙のハッブルパラメータは\n\\[H(a)^2=H_0^2\\left(\\Omega_m a^{-3}+\\Omega_\\Lambda\\right),\\qquad \\Omega_m+\\Omega_\\Lambda=1\\]\nである（現在 $a=1$，$1+z=1/a$）．減速パラメータを $q=-\\ddot a a/\\dot a^2$ と定義する．$\\Omega_m=0.30$，$\\Omega_\\Lambda=0.70$，$H_0=70\\,\\mathrm{km/s/Mpc}$ とする．\n\\begin{enumerate}\n\\item 加速度方程式 $\\ddot a/a=-\\tfrac{1}{2}H_0^2\\Omega_m a^{-3}+H_0^2\\Omega_\\Lambda$ を用いて，現在の減速パラメータ $q_0$ を求めよ．\n\\item 膨張が減速から加速に転じた赤方偏移 $z_{\\mathrm{acc}}$ を求めよ．\n\\item 物質と宇宙項のエネルギー密度が等しかった赤方偏移を求めよ．\n\\item 遠い未来 $a\\to\\infty$ でのハッブルパラメータ $H_\\infty$ を $\\mathrm{km/s/Mpc}$ 単位で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $q_0=\\dfrac{\\Omega_m}{2}-\\Omega_\\Lambda=-0.55$ (2) $z_{\\mathrm{acc}}=\\left(\\dfrac{2\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1\\approx 0.67$ (3) $z\\approx 0.33$ (4) $H_\\infty\\approx 59\\,\\mathrm{km/s/Mpc}$",
-  "solution": "(1) $a=1$ で $q_0=-(\\ddot a/a)/H_0^2=\\Omega_m/2-\\Omega_\\Lambda=\\boldsymbol{-0.55}$．負なので現在は加速膨張している．\n\n(2) $\\ddot a=0$ となるのは $\\Omega_m a^{-3}=2\\Omega_\\Lambda$，すなわち $1+z_{\\mathrm{acc}}=(2\\Omega_\\Lambda/\\Omega_m)^{1/3}=(14/3)^{1/3}\\approx1.67$ で $\\boldsymbol{z_{\\mathrm{acc}}\\approx0.67}$．\n\n(3) $\\Omega_m a^{-3}=\\Omega_\\Lambda$ より $1+z=(7/3)^{1/3}\\approx1.33$，$\\boldsymbol{z\\approx0.33}$．加速の開始は等密度より前（$z$ が大きい）である．物質の重力は密度の $1/2$ の重みで効く（$\\rho+3p$）のに対し，宇宙項は $\\rho+3p=-2\\rho_\\Lambda$ で効くためである．\n\n(4) $H_\\infty=H_0\\sqrt{\\Omega_\\Lambda}=70\\sqrt{0.7}\\approx\\boldsymbol{59\\,\\mathrm{km/s/Mpc}}$．以後は指数膨張（ド・ジッター宇宙）になる．",
+  "q": "物質と宇宙項からなる平坦な宇宙のハッブルパラメータは\n\\[H(a)^2=H_0^2\\left(\\Omega_m a^{-3}+\\Omega_\\Lambda\\right),\\qquad \\Omega_m+\\Omega_\\Lambda=1\\]\nである（現在 $a=1$，$1+z=1/a$）．減速パラメータを $q=-\\ddot a a/\\dot a^2$ と定義する．\n\\begin{enumerate}\n\\item 加速度方程式 $\\ddot a/a=-\\tfrac{1}{2}H_0^2\\Omega_m a^{-3}+H_0^2\\Omega_\\Lambda$ を用いて，現在の減速パラメータ $q_0$ を $\\Omega_m, \\Omega_\\Lambda$ で表せ．\n\\item 膨張が減速から加速に転じた赤方偏移 $z_a$ を $\\Omega_m, \\Omega_\\Lambda$ で表せ．\n\\item 物質と宇宙項のエネルギー密度が等しかった赤方偏移 $z_e$ を $\\Omega_m, \\Omega_\\Lambda$ で表し，$z_a>z_e$ であることを示せ．\n\\item 遠い未来 $a\\to\\infty$ でのハッブルパラメータ $H_\\infty$ を $H_0, \\Omega_\\Lambda$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $q_0=\\dfrac{\\Omega_m}{2}-\\Omega_\\Lambda$ (2) $z_a=\\left(\\dfrac{2\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1$ (3) $z_e=\\left(\\dfrac{\\Omega_\\Lambda}{\\Omega_m}\\right)^{1/3}-1$ (4) $H_\\infty=H_0\\sqrt{\\Omega_\\Lambda}$",
+  "solution": "(1) $a=1$ で $q_0=-(\\ddot a/a)/H_0^2=\\boldsymbol{\\Omega_m/2-\\Omega_\\Lambda}$．$\\Omega_m=0.30$，$\\Omega_\\Lambda=0.70$ なら $-0.55$ で，負なので現在は加速膨張している．\n\n(2) $\\ddot a=0$ となるのは $\\Omega_m a^{-3}=2\\Omega_\\Lambda$，すなわち $\\boldsymbol{z_a=(2\\Omega_\\Lambda/\\Omega_m)^{1/3}-1}$．上の数値では約 $0.67$．\n\n(3) $\\Omega_m a^{-3}=\\Omega_\\Lambda$ より $\\boldsymbol{z_e=(\\Omega_\\Lambda/\\Omega_m)^{1/3}-1}$（上の数値では約 $0.33$）．$1+z_a=2^{1/3}(1+z_e)>1+z_e$ なので，加速の開始は等密度より前（$z$ が大きい）である．物質の重力は密度の $1/2$ の重みで効く（$\\rho+3p$）のに対し，宇宙項は $\\rho+3p=-2\\rho_\\Lambda$ で効くためである．\n\n(4) $a^{-3}\\to0$ より $\\boldsymbol{H_\\infty=H_0\\sqrt{\\Omega_\\Lambda}}$（$H_0=70\\,\\mathrm{km/s/Mpc}$ なら約 $59\\,\\mathrm{km/s/Mpc}$）．以後は指数膨張（ド・ジッター宇宙）になる．",
   "idea": "加速度方程式では物質は $\\rho+3p=\\rho$，宇宙項は $\\rho+3p=-2\\rho$ として効く．そのため加速の開始は等密度の時点より早い．",
   "tags": "宇宙項,減速パラメータ,加速膨張,ΛCDM",
-  "input": "(1) -0.55\n(2) ≈0.67\n(3) ≈0.33\n(4) H [km/s/Mpc]：≈59"
+  "input": "(1) Ω_m/2-Ω_Λ\n(2) (2Ω_Λ/Ω_m)^(1/3)-1\n(3) (Ω_Λ/Ω_m)^(1/3)-1\n(4) H_0 sqrt(Ω_Λ)",
+  "id": "AS-02-004"
  },
  {
   "tid": "AS-11",
@@ -151,7 +161,8 @@
   "solution": "(1) $\\displaystyle\\chi=\\frac{c}{H_0}\\int_0^z(1+z')^{-3/2}dz'=\\boldsymbol{\\frac{2c}{H_0}\\left(1-\\frac{1}{\\sqrt{1+z}}\\right)}$．\n\n(2) $u=(1+z)^{-1/2}$ とおくと $d_A=\\dfrac{2c}{H_0}(1-u)u^2$．$\\dfrac{d}{du}(u^2-u^3)=2u-3u^2=0$ より $u=2/3$，$1+z=9/4$，$\\boldsymbol{z=5/4}$．\n\n(3) $d_A=\\dfrac{2c}{H_0}\\cdot\\dfrac{1}{3}\\cdot\\dfrac{4}{9}=\\boldsymbol{\\dfrac{8c}{27H_0}}$．\n\nこれより遠方の天体は，同じ大きさなら赤方偏移とともに見かけの角度がかえって大きくなる．光が出たときの宇宙が小さく，天体が観測者に近かったためである．",
   "idea": "共動距離は $z\\to\\infty$ で有限に飽和するが $1/(1+z)$ が減り続けるので，$d_A$ は途中で極大をもつ．",
   "tags": "角径距離,共動距離,アインシュタイン＝ド・ジッター宇宙",
-  "input": "(1) 2c/H_0 (1 - 1/sqrt(1+z))\n(2) 5/4\n(3) 8c/(27 H_0)"
+  "input": "(1) 2c/H_0 (1 - 1/sqrt(1+z))\n(2) 5/4\n(3) 8c/(27 H_0)",
+  "id": "AS-02-005"
  },
  {
   "tid": "AS-12",
@@ -160,12 +171,13 @@
   "level": 4,
   "theme": "ビッグバン元素合成とヘリウム質量比",
   "minutes": 30,
-  "q": "初期宇宙では弱い相互作用 $n+\\nu_e\\leftrightarrow p+e^-$ などにより中性子と陽子が平衡にあり，数の比は $n/p=\\exp(-Q/k_BT)$（$Q=(m_n-m_p)c^2=1.29\\,\\mathrm{MeV}$）である．反応率が膨張率を下回る温度 $k_BT_f=0.80\\,\\mathrm{MeV}$ で比が凍結し，その後は自由中性子が寿命 $\\tau=880\\,\\mathrm{s}$ で崩壊する．凍結から重水素の生成が進むまでの時間を $t=180\\,\\mathrm{s}$ とし，その時点の中性子がすべて $^4$He に取り込まれるとする．\n\\begin{enumerate}\n\\item 全バリオン質量に占める中性子の割合（数の割合で近似してよい）を $X_n$ とするとき，$^4$He の質量比 $Y$ を $X_n$ で表せ．\n\\item 凍結時の $n/p$ を求めよ．\n\\item 中性子の崩壊を無視したときの $Y$ を求めよ．\n\\item 中性子の崩壊を考慮したときの $Y$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $Y=2X_n$ (2) $n/p\\approx 0.20$ (3) $Y\\approx 0.33$ (4) $Y\\approx 0.27$",
-  "solution": "(1) $^4$He は中性子2個・陽子2個からなるので，中性子1個につき質量 $2$ 単位分のバリオンが He になる．よって $\\boldsymbol{Y=2X_n}$．\n\n(2) $n/p=\\exp(-1.29/0.80)=e^{-1.61}\\approx\\boldsymbol{0.20}$．\n\n(3) $X_n=(n/p)/(1+n/p)\\approx0.166$ より $Y\\approx\\boldsymbol{0.33}$．\n\n(4) $X_n\\to0.166\\,e^{-180/880}\\approx0.135$，$Y\\approx\\boldsymbol{0.27}$．観測値 $Y\\approx0.25$ に近い．凍結温度は $Q$ とほぼ同じなので，$Y$ は $T_f$ や（$T_f$ を決める）ニュートリノの種類数に敏感であり，これが世代数の制限に使われた．",
+  "q": "初期宇宙では弱い相互作用 $n+\\nu_e\\leftrightarrow p+e^-$ などにより中性子と陽子が平衡にあり，数の比は $n/p=\\exp(-Q/k_BT)$（$Q=(m_n-m_p)c^2$）である．反応率が膨張率を下回る温度 $T_f$ で比が凍結し，その後は自由中性子が寿命 $\\tau$ で崩壊する．凍結から重水素の生成が進むまでの時間を $t$ とし，その時点の中性子がすべて $^4$He に取り込まれるとする．\n\\begin{enumerate}\n\\item 全バリオン質量に占める中性子の割合（数の割合で近似してよい）を $X_n$ とするとき，$^4$He の質量比 $Y$ を $X_n$ で表せ．\n\\item 凍結時の $n/p$ を $Q, k_B, T_f$ で表せ．\n\\item 中性子の崩壊を無視したときの $Y$ を $Q, k_B, T_f$ で表せ．\n\\item 中性子の崩壊を考慮したときの $Y$ を $Q, k_B, T_f, t, \\tau$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $Y=2X_n$ (2) $n/p=e^{-Q/k_BT_f}$ (3) $Y=\\dfrac{2}{1+e^{Q/k_BT_f}}$ (4) $Y=\\dfrac{2e^{-t/\\tau}}{1+e^{Q/k_BT_f}}$",
+  "solution": "(1) $^4$He は中性子2個・陽子2個からなるので，中性子1個につき質量 $2$ 単位分のバリオンが He になる．よって $\\boldsymbol{Y=2X_n}$．\n\n(2) $\\boldsymbol{n/p=e^{-Q/k_BT_f}}$．$Q=1.29\\,\\mathrm{MeV}$，$k_BT_f=0.80\\,\\mathrm{MeV}$ なら約 $0.20$．\n\n(3) $X_n=\\dfrac{n/p}{1+n/p}=\\dfrac{1}{1+e^{Q/k_BT_f}}$ より $\\boldsymbol{Y=\\dfrac{2}{1+e^{Q/k_BT_f}}}$（上の数値で約 $0.33$）．\n\n(4) 時間 $t$ の間に中性子は $e^{-t/\\tau}$ 倍に減る（崩壊でできた陽子を含めてもバリオンの総数は変わらない）ので $X_n\\to X_ne^{-t/\\tau}$，\n\\[ \\boldsymbol{Y=\\frac{2e^{-t/\\tau}}{1+e^{Q/k_BT_f}}} . \\]\n$t=180\\,\\mathrm s$，$\\tau=880\\,\\mathrm s$ では約 $0.27$ で，観測値 $Y\\approx0.25$ に近い．凍結温度は $Q$ とほぼ同じなので，$Y$ は $T_f$ や（$T_f$ を決める）ニュートリノの種類数に敏感であり，これが世代数の制限に使われた．",
   "idea": "$n/p$ のボルツマン凍結値と中性子崩壊の減衰を合わせ，ほぼ全中性子が He に入ることから $Y=2X_n$ を使う．",
   "tags": "ビッグバン元素合成,ヘリウム,凍結,中性子崩壊",
-  "input": "(1) 2 X_n\n(2) ≈0.20\n(3) ≈0.33\n(4) ≈0.27"
+  "input": "(1) 2 X_n\n(2) exp(-Q/(k_B T_f))\n(3) 2/(1+exp(Q/(k_B T_f)))\n(4) 2 exp(-t/τ)/(1+exp(Q/(k_B T_f)))",
+  "id": "AS-02-006"
  },
  {
   "tid": "AS-13",
@@ -174,12 +186,13 @@
   "level": 1,
   "theme": "シュワルツシルト半径とコンパクトさ",
   "minutes": 8,
-  "q": "$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$，太陽質量 $M_\\odot=2.0\\times10^{30}\\,\\mathrm{kg}$ とする．\n\\begin{enumerate}\n\\item 質量 $M$ の天体の脱出速度が $c$ になる半径（ニュートン力学での見積もり．これはシュワルツシルト半径 $R_s$ と一致する）を $G, M, c$ で表せ．\n\\item $1\\,M_\\odot$ の $R_s$ を $\\mathrm{km}$ で求めよ．\n\\item 質量 $1.4\\,M_\\odot$，半径 $12\\,\\mathrm{km}$ の中性子星のコンパクトさ $GM/(Rc^2)$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $R_s=\\dfrac{2GM}{c^2}$ (2) $R_s\\approx 3.0\\,\\mathrm{km}$ (3) $\\approx 0.173$",
-  "solution": "(1) $\\tfrac{1}{2}c^2=GM/R$ より $\\boldsymbol{R_s=2GM/c^2}$．\n\n(2) $2\\times6.67\\times10^{-11}\\times2.0\\times10^{30}/(9.0\\times10^{16})\\approx2.96\\times10^3\\,\\mathrm{m}$，$\\boldsymbol{R_s\\approx3.0\\,\\mathrm{km}}$．\n\n(3) $GM/(Rc^2)\\approx\\boldsymbol{0.173}$．太陽（$\\sim10^{-6}$）と比べて桁違いに大きく，中性子星では一般相対論的効果が無視できない．",
-  "idea": "$GM/(Rc^2)$ が重力の強さの無次元の目安で，$1/2$ に達するとブラックホールになる．",
+  "q": "万有引力定数を $G$，光速を $c$ とする．\n\\begin{enumerate}\n\\item 質量 $M$ の天体の脱出速度が $c$ になる半径（ニュートン力学での見積もり．これはシュワルツシルト半径 $R_s$ と一致する）を $G, M, c$ で表せ．\n\\item 質量 $M$，半径 $R$ の天体のコンパクトさ $C=GM/(Rc^2)$ を $R_s, R$ で表せ．\n\\item 平均密度 $\\rho$ の一様な球の半径がちょうど $R_s$ になる質量 $M$ を $G, c, \\rho$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $R_s=\\dfrac{2GM}{c^2}$ (2) $C=\\dfrac{R_s}{2R}$ (3) $M=\\sqrt{\\dfrac{3c^6}{32\\pi G^3\\rho}}$",
+  "solution": "(1) $\\tfrac{1}{2}c^2=GM/R$ より $\\boldsymbol{R_s=2GM/c^2}$．太陽質量 $2.0\\times10^{30}\\,\\mathrm{kg}$ では約 $3.0\\,\\mathrm{km}$ である．\n\n(2) $GM/c^2=R_s/2$ より $\\boldsymbol{C=\\dfrac{R_s}{2R}}$．$C=1/2$ でブラックホールになる．太陽では $\\sim10^{-6}$ だが，質量 $1.4$ 太陽質量・半径 $12\\,\\mathrm{km}$ の中性子星では約 $0.17$ と桁違いに大きく，一般相対論的効果が無視できない．\n\n(3) $M=\\tfrac{4\\pi}{3}\\rho R_s^3=\\tfrac{4\\pi}{3}\\rho\\left(\\dfrac{2GM}{c^2}\\right)^3$ より $M^2=\\dfrac{3c^6}{32\\pi G^3\\rho}$，\n\\[ \\boldsymbol{M=\\sqrt{\\frac{3c^6}{32\\pi G^3\\rho}}} . \\]\n$M\\propto\\rho^{-1/2}$ なので，質量が大きいほど低い平均密度でブラックホールになる．$10^8$ 太陽質量程度の超大質量ブラックホールの平均密度は水と同程度である．",
+  "idea": "$GM/(Rc^2)=R_s/(2R)$ が重力の強さの無次元の目安で，$1/2$ に達するとブラックホールになる．",
   "tags": "シュワルツシルト半径,中性子星,コンパクトさ",
-  "input": "(1) 2 G M/c^2\n(2) 半径 [km]：≈3.0\n(3) ≈0.173"
+  "input": "(1) 2 G M/c^2\n(2) C：R_s/(2R)\n(3) M：sqrt(3 c^6/(32π G^3 ρ))",
+  "id": "AS-03-001"
  },
  {
   "tid": "AS-14",
@@ -188,12 +201,13 @@
   "level": 2,
   "theme": "パルサーのスピンダウン",
   "minutes": 15,
-  "q": "かに星雲パルサーは周期 $P=0.033\\,\\mathrm{s}$，周期の増加率 $\\dot P=4.2\\times10^{-13}$ で自転が遅くなっている．中性子星の慣性モーメントを $I=1.0\\times10^{38}\\,\\mathrm{kg\\,m^2}$，半径を $R=1.0\\times10^{4}\\,\\mathrm{m}$ とし，$1\\,\\mathrm{yr}=3.15\\times10^{7}\\,\\mathrm{s}$ とする．\n\\begin{enumerate}\n\\item 自転エネルギー $\\tfrac{1}{2}I\\Omega^2$（$\\Omega=2\\pi/P$）の減少率（スピンダウン光度）$L$ を求めよ．\n\\item $\\dot P$ が一定でなく $P\\dot P$ が一定（磁気双極子放射）だとして，誕生時の周期が十分短いときの年齢（特性年齢）$P/(2\\dot P)$ を年で求めよ．\n\\item 磁気双極子放射の光度 $L=\\dfrac{8\\pi B^2R^6\\Omega^4}{3\\mu_0c^3}$ が (1) に等しいとして，表面磁場 $B$ を求めよ．$\\mu_0=4\\pi\\times10^{-7}\\,\\mathrm{H/m}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$ とする．\n\\end{enumerate}",
-  "answer": "(1) $L\\approx 4.6\\times10^{31}\\,\\mathrm{W}$ (2) $\\approx 1.25\\times10^{3}\\,\\mathrm{yr}$ (3) $B\\approx 3.8\\times10^{8}\\,\\mathrm{T}$",
-  "solution": "(1) $L=-\\dfrac{d}{dt}\\left(\\dfrac{2\\pi^2I}{P^2}\\right)=\\dfrac{4\\pi^2I\\dot P}{P^3}\\approx\\boldsymbol{4.6\\times10^{31}\\,\\mathrm{W}}$．かに星雲全体の放射（$\\sim10^{31}\\,\\mathrm{W}$）をまかなえる．\n\n(2) $P\\dot P=$ 一定なら $P^2=2P\\dot P\\,t$（$P(0)\\approx0$），よって $t=P/(2\\dot P)\\approx3.9\\times10^{10}\\,\\mathrm{s}\\approx\\boldsymbol{1.25\\times10^{3}\\,\\mathrm{yr}}$．実際の年齢（1054年の超新星）とよく合う．\n\n(3) $B=\\sqrt{3\\mu_0c^3L/(8\\pi R^6\\Omega^4)}$，$\\Omega\\approx190\\,\\mathrm{s^{-1}}$ を入れて $\\boldsymbol{B\\approx3.8\\times10^{8}\\,\\mathrm{T}}$（$\\approx4\\times10^{12}\\,\\mathrm{G}$）．",
-  "idea": "観測量 $P,\\dot P$ だけからエネルギー損失・年齢・磁場が見積もれる．$P\\dot P$ 一定は $L\\propto\\Omega^4$ の帰結である．",
+  "q": "パルサーは周期 $P$ で自転し，周期の増加率 $k=\\dot P$ で自転が遅くなっている．中性子星の慣性モーメントを $I$，半径を $R$ とする．\n\\begin{enumerate}\n\\item 自転エネルギー $\\tfrac{1}{2}I\\Omega^2$（$\\Omega=2\\pi/P$）の減少率（スピンダウン光度）$L$ を $I, P, k$ で表せ．\n\\item $\\dot P$ が一定でなく $P\\dot P$ が一定（磁気双極子放射）だとする．誕生時の周期が十分短いとき，現在の年齢（特性年齢）$t$ を $P, k$ で表せ．\n\\item 磁気双極子放射の光度 $L=\\dfrac{8\\pi B^2R^6\\Omega^4}{3\\mu_0c^3}$ が (1) に等しいとして，表面磁場 $B$ を $I, P, k, R, \\mu_0, c$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $L=\\dfrac{4\\pi^2Ik}{P^3}$ (2) $t=\\dfrac{P}{2k}$ (3) $B=\\sqrt{\\dfrac{3\\mu_0c^3IPk}{32\\pi^3R^6}}$",
+  "solution": "(1) $L=-\\dfrac{d}{dt}\\left(\\dfrac{2\\pi^2I}{P^2}\\right)=\\boldsymbol{\\dfrac{4\\pi^2Ik}{P^3}}$．かに星雲パルサー（$P=0.033\\,\\mathrm s$，$k=4.2\\times10^{-13}$，$I=10^{38}\\,\\mathrm{kg\\,m^2}$）では約 $4.6\\times10^{31}\\,\\mathrm W$ で，かに星雲全体の放射（$\\sim10^{31}\\,\\mathrm{W}$）をまかなえる．\n\n(2) $P\\dot P=Pk$ が一定なら $\\dfrac{d}{dt}\\left(\\dfrac{P^2}{2}\\right)=Pk$ より $P^2=2Pk\\,t$（$P(0)\\approx0$），よって $\\boldsymbol{t=\\dfrac{P}{2k}}$．かに星雲パルサーでは約 $1.25\\times10^{3}$ 年で，実際の年齢（1054年の超新星）とよく合う．\n\n(3) $\\dfrac{8\\pi B^2R^6}{3\\mu_0c^3}\\cdot\\dfrac{16\\pi^4}{P^4}=\\dfrac{4\\pi^2Ik}{P^3}$ より\n\\[ \\boldsymbol{B=\\sqrt{\\frac{3\\mu_0c^3IPk}{32\\pi^3R^6}}} . \\]\n$B\\propto\\sqrt{P\\dot P}$ である．かに星雲パルサー（$R=10\\,\\mathrm{km}$）では約 $3.8\\times10^{8}\\,\\mathrm T$（$\\approx4\\times10^{12}\\,\\mathrm G$）．",
+  "idea": "観測量 $P,\\dot P$ だけからエネルギー損失・年齢・磁場が見積もれる．$P\\dot P$ 一定は $L\\propto\\Omega^4$ の帰結で，$B\\propto\\sqrt{P\\dot P}$．",
   "tags": "パルサー,スピンダウン,磁気双極子放射,特性年齢",
-  "input": "(1) 光度 [W]：≈4.6e31\n(2) 年齢 [yr]：≈1.25e3\n(3) 磁場 [T]：≈3.8e8"
+  "input": "(1) L：4π^2 I k/P^3\n(2) t：P/(2k)\n(3) B：sqrt(3 μ_0 c^3 I P k/(32 π^3 R^6))",
+  "id": "AS-03-002"
  },
  {
   "tid": "AS-15",
@@ -202,12 +216,13 @@
   "level": 2,
   "theme": "降着の効率とX線連星",
   "minutes": 15,
-  "q": "質量 $M$，半径 $R$ の中性子星に質量降着率 $\\dot M$ でガスが降り積もり，無限遠から表面までに解放される重力エネルギーがすべて放射されるとする．$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$，$M_\\odot=2.0\\times10^{30}\\,\\mathrm{kg}$，$1\\,\\mathrm{yr}=3.15\\times10^{7}\\,\\mathrm{s}$ とする．\n\\begin{enumerate}\n\\item 光度を $L=\\eta\\dot Mc^2$ と書くとき，効率 $\\eta$ を $G, M, R, c$ で表せ．\n\\item $M=1.4\\,M_\\odot$，$R=10\\,\\mathrm{km}$ のとき $\\eta$ を求めよ．\n\\item X線光度 $L=1.8\\times10^{31}\\,\\mathrm{W}$ を説明するのに必要な降着率を，$M_\\odot/\\mathrm{yr}$ 単位で求めよ．\n\\item 水素の核融合の効率 $0.007$ と比べて，降着の効率は何倍か．\n\\end{enumerate}",
-  "answer": "(1) $\\eta=\\dfrac{GM}{Rc^2}$ (2) $\\eta\\approx 0.21$ (3) $\\dot M\\approx 1.5\\times10^{-8}$（$M_\\odot/\\mathrm{yr}$ 単位） (4) $\\approx 30$ 倍",
-  "solution": "(1) 単位質量あたりの解放エネルギーは $GM/R$．$L=GM\\dot M/R=\\eta\\dot Mc^2$ より $\\boldsymbol{\\eta=GM/(Rc^2)}$．\n\n(2) $\\eta=6.67\\times10^{-11}\\times2.8\\times10^{30}/(10^4\\times9.0\\times10^{16})\\approx\\boldsymbol{0.21}$．\n\n(3) $\\dot M=L/(\\eta c^2)\\approx9.6\\times10^{14}\\,\\mathrm{kg/s}$．$1\\,\\mathrm{yr}$ あたり $3.0\\times10^{22}\\,\\mathrm{kg}$ で，$\\boldsymbol{\\approx1.5\\times10^{-8}\\,M_\\odot/\\mathrm{yr}}$．\n\n(4) $0.21/0.007\\approx\\boldsymbol{30}$ 倍．コンパクト天体への降着は宇宙で最も効率のよいエネルギー源の一つで，クエーサーやX線連星の明るさを説明する．",
+  "q": "質量 $M$，半径 $R$ の中性子星に，質量降着率（単位時間に降り積もる質量）$A$ でガスが降り積もり，無限遠から表面までに解放される重力エネルギーがすべて放射されるとする．万有引力定数を $G$，光速を $c$ とする．\n\\begin{enumerate}\n\\item 光度を $L=\\eta Ac^2$ と書くとき，効率 $\\eta$ を $G, M, R, c$ で表せ．\n\\item 半径がシュワルツシルト半径 $2GM/c^2$ の $k$ 倍であるとき，$\\eta$ を $k$ で表せ．\n\\item X線光度 $L$ を説明するのに必要な降着率 $A$ を $L, G, M, R$ で表せ．\n\\item 水素の核融合の効率（静止エネルギーのうち解放される割合）を $\\epsilon$ とする．降着の効率は核融合の効率の何倍か．$G, M, R, c, \\epsilon$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\eta=\\dfrac{GM}{Rc^2}$ (2) $\\eta=\\dfrac{1}{2k}$ (3) $A=\\dfrac{LR}{GM}$ (4) $\\dfrac{GM}{Rc^2\\epsilon}$ 倍",
+  "solution": "(1) 単位質量あたりの解放エネルギーは $GM/R$．$L=GMA/R=\\eta Ac^2$ より $\\boldsymbol{\\eta=GM/(Rc^2)}$．\n\n(2) $R=2kGM/c^2$ を代入して $\\boldsymbol{\\eta=\\dfrac{1}{2k}}$．$M=1.4$ 太陽質量，$R=10\\,\\mathrm{km}$ では $k\\approx2.4$，$\\eta\\approx0.21$．\n\n(3) $A=\\dfrac{L}{\\eta c^2}=\\boldsymbol{\\dfrac{LR}{GM}}$．$L=1.8\\times10^{31}\\,\\mathrm{W}$ なら約 $10^{15}\\,\\mathrm{kg/s}$，年に太陽質量の $10^{-8}$ 程度である．\n\n(4) $\\boldsymbol{\\dfrac{\\eta}{\\epsilon}=\\dfrac{GM}{Rc^2\\epsilon}}$．$\\epsilon=0.007$ なら上の中性子星で約 $30$ 倍．コンパクト天体への降着は宇宙で最も効率のよいエネルギー源の一つで，クエーサーやX線連星の明るさを説明する．",
   "idea": "降着の効率はコンパクトさ $GM/(Rc^2)$ そのもの．中性子星やブラックホールでは核融合より1桁以上効率がよい．",
   "tags": "降着,X線連星,効率,中性子星",
-  "input": "(1) G M/(R c^2)\n(2) ≈0.21\n(3) 降着率 [M_☉/yr]：≈1.5e-8\n(4) ≈30"
+  "input": "(1) G M/(R c^2)\n(2) 1/(2k)\n(3) A：L R/(G M)\n(4) G M/(R c^2 ε)",
+  "id": "AS-03-003"
  },
  {
   "tid": "AS-16",
@@ -216,12 +231,13 @@
   "level": 3,
   "theme": "シンクロトロン放射と電子の冷却時間",
   "minutes": 25,
-  "q": "超新星残骸の磁場 $B=1.0\\times10^{-8}\\,\\mathrm{T}$ の中で，ローレンツ因子 $\\gamma\\gg1$ の電子がシンクロトロン放射をしている．放射の特徴的な振動数は $\\nu_c\\approx\\tfrac{3}{2}\\gamma^2\\nu_g$，放射パワー（ピッチ角で平均）は $P=\\tfrac{4}{3}\\sigma_Tc\\gamma^2U_B$（$U_B=B^2/(2\\mu_0)$）とする．$e=1.6\\times10^{-19}\\,\\mathrm{C}$，$m_e=9.11\\times10^{-31}\\,\\mathrm{kg}$，$c=3.0\\times10^{8}\\,\\mathrm{m/s}$，$\\sigma_T=6.65\\times10^{-29}\\,\\mathrm{m^2}$，$\\mu_0=4\\pi\\times10^{-7}\\,\\mathrm{H/m}$，$1\\,\\mathrm{yr}=3.15\\times10^{7}\\,\\mathrm{s}$ とする．\n\\begin{enumerate}\n\\item 非相対論的サイクロトロン振動数 $\\nu_g=eB/(2\\pi m_e)$ を求めよ．\n\\item X線 $\\nu_c=2.4\\times10^{17}\\,\\mathrm{Hz}$ を出す電子の $\\gamma$ を求めよ．\n\\item 電子のエネルギー $E=\\gamma m_ec^2$ が放射で失われる時間（冷却時間）$t$ を $m_e, c, \\sigma_T, E, U_B$ で表せ．\n\\item (2) の電子について $t$ を年で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\nu_g\\approx 2.8\\times10^{2}\\,\\mathrm{Hz}$ (2) $\\gamma\\approx 2.4\\times10^{7}$ (3) $t=\\dfrac{3m_{e}^2c^3}{4\\sigma_T E U_B}$ (4) $t\\approx 1.03\\times10^{2}\\,\\mathrm{yr}$",
-  "solution": "(1) $\\nu_g=1.6\\times10^{-19}\\times10^{-8}/(2\\pi\\times9.11\\times10^{-31})\\approx\\boldsymbol{2.8\\times10^{2}\\,\\mathrm{Hz}}$．\n\n(2) $\\gamma=\\sqrt{2\\nu_c/(3\\nu_g)}\\approx\\boldsymbol{2.4\\times10^{7}}$（エネルギー $\\approx12\\,\\mathrm{TeV}$）．\n\n(3) $P=\\tfrac{4}{3}\\sigma_Tc\\,U_B E^2/(m_ec^2)^2$ だから $t=E/P$ より $\\boldsymbol{t=\\dfrac{3m_e^2c^3}{4\\sigma_T E U_B}}$．エネルギーの高い電子ほど速く冷える．\n\n(4) $U_B\\approx4.0\\times10^{-11}\\,\\mathrm{J/m^3}$ を入れて $t\\approx3.2\\times10^{9}\\,\\mathrm{s}\\approx\\boldsymbol{1.03\\times10^{2}\\,\\mathrm{yr}}$．残骸の年齢（$10^3\\,\\mathrm{yr}$ 程度）より短いので，X線を出す電子は衝撃波で今も加速され続けている必要がある．",
+  "q": "超新星残骸の磁場 $B$ の中で，ローレンツ因子 $\\gamma\\gg1$ の電子（質量 $m_e$，電荷の大きさ $q$）がシンクロトロン放射をしている．放射の特徴的な振動数は $\\nu_c\\approx\\tfrac{3}{2}\\gamma^2\\nu_g$，放射パワー（ピッチ角で平均）は $P=\\tfrac{4}{3}\\sigma_Tc\\gamma^2U_B$（$U_B=B^2/(2\\mu_0)$，$\\sigma_T$ はトムソン断面積，$c$ は光速）とする．\n\\begin{enumerate}\n\\item 非相対論的サイクロトロン振動数 $\\nu_g$ を $q, B, m_e$ で表せ．\n\\item 振動数 $\\nu_c$ の X 線を出す電子の $\\gamma$ を $\\nu_c, q, B, m_e$ で表せ．\n\\item 電子のエネルギー $E=\\gamma m_ec^2$ が放射で失われる時間（冷却時間）$t$ を $m_e, c, \\sigma_T, E, U_B$ で表せ．\n\\item (2) の電子について $t$ を $m_e, c, \\sigma_T, \\mu_0, B, q, \\nu_c$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\nu_g=\\dfrac{qB}{2\\pi m_e}$ (2) $\\gamma=\\sqrt{\\dfrac{4\\pi m_e\\nu_c}{3qB}}$ (3) $t=\\dfrac{3m_{e}^2c^3}{4\\sigma_T E U_B}$ (4) $t=\\dfrac{3\\mu_0m_ec}{2\\sigma_TB^2}\\sqrt{\\dfrac{3qB}{4\\pi m_e\\nu_c}}$",
+  "solution": "(1) 円運動 $m_e\\omega=qB$ より $\\boldsymbol{\\nu_g=\\dfrac{qB}{2\\pi m_e}}$．$B=10^{-8}\\,\\mathrm T$ では約 $2.8\\times10^{2}\\,\\mathrm{Hz}$．\n\n(2) $\\gamma=\\sqrt{\\dfrac{2\\nu_c}{3\\nu_g}}=\\boldsymbol{\\sqrt{\\dfrac{4\\pi m_e\\nu_c}{3qB}}}$．$\\nu_c=2.4\\times10^{17}\\,\\mathrm{Hz}$ では約 $2.4\\times10^{7}$（エネルギー $\\approx12\\,\\mathrm{TeV}$）．\n\n(3) $P=\\tfrac{4}{3}\\sigma_Tc\\,U_B E^2/(m_ec^2)^2$ だから $t=E/P$ より $\\boldsymbol{t=\\dfrac{3m_e^2c^3}{4\\sigma_T E U_B}}$．エネルギーの高い電子ほど速く冷える．\n\n(4) $E=\\gamma m_ec^2$，$U_B=B^2/(2\\mu_0)$ を入れて $t=\\dfrac{3m_ec}{4\\sigma_T\\gamma U_B}=\\dfrac{3\\mu_0m_ec}{2\\sigma_T\\gamma B^2}$．(2) の $\\gamma$ を代入して\n\\[ \\boldsymbol{t=\\frac{3\\mu_0m_ec}{2\\sigma_TB^2}\\sqrt{\\frac{3qB}{4\\pi m_e\\nu_c}}}\\ \\propto B^{-3/2}\\nu_c^{-1/2} . \\]\n上の数値では約 $10^{2}$ 年で，残骸の年齢（$10^3$ 年程度）より短い．X線を出す電子は衝撃波で今も加速され続けている必要がある．",
   "idea": "$\\nu_c\\propto\\gamma^2B$ で電子のエネルギーを逆算し，$t_{\\mathrm{cool}}\\propto1/(EB^2)$ を天体の年齢と比べて粒子加速の現場を推論する．",
   "tags": "シンクロトロン放射,冷却時間,宇宙線加速,超新星残骸",
-  "input": "(1) 振動数 [Hz]：≈2.8e2\n(2) ≈2.4e7\n(3) 3 m_e^2 c^3/(4 σ_T E U_B)\n(4) 時間 [yr]：≈1.03e2"
+  "input": "(1) q B/(2π m_e)\n(2) sqrt(4π m_e ν_c/(3 q B))\n(3) 3 m_e^2 c^3/(4 σ_T E U_B)\n(4) t：3 μ_0 m_e c/(2 σ_T B^2) sqrt(3 q B/(4π m_e ν_c))",
+  "id": "AS-03-004"
  },
  {
   "tid": "AS-17",
@@ -230,12 +246,13 @@
   "level": 3,
   "theme": "ジェットの見かけの超光速運動",
   "minutes": 20,
-  "q": "活動銀河核から速さ $v$ のブロブ（塊）が，視線と角度 $\\theta$ をなす方向に放出された．観測者は十分遠方にいるとし，光速を $c$ とする．\n\\begin{enumerate}\n\\item 時間 $\\Delta t$ の間にブロブが進む距離のうち天球面に平行な成分は $v\\Delta t\\sin\\theta$ だが，その両端から出た光の到着時刻の差は $\\Delta t(1-(v/c)\\cos\\theta)$ に縮む．天球面上の見かけの速さ $v_{\\mathrm{app}}$ を $v, c, \\theta$ で表せ．\n\\item $v$ を固定したとき，$v_{\\mathrm{app}}$ を最大にする $\\cos\\theta$ を求めよ．\n\\item $v_{\\mathrm{app}}$ の最大値を $v, c$ で表せ．\n\\item 見かけの速さ $v_{\\mathrm{app}}=5c$ が観測された．ブロブのローレンツ因子 $\\gamma=1/\\sqrt{1-v^2/c^2}$ の下限を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $v_{\\mathrm{app}}=\\dfrac{cv\\sin\\theta}{c-v\\cos\\theta}$ (2) $\\cos\\theta=\\dfrac{v}{c}$ (3) $\\dfrac{cv}{\\sqrt{c^2-v^2}}$ (4) $\\gamma\\ge\\sqrt{26}\\approx 5.1$",
-  "solution": "(1) $v_{\\mathrm{app}}=\\dfrac{v\\Delta t\\sin\\theta}{\\Delta t(1-(v/c)\\cos\\theta)}=\\boldsymbol{\\dfrac{cv\\sin\\theta}{c-v\\cos\\theta}}$．\n\n(2) $\\beta=v/c$ と書くと $v_{\\mathrm{app}}/c=\\beta\\sin\\theta/(1-\\beta\\cos\\theta)$．$\\theta$ で微分した分子は $\\cos\\theta(1-\\beta\\cos\\theta)-\\beta\\sin^2\\theta=\\cos\\theta-\\beta$ なので，$\\boldsymbol{\\cos\\theta=v/c}$ で最大．\n\n(3) $\\sin\\theta=\\sqrt{1-\\beta^2}$ を入れて $v_{\\mathrm{app}}/c=\\beta/\\sqrt{1-\\beta^2}=\\beta\\gamma$，すなわち $\\boldsymbol{v_{\\mathrm{app}}=cv/\\sqrt{c^2-v^2}}$．$v\\to c$ で上限なく大きくなり，光速を超えて見える．\n\n(4) $\\beta\\gamma=\\sqrt{\\gamma^2-1}\\ge5$ より $\\boldsymbol{\\gamma\\ge\\sqrt{26}\\approx5.1}$．ジェットは相対論的な速さ（$v\\gtrsim0.98c$）で，しかも視線に近い方向（$\\theta\\lesssim 11^\\circ$）を向いていると分かる．",
+  "q": "活動銀河核から速さ $v$ のブロブ（塊）が，視線と角度 $\\theta$ をなす方向に放出された．観測者は十分遠方にいるとし，光速を $c$ とする．\n\\begin{enumerate}\n\\item 時間 $\\Delta t$ の間にブロブが進む距離のうち天球面に平行な成分は $v\\Delta t\\sin\\theta$ だが，その両端から出た光の到着時刻の差は $\\Delta t(1-(v/c)\\cos\\theta)$ に縮む．天球面上の見かけの速さ $v_{\\mathrm{app}}$ を $v, c, \\theta$ で表せ．\n\\item $v$ を固定したとき，$v_{\\mathrm{app}}$ を最大にする $\\cos\\theta$ を求めよ．\n\\item $v_{\\mathrm{app}}$ の最大値を $v, c$ で表せ．\n\\item 見かけの速さ $v_{\\mathrm{app}}=kc$ が観測された．ブロブのローレンツ因子 $\\gamma=1/\\sqrt{1-v^2/c^2}$ の下限を $k$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $v_{\\mathrm{app}}=\\dfrac{cv\\sin\\theta}{c-v\\cos\\theta}$ (2) $\\cos\\theta=\\dfrac{v}{c}$ (3) $\\dfrac{cv}{\\sqrt{c^2-v^2}}$ (4) $\\sqrt{1+k^2}$",
+  "solution": "(1) $v_{\\mathrm{app}}=\\dfrac{v\\Delta t\\sin\\theta}{\\Delta t(1-(v/c)\\cos\\theta)}=\\boldsymbol{\\dfrac{cv\\sin\\theta}{c-v\\cos\\theta}}$．\n\n(2) $\\beta=v/c$ と書くと $v_{\\mathrm{app}}/c=\\beta\\sin\\theta/(1-\\beta\\cos\\theta)$．$\\theta$ で微分した分子は $\\cos\\theta(1-\\beta\\cos\\theta)-\\beta\\sin^2\\theta=\\cos\\theta-\\beta$ なので，$\\boldsymbol{\\cos\\theta=v/c}$ で最大．\n\n(3) $\\sin\\theta=\\sqrt{1-\\beta^2}$ を入れて $v_{\\mathrm{app}}/c=\\beta/\\sqrt{1-\\beta^2}=\\beta\\gamma$，すなわち $\\boldsymbol{v_{\\mathrm{app}}=cv/\\sqrt{c^2-v^2}}$．$v\\to c$ で上限なく大きくなり，光速を超えて見える．\n\n(4) $\\beta\\gamma=\\sqrt{\\gamma^2-1}\\ge k$ より $\\gamma\\ge\\boldsymbol{\\sqrt{1+k^2}}$．たとえば $k=5$ なら $\\gamma\\ge\\sqrt{26}\\approx5.1$ で，ジェットは相対論的な速さ（$v\\gtrsim0.98c$）で，しかも視線に近い方向（$\\theta\\lesssim 11^\\circ$）を向いていると分かる．",
   "idea": "光の到着時刻の短縮 $1-(v/c)\\cos\\theta$ が見かけの速さを増幅する．最大値 $\\beta\\gamma c$ から $\\gamma$ の下限が出る．",
   "tags": "超光速運動,相対論的ジェット,活動銀河核,ドップラー効果",
-  "input": "(1) c v sin(θ)/(c - v cos(θ))\n(2) v/c\n(3) c v/sqrt(c^2-v^2)\n(4) sqrt(26)"
+  "input": "(1) c v sin(θ)/(c - v cos(θ))\n(2) v/c\n(3) c v/sqrt(c^2-v^2)\n(4) γ の下限：sqrt(1+k^2)",
+  "id": "AS-03-005"
  },
  {
   "tid": "AS-18",
@@ -249,6 +266,7 @@
   "solution": "(1) $V=1-\\dfrac{2M}{r}+\\dfrac{L^2}{r^2}-\\dfrac{2ML^2}{r^3}$ より\n\\[V'=\\frac{2M}{r^2}-\\frac{2L^2}{r^3}+\\frac{6ML^2}{r^4}=0\\ \\Longrightarrow\\ \\boldsymbol{L^2=\\frac{Mr^2}{r-3M}}\\]\n（$r>3M$ で存在する）．\n\n(2) $1+L^2/r^2=(r-2M)/(r-3M)$ より $E^2=\\dfrac{r-2M}{r}\\cdot\\dfrac{r-2M}{r-3M}=\\boldsymbol{\\dfrac{(r-2M)^2}{r(r-3M)}}$．\n\n(3) $\\dfrac{d}{dr}\\dfrac{r^2}{r-3M}=\\dfrac{r(r-6M)}{(r-3M)^2}=0$ より $\\boldsymbol{r=6M}$（$=3R_s$）．これより内側の円軌道は不安定である．\n\n(4) $r=6M$ で $E^2=16M^2/(18M^2)=8/9$，$E=2\\sqrt2/3$．よって $\\boldsymbol{1-E=1-2\\sqrt2/3\\approx0.057}$．ニュートン的な見積もり $M/(2r)=1/12\\approx0.083$ よりやや小さいが，核融合（$0.007$）の約8倍である．",
   "idea": "円軌道条件から $L^2(r)$，$E^2(r)$ を出し，$L^2$ の極小が安定性の限界を与える．ISCO での束縛エネルギーが降着の効率になる．",
   "tags": "シュワルツシルト時空,最内安定円軌道,降着効率,有効ポテンシャル",
-  "input": "(1) M r^2/(r-3M)\n(2) (r-2M)^2/(r(r-3M))\n(3) 6M\n(4) 1 - 2sqrt(2)/3"
+  "input": "(1) M r^2/(r-3M)\n(2) (r-2M)^2/(r(r-3M))\n(3) 6M\n(4) 1 - 2sqrt(2)/3",
+  "id": "AS-03-006"
  }
 ]

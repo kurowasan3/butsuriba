@@ -398,24 +398,24 @@
   "theme": "線形四重極の軸上の電位：多重極展開の精度",
   "topic": "線形四重極の軸上の電位：多重極展開の精度",
   "statement": {
-   "tex": "$z$ 軸上の $z=\\pm a$ に点電荷 $q$，原点に $-2q$ を置く．\n\\begin{enumerate}\n\\item 全電荷，双極子モーメント，四重極モーメント $Q_{zz}=\\sum q_i(3z_i^2-r_i^2)$ を求めよ．\n\\item 軸上（$z=r>a$）の厳密な電位を求め，$a/r$ で展開して主要項と次の項を書け．\n\\item $r=3a$ で，四重極の項だけで近似したときの相対誤差を求めよ．\n\\end{enumerate}"
+   "tex": "$z$ 軸上の $z=\\pm a$ に点電荷 $q$，原点に $-2q$ を置く．\n\\begin{enumerate}\n\\item 全電荷，双極子モーメント，四重極モーメント $Q_{zz}=\\sum q_i(3z_i^2-r_i^2)$ を求めよ．\n\\item 軸上（$z=r>a$）の厳密な電位を求め，$a/r$ で展開して主要項と次の項を書け．\n\\item $r=na$（$n>1$）で，四重極の項だけで近似したときの相対誤差（厳密値に対する誤差の割合）を $n$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $0,\\ 0,\\ 4qa^2$　(2) $\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{r(r^2-a^2)}\\simeq\\dfrac{q}{4\\pi\\varepsilon_0}\\left(\\dfrac{2a^2}{r^3}+\\dfrac{2a^4}{r^5}\\right)$　(3) 約 $11\\%$（厳密値は $9/8$ 倍）"
+   "tex": "(1) $0,\\ 0,\\ 4qa^2$　(2) $\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{r(r^2-a^2)}\\simeq\\dfrac{q}{4\\pi\\varepsilon_0}\\left(\\dfrac{2a^2}{r^3}+\\dfrac{2a^4}{r^5}\\right)$　(3) $\\dfrac{1}{n^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 全電荷 $\\boldsymbol0$，双極子 $\\boldsymbol0$，$Q_{zz}=2q\\cdot2a^2=\\boldsymbol{4qa^2}$．\n\n(2) $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0}\\left(\\dfrac1{r-a}+\\dfrac1{r+a}-\\dfrac2r\\right)=\\boldsymbol{\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{r(r^2-a^2)}}$．展開すると $\\boldsymbol{\\dfrac{q}{4\\pi\\varepsilon_0}\\left(\\dfrac{2a^2}{r^3}+\\dfrac{2a^4}{r^5}+\\cdots\\right)}$．第1項は四重極の電位 $\\dfrac{Q_{zz}}{4\\pi\\varepsilon_0}\\dfrac{P_2(1)}{2r^3}$ に一致し，第2項は $l=4$ の項．（奇数の $l$ は対称性で消える．）\n\n(3) 厳密値と主要項の比は $\\dfrac{1}{1-a^2/r^2}=\\dfrac98$．四重極の近似は厳密値より $\\dfrac{1}{9}\\approx\\boldsymbol{11\\%}$ 小さい．"
+    "tex": "(1) 全電荷 $\\boldsymbol0$，双極子 $\\boldsymbol0$，$Q_{zz}=2q\\cdot2a^2=\\boldsymbol{4qa^2}$．\n\n(2) $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0}\\left(\\dfrac1{r-a}+\\dfrac1{r+a}-\\dfrac2r\\right)=\\boldsymbol{\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{r(r^2-a^2)}}$．展開すると $\\boldsymbol{\\dfrac{q}{4\\pi\\varepsilon_0}\\left(\\dfrac{2a^2}{r^3}+\\dfrac{2a^4}{r^5}+\\cdots\\right)}$．第1項は四重極の電位 $\\dfrac{Q_{zz}}{4\\pi\\varepsilon_0}\\dfrac{P_2(1)}{2r^3}$ に一致し，第2項は $l=4$ の項．（奇数の $l$ は対称性で消える．）\n\n(3) 主要項と厳密値の比は $1-\\dfrac{a^2}{r^2}=1-\\dfrac1{n^2}$．よって四重極の近似は厳密値より割合 $\\boldsymbol{\\dfrac{1}{n^2}}$ だけ小さい．たとえば $r=3a$ でも誤差は約 $11\\%$ 残る．"
    }
   ],
   "idea": {
-   "tex": "多重極展開は $a/r$ のべき級数で，対称な配置では偶数次だけが残る．厳密な式と比べると，展開の打ち切り誤差は次の項の比 $(a/r)^2$ の程度とわかる．原題の展開の公式の証明を，具体的な精度の評価にした．"
+   "tex": "多重極展開は $a/r$ のべき級数で，対称な配置では偶数次だけが残る．厳密な式と比べると，展開の打ち切り誤差は次の項の比 $(a/r)^2$ の程度とわかる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) [%]：≈11"
+   "spec": "(1) 全電荷：0 ; 双極子：0 ; Q_zz：4 q a^2\n(2) 記述：厳密 q a^2/(2π ε_0 r (r^2-a^2))，展開 (q/(4π ε_0))(2a^2/r^3+2a^4/r^5)\n(3) 相対誤差：1/n^2"
   },
   "methods": [],
   "tags": [
@@ -1330,16 +1330,16 @@
   "theme": "帯電液滴の表面張力と静電圧力（Rayleigh 限界の目安）",
   "topic": "帯電液滴の表面張力と静電圧力（Rayleigh 限界の目安）",
   "statement": {
-   "tex": "表面張力 $\\gamma$ の導電性液体の球形の液滴（半径 $R$，表面は 1 面）に電荷 $Q$ を与える．液体は非圧縮とする．\n\\begin{enumerate}\n\\item 液滴内部の圧力の超過分（外部との差）$\\Delta p$ を $R,\\gamma,Q$ で表せ．\n\\item $\\Delta p=0$ となる電荷 $Q^*$ を求めよ．（これは液滴が分裂し始める Rayleigh 限界の電荷に一致する．）\n\\item 半径 1.0 mm の水滴（$\\gamma=0.072\\ \\mathrm{N/m}$）について $Q^*$ を求めよ．また電荷 $Q$ を保ったまま蒸発して小さくなる液滴は，どの半径 $R^*$ で $\\Delta p=0$ に達するか．\n\\end{enumerate}"
+   "tex": "表面張力 $\\gamma$ の導電性液体の球形の液滴（半径 $R$，表面は 1 面）に電荷 $Q$ を与える．液体は非圧縮とする．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 液滴内部の圧力の超過分（外部との差）$\\Delta p$ を $R,\\gamma,Q$ で表せ．\n\\item $\\Delta p=0$ となる電荷 $Q^*$ を $\\gamma,\\ R$ で表せ．（これは液滴が分裂し始める Rayleigh 限界の電荷に一致する．）\n\\item 電荷 $Q$ を保ったまま蒸発して小さくなる液滴は，どの半径 $R^*$ で $\\Delta p=0$ に達するか．$Q,\\ \\gamma$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta p=\\dfrac{2\\gamma}{R}-\\dfrac{Q^2}{32\\pi^2\\varepsilon_0R^4}$　(2) $Q^*=8\\pi\\sqrt{\\varepsilon_0\\gamma R^3}$　(3) $Q^*\\approx6.3\\times10^{-10}\\ \\mathrm C$，$R^*=\\left(\\dfrac{Q^2}{64\\pi^2\\varepsilon_0\\gamma}\\right)^{1/3}$"
+   "tex": "(1) $\\Delta p=\\dfrac{2\\gamma}{R}-\\dfrac{Q^2}{32\\pi^2\\varepsilon_0R^4}$　(2) $Q^*=8\\pi\\sqrt{\\varepsilon_0\\gamma R^3}$　(3) $R^*=\\left(\\dfrac{Q^2}{64\\pi^2\\varepsilon_0\\gamma}\\right)^{1/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 表面張力による圧力（1 面）は $2\\gamma/R$（内向き），静電圧力は $\\dfrac{\\varepsilon_0E^2}{2}=\\dfrac{Q^2}{32\\pi^2\\varepsilon_0R^4}$（外向き）．したがって\n\\[ \\Delta p=\\frac{2\\gamma}{R}-\\frac{Q^2}{32\\pi^2\\varepsilon_0R^4}. \\]\n(2) $\\Delta p=0$：$Q^2=64\\pi^2\\varepsilon_0\\gamma R^3$，$Q^*=8\\pi\\sqrt{\\varepsilon_0\\gamma R^3}$．\n（球からの変形（2 重極変形）の安定性を調べると，まさにこの電荷で表面張力による復元力が消えることが示される．）\n(3) $Q^*=8\\pi\\sqrt{8.85\\times10^{-12}\\times0.072\\times(1.0\\times10^{-3})^3}\\approx6.3\\times10^{-10}\\ \\mathrm C$．\n$Q$ 一定で $R$ が減ると，$2\\gamma/R\\propto R^{-1}$ より静電圧力 $\\propto R^{-4}$ の方が速く増える．$Q^2=64\\pi^2\\varepsilon_0\\gamma R^3$ を $R$ について解いて $R^*=\\left(\\dfrac{Q^2}{64\\pi^2\\varepsilon_0\\gamma}\\right)^{1/3}$．蒸発する帯電液滴は必ずこの半径に達し，分裂（クーロン爆発）する．これはエレクトロスプレーの原理である．"
+    "tex": "(1) 表面張力による圧力（1 面）は $2\\gamma/R$（内向き），静電圧力は $\\dfrac{\\varepsilon_0E^2}{2}=\\dfrac{Q^2}{32\\pi^2\\varepsilon_0R^4}$（外向き）．したがって\n\\[ \\boldsymbol{\\Delta p=\\frac{2\\gamma}{R}-\\frac{Q^2}{32\\pi^2\\varepsilon_0R^4}}. \\]\n(2) $\\Delta p=0$：$Q^2=64\\pi^2\\varepsilon_0\\gamma R^3$，$\\boldsymbol{Q^*=8\\pi\\sqrt{\\varepsilon_0\\gamma R^3}}$．\n（球からの変形（2 重極変形）の安定性を調べると，まさにこの電荷で表面張力による復元力が消えることが示される．）\n\n(3) $Q$ 一定で $R$ が減ると，$2\\gamma/R\\propto R^{-1}$ より静電圧力 $\\propto R^{-4}$ の方が速く増える．$Q^2=64\\pi^2\\varepsilon_0\\gamma R^3$ を $R$ について解いて\n\\[ \\boldsymbol{R^*=\\left(\\frac{Q^2}{64\\pi^2\\varepsilon_0\\gamma}\\right)^{1/3}}. \\]\n蒸発する帯電液滴は必ずこの半径に達し，分裂（クーロン爆発）する．これはエレクトロスプレーの原理である．"
    }
   ],
   "idea": {
@@ -1347,7 +1347,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\Delta p$：((2 γ)/(R))-((Q ^(2))/(32 pi ^(2) ε_0 R ^(4)))\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\Delta p$：((2 γ)/(R))-((Q ^(2))/(32 pi ^(2) ε_0 R ^(4)))\n(2) $Q^*$：8 pi sqrt(ε_0 γ R^3)\n(3) $R^*$：(Q^2/(64 pi^2 ε_0 γ))^(1/3)"
   },
   "methods": [],
   "tags": [
@@ -1625,24 +1625,24 @@
   "theme": "クーロン力と重力が釣り合う質量",
   "topic": "クーロン力と重力が釣り合う質量",
   "statement": {
-   "tex": "電荷 $e$ をもつ同種の 2 粒子（質量 $m$）が距離 $r$ だけ離れている．$e=1.602\\times10^{-19}\\,\\mathrm{C}$，$G=6.674\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$，$\\varepsilon_0=8.854\\times10^{-12}\\,\\mathrm{F/m}$，$\\hbar=1.055\\times10^{-34}\\,\\mathrm{J\\,s}$，$c=3.00\\times10^8\\,\\mathrm{m/s}$，$m_e=9.11\\times10^{-31}\\,\\mathrm{kg}$，$m_p=1.673\\times10^{-27}\\,\\mathrm{kg}$ とする．\n\\begin{enumerate}\n\\item 静電斥力と万有引力の大きさがちょうど等しくなる質量 $m^*$ を求めよ．この値は $r$ によるか．\n\\item プランク質量 $m_{\\rm P}=\\sqrt{\\hbar c/G}$ と比べると，$m^*/m_{\\rm P}$ は微細構造定数 $\\alpha=e^2/(4\\pi\\varepsilon_0\\hbar c)$ だけで表される．その式と数値を求めよ．\n\\item 水素原子の電子と陽子の間の静電引力と万有引力の比を求めよ．\n\\end{enumerate}"
+   "tex": "電荷 $q$ をもつ同種の 2 粒子（質量 $m$）が距離 $r$ だけ離れている．万有引力定数を $G$，真空の誘電率を $\\varepsilon_0$，換算プランク定数を $\\hbar$，光速を $c$ とする．\n\\begin{enumerate}\n\\item 静電斥力と万有引力の大きさがちょうど等しくなる質量 $m^*$ を求めよ．この値は $r$ によるか．\n\\item プランク質量 $m_{\\rm P}=\\sqrt{\\hbar c/G}$ と比べると，$m^*/m_{\\rm P}$ は無次元数 $\\alpha=q^2/(4\\pi\\varepsilon_0\\hbar c)$ だけで表される．その式を求めよ．\n\\item 電荷 $q$ を電気素量とし，水素原子の電子（質量 $m_e$）と陽子（質量 $m_p$）の間の静電引力と万有引力の比を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $m^*=e/\\sqrt{4\\pi\\varepsilon_0G}\\approx1.86\\times10^{-9}\\,\\mathrm{kg}$（$r$ によらない）　(2) $m^*/m_{\\rm P}=\\sqrt\\alpha\\approx0.0854$　(3) $\\approx2.3\\times10^{39}$"
+   "tex": "(1) $m^*=\\dfrac{q}{\\sqrt{4\\pi\\varepsilon_0G}}$（$r$ によらない）　(2) $\\dfrac{m^*}{m_{\\rm P}}=\\sqrt\\alpha$　(3) $\\dfrac{q^2}{4\\pi\\varepsilon_0Gm_em_p}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{e^2}{4\\pi\\varepsilon_0r^2}=\\dfrac{Gm^2}{r^2}$ より $r$ は両辺で約され，\n\\[ m^*=\\frac{e}{\\sqrt{4\\pi\\varepsilon_0G}}=\\frac{1.602\\times10^{-19}}{\\sqrt{4\\pi\\cdot8.854\\times10^{-12}\\cdot6.674\\times10^{-11}}}\\approx1.86\\times10^{-9}\\,\\mathrm{kg}. \\]\nどちらの力も逆 2 乗則なので，比は距離によらない．\n(2) $\\dfrac{m^{*2}}{m_{\\rm P}^2}=\\dfrac{e^2}{4\\pi\\varepsilon_0G}\\cdot\\dfrac{G}{\\hbar c}=\\dfrac{e^2}{4\\pi\\varepsilon_0\\hbar c}=\\alpha$．よって $m^*/m_{\\rm P}=\\sqrt\\alpha\\approx\\sqrt{1/137}\\approx0.0854$．すなわち電荷 $e$ の粒子の「重力と電気力が釣り合う質量」はプランク質量の約 1/12 で，素粒子の質量（$\\sim10^{-27}\\,\\mathrm{kg}$）より 18 桁も大きい．\n(3) $\\dfrac{F_e}{F_g}=\\dfrac{e^2}{4\\pi\\varepsilon_0Gm_em_p}\\approx2.3\\times10^{39}$．"
+    "tex": "(1) $\\dfrac{q^2}{4\\pi\\varepsilon_0r^2}=\\dfrac{Gm^2}{r^2}$ より $r$ は両辺で約され，\n\\[ \\boldsymbol{m^*=\\frac{q}{\\sqrt{4\\pi\\varepsilon_0G}}}. \\]\nどちらの力も逆 2 乗則なので，比は距離によらない．\n\n(2) $\\dfrac{m^{*2}}{m_{\\rm P}^2}=\\dfrac{q^2}{4\\pi\\varepsilon_0G}\\cdot\\dfrac{G}{\\hbar c}=\\dfrac{q^2}{4\\pi\\varepsilon_0\\hbar c}=\\alpha$．よって $\\boldsymbol{m^*/m_{\\rm P}=\\sqrt\\alpha}$．$q$ が電気素量なら $\\alpha$ は微細構造定数（約 $1/137$）で，「重力と電気力が釣り合う質量」はプランク質量の約 1/12，素粒子の質量よりはるかに大きい．\n\n(3) 電子と陽子では\n\\[ \\boldsymbol{\\frac{F_e}{F_g}=\\frac{q^2}{4\\pi\\varepsilon_0Gm_em_p}}. \\]\nこれは (1) を使うと $m^{*2}/(m_em_p)$ と書ける．実際の値を入れると $10^{39}$ 程度になり，原子の世界で重力が完全に無視できる理由である．"
    }
   ],
   "idea": {
-   "tex": "逆 2 乗則どうしの比は距離によらず，比が 1 になる質量は $e/\\sqrt{4\\pi\\varepsilon_0G}=\\sqrt\\alpha\\,m_{\\rm P}$ と基本定数だけで決まる．"
+   "tex": "逆 2 乗則どうしの比は距離によらず，比が 1 になる質量は $q/\\sqrt{4\\pi\\varepsilon_0G}=\\sqrt\\alpha\\,m_{\\rm P}$ と基本定数だけで決まる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) ≈2.3e39"
+   "spec": "(1) $m^*$：q/sqrt(4 pi ε_0 G)\n(2) $m^*/m_P$：sqrt(α)\n(3) 比：q^2/(4 pi ε_0 G m_e m_p)"
   },
   "methods": [],
   "tags": [
@@ -1869,16 +1869,16 @@
   "theme": "一様電場をつくる球外電荷分布",
   "topic": "一様電場をつくる球外電荷分布",
   "statement": {
-   "tex": "半径 $R$ の球が球対称な電荷 $q$ をもち，球の外側の空間は体積電荷密度 $\\rho=\\alpha r^k$（$\\alpha>0$，$k$ は定数，$r$ は球の中心からの距離）の電荷で満たされている．誘電率はいたるところ $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 球外 $(r>R)$ の電場の大きさが $r$ によらず一定になるための $k$ と $q$ の条件を求め，そのときの電場の強さを求めよ．\n\\item (1) の条件のもとで，$r=R$ と $r=2R$ の間の電位差を求めよ．\n\\item $k$ は (1) の値のまま，球が帯電していない（$q=0$）とする．球外の電場の強さが十分遠方での値の $90\\%$ に達する距離 $r$ を求めよ．\n\\end{enumerate}"
+   "tex": "半径 $R$ の球が球対称な電荷 $q$ をもち，球の外側の空間は体積電荷密度 $\\rho=\\alpha r^k$（$\\alpha>0$，$k$ は定数，$r$ は球の中心からの距離）の電荷で満たされている．誘電率はいたるところ $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 球外 $(r>R)$ の電場の大きさが $r$ によらず一定になるための $k$ と $q$ の条件を求め，そのときの電場の強さを求めよ．\n\\item (1) の条件のもとで，$r=R$ と $r=2R$ の間の電位差を求めよ．\n\\item $k$ は (1) の値のまま，球が帯電していない（$q=0$）とする．球外の電場の強さが十分遠方での値の $f$ 倍（$0<f<1$）に達する距離 $r$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $k=-1$，$q=2\\pi R^2\\alpha$，$E=\\dfrac{\\alpha}{2\\varepsilon_0}$　(2) $\\Delta\\varphi=\\dfrac{\\alpha R}{2\\varepsilon_0}$　(3) $r=\\sqrt{10}\\,R\\approx3.2R$"
+   "tex": "(1) $k=-1$，$q=2\\pi R^2\\alpha$，$E=\\dfrac{\\alpha}{2\\varepsilon_0}$　(2) $\\Delta\\varphi=\\dfrac{\\alpha R}{2\\varepsilon_0}$　(3) $r=\\dfrac{R}{\\sqrt{1-f}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $r>R$ で半径 $r$ の球内の全電荷は\n\\[Q(r)=q+4\\pi\\alpha\\int_R^r r'^{k+2}dr'.\\]\n$E=Q(r)/(4\\pi\\varepsilon_0r^2)$ が一定であるには $Q(r)=Cr^2$ でなければならない．$dQ/dr=4\\pi\\alpha r^{k+2}=2Cr$ より $k=-1$，$C=2\\pi\\alpha$．このとき $Q(r)=q+2\\pi\\alpha(r^2-R^2)$ なので $q=2\\pi\\alpha R^2$ が必要．よって\n\\[E=\\frac{2\\pi\\alpha r^2}{4\\pi\\varepsilon_0r^2}=\\frac{\\alpha}{2\\varepsilon_0}.\\]\n(2) 電場が一様な大きさで動径方向を向くので $\\Delta\\varphi=E\\cdot R=\\dfrac{\\alpha R}{2\\varepsilon_0}$．\n\n(3) $q=0$ では $Q(r)=2\\pi\\alpha(r^2-R^2)$，\n\\[E(r)=\\frac{\\alpha}{2\\varepsilon_0}\\left(1-\\frac{R^2}{r^2}\\right)\\]\nで，遠方では $\\alpha/2\\varepsilon_0$ に近づく．$1-R^2/r^2=0.9$ より $r=\\sqrt{10}R\\approx3.2R$．"
+    "tex": "(1) $r>R$ で半径 $r$ の球内の全電荷は\n\\[Q(r)=q+4\\pi\\alpha\\int_R^r r'^{k+2}dr'.\\]\n$E=Q(r)/(4\\pi\\varepsilon_0r^2)$ が一定であるには $Q(r)=Cr^2$ でなければならない．$dQ/dr=4\\pi\\alpha r^{k+2}=2Cr$ より $k=-1$，$C=2\\pi\\alpha$．このとき $Q(r)=q+2\\pi\\alpha(r^2-R^2)$ なので $q=2\\pi\\alpha R^2$ が必要．よって\n\\[E=\\frac{2\\pi\\alpha r^2}{4\\pi\\varepsilon_0r^2}=\\boldsymbol{\\frac{\\alpha}{2\\varepsilon_0}}.\\]\n(2) 電場が一様な大きさで動径方向を向くので $\\Delta\\varphi=E\\cdot R=\\boldsymbol{\\dfrac{\\alpha R}{2\\varepsilon_0}}$．\n\n(3) $q=0$ では $Q(r)=2\\pi\\alpha(r^2-R^2)$，\n\\[E(r)=\\frac{\\alpha}{2\\varepsilon_0}\\left(1-\\frac{R^2}{r^2}\\right)\\]\nで，遠方では $\\alpha/2\\varepsilon_0$ に近づく．$1-R^2/r^2=f$ より $\\boldsymbol{r=\\dfrac{R}{\\sqrt{1-f}}}$．たとえば $f=0.9$ なら $r=\\sqrt{10}R\\approx3.2R$．"
    }
   ],
   "idea": {
@@ -1886,7 +1886,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $k$：-1 ; $q$：2 pi R ^(2) α ; $E$：((α)/(2 ε_0))\n(2) $\\Delta\\varphi$：((α R)/(2 ε_0))\n(3) $r$：sqrt(10) R"
+   "spec": "(1) $k$：-1 ; $q$：2 pi R ^(2) α ; $E$：((α)/(2 ε_0))\n(2) $\\Delta\\varphi$：((α R)/(2 ε_0))\n(3) $r$：R/sqrt(1-f)"
   },
   "methods": [],
   "tags": [
@@ -2065,24 +2065,24 @@
   "theme": "水分子間の双極子相互作用と熱エネルギー",
   "topic": "水分子間の双極子相互作用と熱エネルギー",
   "statement": {
-   "tex": "水分子の電気双極子モーメントを $p=0.62\\times10^{-29}\\ \\mathrm{C\\,m}$ とする．$1/4\\pi\\varepsilon_0=8.99\\times10^9\\ \\mathrm{N\\,m^2/C^2}$，ボルツマン定数 $k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$．\n\\begin{enumerate}\n\\item 2 個の水分子が距離 $l=10\\ \\mathrm{nm}$ 離れ，双極子が同じ直線上に同じ向きに並んでいるときの相互作用力の大きさを求めよ．\n\\item 同じ距離で，(a) 同一直線上・同じ向き，(b) 互いに平行な 2 直線上に逆向きに並ぶ（両双極子は中心を結ぶ線に垂直），の 2 つの配置の相互作用エネルギーを求め，どちらがどれだけ安定か答えよ．\n\\item 温度 $300\\ \\mathrm K$ で，(2)(a) の相互作用エネルギーの大きさが $k_BT$ に等しくなる距離を求めよ．$l=10\\ \\mathrm{nm}$ での比 $|U|/k_BT$ も求め，この距離で配向がそろうかどうか論ぜよ．\n\\end{enumerate}"
+   "tex": "2 個の水分子を，大きさ $p$ の電気双極子とみなす．真空の誘電率を $\\varepsilon_0$，ボルツマン定数を $k_B$ とする．\n\\begin{enumerate}\n\\item 2 個の水分子が距離 $l$ 離れ，双極子が同じ直線上に同じ向きに並んでいるときの相互作用力の大きさを求めよ．\n\\item 同じ距離で，(a) 同一直線上・同じ向き，(b) 互いに平行な 2 直線上に逆向きに並ぶ（両双極子は中心を結ぶ線に垂直），の 2 つの配置の相互作用エネルギー $U_a,\\ U_b$ を求め，どちらが何倍安定か答えよ．\n\\item 温度 $T$ で，(2)(a) の相互作用エネルギーの大きさが $k_BT$ に等しくなる距離 $a$ を求めよ．また，距離 $l$ での比 $|U_a|/k_BT$ を $a,\\ l$ で表し，$l$ が $a$ の 20 倍程度のとき配向がそろうかどうか論ぜよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $F=\\dfrac{6p^2}{4\\pi\\varepsilon_0l^4}=2.1\\times10^{-16}\\ \\mathrm N$（引力）　(2) (a) $U=-\\dfrac{2p^2}{4\\pi\\varepsilon_0l^3}=-6.9\\times10^{-25}\\ \\mathrm J$，(b) $U=-\\dfrac{p^2}{4\\pi\\varepsilon_0l^3}=-3.5\\times10^{-25}\\ \\mathrm J$；(a) が 2 倍安定　(3) $l^*=0.55\\ \\mathrm{nm}$，$|U|/k_BT=1.7\\times10^{-4}$（配向はほとんどそろわない）"
+   "tex": "(1) $F=\\dfrac{6p^2}{4\\pi\\varepsilon_0l^4}$（引力）　(2) $U_a=-\\dfrac{2p^2}{4\\pi\\varepsilon_0l^3}$，$U_b=-\\dfrac{p^2}{4\\pi\\varepsilon_0l^3}$；(a) が $2$ 倍安定　(3) $a=\\left(\\dfrac{2p^2}{4\\pi\\varepsilon_0k_BT}\\right)^{1/3}$，$\\dfrac{|U_a|}{k_BT}=\\dfrac{a^3}{l^3}$（$l=20a$ で約 $10^{-4}$，配向はほとんどそろわない）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "双極子 $\\boldsymbol p_1$ が距離 $\\boldsymbol l$ の位置につくる電場の中の $\\boldsymbol p_2$ のエネルギーは\n\\[U=\\frac{1}{4\\pi\\varepsilon_0l^3}\\left\\{\\boldsymbol p_1\\cdot\\boldsymbol p_2-3(\\boldsymbol p_1\\cdot\\hat{\\boldsymbol l})(\\boldsymbol p_2\\cdot\\hat{\\boldsymbol l})\\right\\}.\\]\n(1)(2a) 同一直線上同じ向き：$U=-\\dfrac{2p^2}{4\\pi\\varepsilon_0l^3}$．力は $F=-\\dfrac{dU}{dl}=-\\dfrac{6p^2}{4\\pi\\varepsilon_0l^4}$（引力）．\n\\[|F|=\\frac{6\\times8.99\\times10^9\\times(0.62\\times10^{-29})^2}{(10^{-8})^4}=2.1\\times10^{-16}\\ \\mathrm N.\\]\n$U_a=-2\\times8.99\\times10^9\\times3.84\\times10^{-59}/10^{-24}=-6.9\\times10^{-25}\\ \\mathrm J$．\n(2b) 平行逆向き（$\\boldsymbol p\\perp\\hat{\\boldsymbol l}$）：$U_b=\\dfrac{-p^2}{4\\pi\\varepsilon_0l^3}=-3.5\\times10^{-25}\\ \\mathrm J$．(a) のほうが 2 倍深く，安定．\n\n(3) $\\dfrac{2p^2}{4\\pi\\varepsilon_0l^{*3}}=k_BT$ より\n\\[l^*=\\left(\\frac{2p^2}{4\\pi\\varepsilon_0k_BT}\\right)^{1/3}=\\left(\\frac{6.91\\times10^{-49}}{4.14\\times10^{-21}}\\right)^{1/3}=5.5\\times10^{-10}\\ \\mathrm m.\\]\n$l=10\\ \\mathrm{nm}$ では $|U|/k_BT=6.9\\times10^{-25}/4.14\\times10^{-21}=1.7\\times10^{-4}\\ll1$．熱運動による配向の乱れが圧倒的で，2 分子の向きはほとんど無相関である（このとき熱平均の相互作用はさらに弱く $\\propto l^{-6}$ となる）．"
+    "tex": "双極子 $\\boldsymbol p_1$ が距離 $\\boldsymbol l$ の位置につくる電場の中の $\\boldsymbol p_2$ のエネルギーは\n\\[U=\\frac{1}{4\\pi\\varepsilon_0l^3}\\left\\{\\boldsymbol p_1\\cdot\\boldsymbol p_2-3(\\boldsymbol p_1\\cdot\\hat{\\boldsymbol l})(\\boldsymbol p_2\\cdot\\hat{\\boldsymbol l})\\right\\}.\\]\n(1)(2a) 同一直線上同じ向き：$\\boldsymbol{U_a=-\\dfrac{2p^2}{4\\pi\\varepsilon_0l^3}}$．力は $F=-\\dfrac{dU}{dl}=-\\dfrac{6p^2}{4\\pi\\varepsilon_0l^4}$（引力）で，大きさは $\\boldsymbol{\\dfrac{6p^2}{4\\pi\\varepsilon_0l^4}}$．\n\n(2b) 平行逆向き（$\\boldsymbol p\\perp\\hat{\\boldsymbol l}$）：$\\boldsymbol p_1\\cdot\\boldsymbol p_2=-p^2$，第2項は $0$ なので $\\boldsymbol{U_b=-\\dfrac{p^2}{4\\pi\\varepsilon_0l^3}}$．(a) のほうが $\\boldsymbol{2}$ 倍深く，安定．\n\n(3) $\\dfrac{2p^2}{4\\pi\\varepsilon_0a^3}=k_BT$ より\n\\[\\boldsymbol{a=\\left(\\frac{2p^2}{4\\pi\\varepsilon_0k_BT}\\right)^{1/3}}.\\]\n距離 $l$ では $|U_a|=\\dfrac{2p^2}{4\\pi\\varepsilon_0l^3}=k_BT\\dfrac{a^3}{l^3}$ なので $\\boldsymbol{\\dfrac{|U_a|}{k_BT}=\\dfrac{a^3}{l^3}}$．$l=20a$ なら $1/8000\\approx10^{-4}\\ll1$．熱運動による配向の乱れが圧倒的で，2 分子の向きはほとんど無相関である（このとき熱平均の相互作用はさらに弱く $\\propto l^{-6}$ となる）．水分子の値と室温を入れると $a$ は $0.5\\,\\mathrm{nm}$ 程度で，分子どうしが接するほどの距離でしか配向はそろわない．"
    }
   ],
   "idea": {
-   "tex": "双極子間エネルギーは配置で 2 倍異なり $\\propto l^{-3}$．熱エネルギーと比べると分子程度の距離（0.5 nm）でしか配向がそろわない．"
+   "tex": "双極子間エネルギーは配置で 2 倍異なり $\\propto l^{-3}$．熱エネルギーと比べると，配向がそろうのは $|U|=k_BT$ となる距離 $a$ 以内に限られ，比は $(a/l)^3$ で急に小さくなる．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $F$ [N]：≈2.1e-16\n(2) 記述\n(3) 記述"
+   "spec": "(1) $F$：6p^2/(4 pi ε_0 l^4)\n(2) $U_a$：-2p^2/(4 pi ε_0 l^3) ; $U_b$：-p^2/(4 pi ε_0 l^3) ; 倍率：2\n(3) $a$：(2p^2/(4 pi ε_0 k_B T))^(1/3) ; 比：a^3/l^3"
   },
   "methods": [],
   "tags": [
@@ -2311,16 +2311,16 @@
   "theme": "ヴァン・デ・グラーフのベルトが運ぶ電流",
   "topic": "ヴァン・デ・グラーフのベルトが運ぶ電流",
   "statement": {
-   "tex": "ヴァン・デ・グラーフ起電機では，幅 $w=0.30\\,\\mathrm m$ の絶縁ベルトが速さ $v=20\\,\\mathrm{m/s}$ で走り，表面に付けた電荷を球形ドームへ運ぶ．ベルトの電荷は面密度 $\\sigma$ の一様な平面電荷とみなし，両面の空気中の電場は $\\sigma/(2\\varepsilon_0)$ であるとする．空気の絶縁破壊電場は $E_b=3.0\\,\\mathrm{MV/m}$ である．\n\\begin{enumerate}\n\\item ベルトが運べる最大の対流電流 $I$ を求めよ．\n\\item ドームは半径 $0.50\\,\\mathrm m$ の孤立導体球とみなす．ドーム表面の電場も $E_b$ を超えられないとして，ドームの到達できる最高電位 $U_{\\max}$ と，(1) の電流で空の状態から $U_{\\max}$ に達するまでの時間 $T$ を求めよ（漏れは無視）．\n\\end{enumerate}"
+   "tex": "ヴァン・デ・グラーフ起電機では，幅 $w$ の絶縁ベルトが速さ $v$ で走り，表面に付けた電荷を球形ドームへ運ぶ．ベルトの電荷は面密度 $\\sigma$ の一様な平面電荷とみなし，両面の空気中の電場は $\\sigma/(2\\varepsilon_0)$ であるとする．空気の絶縁破壊電場を $E_b$ とする．\n\\begin{enumerate}\n\\item ベルトが運べる最大の対流電流 $I$ を求めよ．\n\\item ドームは半径 $R$ の孤立導体球とみなす．ドーム表面の電場も $E_b$ を超えられないとして，ドームの到達できる最高電位 $U_{\\max}$ と，(1) の電流で空の状態から $U_{\\max}$ に達するまでの時間 $T$ を求めよ（漏れは無視）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $I=2\\varepsilon_0E_bwv\\approx3.2\\times10^{-4}\\,\\mathrm A$　(2) $U_{\\max}=E_bR=1.5\\,\\mathrm{MV}$，$T=4\\pi\\varepsilon_0R^2E_b/I\\approx0.26\\,\\mathrm s$"
+   "tex": "(1) $I=2\\varepsilon_0E_bwv$　(2) $U_{\\max}=E_bR$，$T=\\dfrac{2\\pi R^2}{wv}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\sigma/(2\\varepsilon_0)\\le E_b$ より $\\sigma_{\\max}=2\\varepsilon_0E_b$．単位時間に通過するベルト面積は $wv$ なので\n\\[ I=\\sigma_{\\max}wv=2\\varepsilon_0E_bwv=2\\cdot8.85\\times10^{-12}\\cdot3.0\\times10^6\\cdot0.30\\cdot20=3.2\\times10^{-4}\\,\\mathrm A. \\]\n(2) 球の表面電場 $E=U/R$ なので $U_{\\max}=E_bR=1.5\\times10^6\\,\\mathrm V$．必要な電荷 $Q=4\\pi\\varepsilon_0RU_{\\max}=4\\pi\\varepsilon_0R^2E_b=8.3\\times10^{-5}\\,\\mathrm C$ を電流 $I$ で運ぶ時間は $T=Q/I=\\dfrac{2\\pi R^2}{wv}\\approx0.26\\,\\mathrm s$．"
+    "tex": "(1) $\\sigma/(2\\varepsilon_0)\\le E_b$ より $\\sigma_{\\max}=2\\varepsilon_0E_b$．単位時間に通過するベルト面積は $wv$ なので\n\\[ \\boldsymbol{I=\\sigma_{\\max}wv=2\\varepsilon_0E_bwv}. \\]\n(2) 球の表面電場 $E=U/R$ なので $\\boldsymbol{U_{\\max}=E_bR}$．必要な電荷 $Q=4\\pi\\varepsilon_0RU_{\\max}=4\\pi\\varepsilon_0R^2E_b$ を電流 $I$ で運ぶ時間は\n\\[ \\boldsymbol{T=\\frac QI=\\frac{4\\pi\\varepsilon_0R^2E_b}{2\\varepsilon_0E_bwv}=\\frac{2\\pi R^2}{wv}}. \\]\n$E_b$ も $\\varepsilon_0$ も消え，「ドームの表面積の半分をベルトが掃く時間」になる．半径 $0.5\\,\\mathrm m$，幅 $0.3\\,\\mathrm m$，速さ $20\\,\\mathrm{m/s}$ 程度なら 1 秒もかからない．"
    }
   ],
   "idea": {
@@ -2328,7 +2328,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $I$ [A]：≈3.2e-4\n(2) 記述"
+   "spec": "(1) $I$：2 ε_0 E_b w v\n(2) $U_{max}$：E_b R ; $T$：2 pi R^2/(w v)"
   },
   "methods": [],
   "tags": [
@@ -3042,24 +3042,24 @@
   "theme": "一様に帯電した球のエネルギーのうち内部に蓄えられる割合",
   "topic": "一様に帯電した球のエネルギーのうち内部に蓄えられる割合",
   "statement": {
-   "tex": "全電荷 $Q$ が，内半径 $R_1$，外半径 $R_2$ の厚い球殻の体積に一様に分布している．\n\\begin{enumerate}\n\\item $R_1=0$（一様な球）のとき，全静電エネルギー $U$ と，そのうち球の内部（$r<R_2$）の電場に蓄えられる割合を求めよ．\n\\item $R_1=R_2/2$ のとき，$U$ を $\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}$ を単位として求めよ．\n\\item $R_1\\to R_2$ の極限で $U$ がどうなるか答えよ．\n\\end{enumerate}"
+   "tex": "全電荷 $Q$ が，内半径 $R_1$，外半径 $R_2$ の厚い球殻の体積に一様に分布している．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item $R_1=0$（一様な球）のとき，全静電エネルギー $U$ と，そのうち球の内部（$r<R_2$）の電場に蓄えられる割合を求めよ．\n\\item 一般の $R_1\\ (0<R_1<R_2)$ について，$U$ を $Q,\\ R_1,\\ R_2$ で表せ．\n\\item $R_1\\to R_2$ の極限で $U$ がどうなるか答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $U=\\dfrac35\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}$，内部 $\\dfrac16$　(2) $\\dfrac{141}{245}\\approx0.576$　(3) $\\dfrac12\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}$（薄い球殻の値）"
+   "tex": "(1) $U=\\dfrac35\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}$，内部 $\\dfrac16$　(2) $U=\\dfrac{3Q^2\\left(3R_1^3+6R_1^2R_2+4R_1R_2^2+2R_2^3\\right)}{40\\pi\\varepsilon_0\\left(R_1^2+R_1R_2+R_2^2\\right)^2}$　(3) $\\dfrac12\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}$（薄い球殻の値）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$U=\\dfrac{1}{8\\pi\\varepsilon_0}\\int_0^\\infty\\dfrac{Q(r)^2}{r^2}dr$（$Q(r)$ は半径 $r$ の中の電荷）を使う．\n\n(1) $Q(r)=Q(r/R_2)^3$ として，内部 $\\dfrac{1}{8\\pi\\varepsilon_0}\\dfrac{Q^2}{5R_2}$，外部 $\\dfrac{1}{8\\pi\\varepsilon_0}\\dfrac{Q^2}{R_2}$．合計 $\\boldsymbol{U=\\dfrac35\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}}$，内部の割合は $\\dfrac{1/5}{6/5}=\\boldsymbol{\\dfrac16}$．\n\n(2) $Q(r)=Q\\dfrac{r^3-R_1^3}{R_2^3-R_1^3}$ で積分すると，$R_1=R_2/2$ のとき $\\boldsymbol{U=\\dfrac{141}{245}\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}}\\approx0.576$．\n\n(3) 電荷がすべて外側の表面に集まり，$\\boldsymbol{\\dfrac12\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}}$．空洞を大きくすると電荷どうしが平均的に遠ざかり，エネルギーは $\\frac35$ から $\\frac12$ まで下がる．"
+    "tex": "$U=\\dfrac{1}{8\\pi\\varepsilon_0}\\int_0^\\infty\\dfrac{Q(r)^2}{r^2}dr$（$Q(r)$ は半径 $r$ の中の電荷）を使う．\n\n(1) $Q(r)=Q(r/R_2)^3$ として，内部 $\\dfrac{1}{8\\pi\\varepsilon_0}\\dfrac{Q^2}{5R_2}$，外部 $\\dfrac{1}{8\\pi\\varepsilon_0}\\dfrac{Q^2}{R_2}$．合計 $\\boldsymbol{U=\\dfrac35\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}}$，内部の割合は $\\dfrac{1/5}{6/5}=\\boldsymbol{\\dfrac16}$．\n\n(2) $R_1<r<R_2$ で $Q(r)=Q\\dfrac{r^3-R_1^3}{R_2^3-R_1^3}$，$r<R_1$ で $0$．殻の中の寄与は\n\\[ \\int_{R_1}^{R_2}\\frac{(r^3-R_1^3)^2}{r^2}dr=\\frac{R_2^5-R_1^5}{5}-R_1^3(R_2^2-R_1^2)+R_1^6\\left(\\frac1{R_1}-\\frac1{R_2}\\right) \\]\nを $(R_2^3-R_1^3)^2$ で割ったもの，外部の寄与は $1/R_2$．$R_2^3-R_1^3=(R_2-R_1)(R_1^2+R_1R_2+R_2^2)$ で約分して整理すると\n\\[ \\boldsymbol{U=\\frac{3Q^2\\left(3R_1^3+6R_1^2R_2+4R_1R_2^2+2R_2^3\\right)}{40\\pi\\varepsilon_0\\left(R_1^2+R_1R_2+R_2^2\\right)^2}}. \\]\n$R_1=0$ で (1) の $\\dfrac{3Q^2}{20\\pi\\varepsilon_0R_2}$ に戻る．\n\n(3) (2) で $R_1=R_2$ とおくと $\\dfrac{3Q^2\\cdot15R_2^3}{40\\pi\\varepsilon_0\\cdot9R_2^4}=\\boldsymbol{\\dfrac12\\dfrac{Q^2}{4\\pi\\varepsilon_0R_2}}$．電荷がすべて外側の表面に集まった薄い球殻の値である．空洞を大きくすると電荷どうしが平均的に遠ざかり，エネルギーは $\\frac35$ から $\\frac12$ まで下がる．"
    }
   ],
   "idea": {
-   "tex": "静電エネルギーは電場のエネルギー密度の積分で，球対称なら囲まれた電荷 $Q(r)$ だけで書ける．一様な球ではエネルギーの $5/6$ が外部の電場にある．原題の厚い球殻のエネルギーに，内外の配分の問いを加えた．"
+   "tex": "静電エネルギーは電場のエネルギー密度の積分で，球対称なら囲まれた電荷 $Q(r)$ だけで書ける．一様な球ではエネルギーの $5/6$ が外部の電場にある．"
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $U$：((3)/(5))((Q ^(2))/(4 pi ε_0 R_2)) ; 内部：((1)/(6))\n(2) ≈0.576\n(3) ((1)/(2))((Q ^(2))/(4 pi ε_0 R_2))"
+   "spec": "(1) $U$：((3)/(5))((Q ^(2))/(4 pi ε_0 R_2)) ; 内部：((1)/(6))\n(2) $U$：3Q^2 (3R_1^3+6R_1^2 R_2+4R_1 R_2^2+2R_2^3)/(40 pi ε_0 (R_1^2+R_1 R_2+R_2^2)^2)\n(3) ((1)/(2))((Q ^(2))/(4 pi ε_0 R_2))"
   },
   "methods": [],
   "tags": [
@@ -3532,16 +3532,16 @@
   "theme": "質量の異なる帯電振り子と接触後の開き",
   "topic": "質量の異なる帯電振り子と接触後の開き",
   "statement": {
-   "tex": "長さ $l$ の 2 本の絶縁糸を同じ点 O からつるし，下端に質量 $m_1,m_2$ の小球をつける．小球の電荷は $q_1,q_2$（同符号）で，糸が鉛直となす角を $\\theta_1,\\theta_2$ とする．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 電荷 $q_1,q_2$ の値によらず，角が小さくなくても厳密に $m_1\\sin\\theta_1=m_2\\sin\\theta_2$ が成り立つことを示せ．\n\\item 角が小さいとき，2 球の間隔 $r$ を求めよ．\n\\item 2 球をいったん接触させて電荷を等分したのち再び静止させた．角が小さいとして，間隔は何倍になるか．$q_1=3q_2$ のときの値も求めよ．\n\\end{enumerate}"
+   "tex": "長さ $l$ の 2 本の絶縁糸を同じ点 O からつるし，下端に質量 $m_1,m_2$ の小球をつける．小球の電荷は $q_1,q_2$（同符号）で，糸が鉛直となす角を $\\theta_1,\\theta_2$ とする．重力加速度を $g$，真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 電荷 $q_1,q_2$ の値によらず，角が小さくなくても厳密に $m_1\\sin\\theta_1=m_2\\sin\\theta_2$ が成り立つことを示せ．\n\\item 角が小さいとき，2 球の間隔 $r$ を求めよ．\n\\item 2 球をいったん接触させて電荷を等分したのち再び静止させた．角が小さいとして，間隔は何倍になるか．$q_1=kq_2$（$k>0$）とおいて $k$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) O のまわりのモーメントの釣合いから（Coulomb 力は内力）　(2) $r^3=\\dfrac{q_1q_2\\,l\\,(m_1+m_2)}{4\\pi\\varepsilon_0\\,g\\,m_1m_2}$　(3) $\\left\\{\\dfrac{(q_1+q_2)^2}{4q_1q_2}\\right\\}^{1/3}$ 倍，$q_1=3q_2$ で $(4/3)^{1/3}\\fallingdotseq1.10$ 倍"
+   "tex": "(1) O のまわりのモーメントの釣合いから（Coulomb 力は内力）　(2) $r=\\left(\\dfrac{q_1q_2(m_1+m_2)l}{4\\pi\\varepsilon_0gm_1m_2}\\right)^{1/3}$　(3) $\\left\\{\\dfrac{(k+1)^2}{4k}\\right\\}^{1/3}$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 2 球と糸をひとまとめの系とみて，O のまわりの力のモーメントを考える．張力は O を通るので（糸は質量なし）O のまわりのモーメントをもたない．2 球のあいだの Coulomb 力は作用反作用の対で，同一直線（2 球を結ぶ線）上で逆向きなので，モーメントの和は 0．残る外力は重力だけで，その腕の長さは $l\\sin\\theta_i$ だから\n\\[\nm_1g\\,l\\sin\\theta_1=m_2g\\,l\\sin\\theta_2\\quad\\Longrightarrow\\quad m_1\\sin\\theta_1=m_2\\sin\\theta_2 .\n\\]\n電荷はこの式に入らない．すなわち角の比は質量だけで決まり，電荷の配分には無関係である（2 球の高さが違って Coulomb 力が水平でなくても成り立つ）．\n\n(2) 小角では 2 球の高さの差は 2 次の微小量なので Coulomb 力 $F$ は水平とみなせ，各球で $T_i\\sin\\theta_i=F$，$T_i\\cos\\theta_i=m_ig$ から $\\theta_i\\fallingdotseq F/(m_ig)$，$r\\fallingdotseq l(\\theta_1+\\theta_2)=\\dfrac{lF}{g}\\dfrac{m_1+m_2}{m_1m_2}$．$F=\\dfrac{q_1q_2}{4\\pi\\varepsilon_0r^2}$ を代入して\n\\[\nr^3=\\frac{q_1q_2\\,l\\,(m_1+m_2)}{4\\pi\\varepsilon_0\\,g\\,m_1m_2}.\n\\]\n(3) 接触後は各球 $(q_1+q_2)/2$．(2) で $q_1q_2\\to(q_1+q_2)^2/4$ とすればよく\n\\[\n\\frac{r'}{r}=\\left\\{\\frac{(q_1+q_2)^2}{4q_1q_2}\\right\\}^{1/3}\\ge1\n\\]\n（相加相乗平均より等号は $q_1=q_2$）．$q_1=3q_2$ なら $(16/12)^{1/3}=(4/3)^{1/3}\\fallingdotseq1.10$ 倍．角の比 $\\theta_1/\\theta_2=m_2/m_1$ は接触の前後で変わらない．"
+    "tex": "(1) 2 球と糸をひとまとめの系とみて，O のまわりの力のモーメントを考える．張力は O を通るので（糸は質量なし）O のまわりのモーメントをもたない．2 球のあいだの Coulomb 力は作用反作用の対で，同一直線（2 球を結ぶ線）上で逆向きなので，モーメントの和は 0．残る外力は重力だけで，その腕の長さは $l\\sin\\theta_i$ だから\n\\[\nm_1g\\,l\\sin\\theta_1=m_2g\\,l\\sin\\theta_2\\quad\\Longrightarrow\\quad m_1\\sin\\theta_1=m_2\\sin\\theta_2 .\n\\]\n電荷はこの式に入らない．すなわち角の比は質量だけで決まり，電荷の配分には無関係である（2 球の高さが違って Coulomb 力が水平でなくても成り立つ）．\n\n(2) 小角では 2 球の高さの差は 2 次の微小量なので Coulomb 力 $F$ は水平とみなせ，各球で $T_i\\sin\\theta_i=F$，$T_i\\cos\\theta_i=m_ig$ から $\\theta_i\\fallingdotseq F/(m_ig)$，$r\\fallingdotseq l(\\theta_1+\\theta_2)=\\dfrac{lF}{g}\\dfrac{m_1+m_2}{m_1m_2}$．$F=\\dfrac{q_1q_2}{4\\pi\\varepsilon_0r^2}$ を代入して\n\\[\n\\boldsymbol{r=\\left\\{\\frac{q_1q_2\\,l\\,(m_1+m_2)}{4\\pi\\varepsilon_0\\,g\\,m_1m_2}\\right\\}^{1/3}}.\n\\]\n(3) 接触後は各球 $(q_1+q_2)/2$．(2) で $q_1q_2\\to(q_1+q_2)^2/4$ とすればよく\n\\[\n\\frac{r'}{r}=\\left\\{\\frac{(q_1+q_2)^2}{4q_1q_2}\\right\\}^{1/3}=\\boldsymbol{\\left\\{\\frac{(k+1)^2}{4k}\\right\\}^{1/3}}\\ge1\n\\]\n（相加相乗平均より等号は $k=1$）．たとえば $k=3$ なら $(4/3)^{1/3}\\fallingdotseq1.10$ 倍．角の比 $\\theta_1/\\theta_2=m_2/m_1$ は接触の前後で変わらない．"
    }
   ],
   "idea": {
@@ -3549,7 +3549,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 記述：O のまわりのモーメントの釣合い（Coulomb 力は内力で張力は O を通る）\n(2) $r$：(q_1 q_2 l (m_1+m_2)/(4 pi ε_0 g m_1 m_2))^(1/3)\n(3) 倍率：((k+1)^2/(4k))^(1/3)"
   },
   "methods": [],
   "tags": [
@@ -3581,16 +3581,16 @@
   "theme": "電荷がもれる帯電振り子の接近速度",
   "topic": "電荷がもれる帯電振り子の接近速度",
   "statement": {
-   "tex": "質量 $0.5\\,\\mathrm{g}$ の 2 個の小球を長さ $30\\,\\mathrm{cm}$ の絶縁糸で同一点からつるし，等量の電荷を与えたところ，2 球の間隔が $x=5\\,\\mathrm{cm}$ で静止した．$g=9.8\\,\\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 各球の電荷 $q$ を求めよ．\n\\item その後，各球の電荷が一定の割合 $\\beta=1.0\\times10^{-12}\\,\\mathrm{C/s}$ でゆっくりもれ始めた．球は各瞬間ほぼ釣合いを保つとして（角は小さいとする），間隔 $x$ のときの 2 球の接近の速さ $v=-dx/dt$ を $x$ の関数として求め，$x=5\\,\\mathrm{cm}$ での値を計算せよ．\n\\item 電荷がもれるにつれ接近は速くなるか遅くなるか．$x\\to0$ でどうなるか述べよ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の 2 個の小球を長さ $l$ の絶縁糸で同一点からつるし，等量の電荷を与えたところ，2 球の間隔が $x_0$ で静止した．重力加速度を $g$，真空の誘電率を $\\varepsilon_0$ とし，糸が鉛直となす角は小さいとする．\n\\begin{enumerate}\n\\item 各球の電荷 $q$ を求めよ．\n\\item その後，各球の電荷が一定の割合 $\\beta$（単位 $\\mathrm{C/s}$）でゆっくりもれ始めた．球は各瞬間ほぼ釣合いを保つとして，間隔 $x$ のときの 2 球の接近の速さ $v=-dx/dt$ を $x$ の関数として求めよ．\n\\item 電荷がもれるにつれ接近は速くなるか遅くなるか．$x\\to0$ でどうなるか述べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $q\\fallingdotseq1.07\\times10^{-8}\\,\\mathrm C$　(2) $v=\\dfrac{2\\beta}{3}\\sqrt{\\dfrac{l}{2\\pi\\varepsilon_0 mg\\,x}}$，$x=5\\,\\mathrm{cm}$ で $v\\fallingdotseq3.1\\times10^{-6}\\,\\mathrm{m/s}$　(3) $v\\propto x^{-1/2}$ で速くなり，$x\\to0$ で発散（準静的近似が破れる）"
+   "tex": "(1) $q=\\sqrt{\\dfrac{2\\pi\\varepsilon_0mg\\,x_0^3}{l}}$　(2) $v=\\dfrac{2\\beta}{3}\\sqrt{\\dfrac{l}{2\\pi\\varepsilon_0 mg\\,x}}$　(3) $v\\propto x^{-1/2}$ で速くなり，$x\\to0$ で発散（準静的近似が破れる）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 糸と鉛直のなす角 $\\theta$ は $\\sin\\theta=2.5/30$．釣合い $\\dfrac{q^2}{4\\pi\\varepsilon_0x^2}=mg\\tan\\theta$ より\n\\[\nq=x\\sqrt{4\\pi\\varepsilon_0\\,mg\\tan\\theta}\\fallingdotseq1.07\\times10^{-8}\\ \\mathrm C .\n\\]\n(2) 小角で $\\tan\\theta\\fallingdotseq x/(2l)$ なので $\\dfrac{q^2}{4\\pi\\varepsilon_0x^2}=\\dfrac{mgx}{2l}$，すなわち\n\\[\nx^3=\\frac{2lq^2}{4\\pi\\varepsilon_0mg}=\\frac{lq^2}{2\\pi\\varepsilon_0mg},\\qquad q=Cx^{3/2},\\quad C=\\sqrt{\\frac{2\\pi\\varepsilon_0mg}{l}} .\n\\]\n時間微分して $\\dot q=\\frac32Cx^{1/2}\\dot x$．$\\dot q=-\\beta$ を入れると\n\\[\nv=-\\dot x=\\frac{2\\beta}{3Cx^{1/2}}=\\frac{2\\beta}{3}\\sqrt{\\frac{l}{2\\pi\\varepsilon_0mg\\,x}} .\n\\]\n数値：$C=\\sqrt{2\\pi\\varepsilon_0\\cdot5\\times10^{-4}\\cdot9.8/0.30}\\fallingdotseq9.53\\times10^{-7}\\ \\mathrm{C/m^{3/2}}$，$v=\\dfrac{2\\times10^{-12}}{3\\times9.53\\times10^{-7}\\times\\sqrt{0.05}}\\fallingdotseq3.1\\times10^{-6}\\ \\mathrm{m/s}$．\n\n(3) $v\\propto x^{-1/2}$ なので間隔が縮むほど接近は速くなり，$x\\to0$ で発散する．実際には速さが大きくなると準静的（各瞬間の釣合い）の仮定が成り立たなくなる．"
+    "tex": "(1) 糸と鉛直のなす角 $\\theta$ は小さく $\\tan\\theta\\fallingdotseq\\sin\\theta=\\dfrac{x_0}{2l}$．釣合い $\\dfrac{q^2}{4\\pi\\varepsilon_0x_0^2}=mg\\tan\\theta=\\dfrac{mgx_0}{2l}$ より\n\\[\n\\boldsymbol{q=\\sqrt{\\frac{2\\pi\\varepsilon_0mg\\,x_0^3}{l}}} .\n\\]\n(2) 間隔 $x$ でも同様に\n\\[\nx^3=\\frac{lq^2}{2\\pi\\varepsilon_0mg},\\qquad q=Cx^{3/2},\\quad C=\\sqrt{\\frac{2\\pi\\varepsilon_0mg}{l}} .\n\\]\n時間微分して $\\dot q=\\frac32Cx^{1/2}\\dot x$．$\\dot q=-\\beta$ を入れると\n\\[\nv=-\\dot x=\\frac{2\\beta}{3Cx^{1/2}}=\\boldsymbol{\\frac{2\\beta}{3}\\sqrt{\\frac{l}{2\\pi\\varepsilon_0mg\\,x}}} .\n\\]\n(3) $v\\propto x^{-1/2}$ なので間隔が縮むほど接近は速くなり，$x\\to0$ で発散する．実際には速さが大きくなると準静的（各瞬間の釣合い）の仮定が成り立たなくなる．"
    }
   ],
   "idea": {
@@ -3598,7 +3598,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $q$：sqrt(2 pi ε_0 m g x_0^3/l)\n(2) $v$：(2β/3) sqrt(l/(2 pi ε_0 m g x))\n(3) 記述：v ∝ x^(-1/2) で速くなり，x→0 で発散（準静的近似が破れる）"
   },
   "methods": [],
   "tags": [
@@ -3630,16 +3630,16 @@
   "theme": "双極子近似の精度と方向依存性",
   "topic": "双極子近似の精度と方向依存性",
   "statement": {
-   "tex": "$x$ 軸上の $x=+l$ に $+q$，$x=-l$ に $-q$ を置く．原点からの距離 $r$，$x$ 軸となす角 $\\theta$ の点を考え，双極子モーメント $p=2ql$ の点双極子による電界・電位を「双極子近似」とよぶ．\n\\begin{enumerate}\n\\item $x$ 軸上（$r>l$）で，正確な電界の大きさと双極子近似の値の比を $u=l/r$ で表し，誤差が $1\\%$ になる $r/l$ を求めよ．\n\\item 垂直二等分面上で同じことを行え．\n\\item 一般の方向で，正確な電位を $u$ について $u^3$ の項まで展開し，双極子近似からの最初のずれが消える方向 $\\theta$（$0<\\theta<\\pi/2$）を求めよ．\n\\end{enumerate}"
+   "tex": "$x$ 軸上の $x=+l$ に $+q$，$x=-l$ に $-q$ を置く．原点からの距離 $r$，$x$ 軸となす角 $\\theta$ の点を考え，双極子モーメント $p=2ql$ の点双極子による電界・電位を「双極子近似」とよぶ．\n\\begin{enumerate}\n\\item $x$ 軸上（$r>l$）で，正確な電界の大きさと双極子近似の値の比を $u=l/r$ で表せ．また，双極子近似の相対誤差が小さな値 $\\delta$ になる $r/l$ を，$\\delta$ の最低次の近似で求めよ．\n\\item 垂直二等分面上で同じことを行え．\n\\item 一般の方向で，正確な電位を $u$ について $u^3$ の項まで展開し，双極子近似からの最初のずれが消える方向 $\\theta$（$0<\\theta<\\pi/2$）について $\\cos\\theta$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 比 $(1-u^2)^{-2}$，$r/l\\fallingdotseq14.2$　(2) 比 $(1+u^2)^{-3/2}$，$r/l\\fallingdotseq12.2$　(3) $\\cos\\theta=\\sqrt{3/5}$，$\\theta\\fallingdotseq39.2^\\circ$"
+   "tex": "(1) 比 $(1-u^2)^{-2}$，$\\dfrac rl=\\sqrt{\\dfrac{2}{\\delta}}$　(2) 比 $(1+u^2)^{-3/2}$，$\\dfrac rl=\\sqrt{\\dfrac{3}{2\\delta}}$　(3) $\\cos\\theta=\\sqrt{\\dfrac35}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$k=1/4\\pi\\varepsilon_0$．双極子近似では軸上 $E_0=\\dfrac{2kp}{r^3}$，二等分面上 $E_0=\\dfrac{kp}{r^3}$．\n\n(1) 軸上 $x=r>l$ で\n\\[\nE=kq\\left\\{\\frac1{(r-l)^2}-\\frac1{(r+l)^2}\\right\\}=\\frac{4kqlr}{(r^2-l^2)^2},\\qquad \\frac{E}{E_0}=\\frac{r^4}{(r^2-l^2)^2}=(1-u^2)^{-2}.\n\\]\n$(1-u^2)^{-2}=1.01$ より $u^2=1-1.01^{-1/2}\\fallingdotseq4.96\\times10^{-3}$，$u\\fallingdotseq0.0704$，$r/l\\fallingdotseq14.2$．近似値は過小評価．\n\n(2) 二等分面上で $E=\\dfrac{2kql}{(r^2+l^2)^{3/2}}$，$\\dfrac{E}{E_0}=(1+u^2)^{-3/2}$．$=0.99$ より $u\\fallingdotseq0.0820$，$r/l\\fallingdotseq12.2$．近似値は過大評価．\n\n(3) $\\dfrac1{|\\boldsymbol r\\mp l\\hat{\\boldsymbol x}|}=\\dfrac1r\\sum_n(\\pm u)^nP_n(\\cos\\theta)$ より偶数次は打ち消し，\n\\[\nV=\\frac{2kq}{r}\\left\\{uP_1(\\cos\\theta)+u^3P_3(\\cos\\theta)+\\cdots\\right\\}=\\frac{kp\\cos\\theta}{r^2}\\left\\{1+u^2\\frac{P_3(\\cos\\theta)}{\\cos\\theta}+\\cdots\\right\\}.\n\\]\n$P_3=\\frac12(5\\cos^3\\theta-3\\cos\\theta)$ が 0 となる方向，$\\cos^2\\theta=3/5$，$\\theta\\fallingdotseq39.2^\\circ$ では誤差が $O(u^4)$ 以下になる．（(1) で軸上の比が $1+2u^2$，(2) で $1-\\frac32u^2$ と符号が逆であることとも整合する．）"
+    "tex": "$k=1/4\\pi\\varepsilon_0$．双極子近似では軸上 $E_0=\\dfrac{2kp}{r^3}$，二等分面上 $E_0=\\dfrac{kp}{r^3}$．\n\n(1) 軸上 $x=r>l$ で\n\\[\nE=kq\\left\\{\\frac1{(r-l)^2}-\\frac1{(r+l)^2}\\right\\}=\\frac{4kqlr}{(r^2-l^2)^2},\\qquad \\boldsymbol{\\frac{E}{E_0}=\\frac{r^4}{(r^2-l^2)^2}=(1-u^2)^{-2}}.\n\\]\n$u\\ll1$ で $(1-u^2)^{-2}\\fallingdotseq1+2u^2$ なので，相対誤差 $2u^2=\\delta$ より $\\boldsymbol{r/l=\\sqrt{2/\\delta}}$．近似値は過小評価．たとえば $\\delta=1\\%$ で $r/l\\fallingdotseq14$．\n\n(2) 二等分面上で $E=\\dfrac{2kql}{(r^2+l^2)^{3/2}}$，$\\boldsymbol{\\dfrac{E}{E_0}=(1+u^2)^{-3/2}}\\fallingdotseq1-\\dfrac32u^2$．$\\dfrac32u^2=\\delta$ より $\\boldsymbol{r/l=\\sqrt{3/(2\\delta)}}$．近似値は過大評価．\n\n(3) $\\dfrac1{|\\boldsymbol r\\mp l\\hat{\\boldsymbol x}|}=\\dfrac1r\\sum_n(\\pm u)^nP_n(\\cos\\theta)$ より偶数次は打ち消し，\n\\[\nV=\\frac{2kq}{r}\\left\\{uP_1(\\cos\\theta)+u^3P_3(\\cos\\theta)+\\cdots\\right\\}=\\frac{kp\\cos\\theta}{r^2}\\left\\{1+u^2\\frac{P_3(\\cos\\theta)}{\\cos\\theta}+\\cdots\\right\\}.\n\\]\n$P_3=\\frac12(5\\cos^3\\theta-3\\cos\\theta)$ が 0 となる方向，$\\boldsymbol{\\cos\\theta=\\sqrt{3/5}}$（$\\theta\\fallingdotseq39^\\circ$）では誤差が $O(u^4)$ 以下になる．（(1) で軸上の比が $1+2u^2$，(2) で $1-\\frac32u^2$ と符号が逆であることとも整合する．）"
    }
   ],
   "idea": {
@@ -3647,7 +3647,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 比：(1-u^2)^(-2) ; r/l：sqrt(2/δ)\n(2) 比：(1+u^2)^(-3/2) ; r/l：sqrt(3/(2δ))\n(3) $\\cos\\theta$：sqrt(3/5)"
   },
   "methods": [],
   "tags": [
@@ -3679,16 +3679,16 @@
   "theme": "2点電荷の電界零点と電位0の球面",
   "topic": "2点電荷の電界零点と電位0の球面",
   "statement": {
-   "tex": "原点 A に $-40\\,\\mathrm{nC}$，点 B $(-6,-12,0)\\,\\mathrm{cm}$ に $+50\\,\\mathrm{nC}$ の点電荷がある．\n\\begin{enumerate}\n\\item 電界が 0 になる点の座標を求めよ．\n\\item 電位が 0 になる点の全体は球面になることを示し，その中心と半径を求めよ．\n\\item 点 C $(3,4,5)\\,\\mathrm{cm}$ は (2) の球の内側か外側か．C に $20\\,\\mathrm{nC}$ の電荷を無限遠から運んでくるのに要する仕事を求めよ．\n\\end{enumerate}"
+   "tex": "原点 A に電荷 $-kq$，点 B $(-d,0,0)$ に電荷 $+q$ の点電荷がある（$q>0$，$0<k<1$，$d>0$）．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 電界が 0 になる点の $x$ 座標を求めよ．\n\\item 電位が 0 になる点の全体は球面になることを示し，その中心の $x$ 座標と半径を求めよ．\n\\item 点 C $(0,h,0)$（$h>0$）が (2) の球の内側にある条件を求めよ．また，C に電荷 $Q$ を無限遠から運んでくるのに要する仕事を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $(12\\sqrt5+24)(1,2,0)\\,\\mathrm{cm}\\fallingdotseq(50.8,\\,101.7,\\,0)\\,\\mathrm{cm}$　(2) 中心 $(32/3,\\,64/3,\\,0)\\,\\mathrm{cm}$，半径 $40\\sqrt5/3\\fallingdotseq29.8\\,\\mathrm{cm}$　(3) 内側，$W\\fallingdotseq-5.4\\times10^{-5}\\,\\mathrm J$"
+   "tex": "(1) $x=\\dfrac{\\sqrt k\\,d}{1-\\sqrt k}$　(2) 中心 $x=\\dfrac{k^2d}{1-k^2}$，半径 $\\dfrac{kd}{1-k^2}$　(3) $h<\\dfrac{kd}{\\sqrt{1-k^2}}$，$W=\\dfrac{qQ}{4\\pi\\varepsilon_0}\\left(\\dfrac{1}{\\sqrt{d^2+h^2}}-\\dfrac{k}{h}\\right)$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "AB 間距離 $d=\\sqrt{36+144}=6\\sqrt5\\fallingdotseq13.42\\,\\mathrm{cm}$．B から A への向きの単位ベクトルは $\\boldsymbol e=(1,2,0)/\\sqrt5$．\n\n(1) 異符号なので零点は線分の外側，電荷の小さい A の側（B と反対側）にある．A からの距離を $s$ とすると $\\dfrac{40}{s^2}=\\dfrac{50}{(s+d)^2}$，$\\dfrac{s+d}{s}=\\dfrac{\\sqrt5}2$，$s=\\dfrac{2d}{\\sqrt5-2}=2d(\\sqrt5+2)=60+24\\sqrt5\\fallingdotseq113.7\\,\\mathrm{cm}$．位置は $s\\boldsymbol e=(12\\sqrt5+24)(1,2,0)\\fallingdotseq(50.8,101.7,0)\\,\\mathrm{cm}$．\n\n(2) $V=0$ は $\\dfrac{40}{|\\boldsymbol r-\\boldsymbol A|}=\\dfrac{50}{|\\boldsymbol r-\\boldsymbol B|}$，すなわち $|\\boldsymbol r-\\boldsymbol A|=K|\\boldsymbol r-\\boldsymbol B|$，$K=0.8$．2 乗して整理すると\n\\[\n(1-K^2)r^2-2\\boldsymbol r\\cdot(\\boldsymbol A-K^2\\boldsymbol B)+A^2-K^2B^2=0\n\\]\nで，これは中心 $\\boldsymbol C_0=\\dfrac{\\boldsymbol A-K^2\\boldsymbol B}{1-K^2}$，半径 $\\rho=\\dfrac{K|\\boldsymbol A-\\boldsymbol B|}{1-K^2}$ の球面（Apollonius の球）．$\\boldsymbol A=0$ より $\\boldsymbol C_0=-\\dfrac{0.64}{0.36}(-6,-12,0)=\\left(\\dfrac{32}3,\\dfrac{64}3,0\\right)\\,\\mathrm{cm}$，$\\rho=\\dfrac{0.8\\times6\\sqrt5}{0.36}=\\dfrac{40\\sqrt5}{3}\\fallingdotseq29.8\\,\\mathrm{cm}$．球は電荷の小さいほうの A を内部に含む．\n\n(3) $|\\boldsymbol C-\\boldsymbol C_0|=\\sqrt{(3-10.67)^2+(4-21.33)^2+5^2}\\fallingdotseq19.6\\,\\mathrm{cm}<\\rho$ で内側．内側は A に近く $V<0$．$|AC|=\\sqrt{50}=7.071\\,\\mathrm{cm}$，$|BC|=19.03\\,\\mathrm{cm}$ より\n\\[\nV_C=9.0\\times10^9\\left(\\frac{-40\\times10^{-9}}{0.07071}+\\frac{50\\times10^{-9}}{0.1903}\\right)\\fallingdotseq-2.72\\times10^3\\ \\mathrm V,\n\\]\n$W=qV_C=20\\times10^{-9}\\times(-2.72\\times10^3)\\fallingdotseq-5.4\\times10^{-5}\\ \\mathrm J$（外力は負の仕事，電荷は引き込まれる）．"
+    "tex": "(1) 異符号なので零点は直線 AB 上の線分の外側，電荷の小さい A の側（B と反対側，$x>0$）にある．A からの距離を $s$ とすると $\\dfrac{k}{s^2}=\\dfrac{1}{(s+d)^2}$，$\\dfrac{s+d}{s}=\\dfrac1{\\sqrt k}$ より\n\\[ \\boldsymbol{x=s=\\frac{\\sqrt k\\,d}{1-\\sqrt k}}. \\]\n$k$ が 1 に近いと零点は遠くへ去る．\n\n(2) $V=0$ は $\\dfrac{k}{|\\boldsymbol r-\\boldsymbol A|}=\\dfrac{1}{|\\boldsymbol r-\\boldsymbol B|}$，すなわち $|\\boldsymbol r-\\boldsymbol A|=k|\\boldsymbol r-\\boldsymbol B|$．2 乗して整理すると\n\\[\n(1-k^2)r^2-2\\boldsymbol r\\cdot(\\boldsymbol A-k^2\\boldsymbol B)+A^2-k^2B^2=0\n\\]\nで，これは中心 $\\boldsymbol C_0=\\dfrac{\\boldsymbol A-k^2\\boldsymbol B}{1-k^2}$，半径 $\\rho=\\dfrac{k|\\boldsymbol A-\\boldsymbol B|}{1-k^2}$ の球面（Apollonius の球）．$\\boldsymbol A=0$，$\\boldsymbol B=(-d,0,0)$ より中心 $\\boldsymbol{x=\\dfrac{k^2d}{1-k^2}}$，半径 $\\boldsymbol{\\rho=\\dfrac{kd}{1-k^2}}$．球は電荷の小さいほうの A を内部に含む．\n\n(3) C と中心の距離の 2 乗は $h^2+\\left(\\dfrac{k^2d}{1-k^2}\\right)^2$．これが $\\rho^2$ より小さい条件は\n\\[ h^2<\\frac{k^2d^2-k^4d^2}{(1-k^2)^2}=\\frac{k^2d^2}{1-k^2},\\qquad\\boldsymbol{h<\\frac{kd}{\\sqrt{1-k^2}}}. \\]\n内側は A に近く $V<0$．$|AC|=h$，$|BC|=\\sqrt{d^2+h^2}$ より\n\\[\n\\boldsymbol{W=QV_C=\\frac{qQ}{4\\pi\\varepsilon_0}\\left(\\frac{1}{\\sqrt{d^2+h^2}}-\\frac{k}{h}\\right)}.\n\\]\nC が球の内側なら $V_C<0$ で，正の $Q$ に対して外力の仕事は負（電荷は引き込まれる）．"
    }
   ],
   "idea": {
@@ -3696,7 +3696,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) x：sqrt(k) d/(1-sqrt(k))\n(2) 中心：k^2 d/(1-k^2) ; 半径：k d/(1-k^2)\n(3) 条件：h < k d/sqrt(1-k^2) ; W：(q Q/(4 pi ε_0))(1/sqrt(d^2+h^2)-k/h)"
   },
   "methods": [],
   "tags": [
@@ -3829,16 +3829,16 @@
   "theme": "無限平面電荷の電界を担う領域：円と正方形",
   "topic": "無限平面電荷の電界を担う領域：円と正方形",
   "statement": {
-   "tex": "一様な面密度 $\\sigma$ で帯電した無限平面から距離 $l$ の点 P を考える．P から平面に下ろした垂線の足を O とする．\n\\begin{enumerate}\n\\item O を中心とする半径 $R$ の円板上の電荷が P に作る電界は，全体の電界の何割か．全体の $90\\%$ を担う $R$ を求めよ．\n\\item O を中心とする一辺 $2L$ の正方形上の電荷が P に作る電界の割合を求めよ．ただし，P から見た正方形の立体角が $\\Omega=4\\tan^{-1}\\dfrac{L^2}{l\\sqrt{2L^2+l^2}}$ であることを用いてよい．\n\\item ちょうど半分を担う円板の半径と正方形の半辺 $L$ を求め，両者の面積を比べよ．\n\\end{enumerate}"
+   "tex": "一様な面密度 $\\sigma$ で帯電した無限平面から距離 $l$ の点 P を考える．P から平面に下ろした垂線の足を O とする．\n\\begin{enumerate}\n\\item O を中心とする半径 $R$ の円板上の電荷が P に作る電界は，全体の電界の何割か．全体の $f$ 倍（$0<f<1$）を担う $R$ を求めよ．\n\\item O を中心とする一辺 $2L$ の正方形上の電荷が P に作る電界の割合を求めよ．ただし，P から見た正方形の立体角が $\\Omega=4\\tan^{-1}\\dfrac{L^2}{l\\sqrt{2L^2+l^2}}$ であることを用いてよい．\n\\item ちょうど半分を担う円板の半径と正方形の半辺 $L$ を求め，両者の面積を比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $1-\\dfrac{l}{\\sqrt{l^2+R^2}}$，$R=\\sqrt{99}\\,l\\fallingdotseq9.95l$　(2) $\\dfrac{\\Omega}{2\\pi}$　(3) 円 $R=\\sqrt3l$（面積 $3\\pi l^2\\fallingdotseq9.42l^2$），正方形 $L=\\sqrt{1+\\sqrt2}\\,l\\fallingdotseq1.554l$（面積 $4(1+\\sqrt2)l^2\\fallingdotseq9.66l^2$）"
+   "tex": "(1) $1-\\dfrac{l}{\\sqrt{l^2+R^2}}$，$R=\\dfrac{l\\sqrt{1-(1-f)^2}}{1-f}$　(2) $\\dfrac{\\Omega}{2\\pi}$　(3) 円 $R=\\sqrt3l$（面積 $3\\pi l^2$），正方形 $L=\\sqrt{1+\\sqrt2}\\,l$（面積 $4(1+\\sqrt2)l^2$）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "面要素 $dS$ の電荷が P に作る電界の法線成分は $\\dfrac{\\sigma\\,dS\\cos\\theta}{4\\pi\\varepsilon_0r^2}=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}d\\Omega$．平面に平行な成分は O について対称な領域なら打ち消す．よって領域の寄与は $\\dfrac{\\sigma\\Omega}{4\\pi\\varepsilon_0}$ で，無限平面（$\\Omega=2\\pi$）の $\\dfrac{\\sigma}{2\\varepsilon_0}$ に対する割合は $\\Omega/2\\pi$．\n\n(1) 円板の立体角 $\\Omega=2\\pi\\left(1-\\dfrac{l}{\\sqrt{l^2+R^2}}\\right)$．割合 $1-\\dfrac{l}{\\sqrt{l^2+R^2}}=0.9$ より $\\sqrt{l^2+R^2}=10l$，$R=\\sqrt{99}\\,l\\fallingdotseq9.95l$．$90\\%$ を得るのにも $l$ の約 10 倍の範囲が必要である．\n\n(2) 割合は $\\dfrac{\\Omega}{2\\pi}=\\dfrac2\\pi\\tan^{-1}\\dfrac{L^2}{l\\sqrt{2L^2+l^2}}$．\n\n(3) 円：$1-l/\\sqrt{l^2+R^2}=1/2$ より $R=\\sqrt3l$（P からの距離 $2l$）．正方形：$\\Omega=\\pi$ より $\\tan^{-1}(\\cdots)=\\pi/4$，$L^2=l\\sqrt{2L^2+l^2}$，$L^4-2l^2L^2-l^4=0$，$L^2=(1+\\sqrt2)l^2$，$L\\fallingdotseq1.554l$．面積は円 $3\\pi l^2\\fallingdotseq9.42l^2$，正方形 $4(1+\\sqrt2)l^2\\fallingdotseq9.66l^2$ で，正方形のほうがやや大きい面積を要する（隅の部分は P から遠く，立体角への寄与の効率が悪い）．"
+    "tex": "面要素 $dS$ の電荷が P に作る電界の法線成分は $\\dfrac{\\sigma\\,dS\\cos\\theta}{4\\pi\\varepsilon_0r^2}=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}d\\Omega$．平面に平行な成分は O について対称な領域なら打ち消す．よって領域の寄与は $\\dfrac{\\sigma\\Omega}{4\\pi\\varepsilon_0}$ で，無限平面（$\\Omega=2\\pi$）の $\\dfrac{\\sigma}{2\\varepsilon_0}$ に対する割合は $\\Omega/2\\pi$．\n\n(1) 円板の立体角 $\\Omega=2\\pi\\left(1-\\dfrac{l}{\\sqrt{l^2+R^2}}\\right)$ より割合は $\\boldsymbol{1-\\dfrac{l}{\\sqrt{l^2+R^2}}}$．これが $f$ に等しいとき $\\sqrt{l^2+R^2}=\\dfrac{l}{1-f}$，\n\\[ \\boldsymbol{R=\\frac{l\\sqrt{1-(1-f)^2}}{1-f}}. \\]\n$f\\to1$ で $R\\fallingdotseq l/(1-f)$ と発散し，たとえば $90\\%$ を得るのにも $l$ の約 10 倍の範囲が必要である．\n\n(2) 割合は $\\boldsymbol{\\dfrac{\\Omega}{2\\pi}}=\\dfrac2\\pi\\tan^{-1}\\dfrac{L^2}{l\\sqrt{2L^2+l^2}}$．\n\n(3) 円：(1) で $f=1/2$ として $\\boldsymbol{R=\\sqrt3l}$（P からの距離 $2l$）．正方形：$\\Omega=\\pi$ より $\\tan^{-1}(\\cdots)=\\pi/4$，$L^2=l\\sqrt{2L^2+l^2}$，$L^4-2l^2L^2-l^4=0$，$L^2=(1+\\sqrt2)l^2$，$\\boldsymbol{L=\\sqrt{1+\\sqrt2}\\,l}$．面積は円 $\\boldsymbol{3\\pi l^2}$，正方形 $\\boldsymbol{4(1+\\sqrt2)l^2}$ で，$4(1+\\sqrt2)>3\\pi$ だから正方形のほうがやや大きい面積を要する（隅の部分は P から遠く，立体角への寄与の効率が悪い）．"
    }
   ],
   "idea": {
@@ -3846,7 +3846,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) ((Ω)/(2 pi))\n(3) 記述"
+   "spec": "(1) 割合：1-l/sqrt(l^2+R^2) ; $R$：l sqrt(1-(1-f)^2)/(1-f)\n(2) ((Ω)/(2 pi))\n(3) 円の $R$：sqrt(3) l ; 正方形の $L$：sqrt(1+sqrt(2)) l ; 円の面積：3 pi l^2 ; 正方形の面積：4(1+sqrt(2)) l^2"
   },
   "methods": [],
   "tags": [
@@ -3928,16 +3928,16 @@
   "theme": "電荷中心近似の誤差と四重極",
   "topic": "電荷中心近似の誤差と四重極",
   "statement": {
-   "tex": "$x$ 軸上の原点に $q$，$x=d$ に $3q$ の点電荷がある（$q>0$）．\n\\begin{enumerate}\n\\item 電荷中心 $x_c$ を求めよ．\n\\item 電荷中心からの距離 $\\rho\\,(\\gg d)$，$x$ 軸となす角 $\\theta$ の点で，全電荷 $4q$ が電荷中心に集まったとした電位の相対誤差の主要項を求めよ．$x$ 軸上と，電荷中心を通る垂直面上での値を書け．相対誤差の主要項が消える方向はどこか．\n\\item 電荷中心でなく原点に $4q$ を置いて近似した場合の相対誤差の主要項を求め，(2) と比べよ．\n\\end{enumerate}"
+   "tex": "$x$ 軸上の原点に $q$，$x=d$ に $kq$ の点電荷がある（$q>0$，$k>0$）．\n\\begin{enumerate}\n\\item 電荷中心 $x_c$ を求めよ．\n\\item 電荷中心からの距離 $\\rho\\,(\\gg d)$，$x$ 軸となす角 $\\theta$ の点で，全電荷 $(1+k)q$ が電荷中心に集まったとした電位の相対誤差の主要項を求めよ．$x$ 軸上と，電荷中心を通る垂直面上での値を書け．相対誤差の主要項が消える方向（$\\cos^2\\theta$ の値）はどこか．\n\\item 電荷中心でなく原点に $(1+k)q$ を置いて近似した場合の，原点からの距離 $R$，$x$ 軸となす角 $\\theta$ の点での相対誤差の主要項を求め，(2) と比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $x_c=\\dfrac34d$　(2) $\\dfrac{3d^2}{16\\rho^2}P_2(\\cos\\theta)$；軸上 $\\dfrac{3d^2}{16\\rho^2}$，垂直面上 $-\\dfrac{3d^2}{32\\rho^2}$；$\\cos^2\\theta=1/3$（$\\theta\\fallingdotseq54.7^\\circ$）　(3) $\\dfrac{3d}{4R}\\cos\\theta$（1 次で誤差が大きい）"
+   "tex": "(1) $x_c=\\dfrac{kd}{1+k}$　(2) $\\dfrac{kd^2}{(1+k)^2\\rho^2}P_2(\\cos\\theta)$；軸上 $\\dfrac{kd^2}{(1+k)^2\\rho^2}$，垂直面上 $-\\dfrac{kd^2}{2(1+k)^2\\rho^2}$；$\\cos^2\\theta=\\dfrac13$　(3) $\\dfrac{kd}{(1+k)R}\\cos\\theta$（1 次で誤差が大きい）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $x_c=\\dfrac{q\\cdot0+3q\\cdot d}{4q}=\\dfrac34d$．\n\n(2) 電荷中心を原点にとると電荷の位置は $s_1=-\\frac34d$（$q$），$s_2=\\frac14d$（$3q$）．$\\dfrac1{|\\boldsymbol r-s\\hat{\\boldsymbol x}|}=\\dfrac1\\rho\\sum_n\\left(\\dfrac s\\rho\\right)^nP_n(\\cos\\theta)$ より\n\\[\nV=\\frac{1}{4\\pi\\varepsilon_0\\rho}\\left\\{\\sum q_i+\\frac{\\sum q_is_i}{\\rho}P_1+\\frac{\\sum q_is_i^2}{\\rho^2}P_2+\\cdots\\right\\}.\n\\]\n電荷中心の定義から $\\sum q_is_i=0$（双極子項が消える）．$\\sum q_is_i^2=q\\frac{9}{16}d^2+3q\\frac1{16}d^2=\\frac34qd^2$．相対誤差は\n\\[\n\\frac{V-V_0}{V_0}\\fallingdotseq\\frac{\\frac34qd^2}{4q\\rho^2}P_2(\\cos\\theta)=\\frac{3d^2}{16\\rho^2}P_2(\\cos\\theta).\n\\]\n軸上（$P_2=1$）で $\\dfrac{3d^2}{16\\rho^2}$，垂直面上（$P_2=-\\frac12$）で $-\\dfrac{3d^2}{32\\rho^2}$．$P_2=0$ すなわち $\\cos^2\\theta=\\frac13$（$\\theta\\fallingdotseq54.7^\\circ$）の方向で主要項が消える．\n\n(3) 原点を中心にとると $\\sum q_ix_i=3qd\\ne0$ なので，原点からの距離 $R$ で\n\\[\n\\frac{V-V_0}{V_0}\\fallingdotseq\\frac{3qd}{4qR}\\cos\\theta=\\frac{3d}{4R}\\cos\\theta,\n\\]\n$d/R$ の 1 次の誤差が残る．電荷中心を選ぶことで誤差が $(d/\\rho)^2$ に下がる（ただし全電荷が 0 の分布では電荷中心は定義できない）．"
+    "tex": "(1) $x_c=\\dfrac{q\\cdot0+kq\\cdot d}{(1+k)q}=\\boldsymbol{\\dfrac{kd}{1+k}}$．\n\n(2) 電荷中心を原点にとると電荷の位置は $s_1=-\\dfrac{kd}{1+k}$（$q$），$s_2=\\dfrac{d}{1+k}$（$kq$）．$\\dfrac1{|\\boldsymbol r-s\\hat{\\boldsymbol x}|}=\\dfrac1\\rho\\sum_n\\left(\\dfrac s\\rho\\right)^nP_n(\\cos\\theta)$ より\n\\[\nV=\\frac{1}{4\\pi\\varepsilon_0\\rho}\\left\\{\\sum q_i+\\frac{\\sum q_is_i}{\\rho}P_1+\\frac{\\sum q_is_i^2}{\\rho^2}P_2+\\cdots\\right\\}.\n\\]\n電荷中心の定義から $\\sum q_is_i=0$（双極子項が消える）．$\\sum q_is_i^2=q\\dfrac{k^2d^2}{(1+k)^2}+kq\\dfrac{d^2}{(1+k)^2}=\\dfrac{kqd^2}{1+k}$．相対誤差は\n\\[\n\\frac{V-V_0}{V_0}\\fallingdotseq\\frac{kqd^2/(1+k)}{(1+k)q\\rho^2}P_2(\\cos\\theta)=\\boldsymbol{\\frac{kd^2}{(1+k)^2\\rho^2}P_2(\\cos\\theta)}.\n\\]\n軸上（$P_2=1$）で $\\boldsymbol{\\dfrac{kd^2}{(1+k)^2\\rho^2}}$，垂直面上（$P_2=-\\frac12$）で $\\boldsymbol{-\\dfrac{kd^2}{2(1+k)^2\\rho^2}}$．$P_2=0$ すなわち $\\boldsymbol{\\cos^2\\theta=\\frac13}$（$\\theta\\fallingdotseq54.7^\\circ$）の方向で主要項が消える．\n\n(3) 原点を中心にとると $\\sum q_ix_i=kqd\\ne0$ なので，原点からの距離 $R$ で\n\\[\n\\frac{V-V_0}{V_0}\\fallingdotseq\\frac{kqd}{(1+k)qR}\\cos\\theta=\\boldsymbol{\\frac{kd}{(1+k)R}\\cos\\theta},\n\\]\n$d/R$ の 1 次の誤差が残る．電荷中心を選ぶことで誤差が $(d/\\rho)^2$ に下がる（ただし全電荷が 0 の分布では電荷中心は定義できない）．"
    }
   ],
   "idea": {
@@ -3945,7 +3945,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $x_c$：((3)/(4)) d\n(2) 記述\n(3) ((3 d)/(4 R)) cos θ"
+   "spec": "(1) $x_c$：k d/(1+k)\n(2) 軸上：k d^2/((1+k)^2 ρ^2) ; 垂直面上：-k d^2/(2(1+k)^2 ρ^2) ; $\\cos^2\\theta$：1/3\n(3) k d cos(θ)/((1+k) R)"
   },
   "methods": [],
   "tags": [
@@ -4573,16 +4573,16 @@
   "theme": "内圧を大気圧に戻すシャボン玉の帯電",
   "topic": "内圧を大気圧に戻すシャボン玉の帯電",
   "statement": {
-   "tex": "表面張力 $T$，半径 $r$ の帯電していないシャボン玉（膜は 2 面）がある．大気圧を $p_0$，内部の気体は等温変化する理想気体とし，シャボン玉を導体と考える．これに電荷を与えたところ，内部の気体の圧力がちょうど大気圧 $p_0$ に等しくなった．\n\\begin{enumerate}\n\\item このときの半径 $R$ を $r,T,p_0$ で表せ．\n\\item 与えた電荷 $Q$ と，シャボン玉の電位 $V$ を $R,T$ で表せ．\n\\item $T=0.025\\ \\mathrm{N/m}$，$r=1.0\\ \\mathrm{cm}$，$p_0=1.013\\times10^5\\ \\mathrm{Pa}$ のとき $V$ を求めよ．\n\\end{enumerate}"
+   "tex": "表面張力 $T$，半径 $r$ の帯電していないシャボン玉（膜は 2 面）がある．大気圧を $p_0$，内部の気体は等温変化する理想気体とし，シャボン玉を導体と考える．真空の誘電率を $\\varepsilon_0$ とする．これに電荷を与えたところ，内部の気体の圧力がちょうど大気圧 $p_0$ に等しくなった．\n\\begin{enumerate}\n\\item このときの半径 $R$ を $r,T,p_0$ で表せ．\n\\item 与えた電荷 $Q$ と，シャボン玉の電位 $V$ を $R,T$ で表せ．\n\\item ふつうのシャボン玉では $4T/(p_0r)\\ll1$ である．このとき $V$ を $r,\\ T$ で近似的に表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $R=r\\left(1+\\dfrac{4T}{p_0r}\\right)^{1/3}$　(2) $Q=8\\sqrt2\\,\\pi\\sqrt{\\varepsilon_0TR^3}$，$V=\\sqrt{\\dfrac{8TR}{\\varepsilon_0}}$　(3) $V\\approx1.5\\times10^4\\ \\mathrm V$"
+   "tex": "(1) $R=r\\left(1+\\dfrac{4T}{p_0r}\\right)^{1/3}$　(2) $Q=8\\sqrt{2}\\pi\\sqrt{\\varepsilon_0TR^3}$，$V=\\sqrt{\\dfrac{8TR}{\\varepsilon_0}}$　(3) $V\\approx\\sqrt{\\dfrac{8Tr}{\\varepsilon_0}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "〔17〕と同様に，内圧 $p'$ は膜のつり合いから\n\\[ p'=p_0+\\frac{4T}{R}-\\frac{\\varepsilon_0E^2}{2},\\qquad E=\\frac{Q}{4\\pi\\varepsilon_0R^2}. \\]\n(1) 初め $p=p_0+4T/r$，後 $p'=p_0$．等温変化 $pv=p'v'$ より $\\left(p_0+\\dfrac{4T}{r}\\right)r^3=p_0R^3$，\n\\[ R=r\\left(1+\\frac{4T}{p_0r}\\right)^{1/3}. \\]\n(2) $p'=p_0$ より静電圧力が表面張力の圧力をちょうど打ち消す：$\\dfrac{\\varepsilon_0E^2}{2}=\\dfrac{4T}{R}$．\n\\[ \\frac{Q^2}{32\\pi^2\\varepsilon_0R^4}=\\frac{4T}{R}\\ \\Rightarrow\\ Q=\\sqrt{128\\pi^2\\varepsilon_0TR^3}=8\\sqrt2\\,\\pi\\sqrt{\\varepsilon_0TR^3}, \\]\n\\[ V=\\frac{Q}{4\\pi\\varepsilon_0R}=ER=\\sqrt{\\frac{8T}{\\varepsilon_0R}}\\,R=\\sqrt{\\frac{8TR}{\\varepsilon_0}}. \\]\n(3) $4T/(p_0r)\\approx1\\times10^{-4}$ なので $R\\simeq r$．$V=\\sqrt{8\\times0.025\\times0.010/8.85\\times10^{-12}}\\approx1.5\\times10^4\\ \\mathrm V$．\n注：半径の変化はわずか（相対 $3\\times10^{-5}$）だが，表面張力の圧力 $4T/R=10\\ \\mathrm{Pa}$ を打ち消すのに 15 kV もの電位が必要である．"
+    "tex": "〔17〕と同様に，内圧 $p'$ は膜のつり合いから\n\\[ p'=p_0+\\frac{4T}{R}-\\frac{\\varepsilon_0E^2}{2},\\qquad E=\\frac{Q}{4\\pi\\varepsilon_0R^2}. \\]\n(1) 初め $p=p_0+4T/r$，後 $p'=p_0$．等温変化 $pv=p'v'$ より $\\left(p_0+\\dfrac{4T}{r}\\right)r^3=p_0R^3$，\n\\[ \\boldsymbol{R=r\\left(1+\\frac{4T}{p_0r}\\right)^{1/3}}. \\]\n(2) $p'=p_0$ より静電圧力が表面張力の圧力をちょうど打ち消す：$\\dfrac{\\varepsilon_0E^2}{2}=\\dfrac{4T}{R}$．\n\\[ \\frac{Q^2}{32\\pi^2\\varepsilon_0R^4}=\\frac{4T}{R}\\ \\Rightarrow\\ \\boldsymbol{Q=\\sqrt{128\\pi^2\\varepsilon_0TR^3}=8\\sqrt2\\,\\pi\\sqrt{\\varepsilon_0TR^3}}, \\]\n\\[ \\boldsymbol{V=\\frac{Q}{4\\pi\\varepsilon_0R}=ER=\\sqrt{\\frac{8T}{\\varepsilon_0R}}\\,R=\\sqrt{\\frac{8TR}{\\varepsilon_0}}}. \\]\n(3) $4T/(p_0r)\\ll1$ なら $R=r\\left(1+\\dfrac{4T}{3p_0r}+\\cdots\\right)\\fallingdotseq r$ なので $\\boldsymbol{V\\fallingdotseq\\sqrt{8Tr/\\varepsilon_0}}$．\n注：半径の変化はごくわずか（相対 $\\dfrac{4T}{3p_0r}$）だが，$V$ は $\\varepsilon_0$ が小さいため非常に大きい．半径 $1\\,\\mathrm{cm}$ の玉では $10^4\\,\\mathrm V$ 程度になる．"
    }
   ],
   "idea": {
@@ -4590,7 +4590,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $V$ [V]：≈1.5e4"
+   "spec": "(1) $R$：r (1+4T/(p_0 r))^(1/3)\n(2) $Q$：8 sqrt(2) pi sqrt(ε_0 T R^3) ; $V$：sqrt(8T R/ε_0)\n(3) $V$：sqrt(8T r/ε_0)"
   },
   "methods": [],
   "tags": [
@@ -4722,16 +4722,16 @@
   "theme": "同符号2電荷の電気力線の到達方向の範囲とよどみ点",
   "topic": "同符号2電荷の電気力線の到達方向の範囲とよどみ点",
   "statement": {
-   "tex": "点 A に $+3q$，点 B に $+q$ があり AB $=d$ である．A から BA の向きに対して角 $\\alpha$ で出た電気力線は，無限遠で BA に対して $\\beta=2\\sin^{-1}\\Bigl(\\sqrt{\\dfrac{3}{4}}\\sin\\dfrac{\\alpha}{2}\\Bigr)$ の角をなす（〔19〕）．\n\\begin{enumerate}\n\\item A から出た電気力線が無限遠で到達しうる方向の範囲を求めよ．\n\\item 電界が 0 になる点の位置を求め，$\\alpha\\to\\pi$ の電気力線がどのような経路をとるか説明せよ．\n\\item A から AB に垂直に出た電気力線の無限遠での角を求めよ．また，B から出た電気力線が無限遠で占める円錐の半頂角と，その円錐を貫く電束の割合を計算して整合性を確かめよ．\n\\end{enumerate}"
+   "tex": "点 A に $+kq$，点 B に $+q$ があり（$q>0$，$k>1$），AB $=d$ である．A から BA の向きに対して角 $\\alpha$ で出た電気力線は，無限遠で BA に対して\n\\[ \\beta=2\\sin^{-1}\\Bigl(\\sqrt{\\frac{k}{k+1}}\\,\\sin\\frac{\\alpha}{2}\\Bigr) \\]\nの角をなす（〔19〕と同様にして導かれる）．\n\\begin{enumerate}\n\\item A から出た電気力線が無限遠で到達しうる方向の範囲（$\\beta$ の上限 $\\beta_{\\max}$）を求めよ．\n\\item 電界が 0 になる点の A からの距離を求め，$\\alpha\\to\\pi$ の電気力線がどのような経路をとるか説明せよ．\n\\item A から AB に垂直に出た電気力線の無限遠での角 $\\beta$ について $\\sin(\\beta/2)$ を求めよ．また，B から出た電気力線が無限遠で占める円錐の半頂角 $\\gamma$ について $\\cos\\gamma$ を求め，その円錐を貫く電束の割合を計算して整合性を確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $0\\le\\beta<120^\\circ$　(2) A から $\\dfrac{3-\\sqrt3}{2}d\\approx0.634d$ の点（AB 上）．よどみ点で垂直方向へ折れ曲がり $\\beta\\to120^\\circ$ に向かう　(3) $\\beta=2\\sin^{-1}\\sqrt{3/8}\\approx75.5^\\circ$．B の線は半頂角 $60^\\circ$ の円錐，割合 $1/4$"
+   "tex": "(1) $0\\le\\beta<\\beta_{\\max}=2\\sin^{-1}\\sqrt{\\dfrac{k}{k+1}}$　(2) A から $\\dfrac{\\sqrt k}{1+\\sqrt k}d$ の点（AB 上）．よどみ点で垂直方向へ折れ曲がり $\\beta\\to\\beta_{\\max}$ に向かう　(3) $\\sin\\dfrac\\beta2=\\sqrt{\\dfrac{k}{2(k+1)}}$．$\\cos\\gamma=\\dfrac{k-1}{k+1}$，割合 $\\dfrac{1}{k+1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\beta$ は $\\alpha$ の増加関数で，$\\alpha=\\pi$ のとき $\\sin\\dfrac{\\beta}{2}=\\dfrac{\\sqrt3}{2}$，$\\beta=120^\\circ$．よって $0\\le\\beta<120^\\circ$．\n(2) AB 上で A から距離 $x$ の点で $\\dfrac{3}{x^2}=\\dfrac{1}{(d-x)^2}$，$x=\\sqrt3(d-x)$，$x=\\dfrac{\\sqrt3}{1+\\sqrt3}d=\\dfrac{3-\\sqrt3}{2}d$．\n$\\alpha=\\pi$ の線は A から B へ向かって AB 上を進み，このよどみ点で止まる．$\\alpha$ がわずかに $\\pi$ より小さい線はよどみ点の近くで AB に垂直な方向へ曲がり，無限遠で $\\beta\\to120^\\circ$ に向かう．よどみ点から垂直に広がる線の面が，A の線と B の線の境界面になる．\n(3) $\\alpha=90^\\circ$：$\\sin\\dfrac{\\beta}{2}=\\sqrt{\\dfrac34}\\cdot\\dfrac{1}{\\sqrt2}=\\sqrt{\\dfrac38}$，$\\beta\\approx75.5^\\circ$．\nB の線は残りの方向 $120^\\circ<\\beta\\le180^\\circ$，すなわち AB 方向（A から B へ向かう方向）のまわりの半頂角 $60^\\circ$ の円錐を占める．遠方では全電荷 $4q$ の点電荷とみなせるので，この円錐を貫く電束の割合は $\\dfrac{1-\\cos60^\\circ}{2}=\\dfrac14$，これは $q/(3q+q)$ に一致する．"
+    "tex": "(1) $\\beta$ は $\\alpha$ の増加関数で，$\\alpha=\\pi$ のとき $\\sin\\dfrac{\\beta}{2}=\\sqrt{\\dfrac{k}{k+1}}$．よって $\\boldsymbol{0\\le\\beta<2\\sin^{-1}\\sqrt{k/(k+1)}}$．たとえば $k=3$ なら $\\beta_{\\max}=120^\\circ$．\n\n(2) AB 上で A から距離 $x$ の点で $\\dfrac{k}{x^2}=\\dfrac{1}{(d-x)^2}$，$x=\\sqrt k(d-x)$，$\\boldsymbol{x=\\dfrac{\\sqrt k}{1+\\sqrt k}d}$．\n$\\alpha=\\pi$ の線は A から B へ向かって AB 上を進み，このよどみ点で止まる．$\\alpha$ がわずかに $\\pi$ より小さい線はよどみ点の近くで AB に垂直な方向へ曲がり，無限遠で $\\beta\\to\\beta_{\\max}$ に向かう．よどみ点から垂直に広がる線の面が，A の線と B の線の境界面になる．\n\n(3) $\\alpha=90^\\circ$：$\\sin\\dfrac{\\beta}{2}=\\sqrt{\\dfrac{k}{k+1}}\\cdot\\dfrac{1}{\\sqrt2}=\\boldsymbol{\\sqrt{\\dfrac{k}{2(k+1)}}}$．\nB の線は残りの方向 $\\beta_{\\max}<\\beta\\le\\pi$，すなわち AB 方向（A から B へ向かう方向）のまわりの半頂角 $\\gamma=\\pi-\\beta_{\\max}$ の円錐を占める．$s=\\sqrt{k/(k+1)}$ とおくと $\\cos\\beta_{\\max}=1-2s^2$ なので\n\\[ \\boldsymbol{\\cos\\gamma=-\\cos\\beta_{\\max}=2s^2-1=\\frac{k-1}{k+1}}. \\]\n遠方では全電荷 $(k+1)q$ の点電荷とみなせるので，この円錐を貫く電束の割合は\n\\[ \\frac{1-\\cos\\gamma}{2}=\\boldsymbol{\\frac{1}{k+1}}, \\]\nこれは $q/(kq+q)$ に一致する．"
    }
   ],
   "idea": {
@@ -4739,7 +4739,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\beta_{max}$：2 arcsin(sqrt(k/(k+1)))\n(2) 距離：sqrt(k) d/(1+sqrt(k))\n(3) $\\sin(\\beta/2)$：sqrt(k/(2(k+1))) ; $\\cos\\gamma$：(k-1)/(k+1) ; 割合：1/(k+1)"
   },
   "methods": [],
   "tags": [
@@ -4772,16 +4772,16 @@
   "theme": "異符号電荷の電気力線の境界角を電束の勘定で求める",
   "topic": "異符号電荷の電気力線の境界角を電束の勘定で求める",
   "statement": {
-   "tex": "点 A に $+mq\\ (m>1)$，点 B に $-q$ がある（AB $=D$）．\n\\begin{enumerate}\n\\item A から出る電気力線のうち B に入るものの割合を電束から求め，B に入るものと無限遠に行くものの境界の線が A から AB となす角 $\\theta_b$ を求めよ．（〔20〕の結果 $\\cos\\theta_b=1-2/m$ と比べよ．）\n\\item よどみ点（電界 0 の点）の位置を求めよ．\n\\item A から $\\theta_1>\\theta_b$ で出た電気力線の無限遠での方向 $\\beta$（AB 方向から測る）を求め，$\\theta_1$ が $\\theta_b$ から $\\pi$ まで変わるとき $\\beta$ が $0$ から $\\pi$ まですべての値をとることを示せ．$m=4$，$\\theta_1=61^\\circ$ のときの $\\beta$ を求めよ．\n\\end{enumerate}"
+   "tex": "点 A に $+mq\\ (m>1)$，点 B に $-q$ がある（AB $=D$）．\n\\begin{enumerate}\n\\item A から出る電気力線のうち B に入るものの割合を電束から求め，B に入るものと無限遠に行くものの境界の線が A から AB となす角 $\\theta_b$ を求めよ．（〔20〕の結果 $\\cos\\theta_b=1-2/m$ と比べよ．）\n\\item よどみ点（電界 0 の点）の位置を求めよ．\n\\item A から $\\theta_1>\\theta_b$ で出た電気力線の無限遠での方向 $\\beta$（AB 方向から測る）を求め，$\\theta_1$ が $\\theta_b$ から $\\pi$ まで変わるとき $\\beta$ が $0$ から $\\pi$ まですべての値をとることを示せ．$\\theta_1=\\pi/2$（$m>2$）のときの $\\cos\\beta$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 割合 $1/m$，$\\cos\\theta_b=1-\\dfrac2m$　(2) B の外側（A と反対側）に B から $\\dfrac{D}{\\sqrt m-1}$　(3) $\\cos\\beta=\\dfrac{m\\cos\\theta_1+1}{m-1}$，$\\beta\\approx11.6^\\circ$"
+   "tex": "(1) 割合 $1/m$，$\\cos\\theta_b=1-\\dfrac2m$　(2) B の外側（A と反対側）に B から $\\dfrac{D}{\\sqrt m-1}$　(3) $\\cos\\beta=\\dfrac{m\\cos\\theta_1+1}{m-1}$，$\\theta_1=\\pi/2$ で $\\cos\\beta=\\dfrac{1}{m-1}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) B に入る電束は $q/\\varepsilon_0$，A を出る全電束は $mq/\\varepsilon_0$ なので割合は $1/m$．A のすぐ近くでは等方的なので，B に入る線は AB 方向のまわりの円錐 $\\theta_1<\\theta_b$ をなし，その立体角の割合 $\\dfrac{1-\\cos\\theta_b}{2}=\\dfrac1m$．よって $\\cos\\theta_b=1-\\dfrac{2}{m}$ で〔20〕と一致（$m=4$ で $60^\\circ$）．\n（この議論は B に入る線が AB 方向のまわりにまとまっていることを使っている．これは $K$ の単調性（下記）から保証される．）\n(2) 電界は B の外側の AB 延長上で 0 になる．B から距離 $x$ の点で $\\dfrac{m}{(D+x)^2}=\\dfrac{1}{x^2}$，$D+x=\\sqrt mx$，$x=\\dfrac{D}{\\sqrt m-1}$．\n(3) $K=mq\\cos\\theta_1-q\\cos\\theta_2$ が一定．A の直後 $\\theta_2=\\pi$：$K=q(m\\cos\\theta_1+1)$．無限遠で $\\theta_1=\\theta_2=\\beta$：$K=(m-1)q\\cos\\beta$．\n\\[ \\cos\\beta=\\frac{m\\cos\\theta_1+1}{m-1}. \\]\n$\\theta_1=\\theta_b$ で $\\cos\\beta=\\dfrac{m-2+1}{m-1}=1$（$\\beta=0$），$\\theta_1=\\pi$ で $\\cos\\beta=-1$（$\\beta=\\pi$）で，その間は単調．よって無限遠のすべての方向に A の線が届く（B の線は無限遠に出ないので当然である）．境界のすぐ外側の線は，よどみ点の近くを通ってからほぼ AB 方向に無限遠へ向かう．\n$m=4$，$\\theta_1=61^\\circ$：$\\cos\\beta=\\dfrac{4\\cos61^\\circ+1}{3}=0.980$，$\\beta\\approx11.6^\\circ$．"
+    "tex": "(1) B に入る電束は $q/\\varepsilon_0$，A を出る全電束は $mq/\\varepsilon_0$ なので割合は $\\boldsymbol{1/m}$．A のすぐ近くでは等方的なので，B に入る線は AB 方向のまわりの円錐 $\\theta_1<\\theta_b$ をなし，その立体角の割合 $\\dfrac{1-\\cos\\theta_b}{2}=\\dfrac1m$．よって $\\boldsymbol{\\cos\\theta_b=1-\\dfrac{2}{m}}$ で〔20〕と一致．\n（この議論は B に入る線が AB 方向のまわりにまとまっていることを使っている．これは $K$ の単調性（下記）から保証される．）\n\n(2) 電界は B の外側の AB 延長上で 0 になる．B から距離 $x$ の点で $\\dfrac{m}{(D+x)^2}=\\dfrac{1}{x^2}$，$D+x=\\sqrt mx$，$\\boldsymbol{x=\\dfrac{D}{\\sqrt m-1}}$．\n\n(3) $K=mq\\cos\\theta_1-q\\cos\\theta_2$ が一定．A の直後 $\\theta_2=\\pi$：$K=q(m\\cos\\theta_1+1)$．無限遠で $\\theta_1=\\theta_2=\\beta$：$K=(m-1)q\\cos\\beta$．\n\\[ \\boldsymbol{\\cos\\beta=\\frac{m\\cos\\theta_1+1}{m-1}}. \\]\n$\\theta_1=\\theta_b$ で $\\cos\\beta=\\dfrac{m-2+1}{m-1}=1$（$\\beta=0$），$\\theta_1=\\pi$ で $\\cos\\beta=-1$（$\\beta=\\pi$）で，その間は単調．よって無限遠のすべての方向に A の線が届く（B の線は無限遠に出ないので当然である）．境界のすぐ外側の線は，よどみ点の近くを通ってからほぼ AB 方向に無限遠へ向かう．\n$m>2$ なら $\\theta_b<\\pi/2$ で，$\\theta_1=\\pi/2$ の線は無限遠へ行き $\\boldsymbol{\\cos\\beta=\\dfrac{1}{m-1}}$．$m$ が大きいほど $\\beta$ は $90^\\circ$ に近づく（B の影響が相対的に小さい）．"
    }
   ],
   "idea": {
@@ -4789,7 +4789,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 割合：1/ m ; $\\cos\\theta_b$：1-((2)/(m))\n(2) 記述\n(3) $\\cos\\beta$：((m cos θ_1 +1)/(m -1)) ; $\\beta$ [°]：≈11.6"
+   "spec": "(1) 割合：1/ m ; $\\cos\\theta_b$：1-((2)/(m))\n(2) B からの距離：D/(sqrt(m)-1)\n(3) $\\cos\\beta$：((m cos θ_1 +1)/(m -1)) ; $\\theta_1=\\pi/2$ のとき：1/(m-1)"
   },
   "methods": [],
   "tags": [
@@ -4819,19 +4819,19 @@
   "field": "EM-22",
   "level": 2,
   "minutes": 25,
-  "theme": "B に入る角と A を出る角の対応（電荷 9q と −q）",
-  "topic": "B に入る角と A を出る角の対応（電荷 9q と −q）",
+  "theme": "B に入る角と A を出る角の対応（電荷 mq と −q）",
+  "topic": "B に入る角と A を出る角の対応（電荷 mq と −q）",
   "statement": {
-   "tex": "点 A に $+9q$，点 B に $-q$ がある．各電荷から点を見た方向が A→B の向きとなす角をそれぞれ $\\theta_1,\\theta_2$ とする．\n\\begin{enumerate}\n\\item B に方向 $\\varphi$（B の直前の点で $\\theta_2=\\varphi$）から入る電気力線は，A をどの角 $\\theta_1$ で出たものか．一般の $+mq,\\ -q$ について求めよ．\n\\item $m=9$ のとき，B に AB と垂直に入る電気力線が A を出る角を求めよ．\n\\item $m=9$ のとき，A から AB に垂直に出た電気力線の行き先を求めよ．\n\\end{enumerate}"
+   "tex": "点 A に $+mq$，点 B に $-q$ がある（$q>0$，$m>2$）．各電荷から点を見た方向が A→B の向きとなす角をそれぞれ $\\theta_1,\\theta_2$ とする．\n\\begin{enumerate}\n\\item B に方向 $\\varphi$（B の直前の点で $\\theta_2=\\varphi$）から入る電気力線は，A をどの角 $\\theta_1$ で出たものか．$\\cos\\theta_1$ を求めよ．\n\\item B に AB と垂直に入る電気力線が A を出る角 $\\theta_1$ について $\\cos\\theta_1$ を求めよ．\n\\item A から AB に垂直に出た電気力線の行き先を求めよ．無限遠へ行く場合はその方向 $\\beta$（AB 方向から測る）について $\\cos\\beta$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\cos\\theta_1=1-\\dfrac{1+\\cos\\varphi}{m}$　(2) $\\cos\\theta_1=\\dfrac89$，$\\theta_1\\approx27.3^\\circ$　(3) B には入らず，無限遠で $\\cos\\beta=\\dfrac18$（$\\beta\\approx82.8^\\circ$）の方向へ行く"
+   "tex": "(1) $\\cos\\theta_1=1-\\dfrac{1+\\cos\\varphi}{m}$　(2) $\\cos\\theta_1=1-\\dfrac1m$　(3) B には入らず，無限遠で $\\cos\\beta=\\dfrac{1}{m-1}$ の方向へ行く"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "$K=mq\\cos\\theta_1-q\\cos\\theta_2$ が電気力線に沿って一定．\n(1) A の直後：$\\theta_2=\\pi$，$K=q(m\\cos\\theta_1+1)$．B の直前：$\\theta_1=0$，$\\theta_2=\\varphi$，$K=q(m-\\cos\\varphi)$．等置して\n\\[ \\cos\\theta_1=1-\\frac{1+\\cos\\varphi}{m}. \\]\n意味：$\\dfrac{1-\\cos\\theta_1}{2}\\cdot m=\\dfrac{1+\\cos\\varphi}{2}$．左辺は A の円錐 $\\theta_1$ 内の電束（$q$ 単位），右辺は B に $\\varphi$ より AB 寄りから（A 側の半頂角 $\\pi-\\varphi$ の円錐から）入る電束で，両者が等しいという電束の保存そのものである．\n(2) $\\varphi=90^\\circ$：$\\cos\\theta_1=1-\\dfrac19=\\dfrac89$，$\\theta_1\\approx27.3^\\circ$．\n(3) 境界角は $\\cos\\theta_b=1-\\dfrac{2}{9}=\\dfrac79$（$\\theta_b\\approx38.9^\\circ$）で，$90^\\circ>\\theta_b$ なので B には入らない．無限遠では $\\theta_1=\\theta_2=\\beta$，$K=8q\\cos\\beta$．$K=q(9\\cdot0+1)=q$ より $\\cos\\beta=\\dfrac18$，$\\beta\\approx82.8^\\circ$．"
+    "tex": "$K=mq\\cos\\theta_1-q\\cos\\theta_2$ が電気力線に沿って一定．\n\n(1) A の直後：$\\theta_2=\\pi$，$K=q(m\\cos\\theta_1+1)$．B の直前：$\\theta_1=0$，$\\theta_2=\\varphi$，$K=q(m-\\cos\\varphi)$．等置して\n\\[ \\boldsymbol{\\cos\\theta_1=1-\\frac{1+\\cos\\varphi}{m}}. \\]\n意味：$\\dfrac{1-\\cos\\theta_1}{2}\\cdot m=\\dfrac{1+\\cos\\varphi}{2}$．左辺は A の円錐 $\\theta_1$ 内の電束（$q$ 単位），右辺は B に $\\varphi$ より AB 寄りから（A 側の半頂角 $\\pi-\\varphi$ の円錐から）入る電束で，両者が等しいという電束の保存そのものである．\n\n(2) $\\varphi=90^\\circ$：$\\boldsymbol{\\cos\\theta_1=1-\\dfrac1m}$．\n\n(3) B に入る線の境界角は (1) で $\\varphi=\\pi$ として $\\cos\\theta_b=1-\\dfrac{2}{m}$．$m>2$ では $\\cos\\theta_b>0$，すなわち $\\theta_b<90^\\circ$ なので，$90^\\circ$ で出た線は B には入らない．無限遠では $\\theta_1=\\theta_2=\\beta$，$K=(m-1)q\\cos\\beta$．$K=q(m\\cdot0+1)=q$ より $\\boldsymbol{\\cos\\beta=\\dfrac{1}{m-1}}$．たとえば $m=9$ なら $\\beta\\approx83^\\circ$．"
    }
   ],
   "idea": {
@@ -4839,7 +4839,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\cos\\theta_1$：1-((1+ cos φ)/(m))\n(2) $\\cos\\theta_1$：((8)/(9)) ; $\\theta_1$ [°]：≈27.3\n(3) 記述"
+   "spec": "(1) $\\cos\\theta_1$：1-((1+ cos φ)/(m))\n(2) $\\cos\\theta_1$：1-1/m\n(3) $\\cos\\beta$：1/(m-1)"
   },
   "methods": [],
   "tags": [
@@ -5371,16 +5371,16 @@
   "theme": "円周上に等間隔に並ぶN本の線電荷",
   "topic": "円周上に等間隔に並ぶN本の線電荷",
   "statement": {
-   "tex": "誘電率 $\\varepsilon$ の空間で，$xy$ 平面の半径 $a$ の円周上の点 $(a,\\,2\\pi j/N)$（$j=0,1,\\dots,N-1$）を通り $z$ 軸に平行な $N$ 本の無限長直線に，それぞれ線密度 $\\lambda$ の電荷が一様に分布している．\n\\begin{enumerate}\n\\item 1 本の線電荷の円柱座標展開（〔30〕の結果）を用いて，$r>a$ と $r<a$ の電位を級数で表せ．$n$ が $N$ の倍数でない項が消えることを示せ．\n\\item 複素数 $w=x+iy$ を用いると，電位が $V=-\\dfrac{\\lambda}{2\\pi\\varepsilon}\\log|w^N-a^N|$ と閉じた形に書けることを示せ．\n\\item 半径 $R\\ (>a)$ の円周上での電界の大きさの最大値と最小値の比を求めよ．\n\\item $N=8$ のとき，その比が $1.01$ 以下となる $R/a$ の範囲を求めよ．\n\\end{enumerate}"
+   "tex": "誘電率 $\\varepsilon$ の空間で，$xy$ 平面の半径 $a$ の円周上の点 $(a,\\,2\\pi j/N)$（$j=0,1,\\dots,N-1$）を通り $z$ 軸に平行な $N$ 本の無限長直線に，それぞれ線密度 $\\lambda$ の電荷が一様に分布している．\n\\begin{enumerate}\n\\item 1 本の線電荷の円柱座標展開（〔30〕の結果）を用いて，$r>a$ と $r<a$ の電位を級数で表せ．$n$ が $N$ の倍数でない項が消えることを示せ．\n\\item 複素数 $w=x+iy$ を用いると，電位が $V=-\\dfrac{\\lambda}{2\\pi\\varepsilon}\\log|w^N-a^N|$ と閉じた形に書けることを示せ．\n\\item 半径 $R\\ (>a)$ の円周上での電界の大きさの最大値と最小値の比を求めよ．\n\\item その比が $1+\\delta$ 以下（$\\delta>0$）となる $R/a$ の範囲を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $r>a$：$V=\\dfrac{N\\lambda}{2\\pi\\varepsilon}\\Bigl[\\displaystyle\\sum_{m\\ge1}\\frac1{mN}\\Bigl(\\frac ar\\Bigr)^{mN}\\cos mN\\theta-\\log r\\Bigr]$，$r<a$：$a\\leftrightarrow r$ を入れ替え $-\\log a$　(2) 解説参照　(3) $\\dfrac{R^N+a^N}{R^N-a^N}$　(4) $R/a\\ge201^{1/8}\\simeq1.94$"
+   "tex": "(1) $r>a$：$V=\\dfrac{N\\lambda}{2\\pi\\varepsilon}\\Bigl[\\displaystyle\\sum_{m\\ge1}\\frac1{mN}\\Bigl(\\frac ar\\Bigr)^{mN}\\cos mN\\theta-\\log r\\Bigr]$，$r<a$：$a\\leftrightarrow r$ を入れ替え $-\\log a$　(2) 解説参照　(3) $\\dfrac{R^N+a^N}{R^N-a^N}$　(4) $\\dfrac Ra\\ge\\left(\\dfrac{2+\\delta}{\\delta}\\right)^{1/N}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 〔30〕より，$(a,\\alpha)$ の線電荷は $r>a$ で $V=\\dfrac\\lambda{2\\pi\\varepsilon}\\left[\\sum_n\\dfrac1n\\left(\\dfrac ar\\right)^n\\cos n(\\theta-\\alpha)-\\log r\\right]$．$\\alpha_j=2\\pi j/N$ で和をとると\n\\[\\sum_{j=0}^{N-1}\\cos n(\\theta-\\alpha_j)=\\mathrm{Re}\\,e^{in\\theta}\\sum_j e^{-2\\pi inj/N}=\\begin{cases}N\\cos n\\theta&(N\\mid n)\\\\0&(\\text{その他})\\end{cases}.\\]\n$n=mN$ として答えの式．$r<a$ も同様．\n\n(2) 1 本の線電荷の電位は $-\\dfrac\\lambda{2\\pi\\varepsilon}\\log|w-a\\omega^j|$（$\\omega=e^{2\\pi i/N}$）．和をとると $\\log\\prod_j|w-a\\omega^j|=\\log|w^N-a^N|$（$\\prod_j(w-a\\omega^j)=w^N-a^N$）．$r>a$ で $\\log|w^N-a^N|=N\\log r+\\log|1-(a/w)^N|$ を展開すれば (1) に一致する．\n\n(3) 複素ポテンシャル $\\Psi=-\\dfrac\\lambda{2\\pi\\varepsilon}\\log(w^N-a^N)$ に対し $|\\boldsymbol E|=|d\\Psi/dw|=\\dfrac\\lambda{2\\pi\\varepsilon}\\dfrac{N|w|^{N-1}}{|w^N-a^N|}$．$|w|=R$ 上で $|w^N-a^N|$ は $R^N-a^N$ から $R^N+a^N$ まで変わるので，比は $\\dfrac{R^N+a^N}{R^N-a^N}$．\n\n(4) $\\dfrac{R^8+a^8}{R^8-a^8}\\le1.01\\iff(R/a)^8\\ge201$，$R/a\\ge201^{1/8}\\simeq1.94$．多数本の線で作った「かご」の外側では，円筒からの距離が半径程度になれば電界はほぼ一様な円筒の電界になる（非一様性は $(a/R)^N$ で減衰）．"
+    "tex": "(1) 〔30〕より，$(a,\\alpha)$ の線電荷は $r>a$ で $V=\\dfrac\\lambda{2\\pi\\varepsilon}\\left[\\sum_n\\dfrac1n\\left(\\dfrac ar\\right)^n\\cos n(\\theta-\\alpha)-\\log r\\right]$．$\\alpha_j=2\\pi j/N$ で和をとると\n\\[\\sum_{j=0}^{N-1}\\cos n(\\theta-\\alpha_j)=\\mathrm{Re}\\,e^{in\\theta}\\sum_j e^{-2\\pi inj/N}=\\begin{cases}N\\cos n\\theta&(N\\mid n)\\\\0&(\\text{その他})\\end{cases}.\\]\n$n=mN$ として答えの式．$r<a$ も同様．\n\n(2) 1 本の線電荷の電位は $-\\dfrac\\lambda{2\\pi\\varepsilon}\\log|w-a\\omega^j|$（$\\omega=e^{2\\pi i/N}$）．和をとると $\\log\\prod_j|w-a\\omega^j|=\\log|w^N-a^N|$（$\\prod_j(w-a\\omega^j)=w^N-a^N$）．$r>a$ で $\\log|w^N-a^N|=N\\log r+\\log|1-(a/w)^N|$ を展開すれば (1) に一致する．\n\n(3) 複素ポテンシャル $\\Psi=-\\dfrac\\lambda{2\\pi\\varepsilon}\\log(w^N-a^N)$ に対し $|\\boldsymbol E|=|d\\Psi/dw|=\\dfrac\\lambda{2\\pi\\varepsilon}\\dfrac{N|w|^{N-1}}{|w^N-a^N|}$．$|w|=R$ 上で $|w^N-a^N|$ は $R^N-a^N$ から $R^N+a^N$ まで変わるので，比は $\\boldsymbol{\\dfrac{R^N+a^N}{R^N-a^N}}$．\n\n(4) $x=(R/a)^N$ とおくと $\\dfrac{x+1}{x-1}\\le1+\\delta\\iff x+1\\le(1+\\delta)(x-1)\\iff x\\ge\\dfrac{2+\\delta}{\\delta}$．よって\n\\[ \\boldsymbol{\\frac Ra\\ge\\left(\\frac{2+\\delta}{\\delta}\\right)^{1/N}}. \\]\n$N$ が大きいとこの下限は急速に 1 に近づく（$N=8$，$\\delta=0.01$ でも約 $1.94$）．多数本の線で作った「かご」の外側では，円筒からの距離が半径程度になれば電界はほぼ一様な円筒の電界になる（非一様性は $(a/R)^N$ で減衰）．"
    }
   ],
   "idea": {
@@ -5388,7 +5388,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) ((R ^(N)+ a ^(N))/(R ^(N)- a ^(N)))\n(4) 記述"
+   "spec": "(1) 記述\n(2) 記述\n(3) ((R ^(N)+ a ^(N))/(R ^(N)- a ^(N)))\n(4) R/a の下限：((2+δ)/δ)^(1/N)"
   },
   "methods": [],
   "tags": [
@@ -5471,16 +5471,16 @@
   "theme": "円筒空洞内の線電荷が誘導する電荷分布",
   "topic": "円筒空洞内の線電荷が誘導する電荷分布",
   "statement": {
-   "tex": "広い接地導体の内部に半径 $a$ の円筒形の空洞（誘電率 $\\varepsilon$）があり，空洞の中心軸から距離 $b\\ (<a)$ の位置に軸に平行な線密度 $\\lambda$ の直線電荷がある．線電荷を $(b,0)$，円柱座標を $(r,\\theta)$ とする．\n\\begin{enumerate}\n\\item 空洞の壁面に誘導される電荷密度 $\\sigma(\\theta)$ を求めよ．\n\\item 壁面のうち，線電荷に近い側の半分（$-\\pi/2<\\theta<\\pi/2$）に誘導される電荷は全誘導電荷の何割か．$b/a=1/2$ の値も求めよ．\n\\item 線電荷を空洞の中心から $(b,0)$ までゆっくり移動させるとき，外力のする仕事を求めよ．\n\\end{enumerate}"
+   "tex": "広い接地導体の内部に半径 $a$ の円筒形の空洞（誘電率 $\\varepsilon$）があり，空洞の中心軸から距離 $b\\ (<a)$ の位置に軸に平行な線密度 $\\lambda$ の直線電荷がある．線電荷を $(b,0)$，円柱座標を $(r,\\theta)$ とする．\n\\begin{enumerate}\n\\item 空洞の壁面に誘導される電荷密度 $\\sigma(\\theta)$ を求めよ．\n\\item 壁面のうち，線電荷に近い側の半分（$-\\pi/2<\\theta<\\pi/2$）に誘導される電荷は全誘導電荷の何割か．$a,\\ b$ で表せ．\n\\item 線電荷を空洞の中心から $(b,0)$ までゆっくり移動させるとき，外力のする仕事を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sigma=-\\dfrac{\\lambda}{2\\pi a}\\dfrac{a^2-b^2}{a^2+b^2-2ab\\cos\\theta}$　(2) $\\dfrac2\\pi\\arctan\\dfrac{a+b}{a-b}$；$b/a=1/2$ で約 $0.795$（約 8 割）　(3) $W=\\dfrac{\\lambda^2}{4\\pi\\varepsilon}\\log\\Bigl(1-\\dfrac{b^2}{a^2}\\Bigr)$（負）"
+   "tex": "(1) $\\sigma=-\\dfrac{\\lambda}{2\\pi a}\\dfrac{a^2-b^2}{a^2+b^2-2ab\\cos\\theta}$　(2) $\\dfrac2\\pi\\arctan\\dfrac{a+b}{a-b}$　(3) $W=\\dfrac{\\lambda^2}{4\\pi\\varepsilon}\\log\\Bigl(1-\\dfrac{b^2}{a^2}\\Bigr)$（負）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 〔34・2〕より空洞内の電位は，$a^2/b$ に映像 $-\\lambda$ をおいて\n\\[V=-\\frac{\\lambda}{2\\pi\\varepsilon}\\left\\{\\log|w-b|-\\log|w-a^2/b|+\\log\\frac ab\\right\\}.\\]\n$r=a$ で $V=0$．壁面（法線は導体から空洞へ，すなわち $-\\hat{\\boldsymbol r}$）の電荷密度は $\\sigma=\\varepsilon\\dfrac{\\partial V}{\\partial r}\\Big|_{r=a}$．計算すると\n\\[\\sigma(\\theta)=-\\frac{\\lambda}{2\\pi a}\\frac{a^2-b^2}{a^2+b^2-2ab\\cos\\theta},\\]\nすなわち $-\\lambda$ に Poisson 核を掛けた形．$\\displaystyle\\int_{-\\pi}^{\\pi}\\sigma\\,a\\,d\\theta=-\\lambda$．\n\n(2) $\\tan(\\theta/2)=t$ とおく標準的な積分により\n\\[\\frac{1}{2\\pi}\\int_{-\\pi/2}^{\\pi/2}\\frac{a^2-b^2}{a^2+b^2-2ab\\cos\\theta}d\\theta=\\frac2\\pi\\arctan\\frac{a+b}{a-b}.\\]\n$b=0$ で $1/2$，$b\\to a$ で 1．$b/a=1/2$ では $\\frac2\\pi\\arctan3\\simeq0.795$．\n\n(3) 映像による力は壁向きに $f(s)=\\dfrac{\\lambda^2}{2\\pi\\varepsilon(a^2/s-s)}=\\dfrac{\\lambda^2}{2\\pi\\varepsilon}\\dfrac{s}{a^2-s^2}$．つり合いを保ちつつ動かす外力の仕事は\n\\[W=-\\int_0^bf(s)\\,ds=\\frac{\\lambda^2}{4\\pi\\varepsilon}\\log\\left(1-\\frac{b^2}{a^2}\\right)<0 .\\]\n系のエネルギーは線電荷が壁に近づくほど下がり，中心は不安定なつり合い点である．"
+    "tex": "(1) 〔34・2〕より空洞内の電位は，$a^2/b$ に映像 $-\\lambda$ をおいて\n\\[V=-\\frac{\\lambda}{2\\pi\\varepsilon}\\left\\{\\log|w-b|-\\log|w-a^2/b|+\\log\\frac ab\\right\\}.\\]\n$r=a$ で $V=0$．壁面（法線は導体から空洞へ，すなわち $-\\hat{\\boldsymbol r}$）の電荷密度は $\\sigma=\\varepsilon\\dfrac{\\partial V}{\\partial r}\\Big|_{r=a}$．計算すると\n\\[\\boldsymbol{\\sigma(\\theta)=-\\frac{\\lambda}{2\\pi a}\\frac{a^2-b^2}{a^2+b^2-2ab\\cos\\theta}},\\]\nすなわち $-\\lambda$ に Poisson 核を掛けた形．$\\displaystyle\\int_{-\\pi}^{\\pi}\\sigma\\,a\\,d\\theta=-\\lambda$．\n\n(2) $\\tan(\\theta/2)=t$ とおく標準的な積分により\n\\[\\frac{1}{2\\pi}\\int_{-\\pi/2}^{\\pi/2}\\frac{a^2-b^2}{a^2+b^2-2ab\\cos\\theta}d\\theta=\\boldsymbol{\\frac2\\pi\\arctan\\frac{a+b}{a-b}}.\\]\n$b=0$ で $1/2$，$b\\to a$ で 1．たとえば $b=a/2$ でも約 8 割が近い側の半分に集まる．\n\n(3) 映像による力は壁向きに $f(s)=\\dfrac{\\lambda^2}{2\\pi\\varepsilon(a^2/s-s)}=\\dfrac{\\lambda^2}{2\\pi\\varepsilon}\\dfrac{s}{a^2-s^2}$．つり合いを保ちつつ動かす外力の仕事は\n\\[\\boldsymbol{W=-\\int_0^bf(s)\\,ds=\\frac{\\lambda^2}{4\\pi\\varepsilon}\\log\\left(1-\\frac{b^2}{a^2}\\right)}<0 .\\]\n系のエネルギーは線電荷が壁に近づくほど下がり，中心は不安定なつり合い点である．"
    }
   ],
   "idea": {
@@ -5488,7 +5488,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\sigma$：-((λ)/(2 pi a))((a ^(2)- b ^(2))/(a ^(2)+ b ^(2)-2 a b cos θ))\n(2) 記述\n(3) $W$：((λ ^(2))/(4 pi ε)) ln (1-((b ^(2))/(a ^(2))))"
+   "spec": "(1) $\\sigma$：-((λ)/(2 pi a))((a ^(2)- b ^(2))/(a ^(2)+ b ^(2)-2 a b cos θ))\n(2) 割合：(2/pi) arctan((a+b)/(a-b))\n(3) $W$：((λ ^(2))/(4 pi ε)) ln (1-((b ^(2))/(a ^(2))))"
   },
   "methods": [],
   "tags": [
@@ -6227,16 +6227,16 @@
   "theme": "線状四重極の遠方ポテンシャル",
   "topic": "線状四重極の遠方ポテンシャル",
   "statement": {
-   "tex": "原点に電気量 $-2q$，点 $(0,0,a)$ と $(0,0,-a)$ にそれぞれ電気量 $+q$ の点電荷を置く（$q>0,\\ a>0$）．$r=|\\boldsymbol r|\\gg a$，$\\theta$ を $z$ 軸からの極角とする．\n\\begin{enumerate}\n\\item 静電ポテンシャルを $a/r$ について展開し，$1/r$ と $1/r^2$ の項が消えることを示して，0 でない最低次の項を求めよ．\n\\item (1) の近似で，ポテンシャルが 0 となる円錐面の半頂角 $\\theta_0$ を求めよ．その円錐面上で電場はどの向きを向くか．大きさも求めよ．\n\\item $z$ 軸上 $z>a$ で厳密なポテンシャルを求め，(1) の近似の相対誤差が $1\\%$ 未満となる $z$ の範囲を求めよ．\n\\end{enumerate}"
+   "tex": "原点に電気量 $-2q$，点 $(0,0,a)$ と $(0,0,-a)$ にそれぞれ電気量 $+q$ の点電荷を置く（$q>0,\\ a>0$）．$r=|\\boldsymbol r|\\gg a$，$\\theta$ を $z$ 軸からの極角とする．\n\\begin{enumerate}\n\\item 静電ポテンシャルを $a/r$ について展開し，$1/r$ と $1/r^2$ の項が消えることを示して，0 でない最低次の項を求めよ．\n\\item (1) の近似で，ポテンシャルが 0 となる円錐面の半頂角 $\\theta_0$（$\\theta_0<\\pi/2$）について $\\cos\\theta_0$ を求めよ．その円錐面上で電場はどの向きを向くか．大きさも求めよ．\n\\item $z$ 軸上 $z>a$ で厳密なポテンシャルを求め，(1) の近似の相対誤差が小さな値 $\\delta$ 未満となる $z$ の範囲を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\phi\\simeq\\dfrac{qa^2}{4\\pi\\varepsilon_0}\\dfrac{3\\cos^2\\theta-1}{r^3}$　(2) $\\cos\\theta_0=1/\\sqrt3$（$\\theta_0\\approx54.7^\\circ$），電場は $\\boldsymbol e_\\theta$ 向きのみで $|\\boldsymbol E|=\\dfrac{2\\sqrt2\\,qa^2}{4\\pi\\varepsilon_0r^4}$　(3) $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{z(z^2-a^2)}$，$z>\\sqrt{101}\\,a\\approx10.05a$"
+   "tex": "(1) $\\phi\\simeq\\dfrac{qa^2}{4\\pi\\varepsilon_0}\\dfrac{3\\cos^2\\theta-1}{r^3}$　(2) $\\cos\\theta_0=\\dfrac{1}{\\sqrt3}$，電場は $\\boldsymbol e_\\theta$ 向きのみで $|\\boldsymbol E|=\\dfrac{2\\sqrt2\\,qa^2}{4\\pi\\varepsilon_0r^4}$　(3) $\\phi=\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{z(z^2-a^2)}$，$z>a\\sqrt{\\dfrac{1+\\delta}{\\delta}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $|\\boldsymbol r\\mp a\\boldsymbol e_z|^{-1}=\\dfrac1r\\left(1\\mp2\\dfrac ar\\cos\\theta+\\dfrac{a^2}{r^2}\\right)^{-1/2}$ を $\\epsilon=a/r$ の 2 次まで展開すると\n\\[ \\frac1r\\left(1\\pm\\epsilon\\cos\\theta+\\epsilon^2\\frac{3\\cos^2\\theta-1}{2}+O(\\epsilon^3)\\right). \\]\n二つを足して $-2/r$ を加えると，$1/r$ の項は $1+1-2=0$（全電荷 0），$\\epsilon$ の項は $\\pm$ で打ち消し（双極子モーメント 0），残るのは\n\\[ \\phi\\simeq\\frac{q}{4\\pi\\varepsilon_0}\\frac{a^2(3\\cos^2\\theta-1)}{r^3}. \\]\n奇数次は対称性 $z\\to-z$ で全次数消える．\n\n(2) $3\\cos^2\\theta_0-1=0$ より $\\cos\\theta_0=1/\\sqrt3$，$\\theta_0\\approx54.7^\\circ$（と $180^\\circ-\\theta_0$）．電場は\n\\[ E_r=-\\partial_r\\phi=\\frac{3qa^2}{4\\pi\\varepsilon_0}\\frac{3\\cos^2\\theta-1}{r^4},\\qquad E_\\theta=-\\frac1r\\partial_\\theta\\phi=\\frac{qa^2}{4\\pi\\varepsilon_0}\\frac{6\\cos\\theta\\sin\\theta}{r^4}. \\]\n円錐面上では $E_r=0$ なので電場は等電位面（円錐面）に垂直な $\\boldsymbol e_\\theta$ 方向のみ．$\\cos\\theta_0\\sin\\theta_0=\\frac1{\\sqrt3}\\sqrt{\\frac23}=\\frac{\\sqrt2}{3}$ より $|\\boldsymbol E|=\\dfrac{2\\sqrt2\\,qa^2}{4\\pi\\varepsilon_0r^4}$（$\\theta_0<90^\\circ$ 側では $+\\boldsymbol e_\\theta$ 向き，すなわち赤道面に向かう向き）．\n\n(3) $z>a$ で\n\\[ \\phi=\\frac{q}{4\\pi\\varepsilon_0}\\left(\\frac1{z-a}+\\frac1{z+a}-\\frac2z\\right)=\\frac{q}{4\\pi\\varepsilon_0}\\frac{2a^2}{z(z^2-a^2)}. \\]\n近似値は $\\theta=0$ として $\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{z^3}$．比は $\\dfrac{\\text{厳密}}{\\text{近似}}=\\dfrac{1}{1-a^2/z^2}$ で，相対誤差 $\\dfrac{a^2/z^2}{1-a^2/z^2}<0.01\\iff z^2>101a^2$．よって $z>\\sqrt{101}\\,a\\approx10.05a$．誤差が $(a/z)^2$ で効くのは，次の非零項が 2 次上（$r^{-5}$）だからである．"
+    "tex": "(1) $|\\boldsymbol r\\mp a\\boldsymbol e_z|^{-1}=\\dfrac1r\\left(1\\mp2\\dfrac ar\\cos\\theta+\\dfrac{a^2}{r^2}\\right)^{-1/2}$ を $\\epsilon=a/r$ の 2 次まで展開すると\n\\[ \\frac1r\\left(1\\pm\\epsilon\\cos\\theta+\\epsilon^2\\frac{3\\cos^2\\theta-1}{2}+O(\\epsilon^3)\\right). \\]\n二つを足して $-2/r$ を加えると，$1/r$ の項は $1+1-2=0$（全電荷 0），$\\epsilon$ の項は $\\pm$ で打ち消し（双極子モーメント 0），残るのは\n\\[ \\boldsymbol{\\phi\\simeq\\frac{q}{4\\pi\\varepsilon_0}\\frac{a^2(3\\cos^2\\theta-1)}{r^3}}. \\]\n奇数次は対称性 $z\\to-z$ で全次数消える．\n\n(2) $3\\cos^2\\theta_0-1=0$ より $\\boldsymbol{\\cos\\theta_0=1/\\sqrt3}$，$\\theta_0\\approx54.7^\\circ$（と $180^\\circ-\\theta_0$）．電場は\n\\[ E_r=-\\partial_r\\phi=\\frac{3qa^2}{4\\pi\\varepsilon_0}\\frac{3\\cos^2\\theta-1}{r^4},\\qquad E_\\theta=-\\frac1r\\partial_\\theta\\phi=\\frac{qa^2}{4\\pi\\varepsilon_0}\\frac{6\\cos\\theta\\sin\\theta}{r^4}. \\]\n円錐面上では $E_r=0$ なので電場は等電位面（円錐面）に垂直な $\\boldsymbol e_\\theta$ 方向のみ．$\\cos\\theta_0\\sin\\theta_0=\\frac1{\\sqrt3}\\sqrt{\\frac23}=\\frac{\\sqrt2}{3}$ より $\\boldsymbol{|\\boldsymbol E|=\\dfrac{2\\sqrt2\\,qa^2}{4\\pi\\varepsilon_0r^4}}$（$\\theta_0<90^\\circ$ 側では $+\\boldsymbol e_\\theta$ 向き，すなわち赤道面に向かう向き）．\n\n(3) $z>a$ で\n\\[ \\phi=\\frac{q}{4\\pi\\varepsilon_0}\\left(\\frac1{z-a}+\\frac1{z+a}-\\frac2z\\right)=\\boldsymbol{\\frac{q}{4\\pi\\varepsilon_0}\\frac{2a^2}{z(z^2-a^2)}}. \\]\n近似値は $\\theta=0$ として $\\dfrac{q}{4\\pi\\varepsilon_0}\\dfrac{2a^2}{z^3}$．比は $\\dfrac{\\text{厳密}}{\\text{近似}}=\\dfrac{1}{1-a^2/z^2}$ で，相対誤差\n\\[ \\frac{a^2/z^2}{1-a^2/z^2}=\\frac{a^2}{z^2-a^2}<\\delta\\iff z^2>\\frac{1+\\delta}{\\delta}a^2 . \\]\nよって $\\boldsymbol{z>a\\sqrt{(1+\\delta)/\\delta}}$（$\\delta$ が小さければほぼ $a/\\sqrt\\delta$；$\\delta=1\\%$ で約 $10a$）．誤差が $(a/z)^2$ で効くのは，次の非零項が 2 次上（$r^{-5}$）だからである．"
    }
   ],
   "idea": {
@@ -6244,7 +6244,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) $\\phi$：q a^2 (3cos(θ)^2-1)/(4 pi ε_0 r^3)\n(2) $\\cos\\theta_0$：1/sqrt(3) ; $|E|$：2 sqrt(2) q a^2/(4 pi ε_0 r^4)\n(3) $\\phi$：q 2a^2/(4 pi ε_0 z (z^2-a^2)) ; z の下限：a sqrt((1+δ)/δ)"
   },
   "methods": [],
   "tags": [
@@ -6724,16 +6724,16 @@
   "theme": "軟化したクーロンポテンシャルの電荷",
   "topic": "軟化したクーロンポテンシャルの電荷",
   "statement": {
-   "tex": "真空中の静電ポテンシャルが全空間で\n\\[\n\\phi(x,y,z)=\\frac{A}{\\sqrt{x^2+y^2+z^2+b^2}}\\qquad(A>0,\\ b>0\\text{ は定数})\n\\]\nで与えられている．$r=\\sqrt{x^2+y^2+z^2}$ とする．\n\\begin{enumerate}\n\\item 電場 $\\boldsymbol E$ を求めよ．\n\\item 電荷密度 $\\rho(r)$ を求めよ．点電荷のポテンシャル $A/r$ の場合と何が違うか．\n\\item 半径 $r$ の球内の全電荷 $Q(r)$ と全電荷 $Q_{\\rm tot}$ を求めよ．\n\\item 全電荷の半分を含む球の半径を $b$ を用いて表せ．\n\\end{enumerate}"
+   "tex": "真空中の静電ポテンシャルが全空間で\n\\[\n\\phi(x,y,z)=\\frac{A}{\\sqrt{x^2+y^2+z^2+b^2}}\\qquad(A>0,\\ b>0\\text{ は定数})\n\\]\nで与えられている．$r=\\sqrt{x^2+y^2+z^2}$ とし，真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 電場 $\\boldsymbol E$ を求めよ．\n\\item 電荷密度 $\\rho(r)$ を求めよ．点電荷のポテンシャル $A/r$ の場合と何が違うか．\n\\item 半径 $r$ の球内の全電荷 $Q(r)$ と全電荷 $Q_{\\rm tot}$ を求めよ．\n\\item 全電荷の $f$ 倍（$0<f<1$）を含む球の半径を $b,\\ f$ を用いて表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\boldsymbol E=\\dfrac{A\\boldsymbol r}{(r^2+b^2)^{3/2}}$　(2) $\\rho=\\dfrac{3\\varepsilon_0Ab^2}{(r^2+b^2)^{5/2}}$　(3) $Q(r)=\\dfrac{4\\pi\\varepsilon_0Ar^3}{(r^2+b^2)^{3/2}}$，$Q_{\\rm tot}=4\\pi\\varepsilon_0A$　(4) $r=\\dfrac{b}{\\sqrt{2^{2/3}-1}}\\approx1.30\\,b$"
+   "tex": "(1) $\\boldsymbol E=\\dfrac{A\\boldsymbol r}{(r^2+b^2)^{3/2}}$　(2) $\\rho=\\dfrac{3\\varepsilon_0Ab^2}{(r^2+b^2)^{5/2}}$　(3) $Q(r)=\\dfrac{4\\pi\\varepsilon_0Ar^3}{(r^2+b^2)^{3/2}}$，$Q_{\\rm tot}=4\\pi\\varepsilon_0A$　(4) $r=\\dfrac{b}{\\sqrt{f^{-2/3}-1}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\dfrac{\\partial\\phi}{\\partial x}=-\\dfrac{Ax}{(r^2+b^2)^{3/2}}$ など．$\\boldsymbol E=-\\nabla\\phi=\\dfrac{A\\boldsymbol r}{(r^2+b^2)^{3/2}}$．\n\n(2) $\\dfrac{\\partial E_x}{\\partial x}=\\dfrac{A}{(r^2+b^2)^{3/2}}-\\dfrac{3Ax^2}{(r^2+b^2)^{5/2}}$．$y,z$ も同様に足して\n\\[\n\\nabla\\cdot\\boldsymbol E=\\frac{3A}{(r^2+b^2)^{3/2}}-\\frac{3Ar^2}{(r^2+b^2)^{5/2}}=\\frac{3Ab^2}{(r^2+b^2)^{5/2}},\\qquad \\rho=\\varepsilon_0\\nabla\\cdot\\boldsymbol E=\\frac{3\\varepsilon_0Ab^2}{(r^2+b^2)^{5/2}}.\n\\]\n点電荷のポテンシャル（$b=0$）では原点以外で $\\rho=0$ だが，ここでは電荷が原点付近に有限の密度でなめらかに広がっている（原点でも有限，$\\rho(0)=3\\varepsilon_0A/b^3$）．\n\n(3) ガウスの法則を半径 $r$ の球面に適用すると，$\\boldsymbol E$ は動径方向で\n\\[\nQ(r)=\\varepsilon_0\\cdot4\\pi r^2E_r=\\frac{4\\pi\\varepsilon_0Ar^3}{(r^2+b^2)^{3/2}} .\n\\]\n$r\\to\\infty$ で $Q_{\\rm tot}=4\\pi\\varepsilon_0A$（遠方では $\\phi\\simeq A/r$ で，この電荷の点電荷に見える）．\n\n(4) $\\dfrac{r^3}{(r^2+b^2)^{3/2}}=\\dfrac12$ より $\\dfrac{r}{\\sqrt{r^2+b^2}}=2^{-1/3}$，$r^2(2^{2/3}-1)=b^2$．よって $r=\\dfrac{b}{\\sqrt{2^{2/3}-1}}\\approx1.305\\,b$．"
+    "tex": "(1) $\\dfrac{\\partial\\phi}{\\partial x}=-\\dfrac{Ax}{(r^2+b^2)^{3/2}}$ など．$\\boldsymbol{\\boldsymbol E=-\\nabla\\phi=\\dfrac{A\\boldsymbol r}{(r^2+b^2)^{3/2}}}$．\n\n(2) $\\dfrac{\\partial E_x}{\\partial x}=\\dfrac{A}{(r^2+b^2)^{3/2}}-\\dfrac{3Ax^2}{(r^2+b^2)^{5/2}}$．$y,z$ も同様に足して\n\\[\n\\nabla\\cdot\\boldsymbol E=\\frac{3A}{(r^2+b^2)^{3/2}}-\\frac{3Ar^2}{(r^2+b^2)^{5/2}}=\\frac{3Ab^2}{(r^2+b^2)^{5/2}},\\qquad \\boldsymbol{\\rho=\\varepsilon_0\\nabla\\cdot\\boldsymbol E=\\frac{3\\varepsilon_0Ab^2}{(r^2+b^2)^{5/2}}}.\n\\]\n点電荷のポテンシャル（$b=0$）では原点以外で $\\rho=0$ だが，ここでは電荷が原点付近に有限の密度でなめらかに広がっている（原点でも有限，$\\rho(0)=3\\varepsilon_0A/b^3$）．\n\n(3) ガウスの法則を半径 $r$ の球面に適用すると，$\\boldsymbol E$ は動径方向で\n\\[\n\\boldsymbol{Q(r)=\\varepsilon_0\\cdot4\\pi r^2E_r=\\frac{4\\pi\\varepsilon_0Ar^3}{(r^2+b^2)^{3/2}}} .\n\\]\n$r\\to\\infty$ で $\\boldsymbol{Q_{\\rm tot}=4\\pi\\varepsilon_0A}$（遠方では $\\phi\\simeq A/r$ で，この電荷の点電荷に見える）．\n\n(4) $\\dfrac{r^3}{(r^2+b^2)^{3/2}}=f$ より $\\dfrac{r}{\\sqrt{r^2+b^2}}=f^{1/3}$，$r^2(f^{-2/3}-1)=b^2$．よって $\\boldsymbol{r=\\dfrac{b}{\\sqrt{f^{-2/3}-1}}}$．$f=1/2$ なら約 $1.3b$ で，電荷の半分は $b$ 程度の範囲に収まる．"
    }
   ],
   "idea": {
@@ -6741,7 +6741,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\rho$：((3 ε_0 A b ^(2))/((r ^(2)+ b ^(2))^(5/2)))\n(3) $Q(r)$：((4 pi ε_0 A r ^(3))/((r ^(2)+ b ^(2))^(3/2))) ; $Q_{\\rm tot}$：4 pi ε_0 A\n(4) $r$：((b)/(sqrt(2^(2/3)-1)))"
+   "spec": "(1) 記述：E = A r/(r^2+b^2)^(3/2)（動径方向）\n(2) $\\rho$：((3 ε_0 A b ^(2))/((r ^(2)+ b ^(2))^(5/2)))\n(3) $Q(r)$：((4 pi ε_0 A r ^(3))/((r ^(2)+ b ^(2))^(3/2))) ; $Q_{\\rm tot}$：4 pi ε_0 A\n(4) $r$：b/sqrt(f^(-2/3)-1)"
   },
   "methods": [],
   "tags": [
@@ -6822,16 +6822,16 @@
   "theme": "平面状電荷の垂直電場と立体角",
   "topic": "平面状電荷の垂直電場と立体角",
   "statement": {
-   "tex": "平面 $z=0$ 上の領域 $D$ に面密度 $\\sigma$ で一様に電荷が分布している．\n\\begin{enumerate}\n\\item 点 P$(x,y,z)$（$z>0$）での電場の $z$ 成分が $E_z=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}\\Omega$ と書けることを示せ．ここで $\\Omega$ は P から $D$ を見込む立体角である．\n\\item $D$ が半径 $R$ の円板のとき，中心軸上の高さ $z$ での $E_z$ を求めよ．また $E_z$ が無限平面での値の $90\\%$ になる高さを求めよ．\n\\item $D$ が一辺 $2a$ の正方形のとき，中心の真上，高さ $a$ の点での $E_z$ を求めよ．\n\\item $D$ が無限平面のとき，ガウスの法則を用いて電場を求め，(1) と一致することを確かめよ．\n\\end{enumerate}"
+   "tex": "平面 $z=0$ 上の領域 $D$ に面密度 $\\sigma$ で一様に電荷が分布している．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 点 P$(x,y,z)$（$z>0$）での電場の $z$ 成分が $E_z=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}\\Omega$ と書けることを示せ．ここで $\\Omega$ は P から $D$ を見込む立体角である．\n\\item $D$ が半径 $R$ の円板のとき，中心軸上の高さ $z$ での $E_z$ を求めよ．また $E_z$ が無限平面での値の $f$ 倍（$0<f<1$）になる高さを求めよ．\n\\item $D$ が一辺 $2a$ の正方形のとき，中心の真上，高さ $a$ の点での $E_z$ を求めよ．\n\\item $D$ が無限平面のとき，ガウスの法則を用いて電場を求め，(1) と一致することを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 略（解説参照）　(2) $E_z=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(1-\\dfrac{z}{\\sqrt{z^2+R^2}}\\right)$，$z=R/\\sqrt{99}\\approx0.10R$　(3) $\\dfrac{\\sigma}{6\\varepsilon_0}$　(4) $E_z=\\dfrac{\\sigma}{2\\varepsilon_0}$（$\\Omega=2\\pi$）"
+   "tex": "(1) 略（解説参照）　(2) $E_z=\\dfrac{\\sigma}{2\\varepsilon_0}\\left(1-\\dfrac{z}{\\sqrt{z^2+R^2}}\\right)$，$z=\\dfrac{(1-f)R}{\\sqrt{1-(1-f)^2}}$　(3) $\\dfrac{\\sigma}{6\\varepsilon_0}$　(4) $E_z=\\dfrac{\\sigma}{2\\varepsilon_0}$（$\\Omega=2\\pi$）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 面素 $dS$ の電荷 $\\sigma dS$ が P に作る電場の $z$ 成分は，$dS$ から P までの距離を $\\ell$，$\\ell$ と $z$ 軸のなす角を $\\theta$ とすると\n\\[\ndE_z=\\frac{\\sigma dS}{4\\pi\\varepsilon_0\\ell^2}\\cos\\theta=\\frac{\\sigma}{4\\pi\\varepsilon_0}\\frac{dS\\cos\\theta}{\\ell^2}=\\frac{\\sigma}{4\\pi\\varepsilon_0}d\\Omega .\n\\]\nここで $dS\\cos\\theta/\\ell^2$ は P から $dS$ を見込む立体角．積分して $E_z=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}\\Omega$．\n\n(2) 円板を軸上の距離 $z$ から見込む立体角は，頂角 $\\theta_0$（$\\cos\\theta_0=z/\\sqrt{z^2+R^2}$）の円錐の立体角 $\\Omega=2\\pi(1-\\cos\\theta_0)$．よって\n\\[\nE_z=\\frac{\\sigma}{2\\varepsilon_0}\\left(1-\\frac{z}{\\sqrt{z^2+R^2}}\\right).\n\\]\n$90\\%$ となるのは $\\dfrac{z}{\\sqrt{z^2+R^2}}=0.1$，$99z^2=R^2$ より $z=R/\\sqrt{99}\\approx0.10R$．半径の1割の高さでもう1割も弱まる．\n\n(3) 一辺 $2a$ の正方形を中心の真上，距離 $a$ から見ると，それは P を中心とする一辺 $2a$ の立方体の1面で，立方体の6面が全立体角 $4\\pi$ を等分するので $\\Omega=\\dfrac{4\\pi}{6}$．$E_z=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}\\cdot\\dfrac{4\\pi}{6}=\\dfrac{\\sigma}{6\\varepsilon_0}$（無限平面の $1/3$）．\n\n(4) 対称性から電場は面に垂直で，$z\\to-z$ で向きが反転し，面に平行な並進の対称性から大きさは $|z|$ のみによる．断面積 $S$ の円筒を面を貫くようにとると，側面の寄与は $0$，上下面で $2ES=\\sigma S/\\varepsilon_0$，$E=\\dfrac{\\sigma}{2\\varepsilon_0}$．(1) で $\\Omega=2\\pi$（半空間）とすれば一致する．"
+    "tex": "(1) 面素 $dS$ の電荷 $\\sigma dS$ が P に作る電場の $z$ 成分は，$dS$ から P までの距離を $\\ell$，$\\ell$ と $z$ 軸のなす角を $\\theta$ とすると\n\\[\ndE_z=\\frac{\\sigma dS}{4\\pi\\varepsilon_0\\ell^2}\\cos\\theta=\\frac{\\sigma}{4\\pi\\varepsilon_0}\\frac{dS\\cos\\theta}{\\ell^2}=\\frac{\\sigma}{4\\pi\\varepsilon_0}d\\Omega .\n\\]\nここで $dS\\cos\\theta/\\ell^2$ は P から $dS$ を見込む立体角．積分して $E_z=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}\\Omega$．\n\n(2) 円板を軸上の距離 $z$ から見込む立体角は，頂角 $\\theta_0$（$\\cos\\theta_0=z/\\sqrt{z^2+R^2}$）の円錐の立体角 $\\Omega=2\\pi(1-\\cos\\theta_0)$．よって\n\\[\n\\boldsymbol{E_z=\\frac{\\sigma}{2\\varepsilon_0}\\left(1-\\frac{z}{\\sqrt{z^2+R^2}}\\right)}.\n\\]\n$f$ 倍となるのは $\\dfrac{z}{\\sqrt{z^2+R^2}}=1-f$，$z^2\\{1-(1-f)^2\\}=(1-f)^2R^2$ より\n\\[ \\boldsymbol{z=\\frac{(1-f)R}{\\sqrt{1-(1-f)^2}}}. \\]\n$f=0.9$ なら $z=R/\\sqrt{99}\\approx0.10R$ で，半径の1割の高さでもう1割も弱まる．\n\n(3) 一辺 $2a$ の正方形を中心の真上，距離 $a$ から見ると，それは P を中心とする一辺 $2a$ の立方体の1面で，立方体の6面が全立体角 $4\\pi$ を等分するので $\\Omega=\\dfrac{4\\pi}{6}$．$E_z=\\dfrac{\\sigma}{4\\pi\\varepsilon_0}\\cdot\\dfrac{4\\pi}{6}=\\boldsymbol{\\dfrac{\\sigma}{6\\varepsilon_0}}$（無限平面の $1/3$）．\n\n(4) 対称性から電場は面に垂直で，$z\\to-z$ で向きが反転し，面に平行な並進の対称性から大きさは $|z|$ のみによる．断面積 $S$ の円筒を面を貫くようにとると，側面の寄与は $0$，上下面で $2ES=\\sigma S/\\varepsilon_0$，$\\boldsymbol{E=\\dfrac{\\sigma}{2\\varepsilon_0}}$．(1) で $\\Omega=2\\pi$（半空間）とすれば一致する．"
    }
   ],
   "idea": {
@@ -6839,7 +6839,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) ((σ)/(6 ε_0))\n(4) $E_z$：((σ)/(2 ε_0))"
+   "spec": "(1) 証明\n(2) $E_z$：(σ/(2 ε_0))(1-z/sqrt(z^2+R^2)) ; 高さ：(1-f) R/sqrt(1-(1-f)^2)\n(3) ((σ)/(6 ε_0))\n(4) $E_z$：((σ)/(2 ε_0))"
   },
   "methods": [],
   "tags": [
@@ -7365,16 +7365,16 @@
   "theme": "軸上の点電荷による輪の張力増加",
   "topic": "軸上の点電荷による輪の張力増加",
   "statement": {
-   "tex": "半径 $r$ の細い導線の輪が電荷 $q$ を一様にもつ．輪の中心軸上，中心から距離 $h$ の点に点電荷 $q_0$（$q_0q>0$）を置く．\n\\begin{enumerate}\n\\item $q_0$ によって生じる導線の張力の増加 $\\Delta T(h)$ を求めよ．\n\\item $\\Delta T$ が $h=0$ の値の半分になる $h$ を求めよ．\n\\item 輪全体が $q_0$ から受ける軸方向の力の大きさ $F$ と $\\Delta T$ の間の関係を求めよ．\n\\end{enumerate}"
+   "tex": "半径 $r$ の細い導線の輪が電荷 $q$ を一様にもつ．輪の中心軸上，中心から距離 $h$ の点に点電荷 $q_0$（$q_0q>0$）を置く．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item $q_0$ によって生じる導線の張力の増加 $\\Delta T(h)$ を求めよ．\n\\item $\\Delta T$ が $h=0$ の値の $f$ 倍（$0<f<1$）になる $h$ を求めよ．\n\\item 輪全体が $q_0$ から受ける軸方向の力の大きさ $F$ と $\\Delta T$ の間の関係を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\Delta T=\\dfrac{qq_0\\,r}{8\\pi^2\\varepsilon_0(r^2+h^2)^{3/2}}$　(2) $h=r\\sqrt{2^{2/3}-1}\\approx0.766r$　(3) $F=\\dfrac{2\\pi h}{r}\\Delta T$"
+   "tex": "(1) $\\Delta T=\\dfrac{qq_0\\,r}{8\\pi^2\\varepsilon_0(r^2+h^2)^{3/2}}$　(2) $h=r\\sqrt{f^{-2/3}-1}$　(3) $F=\\dfrac{2\\pi h}{r}\\Delta T$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 線密度 $\\lambda=q/(2\\pi r)$．長さ $dl$ の要素が受ける力のうち，輪の面内で外向きの成分は\n\\[ dF_\\perp=\\frac{q_0\\lambda\\,dl}{4\\pi\\varepsilon_0(r^2+h^2)}\\cdot\\frac{r}{\\sqrt{r^2+h^2}}. \\]\n単位長さあたり外向き力 $f$ を受ける半径 $r$ の輪の張力は $T=fr$（半円の釣り合い $2T=\\int f\\sin\\varphi\\,r\\,d\\varphi=2fr$）．したがって\n\\[ \\Delta T=\\frac{q_0\\lambda r^2}{4\\pi\\varepsilon_0(r^2+h^2)^{3/2}}=\\frac{qq_0\\,r}{8\\pi^2\\varepsilon_0(r^2+h^2)^{3/2}}. \\]\n$h=0$ では $qq_0/(8\\pi^2\\varepsilon_0r^2)$．\n(2) $(r^2+h^2)^{3/2}=2r^3$ より $h=r\\sqrt{2^{2/3}-1}\\approx0.766r$．\n(3) 軸方向の力は $F=\\dfrac{qq_0h}{4\\pi\\varepsilon_0(r^2+h^2)^{3/2}}$．(1) と比べて $F=\\dfrac{2\\pi h}{r}\\Delta T$．"
+    "tex": "(1) 線密度 $\\lambda=q/(2\\pi r)$．長さ $dl$ の要素が受ける力のうち，輪の面内で外向きの成分は\n\\[ dF_\\perp=\\frac{q_0\\lambda\\,dl}{4\\pi\\varepsilon_0(r^2+h^2)}\\cdot\\frac{r}{\\sqrt{r^2+h^2}}. \\]\n単位長さあたり外向き力 $f_0$ を受ける半径 $r$ の輪の張力は $T=f_0r$（半円の釣り合い $2T=\\int f_0\\sin\\varphi\\,r\\,d\\varphi=2f_0r$）．したがって\n\\[ \\boldsymbol{\\Delta T=\\frac{q_0\\lambda r^2}{4\\pi\\varepsilon_0(r^2+h^2)^{3/2}}=\\frac{qq_0\\,r}{8\\pi^2\\varepsilon_0(r^2+h^2)^{3/2}}}. \\]\n$h=0$ では $qq_0/(8\\pi^2\\varepsilon_0r^2)$．\n\n(2) $\\dfrac{r^3}{(r^2+h^2)^{3/2}}=f$ より $r^2+h^2=f^{-2/3}r^2$，$\\boldsymbol{h=r\\sqrt{f^{-2/3}-1}}$．$f=1/2$ なら $h\\approx0.77r$．\n\n(3) 軸方向の力は $F=\\dfrac{qq_0h}{4\\pi\\varepsilon_0(r^2+h^2)^{3/2}}$．(1) と比べて $\\boldsymbol{F=\\dfrac{2\\pi h}{r}\\Delta T}$．"
    }
   ],
   "idea": {
@@ -7382,7 +7382,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\Delta T$：((q q_0 r)/(8 pi ^(2) ε_0 (r ^(2)+ h ^(2))^(3/2)))\n(2) 記述\n(3) $F$：((2 pi h)/(r)) Δ T"
+   "spec": "(1) $\\Delta T$：((q q_0 r)/(8 pi ^(2) ε_0 (r ^(2)+ h ^(2))^(3/2)))\n(2) $h$：r sqrt(f^(-2/3)-1)\n(3) $F$：((2 pi h)/(r)) Δ T"
   },
   "methods": [],
   "tags": [
@@ -7414,16 +7414,16 @@
   "theme": "弧状導線の曲率中心で電場を最大化",
   "topic": "弧状導線の曲率中心で電場を最大化",
   "statement": {
-   "tex": "長さ $L=0.40\\,\\mathrm m$ の細い絶縁線に電荷 $q=0.70\\,\\mathrm{nC}$ を一様に与え，円弧（中心角 $2\\alpha$，$0<\\alpha\\le\\pi$）に曲げる．弧の長さは $L$ のまま半径 $R=L/(2\\alpha)$ が変わる．\n\\begin{enumerate}\n\\item 曲率中心の電場の大きさ $E(\\alpha)$ を求めよ．\n\\item $E$ を最大にする中心角 $2\\alpha$ を決める方程式を導き，数値で求めよ．\n\\item 最大値 $E_{\\max}$ と，半円（$2\\alpha=\\pi$）の場合の $E$ を数値で比べよ．\n\\end{enumerate}"
+   "tex": "長さ $L$ の細い絶縁線に電荷 $q$（$q>0$）を一様に与え，円弧（中心角 $2\\alpha$，$0<\\alpha\\le\\pi$）に曲げる．弧の長さは $L$ のまま半径 $R=L/(2\\alpha)$ が変わる．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 曲率中心の電場の大きさ $E(\\alpha)$ を $q,\\ L,\\ \\alpha$ で表せ．\n\\item $E$ を最大にする中心角 $2\\alpha$ を決める方程式を導き，$\\alpha$ を数値で求めよ．\n\\item 最大値 $E_{\\max}$ は，半円（$2\\alpha=\\pi$）の場合の $E$ の何倍か．数値で答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $E=\\dfrac{4kq\\,\\alpha\\sin\\alpha}{L^2}$　(2) $\\tan\\alpha=-\\alpha$，$\\alpha\\approx2.029$，$2\\alpha\\approx232^\\circ$　(3) $E_{\\max}\\approx0.29\\,\\mathrm{kV/m}$，半円 $\\approx0.25\\,\\mathrm{kV/m}$"
+   "tex": "(1) $E=\\dfrac{q\\,\\alpha\\sin\\alpha}{\\pi\\varepsilon_0L^2}$　(2) $\\tan\\alpha=-\\alpha$，$\\alpha\\approx2.029$，$2\\alpha\\approx232^\\circ$　(3) $\\approx1.16$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 弧の中点方向を $x$ 軸とし，角 $\\varphi\\in[-\\alpha,\\alpha]$ の要素 $\\lambda R\\,d\\varphi$（$\\lambda=q/L$）の場の $x$ 成分を足す：\n\\[ E=\\int_{-\\alpha}^{\\alpha}\\frac{k\\lambda R\\cos\\varphi\\,d\\varphi}{R^2}=\\frac{2k\\lambda\\sin\\alpha}{R}=\\frac{2kq\\sin\\alpha}{L}\\cdot\\frac{2\\alpha}{L}=\\frac{4kq\\,\\alpha\\sin\\alpha}{L^2}. \\]\n(2) $\\dfrac{d}{d\\alpha}(\\alpha\\sin\\alpha)=\\sin\\alpha+\\alpha\\cos\\alpha=0$ より $\\tan\\alpha=-\\alpha$．$\\pi/2<\\alpha<\\pi$ の解は $\\alpha\\approx2.029\\,\\mathrm{rad}$，中心角 $2\\alpha\\approx4.06\\,\\mathrm{rad}\\approx232^\\circ$．円より短くなると曲率は大きくなるが打ち消し合いも増える，その兼ね合いで決まる．\n(3) $E_{\\max}=\\dfrac{4\\cdot8.99\\times10^9\\cdot0.70\\times10^{-9}\\cdot2.029\\sin2.029}{0.16}\\approx2.9\\times10^2\\,\\mathrm{V/m}$．半円では $\\alpha\\sin\\alpha=\\pi/2$ で $E\\approx2.5\\times10^2\\,\\mathrm{V/m}$．"
+    "tex": "(1) 弧の中点方向を $x$ 軸とし，角 $\\varphi\\in[-\\alpha,\\alpha]$ の要素 $\\lambda R\\,d\\varphi$（$\\lambda=q/L$）の場の $x$ 成分を足す：\n\\[ E=\\int_{-\\alpha}^{\\alpha}\\frac{\\lambda R\\cos\\varphi\\,d\\varphi}{4\\pi\\varepsilon_0R^2}=\\frac{\\lambda\\sin\\alpha}{2\\pi\\varepsilon_0R}=\\frac{q\\sin\\alpha}{2\\pi\\varepsilon_0L}\\cdot\\frac{2\\alpha}{L}=\\boldsymbol{\\frac{q\\,\\alpha\\sin\\alpha}{\\pi\\varepsilon_0L^2}}. \\]\n(2) $\\dfrac{d}{d\\alpha}(\\alpha\\sin\\alpha)=\\sin\\alpha+\\alpha\\cos\\alpha=0$ より $\\boldsymbol{\\tan\\alpha=-\\alpha}$．$\\pi/2<\\alpha<\\pi$ の解は $\\boldsymbol{\\alpha\\approx2.029\\,\\mathrm{rad}}$，中心角 $2\\alpha\\approx4.06\\,\\mathrm{rad}\\approx232^\\circ$．円より短くなると曲率は大きくなるが打ち消し合いも増える，その兼ね合いで決まる．\n\n(3) $E$ は $\\alpha\\sin\\alpha$ に比例するので，比は\n\\[ \\frac{E_{\\max}}{E_{\\rm 半円}}=\\frac{2.029\\sin2.029}{(\\pi/2)\\sin(\\pi/2)}\\approx\\frac{1.820}{1.571}\\approx\\boldsymbol{1.16}. \\]\n$q,\\ L$ によらない．"
    }
   ],
   "idea": {
@@ -7431,7 +7431,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $E$：((4 k q α sin α)/(L ^(2)))\n(2) $\\tan\\alpha$：- α ; $\\alpha$：≈2.029 ; $2\\alpha$ [°]：≈232\n(3) $E_{\\max}$ [kV/m]：≈0.29 ; 半円 [kV/m]：≈0.25"
+   "spec": "(1) $E$：q α sin(α)/(pi ε_0 L^2)\n(2) $\\tan\\alpha$：- α ; $\\alpha$：≈2.029 ; $2\\alpha$ [°]：≈232\n(3) 倍率：≈1.16"
   },
   "methods": [],
   "tags": [
@@ -7512,16 +7512,16 @@
   "theme": "有限長の糸と帯電リングの相互作用",
   "topic": "有限長の糸と帯電リングの相互作用",
   "statement": {
-   "tex": "半径 $R$ の細いリングが電荷 $q$ を一様にもつ．リングの中心軸に沿って，一端がリングの中心にある長さ $L$ のまっすぐな糸が置かれ，線密度 $\\lambda$ で一様に帯電している（$q\\lambda>0$）．\n\\begin{enumerate}\n\\item リングと糸の間の相互作用力 $F(L)$ を求めよ．\n\\item $L\\to\\infty$ の値の $90\\%$ に達する $L$ を求めよ．\n\\item $L\\to\\infty$ の結果を，無限に長い半直線の糸が端を含む面内に作る電場（端から距離 $R$ の点で糸に平行な成分が $\\lambda/(4\\pi\\varepsilon_0R)$）を用いて作用・反作用の法則から再導出せよ．\n\\end{enumerate}"
+   "tex": "半径 $R$ の細いリングが電荷 $q$ を一様にもつ．リングの中心軸に沿って，一端がリングの中心にある長さ $L$ のまっすぐな糸が置かれ，線密度 $\\lambda$ で一様に帯電している（$q\\lambda>0$）．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item リングと糸の間の相互作用力 $F(L)$ を求めよ．\n\\item $L\\to\\infty$ の値の $f$ 倍（$0<f<1$）に達する $L$ を求めよ．\n\\item $L\\to\\infty$ の結果を，無限に長い半直線の糸が端を含む面内に作る電場（端から距離 $R$ の点で糸に平行な成分が $\\lambda/(4\\pi\\varepsilon_0R)$）を用いて作用・反作用の法則から再導出せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $F=\\dfrac{q\\lambda}{4\\pi\\varepsilon_0}\\left(\\dfrac1R-\\dfrac1{\\sqrt{R^2+L^2}}\\right)$　(2) $L=\\sqrt{99}\\,R\\approx9.95R$　(3) $F=q\\lambda/(4\\pi\\varepsilon_0R)$（一致）"
+   "tex": "(1) $F=\\dfrac{q\\lambda}{4\\pi\\varepsilon_0}\\left(\\dfrac1R-\\dfrac1{\\sqrt{R^2+L^2}}\\right)$　(2) $L=R\\sqrt{\\dfrac{1}{(1-f)^2}-1}$　(3) $F=q\\lambda/(4\\pi\\varepsilon_0R)$（一致）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) リングの軸上の場は $E(z)=\\dfrac{qz}{4\\pi\\varepsilon_0(R^2+z^2)^{3/2}}$．糸の要素 $\\lambda dz$ にはたらく力を足して\n\\[ F=\\int_0^L\\frac{q\\lambda z\\,dz}{4\\pi\\varepsilon_0(R^2+z^2)^{3/2}}=\\frac{q\\lambda}{4\\pi\\varepsilon_0}\\left(\\frac1R-\\frac1{\\sqrt{R^2+L^2}}\\right). \\]\n(2) $1/\\sqrt{1+L^2/R^2}=0.1$ より $L=\\sqrt{99}R\\approx9.95R$．長い糸の端から遠い部分は寄与が小さい．\n(3) 糸がリングに及ぼす力は逆向きで同じ大きさ．リング上の各点は糸の端を通り糸に垂直な面内で端から距離 $R$ にあり，そこでの糸方向の場の成分は $\\lambda/(4\\pi\\varepsilon_0R)$（動径成分は打ち消し合う）．よって $F=q\\cdot\\lambda/(4\\pi\\varepsilon_0R)$ となり (1) の $L\\to\\infty$ と一致する．"
+    "tex": "(1) リングの軸上の場は $E(z)=\\dfrac{qz}{4\\pi\\varepsilon_0(R^2+z^2)^{3/2}}$．糸の要素 $\\lambda dz$ にはたらく力を足して\n\\[ \\boldsymbol{F=\\int_0^L\\frac{q\\lambda z\\,dz}{4\\pi\\varepsilon_0(R^2+z^2)^{3/2}}=\\frac{q\\lambda}{4\\pi\\varepsilon_0}\\left(\\frac1R-\\frac1{\\sqrt{R^2+L^2}}\\right)}. \\]\n(2) $F/F(\\infty)=1-\\dfrac{1}{\\sqrt{1+L^2/R^2}}=f$ より $\\sqrt{1+L^2/R^2}=\\dfrac1{1-f}$，\n\\[ \\boldsymbol{L=R\\sqrt{\\frac{1}{(1-f)^2}-1}}. \\]\n$f=0.9$ でも $L\\approx10R$ が必要で，長い糸の端から遠い部分は寄与が小さい．\n\n(3) 糸がリングに及ぼす力は逆向きで同じ大きさ．リング上の各点は糸の端を通り糸に垂直な面内で端から距離 $R$ にあり，そこでの糸方向の場の成分は $\\lambda/(4\\pi\\varepsilon_0R)$（動径成分は打ち消し合う）．よって $\\boldsymbol{F=q\\cdot\\lambda/(4\\pi\\varepsilon_0R)}$ となり (1) の $L\\to\\infty$ と一致する．"
    }
   ],
   "idea": {
@@ -7529,7 +7529,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $F$：((q λ)/(4 pi ε_0))(((1)/(R))-((1)/(sqrt(R ^(2)+ L ^(2)))))\n(2) $L$：sqrt(99) R\n(3) 記述"
+   "spec": "(1) $F$：((q λ)/(4 pi ε_0))(((1)/(R))-((1)/(sqrt(R ^(2)+ L ^(2)))))\n(2) $L$：R sqrt(1/(1-f)^2-1)\n(3) $F$：q λ/(4 pi ε_0 R)"
   },
   "methods": [],
   "tags": [
@@ -8150,16 +8150,16 @@
   "theme": "線電荷のまわりの電子の軌道",
   "topic": "線電荷のまわりの電子の軌道",
   "statement": {
-   "tex": "線密度 $\\lambda=0.040\\ \\mu\\mathrm{C/m}$ で一様に帯電した無限に長い直線がある（真空中）．$1/4\\pi\\varepsilon_0=8.99\\times10^9\\ \\mathrm{N\\,m^2/C^2}$，電子の電荷 $-e$（$e=1.60\\times10^{-19}\\ \\mathrm C$），質量 $m=9.11\\times10^{-31}\\ \\mathrm{kg}$ とし，重力と放射は無視する．\n\\begin{enumerate}\n\\item 直線からの距離 $r$ の点と $2r$ の点の電位差を求めよ．\n\\item 電子が直線のまわりを（直線に垂直な面内で）等速円運動するときの速さ $v_c$ は半径によらないことを示し，その値を求めよ．\n\\item 電子を距離 $r_0$ の点から直線に垂直かつ動径に垂直な向きに速さ $\\sqrt2\\,v_c$ で打ち出す．電子が到達する最大距離 $r_{\\max}$ は $r_0$ の何倍か（有効数字 3 桁）．\n\\end{enumerate}"
+   "tex": "線密度 $\\lambda\\ (>0)$ で一様に帯電した無限に長い直線がある（真空中，誘電率 $\\varepsilon_0$）．電子の電荷を $-q$，質量を $m$ とし，重力と放射は無視する．\n\\begin{enumerate}\n\\item 直線からの距離 $r$ の点と $2r$ の点の電位差を求めよ．\n\\item 電子が直線のまわりを（直線に垂直な面内で）等速円運動するときの速さ $v_c$ は半径によらないことを示し，$v_c$ を求めよ．\n\\item 電子を距離 $r_0$ の点から直線に垂直かつ動径に垂直な向きに速さ $\\sqrt2\\,v_c$ で打ち出す．電子が到達する最大距離 $r_{\\max}$ は $r_0$ の何倍か（有効数字 3 桁）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\varphi(r)-\\varphi(2r)=\\dfrac{\\lambda\\ln2}{2\\pi\\varepsilon_0}=5.0\\times10^2\\ \\mathrm V$　(2) $v_c=\\sqrt{\\dfrac{e\\lambda}{2\\pi\\varepsilon_0m}}=1.1\\times10^7\\ \\mathrm{m/s}$　(3) $r_{\\max}=2.22\\,r_0$"
+   "tex": "(1) $\\varphi(r)-\\varphi(2r)=\\dfrac{\\lambda\\ln2}{2\\pi\\varepsilon_0}$　(2) $v_c=\\sqrt{\\dfrac{q\\lambda}{2\\pi\\varepsilon_0m}}$　(3) $r_{\\max}=2.22\\,r_0$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) ガウスの法則より $E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0r}$．\n\\[\\varphi(r)-\\varphi(2r)=\\int_r^{2r}\\frac{\\lambda}{2\\pi\\varepsilon_0r'}dr'=\\frac{\\lambda\\ln2}{2\\pi\\varepsilon_0}=2\\times8.99\\times10^9\\times0.040\\times10^{-6}\\times0.693\\approx5.0\\times10^2\\ \\mathrm V.\\]\n(2) 向心力は $eE=\\dfrac{e\\lambda}{2\\pi\\varepsilon_0r}=\\dfrac{mv^2}{r}$ より\n\\[v_c=\\sqrt{\\frac{e\\lambda}{2\\pi\\varepsilon_0m}}=\\sqrt{\\frac{2\\times8.99\\times10^9\\times1.60\\times10^{-19}\\times4.0\\times10^{-8}}{9.11\\times10^{-31}}}\\approx1.1\\times10^7\\ \\mathrm{m/s}\\]\nで，$r$ によらない（$E\\propto1/r$ のため）．$v_c\\approx0.04c$ なので非相対論で十分．\n\n(3) 電子の位置エネルギーは $U(r)=-e\\varphi(r)=\\dfrac{e\\lambda}{2\\pi\\varepsilon_0}\\ln r+\\text{const}=mv_c^2\\ln r+\\text{const}$．角運動量保存より最大距離（$\\dot r=0$）での速さは $v=\\sqrt2v_cr_0/r$．エネルギー保存：\n\\[\\frac12m(2v_c^2)\\left(1-\\frac{r_0^2}{r^2}\\right)=mv_c^2\\ln\\frac{r}{r_0}\\quad\\Longrightarrow\\quad1-\\frac1{x^2}=\\ln x\\quad(x=r/r_0).\\]\n$x=1$ は出発点（最小距離）．もう一つの解を数値的に求めると $x=2.22$．よって $r_{\\max}=2.22\\,r_0$（$v_c$ の値にも $\\lambda$ にもよらない）．"
+    "tex": "(1) ガウスの法則より $E=\\dfrac{\\lambda}{2\\pi\\varepsilon_0r}$．\n\\[\\varphi(r)-\\varphi(2r)=\\int_r^{2r}\\frac{\\lambda}{2\\pi\\varepsilon_0r'}dr'=\\boldsymbol{\\frac{\\lambda\\ln2}{2\\pi\\varepsilon_0}}.\\]\n$r$ によらない（対数ポテンシャル）．\n\n(2) 向心力は $qE=\\dfrac{q\\lambda}{2\\pi\\varepsilon_0r}=\\dfrac{mv^2}{r}$ より\n\\[\\boldsymbol{v_c=\\sqrt{\\frac{q\\lambda}{2\\pi\\varepsilon_0m}}}\\]\nで，$r$ によらない（$E\\propto1/r$ のため）．\n\n(3) 電子の位置エネルギーは $U(r)=-q\\varphi(r)=\\dfrac{q\\lambda}{2\\pi\\varepsilon_0}\\ln r+\\text{const}=mv_c^2\\ln r+\\text{const}$．角運動量保存より最大距離（$\\dot r=0$）での速さは $v=\\sqrt2v_cr_0/r$．エネルギー保存：\n\\[\\frac12m(2v_c^2)\\left(1-\\frac{r_0^2}{r^2}\\right)=mv_c^2\\ln\\frac{r}{r_0}\\quad\\Longrightarrow\\quad1-\\frac1{x^2}=\\ln x\\quad(x=r/r_0).\\]\n$x=1$ は出発点（最小距離）．もう一つの解を数値的に求めると $x=2.22$．よって $\\boldsymbol{r_{\\max}=2.22\\,r_0}$（$v_c$ の値にも $\\lambda$ にもよらない）．"
    }
   ],
   "idea": {
@@ -8167,7 +8167,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $v_c$ [m/s]：≈1.1e7\n(3) $r_{\\max}$：2.22 r_0"
+   "spec": "(1) 電位差：λ ln(2)/(2 pi ε_0)\n(2) $v_c$：sqrt(q λ/(2 pi ε_0 m))\n(3) $r_{\\max}$：2.22 r_0"
   },
   "methods": [],
   "tags": [
@@ -8841,16 +8841,16 @@
   "theme": "一様帯電球の静電エネルギーと古典電子半径",
   "topic": "一様帯電球の静電エネルギーと古典電子半径",
   "statement": {
-   "tex": "真空中で，電荷 $Q$ が半径 $a$ の球内に一様に分布している．静電エネルギーを電場のエネルギー密度 $\\dfrac{\\varepsilon_0}{2}E^2$ の積分として求める．\n\\begin{enumerate}\n\\item 球の内部 $(r<a)$ の電場がもつエネルギー $W_1$ を求めよ．\n\\item 球の外部 $(r>a)$ の電場がもつエネルギー $W_2$ を求めよ．\n\\item 全静電エネルギー $W$ を求めよ．\n\\item 電子（電荷の大きさ $q=1.60\\times10^{-19}\\,\\mathrm{C}$，質量 $m=9.11\\times10^{-31}\\,\\mathrm{kg}$）をこの一様帯電球とみなし，$W$ が静止エネルギー $mc^2$ に等しいとしたときの半径 $a$ を有効数字3桁で求めよ（$\\varepsilon_0=8.85\\times10^{-12}\\,\\mathrm{F/m}$，$c=3.00\\times10^8\\,\\mathrm{m/s}$）．\n\\end{enumerate}"
+   "tex": "真空中（誘電率 $\\varepsilon_0$）で，電荷 $Q$ が半径 $a$ の球内に一様に分布している．静電エネルギーを電場のエネルギー密度 $\\dfrac{\\varepsilon_0}{2}E^2$ の積分として求める．\n\\begin{enumerate}\n\\item 球の内部 $(r<a)$ の電場がもつエネルギー $W_1$ を求めよ．\n\\item 球の外部 $(r>a)$ の電場がもつエネルギー $W_2$ を求めよ．\n\\item 全静電エネルギー $W$ を求めよ．\n\\item 電子（電荷の大きさ $q$，質量 $m$）をこの一様帯電球とみなし，$W$ が静止エネルギー $mc^2$（$c$ は光速）に等しいとしたときの半径 $a$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $W_1=\\dfrac{Q^2}{40\\pi\\varepsilon_0 a}$　(2) $W_2=\\dfrac{Q^2}{8\\pi\\varepsilon_0 a}$　(3) $W=\\dfrac{3Q^2}{20\\pi\\varepsilon_0 a}$　(4) $a\\approx 1.69\\times10^{-15}\\,\\mathrm{m}$"
+   "tex": "(1) $W_1=\\dfrac{Q^2}{40\\pi\\varepsilon_0 a}$　(2) $W_2=\\dfrac{Q^2}{8\\pi\\varepsilon_0 a}$　(3) $W=\\dfrac{3Q^2}{20\\pi\\varepsilon_0 a}$　(4) $a=\\dfrac{3q^2}{20\\pi\\varepsilon_0mc^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 内部の電場 $E=\\dfrac{Qr}{4\\pi\\varepsilon_0a^3}$ より\n\\[W_1=\\int_0^a\\frac{\\varepsilon_0}{2}\\left(\\frac{Qr}{4\\pi\\varepsilon_0a^3}\\right)^2 4\\pi r^2dr=\\frac{Q^2}{8\\pi\\varepsilon_0a^6}\\cdot\\frac{a^5}{5}=\\boldsymbol{\\frac{Q^2}{40\\pi\\varepsilon_0 a}}.\\]\n\n(2) $W_2=\\displaystyle\\int_a^\\infty\\frac{\\varepsilon_0}{2}\\left(\\frac{Q}{4\\pi\\varepsilon_0r^2}\\right)^2 4\\pi r^2dr=\\boldsymbol{\\frac{Q^2}{8\\pi\\varepsilon_0 a}}$．\n\n(3) $W=W_1+W_2=\\dfrac{Q^2}{8\\pi\\varepsilon_0a}\\left(\\dfrac15+1\\right)=\\boldsymbol{\\dfrac{3Q^2}{20\\pi\\varepsilon_0 a}}$．内部と外部の比は $1:5$ である．電荷を無限遠から少しずつ運んで球を積み上げる仕事 $\\int_0^a\\dfrac{Q(r/a)^3}{4\\pi\\varepsilon_0 r}\\,dQ(r)$ を計算しても同じ値になる．\n\n(4) $\\dfrac{3q^2}{20\\pi\\varepsilon_0 a}=mc^2$ より $a=\\dfrac{3q^2}{20\\pi\\varepsilon_0 mc^2}\\approx\\boldsymbol{1.69\\times10^{-15}\\,\\mathrm{m}}$．古典電子半径 $r_e=\\dfrac{q^2}{4\\pi\\varepsilon_0mc^2}\\approx2.82\\times10^{-15}\\,\\mathrm{m}$ の $3/5$ 倍である．"
+    "tex": "(1) 内部の電場 $E=\\dfrac{Qr}{4\\pi\\varepsilon_0a^3}$ より\n\\[W_1=\\int_0^a\\frac{\\varepsilon_0}{2}\\left(\\frac{Qr}{4\\pi\\varepsilon_0a^3}\\right)^2 4\\pi r^2dr=\\frac{Q^2}{8\\pi\\varepsilon_0a^6}\\cdot\\frac{a^5}{5}=\\boldsymbol{\\frac{Q^2}{40\\pi\\varepsilon_0 a}}.\\]\n\n(2) $W_2=\\displaystyle\\int_a^\\infty\\frac{\\varepsilon_0}{2}\\left(\\frac{Q}{4\\pi\\varepsilon_0r^2}\\right)^2 4\\pi r^2dr=\\boldsymbol{\\frac{Q^2}{8\\pi\\varepsilon_0 a}}$．\n\n(3) $W=W_1+W_2=\\dfrac{Q^2}{8\\pi\\varepsilon_0a}\\left(\\dfrac15+1\\right)=\\boldsymbol{\\dfrac{3Q^2}{20\\pi\\varepsilon_0 a}}$．内部と外部の比は $1:5$ である．電荷を無限遠から少しずつ運んで球を積み上げる仕事 $\\int_0^a\\dfrac{Q(r/a)^3}{4\\pi\\varepsilon_0 r}\\,dQ(r)$ を計算しても同じ値になる．\n\n(4) $\\dfrac{3q^2}{20\\pi\\varepsilon_0 a}=mc^2$ より\n\\[ \\boldsymbol{a=\\frac{3q^2}{20\\pi\\varepsilon_0 mc^2}}. \\]\nこれは古典電子半径 $r_e=\\dfrac{q^2}{4\\pi\\varepsilon_0mc^2}$ の $3/5$ 倍で，実際の値を入れると $10^{-15}\\,\\mathrm m$ 程度になる．"
    }
   ],
   "idea": {
@@ -8858,7 +8858,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) W_1：Q^2/(40 pi epsilon_0 a)\n(2) W_2：Q^2/(8 pi epsilon_0 a)\n(3) W：3Q^2/(20 pi epsilon_0 a)\n(4) a [m]：≈1.69e-15"
+   "spec": "(1) W_1：Q^2/(40 pi epsilon_0 a)\n(2) W_2：Q^2/(8 pi epsilon_0 a)\n(3) W：3Q^2/(20 pi epsilon_0 a)\n(4) a：3q^2/(20 pi epsilon_0 m c^2)"
   },
   "methods": [],
   "tags": [
@@ -10129,16 +10129,16 @@
   "theme": "帯電円板導体の電荷分布：中心部は意外に少ない",
   "topic": "帯電円板導体の電荷分布：中心部は意外に少ない",
   "statement": {
-   "tex": "半径 $a$ の薄い円板導体に電荷 $Q$ を与える．これは〔24〕で $b=a$，$c\\to0$ とした扁平楕円体の極限である．\n\\begin{enumerate}\n\\item 円板の静電容量を求め，同じ半径の導体球の容量と比べよ．\n\\item 円板の中心から距離 $\\rho$ の点での電荷面密度（表裏の合計）$\\sigma(\\rho)$ を求めよ．\n\\item 半径 $a/2$ 以内に含まれる電荷は全体の何割か．また中心での面密度は，電荷が一様に分布した場合の何倍か．\n\\end{enumerate}"
+   "tex": "半径 $a$ の薄い円板導体に電荷 $Q$ を与える．これは〔24〕で $b=a$，$c\\to0$ とした扁平楕円体の極限である．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 円板の静電容量を求め，同じ半径の導体球の容量と比べよ．\n\\item 円板の中心から距離 $\\rho$ の点での電荷面密度（表裏の合計）$\\sigma(\\rho)$ を求めよ．\n\\item 中心から半径 $r_0$（$0<r_0<a$）以内に含まれる電荷は全体の何割か．また中心での面密度は，電荷が一様に分布した場合の何倍か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $C=8\\varepsilon_0a$，球の $2/\\pi\\approx0.64$ 倍　(2) $\\sigma(\\rho)=\\dfrac{Q}{2\\pi a\\sqrt{a^2-\\rho^2}}$　(3) $1-\\dfrac{\\sqrt3}{2}\\approx13.4\\%$，$1/2$ 倍"
+   "tex": "(1) $C=8\\varepsilon_0a$，球の $\\dfrac2\\pi$ 倍　(2) $\\sigma(\\rho)=\\dfrac{Q}{2\\pi a\\sqrt{a^2-\\rho^2}}$　(3) $1-\\sqrt{1-\\dfrac{r_0^2}{a^2}}$，$\\dfrac12$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 〔24・1〕より円板の電位は $V=\\dfrac{Q}{4\\pi\\varepsilon_0a}\\tan^{-1}\\dfrac{a}{\\sqrt\\lambda}$．表面 $\\lambda=0$ で $V=\\dfrac{Q}{4\\pi\\varepsilon_0a}\\cdot\\dfrac\\pi2=\\dfrac{Q}{8\\varepsilon_0a}$．よって $C=8\\varepsilon_0a$．球は $4\\pi\\varepsilon_0a$ なので比は $\\dfrac{8}{4\\pi}=\\dfrac2\\pi$．\n(2) 楕円体導体の面密度の式 $\\sigma=\\dfrac{Q}{4\\pi abc\\sqrt M}$（$M=\\frac{x^2}{a^4}+\\frac{y^2}{b^4}+\\frac{z^2}{c^4}$，〔24〕の電位から $\\sigma=-\\varepsilon_0\\frac{dV}{d\\lambda}|\\nabla\\lambda|$ で得られる） で $b=a$ とおき，表面の点 $z=c\\sqrt{1-\\rho^2/a^2}$ を代入すると\n\\[ M=\\frac{\\rho^2}{a^4}+\\frac{1-\\rho^2/a^2}{c^2}\\ \\Rightarrow\\ c\\sqrt M\\to\\sqrt{1-\\rho^2/a^2}\\quad(c\\to0). \\]\n片面あたり $\\dfrac{Q}{4\\pi a^2\\sqrt{1-\\rho^2/a^2}}=\\dfrac{Q}{4\\pi a\\sqrt{a^2-\\rho^2}}$，表裏の合計で\n\\[ \\sigma(\\rho)=\\frac{Q}{2\\pi a\\sqrt{a^2-\\rho^2}} . \\]\n検算：$\\int_0^a\\sigma\\,2\\pi\\rho\\,d\\rho=\\dfrac{Q}{a}\\bigl[-\\sqrt{a^2-\\rho^2}\\bigr]_0^a=Q$．\n(3) $\\dfrac{1}{Q}\\displaystyle\\int_0^{a/2}\\sigma\\,2\\pi\\rho\\,d\\rho=\\dfrac{a-\\sqrt{a^2-a^2/4}}{a}=1-\\dfrac{\\sqrt3}{2}\\approx0.134$．面積では $1/4$ を占める中心部に，電荷は約 13% しかない．\n中心で $\\sigma(0)=\\dfrac{Q}{2\\pi a^2}$，一様なら $\\dfrac{Q}{\\pi a^2}$ なので $1/2$ 倍．電荷は縁に向かって $(a^2-\\rho^2)^{-1/2}$ で発散的に集まる．"
+    "tex": "(1) 〔24・1〕より円板の電位は $V=\\dfrac{Q}{4\\pi\\varepsilon_0a}\\tan^{-1}\\dfrac{a}{\\sqrt\\lambda}$．表面 $\\lambda=0$ で $V=\\dfrac{Q}{4\\pi\\varepsilon_0a}\\cdot\\dfrac\\pi2=\\dfrac{Q}{8\\varepsilon_0a}$．よって $\\boldsymbol{C=8\\varepsilon_0a}$．球は $4\\pi\\varepsilon_0a$ なので比は $\\dfrac{8}{4\\pi}=\\boldsymbol{\\dfrac2\\pi}$．\n\n(2) 楕円体導体の面密度の式 $\\sigma=\\dfrac{Q}{4\\pi abc\\sqrt M}$（$M=\\frac{x^2}{a^4}+\\frac{y^2}{b^4}+\\frac{z^2}{c^4}$，〔24〕の電位から $\\sigma=-\\varepsilon_0\\frac{dV}{d\\lambda}|\\nabla\\lambda|$ で得られる） で $b=a$ とおき，表面の点 $z=c\\sqrt{1-\\rho^2/a^2}$ を代入すると\n\\[ M=\\frac{\\rho^2}{a^4}+\\frac{1-\\rho^2/a^2}{c^2}\\ \\Rightarrow\\ c\\sqrt M\\to\\sqrt{1-\\rho^2/a^2}\\quad(c\\to0). \\]\n片面あたり $\\dfrac{Q}{4\\pi a^2\\sqrt{1-\\rho^2/a^2}}=\\dfrac{Q}{4\\pi a\\sqrt{a^2-\\rho^2}}$，表裏の合計で\n\\[ \\boldsymbol{\\sigma(\\rho)=\\frac{Q}{2\\pi a\\sqrt{a^2-\\rho^2}}} . \\]\n検算：$\\int_0^a\\sigma\\,2\\pi\\rho\\,d\\rho=\\dfrac{Q}{a}\\bigl[-\\sqrt{a^2-\\rho^2}\\bigr]_0^a=Q$．\n\n(3) $\\dfrac{1}{Q}\\displaystyle\\int_0^{r_0}\\sigma\\,2\\pi\\rho\\,d\\rho=\\dfrac{a-\\sqrt{a^2-r_0^2}}{a}=\\boldsymbol{1-\\sqrt{1-r_0^2/a^2}}$．$r_0\\ll a$ では約 $\\dfrac{r_0^2}{2a^2}$ で，面積の割合 $r_0^2/a^2$ の半分しかない．たとえば $r_0=a/2$（面積の $1/4$）でも電荷は約 13\\% にすぎない．\n中心で $\\sigma(0)=\\dfrac{Q}{2\\pi a^2}$，一様なら $\\dfrac{Q}{\\pi a^2}$ なので $\\boldsymbol{1/2}$ 倍．電荷は縁に向かって $(a^2-\\rho^2)^{-1/2}$ で発散的に集まる．"
    }
   ],
   "idea": {
@@ -10146,7 +10146,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\sigma(\\rho)$：((Q)/(2 pi a sqrt(a ^(2)- ρ ^(2))))\n(3) 記述"
+   "spec": "(1) $C$：8 ε_0 a ; 比：2/pi\n(2) $\\sigma(\\rho)$：((Q)/(2 pi a sqrt(a ^(2)- ρ ^(2))))\n(3) 割合：1-sqrt(1-r_0^2/a^2) ; 倍率：1/2"
   },
   "methods": [],
   "tags": [
@@ -10179,16 +10179,16 @@
   "theme": "空間電荷制限電流（Child–Langmuir 則）の導出",
   "topic": "空間電荷制限電流（Child–Langmuir 則）の導出",
   "statement": {
-   "tex": "平行平板二極管で，陰極（$x=0$，電位 0）から電子（質量 $m$，電荷 $-e$）が初速 0 で十分に供給され，陽極（$x=d$，電位 $V_0$）へ流れる定常状態を考える．電流密度 $J$ は一定で，陰極表面の電界は 0（空間電荷制限）とする．\n\\begin{enumerate}\n\\item 電位が $V(x)=V_0(x/d)^{4/3}$ となることを，Poisson 方程式と電子の運動から示せ．\n\\item 電流密度 $J$ を $V_0,d$ で表せ．\n\\item 電子が陰極から陽極まで走る時間 $\\tau$ を，陽極到達時の速さ $v_d$ を用いて表し，空間電荷がない（電界が一様な）場合と比べよ．\n\\end{enumerate}"
+   "tex": "平行平板二極管で，陰極（$x=0$，電位 0）から電子（質量 $m$，電荷 $-q$）が初速 0 で十分に供給され，陽極（$x=d$，電位 $V_0$）へ流れる定常状態を考える．電流密度 $J$ は一定で，陰極表面の電界は 0（空間電荷制限）とする．真空の誘電率を $\\varepsilon_0$ とする．\n\\begin{enumerate}\n\\item 電位が $V(x)=V_0(x/d)^{4/3}$ となることを，Poisson 方程式と電子の運動から示せ．\n\\item 電流密度 $J$ を $V_0,d$ で表せ．\n\\item 電子が陰極から陽極まで走る時間 $\\tau$ を，陽極到達時の速さ $v_d$ を用いて表し，空間電荷がない（電界が一様な）場合の走行時間と比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 略（$V''\\propto V^{-1/2}$ を解く）　(2) $J=\\dfrac{4\\varepsilon_0}{9}\\sqrt{\\dfrac{2e}{m}}\\dfrac{V_0^{3/2}}{d^2}$　(3) $\\tau=\\dfrac{3d}{v_d}$（一様電界では $2d/v_d$，$1.5$ 倍）"
+   "tex": "(1) 略（$V''\\propto V^{-1/2}$ を解く）　(2) $J=\\dfrac{4\\varepsilon_0}{9}\\sqrt{\\dfrac{2q}{m}}\\dfrac{V_0^{3/2}}{d^2}$　(3) $\\tau=\\dfrac{3d}{v_d}$（一様電界では $\\dfrac{2d}{v_d}$，$1.5$ 倍）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 電子の速さは $v=\\sqrt{2eV/m}$（エネルギー保存）．電流の大きさ $J=-\\rho v$ 一定より $\\rho=-J\\sqrt{\\dfrac{m}{2eV}}$．Poisson 方程式\n\\[ \\frac{d^2V}{dx^2}=-\\frac{\\rho}{\\varepsilon_0}=\\frac{J}{\\varepsilon_0}\\sqrt{\\frac{m}{2e}}\\,V^{-1/2}\\equiv kV^{-1/2}. \\]\n両辺に $2V'$ を掛けて積分し，陰極で $V=0$，$V'=0$ を使うと $V'^2=4kV^{1/2}$，$V'=2\\sqrt k\\,V^{1/4}$．\n$V^{-1/4}dV=2\\sqrt k\\,dx$ を積分して $\\frac43V^{3/4}=2\\sqrt k\\,x$，すなわち $V\\propto x^{4/3}$．$V(d)=V_0$ より $V=V_0(x/d)^{4/3}$．\n(2) $\\frac43V_0^{3/4}=2\\sqrt kd$ より $k=\\dfrac{4V_0^{3/2}}{9d^2}$．$k=\\dfrac{J}{\\varepsilon_0}\\sqrt{\\dfrac{m}{2e}}$ に代入して\n\\[ J=\\frac{4\\varepsilon_0}{9}\\sqrt{\\frac{2e}{m}}\\,\\frac{V_0^{3/2}}{d^2}. \\]\n（検算：〔25〕の $\\rho=-\\dfrac{4\\varepsilon_0V_0}{9d^2}\\Bigl(\\dfrac xd\\Bigr)^{-2/3}$ と $v=\\sqrt{2eV_0/m}\\,(x/d)^{2/3}$ の積は $x$ によらず上の $J$ になる．）\n(3) $v(x)=v_d(x/d)^{2/3}$ より\n\\[ \\tau=\\int_0^d\\frac{dx}{v}=\\frac{d^{2/3}}{v_d}\\int_0^dx^{-2/3}dx=\\frac{3d}{v_d}. \\]\n一様電界（等加速度）では平均速度 $v_d/2$ で $\\tau=2d/v_d$．空間電荷が陰極付近の電界を弱めるため，電子は出発直後ゆっくり進み，走行時間が 1.5 倍になる．"
+    "tex": "(1) 電子の速さは $v=\\sqrt{2qV/m}$（エネルギー保存）．電流の大きさ $J=-\\rho v$ 一定より $\\rho=-J\\sqrt{\\dfrac{m}{2qV}}$．Poisson 方程式\n\\[ \\frac{d^2V}{dx^2}=-\\frac{\\rho}{\\varepsilon_0}=\\frac{J}{\\varepsilon_0}\\sqrt{\\frac{m}{2q}}\\,V^{-1/2}\\equiv kV^{-1/2}. \\]\n両辺に $2V'$ を掛けて積分し，陰極で $V=0$，$V'=0$ を使うと $V'^2=4kV^{1/2}$，$V'=2\\sqrt k\\,V^{1/4}$．\n$V^{-1/4}dV=2\\sqrt k\\,dx$ を積分して $\\frac43V^{3/4}=2\\sqrt k\\,x$，すなわち $V\\propto x^{4/3}$．$V(d)=V_0$ より $V=V_0(x/d)^{4/3}$．\n\n(2) $\\frac43V_0^{3/4}=2\\sqrt kd$ より $k=\\dfrac{4V_0^{3/2}}{9d^2}$．$k=\\dfrac{J}{\\varepsilon_0}\\sqrt{\\dfrac{m}{2q}}$ に代入して\n\\[ \\boldsymbol{J=\\frac{4\\varepsilon_0}{9}\\sqrt{\\frac{2q}{m}}\\,\\frac{V_0^{3/2}}{d^2}}. \\]\n（検算：〔25〕の $\\rho=-\\dfrac{4\\varepsilon_0V_0}{9d^2}\\Bigl(\\dfrac xd\\Bigr)^{-2/3}$ と $v=\\sqrt{2qV_0/m}\\,(x/d)^{2/3}$ の積は $x$ によらず上の $J$ になる．）\n\n(3) $v(x)=v_d(x/d)^{2/3}$ より\n\\[ \\tau=\\int_0^d\\frac{dx}{v}=\\frac{d^{2/3}}{v_d}\\int_0^dx^{-2/3}dx=\\boldsymbol{\\frac{3d}{v_d}}. \\]\n一様電界（等加速度）では平均速度 $v_d/2$ で $\\tau=\\boldsymbol{2d/v_d}$．空間電荷が陰極付近の電界を弱めるため，電子は出発直後ゆっくり進み，走行時間が 1.5 倍になる．"
    }
   ],
   "idea": {
@@ -10196,7 +10196,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $J$：((4 ε_0)/(9)) sqrt(((2 e)/(m)))((V_0 ^(3/2))/(d ^(2)))\n(3) $\\tau$：((3 d)/(v_d))"
+   "spec": "(1) 記述\n(2) $J$：(4 ε_0/9) sqrt(2q/m) V_0^(3/2)/d^2\n(3) $\\tau$：3d/v_d ; 一様電界：2d/v_d"
   },
   "methods": [],
   "tags": [
@@ -12632,16 +12632,16 @@
   "theme": "複素ポテンシャルと平行2円柱の容量",
   "topic": "複素ポテンシャルと平行2円柱の容量",
   "statement": {
-   "tex": "複素変数 $w=x+iy$ の正則関数 $W(w)=U(x,y)+iV(x,y)$ を考える．\n\\begin{enumerate}\n\\item $U$，$V$ がともに 2 次元ラプラス方程式を満たし，$U$ の等高線と $V$ の等高線が各点で直交することを示せ．\n\\item $W(w)=A\\ln\\dfrac{w+c}{w-c}$（$A$，$c$ は正の実定数）とする．$U=A\\ln\\left|\\dfrac{w+c}{w-c}\\right|$ の等高線 $U=u\\ (u>0)$ が円であることを示し，その中心と半径を求めよ．\n\\item $V$ の等高線はどのような曲線か．$U$ を静電ポテンシャルとみたとき，この場はどのような電荷配置によるものか（$A$ と電荷の関係を含めて）答えよ．\n\\item 真空中に，半径 $R_1$，$R_2$ の 2 本の平行な無限に長い導体円柱が，軸間距離 $D\\ (>R_1+R_2)$ で置かれている．(2)(3) を用いて単位長さあたりの容量\n\\[C'=\\frac{2\\pi\\varepsilon_0}{\\cosh^{-1}\\dfrac{D^2-R_1^2-R_2^2}{2R_1R_2}}\\]\nを導け．また，(2) の $c$ を $R_1,R_2,D$ で表せ．\n\\item $R_1=1.0\\ \\mathrm{cm}$，$R_2=2.0\\ \\mathrm{cm}$，$D=5.0\\ \\mathrm{cm}$ のとき $C'$ を求めよ．\n\\end{enumerate}"
+   "tex": "複素変数 $w=x+iy$ の正則関数 $W(w)=U(x,y)+iV(x,y)$ を考える．\n\\begin{enumerate}\n\\item $U$，$V$ がともに 2 次元ラプラス方程式を満たし，$U$ の等高線と $V$ の等高線が各点で直交することを示せ．\n\\item $W(w)=A\\ln\\dfrac{w+c}{w-c}$（$A$，$c$ は正の実定数）とする．$U=A\\ln\\left|\\dfrac{w+c}{w-c}\\right|$ の等高線 $U=u\\ (u>0)$ が円であることを示し，その中心と半径を求めよ．\n\\item $V$ の等高線はどのような曲線か．$U$ を静電ポテンシャルとみたとき，この場はどのような電荷配置によるものか（$A$ と電荷の関係を含めて）答えよ．\n\\item 真空中（誘電率 $\\varepsilon_0$）に，半径 $R_1$，$R_2$ の 2 本の平行な無限に長い導体円柱が，軸間距離 $D\\ (>R_1+R_2)$ で置かれている．(2)(3) を用いて単位長さあたりの容量\n\\[C'=\\frac{2\\pi\\varepsilon_0}{\\cosh^{-1}\\dfrac{D^2-R_1^2-R_2^2}{2R_1R_2}}\\]\nを導け．また，(2) の $c$ を $R_1,R_2,D$ で表せ．\n\\item 2 本の円柱が同じ半径 $R_1=R_2=R$ のとき，$C'$ を $D,\\ R$ で表し，$\\cosh^{-1}$ の中が 1 次式になる形に簡単にせよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明（解説参照）　(2) 中心 $(c\\coth(u/A),0)$，半径 $\\dfrac{c}{\\sinh(u/A)}$　(3) $\\pm c$ を通る円群（電気力線）．$x=c$ に線電荷 $+\\lambda$，$x=-c$ に $-\\lambda$，$A=\\lambda/(2\\pi\\varepsilon_0)$　(4) 証明（解説参照），$c=\\dfrac{\\sqrt{\\{D^2-(R_1+R_2)^2\\}\\{D^2-(R_1-R_2)^2\\}}}{2D}$　(5) $C'\\approx24\\ \\mathrm{pF/m}$"
+   "tex": "(1) 証明（解説参照）　(2) 中心 $(c\\coth(u/A),0)$（$x$ 座標 $\\dfrac{c\\cosh(u/A)}{\\sinh(u/A)}$），半径 $\\dfrac{c}{\\sinh(u/A)}$　(3) $\\pm c$ を通る円群（電気力線）．$x=c$ に線電荷 $+\\lambda$，$x=-c$ に $-\\lambda$，$A=\\lambda/(2\\pi\\varepsilon_0)$　(4) 証明（解説参照），$c=\\dfrac{\\sqrt{\\{D^2-(R_1+R_2)^2\\}\\{D^2-(R_1-R_2)^2\\}}}{2D}$　(5) $C'=\\dfrac{\\pi\\varepsilon_0}{\\ln\\left(\\dfrac{D}{2R}+\\sqrt{\\dfrac{D^2}{4R^2}-1}\\right)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) コーシー・リーマンの関係 $U_x=V_y$，$U_y=-V_x$ より $U_{xx}+U_{yy}=V_{yx}-V_{xy}=0$，同様に $V_{xx}+V_{yy}=-U_{yx}+U_{xy}=0$．また $\\nabla U\\cdot\\nabla V=U_xV_x+U_yV_y=-U_xU_y+U_yU_x=0$ なので等高線の法線どうしが直交し，等高線も直交する．\n\n(2) $e^{2u/A}=k^2$ とおくと $(x+c)^2+y^2=k^2\\{(x-c)^2+y^2\\}$．$k>1$ のとき整理して\n\\[\\left(x-c\\frac{k^2+1}{k^2-1}\\right)^2+y^2=\\left(\\frac{2kc}{k^2-1}\\right)^2.\\]\n$\\dfrac{k^2+1}{k^2-1}=\\coth(u/A)$，$\\dfrac{2k}{k^2-1}=\\dfrac{1}{\\sinh(u/A)}$ より中心 $(c\\coth(u/A),0)$，半径 $c/\\sinh(u/A)$．（$u<0$ なら左半面の円．）\n\n(3) $V=A\\{\\arg(w+c)-\\arg(w-c)\\}$ は，点 $w$ から $\\pm c$ を見込む角の一定な点の軌跡（円周角の定理）なので，$\\pm c$ を通る円の弧．(1) によりこれらは等電位円に直交する電気力線である．\n線電荷 $\\lambda$ の電位は $-\\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\ln r$ なので，$U=\\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\{\\ln|w+c|-\\ln|w-c|\\}$ は $x=+c$ に $+\\lambda$，$x=-c$ に $-\\lambda$ の 2 本の平行線電荷の電位で，$A=\\lambda/(2\\pi\\varepsilon_0)$．（$V$ を磁気的に読めば，反平行な 2 本の線電流の場ともみなせる．）\n\n(4) 2 円柱の表面がそれぞれ等電位円 $U=u_1$（右側）と $U=-u_2$（左側）に一致するように $c,u_1,u_2$ を選ぶ：\n\\[\\frac{c}{\\sinh\\beta_1}=R_1,\\quad\\frac{c}{\\sinh\\beta_2}=R_2,\\quad c\\coth\\beta_1+c\\coth\\beta_2=D\\qquad(\\beta_i=u_i/A).\\]\n円柱の外側の場は線電荷 $\\pm\\lambda$ の場と同じになり，円柱の電荷は（ガウスの法則より）$\\pm\\lambda$ である．$c\\coth\\beta_i=\\sqrt{R_i^2+c^2}$ なので $D=\\sqrt{R_1^2+c^2}+\\sqrt{R_2^2+c^2}$．これを 2 乗してまとめると\n\\[c^2=\\frac{\\{D^2-(R_1+R_2)^2\\}\\{D^2-(R_1-R_2)^2\\}}{4D^2}.\\]\nまた\n\\[\\cosh(\\beta_1+\\beta_2)=\\cosh\\beta_1\\cosh\\beta_2+\\sinh\\beta_1\\sinh\\beta_2=\\frac{\\sqrt{R_1^2+c^2}\\sqrt{R_2^2+c^2}+c^2}{R_1R_2}.\\]\n$2\\sqrt{R_1^2+c^2}\\sqrt{R_2^2+c^2}=D^2-R_1^2-R_2^2-2c^2$ を使うと $\\cosh(\\beta_1+\\beta_2)=\\dfrac{D^2-R_1^2-R_2^2}{2R_1R_2}$．\n電位差は $u_1+u_2=A(\\beta_1+\\beta_2)=\\dfrac{\\lambda}{2\\pi\\varepsilon_0}(\\beta_1+\\beta_2)$ なので\n\\[C'=\\frac{\\lambda}{u_1+u_2}=\\frac{2\\pi\\varepsilon_0}{\\cosh^{-1}\\dfrac{D^2-R_1^2-R_2^2}{2R_1R_2}}.\\]\n（$R_2\\to\\infty$，$D-R_2=h$ 一定とすると，平面から中心までの高さ $h$ の円柱と接地平面の容量 $2\\pi\\varepsilon_0/\\cosh^{-1}(h/R_1)$ になる．）\n\n(5) $\\dfrac{25-1-4}{2\\times1\\times2}=5$，$\\cosh^{-1}5=\\ln(5+\\sqrt{24})=2.292$．\n\\[C'=\\frac{2\\pi\\times8.85\\times10^{-12}}{2.292}\\approx2.4\\times10^{-11}\\ \\mathrm{F/m}=24\\ \\mathrm{pF/m}.\\]"
+    "tex": "(1) コーシー・リーマンの関係 $U_x=V_y$，$U_y=-V_x$ より $U_{xx}+U_{yy}=V_{yx}-V_{xy}=0$，同様に $V_{xx}+V_{yy}=-U_{yx}+U_{xy}=0$．また $\\nabla U\\cdot\\nabla V=U_xV_x+U_yV_y=-U_xU_y+U_yU_x=0$ なので等高線の法線どうしが直交し，等高線も直交する．\n\n(2) $e^{2u/A}=k^2$ とおくと $(x+c)^2+y^2=k^2\\{(x-c)^2+y^2\\}$．$k>1$ のとき整理して\n\\[\\left(x-c\\frac{k^2+1}{k^2-1}\\right)^2+y^2=\\left(\\frac{2kc}{k^2-1}\\right)^2.\\]\n$\\dfrac{k^2+1}{k^2-1}=\\coth(u/A)$，$\\dfrac{2k}{k^2-1}=\\dfrac{1}{\\sinh(u/A)}$ より中心 $\\boldsymbol{(c\\coth(u/A),0)}$，半径 $\\boldsymbol{c/\\sinh(u/A)}$．（$u<0$ なら左半面の円．）\n\n(3) $V=A\\{\\arg(w+c)-\\arg(w-c)\\}$ は，点 $w$ から $\\pm c$ を見込む角の一定な点の軌跡（円周角の定理）なので，$\\pm c$ を通る円の弧．(1) によりこれらは等電位円に直交する電気力線である．\n線電荷 $\\lambda$ の電位は $-\\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\ln r$ なので，$U=\\dfrac{\\lambda}{2\\pi\\varepsilon_0}\\{\\ln|w+c|-\\ln|w-c|\\}$ は $x=+c$ に $+\\lambda$，$x=-c$ に $-\\lambda$ の 2 本の平行線電荷の電位で，$\\boldsymbol{A=\\lambda/(2\\pi\\varepsilon_0)}$．（$V$ を磁気的に読めば，反平行な 2 本の線電流の場ともみなせる．）\n\n(4) 2 円柱の表面がそれぞれ等電位円 $U=u_1$（右側）と $U=-u_2$（左側）に一致するように $c,u_1,u_2$ を選ぶ：\n\\[\\frac{c}{\\sinh\\beta_1}=R_1,\\quad\\frac{c}{\\sinh\\beta_2}=R_2,\\quad c\\coth\\beta_1+c\\coth\\beta_2=D\\qquad(\\beta_i=u_i/A).\\]\n円柱の外側の場は線電荷 $\\pm\\lambda$ の場と同じになり，円柱の電荷は（ガウスの法則より）$\\pm\\lambda$ である．$c\\coth\\beta_i=\\sqrt{R_i^2+c^2}$ なので $D=\\sqrt{R_1^2+c^2}+\\sqrt{R_2^2+c^2}$．これを 2 乗してまとめると\n\\[\\boldsymbol{c^2=\\frac{\\{D^2-(R_1+R_2)^2\\}\\{D^2-(R_1-R_2)^2\\}}{4D^2}}.\\]\nまた\n\\[\\cosh(\\beta_1+\\beta_2)=\\cosh\\beta_1\\cosh\\beta_2+\\sinh\\beta_1\\sinh\\beta_2=\\frac{\\sqrt{R_1^2+c^2}\\sqrt{R_2^2+c^2}+c^2}{R_1R_2}.\\]\n$2\\sqrt{R_1^2+c^2}\\sqrt{R_2^2+c^2}=D^2-R_1^2-R_2^2-2c^2$ を使うと $\\cosh(\\beta_1+\\beta_2)=\\dfrac{D^2-R_1^2-R_2^2}{2R_1R_2}$．\n電位差は $u_1+u_2=A(\\beta_1+\\beta_2)=\\dfrac{\\lambda}{2\\pi\\varepsilon_0}(\\beta_1+\\beta_2)$ なので\n\\[C'=\\frac{\\lambda}{u_1+u_2}=\\frac{2\\pi\\varepsilon_0}{\\cosh^{-1}\\dfrac{D^2-R_1^2-R_2^2}{2R_1R_2}}.\\]\n（$R_2\\to\\infty$，$D-R_2=h$ 一定とすると，平面から中心までの高さ $h$ の円柱と接地平面の容量 $2\\pi\\varepsilon_0/\\cosh^{-1}(h/R_1)$ になる．）\n\n(5) $R_1=R_2=R$ では $\\dfrac{D^2-2R^2}{2R^2}=2\\left(\\dfrac{D}{2R}\\right)^2-1$．倍角の公式 $\\cosh2\\beta=2\\cosh^2\\beta-1$ より $\\cosh^{-1}\\left(2x^2-1\\right)=2\\cosh^{-1}x$（$x\\ge1$）なので\n\\[ \\boldsymbol{C'=\\frac{\\pi\\varepsilon_0}{\\cosh^{-1}(D/2R)}=\\frac{\\pi\\varepsilon_0}{\\ln\\left(\\dfrac{D}{2R}+\\sqrt{\\dfrac{D^2}{4R^2}-1}\\right)}}. \\]\nこれは平行 2 線の容量としてよく知られた式で，$D\\gg R$ では $\\pi\\varepsilon_0/\\ln(D/R)$ に近づく．"
    }
   ],
   "idea": {
@@ -12649,7 +12649,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述\n(4) 記述\n(5) $C'$ [pF/m]：≈24"
+   "spec": "(1) 証明\n(2) 中心の x 座標：c cosh(u/A)/sinh(u/A) ; 半径：c/sinh(u/A)\n(3) 記述\n(4) $c$：sqrt((D^2-(R_1+R_2)^2)(D^2-(R_1-R_2)^2))/(2D)\n(5) $C'$：pi ε_0/ln(D/(2R)+sqrt(D^2/(4R^2)-1))"
   },
   "methods": [],
   "tags": [
@@ -12832,16 +12832,16 @@
   "theme": "半無限スリット内のラプラス方程式（変数分離と級数の和）",
   "topic": "半無限スリット内のラプラス方程式（変数分離と級数の和）",
   "statement": {
-   "tex": "2次元の領域 $x>0,\\ 0<y<b$ に電荷はない．境界 $y=0$ と $y=b$ $(x>0)$ は接地され（電位 $0$），境界 $x=0$ $(0<y<b)$ は電位 $V_0$ に保たれている．また $x\\to\\infty$ で電位は $0$ に近づく．\n\\begin{enumerate}\n\\item 電位を $\\phi(x,y)=\\displaystyle\\sum_{n=1}^{\\infty}c_n e^{-n\\pi x/b}\\sin\\frac{n\\pi y}{b}$ と表す．$n$ が奇数のときの係数 $c_n$ を求めよ（$n$ が偶数なら $c_n=0$ である）．\n\\item $x\\gg b$ における $\\phi(x,b/2)$ の主要項を求めよ．\n\\item 級数の和をとり，$\\phi(x,y)=\\dfrac{2V_0}{\\pi}\\arctan\\dfrac{\\sin(\\pi y/b)}{\\sinh(\\pi x/b)}$ となることを示せ．\n\\item $\\phi(b,b/2)/V_0$ を有効数字3桁で求めよ．\n\\end{enumerate}"
+   "tex": "2次元の領域 $x>0,\\ 0<y<b$ に電荷はない．境界 $y=0$ と $y=b$ $(x>0)$ は接地され（電位 $0$），境界 $x=0$ $(0<y<b)$ は電位 $V_0$ に保たれている．また $x\\to\\infty$ で電位は $0$ に近づく．\n\\begin{enumerate}\n\\item 電位を $\\phi(x,y)=\\displaystyle\\sum_{n=1}^{\\infty}c_n e^{-n\\pi x/b}\\sin\\frac{n\\pi y}{b}$ と表す．$n$ が奇数のときの係数 $c_n$ を求めよ（$n$ が偶数なら $c_n=0$ である）．\n\\item $x\\gg b$ における $\\phi(x,b/2)$ の主要項を求めよ．\n\\item 級数の和をとり，$\\phi(x,y)=\\dfrac{2V_0}{\\pi}\\arctan\\dfrac{\\sin(\\pi y/b)}{\\sinh(\\pi x/b)}$ となることを示せ．\n\\item (3) を用いて，中央線 $y=b/2$ 上の電位 $\\phi(x,b/2)$ を閉じた形で表せ．また $x\\to\\infty$ で (2) と一致することを確かめよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $c_n=\\dfrac{4V_0}{n\\pi}$　(2) $\\dfrac{4V_0}{\\pi}e^{-\\pi x/b}$　(3) 略（解説参照）　(4) $\\approx 0.0550$"
+   "tex": "(1) $c_n=\\dfrac{4V_0}{n\\pi}$　(2) $\\dfrac{4V_0}{\\pi}e^{-\\pi x/b}$　(3) 略（解説参照）　(4) $\\phi(x,b/2)=\\dfrac{2V_0}{\\pi}\\arctan\\dfrac{1}{\\sinh(\\pi x/b)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 各項はラプラス方程式と $y=0,b$ および $x\\to\\infty$ の境界条件を満たす．$x=0$ で $\\sum c_n\\sin(n\\pi y/b)=V_0$ となるようにフーリエ正弦係数を決める：\n\\[c_n=\\frac{2}{b}\\int_0^bV_0\\sin\\frac{n\\pi y}{b}dy=\\frac{2V_0}{n\\pi}\\bigl(1-(-1)^n\\bigr).\\]\n$n$ が奇数のとき $\\boldsymbol{c_n=\\dfrac{4V_0}{n\\pi}}$．\n\n(2) $x\\gg b$ では $n=1$ の項だけが残る（次の項は $e^{-3\\pi x/b}$ で小さい）．$\\sin(\\pi/2)=1$ より $\\boldsymbol{\\phi\\approx\\dfrac{4V_0}{\\pi}e^{-\\pi x/b}}$．\n\n(3) $w=e^{-\\pi(x-iy)/b}$ とおくと（$|w|<1$）$\\displaystyle\\sum_{n\\,\\mathrm{odd}}\\frac{w^n}{n}=\\frac12\\ln\\frac{1+w}{1-w}$．求める級数はこの虚部の $\\dfrac{4V_0}{\\pi}$ 倍である．$\\mathrm{Im}\\,\\dfrac12\\ln\\dfrac{1+w}{1-w}=\\dfrac12\\arg\\dfrac{1+w}{1-w}$ で，$\\dfrac{1+w}{1-w}=\\dfrac{1-|w|^2+2i\\,\\mathrm{Im}\\,w}{|1-w|^2}$ より\n\\[\\arg\\frac{1+w}{1-w}=\\arctan\\frac{2\\,\\mathrm{Im}\\,w}{1-|w|^2}=\\arctan\\frac{2e^{-\\pi x/b}\\sin(\\pi y/b)}{1-e^{-2\\pi x/b}}=\\arctan\\frac{\\sin(\\pi y/b)}{\\sinh(\\pi x/b)}.\\]\nよって $\\boldsymbol{\\phi=\\dfrac{2V_0}{\\pi}\\arctan\\dfrac{\\sin(\\pi y/b)}{\\sinh(\\pi x/b)}}$．$x\\to0$ で $\\arctan\\to\\pi/2$ となり $\\phi\\to V_0$ を確かめられる．\n\n(4) $\\phi(b,b/2)/V_0=\\dfrac{2}{\\pi}\\arctan\\dfrac{1}{\\sinh\\pi}=\\dfrac2\\pi\\arctan(0.0866)\\approx\\boldsymbol{0.0550}$．級数の初項 $\\dfrac4\\pi e^{-\\pi}=0.0550$ とほぼ一致し，高次の項が小さいことがわかる．"
+    "tex": "(1) 各項はラプラス方程式と $y=0,b$ および $x\\to\\infty$ の境界条件を満たす．$x=0$ で $\\sum c_n\\sin(n\\pi y/b)=V_0$ となるようにフーリエ正弦係数を決める：\n\\[c_n=\\frac{2}{b}\\int_0^bV_0\\sin\\frac{n\\pi y}{b}dy=\\frac{2V_0}{n\\pi}\\bigl(1-(-1)^n\\bigr).\\]\n$n$ が奇数のとき $\\boldsymbol{c_n=\\dfrac{4V_0}{n\\pi}}$．\n\n(2) $x\\gg b$ では $n=1$ の項だけが残る（次の項は $e^{-3\\pi x/b}$ で小さい）．$\\sin(\\pi/2)=1$ より $\\boldsymbol{\\phi\\approx\\dfrac{4V_0}{\\pi}e^{-\\pi x/b}}$．\n\n(3) $w=e^{-\\pi(x-iy)/b}$ とおくと（$|w|<1$）$\\displaystyle\\sum_{n\\,\\mathrm{odd}}\\frac{w^n}{n}=\\frac12\\ln\\frac{1+w}{1-w}$．求める級数はこの虚部の $\\dfrac{4V_0}{\\pi}$ 倍である．$\\mathrm{Im}\\,\\dfrac12\\ln\\dfrac{1+w}{1-w}=\\dfrac12\\arg\\dfrac{1+w}{1-w}$ で，$\\dfrac{1+w}{1-w}=\\dfrac{1-|w|^2+2i\\,\\mathrm{Im}\\,w}{|1-w|^2}$ より\n\\[\\arg\\frac{1+w}{1-w}=\\arctan\\frac{2\\,\\mathrm{Im}\\,w}{1-|w|^2}=\\arctan\\frac{2e^{-\\pi x/b}\\sin(\\pi y/b)}{1-e^{-2\\pi x/b}}=\\arctan\\frac{\\sin(\\pi y/b)}{\\sinh(\\pi x/b)}.\\]\nよって $\\phi=\\dfrac{2V_0}{\\pi}\\arctan\\dfrac{\\sin(\\pi y/b)}{\\sinh(\\pi x/b)}$．$x\\to0$ で $\\arctan\\to\\pi/2$ となり $\\phi\\to V_0$ を確かめられる．\n\n(4) $y=b/2$ で $\\sin(\\pi/2)=1$ なので\n\\[ \\boldsymbol{\\phi(x,b/2)=\\frac{2V_0}{\\pi}\\arctan\\frac{1}{\\sinh(\\pi x/b)}}. \\]\n$x\\to\\infty$ では $\\sinh(\\pi x/b)\\approx\\frac12e^{\\pi x/b}$，$\\arctan u\\approx u$ より $\\phi\\approx\\dfrac{2V_0}{\\pi}\\cdot2e^{-\\pi x/b}=\\dfrac{4V_0}{\\pi}e^{-\\pi x/b}$ で (2) と一致する．$x=b$ でも両者の差は 0.1\\% 程度で，高次の項は非常に小さい．"
    }
   ],
   "idea": {
@@ -12849,7 +12849,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) c_n：4V_0/(n pi)\n(2) φ：4V_0/pi exp(-pi x/b)\n(3) 記述：w=e^{-π(x-iy)/b} として奇数次の和 (1/2)ln((1+w)/(1-w)) の虚部をとる\n(4) φ/V_0：≈0.0550"
+   "spec": "(1) c_n：4V_0/(n pi)\n(2) φ：4V_0/pi exp(-pi x/b)\n(3) 記述：w=e^{-π(x-iy)/b} として奇数次の和 (1/2)ln((1+w)/(1-w)) の虚部をとる\n(4) φ：(2V_0/pi) arctan(1/sinh(pi x/b))"
   },
   "methods": [],
   "tags": [
@@ -13132,16 +13132,16 @@
   "theme": "接地平行板間の半無限板：電位の指数減衰",
   "topic": "接地平行板間の半無限板：電位の指数減衰",
   "statement": {
-   "tex": "接地された2枚の無限平行導体板 $y=\\pm b$ の中央に，薄い半無限導体板 $y=0,\\ x\\le0$（電位 $V_0$）が挿入されている．\n\\begin{enumerate}\n\\item 対称性から上半分 $0<y<b$ だけ考える．$t=e^{\\pi z/b}$，続いて $p=\\sqrt{t-1}$（第1象限の分枝）と写像すると，境界条件がどのように写るかを示し，電位が\n\\[ \\Phi=\\frac{V_0}{\\pi}\\left\\{\\tan^{-1}\\frac{1-q}{p_r}+\\tan^{-1}\\frac{1+q}{p_r}\\right\\}\\qquad(p=p_r+iq) \\]\nとなることを示せ．\n\\item 板の先（$x\\to+\\infty$）での電位の漸近形を求めよ．\n\\item 中央面 $y=0$ 上で電位が $V_0$ の 1\\% になる $x$ を見積もれ．\n\\end{enumerate}"
+   "tex": "接地された2枚の無限平行導体板 $y=\\pm b$ の中央に，薄い半無限導体板 $y=0,\\ x\\le0$（電位 $V_0$）が挿入されている．\n\\begin{enumerate}\n\\item 対称性から上半分 $0<y<b$ だけ考える．$t=e^{\\pi z/b}$，続いて $p=\\sqrt{t-1}$（第1象限の分枝）と写像すると，境界条件がどのように写るかを示し，電位が\n\\[ \\Phi=\\frac{V_0}{\\pi}\\left\\{\\tan^{-1}\\frac{1-q}{p_r}+\\tan^{-1}\\frac{1+q}{p_r}\\right\\}\\qquad(p=p_r+iq) \\]\nとなることを示せ．\n\\item 板の先（$x\\to+\\infty$）での電位の漸近形を求めよ．\n\\item 中央面 $y=0$ 上で電位が $V_0$ の $\\delta$ 倍（$\\delta\\ll1$）になる $x$ を，(2) の漸近形を用いて求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 略　(2) $\\Phi\\simeq\\dfrac{2V_0}{\\pi}e^{-\\pi x/2b}\\cos\\dfrac{\\pi y}{2b}$　(3) $x\\simeq\\dfrac{2b}{\\pi}\\ln\\dfrac{200}{\\pi}\\approx2.64\\,b$"
+   "tex": "(1) 略　(2) $\\Phi\\simeq\\dfrac{2V_0}{\\pi}e^{-\\pi x/2b}\\cos\\dfrac{\\pi y}{2b}$　(3) $x\\simeq\\dfrac{2b}{\\pi}\\ln\\dfrac{2}{\\pi\\delta}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $t=e^{\\pi z/b}$ は帯 $0<y<b$ を上半平面に写し，$y=0$ は正の実軸，$y=b$ は負の実軸に写る．板 $x<0,\\ y=0$ は $0<t<1$（$\\Phi=V_0$），$y=0,\\ x>0$ は $t>1$（対称面：$\\partial\\Phi/\\partial y=0$），$y=b$ は $t<0$（$\\Phi=0$）．\n$p=\\sqrt{t-1}$ は上半平面を第1象限に写し，$t>1\\to$ 正の実軸（Neumann），$0<t<1\\to$ 虚軸の $0<q<1$（$V_0$），$t<0\\to$ 虚軸の $q>1$（0）．Neumann の実軸で鏡映すると，右半平面で境界（虚軸）の $|q|<1$ が $V_0$，それ以外が 0 の Dirichlet 問題になる．その解は線分 $[-i,i]$ を点 $p$ から見込む角 $\\Theta$ を用いて $\\Phi=\\dfrac{V_0}{\\pi}\\Theta$ であり，\n\\[ \\Theta=\\tan^{-1}\\frac{1-q}{p_r}+\\tan^{-1}\\frac{1+q}{p_r}. \\]\n(2) $x\\to+\\infty$ で $|p|\\to\\infty$，$\\Theta\\simeq\\dfrac{2p_r}{|p|^2}=2\\,\\mathrm{Re}\\dfrac1p$．$p\\simeq\\sqrt t=e^{\\pi z/2b}$ より $\\mathrm{Re}\\,\\dfrac1p\\simeq e^{-\\pi x/2b}\\cos\\dfrac{\\pi y}{2b}$．\n\\[ \\Phi\\simeq\\frac{2V_0}{\\pi}e^{-\\pi x/2b}\\cos\\frac{\\pi y}{2b}. \\]\nこれは導波路の最低次モードで，$y=\\pm b$ で 0 になっている．振幅 $2V_0/\\pi$ は等角写像によってはじめて決まる．\n\n(3) $\\dfrac2\\pi e^{-\\pi x/2b}=0.01$ より $x=\\dfrac{2b}{\\pi}\\ln\\dfrac{200}{\\pi}\\approx2.64\\,b$（厳密解の数値でも $2.644b$）．"
+    "tex": "(1) $t=e^{\\pi z/b}$ は帯 $0<y<b$ を上半平面に写し，$y=0$ は正の実軸，$y=b$ は負の実軸に写る．板 $x<0,\\ y=0$ は $0<t<1$（$\\Phi=V_0$），$y=0,\\ x>0$ は $t>1$（対称面：$\\partial\\Phi/\\partial y=0$），$y=b$ は $t<0$（$\\Phi=0$）．\n$p=\\sqrt{t-1}$ は上半平面を第1象限に写し，$t>1\\to$ 正の実軸（Neumann），$0<t<1\\to$ 虚軸の $0<q<1$（$V_0$），$t<0\\to$ 虚軸の $q>1$（0）．Neumann の実軸で鏡映すると，右半平面で境界（虚軸）の $|q|<1$ が $V_0$，それ以外が 0 の Dirichlet 問題になる．その解は線分 $[-i,i]$ を点 $p$ から見込む角 $\\Theta$ を用いて $\\Phi=\\dfrac{V_0}{\\pi}\\Theta$ であり，\n\\[ \\Theta=\\tan^{-1}\\frac{1-q}{p_r}+\\tan^{-1}\\frac{1+q}{p_r}. \\]\n(2) $x\\to+\\infty$ で $|p|\\to\\infty$，$\\Theta\\simeq\\dfrac{2p_r}{|p|^2}=2\\,\\mathrm{Re}\\dfrac1p$．$p\\simeq\\sqrt t=e^{\\pi z/2b}$ より $\\mathrm{Re}\\,\\dfrac1p\\simeq e^{-\\pi x/2b}\\cos\\dfrac{\\pi y}{2b}$．\n\\[ \\boldsymbol{\\Phi\\simeq\\frac{2V_0}{\\pi}e^{-\\pi x/2b}\\cos\\frac{\\pi y}{2b}}. \\]\nこれは導波路の最低次モードで，$y=\\pm b$ で 0 になっている．振幅 $2V_0/\\pi$ は等角写像によってはじめて決まる．\n\n(3) $y=0$ で $\\dfrac2\\pi e^{-\\pi x/2b}=\\delta$ より\n\\[ \\boldsymbol{x=\\frac{2b}{\\pi}\\ln\\frac{2}{\\pi\\delta}}. \\]\n$\\delta=1\\%$ なら $x\\approx2.6b$ で，厳密解の数値ともよく合う．板の先から間隔 $b$ の数倍で電位はほぼ遮蔽される．"
    }
   ],
   "idea": {
@@ -13149,7 +13149,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) 記述\n(3) 記述"
+   "spec": "(1) 証明\n(2) Φ：(2V_0/pi) exp(-pi x/(2b)) cos(pi y/(2b))\n(3) x：(2b/pi) ln(2/(pi δ))"
   },
   "methods": [],
   "tags": [

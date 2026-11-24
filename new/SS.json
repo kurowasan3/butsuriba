@@ -11,7 +11,8 @@
   "solution": "(1) 頂点の原子は8つの単位胞に共有されるので $8\\times\\frac{1}{8}=1$ 個，面心の原子は2つの単位胞に共有されるので $6\\times\\frac{1}{2}=3$ 個．合計 $\\boldsymbol{4}$ 個である．\n\n(2) 最近接原子は面の対角線上に並ぶ．面の対角線の長さ $\\sqrt{2}a$ の半分が最近接距離であり，$\\boldsymbol{\\dfrac{\\sqrt{2}}{2}a}$ である．\n\n(3) 接しているので $2r=\\frac{\\sqrt{2}}{2}a$，すなわち $r=\\frac{\\sqrt{2}}{4}a$．充填率は\n\\[\n\\frac{4\\cdot\\frac{4}{3}\\pi r^3}{a^3}=\\frac{16\\pi}{3}\\left(\\frac{\\sqrt{2}}{4}\\right)^3=\\boldsymbol{\\frac{\\sqrt{2}\\pi}{6}}\\approx 0.740\n\\]\nである．これは等球の最密充填の値で，六方最密構造と同じである．",
   "idea": "単位胞の頂点・面心の原子が何個の単位胞に共有されるかを数え，原子が接する方向（fcc では面対角線）から半径を決める．",
   "tags": "結晶構造,面心立方格子,充填率",
-  "input": "(1) 4\n(2) sqrt(2)a/2\n(3) sqrt(2)pi/6"
+  "input": "(1) 4\n(2) sqrt(2)a/2\n(3) sqrt(2)pi/6",
+  "id": "SS-01-001"
  },
  {
   "tid": "SS-02",
@@ -25,7 +26,8 @@
   "solution": "(1) 行列式を計算すると\n\\[\nv_c=\\left(\\frac{a}{2}\\right)^3\\begin{vmatrix}-1&1&1\\\\1&-1&1\\\\1&1&-1\\end{vmatrix}=\\frac{a^3}{8}\\cdot 4=\\boldsymbol{\\frac{a^3}{2}}\n\\]\nである．慣用単位胞（体積 $a^3$）に格子点が2個あることとも合う．\n\n(2) 第1ブリルアンゾーンの体積は逆格子の基本単位胞の体積に等しく，$(2\\pi)^3/v_c=\\boldsymbol{16\\pi^3/a^3}$ である．\n\n(3) $\\boldsymbol{b}_1=2\\pi\\,\\boldsymbol{a}_2\\times\\boldsymbol{a}_3/v_c$．$\\boldsymbol{a}_2\\times\\boldsymbol{a}_3=\\frac{a^2}{4}(0,2,2)$ より $\\boldsymbol{b}_1=\\frac{2\\pi}{a}(0,1,1)$．同様に $\\boldsymbol{b}_2=\\frac{2\\pi}{a}(1,0,1)$，$\\boldsymbol{b}_3=\\frac{2\\pi}{a}(1,1,0)$ であり，逆格子は一辺 $4\\pi/a$ の fcc 格子である．fcc の最短ベクトルは $\\frac{2\\pi}{a}(\\pm1,\\pm1,0)$ 型で，長さは $\\boldsymbol{2\\sqrt{2}\\pi/a}$ である．",
   "idea": "$\\boldsymbol{b}_1=2\\pi\\,\\boldsymbol{a}_2\\times\\boldsymbol{a}_3/v_c$ を計算すると，bcc の逆格子は fcc になる．ブリルアンゾーンの体積は $(2\\pi)^3/v_c$．",
   "tags": "逆格子,体心立方格子,ブリルアンゾーン",
-  "input": "(1) a^3/2\n(2) 16pi^3/a^3\n(3) 2sqrt(2)pi/a"
+  "input": "(1) a^3/2\n(2) 16pi^3/a^3\n(3) 2sqrt(2)pi/a",
+  "id": "SS-01-002"
  },
  {
   "tid": "SS-03",
@@ -34,12 +36,13 @@
   "level": 2,
   "theme": "fcc 結晶の消滅則と X 線回折角",
   "minutes": 15,
-  "q": "銅は格子定数 $a=0.3615\\,\\mathrm{nm}$ の面心立方格子をつくる．波長 $\\lambda=0.1542\\,\\mathrm{nm}$ の X 線で粉末回折を行う．原子散乱因子を $f$ とし，ミラー指数 $(hkl)$ の面による回折を考える．\n\\begin{enumerate}\n\\item 慣用単位胞の構造因子 $F_{hkl}$ が 0 にならない条件を述べよ．\n\\item 回折が観測される面のうち，$h^2+k^2+l^2$ が最小のものについて，$h^2+k^2+l^2$ の値を答えよ．\n\\item (2) の面による回折角 $2\\theta$ を求めよ．\n\\item 次に観測される面による回折角 $2\\theta$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $h,k,l$ がすべて偶数またはすべて奇数 (2) $3$（$(111)$ 面） (3) $2\\theta\\approx 43.4^\\circ$ (4) $2\\theta\\approx 50.5^\\circ$（$(200)$ 面）",
-  "solution": "(1) 慣用単位胞内の原子の位置 $(0,0,0),(\\frac12,\\frac12,0),(\\frac12,0,\\frac12),(0,\\frac12,\\frac12)$ から\n\\[\nF_{hkl}=f\\left[1+e^{i\\pi(h+k)}+e^{i\\pi(h+l)}+e^{i\\pi(k+l)}\\right]\n\\]\nである．$h,k,l$ がすべて同じ偶奇なら $F=4f$，混ざっていれば $F=0$ となる．よって\\textbf{すべて偶数かすべて奇数}のときだけ回折が起こる．\n\n(2) 許される最小の組は $(111)$ で，$h^2+k^2+l^2=\\boldsymbol{3}$．\n\n(3) 面間隔 $d=a/\\sqrt{3}=0.2087\\,\\mathrm{nm}$．ブラッグ条件 $2d\\sin\\theta=\\lambda$ より $\\sin\\theta=0.3694$，$\\theta=21.68^\\circ$．よって $\\boldsymbol{2\\theta\\approx 43.4^\\circ}$．\n\n(4) 次は $(200)$ で $d=a/2=0.1808\\,\\mathrm{nm}$，$\\sin\\theta=0.4265$，$\\theta=25.25^\\circ$．$\\boldsymbol{2\\theta\\approx 50.5^\\circ}$．",
+  "q": "格子定数 $a$ の面心立方格子をつくる結晶（銅など）を，波長 $\\lambda$ の X 線で粉末回折する．原子散乱因子を $f$ とし，ミラー指数 $(hkl)$ の面による回折を考える．\n\\begin{enumerate}\n\\item 慣用単位胞の構造因子 $F_{hkl}$ が 0 にならない条件を述べよ．\n\\item 回折が観測される面のうち，$h^2+k^2+l^2$ が最小のものについて，$h^2+k^2+l^2$ の値を答えよ．\n\\item (2) の面による回折角 $2\\theta$ を $a,\\lambda$ で表せ．\n\\item 次に観測される面による回折角 $2\\theta$ を $a,\\lambda$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $h,k,l$ がすべて偶数またはすべて奇数 (2) $3$（$(111)$ 面） (3) $2\\theta=2\\arcsin\\dfrac{\\sqrt3\\lambda}{2a}$ (4) $2\\theta=2\\arcsin\\dfrac{\\lambda}{a}$（$(200)$ 面）",
+  "solution": "(1) 慣用単位胞内の原子の位置 $(0,0,0),(\\frac12,\\frac12,0),(\\frac12,0,\\frac12),(0,\\frac12,\\frac12)$ から\n\\[\nF_{hkl}=f\\left[1+e^{i\\pi(h+k)}+e^{i\\pi(h+l)}+e^{i\\pi(k+l)}\\right]\n\\]\nである．$h,k,l$ がすべて同じ偶奇なら $F=4f$，混ざっていれば $F=0$ となる．よって\\textbf{すべて偶数かすべて奇数}のときだけ回折が起こる．\n\n(2) 許される最小の組は $(111)$ で，$h^2+k^2+l^2=\\boldsymbol{3}$．\n\n(3) 面間隔 $d=a/\\sqrt{3}$．ブラッグ条件 $2d\\sin\\theta=\\lambda$ より $\\sin\\theta=\\dfrac{\\sqrt3\\lambda}{2a}$，$\\boldsymbol{2\\theta=2\\arcsin\\dfrac{\\sqrt3\\lambda}{2a}}$．\n\n(4) 次は $(200)$ で $d=a/2$，$\\sin\\theta=\\lambda/a$，$\\boldsymbol{2\\theta=2\\arcsin\\dfrac{\\lambda}{a}}$．（銅 $a=0.3615\\,\\mathrm{nm}$，$\\lambda=0.1542\\,\\mathrm{nm}$ では $43.4^\\circ$，$50.5^\\circ$．）",
   "idea": "fcc の構造因子は $h,k,l$ の偶奇がそろうときだけ 0 でない．許される面の面間隔 $a/\\sqrt{h^2+k^2+l^2}$ をブラッグ条件に入れる．",
   "tags": "X線回折,構造因子,消滅則,ブラッグ条件",
-  "input": "(1) 記述：h, k, l がすべて偶数またはすべて奇数\n(2) 3\n(3) 2θ [°]：≈43.4\n(4) 2θ [°]：≈50.5"
+  "input": "(1) 記述：h, k, l がすべて偶数またはすべて奇数\n(2) 3\n(3) 2θ：2arcsin(sqrt(3) λ/(2a))\n(4) 2θ：2arcsin(λ/a)",
+  "id": "SS-01-003"
  },
  {
   "tid": "SS-04",
@@ -53,7 +56,8 @@
   "solution": "構造因子は fcc の部分と2原子の基本構造の部分の積になる：\n\\[\nF_{hkl}=f\\left[1+e^{i\\pi(h+k)}+e^{i\\pi(h+l)}+e^{i\\pi(k+l)}\\right]\\left[1+e^{i\\pi(h+k+l)/2}\\right]\n\\]\nfcc の因子は $h,k,l$ が全偶・全奇のとき 4，それ以外 0 である．\n\n(1) $(111)$：$1+e^{3\\pi i/2}=1-i$，$|1-i|^2=2$．よって $|F_{111}|^2=16f^2\\cdot 2=\\boldsymbol{32f^2}$．\n\n(2) $(200)$：$1+e^{i\\pi}=0$．fcc では許されるが，ダイヤモンド構造では2原子の散乱が打ち消し合って $\\boldsymbol{0}$ になる．\n\n(3) $(220)$：$1+e^{2\\pi i}=2$．$|F_{220}|^2=16f^2\\cdot 4=\\boldsymbol{64f^2}$．\n\n(4) $I_{220}/I_{111}=64/32=\\boldsymbol{2}$．\n\n一般に $h+k+l=4n$ で $|F|^2=64f^2$，$h+k+l$ が奇数で $32f^2$，$h+k+l=4n+2$（全偶）で 0 となる．Si や Ge の粉末回折に $(200)$ が現れないのはこのためである．",
   "idea": "複合格子の構造因子は「ブラベー格子の因子」×「単位構造の因子」に分かれる．単位構造の因子 $1+e^{i\\pi(h+k+l)/2}$ が新たな消滅則を生む．",
   "tags": "構造因子,ダイヤモンド構造,消滅則",
-  "input": "(1) 32f^2\n(2) 0\n(3) 64f^2\n(4) 2"
+  "input": "(1) 32f^2\n(2) 0\n(3) 64f^2\n(4) 2",
+  "id": "SS-01-004"
  },
  {
   "tid": "SS-05",
@@ -67,7 +71,8 @@
   "solution": "(1) $\\boldsymbol{b}_1\\cdot\\boldsymbol{a}_2=0$ より $\\boldsymbol{b}_1\\propto(\\sqrt{3},-1)$，$\\boldsymbol{b}_1\\cdot\\boldsymbol{a}_1=2\\pi$ より $\\boldsymbol{b}_1=\\frac{2\\pi}{a}(1,-\\frac{1}{\\sqrt{3}})$．長さは $\\boldsymbol{\\dfrac{4\\pi}{\\sqrt{3}a}}$．逆格子も（$30^\\circ$ 回転した）三角格子である．\n\n(2) 実格子の単位胞の面積 $A_c=\\frac{\\sqrt{3}}{2}a^2$ から，ゾーンの面積は $(2\\pi)^2/A_c=\\boldsymbol{\\dfrac{8\\pi^2}{\\sqrt{3}a^2}}$．\n\n(3) M はもっとも近い逆格子点の垂直二等分線上にあるので $|\\Gamma\\mathrm{M}|=|\\boldsymbol{b}_1|/2=\\boldsymbol{\\dfrac{2\\pi}{\\sqrt{3}a}}$．正六角形の頂点までの距離は辺心距離の $2/\\sqrt{3}$ 倍で $|\\Gamma\\mathrm{K}|=\\boldsymbol{\\dfrac{4\\pi}{3a}}$．\n\n(4) 2次元でスピン縮退を含めると $n=2\\cdot\\pi k_F^2/(2\\pi)^2=k_F^2/(2\\pi)$．1格子点あたり2電子なら $n=2/A_c=\\frac{4}{\\sqrt{3}a^2}$ なので\n\\[\nk_F=\\sqrt{\\frac{8\\pi}{\\sqrt{3}}}\\,\\frac{1}{a}\\approx\\frac{3.809}{a}\n\\]\n$|\\Gamma\\mathrm{M}|\\approx 3.628/a$，$|\\Gamma\\mathrm{K}|\\approx 4.189/a$ だから $\\boldsymbol{k_F/|\\Gamma\\mathrm{M}|\\approx 1.05}$，$k_F/|\\Gamma\\mathrm{K}|\\approx 0.91$．フェルミ円は M 点の周りでゾーン境界を越え，第2ゾーンに小さなポケットができるが，K 点の近くは占有されない．なお円の面積はゾーンの面積にちょうど等しい（2電子＝1つのバンドを満たす数）．",
   "idea": "逆格子の長さから M・K までの距離を幾何で求め，フェルミ円の面積が「ゾーン面積×（電子数/2）」になることを使う．",
   "tags": "逆格子,ブリルアンゾーン,三角格子,フェルミ面",
-  "input": "(1) 4pi/(sqrt(3)a)\n(2) 8pi^2/(sqrt(3)a^2)\n(3) ΓM：2pi/(sqrt(3)a) ; ΓK：4pi/(3a)\n(4) k_F/ΓM：≈1.05 ; 記述：M 点付近で境界をはみ出し，K 点には届かない"
+  "input": "(1) 4pi/(sqrt(3)a)\n(2) 8pi^2/(sqrt(3)a^2)\n(3) ΓM：2pi/(sqrt(3)a) ; ΓK：4pi/(3a)\n(4) k_F/ΓM：≈1.05 ; 記述：M 点付近で境界をはみ出し，K 点には届かない",
+  "id": "SS-01-005"
  },
  {
   "tid": "SS-06",
@@ -81,7 +86,8 @@
   "solution": "(1) $|\\sin(ka/2)|\\le1$ で，$k=\\pi/a$ のとき最大．$\\omega_{\\max}=\\boldsymbol{2\\sqrt{K/M}}$．\n\n(2) $ka\\ll1$ では $\\sin(ka/2)\\approx ka/2$ で $\\omega\\approx a\\sqrt{K/M}\\,k$．音速は $\\boldsymbol{a\\sqrt{K/M}}$．\n\n(3) $v_g=d\\omega/dk=a\\sqrt{K/M}\\cos(ka/2)$．$k=\\pi/a$ で $\\boldsymbol{0}$．ゾーン端では波は定在波になり，エネルギーを運ばない（ブラッグ反射）．",
   "idea": "分散関係の傾き $d\\omega/dk$ が群速度．長波長では線形（音波），ゾーン端では 0（定在波）．",
   "tags": "格子振動,分散関係,群速度",
-  "input": "(1) 2sqrt(K/M)\n(2) a sqrt(K/M)\n(3) 0"
+  "input": "(1) 2sqrt(K/M)\n(2) a sqrt(K/M)\n(3) 0",
+  "id": "SS-02-001"
  },
  {
   "tid": "SS-07",
@@ -95,7 +101,8 @@
   "solution": "(1) $k=0$ で根号の中は $(1/M_1+1/M_2)^2$．$+$ の枝は $\\omega^2=2C(1/M_1+1/M_2)$，すなわち $\\boldsymbol{\\omega=\\sqrt{2C(M_1+M_2)/(M_1M_2)}}$．このとき2種の原子は逆向きに振動する．\n\n(2) $k=\\pi/a$ で $\\sin^2(ka/2)=1$．根号の中は $(1/M_2-1/M_1)^2$ なので，$\\omega^2=2C/M_1$ と $2C/M_2$．$M_1>M_2$ より音響モードは $\\boldsymbol{\\sqrt{2C/M_1}}$（重い原子だけが動く），光学モードは $\\boldsymbol{\\sqrt{2C/M_2}}$（軽い原子だけが動く）．\n\n(3) $M_1=2M_2$ なら音響モードの上端は $\\sqrt{C/M_2}$，光学モードの下端は $\\sqrt{2C/M_2}$．ギャップは $\\boldsymbol{(\\sqrt{2}-1)\\sqrt{C/M_2}}$．$M_1=M_2$ ではギャップが閉じ，単原子鎖（周期 $a/2$）に戻る．",
   "idea": "$k=0$ とゾーン端 $k=\\pi/a$ で根号が完全平方になる．ゾーン端では片方の原子だけが動くモードになり，質量の差がギャップを生む．",
   "tags": "格子振動,2原子鎖,光学モード,音響モード",
-  "input": "(1) sqrt(2C(M_1+M_2)/(M_1 M_2))\n(2) 音響：sqrt(2C/M_1) ; 光学：sqrt(2C/M_2)\n(3) (sqrt(2)-1)sqrt(C/M_2)"
+  "input": "(1) sqrt(2C(M_1+M_2)/(M_1 M_2))\n(2) 音響：sqrt(2C/M_1) ; 光学：sqrt(2C/M_2)\n(3) (sqrt(2)-1)sqrt(C/M_2)",
+  "id": "SS-02-002"
  },
  {
   "tid": "SS-08",
@@ -104,12 +111,13 @@
   "level": 2,
   "theme": "アインシュタイン模型の比熱",
   "minutes": 15,
-  "q": "$N$ 個の原子からなる固体の $3N$ 個の振動モードが，すべて同じ角振動数 $\\omega_E$ をもつとする（アインシュタイン模型）．$\\theta_E=\\hbar\\omega_E/k_B$ とおく．\n\\begin{enumerate}\n\\item 高温（$T\\gg\\theta_E$）での定積比熱 $C$ を求めよ．\n\\item $\\theta_E=300\\,\\mathrm{K}$ の固体の $T=150\\,\\mathrm{K}$ での比熱を，(1) の値に対する比 $C/C_{\\infty}$ で数値で求めよ．\n\\item 低温（$T\\ll\\theta_E$）での比熱の漸近形を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $3Nk_B$ (2) $\\approx 0.724$ (3) $3Nk_B\\left(\\dfrac{\\theta_E}{T}\\right)^2e^{-\\theta_E/T}$",
-  "solution": "1つの調和振動子の平均エネルギーは $\\hbar\\omega_E\\left(\\frac{1}{2}+\\frac{1}{e^{x}-1}\\right)$，$x=\\theta_E/T$．$T$ で微分して $3N$ 倍すると\n\\[\nC=3Nk_B\\frac{x^2e^x}{(e^x-1)^2}\n\\]\nである．\n\n(1) $x\\to0$ で $x^2e^x/(e^x-1)^2\\to1$．$C\\to\\boldsymbol{3Nk_B}$（デュロン＝プティの法則）．\n\n(2) $x=2$ で $\\dfrac{4e^2}{(e^2-1)^2}=\\boldsymbol{0.724}$．\n\n(3) $x\\gg1$ で $e^x-1\\approx e^x$ より $\\boldsymbol{C\\approx 3Nk_B(\\theta_E/T)^2e^{-\\theta_E/T}}$．指数関数的に小さくなるが，実験では $T^3$ 則に従う．これは低エネルギーの音響フォノンを無視したためで，デバイ模型で改善される．",
+  "q": "$N$ 個の原子からなる固体の $3N$ 個の振動モードが，すべて同じ角振動数 $\\omega_E$ をもつとする（アインシュタイン模型）．$\\theta_E=\\hbar\\omega_E/k_B$ とおく．\n\\begin{enumerate}\n\\item 高温（$T\\gg\\theta_E$）での定積比熱 $C_{\\infty}$ を求めよ．\n\\item $T=\\theta_E/2$ での比熱を，(1) の値に対する比 $C/C_{\\infty}$ で求めよ．\n\\item 低温（$T\\ll\\theta_E$）での比熱の漸近形を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $3Nk_B$ (2) $\\dfrac{4e^2}{(e^2-1)^2}$ (3) $3Nk_B\\left(\\dfrac{\\theta_E}{T}\\right)^2e^{-\\theta_E/T}$",
+  "solution": "1つの調和振動子の平均エネルギーは $\\hbar\\omega_E\\left(\\frac{1}{2}+\\frac{1}{e^{x}-1}\\right)$，$x=\\theta_E/T$．$T$ で微分して $3N$ 倍すると\n\\[\nC=3Nk_B\\frac{x^2e^x}{(e^x-1)^2}\n\\]\nである．\n\n(1) $x\\to0$ で $x^2e^x/(e^x-1)^2\\to1$．$C\\to\\boldsymbol{3Nk_B}$（デュロン＝プティの法則）．\n\n(2) $x=2$ で $\\boldsymbol{\\dfrac{4e^2}{(e^2-1)^2}}\\approx0.72$．特性温度の半分の温度でも古典値の7割程度ある．\n\n(3) $x\\gg1$ で $e^x-1\\approx e^x$ より $\\boldsymbol{C\\approx 3Nk_B(\\theta_E/T)^2e^{-\\theta_E/T}}$．指数関数的に小さくなるが，実験では $T^3$ 則に従う．これは低エネルギーの音響フォノンを無視したためで，デバイ模型で改善される．",
   "idea": "振動子1個の比熱 $k_Bx^2e^x/(e^x-1)^2$ を高温・低温で展開する．低温ではギャップ $\\hbar\\omega_E$ のために指数関数的に凍結する．",
   "tags": "比熱,アインシュタイン模型,デュロン＝プティ",
-  "input": "(1) 3N k_B\n(2) ≈0.724\n(3) 3N k_B (theta_E/T)^2 exp(-theta_E/T)"
+  "input": "(1) 3N k_B\n(2) 4e^2/(e^2-1)^2\n(3) 3N k_B (theta_E/T)^2 exp(-theta_E/T)",
+  "id": "SS-02-003"
  },
  {
   "tid": "SS-09",
@@ -118,12 +126,13 @@
   "level": 3,
   "theme": "デバイ温度と低温比熱の T^3 則",
   "minutes": 20,
-  "q": "ある単体金属の原子数密度は $n=8.5\\times10^{28}\\,\\mathrm{m^{-3}}$ で，3つの偏りの音速をすべて $v=3.0\\times10^3\\,\\mathrm{m/s}$ とみなす（デバイ模型）．\n\\begin{enumerate}\n\\item デバイ温度 $\\theta_D=\\dfrac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}$ を数値で求めよ．\n\\item 低温でのデバイ比熱は $C=\\dfrac{12\\pi^4}{5}Nk_B\\left(\\dfrac{T}{\\theta_D}\\right)^3$ である．$T=10\\,\\mathrm{K}$ での比 $C/(3Nk_B)$ を求めよ．\n\\item (2) の $T^3$ 則の式をそのまま高温へ延ばしたとき，デュロン＝プティの値 $3Nk_B$ に達する温度を $\\theta_D$ で表せ．\n\\end{enumerate}",
-  "answer": "(1) $\\theta_D\\approx 393\\,\\mathrm{K}$ (2) $\\approx 1.29\\times10^{-3}$ (3) $\\left(\\dfrac{5}{4\\pi^4}\\right)^{1/3}\\theta_D$（$\\approx 0.234\\,\\theta_D$）",
-  "solution": "(1) デバイ波数は $\\frac{4}{3}\\pi k_D^3/(2\\pi)^3=n$ から $k_D=(6\\pi^2n)^{1/3}=1.714\\times10^{10}\\,\\mathrm{m^{-1}}$．$k_B\\theta_D=\\hbar vk_D$ より\n\\[\n\\theta_D=\\frac{(1.055\\times10^{-34})(3.0\\times10^3)(1.714\\times10^{10})}{1.381\\times10^{-23}}\\approx\\boldsymbol{393\\,\\mathrm{K}}\n\\]\n\n(2) $\\dfrac{C}{3Nk_B}=\\dfrac{4\\pi^4}{5}\\left(\\dfrac{10}{393}\\right)^3=77.9\\times1.65\\times10^{-5}\\approx\\boldsymbol{1.29\\times10^{-3}}$．\n\n(3) $\\frac{12\\pi^4}{5}(T/\\theta_D)^3=3$ を解いて $\\boldsymbol{T=(5/(4\\pi^4))^{1/3}\\theta_D}\\approx0.234\\,\\theta_D$．$T^3$ 則が使えるのはこれよりずっと低い温度（目安は $\\theta_D/50$ 以下）である．",
+  "q": "ある単体金属の原子数密度を $n$ とし，3つの偏りの音速をすべて $v$ とみなす（デバイ模型）．\n\\begin{enumerate}\n\\item デバイ波数 $k_D$ を「状態数＝原子数」の条件から求め，デバイ温度 $\\theta_D=\\hbar vk_D/k_B$ を $n,v,\\hbar,k_B$ で表せ．\n\\item 低温でのデバイ比熱は $C=\\dfrac{12\\pi^4}{5}Nk_B\\left(\\dfrac{T}{\\theta_D}\\right)^3$ である．温度 $T$ での比 $C/(3Nk_B)$ を $n,v,T,\\hbar,k_B$ で表せ．\n\\item (2) の $T^3$ 則の式をそのまま高温へ延ばしたとき，デュロン＝プティの値 $3Nk_B$ に達する温度を $\\theta_D$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\theta_D=\\dfrac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}$ (2) $\\dfrac{C}{3Nk_B}=\\dfrac{2\\pi^2k_B^3T^3}{15n\\hbar^3v^3}$ (3) $\\left(\\dfrac{5}{4\\pi^4}\\right)^{1/3}\\theta_D$（$\\approx 0.234\\,\\theta_D$）",
+  "solution": "(1) デバイ波数は $\\frac{4}{3}\\pi k_D^3/(2\\pi)^3=n$ から $k_D=(6\\pi^2n)^{1/3}$．$k_B\\theta_D=\\hbar vk_D$ より\n\\[\n\\boldsymbol{\\theta_D=\\frac{\\hbar v}{k_B}(6\\pi^2n)^{1/3}}.\n\\]\n典型的な金属（$n\\sim10^{29}\\,\\mathrm{m^{-3}}$，$v\\sim3\\,\\mathrm{km/s}$）で約 400 K になる．\n\n(2) $\\theta_D^3=\\dfrac{6\\pi^2n\\hbar^3v^3}{k_B^3}$ を代入して\n\\[\n\\frac{C}{3Nk_B}=\\frac{4\\pi^4}{5}\\left(\\frac{T}{\\theta_D}\\right)^3=\\frac{4\\pi^4}{5}\\cdot\\frac{k_B^3T^3}{6\\pi^2n\\hbar^3v^3}=\\boldsymbol{\\frac{2\\pi^2k_B^3T^3}{15n\\hbar^3v^3}}.\n\\]\n音速が遅い（柔らかい）物質ほど低温比熱は大きい．$\\theta_D\\approx400\\,\\mathrm K$ の金属では $10\\,\\mathrm K$ で $10^{-3}$ 程度にすぎない．\n\n(3) $\\frac{12\\pi^4}{5}(T/\\theta_D)^3=3$ を解いて $\\boldsymbol{T=(5/(4\\pi^4))^{1/3}\\theta_D}\\approx0.234\\,\\theta_D$．$T^3$ 則が使えるのはこれよりずっと低い温度（目安は $\\theta_D/50$ 以下）である．",
   "idea": "デバイ波数は「状態数＝原子数」で決まる．$T^3$ 則の係数 $12\\pi^4/5\\approx234$ は大きいので，$T/\\theta_D$ がかなり小さくないと使えない．",
   "tags": "比熱,デバイ模型,デバイ温度,T^3則",
-  "input": "(1) θ_D [K]：≈393\n(2) ≈1.29e-3\n(3) (5/(4pi^4))^(1/3) theta_D"
+  "input": "(1) θ_D：hbar v (6pi^2 n)^(1/3)/k_B\n(2) 2pi^2 k_B^3 T^3/(15n hbar^3 v^3)\n(3) (5/(4pi^4))^(1/3) theta_D",
+  "id": "SS-02-004"
  },
  {
   "tid": "SS-10",
@@ -137,7 +146,8 @@
   "solution": "(1) 2次元の波数空間で，半径 $k$ の円内のモード数は1つの偏りあたり $A\\pi k^2/(2\\pi)^2$．2つの偏りで $N(\\omega)=\\frac{A\\omega^2}{2\\pi v^2}$．微分して $\\boldsymbol{D(\\omega)=\\dfrac{A\\omega}{\\pi v^2}}$．\n\n(2) 全モード数は $2N$．$\\frac{A\\omega_D^2}{2\\pi v^2}=2N$ より $\\boldsymbol{\\omega_D=v\\sqrt{4\\pi N/A}}$．\n\n(3) $A/(\\pi v^2)=4N/\\omega_D^2$ を使うと，低温で（積分の上限を $\\infty$ にして）\n\\[\nU=\\frac{4N}{\\omega_D^2}\\int_0^\\infty\\frac{\\hbar\\omega\\cdot\\omega\\,d\\omega}{e^{\\hbar\\omega/k_BT}-1}=\\frac{4N(k_BT)^3}{(\\hbar\\omega_D)^2}\\cdot2\\zeta(3)=8\\zeta(3)Nk_B\\frac{T^3}{\\theta_D^2}\n\\]\n$C=dU/dT=24\\zeta(3)Nk_B(T/\\theta_D)^2$．$\\boldsymbol{c=24\\zeta(3)\\approx28.8}$．2次元では比熱は $T^2$ に比例する（グラファイトの層内の比熱など）．\n\n(4) 高温の極限は2つの偏り $\\times N$ で $2Nk_B$．$\\dfrac{C}{2Nk_B}=\\dfrac{28.85}{2}\\times\\dfrac{1}{100}\\approx\\boldsymbol{0.144}$．（厳密なデバイ関数で計算すると 0.143 で，この温度ではまだ低温近似がよく合う．）",
   "idea": "$d$ 次元のデバイ模型では $D(\\omega)\\propto\\omega^{d-1}$ なので低温比熱は $T^d$ に比例する．係数はモード総数の条件で $\\omega_D$ に置き換えて決める．",
   "tags": "比熱,デバイ模型,2次元,状態密度",
-  "input": "(1) A ω/(pi v^2)\n(2) v sqrt(4pi N/A)\n(3) c：≈28.8\n(4) ≈0.144"
+  "input": "(1) A ω/(pi v^2)\n(2) v sqrt(4pi N/A)\n(3) c：≈28.8\n(4) ≈0.144",
+  "id": "SS-02-005"
  },
  {
   "tid": "SS-11",
@@ -151,21 +161,23 @@
   "solution": "(1) 周期境界条件で波数空間の1状態あたりの体積は $(2\\pi)^3/V$．スピンの2を掛けて $2\\cdot\\frac{4}{3}\\pi k_F^3\\cdot\\frac{V}{(2\\pi)^3}=N$，すなわち $k_F^3=3\\pi^2n$．$\\boldsymbol{k_F=(3\\pi^2n)^{1/3}}$．\n\n(2) $\\boldsymbol{E_F=\\dfrac{\\hbar^2k_F^2}{2m}=\\dfrac{\\hbar^2}{2m}(3\\pi^2n)^{2/3}}$．\n\n(3) 状態密度は $D(E)\\propto E^{1/2}$ なので\n\\[\n\\langle E\\rangle=\\frac{\\int_0^{E_F}E\\cdot E^{1/2}dE}{\\int_0^{E_F}E^{1/2}dE}=\\frac{2/5}{2/3}E_F=\\boldsymbol{\\frac{3}{5}E_F}\n\\]",
   "idea": "フェルミ球の体積×（状態密度 $V/(2\\pi)^3$）×スピン2＝電子数．平均エネルギーは $D(E)\\propto\\sqrt{E}$ で重みをつける．",
   "tags": "自由電子,フェルミエネルギー,フェルミ波数",
-  "input": "(1) (3pi^2 n)^(1/3)\n(2) hbar^2 (3pi^2 n)^(2/3)/(2m)\n(3) 3E_F/5"
+  "input": "(1) (3pi^2 n)^(1/3)\n(2) hbar^2 (3pi^2 n)^(2/3)/(2m)\n(3) 3E_F/5",
+  "id": "SS-03-001"
  },
  {
   "tid": "SS-12",
   "subject": "固体物理学",
   "field": "自由電子モデル",
   "level": 2,
-  "theme": "ナトリウムのフェルミ面の数値",
+  "theme": "ナトリウムのフェルミ面",
   "minutes": 15,
-  "q": "ナトリウムは格子定数 $a=0.429\\,\\mathrm{nm}$ の体心立方格子をつくり，原子1個あたり1個の伝導電子を出す．伝導電子を質量 $m_e=9.11\\times10^{-31}\\,\\mathrm{kg}$ の自由電子気体とみなす．\n\\begin{enumerate}\n\\item 伝導電子密度 $n$ を求めよ．\n\\item フェルミエネルギー $E_F$ を eV 単位で求めよ．\n\\item フェルミ速度 $v_F$ とフェルミ温度 $T_F$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $n\\approx 2.53\\times10^{28}\\,\\mathrm{m^{-3}}$ (2) $E_F\\approx 3.15\\,\\mathrm{eV}$ (3) $v_F\\approx 1.05\\times10^{6}\\,\\mathrm{m/s}$，$T_F\\approx 3.65\\times10^{4}\\,\\mathrm{K}$",
-  "solution": "(1) bcc の慣用単位胞には原子が2個あるので $n=2/a^3=2/(0.429\\times10^{-9})^3\\approx\\boldsymbol{2.53\\times10^{28}\\,\\mathrm{m^{-3}}}$．\n\n(2) $k_F=(3\\pi^2n)^{1/3}=9.09\\times10^9\\,\\mathrm{m^{-1}}$．\n\\[\nE_F=\\frac{\\hbar^2k_F^2}{2m_e}=5.04\\times10^{-19}\\,\\mathrm{J}\\approx\\boldsymbol{3.15\\,\\mathrm{eV}}\n\\]\n\n(3) $v_F=\\hbar k_F/m_e\\approx\\boldsymbol{1.05\\times10^6\\,\\mathrm{m/s}}$（光速の約 $1/300$）．$T_F=E_F/k_B\\approx\\boldsymbol{3.65\\times10^4\\,\\mathrm{K}}$．室温は $T_F$ よりずっと低いので，伝導電子は強く縮退している．",
+  "q": "ナトリウムは格子定数 $a$ の体心立方格子をつくり，原子1個あたり1個の伝導電子を出す．伝導電子を質量 $m$ の自由電子気体とみなす．\n\\begin{enumerate}\n\\item 伝導電子密度 $n$ を $a$ で表せ．\n\\item フェルミエネルギー $E_F$ を $a,m,\\hbar$ で表せ．\n\\item フェルミ速度 $v_F$ とフェルミ温度 $T_F$ を $a,m,\\hbar,k_B$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $n=\\dfrac{2}{a^3}$ (2) $E_F=\\dfrac{(6\\pi^2)^{2/3}\\hbar^2}{2ma^2}$ (3) $v_F=\\dfrac{(6\\pi^2)^{1/3}\\hbar}{ma}$，$T_F=\\dfrac{(6\\pi^2)^{2/3}\\hbar^2}{2mk_Ba^2}$",
+  "solution": "(1) bcc の慣用単位胞には原子が2個あるので $\\boldsymbol{n=2/a^3}$．\n\n(2) $k_F=(3\\pi^2n)^{1/3}=\\dfrac{(6\\pi^2)^{1/3}}{a}$．\n\\[\n\\boldsymbol{E_F=\\frac{\\hbar^2k_F^2}{2m}=\\frac{(6\\pi^2)^{2/3}\\hbar^2}{2ma^2}}\n\\]\n$a=0.429\\,\\mathrm{nm}$ を入れると約 $3.2\\,\\mathrm{eV}$ である．\n\n(3) $\\boldsymbol{v_F=\\dfrac{\\hbar k_F}{m}=\\dfrac{(6\\pi^2)^{1/3}\\hbar}{ma}}$（ナトリウムで約 $1\\times10^6\\,\\mathrm{m/s}$，光速の約 $1/300$）．$\\boldsymbol{T_F=\\dfrac{E_F}{k_B}=\\dfrac{(6\\pi^2)^{2/3}\\hbar^2}{2mk_Ba^2}}$（約 $4\\times10^4\\,\\mathrm K$）．室温は $T_F$ よりずっと低いので，伝導電子は強く縮退している．",
   "idea": "密度は単位胞の原子数から．$k_F=(3\\pi^2n)^{1/3}$ からエネルギー・速度・温度を順に出す．",
-  "tags": "自由電子,フェルミエネルギー,数値計算",
-  "input": "(1) n [m^-3]：≈2.53e28\n(2) E_F [eV]：≈3.15\n(3) v_F [m/s]：≈1.05e6 ; T_F [K]：≈3.65e4"
+  "tags": "自由電子,フェルミエネルギー,フェルミ速度",
+  "input": "(1) n：2/a^3\n(2) E_F：(6pi^2)^(2/3) hbar^2/(2m a^2)\n(3) v_F：(6pi^2)^(1/3) hbar/(m a) ; T_F：(6pi^2)^(2/3) hbar^2/(2m k_B a^2)",
+  "id": "SS-03-002"
  },
  {
   "tid": "SS-13",
@@ -174,12 +186,13 @@
   "level": 2,
   "theme": "電子比熱と格子比熱が等しくなる温度",
   "minutes": 15,
-  "q": "3次元自由電子気体（電子数 $N$，フェルミエネルギー $E_F$）を考える．\n\\begin{enumerate}\n\\item フェルミエネルギーでの状態密度 $D(E_F)$（スピンを含む）を $N,E_F$ で表せ．\n\\item 低温の電子比熱は $C_{\\mathrm{el}}=\\dfrac{\\pi^2}{3}D(E_F)k_B^2T$ である．$C_{\\mathrm{el}}=\\gamma T$ と書くときの $\\gamma$ を $N,E_F,k_B$ で表せ．\n\\item 1価金属で，$T_F=E_F/k_B=8.2\\times10^4\\,\\mathrm{K}$，デバイ温度 $\\theta_D=343\\,\\mathrm{K}$ とする．格子比熱を低温のデバイ式 $\\dfrac{12\\pi^4}{5}Nk_B(T/\\theta_D)^3$ で表すとき，電子比熱と格子比熱が等しくなる温度を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $D(E_F)=\\dfrac{3N}{2E_F}$ (2) $\\gamma=\\dfrac{\\pi^2Nk_B^2}{2E_F}$ (3) $T\\approx 3.2\\,\\mathrm{K}$",
-  "solution": "(1) $N=\\int_0^{E_F}D(E)dE$ で $D(E)=CE^{1/2}$ とすると $N=\\frac{2}{3}CE_F^{3/2}$．$D(E_F)=CE_F^{1/2}=\\boldsymbol{\\dfrac{3N}{2E_F}}$．\n\n(2) $\\gamma=\\dfrac{\\pi^2}{3}\\cdot\\dfrac{3N}{2E_F}k_B^2=\\boldsymbol{\\dfrac{\\pi^2Nk_B^2}{2E_F}}$．書き換えると $C_{\\mathrm{el}}=\\frac{\\pi^2}{2}Nk_B\\,T/T_F$ で，古典値 $\\frac{3}{2}Nk_B$ の $T/T_F$ 程度に抑えられる．\n\n(3) 電子数＝原子数 $N$ なので\n\\[\n\\frac{\\pi^2}{2}\\frac{T}{T_F}=\\frac{12\\pi^4}{5}\\frac{T^3}{\\theta_D^3}\\quad\\Longrightarrow\\quad T=\\sqrt{\\frac{5\\theta_D^3}{24\\pi^2T_F}}\n\\]\n数値を入れて $T=\\sqrt{\\dfrac{5\\times343^3}{24\\pi^2\\times8.2\\times10^4}}\\approx\\boldsymbol{3.2\\,\\mathrm{K}}$．これより低温では電子比熱が主になるので，$C/T$ を $T^2$ に対してプロットすると切片から $\\gamma$ が得られる．",
+  "q": "3次元自由電子気体（電子数 $N$，フェルミエネルギー $E_F$）を考える．\n\\begin{enumerate}\n\\item フェルミエネルギーでの状態密度 $D(E_F)$（スピンを含む）を $N,E_F$ で表せ．\n\\item 低温の電子比熱は $C_{\\mathrm{el}}=\\dfrac{\\pi^2}{3}D(E_F)k_B^2T$ である．$C_{\\mathrm{el}}=\\gamma T$ と書くときの $\\gamma$ を $N,E_F,k_B$ で表せ．\n\\item 1価金属で，フェルミ温度を $T_F=E_F/k_B$，デバイ温度を $\\theta_D$ とする．格子比熱を低温のデバイ式 $\\dfrac{12\\pi^4}{5}Nk_B(T/\\theta_D)^3$ で表すとき，電子比熱と格子比熱が等しくなる温度 $T_\\times$ を $T_F,\\theta_D$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $D(E_F)=\\dfrac{3N}{2E_F}$ (2) $\\gamma=\\dfrac{\\pi^2Nk_B^2}{2E_F}$ (3) $T_\\times=\\sqrt{\\dfrac{5\\theta_D^3}{24\\pi^2T_F}}$",
+  "solution": "(1) $N=\\int_0^{E_F}D(E)dE$ で $D(E)=CE^{1/2}$ とすると $N=\\frac{2}{3}CE_F^{3/2}$．$D(E_F)=CE_F^{1/2}=\\boldsymbol{\\dfrac{3N}{2E_F}}$．\n\n(2) $\\gamma=\\dfrac{\\pi^2}{3}\\cdot\\dfrac{3N}{2E_F}k_B^2=\\boldsymbol{\\dfrac{\\pi^2Nk_B^2}{2E_F}}$．書き換えると $C_{\\mathrm{el}}=\\frac{\\pi^2}{2}Nk_B\\,T/T_F$ で，古典値 $\\frac{3}{2}Nk_B$ の $T/T_F$ 程度に抑えられる．\n\n(3) 電子数＝原子数 $N$ なので\n\\[\n\\frac{\\pi^2}{2}\\frac{T}{T_F}=\\frac{12\\pi^4}{5}\\frac{T^3}{\\theta_D^3}\\quad\\Longrightarrow\\quad \\boldsymbol{T_\\times=\\sqrt{\\frac{5\\theta_D^3}{24\\pi^2T_F}}}\n\\]\n銅程度（$T_F\\approx8\\times10^4\\,\\mathrm K$，$\\theta_D\\approx340\\,\\mathrm K$）で約 3 K である．これより低温では電子比熱が主になるので，$C/T$ を $T^2$ に対してプロットすると切片から $\\gamma$ が得られる．",
   "idea": "電子比熱は $T$ に，格子比熱は $T^3$ に比例するので，十分低温では必ず電子比熱が勝つ．交差温度は数 K 程度．",
   "tags": "電子比熱,状態密度,デバイ模型",
-  "input": "(1) 3N/(2E_F)\n(2) pi^2 N k_B^2/(2E_F)\n(3) T [K]：≈3.2"
+  "input": "(1) 3N/(2E_F)\n(2) pi^2 N k_B^2/(2E_F)\n(3) T_×：sqrt(5θ_D^3/(24pi^2 T_F))",
+  "id": "SS-03-003"
  },
  {
   "tid": "SS-14",
@@ -193,7 +206,8 @@
   "solution": "(1) 部分積分して $K(E)=\\int_0^EH$ とおくと，$\\int K(E)(-\\partial f/\\partial E)dE$．$-\\partial f/\\partial E$ は $\\mu$ を中心とする幅 $k_BT$ 程度の偶関数なので，$K$ を $\\mu$ のまわりでテイラー展開すると1次の項は消え，2次の項が $\\frac{1}{2}K''(\\mu)\\cdot\\frac{\\pi^2}{3}(k_BT)^2=\\frac{\\pi^2}{6}(k_BT)^2H'(\\mu)$ を与える．\n\n(2) $H=D$ として電子数を一定に保つ：$\\int_0^{\\mu}D\\,dE+\\frac{\\pi^2}{6}(k_BT)^2D'(\\mu)=\\int_0^{E_F}D\\,dE$．$\\mu-E_F$ は小さいので $(\\mu-E_F)D(E_F)\\approx-\\frac{\\pi^2}{6}(k_BT)^2D'(E_F)$．$D'/D=1/(2E_F)$ より\n\\[\n\\boldsymbol{\\mu=E_F\\left[1-\\frac{\\pi^2}{12}\\left(\\frac{k_BT}{E_F}\\right)^2\\right]}\n\\]\n状態密度が増加関数なので，$\\mu$ は温度とともに下がる．\n\n(3) $D=D_0$（一定）なら $N=D_0\\int_0^\\infty\\frac{dE}{e^{(E-\\mu)/k_BT}+1}=D_0k_BT\\ln(1+e^{\\mu/k_BT})$．$T=0$ では $N=D_0E_F$ なので $e^{E_F/k_BT}=1+e^{\\mu/k_BT}$，\n\\[\n\\boldsymbol{\\mu=k_BT\\ln\\left(e^{E_F/k_BT}-1\\right)}\n\\]\n\n(4) $\\mu=E_F+k_BT\\ln(1-e^{-E_F/k_BT})\\approx E_F-k_BTe^{-E_F/k_BT}$．補正は指数関数的に小さく，べきで展開すると $T^2$ の係数は $\\boldsymbol{0}$ である．$D'=0$ なので (1) の展開の第2項が消えることと合う．",
   "idea": "$\\mu$ の温度変化は $D'(E_F)$ で決まる．2次元では $D$ が一定なので，すべてのべきの補正が消え，補正は $e^{-E_F/k_BT}$ 程度になる．",
   "tags": "ゾンマーフェルト展開,化学ポテンシャル,自由電子",
-  "input": "(1) 記述：-∂f/∂E は μ のまわり幅 k_BT の偶関数で，1次のモーメントが消え2次のモーメントが π^2(k_BT)^2/3\n(2) E_F(1-pi^2 k_B^2 T^2/(12E_F^2))\n(3) k_B T ln(exp(E_F/(k_B T))-1)\n(4) 0"
+  "input": "(1) 記述：-∂f/∂E は μ のまわり幅 k_BT の偶関数で，1次のモーメントが消え2次のモーメントが π^2(k_BT)^2/3\n(2) E_F(1-pi^2 k_B^2 T^2/(12E_F^2))\n(3) k_B T ln(exp(E_F/(k_B T))-1)\n(4) 0",
+  "id": "SS-03-004"
  },
  {
   "tid": "SS-15",
@@ -202,12 +216,13 @@
   "level": 4,
   "theme": "2次元電子系のランダウ準位と量子振動",
   "minutes": 30,
-  "q": "GaAs/AlGaAs ヘテロ接合の2次元電子系（有効質量 $m^*=0.067m_e$，面密度 $n=3.0\\times10^{15}\\,\\mathrm{m^{-2}}$，スピン縮退2）を考える．面に垂直に磁場 $B$ をかける．\n\\begin{enumerate}\n\\item 磁場がないときのフェルミエネルギー $E_F$ を meV 単位で求めよ．\n\\item $B=5.0\\,\\mathrm{T}$ でのサイクロトロンエネルギー $\\hbar\\omega_c$ を meV 単位で求めよ．\n\\item ランダウ準位1本あたりの縮退度（単位面積あたり，スピン1方向あたり）は $eB/h$ である．占有率 $\\nu=nh/(eB)$ がちょうど $2$（最低ランダウ準位をスピン2方向とも満たす）になる磁場を求めよ．\n\\item 抵抗の量子振動（シュブニコフ＝ド・ハース振動）の $1/B$ に対する周期 $\\Delta(1/B)$ を求めよ．ただしスピン分裂は無視できるとする．\n\\end{enumerate}",
-  "answer": "(1) $E_F\\approx 10.7\\,\\mathrm{meV}$ (2) $\\hbar\\omega_c\\approx 8.64\\,\\mathrm{meV}$ (3) $B\\approx 6.2\\,\\mathrm{T}$ (4) $\\Delta(1/B)\\approx 0.161\\,\\mathrm{T^{-1}}$",
-  "solution": "(1) 2次元の状態密度（スピン込み）は $m^*/(\\pi\\hbar^2)$ で一定．$n=\\frac{m^*}{\\pi\\hbar^2}E_F$ より\n\\[\nE_F=\\frac{\\pi\\hbar^2n}{m^*}=1.72\\times10^{-21}\\,\\mathrm{J}\\approx\\boldsymbol{10.7\\,\\mathrm{meV}}\n\\]\n\n(2) $\\hbar\\omega_c=\\hbar eB/m^*=\\dfrac{(1.055\\times10^{-34})(1.602\\times10^{-19})(5.0)}{0.067\\times9.11\\times10^{-31}}\\approx\\boldsymbol{8.64\\,\\mathrm{meV}}$．有効質量が小さいので $E_F$ と同程度になる．\n\n(3) $\\nu=2$ より $B=\\dfrac{nh}{2e}=\\dfrac{(3.0\\times10^{15})(6.626\\times10^{-34})}{2\\times1.602\\times10^{-19}}\\approx\\boldsymbol{6.2\\,\\mathrm{T}}$．このときちょうど $E_F=\\hbar\\omega_c$ になっている（$\\nu=2E_F/(\\hbar\\omega_c)$）．\n\n(4) スピン縮退したランダウ準位1本は単位面積あたり $2eB/h$ 個の電子を収める．準位が1本ずつフェルミ準位を横切るたびに振動が1周期進み，そのときの磁場は $1/B_j=2j\\,e/(nh)$（$j$ は満ちた準位の数）．よって\n\\[\n\\Delta\\left(\\frac{1}{B}\\right)=\\frac{2e}{nh}\\approx\\boldsymbol{0.161\\,\\mathrm{T^{-1}}}\n\\]\nこれはオンサーガーの関係 $\\Delta(1/B)=2\\pi e/(\\hbar S_F)$（$S_F=\\pi k_F^2$，$k_F^2=2\\pi n$）と一致し，振動の周期から電子密度が直接わかる．",
+  "q": "半導体ヘテロ接合の2次元電子系（有効質量 $m$，面密度 $n$，スピン縮退2）を考える．面に垂直に磁場 $B$ をかける．電気素量を $q$ とする．\n\\begin{enumerate}\n\\item 磁場がないときのフェルミエネルギー $E_F$ を求めよ．\n\\item サイクロトロンエネルギー $\\hbar\\omega_c$ を求めよ．\n\\item ランダウ準位1本あたりの縮退度（単位面積あたり，スピン1方向あたり）は $qB/h$ である．占有率 $\\nu=nh/(qB)$ がちょうど $2$（最低ランダウ準位をスピン2方向とも満たす）になる磁場 $B_2$ を $n,q,\\hbar$ で表せ．\n\\item 抵抗の量子振動（シュブニコフ＝ド・ハース振動）の $1/B$ に対する周期 $\\Delta(1/B)$ を $n,q,\\hbar$ で表せ．ただしスピン分裂は無視できるとする．\n\\end{enumerate}",
+  "answer": "(1) $E_F=\\dfrac{\\pi\\hbar^2n}{m}$ (2) $\\hbar\\omega_c=\\dfrac{\\hbar qB}{m}$ (3) $B_2=\\dfrac{\\pi\\hbar n}{q}$ (4) $\\Delta(1/B)=\\dfrac{q}{\\pi\\hbar n}$",
+  "solution": "(1) 2次元の状態密度（スピン込み）は $m/(\\pi\\hbar^2)$ で一定．$n=\\frac{m}{\\pi\\hbar^2}E_F$ より\n\\[\n\\boldsymbol{E_F=\\frac{\\pi\\hbar^2n}{m}}\n\\]\nGaAs（$m=0.067m_e$，$n=3\\times10^{15}\\,\\mathrm{m^{-2}}$）では約 $11\\,\\mathrm{meV}$ である．\n\n(2) $\\omega_c=qB/m$ より $\\boldsymbol{\\hbar\\omega_c=\\hbar qB/m}$．GaAs では $B=5\\,\\mathrm T$ で約 $9\\,\\mathrm{meV}$ となり，有効質量が小さいので $E_F$ と同程度になる．\n\n(3) $\\nu=2$ より $\\boldsymbol{B_2=\\dfrac{nh}{2q}=\\dfrac{\\pi\\hbar n}{q}}$．このときちょうど $E_F=\\hbar\\omega_c$ になっている（$\\nu=2E_F/(\\hbar\\omega_c)$）．上の数値では約 6 T である．\n\n(4) スピン縮退したランダウ準位1本は単位面積あたり $2qB/h$ 個の電子を収める．準位が1本ずつフェルミ準位を横切るたびに振動が1周期進み，そのときの磁場は $1/B_j=2j\\,q/(nh)$（$j$ は満ちた準位の数）．よって\n\\[\n\\boldsymbol{\\Delta\\left(\\frac{1}{B}\\right)=\\frac{2q}{nh}=\\frac{q}{\\pi\\hbar n}}\n\\]\nこれはオンサーガーの関係 $\\Delta(1/B)=2\\pi q/(\\hbar S_F)$（$S_F=\\pi k_F^2$，$k_F^2=2\\pi n$）と一致し，振動の周期から電子密度が直接わかる．",
   "idea": "ランダウ準位1本の縮退度 $eB/h$ と電子密度の比が占有率．$1/B$ に関する周期は電子密度（フェルミ面の面積）だけで決まり，有効質量によらない．",
   "tags": "ランダウ準位,量子振動,2次元電子系,オンサーガーの関係",
-  "input": "(1) E_F [meV]：≈10.7\n(2) ħω_c [meV]：≈8.64\n(3) B [T]：≈6.2\n(4) Δ(1/B) [T^-1]：≈0.161"
+  "input": "(1) E_F：pi hbar^2 n/m\n(2) hbar q B/m\n(3) B_2：pi hbar n/q\n(4) q/(pi hbar n)",
+  "id": "SS-03-005"
  },
  {
   "tid": "SS-16",
@@ -221,7 +236,8 @@
   "solution": "(1) $\\cos(ka)$ は $-1$ から $1$ まで動くので，$E$ は $E_0-2t$ から $E_0+2t$．幅は $\\boldsymbol{4t}$．\n\n(2) $\\dfrac{1}{m^*}=\\dfrac{1}{\\hbar^2}\\dfrac{d^2E}{dk^2}\\Big|_{k=0}=\\dfrac{2ta^2}{\\hbar^2}$ より $\\boldsymbol{m^*=\\hbar^2/(2ta^2)}$．飛び移り積分 $t$ が大きいほど電子は軽い．\n\n(3) $v=\\dfrac{1}{\\hbar}\\dfrac{dE}{dk}=\\dfrac{2ta}{\\hbar}\\sin(ka)$．最大値は $k=\\pi/(2a)$ で $\\boldsymbol{2ta/\\hbar}$．",
   "idea": "有効質量はバンドの曲率 $d^2E/dk^2$，群速度は傾き $dE/(\\hbar\\,dk)$ で決まる．",
   "tags": "強束縛近似,有効質量,群速度",
-  "input": "(1) 4t\n(2) hbar^2/(2t a^2)\n(3) 2t a/hbar"
+  "input": "(1) 4t\n(2) hbar^2/(2t a^2)\n(3) 2t a/hbar",
+  "id": "SS-04-001"
  },
  {
   "tid": "SS-17",
@@ -235,7 +251,8 @@
   "solution": "$V(x)=\\frac{V_0}{2}(e^{iGx}+e^{-iGx})$，$G=2\\pi/a$ なので，フーリエ成分は $V_{\\pm G}=V_0/2$，ほかは 0．\n\n(1) $k=G/2$ では $e^{iGx/2}$ と $e^{-iGx/2}$ が縮退し，$V_G$ で混ざって $E=E_1\\pm|V_G|$ に分かれる．ギャップは $2|V_G|=\\boldsymbol{V_0}$．\n\n(2) $k=G$ で縮退する $e^{iGx}$ と $e^{-iGx}$ をつなぐのは $V_{2G}$ だが，これは 0．1次の範囲でギャップは $\\boldsymbol{0}$（2次摂動では開く）．\n\n(3) $k=\\pi/a+q$ とし，2つの平面波 $k$ と $k-G$ だけを考えると\n\\[\nE_\\pm=E_1+\\frac{\\hbar^2q^2}{2m}\\pm\\sqrt{\\left(\\frac{V_0}{2}\\right)^2+4E_1\\frac{\\hbar^2q^2}{2m}}\\approx E_1\\pm\\frac{V_0}{2}+\\frac{\\hbar^2q^2}{2m}\\left(1\\pm\\frac{4E_1}{V_0}\\right)\n\\]\n上側のバンドでは $m/m^*=1+4E_1/V_0$，すなわち $\\boldsymbol{m^*/m=V_0/(V_0+4E_1)}$．ギャップが小さいほど，ギャップのそばの電子は軽い．下側のバンドの頂上では $m^*/m=-V_0/(4E_1-V_0)$ で負になる（正孔）．",
   "idea": "ギャップは対応するフーリエ成分の2倍．ギャップ近傍の2準位の混ざりでバンドの曲率が $E_1/V_0$ 倍に強められ，有効質量が小さくなる．",
   "tags": "ほとんど自由な電子,エネルギーギャップ,有効質量",
-  "input": "(1) V_0\n(2) 0\n(3) V_0/(V_0+4E_1)"
+  "input": "(1) V_0\n(2) 0\n(3) V_0/(V_0+4E_1)",
+  "id": "SS-04-002"
  },
  {
   "tid": "SS-18",
@@ -249,7 +266,8 @@
   "solution": "(1) $E$ は $-4t$（$\\Gamma$ 点）から $4t$（$(\\pi/a,\\pi/a)$）まで．幅は $\\boldsymbol{8t}$．\n\n(2) $\\boldsymbol{k}\\to\\boldsymbol{k}+(\\pi/a,\\pi/a)$ で $E\\to-E$ となるので，状態密度は $E=0$ について対称．スピン込みで2電子入るバンドの半分を満たすので $E_F=\\boldsymbol{0}$．フェルミ面は $|k_x|+|k_y|=\\pi/a$ の正方形になる（完全ネスティング）．\n\n(3) $\\boldsymbol{v}=\\frac{1}{\\hbar}\\nabla_{\\boldsymbol{k}}E=\\frac{2ta}{\\hbar}(\\sin k_xa,\\sin k_ya)=\\frac{2ta}{\\hbar}(1,1)$．大きさは $\\boldsymbol{2\\sqrt{2}ta/\\hbar}$．速度はフェルミ面（正方形の辺）に垂直である．\n\n(4) $E\\approx-4t+ta^2(k_x^2+k_y^2)$ なので $\\hbar^2/(2m^*)=ta^2$，$\\boldsymbol{m^*=\\hbar^2/(2ta^2)}$．",
   "idea": "$\\boldsymbol{k}\\to\\boldsymbol{k}+(\\pi/a,\\pi/a)$ の対称性で $E_F=0$ がわかる．群速度は $\\nabla_{\\boldsymbol{k}}E/\\hbar$ でフェルミ面に垂直．",
   "tags": "強束縛近似,フェルミ面,正方格子,群速度",
-  "input": "(1) 8t\n(2) 0\n(3) 2sqrt(2)t a/hbar\n(4) hbar^2/(2t a^2)"
+  "input": "(1) 8t\n(2) 0\n(3) 2sqrt(2)t a/hbar\n(4) hbar^2/(2t a^2)",
+  "id": "SS-04-003"
  },
  {
   "tid": "SS-19",
@@ -263,7 +281,8 @@
   "solution": "右辺を $F(x)=\\cos x+P\\sin x/x$ とおく．$|F(x)|\\le1$ の $x$ が許されるバンドである．\n\n(1) バンドの底は $F(x)=1$（$k=0$）．$P=3\\pi/2$ で $\\cos x+\\frac{3\\pi}{2}\\frac{\\sin x}{x}=1$ を数値的に解くと $\\boldsymbol{x\\approx2.25}$．自由電子の $x=0$ からかなり上がっている．\n\n(2) 第1バンドの頂上は $F=-1$ となる最初の点 $x=\\pi$（$\\sin\\pi=0$）．$x>\\pi$ では $\\sin x<0$ で $F<-1$ となり，再び $F=-1$ になるのは $x=3\\pi/2$：$\\cos\\frac{3\\pi}{2}+\\frac{3\\pi}{2}\\cdot\\frac{-1}{3\\pi/2}=-1$．よって\n\\[\n\\Delta E=\\frac{\\hbar^2}{2ma^2}\\left[\\left(\\frac{3\\pi}{2}\\right)^2-\\pi^2\\right]=\\boldsymbol{\\frac{5\\pi^2\\hbar^2}{8ma^2}}\n\\]\n\n(3) $P\\to\\infty$ では $|F|\\le1$ となるのは $\\sin x\\to0$ の近く，すなわち $x\\to n\\pi$ だけで，バンドは幅を失う．$\\boldsymbol{E_n=n^2\\pi^2\\hbar^2/(2ma^2)}$．これは幅 $a$ の無限井戸の準位で，井戸どうしが切り離された極限である．\n\n(4) $x=\\pi+\\delta$ とすると $F\\approx-1+\\frac{\\delta^2}{2}-\\frac{P}{\\pi}\\delta$．$F=-1$ から $\\delta=2P/\\pi$．ギャップは\n\\[\n\\Delta E\\approx\\frac{\\hbar^2}{2ma^2}\\cdot2\\pi\\delta=\\frac{2P\\hbar^2}{ma^2}=\\boldsymbol{\\frac{2\\alpha}{a}}\n\\]\nデルタ関数列のフーリエ成分は $V_G=\\alpha/a$ なので，ほとんど自由な電子の近似の結果 $2|V_G|$ と一致する．",
   "idea": "$|F(x)|\\le1$ の領域がバンド．バンドの端は $F=\\pm1$．$P$ が大きいと孤立井戸（強束縛），小さいとほとんど自由な電子の極限に移る．",
   "tags": "クローニッヒ＝ペニー模型,バンド構造,エネルギーギャップ",
-  "input": "(1) x：≈2.25\n(2) 5pi^2 hbar^2/(8m a^2)\n(3) n^2 pi^2 hbar^2/(2m a^2)\n(4) 2α/a"
+  "input": "(1) x：≈2.25\n(2) 5pi^2 hbar^2/(8m a^2)\n(3) n^2 pi^2 hbar^2/(2m a^2)\n(4) 2α/a",
+  "id": "SS-04-004"
  },
  {
   "tid": "SS-20",
@@ -277,7 +296,8 @@
   "solution": "(1) $\\boldsymbol{k}=0$ で和は 3．$\\boldsymbol{E=\\pm3t}$．\n\n(2) $f(\\boldsymbol{k})=\\sum_je^{i\\boldsymbol{k}\\cdot\\boldsymbol{\\delta}_j}$ とする．$\\boldsymbol{\\delta}_1=d(1,0)$，$\\boldsymbol{\\delta}_{2,3}=d(-\\frac{1}{2},\\pm\\frac{\\sqrt{3}}{2})$ に対し，$\\mathrm{K}=\\left(\\frac{2\\pi}{3d},\\frac{2\\pi}{3\\sqrt{3}d}\\right)$ で $f=0$ となる．K のまわりで展開すると\n\\[\nf(\\mathrm{K}+\\boldsymbol{q})\\approx i\\sum_j(\\boldsymbol{q}\\cdot\\boldsymbol{\\delta}_j)e^{i\\mathrm{K}\\cdot\\boldsymbol{\\delta}_j}\n\\]\nで，計算すると $|f|=\\frac{3d}{2}|\\boldsymbol{q}|$（向きによらない）．よって $\\hbar v_F=\\frac{3td}{2}$，$\\boldsymbol{v_F=3td/(2\\hbar)}$．分散は円錐形（ディラック錐）で，電子は質量のないディラック粒子のようにふるまう．\n\n(3) $v_F=\\dfrac{3\\times2.8\\times1.602\\times10^{-19}\\times0.142\\times10^{-9}}{2\\times1.055\\times10^{-34}}\\approx\\boldsymbol{9.1\\times10^5\\,\\mathrm{m/s}}$（光速の約 $1/330$）．\n\n(4) 1つの谷・1つのスピンあたり，$|E|$ 以下の状態数は単位面積あたり $\\pi q^2/(2\\pi)^2=E^2/(4\\pi\\hbar^2v_F^2)$．微分して $|E|/(2\\pi\\hbar^2v_F^2)$．縮退度 4 を掛けて $\\boldsymbol{D(E)=2|E|/(\\pi\\hbar^2v_F^2)}$．$E=0$ で状態密度が 0 になる「ゼロギャップ半導体」である．",
   "idea": "K 点で $f(\\boldsymbol{k})=0$ となり2つのバンドが接する．その近傍の1次展開で線形分散（ディラック錐）が得られ，2次元で線形分散なら状態密度は $|E|$ に比例する．",
   "tags": "グラフェン,強束縛近似,ディラック錐,状態密度",
-  "input": "(1) {3t, -3t}\n(2) 3t d/(2 hbar)\n(3) v_F [m/s]：≈9.1e5\n(4) 2*|E|/(pi hbar^2 v_F^2)"
+  "input": "(1) {3t, -3t}\n(2) 3t d/(2 hbar)\n(3) v_F [m/s]：≈9.1e5\n(4) 2*|E|/(pi hbar^2 v_F^2)",
+  "id": "SS-04-005"
  },
  {
   "tid": "SS-21",
@@ -286,12 +306,13 @@
   "level": 1,
   "theme": "真性キャリア密度と真性フェルミ準位",
   "minutes": 15,
-  "q": "バンドギャップ $E_g=E_c-E_v$ の真性半導体を考える．伝導帯と価電子帯の有効状態密度を $N_c,N_v$ とし，非縮退（ボルツマン近似）とする．電子密度は $n=N_ce^{-(E_c-\\mu)/k_BT}$，正孔密度は $p=N_ve^{-(\\mu-E_v)/k_BT}$ である．\n\\begin{enumerate}\n\\item 真性キャリア密度 $n_i$ を $N_c,N_v,E_g,k_B,T$ で表せ．\n\\item 真性フェルミ準位 $\\mu_i$ を求めよ．ただし $N_c/N_v=(m_e/m_h)^{3/2}$ である（$m_e,m_h$ は電子と正孔の有効質量）．\n\\item Si について $N_c=2.8\\times10^{25}\\,\\mathrm{m^{-3}}$，$N_v=1.04\\times10^{25}\\,\\mathrm{m^{-3}}$，$E_g=1.12\\,\\mathrm{eV}$ として，$T=300\\,\\mathrm{K}$ での $n_i$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $n_i=\\sqrt{N_cN_v}\\,e^{-E_g/(2k_BT)}$ (2) $\\mu_i=\\dfrac{E_c+E_v}{2}+\\dfrac{3}{4}k_BT\\ln\\dfrac{m_h}{m_e}$ (3) $n_i\\approx 6.7\\times10^{15}\\,\\mathrm{m^{-3}}$",
-  "solution": "(1) $np=N_cN_ve^{-E_g/k_BT}$ は $\\mu$ によらない（質量作用の法則）．真性なら $n=p=n_i$ なので $\\boldsymbol{n_i=\\sqrt{N_cN_v}\\,e^{-E_g/(2k_BT)}}$．\n\n(2) $n=p$ より $N_ce^{-(E_c-\\mu)/k_BT}=N_ve^{-(\\mu-E_v)/k_BT}$．\n\\[\n\\mu_i=\\frac{E_c+E_v}{2}+\\frac{k_BT}{2}\\ln\\frac{N_v}{N_c}=\\boldsymbol{\\frac{E_c+E_v}{2}+\\frac{3}{4}k_BT\\ln\\frac{m_h}{m_e}}\n\\]\n正孔の方が重ければ，ギャップの中央より少し上にずれる．\n\n(3) $k_BT=0.02585\\,\\mathrm{eV}$，$E_g/(2k_BT)=21.66$，$\\sqrt{N_cN_v}=1.71\\times10^{25}\\,\\mathrm{m^{-3}}$．$n_i\\approx1.71\\times10^{25}\\times3.9\\times10^{-10}\\approx\\boldsymbol{6.7\\times10^{15}\\,\\mathrm{m^{-3}}}$．（実測値約 $1\\times10^{16}\\,\\mathrm{m^{-3}}$ と桁で合う．）",
+  "q": "バンドギャップ $E_g=E_c-E_v$ の真性半導体を考える．伝導帯と価電子帯の有効状態密度を $N_c,N_v$ とし，非縮退（ボルツマン近似）とする．電子密度は $n=N_ce^{-(E_c-\\mu)/k_BT}$，正孔密度は $p=N_ve^{-(\\mu-E_v)/k_BT}$ である．\n\\begin{enumerate}\n\\item 真性キャリア密度 $n_i$ を $N_c,N_v,E_g,k_B,T$ で表せ．\n\\item 真性フェルミ準位 $\\mu_i$ を求めよ．ただし $N_c/N_v=(m_e/m_h)^{3/2}$ である（$m_e,m_h$ は電子と正孔の有効質量）．\n\\item $N_c,N_v\\propto T^{3/2}$ である．測定した $n_i$ から $\\ln(n_i/T^{3/2})$ を $1/T$ に対してプロットすると直線になる．その傾きを求めよ（$E_g$ は温度によらないとする）．\n\\end{enumerate}",
+  "answer": "(1) $n_i=\\sqrt{N_cN_v}\\,e^{-E_g/(2k_BT)}$ (2) $\\mu_i=\\dfrac{E_c+E_v}{2}+\\dfrac{3}{4}k_BT\\ln\\dfrac{m_h}{m_e}$ (3) $-\\dfrac{E_g}{2k_B}$",
+  "solution": "(1) $np=N_cN_ve^{-E_g/k_BT}$ は $\\mu$ によらない（質量作用の法則）．真性なら $n=p=n_i$ なので $\\boldsymbol{n_i=\\sqrt{N_cN_v}\\,e^{-E_g/(2k_BT)}}$．\n\n(2) $n=p$ より $N_ce^{-(E_c-\\mu)/k_BT}=N_ve^{-(\\mu-E_v)/k_BT}$．\n\\[\n\\mu_i=\\frac{E_c+E_v}{2}+\\frac{k_BT}{2}\\ln\\frac{N_v}{N_c}=\\boldsymbol{\\frac{E_c+E_v}{2}+\\frac{3}{4}k_BT\\ln\\frac{m_h}{m_e}}\n\\]\n正孔の方が重ければ，ギャップの中央より少し上にずれる．\n\n(3) $\\sqrt{N_cN_v}=CT^{3/2}$（$C$ は定数）と書けるので\n\\[ \\ln\\frac{n_i}{T^{3/2}}=\\ln C-\\frac{E_g}{2k_B}\\cdot\\frac1T. \\]\n傾きは $\\boldsymbol{-\\dfrac{E_g}{2k_B}}$ で，これから禁制帯幅が求まる．活性化エネルギーがギャップの半分であることに注意．ケイ素の室温では $n_i\\sim10^{16}\\,\\mathrm{m^{-3}}$ である．",
   "idea": "$np$ は化学ポテンシャルによらない（質量作用の法則）．真性なら $n=p$ から $n_i$ と $\\mu_i$ が決まる．",
   "tags": "真性半導体,キャリア密度,質量作用の法則",
-  "input": "(1) sqrt(N_c N_v) exp(-E_g/(2k_B T))\n(2) (E_c+E_v)/2+(3/4)k_B T ln(m_h/m_e)\n(3) n_i [m^-3]：≈6.7e15"
+  "input": "(1) sqrt(N_c N_v) exp(-E_g/(2k_B T))\n(2) (E_c+E_v)/2+(3/4)k_B T ln(m_h/m_e)\n(3) -E_g/(2k_B)",
+  "id": "SS-05-001"
  },
  {
   "tid": "SS-22",
@@ -300,12 +321,13 @@
   "level": 2,
   "theme": "n 型半導体のキャリア密度とフェルミ準位",
   "minutes": 15,
-  "q": "Si（$T=300\\,\\mathrm{K}$，$n_i=1.0\\times10^{16}\\,\\mathrm{m^{-3}}$，$N_c=2.8\\times10^{25}\\,\\mathrm{m^{-3}}$）にドナーを $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$ 添加した．ドナーはすべてイオン化しているとする．\n\\begin{enumerate}\n\\item 電子密度 $n$ と正孔密度 $p$ を求めよ．\n\\item 伝導帯の底からはかったフェルミ準位の深さ $E_c-\\mu$ を eV 単位で求めよ．\n\\item 電子の移動度を $\\mu_n=0.14\\,\\mathrm{m^2/(V\\,s)}$ として，電気伝導率を求めよ（正孔の寄与は無視する）．\n\\end{enumerate}",
-  "answer": "(1) $n\\approx 1.0\\times10^{22}\\,\\mathrm{m^{-3}}$，$p\\approx 1.0\\times10^{10}\\,\\mathrm{m^{-3}}$ (2) $E_c-\\mu\\approx 0.205\\,\\mathrm{eV}$ (3) $\\sigma\\approx 224\\,\\mathrm{S/m}$",
-  "solution": "(1) $N_D\\gg n_i$ なので $n\\approx N_D=\\boldsymbol{1.0\\times10^{22}\\,\\mathrm{m^{-3}}}$．質量作用の法則 $np=n_i^2$ から $p=n_i^2/N_D=\\boldsymbol{1.0\\times10^{10}\\,\\mathrm{m^{-3}}}$．少数キャリアは多数キャリアの $10^{-12}$ 倍しかない．\n\n(2) $n=N_ce^{-(E_c-\\mu)/k_BT}$ より\n\\[\nE_c-\\mu=k_BT\\ln\\frac{N_c}{N_D}=0.02585\\times\\ln(2800)\\approx\\boldsymbol{0.205\\,\\mathrm{eV}}\n\\]\n$k_BT$ よりずっと深いので，非縮退の近似は正しい．\n\n(3) $\\sigma=ne\\mu_n=1.0\\times10^{22}\\times1.602\\times10^{-19}\\times0.14\\approx\\boldsymbol{224\\,\\mathrm{S/m}}$．",
+  "q": "真性キャリア密度 $n_i$，伝導帯の有効状態密度 $N_c$ の半導体（温度 $T$）にドナーを密度 $N_D$（$n_i\\ll N_D\\ll N_c$）だけ添加した．ドナーはすべてイオン化しているとする．\n\\begin{enumerate}\n\\item 電子密度 $n$ と正孔密度 $p$ を求めよ．\n\\item 伝導帯の底からはかったフェルミ準位の深さ $E_c-\\mu$ を求めよ．\n\\item 電子の移動度を $\\mu_n$，電気素量を $q$ として，電気伝導率 $\\sigma$ を求めよ（正孔の寄与は無視する）．\n\\end{enumerate}",
+  "answer": "(1) $n=N_D$，$p=\\dfrac{n_i^2}{N_D}$ (2) $E_c-\\mu=k_BT\\ln\\dfrac{N_c}{N_D}$ (3) $\\sigma=qN_D\\mu_n$",
+  "solution": "(1) $N_D\\gg n_i$ なので $\\boldsymbol{n\\approx N_D}$．質量作用の法則 $np=n_i^2$ から $\\boldsymbol{p=n_i^2/N_D}$．Si（$n_i\\approx10^{16}\\,\\mathrm{m^{-3}}$）に $N_D=10^{22}\\,\\mathrm{m^{-3}}$ なら，少数キャリアは多数キャリアの $10^{-12}$ 倍しかない．\n\n(2) $n=N_ce^{-(E_c-\\mu)/k_BT}$ より\n\\[\n\\boldsymbol{E_c-\\mu=k_BT\\ln\\frac{N_c}{N_D}}\n\\]\n$N_D\\ll N_c$ なので $E_c-\\mu$ は $k_BT$ よりずっと大きく，非縮退の近似は正しい（上の Si の例で約 0.2 eV）．\n\n(3) $\\boldsymbol{\\sigma=qN_D\\mu_n}$．上の例で $\\mu_n=0.14\\,\\mathrm{m^2/(V\\,s)}$ なら約 $220\\,\\mathrm{S/m}$ である．",
   "idea": "多数キャリアはドナー密度，少数キャリアは $n_i^2/N_D$．フェルミ準位は $n=N_ce^{-(E_c-\\mu)/k_BT}$ を逆に解く．",
   "tags": "n型半導体,ドナー,フェルミ準位,電気伝導率",
-  "input": "(1) n [m^-3]：≈1.0e22 ; p [m^-3]：≈1.0e10\n(2) E_c-μ [eV]：≈0.205\n(3) σ [S/m]：≈224"
+  "input": "(1) n：N_D ; p：n_i^2/N_D\n(2) k_B T ln(N_c/N_D)\n(3) σ：q N_D μ_n",
+  "id": "SS-05-002"
  },
  {
   "tid": "SS-23",
@@ -314,12 +336,13 @@
   "level": 2,
   "theme": "水素原子模型による浅いドナー準位",
   "minutes": 15,
-  "q": "Si 中のドナー（例えば P）の余分な電子は，比誘電率 $\\varepsilon_r=11.7$ の媒質中で，有効質量 $m^*=0.26m_e$ をもって正のイオンに束縛されると考える（水素原子模型）．水素原子のイオン化エネルギーを $13.6\\,\\mathrm{eV}$，ボーア半径を $a_0=0.0529\\,\\mathrm{nm}$ とする．\n\\begin{enumerate}\n\\item ドナーの束縛エネルギー $E_d$ を meV 単位で求めよ．\n\\item ドナー電子の有効ボーア半径 $a_d$ を求めよ．\n\\item モットの判定条件 $n_c^{1/3}a_d\\approx0.26$ を用いて，金属＝絶縁体転移が起こるドナー密度 $n_c$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $E_d\\approx 25.8\\,\\mathrm{meV}$ (2) $a_d\\approx 2.38\\,\\mathrm{nm}$ (3) $n_c\\approx 1.3\\times10^{24}\\,\\mathrm{m^{-3}}$",
-  "solution": "水素原子の式で $e^2\\to e^2/\\varepsilon_r$，$m_e\\to m^*$ と置きかえる．\n\n(1) $E_d=13.6\\,\\mathrm{eV}\\times\\dfrac{m^*/m_e}{\\varepsilon_r^2}=13.6\\times\\dfrac{0.26}{136.9}\\approx\\boldsymbol{25.8\\,\\mathrm{meV}}$．室温の $k_BT\\approx26\\,\\mathrm{meV}$ と同程度なので，室温ではほぼすべてイオン化する．\n\n(2) $a_d=a_0\\varepsilon_r\\dfrac{m_e}{m^*}=0.0529\\times\\dfrac{11.7}{0.26}\\approx\\boldsymbol{2.38\\,\\mathrm{nm}}$．格子定数（$0.543\\,\\mathrm{nm}$）の数倍に広がっているので，連続体として扱う近似がおおむね正当化される．\n\n(3) $n_c=(0.26/a_d)^3=(0.26/2.38\\times10^{-9})^3\\approx\\boldsymbol{1.3\\times10^{24}\\,\\mathrm{m^{-3}}}$．これを超えるとドナーの波動関数が重なり，不純物バンドが金属的になる．",
+  "q": "半導体中のドナーの余分な電子は，比誘電率 $\\varepsilon_r$ の媒質中で，有効質量 $m$ をもって正のイオンに束縛されると考える（水素原子模型）．水素原子のイオン化エネルギーを $E_H$，ボーア半径を $a_0$，電子の質量を $m_e$ とする．\n\\begin{enumerate}\n\\item ドナーの束縛エネルギー $E_d$ を求めよ．\n\\item ドナー電子の有効ボーア半径 $a_d$ を求めよ．\n\\item モットの判定条件 $n_c^{1/3}a_d\\approx0.26$ を用いて，金属＝絶縁体転移が起こるドナー密度 $n_c$ を $a_0,\\varepsilon_r,m,m_e$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $E_d=\\dfrac{m}{m_e\\varepsilon_r^2}E_H$ (2) $a_d=\\dfrac{\\varepsilon_rm_e}{m}a_0$ (3) $n_c=\\left(\\dfrac{0.26\\,m}{\\varepsilon_rm_ea_0}\\right)^3$",
+  "solution": "水素原子の式で $e^2\\to e^2/\\varepsilon_r$，$m_e\\to m$ と置きかえる．\n\n(1) 束縛エネルギーは質量に比例し，電荷の 4 乗（$\\varepsilon_r^{-2}$）に比例するので\n\\[ \\boldsymbol{E_d=\\frac{m}{m_e\\varepsilon_r^2}E_H}. \\]\nSi 中の P（$\\varepsilon_r=11.7$，$m=0.26m_e$）では約 $26\\,\\mathrm{meV}$ で，室温の $k_BT\\approx26\\,\\mathrm{meV}$ と同程度なので，室温ではほぼすべてイオン化する．\n\n(2) ボーア半径は質量に反比例し，$\\varepsilon_r$ に比例するので $\\boldsymbol{a_d=\\dfrac{\\varepsilon_rm_e}{m}a_0}$．Si では約 $2.4\\,\\mathrm{nm}$ で，格子定数（$0.543\\,\\mathrm{nm}$）の数倍に広がっているので，連続体として扱う近似がおおむね正当化される．\n\n(3) $n_c=(0.26/a_d)^3$ より\n\\[ \\boldsymbol{n_c=\\left(\\frac{0.26\\,m}{\\varepsilon_rm_ea_0}\\right)^3}. \\]\nSi では約 $10^{24}\\,\\mathrm{m^{-3}}$ である．これを超えるとドナーの波動関数が重なり，不純物バンドが金属的になる．",
   "idea": "誘電体と有効質量で「縮んだ」水素原子：エネルギーは $(m^*/m)/\\varepsilon_r^2$ 倍，半径は $\\varepsilon_r(m/m^*)$ 倍．",
   "tags": "ドナー準位,水素原子模型,有効質量,モット転移",
-  "input": "(1) E_d [meV]：≈25.8\n(2) a_d [nm]：≈2.38\n(3) n_c [m^-3]：≈1.3e24"
+  "input": "(1) E_d：m E_H/(m_e ε_r^2)\n(2) a_d：ε_r m_e a_0/m\n(3) n_c：(0.26m/(ε_r m_e a_0))^3",
+  "id": "SS-05-003"
  },
  {
   "tid": "SS-24",
@@ -328,12 +351,13 @@
   "level": 3,
   "theme": "階段型 pn 接合の空乏層",
   "minutes": 25,
-  "q": "Si の階段型 pn 接合（$T=300\\,\\mathrm{K}$）で，p 側のアクセプター密度 $N_A=1.0\\times10^{23}\\,\\mathrm{m^{-3}}$，n 側のドナー密度 $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$，$n_i=1.0\\times10^{16}\\,\\mathrm{m^{-3}}$，比誘電率 $\\varepsilon_r=11.7$ とする．外部電圧はかけない．空乏近似を用いよ．\n\\begin{enumerate}\n\\item 拡散電位（内蔵電位）$V_{bi}$ を求めよ．\n\\item 空乏層の全幅 $W$ を求めよ．\n\\item 接合面での電場の大きさ（最大値）を求めよ．\n\\item 単位面積あたりの空乏層容量を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $V_{bi}\\approx 0.774\\,\\mathrm{V}$ (2) $W\\approx 3.3\\times10^{-7}\\,\\mathrm{m}$ (3) $E_{\\max}\\approx 4.7\\times10^{6}\\,\\mathrm{V/m}$ (4) $\\approx 3.1\\times10^{-4}\\,\\mathrm{F/m^2}$",
-  "solution": "(1) 熱平衡でフェルミ準位がそろうことから\n\\[\neV_{bi}=k_BT\\ln\\frac{N_AN_D}{n_i^2}=0.02585\\times\\ln(10^{13})\\,\\mathrm{eV}\n\\]\n$\\boldsymbol{V_{bi}\\approx0.774\\,\\mathrm{V}}$．\n\n(2) 空乏層の幅を n 側 $x_n$，p 側 $x_p$ とすると，電荷中性 $N_Dx_n=N_Ax_p$ とポアソン方程式から\n\\[\nW=\\sqrt{\\frac{2\\varepsilon_r\\varepsilon_0V_{bi}}{e}\\left(\\frac{1}{N_A}+\\frac{1}{N_D}\\right)}=\\sqrt{\\frac{2\\times1.036\\times10^{-10}\\times0.774}{1.602\\times10^{-19}}\\times1.1\\times10^{-22}}\\approx\\boldsymbol{3.3\\times10^{-7}\\,\\mathrm{m}}\n\\]\n空乏層はほとんど低濃度の n 側に広がる（$x_n=WN_A/(N_A+N_D)\\approx3.0\\times10^{-7}\\,\\mathrm{m}$）．\n\n(3) 電場は接合面で最大で，$E_{\\max}=eN_Dx_n/(\\varepsilon_r\\varepsilon_0)\\approx\\boldsymbol{4.7\\times10^6\\,\\mathrm{V/m}}$．（三角形の電場分布の面積が $V_{bi}$ なので $E_{\\max}=2V_{bi}/W$ でもよい．）\n\n(4) $C=\\varepsilon_r\\varepsilon_0/W=1.036\\times10^{-10}/3.32\\times10^{-7}\\approx\\boldsymbol{3.1\\times10^{-4}\\,\\mathrm{F/m^2}}$．逆バイアス $V$ をかけると $V_{bi}\\to V_{bi}+V$ となり，$1/C^2$ が $V$ に比例する（$C$–$V$ 測定で $N_D$ がわかる）．",
+  "q": "階段型 pn 接合（温度 $T$）で，p 側のアクセプター密度 $N_A$，n 側のドナー密度 $N_D$，真性キャリア密度 $n_i$，半導体の比誘電率 $\\varepsilon_r$ とする．真空の誘電率を $\\varepsilon_0$，電気素量を $q$，ボルツマン定数を $k_B$ とする．外部電圧はかけない．空乏近似を用いよ．\n\\begin{enumerate}\n\\item 拡散電位（内蔵電位）$V_0$ を求めよ．\n\\item 空乏層の全幅 $W$ を $V_0$ などを用いて表せ．\n\\item 接合面での電場の大きさ（最大値）$E_m$ を求めよ．\n\\item 単位面積あたりの空乏層容量 $C$ を求めよ．\n\\end{enumerate}\n(2)〜(4) では (1) の $V_0$ を用いてよい．",
+  "answer": "(1) $V_0=\\dfrac{k_BT}{q}\\ln\\dfrac{N_AN_D}{n_i^2}$ (2) $W=\\sqrt{\\dfrac{2\\varepsilon_r\\varepsilon_0V_0(N_A+N_D)}{qN_AN_D}}$ (3) $E_m=\\sqrt{\\dfrac{2qV_0N_AN_D}{\\varepsilon_r\\varepsilon_0(N_A+N_D)}}$ (4) $C=\\sqrt{\\dfrac{q\\varepsilon_r\\varepsilon_0N_AN_D}{2V_0(N_A+N_D)}}$",
+  "solution": "(1) 熱平衡でフェルミ準位がそろうことから，両側の電子密度の比 $N_D/(n_i^2/N_A)=e^{qV_0/k_BT}$ より\n\\[\n\\boldsymbol{V_0=\\frac{k_BT}{q}\\ln\\frac{N_AN_D}{n_i^2}}.\n\\]\n\n(2) 空乏層の幅を n 側 $x_n$，p 側 $x_p$ とすると，電荷中性 $N_Dx_n=N_Ax_p$．ポアソン方程式から電場は三角形の分布で，その面積が $V_0$：\n\\[ V_0=\\frac{q}{2\\varepsilon_r\\varepsilon_0}(N_Dx_n^2+N_Ax_p^2)=\\frac{qN_AN_D}{2\\varepsilon_r\\varepsilon_0(N_A+N_D)}W^2. \\]\nよって\n\\[\n\\boldsymbol{W=\\sqrt{\\frac{2\\varepsilon_r\\varepsilon_0V_0(N_A+N_D)}{qN_AN_D}}}.\n\\]\n$x_n=WN_A/(N_A+N_D)$ なので，空乏層はほとんど低濃度側に広がる．\n\n(3) 電場は接合面で最大で，$E_m=2V_0/W$（三角形の面積）より\n\\[ \\boldsymbol{E_m=\\sqrt{\\frac{2qV_0N_AN_D}{\\varepsilon_r\\varepsilon_0(N_A+N_D)}}}. \\]\n\n(4) 平行板コンデンサーとみて $C=\\varepsilon_r\\varepsilon_0/W$：\n\\[ \\boldsymbol{C=\\sqrt{\\frac{q\\varepsilon_r\\varepsilon_0N_AN_D}{2V_0(N_A+N_D)}}}. \\]\n逆バイアス $V$ をかけると $V_0\\to V_0+V$ となり，$1/C^2$ が $V$ に比例する（$C$–$V$ 測定で不純物濃度がわかる）．",
   "idea": "拡散電位は両側のフェルミ準位の差．空乏層は電荷中性とポアソン方程式で決まり，低濃度側に広がる．",
   "tags": "pn接合,空乏層,拡散電位,接合容量",
-  "input": "(1) V_bi [V]：≈0.774\n(2) W [m]：≈3.3e-7\n(3) E_max [V/m]：≈4.7e6\n(4) C [F/m^2]：≈3.1e-4"
+  "input": "(1) $V_0$：k_B T/q ln(N_A N_D/n_i^2)\n(2) $W$：sqrt(2 ε_r ε_0 V_0 (N_A+N_D)/(q N_A N_D))\n(3) $E_m$：sqrt(2 q V_0 N_A N_D/(ε_r ε_0 (N_A+N_D)))\n(4) $C$：sqrt(q ε_r ε_0 N_A N_D/(2 V_0 (N_A+N_D)))",
+  "id": "SS-05-004"
  },
  {
   "tid": "SS-25",
@@ -342,12 +366,13 @@
   "level": 4,
   "theme": "不純物半導体のキャリア密度の温度変化（凍結領域と真性領域）",
   "minutes": 35,
-  "q": "n 型 Si（ドナー密度 $N_D=1.0\\times10^{22}\\,\\mathrm{m^{-3}}$，ドナー準位の深さ $E_d=E_c-E_D=45\\,\\mathrm{meV}$）の電子密度 $n$ の温度変化を調べる．ドナー準位はスピンで2重に縮退しており，電子がドナーに束縛されている確率は $1/\\left[1+\\frac{1}{2}e^{(E_D-\\mu)/k_BT}\\right]$ である．伝導帯の有効状態密度は $N_c(T)=N_c(300\\,\\mathrm{K})(T/300\\,\\mathrm{K})^{3/2}$，$N_c(300\\,\\mathrm{K})=2.8\\times10^{25}\\,\\mathrm{m^{-3}}$ とする．\n\\begin{enumerate}\n\\item 低温でイオン化したドナーがわずかな場合（$n\\ll N_D$，正孔は無視）に，$n$ を $N_c,N_D,E_d,k_B,T$ で表せ．\n\\item $T=30\\,\\mathrm{K}$ での $n$ を求めよ．\n\\item 高温側では真性キャリアが効いてくる．$N_v(300\\,\\mathrm{K})=1.04\\times10^{25}\\,\\mathrm{m^{-3}}$（$N_v\\propto T^{3/2}$），$E_g=1.12\\,\\mathrm{eV}$（温度によらない）として，$n_i(T)=N_D$ となる温度を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $n=\\sqrt{\\dfrac{N_cN_D}{2}}\\,e^{-E_d/(2k_BT)}$ (2) $n\\approx 1.1\\times10^{19}\\,\\mathrm{m^{-3}}$ (3) $T\\approx 740\\,\\mathrm{K}$",
-  "solution": "(1) イオン化したドナーの数は $N_D^+=N_D/\\left[1+2e^{(\\mu-E_D)/k_BT}\\right]$．電荷中性 $n=N_D^+$ と $n=N_ce^{-(E_c-\\mu)/k_BT}$ から $e^{\\mu/k_BT}$ を消すと\n\\[\nn=\\frac{N_D}{1+\\frac{2n}{N_c}e^{E_d/k_BT}}\n\\]\n$n\\ll N_D$ では分母の第2項が支配的で $n^2\\approx\\frac{N_cN_D}{2}e^{-E_d/k_BT}$．$\\boldsymbol{n=\\sqrt{N_cN_D/2}\\,e^{-E_d/(2k_BT)}}$．活性化エネルギーは $E_d$ の半分になる．\n\n(2) $N_c(30\\,\\mathrm{K})=2.8\\times10^{25}\\times(0.1)^{3/2}=8.85\\times10^{23}\\,\\mathrm{m^{-3}}$．$k_BT=2.585\\,\\mathrm{meV}$，$E_d/(2k_BT)=8.70$．\n\\[\nn=\\sqrt{\\frac{8.85\\times10^{23}\\times10^{22}}{2}}\\,e^{-8.70}\\approx\\boldsymbol{1.1\\times10^{19}\\,\\mathrm{m^{-3}}}\n\\]\n$n/N_D\\approx1.1\\times10^{-3}$ で仮定 $n\\ll N_D$ を満たす（(1) の式を厳密に解いても $1.10\\times10^{19}$）．\n\n(3) $n_i(T)=\\sqrt{N_cN_v}(300)\\,(T/300)^{3/2}e^{-E_g/(2k_BT)}=N_D$ を数値的に解くと $\\boldsymbol{T\\approx740\\,\\mathrm{K}}$．30 K 付近の凍結領域と 740 K 付近の真性領域の間（およそ 100〜500 K）で $n\\approx N_D$ の飽和領域になり，素子はこの範囲で使われる．",
+  "q": "n 型半導体（ドナー密度 $N_D$，ドナー準位の深さ $E_d=E_c-E_D$）の電子密度 $n$ の温度変化を調べる．ドナー準位はスピンで2重に縮退しており，電子がドナーに束縛されている確率は $1/\\left[1+\\frac{1}{2}e^{(E_D-\\mu)/k_BT}\\right]$ である．伝導帯・価電子帯の有効状態密度を $N_c,N_v$，バンドギャップを $E_g$ とする．\n\\begin{enumerate}\n\\item 低温でイオン化したドナーがわずかな場合（$n\\ll N_D$，正孔は無視）に，$n$ を $N_c,N_D,E_d,k_B,T$ で表せ．\n\\item $n\\ll N_D$ を仮定せずに（正孔は無視），$n$ を $N_c,N_D,E_d,k_B,T$ で厳密に表せ．\n\\item 高温側ではドナーはすべてイオン化し，真性キャリアが効いてくる．電子密度 $n$ を $N_D,N_c,N_v,E_g,k_B,T$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $n=\\sqrt{\\dfrac{N_cN_D}{2}}\\,e^{-E_d/(2k_BT)}$ (2) $n=\\dfrac{N_c}{4}e^{-E_d/(k_BT)}\\left(\\sqrt{1+\\dfrac{8N_D}{N_c}e^{E_d/(k_BT)}}-1\\right)$ (3) $n=\\dfrac{N_D}{2}+\\sqrt{\\dfrac{N_D^2}{4}+N_cN_ve^{-E_g/(k_BT)}}$",
+  "solution": "(1) イオン化したドナーの数は $N_D^+=N_D/\\left[1+2e^{(\\mu-E_D)/k_BT}\\right]$．電荷中性 $n=N_D^+$ と $n=N_ce^{-(E_c-\\mu)/k_BT}$ から $e^{\\mu/k_BT}$ を消すと\n\\[\nn=\\frac{N_D}{1+\\frac{2n}{N_c}e^{E_d/k_BT}}\n\\]\n$n\\ll N_D$ では分母の第2項が支配的で $n^2\\approx\\frac{N_cN_D}{2}e^{-E_d/k_BT}$．$\\boldsymbol{n=\\sqrt{N_cN_D/2}\\,e^{-E_d/(2k_BT)}}$．活性化エネルギーは $E_d$ の半分になる．\n\n(2) 上の式を整理すると $\\dfrac{2e^{E_d/k_BT}}{N_c}n^2+n-N_D=0$．正の根は\n\\[ \\boldsymbol{n=\\frac{N_c}{4}e^{-E_d/k_BT}\\left(\\sqrt{1+\\frac{8N_D}{N_c}e^{E_d/k_BT}}-1\\right)}. \\]\n$\\frac{8N_D}{N_c}e^{E_d/k_BT}\\gg1$（低温）で (1) に，$\\ll1$ で $n\\approx N_D$（飽和領域）に移る．\n\n(3) ドナーがすべてイオン化していれば $n=p+N_D$，$np=n_i^2=N_cN_ve^{-E_g/k_BT}$．よって\n\\[ \\boldsymbol{n=\\frac{N_D}{2}+\\sqrt{\\frac{N_D^2}{4}+N_cN_ve^{-E_g/k_BT}}}. \\]\n$n_i\\ll N_D$ で $n\\approx N_D$，$n_i\\gg N_D$ で $n\\approx n_i\\propto e^{-E_g/(2k_BT)}$（真性領域）．低温の凍結領域（活性化エネルギー $E_d/2$）と高温の真性領域（$E_g/2$）の間で $n\\approx N_D$ の飽和領域になり，素子はこの範囲で使われる．",
   "idea": "電荷中性とドナーの占有確率から $n$ を決める．低温では $n\\propto e^{-E_d/(2k_BT)}$（凍結），高温では $n_i\\propto e^{-E_g/(2k_BT)}$ が $N_D$ を超える．",
   "tags": "不純物半導体,凍結領域,真性領域,電荷中性",
-  "input": "(1) sqrt(N_c N_D/2) exp(-E_d/(2k_B T))\n(2) n [m^-3]：≈1.1e19\n(3) T [K]：≈740"
+  "input": "(1) sqrt(N_c N_D/2) exp(-E_d/(2k_B T))\n(2) N_c/4 exp(-E_d/(k_B T)) (sqrt(1+8 N_D/N_c exp(E_d/(k_B T)))-1)\n(3) N_D/2+sqrt(N_D^2/4+N_c N_v exp(-E_g/(k_B T)))",
+  "id": "SS-05-005"
  },
  {
   "tid": "SS-26",
@@ -356,12 +381,13 @@
   "level": 1,
   "theme": "スピン 1/2 常磁性体の磁化とキュリーの法則",
   "minutes": 10,
-  "q": "単位体積あたり $n$ 個の互いに独立なスピン $1/2$ の磁気モーメント（大きさ $\\mu_B$）が，温度 $T$ で磁束密度 $B$ の中にある．各モーメントのエネルギーは $\\mp\\mu_BB$ の2値をとる．\n\\begin{enumerate}\n\\item 磁化 $M$ を求めよ．\n\\item 弱磁場（$\\mu_BB\\ll k_BT$）での帯磁率 $\\chi=\\mu_0M/B$ を求めよ．\n\\item $B=1.0\\,\\mathrm{T}$，$T=1.0\\,\\mathrm{K}$ での $M/(n\\mu_B)$ を求めよ．$\\mu_B=9.27\\times10^{-24}\\,\\mathrm{J/T}$ とする．\n\\end{enumerate}",
-  "answer": "(1) $M=n\\mu_B\\tanh\\dfrac{\\mu_BB}{k_BT}$ (2) $\\chi=\\dfrac{\\mu_0n\\mu_B^2}{k_BT}$ (3) $\\approx 0.586$",
-  "solution": "(1) 2準位のボルツマン分布から\n\\[\nM=n\\mu_B\\frac{e^{\\mu_BB/k_BT}-e^{-\\mu_BB/k_BT}}{e^{\\mu_BB/k_BT}+e^{-\\mu_BB/k_BT}}=\\boldsymbol{n\\mu_B\\tanh\\frac{\\mu_BB}{k_BT}}\n\\]\n\n(2) $\\tanh x\\approx x$ より $M\\approx n\\mu_B^2B/(k_BT)$，$\\boldsymbol{\\chi=\\mu_0n\\mu_B^2/(k_BT)}$．$1/T$ に比例する（キュリーの法則）．\n\n(3) $\\mu_BB/(k_BT)=9.27\\times10^{-24}/1.381\\times10^{-23}=0.671$．$\\tanh0.671\\approx\\boldsymbol{0.586}$．極低温・強磁場では飽和に近づく．",
+  "q": "単位体積あたり $n$ 個の互いに独立なスピン $1/2$ の磁気モーメント（大きさ $\\mu_B$）が，温度 $T$ で磁束密度 $B$ の中にある．各モーメントのエネルギーは $\\mp\\mu_BB$ の2値をとる．\n\\begin{enumerate}\n\\item 磁化 $M$ を求めよ．\n\\item 弱磁場（$\\mu_BB\\ll k_BT$）での帯磁率 $\\chi=\\mu_0M/B$ を求めよ．\n\\item 磁化がちょうど飽和値 $n\\mu_B$ の半分になる磁束密度 $B$ を $T$ などで表せ．\n\\end{enumerate}",
+  "answer": "(1) $M=n\\mu_B\\tanh\\dfrac{\\mu_BB}{k_BT}$ (2) $\\chi=\\dfrac{\\mu_0n\\mu_B^2}{k_BT}$ (3) $B=\\dfrac{k_BT\\ln3}{2\\mu_B}$",
+  "solution": "(1) 2準位のボルツマン分布から\n\\[\nM=n\\mu_B\\frac{e^{\\mu_BB/k_BT}-e^{-\\mu_BB/k_BT}}{e^{\\mu_BB/k_BT}+e^{-\\mu_BB/k_BT}}=\\boldsymbol{n\\mu_B\\tanh\\frac{\\mu_BB}{k_BT}}\n\\]\n\n(2) $\\tanh x\\approx x$ より $M\\approx n\\mu_B^2B/(k_BT)$，$\\boldsymbol{\\chi=\\mu_0n\\mu_B^2/(k_BT)}$．$1/T$ に比例する（キュリーの法則）．\n\n(3) $\\tanh x=\\dfrac12$ は $\\dfrac{e^{2x}-1}{e^{2x}+1}=\\dfrac12$，$e^{2x}=3$ より $x=\\dfrac{\\ln3}{2}$．よって\n\\[ \\boldsymbol{B=\\frac{k_BT\\ln3}{2\\mu_B}}. \\]\n$T=1\\,\\mathrm{K}$ でも約 $0.8\\,\\mathrm{T}$ が必要で，飽和させるには極低温・強磁場が要る．",
   "idea": "2準位系の分配関数から $\\tanh$ が出る．高温（弱磁場）で1次まで展開するとキュリーの法則．",
   "tags": "常磁性,キュリーの法則,磁化",
-  "input": "(1) n mu_B tanh(mu_B B/(k_B T))\n(2) mu_0 n mu_B^2/(k_B T)\n(3) ≈0.586"
+  "input": "(1) n mu_B tanh(mu_B B/(k_B T))\n(2) mu_0 n mu_B^2/(k_B T)\n(3) $B$：k_B T ln(3)/(2 mu_B)",
+  "id": "SS-06-001"
  },
  {
   "tid": "SS-27",
@@ -375,7 +401,8 @@
   "solution": "(1) $B=0$ で $m=M/(n\\mu_B)$ とすると $m=\\tanh(m\\,T_C/T)$，$T_C=n\\mu_B^2\\lambda/k_B$．$m=0$ 以外の解が現れるのは原点での右辺の傾き $T_C/T$ が 1 を超えるとき．$\\boldsymbol{T_C=\\lambda C}$．\n\n(2) 弱磁場で線形化すると $M=\\frac{C}{T}(B+\\lambda M)$．$M(1-\\lambda C/T)=CB/T$ より $\\boldsymbol{\\chi=C/(T-T_C)}$（キュリー＝ワイス則）．\n\n(3) $\\tanh x\\approx x-x^3/3$ を使い，$\\tau=T/T_C$ とすると $m=\\frac{m}{\\tau}-\\frac{m^3}{3\\tau^3}$．$m\\neq0$ で $m^2=3\\tau^2(1-\\tau)\\approx3(1-\\tau)$．よって $m\\approx\\sqrt{3}\\,(1-T/T_C)^{1/2}$：$\\boldsymbol{A=\\sqrt{3}}$，$\\boldsymbol{\\beta=1/2}$（平均場の臨界指数）．",
   "idea": "自己無撞着方程式 $m=\\tanh(mT_C/T)$ のグラフで，原点の傾きが 1 を超えると自発磁化が出る．$T_C$ の近くでは $\\tanh$ を3次まで展開する．",
   "tags": "強磁性,分子場理論,キュリー＝ワイス則,臨界指数",
-  "input": "(1) λ C\n(2) C/(T-T_C)\n(3) A：sqrt(3) ; β：1/2"
+  "input": "(1) λ C\n(2) C/(T-T_C)\n(3) A：sqrt(3) ; β：1/2",
+  "id": "SS-06-002"
  },
  {
   "tid": "SS-28",
@@ -389,7 +416,8 @@
   "solution": "(1) $\\cos ka=-1$（$k=\\pi/a$）で $\\hbar\\omega=\\boldsymbol{8JS}$．\n\n(2) $1-\\cos ka\\approx\\frac{1}{2}k^2a^2$ より $\\hbar\\omega\\approx2JSa^2k^2$，$\\boldsymbol{D=2JSa^2}$．強磁性体のマグノンは $k^2$ に比例する（反強磁性体では $|k|$ に比例する）．\n\n(3) マグノンはボース粒子で化学ポテンシャル 0．3次元で $\\hbar\\omega=D'k^2$ のとき\n\\[\nN_{\\mathrm{mag}}=\\int\\frac{d^3k}{(2\\pi)^3}\\frac{1}{e^{D'k^2/k_BT}-1}\\propto\\left(\\frac{k_BT}{D'}\\right)^{3/2}\\int_0^\\infty\\frac{x^{1/2}dx}{e^x-1}\n\\]\n（$x=D'k^2/k_BT$）．よって $\\boldsymbol{T^{3/2}}$ に比例し，自発磁化の減少 $M(0)-M(T)\\propto T^{3/2}$（ブロッホの $T^{3/2}$ 則）となる．",
   "idea": "マグノンの分散 $\\hbar\\omega\\propto k^2$ と，化学ポテンシャル 0 のボース分布から，熱励起数のべきが決まる．",
   "tags": "強磁性,スピン波,マグノン,ブロッホのT^{3/2}則",
-  "input": "(1) 8 J S\n(2) 2 J S a^2\n(3) 指数：3/2"
+  "input": "(1) 8 J S\n(2) 2 J S a^2\n(3) 指数：3/2",
+  "id": "SS-06-003"
  },
  {
   "tid": "SS-29",
@@ -398,12 +426,13 @@
   "level": 3,
   "theme": "ロンドン方程式と磁場侵入長",
   "minutes": 25,
-  "q": "超伝導体中の超伝導電子（密度 $n_s$，電荷 $-e$，質量 $m_e$）に対して，ロンドン方程式 $\\nabla\\times\\boldsymbol{j}_s=-\\dfrac{n_se^2}{m_e}\\boldsymbol{B}$ が成り立つとする．\n\\begin{enumerate}\n\\item マクスウェル方程式と組み合わせると $\\nabla^2\\boldsymbol{B}=\\boldsymbol{B}/\\lambda_L^2$ となる．$n_s=1.0\\times10^{28}\\,\\mathrm{m^{-3}}$ のとき，ロンドンの侵入長 $\\lambda_L$ を求めよ．\n\\item 厚さ $d$ の超伝導体の板（$-d/2<x<d/2$）の両側の面に平行に，大きさ $B_0$ の一様な磁場がかかっている．板の中心（$x=0$）での磁場の大きさを $B_0,d,\\lambda_L$ で表せ．\n\\item $d=4\\lambda_L$ のとき，中心での磁場と $B_0$ の比を求めよ．\n\\item 超伝導リングを貫く磁束は磁束量子 $\\Phi_0=h/(2e)$ の整数倍に量子化される．$\\Phi_0$ を数値で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\lambda_L\\approx 53\\,\\mathrm{nm}$ (2) $\\dfrac{B_0}{\\cosh(d/(2\\lambda_L))}$ (3) $\\approx 0.266$ (4) $\\Phi_0\\approx 2.07\\times10^{-15}\\,\\mathrm{Wb}$",
-  "solution": "(1) $\\nabla\\times\\boldsymbol{B}=\\mu_0\\boldsymbol{j}_s$ の回転をとると $-\\nabla^2\\boldsymbol{B}=\\mu_0\\nabla\\times\\boldsymbol{j}_s=-\\frac{\\mu_0n_se^2}{m_e}\\boldsymbol{B}$．よって $\\lambda_L=\\sqrt{m_e/(\\mu_0n_se^2)}$．\n\\[\n\\lambda_L=\\sqrt{\\frac{9.11\\times10^{-31}}{(4\\pi\\times10^{-7})(1.0\\times10^{28})(1.602\\times10^{-19})^2}}\\approx\\boldsymbol{53\\,\\mathrm{nm}}\n\\]\n\n(2) $B''=B/\\lambda_L^2$ の偶関数解は $B=A\\cosh(x/\\lambda_L)$．$B(\\pm d/2)=B_0$ より $A=B_0/\\cosh(d/2\\lambda_L)$．中心では $\\boldsymbol{B(0)=B_0/\\cosh(d/(2\\lambda_L))}$．\n\n(3) $1/\\cosh2\\approx\\boldsymbol{0.266}$．$d\\gg\\lambda_L$ なら内部の磁場はほぼ 0（マイスナー効果）．\n\n(4) $\\Phi_0=\\dfrac{6.626\\times10^{-34}}{2\\times1.602\\times10^{-19}}\\approx\\boldsymbol{2.07\\times10^{-15}\\,\\mathrm{Wb}}$．分母の $2e$ は，超伝導を担うのが電子対（クーパー対）であることを示す．",
+  "q": "超伝導体中の超伝導電子（密度 $n_s$，電荷 $-q$，質量 $m$）に対して，ロンドン方程式 $\\nabla\\times\\boldsymbol{j}_s=-\\dfrac{n_sq^2}{m}\\boldsymbol{B}$ が成り立つとする．真空の透磁率を $\\mu_0$ とする．\n\\begin{enumerate}\n\\item マクスウェル方程式と組み合わせると $\\nabla^2\\boldsymbol{B}=\\boldsymbol{B}/\\lambda_L^2$ となる．ロンドンの侵入長 $\\lambda_L$ を $n_s,q,m,\\mu_0$ で表せ．\n\\item 厚さ $d$ の超伝導体の板（$-d/2<x<d/2$）の両側の面に平行に，大きさ $B_0$ の一様な磁場がかかっている．板の中心（$x=0$）での磁場の大きさを $B_0,d,\\lambda_L$ で表せ．\n\\item $d=4\\lambda_L$ のとき，中心での磁場と $B_0$ の比を求めよ．\n\\item 板の中に入り込んでいる磁束（板の $y$ 方向の単位長さあたり，$\\int B\\,dx$）を $B_0,d,\\lambda_L$ で表せ．$d\\gg\\lambda_L$ ではどうなるか．\n\\end{enumerate}",
+  "answer": "(1) $\\lambda_L=\\sqrt{\\dfrac{m}{\\mu_0n_sq^2}}$ (2) $\\dfrac{B_0}{\\cosh(d/(2\\lambda_L))}$ (3) $\\dfrac{1}{\\cosh 2}$ (4) $2\\lambda_LB_0\\tanh\\dfrac{d}{2\\lambda_L}$",
+  "solution": "(1) $\\nabla\\times\\boldsymbol{B}=\\mu_0\\boldsymbol{j}_s$ の回転をとると $-\\nabla^2\\boldsymbol{B}=\\mu_0\\nabla\\times\\boldsymbol{j}_s=-\\frac{\\mu_0n_sq^2}{m}\\boldsymbol{B}$．よって\n\\[\n\\boldsymbol{\\lambda_L=\\sqrt{\\frac{m}{\\mu_0n_sq^2}}}\n\\]\n$n_s\\sim10^{28}\\,\\mathrm{m^{-3}}$ で $50\\,\\mathrm{nm}$ 程度になる．\n\n(2) $B''=B/\\lambda_L^2$ の偶関数解は $B=A\\cosh(x/\\lambda_L)$．$B(\\pm d/2)=B_0$ より $A=B_0/\\cosh(d/2\\lambda_L)$．中心では $\\boldsymbol{B(0)=B_0/\\cosh(d/(2\\lambda_L))}$．\n\n(3) $\\boldsymbol{1/\\cosh2}\\approx0.27$．$d\\gg\\lambda_L$ なら内部の磁場はほぼ 0（マイスナー効果）．\n\n(4) \n\\[ \\int_{-d/2}^{d/2}B\\,dx=\\frac{B_0}{\\cosh(d/2\\lambda_L)}\\cdot2\\lambda_L\\sinh\\frac{d}{2\\lambda_L}=\\boldsymbol{2\\lambda_LB_0\\tanh\\frac{d}{2\\lambda_L}}. \\]\n$d\\gg\\lambda_L$ では $2\\lambda_LB_0$ となり，両面から厚さ $\\lambda_L$ ずつ磁場が入り込んでいるのと同じになる．これが侵入長の意味である．",
   "idea": "ロンドン方程式とアンペールの法則から $\\nabla^2\\boldsymbol{B}=\\boldsymbol{B}/\\lambda_L^2$．磁場は表面から $\\lambda_L$ 程度しか入れない．",
   "tags": "超伝導,ロンドン方程式,侵入長,マイスナー効果,磁束量子",
-  "input": "(1) λ_L [nm]：≈53\n(2) B_0/cosh(d/(2λ_L))\n(3) ≈0.266\n(4) Φ_0 [Wb]：≈2.07e-15"
+  "input": "(1) $\\lambda_L$：sqrt(m/(mu_0 n_s q^2))\n(2) B_0/cosh(d/(2λ_L))\n(3) 1/cosh(2)\n(4) 2 λ_L B_0 tanh(d/(2 λ_L))",
+  "id": "SS-06-004"
  },
  {
   "tid": "SS-30",
@@ -412,11 +441,12 @@
   "level": 4,
   "theme": "BCS 理論のギャップと転移温度",
   "minutes": 35,
-  "q": "BCS 理論の弱結合近似で，$T=0$ のギャップ $\\Delta_0$ と転移温度 $T_c$ はそれぞれ\n\\[\n\\Delta_0=2\\hbar\\omega_De^{-1/(N(0)V)},\\qquad k_BT_c=\\frac{2e^{\\gamma}}{\\pi}\\hbar\\omega_De^{-1/(N(0)V)}\n\\]\nで与えられる．ここで $\\omega_D$ はデバイ角振動数，$N(0)V$ は無次元の結合定数，$\\gamma=0.5772$ はオイラー定数である．\n\\begin{enumerate}\n\\item 比 $\\Delta_0/(k_BT_c)$ を数値で求めよ．\n\\item デバイ温度 $\\theta_D=\\hbar\\omega_D/k_B=300\\,\\mathrm{K}$，$T_c=1.2\\,\\mathrm{K}$ の金属について，$N(0)V$ を求めよ．\n\\item (2) の金属で $\\Delta_0$ を meV 単位で求めよ．\n\\item 同位体置換で原子の質量を $1.05$ 倍にしたとき，$T_c$ は何倍になるか．$N(0)V$ は変わらないとする．\n\\end{enumerate}",
-  "answer": "(1) $\\pi e^{-\\gamma}\\approx 1.764$ (2) $N(0)V\\approx 0.177$ (3) $\\Delta_0\\approx 0.182\\,\\mathrm{meV}$ (4) $\\approx 0.976$ 倍",
-  "solution": "(1) 2式の比をとると $\\omega_D$ と結合定数が消え，\n\\[\n\\frac{\\Delta_0}{k_BT_c}=\\frac{2}{2e^{\\gamma}/\\pi}=\\pi e^{-\\gamma}\\approx\\boldsymbol{1.764}\n\\]\nすなわち $2\\Delta_0\\approx3.53k_BT_c$ で，物質によらない普遍的な値である．\n\n(2) $\\dfrac{2e^\\gamma}{\\pi}=1.134$ なので $T_c=1.134\\,\\theta_De^{-1/(N(0)V)}$．\n\\[\nN(0)V=\\frac{1}{\\ln(1.134\\theta_D/T_c)}=\\frac{1}{\\ln283.5}\\approx\\boldsymbol{0.177}\n\\]\n弱結合（$N(0)V\\ll1$）の仮定と合う．\n\n(3) $\\Delta_0=1.764k_BT_c=1.764\\times(8.617\\times10^{-5}\\,\\mathrm{eV/K})\\times1.2\\,\\mathrm{K}\\approx\\boldsymbol{0.182\\,\\mathrm{meV}}$．\n\n(4) $\\omega_D\\propto M^{-1/2}$ なので $T_c\\propto M^{-1/2}$（同位体効果）．$1.05^{-1/2}\\approx\\boldsymbol{0.976}$ 倍．同位体効果は，電子間引力が格子振動を媒介とすることの証拠である．",
+  "q": "BCS 理論の弱結合近似で，$T=0$ のギャップ $\\Delta_0$ と転移温度 $T_c$ はそれぞれ\n\\[\n\\Delta_0=2\\hbar\\omega_De^{-1/(N(0)V)},\\qquad k_BT_c=\\frac{2e^{\\gamma}}{\\pi}\\hbar\\omega_De^{-1/(N(0)V)}\n\\]\nで与えられる．ここで $\\omega_D$ はデバイ角振動数，$N(0)V$ は無次元の結合定数，$\\gamma$ はオイラー定数である．\n\\begin{enumerate}\n\\item 比 $\\Delta_0/(k_BT_c)$ を求めよ．\n\\item デバイ温度 $\\theta_D=\\hbar\\omega_D/k_B$ と $T_c$ が分かっている金属について，$N(0)V$ を求めよ．\n\\item (2) の金属で $\\Delta_0$ を $k_B,T_c,\\gamma$ で表せ．\n\\item 同位体置換で原子の質量を $s$ 倍にしたとき，$T_c$ は何倍になるか．$N(0)V$ は変わらないとする．\n\\end{enumerate}",
+  "answer": "(1) $\\pi e^{-\\gamma}$ (2) $N(0)V=\\dfrac{1}{\\ln\\left(\\dfrac{2e^{\\gamma}\\theta_D}{\\pi T_c}\\right)}$ (3) $\\Delta_0=\\pi e^{-\\gamma}k_BT_c$ (4) $\\dfrac{1}{\\sqrt{s}}$ 倍",
+  "solution": "(1) 2式の比をとると $\\omega_D$ と結合定数が消え，\n\\[\n\\frac{\\Delta_0}{k_BT_c}=\\frac{2}{2e^{\\gamma}/\\pi}=\\boldsymbol{\\pi e^{-\\gamma}}\\approx1.764\n\\]\nすなわち $2\\Delta_0\\approx3.53k_BT_c$ で，物質によらない普遍的な値である．\n\n(2) $T_c=\\dfrac{2e^\\gamma}{\\pi}\\theta_De^{-1/(N(0)V)}$ より\n\\[\n\\boldsymbol{N(0)V=\\frac{1}{\\ln(2e^\\gamma\\theta_D/(\\pi T_c))}}\n\\]\n$\\theta_D=300\\,\\mathrm K$，$T_c=1.2\\,\\mathrm K$ なら約 $0.18$ で，弱結合（$N(0)V\\ll1$）の仮定と合う．\n\n(3) (1) より $\\boldsymbol{\\Delta_0=\\pi e^{-\\gamma}k_BT_c}$．$T_c=1.2\\,\\mathrm K$ なら約 $0.18\\,\\mathrm{meV}$ である．\n\n(4) $\\omega_D\\propto M^{-1/2}$ なので $T_c\\propto M^{-1/2}$（同位体効果）．$\\boldsymbol{1/\\sqrt s}$ 倍．同位体効果は，電子間引力が格子振動を媒介とすることの証拠である．",
   "idea": "$\\Delta_0$ と $T_c$ はどちらも $\\hbar\\omega_De^{-1/(N(0)V)}$ に比例し，比は普遍定数になる．前因子の $\\omega_D\\propto M^{-1/2}$ が同位体効果を与える．",
   "tags": "超伝導,BCS理論,エネルギーギャップ,同位体効果",
-  "input": "(1) ≈1.764\n(2) N(0)V：≈0.177\n(3) Δ_0 [meV]：≈0.182\n(4) ≈0.976"
+  "input": "(1) pi exp(-γ)\n(2) N(0)V：1/ln(2 exp(γ) θ_D/(pi T_c))\n(3) $\\Delta_0$：pi exp(-γ) k_B T_c\n(4) 1/sqrt(s)",
+  "id": "SS-06-005"
  }
 ]

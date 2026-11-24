@@ -70,14 +70,22 @@ function tokenize(src) {
       let j = i;
       while (j < s.length && /[0-9.]/.test(s[j])) j++;
       // 指数表記 1.6e-19、6.02E23
+      // 大文字 E は小数点のある数のときだけ（「11E-12」は 11×E−12。E はエネルギーの変数によく使うため）
       const em = s.slice(j).match(/^[eE][+-]?\d+/);
-      if (em) j += em[0].length;
+      if (em && (em[0][0] === 'e' || s.slice(i, j).includes('.'))) j += em[0].length;
       const v = parseFloat(s.slice(i, j));
       if (Number.isNaN(v)) throw new Error('数の書き方が正しくありません');
       out.push({ k: 'num', v });
       i = j; continue;
     }
     if (c === 'π') { out.push({ k: 'const', v: 'pi' }); i++; continue; }
+    // Δt・ΔH・δx は1つの量として読む（物理では x/Δt を x/(Δt) の意味で書くため）。直後が関数名などの単語なら分けない
+    if ((c === 'Δ' || c === 'δ') && i + 1 < s.length && /[A-Za-zθα-ωΓΘΛΣΦΨΩħ]/.test(s[i + 1])) {
+      const word = (s.slice(i + 1).match(/^[A-Za-z]+/) || [''])[0];
+      if (!(word.length > 1 && NAMES.some(n => n.length > 1 && word.startsWith(n)))) {
+        out.push({ k: 'var', v: c + s[i + 1] }); i += 2; i = subscript(s, i, out); continue;
+      }
+    }
     if (/[θαβγδεζηικλμνξρστφχψωΓΔΘΛΣΦΨΩħ]/.test(c)) { out.push({ k: 'var', v: c }); i++; i = subscript(s, i, out); continue; }
     if (c === '√') { out.push({ k: 'func', v: 'sqrt' }); i++; continue; }
     if (/[a-zA-Z]/.test(c)) {
@@ -296,7 +304,9 @@ function varTeX(n) {
   const pm = n.match(/^(.*?)('+)$/);
   if (pm) return varTeX(pm[1]) + pm[2];
   const [b, sub] = n.split('_');
-  const base = GREEK_TEX[b] ? GREEK_TEX[b] + ' ' : b;
+  const base = GREEK_TEX[b] ? GREEK_TEX[b] + ' '
+    : (b.length === 2 && GREEK_TEX[b[0]]) ? `${GREEK_TEX[b[0]]} ${GREEK_TEX[b[1]] || b[1]}`   // Δt → \Delta t
+      : b;
   const subT = GREEK_TEX[sub] || (sub && sub.length > 1 && /^[A-Za-z]+$/.test(sub) ? `\\mathrm{${sub}}` : sub);
   return sub ? `{${base.trim()}}_{${subT}}` : base;
 }

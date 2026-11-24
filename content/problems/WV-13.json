@@ -203,16 +203,16 @@
   "theme": "CO₂ の伸縮振動の振動数比を3質点模型で予言する",
   "topic": "CO₂ の伸縮振動の振動数比を3質点模型で予言する",
   "statement": {
-   "tex": "質量 $m,M,m$ の3原子が直線上に並び，隣どうしがばね定数 $k$ で結ばれる（直線方向の運動のみ）．\n\\begin{enumerate}\n\\item 3つの基準振動の振動数を求め，各モードの原子の動き方を答えよ．\n\\item CO$_2$（$m=16$，$M=12$）の2つの伸縮振動の振動数比を予言せよ．\n\\item 実測の対称・反対称伸縮振動の波数は $1388$ と $2349\\ \\mathrm{cm^{-1}}$ である．比を比べ，ずれの原因を1つ挙げよ．\n\\end{enumerate}"
+   "tex": "質量 $m,M,m$ の3原子が直線上に並び，隣どうしがばね定数 $k$ で結ばれる（直線方向の運動のみ）．\n\\begin{enumerate}\n\\item 3つの基準振動の角振動数を求め，各モードの原子の動き方を答えよ．\n\\item 2つの伸縮振動の振動数比（高い方/低い方）を $m/M$ で表せ．\n\\item CO$_2$（$m=16$，$M=12$）について (2) の比を求めよ．実測の対称・反対称伸縮振動の波数は $1388$ と $2349\\ \\mathrm{cm^{-1}}$ である．比を比べ，ずれの原因を1つ挙げよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $0$（並進），$\\sqrt{k/m}$（中央静止の対称伸縮），$\\sqrt{\\dfrac km\\left(1+\\dfrac{2m}{M}\\right)}$（反対称伸縮）　(2) $1.91$　(3) 実測 $1.69$；外側どうしの相互作用や非調和性など"
+   "tex": "(1) $0$（並進），$\\sqrt{\\dfrac{k}{m}}$（中央静止の対称伸縮），$\\sqrt{\\dfrac km\\left(1+\\dfrac{2m}{M}\\right)}$（反対称伸縮）　(2) $\\sqrt{1+\\dfrac{2m}{M}}$　(3) 予言 $1.91$，実測 $1.69$；外側どうしの相互作用や非調和性など"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 運動方程式の行列の固有値から $\\boldsymbol{0,\\ k/m,\\ \\frac km(1+\\frac{2m}M)}$．$0$ は全体の並進，$\\sqrt{k/m}$ は中央が静止して外側が逆向き，最後は外側が同じ向きで中央が逆向き．\n\n(2) $\\sqrt{1+32/12}=\\sqrt{11/3}\\approx\\boldsymbol{1.91}$．\n\n(3) $2349/1388\\approx\\boldsymbol{1.69}$．隣だけのばねの模型は，O–O 間の相互作用や結合の角度方向の力，非調和性を無視している．"
+    "tex": "(1) 運動方程式の行列の固有値から $\\omega^2=\\boldsymbol{0,\\ k/m,\\ \\frac km(1+\\frac{2m}M)}$．$0$ は全体の並進，$\\sqrt{k/m}$ は中央が静止して外側が逆向き，最後は外側が同じ向きで中央が逆向き．\n\n(2) 比は $\\boldsymbol{\\sqrt{1+\\dfrac{2m}{M}}}$ で，ばね定数によらず質量比だけで決まる．\n\n(3) $\\sqrt{1+32/12}=\\sqrt{11/3}\\approx1.91$．実測は $2349/1388\\approx1.69$．隣だけのばねの模型は，O–O 間の相互作用や結合の角度方向の力，非調和性を無視している．"
    }
   ],
   "idea": {
@@ -220,7 +220,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) ≈1.91\n(3) 記述"
+   "spec": "(1) {0, sqrt(k/m), sqrt((k/m)(1 + 2m/M))}\n(2) sqrt(1 + 2m/M)\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -449,16 +449,16 @@
   "theme": "弱く結合した振り子のうなりとエネルギー移動",
   "topic": "弱く結合した振り子のうなりとエネルギー移動",
   "statement": {
-   "tex": "長さ $l$，質量 $m$ の2つの単振り子を，おもりどうしを弱いばね（ばね定数 $k$）でつなぐ．つり合いでばねは自然長で，振れは小さいとする．\n\\begin{enumerate}\n\\item 基準振動の角振動数を $g,\\ l,\\ k,\\ m$ で表せ．\n\\item 振り子1だけを少し振らせて静かにはなすと，エネルギーは振り子2へ移り，また戻る．振り子1のエネルギーが最初に $0$ になるまでの時間 $\\tau$ を，$k/m\\ll g/l$ として最低次で求めよ．\n\\item $l=1.00\\,\\mathrm{m}$，$g=9.80\\,\\mathrm{m/s^2}$，$k/m=0.0980\\,\\mathrm{s^{-2}}$ のとき，(2) の時間を(近似を使わずに)数値で求めよ．\n\\end{enumerate}"
+   "tex": "長さ $l$，質量 $m$ の2つの単振り子を，おもりどうしを弱いばね（ばね定数 $k$）でつなぐ．つり合いでばねは自然長で，振れは小さいとする．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 基準振動の角振動数を $g,\\ l,\\ k,\\ m$ で表せ．\n\\item 振り子1だけを少し振らせて静かにはなすと，エネルギーは振り子2へ移り，また戻る．振り子1のエネルギーが最初に $0$ になるまでの時間 $\\tau$ を，$k/m\\ll g/l$ として最低次で求めよ．\n\\item 近似を使わずに $\\tau$ を $g,l,k,m$ で表せ．また，その値と (2) の近似値との比を $\\varepsilon=\\dfrac{kl}{mg}$ の 1 次まで求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sqrt{\\dfrac{g}{l}}$，$\\sqrt{\\dfrac{g}{l}+\\dfrac{2k}{m}}$ (2) $\\tau=\\dfrac{\\pi m}{k}\\sqrt{\\dfrac{g}{l}}$ (3) $\\tau\\approx 101\\,\\mathrm{s}$"
+   "tex": "(1) $\\sqrt{\\dfrac{g}{l}}$，$\\sqrt{\\dfrac{g}{l}+\\dfrac{2k}{m}}$ (2) $\\tau=\\dfrac{\\pi m}{k}\\sqrt{\\dfrac{g}{l}}$ (3) $\\tau=\\dfrac{\\pi}{\\sqrt{\\dfrac{g}{l}+\\dfrac{2k}{m}}-\\sqrt{\\dfrac{g}{l}}}$，比 $1+\\dfrac{\\varepsilon}{2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "変位 $x_i=l\\theta_i$ で $m\\ddot x_1=-\\dfrac{mg}{l}x_1-k(x_1-x_2)$，$m\\ddot x_2=-\\dfrac{mg}{l}x_2+k(x_1-x_2)$．和と差について\n\\[ \\boldsymbol{\\omega_1=\\sqrt{\\frac gl}},\\qquad \\boldsymbol{\\omega_2=\\sqrt{\\frac gl+\\frac{2k}{m}}}. \\]\n\n$x_1(0)=a$ から $x_1=a\\cos\\dfrac{\\Delta\\omega}{2}t\\cos\\bar\\omega t$，$x_2=a\\sin\\dfrac{\\Delta\\omega}{2}t\\sin\\bar\\omega t$（$\\Delta\\omega=\\omega_2-\\omega_1$，$\\bar\\omega=(\\omega_1+\\omega_2)/2$）．振り子1の包絡線が初めて0になるのは $\\tau=\\pi/\\Delta\\omega$．$\\Delta\\omega\\approx\\dfrac{k}{m}\\sqrt{\\dfrac lg}$ より\n\\[ \\boldsymbol{\\tau\\approx\\frac{\\pi m}{k}\\sqrt{\\frac gl}}. \\]\n\n数値：$\\omega_1=3.1305\\,\\mathrm{s^{-1}}$，$\\omega_2=\\sqrt{9.80+0.196}=3.1616\\,\\mathrm{s^{-1}}$，$\\tau=\\pi/0.03115\\approx\\boldsymbol{101\\,\\mathrm{s}}$（近似式でも $100\\,\\mathrm{s}$）．結合が弱いほどエネルギー移動はゆっくりになる．"
+    "tex": "変位 $x_i=l\\theta_i$ で $m\\ddot x_1=-\\dfrac{mg}{l}x_1-k(x_1-x_2)$，$m\\ddot x_2=-\\dfrac{mg}{l}x_2+k(x_1-x_2)$．和と差について\n\\[ \\boldsymbol{\\omega_1=\\sqrt{\\frac gl}},\\qquad \\boldsymbol{\\omega_2=\\sqrt{\\frac gl+\\frac{2k}{m}}}. \\]\n\n$x_1(0)=a$ から $x_1=a\\cos\\dfrac{\\Delta\\omega}{2}t\\cos\\bar\\omega t$，$x_2=a\\sin\\dfrac{\\Delta\\omega}{2}t\\sin\\bar\\omega t$（$\\Delta\\omega=\\omega_2-\\omega_1$，$\\bar\\omega=(\\omega_1+\\omega_2)/2$）．振り子1の包絡線が初めて0になるのは $\\tau=\\pi/\\Delta\\omega$．$\\Delta\\omega\\approx\\dfrac{k}{m}\\sqrt{\\dfrac lg}$ より\n\\[ \\boldsymbol{\\tau\\approx\\frac{\\pi m}{k}\\sqrt{\\frac gl}}. \\]\n\n(3) 厳密には\n\\[ \\boldsymbol{\\tau=\\frac{\\pi}{\\omega_2-\\omega_1}=\\frac{\\pi}{\\sqrt{g/l+2k/m}-\\sqrt{g/l}}}. \\]\n$\\omega_2-\\omega_1=\\omega_1(\\sqrt{1+2\\varepsilon}-1)=\\omega_1\\varepsilon\\left(1-\\dfrac\\varepsilon2+\\cdots\\right)$ で，(2) の近似は $\\tau\\approx\\pi/(\\omega_1\\varepsilon)$ だから，比は\n\\[ \\frac{\\tau}{\\tau_{(2)}}=\\frac{1}{1-\\varepsilon/2+\\cdots}\\approx\\boldsymbol{1+\\frac{\\varepsilon}{2}}. \\]\n近似式はわずかに短めの時間を与える．結合が弱いほどエネルギー移動はゆっくりになる．"
    }
   ],
   "idea": {
@@ -466,7 +466,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) {sqrt(g/l), sqrt(g/l+2k/m)}\n(2) τ：pi m sqrt(g/l)/k\n(3) τ [s]：≈101"
+   "spec": "(1) {sqrt(g/l), sqrt(g/l+2k/m)}\n(2) τ：pi m sqrt(g/l)/k\n(3) τ：pi/(sqrt(g/l + 2k/m) - sqrt(g/l)) ; 比：1 + ε/2"
   },
   "methods": [],
   "tags": [
@@ -497,16 +497,16 @@
   "theme": "直線3原子分子の基準振動",
   "topic": "直線3原子分子の基準振動",
   "statement": {
-   "tex": "直線分子 $\\mathrm{CO_2}$ を，質量 $m$ の2つの O 原子と質量 $M$ の C 原子が「O—C—O」の順に並び，となりあう原子がばね定数 $k$ のばねでつながれた1次元模型で考える（分子軸方向の運動のみ）．\n\\begin{enumerate}\n\\item 基準振動の角振動数をすべて求めよ．\n\\item 最も高い振動数のモードで，両端の O の変位を $x_O$（2つは等しい），C の変位を $x_C$ とするとき，比 $x_C/x_O$ を求めよ．\n\\item $m:M=16:12$ として，2つの0でない振動数の比（高い方/低い方）を求めよ．\n\\end{enumerate}"
+   "tex": "直線分子 $\\mathrm{CO_2}$ を，質量 $m$ の2つの O 原子と質量 $M$ の C 原子が「O—C—O」の順に並び，となりあう原子がばね定数 $k$ のばねでつながれた1次元模型で考える（分子軸方向の運動のみ）．\n\\begin{enumerate}\n\\item 基準振動の角振動数をすべて求めよ．\n\\item 最も高い振動数のモードで，両端の O の変位を $x_O$（2つは等しい），C の変位を $x_C$ とするとき，比 $x_C/x_O$ を求めよ．\n\\item 2つの0でない振動数の比（高い方/低い方）を $m,M$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $0$，$\\sqrt{\\dfrac{k}{m}}$，$\\sqrt{\\dfrac{k(M+2m)}{mM}}$ (2) $\\dfrac{x_C}{x_O}=-\\dfrac{2m}{M}$ (3) $\\dfrac{\\sqrt{33}}{3}\\approx 1.91$"
+   "tex": "(1) $0$，$\\sqrt{\\dfrac{k}{m}}$，$\\sqrt{\\dfrac{k(M+2m)}{mM}}$ (2) $\\dfrac{x_C}{x_O}=-\\dfrac{2m}{M}$ (3) $\\sqrt{1+\\dfrac{2m}{M}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "運動方程式 $m\\ddot x_1=-k(x_1-x_2)$，$M\\ddot x_2=-k(2x_2-x_1-x_3)$，$m\\ddot x_3=-k(x_3-x_2)$ に $e^{i\\omega t}$ を代入した永年方程式は\n\\[ \\omega^2\\,(k-m\\omega^2)\\,\\bigl(k(M+2m)-mM\\omega^2\\bigr)=0. \\]\nよって $\\boldsymbol{\\omega=0}$（並進），$\\boldsymbol{\\sqrt{k/m}}$（C は静止し O が逆向き：対称伸縮），$\\boldsymbol{\\sqrt{k(M+2m)/(mM)}}$（反対称伸縮）．\n\n反対称伸縮では O が同じ向きに動き，重心が動かない条件 $2mx_O+Mx_C=0$ から $\\boldsymbol{x_C/x_O=-2m/M}$．\n\n比は $\\sqrt{1+2m/M}=\\sqrt{1+32/12}=\\sqrt{11/3}=\\boldsymbol{\\sqrt{33}/3\\approx1.91}$．実測（$2349/1388\\approx1.69$）とずれるのは，非隣接原子間の力などを無視したためである．"
+    "tex": "運動方程式 $m\\ddot x_1=-k(x_1-x_2)$，$M\\ddot x_2=-k(2x_2-x_1-x_3)$，$m\\ddot x_3=-k(x_3-x_2)$ に $e^{i\\omega t}$ を代入した永年方程式は\n\\[ \\omega^2\\,(k-m\\omega^2)\\,\\bigl(k(M+2m)-mM\\omega^2\\bigr)=0. \\]\nよって $\\boldsymbol{\\omega=0}$（並進），$\\boldsymbol{\\sqrt{k/m}}$（C は静止し O が逆向き：対称伸縮），$\\boldsymbol{\\sqrt{k(M+2m)/(mM)}}$（反対称伸縮）．\n\n反対称伸縮では O が同じ向きに動き，重心が動かない条件 $2mx_O+Mx_C=0$ から $\\boldsymbol{x_C/x_O=-2m/M}$．\n\n比は $\\sqrt{\\dfrac{k(M+2m)}{mM}}\\Big/\\sqrt{\\dfrac km}=\\boldsymbol{\\sqrt{1+\\dfrac{2m}{M}}}$ で，ばね定数によらず質量比だけで決まる．O と C の質量比 $16:12$ を入れると約 $1.91$ で，実測（約 $1.69$）とずれるのは，非隣接原子間の力などを無視したためである．"
    }
   ],
   "idea": {
@@ -514,7 +514,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) {0, sqrt(k/m), sqrt(k(M+2m)/(m M))}\n(2) x_C/x_O：-2m/M\n(3) 比：sqrt(33)/3"
+   "spec": "(1) {0, sqrt(k/m), sqrt(k(M+2m)/(m M))}\n(2) x_C/x_O：-2m/M\n(3) 比：sqrt(1 + 2m/M)"
   },
   "methods": [],
   "tags": [
@@ -938,16 +938,16 @@
   "theme": "同位体置換した直線3原子分子の振動数",
   "topic": "同位体置換した直線3原子分子の振動数",
   "statement": {
-   "tex": "直線 3 原子分子を，質量 $m_1,\\ M,\\ m_3$ の質点が並び，隣どうしがばね定数 $k$ の等しいばねでつながれた模型で表す．分子軸方向の振動だけを考える．\n\\begin{enumerate}\n  \\item 0 でない 2 つの規準角振動数 $\\omega_{\\rm s},\\ \\omega_{\\rm a}$ について，$\\omega_{\\rm s}^2+\\omega_{\\rm a}^2$ と $\\omega_{\\rm s}^2\\omega_{\\rm a}^2$ を求めよ．\n  \\item $^{16}$O$^{12}$C$^{16}$O（$m_1=m_3=16u$，$M=12u$）の 2 つの角振動数を $\\sqrt{k/u}$ を単位として求めよ．\n  \\item 一方の酸素を $^{18}$O に置き換えた $^{16}$O$^{12}$C$^{18}$O の 2 つの角振動数を求めよ．また，$k$ を知らなくても，2 つの分子の $\\omega_{\\rm s}\\omega_{\\rm a}$ の比が質量だけで決まることを示し，その値を求めよ．\n\\end{enumerate}"
+   "tex": "直線 3 原子分子を，質量 $m_1,\\ M,\\ m_3$ の質点が並び，隣どうしがばね定数 $k$ の等しいばねでつながれた模型で表す．分子軸方向の振動だけを考える．\n\\begin{enumerate}\n  \\item 0 でない 2 つの規準角振動数 $\\omega_{\\rm s},\\ \\omega_{\\rm a}$（$\\omega_{\\rm s}<\\omega_{\\rm a}$）について，$\\omega_{\\rm s}^2+\\omega_{\\rm a}^2$ と $\\omega_{\\rm s}^2\\omega_{\\rm a}^2$ を求めよ．\n  \\item 対称な分子（$m_1=m_3=m$）の 2 つの角振動数を $k,m,M$ で表せ．\n  \\item 一方の端の原子を同位体（質量 $m_3$）に置き換えた分子（$m_1=m$，$m_3\\neq m$）を考える．$k$ を知らなくても，置換前後の $\\omega_{\\rm s}\\omega_{\\rm a}$ の比が質量だけで決まることを示し，比（置換後/置換前）を $m,m_3,M$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 和 $k\\left(\\dfrac1{m_1}+\\dfrac2M+\\dfrac1{m_3}\\right)$，積 $k^2\\dfrac{m_1+M+m_3}{m_1Mm_3}$　(2) $\\omega_{\\rm s}=0.2500$，$\\omega_{\\rm a}=0.4787$　(3) $0.2428,\\ 0.4751$；比 $=\\sqrt{\\dfrac{46\\cdot16}{44\\cdot18}}\\simeq0.964$"
+   "tex": "(1) 和 $k\\left(\\dfrac1{m_1}+\\dfrac2M+\\dfrac1{m_3}\\right)$，積 $k^2\\dfrac{m_1+M+m_3}{m_1Mm_3}$　(2) $\\omega_{\\rm s}=\\sqrt{\\dfrac{k}{m}}$，$\\omega_{\\rm a}=\\sqrt{k\\left(\\dfrac1m+\\dfrac2M\\right)}$　(3) $\\sqrt{\\dfrac{m(m+M+m_3)}{m_3(2m+M)}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 平衡からのずれを $x_1,x_2,x_3$ とすると\n\\[\nm_1\\ddot x_1=k(x_2-x_1),\\quad M\\ddot x_2=k(x_1-2x_2+x_3),\\quad m_3\\ddot x_3=k(x_2-x_3).\n\\]\n$X=\\omega^2$ とおいた特性方程式を展開すると\n\\[\nX\\left[X^2-k\\left(\\frac1{m_1}+\\frac2M+\\frac1{m_3}\\right)X+k^2\\frac{m_1+M+m_3}{m_1Mm_3}\\right]=0 .\n\\]\n$X=0$ は並進．残る 2 根の和と積が求める量．\n\n(2) $m_1=m_3=16$，$M=12$（単位 $u$）：和 $=k\\left(\\frac18+\\frac16\\right)=\\frac{7}{24}k$，積 $=k^2\\frac{44}{3072}$．根は $\\omega^2=\\frac{k}{16}$ と $\\frac{k}{16}+\\frac{2k}{12}=\\frac{11k}{48}$（前問の $\\lambda,\\ \\lambda+2\\mu$ に一致）．$\\omega_{\\rm s}=0.2500$，$\\omega_{\\rm a}=0.4787$（単位 $\\sqrt{k/u}$）．\n\n(3) $m_3=18$：和 $=k\\left(\\frac1{16}+\\frac16+\\frac1{18}\\right)=\\frac{41}{144}k$，積 $=k^2\\frac{46}{3456}$．$X^2-0.28472X+0.013310=0$ を解いて $\\omega_{\\rm s}=0.2428$，$\\omega_{\\rm a}=0.4751$．\n積の公式で $k$ は比をとると消え，\n\\[\n\\frac{(\\omega_{\\rm s}\\omega_{\\rm a})'}{\\omega_{\\rm s}\\omega_{\\rm a}}=\\sqrt{\\frac{m_1'+M+m_3'}{m_1+M+m_3}\\cdot\\frac{m_1m_3}{m_1'm_3'}}=\\sqrt{\\frac{46}{44}\\cdot\\frac{16}{18}}=0.964 .\n\\]\n同位体置換で力の定数（電子状態で決まる）が変わらないことを使うと，振動数の積の比は質量だけで決まる（積の規則）．置換で対称性が破れても，この比は保たれる．"
+    "tex": "(1) 平衡からのずれを $x_1,x_2,x_3$ とすると\n\\[\nm_1\\ddot x_1=k(x_2-x_1),\\quad M\\ddot x_2=k(x_1-2x_2+x_3),\\quad m_3\\ddot x_3=k(x_2-x_3).\n\\]\n$X=\\omega^2$ とおいた特性方程式を展開すると\n\\[\nX\\left[X^2-k\\left(\\frac1{m_1}+\\frac2M+\\frac1{m_3}\\right)X+k^2\\frac{m_1+M+m_3}{m_1Mm_3}\\right]=0 .\n\\]\n$X=0$ は並進．残る 2 根の和と積が求める量：\n\\[ \\boldsymbol{\\omega_{\\rm s}^2+\\omega_{\\rm a}^2=k\\left(\\frac1{m_1}+\\frac2M+\\frac1{m_3}\\right)},\\qquad \\boldsymbol{\\omega_{\\rm s}^2\\omega_{\\rm a}^2=k^2\\frac{m_1+M+m_3}{m_1Mm_3}}. \\]\n\n(2) $m_1=m_3=m$：和 $=k\\left(\\dfrac2m+\\dfrac2M\\right)$，積 $=k^2\\dfrac{2m+M}{m^2M}$．2 次方程式は $\\left(X-\\dfrac km\\right)\\left(X-\\dfrac km-\\dfrac{2k}M\\right)=0$ と因数分解でき\n\\[ \\boldsymbol{\\omega_{\\rm s}=\\sqrt{\\frac km}},\\qquad \\boldsymbol{\\omega_{\\rm a}=\\sqrt{k\\left(\\frac1m+\\frac2M\\right)}}. \\]\n\n(3) 積の公式で $k$ は比をとると消え，\n\\[\n\\frac{(\\omega_{\\rm s}\\omega_{\\rm a})'}{\\omega_{\\rm s}\\omega_{\\rm a}}=\\sqrt{\\frac{m+M+m_3}{mMm_3}\\cdot\\frac{m^2M}{2m+M}}=\\boldsymbol{\\sqrt{\\frac{m(m+M+m_3)}{m_3(2m+M)}}} .\n\\]\n同位体置換で力の定数（電子状態で決まる）が変わらないことを使うと，振動数の積の比は質量だけで決まる（積の規則）．置換で対称性が破れても，この比は保たれる．たとえば ${}^{16}$O$^{12}$C$^{16}$O $\\to$ ${}^{16}$O$^{12}$C$^{18}$O なら約 $0.964$．"
    }
   ],
   "idea": {
@@ -955,7 +955,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 和：k (((1)/(m_1))+((2)/(M))+((1)/(m_3))) ; 積：k ^(2)((m_1 + M + m_3)/(m_1 M m_3))\n(2) $\\omega_{\\rm s}$：≈0.2500 ; $\\omega_{\\rm a}$：≈0.4787\n(3) 記述"
+   "spec": "(1) 和：k (1/m_1 + 2/M + 1/m_3) ; 積：k^2 (m_1 + M + m_3)/(m_1 M m_3)\n(2) $\\omega_{\\rm s}$：sqrt(k/m) ; $\\omega_{\\rm a}$：sqrt(k (1/m + 2/M))\n(3) 比：sqrt(m (m + M + m_3)/(m_3 (2m + M)))"
   },
   "methods": [],
   "tags": [
@@ -987,16 +987,16 @@
   "theme": "つり下げた2質点ばね系の動吸振器",
   "topic": "つり下げた2質点ばね系の動吸振器",
   "statement": {
-   "tex": "天井から「ばね定数 $k_1$ のばね－質量 $m_1$ の物体 1－ばね定数 $k_2$ のばね－質量 $m_2$ の物体 2」を鉛直につるす．天井（ばね $k_1$ の上端）を鉛直方向に $Y\\cos\\Omega t$ で振動させる．物体は鉛直方向にのみ動く．\n\\begin{enumerate}\n  \\item 定常状態での物体 1 の振幅 $X_1$ を求めよ．重力の影響はどうなるか．\n  \\item 物体 1 が静止したままになる $\\Omega$ を求め，そのときの物体 2 の振幅を求めよ．物体 1 が静止できる理由を力のつりあいで説明せよ．\n  \\item $k_2/m_2=k_1/m_1\\equiv\\Omega_0^2$ と選び，(2) の $\\Omega=\\Omega_0$ で物体 1 を止めることにした．このとき系の 2 つの規準角振動数 $\\omega_1<\\omega_2$ について，$\\omega_1\\omega_2=\\Omega_0^2$ を示し，$m_2=m_1/10$ のときの $\\omega_1/\\Omega_0,\\ \\omega_2/\\Omega_0$ を求めよ．\n\\end{enumerate}"
+   "tex": "天井から「ばね定数 $k_1$ のばね－質量 $m_1$ の物体 1－ばね定数 $k_2$ のばね－質量 $m_2$ の物体 2」を鉛直につるす．天井（ばね $k_1$ の上端）を鉛直方向に $Y\\cos\\Omega t$ で振動させる．物体は鉛直方向にのみ動く．\n\\begin{enumerate}\n  \\item 定常状態での物体 1 の振幅 $X_1$ を求めよ．重力の影響はどうなるか．\n  \\item 物体 1 が静止したままになる $\\Omega$ を求め，そのときの物体 2 の振幅を求めよ．物体 1 が静止できる理由を力のつりあいで説明せよ．\n  \\item $k_2/m_2=k_1/m_1\\equiv\\Omega_0^2$ と選び，(2) の $\\Omega=\\Omega_0$ で物体 1 を止めることにした．このとき系の 2 つの規準角振動数 $\\omega_1<\\omega_2$ について，$\\omega_1\\omega_2=\\Omega_0^2$ を示し，$\\mu=m_2/m_1$ として $\\omega_1/\\Omega_0,\\ \\omega_2/\\Omega_0$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $X_1=\\dfrac{k_1(k_2-m_2\\Omega^2)Y}{(k_1+k_2-m_1\\Omega^2)(k_2-m_2\\Omega^2)-k_2^2}$；重力はつり合いの位置をずらすだけ　(2) $\\Omega=\\sqrt{k_2/m_2}$，$X_2=-\\dfrac{k_1}{k_2}Y$　(3) $\\omega_{1,2}^2/\\Omega_0^2=\\dfrac{21\\mp\\sqrt{41}}{20}$，$\\omega_1\\simeq0.854\\Omega_0$，$\\omega_2\\simeq1.171\\Omega_0$"
+   "tex": "(1) $X_1=\\dfrac{k_1(k_2-m_2\\Omega^2)Y}{(k_1+k_2-m_1\\Omega^2)(k_2-m_2\\Omega^2)-k_2^2}$；重力はつり合いの位置をずらすだけ　(2) $\\Omega=\\sqrt{k_2/m_2}$，$X_2=-\\dfrac{k_1}{k_2}Y$　(3) $\\dfrac{\\omega_1}{\\Omega_0}=\\sqrt{\\dfrac{2+\\mu-\\sqrt{\\mu^2+4\\mu}}{2}}$，$\\dfrac{\\omega_2}{\\Omega_0}=\\sqrt{\\dfrac{2+\\mu+\\sqrt{\\mu^2+4\\mu}}{2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 下向きを正とし，つり合いからのずれを $x_1,x_2$ とすると（重力はつり合いの位置を決める定数項として消える）\n\\[\nm_1\\ddot x_1=-k_1(x_1-Y\\cos\\Omega t)+k_2(x_2-x_1),\\qquad m_2\\ddot x_2=-k_2(x_2-x_1).\n\\]\n$x_i=X_i\\cos\\Omega t$ を代入すると\n\\[\n(k_1+k_2-m_1\\Omega^2)X_1-k_2X_2=k_1Y,\\qquad -k_2X_1+(k_2-m_2\\Omega^2)X_2=0 .\n\\]\nこれを解いて $X_1=\\dfrac{k_1(k_2-m_2\\Omega^2)Y}{(k_1+k_2-m_1\\Omega^2)(k_2-m_2\\Omega^2)-k_2^2}$．\n\n(2) $X_1=0\\iff\\Omega^2=k_2/m_2$．このとき第 1 式から $-k_2X_2=k_1Y$，$X_2=-\\dfrac{k_1}{k_2}Y$．物体 2 は（ばね $k_2$ の上端が止まっているので）固有振動数 $\\sqrt{k_2/m_2}$ でちょうど共振しつつ，ばね $k_2$ が物体 1 に及ぼす力 $k_2X_2\\cos\\Omega t=-k_1Y\\cos\\Omega t$ が，ばね $k_1$ を通じた天井からの力 $k_1Y\\cos\\Omega t$ を常に打ち消す．\n\n(3) 規準振動数は $(k_1+k_2-m_1\\omega^2)(k_2-m_2\\omega^2)-k_2^2=0$．$\\mu=m_2/m_1$，$k_2=\\mu k_1$，$x=\\omega^2/\\Omega_0^2$ とおくと $m_1$ で割って\n\\[\n(1+\\mu-x)\\mu(1-x)-\\mu^2=0\\ \\Rightarrow\\ x^2-(2+\\mu)x+1=0 .\n\\]\n根の積が 1 なので $\\omega_1\\omega_2=\\Omega_0^2$：吸振させる振動数は 2 つの共振振動数の幾何平均にあたり，その両側に共振が分かれる．$\\mu=0.1$ で $x=\\dfrac{2.1\\mp\\sqrt{0.41}}2=\\dfrac{21\\mp\\sqrt{41}}{20}$，$\\omega_1\\simeq0.854\\Omega_0$，$\\omega_2\\simeq1.171\\Omega_0$．"
+    "tex": "(1) 下向きを正とし，つり合いからのずれを $x_1,x_2$ とすると（重力はつり合いの位置を決める定数項として消える）\n\\[\nm_1\\ddot x_1=-k_1(x_1-Y\\cos\\Omega t)+k_2(x_2-x_1),\\qquad m_2\\ddot x_2=-k_2(x_2-x_1).\n\\]\n$x_i=X_i\\cos\\Omega t$ を代入すると\n\\[\n(k_1+k_2-m_1\\Omega^2)X_1-k_2X_2=k_1Y,\\qquad -k_2X_1+(k_2-m_2\\Omega^2)X_2=0 .\n\\]\nこれを解いて $\\boldsymbol{X_1=\\dfrac{k_1(k_2-m_2\\Omega^2)Y}{(k_1+k_2-m_1\\Omega^2)(k_2-m_2\\Omega^2)-k_2^2}}$．\n\n(2) $X_1=0\\iff\\Omega^2=k_2/m_2$．このとき第 1 式から $-k_2X_2=k_1Y$，$\\boldsymbol{X_2=-\\dfrac{k_1}{k_2}Y}$．物体 2 は（ばね $k_2$ の上端が止まっているので）固有振動数 $\\sqrt{k_2/m_2}$ でちょうど共振しつつ，ばね $k_2$ が物体 1 に及ぼす力 $k_2X_2\\cos\\Omega t=-k_1Y\\cos\\Omega t$ が，ばね $k_1$ を通じた天井からの力 $k_1Y\\cos\\Omega t$ を常に打ち消す．\n\n(3) 規準振動数は $(k_1+k_2-m_1\\omega^2)(k_2-m_2\\omega^2)-k_2^2=0$．$k_2=\\mu k_1$，$x=\\omega^2/\\Omega_0^2$ とおくと $m_1$ で割って\n\\[\n(1+\\mu-x)\\mu(1-x)-\\mu^2=0\\ \\Rightarrow\\ x^2-(2+\\mu)x+1=0 .\n\\]\n根の積が 1 なので $\\omega_1\\omega_2=\\Omega_0^2$：吸振させる振動数は 2 つの共振振動数の幾何平均にあたり，その両側に共振が分かれる．根は $x=\\dfrac{2+\\mu\\mp\\sqrt{\\mu^2+4\\mu}}2$ で\n\\[ \\boldsymbol{\\frac{\\omega_{1,2}}{\\Omega_0}=\\sqrt{\\frac{2+\\mu\\mp\\sqrt{\\mu^2+4\\mu}}{2}}}. \\]\n（$\\mu=0.1$ なら約 $0.854$ と $1.171$．）"
    }
   ],
   "idea": {
@@ -1004,7 +1004,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\Omega$：sqrt(k_2 / m_2) ; $X_2$：-((k_1)/(k_2)) Y\n(3) 記述"
+   "spec": "(1) $X_1$：k_1 (k_2 - m_2 Ω^2) Y/((k_1 + k_2 - m_1 Ω^2)(k_2 - m_2 Ω^2) - k_2^2)\n(2) $\\Omega$：sqrt(k_2 / m_2) ; $X_2$：-((k_1)/(k_2)) Y\n(3) $\\omega_1/\\Omega_0$：sqrt((2 + μ - sqrt(μ^2 + 4μ))/2) ; $\\omega_2/\\Omega_0$：sqrt((2 + μ + sqrt(μ^2 + 4μ))/2)"
   },
   "methods": [],
   "tags": [
@@ -1686,16 +1686,16 @@
   "theme": "非調和な曲線上の振動：周期の振幅依存性",
   "topic": "非調和な曲線上の振動：周期の振幅依存性",
   "statement": {
-   "tex": "質点（質量 $m$）が鉛直面内の曲線 $y=ax^4$（$a>0$，$y$ は鉛直上向き）に沿って摩擦なく動く．重力加速度を $g$ とし，振幅 $A$ は十分小さく $a^2A^6\\ll1$ とする．\n\\begin{enumerate}\n\\item 最下点付近の運動方程式を $x$ について求めよ．\n\\item 振幅 $A$ の振動の周期 $T(A)$ を求めよ．$\\displaystyle\\int_0^1\\frac{du}{\\sqrt{1-u^4}}=\\frac{\\Gamma(1/4)^2}{4\\sqrt{2\\pi}}\\approx1.311$ を用いてよい．\n\\item 曲線が $y=c|x|^n$（$n>0$）の場合，周期が振幅の何乗に比例するかを次元解析で求め，等時性をもつのは $n=2$ に限られることを示せ．\n\\item $n=4$ の場合，質点を高さ $h$ から静かに放したときの周期を $h$ で表せ．$h$ を 16 倍にすると周期は何倍か．\n\\end{enumerate}"
+   "tex": "質点（質量 $m$）が鉛直面内の曲線 $y=ax^4$（$a>0$，$y$ は鉛直上向き）に沿って摩擦なく動く．重力加速度を $g$ とし，振幅 $A$ は十分小さく $a^2A^6\\ll1$ とする．\n\\begin{enumerate}\n\\item 最下点付近の運動方程式を $x$ について求めよ．\n\\item 振幅 $A$ の振動の周期 $T(A)$ を求めよ．定数 $\\displaystyle J=\\int_0^1\\frac{du}{\\sqrt{1-u^4}}$ を用いて表してよい．\n\\item 曲線が $y=c|x|^n$（$n>0$）の場合，周期が振幅の何乗に比例するかを次元解析で求め，等時性をもつのは $n=2$ に限られることを示せ．\n\\item $y=ax^4$ の場合，質点を高さ $h$ から静かに放したときの周期を $h$ で表せ．$h$ を $N$ 倍にすると周期は何倍か．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\ddot x=-4gax^3$　(2) $T=\\dfrac{4}{A\\sqrt{2ga}}\\cdot\\dfrac{\\Gamma(1/4)^2}{4\\sqrt{2\\pi}}\\approx\\dfrac{3.71}{A\\sqrt{ga}}$　(3) $T\\propto A^{1-n/2}$　(4) $T\\approx3.71\\,(ga)^{-1/2}(a/h)^{1/4}$，$1/2$ 倍"
+   "tex": "(1) $\\ddot x=-4gax^3$　(2) $T=\\dfrac{4J}{A\\sqrt{2ga}}$　(3) $T\\propto A^{1-n/2}$　(4) $T=\\dfrac{4J}{\\sqrt{2ga}}\\left(\\dfrac{a}{h}\\right)^{1/4}$，$N^{-1/4}$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $L=\\frac m2(1+16a^2x^6)\\dot x^2-mgax^4$．$16a^2x^6\\ll1$ を無視すると $\\ddot x=-4gax^3$．線形化すると復元力が消えてしまい，最低次の非線形項が運動を決める．\n\n(2) エネルギー保存 $\\frac12\\dot x^2+gax^4=gaA^4$ より\n\\[ T=4\\int_0^A\\frac{dx}{\\sqrt{2ga(A^4-x^4)}}=\\frac{4}{A\\sqrt{2ga}}\\int_0^1\\frac{du}{\\sqrt{1-u^4}}\\approx\\frac{4\\times1.311}{\\sqrt2}\\frac{1}{A\\sqrt{ga}}\\approx\\frac{3.71}{A\\sqrt{ga}}. \\]\n振幅が小さいほど周期は長く，$A\\to0$ で発散する．\n\n(3) 運動方程式 $\\ddot x\\simeq-ncg|x|^{n-1}\\mathrm{sgn}\\,x$ は $x\\to\\lambda x$，$t\\to\\lambda^{1-n/2}t$ で不変（左辺 $\\lambda^{1-(2-n)}=\\lambda^{n-1}$，右辺 $\\lambda^{n-1}$）．よって $T(\\lambda A)=\\lambda^{1-n/2}T(A)$，$T\\propto A^{1-n/2}$．振幅によらない（等時的）のは $1-n/2=0$，すなわち $n=2$（放物線，最下点付近は調和振動）だけ．$n>2$ では小振幅ほど遅く，$n<2$ では小振幅ほど速い．\n\n(4) $h=aA^4$ より $A=(h/a)^{1/4}$，$T\\approx\\frac{3.71}{\\sqrt{ga}}\\left(\\frac ah\\right)^{1/4}$．$h$ を 16 倍にすると $A$ は 2 倍，周期は $1/2$ 倍．"
+    "tex": "(1) $L=\\frac m2(1+16a^2x^6)\\dot x^2-mgax^4$．$16a^2x^6\\ll1$ を無視すると $\\boldsymbol{\\ddot x=-4gax^3}$．線形化すると復元力が消えてしまい，最低次の非線形項が運動を決める．\n\n(2) エネルギー保存 $\\frac12\\dot x^2+gax^4=gaA^4$ より\n\\[ T=4\\int_0^A\\frac{dx}{\\sqrt{2ga(A^4-x^4)}}=\\boldsymbol{\\frac{4}{A\\sqrt{2ga}}\\int_0^1\\frac{du}{\\sqrt{1-u^4}}=\\frac{4J}{A\\sqrt{2ga}}}. \\]\n振幅が小さいほど周期は長く，$A\\to0$ で発散する．\n\n(3) 運動方程式 $\\ddot x\\simeq-ncg|x|^{n-1}\\mathrm{sgn}\\,x$ は $x\\to\\lambda x$，$t\\to\\lambda^{1-n/2}t$ で不変（左辺 $\\lambda^{1-(2-n)}=\\lambda^{n-1}$，右辺 $\\lambda^{n-1}$）．よって $T(\\lambda A)=\\lambda^{1-n/2}T(A)$，$\\boldsymbol{T\\propto A^{1-n/2}}$．振幅によらない（等時的）のは $1-n/2=0$，すなわち $n=2$（放物線，最下点付近は調和振動）だけ．$n>2$ では小振幅ほど遅く，$n<2$ では小振幅ほど速い．\n\n(4) $h=aA^4$ より $A=(h/a)^{1/4}$，\n\\[ \\boldsymbol{T=\\frac{4J}{\\sqrt{2ga}}\\left(\\frac ah\\right)^{1/4}}. \\]\n$h$ を $N$ 倍にすると $A$ は $N^{1/4}$ 倍，周期は $\\boldsymbol{N^{-1/4}}$ 倍（たとえば 16 倍で $1/2$ 倍）．"
    }
   ],
   "idea": {
@@ -1703,7 +1703,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\ddot x$：-4 g a x ^(3)\n(2) $T$：((4)/(A sqrt(2 g a)))*((Γ (1/4)^(2))/(4 sqrt(2 pi)))\n(3) 記述\n(4) 記述"
+   "spec": "(1) $\\ddot x$：-4 g a x^3\n(2) $T$：4 J/(A sqrt(2 g a))\n(3) 記述\n(4) $T$：(4 J/sqrt(2 g a)) (a/h)^(1/4) ; 倍率：N^(-1/4)"
   },
   "methods": [],
   "tags": [
@@ -1837,16 +1837,16 @@
   "theme": "張った糸上の2質点の基準振動",
   "topic": "張った糸上の2質点の基準振動",
   "statement": {
-   "tex": "長さ $l=1.2\\ \\mathrm{m}$ の軽い糸が張力 $F=10\\ \\mathrm{N}$ で水平に張られている．重力は無視し，小さな横振動の間も張力は一定とする．\n\\begin{enumerate}\n\\item 糸を3等分する2点に質量 $m=40\\ \\mathrm{g}$ の小球を1個ずつ固定した．横振動の基準振動の角振動数と周期，およびそれぞれの振動の形（2球の変位の比）を求めよ．\n\\item 代わりに，一端から $0.30\\ \\mathrm{m}$ の点に同じ小球を1個だけ固定した．横振動の周期を求めよ．\n\\end{enumerate}"
+   "tex": "長さ $l$ の軽い糸が張力 $F$ で水平に張られている．重力は無視し，小さな横振動の間も張力は一定とする．\n\\begin{enumerate}\n\\item 糸を3等分する2点に質量 $m$ の小球を1個ずつ固定した．横振動の基準振動の角振動数 $\\omega_1<\\omega_2$ と，それぞれの振動の形（2球の変位の比 $y_2/y_1$）を求めよ．\n\\item 代わりに，一端から $l/4$ の点に同じ小球を1個だけ固定した．横振動の周期 $T$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega=25\\ \\mathrm{s^{-1}}$（$T=0.25\\ \\mathrm{s}$，同位相 $1:1$），$\\omega=43\\ \\mathrm{s^{-1}}$（$T=0.15\\ \\mathrm{s}$，逆位相 $1:-1$）　(2) $0.19\\ \\mathrm{s}$"
+   "tex": "(1) $\\omega_1=\\sqrt{\\dfrac{3F}{ml}}$（同位相，$y_2/y_1=1$），$\\omega_2=3\\sqrt{\\dfrac{F}{ml}}$（逆位相，$y_2/y_1=-1$）　(2) $T=2\\pi\\sqrt{\\dfrac{3ml}{16F}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 区間長 $d=l/3=0.40\\ \\mathrm{m}$．変位 $y_1,y_2$ が小さいとき，各区間の糸の傾きは $y_1/d$，$(y_2-y_1)/d$，$-y_2/d$ で，張力の横成分から\n\\[m\\ddot y_1=\\frac Fd(-2y_1+y_2),\\qquad m\\ddot y_2=\\frac Fd(y_1-2y_2).\\]\n$y\\propto e^{i\\omega t}$ として $\\left(2-\\dfrac{md\\omega^2}{F}\\right)^2=1$ より $\\omega^2=\\dfrac{F}{md},\\ \\dfrac{3F}{md}$．$F/(md)=10/(0.040\\times0.40)=625\\ \\mathrm{s^{-2}}$ なので\n$\\omega_1=25\\ \\mathrm{s^{-1}}$，$T_1=0.25\\ \\mathrm{s}$（$y_1=y_2$）；$\\omega_2=25\\sqrt3=43.3\\ \\mathrm{s^{-1}}$，$T_2=0.145\\ \\mathrm{s}$（$y_1=-y_2$）．\n\n(2) 両側の長さ $l_1=0.30$，$l_2=0.90\\ \\mathrm{m}$．復元力 $F\\left(\\dfrac{1}{l_1}+\\dfrac1{l_2}\\right)y$ より有効ばね定数 $k=10\\times(3.33+1.11)=44.4\\ \\mathrm{N/m}$，\n\\[T=2\\pi\\sqrt{m/k}=2\\pi\\sqrt{0.040/44.4}=0.19\\ \\mathrm{s}.\\]\n（$1/l_1+1/l_2$ は $l_1=l_2$ で最小なので，中央に置いたときが最も柔らかく，周期は最長の $\\pi\\sqrt{ml/F}=0.22\\ \\mathrm{s}$ となる．）"
+    "tex": "(1) 区間長 $d=l/3$．変位 $y_1,y_2$ が小さいとき，各区間の糸の傾きは $y_1/d$，$(y_2-y_1)/d$，$-y_2/d$ で，張力の横成分から\n\\[m\\ddot y_1=\\frac Fd(-2y_1+y_2),\\qquad m\\ddot y_2=\\frac Fd(y_1-2y_2).\\]\n$y\\propto e^{i\\omega t}$ として $\\left(2-\\dfrac{md\\omega^2}{F}\\right)^2=1$ より $\\omega^2=\\dfrac{F}{md},\\ \\dfrac{3F}{md}$．$d=l/3$ を代入して\n\\[ \\boldsymbol{\\omega_1=\\sqrt{\\frac{3F}{ml}}}\\ (y_2/y_1=1),\\qquad \\boldsymbol{\\omega_2=3\\sqrt{\\frac{F}{ml}}}\\ (y_2/y_1=-1). \\]\n\n(2) 両側の長さ $l_1=l/4$，$l_2=3l/4$．復元力 $F\\left(\\dfrac{1}{l_1}+\\dfrac1{l_2}\\right)y=\\dfrac{16F}{3l}y$ より\n\\[\\boldsymbol{T=2\\pi\\sqrt{\\frac{3ml}{16F}}}.\\]\n（$1/l_1+1/l_2$ は $l_1=l_2$ で最小なので，中央に置いたときが最も柔らかく，周期は最長の $\\pi\\sqrt{ml/F}$ となる．）"
    }
   ],
   "idea": {
@@ -1854,7 +1854,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) [s]：≈0.19"
+   "spec": "(1) $\\omega_1$：sqrt(3F/(m l)) ; $\\omega_2$：3 sqrt(F/(m l)) ; 同位相の比：1 ; 逆位相の比：-1\n(2) $T$：2 pi sqrt(3 m l/(16 F))"
   },
   "methods": [],
   "tags": [
@@ -1936,16 +1936,16 @@
   "theme": "ねじり棒でつないだ2枚の円板の振動",
   "topic": "ねじり棒でつないだ2枚の円板の振動",
   "statement": {
-   "tex": "ねじり定数 $k$ の細い棒（質量は無視）の両端に，同じ鉛直軸をもつ水平な円板 1，2（軸まわりの慣性モーメント $I_1,I_2$）を固定し，全体を摩擦のない軸受けで支える（外からのトルクはない）．\n\\begin{enumerate}\n\\item 2 枚の円板が逆向きにねじれる振動の角振動数を求めよ．\n\\item この振動中に回転しない棒上の点（節）の位置を，円板 1 からの距離と棒の全長の比で表せ．\n\\item 静止した状態から円板 1 だけに瞬間的に角速度 $\\Omega_0$ を与えた．その後の棒のねじれ角の最大値を求めよ．\n\\item $I_1=0.020\\ \\mathrm{kg\\,m^2}$，$I_2=0.060\\ \\mathrm{kg\\,m^2}$，$k=0.50\\ \\mathrm{N\\,m/rad}$，$\\Omega_0=3.0\\ \\mathrm{rad/s}$ のとき，(1)〜(3) の数値を求めよ．\n\\end{enumerate}"
+   "tex": "ねじり定数 $k$ の細い棒（質量は無視）の両端に，同じ鉛直軸をもつ水平な円板 1，2（軸まわりの慣性モーメント $I_1,I_2$）を固定し，全体を摩擦のない軸受けで支える（外からのトルクはない）．\n\\begin{enumerate}\n\\item 2 枚の円板が逆向きにねじれる振動の角振動数を求めよ．\n\\item この振動中に回転しない棒上の点（節）の位置を，円板 1 からの距離と棒の全長の比で表せ．\n\\item 静止した状態から円板 1 だけに瞬間的に角速度 $\\Omega_0$ を与えた．その後の棒のねじれ角の最大値 $\\psi_{\\rm m}$ を求めよ．\n\\item (3) で，角速度を与えてからねじれ角が初めて最大になるまでの時間 $t_1$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega=\\sqrt{k\\left(\\dfrac1{I_1}+\\dfrac1{I_2}\\right)}$　(2) $\\dfrac{I_2}{I_1+I_2}$　(3) $\\Omega_0\\sqrt{\\dfrac{I_1I_2}{k(I_1+I_2)}}$　(4) $\\omega\\approx5.8\\ \\mathrm{rad/s}$，節は円板 1 から全長の $0.75$，ねじれ角の最大値 $\\approx0.52\\ \\mathrm{rad}$"
+   "tex": "(1) $\\omega=\\sqrt{k\\left(\\dfrac1{I_1}+\\dfrac1{I_2}\\right)}$　(2) $\\dfrac{I_2}{I_1+I_2}$　(3) $\\psi_{\\rm m}=\\Omega_0\\sqrt{\\dfrac{I_1I_2}{k(I_1+I_2)}}$　(4) $t_1=\\dfrac{\\pi}{2}\\sqrt{\\dfrac{I_1I_2}{k(I_1+I_2)}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "円板の回転角を $\\varphi_1,\\varphi_2$ とすると $I_1\\ddot\\varphi_1=-k(\\varphi_1-\\varphi_2)$，$I_2\\ddot\\varphi_2=k(\\varphi_1-\\varphi_2)$．\n\\begin{enumerate}\n\\item ねじれ角 $\\psi=\\varphi_1-\\varphi_2$ について $\\ddot\\psi=-k(1/I_1+1/I_2)\\psi$．$\\omega=\\sqrt{k(1/I_1+1/I_2)}$（換算慣性モーメント $\\mu=I_1I_2/(I_1+I_2)$ を用いて $\\sqrt{k/\\mu}$）．\n\\item 全角運動量が 0 の振動では $I_1\\varphi_1+I_2\\varphi_2=0$，$\\varphi_1/\\varphi_2=-I_2/I_1$．質量のない棒のねじれ角は長さ方向に線形なので，円板 1 から $z$ の点の角度は $\\varphi_1+(\\varphi_2-\\varphi_1)z/L$．これが 0 になるのは $z/L=\\varphi_1/(\\varphi_1-\\varphi_2)=I_2/(I_1+I_2)$．節は慣性モーメントの大きい円板の側に寄る．\n\\item 角運動量 $I_1\\Omega_0$ は保存し，全体の一様回転 $\\Omega_c=I_1\\Omega_0/(I_1+I_2)$ の運動エネルギーは振動に使えない．相対運動のエネルギーは $\\tfrac12I_1\\Omega_0^2-\\tfrac12(I_1+I_2)\\Omega_c^2=\\tfrac12\\mu\\Omega_0^2$．これが最大ねじれでのポテンシャル $\\tfrac12k\\psi_{\\max}^2$ に等しいから $\\psi_{\\max}=\\Omega_0\\sqrt{\\mu/k}$．\n\\item $\\mu=0.015\\ \\mathrm{kg\\,m^2}$．$\\omega=\\sqrt{0.50/0.015}\\approx5.77\\ \\mathrm{rad/s}$，節は $0.060/0.080=0.75$，$\\psi_{\\max}=3.0\\sqrt{0.015/0.50}\\approx0.52\\ \\mathrm{rad}$．\n\\end{enumerate}"
+    "tex": "円板の回転角を $\\varphi_1,\\varphi_2$ とすると $I_1\\ddot\\varphi_1=-k(\\varphi_1-\\varphi_2)$，$I_2\\ddot\\varphi_2=k(\\varphi_1-\\varphi_2)$．\n\\begin{enumerate}\n\\item ねじれ角 $\\psi=\\varphi_1-\\varphi_2$ について $\\ddot\\psi=-k(1/I_1+1/I_2)\\psi$．$\\boldsymbol{\\omega=\\sqrt{k(1/I_1+1/I_2)}}$（換算慣性モーメント $\\mu=I_1I_2/(I_1+I_2)$ を用いて $\\sqrt{k/\\mu}$）．\n\\item 全角運動量が 0 の振動では $I_1\\varphi_1+I_2\\varphi_2=0$，$\\varphi_1/\\varphi_2=-I_2/I_1$．質量のない棒のねじれ角は長さ方向に線形なので，円板 1 から $z$ の点の角度は $\\varphi_1+(\\varphi_2-\\varphi_1)z/L$．これが 0 になるのは $z/L=\\varphi_1/(\\varphi_1-\\varphi_2)=\\boldsymbol{I_2/(I_1+I_2)}$．節は慣性モーメントの大きい円板の側に寄る．\n\\item 角運動量 $I_1\\Omega_0$ は保存し，全体の一様回転 $\\Omega_c=I_1\\Omega_0/(I_1+I_2)$ の運動エネルギーは振動に使えない．相対運動のエネルギーは $\\tfrac12I_1\\Omega_0^2-\\tfrac12(I_1+I_2)\\Omega_c^2=\\tfrac12\\mu\\Omega_0^2$．これが最大ねじれでのポテンシャル $\\tfrac12k\\psi_{\\rm m}^2$ に等しいから $\\boldsymbol{\\psi_{\\rm m}=\\Omega_0\\sqrt{\\mu/k}=\\Omega_0\\sqrt{\\dfrac{I_1I_2}{k(I_1+I_2)}}}$．\n\\item 初期条件 $\\psi(0)=0$，$\\dot\\psi(0)=\\Omega_0$ より $\\psi=\\dfrac{\\Omega_0}{\\omega}\\sin\\omega t$．初めて最大になるのは $\\omega t=\\pi/2$ のときで\n\\[ \\boldsymbol{t_1=\\frac{\\pi}{2\\omega}=\\frac\\pi2\\sqrt{\\frac{I_1I_2}{k(I_1+I_2)}}}. \\]\n\\end{enumerate}"
    }
   ],
   "idea": {
@@ -1953,7 +1953,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\omega$：sqrt(k (((1)/(I_1))+((1)/(I_2))))\n(2) ((I_2)/(I_1 + I_2))\n(3) Ω_0 sqrt(((I_1 I_2)/(k (I_1 + I_2))))\n(4) 記述"
+   "spec": "(1) $\\omega$：sqrt(k (1/I_1 + 1/I_2))\n(2) I_2/(I_1 + I_2)\n(3) $\\psi_{\\rm m}$：Ω_0 sqrt(I_1 I_2/(k (I_1 + I_2)))\n(4) $t_1$：(pi/2) sqrt(I_1 I_2/(k (I_1 + I_2)))"
   },
   "methods": [],
   "tags": [
@@ -1986,16 +1986,16 @@
   "theme": "壁に接した2物体ばね系の振動",
   "topic": "壁に接した2物体ばね系の振動",
   "statement": {
-   "tex": "滑らかな水平面上で，質量 $m_1=1.0\\ \\mathrm{kg}$ の物体 1 が鉛直な壁に接しており，その外側に質量 $m_2=3.0\\ \\mathrm{kg}$ の物体 2 がばね定数 $\\kappa=50\\ \\mathrm{N/m}$ の軽いばねで物体 1 とつながっている．物体 2 を壁の方へ押してばねを $\\Delta l=4.0\\ \\mathrm{cm}$ 縮め，静かに放した．\n\\begin{enumerate}\n\\item 物体 1 が壁を離れる時刻と，その後の系の重心速度を求めよ．\n\\item 壁を離れた後の振動の角振動数と，ばねの最大の伸びを求めよ．\n\\item 壁を離れた後，物体 1 の速度の最小値を求めよ．\n\\end{enumerate}"
+   "tex": "滑らかな水平面上で，質量 $m_1$ の物体 1 が鉛直な壁に接しており，その外側に質量 $m_2$ の物体 2 がばね定数 $\\kappa$ の軽いばねで物体 1 とつながっている．物体 2 を壁の方へ押してばねを $d$ だけ縮め，静かに放した．\n\\begin{enumerate}\n\\item 物体 1 が壁を離れる時刻 $t_1$ と，その後の系の重心速度 $V$ を求めよ．\n\\item 壁を離れた後の振動の角振動数 $\\omega$ と，ばねの最大の伸び $s$ を求めよ．\n\\item 壁を離れた後，物体 1 の速度の最小値を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $t=\\dfrac\\pi2\\sqrt{m_2/\\kappa}\\approx0.38\\ \\mathrm s$，$V=\\dfrac{\\Delta l\\sqrt{\\kappa m_2}}{m_1+m_2}\\approx0.12\\ \\mathrm{m/s}$　(2) $\\omega=\\sqrt{\\kappa/\\mu}\\approx8.2\\ \\mathrm{s^{-1}}$，最大の伸び $\\Delta l\\sqrt{m_1/(m_1+m_2)}=2.0\\ \\mathrm{cm}$　(3) 0（周期的に一瞬止まる）"
+   "tex": "(1) $t_1=\\dfrac\\pi2\\sqrt{\\dfrac{m_2}{\\kappa}}$，$V=\\dfrac{d\\sqrt{\\kappa m_2}}{m_1+m_2}$　(2) $\\omega=\\sqrt{\\dfrac{\\kappa(m_1+m_2)}{m_1m_2}}$，$s=d\\sqrt{\\dfrac{m_1}{m_1+m_2}}$　(3) $0$（周期的に一瞬止まる）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) ばねが縮んでいる間は壁が物体 1 を押し，物体 1 は静止．物体 2 は角振動数 $\\sqrt{\\kappa/m_2}$ で単振動し，1/4 周期後 $t=\\frac\\pi2\\sqrt{m_2/\\kappa}=0.38\\ \\mathrm s$ に自然長に戻り，その速度は $v_2=\\Delta l\\sqrt{\\kappa/m_2}=0.163\\ \\mathrm{m/s}$．以後ばねは伸びて物体 1 を引くので壁を離れる．外力がなくなるので重心速度は一定：\n\\[V=\\frac{m_2v_2}{m_1+m_2}=0.122\\ \\mathrm{m/s}.\\]\n(2) 相対運動は換算質量 $\\mu=m_1m_2/(m_1+m_2)=0.75\\ \\mathrm{kg}$ で $\\omega=\\sqrt{\\kappa/\\mu}=8.2\\ \\mathrm{s^{-1}}$．離れた瞬間，伸び 0，相対速度 $v_2$ なので振幅 $v_2/\\omega=\\Delta l\\sqrt{\\mu/m_2}=\\Delta l\\sqrt{m_1/(m_1+m_2)}=2.0\\ \\mathrm{cm}$．\n\n(3) 物体 1 の速度は $v_1=V-\\dfrac{m_2}{m_1+m_2}v_2\\cos\\omega t'$（$t'$ は離れてからの時間）．$\\frac{m_2}{m_1+m_2}v_2=V$ なので $v_1=V(1-\\cos\\omega t')$，最小値は 0．物体 1 は後退せず，周期的に一瞬静止する．"
+    "tex": "(1) ばねが縮んでいる間は壁が物体 1 を押し，物体 1 は静止．物体 2 は角振動数 $\\sqrt{\\kappa/m_2}$ で単振動し，1/4 周期後 $\\boldsymbol{t_1=\\frac\\pi2\\sqrt{m_2/\\kappa}}$ に自然長に戻り，その速度は $v_2=d\\sqrt{\\kappa/m_2}$．以後ばねは伸びて物体 1 を引くので壁を離れる．外力がなくなるので重心速度は一定：\n\\[\\boldsymbol{V=\\frac{m_2v_2}{m_1+m_2}=\\frac{d\\sqrt{\\kappa m_2}}{m_1+m_2}}.\\]\n(2) 相対運動は換算質量 $\\mu=m_1m_2/(m_1+m_2)$ で $\\boldsymbol{\\omega=\\sqrt{\\kappa/\\mu}=\\sqrt{\\dfrac{\\kappa(m_1+m_2)}{m_1m_2}}}$．離れた瞬間，伸び 0，相対速度 $v_2$ なので振幅は\n\\[ \\boldsymbol{s=\\frac{v_2}{\\omega}=d\\sqrt{\\frac{\\mu}{m_2}}=d\\sqrt{\\frac{m_1}{m_1+m_2}}}. \\]\n\n(3) 物体 1 の速度は $v_1=V-\\dfrac{m_2}{m_1+m_2}v_2\\cos\\omega t'$（$t'$ は離れてからの時間）．$\\frac{m_2}{m_1+m_2}v_2=V$ なので $v_1=V(1-\\cos\\omega t')$，最小値は $\\boldsymbol 0$．物体 1 は後退せず，周期的に一瞬静止する．"
    }
   ],
   "idea": {
@@ -2003,7 +2003,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $t$ [s]：≈0.38 ; $V$ [m/s]：≈0.12\n(2) 記述\n(3) 記述"
+   "spec": "(1) $t_1$：(pi/2) sqrt(m_2/κ) ; $V$：d sqrt(κ m_2)/(m_1 + m_2)\n(2) $\\omega$：sqrt(κ (m_1 + m_2)/(m_1 m_2)) ; $s$：d sqrt(m_1/(m_1 + m_2))\n(3) 0"
   },
   "methods": [],
   "tags": [
@@ -2035,16 +2035,16 @@
   "theme": "ばねでつながれた2球：軽い球の逆行",
   "topic": "ばねでつながれた2球：軽い球の逆行",
   "statement": {
-   "tex": "滑らかな水平な細い棒に，質量 $m_1=0.50\\ \\mathrm{kg}$ と $m_2=1.5\\ \\mathrm{kg}$ の球が通され，ばね定数 $\\kappa=30\\ \\mathrm{N/m}$ の軽いばね（自然長）でつながれている．静止状態から，球 1 に球 2 の向きの速度 $v=20\\ \\mathrm{cm/s}$ を与えた．\n\\begin{enumerate}\n\\item 振動の角振動数，振動のエネルギー，ばねの最大の縮みを求めよ．\n\\item 球 1 は運動中に一時的に逆向き（はじめと反対向き）に動く．その最大の速さを求めよ．一般に，球 1 が逆行するための質量の条件を求めよ．\n\\item 1 周期の間に系全体が進む距離を求めよ．\n\\end{enumerate}"
+   "tex": "滑らかな水平な細い棒に，質量 $m_1$ と $m_2$ の球が通され，ばね定数 $\\kappa$ の軽いばね（自然長）でつながれている．静止状態から，球 1 に球 2 の向きの速度 $v$ を与えた．\n\\begin{enumerate}\n\\item 振動の角振動数 $\\omega$，振動のエネルギー $E$，ばねの最大の縮み $a$ を求めよ．\n\\item $m_1<m_2$ のとき，球 1 は運動中に一時的に逆向き（はじめと反対向き）に動く．その最大の速さ $u$ を求めよ．また，一般に球 1 が逆行するための質量の条件を述べよ．\n\\item 1 周期の間に系全体が進む距離 $L$ を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega\\approx8.9\\ \\mathrm{s^{-1}}$，$E=7.5\\ \\mathrm{mJ}$，最大の縮み $\\approx2.2\\ \\mathrm{cm}$　(2) $10\\ \\mathrm{cm/s}$，条件 $m_1<m_2$　(3) $\\approx3.5\\ \\mathrm{cm}$"
+   "tex": "(1) $\\omega=\\sqrt{\\dfrac{\\kappa(m_1+m_2)}{m_1m_2}}$，$E=\\dfrac{m_1m_2v^2}{2(m_1+m_2)}$，$a=v\\sqrt{\\dfrac{m_1m_2}{\\kappa(m_1+m_2)}}$　(2) $u=\\dfrac{(m_2-m_1)v}{m_1+m_2}$，条件 $m_1<m_2$　(3) $L=\\dfrac{2\\pi m_1v}{m_1+m_2}\\sqrt{\\dfrac{m_1m_2}{\\kappa(m_1+m_2)}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "換算質量 $\\mu=\\dfrac{m_1m_2}{m_1+m_2}=0.375\\ \\mathrm{kg}$，重心速度 $V=\\dfrac{m_1v}{m_1+m_2}=5.0\\ \\mathrm{cm/s}$．\n\n(1) $\\omega=\\sqrt{\\kappa/\\mu}=\\sqrt{80}=8.94\\ \\mathrm{s^{-1}}$．振動のエネルギーは重心系の運動エネルギー $E=\\frac12\\mu v^2=7.5\\ \\mathrm{mJ}$．最大の縮み $a=v/\\omega=2.24\\ \\mathrm{cm}$．\n\n(2) 相対速度 $u=v_1-v_2=v\\cos\\omega t$ より\n\\[v_1=V+\\frac{m_2}{m_1+m_2}v\\cos\\omega t,\\qquad v_2=V-\\frac{m_1}{m_1+m_2}v\\cos\\omega t.\\]\n$v_1$ の最小値 $=\\dfrac{(m_1-m_2)v}{m_1+m_2}=-10\\ \\mathrm{cm/s}$．逆行の条件は $m_1<m_2$．（球 2 の速度は $0$ から $2V$ の間．）\n\n(3) 振動部分は 1 周期で元に戻るので，進む距離は $V\\cdot\\dfrac{2\\pi}{\\omega}=0.05\\times0.702=3.5\\ \\mathrm{cm}$．"
+    "tex": "換算質量 $\\mu=\\dfrac{m_1m_2}{m_1+m_2}$，重心速度 $V=\\dfrac{m_1v}{m_1+m_2}$．\n\n(1) $\\boldsymbol{\\omega=\\sqrt{\\kappa/\\mu}=\\sqrt{\\dfrac{\\kappa(m_1+m_2)}{m_1m_2}}}$．振動のエネルギーは重心系の運動エネルギー $\\boldsymbol{E=\\frac12\\mu v^2=\\dfrac{m_1m_2v^2}{2(m_1+m_2)}}$．最大の縮みは $\\frac12\\kappa a^2=E$ より $\\boldsymbol{a=v/\\omega=v\\sqrt{\\dfrac{m_1m_2}{\\kappa(m_1+m_2)}}}$．\n\n(2) 相対速度 $v_1-v_2=v\\cos\\omega t$ より\n\\[v_1=V+\\frac{m_2}{m_1+m_2}v\\cos\\omega t,\\qquad v_2=V-\\frac{m_1}{m_1+m_2}v\\cos\\omega t.\\]\n$v_1$ の最小値 $=\\dfrac{(m_1-m_2)v}{m_1+m_2}$．これが負になる（逆行する）条件は $\\boldsymbol{m_1<m_2}$ で，逆向きの最大の速さは $\\boldsymbol{u=\\dfrac{(m_2-m_1)v}{m_1+m_2}}$．（球 2 の速度は $0$ から $2V$ の間．）\n\n(3) 振動部分は 1 周期で元に戻るので，進む距離は\n\\[ \\boldsymbol{L=V\\cdot\\frac{2\\pi}{\\omega}=\\frac{2\\pi m_1v}{m_1+m_2}\\sqrt{\\frac{m_1m_2}{\\kappa(m_1+m_2)}}}. \\]"
    }
   ],
   "idea": {
@@ -2052,7 +2052,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\omega$ [s⁻¹]：≈8.9 ; $E$ [mJ]：≈7.5 ; 最大の縮み [cm]：≈2.2\n(2) 記述\n(3) [cm]：≈3.5"
+   "spec": "(1) $\\omega$：sqrt(κ (m_1 + m_2)/(m_1 m_2)) ; $E$：m_1 m_2 v^2/(2 (m_1 + m_2)) ; $a$：v sqrt(m_1 m_2/(κ (m_1 + m_2)))\n(2) $u$：(m_2 - m_1) v/(m_1 + m_2)\n(3) $L$：(2 pi m_1 v/(m_1 + m_2)) sqrt(m_1 m_2/(κ (m_1 + m_2)))"
   },
   "methods": [],
   "tags": [
@@ -2185,16 +2185,16 @@
   "theme": "弱く結合した2振動子のエネルギー移行",
   "topic": "弱く結合した2振動子のエネルギー移行",
   "statement": {
-   "tex": "質量 $m$ の 2 つの質点が一直線上にあり，それぞればね定数 $k$ のばねで左右の固定壁につながれ，互いにはばね定数 $\\kappa$ の結合ばねでつながれている．平衡位置からの変位を $x_1,x_2$ とする．\n\\begin{enumerate}\n\\item 運動方程式を書き，基準振動の角振動数 $\\omega_1<\\omega_2$ と，それぞれのモードの形を求めよ．\n\\item 初期条件 $x_1(0)=A,\\ x_2(0)=0,\\ \\dot x_1(0)=\\dot x_2(0)=0$ に対する解を求め，うなりの形で表せ．\n\\item $k/m=100\\ \\mathrm{s^{-2}}$，$\\kappa=0.05k$ のとき，質点 1 の振動が初めて完全に止まる（振幅の包絡線が 0 になる）までの時間を求めよ．\n\\end{enumerate}"
+   "tex": "質量 $m$ の 2 つの質点が一直線上にあり，それぞればね定数 $k$ のばねで左右の固定壁につながれ，互いにはばね定数 $\\kappa$ の結合ばねでつながれている．平衡位置からの変位を $x_1,x_2$ とする．\n\\begin{enumerate}\n\\item 運動方程式を書き，基準振動の角振動数 $\\omega_1<\\omega_2$ と，それぞれのモードの形を求めよ．\n\\item 初期条件 $x_1(0)=A,\\ x_2(0)=0,\\ \\dot x_1(0)=\\dot x_2(0)=0$ に対する解を求め，うなりの形で表せ．\n\\item 質点 1 の振動が初めて完全に止まる（振幅の包絡線が 0 になる）までの時間 $T$ を $k,\\kappa,m$ で表せ．また，$\\kappa\\ll k$ のときの近似式を求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega_1=\\sqrt{k/m}$（同位相 $x_1=x_2$），$\\omega_2=\\sqrt{(k+2\\kappa)/m}$（逆位相 $x_1=-x_2$）　(2) $x_1=A\\cos\\frac{\\omega_2-\\omega_1}{2}t\\cos\\frac{\\omega_1+\\omega_2}{2}t$，$x_2=A\\sin\\frac{\\omega_2-\\omega_1}{2}t\\sin\\frac{\\omega_1+\\omega_2}{2}t$　(3) $T=\\pi/(\\omega_2-\\omega_1)\\approx6.4\\ \\mathrm{s}$"
+   "tex": "(1) $\\omega_1=\\sqrt{k/m}$（同位相 $x_1=x_2$），$\\omega_2=\\sqrt{(k+2\\kappa)/m}$（逆位相 $x_1=-x_2$）　(2) $x_1=A\\cos\\frac{\\omega_2-\\omega_1}{2}t\\cos\\frac{\\omega_1+\\omega_2}{2}t$，$x_2=A\\sin\\frac{\\omega_2-\\omega_1}{2}t\\sin\\frac{\\omega_1+\\omega_2}{2}t$　(3) $T=\\dfrac{\\pi}{\\sqrt{\\dfrac{k+2\\kappa}{m}}-\\sqrt{\\dfrac{k}{m}}}$，$\\kappa\\ll k$ で $T\\approx\\dfrac{\\pi\\sqrt{mk}}{\\kappa}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) \\[m\\ddot x_1=-kx_1-\\kappa(x_1-x_2),\\qquad m\\ddot x_2=-kx_2-\\kappa(x_2-x_1).\\]\n$x_j=X_j\\cos\\omega t$ を代入し，係数行列式 $(k+\\kappa-m\\omega^2)^2-\\kappa^2=0$ より $m\\omega^2=k$ または $k+2\\kappa$．\n$\\omega_1=\\sqrt{k/m}$ では $X_1=X_2$（同位相，結合ばねは伸び縮みしない），$\\omega_2=\\sqrt{(k+2\\kappa)/m}$ では $X_1=-X_2$（逆位相）．\n(2) 基準座標 $q_\\pm=(x_1\\pm x_2)/2$ はそれぞれ独立に振動し，初期条件から $q_+=\\frac A2\\cos\\omega_1t$，$q_-=\\frac A2\\cos\\omega_2t$．\n\\[x_1=\\frac A2(\\cos\\omega_1t+\\cos\\omega_2t)=A\\cos\\frac{\\omega_2-\\omega_1}{2}t\\,\\cos\\frac{\\omega_1+\\omega_2}{2}t,\\]\n\\[x_2=\\frac A2(\\cos\\omega_1t-\\cos\\omega_2t)=A\\sin\\frac{\\omega_2-\\omega_1}{2}t\\,\\sin\\frac{\\omega_1+\\omega_2}{2}t .\\]\n振動は包絡線 $\\cos,\\sin\\frac{(\\omega_2-\\omega_1)t}{2}$ に従って 2 つの質点の間を行き来する．\n(3) 質点 1 の包絡線が初めて 0 になるのは $\\frac{(\\omega_2-\\omega_1)T}{2}=\\frac\\pi2$，$T=\\dfrac{\\pi}{\\omega_2-\\omega_1}$．\n$\\omega_1=10\\ \\mathrm{s^{-1}}$，$\\omega_2=10\\sqrt{1.1}=10.488\\ \\mathrm{s^{-1}}$ より $T=\\pi/0.488\\approx6.4\\ \\mathrm{s}$．このとき振動はすべて質点 2 に移っている．弱結合の近似 $\\omega_2-\\omega_1\\approx\\kappa/(m\\omega_1)$ を使えば $T\\approx\\pi m\\omega_1/\\kappa=2\\pi$ s $\\approx6.3$ s．"
+    "tex": "(1) \\[m\\ddot x_1=-kx_1-\\kappa(x_1-x_2),\\qquad m\\ddot x_2=-kx_2-\\kappa(x_2-x_1).\\]\n$x_j=X_j\\cos\\omega t$ を代入し，係数行列式 $(k+\\kappa-m\\omega^2)^2-\\kappa^2=0$ より $m\\omega^2=k$ または $k+2\\kappa$．\n$\\boldsymbol{\\omega_1=\\sqrt{k/m}}$ では $X_1=X_2$（同位相，結合ばねは伸び縮みしない），$\\boldsymbol{\\omega_2=\\sqrt{(k+2\\kappa)/m}}$ では $X_1=-X_2$（逆位相）．\n\n(2) 基準座標 $q_\\pm=(x_1\\pm x_2)/2$ はそれぞれ独立に振動し，初期条件から $q_+=\\frac A2\\cos\\omega_1t$，$q_-=\\frac A2\\cos\\omega_2t$．\n\\[x_1=\\frac A2(\\cos\\omega_1t+\\cos\\omega_2t)=A\\cos\\frac{\\omega_2-\\omega_1}{2}t\\,\\cos\\frac{\\omega_1+\\omega_2}{2}t,\\]\n\\[x_2=\\frac A2(\\cos\\omega_1t-\\cos\\omega_2t)=A\\sin\\frac{\\omega_2-\\omega_1}{2}t\\,\\sin\\frac{\\omega_1+\\omega_2}{2}t .\\]\n振動は包絡線 $\\cos,\\sin\\frac{(\\omega_2-\\omega_1)t}{2}$ に従って 2 つの質点の間を行き来する．\n\n(3) 質点 1 の包絡線が初めて 0 になるのは $\\frac{(\\omega_2-\\omega_1)T}{2}=\\frac\\pi2$，\n\\[ \\boldsymbol{T=\\frac{\\pi}{\\omega_2-\\omega_1}=\\frac{\\pi}{\\sqrt{(k+2\\kappa)/m}-\\sqrt{k/m}}}. \\]\nこのとき振動はすべて質点 2 に移っている．$\\kappa\\ll k$ では $\\omega_2-\\omega_1\\approx\\sqrt{\\dfrac km}\\cdot\\dfrac{\\kappa}{k}=\\dfrac{\\kappa}{\\sqrt{mk}}$ なので $\\boldsymbol{T\\approx\\dfrac{\\pi\\sqrt{mk}}{\\kappa}}$．結合が弱いほどエネルギーの移行はゆっくりになる．"
    }
   ],
   "idea": {
@@ -2202,7 +2202,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\omega_1$：sqrt(k / m) ; $\\omega_2$：sqrt((k +2 κ)/ m)\n(2) 記述\n(3) $T$ [s]：≈6.4"
+   "spec": "(1) $\\omega_1$：sqrt(k / m) ; $\\omega_2$：sqrt((k +2 κ)/ m)\n(2) 記述\n(3) $T$：pi/(sqrt((k + 2κ)/m) - sqrt(k/m)) ; 近似：pi sqrt(m k)/κ"
   },
   "methods": [],
   "tags": [
@@ -2235,16 +2235,16 @@
   "theme": "動吸振器：補助の振動子で主系の振動を止める",
   "topic": "動吸振器：補助の振動子で主系の振動を止める",
   "statement": {
-   "tex": "質量 $M$ の物体（主系）がばね定数 $K$ のばねで壁につながれ，外力 $F_0\\cos\\omega t$ を受けている．この物体に，質量 $m$ の小さな物体（動吸振器）をばね定数 $k$ のばねで取りつける．主系と吸振器の変位を $x_1,\\ x_2$ とすると\n\\[ M\\ddot x_1=-Kx_1+k(x_2-x_1)+F_0\\cos\\omega t,\\qquad m\\ddot x_2=-k(x_2-x_1). \\]\n抵抗はなく，定常解 $x_1=X_1\\cos\\omega t$，$x_2=X_2\\cos\\omega t$ を考える．\n\\begin{enumerate}\n\\item $X_1$ を求めよ．\n\\item $k/m=\\omega^2$ と調整すると $X_1=0$ になる．このときの $X_2$ を求めよ．\n\\item $K/M=k/m=\\omega_0^2$ と調整し，$m/M=0.2$ とする．吸振器を取りつけた系の共振角振動数（2つ）は $\\omega_0$ の何倍か．\n\\end{enumerate}"
+   "tex": "質量 $M$ の物体（主系）がばね定数 $K$ のばねで壁につながれ，外力 $F_0\\cos\\omega t$ を受けている．この物体に，質量 $m$ の小さな物体（動吸振器）をばね定数 $k$ のばねで取りつける．主系と吸振器の変位を $x_1,\\ x_2$ とすると\n\\[ M\\ddot x_1=-Kx_1+k(x_2-x_1)+F_0\\cos\\omega t,\\qquad m\\ddot x_2=-k(x_2-x_1). \\]\n抵抗はなく，定常解 $x_1=X_1\\cos\\omega t$，$x_2=X_2\\cos\\omega t$ を考える．\n\\begin{enumerate}\n\\item $X_1$ を求めよ．\n\\item $k/m=\\omega^2$ と調整すると $X_1=0$ になる．このときの $X_2$ を求めよ．\n\\item $K/M=k/m=\\omega_0^2$ と調整し，質量比を $\\mu=m/M$ とする．吸振器を取りつけた系の共振角振動数（2つ）は $\\omega_0$ の何倍か．$\\mu$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $X_1=\\dfrac{(k-m\\omega^2)F_0}{(K+k-M\\omega^2)(k-m\\omega^2)-k^2}$ (2) $X_2=-\\dfrac{F_0}{k}$ (3) 低い方 $\\approx0.801$ 倍，高い方 $\\approx1.248$ 倍"
+   "tex": "(1) $X_1=\\dfrac{(k-m\\omega^2)F_0}{(K+k-M\\omega^2)(k-m\\omega^2)-k^2}$ (2) $X_2=-\\dfrac{F_0}{k}$ (3) 低い方 $\\sqrt{1+\\dfrac{\\mu}{2}-\\sqrt{\\mu+\\dfrac{\\mu^2}{4}}}$ 倍，高い方 $\\sqrt{1+\\dfrac{\\mu}{2}+\\sqrt{\\mu+\\dfrac{\\mu^2}{4}}}$ 倍"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "代入すると\n\\[ (K+k-M\\omega^2)X_1-kX_2=F_0,\\qquad -kX_1+(k-m\\omega^2)X_2=0. \\]\nクラメルの公式より\n\\[ \\boldsymbol{X_1=\\frac{(k-m\\omega^2)F_0}{(K+k-M\\omega^2)(k-m\\omega^2)-k^2}},\\qquad X_2=\\frac{kF_0}{(K+k-M\\omega^2)(k-m\\omega^2)-k^2}. \\]\n\n$k=m\\omega^2$ なら $X_1=0$，分母は $-k^2$ で $\\boldsymbol{X_2=-F_0/k}$．吸振器のばねが主系に $-kX_2=F_0$ の力を及ぼし，外力をちょうど打ち消す．主系は静止し，吸振器だけが揺れる．\n\n$K=M\\omega_0^2$，$k=m\\omega_0^2$，$\\mu=m/M$，$r=\\omega^2/\\omega_0^2$ とすると，分母 $=0$ は $(1+\\mu-r)(1-r)-\\mu=0$，すなわち $r^2-(2+\\mu)r+1=0$．\n\\[ r=1+\\frac\\mu2\\pm\\sqrt{\\mu+\\frac{\\mu^2}{4}}=1.1\\pm0.4583. \\]\n$\\omega/\\omega_0=\\sqrt r$ より $\\boldsymbol{0.801}$ 倍と $\\boldsymbol{1.248}$ 倍．元の共振点 $\\omega_0$ は消えるが，その両側に新しい共振点ができる．外力の振動数が一定の機械（モーターなど）に有効で，高層ビルの制振装置（チューンド・マス・ダンパー）にも使われる．"
+    "tex": "代入すると\n\\[ (K+k-M\\omega^2)X_1-kX_2=F_0,\\qquad -kX_1+(k-m\\omega^2)X_2=0. \\]\nクラメルの公式より\n\\[ \\boldsymbol{X_1=\\frac{(k-m\\omega^2)F_0}{(K+k-M\\omega^2)(k-m\\omega^2)-k^2}},\\qquad X_2=\\frac{kF_0}{(K+k-M\\omega^2)(k-m\\omega^2)-k^2}. \\]\n\n$k=m\\omega^2$ なら $X_1=0$，分母は $-k^2$ で $\\boldsymbol{X_2=-F_0/k}$．吸振器のばねが主系に $-kX_2=F_0$ の力を及ぼし，外力をちょうど打ち消す．主系は静止し，吸振器だけが揺れる．\n\n$K=M\\omega_0^2$，$k=m\\omega_0^2$，$r=\\omega^2/\\omega_0^2$ とすると，分母 $=0$ は $M m\\omega_0^4$ で割って $(1+\\mu-r)(1-r)-\\mu=0$，すなわち $r^2-(2+\\mu)r+1=0$．\n\\[ r=1+\\frac\\mu2\\pm\\sqrt{\\mu+\\frac{\\mu^2}{4}}. \\]\n$\\omega/\\omega_0=\\sqrt r$ より $\\boldsymbol{\\sqrt{1+\\frac\\mu2\\mp\\sqrt{\\mu+\\frac{\\mu^2}{4}}}}$ 倍．根の積が 1 なので 2 つの共振角振動数の幾何平均がちょうど $\\omega_0$ になる．元の共振点 $\\omega_0$ は消えるが，その両側に新しい共振点ができる（$\\mu=0.2$ なら約 $0.80$ 倍と $1.25$ 倍）．外力の振動数が一定の機械（モーターなど）に有効で，高層ビルの制振装置（チューンド・マス・ダンパー）にも使われる．"
    }
   ],
   "idea": {
@@ -2252,7 +2252,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) X_1：(k-m ω^2) F_0/((K+k-M ω^2)(k-m ω^2)-k^2)\n(2) X_2：-F_0/k\n(3) 低い方：≈0.801 ; 高い方：≈1.248"
+   "spec": "(1) X_1：(k-m ω^2) F_0/((K+k-M ω^2)(k-m ω^2)-k^2)\n(2) X_2：-F_0/k\n(3) 低い方：sqrt(1 + μ/2 - sqrt(μ + μ^2/4)) ; 高い方：sqrt(1 + μ/2 + sqrt(μ + μ^2/4))"
   },
   "methods": [],
   "tags": [
@@ -2929,16 +2929,16 @@
   "theme": "離調した弱結合振動子のうなりと不完全なエネルギー移動",
   "topic": "離調した弱結合振動子のうなりと不完全なエネルギー移動",
   "statement": {
-   "tex": "水平な $x$ 軸上で，左の壁・質点1・質点2・右の壁がこの順に並び，2 つの質点の質量はともに $m$ である．左の壁と質点1はばね定数 $K$，右の壁と質点2はばね定数 $K+\\delta$（$\\delta\\ge0$），質点1と質点2はばね定数 $\\kappa$ のばねでつながれている．ばねは釣合いの位置で自然長とし，変位を $x_1,x_2$ とする．時刻 $t=0$ に質点1だけを $x_0$ ずらし，質点2は釣合いの位置に置いて，両者を静かに放す．\n\\begin{enumerate}\n\\item 基準角振動数 $\\omega_a<\\omega_b$ を求めよ．\n\\item 運動方程式の係数行列を回転角 $\\theta$ の回転で対角化するとき，$\\tan2\\theta$ を求めよ．これを用いて $x_1(t),x_2(t)$ を表せ．\n\\item $\\delta=0$ のときは質点1のエネルギーが周期的に完全に質点2へ移る（基本的なうなり）．$\\delta>0$ のとき，質点2の振幅の包絡線の最大値 $X_2$ と，質点1の振幅の包絡線の最小値 $X_1$ を求めよ．\n\\item $K=m\\omega_0^2$，$\\kappa=0.05K$，$\\delta=0.04K$ のとき，$X_2/x_0$ と，うなりの周期（包絡線の周期）を $1/\\omega_0$ を単位として数値で求めよ．\n\\end{enumerate}"
+   "tex": "水平な $x$ 軸上で，左の壁・質点1・質点2・右の壁がこの順に並び，2 つの質点の質量はともに $m$ である．左の壁と質点1はばね定数 $K$，右の壁と質点2はばね定数 $K+\\delta$（$\\delta\\ge0$），質点1と質点2はばね定数 $\\kappa$ のばねでつながれている．ばねは釣合いの位置で自然長とし，変位を $x_1,x_2$ とする．時刻 $t=0$ に質点1だけを $x_0$ ずらし，質点2は釣合いの位置に置いて，両者を静かに放す．\n\\begin{enumerate}\n\\item 基準角振動数 $\\omega_a<\\omega_b$ を求めよ．\n\\item 運動方程式の係数行列を回転角 $\\theta$ の回転で対角化するとき，$\\tan2\\theta$ を求めよ．これを用いて $x_1(t),x_2(t)$ を表せ．\n\\item $\\delta=0$ のときは質点1のエネルギーが周期的に完全に質点2へ移る（基本的なうなり）．$\\delta>0$ のとき，質点2の振幅の包絡線の最大値 $X_2$ と，質点1の振幅の包絡線の最小値 $X_1$ を求めよ．\n\\item $\\kappa,\\delta\\ll K$ のとき，うなりの周期（包絡線の周期）$T_{\\rm b}$ を $K,m,\\kappa,\\delta$ で最低次の近似で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega_{a,b}^2=\\dfrac{2K+2\\kappa+\\delta\\mp\\sqrt{\\delta^2+4\\kappa^2}}{2m}$　(2) $\\tan2\\theta=\\dfrac{2\\kappa}{\\delta}$，$x_1=x_0(\\cos^2\\theta\\cos\\omega_at+\\sin^2\\theta\\cos\\omega_bt)$，$x_2=x_0\\sin\\theta\\cos\\theta(\\cos\\omega_at-\\cos\\omega_bt)$　(3) $X_2=\\dfrac{2\\kappa}{\\sqrt{4\\kappa^2+\\delta^2}}x_0$，$X_1=\\dfrac{\\delta}{\\sqrt{4\\kappa^2+\\delta^2}}x_0$　(4) $X_2/x_0\\approx0.928$，周期 $\\approx120.7/\\omega_0$"
+   "tex": "(1) $\\omega_a=\\sqrt{\\dfrac{2K+2\\kappa+\\delta-\\sqrt{\\delta^2+4\\kappa^2}}{2m}}$，$\\omega_b=\\sqrt{\\dfrac{2K+2\\kappa+\\delta+\\sqrt{\\delta^2+4\\kappa^2}}{2m}}$　(2) $\\tan2\\theta=\\dfrac{2\\kappa}{\\delta}$，$x_1=x_0(\\cos^2\\theta\\cos\\omega_at+\\sin^2\\theta\\cos\\omega_bt)$，$x_2=x_0\\sin\\theta\\cos\\theta(\\cos\\omega_at-\\cos\\omega_bt)$　(3) $X_2=\\dfrac{2\\kappa}{\\sqrt{4\\kappa^2+\\delta^2}}x_0$，$X_1=\\dfrac{\\delta}{\\sqrt{4\\kappa^2+\\delta^2}}x_0$　(4) $T_{\\rm b}=\\dfrac{4\\pi\\sqrt{mK}}{\\sqrt{\\delta^2+4\\kappa^2}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 運動方程式は $m\\ddot{\\boldsymbol x}=-\\mathsf K\\boldsymbol x$，\n\\[ \\mathsf K=\\begin{pmatrix}K+\\kappa&-\\kappa\\\\-\\kappa&K+\\kappa+\\delta\\end{pmatrix}. \\]\n$\\det(\\mathsf K-m\\omega^2I)=0$ より $(K+\\kappa-m\\omega^2)(K+\\kappa+\\delta-m\\omega^2)-\\kappa^2=0$．これを解いて\n\\[ m\\omega_{a,b}^2=K+\\kappa+\\frac\\delta2\\mp\\frac12\\sqrt{\\delta^2+4\\kappa^2}. \\]\n\n(2) 対称行列 $\\mathsf K$ の固有ベクトルを $\\boldsymbol e_a=(\\cos\\theta,\\sin\\theta)^{\\mathrm T}$，$\\boldsymbol e_b=(-\\sin\\theta,\\cos\\theta)^{\\mathrm T}$ とおくと，非対角成分を消す条件は 2 行 2 列の対称行列 $\\begin{pmatrix}\\alpha&\\gamma\\\\ \\gamma&\\beta\\end{pmatrix}$ について $\\tan2\\theta=\\frac{2\\gamma}{\\alpha-\\beta}$ なので\n\\[ \\tan2\\theta=\\frac{-2\\kappa}{-\\delta}=\\frac{2\\kappa}{\\delta}\\qquad(0<\\theta\\le\\tfrac\\pi4). \\]\n初期条件 $\\boldsymbol x(0)=(x_0,0)^{\\mathrm T}$，$\\dot{\\boldsymbol x}(0)=\\boldsymbol 0$ を基準モードに分解すると $\\boldsymbol x(0)=x_0\\cos\\theta\\,\\boldsymbol e_a-x_0\\sin\\theta\\,\\boldsymbol e_b$．各モードは静止から $\\cos$ で振動するので\n\\[ x_1=x_0(\\cos^2\\theta\\cos\\omega_at+\\sin^2\\theta\\cos\\omega_bt),\\qquad x_2=x_0\\sin\\theta\\cos\\theta(\\cos\\omega_at-\\cos\\omega_bt). \\]\n\n(3) $\\Delta=\\omega_b-\\omega_a$，$\\bar\\omega=\\frac{\\omega_a+\\omega_b}2$ として和積公式を使うと\n\\[ x_2=x_0\\sin2\\theta\\,\\sin\\tfrac{\\Delta t}{2}\\,\\sin\\bar\\omega t, \\]\n\\[ x_1=x_0\\Bigl[\\cos\\tfrac{\\Delta t}{2}\\cos\\bar\\omega t+\\cos2\\theta\\,\\sin\\tfrac{\\Delta t}{2}\\sin\\bar\\omega t\\Bigr]. \\]\n$x_2$ の包絡線は $x_0\\sin2\\theta|\\sin\\frac{\\Delta t}2|$ でその最大値は $X_2=x_0\\sin2\\theta$．$x_1$ の包絡線は $x_0\\sqrt{\\cos^2\\frac{\\Delta t}{2}+\\cos^22\\theta\\sin^2\\frac{\\Delta t}{2}}$ でその最小値は $X_1=x_0\\cos2\\theta$．$\\tan2\\theta=2\\kappa/\\delta$ より\n\\[ X_2=\\frac{2\\kappa}{\\sqrt{4\\kappa^2+\\delta^2}}x_0,\\qquad X_1=\\frac{\\delta}{\\sqrt{4\\kappa^2+\\delta^2}}x_0 . \\]\n$\\delta=0$ なら $X_2=x_0$，$X_1=0$ で完全な移動．離調 $\\delta$ が結合 $2\\kappa$ と同程度以上になると移動は不完全になり，$\\delta\\gg\\kappa$ ではほとんど移らない（共鳴の条件）．弱結合（$\\kappa,\\delta\\ll K$）では各質点のエネルギーは振幅の 2 乗にほぼ比例するので，質点2に移る最大エネルギーの割合は $\\frac{4\\kappa^2}{4\\kappa^2+\\delta^2}$ となる．\n\n(4) $\\kappa=0.05K$，$\\delta=0.04K$：$X_2/x_0=\\frac{0.1}{\\sqrt{0.01+0.0016}}=\\frac{0.1}{0.10770}\\approx0.928$．\n$\\omega_{a,b}^2/\\omega_0^2=1.12\\mp0.05385$ から $\\omega_a\\approx1.00804\\,\\omega_0$，$\\omega_b\\approx1.06012\\,\\omega_0$．包絡線 $|\\sin\\frac{\\Delta t}{2}|$ の周期は $\\frac{2\\pi}{\\Delta}\\approx\\frac{2\\pi}{0.05208}\\frac1{\\omega_0}\\approx120.7/\\omega_0$．"
+    "tex": "(1) 運動方程式は $m\\ddot{\\boldsymbol x}=-\\mathsf K\\boldsymbol x$，\n\\[ \\mathsf K=\\begin{pmatrix}K+\\kappa&-\\kappa\\\\-\\kappa&K+\\kappa+\\delta\\end{pmatrix}. \\]\n$\\det(\\mathsf K-m\\omega^2I)=0$ より $(K+\\kappa-m\\omega^2)(K+\\kappa+\\delta-m\\omega^2)-\\kappa^2=0$．これを解いて\n\\[ m\\omega_{a,b}^2=K+\\kappa+\\frac\\delta2\\mp\\frac12\\sqrt{\\delta^2+4\\kappa^2}. \\]\n\n(2) 対称行列 $\\mathsf K$ の固有ベクトルを $\\boldsymbol e_a=(\\cos\\theta,\\sin\\theta)^{\\mathrm T}$，$\\boldsymbol e_b=(-\\sin\\theta,\\cos\\theta)^{\\mathrm T}$ とおくと，非対角成分を消す条件は 2 行 2 列の対称行列 $\\begin{pmatrix}\\alpha&\\gamma\\\\ \\gamma&\\beta\\end{pmatrix}$ について $\\tan2\\theta=\\frac{2\\gamma}{\\alpha-\\beta}$ なので\n\\[ \\boldsymbol{\\tan2\\theta=\\frac{-2\\kappa}{-\\delta}=\\frac{2\\kappa}{\\delta}}\\qquad(0<\\theta\\le\\tfrac\\pi4). \\]\n初期条件 $\\boldsymbol x(0)=(x_0,0)^{\\mathrm T}$，$\\dot{\\boldsymbol x}(0)=\\boldsymbol 0$ を基準モードに分解すると $\\boldsymbol x(0)=x_0\\cos\\theta\\,\\boldsymbol e_a-x_0\\sin\\theta\\,\\boldsymbol e_b$．各モードは静止から $\\cos$ で振動するので\n\\[ x_1=x_0(\\cos^2\\theta\\cos\\omega_at+\\sin^2\\theta\\cos\\omega_bt),\\qquad x_2=x_0\\sin\\theta\\cos\\theta(\\cos\\omega_at-\\cos\\omega_bt). \\]\n\n(3) $\\Delta=\\omega_b-\\omega_a$，$\\bar\\omega=\\frac{\\omega_a+\\omega_b}2$ として和積公式を使うと\n\\[ x_2=x_0\\sin2\\theta\\,\\sin\\tfrac{\\Delta t}{2}\\,\\sin\\bar\\omega t, \\]\n\\[ x_1=x_0\\Bigl[\\cos\\tfrac{\\Delta t}{2}\\cos\\bar\\omega t+\\cos2\\theta\\,\\sin\\tfrac{\\Delta t}{2}\\sin\\bar\\omega t\\Bigr]. \\]\n$x_2$ の包絡線は $x_0\\sin2\\theta|\\sin\\frac{\\Delta t}2|$ でその最大値は $X_2=x_0\\sin2\\theta$．$x_1$ の包絡線は $x_0\\sqrt{\\cos^2\\frac{\\Delta t}{2}+\\cos^22\\theta\\sin^2\\frac{\\Delta t}{2}}$ でその最小値は $X_1=x_0\\cos2\\theta$．$\\tan2\\theta=2\\kappa/\\delta$ より\n\\[ \\boldsymbol{X_2=\\frac{2\\kappa}{\\sqrt{4\\kappa^2+\\delta^2}}x_0},\\qquad \\boldsymbol{X_1=\\frac{\\delta}{\\sqrt{4\\kappa^2+\\delta^2}}x_0} . \\]\n$\\delta=0$ なら $X_2=x_0$，$X_1=0$ で完全な移動．離調 $\\delta$ が結合 $2\\kappa$ と同程度以上になると移動は不完全になり，$\\delta\\gg\\kappa$ ではほとんど移らない（共鳴の条件）．弱結合では各質点のエネルギーは振幅の 2 乗にほぼ比例するので，質点2に移る最大エネルギーの割合は $\\frac{4\\kappa^2}{4\\kappa^2+\\delta^2}$ となる．\n\n(4) 包絡線 $|\\sin\\frac{\\Delta t}{2}|$ の周期は $2\\pi/\\Delta$．$\\omega_b^2-\\omega_a^2=\\dfrac{\\sqrt{\\delta^2+4\\kappa^2}}{m}$ で，$\\kappa,\\delta\\ll K$ では $\\omega_a+\\omega_b\\approx2\\sqrt{K/m}$ なので\n\\[ \\Delta=\\frac{\\omega_b^2-\\omega_a^2}{\\omega_a+\\omega_b}\\approx\\frac{\\sqrt{\\delta^2+4\\kappa^2}}{2\\sqrt{mK}},\\qquad \\boldsymbol{T_{\\rm b}=\\frac{2\\pi}{\\Delta}\\approx\\frac{4\\pi\\sqrt{mK}}{\\sqrt{\\delta^2+4\\kappa^2}}}. \\]\n離調があるとうなりは速くなるが，移るエネルギーの割合は小さくなる．"
    }
   ],
   "idea": {
@@ -2946,7 +2946,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) $X_2$：((2 κ)/(sqrt(4 κ ^(2)+ δ ^(2)))) x_0 ; $X_1$：((δ)/(sqrt(4 κ ^(2)+ δ ^(2)))) x_0\n(4) 記述"
+   "spec": "(1) $\\omega_a$：sqrt((2K + 2κ + δ - sqrt(δ^2 + 4κ^2))/(2m)) ; $\\omega_b$：sqrt((2K + 2κ + δ + sqrt(δ^2 + 4κ^2))/(2m))\n(2) 記述\n(3) $X_2$：((2 κ)/(sqrt(4 κ ^(2)+ δ ^(2)))) x_0 ; $X_1$：((δ)/(sqrt(4 κ ^(2)+ δ ^(2)))) x_0\n(4) $T_{\\rm b}$：4 pi sqrt(m K)/sqrt(δ^2 + 4κ^2)"
   },
   "methods": [],
   "tags": [
@@ -2979,16 +2979,16 @@
   "theme": "直線3原子分子CO2の伸縮振動とO–O相互作用の推定",
   "topic": "直線3原子分子CO2の伸縮振動とO–O相互作用の推定",
   "statement": {
-   "tex": "直線分子 $\\mathrm{CO_2}$ の分子軸方向の運動を 1 次元模型で考える．O 原子（質量 $m$）・C 原子（質量 $M$）・O 原子（質量 $m$）がこの順に $x$ 軸上に並び，隣り合う C–O の間はばね定数 $k$ のばね，両端の O–O の間は（C を飛び越えて）ばね定数 $k'$ のばねで結ばれているとする．ばねは平衡配置で自然長で，平衡位置からの変位を $x_1,x_2,x_3$ とする．\n\\begin{enumerate}\n\\item 運動方程式を書き，基準角振動数を 3 つすべて求めよ．角振動数 0 の解の物理的意味を述べよ．\n\\item 各振動モードの形（$x_1:x_2:x_3$）を求め，$k'$ が一方のモードの振動数にしか影響しない理由を，モードの形から説明せよ．\n\\item $k'=0$ のとき，2つの振動数の比を $m/M$ で表せ．$m=16.0\\,\\mathrm u$，$M=12.0\\,\\mathrm u$ としてその値を求めよ．\n\\item 観測される波数は，対称伸縮 $\\tilde\\nu_s=1388\\ \\mathrm{cm^{-1}}$，逆対称伸縮 $\\tilde\\nu_a=2349\\ \\mathrm{cm^{-1}}$ である（$\\omega=2\\pi c\\tilde\\nu$）．(3) の比と比べ，この模型で両方を再現するのに必要な $k$ と $k'$ を数値で求めよ（$1\\,\\mathrm u=1.6605\\times10^{-27}\\,\\mathrm{kg}$，$c=2.998\\times10^{10}\\,\\mathrm{cm/s}$，O の質量は $15.995\\,\\mathrm u$ とせよ）．\n\\end{enumerate}"
+   "tex": "直線分子 $\\mathrm{CO_2}$ の分子軸方向の運動を 1 次元模型で考える．O 原子（質量 $m$）・C 原子（質量 $M$）・O 原子（質量 $m$）がこの順に $x$ 軸上に並び，隣り合う C–O の間はばね定数 $k$ のばね，両端の O–O の間は（C を飛び越えて）ばね定数 $k'$ のばねで結ばれているとする．ばねは平衡配置で自然長で，平衡位置からの変位を $x_1,x_2,x_3$ とする．\n\\begin{enumerate}\n\\item 運動方程式を書き，基準角振動数を 3 つすべて求めよ．角振動数 0 の解の物理的意味を述べよ．\n\\item 各振動モードの形（$x_1:x_2:x_3$）を求め，$k'$ が一方のモードの振動数にしか影響しない理由を，モードの形から説明せよ．\n\\item $k'=0$ のとき，2つの振動数の比 $\\omega_a/\\omega_s$ を $m/M$ で表せ．\n\\item 観測される波数は，対称伸縮 $\\tilde\\nu_s=1388\\ \\mathrm{cm^{-1}}$，逆対称伸縮 $\\tilde\\nu_a=2349\\ \\mathrm{cm^{-1}}$ である（$\\omega=2\\pi c\\tilde\\nu$）．(3) の比と比べ，この模型で両方を再現するのに必要な $k$ と $k'$ を数値で求めよ（$1\\,\\mathrm u=1.6605\\times10^{-27}\\,\\mathrm{kg}$，$c=2.998\\times10^{10}\\,\\mathrm{cm/s}$，O の質量は $15.995\\,\\mathrm u$ とせよ）．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\omega=0$（並進），$\\omega_s=\\sqrt{\\frac{k+2k'}{m}}$，$\\omega_a=\\sqrt{k\\bigl(\\frac1m+\\frac2M\\bigr)}$　(2) 並進 $1:1:1$，対称 $1:0:-1$，逆対称 $1:-\\frac{2m}{M}:1$．逆対称モードでは O–O 間距離が変わらないので $k'$ は効かない　(3) $\\omega_a/\\omega_s=\\sqrt{1+2m/M}=\\sqrt{11/3}\\approx1.915$　(4) $k\\approx1.42\\times10^3\\ \\mathrm{N/m}$，$k'\\approx1.99\\times10^2\\ \\mathrm{N/m}$（$k'=0$ では $\\tilde\\nu_s\\approx1227\\ \\mathrm{cm^{-1}}$ となり観測より低い）"
+   "tex": "(1) $\\omega=0$（並進），$\\omega_s=\\sqrt{\\frac{k+2k'}{m}}$，$\\omega_a=\\sqrt{k\\bigl(\\frac1m+\\frac2M\\bigr)}$　(2) 並進 $1:1:1$，対称 $1:0:-1$，逆対称 $1:-\\frac{2m}{M}:1$．逆対称モードでは O–O 間距離が変わらないので $k'$ は効かない　(3) $\\dfrac{\\omega_a}{\\omega_s}=\\sqrt{1+\\dfrac{2m}{M}}$（O，C の質量では約 $1.915$）　(4) $k\\approx1.42\\times10^3\\ \\mathrm{N/m}$，$k'\\approx1.99\\times10^2\\ \\mathrm{N/m}$（$k'=0$ では $\\tilde\\nu_s\\approx1227\\ \\mathrm{cm^{-1}}$ となり観測より低い）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) C–O ばねの伸びは $x_2-x_1$，$x_3-x_2$，O–O ばねの伸びは $x_3-x_1$ なので\n\\[ m\\ddot x_1=k(x_2-x_1)+k'(x_3-x_1),\\quad M\\ddot x_2=-k(x_2-x_1)+k(x_3-x_2),\\quad m\\ddot x_3=-k(x_3-x_2)-k'(x_3-x_1). \\]\n$x_i=a_i\\cos(\\omega t+\\alpha)$ を代入し，$\\det(\\mathsf K-\\omega^2\\mathsf M)=0$（$\\mathsf M=\\mathrm{diag}(m,M,m)$，$\\mathsf K=\\begin{pmatrix}k+k'&-k&-k'\\\\-k&2k&-k\\\\-k'&-k&k+k'\\end{pmatrix}$）を解くと\n\\[ \\omega^2=0,\\qquad \\omega_s^2=\\frac{k+2k'}{m},\\qquad \\omega_a^2=k\\Bigl(\\frac1m+\\frac2M\\Bigr). \\]\n$\\omega=0$ は $x_1=x_2=x_3$ の一様並進（復元力のない自由な重心運動）に対応する．外力がないので全運動量 $m\\dot x_1+M\\dot x_2+m\\dot x_3$ が保存し，振動モードはすべて重心静止 $mx_1+Mx_2+mx_3=0$ を満たす．\n\n(2) 対称性から，$x_1=-x_3$，$x_2=0$ のモードを試すと第1式は $-m\\omega^2a_1=-ka_1-2k'a_1$ で $\\omega_s^2=\\frac{k+2k'}{m}$．逆対称 $x_1=x_3=a$，$x_2=b$ では重心静止から $b=-\\frac{2m}{M}a$，第1式 $-m\\omega^2a=k(b-a)$ に代入して $\\omega_a^2=\\frac km\\bigl(1+\\frac{2m}{M}\\bigr)$．\nモードの形は 並進 $1:1:1$，対称伸縮 $1:0:-1$，逆対称伸縮 $1:-\\frac{2m}M:1$．逆対称モードでは両端の O が同じ変位をするので O–O 距離 $x_3-x_1$ は常に 0 のままで，$k'$ のばねは伸び縮みしない．よって $k'$ は対称伸縮の振動数だけを変える．\n\n(3) $k'=0$ で\n\\[ \\frac{\\omega_a}{\\omega_s}=\\sqrt{1+\\frac{2m}{M}}=\\sqrt{1+\\frac{32}{12}}=\\sqrt{\\frac{11}{3}}\\approx1.915 . \\]\n\n(4) 観測比は $2349/1388\\approx1.692$ で，(3) の 1.915 より小さい．$k'>0$ なら $\\omega_s$ だけが上がり比が小さくなるので，$k'$ を導入すれば両方を再現できる．\n逆対称伸縮から（$k'$ によらない）\n\\[ k=\\frac{\\omega_a^2\\,mM}{M+2m},\\quad \\omega_a=2\\pi c\\tilde\\nu_a=4.425\\times10^{14}\\ \\mathrm{s^{-1}} \\]\n$m=15.995\\,\\mathrm u=2.656\\times10^{-26}\\,\\mathrm{kg}$，$M=1.993\\times10^{-26}\\,\\mathrm{kg}$ を入れて $k\\approx1.42\\times10^3\\ \\mathrm{N/m}$．\n対称伸縮から $k'=\\frac{m\\omega_s^2-k}{2}$，$\\omega_s=2\\pi c\\tilde\\nu_s=2.615\\times10^{14}\\ \\mathrm{s^{-1}}$ で $m\\omega_s^2\\approx1.815\\times10^3\\ \\mathrm{N/m}$，よって $k'\\approx1.99\\times10^2\\ \\mathrm{N/m}$（$k$ の約 14%）．\n参考：$k'=0$ のままなら予測は $\\tilde\\nu_s=2349/1.915\\approx1227\\ \\mathrm{cm^{-1}}$ で，観測値より約 160 cm$^{-1}$ 低い．（実際の $\\mathrm{CO_2}$ では対称伸縮が変角振動の倍音とフェルミ共鳴を起こし 1285/1388 cm$^{-1}$ の 2 本に分裂しており，ここで求めた $k'$ はそうした効果も含めた有効値である．）"
+    "tex": "(1) C–O ばねの伸びは $x_2-x_1$，$x_3-x_2$，O–O ばねの伸びは $x_3-x_1$ なので\n\\[ m\\ddot x_1=k(x_2-x_1)+k'(x_3-x_1),\\quad M\\ddot x_2=-k(x_2-x_1)+k(x_3-x_2),\\quad m\\ddot x_3=-k(x_3-x_2)-k'(x_3-x_1). \\]\n$x_i=a_i\\cos(\\omega t+\\alpha)$ を代入し，$\\det(\\mathsf K-\\omega^2\\mathsf M)=0$（$\\mathsf M=\\mathrm{diag}(m,M,m)$，$\\mathsf K=\\begin{pmatrix}k+k'&-k&-k'\\\\-k&2k&-k\\\\-k'&-k&k+k'\\end{pmatrix}$）を解くと\n\\[ \\omega^2=0,\\qquad \\omega_s^2=\\frac{k+2k'}{m},\\qquad \\omega_a^2=k\\Bigl(\\frac1m+\\frac2M\\Bigr). \\]\n$\\omega=0$ は $x_1=x_2=x_3$ の一様並進（復元力のない自由な重心運動）に対応する．外力がないので全運動量 $m\\dot x_1+M\\dot x_2+m\\dot x_3$ が保存し，振動モードはすべて重心静止 $mx_1+Mx_2+mx_3=0$ を満たす．\n\n(2) 対称性から，$x_1=-x_3$，$x_2=0$ のモードを試すと第1式は $-m\\omega^2a_1=-ka_1-2k'a_1$ で $\\omega_s^2=\\frac{k+2k'}{m}$．逆対称 $x_1=x_3=a$，$x_2=b$ では重心静止から $b=-\\frac{2m}{M}a$，第1式 $-m\\omega^2a=k(b-a)$ に代入して $\\omega_a^2=\\frac km\\bigl(1+\\frac{2m}{M}\\bigr)$．\nモードの形は 並進 $1:1:1$，対称伸縮 $1:0:-1$，逆対称伸縮 $1:-\\frac{2m}M:1$．逆対称モードでは両端の O が同じ変位をするので O–O 距離 $x_3-x_1$ は常に 0 のままで，$k'$ のばねは伸び縮みしない．よって $k'$ は対称伸縮の振動数だけを変える．\n\n(3) $k'=0$ で\n\\[ \\boldsymbol{\\frac{\\omega_a}{\\omega_s}=\\sqrt{1+\\frac{2m}{M}}}. \\]\n$m/M=16/12$ とすると $\\sqrt{11/3}\\approx1.915$．ばね定数によらず質量比だけで決まる．\n\n(4) 観測比は $2349/1388\\approx1.692$ で，(3) の 1.915 より小さい．$k'>0$ なら $\\omega_s$ だけが上がり比が小さくなるので，$k'$ を導入すれば両方を再現できる．\n逆対称伸縮から（$k'$ によらない）\n\\[ k=\\frac{\\omega_a^2\\,mM}{M+2m},\\quad \\omega_a=2\\pi c\\tilde\\nu_a=4.425\\times10^{14}\\ \\mathrm{s^{-1}} \\]\n$m=15.995\\,\\mathrm u=2.656\\times10^{-26}\\,\\mathrm{kg}$，$M=1.993\\times10^{-26}\\,\\mathrm{kg}$ を入れて $k\\approx1.42\\times10^3\\ \\mathrm{N/m}$．\n対称伸縮から $k'=\\frac{m\\omega_s^2-k}{2}$，$\\omega_s=2\\pi c\\tilde\\nu_s=2.615\\times10^{14}\\ \\mathrm{s^{-1}}$ で $m\\omega_s^2\\approx1.815\\times10^3\\ \\mathrm{N/m}$，よって $k'\\approx1.99\\times10^2\\ \\mathrm{N/m}$（$k$ の約 14%）．\n参考：$k'=0$ のままなら予測は $\\tilde\\nu_s=2349/1.915\\approx1227\\ \\mathrm{cm^{-1}}$ で，観測値より約 160 cm$^{-1}$ 低い．（実際の $\\mathrm{CO_2}$ では対称伸縮が変角振動の倍音とフェルミ共鳴を起こし 1285/1388 cm$^{-1}$ の 2 本に分裂しており，ここで求めた $k'$ はそうした効果も含めた有効値である．）"
    }
   ],
   "idea": {
@@ -2996,7 +2996,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\omega$：0 ; $\\omega_s$：sqrt(((k +2 k')/(m))) ; $\\omega_a$：sqrt(k (((1)/(m))+((2)/(M))))\n(2) 記述\n(3) 記述\n(4) $k$ [N/m]：≈1.42e3 ; $k'$ [N/m]：≈1.99e2"
+   "spec": "(1) $\\omega$：0 ; $\\omega_s$：sqrt(((k +2 k')/(m))) ; $\\omega_a$：sqrt(k (((1)/(m))+((2)/(M))))\n(2) 記述\n(3) $\\omega_a/\\omega_s$：sqrt(1 + 2m/M)\n(4) $k$ [N/m]：≈1.42e3 ; $k'$ [N/m]：≈1.99e2"
   },
   "methods": [],
   "tags": [
@@ -3131,16 +3131,16 @@
   "theme": "基準角振動数を等間隔にする質量と自由4体鎖",
   "topic": "基準角振動数を等間隔にする質量と自由4体鎖",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 壁—ばね $k$—$M$—ばね $k$—$\\mu M$—ばね $k$—$M$—ばね $k$—壁 の系（中央だけ質量 $\\mu M$）を考える．中央が静止するモードの角振動数を求めよ．また，3 つの基準角振動数が等間隔（等差数列）になる $\\mu$ を求め，そのときの角振動数を $\\sqrt{k/M}$ 単位で数値で答えよ．\n\\item 質量 $M$ の 4 個のおもりが，壁なしで ばね $k$，$\\kappa k$，$k$ によって一直線につながれている（両端は自由）．基準角振動数をすべて求めよ．\n\\item (2) で $\\kappa\\to\\infty$ と $\\kappa\\to0$ の極限で角振動数がどうなるか述べ，それぞれ物理的に解釈せよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 壁—ばね $k$—$M$—ばね $k$—$\\mu M$—ばね $k$—$M$—ばね $k$—壁 の系（中央だけ質量 $\\mu M$）を考える．中央が静止するモードの角振動数を求めよ．また，3 つの基準角振動数が等間隔（等差数列）になる $\\mu$ を求め，そのときの 3 つの角振動数を $k,M$ を用いて根号で厳密に表せ．\n\\item 質量 $M$ の 4 個のおもりが，壁なしで ばね $k$，$\\kappa k$，$k$ によって一直線につながれている（両端は自由）．基準角振動数の 2 乗をすべて求めよ．\n\\item (2) で $\\kappa\\to\\infty$ と $\\kappa\\to0$ の極限で角振動数がどうなるか述べ，それぞれ物理的に解釈せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sqrt{2k/M}$；$\\mu=(4+\\sqrt7)/9\\simeq0.738$，$\\omega\\simeq0.819,\\ 1.414,\\ 2.009\\ \\sqrt{k/M}$　(2) $\\omega^2=0,\\ 2k/M,\\ (1+\\kappa\\mp\\sqrt{1+\\kappa^2})k/M$　(3) $\\kappa\\to\\infty$：$0,\\sqrt{k/M},\\sqrt{2k/M},\\infty$；$\\kappa\\to0$：$0,0,\\sqrt{2k/M}$（2 重）"
+   "tex": "(1) $\\sqrt{\\dfrac{2k}{M}}$；$\\mu=\\dfrac{4+\\sqrt7}{9}$，$\\omega=\\left(\\sqrt2-\\sqrt{3-\\sqrt7}\\right)\\sqrt{\\dfrac{k}{M}},\\ \\sqrt{\\dfrac{2k}{M}},\\ \\left(\\sqrt2+\\sqrt{3-\\sqrt7}\\right)\\sqrt{\\dfrac{k}{M}}$　(2) $\\omega^2=0,\\ \\dfrac{2k}{M},\\ \\left(1+\\kappa\\mp\\sqrt{1+\\kappa^2}\\right)\\dfrac{k}{M}$　(3) $\\kappa\\to\\infty$：$0,\\sqrt{k/M},\\sqrt{2k/M},\\infty$；$\\kappa\\to0$：$0,0,\\sqrt{2k/M}$（2 重）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 変位を $x_1,x_2,x_3$ とする．$x_1=-x_3$，$x_2=0$ の反対称モードでは中央の質量が効かず，$M\\ddot x_1=-2kx_1$ より $\\omega_0=\\sqrt{2k/M}$．\n対称モード $x_1=x_3=u$，$x_2=w$：$M\\ddot u=-2ku+kw$，$\\mu M\\ddot w=2ku-2kw$．$\\lambda=\\omega^2M/k$ として\n\\[ \\lambda^2-\\left(2+\\frac2\\mu\\right)\\lambda+\\frac2\\mu=0. \\]\n2 根 $\\lambda_\\pm$ に対し $\\sqrt{\\lambda_+}+\\sqrt{\\lambda_-}=2\\sqrt2$（$\\sqrt2$ が中央の項となる等間隔条件）．$s=\\sqrt{2/\\mu}$ とおくと $(\\sqrt{\\lambda_+}+\\sqrt{\\lambda_-})^2=\\lambda_++\\lambda_-+2\\sqrt{\\lambda_+\\lambda_-}=2+s^2+2s=8$．$s=\\sqrt7-1$，\n\\[ \\mu=\\frac{2}{(\\sqrt7-1)^2}=\\frac{1}{4-\\sqrt7}=\\frac{4+\\sqrt7}{9}\\simeq0.738. \\]\nこのとき $\\lambda_\\pm=\\frac12\\left\\{(2+s^2)\\pm\\sqrt{(2+s^2)^2-4s^2}\\right\\}\\simeq4.038,\\ 0.671$ で，$\\omega\\simeq0.819,\\ 1.414,\\ 2.009$（単位 $\\sqrt{k/M}$），公差 $\\simeq0.595$．（$\\mu=1$ では $\\omega^2$ が等間隔 $2\\mp\\sqrt2,2$ になるが，$\\omega$ は等間隔にならない．）\n\n(2) 係数行列（$k/M$ 単位）\n\\[ \\begin{pmatrix}1&-1&0&0\\\\-1&1+\\kappa&-\\kappa&0\\\\0&-\\kappa&1+\\kappa&-1\\\\0&0&-1&1\\end{pmatrix} \\]\nの固有値多項式は $\\lambda(\\lambda-2)\\left\\{\\lambda^2-2(1+\\kappa)\\lambda+2\\kappa\\right\\}$．$\\lambda=0$ は並進 $(1,1,1,1)$，$\\lambda=2$ は $(1,-1,-1,1)$（中央 2 個が一体で動き $\\kappa$ ばねは伸びない）．残りは $(a,b,-b,-a)$ 型で $\\lambda=1+\\kappa\\mp\\sqrt{1+\\kappa^2}$．$\\kappa=2$ では $3\\mp\\sqrt5$ となる．\n\n(3) $\\kappa\\to\\infty$：$\\lambda_-=1+\\kappa-\\sqrt{1+\\kappa^2}\\to1$，$\\lambda_+\\to\\infty$．中央 2 個が剛体的な質量 $2M$ になり，$M$—$k$—$2M$—$k$—$M$（基本問題 3.3）の $0,\\ k/M,\\ 2k/M$ を再現し，$\\lambda_+$ は「剛体」内部の振動で無限大へ．\n$\\kappa\\to0$：$\\lambda_-\\to0$，$\\lambda_+\\to2$．系が独立な 2 つの 2 体系（$M$—$k$—$M$）に分かれ，それぞれの並進（$\\omega=0$ が 2 重）と伸縮 $\\omega^2=2k/M$（2 重）になる．"
+    "tex": "(1) 変位を $x_1,x_2,x_3$ とする．$x_1=-x_3$，$x_2=0$ の反対称モードでは中央の質量が効かず，$M\\ddot x_1=-2kx_1$ より $\\boldsymbol{\\omega_0=\\sqrt{2k/M}}$．\n対称モード $x_1=x_3=u$，$x_2=w$：$M\\ddot u=-2ku+kw$，$\\mu M\\ddot w=2ku-2kw$．$\\lambda=\\omega^2M/k$ として\n\\[ \\lambda^2-\\left(2+\\frac2\\mu\\right)\\lambda+\\frac2\\mu=0. \\]\n2 根 $\\lambda_\\pm$ に対し $\\sqrt{\\lambda_+}+\\sqrt{\\lambda_-}=2\\sqrt2$（$\\sqrt2$ が中央の項となる等間隔条件）．$s=\\sqrt{2/\\mu}$ とおくと $\\sqrt{\\lambda_+\\lambda_-}=s$ で，$(\\sqrt{\\lambda_+}+\\sqrt{\\lambda_-})^2=\\lambda_++\\lambda_-+2\\sqrt{\\lambda_+\\lambda_-}=2+s^2+2s=8$．$s=\\sqrt7-1$，\n\\[ \\boldsymbol{\\mu=\\frac{2}{(\\sqrt7-1)^2}=\\frac{1}{4-\\sqrt7}=\\frac{4+\\sqrt7}{9}}. \\]\nこのとき $y=\\sqrt{\\lambda_\\pm}$ は和 $2\\sqrt2$，積 $\\sqrt7-1$ の 2 数なので $y^2-2\\sqrt2\\,y+\\sqrt7-1=0$ の根で，$y=\\sqrt2\\pm\\sqrt{3-\\sqrt7}$．よって 3 つの角振動数は\n\\[ \\boldsymbol{\\left(\\sqrt2-\\sqrt{3-\\sqrt7}\\right)\\sqrt{\\frac kM},\\quad \\sqrt{\\frac{2k}M},\\quad \\left(\\sqrt2+\\sqrt{3-\\sqrt7}\\right)\\sqrt{\\frac kM}} \\]\nで，公差は $\\sqrt{3-\\sqrt7}\\sqrt{k/M}\\approx0.595\\sqrt{k/M}$．（$\\mu=1$ では $\\omega^2$ が等間隔 $2\\mp\\sqrt2,2$ になるが，$\\omega$ は等間隔にならない．）\n\n(2) 係数行列（$k/M$ 単位）\n\\[ \\begin{pmatrix}1&-1&0&0\\\\-1&1+\\kappa&-\\kappa&0\\\\0&-\\kappa&1+\\kappa&-1\\\\0&0&-1&1\\end{pmatrix} \\]\nの固有値多項式は $\\lambda(\\lambda-2)\\left\\{\\lambda^2-2(1+\\kappa)\\lambda+2\\kappa\\right\\}$．$\\lambda=0$ は並進 $(1,1,1,1)$，$\\lambda=2$ は $(1,-1,-1,1)$（中央 2 個が一体で動き $\\kappa$ ばねは伸びない）．残りは $(a,b,-b,-a)$ 型で $\\lambda=1+\\kappa\\mp\\sqrt{1+\\kappa^2}$．よって $\\boldsymbol{\\omega^2=0,\\ 2k/M,\\ (1+\\kappa\\mp\\sqrt{1+\\kappa^2})k/M}$．\n\n(3) $\\kappa\\to\\infty$：$\\lambda_-=1+\\kappa-\\sqrt{1+\\kappa^2}\\to1$，$\\lambda_+\\to\\infty$．中央 2 個が剛体的な質量 $2M$ になり，$M$—$k$—$2M$—$k$—$M$ の $0,\\ k/M,\\ 2k/M$ を再現し，$\\lambda_+$ は「剛体」内部の振動で無限大へ．\n$\\kappa\\to0$：$\\lambda_-\\to0$，$\\lambda_+\\to2$．系が独立な 2 つの 2 体系（$M$—$k$—$M$）に分かれ，それぞれの並進（$\\omega=0$ が 2 重）と伸縮 $\\omega^2=2k/M$（2 重）になる．"
    }
   ],
   "idea": {
@@ -3148,7 +3148,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 記述"
+   "spec": "(1) 中央静止モード：sqrt(2k/M) ; $\\mu$：(4 + sqrt(7))/9 ; $\\omega$：{(sqrt(2) - sqrt(3 - sqrt(7))) sqrt(k/M), sqrt(2k/M), (sqrt(2) + sqrt(3 - sqrt(7))) sqrt(k/M)}\n(2) $\\omega^2$：{0, 2k/M, (1 + κ - sqrt(1 + κ^2)) k/M, (1 + κ + sqrt(1 + κ^2)) k/M}\n(3) 記述"
   },
   "methods": [],
   "tags": [
@@ -3331,16 +3331,16 @@
   "theme": "非対称3原子分子の内部座標とGF法・同位体積則",
   "topic": "非対称3原子分子の内部座標とGF法・同位体積則",
   "statement": {
-   "tex": "直線上に並んだ 3 個の原子 A，B，C（質量 $m_A$，$M$，$m_C$，座標 $x_1<x_2<x_3$）がある．A–B 間，B–C 間はそれぞればね定数 $k_1$，$k_2$ のばねで結ばれ，縦振動（直線方向の運動）だけを考える．質量中心は静止しているとする．\n\\begin{enumerate}\n\\item 内部座標 $y_1=x_2-x_1$，$y_2=x_3-x_2$ を用いると，運動エネルギーは $T=\\frac12\\dot{\\boldsymbol y}^{\\mathsf T}G^{-1}\\dot{\\boldsymbol y}$，$G=\\begin{pmatrix}\\frac1{m_A}+\\frac1M & -\\frac1M\\\\ -\\frac1M & \\frac1M+\\frac1{m_C}\\end{pmatrix}$ と書けることを示せ．（ヒント：$\\dot{\\boldsymbol y}=B\\dot{\\boldsymbol x}$ と書き，$\\sum_i m_i\\dot x_i=0$ を用いよ．）\n\\item 角振動数 $\\omega$ が満たす方程式を求め，2 つの固有角振動数の積 $\\omega_1\\omega_2$ を質量とばね定数で表せ．\n\\item ばね定数は同位体置換で変わらないとする．$m_A=m_C=16$，$M=12$（原子質量単位）の分子と，A だけを質量 18 に置き換えた分子について，$\\omega_1\\omega_2$ の比（置換後／置換前）を有効数字 3 桁で求めよ．\n\\end{enumerate}"
+   "tex": "直線上に並んだ 3 個の原子 A，B，C（質量 $m_A$，$M$，$m_C$，座標 $x_1<x_2<x_3$）がある．A–B 間，B–C 間はそれぞればね定数 $k_1$，$k_2$ のばねで結ばれ，縦振動（直線方向の運動）だけを考える．質量中心は静止しているとする．\n\\begin{enumerate}\n\\item 内部座標 $y_1=x_2-x_1$，$y_2=x_3-x_2$ を用いると，運動エネルギーは $T=\\frac12\\dot{\\boldsymbol y}^{\\mathsf T}G^{-1}\\dot{\\boldsymbol y}$，$G=\\begin{pmatrix}\\frac1{m_A}+\\frac1M & -\\frac1M\\\\ -\\frac1M & \\frac1M+\\frac1{m_C}\\end{pmatrix}$ と書けることを示せ．（ヒント：$\\dot{\\boldsymbol y}=B\\dot{\\boldsymbol x}$ と書き，$\\sum_i m_i\\dot x_i=0$ を用いよ．）\n\\item 角振動数 $\\omega$ が満たす方程式を求め，2 つの固有角振動数の積 $\\omega_1\\omega_2$ を質量とばね定数で表せ．\n\\item ばね定数は同位体置換で変わらないとする．原子 A だけを質量 $m_D$ の同位体に置き換えたとき，$\\omega_1\\omega_2$ の比（置換後／置換前）を $m_A,m_D,M,m_C$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 略（$G=B\\,\\mathrm{diag}(m_i^{-1})B^{\\mathsf T}$）　(2) $\\omega^4-\\left[k_1\\left(\\frac1{m_A}+\\frac1M\\right)+k_2\\left(\\frac1M+\\frac1{m_C}\\right)\\right]\\omega^2+\\frac{k_1k_2(m_A+M+m_C)}{m_AMm_C}=0$，$\\omega_1\\omega_2=\\sqrt{\\frac{k_1k_2(m_A+M+m_C)}{m_AMm_C}}$　(3) $\\sqrt{\\frac{46}{44}\\cdot\\frac{16}{18}}\\approx 0.964$"
+   "tex": "(1) 略（$G=B\\,\\mathrm{diag}(m_i^{-1})B^{\\mathsf T}$）　(2) $\\omega^4-\\left[k_1\\left(\\frac1{m_A}+\\frac1M\\right)+k_2\\left(\\frac1M+\\frac1{m_C}\\right)\\right]\\omega^2+\\frac{k_1k_2(m_A+M+m_C)}{m_AMm_C}=0$，$\\omega_1\\omega_2=\\sqrt{\\dfrac{k_1k_2(m_A+M+m_C)}{m_AMm_C}}$　(3) $\\sqrt{\\dfrac{m_A(m_D+M+m_C)}{m_D(m_A+M+m_C)}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $B=\\begin{pmatrix}-1&1&0\\\\0&-1&1\\end{pmatrix}$ とすると $\\dot{\\boldsymbol y}=B\\dot{\\boldsymbol x}$．運動量 $p_i=m_i\\dot x_i$ は $\\sum_ip_i=0$ を満たす．このとき $\\boldsymbol p$ は $B^{\\mathsf T}$ の列空間（$(1,1,1)$ に直交する部分空間）に入るから，$\\boldsymbol p=B^{\\mathsf T}\\boldsymbol\\lambda$ と書ける．すると $\\dot{\\boldsymbol y}=B\\,\\mathrm{diag}(m_i^{-1})\\boldsymbol p=G\\boldsymbol\\lambda$，$G:=B\\,\\mathrm{diag}(m_i^{-1})B^{\\mathsf T}$ であり，\n\\[ T=\\tfrac12\\dot{\\boldsymbol x}\\cdot\\boldsymbol p=\\tfrac12(B\\dot{\\boldsymbol x})\\cdot\\boldsymbol\\lambda=\\tfrac12\\dot{\\boldsymbol y}^{\\mathsf T}G^{-1}\\dot{\\boldsymbol y}. \\]\n$G$ を計算すると題意の行列になる．\n\n(2) $V=\\frac12(k_1y_1^2+k_2y_2^2)=\\frac12\\boldsymbol y^{\\mathsf T}F\\boldsymbol y$，$F=\\mathrm{diag}(k_1,k_2)$．Lagrange 方程式 $G^{-1}\\ddot{\\boldsymbol y}+F\\boldsymbol y=0$ より $\\det(GF-\\omega^2 I)=0$：\n\\[ \\omega^4-\\mathrm{tr}(GF)\\,\\omega^2+\\det G\\,\\det F=0,\\quad \\mathrm{tr}(GF)=k_1\\Big(\\frac1{m_A}+\\frac1M\\Big)+k_2\\Big(\\frac1M+\\frac1{m_C}\\Big). \\]\n$\\det G=\\big(\\frac1{m_A}+\\frac1M\\big)\\big(\\frac1M+\\frac1{m_C}\\big)-\\frac1{M^2}=\\frac{m_A+M+m_C}{m_AMm_C}$．よって $\\omega_1^2\\omega_2^2=k_1k_2\\frac{m_A+M+m_C}{m_AMm_C}$．（3 自由度のまま $|V-\\omega^2T|=0$ を解いても，$\\omega=0$ を除いた 2 根が同じ方程式を満たす．）\n\n(3) $k_1,k_2$ は不変だから\n\\[ \\frac{(\\omega_1\\omega_2)'}{\\omega_1\\omega_2}=\\sqrt{\\frac{m_A'+M+m_C}{m_A+M+m_C}\\cdot\\frac{m_A}{m_A'}}=\\sqrt{\\frac{46}{44}\\cdot\\frac{16}{18}}=\\sqrt{0.9293}\\approx0.964. \\]\n個々の振動数を求めなくても，積は質量だけで決まる（Teller–Redlich の積則）．"
+    "tex": "(1) $B=\\begin{pmatrix}-1&1&0\\\\0&-1&1\\end{pmatrix}$ とすると $\\dot{\\boldsymbol y}=B\\dot{\\boldsymbol x}$．運動量 $p_i=m_i\\dot x_i$ は $\\sum_ip_i=0$ を満たす．このとき $\\boldsymbol p$ は $B^{\\mathsf T}$ の列空間（$(1,1,1)$ に直交する部分空間）に入るから，$\\boldsymbol p=B^{\\mathsf T}\\boldsymbol\\lambda$ と書ける．すると $\\dot{\\boldsymbol y}=B\\,\\mathrm{diag}(m_i^{-1})\\boldsymbol p=G\\boldsymbol\\lambda$，$G:=B\\,\\mathrm{diag}(m_i^{-1})B^{\\mathsf T}$ であり，\n\\[ T=\\tfrac12\\dot{\\boldsymbol x}\\cdot\\boldsymbol p=\\tfrac12(B\\dot{\\boldsymbol x})\\cdot\\boldsymbol\\lambda=\\tfrac12\\dot{\\boldsymbol y}^{\\mathsf T}G^{-1}\\dot{\\boldsymbol y}. \\]\n$G$ を計算すると題意の行列になる．\n\n(2) $V=\\frac12(k_1y_1^2+k_2y_2^2)=\\frac12\\boldsymbol y^{\\mathsf T}F\\boldsymbol y$，$F=\\mathrm{diag}(k_1,k_2)$．Lagrange 方程式 $G^{-1}\\ddot{\\boldsymbol y}+F\\boldsymbol y=0$ より $\\det(GF-\\omega^2 I)=0$：\n\\[ \\omega^4-\\mathrm{tr}(GF)\\,\\omega^2+\\det G\\,\\det F=0,\\quad \\mathrm{tr}(GF)=k_1\\Big(\\frac1{m_A}+\\frac1M\\Big)+k_2\\Big(\\frac1M+\\frac1{m_C}\\Big). \\]\n$\\det G=\\big(\\frac1{m_A}+\\frac1M\\big)\\big(\\frac1M+\\frac1{m_C}\\big)-\\frac1{M^2}=\\frac{m_A+M+m_C}{m_AMm_C}$．よって $\\omega_1^2\\omega_2^2=k_1k_2\\frac{m_A+M+m_C}{m_AMm_C}$，\n\\[ \\boldsymbol{\\omega_1\\omega_2=\\sqrt{\\frac{k_1k_2(m_A+M+m_C)}{m_AMm_C}}}. \\]\n（3 自由度のまま $|V-\\omega^2T|=0$ を解いても，$\\omega=0$ を除いた 2 根が同じ方程式を満たす．）\n\n(3) $k_1,k_2$ は不変だから，$m_A\\to m_D$ として\n\\[ \\frac{(\\omega_1\\omega_2)'}{\\omega_1\\omega_2}=\\boldsymbol{\\sqrt{\\frac{m_A(m_D+M+m_C)}{m_D(m_A+M+m_C)}}}. \\]\n個々の振動数を求めなくても，積は質量だけで決まる（Teller–Redlich の積則）．たとえば ${}^{16}$O$^{12}$C$^{16}$O の一方の O を ${}^{18}$O にすると約 $0.964$．"
    }
   ],
   "idea": {
@@ -3348,7 +3348,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) ≈0.964"
+   "spec": "(1) 記述\n(2) $\\omega_1\\omega_2$：sqrt(k_1 k_2 (m_A + M + m_C)/(m_A M m_C))\n(3) 比：sqrt(m_A (m_D + M + m_C)/(m_D (m_A + M + m_C)))"
   },
   "methods": [],
   "tags": [
@@ -4038,16 +4038,16 @@
   "theme": "同位体置換したCO2模型の振動数",
   "topic": "同位体置換したCO2模型の振動数",
   "statement": {
-   "tex": "直線分子 O–C–O を，3 つの質点を同じばね定数 $k$ の 2 本の軽いばねでつないだ 1 次元模型で表す（分子軸方向の振動のみ考える）．質量は原子質量単位 $u$ を用いて ${}^{16}\\mathrm O=16u$，${}^{12}\\mathrm C=12u$，${}^{18}\\mathrm O=18u$ とする．\n\\begin{enumerate}\n\\item ${}^{16}\\mathrm O{}^{12}\\mathrm C{}^{16}\\mathrm O$ の 2 つの振動数の比（大/小）を求めよ．\n\\item 片方の酸素を ${}^{18}\\mathrm O$ に置き換えた ${}^{16}\\mathrm O{}^{12}\\mathrm C{}^{18}\\mathrm O$ の 2 つの角振動数を $\\sqrt{k/u}$ を単位として求めよ．\n\\item (2) の分子では「炭素が静止する振動」は存在しないことを示せ．\n\\end{enumerate}"
+   "tex": "直線分子 O–C–O を，3 つの質点を同じばね定数 $k$ の 2 本の軽いばねでつないだ 1 次元模型で表す（分子軸方向の振動のみ考える）．通常の酸素の質量を $m_1$，炭素の質量を $M$，酸素の同位体の質量を $m_3$（$m_3\\ne m_1$）とする．\n\\begin{enumerate}\n\\item 両端が通常の酸素（質量 $m_1$）の分子の 2 つの振動数の比（大/小）を求めよ．\n\\item 片方の酸素を同位体に置き換えた分子（質量 $m_1,M,m_3$）の 2 つの 0 でない角振動数を求めよ．\n\\item (2) の分子では「炭素が静止する振動」は存在しないことを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\sqrt{1+2m_{\\mathrm O}/m_{\\mathrm C}}=\\sqrt{11/3}\\approx1.91$　(2) $\\omega^2=\\dfrac{41\\mp\\sqrt{577}}{288}\\dfrac ku$，$\\omega\\approx0.243,\\ 0.475\\ \\sqrt{k/u}$　(3) 証明（解説参照）"
+   "tex": "(1) $\\sqrt{1+\\dfrac{2m_1}{M}}$　(2) $\\omega^2=\\dfrac{k\\left[(m_1M+2m_1m_3+Mm_3)-\\sqrt{(m_1M+2m_1m_3+Mm_3)^2-4m_1Mm_3(m_1+M+m_3)}\\right]}{2m_1Mm_3}$，$\\dfrac{k\\left[(m_1M+2m_1m_3+Mm_3)+\\sqrt{(m_1M+2m_1m_3+Mm_3)^2-4m_1Mm_3(m_1+M+m_3)}\\right]}{2m_1Mm_3}$　(3) 証明（解説参照）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "質量 $m_1,m_2,m_3$，変位 $x_1,x_2,x_3$ として $m_1\\ddot x_1=-k(x_1-x_2)$，$m_2\\ddot x_2=-k(2x_2-x_1-x_3)$，$m_3\\ddot x_3=-k(x_3-x_2)$．$x_i\\propto e^{i\\omega t}$ として永年方程式は（$\\lambda=\\omega^2$）\n\\[\\lambda\\left[m_1m_2m_3\\lambda^2-k(m_1m_2+2m_1m_3+m_2m_3)\\lambda+k^2(m_1+m_2+m_3)\\right]=0.\\]\n（$\\lambda=0$ は並進．）\n\n(1) $m_1=m_3=m_{\\mathrm O}$：対称振動（C 静止）$\\omega_1^2=k/m_{\\mathrm O}$，反対称振動 $\\omega_2^2=\\frac k{m_{\\mathrm O}}(1+2m_{\\mathrm O}/m_{\\mathrm C})$．比 $\\sqrt{1+32/12}=\\sqrt{11/3}=1.91$．\n\n(2) $m_1=16,m_2=12,m_3=18$（単位 $u$）：$3456\\lambda^2-984\\lambda+46=0$（単位 $k/u$），すなわち $1728\\lambda^2-492\\lambda+23=0$．\n\\[\\lambda=\\frac{41\\mp\\sqrt{577}}{288},\\qquad\\omega=0.243,\\ 0.475\\ \\sqrt{k/u}.\\]\n（${}^{16}\\mathrm O{}^{12}\\mathrm C{}^{16}\\mathrm O$ では $0.250,\\ 0.479$．）\n\n(3) $x_2=0$ と仮定すると $m_1\\ddot x_1=-kx_1$，$m_3\\ddot x_3=-kx_3$ で振動数はそれぞれ $\\sqrt{k/m_1}\\ne\\sqrt{k/m_3}$．一方，炭素に働く力 $k(x_1+x_3)$ が常に 0 であるには $x_3=-x_1$ が必要で，両者が同じ振動数で振動しなければならず矛盾する．したがって対称性が崩れると 2 つのモードは混ざり，どちらでも炭素が動く．"
+    "tex": "質量 $m_1,m_2=M,m_3$，変位 $x_1,x_2,x_3$ として $m_1\\ddot x_1=-k(x_1-x_2)$，$M\\ddot x_2=-k(2x_2-x_1-x_3)$，$m_3\\ddot x_3=-k(x_3-x_2)$．$x_i\\propto e^{i\\omega t}$ として永年方程式は（$\\lambda=\\omega^2$）\n\\[\\lambda\\left[m_1Mm_3\\lambda^2-k(m_1M+2m_1m_3+Mm_3)\\lambda+k^2(m_1+M+m_3)\\right]=0.\\]\n（$\\lambda=0$ は並進．）\n\n(1) $m_3=m_1$：対称振動（C 静止）$\\omega_1^2=k/m_1$，反対称振動 $\\omega_2^2=\\frac k{m_1}(1+2m_1/M)$．比 $\\boldsymbol{\\sqrt{1+2m_1/M}}$（$16:12$ なら約 $1.91$）．\n\n(2) 2 次方程式を解いて\n\\[\\boldsymbol{\\omega^2=\\frac{k\\left[(m_1M+2m_1m_3+Mm_3)\\mp\\sqrt{(m_1M+2m_1m_3+Mm_3)^2-4m_1Mm_3(m_1+M+m_3)}\\right]}{2m_1Mm_3}}.\\]\n（$m_1=16u$，$M=12u$，$m_3=18u$ なら $\\omega\\approx0.243,\\ 0.475\\ \\sqrt{k/u}$ で，${}^{16}\\mathrm O{}^{12}\\mathrm C{}^{16}\\mathrm O$ の $0.250,\\ 0.479$ よりわずかに低い．）\n\n(3) $x_2=0$ と仮定すると $m_1\\ddot x_1=-kx_1$，$m_3\\ddot x_3=-kx_3$ で振動数はそれぞれ $\\sqrt{k/m_1}\\ne\\sqrt{k/m_3}$．一方，炭素に働く力 $k(x_1+x_3)$ が常に 0 であるには $x_3=-x_1$ が必要で，両者が同じ振動数で振動しなければならず矛盾する．したがって対称性が崩れると 2 つのモードは混ざり，どちらでも炭素が動く．"
    }
   ],
   "idea": {
@@ -4055,7 +4055,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) 記述\n(3) 証明"
+   "spec": "(1) sqrt(1 + 2 m_1/M)\n(2) $\\omega^2$：{k ((m_1 M + 2 m_1 m_3 + M m_3) - sqrt((m_1 M + 2 m_1 m_3 + M m_3)^2 - 4 m_1 M m_3 (m_1 + M + m_3)))/(2 m_1 M m_3), k ((m_1 M + 2 m_1 m_3 + M m_3) + sqrt((m_1 M + 2 m_1 m_3 + M m_3)^2 - 4 m_1 M m_3 (m_1 + M + m_3)))/(2 m_1 M m_3)}\n(3) 証明"
   },
   "methods": [],
   "tags": [

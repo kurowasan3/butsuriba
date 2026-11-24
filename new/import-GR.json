@@ -6,12 +6,13 @@
   "level": 2,
   "theme": "メスバウアーの温度シフトとパウンド＝レブカ，GPS衛星の時計",
   "minutes": 30,
-  "q": "時計の進み方のずれを，$v\\ll c$，弱い重力場の最低次で考える．$k_B=1.38\\times10^{-23}\\ \\mathrm{J/K}$，$1\\ \\mathrm{u}=1.66\\times10^{-27}\\ \\mathrm{kg}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$，$g=9.8\\ \\mathrm{m/s^2}$ とする．\n\\begin{enumerate}\n\\item 結晶中の ${}^{57}\\mathrm{Fe}$ 原子核（質量 $57\\ \\mathrm{u}$）は熱振動しており，古典的に $\\langle v^2\\rangle=3k_BT/m$ とする．メスバウアー線の振動数の，温度 $1\\ \\mathrm{K}$ あたりの相対的なずれ（2次のドップラー効果）を求めよ（有効数字2桁）．\n\\item 高さ $22.5\\ \\mathrm{m}$ の塔の上下での重力による振動数の相対的なずれを求め，それと同じずれを (1) の効果で作るのに必要な線源と吸収体の温度差を求めよ．\n\\item 地球（質量 $M$，半径 $R$，自転は無視）の表面の時計に対し，半径 $r$ の円軌道を回る衛星の時計の進み方の相対的なずれを $GM/(Rc^2)$ と $r/R$ で表せ．ずれが $0$ になる軌道半径と，GPS 衛星（$r=4.17R$）の時計が1日に進む時間を求めよ（$GM/(Rc^2)=6.96\\times10^{-10}$）．\n\\end{enumerate}",
-  "answer": "(1) $-\\dfrac{3k_B}{2mc^2}\\approx-2.4\\times10^{-15}\\ \\mathrm{K^{-1}}$　(2) $\\dfrac{gH}{c^2}\\approx2.5\\times10^{-15}$，約 $1.0\\ \\mathrm{K}$　(3) $\\dfrac{\\Delta\\tau}{\\tau}=\\dfrac{GM}{Rc^2}\\left(1-\\dfrac{3R}{2r}\\right)$；$r=\\dfrac32R$；約 $38\\ \\mu\\mathrm{s}$ 進む",
-  "solution": "(1) 運動する原子核の固有時間は $d\\tau=dt\\sqrt{1-v^2/c^2}\\simeq\\left(1-\\dfrac{v^2}{2c^2}\\right)dt$ で，振動数は平均して $\\dfrac{\\Delta\\nu}{\\nu}=-\\dfrac{\\langle v^2\\rangle}{2c^2}=-\\dfrac{3k_BT}{2mc^2}$ だけずれる（1次のドップラー効果は平均で消える）．$1\\ \\mathrm{K}$ あたり\n\\[\n\\frac{3k_B}{2mc^2}=\\frac{3\\times1.38\\times10^{-23}}{2\\times57\\times1.66\\times10^{-27}\\times9.0\\times10^{16}}\\approx\\boldsymbol{2.4\\times10^{-15}\\ \\mathrm{K^{-1}}}\n\\]\n（温度が高いほど振動数が下がる）．\n\n(2) 重力によるずれは $\\dfrac{\\Delta\\nu}{\\nu}=\\dfrac{gH}{c^2}=\\dfrac{9.8\\times22.5}{9.0\\times10^{16}}\\approx\\boldsymbol{2.5\\times10^{-15}}$．(1) と比べて，線源と吸収体の温度差 $\\boldsymbol{\\approx1.0\\ \\mathrm{K}}$ で同じ大きさのずれが生じる．パウンド＝レブカの実験では，温度を $0.1\\ \\mathrm{K}$ 程度まで管理する必要があった．\n\n(3) 遠方の時計に対する進み方は $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{GM}{rc^2}-\\dfrac{v^2}{2c^2}$．円軌道では $v^2=GM/r$ なので衛星は $1-\\dfrac{3GM}{2rc^2}$，地表は $1-\\dfrac{GM}{Rc^2}$．差は\n\\[\n\\boldsymbol{\\frac{\\Delta\\tau}{\\tau}=\\frac{GM}{Rc^2}\\left(1-\\frac{3R}{2r}\\right)}.\n\\]\n$\\boldsymbol{r=\\frac32R}$（高度 $R/2\\approx3200\\ \\mathrm{km}$）で $0$．GPS では $6.96\\times10^{-10}\\times(1-0.360)=4.46\\times10^{-10}$ で，1日（$86400\\ \\mathrm{s}$）に $\\boldsymbol{\\approx38\\ \\mu\\mathrm{s}}$ 地上より進む（重力で $+46\\ \\mu\\mathrm{s}$，速度で $-7\\ \\mu\\mathrm{s}$）．",
-  "idea": "時計の進み方は $1-\\Phi/c^2-v^2/2c^2$ でまとめて書ける．熱運動の $\\langle v^2\\rangle$ は温度に比例するので，メスバウアー線では $1\\ \\mathrm{K}$ の温度差が $20\\ \\mathrm{m}$ ほどの高さの差と同じずれを生む．衛星では重力と速度の効果が逆符号で，$r=3R/2$ で打ち消し合う．原題は5つの状況のずれの式を答える問題で，捻りでは効果どうしの大きさを比べさせる．",
+  "q": "時計の進み方のずれを，$v\\ll c$，弱い重力場の最低次で考える．ボルツマン定数を $k_B$，光速を $c$，重力加速度の大きさを $g$，万有引力定数を $G$ とする．\n\\begin{enumerate}\n\\item 結晶中の ${}^{57}\\mathrm{Fe}$ 原子核（質量 $m$）は温度 $T$ で熱振動しており，古典的に $\\langle v^2\\rangle=3k_BT/m$ とする．メスバウアー線の振動数の相対的なずれ $\\Delta\\nu/\\nu$（2次のドップラー効果）を求めよ．\n\\item 高さ $H$ の塔の上下での重力による振動数の相対的なずれの大きさを求め，それと同じ大きさのずれを (1) の効果で作るのに必要な線源と吸収体の温度差 $\\Delta T$ を求めよ．\n\\item 地球（質量 $M$，半径 $R$，自転は無視）の表面の時計に対し，半径 $r$ の円軌道を回る衛星の時計の進み方の相対的なずれ $\\Delta\\tau/\\tau$ を求めよ．ずれが $0$ になる軌道半径と，地上の時計で時間 $t_0$ が経つ間に衛星の時計が地上の時計より進む時間を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\dfrac{\\Delta\\nu}{\\nu}=-\\dfrac{3k_BT}{2mc^2}$　(2) $\\dfrac{gH}{c^2}$；$\\Delta T=\\dfrac{2mgH}{3k_B}$　(3) $\\dfrac{\\Delta\\tau}{\\tau}=\\dfrac{GM}{Rc^2}\\left(1-\\dfrac{3R}{2r}\\right)$；$r=\\dfrac{3R}{2}$；$\\dfrac{GMt_0}{Rc^2}\\left(1-\\dfrac{3R}{2r}\\right)$",
+  "solution": "(1) 運動する原子核の固有時間は $d\\tau=dt\\sqrt{1-v^2/c^2}\\simeq\\left(1-\\dfrac{v^2}{2c^2}\\right)dt$ で，振動数は平均して\n\\[\n\\boldsymbol{\\frac{\\Delta\\nu}{\\nu}=-\\frac{\\langle v^2\\rangle}{2c^2}=-\\frac{3k_BT}{2mc^2}}\n\\]\nだけずれる（1次のドップラー効果は平均で消える）．温度が高いほど振動数が下がる．\n\n(2) 重力によるずれは $\\dfrac{\\Delta\\nu}{\\nu}=\\boldsymbol{\\dfrac{gH}{c^2}}$．(1) より温度差 $\\Delta T$ によるずれは $\\dfrac{3k_B\\Delta T}{2mc^2}$ なので，等しいとおいて\n\\[\n\\boldsymbol{\\Delta T=\\frac{2mgH}{3k_B}}.\n\\]\n$c^2$ が両辺で消えるので，比べているのは熱エネルギー $\\frac32k_B\\Delta T$ と位置エネルギー $mgH$ である．${}^{57}\\mathrm{Fe}$ と数十 m の塔では $\\Delta T$ は 1 K 程度になり，パウンド＝レブカの実験では温度を細かく管理する必要があった．\n\n(3) 遠方の時計に対する進み方は $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{GM}{rc^2}-\\dfrac{v^2}{2c^2}$．円軌道では $v^2=GM/r$ なので衛星は $1-\\dfrac{3GM}{2rc^2}$，地表は $1-\\dfrac{GM}{Rc^2}$．差は\n\\[\n\\boldsymbol{\\frac{\\Delta\\tau}{\\tau}=\\frac{GM}{Rc^2}\\left(1-\\frac{3R}{2r}\\right)}.\n\\]\n$\\boldsymbol{r=\\frac32R}$（高度 $R/2$）で $0$ になる．これより高い軌道では重力の効果が勝って衛星の時計が進み，時間 $t_0$ の間に\n\\[\n\\boldsymbol{\\frac{GMt_0}{Rc^2}\\left(1-\\frac{3R}{2r}\\right)}\n\\]\nだけ地上より進む．重力の寄与 $\\frac{GMt_0}{c^2}\\left(\\frac1R-\\frac1r\\right)$（進む）と速度の寄与 $-\\frac{GMt_0}{2rc^2}$（遅れる）の和である．",
+  "idea": "時計の進み方は $1-\\Phi/c^2-v^2/2c^2$ でまとめて書ける．熱運動の $\\langle v^2\\rangle$ は温度に比例するので，温度差 $\\Delta T=2mgH/(3k_B)$ が高さ $H$ の差と同じずれを生む．衛星では重力と速度の効果が逆符号で，$r=3R/2$ で打ち消し合う．",
   "tags": "2次のドップラー効果,重力赤方偏移,時間の遅れ,GPS",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) Δν/ν：-3 k_B T/(2 m c^2)\n(2) ずれ：g H/c^2 ; ΔT：2 m g H/(3 k_B)\n(3) Δτ/τ：G M/(R c^2) (1 - 3 R/(2 r)) ; r：3 R/2 ; 進む時間：G M t_0/(R c^2) (1 - 3 R/(2 r))",
+  "id": "GR-01-021"
  },
  {
   "tid": "GR-PRN-002",
@@ -25,7 +26,8 @@
   "solution": "(1) 静磁気学 $\\nabla^2\\boldsymbol A=-\\mu_0\\boldsymbol J$ と比べると，$h_{0i}$ は $\\boldsymbol A$ で $\\mu_0\\to\\dfrac{16\\pi G}{c^3}$，電荷密度 $\\to\\rho$ とし，全体の符号を変えたものである．回転する一様な電荷の円柱はソレノイドと同じで，内部の磁場は $B(r')=\\mu_0\\rho_e\\omega\\dfrac{R^2-r'^2}{2}$，外部の磁場は $0$．外側の円に沿った $\\oint\\boldsymbol A\\cdot d\\boldsymbol l$ は内部の磁束に等しい：\n\\[\n\\Phi=\\int_0^R\\mu_0\\rho_e\\omega\\frac{R^2-r'^2}{2}2\\pi r'dr'=\\frac{\\pi\\mu_0\\rho_e\\omega R^4}{4}.\n\\]\n置き換えて $\\left|\\oint h_{0i}dx^i\\right|=\\boldsymbol{\\dfrac{4\\pi^2G\\rho\\omega R^4}{c^3}}$．\n\n光は $ds^2=0$：$-c^2dt^2+2h_{0i}c\\,dt\\,dx^i+dl^2=0$ より $c\\,dt\\simeq dl+h_{0i}dx^i$．向きを変えると第2項の符号が変わるので\n\\[\n\\boldsymbol{\\Delta t=\\frac{2}{c}\\left|\\oint h_{0i}dx^i\\right|=\\frac{8\\pi^2G\\rho\\omega R^4}{c^4}=\\frac{16\\pi Gj}{c^4}},\\qquad j=\\frac12\\pi\\rho R^4\\omega .\n\\]\n円柱の外では「重力磁場」は $0$ だが，ポテンシャルの周回積分は内部の磁束で決まるので，$\\Delta t$ は $\\boldsymbol{r}$ \\textbf{によらない}（アハラノフ＝ボーム効果と同じ構造）．$h_{0i}$ は $-\\boldsymbol A$ に対応するので，回転と同じ向きに進む光の方が $dt$ が小さく，\\textbf{先に戻る}（慣性系の引きずり）．\n\n(2) $\\dfrac{4\\pi r^2\\Omega}{c^2}=\\dfrac{16\\pi Gj}{c^4}$ より $\\boldsymbol{\\Omega=\\dfrac{4Gj}{r^2c^2}}$．これは半径 $r$ での慣性系の引きずりの角速度で，$r^{-2}$ で減る．\n\n(3) $\\omega=2\\pi\\times100\\ \\mathrm{s^{-1}}$ として\n\\[\n\\Delta t=\\frac{8\\pi^2\\times6.67\\times10^{-11}\\times8.0\\times10^3\\times628\\times0.0625}{(3.0\\times10^8)^4}\\approx\\boldsymbol{2\\times10^{-37}\\ \\mathrm{s}},\n\\]\n光の周期の $\\boldsymbol{10^{-22}}$ 倍程度で，実験室での検出は絶望的である．",
   "idea": "線形化重力の $h_{0i}$ はベクトルポテンシャルと同じ方程式に従い，回転する円柱はソレノイドに対応する．外部では「重力磁場」は $0$ でも，周回積分は内部の磁束で決まるので，光の周回時間差は円の半径によらない．原題は $r=R$ での時間差の見積もりで，捻りでは $r$ によらないこと，サニャック効果への読みかえ，向きを問う．",
   "tags": "線形化重力,重力磁気,慣性系の引きずり,サニャック効果",
-  "input": "(1) 記述\n(2) $\\Omega$：((4 G j)/(r ^(2) c ^(2)))\n(3) 記述"
+  "input": "(1) 記述\n(2) $\\Omega$：((4 G j)/(r ^(2) c ^(2)))\n(3) 記述",
+  "id": "GR-01-044"
  },
  {
   "tid": "GR-PRN-003",
@@ -39,7 +41,8 @@
   "solution": "(1) 円軌道の測地線の条件（有効ポテンシャルの極値）から，ケプラーと同じ形の $\\boldsymbol{\\Omega^2=M/R^3}$ を得る．規格化 $-1=g_{tt}(u^t)^2+g_{\\varphi\\varphi}(u^\\varphi)^2$，$u^\\varphi=\\Omega u^t$ より\n\\[\n(u^t)^2=\\frac{1}{1-\\frac{2M}{R}-R^2\\Omega^2}=\\frac{1}{1-\\frac{3M}{R}},\\qquad \\boldsymbol{u^t=\\frac{1}{\\sqrt{1-3M/R}}}.\n\\]\n\n(2) $u_A=u^t(1,0,0,\\Omega)$，$u_B=u^t(1,0,0,-\\Omega)$ なので\n\\[\n\\gamma_{\\rm rel}=-g_{\\mu\\nu}u_A^\\mu u_B^\\nu=(u^t)^2\\left[\\left(1-\\frac{2M}R\\right)+R^2\\Omega^2\\right]=\\frac{1-M/R}{1-3M/R}=\\boldsymbol{\\frac{R-M}{R-3M}}.\n\\]\n$R=6M$（最内安定円軌道）で $\\boldsymbol{\\gamma_{\\rm rel}=5/3}$，$v_{\\rm rel}=\\sqrt{1-9/25}=\\boldsymbol{0.8}$．（静止観測者から見た各々の速さは $v=\\sqrt{M/(R-2M)}=1/2$ で，速度の合成 $\\frac{2v}{1+v^2}=0.8$ と一致する．）$R\\to3M$ で発散する．\n\n(3) 2人は座標角速度 $\\pm\\Omega$ で逆向きに回るので，次にすれ違うまでの座標時間は $\\dfrac{\\pi}{\\Omega}$．A の固有時間は $d\\tau=dt/u^t$ なので\n\\[\n\\boldsymbol{\\Delta\\tau=\\frac{\\pi}{\\Omega}\\sqrt{1-\\frac{3M}{R}}=\\pi\\sqrt{\\frac{R^3}{M}}\\sqrt{1-\\frac{3M}{R}}}.\n\\]\n1周の間に2回すれ違う．",
   "idea": "円軌道の4元速度は $u^t(1,0,0,\\pm\\Omega)$ で，すれ違う2人の相対的なローレンツ因子は内積 $-u_A\\cdot u_B$ で座標によらずに計算できる．結果は静止観測者に対する速さの相対論的合成と一致する．原題は1人の粒子の周期を色々な観測者で測る問題で，捻りでは逆向きに回る2人の相対速度を問う．",
   "tags": "シュワルツシルト計量,円軌道,4元速度,相対速度",
-  "input": "(1) $\\Omega$：sqrt(((M)/(R ^(3)))) ; $u^t$：((1)/(sqrt(1-3 M / R)))\n(2) 記述\n(3) pi sqrt(((R ^(3))/(M))) sqrt(1-((3 M)/(R)))"
+  "input": "(1) $\\Omega$：sqrt(((M)/(R ^(3)))) ; $u^t$：((1)/(sqrt(1-3 M / R)))\n(2) 記述\n(3) pi sqrt(((R ^(3))/(M))) sqrt(1-((3 M)/(R)))",
+  "id": "GR-03-020"
  },
  {
   "tid": "GR-PRN-004",
@@ -53,7 +56,8 @@
   "solution": "(1) 静止したロケットの4元速度は $u=\\left(1-\\frac{2M}R\\right)^{-1/2}(1,0,0,0)$．加速度 $a^\\mu=\\Gamma^\\mu_{\\alpha\\beta}u^\\alpha u^\\beta$ の動径成分は $a^r=\\Gamma^r_{tt}(u^t)^2=\\dfrac{M}{R^2}$．大きさは $\\sqrt{g_{rr}}\\,a^r$ なので\n\\[\n\\boldsymbol{a=\\frac{M}{R^2\\sqrt{1-2M/R}}},\n\\]\nホライズン $R\\to2M$ で発散する．\n\n(2) ロケットの瞬間静止系で，時間 $d\\tau$ に放出する光子のエネルギーを $-dm$ とすると，運動量も $-dm$（$c=1$）で，その反作用で $m\\,dv=-dm$．加速度 $a$ を保つには $m\\,a\\,d\\tau=-dm$ なので\n\\[\n\\boldsymbol{m(\\tau)=m_0e^{-a\\tau}}.\n\\]\n\n(3) $u=u^t(1,0,0,\\omega)$，$(u^t)^2=\\dfrac{1}{1-2M/R-R^2\\omega^2}$．$\\Gamma^r_{tt}=\\dfrac{M(R-2M)}{R^3}$，$\\Gamma^r_{\\varphi\\varphi}=-(R-2M)$ より\n\\[\na^r=(u^t)^2\\left[\\frac{M(R-2M)}{R^3}-(R-2M)\\omega^2\\right],\n\\]\n\\[\n\\boldsymbol{a(\\omega)=\\sqrt{g_{rr}}\\,a^r=\\frac{R\\sqrt{1-2M/R}\\left(\\frac{M}{R^3}-\\omega^2\\right)}{1-\\frac{2M}{R}-R^2\\omega^2}}.\n\\]\n$R=3M$ では $1-\\frac23-9M^2\\omega^2=9M^2\\left(\\frac{1}{27M^2}-\\omega^2\\right)$ となり，分子の $\\frac{1}{27M^2}-\\omega^2$ と約分されて\n\\[\na=\\frac{3M\\sqrt{1/3}}{9M^2}=\\boldsymbol{\\frac{1}{3\\sqrt3M}}\\quad(\\omega\\text{ によらない}).\n\\]\n$\\omega$ で微分すると，$\\dfrac{da}{d(\\omega^2)}=\\dfrac{R\\sqrt{1-2M/R}}{(\\cdots)^2}\\left[-(1-\\tfrac{2M}{R}-R^2\\omega^2)+R^2\\left(\\tfrac{M}{R^3}-\\omega^2\\right)\\right]=\\dfrac{R\\sqrt{1-2M/R}\\,(3M/R-1)}{(\\cdots)^2}$．$R<3M$ では正で，速く回るほど外向きの推力が\\textbf{大きく}必要になる．光子球より内側では「遠心力」が内向きに働くように見える．$R>3M$ では逆で，$\\omega^2=M/R^3$（測地線）で推力が $0$ になる．",
   "idea": "円運動の4元加速度は $\\Gamma^r_{tt}$（重力）と $\\Gamma^r_{\\varphi\\varphi}$（遠心力）の競合で決まる．光子球 $R=3M$ では両者の $\\omega$ 依存性がちょうど比例して約分され，推力が回転の速さによらなくなる．その内側では回転するほど外向きの推力が必要になる（遠心力の反転）．原題は静止ロケットの加速度と円運動で加速度が $0$ になる条件で，捻りでは光子球での振る舞いを問う．",
   "tags": "4元加速度,シュワルツシルト時空,光子球,遠心力の反転",
-  "input": "(1) $a$：((M)/(R ^(2) sqrt(1-2 M / R)))\n(2) 記述\n(3) 記述"
+  "input": "(1) $a$：((M)/(R ^(2) sqrt(1-2 M / R)))\n(2) 記述\n(3) 記述",
+  "id": "GR-05-018"
  },
  {
   "tid": "GR-PRN-005",
@@ -67,7 +71,8 @@
   "solution": "(1) $dT'=\\sinh kt\\,dX+kX\\cosh kt\\,dt$，$dZ'=\\cosh kt\\,dX+kX\\sinh kt\\,dt$ より\n\\[\n-dT'^2+dZ'^2=dX^2-k^2X^2dt^2=dz^2-(1-kz)^2dt^2 .\n\\]\n$(t,z)$ の部分はミンコフスキー時空のリンドラー座標で，$X=0$（$z=1/k$）が地平線 $T'=\\pm Z'$ に対応する．\\hfill$\\square$\n\n(2) $z_0$ に静止する観測者は $X_0=\\dfrac1k-z_0$ を一定に保ち，ミンコフスキー時空で $Z'^2-T'^2=X_0^2$ の双曲線運動をする．その固有加速度の大きさは\n\\[\n\\boldsymbol{a=\\frac{1}{X_0}=\\frac{k}{1-kz_0}},\n\\]\n向きは $X$ が増える向き，すなわち\\textbf{ウォールに向かう向き}（$-z$）．静止するにはウォールの方へ押し続けなければならないので，自由な粒子はウォールから遠ざかる（ウォールは斥力的にふるまう）．ウォールのすぐそば（$z_0\\to0$）で $a\\to k$．\n\n(3) 放した瞬間（$t=0$）に静止しているので，ミンコフスキー時空で $Z'=X_0$ に静止した直線 $Z'=X_0$ が世界線になる．地平線 $Z'=T'$（$X=0$）に達するのは $T'=X_0$ のときで，固有時間は $\\boldsymbol{X_0=\\dfrac1k-z_0}$．一方 $X\\to0$ は $kt\\to\\infty$ に対応するので，座標時間 $t$ は $\\boldsymbol{\\infty}$（静止観測者からは地平線に近づき続けるように見える）．",
   "idea": "時空が平坦でも，座標の取り方で重力のような効果が現れる．$-(1-kz)^2dt^2+dz^2$ はリンドラー座標そのもので，ウォールの側に静止するには一定の固有加速度が必要になり，放した粒子はウォールから遠ざかって有限の固有時間で地平線に達する．原題は曲率が $0$ であることと初期加速度の計算で，捻りではリンドラー座標への変換と地平線への到達を問う．",
   "tags": "リンドラー座標,測地線,固有加速度,地平線",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-01-035"
  },
  {
   "tid": "GR-PRN-006",
@@ -76,12 +81,13 @@
   "level": 3,
   "theme": "円軌道のジャイロスコープが1周で反転する半径",
   "minutes": 35,
-  "q": "シュワルツシルト時空（$G=c=1$，質量 $M$）で，半径 $R$ の円軌道（測地線，不安定なものも含む）を回るジャイロスコープのスピンベクトル $S$ は平行移動され，$S\\cdot u=0$ をみたす．軌道面内のスピンを考える．\n\\begin{enumerate}\n\\item 平行移動の方程式を方位角 $\\varphi$ の関数として書き直すと，スピンの動径成分は $\\dfrac{d^2S^r}{d\\varphi^2}+\\left(1-\\dfrac{3M}{R}\\right)S^r=0$ をみたす．これを用いて，スピンが動径方向に対して回る角振動数（$\\varphi$ あたり）を答えよ．\n\\item 1周した後，スピンの向きは（遠方の星を基準にした）元の向きから，軌道の回る向きにどれだけ回っているか．\n\\item $R=6M$ のときの1周あたりの回転角を度で求めよ．また1周でスピンがちょうど反対向きになる $R$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\sqrt{1-3M/R}$（$\\varphi$ あたり）　(2) $2\\pi\\left(1-\\sqrt{1-\\dfrac{3M}{R}}\\right)$　(3) $\\approx105^\\circ$；$R=4M$",
-  "solution": "(1) $S^r\\propto\\cos\\left(\\sqrt{1-3M/R}\\,\\varphi\\right)$ なので，動径方向を基準にしたスピンの向きは，$\\varphi$ が $2\\pi$ 進む間に $2\\pi\\sqrt{1-3M/R}$ しか回らない．角振動数は $\\boldsymbol{\\sqrt{1-3M/R}}$（$\\varphi$ あたり，軌道と逆向き）．\n\n(2) 動径方向そのものは1周で $2\\pi$ 回るので，遠方の星を基準にしたスピンの向きは1周で\n\\[\n\\boldsymbol{\\Delta\\phi=2\\pi-2\\pi\\sqrt{1-\\frac{3M}{R}}=2\\pi\\left(1-\\sqrt{1-\\frac{3M}{R}}\\right)}\n\\]\nだけ軌道の向きに進む（測地歳差，ド・ジッター歳差）．$R\\gg M$ では $\\simeq\\dfrac{3\\pi M}{R}$．\n\n(3) $R=6M$：$2\\pi\\left(1-\\frac{1}{\\sqrt2}\\right)\\approx\\boldsymbol{105^\\circ}$．反転する条件は $\\Delta\\phi=\\pi$，$\\sqrt{1-3M/R}=\\frac12$ より $\\boldsymbol{R=4M}$（不安定な円軌道）．$R\\to3M$ では $\\Delta\\phi\\to2\\pi$ で，スピンは常に同じ向きを動径に対して保つ（動径方向と一緒に回る）．",
+  "q": "シュワルツシルト時空（$G=c=1$，質量 $M$）で，半径 $R$ の円軌道（測地線，不安定なものも含む）を回るジャイロスコープのスピンベクトル $S$ は平行移動され，$S\\cdot u=0$ をみたす．軌道面内のスピンを考える．\n\\begin{enumerate}\n\\item 平行移動の方程式を方位角 $\\varphi$ の関数として書き直すと，スピンの動径成分は $\\dfrac{d^2S^r}{d\\varphi^2}+\\left(1-\\dfrac{3M}{R}\\right)S^r=0$ をみたす．これを用いて，スピンが動径方向に対して回る角振動数（$\\varphi$ あたり）を答えよ．\n\\item 1周した後，スピンの向きは（遠方の星を基準にした）元の向きから，軌道の回る向きにどれだけ回っているか．\n\\item $R=6M$ のときの1周あたりの回転角を求めよ（ラジアン，根号は残してよい）．また1周でスピンがちょうど反対向きになる $R$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\sqrt{1-3M/R}$（$\\varphi$ あたり）　(2) $2\\pi\\left(1-\\sqrt{1-\\dfrac{3M}{R}}\\right)$　(3) $2\\pi\\left(1-\\dfrac{1}{\\sqrt2}\\right)$；$R=4M$",
+  "solution": "(1) $S^r\\propto\\cos\\left(\\sqrt{1-3M/R}\\,\\varphi\\right)$ なので，動径方向を基準にしたスピンの向きは，$\\varphi$ が $2\\pi$ 進む間に $2\\pi\\sqrt{1-3M/R}$ しか回らない．角振動数は $\\boldsymbol{\\sqrt{1-3M/R}}$（$\\varphi$ あたり，軌道と逆向き）．\n\n(2) 動径方向そのものは1周で $2\\pi$ 回るので，遠方の星を基準にしたスピンの向きは1周で\n\\[\n\\boldsymbol{\\Delta\\phi=2\\pi-2\\pi\\sqrt{1-\\frac{3M}{R}}=2\\pi\\left(1-\\sqrt{1-\\frac{3M}{R}}\\right)}\n\\]\nだけ軌道の向きに進む（測地歳差，ド・ジッター歳差）．$R\\gg M$ では $\\simeq\\dfrac{3\\pi M}{R}$．\n\n(3) $R=6M$：$\\sqrt{1-1/2}=1/\\sqrt2$ より $\\boldsymbol{2\\pi\\left(1-\\frac{1}{\\sqrt2}\\right)}$（約 $105^\\circ$）．反転する条件は $\\Delta\\phi=\\pi$，$\\sqrt{1-3M/R}=\\frac12$ より $\\boldsymbol{R=4M}$（不安定な円軌道）．$R\\to3M$ では $\\Delta\\phi\\to2\\pi$ で，スピンは常に同じ向きを動径に対して保つ（動径方向と一緒に回る）．",
   "idea": "円軌道に沿った平行移動では，スピンの動径成分が角振動数 $\\sqrt{1-3M/R}$ で振動する．動径方向は1周で $2\\pi$ 回るので，その差が測地歳差になる．強い重力場では歳差が非常に大きく，$R=4M$ で1周ごとにスピンが反転する．原題は方程式の導出と歳差の割合で，捻りでは強重力での具体的な角度を問う．",
   "tags": "平行移動,測地歳差,ジャイロスコープ,シュワルツシルト時空",
-  "input": "(1) sqrt(1-3 M / R)\n(2) 2 pi (1- sqrt(1-((3 M)/(R))))\n(3) [°]：≈105 ; $R$：4 M"
+  "input": "(1) sqrt(1-3 M / R)\n(2) 2 pi (1- sqrt(1-((3 M)/(R))))\n(3) 回転角：2 pi (1 - 1/sqrt(2)) ; $R$：4 M",
+  "id": "GR-03-021"
  },
  {
   "tid": "GR-PRN-007",
@@ -95,7 +101,8 @@
   "solution": "(1) $R_{ii}=0$ から（すべての $p_i$ が $0$ でない限り）$\\boldsymbol{\\sum p_i=1}$．$R_{tt}=0$ から $\\sum p_i=\\sum p_i^2$，よって $\\boldsymbol{\\sum p_i^2=1}$．$\\sqrt{-g}=t^{p_1+p_2+p_3}=\\boldsymbol{t}$ で，体積は時間に比例して増える．$\\sum p_i^2=1=\\left(\\sum p_i\\right)^2$ より $\\sum_{i<j}p_ip_j=0$ なので，3つすべてが正にはなれず，自明な場合を除いて1つは負（その方向は縮む）．\n\n(2) 分母を $D=1+u+u^2$ とすると，和は $\\dfrac{-u+1+u+u+u^2}{D}=1$，2乗和は $\\dfrac{u^2+(1+u)^2+u^2(1+u)^2}{D^2}=\\dfrac{(1+u+u^2)^2}{D^2}=1$．$u=1$ で $\\left(-\\frac13,\\frac23,\\frac23\\right)$，$u\\to\\infty$ で $(0,0,1)$ に近づき，その間で単調なので\n\\[\n\\boldsymbol{-\\tfrac13\\leqq p_1\\leqq0,\\quad0\\leqq p_2\\leqq\\tfrac23,\\quad\\tfrac23\\leqq p_3\\leqq1}.\n\\]\n\n(3) 計量は $x$ によらないので，光の運動量の共変成分 $p_x$ は保存する．共動観測者が測るエネルギーは物理的な運動量の大きさ $\\sqrt{g^{xx}}|p_x|=t^{-p_1}|p_x|$ に等しいので，$\\nu\\propto t^{-p_1}=\\boldsymbol{t^{1/3}}$．$x$ 方向は縮んでいるので，光は進むほど\\textbf{青方偏移}する：\n\\[\n\\boldsymbol{\\frac{\\nu_2}{\\nu_1}=\\left(\\frac{t_2}{t_1}\\right)^{1/3}}.\n\\]\n同じ宇宙で $y,z$ 方向に進む光は $\\nu\\propto t^{-2/3}$ で赤方偏移するので，方向によって赤方偏移の符号まで違う（等方的な宇宙論の模型にはならない理由の1つ）．",
   "idea": "カスナー解では体積は $t$ に比例するが，方向ごとの膨張率が違い，1つの方向は必ず縮む．光の振動数は保存する共変運動量と計量から $t^{-p_i}$ で変わるので，縮む方向に進む光は青方偏移する．原題は条件の導出，キリングベクトル，平坦な場合の確認で，捻りではパラメータ表示と光の振動数の変化を問う．",
   "tags": "カスナー解,真空解,異方的宇宙,赤方偏移",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-02-024"
  },
  {
   "tid": "GR-TCO-001",
@@ -109,7 +116,8 @@
   "solution": "(1) $-(R^2-r^2)\\sinh^2+(R^2-r^2)\\cosh^2+r^2=R^2$．\n\n(2) $-c^2dT^2+(dX^4)^2=-(R^2-r^2)\\dfrac{c^2dt^2}{R^2}+\\dfrac{r^2dr^2}{R^2-r^2}$．これに $dr^2+r^2d\\Omega_2^2$ を加えて整理すると与式．\\hfill$\\square$\n\n(3) $g_{tt}=0$ となる\\textbf{事象の地平線}．$r=0$ の観測者は $r>R$ からの信号を受け取れない．",
   "idea": "ド・ジッター時空は座標の取り方で膨張宇宙にも静的な時空にも見え，静的座標では地平線が明らかになる．原題の閉じた座標と平坦な座標に，静的座標を加えた．",
   "tags": "ド・ジッター時空,静的座標,地平線,双曲面",
-  "input": "(1) 記述\n(2) 証明\n(3) 記述"
+  "input": "(1) 記述\n(2) 証明\n(3) 記述",
+  "id": "GR-01-036"
  },
  {
   "tid": "GR-TGR-001",
@@ -123,7 +131,8 @@
   "solution": "(1) $\\hat J(e_1)=e_2$，$\\hat J(e_2)=-e_1$ より $J^2{}_1=1$，$J^1{}_2=-1$．$J^2=-I$．\n\n(2) $\\delta$ で下げても同じ行列で反対称．$\\frac12J_{\\mu\\nu}dx^\\mu\\wedge dx^\\nu=-dx\\wedge dy$（符号は向きの約束による）．",
   "idea": "線形写像は $(1,1)$ テンソル，計量で添字を下げると $(0,2)$ テンソルになる．原題の抽象的な対応を，回転という具体例で確かめさせる．",
   "tags": "テンソル,線形写像,複素構造,2形式",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-01-016"
  },
  {
   "tid": "GR-TGR-002",
@@ -137,7 +146,8 @@
   "solution": "(1) $\\boldsymbol0$．\n\n(2) $f=r\\cos\\theta$，$\\partial_\\theta^2f=-r\\cos\\theta=\\boldsymbol{-1}$．テンソルなら $0$ のはず．\n\n(3) $\\dfrac{\\partial^2f}{\\partial y^\\mu\\partial y^\\nu}=\\dfrac{\\partial x^\\alpha}{\\partial y^\\mu}\\dfrac{\\partial x^\\beta}{\\partial y^\\nu}\\partial_\\alpha\\partial_\\beta f+\\dfrac{\\partial^2x^\\alpha}{\\partial y^\\mu\\partial y^\\nu}\\partial_\\alpha f$．第2項は $df=0$ で消える．",
   "idea": "2階微分は一般にテンソルでなく，1階微分が消える点でだけテンソルになる．原題の証明の反例を具体的に示させる．",
   "tags": "ヘッセ行列,テンソルの変換則,臨界点",
-  "input": "(1) すべて：0\n(2) 記述\n(3) 記述"
+  "input": "(1) すべて：0\n(2) 記述\n(3) 記述",
+  "id": "GR-01-022"
  },
  {
   "tid": "GR-TGR-003",
@@ -151,7 +161,8 @@
   "solution": "(1) $\\tilde g_{\\mu\\nu}=\\frac{\\partial x^\\alpha}{\\partial\\tilde x^\\mu}\\frac{\\partial x^\\beta}{\\partial\\tilde x^\\nu}g_{\\alpha\\beta}$ の行列式．\n\n(2) $\\sqrt g=\\dfrac{4R^2}{(1+\\rho^2)^2}$，$\\int_0^\\infty\\dfrac{4R^2\\cdot2\\pi\\rho\\,d\\rho}{(1+\\rho^2)^2}=\\boldsymbol{4\\pi R^2}$．",
   "idea": "$\\sqrt g\\,d^nx$ は座標によらない体積要素で，座標が変わってもヤコビアンが打ち消す．原題の変換則を，球面の面積の計算に使わせる．",
   "tags": "計量の行列式,ヤコビアン,立体射影,球面",
-  "input": "(1) 記述\n(2) 4 pi R ^(2)"
+  "input": "(1) 記述\n(2) 4 pi R ^(2)",
+  "id": "GR-01-023"
  },
  {
   "tid": "GR-TGR-004",
@@ -165,7 +176,8 @@
   "solution": "(1) 成分が定数で $g$ は $\\phi$ によらないのですべて $0$（$\\partial_\\phi$ は回転の対称性）．\n\n(2) $\\partial_\\theta g_{\\phi\\phi}=\\boldsymbol{2\\sin\\theta\\cos\\theta}$．流れで計量が変わり，キリングベクトルではない．",
   "idea": "リー微分が $0$ のベクトル場はキリングベクトルで，計量の対称性を表す．原題の公式の導出を，具体的な判定に使わせる．",
   "tags": "リー微分,キリングベクトル,球面",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-01-024"
  },
  {
   "tid": "GR-TGR-005",
@@ -179,7 +191,8 @@
   "solution": "(1) $dx\\wedge dy-dy\\wedge dx=\\boldsymbol{2\\,dx\\wedge dy}$．\n\n(2) $x\\,dy-y\\,dx=r^2d\\theta$．$d(r^2d\\theta)=2r\\,dr\\wedge d\\theta$．$dx\\wedge dy=r\\,dr\\wedge d\\theta$ なので一致．",
   "idea": "外微分は座標によらず，引き戻しと可換である．原題の一般的な証明を，具体的な形式で確かめさせる．",
   "tags": "外微分,引き戻し,微分形式,極座標",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-01-017"
  },
  {
   "tid": "GR-TGR-006",
@@ -193,7 +206,8 @@
   "solution": "(1) $d\\sigma_3=-\\sin\\theta\\,d\\theta\\wedge d\\phi$．$\\sigma_1\\wedge\\sigma_2=(-\\sin^2\\psi\\sin\\theta-\\cos^2\\psi\\sin\\theta)d\\theta\\wedge d\\phi=-\\sin\\theta\\,d\\theta\\wedge d\\phi$．\\hfill$\\square$\n\n(2) $\\sigma_1\\wedge\\sigma_2\\wedge\\sigma_3=-\\sin\\theta\\,d\\theta\\wedge d\\phi\\wedge d\\psi$．$\\frac18\\int\\sin\\theta\\,d\\theta\\,d\\phi\\,d\\psi=\\frac18\\cdot2\\cdot2\\pi\\cdot4\\pi=\\boldsymbol{2\\pi^2}$．",
   "idea": "$SU(2)\\simeq S^3$ の左不変形式は簡単な構造方程式をみたし，体積の計算も簡単になる．原題の構造方程式に，体積の計算を加えた．",
   "tags": "左不変形式,3次元球面,体積,オイラー角",
-  "input": "(1) 証明\n(2) 2 pi ^(2)"
+  "input": "(1) 証明\n(2) 2 pi ^(2)",
+  "id": "GR-01-025"
  },
  {
   "tid": "GR-TGR-007",
@@ -207,7 +221,8 @@
   "solution": "(1) $[\\partial_r,\\frac1r\\partial_\\theta]f=-\\frac1{r^2}\\partial_\\theta f$ より $\\boldsymbol{-\\frac1re_\\theta}$．\n\n(2) 座標基底なら交換子は $0$．双対基底 $f^\\theta=r\\,d\\theta$ は閉形式でなく（$df^\\theta=dr\\wedge d\\theta\\ne0$），どんな座標の微分にもならない．",
   "idea": "基底ベクトルが交換しないことは，その基底が座標から来ないことを意味する．原題の一般的な証明の代わりに，具体例で確かめさせる．",
   "tags": "交換子,正規直交基底,座標基底,非ホロノミック",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-01-018"
  },
  {
   "tid": "GR-TGR-008",
@@ -221,7 +236,8 @@
   "solution": "(1) 公式から与式．\n\n(2) テンソルなら1つの座標系で $0$ なら全座標系で $0$．非斉次項 $\\partial^2x/\\partial y\\partial y$ があるため．\n\n(3) 非斉次項は接続によらず，差では打ち消す．接続の空間はテンソルの空間を平行移動したもの．",
   "idea": "平坦な空間でも曲線座標ではクリストッフェル記号が $0$ でなく，接続がテンソルでないことがわかる．原題の一般的な変換則を，具体例で示させる．",
   "tags": "クリストッフェル記号,接続,変換則",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-01-019"
  },
  {
   "tid": "GR-TGR-009",
@@ -235,7 +251,8 @@
   "solution": "(1) $T^x{}_{xy}=a-0=\\boldsymbol a$．\n\n(2) $\\nabla_\\mu\\nabla_\\nu f=\\partial_\\mu\\partial_\\nu f-\\Gamma^\\rho{}_{\\mu\\nu}\\partial_\\rho f$．差は $-(\\Gamma^x{}_{xy}-\\Gamma^x{}_{yx})\\partial_xf=\\boldsymbol{-a\\partial_xf}$．",
   "idea": "ねじれは共変微分がスカラーに対しても交換しないことに現れる．原題の一般的な証明を具体例で確かめさせる．",
   "tags": "ねじれ,接続,共変微分",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-01-026"
  },
  {
   "tid": "GR-TGR-010",
@@ -249,7 +266,8 @@
   "solution": "(1) $\\Gamma^\\theta{}_{\\phi\\phi}=-\\sin\\theta\\cos\\theta$，$\\Gamma^\\phi{}_{\\theta\\phi}=\\cot\\theta$．$R^\\theta{}_{\\phi\\theta\\phi}=\\partial_\\theta\\Gamma^\\theta{}_{\\phi\\phi}-\\Gamma^\\theta{}_{\\phi\\phi}\\Gamma^\\phi{}_{\\phi\\theta}=-(\\cos^2\\theta-\\sin^2\\theta)+\\cos^2\\theta=\\boldsymbol{\\sin^2\\theta}$．\n\n(2) $R_{\\phi\\phi}=\\sin^2\\theta$，$R_{\\theta\\theta}=1$，$R=\\boldsymbol2$（$=2/a^2$）．\n\n(3) $\\sigma$ の和で $0$ でないのは $\\sigma=\\theta$：$\\boldsymbol{-\\sin^2\\theta\\,\\omega_\\theta}$．",
   "idea": "共変微分の交換子は曲率で決まる．原題の一般的な導出を，球面の具体的な曲率で確かめさせる．",
   "tags": "リーマンテンソル,リッチ恒等式,球面",
-  "input": "(1) sin ^2θ\n(2) 2\n(3) 記述"
+  "input": "(1) sin ^2θ\n(2) 2\n(3) 記述",
+  "id": "GR-02-019"
  },
  {
   "tid": "GR-TGR-011",
@@ -263,7 +281,8 @@
   "solution": "(1) 左辺の発散が恒等的に $0$ なので，右辺も保存しなければならない．\n\n(2) $G_{\\mu\\nu}=\\frac12Rg_{\\mu\\nu}-\\frac12Rg_{\\mu\\nu}=0$．\\hfill$\\square$\n\n(3) アインシュタイン方程式は $T_{\\mu\\nu}=0$ を課すだけで，計量を決めない．2次元のアインシュタイン＝ヒルベルト作用は位相不変量（ガウス＝ボンネ）．",
   "idea": "ビアンキ恒等式はエネルギー運動量の保存と結びつき，2次元ではアインシュタインテンソルが消える．原題の導出に，低次元の特殊性を加えた．",
   "tags": "アインシュタインテンソル,ビアンキ恒等式,2次元",
-  "input": "(1) 記述\n(2) 証明\n(3) 記述"
+  "input": "(1) 記述\n(2) 証明\n(3) 記述",
+  "id": "GR-02-020"
  },
  {
   "tid": "GR-TGR-012",
@@ -277,7 +296,8 @@
   "solution": "(1) $\\dfrac{dV^\\theta}{d\\phi}=\\sin\\theta_0\\cos\\theta_0V^\\phi$，$\\dfrac{dV^\\phi}{d\\phi}=-\\cot\\theta_0V^\\theta$．正規直交成分 $(V^\\theta,\\sin\\theta_0V^\\phi)$ は角速度 $\\cos\\theta_0$ で回る．\n\n(2) $2\\pi\\cos\\theta_0$ 回り，$2\\pi$ を引くと $-2\\pi(1-\\cos\\theta_0)$．大きさは北極側のキャップの面積 $\\boldsymbol{2\\pi(1-\\cos\\theta_0)}$．\n\n(3) $\\cos\\theta_0=0$ で回転しない．",
   "idea": "平行移動による回転角は，囲まれた領域の曲率の積分（ここでは面積）に等しい．原題の三角形の経路を，緯線に変えた．",
   "tags": "平行移動,ホロノミー,球面,立体角",
-  "input": "(1) 証明\n(2) 2 pi (1- cos θ_0)\n(3) 記述"
+  "input": "(1) 証明\n(2) 2 pi (1- cos θ_0)\n(3) 記述",
+  "id": "GR-02-021"
  },
  {
   "tid": "GR-TGR-013",
@@ -286,12 +306,13 @@
   "level": 2,
   "theme": "ライスナー＝ノルドシュトロムブラックホールの地平線と電荷の積分",
   "minutes": 30,
-  "q": "ライスナー＝ノルドシュトロム計量 $f^2=1-\\dfrac{2M}r+\\dfrac{Q^2+P^2}{r^2}$，$A=-\\dfrac Qrdt-P\\cos\\theta\\,d\\phi$ を考える．\n\\begin{enumerate}\n\\item 無限遠の球面で $\\frac1{4\\pi}\\int\\star F=Q$，$\\frac1{4\\pi}\\int F=P$ を示せ．\n\\item 地平線 $r_\\pm$ を求め，$Q=0.6M$，$P=0$ の値を求めよ．\n\\item $Q^2+P^2>M^2$ で何が起こるか．\n\\end{enumerate}",
-  "answer": "(1) 証明　(2) $r_\\pm=M\\pm\\sqrt{M^2-Q^2-P^2}$；$1.8M$，$0.2M$　(3) 地平線がなく裸の特異点",
-  "solution": "(1) $F=-\\frac{Q}{r^2}dt\\wedge dr+P\\sin\\theta\\,d\\theta\\wedge d\\phi$．$\\int P\\sin\\theta\\,d\\theta\\,d\\phi=4\\pi P$．$\\star F$ の角度部分は $Q\\sin\\theta\\,d\\theta\\wedge d\\phi$ で $4\\pi Q$．\n\n(2) $f^2=0$ の根：$\\boldsymbol{r_\\pm=M\\pm\\sqrt{M^2-Q^2-P^2}}$．$\\sqrt{1-0.36}=0.8$ で $\\boldsymbol{1.8M,\\ 0.2M}$．\n\n(3) 根がなく\\textbf{裸の特異点}（宇宙検閲官仮説で禁止）．",
+  "q": "ライスナー＝ノルドシュトロム計量 $f^2=1-\\dfrac{2M}r+\\dfrac{Q^2+P^2}{r^2}$，$A=-\\dfrac Qrdt-P\\cos\\theta\\,d\\phi$ を考える．\n\\begin{enumerate}\n\\item 無限遠の球面で $\\frac1{4\\pi}\\int\\star F=Q$，$\\frac1{4\\pi}\\int F=P$ を示せ．\n\\item 地平線 $r_\\pm$ を求め，$P=0$，$Q=kM$（$0<k<1$）のときの値を $k,M$ で表せ．\n\\item $Q^2+P^2>M^2$ で何が起こるか．\n\\end{enumerate}",
+  "answer": "(1) 証明　(2) $r_\\pm=M\\pm\\sqrt{M^2-Q^2-P^2}$；$r_+=M(1+\\sqrt{1-k^2})$，$r_-=M(1-\\sqrt{1-k^2})$　(3) 地平線がなく裸の特異点",
+  "solution": "(1) $F=-\\frac{Q}{r^2}dt\\wedge dr+P\\sin\\theta\\,d\\theta\\wedge d\\phi$．$\\int P\\sin\\theta\\,d\\theta\\,d\\phi=4\\pi P$．$\\star F$ の角度部分は $Q\\sin\\theta\\,d\\theta\\wedge d\\phi$ で $4\\pi Q$．\n\n(2) $f^2=0$ の根：$\\boldsymbol{r_\\pm=M\\pm\\sqrt{M^2-Q^2-P^2}}$．$Q=kM$，$P=0$ では $\\boldsymbol{r_\\pm=M(1\\pm\\sqrt{1-k^2})}$．$k\\to0$ で $r_+\\to2M$（シュワルツシルト），$r_-\\to0$．$k\\to1$（極限ブラックホール）で2つの地平線は $r=M$ で重なる．\n\n(3) 根がなく\\textbf{裸の特異点}（宇宙検閲官仮説で禁止）．",
   "idea": "電荷と磁荷は無限遠の球面上の積分で定義され，地平線の位置を決める．原題の積分の確認に，地平線の構造を加えた．",
   "tags": "ライスナー＝ノルドシュトロム解,地平線,電荷,磁荷",
-  "input": "(1) 証明\n(2) 記述\n(3) 記述"
+  "input": "(1) 証明\n(2) r_+：M(1+sqrt(1-k^2)) ; r_-：M(1-sqrt(1-k^2))\n(3) 記述",
+  "id": "GR-05-016"
  },
  {
   "tid": "GR-TGR-014",
@@ -305,7 +326,8 @@
   "solution": "(1) $X_\\phi=g_{\\phi\\phi}=\\boldsymbol{\\sin^2\\theta}$．\n\n(2) $\\nabla_\\theta X_\\phi=\\partial_\\theta X_\\phi-\\Gamma^\\phi{}_{\\theta\\phi}X_\\phi=2\\sin\\theta\\cos\\theta-\\cot\\theta\\sin^2\\theta=\\sin\\theta\\cos\\theta$．$\\nabla_\\phi X_\\theta=-\\Gamma^\\phi{}_{\\phi\\theta}X_\\phi=-\\sin\\theta\\cos\\theta$．和は $0$．$\\nabla_\\phi X_\\phi=-\\Gamma^\\theta{}_{\\phi\\phi}X_\\theta=0$．",
   "idea": "リー微分の共変微分による形はキリング方程式を与える．原題の公式の導出を，具体例の確認に変えた．",
   "tags": "キリング方程式,共変微分,リー微分",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-01-020"
  },
  {
   "tid": "GR-TGR-015",
@@ -319,7 +341,8 @@
   "solution": "(1) $\\boldsymbol{1,\\ 6,\\ 20,\\ 50}$．\n\n(2) 2次元は1成分で，対称性からこの形．球面で $\\boldsymbol{K=1/a^2}$，$\\boldsymbol{R=2/a^2}$．",
   "idea": "次元が上がるとリーマンテンソルの成分は急に増え，2次元では1つのスカラーで決まる．原題の数え上げに5次元と具体例を加えた．",
   "tags": "リーマンテンソル,独立成分,ガウス曲率",
-  "input": "(1) 記述\n(2) $K$：1/ a ^(2) ; $R$：2/ a ^(2)"
+  "input": "(1) 記述\n(2) $K$：1/ a ^(2) ; $R$：2/ a ^(2)",
+  "id": "GR-02-016"
  },
  {
   "tid": "GR-TGR-016",
@@ -333,7 +356,8 @@
   "solution": "(1) $\\mu,\\rho$ で縮約すると $R_{\\nu\\sigma}+\\alpha[(d-2)R_{\\nu\\sigma}+Rg_{\\nu\\sigma}]+\\beta(d-1)Rg_{\\nu\\sigma}$．係数を $0$ にして $1+\\alpha(d-2)=0$，$\\alpha+\\beta(d-1)=0$ から与式．\n\n(2) リーマン $-$ リッチ：$d=4$ で $20-10=\\boldsymbol{10}$，$d=5$ で $50-15=\\boldsymbol{35}$．\n\n(3) リッチは物質で決まり，ワイルは物質のない所の曲率（潮汐力，重力波）を担う．",
   "idea": "リーマンテンソルはリッチ部分とワイル部分に分かれ，後者が真空中の自由な重力場を表す．原題の係数の決定に，5次元の数え上げを加えた．",
   "tags": "ワイルテンソル,共形曲率,独立成分",
-  "input": "(1) $\\alpha$：-((1)/(d -2)) ; $\\beta$：((1)/((d -1)(d -2)))\n(2) 記述\n(3) 記述"
+  "input": "(1) $\\alpha$：-((1)/(d -2)) ; $\\beta$：((1)/((d -1)(d -2)))\n(2) 記述\n(3) 記述",
+  "id": "GR-02-025"
  },
  {
   "tid": "GR-TGR-017",
@@ -347,7 +371,8 @@
   "solution": "(1) $\\dfrac{48M^2}{64M^6}=\\boldsymbol{\\dfrac{3}{4M^4}}$：大きなブラックホールほど地平線の曲率は小さい．\n\n(2) $\\dfrac{2GM}{(2GM/c^2)^3}=\\dfrac{c^6}{4G^2M^2}$．$10M_\\odot$：$\\boldsymbol{\\approx1\\times10^8\\ \\mathrm{s^{-2}}}$（2 m の人に $10^8$ m/s$^2$），超巨大：$\\boldsymbol{6\\times10^{-4}}$（何も感じない）．",
   "idea": "曲率の不変量は地平線では特異でなく，その大きさは質量の2乗に反比例する．原題の恒等式の代わりに，物理的な意味のある曲率の評価を問う．",
   "tags": "クレッチマン不変量,潮汐力,事象の地平線",
-  "input": "(1) ((3)/(4 M ^(4)))\n(2) 記述"
+  "input": "(1) ((3)/(4 M ^(4)))\n(2) 記述",
+  "id": "GR-05-017"
  },
  {
   "tid": "GR-TGR-018",
@@ -361,7 +386,8 @@
   "solution": "(1) $L=-F\\dot t^2+F^{-1}\\dot r^2+\\cdots$ のオイラー＝ラグランジュ方程式から読みとる．\n\n(2) $F''=-4M/r^3$，$F'=2M/r^2$．$\\ddot\\xi^{\\hat i}=-R^{\\hat i}{}_{\\hat t\\hat j\\hat t}\\xi^{\\hat j}$ より動径 $\\boldsymbol{+2M\\xi/r^3}$，横 $\\boldsymbol{-M\\xi/r^3}$（ニュートン力学の潮汐力と同じ形）．",
   "idea": "正規直交系のリーマンテンソルの成分は潮汐力そのもので，シュワルツシルト時空ではニュートン力学の結果と一致する．原題の一般の $f(r)$ の計算を，シュワルツシルトの潮汐力に絞った．",
   "tags": "クリストッフェル記号,リーマンテンソル,測地線偏差,潮汐力",
-  "input": "(1) $\\Gamma^t{}_{tr}$：((F')/(2 F)) ; $\\Gamma^r{}_{tt}$：((F F')/(2)) ; $\\Gamma^r{}_{rr}$：-((F')/(2 F))\n(2) 動径：+((2 M)/(r ^(3))) ξ ; 横：-((M)/(r ^(3))) ξ"
+  "input": "(1) $\\Gamma^t{}_{tr}$：((F')/(2 F)) ; $\\Gamma^r{}_{tt}$：((F F')/(2)) ; $\\Gamma^r{}_{rr}$：-((F')/(2 F))\n(2) 動径：+((2 M)/(r ^(3))) ξ ; 横：-((M)/(r ^(3))) ξ",
+  "id": "GR-03-022"
  },
  {
   "tid": "GR-TGR-019",
@@ -375,7 +401,8 @@
   "solution": "(1) $t$ は循環座標：$x^2\\dot t=E$．$-x^2\\dot t^2+\\dot x^2=-1$ より $\\dot x^2=E^2/x^2-1$，$u=x^2$ で $\\dot u^2=4(E^2-u)$，$u=E^2-\\tau^2$．\\hfill$\\square$\n\n(2) $X^2-T^2=x^2=E^2-\\tau^2$．$\\tanh t=T/X$ と $x^2\\dot t=E$ から $T=\\tau$，$X=E$ が確かめられる．\\hfill$\\square$",
   "idea": "加速系（リンドラー座標）での複雑な測地線は，慣性系では静止した粒子にすぎない．原題の2次元の宇宙論的な計量を，リンドラー計量に変えた．",
   "tags": "リンドラー時空,測地線,保存量,加速系",
-  "input": "(1) 記述\n(2) 証明"
+  "input": "(1) 記述\n(2) 証明",
+  "id": "GR-01-027"
  },
  {
   "tid": "GR-TGR-020",
@@ -389,7 +416,8 @@
   "solution": "(1) $\\phi$ の変分：$R+\\dfrac{\\omega}{\\phi^2}(\\partial\\phi)^2-\\dfrac{2\\omega}{\\phi}\\Box\\phi=0$．計量の変分のトレースから $R$ を消去すると $(3+2\\omega)\\Box\\phi=8\\pi GT$．\\hfill$\\square$\n\n(2) 右辺が $1/\\omega$ で消え $\\phi$ は一定（$=1/G_{\\rm eff}$）に固定される．観測（カッシーニ）では $\\omega>4\\times10^4$．",
   "idea": "スカラー場と重力の結合は作用の変分から決まり，結合の強さを無限大にすると一般相対論に戻る．原題の場の方程式の導出を，極限の議論まで進めた．",
   "tags": "ブランス＝ディッケ理論,スカラーテンソル理論,作用の変分",
-  "input": "(1) 証明\n(2) 記述"
+  "input": "(1) 証明\n(2) 記述",
+  "id": "GR-02-026"
  },
  {
   "tid": "GR-TGR-021",
@@ -403,7 +431,8 @@
   "solution": "(1) 直交座標の $\\partial_x,\\partial_y$ を極座標で書いたもの．$J$ は回転．\n\n(2) 直交座標で $J=x\\partial_y-y\\partial_x$：$[J,\\partial_x]=\\partial_y$，$[J,\\partial_y]=-\\partial_x$，$[\\partial_x,\\partial_y]=0$．球面の so(3) で半径を無限大にした極限（縮約）．",
   "idea": "キリングベクトルは対称性の生成子で，リー代数をつくる．原題の球面の so(3) を，平面のユークリッド代数に変えた．",
   "tags": "キリングベクトル,リー代数,ユークリッド群",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-01-028"
  },
  {
   "tid": "GR-TGR-022",
@@ -412,12 +441,13 @@
   "level": 2,
   "theme": "キリングベクトルによるエネルギー保存と太陽表面の重力赤方偏移",
   "minutes": 25,
-  "q": "\\begin{enumerate}\n\\item キリングベクトル $K$ について，測地線に沿って $K_\\mu u^\\mu$ が保存することを示せ．\n\\item シュワルツシルト時空で $K=\\partial_t$ を使い，静止した観測者が測る光子の振動数が $\\nu\\propto(1-2GM/rc^2)^{-1/2}$ となることを示せ．\n\\item 太陽の表面から出た光の赤方偏移 $z$ を求めよ（$GM_\\odot/c^2R_\\odot=2.1\\times10^{-6}$）．\n\\end{enumerate}",
-  "answer": "(1) 証明　(2) 証明　(3) $z\\approx2.1\\times10^{-6}$",
-  "solution": "(1) $u^\\nu\\nabla_\\nu(K_\\mu u^\\mu)=u^\\mu u^\\nu\\nabla_\\nu K_\\mu=0$（キリング方程式の反対称性）．\\hfill$\\square$\n\n(2) $E=-K\\cdot p$ が保存．静止観測者の速度 $u=(1-2M/r)^{-1/2}\\partial_t$ で $\\nu\\propto-u\\cdot p=E(1-2M/r)^{-1/2}$．\\hfill$\\square$\n\n(3) $1+z=(1-2\\times2.1\\times10^{-6})^{-1/2}$，$\\boldsymbol{z\\approx2.1\\times10^{-6}}$．",
+  "q": "\\begin{enumerate}\n\\item キリングベクトル $K$ について，測地線に沿って $K_\\mu u^\\mu$ が保存することを示せ．\n\\item シュワルツシルト時空で $K=\\partial_t$ を使い，静止した観測者が測る光子の振動数が $\\nu\\propto(1-2GM/rc^2)^{-1/2}$ となることを示せ．\n\\item 質量 $M$，半径 $R$ の恒星（太陽など）の表面から出た光を遠方の静止観測者が受けるときの赤方偏移 $z$ を求め，$GM/(c^2R)$ の1次で近似せよ．\n\\end{enumerate}",
+  "answer": "(1) 証明　(2) 証明　(3) $z=\\left(1-\\dfrac{2GM}{c^2R}\\right)^{-1/2}-1$，1次で $z\\simeq\\dfrac{GM}{c^2R}$",
+  "solution": "(1) $u^\\nu\\nabla_\\nu(K_\\mu u^\\mu)=u^\\mu u^\\nu\\nabla_\\nu K_\\mu=0$（キリング方程式の反対称性）．\\hfill$\\square$\n\n(2) $E=-K\\cdot p$ が保存．静止観測者の速度 $u=(1-2M/r)^{-1/2}\\partial_t$ で $\\nu\\propto-u\\cdot p=E(1-2M/r)^{-1/2}$．\\hfill$\\square$\n\n(3) 表面の静止観測者と遠方の静止観測者で $E$ は共通なので，$\\nu_\\infty/\\nu_R=(1-2GM/c^2R)^{1/2}$．$1+z=\\nu_R/\\nu_\\infty$ より\n\\[ \\boldsymbol{z=\\left(1-\\frac{2GM}{c^2R}\\right)^{-1/2}-1\\simeq\\frac{GM}{c^2R}}. \\]\n太陽では $GM/(c^2R)$ は $2\\times10^{-6}$ 程度で，スペクトル線の位置のずれは速度に換算して約 $0.6\\ \\mathrm{km/s}$ に相当する．",
   "idea": "キリングベクトルの存在は測地線の保存量を与え，静的な時空ではエネルギー保存から重力赤方偏移が出る．原題の一般の保存流に，具体的な応用を加えた．",
   "tags": "キリングベクトル,保存量,重力赤方偏移",
-  "input": "(1) 証明\n(2) 証明\n(3) $z$：≈2.1e-6"
+  "input": "(1) 証明\n(2) 証明\n(3) $z$：(1-2 G M/(c^2 R))^(-1/2) - 1 ; 1次：G M/(c^2 R)",
+  "id": "GR-03-016"
  },
  {
   "tid": "GR-TGR-023",
@@ -431,7 +461,8 @@
   "solution": "(1) 2階微分が $K$ 自身で決まるので，曲線に沿って $K$ と $\\nabla K$ についての1階の常微分方程式になる．初期値で決まる．\n\n(2) $K_\\mu$ が $n$ 個，$\\nabla_\\mu K_\\nu$ は反対称で $\\frac{n(n-1)}2$ 個，和 $\\boldsymbol{\\frac{n(n+1)}2}$．\n\n(3) 球面：回転3つ．ミンコフスキー：並進4，ローレンツ6，計 $\\boldsymbol{10}$（ポアンカレ群）．",
   "idea": "キリングベクトルの2階微分の公式は，初期値問題としてキリングベクトルの数の上限を与える．原題の公式の導出を，数の上限の証明に変えた．",
   "tags": "キリングベクトル,最大対称空間,等長変換",
-  "input": "(1) 記述\n(2) 証明\n(3) 記述"
+  "input": "(1) 記述\n(2) 証明\n(3) 記述",
+  "id": "GR-01-037"
  },
  {
   "tid": "GR-TGR-024",
@@ -445,7 +476,8 @@
   "solution": "(1) $du=\\dfrac{dU}{\\cos^2U}$ などを代入．\n\n(2) $\\tan$ の値域から $\\boldsymbol{|U|,|V|<\\pi/2}$．光線は $U$ または $V$ が一定の $45^\\circ$ の線のまま．\n\n(3) $i^\\pm$：$U=V=\\pm\\frac\\pi2$（上下の頂点），$i^0$：左右の頂点，$\\mathscr I^\\pm$：辺．",
   "idea": "共形変換で無限遠を有限の境界に移すと，時空の因果構造が一目でわかる．原題のアインシュタイン静止宇宙への埋め込みを，2次元の簡単な場合で体験させる．",
   "tags": "ペンローズ図,共形コンパクト化,光円錐座標",
-  "input": "(1) 証明\n(2) 記述\n(3) 記述"
+  "input": "(1) 証明\n(2) 記述\n(3) 記述",
+  "id": "GR-01-029"
  },
  {
   "tid": "GR-TGR-025",
@@ -459,7 +491,8 @@
   "solution": "(1) $u_\\nu u^\\mu\\nabla_\\mu u^\\nu=\\frac12u^\\mu\\nabla_\\mu(u\\cdot u)=0$ を使うと $u_\\nu\\nabla_\\mu(\\rho u^\\mu u^\\nu)=-\\nabla_\\mu(\\rho u^\\mu)=0$．\\hfill$\\square$\n\n(2) $\\nabla_\\mu(\\rho u^\\mu)u^\\nu+\\rho u^\\mu\\nabla_\\mu u^\\nu=0$ の第1項は $0$ なので $\\rho\\ne0$ で $u^\\mu\\nabla_\\mu u^\\nu=0$．\\hfill$\\square$",
   "idea": "アインシュタイン方程式が保存則を要求するため，物質の運動方程式（測地線）は場の方程式から導かれる．原題の点粒子の議論を，連続体のダストで行わせる．",
   "tags": "ダスト,測地線,エネルギー運動量保存",
-  "input": "(1) 証明\n(2) 証明"
+  "input": "(1) 証明\n(2) 証明",
+  "id": "GR-01-030"
  },
  {
   "tid": "GR-TGR-026",
@@ -473,7 +506,8 @@
   "solution": "(1) $\\rho+P=\\boldsymbol0$：\\textbf{みたす}．\n\n(2) $\\rho\\geqq0$，$\\rho+P=\\dot\\phi^2\\geqq0$：\\textbf{みたす}．\n\n(3) $\\rho+P=(1+w)\\rho<0$：\\textbf{破る}（動く観測者に負のエネルギー密度が見える）．",
   "idea": "エネルギー条件はどんな観測者にもエネルギー密度が非負であることで，宇宙論のさまざまな物質の判定に使える．原題の一般的な条件を具体例に当てはめさせる．",
   "tags": "エネルギー条件,宇宙定数,スカラー場,ファントム",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-02-017"
  },
  {
   "tid": "GR-TGR-027",
@@ -482,12 +516,13 @@
   "level": 2,
   "theme": "線形化された重力場から太陽による光の曲がりを求める",
   "minutes": 30,
-  "q": "静止した質点 $M$ の線形化された計量は $ds^2=-(1-2\\Phi)dt^2+(1+2\\Phi)d\\boldsymbol x^2$，$\\Phi=GM/r$（$c=1$）である．\n\\begin{enumerate}\n\\item 光にとっての有効屈折率 $n\\approx1+2\\Phi$ を示せ．\n\\item 衝突径数 $b$ を通る光の曲がり角が $\\dfrac{4GM}{bc^2}$ であることを示し，太陽の縁をかすめる光の値を秒角で求めよ．\n\\item 線形近似が使える条件を述べよ．\n\\end{enumerate}",
-  "answer": "(1) 証明　(2) $1.75''$　(3) $r\\gg2GM/c^2$",
-  "solution": "(1) $ds^2=0$ で $\\dfrac{|d\\boldsymbol x|}{dt}=\\sqrt{\\dfrac{1-2\\Phi}{1+2\\Phi}}\\approx1-2\\Phi$．\\hfill$\\square$\n\n(2) 屈折率の勾配で曲がる：$\\delta=\\int\\nabla_\\perp n\\,dz=\\int\\dfrac{2GMb}{(b^2+z^2)^{3/2}}dz=\\dfrac{4GM}{b}$．太陽で $\\boldsymbol{1.75''}$（ニュートンの2倍）．\n\n(3) $\\Phi\\ll1$，すなわち $\\boldsymbol{r\\gg2GM/c^2}$．",
+  "q": "静止した質点 $M$ の線形化された計量は $ds^2=-(1-2\\Phi)dt^2+(1+2\\Phi)d\\boldsymbol x^2$，$\\Phi=GM/r$（$c=1$）である．\n\\begin{enumerate}\n\\item 光にとっての有効屈折率 $n\\approx1+2\\Phi$ を示せ．\n\\item 衝突径数 $b$ を通る光の曲がり角が $\\dfrac{4GM}{bc^2}$ であることを示し，質量 $M$，半径 $R$ の太陽の縁をかすめる光の曲がり角を求めよ（$c$ を戻して答えよ）．\n\\item 線形近似が使える条件を述べよ．\n\\end{enumerate}",
+  "answer": "(1) 証明　(2) $\\dfrac{4GM}{Rc^2}$　(3) $r\\gg2GM/c^2$",
+  "solution": "(1) $ds^2=0$ で $\\dfrac{|d\\boldsymbol x|}{dt}=\\sqrt{\\dfrac{1-2\\Phi}{1+2\\Phi}}\\approx1-2\\Phi$．\\hfill$\\square$\n\n(2) 屈折率の勾配で曲がる：$\\delta=\\int\\nabla_\\perp n\\,dz=\\int\\dfrac{2GMb}{(b^2+z^2)^{3/2}}dz=\\dfrac{4GM}{b}$．$c$ を戻すと $\\dfrac{4GM}{bc^2}$ で，太陽の縁では $b=R$ として $\\boldsymbol{\\dfrac{4GM}{Rc^2}}$（ニュートンの2倍）．実際の値は約 $1.75''$ である．\n\n(3) $\\Phi\\ll1$，すなわち $\\boldsymbol{r\\gg2GM/c^2}$．",
   "idea": "線形化された重力場は光に対して屈折率をもつ媒質のようにふるまい，空間部分の曲がりが曲がり角を2倍にする．原題の計量の導出を，光の曲がりの計算に応用した．",
   "tags": "線形化重力,光の曲がり,有効屈折率",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 曲がり角：4 G M/(R c^2)\n(3) 記述",
+  "id": "GR-03-017"
  },
  {
   "tid": "GR-TGR-028",
@@ -501,7 +536,8 @@
   "solution": "(1) $8\\pi\\times10^{-7}\\ \\mathrm{rad}\\approx\\boldsymbol{0.52''}$．\n\n(2) 円錐を切り開くと，ひもの両側を通る2本の直線の光が観測者に届く．角距離は観測者と天体の距離の比で $\\Delta$ より小さい．\n\n(3) 曲率が $0$ なのでニュートン的な引力がない（大域的な欠損角だけ）．",
   "idea": "宇宙ひもの時空は局所的に平坦な円錐で，効果は大域的な欠損角だけに現れる．原題の線形化の計算を，観測される効果の評価にした．",
   "tags": "宇宙ひも,欠損角,重力レンズ",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-04-017"
  },
  {
   "tid": "GR-TGR-029",
@@ -515,7 +551,8 @@
   "solution": "(1) $\\dfrac{4\\times4.43\\times10^{-3}\\times7.29\\times10^{-5}}{3\\times6.37\\times10^6}\\approx\\boldsymbol{6.8\\times10^{-14}\\ \\mathrm{rad/s}}$．\n\n(2) $\\times3.16\\times10^7\\ \\mathrm s\\times2.06\\times10^8$ mas/rad $\\approx\\boldsymbol{440}$ mas/yr．\n\n(3) 外部の引きずりは $R^3/r^3$ で弱まり，地球の慣性モーメントは球殻より小さい（$0.33MR^2$）．軌道の平均で約 $1/10$ になる．",
   "idea": "回転する物体は周りの慣性系を引きずり，その大きさは $GM/Rc^2$ と角速度の積で決まる．原題の線形化の解を，地球の値での見積もりに使わせる．",
   "tags": "レンズ＝ティリング効果,慣性系の引きずり,線形化重力",
-  "input": "(1) [rad/s]：≈6.8e-14\n(2) [mas/yr]：≈440\n(3) 記述"
+  "input": "(1) [rad/s]：≈6.8e-14\n(2) [mas/yr]：≈440\n(3) 記述",
+  "id": "GR-04-019"
  },
  {
   "tid": "GR-TGR-030",
@@ -529,7 +566,8 @@
   "solution": "(1) $\\boldsymbol{\\frac{d(d+1)}2}$．\n\n(2) ゲージ条件で $d$ 個，残りのゲージの自由度でさらに $d$ 個を消す：$\\frac{d(d+1)}2-2d=\\boldsymbol{\\frac{d(d-3)}2}$（光子の $d-2$ と同様の数え方）．\n\n(3) $\\boldsymbol{0,2,5}$．3次元の重力は局所的な自由度をもたない（真空ではリーマンテンソルがリッチテンソルで決まる）．",
   "idea": "ゲージ対称性は場の成分のうち物理的な自由度を減らす．原題のフィールツ＝パウリ作用の導出の代わりに，自由度の数え上げを問う．",
   "tags": "自由度,ゲージ対称性,重力子,フィールツ＝パウリ",
-  "input": "(1) ((d (d +1))/(2))\n(2) 記述\n(3) 記述"
+  "input": "(1) ((d (d +1))/(2))\n(2) 記述\n(3) 記述",
+  "id": "GR-04-018"
  },
  {
   "tid": "GR-TGR-031",
@@ -538,12 +576,13 @@
   "level": 1,
   "theme": "重力波による試験粒子の輪の変形と LIGO の腕の長さの変化",
   "minutes": 20,
-  "q": "$z$ 方向に進む $+$ 偏光の重力波 $h_{xx}=-h_{yy}=h_+\\cos\\omega(t-z)$ がある（TT ゲージ）．\n\\begin{enumerate}\n\\item $xy$ 面の試験粒子の輪の固有距離がどう変化するか述べよ．\n\\item $h_+=10^{-21}$ で長さ $4\\ \\mathrm{km}$ の腕の長さの変化を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $x$ 方向に $1+\\frac12h_+\\cos$，$y$ 方向に $1-\\frac12h_+\\cos$ 倍で楕円に交互に変形　(2) $\\approx2\\times10^{-18}\\ \\mathrm m$",
-  "solution": "(1) 固有距離 $\\sqrt{(1+h_{xx})}\\Delta x\\approx(1+\\frac12h_+\\cos)\\Delta x$．輪は「$+$」の向きに楕円になり交互に入れかわる．\n\n(2) $\\frac12\\times10^{-21}\\times4\\times10^3=\\boldsymbol{2\\times10^{-18}\\ \\mathrm m}$（陽子の大きさの $1/1000$）．",
+  "q": "$z$ 方向に進む $+$ 偏光の重力波 $h_{xx}=-h_{yy}=h\\cos\\omega(t-z)$ がある（TT ゲージ）．\n\\begin{enumerate}\n\\item $xy$ 面の試験粒子の輪の固有距離がどう変化するか述べよ．\n\\item $x$ 方向に置いた長さ $L$ の腕の長さの変化の最大値を $h,L$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $x$ 方向に $1+\\frac12h\\cos$，$y$ 方向に $1-\\frac12h\\cos$ 倍で楕円に交互に変形　(2) $\\dfrac{hL}{2}$",
+  "solution": "(1) 固有距離 $\\sqrt{(1+h_{xx})}\\Delta x\\approx(1+\\frac12h\\cos)\\Delta x$．輪は「$+$」の向きに楕円になり交互に入れかわる．\n\n(2) (1) より $\\boldsymbol{\\frac12hL}$．$h\\sim10^{-21}$，$L$ が数 km なら $10^{-18}\\,\\mathrm m$ 程度（陽子の大きさの $1/1000$）である．",
   "idea": "TT ゲージでは重力波は直交する2方向を逆向きに伸縮させる．原題のゲージ条件の議論を，観測される変形の大きさにした．",
   "tags": "TTゲージ,重力波の偏光,干渉計",
-  "input": "(1) 記述\n(2) [m]：≈2e-18"
+  "input": "(1) 記述\n(2) 腕の長さの変化：h L/2",
+  "id": "GR-04-016"
  },
  {
   "tid": "GR-TGR-032",
@@ -552,12 +591,13 @@
   "level": 3,
   "theme": "連星中性子星の円軌道近似の合体時間とチャープ質量",
   "minutes": 35,
-  "q": "円軌道の連星の合体時間は $T=\\dfrac{5}{256}\\dfrac{c^5R_0^4}{G^3m_1m_2(m_1+m_2)}$ である．\n\\begin{enumerate}\n\\item $1.4M_\\odot$ の中性子星2つが周期 $7.75$ 時間の円軌道にあるとき，軌道半径と合体時間を求めよ．\n\\item チャープ質量 $\\mathcal M=\\dfrac{(m_1m_2)^{3/5}}{(m_1+m_2)^{1/5}}$ を求めよ．\n\\item 実際の連星パルサー（離心率 $0.62$）の合体時間は約 $3$ 億年である．(1) との違いの理由を述べよ．\n\\end{enumerate}",
-  "answer": "(1) $R\\approx1.9\\times10^9\\ \\mathrm m$，$T\\approx1.7\\times10^9$ 年　(2) $\\approx1.22M_\\odot$　(3) 離心率が大きいと近点で強く放射する",
-  "solution": "(1) ケプラーの法則 $R^3=GM(P/2\\pi)^2$ で $\\boldsymbol{1.9\\times10^9\\ \\mathrm m}$．$T\\approx\\boldsymbol{1.7\\times10^9}$ 年．\n\n(2) $\\boldsymbol{1.22M_\\odot}$（$2^{-1/5}\\times1.4$）．\n\n(3) 放射は $R^{-5}$ に強く依存し，離心率の大きい軌道では近点の寄与が大きく，合体が約5倍速い（ピーターズの因子）．",
-  "idea": "重力波の放射による軌道の縮小は質量と距離の強いべきで決まる．原題の 30 太陽質量のブラックホールの見積もりを，連星パルサーの数値に変えた．",
+  "q": "円軌道の連星の合体時間は $T=\\dfrac{5}{256}\\dfrac{c^5R_0^4}{G^3m_1m_2(m_1+m_2)}$ である（$R_0$：はじめの軌道半径）．\n\\begin{enumerate}\n\\item 質量 $m$ の中性子星2つが周期 $P$ の円軌道にあるとき，軌道半径 $R_0$ と合体時間 $T$ を $G,c,m,P$ で表せ．\n\\item 2つの質量がともに $m$ のとき，チャープ質量 $\\mathcal M=\\dfrac{(m_1m_2)^{3/5}}{(m_1+m_2)^{1/5}}$ を $m$ で表せ．\n\\item 実際の連星パルサー（離心率 $0.62$）の合体時間は，同じ周期の円軌道として (1) で見積もった値の約 $1/5$ である．違いの理由を述べよ．\n\\end{enumerate}",
+  "answer": "(1) $R_0=\\left(\\dfrac{GmP^2}{2\\pi^2}\\right)^{1/3}$，$T=\\dfrac{5c^5}{512G^3m^3}\\left(\\dfrac{GmP^2}{2\\pi^2}\\right)^{4/3}$　(2) $2^{-1/5}m$　(3) 離心率が大きいと近点で強く放射する",
+  "solution": "(1) ケプラーの法則 $R_0^3=G(2m)\\left(\\dfrac{P}{2\\pi}\\right)^2$ より $\\boldsymbol{R_0=\\left(\\dfrac{GmP^2}{2\\pi^2}\\right)^{1/3}}$．$m_1m_2(m_1+m_2)=2m^3$ なので\n\\[T=\\frac{5c^5R_0^4}{512G^3m^3}=\\boldsymbol{\\frac{5c^5}{512G^3m^3}\\left(\\frac{GmP^2}{2\\pi^2}\\right)^{4/3}}.\\]\n$T\\propto P^{8/3}m^{-5/3}$ である．$m=1.4M_\\odot$，$P$ が 8 時間程度なら $R_0\\sim2\\times10^9\\ \\mathrm m$，$T\\sim10^9$ 年になる．\n\n(2) $\\mathcal M=\\dfrac{m^{6/5}}{(2m)^{1/5}}=\\boldsymbol{2^{-1/5}m}$（約 $0.87m$）．\n\n(3) 放射は $R^{-5}$ に強く依存し，離心率の大きい軌道では近点の寄与が大きく，合体が約5倍速い（ピーターズの因子）．",
+  "idea": "重力波の放射による軌道の縮小は質量と距離の強いべきで決まり，合体時間は $T\\propto P^{8/3}m^{-5/3}$．離心率が大きいと近点での放射で合体が速まる．",
   "tags": "重力波放射,連星,合体時間,チャープ質量",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) R_0：(G m P^2/(2 pi^2))^(1/3) ; T：5 c^5/(512 G^3 m^3) (G m P^2/(2 pi^2))^(4/3)\n(2) 2^(-1/5) m\n(3) 記述",
+  "id": "GR-04-020"
  },
  {
   "tid": "GR-TST-001",
@@ -571,7 +611,8 @@
   "solution": "(1) $\\nabla^2\\ln(1+r^2)=\\frac{4}{(1+r^2)^2}$ より $\\nabla^2\\phi=-\\frac4{(1+r^2)^2}$，$R=-2\\frac{(1+r^2)^2}4\\cdot\\left(-\\frac4{(1+r^2)^2}\\right)=2$．\n\n(2) 面積 $4\\pi$ で $8\\pi=4\\pi\\times2$．",
   "idea": "世界面の曲率の積分はオイラー標数になり，弦の摂動展開の次数を数える．原題の公式の導出に，球面での検証を加えた．",
   "tags": "リッチスカラー,共形平坦,ガウス＝ボンネの定理,オイラー標数",
-  "input": "(1) $R$：2\n(2) 記述"
+  "input": "(1) $R$：2\n(2) 記述",
+  "id": "GR-02-022"
  },
  {
   "tid": "GR-TST-002",
@@ -585,7 +626,8 @@
   "solution": "(2) $\\frac{D-26}6+\\alpha'V^2=0$．\n\n(3) 第2回の線形ディラトンの問題と一致：世界面の共形不変性と時空の運動方程式が同じ条件．",
   "idea": "時空の運動方程式は世界面の共形不変性そのものである．原題のベータ関数の確認を，具体的な解と世界面の視点の一致にした．",
   "tags": "ベータ関数,線形ディラトン,臨界次元,低エネルギー有効作用",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-02-023"
  },
  {
   "tid": "GR-TST-003",
@@ -599,7 +641,8 @@
   "solution": "(1) $8/(D-2)$ と $4/(D-2)$ に代入．\n\n(2) $D=10$ ではすでに $-\\frac12(\\partial\\tilde\\Phi)^2$．",
   "idea": "フレームの変換で重力とディラトンが分離し，次元により係数が変わる．原題の一般の導出に具体値を加えた．",
   "tags": "アインシュタインフレーム,弦フレーム,ディラトン,共形変換",
-  "input": "(1) 記述\n(2) 記述"
+  "input": "(1) 記述\n(2) 記述",
+  "id": "GR-02-018"
  },
  {
   "tid": "GR-TST-004",
@@ -613,7 +656,8 @@
   "solution": "(1) $f^{-1}\\approx1-\\frac{g_s^2Nl_s^{22}}{r^{22}}$．\n\n(2) $Tf^{-1}-T(f^{-1}-1)=T$．\n\n(3) $Tf^{-1}+T(f^{-1}-1)$ で $r$ 依存が2倍．",
   "idea": "重力と $B$ 場の力が打ち消し合うのは BPS 状態の特徴である．原題の打ち消しに，逆向きの場合を加えた．",
   "tags": "プローブ弦,BPS,力のつり合い,B場",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-02-027"
  },
  {
   "tid": "SR-MEC-017",
@@ -627,7 +671,8 @@
   "solution": "(1) $\\partial_\\mu(\\rho_0u^\\mu u^\\nu)=u^\\nu\\partial_\\mu(\\rho_0u^\\mu)+\\rho_0u^\\mu\\partial_\\mu u^\\nu=0$．$u_\\nu$ を掛けて和をとると，$u_\\nu u^\\nu=-c^2$ と $u_\\nu\\partial_\\mu u^\\nu=\\frac12\\partial_\\mu(u_\\nu u^\\nu)=0$ より $-c^2\\partial_\\mu(\\rho_0u^\\mu)=0$．よって連続の式が成り立ち，それを元の式に戻すと $\\rho_0u^\\mu\\partial_\\mu u^\\nu=0$，すなわち $du^\\nu/d\\tau=0$（各粒子は等速直線運動）．\n\n(2) 速度 $\\boldsymbol v=\\boldsymbol r/t$ の粒子の固有時は（原点から出発して）$\\tau=t/\\gamma=\\sqrt{t^2-r^2/c^2}$．$u^\\mu=\\gamma(c,\\boldsymbol v)=\\dfrac{t}{\\tau}\\left(c,\\dfrac{\\boldsymbol r}{t}\\right)=\\dfrac{x^\\mu}{\\tau}$．（$u^\\mu\\partial_\\mu u^\\nu$ は $x^\\mu\\partial_\\mu$ が斉次 0 次の関数 $x^\\nu/\\tau$ に作用するので Euler の定理より 0 で，(1)の条件も満たす．）\n$\\rho_0u^\\mu=Kx^\\mu\\tau^{-4}$．$\\partial_\\mu x^\\mu=4$，$\\tau^{-4}$ は $x^\\mu$ の $-4$ 次斉次関数なので $x^\\mu\\partial_\\mu\\tau^{-4}=-4\\tau^{-4}$．よって\n\\[ \\partial_\\mu(Kx^\\mu\\tau^{-4})=K(4\\tau^{-4}-4\\tau^{-4})=0 . \\]\n\n(3) $T^{00}=\\rho_0(u^0)^2=\\gamma^2\\rho_0c^2$．$r=\\beta ct$ と変数変換すると $d^3x=4\\pi c^3t^3\\beta^2d\\beta$，$\\rho_0=K\\gamma^3/t^3$ なので\n\\[ \\int_{r<Vt}T^{00}d^3x=\\int_0^{\\beta_V}\\gamma^2\\frac{K\\gamma^3}{t^3}c^2\\cdot4\\pi c^3t^3\\beta^2d\\beta=4\\pi Kc^5\\int_0^{\\beta_V}\\frac{\\beta^2d\\beta}{(1-\\beta^2)^{5/2}}=\\frac{4\\pi}{3}Kc^5\\frac{\\beta_V^3}{(1-\\beta_V^2)^{3/2}}. \\]\n（$\\frac{d}{d\\beta}\\frac{\\beta^3}{3(1-\\beta^2)^{3/2}}=\\frac{\\beta^2}{(1-\\beta^2)^{5/2}}$．）$t$ が消えるのは，速さ $v<V$ の粒子の集合は時間がたっても同じで，各粒子のエネルギーが一定だからである．\n$\\gamma^2$ の理由：粒子 1 個のエネルギーは静止時の $\\gamma$ 倍，さらに運動方向に体積が $1/\\gamma$ に収縮して数密度が $\\gamma$ 倍になるので，エネルギー密度は $\\gamma^2$ 倍．",
   "idea": "ダストの $\\partial_\\mu T^{\\mu\\nu}=0$ は「連続の式＋測地線（自由運動）」と同値．爆発的に飛び散るダスト（Milne 解）では $\\rho_0\\propto\\tau^{-3}$ となり，$T^{00}\\propto\\gamma^2$ の意味が具体的にわかる．",
   "tags": "エネルギー運動量テンソル,ダスト,連続の式,Milne宇宙,4元速度",
-  "input": "(1) 証明\n(2) 記述\n(3) 記述"
+  "input": "(1) 証明\n(2) 記述\n(3) 記述",
+  "id": "GR-02-028"
  },
  {
   "tid": "SR-MEC-018",
@@ -641,7 +686,8 @@
   "solution": "(1) $u^\\mu=\\gamma(c,v,0,0)$．\n\\[ T^{00}=\\frac{\\varepsilon+p}{c^2}\\gamma^2c^2-p=\\gamma^2(\\varepsilon+p)-p=\\gamma^2(\\varepsilon+\\beta^2p), \\]\n\\[ T^{0x}=\\frac{\\varepsilon+p}{c^2}\\gamma^2cv\\ \\Rightarrow\\ g^x=\\frac{T^{0x}}{c}=\\gamma^2\\frac{(\\varepsilon+p)v}{c^2}. \\]\n慣性を担う密度は $\\varepsilon/c^2$ ではなく $(\\varepsilon+p)/c^2$ である．\n\n(2) 箱の体積は $V_0/\\gamma$．$p=\\varepsilon/3$ を代入して\n\\[ E=\\gamma^2\\left(1+\\frac{\\beta^2}{3}\\right)\\varepsilon\\cdot\\frac{V_0}{\\gamma}=\\gamma\\left(1+\\frac{\\beta^2}{3}\\right)E_0,\\qquad G=\\gamma^2\\frac{4\\varepsilon}{3}\\frac{v}{c^2}\\cdot\\frac{V_0}{\\gamma}=\\frac43\\gamma\\frac{E_0v}{c^2}. \\]\n質点の値と比べ，運動量は $4/3$ 倍，エネルギーは $\\gamma\\beta^2E_0/3$ 多い（古典電子論の「4/3 問題」と同じ構造）．原因は，放射の圧力を支えるために箱の壁に張力（負の圧力）がかかっており，閉じた系はその応力まで含めてはじめて $\\partial_\\mu T^{\\mu\\nu}=0$ を満たすことにある．壁の応力の寄与は $\\int T^{0x}_\\text{壁}=-\\frac13\\gamma E_0v/c^2$，$\\int T^{00}_\\text{壁}=-\\frac13\\gamma\\beta^2E_0$ で，合計すると $(E,\\ Gc)$ は $\\gamma E_0(1,\\beta)$ という正しい 4 元ベクトルになる．（静止系で全応力の体積積分が 0 になるという von Laue の定理．）\n\n(3) 静止背景 $\\varepsilon_0,p_0$ のまわりに $\\varepsilon=\\varepsilon_0+\\delta\\varepsilon$，速度 $\\boldsymbol v$（微小）とすると，1 次まで $T^{00}=\\varepsilon$，$T^{0i}=(\\varepsilon_0+p_0)v^i/c$，$T^{ij}=p\\,\\delta^{ij}$．\n\\[ \\nu=0:\\ \\frac1c\\partial_t\\delta\\varepsilon+\\frac{\\varepsilon_0+p_0}{c}\\nabla\\cdot\\boldsymbol v=0,\\qquad \\nu=i:\\ \\frac{\\varepsilon_0+p_0}{c^2}\\partial_t\\boldsymbol v+\\nabla\\delta p=0 . \\]\n$\\delta p=(dp/d\\varepsilon)\\delta\\varepsilon$ として，第1式を $t$ で微分し第2式の発散を代入すると\n\\[ \\partial_t^2\\delta\\varepsilon=c^2\\frac{dp}{d\\varepsilon}\\nabla^2\\delta\\varepsilon . \\]\nよって波の速さは $c_s=c\\sqrt{dp/d\\varepsilon}$．光子気体では $dp/d\\varepsilon=1/3$ で $c_s=c/\\sqrt3\\approx0.577c$．（$p=\\varepsilon$ の極限で $c_s=c$ となり，因果律から $dp/d\\varepsilon\\le1$ が必要．）",
   "idea": "完全流体の慣性密度は $(\\varepsilon+p)/c^2$．放射を閉じ込めた箱では流体部分だけでは4元ベクトルにならず（4/3問題），壁の応力が必要．線形化すれば相対論的音速 $c\\sqrt{dp/d\\varepsilon}$ が出る．",
   "tags": "完全流体,エネルギー運動量テンソル,4/3問題,von Laueの定理,相対論的音速,光子気体",
-  "input": "(1) $T^{00}$：γ ^(2)(ε + β ^(2) p) ; $g^x$：γ ^(2)(ε + p) v / c ^(2)\n(2) 記述\n(3) $c_s$：c/sqrt(3)"
+  "input": "(1) $T^{00}$：γ ^(2)(ε + β ^(2) p) ; $g^x$：γ ^(2)(ε + p) v / c ^(2)\n(2) 記述\n(3) $c_s$：c/sqrt(3)",
+  "id": "GR-02-029"
  },
  {
   "tid": "GR-GEN-002",
@@ -650,12 +696,13 @@
   "level": 3,
   "theme": "回転系の計量・Coriolis力とSagnac効果",
   "minutes": 35,
-  "q": "慣性系の円柱座標 $(t,\\rho,\\varphi_I,z)$ での計量 $ds^2=-c^2dt^2+d\\rho^2+\\rho^2d\\varphi_I^2+dz^2$ から，$z$ 軸のまわりに角速度 $\\omega$ で回転する座標 $\\varphi=\\varphi_I-\\omega t$ に移る．\n\\begin{enumerate}\n\\item 回転座標 $(t,\\rho,\\varphi,z)$ での計量成分 $g_{tt},\\,g_{t\\varphi}$ を求めよ．\n\\item Christoffel 記号 $\\Gamma^\\rho{}_{tt},\\ \\Gamma^\\rho{}_{t\\varphi},\\ \\Gamma^\\rho{}_{\\varphi\\varphi}$ を求め，速さが $c$ に比べて小さいときの測地線方程式の $\\rho$ 成分から，遠心力と Coriolis 力に対応する項を読み取れ．\n\\item 回転座標で静止した半径 $R$ のリング状光ファイバーに沿って，光を $+\\varphi$ 向きと $-\\varphi$ 向きに一周させる．$ds^2=0$ を用いて，リング上に静止した時計で測った到着時刻の差 $\\Delta\\tau$ を厳密に求めよ．\n\\item 面積 $A=0.010\\ {\\rm m^2}$ のコイルを $N=1000$ 回巻いた光ファイバージャイロが地球自転（$\\omega=7.29\\times10^{-5}\\ {\\rm rad/s}$，回転軸に垂直に設置）を検出するときの $\\Delta\\tau$ を，$\\omega R\\ll c$ として数値で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$　(2) $\\Gamma^\\rho{}_{tt}=-\\omega^2\\rho$，$\\Gamma^\\rho{}_{t\\varphi}=-\\omega\\rho$，$\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho$；$\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi$　(3) $\\Delta\\tau=\\dfrac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}}$　(4) $\\Delta\\tau\\approx4NA\\omega/c^2\\approx3.2\\times10^{-20}\\ {\\rm s}$",
-  "solution": "(1) $d\\varphi_I=d\\varphi+\\omega dt$ を代入すると\n\\[\nds^2=-(c^2-\\omega^2\\rho^2)dt^2+2\\omega\\rho^2\\,d\\varphi\\,dt+d\\rho^2+\\rho^2d\\varphi^2+dz^2 .\n\\]\nよって $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$，$g_{\\rho\\rho}=g_{zz}=1$，$g_{\\varphi\\varphi}=\\rho^2$．\n\n(2) $g_{\\rho\\rho}=1$ で $g_{\\rho\\mu}=0\\ (\\mu\\ne\\rho)$ だから $\\Gamma^\\rho{}_{\\mu\\nu}=-\\tfrac12\\partial_\\rho g_{\\mu\\nu}$．\n\\[\n\\Gamma^\\rho{}_{tt}=-\\tfrac12\\partial_\\rho(-c^2+\\omega^2\\rho^2)=-\\omega^2\\rho,\\quad\n\\Gamma^\\rho{}_{t\\varphi}=-\\tfrac12\\partial_\\rho(\\omega\\rho^2)=-\\omega\\rho,\\quad\n\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho .\n\\]\n低速では $d\\tau\\simeq dt$ として測地線方程式 $\\ddot x^\\rho+\\Gamma^\\rho{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$（$\\dot{}=d/dt$, $\\dot t=1$）より\n\\[\n\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi .\n\\]\n第1項は極座標の通常の遠心項，$\\omega^2\\rho$ が回転系の遠心力，$2\\omega\\rho\\dot\\varphi$ が Coriolis 力（$-2\\boldsymbol\\omega\\times\\boldsymbol v$ の動径成分）である．すなわち慣性力は $g_{tt}$ の $\\rho$ 依存（遠心力）と非対角成分 $g_{t\\varphi}$（Coriolis 力）から生じる．\n\n(3) $\\rho=R$, $dz=0$ で $ds^2=0$：\n\\[\n(c^2-\\omega^2R^2)dt^2-2\\omega R^2\\,d\\varphi\\,dt-R^2d\\varphi^2=0\n\\Rightarrow dt=\\frac{\\omega R^2d\\varphi\\pm Rc\\,|d\\varphi|}{c^2-\\omega^2R^2}.\n\\]\n$dt>0$ をとると $+\\varphi$ 向きでは $dt=\\dfrac{R\\,d\\varphi}{c-\\omega R}$，$-\\varphi$ 向きでは $dt=\\dfrac{R\\,|d\\varphi|}{c+\\omega R}$．一周の座標時の差は\n\\[\n\\Delta t=2\\pi R\\Bigl(\\frac1{c-\\omega R}-\\frac1{c+\\omega R}\\Bigr)=\\frac{4\\pi R^2\\omega}{c^2-\\omega^2R^2}.\n\\]\nリング上の静止時計は $d\\tau=\\sqrt{-g_{tt}}\\,dt/c=\\sqrt{1-\\omega^2R^2/c^2}\\,dt$ なので\n\\[\n\\Delta\\tau=\\frac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}} .\n\\]\n(4) $\\omega R\\ll c$ で $\\Delta\\tau\\simeq4(\\pi R^2)\\omega/c^2$，一般の閉曲線では $4A\\omega/c^2$．$N$ 巻きで\n\\[\n\\Delta\\tau=\\frac{4NA\\omega}{c^2}=\\frac{4\\times1000\\times0.010\\times7.29\\times10^{-5}}{(3.00\\times10^8)^2}\\approx3.2\\times10^{-20}\\ {\\rm s}.\n\\]",
+  "q": "慣性系の円柱座標 $(t,\\rho,\\varphi_I,z)$ での計量 $ds^2=-c^2dt^2+d\\rho^2+\\rho^2d\\varphi_I^2+dz^2$ から，$z$ 軸のまわりに角速度 $\\omega$ で回転する座標 $\\varphi=\\varphi_I-\\omega t$ に移る．\n\\begin{enumerate}\n\\item 回転座標 $(t,\\rho,\\varphi,z)$ での計量成分 $g_{tt},\\,g_{t\\varphi}$ を求めよ．\n\\item Christoffel 記号 $\\Gamma^\\rho{}_{tt},\\ \\Gamma^\\rho{}_{t\\varphi},\\ \\Gamma^\\rho{}_{\\varphi\\varphi}$ を求め，速さが $c$ に比べて小さいときの測地線方程式の $\\rho$ 成分から，遠心力と Coriolis 力に対応する項を読み取れ．\n\\item 回転座標で静止した半径 $R$ のリング状光ファイバーに沿って，光を $+\\varphi$ 向きと $-\\varphi$ 向きに一周させる．$ds^2=0$ を用いて，リング上に静止した時計で測った到着時刻の差 $\\Delta\\tau$ を厳密に求めよ．\n\\item 面積 $A$ のコイルを $N$ 回巻いた光ファイバージャイロ（コイル面を回転軸に垂直に設置）が角速度 $\\omega$ の回転を検出するときの $\\Delta\\tau$ を，$\\omega R\\ll c$ として $N,A,\\omega,c$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$　(2) $\\Gamma^\\rho{}_{tt}=-\\omega^2\\rho$，$\\Gamma^\\rho{}_{t\\varphi}=-\\omega\\rho$，$\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho$；$\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi$　(3) $\\Delta\\tau=\\dfrac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}}$　(4) $\\Delta\\tau=\\dfrac{4NA\\omega}{c^2}$",
+  "solution": "(1) $d\\varphi_I=d\\varphi+\\omega dt$ を代入すると\n\\[\nds^2=-(c^2-\\omega^2\\rho^2)dt^2+2\\omega\\rho^2\\,d\\varphi\\,dt+d\\rho^2+\\rho^2d\\varphi^2+dz^2 .\n\\]\nよって $g_{tt}=-(c^2-\\omega^2\\rho^2)$，$g_{t\\varphi}=\\omega\\rho^2$，$g_{\\rho\\rho}=g_{zz}=1$，$g_{\\varphi\\varphi}=\\rho^2$．\n\n(2) $g_{\\rho\\rho}=1$ で $g_{\\rho\\mu}=0\\ (\\mu\\ne\\rho)$ だから $\\Gamma^\\rho{}_{\\mu\\nu}=-\\tfrac12\\partial_\\rho g_{\\mu\\nu}$．\n\\[\n\\Gamma^\\rho{}_{tt}=-\\tfrac12\\partial_\\rho(-c^2+\\omega^2\\rho^2)=-\\omega^2\\rho,\\quad\n\\Gamma^\\rho{}_{t\\varphi}=-\\tfrac12\\partial_\\rho(\\omega\\rho^2)=-\\omega\\rho,\\quad\n\\Gamma^\\rho{}_{\\varphi\\varphi}=-\\rho .\n\\]\n低速では $d\\tau\\simeq dt$ として測地線方程式 $\\ddot x^\\rho+\\Gamma^\\rho{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$（$\\dot{}=d/dt$, $\\dot t=1$）より\n\\[\n\\ddot\\rho=\\rho\\dot\\varphi^2+\\omega^2\\rho+2\\omega\\rho\\dot\\varphi .\n\\]\n第1項は極座標の通常の遠心項，$\\omega^2\\rho$ が回転系の遠心力，$2\\omega\\rho\\dot\\varphi$ が Coriolis 力（$-2\\boldsymbol\\omega\\times\\boldsymbol v$ の動径成分）である．すなわち慣性力は $g_{tt}$ の $\\rho$ 依存（遠心力）と非対角成分 $g_{t\\varphi}$（Coriolis 力）から生じる．\n\n(3) $\\rho=R$, $dz=0$ で $ds^2=0$：\n\\[\n(c^2-\\omega^2R^2)dt^2-2\\omega R^2\\,d\\varphi\\,dt-R^2d\\varphi^2=0\n\\Rightarrow dt=\\frac{\\omega R^2d\\varphi\\pm Rc\\,|d\\varphi|}{c^2-\\omega^2R^2}.\n\\]\n$dt>0$ をとると $+\\varphi$ 向きでは $dt=\\dfrac{R\\,d\\varphi}{c-\\omega R}$，$-\\varphi$ 向きでは $dt=\\dfrac{R\\,|d\\varphi|}{c+\\omega R}$．一周の座標時の差は\n\\[\n\\Delta t=2\\pi R\\Bigl(\\frac1{c-\\omega R}-\\frac1{c+\\omega R}\\Bigr)=\\frac{4\\pi R^2\\omega}{c^2-\\omega^2R^2}.\n\\]\nリング上の静止時計は $d\\tau=\\sqrt{-g_{tt}}\\,dt/c=\\sqrt{1-\\omega^2R^2/c^2}\\,dt$ なので\n\\[\n\\Delta\\tau=\\frac{4\\pi R^2\\omega}{c^2\\sqrt{1-\\omega^2R^2/c^2}} .\n\\]\n(4) $\\omega R\\ll c$ で $\\Delta\\tau\\simeq4(\\pi R^2)\\omega/c^2$，一般の閉曲線では $4A\\omega/c^2$（$g_{t\\varphi}$ の周回積分が囲む面積に比例する）．$N$ 巻きでは光が $N$ 周するので\n\\[\n\\boldsymbol{\\Delta\\tau=\\frac{4NA\\omega}{c^2}} .\n\\]\n地球自転程度の角速度では $\\Delta\\tau$ は $10^{-20}\\ \\mathrm{s}$ 程度ときわめて小さく，実際のジャイロでは時間差を光の位相差 $2\\pi c\\Delta\\tau/\\lambda$ として干渉で検出する．",
   "idea": "回転座標の計量の非対角成分 $g_{t\\varphi}$ が Coriolis 力を生み，同じ成分が光の往復時間差（Sagnac 効果）として計量から直接読み取れる．",
   "tags": "回転座標系,Christoffel記号,Coriolis力,Sagnac効果,光ファイバージャイロ",
-  "input": "(1) $g_{tt}$：-(c ^(2)- ω ^(2) ρ ^(2)) ; $g_{t\\varphi}$：ω ρ ^(2)\n(2) 記述\n(3) $\\Delta\\tau$：((4 pi R ^(2) ω)/(c ^(2) sqrt(1- ω ^(2) R ^(2)/ c ^(2))))\n(4) $\\Delta\\tau$ [s]：≈3.2e-20"
+  "input": "(1) $g_{tt}$：-(c ^(2)- ω ^(2) ρ ^(2)) ; $g_{t\\varphi}$：ω ρ ^(2)\n(2) 記述\n(3) $\\Delta\\tau$：((4 pi R ^(2) ω)/(c ^(2) sqrt(1- ω ^(2) R ^(2)/ c ^(2))))\n(4) $\\Delta\\tau$：4 N A ω/c^2",
+  "id": "GR-01-038"
  },
  {
   "tid": "GR-GEN-003",
@@ -669,7 +716,8 @@
   "solution": "(1) 低速の測地線方程式は $\\dfrac{d^2x^k}{dt^2}=\\dfrac{c^2}{2}\\dfrac{\\partial g_{44}}{\\partial x^k}$．\n\\[\n\\frac{\\partial g_{44}}{\\partial r}=-\\Bigl(\\frac{a}{r^2}-\\frac{2b}{r^3}\\Bigr)\n\\Rightarrow\n\\frac{d^2r}{dt^2}=-\\frac{c^2a}{2r^2}+\\frac{c^2b}{r^3}.\n\\]\n第1項は $a=2GM/c^2$ とすれば Newton 引力 $-GM/r^2$．$r<2b/a$ では右辺が正となり斥力になる．\n\n(2) 球対称のラプラシアン $\\triangle f=\\dfrac1{r^2}\\dfrac{d}{dr}\\Bigl(r^2\\dfrac{df}{dr}\\Bigr)$ で $\\triangle(1/r)=0\\ (r>0)$，$\\triangle(1/r^2)=2/r^4$．よって\n\\[\n\\triangle g_{44}=-\\frac{2b}{r^4}=-\\kappa c^2\\rho_{\\rm eff}\n\\Rightarrow\\rho_{\\rm eff}=\\frac{2b}{\\kappa c^2r^4}=\\frac{bc^2}{4\\pi Gr^4}.\n\\]\n(3) 代入すると $\\rho_{\\rm eff}c^2=\\dfrac{bc^4}{4\\pi Gr^4}=\\dfrac{Q^2}{16\\pi^2\\varepsilon_0r^4}$．一方 $E=Q/(4\\pi\\varepsilon_0r^2)$ より $u=\\dfrac{\\varepsilon_0E^2}{2}=\\dfrac{Q^2}{32\\pi^2\\varepsilon_0r^4}$．したがって $\\rho_{\\rm eff}c^2=2u$．\n\n$g_{44}$ を決める重力源は $T_{44}$ だけでなく $T_{44}-\\tfrac12g_{44}T$，すなわち $\\rho c^2+\\sum_kp_k$（能動的重力質量 $\\rho+(p_1+p_2+p_3)/c^2$）である．電場の Maxwell 応力は動径方向に張力 $p_r=-u$，接線方向に圧力 $p_\\theta=p_\\varphi=+u$ をもち，和は $+u$．ゆえに実効的な源は $u+u=2u$ となる．",
   "idea": "Newton 極限 $\\triangle g_{44}=-\\kappa c^2\\rho$ を逆に使って計量から源を読むと，電場のエネルギーが2倍に効く——圧力も重力を生む（$\\rho+3p/c^2$ 型）ことの具体例．",
   "tags": "Newton極限,弱い重力場,Reissner-Nordström,能動的重力質量,逆問題",
-  "input": "(1) 記述\n(2) $\\rho_{\\rm eff}$：((2 b)/(κ c ^(2) r ^(4)))\n(3) 記述"
+  "input": "(1) 記述\n(2) $\\rho_{\\rm eff}$：((2 b)/(κ c ^(2) r ^(4)))\n(3) 記述",
+  "id": "GR-01-039"
  },
  {
   "tid": "GR-GEN-004",
@@ -683,7 +731,8 @@
   "solution": "(1) この計量では，$f$ を $1-a/r$ に限らず一般に $G^t{}_t=G^r{}_r=\\dfrac{1}{r^2}\\bigl[r f'+f-1\\bigr]=-\\dfrac{1}{r^2}\\dfrac{d}{dr}\\bigl[r(1-f)\\bigr]$ である．真空での方程式 $G^\\mu{}_\\nu=-\\lambda\\delta^\\mu{}_\\nu$ から\n\\[\n\\frac{d}{dr}\\bigl[r(1-f)\\bigr]=\\lambda r^2\\Rightarrow r(1-f)=a+\\frac{\\lambda r^3}{3}\\Rightarrow f=1-\\frac ar-\\frac{\\lambda r^2}{3}.\n\\]\n$\\lambda\\to0$ で Schwarzschild 解になるので $a=2GM/c^2$．（角度成分の方程式も満たされることを直接計算で確かめられる．Schwarzschild–de Sitter 解．）\n\n(2) 静止粒子が静止を保つ条件は $\\Gamma^r{}_{tt}=\\tfrac12 f\\,\\partial_r(f c^2)=0$，すなわち $f'(r_0)=0$：\n\\[\n\\frac{a}{r_0^2}-\\frac{2\\lambda r_0}{3}=0\\Rightarrow r_0^3=\\frac{3a}{2\\lambda}=\\frac{3GM}{\\lambda c^2}.\n\\]\nNewton 的には $-GM/r^2+\\lambda c^2r/3=0$ に相当し，宇宙項は距離に比例する斥力を与える．\n\n(3) $GM=6.67\\times10^{-11}\\times1.99\\times10^{42}=1.33\\times10^{32}\\ {\\rm m^3/s^2}$．\n\\[\nr_0=\\Bigl(\\frac{3\\times1.33\\times10^{32}}{1.1\\times10^{-52}\\times(3.0\\times10^8)^2}\\Bigr)^{1/3}\\approx3.4\\times10^{22}\\ {\\rm m}\\approx1.1\\ {\\rm Mpc}.\n\\]\n銀河の大きさ（数十 kpc）よりずっと外側なので，銀河内部の力学には宇宙項はほとんど効かないが，局所銀河群のスケールでは効き始める．",
   "idea": "Schwarzschild 解の導出を宇宙項入りに拡張し，$g_{tt}$ の極値から「重力と宇宙の加速膨張がつり合う半径」という物理量を引き出す．",
   "tags": "Schwarzschild解,宇宙項,de Sitter,Einstein方程式,静止半径",
-  "input": "(1) $f$：1-((a)/(r))-((λ r ^(2))/(3))\n(2) $r_0$：(((3 G M)/(λ c ^(2))))^(1/3)\n(3) $r_0$ [Mpc]：≈1.1"
+  "input": "(1) $f$：1-((a)/(r))-((λ r ^(2))/(3))\n(2) $r_0$：(((3 G M)/(λ c ^(2))))^(1/3)\n(3) $r_0$ [Mpc]：≈1.1",
+  "id": "GR-03-023"
  },
  {
   "tid": "GR-GEN-005",
@@ -697,7 +746,8 @@
   "solution": "(1) 円軌道は $V'(r)=0$．\n\\[\nV'=\\frac{r_s}{r^2}\\Bigl(c^2+\\frac{L^2}{r^2}\\Bigr)-\\Bigl(1-\\frac{r_s}{r}\\Bigr)\\frac{2L^2}{r^3}=0\n\\Rightarrow L^2=\\frac{GMc^2r^2}{c^2r-3GM}.\n\\]\n$E^2/c^2=V(r)$ を代入すると $E^2/c^2=\\dfrac{(c^2r-2GM)^2}{r(c^2r-3GM)}$．\n\\[\n\\Omega=\\frac{d\\varphi/d\\tau}{dt/d\\tau}=\\frac{L/r^2}{E/[c^2(1-r_s/r)]}\n\\Rightarrow\\Omega^2=\\frac{L^2c^4(1-r_s/r)^2}{r^4E^2}=\\frac{GM}{r^3}.\n\\]\n(2) $\\dfrac{d\\tau}{dt}=\\dfrac{c^2(1-r_s/r)}{E}$，2乗して $\\Bigl(\\dfrac{d\\tau}{dt}\\Bigr)^2=\\dfrac{c^2(1-2GM/c^2r)^2r(c^2r-3GM)}{(c^2r-2GM)^2}=1-\\dfrac{3GM}{c^2r}$．よって $d\\tau/dt=\\sqrt{1-3GM/(c^2r)}$．これが実数で正であるには $r>3GM/c^2$（$r=3GM/c^2$ は光子球で，$L^2\\to\\infty$）．\n\n（別解：$d\\tau^2=(1-r_s/r)dt^2-r^2d\\varphi^2/c^2=dt^2[1-2GM/c^2r-GM/c^2r]$．）\n\n(3) 安定性の限界は $V'=V''=0$．$L^2$ を代入して $V''=0$ を解くと\n\\[\nV''\\propto c^2r-6GM=0\\Rightarrow r_{\\rm ISCO}=\\frac{6GM}{c^2}.\n\\]\n$r<6GM/c^2$ の円軌道は不安定で，降着円盤の内縁はここで決まる．",
   "idea": "測地線の保存量から円軌道を解くと，座標時での角速度は Newton と厳密に同じになる一方，固有時の遅れと安定性の限界（ISCO）に相対論が現れる．",
   "tags": "Schwarzschild時空,測地線,有効ポテンシャル,ISCO,光子球",
-  "input": "(1) 記述\n(2) 記述\n(3) $r_{\\rm ISCO}$：6 G M / c ^(2)"
+  "input": "(1) 記述\n(2) 記述\n(3) $r_{\\rm ISCO}$：6 G M / c ^(2)",
+  "id": "GR-03-024"
  },
  {
   "tid": "GR-GEN-006",
@@ -706,12 +756,13 @@
   "level": 2,
   "theme": "銀河中心の星S2の近点移動と質量の逆推定",
   "minutes": 25,
-  "q": "Schwarzschild 時空の軌道方程式 $\\dfrac{d^2u}{d\\varphi^2}+u=\\dfrac{GM}{h^2}+\\dfrac{3GM}{c^2}u^2$（$u=1/r$，$h=r^2d\\varphi/d\\tau$）を用いる．\n\\begin{enumerate}\n\\item 半直弦 $l=a(1-e^2)$ の楕円軌道について，1周あたりの近点移動角 $\\Delta\\varphi$ を $G,M,c,a,e$ で表せ（$GM/(c^2l)\\ll1$ の1次まで）．\n\\item 銀河中心ブラックホール Sgr A$^*$（$M=4.30\\times10^6M_\\odot$）のまわりを回る星 S2（$a=1031$ AU，$e=0.885$）について $\\Delta\\varphi$ を分角（$'$）で求めよ．水星（1周 $0.104''$）と比べよ．$G=6.67\\times10^{-11}$，$M_\\odot=1.99\\times10^{30}$ kg，1 AU $=1.496\\times10^{11}$ m．\n\\item 逆に，S2 の近点移動が1周あたり $12.1'$ と観測されたとする．$a,e$ を既知として中心質量 $M$ を推定せよ．\n\\end{enumerate}",
-  "answer": "(1) $\\Delta\\varphi=\\dfrac{6\\pi GM}{c^2a(1-e^2)}$　(2) 約 $12.3'$（水星の約7000倍）　(3) $M\\approx4.2\\times10^6M_\\odot$",
-  "solution": "(1) 0次解 $u_0=(1+e\\cos\\varphi)/l$（$l=h^2/GM$）．$u=(1+e\\cos\\gamma\\varphi)/l$ とおき，右辺の $u^2\\simeq(1+2e\\cos\\gamma\\varphi)/l^2$ を代入して $\\cos\\gamma\\varphi$ の係数を比べると\n\\[\n(1-\\gamma^2)\\frac{e}{l}=\\frac{3GM}{c^2}\\frac{2e}{l^2}\\Rightarrow\\gamma\\simeq1-\\frac{3GM}{c^2l}.\n\\]\n近点から近点までの角は $2\\pi/\\gamma\\simeq2\\pi(1+3GM/c^2l)$ なので\n\\[\n\\Delta\\varphi=\\frac{6\\pi GM}{c^2l}=\\frac{6\\pi GM}{c^2a(1-e^2)} .\n\\]\n(2) $GM=6.67\\times10^{-11}\\times4.30\\times10^6\\times1.99\\times10^{30}=5.71\\times10^{26}$，$l=1031\\times1.496\\times10^{11}\\times(1-0.885^2)=3.36\\times10^{13}$ m．\n\\[\n\\Delta\\varphi=\\frac{6\\pi\\times5.71\\times10^{26}}{(3.00\\times10^8)^2\\times3.36\\times10^{13}}\\approx3.57\\times10^{-3}\\ {\\rm rad}\\approx12.3' .\n\\]\n水星の $0.104''$ の約 $7\\times10^3$ 倍．離心率が大きく近点距離が $r_s$ の約 1400 倍しかないことが効いている．\n\n(3) $M=\\dfrac{c^2a(1-e^2)\\Delta\\varphi}{6\\pi G}$．$\\Delta\\varphi=12.1'=3.52\\times10^{-3}$ rad を入れると $M\\approx8.43\\times10^{36}\\ {\\rm kg}\\approx4.2\\times10^6M_\\odot$．（Kepler の第3法則による質量推定と独立なチェックになる．）",
+  "q": "Schwarzschild 時空の軌道方程式 $\\dfrac{d^2u}{d\\varphi^2}+u=\\dfrac{GM}{h^2}+\\dfrac{3GM}{c^2}u^2$（$u=1/r$，$h=r^2d\\varphi/d\\tau$）を用いる．\n\\begin{enumerate}\n\\item 半直弦 $l=a(1-e^2)$ の楕円軌道について，1周あたりの近点移動角 $\\Delta\\varphi$ を $G,M,c,a,e$ で表せ（$GM/(c^2l)\\ll1$ の1次まで）．\n\\item 銀河中心ブラックホール Sgr A$^*$（$M=4.30\\times10^6M_\\odot$）のまわりを回る星 S2（$a=1031$ AU，$e=0.885$）について $\\Delta\\varphi$ を分角（$'$）で求めよ．水星（1周 $0.104''$）と比べよ．$G=6.67\\times10^{-11}$，$M_\\odot=1.99\\times10^{30}$ kg，1 AU $=1.496\\times10^{11}$ m．\n\\item 逆に，S2 の近点移動が1周あたり $\\Delta\\varphi$ と観測されたとする．$a,e$ を既知として中心質量 $M$ を $\\Delta\\varphi,a,e,G,c$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\Delta\\varphi=\\dfrac{6\\pi GM}{c^2a(1-e^2)}$　(2) 約 $12.3'$（水星の約7000倍）　(3) $M=\\dfrac{c^2a(1-e^2)\\Delta\\varphi}{6\\pi G}$",
+  "solution": "(1) 0次解 $u_0=(1+e\\cos\\varphi)/l$（$l=h^2/GM$）．$u=(1+e\\cos\\gamma\\varphi)/l$ とおき，右辺の $u^2\\simeq(1+2e\\cos\\gamma\\varphi)/l^2$ を代入して $\\cos\\gamma\\varphi$ の係数を比べると\n\\[\n(1-\\gamma^2)\\frac{e}{l}=\\frac{3GM}{c^2}\\frac{2e}{l^2}\\Rightarrow\\gamma\\simeq1-\\frac{3GM}{c^2l}.\n\\]\n近点から近点までの角は $2\\pi/\\gamma\\simeq2\\pi(1+3GM/c^2l)$ なので\n\\[\n\\Delta\\varphi=\\frac{6\\pi GM}{c^2l}=\\frac{6\\pi GM}{c^2a(1-e^2)} .\n\\]\n(2) $GM=6.67\\times10^{-11}\\times4.30\\times10^6\\times1.99\\times10^{30}=5.71\\times10^{26}$，$l=1031\\times1.496\\times10^{11}\\times(1-0.885^2)=3.36\\times10^{13}$ m．\n\\[\n\\Delta\\varphi=\\frac{6\\pi\\times5.71\\times10^{26}}{(3.00\\times10^8)^2\\times3.36\\times10^{13}}\\approx3.57\\times10^{-3}\\ {\\rm rad}\\approx12.3' .\n\\]\n水星の $0.104''$ の約 $7\\times10^3$ 倍．離心率が大きく近点距離が $r_s$ の約 1400 倍しかないことが効いている．\n\n(3) (1) を $M$ について解いて $\\boldsymbol{M=\\dfrac{c^2a(1-e^2)\\Delta\\varphi}{6\\pi G}}$．実際に観測された約 $12'$ を入れると約 $4\\times10^6M_\\odot$ となり，Kepler の第3法則による質量推定と独立なチェックになる．",
   "idea": "水星の近点移動の公式を強い重力場の S2 星に適用し，さらに観測された移動角からブラックホール質量を逆算する．",
   "tags": "近点移動,Schwarzschild軌道,S2星,Sgr A*,逆問題",
-  "input": "(1) $\\Delta\\varphi$：((6 pi G M)/(c ^(2) a (1- e ^(2))))\n(2) 記述\n(3) 記述"
+  "input": "(1) $\\Delta\\varphi$：((6 pi G M)/(c ^(2) a (1- e ^(2))))\n(2) 記述\n(3) M：c^2 a (1-e^2) Δφ/(6 pi G)",
+  "id": "GR-03-018"
  },
  {
   "tid": "GR-GEN-007",
@@ -720,12 +771,13 @@
   "level": 2,
   "theme": "光の湾曲：Newton値との比較とEinsteinリング",
   "minutes": 30,
-  "q": "Schwarzschild 時空での光線の軌道方程式は $\\dfrac{d^2u}{d\\varphi^2}+u=\\dfrac{3GM}{c^2}u^2$（$u=1/r$）である．\n\\begin{enumerate}\n\\item 衝突パラメータ $b$ の光線の全偏角 $\\delta$ を $GM/(c^2b)$ の1次で求めよ．\n\\item 光を速さ $c$ の Newton 粒子とみなすと，双曲線軌道の偏角は $\\delta_N=2\\arcsin(1/\\varepsilon)$，$\\varepsilon=\\sqrt{1+b^2c^4/(GM)^2}$ である．$\\delta_N$ を1次まで求め，$\\delta$ と比較せよ．\n\\item 質量 $M$ のレンズ天体（距離 $D_L$）のちょうど真後ろ（距離 $D_S$）に点光源があるとき，観測者にはリング状の像（Einstein リング）が見える．小角近似でリングの角半径 $\\theta_E$ を求め，$M=M_\\odot$，$D_L=4$ kpc，$D_S=8$ kpc の場合を mas（ミリ秒角）で評価せよ（$1\\ {\\rm pc}=3.09\\times10^{16}$ m）．\n\\end{enumerate}",
-  "answer": "(1) $\\delta=\\dfrac{4GM}{c^2b}$　(2) $\\delta_N\\simeq\\dfrac{2GM}{c^2b}=\\dfrac{\\delta}{2}$　(3) $\\theta_E=\\sqrt{\\dfrac{4GM}{c^2}\\dfrac{D_S-D_L}{D_LD_S}}\\approx1.0$ mas",
-  "solution": "(1) 0次解 $u_0=\\sin\\varphi/b$（$\\varphi=0,\\pi$ で無限遠）．右辺に代入：\n$u_1''+u_1=\\dfrac{3GM}{c^2b^2}\\sin^2\\varphi$ の特解は $u_1=\\dfrac{GM}{c^2b^2}(1+\\cos^2\\varphi)$．\n$u=0$ となる角を $\\varphi=-\\epsilon$ とすると $-\\epsilon/b+2GM/(c^2b^2)=0$，$\\epsilon=2GM/(c^2b)$．両端で同じだけずれるので $\\delta=2\\epsilon=\\dfrac{4GM}{c^2b}$．\n\n(2) $b c^2/(GM)\\gg1$ では $1/\\varepsilon\\simeq GM/(bc^2)$，$\\delta_N\\simeq2GM/(c^2b)$．すなわち一般相対論の値はちょうど2倍．この差は空間部分の曲がり $g_{rr}$ の寄与で，時間成分 $g_{tt}$ だけ（＝等価原理だけ）では Newton 値しか得られない．太陽縁（$b=6.96\\times10^8$ m）では $\\delta=1.75''$，$\\delta_N=0.88''$．\n\n(3) 光源・レンズ・観測者が一直線のとき，レンズから距離 $b=D_L\\theta$ を通った光が $\\delta=4GM/(c^2b)$ 曲がって観測者に届く条件（小角の幾何）は $\\theta D_S=\\delta\\,(D_S-D_L)$．\n\\[\n\\theta^2=\\frac{4GM}{c^2}\\frac{D_S-D_L}{D_LD_S}.\n\\]\n数値：$4GM_\\odot/c^2=5.90\\times10^3$ m，$(D_S-D_L)/(D_LD_S)=1/(8\\ {\\rm kpc})=4.05\\times10^{-21}\\ {\\rm m^{-1}}$．$\\theta_E=\\sqrt{2.39\\times10^{-17}}=4.9\\times10^{-9}$ rad $\\approx1.0$ mas．",
+  "q": "Schwarzschild 時空での光線の軌道方程式は $\\dfrac{d^2u}{d\\varphi^2}+u=\\dfrac{3GM}{c^2}u^2$（$u=1/r$）である．\n\\begin{enumerate}\n\\item 衝突パラメータ $b$ の光線の全偏角 $\\delta$ を $GM/(c^2b)$ の1次で求めよ．\n\\item 光を速さ $c$ の Newton 粒子とみなすと，双曲線軌道の偏角は $\\delta_N=2\\arcsin(1/\\varepsilon)$，$\\varepsilon=\\sqrt{1+b^2c^4/(GM)^2}$ である．$\\delta_N$ を1次まで求め，$\\delta$ と比較せよ．\n\\item 質量 $M$ のレンズ天体（距離 $D_L$）のちょうど真後ろ（距離 $D_S$）に点光源があるとき，観測者にはリング状の像（Einstein リング）が見える．小角近似でリングの角半径 $\\theta_E$ を求め，レンズが光源までのちょうど中間にある（$D_S=2D_L$）場合を $G,M,c,D_L$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\delta=\\dfrac{4GM}{c^2b}$　(2) $\\delta_N\\simeq\\dfrac{2GM}{c^2b}$（$\\delta$ の半分）　(3) $\\theta_E=\\sqrt{\\dfrac{4GM}{c^2}\\dfrac{D_S-D_L}{D_LD_S}}$；$D_S=2D_L$ で $\\theta_E=\\sqrt{\\dfrac{2GM}{c^2D_L}}$",
+  "solution": "(1) 0次解 $u_0=\\sin\\varphi/b$（$\\varphi=0,\\pi$ で無限遠）．右辺に代入：\n$u_1''+u_1=\\dfrac{3GM}{c^2b^2}\\sin^2\\varphi$ の特解は $u_1=\\dfrac{GM}{c^2b^2}(1+\\cos^2\\varphi)$．\n$u=0$ となる角を $\\varphi=-\\epsilon$ とすると $-\\epsilon/b+2GM/(c^2b^2)=0$，$\\epsilon=2GM/(c^2b)$．両端で同じだけずれるので $\\delta=2\\epsilon=\\dfrac{4GM}{c^2b}$．\n\n(2) $b c^2/(GM)\\gg1$ では $1/\\varepsilon\\simeq GM/(bc^2)$，$\\delta_N\\simeq2GM/(c^2b)$．すなわち一般相対論の値はちょうど2倍．この差は空間部分の曲がり $g_{rr}$ の寄与で，時間成分 $g_{tt}$ だけ（＝等価原理だけ）では Newton 値しか得られない．太陽縁（$b=6.96\\times10^8$ m）では $\\delta=1.75''$，$\\delta_N=0.88''$．\n\n(3) 光源・レンズ・観測者が一直線のとき，レンズから距離 $b=D_L\\theta$ を通った光が $\\delta=4GM/(c^2b)$ 曲がって観測者に届く条件（小角の幾何）は $\\theta D_S=\\delta\\,(D_S-D_L)$．\n\\[\n\\theta^2=\\frac{4GM}{c^2}\\frac{D_S-D_L}{D_LD_S}.\n\\]\n$D_S=2D_L$ では $\\dfrac{D_S-D_L}{D_LD_S}=\\dfrac{1}{2D_L}$ なので $\\boldsymbol{\\theta_E=\\sqrt{\\dfrac{2GM}{c^2D_L}}}$．太陽質量の星が数 kpc 先にあると $\\theta_E$ はミリ秒角程度で，像を分解するのは難しく，実際には増光（マイクロレンズ）として観測される．",
   "idea": "光の湾曲が Newton 粒子の2倍になる理由（空間曲率の寄与）を確認し，その偏角公式をレンズ幾何と組み合わせて Einstein リングの大きさを出す．",
   "tags": "光の湾曲,重力レンズ,Einsteinリング,Newton粒子との比較",
-  "input": "(1) $\\delta$：((4 G M)/(c ^(2) b))\n(2) 記述\n(3) $\\theta_E$ [mas]：≈1.0"
+  "input": "(1) $\\delta$：((4 G M)/(c ^(2) b))\n(2) δ_N：2 G M/(c^2 b)\n(3) θ_E：sqrt(4 G M (D_S - D_L)/(c^2 D_L D_S)) ; D_S=2D_L：sqrt(2 G M/(c^2 D_L))",
+  "id": "GR-03-019"
  },
  {
   "tid": "GR-GEN-008",
@@ -734,12 +786,13 @@
   "level": 2,
   "theme": "変分原理による測地線：双曲平面",
   "minutes": 30,
-  "q": "上半平面 $y>0$ に計量 $ds^2=\\dfrac{dx^2+dy^2}{y^2}$（Poincaré 双曲平面）を入れる．\n\\begin{enumerate}\n\\item $L=\\tfrac12g_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu$（$\\dot{}=d/ds$）に Euler–Lagrange 方程式を適用して測地線方程式を書き，0 でない Christoffel 記号をすべて読み取れ．\n\\item 円 $x^2+y^2=R^2$（$y>0$ の部分）が測地線であることを示せ．\n\\item 2点 $(-1,1)$ と $(1,1)$ を結ぶ測地線の長さを求め，直線 $y=1$ に沿った長さ $2$ と比較せよ．\n\\end{enumerate}",
-  "answer": "(1) $\\ddot x-\\dfrac{2}{y}\\dot x\\dot y=0$，$\\ddot y+\\dfrac{1}{y}(\\dot x^2-\\dot y^2)=0$；$\\Gamma^x{}_{xy}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$　(2) 略（解説参照）　(3) $2\\ln(1+\\sqrt2)\\approx1.763<2$",
-  "solution": "(1) $L=\\dfrac{\\dot x^2+\\dot y^2}{2y^2}$．\n$x$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot x}{y^2}\\Bigr)=0\\Rightarrow\\ddot x-\\dfrac{2\\dot x\\dot y}{y}=0$．\n$y$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot y}{y^2}\\Bigr)=-\\dfrac{\\dot x^2+\\dot y^2}{y^3}\\Rightarrow\\ddot y+\\dfrac{\\dot x^2-\\dot y^2}{y}=0$．\n$\\ddot x^\\lambda+\\Gamma^\\lambda{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$ と比べ，$\\Gamma^x{}_{xy}=\\Gamma^x{}_{yx}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$．\n\n(2) $x$ の式から $\\dot x=Cy^2$（第1積分）．また $L=\\tfrac12$（弧長パラメータ）より $\\dot x^2+\\dot y^2=y^2$．円上で $x=R\\cos\\theta$, $y=R\\sin\\theta$ とおくと $ds=\\sqrt{dx^2+dy^2}/y=d\\theta/\\sin\\theta$ なので $\\dot\\theta=\\sin\\theta$．このとき $\\dot x=-R\\sin\\theta\\,\\dot\\theta=-R\\sin^2\\theta=-y^2/R$ で $C=-1/R$ の定数，また $\\dot y=R\\cos\\theta\\sin\\theta$ より $\\dot x^2+\\dot y^2=R^2\\sin^2\\theta(\\sin^2\\theta+\\cos^2\\theta)=y^2$ も成り立つ．$L=$ 一定の式を $s$ で微分して $x$ の式を使うと $\\dot y\\,[\\,y$ の式$\\,]=0$ となるので，$\\dot y\\ne0$ の点で $y$ の式も満たされ（連続性により全体で成立），円は測地線である．\n\n(3) 両点を通り中心が $x$ 軸上にある円は $x^2+y^2=2$（$R=\\sqrt2$）で，$\\theta$ は $3\\pi/4$ から $\\pi/4$ まで．\n\\[\ns=\\int_{\\pi/4}^{3\\pi/4}\\frac{d\\theta}{\\sin\\theta}=\\Bigl[\\ln\\tan\\frac\\theta2\\Bigr]_{\\pi/4}^{3\\pi/4}=2\\ln\\cot\\frac{\\pi}{8}=2\\ln(1+\\sqrt2)\\approx1.763 .\n\\]\n直線 $y=1$ に沿えば $\\int_{-1}^1dx/1=2$．「上へ膨らんだ」円弧の方が短い．$y$ が大きいほど距離が縮むため，測地線は $y$ の大きい方へ迂回する．",
+  "q": "上半平面 $y>0$ に計量 $ds^2=\\dfrac{dx^2+dy^2}{y^2}$（Poincaré 双曲平面）を入れる．\n\\begin{enumerate}\n\\item $L=\\tfrac12g_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu$（$\\dot{}=d/ds$）に Euler–Lagrange 方程式を適用して測地線方程式を書き，0 でない Christoffel 記号をすべて読み取れ．\n\\item 円 $x^2+y^2=R^2$（$y>0$ の部分）が測地線であることを示せ．\n\\item 2点 $(-a,b)$ と $(a,b)$（$a>0$，$b>0$）を結ぶ測地線の長さを求め，直線 $y=b$ に沿った長さと比較せよ．\n\\end{enumerate}",
+  "answer": "(1) $\\ddot x-\\dfrac{2}{y}\\dot x\\dot y=0$，$\\ddot y+\\dfrac{1}{y}(\\dot x^2-\\dot y^2)=0$；$\\Gamma^x{}_{xy}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$　(2) 略（解説参照）　(3) $2\\ln\\dfrac{a+\\sqrt{a^2+b^2}}{b}$；直線に沿うと $\\dfrac{2a}{b}$（測地線の方が短い）",
+  "solution": "(1) $L=\\dfrac{\\dot x^2+\\dot y^2}{2y^2}$．\n$x$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot x}{y^2}\\Bigr)=0\\Rightarrow\\ddot x-\\dfrac{2\\dot x\\dot y}{y}=0$．\n$y$：$\\dfrac{d}{ds}\\Bigl(\\dfrac{\\dot y}{y^2}\\Bigr)=-\\dfrac{\\dot x^2+\\dot y^2}{y^3}\\Rightarrow\\ddot y+\\dfrac{\\dot x^2-\\dot y^2}{y}=0$．\n$\\ddot x^\\lambda+\\Gamma^\\lambda{}_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu=0$ と比べ，$\\Gamma^x{}_{xy}=\\Gamma^x{}_{yx}=-1/y$，$\\Gamma^y{}_{xx}=1/y$，$\\Gamma^y{}_{yy}=-1/y$．\n\n(2) $x$ の式から $\\dot x=Cy^2$（第1積分）．また $L=\\tfrac12$（弧長パラメータ）より $\\dot x^2+\\dot y^2=y^2$．円上で $x=R\\cos\\theta$, $y=R\\sin\\theta$ とおくと $ds=\\sqrt{dx^2+dy^2}/y=d\\theta/\\sin\\theta$ なので $\\dot\\theta=\\sin\\theta$．このとき $\\dot x=-R\\sin\\theta\\,\\dot\\theta=-R\\sin^2\\theta=-y^2/R$ で $C=-1/R$ の定数，また $\\dot y=R\\cos\\theta\\sin\\theta$ より $\\dot x^2+\\dot y^2=R^2\\sin^2\\theta(\\sin^2\\theta+\\cos^2\\theta)=y^2$ も成り立つ．$L=$ 一定の式を $s$ で微分して $x$ の式を使うと $\\dot y\\,[\\,y$ の式$\\,]=0$ となるので，$\\dot y\\ne0$ の点で $y$ の式も満たされ（連続性により全体で成立），円は測地線である．\n\n(3) 両点を通り中心が $x$ 軸上にある円は $x^2+y^2=R^2$，$R=\\sqrt{a^2+b^2}$ で，$\\theta$ は $\\pi-\\theta_0$ から $\\theta_0$ まで（$\\sin\\theta_0=b/R$，$\\cos\\theta_0=a/R$）．\n\\[\ns=\\int_{\\theta_0}^{\\pi-\\theta_0}\\frac{d\\theta}{\\sin\\theta}=\\Bigl[\\ln\\tan\\frac\\theta2\\Bigr]_{\\theta_0}^{\\pi-\\theta_0}=2\\ln\\cot\\frac{\\theta_0}{2}=2\\ln\\frac{1+\\cos\\theta_0}{\\sin\\theta_0}=\\boldsymbol{2\\ln\\frac{a+\\sqrt{a^2+b^2}}{b}} .\n\\]\n直線 $y=b$ に沿えば $\\int_{-a}^{a}dx/b=\\boldsymbol{2a/b}$．$u=a/b$ とおくと $s=2\\,\\mathrm{arsinh}\\,u<2u$ なので，「上へ膨らんだ」円弧の方が短い．$y$ が大きいほど距離が縮むため，測地線は $y$ の大きい方へ迂回する．",
   "idea": "測地線方程式を作用 $\\int L\\,ds$ の変分から作る手法を，曲がった2次元空間に適用し，「直線より曲がった道が短い」ことを具体的に確かめる．",
   "tags": "測地線,変分原理,Christoffel記号,双曲平面,Poincaré上半平面",
-  "input": "(1) 記述\n(2) 証明\n(3) 記述"
+  "input": "(1) 記述\n(2) 証明\n(3) 測地線の長さ：2 ln((a+sqrt(a^2+b^2))/b) ; 直線に沿った長さ：2 a/b",
+  "id": "GR-01-031"
  },
  {
   "tid": "GR-GEN-009",
@@ -753,7 +806,8 @@
   "solution": "(1) $\\Gamma^\\mu{}_{\\mu\\lambda}=\\tfrac12g^{\\mu\\rho}(\\partial_\\mu g_{\\rho\\lambda}+\\partial_\\lambda g_{\\rho\\mu}-\\partial_\\rho g_{\\mu\\lambda})$．第1項と第3項は $\\mu\\leftrightarrow\\rho$ の入れ替えで打ち消し合うので $\\Gamma^\\mu{}_{\\mu\\lambda}=\\tfrac12g^{\\mu\\rho}\\partial_\\lambda g_{\\rho\\mu}$．行列式の微分公式 $\\partial_\\lambda g=g\\,g^{\\mu\\rho}\\partial_\\lambda g_{\\rho\\mu}$ より $\\Gamma^\\mu{}_{\\mu\\lambda}=\\partial_\\lambda\\ln\\sqrt g$．よって\n\\[\n\\nabla_\\mu A^\\mu=\\partial_\\mu A^\\mu+\\Gamma^\\mu{}_{\\mu\\lambda}A^\\lambda=\\partial_\\mu A^\\mu+A^\\lambda\\partial_\\lambda\\ln\\sqrt g=\\frac{1}{\\sqrt g}\\partial_\\mu(\\sqrt g\\,A^\\mu).\n\\]\n(2) $\\sqrt g=r^2\\sin\\theta$．$\\partial_\\mu A^\\mu=\\partial_r r^n=nr^{n-1}$．一方\n\\[\n\\nabla_\\mu A^\\mu=\\frac{1}{r^2}\\partial_r(r^2\\cdot r^n)=(n+2)r^{n-1}.\n\\]\n(3) $\\partial_i(r^{n-1}x^i)=3r^{n-1}+(n-1)r^{n-2}\\dfrac{x^i}{r}x^i=(n+2)r^{n-1}$．これは $\\nabla_\\mu A^\\mu$ と一致し，単なる偏微分 $\\partial_\\mu A^\\mu$ とは一致しない．偏微分の和は座標系によって値が変わり（スカラーでない），Christoffel 記号の項がその非テンソル的な変換（$\\Gamma$ の変換則の非斉次項）を打ち消して初めて座標によらないスカラーになる．\n\n$\\nabla_\\mu A^\\mu=0$ となるのは $n=-2$，すなわち $A^r\\propto1/r^2$．点電荷の Coulomb 場（点質量の重力場）であり，原点以外で湧き出しがないことに対応する．（$\\partial_\\mu A^\\mu=0$ を誤って使うと $n=0$ という一様な動径場が「発散ゼロ」と結論されてしまう．）",
   "idea": "共変微分の Christoffel 項が「偏微分の非テンソル性」を補正することを，球座標の発散という身近な例で数値的に確かめる．",
   "tags": "共変微分,共変発散,Christoffel記号,球座標,テンソル変換",
-  "input": "(1) 証明\n(2) 記述\n(3) 記述"
+  "input": "(1) 証明\n(2) 記述\n(3) 記述",
+  "id": "GR-01-032"
  },
  {
   "tid": "GR-GEN-010",
@@ -767,7 +821,8 @@
   "solution": "(1) $g_{\\theta\\theta}=a^2$，$g_{\\varphi\\varphi}=a^2\\sin^2\\theta$ より\n$\\Gamma^\\theta{}_{\\varphi\\varphi}=-\\tfrac12g^{\\theta\\theta}\\partial_\\theta g_{\\varphi\\varphi}=-\\sin\\theta\\cos\\theta$，$\\Gamma^\\varphi{}_{\\theta\\varphi}=\\Gamma^\\varphi{}_{\\varphi\\theta}=\\tfrac12g^{\\varphi\\varphi}\\partial_\\theta g_{\\varphi\\varphi}=\\cot\\theta$．\n\\[\nR^\\theta{}_{\\varphi\\theta\\varphi}=\\partial_\\theta\\Gamma^\\theta{}_{\\varphi\\varphi}-0+\\Gamma^\\theta{}_{\\beta\\theta}\\Gamma^\\beta{}_{\\varphi\\varphi}-\\Gamma^\\theta{}_{\\beta\\varphi}\\Gamma^\\beta{}_{\\varphi\\theta}\n=-\\cos2\\theta-(-\\sin\\theta\\cos\\theta)\\cot\\theta=\\sin^2\\theta .\n\\]\n$R_{\\varphi\\varphi}=R^\\theta{}_{\\varphi\\theta\\varphi}=\\sin^2\\theta$，同様に $R_{\\theta\\theta}=1$ で，$R=g^{\\theta\\theta}R_{\\theta\\theta}+g^{\\varphi\\varphi}R_{\\varphi\\varphi}=2/a^2$．\n\n(2) $\\nabla_\\mu A^\\nu=\\partial_\\mu A^\\nu+\\Gamma^\\nu{}_{\\mu\\lambda}A^\\lambda=\\Gamma^\\nu{}_{\\mu\\theta}$．0 でないのは $\\nabla_\\varphi A^\\varphi=\\Gamma^\\varphi{}_{\\varphi\\theta}=\\cot\\theta$ のみ．\n\n次に $T_\\mu{}^\\nu=\\nabla_\\mu A^\\nu$ の共変微分 $\\nabla_\\lambda T_\\mu{}^\\nu=\\partial_\\lambda T_\\mu{}^\\nu+\\Gamma^\\nu{}_{\\lambda\\kappa}T_\\mu{}^\\kappa-\\Gamma^\\kappa{}_{\\lambda\\mu}T_\\kappa{}^\\nu$．\n\\[\n\\nabla_\\theta T_\\varphi{}^\\varphi=\\partial_\\theta\\cot\\theta+\\Gamma^\\varphi{}_{\\theta\\varphi}\\cot\\theta-\\Gamma^\\varphi{}_{\\theta\\varphi}\\cot\\theta=-\\frac{1}{\\sin^2\\theta},\n\\]\n\\[\n\\nabla_\\varphi T_\\theta{}^\\varphi=0+\\Gamma^\\varphi{}_{\\varphi\\kappa}T_\\theta{}^\\kappa-\\Gamma^\\kappa{}_{\\varphi\\theta}T_\\kappa{}^\\varphi=0-\\cot\\theta\\cdot\\cot\\theta=-\\cot^2\\theta .\n\\]\n差は $-1/\\sin^2\\theta+\\cot^2\\theta=-1$．一方 $R^\\varphi{}_{\\theta\\theta\\varphi}=g^{\\varphi\\varphi}R_{\\varphi\\theta\\theta\\varphi}=-g^{\\varphi\\varphi}R_{\\theta\\varphi\\theta\\varphi}=-\\dfrac{a^2\\sin^2\\theta}{a^2\\sin^2\\theta}=-1$ で一致する．（$\\theta$ 成分は両辺とも 0．）\n\n(3) $\\nabla_\\mu A^\\nu=0$ なら $(\\nabla_\\mu\\nabla_\\nu-\\nabla_\\nu\\nabla_\\mu)A^\\rho=R^\\rho{}_{\\alpha\\mu\\nu}A^\\alpha=0$．$\\mu\\nu=\\theta\\varphi$ ととると $R^\\theta{}_{\\varphi\\theta\\varphi}A^\\varphi=\\sin^2\\theta\\,A^\\varphi=0$，$R^\\varphi{}_{\\theta\\theta\\varphi}A^\\theta=-A^\\theta=0$．$\\sin\\theta\\ne0$ の領域で $A^\\theta=A^\\varphi=0$．曲率が 0 でない2次元面には，平行なベクトル場（「どこでも同じ向きの矢印」）が局所的にすら存在しない．",
   "idea": "共変微分の交換子＝曲率という恒等式を球面で成分ごとに検算し，その帰結として「曲がった面には平行ベクトル場が作れない」ことを示す．",
   "tags": "共変微分,Riemannテンソル,球面,交換子,スカラー曲率",
-  "input": "(1) 記述\n(2) 記述\n(3) 証明"
+  "input": "(1) 記述\n(2) 記述\n(3) 証明",
+  "id": "GR-02-030"
  },
  {
   "tid": "GR-GEN-011",
@@ -776,12 +831,13 @@
   "level": 3,
   "theme": "平行移動のホロノミー：緯線一周での回転角",
   "minutes": 35,
-  "q": "単位球面 $ds^2=d\\theta^2+\\sin^2\\theta\\,d\\varphi^2$ 上で，緯線 $\\theta=\\theta_0$ に沿ってベクトル $A^\\mu$ を $\\varphi=0$ から $2\\pi$ まで平行移動する（$dA^\\lambda=-\\Gamma^\\lambda{}_{\\mu\\nu}A^\\mu dx^\\nu$）．初めのベクトルは $A^\\theta=1,\\ A^\\varphi=0$ とする．\n\\begin{enumerate}\n\\item $A^\\theta(\\varphi),\\ A^\\varphi(\\varphi)$ の満たす連立微分方程式を書き，解け．\n\\item 一周後のベクトルは初めのベクトルからどれだけ回転しているか．正規直交成分 $(A^{\\hat\\theta},A^{\\hat\\varphi})=(A^\\theta,\\sin\\theta_0A^\\varphi)$ で答えよ．\n\\item 回転角を緯線が囲む極側の面積 $S$ と比べよ．また $\\theta_0\\to0$ で，微小ループの公式 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ と整合することを確かめよ．\n\\item 緯度 $35^\\circ$ で Foucault の振り子の振動面が1恒星日に回転する角を，この結果から求めよ．\n\\end{enumerate}",
-  "answer": "(1) $A^\\theta=\\cos(\\varphi\\cos\\theta_0)$，$A^\\varphi=-\\dfrac{\\sin(\\varphi\\cos\\theta_0)}{\\sin\\theta_0}$　(2) 一周で $2\\pi\\cos\\theta_0$ 回転（$2\\pi$ を法として $2\\pi(1-\\cos\\theta_0)$）　(3) 回転角 $=S=2\\pi(1-\\cos\\theta_0)$（曲率 $1$ × 面積）　(4) $360^\\circ\\times\\sin35^\\circ\\approx206^\\circ$",
-  "solution": "(1) 0 でない Christoffel 記号は $\\Gamma^\\theta{}_{\\varphi\\varphi}=-\\sin\\theta\\cos\\theta$，$\\Gamma^\\varphi{}_{\\theta\\varphi}=\\cot\\theta$．$dx^\\varphi=d\\varphi$ のみなので\n\\[\n\\frac{dA^\\theta}{d\\varphi}=\\sin\\theta_0\\cos\\theta_0\\,A^\\varphi,\\qquad\\frac{dA^\\varphi}{d\\varphi}=-\\cot\\theta_0\\,A^\\theta .\n\\]\n$\\ddot A^\\theta=-\\cos^2\\theta_0A^\\theta$ より，$k=\\cos\\theta_0$ として $A^\\theta=\\cos k\\varphi$，$A^\\varphi=\\dfrac{\\dot A^\\theta}{\\sin\\theta_0\\cos\\theta_0}=-\\dfrac{\\sin k\\varphi}{\\sin\\theta_0}$．\n\n(2) 正規直交成分は $(A^{\\hat\\theta},A^{\\hat\\varphi})=(\\cos k\\varphi,-\\sin k\\varphi)$ で長さ $1$ を保つ．局所基底 $(\\hat\\theta,\\hat\\varphi)$ に対して角 $k\\varphi$ だけ（$\\hat\\varphi$ から $\\hat\\theta$ へ向かう向きに）回る．一周 $\\varphi=2\\pi$ で $2\\pi\\cos\\theta_0$．局所基底自身も一周で元に戻るので，ベクトルの正味の回転は $2\\pi\\cos\\theta_0\\equiv-2\\pi(1-\\cos\\theta_0)\\pmod{2\\pi}$，大きさ $2\\pi(1-\\cos\\theta_0)$（ループの向き $+\\varphi$ と同じ向き）．\n\n(3) 極側の面積は $S=\\int_0^{2\\pi}\\!\\!\\int_0^{\\theta_0}\\sin\\theta\\,d\\theta d\\varphi=2\\pi(1-\\cos\\theta_0)$．回転角はちょうど $S$（Gauss 曲率 $K=1$ の積分 $\\int K\\,dS$）に等しい（Gauss–Bonnet）．$\\theta_0\\to0$ では $S\\simeq\\pi\\theta_0^2$ で，微小ループでの変化 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ の大きさは $K\\times$（面積）$\\times|A|$ なので，回転角 $\\delta\\alpha=K\\,S$ と整合する．赤道 $\\theta_0=\\pi/2$ では $S=2\\pi$（半球）で回転は $2\\pi\\equiv0$：大円は測地線であり，ベクトルは回転しない．\n\n(4) Foucault 振り子の振動面は，地球自転で緯線上を運ばれる平行移動とみなせる．緯度 $\\lambda=35^\\circ$ は $\\theta_0=90^\\circ-35^\\circ$，一恒星日の回転角は（地面に対して）$2\\pi\\cos\\theta_0=2\\pi\\sin\\lambda=360^\\circ\\times0.574\\approx206^\\circ$．",
+  "q": "単位球面 $ds^2=d\\theta^2+\\sin^2\\theta\\,d\\varphi^2$ 上で，緯線 $\\theta=\\theta_0$ に沿ってベクトル $A^\\mu$ を $\\varphi=0$ から $2\\pi$ まで平行移動する（$dA^\\lambda=-\\Gamma^\\lambda{}_{\\mu\\nu}A^\\mu dx^\\nu$）．初めのベクトルは $A^\\theta=1,\\ A^\\varphi=0$ とする．\n\\begin{enumerate}\n\\item $A^\\theta(\\varphi),\\ A^\\varphi(\\varphi)$ の満たす連立微分方程式を書き，解け．\n\\item 一周後のベクトルは初めのベクトルからどれだけ回転しているか．正規直交成分 $(A^{\\hat\\theta},A^{\\hat\\varphi})=(A^\\theta,\\sin\\theta_0A^\\varphi)$ で答えよ．\n\\item 回転角を緯線が囲む極側の面積 $S$ と比べよ．また $\\theta_0\\to0$ で，微小ループの公式 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ と整合することを確かめよ．\n\\item 緯度 $\\lambda$ で Foucault の振り子の振動面が1恒星日に（地面に対して）回転する角を，この結果から求めよ．\n\\end{enumerate}",
+  "answer": "(1) $A^\\theta=\\cos(\\varphi\\cos\\theta_0)$，$A^\\varphi=-\\dfrac{\\sin(\\varphi\\cos\\theta_0)}{\\sin\\theta_0}$　(2) 一周で $2\\pi\\cos\\theta_0$ 回転（$2\\pi$ を法として $2\\pi(1-\\cos\\theta_0)$）　(3) 回転角 $=S=2\\pi(1-\\cos\\theta_0)$（曲率 $1$ × 面積）　(4) $2\\pi\\sin\\lambda$",
+  "solution": "(1) 0 でない Christoffel 記号は $\\Gamma^\\theta{}_{\\varphi\\varphi}=-\\sin\\theta\\cos\\theta$，$\\Gamma^\\varphi{}_{\\theta\\varphi}=\\cot\\theta$．$dx^\\varphi=d\\varphi$ のみなので\n\\[\n\\frac{dA^\\theta}{d\\varphi}=\\sin\\theta_0\\cos\\theta_0\\,A^\\varphi,\\qquad\\frac{dA^\\varphi}{d\\varphi}=-\\cot\\theta_0\\,A^\\theta .\n\\]\n$\\ddot A^\\theta=-\\cos^2\\theta_0A^\\theta$ より，$k=\\cos\\theta_0$ として $A^\\theta=\\cos k\\varphi$，$A^\\varphi=\\dfrac{\\dot A^\\theta}{\\sin\\theta_0\\cos\\theta_0}=-\\dfrac{\\sin k\\varphi}{\\sin\\theta_0}$．\n\n(2) 正規直交成分は $(A^{\\hat\\theta},A^{\\hat\\varphi})=(\\cos k\\varphi,-\\sin k\\varphi)$ で長さ $1$ を保つ．局所基底 $(\\hat\\theta,\\hat\\varphi)$ に対して角 $k\\varphi$ だけ（$\\hat\\varphi$ から $\\hat\\theta$ へ向かう向きに）回る．一周 $\\varphi=2\\pi$ で $2\\pi\\cos\\theta_0$．局所基底自身も一周で元に戻るので，ベクトルの正味の回転は $2\\pi\\cos\\theta_0\\equiv-2\\pi(1-\\cos\\theta_0)\\pmod{2\\pi}$，大きさ $2\\pi(1-\\cos\\theta_0)$（ループの向き $+\\varphi$ と同じ向き）．\n\n(3) 極側の面積は $S=\\int_0^{2\\pi}\\!\\!\\int_0^{\\theta_0}\\sin\\theta\\,d\\theta d\\varphi=2\\pi(1-\\cos\\theta_0)$．回転角はちょうど $S$（Gauss 曲率 $K=1$ の積分 $\\int K\\,dS$）に等しい（Gauss–Bonnet）．$\\theta_0\\to0$ では $S\\simeq\\pi\\theta_0^2$ で，微小ループでの変化 $\\delta A^\\lambda=R^\\lambda{}_{\\alpha\\mu\\nu}A^\\alpha d_1x^\\mu d_2x^\\nu$ の大きさは $K\\times$（面積）$\\times|A|$ なので，回転角 $\\delta\\alpha=K\\,S$ と整合する．赤道 $\\theta_0=\\pi/2$ では $S=2\\pi$（半球）で回転は $2\\pi\\equiv0$：大円は測地線であり，ベクトルは回転しない．\n\n(4) Foucault 振り子の振動面は，地球自転で緯線上を運ばれる平行移動とみなせる．緯度 $\\lambda$ は $\\theta_0=\\pi/2-\\lambda$ なので，一恒星日の回転角は（地面に対して）$2\\pi\\cos\\theta_0=\\boldsymbol{2\\pi\\sin\\lambda}$．北極では $2\\pi$（1日で一回転），赤道では $0$ となる．",
   "idea": "平行移動の微小ループ公式を有限ループに拡張すると，回転角が囲む面積×曲率（Gauss–Bonnet）になり，Foucault 振り子の $\\sin\\lambda$ 則が幾何学的に出てくる．",
   "tags": "平行移動,ホロノミー,Riemannテンソル,Gauss-Bonnet,Foucaultの振り子",
-  "input": "(1) $A^\\theta$：cos (φ cos θ_0) ; $A^\\varphi$：-((sin (φ cos θ_0))/(sin θ_0))\n(2) 記述\n(3) 記述\n(4) $360^\\circ\\times\\sin35^\\circ$ [°]：≈206"
+  "input": "(1) $A^\\theta$：cos (φ cos θ_0) ; $A^\\varphi$：-((sin (φ cos θ_0))/(sin θ_0))\n(2) 記述\n(3) 記述\n(4) 回転角：2 pi sin(λ)",
+  "id": "GR-02-031"
  },
  {
   "tid": "GR-GEN-012",
@@ -795,7 +851,8 @@
   "solution": "(1) 方程式の両辺の共変発散をとる．$\\nabla_\\mu G^{\\mu\\nu}=0$（Bianchi），$\\nabla_\\mu g^{\\mu\\nu}=0$（計量条件）より\n\\[\n\\nabla_\\mu(\\lambda g^{\\mu\\nu})=g^{\\mu\\nu}\\partial_\\mu\\lambda=\\kappa\\nabla_\\mu T^{\\mu\\nu}.\n\\]\n物質のエネルギー運動量が保存する（$\\nabla_\\mu T^{\\mu\\nu}=0$）なら $\\partial^\\nu\\lambda=0$，すなわち $\\lambda$ は定数．逆に言えば $\\lambda$ が変化すれば物質とエネルギーをやり取りすることになる．また Einstein 方程式は $\\nabla_\\mu T^{\\mu\\nu}=0$（物質の運動方程式）を含んでいる．\n\n(2) $x^0=ct$ とする．静止流体では $u^\\mu=(ce^{-\\nu/2},0,0,0)$．$T^{00}=(\\rho+p/c^2)c^2e^{-\\nu}-pe^{-\\nu}=\\rho c^2e^{-\\nu}$，$T^{rr}=pe^{-\\Lambda}$，$T^{\\theta\\theta}=p/r^2$，$T^{\\varphi\\varphi}=p/(r^2\\sin^2\\theta)$．\n\\[\n\\nabla_\\mu T^{\\mu r}=\\partial_rT^{rr}+\\Gamma^\\mu{}_{\\mu r}T^{rr}+\\Gamma^r{}_{\\mu\\nu}T^{\\mu\\nu}.\n\\]\n必要な Christoffel 記号は $\\Gamma^r{}_{00}=\\tfrac12\\nu'e^{\\nu-\\Lambda}$，$\\Gamma^r{}_{rr}=\\tfrac12\\Lambda'$，$\\Gamma^r{}_{\\theta\\theta}=-re^{-\\Lambda}$，$\\Gamma^r{}_{\\varphi\\varphi}=-r\\sin^2\\theta e^{-\\Lambda}$，$\\Gamma^\\mu{}_{\\mu r}=\\tfrac12(\\nu'+\\Lambda')+2/r$．代入すると\n\\[\n\\nabla_\\mu T^{\\mu r}=e^{-\\Lambda}\\Bigl[p'-\\Lambda'p+\\tfrac12(\\nu'+\\Lambda')p+\\tfrac2rp+\\tfrac12\\Lambda'p+\\tfrac12\\nu'\\rho c^2-\\tfrac2rp\\Bigr]\n=e^{-\\Lambda}\\Bigl[p'+\\tfrac12\\nu'(\\rho c^2+p)\\Bigr].\n\\]\nこれが 0 であるから $p'=-\\tfrac12(\\rho c^2+p)\\nu'$．\n\n(3) $\\nu\\simeq2\\Phi/c^2$ より $\\nu'=2\\Phi'/c^2$．$dp/dr=-(\\rho+p/c^2)\\,d\\Phi/dr\\simeq-\\rho\\,d\\Phi/dr$ で Newton の静水圧平衡．相対論では慣性・重力の担い手が $\\rho+p/c^2$ になり，圧力が大きいほど「重く」なって自分自身を支えるのに一層大きな圧力勾配が要る．これが中性子星に質量上限が生じる一因である（TOV 方程式）．",
   "idea": "Bianchi 恒等式 $\\nabla_\\mu G^{\\mu\\nu}=0$ は物質の保存則を強制する．その $r$ 成分を静止流体で計算すると，相対論的静水圧平衡（TOV の一部）が得られる．",
   "tags": "Bianchi恒等式,エネルギー運動量テンソル,宇宙項,完全流体,TOV方程式",
-  "input": "(1) 記述\n(2) 証明\n(3) 記述"
+  "input": "(1) 記述\n(2) 証明\n(3) 記述",
+  "id": "GR-02-032"
  },
  {
   "tid": "GR-GEN-013",
@@ -809,7 +866,8 @@
   "solution": "(1) $\\dfrac{\\partial\\bar x^\\mu}{\\partial x^\\rho}\\Big|_P=\\delta^\\mu{}_\\rho$，$\\dfrac{\\partial^2\\bar x^\\mu}{\\partial x^\\rho\\partial x^\\nu}\\Big|_P=\\Gamma^\\mu{}_{\\rho\\nu}(P)$．Christoffel 記号の変換則\n\\[\n\\bar\\Gamma^\\lambda{}_{\\mu\\nu}=\\frac{\\partial\\bar x^\\lambda}{\\partial x^\\alpha}\\frac{\\partial x^\\sigma}{\\partial\\bar x^\\mu}\\frac{\\partial x^\\tau}{\\partial\\bar x^\\nu}\\Gamma^\\alpha{}_{\\sigma\\tau}-\\frac{\\partial x^\\sigma}{\\partial\\bar x^\\mu}\\frac{\\partial x^\\tau}{\\partial\\bar x^\\nu}\\frac{\\partial^2\\bar x^\\lambda}{\\partial x^\\sigma\\partial x^\\tau}\n\\]\nに $P$ での値を代入すると $\\bar\\Gamma^\\lambda{}_{\\mu\\nu}(P)=\\Gamma^\\lambda{}_{\\mu\\nu}-\\Gamma^\\lambda{}_{\\mu\\nu}=0$．（与式 $\\Gamma=\\frac{\\partial x}{\\partial\\bar x}\\frac{\\partial^2\\bar x}{\\partial x\\partial x}$ は $\\bar\\Gamma=0$ の場合のこの変換則そのもの．）\n\n(2) $g_{00}=-(1+gx/c^2)^2$，$g_{xx}=1$．\n$\\Gamma^x{}_{00}=-\\tfrac12\\partial_xg_{00}=\\dfrac{g}{c^2}\\Bigl(1+\\dfrac{gx}{c^2}\\Bigr)$，$\\Gamma^0{}_{0x}=\\tfrac12g^{00}\\partial_xg_{00}=\\dfrac{g/c^2}{1+gx/c^2}$，他は 0．原点ではともに $g/c^2$．よって\n\\[\n\\bar x^0=x^0+\\tfrac12\\cdot2\\Gamma^0{}_{0x}x^0x=x^0+\\frac{g}{c^2}x^0x,\\qquad\\bar x=x+\\frac{g}{2c^2}(x^0)^2 .\n\\]\n(3) $\\cosh u\\simeq1+u^2/2$，$\\sinh u\\simeq u$ として2次まで：\n\\[\nX\\simeq\\Bigl(\\frac{c^2}{g}+x\\Bigr)\\Bigl(1+\\frac{g^2(x^0)^2}{2c^4}\\Bigr)-\\frac{c^2}{g}\\simeq x+\\frac{g}{2c^2}(x^0)^2,\\quad\nW\\simeq\\Bigl(\\frac{c^2}{g}+x\\Bigr)\\frac{gx^0}{c^2}=x^0+\\frac{g}{c^2}x^0x .\n\\]\n(2) と完全に一致する．$x=$ 一定の世界線は $(X+c^2/g)^2-W^2=(c^2/g+x)^2$ の双曲線で，固有加速度は $c^2/(c^2/g+x)=g/(1+gx/c^2)$．原点の観測者は $g$ で加速しているが，位置によって加速度が異なる（剛体的に加速する棒）．",
   "idea": "局所慣性系への変換は「座標の2次の項＝Christoffel 記号」で決まる．これを一様加速系に当てはめると，厳密な Rindler 変換の2次展開と一致する．",
   "tags": "局所慣性系,Christoffel記号,座標変換,Rindler座標,等価原理",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-01-040"
  },
  {
   "tid": "GR-GEN-015",
@@ -823,7 +881,8 @@
   "solution": "(1) $dX=dx+bt\\,dt$ より\n\\[\nds^2=dX^2-c^2dt^2=dx^2+2\\frac{bt}{c}\\,dx\\,dx^4-\\Bigl(1-\\frac{b^2t^2}{c^2}\\Bigr)(dx^4)^2 .\n\\]\n$g_{11}=1$，$g_{14}=bt/c$（交差項の係数 $2g_{14}$），$g_{44}=-(1-b^2t^2/c^2)$．\n$\\chi=-\\tfrac{c^2}{2}\\cdot\\dfrac{b^2t^2}{c^2}=-\\tfrac12b^2t^2$（$x$ によらない），$\\gamma_1=\\dfrac{bt/c}{\\sqrt{1-b^2t^2/c^2}}$，$\\gamma_{11}=1+\\gamma_1^2=\\dfrac{1}{1-b^2t^2/c^2}$．\n\n(2) $\\partial\\chi/\\partial x=0$．$\\sqrt{1+2\\chi/c^2}=\\sqrt{-g_{44}}=\\sqrt{1-b^2t^2/c^2}$，$\\dfrac{\\partial\\gamma_1}{\\partial t}=\\dfrac{b}{c}\\Bigl(1-\\dfrac{b^2t^2}{c^2}\\Bigr)^{-3/2}$．よって\n\\[\na_1=-c\\sqrt{1-\\frac{b^2t^2}{c^2}}\\cdot\\frac bc\\Bigl(1-\\frac{b^2t^2}{c^2}\\Bigr)^{-3/2}=-\\frac{b}{1-b^2t^2/c^2},\\qquad\n\\frac{d^2x}{dt^2}=\\frac{a_1}{\\gamma_{11}}=-b .\n\\]\n自由粒子は $X=$ 一定（または等速）なので $x=X-\\tfrac12bt^2$，確かに $\\ddot x=-b$ で厳密に一致する（測地線方程式 $\\Gamma^1{}_{44}=b/c^2$ からも得られる）．この座標ではスカラー・ポテンシャルに空間勾配がなく，慣性力はすべてベクトル・ポテンシャルの時間変化 $-\\partial\\gamma/\\partial t$ から生じる．\n\n(3) $g_{44}=-(1+gx/c^2)^2$ より $\\chi=-\\tfrac{c^2}{2}\\bigl[1-(1+gx/c^2)^2\\bigr]=gx\\Bigl(1+\\dfrac{gx}{2c^2}\\Bigr)$，$g_{k4}=0$ より $\\gamma_k=0$．\n\\[\na_1=-\\frac{\\partial\\chi}{\\partial x}=-g\\Bigl(1+\\frac{gx}{c^2}\\Bigr)\\xrightarrow{x=0}-g .\n\\]\n同じ「加速する観測者が感じる慣性力」が，(2) では $-\\partial_t\\boldsymbol\\gamma$，(3) では $-\\nabla\\chi$ として現れる．電磁気学で一様電場を $\\phi=-Ex,\\ \\boldsymbol A=0$ とも $\\phi=0,\\ \\boldsymbol A=-E t\\hat x$ とも書ける（$\\boldsymbol E=-\\nabla\\phi-\\partial_t\\boldsymbol A$）のと同じで，重力のポテンシャルの分け方は座標の選び方（ゲージ）に依存し，物理的な加速度は両者で一致する．",
   "idea": "重力の3次元加速度の公式を「Galilei 的な加速座標」に適用すると，慣性力が誘導電場のようにベクトル・ポテンシャルの時間微分から出てくる．ポテンシャルの分け方は座標（ゲージ）依存である．",
   "tags": "重力ポテンシャル,ベクトル・ポテンシャル,加速度系,ゲージ,計量の非対角成分",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) 記述\n(3) 記述",
+  "id": "GR-01-041"
  },
  {
   "tid": "GR-GEN-016",
@@ -832,12 +891,13 @@
   "level": 2,
   "theme": "GPS衛星時計の相対論的ずれ",
   "minutes": 25,
-  "q": "重力場中を運動する時計の固有時は，弱い場で $d\\tau=dt\\sqrt{1+2\\chi/c^2-v^2/c^2}$（$\\chi$：Newton ポテンシャル，$t$：無限遠の静止時計の時間）で与えられる．地球を質量 $M$ の球とし，$GM=3.986\\times10^{14}\\ {\\rm m^3/s^2}$，地球半径 $R=6.371\\times10^6$ m，自転角速度 $\\Omega=7.292\\times10^{-5}\\ {\\rm rad/s}$，$c=2.998\\times10^8$ m/s とする．\n\\begin{enumerate}\n\\item 半径 $r$ の円軌道を回る衛星の時計の進み方 $d\\tau/dt$ を $c^{-2}$ の1次で $GM,r$ だけで表せ．\n\\item GPS 衛星（$r=2.656\\times10^7$ m）の時計は，赤道上の地上時計に対して1日（86400 s）あたり何 $\\mu$s 進む（遅れる）か．重力による寄与，衛星の速度による寄与，地上時計の自転速度による寄与に分けて答えよ．補正しないと1日で測位誤差はおよそ何 km になるか．\n\\item 衛星の時計と赤道上の地上時計の進み方が一致する円軌道の半径を $R$ を単位として求めよ（自転の寄与を無視した場合と含めた場合）．\n\\end{enumerate}",
-  "answer": "(1) $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{3GM}{2c^2r}$　(2) 重力 $+45.7$，衛星速度 $-7.2$，地上自転 $+0.10$，合計 約 $+38.6\\ \\mu$s/日（衛星が進む）；誤差 約 12 km/日　(3) 無視：$r=1.5R$，含める：$r\\approx1.497R$（高度約 3170 km）",
-  "solution": "(1) $\\chi=-GM/r$，円軌道で $v^2=GM/r$．\n\\[\n\\frac{d\\tau}{dt}\\simeq1+\\frac{\\chi}{c^2}-\\frac{v^2}{2c^2}=1-\\frac{GM}{c^2r}-\\frac{GM}{2c^2r}=1-\\frac{3GM}{2c^2r}.\n\\]\n(2) 地上時計：$\\dfrac{d\\tau_0}{dt}\\simeq1-\\dfrac{GM}{c^2R}-\\dfrac{\\Omega^2R^2}{2c^2}$．差 $\\dfrac{d\\tau_s-d\\tau_0}{dt}$ の各寄与に $86400$ s を掛ける．\n・重力：$\\dfrac{GM}{c^2}\\Bigl(\\dfrac1R-\\dfrac1r\\Bigr)\\times86400=\\dfrac{3.986\\times10^{14}}{8.988\\times10^{16}}(1.5696-0.3765)\\times10^{-7}\\times86400\\approx+45.7\\ \\mu{\\rm s}$．\n・衛星速度：$-\\dfrac{GM}{2c^2r}\\times86400\\approx-7.2\\ \\mu{\\rm s}$（$v=3.87$ km/s）．\n・地上の自転速度（地上時計が遅れる分，相対的に衛星が進む）：$+\\dfrac{\\Omega^2R^2}{2c^2}\\times86400\\approx+0.10\\ \\mu{\\rm s}$．\n合計約 $+38.6\\ \\mu$s/日．光速を掛けると $3.0\\times10^8\\times38.6\\times10^{-6}\\approx1.2\\times10^4$ m，すなわち 1 日で約 12 km の誤差が蓄積する．\n\n(3) 自転を無視すると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}\\Rightarrow r=\\dfrac32R$．自転を含めると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}+\\dfrac{\\Omega^2R^2}{2}$ より\n\\[\nr=\\frac{3R}{2}\\Bigl(1+\\frac{\\Omega^2R^3}{2GM}\\Bigr)^{-1}\\approx1.497R ,\n\\]\n高度は約 3170 km．これより低い軌道（ISS など）では速度効果が勝って衛星時計は遅れ，高い軌道では重力効果が勝って進む．",
-  "idea": "重力場中の時計の式を，重力による進みと運動による遅れの競合として読み，GPS の 38 μs/日と，両効果が打ち消し合う「中立軌道」(r=1.5R) を導く．",
+  "q": "重力場中を運動する時計の固有時は，弱い場で $d\\tau=dt\\sqrt{1+2\\chi/c^2-v^2/c^2}$（$\\chi$：Newton ポテンシャル，$t$：無限遠の静止時計の時間）で与えられる．地球を質量 $M$，半径 $R$ の球とし，自転角速度を $\\Omega$，万有引力定数を $G$，光速を $c$ とする．\n\\begin{enumerate}\n\\item 半径 $r$ の円軌道を回る衛星の時計の進み方 $d\\tau/dt$ を $c^{-2}$ の1次で $G,M,r,c$ で表せ．\n\\item 軌道半径 $r$ の GPS 衛星の時計は，赤道上の地上時計に対して，時間 $T$ の間にどれだけ進むか．重力による寄与，衛星の速度による寄与，地上時計の自転速度による寄与に分けて，$c^{-2}$ の1次で答えよ．また，補正しないと時間 $T$ の間に生じる測位誤差（時計のずれ×光速）を求めよ．\n\\item 衛星の時計と赤道上の地上時計の進み方が一致する円軌道の半径を，自転の寄与を無視した場合と含めた場合について求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\dfrac{d\\tau}{dt}\\simeq1-\\dfrac{3GM}{2c^2r}$　(2) 重力 $\\dfrac{GMT}{c^2}\\left(\\dfrac1R-\\dfrac1r\\right)$，衛星速度 $-\\dfrac{GMT}{2c^2r}$，地上自転 $\\dfrac{\\Omega^2R^2T}{2c^2}$；測位誤差 $\\dfrac{T}{c}\\left(\\dfrac{GM}{R}-\\dfrac{3GM}{2r}+\\dfrac{\\Omega^2R^2}{2}\\right)$　(3) 無視：$r=\\dfrac{3R}{2}$，含める：$r=\\dfrac{3GMR}{2GM+\\Omega^2R^3}$",
+  "solution": "(1) $\\chi=-GM/r$，円軌道で $v^2=GM/r$．\n\\[\n\\frac{d\\tau}{dt}\\simeq1+\\frac{\\chi}{c^2}-\\frac{v^2}{2c^2}=1-\\frac{GM}{c^2r}-\\frac{GM}{2c^2r}=\\boldsymbol{1-\\frac{3GM}{2c^2r}}.\n\\]\n(2) 地上時計：$\\dfrac{d\\tau_0}{dt}\\simeq1-\\dfrac{GM}{c^2R}-\\dfrac{\\Omega^2R^2}{2c^2}$．差 $\\dfrac{d\\tau_s-d\\tau_0}{dt}$ の各寄与に $T$ を掛ける（$c^{-2}$ の1次では $T$ をどちらの時計で測っても同じ）．\n・重力：$\\boldsymbol{\\dfrac{GMT}{c^2}\\Bigl(\\dfrac1R-\\dfrac1r\\Bigr)}$（$r>R$ なので衛星が進む）．\n・衛星速度：$\\boldsymbol{-\\dfrac{GMT}{2c^2r}}$（衛星が遅れる）．\n・地上の自転速度（地上時計が遅れる分，相対的に衛星が進む）：$\\boldsymbol{+\\dfrac{\\Omega^2R^2T}{2c^2}}$．\n合計に光速を掛けたものが測位誤差：\n\\[\n\\boldsymbol{\\frac{T}{c}\\Bigl(\\frac{GM}{R}-\\frac{3GM}{2r}+\\frac{\\Omega^2R^2}{2}\\Bigr)}.\n\\]\n実際の GPS 軌道では重力の寄与が速度の寄与の 6 倍ほどあり，全体で衛星の時計が 1 日に数十 $\\mu$s 進む．光速を掛けると 1 日で 10 km 程度の誤差になるので補正が欠かせない．\n\n(3) 自転を無視すると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}\\Rightarrow \\boldsymbol{r=\\dfrac32R}$．自転を含めると $\\dfrac{3GM}{2r}=\\dfrac{GM}{R}+\\dfrac{\\Omega^2R^2}{2}$ より\n\\[\n\\boldsymbol{r=\\frac{3GMR}{2GM+\\Omega^2R^3}}=\\frac{3R}{2}\\Bigl(1+\\frac{\\Omega^2R^3}{2GM}\\Bigr)^{-1},\n\\]\n自転の分だけわずかに $\\frac32R$ より小さい．これより低い軌道（ISS など）では速度効果が勝って衛星時計は遅れ，高い軌道では重力効果が勝って進む．",
+  "idea": "重力場中の時計の式を，重力による進みと運動による遅れの競合として読み，GPS 衛星の時計の進みと，両効果が打ち消し合う「中立軌道」($r\\simeq1.5R$) を導く．",
   "tags": "重力赤方偏移,時間の遅れ,GPS,固有時,弱い重力場",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) dτ/dt：1 - 3 G M/(2 c^2 r)\n(2) 重力：G M T/c^2 (1/R - 1/r) ; 衛星速度：-G M T/(2 c^2 r) ; 地上自転：Ω^2 R^2 T/(2 c^2) ; 測位誤差：T/c (G M/R - 3 G M/(2 r) + Ω^2 R^2/2)\n(3) 無視：3 R/2 ; 含める：3 G M R/(2 G M + Ω^2 R^3)",
+  "id": "GR-01-033"
  },
  {
   "tid": "GR-GEN-017",
@@ -846,12 +906,13 @@
   "level": 3,
   "theme": "加速ロケットの時計と投下した探査機の固有時",
   "minutes": 35,
-  "q": "慣性系に対して一定の固有加速度 $g$ で $+x$ 方向に加速するロケットの後端を原点とする座標では\n\\[\nds^2=dx^2+dy^2+dz^2-c^2\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2dt^2\n\\]\nであり（$t$ は後端の時計の時間），この座標で静止した点は剛体的に加速する．このとき自由粒子の運動は $\\dfrac{d^2x}{dt^2}-\\dfrac{2g/c^2}{1+gx/c^2}\\Bigl(\\dfrac{dx}{dt}\\Bigr)^2+g\\Bigl(1+\\dfrac{gx}{c^2}\\Bigr)=0$ に従う．\n\\begin{enumerate}\n\\item ロケットの前端（$x=L$）と後端に置いた時計の進み方の比を求めよ．$g=9.8\\ {\\rm m/s^2}$，$L=100$ m のとき，1年（$3.16\\times10^7$ s）で生じるずれはいくらか．\n\\item 時刻 $t=0$ に後端（$x=0$）で探査機を静かに放す．その後の $x(t)$ が $x=\\dfrac{c^2}{g}\\Bigl(\\dfrac{1}{\\cosh(gt/c)}-1\\Bigr)$ であることを確かめ，探査機の固有時 $\\tau(t)$ を求めよ．\n\\item $t\\to\\infty$ で探査機はどこに近づき，そのとき探査機の固有時はいくらに近づくか．$g=9.8\\ {\\rm m/s^2}$ で数値を答えよ．ロケットから見た探査機と，探査機自身の経験の違いを説明せよ．\n\\item 慣性系の立場（探査機は静止，ロケットの同時刻面は地平線の事象を通る直線）から (2) の $\\tau(t)$ を導け．\n\\end{enumerate}",
-  "answer": "(1) $1+gL/c^2$；$\\approx1.09\\times10^{-14}$，1年で約 $0.34\\ \\mu$s 前端が進む　(2) $\\tau=\\dfrac{c}{g}\\tanh\\dfrac{gt}{c}$　(3) $x\\to-c^2/g\\approx-0.97$ 光年（地平線），$\\tau\\to c/g\\approx0.97$ 年　(4) 略（解説参照）",
-  "solution": "(1) 静止時計は $d\\tau=(1+gx/c^2)dt$．比は $d\\tau_L/d\\tau_0=1+gL/c^2$．$gL/c^2=980/(9.0\\times10^{16})\\approx1.09\\times10^{-14}$，1年で $3.16\\times10^7\\times1.09\\times10^{-14}\\approx3.4\\times10^{-7}$ s．前端の時計が進む（等価原理による重力赤方偏移と同じ）．\n\n(2) $\\xi=1+gx/c^2=1/\\cosh(gt/c)$ とおくと運動方程式は $\\ddot\\xi-2\\dot\\xi^2/\\xi+(g^2/c^2)\\xi=0$．$u=1/\\xi=\\cosh(gt/c)$ とすると $\\ddot\\xi-2\\dot\\xi^2/\\xi=-\\ddot u/u^2$ なので方程式は $\\ddot u=(g/c)^2u$ となり，$u=\\cosh(gt/c)$ は初期条件 $u(0)=1,\\ \\dot u(0)=0$（$x=0,\\ \\dot x=0$）を満たす．\n速度は $v=\\dot x=-c\\,\\dfrac{\\tanh(gt/c)}{\\cosh(gt/c)}$．固有時は\n\\[\n\\frac{d\\tau}{dt}=\\sqrt{\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2-\\frac{v^2}{c^2}}=\\frac{\\sqrt{1-\\tanh^2(gt/c)}}{\\cosh(gt/c)}=\\frac{1}{\\cosh^2(gt/c)}\n\\]\nより $\\tau=\\dfrac cg\\tanh\\dfrac{gt}{c}$．\n\n(3) $t\\to\\infty$ で $x\\to-c^2/g$，$\\tau\\to c/g$．$c/g=3.0\\times10^8/9.8=3.06\\times10^7$ s $\\approx0.97$ 年，$c^2/g\\approx0.97$ 光年．ロケットから見ると探査機は永遠に落下し続けて地平線 $x=-c^2/g$ に漸近し，その時計はどんどん遅れて $\\tau=c/g$ の手前で凍りつくように見える．しかし探査機自身は単に慣性系で静止しているだけで，$\\tau=c/g$ を過ぎても普通に時を刻む．その後の事象からの光はロケットに追いつけない（地平線の向こう側）．\n\n(4) 慣性系 $(X,T)$ で，ロケット後端は $(X+c^2/g)^2-c^2T^2=(c^2/g)^2$，探査機は $X=0$ に静止し，その固有時は $T$ そのもの．後端の時刻 $t$ での同時刻面はラピディティ $\\phi=gt/c$ をもつ直線で，地平線の事象 $(X,T)=(-c^2/g,0)$ を通る（〔62〕(3)）：\n\\[\ncT=\\tanh\\phi\\,\\Bigl(X+\\frac{c^2}{g}\\Bigr).\n\\]\n$X=0$ を代入して $T=\\dfrac cg\\tanh\\dfrac{gt}{c}$，すなわち $\\tau(t)=\\dfrac cg\\tanh\\dfrac{gt}{c}$ で (2) と一致する．",
+  "q": "慣性系に対して一定の固有加速度 $g$ で $+x$ 方向に加速するロケットの後端を原点とする座標では\n\\[\nds^2=dx^2+dy^2+dz^2-c^2\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2dt^2\n\\]\nであり（$t$ は後端の時計の時間），この座標で静止した点は剛体的に加速する．このとき自由粒子の運動は $\\dfrac{d^2x}{dt^2}-\\dfrac{2g/c^2}{1+gx/c^2}\\Bigl(\\dfrac{dx}{dt}\\Bigr)^2+g\\Bigl(1+\\dfrac{gx}{c^2}\\Bigr)=0$ に従う．\n\\begin{enumerate}\n\\item ロケットの前端（$x=L$）と後端に置いた時計の進み方の比を求めよ．後端の時計で時間 $T$ が経つ間に，前端の時計は後端の時計よりどれだけ進むか．\n\\item 時刻 $t=0$ に後端（$x=0$）で探査機を静かに放す．その後の $x(t)$ が $x=\\dfrac{c^2}{g}\\Bigl(\\dfrac{1}{\\cosh(gt/c)}-1\\Bigr)$ であることを確かめ，探査機の固有時 $\\tau(t)$ を求めよ．\n\\item $t\\to\\infty$ で探査機はどこに近づき，そのとき探査機の固有時はいくらに近づくか．$g,c$ で答えよ．ロケットから見た探査機と，探査機自身の経験の違いを説明せよ．\n\\item 慣性系の立場（探査機は静止，ロケットの同時刻面は地平線の事象を通る直線）から (2) の $\\tau(t)$ を導け．\n\\end{enumerate}",
+  "answer": "(1) $1+\\dfrac{gL}{c^2}$；$\\dfrac{gLT}{c^2}$ だけ前端が進む　(2) $\\tau=\\dfrac{c}{g}\\tanh\\dfrac{gt}{c}$　(3) $x=-\\dfrac{c^2}{g}$（地平線），$\\tau=\\dfrac{c}{g}$ に近づく　(4) 略（解説参照）",
+  "solution": "(1) 静止時計は $d\\tau=(1+gx/c^2)dt$．比は $\\boldsymbol{d\\tau_L/d\\tau_0=1+gL/c^2}$．後端の時間 $T$ の間に前端は $\\boldsymbol{gLT/c^2}$ だけ進む（等価原理による重力赤方偏移と同じ：$gL$ は前後の「重力ポテンシャル」の差）．$g$ が地上の重力加速度，$L$ が 100 m 程度なら $gL/c^2\\sim10^{-14}$ で，1 年で $1\\ \\mu$s に満たない．\n\n(2) $\\xi=1+gx/c^2=1/\\cosh(gt/c)$ とおくと運動方程式は $\\ddot\\xi-2\\dot\\xi^2/\\xi+(g^2/c^2)\\xi=0$．$u=1/\\xi=\\cosh(gt/c)$ とすると $\\ddot\\xi-2\\dot\\xi^2/\\xi=-\\ddot u/u^2$ なので方程式は $\\ddot u=(g/c)^2u$ となり，$u=\\cosh(gt/c)$ は初期条件 $u(0)=1,\\ \\dot u(0)=0$（$x=0,\\ \\dot x=0$）を満たす．\n速度は $v=\\dot x=-c\\,\\dfrac{\\tanh(gt/c)}{\\cosh(gt/c)}$．固有時は\n\\[\n\\frac{d\\tau}{dt}=\\sqrt{\\Bigl(1+\\frac{gx}{c^2}\\Bigr)^2-\\frac{v^2}{c^2}}=\\frac{\\sqrt{1-\\tanh^2(gt/c)}}{\\cosh(gt/c)}=\\frac{1}{\\cosh^2(gt/c)}\n\\]\nより $\\tau=\\dfrac cg\\tanh\\dfrac{gt}{c}$．\n\n(3) $t\\to\\infty$ で $\\boldsymbol{x\\to-c^2/g}$，$\\boldsymbol{\\tau\\to c/g}$．地上の重力加速度程度の $g$ なら $c/g$ は約 1 年，$c^2/g$ は約 1 光年である．ロケットから見ると探査機は永遠に落下し続けて地平線 $x=-c^2/g$ に漸近し，その時計はどんどん遅れて $\\tau=c/g$ の手前で凍りつくように見える．しかし探査機自身は単に慣性系で静止しているだけで，$\\tau=c/g$ を過ぎても普通に時を刻む．その後の事象からの光はロケットに追いつけない（地平線の向こう側）．\n\n(4) 慣性系 $(X,T)$ で，ロケット後端は $(X+c^2/g)^2-c^2T^2=(c^2/g)^2$，探査機は $X=0$ に静止し，その固有時は $T$ そのもの．後端の時刻 $t$ での同時刻面はラピディティ $\\phi=gt/c$ をもつ直線で，地平線の事象 $(X,T)=(-c^2/g,0)$ を通る（〔62〕(3)）：\n\\[\ncT=\\tanh\\phi\\,\\Bigl(X+\\frac{c^2}{g}\\Bigr).\n\\]\n$X=0$ を代入して $T=\\dfrac cg\\tanh\\dfrac{gt}{c}$，すなわち $\\tau(t)=\\dfrac cg\\tanh\\dfrac{gt}{c}$ で (2) と一致する．",
   "idea": "一様加速系での時計の進み（前後の差）に加え，投下した探査機の固有時が有限値 $c/g$ で頭打ちになることを，加速系の運動方程式と慣性系の同時刻面の両方から導く．",
   "tags": "一様加速系,Rindler座標,地平線,固有時,等価原理,重力赤方偏移",
-  "input": "(1) 記述\n(2) $\\tau$：((c)/(g)) tanh ((g t)/(c))\n(3) 記述\n(4) 証明"
+  "input": "(1) 比：1 + g L/c^2 ; 進む時間：g L T/c^2\n(2) $\\tau$：((c)/(g)) tanh ((g t)/(c))\n(3) x：-c^2/g ; τ：c/g\n(4) 証明",
+  "id": "GR-01-042"
  },
  {
   "tid": "GS-SRL-030",
@@ -860,12 +921,13 @@
   "level": 4,
   "theme": "Schwarzschild時空の曲率不変量と潮汐力",
   "minutes": 40,
-  "q": "Schwarzschild 計量\n\\[ ds^2=\\left(1-\\frac{r_s}{r}\\right)c^2dt^2-\\frac{dr^2}{1-r_s/r}-r^2\\left(d\\theta^2+\\sin^2\\theta\\,d\\phi^2\\right),\\qquad r_s=\\frac{2GM}{c^2} \\]\nを考える．静的観測者の正規直交基底（$\\hat t,\\hat r,\\hat\\theta,\\hat\\phi$）での Riemann テンソルの独立な非零成分は，対称性で移り合うものを除いて\n\\[ |R_{\\hat t\\hat r\\hat t\\hat r}|=|R_{\\hat\\theta\\hat\\phi\\hat\\theta\\hat\\phi}|=\\frac{r_s}{r^3},\\qquad |R_{\\hat t\\hat\\theta\\hat t\\hat\\theta}|=|R_{\\hat t\\hat\\phi\\hat t\\hat\\phi}|=|R_{\\hat r\\hat\\theta\\hat r\\hat\\theta}|=|R_{\\hat r\\hat\\phi\\hat r\\hat\\phi}|=\\frac{r_s}{2r^3} \\]\nである（単位は ${\\rm m^{-2}}$）．\n\\begin{enumerate}\n\\item Kretschmann 不変量 $K=R_{abcd}R^{abcd}$ を求め，$r=r_s$ が物理的特異点でないこと，$r=0$ が真の特異点であることを論じよ．\n\\item 動径方向に自由落下する長さ $\\ell$ の物体の両端の相対加速度（潮汐加速度）は $\\Delta g=c^2|R_{\\hat t\\hat r\\hat t\\hat r}|\\ell$ で与えられる（動径方向のブーストで $R_{\\hat t\\hat r\\hat t\\hat r}$ は変わらない）．$\\Delta g$ を $G,M,r,\\ell$ で表し，$r=r_s$ での値を $M$ の関数として求めよ．\n\\item 身長 $\\ell=2$ m の人が地平線を通過するときの潮汐加速度が $10g$（$g=9.8\\ {\\rm m/s^2}$）以下となるブラックホールの質量の下限を，太陽質量 $M_\\odot=1.989\\times10^{30}$ kg 単位で求めよ（$G=6.674\\times10^{-11}$，$c=2.998\\times10^8$ SI）．\n\\end{enumerate}",
-  "answer": "(1) $K=12r_s^2/r^6=48G^2M^2/(c^4r^6)$，$r=r_s$ で有限（$12/r_s^4$），$r\\to0$ で発散　(2) $\\Delta g=2GM\\ell/r^3$，地平線で $\\Delta g=c^6\\ell/(4G^2M^2)$　(3) $M\\ge\\dfrac{c^3}{2G}\\sqrt{\\dfrac{\\ell}{\\Delta g}}\\approx2.9\\times10^{34}\\ {\\rm kg}\\approx1.45\\times10^4M_\\odot$",
-  "solution": "(1) 正規直交基底では添字の上げ下げは符号 $\\pm1$ を掛けるだけで，$R_{abcd}R^{abcd}$ の各項では同じ添字が 2 回ずつ現れるので符号は打ち消し合う．$R_{abab}$ 型の各成分は $R_{abab}=R_{baba}=-R_{abba}=-R_{baab}$ の 4 通りで現れるから\n\\[ K=4\\left[\\left(\\frac{r_s}{r^3}\\right)^2\\times2+\\left(\\frac{r_s}{2r^3}\\right)^2\\times4\\right]=4\\cdot\\frac{3r_s^2}{r^6}=\\frac{12r_s^2}{r^6}=\\frac{48G^2M^2}{c^4r^6}. \\]\n$K$ はスカラーなので座標の取り方によらない．$r=r_s$ で $K=12/r_s^4$ は有限，すなわち計量成分の $1/(1-r_s/r)$ の発散は座標の選び方による見かけの特異性（座標特異点）である．一方 $r\\to0$ では $K\\to\\infty$ でどの座標でも除去できない真の曲率特異点．\n\n(2) 測地線偏差の式 $\\dfrac{D^2\\xi^{\\hat r}}{d\\tau^2}=-c^2R^{\\hat r}{}_{\\hat t\\hat r\\hat t}\\xi^{\\hat r}$ の大きさが $c^2(r_s/r^3)\\xi$ で，引き伸ばす向き．よって\n\\[ \\Delta g=\\frac{c^2r_s}{r^3}\\ell=\\frac{2GM\\ell}{r^3}. \\]\n（ニュートン重力の潮汐力 $\\frac{d}{dr}(GM/r^2)\\ell$ と同じ形．）$r=r_s=2GM/c^2$ では\n\\[ \\Delta g(r_s)=\\frac{2GM\\ell\\,c^6}{8G^3M^3}=\\frac{c^6\\ell}{4G^2M^2}\\propto\\frac1{M^2}. \\]\n重いブラックホールほど地平線での潮汐力は弱い．\n\n(3) $c^6\\ell/(4G^2M^2)\\le\\Delta g$ より $M\\ge\\dfrac{c^3}{2G}\\sqrt{\\dfrac{\\ell}{\\Delta g}}$．$c^3/(2G)=2.02\\times10^{35}$ kg/s，$\\sqrt{2/98}\\ {\\rm s}=0.143$ s で $M\\ge2.9\\times10^{34}$ kg $=1.45\\times10^4M_\\odot$．恒星質量（$\\sim10M_\\odot$）のブラックホールでは地平線の外で引き裂かれるが，銀河中心の超大質量ブラックホールでは地平線を無事に通過できる（ただし特異点 $r\\to0$ へ向かい $K\\to\\infty$）．",
+  "q": "Schwarzschild 計量\n\\[ ds^2=\\left(1-\\frac{r_s}{r}\\right)c^2dt^2-\\frac{dr^2}{1-r_s/r}-r^2\\left(d\\theta^2+\\sin^2\\theta\\,d\\phi^2\\right),\\qquad r_s=\\frac{2GM}{c^2} \\]\nを考える．静的観測者の正規直交基底（$\\hat t,\\hat r,\\hat\\theta,\\hat\\phi$）での Riemann テンソルの独立な非零成分は，対称性で移り合うものを除いて\n\\[ |R_{\\hat t\\hat r\\hat t\\hat r}|=|R_{\\hat\\theta\\hat\\phi\\hat\\theta\\hat\\phi}|=\\frac{r_s}{r^3},\\qquad |R_{\\hat t\\hat\\theta\\hat t\\hat\\theta}|=|R_{\\hat t\\hat\\phi\\hat t\\hat\\phi}|=|R_{\\hat r\\hat\\theta\\hat r\\hat\\theta}|=|R_{\\hat r\\hat\\phi\\hat r\\hat\\phi}|=\\frac{r_s}{2r^3} \\]\nである（単位は ${\\rm m^{-2}}$）．\n\\begin{enumerate}\n\\item Kretschmann 不変量 $K=R_{abcd}R^{abcd}$ を求め，$r=r_s$ が物理的特異点でないこと，$r=0$ が真の特異点であることを論じよ．\n\\item 動径方向に自由落下する長さ $l$ の物体の両端の相対加速度（潮汐加速度）は $\\Delta g=c^2|R_{\\hat t\\hat r\\hat t\\hat r}|l$ で与えられる（動径方向のブーストで $R_{\\hat t\\hat r\\hat t\\hat r}$ は変わらない）．$\\Delta g$ を $G,M,r,l$ で表し，$r=r_s$ での値を $M$ の関数として求めよ．\n\\item 身長 $l$ の人が地平線を通過するときの潮汐加速度が $a_0$ 以下となるブラックホールの質量の下限を $G,c,l,a_0$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $K=12r_s^2/r^6=48G^2M^2/(c^4r^6)$，$r=r_s$ で有限（$12/r_s^4$），$r\\to0$ で発散　(2) $\\Delta g=\\dfrac{2GMl}{r^3}$，地平線で $\\Delta g=\\dfrac{c^6l}{4G^2M^2}$　(3) $M\\ge\\dfrac{c^3}{2G}\\sqrt{\\dfrac{l}{a_0}}$",
+  "solution": "(1) 正規直交基底では添字の上げ下げは符号 $\\pm1$ を掛けるだけで，$R_{abcd}R^{abcd}$ の各項では同じ添字が 2 回ずつ現れるので符号は打ち消し合う．$R_{abab}$ 型の各成分は $R_{abab}=R_{baba}=-R_{abba}=-R_{baab}$ の 4 通りで現れるから\n\\[ K=4\\left[\\left(\\frac{r_s}{r^3}\\right)^2\\times2+\\left(\\frac{r_s}{2r^3}\\right)^2\\times4\\right]=4\\cdot\\frac{3r_s^2}{r^6}=\\frac{12r_s^2}{r^6}=\\frac{48G^2M^2}{c^4r^6}. \\]\n$K$ はスカラーなので座標の取り方によらない．$r=r_s$ で $K=12/r_s^4$ は有限，すなわち計量成分の $1/(1-r_s/r)$ の発散は座標の選び方による見かけの特異性（座標特異点）である．一方 $r\\to0$ では $K\\to\\infty$ でどの座標でも除去できない真の曲率特異点．\n\n(2) 測地線偏差の式 $\\dfrac{D^2\\xi^{\\hat r}}{d\\tau^2}=-c^2R^{\\hat r}{}_{\\hat t\\hat r\\hat t}\\xi^{\\hat r}$ の大きさが $c^2(r_s/r^3)\\xi$ で，引き伸ばす向き．よって\n\\[ \\Delta g=\\frac{c^2r_s}{r^3}l=\\frac{2GMl}{r^3}. \\]\n（ニュートン重力の潮汐力 $\\frac{d}{dr}(GM/r^2)l$ と同じ形．）$r=r_s=2GM/c^2$ では\n\\[ \\Delta g(r_s)=\\frac{2GMl\\,c^6}{8G^3M^3}=\\frac{c^6l}{4G^2M^2}\\propto\\frac1{M^2}. \\]\n重いブラックホールほど地平線での潮汐力は弱い．\n\n(3) $c^6l/(4G^2M^2)\\le a_0$ より $\\boldsymbol{M\\ge\\dfrac{c^3}{2G}\\sqrt{\\dfrac{l}{a_0}}}$．身長 2 m，$a_0$ を地上の重力加速度の10倍とすると約 $10^4M_\\odot$ になる．恒星質量（$\\sim10M_\\odot$）のブラックホールでは地平線の外で引き裂かれるが，銀河中心の超大質量ブラックホールでは地平線を無事に通過できる（ただし特異点 $r\\to0$ へ向かい $K\\to\\infty$）．",
   "idea": "座標特異点か真の特異点かはスカラー不変量 $K=12r_s^2/r^6$ で判定できる．地平線での潮汐力 $\\propto1/M^2$ という意外な依存性が出る．",
   "tags": "Schwarzschild解,Riemannテンソル,Kretschmann不変量,座標特異点,潮汐力,一般相対論",
-  "input": "(1) 記述\n(2) 記述\n(3) 記述"
+  "input": "(1) 記述\n(2) Δg：2 G M l/r^3 ; 地平線：c^6 l/(4 G^2 M^2)\n(3) M：c^3/(2 G) sqrt(l/a_0)",
+  "id": "GR-03-025"
  },
  {
   "tid": "GS-SRL-031",
@@ -879,7 +941,8 @@
   "solution": "(1) 慣性系では光はどちら向きにも速さ $c$．順方向の光は P が $R\\Omega t$ だけ先に進むので $ct_+=2\\pi R+R\\Omega t_+$，逆方向は $ct_-=2\\pi R-R\\Omega t_-$．\n\\[ t_\\pm=\\frac{2\\pi R}{c\\mp R\\Omega},\\qquad \\Delta t=2\\pi R\\,\\frac{2R\\Omega}{c^2-R^2\\Omega^2}=\\frac{4\\pi R^2\\Omega}{c^2-R^2\\Omega^2}. \\]\n\n(2) P の時計は速さ $R\\Omega$ で動くので $d\\tau=dt/\\gamma$．$c^2-R^2\\Omega^2=c^2/\\gamma^2$ より\n\\[ \\Delta\\tau=\\frac{\\Delta t}{\\gamma}=\\frac{4\\pi R^2\\Omega\\gamma^2}{c^2\\gamma}=\\frac{4\\mathcal A\\Omega}{c^2}\\gamma\\simeq\\frac{4\\mathcal A\\Omega}{c^2}. \\]\n光の速さは慣性系ではどちら向きも $c$ でも，円周上の観測者には順方向・逆方向の周回時間が異なって見え（Sagnac 効果），これによって回転を絶対的に検出できる．\n\n(3) 隣り合う時計 $i,i+1$ をアインシュタインの方法で合わせると，順方向と逆方向の片道時間の差の半分だけ真の（慣性系の同時刻に基づく）時刻とずれる．一周分を足し合わせると，ずれの総和は順・逆周回時間差の半分 $\\delta=\\Delta\\tau/2\\simeq2\\mathcal A\\Omega/c^2$．$\\Omega\\ne0$ なら $\\delta\\ne0$ で，回転円周上では矛盾のない大域的同時刻を光で定義できない．\n\n(4) $\\mathcal A\\Omega=\\pi(6.378\\times10^6)^2\\times7.292\\times10^{-5}=9.32\\times10^{9}\\ {\\rm m^2/s}$．\n\\[ \\Delta\\tau=\\frac{4\\times9.32\\times10^9}{8.988\\times10^{16}}\\ {\\rm s}=4.15\\times10^{-7}\\ {\\rm s}=415\\ {\\rm ns},\\qquad \\delta=207\\ {\\rm ns}. \\]\n後者は GPS などの時刻比較で実際に補正される量（赤道一周で約 207 ns）である．",
   "idea": "慣性系で光速一定から周回時間差 $4\\mathcal A\\Omega\\gamma/c^2$ が出る．その半分が一周の時計合わせの食い違いとなり，回転は光で絶対的に検出される．",
   "tags": "Sagnac効果,回転座標系,同時刻,時計の同期,GPS",
-  "input": "(1) 記述\n(2) 記述\n(3) $\\delta$：Δ τ /2\n(4) $\\Delta\\tau$ [ns]：≈415 ; $\\delta$ [ns]：≈207"
+  "input": "(1) 記述\n(2) 記述\n(3) $\\delta$：Δ τ /2\n(4) $\\Delta\\tau$ [ns]：≈415 ; $\\delta$ [ns]：≈207",
+  "id": "GR-01-034"
  },
  {
   "tid": "KM-NRK-084",
@@ -888,11 +951,12 @@
   "level": 3,
   "theme": "パウンド–レブカ実験の向きと熱的系統誤差",
   "minutes": 25,
-  "q": "高さ $H=22.6\\ \\mathrm{m}$ の塔の**下端**に 14.4 keV の ${}^{57}\\mathrm{Fe}$ メスバウアー線源，**上端**に吸収体を置き，重力赤方偏移を測定する（$g=9.80\\ \\mathrm{m/s^2}$，$c=3.00\\times10^8\\ \\mathrm{m/s}$）．\n\\begin{enumerate}\n\\item 吸収体に届いた光子の相対的な振動数変化 $\\Delta\\nu/\\nu$ を求め，その符号を答えよ．\n\\item 共鳴を回復するには吸収体をどちら向きにどれだけの速さで動かせばよいか（mm/s 単位）．\n\\item 線源と吸収体の温度がわずかに異なると，二次のドップラー効果（時間の遅れ）$\\Delta\\nu/\\nu=-\\langle v^2\\rangle/2c^2$ によっても振動数がずれる．(1) と同じ大きさのずれを生む温度差 $\\Delta T$ を求めよ．原子 1 個の運動エネルギーを $\\frac32k_{\\mathrm B}T$ とし，${}^{57}\\mathrm{Fe}$ 原子の質量 $M=9.45\\times10^{-26}\\ \\mathrm{kg}$，$k_{\\mathrm B}=1.38\\times10^{-23}\\ \\mathrm{J/K}$ とする．\n\\end{enumerate}",
-  "answer": "(1) $\\Delta\\nu/\\nu=-gH/c^2=-2.46\\times10^{-15}$（赤方偏移）　(2) 下向き（線源に近づく向き）に $7.4\\times10^{-4}\\ \\mathrm{mm/s}$　(3) $\\Delta T=2MgH/3k_{\\mathrm B}\\approx1.0\\ \\mathrm K$",
-  "solution": "(1) 光子は重力ポテンシャルを $gH$ だけ登るので，エネルギー $h\\nu$ に対し $h\\nu\\cdot gH/c^2$ を失う：\n\\[ \\frac{\\Delta\\nu}{\\nu}=-\\frac{gH}{c^2}=-\\frac{9.80\\times22.6}{(3.00\\times10^8)^2}=-2.46\\times10^{-15}. \\]\n吸収体の共鳴振動数より低い（赤方偏移）．\n\n(2) 吸収体から見た光子の振動数を上げるには，吸収体を線源に**近づける**向き，すなわち下向きに動かす．$v/c=gH/c^2$ より\n\\[ v=\\frac{gH}{c}=\\frac{9.80\\times22.6}{3.00\\times10^8}=7.4\\times10^{-7}\\ \\mathrm{m/s}=7.4\\times10^{-4}\\ \\mathrm{mm/s}. \\]\n\n(3) $\\langle v^2\\rangle=3k_{\\mathrm B}T/M$ より二次ドップラーシフトは $-3k_{\\mathrm B}T/2Mc^2$．温度差 $\\Delta T$ による相対ずれ $3k_{\\mathrm B}\\Delta T/2Mc^2$ が $gH/c^2$ に等しいとおくと\n\\[ \\Delta T=\\frac{2MgH}{3k_{\\mathrm B}}=\\frac{2\\times9.45\\times10^{-26}\\times9.80\\times22.6}{3\\times1.38\\times10^{-23}}=1.0\\ \\mathrm K. \\]\nわずか 1 K の温度差で効果と同程度の系統誤差が生じるため，実際の実験では線源と吸収体の温度を厳密に管理し，両者の上下を入れ替えた測定の差をとった．",
-  "idea": "重力赤方偏移は $gH/c^2$ で，補償には吸収体を線源へ近づける．二次ドップラー効果では約 1 K の温度差が同じ大きさのずれを生む．",
+  "q": "高さ $H$ の塔の\\textbf{下端}に ${}^{57}\\mathrm{Fe}$ メスバウアー線源，\\textbf{上端}に吸収体を置き，重力赤方偏移を測定する（重力加速度の大きさ $g$，光速 $c$）．\n\\begin{enumerate}\n\\item 吸収体に届いた光子の相対的な振動数変化 $\\Delta\\nu/\\nu$ を求め，その符号を答えよ．\n\\item 共鳴を回復するには吸収体をどちら向きにどれだけの速さで動かせばよいか．\n\\item 線源と吸収体の温度がわずかに異なると，二次のドップラー効果（時間の遅れ）$\\Delta\\nu/\\nu=-\\langle v^2\\rangle/2c^2$ によっても振動数がずれる．(1) と同じ大きさのずれを生む温度差 $\\Delta T$ を求めよ．原子 1 個の運動エネルギーを $\\frac32k_BT$ とし，${}^{57}\\mathrm{Fe}$ 原子の質量を $M$，ボルツマン定数を $k_B$ とする．\n\\end{enumerate}",
+  "answer": "(1) $\\Delta\\nu/\\nu=-\\dfrac{gH}{c^2}$（赤方偏移）　(2) 下向き（線源に近づく向き）に $\\dfrac{gH}{c}$　(3) $\\Delta T=\\dfrac{2MgH}{3k_B}$",
+  "solution": "(1) 光子は重力ポテンシャルを $gH$ だけ登るので，エネルギー $h\\nu$ に対し $h\\nu\\cdot gH/c^2$ を失う：\n\\[ \\boldsymbol{\\frac{\\Delta\\nu}{\\nu}=-\\frac{gH}{c^2}}. \\]\n吸収体の共鳴振動数より低い（赤方偏移）．\n\n(2) 吸収体から見た光子の振動数を上げるには，吸収体を線源に\\textbf{近づける}向き，すなわち下向きに動かす．1次のドップラー効果 $v/c=gH/c^2$ より\n\\[ \\boldsymbol{v=\\frac{gH}{c}}. \\]\n数十 m の塔では $\\mu$m/s 以下というごくゆっくりした速さである．\n\n(3) $\\langle v^2\\rangle=3k_BT/M$ より二次ドップラーシフトは $-3k_BT/2Mc^2$．温度差 $\\Delta T$ による相対ずれ $3k_B\\Delta T/2Mc^2$ が $gH/c^2$ に等しいとおくと\n\\[ \\boldsymbol{\\Delta T=\\frac{2MgH}{3k_B}}. \\]\n熱エネルギーの差 $\\frac32k_B\\Delta T$ と位置エネルギー $MgH$ が等しくなる温度差で，実際の実験（$H\\approx23$ m）ではわずか 1 K 程度になる．効果と同程度の系統誤差が生じるため，線源と吸収体の温度を厳密に管理し，両者の上下を入れ替えた測定の差をとった．",
+  "idea": "重力赤方偏移は $gH/c^2$ で，補償には吸収体を線源へ近づける．二次ドップラー効果では $\\frac32k_B\\Delta T=MgH$ となる温度差が同じ大きさのずれを生む．",
   "tags": "重力赤方偏移,パウンド・レブカ実験,メスバウアー効果,二次ドップラー効果,系統誤差",
-  "input": "(1) 記述\n(2) 下向きに [mm/s]：≈7.4e-4\n(3) $\\Delta T$ [K]：≈1.0"
+  "input": "(1) Δν/ν：-g H/c^2\n(2) 下向きの速さ：g H/c\n(3) $\\Delta T$：2 M g H/(3 k_B)",
+  "id": "GR-01-043"
  }
 ]

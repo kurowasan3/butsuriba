@@ -11,7 +11,8 @@
   "solution": "(1) $L$ の形を確かめておく．$T=\\frac12 m_1\\dot x^2+\\frac12 m_2\\dot x^2$，$U=-m_1gx+m_2gx$（$m_1$ は下がり $m_2$ は上がる）なので，$L=T-U$ は問題文の形になる．\n\n偏微分を計算すると $\\dfrac{\\partial L}{\\partial \\dot x}=(m_1+m_2)\\dot x$，$\\dfrac{\\partial L}{\\partial x}=(m_1-m_2)g$．よって\n\\[(m_1+m_2)\\ddot x=(m_1-m_2)g,\\qquad \\boldsymbol{\\ddot x=\\frac{(m_1-m_2)g}{m_1+m_2}}.\\]\n張力を一度も考えずに，2物体をまとめた運動方程式が直接出てくるのがラグランジュ形式の利点である．\n\n(2) 加速度一定の運動なので $v^2=2\\ddot x h$ より $\\boldsymbol{v=\\sqrt{\\dfrac{2(m_1-m_2)gh}{m_1+m_2}}}$．力学的エネルギー保存 $\\frac12(m_1+m_2)v^2=(m_1-m_2)gh$ からも同じ結果になる．\n\n次は，振り子や回転する系など，座標の選び方で力がぐっと見えにくくなる問題でラグランジュ形式の威力を味わうとよい．",
   "idea": "運動エネルギーと位置エネルギーだけから運動方程式が出る．束縛力（張力）を考えなくてよい．",
   "tags": "ラグランジアン,オイラー＝ラグランジュ方程式,アトウッドの器械",
-  "input": "(1) (m_1-m_2)g/(m_1+m_2)\n(2) v：sqrt(2(m_1-m_2)g h/(m_1+m_2))"
+  "input": "(1) (m_1-m_2)g/(m_1+m_2)\n(2) v：sqrt(2(m_1-m_2)g h/(m_1+m_2))",
+  "id": "AM-01-006"
  },
  {
   "tid": "B-AM-02",
@@ -25,7 +26,8 @@
   "solution": "(1) $\\dfrac{\\partial L}{\\partial \\dot r}=m\\dot r$，$\\dfrac{\\partial L}{\\partial r}=mr\\omega^2$ なので $m\\ddot r=mr\\omega^2$，すなわち $\\boldsymbol{\\ddot r=\\omega^2 r}$．回転する棒と一緒に回る人から見れば，これは遠心力 $mr\\omega^2$ で外へ押し出される運動である．ラグランジアンの計算では遠心力を「知らなくても」自然に出てくる．\n\n(2) $r(t)=r_0\\cosh\\omega t$ が (1) と初期条件を満たすことは，$\\frac{d^2}{dt^2}\\cosh\\omega t=\\omega^2\\cosh\\omega t$，$\\sinh 0=0$ から確かめられる．$\\cosh\\omega t=2$ を解く．$u=e^{\\omega t}$ とおくと $u+1/u=4$，$u^2-4u+1=0$，$u>1$ より $u=2+\\sqrt3$．よって\n\\[\\boldsymbol{t=\\frac{\\ln(2+\\sqrt3)}{\\omega}}\\approx\\frac{1.32}{\\omega}.\\]\nビーズは指数関数的に外へ飛び出していく．\n\n次は，棒が鉛直面内で回る場合のように重力が加わったとき，平衡点が現れるかどうかを調べてみるとよい．",
   "idea": "回転座標を使ったラグランジアンから，遠心力に相当する項が自動的に出てくる．",
   "tags": "ラグランジアン,回転系,双曲線関数",
-  "input": "(1) r̈：omega^2 r\n(2) t：ln(2+sqrt(3))/omega"
+  "input": "(1) r̈：omega^2 r\n(2) t：ln(2+sqrt(3))/omega",
+  "id": "AM-01-007"
  },
  {
   "tid": "B-AM-03",
@@ -39,7 +41,8 @@
   "solution": "(1) $L$ を $\\dot\\theta$ で偏微分して $p_\\theta=mr^2\\dot\\theta=\\boldsymbol{mr^2\\omega}$．これは角運動量である．\n\n(2) 速度が動径に垂直なとき，速さは $r\\dot\\theta$ なので $p_\\theta=mr\\cdot(r\\dot\\theta)=mrv$．$p_\\theta$ 一定より $mav_0=mbv$，$\\boldsymbol{v=\\dfrac{av_0}{b}}$．惑星が近日点で速く，遠日点で遅いのはこのためである．\n\n(3) $\\dfrac12 r^2\\dot\\theta=\\dfrac{p_\\theta}{2m}=\\boldsymbol{\\dfrac{av_0}{2}}$ で一定（ケプラーの第2法則）．\n\n「$L$ が $\\theta$ を含まない」は「系を回転しても変わらない」という対称性であり，そこから保存量が出てくる．この対応を一般化したものがネーターの定理で，次に学ぶとよい．",
   "idea": "ラグランジアンに含まれない座標（循環座標）に対応する運動量は保存する．回転対称性→角運動量保存．",
   "tags": "循環座標,角運動量保存,ケプラーの第2法則",
-  "input": "(1) p_θ：m r^2 omega\n(2) v：a v_0/b\n(3) a v_0/2"
+  "input": "(1) p_θ：m r^2 omega\n(2) v：a v_0/b\n(3) a v_0/2",
+  "id": "AM-02-006"
  },
  {
   "tid": "B-AM-04",
@@ -53,7 +56,8 @@
   "solution": "(1) $\\dot x=a(T-2t)$ より\n\\[\\int_0^T\\dot x^2dt=a^2\\int_0^T(T-2t)^2dt=\\frac{a^2T^3}{3},\\qquad \\int_0^T x\\,dt=a\\int_0^T(tT-t^2)dt=\\frac{aT^3}{6}.\\]\nよって $S=\\dfrac{m a^2T^3}{6}-\\dfrac{mgaT^3}{6}=\\boldsymbol{\\dfrac{mT^3}{6}(a^2-ga)}$．\n\n(2) $a$ の2次関数なので，$\\dfrac{dS}{da}=\\dfrac{mT^3}{6}(2a-g)=0$ より $\\boldsymbol{a=\\dfrac g2}$．\n\n(3) $x(t)=\\dfrac g2 t(T-t)=\\dfrac{gT}{2}t-\\dfrac12 gt^2$ となり，これは初速 $\\boldsymbol{\\dfrac{gT}{2}}$ の鉛直投げ上げの式そのものである．試行関数の中にたまたま正解が含まれていたので，作用最小の経路が実際の運動に一致した．\n\n一般の経路について $S$ を最小にする条件を求めると，オイラー＝ラグランジュ方程式が得られる．これが次に学ぶ「変分法」である．",
   "idea": "作用を経路の関数とみて最小化すると実際の運動が選ばれる．",
   "tags": "最小作用の原理,変分法,試行関数",
-  "input": "(1) S：m T^3 (a^2 - g a)/6\n(2) a：g/2\n(3) 初速：g T/2"
+  "input": "(1) S：m T^3 (a^2 - g a)/6\n(2) a：g/2\n(3) 初速：g T/2",
+  "id": "AM-02-007"
  },
  {
   "tid": "B-AM-05",
@@ -67,7 +71,8 @@
   "solution": "(1) $\\dot x=\\dfrac pm$，$\\dot p=-kx$．1つ目を微分して2つ目を代入すると $\\ddot x=\\dot p/m=-\\dfrac km x$．これは単振動で $\\boldsymbol{\\omega=\\sqrt{k/m}}$．ハミルトン形式では，2階の運動方程式1本が1階の方程式2本に分かれる．\n\n(2) $\\dfrac{x^2}{2E/k}+\\dfrac{p^2}{2mE}=1$ なので，半軸は $\\sqrt{2E/k}$（$x$ 方向）と $\\sqrt{2mE}$（$p$ 方向）．面積は\n\\[A=\\pi\\sqrt{\\frac{2E}{k}}\\sqrt{2mE}=\\boldsymbol{2\\pi E\\sqrt{\\frac mk}}=\\frac{2\\pi E}{\\omega}.\\]\nすなわち $E=\\dfrac{\\omega}{2\\pi}A$ である．量子力学では，この面積が $2\\pi\\hbar$ の整数倍に近い値しか取れないとすると $E\\approx n\\hbar\\omega$ となる（ボーア＝ゾンマーフェルトの量子化）．\n\n次は，相空間の面積が時間発展で保たれるというリウヴィルの定理や，作用変数の考え方を学ぶとよい．",
   "idea": "ハミルトニアンから1階の正準方程式が出る．運動は相空間の等エネルギー曲線をたどる．",
   "tags": "ハミルトニアン,正準方程式,相空間",
-  "input": "(1) ω：sqrt(k/m)\n(2) A：2 pi E sqrt(m/k)"
+  "input": "(1) ω：sqrt(k/m)\n(2) A：2 pi E sqrt(m/k)",
+  "id": "AM-03-006"
  },
  {
   "tid": "B-AM-06",
@@ -81,7 +86,8 @@
   "solution": "(1) $p=ml^2\\dot\\theta=\\boldsymbol{ml^2\\omega}$（支点まわりの角運動量）．\n\n(2) $\\dot\\theta=p/(ml^2)$ を代入すると\n\\[H=p\\cdot\\frac{p}{ml^2}-\\frac{p^2}{2ml^2}-mgl\\cos\\theta=\\boldsymbol{\\frac{p^2}{2ml^2}-mgl\\cos\\theta}.\\]\n運動エネルギー＋位置エネルギー，すなわち力学的エネルギーになっている．\n\n(3) $H$ は保存する．最上点 $\\theta=\\pi$ に $p\\ge0$ で達すればよいので，境目は最上点で $p=0$ となる場合：\n\\[\\frac{p_1^2}{2ml^2}-mgl=0+mgl\\quad\\Rightarrow\\quad \\boldsymbol{p_1=2m\\sqrt{gl^3}}.\\]\n（速さで言えば $v=p_1/(ml)=2\\sqrt{gl}$．）これより小さいと往復運動，大きいと回転運動になり，相空間で両者を分ける曲線をセパラトリクスという．\n\n次は，相空間 $(\\theta,p)$ に等エネルギー曲線を描いて，振動と回転の境目を図で確かめてみるとよい．",
   "idea": "ルジャンドル変換でラグランジアンからハミルトニアンを作る．$H$ は保存量なので境界条件を比べるだけで答えが出る．",
   "tags": "ハミルトニアン,ルジャンドル変換,振り子",
-  "input": "(1) p：m l^2 omega\n(2) H：p^2/(2 m l^2) - m g l cos(θ)\n(3) p_1：2 m sqrt(g l^3)"
+  "input": "(1) p：m l^2 omega\n(2) H：p^2/(2 m l^2) - m g l cos(θ)\n(3) p_1：2 m sqrt(g l^3)",
+  "id": "AM-03-007"
  },
  {
   "tid": "B-AM-07",
@@ -95,7 +101,8 @@
   "solution": "(1) $\\dfrac{\\partial x^2}{\\partial x}=2x$，$\\dfrac{\\partial p^2}{\\partial p}=2p$，残りの偏微分は $0$ なので $\\boldsymbol{\\{x^2,p^2\\}=4xp}$．\n\n(2) $f=xp$ とすると $\\dfrac{\\partial f}{\\partial x}=p$，$\\dfrac{\\partial f}{\\partial p}=x$，$\\dfrac{\\partial H}{\\partial p}=\\dfrac pm$，$\\dfrac{\\partial H}{\\partial x}=kx$．よって\n\\[\\frac{d}{dt}(xp)=p\\cdot\\frac pm-x\\cdot kx=\\boldsymbol{\\frac{p^2}{m}-kx^2}.\\]\n\n(3) 時間平均をとると $0=\\dfrac{\\langle p^2\\rangle}{m}-k\\langle x^2\\rangle$，すなわち $2\\langle p^2/2m\\rangle=2\\langle kx^2/2\\rangle$．比は $\\boldsymbol{1}$ で，調和振動子では運動エネルギーと位置エネルギーが平均して半分ずつになる．これをビリアル定理という（$x(t)=A\\cos\\omega t$ を代入して直接確かめることもできる）．\n\n次は，ポアソン括弧の性質（反対称性，ヤコビ恒等式）と，それが量子力学の交換関係 $[x,p]=i\\hbar$ にどう対応するかを学ぶとよい．",
   "idea": "ポアソン括弧 $\\{f,H\\}$ で時間微分が計算できる．周期運動で平均すると保存則に似た関係（ビリアル定理）が出る．",
   "tags": "ポアソン括弧,ビリアル定理,調和振動子",
-  "input": "(1) 4 x p\n(2) p^2/m - k x^2\n(3) 比：1"
+  "input": "(1) 4 x p\n(2) p^2/m - k x^2\n(3) 比：1",
+  "id": "AM-04-006"
  },
  {
   "tid": "B-AM-08",
@@ -109,7 +116,8 @@
   "solution": "(1) $\\{Q,P\\}=\\lambda\\cdot\\mu-0=\\lambda\\mu$．よって条件は $\\lambda\\mu=1$，$\\boldsymbol{\\mu=\\dfrac1\\lambda}$．位置を $\\lambda$ 倍に引き延ばしたら運動量は $1/\\lambda$ 倍に縮める，という組み合わせだけが許される．\n\n(2) $x=Q/\\lambda$，$p=\\lambda P$ を代入すると\n\\[H=\\frac{\\lambda^2}{2m}P^2+\\frac{m\\omega^2}{2\\lambda^2}Q^2.\\]\n両方の係数が $\\omega/2$ になるには $\\lambda^2=m\\omega$，すなわち $\\boldsymbol{\\lambda=\\sqrt{m\\omega}}$（このとき $m\\omega^2/\\lambda^2=\\omega$ も満たされる）．\n\n(3) $Q^2+P^2=2I$ なので $H=\\omega I=E$，$\\boldsymbol{I=\\dfrac E\\omega}$．$I$ は運動のあいだ一定で，角度 $\\varphi$ だけが一定の速さで進む．$I$ を作用変数，$\\varphi$ を角変数という．量子力学では $E=\\hbar\\omega(n+\\frac12)$ に対応して $I\\approx n\\hbar$ となる．\n\n次は，母関数を使って一般の正準変換をつくる方法を学ぶとよい．",
   "idea": "正準変換の条件は $\\{Q,P\\}=1$．うまく尺度を揃えると調和振動子が円運動になり，作用・角変数が見える．",
   "tags": "正準変換,ポアソン括弧,作用変数",
-  "input": "(1) μ：1/λ\n(2) λ：sqrt(m ω)\n(3) I：E/ω"
+  "input": "(1) μ：1/λ\n(2) λ：sqrt(m ω)\n(3) I：E/ω",
+  "id": "AM-04-007"
  },
  {
   "tid": "B-AM-09",
@@ -123,7 +131,8 @@
   "solution": "(1) $S=W(x)-Et$ を代入すると $-E+\\dfrac{1}{2m}W'^2=0$．よって $W'=\\sqrt{2mE}$，$\\boldsymbol{W=\\sqrt{2mE}\\,x}$．$p=\\partial S/\\partial x=\\sqrt{2mE}$ は，運動エネルギー $E$ の粒子の運動量そのものである．\n\n(2) $S=\\sqrt{2mE}\\,x-Et$ を $E$ で偏微分すると\n\\[\\frac{\\partial S}{\\partial E}=\\sqrt{\\frac{m}{2E}}\\,x-t=-t_0\\quad\\Rightarrow\\quad \\boldsymbol{x=\\sqrt{\\frac{2E}{m}}\\,(t-t_0)}.\\]\n速さ $\\sqrt{2E/m}$ の等速直線運動で，$t_0$ は原点を通過する時刻である．\n\n運動方程式を直接解く代わりに，1つの偏微分方程式の解 $S$ から運動がすべて出てくるのがこの理論の特徴である．$S$ を位相とみると波動力学（シュレーディンガー方程式）への橋渡しになるので，次はその関係を学ぶとよい．",
   "idea": "変数分離 $S=W(x)-Et$ でハミルトン＝ヤコビ方程式を解き，$\\partial S/\\partial E=$ 一定から軌道を得る．",
   "tags": "ハミルトン＝ヤコビ方程式,変数分離,自由粒子",
-  "input": "(1) W：sqrt(2 m E) x\n(2) x：sqrt(2E/m) (t - t_0)"
+  "input": "(1) W：sqrt(2 m E) x\n(2) x：sqrt(2E/m) (t - t_0)",
+  "id": "AM-05-006"
  },
  {
   "tid": "B-AM-10",
@@ -132,12 +141,13 @@
   "level": 0,
   "theme": "自由粒子のハミルトンの主関数と作用",
   "minutes": 10,
-  "q": "1次元を動く質量 $m$ の自由粒子について，ハミルトン＝ヤコビ方程式\n\\[\\frac{\\partial S}{\\partial t}+\\frac{1}{2m}\\left(\\frac{\\partial S}{\\partial x}\\right)^2=0\\]\nの解を，$S(x,t)=\\dfrac{A(x-x_0)^2}{t}$（$A$，$x_0$ は定数，$t>0$）の形で探す．この $S$ は「時刻 $0$ に $x_0$ を出て時刻 $t$ に $x$ に着く運動」についての作用 $\\displaystyle\\int_0^t L\\,dt'$（$L=\\frac12 m\\dot x^2$）を表し，運動量は $p=\\dfrac{\\partial S}{\\partial x}$ で与えられる．\n\\begin{enumerate}\n\\item 方程式を満たす $0$ でない定数 $A$ を求めよ．\n\\item 運動量 $p=\\dfrac{\\partial S}{\\partial x}$ を求めよ．\n\\item $m=2.0\\,\\mathrm{kg}$ の粒子が $t=1.5\\,\\mathrm{s}$ の間に $x-x_0=3.0\\,\\mathrm{m}$ だけ進むときの作用 $S$ の値を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $A=\\dfrac{m}{2}$　(2) $p=\\dfrac{m(x-x_0)}{t}$　(3) $S=6.0\\,\\mathrm{J\\,s}$",
-  "solution": "(1) $\\dfrac{\\partial S}{\\partial t}=-\\dfrac{A(x-x_0)^2}{t^2}$，$\\dfrac{\\partial S}{\\partial x}=\\dfrac{2A(x-x_0)}{t}$．代入して\n\\[-\\frac{A(x-x_0)^2}{t^2}+\\frac{4A^2(x-x_0)^2}{2mt^2}=\\frac{A(x-x_0)^2}{t^2}\\left(\\frac{2A}{m}-1\\right)=0\\]\nより $\\boldsymbol{A=\\dfrac m2}$．\n\n(2) $\\boldsymbol{p=\\dfrac{m(x-x_0)}{t}}$．自由粒子は等速なので速度は $(x-x_0)/t$ であり，$p=mv$ と一致する．\n\n(3) $S=\\dfrac{m(x-x_0)^2}{2t}=\\dfrac{2.0\\times 3.0^2}{2\\times1.5}=\\boldsymbol{6.0\\,\\mathrm{J\\,s}}$．直接 $\\int L\\,dt=\\frac12 mv^2t=\\frac12\\times2.0\\times2.0^2\\times1.5=6.0$ としても同じである．\n\n作用の単位はエネルギー×時間で，プランク定数 $h$ と同じである．$S$ が $h$ に比べて大きいかどうかが，古典力学で十分かどうかの目安になる．次は，ファインマンの経路積分でこの $S$ がどう使われるかを学ぶとよい．",
+  "q": "1次元を動く質量 $m$ の自由粒子について，ハミルトン＝ヤコビ方程式\n\\[\\frac{\\partial S}{\\partial t}+\\frac{1}{2m}\\left(\\frac{\\partial S}{\\partial x}\\right)^2=0\\]\nの解を，$S(x,t)=\\dfrac{A(x-x_0)^2}{t}$（$A$，$x_0$ は定数，$t>0$）の形で探す．この $S$ は「時刻 $0$ に $x_0$ を出て時刻 $t$ に $x$ に着く運動」についての作用 $\\displaystyle\\int_0^t L\\,dt'$（$L=\\frac12 m\\dot x^2$）を表し，運動量は $p=\\dfrac{\\partial S}{\\partial x}$ で与えられる．\n\\begin{enumerate}\n\\item 方程式を満たす $0$ でない定数 $A$ を求めよ．\n\\item 運動量 $p=\\dfrac{\\partial S}{\\partial x}$ を求めよ．\n\\item 粒子が一定の速さ $v$ で時間 $t$ だけ進むとき，作用 $S$ を $m,v,t$ で表せ．また，$S$ を運動エネルギー $K=\\frac12mv^2$ と $t$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $A=\\dfrac{m}{2}$　(2) $p=\\dfrac{m(x-x_0)}{t}$　(3) $S=\\dfrac12mv^2t$，$S=Kt$",
+  "solution": "(1) $\\dfrac{\\partial S}{\\partial t}=-\\dfrac{A(x-x_0)^2}{t^2}$，$\\dfrac{\\partial S}{\\partial x}=\\dfrac{2A(x-x_0)}{t}$．代入して\n\\[-\\frac{A(x-x_0)^2}{t^2}+\\frac{4A^2(x-x_0)^2}{2mt^2}=\\frac{A(x-x_0)^2}{t^2}\\left(\\frac{2A}{m}-1\\right)=0\\]\nより $\\boldsymbol{A=\\dfrac m2}$．\n\n(2) $\\boldsymbol{p=\\dfrac{m(x-x_0)}{t}}$．自由粒子は等速なので速度は $(x-x_0)/t$ であり，$p=mv$ と一致する．\n\n(3) $x-x_0=vt$ を代入して $S=\\dfrac{m(vt)^2}{2t}=\\boldsymbol{\\dfrac12mv^2t}$，すなわち $\\boldsymbol{S=Kt}$．自由粒子では $L=K$ が一定なので，直接 $\\int_0^tL\\,dt=Kt$ としても同じである．\n\n作用の単位はエネルギー×時間で，プランク定数 $h$ と同じである．$S$ が $h$ に比べて大きいかどうかが，古典力学で十分かどうかの目安になる．次は，ファインマンの経路積分でこの $S$ がどう使われるかを学ぶとよい．",
   "idea": "主関数 $S$ は実際の運動に沿った作用であり，ハミルトン＝ヤコビ方程式を満たし，その $x$ 微分が運動量になる．",
   "tags": "ハミルトンの主関数,作用,ハミルトン＝ヤコビ方程式",
-  "input": "(1) A：m/2\n(2) p：m (x - x_0)/t\n(3) S [J s]：≈6.0"
+  "input": "(1) A：m/2\n(2) p：m (x - x_0)/t\n(3) $S$：m v^2 t/2 ; $S$：K t",
+  "id": "AM-05-007"
  },
  {
   "tid": "B-EM-01",
@@ -151,7 +161,8 @@
   "solution": "(1) 対称性から電場は直線から放射状に出て，大きさは $r$ だけで決まる．円筒の上下のふたは電場と平行なので貫く量は $0$，側面（面積 $2\\pi rh$）では電場が面に垂直．中の電荷は $\\lambda h$ なので\n\\[E\\cdot 2\\pi rh=\\frac{\\lambda h}{\\varepsilon_0},\\qquad \\boldsymbol{E=\\frac{\\lambda}{2\\pi\\varepsilon_0 r}}.\\]\n点電荷の $1/r^2$ と違い，$1/r$ で弱まる．\n\n(2) 電位差は電場を積分して\n\\[V=\\int_a^b E\\,dr=\\frac{\\lambda}{2\\pi\\varepsilon_0}\\int_a^b\\frac{dr}{r}=\\boldsymbol{\\frac{\\lambda}{2\\pi\\varepsilon_0}\\ln\\frac ba}.\\]\n$r\\to\\infty$ で $\\ln$ が発散するので，無限遠を基準にした電位は定義できない点に注意．\n\n(3) 外力の仕事は位置エネルギーの増加 $qV$ に等しいので $\\boldsymbol{W=\\dfrac{q\\lambda}{2\\pi\\varepsilon_0}\\ln\\dfrac ba}$．\n\n次は，ガウスの法則を微分形 $\\nabla\\cdot\\boldsymbol{E}=\\rho/\\varepsilon_0$ に書き直すことを学ぶとよい．",
   "idea": "対称性の高い電荷分布ではガウスの法則で電場が一発で決まる．電位差は電場の積分．",
   "tags": "ガウスの法則,直線電荷,電位差",
-  "input": "(1) E：λ/(2 pi epsilon_0 r)\n(2) V：λ/(2 pi epsilon_0) ln(b/a)\n(3) W：q λ/(2 pi epsilon_0) ln(b/a)"
+  "input": "(1) E：λ/(2 pi epsilon_0 r)\n(2) V：λ/(2 pi epsilon_0) ln(b/a)\n(3) W：q λ/(2 pi epsilon_0) ln(b/a)",
+  "id": "EM-01-006"
  },
  {
   "tid": "B-EM-02",
@@ -165,7 +176,8 @@
   "solution": "(1) 偏微分して $\\boldsymbol{E_x=-2ax}$，$\\boldsymbol{E_y=2ay}$．\n\n(2) $\\dfrac{\\partial^2\\phi}{\\partial x^2}=2a$，$\\dfrac{\\partial^2\\phi}{\\partial y^2}=-2a$ で和は $0$．よって $\\boldsymbol{\\rho=0}$：電荷のない真空中で実現できる電位である．\n\n(3) $x$ 軸上で粒子が受ける力は $F_x=qE_x=-2aqx$．ばね定数 $2aq$ の復元力なので $\\boldsymbol{\\omega=\\sqrt{2aq/m}}$．\n\nただし $y$ 方向には $F_y=2aqy$ と押し出す力がはたらき，原点は不安定である．(2) から，真空中の電位は「ある方向に凸ならほかの方向に凹」なので，静電場だけで荷電粒子を全方向から安定に閉じ込めることはできない（アーンショーの定理）．次は，交流電場を使って実際に粒子を閉じ込めるパウルトラップの仕組みを調べてみるとよい．",
   "idea": "$\\boldsymbol{E}=-\\nabla\\phi$．真空中の電位はラプラス方程式を満たすので，極小点をもてない．",
   "tags": "電位,電場,ラプラス方程式,アーンショーの定理",
-  "input": "(1) (-2 a x, 2 a y)\n(2) ρ：0\n(3) ω：sqrt(2 a q/m)"
+  "input": "(1) (-2 a x, 2 a y)\n(2) ρ：0\n(3) ω：sqrt(2 a q/m)",
+  "id": "EM-01-007"
  },
  {
   "tid": "B-EM-03",
@@ -179,7 +191,8 @@
   "solution": "(1) $\\boldsymbol{C_0=\\dfrac{\\varepsilon_0S}{d}}$．\n\n(2) 誘電体の部分（容量 $C_1=\\dfrac{2\\varepsilon_r\\varepsilon_0S}{d}$）と真空の部分（容量 $C_2=\\dfrac{2\\varepsilon_0S}{d}$）の直列接続とみなせる．境界面に薄い導体板を入れても何も変わらないからである．\n\\[\\frac1C=\\frac{d}{2\\varepsilon_r\\varepsilon_0S}+\\frac{d}{2\\varepsilon_0S}=\\frac{(1+\\varepsilon_r)d}{2\\varepsilon_r\\varepsilon_0S},\\qquad \\boldsymbol{C=\\frac{2\\varepsilon_r\\varepsilon_0S}{(\\varepsilon_r+1)d}}.\\]\n\n(3) $C/C_0=\\dfrac{2\\varepsilon_r}{\\varepsilon_r+1}=\\boldsymbol{\\dfrac32}$．全体を満たせば $3$ 倍になるが，半分だけでは $1.5$ 倍にとどまる．$\\varepsilon_r\\to\\infty$（導体板）とすると $C/C_0\\to2$ で，間隔が半分になったのと同じになる．\n\n次は，誘電体の中で電束密度 $\\boldsymbol{D}$ と電場 $\\boldsymbol{E}$ を区別し，境界条件から同じ結果を導くことを学ぶとよい．",
   "idea": "層状に重ねた誘電体はコンデンサの直列接続として扱える．",
   "tags": "コンデンサ,誘電体,直列接続",
-  "input": "(1) C_0：epsilon_0 S/d\n(2) C：2 epsilon_r epsilon_0 S/((epsilon_r+1) d)\n(3) C/C_0：3/2"
+  "input": "(1) C_0：epsilon_0 S/d\n(2) C：2 epsilon_r epsilon_0 S/((epsilon_r+1) d)\n(3) C/C_0：3/2",
+  "id": "EM-02-006"
  },
  {
   "tid": "B-EM-04",
@@ -193,7 +206,8 @@
   "solution": "(1) 導線でつながった導体は全体が等電位になる．$\\dfrac{Q_a}{4\\pi\\varepsilon_0 a}=\\dfrac{Q_b}{4\\pi\\varepsilon_0 b}$ と $Q_a+Q_b=Q$ から\n\\[Q_a:Q_b=a:b,\\qquad \\boldsymbol{Q_a=\\frac{aQ}{a+b}}.\\]\n\n(2) 表面の電場は $E=\\dfrac{\\text{電位}}{R}$ と書けるので，電位が等しければ半径に反比例する：$\\boldsymbol{E_a/E_b=b/a}$．小さい球の方が電荷は少ないのに，表面の電場は強い．\n\n導体のとがった所（曲率半径の小さい所）で電場が強くなり放電が起きやすいのはこのためで，避雷針の原理である．次は，導体表面の電場と表面電荷密度の関係 $E=\\sigma/\\varepsilon_0$ を学ぶとよい．",
   "idea": "つながった導体は等電位．表面電場は 電位/半径 なので小さい球ほど強い．",
   "tags": "導体,等電位,電荷の分配,避雷針",
-  "input": "(1) Q_a：a Q/(a+b)\n(2) E_a/E_b：b/a"
+  "input": "(1) Q_a：a Q/(a+b)\n(2) E_a/E_b：b/a",
+  "id": "EM-02-007"
  },
  {
   "tid": "B-EM-05",
@@ -207,7 +221,8 @@
   "solution": "(1) 対称性から磁場は導線を囲む円周方向で，大きさは $r$ だけで決まる．$B\\cdot2\\pi r=\\mu_0 I$ より $\\boldsymbol{B=\\dfrac{\\mu_0I}{2\\pi r}}$．\n\n(2) 導線1が導線2の位置につくる磁場は $\\dfrac{\\mu_0I_1}{2\\pi d}$ で，導線2に垂直．よって $\\boldsymbol{F=I_2\\cdot\\dfrac{\\mu_0I_1}{2\\pi d}\\cdot l=\\dfrac{\\mu_0I_1I_2l}{2\\pi d}}$．向きは引力（同じ向きの電流は引き合う）．\n\n(3) $F/l=\\dfrac{4\\pi\\times10^{-7}\\times1\\times1}{2\\pi\\times1}=\\boldsymbol{2\\times10^{-7}\\,\\mathrm{N/m}}$．\n\nこの値は，かつて電流の単位アンペアの定義に使われていた．次は，任意の形の電流がつくる磁場を求めるビオ＝サバールの法則を学ぶとよい．",
   "idea": "直線電流のまわりの磁場はアンペールの法則で決まり，平行電流間の力はその磁場から受ける力．",
   "tags": "アンペールの法則,平行電流,アンペアの定義",
-  "input": "(1) B：mu_0 I/(2 pi r)\n(2) F：mu_0 I_1 I_2 l/(2 pi d)\n(3) F/l [N/m]：2e-7"
+  "input": "(1) B：mu_0 I/(2 pi r)\n(2) F：mu_0 I_1 I_2 l/(2 pi d)\n(3) F/l [N/m]：2e-7",
+  "id": "EM-03-006"
  },
  {
   "tid": "B-EM-06",
@@ -221,7 +236,8 @@
   "solution": "(1) 外部の辺と，軸に垂直な辺（磁場と垂直）は寄与しない．内部の辺だけが $Bl$ を与え，経路を貫く電流は $nlI$ なので $Bl=\\mu_0nlI$，$\\boldsymbol{B=\\mu_0nI}$．内部の辺を軸からどこにとっても同じなので，内部の磁場は一様である．\n\n(2) $\\dfrac{mv^2}{R}=qvB$ より $R=\\dfrac{mv}{qB}=\\boldsymbol{\\dfrac{mv}{q\\mu_0nI}}$．\n\n(3) $T=\\dfrac{2\\pi R}{v}=\\boldsymbol{\\dfrac{2\\pi m}{q\\mu_0nI}}$．周期が速さ $v$ によらないことが重要で，これを利用したのがサイクロトロン（粒子加速器）である．\n\n次は，速度が磁場に斜めの場合のらせん運動や，速さが光速に近いときの相対論的な補正を学ぶとよい．",
   "idea": "ソレノイドの磁場はアンペールの法則で $\\mu_0 nI$．磁場中の円運動の周期は速さによらない．",
   "tags": "ソレノイド,アンペールの法則,サイクロトロン運動",
-  "input": "(1) B：mu_0 n I\n(2) R：m v/(q mu_0 n I)\n(3) T：2 pi m/(q mu_0 n I)"
+  "input": "(1) B：mu_0 n I\n(2) R：m v/(q mu_0 n I)\n(3) T：2 pi m/(q mu_0 n I)",
+  "id": "EM-03-007"
  },
  {
   "tid": "B-EM-07",
@@ -235,7 +251,8 @@
   "solution": "(1) $1-e^{-t/RC}=\\dfrac12$ より $e^{-t/RC}=\\dfrac12$，$\\boldsymbol{t=RC\\ln2}\\approx0.69RC$．$RC$ を時定数という．\n\n(2) $I=\\dfrac{dQ}{dt}=\\dfrac VR e^{-t/RC}$ なので\n\\[W=\\int_0^\\infty R\\frac{V^2}{R^2}e^{-2t/RC}dt=\\frac{V^2}{R}\\cdot\\frac{RC}{2}=\\boldsymbol{\\frac12CV^2}.\\]\n電池がした仕事は $QV=CV^2$ で，そのちょうど半分がコンデンサに蓄えられ（$\\frac12CV^2$），残り半分が熱になる．この結果は $R$ の値によらない．\n\n次は，コイルを含む RL 回路や LC 回路の振動，交流回路のインピーダンスを学ぶとよい．",
   "idea": "1階の線形微分方程式で指数関数的に充電が進む．発熱はちょうど蓄えたエネルギーと同じ量．",
   "tags": "RC回路,時定数,ジュール熱",
-  "input": "(1) t：R C ln(2)\n(2) W：C V^2/2"
+  "input": "(1) t：R C ln(2)\n(2) W：C V^2/2",
+  "id": "EM-04-006"
  },
  {
   "tid": "B-EM-08",
@@ -249,7 +266,8 @@
   "solution": "(1) $\\Phi=BS\\cos\\omega t$ なので $\\boldsymbol{\\mathcal{E}=-N\\dfrac{d}{dt}(BS\\cos\\omega t)=NBS\\omega\\sin\\omega t}$．振幅 $NBS\\omega$ の交流になる．これが発電機の原理である．\n\n(2) $P=\\dfrac{\\mathcal{E}^2}{R}=\\dfrac{(NBS\\omega)^2}{R}\\sin^2\\omega t$ より $\\boldsymbol{\\langle P\\rangle=\\dfrac{(NBS\\omega)^2}{2R}}$．\n\nこの電力はどこから来るのか．電流が流れるとコイルは磁場から回転を妨げる向きのトルクを受けるので，回し続けるには外から仕事をする必要があり，その仕事が電気エネルギーになる（レンツの法則）．次は，自己インダクタンスを含めた交流回路を学ぶとよい．",
   "idea": "磁束の時間変化が起電力．回転させれば正弦波の交流になる．",
   "tags": "ファラデーの法則,交流発電機,実効値",
-  "input": "(1) N B S omega sin(omega t)\n(2) ⟨P⟩：(N B S omega)^2/(2R)"
+  "input": "(1) N B S omega sin(omega t)\n(2) ⟨P⟩：(N B S omega)^2/(2R)",
+  "id": "EM-04-007"
  },
  {
   "tid": "B-EM-09",
@@ -263,7 +281,8 @@
   "solution": "(1) $-\\dfrac{\\partial E_y}{\\partial x}=-kE_0\\cos(kx-\\omega t)$．これを $t$ で積分すると $B_z=\\dfrac{kE_0}{\\omega}\\sin(kx-\\omega t)$．振幅は $\\boldsymbol{B_0=\\dfrac{kE_0}{\\omega}}=\\dfrac{E_0}{c}$ で，磁場は電場と同じ位相で振動する．\n\n(2) $c=\\dfrac{1}{\\sqrt{8.85\\times10^{-12}\\times4\\pi\\times10^{-7}}}\\approx\\boldsymbol{3.00\\times10^8\\,\\mathrm{m/s}}$．電気と磁気の実験で決まる定数から光速が出てくることが，光が電磁波であることの証拠になった．\n\n(3) $B_z=E_y/c$ を使うと\n\\[\\frac{\\frac12\\varepsilon_0E_y^2}{B_z^2/2\\mu_0}=\\varepsilon_0\\mu_0c^2=\\boldsymbol{1}.\\]\n電磁波のエネルギーは電場と磁場に等分されている．\n\n次は，電磁波が運ぶエネルギーの流れ（ポインティングベクトル）や運動量（放射圧）を学ぶとよい．",
   "idea": "ファラデーの法則が電場と磁場の振幅を結びつける．比は $c$ で，エネルギーは等分される．",
   "tags": "電磁波,マクスウェル方程式,光速",
-  "input": "(1) B_0：k E_0/omega\n(2) c [m/s]：≈3.00e8\n(3) 比：1"
+  "input": "(1) B_0：k E_0/omega\n(2) c [m/s]：≈3.00e8\n(3) 比：1",
+  "id": "EM-05-006"
  },
  {
   "tid": "B-EM-10",
@@ -277,7 +296,8 @@
   "solution": "(1) 一様な電場なので $\\boldsymbol{E=V/l}$．表面（$r=a$）での磁場は $\\boldsymbol{B=\\dfrac{\\mu_0I}{2\\pi a}}$．\n\n(2) $\\boldsymbol{E}$（軸方向）と $\\boldsymbol{B}$（円周方向）は直交するので\n\\[S=\\frac{EB}{\\mu_0}=\\frac1{\\mu_0}\\cdot\\frac Vl\\cdot\\frac{\\mu_0I}{2\\pi a}=\\boldsymbol{\\frac{VI}{2\\pi al}}.\\]\n\n(3) 側面積 $2\\pi al$ をかけて $\\boldsymbol{P=VI}$．これはちょうど抵抗で発生するジュール熱に等しい．\n\nつまり，電気エネルギーは導線の「中」を電流と一緒に流れてくるのではなく，周りの空間を電磁場として流れてきて，側面から抵抗に入り込む，と解釈できる．次は，電磁場のエネルギー保存則（ポインティングの定理）を微分形で学ぶとよい．",
   "idea": "電場と磁場が直交すればエネルギーの流れ $EB/\\mu_0$ が生じる．側面から入るエネルギーがジュール熱に一致する．",
   "tags": "ポインティングベクトル,ジュール熱,エネルギーの流れ",
-  "input": "(1) E：V/l ; B：mu_0 I/(2 pi a)\n(2) S：V I/(2 pi a l)\n(3) P：V I"
+  "input": "(1) E：V/l ; B：mu_0 I/(2 pi a)\n(2) S：V I/(2 pi a l)\n(3) P：V I",
+  "id": "EM-05-007"
  },
  {
   "tid": "B-EM-11",
@@ -291,7 +311,8 @@
   "solution": "(1) $\\ln\\sqrt{x^2+y^2}=\\frac12\\ln(x^2+y^2)$ を偏微分すると $\\dfrac{\\partial}{\\partial y}=\\dfrac{y}{x^2+y^2}$ なので\n\\[\\boldsymbol{B_x=-\\frac{\\mu_0Iy}{2\\pi(x^2+y^2)}},\\qquad \\boldsymbol{B_y=\\frac{\\mu_0Ix}{2\\pi(x^2+y^2)}}.\\]\nベクトル $(-y,x)$ は位置ベクトル $(x,y)$ に垂直なので，磁場は導線を囲む円周方向を向く．\n\n(2) $B=\\dfrac{\\mu_0I}{2\\pi}\\dfrac{\\sqrt{x^2+y^2}}{x^2+y^2}=\\boldsymbol{\\dfrac{\\mu_0I}{2\\pi r}}$．アンペールの法則の結果と一致する．\n\n(3) $\\Phi=l\\cdot\\dfrac{\\mu_0I}{2\\pi}(\\ln r_2-\\ln r_1)=\\boldsymbol{\\dfrac{\\mu_0Il}{2\\pi}\\ln\\dfrac{r_2}{r_1}}$．$\\int_{r_1}^{r_2}B\\,l\\,dr$ を直接計算しても同じになる（ストークスの定理）．\n\nベクトルポテンシャルは $\\nabla\\chi$ を足しても同じ磁場を与える（ゲージ自由度）．次は，電位と合わせた電磁ポテンシャルで電磁波の放射を記述する方法を学ぶとよい．",
   "idea": "$\\boldsymbol{B}=\\nabla\\times\\boldsymbol{A}$ は偏微分の計算．磁束は $\\boldsymbol{A}$ の周回積分で求まる．",
   "tags": "ベクトルポテンシャル,回転,磁束,ストークスの定理",
-  "input": "(1) B_x：-mu_0 I y/(2 pi (x^2+y^2)) ; B_y：mu_0 I x/(2 pi (x^2+y^2))\n(2) B：mu_0 I/(2 pi r)\n(3) Φ：mu_0 I l/(2 pi) ln(r_2/r_1)"
+  "input": "(1) B_x：-mu_0 I y/(2 pi (x^2+y^2)) ; B_y：mu_0 I x/(2 pi (x^2+y^2))\n(2) B：mu_0 I/(2 pi r)\n(3) Φ：mu_0 I l/(2 pi) ln(r_2/r_1)",
+  "id": "EM-06-006"
  },
  {
   "tid": "B-EM-12",
@@ -300,12 +321,13 @@
   "level": 0,
   "theme": "振動する電荷の放射と空が青い理由",
   "minutes": 10,
-  "q": "電荷 $q$ の粒子が加速度の大きさ $a$ で運動しているとき，単位時間に放射する電磁波のエネルギーはラーモアの公式\n\\[P=\\frac{q^2a^2}{6\\pi\\varepsilon_0c^3}\\]\nで与えられる（$\\varepsilon_0$ は真空の誘電率，$c$ は光速）．\n\\begin{enumerate}\n\\item 粒子が $x(t)=x_0\\cos\\omega t$ と単振動するとき，$P$ の時間平均 $\\langle P\\rangle$ を求めよ（$\\cos^2$ の時間平均は $\\frac12$）．\n\\item 振幅 $x_0$ を変えずに角振動数を $2$ 倍にすると，$\\langle P\\rangle$ は何倍になるか．\n\\item 空気中の分子の電子は，太陽光の電場で揺さぶられ，同じ振幅で振動するとみなせるとする．波長 $450\\,\\mathrm{nm}$（青）の光と $700\\,\\mathrm{nm}$（赤）の光で，散乱されるエネルギーの比（青／赤）を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\langle P\\rangle=\\dfrac{q^2x_0^2\\omega^4}{12\\pi\\varepsilon_0c^3}$　(2) $16$ 倍　(3) $\\approx5.86$",
-  "solution": "(1) $a=|\\ddot x|=x_0\\omega^2|\\cos\\omega t|$ なので\n\\[\\langle P\\rangle=\\frac{q^2x_0^2\\omega^4}{6\\pi\\varepsilon_0c^3}\\langle\\cos^2\\omega t\\rangle=\\boldsymbol{\\frac{q^2x_0^2\\omega^4}{12\\pi\\varepsilon_0c^3}}.\\]\n\n(2) $\\omega^4$ に比例するので $2^4=\\boldsymbol{16}$ 倍．\n\n(3) $\\omega=2\\pi c/\\lambda$ より $\\langle P\\rangle\\propto\\lambda^{-4}$．比は $(700/450)^4\\approx\\boldsymbol{5.86}$．青い光は赤い光の約6倍も強く散乱されるので，昼間の空は青く見える（レイリー散乱）．夕方は光が長い距離を通るうちに青が散乱されて抜け，赤い光が残る．\n\n次は，振動する電気双極子のまわりの放射の角度分布（真横に強く，振動方向には出ない）を学ぶとよい．",
+  "q": "電荷 $q$ の粒子が加速度の大きさ $a$ で運動しているとき，単位時間に放射する電磁波のエネルギーはラーモアの公式\n\\[P=\\frac{q^2a^2}{6\\pi\\varepsilon_0c^3}\\]\nで与えられる（$\\varepsilon_0$ は真空の誘電率，$c$ は光速）．\n\\begin{enumerate}\n\\item 粒子が $x(t)=x_0\\cos\\omega t$ と単振動するとき，$P$ の時間平均 $\\langle P\\rangle$ を求めよ（$\\cos^2$ の時間平均は $\\frac12$）．\n\\item 振幅 $x_0$ を変えずに角振動数を $2$ 倍にすると，$\\langle P\\rangle$ は何倍になるか．\n\\item 空気中の分子の電子は，太陽光の電場で揺さぶられ，同じ振幅で振動するとみなせるとする．波長 $\\lambda_1$（青）の光と $\\lambda_2$（赤）の光で，散乱されるエネルギーの比（青／赤）を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\langle P\\rangle=\\dfrac{q^2x_0^2\\omega^4}{12\\pi\\varepsilon_0c^3}$　(2) $16$ 倍　(3) $\\left(\\dfrac{\\lambda_2}{\\lambda_1}\\right)^4$",
+  "solution": "(1) $a=|\\ddot x|=x_0\\omega^2|\\cos\\omega t|$ なので\n\\[\\langle P\\rangle=\\frac{q^2x_0^2\\omega^4}{6\\pi\\varepsilon_0c^3}\\langle\\cos^2\\omega t\\rangle=\\boldsymbol{\\frac{q^2x_0^2\\omega^4}{12\\pi\\varepsilon_0c^3}}.\\]\n\n(2) $\\omega^4$ に比例するので $2^4=\\boldsymbol{16}$ 倍．\n\n(3) $\\omega=2\\pi c/\\lambda$ より $\\langle P\\rangle\\propto\\lambda^{-4}$．比は $\\boldsymbol{\\left(\\dfrac{\\lambda_2}{\\lambda_1}\\right)^4}$．$\\lambda_1=450$ nm，$\\lambda_2=700$ nm なら約 5.9 で，青い光は赤い光の約6倍も強く散乱されるので，昼間の空は青く見える（レイリー散乱）．夕方は光が長い距離を通るうちに青が散乱されて抜け，赤い光が残る．\n\n次は，振動する電気双極子のまわりの放射の角度分布（真横に強く，振動方向には出ない）を学ぶとよい．",
   "idea": "放射のパワーは加速度の2乗に比例し，単振動では $\\omega^4$ に比例する．",
   "tags": "ラーモアの公式,双極子放射,レイリー散乱",
-  "input": "(1) ⟨P⟩：q^2 x_0^2 omega^4/(12 pi epsilon_0 c^3)\n(2) 倍率：16\n(3) 比：≈5.86"
+  "input": "(1) ⟨P⟩：q^2 x_0^2 omega^4/(12 pi epsilon_0 c^3)\n(2) 倍率：16\n(3) 比：(λ_2/λ_1)^4",
+  "id": "EM-06-007"
  },
  {
   "tid": "B-SR-01",
@@ -319,7 +341,8 @@
   "solution": "(1) $\\gamma=\\dfrac{1}{\\sqrt{1-0.64}}=\\dfrac1{0.6}=\\boldsymbol{\\dfrac53}$．\n\n(2) $t'_A=\\gamma(0-0)=0$，$t'_B=\\gamma\\left(0-\\dfrac{vL}{c^2}\\right)$．よって $\\boldsymbol{t'_B-t'_A=-\\dfrac{\\gamma vL}{c^2}}$．\n\n(3) $-\\dfrac53\\times\\dfrac{0.8c\\times L}{c^2}=-\\dfrac53\\times0.8\\times\\dfrac{3.0\\times10^8}{3.0\\times10^8}\\,\\mathrm{s}=\\boldsymbol{-\\dfrac43\\,\\mathrm{s}}$．\n\nS で同時の2つの事象が，S$'$ では同時でない：S$'$ では前方（$+x$ 側）の事象 B の方が $4/3$ 秒早く起きる．これを同時刻の相対性という．ニュートン力学（$t'=t$）では起こりえない，ローレンツ変換の核心である．次は，同じ変換から時間の遅れとローレンツ収縮を導いてみるとよい．",
   "idea": "$t'$ が $x$ にも依存するので，離れた場所での同時刻は慣性系によって異なる．",
   "tags": "ローレンツ変換,同時刻の相対性,ローレンツ因子",
-  "input": "(1) γ：5/3\n(2) -γ v L/c^2\n(3) 時間差 [s]：-4/3"
+  "input": "(1) γ：5/3\n(2) -γ v L/c^2\n(3) 時間差 [s]：-4/3",
+  "id": "SR-01-006"
  },
  {
   "tid": "B-SR-02",
@@ -333,7 +356,8 @@
   "solution": "(1) $x=ut$ を代入すると\n\\[u'=\\frac{\\gamma(ut-vt)}{\\gamma\\left(t-\\dfrac{vut}{c^2}\\right)}=\\boldsymbol{\\frac{u-v}{1-uv/c^2}}.\\]\n$\\gamma$ は約分で消える．$u,v\\ll c$ なら分母は $1$ で，ガリレイの $u'=u-v$ に戻る．\n\n(2) $u'=\\dfrac{c-v}{1-v/c}=\\dfrac{c-v}{(c-v)/c}=\\boldsymbol{c}$．どの慣性系から見ても光速は同じ（光速度不変）．\n\n(3) $u'=\\dfrac{0.5c+0.5c}{1+0.25}=\\boldsymbol{\\dfrac45c}$．ガリレイ的に足すと $c$ になるが，実際は光速を超えない．\n\n次は，速度の代わりにラピディティ（$\\tanh\\theta=v/c$）を使うと合成が単なる足し算になることを学ぶとよい．",
   "idea": "ローレンツ変換の比をとると速度の変換則が出る．光速はどの系でも $c$．",
   "tags": "速度の合成,光速度不変,ローレンツ変換",
-  "input": "(1) u'：(u - v)/(1 - u v/c^2)\n(2) u'：c\n(3) u'：4c/5"
+  "input": "(1) u'：(u - v)/(1 - u v/c^2)\n(2) u'：c\n(3) u'：4c/5",
+  "id": "SR-01-007"
  },
  {
   "tid": "B-SR-03",
@@ -342,12 +366,13 @@
   "level": 0,
   "theme": "ローレンツ収縮：トンネルに入る列車",
   "minutes": 10,
-  "q": "静止しているときの長さ（固有長）が $L_0$ の物体が，長さの方向に速さ $v$ で動いているとき，静止した観測者が測る長さは $L=L_0\\sqrt{1-v^2/c^2}$ に縮む（ローレンツ収縮，$c$ は光速）．以下 $c=3.0\\times10^8\\,\\mathrm{m/s}$ とする．\n\n固有長 $100\\,\\mathrm{m}$ の列車が，固有長 $80\\,\\mathrm{m}$ のトンネルに向かって速さ $0.6c$ で走っている．\n\\begin{enumerate}\n\\item 地上（トンネルの静止系）で測った列車の長さを求めよ．\n\\item 地上から見て，列車の先頭がトンネルの入口を通過してから最後尾が入口を通過するまでの時間を求めよ．\n\\item 列車に乗っている人が測ったトンネルの長さを求めよ．\n\\end{enumerate}",
-  "answer": "(1) $80\\,\\mathrm{m}$　(2) $\\approx4.44\\times10^{-7}\\,\\mathrm{s}$　(3) $64\\,\\mathrm{m}$",
-  "solution": "(1) $\\sqrt{1-0.36}=0.8$ なので $100\\times0.8=\\boldsymbol{80\\,\\mathrm{m}}$．地上から見ると列車はトンネルにちょうど収まる．\n\n(2) 長さ $80\\,\\mathrm{m}$ の列車が速さ $0.6\\times3.0\\times10^8=1.8\\times10^8\\,\\mathrm{m/s}$ で通過するので\n\\[\\frac{80}{1.8\\times10^8}\\approx\\boldsymbol{4.44\\times10^{-7}\\,\\mathrm{s}}.\\]\n\n(3) 列車から見るとトンネルの方が速さ $0.6c$ で動いているので，トンネルが縮む：$80\\times0.8=\\boldsymbol{64\\,\\mathrm{m}}$．列車（$100\\,\\mathrm{m}$）はまったく収まらない．\n\n「収まる」か「収まらない」かが観測者によって違うのは矛盾ではない．「先頭が出口に着くのと最後尾が入口に入るのが同時か」という問いであり，同時刻は慣性系によって異なるからである．次は，ローレンツ変換を使ってこの2つの事象の時刻を両方の系で計算してみるとよい．",
+  "q": "静止しているときの長さ（固有長）が $L_0$ の物体が，長さの方向に速さ $v$ で動いているとき，静止した観測者が測る長さは $L=L_0\\sqrt{1-v^2/c^2}$ に縮む（ローレンツ収縮，$c$ は光速）．\n\n固有長 $L_0$ の列車が，固有長 $D$ のトンネルに向かって速さ $v$ で走っている．\n\\begin{enumerate}\n\\item 地上（トンネルの静止系）で測った列車の長さを求めよ．\n\\item 地上から見て，列車の先頭がトンネルの入口を通過してから最後尾が入口を通過するまでの時間を求めよ．\n\\item 列車に乗っている人が測ったトンネルの長さを求めよ．\n\\end{enumerate}",
+  "answer": "(1) $L_0\\sqrt{1-\\frac{v^2}{c^2}}$　(2) $\\frac{L_0}{v}\\sqrt{1-\\frac{v^2}{c^2}}$　(3) $D\\sqrt{1-\\frac{v^2}{c^2}}$",
+  "solution": "(1) 列車は地上に対して速さ $v$ で動いているので，地上では縮んで $\\boldsymbol{L_0\\sqrt{1-v^2/c^2}}$ になる．\n\n(2) 地上で長さ $L_0\\sqrt{1-v^2/c^2}$ の列車が速さ $v$ で入口を通過するので\n\\[\\boldsymbol{\\frac{L_0}{v}\\sqrt{1-\\frac{v^2}{c^2}}}.\\]\n\n(3) 列車から見るとトンネルの方が速さ $v$ で動いているので，トンネルが縮む：$\\boldsymbol{D\\sqrt{1-v^2/c^2}}$．\n\nたとえば $L_0>D$ で，$L_0\\sqrt{1-v^2/c^2}=D$ となる速さで走ると，地上から見ると列車はトンネルにちょうど収まるが，列車から見るとトンネルはさらに縮んで $D\\sqrt{1-v^2/c^2}<D<L_0$ となり，まったく収まらない．\n「収まる」か「収まらない」かが観測者によって違うのは矛盾ではない．「先頭が出口に着くのと最後尾が入口に入るのが同時か」という問いであり，同時刻は慣性系によって異なるからである．次は，ローレンツ変換を使ってこの2つの事象の時刻を両方の系で計算してみるとよい．",
   "idea": "動く物体は運動方向に $\\sqrt{1-v^2/c^2}$ 倍に縮む．どちらが縮むかは見る系による．",
   "tags": "ローレンツ収縮,ガレージのパラドックス,固有長",
-  "input": "(1) 長さ [m]：80\n(2) 時間 [s]：≈4.44e-7\n(3) 長さ [m]：64"
+  "input": "(1) 長さ：L_0 sqrt(1-v^2/c^2)\n(2) 時間：(L_0/v) sqrt(1-v^2/c^2)\n(3) 長さ：D sqrt(1-v^2/c^2)",
+  "id": "SR-02-006"
  },
  {
   "tid": "B-SR-04",
@@ -361,7 +386,8 @@
   "solution": "(1) 時間の遅れから $\\boldsymbol{T_1=\\gamma T_0}$．\n\n(2) 次のパルスは $vT_1$ だけ余分に進むので，到着間隔は\n\\[T=T_1+\\frac{vT_1}{c}=\\gamma T_0(1+\\beta)=\\frac{1+\\beta}{\\sqrt{(1-\\beta)(1+\\beta)}}T_0=\\boldsymbol{T_0\\sqrt{\\frac{1+\\beta}{1-\\beta}}}.\\]\n$(1+\\beta)$ の部分は音のドップラー効果と同じ「距離が伸びる効果」，$\\gamma$ が相対論特有の「時計が遅れる効果」である．\n\n(3) 振動数は周期の逆数なので $T/T_0=3$：$\\dfrac{1+\\beta}{1-\\beta}=9$ より $\\boldsymbol{\\beta=\\dfrac45}$．\n\n遠ざかる銀河の光が赤い方にずれる（赤方偏移）ことから，宇宙の膨張がわかった．次は，視線に垂直に動く光源でも振動数がずれる横ドップラー効果を学ぶとよい．",
   "idea": "到着間隔＝（時間の遅れ）×（距離が伸びる分）．2つを合わせると $\\sqrt{(1+\\beta)/(1-\\beta)}$．",
   "tags": "ドップラー効果,時間の遅れ,赤方偏移",
-  "input": "(1) T_1：γ T_0\n(2) T：T_0 sqrt((1+β)/(1-β))\n(3) β：4/5"
+  "input": "(1) T_1：γ T_0\n(2) T：T_0 sqrt((1+β)/(1-β))\n(3) β：4/5",
+  "id": "SR-02-007"
  },
  {
   "tid": "B-SR-05",
@@ -375,7 +401,8 @@
   "solution": "(1) $\\gamma=\\dfrac1{\\sqrt{1-0.36}}=\\dfrac1{0.8}=\\boldsymbol{\\dfrac54}$．\n\n(2) 全運動量は $0$ なので，衝突後の粒子は静止している．エネルギー保存より\n\\[Mc^2=2\\gamma mc^2\\quad\\Rightarrow\\quad \\boldsymbol{M=\\frac52m}.\\]\n質量は保存しない：くっついた粒子は $2m$ より重い．\n\n(3) $(M-2m)c^2=\\frac12mc^2$，運動エネルギーの和も $2\\times\\frac14mc^2=\\frac12mc^2$ で，ちょうど $\\boldsymbol{1}$ 倍．失われた運動エネルギーは消えたのではなく，静止エネルギー（内部の熱など）に変わって質量を増やした．$E=mc^2$ の意味がよく見える例である．\n\n次は，$E$ と $p$ を組にした4元運動量と，どの系でも同じ値になる不変量 $E^2-(pc)^2=(mc^2)^2$ を学ぶとよい．",
   "idea": "全エネルギー保存で静止系の質量が決まる．失われた運動エネルギーが質量に化ける．",
   "tags": "相対論的エネルギー,運動量保存,完全非弾性衝突,質量とエネルギー",
-  "input": "(1) γ：5/4\n(2) M：5m/2\n(3) 倍率：1"
+  "input": "(1) γ：5/4\n(2) M：5m/2\n(3) 倍率：1",
+  "id": "SR-03-006"
  },
  {
   "tid": "B-SR-06",
@@ -389,7 +416,8 @@
   "solution": "(1) エネルギー保存と運動量保存から $\\boldsymbol{E=mc^2+\\varepsilon}$，$\\boldsymbol{p=\\varepsilon/c}$．\n\n(2) $E=\\gamma Mc^2$，$p=\\gamma MV$ の比をとると $V/c=pc/E$．よって $\\boldsymbol{V=\\dfrac{\\varepsilon c}{mc^2+\\varepsilon}}$．\n\n(3) $(Mc^2)^2=E^2-(pc)^2=(mc^2+\\varepsilon)^2-\\varepsilon^2=m^2c^4+2mc^2\\varepsilon$ より\n\\[\\boldsymbol{M=\\sqrt{m^2+\\frac{2m\\varepsilon}{c^2}}}\\approx m+\\frac{\\varepsilon}{c^2}\\quad(\\varepsilon\\ll mc^2).\\]\n吸収したエネルギーのほとんどは物体の内部エネルギーになり，質量を $\\varepsilon/c^2$ だけ増やす．残りのわずかな分が運動エネルギーになる．\n\n次は，$E$ と $\\boldsymbol{p}$ を4元ベクトルとして扱い，ローレンツ変換で別の系に移る計算を学ぶとよい．",
   "idea": "エネルギーと運動量の保存，そして不変量 $E^2-(pc)^2=(Mc^2)^2$ だけで吸収後の状態が決まる．",
   "tags": "光子,運動量保存,不変質量",
-  "input": "(1) E：m c^2 + ε ; p：ε/c\n(2) V：ε c/(m c^2 + ε)\n(3) M：sqrt(m^2 + 2 m ε/c^2)"
+  "input": "(1) E：m c^2 + ε ; p：ε/c\n(2) V：ε c/(m c^2 + ε)\n(3) M：sqrt(m^2 + 2 m ε/c^2)",
+  "id": "SR-03-007"
  },
  {
   "tid": "B-SR-07",
@@ -403,7 +431,8 @@
   "solution": "(1) 行列の3行目と縦ベクトルの積：$q\\left(\\dfrac Ec\\cdot\\gamma c-B\\cdot\\gamma v+0\\right)$．よって $\\boldsymbol{\\dfrac{dp^y}{d\\tau}=q\\gamma(E-vB)}$．$d\\tau=dt/\\gamma$ なので $\\dfrac{dp^y}{dt}=q(E-vB)$ となり，おなじみのローレンツ力 $q(\\boldsymbol{E}+\\boldsymbol{v}\\times\\boldsymbol{B})$ の $y$ 成分が出てくる（$\\boldsymbol{v}\\times\\boldsymbol{B}=(0,-vB,0)$）．\n\n(2) 1行目：$q\\left(0+\\dfrac{E_x}{c}\\gamma v+\\dfrac Ec\\cdot0+0\\right)=\\boldsymbol{0}$．一般には $\\dfrac{dp^0}{d\\tau}=\\dfrac{q\\gamma}{c}\\boldsymbol{E}\\cdot\\boldsymbol{v}$ で，電場が粒子にする仕事率を表す．いまは $\\boldsymbol{E}\\perp\\boldsymbol{v}$ なので仕事をしない．\n\n(3) $E-vB=0$ より $\\boldsymbol{v=\\dfrac EB}$．この速さの粒子だけが直進するので，速度をそろえた粒子線を取り出す「速度選別器」に使われる．\n\nエネルギーと運動量の変化を1つの行列の式でまとめて書けることが共変形式の利点である．次は，この行列（電磁場テンソル）がローレンツ変換でどう変わるか，すなわち電場と磁場が系によって混ざり合うことを学ぶとよい．",
   "idea": "電磁場を $4\\times4$ 行列にまとめると，ローレンツ力と仕事率が1つの行列の積で書ける．",
   "tags": "電磁場テンソル,ローレンツ力,速度選別器",
-  "input": "(1) q γ (E - v B)\n(2) 0\n(3) v：E/B"
+  "input": "(1) q γ (E - v B)\n(2) 0\n(3) v：E/B",
+  "id": "SR-04-006"
  },
  {
   "tid": "B-SR-08",
@@ -417,6 +446,7 @@
   "solution": "(1) $\\rho'=\\rho_0$，$j'=0$ を代入して $\\boldsymbol{\\rho=\\gamma\\rho_0}$．S から見ると雲は運動方向にローレンツ収縮して体積が $1/\\gamma$ 倍になるが，電荷の総量は変わらないので，密度は $\\gamma$ 倍になる．\n\n(2) $\\boldsymbol{j=\\gamma\\rho_0v}=\\rho v$．動く電荷は電流になる，という当たり前の関係が出てくる．\n\n(3) $c^2\\gamma^2\\rho_0^2-\\gamma^2\\rho_0^2v^2=\\gamma^2\\rho_0^2c^2\\left(1-\\dfrac{v^2}{c^2}\\right)=\\boldsymbol{c^2\\rho_0^2}$．どの系で計算しても同じ値になる不変量で，$(ct)^2-x^2$ が不変であることに対応する．\n\n電荷密度と電流密度は別々の量ではなく，1つの4元ベクトルの成分である．次は，電位 $\\phi$ とベクトルポテンシャル $\\boldsymbol{A}$ も同じように4元ベクトル $(\\phi/c,\\boldsymbol{A})$ を作ることを学ぶとよい．",
   "idea": "$(c\\rho,\\boldsymbol{j})$ は4元ベクトル．電荷の雲を動かすと密度が $\\gamma$ 倍になり電流が生じる．",
   "tags": "4元電流密度,ローレンツ変換,不変量,電荷保存",
-  "input": "(1) ρ：γ ρ_0\n(2) j：γ ρ_0 v\n(3) c^2 ρ_0^2"
+  "input": "(1) ρ：γ ρ_0\n(2) j：γ ρ_0 v\n(3) c^2 ρ_0^2",
+  "id": "SR-04-007"
  }
 ]

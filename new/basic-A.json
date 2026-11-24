@@ -11,7 +11,8 @@
   "solution": "$\\dfrac{\\partial F_y}{\\partial x}=\\dfrac{\\partial}{\\partial x}(ax^2)=2ax$，$\\dfrac{\\partial F_x}{\\partial y}=\\dfrac{\\partial}{\\partial y}(2axy)=2ax$ なので，差は $\\boldsymbol{0}$ である．したがって $\\boldsymbol{F}$ は保存力でありうる．\n\n$-\\dfrac{\\partial U}{\\partial x}=2axy$ を $x$ で積分すると $U=-ax^2y+g(y)$（$g$ は $y$ だけの関数）．これを $y$ で偏微分すると $-\\dfrac{\\partial U}{\\partial y}=ax^2-g'(y)$ で，$F_y=ax^2$ と比べて $g'(y)=0$．$U(0,0)=0$ より $g=0$ で\n\\[ \\boldsymbol{U=-ax^2y}. \\]\n\n保存力の仕事は経路によらず，ポテンシャルエネルギーの減少分に等しい：\n\\[ W=U(0,0)-U(b,c)=\\boldsymbol{ab^2c}. \\]\nたとえば $x$ 軸に沿って $(b,0)$ まで行き（$F_x=0$ なので仕事 $0$），そこから $y$ 方向に $(b,c)$ まで行けば $\\int_0^c ab^2\\,dy=ab^2c$ となり，確かに一致する．\n\n3次元では，この条件は「回転」$\\nabla\\times\\boldsymbol{F}=\\boldsymbol{0}$ にまとめられ，ストークスの定理と結びつく．次はそれを学ぶとよい．",
   "idea": "保存力は $\\boldsymbol{F}=-\\nabla U$ と書け，そのとき偏微分の交換から $\\partial F_y/\\partial x=\\partial F_x/\\partial y$ が成り立つ．仕事はポテンシャルの差で決まる．",
   "tags": "偏微分,勾配,保存力,ポテンシャル",
-  "input": "(1) 0\n(2) U：-a x^2 y\n(3) W：a b^2 c"
+  "input": "(1) 0\n(2) U：-a x^2 y\n(3) W：a b^2 c",
+  "id": "PM-01-006"
  },
  {
   "tid": "B-PM-02",
@@ -25,7 +26,8 @@
   "solution": "$\\dfrac{\\partial v_x}{\\partial x}=\\dfrac{\\partial(-\\omega y)}{\\partial x}=0$，$\\dfrac{\\partial v_y}{\\partial y}=\\dfrac{\\partial(\\omega x)}{\\partial y}=0$ なので $\\nabla\\cdot\\boldsymbol{v}=\\boldsymbol{0}$．回転では面積が変わらず，流体なら「湧き出しも吸い込みもない」ことを表す．\n\n$(\\nabla\\times\\boldsymbol{v})_z=\\omega-(-\\omega)=\\boldsymbol{2\\omega}$．回転の大きさ（渦度）は角速度の2倍になる．\n\n円周上では $\\boldsymbol{v}$ と $d\\boldsymbol{r}$ が同じ向きなので $\\boldsymbol{v}\\cdot d\\boldsymbol{r}=R\\omega\\,ds$．円周の長さ $2\\pi R$ をかけて\n\\[ \\Gamma=R\\omega\\cdot 2\\pi R=\\boldsymbol{2\\pi R^2\\omega}. \\]\nこれは (2) の値 $2\\omega$ に円の面積 $\\pi R^2$ をかけたものに等しい．「境界を1周する循環＝内部の回転の面積分」というストークスの定理の一例である．\n\n次は，ガウスの定理（発散の体積積分＝表面を貫く流束）とあわせて，電磁気学のマクスウェル方程式を積分形と微分形で読みかえる練習をするとよい．",
   "idea": "発散は湧き出し，回転は渦の強さを表す．剛体回転では発散 $0$，渦度は角速度の2倍で，循環はそれを面積分したものになる．",
   "tags": "発散,回転,渦度,ストークスの定理",
-  "input": "(1) 0\n(2) 2omega\n(3) Γ：2pi R^2 omega"
+  "input": "(1) 0\n(2) 2omega\n(3) Γ：2pi R^2 omega",
+  "id": "PM-01-007"
  },
  {
   "tid": "B-PM-03",
@@ -39,7 +41,8 @@
   "solution": "$\\det(A-\\lambda E)=(2-\\lambda)^2-1=0$ より $2-\\lambda=\\pm1$，すなわち $\\boldsymbol{\\lambda=1,\\ 3}$．\n\n$\\lambda=3$ のとき $(A-3E)\\boldsymbol{u}=\\boldsymbol{0}$ は $-u_x+u_y=0$ なので $\\boldsymbol{u_y/u_x=1}$（直線 $y=x$ の方向）．$\\lambda=1$ の固有ベクトルは $u_y/u_x=-1$（直線 $y=-x$ の方向）で，2つは直交している．\n\n$\\boldsymbol{r}=s(t)\\,\\boldsymbol{u}$ とおくと $A\\boldsymbol{r}=\\lambda\\boldsymbol{r}$ なので，運動方程式は $m\\ddot s=-k\\lambda s$ という1つの単振動の式になる．角振動数は $\\sqrt{k\\lambda/m}$ なので\n\\[ \\boldsymbol{\\sqrt{\\frac{k}{m}}}\\ (y=-x\\ \\text{方向}),\\qquad \\boldsymbol{\\sqrt{\\frac{3k}{m}}}\\ (y=x\\ \\text{方向}). \\]\nポテンシャルの等高線は傾いた楕円で，その長軸・短軸（主軸）が固有ベクトルの方向にあたる．\n\n次は，この「固有ベクトルの方向に分ければ独立な単振動になる」という考えを，連成振動の基準振動や慣性テンソルの主軸に広げて学ぶとよい．",
   "idea": "運動方程式の行列を対角化すると，運動は固有ベクトル方向の独立な単振動に分かれ，角振動数は固有値から決まる．",
   "tags": "固有値,固有ベクトル,主軸,単振動",
-  "input": "(1) {1, 3}\n(2) u_y/u_x：1\n(3) {sqrt(k/m), sqrt(3k/m)}"
+  "input": "(1) {1, 3}\n(2) u_y/u_x：1\n(3) {sqrt(k/m), sqrt(3k/m)}",
+  "id": "PM-02-006"
  },
  {
   "tid": "B-PM-04",
@@ -53,7 +56,8 @@
   "solution": "$\\det(P-\\lambda E)=(0.9-\\lambda)(0.8-\\lambda)-0.02=\\lambda^2-1.7\\lambda+0.7=(\\lambda-1)(\\lambda-0.7)=0$ より $\\boldsymbol{\\lambda=1,\\ 7/10}$．\n\n$\\lambda=1$ では $(P-E)\\boldsymbol{u}=\\boldsymbol{0}$ が $-0.1u_A+0.2u_B=0$，つまり $u_A=2u_B$．和を $1$ にして $\\boldsymbol{(p_A,p_B)=(2/3,\\ 1/3)}$．「A から出ていく流れ $0.1p_A$」と「A に入る流れ $0.2p_B$」がつりあう状態である．\n\n$\\boldsymbol{p}_0-\\boldsymbol{p}_\\infty=(1/3,\\,-1/3)$ は $\\lambda=0.7$ の固有ベクトル（$u_A=-u_B$）なので，$P$ をかけるたびに $0.7$ 倍になる：$p_{A,n}-\\dfrac23=\\dfrac13(0.7)^n$．条件は $(0.7)^n\\le0.01$．常用対数をとると $n(\\log_{10}7-1)\\le-2$，すなわち\n\\[ n\\ge\\frac{2}{1-0.845}=12.9\\ldots \\]\nよって最小の $\\boldsymbol{n=13}$．\n\n固有値 $1$ が「平衡状態」，それ以外の固有値が「平衡への緩和の速さ」を決める．次は統計力学のマスター方程式や詳細つりあいへ進むとよい．",
   "idea": "遷移行列の固有値 $1$ の固有ベクトルが定常分布を，2番目の固有値が平衡からのずれの減り方を与える．",
   "tags": "固有値,遷移行列,定常分布,緩和",
-  "input": "(1) {1, 7/10}\n(2) (2/3, 1/3)\n(3) n：13"
+  "input": "(1) {1, 7/10}\n(2) (2/3, 1/3)\n(3) n：13",
+  "id": "PM-02-007"
  },
  {
   "tid": "B-PM-05",
@@ -62,12 +66,13 @@
   "level": 0,
   "theme": "ニュートンの冷却法則",
   "minutes": 8,
-  "q": "室温 $T_s$ の部屋に置いた飲み物の温度 $T(t)$ は，ニュートンの冷却法則\n\\[ \\frac{dT}{dt}=-k\\,(T-T_s)\\qquad(k>0\\ \\text{は定数}) \\]\nにしたがうとする．\n\\begin{enumerate}\n\\item $T(0)=T_0$ のとき，$T(t)$ を求めよ．\n\\item 室温 $20\\,^\\circ\\mathrm{C}$ で，$90\\,^\\circ\\mathrm{C}$ のコーヒーが $10$ 分後に $60\\,^\\circ\\mathrm{C}$ になった．$k$ を（$1/$分 の単位で）求めよ．\n\\item このコーヒーが $40\\,^\\circ\\mathrm{C}$ になるのは，冷め始めてから何分後か．\n\\end{enumerate}\n必要なら $\\ln 2=0.693$，$\\ln 7=1.946$ を用いよ．",
-  "answer": "(1) $T(t)=T_s+(T_0-T_s)e^{-kt}$ (2) $k=\\dfrac{1}{10}\\ln\\dfrac{7}{4}\\approx 0.0560\\,\\mathrm{min^{-1}}$ (3) $t\\approx 22.4\\,\\mathrm{min}$",
-  "solution": "$u=T-T_s$ とおくと $\\dfrac{du}{dt}=-ku$．$\\dfrac{1}{u}\\dfrac{du}{dt}=-k$ を積分して $\\ln|u|=-kt+(\\text{定数})$，よって $u=u_0e^{-kt}$．したがって\n\\[ \\boldsymbol{T(t)=T_s+(T_0-T_s)e^{-kt}}. \\]\n\n$60-20=(90-20)e^{-10k}$ より $e^{10k}=70/40=7/4$．\n\\[ k=\\frac{\\ln 7-2\\ln 2}{10}=\\frac{1.946-1.386}{10}\\approx\\boldsymbol{0.0560\\ /\\text{分}}. \\]\n\n$40-20=70e^{-kt}$ より $kt=\\ln(7/2)=1.946-0.693=1.253$．\n\\[ t=\\frac{1.253}{0.0560}\\approx\\boldsymbol{22.4\\ \\text{分}}. \\]\n温度差が一定の割合で減るので，$90\\to60$ に $10$ 分かかっても $60\\to40$（差 $40\\to20$，半分になるまで）には $12.4$ 分ほどかかる．\n\n次は，右辺が $T$ について1次でない場合や，2階の微分方程式（振動）の解き方へ進むとよい．",
+  "q": "室温 $T_s$ の部屋に置いた飲み物の温度 $T(t)$ は，ニュートンの冷却法則\n\\[ \\frac{dT}{dt}=-k\\,(T-T_s)\\qquad(k>0\\ \\text{は定数}) \\]\nにしたがうとする．\n\\begin{enumerate}\n\\item $T(0)=T_0$ のとき，$T(t)$ を求めよ．\n\\item 温度 $T_0$ のコーヒーが，時間 $t_1$ 後に温度 $T_1$（$T_s<T_1<T_0$）になった．$k$ を求めよ．\n\\item このコーヒーが温度 $T_2$（$T_s<T_2<T_1$）になるのは，冷め始めてから何時間後か．$T_0,\\ T_1,\\ T_2,\\ T_s,\\ t_1$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $T(t)=T_s+(T_0-T_s)e^{-kt}$ (2) $k=\\dfrac{1}{t_1}\\ln\\dfrac{T_0-T_s}{T_1-T_s}$ (3) $t=t_1\\dfrac{\\ln\\frac{T_0-T_s}{T_2-T_s}}{\\ln\\frac{T_0-T_s}{T_1-T_s}}$",
+  "solution": "(1) $u=T-T_s$ とおくと $\\dfrac{du}{dt}=-ku$．$\\dfrac{1}{u}\\dfrac{du}{dt}=-k$ を積分して $\\ln|u|=-kt+(\\text{定数})$，よって $u=u_0e^{-kt}$．したがって\n\\[ \\boldsymbol{T(t)=T_s+(T_0-T_s)e^{-kt}}. \\]\n\n(2) $T_1-T_s=(T_0-T_s)e^{-kt_1}$ より\n\\[ \\boldsymbol{k=\\frac{1}{t_1}\\ln\\frac{T_0-T_s}{T_1-T_s}}. \\]\n\n(3) $T_2-T_s=(T_0-T_s)e^{-kt}$ より $kt=\\ln\\dfrac{T_0-T_s}{T_2-T_s}$．(2) を代入して\n\\[ \\boldsymbol{t=t_1\\,\\frac{\\ln\\frac{T_0-T_s}{T_2-T_s}}{\\ln\\frac{T_0-T_s}{T_1-T_s}}}. \\]\n温度差が一定の割合で減るので，同じだけ温度を下げるのにも，室温に近いほど時間がかかる（たとえば室温 $20\\,^\\circ\\mathrm{C}$ で $90\\to60\\,^\\circ\\mathrm{C}$ に $10$ 分なら，$60\\to40\\,^\\circ\\mathrm{C}$ には約 $12$ 分かかる）．\n\n次は，右辺が $T$ について1次でない場合や，2階の微分方程式（振動）の解き方へ進むとよい．",
   "idea": "「変化の速さが差に比例する」1階線形微分方程式の解は指数関数で，差が一定時間ごとに一定の割合で減る．",
   "tags": "1階微分方程式,変数分離,指数関数的緩和",
-  "input": "(1) T_s+(T_0-T_s)exp(-k t)\n(2) k [1/min]：≈0.0560\n(3) t [min]：≈22.4"
+  "input": "(1) T_s+(T_0-T_s)exp(-k t)\n(2) $k$：ln((T_0-T_s)/(T_1-T_s))/t_1\n(3) $t$：t_1 ln((T_0-T_s)/(T_2-T_s))/ln((T_0-T_s)/(T_1-T_s))",
+  "id": "PM-03-006"
  },
  {
   "tid": "B-PM-06",
@@ -81,7 +86,8 @@
   "solution": "$y=e^{\\lambda t}$ を代入すると $(\\lambda^2+3\\lambda+2)e^{\\lambda t}=0$．$\\lambda^2+3\\lambda+2=(\\lambda+1)(\\lambda+2)=0$ より $\\boldsymbol{\\lambda=-1,\\ -2}$．\n\n$y=Ae^{-t}+Be^{-2t}$，$y'=-Ae^{-t}-2Be^{-2t}$．$A+B=1$，$-A-2B=0$ より $A=2$，$B=-1$：\n\\[ \\boldsymbol{y=2e^{-t}-e^{-2t}}. \\]\n\n$u=e^{-t}$ とおくと $2u-u^2=\\dfrac12$，$u^2-2u+\\dfrac12=0$，$u=1\\pm\\dfrac{1}{\\sqrt2}$．$0<u\\le1$ より $u=1-\\dfrac{1}{\\sqrt2}$．\n\\[ t=-\\ln\\!\\left(1-\\frac{1}{\\sqrt2}\\right)=\\boldsymbol{\\ln(2+\\sqrt2)}\\approx1.23. \\]\n特性方程式の解がどちらも負の実数なので，$y$ は振動せずに $0$ へ近づく（過減衰）．$y'=2(e^{-2t}-e^{-t})<0$（$t>0$）なので単調に減少する．\n\n次は，特性方程式の解が複素数になる場合（減衰振動）や重解の場合（臨界減衰）を，オイラーの公式とあわせて学ぶとよい．",
   "idea": "定数係数の線形微分方程式は $e^{\\lambda t}$ を代入して代数方程式に帰着し，初期条件で係数を決める．",
   "tags": "2階線形微分方程式,特性方程式,過減衰,初期値問題",
-  "input": "(1) {-1, -2}\n(2) 2exp(-t)-exp(-2t)\n(3) t：ln(2+sqrt(2))"
+  "input": "(1) {-1, -2}\n(2) 2exp(-t)-exp(-2t)\n(3) t：ln(2+sqrt(2))",
+  "id": "PM-03-007"
  },
  {
   "tid": "B-PM-07",
@@ -95,7 +101,8 @@
   "solution": "$c=\\cos\\theta$，$s=\\sin\\theta$ とすると $(c+is)^3=c^3+3ic^2s-3cs^2-is^3$．実部は $c^3-3cs^2=c^3-3c(1-c^2)$ なので\n\\[ \\boldsymbol{\\cos3\\theta=4\\cos^3\\theta-3\\cos\\theta}. \\]\n\n$\\cos^4\\theta=\\dfrac{1}{16}(e^{i\\theta}+e^{-i\\theta})^4=\\dfrac{1}{16}\\left(e^{4i\\theta}+e^{-4i\\theta}+4(e^{2i\\theta}+e^{-2i\\theta})+6\\right)=\\dfrac{\\cos4\\theta+4\\cos2\\theta+3}{8}$．\n$\\cos4\\theta$，$\\cos2\\theta$ は $0$ から $2\\pi$ まで積分すると $0$ なので\n\\[ \\int_0^{2\\pi}\\cos^4\\theta\\,d\\theta=\\frac{3}{8}\\cdot2\\pi=\\boldsymbol{\\frac{3\\pi}{4}}. \\]\n「$\\cos^4$ の1周期平均は $3/8$」は，光の強度のゆらぎや振動のエネルギーの計算でよく現れる．\n\n次は，$z=x+iy$ の関数としての微分（正則関数）と，複素積分（留数定理）へ進むとよい．",
   "idea": "三角関数を $e^{\\pm i\\theta}$ で書けば，倍角公式や累乗の積分は指数の計算に帰着する．",
   "tags": "オイラーの公式,ド・モアブルの定理,三角関数",
-  "input": "(1) 4cos(θ)^3-3cos(θ)\n(2) 3pi/4"
+  "input": "(1) 4cos(θ)^3-3cos(θ)\n(2) 3pi/4",
+  "id": "PM-04-006"
  },
  {
   "tid": "B-PM-08",
@@ -109,7 +116,8 @@
   "solution": "$\\dfrac{\\partial v}{\\partial y}=\\dfrac{\\partial u}{\\partial x}=2x+2$ を $y$ で積分すると $v=2xy+2y+h(x)$．次に $\\dfrac{\\partial v}{\\partial x}=2y+h'(x)$ を $-\\dfrac{\\partial u}{\\partial y}=2y$ と比べて $h'(x)=0$．$v(0,0)=0$ より $h=0$ で $\\boldsymbol{v=2xy+2y}$．\n\n$\\dfrac{\\partial^2u}{\\partial x^2}=2$，$\\dfrac{\\partial^2u}{\\partial y^2}=-2$ なので和は $\\boldsymbol{0}$．コーシー・リーマン方程式を2回使うと $u_{xx}=v_{yx}=v_{xy}=-u_{yy}$ となるから，正則関数の実部・虚部は必ずラプラス方程式を満たす．\n\n$z^2=x^2-y^2+2ixy$，$2z=2x+2iy$ なので $u+iv=(x^2-y^2+2x)+i(2xy+2y)=\\boldsymbol{z^2+2z}$．\n\n2次元の静電場や渦なし流れのポテンシャルは，このように正則関数の実部（虚部）として表せる．次は，正則関数の積分（コーシーの積分定理・留数定理）を学ぶとよい．",
   "idea": "正則関数の実部と虚部はコーシー・リーマン方程式で結ばれ，どちらも2次元のラプラス方程式を満たす．",
   "tags": "コーシー・リーマン方程式,正則関数,調和関数",
-  "input": "(1) v：2x y+2y\n(2) 0\n(3) f：z^2+2z"
+  "input": "(1) v：2x y+2y\n(2) 0\n(3) f：z^2+2z",
+  "id": "PM-04-007"
  },
  {
   "tid": "B-PM-09",
@@ -123,7 +131,8 @@
   "solution": "$f(t)\\sin nt$ は偶関数なので $b_n=\\dfrac{2}{\\pi}\\displaystyle\\int_0^\\pi\\sin nt\\,dt=\\dfrac{2}{\\pi}\\cdot\\dfrac{1-\\cos n\\pi}{n}=\\dfrac{2(1-(-1)^n)}{n\\pi}$．\n$n$ が奇数なら $\\dfrac{4}{n\\pi}$，偶数なら $0$．よって $\\boldsymbol{b_1=4/\\pi,\\ b_2=0,\\ b_3=4/(3\\pi)}$．\n\n\\[ f(t)=\\frac{4}{\\pi}\\left(\\sin t+\\frac{\\sin3t}{3}+\\frac{\\sin5t}{5}+\\cdots\\right). \\]\n$t=\\pi/2$ では $f=1$，$\\sin\\dfrac{(2m+1)\\pi}{2}=(-1)^m$ なので $1=\\dfrac{4}{\\pi}\\left(1-\\dfrac13+\\dfrac15-\\cdots\\right)$．したがって\n\\[ 1-\\frac13+\\frac15-\\frac17+\\cdots=\\boldsymbol{\\frac{\\pi}{4}}. \\]\n矩形波は奇数倍音だけを含み，その振幅は $1/n$ で小さくなる．\n\n次は，各項のエネルギーの和が関数の2乗平均に等しいというパーセバルの等式や，周期のない関数のフーリエ変換へ進むとよい．",
   "idea": "フーリエ係数は $\\sin nt$ との「重なり」の積分で求まる．展開式に特別な $t$ を代入すると無限級数の和が得られる．",
   "tags": "フーリエ級数,矩形波,無限級数",
-  "input": "(1) (4/pi, 0, 4/(3pi))\n(2) pi/4"
+  "input": "(1) (4/pi, 0, 4/(3pi))\n(2) pi/4",
+  "id": "PM-05-006"
  },
  {
   "tid": "B-PM-10",
@@ -137,7 +146,8 @@
   "solution": "公式で $a=2$，$f=x^3$ として $2^3=\\boldsymbol{8}$．\n\n$\\delta_\\varepsilon(2x)$ は $-\\varepsilon/4<x<\\varepsilon/4$ で $1/\\varepsilon$ の長方形で，幅が半分になる．面積は $\\dfrac{\\varepsilon}{2}\\cdot\\dfrac1\\varepsilon=\\dfrac12$ なので $\\displaystyle\\int\\delta(2x)\\,dx=\\boldsymbol{\\frac12}$．一般に $\\delta(cx)=\\delta(x)/|c|$ である．\n\n$\\displaystyle\\int_0^L\\lambda\\,dx=M+m$，$\\displaystyle\\int_0^Lx\\lambda\\,dx=\\frac{M}{L}\\cdot\\frac{L^2}{2}+mb$．よって\n\\[ x_G=\\boldsymbol{\\frac{ML+2mb}{2(M+m)}}. \\]\nこれは「棒の重心 $L/2$ と小球の位置 $b$ の質量による加重平均」に一致する．デルタ関数を使うと，点状の質量や点電荷を連続分布と同じ積分で扱える．\n\n次は，デルタ関数のフーリエ変換や，点源に対する応答（グリーン関数）へ進むとよい．",
   "idea": "デルタ関数は面積 $1$ の鋭いピークの極限で，積分すると1点の値を取り出す．点状の量を密度として表すのに使う．",
   "tags": "デルタ関数,重心,線密度",
-  "input": "(1) 8\n(2) 1/2\n(3) x_G：(M L+2m b)/(2(M+m))"
+  "input": "(1) 8\n(2) 1/2\n(3) x_G：(M L+2m b)/(2(M+m))",
+  "id": "PM-05-007"
  },
  {
   "tid": "B-PM-11",
@@ -151,7 +161,8 @@
   "solution": "$u_{xx}=6x$，$u_{yy}=2ax$ なので $(6+2a)x=0$ がすべての $x$ で成り立つには $\\boldsymbol{a=-3}$．\n\n$u=x^3-3xy^2$ に $x=1+Rc$，$y=Rs$（$c=\\cos s$，$\\sigma=\\sin s$ と書く）を代入すると\n\\[ u=1+3Rc+3R^2c^2+R^3c^3-3R^2\\sigma^2-3R^3c\\,\\sigma^2. \\]\n1周の平均は $\\overline{c}=\\overline{c^3}=\\overline{c\\sigma^2}=0$，$\\overline{c^2}=\\overline{\\sigma^2}=\\dfrac12$ なので\n\\[ \\overline{u}=1+\\frac{3R^2}{2}-\\frac{3R^2}{2}=\\boldsymbol{1}. \\]\nこれは中心での値 $u(1,0)=1$ に等しく，$R$ によらない．調和関数は「円周上の平均＝中心の値」という性質をもつので，電荷のない領域で静電ポテンシャルは極大・極小をとれない（アーンショーの定理）．\n\n次は，極座標でのラプラス方程式の変数分離と，そこから現れるルジャンドル多項式・ベッセル関数を学ぶとよい．",
   "idea": "ラプラス方程式の解（調和関数）は，円周上の平均が中心の値に等しい．",
   "tags": "ラプラス方程式,調和関数,平均値の性質",
-  "input": "(1) a：-3\n(2) 1"
+  "input": "(1) a：-3\n(2) 1",
+  "id": "PM-06-006"
  },
  {
   "tid": "B-PM-12",
@@ -165,7 +176,8 @@
   "solution": "$\\Gamma\\!\\left(\\dfrac52\\right)=\\dfrac32\\Gamma\\!\\left(\\dfrac32\\right)=\\dfrac32\\cdot\\dfrac12\\Gamma\\!\\left(\\dfrac12\\right)=\\boldsymbol{\\dfrac{3\\sqrt\\pi}{4}}$．\n\n$t=x^2$ とすると $x=t^{1/2}$，$dx=\\dfrac12t^{-1/2}dt$ なので\n\\[ \\int_0^\\infty x^4e^{-x^2}dx=\\frac12\\int_0^\\infty t^{3/2}e^{-t}dt=\\frac12\\Gamma\\!\\left(\\frac52\\right)=\\boldsymbol{\\frac{3\\sqrt\\pi}{8}}. \\]\n\n$t=2r/a$ とおくと $r=\\dfrac{a}{2}t$，$dr=\\dfrac a2dt$ なので\n\\[ \\int_0^\\infty r^2e^{-2r/a}dr=\\left(\\frac a2\\right)^3\\int_0^\\infty t^2e^{-t}dt=\\frac{a^3}{8}\\Gamma(3)=\\frac{a^3}{8}\\cdot2=\\boldsymbol{\\frac{a^3}{4}}. \\]\n$\\Gamma(n+1)=n!$ なので，「べき×指数関数」の積分はすべて階乗で書ける．\n\n次は，ガウス積分 $\\int e^{-x^2}dx=\\sqrt\\pi$ の導き方や，ルジャンドル・ベッセルなど微分方程式から定義される特殊関数を学ぶとよい．",
   "idea": "「べき×指数関数」の積分は置換でガンマ関数に直し，$\\Gamma(s+1)=s\\Gamma(s)$ で計算する．",
   "tags": "ガンマ関数,ガウス積分,置換積分",
-  "input": "(1) 3sqrt(pi)/4\n(2) 3sqrt(pi)/8\n(3) a^3/4"
+  "input": "(1) 3sqrt(pi)/4\n(2) 3sqrt(pi)/8\n(3) a^3/4",
+  "id": "PM-06-007"
  },
  {
   "tid": "B-ME-01",
@@ -174,12 +186,13 @@
   "level": 0,
   "theme": "等速円運動を位置ベクトルの微分で調べる",
   "minutes": 8,
-  "q": "$xy$ 平面上の質点の位置が $\\boldsymbol{r}(t)=(R\\cos\\omega t,\\ R\\sin\\omega t)$（$R,\\omega$ は正の定数）で与えられている．速度は $\\boldsymbol{v}=\\dfrac{d\\boldsymbol{r}}{dt}$，加速度は $\\boldsymbol{a}=\\dfrac{d\\boldsymbol{v}}{dt}$ であり，成分ごとに微分すればよい．\n\\begin{enumerate}\n\\item 速さ $|\\boldsymbol{v}|$ を求めよ．\n\\item 加速度の大きさ $|\\boldsymbol{a}|$ を求めよ．\n\\item $R=0.50\\,\\mathrm{m}$，周期 $2.0\\,\\mathrm{s}$ のとき，$|\\boldsymbol{a}|$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $|\\boldsymbol{v}|=R\\omega$ (2) $|\\boldsymbol{a}|=R\\omega^2$ (3) $\\approx 4.93\\,\\mathrm{m/s^2}$",
-  "solution": "$\\boldsymbol{v}=(-R\\omega\\sin\\omega t,\\ R\\omega\\cos\\omega t)$ なので $|\\boldsymbol{v}|=R\\omega\\sqrt{\\sin^2+\\cos^2}=\\boldsymbol{R\\omega}$．$\\boldsymbol{v}\\cdot\\boldsymbol{r}=0$ から，速度は常に半径に垂直（接線方向）である．\n\n$\\boldsymbol{a}=(-R\\omega^2\\cos\\omega t,\\ -R\\omega^2\\sin\\omega t)=-\\omega^2\\boldsymbol{r}$．加速度は中心を向き，大きさは $\\boldsymbol{R\\omega^2}$（$=v^2/R$）．\n\n周期 $T=2.0\\,\\mathrm{s}$ より $\\omega=2\\pi/T=\\pi\\,\\mathrm{rad/s}$．\n\\[ |\\boldsymbol{a}|=0.50\\times\\pi^2\\approx\\boldsymbol{4.93\\,\\mathrm{m/s^2}}. \\]\n\n次は，極座標 $(r,\\theta)$ で速度・加速度を表し，$r$ が変化する一般の平面運動（惑星の運動など）を扱う方法を学ぶとよい．",
+  "q": "$xy$ 平面上の質点の位置が $\\boldsymbol{r}(t)=(R\\cos\\omega t,\\ R\\sin\\omega t)$（$R,\\omega$ は正の定数）で与えられている．速度は $\\boldsymbol{v}=\\dfrac{d\\boldsymbol{r}}{dt}$，加速度は $\\boldsymbol{a}=\\dfrac{d\\boldsymbol{v}}{dt}$ であり，成分ごとに微分すればよい．\n\\begin{enumerate}\n\\item 速さ $|\\boldsymbol{v}|$ を求めよ．\n\\item 加速度の大きさ $|\\boldsymbol{a}|$ を求めよ．\n\\item 周期（1周する時間）が $T$ のとき，$|\\boldsymbol{a}|$ を $R,T$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $|\\boldsymbol{v}|=R\\omega$ (2) $|\\boldsymbol{a}|=R\\omega^2$ (3) $|\\boldsymbol{a}|=\\dfrac{4\\pi^2R}{T^2}$",
+  "solution": "$\\boldsymbol{v}=(-R\\omega\\sin\\omega t,\\ R\\omega\\cos\\omega t)$ なので $|\\boldsymbol{v}|=R\\omega\\sqrt{\\sin^2+\\cos^2}=\\boldsymbol{R\\omega}$．$\\boldsymbol{v}\\cdot\\boldsymbol{r}=0$ から，速度は常に半径に垂直（接線方向）である．\n\n$\\boldsymbol{a}=(-R\\omega^2\\cos\\omega t,\\ -R\\omega^2\\sin\\omega t)=-\\omega^2\\boldsymbol{r}$．加速度は中心を向き，大きさは $\\boldsymbol{R\\omega^2}$（$=v^2/R$）．\n\n1周する間に $\\omega t$ が $2\\pi$ 増えるので $\\omega T=2\\pi$，$\\omega=2\\pi/T$．\n\\[ |\\boldsymbol{a}|=R\\left(\\frac{2\\pi}{T}\\right)^2=\\boldsymbol{\\frac{4\\pi^2R}{T^2}}. \\]\n半径が同じなら，周期が半分になると加速度は4倍になる．\n\n次は，極座標 $(r,\\theta)$ で速度・加速度を表し，$r$ が変化する一般の平面運動（惑星の運動など）を扱う方法を学ぶとよい．",
   "idea": "位置ベクトルを成分ごとに微分すれば，等速円運動の加速度が中心向きで $-\\omega^2\\boldsymbol{r}$ であることが直接わかる．",
   "tags": "等速円運動,速度,加速度,ベクトルの微分",
-  "input": "(1) |v|：R omega\n(2) |a|：R omega^2\n(3) |a| [m/s^2]：≈4.93"
+  "input": "(1) |v|：R omega\n(2) |a|：R omega^2\n(3) |a|：4 pi^2 R/T^2",
+  "id": "ME-01-006"
  },
  {
   "tid": "B-ME-02",
@@ -193,7 +206,8 @@
   "solution": "$m_1$ は下向き，$m_2$ は上向きに同じ大きさ $a$ で加速する．運動方程式は\n\\[ m_1a=m_1g-T,\\qquad m_2a=T-m_2g. \\]\n辺々足して $\\boldsymbol{a=\\dfrac{(m_1-m_2)g}{m_1+m_2}}$．\n\nこれを2式目に代入して $T=m_2(g+a)=\\boldsymbol{\\dfrac{2m_1m_2g}{m_1+m_2}}$．$T$ は $m_1g$ と $m_2g$ の間の値になる．\n\n等加速度運動なので $v^2=2ah$：\n\\[ v=\\boldsymbol{\\sqrt{\\frac{2(m_1-m_2)gh}{m_1+m_2}}}. \\]\nエネルギー保存 $(m_1-m_2)gh=\\dfrac12(m_1+m_2)v^2$ からも同じ結果が出る．$m_1$ と $m_2$ が近いと加速度が小さくなるので，落下運動をゆっくり観察できる．\n\n次は，滑車の質量（慣性モーメント）を考えた場合や，ラグランジュ形式で束縛のある系を扱う方法を学ぶとよい．",
   "idea": "糸でつながった2物体は加速度の大きさが共通．2つの運動方程式から張力を消去する．",
   "tags": "運動方程式,張力,束縛,アトウッドの器械",
-  "input": "(1) a：(m_1-m_2)g/(m_1+m_2)\n(2) T：2m_1 m_2 g/(m_1+m_2)\n(3) v：sqrt(2(m_1-m_2)g h/(m_1+m_2))"
+  "input": "(1) a：(m_1-m_2)g/(m_1+m_2)\n(2) T：2m_1 m_2 g/(m_1+m_2)\n(3) v：sqrt(2(m_1-m_2)g h/(m_1+m_2))",
+  "id": "ME-01-007"
  },
  {
   "tid": "B-ME-03",
@@ -202,12 +216,13 @@
   "level": 0,
   "theme": "等しい質量の球の平面上での弾性衝突",
   "minutes": 10,
-  "q": "なめらかな水平面上で，速さ $v_0=2.0\\,\\mathrm{m/s}$ で進む球 1 が，静止している同じ質量の球 2 に衝突した．衝突は弾性衝突（運動エネルギーが保存）であり，衝突後，球 1 はもとの進行方向から $30^\\circ$ の向きに進んだ．\n\\begin{enumerate}\n\\item 運動量保存 $\\boldsymbol{v}_0=\\boldsymbol{v}_1+\\boldsymbol{v}_2$ とエネルギー保存 $v_0^2=v_1^2+v_2^2$ を用いて，衝突後の2球の速度のなす角を求めよ．\n\\item 衝突後の球 1，球 2 の速さ $v_1$，$v_2$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $90^\\circ$ (2) $v_1=\\sqrt{3}\\approx 1.73\\,\\mathrm{m/s}$，$v_2=1.0\\,\\mathrm{m/s}$",
-  "solution": "運動量保存の両辺の2乗をとると $v_0^2=v_1^2+v_2^2+2\\boldsymbol{v}_1\\cdot\\boldsymbol{v}_2$．エネルギー保存と比べて $\\boldsymbol{v}_1\\cdot\\boldsymbol{v}_2=0$．よって衝突後の2球は $\\boldsymbol{90^\\circ}$ の角をなして進む（両方とも動く場合）．\n\n$\\boldsymbol{v}_0,\\ \\boldsymbol{v}_1,\\ \\boldsymbol{v}_2$ は $\\boldsymbol{v}_0$ を斜辺とする直角三角形をつくる．$\\boldsymbol{v}_1$ と $\\boldsymbol{v}_0$ のなす角が $30^\\circ$ なので\n\\[ v_1=v_0\\cos30^\\circ=\\boldsymbol{\\sqrt3\\approx1.73\\,\\mathrm{m/s}},\\qquad v_2=v_0\\sin30^\\circ=\\boldsymbol{1.0\\,\\mathrm{m/s}}. \\]\n球 2 はもとの進行方向から $60^\\circ$ 反対側に進む．ビリヤードで手球と的球が直角に分かれるのはこのためである．\n\n次は，重心系で衝突を見ると「速さは変わらず向きだけが回る」ことを使い，質量が異なる場合の散乱角を調べるとよい．",
+  "q": "なめらかな水平面上で，速さ $v_0$ で進む球 1 が，静止している同じ質量の球 2 に衝突した．衝突は弾性衝突（運動エネルギーが保存）であり，衝突後，球 1 はもとの進行方向から角 $\\theta$（$0<\\theta<90^\\circ$）の向きに進んだ．\n\\begin{enumerate}\n\\item 運動量保存 $\\boldsymbol{v}_0=\\boldsymbol{v}_1+\\boldsymbol{v}_2$ とエネルギー保存 $v_0^2=v_1^2+v_2^2$ を用いて，衝突後の2球の速度のなす角を求めよ．\n\\item 衝突後の球 1，球 2 の速さ $v_1$，$v_2$ を $v_0,\\theta$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $90^\\circ$ (2) $v_1=v_0\\cos\\theta$，$v_2=v_0\\sin\\theta$",
+  "solution": "運動量保存の両辺の2乗をとると $v_0^2=v_1^2+v_2^2+2\\boldsymbol{v}_1\\cdot\\boldsymbol{v}_2$．エネルギー保存と比べて $\\boldsymbol{v}_1\\cdot\\boldsymbol{v}_2=0$．よって衝突後の2球は $\\boldsymbol{90^\\circ}$ の角をなして進む（両方とも動く場合）．\n\n$\\boldsymbol{v}_0,\\ \\boldsymbol{v}_1,\\ \\boldsymbol{v}_2$ は $\\boldsymbol{v}_0$ を斜辺とする直角三角形をつくる．$\\boldsymbol{v}_1$ と $\\boldsymbol{v}_0$ のなす角が $\\theta$ なので\n\\[ v_1=\\boldsymbol{v_0\\cos\\theta},\\qquad v_2=\\boldsymbol{v_0\\sin\\theta}. \\]\n球 2 はもとの進行方向から $90^\\circ-\\theta$ だけ反対側に進む．ビリヤードで手球と的球が直角に分かれるのはこのためである．\n\n次は，重心系で衝突を見ると「速さは変わらず向きだけが回る」ことを使い，質量が異なる場合の散乱角を調べるとよい．",
   "idea": "質量が等しい弾性衝突では，運動量保存の2乗とエネルギー保存を比べると $\\boldsymbol{v}_1\\cdot\\boldsymbol{v}_2=0$ が出る．",
   "tags": "弾性衝突,運動量保存,2次元衝突",
-  "input": "(1) 角度 [°]：90\n(2) v_1 [m/s]：≈1.73 ; v_2 [m/s]：≈1.00"
+  "input": "(1) 角度 [°]：90\n(2) v_1：v_0 cos(θ) ; v_2：v_0 sin(θ)",
+  "id": "ME-02-006"
  },
  {
   "tid": "B-ME-04",
@@ -216,12 +231,13 @@
   "level": 0,
   "theme": "ばねの上に落ちるおもりと最大の縮み",
   "minutes": 10,
-  "q": "ばね定数 $k=200\\,\\mathrm{N/m}$ の軽いばねを鉛直に立て，その上端から高さ $h=0.30\\,\\mathrm{m}$ のところで質量 $m=0.50\\,\\mathrm{kg}$ のおもりを静かに放した．おもりはばねの上端に当たったあと，ばねと一体になって運動する．重力加速度を $g=9.8\\,\\mathrm{m/s^2}$ とし，空気抵抗は無視する．\n\\begin{enumerate}\n\\item おもりがばねに当たる直前の速さを求めよ．\n\\item ばねの縮みの最大値を求めよ．\n\\item おもりの速さの最大値を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\approx 2.42\\,\\mathrm{m/s}$ (2) $\\approx 0.148\\,\\mathrm{m}$ (3) $\\approx 2.47\\,\\mathrm{m/s}$",
-  "solution": "$v=\\sqrt{2gh}=\\sqrt{2\\times9.8\\times0.30}\\approx\\boldsymbol{2.42\\,\\mathrm{m/s}}$．\n\n最大の縮みを $x$ とすると，そのとき速さ $0$．重力の位置エネルギーの減少 $mg(h+x)$ がばねの弾性エネルギー $\\dfrac12kx^2$ になるので\n\\[ \\frac12kx^2-mgx-mgh=0,\\qquad x=\\frac{mg}{k}+\\sqrt{\\left(\\frac{mg}{k}\\right)^2+\\frac{2mgh}{k}}. \\]\n$mg/k=0.0245\\,\\mathrm{m}$，$2mgh/k=0.0147\\,\\mathrm{m^2}$ より $x\\approx\\boldsymbol{0.148\\,\\mathrm{m}}$．\n\n速さが最大になるのは加速度が $0$，つまり $kx=mg$ のつりあいの位置 $x_0=mg/k=0.0245\\,\\mathrm{m}$ である．エネルギー保存より\n\\[ \\frac12mv_{\\max}^2=mg(h+x_0)-\\frac12kx_0^2,\\qquad v_{\\max}=\\sqrt{2gh+\\frac{mg^2}{k}}\\approx\\boldsymbol{2.47\\,\\mathrm{m/s}}. \\]\nばねに当たってもすぐには減速せず，つりあいの位置まではまだ加速する．\n\n次は，ばねに接したあとの運動をつりあいの位置を中心とする単振動として解き，時間変化まで求めてみるとよい．",
+  "q": "ばね定数 $k$ の軽いばねを鉛直に立て，その上端から高さ $h$ のところで質量 $m$ のおもりを静かに放した．おもりはばねの上端に当たったあと，ばねと一体になって運動する．重力加速度を $g$ とし，空気抵抗は無視する．\n\\begin{enumerate}\n\\item おもりがばねに当たる直前の速さを求めよ．\n\\item ばねの縮みの最大値 $x$ を求めよ．\n\\item おもりの速さの最大値 $v_{\\max}$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\sqrt{2gh}$ (2) $x=\\dfrac{mg}{k}+\\sqrt{\\left(\\dfrac{mg}{k}\\right)^2+\\dfrac{2mgh}{k}}$ (3) $v_{\\max}=\\sqrt{2gh+\\dfrac{mg^2}{k}}$",
+  "solution": "当たる直前の速さは $v=\\boldsymbol{\\sqrt{2gh}}$．\n\n最大の縮みを $x$ とすると，そのとき速さ $0$．重力の位置エネルギーの減少 $mg(h+x)$ がばねの弾性エネルギー $\\dfrac12kx^2$ になるので\n\\[ \\frac12kx^2-mgx-mgh=0,\\qquad \\boldsymbol{x=\\frac{mg}{k}+\\sqrt{\\left(\\frac{mg}{k}\\right)^2+\\frac{2mgh}{k}}}. \\]\n\n速さが最大になるのは加速度が $0$，つまり $kx=mg$ のつりあいの位置 $x_0=mg/k$ である．エネルギー保存より\n\\[ \\frac12mv_{\\max}^2=mg(h+x_0)-\\frac12kx_0^2,\\qquad \\boldsymbol{v_{\\max}=\\sqrt{2gh+\\frac{mg^2}{k}}}. \\]\nばねに当たってもすぐには減速せず，つりあいの位置まではまだ加速する．$v_{\\max}$ は当たる直前の速さ $\\sqrt{2gh}$ より大きい．\n\n次は，ばねに接したあとの運動をつりあいの位置を中心とする単振動として解き，時間変化まで求めてみるとよい．",
   "idea": "力学的エネルギー保存で最大の縮みが，「加速度 $0$ の点で速さ最大」からつりあいの位置が決まる．",
   "tags": "力学的エネルギー保存,ばね,弾性エネルギー",
-  "input": "(1) v [m/s]：≈2.42\n(2) 縮み [m]：≈0.148\n(3) v_max [m/s]：≈2.47"
+  "input": "(1) v：sqrt(2 g h)\n(2) 縮み：m g/k+sqrt((m g/k)^2+2 m g h/k)\n(3) v_max：sqrt(2 g h+m g^2/k)",
+  "id": "ME-02-007"
  },
  {
   "tid": "B-ME-05",
@@ -230,12 +246,13 @@
   "level": 0,
   "theme": "彗星の近日点と遠日点の速さ",
   "minutes": 10,
-  "q": "太陽（質量 $M$）のまわりを楕円軌道で回る彗星がある．近日点距離を $r_p$，遠日点距離を $r_a$ とし，万有引力定数を $G$ とする．近日点・遠日点では速度が太陽からの動径に垂直である．面積速度一定の法則から $r_pv_p=r_av_a$ が成り立ち，力学的エネルギー\n\\[ \\frac12v^2-\\frac{GM}{r}\\quad(\\text{単位質量あたり}) \\]\nは保存する．\n\\begin{enumerate}\n\\item $r_p=9.0\\times10^{10}\\,\\mathrm{m}$，$r_a=5.4\\times10^{12}\\,\\mathrm{m}$ のとき，近日点と遠日点の速さの比 $v_p/v_a$ を求めよ．\n\\item 近日点での速さ $v_p$ を $G,M,r_p,r_a$ で表せ．\n\\item $GM=1.33\\times10^{20}\\,\\mathrm{m^3/s^2}$ として，(1) の彗星の $v_p$ を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\dfrac{v_p}{v_a}=60$ (2) $v_p=\\sqrt{\\dfrac{2GMr_a}{r_p(r_a+r_p)}}$ (3) $v_p\\approx 5.39\\times10^{4}\\,\\mathrm{m/s}$",
-  "solution": "$v_p/v_a=r_a/r_p=5.4\\times10^{12}/9.0\\times10^{10}=\\boldsymbol{60}$．\n\nエネルギー保存に $v_a=v_pr_p/r_a$ を代入すると\n\\[ \\frac12v_p^2\\left(1-\\frac{r_p^2}{r_a^2}\\right)=GM\\left(\\frac1{r_p}-\\frac1{r_a}\\right). \\]\n$1-r_p^2/r_a^2=(r_a-r_p)(r_a+r_p)/r_a^2$，$1/r_p-1/r_a=(r_a-r_p)/(r_pr_a)$ を使って整理すると\n\\[ v_p=\\boldsymbol{\\sqrt{\\frac{2GMr_a}{r_p(r_a+r_p)}}}. \\]\n\n数値を入れると $v_p=\\sqrt{\\dfrac{2\\times1.33\\times10^{20}\\times5.4\\times10^{12}}{9.0\\times10^{10}\\times5.49\\times10^{12}}}\\approx\\boldsymbol{5.39\\times10^4\\,\\mathrm{m/s}}$．遠日点では $v_a\\approx900\\,\\mathrm{m/s}$ まで遅くなる．\n\n次は，角運動量保存を使って動径方向だけの1次元問題（有効ポテンシャル）に直し，軌道の形を求める方法を学ぶとよい．",
+  "q": "太陽（質量 $M$）のまわりを楕円軌道で回る彗星がある．近日点距離を $r_p$，遠日点距離を $r_a$ とし，万有引力定数を $G$ とする．近日点・遠日点では速度が太陽からの動径に垂直である．面積速度一定の法則から $r_pv_p=r_av_a$ が成り立ち，力学的エネルギー\n\\[ \\frac12v^2-\\frac{GM}{r}\\quad(\\text{単位質量あたり}) \\]\nは保存する．\n\\begin{enumerate}\n\\item 近日点と遠日点の速さの比 $v_p/v_a$ を $r_p,r_a$ で表せ．\n\\item 近日点での速さ $v_p$ を $G,M,r_p,r_a$ で表せ．\n\\item 遠日点での速さ $v_a$ を $G,M,r_p,r_a$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $\\dfrac{v_p}{v_a}=\\dfrac{r_a}{r_p}$ (2) $v_p=\\sqrt{\\dfrac{2GMr_a}{r_p(r_a+r_p)}}$ (3) $v_a=\\sqrt{\\dfrac{2GMr_p}{r_a(r_a+r_p)}}$",
+  "solution": "(1) $r_pv_p=r_av_a$ より $\\dfrac{v_p}{v_a}=\\boldsymbol{\\dfrac{r_a}{r_p}}$．遠日点が遠いほど，遠日点ではゆっくり動く．\n\n(2) エネルギー保存に $v_a=v_pr_p/r_a$ を代入すると\n\\[ \\frac12v_p^2\\left(1-\\frac{r_p^2}{r_a^2}\\right)=GM\\left(\\frac1{r_p}-\\frac1{r_a}\\right). \\]\n$1-r_p^2/r_a^2=(r_a-r_p)(r_a+r_p)/r_a^2$，$1/r_p-1/r_a=(r_a-r_p)/(r_pr_a)$ を使って整理すると\n\\[ v_p=\\boldsymbol{\\sqrt{\\frac{2GMr_a}{r_p(r_a+r_p)}}}. \\]\n\n(3) $v_a=\\dfrac{r_p}{r_a}v_p$ より\n\\[ v_a=\\boldsymbol{\\sqrt{\\frac{2GMr_p}{r_a(r_a+r_p)}}}. \\]\n(2) と (3) は $r_p\\leftrightarrow r_a$ の入れかえで移り合う．$r_p=r_a=r$ とおくと，どちらも円軌道の速さ $\\sqrt{GM/r}$ になる．\n\n次は，角運動量保存を使って動径方向だけの1次元問題（有効ポテンシャル）に直し，軌道の形を求める方法を学ぶとよい．",
   "idea": "近日点と遠日点の2点で，角運動量保存とエネルギー保存の2式を連立すれば速さが求まる．",
   "tags": "面積速度一定,角運動量保存,楕円軌道,エネルギー保存",
-  "input": "(1) v_p/v_a：60\n(2) v_p：sqrt(2G M r_a/(r_p(r_a+r_p)))\n(3) v_p [m/s]：≈5.39e4"
+  "input": "(1) v_p/v_a：r_a/r_p\n(2) v_p：sqrt(2G M r_a/(r_p(r_a+r_p)))\n(3) v_a：sqrt(2G M r_p/(r_a(r_a+r_p)))",
+  "id": "ME-03-006"
  },
  {
   "tid": "B-ME-06",
@@ -244,12 +261,13 @@
   "level": 0,
   "theme": "万有引力の位置エネルギーと脱出速度",
   "minutes": 8,
-  "q": "質量 $M$，半径 $R$ の天体の中心から距離 $r$（$r\\ge R$）にある質量 $m$ の物体の万有引力による位置エネルギーは $U=-\\dfrac{GMm}{r}$ である（$G$ は万有引力定数）．天体の自転と大気は無視する．\n\\begin{enumerate}\n\\item 表面から打ち出した物体が無限遠まで飛び去るための最小の速さ（脱出速度）$v_{\\mathrm{esc}}$ を求めよ．\n\\item 地球について $GM=3.99\\times10^{14}\\,\\mathrm{m^3/s^2}$，$R=6.37\\times10^6\\,\\mathrm{m}$ として $v_{\\mathrm{esc}}$ を求めよ．\n\\item 表面から鉛直上向きに速さ $\\sqrt{GM/R}$ で打ち出した物体が達する，表面からの最高の高さを求めよ．\n\\end{enumerate}",
-  "answer": "(1) $v_{\\mathrm{esc}}=\\sqrt{\\dfrac{2GM}{R}}$ (2) $v_{\\mathrm{esc}}\\approx 1.12\\times10^{4}\\,\\mathrm{m/s}$ (3) $R$",
-  "solution": "無限遠で $U=0$，速さ $0$ でちょうど届く条件は全エネルギーが $0$：$\\dfrac12mv^2-\\dfrac{GMm}{R}=0$．よって $\\boldsymbol{v_{\\mathrm{esc}}=\\sqrt{2GM/R}}$．\n\n$v_{\\mathrm{esc}}=\\sqrt{2\\times3.99\\times10^{14}/6.37\\times10^6}\\approx\\boldsymbol{1.12\\times10^4\\,\\mathrm{m/s}}$（約 $11.2\\,\\mathrm{km/s}$）．\n\n最高点の中心からの距離を $r$ とすると\n\\[ \\frac12m\\frac{GM}{R}-\\frac{GMm}{R}=-\\frac{GMm}{r}\\quad\\Rightarrow\\quad r=2R. \\]\n表面からの高さは $\\boldsymbol{R}$．$\\sqrt{GM/R}$ は地表すれすれの円軌道の速さ（第1宇宙速度）で，それで真上に打ち上げても地球半径の高さまでしか届かない．重力が距離とともに弱くなるので，一様な重力で計算した $R/2$ より高くなる．\n\n次は，全エネルギーの正負と軌道の形（楕円・放物線・双曲線）の関係を学ぶとよい．",
+  "q": "質量 $M$，半径 $R$ の天体の中心から距離 $r$（$r\\ge R$）にある質量 $m$ の物体の万有引力による位置エネルギーは $U=-\\dfrac{GMm}{r}$ である（$G$ は万有引力定数）．天体の自転と大気は無視する．\n\\begin{enumerate}\n\\item 表面から打ち出した物体が無限遠まで飛び去るための最小の速さ（脱出速度）$v_{\\mathrm{esc}}$ を求めよ．\n\\item 表面から鉛直上向きに速さ $v_0$（$v_0<v_{\\mathrm{esc}}$）で打ち出した物体が達する，表面からの最高の高さ $h$ を $G,M,R,v_0$ で表せ．\n\\item $v_0=\\sqrt{GM/R}$ のとき $h$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $v_{\\mathrm{esc}}=\\sqrt{\\dfrac{2GM}{R}}$ (2) $h=\\dfrac{R^2v_0^2}{2GM-Rv_0^2}$ (3) $R$",
+  "solution": "(1) 無限遠で $U=0$，速さ $0$ でちょうど届く条件は全エネルギーが $0$：$\\dfrac12mv^2-\\dfrac{GMm}{R}=0$．よって $\\boldsymbol{v_{\\mathrm{esc}}=\\sqrt{2GM/R}}$．\n\n(2) 最高点の中心からの距離を $r$ とすると，エネルギー保存より\n\\[ \\frac12mv_0^2-\\frac{GMm}{R}=-\\frac{GMm}{r}\\quad\\Rightarrow\\quad r=\\frac{2GMR}{2GM-Rv_0^2}. \\]\n表面からの高さは\n\\[ h=r-R=\\boldsymbol{\\frac{R^2v_0^2}{2GM-Rv_0^2}}. \\]\n$v_0\\to v_{\\mathrm{esc}}$ で分母が $0$ になり $h\\to\\infty$．$v_0$ が小さいときは $h\\approx\\dfrac{R^2v_0^2}{2GM}=\\dfrac{v_0^2}{2g}$（$g=GM/R^2$）となり，一様な重力での結果に一致する．\n\n(3) $Rv_0^2=GM$ を代入して $h=\\dfrac{R\\cdot GM}{GM}=\\boldsymbol{R}$．$\\sqrt{GM/R}$ は地表すれすれの円軌道の速さ（第1宇宙速度）で，それで真上に打ち上げても天体の半径の高さまでしか届かない．重力が距離とともに弱くなるので，一様な重力で計算した $R/2$ より高くなる．\n\n次は，全エネルギーの正負と軌道の形（楕円・放物線・双曲線）の関係を学ぶとよい．",
   "idea": "無限遠まで行けるかどうかは全エネルギーの符号で決まる．最高点の高さもエネルギー保存で求まる．",
   "tags": "万有引力,位置エネルギー,脱出速度,エネルギー保存",
-  "input": "(1) v_esc：sqrt(2G M/R)\n(2) v_esc [m/s]：≈1.12e4\n(3) 高さ：R"
+  "input": "(1) v_esc：sqrt(2G M/R)\n(2) h：R^2 v_0^2/(2G M-R v_0^2)\n(3) 高さ：R",
+  "id": "ME-03-007"
  },
  {
   "tid": "B-ME-07",
@@ -258,12 +276,13 @@
   "level": 0,
   "theme": "加速する電車の中の振り子",
   "minutes": 8,
-  "q": "水平方向に一定の加速度 $a$ で走る電車の天井から，長さ $l$ の糸で小さなおもりをつるす．電車とともに動く座標系では，おもり（質量 $m$）に重力 $mg$ のほかに加速度と逆向きの慣性力 $ma$ がはたらくとみなせる．\n\\begin{enumerate}\n\\item おもりが電車に対して静止しているとき，糸と鉛直線のなす角 $\\theta$ を，$a=3.0\\,\\mathrm{m/s^2}$，$g=9.8\\,\\mathrm{m/s^2}$ として求めよ（度で答えよ）．\n\\item 電車内で感じる「見かけの重力加速度」の大きさ $g'$ を $g,a$ で表せ．\n\\item $l=1.0\\,\\mathrm{m}$ のとき，(1) のつりあいの位置のまわりの小さな振動の周期を求めよ．単振り子の周期は $2\\pi\\sqrt{l/g'}$ である．\n\\end{enumerate}",
-  "answer": "(1) $\\theta\\approx 17.0^\\circ$ (2) $g'=\\sqrt{g^2+a^2}$ (3) $\\approx 1.96\\,\\mathrm{s}$",
-  "solution": "重力 $mg$（下向き）と慣性力 $ma$（後ろ向き）と張力がつりあう．張力は重力と慣性力の合力と逆向きなので，$\\tan\\theta=a/g=3.0/9.8$，$\\theta\\approx\\boldsymbol{17.0^\\circ}$（後ろ側に傾く）．\n\n重力と慣性力の合力は $m\\sqrt{g^2+a^2}$ で，電車内ではこれが「重力」の役割をする：$\\boldsymbol{g'=\\sqrt{g^2+a^2}}$．\n\n$g'=\\sqrt{9.8^2+3.0^2}\\approx10.25\\,\\mathrm{m/s^2}$ なので\n\\[ T=2\\pi\\sqrt{\\frac{1.0}{10.25}}\\approx\\boldsymbol{1.96\\,\\mathrm{s}}. \\]\n静止した電車内（$2.01\\,\\mathrm{s}$）より少し短い．\n\n次は，回転する座標系で現れる慣性力（遠心力とコリオリ力）を学ぶとよい．",
+  "q": "水平方向に一定の加速度 $a$ で走る電車の天井から，長さ $l$ の糸で小さなおもりをつるす．重力加速度を $g$ とする．電車とともに動く座標系では，おもり（質量 $m$）に重力 $mg$ のほかに加速度と逆向きの慣性力 $ma$ がはたらくとみなせる．\n\\begin{enumerate}\n\\item おもりが電車に対して静止しているとき，糸と鉛直線のなす角 $\\theta$ について $\\tan\\theta$ を $a,g$ で表せ．\n\\item 電車内で感じる「見かけの重力加速度」の大きさ $g'$ を $g,a$ で表せ．\n\\item (1) のつりあいの位置のまわりの小さな振動の周期 $T$ を $l,g,a$ で表せ．単振り子の周期は $2\\pi\\sqrt{l/g'}$ である．\n\\end{enumerate}",
+  "answer": "(1) $\\tan\\theta=\\dfrac ag$ (2) $g'=\\sqrt{g^2+a^2}$ (3) $T=2\\pi\\sqrt{\\dfrac{l}{\\sqrt{g^2+a^2}}}$",
+  "solution": "重力 $mg$（下向き）と慣性力 $ma$（後ろ向き）と張力がつりあう．張力は重力と慣性力の合力と逆向きなので，$\\boldsymbol{\\tan\\theta=a/g}$（後ろ側に傾く）．\n\n重力と慣性力の合力は $m\\sqrt{g^2+a^2}$ で，電車内ではこれが「重力」の役割をする：$\\boldsymbol{g'=\\sqrt{g^2+a^2}}$．\n\n単振り子の周期の $g$ を $g'$ に置き換えて\n\\[ T=\\boldsymbol{2\\pi\\sqrt{\\frac{l}{\\sqrt{g^2+a^2}}}}. \\]\n$g'>g$ なので，静止した電車内の周期 $2\\pi\\sqrt{l/g}$ より少し短い．\n\n次は，回転する座標系で現れる慣性力（遠心力とコリオリ力）を学ぶとよい．",
   "idea": "等加速度の座標系では慣性力 $-m\\boldsymbol{a}$ を加えると，重力が $\\boldsymbol{g}-\\boldsymbol{a}$ に置きかわったのと同じになる．",
   "tags": "慣性力,見かけの重力,振り子",
-  "input": "(1) θ [°]：≈17.0\n(2) g'：sqrt(g^2+a^2)\n(3) 周期 [s]：≈1.96"
+  "input": "(1) $\\tan\\theta$：a/g\n(2) g'：sqrt(g^2+a^2)\n(3) $T$：2 pi sqrt(l/sqrt(g^2+a^2))",
+  "id": "ME-04-006"
  },
  {
   "tid": "B-ME-08",
@@ -272,12 +291,13 @@
   "level": 0,
   "theme": "回転する宇宙ステーションの人工重力",
   "minutes": 8,
-  "q": "半径 $R=100\\,\\mathrm{m}$ のリング状の宇宙ステーションを，中心軸のまわりに一定の角速度 $\\omega$ で回転させ，リングの内壁（床）に立つ人に人工重力をつくる．ステーションとともに回る座標系では，中心から距離 $r$ の質量 $m$ の物体に外向きの遠心力 $mr\\omega^2$ がはたらくとみなせる．\n\\begin{enumerate}\n\\item 床（$r=R$）での見かけの重力加速度が $g$ となる $\\omega$ を $g,R$ で表せ．\n\\item $g=9.8\\,\\mathrm{m/s^2}$ として，ステーションの回転の周期を求めよ．\n\\item 身長 $1.8\\,\\mathrm{m}$ の人の頭の位置での見かけの重力加速度は，足元の何倍か．\n\\end{enumerate}",
-  "answer": "(1) $\\omega=\\sqrt{\\dfrac{g}{R}}$ (2) $\\approx 20.1\\,\\mathrm{s}$ (3) $0.982$ 倍",
-  "solution": "$R\\omega^2=g$ より $\\boldsymbol{\\omega=\\sqrt{g/R}}$．\n\n$\\omega=\\sqrt{9.8/100}\\approx0.313\\,\\mathrm{rad/s}$，周期は $2\\pi/\\omega\\approx\\boldsymbol{20.1\\,\\mathrm{s}}$．\n\n見かけの重力加速度 $r\\omega^2$ は $r$ に比例するので，頭（$r=R-1.8\\,\\mathrm{m}$）と足元の比は\n\\[ \\frac{R-1.8}{R}=\\boldsymbol{0.982}. \\]\n約 $2\\,\\%$ 弱い．半径が小さいステーションほどこの差が大きく，体に違和感が生じる．\n\n次は，回転座標系で動いている物体にはたらくもう1つの慣性力，コリオリ力 $-2m\\boldsymbol{\\omega}\\times\\boldsymbol{v}$ を学ぶとよい．",
+  "q": "半径 $R$ のリング状の宇宙ステーションを，中心軸のまわりに一定の角速度 $\\omega$ で回転させ，リングの内壁（床）に立つ人に人工重力をつくる．ステーションとともに回る座標系では，中心から距離 $r$ の質量 $m$ の物体に外向きの遠心力 $mr\\omega^2$ がはたらくとみなせる．\n\\begin{enumerate}\n\\item 床（$r=R$）での見かけの重力加速度が $g$ となる $\\omega$ を $g,R$ で表せ．\n\\item このときのステーションの回転の周期 $T$ を $g,R$ で表せ．\n\\item 身長 $h$ の人の頭の位置での見かけの重力加速度は，足元の何倍か．\n\\end{enumerate}",
+  "answer": "(1) $\\omega=\\sqrt{\\dfrac{g}{R}}$ (2) $T=2\\pi\\sqrt{\\dfrac Rg}$ (3) $1-\\dfrac hR$ 倍",
+  "solution": "$R\\omega^2=g$ より $\\boldsymbol{\\omega=\\sqrt{g/R}}$．\n\n周期は $T=2\\pi/\\omega=\\boldsymbol{2\\pi\\sqrt{R/g}}$．（地球上の長さ $R$ の単振り子の周期と同じ形である．）\n\n見かけの重力加速度 $r\\omega^2$ は $r$ に比例するので，頭（$r=R-h$）と足元の比は\n\\[ \\frac{R-h}{R}=\\boldsymbol{1-\\frac hR}. \\]\n半径が小さいステーションほどこの差が大きく，体に違和感が生じる．\n\n次は，回転座標系で動いている物体にはたらくもう1つの慣性力，コリオリ力 $-2m\\boldsymbol{\\omega}\\times\\boldsymbol{v}$ を学ぶとよい．",
   "idea": "回転座標系では遠心力 $mr\\omega^2$ が外向きの見かけの重力となり，その大きさは中心からの距離に比例する．",
   "tags": "回転座標系,遠心力,人工重力",
-  "input": "(1) ω：sqrt(g/R)\n(2) 周期 [s]：≈20.1\n(3) 倍率：≈0.982"
+  "input": "(1) ω：sqrt(g/R)\n(2) $T$：2 pi sqrt(R/g)\n(3) 倍率：1-h/R",
+  "id": "ME-04-007"
  },
  {
   "tid": "B-ME-09",
@@ -286,12 +306,13 @@
   "level": 0,
   "theme": "端を軸に倒れる棒の慣性モーメントと回転",
   "minutes": 10,
-  "q": "長さ $L$，質量 $M$ の一様な細い棒の一端を，なめらかな水平軸に取り付ける．回転軸のまわりの慣性モーメントは $I=\\displaystyle\\int r^2\\,dm$ で定義され，回転の運動エネルギーは $\\dfrac12I\\omega^2$（$\\omega$ は角速度）である．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 端のまわりの慣性モーメント $I$ を，棒を $x$ から $x+dx$ の小部分（質量 $\\frac{M}{L}dx$）に分けて積分して求めよ．\n\\item 棒を水平にして静かに放した．棒が鉛直になった瞬間の角速度 $\\omega$ を求めよ．\n\\item $L=1.2\\,\\mathrm{m}$，$g=9.8\\,\\mathrm{m/s^2}$ のとき，(2) の瞬間の棒の先端の速さを求めよ．\n\\end{enumerate}",
-  "answer": "(1) $I=\\dfrac{ML^2}{3}$ (2) $\\omega=\\sqrt{\\dfrac{3g}{L}}$ (3) $\\approx 5.94\\,\\mathrm{m/s}$",
-  "solution": "\\[ I=\\int_0^Lx^2\\frac{M}{L}dx=\\frac ML\\cdot\\frac{L^3}{3}=\\boldsymbol{\\frac{ML^2}{3}}. \\]\n\n重心（中点）は $L/2$ だけ下がるので，エネルギー保存より $Mg\\dfrac L2=\\dfrac12\\cdot\\dfrac{ML^2}{3}\\omega^2$．よって $\\boldsymbol{\\omega=\\sqrt{3g/L}}$．\n\n先端の速さは $L\\omega=\\sqrt{3gL}=\\sqrt{3\\times9.8\\times1.2}\\approx\\boldsymbol{5.94\\,\\mathrm{m/s}}$．高さ $L$ から自由落下した速さ $\\sqrt{2gL}\\approx4.85\\,\\mathrm{m/s}$ より速い．棒の各部分がつながって回るため，先端は自由落下より速く動けるのである．\n\n次は，慣性モーメントの平行軸の定理や，回転の運動方程式 $I\\dot\\omega=N$（$N$ は力のモーメント）を学ぶとよい．",
+  "q": "長さ $L$，質量 $M$ の一様な細い棒の一端を，なめらかな水平軸に取り付ける．回転軸のまわりの慣性モーメントは $I=\\displaystyle\\int r^2\\,dm$ で定義され，回転の運動エネルギーは $\\dfrac12I\\omega^2$（$\\omega$ は角速度）である．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item 端のまわりの慣性モーメント $I$ を，棒を $x$ から $x+dx$ の小部分（質量 $\\frac{M}{L}dx$）に分けて積分して求めよ．\n\\item 棒を水平にして静かに放した．棒が鉛直になった瞬間の角速度 $\\omega$ を求めよ．\n\\item (2) の瞬間の棒の先端の速さ $v$ を求めよ．また，それは高さ $L$ から自由落下した物体の速さの何倍か．\n\\end{enumerate}",
+  "answer": "(1) $I=\\dfrac{ML^2}{3}$ (2) $\\omega=\\sqrt{\\dfrac{3g}{L}}$ (3) $v=\\sqrt{3gL}$，$\\sqrt{\\dfrac32}$ 倍",
+  "solution": "\\[ I=\\int_0^Lx^2\\frac{M}{L}dx=\\frac ML\\cdot\\frac{L^3}{3}=\\boldsymbol{\\frac{ML^2}{3}}. \\]\n\n重心（中点）は $L/2$ だけ下がるので，エネルギー保存より $Mg\\dfrac L2=\\dfrac12\\cdot\\dfrac{ML^2}{3}\\omega^2$．よって $\\boldsymbol{\\omega=\\sqrt{3g/L}}$．\n\n先端の速さは $v=L\\omega=\\boldsymbol{\\sqrt{3gL}}$．高さ $L$ から自由落下した速さ $\\sqrt{2gL}$ の $\\boldsymbol{\\sqrt{3/2}}$ 倍で，自由落下より速い．棒の各部分がつながって回るため，先端は自由落下より速く動けるのである．\n\n次は，慣性モーメントの平行軸の定理や，回転の運動方程式 $I\\dot\\omega=N$（$N$ は力のモーメント）を学ぶとよい．",
   "idea": "剛体の回転の運動エネルギーは $\\frac12I\\omega^2$．慣性モーメントは質量分布の積分で求め，エネルギー保存と組み合わせる．",
   "tags": "慣性モーメント,剛体の回転,エネルギー保存",
-  "input": "(1) I：M L^2/3\n(2) ω：sqrt(3g/L)\n(3) 先端の速さ [m/s]：≈5.94"
+  "input": "(1) I：M L^2/3\n(2) ω：sqrt(3g/L)\n(3) $v$：sqrt(3 g L) ; 倍率：sqrt(3/2)",
+  "id": "ME-05-006"
  },
  {
   "tid": "B-ME-10",
@@ -300,12 +321,13 @@
   "level": 0,
   "theme": "質量のある滑車につるしたおもり",
   "minutes": 10,
-  "q": "質量 $M$，半径 $R$ の一様な円板が，中心を通る水平な軸のまわりになめらかに回る（慣性モーメント $I=\\dfrac12MR^2$）．円板の周に軽い糸を巻きつけ，糸の先に質量 $m$ のおもりをつるして静かに放す．糸は滑らずにほどけるので，おもりの加速度 $a$ と円板の角加速度 $\\beta$ の間に $a=R\\beta$ が成り立つ．回転の運動方程式は $I\\beta=($糸の張力による力のモーメント$)$ である．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item おもりの加速度 $a$ を求めよ．\n\\item 糸の張力 $T$ を求めよ．\n\\item $m=1.0\\,\\mathrm{kg}$，$M=3.0\\,\\mathrm{kg}$，$g=9.8\\,\\mathrm{m/s^2}$ のとき，おもりが $1.0\\,\\mathrm{m}$ 下がったときの速さを求めよ．\n\\end{enumerate}",
-  "answer": "(1) $a=\\dfrac{2mg}{2m+M}$ (2) $T=\\dfrac{mMg}{2m+M}$ (3) $2.8\\,\\mathrm{m/s}$",
-  "solution": "おもり：$ma=mg-T$．円板：$\\dfrac12MR^2\\beta=TR$，$\\beta=a/R$ より $T=\\dfrac12Ma$．\n2式から $ma=mg-\\dfrac12Ma$，\n\\[ \\boldsymbol{a=\\frac{2mg}{2m+M}},\\qquad \\boldsymbol{T=\\frac12Ma=\\frac{mMg}{2m+M}}. \\]\n\n$a=\\dfrac{2\\times9.8}{5.0}=3.92\\,\\mathrm{m/s^2}$，$v=\\sqrt{2ah}=\\sqrt{7.84}=\\boldsymbol{2.8\\,\\mathrm{m/s}}$．\nエネルギー保存 $mgh=\\dfrac12mv^2+\\dfrac12I\\left(\\dfrac vR\\right)^2=\\dfrac12\\left(m+\\dfrac M2\\right)v^2$ でも同じになる．円板は「質量 $M/2$ のおもり」のように振る舞い，加速を妨げる．\n\n次は，転がる円柱や球のように並進と回転が同時に起こる運動を学ぶとよい．",
+  "q": "質量 $M$，半径 $R$ の一様な円板が，中心を通る水平な軸のまわりになめらかに回る（慣性モーメント $I=\\dfrac12MR^2$）．円板の周に軽い糸を巻きつけ，糸の先に質量 $m$ のおもりをつるして静かに放す．糸は滑らずにほどけるので，おもりの加速度 $a$ と円板の角加速度 $\\beta$ の間に $a=R\\beta$ が成り立つ．回転の運動方程式は $I\\beta=($糸の張力による力のモーメント$)$ である．重力加速度を $g$ とする．\n\\begin{enumerate}\n\\item おもりの加速度 $a$ を求めよ．\n\\item 糸の張力 $T$ を求めよ．\n\\item おもりが距離 $h$ だけ下がったときの速さ $v$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $a=\\dfrac{2mg}{2m+M}$ (2) $T=\\dfrac{mMg}{2m+M}$ (3) $v=\\sqrt{\\dfrac{4mgh}{2m+M}}$",
+  "solution": "おもり：$ma=mg-T$．円板：$\\dfrac12MR^2\\beta=TR$，$\\beta=a/R$ より $T=\\dfrac12Ma$．\n2式から $ma=mg-\\dfrac12Ma$，\n\\[ \\boldsymbol{a=\\frac{2mg}{2m+M}},\\qquad \\boldsymbol{T=\\frac12Ma=\\frac{mMg}{2m+M}}. \\]\n\n等加速度運動なので $v=\\sqrt{2ah}=\\boldsymbol{\\sqrt{\\dfrac{4mgh}{2m+M}}}$．\nエネルギー保存 $mgh=\\dfrac12mv^2+\\dfrac12I\\left(\\dfrac vR\\right)^2=\\dfrac12\\left(m+\\dfrac M2\\right)v^2$ でも同じになる．円板は「質量 $M/2$ のおもり」のように振る舞い，加速を妨げる．\n\n次は，転がる円柱や球のように並進と回転が同時に起こる運動を学ぶとよい．",
   "idea": "並進の運動方程式と回転の運動方程式を，糸が滑らない条件 $a=R\\beta$ で結んで連立する．",
   "tags": "慣性モーメント,回転の運動方程式,滑車",
-  "input": "(1) a：2m g/(2m+M)\n(2) T：m M g/(2m+M)\n(3) v [m/s]：≈2.80"
+  "input": "(1) a：2m g/(2m+M)\n(2) T：m M g/(2m+M)\n(3) $v$：sqrt(4 m g h/(2 m+M))",
+  "id": "ME-05-007"
  },
  {
   "tid": "B-WV-01",
@@ -314,12 +336,13 @@
   "level": 0,
   "theme": "初期条件から決まる単振動の振幅とエネルギー",
   "minutes": 8,
-  "q": "なめらかな水平面上で，ばね定数 $k=20\\,\\mathrm{N/m}$ のばねにつながれた質量 $m=0.20\\,\\mathrm{kg}$ の物体が運動する．つりあいの位置からの変位 $x$ は $m\\ddot x=-kx$ にしたがい，その解は $x=A\\cos(\\omega t+\\phi)$（$A>0$）と書ける．時刻 $t=0$ で $x=0.030\\,\\mathrm{m}$，速度 $0.40\\,\\mathrm{m/s}$ であった．\n\\begin{enumerate}\n\\item 角振動数 $\\omega$ を求めよ．\n\\item 振幅 $A$ を求めよ．\n\\item 振動の力学的エネルギーを求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\omega=10\\,\\mathrm{rad/s}$ (2) $A=0.050\\,\\mathrm{m}$ (3) $0.025\\,\\mathrm{J}$",
-  "solution": "$x=A\\cos(\\omega t+\\phi)$ を代入すると $-m\\omega^2x=-kx$ なので $\\omega=\\sqrt{k/m}=\\sqrt{20/0.20}=\\boldsymbol{10\\,\\mathrm{rad/s}}$．\n\n$x(0)=A\\cos\\phi$，$\\dot x(0)=-A\\omega\\sin\\phi$ より $A^2=x(0)^2+\\left(\\dfrac{\\dot x(0)}{\\omega}\\right)^2=0.030^2+0.040^2$．よって $\\boldsymbol{A=0.050\\,\\mathrm{m}}$．\n\nエネルギーは $\\dfrac12m\\dot x^2+\\dfrac12kx^2$ で一定．$t=0$ の値で計算すると $\\dfrac12\\times0.20\\times0.40^2+\\dfrac12\\times20\\times0.030^2=0.016+0.009=\\boldsymbol{0.025\\,\\mathrm{J}}$．\nこれは $\\dfrac12kA^2=\\dfrac12\\times20\\times0.050^2$ と一致する．\n\n次は，速度に比例する抵抗を加えた減衰振動 $m\\ddot x=-kx-b\\dot x$ を学ぶとよい．",
+  "q": "なめらかな水平面上で，ばね定数 $k$ のばねにつながれた質量 $m$ の物体が運動する．つりあいの位置からの変位 $x$ は $m\\ddot x=-kx$ にしたがい，その解は $x=A\\cos(\\omega t+\\phi)$（$A>0$）と書ける．時刻 $t=0$ で $x=x_0$，速度 $v_0$ であった．\n\\begin{enumerate}\n\\item 角振動数 $\\omega$ を求めよ．\n\\item 振幅 $A$ を求めよ．\n\\item 振動の力学的エネルギー $E$ を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\omega=\\sqrt{\\dfrac{k}{m}}$ (2) $A=\\sqrt{x_0^2+\\dfrac{mv_0^2}{k}}$ (3) $E=\\dfrac12mv_0^2+\\dfrac12kx_0^2$",
+  "solution": "$x=A\\cos(\\omega t+\\phi)$ を代入すると $-m\\omega^2x=-kx$ なので $\\omega=\\boldsymbol{\\sqrt{k/m}}$．\n\n$x(0)=A\\cos\\phi$，$\\dot x(0)=-A\\omega\\sin\\phi$ より\n\\[ A^2=x_0^2+\\left(\\frac{v_0}{\\omega}\\right)^2\\quad\\Longrightarrow\\quad \\boldsymbol{A=\\sqrt{x_0^2+\\frac{mv_0^2}{k}}}. \\]\n\nエネルギーは $\\dfrac12m\\dot x^2+\\dfrac12kx^2$ で一定．$t=0$ の値で計算すると\n\\[ \\boldsymbol{E=\\frac12mv_0^2+\\frac12kx_0^2}. \\]\nこれは $\\dfrac12kA^2=\\dfrac12k\\left(x_0^2+\\dfrac{mv_0^2}{k}\\right)$ と一致する．\n\n次は，速度に比例する抵抗を加えた減衰振動 $m\\ddot x=-kx-b\\dot x$ を学ぶとよい．",
   "idea": "単振動の振幅は位置と「速度÷角振動数」の2乗和で決まり，エネルギーは $\\frac12kA^2$ になる．",
   "tags": "単振動,初期条件,振幅,力学的エネルギー",
-  "input": "(1) ω [rad/s]：10\n(2) A [m]：≈0.050\n(3) エネルギー [J]：≈0.025"
+  "input": "(1) $\\omega$：sqrt(k/m)\n(2) $A$：sqrt(x_0^2 + m v_0^2/k)\n(3) $E$：m v_0^2/2 + k x_0^2/2",
+  "id": "WV-01-006"
  },
  {
   "tid": "B-WV-02",
@@ -333,7 +356,8 @@
   "solution": "代入すると $(-\\omega^2+\\omega_0^2)B\\cos\\omega t=\\dfrac{F_0}{m}\\cos\\omega t$ なので $\\boldsymbol{B=\\dfrac{F_0}{m(\\omega_0^2-\\omega^2)}}$．\n\n$\\omega=2\\omega_0$ では $B=\\dfrac{F_0}{m(\\omega_0^2-4\\omega_0^2)}=\\boldsymbol{-\\dfrac13}\\cdot\\dfrac{F_0}{m\\omega_0^2}$．負号は，物体が力と逆向きに動く（位相が $\\pi$ ずれる）ことを表す．速く揺すりすぎると物体はついてこられず，振幅も小さくなる．\n\n$\\left|\\dfrac{1}{1-(\\omega/\\omega_0)^2}\\right|=2$ より $1-(\\omega/\\omega_0)^2=\\pm\\dfrac12$，$(\\omega/\\omega_0)^2=\\dfrac12,\\ \\dfrac32$．\n\\[ \\boldsymbol{\\omega=\\frac{\\omega_0}{\\sqrt2},\\ \\sqrt{\\frac32}\\,\\omega_0}. \\]\nこの間の $\\omega$ では振幅が2倍を超え，$\\omega\\to\\omega_0$ で無限大になる（共振）．\n\n次は，抵抗を入れると共振での振幅が有限になり，その鋭さが $Q$ 値で表されることを学ぶとよい．",
   "idea": "定常解は駆動と同じ角振動数で振動し，振幅は $1/(\\omega_0^2-\\omega^2)$ に比例する．$\\omega>\\omega_0$ では力と逆位相になる．",
   "tags": "強制振動,定常解,共振,位相",
-  "input": "(1) B：F_0/(m(omega_0^2-omega^2))\n(2) -1/3\n(3) {omega_0/sqrt(2), sqrt(3/2) omega_0}"
+  "input": "(1) B：F_0/(m(omega_0^2-omega^2))\n(2) -1/3\n(3) {omega_0/sqrt(2), sqrt(3/2) omega_0}",
+  "id": "WV-01-007"
  },
  {
   "tid": "B-WV-03",
@@ -347,7 +371,8 @@
   "solution": "2式を足すと $m_1\\ddot x_1+m_2\\ddot x_2=0$，すなわち $\\boldsymbol{\\ddot X=0}$．外力がないので重心は等速度運動する．\n\n$\\ddot s=\\ddot x_2-\\ddot x_1=-\\dfrac{k}{m_2}s-\\dfrac{k}{m_1}s=-k\\left(\\dfrac{1}{m_1}+\\dfrac1{m_2}\\right)s$．単振動の式で，\n\\[ \\omega=\\boldsymbol{\\sqrt{\\frac{k(m_1+m_2)}{m_1m_2}}}. \\]\n$\\mu=\\dfrac{m_1m_2}{m_1+m_2}$（換算質量）とおくと $\\omega=\\sqrt{k/\\mu}$ と書ける．\n\n重心が静止していれば $m_1\\Delta x_1+m_2\\Delta x_2=0$ なので，2物体は逆向きに動き，変位の大きさの比は $\\boldsymbol{m_2/m_1}$．軽いほうが大きく振れる．2原子分子の振動はこの模型で理解できる．\n\n次は，固定された壁にもつながった場合のように，2つの座標が分離しにくい系の基準振動を，行列の固有値問題として求める方法を学ぶとよい．",
   "idea": "2体の運動は重心運動と相対運動に分かれ，相対運動は換算質量 $\\mu=m_1m_2/(m_1+m_2)$ の単振動になる．",
   "tags": "連成振動,重心運動,換算質量",
-  "input": "(1) 0\n(2) ω：sqrt(k(m_1+m_2)/(m_1 m_2))\n(3) m_2/m_1"
+  "input": "(1) 0\n(2) ω：sqrt(k(m_1+m_2)/(m_1 m_2))\n(3) m_2/m_1",
+  "id": "WV-02-006"
  },
  {
   "tid": "B-WV-04",
@@ -361,7 +386,8 @@
   "solution": "代入すると，$\\lambda=m\\omega^2/k$ として\n\\[ (2-\\lambda)A-B=0,\\qquad -A+(1-\\lambda)B=0. \\]\n$A=B=0$ 以外の解があるのは係数の行列式が $0$ のとき：$(2-\\lambda)(1-\\lambda)-1=\\lambda^2-3\\lambda+1=0$．$\\lambda=\\dfrac{3\\pm\\sqrt5}{2}$ より\n\\[ \\boldsymbol{\\omega^2=\\frac{(3-\\sqrt5)k}{2m},\\ \\frac{(3+\\sqrt5)k}{2m}}. \\]\n\n小さいほう $\\lambda=\\dfrac{3-\\sqrt5}{2}$ では，1つ目の式から $B/A=2-\\lambda=\\dfrac{1+\\sqrt5}{2}\\approx1.62$（黄金比）．2つの質点は同じ向きに動き，先端の質点 2 のほうが大きく振れる．大きいほうの $\\lambda$ では $B/A=\\dfrac{1-\\sqrt5}{2}<0$ で，逆向きに動く．\n\n次は，質点の数を $N$ 個に増やした鎖の基準振動を求め，$N\\to\\infty$ で弦の振動に近づくことを確かめるとよい．",
   "idea": "基準振動では全質点が同じ角振動数で動く．代入して得られる連立方程式が自明でない解をもつ条件（行列式 $=0$）から振動数が決まる．",
   "tags": "基準振動,連成振動,固有値,行列式",
-  "input": "(1) {(3-sqrt(5))k/(2m), (3+sqrt(5))k/(2m)}\n(2) B/A：(1+sqrt(5))/2"
+  "input": "(1) {(3-sqrt(5))k/(2m), (3+sqrt(5))k/(2m)}\n(2) B/A：(1+sqrt(5))/2",
+  "id": "WV-02-007"
  },
  {
   "tid": "B-WV-05",
@@ -375,7 +401,8 @@
   "solution": "和積の公式 $\\sin\\alpha+\\sin\\beta=2\\sin\\dfrac{\\alpha+\\beta}{2}\\cos\\dfrac{\\alpha-\\beta}2$ より $y=2A\\sin kx\\cos\\omega t$．$\\sin kx=0$ の点 $x=n\\pi/k$ が節で，間隔は $\\boldsymbol{\\pi/k}$（半波長 $\\lambda/2$）．\n\n$\\dfrac{\\partial^2y}{\\partial t^2}=-\\omega^2y$，$\\dfrac{\\partial^2y}{\\partial x^2}=-k^2y$ なので $-\\omega^2=-v^2k^2$，$\\boldsymbol{v=\\omega/k}$．これは各進行波の速さに等しい．\n\n腹（$|\\sin kx|=1$）では $y=\\pm2A\\cos\\omega t$，速度 $\\dfrac{\\partial y}{\\partial t}=\\mp2A\\omega\\sin\\omega t$ の最大値は $\\boldsymbol{2A\\omega}$．\n\n両端を固定した弦では，両端が節になる波長だけが許され，固有振動数が飛び飛びになる．次はそれを学ぶとよい．",
   "idea": "逆向きに進む同じ波を重ねると，位置の関数と時間の関数の積で書ける定常波になり，節の間隔は半波長になる．",
   "tags": "定常波,波動方程式,重ね合わせ",
-  "input": "(1) 間隔：pi/k\n(2) v：omega/k\n(3) 2A omega"
+  "input": "(1) 間隔：pi/k\n(2) v：omega/k\n(3) 2A omega",
+  "id": "WV-03-006"
  },
  {
   "tid": "B-WV-06",
@@ -389,7 +416,8 @@
   "solution": "$f$ は偶関数なので $f(-vt)=f(vt)$．\n\\[ y(0,t)=f(vt)=\\boldsymbol{\\frac{ha^2}{a^2+v^2t^2}}. \\]\n\n$\\dfrac{a^2}{a^2+v^2t^2}=\\dfrac12$ より $vt=a$，$\\boldsymbol{t=a/v}$．\n\n$f(x-vt)$ は形を変えずに速さ $v$ で右へ，$f(x+vt)$ は左へ進む波である．十分時間がたつと2つは離れて重ならず，それぞれの山の高さは $\\boldsymbol{h/2}$ になる．はじめの山が左右に半分ずつ分かれて進むわけである．\n（$f(x\\mp vt)$ を $t$ で2回微分すると $v^2f''$，$x$ で2回微分すると $f''$ なので，確かに波動方程式を満たす．）\n\n次は，端を固定した弦での反射（山が谷になって戻る）や，フーリエ級数による解法を学ぶとよい．",
   "idea": "1次元の波動方程式の一般解は右向き・左向きの進行波の和で，静かに放した変形は半分ずつ左右に分かれて進む．",
   "tags": "ダランベールの解,波動方程式,進行波",
-  "input": "(1) h a^2/(a^2+v^2 t^2)\n(2) t：a/v\n(3) 高さ：h/2"
+  "input": "(1) h a^2/(a^2+v^2 t^2)\n(2) t：a/v\n(3) 高さ：h/2",
+  "id": "WV-03-007"
  },
  {
   "tid": "B-WV-07",
@@ -398,12 +426,13 @@
   "level": 0,
   "theme": "2つのスピーカーによる音の干渉",
   "minutes": 8,
-  "q": "同じ位相で同じ振動数の音を出す2つの小さなスピーカー A，B が $3.0\\,\\mathrm{m}$ 離れて置かれている．A から，線分 AB に垂直な方向に $4.0\\,\\mathrm{m}$ 離れた点 P で音を聞く．音速を $340\\,\\mathrm{m/s}$ とする．\n\\begin{enumerate}\n\\item 2つのスピーカーから P までの経路差を求めよ．\n\\item 振動数を $0$ から少しずつ上げていくとき，P で初めて音が弱め合う振動数を求めよ．\n\\item P で強め合う振動数のうち，最小のもの（$0$ を除く）を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $1.0\\,\\mathrm{m}$ (2) $170\\,\\mathrm{Hz}$ (3) $340\\,\\mathrm{Hz}$",
-  "solution": "$\\mathrm{BP}=\\sqrt{3.0^2+4.0^2}=5.0\\,\\mathrm{m}$，$\\mathrm{AP}=4.0\\,\\mathrm{m}$ なので経路差は $\\boldsymbol{1.0\\,\\mathrm{m}}$．\n\n弱め合う条件は経路差 $=(n+\\frac12)\\lambda$．最初は $n=0$ で $\\lambda=2.0\\,\\mathrm{m}$，$f=340/2.0=\\boldsymbol{170\\,\\mathrm{Hz}}$．\n\n強め合う条件は経路差 $=n\\lambda$．$n=1$ で $\\lambda=1.0\\,\\mathrm{m}$，$f=\\boldsymbol{340\\,\\mathrm{Hz}}$．\n\n以後，$170\\,\\mathrm{Hz}$ ごとに弱め合い・強め合いが交互に現れる．位相差 $2\\pi\\times(\\text{経路差})/\\lambda$ で考えると，光の干渉も同じように扱える．\n\n次は，スリットが多数ある場合（回折格子）や，幅のあるスリットによる回折を，波の足し合わせとして計算する方法を学ぶとよい．",
+  "q": "同じ位相で同じ振動数の音を出す2つの小さなスピーカー A，B が距離 $d$ 離れて置かれている．A から，線分 AB に垂直な方向に距離 $l$ 離れた点 P で音を聞く．音速を $V$ とする．\n\\begin{enumerate}\n\\item 2つのスピーカーから P までの経路差を求めよ．\n\\item 振動数を $0$ から少しずつ上げていくとき，P で初めて音が弱め合う振動数を求めよ．\n\\item P で強め合う振動数のうち，最小のもの（$0$ を除く）を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $\\sqrt{d^2+l^2}-l$ (2) $\\dfrac{V}{2(\\sqrt{d^2+l^2}-l)}$ (3) $\\dfrac{V}{\\sqrt{d^2+l^2}-l}$",
+  "solution": "$\\mathrm{BP}=\\sqrt{d^2+l^2}$，$\\mathrm{AP}=l$ なので経路差は $\\boldsymbol{\\Delta=\\sqrt{d^2+l^2}-l}$．\n\n弱め合う条件は経路差 $=(n+\\frac12)\\lambda$．最初は $n=0$ で $\\lambda=2\\Delta$，振動数は $f=V/\\lambda$ より\n\\[ \\boldsymbol{f=\\frac{V}{2(\\sqrt{d^2+l^2}-l)}}. \\]\n\n強め合う条件は経路差 $=n\\lambda$．$n=1$ で $\\lambda=\\Delta$，\n\\[ \\boldsymbol{f=\\frac{V}{\\sqrt{d^2+l^2}-l}}. \\]\n\n以後，$V/(2\\Delta)$ ごとに弱め合い・強め合いが交互に現れる．位相差 $2\\pi\\times(\\text{経路差})/\\lambda$ で考えると，光の干渉も同じように扱える．\n\n次は，スリットが多数ある場合（回折格子）や，幅のあるスリットによる回折を，波の足し合わせとして計算する方法を学ぶとよい．",
   "idea": "干渉は経路差と波長の比で決まる．経路差が半波長の奇数倍なら弱め合い，整数倍なら強め合う．",
   "tags": "干渉,経路差,音波",
-  "input": "(1) 経路差 [m]：1.0\n(2) f [Hz]：170\n(3) f [Hz]：340"
+  "input": "(1) 経路差：sqrt(d^2+l^2)-l\n(2) f：V/(2(sqrt(d^2+l^2)-l))\n(3) f：V/(sqrt(d^2+l^2)-l)",
+  "id": "WV-04-006"
  },
  {
   "tid": "B-WV-08",
@@ -417,7 +446,8 @@
   "solution": "$S\\overline S=(1+e^{i\\varphi}+e^{2i\\varphi})(1+e^{-i\\varphi}+e^{-2i\\varphi})=3+2(e^{i\\varphi}+e^{-i\\varphi})+(e^{2i\\varphi}+e^{-2i\\varphi})$．よって\n\\[ \\boldsymbol{|S|^2=3+4\\cos\\varphi+2\\cos2\\varphi}. \\]\n\n$\\cos2\\varphi=2\\cos^2\\varphi-1$ を使うと $|S|^2=(2\\cos\\varphi+1)^2$．$\\cos\\varphi=-\\dfrac12$ より $\\boldsymbol{\\varphi=\\dfrac{2\\pi}3,\\ \\dfrac{4\\pi}3}$．複素平面上で3つの単位ベクトルが正三角形をつくって打ち消し合う．\n\n$\\varphi=0$ で $|S|^2=9$，$\\varphi=\\pi$ で $(2\\cdot(-1)+1)^2=1$．比は $\\boldsymbol{1/9}$．主極大の間に弱い副極大が1つ現れる．\n\n$N$ 本のスリットでは主極大の強度が $N^2$ に，暗線が $N-1$ 本に増え，主極大が鋭くなる．次は回折格子の分解能へ進むとよい．",
   "idea": "多数の波の重ね合わせは，位相を複素数の偏角にして足せば計算でき，強度は絶対値の2乗になる．",
   "tags": "干渉,複素数,多スリット,強度",
-  "input": "(1) 3+4cos(φ)+2cos(2φ)\n(2) {2pi/3, 4pi/3}\n(3) 1/9"
+  "input": "(1) 3+4cos(φ)+2cos(2φ)\n(2) {2pi/3, 4pi/3}\n(3) 1/9",
+  "id": "WV-04-007"
  },
  {
   "tid": "B-WV-09",
@@ -426,12 +456,13 @@
   "level": 0,
   "theme": "2つの波のうなりと包絡線の速さ",
   "minutes": 10,
-  "q": "角振動数 $\\omega$ が波数 $k$ の関数として $\\omega=ak^2$（$a>0$ は定数）で与えられる波を考える（このような関係を分散関係という）．波数 $k_1$，$k_2$ の2つの波 $\\cos(k_1x-\\omega_1t)$，$\\cos(k_2x-\\omega_2t)$ を重ねると\n\\[ 2\\cos\\!\\left(\\frac{\\Delta k}{2}x-\\frac{\\Delta\\omega}{2}t\\right)\\cos(\\bar kx-\\bar\\omega t) \\]\n（$\\Delta k=k_2-k_1$，$\\Delta\\omega=\\omega_2-\\omega_1$，$\\bar k,\\bar\\omega$ は平均）となり，ゆっくり変わる包絡線（うなり）の中を細かい波が進む．\n\\begin{enumerate}\n\\item 包絡線が進む速さ $\\dfrac{\\Delta\\omega}{\\Delta k}$ を $a,k_1,k_2$ で表せ．\n\\item $k_1,k_2$ がともに $k$ に近づく極限で，包絡線の速さ（群速度）は，波数 $k$ の波の山が進む速さ（位相速度 $\\omega/k$）の何倍になるか．\n\\item $a=0.50\\,\\mathrm{m^2/s}$，$k_1=4.0\\,\\mathrm{rad/m}$，$k_2=4.2\\,\\mathrm{rad/m}$ のとき，包絡線の速さを求めよ．\n\\end{enumerate}",
-  "answer": "(1) $a(k_1+k_2)$ (2) $2$ 倍 (3) $4.1\\,\\mathrm{m/s}$",
-  "solution": "$\\Delta\\omega=a(k_2^2-k_1^2)=a(k_2-k_1)(k_2+k_1)$ なので $\\dfrac{\\Delta\\omega}{\\Delta k}=\\boldsymbol{a(k_1+k_2)}$．\n\n$k_1,k_2\\to k$ で群速度は $2ak$（$=d\\omega/dk$）．位相速度は $\\omega/k=ak$ なので $\\boldsymbol{2}$ 倍．包絡線（エネルギーや情報のかたまり）は，その中の山よりも速く進む．\n\n$0.50\\times(4.0+4.2)=\\boldsymbol{4.1\\,\\mathrm{m/s}}$．中の細かい波の位相速度は約 $0.50\\times4.1=2.05\\,\\mathrm{m/s}$ である．\n\n$\\omega\\propto k^2$ は量子力学の自由粒子の波（ド・ブロイ波）の分散関係で，群速度が粒子の速度に対応する．次は，波束の広がりや，さまざまな媒質の分散関係を学ぶとよい．",
+  "q": "角振動数 $\\omega$ が波数 $k$ の関数として $\\omega=ak^2$（$a>0$ は定数）で与えられる波を考える（このような関係を分散関係という）．波数 $k_1$，$k_2$ の2つの波 $\\cos(k_1x-\\omega_1t)$，$\\cos(k_2x-\\omega_2t)$ を重ねると\n\\[ 2\\cos\\!\\left(\\frac{\\Delta k}{2}x-\\frac{\\Delta\\omega}{2}t\\right)\\cos(\\bar kx-\\bar\\omega t) \\]\n（$\\Delta k=k_2-k_1$，$\\Delta\\omega=\\omega_2-\\omega_1$，$\\bar k,\\bar\\omega$ は平均）となり，ゆっくり変わる包絡線（うなり）の中を細かい波が進む．\n\\begin{enumerate}\n\\item 包絡線が進む速さ $\\dfrac{\\Delta\\omega}{\\Delta k}$ を $a,k_1,k_2$ で表せ．\n\\item $k_1,k_2$ がともに $k$ に近づく極限で，包絡線の速さ（群速度）は，波数 $k$ の波の山が進む速さ（位相速度 $\\omega/k$）の何倍になるか．\n\\item 包絡線の中の細かい波が進む速さ $\\bar\\omega/\\bar k$ を $a,k_1,k_2$ で表し，包絡線の速さ $\\Delta\\omega/\\Delta k$ がその何倍かを $k_1,k_2$ で表せ．\n\\end{enumerate}",
+  "answer": "(1) $a(k_1+k_2)$ (2) $2$ 倍 (3) $\\dfrac{\\bar\\omega}{\\bar k}=\\dfrac{a(k_1^2+k_2^2)}{k_1+k_2}$，$\\dfrac{(k_1+k_2)^2}{k_1^2+k_2^2}$ 倍",
+  "solution": "$\\Delta\\omega=a(k_2^2-k_1^2)=a(k_2-k_1)(k_2+k_1)$ なので $\\dfrac{\\Delta\\omega}{\\Delta k}=\\boldsymbol{a(k_1+k_2)}$．\n\n$k_1,k_2\\to k$ で群速度は $2ak$（$=d\\omega/dk$）．位相速度は $\\omega/k=ak$ なので $\\boldsymbol{2}$ 倍．包絡線（エネルギーや情報のかたまり）は，その中の山よりも速く進む．\n\n$\\bar\\omega=\\dfrac{a(k_1^2+k_2^2)}{2}$，$\\bar k=\\dfrac{k_1+k_2}{2}$ より $\\boldsymbol{\\dfrac{\\bar\\omega}{\\bar k}=\\dfrac{a(k_1^2+k_2^2)}{k_1+k_2}}$．比は\n\\[ \\frac{a(k_1+k_2)}{a(k_1^2+k_2^2)/(k_1+k_2)}=\\boldsymbol{\\frac{(k_1+k_2)^2}{k_1^2+k_2^2}}. \\]\n$k_1=k_2$ で $2$ となり (2) と一致する．\n\n$\\omega\\propto k^2$ は量子力学の自由粒子の波（ド・ブロイ波）の分散関係で，群速度が粒子の速度に対応する．次は，波束の広がりや，さまざまな媒質の分散関係を学ぶとよい．",
   "idea": "分散のある媒質では，波の山の速さ $\\omega/k$ と包絡線の速さ $d\\omega/dk$ が異なる．",
   "tags": "分散関係,群速度,位相速度,うなり",
-  "input": "(1) a(k_1+k_2)\n(2) 倍率：2\n(3) 速さ [m/s]：≈4.10"
+  "input": "(1) a(k_1+k_2)\n(2) 倍率：2\n(3) $\\bar\\omega/\\bar k$：a (k_1^2+k_2^2)/(k_1+k_2) ; 倍率：(k_1+k_2)^2/(k_1^2+k_2^2)",
+  "id": "WV-05-006"
  },
  {
   "tid": "B-WV-10",
@@ -445,6 +476,7 @@
   "solution": "$q\\to0$ では $\\sin\\dfrac{qa}{2}\\approx\\dfrac{qa}{2}$ なので $\\omega\\approx a\\sqrt{k/m}\\,q$．位相速度は $\\boldsymbol{a\\sqrt{k/m}}$ で $q$ によらない（連続な弾性体の音速にあたる）．\n\n$v_g=a\\sqrt{k/m}\\cos\\dfrac{qa}{2}$．$q=\\pi/a$ で $\\cos\\dfrac\\pi2=\\boldsymbol{0}$．となりあう質点が逆向きに動く波で，エネルギーが運ばれない定常波になっている．\n\n$q=\\dfrac{\\pi}{2a}$ では $\\omega=2\\sqrt{k/m}\\cdot\\dfrac{\\sqrt2}{2}$，$v_p=\\dfrac{\\omega}{q}=\\dfrac{2\\sqrt2a}{\\pi}\\sqrt{\\dfrac km}$，$v_g=\\dfrac{a}{\\sqrt2}\\sqrt{\\dfrac km}$．よって\n\\[ \\frac{v_g}{v_p}=\\frac{1/\\sqrt2}{2\\sqrt2/\\pi}=\\boldsymbol{\\frac{\\pi}{4}}. \\]\n波長が格子間隔に近づくと，群速度は位相速度より遅くなる．\n\nこれは固体の格子振動（フォノン）の分散関係そのものである．次は，2種類の原子からなる鎖での音響モードと光学モードを学ぶとよい．",
   "idea": "離散的な鎖では $\\omega$ が $q$ に比例しなくなり（分散），短波長ほど群速度が小さくなって $q=\\pi/a$ で $0$ になる．",
   "tags": "分散関係,格子振動,群速度,位相速度",
-  "input": "(1) a sqrt(k/m)\n(2) v_g：0\n(3) v_g/v_p：pi/4"
+  "input": "(1) a sqrt(k/m)\n(2) v_g：0\n(3) v_g/v_p：pi/4",
+  "id": "WV-05-007"
  }
 ]

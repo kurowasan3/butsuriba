@@ -44,7 +44,7 @@ def main():
         c.fill = HEAD
         c.alignment = Alignment(vertical='center', wrap_text=True)
     # 既存の管理表があれば、同じ問題文の問題には前と同じ ID・作成日を使う（学習記録が ID に結びついているため）
-    known, counter = {}, {}
+    known, counter, byid = {}, {}, {}   # byid：ID → 作成日（問題文を直した問題も、new/*.json の id で同じ ID を保つ）
     if out.exists():
         old = load_workbook(out, read_only=True)['問題一覧']
         head = None
@@ -56,6 +56,7 @@ def main():
             if not pid or not q:
                 continue
             known[q] = (pid, r[head['作成日']])
+            byid[pid] = r[head['作成日']]
             code, fno, n = pid.rsplit('-', 2)
             counter[(code, int(fno))] = max(counter.get((code, int(fno)), 0), int(n))
     today = date.today().isoformat()
@@ -67,7 +68,9 @@ def main():
         code = SUBJECTS[it['subject']][0]
         fno = SUBJECTS[it['subject']][1].index(it['field']) + 1
         k = (code, fno)
-        if it['q'] in known:
+        if it.get('id') in byid:
+            pid, made = it['id'], byid[it['id']]
+        elif it['q'] in known:
             pid, made = known[it['q']]
         else:
             counter[k] = counter.get(k, 0) + 1

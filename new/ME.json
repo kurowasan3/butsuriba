@@ -11,7 +11,8 @@
   "solution": "運動方程式は\n\\[ m\\dfrac{dv}{dt} = mg - bv . \\]\n\n(1) 終端速度では加速度が $0$ だから $mg - bv_\\infty = 0$，よって $\\boldsymbol{v_\\infty = mg/b}$．\n\n(2) $u = v - v_\\infty$ とおくと $\\dfrac{du}{dt} = -\\dfrac{b}{m}u$ なので $u = u(0)e^{-bt/m} = -v_\\infty e^{-bt/m}$．したがって\n\\[ \\boldsymbol{v(t) = \\dfrac{mg}{b}\\left(1-e^{-bt/m}\\right)} . \\]\n時定数 $m/b$ の程度で終端速度に近づく．\n\n(3) $x(0)=0$ として積分すると\n\\[ \\boldsymbol{x(t) = \\dfrac{mgt}{b} - \\dfrac{m^2 g}{b^2}\\left(1-e^{-bt/m}\\right)} . \\]\n$t \\ll m/b$ では展開して $x \\approx \\dfrac{1}{2}gt^2$ となり自由落下に一致する．",
   "idea": "1階線形の運動方程式を，終端速度からのずれで書くと指数関数的に減衰する．",
   "tags": "空気抵抗,終端速度,1階線形微分方程式",
-  "input": "(1) mg/b\n(2) (mg/b)(1-exp(-b t/m))\n(3) m g t/b - (m^2 g/b^2)(1-exp(-b t/m))"
+  "input": "(1) mg/b\n(2) (mg/b)(1-exp(-b t/m))\n(3) m g t/b - (m^2 g/b^2)(1-exp(-b t/m))",
+  "id": "ME-01-001"
  },
  {
   "tid": "ME-02",
@@ -25,7 +26,8 @@
   "solution": "(1) 落下中は $m\\dot v = mg - cv^2$（下向き正）．加速度 $0$ より $\\boldsymbol{v_\\infty = \\sqrt{mg/c}}$．\n\n(2) 上昇中（上向き正）は抵抗も下向きで\n\\[ m\\dfrac{dv}{dt} = -mg - cv^2 = -\\dfrac{mg}{v_\\infty^2}\\left(v_\\infty^2 + v^2\\right) . \\]\n変数分離して $\\displaystyle\\int_{v_0}^{0}\\dfrac{dv}{v_\\infty^2+v^2} = -\\dfrac{g}{v_\\infty^2}T$ より $\\dfrac{1}{v_\\infty}\\arctan\\dfrac{v_0}{v_\\infty} = \\dfrac{g}{v_\\infty^2}T$．よって\n\\[ \\boldsymbol{T = \\sqrt{\\dfrac{m}{cg}}\\arctan\\left(v_0\\sqrt{\\dfrac{c}{mg}}\\right)} . \\]\n\n(3) $\\dfrac{dv}{dt} = v\\dfrac{dv}{dz}$ と書き直すと $v\\dfrac{dv}{dz} = -\\dfrac{g}{v_\\infty^2}(v_\\infty^2+v^2)$．\n\\[ \\int_{v_0}^{0}\\dfrac{v\\,dv}{v_\\infty^2+v^2} = -\\dfrac{g}{v_\\infty^2}H \\quad\\Longrightarrow\\quad H = \\dfrac{v_\\infty^2}{2g}\\ln\\left(1+\\dfrac{v_0^2}{v_\\infty^2}\\right) = \\boldsymbol{\\dfrac{m}{2c}\\ln\\left(1+\\dfrac{cv_0^2}{mg}\\right)} . \\]\n$c\\to 0$ で $T\\to v_0/g$，$H\\to v_0^2/(2g)$ に戻ることも確かめられる．",
   "idea": "時間を問うときは dv/dt のまま，高さを問うときは v dv/dz に書き換えて変数分離する．",
   "tags": "空気抵抗,変数分離,投げ上げ",
-  "input": "(1) sqrt(mg/c)\n(2) sqrt(m/(c g)) atan(v_0 sqrt(c/(m g)))\n(3) (m/(2c)) ln(1+c v_0^2/(m g))"
+  "input": "(1) sqrt(mg/c)\n(2) sqrt(m/(c g)) atan(v_0 sqrt(c/(m g)))\n(3) (m/(2c)) ln(1+c v_0^2/(m g))",
+  "id": "ME-01-002"
  },
  {
   "tid": "ME-03",
@@ -39,7 +41,8 @@
   "solution": "斜面に沿って上向きに $s$ 軸，斜面に垂直に $n$ 軸をとる．重力加速度の成分は $(-g\\sin\\alpha,\\,-g\\cos\\alpha)$，初速度の成分は $(v_0\\cos(\\theta-\\alpha),\\,v_0\\sin(\\theta-\\alpha))$．\n\n(1) $n = v_0\\sin(\\theta-\\alpha)\\,t - \\dfrac{1}{2}g\\cos\\alpha\\,t^2 = 0$ より $\\boldsymbol{t_1 = \\dfrac{2v_0\\sin(\\theta-\\alpha)}{g\\cos\\alpha}}$．\n\n(2) 水平距離は $v_0\\cos\\theta\\,t_1$ で，これを $\\cos\\alpha$ で割れば斜面に沿った距離になるから\n\\[ \\boldsymbol{R = \\dfrac{2v_0^2\\cos\\theta\\sin(\\theta-\\alpha)}{g\\cos^2\\alpha}} . \\]\n\n(3) 積和公式で $2\\cos\\theta\\sin(\\theta-\\alpha) = \\sin(2\\theta-\\alpha) - \\sin\\alpha$．これは $2\\theta-\\alpha = \\pi/2$ で最大．よって $\\boldsymbol{\\theta = \\pi/4 + \\alpha/2}$（斜面と鉛直の二等分線の向き）で\n\\[ R_{\\max} = \\dfrac{v_0^2(1-\\sin\\alpha)}{g\\cos^2\\alpha} = \\boldsymbol{\\dfrac{v_0^2}{g(1+\\sin\\alpha)}} . \\]\n$\\alpha = 0$ で $\\theta = 45^\\circ$，$R_{\\max} = v_0^2/g$ に戻る．",
   "idea": "斜面に沿った座標をとると，到達時間は斜面に垂直な成分だけで決まる．最大化は積和公式で一発．",
   "tags": "放物運動,斜面,最大値",
-  "input": "(1) 2v_0 sin(θ-α)/(g cos(α))\n(2) 2v_0^2 cos(θ) sin(θ-α)/(g cos(α)^2)\n(3) θ：pi/4+α/2 ; R_max：v_0^2/(g(1+sin(α)))"
+  "input": "(1) 2v_0 sin(θ-α)/(g cos(α))\n(2) 2v_0^2 cos(θ) sin(θ-α)/(g cos(α)^2)\n(3) θ：pi/4+α/2 ; R_max：v_0^2/(g(1+sin(α)))",
+  "id": "ME-01-003"
  },
  {
   "tid": "ME-04",
@@ -53,7 +56,8 @@
   "solution": "鎖全体は1本の糸のように同じ速さ $\\dot x$ で動く．垂れた部分の重力 $\\dfrac{M}{L}xg$ が駆動力，机上の部分 $\\dfrac{M}{L}(L-x)$ にはたらく摩擦力 $\\mu\\dfrac{M}{L}(L-x)g$ が抵抗となるので\n\\[ M\\ddot x = \\dfrac{Mg}{L}\\left[x - \\mu(L-x)\\right] = \\dfrac{(1+\\mu)Mg}{L}\\left(x - x_c\\right),\\qquad x_c = \\dfrac{\\mu L}{1+\\mu} . \\]\n\n(1) 静止摩擦の最大値を重力が上回ればよいので $x_0 > x_c$，最小値は $\\boldsymbol{\\mu L/(1+\\mu)}$．\n\n(2) $k = \\sqrt{(1+\\mu)g/L}$ とおくと $\\ddot X = k^2 X$（$X = x - x_c$）．初期条件 $X(0) = x_0 - x_c$，$\\dot X(0) = 0$ より\n\\[ \\boldsymbol{x(t) = x_c + (x_0 - x_c)\\cosh kt} . \\]\n\n(3) 運動方程式に $\\dot x$ を掛けて積分すると $\\dot x^2 = k^2\\left[(x-x_c)^2 - (x_0-x_c)^2\\right]$．$x = L$ を代入して整理すると\n\\[ v^2 = \\dfrac{(1+\\mu)g}{L}\\left[(L-x_c)^2-(x_0-x_c)^2\\right] = \\dfrac{g}{L}\\left[(1+\\mu)(L^2-x_0^2) - 2\\mu L(L-x_0)\\right] . \\]\nよって $\\boldsymbol{v = \\sqrt{\\dfrac{g}{L}\\left[(1+\\mu)(L^2-x_0^2) - 2\\mu L(L-x_0)\\right]}}$．$\\mu = 0$ なら $v = \\sqrt{g(L^2-x_0^2)/L}$ に一致する．\n（エネルギー保存でも求まるが，摩擦の仕事 $\\int\\mu\\frac{M}{L}(L-x)g\\,dx$ を差し引くことを忘れないこと．）",
   "idea": "鎖全体の運動を1自由度 x で表すと，平衡点 x_c からのずれが指数的に増える「逆さの単振動」になる．",
   "tags": "鎖,摩擦,双曲線関数,エネルギー積分",
-  "input": "(1) μ L/(1+μ)\n(2) μ L/(1+μ) + (x_0 - μ L/(1+μ)) cosh(sqrt((1+μ)g/L) t)\n(3) sqrt((g/L)((1+μ)(L^2-x_0^2) - 2μ L(L-x_0)))"
+  "input": "(1) μ L/(1+μ)\n(2) μ L/(1+μ) + (x_0 - μ L/(1+μ)) cosh(sqrt((1+μ)g/L) t)\n(3) sqrt((g/L)((1+μ)(L^2-x_0^2) - 2μ L(L-x_0)))",
+  "id": "ME-01-004"
  },
  {
   "tid": "ME-05",
@@ -67,7 +71,8 @@
   "solution": "(1) 質量 $m = \\dfrac{4}{3}\\pi r^3\\rho$．単位時間に断面積 $\\pi r^2$，長さ $v$ の円柱の霧を取り込むから $\\dfrac{dm}{dt} = \\pi r^2\\sigma v$．一方 $\\dfrac{dm}{dt} = 4\\pi r^2\\rho\\dfrac{dr}{dt}$ なので $\\boldsymbol{\\dfrac{dr}{dt} = \\dfrac{\\sigma v}{4\\rho}}$．\n\n(2) 取り込む霧粒は静止しているので，運動量の式は\n\\[ \\dfrac{d}{dt}(mv) = mg . \\]\n$v = at$ を (1) に入れると $r = \\dfrac{\\sigma a}{8\\rho}t^2$，よって $m \\propto r^3 \\propto t^6$，$\\dot m/m = 6/t$．運動量の式を $m$ で割ると\n\\[ \\dot v + \\dfrac{\\dot m}{m}v = g \\quad\\Longrightarrow\\quad a + \\dfrac{6}{t}\\,at = 7a = g . \\]\nよって $\\boldsymbol{a = g/7}$．\n\n(3) 単位時間に重力がする仕事は $mgv$，運動エネルギーの増加率は\n\\[ \\dfrac{d}{dt}\\left(\\dfrac{1}{2}mv^2\\right) = \\dfrac{1}{2}\\dot m v^2 + mv\\dot v = mv\\left(\\dfrac{3}{t}at + a\\right) = 4mva . \\]\n$a = g/7$ より運動エネルギーになるのは $4a/g = 4/7$．残りの $\\boldsymbol{3/7}$ が霧粒を水滴の速さまで加速する非弾性的な「衝突」で熱になる．\n（$\\frac{1}{2}\\dot m v^2$ は取り込んだ質量の運動エネルギー，ほぼ同量が散逸する点が完全非弾性衝突と同じ構造である．）",
   "idea": "静止した物体を取り込む系では d(mv)/dt = F．冪型の解を仮定すると加速度は定数 g/7 に決まり，エネルギー収支から散逸がわかる．",
   "tags": "質量が変化する物体,運動量,非弾性,エネルギー散逸",
-  "input": "(1) σ v/(4ρ)\n(2) g/7\n(3) 3/7"
+  "input": "(1) σ v/(4ρ)\n(2) g/7\n(3) 3/7",
+  "id": "ME-01-005"
  },
  {
   "tid": "ME-06",
@@ -81,7 +86,8 @@
   "solution": "(1) 運動量保存 $m_1v_0 = m_1v_1 + m_2v_2$ と反発係数の定義 $v_2 - v_1 = \\varepsilon v_0$ を連立して\n\\[ \\boldsymbol{v_1 = \\dfrac{(m_1-\\varepsilon m_2)v_0}{m_1+m_2}},\\qquad \\boldsymbol{v_2 = \\dfrac{(1+\\varepsilon)m_1v_0}{m_1+m_2}} . \\]\n\n(2) 重心系で見ると見通しがよい．換算質量 $\\mu = \\dfrac{m_1m_2}{m_1+m_2}$，相対速度 $v_0$ として，重心運動のエネルギーは不変，相対運動のエネルギー $\\dfrac{1}{2}\\mu v_0^2$ が $\\varepsilon^2$ 倍になるので\n\\[ \\boldsymbol{\\Delta K = \\dfrac{1}{2}\\mu(1-\\varepsilon^2)v_0^2 = \\dfrac{(1-\\varepsilon^2)m_1m_2v_0^2}{2(m_1+m_2)}} . \\]",
   "idea": "運動量保存＋反発係数の2式．エネルギー損失は相対運動のエネルギー (1/2)μv² の (1−ε²) 倍．",
   "tags": "衝突,反発係数,換算質量",
-  "input": "(1) v_1：(m_1-ε m_2)v_0/(m_1+m_2) ; v_2：(1+ε)m_1 v_0/(m_1+m_2)\n(2) (1-ε^2)m_1 m_2 v_0^2/(2(m_1+m_2))"
+  "input": "(1) v_1：(m_1-ε m_2)v_0/(m_1+m_2) ; v_2：(1+ε)m_1 v_0/(m_1+m_2)\n(2) (1-ε^2)m_1 m_2 v_0^2/(2(m_1+m_2))",
+  "id": "ME-02-001"
  },
  {
   "tid": "ME-07",
@@ -95,7 +101,8 @@
   "solution": "(1) $\\boldsymbol{V = \\dfrac{m_1v_0}{m_1+m_2}}$．\n\n(2) 重心系での粒子 1 の衝突前の速さは $v_0 - V = \\dfrac{m_2v_0}{m_1+m_2}$．弾性衝突では重心系で速さが変わらず向きだけが変わるので $\\boldsymbol{w = \\dfrac{m_2v_0}{m_1+m_2}}$．\n\n(3) 実験室系の速度は $\\boldsymbol{v}_1' = \\boldsymbol{V} + \\boldsymbol{w}$ で，$\\boldsymbol{w}$ の向きは自由（重心系の散乱角による）．$\\boldsymbol{V}$ の先端を中心とする半径 $w$ の円を描くと，$m_1>m_2$ では $w<V$ なので原点は円の外にある．偏角が最大になるのは $\\boldsymbol{v}_1'$ が円に接するときで\n\\[ \\boldsymbol{\\sin\\theta_{\\max} = \\dfrac{w}{V} = \\dfrac{m_2}{m_1}} . \\]\n（$m_1\\le m_2$ なら原点が円の内側または円周上にあり，どの向きにも散乱しうる．）",
   "idea": "重心系では速さが保存され向きだけが回る．実験室系の速度は「V＋半径wの円」で，接線が最大偏角を与える．",
   "tags": "弾性衝突,重心系,散乱角",
-  "input": "(1) m_1 v_0/(m_1+m_2)\n(2) m_2 v_0/(m_1+m_2)\n(3) sinθ_max：m_2/m_1"
+  "input": "(1) m_1 v_0/(m_1+m_2)\n(2) m_2 v_0/(m_1+m_2)\n(3) sinθ_max：m_2/m_1",
+  "id": "ME-02-002"
  },
  {
   "tid": "ME-08",
@@ -109,7 +116,8 @@
   "solution": "(1) 衝突は瞬間的で，その間糸の張力は鉛直なので水平方向の運動量が保存する：$mv_0 = (m+M)V$，$\\boldsymbol{V = \\dfrac{mv_0}{m+M}}$．力学的エネルギーは保存しない（完全非弾性）．\n\n(2) 衝突後は力学的エネルギーが保存する：$\\dfrac{1}{2}V^2 = gh$ より $\\boldsymbol{h = \\dfrac{m^2v_0^2}{2g(m+M)^2}}$．\n\n(3) 最高点での速さを $u$ とすると，糸が張る条件は $T = (m+M)\\left(\\dfrac{u^2}{l} - g\\right)\\ge 0$ すなわち $u^2\\ge gl$．エネルギー保存 $V^2 = u^2 + 4gl$ より $V^2 \\ge 5gl$．よって\n\\[ \\boldsymbol{v_0 \\ge \\dfrac{m+M}{m}\\sqrt{5gl}} . \\]",
   "idea": "衝突の瞬間は運動量保存，その後は力学的エネルギー保存と使い分ける．円運動の最高点で張力≥0．",
   "tags": "完全非弾性衝突,振り子,円運動",
-  "input": "(1) m v_0/(m+M)\n(2) m^2 v_0^2/(2g(m+M)^2)\n(3) ((m+M)/m) sqrt(5g l)"
+  "input": "(1) m v_0/(m+M)\n(2) m^2 v_0^2/(2g(m+M)^2)\n(3) ((m+M)/m) sqrt(5g l)",
+  "id": "ME-02-003"
  },
  {
   "tid": "ME-09",
@@ -123,7 +131,8 @@
   "solution": "時刻 $t$ から $t+dt$ の間に質量 $\\alpha\\,dt$ の燃料が速度 $v-u$ で放出される．運動量の変化を重力の力積に等しいとおくと\n\\[ (m-\\alpha dt)(v+dv) + \\alpha dt\\,(v-u) - mv = -mg\\,dt \\quad\\Longrightarrow\\quad m\\dfrac{dv}{dt} = \\alpha u - mg . \\]\n$\\alpha u$ が推力である．\n\n(1) $t=0$ で推力が重力を上回ればよい：$\\alpha u > m_0g$，最小値は $\\boldsymbol{\\alpha = m_0g/u}$．\n\n(2) $\\dfrac{dv}{dt} = \\dfrac{\\alpha u}{m_0-\\alpha t} - g$ を積分して\n\\[ \\boldsymbol{v(t) = u\\ln\\dfrac{m_0}{m_0-\\alpha t} - gt} . \\]\n第1項がツィオルコフスキーの式，第2項が重力損失である．\n\n(3) $\\int_0^t \\ln\\dfrac{m_0}{m_0-\\alpha s}\\,ds$ は $w = m_0-\\alpha s$ と置換して $t - \\dfrac{m_0-\\alpha t}{\\alpha}\\ln\\dfrac{m_0}{m_0-\\alpha t}$．よって\n\\[ \\boldsymbol{z(t) = u\\left(t - \\dfrac{m_0-\\alpha t}{\\alpha}\\ln\\dfrac{m_0}{m_0-\\alpha t}\\right) - \\dfrac{1}{2}gt^2} . \\]",
   "idea": "微小時間の運動量収支から m dv/dt = αu − mg を立てる．推力 αu と重力の比較が離昇条件．",
   "tags": "ロケット,質量が変化する物体,運動量",
-  "input": "(1) m_0 g/u\n(2) u ln(m_0/(m_0-α t)) - g t\n(3) u(t - ((m_0-α t)/α) ln(m_0/(m_0-α t))) - g t^2/2"
+  "input": "(1) m_0 g/u\n(2) u ln(m_0/(m_0-α t)) - g t\n(3) u(t - ((m_0-α t)/α) ln(m_0/(m_0-α t))) - g t^2/2",
+  "id": "ME-02-004"
  },
  {
   "tid": "ME-10",
@@ -137,7 +146,8 @@
   "solution": "(1) 運動エネルギー保存は $X^2+Y^2 = MV_0^2$（円）．ブロック同士の衝突では運動量 $\\sqrt{M}X+\\sqrt{m}Y = \\boldsymbol{n}\\cdot(X,Y)$（$\\boldsymbol{n} = (\\sqrt{M},\\sqrt{m})$）が保存し，円周上にとどまるので $\\boldsymbol{n}$ に垂直な成分だけが符号を変える．すなわち $\\boldsymbol{n}$ 方向の直線に関する鏡映である．壁との衝突は $Y\\to -Y$（$X$ 軸に関する鏡映）．2つの鏡映の合成は，鏡映軸のなす角の2倍の回転である．$\\boldsymbol{n}$ と $X$ 軸のなす角 $\\theta$ は $\\tan\\theta = \\sqrt{m}/\\sqrt{M}$ なので\n\\[ \\boldsymbol{\\theta = \\arctan\\sqrt{\\dfrac{m}{M}}} . \\]\n実際，行列で書けば衝突は $\\begin{pmatrix}\\cos2\\theta & \\sin2\\theta\\\\ \\sin2\\theta & -\\cos2\\theta\\end{pmatrix}$，壁は $\\mathrm{diag}(1,-1)$ で，その積は角 $2\\theta$ の回転行列になる．\n\n(2) 状態点を衝突の順に結ぶと，壁との衝突は鉛直な弦（$X$ 一定），ブロック同士の衝突は傾き一定の弦（方向 $(\\sqrt{m},-\\sqrt{M})$）になり，隣り合う2本の弦のなす角は常に $\\theta$ である．円周角の定理より，1回の衝突ごとに状態点は中心角 $2\\theta$ 分の弧を消費し，初めの点 $(-\\sqrt{M}V_0,0)$ から円を回っていって，これ以上衝突が起きない領域 $0\\le v\\le V$ に入ったところで終わる．これから衝突回数は $N\\theta<\\pi$ を満たす最大の整数 $N = \\lceil\\pi/\\theta\\rceil - 1$ となる．$M = 100m$ では $\\theta = \\arctan 0.1 \\approx 0.09967$，$\\pi/\\theta\\approx 31.5$ なので $\\boldsymbol{N = 31}$．\n\n(3) $\\theta = \\arctan 0.01\\approx 0.0099997$，$\\pi/\\theta\\approx 314.2$ なので $\\boldsymbol{N = 314}$．$M/m = 100^k$ のとき $N$ は $\\pi$ の上から $k+1$ 桁（$\\theta\\approx\\sqrt{m/M}$ だから）になる（ガルペリンのビリヤード）．\n（数値シミュレーションで衝突を順に追っても 31 回，314 回が確認できる．）",
   "idea": "質量の平方根でスケールした速度空間では，エネルギー保存が円，衝突が鏡映になり，2回の鏡映が回転になる．",
   "tags": "弾性衝突,位相空間,鏡映,ガルペリン",
-  "input": "(1) atan(sqrt(m/M))\n(2) 31\n(3) 314"
+  "input": "(1) atan(sqrt(m/M))\n(2) 31\n(3) 314",
+  "id": "ME-02-005"
  },
  {
   "tid": "ME-11",
@@ -151,7 +161,8 @@
   "solution": "(1) 万有引力が向心力：$\\dfrac{mv^2}{r} = \\dfrac{GMm}{r^2}$ より $\\boldsymbol{v = \\sqrt{GM/r}}$．\n\n(2) $T = \\dfrac{2\\pi r}{v} = \\boldsymbol{2\\pi\\sqrt{\\dfrac{r^3}{GM}}}$（ケプラーの第3法則 $T^2\\propto r^3$）．\n\n(3) 円軌道の力学的エネルギーは $E = \\dfrac{1}{2}mv^2 - \\dfrac{GMm}{r} = -\\dfrac{GMm}{2r}$（ビリアル定理 $K = -U/2$）．\n\\[ \\Delta E = -\\dfrac{GMm}{4r} - \\left(-\\dfrac{GMm}{2r}\\right) = \\boldsymbol{\\dfrac{GMm}{4r}} . \\]\n外側の軌道ほど速さは小さい（運動エネルギーは減る）が，全エネルギーは大きい．",
   "idea": "円軌道では E = −GMm/(2r)．運動エネルギーは位置エネルギーの −1/2 倍．",
   "tags": "万有引力,円軌道,ビリアル定理",
-  "input": "(1) sqrt(G M/r)\n(2) 2pi sqrt(r^3/(G M))\n(3) G M m/(4r)"
+  "input": "(1) sqrt(G M/r)\n(2) 2pi sqrt(r^3/(G M))\n(3) G M m/(4r)",
+  "id": "ME-03-001"
  },
  {
   "tid": "ME-12",
@@ -165,7 +176,8 @@
   "solution": "有効ポテンシャルは $U_{\\mathrm{eff}}(r) = Ar^n + \\dfrac{L^2}{2mr^2}$．\n\n(1) $U_{\\mathrm{eff}}'(r_0) = nAr_0^{n-1} - \\dfrac{L^2}{mr_0^3} = 0$ より $\\boldsymbol{r_0 = \\left(\\dfrac{L^2}{nAm}\\right)^{1/(n+2)}}$．\n\n(2) $U_{\\mathrm{eff}}''(r_0) = n(n-1)Ar_0^{n-2} + \\dfrac{3L^2}{mr_0^4}$．(1) の関係 $nAr_0^{n-2} = \\dfrac{L^2}{mr_0^4}$ を使うと $U_{\\mathrm{eff}}''(r_0) = (n+2)\\dfrac{L^2}{mr_0^4}$．よって\n\\[ \\omega_r^2 = \\dfrac{U_{\\mathrm{eff}}''(r_0)}{m} = (n+2)\\left(\\dfrac{L}{mr_0^2}\\right)^2 = (n+2)\\,\\omega_\\varphi^2 ,\\qquad \\boldsymbol{\\dfrac{\\omega_r}{\\omega_\\varphi} = \\sqrt{n+2}} . \\]\n$n>-2$ が円軌道の安定条件でもある．\n\n(3) 近点から遠点までは動径振動の半周期 $\\pi/\\omega_r$．その間に $\\varphi$ は $\\omega_\\varphi\\cdot\\pi/\\omega_r$ 進むので $\\boldsymbol{\\Delta\\varphi = \\dfrac{\\pi}{\\sqrt{n+2}}}$．\n$n=-1$（ケプラー）で $\\pi$，$n=2$（調和振動子）で $\\pi/2$ となり，どちらも閉じた楕円になる（ベルトランの定理）．",
   "idea": "有効ポテンシャルの極小が円軌道，その曲率が動径振動数．回転と振動の振動数比が近点角を決める．",
   "tags": "有効ポテンシャル,円軌道の安定性,近点角,ベルトランの定理",
-  "input": "(1) (L^2/(n A m))^(1/(n+2))\n(2) sqrt(n+2)\n(3) pi/sqrt(n+2)"
+  "input": "(1) (L^2/(n A m))^(1/(n+2))\n(2) sqrt(n+2)\n(3) pi/sqrt(n+2)",
+  "id": "ME-03-002"
  },
  {
   "tid": "ME-13",
@@ -174,12 +186,13 @@
   "level": 2,
   "theme": "ホーマン遷移軌道",
   "minutes": 20,
-  "q": "質量 $M$ の惑星のまわりの半径 $r_1$ の円軌道から，同じ平面内の半径 $r_2$（$r_2>r_1$）の円軌道へ，2回の接線方向の瞬間的な加速で移る（ホーマン遷移）．遷移軌道は近点 $r_1$，遠点 $r_2$ の楕円である．万有引力定数を $G$ とする．\n\\begin{enumerate}\n\\item 1回目（近点）で必要な速度の増分 $\\Delta v_1$ を求めよ．\n\\item 2回目（遠点）で必要な速度の増分 $\\Delta v_2$ を求めよ．\n\\item 遷移にかかる時間 $t_{\\mathrm{H}}$ を求めよ．\n\\item 地球（$GM = 3.986\\times10^{14}\\,\\mathrm{m^3/s^2}$）で $r_1 = 6678\\,\\mathrm{km}$ の低軌道から $r_2 = 42164\\,\\mathrm{km}$ の静止軌道へ移るとき，$\\Delta v_1+\\Delta v_2$ と $t_{\\mathrm{H}}$ を有効数字3桁で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\Delta v_1 = \\sqrt{\\dfrac{GM}{r_1}}\\left(\\sqrt{\\dfrac{2r_2}{r_1+r_2}}-1\\right)$\n(2) $\\Delta v_2 = \\sqrt{\\dfrac{GM}{r_2}}\\left(1-\\sqrt{\\dfrac{2r_1}{r_1+r_2}}\\right)$\n(3) $t_{\\mathrm{H}} = \\pi\\sqrt{\\dfrac{(r_1+r_2)^3}{8GM}}$\n(4) $\\Delta v_1+\\Delta v_2 \\approx 3.89\\,\\mathrm{km/s}$，$t_{\\mathrm{H}} \\approx 5.28\\,\\mathrm{h}$",
-  "solution": "遷移楕円の長半径は $a = (r_1+r_2)/2$．活力の式（vis-viva）$v^2 = GM\\left(\\dfrac{2}{r}-\\dfrac{1}{a}\\right)$ を使う．\n\n(1) 近点速度 $v_{\\mathrm{p}} = \\sqrt{\\dfrac{GM}{r_1}}\\sqrt{\\dfrac{2r_2}{r_1+r_2}}$，円軌道速度 $\\sqrt{GM/r_1}$ との差で\n\\[ \\boldsymbol{\\Delta v_1 = \\sqrt{\\dfrac{GM}{r_1}}\\left(\\sqrt{\\dfrac{2r_2}{r_1+r_2}}-1\\right)} . \\]\n\n(2) 遠点速度 $v_{\\mathrm{a}} = \\sqrt{\\dfrac{GM}{r_2}}\\sqrt{\\dfrac{2r_1}{r_1+r_2}}$ は外側の円軌道速度より小さいので\n\\[ \\boldsymbol{\\Delta v_2 = \\sqrt{\\dfrac{GM}{r_2}}\\left(1-\\sqrt{\\dfrac{2r_1}{r_1+r_2}}\\right)} . \\]\n\n(3) ケプラーの第3法則で楕円の周期は $2\\pi\\sqrt{a^3/(GM)}$，その半分だから $\\boldsymbol{t_{\\mathrm{H}} = \\pi\\sqrt{\\dfrac{(r_1+r_2)^3}{8GM}}}$．\n\n(4) 数値を代入すると $\\Delta v_1\\approx 2.43\\,\\mathrm{km/s}$，$\\Delta v_2\\approx 1.47\\,\\mathrm{km/s}$，合計 $\\boldsymbol{\\approx 3.89\\,\\mathrm{km/s}}$．$t_{\\mathrm{H}}\\approx 1.90\\times10^4\\,\\mathrm{s} = \\boldsymbol{5.28\\,\\mathrm{h}}$．",
-  "idea": "楕円軌道の速さは活力の式 v² = GM(2/r − 1/a) で一発．時間はケプラーの第3法則の半周期．",
+  "q": "質量 $M$ の惑星のまわりの半径 $r_1$ の円軌道から，同じ平面内の半径 $r_2$（$r_2>r_1$）の円軌道へ，2回の接線方向の瞬間的な加速で移る（ホーマン遷移）．遷移軌道は近点 $r_1$，遠点 $r_2$ の楕円である．万有引力定数を $G$ とする．\n\\begin{enumerate}\n\\item 1回目（近点）で必要な速度の増分 $\\Delta v_1$ を求めよ．\n\\item 2回目（遠点）で必要な速度の増分 $\\Delta v_2$ を求めよ．\n\\item 遷移にかかる時間 $t_{\\mathrm{H}}$ を求めよ．\n\\item $r_2=9r_1$ のとき，$\\Delta v_1+\\Delta v_2$ を内側の円軌道の速さ $v_0=\\sqrt{GM/r_1}$ の何倍かで答え，$t_{\\mathrm{H}}$ を内側の円軌道の周期 $T_1$ の何倍かで答えよ．\n\\end{enumerate}",
+  "answer": "(1) $\\Delta v_1 = \\sqrt{\\dfrac{GM}{r_1}}\\left(\\sqrt{\\dfrac{2r_2}{r_1+r_2}}-1\\right)$\n(2) $\\Delta v_2 = \\sqrt{\\dfrac{GM}{r_2}}\\left(1-\\sqrt{\\dfrac{2r_1}{r_1+r_2}}\\right)$\n(3) $t_{\\mathrm{H}} = \\pi\\sqrt{\\dfrac{(r_1+r_2)^3}{8GM}}$\n(4) $\\dfrac{\\Delta v_1+\\Delta v_2}{v_0}=\\dfrac{8}{3\\sqrt5}-\\dfrac23$，$\\dfrac{t_{\\mathrm{H}}}{T_1}=\\dfrac{5\\sqrt5}{2}$",
+  "solution": "遷移楕円の長半径は $a = (r_1+r_2)/2$．活力の式（vis-viva）$v^2 = GM\\left(\\dfrac{2}{r}-\\dfrac{1}{a}\\right)$ を使う．\n\n(1) 近点速度 $v_{\\mathrm{p}} = \\sqrt{\\dfrac{GM}{r_1}}\\sqrt{\\dfrac{2r_2}{r_1+r_2}}$，円軌道速度 $\\sqrt{GM/r_1}$ との差で\n\\[ \\boldsymbol{\\Delta v_1 = \\sqrt{\\dfrac{GM}{r_1}}\\left(\\sqrt{\\dfrac{2r_2}{r_1+r_2}}-1\\right)} . \\]\n\n(2) 遠点速度 $v_{\\mathrm{a}} = \\sqrt{\\dfrac{GM}{r_2}}\\sqrt{\\dfrac{2r_1}{r_1+r_2}}$ は外側の円軌道速度より小さいので\n\\[ \\boldsymbol{\\Delta v_2 = \\sqrt{\\dfrac{GM}{r_2}}\\left(1-\\sqrt{\\dfrac{2r_1}{r_1+r_2}}\\right)} . \\]\n\n(3) ケプラーの第3法則で楕円の周期は $2\\pi\\sqrt{a^3/(GM)}$，その半分だから $\\boldsymbol{t_{\\mathrm{H}} = \\pi\\sqrt{\\dfrac{(r_1+r_2)^3}{8GM}}}$．\n\n(4) $r_2=9r_1$ では $\\sqrt{\\dfrac{2r_2}{r_1+r_2}}=\\dfrac{3}{\\sqrt5}$，$\\sqrt{\\dfrac{2r_1}{r_1+r_2}}=\\dfrac{1}{\\sqrt5}$，$\\sqrt{GM/r_2}=v_0/3$ なので\n\\[ \\frac{\\Delta v_1+\\Delta v_2}{v_0}=\\left(\\frac{3}{\\sqrt5}-1\\right)+\\frac13\\left(1-\\frac1{\\sqrt5}\\right)=\\boldsymbol{\\frac{8}{3\\sqrt5}-\\frac23}\\ (\\approx0.526). \\]\n$T_1=2\\pi\\sqrt{r_1^3/(GM)}$，$t_{\\mathrm{H}}=\\pi\\sqrt{\\dfrac{1000r_1^3}{8GM}}$ より $\\dfrac{t_{\\mathrm{H}}}{T_1}=\\dfrac12\\sqrt{125}=\\boldsymbol{\\dfrac{5\\sqrt5}{2}}$．\n（地球の低軌道 $6678$ km から静止軌道 $42164$ km への遷移では合計約 $3.89$ km/s，約 $5.3$ 時間．）",
+  "idea": "楕円軌道の速さは活力の式 $v^2 = GM(2/r - 1/a)$ で一発．時間はケプラーの第3法則の半周期．",
   "tags": "ケプラー運動,活力の式,軌道遷移",
-  "input": "(1) sqrt(G M/r_1)(sqrt(2r_2/(r_1+r_2))-1)\n(2) sqrt(G M/r_2)(1-sqrt(2r_1/(r_1+r_2)))\n(3) pi sqrt((r_1+r_2)^3/(8G M))\n(4) Δv [km/s]：≈3.89 ; 時間 [h]：≈5.28"
+  "input": "(1) sqrt(G M/r_1)(sqrt(2r_2/(r_1+r_2))-1)\n(2) sqrt(G M/r_2)(1-sqrt(2r_1/(r_1+r_2)))\n(3) pi sqrt((r_1+r_2)^3/(8G M))\n(4) 速度変化の比：8/(3sqrt(5))-2/3 ; 時間の比：5sqrt(5)/2",
+  "id": "ME-03-003"
  },
  {
   "tid": "ME-14",
@@ -193,7 +206,8 @@
   "solution": "中心力の軌道方程式（ビネの式）は\n\\[ \\dfrac{d^2u}{d\\varphi^2} + u = -\\dfrac{m}{L^2u^2}F\\!\\left(\\dfrac{1}{u}\\right) = \\dfrac{mk}{L^2} + \\dfrac{m\\lambda}{L^2}u . \\]\n\n(1) 移項すると $\\dfrac{d^2u}{d\\varphi^2} + \\kappa^2u = \\dfrac{mk}{L^2}$，$\\kappa^2 = 1-\\dfrac{m\\lambda}{L^2}$．特解 $u = \\dfrac{mk}{\\kappa^2L^2}$ と一般解を合わせて\n\\[ u = C\\left[1+\\epsilon\\cos\\kappa\\varphi\\right],\\qquad \\boldsymbol{C = \\dfrac{mk}{L^2-m\\lambda}},\\quad \\boldsymbol{\\kappa = \\sqrt{1-\\dfrac{m\\lambda}{L^2}}} . \\]\n\n(2) $u$ が最大（$r$ が最小）になるのは $\\kappa\\varphi = 2\\pi n$ のときだから，近点間の角は $\\boldsymbol{\\Phi = 2\\pi/\\kappa = \\dfrac{2\\pi}{\\sqrt{1-m\\lambda/L^2}}}$．\n\n(3) $\\kappa^{-1}\\approx 1 + \\dfrac{m\\lambda}{2L^2}$ より $\\boldsymbol{\\Phi - 2\\pi \\approx \\dfrac{\\pi m\\lambda}{L^2}}$．引力的な $1/r^3$ 項は近点を公転と同じ向きに前進させる（一般相対論の近日点移動と同じ機構）．",
   "idea": "ビネの式に入れると 1/r³ 項は u に比例する項になり，振動数 κ を 1 からずらす．閉じない軌道＝近点移動．",
   "tags": "ビネの式,近日点移動,摂動",
-  "input": "(1) C：m k/(L^2-m λ) ; κ：sqrt(1-m λ/L^2)\n(2) 2pi/sqrt(1-m λ/L^2)\n(3) pi m λ/L^2"
+  "input": "(1) C：m k/(L^2-m λ) ; κ：sqrt(1-m λ/L^2)\n(2) 2pi/sqrt(1-m λ/L^2)\n(3) pi m λ/L^2",
+  "id": "ME-03-004"
  },
  {
   "tid": "ME-15",
@@ -207,7 +221,8 @@
   "solution": "角運動量は $L = mv_\\infty b$，すなわち $\\dfrac{L^2}{2m} = Eb^2$．\n\n(1) 最近接点では $\\dot r = 0$ なので $E = \\dfrac{\\alpha}{r^2} + \\dfrac{Eb^2}{r^2}$，よって $\\boldsymbol{r_{\\min} = \\sqrt{b^2+\\alpha/E}}$．\n\n(2) 軌道の式 $\\dfrac{d\\varphi}{dr} = \\dfrac{b}{r^2\\sqrt{1 - (b^2+\\alpha/E)/r^2}}$ を積分すると，近点から無限遠までの角は\n\\[ \\varphi_0 = \\int_{r_{\\min}}^{\\infty}\\dfrac{b\\,dr}{r^2\\sqrt{1-r_{\\min}^2/r^2}} = \\dfrac{b}{r_{\\min}}\\cdot\\dfrac{\\pi}{2} . \\]\n散乱角は $\\theta = \\pi - 2\\varphi_0$ なので $\\boldsymbol{\\theta = \\pi\\left(1-\\dfrac{b}{\\sqrt{b^2+\\alpha/E}}\\right)}$．\n\n(3) (2) を $b$ について解く．$t = (\\pi-\\theta)/\\pi$ とおくと $b^2 = \\dfrac{\\alpha}{E}\\dfrac{t^2}{1-t^2}$，$1-t^2 = \\dfrac{\\theta(2\\pi-\\theta)}{\\pi^2}$ より\n\\[ b^2 = \\dfrac{\\alpha}{E}\\,\\dfrac{(\\pi-\\theta)^2}{\\theta(2\\pi-\\theta)} . \\]\n$\\dfrac{d\\sigma}{d\\Omega} = \\dfrac{1}{2\\sin\\theta}\\left|\\dfrac{d(b^2)}{d\\theta}\\right|$ を計算すると，$\\dfrac{d}{d\\theta}\\dfrac{(\\pi-\\theta)^2}{\\theta(2\\pi-\\theta)} = -\\dfrac{2\\pi^2(\\pi-\\theta)}{\\theta^2(2\\pi-\\theta)^2}$ なので\n\\[ \\boldsymbol{\\dfrac{d\\sigma}{d\\Omega} = \\dfrac{\\alpha}{E}\\cdot\\dfrac{\\pi^2(\\pi-\\theta)}{\\theta^2(2\\pi-\\theta)^2\\sin\\theta}} . \\]\n$\\theta\\to 0$ で $\\propto \\theta^{-3}$ と発散する（ポテンシャルが遠方まで届くため全断面積は無限大）．",
   "idea": "1/r² ポテンシャルは遠心力ポテンシャルに足し込めるので，軌道は自由粒子の b を r_min に置き換えたものになる．",
   "tags": "散乱,微分散乱断面積,衝突径数",
-  "input": "(1) sqrt(b^2+α/E)\n(2) pi(1-b/sqrt(b^2+α/E))\n(3) (α/E) pi^2 (pi-θ)/(θ^2 (2pi-θ)^2 sin(θ))"
+  "input": "(1) sqrt(b^2+α/E)\n(2) pi(1-b/sqrt(b^2+α/E))\n(3) (α/E) pi^2 (pi-θ)/(θ^2 (2pi-θ)^2 sin(θ))",
+  "id": "ME-03-005"
  },
  {
   "tid": "ME-16",
@@ -221,7 +236,8 @@
   "solution": "回転座標系ではビーズに遠心力 $mR\\omega^2\\sin\\theta$（軸から外向き）がはたらく．コリオリ力は円環に垂直なので垂直抗力と打ち消し合い，円環に沿った運動に効かない．有効ポテンシャルは\n\\[ U_{\\mathrm{eff}}(\\theta) = -mgR\\cos\\theta - \\dfrac{1}{2}mR^2\\omega^2\\sin^2\\theta . \\]\n運動方程式は $mR^2\\ddot\\theta = -U_{\\mathrm{eff}}'(\\theta)$．\n\n(1) $U_{\\mathrm{eff}}''(0) = mgR - mR^2\\omega^2$ より $\\boldsymbol{\\Omega_0 = \\sqrt{g/R - \\omega^2}}$．\n\n(2) $\\Omega_0^2 < 0$ となると不安定．$\\boldsymbol{\\omega_{\\mathrm{c}} = \\sqrt{g/R}}$．\n\n(3) $U_{\\mathrm{eff}}'(\\theta) = mR\\sin\\theta\\,(g - R\\omega^2\\cos\\theta) = 0$ の $\\sin\\theta\\neq0$ の解で $\\boldsymbol{\\cos\\theta_0 = \\dfrac{g}{R\\omega^2}}$．\n\n(4) $U_{\\mathrm{eff}}''(\\theta_0) = mR^2\\omega^2\\sin^2\\theta_0$ となるので $\\Omega_1 = \\omega\\sin\\theta_0 = \\boldsymbol{\\sqrt{\\omega^2 - \\dfrac{g^2}{R^2\\omega^2}}}$．\n$\\omega_{\\mathrm{c}}$ で最下点が不安定化して2つの対称なつりあい点に分かれる（ピッチフォーク分岐）．",
   "idea": "回転座標系では遠心力ポテンシャル −(1/2)mω²ρ² を加えた有効ポテンシャルで考える．その極小と曲率を調べる．",
   "tags": "回転座標系,遠心力,有効ポテンシャル,分岐",
-  "input": "(1) sqrt(g/R-ω^2)\n(2) sqrt(g/R)\n(3) g/(R ω^2)\n(4) sqrt(ω^2-g^2/(R^2 ω^2))"
+  "input": "(1) sqrt(g/R-ω^2)\n(2) sqrt(g/R)\n(3) g/(R ω^2)\n(4) sqrt(ω^2-g^2/(R^2 ω^2))",
+  "id": "ME-04-001"
  },
  {
   "tid": "ME-17",
@@ -230,12 +246,13 @@
   "level": 2,
   "theme": "自由落下物体の東偏（コリオリ力）",
   "minutes": 15,
-  "q": "北緯 $\\varphi$ の地点で，高さ $h$ から物体を静かに落とす．地球の自転角速度を $\\omega$，重力加速度（遠心力を含む見かけの値）を $g$ とし，空気抵抗は無視する．コリオリ力の効果は $\\omega$ の1次まで考える．\n\\begin{enumerate}\n\\item 落下を始めてから時間 $t$ 後に物体が受けるコリオリ力による加速度の大きさを求めよ（向きは東向きになる）．\n\\item 着地点の，真下の点からの東向きのずれ $d$ を $\\omega$，$\\varphi$，$h$，$g$ で表せ．\n\\item $\\varphi = 35^\\circ$，$h = 100\\,\\mathrm{m}$，$\\omega = 7.29\\times10^{-5}\\,\\mathrm{rad/s}$，$g = 9.8\\,\\mathrm{m/s^2}$ のとき，$d$ を cm 単位で有効数字3桁で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $2\\omega gt\\cos\\varphi$\n(2) $d = \\dfrac{\\omega\\cos\\varphi}{3}\\sqrt{\\dfrac{8h^3}{g}}$\n(3) $d \\approx 1.80\\,\\mathrm{cm}$",
-  "solution": "地表に東 $x$，北 $y$，鉛直上 $z$ の軸をとると，自転の角速度ベクトルは $\\boldsymbol{\\omega} = \\omega(0,\\cos\\varphi,\\sin\\varphi)$．コリオリ加速度は $-2\\boldsymbol{\\omega}\\times\\boldsymbol{v}$．\n\n(1) 0次の速度は $\\boldsymbol{v} = (0,0,-gt)$．$\\boldsymbol{\\omega}\\times\\boldsymbol{v} = (-\\omega gt\\cos\\varphi,\\,0,\\,0)$ なので，コリオリ加速度は $(2\\omega gt\\cos\\varphi,\\,0,\\,0)$，大きさ $\\boldsymbol{2\\omega gt\\cos\\varphi}$ で東向き．\n\n(2) $\\ddot x = 2\\omega gt\\cos\\varphi$ を2回積分して $x = \\dfrac{1}{3}\\omega gt^3\\cos\\varphi$．落下時間 $t_1 = \\sqrt{2h/g}$ を代入して\n\\[ \\boldsymbol{d = \\dfrac{\\omega\\cos\\varphi}{3}\\sqrt{\\dfrac{8h^3}{g}}} . \\]\n\n(3) $t_1 = 4.52\\,\\mathrm{s}$，$d = \\dfrac{1}{3}(7.29\\times10^{-5})(9.8)(4.52)^3\\cos35^\\circ \\approx 1.80\\times10^{-2}\\,\\mathrm{m} = \\boldsymbol{1.80\\,\\mathrm{cm}}$．",
+  "q": "北緯 $\\varphi$ の地点で，高さ $h$ から物体を静かに落とす．地球の自転角速度を $\\omega$，重力加速度（遠心力を含む見かけの値）を $g$ とし，空気抵抗は無視する．コリオリ力の効果は $\\omega$ の1次まで考える．\n\\begin{enumerate}\n\\item 落下を始めてから時間 $t$ 後に物体が受けるコリオリ力による加速度の大きさを求めよ（向きは東向きになる）．\n\\item 着地点の，真下の点からの東向きのずれ $d$ を $\\omega$，$\\varphi$，$h$，$g$ で表せ．\n\\item 落下時間を $t_1$ とする．比 $d/h$ を $\\omega,\\varphi,t_1$ で表し，$\\omega t_1\\ll1$ ならずれが落下距離に比べて小さいことを確かめよ．\n\\end{enumerate}",
+  "answer": "(1) $2\\omega gt\\cos\\varphi$\n(2) $d = \\dfrac{\\omega\\cos\\varphi}{3}\\sqrt{\\dfrac{8h^3}{g}}$\n(3) $\\dfrac dh=\\dfrac23\\omega t_1\\cos\\varphi$",
+  "solution": "地表に東 $x$，北 $y$，鉛直上 $z$ の軸をとると，自転の角速度ベクトルは $\\boldsymbol{\\omega} = \\omega(0,\\cos\\varphi,\\sin\\varphi)$．コリオリ加速度は $-2\\boldsymbol{\\omega}\\times\\boldsymbol{v}$．\n\n(1) 0次の速度は $\\boldsymbol{v} = (0,0,-gt)$．$\\boldsymbol{\\omega}\\times\\boldsymbol{v} = (-\\omega gt\\cos\\varphi,\\,0,\\,0)$ なので，コリオリ加速度は $(2\\omega gt\\cos\\varphi,\\,0,\\,0)$，大きさ $\\boldsymbol{2\\omega gt\\cos\\varphi}$ で東向き．\n\n(2) $\\ddot x = 2\\omega gt\\cos\\varphi$ を2回積分して $x = \\dfrac{1}{3}\\omega gt^3\\cos\\varphi$．落下時間 $t_1 = \\sqrt{2h/g}$ を代入して\n\\[ \\boldsymbol{d = \\dfrac{\\omega\\cos\\varphi}{3}\\sqrt{\\dfrac{8h^3}{g}}} . \\]\n\n(3) $d=\\dfrac13\\omega gt_1^3\\cos\\varphi$，$h=\\dfrac12gt_1^2$ より\n\\[ \\frac dh=\\boldsymbol{\\frac23\\omega t_1\\cos\\varphi}. \\]\n$\\omega\\approx7\\times10^{-5}\\,\\mathrm{s^{-1}}$ なので，落下時間が数秒なら $\\omega t_1\\sim10^{-4}$ で，$100\\,\\mathrm m$ 落としても東偏は cm 程度にすぎない．",
   "idea": "まず ω の 0 次の運動（自由落下）を求め，それをコリオリ力の式に代入して 1 次の補正を積分する（逐次近似）．",
   "tags": "コリオリ力,東偏,逐次近似",
-  "input": "(1) 2ω g t cos(φ)\n(2) (ω cos(φ)/3) sqrt(8h^3/g)\n(3) d [cm]：≈1.80"
+  "input": "(1) 2ω g t cos(φ)\n(2) (ω cos(φ)/3) sqrt(8h^3/g)\n(3) $d/h$：2 ω t_1 cos(φ)/3",
+  "id": "ME-04-002"
  },
  {
   "tid": "ME-18",
@@ -249,7 +266,8 @@
   "solution": "回転系では水の各部分は静止していて，単位質量あたり重力 $-g\\hat z$ と遠心力 $\\omega^2\\rho\\hat\\rho$ を受ける．これはポテンシャル $\\Phi = gz - \\dfrac{1}{2}\\omega^2\\rho^2$ から導かれ，水面は等ポテンシャル面になるので\n\\[ z(\\rho) = z_0 + \\dfrac{\\omega^2\\rho^2}{2g} \\quad\\text{（回転放物面）}． \\]\n\n(1) 体積保存 $\\displaystyle\\int_0^a z(\\rho)\\,2\\pi\\rho\\,d\\rho = \\pi a^2h_0$ より $z_0 + \\dfrac{\\omega^2a^2}{4g} = h_0$，よって $\\boldsymbol{z_0 = h_0 - \\dfrac{\\omega^2a^2}{4g}}$．\n\n(2) $z_a = z_0 + \\dfrac{\\omega^2a^2}{2g} = \\boldsymbol{h_0 + \\dfrac{\\omega^2a^2}{4g}}$．中心の下がりと壁での上がりは等しい．\n\n(3) $z_0 = 0$ となるのは $\\boldsymbol{\\omega = \\dfrac{2\\sqrt{gh_0}}{a}}$．",
   "idea": "回転系では遠心力ポテンシャルを加えた有効ポテンシャルの等高面が水面になる．高さは体積保存で決める．",
   "tags": "回転座標系,遠心力,等ポテンシャル面,回転放物面",
-  "input": "(1) h_0 - ω^2 a^2/(4g)\n(2) h_0 + ω^2 a^2/(4g)\n(3) 2sqrt(g h_0)/a"
+  "input": "(1) h_0 - ω^2 a^2/(4g)\n(2) h_0 + ω^2 a^2/(4g)\n(3) 2sqrt(g h_0)/a",
+  "id": "ME-04-003"
  },
  {
   "tid": "ME-19",
@@ -258,12 +276,13 @@
   "level": 3,
   "theme": "フーコーの振り子",
   "minutes": 25,
-  "q": "北緯 $\\varphi$ の地点に，小さな振幅で振れる単振り子（固有角振動数 $\\omega_0 = \\sqrt{g/l}$）がある．地球の自転角速度を $\\omega$ とし，振り子のおもりの水平面内の位置を東向き $x$，北向き $y$ とする．遠心力は $g$ に含め，$\\omega$ の2次は鉛直方向の効果を無視してよい．水平面内の運動方程式は\n\\[ \\ddot x - 2\\omega\\sin\\varphi\\,\\dot y + \\omega_0^2x = 0,\\qquad \\ddot y + 2\\omega\\sin\\varphi\\,\\dot x + \\omega_0^2y = 0 \\]\nである．\n\\begin{enumerate}\n\\item $\\zeta = x + iy$ とおき，$\\zeta\\propto e^{i\\lambda t}$ の形の解を探す．$\\lambda$ を求めよ（2つ）．\n\\item 振動面が回転する角速度の大きさ $\\Omega$ を求めよ（北半球で上から見て時計回りに回る）．\n\\item 地球の自転周期（恒星日）を $23.93\\,\\mathrm{h}$ として，北緯 $35^\\circ$ で振動面が1回転する時間を有効数字3桁で求めよ．\n\\end{enumerate}",
-  "answer": "(1) $\\lambda = -\\omega\\sin\\varphi \\pm \\sqrt{\\omega^2\\sin^2\\varphi + \\omega_0^2}$\n(2) $\\Omega = \\omega\\sin\\varphi$\n(3) $\\approx 41.7\\,\\mathrm{h}$",
-  "solution": "(1) 2式目に $i$ を掛けて1式目に足すと\n\\[ \\ddot\\zeta + 2i\\omega\\sin\\varphi\\,\\dot\\zeta + \\omega_0^2\\zeta = 0 . \\]\n$\\zeta = e^{i\\lambda t}$ を代入すると $\\lambda^2 + 2\\omega\\sin\\varphi\\,\\lambda - \\omega_0^2 = 0$，よって\n\\[ \\boldsymbol{\\lambda = -\\omega\\sin\\varphi \\pm \\sqrt{\\omega^2\\sin^2\\varphi + \\omega_0^2}} . \\]\n\n(2) $\\Omega_z = \\omega\\sin\\varphi$，$\\omega_1 = \\sqrt{\\Omega_z^2+\\omega_0^2}$ とおくと一般解は\n\\[ \\zeta = e^{-i\\Omega_zt}\\left(Ae^{i\\omega_1t} + Be^{-i\\omega_1t}\\right) . \\]\n括弧内は直線（または細い楕円）上の振動で，因子 $e^{-i\\Omega_zt}$ によりその面が角速度 $\\Omega_z$ で時計回り（$x$ 軸から $y$ 軸と逆の向き）に回る．$\\boldsymbol{\\Omega = \\omega\\sin\\varphi}$．\n\n(3) 1回転の時間は $\\dfrac{2\\pi}{\\omega\\sin\\varphi} = \\dfrac{23.93\\,\\mathrm{h}}{\\sin35^\\circ} \\approx \\boldsymbol{41.7\\,\\mathrm{h}}$．",
+  "q": "北緯 $\\varphi$ の地点に，小さな振幅で振れる単振り子（固有角振動数 $\\omega_0 = \\sqrt{g/l}$）がある．地球の自転角速度を $\\omega$ とし，振り子のおもりの水平面内の位置を東向き $x$，北向き $y$ とする．遠心力は $g$ に含め，$\\omega$ の2次は鉛直方向の効果を無視してよい．水平面内の運動方程式は\n\\[ \\ddot x - 2\\omega\\sin\\varphi\\,\\dot y + \\omega_0^2x = 0,\\qquad \\ddot y + 2\\omega\\sin\\varphi\\,\\dot x + \\omega_0^2y = 0 \\]\nである．\n\\begin{enumerate}\n\\item $\\zeta = x + iy$ とおき，$\\zeta\\propto e^{i\\lambda t}$ の形の解を探す．$\\lambda$ を求めよ（2つ）．\n\\item 振動面が回転する角速度の大きさ $\\Omega$ を求めよ（北半球で上から見て時計回りに回る）．\n\\item 地球の自転周期（恒星日）を $T_s$ として，振動面が1回転する時間 $T_F$ を求めよ．また北緯 $30^\\circ$ では $T_s$ の何倍か．\n\\end{enumerate}",
+  "answer": "(1) $\\lambda = -\\omega\\sin\\varphi \\pm \\sqrt{\\omega^2\\sin^2\\varphi + \\omega_0^2}$\n(2) $\\Omega = \\omega\\sin\\varphi$\n(3) $T_F=\\dfrac{T_s}{\\sin\\varphi}$，北緯 $30^\\circ$ では $2$ 倍",
+  "solution": "(1) 2式目に $i$ を掛けて1式目に足すと\n\\[ \\ddot\\zeta + 2i\\omega\\sin\\varphi\\,\\dot\\zeta + \\omega_0^2\\zeta = 0 . \\]\n$\\zeta = e^{i\\lambda t}$ を代入すると $\\lambda^2 + 2\\omega\\sin\\varphi\\,\\lambda - \\omega_0^2 = 0$，よって\n\\[ \\boldsymbol{\\lambda = -\\omega\\sin\\varphi \\pm \\sqrt{\\omega^2\\sin^2\\varphi + \\omega_0^2}} . \\]\n\n(2) $\\Omega_z = \\omega\\sin\\varphi$，$\\omega_1 = \\sqrt{\\Omega_z^2+\\omega_0^2}$ とおくと一般解は\n\\[ \\zeta = e^{-i\\Omega_zt}\\left(Ae^{i\\omega_1t} + Be^{-i\\omega_1t}\\right) . \\]\n括弧内は直線（または細い楕円）上の振動で，因子 $e^{-i\\Omega_zt}$ によりその面が角速度 $\\Omega_z$ で時計回り（$x$ 軸から $y$ 軸と逆の向き）に回る．$\\boldsymbol{\\Omega = \\omega\\sin\\varphi}$．\n\n(3) $\\omega=2\\pi/T_s$ なので 1回転の時間は $T_F=\\dfrac{2\\pi}{\\omega\\sin\\varphi}=\\boldsymbol{\\dfrac{T_s}{\\sin\\varphi}}$．北緯 $30^\\circ$ では $\\sin\\varphi=\\frac12$ で $\\boldsymbol{2}$ 倍（約 2 日）．極では $T_s$，赤道では振動面は回らない．",
   "idea": "複素座標 ζ = x + iy でコリオリ項は iζ̇ に比例する形にまとまり，解は「振動 × 回転因子 e^{−iΩt}」になる．",
   "tags": "コリオリ力,フーコーの振り子,複素座標",
-  "input": "(1) {-ω sin(φ)+sqrt(ω^2 sin(φ)^2+ω_0^2), -ω sin(φ)-sqrt(ω^2 sin(φ)^2+ω_0^2)}\n(2) ω sin(φ)\n(3) 周期 [h]：≈41.7"
+  "input": "(1) {-ω sin(φ)+sqrt(ω^2 sin(φ)^2+ω_0^2), -ω sin(φ)-sqrt(ω^2 sin(φ)^2+ω_0^2)}\n(2) ω sin(φ)\n(3) $T_F$：T_s/sin(φ) ; 倍率：2",
+  "id": "ME-04-004"
  },
  {
   "tid": "ME-20",
@@ -277,7 +296,8 @@
   "solution": "管とともに回転する座標系で，管に沿った方向には遠心力 $m\\omega^2r$ と重力の成分 $-mg\\sin\\omega t$ がはたらく（コリオリ力と垂直抗力は管に垂直）．よって\n\\[ \\ddot r - \\omega^2r = -g\\sin\\omega t . \\]\n管に垂直な方向のつりあい（回転系では玉はこの方向に動かない）は\n\\[ 0 = N - 2m\\omega\\dot r - mg\\cos\\omega t . \\]\n\n(1) 特解を $r_{\\mathrm{p}} = C\\sin\\omega t$ とおくと $-2\\omega^2C = -g$，$C = \\dfrac{g}{2\\omega^2}$．一般解は $r = Ae^{\\omega t} + Be^{-\\omega t} + \\dfrac{g}{2\\omega^2}\\sin\\omega t$．初期条件から $A + B = r_0$，$\\omega(A-B) + \\dfrac{g}{2\\omega} = 0$，よって\n\\[ A = \\dfrac{1}{2}\\left(r_0 - \\dfrac{g}{2\\omega^2}\\right) . \\]\n有界であるには $A = 0$，すなわち $\\boldsymbol{r_0 = \\dfrac{g}{2\\omega^2}}$．\n\n(2) このとき $B = r_0$ で $\\boldsymbol{r(t) = \\dfrac{g}{2\\omega^2}\\left(e^{-\\omega t} + \\sin\\omega t\\right)}$．十分時間が経つと O を中心に振幅 $g/(2\\omega^2)$ の単振動になる．\n\n(3) $t\\to\\infty$ で $\\dot r = \\dfrac{g}{2\\omega}\\cos\\omega t$．垂直方向の式に代入して\n\\[ \\boldsymbol{N = 2m\\omega\\cdot\\dfrac{g}{2\\omega}\\cos\\omega t + mg\\cos\\omega t = 2mg\\cos\\omega t} . \\]\n慣性系で見ると，玉の運動は $x = r\\cos\\omega t$，$y = r\\sin\\omega t$ から $y = \\frac{g}{4\\omega^2}(1-\\cos2\\omega t)$ となり，コリオリ力の寄与と重力の寄与が同じ大きさになっている．",
   "idea": "回転系で管方向の運動方程式（遠心力＋重力成分）を解き，増大解の係数を 0 にする．垂直方向はコリオリ力を含めたつりあい．",
   "tags": "回転座標系,コリオリ力,強制振動,非斉次微分方程式",
-  "input": "(1) g/(2ω^2)\n(2) (g/(2ω^2))(exp(-ω t)+sin(ω t))\n(3) 2m g cos(ω t)"
+  "input": "(1) g/(2ω^2)\n(2) (g/(2ω^2))(exp(-ω t)+sin(ω t))\n(3) 2m g cos(ω t)",
+  "id": "ME-04-005"
  },
  {
   "tid": "ME-21",
@@ -291,7 +311,8 @@
   "solution": "質量 $M$，重心まわりの慣性モーメント $I$，摩擦力 $f$（斜面上向き）とすると\n\\[ Ma = Mg\\sin\\alpha - f,\\qquad I\\dot\\omega = fR,\\qquad a = R\\dot\\omega . \\]\nこれより $a = \\dfrac{g\\sin\\alpha}{1 + I/(MR^2)}$，$f = \\dfrac{I}{R^2}a$．\n\n(1) 円柱 $I = \\dfrac{1}{2}MR^2$：$\\boldsymbol{a_1 = \\dfrac{2}{3}g\\sin\\alpha}$．\n\n(2) 球 $I = \\dfrac{2}{5}MR^2$：$\\boldsymbol{a_2 = \\dfrac{5}{7}g\\sin\\alpha}$．\n\n(3) 球では $f = \\dfrac{2}{5}Ma_2 = \\dfrac{2}{7}Mg\\sin\\alpha$．これが $\\mu Mg\\cos\\alpha$ 以下であればよいので $\\boldsymbol{\\mu\\ge\\dfrac{2}{7}\\tan\\alpha}$．",
   "idea": "重心の並進と重心まわりの回転の式を，転がり条件 a = Rω̇ でつなぐ．",
   "tags": "慣性モーメント,転がり運動,摩擦",
-  "input": "(1) 2g sin(α)/3\n(2) 5g sin(α)/7\n(3) 2tan(α)/7"
+  "input": "(1) 2g sin(α)/3\n(2) 5g sin(α)/7\n(3) 2tan(α)/7",
+  "id": "ME-05-001"
  },
  {
   "tid": "ME-22",
@@ -305,7 +326,8 @@
   "solution": "球の重心まわりの慣性モーメントは $I = \\dfrac{2}{5}mR^2$．\n\n(1) 撃力の力積を $J$ とすると $mv = J$，$I\\omega = Jh$．滑らない条件 $v = R\\omega$ に代入して $\\dfrac{J}{m} = \\dfrac{RJh}{\\frac{2}{5}mR^2}$，よって $\\boldsymbol{h = \\dfrac{2R}{5}}$．\n\n(2) 滑っている間，動摩擦力 $\\mu mg$ が後ろ向きにはたらく：\n\\[ \\dot v = -\\mu g,\\qquad I\\dot\\omega = \\mu mgR \\;\\Rightarrow\\; \\dot\\omega = \\dfrac{5\\mu g}{2R} . \\]\n$v = v_0 - \\mu gt$ と $R\\omega = \\dfrac{5}{2}\\mu gt$ が等しくなる時刻は $\\boldsymbol{t_1 = \\dfrac{2v_0}{7\\mu g}}$．\n\n(3) $v_1 = v_0 - \\mu gt_1 = \\boldsymbol{\\dfrac{5}{7}v_0}$．（台との接点まわりの角運動量 $mv_0R$ が保存することからも $mv_1R + I v_1/R = mv_0R$ で同じ結果が出る．）\n運動エネルギーは $\\dfrac{1}{2}mv_1^2 + \\dfrac{1}{2}I\\dfrac{v_1^2}{R^2} = \\dfrac{7}{10}mv_1^2 = \\dfrac{5}{14}mv_0^2$．初めの $\\dfrac{1}{2}mv_0^2$ に対する割合は $\\dfrac{5}{7}$ なので，失われる割合は $\\boldsymbol{\\dfrac{2}{7}}$．",
   "idea": "撃力では力積と角力積の比が打点の高さを決める．滑り→転がりでは接点まわりの角運動量が保存する．",
   "tags": "撃心,剛体,摩擦,角運動量保存",
-  "input": "(1) 2R/5\n(2) 2v_0/(7μ g)\n(3) 速さ：5v_0/7 ; 割合：2/7"
+  "input": "(1) 2R/5\n(2) 2v_0/(7μ g)\n(3) 速さ：5v_0/7 ; 割合：2/7",
+  "id": "ME-05-002"
  },
  {
   "tid": "ME-23",
@@ -319,7 +341,8 @@
   "solution": "(1) 支点まわりの慣性モーメントは平行軸の定理で $I = m\\left(\\dfrac{l^2}{12} + x^2\\right)$．運動方程式 $I\\ddot\\theta = -mgx\\sin\\theta\\approx -mgx\\theta$ より\n\\[ \\boldsymbol{T = 2\\pi\\sqrt{\\dfrac{I}{mgx}} = 2\\pi\\sqrt{\\dfrac{l^2/12+x^2}{gx}}} . \\]\n\n(2) $f(x) = \\dfrac{l^2}{12x} + x$ を最小化する．$f'(x) = -\\dfrac{l^2}{12x^2} + 1 = 0$ より $\\boldsymbol{x = \\dfrac{l}{2\\sqrt{3}}}$（重心まわりの回転半径に等しい）．\n\n(3) このとき $f = 2x = \\dfrac{l}{\\sqrt{3}}$ なので $\\boldsymbol{T_{\\min} = 2\\pi\\sqrt{\\dfrac{l}{\\sqrt{3}\\,g}}}$．\n支点を重心に近づけすぎても（復元トルクが小さい）遠ざけすぎても（慣性モーメントが大きい）周期は長くなる．",
   "idea": "平行軸の定理で慣性モーメントを書き，相当単振り子の長さ I/(mx) を最小化する．",
   "tags": "剛体振り子,平行軸の定理,回転半径",
-  "input": "(1) 2pi sqrt((l^2/12+x^2)/(g x))\n(2) l/(2sqrt(3))\n(3) 2pi sqrt(l/(sqrt(3) g))"
+  "input": "(1) 2pi sqrt((l^2/12+x^2)/(g x))\n(2) l/(2sqrt(3))\n(3) 2pi sqrt(l/(sqrt(3) g))",
+  "id": "ME-05-003"
  },
  {
   "tid": "ME-24",
@@ -333,7 +356,8 @@
   "solution": "壁を $y$ 軸，床を $x$ 軸とすると，両端が接している間の重心は $\\left(\\dfrac{l}{2}\\sin\\theta,\\,\\dfrac{l}{2}\\cos\\theta\\right)$ で，原点を中心とする半径 $l/2$ の円の上を動く．\n\n(1) 重心の速さは $\\dfrac{l}{2}\\dot\\theta$．エネルギー保存より\n\\[ \\dfrac{1}{2}m\\left(\\dfrac{l}{2}\\right)^2\\dot\\theta^2 + \\dfrac{1}{2}\\cdot\\dfrac{ml^2}{12}\\dot\\theta^2 = \\dfrac{mgl}{2}(\\cos\\theta_0-\\cos\\theta) \\]\nすなわち $\\boldsymbol{\\dot\\theta^2 = \\dfrac{3g}{l}(\\cos\\theta_0-\\cos\\theta)}$．\n\n(2) 壁からの垂直抗力は重心の水平方向の運動方程式 $N_{\\mathrm{w}} = m\\ddot x_{\\mathrm{G}}$ で決まる．$\\dot x_{\\mathrm{G}} = \\dfrac{l}{2}\\cos\\theta\\,\\dot\\theta \\propto \\cos\\theta\\sqrt{\\cos\\theta_0-\\cos\\theta}$ が最大のとき $N_{\\mathrm{w}} = 0$ となり，それ以降は負になれないので上端が離れる．$c = \\cos\\theta$ として $c^2(\\cos\\theta_0 - c)$ を最大化すると $2c\\cos\\theta_0 - 3c^2 = 0$，よって $\\boldsymbol{\\cos\\theta = \\dfrac{2}{3}\\cos\\theta_0}$．（高さが初めの $2/3$ になったとき．）\n\n(3) (1) に代入して $\\dot\\theta^2 = \\dfrac{3g}{l}\\cdot\\dfrac{\\cos\\theta_0}{3}$，$\\boldsymbol{\\dot\\theta = \\sqrt{\\dfrac{g\\cos\\theta_0}{l}}}$．",
   "idea": "拘束がある間は重心が円運動．壁の抗力 = m ẍ_G が 0 になる＝重心の水平速度が最大になる点で拘束が外れる．",
   "tags": "剛体,拘束力,エネルギー保存,はしご",
-  "input": "(1) 3g(cos(θ_0)-cos(θ))/l\n(2) 2cos(θ_0)/3\n(3) sqrt(g cos(θ_0)/l)"
+  "input": "(1) 3g(cos(θ_0)-cos(θ))/l\n(2) 2cos(θ_0)/3\n(3) sqrt(g cos(θ_0)/l)",
+  "id": "ME-05-004"
  },
  {
   "tid": "ME-25",
@@ -347,6 +371,7 @@
   "solution": "$\\phi$，$\\psi$ は循環座標なので $p_\\psi = I_3\\omega_3$ は保存し，$\\omega_3$ は一定．$\\theta$ のラグランジュ方程式は\n\\[ I_1\\ddot\\theta = I_1\\dot\\phi^2\\sin\\theta\\cos\\theta - I_3\\omega_3\\dot\\phi\\sin\\theta + Mgl\\sin\\theta . \\]\n\n(1) $\\ddot\\theta = 0$，$\\dot\\phi = \\Omega$ とおいて $\\sin\\theta$ で割ると\n\\[ I_1\\cos\\theta\\,\\Omega^2 - I_3\\omega_3\\Omega + Mgl = 0 , \\]\n\\[ \\boldsymbol{\\Omega = \\dfrac{I_3\\omega_3 \\pm \\sqrt{I_3^2\\omega_3^2 - 4I_1Mgl\\cos\\theta}}{2I_1\\cos\\theta}} . \\]\n\n(2) $\\Omega$ が実数であるには判別式 $\\ge0$：$\\boldsymbol{\\omega_3 \\ge \\dfrac{2\\sqrt{I_1Mgl\\cos\\theta}}{I_3}}$．\n\n(3) $\\epsilon = \\dfrac{4I_1Mgl\\cos\\theta}{I_3^2\\omega_3^2}\\ll 1$ として $\\sqrt{1-\\epsilon}\\approx1-\\epsilon/2$．負号の根は\n\\[ \\Omega_- \\approx \\dfrac{I_3\\omega_3}{2I_1\\cos\\theta}\\cdot\\dfrac{\\epsilon}{2} = \\boldsymbol{\\dfrac{Mgl}{I_3\\omega_3}} \\]\nで，重力のトルク $Mgl\\sin\\theta$ が角運動量 $I_3\\omega_3$ の水平成分 $I_3\\omega_3\\sin\\theta$ を回すという初等的なジャイロの式と一致する．正号の根 $\\Omega_+\\approx\\dfrac{I_3\\omega_3}{I_1\\cos\\theta}$ は速い歳差（重力によらない自由な章動に対応）である．",
   "idea": "循環座標から ω₃ が保存．θ 方程式で θ̈ = 0 とおくと Ω の2次方程式になり，判別式が条件，小さい根がジャイロ近似．",
   "tags": "対称こま,オイラー角,歳差運動,循環座標",
-  "input": "(1) {(I_3 ω_3+sqrt(I_3^2 ω_3^2-4I_1 M g l cos(θ)))/(2I_1 cos(θ)), (I_3 ω_3-sqrt(I_3^2 ω_3^2-4I_1 M g l cos(θ)))/(2I_1 cos(θ))}\n(2) 2sqrt(I_1 M g l cos(θ))/I_3\n(3) M g l/(I_3 ω_3)"
+  "input": "(1) {(I_3 ω_3+sqrt(I_3^2 ω_3^2-4I_1 M g l cos(θ)))/(2I_1 cos(θ)), (I_3 ω_3-sqrt(I_3^2 ω_3^2-4I_1 M g l cos(θ)))/(2I_1 cos(θ))}\n(2) 2sqrt(I_1 M g l cos(θ))/I_3\n(3) M g l/(I_3 ω_3)",
+  "id": "ME-05-005"
  }
 ]

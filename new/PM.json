@@ -11,7 +11,8 @@
   "solution": "$\\nabla\\cdot(f(r)\\boldsymbol{r})=3f+rf'(r)$ を使う．$f=r^{-3}$ なら $3r^{-3}+r\\cdot(-3r^{-4})=0$．よって $r\\neq0$ で $\\boldsymbol{\\nabla\\cdot F=0}$．\n\n球面上では $\\boldsymbol{F}\\cdot d\\boldsymbol{S}=\\dfrac{1}{R^2}\\,R^2 d\\Omega=d\\Omega$ なので，流束は全立体角 $\\boldsymbol{4\\pi}$ に等しい．半径 $R$ によらない．\n\n(1) より，原点を含む任意の閉曲面の流束は，その内側の小球面の流束 $4\\pi$ に等しい（間の領域では発散が $0$）．したがって $\\nabla\\cdot(\\boldsymbol{r}/r^3)=4\\pi\\delta^3(\\boldsymbol{r})$ であり，立方体を貫く電束は $\\dfrac{q}{4\\pi\\varepsilon_0}\\cdot4\\pi=\\boldsymbol{\\dfrac{q}{\\varepsilon_0}}$．\n\n対称性より6つの面の電束は等しいから，1面あたり $\\boldsymbol{\\dfrac{q}{6\\varepsilon_0}}$．",
   "idea": "$\\boldsymbol{r}/r^3$ は原点以外で発散が $0$ なので，閉曲面の流束は原点を囲むかどうかだけで決まり，その値は立体角 $4\\pi$ である．",
   "tags": "発散,ガウスの定理,立体角,デルタ関数",
-  "input": "(1) 0\n(2) 4pi\n(3) q/epsilon_0\n(4) q/(6epsilon_0)"
+  "input": "(1) 0\n(2) 4pi\n(3) q/epsilon_0\n(4) q/(6epsilon_0)",
+  "id": "PM-01-001"
  },
  {
   "tid": "PM-02",
@@ -25,7 +26,8 @@
   "solution": "$(\\nabla\\times\\boldsymbol{A})_z=\\partial_x A_y-\\partial_y A_x=\\dfrac{B}{2}+\\dfrac{B}{2}=B$，他の成分は $0$．よって $\\boldsymbol{\\nabla\\times A=(0,0,B)}$．\n\n$\\partial_x\\chi=-\\dfrac{By}{2}$，$\\partial_y\\chi=-\\dfrac{Bx}{2}$ を満たせばよい．両方を満たすのは $\\boldsymbol{\\chi=-\\dfrac{Bxy}{2}}$．$\\nabla\\times\\nabla\\chi=0$ なので磁場は変わらない．\n\n円上で $\\boldsymbol{A}$ は接線方向を向き，大きさは $Ba/2$．よって $\\oint\\boldsymbol{A}\\cdot d\\boldsymbol{l}=\\dfrac{Ba}{2}\\cdot2\\pi a=\\boldsymbol{\\pi a^2B}$．ストークスの定理より，これは円を貫く磁束 $\\pi a^2B$ に等しく，ゲージによらない．",
   "idea": "ベクトルポテンシャルはスカラー関数の勾配だけ不定であり，閉路の周回積分（＝磁束）はゲージ不変である．",
   "tags": "回転,ベクトルポテンシャル,ゲージ変換,ストークスの定理",
-  "input": "(1) (0, 0, B)\n(2) -B x y/2\n(3) pi a^2 B"
+  "input": "(1) (0, 0, B)\n(2) -B x y/2\n(3) pi a^2 B",
+  "id": "PM-01-002"
  },
  {
   "tid": "PM-03",
@@ -39,7 +41,8 @@
   "solution": "$r^2\\dfrac{d}{dr}r^n=nr^{n+1}$，これを微分して $r^2$ で割ると $\\boldsymbol{n(n+1)r^{n-2}}$．$n=0,-1$ で $0$ になり，これが $1$ と $1/r$ が調和関数である理由である．\n\n(1) で $n=2$ とすると $\\nabla^2(Ar^2)=6A$．これが $-\\rho_0/\\varepsilon_0$ なので $\\boldsymbol{A=-\\dfrac{\\rho_0}{6\\varepsilon_0}}$．\n\n$r=R$ での連続性：$-\\dfrac{\\rho_0R^2}{6\\varepsilon_0}+C=\\dfrac{\\rho_0R^2}{3\\varepsilon_0}$ より $C=\\dfrac{\\rho_0R^2}{2\\varepsilon_0}$．（微分も $-\\dfrac{\\rho_0R}{3\\varepsilon_0}$ で一致する．）よって $\\boldsymbol{\\phi(0)=C=\\dfrac{\\rho_0R^2}{2\\varepsilon_0}}$ で，表面の電位の $3/2$ 倍である．",
   "idea": "球対称ラプラシアンを $r^n$ に作用させれば，ポアソン方程式の特解（$r^2$）と斉次解（$1,1/r$）がすぐに得られる．",
   "tags": "ラプラシアン,ポアソン方程式,球対称,電位",
-  "input": "(1) n(n+1) r^(n-2)\n(2) -rho_0/(6epsilon_0)\n(3) rho_0 R^2/(2epsilon_0)"
+  "input": "(1) n(n+1) r^(n-2)\n(2) -rho_0/(6epsilon_0)\n(3) rho_0 R^2/(2epsilon_0)",
+  "id": "PM-01-003"
  },
  {
   "tid": "PM-04",
@@ -53,7 +56,8 @@
   "solution": "公式 $\\nabla\\times(\\boldsymbol{m}\\times\\boldsymbol{G})=\\boldsymbol{m}(\\nabla\\cdot\\boldsymbol{G})-(\\boldsymbol{m}\\cdot\\nabla)\\boldsymbol{G}$ を $\\boldsymbol{G}=\\boldsymbol{r}/r^3$ に使う（$r\\neq0$ で $\\nabla\\cdot\\boldsymbol{G}=0$）と\n\\[\\boldsymbol{B}=\\frac{\\mu_0}{4\\pi}\\,\\frac{3(\\boldsymbol{m}\\cdot\\hat{\\boldsymbol{r}})\\hat{\\boldsymbol{r}}-\\boldsymbol{m}}{r^3}.\\]\n$z$ 軸上では $\\hat{\\boldsymbol{r}}=\\boldsymbol{e}_z$ なので $\\boldsymbol{B_z=\\dfrac{\\mu_0m}{2\\pi z^3}}$．\n\n赤道面では $\\boldsymbol{m}\\cdot\\hat{\\boldsymbol{r}}=0$ なので $\\boldsymbol{B_z=-\\dfrac{\\mu_0m}{4\\pi\\rho^3}}$（双極子と逆向き）．\n\n$\\displaystyle\\int_a^\\infty\\left(-\\frac{\\mu_0m}{4\\pi\\rho^3}\\right)2\\pi\\rho\\,d\\rho=\\boldsymbol{-\\frac{\\mu_0m}{2a}}$．\n\n$\\nabla\\cdot\\boldsymbol{B}=0$ より，無限平面全体を貫く磁束は $0$ である（ループの内側を上向きに通った磁力線は必ず外側を下向きに戻る）．よって円板を貫く磁束は $\\boldsymbol{\\dfrac{\\mu_0m}{2a}}$．点双極子では原点に特異性があるが，有限の小ループとみなせばこの値になる．",
   "idea": "双極子場は $\\boldsymbol{m}\\times\\boldsymbol{r}/r^3$ の回転として機械的に計算でき，$\\nabla\\cdot\\boldsymbol{B}=0$ から「平面を貫く正味の磁束は0」がいえる．",
   "tags": "回転,磁気双極子,磁束,発散",
-  "input": "(1) mu_0 m/(2pi z^3)\n(2) -mu_0 m/(4pi rho^3)\n(3) -mu_0 m/(2a)\n(4) mu_0 m/(2a)"
+  "input": "(1) mu_0 m/(2pi z^3)\n(2) -mu_0 m/(4pi rho^3)\n(3) -mu_0 m/(2a)\n(4) mu_0 m/(2a)",
+  "id": "PM-01-004"
  },
  {
   "tid": "PM-05",
@@ -67,7 +71,8 @@
   "solution": "円板の縁を見込む半頂角を $\\alpha$（$\\cos\\alpha=z/\\sqrt{z^2+a^2}$）とすると，円錐の立体角は $\\int_0^{\\alpha}2\\pi\\sin\\theta\\,d\\theta=2\\pi(1-\\cos\\alpha)$．よって\n\\[\\boldsymbol{\\Omega=2\\pi\\left(1-\\frac{z}{\\sqrt{z^2+a^2}}\\right)}.\\]\n\n$\\dfrac{d\\Omega}{dz}=-\\dfrac{2\\pi a^2}{(z^2+a^2)^{3/2}}$ より\n\\[|B_z|=\\mu_0\\frac{I}{4\\pi}\\left|\\frac{d\\Omega}{dz}\\right|=\\boldsymbol{\\frac{\\mu_0Ia^2}{2(z^2+a^2)^{3/2}}}.\\]\nビオ＝サバールの法則による結果と一致する．\n\nループのすぐ上（$z\\to+0$）で $\\Omega\\to2\\pi$，すぐ下で $\\Omega\\to-2\\pi$ なので，円板を横切ると $\\Omega$ は $4\\pi$ 跳ぶ．ループの外側を回って戻る経路では $\\Omega$ は連続に $4\\pi$ 変化する．よって $\\phi_m$ の変化は $\\dfrac{I}{4\\pi}\\cdot4\\pi=\\boldsymbol{I}$．これはアンペールの法則 $\\oint\\boldsymbol{H}\\cdot d\\boldsymbol{l}=I$ そのもので，$\\phi_m$ が多価関数であることを表す．\n\n$z\\gg a$ で $|B_z|\\approx\\dfrac{\\mu_0Ia^2}{2z^3}=\\dfrac{\\mu_0}{2\\pi z^3}(\\pi a^2I)$．よって $\\boldsymbol{m=\\pi a^2I}$（電流×面積）．",
   "idea": "電流のない領域では磁場はスカラーポテンシャルで書けるが，電流ループを囲む領域は単連結でないため $\\phi_m$ は多価になり，一周での跳びがアンペールの法則を再現する．",
   "tags": "立体角,磁気スカラーポテンシャル,多価関数,アンペールの法則",
-  "input": "(1) 2pi(1-z/sqrt(z^2+a^2))\n(2) mu_0 I a^2/(2(z^2+a^2)^(3/2))\n(3) I\n(4) pi a^2 I"
+  "input": "(1) 2pi(1-z/sqrt(z^2+a^2))\n(2) mu_0 I a^2/(2(z^2+a^2)^(3/2))\n(3) I\n(4) pi a^2 I",
+  "id": "PM-01-005"
  },
  {
   "tid": "PM-06",
@@ -81,7 +86,8 @@
   "solution": "特性方程式 $(5-\\lambda)(2-\\lambda)-4=\\lambda^2-7\\lambda+6=0$ より $\\lambda=1,6$．主慣性モーメントは $\\boldsymbol{I_0,\\ 6I_0}$．\n\n$\\lambda=6$ のとき $(5-6)x+2y=0$ より固有ベクトルは $(2,1)$．よって $\\boldsymbol{\\tan\\theta=\\dfrac12}$．もう1つの固有ベクトル $(1,-2)$ はこれと直交する（対称行列の固有ベクトルは直交する）．\n\n$\\boldsymbol{\\omega}^TI\\boldsymbol{\\omega}=\\dfrac{\\omega^2}{2}I_0(5+2+2+2)=\\dfrac{11}{2}I_0\\omega^2$ なので，運動エネルギーは $\\boldsymbol{\\dfrac{11I_0\\omega^2}{4}}$．",
   "idea": "実対称行列は直交行列で対角化でき，固有値が主慣性モーメント，固有ベクトルが主軸になる．",
   "tags": "固有値,対称行列,慣性テンソル,主軸",
-  "input": "(1) {I_0, 6I_0}\n(2) 1/2\n(3) 11I_0 omega^2/4"
+  "input": "(1) {I_0, 6I_0}\n(2) 1/2\n(3) 11I_0 omega^2/4",
+  "id": "PM-02-001"
  },
  {
   "tid": "PM-07",
@@ -95,7 +101,8 @@
   "solution": "$\\det(K-\\lambda)=(2-\\lambda)\\{(2-\\lambda)^2-2\\}=0$ より $\\boldsymbol{\\lambda=2-\\sqrt2,\\ 2,\\ 2+\\sqrt2}$．\n\n$\\boldsymbol{x}=\\boldsymbol{a}e^{i\\omega t}$ を代入すると $m\\omega^2\\boldsymbol{a}=kK\\boldsymbol{a}$ なので $\\omega^2=k\\lambda/m$．最小は $\\boldsymbol{\\omega=\\sqrt{\\dfrac{(2-\\sqrt2)k}{m}}}$．\n\n$\\lambda=2-\\sqrt2$ のとき1行目から $\\sqrt2a_1-a_2=0$，よって $\\boldsymbol{a_2/a_1=\\sqrt2}$．固有ベクトルは $(1,\\sqrt2,1)$ で，3つが同じ向きに動く．\n\n$\\lambda=2$ の固有ベクトルは $(1,0,-1)$．中央の質点は静止したまま両端が逆位相で振動するので，振幅は $\\boldsymbol{0}$．",
   "idea": "連成振動は $\\omega^2$ を固有値とする行列の固有値問題になる．固有ベクトルの対称・反対称性は系の鏡映対称性から予想できる．",
   "tags": "固有値,連成振動,基準振動",
-  "input": "(1) {2-sqrt(2), 2, 2+sqrt(2)}\n(2) sqrt((2-sqrt(2))k/m)\n(3) sqrt(2)\n(4) 0"
+  "input": "(1) {2-sqrt(2), 2, 2+sqrt(2)}\n(2) sqrt((2-sqrt(2))k/m)\n(3) sqrt(2)\n(4) 0",
+  "id": "PM-02-002"
  },
  {
   "tid": "PM-08",
@@ -109,7 +116,8 @@
   "solution": "$\\sigma_x$ の固有値は $\\pm1$ なので $H$ の固有値は $\\boldsymbol{\\pm\\dfrac{\\hbar\\omega}{2}}$．\n\n$\\sigma_x^2=1$ より指数関数のべき級数を偶数次と奇数次に分けて\n\\[U(t)=\\cos\\frac{\\omega t}{2}-i\\sigma_x\\sin\\frac{\\omega t}{2}.\\]\n$U|{\\uparrow}\\rangle=\\cos\\frac{\\omega t}{2}|{\\uparrow}\\rangle-i\\sin\\frac{\\omega t}{2}|{\\downarrow}\\rangle$ なので確率は $\\boldsymbol{\\sin^2\\left(\\dfrac{\\omega t}{2}\\right)}$．\n\n状態 $(c,\\,-is)^T$（$c=\\cos\\frac{\\omega t}{2},\\ s=\\sin\\frac{\\omega t}{2}$）で $\\langle\\sigma_z\\rangle=c^2-s^2=\\boldsymbol{\\cos\\omega t}$，$\\langle\\sigma_y\\rangle=c(-s)+(is)(ic)=-2sc=\\boldsymbol{-\\sin\\omega t}$．スピンは $x$ 軸のまわりを角速度 $\\omega$ で歳差運動する．",
   "idea": "$(\\boldsymbol{n}\\cdot\\boldsymbol{\\sigma})^2=1$ を使うと，パウリ行列の指数関数は $\\cos$ と $\\sin$ の組に閉じた形で書ける．",
   "tags": "パウリ行列,行列の指数関数,ラビ振動,歳差運動",
-  "input": "(1) {hbar omega/2, -hbar omega/2}\n(2) sin(omega t/2)^2\n(3) ⟨σ_z⟩：cos(omega t) ; ⟨σ_y⟩：-sin(omega t)"
+  "input": "(1) {hbar omega/2, -hbar omega/2}\n(2) sin(omega t/2)^2\n(3) ⟨σ_z⟩：cos(omega t) ; ⟨σ_y⟩：-sin(omega t)",
+  "id": "PM-02-003"
  },
  {
   "tid": "PM-09",
@@ -123,7 +131,8 @@
   "solution": "$(H\\psi)_j=-t(\\psi_{j+1}+\\psi_{j-1})=-t\\left(e^{2\\pi ik/N}+e^{-2\\pi ik/N}\\right)\\psi_j$．周期境界条件 $\\psi_{N+1}=\\psi_1$ は $e^{2\\pi ik}=1$ により満たされる．よって\n\\[\\boldsymbol{E_k=-2t\\cos\\frac{2\\pi k}{N}}.\\]\n\n$N=6$ では $k=0,\\dots,5$ で $\\cos(\\pi k/3)=1,\\frac12,-\\frac12,-1,-\\frac12,\\frac12$．固有値は $\\boldsymbol{-2t,\\ -t,\\ t,\\ 2t}$（$\\pm t$ は2重に縮退）．\n\n低い方から $-2t,-t,-t$ に1個ずつ入れて $\\boldsymbol{-4t}$．縮退した $-t$ の2準位はちょうど満たされるので基底状態は一意である．",
   "idea": "並進対称な（巡回）行列はフーリエ基底で対角化される．これが固体のブロッホの定理の離散版である．",
   "tags": "巡回行列,強束縛模型,ブロッホの定理,縮退",
-  "input": "(1) -2t cos(2pi k/N)\n(2) {-2t, -t, t, 2t}\n(3) -4t"
+  "input": "(1) -2t cos(2pi k/N)\n(2) {-2t, -t, t, 2t}\n(3) -4t",
+  "id": "PM-02-004"
  },
  {
   "tid": "PM-10",
@@ -137,7 +146,8 @@
   "solution": "$\\boldsymbol{S}_1\\cdot\\boldsymbol{S}_2=\\frac12\\left(S^2-\\frac32\\right)$ で，$S=1$ なら $\\frac14$，$S=0$ なら $-\\frac34$．よって 3重項 $\\boldsymbol{\\dfrac J4}$，1重項 $\\boldsymbol{-\\dfrac{3J}{4}}$．\n\n$\\boldsymbol{S}_1\\cdot\\boldsymbol{S}_2=S_1^zS_2^z+\\frac12(S_1^+S_2^-+S_1^-S_2^+)$ を使うと，部分空間で\n\\[H=\\begin{pmatrix}-\\frac J4+h&\\frac J2\\\\[2pt]\\frac J2&-\\frac J4-h\\end{pmatrix}.\\]\n固有値は $-\\frac J4\\pm\\sqrt{\\frac{J^2}{4}+h^2}$ で，$|{\\uparrow\\uparrow}\\rangle,|{\\downarrow\\downarrow}\\rangle$ のエネルギー $\\frac J4$ より低い方が基底状態：\n\\[\\boldsymbol{E_0=-\\frac J4-\\frac{\\sqrt{J^2+4h^2}}{2}}.\\]\n\n$-\\frac J4$ を除いた行列 $\\begin{pmatrix}h&J/2\\\\J/2&-h\\end{pmatrix}=\\frac{\\Delta}{2}(\\cos\\varphi\\,\\sigma_z+\\sin\\varphi\\,\\sigma_x)$（$\\Delta=\\sqrt{J^2+4h^2}$，$\\tan\\varphi=J/2h$）の下の固有ベクトルは $(\\sin\\frac\\varphi2,\\,-\\cos\\frac\\varphi2)$．1重項との重なりの2乗は $\\frac12(\\sin\\frac\\varphi2+\\cos\\frac\\varphi2)^2=\\frac12(1+\\sin\\varphi)$ で，\n\\[\\boldsymbol{P=\\frac12\\left(1+\\frac{J}{\\sqrt{J^2+4h^2}}\\right)}.\\]\n$h\\to0$ で $1$（純粋な1重項），$h\\to\\infty$ で $\\frac12$（ネール状態 $|{\\downarrow\\uparrow}\\rangle$）に近づく．",
   "idea": "全 $S^z$ が保存するので4次元の問題が $2\\times2$ のブロックに分かれ，ブロックはパウリ行列の1次結合として対角化できる．",
   "tags": "ハイゼンベルク模型,ブロック対角化,スピン1重項,院試",
-  "input": "(1) 3重項：J/4 ; 1重項：-3 J/4\n(2) -J/4-sqrt(J^2+4h^2)/2\n(3) (1+J/sqrt(J^2+4h^2))/2"
+  "input": "(1) 3重項：J/4 ; 1重項：-3 J/4\n(2) -J/4-sqrt(J^2+4h^2)/2\n(3) (1+J/sqrt(J^2+4h^2))/2",
+  "id": "PM-02-005"
  },
  {
   "tid": "PM-11",
@@ -151,7 +161,8 @@
   "solution": "$\\lambda^2+4\\lambda+13=0$ より $\\lambda=-2\\pm3i$．減衰率 $\\boldsymbol{\\gamma=2}$，角振動数 $\\boldsymbol{3}$．\n\n$x=e^{-2t}(A\\cos3t+B\\sin3t)$ とおくと $x(0)=A=1$，$\\dot x(0)=-2A+3B=0$ より $B=\\frac23$．\n\\[\\boldsymbol{x=e^{-2t}\\left(\\cos3t+\\frac23\\sin3t\\right)}.\\]\n\n判別式 $c^2-52=0$ のとき重根になるので $\\boldsymbol{c=2\\sqrt{13}}$．",
   "idea": "定数係数線形微分方程式は $e^{\\lambda t}$ を代入して特性方程式に帰着し，複素根の実部が減衰率，虚部が角振動数を与える．",
   "tags": "線形微分方程式,特性方程式,減衰振動,臨界減衰",
-  "input": "(1) 減衰率：2 ; 角振動数：3\n(2) e^(-2t)(cos(3t)+2/3 sin(3t))\n(3) 2sqrt(13)"
+  "input": "(1) 減衰率：2 ; 角振動数：3\n(2) e^(-2t)(cos(3t)+2/3 sin(3t))\n(3) 2sqrt(13)",
+  "id": "PM-03-001"
  },
  {
   "tid": "PM-12",
@@ -165,7 +176,8 @@
   "solution": "代入して $(\\omega_0^2-\\omega^2+2i\\gamma\\omega)X=F/m$．よって\n\\[\\boldsymbol{|X|=\\frac{F/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2+4\\gamma^2\\omega^2}}}.\\]\n\n分母の中身 $g(u)=(\\omega_0^2-u)^2+4\\gamma^2u$（$u=\\omega^2$）を最小にする．$g'(u)=-2(\\omega_0^2-u)+4\\gamma^2=0$ より $u=\\omega_0^2-2\\gamma^2$，$\\boldsymbol{\\omega_r=\\sqrt{\\omega_0^2-2\\gamma^2}}$．\n\n$g=4\\gamma^4+4\\gamma^2(\\omega_0^2-2\\gamma^2)=4\\gamma^2(\\omega_0^2-\\gamma^2)$ より最大振幅 $\\boldsymbol{\\dfrac{F}{2m\\gamma\\sqrt{\\omega_0^2-\\gamma^2}}}$．減衰が弱いとき $\\approx\\dfrac{F}{2m\\gamma\\omega_0}$．",
   "idea": "複素数表示で微分を $i\\omega$ に置き換えると，定常解は代数方程式の解になる．",
   "tags": "強制振動,複素数表示,共振",
-  "input": "(1) (F/m)/sqrt((omega_0^2-omega^2)^2+4gamma^2 omega^2)\n(2) sqrt(omega_0^2-2gamma^2)\n(3) F/(2m gamma sqrt(omega_0^2-gamma^2))"
+  "input": "(1) (F/m)/sqrt((omega_0^2-omega^2)^2+4gamma^2 omega^2)\n(2) sqrt(omega_0^2-2gamma^2)\n(3) F/(2m gamma sqrt(omega_0^2-gamma^2))",
+  "id": "PM-03-002"
  },
  {
   "tid": "PM-13",
@@ -179,7 +191,8 @@
   "solution": "$t>0$ で斉次方程式の解 $G=A\\sin\\omega t+B\\cos\\omega t$．$t=0$ で $G$ は連続（$G(0)=0$ より $B=0$），$\\dot G$ はデルタ関数を積分して $1$ だけ跳ぶ（$A\\omega=1$）．よって $\\boldsymbol{G=\\dfrac{\\sin\\omega t}{\\omega}}$．\n\n$x(t)=\\displaystyle\\int G(t-\\tau)\\frac{f(\\tau)}{m}d\\tau=\\frac{F}{m\\omega}\\int_0^T\\sin\\omega(t-\\tau)\\,d\\tau$．$t>T$ では\n\\[\\boldsymbol{x=\\frac{F}{m\\omega^2}\\left\\{\\cos\\omega(t-T)-\\cos\\omega t\\right\\}}.\\]\n\n和積公式で $x=\\dfrac{2F}{m\\omega^2}\\sin\\dfrac{\\omega T}{2}\\sin\\omega\\left(t-\\dfrac T2\\right)$．$0<\\omega T<2\\pi$ では $\\sin\\frac{\\omega T}{2}>0$ なので，振幅は $\\boldsymbol{\\dfrac{2F}{m\\omega^2}\\sin\\dfrac{\\omega T}{2}}$．$T$ が周期 $2\\pi/\\omega$ の整数倍なら，パルス後に振動は残らない．",
   "idea": "衝撃に対する応答（グリーン関数）を重ね合わせれば，任意の外力への応答が積分で書ける．",
   "tags": "グリーン関数,デルタ関数,強制振動,重ね合わせ",
-  "input": "(1) sin(omega t)/omega\n(2) F/(m omega^2) (cos(omega t-omega T)-cos(omega t))\n(3) 2F sin(omega T/2)/(m omega^2)"
+  "input": "(1) sin(omega t)/omega\n(2) F/(m omega^2) (cos(omega t-omega T)-cos(omega t))\n(3) 2F sin(omega T/2)/(m omega^2)",
+  "id": "PM-03-003"
  },
  {
   "tid": "PM-14",
@@ -193,7 +206,8 @@
   "solution": "$y''=\\sum(n+2)(n+1)a_{n+2}\\xi^n$，$\\xi y'=\\sum na_n\\xi^n$ より $(n+2)(n+1)a_{n+2}=2(n-\\nu)a_n$．\n\\[\\boldsymbol{\\frac{a_{n+2}}{a_n}=\\frac{2(n-\\nu)}{(n+1)(n+2)}}.\\]\n\n$\\nu=3$ なら $a_5=0$ で奇数列が止まる．$a_1$ から $a_3=\\frac{2(1-3)}{6}a_1=-\\frac23a_1$．$a_3=8$ とすると $a_1=-12$：$\\boldsymbol{y=8\\xi^3-12\\xi}$（エルミート多項式 $H_3$）．\n\n$\\boldsymbol{E=\\dfrac72\\hbar\\omega}$（第3励起状態）．\n\n級数が止まらないと，大きい $n$ で $a_{n+2}/a_n\\approx2/n$ となり，これは $e^{\\xi^2}=\\sum\\xi^{2k}/k!$ の係数比と同じ振る舞いである．すると $\\psi\\sim e^{\\xi^2/2}$ と発散し規格化できない．よって $\\nu=0,1,2,\\dots$ が必要で，これがエネルギーの量子化を与える．",
   "idea": "級数解の打ち切り条件（多項式になること）が，境界条件を通じて固有値の量子化を生む．",
   "tags": "級数解,エルミート多項式,調和振動子,量子化",
-  "input": "(1) 比 a_{n+2}/a_n：2(n-nu)/((n+1)(n+2))\n(2) 8xi^3-12xi\n(3) 7/2 hbar omega\n(4) 記述：級数が止まらないと y〜e^{ξ^2} で ψ が発散し規格化できない"
+  "input": "(1) 比 a_{n+2}/a_n：2(n-nu)/((n+1)(n+2))\n(2) 8xi^3-12xi\n(3) 7/2 hbar omega\n(4) 記述：級数が止まらないと y〜e^{ξ^2} で ψ が発散し規格化できない",
+  "id": "PM-03-004"
  },
  {
   "tid": "PM-15",
@@ -207,7 +221,8 @@
   "solution": "$x_0=A\\cos\\omega_0t$ のとき $\\ddot x_1+\\omega_0^2x_1=-A^3\\cos^3\\omega_0t=-\\dfrac{A^3}{4}(3\\cos\\omega_0t+\\cos3\\omega_0t)$．右辺に固有振動数と同じ $\\cos\\omega_0t$ があるので共振し，$t\\sin\\omega_0t$ に比例して増大する．これは振動数のずれを展開で表そうとした結果で，有限時間しか正しくない．\n\n$\\tau=\\omega t$ で $\\omega^2x''+\\omega_0^2x+\\epsilon x^3=0$．1次で\n$x=x_0+\\epsilon x_1$，$x_0=A\\cos\\tau$ として $\\epsilon$ の1次をとると\n\\[\\omega_0^2(x_1''+x_1)=-2\\omega_0\\omega_1x_0''-x_0^3=\\left(2\\omega_0\\omega_1A-\\frac34A^3\\right)\\cos\\tau-\\frac{A^3}{4}\\cos3\\tau.\\]\n$x_1$ が永年項を含まないためには $\\cos\\tau$ の係数が $0$，すなわち $\\omega_1=\\dfrac{3A^2}{8\\omega_0}$．よって\n\\[\\boldsymbol{\\omega=\\omega_0+\\frac{3\\epsilon A^2}{8\\omega_0}}.\\]\n（$\\epsilon>0$ の硬いばねでは振動数が上がる．数値解とも一致する．）\n\n$\\sin\\theta\\approx\\theta-\\theta^3/6$ は $\\epsilon=-\\omega_0^2/6$，$A=\\theta_0$ に当たる．$\\omega=\\omega_0\\left(1-\\dfrac{\\theta_0^2}{16}\\right)$ より $\\boldsymbol{\\dfrac{T}{T_0}=1+\\dfrac{\\theta_0^2}{16}}$．楕円積分による厳密な周期の展開と一致する．",
   "idea": "非線形性は振動数をずらす．時間変数を伸び縮みさせて振動数補正を取り込むと，共鳴による永年項を消せる．",
   "tags": "摂動法,永年項,ダフィング振動子,非線形振動,院試",
-  "input": "(1) 記述：x_0^3 が固有振動数と同じ cos ω_0 t を含み共振するため\n(2) omega_0+3epsilon A^2/(8omega_0)\n(3) 1+theta_0^2/16"
+  "input": "(1) 記述：x_0^3 が固有振動数と同じ cos ω_0 t を含み共振するため\n(2) omega_0+3epsilon A^2/(8omega_0)\n(3) 1+theta_0^2/16",
+  "id": "PM-03-005"
  },
  {
   "tid": "PM-16",
@@ -221,7 +236,8 @@
   "solution": "上半平面の大きな半円を加えた閉路で考える．極 $z=ia$ の留数は $\\dfrac{1}{2ia}$ なので $2\\pi i\\cdot\\dfrac{1}{2ia}=\\boldsymbol{\\dfrac{\\pi}{a}}$．\n\n$\\dfrac{e^{ikz}}{z^2+a^2}$ を同じ閉路で積分する（$k>0$ なので上半円上で $|e^{ikz}|\\le1$，ジョルダンの補題で半円の寄与は $0$）．留数 $\\dfrac{e^{-ka}}{2ia}$ より積分は $\\dfrac{\\pi e^{-ka}}{a}$ で，その実部が求める値 $\\boldsymbol{\\dfrac{\\pi e^{-ka}}{a}}$．\n\n$z=e^{i\\theta}$ とおくと $d\\theta=\\dfrac{dz}{iz}$，$\\cos\\theta=\\dfrac{z+z^{-1}}{2}$ で\n\\[\\oint_{|z|=1}\\frac{2\\,dz}{i(z^2+4z+1)}.\\]\n単位円内の極は $z_+=-2+\\sqrt3$，留数は $\\dfrac{2}{i(z_+-z_-)}=\\dfrac{1}{i\\sqrt3}$．よって $\\boldsymbol{\\dfrac{2\\pi}{\\sqrt3}}$．",
   "idea": "実軸上の積分を複素平面の閉路積分に延長し，内部の極の留数だけで値を決める．三角関数の積分は単位円上の積分に直す．",
   "tags": "留数定理,ジョルダンの補題,複素積分",
-  "input": "(1) pi/a\n(2) pi exp(-k a)/a\n(3) 2pi/sqrt(3)"
+  "input": "(1) pi/a\n(2) pi exp(-k a)/a\n(3) 2pi/sqrt(3)",
+  "id": "PM-04-001"
  },
  {
   "tid": "PM-17",
@@ -235,7 +251,8 @@
   "solution": "$\\phi_{xx}+\\phi_{yy}=6x-6x=0$．$\\psi_y=\\phi_x=3x^2-3y^2$，$\\psi_x=-\\phi_y=6xy$ より $\\boldsymbol{\\psi=3x^2y-y^3}$（$W=z^3$）．\n\n$\\dfrac{dW}{dz}=U\\left(1-\\dfrac{a^2}{z^2}\\right)$．表面 $z=ae^{i\\theta}$ で $|dW/dz|=U|1-e^{-2i\\theta}|=2U|\\sin\\theta|$．最大値は $\\boldsymbol{2U}$（$\\theta=\\pm\\pi/2$，流れに垂直な側面）．\n\n$dW/dz=0$ より $z^2=a^2$，$z=\\pm a$．よって $\\boldsymbol{(x,y)=(\\pm a,0)}$（円柱の前端と後端）．",
   "idea": "正則関数の実部と虚部はともに調和関数で，等ポテンシャル線と流線が直交する．流れの問題は正則関数を選ぶ問題になる．",
   "tags": "正則関数,コーシー＝リーマンの関係式,調和関数,ポテンシャル流",
-  "input": "(1) 3x^2 y-y^3\n(2) 2U\n(3) {(a, 0), (-a, 0)}"
+  "input": "(1) 3x^2 y-y^3\n(2) 2U\n(3) {(a, 0), (-a, 0)}",
+  "id": "PM-04-002"
  },
  {
   "tid": "PM-18",
@@ -249,7 +266,8 @@
   "solution": "$\\omega^2+i\\gamma\\omega-\\omega_0^2=0$ より $\\omega_\\pm=\\pm\\Omega-\\dfrac{i\\gamma}{2}$．虚部は $\\boldsymbol{-\\dfrac{\\gamma}{2}}$ で，2つの極はともに下半平面にある．\n\n$t<0$ では $e^{-i\\omega t}$ が上半平面で減衰するので，上半円で閉じる．内部に極がないから $\\boldsymbol{G=0}$．原因（$t=0$ の衝撃）より前に応答がない，という因果律が「極が下半平面にある」ことで保証される．\n\n$t>0$ では下半円で閉じ（時計回りなので $-2\\pi i$），被積分関数 $=-\\dfrac{e^{-i\\omega t}}{(\\omega-\\omega_+)(\\omega-\\omega_-)}$ の留数の和は $\\dfrac{-e^{-i\\omega_+t}+e^{-i\\omega_-t}}{2\\Omega}=\\dfrac{ie^{-\\gamma t/2}\\sin\\Omega t}{\\Omega}$．$\\dfrac{-2\\pi i}{2\\pi}$ を掛けて\n\\[\\boldsymbol{G(t)=\\frac{e^{-\\gamma t/2}\\sin\\Omega t}{\\Omega}}.\\]\n数値積分とも一致する．",
   "idea": "応答関数の極がすべて下半平面にあることと，応答が因果的（$t<0$ で $0$）であることは同値である．",
   "tags": "留数定理,グリーン関数,因果律,フーリエ変換",
-  "input": "(1) -gamma/2\n(2) 0\n(3) exp(-gamma t/2) sin(Omega t)/Omega"
+  "input": "(1) -gamma/2\n(2) 0\n(3) exp(-gamma t/2) sin(Omega t)/Omega",
+  "id": "PM-04-003"
  },
  {
   "tid": "PM-19",
@@ -263,7 +281,8 @@
   "solution": "切断の上側では $z^{\\alpha-1}=x^{\\alpha-1}$，下側では $x^{\\alpha-1}e^{2\\pi i(\\alpha-1)}$ で，向きが逆．大円と小円の寄与は $0<\\alpha<1$ で消える．極 $z=-1=e^{i\\pi}$ の留数 $e^{i\\pi(\\alpha-1)}$ から\n\\[(1-e^{2\\pi i\\alpha})I=2\\pi i\\,e^{i\\pi(\\alpha-1)}.\\]\n\n右辺 $=-2\\pi ie^{i\\pi\\alpha}$，左辺 $=-2ie^{i\\pi\\alpha}\\sin(\\pi\\alpha)\\,I$ なので $\\boldsymbol{I=\\dfrac{\\pi}{\\sin\\pi\\alpha}}$．\n\n$x^3=u$ とおくと $dx=\\frac13u^{-2/3}du$ で，$\\alpha=\\frac13$ の場合：$\\dfrac13\\cdot\\dfrac{\\pi}{\\sin(\\pi/3)}=\\boldsymbol{\\dfrac{2\\pi}{3\\sqrt3}}$．\n\n$\\alpha=\\frac12$ で $\\boldsymbol{\\pi}$．（これはガンマ関数の相反公式 $\\Gamma(\\alpha)\\Gamma(1-\\alpha)=\\pi/\\sin\\pi\\alpha$ と同じ積分である．）",
   "idea": "多価関数は分岐切断の上下で値が位相 $e^{2\\pi i\\alpha}$ だけ違う．この違いを利用すると，実軸上の積分を留数で表せる．",
   "tags": "分岐切断,鍵穴型積分路,留数定理,ガンマ関数",
-  "input": "(1) 記述：(1-e^{2πiα}) I = 2πi e^{iπ(α-1)}\n(2) pi/sin(pi alpha)\n(3) 2pi/(3sqrt(3))\n(4) pi"
+  "input": "(1) 記述：(1-e^{2πiα}) I = 2πi e^{iπ(α-1)}\n(2) pi/sin(pi alpha)\n(3) 2pi/(3sqrt(3))\n(4) pi",
+  "id": "PM-04-004"
  },
  {
   "tid": "PM-20",
@@ -277,7 +296,8 @@
   "solution": "$f(z)=\\dfrac{1}{z^2+a^2}$ として，大きな円周上の $\\pi\\cot(\\pi z)f(z)$ の積分は $0$ になる．よって整数点の留数の和 $\\sum f(n)$ と $z=\\pm ia$ の留数の和は打ち消し合う：\n\\[\\sum_n f(n)=-\\sum_{z=\\pm ia}\\frac{\\pi\\cot\\pi z}{2z}=-2\\cdot\\frac{\\pi\\cot(i\\pi a)}{2ia}=\\frac{\\pi\\coth\\pi a}{a}.\\]\nすなわち $\\boldsymbol{\\dfrac{\\pi\\cosh\\pi a}{a\\sinh\\pi a}}$．\n\n奇数の和には $-\\dfrac{\\pi}{2}\\tan\\dfrac{\\pi z}{2}$ のように半整数点に極をもつ関数を使う．あるいは直接，$\\dfrac{1}{(2n+1)^2\\pi^2T^2+\\varepsilon^2}$ の和を「全体の和－偶数の和」で (1) から計算すると\n\\[T\\sum_n\\frac{1}{\\omega_n^2+\\varepsilon^2}=\\boldsymbol{\\frac{\\tanh(\\varepsilon/2T)}{2\\varepsilon}}=\\frac{1-2n_F(\\varepsilon)}{2\\varepsilon}.\\]\n（$n_F$ はフェルミ分布．数値和とも一致する．）\n\n$T\\to0$ で $\\tanh\\to1$ なので $\\boldsymbol{\\dfrac{1}{2\\varepsilon}}$．これは和が積分 $\\displaystyle\\int\\frac{d\\omega}{2\\pi}\\frac{1}{\\omega^2+\\varepsilon^2}$ になることと一致する．",
   "idea": "極を整数点（または半整数点）に並べた関数を掛けると，級数の和が複素平面の閉路積分になり，残りの極の留数だけで和が求まる．",
   "tags": "留数定理,級数の和,松原振動数,フェルミ分布,院試",
-  "input": "(1) pi cosh(pi a)/(a sinh(pi a))\n(2) tanh(epsilon/(2T))/(2epsilon)\n(3) 1/(2epsilon)"
+  "input": "(1) pi cosh(pi a)/(a sinh(pi a))\n(2) tanh(epsilon/(2T))/(2epsilon)\n(3) 1/(2epsilon)",
+  "id": "PM-04-005"
  },
  {
   "tid": "PM-21",
@@ -291,7 +311,8 @@
   "solution": "指数を平方完成：$-\\dfrac{x^2}{2\\sigma^2}-ikx=-\\dfrac{(x+ik\\sigma^2)^2}{2\\sigma^2}-\\dfrac{\\sigma^2k^2}{2}$．ガウス積分 $\\sqrt{2\\pi}\\sigma$ を掛けて $\\boldsymbol{\\tilde f=\\sqrt{2\\pi}\\,\\sigma e^{-\\sigma^2k^2/2}}$．ガウス関数はフーリエ変換してもガウス関数で，幅は逆数になる．\n\n$\\psi$ のフーリエ変換は $(1)$ で $\\sigma\\to\\sqrt2\\sigma$ として $e^{-\\sigma^2k^2}$．$|\\tilde\\psi|^2\\propto e^{-2\\sigma^2k^2}$ なので $\\sigma_k=\\dfrac{1}{2\\sigma}$，$p=\\hbar k$ より $\\boldsymbol{\\sigma_p=\\dfrac{\\hbar}{2\\sigma}}$．$\\sigma_x\\sigma_p=\\hbar/2$ で不確定性関係の等号が成り立つ．\n\n零点 $x=\\pm a$ で $|g'|=2a$．よって $\\dfrac{e^{-a}+e^{a}}{2a}=\\boldsymbol{\\dfrac{\\cosh a}{a}}$．",
   "idea": "ガウス関数はフーリエ変換で形が変わらず幅が逆数になる．これが最小不確定状態である．",
   "tags": "フーリエ変換,ガウス積分,不確定性関係,デルタ関数",
-  "input": "(1) sqrt(2pi) sigma exp(-sigma^2 k^2/2)\n(2) hbar/(2sigma)\n(3) cosh(a)/a"
+  "input": "(1) sqrt(2pi) sigma exp(-sigma^2 k^2/2)\n(2) hbar/(2sigma)\n(3) cosh(a)/a",
+  "id": "PM-05-001"
  },
  {
   "tid": "PM-22",
@@ -305,7 +326,8 @@
   "solution": "$a_n=\\dfrac{2}{\\pi}\\displaystyle\\int_0^\\pi x\\cos nx\\,dx=\\dfrac{2}{\\pi n^2}\\{(-1)^n-1\\}$．奇数 $n$ で $\\boldsymbol{a_n=-\\dfrac{4}{\\pi n^2}}$．\n\n$0=\\dfrac\\pi2-\\dfrac4\\pi\\sum_{\\rm odd}\\dfrac1{n^2}$ より $\\boldsymbol{\\sum\\dfrac{1}{(2n-1)^2}=\\dfrac{\\pi^2}{8}}$．\n\n左辺 $=\\dfrac{2}{\\pi}\\cdot\\dfrac{\\pi^3}{3}=\\dfrac{2\\pi^2}{3}$．右辺 $=\\dfrac{\\pi^2}{2}+\\dfrac{16}{\\pi^2}\\sum_{\\rm odd}\\dfrac1{n^4}$．よって $\\boldsymbol{\\sum\\dfrac{1}{(2n-1)^4}=\\dfrac{\\pi^4}{96}}$．（ここから $\\zeta(4)=\\frac{16}{15}\\cdot\\frac{\\pi^4}{96}=\\frac{\\pi^4}{90}$ も得られ，黒体放射のシュテファン＝ボルツマン定数に現れる．）",
   "idea": "フーリエ係数を特定の点で評価したり，2乗の和（パーセバル）をとったりすると，級数の和が求まる．",
   "tags": "フーリエ級数,パーセバルの等式,ゼータ関数",
-  "input": "(1) -4/(pi n^2)\n(2) pi^2/8\n(3) pi^4/96"
+  "input": "(1) -4/(pi n^2)\n(2) pi^2/8\n(3) pi^4/96",
+  "id": "PM-05-002"
  },
  {
   "tid": "PM-23",
@@ -319,7 +341,8 @@
   "solution": "部分積分で $\\displaystyle\\int f(x)\\,x\\,\\delta'(x)\\,dx=-\\int(xf)'\\delta\\,dx=-(f(0)+0)=-f(0)$．よって $\\boldsymbol{c=-1}$．\n\n$x\\neq0$ では $G=Ae^{-\\kappa|x|}$．$x=0$ で $G$ は連続，$G'$ は $1$ だけ跳ぶ：$G'(+0)-G'(-0)=-2\\kappa A=1$．よって $\\boldsymbol{G=-\\dfrac{e^{-\\kappa|x|}}{2\\kappa}}$．これは遮蔽されたクーロン相互作用（湯川型）の1次元版である．\n\n$\\nabla\\cdot(\\boldsymbol{r}/r^3)=4\\pi\\delta^3$ と $\\nabla(1/r)=-\\boldsymbol{r}/r^3$ より $\\boldsymbol{c'=-4\\pi}$．点電荷のポアソン方程式 $\\nabla^2\\phi=-\\rho/\\varepsilon_0$ と整合する．",
   "idea": "デルタ関数を含む等式は試験関数で積分して確かめる．グリーン関数は「微分の跳び」の条件で決まる．",
   "tags": "デルタ関数,グリーン関数,部分積分",
-  "input": "(1) -1\n(2) -exp(-kappa x)/(2kappa)\n(3) -4pi"
+  "input": "(1) -1\n(2) -exp(-kappa x)/(2kappa)\n(3) -4pi",
+  "id": "PM-05-003"
  },
  {
   "tid": "PM-24",
@@ -333,7 +356,8 @@
   "solution": "$\\displaystyle\\int_0^\\infty e^{-\\mu r}\\sin qr\\,dr=\\frac{q}{q^2+\\mu^2}$ より $\\boldsymbol{\\tilde f=\\dfrac{4\\pi}{q^2+\\mu^2}}$．$\\mu\\to0$ でクーロンの $4\\pi/q^2$ になる．\n\n$\\boldsymbol{f=-\\dfrac{2mV_0}{\\hbar^2(q^2+\\mu^2)}}$．$\\mu\\to0$，$q=2k\\sin(\\theta/2)$ とすると $|f|^2$ はラザフォードの公式を再現する．\n\n$\\displaystyle\\int_0^\\infty re^{-\\mu r}\\sin qr\\,dr=-\\frac{\\partial}{\\partial\\mu}\\frac{q}{q^2+\\mu^2}=\\frac{2\\mu q}{(q^2+\\mu^2)^2}$ より $\\boldsymbol{\\tilde f=\\dfrac{8\\pi\\mu}{(q^2+\\mu^2)^2}}$（水素原子 $1s$ の電子密度の形状因子に現れる）．",
   "idea": "球対称関数の3次元フーリエ変換は角度積分を先に済ませて1次元積分にでき，パラメータ微分で関連する積分も得られる．",
   "tags": "フーリエ変換,湯川ポテンシャル,ボルン近似,散乱",
-  "input": "(1) 4pi/(q^2+mu^2)\n(2) -2m V_0/(hbar^2 (q^2+mu^2))\n(3) 8pi mu/(q^2+mu^2)^2"
+  "input": "(1) 4pi/(q^2+mu^2)\n(2) -2m V_0/(hbar^2 (q^2+mu^2))\n(3) 8pi mu/(q^2+mu^2)^2",
+  "id": "PM-05-004"
  },
  {
   "tid": "PM-25",
@@ -342,12 +366,13 @@
   "level": 4,
   "theme": "ポアソン和公式とテータ関数",
   "minutes": 35,
-  "q": "ポアソン和公式 $\\displaystyle\\sum_{n=-\\infty}^{\\infty}f(n)=\\sum_{m=-\\infty}^{\\infty}\\tilde f(2\\pi m)$（$\\tilde f(k)=\\int f(x)e^{-ikx}dx$）を使う．$a>0$ とする．\n\\begin{enumerate}\n\\item $\\displaystyle\\sum_n\\delta(x-n)=\\sum_m e^{2\\pi imx}$ を用いてポアソン和公式を導け．\n\\item $f(x)=e^{-ax^2}$ に適用して $\\displaystyle\\sum_{n}e^{-an^2}=\\sqrt{\\frac{\\pi}{a}}\\sum_m e^{-\\pi^2m^2/a}$ を示し，$a$ が小さいときの $\\displaystyle\\sum_n e^{-an^2}$ を $m=0,\\pm1$ の項まで残した式で表せ．\n\\item $\\displaystyle\\sum_n e^{-an^2}$ を $\\sqrt{\\pi/a}$ で近似したときの相対誤差を，$a=1$ について求めよ．\n\\end{enumerate}",
-  "answer": "(1) 周期的デルタ関数のフーリエ級数を $f$ と積分する． (2) $\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\frac{\\pi^2}{a}}\\right)$ (3) $2e^{-\\pi^2}\\approx 1.03\\times 10^{-4}$",
-  "solution": "周期1のくし形関数 $\\sum_n\\delta(x-n)$ をフーリエ級数に展開すると係数はすべて $1$ で，$\\sum_me^{2\\pi imx}$．両辺に $f(x)$ を掛けて積分すると $\\sum_nf(n)=\\sum_m\\int f(x)e^{2\\pi imx}dx=\\sum_m\\tilde f(-2\\pi m)$．$m\\to-m$ として公式を得る．\n\n$\\tilde f(k)=\\sqrt{\\pi/a}\\,e^{-k^2/4a}$ なので $\\tilde f(2\\pi m)=\\sqrt{\\pi/a}\\,e^{-\\pi^2m^2/a}$．$a$ が小さいと $m\\neq0$ の項は急速に小さく，\n\\[\\sum_ne^{-an^2}\\approx\\boldsymbol{\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\pi^2/a}\\right)}.\\]\n左辺の和は $a\\to0$ でゆっくりしか収束しないが，右辺は1項でほぼ正確である．\n\n相対誤差は $2e^{-\\pi^2/a}$ で，$a=1$ でも $\\boldsymbol{2e^{-\\pi^2}\\approx1.03\\times10^{-4}}$．（直接和 $1.7726\\ldots$ と $\\sqrt\\pi=1.7725\\ldots$ の比較で確認できる．）統計力学では，リング上の粒子や回転子の分配関数を高温で古典近似に置き換えると，誤差が指数関数的に小さいことを意味する．",
+  "q": "ポアソン和公式 $\\displaystyle\\sum_{n=-\\infty}^{\\infty}f(n)=\\sum_{m=-\\infty}^{\\infty}\\tilde f(2\\pi m)$（$\\tilde f(k)=\\int f(x)e^{-ikx}dx$）を使う．$a>0$ とする．\n\\begin{enumerate}\n\\item $\\displaystyle\\sum_n\\delta(x-n)=\\sum_m e^{2\\pi imx}$ を用いてポアソン和公式を導け．\n\\item $f(x)=e^{-ax^2}$ に適用して $\\displaystyle\\sum_{n}e^{-an^2}=\\sqrt{\\frac{\\pi}{a}}\\sum_m e^{-\\pi^2m^2/a}$ を示し，$a$ が小さいときの $\\displaystyle\\sum_n e^{-an^2}$ を $m=0,\\pm1$ の項まで残した式で表せ．\n\\item $\\displaystyle\\sum_n e^{-an^2}$ を $\\sqrt{\\pi/a}$ で近似したときの相対誤差 $\\epsilon$ を $a$ の最低次で表せ．$\\epsilon$ を $\\epsilon_0$ 以下にするための $a$ の条件を求めよ．\n\\end{enumerate}",
+  "answer": "(1) 周期的デルタ関数のフーリエ級数を $f$ と積分する． (2) $\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\frac{\\pi^2}{a}}\\right)$ (3) $\\epsilon=2e^{-\\pi^2/a}$，$a\\le\\dfrac{\\pi^2}{\\ln(2/\\epsilon_0)}$",
+  "solution": "周期1のくし形関数 $\\sum_n\\delta(x-n)$ をフーリエ級数に展開すると係数はすべて $1$ で，$\\sum_me^{2\\pi imx}$．両辺に $f(x)$ を掛けて積分すると $\\sum_nf(n)=\\sum_m\\int f(x)e^{2\\pi imx}dx=\\sum_m\\tilde f(-2\\pi m)$．$m\\to-m$ として公式を得る．\n\n$\\tilde f(k)=\\sqrt{\\pi/a}\\,e^{-k^2/4a}$ なので $\\tilde f(2\\pi m)=\\sqrt{\\pi/a}\\,e^{-\\pi^2m^2/a}$．$a$ が小さいと $m\\neq0$ の項は急速に小さく，\n\\[\\sum_ne^{-an^2}\\approx\\boldsymbol{\\sqrt{\\frac{\\pi}{a}}\\left(1+2e^{-\\pi^2/a}\\right)}.\\]\n左辺の和は $a\\to0$ でゆっくりしか収束しないが，右辺は1項でほぼ正確である．\n\n相対誤差は $\\boldsymbol{\\epsilon=2e^{-\\pi^2/a}}$．$2e^{-\\pi^2/a}\\le\\epsilon_0$ を解いて $\\boldsymbol{a\\le\\dfrac{\\pi^2}{\\ln(2/\\epsilon_0)}}$．$a=1$ でも $\\epsilon=2e^{-\\pi^2}\\approx10^{-4}$ と非常に小さい．統計力学では，リング上の粒子や回転子の分配関数を高温で古典近似に置き換えると，誤差が指数関数的に小さいことを意味する．",
   "idea": "和を積分に置き換える近似の誤差は，ポアソン和公式の $m\\neq0$ の項で正確に表され，滑らかな関数では指数関数的に小さい．",
   "tags": "ポアソン和公式,テータ関数,くし形関数,分配関数,院試",
-  "input": "(1) 記述：Σδ(x-n)=Σe^{2πimx} に f を掛けて積分する\n(2) sqrt(pi/a)(1+2exp(-pi^2/a))\n(3) ≈1.03e-4 (5%)"
+  "input": "(1) 記述：Σδ(x-n)=Σe^{2πimx} に f を掛けて積分する\n(2) sqrt(pi/a)(1+2exp(-pi^2/a))\n(3) $\\epsilon$：2 exp(-pi^2/a) ; $a$ の条件：a<=pi^2/ln(2/ε_0)",
+  "id": "PM-05-005"
  },
  {
   "tid": "PM-26",
@@ -361,7 +386,8 @@
   "solution": "$\\dfrac{1}{8}\\dfrac{d^2}{dx^2}(x^4-2x^2+1)=\\dfrac{12x^2-4}{8}$ より $\\boldsymbol{P_2=\\dfrac{3x^2-1}{2}}$．\n\n$\\displaystyle\\int_{-1}^1\\frac{(3x^2-1)^2}{4}dx=\\frac14\\left(\\frac{18}{5}-4+2\\right)=\\boldsymbol{\\frac25}$（一般に $\\frac{2}{2l+1}$）．\n\n$P_2=\\frac32x^2-\\frac12$ より $x^2=\\frac23P_2+\\frac13$．よって $\\boldsymbol{c_0=\\dfrac13,\\ c_2=\\dfrac23}$．たとえば $\\cos^2\\theta$ の角度分布は単極子と四重極子の成分に分かれる．",
   "idea": "直交多項式による展開係数は，内積（重み付き積分）か係数比較で決まる．",
   "tags": "ルジャンドル多項式,ロドリゲスの公式,直交性",
-  "input": "(1) (3x^2-1)/2\n(2) 2/5\n(3) c_0：1/3 ; c_2：2/3"
+  "input": "(1) (3x^2-1)/2\n(2) 2/5\n(3) c_0：1/3 ; c_2：2/3",
+  "id": "PM-06-001"
  },
  {
   "tid": "PM-27",
@@ -375,7 +401,8 @@
   "solution": "代入して $-\\lambda_n=-D\\left(\\dfrac{n\\pi}{L}\\right)^2$．$\\boldsymbol{\\lambda_n=\\dfrac{Dn^2\\pi^2}{L^2}}$．波長の短いモードほど速く減衰する．\n\n$b_n=\\dfrac{2}{L}\\displaystyle\\int_0^Lu_0\\sin\\frac{n\\pi x}{L}dx=\\frac{2u_0}{n\\pi}\\{1-(-1)^n\\}$．奇数で $\\boldsymbol{b_n=\\dfrac{4u_0}{n\\pi}}$．\n\n中央 $x=L/2$ で $\\dfrac{4u_0}{\\pi}e^{-\\lambda_1t}=\\dfrac{u_0}{2}$．よって $\\boldsymbol{t=\\dfrac{L^2}{\\pi^2D}\\ln\\dfrac8\\pi}$（$\\approx0.095L^2/D$）．このとき $n=3$ の項の比は $\\frac13e^{-8\\lambda_1t}\\approx0.0019$ で無視できる．",
   "idea": "線形偏微分方程式は変数分離で固有関数の重ね合わせに分解され，各モードは固有値で決まる速さで独立に減衰する．",
   "tags": "熱伝導方程式,変数分離,フーリエ正弦級数",
-  "input": "(1) D n^2 pi^2/L^2\n(2) 4u_0/(n pi)\n(3) L^2 ln(8/pi)/(pi^2 D)"
+  "input": "(1) D n^2 pi^2/L^2\n(2) 4u_0/(n pi)\n(3) L^2 ln(8/pi)/(pi^2 D)",
+  "id": "PM-06-002"
  },
  {
   "tid": "PM-28",
@@ -389,7 +416,8 @@
   "solution": "無限遠の条件から $A_1=-E_0$，他の $A_l=0$．球面上 $\\phi=0$ には $l=1$ だけが必要で $-E_0R+B_1/R^2=0$．$\\boldsymbol{B_1=E_0R^3}$．\n\\[\\phi=-E_0\\left(r-\\frac{R^3}{r^2}\\right)\\cos\\theta.\\]\n\n$\\sigma=-\\varepsilon_0\\dfrac{\\partial\\phi}{\\partial r}\\Big|_{r=R}=\\varepsilon_0E_0(1+2)\\cos\\theta=\\boldsymbol{3\\varepsilon_0E_0\\cos\\theta}$．全電荷は $0$．\n\n$\\dfrac{p}{4\\pi\\varepsilon_0}=B_1$ より $\\boldsymbol{p=4\\pi\\varepsilon_0R^3E_0}$．分極率は $4\\pi\\varepsilon_0R^3$（体積に比例）．",
   "idea": "境界条件が $\\cos\\theta=P_1$ だけを含むので，ルジャンドル展開の $l=1$ の項だけで解が決まる．",
   "tags": "ラプラス方程式,ルジャンドル多項式,境界値問題,導体",
-  "input": "(1) E_0 R^3\n(2) 3epsilon_0 E_0 cos(theta)\n(3) 4pi epsilon_0 R^3 E_0"
+  "input": "(1) E_0 R^3\n(2) 3epsilon_0 E_0 cos(theta)\n(3) 4pi epsilon_0 R^3 E_0",
+  "id": "PM-06-003"
  },
  {
   "tid": "PM-29",
@@ -398,12 +426,13 @@
   "level": 3,
   "theme": "円形膜の振動とベッセル関数",
   "minutes": 25,
-  "q": "周囲を固定した半径 $a$ の円形の膜が，波動方程式 $\\dfrac{\\partial^2u}{\\partial t^2}=c^2\\nabla^2u$ に従って振動する．$u=J_m(kr)\\cos m\\varphi\\,\\cos\\omega t$ の形の基準振動を考える．$J_0$ の最小の正の零点は $j_{0,1}=2.405$，$J_1$ の最小の正の零点は $j_{1,1}=3.832$ である．\n\\begin{enumerate}\n\\item $J_0(x)$ はベッセル方程式 $x^2y''+xy'+x^2y=0$ の $x=0$ で正則な解（$J_0(0)=1$）である．級数展開 $J_0(x)=1-\\dfrac{x^2}{4}+c_4x^4+\\cdots$ の $c_4$ を求めよ．\n\\item 最も低い基準振動の角振動数 $\\omega$ について，$\\omega a/c$ の値を求めよ．\n\\item $m=1$ の最低モードと (2) のモードの振動数の比を求めよ．\n\\end{enumerate}",
-  "answer": "(1) $c_4=\\frac{1}{64}$ (2) $\\frac{\\omega a}{c}=j_{0,1}\\approx 2.405$ (3) $\\frac{j_{1,1}}{j_{0,1}}\\approx 1.593$",
-  "solution": "$y=\\sum a_nx^n$ を代入すると $n^2a_n=-a_{n-2}$．$a_2=-\\frac14$，$a_4=-\\frac{a_2}{16}=\\boldsymbol{\\dfrac{1}{64}}$．一般に $J_0=\\sum\\dfrac{(-1)^k}{(k!)^2}\\left(\\dfrac x2\\right)^{2k}$．\n\n変数分離で $\\omega=ck$，境界条件 $J_0(ka)=0$ より $ka=j_{0,1}$．よって $\\boldsymbol{\\omega a/c\\approx2.405}$．\n\n$m=1$ では $J_1(ka)=0$ より $ka=3.832$．比は $\\boldsymbol{3.832/2.405\\approx1.593}$．弦と違って倍音が整数比にならないため，太鼓の音には明確な音程がない．",
+  "q": "周囲を固定した半径 $a$ の円形の膜が，波動方程式 $\\dfrac{\\partial^2u}{\\partial t^2}=c^2\\nabla^2u$ に従って振動する．$u=J_m(kr)\\cos m\\varphi\\,\\cos\\omega t$ の形の基準振動を考える．$J_0$ の最小の正の零点を $\\alpha$，$J_1$ の最小の正の零点を $\\beta$ とする．\n\\begin{enumerate}\n\\item $J_0(x)$ はベッセル方程式 $x^2y''+xy'+x^2y=0$ の $x=0$ で正則な解（$J_0(0)=1$）である．級数展開 $J_0(x)=1-\\dfrac{x^2}{4}+c_4x^4+\\cdots$ の $c_4$ を求めよ．\n\\item 最も低い基準振動の角振動数 $\\omega$ を求めよ．\n\\item $m=1$ の最低モードと (2) のモードの振動数の比を求めよ．\n\\end{enumerate}",
+  "answer": "(1) $c_4=\\frac{1}{64}$ (2) $\\omega=\\frac{\\alpha c}{a}$ (3) $\\frac{\\beta}{\\alpha}$",
+  "solution": "$y=\\sum a_nx^n$ を代入すると $n^2a_n=-a_{n-2}$．$a_2=-\\frac14$，$a_4=-\\frac{a_2}{16}=\\boldsymbol{\\dfrac{1}{64}}$．一般に $J_0=\\sum\\dfrac{(-1)^k}{(k!)^2}\\left(\\dfrac x2\\right)^{2k}$．\n\n変数分離で $\\omega=ck$，境界条件 $J_0(ka)=0$ より $ka=\\alpha$．よって $\\boldsymbol{\\omega=\\alpha c/a}$．\n\n$m=1$ では $J_1(ka)=0$ より $ka=\\beta$．振動数は $k$ に比例するので比は $\\boldsymbol{\\beta/\\alpha}$．ベッセル関数の零点の比は整数にならず，弦と違って倍音が整数比にならないため，太鼓の音には明確な音程がない．",
   "idea": "円形領域でのヘルムホルツ方程式はベッセル方程式になり，境界条件がベッセル関数の零点として固有振動数を決める．",
   "tags": "ベッセル関数,波動方程式,固有振動,級数解",
-  "input": "(1) 1/64\n(2) ≈2.405\n(3) ≈1.593"
+  "input": "(1) 1/64\n(2) α c/a\n(3) β/α",
+  "id": "PM-06-004"
  },
  {
   "tid": "PM-30",
@@ -412,11 +441,12 @@
   "level": 4,
   "theme": "球形の井戸と球ベッセル関数",
   "minutes": 35,
-  "q": "質量 $m$ の粒子が半径 $a$ の無限に深い球形の井戸（$r<a$ で $V=0$，$r\\ge a$ で $V=\\infty$）に閉じ込められている．動径方程式の正則解は球ベッセル関数 $j_l(kr)$ で，$E=\\dfrac{\\hbar^2k^2}{2m}$ である．\n\\begin{enumerate}\n\\item $l=0$ では $j_0(x)=\\dfrac{\\sin x}{x}$ である．$l=0$ のエネルギー準位 $E_n$（$n=1,2,\\dots$）を求めよ．\n\\item $j_1(x)=\\dfrac{\\sin x}{x^2}-\\dfrac{\\cos x}{x}$ の零点の条件を $\\tan x$ を用いて書き，最小の正の零点 $x_1$ を数値で求めよ．\n\\item $l=1$ の最低準位と $l=0$ の最低準位のエネルギー比を求めよ．\n\\item $j_1$ が球ベッセル方程式 $\\dfrac{d}{dx}\\left(x^2\\dfrac{dy}{dx}\\right)+\\{x^2-l(l+1)\\}y=0$（$l=1$）を満たすことを確かめよ．\n\\end{enumerate}",
-  "answer": "(1) $E_n=\\frac{\\hbar^2\\pi^2n^2}{2ma^2}$ (2) $\\tan x=x$，$x_1\\approx 4.493$ (3) $\\left(\\frac{x_1}{\\pi}\\right)^2\\approx 2.046$ (4) 代入して確かめる．",
-  "solution": "$u=rR$ とおくと $l=0$ では1次元の箱と同じで，$\\sin(ka)=0$．$ka=n\\pi$ より $\\boldsymbol{E_n=\\dfrac{\\hbar^2\\pi^2n^2}{2ma^2}}$．\n\n$j_1=0\\iff\\sin x=x\\cos x\\iff\\boldsymbol{\\tan x=x}$．$\\pi<x<3\\pi/2$ の解を数値的に求めて $\\boldsymbol{x_1\\approx4.493}$．\n\n$E\\propto k^2$ なので比は $\\boldsymbol{(4.493/\\pi)^2\\approx2.046}$．1次元の箱と違い $1p$ 準位は $1s$ と $2s$（比 $4$）の間に来る．原子核の殻模型で準位の順序（$1s,1p,1d,2s,\\dots$）を決める基本になる．\n\n$y=j_1$ を代入すると左辺が恒等的に $0$ になる（sympy でも確認できる）．",
+  "q": "質量 $m$ の粒子が半径 $a$ の無限に深い球形の井戸（$r<a$ で $V=0$，$r\\ge a$ で $V=\\infty$）に閉じ込められている．動径方程式の正則解は球ベッセル関数 $j_l(kr)$ で，$E=\\dfrac{\\hbar^2k^2}{2m}$ である．\n\\begin{enumerate}\n\\item $l=0$ では $j_0(x)=\\dfrac{\\sin x}{x}$ である．$l=0$ のエネルギー準位 $E_n$（$n=1,2,\\dots$）を求めよ．\n\\item $j_1(x)=\\dfrac{\\sin x}{x^2}-\\dfrac{\\cos x}{x}$ の零点の条件を $\\tan x$ を用いて書き，最小の正の零点 $x_1$ がどの範囲にあるかを述べよ．以下，$x_1$ はこの零点を表す．\n\\item $l=1$ の最低準位と $l=0$ の最低準位のエネルギー比を $x_1$ を用いて表せ．\n\\item $j_1$ が球ベッセル方程式 $\\dfrac{d}{dx}\\left(x^2\\dfrac{dy}{dx}\\right)+\\{x^2-l(l+1)\\}y=0$（$l=1$）を満たすことを確かめよ．\n\\end{enumerate}",
+  "answer": "(1) $E_n=\\frac{\\hbar^2\\pi^2n^2}{2ma^2}$ (2) $\\tan x=x$，$\\pi<x_1<\\frac{3\\pi}{2}$ (3) $\\left(\\frac{x_1}{\\pi}\\right)^2$ (4) 代入して確かめる．",
+  "solution": "$u=rR$ とおくと $l=0$ では1次元の箱と同じで，$\\sin(ka)=0$．$ka=n\\pi$ より $\\boldsymbol{E_n=\\dfrac{\\hbar^2\\pi^2n^2}{2ma^2}}$．\n\n$j_1=0\\iff\\sin x=x\\cos x\\iff\\boldsymbol{\\tan x=x}$．$x>0$ で $\\tan x$ と $x$ のグラフを描くと，$0<x<\\pi/2$ では $\\tan x>x$ で交わらず，最初の交点は $\\tan x$ が正になる区間 $\\boldsymbol{\\pi<x_1<3\\pi/2}$ にある．\n\n$l=1$ の最低準位は $k=x_1/a$，$l=0$ の最低準位は $k=\\pi/a$．$E\\propto k^2$ なので比は $\\boldsymbol{(x_1/\\pi)^2}$．$\\pi<x_1<3\\pi/2<2\\pi$ だから比は $1$ と $4$ の間にあり，1次元の箱と違い $1p$ 準位は $1s$ と $2s$（比 $4$）の間に来る．原子核の殻模型で準位の順序（$1s,1p,1d,2s,\\dots$）を決める基本になる．\n\n$y=j_1$ を代入すると左辺が恒等的に $0$ になる（sympy でも確認できる）．",
   "idea": "3次元の球対称問題は動径方程式に分離され，角運動量ごとの球ベッセル関数の零点がエネルギー準位を与える．",
   "tags": "球ベッセル関数,球形井戸,殻模型,超越方程式,院試",
-  "input": "(1) hbar^2 pi^2 n^2/(2m a^2)\n(2) ≈4.493\n(3) ≈2.046\n(4) 記述：代入すると恒等的に 0"
+  "input": "(1) hbar^2 pi^2 n^2/(2m a^2)\n(2) 記述：tan x = x，π<x_1<3π/2\n(3) (x_1/pi)^2\n(4) 記述：代入すると恒等的に 0",
+  "id": "PM-06-005"
  }
 ]

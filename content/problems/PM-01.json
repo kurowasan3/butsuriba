@@ -253,16 +253,16 @@
   "theme": "球帯の面積から円板の立体角と検出効率を求める",
   "topic": "球帯の面積から円板の立体角と検出効率を求める",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 半径 $r$ の球を，距離 $h$ 離れた2つの平行な平面で切った球帯の面積が $2\\pi rh$ であることを，回転面の面積の公式から示せ．\n\\item 点 $P$ から距離 $d$ の位置に，$P$ を通る軸に垂直に置いた半径 $R$ の円板が $P$ を見込む立体角 $\\Omega$ を求めよ．\n\\item 等方的に放射線を出す点線源から距離 $d=R$ に置いた半径 $R$ の円形検出器に入る割合を求めよ．$R\\ll d$ での近似式も答えよ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 半径 $r$ の球を，距離 $h$ 離れた2つの平行な平面で切った球帯の面積が $2\\pi rh$ であることを，回転面の面積の公式から示せ．\n\\item 点 $P$ から距離 $d$ の位置に，$P$ を通る軸に垂直に置いた半径 $R$ の円板が $P$ を見込む立体角 $\\Omega$ を求めよ．\n\\item 等方的に放射線を出す点線源から距離 $d$ に，線源を通る軸に垂直に置いた半径 $R$ の円形検出器に入る割合 $\\epsilon$ を求めよ．$d=R$ のときの値と，$R\\ll d$ での近似式も答えよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) 証明　(2) $\\Omega=2\\pi\\left(1-\\dfrac{d}{\\sqrt{d^2+R^2}}\\right)$　(3) $\\dfrac12\\left(1-\\dfrac1{\\sqrt2}\\right)\\approx0.146$；$\\dfrac{R^2}{4d^2}$"
+   "tex": "(1) 証明　(2) $\\Omega=2\\pi\\left(1-\\dfrac{d}{\\sqrt{d^2+R^2}}\\right)$　(3) $\\epsilon=\\dfrac12\\left(1-\\dfrac{d}{\\sqrt{d^2+R^2}}\\right)$；$d=R$ で $\\dfrac12\\left(1-\\dfrac1{\\sqrt2}\\right)$；$R\\ll d$ で $\\dfrac{R^2}{4d^2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $y=\\sqrt{r^2-x^2}$ を $x$ 軸のまわりに回すと $y\\sqrt{1+y'^2}=r$ なので，面積は $2\\pi\\int_{x_1}^{x_1+h}r\\,dx=\\boldsymbol{2\\pi rh}$（切る位置によらない）．\\hfill$\\square$\n\n(2) $P$ を中心とする半径 $\\rho=\\sqrt{d^2+R^2}$ の単位でない球を考えると，円板が見込む部分は高さ $h=\\rho-d$ の球冠で，面積 $2\\pi\\rho(\\rho-d)$．立体角はそれを $\\rho^2$ で割って\n\\[\n\\boldsymbol{\\Omega=2\\pi\\left(1-\\frac{d}{\\sqrt{d^2+R^2}}\\right)}.\n\\]\n\n(3) 割合は $\\dfrac{\\Omega}{4\\pi}=\\dfrac12\\left(1-\\dfrac{1}{\\sqrt2}\\right)\\approx\\boldsymbol{0.146}$．$R\\ll d$ では $1-\\dfrac{d}{\\sqrt{d^2+R^2}}\\simeq\\dfrac{R^2}{2d^2}$ で，$\\dfrac{\\Omega}{4\\pi}\\simeq\\boldsymbol{\\dfrac{R^2}{4d^2}}=\\dfrac{\\pi R^2}{4\\pi d^2}$．"
+    "tex": "(1) $y=\\sqrt{r^2-x^2}$ を $x$ 軸のまわりに回すと $y\\sqrt{1+y'^2}=r$ なので，面積は $2\\pi\\int_{x_1}^{x_1+h}r\\,dx=\\boldsymbol{2\\pi rh}$（切る位置によらない）．\n\n(2) $P$ を中心とする半径 $\\rho=\\sqrt{d^2+R^2}$ の球を考えると，円板が見込む部分は高さ $h=\\rho-d$ の球冠で，面積 $2\\pi\\rho(\\rho-d)$．立体角はそれを $\\rho^2$ で割って\n\\[\n\\boldsymbol{\\Omega=2\\pi\\left(1-\\frac{d}{\\sqrt{d^2+R^2}}\\right)}.\n\\]\n\n(3) 割合は $\\epsilon=\\dfrac{\\Omega}{4\\pi}=\\boldsymbol{\\dfrac12\\left(1-\\dfrac{d}{\\sqrt{d^2+R^2}}\\right)}$．$d=R$ では $\\boldsymbol{\\dfrac12\\left(1-\\dfrac{1}{\\sqrt2}\\right)}$（約 15%）．$R\\ll d$ では $1-\\dfrac{d}{\\sqrt{d^2+R^2}}\\simeq\\dfrac{R^2}{2d^2}$ で，$\\epsilon\\simeq\\boldsymbol{\\dfrac{R^2}{4d^2}}=\\dfrac{\\pi R^2}{4\\pi d^2}$（検出器の面積を球面全体の面積で割ったもの）．"
    }
   ],
   "idea": {
@@ -270,7 +270,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 証明\n(2) $\\Omega$：2 pi (1-((d)/(sqrt(d ^(2)+ R ^(2)))))\n(3) 記述"
+   "spec": "(1) 証明\n(2) $\\Omega$：2 pi (1-((d)/(sqrt(d ^(2)+ R ^(2)))))\n(3) $\\epsilon$：(1-d/sqrt(d^2+R^2))/2 ; $d=R$：(1-1/sqrt(2))/2 ; 近似：R^2/(4d^2)"
   },
   "methods": [],
   "tags": [
@@ -1329,16 +1329,16 @@
   "theme": "全微分の一次近似とその誤差",
   "topic": "全微分の一次近似とその誤差",
   "statement": {
-   "tex": "関数 $f(x,y)=x^2y$ を点 $(1,2)$ の近くで考える．\n\\begin{enumerate}\n\\item 点 $(1,2)$ における全微分 $df$ を $dx,dy$ で表せ．\n\\item 点 $(1,2)$ から直線 $(x,y)=(1+t,\\,2+kt)$ に沿って動くとき，$t$ の 1 次の範囲で $f$ が変化しないように定数 $k$ を定めよ．\n\\item (2) の $k$ を用いたとき，差 $\\Delta f(t)=f(1+t,2+kt)-f(1,2)$ を $t$ の多項式として正確に求めよ．$\\Delta f$ が $0$ にならないのはなぜか．$t=0.01$ のときの値も求めよ．\n\\end{enumerate}"
+   "tex": "関数 $f(x,y)=x^2y$ を点 $(a,b)$（$a\\ne0$）の近くで考える．\n\\begin{enumerate}\n\\item 点 $(a,b)$ における全微分 $df$ を $dx,dy$ で表せ．\n\\item 点 $(a,b)$ から直線 $(x,y)=(a+t,\\,b+kt)$ に沿って動くとき，$t$ の 1 次の範囲で $f$ が変化しないように定数 $k$ を定めよ．\n\\item (2) の $k$ を用いたとき，差 $\\Delta f(t)=f(a+t,b+kt)-f(a,b)$ を $t$ の多項式として正確に求めよ．$b\\ne0$ のとき $\\Delta f$ が $0$ にならないのはなぜか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $df=4\\,dx+dy$　(2) $k=-4$　(3) $\\Delta f=-6t^2-4t^3$．全微分による関係は無限小の変位でのみ厳密で，有限の変位では 2 次以上の項が残るため．$t=0.01$ で $\\Delta f=-6.04\\times10^{-4}$．"
+   "tex": "(1) $df=2ab\\,dx+a^2\\,dy$　(2) $k=-\\dfrac{2b}{a}$　(3) $\\Delta f=-3bt^2-\\dfrac{2b}{a}t^3$．全微分による関係は無限小の変位でのみ厳密で，有限の変位では 2 次以上の項が残るため．"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $f_x=2xy$，$f_y=x^2$ より，$(1,2)$ で $f_x=4$，$f_y=1$．よって $df=4\\,dx+dy$．\n\n(2) $dx=t$，$dy=kt$ を代入して 1 次の変化は $(4+k)t$．これが $0$ となるのは $k=-4$．この方向 $(1,-4)$ は勾配 $(4,1)$ に垂直であり，点 $(1,2)$ を通る等高線 $x^2y=2$ の接線方向である．\n\n(3) \n\\[ \\Delta f=(1+t)^2(2-4t)-2=(1+2t+t^2)(2-4t)-2=-6t^2-4t^3. \\]\n1 次の項は消えるが，直線は等高線（曲線 $y=2/x^2$）の接線にすぎず，有限の $t$ では等高線から離れるため 2 次以上の項が残る．全微分 $df=\\nabla f\\cdot d\\boldsymbol r$ は無限小の変位でのみ厳密に成り立つ．$t=0.01$ では $\\Delta f=-6\\times10^{-4}-4\\times10^{-6}=-6.04\\times10^{-4}$．"
+    "tex": "(1) $f_x=2xy$，$f_y=x^2$ より，$(a,b)$ で $f_x=2ab$，$f_y=a^2$．よって $\\boldsymbol{df=2ab\\,dx+a^2\\,dy}$．\n\n(2) $dx=t$，$dy=kt$ を代入して 1 次の変化は $(2ab+a^2k)t$．これが $0$ となるのは $\\boldsymbol{k=-\\dfrac{2b}{a}}$．この方向 $(a,-2b)$ は勾配 $(2ab,a^2)$ に垂直であり，点 $(a,b)$ を通る等高線 $x^2y=a^2b$ の接線方向である．\n\n(3) \n\\[ \\Delta f=(a+t)^2\\left(b-\\frac{2b}{a}t\\right)-a^2b=(a^2+2at+t^2)\\left(b-\\frac{2b}{a}t\\right)-a^2b=\\boldsymbol{-3bt^2-\\frac{2b}{a}t^3}. \\]\n1 次の項は消えるが，直線は等高線（曲線 $y=a^2b/x^2$）の接線にすぎず，有限の $t$ では等高線から離れるため 2 次以上の項が残る．全微分 $df=\\nabla f\\cdot d\\boldsymbol r$ は無限小の変位でのみ厳密に成り立つ．"
    }
   ],
   "idea": {
@@ -1346,7 +1346,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $k$：-4\n(3) 記述"
+   "spec": "(1) 記述\n(2) $k$：-2b/a\n(3) $\\Delta f$：-3b t^2-(2b/a) t^3"
   },
   "methods": [],
   "tags": [
@@ -2873,16 +2873,16 @@
   "theme": "斜面に向けて投げたときの最大到達距離",
   "topic": "斜面に向けて投げたときの最大到達距離",
   "statement": {
-   "tex": "水平と角 $\\alpha$ をなす斜面の下端から，初速 $v$ で水平と角 $\\theta$（$\\theta>\\alpha$）の向きに小球を投げる．空気抵抗は無視する．\n\\begin{enumerate}\n\\item 斜面に沿って測った到達距離 $L(\\theta)$ を求めよ．\n\\item $L$ を最大にする $\\theta$ を求めよ．\n\\item 最大到達距離を求め，$\\alpha=20^\\circ$，$v=10\\ \\mathrm{m/s}$，$g=9.8\\ \\mathrm{m/s^2}$ での値を求めよ．\n\\end{enumerate}"
+   "tex": "水平と角 $\\alpha$ をなす斜面の下端から，初速 $v$ で（重力加速度 $g$）水平と角 $\\theta$（$\\theta>\\alpha$）の向きに小球を投げる．空気抵抗は無視する．\n\\begin{enumerate}\n\\item 斜面に沿って測った到達距離 $L(\\theta)$ を求めよ．\n\\item $L$ を最大にする $\\theta$ を求めよ．\n\\item 最大到達距離 $L_{\\max}$ を求め，水平面（$\\alpha=0$）の場合と比べよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $L=\\dfrac{2v^2\\cos\\theta\\sin(\\theta-\\alpha)}{g\\cos^2\\alpha}$　(2) $\\theta=\\dfrac\\pi4+\\dfrac\\alpha2$　(3) $\\dfrac{v^2}{g(1+\\sin\\alpha)}$，$7.6\\ \\mathrm{m}$"
+   "tex": "(1) $L=\\dfrac{2v^2\\cos\\theta\\sin(\\theta-\\alpha)}{g\\cos^2\\alpha}$　(2) $\\theta=\\dfrac\\pi4+\\dfrac\\alpha2$　(3) $L_{\\max}=\\dfrac{v^2}{g(1+\\sin\\alpha)}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $x=v\\cos\\theta\\,t$，$y=v\\sin\\theta\\,t-\\frac12gt^2$ が $y=x\\tan\\alpha$ をみたす時刻は $t=\\dfrac{2v(\\sin\\theta-\\cos\\theta\\tan\\alpha)}{g}=\\dfrac{2v\\sin(\\theta-\\alpha)}{g\\cos\\alpha}$．$L=x/\\cos\\alpha$ より\n\\[\n\\boldsymbol{L=\\frac{2v^2\\cos\\theta\\sin(\\theta-\\alpha)}{g\\cos^2\\alpha}}.\n\\]\n\n(2) $2\\cos\\theta\\sin(\\theta-\\alpha)=\\sin(2\\theta-\\alpha)-\\sin\\alpha$ なので，$2\\theta-\\alpha=\\frac\\pi2$ で最大：$\\boldsymbol{\\theta=\\dfrac\\pi4+\\dfrac\\alpha2}$（斜面と鉛直の二等分線の向き）．\n\n(3) $L_{\\max}=\\dfrac{v^2(1-\\sin\\alpha)}{g\\cos^2\\alpha}=\\boldsymbol{\\dfrac{v^2}{g(1+\\sin\\alpha)}}$．数値は $\\dfrac{100}{9.8\\times1.342}\\approx\\boldsymbol{7.6\\ \\mathrm{m}}$．"
+    "tex": "(1) $x=v\\cos\\theta\\,t$，$y=v\\sin\\theta\\,t-\\frac12gt^2$ が $y=x\\tan\\alpha$ をみたす時刻は $t=\\dfrac{2v(\\sin\\theta-\\cos\\theta\\tan\\alpha)}{g}=\\dfrac{2v\\sin(\\theta-\\alpha)}{g\\cos\\alpha}$．$L=x/\\cos\\alpha$ より\n\\[\n\\boldsymbol{L=\\frac{2v^2\\cos\\theta\\sin(\\theta-\\alpha)}{g\\cos^2\\alpha}}.\n\\]\n\n(2) $2\\cos\\theta\\sin(\\theta-\\alpha)=\\sin(2\\theta-\\alpha)-\\sin\\alpha$ なので，$2\\theta-\\alpha=\\frac\\pi2$ で最大：$\\boldsymbol{\\theta=\\dfrac\\pi4+\\dfrac\\alpha2}$（斜面と鉛直の二等分線の向き）．\n\n(3) $L_{\\max}=\\dfrac{v^2(1-\\sin\\alpha)}{g\\cos^2\\alpha}=\\boldsymbol{\\dfrac{v^2}{g(1+\\sin\\alpha)}}$．$\\alpha=0$ では水平面での最大到達距離 $v^2/g$（$\\theta=45^\\circ$）に戻り，上り斜面では $1/(1+\\sin\\alpha)$ 倍に縮む．"
    }
   ],
   "idea": {
@@ -2890,7 +2890,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $\\theta$：((pi)/(4))+((α)/(2))\n(3) 記述"
+   "spec": "(1) $L$：2 v^2 cos(θ) sin(θ-α)/(g cos(α)^2)\n(2) $\\theta$：((pi)/(4))+((α)/(2))\n(3) $L_{\\max}$：v^2/(g (1+sin(α)))"
   },
   "methods": [],
   "tags": [
@@ -3118,16 +3118,16 @@
   "theme": "中心ほど重い地球の密度分布と慣性モーメント係数",
   "topic": "中心ほど重い地球の密度分布と慣性モーメント係数",
   "statement": {
-   "tex": "半径 $R$ の球状の惑星の密度が $\\rho(r)=\\rho_0\\left(1-k\\dfrac rR\\right)$（$0\\leqq k<1$）で与えられる．\n\\begin{enumerate}\n\\item 質量 $M$ を求めよ．\n\\item 中心を通る軸のまわりの慣性モーメント $I$ を求め，$\\dfrac{I}{MR^2}$ を $k$ で表せ．\n\\item 地球の $\\dfrac{I}{MR^2}=0.330$ を再現する $k$ を求めよ（有効数字2桁）．\n\\end{enumerate}"
+   "tex": "半径 $R$ の球状の惑星の密度が $\\rho(r)=\\rho_0\\left(1-k\\dfrac rR\\right)$（$0\\leqq k<1$）で与えられる．\n\\begin{enumerate}\n\\item 質量 $M$ を求めよ．\n\\item 中心を通る軸のまわりの慣性モーメント $I$ を求め，$\\dfrac{I}{MR^2}$ を $k$ で表せ．\n\\item 観測された慣性モーメント係数 $\\dfrac{I}{MR^2}=C$ を再現する $k$ を $C$ で表せ．$k$ が $0\\leqq k<1$ の範囲にあるための $C$ の範囲も求めよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $M=4\\pi\\rho_0R^3\\left(\\dfrac13-\\dfrac k4\\right)$　(2) $I=\\dfrac{8\\pi}{3}\\rho_0R^5\\left(\\dfrac15-\\dfrac k6\\right)$，$\\dfrac{I}{MR^2}=\\dfrac23\\cdot\\dfrac{\\frac15-\\frac k6}{\\frac13-\\frac k4}$　(3) $k\\approx0.82$"
+   "tex": "(1) $M=4\\pi\\rho_0R^3\\left(\\dfrac13-\\dfrac k4\\right)$　(2) $I=\\dfrac{8\\pi}{3}\\rho_0R^5\\left(\\dfrac15-\\dfrac k6\\right)$，$\\dfrac{I}{MR^2}=\\dfrac23\\cdot\\dfrac{\\frac15-\\frac k6}{\\frac13-\\frac k4}$　(3) $k=\\dfrac{12(2-5C)}{5(4-9C)}$，$\\dfrac4{15}<C\\leqq\\dfrac25$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $M=\\int_0^R4\\pi r^2\\rho_0\\left(1-\\frac{kr}{R}\\right)dr=\\boldsymbol{4\\pi\\rho_0R^3\\left(\\frac13-\\frac k4\\right)}$．\n\n(2) 球殻の慣性モーメントは $\\frac23dm\\,r^2$ なので\n\\[\nI=\\int_0^R\\frac23r^2\\cdot4\\pi r^2\\rho_0\\left(1-\\frac{kr}{R}\\right)dr=\\boldsymbol{\\frac{8\\pi}{3}\\rho_0R^5\\left(\\frac15-\\frac k6\\right)},\n\\qquad\n\\boldsymbol{\\frac{I}{MR^2}=\\frac23\\cdot\\frac{\\frac15-\\frac k6}{\\frac13-\\frac k4}}.\n\\]\n$k=0$ で一様球の $0.4$．\n\n(3) $\\dfrac{I}{MR^2}=0.330$ を解くと $\\boldsymbol{k\\approx0.82}$（表面の密度は中心の約 $18\\%$）．実際の地球も中心に重い核をもち，慣性モーメントの係数から内部の密度の集中が推定できる．"
+    "tex": "(1) $M=\\int_0^R4\\pi r^2\\rho_0\\left(1-\\frac{kr}{R}\\right)dr=\\boldsymbol{4\\pi\\rho_0R^3\\left(\\frac13-\\frac k4\\right)}$．\n\n(2) 球殻の慣性モーメントは $\\frac23dm\\,r^2$ なので\n\\[\nI=\\int_0^R\\frac23r^2\\cdot4\\pi r^2\\rho_0\\left(1-\\frac{kr}{R}\\right)dr=\\boldsymbol{\\frac{8\\pi}{3}\\rho_0R^5\\left(\\frac15-\\frac k6\\right)},\n\\qquad\n\\boldsymbol{\\frac{I}{MR^2}=\\frac23\\cdot\\frac{\\frac15-\\frac k6}{\\frac13-\\frac k4}}.\n\\]\n$k=0$ で一様球の $0.4$．\n\n(3) $\\dfrac23\\left(\\dfrac15-\\dfrac k6\\right)=C\\left(\\dfrac13-\\dfrac k4\\right)$ を $k$ について解くと $k\\left(\\dfrac C4-\\dfrac19\\right)=\\dfrac C3-\\dfrac2{15}$ より\n\\[ \\boldsymbol{k=\\frac{12(2-5C)}{5(4-9C)}}. \\]\n$k=0$ で $C=\\dfrac25$，$k\\to1$ で $C\\to\\dfrac23\\cdot\\dfrac{1/30}{1/12}=\\dfrac4{15}$ であり，$C$ は $k$ について単調減少なので $\\boldsymbol{\\dfrac4{15}<C\\leqq\\dfrac25}$．地球の $C=0.330$ では $k\\approx0.82$（表面の密度は中心の約 $18\\%$）．実際の地球も中心に重い核をもち，慣性モーメントの係数から内部の密度の集中が推定できる．"
    }
   ],
   "idea": {
@@ -3135,7 +3135,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $M$：4 pi ρ_0 R ^(3)(((1)/(3))-((k)/(4)))\n(2) 記述\n(3) $k$：≈0.82"
+   "spec": "(1) $M$：4 pi ρ_0 R ^(3)(((1)/(3))-((k)/(4)))\n(2) $I/(MR^2)$：(2/3) (1/5-k/6)/(1/3-k/4)\n(3) $k$：12 (2-5C)/(5 (4-9C)) ; $C$ の範囲：4/15<C<=2/5"
   },
   "methods": [],
   "tags": [
@@ -5199,16 +5199,16 @@
   "theme": "双曲線座標のヤコビアンと慣性モーメント",
   "topic": "双曲線座標のヤコビアンと慣性モーメント",
   "statement": {
-   "tex": "2次元の四重極電場の等ポテンシャル線は $x^2-y^2=$ 一定，あるいは $xy=$ 一定 の双曲線である．第1象限（$x>0,\\ y>0$）で\n\\[ a\\le xy\\le b,\\qquad c\\le x^2-y^2\\le d\\qquad(0<a<b,\\ 0<c<d) \\]\nで囲まれた領域 $S$ を切り抜いた，面密度 $\\sigma$ が一様な薄板を考える．\n\\begin{enumerate}\n\\item 変数変換 $u=xy,\\ v=x^2-y^2$ のヤコビアン $\\dfrac{\\partial(u,v)}{\\partial(x,y)}$ を求め，$dx\\,dy$ を $du\\,dv$ と $x^2+y^2$ で表せ．\n\\item 薄板の原点を通り板に垂直な軸（$z$ 軸）まわりの慣性モーメント $I_z=\\sigma\\iint_S(x^2+y^2)\\,dx\\,dy$ を求めよ．\n\\item 一方，薄板の面積（したがって質量）は $x^2+y^2$ を $u,v$ で表して積分する必要がある．$x^2+y^2$ を $u,v$ で表し，面積 $|S|$ を $u,v$ の2重積分の形で書け．さらに $a=1,b=2,c=1,d=3$ のとき，$|S|$ と $I_z$ の数値を求めよ（$|S|$ は小数第3位まで）．\n\\end{enumerate}"
+   "tex": "2次元の四重極電場の等ポテンシャル線は $x^2-y^2=$ 一定，あるいは $xy=$ 一定 の双曲線である．第1象限（$x>0,\\ y>0$）で\n\\[ a\\le xy\\le b,\\qquad c\\le x^2-y^2\\le d\\qquad(0<a<b,\\ 0<c<d) \\]\nで囲まれた領域 $S$ を切り抜いた，面密度 $\\sigma$ が一様な薄板を考える．\n\\begin{enumerate}\n\\item 変数変換 $u=xy,\\ v=x^2-y^2$ のヤコビアン $\\dfrac{\\partial(u,v)}{\\partial(x,y)}$ を求め，$dx\\,dy$ を $du\\,dv$ と $x^2+y^2$ で表せ．\n\\item 薄板の原点を通り板に垂直な軸（$z$ 軸）まわりの慣性モーメント $I_z=\\sigma\\iint_S(x^2+y^2)\\,dx\\,dy$ を求めよ．\n\\item 一方，薄板の面積（したがって質量）は $x^2+y^2$ を $u,v$ で表して積分する必要がある．$x^2+y^2$ を $u,v$ で表し，面積 $|S|$ を $u,v$ の2重積分の形で書け．面積と慣性モーメントでは，どちらが初等的に求めやすいか．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{\\partial(u,v)}{\\partial(x,y)}=-2(x^2+y^2)$，$dx\\,dy=\\dfrac{du\\,dv}{2(x^2+y^2)}$　(2) $I_z=\\dfrac{\\sigma}{2}(b-a)(d-c)$　(3) $x^2+y^2=\\sqrt{v^2+4u^2}$，$|S|=\\displaystyle\\int_a^b\\!\\!\\int_c^d\\frac{du\\,dv}{2\\sqrt{v^2+4u^2}}$；$|S|\\approx0.281$，$I_z=\\sigma$"
+   "tex": "(1) $\\dfrac{\\partial(u,v)}{\\partial(x,y)}=-2(x^2+y^2)$，$dx\\,dy=\\dfrac{du\\,dv}{2(x^2+y^2)}$　(2) $I_z=\\dfrac{\\sigma}{2}(b-a)(d-c)$　(3) $x^2+y^2=\\sqrt{v^2+4u^2}$，$|S|=\\displaystyle\\int_a^b\\!\\!\\int_c^d\\frac{du\\,dv}{2\\sqrt{v^2+4u^2}}$；慣性モーメントの方が求めやすい"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1)\n\\[ \\frac{\\partial(u,v)}{\\partial(x,y)}=\\begin{vmatrix}u_x&u_y\\\\ v_x&v_y\\end{vmatrix}=\\begin{vmatrix}y&x\\\\ 2x&-2y\\end{vmatrix}=-2y^2-2x^2=-2(x^2+y^2). \\]\n逆変換のヤコビアンは逆数なので $\\left|\\dfrac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\dfrac{1}{2(x^2+y^2)}$，すなわち $dx\\,dy=\\dfrac{du\\,dv}{2(x^2+y^2)}$．\n（第1象限で $(x,y)\\mapsto(u,v)$ は1対1：$x^2,\\,-y^2$ は $t^2-vt-u^2=0$ の2根として一意に決まる．）\n\n(2) 被積分関数 $x^2+y^2$ がヤコビアンの因子とちょうど打ち消し合う：\n\\[ I_z=\\sigma\\int_a^b\\!\\!\\int_c^d (x^2+y^2)\\frac{du\\,dv}{2(x^2+y^2)}=\\frac{\\sigma}{2}(b-a)(d-c). \\]\n\n(3) $(x^2+y^2)^2=(x^2-y^2)^2+4x^2y^2=v^2+4u^2$ より $x^2+y^2=\\sqrt{v^2+4u^2}$．よって\n\\[ |S|=\\int_a^b\\!du\\int_c^d\\!dv\\,\\frac{1}{2\\sqrt{v^2+4u^2}}. \\]\n$a=1,b=2,c=1,d=3$ では数値積分により $|S|\\approx0.281$．一方 $I_z=\\frac{\\sigma}{2}\\cdot1\\cdot2=\\sigma$．\n面積の方が初等的に求めにくく，「より複雑そうな」慣性モーメントの方が簡単に求まるという逆転が起きる．\n補足：$w=z^2$（$z=x+iy$）とすると $w=v+2iu$ で，$|dw/dz|^2=4|z|^2$ がこの面積拡大率に対応する．"
+    "tex": "(1)\n\\[ \\frac{\\partial(u,v)}{\\partial(x,y)}=\\begin{vmatrix}u_x&u_y\\\\ v_x&v_y\\end{vmatrix}=\\begin{vmatrix}y&x\\\\ 2x&-2y\\end{vmatrix}=-2y^2-2x^2=-2(x^2+y^2). \\]\n逆変換のヤコビアンは逆数なので $\\left|\\dfrac{\\partial(x,y)}{\\partial(u,v)}\\right|=\\dfrac{1}{2(x^2+y^2)}$，すなわち $dx\\,dy=\\dfrac{du\\,dv}{2(x^2+y^2)}$．\n（第1象限で $(x,y)\\mapsto(u,v)$ は1対1：$x^2,\\,-y^2$ は $t^2-vt-u^2=0$ の2根として一意に決まる．）\n\n(2) 被積分関数 $x^2+y^2$ がヤコビアンの因子とちょうど打ち消し合う：\n\\[ I_z=\\sigma\\int_a^b\\!\\!\\int_c^d (x^2+y^2)\\frac{du\\,dv}{2(x^2+y^2)}=\\frac{\\sigma}{2}(b-a)(d-c). \\]\n\n(3) $(x^2+y^2)^2=(x^2-y^2)^2+4x^2y^2=v^2+4u^2$ より $x^2+y^2=\\sqrt{v^2+4u^2}$．よって\n\\[ |S|=\\int_a^b\\!du\\int_c^d\\!dv\\,\\frac{1}{2\\sqrt{v^2+4u^2}}. \\]\nこの積分は初等関数の簡単な形にはならない（たとえば $a=1,b=2,c=1,d=3$ では数値積分で $|S|\\approx0.281$）．一方 $I_z$ は (2) のように積の形で求まる．\n面積の方が初等的に求めにくく，「より複雑そうな」慣性モーメントの方が簡単に求まるという逆転が起きる．\n補足：$w=z^2$（$z=x+iy$）とすると $w=v+2iu$ で，$|dw/dz|^2=4|z|^2$ がこの面積拡大率に対応する．"
    }
   ],
   "idea": {
@@ -5216,7 +5216,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) 記述\n(2) $I_z$：((σ)/(2))(b - a)(d - c)\n(3) 記述"
+   "spec": "(1) 記述\n(2) $I_z$：((σ)/(2))(b - a)(d - c)\n(3) $x^2+y^2$：sqrt(v^2+4u^2)"
   },
   "methods": [],
   "tags": [
@@ -5550,16 +5550,16 @@
   "theme": "中心力場の線積分の経路独立性",
   "topic": "中心力場の線積分の経路独立性",
   "statement": {
-   "tex": "$n$ を実数の定数とし，$r=|\\boldsymbol r|$ として 2 つのベクトル場\n\\[ \\boldsymbol A(\\boldsymbol r)=r^n\\,\\boldsymbol r,\\qquad \\boldsymbol C(\\boldsymbol r)=r^n\\,(-y,\\ x,\\ 0) \\]\nを考える．\n\\begin{enumerate}\n\\item $\\boldsymbol A\\cdot d\\boldsymbol r=r^{n+1}dr$ を示し，点 $P$ から点 $Q$ への $\\boldsymbol A$ の線積分は経路によらず端点の距離 $r_P,r_Q$ だけで決まることを示して，その値を求めよ（$n\\neq-2$）．\n\\item $n>-2$ とする．原点から $(1,1,1)$ へ，$x$ 軸に沿って $(1,0,0)$，$y$ 軸に平行に $(1,1,0)$，$z$ 軸に平行に $(1,1,1)$ と進む経路について，$\\boldsymbol A$ の線積分を 3 つの線分の積分の和として書き下し，$n=\\tfrac12$ の場合に (1) の結果と数値的に一致することを確かめよ．\n\\item $n=-3$ のとき，$\\boldsymbol A$ は点電荷の電場と同じ形になる．$(1,0,0)$ から $(0,2,2)$ への $\\boldsymbol A$ の線積分を求めよ．\n\\item $xy$ 平面上の原点中心・半径 $a$ の円を反時計回りに 1 周するときの $\\boldsymbol C$ の線積分を求め，$\\boldsymbol C$ の線積分は経路によることを示せ．\n\\end{enumerate}"
+   "tex": "$n$ を実数の定数とし，$r=|\\boldsymbol r|$ として 2 つのベクトル場\n\\[ \\boldsymbol A(\\boldsymbol r)=r^n\\,\\boldsymbol r,\\qquad \\boldsymbol C(\\boldsymbol r)=r^n\\,(-y,\\ x,\\ 0) \\]\nを考える．\n\\begin{enumerate}\n\\item $\\boldsymbol A\\cdot d\\boldsymbol r=r^{n+1}dr$ を示し，点 $P$ から点 $Q$ への $\\boldsymbol A$ の線積分は経路によらず端点の距離 $r_P,r_Q$ だけで決まることを示して，その値を求めよ（$n\\neq-2$）．\n\\item $n>-2$ とする．原点から $(1,1,1)$ へ，$x$ 軸に沿って $(1,0,0)$，$y$ 軸に平行に $(1,1,0)$，$z$ 軸に平行に $(1,1,1)$ と進む経路について，$\\boldsymbol A$ の線積分を 3 つの線分の積分の和として書き下して各区間の積分を実行し，(1) の結果と一致することを確かめよ．\n\\item $n=-3$ のとき，$\\boldsymbol A$ は点電荷の電場と同じ形になる．$(1,0,0)$ から $(0,2,2)$ への $\\boldsymbol A$ の線積分を求めよ．\n\\item $xy$ 平面上の原点中心・半径 $a$ の円を反時計回りに 1 周するときの $\\boldsymbol C$ の線積分を求め，$\\boldsymbol C$ の線積分は経路によることを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{r_Q^{\\,n+2}-r_P^{\\,n+2}}{n+2}$　(2) $\\int_0^1x^{n+1}dx+\\int_0^1y(1+y^2)^{n/2}dy+\\int_0^1z(2+z^2)^{n/2}dz=\\dfrac{3^{(n+2)/2}}{n+2}$（$n=\\tfrac12$ で $\\approx1.5793$）　(3) $1-\\dfrac{\\sqrt2}{4}$　(4) $2\\pi a^{n+2}$"
+   "tex": "(1) $\\dfrac{r_Q^{\\,n+2}-r_P^{\\,n+2}}{n+2}$　(2) $\\int_0^1x^{n+1}dx+\\int_0^1y(1+y^2)^{n/2}dy+\\int_0^1z(2+z^2)^{n/2}dz=\\dfrac{3^{(n+2)/2}}{n+2}$　(3) $1-\\dfrac{\\sqrt2}{4}$　(4) $2\\pi a^{n+2}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $r^2=\\boldsymbol r\\cdot\\boldsymbol r$ を微分して $2r\\,dr=2\\boldsymbol r\\cdot d\\boldsymbol r$．よって $\\boldsymbol A\\cdot d\\boldsymbol r=r^n\\,\\boldsymbol r\\cdot d\\boldsymbol r=r^{n+1}dr$．経路を $\\boldsymbol r(t)$ $(t_P\\le t\\le t_Q)$ とすると\n\\[ \\int_P^Q\\boldsymbol A\\cdot d\\boldsymbol r=\\int_{t_P}^{t_Q}r^{n+1}\\frac{dr}{dt}dt=\\int_{r_P}^{r_Q}r^{n+1}dr=\\frac{r_Q^{\\,n+2}-r_P^{\\,n+2}}{n+2}, \\]\nこれは経路によらない（$\\boldsymbol A=\\nabla\\dfrac{r^{n+2}}{n+2}$）．\n\n(2) 第 1 区間 $(t,0,0)$：$r=t$，$A_x=t\\cdot t^n$，寄与 $\\int_0^1x^{n+1}dx=\\dfrac1{n+2}$．第 2 区間 $(1,t,0)$：$r=\\sqrt{1+t^2}$，$A_y=t(1+t^2)^{n/2}$，寄与 $\\int_0^1y(1+y^2)^{n/2}dy=\\dfrac{2^{(n+2)/2}-1}{n+2}$．第 3 区間 $(1,1,t)$：$r=\\sqrt{2+t^2}$，寄与 $\\int_0^1z(2+z^2)^{n/2}dz=\\dfrac{3^{(n+2)/2}-2^{(n+2)/2}}{n+2}$．和は $\\dfrac{3^{(n+2)/2}}{n+2}$ で，(1) で $r_P=0$，$r_Q=\\sqrt3$ とした値に一致する．$n=\\tfrac12$ では $\\dfrac{3^{5/4}}{5/2}\\approx1.5793$．（各区間ごとに $r$ が $0\\to1\\to\\sqrt2\\to\\sqrt3$ と変わる分だけ寄与しており，望遠鏡和になっている．）\n\n(3) $n=-3$：$\\displaystyle\\int r^{-2}dr$ を $r_P=1$ から $r_Q=\\sqrt{0+4+4}=2\\sqrt2$ まで．\n\\[ \\left[-\\frac1r\\right]_1^{2\\sqrt2}=1-\\frac1{2\\sqrt2}=1-\\frac{\\sqrt2}{4}. \\]\n\n(4) 円 $(a\\cos t,a\\sin t,0)$ 上で $r=a$，$d\\boldsymbol r=(-a\\sin t,a\\cos t,0)dt$，\n\\[ \\oint\\boldsymbol C\\cdot d\\boldsymbol r=\\int_0^{2\\pi}a^n(a^2\\sin^2t+a^2\\cos^2t)\\,dt=2\\pi a^{n+2}\\neq0 . \\]\n始点と終点が同じ閉曲線で 0 でないので，同じ 2 点を結ぶ 2 つの経路（円の上半分と，下半分を逆にたどる経路）で値が異なる．すなわち $\\boldsymbol C$ の線積分は経路による．"
+    "tex": "(1) $r^2=\\boldsymbol r\\cdot\\boldsymbol r$ を微分して $2r\\,dr=2\\boldsymbol r\\cdot d\\boldsymbol r$．よって $\\boldsymbol A\\cdot d\\boldsymbol r=r^n\\,\\boldsymbol r\\cdot d\\boldsymbol r=r^{n+1}dr$．経路を $\\boldsymbol r(t)$ $(t_P\\le t\\le t_Q)$ とすると\n\\[ \\int_P^Q\\boldsymbol A\\cdot d\\boldsymbol r=\\int_{t_P}^{t_Q}r^{n+1}\\frac{dr}{dt}dt=\\int_{r_P}^{r_Q}r^{n+1}dr=\\frac{r_Q^{\\,n+2}-r_P^{\\,n+2}}{n+2}, \\]\nこれは経路によらない（$\\boldsymbol A=\\nabla\\dfrac{r^{n+2}}{n+2}$）．\n\n(2) 第 1 区間 $(t,0,0)$：$r=t$，$A_x=t\\cdot t^n$，寄与 $\\int_0^1x^{n+1}dx=\\dfrac1{n+2}$．第 2 区間 $(1,t,0)$：$r=\\sqrt{1+t^2}$，$A_y=t(1+t^2)^{n/2}$，寄与 $\\int_0^1y(1+y^2)^{n/2}dy=\\dfrac{2^{(n+2)/2}-1}{n+2}$．第 3 区間 $(1,1,t)$：$r=\\sqrt{2+t^2}$，寄与 $\\int_0^1z(2+z^2)^{n/2}dz=\\dfrac{3^{(n+2)/2}-2^{(n+2)/2}}{n+2}$．和は $\\dfrac{3^{(n+2)/2}}{n+2}$ で，(1) で $r_P=0$，$r_Q=\\sqrt3$ とした値に一致する．（各区間ごとに $r$ が $0\\to1\\to\\sqrt2\\to\\sqrt3$ と変わる分だけ寄与しており，望遠鏡和になっている．）\n\n(3) $n=-3$：$\\displaystyle\\int r^{-2}dr$ を $r_P=1$ から $r_Q=\\sqrt{0+4+4}=2\\sqrt2$ まで．\n\\[ \\left[-\\frac1r\\right]_1^{2\\sqrt2}=1-\\frac1{2\\sqrt2}=1-\\frac{\\sqrt2}{4}. \\]\n\n(4) 円 $(a\\cos t,a\\sin t,0)$ 上で $r=a$，$d\\boldsymbol r=(-a\\sin t,a\\cos t,0)dt$，\n\\[ \\oint\\boldsymbol C\\cdot d\\boldsymbol r=\\int_0^{2\\pi}a^n(a^2\\sin^2t+a^2\\cos^2t)\\,dt=2\\pi a^{n+2}\\neq0 . \\]\n始点と終点が同じ閉曲線で 0 でないので，同じ 2 点を結ぶ 2 つの経路（円の上半分と，下半分を逆にたどる経路）で値が異なる．すなわち $\\boldsymbol C$ の線積分は経路による．"
    }
   ],
   "idea": {
@@ -6251,16 +6251,16 @@
   "theme": "導体中の電磁波と表皮深さ",
   "topic": "導体中の電磁波と表皮深さ",
   "statement": {
-   "tex": "一様な導体（誘電率・透磁率は真空の値 $\\varepsilon_0,\\mu_0$，電気伝導率 $\\sigma$）の中では，オームの法則 $\\boldsymbol j=\\sigma\\boldsymbol E$ が成り立ち，マクスウェル方程式は\n\\[ \\nabla\\cdot\\boldsymbol E=\\frac{\\rho}{\\varepsilon_0},\\quad \\nabla\\cdot\\boldsymbol B=0,\\quad \\nabla\\times\\boldsymbol E=-\\frac{\\partial\\boldsymbol B}{\\partial t},\\quad \\nabla\\times\\boldsymbol B=\\mu_0\\boldsymbol j+\\frac1{c^2}\\frac{\\partial\\boldsymbol E}{\\partial t} \\]\nである（$c^2=1/(\\varepsilon_0\\mu_0)$）．\n\\begin{enumerate}\n\\item 第 4 式の発散をとって電荷保存則を導き，導体内部の電荷密度が $\\rho(\\boldsymbol r,t)=\\rho(\\boldsymbol r,0)e^{-t/\\tau}$ と減衰することを示せ．$\\tau$ を求め，銅（$\\sigma=5.8\\times10^7\\ \\mathrm{S/m}$）で値を見積もれ．\n\\item $\\rho=0$ とみなせるとき，$\\boldsymbol E$ が電信方程式\n$\\nabla^2\\boldsymbol E=\\mu_0\\sigma\\dfrac{\\partial\\boldsymbol E}{\\partial t}+\\dfrac1{c^2}\\dfrac{\\partial^2\\boldsymbol E}{\\partial t^2}$ に従うことを示せ．\n\\item $\\boldsymbol E=\\boldsymbol E_0e^{i(kz-\\omega t)}$ を代入して $k^2$ を求めよ．良導体 $\\sigma\\gg\\varepsilon_0\\omega$ のとき，振幅が $1/e$ になる距離（表皮深さ）$\\delta$ を求め，銅で周波数 $1\\ \\mathrm{MHz}$ の場合の値を見積もれ．\n\\end{enumerate}"
+   "tex": "一様な導体（誘電率・透磁率は真空の値 $\\varepsilon_0,\\mu_0$，電気伝導率 $\\sigma$）の中では，オームの法則 $\\boldsymbol j=\\sigma\\boldsymbol E$ が成り立ち，マクスウェル方程式は\n\\[ \\nabla\\cdot\\boldsymbol E=\\frac{\\rho}{\\varepsilon_0},\\quad \\nabla\\cdot\\boldsymbol B=0,\\quad \\nabla\\times\\boldsymbol E=-\\frac{\\partial\\boldsymbol B}{\\partial t},\\quad \\nabla\\times\\boldsymbol B=\\mu_0\\boldsymbol j+\\frac1{c^2}\\frac{\\partial\\boldsymbol E}{\\partial t} \\]\nである（$c^2=1/(\\varepsilon_0\\mu_0)$）．\n\\begin{enumerate}\n\\item 第 4 式の発散をとって電荷保存則を導き，導体内部の電荷密度が $\\rho(\\boldsymbol r,t)=\\rho(\\boldsymbol r,0)e^{-t/\\tau}$ と減衰することを示せ．$\\tau$ を求めよ．\n\\item $\\rho=0$ とみなせるとき，$\\boldsymbol E$ が電信方程式\n$\\nabla^2\\boldsymbol E=\\mu_0\\sigma\\dfrac{\\partial\\boldsymbol E}{\\partial t}+\\dfrac1{c^2}\\dfrac{\\partial^2\\boldsymbol E}{\\partial t^2}$ に従うことを示せ．\n\\item $\\boldsymbol E=\\boldsymbol E_0e^{i(kz-\\omega t)}$ を代入して $k^2$ を求めよ．良導体 $\\sigma\\gg\\varepsilon_0\\omega$ のとき，振幅が $1/e$ になる距離（表皮深さ）$\\delta$ を $\\mu_0,\\ \\sigma,\\ \\omega$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\tau=\\varepsilon_0/\\sigma\\approx1.5\\times10^{-19}\\ \\mathrm s$　(2) 証明（解説参照）　(3) $k^2=\\dfrac{\\omega^2}{c^2}+i\\mu_0\\sigma\\omega$，$\\delta\\simeq\\sqrt{\\dfrac{2}{\\mu_0\\sigma\\omega}}\\approx66\\ \\mu\\mathrm m$"
+   "tex": "(1) $\\tau=\\dfrac{\\varepsilon_0}{\\sigma}$　(2) 証明（解説参照）　(3) $k^2=\\dfrac{\\omega^2}{c^2}+i\\mu_0\\sigma\\omega$，$\\delta=\\sqrt{\\dfrac{2}{\\mu_0\\sigma\\omega}}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) $\\nabla\\cdot(\\nabla\\times\\boldsymbol B)=0$ より $0=\\mu_0\\nabla\\cdot\\boldsymbol j+\\dfrac1{c^2}\\dfrac{\\partial}{\\partial t}\\nabla\\cdot\\boldsymbol E=\\mu_0\\left(\\nabla\\cdot\\boldsymbol j+\\dfrac{\\partial\\rho}{\\partial t}\\right)$．これが電荷保存則．$\\nabla\\cdot\\boldsymbol j=\\sigma\\nabla\\cdot\\boldsymbol E=\\sigma\\rho/\\varepsilon_0$ を代入すると\n\\[ \\frac{\\partial\\rho}{\\partial t}=-\\frac{\\sigma}{\\varepsilon_0}\\rho\\quad\\Rightarrow\\quad \\rho=\\rho(\\boldsymbol r,0)e^{-t/\\tau},\\ \\ \\tau=\\frac{\\varepsilon_0}{\\sigma}. \\]\n銅では $\\tau=8.85\\times10^{-12}/5.8\\times10^{7}\\approx1.5\\times10^{-19}\\ \\mathrm s$ で，内部電荷は瞬時に消える（実際にはこの見積もりより遅い緩和が起こるが，いずれにせよ短い）．\n\n(2) $\\nabla\\times(\\nabla\\times\\boldsymbol E)=\\nabla(\\nabla\\cdot\\boldsymbol E)-\\nabla^2\\boldsymbol E=-\\nabla^2\\boldsymbol E$（$\\rho=0$）．一方\n\\[ \\nabla\\times(\\nabla\\times\\boldsymbol E)=-\\frac{\\partial}{\\partial t}\\nabla\\times\\boldsymbol B=-\\mu_0\\sigma\\frac{\\partial\\boldsymbol E}{\\partial t}-\\frac1{c^2}\\frac{\\partial^2\\boldsymbol E}{\\partial t^2}. \\]\n比べて電信方程式を得る．$\\partial_t\\boldsymbol E$ の項が抵抗によるエネルギー散逸を表す．\n\n(3) $\\nabla^2\\to-k^2$，$\\partial_t\\to-i\\omega$ より $-k^2=-i\\mu_0\\sigma\\omega-\\omega^2/c^2$，すなわち $k^2=\\dfrac{\\omega^2}{c^2}+i\\mu_0\\sigma\\omega$．\n良導体では $\\mu_0\\sigma\\omega\\gg\\omega^2/c^2$（$\\sigma\\gg\\varepsilon_0\\omega$ と同値）なので $k\\simeq\\sqrt{i\\mu_0\\sigma\\omega}=(1+i)\\sqrt{\\dfrac{\\mu_0\\sigma\\omega}{2}}$．\n$e^{ikz}=e^{i\\,\\mathrm{Re}k\\,z}e^{-\\mathrm{Im}k\\,z}$ より $\\delta=1/\\mathrm{Im}\\,k=\\sqrt{\\dfrac{2}{\\mu_0\\sigma\\omega}}$．\n銅，$\\omega=2\\pi\\times10^6\\ \\mathrm{s^{-1}}$：$\\delta=\\sqrt{\\dfrac{2}{4\\pi\\times10^{-7}\\times5.8\\times10^7\\times2\\pi\\times10^6}}\\approx6.6\\times10^{-5}\\ \\mathrm m=66\\ \\mu\\mathrm m$．"
+    "tex": "(1) $\\nabla\\cdot(\\nabla\\times\\boldsymbol B)=0$ より $0=\\mu_0\\nabla\\cdot\\boldsymbol j+\\dfrac1{c^2}\\dfrac{\\partial}{\\partial t}\\nabla\\cdot\\boldsymbol E=\\mu_0\\left(\\nabla\\cdot\\boldsymbol j+\\dfrac{\\partial\\rho}{\\partial t}\\right)$．これが電荷保存則．$\\nabla\\cdot\\boldsymbol j=\\sigma\\nabla\\cdot\\boldsymbol E=\\sigma\\rho/\\varepsilon_0$ を代入すると\n\\[ \\frac{\\partial\\rho}{\\partial t}=-\\frac{\\sigma}{\\varepsilon_0}\\rho\\quad\\Rightarrow\\quad \\rho=\\rho(\\boldsymbol r,0)e^{-t/\\tau},\\ \\ \\boldsymbol{\\tau=\\frac{\\varepsilon_0}{\\sigma}}. \\]\n銅（$\\sigma\\approx6\\times10^7\\ \\mathrm{S/m}$）では $\\tau\\sim10^{-19}\\ \\mathrm s$ で，内部電荷は瞬時に消える（実際にはこの見積もりより遅い緩和が起こるが，いずれにせよ短い）．\n\n(2) $\\nabla\\times(\\nabla\\times\\boldsymbol E)=\\nabla(\\nabla\\cdot\\boldsymbol E)-\\nabla^2\\boldsymbol E=-\\nabla^2\\boldsymbol E$（$\\rho=0$）．一方\n\\[ \\nabla\\times(\\nabla\\times\\boldsymbol E)=-\\frac{\\partial}{\\partial t}\\nabla\\times\\boldsymbol B=-\\mu_0\\sigma\\frac{\\partial\\boldsymbol E}{\\partial t}-\\frac1{c^2}\\frac{\\partial^2\\boldsymbol E}{\\partial t^2}. \\]\n比べて電信方程式を得る．$\\partial_t\\boldsymbol E$ の項が抵抗によるエネルギー散逸を表す．\n\n(3) $\\nabla^2\\to-k^2$，$\\partial_t\\to-i\\omega$ より $-k^2=-i\\mu_0\\sigma\\omega-\\omega^2/c^2$，すなわち $\\boldsymbol{k^2=\\dfrac{\\omega^2}{c^2}+i\\mu_0\\sigma\\omega}$．\n良導体では $\\mu_0\\sigma\\omega\\gg\\omega^2/c^2$（$\\sigma\\gg\\varepsilon_0\\omega$ と同値）なので $k\\simeq\\sqrt{i\\mu_0\\sigma\\omega}=(1+i)\\sqrt{\\dfrac{\\mu_0\\sigma\\omega}{2}}$．\n$e^{ikz}=e^{i\\,\\mathrm{Re}k\\,z}e^{-\\mathrm{Im}k\\,z}$ より $\\boldsymbol{\\delta=1/\\mathrm{Im}\\,k=\\sqrt{\\dfrac{2}{\\mu_0\\sigma\\omega}}}$．\n$\\delta\\propto\\omega^{-1/2}$ で，銅では $1\\ \\mathrm{MHz}$ でも数十 $\\mu\\mathrm m$ しかない．高周波電流が導体の表面だけを流れる（表皮効果）のはこのためである．"
    }
   ],
   "idea": {
@@ -6268,7 +6268,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\tau$ [s]：≈1.5e-19\n(2) 証明\n(3) 記述"
+   "spec": "(1) $\\tau$：ε_0/σ\n(2) 証明\n(3) $\\delta$：sqrt(2/(μ_0 σ ω))"
   },
   "methods": [],
   "tags": [
@@ -6860,16 +6860,16 @@
   "theme": "3乗場の流束：楕円体と立方体の比較",
   "topic": "3乗場の流束：楕円体と立方体の比較",
   "statement": {
-   "tex": "ベクトル場 $\\boldsymbol A=(x^3,\\,y^3,\\,z^3)$ の，閉曲面 $S$ から外向きの流束 $\\Phi_S=\\oint_S\\boldsymbol A\\cdot d\\boldsymbol S$ を考える．\n\\begin{enumerate}\n\\item $S$ が楕円体 $\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}+\\dfrac{z^2}{c^2}=1$ のとき $\\Phi_S$ を求めよ．$a=b=c=R$ で球の結果を確認せよ．\n\\item $S$ が原点中心で辺の長さ $2s$ の立方体の表面のとき $\\Phi_S$ を求めよ．\n\\item 体積の等しい球と立方体ではどちらの流束が大きいか．比 $\\Phi_{\\text{立方体}}/\\Phi_{\\text{球}}$ を有効数字 3 桁で求め，その理由を説明せよ．\n\\end{enumerate}"
+   "tex": "ベクトル場 $\\boldsymbol A=(x^3,\\,y^3,\\,z^3)$ の，閉曲面 $S$ から外向きの流束 $\\Phi_S=\\oint_S\\boldsymbol A\\cdot d\\boldsymbol S$ を考える．\n\\begin{enumerate}\n\\item $S$ が楕円体 $\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}+\\dfrac{z^2}{c^2}=1$ のとき $\\Phi_S$ を求めよ．$a=b=c=R$ で球の結果を確認せよ．\n\\item $S$ が原点中心で辺の長さ $2s$ の立方体の表面のとき $\\Phi_S$ を求めよ．\n\\item 体積の等しい球と立方体ではどちらの流束が大きいか．比 $\\Phi_{\\text{立方体}}/\\Phi_{\\text{球}}$ を求め，その理由を説明せよ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\dfrac{4\\pi}{5}abc(a^2+b^2+c^2)$（球で $\\dfrac{12\\pi}{5}R^5$）　(2) $24s^5$　(3) 立方体が大きい，比 $=\\dfrac{10}{\\pi}\\left(\\dfrac\\pi6\\right)^{5/3}\\approx1.08$"
+   "tex": "(1) $\\dfrac{4\\pi}{5}abc(a^2+b^2+c^2)$（球で $\\dfrac{12\\pi}{5}R^5$）　(2) $24s^5$　(3) 立方体が大きい，比 $=\\dfrac{10}{\\pi}\\left(\\dfrac\\pi6\\right)^{5/3}$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "発散定理より $\\Phi_S=\\int_V\\nabla\\cdot\\boldsymbol A\\,dV=3\\int_V(x^2+y^2+z^2)\\,dV$．\n\n(1) $x=au,\\ y=bv,\\ z=cw$ と変換すると単位球 $B$ 上の積分になり，$dV=abc\\,du\\,dv\\,dw$．$\\int_Bu^2\\,dV=\\frac13\\int_B\\rho^2dV=\\frac13\\cdot\\frac{4\\pi}5=\\frac{4\\pi}{15}$ だから\n\\[\\Phi_S=3abc\\cdot\\frac{4\\pi}{15}(a^2+b^2+c^2)=\\frac{4\\pi}{5}abc(a^2+b^2+c^2).\\]\n$a=b=c=R$ で $\\frac{12\\pi}{5}R^5$．\n\n(2) 対称性より $\\Phi=9\\int x^2dV=9\\cdot(2s)^2\\cdot\\frac{2s^3}{3}=24s^5$．\n\n(3) 体積を揃えると $8s^3=\\frac43\\pi R^3$，$s/R=(\\pi/6)^{1/3}$．\n\\[\\frac{\\Phi_{\\text{立方体}}}{\\Phi_{\\text{球}}}=\\frac{24s^5}{\\frac{12\\pi}5R^5}=\\frac{10}{\\pi}\\left(\\frac\\pi6\\right)^{5/3}\\approx1.08.\\]\n立方体の方が約 8\\% 大きい．$\\Phi$ は $\\int r^2dV$（原点まわりの慣性モーメントに比例）で決まり，体積一定ではすべての点を原点に最も近く集めた球が最小になるため．"
+    "tex": "発散定理より $\\Phi_S=\\int_V\\nabla\\cdot\\boldsymbol A\\,dV=3\\int_V(x^2+y^2+z^2)\\,dV$．\n\n(1) $x=au,\\ y=bv,\\ z=cw$ と変換すると単位球 $B$ 上の積分になり，$dV=abc\\,du\\,dv\\,dw$．$\\int_Bu^2\\,dV=\\frac13\\int_B\\rho^2dV=\\frac13\\cdot\\frac{4\\pi}5=\\frac{4\\pi}{15}$ だから\n\\[\\Phi_S=3abc\\cdot\\frac{4\\pi}{15}(a^2+b^2+c^2)=\\frac{4\\pi}{5}abc(a^2+b^2+c^2).\\]\n$a=b=c=R$ で $\\frac{12\\pi}{5}R^5$．\n\n(2) 対称性より $\\Phi=9\\int x^2dV=9\\cdot(2s)^2\\cdot\\frac{2s^3}{3}=24s^5$．\n\n(3) 体積を揃えると $8s^3=\\frac43\\pi R^3$，$s/R=(\\pi/6)^{1/3}$．\n\\[\\frac{\\Phi_{\\text{立方体}}}{\\Phi_{\\text{球}}}=\\frac{24s^5}{\\frac{12\\pi}5R^5}=\\boldsymbol{\\frac{10}{\\pi}\\left(\\frac\\pi6\\right)^{5/3}}\\ (>1).\\]\n立方体の方が約 8\\% 大きい．$\\Phi$ は $\\int r^2dV$（原点まわりの慣性モーメントに比例）で決まり，体積一定ではすべての点を原点に最も近く集めた球が最小になるため．"
    }
   ],
   "idea": {
@@ -6877,7 +6877,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) ((4 pi)/(5)) a b c (a ^(2)+ b ^(2)+ c ^(2))\n(2) 24 s ^(5)\n(3) 記述"
+   "spec": "(1) ((4 pi)/(5)) a b c (a ^(2)+ b ^(2)+ c ^(2))\n(2) 24 s ^(5)\n(3) 比：(10/pi) (pi/6)^(5/3)"
   },
   "methods": [],
   "tags": [
@@ -7010,16 +7010,16 @@
   "theme": "球面と放物面の交角・直交交差の条件",
   "topic": "球面と放物面の交角・直交交差の条件",
   "statement": {
-   "tex": "\\begin{enumerate}\n\\item 球面 $x^2+y^2+z^2=3$ と回転放物面 $z=x^2+y^2-3$ は点 $(1,1,-1)$ で交わる．この点での 2 曲面の交角（法線どうしのなす鋭角）を度で求めよ．\n\\item 定数 $d>0$ に対し，回転放物面 $z=x^2+y^2+d$ と球面 $x^2+y^2+z^2=a^2$ が，交線（円）上のすべての点で直交するような $a^2$ を $d$ で表せ．\n\\item 放物面を $z=x^2+y^2-c$（$c>0$）とした場合，どんな半径の原点中心の球面とも直交して交わることはできないことを示せ．\n\\end{enumerate}"
+   "tex": "\\begin{enumerate}\n\\item 球面 $x^2+y^2+z^2=3$ と回転放物面 $z=x^2+y^2-3$ は点 $(1,1,-1)$ で交わる．この点での 2 曲面の交角（法線どうしのなす鋭角）$\\theta$ について $\\cos\\theta$ を求めよ．\n\\item 定数 $d>0$ に対し，回転放物面 $z=x^2+y^2+d$ と球面 $x^2+y^2+z^2=a^2$ が，交線（円）上のすべての点で直交するような $a^2$ を $d$ で表せ．\n\\item 放物面を $z=x^2+y^2-c$（$c>0$）とした場合，どんな半径の原点中心の球面とも直交して交わることはできないことを示せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\theta=\\arccos\\dfrac{5}{3\\sqrt3}\\approx15.8^\\circ$　(2) $a^2=4d^2+d$（交線は $z=2d$，$x^2+y^2=d$）　(3) 証明（解説参照）"
+   "tex": "(1) $\\cos\\theta=\\dfrac{5}{3\\sqrt3}$　(2) $a^2=4d^2+d$（交線は $z=2d$，$x^2+y^2=d$）　(3) 証明（解説参照）"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "曲面 $\\Phi=$ 一定 の法線は $\\nabla\\Phi$．球面 $\\Phi_1=x^2+y^2+z^2$，放物面 $\\Phi_2=x^2+y^2-z$ とおくと $\\nabla\\Phi_1=2(x,y,z)$，$\\nabla\\Phi_2=(2x,2y,-1)$．\n\n(1) $(1,1,-1)$ が両曲面上にあることは $1+1+1=3$，$1+1-3=-1$ で確認できる．$\\nabla\\Phi_1=(2,2,-2)$，$\\nabla\\Phi_2=(2,2,-1)$，内積 $10$，大きさ $\\sqrt{12}$，$3$．$\\cos\\theta=\\dfrac{10}{6\\sqrt3}=\\dfrac5{3\\sqrt3}\\approx0.962$，$\\theta\\approx15.8^\\circ$．\n\n(2) $\\rho^2=x^2+y^2$ とすると直交条件は $\\nabla\\Phi_1\\cdot\\nabla\\Phi_2=4\\rho^2-2z=0$．放物面上 $\\rho^2=z-d$ なので $4(z-d)-2z=0$，$z=2d$，$\\rho^2=d$．この円が球面上にあるためには $a^2=\\rho^2+z^2=d+4d^2$．\n\n(3) 同様に $\\rho^2=z+c$ を直交条件に代入すると $4(z+c)-2z=0$，$z=-2c$，よって $\\rho^2=z+c=-c<0$ となり実数の交点が存在しない．したがって直交交差は不可能．"
+    "tex": "曲面 $\\Phi=$ 一定 の法線は $\\nabla\\Phi$．球面 $\\Phi_1=x^2+y^2+z^2$，放物面 $\\Phi_2=x^2+y^2-z$ とおくと $\\nabla\\Phi_1=2(x,y,z)$，$\\nabla\\Phi_2=(2x,2y,-1)$．\n\n(1) $(1,1,-1)$ が両曲面上にあることは $1+1+1=3$，$1+1-3=-1$ で確認できる．$\\nabla\\Phi_1=(2,2,-2)$，$\\nabla\\Phi_2=(2,2,-1)$，内積 $10$，大きさ $\\sqrt{12}$，$3$．$\\boldsymbol{\\cos\\theta=\\dfrac{10}{6\\sqrt3}=\\dfrac5{3\\sqrt3}}$（$\\theta$ は約 $16^\\circ$ で，2 曲面は浅い角度で交わる）．\n\n(2) $\\rho^2=x^2+y^2$ とすると直交条件は $\\nabla\\Phi_1\\cdot\\nabla\\Phi_2=4\\rho^2-2z=0$．放物面上 $\\rho^2=z-d$ なので $4(z-d)-2z=0$，$z=2d$，$\\rho^2=d$．この円が球面上にあるためには $a^2=\\rho^2+z^2=d+4d^2$．\n\n(3) 同様に $\\rho^2=z+c$ を直交条件に代入すると $4(z+c)-2z=0$，$z=-2c$，よって $\\rho^2=z+c=-c<0$ となり実数の交点が存在しない．したがって直交交差は不可能．"
    }
   ],
   "idea": {
@@ -7027,7 +7027,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\theta$ [°]：≈15.8\n(2) $a^2$：4 d ^(2)+ d\n(3) 証明"
+   "spec": "(1) $\\cos\\theta$：5/(3 sqrt(3))\n(2) $a^2$：4 d ^(2)+ d\n(3) 証明"
   },
   "methods": [],
   "tags": [
@@ -7159,16 +7159,16 @@
   "theme": "等時曲線（半立方放物線）の面積と弧長",
   "topic": "等時曲線（半立方放物線）の面積と弧長",
   "statement": {
-   "tex": "鉛直下向きに $y$ 軸，水平に $x$ 軸をとる．なめらかな曲線状の溝が原点 $O$ を通り，質点が $O$ で鉛直下向きの速さ $v_0$ をもって溝に沿ってすべり降りる（重力加速度 $g$，摩擦なし）．質点の鉛直方向の速度成分がつねに $v_0$ に保たれるような溝の形（ライプニッツの等時曲線）を考える（$x\\ge0$ の側）．\n\\begin{enumerate}\n\\item 溝の曲線が $x^2=\\kappa y^3$ の形になることを示し，$\\kappa$ を求めよ．\n\\item この曲線と $y$ 軸に関して対称なもう一方の枝，および直線 $y=h$ で囲まれる部分の面積 $S$ を $\\kappa,h$ で表せ．\n\\item $v_0=2.0\\ \\mathrm{m/s}$，$g=9.8\\ \\mathrm{m/s^2}$ のとき，深さ $h=1.5\\ \\mathrm{m}$ に達するまでの所要時間と，その間に質点が溝に沿って進む道のりを求めよ．\n\\end{enumerate}"
+   "tex": "鉛直下向きに $y$ 軸，水平に $x$ 軸をとる．なめらかな曲線状の溝が原点 $O$ を通り，質点が $O$ で鉛直下向きの速さ $v_0$ をもって溝に沿ってすべり降りる（重力加速度 $g$，摩擦なし）．質点の鉛直方向の速度成分がつねに $v_0$ に保たれるような溝の形（ライプニッツの等時曲線）を考える（$x\\ge0$ の側）．\n\\begin{enumerate}\n\\item 溝の曲線が $x^2=\\kappa y^3$ の形になることを示し，$\\kappa$ を求めよ．\n\\item この曲線と $y$ 軸に関して対称なもう一方の枝，および直線 $y=h$ で囲まれる部分の面積 $S$ を $\\kappa,h$ で表せ．\n\\item 深さ $h$ に達するまでの所要時間 $T$ と，その間に質点が溝に沿って進む道のり $s$ を $v_0,\\ g,\\ h$ で表せ．\n\\end{enumerate}"
   },
   "answer": {
-   "tex": "(1) $\\kappa=\\dfrac{8g}{9v_0^2}$　(2) $S=\\dfrac45\\sqrt\\kappa\\,h^{5/2}$　(3) 時間 $0.75\\ \\mathrm{s}$，道のり $\\approx3.15\\ \\mathrm{m}$"
+   "tex": "(1) $\\kappa=\\dfrac{8g}{9v_0^2}$　(2) $S=\\dfrac45\\sqrt\\kappa\\,h^{5/2}$　(3) $T=\\dfrac{h}{v_0}$，$s=\\dfrac{v_0^2}{3g}\\left[\\left(1+\\dfrac{2gh}{v_0^2}\\right)^{3/2}-1\\right]$"
   },
   "solutions": [
    {
     "id": "main",
     "kind": "main",
-    "tex": "(1) 深さ $y$ でのエネルギー保存 $v^2=v_0^2+2gy$．鉛直成分が $v_0$ なら水平成分は $v_x=\\sqrt{2gy}$．よって\n\\[\\frac{dx}{dy}=\\frac{v_x}{v_y}=\\frac{\\sqrt{2gy}}{v_0}\\ \\Rightarrow\\ x=\\frac{2\\sqrt{2g}}{3v_0}y^{3/2}\\ \\Rightarrow\\ x^2=\\frac{8g}{9v_0^2}y^3 .\\]\n半立方放物線であり $\\kappa=8g/(9v_0^2)$．\n(2) 2 つの枝 $x=\\pm\\sqrt\\kappa\\,y^{3/2}$ の間の幅 $2\\sqrt\\kappa\\,y^{3/2}$ を積分して\n\\[S=\\int_0^h2\\sqrt\\kappa\\,y^{3/2}dy=\\frac45\\sqrt\\kappa\\,h^{5/2}.\\]\n(3) 鉛直方向は等速なので $T=h/v_0=0.75\\ \\mathrm{s}$．弧長は $ds=\\sqrt{1+(dx/dy)^2}\\,dy=\\sqrt{1+2gy/v_0^2}\\,dy$ より\n\\[s=\\frac{v_0^2}{3g}\\Big[\\Big(1+\\frac{2gh}{v_0^2}\\Big)^{3/2}-1\\Big]=\\frac{4}{29.4}\\big[(8.35)^{3/2}-1\\big]\\approx3.15\\ \\mathrm{m}.\\]"
+    "tex": "(1) 深さ $y$ でのエネルギー保存 $v^2=v_0^2+2gy$．鉛直成分が $v_0$ なら水平成分は $v_x=\\sqrt{2gy}$．よって\n\\[\\frac{dx}{dy}=\\frac{v_x}{v_y}=\\frac{\\sqrt{2gy}}{v_0}\\ \\Rightarrow\\ x=\\frac{2\\sqrt{2g}}{3v_0}y^{3/2}\\ \\Rightarrow\\ x^2=\\frac{8g}{9v_0^2}y^3 .\\]\n半立方放物線であり $\\kappa=8g/(9v_0^2)$．\n(2) 2 つの枝 $x=\\pm\\sqrt\\kappa\\,y^{3/2}$ の間の幅 $2\\sqrt\\kappa\\,y^{3/2}$ を積分して\n\\[S=\\int_0^h2\\sqrt\\kappa\\,y^{3/2}dy=\\frac45\\sqrt\\kappa\\,h^{5/2}.\\]\n(3) 鉛直方向は等速なので $\\boldsymbol{T=h/v_0}$．弧長は $ds=\\sqrt{1+(dx/dy)^2}\\,dy=\\sqrt{1+2gy/v_0^2}\\,dy$ より\n\\[\\boldsymbol{s=\\frac{v_0^2}{3g}\\Big[\\Big(1+\\frac{2gh}{v_0^2}\\Big)^{3/2}-1\\Big]}.\\]\n$h\\to0$ では $s\\simeq h$（鉛直に落ちはじめる），$h\\gg v_0^2/g$ では $s\\propto h^{3/2}$ と水平方向の移動が支配的になる．"
    }
   ],
   "idea": {
@@ -7176,7 +7176,7 @@
   },
   "grading": {
    "format": "lemma-input/1",
-   "spec": "(1) $\\kappa$：((8 g)/(9 v_0 ^(2)))\n(2) $S$：((4)/(5)) sqrt(κ) h ^(5/2)\n(3) 時間 [s]：≈0.75 ; 道のり [m]：≈3.15"
+   "spec": "(1) $\\kappa$：((8 g)/(9 v_0 ^(2)))\n(2) $S$：((4)/(5)) sqrt(κ) h ^(5/2)\n(3) $T$：h/v_0 ; $s$：(v_0^2/(3g)) ((1+2g h/v_0^2)^(3/2)-1)"
   },
   "methods": [],
   "tags": [
